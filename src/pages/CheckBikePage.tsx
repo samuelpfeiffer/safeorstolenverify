@@ -25,7 +25,7 @@ const CheckBikePage = () => {
           "Search BikeIndex.org, 529 Garage, and police databases",
           "Check high-end bikes (Trek, Specialized, Giant, Cannondale, Santa Cruz)",
           "Verify vintage and custom bikes",
-          "Unlimited serial number checks — $1/month",
+          "Unlimited serial number checks — $0.99/check or $2.99/month",
           "Instant 3-second verification from multiple databases",
           "Contact original owner if bike is reported stolen"
         ],
@@ -44,7 +44,7 @@ const CheckBikePage = () => {
           },
           {
             question: "How much does checking a bike's serial number cost?",
-            answer: "SafeOrStolen offers unlimited bike serial number checks for $1/month. Our tool searches multiple databases simultaneously in 3 seconds versus manually checking each site separately. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited bike serial number checks. Our tool searches multiple databases simultaneously in 3 seconds versus manually checking each site separately. Cancel anytime."
           },
           {
             question: "What should I do if the bike is reported stolen?",

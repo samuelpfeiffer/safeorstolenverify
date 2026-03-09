@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Is the barcode scanner free?",
-    answer: "Your first 2 barcode scans and verifications are completely free — no account needed. After that, unlimited scanning and verification is just $1.00/month. The scanner itself always works; it's the database verification that counts toward your free checks."
+    answer: "Your first 2 barcode scans and verifications are completely free — no account needed. After that, it's $0.99/check or $2.99/month unlimited. The scanner itself always works; it's the database verification that counts toward your free checks."
   },
   {
     question: "What if the barcode is damaged or unreadable?",
@@ -65,7 +65,7 @@ const appSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD",
-    "description": "2 free scans, then $1.00/month unlimited"
+    "description": "2 free scans, then $0.99/check or $2.99/month unlimited"
   },
   "featureList": "Barcode scanning, QR code reading, IMEI verification, VIN verification, serial number lookup, stolen item check",
   "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against 100+ databases.",
@@ -116,7 +116,7 @@ const BarcodeScannerPage = () => {
             <h2>How It Works</h2>
             <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including FBI NCIC, GSMA, NICB, ATF, and all 50 state law enforcement databases. Results in 3 seconds.</p>
             <h2>Perfect for In-Person Shopping</h2>
-            <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then unlimited for $1.00/month.</p>
+            <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $2.99/month unlimited.</p>
           </article>
         </main>
       </noscript>
@@ -315,7 +315,7 @@ const BarcodeScannerPage = () => {
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               Your phone camera is all you need. Point, scan, verify. 
-              2 free scans, then unlimited for $1.00/month.
+              2 free scans, then $0.99/check or $2.99/month unlimited.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="text-lg h-14 px-10">

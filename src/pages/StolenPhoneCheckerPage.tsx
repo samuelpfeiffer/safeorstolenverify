@@ -40,7 +40,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "What is the best stolen phone checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $1/month for unlimited checks, and works for phones, vehicles, electronics, and firearms in one platform."
+          "text": "SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $0.99/check or $2.99/month unlimited, and works for phones, vehicles, electronics, and firearms in one platform."
         }
       },
       {
@@ -48,7 +48,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "Is SafeOrStolen's phone checker free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen offers unlimited stolen phone checks for $1/month. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime."
+          "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime."
         }
       },
       {
@@ -113,7 +113,7 @@ const StolenPhoneCheckerPage = () => {
         <section className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 text-sm px-4 py-2">
             <Shield className="w-4 h-4 mr-2 inline" />
-            100+ Databases • Instant Results • $1/mo Unlimited
+            100+ Databases • Instant Results • $2.99/mo Unlimited
           </Badge>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -173,7 +173,7 @@ const StolenPhoneCheckerPage = () => {
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span>$1/month unlimited verifications — all item types included</span>
+              <span>$0.99/check or $2.99/month unlimited — all item types included</span>
             </li>
           </ul>
         </section>
@@ -270,7 +270,7 @@ const StolenPhoneCheckerPage = () => {
                 <div className="flex items-start gap-4">
                   <Star className="w-10 h-10 text-primary flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">$1/Month Unlimited</h3>
+                    <h3 className="font-semibold mb-2">$2.99/Month Unlimited</h3>
                     <p className="text-muted-foreground">Unlimited checks for all item types. Cancel anytime.</p>
                   </div>
                 </div>
@@ -292,13 +292,13 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
-                <p className="text-muted-foreground">SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $1/month for unlimited checks, and works for phones, vehicles, electronics, and firearms in one platform.</p>
+                <p className="text-muted-foreground">SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $0.99/check or $2.99/month unlimited, and works for phones, vehicles, electronics, and firearms in one platform.</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Is SafeOrStolen's phone checker free?</h3>
-                <p className="text-muted-foreground">SafeOrStolen offers unlimited stolen phone checks for $1/month. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime.</p>
+                <p className="text-muted-foreground">SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime.</p>
               </CardContent>
             </Card>
             <Card>

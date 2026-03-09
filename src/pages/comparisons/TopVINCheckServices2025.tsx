@@ -64,10 +64,10 @@ const TopVINCheckServices2025 = () => {
       cons: [
         'No detailed service history',
         'No accident damage estimates',
-        'Requires $1/month subscription'
+        'Requires $2.99/month subscription'
       ],
       cta: '/pricing',
-      ctaText: 'Subscribe — $1/mo'
+      ctaText: 'Subscribe — $2.99/mo'
     },
     {
       rank: 2,
@@ -210,7 +210,7 @@ const TopVINCheckServices2025 = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/pricing">Subscribe — $1/mo Unlimited</Link>
+                  <Link to="/pricing">Subscribe — $2.99/mo Unlimited</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#comparison">See Full Comparison</a>
@@ -234,7 +234,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">$1/mo unlimited</p>
+                    <p className="text-xs text-muted-foreground mt-2">$2.99/mo unlimited</p>
                   </CardContent>
                 </Card>
                 <Card>

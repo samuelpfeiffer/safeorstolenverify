@@ -224,7 +224,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-bold text-primary flex items-center gap-1"><Crown className="w-3 h-3" /> SafeOrStolen</td>
                       <td className="p-3">All (phones, cars, guns, electronics, bikes)</td>
                       <td className="p-3">100+</td>
-                      <td className="p-3">$1/mo unlimited</td>
+                      <td className="p-3">$2.99/mo unlimited</td>
                       <td className="p-3 text-center"><Yes /></td>
                       <td className="p-3">Everything</td>
                     </tr>
@@ -308,7 +308,7 @@ const TopStolenItemCheckers = () => {
             {/* 1. SafeOrStolen */}
             <section id="safeorstolen">
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
-              <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $1/mo unlimited · All item types</p>
+              <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $2.99/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
                 SafeOrStolen is the only verification service that checks <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also the only service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
@@ -334,7 +334,7 @@ const TopStolenItemCheckers = () => {
                     <li><Yes /> Only service with mobile app + barcode scanning</li>
                     <li><Yes /> All item categories in one platform</li>
                     <li><Yes /> 100+ databases (competitors: 10-20)</li>
-                    <li><Yes /> $1/mo unlimited — cheapest in industry</li>
+                    <li><Yes /> $2.99/mo unlimited — cheapest in industry</li>
                     <li><Yes /> 3-second instant results</li>
                     <li><Yes /> Downloadable verification certificates</li>
                     <li><Yes /> Business API for pawn shops and dealers</li>
@@ -346,11 +346,11 @@ const TopStolenItemCheckers = () => {
                 <strong>Best for:</strong> Anyone buying used items from <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>, OfferUp, Craigslist, eBay, pawn shops, gun shows, or private sellers. The mobile app makes it ideal for in-person meetups where you need to verify on the spot.
               </p>
               <p className="text-muted-foreground text-sm">
-                <strong>Pricing:</strong> $1/month for unlimited verifications across all item types. Cancel anytime. Business API also available.
+                <strong>Pricing:</strong> 2 free checks, then $0.99/check or $2.99/month unlimited across all item types. Cancel anytime. Business API also available.
               </p>
               <div className="mt-4">
                 <Link to="/verify">
-                  <Button className="gap-2">Check Item Now — $1/mo <ArrowRight className="w-4 h-4" /></Button>
+                  <Button className="gap-2">Check Item Now — $2.99/mo <ArrowRight className="w-4 h-4" /></Button>
                 </Link>
               </div>
             </section>
@@ -413,7 +413,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($1/mo vs $44.99/report).
+                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($2.99/mo vs $44.99/report).
               </p>
             </section>
 
@@ -640,11 +640,11 @@ const TopStolenItemCheckers = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking phones only?</h3>
-                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including police databases, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($1/mo unlimited).</p>
+                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including police databases, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($2.99/mo unlimited).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
-                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($1/mo).</p>
+                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($2.99/mo).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>

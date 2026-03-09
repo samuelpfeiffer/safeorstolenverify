@@ -28,7 +28,7 @@ const OrlandoLicensePlateLookupPage = () => {
       {
         "@type": "Question",
         "name": "Is a license plate lookup free in Orlando?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups. We check FLHSMV registration, theft databases, and insurance records. After 2 free checks, unlimited lookups are $1/month." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups. We check FLHSMV registration, theft databases, and insurance records. After 2 free checks, $0.99/check or $2.99/month unlimited." }
       }
     ]
   };
@@ -116,7 +116,7 @@ const OrlandoLicensePlateLookupPage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup free in Orlando?</summary>
-                <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups covering FLHSMV registration, theft databases, and insurance records. After 2 free checks, unlimited lookups are $1/month.</p>
+                <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups covering FLHSMV registration, theft databases, and insurance records. After 2 free checks, $0.99/check or $2.99/month unlimited.</p>
               </details>
             </div>
           </section>

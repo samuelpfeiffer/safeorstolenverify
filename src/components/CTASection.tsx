@@ -34,7 +34,7 @@ const CTASection = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle className="h-4 w-4 text-secondary" />
-                $1/mo Unlimited
+                $2.99/mo Unlimited
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-secondary" />
@@ -49,7 +49,7 @@ const CTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/pricing">
                 <Button size="lg" className="font-semibold text-lg px-8 py-6 h-auto">
-                  Subscribe — $1/Month
+                  Subscribe — $2.99/Month
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>

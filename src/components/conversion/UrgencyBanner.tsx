@@ -10,7 +10,7 @@ export const UrgencyBanner = () => {
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-sos-lime" />
             <span className="font-semibold text-foreground">
-              $1/month
+              $2.99/month
             </span>
             <span className="text-muted-foreground">
               Unlimited verifications

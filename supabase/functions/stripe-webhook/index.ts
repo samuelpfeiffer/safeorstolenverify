@@ -4,7 +4,7 @@ import Stripe from "https://esm.sh/stripe@16.0.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
 
-// SIMPLIFIED PRICING MODEL - Single $1/month unlimited plan
+// PRICING MODEL - $0.99/check + $2.99/month unlimited plan
 // All price IDs map to unlimited tier for backward compatibility
 const TIER_CONFIG: Record<string, { tier: string; limit: number | null }> = {
   'price_1SSVqkGxnZLw8J7O3GwCyKRn': { tier: 'pay_per_use', limit: 1 },

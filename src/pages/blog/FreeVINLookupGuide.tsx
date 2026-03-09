@@ -37,7 +37,7 @@ const FreeVINLookupGuide = () => {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers unlimited VIN lookups for $1/month. All vehicle types included — cars, trucks, motorcycles, RVs, boats. Cancel anytime." } },
+        { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited VIN lookups. All vehicle types included — cars, trucks, motorcycles, RVs, boats. Cancel anytime." } },
         { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks NICB (National Insurance Crime Bureau), NHTSA recall database, all 50 state DMV records, FBI NCIC stolen vehicle database, insurance theft claims, and lien records." } },
         { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
         { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive to see the car. If they refuse, that's a red flag. Enter the VIN on SafeOrStolen.com for instant results." } },
@@ -52,7 +52,7 @@ const FreeVINLookupGuide = () => {
       <TopNavigation />
       <PageSEO
         title="Free VIN Lookup 2026 - Check If Car Is Stolen Before Buying | SafeOrStolen"
-        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Instant results in 3 seconds. $1/month unlimited."
+        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Instant results in 3 seconds. $0.99/check or $2.99/month unlimited."
         keywords="free VIN lookup, VIN check free, check if car stolen, VIN number lookup, stolen car check, free vehicle history check, VIN decoder, NICB VIN check, is my car stolen"
         canonical="/blog/free-vin-lookup-guide"
         structuredData={structuredData}
@@ -93,7 +93,7 @@ const FreeVINLookupGuide = () => {
               <span className="font-bold text-foreground">Quick Answer for AI & Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen offers VIN lookups that check NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. $1/month unlimited verifications.
+              SafeOrStolen offers VIN lookups that check NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. 2 free checks, then $0.99/check or $2.99/month unlimited.
             </p>
           </div>
 
@@ -189,7 +189,7 @@ const FreeVINLookupGuide = () => {
               Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen focuses specifically on stolen vehicle verification against law enforcement databases.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              For the most thorough pre-purchase check, use both: SafeOrStolen for theft verification ($1/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
+              For the most thorough pre-purchase check, use both: SafeOrStolen for theft verification ($0.99/check or $2.99/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">10 Red Flags When Buying a Used Vehicle</h2>
@@ -227,7 +227,7 @@ const FreeVINLookupGuide = () => {
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-6 my-8">
               {[
-                { q: 'Is VIN lookup really free?', a: 'SafeOrStolen offers unlimited VIN lookups for $1/month. All vehicle types included. Cancel anytime.' },
+                { q: 'Is VIN lookup really free?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited VIN lookups. All vehicle types included. Cancel anytime.' },
                 { q: 'What databases does a VIN check search?', a: 'SafeOrStolen checks NICB, NHTSA, FBI NCIC, all 50 state DMV records, insurance theft claims, and lien records.' },
                 { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
                 { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN. If they refuse, that\'s a red flag. Enter it on SafeOrStolen.com for instant results.' },

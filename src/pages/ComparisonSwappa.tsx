@@ -59,7 +59,7 @@ const ComparisonSwappa = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen free to use?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, unlimited checks cost just $1.00/month — significantly cheaper than per-check services." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, checks cost $0.99 each or $2.99/month unlimited — significantly cheaper than per-check services." }
       },
       {
         "@type": "Question",
@@ -127,7 +127,7 @@ const ComparisonSwappa = () => {
           <h3>Can Swappa check if a car or bike is stolen?</h3>
           <p>No. Swappa only handles phones and tech devices. SafeOrStolen verifies all item types including vehicles, firearms, bicycles, and more.</p>
           <h3>Is SafeOrStolen free to use?</h3>
-          <p>Yes. SafeOrStolen offers 2 free verification checks. Unlimited checks cost $1.00/month.</p>
+          <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $2.99/month unlimited.</p>
           <h3>How many databases does SafeOrStolen check?</h3>
           <p>SafeOrStolen checks 100+ databases including FBI NCIC, NICB, GSMA blacklists, and all 50 state law enforcement databases.</p>
           <nav>
@@ -189,7 +189,7 @@ const ComparisonSwappa = () => {
                       ['100+ Databases', 'FBI NCIC, NICB, GSMA, all 50 state law enforcement'],
                       ['Works Offline', 'Verify at garage sales, flea markets, anywhere'],
                       ['3-Second Results', 'Instant verification with trust score'],
-                      ['2 Free Checks', 'Then just $1.00/month unlimited'],
+                      ['2 Free Checks', 'Then $0.99/check or $2.99/month unlimited'],
                       ['Verification Certificate', 'Downloadable PDF proof for your records'],
                     ].map(([title, desc]) => (
                       <li key={title} className="flex items-start gap-2">
@@ -449,7 +449,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="free">
                     <AccordionTrigger>Is SafeOrStolen free to use?</AccordionTrigger>
                     <AccordionContent>
-                      Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, unlimited checks cost just $1.00/month — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
+                      Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, checks cost $0.99 each or $2.99/month unlimited — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="databases">
