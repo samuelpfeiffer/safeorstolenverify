@@ -51,8 +51,8 @@ export const EnhancedFAQSection = () => {
       icon: DollarSign,
       faqs: [
         {
-          question: "What's included in the $1/month plan?",
-          answer: "The $1/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to 100+ databases. Cancel anytime — no contracts."
+          question: "What's included in the $2.99/month plan?",
+          answer: "The $2.99/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to 100+ databases. Cancel anytime — no contracts. Or pay $0.99 per individual check."
         },
         {
           question: "Can I verify in bulk for my business?",
