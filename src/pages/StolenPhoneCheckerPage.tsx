@@ -292,7 +292,7 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
-                <p className="text-muted-foreground">SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $1/month for unlimited checks, and works for phones, vehicles, electronics, and firearms in one platform.</p>
+                <p className="text-muted-foreground">SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $0.99/check or $2.99/month unlimited, and works for phones, vehicles, electronics, and firearms in one platform.</p>
               </CardContent>
             </Card>
             <Card>
