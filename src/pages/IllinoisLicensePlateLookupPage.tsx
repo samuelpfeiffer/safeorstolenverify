@@ -31,7 +31,7 @@ const IllinoisLicensePlateLookupPage = () => {
           "Coverage for Chicago (all neighborhoods), Aurora, Rockford, Naperville, and all Illinois cities",
           "Detect organized theft ring activity and carjacking victims",
           "Check cars, trucks, motorcycles from Illinois sellers",
-          "Unlimited Illinois license plate lookups — $1/month"
+          "Unlimited Illinois license plate lookups — $2.99/month"
         ],
         process: [
           "Record the Illinois license plate number - IL requires both front and rear plates",
