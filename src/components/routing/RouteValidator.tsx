@@ -87,10 +87,8 @@ export const RouteValidator: React.FC = () => {
       '/marketplace-integration': '/for-marketplaces',
       '/for-brands': '/for-businesses',
 
-      // Mobile app legacy
-      '/mobile-app': '/app',
+      // Mobile app legacy - /mobile-app and /install-app are now real pages
       '/get-app': '/app',
-      '/install-app': '/app',
 
       // Legacy policy pages
       '/privacy-policy': '/privacy',

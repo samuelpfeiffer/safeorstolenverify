@@ -98,6 +98,10 @@ const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
 const MobilePage = lazy(() => import('@/pages/MobilePage'));
 const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 const VsStolenRegisterPage = lazy(() => import('@/pages/VsStolenRegisterPage'));
+
+// Mobile App Landing Pages (AI/SEO Optimized)
+const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
+const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
 const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 const CheckAndroidPage = lazy(() => import('@/pages/CheckAndroidPage'));
 const VerifyPawnshopsPage = lazy(() => import('@/pages/VerifyPawnshopsPage'));
@@ -373,10 +377,11 @@ export const AppRoutes = () => {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/trust-engine" element={<TrustEnginePage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        {/* /account and /mobile-app handled by server-side _redirects - removed duplicate Navigate */}
+        {/* Mobile App Landing Pages */}
         <Route path="/app" element={<AppDownloadPage />} />
         <Route path="/download-app" element={<AppDownloadPage />} />
-        {/* Keeping old AppPage for now as redirect target or legacy */}
+        <Route path="/mobile-app" element={<MobileAppPage />} />
+        <Route path="/install-app" element={<InstallAppPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FAQPage />} />
