@@ -326,7 +326,7 @@ export const ItemLandingPageTemplate = ({
               </Link>
               <Link to="/pricing">
                 <Button size="lg" variant="outline">
-                  $1/mo Unlimited
+                  $2.99/mo Unlimited
                 </Button>
               </Link>
             </div>

@@ -644,7 +644,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
-                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($1/mo).</p>
+                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($2.99/mo).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>
