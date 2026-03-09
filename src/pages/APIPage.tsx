@@ -261,7 +261,7 @@ Authorization: Bearer YOUR_API_KEY
                   API rate limits are based on your subscription tier to ensure fair usage for all customers:
                 </p>
                 <ul>
-                  <li><strong>Consumer plan:</strong> $1/month unlimited verifications via web interface</li>
+                  <li><strong>Consumer plan:</strong> $0.99/check or $2.99/month unlimited verifications via web interface</li>
                   <li><strong>Business API:</strong> Contact us for API access and pricing</li>
                   <li><strong>Enterprise plan:</strong> Unlimited API requests with dedicated support</li>
                 </ul>
