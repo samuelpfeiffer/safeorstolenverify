@@ -413,7 +413,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($1/mo vs $44.99/report).
+                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($2.99/mo vs $44.99/report).
               </p>
             </section>
 
