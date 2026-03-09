@@ -209,7 +209,7 @@ export const HomeContentSections = () => {
             <div className="p-5 bg-background rounded-lg border border-border">
               <h3 className="font-bold mb-2">Used Car Buyers</h3>
               <p className="text-sm text-muted-foreground">
-                <Link to="/check-car" className="text-primary hover:underline">Vehicle buyers</Link> check VINs before purchasing from private sellers, dealerships, or auctions. SafeOrStolen costs $1/month unlimited vs Carfax at $44.99 per report — and checks more databases.
+                <Link to="/check-car" className="text-primary hover:underline">Vehicle buyers</Link> check VINs before purchasing from private sellers, dealerships, or auctions. SafeOrStolen costs $0.99/check or $2.99/month unlimited vs Carfax at $44.99 per report — and checks more databases.
               </p>
             </div>
             <div className="p-5 bg-background rounded-lg border border-border">
