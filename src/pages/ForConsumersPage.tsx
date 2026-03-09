@@ -76,7 +76,7 @@ const ForConsumersPage = () => {
     <>
       <PageSEO
         title="For Consumers - Protect Yourself When Buying Used Items | SafeOrStolen"
-        description="Free verification for secondhand buyers. Check if phones, cars, electronics, and bikes are stolen before buying on Facebook Marketplace, OfferUp, Craigslist. 2 free checks, then $1/month unlimited."
+        description="Free verification for secondhand buyers. Check if phones, cars, electronics, and bikes are stolen before buying on Facebook Marketplace, OfferUp, Craigslist. 2 free checks, then $0.99/check or $2.99/month unlimited."
         keywords="buying used items safely, avoid stolen goods, secondhand buyer protection, verify before buying, stolen item checker for consumers, IMEI check free"
         canonical="/for-consumers"
         structuredData={[faqSchema, breadcrumbSchema]}
