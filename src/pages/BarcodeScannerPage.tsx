@@ -315,7 +315,7 @@ const BarcodeScannerPage = () => {
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               Your phone camera is all you need. Point, scan, verify. 
-              2 free scans, then unlimited for $1.00/month.
+              2 free scans, then $0.99/check or $2.99/month unlimited.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="text-lg h-14 px-10">

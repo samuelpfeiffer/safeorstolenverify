@@ -427,7 +427,7 @@ console.log('Confidence:', result.confidence + '%');`}
                 </Link>
                 <Link to="/pricing">
                   <Button size="lg" variant="outline">
-                    Subscribe — $1/mo
+                    Subscribe — $2.99/mo
                   </Button>
                 </Link>
               </div>

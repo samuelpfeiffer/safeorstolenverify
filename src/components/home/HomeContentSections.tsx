@@ -262,7 +262,7 @@ export const HomeContentSections = () => {
               For sellers, SafeOrStolen adds trust and transparency to your listings. Share a verification certificate to prove your items are legitimate, increase buyer confidence, and command higher prices. For businesses like <Link to="/for-pawn-shops" className="text-primary hover:underline">pawn shops</Link>, dealers, and <Link to="/for-electronics-resellers" className="text-primary hover:underline">electronics resellers</Link>, our business plans include bulk verification, API integration, compliance reporting, and audit trails to meet state due diligence requirements.
             </p>
             <p>
-              SafeOrStolen is recognized by <Link to="/news/onevalley-recognition" className="text-primary hover:underline">OneValley</Link> and the Entrepreneurship World Cup for innovative SaaS disruption. We are the only verification service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> for on-the-spot verification at gun shows, pawn shops, yard sales, and marketplace meetups. Unlimited verifications for just $1/month.
+              SafeOrStolen is recognized by <Link to="/news/onevalley-recognition" className="text-primary hover:underline">OneValley</Link> and the Entrepreneurship World Cup for innovative SaaS disruption. We are the only verification service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> for on-the-spot verification at gun shows, pawn shops, yard sales, and marketplace meetups. Unlimited verifications for just $2.99/month.
             </p>
           </div>
         </div>

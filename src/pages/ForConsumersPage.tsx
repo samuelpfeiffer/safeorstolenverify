@@ -345,7 +345,7 @@ const ForConsumersPage = () => {
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link to="/pricing">
-                  $1/mo Unlimited
+                  $2.99/mo Unlimited
                 </Link>
               </Button>
             </div>

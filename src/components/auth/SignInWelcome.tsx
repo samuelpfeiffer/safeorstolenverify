@@ -40,7 +40,7 @@ export const SignInWelcome = ({ userName, onContinue, isLoading = false }: SignI
     {
       icon: Zap,
       title: "Upgrade Account",
-      description: "Get unlimited searches for $1/month",
+      description: "Get unlimited searches for $2.99/month",
       action: "View Plans",
       onClick: () => navigate('/pricing')
     }

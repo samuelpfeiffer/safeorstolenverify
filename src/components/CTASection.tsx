@@ -49,7 +49,7 @@ const CTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/pricing">
                 <Button size="lg" className="font-semibold text-lg px-8 py-6 h-auto">
-                  Subscribe — $1/Month
+                  Subscribe — $2.99/Month
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>

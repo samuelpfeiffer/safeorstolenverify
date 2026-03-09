@@ -360,7 +360,7 @@ const CrunchbasePage: React.FC = () => {
               </Link>
               <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
                 <h3 className="font-bold mb-2">Pricing</h3>
-                <p className="text-sm text-muted-foreground">$1/mo unlimited verifications</p>
+                <p className="text-sm text-muted-foreground">$2.99/mo unlimited verifications</p>
               </Link>
               <Link to="/app" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
                 <h3 className="font-bold mb-2">Mobile App</h3>

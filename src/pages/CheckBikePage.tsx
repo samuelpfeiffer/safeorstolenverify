@@ -44,7 +44,7 @@ const CheckBikePage = () => {
           },
           {
             question: "How much does checking a bike's serial number cost?",
-            answer: "SafeOrStolen offers unlimited bike serial number checks for $1/month. Our tool searches multiple databases simultaneously in 3 seconds versus manually checking each site separately. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited bike serial number checks. Our tool searches multiple databases simultaneously in 3 seconds versus manually checking each site separately. Cancel anytime."
           },
           {
             question: "What should I do if the bike is reported stolen?",

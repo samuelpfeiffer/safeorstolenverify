@@ -234,7 +234,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">$1/mo unlimited</p>
+                    <p className="text-xs text-muted-foreground mt-2">$2.99/mo unlimited</p>
                   </CardContent>
                 </Card>
                 <Card>

@@ -28,7 +28,7 @@ const CheckBoatPage = () => {
           "Verify cabin cruisers, bowriders, deck boats, ski boats",
           "Check houseboats, trawlers, and liveaboard yachts",
           "Detect HIN tampering and VIN cloning",
-          "Instant HIN verification — $1/month unlimited boat checks"
+          "Instant HIN verification — $0.99/check or $2.99/month unlimited boat checks"
         ],
         process: [
           "Locate the HIN (Hull Identification Number): Usually on the transom (rear of boat) on the starboard (right) side near the waterline. Also check the hull's interior for duplicate HIN. Federal law requires HINs to be permanently affixed in two locations.",

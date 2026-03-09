@@ -449,7 +449,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="free">
                     <AccordionTrigger>Is SafeOrStolen free to use?</AccordionTrigger>
                     <AccordionContent>
-                      Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, unlimited checks cost just $1.00/month — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
+                      Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, checks cost $0.99 each or $2.99/month unlimited — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="databases">

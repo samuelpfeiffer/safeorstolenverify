@@ -37,7 +37,7 @@ const FreeVINLookupGuide = () => {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers unlimited VIN lookups for $1/month. All vehicle types included — cars, trucks, motorcycles, RVs, boats. Cancel anytime." } },
+        { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited VIN lookups. All vehicle types included — cars, trucks, motorcycles, RVs, boats. Cancel anytime." } },
         { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks NICB (National Insurance Crime Bureau), NHTSA recall database, all 50 state DMV records, FBI NCIC stolen vehicle database, insurance theft claims, and lien records." } },
         { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
         { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive to see the car. If they refuse, that's a red flag. Enter the VIN on SafeOrStolen.com for instant results." } },

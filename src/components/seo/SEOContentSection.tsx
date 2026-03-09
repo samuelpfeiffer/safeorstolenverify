@@ -24,7 +24,7 @@ export const SEOContentSection = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                   <span><strong>Better than CheckMend:</strong> $1/mo unlimited verifications compared to their paid-per-check model PLUS mobile app with firearms checking (they have neither!)</span>
+                   <span><strong>Better than CheckMend:</strong> $2.99/mo unlimited verifications compared to their paid-per-check model PLUS mobile app with firearms checking (they have neither!)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />

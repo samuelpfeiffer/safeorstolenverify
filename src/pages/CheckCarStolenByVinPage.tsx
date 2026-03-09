@@ -71,7 +71,7 @@ const CheckCarStolenByVinPage = () => {
           },
           {
             question: "How much does the VIN check cost?",
-            answer: "SafeOrStolen offers unlimited VIN checks for $1/month. This covers individual buyers and dealers alike. Cancel anytime. 30-day money-back guarantee. Our plan covers the same comprehensive databases including NICB, NMVTIS, and law enforcement records."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited VIN checks. This covers individual buyers and dealers alike. Cancel anytime. 30-day money-back guarantee. Our plan covers the same comprehensive databases including NICB, NMVTIS, and law enforcement records."
           }
         ]
       }}

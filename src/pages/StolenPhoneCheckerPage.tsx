@@ -298,7 +298,7 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Is SafeOrStolen's phone checker free?</h3>
-                <p className="text-muted-foreground">SafeOrStolen offers unlimited stolen phone checks for $1/month. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime.</p>
+                <p className="text-muted-foreground">SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime.</p>
               </CardContent>
             </Card>
             <Card>
