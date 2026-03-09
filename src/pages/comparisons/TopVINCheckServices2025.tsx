@@ -22,7 +22,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best for stolen vehicle verification — $1/month unlimited"
+          "description": "Best for stolen vehicle verification — $2.99/month unlimited"
         }
       },
       {
