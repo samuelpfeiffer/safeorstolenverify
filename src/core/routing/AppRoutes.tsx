@@ -377,10 +377,11 @@ export const AppRoutes = () => {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/trust-engine" element={<TrustEnginePage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        {/* /account and /mobile-app handled by server-side _redirects - removed duplicate Navigate */}
+        {/* Mobile App Landing Pages */}
         <Route path="/app" element={<AppDownloadPage />} />
         <Route path="/download-app" element={<AppDownloadPage />} />
-        {/* Keeping old AppPage for now as redirect target or legacy */}
+        <Route path="/mobile-app" element={<MobileAppPage />} />
+        <Route path="/install-app" element={<InstallAppPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FAQPage />} />
