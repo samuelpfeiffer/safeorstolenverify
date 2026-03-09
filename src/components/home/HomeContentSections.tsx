@@ -44,7 +44,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "How is SafeOrStolen different from Carfax?",
-      answer: "Carfax only checks vehicles and costs $44.99 per report. SafeOrStolen checks ALL item types — phones, cars, firearms, electronics, bikes, and more — for just $1/month unlimited. We also search more databases (100+ vs Carfax's vehicle-only sources), include a mobile app for on-the-spot verification, and provide results in 3 seconds instead of generating a lengthy PDF report."
+      answer: "Carfax only checks vehicles and costs $44.99 per report. SafeOrStolen checks ALL item types — phones, cars, firearms, electronics, bikes, and more — for just $0.99/check or $2.99/month unlimited. We also search more databases (100+ vs Carfax's vehicle-only sources), include a mobile app for on-the-spot verification, and provide results in 3 seconds instead of generating a lengthy PDF report."
     },
     {
       question: "Does SafeOrStolen have a mobile app?",
