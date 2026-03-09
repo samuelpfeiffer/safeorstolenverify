@@ -304,7 +304,7 @@ const FirearmsCheckPage = () => {
             standard of due diligence.
           </p>
           <div className="bg-secondary/10 border border-secondary/30 rounded-2xl p-6 mb-6">
-            <h3 className="text-secondary font-bold mb-3">SafeOrStolen Business Plan for Pawn Shops</h3>
+            <h3 className="text-secondary font-bold mb-3">SafeOrStolen Unlimited Plan for Pawn Shops</h3>
             <ul className="space-y-2">
               {[
                 'Unlimited firearm serial checks at one flat monthly rate',

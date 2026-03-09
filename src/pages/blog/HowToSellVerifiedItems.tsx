@@ -214,10 +214,10 @@ const HowToSellVerifiedItems = () => {
           {/* CTA */}
           <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center mt-12">
             <h2 className="text-2xl font-black mb-3">Start Selling Smarter Today</h2>
-            <p className="opacity-90 mb-6">$1/month unlimited verifications. Prove your items are clean and get better prices.</p>
+            <p className="opacity-90 mb-6">From $0.99/check or $2.99/month unlimited. Prove your items are clean and get better prices.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="font-bold">
-                <Link to="/pricing">Subscribe — $1/mo</Link>
+                <Link to="/pricing">View Plans</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="font-bold border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                 <Link to="/for-sellers">Learn More for Sellers</Link>

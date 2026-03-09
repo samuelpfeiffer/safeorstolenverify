@@ -164,7 +164,7 @@ const NICBAlternativePage = () => {
               </table>
             </div>
             <p className="text-sm text-muted-foreground mt-4 text-center">
-              *Unlimited verifications for just $1/month
+              *$0.99/check or $2.99/month unlimited
             </p>
           </div>
         </section>

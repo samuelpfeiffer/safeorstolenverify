@@ -378,7 +378,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      Yes! SafeOrStolen offers unlimited stolen item checks for just $1/month. 
+                      SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. 
                       IMEI.info charges $2.99+ for blacklist checks.
                     </p>
                   </CardContent>

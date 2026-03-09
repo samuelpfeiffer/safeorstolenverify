@@ -479,7 +479,7 @@ const Index = () => {
           <div className="flex-shrink-0 w-full md:w-72 modern-card p-6">
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="w-5 h-5 text-primary" />
-              <span className="text-foreground font-bold">Business Plan</span>
+              <span className="text-foreground font-bold">Unlimited Plan — $2.99/mo</span>
             </div>
             <ul className="space-y-2 mb-6">
               {[
