@@ -563,8 +563,16 @@ export const AppRoutes = () => {
         <Route path="/nicb-alternative" element={<NICBAlternativePage />} />
         <Route path="/hotgunz-alternative" element={<HotGunzAlternativePage />} />
         <Route path="/free-stolen-vehicle-check" element={<FreeStolenVehicleCheckPage />} />
+        <Route path="/theftaz-alternative" element={<TheftAZAlternativePage />} />
+        <Route path="/carfax-alternative" element={<CarfaxAlternativePage />} />
 
-        {/* TOP 10 STATE VIN PAGES */}
+        {/* FLORIDA CITY PAGES */}
+        <Route path="/florida/miami-license-plate-lookup" element={<MiamiLicensePlateLookupPage />} />
+        <Route path="/florida/jacksonville-license-plate-lookup" element={<JacksonvilleLicensePlateLookupPage />} />
+        <Route path="/florida/orlando-license-plate-lookup" element={<OrlandoLicensePlateLookupPage />} />
+        <Route path="/florida/tampa-license-plate-lookup" element={<TampaLicensePlateLookupPage />} />
+        <Route path="/florida/destin-license-plate-lookup" element={<DestinLicensePlateLookupPage />} />
+
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
         <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
         <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
