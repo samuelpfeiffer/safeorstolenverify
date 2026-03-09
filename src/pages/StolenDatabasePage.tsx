@@ -221,7 +221,7 @@ const StolenDatabasePage = () => {
             </ul>
             
             <h2>For Full Verification</h2>
-            <p>This database shows community-reported stolen items. For comprehensive verification against 100+ databases including FBI NCIC, GSMA, NICB, and carrier blacklists, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $1/month unlimited.</p>
+            <p>This database shows community-reported stolen items. For comprehensive verification against 100+ databases including FBI NCIC, GSMA, NICB, and carrier blacklists, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
             
             <h2>Related Resources</h2>
             <ul>
