@@ -33,7 +33,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "How much does Carfax cost vs SafeOrStolen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Carfax: $39.99 for 1 report, $59.99 for 3 reports, $99.99 for 6 reports. SafeOrStolen: 2 free checks, then $1/month for unlimited checks on all item types (not just vehicles). For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Carfax: $39.99 for 1 report, $59.99 for 3 reports, $99.99 for 6 reports. SafeOrStolen: 2 free checks, then $0.99/check or $2.99/month unlimited on all item types (not just vehicles). For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification." }
       }
     ]
   };
