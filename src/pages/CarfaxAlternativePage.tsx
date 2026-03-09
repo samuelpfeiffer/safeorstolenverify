@@ -28,7 +28,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Should I use Carfax or SafeOrStolen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use both. SafeOrStolen for theft verification ($1/month unlimited), Carfax for full vehicle history ($39.99/report). For a $15,000+ vehicle purchase, spending $40 on Carfax AND $1 on SafeOrStolen is smart. SafeOrStolen catches stolen vehicles that Carfax might miss because we access different databases." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Use both. SafeOrStolen for theft verification ($2.99/month unlimited), Carfax for full vehicle history ($39.99/report). For a $15,000+ vehicle purchase, spending $40 on Carfax AND $2.99 on SafeOrStolen is smart. SafeOrStolen catches stolen vehicles that Carfax might miss because we access different databases." }
       },
       {
         "@type": "Question",
