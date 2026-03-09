@@ -73,7 +73,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // BUSINESS PAGES (5)
   // ============================================
   { path: '/for-businesses', priority: 0.80, changefreq: 'monthly' },
-  { path: '/for-pawn-shops', priority: 0.80, changefreq: 'monthly' },
+  { path: '/for-pawn-shops', priority: 0.85, changefreq: 'weekly' },
   { path: '/for-dealers', priority: 0.80, changefreq: 'monthly' },
   { path: '/for-marketplaces', priority: 0.75, changefreq: 'monthly' },
   { path: '/for-auction-houses', priority: 0.75, changefreq: 'monthly' },
