@@ -308,7 +308,7 @@ const TopStolenItemCheckers = () => {
             {/* 1. SafeOrStolen */}
             <section id="safeorstolen">
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
-              <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $1/mo unlimited · All item types</p>
+              <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $2.99/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
                 SafeOrStolen is the only verification service that checks <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also the only service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
