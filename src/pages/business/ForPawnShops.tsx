@@ -42,7 +42,7 @@ export default function ForPawnShops() {
           <p className="text-2xl text-muted-foreground mb-8">Verify Every Item in 3 Seconds. Eliminate Legal Risk. Stay Compliant.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/verify">Try Free Verification</Link>
+              <Link to="/verify">Try Verification Now</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link to="/pricing">View Business Pricing</Link>

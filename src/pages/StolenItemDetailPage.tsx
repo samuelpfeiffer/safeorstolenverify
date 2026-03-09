@@ -178,7 +178,7 @@ const StolenItemDetailPage = () => {
         description={`Reported stolen: ${itemTitle}. ${item.description || 'View details and help recover this stolen item.'} Serial/ID: ${identifier || 'Not provided'}`}
         keywords={`stolen ${item.item_type}, ${item.brand || ''}, ${item.model || ''}, stolen property, theft report`}
         canonical={`/item/${slug}`}
-        structuredData={[productSchema]}
+        structuredData={[reportSchema]}
         image="/og-stolen-item.jpg"
       />
       <TopNavigation />
