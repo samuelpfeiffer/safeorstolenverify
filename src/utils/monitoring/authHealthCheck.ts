@@ -165,8 +165,8 @@ export const validateAuthConfig = (): AuthHealthIssue[] => {
     issues.push({
       severity: 'critical',
       component: 'Configuration',
-      message: 'VITE_SUPABASE_ANON_KEY is missing',
-      fix: 'Add Supabase anon key to environment variables'
+      message: 'VITE_SUPABASE_PUBLISHABLE_KEY is missing',
+      fix: 'Add Supabase publishable key to environment variables'
     });
   }
   
