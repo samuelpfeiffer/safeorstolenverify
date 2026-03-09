@@ -98,6 +98,10 @@ const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
 const MobilePage = lazy(() => import('@/pages/MobilePage'));
 const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 const VsStolenRegisterPage = lazy(() => import('@/pages/VsStolenRegisterPage'));
+
+// Mobile App Landing Pages (AI/SEO Optimized)
+const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
+const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
 const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 const CheckAndroidPage = lazy(() => import('@/pages/CheckAndroidPage'));
 const VerifyPawnshopsPage = lazy(() => import('@/pages/VerifyPawnshopsPage'));
