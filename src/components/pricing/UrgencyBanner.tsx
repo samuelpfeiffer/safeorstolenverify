@@ -20,7 +20,7 @@ export const UrgencyBanner = () => {
       <div className="max-w-4xl mx-auto">
         <div className="bg-gradient-to-r from-sos-lime/20 via-sos-orange/10 to-sos-lime/20 rounded-2xl p-8 border-2 border-sos-lime/30 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4 text-foreground">
-            Unlimited Verifications — $1/Month
+            Unlimited Verifications — $2.99/Month
           </h2>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Check phones, cars, electronics, bikes, firearms & more. 
