@@ -49,11 +49,11 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "What is the best CheckMEND alternative with an app?",
-            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $1/month unlimited (vs CheckMEND's $3.99/check), offline mode, and coverage for all item types."
+            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $2.99/month unlimited (vs CheckMEND's $3.99/check), offline mode, and coverage for all item types."
           },
           {
             question: "Is SafeOrStolen cheaper than CheckMEND?",
-            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers unlimited verifications for just $1/month. Plus you get a mobile app with barcode scanning that CheckMEND doesn't offer."
+            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. Plus you get a mobile app with barcode scanning that CheckMEND doesn't offer."
           },
           {
             question: "Can I scan barcodes with CheckMEND?",
