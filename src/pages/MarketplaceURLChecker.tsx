@@ -137,8 +137,8 @@ const MarketplaceURLChecker: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Marketplace URL Analyzer - Paste Listing URL to Check Stolen | SafeOrStolen"
-        description="Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp listing URL to instantly check if the item is stolen. AI extracts identifiers and checks 100+ databases. The only tool that can analyze marketplace listing URLs."
+        title="Facebook Marketplace Scam Checker — Paste Any Listing URL | SafeOrStolen"
+        description="Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp listing URL. SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks if the item is stolen. The only tool that does this."
         keywords="paste marketplace URL stolen check, Facebook Marketplace stolen item checker, eBay listing verification, Craigslist stolen check, OfferUp verify not stolen, marketplace scam detection, stolen goods checker URL, marketplace URL analyzer"
         canonical="/marketplace-url-checker"
       />

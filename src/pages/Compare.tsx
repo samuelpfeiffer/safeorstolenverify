@@ -136,8 +136,8 @@ const Compare = () => {
   return (
     <>
       <PageSEO
-        title="Compare Stolen Item Checkers 2026 | SafeOrStolen"
-        description="Compare SafeOrStolen with CheckMEND, IMEI.info, Swappa, Carfax. The only stolen item checker with a mobile app. Free checks for phones, cars, more."
+        title="SafeOrStolen vs Carfax vs IMEI Checkers — Free Alternative Comparison | SafeOrStolen"
+        description="Compare SafeOrStolen to Carfax, CheckMEND, IMEI.info, and NICB. The only service checking phones, cars, bikes, firearms, and electronics in one place. See why SafeOrStolen is the best free alternative."
         keywords="CheckMEND alternative, better than IMEI.info, Swappa alternative, Carfax alternative, best stolen item checker, IMEI checker comparison, VIN lookup comparison, stolen verification app"
         canonical="/compare"
         structuredData={{

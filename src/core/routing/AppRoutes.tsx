@@ -262,7 +262,17 @@ const CheckIfPhoneStolenGuide = lazy(() => import('@/pages/blog/CheckIfPhoneStol
 const PS5StolenCheckGuide = lazy(() => import('@/pages/blog/PS5StolenCheckGuide'));
 const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
 
-// Traffic Generation Landing Pages
+// Florida City License Plate Pages
+const MiamiLicensePlateLookupPage = lazy(() => import('@/pages/florida/MiamiLicensePlateLookupPage'));
+const JacksonvilleLicensePlateLookupPage = lazy(() => import('@/pages/florida/JacksonvilleLicensePlateLookupPage'));
+const OrlandoLicensePlateLookupPage = lazy(() => import('@/pages/florida/OrlandoLicensePlateLookupPage'));
+const TampaLicensePlateLookupPage = lazy(() => import('@/pages/florida/TampaLicensePlateLookupPage'));
+const DestinLicensePlateLookupPage = lazy(() => import('@/pages/florida/DestinLicensePlateLookupPage'));
+
+// TheftAZ & Carfax Alternative Pages
+const TheftAZAlternativePage = lazy(() => import('@/pages/TheftAZAlternativePage'));
+const CarfaxAlternativePage = lazy(() => import('@/pages/CarfaxAlternativePage'));
+
 const CheckStolenPhonePage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenPhone })));
 const CheckStolenCarPage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenCar })));
 const CheckStolenLaptopPage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenLaptop })));
@@ -553,8 +563,16 @@ export const AppRoutes = () => {
         <Route path="/nicb-alternative" element={<NICBAlternativePage />} />
         <Route path="/hotgunz-alternative" element={<HotGunzAlternativePage />} />
         <Route path="/free-stolen-vehicle-check" element={<FreeStolenVehicleCheckPage />} />
+        <Route path="/theftaz-alternative" element={<TheftAZAlternativePage />} />
+        <Route path="/carfax-alternative" element={<CarfaxAlternativePage />} />
 
-        {/* TOP 10 STATE VIN PAGES */}
+        {/* FLORIDA CITY PAGES */}
+        <Route path="/florida/miami-license-plate-lookup" element={<MiamiLicensePlateLookupPage />} />
+        <Route path="/florida/jacksonville-license-plate-lookup" element={<JacksonvilleLicensePlateLookupPage />} />
+        <Route path="/florida/orlando-license-plate-lookup" element={<OrlandoLicensePlateLookupPage />} />
+        <Route path="/florida/tampa-license-plate-lookup" element={<TampaLicensePlateLookupPage />} />
+        <Route path="/florida/destin-license-plate-lookup" element={<DestinLicensePlateLookupPage />} />
+
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
         <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
         <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />

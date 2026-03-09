@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const IMEICheckerPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free IMEI Checker App - Verify Phone Not Stolen"
-      metaDescription="Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, GSMA database. Better than CheckMEND."
-      h1="Free IMEI Checker - The ONLY Mobile App"
+      title="Free IMEI Check — Is This Phone Stolen or Blacklisted? | SafeOrStolen"
+      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks GSMA, AT&T, Verizon, T-Mobile carrier blacklists, and FBI NCIC simultaneously. Results in 3 seconds."
+      h1="Free IMEI Check — Stolen & Blacklist Verification"
       itemType="Phone"
       keywords={[
         'IMEI checker app',
