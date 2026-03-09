@@ -88,7 +88,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
           "name": `How much does the ${stateData.name} license plate lookup cost?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $1/month. Check any ${stateData.abbrev} vehicle against NICB and 100+ databases.`
+            "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $2.99/month. Or pay $0.99 per check. Check any ${stateData.abbrev} vehicle against NICB and 100+ databases.`
           }
         },
         {
