@@ -112,7 +112,7 @@ const FAQS = [
   { q: 'What if my item comes back as FLAGGED?', a: 'Do not sell the item. Contact your local police with the verification report. If you purchased the item legitimately, file a police report and contact the original seller. Our report provides the evidence law enforcement needs.' },
   { q: 'Where can I use the badge?', a: 'Anywhere you sell: Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform. The badge is an image and the report is a URL — works everywhere.' },
   { q: 'What platforms accept verified badges?', a: 'All of them. The badge is a standard image file and the verification report is a URL. Any platform that allows images or links in listings supports SafeOrStolen badges.' },
-  { q: 'What\'s included in the plan?', a: '$1/month gets you unlimited verifications, unlimited badges, seller profile, verification history, PDF certificates, and priority support. Cancel anytime.' },
+  { q: 'What\'s included in the plan?', a: '$2.99/month gets you unlimited verifications, unlimited badges, seller profile, verification history, PDF certificates, and priority support. Cancel anytime.' },
   { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your dashboard anytime. Your subscription continues until the end of the billing period. No cancellation fees.' },
 ];
 
