@@ -197,7 +197,7 @@ const HowToSellVerifiedItems = () => {
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-6 my-8">
               {[
-                { q: 'How much does seller verification cost?', a: 'SafeOrStolen offers unlimited verifications for $1/month. All item types included. Cancel anytime.' },
+                { q: 'How much does seller verification cost?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included. Cancel anytime.' },
                 { q: 'Do verified listings really sell faster?', a: 'Yes. Verified listings remove buyer doubt, resulting in fewer lowball offers and faster sales. Sellers report 15-30% higher prices and 3x faster sale times.' },
                 { q: 'What do buyers see when they click my verification link?', a: 'Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy.' },
                 { q: 'Does this work on all marketplaces?', a: 'Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform.' },
