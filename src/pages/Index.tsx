@@ -230,7 +230,7 @@ const Index = () => {
           </div>
 
           <p className="text-muted-foreground text-sm">
-            🔓 Unlock unlimited verifications — just $1/month →{' '}
+            🔓 Unlock unlimited verifications — $2.99/month →{' '}
             <Link to="/pricing" className="text-primary underline font-semibold">See Pricing</Link>
           </p>
           <p className="text-muted-foreground/60 text-xs mt-1">
