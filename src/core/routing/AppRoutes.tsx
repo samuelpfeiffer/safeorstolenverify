@@ -261,6 +261,11 @@ const FacebookMarketplaceScamsGuide = lazy(() => import('@/pages/blog/FacebookMa
 const CheckIfPhoneStolenGuide = lazy(() => import('@/pages/blog/CheckIfPhoneStolenGuide'));
 const PS5StolenCheckGuide = lazy(() => import('@/pages/blog/PS5StolenCheckGuide'));
 const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
+const GunSerialNumberCheckGuide = lazy(() => import('@/pages/blog/GunSerialNumberCheckGuide'));
+const ATFGunSerialNumberCheckGuide = lazy(() => import('@/pages/blog/ATFGunSerialNumberCheckGuide'));
+const HotGunzDatabaseGuide = lazy(() => import('@/pages/blog/HotGunzDatabaseGuide'));
+const StateStolenGunDatabaseGuide = lazy(() => import('@/pages/blog/StateStolenGunDatabaseGuide'));
+const GunShowSerialNumberCheckGuide = lazy(() => import('@/pages/blog/GunShowSerialNumberCheckGuide'));
 
 // Florida City License Plate Pages
 const MiamiLicensePlateLookupPage = lazy(() => import('@/pages/florida/MiamiLicensePlateLookupPage'));
