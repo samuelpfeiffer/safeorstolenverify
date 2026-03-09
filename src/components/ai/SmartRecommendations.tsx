@@ -109,7 +109,7 @@ function generateRecommendations(
       icon: '✅',
       title: 'Selling This Item? Get a Verified Badge',
       description: 'Generate a shareable verification certificate to build buyer trust and sell faster.',
-      cta: 'Get Badge — $1/mo',
+      cta: 'Get Badge — $2.99/mo',
       action: 'navigate',
       target: '/for-sellers',
       priority: 2,

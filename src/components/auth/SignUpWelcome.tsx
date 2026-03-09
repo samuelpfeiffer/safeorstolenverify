@@ -98,7 +98,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
             <div className="bg-sos-lime/10 border border-sos-lime/20 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center gap-2">
                 <Zap className="h-5 w-5 text-sos-lime" />
-                $1/Month Unlimited Plan Includes:
+                $2.99/Month Unlimited Plan Includes:
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">

@@ -48,7 +48,7 @@ const VINCheckerPage = () => {
           },
           {
             question: "Is SafeOrStolen's VIN check really free?",
-            answer: "SafeOrStolen offers unlimited VIN checks for $1/month. Unlike Carfax ($44.99 per report) or AutoCheck ($24.99), we focus specifically on theft verification and provide access to NICB and law enforcement databases."
+            answer: "SafeOrStolen offers 2 free VIN checks, then $0.99/check or $2.99/month unlimited. Unlike Carfax ($44.99 per report) or AutoCheck ($24.99), we focus specifically on theft verification and provide access to NICB and law enforcement databases."
           },
           {
             question: "What's the difference between SafeOrStolen and Carfax?",

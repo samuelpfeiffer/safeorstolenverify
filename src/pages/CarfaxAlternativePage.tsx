@@ -195,7 +195,7 @@ const CarfaxAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How much does Carfax cost vs SafeOrStolen?</summary>
-                <p className="text-muted-foreground mt-2">Carfax: $39.99-$99.99. SafeOrStolen: 2 free, then $1/month unlimited for all item types. For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification.</p>
+                <p className="text-muted-foreground mt-2">Carfax: $39.99-$99.99. SafeOrStolen: 2 free, then $2.99/month unlimited for all item types. For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification.</p>
               </details>
             </div>
           </section>

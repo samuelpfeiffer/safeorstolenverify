@@ -87,7 +87,7 @@ export const validatePriceIds = (): StripeHealthIssue[] => {
       severity: 'warning',
       component: 'Pricing',
       message: 'Old price ID detected in code',
-      fix: 'Update to $1/mo unlimited price ID: price_1T77b7GxnZLw8J7OYB4jBGRB'
+      fix: 'Update to new price IDs: $0.99/check price_1T8uNDGxnZLw8J7OrBKrbePR or $2.99/mo price_1T8uToGxnZLw8J7O6GcOuV1w'
     });
   }
   

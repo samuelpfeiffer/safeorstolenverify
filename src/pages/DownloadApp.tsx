@@ -443,7 +443,7 @@ const DownloadApp = () => {
                   <h3 className="font-bold text-lg mb-2">Is the SafeOrStolen app really free to download?</h3>
                   <p className="text-muted-foreground">
                     Yes! The app is completely free to download and install. Unlimited verifications are available 
-                    for just $1/month. Cancel anytime with a 30-day money-back guarantee.
+                    for $0.99/check or $2.99/month unlimited. Cancel anytime with a 30-day money-back guarantee.
                   </p>
                 </CardContent>
               </Card>
