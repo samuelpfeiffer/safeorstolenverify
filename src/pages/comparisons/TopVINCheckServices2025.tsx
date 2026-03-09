@@ -210,7 +210,7 @@ const TopVINCheckServices2025 = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/pricing">Subscribe — $1/mo Unlimited</Link>
+                  <Link to="/pricing">Subscribe — $2.99/mo Unlimited</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#comparison">See Full Comparison</a>
