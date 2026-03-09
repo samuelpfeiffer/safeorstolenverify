@@ -102,7 +102,7 @@ const TESTIMONIALS = [
     role: 'Used Car Buyer, Houston TX',
     quote: 'Ran the VIN on a Craigslist Honda Civic before I drove 2 hours to look at it. Came back salvage title. Saved me from a $12,000 disaster.',
     stars: 5,
-    plan: 'Pro Plan',
+    plan: 'Unlimited Plan',
   },
   {
     name: 'James R.',
