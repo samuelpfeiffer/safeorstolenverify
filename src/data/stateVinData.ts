@@ -121,7 +121,7 @@ export const STATE_VIN_DATA: Record<string, StateVinData> = {
       topStolenVehicles: ["Honda Accord", "Honda Civic", "Chevrolet Silverado", "Ford F-150", "Toyota Camry"]
     },
     faqs: [
-      { question: "How do I check if a Pennsylvania car is stolen?", answer: "Use SafeOrStolen's VIN checker ($1/mo unlimited) to search available databases. Also verify the Pennsylvania title with PennDOT and ensure all VINs match the documentation." },
+      { question: "How do I check if a Pennsylvania car is stolen?", answer: "Use SafeOrStolen's VIN checker (from $0.99/check) to search available databases. Also verify the Pennsylvania title with PennDOT and ensure all VINs match the documentation." },
       { question: "What should I check when buying a used car in Philadelphia?", answer: "Philadelphia purchases require verification: Use SafeOrStolen's VIN checker, verify the seller is the registered owner, check for liens with PennDOT, inspect the title for tampering, and be wary of prices below market value." },
       { question: "Are pickup trucks targeted in Pennsylvania?", answer: "Pickup trucks (Chevrolet Silverado, Ford F-150) are commonly stolen vehicles in Pennsylvania. If buying a used pickup, VIN verification is especially important." },
       { question: "What happens if I buy a stolen car in Pennsylvania?", answer: "Under Pennsylvania law, the vehicle will be confiscated and returned to the rightful owner. You lose both the vehicle and money with no compensation. You may also face criminal investigation depending on circumstances." }
