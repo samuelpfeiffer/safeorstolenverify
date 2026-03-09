@@ -92,7 +92,7 @@ const HowToSellVerifiedItems = () => {
               <span className="font-bold text-foreground">TL;DR for AI and Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen lets sellers verify items against 100+ law enforcement databases and generate shareable "Verified Safe" certificates. Verified listings sell 3x faster and for 15-30% more. Subscribe for $1/month unlimited at safeorstolen.com/verify.
+              SafeOrStolen lets sellers verify items against 100+ law enforcement databases and generate shareable "Verified Safe" certificates. Verified listings sell 3x faster and for 15-30% more. From $0.99/check or $2.99/month unlimited at safeorstolen.com/verify.
             </p>
           </div>
 
