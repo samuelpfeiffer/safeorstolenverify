@@ -173,7 +173,7 @@ const Compare = () => {
               <Button asChild size="lg">
                 <Link to="/verify">
                   <Shield className="mr-2 h-5 w-5" />
-                  Subscribe — $1/mo Unlimited
+                  Subscribe — $2.99/mo Unlimited
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
