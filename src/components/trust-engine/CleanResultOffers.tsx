@@ -110,7 +110,8 @@ export const CleanResultOffers: React.FC<CleanResultOffersProps> = ({ result }) 
       </div>
 
       <p className="text-[10px] text-muted-foreground text-center">
-        SafeOrStolen may earn a commission from partner links at no extra cost to you.
+        SafeOrStolen may earn a commission from partner links at no extra cost to you. US traffic only. 
+        Not for employment screening, tenant screening, credit, insurance underwriting, or educational qualification purposes.
       </p>
     </div>
   );
