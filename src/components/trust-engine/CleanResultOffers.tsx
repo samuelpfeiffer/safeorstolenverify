@@ -25,7 +25,7 @@ const OFFERS_BY_TYPE: Record<string, OfferCard[]> = {
     { icon: <Wrench className="w-5 h-5" />, title: 'Extended Warranty', description: 'Protect your verified vehicle with an extended warranty plan.', cta: 'Get Quote →', link: '/go/vehicle-warranty' },
   ],
   bicycle: [
-    { icon: <Bike className="w-5 h-5" />, title: 'Register Your Bike', description: 'Register on BikeIndex for free — if it\'s ever stolen, you\'ll have proof of ownership.', cta: 'Register Free →', link: '/go/bike-register' },
+    { icon: <Bike className="w-5 h-5" />, title: 'Register Your Bike', description: 'Register on BikeIndex — if it\'s ever stolen, you\'ll have proof of ownership.', cta: 'Register Now →', link: '/go/bike-register' },
     { icon: <Shield className="w-5 h-5" />, title: 'Bicycle Insurance', description: 'Theft, damage & liability coverage for your verified bike.', cta: 'Get Covered →', link: '/go/bike-insurance' },
   ],
   firearm: [
@@ -110,7 +110,8 @@ export const CleanResultOffers: React.FC<CleanResultOffersProps> = ({ result }) 
       </div>
 
       <p className="text-[10px] text-muted-foreground text-center">
-        SafeOrStolen may earn a commission from partner links at no extra cost to you.
+        SafeOrStolen may earn a commission from partner links at no extra cost to you. US traffic only. 
+        Not for employment screening, tenant screening, credit, insurance underwriting, or educational qualification purposes.
       </p>
     </div>
   );

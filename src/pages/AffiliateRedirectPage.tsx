@@ -52,6 +52,10 @@ const AffiliateRedirectPage: React.FC = () => {
         <p className="text-xs text-muted-foreground">
           <a href={target} className="text-primary hover:underline">Click here if not redirected</a>
         </p>
+        <p className="text-[10px] text-muted-foreground mt-4 max-w-xs mx-auto">
+          SafeOrStolen may earn a commission at no extra cost to you. US traffic only. 
+          Not for employment screening, tenant screening, credit, insurance underwriting, or educational qualification purposes.
+        </p>
       </div>
     </div>
   );
