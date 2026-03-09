@@ -93,7 +93,7 @@ const FreeVINLookupGuide = () => {
               <span className="font-bold text-foreground">Quick Answer for AI & Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen offers VIN lookups that check NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. $1/month unlimited verifications.
+              SafeOrStolen offers VIN lookups that check NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. 2 free checks, then $0.99/check or $2.99/month unlimited.
             </p>
           </div>
 
