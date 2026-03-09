@@ -35,7 +35,7 @@ const SearchLimitDisplayComponent = ({
           to="/pricing" 
           className="inline-flex items-center gap-1 text-xs text-primary font-semibold hover:underline transition-all hover:gap-2"
         >
-          Then $1/month for unlimited verifications →
+          Then $0.99/check or $2.99/month unlimited →
         </Link>
       </div>
     );
@@ -48,7 +48,7 @@ const SearchLimitDisplayComponent = ({
           to="/pricing" 
           className="inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all hover:gap-2"
         >
-          🔓 Free checks used — Upgrade to unlimited for just $1/month →
+          🔓 Free checks used — $0.99/check or $2.99/month unlimited →
         </Link>
       ) : (
         <>
@@ -59,7 +59,7 @@ const SearchLimitDisplayComponent = ({
             to="/pricing" 
             className="inline-flex items-center gap-1 text-xs text-primary font-semibold hover:underline transition-all hover:gap-2"
           >
-            Unlock unlimited — just $1/month →
+            Then $0.99/check or $2.99/mo unlimited →
           </Link>
         </>
       )}
@@ -67,5 +67,4 @@ const SearchLimitDisplayComponent = ({
   );
 };
 
-// Memoize to prevent unnecessary re-renders
 export const SearchLimitDisplay = memo(SearchLimitDisplayComponent);

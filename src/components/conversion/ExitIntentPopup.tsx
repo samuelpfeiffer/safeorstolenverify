@@ -12,11 +12,6 @@ export const ExitIntentPopup = () => {
   const { user } = useUnifiedAuth();
 
   useEffect(() => {
-    // Only show if:
-    // 1. User hasn't seen it yet this session
-    // 2. User has used at least 1 free search
-    // 3. User hasn't subscribed
-    
     const handleMouseLeave = (e: MouseEvent) => {
       if (
         !hasShown && 
@@ -24,7 +19,6 @@ export const ExitIntentPopup = () => {
         !window.location.pathname.includes('/pricing') &&
         !window.location.pathname.includes('/checkout')
       ) {
-        // Show popup after mouse leaves
         setIsVisible(true);
         setHasShown(true);
       }
@@ -72,7 +66,7 @@ export const ExitIntentPopup = () => {
             <div className="flex items-start gap-3">
               <Zap className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-sm">Unlimited Verifications — $1/mo</p>
+                <p className="font-semibold text-sm">$0.99/check or $2.99/mo unlimited</p>
                 <p className="text-xs text-muted-foreground">All items, all databases, cancel anytime</p>
               </div>
             </div>
@@ -91,7 +85,7 @@ export const ExitIntentPopup = () => {
               size="lg"
               className="w-full bg-gradient-to-r from-sos-orange to-sos-lime text-white font-bold"
             >
-              Subscribe — $1/mo Unlimited
+              View Plans — From $0.99
             </Button>
             
             <Button

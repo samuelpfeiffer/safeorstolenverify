@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, Lock, Loader2, Star, TrendingUp } from 'lucide-react';
+import { Shield, CheckCircle, Lock, Loader2, Star, TrendingUp, CreditCard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { redirectToStripe } from '@/utils/stripeRedirect';
+import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -17,10 +18,10 @@ interface PaywallModalProps {
 export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearches }: PaywallModalProps) => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<string | null>(null);
 
-  const handleDirectCheckout = async () => {
-    setIsLoading(true);
+  const handleCheckout = async (priceId: string, planName: string, isSubscription: boolean) => {
+    setIsLoading(priceId);
     
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -33,8 +34,9 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
 
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          planName: 'Unlimited Plan',
-          isSubscription: true,
+          priceId,
+          planName,
+          isSubscription,
           redirectUrl: 'https://safeorstolen.com'
         },
         headers: {
@@ -54,7 +56,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
         description: err.message || 'Failed to start checkout. Please try again.',
         variant: 'destructive'
       });
-      setIsLoading(false);
+      setIsLoading(null);
     }
   };
 
@@ -71,42 +73,42 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
             🔒 Don't Risk Buying Stolen Goods
           </DialogTitle>
           <DialogDescription className="text-center text-base">
-            You've used your {maxFreeSearches} free checks. Continue protecting yourself from scams and legal trouble.
+            You've used your {maxFreeSearches} free checks. Continue for $0.99/check or go unlimited.
           </DialogDescription>
         </DialogHeader>
 
-        {/* Social Proof Banner */}
+        {/* Social Proof */}
         <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 flex items-center gap-2 justify-center">
           <TrendingUp className="h-4 w-4 text-accent" />
           <span className="text-sm font-medium">5,000+ items verified this week</span>
         </div>
 
-        <div className="space-y-4 mt-2">
+        <div className="space-y-3 mt-2">
           {/* Unlimited Plan Option */}
           <div 
             className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
-              isLoading 
+              isLoading === UNLIMITED_PRICE_ID
                 ? 'border-primary bg-primary/10 opacity-75' 
                 : 'border-primary bg-primary/5 hover:bg-primary/10 hover:scale-[1.02]'
             }`}
-            onClick={() => !isLoading && handleDirectCheckout()}
+            onClick={() => !isLoading && handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)}
           >
             <div className="flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-lg">Unlimited Plan</span>
+                  <span className="font-bold text-lg">Unlimited</span>
                   <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs rounded-full font-semibold">
                     BEST VALUE
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">Unlimited checks • All item types</p>
+                <p className="text-sm text-muted-foreground">Unlimited checks • Seller badges • Cancel anytime</p>
               </div>
               <div className="text-right">
-                {isLoading ? (
+                {isLoading === UNLIMITED_PRICE_ID ? (
                   <Loader2 className="h-6 w-6 animate-spin text-primary" />
                 ) : (
                   <>
-                    <div className="text-2xl font-bold text-primary">$1</div>
+                    <div className="text-2xl font-bold text-primary">$2.99</div>
                     <div className="text-xs text-muted-foreground">/month</div>
                   </>
                 )}
@@ -115,21 +117,44 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
             <ul className="mt-3 space-y-1 text-sm">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-accent" />
-                <span><strong>Unlimited</strong> verifications per month</span>
+                <span><strong>Unlimited</strong> verifications</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-accent" />
-                All item types: phones, cars, bikes, tools & more
+                Seller verification badges included free
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-accent" />
-                IMEI, VIN, license plate & serial lookups
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-accent" />
-                PDF verification receipts & history
+                PDF receipts & full history
               </li>
             </ul>
+          </div>
+
+          {/* Pay Per Check Option */}
+          <div 
+            className={`p-4 border rounded-lg cursor-pointer transition-all ${
+              isLoading === PAY_PER_CHECK_PRICE_ID
+                ? 'border-border bg-muted/50 opacity-75'
+                : 'border-border hover:border-primary/40 hover:bg-muted/30'
+            }`}
+            onClick={() => !isLoading && handleCheckout(PAY_PER_CHECK_PRICE_ID, 'Pay Per Check', false)}
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="font-bold">Pay Per Check</span>
+                <p className="text-sm text-muted-foreground">One-time • No subscription</p>
+              </div>
+              <div className="text-right">
+                {isLoading === PAY_PER_CHECK_PRICE_ID ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <>
+                    <div className="text-xl font-bold">$0.99</div>
+                    <div className="text-xs text-muted-foreground">per check</div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* View All Plans */}
@@ -140,9 +165,9 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
               onClose();
               navigate('/pricing');
             }}
-            disabled={isLoading}
+            disabled={!!isLoading}
           >
-            Compare All Plans →
+            View All Plans →
           </Button>
         </div>
 

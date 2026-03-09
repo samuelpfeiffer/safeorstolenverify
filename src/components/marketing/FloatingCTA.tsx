@@ -9,7 +9,6 @@ export const FloatingCTA: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 50% of the page
       const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       setIsVisible(scrollPercent > 30 && !isDismissed);
     };
@@ -37,7 +36,7 @@ export const FloatingCTA: React.FC = () => {
           
           <div>
             <p className="font-semibold mb-1">Verify Before Buying</p>
-            <p className="text-sm opacity-90 mb-3">$1/mo unlimited verifications.</p>
+            <p className="text-sm opacity-90 mb-3">From $0.99/check or $2.99/mo unlimited.</p>
             
             <Button asChild size="sm" variant="secondary">
               <Link to="/verify">
