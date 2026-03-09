@@ -126,7 +126,7 @@ const ForConsumersPage = () => {
               <li><a href="/imei-checker">IMEI Checker</a></li>
               <li><a href="/vin-checker">VIN Checker</a></li>
               <li><a href="/app">Download Mobile App</a></li>
-              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
               <li><a href="/facebook-marketplace-safety">Facebook Marketplace Safety Guide</a></li>
             </ul>
             
