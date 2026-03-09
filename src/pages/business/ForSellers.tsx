@@ -151,9 +151,7 @@ export default function ForSellers() {
       "areaServed": "United States",
       "description": "Verify items before selling to prove legitimacy, build buyer trust, and command higher prices.",
       "offers": [
-        { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Per-listing badge" },
-        { "@type": "Offer", "price": "19.99", "priceCurrency": "USD", "description": "Verified Seller monthly" },
-        { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "description": "Premium Seller monthly" },
+        { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Unlimited monthly plan" },
       ],
       "dateModified": "2026-03-02"
     },
