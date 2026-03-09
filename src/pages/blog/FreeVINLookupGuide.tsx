@@ -189,7 +189,7 @@ const FreeVINLookupGuide = () => {
               Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen focuses specifically on stolen vehicle verification against law enforcement databases.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              For the most thorough pre-purchase check, use both: SafeOrStolen for theft verification ($1/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
+              For the most thorough pre-purchase check, use both: SafeOrStolen for theft verification ($0.99/check or $2.99/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">10 Red Flags When Buying a Used Vehicle</h2>
