@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const FloridaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Florida License Plate Lookup - Check FL Stolen Vehicle by Plate"
-      metaDescription="Free Florida license plate lookup. Check if a FL vehicle is stolen before buying. Verify against FLHSMV and law enforcement databases instantly."
-      h1="Florida License Plate Lookup - Check FL Vehicles"
+      title="Free Florida License Plate Lookup — Check if FL Vehicle is Stolen | SafeOrStolen"
+      metaDescription="Free Florida license plate lookup. Check any FL vehicle for theft status using FLHSMV, NICB, NCIC, and insurance databases. Works for Miami, Jacksonville, Orlando, Tampa, and all FL cities. Instant results."
+      h1="Free Florida License Plate Lookup"
       itemType="Vehicle"
       keywords={[
         'florida license plate lookup',

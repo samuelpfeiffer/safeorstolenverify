@@ -8,8 +8,8 @@ const FirearmsCheckPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Gun Serial Number Lookup — Is This Firearm Stolen? | SafeOrStolen"
-        description="Instantly check any firearm serial number against FBI NCIC, ATF records, HotGunz, and all 50 state databases. Free gun stolen check. Results in 3 seconds."
+        title="Free Gun Serial Number Lookup — Check if a Gun is Stolen | SafeOrStolen"
+        description="Look up any gun serial number free. Check ATF, FBI NCIC (7M+ stolen firearms), HotGunz (32K+), and all 50 state police databases. Instant results in 3 seconds. Verify before buying."
         canonical="/firearms-check"
       />
 

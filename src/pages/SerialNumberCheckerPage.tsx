@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const SerialNumberCheckerPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Serial Number Checker - Free Stolen Check"
-      metaDescription="Free serial number checker. Verify electronics, tools, jewelry aren't stolen. Instant check against law enforcement and pawn shop databases."
-      h1="Serial Number Checker - Verify Items Not Stolen"
+      title="Free Serial Number Lookup — Check if Item is Stolen | SafeOrStolen"
+      metaDescription="Free serial number checker for electronics, tools, cameras, gaming consoles. Search 100+ law enforcement and insurance databases to verify items are not stolen. Instant results."
+      h1="Free Serial Number Lookup — Stolen Item Check"
       itemType="Item"
       keywords={[
         'serial number checker',
