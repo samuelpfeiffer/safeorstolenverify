@@ -170,7 +170,7 @@ export const ItemLandingPageTemplate = ({
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
-        <section className="pt-24 pb-16 px-4">
+        <section className="pt-24 pb-16 px-4" style={{ minHeight: '60vh' }}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">

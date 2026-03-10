@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import sosLogo from '@/assets/sos-logo.png';
+// Logo served from /public to avoid JS bundle bloat (266KB PNG)
+const sosLogo = '/sos-logo.png';
 
 interface LogoProps {
   className?: string;
@@ -22,10 +23,15 @@ export const Logo: React.FC<LogoProps> = ({
   showText = false,
   linkTo = '/'
 }) => {
+  const sizePixels = { sm: 32, md: 40, lg: 56, xl: 80 };
+  const px = sizePixels[size];
+  
   const logoImage = (
     <img 
       src={sosLogo} 
       alt="SafeOrStolen Logo" 
+      width={px}
+      height={px}
       className={`${sizeClasses[size]} w-auto object-contain ${className}`}
     />
   );

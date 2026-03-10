@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
-import sosLogo from '@/assets/sos-logo.png';
+// Logo served from /public to avoid JS bundle bloat
+const sosLogo = '/sos-logo.png';
 
 const DATA_PARTNERS = [
   { name: 'NCIC (FBI)', verified: true },
@@ -70,10 +71,10 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-6">
                 <img 
                   src={sosLogo} 
-                  alt="SafeOrStolen - the only stolen verification app with barcode scanning for IMEI checker, VIN checker, serial number lookup - CheckMEND has no app" 
+                  alt="SafeOrStolen - the only stolen verification app with barcode scanning for IMEI checker, VIN checker, serial number lookup" 
+                  width={48}
+                  height={48}
                   className="h-12 w-12 filter drop-shadow-lg"
-                  width="48"
-                  height="48"
                   loading="lazy"
                 />
                 <div>

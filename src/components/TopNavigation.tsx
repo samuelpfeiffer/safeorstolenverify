@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import sosLogo from '@/assets/sos-logo.png';
+// Logo served from /public to avoid JS bundle bloat (266KB PNG)
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -47,9 +47,11 @@ const TopNavigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <img 
-              src={sosLogo} 
+              src="/sos-logo.png" 
               alt="SafeOrStolen Logo" 
-              className="h-9 w-auto transition-transform group-hover:scale-105"
+              width={36}
+              height={36}
+              className="h-9 w-9 transition-transform group-hover:scale-105"
             />
             <span className="text-lg font-bold tracking-tight text-foreground">
               SafeOrStolen
