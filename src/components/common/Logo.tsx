@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import sosLogo from '@/assets/sos-logo.png';
+// Logo served from /public to avoid JS bundle bloat (266KB PNG)
+const sosLogo = '/sos-logo.png';
 
 interface LogoProps {
   className?: string;
