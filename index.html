@@ -17,7 +17,10 @@
       @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:local('Inter');}
     </style>
     
-    <link rel="icon" href="/sos-logo.png" type="image/png">
+    <!-- Preload logo to prevent LCP delay -->
+    <link rel="preload" href="/sos-logo.png" as="image" type="image/png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
     
     <!-- Static SEO meta tags for crawlers that don't execute JS -->
     <meta name="description" content="Free stolen item verification. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds. The only service with marketplace URL analysis and a mobile app. Protect yourself from buying stolen goods.">
