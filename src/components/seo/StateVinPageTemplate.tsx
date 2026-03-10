@@ -113,7 +113,7 @@ export const StateVinPageTemplate = ({
           title={title}
           description={metaDescription}
           canonical={canonicalUrl}
-          keywords={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database, free ${state} VIN check`}
+          keywords={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database, ${state} VIN check 2026`}
           schemaJson={schema}
         />
 
