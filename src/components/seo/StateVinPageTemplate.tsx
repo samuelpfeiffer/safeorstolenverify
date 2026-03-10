@@ -70,7 +70,7 @@ export const StateVinPageTemplate = ({
           "name": state
         },
         "description": metaDescription,
-        "dateModified": "2026-03-08"
+        "dateModified": "2026-03-10"
       },
       {
         "@context": "https://schema.org",
@@ -97,7 +97,7 @@ export const StateVinPageTemplate = ({
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": `How to Check a ${state} VIN`,
-        "dateModified": "2026-03-08",
+        "dateModified": "2026-03-10",
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": `Locate the 17-character VIN on the ${state} vehicle's dashboard, driver-side door jamb, or title document.` },
           { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Enter the VIN into SafeOrStolen's verification tool on the verify page." },
@@ -113,7 +113,7 @@ export const StateVinPageTemplate = ({
           title={title}
           description={metaDescription}
           canonical={canonicalUrl}
-          keywords={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database, free ${state} VIN check`}
+          keywords={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database, ${state} VIN check 2026`}
           schemaJson={schema}
         />
 
@@ -124,7 +124,7 @@ export const StateVinPageTemplate = ({
               <nav><a href="/">SafeOrStolen</a> &gt; <a href="/vin-checker">VIN Checker</a> &gt; {state} VIN Lookup</nav>
             </header>
             <main>
-              <h1>{state} VIN Lookup - Free {stateCode} Stolen Vehicle Check</h1>
+              <h1>{state} VIN Lookup — {stateCode} Stolen Vehicle Check (2026)</h1>
               <p>{content.intro}</p>
               
               <h2>Why Verify {state} Vehicles?</h2>
@@ -136,7 +136,7 @@ export const StateVinPageTemplate = ({
               <h2>How to Check a {state} VIN</h2>
               <ol>
                 <li>Find the 17-character VIN on the vehicle dashboard, door jamb, or title.</li>
-                <li>Enter the VIN into SafeOrStolen's free verification tool.</li>
+                <li>Enter the VIN into SafeOrStolen's verification tool.</li>
                 <li>We check 100+ databases including NICB, NMVTIS, and {state} law enforcement records in 3 seconds.</li>
                 <li>Review stolen status, title history, and risk assessment before purchasing.</li>
               </ol>

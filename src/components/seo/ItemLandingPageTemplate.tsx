@@ -60,14 +60,14 @@ export const ItemLandingPageTemplate = ({
       "name": "Worldwide"
     },
     "description": metaDescription,
-    "dateModified": "2026-03-08"
+    "dateModified": "2026-03-10"
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": `How to Check if ${itemType} is Stolen`,
-    "dateModified": "2026-03-08",
+    "dateModified": "2026-03-10",
     "step": content.process.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
