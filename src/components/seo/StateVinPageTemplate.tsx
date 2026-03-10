@@ -97,7 +97,7 @@ export const StateVinPageTemplate = ({
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": `How to Check a ${state} VIN`,
-        "dateModified": "2026-03-08",
+        "dateModified": "2026-03-10",
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": `Locate the 17-character VIN on the ${state} vehicle's dashboard, driver-side door jamb, or title document.` },
           { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Enter the VIN into SafeOrStolen's verification tool on the verify page." },
