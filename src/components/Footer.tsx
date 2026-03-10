@@ -71,7 +71,9 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-6">
                 <img 
                   src={sosLogo} 
-                  alt="SafeOrStolen - the only stolen verification app with barcode scanning for IMEI checker, VIN checker, serial number lookup - CheckMEND has no app" 
+                  alt="SafeOrStolen - the only stolen verification app with barcode scanning for IMEI checker, VIN checker, serial number lookup" 
+                  width={48}
+                  height={48}
                   className="h-12 w-12 filter drop-shadow-lg"
                   width="48"
                   height="48"
