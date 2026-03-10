@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
-import sosLogo from '@/assets/sos-logo.png';
+// Logo served from /public to avoid JS bundle bloat
+const sosLogo = '/sos-logo.png';
 
 const DATA_PARTNERS = [
   { name: 'NCIC (FBI)', verified: true },
