@@ -23,10 +23,15 @@ export const Logo: React.FC<LogoProps> = ({
   showText = false,
   linkTo = '/'
 }) => {
+  const sizePixels = { sm: 32, md: 40, lg: 56, xl: 80 };
+  const px = sizePixels[size];
+  
   const logoImage = (
     <img 
       src={sosLogo} 
       alt="SafeOrStolen Logo" 
+      width={px}
+      height={px}
       className={`${sizeClasses[size]} w-auto object-contain ${className}`}
     />
   );

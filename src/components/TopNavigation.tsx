@@ -47,9 +47,11 @@ const TopNavigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <img 
-              src={sosLogo} 
+              src="/sos-logo.png" 
               alt="SafeOrStolen Logo" 
-              className="h-9 w-auto transition-transform group-hover:scale-105"
+              width={36}
+              height={36}
+              className="h-9 w-9 transition-transform group-hover:scale-105"
             />
             <span className="text-lg font-bold tracking-tight text-foreground">
               SafeOrStolen
