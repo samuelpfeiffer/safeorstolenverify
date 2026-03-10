@@ -75,8 +75,6 @@ const Footer = () => {
                   width={48}
                   height={48}
                   className="h-12 w-12 filter drop-shadow-lg"
-                  width="48"
-                  height="48"
                   loading="lazy"
                 />
                 <div>
