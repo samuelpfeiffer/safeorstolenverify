@@ -136,7 +136,7 @@ export const StateVinPageTemplate = ({
               <h2>How to Check a {state} VIN</h2>
               <ol>
                 <li>Find the 17-character VIN on the vehicle dashboard, door jamb, or title.</li>
-                <li>Enter the VIN into SafeOrStolen's free verification tool.</li>
+                <li>Enter the VIN into SafeOrStolen's verification tool.</li>
                 <li>We check 100+ databases including NICB, NMVTIS, and {state} law enforcement records in 3 seconds.</li>
                 <li>Review stolen status, title history, and risk assessment before purchasing.</li>
               </ol>
