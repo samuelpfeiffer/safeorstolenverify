@@ -281,6 +281,47 @@ export type Database = {
           },
         ]
       }
+      blog_post_embeddings: {
+        Row: {
+          chunk_index: number
+          content: string
+          created_at: string | null
+          embedding: string
+          id: string
+          metadata: Json | null
+          post_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          chunk_index: number
+          content: string
+          created_at?: string | null
+          embedding: string
+          id?: string
+          metadata?: Json | null
+          post_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          chunk_index?: number
+          content?: string
+          created_at?: string | null
+          embedding?: string
+          id?: string
+          metadata?: Json | null
+          post_id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_post_embeddings_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       blog_post_tags: {
         Row: {
           created_at: string
