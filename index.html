@@ -197,17 +197,24 @@
           var hasRobots = document.querySelector('meta[name="robots"]');
           var hasDescription = document.querySelector('meta[name="description"]');
           
-          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription) {
+          // CRITICAL: Also verify the canonical is NOT the generic homepage one
+          // (unless we're actually on the homepage). This prevents LovableHTML
+          // from snapshotting stale homepage meta on other pages.
+          var isHomepage = window.location.pathname === '/' || window.location.pathname === '';
+          var canonicalEl = document.querySelector('link[rel="canonical"]');
+          var canonicalIsCorrect = isHomepage || (canonicalEl && canonicalEl.getAttribute('href') && !canonicalEl.getAttribute('href').endsWith('.com/'));
+          
+          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription && canonicalIsCorrect) {
             window.prerenderReady = true;
             clearInterval(checkReady);
           }
         }, 100);
         
-        // Safety timeout - mark ready after 5 seconds regardless
+        // Safety timeout - increased to 12s to allow heavy pages (firearms-check: 5000+ words) to hydrate
         setTimeout(function() {
           window.prerenderReady = true;
           clearInterval(checkReady);
-        }, 5000);
+        }, 12000);
       });
     </script>
 </head>
