@@ -705,6 +705,33 @@ export type Database = {
           },
         ]
       }
+      gsc_checks: {
+        Row: {
+          created_at: string
+          id: string
+          metric: string
+          payload: Json
+          range_end: string | null
+          range_start: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          metric: string
+          payload?: Json
+          range_end?: string | null
+          range_start?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          metric?: string
+          payload?: Json
+          range_end?: string | null
+          range_start?: string | null
+        }
+        Relationships: []
+      }
       gsc_oauth_tokens: {
         Row: {
           access_token: string
