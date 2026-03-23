@@ -22,18 +22,14 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
     
-    <!-- Static SEO meta tags for crawlers that don't execute JS -->
-    <meta name="description" content="Free stolen item verification. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds. The only service with marketplace URL analysis and a mobile app. Protect yourself from buying stolen goods.">
+    <!-- 
+      CRITICAL: Do NOT put page-specific meta tags here (title, description, canonical, og:*, twitter:*).
+      They are managed per-page by React Helmet via SEOHead component.
+      Static tags here would conflict with Helmet and cause LovableHTML prerender 
+      to snapshot homepage meta on ALL pages, causing "Crawled - not indexed" in GSC.
+    -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta property="og:title" content="SafeOrStolen — Free Stolen Item Verification">
-    <meta property="og:description" content="Check if any secondhand item is stolen. Verify IMEI, VIN, serial numbers against 100+ law enforcement and insurance databases. 2 free checks, results in 3 seconds.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://safeorstolen.com">
     <meta property="og:site_name" content="SafeOrStolen">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SafeOrStolen — Free Stolen Item Verification">
-    <meta name="twitter:description" content="Verify if phones, cars, bikes, electronics, or firearms are stolen. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds.">
-    <link rel="canonical" href="https://safeorstolen.com/">
     
     <!-- Dynamic per-page SEO tags are managed by SEOHead component via react-helmet-async -->
     
