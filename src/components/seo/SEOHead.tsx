@@ -203,15 +203,15 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="citation_title" content={optimizedTitle} />
       <meta name="citation_public_url" content={canonicalUrl} />
       <meta name="citation_author" content="SafeOrStolen LLC" />
-      <meta name="citation_date" content="2026-03-02" />
+      <meta name="citation_date" content="2026-03-23" />
       
       {/* AI discovery file pointers */}
       <link rel="alternate" type="text/plain" href="https://safeorstolen.com/llms.txt" title="LLM Context" />
       <link rel="alternate" type="application/json" href="https://safeorstolen.com/identity.json" title="Organization Identity" />
       
       {/* Content freshness signal for AI systems */}
-      <meta property="article:modified_time" content="2026-03-02T00:00:00Z" />
-      <meta property="og:updated_time" content="2026-03-02T00:00:00Z" />
+      <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+      <meta property="og:updated_time" content="2026-03-23T00:00:00Z" />
       
       {/* JSON-LD Structured Data */}
       {allSchemas.map((schema, index) => (

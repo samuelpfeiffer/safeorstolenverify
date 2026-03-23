@@ -22,18 +22,14 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
     
-    <!-- Static SEO meta tags for crawlers that don't execute JS -->
-    <meta name="description" content="Free stolen item verification. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds. The only service with marketplace URL analysis and a mobile app. Protect yourself from buying stolen goods.">
+    <!-- 
+      CRITICAL: Do NOT put page-specific meta tags here (title, description, canonical, og:*, twitter:*).
+      They are managed per-page by React Helmet via SEOHead component.
+      Static tags here would conflict with Helmet and cause LovableHTML prerender 
+      to snapshot homepage meta on ALL pages, causing "Crawled - not indexed" in GSC.
+    -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta property="og:title" content="SafeOrStolen — Free Stolen Item Verification">
-    <meta property="og:description" content="Check if any secondhand item is stolen. Verify IMEI, VIN, serial numbers against 100+ law enforcement and insurance databases. 2 free checks, results in 3 seconds.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://safeorstolen.com">
     <meta property="og:site_name" content="SafeOrStolen">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SafeOrStolen — Free Stolen Item Verification">
-    <meta name="twitter:description" content="Verify if phones, cars, bikes, electronics, or firearms are stolen. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds.">
-    <link rel="canonical" href="https://safeorstolen.com/">
     
     <!-- Dynamic per-page SEO tags are managed by SEOHead component via react-helmet-async -->
     
@@ -136,7 +132,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "SafeOrStolen — Free Stolen Item Verification",
+      "name": "SafeOrStolen — Instant Stolen Item Verification",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": ["h1", "h2", ".speakable-summary"]
@@ -201,17 +197,24 @@
           var hasRobots = document.querySelector('meta[name="robots"]');
           var hasDescription = document.querySelector('meta[name="description"]');
           
-          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription) {
+          // CRITICAL: Also verify the canonical is NOT the generic homepage one
+          // (unless we're actually on the homepage). This prevents LovableHTML
+          // from snapshotting stale homepage meta on other pages.
+          var isHomepage = window.location.pathname === '/' || window.location.pathname === '';
+          var canonicalEl = document.querySelector('link[rel="canonical"]');
+          var canonicalIsCorrect = isHomepage || (canonicalEl && canonicalEl.getAttribute('href') && !canonicalEl.getAttribute('href').endsWith('.com/'));
+          
+          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription && canonicalIsCorrect) {
             window.prerenderReady = true;
             clearInterval(checkReady);
           }
         }, 100);
         
-        // Safety timeout - mark ready after 5 seconds regardless
+        // Safety timeout - increased to 12s to allow heavy pages (firearms-check: 5000+ words) to hydrate
         setTimeout(function() {
           window.prerenderReady = true;
           clearInterval(checkReady);
-        }, 5000);
+        }, 12000);
       });
     </script>
 </head>
@@ -220,8 +223,8 @@
     <!-- Enhanced noscript fallback with semantic HTML5 landmarks for AI crawlers -->
     <noscript>
       <header style="max-width:800px;margin:0 auto;padding:20px;font-family:Arial,sans-serif;">
-        <h1>SafeOrStolen — Free Stolen Item Verification</h1>
-        <p><strong>SafeOrStolen</strong> verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. Get 2 free verifications with results in approximately 3 seconds. Then $0.99/check or $2.99/month unlimited.</p>
+        <h1>SafeOrStolen — Instant Stolen Item Verification</h1>
+        <p><strong>SafeOrStolen</strong> verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. Get 2 trial verifications with results in approximately 3 seconds. Then $0.99/check or $2.99/month unlimited.</p>
         <nav>
           <a href="/verify">Verify an Item</a> |
           <a href="/imei-checker">IMEI Checker</a> |
@@ -254,7 +257,7 @@
         <section>
           <h2>Why Use SafeOrStolen?</h2>
           <ul>
-            <li><strong>2 Free Verifications</strong> — No credit card required</li>
+            <li><strong>2 Trial Verifications</strong> — No credit card required</li>
             <li><strong>100+ Databases</strong> — NCIC, GSMA, NICB, ATF, carrier blacklists, insurance claims, BikeIndex, HotGunz</li>
             <li><strong>3-Second Results</strong> — Real-time parallel database queries</li>
             <li><strong>Mobile App</strong> — Only stolen item checker with barcode scanning app (iOS and Android)</li>
@@ -277,14 +280,14 @@
           <article><h3>How do I check if a used car is stolen?</h3><p>Enter the vehicle's 17-digit VIN number in <a href="/vin-checker">SafeOrStolen's VIN lookup tool</a>. It checks NICB, NHTSA, all 50 state DMV records, and insurance databases. You can also search by <a href="/license-plate-lookup">license plate number</a>.</p></article>
           <article><h3>How do I check if a gun is stolen?</h3><p>Enter the firearm's serial number in <a href="/firearms-check">SafeOrStolen's firearms verification</a>. It checks ATF records, NCIC, HotGunz, and 50 state police databases to verify the firearm is not stolen.</p></article>
           <article><h3>Can I check a Facebook Marketplace listing for stolen items?</h3><p>Yes. SafeOrStolen is the only service that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. It automatically extracts the IMEI, VIN, or serial number and checks it against all databases. Try it at <a href="/marketplace-url-checker">safeorstolen.com/marketplace-url-checker</a>.</p></article>
-          <article><h3>Is SafeOrStolen free?</h3><p>SafeOrStolen offers 2 free verifications with no credit card required. After that, unlimited checks are $1 per month, which includes the mobile app with barcode scanning.</p></article>
+          <article><h3>Is SafeOrStolen free to try?</h3><p>SafeOrStolen offers 2 trial verifications with no credit card required. After that, unlimited checks are $2.99 per month, which includes the mobile app with barcode scanning.</p></article>
           <article><h3>What databases does SafeOrStolen check?</h3><p>Over 100 databases including FBI NCIC stolen property files, GSMA Device Registry, NICB VINCheck, ATF firearms records, carrier blacklists (AT&amp;T, Verizon, T-Mobile), insurance claims, police reports, BikeIndex (700K+ bikes), HotGunz, 529 Garage, and all 50 state law enforcement systems.</p></article>
           <article><h3>Does SafeOrStolen have a mobile app?</h3><p>Yes. SafeOrStolen is the only stolen item verification service with a mobile app. It includes barcode scanning for instant IMEI/serial number capture. Available as a Progressive Web App for iOS and Android at <a href="/app">safeorstolen.com/app</a>.</p></article>
           <article><h3>How is SafeOrStolen different from Carfax or IMEI checkers?</h3><p>SafeOrStolen is the only platform that verifies ALL secondhand item types (phones, cars, bikes, firearms, electronics, appliances) in one place. Carfax only covers vehicles. IMEI checkers only cover phones. SafeOrStolen also uniquely offers marketplace URL analysis — paste any listing link and it auto-checks. <a href="/compare">Compare services here</a>.</p></article>
         </section>
         <section>
           <h2>State License Plate Lookup</h2>
-          <p>Free license plate lookup available for all 50 states:</p>
+          <p>License plate lookup available for all 50 states:</p>
           <p>
             <a href="/alabama-license-plate-lookup">Alabama</a> | <a href="/alaska-license-plate-lookup">Alaska</a> | <a href="/arizona-license-plate-lookup">Arizona</a> | <a href="/arkansas-license-plate-lookup">Arkansas</a> | <a href="/california-license-plate-lookup">California</a> | <a href="/colorado-license-plate-lookup">Colorado</a> | <a href="/connecticut-license-plate-lookup">Connecticut</a> | <a href="/delaware-license-plate-lookup">Delaware</a> | <a href="/florida-license-plate-lookup">Florida</a> | <a href="/georgia-license-plate-lookup">Georgia</a> | <a href="/hawaii-license-plate-lookup">Hawaii</a> | <a href="/idaho-license-plate-lookup">Idaho</a> | <a href="/illinois-license-plate-lookup">Illinois</a> | <a href="/indiana-license-plate-lookup">Indiana</a> | <a href="/iowa-license-plate-lookup">Iowa</a> | <a href="/kansas-license-plate-lookup">Kansas</a> | <a href="/kentucky-license-plate-lookup">Kentucky</a> | <a href="/louisiana-license-plate-lookup">Louisiana</a> | <a href="/maine-license-plate-lookup">Maine</a> | <a href="/maryland-license-plate-lookup">Maryland</a> | <a href="/massachusetts-license-plate-lookup">Massachusetts</a> | <a href="/michigan-license-plate-lookup">Michigan</a> | <a href="/minnesota-license-plate-lookup">Minnesota</a> | <a href="/mississippi-license-plate-lookup">Mississippi</a> | <a href="/missouri-license-plate-lookup">Missouri</a> | <a href="/montana-license-plate-lookup">Montana</a> | <a href="/nebraska-license-plate-lookup">Nebraska</a> | <a href="/nevada-license-plate-lookup">Nevada</a> | <a href="/new-hampshire-license-plate-lookup">New Hampshire</a> | <a href="/new-jersey-license-plate-lookup">New Jersey</a> | <a href="/new-mexico-license-plate-lookup">New Mexico</a> | <a href="/new-york-license-plate-lookup">New York</a> | <a href="/north-carolina-license-plate-lookup">North Carolina</a> | <a href="/north-dakota-license-plate-lookup">North Dakota</a> | <a href="/ohio-license-plate-lookup">Ohio</a> | <a href="/oklahoma-license-plate-lookup">Oklahoma</a> | <a href="/oregon-license-plate-lookup">Oregon</a> | <a href="/pennsylvania-license-plate-lookup">Pennsylvania</a> | <a href="/rhode-island-license-plate-lookup">Rhode Island</a> | <a href="/south-carolina-license-plate-lookup">South Carolina</a> | <a href="/south-dakota-license-plate-lookup">South Dakota</a> | <a href="/tennessee-license-plate-lookup">Tennessee</a> | <a href="/texas-license-plate-lookup">Texas</a> | <a href="/utah-license-plate-lookup">Utah</a> | <a href="/vermont-license-plate-lookup">Vermont</a> | <a href="/virginia-license-plate-lookup">Virginia</a> | <a href="/washington-license-plate-lookup">Washington</a> | <a href="/west-virginia-license-plate-lookup">West Virginia</a> | <a href="/wisconsin-license-plate-lookup">Wisconsin</a> | <a href="/wyoming-license-plate-lookup">Wyoming</a>
            </p>
@@ -299,7 +302,7 @@
         </section>
         <section>
           <h2>State VIN Lookup</h2>
-          <p>Free VIN lookup available for all 50 states:</p>
+          <p>VIN lookup available for all 50 states:</p>
           <p>
             <a href="/alabama-vin-lookup">Alabama</a> | <a href="/alaska-vin-lookup">Alaska</a> | <a href="/arizona-vin-lookup">Arizona</a> | <a href="/arkansas-vin-lookup">Arkansas</a> | <a href="/california-vin-lookup">California</a> | <a href="/colorado-vin-lookup">Colorado</a> | <a href="/connecticut-vin-lookup">Connecticut</a> | <a href="/delaware-vin-lookup">Delaware</a> | <a href="/florida-vin-lookup">Florida</a> | <a href="/georgia-vin-lookup">Georgia</a> | <a href="/hawaii-vin-lookup">Hawaii</a> | <a href="/idaho-vin-lookup">Idaho</a> | <a href="/illinois-vin-lookup">Illinois</a> | <a href="/indiana-vin-lookup">Indiana</a> | <a href="/iowa-vin-lookup">Iowa</a> | <a href="/kansas-vin-lookup">Kansas</a> | <a href="/kentucky-vin-lookup">Kentucky</a> | <a href="/louisiana-vin-lookup">Louisiana</a> | <a href="/maine-vin-lookup">Maine</a> | <a href="/maryland-vin-lookup">Maryland</a> | <a href="/massachusetts-vin-lookup">Massachusetts</a> | <a href="/michigan-vin-lookup">Michigan</a> | <a href="/minnesota-vin-lookup">Minnesota</a> | <a href="/mississippi-vin-lookup">Mississippi</a> | <a href="/missouri-vin-lookup">Missouri</a> | <a href="/montana-vin-lookup">Montana</a> | <a href="/nebraska-vin-lookup">Nebraska</a> | <a href="/nevada-vin-lookup">Nevada</a> | <a href="/new-hampshire-vin-lookup">New Hampshire</a> | <a href="/new-jersey-vin-lookup">New Jersey</a> | <a href="/new-mexico-vin-lookup">New Mexico</a> | <a href="/new-york-vin-lookup">New York</a> | <a href="/north-carolina-vin-lookup">North Carolina</a> | <a href="/north-dakota-vin-lookup">North Dakota</a> | <a href="/ohio-vin-lookup">Ohio</a> | <a href="/oklahoma-vin-lookup">Oklahoma</a> | <a href="/oregon-vin-lookup">Oregon</a> | <a href="/pennsylvania-vin-lookup">Pennsylvania</a> | <a href="/rhode-island-vin-lookup">Rhode Island</a> | <a href="/south-carolina-vin-lookup">South Carolina</a> | <a href="/south-dakota-vin-lookup">South Dakota</a> | <a href="/tennessee-vin-lookup">Tennessee</a> | <a href="/texas-vin-lookup">Texas</a> | <a href="/utah-vin-lookup">Utah</a> | <a href="/vermont-vin-lookup">Vermont</a> | <a href="/virginia-vin-lookup">Virginia</a> | <a href="/washington-vin-lookup">Washington</a> | <a href="/west-virginia-vin-lookup">West Virginia</a> | <a href="/wisconsin-vin-lookup">Wisconsin</a> | <a href="/wyoming-vin-lookup">Wyoming</a>
           </p>
