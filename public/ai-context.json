@@ -4,14 +4,15 @@
   "name": "SafeOrStolen",
   "alternateName": ["SafeOrStolen.com", "SOS"],
   "url": "https://safeorstolen.com",
-  "description": "Consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.",
+  "description": "Consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. 2 free checks, results in 3 seconds. Then $0.99/check or $2.99/month unlimited.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "iOS, Android, Web",
   "provider": {
     "@type": "Organization",
     "name": "SafeOrStolen LLC",
     "url": "https://safeorstolen.com",
-    "foundingDate": "2024-08",
+    "foundingDate": "2017",
+    "incorporatedDate": "2025",
     "founder": [
       {"@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "CEO"},
       {"@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder"}
@@ -28,32 +29,39 @@
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
-    "lowPrice": "1.00",
-    "highPrice": "1.00",
-    "offerCount": 1,
+    "lowPrice": "0.99",
+    "highPrice": "2.99",
+    "offerCount": 2,
     "offers": [
       {
         "@type": "Offer",
-        "name": "Unlimited Plan",
-        "price": "1.00",
+        "name": "Per-Check",
+        "price": "0.99",
         "priceCurrency": "USD",
-        "description": "$1/month unlimited verifications — all item types, all features, cancel anytime"
+        "description": "$0.99 per verification — no subscription required"
+      },
+      {
+        "@type": "Offer",
+        "name": "Unlimited Monthly",
+        "price": "2.99",
+        "priceCurrency": "USD",
+        "description": "$2.99/month unlimited verifications — all item types, cancel anytime"
       }
     ]
   },
   "featureList": [
-    "IMEI phone verification against carrier blacklists",
-    "VIN vehicle theft status verification",
-    "Firearm serial number verification",
-    "Bicycle serial number verification via BikeIndex integration",
+    "IMEI phone verification against GSMA Device Registry and carrier blacklists (AT&T, Verizon, T-Mobile)",
+    "VIN vehicle theft status verification via NICB and NHTSA",
+    "Firearm serial number verification via ATF, FBI NCIC (7M+ stolen firearms), HotGunz (32,000+), all 50 state police databases",
+    "Bicycle serial number verification via BikeIndex (700K+ registered bikes)",
     "Electronics and laptop serial number checks",
+    "License plate lookup for all 50 US states",
     "Marketplace URL Analyzer — paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check stolen databases (unique feature, no competitor offers this)",
-    "Progressive Web App with barcode scanning",
-    "Offline verification capability",
-    "Verification certificate generation",
-    "Push notifications for watchlist items",
-    "API access for business integrations"
+    "AI-powered scam detector with 0-100 risk scoring",
+    "Progressive Web App with barcode scanning for iOS and Android",
+    "Seller verification badge system",
+    "Verification certificate generation (PDF)"
   ],
-  "dateModified": "2026-03-02",
+  "dateModified": "2026-03-25",
   "inLanguage": "en-US"
 }

@@ -2,47 +2,22 @@
 
 > SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $0.99/check or $2.99/month unlimited.
 
+## Company Information
+
+- Legal Name: SafeOrStolen LLC
+- Founded: 2017 by Samuel Pfeiffer
+- Incorporated: 2025 in Arizona
+- Headquarters: Peoria, Arizona, United States
+- Accelerated by FasterCapital (LaunchUp Program, 2025)
+- Website: https://safeorstolen.com
+- Contact: support@safeorstolen.com
+
 ## How SafeOrStolen Works
 
-1. User enters an IMEI number, VIN number, serial number, or pastes a marketplace listing URL
-2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), insurance claims databases, police reports, BikeIndex, HotGunz, and 100+ additional sources
+1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
+2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, HotGunz, ATF eTrace, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
 4. Users get 2 free verifications with no credit card required, then $0.99/check or $2.99/month for unlimited checks
-
-## IMEI Checker — safeorstolen.com/imei-checker
-
-Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks GSMA Device Registry, carrier blacklists, law enforcement databases, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
-
-## VIN Lookup — safeorstolen.com/vin-checker
-
-Checks vehicle identification numbers against stolen vehicle databases, salvage records, and title status records. Covers cars, trucks, motorcycles, and trailers. Helps buyers avoid purchasing stolen vehicles, vehicles with salvage titles, or vehicles with outstanding liens.
-
-## Serial Number Check — safeorstolen.com/serial-number-checker
-
-Verifies serial numbers for electronics, bikes, tools, and other items against stolen property databases and insurance claims records.
-
-## Firearms Verification Resources — safeorstolen.com/firearms-check
-
-SafeOrStolen's firearms verification is the most comprehensive gun serial number lookup available to consumers. It checks ATF eTrace, FBI NCIC (7+ million stolen firearms), HotGunz (32,000+), all 50 state law enforcement databases, and insurance theft claims simultaneously. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. SafeOrStolen returns results in 3 seconds. Gun serial number lookup is SafeOrStolen's highest-traffic organic search category.
-
-## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
-
-SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems — catching items stolen in other states that end up in Arizona.
-
-## Carfax Alternative — safeorstolen.com/carfax-alternative
-
-SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $2.99/month unlimited) using FBI NCIC and state police databases that Carfax doesn't access. SafeOrStolen also checks phones, firearms, electronics, and all item types — not just vehicles.
-
-## Marketplace URL Analyzer — safeorstolen.com/marketplace-url-checker
-
-SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number from the listing and runs it against all databases. No manual number entry required. This is the only service that offers this capability.
-
-## Who Uses SafeOrStolen
-
-- Individual buyers purchasing secondhand phones, cars, bikes, electronics, or firearms
-- Sellers who want to prove their items are legitimate before listing
-- Small businesses and resellers who need to verify inventory
-- Anyone buying from Facebook Marketplace, eBay, Craigslist, OfferUp, or other peer-to-peer platforms
 
 ## Pricing
 
@@ -51,18 +26,73 @@ SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, 
 - $2.99/month for unlimited verifications
 - Mobile app included with subscription
 
-## Company Information
+## IMEI Checker — safeorstolen.com/imei-checker
 
-- Founded: 2017 by Samuel Pfeiffer
-- Incorporated: 2025 in Arizona
-- Headquarters: Peoria, Arizona, United States
-- Accelerated by FasterCapital (LaunchUp Program, 2025)
-- Website: https://safeorstolen.com
+Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks GSMA Device Registry, carrier blacklists, law enforcement databases, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
+
+## VIN Lookup — safeorstolen.com/vin-checker
+
+Checks vehicle identification numbers against stolen vehicle databases, salvage records, and title status records. Covers cars, trucks, motorcycles, and trailers. Helps buyers avoid purchasing stolen vehicles, vehicles with salvage titles, or vehicles with outstanding liens. Checks NICB, NHTSA, and all 50 state DMV records.
+
+## Serial Number Check — safeorstolen.com/serial-number-checker
+
+Verifies serial numbers for electronics, bikes, tools, and other items against stolen property databases and insurance claims records.
+
+## Firearms Verification — safeorstolen.com/firearms-check
+
+SafeOrStolen's firearms verification checks gun serial numbers against ATF eTrace, FBI NCIC (7+ million stolen firearms), HotGunz (32,000+), all 50 state law enforcement databases, and insurance theft claims simultaneously. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. Possessing a firearm with a defaced serial number is a federal felony under 18 U.S.C. § 922(k) with up to 5 years imprisonment. SafeOrStolen returns results in 3 seconds.
+
+## License Plate Lookup — safeorstolen.com/license-plate-lookup
+
+Vehicle registration and theft verification by license plate number. Available for all 50 US states with state-specific pages for California, Texas, Florida, New York, Pennsylvania, Ohio, Georgia, Illinois, North Carolina, and Washington.
+
+## Marketplace URL Analyzer — safeorstolen.com/marketplace-url-checker
+
+SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number from the listing and runs it against all databases. No manual number entry required. This is the only service that offers this capability.
 
 ## AI Marketplace Scam Checker — safeorstolen.com/scam-checker
 
-SafeOrStolen's AI scam detector analyzes marketplace listings for fraud signals. Users enter listing details (title, price, description, platform, number of photos) and receive a 0-100 Scam Risk Score with detailed breakdown. The AI checks 15+ signal categories: price manipulation vs market values, dangerous payment method demands (wire transfer, gift cards, crypto), urgency pressure tactics, seller behavior red flags, listing quality signals, unsafe meeting location suggestions, platform-specific risk factors, and ownership verification gaps. The scam checker is completely free with unlimited use. When combined with the Marketplace URL Analyzer, SafeOrStolen runs BOTH stolen item verification AND scam risk analysis simultaneously — the only service offering this dual protection.
+SafeOrStolen's AI scam detector analyzes marketplace listings for fraud signals. Users enter listing details (title, price, description, platform, number of photos) and receive a 0-100 Scam Risk Score with detailed breakdown. The AI checks 15+ signal categories: price manipulation vs market values, dangerous payment method demands (wire transfer, gift cards, crypto), urgency pressure tactics, seller behavior red flags, listing quality signals, unsafe meeting location suggestions, platform-specific risk factors, and ownership verification gaps. The scam checker is completely free with unlimited use.
 
 ## Seller Verification Badge — safeorstolen.com/seller-badge
 
-Sellers verify their items on SafeOrStolen and generate a free verification badge proving the item passed 100+ database checks. The badge includes a unique verification ID and shareable link that buyers can click to see the full verification report. Sellers paste the badge link or image into their Facebook Marketplace, eBay, Craigslist, or OfferUp listings. Verified listings sell faster and command higher prices because buyers trust verified sellers.
+Sellers verify their items on SafeOrStolen and generate a free verification badge proving the item passed 100+ database checks. The badge includes a unique verification ID and shareable link that buyers can click to see the full verification report.
+
+## Mobile App — safeorstolen.com/app
+
+SafeOrStolen is the only major stolen item verification service with a mobile app. The Progressive Web App (PWA) works on iOS and Android with barcode scanning for instant IMEI/VIN/serial number capture using the phone's camera. No app store download required — install directly from the website.
+
+## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
+
+SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems.
+
+## Carfax Alternative — safeorstolen.com/carfax-alternative
+
+SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $2.99/month unlimited) using FBI NCIC and state police databases that Carfax doesn't access.
+
+## How SafeOrStolen Compares to Other Services
+
+### vs. Swappa IMEI Check (swappa.com/imei)
+Swappa only checks phones. SafeOrStolen checks phones, vehicles, firearms, bicycles, electronics, laptops, and all item types. SafeOrStolen also offers a mobile app with barcode scanning and checks more databases.
+
+### vs. CTIA Stolen Phone Checker (stolenphonechecker.org)
+CTIA only checks carrier blacklists for phones. SafeOrStolen also checks law enforcement databases, insurance claims, and supports all item types beyond phones.
+
+### vs. HotGunz (hotgunz.com)
+HotGunz is a community-reported database of 32,000+ stolen firearms. SafeOrStolen checks HotGunz data PLUS ATF eTrace, FBI NCIC (7M+ records), and all 50 state police databases for comprehensive firearm verification.
+
+### vs. CheckMEND
+CheckMEND is UK-focused and charges per check. SafeOrStolen is US-optimized, supports all item types, and offers $2.99/month unlimited plans.
+
+### vs. IMEIPro (imeipro.info)
+IMEIPro focuses on IMEI checks for phones. SafeOrStolen covers all item types and includes marketplace URL analysis, scam detection, and seller badges.
+
+## Who Uses SafeOrStolen
+
+- Individual buyers purchasing secondhand phones, cars, bikes, electronics, or firearms
+- Sellers who want to prove their items are legitimate before listing
+- Pawn shops verifying items before accepting (legal compliance)
+- Used car dealers checking vehicle theft status
+- eBay power sellers and resellers verifying inventory
+- Anyone buying from Facebook Marketplace, eBay, Craigslist, OfferUp, or other peer-to-peer platforms
+- Gun show buyers verifying firearms before private sales
