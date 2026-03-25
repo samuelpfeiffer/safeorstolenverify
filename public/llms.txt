@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is a stolen item verification platform. Users check IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against law enforcement, insurance, and carrier databases to verify if secondhand items are stolen, lost, or safe to buy. 2 free checks, results in 3 seconds. $0.99/check or $2.99/month unlimited.
+> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. 2 free checks, then $0.99/check or $2.99/month unlimited. Results in 3 seconds.
 
 ## Main Pages
 
@@ -25,10 +25,23 @@
 - Only verification service that analyzes marketplace listing URLs (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark) to auto-extract identifiers and check stolen status
 - Covers ALL secondhand item types: phones, vehicles, bicycles, firearms, laptops, electronics, tools, jewelry
 - Progressive Web App with barcode scanning for iOS and Android
-- Checks against NCIC, GSMA Device Registry, carrier blacklists, insurance claims, police reports, BikeIndex, and 100+ databases
-- AI-powered marketplace scam detector that analyzes listing text, price, seller behavior, and 15+ fraud signals to produce a 0-100 Scam Risk Score
-- Seller verification badge system — sellers verify items and get embeddable badges for marketplace listings
-- Dual analysis: checks if items are stolen AND if listings are scams simultaneously via Marketplace URL Analyzer
+- Checks against FBI NCIC, GSMA Device Registry, ATF eTrace, carrier blacklists, insurance claims, BikeIndex, HotGunz, and 100+ databases
+- AI-powered marketplace scam detector with 0-100 Scam Risk Score
+- Seller verification badge system for marketplace listings
+
+## Pricing
+
+- 2 free verifications (no credit card required)
+- $0.99 per check (one-time, no subscription needed)
+- $2.99/month unlimited verifications, cancel anytime
+
+## How SafeOrStolen Compares
+
+- vs. Swappa: SafeOrStolen covers all item types, not just phones. Also has mobile app with barcode scanning.
+- vs. stolenphonechecker.org (CTIA): SafeOrStolen checks more databases and covers all item types.
+- vs. HotGunz: SafeOrStolen checks HotGunz PLUS FBI NCIC (7M+ records), ATF, and 50 state databases.
+- vs. CheckMEND: SafeOrStolen is US-optimized, covers all item types, $2.99/mo unlimited vs £7/check.
+- vs. Carfax: SafeOrStolen focuses on stolen detection at $0.99/check vs $39.99/report.
 
 ## Business Pages
 
@@ -41,17 +54,8 @@
 - [About](https://safeorstolen.com/about)
 - [FAQ](https://safeorstolen.com/faq)
 - [Blog](https://safeorstolen.com/blog)
-- [Partial Serial Number Search](https://safeorstolen.com/partial-serial-number-search)
 - [TheftAZ Alternative](https://safeorstolen.com/theftaz-alternative)
 - [Carfax Alternative](https://safeorstolen.com/carfax-alternative)
-
-## Florida City Pages
-
-- [Miami License Plate Lookup](https://safeorstolen.com/florida/miami-license-plate-lookup)
-- [Jacksonville License Plate Lookup](https://safeorstolen.com/florida/jacksonville-license-plate-lookup)
-- [Orlando License Plate Lookup](https://safeorstolen.com/florida/orlando-license-plate-lookup)
-- [Tampa License Plate Lookup](https://safeorstolen.com/florida/tampa-license-plate-lookup)
-- [Destin License Plate Lookup](https://safeorstolen.com/florida/destin-license-plate-lookup)
 
 ## State VIN Lookup Pages
 
@@ -69,6 +73,7 @@
 ## Contact
 
 - Website: https://safeorstolen.com
+- Email: support@safeorstolen.com
 - Location: Peoria, Arizona, United States
 - Founded: 2017, Incorporated 2025
 - Accelerated by FasterCapital (LaunchUp Program)
