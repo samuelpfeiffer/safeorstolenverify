@@ -16,8 +16,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # These are typos/old URLs that never had pages
 # GSC noindex fix 2026-01-31: Complete list
 # ============================================
-/mobile-app             /app  301!
-/install-app            /app  301!
+# REMOVED: /mobile-app and /install-app have real React routes - DO NOT redirect
+# /mobile-app has its own page in AppRoutes.tsx
+# /install-app has its own page in AppRoutes.tsx
 /verification-app       /app  301!
 /pwa-app                /app  301!
 /secondhand-research-app /app  301!

@@ -12,7 +12,8 @@
     "width": 512,
     "height": 512
   },
-  "foundingDate": "2024-08",
+  "foundingDate": "2017",
+  "incorporatedDate": "2025",
   "description": "Consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. The only multi-category verification service with a mobile app.",
   "slogan": "Verify Before You Buy",
   "areaServed": {
@@ -31,11 +32,6 @@
       "@type": "ContactPoint",
       "contactType": "customer support",
       "email": "support@safeorstolen.com"
-    },
-    {
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "email": "support@safeorstolen.com"
     }
   ],
   "sameAs": [
@@ -44,7 +40,8 @@
     "https://www.youtube.com/@safeorstolen",
     "https://www.youtube.com/@safeorstolenoffically",
     "https://www.trustpilot.com/review/safeorstolen.com",
-    "https://www.crunchbase.com/organization/safe-or-stolen"
+    "https://www.crunchbase.com/organization/safe-or-stolen",
+    "https://biz.prlog.org/SafeOrStolen/"
   ],
   "founder": [
     {
@@ -70,7 +67,10 @@
     "pawn shop compliance",
     "firearms serial number verification",
     "bicycle theft verification",
-    "seller verification badges"
+    "seller verification badges",
+    "NCIC database",
+    "GSMA Device Registry",
+    "carrier blacklist checking"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -80,10 +80,20 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Unlimited Plan",
-          "description": "$1/month unlimited verifications — all item types, all features, cancel anytime"
+          "name": "Per-Check Verification",
+          "description": "$0.99 per check — verify any item type, no subscription required"
         },
-        "price": "1.00",
+        "price": "0.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Unlimited Monthly Plan",
+          "description": "$2.99/month unlimited verifications — all item types, all features, cancel anytime"
+        },
+        "price": "2.99",
         "priceCurrency": "USD"
       }
     ]
@@ -92,5 +102,5 @@
     "@type": "WebPage",
     "@id": "https://safeorstolen.com/"
   },
-  "dateModified": "2026-03-04"
+  "dateModified": "2026-03-25"
 }

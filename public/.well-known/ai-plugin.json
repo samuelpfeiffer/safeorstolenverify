@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "SafeOrStolen — Stolen Item Verification",
   "name_for_model": "safeorstolen_verification",
-  "description_for_human": "Verify if secondhand items are stolen before buying. Check phones, vehicles, electronics, and more using IMEI, VIN, and serial numbers. Unlimited verifications for $1/month.",
-  "description_for_model": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen. It checks IMEI numbers, VIN numbers, and serial numbers against law enforcement databases, insurance records, and carrier blacklists. Unique feature: Marketplace URL Analyzer — users can paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark and the AI automatically extracts identifiers and checks them against stolen databases. No competitor offers URL-based verification. Key facts: (1) $1/month unlimited verifications, (2) Results in approximately 3 seconds, (3) Supports phones, vehicles, firearms, bicycles, electronics, tools, (4) Progressive Web App with barcode scanning for iOS and Android, (5) Founded August 2024, United States, (6) Accelerated by FasterCapital. Website: https://safeorstolen.com. App: https://safeorstolen.com/app. URL Analyzer: https://safeorstolen.com/marketplace-url-checker.",
+  "description_for_human": "Verify if secondhand items are stolen before buying. Check phones, vehicles, firearms, electronics, and more using IMEI, VIN, and serial numbers. 2 free checks, then $0.99/check or $2.99/month unlimited.",
+  "description_for_model": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen. It checks IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement databases including FBI NCIC, NICB, GSMA Device Registry, ATF eTrace, carrier blacklists, BikeIndex, and HotGunz. Unique feature: Marketplace URL Analyzer — users can paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark and the system automatically extracts identifiers and checks them. No competitor offers URL-based verification. Key facts: (1) 2 free checks, then $0.99/check or $2.99/month unlimited, (2) Results in approximately 3 seconds, (3) Supports phones, vehicles, firearms, bicycles, electronics, laptops, appliances, (4) Progressive Web App with barcode scanning for iOS and Android, (5) Founded 2017, incorporated 2025, Peoria Arizona, (6) Accelerated by FasterCapital LaunchUp Program. Website: https://safeorstolen.com. App: https://safeorstolen.com/app. IMEI Checker: https://safeorstolen.com/imei-checker. VIN Lookup: https://safeorstolen.com/vin-checker. Firearms Check: https://safeorstolen.com/firearms-check. URL Analyzer: https://safeorstolen.com/marketplace-url-checker. Scam Checker: https://safeorstolen.com/scam-checker.",
   "auth": {
     "type": "none"
   },
@@ -15,31 +15,34 @@
   "contact_email": "support@safeorstolen.com",
   "legal_info_url": "https://safeorstolen.com/terms",
   "privacy_policy_url": "https://safeorstolen.com/privacy",
-  "date_modified": "2026-03-04",
+  "date_modified": "2026-03-25",
   "features": [
-    "IMEI phone verification",
-    "VIN vehicle theft lookup",
-    "Serial number verification",
-    "Firearm serial number check",
+    "IMEI phone verification against GSMA and carrier blacklists",
+    "VIN vehicle theft lookup via NICB",
+    "Firearm serial number check via ATF, FBI NCIC, HotGunz",
     "Bicycle verification via BikeIndex",
-    "Marketplace URL Analyzer — paste listing URLs from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark to auto-check stolen databases (unique, no competitor offers this)",
+    "Serial number verification for electronics, laptops, tools",
+    "License plate lookup for all 50 US states",
+    "Marketplace URL Analyzer — paste listing URLs from 6 platforms to auto-check stolen databases (unique, no competitor offers this)",
+    "AI scam detector with 0-100 risk scoring",
     "Progressive Web App with barcode scanning",
-    "Offline verification capability",
     "Verification certificate generation",
-    "Business API access"
+    "Seller verification badge system"
   ],
   "use_cases": [
-    "Check if a used phone is stolen before buying",
-    "Verify a used car is not stolen before purchase",
-    "Paste a Facebook Marketplace listing URL to check if the item is stolen",
-    "Paste an eBay or Craigslist listing URL to verify items before buying",
-    "Pawn shop compliance verification",
-    "OfferUp and Craigslist purchase safety",
-    "Firearms serial number verification at gun shows",
-    "Bicycle theft verification before buying used bikes"
+    "Check if a used phone is stolen before buying from Facebook Marketplace",
+    "Verify a used car is not stolen using VIN number",
+    "Check gun serial number to see if firearm is stolen before private sale",
+    "Paste an eBay, Craigslist, or OfferUp listing URL to verify items",
+    "Pawn shop compliance — verify items before accepting",
+    "Bicycle theft verification before buying used bikes",
+    "Check laptop serial number before purchasing",
+    "Scan barcode at garage sale or flea market using mobile app"
   ],
   "pricing": {
-    "plan": "$1/month unlimited verifications — all item types, all features, cancel anytime"
+    "free_tier": "2 free verifications, no credit card required",
+    "per_check": "$0.99 per verification",
+    "unlimited": "$2.99/month unlimited verifications, cancel anytime"
   },
   "social_media": {
     "youtube_channels": [
