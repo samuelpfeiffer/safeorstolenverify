@@ -3,6 +3,7 @@ import { TrendingUp, Shield, Clock, CheckCircle } from 'lucide-react';
 import { useAuth } from '@/lib/auth';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import { FREE_SEARCH_LIMIT } from '@/features/pricing/constants';
 
 export const QuickStatsCard = () => {
   const { user } = useAuth();
@@ -73,7 +74,7 @@ export const QuickStatsCard = () => {
     },
     {
       label: 'Searches Used',
-      value: stats.isSubscribed ? '∞' : `${stats.searchesUsed}/2`,
+      value: stats.isSubscribed ? '∞' : `${stats.searchesUsed}/${FREE_SEARCH_LIMIT}`,
       icon: Shield,
       color: 'text-blue-500',
     },
