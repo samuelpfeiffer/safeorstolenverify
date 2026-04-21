@@ -14,7 +14,13 @@
       img{max-width:100%;height:auto;}
       [data-hero-img]{aspect-ratio:16/9;min-height:200px;background:#181b23;}
       h1{font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.1;font-weight:800;}
+      /* CLS fix: metric-matched fallback for Inter so font swap doesn't shift layout */
+      @font-face{font-family:'InterFallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial');}
       @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:local('Inter');}
+      body{font-family:'Inter','InterFallback',system-ui,-apple-system,sans-serif;}
+      /* CLS fix: reserve hero space on mobile to absorb any late layout (firearms-check, verify, etc.) */
+      .hero-stable{min-height:480px;}
+      @media (min-width:768px){.hero-stable{min-height:520px;}}
     </style>
     
     <!-- Preload logo to prevent LCP delay -->
@@ -89,9 +95,9 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    <!-- Deferred decorative fonts - load after FCP -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Bebas+Neue&display=swap"></noscript>
+    <!-- Deferred decorative fonts - display=optional prevents post-FCP layout shift (CLS fix) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=optional" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Bebas+Neue&display=optional"></noscript>
     
     <!-- DNS prefetch for Stripe - defer to avoid blocking -->
     <link rel="dns-prefetch" href="https://js.stripe.com">

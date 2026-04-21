@@ -13,9 +13,9 @@ const FirearmsCheckPage = () => {
         canonical="/firearms-check"
       />
 
-      {/* HERO + TOOL */}
-      <section className="bg-gradient-to-b from-muted to-background py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* HERO + TOOL — hero-stable reserves min-height to prevent CLS on mobile */}
+      <section className="hero-stable bg-gradient-to-b from-muted to-background py-16 px-4 flex items-center">
+        <div className="max-w-3xl mx-auto text-center w-full">
           <div className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
             🔫 Firearm Verification
           </div>
