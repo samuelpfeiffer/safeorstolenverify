@@ -211,31 +211,31 @@ const Index = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
-            Check Before You Buy or Sell.
+            Don't Buy a Stolen Phone, Car, or Bike.
             <br />
-            <span className="sos-gradient-text">Safe or Stolen?</span>
+            <span className="sos-gradient-text">Verify in 3 Seconds.</span>
           </h1>
 
-          <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            SafeOrStolen checks any secondhand item against 100+ law enforcement, insurance, and carrier databases — including FBI NCIC, GSMA, NICB, and ATF.
-            <strong className="text-foreground"> 2 free checks. Then $0.99/check or $2.99/month unlimited.</strong>
+          <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            Paste any IMEI, VIN, serial number, or license plate. We check it against
+            <strong className="text-foreground"> 100+ law-enforcement, carrier, and insurance databases</strong> — FBI NCIC, GSMA, NICB, ATF.
           </p>
 
-          {/* Integrated Scanner / Search Bar */}
-          <div className="max-w-2xl mx-auto mb-6">
+          {/* Integrated Scanner / Search Bar — primary conversion surface */}
+          <div className="max-w-2xl mx-auto mb-4">
             <UnifiedSearchBar
               onOpenQrScanner={() => setShowScanner(!showScanner)}
               variant="hero"
             />
           </div>
 
-          <p className="text-muted-foreground text-sm">
-            🔓 Unlock unlimited verifications — $2.99/month →{' '}
-            <Link to="/pricing" className="text-primary underline font-semibold">See Pricing</Link>
-          </p>
-          <p className="text-muted-foreground/60 text-xs mt-1">
-            2 free checks · Results in 3 seconds · Works on iOS & Android
-          </p>
+          {/* Single trust line — replaces 3 redundant lines */}
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 2 checks free</span>
+            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
+            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99/check or $2.99/mo unlimited</span>
+            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>
+          </div>
         </div>
       </section>
 

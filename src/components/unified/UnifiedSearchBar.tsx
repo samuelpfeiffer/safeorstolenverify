@@ -23,26 +23,13 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
   const isAuthenticated = !!user;
 
   const handleSearch = async () => {
-    if (!input.trim()) return;
+    const trimmed = input.trim();
+    if (!trimmed) return;
 
-    if (!user) {
-      navigate('/auth?tab=signup&redirect=verify');
-      return;
-    }
-
-    // Try to consume a search - will redirect to pricing if limit reached
-    const canSearch = await consumeSearch();
-    if (!canSearch) {
-      navigate('/pricing?reason=limit-reached');
-      return;
-    }
-
-    const result = await verifyItem(input);
-    if (result) {
-      navigate('/verification-results', { 
-        state: { result, searchInput: input } 
-      });
-    }
+    // Route to the actual /verify page with the identifier prefilled.
+    // Auth + paywall + actual verification all happen there (single source of truth).
+    // This was previously navigating to /verification-results which doesn't exist — silent 404.
+    navigate(`/verify?q=${encodeURIComponent(trimmed)}`);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

@@ -69,18 +69,19 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
               <Lock className="h-8 w-8 text-destructive" />
             </div>
           </div>
-          <DialogTitle className="text-2xl text-center">
-            🔒 Don't Risk Buying Stolen Goods
+          <DialogTitle className="text-2xl text-center font-black">
+            One More Check Could Save You $847
           </DialogTitle>
           <DialogDescription className="text-center text-base">
-            You've used your {maxFreeSearches} free checks. Continue for $0.99/check or go unlimited.
+            Avg. loss from buying a stolen item: <strong className="text-destructive">$847</strong> + the police seize it.
+            Verify for less than a coffee.
           </DialogDescription>
         </DialogHeader>
 
-        {/* Social Proof */}
+        {/* Loss-aversion social proof */}
         <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 flex items-center gap-2 justify-center">
           <TrendingUp className="h-4 w-4 text-accent" />
-          <span className="text-sm font-medium">5,000+ items verified this week</span>
+          <span className="text-sm font-medium">5,000+ buyers protected this week · 4.1★ Trustpilot</span>
         </div>
 
         <div className="space-y-3 mt-2">

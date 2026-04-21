@@ -20,6 +20,7 @@ import { ParallelVerificationDisplay } from '@/components/verification/ParallelV
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
+import { ViralShareCard } from '@/components/conversion/ViralShareCard';
 import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';
 import { WhySignUpCard } from '@/components/conversion/WhySignUpCard';
 import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
@@ -552,6 +553,10 @@ const VerifyPage = () => {
         {result && (
           <>
             <ParallelVerificationDisplay result={result} />
+            <ViralShareCard
+              status={result.finalStatus}
+              itemLabel={identifier ? `${identifier.slice(0, 6)}…` : undefined}
+            />
             <PostVerificationUpsell 
               verificationStatus={result.finalStatus}
               remainingSearches={remainingSearches}
