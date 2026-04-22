@@ -220,7 +220,7 @@ const Index = () => {
           </p>
 
           {/* Integrated Scanner / Search Bar — primary conversion surface */}
-          <div className="max-w-2xl mx-auto mb-4">
+          <div className="max-w-2xl mx-auto mb-4 p-4 sm:p-5 rounded-2xl border-2 border-primary/40 bg-card/40 backdrop-blur-sm shadow-[0_0_40px_-10px_hsl(var(--primary)/0.4)]">
             <UnifiedSearchBar
               onOpenQrScanner={() => setShowScanner(!showScanner)}
               variant="hero"
