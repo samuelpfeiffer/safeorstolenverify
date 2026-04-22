@@ -460,9 +460,10 @@ const VerifyChatPage: React.FC = () => {
         <meta name="ai:purpose" content="Conversational AI verification of items against 100+ stolen databases" />
       </Helmet>
 
-      <TopNavigation />
+      {/* AppRoot renders TopNavigation + <main className="pt-20"/>. We negate that
+          padding so the chat fills the viewport edge-to-edge (ChatGPT/Claude feel). */}
 
-      <div className="pt-16 h-screen bg-background text-foreground flex flex-col overflow-hidden">
+      <div className="-mt-20 pt-20 h-screen bg-background text-foreground flex flex-col overflow-hidden">
         {/* Top status bar */}
         <div className="border-b border-border/50 bg-card/30 backdrop-blur-xl shrink-0">
           <div className="px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
