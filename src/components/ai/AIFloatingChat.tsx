@@ -15,7 +15,14 @@ const QUICK_ACTIONS = [
   { label: '🔍 Verify item', query: 'How do I verify if an item is stolen?' },
 ];
 
+// Hide the floating bubble on routes where the chat experience IS the page —
+// otherwise the orange bubble overlaps the verification workspace.
+const HIDDEN_ROUTE_PREFIXES = ['/verify', '/ai-verify', '/ai-chat', '/auth', '/checkout', '/admin'];
+
 export const AIFloatingChat: React.FC = () => {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const hidden = HIDDEN_ROUTE_PREFIXES.some((p) => pathname.startsWith(p));
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -24,6 +31,7 @@ export const AIFloatingChat: React.FC = () => {
   const [hasNewMessage, setHasNewMessage] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
 
   // Auto-scroll to bottom
   useEffect(() => {
