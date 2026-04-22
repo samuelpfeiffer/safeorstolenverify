@@ -62,8 +62,8 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return STRIPE_PRICES.unlimited; // Map starter to unlimited
   }
 
-  // Fallback to unlimited for subscriptions
-  return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.singleVerification;
+  // Fallback to unlimited for subscriptions, pay-per-check for one-time
+  return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.payPerCheck;
 };
 
 serve(async (req) => {
