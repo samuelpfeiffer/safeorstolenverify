@@ -393,6 +393,30 @@ const VerifyChatPage: React.FC = () => {
     }
   };
 
+  // Inbound query-param wire-up: ?q=359... ?url=https://... ?type=...
+  // Lets Hero, HomeSearchForm, AIMarketplaceAdvisor, landing pages, and
+  // every existing /verify?q=... link drop straight into the chat.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const consumedParamRef = useRef(false);
+  useEffect(() => {
+    if (consumedParamRef.current) return;
+    const q = searchParams.get('q');
+    const url = searchParams.get('url');
+    const incoming = (url || q || '').trim();
+    if (!incoming) return;
+    consumedParamRef.current = true;
+    // Clear params so a refresh doesn't re-trigger the verification
+    const next = new URLSearchParams(searchParams);
+    next.delete('q');
+    next.delete('url');
+    next.delete('type');
+    setSearchParams(next, { replace: true });
+    // Defer to next tick so the welcome message is in place first
+    setTimeout(() => handleSend(incoming), 50);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+
   const handlePaste = (e: React.ClipboardEvent) => {
     const items = e.clipboardData?.items;
     if (!items) return;
