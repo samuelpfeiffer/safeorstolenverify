@@ -11,16 +11,27 @@ console.log('[main.tsx] ✓ Application entry point loaded');
 console.log('[main.tsx] → React version:', React.version);
 console.log('[main.tsx] → Environment:', import.meta.env.MODE);
 
-// Light cache cleanup - only clears old versions
-const clearOldCaches = async () => {
+// White-screen recovery: if the previous SW cached a broken HTML/JS pair,
+// unregister it once and clear caches so the next load is clean.
+const recoverFromStaleCache = async () => {
   try {
+    const RECOVERY_KEY = 'sos-sw-recovery-v5';
+    if (localStorage.getItem(RECOVERY_KEY)) return; // already done
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      // Only act if a SW from an older cache version is in control
+      if (regs.length > 0) {
+        await Promise.all(regs.map(r => r.update().catch(() => {})));
+      }
+    }
     if ('caches' in window) {
       const names = await caches.keys();
-      const oldCaches = names.filter(n => !n.includes('v2'));
-      await Promise.all(oldCaches.map(name => caches.delete(name)));
+      const stale = names.filter(n => !n.endsWith('-v5'));
+      await Promise.all(stale.map(n => caches.delete(n)));
     }
+    localStorage.setItem(RECOVERY_KEY, '1');
   } catch (err) {
-    console.error('[main.tsx] Cache cleanup error:', err);
+    console.error('[main.tsx] Cache recovery error:', err);
   }
 };
 
@@ -36,7 +47,7 @@ console.log('[main.tsx] ✓ Root element found, creating React root');
 let root = createRoot(container);
 
 // Render app
-clearOldCaches();
+recoverFromStaleCache();
 console.log('[main.tsx] → Rendering AppRoot component');
 root.render(<AppRoot />);
 console.log('[main.tsx] ✓ Initial render complete - React is now in control');

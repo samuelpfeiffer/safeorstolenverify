@@ -3,13 +3,13 @@
  * Enables offline functionality, caching, and improved performance
  */
 
-const CACHE_NAME = 'safeorstolen-v4';
-const RUNTIME_CACHE = 'safeorstolen-runtime-v4';
+const CACHE_NAME = 'safeorstolen-v5';
+const RUNTIME_CACHE = 'safeorstolen-runtime-v5';
 
 // Critical assets to cache immediately
+// NOTE: Do NOT precache '/' or '/index.html' — they must always come from network
+// to avoid serving stale HTML that points to deleted JS chunks (white-screen bug).
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
   '/manifest.json',
   '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
 ];
@@ -77,6 +77,23 @@ self.addEventListener('fetch', (event) => {
 
   // Skip API calls
   if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
+    return;
+  }
+
+  // HTML documents: NETWORK-FIRST to prevent white-screen from stale HTML
+  // (stale HTML can reference deleted JS chunks → blank page)
+  if (request.destination === 'document' || url.pathname === '/' || url.pathname.endsWith('.html')) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(RUNTIME_CACHE).then(cache => cache.put(request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request).then(c => c || caches.match('/index.html')))
+    );
     return;
   }
 
