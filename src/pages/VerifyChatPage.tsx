@@ -29,7 +29,6 @@ import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
-import TopNavigation from '@/components/TopNavigation';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
