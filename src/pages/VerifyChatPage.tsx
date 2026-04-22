@@ -777,65 +777,45 @@ export default VerifyChatPage;
 const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="flex flex-col gap-8 py-6"
+      transition={{ duration: 0.35 }}
+      className="flex flex-col items-center text-center pt-10 sm:pt-16"
     >
-      <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest text-primary px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
-          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-          SECURE SESSION ACTIVE
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
-          Verification stream
-        </h1>
-        <p className="text-base text-muted-foreground text-pretty max-w-xl leading-relaxed">
-          Drop an image, paste an identifier, or share a marketplace URL to initiate a check across
-          NCIC, NICB, GSMA, ATF and 50-state law-enforcement databases.
-        </p>
+      <div className="size-12 rounded-2xl bg-gradient-to-br from-primary to-primary/70 grid place-items-center mb-5 shadow-lg shadow-primary/30 ring-4 ring-primary/10">
+        <Shield className="w-6 h-6 text-primary-foreground" />
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
-        <ActionTile
-          tag="SCAN"
-          title="Run image OCR"
-          desc="Upload a photo of an IMEI sticker, VIN plate, or serial label."
-          onClick={() => onPick('')}
-          icon={ScanLine}
-        />
-        <ActionTile
-          tag="QUERY"
-          title="Cross-reference"
-          desc="Check IMEI, VIN, serial, plate, or marketplace URL in seconds."
-          onClick={() => onPick('')}
-          icon={Sparkles}
-        />
-      </div>
+      <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+        What can I verify for you?
+      </h1>
+      <p className="text-sm text-muted-foreground mt-2 max-w-md">
+        IMEI, VIN, serial, license plate, or marketplace URL — paste, scan, or upload.
+      </p>
 
-      <div className="space-y-2.5">
-        <div className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase">
-          Try one of these
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {EXAMPLE_PROMPTS.map((p) => (
-            <button
-              key={p.tag}
-              onClick={() => onPick(p.text)}
-              className="group text-left rounded-lg border border-border/60 bg-card/40 hover:bg-card hover:border-primary/40 transition-all px-3.5 py-3 flex items-center gap-3"
-            >
-              <span className="text-[9px] font-mono text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 shrink-0 tracking-wider">
-                {p.tag}
-              </span>
-              <div className="flex-1 min-w-0">
-                <div className="text-xs font-medium text-foreground truncate">{p.label}</div>
-                <div className="text-[10px] text-muted-foreground font-mono truncate mt-0.5">
-                  {p.text}
-                </div>
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-xl">
+        {EXAMPLE_PROMPTS.map((p) => (
+          <button
+            key={p.tag}
+            onClick={() => onPick(p.text)}
+            className="group text-left rounded-xl border border-border/60 bg-card/40 hover:bg-card hover:border-primary/40 transition-all px-3.5 py-3 flex items-center gap-3"
+          >
+            <span className="text-[9px] font-mono text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 shrink-0 tracking-wider">
+              {p.tag}
+            </span>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs font-medium text-foreground truncate">{p.label}</div>
+              <div className="text-[10px] text-muted-foreground font-mono truncate mt-0.5">
+                {p.text}
               </div>
-            </button>
-          ))}
-        </div>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-6 flex items-center gap-2 text-[10px] font-mono tracking-wider text-muted-foreground">
+        <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        100+ DATABASES · NCIC · NICB · GSMA · ATF · 50 STATES
       </div>
     </motion.div>
   );
