@@ -12,6 +12,7 @@ const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 const STRIPE_PRICES = {
   // Active prices
   unlimited: 'price_1T8uToGxnZLw8J7O6GcOuV1w',       // $10/month
+  payPerCheck: 'price_1T8uNDGxnZLw8J7OrBKrbePR',     // $0.99 one-time
 
   // Legacy prices kept for existing subscribers
   singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $10 (legacy)
