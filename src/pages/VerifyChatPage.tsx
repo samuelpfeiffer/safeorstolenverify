@@ -679,6 +679,29 @@ const VerifyChatPage: React.FC = () => {
 
             {/* Composer — Luminal style */}
             <div className="border-t border-border/50 bg-card/40 backdrop-blur-xl shrink-0 relative">
+              {/* Slim examples row — appears only after welcome screen is gone */}
+              {!showWelcome && (
+                <div className="max-w-2xl mx-auto px-4 pt-2.5">
+                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-thin">
+                    <span className="text-[9px] font-mono tracking-widest text-muted-foreground/70 shrink-0 mr-1">
+                      TRY
+                    </span>
+                    {EXAMPLE_PROMPTS.map((p) => (
+                      <button
+                        key={p.tag}
+                        onClick={() => {
+                          setInput(p.text);
+                          textareaRef.current?.focus();
+                        }}
+                        className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wide px-2 py-1 rounded-md border border-border/60 bg-background/60 hover:border-primary/40 hover:bg-primary/5 hover:text-primary text-muted-foreground transition-colors"
+                      >
+                        <span className="text-primary/80">{p.tag}</span>
+                        <span className="opacity-70 truncate max-w-[120px]">{p.text}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="max-w-2xl mx-auto px-4 py-3.5">
                 {attachment && (
                   <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border/60 rounded-lg px-3 py-1.5">
