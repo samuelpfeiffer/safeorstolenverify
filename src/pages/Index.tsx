@@ -5,6 +5,7 @@ import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
+import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
