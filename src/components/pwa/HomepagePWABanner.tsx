@@ -84,7 +84,7 @@ export const HomepagePWABanner = () => {
           {/* Content */}
           <div className="flex-grow text-center md:text-left">
             <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text text-transparent">
-              Install Our Free App
+              Download the SafeOrStolen App
             </h3>
             <p className="text-muted-foreground mb-4">
               Get instant offline access, camera scanning, and push notifications. No app store required—install directly from your browser!
