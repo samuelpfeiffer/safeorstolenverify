@@ -254,6 +254,37 @@ const Index = () => {
         </div>
       </div>
 
+      {/* ── SOFT VALUE STRIP — trust-led pricing reminder ── */}
+      <section className="py-10 px-4 bg-gradient-to-b from-background to-muted/20 border-b border-border">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-3">
+            <Shield className="w-3.5 h-3.5" /> Simple, honest pricing
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
+            Start with <span className="text-primary">2 free checks</span>. No credit card.
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
+            Need just one verification? Pay <strong className="text-foreground">$0.99</strong> — no account required.
+            Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
+            mobile app, and PDF certificates included. Cancel anytime, 30-day refund.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/verify"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all button-glow"
+            >
+              Start Free — 2 Checks
+            </Link>
+            <Link
+              to="/pricing"
+              className="inline-flex items-center gap-2 border border-border hover:border-primary text-foreground font-semibold px-6 py-3 rounded-xl transition-all hover:bg-primary/5"
+            >
+              See Plans →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── VERIFICATION CARDS WITH PHOTOS ──────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
