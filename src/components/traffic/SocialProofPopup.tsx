@@ -11,6 +11,8 @@ export const SocialProofPopup = () => {
     // Fetch real recent verification
     const fetchRecentActivity = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) { setActivity(null); return; } // RLS blocks anon
         const { data } = await supabase
           .from('verification_results')
           .select('item_type, created_at')
