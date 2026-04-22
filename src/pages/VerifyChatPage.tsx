@@ -1,15 +1,13 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Send,
   Paperclip,
   Camera,
-  Brain,
+  Sparkles,
   AlertTriangle,
   CheckCircle2,
-  ShieldCheck,
   Loader2,
   Image as ImageIcon,
   X,
@@ -22,6 +20,8 @@ import {
   Copy,
   RefreshCw,
   Check,
+  ArrowUp,
+  ScanLine,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -34,18 +34,25 @@ import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
-import { WelcomeScreen } from '@/components/verify-chat/WelcomeScreen';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
 import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
 
+const EXAMPLE_PROMPTS = [
+  { tag: 'IMEI', label: 'Verify a phone IMEI', text: '359123456789012' },
+  { tag: 'VIN', label: 'Check a vehicle VIN', text: '1HGBH41JXMN109186' },
+  { tag: 'SERIAL', label: 'Look up a serial', text: 'C7XJK2P9LMN0' },
+  { tag: 'PLATE', label: 'Run a license plate', text: '7XYZ123' },
+];
+
 const VerifyChatPage: React.FC = () => {
+  // ─── ALL HOOKS DECLARED UP-FRONT, IN A STABLE ORDER ─────────────────
   const navigate = useNavigate();
   const { user } = useAuth();
-  const isAuthenticated = !!user;
   const { checkGate, checksRemaining } = useVerifyGate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const {
     threads,
@@ -59,13 +66,9 @@ const VerifyChatPage: React.FC = () => {
     addResult,
   } = useChatThreads();
 
-  const messages = active?.messages || [];
-  const sessionResults = active?.results || [];
-
   const [input, setInput] = useState('');
   const [attachment, setAttachment] = useState<Attachment | null>(null);
   const [isThinking, setIsThinking] = useState(false);
-
   const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
   const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
   const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
@@ -74,24 +77,30 @@ const VerifyChatPage: React.FC = () => {
   const cameraInputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const consumedParamRef = useRef(false);
 
-  const { isListening, isSupported: voiceSupported, startListening, stopListening } = useVoiceSearch({
+  const voice = useVoiceSearch({
     onResult: (text) => setInput((prev) => (prev ? `${prev} ${text}` : text)),
   });
 
-  // Sync currentResult with active thread's most recent
+  // ─── DERIVED VALUES ────────────────────────────────────────────────
+  const isAuthenticated = !!user;
+  const messages = active?.messages || [];
+  const sessionResults = active?.results || [];
+  const showWelcome = messages.length <= 1 && !isThinking;
+
+  // ─── EFFECTS ───────────────────────────────────────────────────────
   useEffect(() => {
     setCurrentResult(sessionResults[0] || null);
-  }, [activeId]); // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeId]);
 
-  // Auto-scroll
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages.length, isThinking]);
 
-  // Auto-resize textarea
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
@@ -99,6 +108,7 @@ const VerifyChatPage: React.FC = () => {
     }
   }, [input]);
 
+  // ─── CALLBACKS ─────────────────────────────────────────────────────
   const addMessage = useCallback(
     (msg: Omit<ChatMessage, 'id'>): string => {
       const id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -115,7 +125,7 @@ const VerifyChatPage: React.FC = () => {
     [setMessages],
   );
 
-  const handleFile = (file: File) => {
+  const handleFile = useCallback((file: File) => {
     if (!file.type.startsWith('image/')) {
       toast.error('Please upload an image file');
       return;
@@ -130,12 +140,7 @@ const VerifyChatPage: React.FC = () => {
       setAttachment({ kind: 'image', dataUrl, name: file.name });
     };
     reader.readAsDataURL(file);
-  };
-
-  const extractUrl = (text: string) => {
-    const match = text.match(/https?:\/\/[^\s]+/i);
-    return match ? match[0] : null;
-  };
+  }, []);
 
   const publishResult = useCallback(
     (r: ChatVerifyResult) => {
@@ -146,21 +151,21 @@ const VerifyChatPage: React.FC = () => {
     [addResult],
   );
 
-  /** Determine if a message looks like an identifier vs a follow-up question. */
-  const looksLikeIdentifier = (text: string) => {
+  const looksLikeIdentifier = useCallback((text: string) => {
     const t = text.trim();
     if (URL_REGEX.test(t)) return true;
-    // Pure-ish ID (no spaces / sentences)
     if (!/\s/.test(t) && /[A-Za-z0-9]/.test(t) && t.length >= 6 && t.length <= 30) return true;
-    // VIN/IMEI/serial with maybe dashes
     if (IDENTIFIER_REGEX.test(t) && t.split(/\s+/).length <= 2) return true;
     return false;
+  }, []);
+
+  const extractUrl = (text: string) => {
+    const match = text.match(/https?:\/\/[^\s]+/i);
+    return match ? match[0] : null;
   };
 
-  /** Stream a conversational answer from Claude (ai-chat-stream). */
   const streamFollowUp = useCallback(
     async (assistantId: string, userText: string) => {
-      // Build short rolling history
       const priorMessages = messages
         .filter((m) => !m.loading)
         .slice(-8)
@@ -350,41 +355,53 @@ const VerifyChatPage: React.FC = () => {
     [updateMessage],
   );
 
-  const handleSend = async (overrideText?: string) => {
-    const text = (overrideText ?? input).trim();
-    if (!text && !attachment) return;
-    if (isThinking) return;
+  const handleSend = useCallback(
+    async (overrideText?: string) => {
+      const text = (overrideText ?? input).trim();
+      if (!text && !attachment) return;
+      if (isThinking) return;
 
-    addMessage({
-      role: 'user',
-      content: text || (attachment?.kind === 'image' ? '📷 Image uploaded' : ''),
-      attachment: attachment ?? undefined,
-    });
-    const currentAttachment = attachment;
-    setInput('');
-    setAttachment(null);
-    setIsThinking(true);
+      addMessage({
+        role: 'user',
+        content: text || (attachment?.kind === 'image' ? '📷 Image uploaded' : ''),
+        attachment: attachment ?? undefined,
+      });
+      const currentAttachment = attachment;
+      setInput('');
+      setAttachment(null);
+      setIsThinking(true);
 
-    const assistantId = addMessage({ role: 'assistant', content: '', loading: true });
+      const assistantId = addMessage({ role: 'assistant', content: '', loading: true });
 
-    try {
-      if (currentAttachment?.kind === 'image') {
-        await runImageVerification(assistantId, currentAttachment.dataUrl);
-      } else if (text) {
-        const url = extractUrl(text);
-        if (url && URL_REGEX.test(url)) {
-          await runUrlAnalysis(assistantId, url);
-        } else if (looksLikeIdentifier(text)) {
-          await runVerification(assistantId, text);
-        } else {
-          // Conversational follow-up — stream from Claude
-          await streamFollowUp(assistantId, text);
+      try {
+        if (currentAttachment?.kind === 'image') {
+          await runImageVerification(assistantId, currentAttachment.dataUrl);
+        } else if (text) {
+          const url = extractUrl(text);
+          if (url && URL_REGEX.test(url)) {
+            await runUrlAnalysis(assistantId, url);
+          } else if (looksLikeIdentifier(text)) {
+            await runVerification(assistantId, text);
+          } else {
+            await streamFollowUp(assistantId, text);
+          }
         }
+      } finally {
+        setIsThinking(false);
       }
-    } finally {
-      setIsThinking(false);
-    }
-  };
+    },
+    [
+      input,
+      attachment,
+      isThinking,
+      addMessage,
+      runImageVerification,
+      runUrlAnalysis,
+      runVerification,
+      streamFollowUp,
+      looksLikeIdentifier,
+    ],
+  );
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -392,30 +409,6 @@ const VerifyChatPage: React.FC = () => {
       handleSend();
     }
   };
-
-  // Inbound query-param wire-up: ?q=359... ?url=https://... ?type=...
-  // Lets Hero, HomeSearchForm, AIMarketplaceAdvisor, landing pages, and
-  // every existing /verify?q=... link drop straight into the chat.
-  const [searchParams, setSearchParams] = useSearchParams();
-  const consumedParamRef = useRef(false);
-  useEffect(() => {
-    if (consumedParamRef.current) return;
-    const q = searchParams.get('q');
-    const url = searchParams.get('url');
-    const incoming = (url || q || '').trim();
-    if (!incoming) return;
-    consumedParamRef.current = true;
-    // Clear params so a refresh doesn't re-trigger the verification
-    const next = new URLSearchParams(searchParams);
-    next.delete('q');
-    next.delete('url');
-    next.delete('type');
-    setSearchParams(next, { replace: true });
-    // Defer to next tick so the welcome message is in place first
-    setTimeout(() => handleSend(incoming), 50);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams]);
-
 
   const handlePaste = (e: React.ClipboardEvent) => {
     const items = e.clipboardData?.items;
@@ -432,8 +425,24 @@ const VerifyChatPage: React.FC = () => {
     }
   };
 
-  const showWelcome = messages.length <= 1 && !isThinking;
+  // Inbound query-params: ?q= / ?url=
+  useEffect(() => {
+    if (consumedParamRef.current) return;
+    const q = searchParams.get('q');
+    const url = searchParams.get('url');
+    const incoming = (url || q || '').trim();
+    if (!incoming) return;
+    consumedParamRef.current = true;
+    const next = new URLSearchParams(searchParams);
+    next.delete('q');
+    next.delete('url');
+    next.delete('type');
+    setSearchParams(next, { replace: true });
+    setTimeout(() => handleSend(incoming), 50);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
+  // ─── RENDER ────────────────────────────────────────────────────────
   return (
     <>
       <Helmet>
@@ -455,10 +464,10 @@ const VerifyChatPage: React.FC = () => {
       <TopNavigation />
 
       <div className="pt-16 h-screen bg-background text-foreground flex flex-col overflow-hidden">
-        {/* Sub-header */}
-        <div className="border-b border-border/60 bg-card/40 backdrop-blur shrink-0">
-          <div className="px-3 sm:px-4 py-2.5 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2 min-w-0">
+        {/* Top status bar */}
+        <div className="border-b border-border/50 bg-card/30 backdrop-blur-xl shrink-0">
+          <div className="px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5 min-w-0">
               <button
                 onClick={() => setSidebarOpenMobile(true)}
                 className="lg:hidden p-1.5 -ml-1 text-muted-foreground hover:text-foreground"
@@ -466,39 +475,39 @@ const VerifyChatPage: React.FC = () => {
               >
                 <Menu className="w-5 h-5" />
               </button>
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                <Brain className="w-4 h-4 text-primary" />
+              <div className="size-7 rounded-md bg-primary grid place-items-center text-primary-foreground font-bold text-xs shrink-0">
+                S
               </div>
               <div className="min-w-0">
-                <h1 className="text-sm font-semibold leading-tight truncate">
-                  {active?.title || 'SafeOrStolen AI'}
+                <h1 className="text-sm font-semibold leading-tight truncate tracking-tight">
+                  {active?.title || 'Verification stream'}
                 </h1>
-                <p className="text-[10px] text-muted-foreground flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  100+ databases · Powered by Claude
+                <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 font-mono">
+                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  100+ DATABASES · CLAUDE 4.5
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
               {isAuthenticated && checksRemaining !== null && (
-                <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-md bg-primary/10 text-primary font-mono border border-primary/20">
                   <Shield className="w-3 h-3" />
-                  {checksRemaining} free check{checksRemaining === 1 ? '' : 's'} left
+                  {checksRemaining} LEFT
                 </span>
               )}
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate('/verify/classic')}
-                className="text-[11px] text-muted-foreground hover:text-foreground hidden md:inline-flex"
+                className="text-[11px] text-muted-foreground hover:text-foreground hidden md:inline-flex h-8"
               >
                 Classic view
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                className="lg:hidden"
+                className="lg:hidden h-8"
                 onClick={() => setResultsOpenMobile((v) => !v)}
               >
                 {resultsOpenMobile ? (
@@ -516,7 +525,7 @@ const VerifyChatPage: React.FC = () => {
 
         {/* 3-pane layout */}
         <div className="flex-1 flex overflow-hidden">
-          {/* SIDEBAR (left, desktop) */}
+          {/* SIDEBAR (desktop) */}
           <aside className="hidden lg:block w-64 shrink-0">
             <ConversationSidebar
               threads={threads}
@@ -528,14 +537,14 @@ const VerifyChatPage: React.FC = () => {
             />
           </aside>
 
-          {/* SIDEBAR (mobile, drawer) */}
+          {/* SIDEBAR (mobile drawer) */}
           <AnimatePresence>
             {sidebarOpenMobile && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="lg:hidden fixed inset-0 z-50 bg-black/60"
+                className="lg:hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
                 onClick={() => setSidebarOpenMobile(false)}
               >
                 <motion.aside
@@ -566,24 +575,33 @@ const VerifyChatPage: React.FC = () => {
             )}
           </AnimatePresence>
 
-          {/* CHAT PANE (center) */}
+          {/* CHAT PANE */}
           <div
             className={cn(
-              'flex-1 flex flex-col min-w-0',
+              'flex-1 flex flex-col min-w-0 relative',
               resultsOpenMobile && 'hidden lg:flex',
             )}
           >
-            <div ref={scrollRef} className="flex-1 overflow-y-auto">
-              <div className="max-w-3xl mx-auto px-4 py-6">
+            {/* Subtle ambient glow */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-60"
+              style={{
+                background:
+                  'radial-gradient(60% 40% at 50% -10%, hsl(var(--primary) / 0.08), transparent 70%)',
+              }}
+            />
+
+            <div ref={scrollRef} className="flex-1 overflow-y-auto relative">
+              <div className="max-w-2xl mx-auto px-4 py-8">
                 {showWelcome ? (
-                  <WelcomeScreen
+                  <LuminalWelcome
                     onPick={(text) => {
                       setInput(text);
                       textareaRef.current?.focus();
                     }}
                   />
                 ) : (
-                  <div className="space-y-5">
+                  <div className="space-y-6">
                     <AnimatePresence initial={false}>
                       {messages.map((msg, idx) => (
                         <ChatBubble
@@ -594,7 +612,6 @@ const VerifyChatPage: React.FC = () => {
                           onRegenerate={
                             msg.role === 'assistant' && idx === messages.length - 1 && !isThinking
                               ? () => {
-                                  // find the previous user message and resend
                                   const prevUser = [...messages.slice(0, idx)]
                                     .reverse()
                                     .find((m) => m.role === 'user');
@@ -613,13 +630,13 @@ const VerifyChatPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Composer */}
-            <div className="border-t border-border/60 bg-card/40 backdrop-blur shrink-0">
-              <div className="max-w-3xl mx-auto px-4 py-3">
+            {/* Composer — Luminal style */}
+            <div className="border-t border-border/50 bg-card/40 backdrop-blur-xl shrink-0 relative">
+              <div className="max-w-2xl mx-auto px-4 py-3.5">
                 {attachment && (
-                  <div className="mb-2 inline-flex items-center gap-2 bg-muted rounded-lg px-3 py-2">
-                    <ImageIcon className="w-4 h-4 text-primary" />
-                    <span className="text-xs text-foreground truncate max-w-[200px]">
+                  <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border/60 rounded-lg px-3 py-1.5">
+                    <ImageIcon className="w-3.5 h-3.5 text-primary" />
+                    <span className="text-xs text-foreground truncate max-w-[200px] font-mono">
                       {attachment.name}
                     </span>
                     <button
@@ -632,93 +649,90 @@ const VerifyChatPage: React.FC = () => {
                   </div>
                 )}
 
-                <div className="flex items-end gap-1.5 bg-muted rounded-2xl px-2 py-1.5 focus-within:ring-2 focus-within:ring-primary/40 transition shadow-sm">
-                  <button
-                    onClick={() => fileInputRef.current?.click()}
-                    disabled={isThinking}
-                    className="p-2 text-muted-foreground hover:text-primary transition-colors disabled:opacity-50"
-                    aria-label="Upload image"
-                    title="Upload image"
-                  >
-                    <Paperclip className="w-5 h-5" />
-                  </button>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    hidden
-                    onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
-                  />
-
-                  <button
-                    onClick={() => cameraInputRef.current?.click()}
-                    disabled={isThinking}
-                    className="p-2 text-muted-foreground hover:text-primary transition-colors disabled:opacity-50 hidden sm:block"
-                    aria-label="Scan with camera"
-                    title="Scan with camera"
-                  >
-                    <Camera className="w-5 h-5" />
-                  </button>
-                  <input
-                    ref={cameraInputRef}
-                    type="file"
-                    accept="image/*"
-                    capture="environment"
-                    hidden
-                    onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
-                  />
-
-                  {voiceSupported && (
-                    <button
-                      onClick={() => (isListening ? stopListening() : startListening())}
-                      disabled={isThinking}
-                      className={cn(
-                        'p-2 transition-colors disabled:opacity-50',
-                        isListening
-                          ? 'text-red-500 animate-pulse'
-                          : 'text-muted-foreground hover:text-primary',
-                      )}
-                      aria-label={isListening ? 'Stop recording' : 'Voice input'}
-                      title="Voice input"
-                    >
-                      {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
-                    </button>
-                  )}
-
+                <div className="bg-background/80 rounded-xl border border-border/70 focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/20 transition-all shadow-lg shadow-black/20">
                   <Textarea
                     ref={textareaRef}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                     onPaste={handlePaste}
-                    placeholder="Paste an IMEI, VIN, serial, plate, URL — or ask me anything…"
+                    placeholder="Enter IMEI, VIN, serial, plate, URL — or ask me anything…"
                     rows={1}
                     disabled={isThinking}
-                    className="flex-1 resize-none bg-transparent border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm py-2 min-h-0 max-h-40"
+                    className="w-full resize-none bg-transparent border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm px-4 py-3 min-h-0 max-h-40 placeholder:text-muted-foreground/70"
                   />
+                  <div className="flex items-center justify-between px-2 py-1.5 border-t border-border/40">
+                    <div className="flex items-center gap-0.5">
+                      <ToolButton
+                        icon={Paperclip}
+                        label="Upload image"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={isThinking}
+                      />
+                      <ToolButton
+                        icon={Camera}
+                        label="Scan with camera"
+                        onClick={() => cameraInputRef.current?.click()}
+                        disabled={isThinking}
+                        hideOnMobile
+                      />
+                      {voice.isSupported && (
+                        <ToolButton
+                          icon={voice.isListening ? MicOff : Mic}
+                          label={voice.isListening ? 'Stop recording' : 'Voice input'}
+                          onClick={() =>
+                            voice.isListening ? voice.stopListening() : voice.startListening()
+                          }
+                          disabled={isThinking}
+                          active={voice.isListening}
+                        />
+                      )}
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        hidden
+                        onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+                      />
+                      <input
+                        ref={cameraInputRef}
+                        type="file"
+                        accept="image/*"
+                        capture="environment"
+                        hidden
+                        onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+                      />
+                    </div>
 
-                  <Button
-                    onClick={() => handleSend()}
-                    disabled={(!input.trim() && !attachment) || isThinking}
-                    size="icon"
-                    className="rounded-xl h-9 w-9 shrink-0"
-                    aria-label="Send"
-                  >
-                    {isThinking ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      <Send className="w-4 h-4" />
-                    )}
-                  </Button>
+                    <Button
+                      onClick={() => handleSend()}
+                      disabled={(!input.trim() && !attachment) || isThinking}
+                      size="sm"
+                      className="rounded-lg h-8 px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20 disabled:shadow-none"
+                      aria-label="Submit"
+                    >
+                      {isThinking ? (
+                        <>
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <span className="ml-1.5 text-xs">Analyzing</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-xs">Submit</span>
+                          <ArrowUp className="w-3.5 h-3.5 ml-1" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </div>
 
-                <p className="text-[10px] text-muted-foreground text-center mt-2">
-                  🛡 100+ databases · ⚡ ~3s results · 🔒 Anonymous
+                <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide">
+                  100+ DATABASES · ~3S RESULTS · ANONYMOUS
                   {!user && (
                     <>
                       {' · '}
                       <a href="/auth?redirect=/verify" className="text-primary hover:underline">
-                        Sign in for 2 free checks
+                        SIGN IN — 2 FREE CHECKS
                       </a>
                     </>
                   )}
@@ -727,8 +741,8 @@ const VerifyChatPage: React.FC = () => {
             </div>
           </div>
 
-          {/* RESULTS PANE (right, desktop) */}
-          <aside className="hidden lg:block w-[400px] xl:w-[440px] shrink-0 bg-card/20 border-l border-border/60">
+          {/* RESULTS PANE (desktop) */}
+          <aside className="hidden lg:flex flex-col w-[400px] xl:w-[440px] shrink-0 bg-card/30 border-l border-border/50">
             <ResultsPane
               current={currentResult}
               history={sessionResults}
@@ -754,9 +768,127 @@ const VerifyChatPage: React.FC = () => {
   );
 };
 
-/* ──────────────────────────────────────────────────────────────────── */
-/*  Chat bubble (with copy + suggestions + regenerate)                   */
-/* ──────────────────────────────────────────────────────────────────── */
+export default VerifyChatPage;
+
+/* ─────────────────────────────────────────────────────────────────────
+ *  Luminal welcome screen
+ * ──────────────────────────────────────────────────────────────────── */
+
+const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col gap-8 py-6"
+    >
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest text-primary px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
+          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
+          SECURE SESSION ACTIVE
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
+          Verification stream
+        </h1>
+        <p className="text-base text-muted-foreground text-pretty max-w-xl leading-relaxed">
+          Drop an image, paste an identifier, or share a marketplace URL to initiate a check across
+          NCIC, NICB, GSMA, ATF and 50-state law-enforcement databases.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <ActionTile
+          tag="SCAN"
+          title="Run image OCR"
+          desc="Upload a photo of an IMEI sticker, VIN plate, or serial label."
+          onClick={() => onPick('')}
+          icon={ScanLine}
+        />
+        <ActionTile
+          tag="QUERY"
+          title="Cross-reference"
+          desc="Check IMEI, VIN, serial, plate, or marketplace URL in seconds."
+          onClick={() => onPick('')}
+          icon={Sparkles}
+        />
+      </div>
+
+      <div className="space-y-2.5">
+        <div className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase">
+          Try one of these
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {EXAMPLE_PROMPTS.map((p) => (
+            <button
+              key={p.tag}
+              onClick={() => onPick(p.text)}
+              className="group text-left rounded-lg border border-border/60 bg-card/40 hover:bg-card hover:border-primary/40 transition-all px-3.5 py-3 flex items-center gap-3"
+            >
+              <span className="text-[9px] font-mono text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 shrink-0 tracking-wider">
+                {p.tag}
+              </span>
+              <div className="flex-1 min-w-0">
+                <div className="text-xs font-medium text-foreground truncate">{p.label}</div>
+                <div className="text-[10px] text-muted-foreground font-mono truncate mt-0.5">
+                  {p.text}
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const ActionTile: React.FC<{
+  tag: string;
+  title: string;
+  desc: string;
+  icon: React.ComponentType<{ className?: string }>;
+  onClick: () => void;
+}> = ({ tag, title, desc, icon: Icon, onClick }) => (
+  <button
+    onClick={onClick}
+    className="group p-4 rounded-xl border border-border/70 bg-card/50 hover:bg-card hover:border-primary/40 transition-all text-left"
+  >
+    <div className="flex items-center justify-between mb-2">
+      <span className="text-[10px] font-mono tracking-widest text-primary">{tag}</span>
+      <Icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+    </div>
+    <div className="text-sm font-semibold text-foreground mb-1">{title}</div>
+    <div className="text-xs text-muted-foreground leading-relaxed">{desc}</div>
+  </button>
+);
+
+const ToolButton: React.FC<{
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  active?: boolean;
+  hideOnMobile?: boolean;
+}> = ({ icon: Icon, label, onClick, disabled, active, hideOnMobile }) => (
+  <button
+    onClick={onClick}
+    disabled={disabled}
+    title={label}
+    aria-label={label}
+    className={cn(
+      'p-2 rounded-md transition-colors disabled:opacity-50',
+      hideOnMobile && 'hidden sm:inline-flex',
+      active
+        ? 'text-red-500 bg-red-500/10 animate-pulse'
+        : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
+    )}
+  >
+    <Icon className="w-4 h-4" />
+  </button>
+);
+
+/* ─────────────────────────────────────────────────────────────────────
+ *  Chat bubble (Luminal aesthetic)
+ * ──────────────────────────────────────────────────────────────────── */
 
 const ChatBubble: React.FC<{
   msg: ChatMessage;
@@ -779,23 +911,23 @@ const ChatBubble: React.FC<{
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn('flex gap-3 group', isUser ? 'justify-end' : 'justify-start')}
     >
       {!isUser && (
-        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center shrink-0 mt-1">
-          <Brain className="w-4 h-4 text-primary" />
+        <div className="size-7 rounded-md bg-primary/10 border border-primary/30 grid place-items-center shrink-0 mt-1">
+          <span className="text-[10px] font-bold text-primary">S</span>
         </div>
       )}
 
       <div className={cn('flex flex-col max-w-[85%] min-w-0', isUser && 'items-end')}>
         <div
           className={cn(
-            'rounded-2xl px-4 py-3 text-sm leading-relaxed',
+            'rounded-xl px-4 py-3 text-sm leading-relaxed',
             isUser
-              ? 'bg-primary text-primary-foreground rounded-br-md shadow-sm'
-              : 'bg-card border border-border/60 text-foreground rounded-bl-md',
+              ? 'bg-primary text-primary-foreground rounded-br-sm shadow-md shadow-primary/10'
+              : 'bg-card/60 border border-border/60 text-foreground rounded-bl-sm backdrop-blur-sm',
           )}
         >
           {msg.attachment?.kind === 'image' && msg.attachment.dataUrl && (
@@ -809,11 +941,11 @@ const ChatBubble: React.FC<{
           {msg.loading && !msg.content ? (
             <div className="flex items-center gap-2 text-muted-foreground">
               <span className="flex gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce [animation-delay:-0.3s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce [animation-delay:-0.15s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" />
+                <span className="size-1.5 rounded-full bg-primary/60 animate-bounce [animation-delay:-0.3s]" />
+                <span className="size-1.5 rounded-full bg-primary/60 animate-bounce [animation-delay:-0.15s]" />
+                <span className="size-1.5 rounded-full bg-primary/60 animate-bounce" />
               </span>
-              <span className="text-xs">Thinking…</span>
+              <span className="text-xs font-mono tracking-wide">ANALYZING</span>
             </div>
           ) : (
             <div
@@ -825,7 +957,6 @@ const ChatBubble: React.FC<{
           {msg.result && <InlineResultMini result={msg.result} />}
         </div>
 
-        {/* Action toolbar (assistant only, non-loading) */}
         {!isUser && !msg.loading && msg.content && (
           <div className="flex items-center gap-1 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
             <button
@@ -834,7 +965,11 @@ const ChatBubble: React.FC<{
               aria-label="Copy"
               title="Copy"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+              {copied ? (
+                <Check className="w-3.5 h-3.5 text-emerald-500" />
+              ) : (
+                <Copy className="w-3.5 h-3.5" />
+              )}
             </button>
             {onRegenerate && (
               <button
@@ -849,14 +984,13 @@ const ChatBubble: React.FC<{
           </div>
         )}
 
-        {/* Suggested follow-ups */}
         {!isUser && isLast && !msg.loading && msg.suggestions && msg.suggestions.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-2.5">
             {msg.suggestions.map((s) => (
               <button
                 key={s}
                 onClick={() => onSuggestion(s)}
-                className="text-[11px] px-2.5 py-1 rounded-full border border-border/60 bg-card/60 hover:border-primary/50 hover:bg-primary/5 text-foreground/80 hover:text-foreground transition-colors"
+                className="text-[11px] px-2.5 py-1 rounded-md border border-border/60 bg-card/60 hover:border-primary/50 hover:bg-primary/5 text-foreground/80 hover:text-foreground transition-colors"
               >
                 {s}
               </button>
@@ -866,15 +1000,14 @@ const ChatBubble: React.FC<{
       </div>
 
       {isUser && (
-        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-1 text-xs font-bold text-primary">
-          You
+        <div className="size-7 rounded-md bg-primary/15 border border-primary/30 grid place-items-center shrink-0 mt-1 text-[10px] font-bold text-primary">
+          ME
         </div>
       )}
     </motion.div>
   );
 };
 
-/** Lightweight inline markdown */
 function renderInline(text: string): string {
   const escape = (s: string) =>
     s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -885,7 +1018,10 @@ function renderInline(text: string): string {
   });
   html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/_([^_]+)_/g, '<em>$1</em>');
-  html = html.replace(/`([^`]+)`/g, '<code class="px-1 py-0.5 rounded bg-background/60 text-xs font-mono">$1</code>');
+  html = html.replace(
+    /`([^`]+)`/g,
+    '<code class="px-1 py-0.5 rounded bg-background/60 text-xs font-mono">$1</code>',
+  );
   html = html.replace(/\n/g, '<br />');
   return html;
 }
@@ -893,22 +1029,53 @@ function renderInline(text: string): string {
 const InlineResultMini: React.FC<{ result: ChatVerifyResult }> = ({ result }) => {
   const tone =
     result.status === 'stolen'
-      ? { Icon: AlertTriangle, color: 'text-red-500', bg: 'bg-red-500/10', border: 'border-red-500/30', label: 'Stolen Match' }
+      ? {
+          Icon: AlertTriangle,
+          color: 'text-red-500',
+          bg: 'bg-red-500/10',
+          border: 'border-red-500/30',
+          label: 'STOLEN MATCH',
+        }
       : result.status === 'lost'
-      ? { Icon: AlertTriangle, color: 'text-amber-500', bg: 'bg-amber-500/10', border: 'border-amber-500/30', label: 'Reported Lost' }
+      ? {
+          Icon: AlertTriangle,
+          color: 'text-amber-500',
+          bg: 'bg-amber-500/10',
+          border: 'border-amber-500/30',
+          label: 'REPORTED LOST',
+        }
       : result.status === 'safe'
-      ? { Icon: CheckCircle2, color: 'text-emerald-500', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', label: 'No Reports Found' }
-      : { Icon: ShieldCheck, color: 'text-muted-foreground', bg: 'bg-muted', border: 'border-border', label: result.status.toUpperCase() };
+      ? {
+          Icon: CheckCircle2,
+          color: 'text-emerald-500',
+          bg: 'bg-emerald-500/10',
+          border: 'border-emerald-500/30',
+          label: 'CLEAR',
+        }
+      : {
+          Icon: Sparkles,
+          color: 'text-muted-foreground',
+          bg: 'bg-muted',
+          border: 'border-border',
+          label: 'INCONCLUSIVE',
+        };
 
   return (
-    <div className={cn('mt-3 rounded-xl border p-2.5 flex items-center gap-2', tone.bg, tone.border)}>
-      <tone.Icon className={cn('w-4 h-4 shrink-0', tone.color)} />
-      <span className={cn('text-[11px] font-bold uppercase tracking-wide', tone.color)}>
-        {tone.label}
-      </span>
-      <span className="text-[10px] text-muted-foreground ml-auto">View on right →</span>
+    <div className={cn('mt-3 rounded-lg border p-3', tone.bg, tone.border)}>
+      <div className="flex items-center gap-2">
+        <tone.Icon className={cn('w-4 h-4', tone.color)} />
+        <span className={cn('text-[10px] font-mono font-bold tracking-wider', tone.color)}>
+          {tone.label}
+        </span>
+        {typeof result.confidence === 'number' && (
+          <span className="ml-auto text-[10px] font-mono text-muted-foreground">
+            {result.confidence}% confidence
+          </span>
+        )}
+      </div>
+      <div className="mt-1.5 text-xs text-foreground/80 font-mono truncate">
+        {result.itemType.toUpperCase()} · {result.identifier}
+      </div>
     </div>
   );
 };
-
-export default VerifyChatPage;
