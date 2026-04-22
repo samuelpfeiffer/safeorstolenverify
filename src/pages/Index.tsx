@@ -5,6 +5,7 @@ import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
+import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
@@ -194,11 +195,8 @@ const Index = () => {
 
       <TopNavigation />
 
-      {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
-      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold mt-16" style={{ minHeight: '40px' }}>
-        ⚠️ Over $15 billion in property is stolen annually in the U.S. — verify any item before you buy or sell.
-        <Link to="/verify" className="underline font-black ml-2">Try 2 Checks on Us →</Link>
-      </div>
+      {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
+      <DownloadAppBanner />
 
       {/* ── HERO WITH SCANNER ──────────────────────────── */}
       <section className="relative pt-20 pb-28 px-4 text-center overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
