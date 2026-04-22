@@ -719,7 +719,7 @@ const VerifyChatPage: React.FC = () => {
                   </div>
                 )}
 
-                <div className="bg-background/80 rounded-xl border border-border/70 focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/20 transition-all shadow-lg shadow-black/20">
+                <div className="bg-background/80 rounded-2xl border-2 border-primary/40 focus-within:border-primary/70 focus-within:ring-2 focus-within:ring-primary/20 transition-all shadow-[0_0_40px_-10px_hsl(var(--primary)/0.4)]">
                   <Textarea
                     ref={textareaRef}
                     value={input}
