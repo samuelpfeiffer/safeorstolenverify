@@ -7,6 +7,7 @@ import { AdminRoute } from '@/core/routing/AdminRoute';
 // CORE 10 PAGES + STRATEGIC SEO PAGES
 const Index = lazy(() => import('@/pages/Index'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
+const AIVerifyPage = lazy(() => import('@/pages/AIVerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
 const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
@@ -375,6 +376,8 @@ export const AppRoutes = () => {
         {/* CORE ROUTES */}
         <Route path="/" element={<Index />} />
         <Route path="/verify" element={<VerifyPage />} />
+        <Route path="/ai-verify" element={<AIVerifyPage />} />
+        <Route path="/ai-chat" element={<AIVerifyPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/trust-engine" element={<TrustEnginePage />} />
         <Route path="/profile" element={<ProfilePage />} />
