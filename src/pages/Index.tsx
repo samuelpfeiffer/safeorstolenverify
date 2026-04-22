@@ -137,7 +137,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is SafeOrStolen free?',
-    a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, unlimited checks are available for $1 per month, which includes access to the mobile app with barcode scanning.',
+    a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, you can run a single check for $0.99 or get unlimited checks for $10 per month, which includes access to the mobile app with barcode scanning.',
   },
   {
     q: 'What databases does SafeOrStolen check?',
@@ -149,7 +149,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'SafeOrStolen offers 2 free checks with no account required. After that, the Unlimited plan is $1 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
+    a: 'SafeOrStolen offers 2 free checks with no account required. After that, single checks are $0.99 each, or the Unlimited plan is $10 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
   },
   {
     q: 'How does the license plate lookup work?',
@@ -253,6 +253,37 @@ const Index = () => {
           ))}
         </div>
       </div>
+
+      {/* ── SOFT VALUE STRIP — trust-led pricing reminder ── */}
+      <section className="py-10 px-4 bg-gradient-to-b from-background to-muted/20 border-b border-border">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-3">
+            <Shield className="w-3.5 h-3.5" /> Simple, honest pricing
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
+            Start with <span className="text-primary">2 free checks</span>. No credit card.
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
+            Need just one verification? Pay <strong className="text-foreground">$0.99</strong> — no account required.
+            Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
+            mobile app, and PDF certificates included. Cancel anytime, 30-day refund.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/verify"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all button-glow"
+            >
+              Start Free — 2 Checks
+            </Link>
+            <Link
+              to="/pricing"
+              className="inline-flex items-center gap-2 border border-border hover:border-primary text-foreground font-semibold px-6 py-3 rounded-xl transition-all hover:bg-primary/5"
+            >
+              See Plans →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ── VERIFICATION CARDS WITH PHOTOS ──────────────── */}
       <section className="py-16 px-4">
@@ -494,7 +525,7 @@ const Index = () => {
             </ul>
             <div className="border-t border-border pt-5">
               <div>
-                <span className="text-4xl font-black text-foreground">$1</span>
+                <span className="text-4xl font-black text-foreground">$10</span>
                 <span className="text-muted-foreground text-sm">/month</span>
               </div>
               <div className="text-muted-foreground text-xs mt-1">Cancel anytime · 30-day money-back guarantee</div>
