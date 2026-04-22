@@ -71,7 +71,7 @@ const faqSchema = {
       "name": "Is the Marketplace URL Analyzer free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $0.99/check or $2.99/month unlimited — significantly cheaper than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check)."
+        "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $0.99/check or $10/month unlimited — significantly cheaper than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check)."
       }
     },
     {
@@ -334,7 +334,7 @@ const MarketplaceURLChecker: React.FC = () => {
                     </tr>
                     <tr>
                       <td className="p-3">Price</td>
-                      <td className="p-3 text-primary font-bold">2 free, $2.99/mo</td>
+                      <td className="p-3 text-primary font-bold">2 free, $10/mo</td>
                       <td className="p-3 text-muted-foreground">£7/check</td>
                       <td className="p-3 text-muted-foreground">Free (limited)</td>
                       <td className="p-3 text-muted-foreground">Free (10/day)</td>

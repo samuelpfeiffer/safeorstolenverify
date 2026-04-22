@@ -106,7 +106,7 @@ const AppPage = () => {
         "name": "Is the stolen item checker app free to download?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Download the SafeOrStolen app for iOS and Android. Subscribe to the $2.99/month Unlimited Plan for unlimited verifications across all item types."
+          "text": "Yes! Download the SafeOrStolen app for iOS and Android. Subscribe to the $10/month Unlimited Plan for unlimited verifications across all item types."
         }
       },
       {
@@ -170,7 +170,7 @@ const AppPage = () => {
         "name": "Can pawn shops use SafeOrStolen for business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! SafeOrStolen is perfect for pawn shops, secondhand stores, and resellers. Verify every item before purchasing with our fast 3-second verification. $2.99/month unlimited plan available."
+          "text": "Absolutely! SafeOrStolen is perfect for pawn shops, secondhand stores, and resellers. Verify every item before purchasing with our fast 3-second verification. $10/month unlimited plan available."
         }
       },
       {

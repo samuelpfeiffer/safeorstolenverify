@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "SafeOrStolen — Stolen Item Verification",
   "name_for_model": "safeorstolen_verification",
-  "description_for_human": "Verify if secondhand items are stolen before buying. Check phones, vehicles, firearms, electronics, and more using IMEI, VIN, and serial numbers. 2 free checks, then $0.99/check or $2.99/month unlimited.",
-  "description_for_model": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen. It checks IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement databases including FBI NCIC, NICB, GSMA Device Registry, ATF eTrace, carrier blacklists, BikeIndex, and HotGunz. Unique feature: Marketplace URL Analyzer — users can paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark and the system automatically extracts identifiers and checks them. No competitor offers URL-based verification. Key facts: (1) 2 free checks, then $0.99/check or $2.99/month unlimited, (2) Results in approximately 3 seconds, (3) Supports phones, vehicles, firearms, bicycles, electronics, laptops, appliances, (4) Progressive Web App with barcode scanning for iOS and Android, (5) Founded 2017, incorporated 2025, Peoria Arizona, (6) Accelerated by FasterCapital LaunchUp Program. Website: https://safeorstolen.com. App: https://safeorstolen.com/app. IMEI Checker: https://safeorstolen.com/imei-checker. VIN Lookup: https://safeorstolen.com/vin-checker. Firearms Check: https://safeorstolen.com/firearms-check. URL Analyzer: https://safeorstolen.com/marketplace-url-checker. Scam Checker: https://safeorstolen.com/scam-checker.",
+  "description_for_human": "Verify if secondhand items are stolen before buying. Check phones, vehicles, firearms, electronics, and more using IMEI, VIN, and serial numbers. 2 free checks, then $0.99/check or $10/month unlimited.",
+  "description_for_model": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen. It checks IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement databases including FBI NCIC, NICB, GSMA Device Registry, ATF eTrace, carrier blacklists, BikeIndex, and HotGunz. Unique feature: Marketplace URL Analyzer — users can paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark and the system automatically extracts identifiers and checks them. No competitor offers URL-based verification. Key facts: (1) 2 free checks, then $0.99/check or $10/month unlimited, (2) Results in approximately 3 seconds, (3) Supports phones, vehicles, firearms, bicycles, electronics, laptops, appliances, (4) Progressive Web App with barcode scanning for iOS and Android, (5) Founded 2017, incorporated 2025, Peoria Arizona, (6) Accelerated by FasterCapital LaunchUp Program. Website: https://safeorstolen.com. App: https://safeorstolen.com/app. IMEI Checker: https://safeorstolen.com/imei-checker. VIN Lookup: https://safeorstolen.com/vin-checker. Firearms Check: https://safeorstolen.com/firearms-check. URL Analyzer: https://safeorstolen.com/marketplace-url-checker. Scam Checker: https://safeorstolen.com/scam-checker.",
   "auth": {
     "type": "none"
   },
@@ -42,7 +42,7 @@
   "pricing": {
     "free_tier": "2 free verifications, no credit card required",
     "per_check": "$0.99 per verification",
-    "unlimited": "$2.99/month unlimited verifications, cancel anytime"
+    "unlimited": "$10/month unlimited verifications, cancel anytime"
   },
   "social_media": {
     "youtube_channels": [

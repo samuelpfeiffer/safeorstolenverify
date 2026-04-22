@@ -2,7 +2,7 @@
  * Stripe Configuration
  * 
  * Publishable keys are safe to expose in client-side code.
- * March 2026: Three-tier model — Free / $0.99 per check / $2.99/mo unlimited
+ * March 2026: Three-tier model — Free / $0.99 per check / $10/mo unlimited
  */
 
 export const STRIPE_CONFIG = {
@@ -12,7 +12,7 @@ export const STRIPE_CONFIG = {
   // ── Active prices ────────────────────────────────────────
   prices: {
     payPerCheck: 'price_1T8uNDGxnZLw8J7OrBKrbePR',   // $0.99 one-time
-    unlimited:   'price_1T8uToGxnZLw8J7O6GcOuV1w',   // $2.99/mo recurring
+    unlimited:   'price_1T8uToGxnZLw8J7O6GcOuV1w',   // $10/mo recurring
 
     // Legacy price IDs kept for existing subscribers
     singleVerification: 'price_1T3nfCGxnZLw8J7OwqSRSPel', // $0.99 per verification (legacy)
@@ -20,7 +20,7 @@ export const STRIPE_CONFIG = {
     pro: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',                 // $9.99/mo (legacy)
     business: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',            // $49.99/mo (legacy)
     legacyPrice: 'price_1SDRrMGxnZLw8J7ObJsUlp6k',         // $0.50 (archived)
-    sellerListing: 'price_1T6fNGGxnZLw8J7OrKLSrnAx',       // $2.99 one-time (legacy)
+    sellerListing: 'price_1T6fNGGxnZLw8J7OrKLSrnAx',       // $10 one-time (legacy)
     verifiedSeller: 'price_1T6fOWGxnZLw8J7O2njgDUgM',      // $19.99/mo (legacy)
     premiumSeller: 'price_1T6fQ0GxnZLw8J7Omxo2m8TS',       // $29.99/mo (legacy)
     businessPro: '',

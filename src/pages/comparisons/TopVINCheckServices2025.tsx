@@ -22,7 +22,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best for stolen vehicle verification — $2.99/month unlimited"
+          "description": "Best for stolen vehicle verification — $10/month unlimited"
         }
       },
       {
@@ -45,8 +45,8 @@ const TopVINCheckServices2025 = () => {
       badge: 'Best for Stolen Checks',
       badgeColor: 'bg-green-500',
       bestFor: 'Verifying if a vehicle is stolen before purchase',
-      price: '$2.99/month unlimited',
-      fullReportPrice: '$2.99/month (all features)',
+      price: '$10/month unlimited',
+      fullReportPrice: '$10/month (all features)',
       stolenCheck: true,
       titleCheck: true,
       accidentHistory: false,
@@ -55,7 +55,7 @@ const TopVINCheckServices2025 = () => {
       mobileApp: true,
       multipleItems: true,
       pros: [
-        '$2.99/month unlimited VIN checks',
+        '$10/month unlimited VIN checks',
         '50M+ database from law enforcement & insurers',
         'Checks more than cars (phones, bikes, tools)',
         'Mobile app for instant verification',
@@ -64,10 +64,10 @@ const TopVINCheckServices2025 = () => {
       cons: [
         'No detailed service history',
         'No accident damage estimates',
-        'Requires $2.99/month subscription'
+        'Requires $10/month subscription'
       ],
       cta: '/pricing',
-      ctaText: 'Subscribe — $2.99/mo'
+      ctaText: 'Subscribe — $10/mo'
     },
     {
       rank: 2,
@@ -210,7 +210,7 @@ const TopVINCheckServices2025 = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/pricing">Subscribe — $2.99/mo Unlimited</Link>
+                  <Link to="/pricing">Subscribe — $10/mo Unlimited</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#comparison">See Full Comparison</a>
@@ -234,7 +234,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">$2.99/mo unlimited</p>
+                    <p className="text-xs text-muted-foreground mt-2">$10/mo unlimited</p>
                   </CardContent>
                 </Card>
                 <Card>

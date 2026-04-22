@@ -43,7 +43,7 @@ export const WhyChooseSafeOrStolen = () => {
     {
       icon: Award,
       title: 'Best Value — From $0.99',
-      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers $0.99/check or $2.99/month unlimited. Better than CheckMEND — a real mobile app, not a slow website.',
+      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers $0.99/check or $10/month unlimited. Better than CheckMEND — a real mobile app, not a slow website.',
       badge: 'Best Value',
       color: 'from-indigo-500 to-purple-500'
     },

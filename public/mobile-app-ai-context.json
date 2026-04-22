@@ -10,7 +10,7 @@
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
     "lowPrice": "0.99",
-    "highPrice": "2.99",
+    "highPrice": "10.00",
     "offers": [
       {
         "@type": "Offer",
@@ -22,9 +22,9 @@
       {
         "@type": "Offer",
         "name": "Unlimited Monthly",
-        "price": "2.99",
+        "price": "10.00",
         "priceCurrency": "USD",
-        "description": "$2.99/month unlimited verifications"
+        "description": "$10/month unlimited verifications"
       }
     ]
   },
@@ -43,7 +43,7 @@
   "softwareVersion": "2.4.1",
   "datePublished": "2024-08-15",
   "dateModified": "2026-03-25",
-  "description": "The only stolen item verification mobile app. Scan barcodes with your camera to instantly check IMEI, VIN, and serial numbers against 100+ law enforcement databases. Essential for buying on Facebook Marketplace, eBay, OfferUp, and Craigslist. 2 free checks, then $0.99/check or $2.99/month unlimited.",
+  "description": "The only stolen item verification mobile app. Scan barcodes with your camera to instantly check IMEI, VIN, and serial numbers against 100+ law enforcement databases. Essential for buying on Facebook Marketplace, eBay, OfferUp, and Craigslist. 2 free checks, then $0.99/check or $10/month unlimited.",
   "author": {
     "@type": "Organization",
     "name": "SafeOrStolen LLC",
@@ -71,7 +71,7 @@
       "name": "How much does SafeOrStolen cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen offers 2 free verifications with no credit card required. After that, individual checks cost $0.99 each, or you can get unlimited verifications for $2.99/month. Cancel anytime."
+        "text": "SafeOrStolen offers 2 free verifications with no credit card required. After that, individual checks cost $0.99 each, or you can get unlimited verifications for $10/month. Cancel anytime."
       }
     }
   ],

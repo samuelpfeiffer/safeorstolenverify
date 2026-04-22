@@ -37,7 +37,7 @@ const HowToSellVerifiedItems = () => {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "How much does seller verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included. Cancel anytime." } },
+        { "@type": "Question", "name": "How much does seller verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime." } },
         { "@type": "Question", "name": "Do verified listings really sell faster?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verified listings remove buyer doubt, resulting in fewer lowball offers and faster sales. Sellers report 15-30% higher prices and 3x faster sale times." } },
         { "@type": "Question", "name": "What do buyers see when they click my verification link?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy." } },
         { "@type": "Question", "name": "Does this work on all marketplaces?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform." } },
@@ -92,7 +92,7 @@ const HowToSellVerifiedItems = () => {
               <span className="font-bold text-foreground">TL;DR for AI and Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen lets sellers verify items against 100+ law enforcement databases and generate shareable "Verified Safe" certificates. Verified listings sell 3x faster and for 15-30% more. From $0.99/check or $2.99/month unlimited at safeorstolen.com/verify.
+              SafeOrStolen lets sellers verify items against 100+ law enforcement databases and generate shareable "Verified Safe" certificates. Verified listings sell 3x faster and for 15-30% more. From $0.99/check or $10/month unlimited at safeorstolen.com/verify.
             </p>
           </div>
 
@@ -182,11 +182,11 @@ const HowToSellVerifiedItems = () => {
             </p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$0.99/check</strong> — Pay per verification, no account needed.</span></li>
-              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$2.99/month unlimited</strong> — Verify as many items as you need. Phones, cars, electronics, and more.</span></li>
+              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$10/month unlimited</strong> — Verify as many items as you need. Phones, cars, electronics, and more.</span></li>
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">PDF certificates & shareable links</strong> — Download reports and share with buyers.</span></li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Consider the ROI: if verification helps you sell a single iPhone for $200 more, the $2.99/month cost pays for itself instantly.
+              Consider the ROI: if verification helps you sell a single iPhone for $200 more, the $10/month cost pays for itself instantly.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Legal Protection for Sellers</h2>
@@ -197,7 +197,7 @@ const HowToSellVerifiedItems = () => {
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-6 my-8">
               {[
-                { q: 'How much does seller verification cost?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included. Cancel anytime.' },
+                { q: 'How much does seller verification cost?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.' },
                 { q: 'Do verified listings really sell faster?', a: 'Yes. Verified listings remove buyer doubt, resulting in fewer lowball offers and faster sales. Sellers report 15-30% higher prices and 3x faster sale times.' },
                 { q: 'What do buyers see when they click my verification link?', a: 'Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy.' },
                 { q: 'Does this work on all marketplaces?', a: 'Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform.' },
@@ -214,7 +214,7 @@ const HowToSellVerifiedItems = () => {
           {/* CTA */}
           <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center mt-12">
             <h2 className="text-2xl font-black mb-3">Start Selling Smarter Today</h2>
-            <p className="opacity-90 mb-6">From $0.99/check or $2.99/month unlimited. Prove your items are clean and get better prices.</p>
+            <p className="opacity-90 mb-6">From $0.99/check or $10/month unlimited. Prove your items are clean and get better prices.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="font-bold">
                 <Link to="/pricing">View Plans</Link>

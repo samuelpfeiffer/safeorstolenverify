@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "Is SMS verification free?",
-    answer: "Your first 2 SMS verifications are free — no account required. After that, pay $0.99 per check or subscribe for $2.99/month unlimited. Standard carrier text messaging rates may apply from your phone provider."
+    answer: "Your first 2 SMS verifications are free — no account required. After that, pay $0.99 per check or subscribe for $10/month unlimited. Standard carrier text messaging rates may apply from your phone provider."
   },
   {
     question: "How fast are SMS verification results?",

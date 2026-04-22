@@ -30,7 +30,7 @@ export const StickyConversionBar = () => {
           <Shield className="w-5 h-5 flex-shrink-0" />
           <p className="text-sm font-medium truncate">
             <span className="hidden sm:inline">🔒 Verify any item in 3 seconds — </span>
-            <span className="font-bold">$0.99/check or $2.99/mo unlimited</span>
+            <span className="font-bold">$0.99/check or $10/mo unlimited</span>
           </p>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">

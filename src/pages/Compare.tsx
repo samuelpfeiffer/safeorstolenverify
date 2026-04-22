@@ -14,7 +14,7 @@ const Compare = () => {
       highlight: true,
       features: {
         mobileApp: true,
-        freeChecks: '$2.99/mo unlimited',
+        freeChecks: '$10/mo unlimited',
         speed: '3 seconds',
         imei: true,
         vin: true,
@@ -173,7 +173,7 @@ const Compare = () => {
               <Button asChild size="lg">
                 <Link to="/verify">
                   <Shield className="mr-2 h-5 w-5" />
-                  Subscribe — $2.99/mo Unlimited
+                  Subscribe — $10/mo Unlimited
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
@@ -283,11 +283,11 @@ const Compare = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Try the Best?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              $0.99/check or $2.99/month unlimited. All item types. Results in 3 seconds.
+              $0.99/check or $10/month unlimited. All item types. Results in 3 seconds.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">
-                <Link to="/pricing">Subscribe — $2.99/mo</Link>
+                <Link to="/pricing">Subscribe — $10/mo</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/pricing">View Pricing</Link>

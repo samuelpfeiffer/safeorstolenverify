@@ -208,7 +208,7 @@ export default function HowToCheckIfItemStolenPage() {
               <div className="space-y-6">
                 <div className="bg-card p-6 rounded-lg border">
                   <h3 className="font-bold text-lg mb-2">Is it really free to check?</h3>
-                  <p className="text-muted-foreground">Yes. SafeOrStolen offers 2 free verifications with no credit card required. Then $0.99/check or $2.99/month unlimited.</p>
+                  <p className="text-muted-foreground">Yes. SafeOrStolen offers 2 free verifications with no credit card required. Then $0.99/check or $10/month unlimited.</p>
                 </div>
                 <div className="bg-card p-6 rounded-lg border">
                   <h3 className="font-bold text-lg mb-2">What if the item comes back as stolen?</h3>

@@ -15,7 +15,7 @@
 **Location**: `supabase/functions/ai-revenue-optimizer`
 
 The AI automatically:
-- Tests different prices ($2.99, $3.99, $4.99)
+- Tests different prices ($10, $3.99, $4.99)
 - Analyzes what customers will pay
 - Adjusts pricing for maximum profit
 - Runs A/B tests to find the best price point
@@ -117,7 +117,7 @@ Car VIN check: $4.99 (highest value)
 
 ### 2. Volume Discounts ($$$)
 ```
-1 verification: $2.99
+1 verification: $10
 5 verifications: $9.99 (save $5)
 10 verifications: $19.99 (save $10)
 20 verifications: $34.99 (save $25)
@@ -132,7 +132,7 @@ Enterprise: $499/mo (unlimited + API)
 
 ### 4. Premium Features ($$$)
 ```
-Basic: $2.99 - Status only
+Basic: $10 - Status only
 Premium: $4.99 - Full report + history
 Pro: $9.99 - Legal docs + ownership proof
 ```
@@ -173,7 +173,7 @@ Insurance companies: $1,999/mo
 ## Current Revenue Streams
 
 ### Active Now:
-1. ✅ **Single Verifications** - $2.99 each
+1. ✅ **Single Verifications** - $10 each
 2. ✅ **Stripe Payment Processing** - Working
 3. ✅ **Free Trial (2 searches)** - Then paywall
 4. ✅ **Guest Checkout** - No signup required
@@ -227,7 +227,7 @@ Insurance companies: $1,999/mo
 ## Revenue Experiments Running
 
 ### Current Tests:
-1. **Pricing Test**: $2.99 vs $3.99 vs $4.99
+1. **Pricing Test**: $10 vs $3.99 vs $4.99
 2. **CTA Test**: "Verify Now" vs "Check If Stolen"
 3. **Urgency Test**: "Limited time" vs no urgency
 4. **Bundle Test**: Single vs 5-pack vs 10-pack

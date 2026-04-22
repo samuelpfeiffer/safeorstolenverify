@@ -88,7 +88,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
           "name": `How much does the ${stateData.name} license plate lookup cost?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $2.99/month. Or pay $0.99 per check. Check any ${stateData.abbrev} vehicle against NICB and 100+ databases.`
+            "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $10/month. Or pay $0.99 per check. Check any ${stateData.abbrev} vehicle against NICB and 100+ databases.`
           }
         },
         {
@@ -155,7 +155,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
             
             <h2>Frequently Asked Questions</h2>
             <h3>How much does the {stateData.name} license plate lookup cost?</h3>
-            <p>SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $2.99/month, or $0.99 per check.</p>
+            <p>SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $10/month, or $0.99 per check.</p>
             <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
             <p>Yes, our {stateData.name} license plate lookup works statewide including {stateData.majorCities.join(', ')} and all {stateData.name} cities.</p>
             {uniqueContent?.uniqueFaqs.map((faq, i) => (
@@ -171,10 +171,10 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
               <li><a href="/imei-checker">IMEI Checker</a></li>
               <li><a href="/firearms-check">Firearm Check</a></li>
               <li><a href="/verify">Verify Any Item</a></li>
-              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
             </ul>
             
-            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
+            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
           </main>
         </div>
       </noscript>
@@ -431,7 +431,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
                   How much does the {stateData.name} license plate lookup cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $2.99/month unlimited. 
+                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $10/month unlimited. 
                   Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}NICB and 100+ databases.
                 </AccordionContent>
               </AccordionItem>

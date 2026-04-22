@@ -31,10 +31,10 @@ export const PowerCTA: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button asChild size="lg" variant="secondary" className="text-lg px-10 py-7 h-auto font-bold shadow-2xl" aria-label="Subscribe for $2.99/month unlimited verifications">
+            <Button asChild size="lg" variant="secondary" className="text-lg px-10 py-7 h-auto font-bold shadow-2xl" aria-label="Subscribe for $10/month unlimited verifications">
               <Link to="/pricing">
                 <Shield className="mr-2 h-6 w-6" />
-                Subscribe — $2.99/Month Unlimited
+                Subscribe — $10/Month Unlimited
                 <ArrowRight className="ml-2 h-6 w-6" />
               </Link>
             </Button>
@@ -43,7 +43,7 @@ export const PowerCTA: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center gap-2 opacity-90">
               <CheckCircle className="h-5 w-5" />
-              $2.99/mo unlimited
+              $10/mo unlimited
             </div>
             <div className="flex items-center gap-2 opacity-90">
               <Clock className="h-5 w-5" />

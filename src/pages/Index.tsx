@@ -164,7 +164,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does the Unlimited plan work for pawn shops?',
-    a: "Yes. SafeOrStolen's Unlimited plan ($2.99/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
+    a: "Yes. SafeOrStolen's Unlimited plan ($10/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
   },
 ];
 
@@ -233,7 +233,7 @@ const Index = () => {
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 2 checks free</span>
             <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
-            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99/check or $2.99/mo unlimited</span>
+            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99/check or $10/mo unlimited</span>
             <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>
           </div>
         </div>
@@ -416,7 +416,7 @@ const Index = () => {
               to="/verify"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
             >
-              Try 2 Free Checks — Then $2.99/mo Unlimited →
+              Try 2 Free Checks — Then $10/mo Unlimited →
             </Link>
             <Link
               to="/for-sellers"
@@ -465,7 +465,7 @@ const Index = () => {
                 className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
               >
                 <Building2 className="w-4 h-4" />
-                Get Unlimited Plan — $2.99/mo
+                Get Unlimited Plan — $10/mo
               </Link>
               <Link
                 to="/for-pawn-shops"
@@ -479,7 +479,7 @@ const Index = () => {
           <div className="flex-shrink-0 w-full md:w-72 modern-card p-6">
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="w-5 h-5 text-primary" />
-              <span className="text-foreground font-bold">Unlimited Plan — $2.99/mo</span>
+              <span className="text-foreground font-bold">Unlimited Plan — $10/mo</span>
             </div>
             <ul className="space-y-2 mb-6">
               {[

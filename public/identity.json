@@ -91,9 +91,9 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Unlimited Monthly Plan",
-          "description": "$2.99/month unlimited verifications — all item types, all features, cancel anytime"
+          "description": "$10/month unlimited verifications — all item types, all features, cancel anytime"
         },
-        "price": "2.99",
+        "price": "10.00",
         "priceCurrency": "USD"
       }
     ]

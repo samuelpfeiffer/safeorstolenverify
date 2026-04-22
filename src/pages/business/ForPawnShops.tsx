@@ -23,7 +23,7 @@ export default function ForPawnShops() {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "2.99",
+      "price": "10.00",
       "priceValidUntil": "2026-12-31",
       "url": "https://safeorstolen.com/pricing"
     }
@@ -37,7 +37,7 @@ export default function ForPawnShops() {
       { "@type": "Question", "name": "What if an item doesn't have a serial number?", "acceptedAnswer": { "@type": "Answer", "text": "Photograph the item and customer ID. For high-value items without serials (jewelry), consider requiring additional documentation or declining the transaction." } },
       { "@type": "Question", "name": "Do you provide compliance reports for pawn shop regulators?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Business plans include automated monthly summaries showing all verifications performed, compliant with state reporting requirements in all 50 US states." } },
       { "@type": "Question", "name": "What happens if a pawn shop accepts a stolen item despite verification?", "acceptedAnswer": { "@type": "Answer", "text": "Your verification record proves due diligence, significantly reducing legal liability. In most cases, prosecutors won't charge pawn shops that performed proper verification." } },
-      { "@type": "Question", "name": "How much does pawn shop verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 verifications to try, then unlimited checks for $2.99/month. Business plans with API access and multi-location support are available." } },
+      { "@type": "Question", "name": "How much does pawn shop verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 verifications to try, then unlimited checks for $10/month. Business plans with API access and multi-location support are available." } },
       { "@type": "Question", "name": "Which pawn shop software does SafeOrStolen integrate with?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen integrates with Bravo Pawn Systems, PawnMaster, Data Age Cash Register Express, Pawnbroker software, and custom systems via API." } }
     ]
   };

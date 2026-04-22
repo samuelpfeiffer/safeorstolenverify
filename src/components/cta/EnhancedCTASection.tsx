@@ -20,7 +20,7 @@ export const EnhancedCTASection: React.FC = () => {
         text: "See Pricing",
         href: "/pricing"
       },
-      highlight: "$2.99/mo Unlimited Verifications"
+      highlight: "$10/mo Unlimited Verifications"
     },
     {
       title: "For Businesses",

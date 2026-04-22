@@ -31,8 +31,8 @@ export const DomainAuthorityBooster: React.FC = () => {
       {/* Service facts */}
       <meta name="service-area" content="United States — all 50 states" />
       <meta name="service-availability" content="24/7 via web and Progressive Web App" />
-      <meta name="pricing" content="2 free checks, then $0.99/check or $2.99/month unlimited — all item types, all features" />
-      <meta name="paid-plans" content="2 free verifications, then $0.99/check or $2.99/mo unlimited — all item types, cancel anytime" />
+      <meta name="pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all features" />
+      <meta name="paid-plans" content="2 free verifications, then $0.99/check or $10/mo unlimited — all item types, cancel anytime" />
       
       {/* Competitive positioning — factual comparisons */}
       <meta name="competitive-advantage" content="Only multi-category verification service with mobile app and barcode scanning. Covers phones, vehicles, firearms, electronics, bicycles — competitors specialize in single categories." />

@@ -13,7 +13,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen a free Carfax alternative?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, for stolen vehicle detection specifically. Carfax charges $39.99 per report (or $99.99 for 6 reports) and focuses on full vehicle history. SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited, and focuses specifically on whether a vehicle is reported stolen. If your goal is theft verification, SafeOrStolen is significantly cheaper and more targeted." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, for stolen vehicle detection specifically. Carfax charges $39.99 per report (or $99.99 for 6 reports) and focuses on full vehicle history. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited, and focuses specifically on whether a vehicle is reported stolen. If your goal is theft verification, SafeOrStolen is significantly cheaper and more targeted." }
       },
       {
         "@type": "Question",
@@ -28,12 +28,12 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Should I use Carfax or SafeOrStolen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use both. SafeOrStolen for theft verification ($2.99/month unlimited), Carfax for full vehicle history ($39.99/report). For a $15,000+ vehicle purchase, spending $40 on Carfax AND $2.99 on SafeOrStolen is smart. SafeOrStolen catches stolen vehicles that Carfax might miss because we access different databases." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Use both. SafeOrStolen for theft verification ($10/month unlimited), Carfax for full vehicle history ($39.99/report). For a $15,000+ vehicle purchase, spending $40 on Carfax AND $10 on SafeOrStolen is smart. SafeOrStolen catches stolen vehicles that Carfax might miss because we access different databases." }
       },
       {
         "@type": "Question",
         "name": "How much does Carfax cost vs SafeOrStolen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Carfax: $39.99 for 1 report, $59.99 for 3 reports, $99.99 for 6 reports. SafeOrStolen: 2 free checks, then $0.99/check or $2.99/month unlimited on all item types (not just vehicles). For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Carfax: $39.99 for 1 report, $59.99 for 3 reports, $99.99 for 6 reports. SafeOrStolen: 2 free checks, then $0.99/check or $10/month unlimited on all item types (not just vehicles). For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification." }
       }
     ]
   };
@@ -42,7 +42,7 @@ const CarfaxAlternativePage = () => {
     <>
       <PageSEO
         title="Free Carfax Alternative — Stolen Vehicle Check Without Paying $40 | SafeOrStolen"
-        description="Looking for a free Carfax alternative? SafeOrStolen checks if vehicles are stolen for free. Search NICB, NCIC, DMV, and insurance databases. 2 free checks, then $0.99/check or $2.99/month unlimited — vs Carfax's $39.99/report."
+        description="Looking for a free Carfax alternative? SafeOrStolen checks if vehicles are stolen for free. Search NICB, NCIC, DMV, and insurance databases. 2 free checks, then $0.99/check or $10/month unlimited — vs Carfax's $39.99/report."
         canonical="/carfax-alternative"
         structuredData={[faqSchema]}
       />
@@ -66,7 +66,7 @@ const CarfaxAlternativePage = () => {
                 Check Vehicle Stolen Status — Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">2 free VIN checks · No credit card · $2.99/month unlimited</p>
+            <p className="text-muted-foreground text-sm mt-3">2 free VIN checks · No credit card · $10/month unlimited</p>
           </div>
         </section>
 
@@ -102,7 +102,7 @@ const CarfaxAlternativePage = () => {
                     ['Bicycle check', false, true],
                     ['Mobile app', false, true],
                     ['Marketplace URL analysis', false, true],
-                    ['Price per report', '$39.99', '2 free, $2.99/mo unlimited'],
+                    ['Price per report', '$39.99', '2 free, $10/mo unlimited'],
                   ].map(([feature, carfax, sos], i) => (
                     <tr key={i} className="border-t border-border">
                       <td className="p-3 text-foreground">{feature as string}</td>
@@ -138,7 +138,7 @@ const CarfaxAlternativePage = () => {
               SafeOrStolen is also the right choice if you're:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-              <li>Checking multiple vehicles (unlimited at $2.99/month vs $39.99 per Carfax report)</li>
+              <li>Checking multiple vehicles (unlimited at $10/month vs $39.99 per Carfax report)</li>
               <li>Checking non-vehicle items (phones, firearms, electronics, bikes)</li>
               <li>Screening marketplace listings before meeting sellers</li>
               <li>Operating a pawn shop or dealership that checks inventory regularly</li>
@@ -166,7 +166,7 @@ const CarfaxAlternativePage = () => {
                 <h3 className="text-primary font-bold mb-2">SafeOrStolen</h3>
                 <ul className="text-muted-foreground text-sm space-y-1">
                   <li>2 free checks (any item type)</li>
-                  <li>$0.99/check or $2.99/month unlimited</li>
+                  <li>$0.99/check or $10/month unlimited</li>
                   <li>All items: vehicles, phones, guns, electronics</li>
                   <li>Mobile app included</li>
                 </ul>
@@ -179,7 +179,7 @@ const CarfaxAlternativePage = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen a free Carfax alternative?</summary>
-                <p className="text-muted-foreground mt-2">For stolen vehicle detection, yes. Carfax focuses on full vehicle history ($39.99/report). SafeOrStolen focuses on theft verification (2 free, then $2.99/month unlimited). Different tools for different purposes.</p>
+                <p className="text-muted-foreground mt-2">For stolen vehicle detection, yes. Carfax focuses on full vehicle history ($39.99/report). SafeOrStolen focuses on theft verification (2 free, then $10/month unlimited). Different tools for different purposes.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What does Carfax have that SafeOrStolen doesn't?</summary>
@@ -195,7 +195,7 @@ const CarfaxAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How much does Carfax cost vs SafeOrStolen?</summary>
-                <p className="text-muted-foreground mt-2">Carfax: $39.99-$99.99. SafeOrStolen: 2 free, then $2.99/month unlimited for all item types. For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification.</p>
+                <p className="text-muted-foreground mt-2">Carfax: $39.99-$99.99. SafeOrStolen: 2 free, then $10/month unlimited for all item types. For someone checking multiple vehicles, SafeOrStolen is dramatically cheaper for theft verification.</p>
               </details>
             </div>
           </section>

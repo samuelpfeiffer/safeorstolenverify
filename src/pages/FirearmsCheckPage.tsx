@@ -215,7 +215,7 @@ const FirearmsCheckPage = () => {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               { who: 'Private Buyers', desc: 'Anyone purchasing a used firearm through a private sale on Armslist, Facebook, at a gun show, or from an individual. Private sales in most states have no background check — the serial check is your only protection.' },
-              { who: 'Pawn Shop Operators', desc: 'Most states legally require pawn shops to run stolen property checks before accepting firearms as collateral or for sale. Our Unlimited Plan ($2.99/mo) generates the compliance-ready PDF certificate you need.' },
+              { who: 'Pawn Shop Operators', desc: 'Most states legally require pawn shops to run stolen property checks before accepting firearms as collateral or for sale. Our Unlimited Plan ($10/mo) generates the compliance-ready PDF certificate you need.' },
               { who: 'Gun Show Vendors & Attendees', desc: 'High volume + cash transactions = elevated risk. Many stolen guns circulate through gun shows precisely because of lighter scrutiny. Run a check on every private transaction.' },
               { who: 'FFL Dealers Buying Used Inventory', desc: 'When buying used firearms from individuals for resale, a serial check provides documented due diligence before you take ownership.' },
               { who: 'Estate Sale Participants', desc: 'Firearms in estates can have complex ownership histories. Verify before purchasing — you have no way to know the history of an inherited firearm.' },
@@ -323,7 +323,7 @@ const FirearmsCheckPage = () => {
               to="/pricing"
               className="inline-flex mt-4 items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-5 py-3 rounded-xl transition-all text-sm"
             >
-              Get Unlimited Plan — $2.99/mo →
+              Get Unlimited Plan — $10/mo →
             </Link>
           </div>
         </section>

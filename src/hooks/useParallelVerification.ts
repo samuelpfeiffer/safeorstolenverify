@@ -33,7 +33,7 @@ export const useParallelVerification = () => {
     if (!user?.id) {
       toast({
         title: "Sign Up Required",
-        description: "Create an account to verify items. $0.99/check or $2.99/month unlimited.",
+        description: "Create an account to verify items. $0.99/check or $10/month unlimited.",
         variant: "default",
       });
       navigate('/auth', { state: { redirect: '/verify', pendingSearch: identifier } });
@@ -54,7 +54,7 @@ export const useParallelVerification = () => {
       if (!isSubscribed) {
         toast({
           title: "Subscription Required",
-          description: "Subscribe for $2.99/month for unlimited verifications, or pay $0.99 per check.",
+          description: "Subscribe for $10/month for unlimited verifications, or pay $0.99 per check.",
           variant: "destructive",
         });
         navigate('/pricing', { state: { reason: 'no-subscription' } });

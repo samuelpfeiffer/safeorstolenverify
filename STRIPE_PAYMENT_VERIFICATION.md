@@ -44,7 +44,7 @@ The payment system is fully configured and ready to handle:
 - **Features**: White-label, dedicated manager, custom branding
 
 #### 5. Single Verification (Pay-Per-Use)
-- **Price**: $2.99 one-time
+- **Price**: $10 one-time
 - **Stripe Price ID**: `price_1SSVqkGxnZLw8J7O3GwCyKRn`
 - **Checks**: 1 verification
 

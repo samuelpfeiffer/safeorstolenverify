@@ -172,7 +172,7 @@ WHERE user_id = (SELECT id FROM profiles WHERE email = 'test+phase1@example.com'
    
 ✅ **UrgencyBanner** appears with:
    - "🔥 LIMITED TIME OFFER"
-   - "Launch Special: $2.99 per check (Regular $4.99)"
+   - "Launch Special: $10 per check (Regular $4.99)"
    - Countdown timer: "47:23:15"
    - Social proof boxes:
      - "1,247 Verified today"
@@ -184,7 +184,7 @@ WHERE user_id = (SELECT id FROM profiles WHERE email = 'test+phase1@example.com'
    - "✅ Instant Results or Full Refund"
 
 ✅ **Pricing cards** show:
-   - Single Verification: **$2.99** (not $0.50)
+   - Single Verification: **$10** (not $0.50)
    - Personal Plan: $9.99/mo
    - Professional Plan: $29.99/mo
 
@@ -194,7 +194,7 @@ WHERE user_id = (SELECT id FROM profiles WHERE email = 'test+phase1@example.com'
 
 ---
 
-## ✅ TEST 6: Stripe Checkout - Single Verification ($2.99)
+## ✅ TEST 6: Stripe Checkout - Single Verification ($10)
 
 ### Steps:
 1. On pricing page, find **"Single Verification"** card
@@ -209,7 +209,7 @@ WHERE user_id = (SELECT id FROM profiles WHERE email = 'test+phase1@example.com'
 ### Stripe Checkout Page Expected Elements:
 ✅ Stripe logo and secure checkout UI  
 ✅ Product name: "Single Verification"  
-✅ **Price: $2.99 USD** (if you updated Stripe - see instructions below)  
+✅ **Price: $10 USD** (if you updated Stripe - see instructions below)  
 ✅ Email field (pre-filled with user email)  
 ✅ Card payment form
 
@@ -221,7 +221,7 @@ This means you haven't updated the Stripe product price yet. Follow these steps:
 2. Find product: **"Single Verification"**
 3. Current price: $0.50 → Archive it
 4. Click **"Add another price"**
-5. Enter: **$2.99**
+5. Enter: **$10**
 6. Set as one-time payment
 7. Click "Add price"
 8. Copy new Price ID (starts with `price_`)
@@ -238,7 +238,7 @@ ZIP: Any 5 digits (e.g., 12345)
 
 ### Complete the Payment:
 1. Enter test card details
-2. Click **"Pay $2.99"** (or $0.50 if not updated)
+2. Click **"Pay $10"** (or $0.50 if not updated)
 3. Should process within 2-3 seconds
 
 ### Expected After Payment:
@@ -387,12 +387,12 @@ WHERE email = 'test+phase1@example.com';
 - [ ] Redirects to `/pricing?reason=limit-reached`
 - [ ] Enhanced paywall banner appears
 - [ ] Urgency messaging visible
-- [ ] Pricing shows $2.99 (not $0.50)
+- [ ] Pricing shows $10 (not $0.50)
 
 ### Stripe Checkout:
 - [ ] Checkout redirect page works
 - [ ] Stripe hosted page loads
-- [ ] Price correct ($2.99)
+- [ ] Price correct ($10)
 - [ ] Test payment completes
 
 ### Webhook Processing:
@@ -428,7 +428,7 @@ Homepage Visits → Signups → Free Searches → Hit Paywall → Paid Conversio
 - **Signup Rate**: Visits to signups (target: 10-15%)
 - **Free Search Usage**: % hitting 2-search limit (target: 60-80%)
 - **Paywall Conversion**: Paywall views to payment (target: 5-8%)
-- **Revenue Per User**: Average $2.99 per conversion
+- **Revenue Per User**: Average $10 per conversion
 
 ### Check Analytics:
 ```sql
@@ -454,7 +454,7 @@ FROM purchases WHERE created_at >= CURRENT_DATE;
 SELECT * FROM pg_policies WHERE tablename = 'profiles' AND policyname LIKE '%update%';
 ```
 
-### Issue: Stripe shows $0.50 instead of $2.99
+### Issue: Stripe shows $0.50 instead of $10
 **Solution:** Update Stripe product price (see TEST 6 instructions)
 
 ### Issue: Webhook doesn't process
@@ -474,7 +474,7 @@ SELECT * FROM purchases WHERE user_id = (SELECT id FROM auth.users WHERE email =
 ## 🚀 Next Steps After Testing
 
 Once all tests pass:
-1. ✅ Update Stripe product to $2.99 (if not done)
+1. ✅ Update Stripe product to $10 (if not done)
 2. ✅ Monitor conversion rates for 48 hours
 3. ✅ Collect user feedback
 4. ✅ Proceed to Phase 2 (conversion optimization)

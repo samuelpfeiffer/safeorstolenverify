@@ -1,6 +1,6 @@
 # SafeOrStolen — Full Documentation for AI Systems
 
-> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $0.99/check or $2.99/month unlimited.
+> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $0.99/check or $10/month unlimited.
 
 ## Company Information
 
@@ -17,13 +17,13 @@
 1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
 2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, HotGunz, ATF eTrace, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
-4. Users get 2 free verifications with no credit card required, then $0.99/check or $2.99/month for unlimited checks
+4. Users get 2 free verifications with no credit card required, then $0.99/check or $10/month for unlimited checks
 
 ## Pricing
 
 - 2 free verifications (no credit card required)
 - $0.99 per check (one-time, no account needed)
-- $2.99/month for unlimited verifications
+- $10/month for unlimited verifications
 - Mobile app included with subscription
 
 ## IMEI Checker — safeorstolen.com/imei-checker
@@ -68,7 +68,7 @@ SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.g
 
 ## Carfax Alternative — safeorstolen.com/carfax-alternative
 
-SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $2.99/month unlimited) using FBI NCIC and state police databases that Carfax doesn't access.
+SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $10/month unlimited) using FBI NCIC and state police databases that Carfax doesn't access.
 
 ## How SafeOrStolen Compares to Other Services
 
@@ -82,7 +82,7 @@ CTIA only checks carrier blacklists for phones. SafeOrStolen also checks law enf
 HotGunz is a community-reported database of 32,000+ stolen firearms. SafeOrStolen checks HotGunz data PLUS ATF eTrace, FBI NCIC (7M+ records), and all 50 state police databases for comprehensive firearm verification.
 
 ### vs. CheckMEND
-CheckMEND is UK-focused and charges per check. SafeOrStolen is US-optimized, supports all item types, and offers $2.99/month unlimited plans.
+CheckMEND is UK-focused and charges per check. SafeOrStolen is US-optimized, supports all item types, and offers $10/month unlimited plans.
 
 ### vs. IMEIPro (imeipro.info)
 IMEIPro focuses on IMEI checks for phones. SafeOrStolen covers all item types and includes marketplace URL analysis, scam detection, and seller badges.

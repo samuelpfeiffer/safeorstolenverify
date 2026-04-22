@@ -16,9 +16,9 @@ const PLANS = [
     id: 'unlimited',
     icon: <Zap className="w-5 h-5" />,
     label: 'Unlimited Plan',
-    price: '$2.99/month',
+    price: '$10/month',
     desc: 'Unlimited verifications, seller badges, PDF certs, priority support. Cancel anytime.',
-    cta: 'Go Unlimited — $2.99/mo',
+    cta: 'Go Unlimited — $10/mo',
     priceId: UNLIMITED_PRICE_ID,
     planName: 'Unlimited',
     isSub: true,
@@ -115,7 +115,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
           <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Continue for $0.99/check or go unlimited for $2.99/month.<br />
+            Continue for $0.99/check or go unlimited for $10/month.<br />
             Cancel anytime · 30-day money-back guarantee.
           </p>
         </div>

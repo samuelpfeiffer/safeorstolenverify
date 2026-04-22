@@ -31,7 +31,7 @@ const IllinoisLicensePlateLookupPage = () => {
           "Coverage for Chicago (all neighborhoods), Aurora, Rockford, Naperville, and all Illinois cities",
           "Detect organized theft ring activity and carjacking victims",
           "Check cars, trucks, motorcycles from Illinois sellers",
-          "Unlimited Illinois license plate lookups — $2.99/month"
+          "Unlimited Illinois license plate lookups — $10/month"
         ],
         process: [
           "Record the Illinois license plate number - IL requires both front and rear plates",
@@ -57,7 +57,7 @@ const IllinoisLicensePlateLookupPage = () => {
           },
           {
             question: "How much does Illinois license plate lookup cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited Illinois license plate lookups. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited Illinois license plate lookups. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Cancel anytime."
           },
           {
             question: "Why is Chicago a concern for vehicle theft?",

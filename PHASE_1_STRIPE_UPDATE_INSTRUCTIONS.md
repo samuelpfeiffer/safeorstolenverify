@@ -1,11 +1,11 @@
 # Phase 1: Revenue Fixes - Stripe Configuration Required
 
 ## ✅ COMPLETED AUTOMATICALLY
-- ✅ Price updated to $2.99 in code (`src/features/pricing/constants.ts`)
+- ✅ Price updated to $10 in code (`src/features/pricing/constants.ts`)
 - ✅ Database migration added for free search tracking (`free_searches_used`, `trial_started_at`)
 - ✅ 2 free searches enforced in `useParallelVerification` hook (14-day trial)
 - ✅ Urgency messaging added to homepage with:
-  - "LAUNCH SPECIAL: $2.99 (Reg. $4.99) - 48 Hours Only"
+  - "LAUNCH SPECIAL: $10 (Reg. $4.99) - 48 Hours Only"
   - Social proof: "23% of checked items are stolen"
   - Value prop: "Average buyer saves $842"
 - ✅ UrgencyBanner component added to pricing page
@@ -13,15 +13,15 @@
 
 ## ✅ MANUAL ACTION COMPLETED - STRIPE PRICE UPDATED
 
-**COMPLETED:** Stripe product price has been updated to $2.99 and code has been updated with new Price ID.
+**COMPLETED:** Stripe product price has been updated to $10 and code has been updated with new Price ID.
 
 ### What Was Done:
-1. ✅ Stripe Dashboard updated with new $2.99 price
+1. ✅ Stripe Dashboard updated with new $10 price
 2. ✅ Old price (`price_1SDRrMGxnZLw8J7ObJsUlp6k`) archived
 3. ✅ New Price ID (`price_1SSVqkGxnZLw8J7O3GwCyKRn`) added to code
 4. Archive the old price
 5. Click "Add another price"
-6. Set: **$2.99 USD** (one-time payment)
+6. Set: **$10 USD** (one-time payment)
 7. Click "Add price"
 8. Copy the new Price ID
 9. Update `stripePriceId` in `src/features/pricing/constants.ts` (line 64)
@@ -29,7 +29,7 @@
 ### Option 2: Product Name Matching (Alternative)
 If you prefer automatic matching:
 1. Create a new product in Stripe named exactly: **"Single Verification"**
-2. Set price to: **$2.99 USD** (one-time payment)
+2. Set price to: **$10 USD** (one-time payment)
 3. Set `stripePriceId: undefined` in the code (the system will auto-match by product name)
 
 ## 📊 EXPECTED RESULTS
@@ -41,7 +41,7 @@ If you prefer automatic matching:
 - Revenue: ~$50-100/day
 
 ### After Phase 1 (New System)
-- Price: $2.99 per verification
+- Price: $10 per verification
 - 2 FREE searches enforced (14-day trial)
 - Urgency messaging + social proof
 - Expected conversion rate: 5-8%
@@ -57,7 +57,7 @@ If you prefer automatic matching:
 
 2. **Test Paid Checkout:**
    - Go to `/pricing`
-   - Click "Subscribe to Single Verification" ($2.99)
+   - Click "Subscribe to Single Verification" ($10)
    - Should redirect to Stripe Checkout
    - Complete test payment using card: `4242 4242 4242 4242`
    - Verify webhook updates `profiles.subscription_tier`
@@ -78,7 +78,7 @@ Monitor these metrics in the first 48 hours:
 ## 🐛 TROUBLESHOOTING
 
 **Issue: Stripe checkout shows wrong price**
-- ✅ Solution: Update Stripe product price to $2.99 (see instructions above)
+- ✅ Solution: Update Stripe product price to $10 (see instructions above)
 
 **Issue: Users not seeing paywall after 2 searches**
 - ✅ Check: `profiles.free_searches_used` column exists
@@ -99,5 +99,5 @@ After Phase 1 is working:
 ---
 
 **Status:** Phase 1 code complete ✅  
-**Action Required:** Update Stripe product price to $2.99  
+**Action Required:** Update Stripe product price to $10  
 **Projected Impact:** 6-8x revenue increase

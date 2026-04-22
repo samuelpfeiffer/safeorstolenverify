@@ -109,7 +109,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
                   <Loader2 className="h-6 w-6 animate-spin text-primary" />
                 ) : (
                   <>
-                    <div className="text-2xl font-bold text-primary">$2.99</div>
+                    <div className="text-2xl font-bold text-primary">$10</div>
                     <div className="text-xs text-muted-foreground">/month</div>
                   </>
                 )}

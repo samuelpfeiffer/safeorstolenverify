@@ -128,7 +128,7 @@ Founder, SafeOrStolen
 ## 🎁 Conversion Offers to Try
 
 1. **"Reply for 3 free checks"** - Low friction, gets conversation started
-2. **"50% off first month"** - $1.49 instead of $2.99
+2. **"50% off first month"** - $1.49 instead of $10
 3. **"Lifetime 10 checks for $9.99"** - One-time purchase option
 4. **"Free month for honest review"** - Get testimonials + conversions
 

@@ -75,7 +75,7 @@ export const AuthSuccessAnnouncement = ({
               <div className="text-center">
                 <Badge className="bg-orange-100 text-orange-800 text-lg px-3 py-1">
                   <Gift className="w-4 h-4 mr-2" />
-                  Welcome! Subscribe for $2.99/mo Unlimited
+                  Welcome! Subscribe for $10/mo Unlimited
                 </Badge>
               </div>
               
