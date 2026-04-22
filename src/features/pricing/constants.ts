@@ -17,7 +17,7 @@ export const UNLIMITED_PRICE_ID     = 'price_1T8uToGxnZLw8J7O6GcOuV1w';
 export const UNLIMITED_PRODUCT_ID   = 'prod_U78lRFEHuOd01t';
 
 // ── Limits ──────────────────────────────────────────────────
-export const FREE_SEARCH_LIMIT = 5;   // lead-magnet free checks
+export const FREE_SEARCH_LIMIT = 2;   // lead-magnet free checks
 export const FAIR_USE_CAP      = 1000; // monthly soft cap for abuse prevention
 
 // ── Tier Definitions ────────────────────────────────────────
