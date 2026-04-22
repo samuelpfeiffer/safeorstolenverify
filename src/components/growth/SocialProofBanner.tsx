@@ -10,6 +10,8 @@ export const SocialProofBanner: React.FC = () => {
     // Fetch real verification count from last 24 hours
     const fetchStats = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return; // RLS blocks anon
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
         

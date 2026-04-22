@@ -17,6 +17,8 @@ export const UrgencyBanner: React.FC = () => {
     // Fetch real recent verification count
     const fetchRecentCount = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return; // RLS blocks anon
         const oneHourAgo = new Date();
         oneHourAgo.setHours(oneHourAgo.getHours() - 1);
         
