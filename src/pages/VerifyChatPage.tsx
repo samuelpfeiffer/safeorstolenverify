@@ -549,16 +549,39 @@ const VerifyChatPage: React.FC = () => {
 
         {/* 3-pane layout */}
         <div className="flex-1 flex overflow-hidden">
-          {/* SIDEBAR (desktop) */}
-          <aside className="hidden lg:block w-64 shrink-0">
-            <ConversationSidebar
-              threads={threads}
-              activeId={activeId}
-              onSelect={setActiveId}
-              onNew={createThread}
-              onDelete={deleteThread}
-              onRename={renameThread}
-            />
+          {/* SIDEBAR (desktop) — collapsible */}
+          <aside
+            className={cn(
+              'hidden lg:block shrink-0 transition-[width] duration-200 ease-out',
+              sidebarCollapsed ? 'w-14' : 'w-64',
+            )}
+          >
+            {sidebarCollapsed ? (
+              <MiniSidebar
+                onExpand={() => setSidebarCollapsed(false)}
+                onNew={createThread}
+                threadCount={threads.length}
+              />
+            ) : (
+              <div className="h-full relative">
+                <ConversationSidebar
+                  threads={threads}
+                  activeId={activeId}
+                  onSelect={setActiveId}
+                  onNew={createThread}
+                  onDelete={deleteThread}
+                  onRename={renameThread}
+                />
+                <button
+                  onClick={() => setSidebarCollapsed(true)}
+                  title="Collapse sidebar (⌘B)"
+                  aria-label="Collapse sidebar"
+                  className="absolute top-2.5 right-2 p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+                >
+                  <PanelLeftClose className="w-4 h-4" />
+                </button>
+              </div>
+            )}
           </aside>
 
           {/* SIDEBAR (mobile drawer) */}
