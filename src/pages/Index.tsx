@@ -137,7 +137,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is SafeOrStolen free?',
-    a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, unlimited checks are available for $1 per month, which includes access to the mobile app with barcode scanning.',
+    a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, you can run a single check for $0.99 or get unlimited checks for $10 per month, which includes access to the mobile app with barcode scanning.',
   },
   {
     q: 'What databases does SafeOrStolen check?',
@@ -149,7 +149,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'SafeOrStolen offers 2 free checks with no account required. After that, the Unlimited plan is $1 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
+    a: 'SafeOrStolen offers 2 free checks with no account required. After that, single checks are $0.99 each, or the Unlimited plan is $10 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
   },
   {
     q: 'How does the license plate lookup work?',
@@ -494,7 +494,7 @@ const Index = () => {
             </ul>
             <div className="border-t border-border pt-5">
               <div>
-                <span className="text-4xl font-black text-foreground">$1</span>
+                <span className="text-4xl font-black text-foreground">$10</span>
                 <span className="text-muted-foreground text-sm">/month</span>
               </div>
               <div className="text-muted-foreground text-xs mt-1">Cancel anytime · 30-day money-back guarantee</div>
