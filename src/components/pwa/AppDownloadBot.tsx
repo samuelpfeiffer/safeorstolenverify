@@ -11,6 +11,12 @@ export const AppDownloadBot = () => {
   const { isInstallAvailable, isInstalled, showInstallPrompt } = usePWA();
   const { toast } = useToast();
 
+  // Hide on the AI chat experience — the chat IS the primary conversion surface here.
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const hiddenOn = ['/verify', '/ai-verify', '/ai-chat', '/auth', '/checkout', '/admin'];
+  if (hiddenOn.some((p) => pathname.startsWith(p))) return null;
+
+
   useEffect(() => {
     const dismissed = localStorage.getItem('app-download-bot-dismissed');
     if (dismissed) {
