@@ -918,6 +918,49 @@ const ActionTile: React.FC<{
   </button>
 );
 
+/* ─────────────────────────────────────────────────────────────────────
+ *  Mini (collapsed) sidebar — icon-only rail
+ * ──────────────────────────────────────────────────────────────────── */
+
+const MiniSidebar: React.FC<{
+  onExpand: () => void;
+  onNew: () => void;
+  threadCount: number;
+}> = ({ onExpand, onNew, threadCount }) => (
+  <div className="h-full flex flex-col items-center bg-card/40 border-r border-border/60 py-3 gap-1">
+    <button
+      onClick={onExpand}
+      title="Expand sidebar (⌘B)"
+      aria-label="Expand sidebar"
+      className="size-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+    >
+      <PanelLeftOpen className="w-4 h-4" />
+    </button>
+    <div className="w-6 h-px bg-border/60 my-1" />
+    <button
+      onClick={onNew}
+      title="New verification (⌘⇧N)"
+      aria-label="New verification"
+      className="size-9 rounded-lg flex items-center justify-center text-primary hover:bg-primary/10 border border-primary/30 transition-colors"
+    >
+      <Plus className="w-4 h-4" />
+    </button>
+    <button
+      onClick={onExpand}
+      title={`${threadCount} conversation${threadCount === 1 ? '' : 's'}`}
+      aria-label="Conversations"
+      className="size-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors relative"
+    >
+      <Shield className="w-4 h-4" />
+      {threadCount > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 text-[8px] font-mono bg-primary text-primary-foreground rounded-full size-4 flex items-center justify-center">
+          {threadCount > 9 ? '9+' : threadCount}
+        </span>
+      )}
+    </button>
+  </div>
+);
+
 const ToolButton: React.FC<{
   icon: React.ComponentType<{ className?: string }>;
   label: string;
