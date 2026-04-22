@@ -209,7 +209,7 @@ const Index = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
-            Don't Buy a Stolen Phone, Car, or Bike.
+            Don't Buy a Stolen Phone, Car, Bike, or Firearm.
             <br />
             <span className="sos-gradient-text">Verify in 3 Seconds.</span>
           </h1>

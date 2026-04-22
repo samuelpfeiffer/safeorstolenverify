@@ -28,7 +28,7 @@ export const DownloadAppBanner = () => {
 
   return (
     <div
-      className="bg-primary text-primary-foreground py-2.5 px-4 text-sm font-semibold mt-16 flex items-center justify-center gap-3 flex-wrap"
+      className="bg-primary text-primary-foreground py-2.5 px-4 text-sm font-semibold flex items-center justify-center gap-3 flex-wrap"
       style={{ minHeight: '40px' }}
     >
       <Smartphone className="w-4 h-4" aria-hidden="true" />
