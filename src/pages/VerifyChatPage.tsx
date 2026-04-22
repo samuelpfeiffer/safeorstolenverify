@@ -796,11 +796,18 @@ const VerifyChatPage: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide">
-                  100+ DATABASES · ~3S RESULTS · ANONYMOUS
+                <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide flex items-center justify-center gap-2 flex-wrap">
+                  <span>100+ DATABASES · ~3S RESULTS · ANONYMOUS</span>
+                  <span className="hidden md:inline-flex items-center gap-1">
+                    ·
+                    <kbd className="px-1 py-px rounded border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>
+                    <span>focus</span>
+                    <kbd className="px-1 py-px rounded border border-border/60 bg-muted/40 text-[9px]">⌘B</kbd>
+                    <span>sidebar</span>
+                  </span>
                   {!user && (
                     <>
-                      {' · '}
+                      <span>·</span>
                       <a href="/auth?redirect=/verify" className="text-primary hover:underline">
                         SIGN IN — 2 FREE CHECKS
                       </a>
