@@ -74,7 +74,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
 
   unlimited: {
     name: "Unlimited",
-    price: 299,
+    price: 1000,
     priceDisplay: "$10",
     interval: "month",
     monthlyQuota: 'unlimited',
