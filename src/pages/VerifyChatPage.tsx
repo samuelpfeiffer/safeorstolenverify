@@ -111,6 +111,26 @@ const VerifyChatPage: React.FC = () => {
     }
   }, [input]);
 
+  // ⌘K / Ctrl+K to focus composer; ⌘B / Ctrl+B to toggle sidebar; ⌘N for new thread
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const mod = e.metaKey || e.ctrlKey;
+      if (!mod) return;
+      if (e.key === 'k' || e.key === 'K') {
+        e.preventDefault();
+        textareaRef.current?.focus();
+      } else if (e.key === 'b' || e.key === 'B') {
+        e.preventDefault();
+        setSidebarCollapsed((v) => !v);
+      } else if ((e.key === 'n' || e.key === 'N') && e.shiftKey) {
+        e.preventDefault();
+        createThread();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [createThread]);
+
   // ─── CALLBACKS ─────────────────────────────────────────────────────
   const addMessage = useCallback(
     (msg: Omit<ChatMessage, 'id'>): string => {
