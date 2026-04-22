@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { ViralShareWidget } from './ViralShareWidget';
 import { SocialProofPopup } from './SocialProofPopup';
 import { UrgencyBanner } from './UrgencyBanner';
 
@@ -23,9 +22,6 @@ export const TrafficBooster = () => {
     <>
       {/* Sticky urgency banner at top - honest messaging */}
       <UrgencyBanner />
-
-      {/* Left-side social share widget */}
-      <ViralShareWidget />
 
       {/* Social proof popup - shows REAL recent activity only */}
       <SocialProofPopup />

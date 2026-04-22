@@ -85,7 +85,8 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
   if (variant === 'hero') {
     return (
       <>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="rounded-2xl border-2 border-primary/40 bg-card/60 backdrop-blur-sm p-4 sm:p-6 shadow-2xl ring-1 ring-primary/10">
+          <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <Input
               value={input}
@@ -131,13 +132,14 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
               )}
             </Button>
           </div>
+          </div>
+          <SearchLimitDisplay 
+            hasReachedLimit={hasReachedLimit}
+            remainingSearches={remainingSearches}
+            isSubscribed={isSubscribed}
+            isAuthenticated={isAuthenticated}
+          />
         </div>
-        <SearchLimitDisplay 
-          hasReachedLimit={hasReachedLimit}
-          remainingSearches={remainingSearches}
-          isSubscribed={isSubscribed}
-          isAuthenticated={isAuthenticated}
-        />
       </>
     );
   }
