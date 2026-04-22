@@ -178,6 +178,9 @@ export const AIFloatingChat: React.FC = () => {
     }
   };
 
+  // Hide on routes where the chat IS the page (must come AFTER all hooks).
+  if (hidden) return null;
+
   return (
     <>
       {/* Floating button */}
