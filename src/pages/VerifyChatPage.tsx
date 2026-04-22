@@ -22,6 +22,9 @@ import {
   Check,
   ArrowUp,
   ScanLine,
+  PanelLeftClose,
+  PanelLeftOpen,
+  Plus,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
