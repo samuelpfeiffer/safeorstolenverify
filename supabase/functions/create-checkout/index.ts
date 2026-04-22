@@ -29,16 +29,18 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return priceId;
   }
 
-  // Default: single verification for one-time, unlimited for subscription
+  // Default: pay-per-check for one-time, unlimited for subscription
   if (!planName) {
-    return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.singleVerification;
+    return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.payPerCheck;
   }
 
   const name = planName.toLowerCase();
 
-  // One-time payment keywords
-  if (name.includes('single') || name.includes('pay per') || name.includes('one-time') || name.includes('verification')) {
-    return STRIPE_PRICES.singleVerification;
+  // One-time payment keywords → $0.99 pay-per-check
+  if (name.includes('pay per') || name.includes('pay-per') || name.includes('per check') ||
+      name.includes('single') || name.includes('one-time') || name.includes('one time') ||
+      name.includes('verification')) {
+    return STRIPE_PRICES.payPerCheck;
   }
 
   // Unlimited plan - the main subscription offering
