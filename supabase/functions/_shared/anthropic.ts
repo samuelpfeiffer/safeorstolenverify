@@ -1,10 +1,10 @@
 /**
  * Shared Anthropic Claude API helper for all AI edge functions.
- * Uses claude-sonnet-4-5-20250514 as the default model.
+ * Default model: claude-sonnet-4-5 (resolves to the latest snapshot).
  */
 
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
-const DEFAULT_MODEL = 'claude-sonnet-4-5-20250514';
+const DEFAULT_MODEL = 'claude-sonnet-4-5';
 
 interface AnthropicMessage {
   role: 'user' | 'assistant';

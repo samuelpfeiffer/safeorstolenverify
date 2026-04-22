@@ -28,7 +28,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 4000,
         system: `You are SafeOrStolen's expert SEO consultant with deep knowledge of Google's ranking algorithms, Core Web Vitals, E-E-A-T principles, and semantic SEO.
 

@@ -57,7 +57,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 4096,
         system: `You are an expert content writer for SafeOrStolen.com, a platform that helps people verify if items are stolen before buying.
 
@@ -126,7 +126,7 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 1024,
         system: `Create engaging social media posts for SafeOrStolen.com. Return JSON array:
 [

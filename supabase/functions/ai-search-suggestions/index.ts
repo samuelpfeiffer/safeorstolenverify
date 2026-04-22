@@ -35,7 +35,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 500,
         system: `You are SafeOrStolen's search assistant. Analyze user input and provide:
 1. Detected identifier type (IMEI, VIN, serial number, etc.)

@@ -118,7 +118,7 @@ serve(async (req) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-5-20250514',
+            model: 'claude-sonnet-4-5',
             max_tokens: 2048,
             system: `You are a machine learning optimization expert. Analyze AI agent performance data and suggest improvements.
 Return JSON: { "insights": [{"agent": "", "issue": "", "improvement": "", "priority": "high|medium|low"}], "system_health": "good|warning|critical" }`,

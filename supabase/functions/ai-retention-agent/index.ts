@@ -95,7 +95,7 @@ serve(async (req) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-5-20250514',
+            model: 'claude-sonnet-4-5',
             max_tokens: 2048,
             system: `You are a user retention expert for SafeOrStolen.com. Generate personalized re-engagement strategies.
 Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_preview": "", "key_message": "", "cta": ""}] }`,

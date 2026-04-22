@@ -140,7 +140,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 1000,
         system: `You are SafeOrStolen's item identification expert. Analyze images or descriptions to identify:
 1. Item type (phone, laptop, vehicle, bicycle, firearm, jewelry, etc.)
