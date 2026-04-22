@@ -74,6 +74,7 @@ const VerifyChatPage: React.FC = () => {
   const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
   const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
   const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
