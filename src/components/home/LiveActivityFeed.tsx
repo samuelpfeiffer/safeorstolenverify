@@ -22,6 +22,8 @@ export const LiveActivityFeed = () => {
   useEffect(() => {
     const fetchRecentVerifications = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) { setIsLoading(false); return; } // RLS blocks anon
         const { data, error } = await supabase
           .from('verification_results')
           .select('id, item_type, property_address, created_at, verification_status')

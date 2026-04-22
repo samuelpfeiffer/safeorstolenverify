@@ -8,6 +8,8 @@ export const TrustSignals = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return; // RLS blocks anon for both tables
         // Get real user count
         const { count: userCount } = await supabase
           .from('profiles')

@@ -27,6 +27,8 @@ export const LiveActivityToast = () => {
     // Fetch real recent verifications count
     const fetchRecentActivity = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return; // RLS blocks anon — skip for guests
         const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
         const { count } = await supabase
           .from('verification_searches')

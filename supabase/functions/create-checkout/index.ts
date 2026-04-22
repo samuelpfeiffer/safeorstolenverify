@@ -12,6 +12,7 @@ const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 const STRIPE_PRICES = {
   // Active prices
   unlimited: 'price_1T8uToGxnZLw8J7O6GcOuV1w',       // $10/month
+  payPerCheck: 'price_1T8uNDGxnZLw8J7OrBKrbePR',     // $0.99 one-time
 
   // Legacy prices kept for existing subscribers
   singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $10 (legacy)
@@ -28,16 +29,18 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return priceId;
   }
 
-  // Default: single verification for one-time, unlimited for subscription
+  // Default: pay-per-check for one-time, unlimited for subscription
   if (!planName) {
-    return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.singleVerification;
+    return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.payPerCheck;
   }
 
   const name = planName.toLowerCase();
 
-  // One-time payment keywords
-  if (name.includes('single') || name.includes('pay per') || name.includes('one-time') || name.includes('verification')) {
-    return STRIPE_PRICES.singleVerification;
+  // One-time payment keywords → $0.99 pay-per-check
+  if (name.includes('pay per') || name.includes('pay-per') || name.includes('per check') ||
+      name.includes('single') || name.includes('one-time') || name.includes('one time') ||
+      name.includes('verification')) {
+    return STRIPE_PRICES.payPerCheck;
   }
 
   // Unlimited plan - the main subscription offering
@@ -59,8 +62,8 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return STRIPE_PRICES.unlimited; // Map starter to unlimited
   }
 
-  // Fallback to unlimited for subscriptions
-  return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.singleVerification;
+  // Fallback to unlimited for subscriptions, pay-per-check for one-time
+  return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.payPerCheck;
 };
 
 serve(async (req) => {

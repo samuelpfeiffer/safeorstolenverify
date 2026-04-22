@@ -17,6 +17,8 @@ export const RealTimeStats = () => {
     // Defer database query by 3 seconds to not block initial render/LCP
     const timer = setTimeout(async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) { setStats(prev => ({ ...prev, isLoading: false })); return; }
         // Get REAL total verifications only
         const { count: totalChecks } = await supabase
           .from('verification_results')
