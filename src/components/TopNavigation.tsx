@@ -24,6 +24,7 @@ const TopNavigation = () => {
 
   const navLinks = [
     { to: '/verify', label: 'Verify' },
+    { to: '/ai-verify', label: 'AI Chat' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
     { to: '/youtube', label: 'YouTube', icon: Youtube },
