@@ -22,6 +22,9 @@ import {
   Check,
   ArrowUp,
   ScanLine,
+  PanelLeftClose,
+  PanelLeftOpen,
+  Plus,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -71,6 +74,7 @@ const VerifyChatPage: React.FC = () => {
   const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
   const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
   const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
@@ -106,6 +110,26 @@ const VerifyChatPage: React.FC = () => {
       textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 160)}px`;
     }
   }, [input]);
+
+  // ⌘K / Ctrl+K to focus composer; ⌘B / Ctrl+B to toggle sidebar; ⌘N for new thread
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const mod = e.metaKey || e.ctrlKey;
+      if (!mod) return;
+      if (e.key === 'k' || e.key === 'K') {
+        e.preventDefault();
+        textareaRef.current?.focus();
+      } else if (e.key === 'b' || e.key === 'B') {
+        e.preventDefault();
+        setSidebarCollapsed((v) => !v);
+      } else if ((e.key === 'n' || e.key === 'N') && e.shiftKey) {
+        e.preventDefault();
+        createThread();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [createThread]);
 
   // ─── CALLBACKS ─────────────────────────────────────────────────────
   const addMessage = useCallback(
@@ -525,16 +549,39 @@ const VerifyChatPage: React.FC = () => {
 
         {/* 3-pane layout */}
         <div className="flex-1 flex overflow-hidden">
-          {/* SIDEBAR (desktop) */}
-          <aside className="hidden lg:block w-64 shrink-0">
-            <ConversationSidebar
-              threads={threads}
-              activeId={activeId}
-              onSelect={setActiveId}
-              onNew={createThread}
-              onDelete={deleteThread}
-              onRename={renameThread}
-            />
+          {/* SIDEBAR (desktop) — collapsible */}
+          <aside
+            className={cn(
+              'hidden lg:block shrink-0 transition-[width] duration-200 ease-out',
+              sidebarCollapsed ? 'w-14' : 'w-64',
+            )}
+          >
+            {sidebarCollapsed ? (
+              <MiniSidebar
+                onExpand={() => setSidebarCollapsed(false)}
+                onNew={createThread}
+                threadCount={threads.length}
+              />
+            ) : (
+              <div className="h-full relative">
+                <ConversationSidebar
+                  threads={threads}
+                  activeId={activeId}
+                  onSelect={setActiveId}
+                  onNew={createThread}
+                  onDelete={deleteThread}
+                  onRename={renameThread}
+                />
+                <button
+                  onClick={() => setSidebarCollapsed(true)}
+                  title="Collapse sidebar (⌘B)"
+                  aria-label="Collapse sidebar"
+                  className="absolute top-2.5 right-2 p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+                >
+                  <PanelLeftClose className="w-4 h-4" />
+                </button>
+              </div>
+            )}
           </aside>
 
           {/* SIDEBAR (mobile drawer) */}
@@ -632,6 +679,29 @@ const VerifyChatPage: React.FC = () => {
 
             {/* Composer — Luminal style */}
             <div className="border-t border-border/50 bg-card/40 backdrop-blur-xl shrink-0 relative">
+              {/* Slim examples row — appears only after welcome screen is gone */}
+              {!showWelcome && (
+                <div className="max-w-2xl mx-auto px-4 pt-2.5">
+                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-thin">
+                    <span className="text-[9px] font-mono tracking-widest text-muted-foreground/70 shrink-0 mr-1">
+                      TRY
+                    </span>
+                    {EXAMPLE_PROMPTS.map((p) => (
+                      <button
+                        key={p.tag}
+                        onClick={() => {
+                          setInput(p.text);
+                          textareaRef.current?.focus();
+                        }}
+                        className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wide px-2 py-1 rounded-md border border-border/60 bg-background/60 hover:border-primary/40 hover:bg-primary/5 hover:text-primary text-muted-foreground transition-colors"
+                      >
+                        <span className="text-primary/80">{p.tag}</span>
+                        <span className="opacity-70 truncate max-w-[120px]">{p.text}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="max-w-2xl mx-auto px-4 py-3.5">
                 {attachment && (
                   <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border/60 rounded-lg px-3 py-1.5">
@@ -726,11 +796,18 @@ const VerifyChatPage: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide">
-                  100+ DATABASES · ~3S RESULTS · ANONYMOUS
+                <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide flex items-center justify-center gap-2 flex-wrap">
+                  <span>100+ DATABASES · ~3S RESULTS · ANONYMOUS</span>
+                  <span className="hidden md:inline-flex items-center gap-1">
+                    ·
+                    <kbd className="px-1 py-px rounded border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>
+                    <span>focus</span>
+                    <kbd className="px-1 py-px rounded border border-border/60 bg-muted/40 text-[9px]">⌘B</kbd>
+                    <span>sidebar</span>
+                  </span>
                   {!user && (
                     <>
-                      {' · '}
+                      <span>·</span>
                       <a href="/auth?redirect=/verify" className="text-primary hover:underline">
                         SIGN IN — 2 FREE CHECKS
                       </a>
@@ -839,6 +916,49 @@ const ActionTile: React.FC<{
     <div className="text-sm font-semibold text-foreground mb-1">{title}</div>
     <div className="text-xs text-muted-foreground leading-relaxed">{desc}</div>
   </button>
+);
+
+/* ─────────────────────────────────────────────────────────────────────
+ *  Mini (collapsed) sidebar — icon-only rail
+ * ──────────────────────────────────────────────────────────────────── */
+
+const MiniSidebar: React.FC<{
+  onExpand: () => void;
+  onNew: () => void;
+  threadCount: number;
+}> = ({ onExpand, onNew, threadCount }) => (
+  <div className="h-full flex flex-col items-center bg-card/40 border-r border-border/60 py-3 gap-1">
+    <button
+      onClick={onExpand}
+      title="Expand sidebar (⌘B)"
+      aria-label="Expand sidebar"
+      className="size-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+    >
+      <PanelLeftOpen className="w-4 h-4" />
+    </button>
+    <div className="w-6 h-px bg-border/60 my-1" />
+    <button
+      onClick={onNew}
+      title="New verification (⌘⇧N)"
+      aria-label="New verification"
+      className="size-9 rounded-lg flex items-center justify-center text-primary hover:bg-primary/10 border border-primary/30 transition-colors"
+    >
+      <Plus className="w-4 h-4" />
+    </button>
+    <button
+      onClick={onExpand}
+      title={`${threadCount} conversation${threadCount === 1 ? '' : 's'}`}
+      aria-label="Conversations"
+      className="size-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors relative"
+    >
+      <Shield className="w-4 h-4" />
+      {threadCount > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 text-[8px] font-mono bg-primary text-primary-foreground rounded-full size-4 flex items-center justify-center">
+          {threadCount > 9 ? '9+' : threadCount}
+        </span>
+      )}
+    </button>
+  </div>
 );
 
 const ToolButton: React.FC<{
