@@ -132,13 +132,14 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
               )}
             </Button>
           </div>
+          </div>
+          <SearchLimitDisplay 
+            hasReachedLimit={hasReachedLimit}
+            remainingSearches={remainingSearches}
+            isSubscribed={isSubscribed}
+            isAuthenticated={isAuthenticated}
+          />
         </div>
-        <SearchLimitDisplay 
-          hasReachedLimit={hasReachedLimit}
-          remainingSearches={remainingSearches}
-          isSubscribed={isSubscribed}
-          isAuthenticated={isAuthenticated}
-        />
       </>
     );
   }
