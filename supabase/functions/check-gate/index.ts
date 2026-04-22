@@ -4,7 +4,7 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts'
 
 // In-memory IP rate limiter (per isolate instance)
 const ipChecks = new Map<string, { count: number; windowStart: number }>();
-const IP_FREE_LIMIT = 5;
+const IP_FREE_LIMIT = 2;
 const IP_WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 function getClientIP(req: Request): string {
@@ -162,7 +162,7 @@ serve(async (req) => {
     // No subscription — check free tier usage with DUAL enforcement:
     // 1. Server-side IP rate limit (cannot be spoofed by clearing localStorage)
     // 2. Fingerprint-based DB tracking (original mechanism)
-    const FREE_LIMIT = 5
+    const FREE_LIMIT = 2
     const clientIP = getClientIP(req);
 
     // Periodically clean up old IP entries

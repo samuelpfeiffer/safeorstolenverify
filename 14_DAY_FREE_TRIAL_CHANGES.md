@@ -1,26 +1,33 @@
 # Pricing Model — March 2026 Update
 
 ## Overview
-**2 free checks as lead magnet, then $1.00/month unlimited.**
+**2 free checks as lead magnet, then $0.99/check or $2.99/month unlimited.**
 
 ## Current Model
-- **Free Tier**: 2 free verifications, no credit card required
-- **Unlimited Plan**: $1.00/month — unlimited verifications, all item types, all features
-- **Stripe Price ID**: `price_1T77b7GxnZLw8J7OYB4jBGRB`
-- **Stripe Product ID**: `prod_TDfkVL8GE1dRt5`
+- **Free Tier**: 2 free verifications, no credit card required (`FREE_SEARCH_LIMIT = 2`)
+- **Pay Per Check**: $0.99 one-time, no account needed
+  - Stripe Price ID: `price_1T8uNDGxnZLw8J7OrBKrbePR`
+  - Stripe Product ID: `prod_U78eaGwFkIA2Ic`
+- **Unlimited Plan**: $2.99/month — unlimited verifications, all item types, seller badges
+  - Stripe Price ID: `price_1T8uToGxnZLw8J7O6GcOuV1w`
+  - Stripe Product ID: `prod_U78lRFEHuOd01t`
 
-## What Changed (March 6, 2026)
-- Restored 2 free checks as lead magnet
-- Single $1.00/month unlimited plan after free checks used
-- Updated all UI, pricing pages, paywalls, edge functions, AI assistants, SEO files, and constants
+Source of truth: `src/features/pricing/constants.ts`.
 
 ## User Flow
-1. User visits site → sees "2 free checks, then $1/month unlimited"
-2. Signs up → gets 2 free verifications (no credit card)
-3. After 2 checks → paywall prompts $1/month subscription
+1. User visits site → sees "2 free checks, then $0.99/check or $2.99/month unlimited"
+2. Signs up → gets 2 free verifications (no credit card required)
+3. After 2 checks → paywall offers $0.99 single check or $2.99/mo unlimited
 4. Subscribes via Stripe → unlimited verifications immediately
 5. Cancel anytime from dashboard
 
+## Enforcement Layers
+The `FREE_SEARCH_LIMIT = 2` cap is enforced in 4 places:
+1. UI/hook (`useSearchLimits`, `useFreemiumFlow`) — redirects to `/pricing`
+2. Edge function `check-gate` — `FREE_LIMIT = 2` (DB fingerprint check)
+3. Edge function `check-gate` — `IP_FREE_LIMIT = 2` (in-memory IP cap, 24h window)
+4. Database `profiles.search_count` — incremented atomically per check
+
 ## Legacy Subscribers
-Existing subscribers on old plans ($4.99, $9.99, etc.) continue on their current plan.
-New subscribers only see the $1/month option.
+Existing subscribers on legacy plans ($4.99 starter, $9.99 personal, $29.99 professional)
+continue on their current plan. New subscribers only see Pay Per Check or Unlimited.
