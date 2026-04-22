@@ -13,6 +13,8 @@ export const LiveStatsCounter = () => {
     // Defer database query by 3 seconds to not block initial render
     const timer = setTimeout(async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return; // RLS blocks anon — skip query for guests
         const { count: total } = await supabase
           .from('verification_results')
           .select('*', { count: 'exact', head: true });
