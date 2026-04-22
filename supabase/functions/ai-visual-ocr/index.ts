@@ -51,7 +51,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 1500,
         temperature: 0.1,
         system: `You are an OCR expert for SafeOrStolen. Extract identifiers from photos of VIN plates, IMEI stickers, serial number labels, phone settings screens, or any item with a visible identifier.

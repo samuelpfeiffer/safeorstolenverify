@@ -103,7 +103,7 @@ serve(async (req) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-5-20250514',
+            model: 'claude-sonnet-4-5',
             max_tokens: 4000,
             system: `You are SafeOrStolen's SEO strategist. Analyze blog content and provide strategic SEO recommendations. Return JSON only with: strategic_recommendations array, content_gaps array, keyword_opportunities array, quick_wins array.`,
             messages: [
