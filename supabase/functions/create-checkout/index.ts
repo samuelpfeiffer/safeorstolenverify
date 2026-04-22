@@ -8,13 +8,13 @@ import { createErrorResponse } from '../_shared/errors.ts';
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 
 // THREE-TIER PRICING MODEL — March 2026
-// Free (2 checks) → $0.99/check → $2.99/month unlimited
+// Free (2 checks) → $0.99/check → $10/month unlimited
 const STRIPE_PRICES = {
   // Active prices
-  unlimited: 'price_1T8uToGxnZLw8J7O6GcOuV1w',       // $2.99/month
+  unlimited: 'price_1T8uToGxnZLw8J7O6GcOuV1w',       // $10/month
 
   // Legacy prices kept for existing subscribers
-  singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 (legacy)
+  singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $10 (legacy)
   starter: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',         // $4.99/month (legacy)
   personal: 'price_1SHEUQGxnZLw8J7OinyVqNMK',        // $9.99/month (legacy)
   professional: 'price_1SHEiuGxnZLw8J7OszscBBk7',    // $29.99/month (legacy)

@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. 2 free checks, then $0.99/check or $2.99/month unlimited. Results in 3 seconds.
+> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. 2 free checks, then $0.99/check or $10/month unlimited. Results in 3 seconds.
 
 ## Main Pages
 
@@ -33,14 +33,14 @@
 
 - 2 free verifications (no credit card required)
 - $0.99 per check (one-time, no subscription needed)
-- $2.99/month unlimited verifications, cancel anytime
+- $10/month unlimited verifications, cancel anytime
 
 ## How SafeOrStolen Compares
 
 - vs. Swappa: SafeOrStolen covers all item types, not just phones. Also has mobile app with barcode scanning.
 - vs. stolenphonechecker.org (CTIA): SafeOrStolen checks more databases and covers all item types.
 - vs. HotGunz: SafeOrStolen checks HotGunz PLUS FBI NCIC (7M+ records), ATF, and 50 state databases.
-- vs. CheckMEND: SafeOrStolen is US-optimized, covers all item types, $2.99/mo unlimited vs £7/check.
+- vs. CheckMEND: SafeOrStolen is US-optimized, covers all item types, $10/mo unlimited vs £7/check.
 - vs. Carfax: SafeOrStolen focuses on stolen detection at $0.99/check vs $39.99/report.
 
 ## Business Pages

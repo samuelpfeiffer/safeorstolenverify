@@ -11,7 +11,7 @@
 
 ### Technical Infrastructure
 - [x] Pre-rendering deployed (search engine ready)
-- [x] Stripe payment flow tested ($2.99)
+- [x] Stripe payment flow tested ($10)
 - [x] 2 free searches enforced
 - [x] Mobile app (PWA) functional
 - [x] All sitemaps submitted

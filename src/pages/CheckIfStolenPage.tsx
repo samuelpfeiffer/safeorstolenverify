@@ -4,7 +4,7 @@ const CheckIfStolenPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check If Item Is Stolen - Instant Verification | SafeOrStolen"
-      metaDescription="Stolen item checker. Verify if phones, cars, bikes, electronics, or tools are stolen before buying. Instant results. $0.99/check or $2.99/month unlimited."
+      metaDescription="Stolen item checker. Verify if phones, cars, bikes, electronics, or tools are stolen before buying. Instant results. $0.99/check or $10/month unlimited."
       h1="Check If An Item Is Stolen"
       itemType="Any Item"
       keywords={[
@@ -23,7 +23,7 @@ const CheckIfStolenPage = () => {
         
         howItWorks: "Our universal stolen item checker works with any identifier: (1) Enter the serial number, IMEI, VIN, or license plate, (2) We automatically detect the identifier type and search the appropriate databases, (3) For phones: carrier blacklists, GSMA Device Registry, activation locks, (4) For vehicles: NCIC, NICB, DMV records, title history, (5) For electronics: manufacturer databases, user reports, police records, (6) You receive instant results showing clean status or any red flags.",
         
-        whyCheck: "Buying stolen property can result in losing your money AND facing criminal charges. You have no legal ownership of stolen goods - they can be confiscated by police at any time with zero compensation. Phones get blacklisted and become useless. Cars get impounded. Electronics get seized. Protect yourself with a verification before any secondhand purchase. SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited.",
+        whyCheck: "Buying stolen property can result in losing your money AND facing criminal charges. You have no legal ownership of stolen goods - they can be confiscated by police at any time with zero compensation. Phones get blacklisted and become useless. Cars get impounded. Electronics get seized. Protect yourself with a verification before any secondhand purchase. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited.",
         
         benefits: [
           "Check phones - iPhone, Samsung, Android, any IMEI",
@@ -34,7 +34,7 @@ const CheckIfStolenPage = () => {
           "Check electronics - gaming consoles, cameras, tablets",
           "Check firearms - serial number verification",
           "Check jewelry - designer watches, luxury items",
-          "Unlimited verifications — $2.99/month",
+          "Unlimited verifications — $10/month",
           "Instant 3-second results"
         ],
         
@@ -57,7 +57,7 @@ const CheckIfStolenPage = () => {
           },
           {
             question: "How much does the stolen item check cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited. This covers all item types — phones, cars, bikes, electronics, firearms, and more. Cancel anytime. 30-day money-back guarantee."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $10/month unlimited. This covers all item types — phones, cars, bikes, electronics, firearms, and more. Cancel anytime. 30-day money-back guarantee."
           },
           {
             question: "What should I do if an item shows as stolen?",

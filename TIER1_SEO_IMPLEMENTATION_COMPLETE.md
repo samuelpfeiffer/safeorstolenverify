@@ -32,7 +32,7 @@ Dominate TIER 1 zero-competition keywords where SafeOrStolen is the ONLY app glo
 
 #### 4. **/PRICING PAGE OPTIMIZATION** ✅
 - **Updated Title**: "Free IMEI Checker App | CheckMEND Alternative - SafeOrStolen Pricing"
-- **Description**: Direct price comparison "$2.99 vs CheckMEND's $3.99" with "2 FREE checks"
+- **Description**: Direct price comparison "$10 vs CheckMEND's $3.99" with "2 FREE checks"
 - **Keywords**: "free IMEI checker app, CheckMEND alternative, cheaper than CheckMEND"
 - **Schema**: Service schemas with proper offers
 

@@ -49,7 +49,7 @@ const CheckAppliancesPage = () => {
           },
           {
             question: "How much does the appliance stolen check cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. Verify washers, dryers, refrigerators, stoves, and any major appliance before buying. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Verify washers, dryers, refrigerators, stoves, and any major appliance before buying. Cancel anytime."
           },
           {
             question: "What should I do if my appliance check shows it's stolen?",

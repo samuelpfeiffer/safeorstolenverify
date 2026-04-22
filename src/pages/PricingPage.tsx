@@ -10,14 +10,14 @@ import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
 const FAQS = [
-  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $2.99/month.' },
+  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $10/month.' },
   { q: 'Can I cancel the unlimited plan anytime?', a: 'Yes. Cancel from your dashboard with one click. Your plan continues until the end of the billing period — no fees, no hassle.' },
   { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
   { q: 'How accurate are the results?', a: 'We check 100+ sources including FBI NCIC, GSMA, NICB, ATF, and all 50 US state databases. ~99.2% accuracy.' },
   { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on the unlimited plan, no questions asked.' },
   { q: 'Do I need an account for pay-per-check?', a: 'No. Pay $0.99, enter your item\'s identifier, and get instant results. No account, no sign-up, no recurring charges.' },
-  { q: 'How do seller verification badges work?', a: 'Seller badges are included free with the $2.99/month unlimited plan. Verify your item, generate a badge, and paste it into your marketplace listing. Buyers click it to see the verified result.' },
-  { q: 'Which plan should I choose?', a: 'If you\'re checking one item before buying, use a free check or pay $0.99. If you buy and sell secondhand items regularly (3+ times per month), the $2.99/month unlimited plan saves you money.' },
+  { q: 'How do seller verification badges work?', a: 'Seller badges are included free with the $10/month unlimited plan. Verify your item, generate a badge, and paste it into your marketplace listing. Buyers click it to see the verified result.' },
+  { q: 'Which plan should I choose?', a: 'If you\'re checking one item before buying, use a free check or pay $0.99. If you buy and sell secondhand items regularly (3+ times per month), the $10/month unlimited plan saves you money.' },
 ];
 
 const PricingPage = () => {
@@ -54,8 +54,8 @@ const PricingPage = () => {
       <TopNavigation />
       <div className="min-h-screen bg-background text-foreground pt-20">
       <PageSEO
-        title="Pricing — Free Stolen Item Checks, $0.99/Check, or $2.99/Month Unlimited | SafeOrStolen"
-        description="SafeOrStolen pricing: 2 free checks, $0.99 per single check, or $2.99/month for unlimited verifications. All plans include 100+ databases, 3-second results, scam analysis, and seller badges. No hidden fees."
+        title="Pricing — Free Stolen Item Checks, $0.99/Check, or $10/Month Unlimited | SafeOrStolen"
+        description="SafeOrStolen pricing: 2 free checks, $0.99 per single check, or $10/month for unlimited verifications. All plans include 100+ databases, 3-second results, scam analysis, and seller badges. No hidden fees."
         canonical="/pricing"
       />
 
@@ -157,7 +157,7 @@ const PricingPage = () => {
           <div className="mt-2" />
           <h3 className="text-xl font-bold mb-1">Unlimited</h3>
           <div className="mb-1 flex items-baseline gap-1">
-            <span className="text-4xl font-black">$2.99</span>
+            <span className="text-4xl font-black">$10</span>
             <span className="text-muted-foreground">/month</span>
           </div>
           <p className="text-muted-foreground text-sm mb-6">unlimited verifications</p>
@@ -188,7 +188,7 @@ const PricingPage = () => {
             className="w-full py-3 rounded-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60 flex items-center justify-center gap-2"
           >
             <Zap className="w-4 h-4" />
-            {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go Unlimited — $2.99/month'}
+            {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go Unlimited — $10/month'}
           </button>
           <p className="text-center text-xs text-muted-foreground mt-2">
             Saves money after just 3 checks per month. Cancel anytime.
@@ -212,7 +212,7 @@ const PricingPage = () => {
               </thead>
               <tbody>
                 {[
-                  { name: 'SafeOrStolen', price: '$0.99/check or $2.99/mo', dbs: '100+', types: 'All 6', hl: true },
+                  { name: 'SafeOrStolen', price: '$0.99/check or $10/mo', dbs: '100+', types: 'All 6', hl: true },
                   { name: 'CheckMEND', price: '£7/check', dbs: 'UK only', types: 'Electronics', hl: false },
                   { name: 'Carfax', price: '$44.99/report', dbs: 'Vehicles', types: 'Cars only', hl: false },
                   { name: 'NICB VINCheck', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
@@ -242,7 +242,7 @@ const PricingPage = () => {
               Get verified badges to prove items aren't stolen. Sell 3x faster and command higher prices.
             </p>
             <span className="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-              Seller badges included in $2.99/mo plan <ArrowRight className="w-4 h-4" />
+              Seller badges included in $10/mo plan <ArrowRight className="w-4 h-4" />
             </span>
           </Link>
           <Link to="/for-businesses" className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition-all">
@@ -277,7 +277,7 @@ const PricingPage = () => {
 
       {/* Bottom CTA */}
       <div className="text-center pb-20 px-4">
-        <p className="text-muted-foreground mb-4">2 free checks. Then $0.99/check or $2.99/month unlimited.</p>
+        <p className="text-muted-foreground mb-4">2 free checks. Then $0.99/check or $10/month unlimited.</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             to="/verify"
@@ -291,7 +291,7 @@ const PricingPage = () => {
             className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl text-lg transition-all disabled:opacity-60"
           >
             <Shield className="w-5 h-5" />
-            {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go Unlimited — $2.99/month'}
+            {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go Unlimited — $10/month'}
           </button>
         </div>
         <p className="text-muted-foreground/50 text-xs mt-3">🔒 Payments secured by Stripe · Cancel anytime</p>
@@ -305,12 +305,12 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "SafeOrStolen Verification",
-            "description": "2 free checks, then $0.99 per check or $2.99/month unlimited stolen item verification — phones, cars, guns, electronics & more. 100+ databases. 3-second results.",
+            "description": "2 free checks, then $0.99 per check or $10/month unlimited stolen item verification — phones, cars, guns, electronics & more. 100+ databases. 3-second results.",
             "brand": { "@type": "Brand", "name": "SafeOrStolen" },
             "offers": [
               { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },
               { "@type": "Offer", "name": "Pay Per Check", "price": "0.99", "priceCurrency": "USD", "description": "$0.99 per check, no subscription" },
-              { "@type": "Offer", "name": "Unlimited", "price": "2.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "$2.99/month unlimited, seller badges included, cancel anytime" },
+              { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "$10/month unlimited, seller badges included, cancel anytime" },
             ]
           })
         }}

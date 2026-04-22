@@ -315,7 +315,7 @@ The system learns patterns like:
 ✅ **"Users who see [feature] convert 40% more"**
 → Highlight that feature more prominently
 
-✅ **"Pricing at $2.99 converts better than $3.99"**
+✅ **"Pricing at $10 converts better than $3.99"**
 → Optimize pricing strategy
 
 ✅ **"Marketing spend on [channel] has 5x ROI"**

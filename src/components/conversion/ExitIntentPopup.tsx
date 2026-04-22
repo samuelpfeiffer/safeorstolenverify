@@ -66,7 +66,7 @@ export const ExitIntentPopup = () => {
             <div className="flex items-start gap-3">
               <Zap className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-sm">$0.99/check or $2.99/mo unlimited</p>
+                <p className="font-semibold text-sm">$0.99/check or $10/mo unlimited</p>
                 <p className="text-xs text-muted-foreground">All items, all databases, cancel anytime</p>
               </div>
             </div>

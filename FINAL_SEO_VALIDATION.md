@@ -33,7 +33,7 @@
 
 #### /pricing Page ✅
 - **Title**: "Free IMEI Checker App | CheckMEND Alternative - SafeOrStolen Pricing" ✅
-- **Description**: Direct price comparison "$2.99 vs CheckMEND's $3.99" ✅
+- **Description**: Direct price comparison "$10 vs CheckMEND's $3.99" ✅
 - **Keywords**: free IMEI checker app (6x), CheckMEND alternative (5x) ✅
 - **Schema**: Service schemas with proper offers ✅
 

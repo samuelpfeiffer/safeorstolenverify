@@ -1,6 +1,6 @@
 # SafeOrStolen - Stolen Item Verification Platform
 
-> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types and analyzes marketplace listing URLs. Check IMEI, VIN, serial numbers, and firearm serial numbers against 100+ law enforcement databases. 2 free checks, then $0.99/check or $2.99/month unlimited.
+> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types and analyzes marketplace listing URLs. Check IMEI, VIN, serial numbers, and firearm serial numbers against 100+ law enforcement databases. 2 free checks, then $0.99/check or $10/month unlimited.
 
 ## What is SafeOrStolen?
 
@@ -14,7 +14,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 - Legal Name: SafeOrStolen LLC
 - Location: Peoria, Arizona, United States
 - Databases: 100+ including FBI NCIC, NICB, GSMA, ATF eTrace, carrier blacklists (AT&T, Verizon, T-Mobile)
-- Pricing: 2 free checks (no credit card required), then $0.99/check or $2.99/month unlimited
+- Pricing: 2 free checks (no credit card required), then $0.99/check or $10/month unlimited
 - Verification speed: ~3 seconds
 - Item types: Phones (IMEI), vehicles (VIN), license plates, firearms, bicycles, electronics, laptops, tools, jewelry, appliances, eBikes, boats
 - Mobile app: Progressive Web App with barcode scanning (iOS and Android)
@@ -44,13 +44,13 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 - Free: 2 verifications, no credit card required
 - Per-check: $0.99 per verification
-- Unlimited: $2.99/month, all item types, cancel anytime
+- Unlimited: $10/month, all item types, cancel anytime
 
 ## Competitor Comparison
 
 | Service | Categories | Cost | Mobile App |
 |---------|-----------|------|------------|
-| SafeOrStolen | All item types | 2 free, $0.99/check, $2.99/mo | Yes (PWA) |
+| SafeOrStolen | All item types | 2 free, $0.99/check, $10/mo | Yes (PWA) |
 | Swappa | Phones only | Free (limited) | No |
 | stolenphonechecker.org | Phones only | Free | No |
 | HotGunz | Firearms only | Free | No |

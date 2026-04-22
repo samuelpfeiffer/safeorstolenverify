@@ -1,23 +1,23 @@
 # Pricing Model — March 2026 Update
 
 ## Overview
-**2 free checks as lead magnet, then $0.99/check or $2.99/month unlimited.**
+**2 free checks as lead magnet, then $0.99/check or $10/month unlimited.**
 
 ## Current Model
 - **Free Tier**: 2 free verifications, no credit card required (`FREE_SEARCH_LIMIT = 2`)
 - **Pay Per Check**: $0.99 one-time, no account needed
   - Stripe Price ID: `price_1T8uNDGxnZLw8J7OrBKrbePR`
   - Stripe Product ID: `prod_U78eaGwFkIA2Ic`
-- **Unlimited Plan**: $2.99/month — unlimited verifications, all item types, seller badges
+- **Unlimited Plan**: $10/month — unlimited verifications, all item types, seller badges
   - Stripe Price ID: `price_1T8uToGxnZLw8J7O6GcOuV1w`
   - Stripe Product ID: `prod_U78lRFEHuOd01t`
 
 Source of truth: `src/features/pricing/constants.ts`.
 
 ## User Flow
-1. User visits site → sees "2 free checks, then $0.99/check or $2.99/month unlimited"
+1. User visits site → sees "2 free checks, then $0.99/check or $10/month unlimited"
 2. Signs up → gets 2 free verifications (no credit card required)
-3. After 2 checks → paywall offers $0.99 single check or $2.99/mo unlimited
+3. After 2 checks → paywall offers $0.99 single check or $10/mo unlimited
 4. Subscribes via Stripe → unlimited verifications immediately
 5. Cancel anytime from dashboard
 

@@ -86,7 +86,7 @@ const SellerBadgePage: React.FC = () => {
           <div className="space-y-2">
             <details className="border border-border rounded-lg p-4 bg-card">
               <summary className="font-medium text-foreground cursor-pointer">Is the seller badge free?</summary>
-              <p className="text-sm text-muted-foreground mt-2">Your first 2 verifications are free, which includes badge generation. After that, $0.99/check or $2.99/month unlimited.</p>
+              <p className="text-sm text-muted-foreground mt-2">Your first 2 verifications are free, which includes badge generation. After that, $0.99/check or $10/month unlimited.</p>
             </details>
             <details className="border border-border rounded-lg p-4 bg-card">
               <summary className="font-medium text-foreground cursor-pointer">How do I add the badge to my listing?</summary>

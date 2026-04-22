@@ -29,7 +29,7 @@ const CheckLaptopPage = () => {
           "Verify Microsoft account lock on Windows PCs",
           "Search FBI NCIC and state law enforcement stolen property databases",
           "Check gaming laptops — Razer Blade, Alienware, ASUS ROG, MSI Stealth",
-          "2 checks on us — then $2.99/month unlimited",
+          "2 checks on us — then $10/month unlimited",
           "Instant 3-second results from 100+ databases"
         ],
         process: [

@@ -58,7 +58,7 @@ Show AFTER each free verification completes:
 
 **Changes**:
 - Add "Most Popular" badge to Starter plan
-- Add comparison with competitors: "CheckMEND charges $XX, we charge $2.99"
+- Add comparison with competitors: "CheckMEND charges $XX, we charge $10"
 - Add FAQ: "What happens if I buy stolen?" with scary real consequences
 - Add trust badges more prominently
 

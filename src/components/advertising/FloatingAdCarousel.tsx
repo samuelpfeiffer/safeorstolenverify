@@ -28,7 +28,7 @@ export const FloatingAdCarousel: React.FC = () => {
       src: handshakeConfidence,
       alt: 'Buy & Sell with Confidence',
       title: 'Limited Time Offer',
-      description: 'Verify items from $0.99/check or $2.99/month unlimited. Protect yourself from stolen goods and fraudulent sellers.',
+      description: 'Verify items from $0.99/check or $10/month unlimited. Protect yourself from stolen goods and fraudulent sellers.',
       ctaText: 'View Pricing',
       ctaLink: '/pricing'
     },

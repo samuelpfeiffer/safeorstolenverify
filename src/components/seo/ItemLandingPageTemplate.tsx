@@ -158,10 +158,10 @@ export const ItemLandingPageTemplate = ({
               <li><a href="/firearms-check">Firearm Check</a> - Verify firearms</li>
               <li><a href="/license-plate-lookup">License Plate Lookup</a> - Check by plate</li>
               <li><a href="/verify">Verify Any Item</a></li>
-              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
             </ul>
             
-            <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
+            <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
           </main>
         </div>
       </noscript>
@@ -326,7 +326,7 @@ export const ItemLandingPageTemplate = ({
               </Link>
               <Link to="/pricing">
                 <Button size="lg" variant="outline">
-                  $2.99/mo Unlimited
+                  $10/mo Unlimited
                 </Button>
               </Link>
             </div>

@@ -61,7 +61,7 @@ serve(async (req) => {
     if (status === 'stolen') {
       responseMessage = `🚨 ALERT: This ${itemType || 'item'} (${maskId(identifier)}) has been REPORTED STOLEN. Do NOT purchase. Contact local law enforcement.\n\nFull report: ${verifyUrl}`;
     } else if (status === 'safe') {
-      responseMessage = `✅ CLEAN: ${itemType || 'Item'} (${maskId(identifier)}) — No theft reports found in 100+ databases.\n\nGet a verified badge: ${verifyUrl}\n\nSafeOrStolen.com — 2 free checks, then $0.99/check or $2.99/mo unlimited.`;
+      responseMessage = `✅ CLEAN: ${itemType || 'Item'} (${maskId(identifier)}) — No theft reports found in 100+ databases.\n\nGet a verified badge: ${verifyUrl}\n\nSafeOrStolen.com — 2 free checks, then $0.99/check or $10/mo unlimited.`;
     } else {
       responseMessage = `⚠️ UNKNOWN: Could not verify ${maskId(identifier)}. For a comprehensive check across 100+ databases, visit ${verifyUrl}\n\nSafeOrStolen.com`;
     }

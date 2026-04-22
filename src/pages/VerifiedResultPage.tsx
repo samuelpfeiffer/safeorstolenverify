@@ -50,7 +50,7 @@ const VerifiedResultPage: React.FC = () => {
 
         <section className="bg-muted/50 border border-border rounded-xl p-6 space-y-3">
           <h2 className="text-lg font-semibold text-foreground">Want to verify your own items?</h2>
-          <p className="text-sm text-muted-foreground">SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ databases in 3 seconds. 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
+          <p className="text-sm text-muted-foreground">SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ databases in 3 seconds. 2 free checks, then $0.99/check or $10/month unlimited.</p>
           <Button asChild size="lg" className="button-glow">
             <Link to="/verify">Try SafeOrStolen Free → <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>

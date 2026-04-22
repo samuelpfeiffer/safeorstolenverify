@@ -15,7 +15,7 @@ const MobileAppPage = () => {
   const navigate = useNavigate();
 
   const faqs = [
-    { question: "Is the SafeOrStolen mobile app free to download?", answer: "Yes, the SafeOrStolen app is 100% free to download and install. You get 2 free verification checks, then $0.99 per check or $2.99/month for unlimited verifications across all item types." },
+    { question: "Is the SafeOrStolen mobile app free to download?", answer: "Yes, the SafeOrStolen app is 100% free to download and install. You get 2 free verification checks, then $0.99 per check or $10/month for unlimited verifications across all item types." },
     { question: "Does SafeOrStolen work on iPhone and Android?", answer: "Yes! SafeOrStolen is a Progressive Web App (PWA) that works on all devices: iPhone, Android, tablets, and desktop computers. Install directly from your browser—no app store required." },
     { question: "Can I use SafeOrStolen without internet?", answer: "Yes. SafeOrStolen features offline mode that caches your recent verifications for access anywhere. Perfect for marketplace meetups in areas with poor signal." },
     { question: "How do I install SafeOrStolen on my phone?", answer: "iPhone: Open Safari, visit safeorstolen.com, tap Share → Add to Home Screen. Android: Open Chrome, tap Menu → Install App. Takes 10 seconds." },
@@ -44,7 +44,7 @@ const MobileAppPage = () => {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free download, 2 free checks, then $0.99/check or $2.99/month unlimited"
+      "description": "Free download, 2 free checks, then $0.99/check or $10/month unlimited"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -92,7 +92,7 @@ const MobileAppPage = () => {
         
         <meta name="ai:purpose" content="Mobile application for instant stolen goods verification at marketplace meetups" />
         <meta name="ai:service_type" content="PWA stolen item checker with barcode scanner and offline mode" />
-        <meta name="ai:pricing" content="Free download, 2 free checks, $0.99/check or $2.99/month unlimited" />
+        <meta name="ai:pricing" content="Free download, 2 free checks, $0.99/check or $10/month unlimited" />
         
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
       </Helmet>
@@ -122,7 +122,7 @@ const MobileAppPage = () => {
             <li>iPhone: Safari → Share → Add to Home Screen</li>
             <li>Android: Chrome → Menu → Install App</li>
           </ol>
-          <p>Pricing: Free download, 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
+          <p>Pricing: Free download, 2 free checks, then $0.99/check or $10/month unlimited.</p>
         </article>
       </noscript>
 

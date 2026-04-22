@@ -4,7 +4,7 @@
   "name": "SafeOrStolen",
   "alternateName": ["SafeOrStolen.com", "SOS"],
   "url": "https://safeorstolen.com",
-  "description": "Consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. 2 free checks, results in 3 seconds. Then $0.99/check or $2.99/month unlimited.",
+  "description": "Consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "iOS, Android, Web",
   "provider": {
@@ -30,7 +30,7 @@
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
     "lowPrice": "0.99",
-    "highPrice": "2.99",
+    "highPrice": "10.00",
     "offerCount": 2,
     "offers": [
       {
@@ -43,9 +43,9 @@
       {
         "@type": "Offer",
         "name": "Unlimited Monthly",
-        "price": "2.99",
+        "price": "10.00",
         "priceCurrency": "USD",
-        "description": "$2.99/month unlimited verifications — all item types, cancel anytime"
+        "description": "$10/month unlimited verifications — all item types, cancel anytime"
       }
     ]
   },

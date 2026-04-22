@@ -82,7 +82,7 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
         <div className="bg-background/50 rounded-lg p-4 text-center">
           <p className="text-sm text-muted-foreground mb-1">Monthly Subscription</p>
           <div className="flex items-baseline justify-center gap-2">
-            <span className="text-4xl font-black text-foreground">$2.99</span>
+            <span className="text-4xl font-black text-foreground">$10</span>
             <span className="text-sm text-muted-foreground">/month</span>
           </div>
           <p className="text-xs text-primary font-semibold mt-2">
@@ -142,7 +142,7 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
           ) : (
             <>
               <CreditCard className="w-5 h-5 mr-2" />
-              Subscribe — $2.99/mo Unlimited
+              Subscribe — $10/mo Unlimited
             </>
           )}
         </Button>
