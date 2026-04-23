@@ -176,10 +176,18 @@ const VerifyChatPage: React.FC = () => {
 
   const looksLikeIdentifier = useCallback((text: string) => {
     const t = text.trim();
+    if (!t) return false;
+    // URLs always count
     if (URL_REGEX.test(t)) return true;
-    if (!/\s/.test(t) && /[A-Za-z0-9]/.test(t) && t.length >= 6 && t.length <= 30) return true;
-    if (IDENTIFIER_REGEX.test(t) && t.split(/\s+/).length <= 2) return true;
-    return false;
+    // Must be a single token (no spaces) to be considered an identifier
+    if (/\s/.test(t)) return false;
+    // Must contain at least one digit — real IMEIs/VINs/serials/plates always have numbers.
+    // This prevents plain words like "hello", "thanks", "pricing" from being treated as identifiers.
+    if (!/\d/.test(t)) return false;
+    // Reasonable identifier length
+    if (t.length < 6 || t.length > 30) return false;
+    // Only alphanumerics + dashes
+    return /^[A-Z0-9\-]+$/i.test(t);
   }, []);
 
   const extractUrl = (text: string) => {
