@@ -91,3 +91,7 @@ Sitemap: https://safeorstolen.com/sitemap.xml
 # llms.txt: https://safeorstolen.com/llms.txt
 # llms-full.txt: https://safeorstolen.com/llms-full.txt
 # ai.txt: https://safeorstolen.com/ai.txt
+# AI Plugin: https://safeorstolen.com/.well-known/ai-plugin.json
+# Identity: https://safeorstolen.com/identity.json
+# AI Context: https://safeorstolen.com/ai-context.json
+# SafeOrStolen AI Chat: https://safeorstolen.com/ai-chat
