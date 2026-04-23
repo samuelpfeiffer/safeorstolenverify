@@ -818,8 +818,8 @@ const VerifyChatPage: React.FC = () => {
             </div>
           </div>
 
-          {/* RESULTS PANE (desktop) */}
-          <aside className="hidden lg:flex flex-col w-[400px] xl:w-[440px] shrink-0 bg-card/30 border-l border-border/50">
+          {/* RESULTS PANE (desktop) — narrower for better balance */}
+          <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/50">
             <ResultsPane
               current={currentResult}
               history={sessionResults}
