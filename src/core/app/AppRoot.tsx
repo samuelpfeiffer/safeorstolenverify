@@ -145,7 +145,7 @@ const AuthAwareContent: React.FC = () => {
               </Suspense>
             </RouteErrorRecovery>
           </main>
-          <SOSFooter />
+          {!hideFooter && <SOSFooter />}
         </div>
         <PWAInstallManager />
         <AppDownloadBot />
