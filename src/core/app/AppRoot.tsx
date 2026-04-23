@@ -162,7 +162,7 @@ const AuthAwareContent: React.FC = () => {
             
             <LiveActivityToast />
             <FloatingCTA />
-            <StickyConversionBar />
+            {/* StickyConversionBar removed per user request */}
           </Suspense>
         )}
         
