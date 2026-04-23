@@ -520,14 +520,7 @@ const VerifyChatPage: React.FC = () => {
                   {checksRemaining} LEFT
                 </span>
               )}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => navigate('/verify/classic')}
-                className="text-[11px] text-muted-foreground hover:text-foreground hidden md:inline-flex h-8"
-              >
-                Classic view
-              </Button>
+              {/* Classic view removed — modern AI experience only */}
               <Button
                 variant="outline"
                 size="sm"
@@ -639,7 +632,10 @@ const VerifyChatPage: React.FC = () => {
             />
 
             <div ref={scrollRef} className="flex-1 overflow-y-auto relative">
-              <div className="max-w-2xl mx-auto px-4 py-8">
+              <div className={cn(
+                "mx-auto px-4 py-8",
+                showWelcome ? "max-w-5xl" : "max-w-2xl"
+              )}>
                 {showWelcome ? (
                   <LuminalWelcome
                     onPick={(text) => {
@@ -818,8 +814,8 @@ const VerifyChatPage: React.FC = () => {
             </div>
           </div>
 
-          {/* RESULTS PANE (desktop) */}
-          <aside className="hidden lg:flex flex-col w-[400px] xl:w-[440px] shrink-0 bg-card/30 border-l border-border/50">
+          {/* RESULTS PANE (desktop) — narrower for better balance */}
+          <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/50">
             <ResultsPane
               current={currentResult}
               history={sessionResults}
@@ -854,43 +850,57 @@ export default VerifyChatPage;
 const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 6 }}
+      initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35 }}
-      className="flex flex-col items-center text-center pt-10 sm:pt-16"
+      transition={{ duration: 0.4 }}
+      className="flex flex-col items-center text-center pt-8 sm:pt-14"
     >
-      <div className="size-12 rounded-2xl bg-gradient-to-br from-primary to-primary/70 grid place-items-center mb-5 shadow-lg shadow-primary/30 ring-4 ring-primary/10">
-        <Shield className="w-6 h-6 text-primary-foreground" />
+      {/* Glowing logo orb */}
+      <div className="relative mb-6">
+        <div className="absolute inset-0 rounded-3xl bg-primary/40 blur-2xl animate-pulse" />
+        <div className="relative size-16 rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/60 grid place-items-center shadow-2xl shadow-primary/40 ring-1 ring-primary/30">
+          <Shield className="w-8 h-8 text-primary-foreground" />
+        </div>
       </div>
 
-      <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
         What can I verify for you?
       </h1>
-      <p className="text-sm text-muted-foreground mt-2 max-w-md">
-        IMEI, VIN, serial, license plate, or marketplace URL — paste, scan, or upload.
+      <p className="text-base text-muted-foreground mt-3 max-w-lg">
+        Paste an IMEI, VIN, serial, license plate, or marketplace URL — I'll check 100+ databases in seconds.
       </p>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-xl">
-        {EXAMPLE_PROMPTS.map((p) => (
-          <button
+      {/* 4-card horizontal grid that fits left-to-right at all sizes */}
+      <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 w-full">
+        {EXAMPLE_PROMPTS.map((p, i) => (
+          <motion.button
             key={p.tag}
             onClick={() => onPick(p.text)}
-            className="group text-left rounded-xl border border-border/60 bg-card/40 hover:bg-card hover:border-primary/40 transition-all px-3.5 py-3 flex items-center gap-3"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: 0.1 + i * 0.06 }}
+            whileHover={{ y: -3 }}
+            className="group relative text-left rounded-2xl border border-border/60 bg-gradient-to-b from-card/80 to-card/40 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all p-4 overflow-hidden"
           >
-            <span className="text-[9px] font-mono text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 shrink-0 tracking-wider">
-              {p.tag}
-            </span>
-            <div className="flex-1 min-w-0">
-              <div className="text-xs font-medium text-foreground truncate">{p.label}</div>
-              <div className="text-[10px] text-muted-foreground font-mono truncate mt-0.5">
+            {/* Hover glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[9px] font-mono font-bold tracking-[0.2em] text-primary px-2 py-1 rounded-md bg-primary/10 border border-primary/30">
+                  {p.tag}
+                </span>
+                <Sparkles className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-primary transition-colors" />
+              </div>
+              <div className="text-sm font-semibold text-foreground leading-snug">{p.label}</div>
+              <div className="text-[10px] text-muted-foreground font-mono truncate mt-1.5 opacity-70">
                 {p.text}
               </div>
             </div>
-          </button>
+          </motion.button>
         ))}
       </div>
 
-      <div className="mt-6 flex items-center gap-2 text-[10px] font-mono tracking-wider text-muted-foreground">
+      <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
         <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
         100+ DATABASES · NCIC · NICB · GSMA · ATF · 50 STATES
       </div>
