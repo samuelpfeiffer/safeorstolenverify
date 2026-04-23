@@ -103,6 +103,9 @@ const AuthAwareContent: React.FC = () => {
   // 3. When auth is ready
   const isCheckoutRoute = window.location.pathname.includes('checkout');
   const authReady = initialized && !loading;
+  // Hide footer on full-height chat experiences (the chat IS the page)
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const hideFooter = pathname === '/verify' || pathname === '/ai-verify' || pathname.startsWith('/verify/') || pathname.startsWith('/ai-verify/');
   
   if (!isCheckoutRoute && !authTimeout && !authReady) {
     return <AppLoadingScreen />;
