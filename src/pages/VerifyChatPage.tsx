@@ -520,14 +520,7 @@ const VerifyChatPage: React.FC = () => {
                   {checksRemaining} LEFT
                 </span>
               )}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => navigate('/verify/classic')}
-                className="text-[11px] text-muted-foreground hover:text-foreground hidden md:inline-flex h-8"
-              >
-                Classic view
-              </Button>
+              {/* Classic view removed — modern AI experience only */}
               <Button
                 variant="outline"
                 size="sm"
