@@ -4,7 +4,7 @@
   "@id": "https://safeorstolen.com/#organization",
   "name": "SafeOrStolen",
   "legalName": "SafeOrStolen LLC",
-  "alternateName": ["SOS", "SafeOrStolen.com", "Safe Or Stolen"],
+  "alternateName": ["SOS", "SafeOrStolen.com", "Safe Or Stolen", "SafeOrStolen AI"],
   "url": "https://safeorstolen.com",
   "logo": {
     "@type": "ImageObject",
@@ -14,8 +14,8 @@
   },
   "foundingDate": "2017",
   "incorporatedDate": "2025",
-  "description": "Consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. The only multi-category verification service with a mobile app.",
-  "slogan": "Verify Before You Buy",
+  "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant powered by Anthropic Claude 3.5 Sonnet that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. The only AI-powered multi-category verification service with a mobile app.",
+  "slogan": "AI-Powered Verification — Verify Before You Buy",
   "areaServed": {
     "@type": "Country",
     "name": "United States"
@@ -56,6 +56,13 @@
     }
   ],
   "knowsAbout": [
+    "AI-powered stolen item verification",
+    "SafeOrStolen AI conversational verification",
+    "Anthropic Claude 3.5 Sonnet integration",
+    "AI smart identifier detection",
+    "AI scam scoring (0-100 risk score)",
+    "AI marketplace URL analysis",
+    "AI visual OCR for barcode scanning",
     "IMEI verification",
     "VIN lookup",
     "serial number verification",
@@ -102,5 +109,5 @@
     "@type": "WebPage",
     "@id": "https://safeorstolen.com/"
   },
-  "dateModified": "2026-03-25"
+  "dateModified": "2026-04-23"
 }

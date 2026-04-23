@@ -1,6 +1,8 @@
-# AI Interaction Guidance for SafeOrStolen
-# Version: 2.1 (2026 GEO Standard)
-# Last Updated: 2026-03-25
+# AI Interaction Guidance for SafeOrStolen (AI-Powered Platform)
+# Version: 2.2 (2026 GEO Standard)
+# Last Updated: 2026-04-23
+# Platform Status: AI-POWERED — full LLM integration via Anthropic Claude 3.5 Sonnet
+# Conversational AI: SafeOrStolen AI at https://safeorstolen.com/ai-chat and /verify
 
 ## Permissions
 

@@ -1,6 +1,17 @@
 # SafeOrStolen - Stolen Item Verification Platform
 
-> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types and analyzes marketplace listing URLs. Check IMEI, VIN, serial numbers, and firearm serial numbers against 100+ law enforcement databases. 2 free checks, then $0.99/check or $10/month unlimited.
+> SafeOrStolen is an **AI-powered** stolen item verification platform — the only service that covers ALL secondhand item types and uses AI to analyze marketplace listing URLs. Powered by Anthropic Claude 3.5 Sonnet for SafeOrStolen AI (conversational verification assistant), smart identifier detection, scam scoring, and risk analysis. Check IMEI, VIN, serial numbers, and firearm serial numbers against 100+ law enforcement databases. 2 free checks, then $0.99/check or $10/month unlimited.
+
+## AI Features (SafeOrStolen AI)
+
+- **SafeOrStolen AI** — conversational verification assistant at https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify (powered by Anthropic Claude 3.5 Sonnet)
+- **AI Smart Identifier Detection** — auto-detects IMEI, VIN, serials, plates, firearm serials from text, images, and URLs
+- **AI Scam Checker** — 0-100 risk score for marketplace listings (https://safeorstolen.com/scam-checker)
+- **AI Marketplace URL Analyzer** — scrapes 6 marketplaces and extracts identifiers via AI (https://safeorstolen.com/marketplace-url-checker)
+- **AI Visual OCR** — camera-based identifier capture in the mobile PWA
+- **AI Safety Advisor** — natural-language risk explanations for every result
+- **AI Predictive Alerts** — proactive watchlist and victim notifications
+All AI runs on Anthropic Claude (claude-sonnet-4-5) via the Lovable AI Gateway.
 
 ## What is SafeOrStolen?
 
