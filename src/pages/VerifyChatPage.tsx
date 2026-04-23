@@ -639,7 +639,10 @@ const VerifyChatPage: React.FC = () => {
             />
 
             <div ref={scrollRef} className="flex-1 overflow-y-auto relative">
-              <div className="max-w-2xl mx-auto px-4 py-8">
+              <div className={cn(
+                "mx-auto px-4 py-8",
+                showWelcome ? "max-w-5xl" : "max-w-2xl"
+              )}>
                 {showWelcome ? (
                   <LuminalWelcome
                     onPick={(text) => {
