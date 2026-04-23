@@ -199,7 +199,7 @@ const Index = () => {
       <DownloadAppBanner />
 
       {/* ── HERO WITH SCANNER ──────────────────────────── */}
-      <section className="relative pt-20 pb-28 px-4 text-center overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
+      <section className="relative pt-8 pb-28 px-4 text-center overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-glow)' }} />
 
         <div className="max-w-4xl mx-auto relative">

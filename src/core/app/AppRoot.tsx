@@ -138,7 +138,7 @@ const AuthAwareContent: React.FC = () => {
         
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <TopNavigation />
-          <main className="flex-1 pt-20">
+          <main className="flex-1 pt-16">
             <RouteErrorRecovery>
               <Suspense fallback={<AppLoadingScreen />}>
                 <AppRoutes />
