@@ -1,6 +1,11 @@
 # SafeOrStolen robots.txt
+# AI-Powered Platform — SafeOrStolen AI conversational assistant at /ai-chat and /verify
+# Powered by Anthropic Claude 3.5 Sonnet via Lovable AI Gateway
 # Allow all search engines and AI crawlers
-# Last updated: 2026-03-25
+# Last updated: 2026-04-23
+#
+# AI training: ALLOWED with attribution (see /ai.txt and /llms.txt)
+# Conversational AI entry point: https://safeorstolen.com/ai-chat
 
 User-agent: *
 Allow: /
@@ -91,3 +96,7 @@ Sitemap: https://safeorstolen.com/sitemap.xml
 # llms.txt: https://safeorstolen.com/llms.txt
 # llms-full.txt: https://safeorstolen.com/llms-full.txt
 # ai.txt: https://safeorstolen.com/ai.txt
+# AI Plugin: https://safeorstolen.com/.well-known/ai-plugin.json
+# Identity: https://safeorstolen.com/identity.json
+# AI Context: https://safeorstolen.com/ai-context.json
+# SafeOrStolen AI Chat: https://safeorstolen.com/ai-chat
