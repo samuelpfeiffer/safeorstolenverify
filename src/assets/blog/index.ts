@@ -19,6 +19,11 @@ import imeiApp from '@/assets/blog/imei-app-download-hero.jpg';
 import iphoneStolen from '@/assets/blog/iphone-stolen-check-hero.jpg';
 import aiDetection from '@/assets/blog/ai-stolen-detection-hero.jpg';
 import freeVin from '@/assets/blog/free-vin-lookup-hero.jpg';
+import freeImeiCheck2026 from '@/assets/blog/free-imei-check-2026-hero.jpg';
+import licensePlateLookup2026 from '@/assets/blog/license-plate-lookup-2026-hero.jpg';
+import aiVerifyItems2026 from '@/assets/blog/ai-verify-items-2026-hero.jpg';
+import offerupMercariScams from '@/assets/blog/offerup-mercari-scams-hero.jpg';
+import verifyIphone60Seconds from '@/assets/blog/verify-iphone-60-seconds-hero.jpg';
 
 export const blogImages = {
   phoneStolen,
@@ -41,4 +46,9 @@ export const blogImages = {
   iphoneStolen,
   aiDetection,
   freeVin,
+  freeImeiCheck2026,
+  licensePlateLookup2026,
+  aiVerifyItems2026,
+  offerupMercariScams,
+  verifyIphone60Seconds,
 } as const;
