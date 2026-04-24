@@ -41,6 +41,7 @@ import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
+const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/i;
 
 const EXAMPLE_PROMPTS = [
   { tag: 'IMEI', label: 'Verify a phone IMEI', text: '359123456789012' },
@@ -248,8 +249,11 @@ const VerifyChatPage: React.FC = () => {
         );
         if (detectErr) throw detectErr;
 
-        const itemType = detect?.type || 'serial';
+        const detectedType = detect?.type || 'serial';
         const cleanedIdentifier = detect?.extractedValue || identifier;
+        const itemType = detectedType === 'vin' && !VIN_REGEX.test(cleanedIdentifier)
+          ? 'serial'
+          : detectedType;
         const confidence = detect?.confidence || 50;
 
         if (!user) {
@@ -317,7 +321,7 @@ const VerifyChatPage: React.FC = () => {
         console.error('[VerifyChat] verify error:', err);
         updateMessage(assistantId, {
           loading: false,
-          content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Try again, or use the [classic verify page](/verify/classic).`,
+          content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Try again, or paste a clear IMEI, VIN, serial number, plate, or marketplace URL.`,
         });
       }
     },
