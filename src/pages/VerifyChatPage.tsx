@@ -553,7 +553,7 @@ const VerifyChatPage: React.FC = () => {
           {/* SIDEBAR (desktop) — collapsible */}
           <aside
             className={cn(
-              'hidden lg:block shrink-0 transition-[width] duration-200 ease-out',
+              'hidden lg:block shrink-0 transition-[width] duration-200 ease-out border-r border-border/70 bg-card/20',
               sidebarCollapsed ? 'w-14' : 'w-64',
             )}
           >
@@ -626,7 +626,7 @@ const VerifyChatPage: React.FC = () => {
           {/* CHAT PANE */}
           <div
             className={cn(
-              'flex-1 flex flex-col min-w-0 relative',
+              'flex-1 flex flex-col min-w-0 relative border-x border-border/40 lg:border-l-0',
               resultsOpenMobile && 'hidden lg:flex',
             )}
           >
@@ -823,7 +823,7 @@ const VerifyChatPage: React.FC = () => {
           </div>
 
           {/* RESULTS PANE (desktop) — narrower for better balance */}
-          <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/50">
+          <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/70">
             <ResultsPane
               current={currentResult}
               history={sessionResults}
