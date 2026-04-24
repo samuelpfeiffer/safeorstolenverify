@@ -181,7 +181,25 @@ const TopNavigation = () => {
                 {link.label}
               </Link>
             ))}
-            
+
+            <div className="px-4 pt-3">
+              <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                AI Tools
+              </p>
+              {aiToolLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 px-2 py-3 text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
+                >
+                  <link.icon className="w-4 h-4 text-primary" />
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
             <div className="px-4 pt-3">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Resources</p>
               {resourceLinks.map((link) => (
