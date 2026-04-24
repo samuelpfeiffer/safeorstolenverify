@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube, Sparkles, Smartphone, Car, Hash, ScanLine } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)
 import {
@@ -29,6 +29,14 @@ const TopNavigation = () => {
     { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/compare', label: 'Compare' },
     { to: '/mobile-app', label: 'App' },
+  ];
+
+  const aiToolLinks = [
+    { to: '/ai-verify', label: 'AI Verify Hub', icon: Sparkles },
+    { to: '/ai-imei-check', label: 'AI IMEI Check', icon: Smartphone },
+    { to: '/ai-vin-check', label: 'AI VIN Check', icon: Car },
+    { to: '/ai-license-plate-check', label: 'AI Plate Check', icon: Hash },
+    { to: '/ai-serial-number-check', label: 'AI Serial Check', icon: ScanLine },
   ];
 
   const resourceLinks = [
@@ -78,6 +86,23 @@ const TopNavigation = () => {
               );
             })}
             
+            {/* AI Tools Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 outline-none">
+                <Sparkles className="w-3.5 h-3.5 text-primary" />
+                AI Tools
+                <ChevronDown className="w-3.5 h-3.5" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-56 bg-card border border-border shadow-xl rounded-xl">
+                {aiToolLinks.map((link) => (
+                  <DropdownMenuItem key={link.to} onClick={() => navigate(link.to)} className="cursor-pointer gap-2">
+                    <link.icon className="w-4 h-4 text-primary" />
+                    {link.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {/* Resources Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 outline-none">
@@ -156,7 +181,25 @@ const TopNavigation = () => {
                 {link.label}
               </Link>
             ))}
-            
+
+            <div className="px-4 pt-3">
+              <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                AI Tools
+              </p>
+              {aiToolLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 px-2 py-3 text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
+                >
+                  <link.icon className="w-4 h-4 text-primary" />
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
             <div className="px-4 pt-3">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Resources</p>
               {resourceLinks.map((link) => (

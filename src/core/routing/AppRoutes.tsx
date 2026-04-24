@@ -73,6 +73,13 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
+// AI VERIFY LANDING PAGES (2026 — AI-first SEO/GEO)
+const AIVerifyHubPage = lazy(() => import('@/pages/ai-landing/AIVerifyHubPage'));
+const AIIMEICheckPage = lazy(() => import('@/pages/ai-landing/AIIMEICheckPage'));
+const AIVINCheckPage = lazy(() => import('@/pages/ai-landing/AIVINCheckPage'));
+const AIPlateCheckPage = lazy(() => import('@/pages/ai-landing/AIPlateCheckPage'));
+const AISerialCheckPage = lazy(() => import('@/pages/ai-landing/AISerialCheckPage'));
+
 // NEW POWERHOUSE SEO HUB PAGES (2026-02-04)
 const FirearmsSerialNumberCheckPage = lazy(() => import('@/pages/FirearmsSerialNumberCheckPage'));
 const FreeStolenVehicleCheckHubPage = lazy(() => import('@/pages/FreeStolenVehicleCheckPage'));
@@ -405,6 +412,13 @@ export const AppRoutes = () => {
         <Route path="/stolen-database" element={<StolenDatabasePage />} />
         <Route path="/item/:slug" element={<StolenItemDetailPage />} />
         <Route path="/shared/:shareCode" element={<SharedReportPage />} />
+
+        {/* AI VERIFY LANDING PAGES (2026 AI-first SEO) */}
+        <Route path="/ai-verify" element={<AIVerifyHubPage />} />
+        <Route path="/ai-imei-check" element={<AIIMEICheckPage />} />
+        <Route path="/ai-vin-check" element={<AIVINCheckPage />} />
+        <Route path="/ai-license-plate-check" element={<AIPlateCheckPage />} />
+        <Route path="/ai-serial-number-check" element={<AISerialCheckPage />} />
 
         {/* ITEM LANDING PAGES */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
