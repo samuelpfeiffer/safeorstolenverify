@@ -312,6 +312,18 @@ const REDIRECT_MAP: Record<string, string> = {
   // /blog/firearm-serial-number-verification, /blog/verify-item-before-meetup,
   // /blog/pawn-shop-stolen-item-verification, /blog/theft-trends-report-2024,
   // /blog/ultimate-marketplace-buyers-guide, /blog/like-carfax-for-phones
+
+  // ===== GSC "Alternate page with proper canonical tag" FIX 2026-04-24 =====
+  // These URLs were returning 200 OK with canonical pointing elsewhere because
+  // _redirects is not processed by Lovable hosting. React-level redirects below.
+  '/check-stolen-car': '/check-car',
+  '/new-york/imei-check': '/imei-checker',
+  '/app/vs-nicb': '/nicb-alternative',
+  '/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide': '/blog',
+  // Legacy timestamped blog slugs (numeric suffix variants)
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know': '/blog/complete-vin-guide',
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942': '/blog/complete-vin-guide',
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know-1760000422701': '/blog/complete-vin-guide',
 };
 
 /**
