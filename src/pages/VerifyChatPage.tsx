@@ -811,18 +811,18 @@ const VerifyChatPage: React.FC = () => {
                       onClick={() => handleSend()}
                       disabled={(!input.trim() && !attachment) || isThinking}
                       size="sm"
-                      className="rounded-lg h-8 px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20 disabled:shadow-none"
+                      className="rounded-lg h-10 sm:h-9 min-w-[64px] px-3.5 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20 disabled:shadow-none"
                       aria-label="Submit"
                     >
                       {isThinking ? (
                         <>
-                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <Loader2 className="w-4 h-4 animate-spin" />
                           <span className="ml-1.5 text-xs">Analyzing</span>
                         </>
                       ) : (
                         <>
                           <span className="text-xs">Submit</span>
-                          <ArrowUp className="w-3.5 h-3.5 ml-1" />
+                          <ArrowUp className="w-4 h-4 ml-1" />
                         </>
                       )}
                     </Button>
