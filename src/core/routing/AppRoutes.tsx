@@ -9,11 +9,6 @@ const Index = lazy(() => import('@/pages/Index'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const VerifyChatPage = lazy(() => import('@/pages/VerifyChatPage'));
 const AIVerifyPage = lazy(() => import('@/pages/AIVerifyPage'));
-const AIVerifyHubPage = lazy(() => import('@/pages/ai-landing/AIVerifyHubPage'));
-const AIIMEICheckPage = lazy(() => import('@/pages/ai-landing/AIIMEICheckPage'));
-const AIVINCheckPage = lazy(() => import('@/pages/ai-landing/AIVINCheckPage'));
-const AIPlateCheckPage = lazy(() => import('@/pages/ai-landing/AIPlateCheckPage'));
-const AISerialCheckPage = lazy(() => import('@/pages/ai-landing/AISerialCheckPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
 const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
@@ -383,11 +378,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/verify" element={<VerifyChatPage />} />
         <Route path="/verify/classic" element={<VerifyPage />} />
-        <Route path="/ai-verify" element={<AIVerifyHubPage />} />
-        <Route path="/ai-imei-check" element={<AIIMEICheckPage />} />
-        <Route path="/ai-vin-check" element={<AIVINCheckPage />} />
-        <Route path="/ai-license-plate-check" element={<AIPlateCheckPage />} />
-        <Route path="/ai-serial-number-check" element={<AISerialCheckPage />} />
+        <Route path="/ai-verify" element={<VerifyChatPage />} />
         <Route path="/ai-chat" element={<VerifyChatPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/trust-engine" element={<TrustEnginePage />} />

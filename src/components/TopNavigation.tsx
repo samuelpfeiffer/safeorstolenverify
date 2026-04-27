@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube, Sparkles, Smartphone, Car, Hash, ScanLine } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)
 import {
@@ -23,20 +23,12 @@ const TopNavigation = () => {
   };
 
   const navLinks = [
+    { to: '/verify', label: 'AI Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
     { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/compare', label: 'Compare' },
     { to: '/mobile-app', label: 'App' },
-  ];
-
-  const aiToolsLinks = [
-    { to: '/ai-verify', label: 'AI Verify Hub', icon: Sparkles, desc: 'All-in-one AI verification' },
-    { to: '/ai-imei-check', label: 'AI IMEI Check', icon: Smartphone, desc: 'Phones & tablets' },
-    { to: '/ai-vin-check', label: 'AI VIN Check', icon: Car, desc: 'Cars, trucks, motorcycles' },
-    { to: '/ai-license-plate-check', label: 'AI Plate Lookup', icon: Hash, desc: 'All 50 US states' },
-    { to: '/ai-serial-number-check', label: 'AI Serial Check', icon: ScanLine, desc: 'Electronics, bikes, tools' },
-    { to: '/verify', label: 'Open AI Chat', icon: Search, desc: 'Conversational verify' },
   ];
 
   const resourceLinks = [
@@ -68,41 +60,24 @@ const TopNavigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {/* AI Tools Dropdown - highlighted as primary CTA */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-primary border border-primary/60 bg-primary/10 hover:bg-primary/20 hover:border-primary transition-all rounded-lg shadow-sm shadow-primary/20 outline-none">
-                <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
-                AI Verify
-                <ChevronDown className="w-3.5 h-3.5" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-72 bg-card border border-border shadow-xl rounded-xl p-1">
-                {aiToolsLinks.map((link) => (
-                  <DropdownMenuItem
-                    key={link.to}
-                    onClick={() => navigate(link.to)}
-                    className="cursor-pointer gap-3 py-2.5 px-3 rounded-lg"
-                  >
-                    <link.icon className="w-4 h-4 text-primary shrink-0" />
-                    <div className="flex flex-col">
-                      <span className="text-sm font-medium text-foreground">{link.label}</span>
-                      <span className="text-xs text-muted-foreground">{link.desc}</span>
-                    </div>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
-              >
-                {'icon' in link && link.icon && <link.icon className="w-3.5 h-3.5" aria-hidden="true" />}
-                {link.label}
-              </Link>
-            ))}
-
+            {navLinks.map((link) => {
+              const isAIVerify = link.to === '/verify';
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={
+                    isAIVerify
+                      ? 'flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-primary border border-primary/60 bg-primary/10 hover:bg-primary/20 hover:border-primary transition-all rounded-lg shadow-sm shadow-primary/20'
+                      : 'flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50'
+                  }
+                >
+                  {'icon' in link && link.icon && <link.icon className="w-3.5 h-3.5 text-red-600" aria-hidden="true" />}
+                  {link.label}
+                </Link>
+              );
+            })}
+            
             {/* Resources Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 outline-none">
@@ -171,23 +146,6 @@ const TopNavigation = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-border/50 py-4 space-y-1 animate-fadeIn">
-            <div className="px-4 pb-2">
-              <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" /> AI Verify Tools
-              </p>
-              {aiToolsLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-2 py-2.5 text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
-                >
-                  <link.icon className="w-4 h-4 text-primary" />
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
             {navLinks.map((link) => (
               <Link
                 key={link.to}

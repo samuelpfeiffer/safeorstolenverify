@@ -10,17 +10,6 @@ export const SOSFooter: React.FC = () => {
   
   const footerSections = [
     {
-      title: 'AI Tools',
-      links: [
-        { label: 'AI Verify Hub', to: '/ai-verify' },
-        { label: 'AI IMEI Check', to: '/ai-imei-check' },
-        { label: 'AI VIN Check', to: '/ai-vin-check' },
-        { label: 'AI License Plate Check', to: '/ai-license-plate-check' },
-        { label: 'AI Serial Number Check', to: '/ai-serial-number-check' },
-        { label: 'AI Chat Verify', to: '/verify' },
-      ]
-    },
-    {
       title: 'Verification',
       links: [
         { label: 'Verify Items', to: '/verify' },
