@@ -6,11 +6,6 @@
 
 SafeOrStolen is fully AI-powered. Core AI features:
 - **SafeOrStolen AI Chat** (https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify) — conversational verification assistant powered by Claude 3.5 Sonnet. Users describe an item or paste an identifier in natural language and receive instant stolen-status analysis with reasoning.
-- **AI Verify Hub** (https://safeorstolen.com/ai-verify) — single AI entry point that auto-detects identifier type (IMEI / VIN / plate / serial) from text, photo, or voice and routes to the correct check.
-- **AI IMEI Check** (https://safeorstolen.com/ai-imei-check) — AI-powered phone IMEI verification: paste, OCR an About-screen photo, or speak the IMEI; checks GSMA, carrier blacklists, iCloud lock, financial blocks.
-- **AI VIN Check** (https://safeorstolen.com/ai-vin-check) — AI-powered 17-character VIN verification: paste, photograph the dash/door-jamb plate, or speak it; checks NICB, salvage/title brands, recalls, theft history.
-- **AI License Plate Check** (https://safeorstolen.com/ai-license-plate-check) — AI-powered US license plate lookup: photograph any angle, AI detects state and runs stolen-vehicle check (no DPPA-restricted owner data returned).
-- **AI Serial Number Check** (https://safeorstolen.com/ai-serial-number-check) — AI-powered serial verification for laptops, cameras, bikes, firearms, tools, appliances, and electronics across manufacturer, theft, and recall databases.
 - **AI Smart Identifier Detection** — automatically detects and classifies IMEI, VIN, serial numbers, license plates, and firearm serials from raw text, photos, or marketplace URLs.
 - **AI Scam Checker** (https://safeorstolen.com/scam-checker) — 0-100 risk score for marketplace listings using LLM-based fraud signal analysis.
 - **AI Marketplace URL Analyzer** (https://safeorstolen.com/marketplace-url-checker) — scrapes Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark listings and uses AI to extract identifiers, then verifies them against 100+ databases.

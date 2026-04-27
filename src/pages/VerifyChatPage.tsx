@@ -41,7 +41,6 @@ import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
-const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/i;
 
 const EXAMPLE_PROMPTS = [
   { tag: 'IMEI', label: 'Verify a phone IMEI', text: '359123456789012' },
@@ -249,11 +248,8 @@ const VerifyChatPage: React.FC = () => {
         );
         if (detectErr) throw detectErr;
 
-        const detectedType = detect?.type || 'serial';
+        const itemType = detect?.type || 'serial';
         const cleanedIdentifier = detect?.extractedValue || identifier;
-        const itemType = detectedType === 'vin' && !VIN_REGEX.test(cleanedIdentifier)
-          ? 'serial'
-          : detectedType;
         const confidence = detect?.confidence || 50;
 
         if (!user) {
@@ -321,7 +317,7 @@ const VerifyChatPage: React.FC = () => {
         console.error('[VerifyChat] verify error:', err);
         updateMessage(assistantId, {
           loading: false,
-          content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Try again, or paste a clear IMEI, VIN, serial number, plate, or marketplace URL.`,
+          content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Try again, or use the [classic verify page](/verify/classic).`,
         });
       }
     },
@@ -557,7 +553,7 @@ const VerifyChatPage: React.FC = () => {
           {/* SIDEBAR (desktop) — collapsible */}
           <aside
             className={cn(
-              'hidden lg:block shrink-0 transition-[width] duration-200 ease-out border-r border-border/70 bg-card/20',
+              'hidden lg:block shrink-0 transition-[width] duration-200 ease-out',
               sidebarCollapsed ? 'w-14' : 'w-64',
             )}
           >
@@ -630,7 +626,7 @@ const VerifyChatPage: React.FC = () => {
           {/* CHAT PANE */}
           <div
             className={cn(
-              'flex-1 flex flex-col min-w-0 relative border-x border-border/40 lg:border-l-0',
+              'flex-1 flex flex-col min-w-0 relative',
               resultsOpenMobile && 'hidden lg:flex',
             )}
           >
@@ -827,7 +823,7 @@ const VerifyChatPage: React.FC = () => {
           </div>
 
           {/* RESULTS PANE (desktop) — narrower for better balance */}
-          <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/70">
+          <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/50">
             <ResultsPane
               current={currentResult}
               history={sessionResults}

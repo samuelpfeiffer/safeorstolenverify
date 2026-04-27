@@ -73,13 +73,6 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
-// AI VERIFY LANDING PAGES (2026 — AI-first SEO/GEO)
-const AIVerifyHubPage = lazy(() => import('@/pages/ai-landing/AIVerifyHubPage'));
-const AIIMEICheckPage = lazy(() => import('@/pages/ai-landing/AIIMEICheckPage'));
-const AIVINCheckPage = lazy(() => import('@/pages/ai-landing/AIVINCheckPage'));
-const AIPlateCheckPage = lazy(() => import('@/pages/ai-landing/AIPlateCheckPage'));
-const AISerialCheckPage = lazy(() => import('@/pages/ai-landing/AISerialCheckPage'));
-
 // NEW POWERHOUSE SEO HUB PAGES (2026-02-04)
 const FirearmsSerialNumberCheckPage = lazy(() => import('@/pages/FirearmsSerialNumberCheckPage'));
 const FreeStolenVehicleCheckHubPage = lazy(() => import('@/pages/FreeStolenVehicleCheckPage'));
@@ -280,11 +273,6 @@ const ATFGunSerialNumberCheckGuide = lazy(() => import('@/pages/blog/ATFGunSeria
 const HotGunzDatabaseGuide = lazy(() => import('@/pages/blog/HotGunzDatabaseGuide'));
 const StateStolenGunDatabaseGuide = lazy(() => import('@/pages/blog/StateStolenGunDatabaseGuide'));
 const GunShowSerialNumberCheckGuide = lazy(() => import('@/pages/blog/GunShowSerialNumberCheckGuide'));
-const FreeImeiCheckOnline2026 = lazy(() => import('@/pages/blog/FreeImeiCheckOnline2026'));
-const FreeLicensePlateLookupByState2026 = lazy(() => import('@/pages/blog/FreeLicensePlateLookupByState2026'));
-const AiVerifyStolenItems2026 = lazy(() => import('@/pages/blog/AiVerifyStolenItems2026'));
-const OfferupMercariScamsHowToVerify2026 = lazy(() => import('@/pages/blog/OfferupMercariScamsHowToVerify2026'));
-const VerifyUsedIphone60Seconds2026 = lazy(() => import('@/pages/blog/VerifyUsedIphone60Seconds2026'));
 
 // Florida City License Plate Pages
 const MiamiLicensePlateLookupPage = lazy(() => import('@/pages/florida/MiamiLicensePlateLookupPage'));
@@ -417,13 +405,6 @@ export const AppRoutes = () => {
         <Route path="/stolen-database" element={<StolenDatabasePage />} />
         <Route path="/item/:slug" element={<StolenItemDetailPage />} />
         <Route path="/shared/:shareCode" element={<SharedReportPage />} />
-
-        {/* AI VERIFY LANDING PAGES (2026 AI-first SEO) */}
-        <Route path="/ai-verify" element={<AIVerifyHubPage />} />
-        <Route path="/ai-imei-check" element={<AIIMEICheckPage />} />
-        <Route path="/ai-vin-check" element={<AIVINCheckPage />} />
-        <Route path="/ai-license-plate-check" element={<AIPlateCheckPage />} />
-        <Route path="/ai-serial-number-check" element={<AISerialCheckPage />} />
 
         {/* ITEM LANDING PAGES */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
@@ -692,14 +673,7 @@ export const AppRoutes = () => {
         <Route path="/blog/top-10-stolen-item-checkers" element={<TopStolenItemCheckers />} />
         <Route path="/blog/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
         <Route path="/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
-
-        {/* New 2026 SEO Blog Posts */}
-        <Route path="/blog/free-imei-check-online-2026" element={<FreeImeiCheckOnline2026 />} />
-        <Route path="/blog/free-license-plate-lookup-by-state-2026" element={<FreeLicensePlateLookupByState2026 />} />
-        <Route path="/blog/ai-verify-stolen-items-2026" element={<AiVerifyStolenItems2026 />} />
-        <Route path="/blog/offerup-mercari-scams-how-to-verify-2026" element={<OfferupMercariScamsHowToVerify2026 />} />
-        <Route path="/blog/verify-used-iphone-60-seconds-2026" element={<VerifyUsedIphone60Seconds2026 />} />
-
+        
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
 
