@@ -190,6 +190,15 @@ const VerifyChatPage: React.FC = () => {
     return /^[A-Z0-9\-]+$/i.test(t);
   }, []);
 
+  // Detect verification *intent* without an actual identifier
+  // (e.g. "is my phone stolen", "check this car", "verify serial")
+  const looksLikeVerifyIntent = useCallback((text: string) => {
+    const t = text.toLowerCase();
+    const verbs = /\b(check|verify|lookup|look up|is\s+(this|my|the)|find out|scan)\b/;
+    const nouns = /\b(phone|iphone|android|imei|car|vehicle|vin|bike|bicycle|laptop|serial|plate|license|gun|firearm|item|stolen|safe)\b/;
+    return verbs.test(t) && nouns.test(t);
+  }, []);
+
   const extractUrl = (text: string) => {
     const match = text.match(/https?:\/\/[^\s]+/i);
     return match ? match[0] : null;
@@ -288,14 +297,20 @@ const VerifyChatPage: React.FC = () => {
           timestamp: verify?.timestamp || new Date().toISOString(),
         };
 
+        const lowConfidence =
+          typeof result.confidence === 'number' && result.confidence < 70;
+        const uncertaintyNote = lowConfidence
+          ? `\n\n_Heads up: confidence is **${result.confidence}%** — treat this as a strong signal, not a final verdict. For high-value purchases, also verify with local law enforcement._`
+          : '';
+
         const headline =
           result.status === 'stolen'
-            ? `⚠️ **Match found.** This ${itemType.toUpperCase()} appears in stolen-item databases. **Do not purchase.** Full report on the right →`
+            ? `⚠️ **Match found.** This ${itemType.toUpperCase()} appears in stolen-item databases. **Do not purchase.** Full report on the right →${uncertaintyNote}`
             : result.status === 'safe'
-            ? `✅ **No theft reports found** for this ${itemType.toUpperCase()}. Full report with sources is on the right →`
+            ? `✅ **No theft reports found** for this ${itemType.toUpperCase()}. Full report with sources is on the right →${uncertaintyNote}`
             : result.status === 'lost'
-            ? `⚠️ This ${itemType.toUpperCase()} was reported **lost**. Reach out to the original owner before buying. Details on the right →`
-            : `ℹ️ Inconclusive result for this ${itemType.toUpperCase()}. ${result.message}`;
+            ? `⚠️ This ${itemType.toUpperCase()} was reported **lost**. Reach out to the original owner before buying. Details on the right →${uncertaintyNote}`
+            : `ℹ️ **Inconclusive** for this ${itemType.toUpperCase()}. ${result.message}\n\nNot every stolen item is reported — absence of a match is not a guarantee. Try a clearer photo, a related identifier, or check the marketplace listing URL.`;
 
         const suggestions =
           result.status === 'stolen'
@@ -413,6 +428,18 @@ const VerifyChatPage: React.FC = () => {
             await runUrlAnalysis(assistantId, url);
           } else if (looksLikeIdentifier(text)) {
             await runVerification(assistantId, text);
+          } else if (looksLikeVerifyIntent(text)) {
+            // User wants to verify but didn't include an identifier yet — guide them.
+            updateMessage(assistantId, {
+              loading: false,
+              content:
+                "Got it — happy to verify that. **Paste the identifier** and I'll check 100+ databases:\n\n• **Phone** → 15-digit IMEI (dial `*#06#`)\n• **Car / motorcycle** → 17-character VIN (dashboard or driver-door sticker)\n• **Bike / electronics / firearm** → serial number on the frame or label\n• **License plate** → plate + state\n• **Marketplace listing** → paste the URL (eBay, FB Marketplace, Craigslist, OfferUp)",
+              suggestions: [
+                'How do I find my IMEI?',
+                'Where is the VIN on a car?',
+                'Where is the serial on a bike?',
+              ],
+            });
           } else {
             await streamFollowUp(assistantId, text);
           }
@@ -431,6 +458,8 @@ const VerifyChatPage: React.FC = () => {
       runVerification,
       streamFollowUp,
       looksLikeIdentifier,
+      looksLikeVerifyIntent,
+      updateMessage,
     ],
   );
 
@@ -782,18 +811,18 @@ const VerifyChatPage: React.FC = () => {
                       onClick={() => handleSend()}
                       disabled={(!input.trim() && !attachment) || isThinking}
                       size="sm"
-                      className="rounded-lg h-8 px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20 disabled:shadow-none"
+                      className="rounded-lg h-10 sm:h-9 min-w-[64px] px-3.5 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20 disabled:shadow-none"
                       aria-label="Submit"
                     >
                       {isThinking ? (
                         <>
-                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <Loader2 className="w-4 h-4 animate-spin" />
                           <span className="ml-1.5 text-xs">Analyzing</span>
                         </>
                       ) : (
                         <>
                           <span className="text-xs">Submit</span>
-                          <ArrowUp className="w-3.5 h-3.5 ml-1" />
+                          <ArrowUp className="w-4 h-4 ml-1" />
                         </>
                       )}
                     </Button>
@@ -872,10 +901,10 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
       </div>
 
       <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
-        What can I verify for you?
+        Verify before you buy.
       </h1>
       <p className="text-base text-muted-foreground mt-3 max-w-lg">
-        Paste an IMEI, VIN, serial, license plate, or marketplace URL — I'll check 100+ databases in seconds.
+        AI-powered stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll cross-check 100+ databases in seconds and explain the result in plain English.
       </p>
 
       {/* 4-card horizontal grid that fits left-to-right at all sizes */}
