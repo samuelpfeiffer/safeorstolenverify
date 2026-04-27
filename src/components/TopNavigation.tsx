@@ -23,12 +23,20 @@ const TopNavigation = () => {
   };
 
   const navLinks = [
-    { to: '/verify', label: 'AI Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
     { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/compare', label: 'Compare' },
     { to: '/mobile-app', label: 'App' },
+  ];
+
+  const aiToolsLinks = [
+    { to: '/ai-verify', label: 'AI Verify Hub', icon: Sparkles, desc: 'All-in-one AI verification' },
+    { to: '/ai-imei-check', label: 'AI IMEI Check', icon: Smartphone, desc: 'Phones & tablets' },
+    { to: '/ai-vin-check', label: 'AI VIN Check', icon: Car, desc: 'Cars, trucks, motorcycles' },
+    { to: '/ai-license-plate-check', label: 'AI Plate Lookup', icon: Hash, desc: 'All 50 US states' },
+    { to: '/ai-serial-number-check', label: 'AI Serial Check', icon: ScanLine, desc: 'Electronics, bikes, tools' },
+    { to: '/verify', label: 'Open AI Chat', icon: Search, desc: 'Conversational verify' },
   ];
 
   const resourceLinks = [
