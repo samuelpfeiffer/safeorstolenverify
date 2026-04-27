@@ -37,7 +37,7 @@ serve(async (req) => {
       .from('verification_results')
       .delete()
       .lt('data_retention_until', now.toISOString())
-      .select('*', { count: 'exact', head: true });
+      .select('id');
 
     if (!deleteVerificationError && expiredVerifications && expiredVerifications > 0) {
       actions.push({ action: 'deleted_expired_verifications', count: expiredVerifications });
@@ -51,7 +51,7 @@ serve(async (req) => {
       .from('pending_verifications')
       .delete()
       .lt('expires_at', now.toISOString())
-      .select('*', { count: 'exact', head: true });
+      .select('id');
 
     if (!deletePendingError && expiredPending && expiredPending > 0) {
       actions.push({ action: 'deleted_expired_pending', count: expiredPending });
@@ -64,7 +64,7 @@ serve(async (req) => {
       .from('rate_limits')
       .delete()
       .lt('window_start', oneDayAgo.toISOString())
-      .select('*', { count: 'exact', head: true });
+      .select('id');
 
     if (!deleteRateLimitError && oldRateLimits && oldRateLimits > 0) {
       actions.push({ action: 'deleted_old_rate_limits', count: oldRateLimits });
