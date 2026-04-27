@@ -68,24 +68,41 @@ const TopNavigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const isAIVerify = link.to === '/verify';
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={
-                    isAIVerify
-                      ? 'flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-primary border border-primary/60 bg-primary/10 hover:bg-primary/20 hover:border-primary transition-all rounded-lg shadow-sm shadow-primary/20'
-                      : 'flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50'
-                  }
-                >
-                  {'icon' in link && link.icon && <link.icon className="w-3.5 h-3.5 text-red-600" aria-hidden="true" />}
-                  {link.label}
-                </Link>
-              );
-            })}
-            
+            {/* AI Tools Dropdown - highlighted as primary CTA */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-primary border border-primary/60 bg-primary/10 hover:bg-primary/20 hover:border-primary transition-all rounded-lg shadow-sm shadow-primary/20 outline-none">
+                <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+                AI Verify
+                <ChevronDown className="w-3.5 h-3.5" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-72 bg-card border border-border shadow-xl rounded-xl p-1">
+                {aiToolsLinks.map((link) => (
+                  <DropdownMenuItem
+                    key={link.to}
+                    onClick={() => navigate(link.to)}
+                    className="cursor-pointer gap-3 py-2.5 px-3 rounded-lg"
+                  >
+                    <link.icon className="w-4 h-4 text-primary shrink-0" />
+                    <div className="flex flex-col">
+                      <span className="text-sm font-medium text-foreground">{link.label}</span>
+                      <span className="text-xs text-muted-foreground">{link.desc}</span>
+                    </div>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+              >
+                {'icon' in link && link.icon && <link.icon className="w-3.5 h-3.5" aria-hidden="true" />}
+                {link.label}
+              </Link>
+            ))}
+
             {/* Resources Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 outline-none">
