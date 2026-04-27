@@ -383,7 +383,11 @@ export const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/verify" element={<VerifyChatPage />} />
         <Route path="/verify/classic" element={<VerifyPage />} />
-        <Route path="/ai-verify" element={<VerifyChatPage />} />
+        <Route path="/ai-verify" element={<AIVerifyHubPage />} />
+        <Route path="/ai-imei-check" element={<AIIMEICheckPage />} />
+        <Route path="/ai-vin-check" element={<AIVINCheckPage />} />
+        <Route path="/ai-license-plate-check" element={<AIPlateCheckPage />} />
+        <Route path="/ai-serial-number-check" element={<AISerialCheckPage />} />
         <Route path="/ai-chat" element={<VerifyChatPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/trust-engine" element={<TrustEnginePage />} />
