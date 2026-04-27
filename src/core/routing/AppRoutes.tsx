@@ -336,6 +336,7 @@ const MobileOnboardingPage = lazy(() => import('@/mobile/pages/MobileOnboardingP
 // Social Media & External Profile Pages
 const YouTubePage = lazy(() => import('@/pages/YouTubePage'));
 const VideoWatchPage = lazy(() => import('@/pages/youtube/VideoWatchPage'));
+const SelfHostedVideoWatchPage = lazy(() => import('@/pages/videos/SelfHostedVideoWatchPage'));
 const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
 const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
@@ -715,6 +716,7 @@ export const AppRoutes = () => {
         <Route path="/product-hunt" element={<ProductHuntPage />} />
         <Route path="/youtube" element={<YouTubePage />} />
         <Route path="/youtube/:slug" element={<VideoWatchPage />} />
+        <Route path="/videos/:slug" element={<SelfHostedVideoWatchPage />} />
         <Route path="/crunchbase" element={<CrunchbasePage />} />
 
         {/* ADMIN ROUTES - Protected by AdminRoute guard */}
