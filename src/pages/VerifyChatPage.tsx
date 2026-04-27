@@ -452,6 +452,8 @@ const VerifyChatPage: React.FC = () => {
       runVerification,
       streamFollowUp,
       looksLikeIdentifier,
+      looksLikeVerifyIntent,
+      updateMessage,
     ],
   );
 
