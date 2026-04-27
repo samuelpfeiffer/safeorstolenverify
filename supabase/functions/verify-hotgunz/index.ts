@@ -210,8 +210,8 @@ serve(async (req) => {
         status: 'error',
         confidence: 0,
         source: 'HotGunz',
-        message: error.message || 'Firearm verification failed',
-        error: error.message
+        message: (error instanceof Error ? error.message : String(error)) || 'Firearm verification failed',
+        error: (error instanceof Error ? error.message : String(error))
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );

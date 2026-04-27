@@ -88,7 +88,7 @@ serve(async (req) => {
     } catch (err) {
       // OBSERVABILITY: Log detailed signature failure info
       console.error(`[WEBHOOK] ✗ SIGNATURE VERIFICATION FAILED`);
-      console.error(`[WEBHOOK] Error: ${err.message}`);
+      console.error(`[WEBHOOK] Error: ${(err instanceof Error ? err.message : String(err))}`);
       console.error(`[WEBHOOK] Timestamp: ${new Date().toISOString()}`);
       console.error(`[WEBHOOK] Signature header present: ${!!signature}`);
       console.error(`[WEBHOOK] Secret configured: ${!!webhookSecret}`);
@@ -100,7 +100,7 @@ serve(async (req) => {
         action: 'WEBHOOK_SIGNATURE_FAILURE',
         table_name: 'stripe_webhook_events',
         new_values: {
-          error: err.message,
+          error: (err instanceof Error ? err.message : String(err)),
           timestamp: new Date().toISOString(),
           signature_present: !!signature,
           secret_configured: !!webhookSecret
@@ -608,7 +608,7 @@ serve(async (req) => {
     }
 
   } catch (error) {
-    console.error(`Critical webhook error: ${error.message}`);
+    console.error(`Critical webhook error: ${(error instanceof Error ? error.message : String(error))}`);
     console.error(`Error stack: ${error.stack}`);
     return createErrorResponse(
       error,

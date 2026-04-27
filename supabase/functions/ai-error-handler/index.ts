@@ -68,7 +68,7 @@ Respond with JSON:
             content: `Analyze this error:
 
 Error Name: ${error.name || 'Unknown'}
-Error Message: ${error.message || 'No message'}
+Error Message: ${(error instanceof Error ? error.message : String(error)) || 'No message'}
 Stack Trace: ${error.stack || 'No stack trace'}
 
 Context:
@@ -103,7 +103,7 @@ Context:
       result = { 
         severity: 'error', 
         rootCause: 'Unable to parse AI analysis',
-        summary: error.message 
+        summary: (error instanceof Error ? error.message : String(error)) 
       };
     }
 
@@ -123,7 +123,7 @@ Context:
     return new Response(
       JSON.stringify({ 
         success: false, 
-        analysis: `Error handler failed: ${err.message}` 
+        analysis: `Error handler failed: ${(err instanceof Error ? err.message : String(err))}` 
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );

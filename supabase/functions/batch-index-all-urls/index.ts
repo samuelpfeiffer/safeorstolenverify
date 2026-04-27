@@ -131,7 +131,7 @@ serve(async (req) => {
     console.error('Batch indexing error:', error);
     return new Response(
       JSON.stringify({ 
-        error: error.message,
+        error: (error instanceof Error ? error.message : String(error)),
         details: 'Failed to batch submit URLs for indexing'
       }),
       { 

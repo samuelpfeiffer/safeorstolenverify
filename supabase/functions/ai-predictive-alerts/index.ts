@@ -87,11 +87,11 @@ Respond with JSON only:
   } catch (error) {
     console.error('[ai-predictive-alerts] Error:', error);
     if (error instanceof AnthropicError && (error.status === 429 || error.status === 402)) {
-      return new Response(JSON.stringify({ error: error.message }), {
+      return new Response(JSON.stringify({ error: (error instanceof Error ? error.message : String(error)) }), {
         status: error.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
-    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : 'Analysis failed' }), {
+    return new Response(JSON.stringify({ error: error instanceof Error ? (error instanceof Error ? error.message : String(error)) : 'Analysis failed' }), {
       status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }

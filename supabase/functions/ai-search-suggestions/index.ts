@@ -94,7 +94,7 @@ Respond with JSON only:
   } catch (error) {
     console.error('[AI Search Suggestions] Error:', error);
     return new Response(
-      JSON.stringify({ suggestions: [], error: error.message }),
+      JSON.stringify({ suggestions: [], error: (error instanceof Error ? error.message : String(error)) }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
