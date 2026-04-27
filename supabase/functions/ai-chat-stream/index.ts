@@ -1,7 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { checkRateLimit } from '../_shared/rate-limit.ts';
-import { callClaudeStream, AnthropicError } from '../_shared/anthropic.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -18,6 +17,13 @@ serve(async (req) => {
   }
 
   try {
+    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    if (!LOVABLE_API_KEY) {
+      return new Response(JSON.stringify({ error: 'AI service not configured' }), {
+        status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { messages, context } = await req.json();
 
     const systemPrompt = `You are SafeOrStolen's AI Assistant — a friendly, knowledgeable expert on stolen item verification, fraud prevention, and buying safety.
@@ -46,24 +52,50 @@ IMPORTANT RULES:
 ${context?.currentPage ? `User is on: ${context.currentPage}` : ''}
 ${context?.recentVerification ? `Recent check: ${JSON.stringify(context.recentVerification)}` : ''}`;
 
-    const streamResponse = await callClaudeStream({
-      system: systemPrompt,
-      messages: messages.slice(-10),
-      temperature: 0.7,
-      maxTokens: 1024,
+    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${LOVABLE_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'google/gemini-2.5-flash',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          ...messages.slice(-10),
+        ],
+        stream: true,
+      }),
     });
 
-    return new Response(streamResponse.body, {
+    if (!response.ok) {
+      if (response.status === 429) {
+        return new Response(JSON.stringify({ error: 'Rate limits exceeded, please try again later.' }), {
+          status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (response.status === 402) {
+        return new Response(JSON.stringify({ error: 'AI credits exhausted. Please add credits to your Lovable workspace.' }), {
+          status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      const errText = await response.text();
+      console.error('Lovable AI gateway error:', response.status, errText);
+      return new Response(JSON.stringify({ error: 'AI gateway error' }), {
+        status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    return new Response(response.body, {
       headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' },
     });
 
   } catch (error) {
     console.error('AI chat stream error:', error);
-    const status = error instanceof AnthropicError ? error.status : 500;
     return new Response(JSON.stringify({
       error: error instanceof Error ? error.message : 'Chat service error',
     }), {
-      status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 });

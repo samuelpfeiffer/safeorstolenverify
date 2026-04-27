@@ -17,10 +17,10 @@ serve(async (req) => {
   const startTime = Date.now();
 
   try {
-    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
+    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     
-    if (!ANTHROPIC_API_KEY) {
-      console.error('[AI Safety Advisor] ANTHROPIC_API_KEY not configured');
+    if (!LOVABLE_API_KEY) {
+      console.error('[AI Safety Advisor] LOVABLE_API_KEY not configured');
       return new Response(
         JSON.stringify({
           success: false,
@@ -117,19 +117,17 @@ Provide your analysis in this JSON format:
   "verification_tips": ["tip1", "tip2"]
 }`;
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'x-api-key': ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
+        Authorization: `Bearer ${LOVABLE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5',
-        max_tokens: 1500,
-        system: systemPrompt,
+        model: 'google/gemini-2.5-flash',
         messages: [
-          { role: 'user', content: userPrompt }
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt },
         ],
       }),
     });
