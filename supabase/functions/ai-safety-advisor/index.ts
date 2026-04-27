@@ -159,7 +159,7 @@ Provide your analysis in this JSON format:
     }
 
     const data = await response.json();
-    const content = data.content?.[0]?.text;
+    const content = data.choices?.[0]?.message?.content;
 
     if (!content) {
       throw new Error('No response content from AI');
