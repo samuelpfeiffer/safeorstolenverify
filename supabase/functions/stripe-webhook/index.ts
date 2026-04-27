@@ -116,7 +116,7 @@ serve(async (req) => {
       });
     }
 
-    const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
+    const supabaseClient = createClient(supabaseUrl!, supabaseServiceKey!);
     console.log(`Processing Stripe event: ${event.type} (ID: ${event.id})`);
 
     // SECURITY FIX: Insert idempotency record BEFORE processing
