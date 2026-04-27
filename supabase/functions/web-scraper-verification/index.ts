@@ -230,7 +230,7 @@ serve(async (req) => {
         status: 'unknown',
         confidence: 0,
         sources: [],
-        message: `Web scraper error: ${error.message}`,
+        message: `Web scraper error: ${(error instanceof Error ? error.message : String(error))}`,
         responseTime: Date.now() - startTime
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
