@@ -422,6 +422,18 @@ const VerifyChatPage: React.FC = () => {
             await runUrlAnalysis(assistantId, url);
           } else if (looksLikeIdentifier(text)) {
             await runVerification(assistantId, text);
+          } else if (looksLikeVerifyIntent(text)) {
+            // User wants to verify but didn't include an identifier yet — guide them.
+            updateMessage(assistantId, {
+              loading: false,
+              content:
+                "Got it — happy to verify that. **Paste the identifier** and I'll check 100+ databases:\n\n• **Phone** → 15-digit IMEI (dial `*#06#`)\n• **Car / motorcycle** → 17-character VIN (dashboard or driver-door sticker)\n• **Bike / electronics / firearm** → serial number on the frame or label\n• **License plate** → plate + state\n• **Marketplace listing** → paste the URL (eBay, FB Marketplace, Craigslist, OfferUp)",
+              suggestions: [
+                'How do I find my IMEI?',
+                'Where is the VIN on a car?',
+                'Where is the serial on a bike?',
+              ],
+            });
           } else {
             await streamFollowUp(assistantId, text);
           }
