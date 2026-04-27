@@ -94,7 +94,7 @@ async function submitToIndexNow(urls: string[]): Promise<{ success: boolean; sub
       errors.push(`IndexNow API error: ${response.status} - ${errorText}`);
     }
   } catch (error) {
-    errors.push(`IndexNow submission failed: ${error.message}`);
+    errors.push(`IndexNow submission failed: ${(error instanceof Error ? error.message : String(error))}`);
   }
 
   // Also submit to Bing directly
@@ -117,7 +117,7 @@ async function submitToIndexNow(urls: string[]): Promise<{ success: boolean; sub
       console.log(`Bing IndexNow response: ${bingResponse.status} - ${errorText}`);
     }
   } catch (error) {
-    console.log(`Bing submission note: ${error.message}`);
+    console.log(`Bing submission note: ${(error instanceof Error ? error.message : String(error))}`);
   }
 
   // Submit to Yandex
@@ -139,7 +139,7 @@ async function submitToIndexNow(urls: string[]): Promise<{ success: boolean; sub
       console.log(`Yandex IndexNow response: ${yandexResponse.status}`);
     }
   } catch (error) {
-    console.log(`Yandex submission note: ${error.message}`);
+    console.log(`Yandex submission note: ${(error instanceof Error ? error.message : String(error))}`);
   }
 
   return {
@@ -193,7 +193,7 @@ serve(async (req) => {
     
     return new Response(JSON.stringify({
       success: false,
-      error: error.message,
+      error: (error instanceof Error ? error.message : String(error)),
       timestamp: new Date().toISOString(),
     }), {
       status: 500,

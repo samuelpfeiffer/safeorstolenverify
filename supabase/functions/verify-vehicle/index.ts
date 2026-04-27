@@ -218,8 +218,8 @@ serve(async (req) => {
         status: 'error',
         confidence: 0,
         source: 'Vehicle_Verification',
-        message: error.message || 'Vehicle verification failed',
-        error: error.message
+        message: (error instanceof Error ? error.message : String(error)) || 'Vehicle verification failed',
+        error: (error instanceof Error ? error.message : String(error))
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );

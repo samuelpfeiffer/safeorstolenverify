@@ -50,7 +50,7 @@ async function scrapeWithJina(url: string, apiKey?: string): Promise<{ markdown:
     console.log(`[Marketplace Analyzer] Jina success: ${content.length} chars`);
     return { markdown: content, title: data.data?.title || data.title || '', description: data.data?.description || data.description || '' };
   } catch (err) {
-    console.warn('[Marketplace Analyzer] Jina error:', err.message);
+    console.warn('[Marketplace Analyzer] Jina error:', (err instanceof Error ? err.message : String(err)));
     return null;
   }
 }
@@ -71,7 +71,7 @@ async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{ markd
     console.log(`[Marketplace Analyzer] Firecrawl success: ${markdown.length} chars`);
     return { markdown, title: metadata.title, description: metadata.description };
   } catch (err) {
-    console.error('[Marketplace Analyzer] Firecrawl error:', err.message);
+    console.error('[Marketplace Analyzer] Firecrawl error:', (err instanceof Error ? err.message : String(err)));
     return null;
   }
 }
@@ -170,7 +170,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('[Marketplace Analyzer] Error:', error);
     return new Response(
-      JSON.stringify({ success: false, error: error.message || 'Failed to analyze listing' }),
+      JSON.stringify({ success: false, error: (error instanceof Error ? error.message : String(error)) || 'Failed to analyze listing' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }

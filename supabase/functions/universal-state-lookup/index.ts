@@ -80,7 +80,6 @@ serve(async (req) => {
       itemType: type === 'vin' ? 'vehicle' : 'license_plate',
       includeWebScraping: true,
       includeAI: true,
-      additionalSources: []
     });
 
     return new Response(JSON.stringify({
@@ -104,7 +103,7 @@ serve(async (req) => {
     console.error('Error in universal-state-lookup:', error);
     return new Response(JSON.stringify({ 
       error: 'Internal server error',
-      details: error.message 
+      details: (error instanceof Error ? error.message : String(error)) 
     }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

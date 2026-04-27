@@ -88,7 +88,7 @@ serve(async (req) => {
     } catch (err) {
       // OBSERVABILITY: Log detailed signature failure info
       console.error(`[WEBHOOK] ✗ SIGNATURE VERIFICATION FAILED`);
-      console.error(`[WEBHOOK] Error: ${err.message}`);
+      console.error(`[WEBHOOK] Error: ${(err instanceof Error ? err.message : String(err))}`);
       console.error(`[WEBHOOK] Timestamp: ${new Date().toISOString()}`);
       console.error(`[WEBHOOK] Signature header present: ${!!signature}`);
       console.error(`[WEBHOOK] Secret configured: ${!!webhookSecret}`);
@@ -100,7 +100,7 @@ serve(async (req) => {
         action: 'WEBHOOK_SIGNATURE_FAILURE',
         table_name: 'stripe_webhook_events',
         new_values: {
-          error: err.message,
+          error: (err instanceof Error ? err.message : String(err)),
           timestamp: new Date().toISOString(),
           signature_present: !!signature,
           secret_configured: !!webhookSecret
@@ -116,7 +116,7 @@ serve(async (req) => {
       });
     }
 
-    const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
+    const supabaseClient = createClient(supabaseUrl!, supabaseServiceKey!);
     console.log(`Processing Stripe event: ${event.type} (ID: ${event.id})`);
 
     // SECURITY FIX: Insert idempotency record BEFORE processing
@@ -225,7 +225,7 @@ serve(async (req) => {
             if (profileId) {
               // Determine tier from session
               let subscriptionTier = 'starter';
-              let monthlyLimit = 15;
+              let monthlyLimit: number | null = 15;
               
               if (session.mode === 'subscription' && session.subscription) {
                 // Get subscription details
@@ -336,7 +336,7 @@ serve(async (req) => {
               console.log(`Successfully updated purchase for session ${session.id}`);
             }
           } catch (purchaseUpdateError) {
-            console.error(`Exception updating purchase: ${purchaseUpdateError.message}`);
+            console.error(`Exception updating purchase: ${(purchaseUpdateError instanceof Error ? purchaseUpdateError.message : String(purchaseUpdateError))}`);
           }
           
           // Get the verification ID from the session metadata
@@ -382,7 +382,7 @@ serve(async (req) => {
                 console.log(`Successfully updated verification result for ID: ${verificationId}`);
               }
             } catch (verificationUpdateError) {
-              console.error(`Exception updating verification: ${verificationUpdateError.message}`);
+              console.error(`Exception updating verification: ${(verificationUpdateError instanceof Error ? verificationUpdateError.message : String(verificationUpdateError))}`);
             }
           }
           break;
@@ -495,7 +495,7 @@ serve(async (req) => {
               console.log(`Successfully updated subscriber record for ${customer.email}`);
             }
           } catch (subscriptionUpdateError) {
-            console.error(`Exception processing subscription: ${subscriptionUpdateError.message}`);
+            console.error(`Exception processing subscription: ${(subscriptionUpdateError instanceof Error ? subscriptionUpdateError.message : String(subscriptionUpdateError))}`);
           }
           break;
         }
@@ -543,12 +543,12 @@ serve(async (req) => {
               .eq("stripe_customer_id", customer.id);
 
             if (cancellationError) {
-              console.error(`Error updating cancelled subscription: ${cancellationError.message}`);
+              console.error(`Error updating cancelled subscription: ${(cancellationError instanceof Error ? cancellationError.message : String(cancellationError))}`);
             } else {
               console.log(`Successfully updated subscriber record for cancelled subscription: ${customer.email}`);
             }
           } catch (cancellationError) {
-            console.error(`Exception processing subscription deletion: ${cancellationError.message}`);
+            console.error(`Exception processing subscription deletion: ${(cancellationError instanceof Error ? cancellationError.message : String(cancellationError))}`);
           }
           break;
         }
@@ -585,14 +585,14 @@ serve(async (req) => {
       });
 
     } catch (eventProcessingError) {
-      console.error(`Error processing event ${event.type}: ${eventProcessingError.message}`);
+      console.error(`Error processing event ${event.type}: ${(eventProcessingError instanceof Error ? eventProcessingError.message : String(eventProcessingError))}`);
       
       // Mark as failed but don't retry
       await supabaseClient
         .from('stripe_webhook_events')
         .update({ 
           processed_at: new Date().toISOString(),
-          error_message: eventProcessingError.message
+          error_message: (eventProcessingError instanceof Error ? eventProcessingError.message : String(eventProcessingError))
         })
         .eq('stripe_event_id', event.id);
       
@@ -608,8 +608,8 @@ serve(async (req) => {
     }
 
   } catch (error) {
-    console.error(`Critical webhook error: ${error.message}`);
-    console.error(`Error stack: ${error.stack}`);
+    console.error(`Critical webhook error: ${(error instanceof Error ? (error instanceof Error ? error.message : String(error)) : String(error))}`);
+    console.error(`Error stack: ${(error instanceof Error ? error.stack : undefined)}`);
     return createErrorResponse(
       error,
       {
