@@ -80,7 +80,6 @@ serve(async (req) => {
       itemType: type === 'vin' ? 'vehicle' : 'license_plate',
       includeWebScraping: true,
       includeAI: true,
-      additionalSources: []
     });
 
     return new Response(JSON.stringify({
