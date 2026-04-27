@@ -225,7 +225,7 @@ serve(async (req) => {
             if (profileId) {
               // Determine tier from session
               let subscriptionTier = 'starter';
-              let monthlyLimit = 15;
+              let monthlyLimit: number | null = 15;
               
               if (session.mode === 'subscription' && session.subscription) {
                 // Get subscription details
