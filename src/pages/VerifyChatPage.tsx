@@ -190,6 +190,15 @@ const VerifyChatPage: React.FC = () => {
     return /^[A-Z0-9\-]+$/i.test(t);
   }, []);
 
+  // Detect verification *intent* without an actual identifier
+  // (e.g. "is my phone stolen", "check this car", "verify serial")
+  const looksLikeVerifyIntent = useCallback((text: string) => {
+    const t = text.toLowerCase();
+    const verbs = /\b(check|verify|lookup|look up|is\s+(this|my|the)|find out|scan)\b/;
+    const nouns = /\b(phone|iphone|android|imei|car|vehicle|vin|bike|bicycle|laptop|serial|plate|license|gun|firearm|item|stolen|safe)\b/;
+    return verbs.test(t) && nouns.test(t);
+  }, []);
+
   const extractUrl = (text: string) => {
     const match = text.match(/https?:\/\/[^\s]+/i);
     return match ? match[0] : null;
