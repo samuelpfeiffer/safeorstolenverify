@@ -901,10 +901,10 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
       </div>
 
       <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
-        What can I verify for you?
+        Verify before you buy.
       </h1>
       <p className="text-base text-muted-foreground mt-3 max-w-lg">
-        Paste an IMEI, VIN, serial, license plate, or marketplace URL — I'll check 100+ databases in seconds.
+        AI-powered stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll cross-check 100+ databases in seconds and explain the result in plain English.
       </p>
 
       {/* 4-card horizontal grid that fits left-to-right at all sizes */}
