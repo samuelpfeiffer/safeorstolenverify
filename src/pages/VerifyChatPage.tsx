@@ -297,14 +297,20 @@ const VerifyChatPage: React.FC = () => {
           timestamp: verify?.timestamp || new Date().toISOString(),
         };
 
+        const lowConfidence =
+          typeof result.confidence === 'number' && result.confidence < 70;
+        const uncertaintyNote = lowConfidence
+          ? `\n\n_Heads up: confidence is **${result.confidence}%** — treat this as a strong signal, not a final verdict. For high-value purchases, also verify with local law enforcement._`
+          : '';
+
         const headline =
           result.status === 'stolen'
-            ? `⚠️ **Match found.** This ${itemType.toUpperCase()} appears in stolen-item databases. **Do not purchase.** Full report on the right →`
+            ? `⚠️ **Match found.** This ${itemType.toUpperCase()} appears in stolen-item databases. **Do not purchase.** Full report on the right →${uncertaintyNote}`
             : result.status === 'safe'
-            ? `✅ **No theft reports found** for this ${itemType.toUpperCase()}. Full report with sources is on the right →`
+            ? `✅ **No theft reports found** for this ${itemType.toUpperCase()}. Full report with sources is on the right →${uncertaintyNote}`
             : result.status === 'lost'
-            ? `⚠️ This ${itemType.toUpperCase()} was reported **lost**. Reach out to the original owner before buying. Details on the right →`
-            : `ℹ️ Inconclusive result for this ${itemType.toUpperCase()}. ${result.message}`;
+            ? `⚠️ This ${itemType.toUpperCase()} was reported **lost**. Reach out to the original owner before buying. Details on the right →${uncertaintyNote}`
+            : `ℹ️ **Inconclusive** for this ${itemType.toUpperCase()}. ${result.message}\n\nNot every stolen item is reported — absence of a match is not a guarantee. Try a clearer photo, a related identifier, or check the marketplace listing URL.`;
 
         const suggestions =
           result.status === 'stolen'
