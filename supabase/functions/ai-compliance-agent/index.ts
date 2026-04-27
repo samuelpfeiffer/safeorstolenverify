@@ -33,13 +33,14 @@ serve(async (req) => {
     // 1. Data Retention - Clean expired verification results (older than 5 years)
     const fiveYearsAgo = new Date(now.getTime() - 5 * 365 * 24 * 60 * 60 * 1000);
     
-    const { count: expiredVerifications, error: deleteVerificationError } = await supabase
+    const { data: deletedVerifications, error: deleteVerificationError } = await supabase
       .from('verification_results')
       .delete()
       .lt('data_retention_until', now.toISOString())
       .select('id');
+    const expiredVerifications = deletedVerifications?.length ?? 0;
 
-    if (!deleteVerificationError && expiredVerifications && expiredVerifications > 0) {
+    if (!deleteVerificationError && expiredVerifications > 0) {
       actions.push({ action: 'deleted_expired_verifications', count: expiredVerifications });
       console.log(`[ai-compliance-agent] Deleted ${expiredVerifications} expired verification results`);
     }
@@ -47,26 +48,28 @@ serve(async (req) => {
     // 2. Clean expired pending verifications (older than 1 hour)
     const oneHourAgo = new Date(now.getTime() - 60 * 60 * 1000);
     
-    const { count: expiredPending, error: deletePendingError } = await supabase
+    const { data: deletedPending, error: deletePendingError } = await supabase
       .from('pending_verifications')
       .delete()
       .lt('expires_at', now.toISOString())
       .select('id');
+    const expiredPending = deletedPending?.length ?? 0;
 
-    if (!deletePendingError && expiredPending && expiredPending > 0) {
+    if (!deletePendingError && expiredPending > 0) {
       actions.push({ action: 'deleted_expired_pending', count: expiredPending });
     }
 
     // 3. Clean old rate limit records (older than 24 hours)
     const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
     
-    const { count: oldRateLimits, error: deleteRateLimitError } = await supabase
+    const { data: deletedRateLimits, error: deleteRateLimitError } = await supabase
       .from('rate_limits')
       .delete()
       .lt('window_start', oneDayAgo.toISOString())
       .select('id');
+    const oldRateLimits = deletedRateLimits?.length ?? 0;
 
-    if (!deleteRateLimitError && oldRateLimits && oldRateLimits > 0) {
+    if (!deleteRateLimitError && oldRateLimits > 0) {
       actions.push({ action: 'deleted_old_rate_limits', count: oldRateLimits });
     }
 
