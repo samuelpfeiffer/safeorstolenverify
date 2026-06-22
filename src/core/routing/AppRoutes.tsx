@@ -378,8 +378,8 @@ export const AppRoutes = () => {
         {/* CORE ROUTES */}
         <Route path="/" element={<Index />} />
         <Route path="/verify" element={<VerifyChatPage />} />
-        <Route path="/verify/classic" element={<VerifyPage />} />
-        <Route path="/ai-verify" element={<VerifyChatPage />} />
+        <Route path="/verify/classic" element={<Navigate to="/verify" replace />} />
+        <Route path="/ai-verify" element={<Navigate to="/verify" replace />} />
         <Route path="/ai-chat" element={<VerifyChatPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/trust-engine" element={<TrustEnginePage />} />
