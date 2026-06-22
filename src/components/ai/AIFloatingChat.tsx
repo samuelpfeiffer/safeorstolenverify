@@ -209,14 +209,79 @@ export const AIFloatingChat: React.FC = () => {
     }
   }, []);
 
+  const detectInput = useCallback((text: string): 'url' | 'identifier' | 'chat' => {
+    const t = text.trim();
+    if (/https?:\/\/[^\s]+/i.test(t)) return 'url';
+    if (!/\s/.test(t) && /\d/.test(t) && /^[A-Z0-9\-]{6,30}$/i.test(t)) return 'identifier';
+    return 'chat';
+  }, []);
+
+  const replaceLastAssistant = (content: string) => setMessages(prev => {
+    const out = [...prev];
+    if (out[out.length - 1]?.role === 'assistant') out[out.length - 1] = { role: 'assistant', content };
+    else out.push({ role: 'assistant', content });
+    return out;
+  });
+
+  const runVerification = useCallback(async (identifier: string) => {
+    setMessages(prev => [...prev, { role: 'assistant', content: '🔎 Detecting identifier and verifying across 100+ databases…' }]);
+    try {
+      const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
+      const itemType = detect?.type || 'serial';
+      const cleaned = detect?.extractedValue || identifier;
+      const { data: verify, error } = await supabase.functions.invoke('verify-item', {
+        body: { identifier: cleaned, itemType, userId: user?.id },
+      });
+      if (error) throw error;
+      const status = verify?.finalStatus || 'unknown';
+      const conf = verify?.confidence ? ` (${verify.confidence}% confidence)` : '';
+      let result = '';
+      if (status === 'stolen') result = `⚠️ **MATCH FOUND** — this ${itemType.toUpperCase()} appears in stolen-item databases${conf}. Do not purchase.`;
+      else if (status === 'safe') result = `✅ **No theft reports found** for this ${itemType.toUpperCase()}${conf}.`;
+      else if (status === 'lost') result = `⚠️ This ${itemType.toUpperCase()} was reported **lost**${conf}.`;
+      else result = `ℹ️ Inconclusive. ${verify?.message || 'Try a clearer identifier.'}`;
+      replaceLastAssistant(result + '\n\n💡 Open the [Verify workspace](/verify) for the full report with sources.');
+    } catch (err: any) {
+      replaceLastAssistant(`Couldn't verify that: ${err?.message || 'unknown error'}. Try the [Verify workspace](/verify).`);
+    }
+  }, [user?.id]);
+
+  const runUrlAnalysis = useCallback(async (url: string) => {
+    setMessages(prev => [...prev, { role: 'assistant', content: '🔗 Analyzing that marketplace listing for fraud signals…' }]);
+    try {
+      const { data, error } = await supabase.functions.invoke('marketplace-url-analyzer', { body: { url } });
+      if (error) throw error;
+      const summary = data?.summary || data?.analysis || data?.message || 'Analysis complete.';
+      const risk = data?.riskLevel || data?.scamRisk;
+      replaceLastAssistant(`🔗 **Listing analyzed.** ${risk ? `Risk: **${risk}**\n\n` : ''}${summary}`);
+    } catch (err: any) {
+      replaceLastAssistant(`Couldn't analyze that URL: ${err?.message || 'unknown error'}. Paste the IMEI, VIN, or serial directly and I'll verify it.`);
+    }
+  }, []);
+
   const send = useCallback(async (text: string) => {
     if (!text.trim() || isStreaming) return;
     const userMsg: Msg = { role: 'user', content: text.trim() };
     const newMessages = [...messages, userMsg];
     setMessages(newMessages);
     setInput('');
+
+    const kind = detectInput(text);
+    if (kind === 'url') {
+      const url = text.trim().match(/https?:\/\/[^\s]+/i)?.[0] || text.trim();
+      setIsStreaming(true);
+      await runUrlAnalysis(url);
+      setIsStreaming(false);
+      return;
+    }
+    if (kind === 'identifier') {
+      setIsStreaming(true);
+      await runVerification(text.trim());
+      setIsStreaming(false);
+      return;
+    }
     await streamChat(newMessages);
-  }, [messages, isStreaming, streamChat]);
+  }, [messages, isStreaming, streamChat, detectInput, runVerification, runUrlAnalysis]);
 
   const handleOpen = () => {
     setIsOpen(true);
