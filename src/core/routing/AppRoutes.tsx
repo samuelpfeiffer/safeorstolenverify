@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { getRedirectRoutes } from './RedirectRoutes';
 import { AdminRoute } from '@/core/routing/AdminRoute';
