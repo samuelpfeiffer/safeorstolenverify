@@ -332,7 +332,7 @@ const VerifyChatPage: React.FC = () => {
         console.error('[VerifyChat] verify error:', err);
         updateMessage(assistantId, {
           loading: false,
-          content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Try again, or use the [classic verify page](/verify/classic).`,
+          content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Please try again in a moment.`,
         });
       }
     },
