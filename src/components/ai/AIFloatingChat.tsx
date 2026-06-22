@@ -290,7 +290,7 @@ export const AIFloatingChat: React.FC = () => {
     if (messages.length === 0) {
       setMessages([{
         role: 'assistant',
-        content: "👋 Hi! I'm your SafeOrStolen AI assistant. I can help you verify items, understand results, find serial numbers, or answer any questions about buying safely. What can I help with?",
+        content: "👋 Hi! I'm your SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll verify it instantly across 100+ databases. Or ask me anything about buying safely.",
       }]);
     }
   };
