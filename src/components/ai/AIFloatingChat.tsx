@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Brain, Sparkles, Minimize2, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/integrations/supabase/client';
+import { useAuth } from '@/lib/auth';
+
+const LOCAL_KEY = 'sos_ai_floating_chat_v1';
+
 
 type Msg = { role: 'user' | 'assistant'; content: string };
 
