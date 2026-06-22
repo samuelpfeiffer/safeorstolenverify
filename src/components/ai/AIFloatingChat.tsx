@@ -28,14 +28,61 @@ export const AIFloatingChat: React.FC = () => {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
   const hidden = HIDDEN_ROUTE_PREFIXES.some((p) => pathname.startsWith(p));
 
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
   const [hasNewMessage, setHasNewMessage] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Hydrate from DB (signed-in) or localStorage (guest) once
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        if (user?.id) {
+          const { data } = await supabase
+            .from('ai_chat_conversations')
+            .select('messages')
+            .eq('user_id', user.id)
+            .maybeSingle();
+          if (!cancelled && Array.isArray(data?.messages) && data!.messages.length) {
+            setMessages(data!.messages as Msg[]);
+            setHydrated(true);
+            return;
+          }
+        }
+        const raw = typeof window !== 'undefined' ? localStorage.getItem(LOCAL_KEY) : null;
+        if (!cancelled && raw) {
+          try { setMessages(JSON.parse(raw)); } catch { /* ignore */ }
+        }
+      } finally {
+        if (!cancelled) setHydrated(true);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [user?.id]);
+
+  // Persist on change (debounced)
+  useEffect(() => {
+    if (!hydrated) return;
+    const t = setTimeout(() => {
+      try { localStorage.setItem(LOCAL_KEY, JSON.stringify(messages.slice(-50))); } catch { /* ignore */ }
+      if (user?.id && messages.length > 0) {
+        supabase
+          .from('ai_chat_conversations')
+          .upsert({ user_id: user.id, messages: messages.slice(-50), updated_at: new Date().toISOString() }, { onConflict: 'user_id' })
+          .then(({ error }) => { if (error) console.warn('chat persist failed', error.message); });
+      }
+    }, 600);
+    return () => clearTimeout(t);
+  }, [messages, hydrated, user?.id]);
+
+
 
 
   // Auto-scroll to bottom
