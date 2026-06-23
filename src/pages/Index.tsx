@@ -179,8 +179,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Free Stolen Item Checker - IMEI VIN Serial Verification | SafeOrStolen"
-        description="Check if phones, cars, bikes, firearms are stolen before buying or selling. Verify IMEI, VIN, serial numbers against 100+ law enforcement databases. 2 free searches. Results in 3 seconds. The only verification service with a mobile app."
+        title="Free Stolen Item Checker: IMEI, VIN & Serial | SafeOrStolen"
+        description="Check IMEI, VIN, and serial numbers against 100+ law enforcement databases before buying. 2 free searches, results in 3 seconds."
         keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
         canonical="/"
       />
