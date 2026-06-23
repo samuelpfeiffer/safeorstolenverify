@@ -35,8 +35,20 @@
       to snapshot homepage meta on ALL pages, causing "Crawled - not indexed" in GSC.
     -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Static social-preview fallbacks for non-JS crawlers (LinkedIn, Slack, Facebook).
+         Per-page og:title/og:description/og:url/og:image are overridden by react-helmet-async. -->
     <meta property="og:site_name" content="SafeOrStolen">
-    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SafeOrStolen — Free Stolen Item Checker">
+    <meta property="og:description" content="Check IMEI, VIN, and serial numbers against 100+ law enforcement databases before buying. 2 free searches, results in 3 seconds.">
+    <meta property="og:url" content="https://safeorstolen.com/">
+    <meta property="og:image" content="https://safeorstolen.com/sos-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SafeOrStolen — Free Stolen Item Checker">
+    <meta name="twitter:description" content="Check IMEI, VIN, and serial numbers against 100+ law enforcement databases before buying.">
+    <meta name="twitter:image" content="https://safeorstolen.com/sos-logo.png">
+
     <!-- Dynamic per-page SEO tags are managed by SEOHead component via react-helmet-async -->
     
     <!-- JSON-LD: WebApplication -->
