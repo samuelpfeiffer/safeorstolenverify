@@ -3,6 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO';
 import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
+import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
@@ -198,44 +199,8 @@ const Index = () => {
       {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
       <DownloadAppBanner />
 
-      {/* ── HERO WITH SCANNER ──────────────────────────── */}
-      <section className="relative pt-8 pb-28 px-4 text-center overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-glow)' }} />
-
-        <div className="max-w-4xl mx-auto relative">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm mb-6">
-            <Shield className="w-4 h-4" />
-            Trusted by buyers, sellers, pawn shops & dealers in all 50 states
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
-            Don't Buy a Stolen Phone, Car, Bike, or Firearm.
-            <br />
-            <span className="sos-gradient-text">Verify in 3 Seconds.</span>
-          </h1>
-
-          <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Paste any IMEI, VIN, serial number, or license plate. We check it against
-            <strong className="text-foreground"> 100+ law-enforcement, carrier, and insurance databases</strong> — FBI NCIC, GSMA, NICB, ATF.
-          </p>
-
-          {/* Integrated Scanner / Search Bar — primary conversion surface */}
-          <div className="max-w-2xl mx-auto mb-4 p-4 sm:p-5 rounded-2xl border-2 border-primary/40 bg-card/40 backdrop-blur-sm shadow-[0_0_40px_-10px_hsl(var(--primary)/0.4)]">
-            <UnifiedSearchBar
-              onOpenQrScanner={() => setShowScanner(!showScanner)}
-              variant="hero"
-            />
-          </div>
-
-          {/* Single trust line — replaces 3 redundant lines */}
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 2 checks free</span>
-            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
-            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99/check or $10/mo unlimited</span>
-            <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>
-          </div>
-        </div>
-      </section>
+      {/* ── AI CHAT HERO ──────────────────────────── */}
+      <HomeAIHero />
 
       {/* ── STATS BAR ───────────────────────────────────── */}
       <div className="bg-card border-y border-border">
