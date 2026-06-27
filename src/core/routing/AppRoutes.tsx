@@ -15,6 +15,7 @@ const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
 const AppPage = lazy(() => import('@/pages/AppPage'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
+const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
@@ -391,6 +392,9 @@ export const AppRoutes = () => {
         <Route path="/install-app" element={<InstallAppPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/our-story" element={<OurStoryPage />} />
+        <Route path="/founders-story" element={<OurStoryPage />} />
+        <Route path="/founder-story" element={<OurStoryPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
