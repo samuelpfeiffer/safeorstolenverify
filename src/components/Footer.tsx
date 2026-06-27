@@ -38,6 +38,12 @@ const Footer = () => {
     href: '/how-it-works'
   }];
   const legalLinks = [{
+    label: 'Our Story',
+    href: '/our-story'
+  }, {
+    label: 'About Us',
+    href: '/about'
+  }, {
     label: 'Terms & Conditions',
     href: '/terms'
   }, {
