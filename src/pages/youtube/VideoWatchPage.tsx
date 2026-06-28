@@ -399,21 +399,12 @@ const VideoWatchPage: React.FC = () => {
                     <Card className="overflow-hidden hover:shadow-lg transition-all">
                       <div className="flex gap-3">
                         <div className="relative w-40 flex-shrink-0">
-                          {hasCustomThumbnail(relatedVideo.slug) ? (
-                            <div className="w-full h-24">
-                              <ThumbnailFactory 
-                                slug={relatedVideo.slug} 
-                                className="w-full h-full rounded-none"
-                              />
-                            </div>
-                          ) : (
-                            <img 
-                              src={getYouTubeThumbnail(relatedVideo.videoId, 'mq')}
-                              alt={relatedVideo.title}
-                              className="w-full h-24 object-cover"
-                              loading="lazy"
-                            />
-                          )}
+                          <img
+                            src={getYouTubeThumbnail(relatedVideo.videoId, 'hq')}
+                            alt={`${relatedVideo.title} — YouTube video thumbnail`}
+                            className="w-full h-24 object-cover"
+                            loading="lazy"
+                          />
                           <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/10 transition-colors">
                             <Play className="w-6 h-6 text-white" />
                           </div>
