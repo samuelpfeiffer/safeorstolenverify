@@ -19,7 +19,7 @@ import {
   getYouTubeThumbnail,
   getFeaturedVideo
 } from '@/config/videoData';
-import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
+
 
 /**
  * YouTubePage — 2026 GEO/SEO Optimized
