@@ -200,8 +200,6 @@ export const YouTubeChannelSection = () => {
                     }
                   }}
                 />
-                {void hasCustomThumbnail /* deprecated custom thumbnails removed */}
-                {void ThumbnailFactory}
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
                   <div className="bg-red-600/80 backdrop-blur-sm rounded-full p-3 group-hover:scale-110 transition-transform">
                     <Play className="w-6 h-6 text-white" aria-hidden="true" />
