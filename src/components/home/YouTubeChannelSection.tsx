@@ -186,18 +186,22 @@ export const YouTubeChannelSection = () => {
                 aria-label={`Watch tutorial: ${video.seoTitle}`}
                 className="group relative rounded-xl overflow-hidden aspect-video border border-border/50 hover:border-red-600/50 hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary block"
               >
-                {hasCustomThumbnail(video.slug) ? (
-                  <ThumbnailFactory slug={video.slug} className="w-full h-full rounded-none" />
-                ) : (
-                  <img
-                    src={getYouTubeThumbnail(video.videoId, 'hq')}
-                    alt={`${video.seoTitle} — free tutorial thumbnail`}
-                    width={320}
-                    height={180}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                )}
+                <img
+                  src={getYouTubeThumbnail(video.videoId, 'maxres')}
+                  alt={`${video.seoTitle} — YouTube video thumbnail`}
+                  width={1280}
+                  height={720}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (img.src.includes('maxresdefault')) {
+                      img.src = getYouTubeThumbnail(video.videoId, 'hq');
+                    }
+                  }}
+                />
+                {void hasCustomThumbnail /* deprecated custom thumbnails removed */}
+                {void ThumbnailFactory}
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
                   <div className="bg-red-600/80 backdrop-blur-sm rounded-full p-3 group-hover:scale-110 transition-transform">
                     <Play className="w-6 h-6 text-white" aria-hidden="true" />
