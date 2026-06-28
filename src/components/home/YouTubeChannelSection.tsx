@@ -14,7 +14,7 @@ import {
   getYouTubeThumbnail,
   getFeaturedVideo
 } from '@/config/videoData';
-import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
+
 
 /**
  * YouTubeChannelSection — Homepage section
