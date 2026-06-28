@@ -398,18 +398,20 @@ const YouTubePage: React.FC = () => {
                 >
                   <Card className="overflow-hidden hover:shadow-xl hover:border-red-600/40 transition-all duration-300 hover:-translate-y-1 h-full cursor-pointer">
                     <div className="relative aspect-video">
-                      {hasCustomThumbnail(video.slug) ? (
-                        <ThumbnailFactory slug={video.slug} className="w-full h-full rounded-none" />
-                      ) : (
-                        <img
-                          src={getYouTubeThumbnail(video.videoId, 'hq')}
-                          alt={`${video.seoTitle} — SafeOrStolen tutorial thumbnail`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          loading="lazy"
-                          width={320}
-                          height={180}
-                        />
-                      )}
+                      <img
+                        src={getYouTubeThumbnail(video.videoId, 'maxres')}
+                        alt={`${video.seoTitle} — YouTube video thumbnail`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        width={1280}
+                        height={720}
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          if (img.src.includes('maxresdefault')) {
+                            img.src = getYouTubeThumbnail(video.videoId, 'hq');
+                          }
+                        }}
+                      />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/10 transition-colors">
                         <div className="bg-red-600/80 backdrop-blur-sm rounded-full p-3 group-hover:scale-110 transition-transform">
                           <Play className="w-7 h-7 text-white" aria-hidden="true" />
