@@ -200,46 +200,46 @@ export const VIDEO_UNIQUE_CONTENT: Record<string, VideoUniqueContent> = {
     ]
   },
   
-  'marketplace-protection': {
-    extendedDescription: `Online marketplaces like Facebook Marketplace, OfferUp, Craigslist, and eBay have revolutionized how we buy and sell used goods, but they've also created opportunities for thieves to offload stolen property to unsuspecting buyers. This advanced guide goes beyond basic safety tips to provide actionable strategies for identifying stolen goods, verifying purchases, and protecting yourself legally. Learn the specific red flags that indicate stolen merchandise, how to conduct verification conversations with sellers, and what to do if you discover you've unknowingly purchased stolen property.`,
+  'help-big-trouble-stolen-check': {
+    extendedDescription: `That sinking feeling when you realize the "great deal" you just bought might be stolen is exactly what this video addresses. Every day, buyers across the United States finish a Facebook Marketplace, Craigslist, OfferUp, or eBay transaction and later discover warning signs: a price that was too low, missing paperwork, a seller who disappeared, or an item that will not activate. This video walks through the immediate steps to take when you suspect you are in big trouble, including how to verify the item with SafeOrStolen, why stopping use matters, how to document the purchase, and what your legal options are. It is not too late to protect yourself. Running a quick IMEI, VIN, or serial number check can confirm whether the item is reported stolen, and having that record can be the difference between being treated as a victim and being accused of receiving stolen property. The video also explains why trying to resell the item to "make your money back" is a dangerous mistake, and how to report the transaction properly to the platform and to law enforcement.`,
     keyTakeaways: [
-      'Online marketplaces are primary outlets for reselling stolen goods',
-      'Price 30%+ below market value is the #1 indicator of stolen items',
-      'Always request identifiers (IMEI, VIN, serial) via message before meeting',
-      'Legitimate sellers welcome verification—reluctance is a red flag',
-      'Keep all communication within the platform for documentation',
-      'If you discover you bought stolen goods, report immediately to police',
-      'Using SafeOrStolen creates a due diligence record that protects you legally'
+      'Stop using the item immediately if you suspect it is stolen',
+      'Find the IMEI, VIN, or serial number and verify it on SafeOrStolen',
+      'Document the listing, seller messages, payment, and verification result',
+      'Do not confront the seller directly; report to the platform and police',
+      'A SafeOrStolen due-diligence record helps protect you legally',
+      'Reselling a suspected stolen item can create criminal liability',
+      'Verify every purchase before paying to avoid this situation entirely'
     ],
-    transcriptSummary: `This video provides an advanced masterclass on protecting yourself when buying on online marketplaces. Kelly begins by explaining why these platforms are targeted by thieves: they're anonymous, cash-based, and involve millions of transactions daily. Law enforcement can't monitor every listing, so buyers must protect themselves. The video identifies the specific red flags that indicate stolen merchandise. Price is the biggest indicator—stolen goods have zero acquisition cost, so sellers can afford to undercut the market significantly. Other red flags include: sellers who can't answer basic questions about the item (like when they bought it), refusal to meet at their home or provide personal information, pressure to complete the sale quickly, and claims that they don't know how to find serial numbers or IMEI. Kelly demonstrates how to conduct verification conversations. Before agreeing to meet, send a message requesting the IMEI, VIN, or serial number. Frame it positively: "I use SafeOrStolen to verify all my purchases—it protects both of us." If the seller refuses, makes excuses, or stops responding, you've just avoided a potentially stolen item. The video covers legal protection: by running verification through SafeOrStolen, you create a dated record of due diligence. If an item is later found to be stolen (perhaps it wasn't yet reported when you checked), this record demonstrates you attempted to verify—which can protect you from receiving stolen property charges. Finally, Kelly addresses what to do if you discover a purchase was stolen: contact police immediately, provide all documentation including marketplace messages, and don't attempt to return the item to the seller (who may become dangerous when confronted).`,
+    transcriptSummary: `Kelly McEvoy opens the video with a raw, relatable scenario: you just bought something, and a few minutes later a detail does not add up. Maybe the phone will not activate because the IMEI is blacklisted. Maybe the VIN on the car dashboard does not match the door jamb. Maybe the seller pressured you to pay in cash and leave fast. The first and most important message is to stop using the item immediately. Continuing to use, carry, or display a potentially stolen item can make you look like you knowingly accepted it, which complicates your legal position. The video then walks through the three-step verification process. Step one: find the identifier. For phones, dial *#06# or check Settings > About Phone. For vehicles, photograph the VIN from the dashboard and door jamb. For electronics, tools, bikes, and firearms, locate the serial number on the product label or back panel. Step two: run the identifier through SafeOrStolen at safeorstolen.com or in the mobile app. The tool searches 100+ databases including police stolen property records, insurance theft claims, carrier blacklists, and state DMV files, and returns a clear status in about 3 seconds. Step three: document everything. Screenshot the marketplace listing, save the seller's messages, keep your receipt or payment record, and screenshot your SafeOrStolen result. Kelly explains that this verification record is your proof of due diligence. If the item is flagged, the video advises against contacting the seller directly, because a thief can become dangerous when confronted. Instead, report the transaction to the marketplace, contact local police with your documentation, and let them guide next steps. If the item is not yet reported but you still suspect it, the video recommends keeping the verification record and avoiding further resale. The video ends with the core SafeOrStolen message: a three-second check before you buy can prevent all of this stress.`,
     targetAudience: [
-      'Frequent online marketplace buyers',
-      'People who have been scammed before',
-      'Resellers and flippers sourcing inventory',
-      'Anyone buying high-value items ($500+) from strangers',
-      'Safety-conscious buyers who want legal protection'
+      'Buyers who suspect they received stolen goods',
+      'First-time secondhand marketplace users',
+      'Parents purchasing used phones or electronics',
+      'Small business owners sourcing inventory',
+      'Anyone who has been scammed on a peer-to-peer platform'
     ],
     relatedResources: [
-      { title: 'Facebook Marketplace Safety', url: '/facebook-marketplace-safety' },
-      { title: 'OfferUp Stolen Check', url: '/offerup-stolen-check' },
-      { title: 'Craigslist Safety', url: '/craigslist-safety-verification' },
-      { title: 'eBay Stolen Item Check', url: '/ebay-stolen-item-check' }
+      { title: 'Start Free Verification', url: '/verify' },
+      { title: 'Facebook Marketplace Safety Guide', url: '/facebook-marketplace-safety' },
+      { title: 'How to Check If an Item Is Stolen', url: '/how-to-check-if-item-stolen' },
+      { title: 'Download Mobile App', url: '/app' }
     ],
-    expertTips: `Create a template message you send to every marketplace seller: "Hi! I'm interested in [item]. Before we meet, could you please send me the [IMEI/VIN/serial number]? I verify all purchases through SafeOrStolen.com for peace of mind. Thanks!" This approach achieves two goals: legitimate sellers respond positively, and thieves either refuse or ghost you—saving you from a bad purchase. For high-value items, also request a photo of the seller's ID (which you can offer to blur) and compare the name to the marketplace profile. Discrepancies warrant extra caution.`,
+    expertTips: `If you think you bought stolen property, treat it like a potential legal incident, not a customer-service problem. First, stop using the item and move it to a safe location where it is not in your daily possession. Second, run a SafeOrStolen check within 24 hours to learn whether the item is already reported stolen. Third, screenshot every piece of evidence: the listing, the seller's profile, your payment confirmation, messages, and your verification result. Fourth, file a report with the marketplace platform and with local law enforcement; most police departments take theft reports online. Do not try to resell the item to recover your money, because that can expose you to receiving-stolen-property charges. Finally, if the item is not reported yet but the deal feels wrong, keep the documentation and avoid using it in public until you are certain.`,
     uniqueFaqs: [
-      { question: 'How common are stolen goods on Facebook Marketplace?', answer: 'While no official statistics exist, law enforcement estimates that stolen goods are a significant problem on all peer-to-peer marketplaces. The anonymous nature and cash transactions make them ideal for offloading stolen property quickly.' },
-      { question: 'What legal trouble can I get in for buying stolen goods?', answer: 'In most states, "receiving stolen property" is a crime—even if you didn\'t know the item was stolen. However, prosecutors must prove you knew or should have known. Running verification through SafeOrStolen creates a documented record of your due diligence, which provides legal protection.' },
-      { question: 'Should I confront a seller I suspect has stolen goods?', answer: 'No! Simply decline the purchase and disengage. Confronting a thief can be dangerous. If you have strong evidence (like verification results showing the item is reported stolen), you can report to police, but do not engage directly with the seller.' },
-      { question: 'How do I know if a price is "too good to be true"?', answer: 'Research the item\'s market value on eBay sold listings, Facebook Marketplace recently sold, or price guides. If the seller\'s price is 30% or more below comparable sales, treat it as a red flag requiring extra verification.' },
-      { question: 'What if the item wasn\'t reported stolen when I checked but is reported later?', answer: 'This can happen if you buy shortly after a theft, before the victim reports it. Your dated SafeOrStolen verification receipt shows you conducted due diligence at the time of purchase, which protects you legally. Always save your verification results.' }
+      { question: 'What should I do first if I think I bought a stolen item?', answer: 'Stop using it and gather evidence. Do not contact the seller aggressively. Run the IMEI, VIN, or serial number through SafeOrStolen to see if it is reported stolen, then report the purchase to the marketplace and police.' },
+      { question: 'Can I get in legal trouble for having a stolen item I bought unknowingly?', answer: 'Possession of stolen property can be a crime in many states, but prosecutors must show you knew or should have known. Running a SafeOrStolen verification before purchase creates a due-diligence record that helps show you acted in good faith.' },
+      { question: 'Will the police give me my money back if I report a stolen item?', answer: 'Generally no. The police will return the item to the rightful owner if it is stolen. Your financial recovery is usually from the seller or the platform, not law enforcement.' },
+      { question: 'Should I message the seller to demand a refund?', answer: 'No. Confronting a thief can be dangerous. Report through the marketplace and to police. Let law enforcement handle contact with the seller.' },
+      { question: 'How can I avoid buying stolen items in the future?', answer: 'Always verify the IMEI, VIN, or serial number on SafeOrStolen before paying. Ask the seller for the identifier before meeting, use the SafeOrStolen mobile app at the point of sale, and walk away if the seller refuses.' }
     ],
-    ctaText: 'Protect yourself on every marketplace purchase with SafeOrStolen\'s free verification tool.',
+    ctaText: 'Think you bought stolen property? Run a free SafeOrStolen check and protect yourself legally right now.',
     keyStatistics: [
-      'Billions in stolen goods sold on online marketplaces annually',
-      '30%+ below market value = major red flag',
-      'Verification creates legal protection through documented due diligence',
-      'Keep all marketplace communication as evidence',
-      '3-second check saves hours of potential legal trouble'
+      'Over $13 billion in stolen goods sold in the US each year',
+      '2 free checks available at SafeOrStolen',
+      '3-second verification across 100+ databases',
+      'Police return stolen property to the rightful owner, not the buyer',
+      'Documented due diligence can protect you from receiving-stolen-property charges'
     ]
   }
 };
