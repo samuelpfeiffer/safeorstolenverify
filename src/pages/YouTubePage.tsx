@@ -47,7 +47,7 @@ const YouTubePage: React.FC = () => {
 
   const featuredVideo = getFeaturedVideo();
 
-  const FRESHNESS_DATE = '2026-02-20';
+  const FRESHNESS_DATE = '2026-07-08';
 
   // ── Structured Data ────────────────────────────────────────────────────────
   // CollectionPage + BreadcrumbList + FAQPage + HowTo — all standalone blocks
