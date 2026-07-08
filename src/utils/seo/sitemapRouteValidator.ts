@@ -235,7 +235,7 @@ export const VALID_ROUTES = new Set([
   '/youtube/marketplace-safety',
   '/youtube/vin-check',
   '/youtube/imei-check',
-  '/youtube/marketplace-protection',
+  '/youtube/help-big-trouble-stolen-check',
   '/crunchbase',
 ]);
 
