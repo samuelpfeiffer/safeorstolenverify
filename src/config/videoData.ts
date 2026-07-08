@@ -82,18 +82,18 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
   },
   {
     id: '5',
-    videoId: 'YOUR_VIDEO_ID_HERE', // Replace with actual YouTube video ID
-    title: 'How to Avoid Buying Stolen Items on Facebook Marketplace',
-    seoTitle: 'How to Avoid Buying Stolen Items on Facebook Marketplace (Free Verification)',
-    description: 'Learn the warning signs of stolen goods and how to verify ANY item before you meet the seller on Facebook Marketplace.',
-    seoDescription: 'Avoid buying stolen items on Facebook Marketplace! Learn red flags, verification steps, and how to use SafeOrStolen to check IMEI, VIN, and serial numbers before you buy.',
-    duration: '1:15',
-    durationISO: 'PT1M15S',
-    durationSeconds: 75,
-    uploadDate: '2024-12-20T00:00:00Z',
-    category: 'Marketplace Safety',
-    tags: ['facebook marketplace', 'stolen items', 'scam prevention', 'marketplace safety', 'verify before buying', 'secondhand shopping', 'buyer protection'],
-    slug: 'marketplace-protection'
+    videoId: 'arPf-fE5fho',
+    title: 'Help! I might be in big trouble..... 👀',
+    seoTitle: 'Help! I Might Be in Big Trouble — Stolen Item Check (Free)',
+    description: 'A real-world reaction to suspecting you bought stolen goods and the immediate steps to verify the item, protect yourself legally, and avoid bigger losses.',
+    seoDescription: 'Think you bought stolen property? Learn what to do next, how to verify the item with SafeOrStolen in 3 seconds, and how to protect yourself legally before it is too late.',
+    duration: '0:59',
+    durationISO: 'PT59S',
+    durationSeconds: 59,
+    uploadDate: '2026-07-08T00:00:00Z',
+    category: 'Scam Awareness',
+    tags: ['stolen item check', 'i bought stolen property', 'what to do if stolen', 'verify before buying', 'scam awareness', 'buyer protection', 'safeorstolen'],
+    slug: 'help-big-trouble-stolen-check'
   }
 ];
 
