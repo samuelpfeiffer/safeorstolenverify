@@ -63,6 +63,8 @@ const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPa
 const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
 const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
 const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
+const CheckGunPage = lazy(() => import('@/pages/CheckGunPage'));
+const CheckVinPage = lazy(() => import('@/pages/CheckVinPage'));
 const CheckLaptopPage = lazy(() => import('@/pages/CheckLaptopPage'));
 const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
 const CheckEBikePage = lazy(() => import('@/pages/CheckEBikePage'));
