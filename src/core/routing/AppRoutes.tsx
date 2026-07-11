@@ -63,6 +63,8 @@ const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPa
 const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
 const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
 const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
+const CheckGunPage = lazy(() => import('@/pages/CheckGunPage'));
+const CheckVinPage = lazy(() => import('@/pages/CheckVinPage'));
 const CheckLaptopPage = lazy(() => import('@/pages/CheckLaptopPage'));
 const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
 const CheckEBikePage = lazy(() => import('@/pages/CheckEBikePage'));
@@ -425,6 +427,8 @@ export const AppRoutes = () => {
         <Route path="/check-phone" element={<CheckPhonePage />} />
         <Route path="/check-car" element={<CheckCarPage />} />
         <Route path="/check-bike" element={<CheckBikePage />} />
+        <Route path="/check-gun" element={<CheckGunPage />} />
+        <Route path="/check-vin" element={<CheckVinPage />} />
         <Route path="/check-laptop" element={<CheckLaptopPage />} />
         <Route path="/check-electronics" element={<CheckElectronicsPage />} />
         <Route path="/check-ebike" element={<CheckEBikePage />} />

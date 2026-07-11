@@ -33,6 +33,8 @@ export const VALID_ROUTES = new Set([
   '/check-phone',
   '/check-car',
   '/check-bike',
+  '/check-gun',
+  '/check-vin',
   '/check-laptop',
   '/check-electronics',
   '/check-ebike',
