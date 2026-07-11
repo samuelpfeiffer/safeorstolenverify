@@ -425,6 +425,8 @@ export const AppRoutes = () => {
         <Route path="/check-phone" element={<CheckPhonePage />} />
         <Route path="/check-car" element={<CheckCarPage />} />
         <Route path="/check-bike" element={<CheckBikePage />} />
+        <Route path="/check-gun" element={<CheckGunPage />} />
+        <Route path="/check-vin" element={<CheckVinPage />} />
         <Route path="/check-laptop" element={<CheckLaptopPage />} />
         <Route path="/check-electronics" element={<CheckElectronicsPage />} />
         <Route path="/check-ebike" element={<CheckEBikePage />} />
