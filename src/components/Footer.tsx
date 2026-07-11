@@ -16,23 +16,23 @@ const DATA_PARTNERS = [
 
 const Footer = () => {
   const quickLinks = [{
+    label: 'Check if a Phone is Stolen',
+    href: '/check-phone'
+  }, {
+    label: 'Check if a Bike is Stolen',
+    href: '/check-bike'
+  }, {
+    label: 'Check a Gun Serial Number',
+    href: '/check-gun'
+  }, {
+    label: 'Check a VIN for Theft',
+    href: '/check-vin'
+  }, {
     label: 'Instant Stolen Verification',
     href: '/verify'
   }, {
-    label: 'IMEI Checker App',
-    href: '/imei-checker'
-  }, {
-    label: 'VIN Checker',
-    href: '/vin-checker'
-  }, {
     label: 'Download Stolen Verification App',
     href: '/app'
-  }, {
-    label: 'Barcode Scanner - 3 Seconds',
-    href: '/verify'
-  }, {
-    label: 'CheckMEND Alternative (Free)',
-    href: '/pricing'
   }, {
     label: 'Like Carfax for Everything',
     href: '/how-it-works'
