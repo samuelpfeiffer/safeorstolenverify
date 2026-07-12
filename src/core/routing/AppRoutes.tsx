@@ -277,6 +277,13 @@ const HotGunzDatabaseGuide = lazy(() => import('@/pages/blog/HotGunzDatabaseGuid
 const StateStolenGunDatabaseGuide = lazy(() => import('@/pages/blog/StateStolenGunDatabaseGuide'));
 const GunShowSerialNumberCheckGuide = lazy(() => import('@/pages/blog/GunShowSerialNumberCheckGuide'));
 
+// Phase 2 — Phone cluster articles (topical authority)
+const BoughtStolenPhoneWhatToDo = lazy(() => import('@/pages/blog/cluster/BoughtStolenPhoneWhatToDo'));
+const WhatIsABlacklistedImei = lazy(() => import('@/pages/blog/cluster/WhatIsABlacklistedImei'));
+const IcloudLockedPhoneMeaning = lazy(() => import('@/pages/blog/cluster/IcloudLockedPhoneMeaning'));
+const HowToFindImeiNumber = lazy(() => import('@/pages/blog/cluster/HowToFindImeiNumber'));
+const BuyingUsedPhoneChecklist = lazy(() => import('@/pages/blog/cluster/BuyingUsedPhoneChecklist'));
+
 // Florida City License Plate Pages
 const MiamiLicensePlateLookupPage = lazy(() => import('@/pages/florida/MiamiLicensePlateLookupPage'));
 const JacksonvilleLicensePlateLookupPage = lazy(() => import('@/pages/florida/JacksonvilleLicensePlateLookupPage'));
