@@ -201,6 +201,11 @@ export const VALID_ROUTES = new Set([
   // Blog
   '/blog',
   '/blog/how-to-check-if-phone-stolen',
+  '/blog/bought-stolen-phone-what-to-do',
+  '/blog/what-is-a-blacklisted-imei',
+  '/blog/icloud-locked-phone-meaning',
+  '/blog/how-to-find-imei-number',
+  '/blog/buying-used-phone-checklist',
   '/blog/complete-vin-guide',
   '/blog/protect-yourself-buying-used-electronics',
   '/blog/data-source-credibility-stolen-goods-verification',

@@ -277,6 +277,13 @@ const HotGunzDatabaseGuide = lazy(() => import('@/pages/blog/HotGunzDatabaseGuid
 const StateStolenGunDatabaseGuide = lazy(() => import('@/pages/blog/StateStolenGunDatabaseGuide'));
 const GunShowSerialNumberCheckGuide = lazy(() => import('@/pages/blog/GunShowSerialNumberCheckGuide'));
 
+// Phase 2 — Phone cluster articles (topical authority)
+const BoughtStolenPhoneWhatToDo = lazy(() => import('@/pages/blog/cluster/BoughtStolenPhoneWhatToDo'));
+const WhatIsABlacklistedImei = lazy(() => import('@/pages/blog/cluster/WhatIsABlacklistedImei'));
+const IcloudLockedPhoneMeaning = lazy(() => import('@/pages/blog/cluster/IcloudLockedPhoneMeaning'));
+const HowToFindImeiNumber = lazy(() => import('@/pages/blog/cluster/HowToFindImeiNumber'));
+const BuyingUsedPhoneChecklist = lazy(() => import('@/pages/blog/cluster/BuyingUsedPhoneChecklist'));
+
 // Florida City License Plate Pages
 const MiamiLicensePlateLookupPage = lazy(() => import('@/pages/florida/MiamiLicensePlateLookupPage'));
 const JacksonvilleLicensePlateLookupPage = lazy(() => import('@/pages/florida/JacksonvilleLicensePlateLookupPage'));
@@ -682,7 +689,14 @@ export const AppRoutes = () => {
         <Route path="/blog/top-10-stolen-item-checkers" element={<TopStolenItemCheckers />} />
         <Route path="/blog/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
         <Route path="/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
-        
+
+        {/* Phase 2 — Phone cluster articles (must be before /blog/:slug catch-all) */}
+        <Route path="/blog/bought-stolen-phone-what-to-do" element={<BoughtStolenPhoneWhatToDo />} />
+        <Route path="/blog/what-is-a-blacklisted-imei" element={<WhatIsABlacklistedImei />} />
+        <Route path="/blog/icloud-locked-phone-meaning" element={<IcloudLockedPhoneMeaning />} />
+        <Route path="/blog/how-to-find-imei-number" element={<HowToFindImeiNumber />} />
+        <Route path="/blog/buying-used-phone-checklist" element={<BuyingUsedPhoneChecklist />} />
+
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
 
