@@ -22,6 +22,7 @@ const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
+const OAuthConsent = lazy(() => import('@/pages/OAuthConsent'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const AffiliateRedirectPage = lazy(() => import('@/pages/AffiliateRedirectPage'));
@@ -410,6 +411,7 @@ export const AppRoutes = () => {
         <Route path="/sitemap" element={<SitemapPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
         <Route path="/report-stolen" element={<ReportStolenPage />} />
         <Route path="/checkout-redirect" element={<CheckoutRedirectPage />} />
         <Route path="/verification-success" element={<VerificationSuccessPage />} />

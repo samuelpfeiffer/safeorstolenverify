@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://lxrdzbknktwlubbmlsqe.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "safeorstolen-mcp",
+      "version": "0.1.0",
+      "title": "SafeOrStolen"
+    },
+    "tools": [
+      {
+        "name": "detect_identifier",
+        "title": "Detect identifier type",
+        "description": "Given a raw string a user typed or pasted, classify it as an IMEI, VIN, license plate, serial number, or marketplace URL so the correct verification tool can be chosen.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "input": {
+              "type": "string",
+              "description": "Raw text to classify."
+            }
+          },
+          "required": [
+            "input"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "verify_imei",
+        "title": "Verify phone IMEI",
+        "description": "Check a 15-digit phone IMEI against SafeOrStolen's stolen-device sources (GSMA blacklists, carrier data, community reports). Returns a status (safe / stolen / unknown) with any known metadata.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": true
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "imei": {
+              "type": "string",
+              "description": "A 15-digit IMEI. Digits only; SafeOrStolen strips spaces and dashes."
+            }
+          },
+          "required": [
+            "imei"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "verify_vin",
+        "title": "Verify vehicle VIN",
+        "description": "Check a 17-character vehicle VIN against SafeOrStolen's stolen-vehicle sources (NICB, state law enforcement, community reports). Returns status plus any known theft record.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": true
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "vin": {
+              "type": "string",
+              "description": "A 17-character VIN. Letters and digits; I/O/Q are not valid VIN chars."
+            }
+          },
+          "required": [
+            "vin"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "verify_serial",
+        "title": "Verify serial number",
+        "description": "Check a generic serial number (laptops, cameras, firearms, tools, bikes, appliances) against SafeOrStolen's aggregated stolen-item databases and community reports.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": true
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "serial": {
+              "type": "string",
+              "description": "The serial number as printed on the item. Case-insensitive."
+            },
+            "item_type": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Item category, e.g. 'laptop', 'firearm', 'bicycle', 'camera', 'power_tool'."
+            }
+          },
+          "required": [
+            "serial",
+            "item_type"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_recent_verifications",
+        "title": "List my recent verifications",
+        "description": "List the signed-in user's recent SafeOrStolen verification searches (most recent first). Respects the caller's row-level security scope.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "description": "How many rows to return (1-50)."
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "How many rows to return (1-50)."
+            }
+          },
+          "required": [
+            "limit"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
