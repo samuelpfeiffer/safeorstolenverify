@@ -26,7 +26,6 @@
           "openWorldHint": false
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "input": {
@@ -36,7 +35,9 @@
           },
           "required": [
             "input"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -50,7 +51,6 @@
           "openWorldHint": true
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "imei": {
@@ -60,7 +60,9 @@
           },
           "required": [
             "imei"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -74,7 +76,6 @@
           "openWorldHint": true
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "vin": {
@@ -84,7 +85,9 @@
           },
           "required": [
             "vin"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -98,7 +101,6 @@
           "openWorldHint": true
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "serial": {
@@ -106,21 +108,19 @@
               "description": "The serial number as printed on the item. Case-insensitive."
             },
             "item_type": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "description": "Item category, e.g. 'laptop', 'firearm', 'bicycle', 'camera', 'power_tool'."
-                },
-                {
-                  "type": "null"
-                }
-              ]
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Item category, e.g. 'laptop', 'firearm', 'bicycle', 'camera', 'power_tool'."
             }
           },
           "required": [
             "serial",
             "item_type"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -134,26 +134,26 @@
           "openWorldHint": false
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "limit": {
               "anyOf": [
                 {
                   "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991,
                   "description": "How many rows to return (1-50)."
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "How many rows to return (1-50)."
             }
           },
           "required": [
             "limit"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       }
