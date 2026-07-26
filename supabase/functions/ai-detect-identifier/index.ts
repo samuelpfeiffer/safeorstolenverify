@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { callClaude, parseJsonResponse } from '../_shared/anthropic.ts';
+import { checkRateLimit } from '../_shared/rate-limit.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -39,7 +40,12 @@ serve(async (req) => {
       return respond({ type: 'imei', confidence: 90, explanation: `${cleaned.length}-digit number likely IMEI`, extractedValue: cleaned.substring(0, 15) });
     }
 
-    // ── Step 2: AI detection for ambiguous inputs ──
+    // ── Step 2: AI detection for ambiguous inputs (rate-limited to prevent paid-API abuse) ──
+    const clientIp = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || req.headers.get('cf-connecting-ip') || 'unknown';
+    const rl = checkRateLimit(clientIp, { maxRequests: 10, windowMs: 60_000 });
+    if (!rl.allowed) {
+      return respond({ type: 'serial', confidence: 30, explanation: 'Rate limit reached — defaulting to serial', extractedValue: cleaned });
+    }
     try {
       const content = await callClaude({
         system: `You identify what type of item identifier the user entered. Respond ONLY with valid JSON, no markdown.
