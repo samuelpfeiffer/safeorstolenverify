@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { callClaude, parseJsonResponse } from '../_shared/anthropic.ts';
+import { checkRateLimit } from '../_shared/rate-limit.ts';
 
 // Marketplace URL patterns
 const MARKETPLACE_PATTERNS = {
@@ -117,6 +118,13 @@ serve(async (req) => {
   const jsonHeaders = { ...corsHeaders, 'Content-Type': 'application/json' };
 
   try {
+    // Rate-limit unauthenticated calls to prevent paid Jina/Firecrawl/Anthropic abuse
+    const clientIp = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || req.headers.get('cf-connecting-ip') || 'unknown';
+    const rl = checkRateLimit(clientIp, { maxRequests: 10, windowMs: 60_000 });
+    if (!rl.allowed) {
+      return new Response(JSON.stringify({ success: false, error: 'Rate limit exceeded. Try again in a minute.' }), { status: 429, headers: jsonHeaders });
+    }
+
     const { url } = await req.json();
 
     if (!url || typeof url !== 'string') return new Response(JSON.stringify({ success: false, error: 'URL is required' }), { status: 400, headers: jsonHeaders });

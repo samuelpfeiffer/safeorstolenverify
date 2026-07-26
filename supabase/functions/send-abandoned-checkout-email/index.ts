@@ -20,21 +20,45 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+
+    // --- Authorization: only allow service-role callers (invoked from process-abandoned-checkouts) or admins ---
+    const authHeader = req.headers.get('authorization') ?? '';
+    const bearer = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
+    const isServiceRole = bearer && bearer === supabaseServiceKey;
+    if (!isServiceRole) {
+      if (!authHeader.startsWith('Bearer ')) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      const authClient = createClient(supabaseUrl, Deno.env.get('SUPABASE_ANON_KEY') ?? '', {
+        global: { headers: { Authorization: authHeader } },
+      });
+      const { data: isAdmin } = await authClient.rpc('is_admin_user');
+      if (!isAdmin) {
+        return new Response(JSON.stringify({ error: 'Forbidden' }), {
+          status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    const { userId, email, planName, discountCode } = await req.json() as AbandonedCheckoutRequest;
+    const { userId, planName, discountCode } = await req.json() as AbandonedCheckoutRequest;
 
-    // Get user email if only userId provided
-    let userEmail = email;
-    if (!userEmail && userId) {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('email')
-        .eq('id', userId)
-        .single();
-      
-      userEmail = profile?.email;
+    // Never accept a client-supplied email — always resolve strictly from userId via profiles.
+    if (!userId) {
+      return new Response(
+        JSON.stringify({ error: "userId is required" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('email')
+      .eq('id', userId)
+      .single();
+    const userEmail = profile?.email;
 
     if (!userEmail) {
       return new Response(

@@ -1159,9 +1159,13 @@ function renderInline(text: string): string {
   const escape = (s: string) =>
     s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   let html = escape(text);
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, url) => {
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, url) => {
+    // Only allow safe URL schemes to prevent javascript:/data: XSS via markdown links
+    if (!/^(https?:\/\/|mailto:|\/)/i.test(String(url).trim())) {
+      return match; // render as plain text
+    }
     const safeUrl = String(url).replace(/"/g, '&quot;');
-    return `<a href="${safeUrl}" class="text-primary underline hover:opacity-80">${label}</a>`;
+    return `<a href="${safeUrl}" class="text-primary underline hover:opacity-80" rel="noopener noreferrer">${label}</a>`;
   });
   html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/_([^_]+)_/g, '<em>$1</em>');
