@@ -161,17 +161,11 @@ export function ReportStolenItemForm() {
         });
       }
 
-      // Check for watchlist matches (fire and forget)
-      const identifier = data.serialNumber || data.imei || data.vin;
-      if (identifier) {
-        supabase.functions.invoke('check-watchlist-matches', {
-          body: {
-            stolenItemId: insertedItem.id,
-            identifier,
-            itemType: data.itemType,
-          },
-        }).catch(console.error);
-      }
+      // Check for watchlist matches (fire and forget). The edge function derives
+      // the identifier/itemType from the DB row and verifies caller ownership.
+      supabase.functions.invoke('check-watchlist-matches', {
+        body: { stolenItemId: insertedItem.id },
+      }).catch(console.error);
 
       // Clear form and images
       form.reset();
