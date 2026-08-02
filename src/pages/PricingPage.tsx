@@ -198,6 +198,7 @@ const PricingPage = () => {
             Saves money after just 3 checks per month. Cancel anytime.
           </p>
         </div>
+        </div>
       </div>
 
       {/* Competitor comparison */}
