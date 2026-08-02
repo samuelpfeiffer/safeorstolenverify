@@ -6,19 +6,61 @@
 import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.26.1";
 
 // src/lib/mcp/tools/detect-identifier.ts
-import { createClient } from "npm:@supabase/supabase-js@^2.52.0";
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.1";
 import { z } from "npm:zod@^3.23.8";
-function supabaseForUser(ctx) {
-  return createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.SUPABASE_ANON_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${ctx.getToken()}` } },
-      auth: { persistSession: false, autoRefreshToken: false }
+
+// src/lib/mcp/supabase.ts
+import { createClient } from "npm:@supabase/supabase-js@^2.52.0";
+function runtimeEnv(name) {
+  const runtime = globalThis;
+  return runtime.Deno?.env?.get?.(name) ?? runtime.process?.env?.[name];
+}
+function configuredEnv(names) {
+  for (const name of names) {
+    const value = runtimeEnv(name)?.trim();
+    if (value) return value;
+  }
+  return void 0;
+}
+function supabaseProjectUrl() {
+  const url = configuredEnv(["SUPABASE_URL", "VITE_SUPABASE_URL"]);
+  if (!url) throw new Error("SUPABASE_URL (or VITE_SUPABASE_URL) is required");
+  return url;
+}
+function supabasePublishableKey() {
+  const direct = configuredEnv([
+    "SUPABASE_PUBLISHABLE_KEY",
+    "VITE_SUPABASE_PUBLISHABLE_KEY"
+  ]);
+  if (direct) return direct;
+  const keyset = runtimeEnv("SUPABASE_PUBLISHABLE_KEYS");
+  if (keyset) {
+    try {
+      const parsed = JSON.parse(keyset);
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+        const keys = parsed;
+        const key = [keys.default, ...Object.values(keys)].find((v) => typeof v === "string" && v.trim().startsWith("sb_publishable_"))?.trim();
+        if (key) return key;
+      }
+    } catch {
     }
+  }
+  const legacy = configuredEnv(["SUPABASE_ANON_KEY", "VITE_SUPABASE_ANON_KEY"]);
+  if (legacy) return legacy;
+  throw new Error(
+    "SUPABASE_PUBLISHABLE_KEY, SUPABASE_PUBLISHABLE_KEYS, or SUPABASE_ANON_KEY is required"
   );
 }
+function supabaseForUser(ctx) {
+  const token = ctx.getToken();
+  if (!token) throw new Error("supabaseForUser requires a verified OAuth token");
+  return createClient(supabaseProjectUrl(), supabasePublishableKey(), {
+    global: { headers: { Authorization: `Bearer ${token}` } },
+    auth: { persistSession: false, autoRefreshToken: false }
+  });
+}
+
+// src/lib/mcp/tools/detect-identifier.ts
 var detect_identifier_default = defineTool({
   name: "detect_identifier",
   title: "Detect identifier type",
@@ -46,19 +88,8 @@ var detect_identifier_default = defineTool({
 });
 
 // src/lib/mcp/tools/verify-imei.ts
-import { createClient as createClient2 } from "npm:@supabase/supabase-js@^2.52.0";
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.26.1";
 import { z as z2 } from "npm:zod@^3.23.8";
-function supabaseForUser2(ctx) {
-  return createClient2(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.SUPABASE_ANON_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${ctx.getToken()}` } },
-      auth: { persistSession: false, autoRefreshToken: false }
-    }
-  );
-}
 var verify_imei_default = defineTool2({
   name: "verify_imei",
   title: "Verify phone IMEI",
@@ -71,7 +102,7 @@ var verify_imei_default = defineTool2({
     if (!ctx.isAuthenticated()) {
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
-    const supabase = supabaseForUser2(ctx);
+    const supabase = supabaseForUser(ctx);
     const { data, error } = await supabase.functions.invoke("check-gate", {
       body: { identifier: imei.replace(/\D/g, ""), identifier_type: "imei" }
     });
@@ -86,19 +117,8 @@ var verify_imei_default = defineTool2({
 });
 
 // src/lib/mcp/tools/verify-vin.ts
-import { createClient as createClient3 } from "npm:@supabase/supabase-js@^2.52.0";
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.26.1";
 import { z as z3 } from "npm:zod@^3.23.8";
-function supabaseForUser3(ctx) {
-  return createClient3(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.SUPABASE_ANON_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${ctx.getToken()}` } },
-      auth: { persistSession: false, autoRefreshToken: false }
-    }
-  );
-}
 var verify_vin_default = defineTool3({
   name: "verify_vin",
   title: "Verify vehicle VIN",
@@ -111,7 +131,7 @@ var verify_vin_default = defineTool3({
     if (!ctx.isAuthenticated()) {
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
-    const supabase = supabaseForUser3(ctx);
+    const supabase = supabaseForUser(ctx);
     const { data, error } = await supabase.functions.invoke("check-gate", {
       body: { identifier: vin.trim().toUpperCase(), identifier_type: "vin" }
     });
@@ -126,19 +146,8 @@ var verify_vin_default = defineTool3({
 });
 
 // src/lib/mcp/tools/verify-serial.ts
-import { createClient as createClient4 } from "npm:@supabase/supabase-js@^2.52.0";
 import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.26.1";
 import { z as z4 } from "npm:zod@^3.23.8";
-function supabaseForUser4(ctx) {
-  return createClient4(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.SUPABASE_ANON_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${ctx.getToken()}` } },
-      auth: { persistSession: false, autoRefreshToken: false }
-    }
-  );
-}
 var verify_serial_default = defineTool4({
   name: "verify_serial",
   title: "Verify serial number",
@@ -152,7 +161,7 @@ var verify_serial_default = defineTool4({
     if (!ctx.isAuthenticated()) {
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
-    const supabase = supabaseForUser4(ctx);
+    const supabase = supabaseForUser(ctx);
     const { data, error } = await supabase.functions.invoke("check-gate", {
       body: {
         identifier: serial.trim(),
@@ -171,19 +180,8 @@ var verify_serial_default = defineTool4({
 });
 
 // src/lib/mcp/tools/list-recent-verifications.ts
-import { createClient as createClient5 } from "npm:@supabase/supabase-js@^2.52.0";
 import { defineTool as defineTool5 } from "npm:@lovable.dev/mcp-js@0.26.1";
 import { z as z5 } from "npm:zod@^3.23.8";
-function supabaseForUser5(ctx) {
-  return createClient5(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_PUBLISHABLE_KEY ?? process.env.SUPABASE_ANON_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${ctx.getToken()}` } },
-      auth: { persistSession: false, autoRefreshToken: false }
-    }
-  );
-}
 var list_recent_verifications_default = defineTool5({
   name: "list_recent_verifications",
   title: "List my recent verifications",
@@ -197,7 +195,7 @@ var list_recent_verifications_default = defineTool5({
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
     const cap = Math.min(Math.max(limit ?? 10, 1), 50);
-    const supabase = supabaseForUser5(ctx);
+    const supabase = supabaseForUser(ctx);
     const { data, error } = await supabase.from("verification_searches").select("id, search_query, search_type, result_status, created_at").order("created_at", { ascending: false }).limit(cap);
     if (error) {
       return { content: [{ type: "text", text: error.message }], isError: true };
