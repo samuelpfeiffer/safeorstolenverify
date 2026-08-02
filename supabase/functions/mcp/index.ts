@@ -212,7 +212,7 @@ var list_recent_verifications_default = defineTool5({
 // src/lib/mcp/index.ts
 var projectRef = "lxrdzbknktwlubbmlsqe";
 var mcp_default = defineMcp({
-  name: "safeorstolen-mcp",
+  name: "safeorstolen",
   title: "SafeOrStolen",
   version: "0.1.0",
   instructions: "SafeOrStolen tools verify whether secondhand items (phones, vehicles, laptops, bikes, firearms, etc.) are reported stolen. Use `detect_identifier` when unsure what a string is, then call the matching verify_* tool. `list_recent_verifications` returns the signed-in user's own history.",

@@ -123,7 +123,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           data: {
             full_name: fullName.trim(),
           },
-          emailRedirectTo: `${window.location.origin}/auth?verified=true`,
+          emailRedirectTo: (() => {
+            // Preserve the ?redirect= target (e.g. the MCP OAuth consent URL) through email confirmation.
+            try {
+              const raw = new URLSearchParams(window.location.search).get('redirect');
+              if (raw) {
+                const decoded = decodeURIComponent(raw);
+                if (decoded.startsWith('/') && !decoded.startsWith('//')) {
+                  return `${window.location.origin}/auth?verified=true&redirect=${encodeURIComponent(decoded)}`;
+                }
+              }
+            } catch {
+              /* fall through */
+            }
+            return `${window.location.origin}/auth?verified=true`;
+          })(),
         },
       });
 
