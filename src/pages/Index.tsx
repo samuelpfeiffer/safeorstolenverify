@@ -465,7 +465,7 @@ const Index = () => {
                 to="/for-pawn-shops"
                 className="inline-flex items-center justify-center gap-2 bg-card hover:bg-muted text-foreground font-semibold px-7 py-3.5 rounded-xl transition-all border border-border"
               >
-                Learn More →
+                Learn More About Pawn Shop Solutions →
               </Link>
             </div>
           </div>

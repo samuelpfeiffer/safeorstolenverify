@@ -59,6 +59,8 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
               onClick={onOpenQrScanner}
               disabled={isLoading}
               className="h-12 w-12"
+              aria-label="Scan QR code or barcode"
+              title="Scan QR code or barcode"
             >
               <Scan className="h-5 w-5" />
             </Button>
@@ -67,6 +69,8 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
             onClick={handleSearch}
             disabled={isLoading || !input.trim()}
             className="h-12"
+            aria-label="Verify item"
+            title="Verify item"
           >
             <Search className="h-5 w-5" />
           </Button>
