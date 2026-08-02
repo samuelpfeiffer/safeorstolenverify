@@ -9,7 +9,7 @@ import listRecentVerificationsTool from "./tools/list-recent-verifications";
 const projectRef = import.meta.env.VITE_SUPABASE_PROJECT_ID ?? "project-ref-unset";
 
 export default defineMcp({
-  name: "safeorstolen-mcp",
+  name: "safeorstolen",
   title: "SafeOrStolen",
   version: "0.1.0",
   instructions:

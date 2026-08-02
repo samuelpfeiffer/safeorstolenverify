@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sdk_version": "0.24.0",
+  "sdk_version": "0.26.1",
   "path": "/functions/v1/mcp",
   "auth": {
     "type": "oauth",
@@ -11,7 +11,7 @@
   },
   "mcp": {
     "server": {
-      "name": "safeorstolen-mcp",
+      "name": "safeorstolen",
       "version": "0.1.0",
       "title": "SafeOrStolen"
     },
