@@ -7,13 +7,30 @@ import { Loader2 } from 'lucide-react';
 export const GoogleSignInButton = () => {
   const [loading, setLoading] = useState(false);
 
+  // Preserve the ?redirect= target (e.g. the OAuth consent URL) across the Google round-trip.
+  const resolveRedirectTo = () => {
+    try {
+      const raw = new URLSearchParams(window.location.search).get('redirect');
+      if (raw) {
+        const decoded = decodeURIComponent(raw);
+        // Same-origin relative paths only.
+        if (decoded.startsWith('/') && !decoded.startsWith('//')) {
+          return `${window.location.origin}${decoded}`;
+        }
+      }
+    } catch {
+      /* fall through to origin */
+    }
+    return window.location.origin;
+  };
+
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.origin,
+          redirectTo: resolveRedirectTo(),
         },
       });
 
