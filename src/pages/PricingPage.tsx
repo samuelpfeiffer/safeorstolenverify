@@ -70,7 +70,11 @@ const PricingPage = () => {
       </div>
 
       {/* Three Pricing Cards */}
-      <div className="max-w-5xl mx-auto px-4 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-5xl mx-auto px-4 mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+          Choose Your Verification Plan
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Card 1 — Free */}
         <div className="rounded-2xl border border-border bg-card flex flex-col p-6">
           <div className="inline-flex self-start items-center gap-1 bg-muted text-muted-foreground text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
