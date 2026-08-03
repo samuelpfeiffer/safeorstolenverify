@@ -134,6 +134,8 @@ async def capture(page, route, base):
     data = await page.evaluate(EXTRACT_JS)
     if not data.get("title"):
         raise RuntimeError("empty title")
+    if data["title"].strip().startswith("404"):
+        raise RuntimeError("route renders the 404 page — not prerendered")
     return normalize(data, route)
 
 
