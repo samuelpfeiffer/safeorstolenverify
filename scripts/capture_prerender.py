@@ -59,9 +59,18 @@ EXTRACT_JS = """
   let body = '';
   if (root) {
     const clone = root.cloneNode(true);
-    clone.querySelectorAll('script, style, noscript, link, iframe, canvas, video, audio').forEach((n) => n.remove());
-    body = clone.innerHTML;
+    clone.querySelectorAll('script, style, noscript, link, iframe, canvas, video, audio, svg').forEach((n) => n.remove());
+    // Keep only crawler-relevant attributes so snapshots stay small and never
+    // ship stale class names / inline styles from a previous build.
+    const KEEP = new Set(['href', 'src', 'alt', 'title', 'lang', 'rel', 'id', 'datetime', 'aria-label']);
+    clone.querySelectorAll('*').forEach((el) => {
+      [...el.attributes].forEach((attr) => {
+        if (!KEEP.has(attr.name)) el.removeAttribute(attr.name);
+      });
+    });
+    body = clone.innerHTML.replace(/\s+/g, ' ').replace(/>\s+</g, '> <').trim();
   }
+
 
   return {
     title: document.title,
