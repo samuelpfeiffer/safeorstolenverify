@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => ({
           } catch (error) {
             console.error('⚠️  Static schema generation failed:', error);
           }
-          // Per-route prerender:每 route gets its OWN static HTML (unique title,
+          // Per-route prerender:every route gets its OWN static HTML (unique title,
           // description, canonical, og:url and body). Must run LAST so it wins.
           console.log('🗺️  Applying per-route prerendered HTML...');
           try {
