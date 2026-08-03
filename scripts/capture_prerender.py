@@ -191,16 +191,30 @@ async def main():
     if manifest_path.exists():
         try:
             for p in json.loads(manifest_path.read_text()).get("pages", []):
-                merged[p["route"]] = p
+                full = PAGES_DIR / f"{p['slug']}.json"
+                merged[p["route"]] = json.loads(full.read_text()) if full.exists() else p
         except Exception:  # noqa: BLE001
             pass
     for r in results:
         merged[r["route"]] = r
 
+    # Full per-route payloads live in prerender/pages/<slug>.json so the
+    # manifest stays a small index (repo file-size limits).
+    index = []
+    for key in sorted(merged):
+        page = merged[key]
+        (PAGES_DIR / f"{page['slug']}.json").write_text(json.dumps(page, separators=(",", ":")))
+        index.append({
+            "route": page["route"],
+            "slug": page["slug"],
+            "title": page["title"],
+            "canonical": page["canonical"],
+        })
+
     manifest_path.write_text(json.dumps({
-        "generatedAt": __import__("datetime").datetime.utcnow().isoformat() + "Z",
+        "generatedAt": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
         "site": SITE,
-        "pages": [merged[k] for k in sorted(merged)],
+        "pages": index,
     }, indent=2))
 
     print(f"\nCaptured {len(results)}/{len(routes)} routes → prerender/manifest.json")

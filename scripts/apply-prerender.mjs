@@ -89,10 +89,13 @@ function main() {
   }
 
   const shell = fs.readFileSync(indexPath, 'utf-8');
-  const { pages } = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  const { pages: index } = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   let written = 0;
 
-  for (const page of pages) {
+  for (const entry of index) {
+    const pageFile = path.join(PRERENDER, 'pages', `${entry.slug}.json`);
+    if (!fs.existsSync(pageFile)) continue;
+    const page = JSON.parse(fs.readFileSync(pageFile, 'utf-8'));
     const bodyFile = path.join(PRERENDER, 'pages', `${page.slug}.html`);
     const body = fs.existsSync(bodyFile) ? fs.readFileSync(bodyFile, 'utf-8') : '';
     const html = documentFor(shell, page, body);
