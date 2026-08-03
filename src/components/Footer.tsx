@@ -17,7 +17,7 @@ const DATA_PARTNERS = [
 const Footer = () => {
   const quickLinks = [{
     label: 'Check if a Phone is Stolen',
-    href: '/check-phone'
+    href: '/check-imei-stolen'
   }, {
     label: 'Check if a Bike is Stolen',
     href: '/check-bike'
