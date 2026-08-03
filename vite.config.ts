@@ -21,16 +21,25 @@ export default defineConfig(({ mode }) => ({
       name: 'post-build-static-schemas',
       closeBundle: async () => {
         if (mode === 'production') {
-          console.log('🤖 Generating static HTML with embedded schemas...');
           const { execSync } = await import('child_process');
+          console.log('🤖 Generating static HTML with embedded schemas...');
           try {
             execSync('tsx scripts/generate-static-schemas.ts', { stdio: 'inherit' });
           } catch (error) {
             console.error('⚠️  Static schema generation failed:', error);
           }
+          // Per-route prerender:每 route gets its OWN static HTML (unique title,
+          // description, canonical, og:url and body). Must run LAST so it wins.
+          console.log('🗺️  Applying per-route prerendered HTML...');
+          try {
+            execSync('node scripts/apply-prerender.mjs', { stdio: 'inherit' });
+          } catch (error) {
+            console.error('⚠️  Per-route prerender failed:', error);
+          }
         }
       }
     }
+
   ].filter(Boolean),
   resolve: {
     alias: {
