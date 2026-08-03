@@ -9,7 +9,7 @@
  *   dist/imei-checker.html         <- fallback for hosts that map extensionless paths
  *
  * Each generated document has that route's own <title>, meta description,
- * og:*/twitter:* tags, canonical + og:url pointing at ITS OWN URL, its JSON-LD
+ * og:tags and twitter:tags, canonical + og:url pointing at ITS OWN URL, its JSON-LD
  * and its own rendered body content. The React bundle still boots on top of it,
  * so humans get the normal SPA.
  */
