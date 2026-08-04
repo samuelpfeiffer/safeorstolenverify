@@ -74,10 +74,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     ? title 
     : `${title} | SafeOrStolen`;
 
-  // Optimize title length (max 60 chars for search results)
-  const optimizedTitle = fullTitle.length > 60 
-    ? fullTitle.substring(0, 57) + '...' 
+  // Keep titles readable: trim at a word boundary instead of emitting "..."
+  const optimizedTitle = fullTitle.length > 70
+    ? fullTitle.substring(0, 70).replace(/\s+\S*$/, '').replace(/[—–\-|,:]$/, '').trim()
     : fullTitle;
+
 
   // Optimize description length (max 160 chars)
   const optimizedDescription = description.length > 160 
