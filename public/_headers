@@ -15,12 +15,24 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-XSS-Protection: 1; mode=block
 
-# HTML pages - no cache for fresh content
+# HTML pages - no cache so every route serves its own fresh prerendered snapshot
 /
   Cache-Control: no-cache, must-revalidate, max-age=0
 
 /index.html
   Cache-Control: no-cache, must-revalidate, max-age=0
+
+/*.html
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
+# Route documents (extensionless SPA/prerender paths) must never be edge-cached,
+# otherwise a stale homepage shell keeps being served for /imei-checker etc.
+/:route
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
+/:section/:route
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
 
 # Static assets - long cache (they have content hashes)
 /assets/*
