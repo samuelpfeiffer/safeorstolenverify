@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T06:35:19.829875Z",
+  "generatedAt": "2026-08-04T04:16:12.212757+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -401,7 +401,7 @@
     {
       "route": "/check-bike",
       "slug": "check-bike",
-      "title": "Check If a Bike Is Stolen \u2014 Free Serial Number Check | Sa...",
+      "title": "Check If a Bike Is Stolen \u2014 Free Serial Number Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-bike"
     },
     {
@@ -461,13 +461,13 @@
     {
       "route": "/check-gun",
       "slug": "check-gun",
-      "title": "Gun Serial Number Check \u2014 Is That Firearm Stolen? | SafeO...",
+      "title": "Gun Serial Number Check \u2014 Is That Firearm Stolen? | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-gun"
     },
     {
       "route": "/check-if-stolen",
       "slug": "check-if-stolen",
-      "title": "Check If Item Is Stolen - Instant Verification | SafeOrSt...",
+      "title": "Check If Item Is Stolen - Instant Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-if-stolen"
     },
     {
@@ -563,7 +563,7 @@
     {
       "route": "/check-vin",
       "slug": "check-vin",
-      "title": "Stolen Vehicle VIN Check \u2014 Verify Before You Buy | SafeOr...",
+      "title": "Stolen Vehicle VIN Check \u2014 Verify Before You Buy | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-vin"
     },
     {
@@ -701,7 +701,7 @@
     {
       "route": "/firearms-check",
       "slug": "firearms-check",
-      "title": "Free Gun Serial Number Lookup \u2014 Check if a Gun is Stolen ...",
+      "title": "Free Gun Serial Number Lookup \u2014 Check if a Gun is Stolen",
       "canonical": "https://safeorstolen.com/firearms-check"
     },
     {
@@ -923,7 +923,7 @@
     {
       "route": "/imei-checker",
       "slug": "imei-checker",
-      "title": "Free IMEI Check \u2014 Is This Phone Stolen or Blacklisted? | ...",
+      "title": "Free IMEI Check \u2014 Is This Phone Stolen or Blacklisted? | SafeOrStolen",
       "canonical": "https://safeorstolen.com/imei-checker"
     },
     {
@@ -1007,7 +1007,7 @@
     {
       "route": "/license-plate-lookup",
       "slug": "license-plate-lookup",
-      "title": "Free License Plate Lookup \u2014 Check Any Vehicle by Plate Nu...",
+      "title": "Free License Plate Lookup \u2014 Check Any Vehicle by Plate Number",
       "canonical": "https://safeorstolen.com/license-plate-lookup"
     },
     {
@@ -1037,7 +1037,7 @@
     {
       "route": "/marketplace-url-checker",
       "slug": "marketplace-url-checker",
-      "title": "Facebook Marketplace Scam Checker \u2014 Paste Any Listing URL...",
+      "title": "Facebook Marketplace Scam Checker \u2014 Paste Any Listing URL",
       "canonical": "https://safeorstolen.com/marketplace-url-checker"
     },
     {
@@ -1307,7 +1307,7 @@
     {
       "route": "/scam-checker",
       "slug": "scam-checker",
-      "title": "AI Marketplace Scam Checker \u2014 Detect Fake Listings | Safe...",
+      "title": "AI Marketplace Scam Checker \u2014 Detect Fake Listings | SafeOrStolen",
       "canonical": "https://safeorstolen.com/scam-checker"
     },
     {
@@ -1319,7 +1319,7 @@
     {
       "route": "/serial-number-checker",
       "slug": "serial-number-checker",
-      "title": "Free Serial Number Lookup \u2014 Check if Item is Stolen | Saf...",
+      "title": "Free Serial Number Lookup \u2014 Check if Item is Stolen | SafeOrStolen",
       "canonical": "https://safeorstolen.com/serial-number-checker"
     },
     {
@@ -1511,7 +1511,7 @@
     {
       "route": "/vin-checker",
       "slug": "vin-checker",
-      "title": "Free Stolen Vehicle VIN Check \u2014 Is This Car Stolen? | Saf...",
+      "title": "Free Stolen Vehicle VIN Check \u2014 Is This Car Stolen? | SafeOrStolen",
       "canonical": "https://safeorstolen.com/vin-checker"
     },
     {
