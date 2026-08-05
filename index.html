@@ -241,17 +241,17 @@
           var canonicalEl = document.querySelector('link[rel="canonical"]');
           var canonicalIsCorrect = isHomepage || (canonicalEl && canonicalEl.getAttribute('href') && !canonicalEl.getAttribute('href').endsWith('.com/'));
           
-          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription && canonicalIsCorrect) {
+          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription) {
             window.prerenderReady = true;
             clearInterval(checkReady);
           }
         }, 100);
         
-        // Safety timeout - increased to 12s to allow heavy pages (firearms-check: 5000+ words) to hydrate
+        // Safety timeout - 5s. Prerender snapshotters commonly abandon before 12s; a slightly-early snapshot with fallback meta beats a timed-out snapshot with none.
         setTimeout(function() {
           window.prerenderReady = true;
           clearInterval(checkReady);
-        }, 12000);
+        }, 5000);
       });
     </script>
 </head>
