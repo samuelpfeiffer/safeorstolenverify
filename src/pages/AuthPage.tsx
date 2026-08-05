@@ -128,7 +128,7 @@ const AuthPage = () => {
   return (
     <>
       <PageSEO
-        title="Sign In or Create Account | SafeOrStolen"
+        title="Sign In | SafeOrStolen"
         description="Sign in or create your SafeOrStolen account. Access verification history and manage subscriptions securely."
         noIndex={true}
       />
