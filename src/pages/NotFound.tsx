@@ -25,6 +25,15 @@ const NotFound = () => {
     }
   }, [location?.pathname]);
 
+  // Force the static index.html robots tag to noindex so crawlers never see a stale "index, follow"
+  useEffect(() => {
+    document
+      .querySelectorAll('meta[name="robots"]:not([data-rh])')
+      .forEach((el) => el.setAttribute('content', 'noindex, nofollow'));
+  }, []);
+
+
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
