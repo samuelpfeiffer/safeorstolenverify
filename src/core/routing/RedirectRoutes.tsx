@@ -9,6 +9,22 @@
  * but React Navigate handles the prerenderer/SSR path.
  */
 import { Route, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+
+/**
+ * Intermediate redirect state: emits noindex + a 301 prerender signal so a
+ * crawler that snapshots the pre-navigation frame never indexes a duplicate.
+ */
+const RedirectWithNoIndex = ({ to }: { to: string }) => (
+  <>
+    <Helmet>
+      <meta name="robots" content="noindex, nofollow" />
+      <meta name="prerender-status-code" content="301" />
+      <meta name="prerender-header" content={`Location: https://safeorstolen.com${to}`} />
+    </Helmet>
+    <Navigate to={to} replace />
+  </>
+);
 
 /**
  * Map of legacy paths → redirect targets
@@ -320,7 +336,7 @@ const REDIRECT_MAP: Record<string, string> = {
  */
 export const getRedirectRoutes = () =>
   Object.entries(REDIRECT_MAP).map(([from, to]) => (
-    <Route key={from} path={from} element={<Navigate to={to} replace />} />
+    <Route key={from} path={from} element={<RedirectWithNoIndex to={to} />} />
   ));
 
 /** @deprecated Use getRedirectRoutes() instead */

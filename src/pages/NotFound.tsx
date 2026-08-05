@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSafeLocation } from "@/hooks/useSafeLocation";
 import { StatusCodeHandler } from "@/components/seo/StatusCodeHandler";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { PageSEO } from "@/components/seo/PageSEO";
+import { Helmet } from "react-helmet-async";
 import { Search, Smartphone, Car, FileText, Shield, Home, Bike, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,6 +24,15 @@ const NotFound = () => {
       );
     }
   }, [location?.pathname]);
+
+  // Force the static index.html robots tag to noindex so crawlers never see a stale "index, follow"
+  useEffect(() => {
+    document
+      .querySelectorAll('meta[name="robots"]:not([data-rh])')
+      .forEach((el) => el.setAttribute('content', 'noindex, nofollow'));
+  }, []);
+
+
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,11 +64,17 @@ const NotFound = () => {
     <>
       <TopNavigation />
       <StatusCodeHandler statusCode={404} noIndex={true} />
-      <SEOHead
-        title="404 - Page Not Found"
-        description="The page you're looking for doesn't exist. Use our search to verify stolen items or explore our verification tools."
+      <PageSEO
+        title="Page Not Found | SafeOrStolen"
+        description="This page doesn't exist. Verify phones, vehicles, license plates, serial numbers, firearms and bicycles at SafeOrStolen."
         noIndex={true}
       />
+      {/* Overrides the static <meta name="prerender-status-code" content="200"> in index.html */}
+      <Helmet>
+        <meta name="prerender-status-code" content="404" />
+        <meta name="prerender-header" content="Cache-Control: no-cache, no-store" />
+      </Helmet>
+
       
       <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto px-4 py-16 md:py-24">
