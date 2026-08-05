@@ -28,12 +28,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
     
-    <!-- 
-      CRITICAL: Do NOT put page-specific meta tags here (title, description, canonical, og:*, twitter:*).
-      They are managed per-page by React Helmet via SEOHead component.
-      Static tags here would conflict with Helmet and cause LovableHTML prerender 
-      to snapshot homepage meta on ALL pages, causing "Crawled - not indexed" in GSC.
-    -->
+    <!-- Static FALLBACK title/description for non-JS crawlers (Bingbot, LinkedIn, Slack).
+         react-helmet-async overrides both per-page at runtime by matching tag name.
+         These exist so a failed/early prerender snapshot yields generic metadata
+         instead of NO metadata. Do NOT add canonical or page-specific og:* here. -->
+    <title>SafeOrStolen — Free Stolen Item Checker: IMEI, VIN &amp; Serial Number Verification</title>
+    <meta name="description" content="Check IMEI, VIN, serial numbers, license plates, firearms and bicycles against 100+ law enforcement databases before you buy. 2 free searches, results in 3 seconds.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
     <!-- Static social-preview fallbacks for non-JS crawlers (LinkedIn, Slack, Facebook).
