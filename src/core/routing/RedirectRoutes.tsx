@@ -336,7 +336,7 @@ const REDIRECT_MAP: Record<string, string> = {
  */
 export const getRedirectRoutes = () =>
   Object.entries(REDIRECT_MAP).map(([from, to]) => (
-    <Route key={from} path={from} element={<Navigate to={to} replace />} />
+    <Route key={from} path={from} element={<RedirectWithNoIndex to={to} />} />
   ));
 
 /** @deprecated Use getRedirectRoutes() instead */
