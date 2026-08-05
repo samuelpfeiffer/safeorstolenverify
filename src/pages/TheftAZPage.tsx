@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const TheftAZPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="TheftAZ Arizona Stolen Property Database | SafeOrStolen"
-      metaDescription="Search TheftAZ stolen property records through SafeOrStolen. Free Arizona stolen vehicle, gun, and item verification."
+      title="TheftAZ Stolen Property Search — Arizona Alternative | SafeOrStolen"
+      metaDescription="Search Arizona stolen property records plus 100+ national databases. Check phones, vehicles, license plates, serial numbers, firearms and bicycles in one place. 2 free checks."
       h1="TheftAZ - Arizona Stolen Property Search"
       itemType="Arizona Stolen Property"
       keywords={[
