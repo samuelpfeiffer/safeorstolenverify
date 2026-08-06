@@ -84,7 +84,7 @@ const IPhoneIMEICheck = () => {
         },
         {
           question: "How accurate is the iPhone stolen check?",
-          answer: "We check 100+ law enforcement, insurance, and carrier databases, including GSMA, major carriers, law enforcement, and insurance sources. We check all major sources, but no database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
+          answer: "We check 100+ databases, including GSMA, major carrier blacklists, law enforcement records, and insurance claims. No database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
         },
         {
           question: "Can someone change an iPhone's IMEI?",

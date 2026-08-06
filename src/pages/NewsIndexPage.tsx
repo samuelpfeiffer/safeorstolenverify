@@ -130,8 +130,7 @@ const NewsIndexPage = () => {
                 <p className="mb-6">
                   SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
                   from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
-                  item with a serial number against 100+ law enforcement, insurance, and carrier databases aggregated from law enforcement 
-                  agencies, insurance companies, and carrier blacklists.
+                  item with a serial number against 100+ databases aggregated from law enforcement agencies, insurance companies, and carrier blacklists.
                 </p>
                 
                 <p className="mb-6">
