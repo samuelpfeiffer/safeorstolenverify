@@ -739,7 +739,7 @@ const Index = () => {
             "operatingSystem": ["Web", "iOS", "Android"],
             "offers": [
               { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
-              { "@type": "Offer", "name": "Unlimited", "price": "1.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
+              { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
             ],
             "aggregateRating": {
               "@type": "AggregateRating",

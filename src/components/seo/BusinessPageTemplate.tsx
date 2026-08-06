@@ -88,7 +88,7 @@ export const BusinessPageTemplate = ({
       "offers": {
         "@type": "Offer",
         "description": content.pricing,
-        "price": "1.00",
+        "price": "10.00",
         "priceCurrency": "USD"
       }
     },

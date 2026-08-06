@@ -22,7 +22,7 @@ const IPhoneIMEICheck = () => {
       itemType="iPhone"
       identifierType="IMEI"
       heroBadge="Apple Device Verification"
-      heroSubtitle="Before you buy that used iPhone from Facebook Marketplace, Craigslist, or eBay - verify it's not reported stolen. Our free IMEI checker searches 50+ million records instantly."
+      heroSubtitle="Before you buy that used iPhone from Facebook Marketplace, Craigslist, or eBay - verify it's not reported stolen. Our free IMEI checker searches 100+ law enforcement, insurance, and carrier databases instantly."
       stats={[
         { value: "1.2M+", label: "iPhones Stolen Annually (US)" },
         { value: "3 sec", label: "Verification Time" },
@@ -34,7 +34,7 @@ const IPhoneIMEICheck = () => {
       howItWorksSteps={[
         "Find the iPhone's IMEI: Dial *#06# on the phone, go to Settings > General > About, or check the original box/SIM tray",
         "Enter the 15-digit IMEI number into our free verification tool",
-        "Our system instantly searches 50+ million records across global databases",
+        "Our system instantly searches 100+ law enforcement, insurance, and carrier databases",
         "Get your results in 3 seconds - see if the iPhone is SAFE or STOLEN"
       ]}
       howItWorksDescription="Our verification checks multiple sources simultaneously: GSMA Device Registry, major US carrier blacklists, law enforcement databases, iCloud lock status indicators, and user-reported theft databases. We also check for outstanding finance (if the previous owner still owes money) and insurance claims."
@@ -84,7 +84,7 @@ const IPhoneIMEICheck = () => {
         },
         {
           question: "How accurate is the iPhone stolen check?",
-          answer: "Our database contains 50+ million records from GSMA, major carriers, law enforcement, and insurance companies. We check all major sources, but no database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
+          answer: "We check 100+ law enforcement, insurance, and carrier databases, including GSMA, major carriers, law enforcement, and insurance sources. We check all major sources, but no database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
         },
         {
           question: "Can someone change an iPhone's IMEI?",
