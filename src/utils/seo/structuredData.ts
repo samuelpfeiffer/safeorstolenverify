@@ -262,7 +262,7 @@ export const createServiceSchema = () => ({
           "name": "Unlimited Verification",
           "description": "Unlimited stolen goods verification — all item types, all databases, IMEI, VIN, serial numbers, license plates, firearms"
         },
-        "price": "1.00",
+        "price": "10.00",
         "priceCurrency": "USD",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",

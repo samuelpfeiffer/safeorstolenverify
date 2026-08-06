@@ -28,7 +28,7 @@ const ComparisonSwappa = () => {
             "name": "Verification Plans",
             "itemListElement": [
               { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks" },
-              { "@type": "Offer", "price": "1.00", "priceCurrency": "USD", "description": "Unlimited monthly" }
+              { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited monthly" }
             ]
           }
         },

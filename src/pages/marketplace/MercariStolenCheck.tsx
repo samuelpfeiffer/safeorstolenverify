@@ -18,7 +18,7 @@ const MercariStolenCheck = () => {
       ]}
       canonical="/mercari-stolen-check"
       marketplaceName="Mercari"
-      heroSubtitle="Before you buy that electronics, phone, or luxury item on Mercari, verify it isn't stolen. Our free tool checks serial numbers against 50+ million records instantly."
+      heroSubtitle="Before you buy that electronics, phone, or luxury item on Mercari, verify it isn't stolen. Our free tool checks serial numbers against 100+ law enforcement, insurance, and carrier databases instantly."
       problemStats={[
         {
           title: "Stolen Phones",

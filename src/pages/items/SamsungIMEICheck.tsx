@@ -34,7 +34,7 @@ const SamsungIMEICheck = () => {
       howItWorksSteps={[
         "Find the Samsung IMEI: Dial *#06# on the phone, go to Settings > About Phone > Status > IMEI, or check the original box",
         "Enter the 15-digit IMEI number into our free verification tool",
-        "Our system checks 50+ million records across global databases in real-time",
+        "Our system checks 100+ law enforcement, insurance, and carrier databases in real-time",
         "Get instant results - know if your Samsung is SAFE, STOLEN, or BLACKLISTED"
       ]}
       howItWorksDescription="We check multiple databases simultaneously including GSMA Device Registry, US carrier blacklists, Samsung's Find My Mobile reports, law enforcement records, and insurance claim databases. Our comprehensive check ensures you're protected from purchasing a stolen or financed device."

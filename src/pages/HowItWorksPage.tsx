@@ -35,7 +35,7 @@ const HowItWorksPage = () => {
               {
                 "@type": "HowToStep",
                 "name": "Automatic Database Search",
-                "text": "SafeOrStolen searches 50+ million records from law enforcement databases, insurance claims, manufacturer blacklists, and user reports."
+                "text": "SafeOrStolen searches 100+ law enforcement, insurance, and carrier databases, including law enforcement records, insurance claims, manufacturer blacklists, and user reports."
               },
               {
                 "@type": "HowToStep",

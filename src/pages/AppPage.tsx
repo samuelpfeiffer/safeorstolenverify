@@ -375,7 +375,7 @@ const AppPage = () => {
             "name": "Monthly Plan",
             "description": "Unlimited verification checks"
           },
-          "price": "4.99",
+          "price": "10.00",
           "priceCurrency": "USD"
         }
       ]
