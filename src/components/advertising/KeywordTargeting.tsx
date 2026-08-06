@@ -58,7 +58,7 @@ export const KeywordTargeting = () => {
           <h3>How Our Verification Works</h3>
           <p>
             Step 1: Enter IMEI, VIN, or serial number into our stolen goods database checker.
-            Step 2: We scan 100+ law enforcement, insurance, and carrier databases, including FBI, Interpol, and insurance sources.
+            Step 2: We scan 100+ law enforcement, insurance, and carrier databases.
             Step 3: Get instant results in 30 seconds - stolen, lost, or safe to buy.
             Step 4: Make informed decisions and avoid fraud.
           </p>
