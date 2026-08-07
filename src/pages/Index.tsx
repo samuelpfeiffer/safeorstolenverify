@@ -180,8 +180,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Free Stolen Item Checker: IMEI, VIN & Serial | SafeOrStolen"
-        description="Check IMEI, VIN, and serial numbers against 100+ law enforcement databases before buying. 2 free searches, then $10/month unlimited. Results in 3 seconds."
+        title="SafeOrStolen — AI Stolen Item Verification, All Categories"
+        description="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases."
         keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
         canonical="/"
       />
@@ -189,10 +189,12 @@ const Index = () => {
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <h1>Stolen Item Checker - Free IMEI, VIN &amp; Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 100+ law enforcement databases including FBI NCIC, GSMA, NICB, and ATF. Free verification with results in 3 seconds. The only verification service with a mobile app for iOS and Android.</p>
+          <h1>AI Stolen Item Verification for Buyers, Sellers, and Businesses</h1>
+          <p>SafeOrStolen is an AI-powered platform that checks whether a secondhand item is reported stolen. Buyers verify before they pay, sellers prove an item is clean, and businesses such as pawn shops, resellers, dealers, and repair shops document diligence at intake.</p>
+          <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against 100+ law enforcement, insurance, and carrier databases, including FBI NCIC, GSMA, NICB, ATF, BikeIndex, and HotGunz, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
         </div>
       </noscript>
+
 
       <TopNavigation />
 
@@ -713,7 +715,7 @@ const Index = () => {
             "@type": "WebPage",
             "name": "Free Stolen Item Checker - IMEI VIN Serial Verification",
             "url": "https://safeorstolen.com",
-            "description": "Check if phones, cars, bikes, firearms are stolen before buying or selling. Verify IMEI, VIN, serial numbers against 100+ law enforcement databases.",
+            "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against 100+ law enforcement, insurance, and carrier databases.",
             "speakable": {
               "@type": "SpeakableSpecification",
               "cssSelector": ["h1", ".speakable-summary"]
