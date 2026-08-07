@@ -131,8 +131,8 @@ const sections: Section[] = [
           I spent four years learning to build it properly, through an intensive mentorship under
           Brian Haung, founder of CaSoft Seattle, who taught me web development, product
           architecture, and what it actually takes to build software that works. I incorporated
-          the company in Arizona in 2025. We partnered with FasterCapital's LaunchUp accelerator,
-          and launched the live platform with a mission to provide real-time legitimacy
+          the company in Arizona in 2025, and launched the live platform with a mission to
+          provide real-time legitimacy
           verification for secondhand merchandise across U.S. and international markets.
         </p>
         <p>
@@ -374,9 +374,9 @@ const OurStoryPage: React.FC = () => {
                 <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <p>
                   Samuel Edward Joseph Pfeiffer is the Founder and CEO of SafeOrStolen.com, an
-                  AI-powered stolen-item verification platform incorporated in Arizona, partnered
-                  with FasterCapital's LaunchUp accelerator, and integrated with law enforcement
-                  and insurance databases nationwide. The platform is live at{' '}
+                  AI-powered stolen-item verification platform incorporated in Arizona and
+                  integrated with law enforcement and insurance databases nationwide. The platform
+                  is live at{' '}
                   <a href="https://safeorstolen.com" className="text-primary hover:underline">
                     safeorstolen.com
                   </a>

@@ -55,18 +55,6 @@ export const MissionSection = () => {
               brings us closer to a world where trust is rebuilt in secondhand markets through technology, 
               transparency, and comprehensive data networks.
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 text-sm text-gray-400 bg-sos-orange/10 p-3 rounded-lg">
-              <span className="w-2 h-2 bg-sos-lime rounded-full"></span>
-              <span>Accelerated by</span>
-              <a 
-                href="https://fastercapital.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-sos-orange hover:text-sos-orange/80 transition-colors font-semibold"
-              >
-                FasterCapital
-              </a>
-            </div>
           </div>
         </div>
       </div>

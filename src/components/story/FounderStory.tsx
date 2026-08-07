@@ -66,8 +66,8 @@ export const FounderStory = () => {
               secondhand purchases safe and trustworthy.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Today, we're proud to be accelerated by FasterCapital and trusted by consumers, 
-              sellers, and businesses across the country. Every verification we perform brings 
+              Today, we're trusted by consumers, sellers, and businesses across the country.
+              Every verification we perform brings 
               us closer to our vision: a world where every secondhand purchase is safe.
             </p>
           </Card>

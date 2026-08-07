@@ -290,7 +290,7 @@ export const REDIRECT_URLS = new Set([
   '/cheaper-than-carfax', '/subscriptions', '/partnerships',
   '/enterprise-demo', '/case-studies', '/service-limitations',
   '/how-it-works-detailed', '/ebay-stolen-item-checker',
-  '/craigslist-verification-guide', '/fastercapital/tech-cofounder',
+  '/craigslist-verification-guide',
   
   // City redirects
   '/city/los-angeles-ca/vin-verification', '/city/los-angeles-ca/imei-check',
@@ -322,7 +322,6 @@ export const REDIRECT_URLS = new Set([
   '/for-marketplace-sellers', '/cookies', '/database',
   '/for-brands', '/auction-houses',
   '/crime-prevention-impact', '/statistics',
-  '/fastercapital/raise-capital',
   '/buyer-guide', '/check', '/ultimate-guide',
   '/marketplace-safety',
   

@@ -36,8 +36,8 @@ const timeline: TimelineItem[] = [
   },
   {
     year: "2025",
-    title: "FasterCapital Acceleration",
-    description: "Joined FasterCapital's acceleration program to scale impact globally. Building strategic partnerships and expanding verification capabilities to protect millions from the stolen goods crisis worldwide.",
+    title: "Platform Launch",
+    description: "Incorporated in Arizona and launched the live platform, expanding verification across phones, vehicles, license plates, serial-numbered goods, firearms, and bicycles against 100+ databases.",
     icon: <Rocket className="h-6 w-6" />
   }
 ];

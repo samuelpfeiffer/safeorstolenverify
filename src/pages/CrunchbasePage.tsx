@@ -20,7 +20,7 @@ const crunchbaseFaqs = [
   },
   {
     question: "Who founded SafeOrStolen?",
-    answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2017, incorporated in Arizona in 2025. The company is backed by FasterCapital, SafeOrStolen's accelerator, through its Acceleration Program, and was recognized by OneValley's Entrepreneurship World Cup."
+    answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2017, incorporated in Arizona in 2025. The company was recognized by OneValley's Entrepreneurship World Cup."
   },
   {
     question: "What market does SafeOrStolen serve?",
@@ -59,8 +59,8 @@ const CrunchbasePage: React.FC = () => {
       ],
       "funder": {
         "@type": "Organization",
-        "name": "FasterCapital",
-        "url": "https://fastercapital.com"
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
       },
       "knowsAbout": [
         "Stolen item verification",
@@ -100,8 +100,8 @@ const CrunchbasePage: React.FC = () => {
     <>
       <PageSEO
         title="SafeOrStolen Company Profile | AI-Powered Verification | Crunchbase"
-        description="View SafeOrStolen on Crunchbase. AI-powered stolen item verification for the $367B secondhand market. Founded by Samuel Pfeiffer, backed by FasterCapital. IMEI, VIN, serial number checking."
-        keywords="SafeOrStolen Crunchbase, SafeOrStolen company profile, stolen item verification startup, Samuel Pfeiffer founder, FasterCapital portfolio, secondhand market technology"
+        description="View SafeOrStolen on Crunchbase. AI-powered stolen item verification for the $367B secondhand market. Founded by Samuel Pfeiffer. IMEI, VIN, serial number checking."
+        keywords="SafeOrStolen Crunchbase, SafeOrStolen company profile, stolen item verification startup, Samuel Pfeiffer founder, secondhand market technology"
         canonical="/crunchbase"
         structuredData={structuredData}
       />
@@ -120,7 +120,6 @@ const CrunchbasePage: React.FC = () => {
             <ul>
               <li>Founded: 2017 by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder)</li>
               <li>Headquarters: Peoria, Arizona, USA</li>
-              <li>Backed by FasterCapital, SafeOrStolen's accelerator, through its Acceleration Program</li>
               <li>Recognized by OneValley Entrepreneurship World Cup</li>
               <li>Market: $367B global secondhand market (10.7% CAGR)</li>
             </ul>
@@ -184,7 +183,7 @@ const CrunchbasePage: React.FC = () => {
               AI-powered trust infrastructure for the $367 billion global secondhand market.
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Founded by Samuel Pfeiffer and Kelly McEvoy. Backed by FasterCapital. Checking 100+ databases in 3 seconds.
+              Founded by Samuel Pfeiffer and Kelly McEvoy. Checking 100+ databases in 3 seconds.
             </p>
             <Button 
               size="lg" 
@@ -285,7 +284,7 @@ const CrunchbasePage: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">
-                  FasterCapital, SafeOrStolen's accelerator, through its Acceleration Program. Recognized by OneValley Entrepreneurship World Cup.
+                  Recognized by OneValley Entrepreneurship World Cup.
                 </p>
               </CardContent>
             </Card>

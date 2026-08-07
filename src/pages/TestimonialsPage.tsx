@@ -3,19 +3,12 @@ import { Shield, ExternalLink, Rocket, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
 const TestimonialsPage = () => {
   // Real press mentions and partnerships only
   const realCredentials = [
-    {
-      type: "Accelerator Backing",
-      source: "FasterCapital",
-      description: "Selected for FasterCapital's accelerator program to scale marketplace safety verification technology.",
-      url: "https://fastercapital.com"
-    },
     {
       type: "Press Release",
       source: "PRLog",
@@ -34,15 +27,15 @@ const TestimonialsPage = () => {
     <>
       <PageSEO
         title="Press & Credentials - SafeOrStolen"
-        description="SafeOrStolen is backed by FasterCapital and featured in press releases. A real SaaS startup protecting buyers, sellers, and businesses from stolen goods."
-        keywords="SafeOrStolen press, FasterCapital, stolen item verification, marketplace safety"
+        description="SafeOrStolen press coverage and published releases. AI-powered stolen item verification protecting buyers, sellers, and businesses across six categories."
+        keywords="SafeOrStolen press, stolen item verification, marketplace safety"
         canonical="/testimonials"
         structuredData={[
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "SafeOrStolen Press & Credentials",
-            "description": "Real press coverage and accelerator backing for SafeOrStolen"
+            "description": "Real press coverage for SafeOrStolen"
           }
         ]}
       />
@@ -54,18 +47,7 @@ const TestimonialsPage = () => {
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Press & Credentials</h1>
               <p className="text-xl text-muted-foreground">
-                Real press coverage and accelerator backing
-              </p>
-            </div>
-
-            {/* FasterCapital Feature */}
-            <div className="mb-12 p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
-              <div className="flex justify-center mb-4">
-                <FasterCapitalBranding />
-              </div>
-              <h2 className="text-2xl font-bold text-center mb-2">Backed by FasterCapital</h2>
-              <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-                SafeOrStolen was selected for FasterCapital's accelerator program to scale marketplace safety verification technology worldwide.
+                Real press coverage
               </p>
             </div>
 
