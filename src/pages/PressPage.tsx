@@ -146,7 +146,57 @@ const PressPage = () => {
           </div>
         </section>
 
+        {/* Published Press Releases */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Published Press Releases</h2>
+            <div className="space-y-6">
+              {pressReleases.map((pr, index) => (
+                <Card key={index}>
+                  <CardContent className="pt-6">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {pr.outlet} · {pr.date}
+                    </p>
+                    <h3 className="text-xl font-semibold mb-3">{pr.title}</h3>
+                    {pr.url.startsWith('http') ? (
+                      <a
+                        href={pr.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:underline"
+                      >
+                        Read the release <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <Link to={pr.url} className="inline-flex items-center gap-2 text-primary hover:underline">
+                        Read the release →
+                      </Link>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Verified Profiles */}
+        <section className="py-16 px-4 bg-muted/30">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Verified Company Profiles</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {verifiedProfiles.map((profile) => (
+                <Button key={profile.name} asChild variant="outline" className="gap-2">
+                  <a href={profile.url} target="_blank" rel="noopener noreferrer">
+                    {profile.name} <ExternalLink className="w-4 h-4" />
+                  </a>
+                </Button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Key Stats */}
+
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Key Statistics</h2>
