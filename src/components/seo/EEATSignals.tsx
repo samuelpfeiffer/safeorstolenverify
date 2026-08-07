@@ -37,7 +37,7 @@ export const EEATSignals = () => {
       {/* Verifiable credentials and external recognition */}
       <meta
         name="authoritativeness"
-        content="FasterCapital accelerator participant 2024, OneValley Entrepreneurship World Cup member, Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
+        content="FasterCapital Acceleration Program participant since April 2025, OneValley Entrepreneurship World Cup member, Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
       />
 
       {/* ─── Trustworthiness ────────────────────────── */}

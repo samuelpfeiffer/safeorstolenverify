@@ -35,7 +35,7 @@ export const createOrganizationSchema = () => {
   "slogan": "Complete Multi-Database Verification - Protect Every Purchase",
   "url": SITE_CONFIG.url,
   "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
-  "foundingDate": "2025-08",
+  "foundingDate": "2017",
   "incorporationDate": "2025-08",
   "taxID": "39-3892151",
   "founder": [
@@ -281,7 +281,7 @@ export const createLocalBusinessSchema = () => ({
   "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
   "email": "support@safeorstolen.com",
-  "foundingDate": "2025-08",
+  "foundingDate": "2017",
   "taxID": "39-3892151",
   "areaServed": [
     { "@type": "Country", "name": "United States" },

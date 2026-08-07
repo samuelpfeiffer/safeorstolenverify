@@ -186,7 +186,7 @@ const PressKitPage = () => {
                     50 US states with global database coverage.
                   </p>
                   <p>
-                    Founded in 2024 and backed by <strong>FasterCapital</strong>, SafeOrStolen is the 
+                    Founded in 2017 and backed by <strong>FasterCapital</strong>, SafeOrStolen is the 
                     only solution in the market with a dedicated mobile app featuring barcode scanning 
                     technology. The platform serves individual buyers and sellers on marketplaces like 
                     Facebook Marketplace, eBay, and OfferUp, as well as businesses including pawn shops, 
