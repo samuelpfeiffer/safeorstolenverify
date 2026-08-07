@@ -41,7 +41,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
   '/database': 'Access 50+ global stolen goods databases. Real-time checks across NICB, GSMA, CheckMEND, ATF, and police databases worldwide. Most comprehensive coverage.', // 158 chars
   '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars
   '/firearms-check': 'Verify firearm serial numbers against ATF stolen gun database. Instant check for gun buyers, sellers, and FFL dealers. From $0.99/check unlimited.',
-  '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and bikes. Verify if items are stolen before purchasing on Facebook Marketplace or Craigslist.', // 158 chars
+  '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and appliances. Verify items are not stolen before buying, selling, or accepting them at intake.', // 156 chars
   
   // MARKETPLACE PAGES (155-160 chars each)
   '/offerup-safety': 'Verify items on OfferUp before buying. Check if phones, electronics, or vehicles are stolen. Avoid scams with IMEI and serial number verification on OfferUp.', // 160 chars

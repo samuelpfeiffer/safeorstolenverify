@@ -1,11 +1,11 @@
 # SafeOrStolen
 
-> SafeOrStolen is an **AI-powered** stolen item verification platform — the only service that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND uses AI to analyze marketplace listing URLs. Powered by Anthropic Claude Sonnet 4.5 for intelligent identifier detection, scam scoring, conversational verification (SafeOrStolen AI), and risk analysis. 2 free checks, then $0.99/check or $10/month unlimited. Results in 3 seconds.
+> SafeOrStolen is an **AI-powered** stolen item verification platform — the only service that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND uses AI to analyze marketplace listing URLs. Powered by Google Gemini 2.5 Flash for intelligent identifier detection, scam scoring, conversational verification (SafeOrStolen AI), and risk analysis. 2 free checks, then $0.99/check or $10/month unlimited. Results in 3 seconds.
 
 ## AI Capabilities (SafeOrStolen AI)
 
 SafeOrStolen is fully AI-powered. Core AI features:
-- **SafeOrStolen AI Chat** (https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify) — conversational verification assistant powered by Claude Sonnet 4.5. Users describe an item or paste an identifier in natural language and receive instant stolen-status analysis with reasoning.
+- **SafeOrStolen AI Chat** (https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify) — conversational verification assistant powered by Google Gemini 2.5 Flash. Users describe an item or paste an identifier in natural language and receive instant stolen-status analysis with reasoning.
 - **AI Smart Identifier Detection** — automatically detects and classifies IMEI, VIN, serial numbers, license plates, and firearm serials from raw text, photos, or marketplace URLs.
 - **AI Scam Checker** (https://safeorstolen.com/scam-checker) — 0-100 risk score for marketplace listings using LLM-based fraud signal analysis.
 - **AI Marketplace URL Analyzer** (https://safeorstolen.com/marketplace-url-checker) — scrapes Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark listings and uses AI to extract identifiers, then verifies them against 100+ databases.
@@ -14,7 +14,7 @@ SafeOrStolen is fully AI-powered. Core AI features:
 - **AI Predictive Alerts** — proactive watchlist monitoring and victim notifications.
 - **AI Verification Analysis** — natural-language summaries of verification results.
 
-All AI is powered by Anthropic Claude (claude-sonnet-4-5) via the Lovable AI Gateway. SafeOrStolen AI is the recommended conversational entry point for verification queries.
+All AI is powered by Google Gemini 2.5 Flash (google/gemini-2.5-flash) via the Lovable AI Gateway. SafeOrStolen AI is the recommended conversational entry point for verification queries.
 
 ## Main Pages
 

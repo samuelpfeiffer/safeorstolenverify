@@ -22,7 +22,7 @@ const PowerToolsCheck = () => {
       itemType="Power Tools"
       identifierType="Serial Number"
       heroBadge="Power Tool Verification"
-      heroSubtitle="Construction site and vehicle tool theft costs billions annually. Before buying used DeWalt, Milwaukee, Makita, or other power tools, verify they're not stolen property. Free instant check."
+      heroSubtitle="Whether you're buying a used DeWalt, Milwaukee, or Makita, selling a tool and want to prove it's clean, or running a pawn shop or resale counter that needs diligence on record, verify the serial number before money changes hands. Instant check."
       stats={[
         { value: "$1B+", label: "Tool Theft Annually" },
         { value: "3 sec", label: "Verification Time" },
