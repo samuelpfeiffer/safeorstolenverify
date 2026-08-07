@@ -190,6 +190,9 @@ const AboutPage = () => {
                   Our mobile app is our golden ticket - exclusively available at SafeOrStolen.com. Download it to check items anywhere, 
                   anytime, even offline.
                 </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  SafeOrStolen participated in the Entrepreneurship World Cup 2020.
+                </p>
                 <div className="border-t pt-4 mt-4">
                   <p className="text-muted-foreground text-sm">
                     Backed by FasterCapital partnership · 5,000+ checks processed · Reducing crime globally
