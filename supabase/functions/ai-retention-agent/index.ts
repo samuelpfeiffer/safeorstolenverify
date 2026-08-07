@@ -1,12 +1,20 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { requireAdmin } from '../_shared/require-admin.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
   if (corsPreFlight) return corsPreFlight;
 
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
+
+
+  // Admin-only: block non-admin callers before any privileged work
+
+  const denied = await requireAdmin(req, corsHeaders);
+
+  if (denied) return denied;
 
   const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
   const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;

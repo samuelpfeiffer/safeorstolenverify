@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.3';
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { requireAdmin } from '../_shared/require-admin.ts';
 
 const INDEXNOW_KEY = 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6';
 const HOST = 'safeorstolen.com';
@@ -16,6 +17,10 @@ serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
   if (corsPreFlight) return corsPreFlight;
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
+
+  // Admin-only: block non-admin callers before any privileged work
+  const denied = await requireAdmin(req, corsHeaders);
+  if (denied) return denied;
 
   try {
     const { urls, submitToGoogle = true, submitToBing = true, submitToYandex = true } = await req.json();
