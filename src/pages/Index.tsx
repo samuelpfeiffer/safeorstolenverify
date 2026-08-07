@@ -180,7 +180,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="SafeOrStolen — AI Stolen Item Verification, All Categories"
+        title="SafeOrStolen — AI-Powered Stolen Item Verification"
         description="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases."
         keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
         canonical="/"

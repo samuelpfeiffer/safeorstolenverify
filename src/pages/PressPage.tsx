@@ -14,24 +14,24 @@ import Footer from '@/components/Footer';
 const PressPage = () => {
   const pressHighlights = [
     {
-      metric: "2.4M+",
-      label: "Smartphones Stolen in US (2024)",
-      context: "SafeOrStolen helps buyers avoid purchasing these devices"
-    },
-    {
-      metric: "800K+",
-      label: "Vehicles Stolen Annually",
-      context: "Our VIN check protects buyers from stolen vehicle fraud"
+      metric: "6",
+      label: "Item Categories Verified",
+      context: "Phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods"
     },
     {
       metric: "100+",
       label: "Databases Searched",
-      context: "Comprehensive verification across global theft registries"
+      context: "Including FBI NCIC, GSMA, NICB, ATF, BikeIndex, and HotGunz"
     },
     {
       metric: "3 sec",
       label: "Average Verification Time",
       context: "Instant results from multiple data sources"
+    },
+    {
+      metric: "2 free",
+      label: "Verifications, No Card Required",
+      context: "Then $0.99 per check or $10/month unlimited"
     }
   ];
 
@@ -50,22 +50,22 @@ const PressPage = () => {
 
   const pressReleases = [
     {
-      title: 'SafeOrStolen Launches Mobile App for Instant Stolen Item Verification',
+      title: 'SafeOrStolen Partners with FasterCapital to Tackle Fraud and Build Trust in the Secondhand Market',
       outlet: 'PRLog',
-      date: 'January 2026',
-      url: 'https://www.prlog.org/13056163-safeorstolen-launches-mobile-app-for-instant-stolen-item-verification.html'
+      date: 'August 11, 2025',
+      url: 'https://biz.prlog.org/SafeOrStolen/'
     },
     {
-      title: 'SafeOrStolen Partners with FasterCapital Tech Co-Founder Program',
-      outlet: 'FasterCapital',
-      date: 'December 2025',
-      url: 'https://fastercapital.com/startup/safeorstolen'
+      title: 'SafeOrStolen Partners with FasterCapital to Secure Secondhand Market Worldwide',
+      outlet: 'PRLog',
+      date: 'September 11, 2025',
+      url: 'https://www.prlog.org/13098918-safeorstolen-partners-with-fastercapital-to-secure-secondhand-market-worldwide.html'
     },
     {
-      title: 'SafeOrStolen Recognized by OneValley as an Emerging Startup',
-      outlet: 'SafeOrStolen Newsroom',
-      date: 'November 2025',
-      url: '/news/onevalley-recognition'
+      title: 'SafeOrStolen Partners with FasterCapital to Launch Web App Platform for Trusted Secondhand Verification',
+      outlet: 'IssueWire',
+      date: 'October 11, 2025',
+      url: 'https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904'
     }
   ];
 
@@ -90,7 +90,7 @@ const PressPage = () => {
       "https://www.facebook.com/safeorstolen/",
       "https://www.linkedin.com/company/safeorstolen",
       "https://www.youtube.com/@safeorstolen",
-      "https://www.youtube.com/@safeorstolenoffically"
+      "https://x.com/safeorstolen"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -281,14 +281,15 @@ const PressPage = () => {
               <Card>
                 <CardHeader>
                   <Users className="w-10 h-10 text-primary mb-2" />
-                  <CardTitle>Growing Community</CardTitle>
+                  <CardTitle>All Six Categories</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Thousands of users protecting themselves from stolen goods every month.
+                    Phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods —
+                    electronics, power tools, and appliances — verified in one AI-powered platform.
                   </p>
                   <Button asChild variant="link" className="px-0">
-                    <Link to="/testimonials">See testimonials →</Link>
+                    <Link to="/verify">Verify an item →</Link>
                   </Button>
                 </CardContent>
               </Card>

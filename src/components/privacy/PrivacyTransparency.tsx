@@ -37,7 +37,7 @@ export const PrivacyTransparency: React.FC = () => {
               </CardHeader>
               <CardContent className="text-slate-300 space-y-2">
                 <p>
-                  <strong>Platform:</strong> SafeOrStolen.com is a stolen goods verification platform operated by SafeOrStolen LLC.
+                  <strong>Platform:</strong> SafeOrStolen.com is a stolen goods verification platform operated by SafeOrStolen.
                 </p>
                 <p>
                   <strong>Mission:</strong> To protect consumers and businesses from purchasing stolen goods through real-time database verification.
