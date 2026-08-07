@@ -12,7 +12,7 @@ export default function MobilePage() {
     <>
       <PageSEO
         title="SafeOrStolen Mobile App - Verify Items On-The-Go | Download Free"
-        description="Download the SafeOrStolen mobile app for instant stolen item verification. Scan barcodes, check IMEI/VIN/serial numbers, and verify before you buy. Works offline. Free download."
+        description="Get the SafeOrStolen AI mobile app. Scan barcodes and verify IMEI, VIN, and serial numbers with AI before you buy. Works offline. Free to install."
         keywords="mobile app, stolen item checker app, IMEI checker app, VIN scanner, barcode scanner, offline verification, download app"
         canonical="https://safeorstolen.com/mobile"
       />

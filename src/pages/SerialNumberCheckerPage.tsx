@@ -4,7 +4,7 @@ const SerialNumberCheckerPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Free Serial Number Lookup — Check if Item is Stolen | SafeOrStolen"
-      metaDescription="Free serial number checker for electronics, tools, cameras, gaming consoles. Search 100+ law enforcement and insurance databases to verify items are not stolen. Instant results."
+      metaDescription="AI-powered serial number checker for electronics, power tools, and appliances. Search 100+ law enforcement and insurance databases instantly."
       h1="Free Serial Number Lookup — Stolen Item Check"
       itemType="Item"
       keywords={[

@@ -17,7 +17,7 @@ const HowItWorksPage = () => {
     <>
       <PageSEO
         title="How It Works - Verify Items in Seconds"
-        description="Learn how SafeOrStolen verifies phones, cars, electronics. Check IMEI, VIN, serial numbers across 100+ databases. Free, instant 3-second results."
+        description="How SafeOrStolen AI works: enter an IMEI, VIN, plate, or serial number and AI checks 100+ databases for instant 3-second results."
         keywords="how SafeOrStolen works, verification process, stolen item check explained"
         canonical="/how-it-works"
         structuredData={[

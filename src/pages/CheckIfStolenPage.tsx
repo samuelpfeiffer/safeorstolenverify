@@ -4,7 +4,7 @@ const CheckIfStolenPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check If Item Is Stolen - Instant Verification | SafeOrStolen"
-      metaDescription="Stolen item checker. Verify if phones, cars, bikes, electronics, or tools are stolen before buying. Instant results. $0.99/check or $10/month unlimited."
+      metaDescription="AI-powered stolen item checker. Verify phones, cars, bikes, electronics, and tools before buying. $0.99 per check or $10/month unlimited."
       h1="Check If An Item Is Stolen"
       itemType="Any Item"
       keywords={[

@@ -200,7 +200,7 @@ const FAQPage = () => {
     <>
       <PageSEO
         title="FAQ - Frequently Asked Questions"
-        description="Frequently asked questions about SafeOrStolen. Learn about our verification process, pricing, databases checked, and how to protect yourself from theft."
+        description="Answers about SafeOrStolen AI: how AI verification works, pricing, the 100+ databases we check, and how to avoid buying or selling stolen goods."
         keywords="SafeOrStolen FAQ, verification questions, stolen item checker help"
         canonical="/faq"
         structuredData={{

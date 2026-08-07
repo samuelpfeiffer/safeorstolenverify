@@ -107,7 +107,7 @@ const SMSVerifyPage = () => {
     <>
       <PageSEO
         title="SMS Verify — Coming Soon — Text to Check if Stolen | SafeOrStolen"
-        description="Coming soon: text any IMEI, VIN, or serial number to verify if an item is stolen via SMS. No app needed. Join the waitlist. Meanwhile, use our free web and barcode scanner tools."
+        description="Coming soon: text an IMEI, VIN, or serial to verify an item by SMS. No app needed. Meanwhile use our AI-powered web checker and barcode scanner."
         keywords="sms verify stolen, text imei check, sms vin check, text serial number lookup, verify item text message, stolen item sms, gun show verification sms"
         canonical="/sms-verify"
         structuredData={[faqSchema, serviceSchema, howToSchema, breadcrumbSchema]}
