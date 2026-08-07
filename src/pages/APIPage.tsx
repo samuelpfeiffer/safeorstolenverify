@@ -33,7 +33,7 @@ export default function APIPage() {
     <>
       <SEOHead
         title="Verification API Docs - IMEI VIN Serial Developer"
-        description="REST API documentation for stolen item verification. Integrate IMEI, VIN, serial checks. Code examples in Python, JavaScript, cURL."
+        description="REST API for AI-powered stolen item verification. Integrate IMEI, VIN, and serial checks with code examples in Python, JavaScript, and cURL."
         canonical="/api"
         schemaJson={articleSchema}
       />

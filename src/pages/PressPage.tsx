@@ -48,13 +48,50 @@ const PressPage = () => {
     }
   ];
 
+  const pressReleases = [
+    {
+      title: 'SafeOrStolen Launches Mobile App for Instant Stolen Item Verification',
+      outlet: 'PRLog',
+      date: 'January 2026',
+      url: 'https://www.prlog.org/13056163-safeorstolen-launches-mobile-app-for-instant-stolen-item-verification.html'
+    },
+    {
+      title: 'SafeOrStolen Partners with FasterCapital Tech Co-Founder Program',
+      outlet: 'FasterCapital',
+      date: 'December 2025',
+      url: 'https://fastercapital.com/startup/safeorstolen'
+    },
+    {
+      title: 'SafeOrStolen Recognized by OneValley as an Emerging Startup',
+      outlet: 'SafeOrStolen Newsroom',
+      date: 'November 2025',
+      url: '/news/onevalley-recognition'
+    }
+  ];
+
+  const verifiedProfiles = [
+    { name: 'Crunchbase', url: 'https://www.crunchbase.com/organization/safe-or-stolen' },
+    { name: 'Trustpilot', url: 'https://www.trustpilot.com/review/safeorstolen.com' },
+    { name: 'PRLog Newsroom', url: 'https://biz.prlog.org/SafeOrStolen/' },
+    { name: 'Facebook', url: 'https://www.facebook.com/safeorstolen/' }
+  ];
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SafeOrStolen",
     "url": "https://safeorstolen.com",
     "logo": "https://safeorstolen.com/logo.png",
-    "description": "Stolen item verification service for phones, vehicles, and electronics",
+    "description": "AI-powered stolen item verification for phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods",
+    "sameAs": [
+      "https://www.crunchbase.com/organization/safe-or-stolen",
+      "https://www.trustpilot.com/review/safeorstolen.com",
+      "https://biz.prlog.org/SafeOrStolen/",
+      "https://www.facebook.com/safeorstolen/",
+      "https://www.linkedin.com/company/safeorstolen",
+      "https://www.youtube.com/@safeorstolen",
+      "https://www.youtube.com/@safeorstolenoffically"
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Press",
@@ -65,12 +102,13 @@ const PressPage = () => {
   return (
     <>
       <PageSEO
-        title="Press & Media - SafeOrStolen News and Resources"
-        description="SafeOrStolen press resources, media kit, and company information. Learn about our mission to protect buyers from stolen goods."
+        title="Press & Media — SafeOrStolen Newsroom"
+        description="SafeOrStolen press center: published releases, media kit, and verified profiles for the AI-powered stolen item verification platform."
         keywords="safeorstolen press, safeorstolen news, stolen item verification company, safeorstolen media kit"
         canonical="/press"
         structuredData={[organizationSchema]}
       />
+
 
       <TopNavigation />
       <div className="min-h-screen bg-background pt-20">
@@ -108,7 +146,57 @@ const PressPage = () => {
           </div>
         </section>
 
+        {/* Published Press Releases */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Published Press Releases</h2>
+            <div className="space-y-6">
+              {pressReleases.map((pr, index) => (
+                <Card key={index}>
+                  <CardContent className="pt-6">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {pr.outlet} · {pr.date}
+                    </p>
+                    <h3 className="text-xl font-semibold mb-3">{pr.title}</h3>
+                    {pr.url.startsWith('http') ? (
+                      <a
+                        href={pr.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:underline"
+                      >
+                        Read the release <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <Link to={pr.url} className="inline-flex items-center gap-2 text-primary hover:underline">
+                        Read the release →
+                      </Link>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Verified Profiles */}
+        <section className="py-16 px-4 bg-muted/30">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Verified Company Profiles</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {verifiedProfiles.map((profile) => (
+                <Button key={profile.name} asChild variant="outline" className="gap-2">
+                  <a href={profile.url} target="_blank" rel="noopener noreferrer">
+                    {profile.name} <ExternalLink className="w-4 h-4" />
+                  </a>
+                </Button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Key Stats */}
+
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Key Statistics</h2>

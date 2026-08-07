@@ -51,7 +51,7 @@ const DownloadApp = () => {
     <>
       <PageSEO
         title="Download FREE Stolen Item Checker App | SafeOrStolen - Verify Before You Buy or Sell"
-        description="Download the FREE SafeOrStolen app to instantly check if items are stolen before buying OR selling. Verify IMEI, VIN, serial numbers in 3 seconds. Works offline. Protects buyers AND sellers on Facebook Marketplace, OfferUp, eBay, Craigslist."
+        description="Install the SafeOrStolen AI app to check items before buying or selling. AI verifies IMEI, VIN, and serial numbers in about 3 seconds. Free to start."
         keywords="download stolen checker app, free IMEI app download, stolen verification app, VIN checker app free, serial number checker app, marketplace safety app, stolen item scanner, barcode stolen checker, offline stolen checker, buyer seller protection app"
         canonical="/download"
         structuredData={softwareAppSchema}

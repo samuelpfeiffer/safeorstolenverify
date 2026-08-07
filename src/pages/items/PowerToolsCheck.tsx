@@ -4,7 +4,7 @@ const PowerToolsCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Power Tools are Stolen - DeWalt, Milwaukee, Makita | SafeOrStolen"
-      metaDescription="Verify power tools aren't stolen before buying. Free serial number check for DeWalt, Milwaukee, Makita, Ryobi. Search stolen tool database instantly."
+      metaDescription="AI-powered power tool verification. Check DeWalt, Milwaukee, Makita, and Ryobi serial numbers against stolen tool databases in about 3 seconds."
       h1="Check if Power Tools are Stolen - Free Serial Check"
       keywords={[
         'check if power tools stolen',

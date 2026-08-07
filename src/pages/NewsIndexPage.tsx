@@ -51,7 +51,7 @@ const NewsIndexPage = () => {
     <>
       <PageSEO
         title="SafeOrStolen News - Latest Updates & Press Releases"
-        description="Latest news and press releases from SafeOrStolen. Learn about our mission to protect buyers and sellers from stolen goods."
+        description="News and press releases from SafeOrStolen, the AI-powered platform helping buyers, sellers, and businesses verify items before they trade."
         keywords="safeorstolen news, stolen item verification news, company announcements, press releases"
         canonical="/news"
         structuredData={newsSchema}
