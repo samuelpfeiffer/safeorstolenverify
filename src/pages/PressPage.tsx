@@ -14,24 +14,24 @@ import Footer from '@/components/Footer';
 const PressPage = () => {
   const pressHighlights = [
     {
-      metric: "2.4M+",
-      label: "Smartphones Stolen in US (2024)",
-      context: "SafeOrStolen helps buyers avoid purchasing these devices"
-    },
-    {
-      metric: "800K+",
-      label: "Vehicles Stolen Annually",
-      context: "Our VIN check protects buyers from stolen vehicle fraud"
+      metric: "6",
+      label: "Item Categories Verified",
+      context: "Phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods"
     },
     {
       metric: "100+",
       label: "Databases Searched",
-      context: "Comprehensive verification across global theft registries"
+      context: "Including FBI NCIC, GSMA, NICB, ATF, BikeIndex, and HotGunz"
     },
     {
       metric: "3 sec",
       label: "Average Verification Time",
       context: "Instant results from multiple data sources"
+    },
+    {
+      metric: "2 free",
+      label: "Verifications, No Card Required",
+      context: "Then $0.99 per check or $10/month unlimited"
     }
   ];
 
