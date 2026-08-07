@@ -193,9 +193,12 @@ const AboutPage = () => {
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   SafeOrStolen participated in the Entrepreneurship World Cup 2020.
                 </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  FasterCapital is SafeOrStolen's accelerator/incubator. SafeOrStolen joined the FasterCapital Acceleration Program in 2025.
+                </p>
                 <div className="border-t pt-4 mt-4">
                   <p className="text-muted-foreground text-sm">
-                    Backed by FasterCapital partnership · 5,000+ checks processed · Reducing crime globally
+                    Six item categories · 100+ databases · Results in about 3 seconds
                   </p>
                 </div>
               </Card>
