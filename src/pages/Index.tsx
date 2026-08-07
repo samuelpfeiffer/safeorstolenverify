@@ -62,8 +62,8 @@ const VERIFY_CARDS = [
     badge: null,
   },
   {
-    title: 'Laptop & Electronics',
-    subtitle: 'Apple, Dell, HP, Samsung + insurance databases',
+    title: 'Electronics, Power Tools & Appliances',
+    subtitle: 'Apple, Dell, DeWalt, Milwaukee, Samsung, LG + insurance databases',
     href: '/check-laptop',
     image: cardLaptop,
     badge: null,
