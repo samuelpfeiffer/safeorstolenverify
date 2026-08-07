@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { requireAdmin } from '../_shared/require-admin.ts';
 
 // IndexNow key - stored in Supabase secrets
 const INDEXNOW_KEY = Deno.env.get('INDEXNOW_KEY') || 'safeorstolen-indexnow-key';
@@ -154,6 +155,13 @@ serve(async (req) => {
   if (corsPreFlight) return corsPreFlight;
 
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
+
+
+  // Admin-only: block non-admin callers before any privileged work
+
+  const denied = await requireAdmin(req, corsHeaders);
+
+  if (denied) return denied;
 
   try {
     const { urls, submitAll } = await req.json().catch(() => ({ urls: null, submitAll: false }));
