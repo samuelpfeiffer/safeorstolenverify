@@ -235,7 +235,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/serial-number-checker': {
     title: 'Serial Number Checker - Verify Electronics & Tools',
-    description: 'Check serial numbers for electronics, laptops, power tools, and bikes. Verify if items are stolen before purchasing on Facebook Marketplace or Craigslist.', // 158 chars
+    description: 'Check serial numbers for electronics, laptops, power tools, and appliances. Verify items are not stolen before buying, selling, or accepting them at intake.', // 156 chars
     keywords: 'serial number checker, electronics verification, stolen laptop check',
     canonical: '/serial-number-checker'
   },
