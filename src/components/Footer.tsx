@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
-import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
 // Logo served from /public to avoid JS bundle bloat
 const sosLogo = '/sos-logo.png';
@@ -316,7 +315,6 @@ const Footer = () => {
               <div className="text-sm text-muted-foreground">
                 © 2025–{new Date().getFullYear()} SafeOrStolen. All rights reserved.
               </div>
-              <FasterCapitalBranding />
             </div>
             
             <div className="flex items-center gap-6">

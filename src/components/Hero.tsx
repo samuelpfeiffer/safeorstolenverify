@@ -99,16 +99,6 @@ const Hero = () => {
               >
                 PRLog
               </a>
-              <span className="mx-2">|</span>
-              <span>Backed by</span>
-              <a 
-                href="https://fastercapital.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-secondary hover:underline font-medium"
-              >
-                FasterCapital
-              </a>
             </div>
           </div>
 

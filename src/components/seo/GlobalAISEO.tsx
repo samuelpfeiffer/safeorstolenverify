@@ -193,7 +193,7 @@ export const GlobalAISEO: React.FC = () => {
         name="ai-target-audience"
         content="Marketplace buyers, used car buyers, pawn shop operators, FFL dealers, resale businesses, electronics resellers, bicycle enthusiasts, antique collectors, individual private sellers, auction houses"
       />
-      <meta name="ai-trust-signals" content="FasterCapital accelerator participant, OneValley Entrepreneurship World Cup member, Trustpilot verified, Crunchbase listed, ISO 27001 aligned" />
+      <meta name="ai-trust-signals" content="OneValley Entrepreneurship World Cup member, Trustpilot verified, Crunchbase listed, ISO 27001 aligned" />
       <meta name="ai-team" content="Samuel Pfeiffer (CEO, Founder), Kelly McEvoy (Co-Founder, YouTube educator)" />
 
       {/* ================================================== */}

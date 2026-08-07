@@ -22,8 +22,8 @@ export const TrustBuildingFAQ = () => {
             <Card className="text-center border-sos-lime/20">
               <CardContent className="p-6">
                 <Shield className="h-12 w-12 text-sos-lime mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">FasterCapital Backed</h3>
-                <p className="text-sm text-muted-foreground">Accelerated by a trusted investment firm</p>
+                <h3 className="font-semibold mb-2">100+ Databases</h3>
+                <p className="text-sm text-muted-foreground">Law enforcement and insurance sources</p>
               </CardContent>
             </Card>
             <Card className="text-center border-sos-orange/20">
@@ -64,7 +64,7 @@ export const TrustBuildingFAQ = () => {
                       <div className="flex items-center gap-2 p-4 bg-sos-lime/10 rounded-lg border border-sos-lime/20">
                         <Award className="h-5 w-5 text-sos-lime" />
                         <span className="text-sm">
-                          We are backed by FasterCapital and committed to being a service you can trust.
+                          We are committed to being a service you can trust.
                         </span>
                       </div>
                     </div>

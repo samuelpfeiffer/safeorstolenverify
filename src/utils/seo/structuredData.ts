@@ -57,11 +57,6 @@ export const createOrganizationSchema = () => {
       "jobTitle": "Head of Partnerships & Growth"
     }
   ],
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "FasterCapital",
-    "url": "https://fastercapital.com"
-  },
   "sameAs": [
     "https://twitter.com/safeorstolen",
     "https://linkedin.com/company/safeorstolen",
@@ -161,16 +156,6 @@ export const createOrganizationSchema = () => {
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
     "value": "10-50"
-  },
-  // Funding and investor signals
-  "funding": {
-    "@type": "MonetaryGrant",
-    "funder": {
-      "@type": "Organization",
-      "name": "FasterCapital",
-      "url": "https://fastercapital.com",
-      "description": "Leading startup accelerator and investment firm"
-    }
   },
   // Market opportunity signals for investors
   "potentialAction": {

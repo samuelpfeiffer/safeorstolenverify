@@ -542,27 +542,7 @@ const Index = () => {
             Independent third-party credentials you can verify yourself
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* FasterCapital */}
-            <a
-              href="https://fastercapital.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
-            >
-              <img
-                src="/images/partners/fastercapital-logo.png"
-                alt="FasterCapital accelerator logo"
-                className="h-12 w-auto mb-3"
-                loading="lazy"
-              />
-              <h3 className="text-foreground font-bold text-sm mb-1">FasterCapital</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">
-                Selected for global accelerator program to scale marketplace safety technology
-              </p>
-              <span className="mt-3 text-primary text-xs font-semibold">Accelerator Partner ↗</span>
-            </a>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Trustpilot */}
             <a
               href="https://www.trustpilot.com/review/safeorstolen.com"

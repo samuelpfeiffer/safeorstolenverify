@@ -9,8 +9,8 @@ const trustBadges = [
   },
   {
     icon: Award,
-    text: "Backed by FasterCapital",
-    description: "Accelerator program"
+    text: "100+ databases checked",
+    description: "Law enforcement and insurance sources"
   },
   {
     icon: Users,

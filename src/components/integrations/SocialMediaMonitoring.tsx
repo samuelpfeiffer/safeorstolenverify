@@ -46,7 +46,7 @@ export const SocialMediaMonitoring = ({ onWebhookTrigger }: SocialMediaMonitorin
 
 ✅ Check IMEI, VIN, serial numbers instantly
 ✅ $0.99/check or $10/month unlimited  
-✅ Backed by FasterCapital & real databases
+✅ 100+ law enforcement and insurance databases
 ✅ It's really helped me shop safely
 
 Try it: https://safeorstolen.com

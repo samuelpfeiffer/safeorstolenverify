@@ -51,7 +51,7 @@
     --shadow-card: 0 2px 8px -2px rgb(0 0 0 / 0.2), 0 0 0 1px hsl(220 12% 17% / 0.5);
     --shadow-card-hover: 0 8px 24px -4px rgb(0 0 0 / 0.35), 0 0 0 1px hsl(25 92% 53% / 0.15);
 
-    /* FasterCapital */
+    /* Partner brand */
     --fc-blue: 214 84% 45%;
     --fc-red: 0 72% 55%;
     --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));

@@ -27,13 +27,6 @@ const trustBadges = [
     bgColor: 'bg-green-400/10'
   },
   {
-    icon: Award,
-    title: 'FasterCapital Backed',
-    subtitle: 'Accelerator program graduate',
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10'
-  },
-  {
     icon: Zap,
     title: 'Instant Verification',
     subtitle: 'Results in under 3 seconds',

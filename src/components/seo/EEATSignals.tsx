@@ -37,7 +37,7 @@ export const EEATSignals = () => {
       {/* Verifiable credentials and external recognition */}
       <meta
         name="authoritativeness"
-        content="FasterCapital Acceleration Program participant since April 2025, OneValley Entrepreneurship World Cup member, Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
+        content="OneValley Entrepreneurship World Cup member, Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
       />
 
       {/* ─── Trustworthiness ────────────────────────── */}
@@ -86,7 +86,6 @@ export const EEATSignals = () => {
       <meta name="founded" content="August 2024" />
       <meta name="legal-name" content="SafeOrStolen" />
       <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
-      <meta name="funding" content="FasterCapital accelerator program participant" />
       <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
       <meta name="terms-of-service" content="https://safeorstolen.com/terms" />
     </Helmet>
