@@ -164,10 +164,6 @@ const AboutPage = () => {
                   <Users className="h-4 w-4 mr-2" />
                   5,000+ Checks Processed
                 </Badge>
-                <Badge variant="secondary" className="px-3 py-1">
-                  <Building className="h-4 w-4 mr-2" />
-                  FasterCapital Partnership
-                </Badge>
               </div>
             </div>
           </div>
@@ -193,9 +189,12 @@ const AboutPage = () => {
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   SafeOrStolen participated in the Entrepreneurship World Cup 2020.
                 </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  FasterCapital is SafeOrStolen's accelerator/incubator. SafeOrStolen joined the FasterCapital Acceleration Program in 2025.
+                </p>
                 <div className="border-t pt-4 mt-4">
                   <p className="text-muted-foreground text-sm">
-                    Backed by FasterCapital partnership · 5,000+ checks processed · Reducing crime globally
+                    Six item categories · 100+ databases · Results in about 3 seconds
                   </p>
                 </div>
               </Card>
@@ -233,26 +232,6 @@ const AboutPage = () => {
                       <p className="text-sm text-muted-foreground">
                         Selected to participate in the Entrepreneurship World Cup 2020, representing the United States, 
                         and recognized by OneValley for "innovative solutions and approach to disruption in the SaaS/Enterprise Software space."
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <Card className="p-4 border-l-4 border-l-primary">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
-                      <Rocket className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="secondary" className="text-xs">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          2024
-                        </Badge>
-                      </div>
-                      <h3 className="font-semibold text-foreground">FasterCapital Partnership</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Partnered with FasterCapital for global acceleration, expanding our reach and capabilities 
-                        to protect more buyers and sellers worldwide.
                       </p>
                     </div>
                   </div>
@@ -349,18 +328,6 @@ const AboutPage = () => {
                   <div className="text-3xl mb-2">📰</div>
                   <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">PRLog</h3>
                   <p className="text-sm text-muted-foreground">Press Releases</p>
-                </Card>
-              </a>
-              <a
-                href="https://fastercapital.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
-                  <div className="text-3xl mb-2">🚀</div>
-                  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">FasterCapital</h3>
-                  <p className="text-sm text-muted-foreground">Acceleration Partner</p>
                 </Card>
               </a>
             </div>

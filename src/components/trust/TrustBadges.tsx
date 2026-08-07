@@ -13,8 +13,8 @@ export const TrustBadges: React.FC = () => {
     },
     {
       icon: Award,
-      title: 'FasterCapital Accelerated',
-      description: 'Backed by global accelerator',
+      title: '100+ Databases',
+      description: 'Law enforcement and insurance sources',
       color: 'text-sos-orange-500'
     },
     {

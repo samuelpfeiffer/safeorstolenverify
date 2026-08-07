@@ -95,23 +95,6 @@ export const Footer: React.FC = () => {
               IMEI, VIN, serial numbers, license plates, and more.
             </p>
 
-            {/* FasterCapital Branding */}
-            <div className="flex items-center space-x-2 mb-4">
-              <Badge variant="outline" className="border-sos-lime text-sos-lime">
-                <Shield className="h-3 w-3 mr-1" />
-                FasterCapital Partnership
-              </Badge>
-            </div>
-
-            <a 
-              href="https://fastercapital.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-gray-400 hover:text-sos-lime transition-colors"
-            >
-              Funded by FasterCapital
-              <ExternalLink className="h-3 w-3 ml-1" />
-            </a>
           </div>
 
           {/* Footer Links */}

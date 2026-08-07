@@ -90,4 +90,3 @@ All AI is powered by Google Gemini 2.5 Flash (google/gemini-2.5-flash) via the L
 - Email: support@safeorstolen.com
 - Location: Peoria, Arizona, United States
 - Founded: 2017, Incorporated 2025
-- Accelerated by FasterCapital (LaunchUp Program)

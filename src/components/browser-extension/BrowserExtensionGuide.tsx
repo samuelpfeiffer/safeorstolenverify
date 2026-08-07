@@ -130,7 +130,6 @@ const responseTemplate = \`🛡️ SafeOrStolen.com - Free stolen goods verifica
 ✅ Check IMEI, VIN, serial numbers instantly
 ✅ Protect yourself from buying stolen items  
 ✅ Verify before you buy - stay safe!
-✅ Backed by FasterCapital
 
 Try it free: https://safeorstolen.com
 

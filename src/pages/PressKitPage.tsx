@@ -15,7 +15,6 @@ const PressKitPage = () => {
     { label: "Founded", value: "2024" },
     { label: "Headquarters", value: "Seattle, Washington" },
     { label: "Industry", value: "SaaS / Consumer Protection" },
-    { label: "Funding", value: "FasterCapital Partnership" },
     { label: "Items Verified", value: "5,000+" },
     { label: "Coverage", value: "50 US States + Global" }
   ];
@@ -29,10 +28,10 @@ const PressKitPage = () => {
 
   const pressReleases = [
     {
-      title: "SafeOrStolen Partners with FasterCapital",
-      date: "December 2024",
+      title: "SafeOrStolen Partners with FasterCapital to Tackle Fraud and Build Trust in the Secondhand Market",
+      date: "August 11, 2025",
       outlet: "PRLog",
-      url: "https://www.prlog.org/13053545-safeorstolen-partners-with-fastercapital.html"
+      url: "https://biz.prlog.org/SafeOrStolen/"
     },
     {
       title: "SafeOrStolen Launches Revolutionary Verification Platform",
@@ -186,7 +185,7 @@ const PressKitPage = () => {
                     50 US states with global database coverage.
                   </p>
                   <p>
-                    Founded in 2017 and backed by <strong>FasterCapital</strong>, SafeOrStolen is the 
+                    Founded in 2017, SafeOrStolen is the 
                     only solution in the market with a dedicated mobile app featuring barcode scanning 
                     technology. The platform serves individual buyers and sellers on marketplaces like 
                     Facebook Marketplace, eBay, and OfferUp, as well as businesses including pawn shops, 

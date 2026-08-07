@@ -1,6 +1,5 @@
 import { ExternalLink, Rocket, Shield, CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -18,12 +17,6 @@ export const CompactTestimonials = () => {
       type: "Press Release",
       text: "New stolen item verification service aims to reduce marketplace fraud and protect consumers from unknowingly purchasing stolen property.",
       url: "https://www.prlog.org"
-    },
-    {
-      source: "FasterCapital",
-      type: "Accelerator Backing",
-      text: "SafeOrStolen accepted into FasterCapital's accelerator program to scale marketplace safety verification technology.",
-      url: "https://fastercapital.com"
     }
   ];
 
@@ -56,7 +49,7 @@ export const CompactTestimonials = () => {
               Press & Recognition
             </h2>
             <p className="text-muted-foreground">
-              Featured in press releases and backed by FasterCapital
+              Featured in published press releases
             </p>
           </div>
 
@@ -75,16 +68,6 @@ export const CompactTestimonials = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">"{mention.text}"</p>
               </Card>
             ))}
-          </div>
-
-          {/* FasterCapital Backing */}
-          <div className="text-center mb-12 p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
-            <div className="flex justify-center mb-4">
-              <FasterCapitalBranding />
-            </div>
-            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-              Selected for acceleration program to scale marketplace safety technology
-            </p>
           </div>
 
           {/* Real Value Props Instead of Fake Testimonials */}

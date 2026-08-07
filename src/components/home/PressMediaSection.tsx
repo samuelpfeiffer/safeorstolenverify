@@ -8,7 +8,7 @@ const billboardImage = '/images/billboard-campaign.jpg';
  * PressMediaSection — 2026 GEO/SEO/E-E-A-T optimized
  * All press cards are clickable with real external links and verifiable claims.
  * Stats cards link to relevant data pages.
- * Semantic TL;DR: SafeOrStolen is featured on Trustpilot (4.1 stars), Crunchbase, and backed by FasterCapital.
+ * Semantic TL;DR: SafeOrStolen is featured on Trustpilot (4.1 stars), Crunchbase, and PRLog.
  */
 export const PressMediaSection = () => {
   const pressItems = [
@@ -44,17 +44,6 @@ export const PressMediaSection = () => {
       stat: 'Press',
       statLabel: 'Media Coverage',
       cta: 'Read Releases',
-    },
-    {
-      outlet: 'FasterCapital',
-      headline: 'Backed by FasterCapital Accelerator',
-      subtext: 'SafeOrStolen partners with FasterCapital — a global startup accelerator with $500M+ in funding — to revolutionize secondhand market safety.',
-      url: '/about',
-      isExternal: false,
-      icon: '🚀',
-      stat: '$500M+',
-      statLabel: 'Accelerator AUM',
-      cta: 'Our Story',
     },
   ];
 
@@ -113,13 +102,13 @@ export const PressMediaSection = () => {
               As Featured In &amp; Recognized By
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Backed by leading accelerators, reviewed by thousands of buyers, and covered by consumer protection media.
+              Independent profiles, verified customer reviews, and published press releases.
               All claims below are verifiable — click to confirm.
             </p>
           </div>
 
           {/* Press Items Grid — all clickable */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
             {pressItems.map((item, index) => {
               const CardWrapper = item.isExternal
                 ? ({ children }: { children: React.ReactNode }) => (
@@ -207,15 +196,9 @@ export const PressMediaSection = () => {
             })}
           </div>
 
-          {/* Quote */}
+          {/* Story link */}
           <div className="mt-12 text-center">
-            <blockquote className="text-lg italic text-muted-foreground max-w-3xl mx-auto border-l-4 border-primary/30 pl-6 text-left">
-              "SafeOrStolen partners with FasterCapital to revolutionize secondhand market safety through
-              advanced verification technology — protecting buyers and sellers from the $6 billion annual
-              stolen goods economy."
-            </blockquote>
-            <p className="text-sm text-muted-foreground mt-3">
-              &mdash; FasterCapital Partnership Announcement &middot;{' '}
+            <p className="text-sm text-muted-foreground">
               <Link to="/about" className="text-primary hover:underline">Read our full story</Link>
             </p>
           </div>

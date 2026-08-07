@@ -15,18 +15,6 @@ export const HeroSection = ({ title, description }: HeroSectionProps) => {
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             {description}
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground bg-card/80 p-4 rounded-lg border border-primary/20">
-            <span className="w-2 h-2 bg-secondary rounded-full"></span>
-            <span>Accelerated by</span>
-            <a 
-              href="https://fastercapital.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors font-semibold"
-            >
-              FasterCapital
-            </a>
-          </div>
         </div>
       </div>
     </section>

@@ -69,8 +69,8 @@ export const TeamProfiles = () => {
           ))}
         </div>
 
-        {/* Team Stats & FasterCapital */}
-        <div className="grid md:grid-cols-4 gap-8 text-center mb-16">
+        {/* Team Stats */}
+        <div className="grid md:grid-cols-3 gap-8 text-center mb-16">
           <div className="p-6 bg-white/5 rounded-2xl border border-sos-orange/20">
             <div className="text-4xl font-bold text-sos-orange mb-2">25+</div>
             <div className="text-gray-300">Years Combined Experience</div>
@@ -83,43 +83,8 @@ export const TeamProfiles = () => {
             <div className="text-4xl font-bold text-sos-orange mb-2">24/7</div>
             <div className="text-gray-300">Real-time Monitoring</div>
           </div>
-          <div className="p-6 bg-white/5 rounded-2xl border border-sos-lime/20">
-            <div className="flex items-center justify-center mb-2">
-              <Rocket className="h-8 w-8 text-sos-lime" />
-            </div>
-            <div className="text-gray-300">FasterCapital Accelerated</div>
-          </div>
         </div>
 
-        {/* FasterCapital Recognition */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-sos-orange/10 to-sos-lime/10 rounded-2xl p-8 border border-sos-orange/20">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Rocket className="h-6 w-6 text-sos-orange" />
-              <h3 className="text-2xl font-bold text-white">Accelerated by FasterCapital</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto mb-6">
-              We're proud to be part of the FasterCapital acceleration program, 
-              working together to scale our mission of protecting consumers from 
-              the global stolen goods crisis.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-8">
-              <div className="flex items-center gap-3">
-                <TrendingUp className="h-6 w-6 text-sos-orange" />
-                <span className="text-white font-medium">Global Scaling</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Users className="h-6 w-6 text-sos-lime" />
-                <span className="text-white font-medium">Strategic Partnerships</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Award className="h-6 w-6 text-sos-orange" />
-                <span className="text-white font-medium">Industry Recognition</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

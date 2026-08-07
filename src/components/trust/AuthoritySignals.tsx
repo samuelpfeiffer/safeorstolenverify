@@ -10,7 +10,7 @@ interface AuthoritySignalsProps {
 const AUTHORITY_SIGNALS = [
   { icon: Shield, label: 'SOC 2 Compliant', description: 'Enterprise security standards' },
   { icon: Lock, label: '256-bit SSL', description: 'Bank-grade encryption' },
-  { icon: Award, label: 'FasterCapital Accelerated', description: 'Startup accelerator backed' },
+  { icon: Award, label: '100+ Databases', description: 'Law enforcement and insurance sources' },
   { icon: Building, label: 'US-Based', description: 'Peoria, Arizona headquarters' },
   { icon: Users, label: '10,000+ Users', description: 'Trusted by buyers & sellers' },
   { icon: Globe, label: 'All 50 States', description: 'Nationwide coverage' },

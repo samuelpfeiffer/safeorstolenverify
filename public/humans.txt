@@ -14,7 +14,6 @@
   IDE: Lovable AI Development Environment
 
 /* THANKS */
-  FasterCapital - Strategic Partnership
   Lovable - Development Platform
   Supabase - Backend Infrastructure
   Community - Bug Reports & Feedback
