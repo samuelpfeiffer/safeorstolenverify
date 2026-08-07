@@ -134,7 +134,7 @@ const NewsIndexPage = () => {
                 </p>
                 
                 <p className="mb-6">
-                  Founded in 2019, SafeOrStolen has grown to become a trusted verification service used by individual buyers, 
+                  Founded in 2017, SafeOrStolen has grown to become a trusted verification service used by individual buyers, 
                   marketplaces, pawn shops, and insurance companies. Our mobile apps for iOS and Android feature barcode 
                   scanning for instant 3-second verification, making due diligence accessible to everyone.
                 </p>

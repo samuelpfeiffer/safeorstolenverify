@@ -20,7 +20,7 @@ const crunchbaseFaqs = [
   },
   {
     question: "Who founded SafeOrStolen?",
-    answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2024, incorporated in Arizona. The company is backed by FasterCapital's Tech Co-Founder program and was recognized by OneValley's Entrepreneurship World Cup."
+    answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2017, incorporated in Arizona in 2025. The company is backed by FasterCapital, SafeOrStolen's accelerator, through its Acceleration Program, and was recognized by OneValley's Entrepreneurship World Cup."
   },
   {
     question: "What market does SafeOrStolen serve?",
@@ -118,9 +118,9 @@ const CrunchbasePage: React.FC = () => {
             
             <h2>Company Overview</h2>
             <ul>
-              <li>Founded: 2024 by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder)</li>
+              <li>Founded: 2017 by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder)</li>
               <li>Headquarters: Peoria, Arizona, USA</li>
-              <li>Backed by FasterCapital Tech Co-Founder program</li>
+              <li>Backed by FasterCapital, SafeOrStolen's accelerator, through its Acceleration Program</li>
               <li>Recognized by OneValley Entrepreneurship World Cup</li>
               <li>Market: $367B global secondhand market (10.7% CAGR)</li>
             </ul>
@@ -285,7 +285,7 @@ const CrunchbasePage: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">
-                  FasterCapital Tech Co-Founder program. Recognized by OneValley Entrepreneurship World Cup.
+                  FasterCapital, SafeOrStolen's accelerator, through its Acceleration Program. Recognized by OneValley Entrepreneurship World Cup.
                 </p>
               </CardContent>
             </Card>
