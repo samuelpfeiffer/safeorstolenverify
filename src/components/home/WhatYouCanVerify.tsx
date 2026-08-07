@@ -39,10 +39,10 @@ export const WhatYouCanVerify = () => {
     },
     {
       icon: Laptop,
-      title: 'Electronics',
+      title: 'Electronics, Power Tools & Appliances',
       subtitle: 'Serial Number Verification',
-      description: 'Verify laptops, cameras, gaming consoles, smartwatches, drones. Check against police databases and manufacturer records.',
-      items: ['Laptops (Dell, HP, MacBook)', 'Cameras (Canon, Nikon, Sony)', 'Gaming consoles', 'Smartwatches', 'Drones & Tech'],
+      description: 'Verify laptops, cameras, gaming consoles, power tools, and appliances. Check against police databases and manufacturer records.',
+      items: ['Laptops (Dell, HP, MacBook)', 'Cameras (Canon, Nikon, Sony)', 'Gaming consoles', 'Power tools (DeWalt, Milwaukee)', 'Appliances (Samsung, LG, Whirlpool)'],
       link: '/serial-number-checker',
       image: electronicsLaptops,
       cta: 'Check Serial Free',
