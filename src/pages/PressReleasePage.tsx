@@ -9,22 +9,22 @@ import { Newspaper, Calendar, ExternalLink, ArrowRight, Download, Mail } from 'l
 export default function PressReleasePage() {
   const pressReleases = [
     {
-      date: 'January 2026',
-      title: 'SafeOrStolen Launches Mobile App for Instant Stolen Item Verification',
-      summary: 'New app allows buyers to verify phones, vehicles, and electronics in seconds before purchasing on Facebook Marketplace, Craigslist, and other platforms.',
-      link: 'https://www.prlog.org/13056163-safeorstolen-launches-mobile-app-for-instant-stolen-item-verification.html'
+      title: 'SafeOrStolen Partners with FasterCapital to Tackle Fraud and Build Trust in the Secondhand Market',
+      outlet: 'PRLog',
+      date: 'August 11, 2025',
+      url: 'https://biz.prlog.org/SafeOrStolen/'
     },
     {
-      date: 'December 2025',
-      title: 'SafeOrStolen Partners with FasterCapital Tech Co-Founder Program',
-      summary: 'Strategic partnership accelerates development of comprehensive stolen goods verification platform.',
-      link: 'https://fastercapital.com/startup/safeorstolen'
+      title: 'SafeOrStolen Partners with FasterCapital to Secure Secondhand Market Worldwide',
+      outlet: 'PRLog',
+      date: 'September 11, 2025',
+      url: 'https://www.prlog.org/13098918-safeorstolen-partners-with-fastercapital-to-secure-secondhand-market-worldwide.html'
     },
     {
-      date: 'November 2025',
-      title: 'SafeOrStolen Recognized by OneValley as Top Emerging Startup',
-      summary: 'Innovative approach to secondhand market safety earns recognition from leading startup accelerator.',
-      link: '/news/onevalley-recognition'
+      title: 'SafeOrStolen Partners with FasterCapital to Launch Web App Platform for Trusted Secondhand Verification',
+      outlet: 'IssueWire',
+      date: 'October 11, 2025',
+      url: 'https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904'
     }
   ];
 
@@ -64,14 +64,13 @@ export default function PressReleasePage() {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                       <Calendar className="h-4 w-4" />
-                      {pr.date}
+                      {pr.date} · {pr.outlet}
                     </div>
                     <h2 className="text-xl font-bold mb-3">{pr.title}</h2>
-                    <p className="text-muted-foreground mb-4">{pr.summary}</p>
-                    <a 
-                      href={pr.link} 
-                      target={pr.link.startsWith('http') ? '_blank' : '_self'}
-                      rel={pr.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    <a
+                      href={pr.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center text-primary hover:underline"
                     >
                       Read Full Release <ExternalLink className="ml-2 h-4 w-4" />
