@@ -35,7 +35,7 @@ export const GlobalSEOProvider: React.FC = () => {
   return (
     <Helmet>
       {/* ─── Global Site Identity ─────────────────────── */}
-      <meta name="author" content="SafeOrStolen LLC" />
+      <meta name="author" content="SafeOrStolen" />
       <meta name="application-name" content="SafeOrStolen" />
       <meta name="generator" content="SafeOrStolen Platform 2026" />
 

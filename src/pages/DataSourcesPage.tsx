@@ -306,7 +306,7 @@ export default function DataSourcesPage() {
     "description": "Aggregated stolen item database combining 100+ law enforcement, insurance, carrier, and community sources for real-time verification of IMEI numbers, VIN numbers, and serial numbers.",
     "publisher": {
       "@type": "Organization",
-      "name": "SafeOrStolen LLC",
+      "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
     "url": "https://safeorstolen.com/data-sources",
@@ -361,7 +361,7 @@ export default function DataSourcesPage() {
               {/* Semantic TL;DR for AI extraction */}
               <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
                 <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
-                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including FBI NCIC, GSMA (15 billion IMEI records), NICB, ATF eTrace, all 50 state law enforcement systems, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen LLC, Peoria, AZ.
+                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including FBI NCIC, GSMA (15 billion IMEI records), NICB, ATF eTrace, all 50 state law enforcement systems, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
               </div>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg">
@@ -570,7 +570,7 @@ export default function DataSourcesPage() {
               Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
             </p>
             <p className="text-xs text-muted-foreground mb-2">
-              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including FBI NCIC, GSMA (15B+ IMEI records), NICB, ATF eTrace, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen LLC. Verified: {new Date().toISOString().split('T')[0]}.
+              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including FBI NCIC, GSMA (15B+ IMEI records), NICB, ATF eTrace, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

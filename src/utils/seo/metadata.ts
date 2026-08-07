@@ -4,7 +4,6 @@ import type { PageMetadata } from './types';
 // Base site configuration - Corporation
 const SITE_CONFIG = {
   name: 'Safe or Stolen',
-  legalName: 'Safe or Stolen Corp.',
   tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
   description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Comprehensive multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Real-time database checks via NICB, GSMA, CheckMEND, Bike Index protecting consumers and businesses from fraud.',
   url: 'https://safeorstolen.com',

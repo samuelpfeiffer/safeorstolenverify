@@ -9,7 +9,7 @@ export const TrustEngineSchemas: React.FC = () => {
     "description": "Check if a phone, vehicle, or electronic item is reported stolen using IMEI, VIN, or serial number lookup.",
     "agent": {
       "@type": "Organization",
-      "name": "SafeOrStolen LLC",
+      "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
     "object": {
@@ -32,7 +32,7 @@ export const TrustEngineSchemas: React.FC = () => {
     "license": "https://safeorstolen.com/terms",
     "creator": {
       "@type": "Organization",
-      "name": "SafeOrStolen LLC",
+      "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
     "temporalCoverage": "2020/..",

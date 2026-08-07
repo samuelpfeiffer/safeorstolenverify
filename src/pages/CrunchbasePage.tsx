@@ -48,11 +48,11 @@ const CrunchbasePage: React.FC = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "SafeOrStolen",
-      "alternateName": ["Safe Or Stolen", "SafeOrStolen LLC"],
+      "alternateName": ["Safe Or Stolen", "SafeOrStolen"],
       "description": "AI-powered stolen item verification platform checking IMEI, VIN, and serial numbers against 100+ law enforcement, insurance, and carrier databases in 3 seconds.",
       "url": "https://safeorstolen.com",
       "logo": "https://safeorstolen.com/sos-logo.png",
-      "foundingDate": "2024-08",
+      "foundingDate": "2017",
       "founder": [
         { "@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "Founder & CEO" },
         { "@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder" }

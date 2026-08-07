@@ -50,7 +50,7 @@ export default function ForBusinesses() {
     description: 'Embeddable stolen goods verification widget for pawn shops, car dealers, electronics resellers, and auction houses. One-line integration, unlimited checks, compliance reporting.',
     provider: {
       '@type': 'Organization',
-      name: 'SafeOrStolen LLC',
+      name: 'SafeOrStolen',
       url: 'https://safeorstolen.com'
     },
     offers: {

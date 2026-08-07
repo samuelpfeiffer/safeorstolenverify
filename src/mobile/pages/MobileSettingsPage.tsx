@@ -211,7 +211,7 @@ const MobileSettingsPage: React.FC = () => {
                 Terms of Service
               </a>
             </div>
-            <p>© 2025–{new Date().getFullYear()} SafeOrStolen Inc. All rights reserved.</p>
+            <p>© 2025–{new Date().getFullYear()} SafeOrStolen. All rights reserved.</p>
           </div>
         </div>
       </div>

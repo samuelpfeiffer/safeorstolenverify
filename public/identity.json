@@ -3,7 +3,6 @@
   "@type": "Organization",
   "@id": "https://safeorstolen.com/#organization",
   "name": "SafeOrStolen",
-  "legalName": "SafeOrStolen LLC",
   "alternateName": ["SOS", "SafeOrStolen.com", "Safe Or Stolen", "SafeOrStolen AI"],
   "url": "https://safeorstolen.com",
   "logo": {

@@ -24,7 +24,7 @@ const CheckIfPhoneStolenGuide = () => {
       "headline": "How to Check If a Phone Is Stolen Before Buying (2026 Complete Guide)",
       "description": "Step-by-step guide to verify any phone isn't stolen using IMEI checks. Covers iPhone, Samsung, Android — check against GSMA, carrier blacklists, and law enforcement databases.",
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
-      "publisher": { "@type": "Organization", "name": "SafeOrStolen LLC", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
+      "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-02",
       "dateModified": "2026-03-02",
       "mainEntityOfPage": "https://safeorstolen.com/blog/check-if-phone-stolen-guide"

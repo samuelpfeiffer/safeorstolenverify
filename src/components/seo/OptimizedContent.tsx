@@ -182,7 +182,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       {/* Advanced SEO Tags */}
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
       <meta name="author" content="SafeOrStolen Team" />
-      <meta name="copyright" content={`© 2025–${new Date().getFullYear()} SafeOrStolen Inc. All rights reserved.`} />
+      <meta name="copyright" content={`© 2025–${new Date().getFullYear()} SafeOrStolen. All rights reserved.`} />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       

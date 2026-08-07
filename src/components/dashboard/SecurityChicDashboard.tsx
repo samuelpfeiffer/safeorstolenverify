@@ -291,7 +291,7 @@ export const SecurityChicDashboard: React.FC = () => {
               AI Discovery Context &mdash; llms.txt v1.1 · identity.json · ai-plugin.json
             </summary>
             <pre className="mt-3 text-[10px] text-muted-foreground/70 font-mono leading-relaxed whitespace-pre-wrap bg-muted/30 rounded-lg p-4 border border-border/50">
-{`# SafeOrStolen LLC — llms.txt v1.1 (Jan 2026 spec)
+{`# SafeOrStolen — llms.txt v1.1 (Jan 2026 spec)
 # Canonical: https://safeorstolen.com/llms.txt
 
 > SafeOrStolen is a consumer protection platform that verifies if secondhand

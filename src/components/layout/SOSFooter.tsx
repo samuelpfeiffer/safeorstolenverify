@@ -290,7 +290,7 @@ export const SOSFooter: React.FC = () => {
         {/* Copyright */}
         <div className="border-t border-border py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>© 2025–{year} SafeOrStolen Inc. All rights reserved.</p>
+            <p>© 2025–{year} SafeOrStolen. All rights reserved.</p>
             <p className="text-xs">Protecting buyers and sellers across the United States.</p>
           </div>
         </div>

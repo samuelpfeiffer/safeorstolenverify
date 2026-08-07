@@ -15,7 +15,7 @@ const FreeVINLookupGuide = () => {
       "@type": "Article",
       "headline": "Free VIN Lookup 2026 - Check Any Vehicle Before Buying",
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
-      "publisher": { "@type": "Organization", "name": "SafeOrStolen LLC", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
+      "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-01",
       "dateModified": "2026-03-02",
       "description": "Free VIN lookup guide for 2026. Check if a vehicle is stolen, has a salvage title, or outstanding liens. Verify any car, truck, motorcycle, or RV before buying.",
