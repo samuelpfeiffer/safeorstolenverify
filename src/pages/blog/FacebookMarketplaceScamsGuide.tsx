@@ -22,7 +22,7 @@ const FacebookMarketplaceScamsGuide = () => {
       "headline": "Facebook Marketplace Scams: 12 Red Flags & How to Protect Yourself (2026)",
       "description": "Complete guide to identifying and avoiding Facebook Marketplace scams in 2026. Learn 12 red flags, how to verify items aren't stolen, and protect yourself from fraud.",
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
-      "publisher": { "@type": "Organization", "name": "SafeOrStolen LLC", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
+      "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-02",
       "dateModified": "2026-03-02",
       "mainEntityOfPage": "https://safeorstolen.com/blog/facebook-marketplace-scams-guide"

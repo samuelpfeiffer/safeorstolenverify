@@ -147,7 +147,7 @@ export default function ForSellers() {
       "@type": "Service",
       "name": "SafeOrStolen Seller Verification",
       "serviceType": "Item Verification for Sellers",
-      "provider": { "@type": "Organization", "name": "SafeOrStolen LLC", "url": "https://safeorstolen.com" },
+      "provider": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
       "areaServed": "United States",
       "description": "Verify items before selling to prove legitimacy, build buyer trust, and command higher prices.",
       "offers": [

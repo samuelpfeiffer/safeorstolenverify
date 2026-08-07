@@ -61,7 +61,7 @@ const YouTubePage: React.FC = () => {
     "dateModified": FRESHNESS_DATE,
     "author": {
       "@type": "Organization",
-      "name": "SafeOrStolen LLC",
+      "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
     "mainEntity": {
@@ -105,7 +105,7 @@ const YouTubePage: React.FC = () => {
         "name": "Who is Kelly McEvoy and why does she run SafeOrStolen's YouTube?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Kelly McEvoy is the co-founder of SafeOrStolen LLC and the on-camera host of the @safeorstolenoffically YouTube channel. She created the channel to provide free, accessible education on protecting buyers and sellers in the secondhand marketplace. Kelly's videos are deliberately short (under 60 seconds) and demonstrate real-world verification steps using the SafeOrStolen tool. The channel also supports the @safeorstolen brand handle for broader audience reach."
+          "text": "Kelly McEvoy is the co-founder of SafeOrStolen and the on-camera host of the @safeorstolenoffically YouTube channel. She created the channel to provide free, accessible education on protecting buyers and sellers in the secondhand marketplace. Kelly's videos are deliberately short (under 60 seconds) and demonstrate real-world verification steps using the SafeOrStolen tool. The channel also supports the @safeorstolen brand handle for broader audience reach."
         }
       },
       {

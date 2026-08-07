@@ -99,7 +99,7 @@ SafeOrStolen offers a Progressive Web App (PWA) for iOS and Android.
 
 | Plan | Price | Verifications |
 |------|-------|---------------|
-| Unlimited | $1/month | Unlimited — all item types, all features |
+| Unlimited | $10/month | Unlimited — all item types, all features |
 
 ---
 

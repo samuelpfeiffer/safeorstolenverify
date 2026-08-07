@@ -26,7 +26,7 @@ export const PressMediaSection = () => {
     {
       outlet: 'Crunchbase',
       headline: 'Company Profile & Funding History',
-      subtext: 'SafeOrStolen LLC is a consumer protection technology company based in Peoria, AZ. Founded by Samuel Pfeiffer and Kelly McEvoy.',
+      subtext: 'SafeOrStolen is a consumer protection technology company based in Peoria, AZ. Founded by Samuel Pfeiffer and Kelly McEvoy.',
       url: '/crunchbase',
       isExternal: false,
       icon: '📊',

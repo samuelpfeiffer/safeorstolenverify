@@ -44,7 +44,7 @@ export const EEATSignals = () => {
       {/* Concrete, verifiable trust indicators */}
       <meta
         name="trustworthiness"
-        content="HTTPS encrypted platform, privacy-first architecture (no personal data stored beyond verification window), transparent pricing published at safeorstolen.com/pricing, full Terms of Service and Privacy Policy published, company registered as SafeOrStolen LLC in Arizona"
+        content="HTTPS encrypted platform, privacy-first architecture (no personal data stored beyond verification window), transparent pricing published at safeorstolen.com/pricing, full Terms of Service and Privacy Policy published, company registered as SafeOrStolen in Arizona"
       />
 
       {/* ─── Verifiable External Profiles ───────────── */}
@@ -84,7 +84,7 @@ export const EEATSignals = () => {
 
       {/* ─── Business Identity ───────────────────────── */}
       <meta name="founded" content="August 2024" />
-      <meta name="legal-name" content="SafeOrStolen LLC" />
+      <meta name="legal-name" content="SafeOrStolen" />
       <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
       <meta name="funding" content="FasterCapital accelerator program participant" />
       <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />

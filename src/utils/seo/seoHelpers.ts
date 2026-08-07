@@ -307,8 +307,8 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     type: 'website'
   },
   'about-company': {
-    title: 'About SafeOrStolen LLC - Company Information & Leadership',
-    description: 'Learn about SafeOrStolen LLC, our mission, leadership team, and commitment to transparency. Headquartered in Peoria, Arizona, serving users worldwide.',
+    title: 'About SafeOrStolen - Company Information & Leadership',
+    description: 'Learn about SafeOrStolen, our mission, leadership team, and commitment to transparency. Headquartered in Peoria, Arizona, serving users worldwide.',
     keywords: 'SafeOrStolen company, about us, leadership team, company information, Samuel Pfeiffer, Arizona LLC',
     type: 'website'
   },
@@ -325,9 +325,9 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     type: 'website'
   },
   'company-verification': {
-    title: 'Official Company Verification - SafeOrStolen LLC | Peoria, Arizona',
-    description: 'Official verification: SafeOrStolen LLC is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company.',
-    keywords: 'SafeOrStolen LLC, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification, Arizona business, Samuel Pfeiffer',
+    title: 'Official Company Verification - SafeOrStolen | Peoria, Arizona',
+    description: 'Official verification: SafeOrStolen is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company.',
+    keywords: 'SafeOrStolen, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification, Arizona business, Samuel Pfeiffer',
     type: 'website'
   },
   'trust-verification': {

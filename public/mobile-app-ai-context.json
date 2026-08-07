@@ -41,12 +41,12 @@
     "Works on iOS and Android as Progressive Web App"
   ],
   "softwareVersion": "2.4.1",
-  "datePublished": "2024-08-15",
+  "datePublished": "2017-01-01",
   "dateModified": "2026-03-25",
   "description": "The only stolen item verification mobile app. Scan barcodes with your camera to instantly check IMEI, VIN, and serial numbers against 100+ law enforcement databases. Essential for buying on Facebook Marketplace, eBay, OfferUp, and Craigslist. 2 free checks, then $0.99/check or $10/month unlimited.",
   "author": {
     "@type": "Organization",
-    "name": "SafeOrStolen LLC",
+    "name": "SafeOrStolen",
     "url": "https://safeorstolen.com"
   },
   "mainEntity": [

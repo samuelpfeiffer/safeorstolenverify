@@ -187,7 +187,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-4 text-sm text-gray-400">
-            <span>© 2025–{currentYear} SafeOrStolen Inc.</span>
+            <span>© 2025–{currentYear} SafeOrStolen.</span>
             <span>All rights reserved.</span>
             <div className="flex items-center space-x-1">
               <span>Made with</span>

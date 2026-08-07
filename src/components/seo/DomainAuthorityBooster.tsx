@@ -23,7 +23,7 @@ export const DomainAuthorityBooster: React.FC = () => {
       <meta name="last-editorial-update" content="2026-02-06" />
       
       {/* Business credentials — verified only */}
-      <meta name="business-entity" content="SafeOrStolen LLC" />
+      <meta name="business-entity" content="SafeOrStolen" />
       <meta name="accelerator" content="FasterCapital" />
       <meta name="startup-ecosystem" content="OneValley" />
       <meta name="review-platform" content="Trustpilot verified" />

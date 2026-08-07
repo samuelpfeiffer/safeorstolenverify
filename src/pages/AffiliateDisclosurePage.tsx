@@ -17,7 +17,7 @@ const AffiliateDisclosurePage: React.FC = () => {
     "lastReviewed": "2026-03-09",
     "about": {
       "@type": "Organization",
-      "name": "SafeOrStolen LLC",
+      "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     }
   };
@@ -50,7 +50,7 @@ const AffiliateDisclosurePage: React.FC = () => {
             </CardHeader>
             <CardContent className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                SafeOrStolen LLC ("we," "us," "our") is committed to transparency about how we generate revenue. 
+                SafeOrStolen ("we," "us," "our") is committed to transparency about how we generate revenue. 
                 Our primary revenue comes from verification subscriptions ($0.99/check or $10/month unlimited). 
                 Additionally, when an item is verified as clean, we may recommend complementary third-party services 
                 through affiliate partnerships.
@@ -180,7 +180,7 @@ const AffiliateDisclosurePage: React.FC = () => {
             <CardContent className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 In accordance with the Federal Trade Commission's (FTC) guidelines on endorsements and testimonials 
-                (16 CFR Part 255), we disclose that SafeOrStolen LLC has affiliate relationships with the companies 
+                (16 CFR Part 255), we disclose that SafeOrStolen has affiliate relationships with the companies 
                 mentioned on this website. We may receive compensation when you click on links and/or purchase products 
                 or services from our partners.
               </p>

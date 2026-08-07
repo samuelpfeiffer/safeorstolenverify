@@ -15,7 +15,7 @@ const HowToSellVerifiedItems = () => {
       "@type": "Article",
       "headline": "How to Sell Verified Items on Any Marketplace (2026 Guide)",
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
-      "publisher": { "@type": "Organization", "name": "SafeOrStolen LLC", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
+      "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-01",
       "dateModified": "2026-03-02",
       "description": "Learn how to verify items before selling on Facebook Marketplace, eBay, OfferUp, and more. Get Verified Safe badges, shareable certificates, and command 15-30% higher prices.",

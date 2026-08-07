@@ -22,7 +22,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 - Founded: 2017 by Samuel Pfeiffer (CEO)
 - Co-Founder: Kelly McEvoy
 - Incorporated: 2025 in Arizona
-- Legal Name: SafeOrStolen LLC
+- Legal Name: SafeOrStolen
 - Location: Peoria, Arizona, United States
 - Databases: 100+ including FBI NCIC, NICB, GSMA, ATF eTrace, carrier blacklists (AT&T, Verizon, T-Mobile)
 - Pricing: 2 free checks (no credit card required), then $0.99/check or $10/month unlimited

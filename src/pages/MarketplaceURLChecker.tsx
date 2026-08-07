@@ -108,7 +108,7 @@ const serviceSchema = {
   "description": "AI-powered tool that analyzes marketplace listing URLs to detect stolen items. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check 100+ stolen property databases.",
   "provider": {
     "@type": "Organization",
-    "name": "SafeOrStolen LLC",
+    "name": "SafeOrStolen",
     "url": "https://safeorstolen.com"
   },
   "serviceType": "Marketplace Listing Verification",
