@@ -146,7 +146,7 @@ export const CheckStolenFirearm = () => (
   <StolenCheckLanding
     itemType="Firearm"
     title="Is This Gun Stolen? Free Serial Number Check"
-    description="Check if a firearm is stolen before you buy. Enter the serial number and verify against stolen gun databases. Stay legal and protected."
+ description="Check if a firearm is stolen before you buy. Enter the serial number and verify against stolen gun databases. Stay legal and protected."
     keywords={[
       'is this gun stolen',
       'check if firearm is stolen',

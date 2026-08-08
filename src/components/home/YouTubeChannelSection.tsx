@@ -55,7 +55,7 @@ const topics = [
   {
     icon: Wrench,
     title: 'Serial Number Checks',
-    desc: 'Verify laptops, tools, bikes, firearms, and electronics using serial numbers against police reports, BikeIndex, and insurance theft databases.',
+ desc: 'Verify laptops, tools, bikes, firearms, and electronics using serial numbers against police reports, BikeIndex, and insurance theft databases.',
     link: '/serial-number-checker',
     stat: '100+ item types'
   },

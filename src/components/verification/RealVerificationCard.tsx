@@ -19,6 +19,7 @@ import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
 import { CertifiedSafeBadge } from './CertifiedSafeBadge';
 import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 import { ShareAfterVerification } from '@/components/growth';
+import { FirearmSourceDisclosure, isFirearmItemType } from './FirearmSourceDisclosure';
 
 interface RealVerificationCardProps {
   verificationResult?: VerificationResult;
@@ -193,6 +194,10 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
                 ))}
               </div>
             </div>
+          )}
+
+          {isFirearmItemType(verificationResult.item_type) && (
+            <FirearmSourceDisclosure className="border-t pt-4" />
           )}
 
           <div className="border-t pt-4 flex items-center justify-between">

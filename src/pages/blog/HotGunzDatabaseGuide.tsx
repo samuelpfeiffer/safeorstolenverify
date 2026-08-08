@@ -18,12 +18,12 @@ const HotGunzDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "Is HotGunz enough to verify a firearm?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only contains community-reported stolen firearms — it doesn't access FBI NCIC (7M+ records) or state law enforcement databases. A gun could be stolen and in NCIC but not in HotGunz if the owner never reported it there. SafeOrStolen checks HotGunz PLUS NCIC, ATF, and all 50 state databases for comprehensive coverage." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only contains community-reported stolen firearms — it doesn't access the HotGunz national stolen-firearms registry or state law enforcement databases. A gun could be stolen and in the HotGunz national stolen-firearms registry but not in HotGunz if the owner never reported it there. SafeOrStolen checks the HotGunz national stolen-firearms registry, and all the HotGunz national stolen-firearms registry for comprehensive coverage." }
       },
       {
         "@type": "Question",
         "name": "How do I search HotGunz?",
-        "acceptedAnswer": { "@type": "Answer", "text": "You can search HotGunz directly at hotgunz.com by entering a firearm serial number. However, for comprehensive coverage, use SafeOrStolen which searches HotGunz alongside FBI NCIC, ATF eTrace, and 50 state databases in a single 3-second check." }
+ "acceptedAnswer": { "@type": "Answer", "text": "You can search HotGunz directly at hotgunz.com by entering a firearm serial number. However, for comprehensive coverage, use SafeOrStolen which searches HotGunz alongside the HotGunz national stolen-firearms registry in a single 3-second check." }
       },
       {
         "@type": "Question",
@@ -78,7 +78,7 @@ const HotGunzDatabaseGuide = () => {
                 Search All Databases Including HotGunz <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">HotGunz + NCIC + ATF + 50 state databases · 2 free checks</p>
+            <p className="text-muted-foreground text-sm mt-3">HotGunz registry + serial integrity check · 2 free checks</p>
           </div>
         </section>
 
@@ -153,7 +153,7 @@ const HotGunzDatabaseGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is HotGunz enough to verify a firearm?</summary>
-                <p className="text-muted-foreground mt-2">No. HotGunz has 32K records vs NCIC's 7M+. A clean HotGunz result doesn't mean a gun isn't stolen. Use SafeOrStolen for comprehensive coverage.</p>
+                <p className="text-muted-foreground mt-2">No. HotGunz has about 32K records vs NCIC's 7M+, and NCIC is restricted to law enforcement. A clean HotGunz result doesn't mean a gun isn't stolen — for a definitive check, ask your local police non-emergency line to run the serial through NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How many guns are in HotGunz?</summary>

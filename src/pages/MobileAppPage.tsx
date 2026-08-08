@@ -55,7 +55,7 @@ const MobileAppPage = () => {
     "downloadUrl": "https://safeorstolen.com/mobile-app",
     "installUrl": "https://safeorstolen.com/mobile-app",
     "screenshot": "https://safeorstolen.com/og-image.png",
-    "featureList": "Barcode Scanner, Offline Mode, IMEI Check, VIN Lookup, License Plate Search, Firearm Verification, 100+ Databases"
+ "featureList": "Barcode Scanner, Offline Mode, IMEI Check, VIN Lookup, License Plate Search, Firearm Verification, 100+ Databases"
   };
 
   const features = [

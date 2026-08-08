@@ -73,7 +73,7 @@ export const EEATSignals = () => {
       {/* ─── Legal & Compliance Authority ────────────── */}
       <meta
         name="legal-authority"
-        content="SafeOrStolen verification supports compliance with: 18 U.S.C. § 922 (firearms commerce), 18 U.S.C. § 2315 (interstate transport of stolen goods), state pawn broker compliance requirements, marketplace due diligence obligations"
+ content="SafeOrStolen verification supports compliance with: 18 U.S.C. § 922 (firearms commerce), 18 U.S.C. § 2315 (interstate transport of stolen goods), state pawn broker compliance requirements, marketplace due diligence obligations"
       />
 
       {/* ─── Unique Features ─────────────────────────── */}

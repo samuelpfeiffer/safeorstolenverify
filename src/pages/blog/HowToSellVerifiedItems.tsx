@@ -108,7 +108,7 @@ const HowToSellVerifiedItems = () => {
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What Is a "Verified Safe" Certificate?</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              A Verified Safe certificate from SafeOrStolen proves that an item's IMEI, VIN, or serial number has been checked against 100+ databases — including FBI NCIC, GSMA (global phone blacklist), NICB (stolen vehicles), ATF eTrace (firearms), carrier blacklists from AT&T, Verizon, and T-Mobile, and all 50 U.S. state law enforcement databases. The check takes 3 seconds and produces either a downloadable PDF certificate or a shareable verification link.
+ A Verified Safe certificate from SafeOrStolen proves that an item's IMEI, VIN, or serial number has been checked against 100+ databases — including FBI NCIC, GSMA (global phone blacklist), NICB (stolen vehicles), carrier blacklists from AT&T, Verizon, and T-Mobile, and all 50 U.S. state law enforcement databases. The check takes 3 seconds and produces either a downloadable PDF certificate or a shareable verification link.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               For privacy, only the last 4 digits of the identifier are shown in the report. Your personal information is never shared with the buyer.

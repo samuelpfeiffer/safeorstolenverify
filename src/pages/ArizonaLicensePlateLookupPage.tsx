@@ -46,7 +46,7 @@ const ArizonaLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "What is TheftAZ and how does SafeOrStolen use it?",
-            answer: "TheftAZ is the Arizona Attorney General's official stolen property database. It tracks stolen vehicles, firearms, electronics, and tools reported in Arizona. SafeOrStolen searches TheftAZ as one of 100+ databases we check, giving you comprehensive stolen property verification for Arizona and nationwide."
+ answer: "TheftAZ is the Arizona Attorney General's official stolen property database. It tracks stolen vehicles, firearms, electronics, and tools reported in Arizona. SafeOrStolen searches TheftAZ as one of 100+ databases we check, giving you comprehensive stolen property verification for Arizona and nationwide."
           },
           {
             question: "Can I check if a car is stolen in Phoenix using the license plate?",

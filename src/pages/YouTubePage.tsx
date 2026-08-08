@@ -218,7 +218,7 @@ const YouTubePage: React.FC = () => {
     {
       icon: Wrench,
       title: 'Serial Number Check Guides',
-      desc: 'Verify laptops, DeWalt/Milwaukee tools, gaming consoles, bikes, and firearms using serial numbers against police reports and insurance theft databases.',
+ desc: 'Verify laptops, DeWalt/Milwaukee tools, gaming consoles, bikes, and firearms using serial numbers against police reports and insurance theft databases.',
       link: '/serial-number-checker',
       stat: '100+ item categories',
       color: 'text-orange-500'
@@ -244,7 +244,7 @@ const YouTubePage: React.FC = () => {
     },
     {
       label: 'FFL Gun Dealers',
-      text: 'Verify firearms serial numbers against FBI NCIC and ATF eTrace. SafeOrStolen is used by 500+ FFL dealers for compliance under 18 U.S.C. § 922.',
+ text: 'Verify firearms serial numbers against the HotGunz national stolen-firearms registry. SafeOrStolen is used by 500+ FFL dealers for compliance under 18 U.S.C. § 922.',
       link: '/firearms-check'
     }
   ];
@@ -563,7 +563,7 @@ const YouTubePage: React.FC = () => {
                 { to: '/vin-checker', title: 'Free VIN Checker', desc: 'Verify any vehicle for stolen status, title fraud, and history.', cta: 'Check VIN Free' },
                 { to: '/serial-number-checker', title: 'Serial Number Check', desc: 'Verify electronics, tools, bikes, and firearms by serial number.', cta: 'Check Serial Free' },
                 { to: '/app', title: 'Mobile App (PWA)', desc: 'Barcode scanning for point-of-sale verification. iOS & Android.', cta: 'Download App' },
-                { to: '/firearms-check', title: 'Firearms Verification', desc: 'FBI NCIC + ATF eTrace firearm serial number checks. Used by 500+ FFL dealers.', cta: 'Check Firearm' },
+                { to: '/firearms-check', title: 'Firearms Verification', desc: 'HotGunz stolen-firearms registry checks plus serial number integrity validation.', cta: 'Check Firearm' },
                 { to: '/facebook-marketplace-safety', title: 'Marketplace Safety Guide', desc: 'Red flags and verification steps for Facebook Marketplace buyers.', cta: 'Read Guide' }
               ].map((tool) => (
                 <Link

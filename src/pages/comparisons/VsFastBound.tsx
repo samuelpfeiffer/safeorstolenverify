@@ -130,7 +130,7 @@ const VsFastBound = () => {
                   <strong>Who it's for:</strong> Anyone — consumers buying used firearms from private sellers, pawn shops, or online marketplaces.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <strong>What it does:</strong> Verifies firearm serial numbers against databases to check if a gun has been reported stolen. Also checks phones, cars, bikes, and more.
+ <strong>What it does:</strong> Verifies firearm serial numbers against databases to check if a gun has been reported stolen. Also checks phones, cars, bikes, and more.
                 </p>
                 <p className="text-muted-foreground">
                   <strong>Advantage:</strong> No license required. Free searches available. Mobile app for in-person verification.
@@ -297,7 +297,7 @@ const VsFastBound = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  HotGunz only checks firearms. SafeOrStolen checks firearms AND phones, cars, bikes, laptops, and more. Plus, we have a mobile app for verification at meetups. See our <Link to="/hotgunz-alternative" className="text-primary hover:underline">HotGunz comparison</Link>.
+ HotGunz only checks firearms. SafeOrStolen checks firearms AND phones, cars, bikes, laptops, and more. Plus, we have a mobile app for verification at meetups. See our <Link to="/hotgunz-alternative" className="text-primary hover:underline">HotGunz comparison</Link>.
                 </p>
               </CardContent>
             </Card>

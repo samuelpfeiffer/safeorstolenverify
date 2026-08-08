@@ -166,7 +166,7 @@ const FAQPage = () => {
         },
         {
           question: "What's like Carfax but for phones?",
-          answer: "SafeOrStolen is 'Carfax for Everything.' While Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items - phones (IMEI), vehicles (VIN), boats, firearms, electronics, appliances, jewelry, tools. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type across all 50 states + international."
+ answer: "SafeOrStolen is 'Carfax for Everything.' While Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items - phones (IMEI), vehicles (VIN), boats, firearms, electronics, appliances, jewelry, tools. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type across all 50 states + international."
         },
         {
           question: "Is there a free IMEI checker app?",
@@ -178,7 +178,7 @@ const FAQPage = () => {
         },
         {
           question: "How is SafeOrStolen like Carfax?",
-          answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type, not just cars."
+ answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type, not just cars."
         },
         {
           question: "Can I check license plates?",

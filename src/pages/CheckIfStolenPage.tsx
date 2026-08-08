@@ -17,7 +17,7 @@ const CheckIfStolenPage = () => {
         'is it stolen'
       ]}
       content={{
-        intro: "Enter any identifier to check against 100+ databases. SafeOrStolen verifies phones, vehicles, license plates, bicycles, firearms, and serial-numbered goods including electronics, power tools, and appliances. Instant verification for buyers, sellers, and businesses - protect yourself before any secondhand transaction.",
+ intro: "Enter any identifier to check against 100+ databases. SafeOrStolen verifies phones, vehicles, license plates, bicycles, firearms, and serial-numbered goods including electronics, power tools, and appliances. Instant verification for buyers, sellers, and businesses - protect yourself before any secondhand transaction.",
         
         whatIs: "Checking if an item is stolen means verifying the item hasn't been reported as lost, stolen, or fraudulently obtained. Every valuable item has a unique identifier - IMEI for phones, VIN for vehicles, serial numbers for electronics, power tools, and appliances. SafeOrStolen checks these identifiers against law enforcement databases, carrier blacklists, insurance claims, and user-reported theft registries to determine if an item is safe to buy.",
         
@@ -50,7 +50,7 @@ const CheckIfStolenPage = () => {
         faqs: [
           {
             question: "What types of items can SafeOrStolen check?",
-            answer: "SafeOrStolen can verify almost any valuable item: Phones (iPhone, Samsung, Android), Vehicles (cars, trucks, motorcycles, boats), Bicycles, Laptops and tablets, Gaming consoles (PS5, Xbox, Nintendo Switch), Cameras and equipment, Power tools, Firearms, Watches and jewelry. If it has a serial number, IMEI, or VIN, we can check it."
+ answer: "SafeOrStolen can verify almost any valuable item: Phones (iPhone, Samsung, Android), Vehicles (cars, trucks, motorcycles, boats), Bicycles, Laptops and tablets, Gaming consoles (PS5, Xbox, Nintendo Switch), Cameras and equipment, Power tools, Firearms, Watches and jewelry. If it has a serial number, IMEI, or VIN, we can check it."
           },
           {
             question: "How do I find the serial number or identifier?",

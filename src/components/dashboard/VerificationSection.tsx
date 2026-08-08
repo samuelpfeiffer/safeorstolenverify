@@ -307,7 +307,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
           {selectedItemType === 'firearm' && (
             <div className="bg-yellow-50 border border-yellow-200 rounded-md p-3">
               <p className="text-sm text-yellow-800">
-                🔫 <strong>Firearm Verification:</strong> We check federal and state databases for stolen firearms. 
+ 🔫 <strong>Firearm Verification:</strong> We check federal and state databases for stolen firearms. 
                 This includes ATF, NCIC, and local law enforcement records.
               </p>
             </div>

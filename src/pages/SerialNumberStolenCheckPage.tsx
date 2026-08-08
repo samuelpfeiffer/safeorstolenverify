@@ -132,7 +132,7 @@ const SerialNumberStolenCheckPage = () => {
     <>
       <SEOHead
         title="Check If an Item Is Stolen by Serial Number | SafeOrStolen"
-        description="Use SafeOrStolen to check any item's serial number for theft risk. Protect yourself when buying used phones, tools, bikes, laptops, firearms and more in seconds."
+ description="Use SafeOrStolen to check any item's serial number for theft risk. Protect yourself when buying used phones, tools, bikes, laptops, firearms and more in seconds."
         canonical="/serial-number-stolen-check"
         keywords="serial number stolen check, check if item is stolen, stolen property lookup, serial number database, is my item stolen, stolen goods check, serial number verification"
         schemaJson={schema}

@@ -61,7 +61,7 @@ export const WhatYouCanVerify = () => {
       icon: Shield,
       title: 'Firearms',
       subtitle: 'Serial Number Verification',
-      description: 'Verify firearms serial numbers against FBI NCIC, ATF eTrace, and HotGunz. Essential for pawn shops, gun shows, and private sales.',
+ description: 'Verify firearms serial numbers against the HotGunz national stolen-firearms registry. Essential for pawn shops, gun shows, and private sales.',
       items: ['Handguns', 'Rifles', 'Shotguns', 'Antique firearms', 'Accessories'],
       link: '/firearms-check',
       badge: 'Exclusive',

@@ -4,7 +4,7 @@ const FirearmSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Firearm is Stolen - Gun Serial Number Lookup | SafeOrStolen"
-      metaDescription="Verify any firearm isn't stolen before buying. Free gun serial number check against stolen firearms database. Protect yourself legally. Instant results."
+ metaDescription="Verify any firearm isn't stolen before buying. Free gun serial number check against stolen firearms database. Protect yourself legally. Instant results."
       h1="Check if Firearm is Stolen - Free Serial Number Lookup"
       keywords={[
         'check if gun is stolen',
@@ -22,7 +22,7 @@ const FirearmSerialCheck = () => {
       itemType="Firearm"
       identifierType="Serial Number"
       heroBadge="Firearm Verification"
-      heroSubtitle="Buying a stolen firearm has serious legal consequences. Before any private sale, verify the serial number isn't in the ATF stolen firearms database. Free instant check."
+      heroSubtitle="Buying a stolen firearm has serious legal consequences. Before any private sale, verify the serial number isn't in the HotGunz national stolen-firearms registry. Free instant check."
       stats={[
         { value: "380K+", label: "Guns Stolen Yearly" },
         { value: "3 sec", label: "Verification Time" },
@@ -46,7 +46,7 @@ const FirearmSerialCheck = () => {
         "Criminal charges even if you didn't know it was stolen",
         "No legal recourse to recover your money",
         "Firearms used in crimes are traced back to current possessor",
-        "ATF maintains national stolen firearms database",
+        "Federal databases (NCIC, ATF eTrace) are restricted to law enforcement — ask police to run the serial",
         "Private sales carry the highest risk of stolen firearms"
       ]}
       faqs={[

@@ -16,7 +16,7 @@ import {
 const crunchbaseFaqs = [
   {
     question: "What is SafeOrStolen?",
-    answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems. Results are returned in approximately 3 seconds."
   },
   {
     question: "Who founded SafeOrStolen?",
@@ -113,7 +113,7 @@ const CrunchbasePage: React.FC = () => {
           </header>
           <main>
             <h1>SafeOrStolen Company Profile</h1>
-            <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems in approximately 3 seconds.</p>
+ <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems in approximately 3 seconds.</p>
             
             <h2>Company Overview</h2>
             <ul>
@@ -129,7 +129,7 @@ const CrunchbasePage: React.FC = () => {
               <li>IMEI Verification — smartphones and mobile devices</li>
               <li>VIN Lookup — cars, trucks, motorcycles, boats</li>
               <li>Serial Number Verification — electronics, tools, equipment</li>
-              <li>Firearm Serial Number Check — FBI NCIC and ATF databases</li>
+              <li>Firearm Serial Number Check — HotGunz stolen-firearms registry + serial integrity validation</li>
               <li>License Plate Lookup — all 50 US states</li>
             </ul>
             

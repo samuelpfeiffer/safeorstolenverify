@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { FirearmSourceDisclosure } from '@/components/verification/FirearmSourceDisclosure';
 
 interface FirearmResult {
   success: boolean;
@@ -165,7 +166,7 @@ const FirearmSerialTool = () => {
                       )}
                       {result.details.atfPatternValid !== undefined && (
                         <div className="flex justify-between">
-                          <span className="opacity-70">ATF Pattern Valid:</span>
+                          <span className="opacity-70">Serial Integrity Valid:</span>
                           <span className="font-medium">{result.details.atfPatternValid ? 'Yes' : 'No'}</span>
                         </div>
                       )}
@@ -176,6 +177,8 @@ const FirearmSerialTool = () => {
                       )}
                     </div>
                   )}
+
+                  <FirearmSourceDisclosure className="mt-4 pt-4 border-t border-current/10" />
                 </div>
               )}
             </CardContent>

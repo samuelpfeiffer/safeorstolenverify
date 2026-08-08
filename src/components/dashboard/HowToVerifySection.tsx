@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     question: 'Can I check a firearm serial number for stolen status?',
-    answer: 'Yes. SafeOrStolen checks firearm serial numbers against FBI NCIC, ATF eTrace, all 50 state police databases, and HotGunz (32,000+ user-reported stolen guns). Possession of a stolen firearm is a federal crime under 18 U.S.C. § 922(j) carrying up to 10 years imprisonment. Always verify before any private firearm sale.'
+ answer: 'Yes. SafeOrStolen checks firearm serial numbers against the HotGunz national stolen-firearms registry. Possession of a stolen firearm is a federal crime under 18 U.S.C. § 922(j) carrying up to 10 years imprisonment. Always verify before any private firearm sale.'
   },
 ];
 

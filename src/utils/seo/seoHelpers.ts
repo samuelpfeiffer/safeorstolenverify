@@ -170,7 +170,7 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
   },
   'search-stolen-firearms': {
     title: 'Search Stolen Firearms - Gun Serial Number Verification',
-    description: 'Search stolen firearms database. Verify gun serial numbers against national stolen weapons registries. Check before purchasing firearms.',
+ description: 'Search stolen firearms database. Verify gun serial numbers against national stolen weapons registries. Check before purchasing firearms.',
     keywords: 'search stolen firearms, stolen gun database, firearms serial check, stolen weapons lookup, gun theft verification',
     type: 'website'
   },

@@ -87,7 +87,7 @@ export const ItemSpecificQuestionsSection = () => {
               </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <strong>Serial Number:</strong> Located on frame, barrel, or receiver</li>
-                <li>• <strong>ATF Database:</strong> We check federal stolen gun registries</li>
+ <li>• <strong>The HotGunz national stolen-firearms registry Database:</strong> We check the HotGunz national stolen-firearms registry</li>
                 <li>• <strong>NCIC Database:</strong> National Crime Information Center verification</li>
                 <li>• <strong>State Records:</strong> Local law enforcement stolen firearm databases</li>
               </ul>

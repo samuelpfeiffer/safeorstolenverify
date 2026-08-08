@@ -13,7 +13,7 @@ const HotGunzAlternativePage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "HotGunz Alternative",
-      "description": "Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included.",
+ "description": "Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included.",
       "url": "https://safeorstolen.com/hotgunz-alternative"
     },
     {
@@ -33,7 +33,7 @@ const HotGunzAlternativePage = () => {
           "name": "Does SafeOrStolen include HotGunz data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, SafeOrStolen searches HotGunz's 32,000+ stolen gun records as part of our comprehensive 100+ database search."
+ "text": "Yes, SafeOrStolen searches HotGunz's 32,000+ stolen gun records as part of our comprehensive 100+ database search."
           }
         }
       ]
@@ -44,7 +44,7 @@ const HotGunzAlternativePage = () => {
     <>
       <PageSEO
         title="HotGunz Alternative - More Gun Databases | SafeOrStolen"
-        description="Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included."
+ description="Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included."
         keywords="hotgunz alternative, hotgunz safeorstolen comparison, stolen gun database, gun serial lookup, firearm verification"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -60,7 +60,7 @@ const HotGunzAlternativePage = () => {
               HotGunz Alternative
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              SafeOrStolen searches <strong>HotGunz + 100 additional databases</strong> for the most comprehensive stolen gun verification. Plus a mobile app HotGunz doesn't have.
+ SafeOrStolen searches <strong>HotGunz + 100 additional databases</strong> for the most comprehensive stolen gun verification. Plus a mobile app HotGunz doesn't have.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

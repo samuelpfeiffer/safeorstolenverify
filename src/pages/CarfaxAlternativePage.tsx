@@ -23,7 +23,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "What does SafeOrStolen have that Carfax doesn't?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks phones (IMEI), firearms, electronics, bikes, and all serial-numbered items — Carfax only checks vehicles. SafeOrStolen also has a mobile app, marketplace URL analysis, and searches law enforcement databases (FBI NCIC, state police) that Carfax doesn't access for stolen vehicle detection." }
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks phones (IMEI), firearms, electronics, bikes, and all serial-numbered items — Carfax only checks vehicles. SafeOrStolen also has a mobile app, marketplace URL analysis, and searches law enforcement databases (FBI NCIC, state police) that Carfax doesn't access for stolen vehicle detection." }
       },
       {
         "@type": "Question",

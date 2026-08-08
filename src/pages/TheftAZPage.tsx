@@ -17,7 +17,7 @@ const TheftAZPage = () => {
         'az stolen gun search'
       ]}
       content={{
-        intro: "TheftAZ is the Arizona Attorney General's official stolen property database. SafeOrStolen searches TheftAZ as one of 100+ databases we check, giving you comprehensive stolen property verification for Arizona. Free instant search for vehicles, firearms, electronics, and tools.",
+ intro: "TheftAZ is the Arizona Attorney General's official stolen property database. SafeOrStolen searches TheftAZ as one of 100+ databases we check, giving you comprehensive stolen property verification for Arizona. Free instant search for vehicles, firearms, electronics, and tools.",
         
         whatIs: "TheftAZ (theftaz.azag.gov) is the official stolen property database maintained by the Arizona Attorney General's Office. It contains records of vehicles, firearms, electronics, tools, and other property reported stolen throughout Arizona. Law enforcement agencies, pawn shops, and the public can search TheftAZ to verify if items are stolen. SafeOrStolen integrates TheftAZ data with 100+ other databases for comprehensive verification.",
         

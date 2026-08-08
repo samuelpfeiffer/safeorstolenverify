@@ -41,7 +41,7 @@ export default function ForAuctionHouses() {
         "name": "What types of auction items can SafeOrStolen verify?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen verifies vehicles (cars, trucks, motorcycles, boats), electronics (phones, laptops, cameras), heavy equipment, firearms, jewelry, art, musical instruments, power tools, and any item with a serial number or VIN."
+ "text": "SafeOrStolen verifies vehicles (cars, trucks, motorcycles, boats), electronics (phones, laptops, cameras), heavy equipment, firearms, jewelry, art, musical instruments, power tools, and any item with a serial number or VIN."
         }
       },
       {
@@ -227,7 +227,7 @@ export default function ForAuctionHouses() {
                   SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we check VINs against NICB, NMVTIS, insurance total loss records, and state DMV stolen vehicle databases covering cars, trucks, motorcycles, RVs, boats, and trailers. For <strong>electronics and phone auctions</strong>, we verify IMEI numbers against GSMA, carrier blacklists, and insurance claim registries. For <strong>equipment auctions</strong>, serial numbers are checked against law enforcement stolen property databases, LeadsOnline pawn records, and manufacturer theft registries.
                 </p>
                 <p>
-                  We also support <strong>firearms auctions</strong> with ATF serial number verification, <strong>jewelry and luxury goods</strong> with insurance claim cross-referencing, <strong>musical instruments</strong> with manufacturer serial number validation, and <strong>power tools and construction equipment</strong> with contractor theft database checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can verify it before it reaches your auction block.
+ We also support <strong>firearms auctions</strong> with serial number verification, <strong>jewelry and luxury goods</strong> with insurance claim cross-referencing, <strong>musical instruments</strong> with manufacturer serial number validation, and <strong>power tools and construction equipment</strong> with contractor theft database checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can verify it before it reaches your auction block.
                 </p>
               </div>
             </div>
@@ -261,7 +261,7 @@ export default function ForAuctionHouses() {
                 <Card>
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">What types of auction items can SafeOrStolen verify?</h3>
-                    <p className="text-muted-foreground">SafeOrStolen verifies vehicles, electronics, heavy equipment, firearms, jewelry, art, musical instruments, power tools, and any item with a serial number or VIN. One platform covers every auction category.</p>
+ <p className="text-muted-foreground">SafeOrStolen verifies vehicles, electronics, heavy equipment, firearms, jewelry, art, musical instruments, power tools, and any item with a serial number or VIN. One platform covers every auction category.</p>
                   </CardContent>
                 </Card>
                 <Card>

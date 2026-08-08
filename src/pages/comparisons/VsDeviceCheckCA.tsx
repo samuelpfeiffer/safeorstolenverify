@@ -78,7 +78,7 @@ const VsDeviceCheckCA = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            DeviceCheck.ca only checks Canadian phones. SafeOrStolen verifies phones, cars, bikes, laptops, firearms, and more — with global coverage and a free mobile app.
+ DeviceCheck.ca only checks Canadian phones. SafeOrStolen verifies phones, cars, bikes, laptops, firearms, and more — with global coverage and a free mobile app.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

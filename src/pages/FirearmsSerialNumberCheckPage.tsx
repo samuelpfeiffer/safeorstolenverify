@@ -105,7 +105,7 @@ const FirearmsSerialNumberCheckPage = () => {
     <>
       <SEOHead
         title="Free Stolen Gun Serial Number Check | SafeOrStolen"
-        description="Enter a firearm serial number and instantly check if a gun is reported stolen. SafeOrStolen searches multiple theft signals so buyers and sellers avoid legal trouble before a transfer."
+ description="Enter a firearm serial number and instantly check if a gun is reported stolen. SafeOrStolen searches multiple theft signals so buyers and sellers avoid legal trouble before a transfer."
         canonical="/firearms-serial-number-check"
         keywords="stolen gun check, firearm serial number lookup, check if gun is stolen, gun serial number database, stolen firearm verification, NCIC gun check alternative"
         schemaJson={schema}

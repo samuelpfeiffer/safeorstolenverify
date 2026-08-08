@@ -13,12 +13,12 @@ const GunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check if a gun is stolen for free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Enter the firearm's serial number on SafeOrStolen.com. We check ATF eTrace, FBI NCIC (7+ million stolen firearms), HotGunz (32,000+ community reports), and all 50 state law enforcement databases. You get 2 free checks with no credit card required. Results in approximately 3 seconds." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the firearm's serial number on SafeOrStolen.com. We check the HotGunz national stolen-firearms registry. You get 2 free checks with no credit card required. Results in approximately 3 seconds." }
       },
       {
         "@type": "Question",
         "name": "What is the NCIC stolen gun database?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The National Crime Information Center (NCIC) is the FBI's centralized criminal justice database containing over 7 million stolen firearm records. When a gun is reported stolen to any law enforcement agency in the US, it's entered into NCIC. SafeOrStolen checks NCIC records as part of every firearm verification." }
+ "acceptedAnswer": { "@type": "Answer", "text": "The National Crime Information Center (the HotGunz national stolen-firearms registry) is the FBI's centralized criminal justice database containing over 7 million stolen firearm records. When a gun is reported stolen to any law enforcement agency in the US, it's entered into the HotGunz national stolen-firearms registry. SafeOrStolen checks the HotGunz national stolen-firearms registry as part of every firearm verification." }
       },
       {
         "@type": "Question",
@@ -37,8 +37,8 @@ const GunSerialNumberCheckGuide = () => {
       },
       {
         "@type": "Question",
-        "name": "What databases does SafeOrStolen check for firearms?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks: (1) FBI NCIC — 7+ million stolen firearm records, (2) ATF eTrace — Bureau of Alcohol, Tobacco, Firearms and Explosives trace data, (3) HotGunz — 32,000+ community-reported stolen firearms, (4) All 50 state law enforcement databases, (5) Insurance theft claims involving firearms." }
+ "name": "What databases does SafeOrStolen check for firearms?",
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks the HotGunz national stolen-firearms registry (~32,000 community-reported stolen firearms) and validates serial number integrity. NCIC and ATF eTrace are restricted to law enforcement and cannot be queried by the public." }
       },
       {
         "@type": "Question",
@@ -51,20 +51,20 @@ const GunSerialNumberCheckGuide = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How to Check if a Gun is Stolen — Free NCIC Serial Number Lookup (2026)",
+    "headline": "How to Check if a Gun is Stolen — Free Serial Number Lookup (2026)",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
     "datePublished": "2026-03-09",
     "dateModified": "2026-03-09",
-    "description": "Step-by-step guide to checking any firearm serial number against FBI NCIC, ATF, HotGunz, and state databases. Free lookup tool included.",
+ "description": "Step-by-step guide to checking any firearm serial number against the HotGunz national stolen-firearms registry. Free lookup tool included.",
     "mainEntityOfPage": "https://safeorstolen.com/blog/how-to-check-if-gun-is-stolen"
   };
 
   return (
     <>
       <PageSEO
-        title="How to Check if a Gun is Stolen — Free NCIC Serial Number Lookup (2026) | SafeOrStolen"
-        description="Check any gun serial number free against FBI NCIC (7M+ records), ATF, HotGunz, and all 50 state police databases. Step-by-step guide with free lookup tool. Verify firearms before buying."
+        title="How to Check if a Gun is Stolen — Free Serial Number Lookup (2026) | SafeOrStolen"
+ description="Check any gun serial number free against the HotGunz national stolen-firearms registry. Step-by-step guide with free lookup tool. Verify firearms before buying."
         canonical="/blog/how-to-check-if-gun-is-stolen"
         keywords="gun serial number lookup, check if gun is stolen, NCIC gun check, stolen firearm database, free gun serial number check"
         structuredData={[faqSchema, articleSchema]}
@@ -74,7 +74,7 @@ const GunSerialNumberCheckGuide = () => {
         <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Verification Guide</span>
-            <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free NCIC Serial Number Lookup</h1>
+            <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free Serial Number Lookup</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
               Before buying any firearm in a private sale, you must verify the serial number against stolen databases. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) — up to 10 years in prison. Here's how to check for free in 3 seconds.
             </p>
@@ -89,7 +89,7 @@ const GunSerialNumberCheckGuide = () => {
                 Check Gun Serial Number Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">2 free checks · ATF + NCIC + HotGunz + 50 states</p>
+            <p className="text-muted-foreground text-sm mt-3">2 free checks · HotGunz registry + serial integrity check</p>
           </div>
         </section>
 
@@ -111,9 +111,9 @@ const GunSerialNumberCheckGuide = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">Step-by-Step: How to Check a Gun Serial Number</h2>
             <ol className="space-y-4 list-decimal list-inside text-muted-foreground">
               <li><strong className="text-foreground">Locate the serial number</strong> — On handguns, check the frame near the trigger guard. On rifles/shotguns, check the receiver. If the serial number appears filed off, altered, or missing, <strong>do not purchase</strong> — possessing a firearm with an obliterated serial number is a separate federal crime (18 U.S.C. § 922(k)).</li>
-              <li><strong className="text-foreground">Go to SafeOrStolen's firearms checker</strong> — Visit <Link to="/firearms-check" className="text-primary hover:underline">safeorstolen.com/firearms-check</Link> on any device (works on mobile at gun shows).</li>
+ <li><strong className="text-foreground">Go to SafeOrStolen's firearms checker</strong> — Visit <Link to="/firearms-check" className="text-primary hover:underline">safeorstolen.com/firearms-check</Link> on any device (works on mobile at gun shows).</li>
               <li><strong className="text-foreground">Enter the serial number</strong> — Type or paste the complete serial number exactly as engraved on the firearm.</li>
-              <li><strong className="text-foreground">Review results in ~3 seconds</strong> — SafeOrStolen simultaneously checks FBI NCIC, ATF eTrace, HotGunz, all 50 state databases, and insurance theft claims.</li>
+              <li><strong className="text-foreground">Review results in ~3 seconds</strong> — SafeOrStolen checks the HotGunz national stolen-firearms registry and validates serial number integrity. It is not a federal database check — for a definitive answer, ask police to run the serial through NCIC.</li>
               <li><strong className="text-foreground">Act on the results</strong> — If clean, proceed with the purchase. If flagged as stolen, do NOT buy. Contact local law enforcement immediately.</li>
             </ol>
           </section>
@@ -122,11 +122,9 @@ const GunSerialNumberCheckGuide = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">What Databases Does SafeOrStolen Check?</h2>
             <ul className="space-y-3">
               {[
-                { name: 'FBI NCIC', desc: 'National Crime Information Center — over 7 million stolen firearm records from every law enforcement agency in the US' },
-                { name: 'ATF eTrace', desc: 'Bureau of Alcohol, Tobacco, Firearms and Explosives firearms tracing system' },
                 { name: 'HotGunz', desc: '32,000+ community-reported stolen firearms with detailed descriptions and police report numbers' },
-                { name: '50 State Databases', desc: 'State-level law enforcement stolen property databases from all 50 states and DC' },
-                { name: 'Insurance Claims', desc: 'Theft claims from major firearms insurers and homeowner policies covering firearm losses' },
+                { name: 'Serial Integrity Check', desc: 'Detects obliterated, altered, or placeholder serial numbers — a federal felony indicator under 18 U.S.C. § 922(k)' },
+                { name: 'Not checked: FBI NCIC and ATF eTrace', desc: 'These federal systems are restricted to law enforcement. No consumer service can query them. For a definitive check, contact your local police non-emergency line.' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -190,7 +188,7 @@ const GunSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check if a gun is stolen for free?</summary>
-                <p className="text-muted-foreground mt-2">Enter the serial number at safeorstolen.com/firearms-check. We check FBI NCIC, ATF, HotGunz, and all 50 state databases. 2 free checks, no credit card. Results in 3 seconds.</p>
+ <p className="text-muted-foreground mt-2">Enter the serial number at safeorstolen.com/firearms-check. We check the HotGunz national stolen-firearms registry, and all the HotGunz national stolen-firearms registry. 2 free checks, no credit card. Results in 3 seconds.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What is the NCIC stolen gun database?</summary>
@@ -209,8 +207,8 @@ const GunSerialNumberCheckGuide = () => {
                 <p className="text-muted-foreground mt-2">Yes. SafeOrStolen works on any mobile device. Open safeorstolen.com, enter the serial number, get results in 3 seconds — right at the table.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">What databases does SafeOrStolen check for firearms?</summary>
-                <p className="text-muted-foreground mt-2">FBI NCIC (7M+ records), ATF eTrace, HotGunz (32K+), all 50 state law enforcement databases, and insurance theft claims.</p>
+ <summary className="font-semibold text-foreground cursor-pointer">What databases does SafeOrStolen check for firearms?</summary>
+                <p className="text-muted-foreground mt-2">The HotGunz national stolen-firearms registry (32K+ victim-reported records), plus serial number integrity validation. NCIC and ATF eTrace are law-enforcement only and are not checked.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What should I do if a gun comes back as stolen?</summary>

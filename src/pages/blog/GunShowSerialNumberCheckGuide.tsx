@@ -13,7 +13,7 @@ const GunShowSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check a gun serial number at a gun show?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Open SafeOrStolen.com on your phone, enter the serial number engraved on the firearm, and get results in 3 seconds. SafeOrStolen checks FBI NCIC, ATF, HotGunz, and all 50 state databases. Works on any mobile device with internet access. 2 free checks, no app download required." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Open SafeOrStolen.com on your phone, enter the serial number engraved on the firearm, and get results in 3 seconds. SafeOrStolen checks the HotGunz national stolen-firearms registry, and all the HotGunz national stolen-firearms registry. Works on any mobile device with internet access. 2 free checks, no app download required." }
       },
       {
         "@type": "Question",
@@ -53,7 +53,7 @@ const GunShowSerialNumberCheckGuide = () => {
     <>
       <PageSEO
         title="How to Check a Gun Serial Number at a Gun Show (2026) | SafeOrStolen"
-        description="Step-by-step guide to verifying firearm serial numbers at gun shows using your phone. Check FBI NCIC, ATF, HotGunz in 3 seconds. Red flags to watch for. Free tool included."
+        description="Step-by-step guide to verifying firearm serial numbers at gun shows using your phone. Check the HotGunz stolen-firearms registry in 3 seconds. Red flags to watch for. Free tool included."
         canonical="/blog/gun-show-serial-number-check"
         keywords="gun show serial number check, check gun at gun show, verify firearm gun show, gun show stolen check"
         structuredData={[faqSchema, articleSchema]}
@@ -102,7 +102,7 @@ const GunShowSerialNumberCheckGuide = () => {
               <li><strong className="text-foreground">Ask to see the serial number.</strong> Any legitimate seller will let you examine the firearm and read the serial number. If they refuse, walk away immediately.</li>
               <li><strong className="text-foreground">Open SafeOrStolen on your phone.</strong> Go to safeorstolen.com/firearms-check — no app download needed.</li>
               <li><strong className="text-foreground">Enter the serial number exactly as engraved.</strong> Include all letters, numbers, and hyphens.</li>
-              <li><strong className="text-foreground">Wait 3 seconds for results.</strong> SafeOrStolen checks FBI NCIC, ATF, HotGunz, and 50 state databases simultaneously.</li>
+              <li><strong className="text-foreground">Wait 3 seconds for results.</strong> SafeOrStolen checks the HotGunz national stolen-firearms registry and validates serial number integrity. It is not a federal database check.</li>
               <li><strong className="text-foreground">Review the result.</strong> Clean = proceed with negotiation. Flagged = do NOT purchase, leave safely, contact law enforcement.</li>
             </ol>
           </section>
@@ -143,7 +143,7 @@ const GunShowSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check a gun serial number at a gun show?</summary>
-                <p className="text-muted-foreground mt-2">Open safeorstolen.com on your phone, enter the serial number, get results in 3 seconds. Checks NCIC, ATF, HotGunz, and 50 state databases. 2 free checks, no app needed.</p>
+                <p className="text-muted-foreground mt-2">Open safeorstolen.com on your phone, enter the serial number, get results in 3 seconds. Checks the HotGunz national stolen-firearms registry and validates serial integrity. 2 free checks, no app needed. For a definitive check, ask police to run the serial through NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Are private sales at gun shows legal?</summary>

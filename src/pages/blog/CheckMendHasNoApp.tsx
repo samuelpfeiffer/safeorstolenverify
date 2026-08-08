@@ -268,7 +268,7 @@ const CheckMendHasNoApp = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">5. All Item Types</h3>
             <p>
-              CheckMEND only covers electronics. SafeOrStolen verifies <strong>phones, vehicles, boats, firearms, bicycles, tools, jewelry</strong> - everything with a serial number or identifier.
+ CheckMEND only covers electronics. SafeOrStolen verifies <strong>phones, vehicles, boats, firearms, bicycles, tools, jewelry</strong> - everything with a serial number or identifier.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">6. All 50 US States + International</h3>

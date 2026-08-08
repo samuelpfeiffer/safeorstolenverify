@@ -79,7 +79,7 @@ const VsVinCheckInfo = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            VinCheck.info only checks vehicles. SafeOrStolen verifies cars, phones, bikes, laptops, and firearms — with a mobile app for marketplace verification.
+ VinCheck.info only checks vehicles. SafeOrStolen verifies cars, phones, bikes, laptops, and firearms — with a mobile app for marketplace verification.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
