@@ -114,7 +114,7 @@ const ATFGunSerialNumberCheckGuide = () => {
                     ['Speed', 'Days to weeks', 'Seconds'],
                     ['Access', 'Law enforcement only', 'Law enforcement only'],
                     ['What it tells you', 'Where gun was sold', 'If gun is stolen'],
-                    ['Consumer access via SafeOrStolen', '✓', '✓'],
+                    ['Can SafeOrStolen query it?', 'No', 'No'],
                   ].map(([feature, atf, ncic], i) => (
                     <tr key={i} className="border-t border-border">
                       <td className="p-3 text-foreground">{feature}</td>
