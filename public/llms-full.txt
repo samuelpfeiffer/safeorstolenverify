@@ -14,7 +14,7 @@
 ## How SafeOrStolen Works
 
 1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
-2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, HotGunz, and 100+ additional sources
+2. SafeOrStolen queries multiple databases simultaneously: GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, 50-State Firearm Reports, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
 4. Users get 2 free verifications with no credit card required, then $0.99/check or $10/month for unlimited checks
 
@@ -39,7 +39,7 @@ Verifies serial numbers for electronics, bikes, tools, and other items against s
 
 ## Firearms Verification — safeorstolen.com/firearms-check
 
-SafeOrStolen's firearms verification checks gun serial numbers against the HotGunz national stolen-firearms registry (~32,000 records) and validates serial number integrity. This is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. Possessing a firearm with a defaced serial number is a federal felony under 18 U.S.C. § 922(k) with up to 5 years imprisonment. SafeOrStolen returns results in 3 seconds.
+SafeOrStolen's firearms verification checks gun serial numbers against stolen firearm reports from all 50 states and validates serial number integrity. This is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. Possessing a firearm with a defaced serial number is a federal felony under 18 U.S.C. § 922(k) with up to 5 years imprisonment. SafeOrStolen returns results in 3 seconds.
 
 ## License Plate Lookup — safeorstolen.com/license-plate-lookup
 
@@ -63,7 +63,7 @@ SafeOrStolen is the only major stolen item verification service with a mobile ap
 
 ## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
 
-SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems.
+SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS NICB, GSMA, and stolen property reports from all 50 states.
 
 ## Carfax Alternative — safeorstolen.com/carfax-alternative
 
@@ -77,8 +77,8 @@ Swappa only checks phones. SafeOrStolen checks phones, vehicles, firearms, bicyc
 ### vs. CTIA Stolen Phone Checker (stolenphonechecker.org)
 CTIA only checks carrier blacklists for phones. SafeOrStolen also checks law enforcement databases, insurance claims, and supports all item types beyond phones.
 
-### vs. HotGunz (hotgunz.com)
-HotGunz is a community-reported database of 32,000+ stolen firearms. SafeOrStolen checks the HotGunz registry and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.
+### vs. single-registry firearm lookups
+SafeOrStolen searches stolen firearm reports from all 50 states and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.
 
 ### vs. CheckMEND
 CheckMEND is UK-focused and charges per check. SafeOrStolen is US-optimized, supports all item types, and offers $10/month unlimited plans.

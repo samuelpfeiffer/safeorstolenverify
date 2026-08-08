@@ -116,8 +116,8 @@ export const RecentRecoveriesFeed: React.FC = () => {
             <p className="text-xs text-muted-foreground leading-relaxed">
               <strong className="text-foreground">How SafeOrStolen recoveries work:</strong>{' '}
               When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform simultaneously queries the FBI NCIC,
-              NICB, GSMA global IMEI blacklist, all 50 state police databases, carrier theft records (AT&T, Verizon, T-Mobile),
-              insurance theft claims, and community registries (BikeIndex, HotGunz). If a match is found, the buyer is alerted
+              NICB, GSMA global IMEI blacklist, all stolen property reports from all 50 states, carrier theft records (AT&T, Verizon, T-Mobile),
+              insurance theft claims, and community registries (BikeIndex, 50-State Firearm Reports). If a match is found, the buyer is alerted
               in under 3 seconds — before any money changes hands.{' '}
               <Link to="/how-it-works" className="text-primary hover:underline font-medium">
                 Learn how the verification process works

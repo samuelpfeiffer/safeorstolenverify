@@ -150,7 +150,7 @@ export const SOSFooter: React.FC = () => {
         { label: 'vs FastBound', to: '/vs-fastbound' },
         { label: 'Carfax Alternative', to: '/carfax-alternative-free' },
         { label: 'NICB Alternative', to: '/nicb-alternative' },
-        { label: 'HotGunz Alternative', to: '/hotgunz-alternative' },
+        { label: 'Firearm Check Comparison', to: '/hotgunz-alternative' },
         { label: 'Best Checkers 2026', to: '/best-stolen-item-checkers-2026' },
       ]
     },

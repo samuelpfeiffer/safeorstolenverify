@@ -18,7 +18,7 @@ const TheftAZAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen better than TheftAZ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including TheftAZ, FBI NCIC, NICB, and all 50 state law enforcement systems. Items stolen in California, Texas, or any other state that end up for sale in Arizona would be missed by TheftAZ alone." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including TheftAZ, FBI NCIC, NICB, and stolen property reports from all 50 states. Items stolen in California, Texas, or any other state that end up for sale in Arizona would be missed by TheftAZ alone." }
       },
       {
         "@type": "Question",
@@ -52,7 +52,7 @@ const TheftAZAlternativePage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-black mb-4">TheftAZ Alternative — Arizona Stolen Property Search</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Looking for TheftAZ (theftaz.azag.gov)? SafeOrStolen searches the same Arizona Attorney General stolen property records PLUS 100+ additional databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems. More databases, faster results, easier to use.
+              Looking for TheftAZ (theftaz.azag.gov)? SafeOrStolen searches the same Arizona Attorney General stolen property records PLUS 100+ additional databases including NICB, GSMA, and stolen property reports from all 50 states. More databases, faster results, easier to use.
             </p>
           </div>
         </header>
@@ -96,7 +96,7 @@ const TheftAZAlternativePage = () => {
                     ['All 50 state databases', false, true],
                     ['Carrier blacklists (AT&T, Verizon, T-Mobile)', false, true],
                     ['Insurance theft claims', false, true],
-                    ['HotGunz (32K+ firearms)', false, true],
+                    ['Nationwide firearm theft reports', false, true],
                     ['BikeIndex (700K+ bikes)', false, true],
                     ['Mobile app', false, true],
                     ['Phones (IMEI check)', false, true],
@@ -143,7 +143,7 @@ const TheftAZAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen better than TheftAZ?</summary>
-                <p className="text-muted-foreground mt-2">SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems. Items stolen in other states that end up in Arizona would be missed by TheftAZ alone.</p>
+                <p className="text-muted-foreground mt-2">SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including NICB, GSMA, and stolen property reports from all 50 states. Items stolen in other states that end up in Arizona would be missed by TheftAZ alone.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I still use TheftAZ directly?</summary>

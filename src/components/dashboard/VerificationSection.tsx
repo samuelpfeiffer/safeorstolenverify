@@ -308,7 +308,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
             <div className="bg-yellow-50 border border-yellow-200 rounded-md p-3">
               <p className="text-sm text-yellow-800">
  🔫 <strong>Firearm Verification:</strong> We check federal and state databases for stolen firearms. 
-                This includes the HotGunz national stolen-firearms registry and serial integrity analysis.
+                This includes stolen firearm reports from all 50 states and serial integrity analysis.
               </p>
             </div>
           )}

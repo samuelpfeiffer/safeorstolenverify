@@ -12,7 +12,7 @@ const CheckGunPage = () => {
       pillarName="Check Gun"
       title="Gun Serial Number Check — Is That Firearm Stolen? | SafeOrStolen"
  description="Check a firearm serial number against community stolen-gun records before a private sale. Know before you buy."
-      keywords="gun serial number check, stolen firearm lookup, HotGunz, private gun sale safety, firearm serial number search"
+      keywords="gun serial number check, stolen firearm lookup, 50-State Firearm Reports, private gun sale safety, firearm serial number search"
       h1="Check a Gun Serial Number Before You Buy"
       intro={
         <>
@@ -30,7 +30,7 @@ const CheckGunPage = () => {
             Be clear-eyed about how firearm records work in the United States. The FBI's NCIC
             stolen-gun file is accessible to law enforcement, not the public. What SafeOrStolen
             checks is <strong>community-reported stolen firearm records</strong>, including the
-            HotGunz registry — reports filed by theft victims themselves.
+            stolen firearm reports from all 50 states — including reports filed by theft victims themselves.
           </p>
           <p>That means:</p>
           <ul>

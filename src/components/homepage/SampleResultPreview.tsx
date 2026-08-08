@@ -58,7 +58,7 @@ export const SampleResultPreview = () => {
                   { name: 'AT&T Blacklist', status: 'clean' },
                   { name: 'Verizon Blacklist', status: 'clean' },
                   { name: 'T-Mobile Blacklist', status: 'clean' },
-                  { name: 'FBI NCIC', status: 'clean' },
+                  { name: status: 'clean' },
                   { name: 'Insurance Claims', status: 'clean' },
                 ].map((db) => (
                   <div key={db.name} className="flex items-center gap-2 text-xs">

@@ -46,7 +46,7 @@ const FirearmSerialTool = () => {
     setResult(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('verify-hotgunz', {
+      const { data, error } = await supabase.functions.invoke('verify-50-State Firearm Reports', {
         body: { identifier: serial.trim(), itemType: 'firearm' }
       });
 
@@ -83,7 +83,7 @@ const FirearmSerialTool = () => {
     <>
       <SEOHead
         title="Firearm Serial Check"
-        description="Check if a firearm is reported stolen using HotGunz database. Free firearm serial number lookup."
+        description="Check if a firearm is reported stolen using 50-State Firearm Reports database. Free firearm serial number lookup."
         canonical="/tools/firearm-check"
       />
 
@@ -95,7 +95,7 @@ const FirearmSerialTool = () => {
             </div>
             <h1 className="text-3xl font-bold text-foreground mb-2">Firearm Serial Check</h1>
             <p className="text-muted-foreground">
-              Verify against the HotGunz stolen firearms database
+              Verify against the nationwide stolen firearm reports
             </p>
           </div>
 
@@ -187,7 +187,7 @@ const FirearmSerialTool = () => {
           </Card>
 
           <p className="text-center text-sm text-muted-foreground mt-6">
-            Data cross-referenced with <a href="https://hotgunz.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">HotGunz</a> stolen firearms database
+            Data cross-referenced with <a href="the national stolen firearm registry" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">50-State Firearm Reports</a> stolen firearms database
           </p>
         </div>
       </div>

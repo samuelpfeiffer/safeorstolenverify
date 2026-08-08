@@ -177,7 +177,7 @@ const StolenDatabasePage = () => {
       {
         "@type": "Question",
         "name": "Is the stolen items database free to search?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching the stolen items database is completely free. For full verification against 100+ external databases (FBI NCIC, GSMA, NICB, etc.), use SafeOrStolen's verification tool — 2 free checks, then $0.99/check or $10/month unlimited." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching the stolen items database is completely free. For full verification against 100+ external databases (GSMA, NICB, etc.), use SafeOrStolen's verification tool — 2 free checks, then $0.99/check or $10/month unlimited." }
       }
     ]
   };
@@ -221,7 +221,7 @@ const StolenDatabasePage = () => {
             </ul>
             
             <h2>For Full Verification</h2>
-            <p>This database shows community-reported stolen items. For comprehensive verification against 100+ databases including FBI NCIC, GSMA, NICB, and carrier blacklists, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+            <p>This database shows community-reported stolen items. For comprehensive verification against 100+ databases including GSMA, NICB, and carrier blacklists, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
             
             <h2>Related Resources</h2>
             <ul>

@@ -40,7 +40,7 @@ const EXAMPLES = [
 ];
 
 const FEATURES = [
-  { Icon: ShieldCheck, label: '100+ databases', sub: 'FBI NCIC · NICB · GSMA · HotGunz' },
+  { Icon: ShieldCheck, label: '100+ databases', sub: 'FBI NCIC · NICB · GSMA · 50-State Firearm Reports' },
   { Icon: Zap, label: '~3 second results', sub: 'Real-time aggregated checks' },
   { Icon: Sparkles, label: 'AI follow-ups', sub: 'Ask anything about your result' },
 ];

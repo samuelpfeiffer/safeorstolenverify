@@ -18,7 +18,7 @@ const verificationSteps = [
     title: "Multi-Database Query",
     description: "Simultaneous search across verified partner databases",
     icon: Database,
-    details: "NCIC, IMEI.info, Bike Index, HotGunz, and more"
+    details: "NCIC, IMEI.info, Bike Index, 50-State Firearm Reports, and more"
   },
   {
     step: 3,
@@ -149,7 +149,7 @@ export const MethodologyTransparency: React.FC = () => {
                   Verifiable Partnerships
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Our partnerships with IMEI.info, Bike Index, HotGunz, and others are publicly 
+                  Our partnerships with IMEI.info, Bike Index, 50-State Firearm Reports, and others are publicly 
                   verifiable and documented with direct API integrations.
                 </p>
               </div>

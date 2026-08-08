@@ -88,7 +88,7 @@ const TampaLicensePlateLookupPage = () => {
                 { name: 'Tampa Police (TPD)', desc: 'City of Tampa stolen vehicle reports' },
                 { name: 'HCSO Records', desc: 'Hillsborough County Sheriff\'s Office stolen property reports' },
                 { name: 'NICB VINCheck', desc: 'Theft, total loss, and flood damage records' },
-                { name: 'FBI NCIC', desc: 'National stolen vehicle database — cross-state theft detection' },
+                { name: desc: 'National stolen vehicle database — cross-state theft detection' },
                 { name: 'Flood & Salvage', desc: 'Hurricane damage titles, salvage brands, and title washing detection' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">

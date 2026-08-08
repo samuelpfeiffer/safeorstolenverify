@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 /**
  * Honest source disclosure for firearm verification results.
  *
- * SafeOrStolen checks the HotGunz national stolen-firearms registry and
+ * SafeOrStolen checks stolen firearm reports from all 50 states and
  * validates serial number integrity. It does NOT query NCIC, ATF eTrace, or
  * state police systems — those are restricted to law enforcement.
  *
@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 export const FirearmSourceDisclosure: React.FC<{ className?: string }> = ({ className }) => (
   <div className={cn('space-y-2 text-[11px] leading-relaxed text-muted-foreground', className)}>
     <p>
-      Source: HotGunz national stolen-firearms registry (~32,000 records). This is not a federal
+      Source: stolen firearm reports from all 50 states. This is not a federal
       database check.
     </p>
     <p>

@@ -207,7 +207,7 @@ export const HomeAIHero: React.FC = () => {
 
         <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
           Paste any IMEI, VIN, serial number, license plate, or marketplace URL — or just ask a question.
-          Verified against FBI NCIC, GSMA, NICB, HotGunz and more.
+          Verified against GSMA, NICB, 50-State Firearm Reports and more.
         </p>
 
         {/* Chat panel */}

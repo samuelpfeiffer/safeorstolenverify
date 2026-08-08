@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 const faqs = [
   {
     question: "How do I verify an item via SMS text message?",
-    answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against 100+ databases including FBI NCIC, GSMA, NICB, HotGunz, and all 50 state law enforcement databases. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
+    answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against 100+ databases including GSMA, NICB, 50-State Firearm Reports, and all 50 state law enforcement databases. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
   },
   {
     question: "What types of items can I verify by text?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "How fast are SMS verification results?",
-    answer: "Most SMS verification results are returned within 3-5 seconds. Our system queries multiple databases simultaneously (FBI NCIC, GSMA, NICB, state databases) and compiles results in real-time. You'll receive a text back with the verification status almost instantly."
+    answer: "Most SMS verification results are returned within 3-5 seconds. Our system queries multiple databases simultaneously (GSMA, NICB, state databases) and compiles results in real-time. You'll receive a text back with the verification status almost instantly."
   },
   {
     question: "Can I use SMS verify at a gun show or car lot?",
@@ -118,7 +118,7 @@ const SMSVerifyPage = () => {
         <header><h1>SMS Verify — Text Any IMEI, VIN, or Serial Number to Check if Stolen</h1></header>
         <main>
           <article>
-            <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from 100+ databases including GSMA, NICB, HotGunz, carrier blacklists, and law enforcement and insurance sources.</p>
+            <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from 100+ databases including GSMA, NICB, 50-State Firearm Reports, carrier blacklists, and law enforcement and insurance sources.</p>
             <h2>How SMS Verification Works</h2>
  <p>Find the IMEI (15 digits), VIN (17 characters), or serial number on the item. Text it to our verification number. Receive instant results: CLEAN, STOLEN, or UNKNOWN. Perfect for gun shows, car lots, flea markets, pawn shops, and private sales where you need a quick answer before handing over cash.</p>
             <h2>What Can You Verify by Text?</h2>
@@ -245,7 +245,7 @@ const SMSVerifyPage = () => {
                 {[
                   { icon: <MessageSquare className="h-10 w-10" />, title: "1. Find the ID", desc: "Locate the IMEI (15 digits), VIN (17 chars), or serial number on the item" },
                   { icon: <Smartphone className="h-10 w-10" />, title: "2. Send a Text", desc: "Text the number to SafeOrStolen — works from any phone, no data needed" },
-                  { icon: <Zap className="h-10 w-10" />, title: "3. Instant Check", desc: "We query GSMA, NICB, HotGunz, and our aggregated stolen-item sources" },
+                  { icon: <Zap className="h-10 w-10" />, title: "3. Instant Check", desc: "We query GSMA, NICB, 50-State Firearm Reports, and our aggregated stolen-item sources" },
                   { icon: <CheckCircle className="h-10 w-10" />, title: "4. Get Results", desc: "Receive CLEAN ✅, STOLEN 🚨, or UNKNOWN ⚠️ within 3-5 seconds" }
                 ].map((step, i) => (
                   <Card key={i} className="text-center">
@@ -272,7 +272,7 @@ const SMSVerifyPage = () => {
 
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { title: "🔫 Gun Shows", desc: "Text any firearm serial number to check the HotGunz national stolen-firearms registry and analyze the serial for signs of alteration. Handguns, rifles, shotguns — any caliber, any manufacturer.", link: "/gun-serial-number-lookup" },
+                  { title: "🔫 Gun Shows", desc: "Text any firearm serial number to check stolen firearm reports from all 50 states and analyze the serial for signs of alteration. Handguns, rifles, shotguns — any caliber, any manufacturer.", link: "/gun-serial-number-lookup" },
                   { title: "🚗 Car Lots & Private Sales", desc: "Text the VIN from any vehicle to check NICB, NHTSA, and 50-state DMV records. Catch title-washed, salvaged, or stolen vehicles in seconds.", link: "/vin-checker" },
                   { title: "📱 Phone Meetups", desc: "Text the IMEI to check GSMA blacklists, AT&T, Verizon, T-Mobile carrier databases. Verify any iPhone, Samsung, Google Pixel before paying.", link: "/imei-checker" },
                   { title: "🏪 Flea Markets & Swap Meets", desc: "Verify electronics, tools, bikes — anything with a serial number. Text it and know within seconds if it's been reported stolen anywhere in the US.", link: "/check-electronics" },

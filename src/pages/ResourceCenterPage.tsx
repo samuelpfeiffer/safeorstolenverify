@@ -26,7 +26,7 @@ const educationalFAQs = [
   },
   {
     question: "What databases does SafeOrStolen check for verification?",
-    answer: "SafeOrStolen aggregates data from 100+ sources including: federal law enforcement records (NCIC), GSMA device registries, NICB vehicle databases, carrier blacklists (AT&T, T-Mobile, Verizon), insurance claims databases, BikeIndex for bicycles, HotGunz for firearms, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
+    answer: "SafeOrStolen aggregates data from 100+ sources including: GSMA device registries, NICB vehicle databases, carrier blacklists (AT&T, T-Mobile, Verizon), insurance claims databases, BikeIndex for bicycles, nationwide firearm theft reports, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
   },
   {
     question: "Are auction houses required to verify items before selling?",

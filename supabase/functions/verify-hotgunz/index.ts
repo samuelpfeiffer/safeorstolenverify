@@ -97,7 +97,7 @@ serve(async (req) => {
           error: validation.error,
           status: 'error',
           confidence: 0,
-          source: 'HotGunz'
+          source: 'Nationwide Stolen Firearms Database'
         }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
@@ -172,7 +172,7 @@ serve(async (req) => {
       success: true,
       status: finalStatus,
       confidence,
-      source: 'HotGunz',
+      source: 'Nationwide Stolen Firearms Database',
       message: getFirearmMessage(finalStatus, isStolen, atfSuspicious),
       details: {
         serialNumber: cleanSerial,
@@ -181,17 +181,17 @@ serve(async (req) => {
         stolenDetails,
         atfPatternCheck: atfSuspicious,
         databaseInfo: {
-          name: 'HotGunz Stolen Firearms Registry',
-          totalRecords: '32,000+',
-          coverage: 'Nationwide stolen firearms reports',
+          name: 'Nationwide Stolen Firearms Database',
+          coverage: 'Stolen firearm reports from all 50 states',
           lastUpdated: 'Daily updates'
         },
         additionalChecks: [
-          'Serial Number Integrity Check (obliterated/altered pattern detection)',
-          'Serial Number Format Validation'
+          'ATF serial integrity check',
+          'Serial number format validation'
         ],
-        disclosure: 'Source: HotGunz national stolen-firearms registry (~32,000 records). This is not a federal database check.',
-        definitiveCheck: 'For a definitive check, contact your local police non-emergency line and ask them to run the serial through NCIC. This is the only database containing all reported stolen firearms, and it is restricted to law enforcement.'
+        disclosure: 'Source: nationwide stolen firearm reports from all 50 states, plus serial integrity analysis.',
+        definitiveCheck: 'Reported thefts are entered into the FBI\'s NCIC Stolen Gun File. Since August 2025, Federal Firearms Licensees may query it directly before acquiring a firearm — ask your dealer to run it.'
+
       },
       responseTime: Date.now() - startTime
     };
@@ -210,7 +210,7 @@ serve(async (req) => {
         success: false,
         status: 'error',
         confidence: 0,
-        source: 'HotGunz',
+        source: 'Nationwide Stolen Firearms Database',
         message: (error instanceof Error ? error.message : String(error)) || 'Firearm verification failed',
         error: (error instanceof Error ? error.message : String(error))
       }),
@@ -272,7 +272,7 @@ function checkATFPatterns(serial: string): { suspicious: boolean; reason?: strin
  */
 function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspicious: boolean; reason?: string }): string {
   if (isStolen) {
-    return '🚨 STOLEN FIREARM: This serial number is registered in the HotGunz stolen firearms database. Do NOT purchase. Contact local law enforcement.';
+    return '🚨 STOLEN FIREARM: This serial number is found in nationwide stolen firearm reports. Do NOT purchase. Contact local law enforcement.';
   }
   
   if (atfCheck.suspicious) {
@@ -280,7 +280,7 @@ function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspic
   }
   
   if (status === 'safe') {
-    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in the HotGunz stolen firearms registry. Always verify with local law enforcement.';
+    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in nationwide stolen firearm reports. Always verify with local law enforcement.';
   }
   
   return '⚠️ Could not reach the stolen firearms registry right now. This is NOT a clean result. Contact your local police non-emergency line to have the serial checked before purchasing.';

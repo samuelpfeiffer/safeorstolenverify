@@ -30,7 +30,7 @@ export const EEATSignals = () => {
       {/* Specific domain knowledge, not vague claims */}
       <meta
         name="expertise"
-        content="IMEI verification (GSMA TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (HotGunz stolen-firearms registry), bicycle verification (BikeIndex, 529 Garage), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
+        content="IMEI verification (GSMA TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (nationwide stolen firearm reports), bicycle verification (BikeIndex, 529 Garage), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
       />
 
       {/* ─── Authoritativeness ──────────────────────── */}
@@ -61,7 +61,7 @@ export const EEATSignals = () => {
       {/* ─── Data Sources — Specific, not vague ─────── */}
       <meta
         name="data-sources"
-        content="GSMA TAC Database (15B+ IMEI records), NICB VINCheck, FBI NCIC, BikeIndex API, 529 Garage, HotGunz, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), NMVTIS, all 50 state law enforcement databases, 500+ insurance claim databases, Interpol stolen property records"
+        content="GSMA TAC Database (15B+ IMEI records), NICB VINCheck, FBI NCIC, BikeIndex API, 529 Garage, 50-State Firearm Reports, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), NMVTIS, all 50 state law enforcement databases, 500+ insurance claim databases, Interpol stolen property records"
       />
 
       {/* ─── Service Scope — factual enumeration ─────── */}

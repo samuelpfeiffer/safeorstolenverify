@@ -45,7 +45,7 @@ const ForConsumersPage = () => {
     },
     {
       question: "What items can I verify with SafeOrStolen?",
- answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including FBI NCIC, GSMA, NICB, carrier blacklists, and all 50 state law enforcement systems."
+ answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including GSMA, NICB, carrier blacklists, and stolen property reports from all 50 states."
     },
     {
       question: "Is there a SafeOrStolen mobile app?",
@@ -90,7 +90,7 @@ const ForConsumersPage = () => {
           </header>
           <main>
             <h1>Buy Secondhand with Confidence</h1>
-            <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against 100+ stolen item databases before you hand over cash. SafeOrStolen checks FBI NCIC, GSMA, NICB, carrier blacklists, and all 50 state law enforcement systems in 3 seconds.</p>
+            <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against 100+ stolen item databases before you hand over cash. SafeOrStolen checks GSMA, NICB, carrier blacklists, and stolen property reports from all 50 states in 3 seconds.</p>
             
             <h2>What Can You Verify?</h2>
             <ul>

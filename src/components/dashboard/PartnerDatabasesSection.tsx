@@ -53,7 +53,7 @@ const PARTNERS = [
     stat: 'All 50 states',
   },
   {
-    name: 'HotGunz',
+    name: '50-State Firearm Reports',
     category: 'Firearms',
     type: 'community',
     detail: 'National stolen-firearms registry of victim-reported guns. Federal systems (NCIC, ATF eTrace) are law-enforcement only and are not queried.',

@@ -67,7 +67,7 @@ export const BusinessPageTemplate = ({
     },
     {
       question: `How quickly does SafeOrStolen return results?`,
-      answer: `Results are returned in approximately 3 seconds. SafeOrStolen simultaneously queries 100+ databases including FBI NCIC, NICB, GSMA, carrier blacklists, and state law enforcement records.`
+      answer: `Results are returned in approximately 3 seconds. SafeOrStolen simultaneously queries 100+ databases including NICB, GSMA, carrier blacklists, and state law enforcement records.`
     }
   ];
   

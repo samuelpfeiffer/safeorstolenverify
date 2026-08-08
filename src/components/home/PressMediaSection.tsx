@@ -52,7 +52,7 @@ export const PressMediaSection = () => {
       icon: Globe,
       label: '50M+ Records',
       description: 'Verified stolen item database across 100+ sources',
-      detail: 'Cross-referenced from FBI NCIC, GSMA, NICB, ATF eTrace, all 50 state law enforcement databases, and 500+ insurance companies.',
+      detail: 'Cross-referenced from GSMA, NICB, ATF eTrace, all 50 state law enforcement databases, and 500+ insurance companies.',
       link: '/data-sources',
     },
     {
@@ -80,7 +80,7 @@ export const PressMediaSection = () => {
       icon: Shield,
       label: '100+ Databases',
       description: 'Law enforcement, insurance & carrier sources',
-      detail: 'More data sources than any competitor — including FBI, NICB, GSMA, HotGunz, all 50 state police databases, and 200+ carrier blacklists.',
+      detail: 'More data sources than any competitor — including FBI, NICB, GSMA, 50-State Firearm Reports, all stolen property reports from all 50 states, and 200+ carrier blacklists.',
       link: '/data-sources',
     },
     {

@@ -90,7 +90,7 @@ const CarfaxAlternativePage = () => {
                   {[
                     ['Stolen vehicle check', true, true],
                     ['FBI NCIC database', false, true],
-                    ['All 50 state police databases', false, true],
+                    ['All stolen property reports from all 50 states', false, true],
                     ['Accident history', true, false],
                     ['Service records', true, false],
                     ['Odometer readings', true, false],

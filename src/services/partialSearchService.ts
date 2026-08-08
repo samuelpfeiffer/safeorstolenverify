@@ -116,7 +116,7 @@ export async function partialSerialSearch(
   
   // TODO: Add more partial search sources:
   // - Internal SafeOrStolen database with pattern matching
-  // - HotGunz for firearms
+  // - nationwide firearm theft reports
   
   // Sort by similarity (highest first)
   results.sort((a, b) => b.similarity - a.similarity);
