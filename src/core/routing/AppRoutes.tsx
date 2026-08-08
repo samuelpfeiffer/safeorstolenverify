@@ -429,6 +429,8 @@ export const AppRoutes = () => {
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
         <Route path="/check-imei-stolen" element={<CheckImeiStolenPage />} />
         <Route path="/how-to-verify-a-used-item" element={<HowToVerifyAUsedItemPage />} />
+        <Route path="/methodology" element={<MethodologyPage />} />
+        <Route path="/learn" element={<LearnHubPage />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
         <Route path="/vin-check" element={<VINCheckPage />} />
         <Route path="/imei-checker-app" element={<IMEICheckerAppPage />} />
