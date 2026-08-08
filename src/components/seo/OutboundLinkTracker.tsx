@@ -140,7 +140,7 @@ export const OutboundLinkTracker: React.FC = () => {
       // Categorize referral sources
       const getSourceType = (domain: string): string => {
         if (domain.includes('google') || domain.includes('bing') || domain.includes('yahoo')) return 'search_engine';
-        if (domain.includes('facebook') || domain.includes('twitter') || domain.includes('linkedin')) return 'social_media';
+        if (domain.includes('facebook') || domain.includes('twitter')) return 'social_media';
         if (domain.includes('reddit') || domain.includes('forum')) return 'forum';
         if (domain.includes('blog') || domain.includes('news')) return 'editorial';
         return 'direct_backlink';

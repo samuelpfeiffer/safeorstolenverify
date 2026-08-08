@@ -77,7 +77,6 @@ export const botUserAgents = [
   'yandexbot',
   'facebookexternalhit',
   'twitterbot',
-  'linkedinbot',
   'whatsapp',
   'slackbot',
   'telegrambot'

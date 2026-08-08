@@ -154,13 +154,6 @@ export const generateFacebookTags = (metadata: SocialMediaMetadata) => {
   };
 };
 
-/**
- * Creates LinkedIn-optimized meta tags
- */
-export const generateLinkedInTags = (metadata: SocialMediaMetadata) => {
-  // LinkedIn uses Open Graph tags
-  return generateOpenGraphTags(metadata);
-};
 
 /**
  * Generates all social media tags

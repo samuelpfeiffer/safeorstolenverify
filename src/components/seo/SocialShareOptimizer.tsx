@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Share2, Twitter, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { Share2, Twitter, Facebook, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
@@ -66,10 +66,6 @@ export const SocialShareOptimizer = ({
     window.open(facebookUrl, '_blank', 'width=550,height=420');
   };
 
-  const shareToLinkedIn = () => {
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-    window.open(linkedInUrl, '_blank', 'width=550,height=420');
-  };
 
   const shareToWhatsApp = () => {
     const whatsappUrl = `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`;
@@ -89,38 +85,6 @@ export const SocialShareOptimizer = ({
       */}
 
       <div className="flex items-center gap-2 flex-wrap">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={shareToTwitter}
-          data-share-platform="twitter"
-          className="gap-2"
-        >
-          <Twitter className="h-4 w-4" />
-          <span className="hidden sm:inline">Tweet</span>
-        </Button>
-
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={shareToFacebook}
-          data-share-platform="facebook"
-          className="gap-2"
-        >
-          <Facebook className="h-4 w-4" />
-          <span className="hidden sm:inline">Share</span>
-        </Button>
-
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={shareToLinkedIn}
-          data-share-platform="linkedin"
-          className="gap-2"
-        >
-          <Linkedin className="h-4 w-4" />
-          <span className="hidden sm:inline">Post</span>
-        </Button>
 
         <Button
           variant="outline"

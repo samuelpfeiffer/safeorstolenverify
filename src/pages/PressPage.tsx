@@ -88,7 +88,6 @@ const PressPage = () => {
       "https://www.trustpilot.com/review/safeorstolen.com",
       "https://biz.prlog.org/SafeOrStolen/",
       "https://www.facebook.com/safeorstolen/",
-      "https://www.linkedin.com/company/safeorstolen",
       "https://www.youtube.com/@safeorstolen",
       "https://x.com/safeorstolen"
     ],

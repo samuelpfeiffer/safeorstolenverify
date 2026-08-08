@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Share2, Copy, Twitter, Facebook, Linkedin, MessageCircle, Check, Gift } from 'lucide-react';
+import { Share2, Copy, Twitter, Facebook, MessageCircle, Check, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
@@ -23,9 +23,6 @@ export const ViralShareWidget = () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`, '_blank');
   };
 
-  const shareLinkedIn = () => {
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
-  };
 
   const shareWhatsApp = () => {
     window.open(`https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`, '_blank');
@@ -42,35 +39,6 @@ export const ViralShareWidget = () => {
         SHARE
       </div>
       
-      <Button
-        size="icon"
-        variant="ghost"
-        onClick={shareTwitter}
-        className="h-10 w-10 rounded-full hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110"
-        title="Share on Twitter/X"
-      >
-        <Twitter className="h-5 w-5" />
-      </Button>
-      
-      <Button
-        size="icon"
-        variant="ghost"
-        onClick={shareFacebook}
-        className="h-10 w-10 rounded-full hover:bg-[#1877F2] hover:text-white transition-all hover:scale-110"
-        title="Share on Facebook"
-      >
-        <Facebook className="h-5 w-5" />
-      </Button>
-      
-      <Button
-        size="icon"
-        variant="ghost"
-        onClick={shareLinkedIn}
-        className="h-10 w-10 rounded-full hover:bg-[#0A66C2] hover:text-white transition-all hover:scale-110"
-        title="Share on LinkedIn"
-      >
-        <Linkedin className="h-5 w-5" />
-      </Button>
       
       <Button
         size="icon"

@@ -139,7 +139,6 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
         system: `Create engaging social media posts for SafeOrStolen.com. Return JSON array:
 [
   {"platform": "twitter", "content": "Tweet (280 chars max)", "hashtags": ["tag1", "tag2"]},
-  {"platform": "linkedin", "content": "Professional post (300 chars)", "hashtags": []}
 ]`,
         messages: [
           {

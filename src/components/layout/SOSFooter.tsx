@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Twitter, Linkedin, ChevronDown, ChevronUp } from 'lucide-react';
+import { Youtube, Twitter, ChevronDown, ChevronUp } from 'lucide-react';
 import { handleExternalNavigation } from '@/utils/navigationUtils';
 import { Logo } from '@/components/common/Logo';
 
@@ -218,7 +218,6 @@ export const SOSFooter: React.FC = () => {
                 {[
                   { icon: Youtube, url: 'https://www.youtube.com/@safeorstolen', label: 'YouTube' },
                   { icon: Twitter, url: 'https://x.com/SafeOrStolen123', label: 'X' },
-                  { icon: Linkedin, url: 'https://linkedin.com/company/safeorstolen', label: 'LinkedIn' },
                 ].map((social) => (
                   <button
                     key={social.label}

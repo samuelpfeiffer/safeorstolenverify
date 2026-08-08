@@ -137,10 +137,6 @@ export const LinkBuildingHelper: React.FC<LinkBuildingHelperProps> = ({
       <meta name="twitter:image" content={socialMeta.image} />
       <meta name="twitter:site" content="@safeorstolen" />
       
-      {/* LinkedIn sharing optimization */}
-      <meta property="linkedin:title" content={socialMeta.title} />
-      <meta property="linkedin:description" content={socialMeta.description} />
-      <meta property="linkedin:image" content={socialMeta.image} />
       
       {/* Linkable content signals */}
       <meta name="content-type" content={contentType} />

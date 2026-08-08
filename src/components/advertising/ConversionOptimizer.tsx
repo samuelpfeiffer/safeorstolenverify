@@ -71,7 +71,6 @@ export const ConversionOptimizer: React.FC = () => {
         - Facebook Pixel: Replace YOUR_PIXEL_ID with your Facebook Pixel ID
         - Microsoft Clarity: Replace YOUR_CLARITY_ID with your Clarity ID
         - Hotjar: Replace YOUR_HJID with your Hotjar ID
-        - LinkedIn: Replace YOUR_PARTNER_ID with your LinkedIn Partner ID
       */}
     </Helmet>
   );
