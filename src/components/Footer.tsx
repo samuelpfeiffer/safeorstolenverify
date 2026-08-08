@@ -10,7 +10,6 @@ const DATA_PARTNERS = [
  { name: 'carrier and theft databases', verified: true },
  { name: 'stolen bicycle databases', verified: true },
  { name: 'Stolen Firearms Databases', verified: true },
- { name: 'vehicle theft and title databases', verified: true },
 ];
 
 const Footer = () => {

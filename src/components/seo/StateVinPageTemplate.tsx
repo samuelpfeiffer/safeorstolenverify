@@ -355,8 +355,7 @@ export const StateVinPageTemplate = ({
  <h2 className="text-3xl font-bold mb-8">What Databases We Search for {state} Vehicles</h2>
  <div className="grid md:grid-cols-2 gap-4">
  {[
- { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft claims' },
- { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases' },
+ { name: 'Vehicle theft and title databases', desc: 'Theft claims, salvage and title records' },
  { name: `${state} DMV`, desc: 'Registration and title status records' },
  { name: `${state} Law Enforcement`, desc: 'Active stolen vehicle reports' },
  { name: 'Insurance Records', desc: 'Claims history across all 50 states' },
