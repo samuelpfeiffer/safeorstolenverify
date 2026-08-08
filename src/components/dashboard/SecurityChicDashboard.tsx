@@ -311,13 +311,13 @@ export const SecurityChicDashboard: React.FC = () => {
 ## Services
 - IMEI Check (phones/tablets) — 15B+ GSMA records, carrier blacklists
 - VIN Lookup (vehicles) — FBI NCIC, NICB, all 50 state DMV databases
-- Firearm Serial Check — FBI NCIC, ATF eTrace, 18 U.S.C. § 922 compliance
+- Firearm Serial Check — HotGunz national stolen-firearms registry + serial integrity analysis (NCIC and ATF eTrace are law-enforcement only)
 - Serial Number Verification — electronics, tools, bikes, jewelry, boats
 - PWA Mobile App — iOS/Android barcode scanning, point-of-sale verification
 - Pawn Broker Compliance — audit trail, timestamped certificates
 
 ## Partners
-- Data: NICB, GSMA, ATF, FBI NCIC, BikeIndex, HotGunz
+- Data: NICB, GSMA, BikeIndex, HotGunz, carrier blacklists
 
 ## Certifications
 - Trustpilot Verified Business (4.1 stars)
