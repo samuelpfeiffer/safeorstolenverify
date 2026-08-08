@@ -53,10 +53,10 @@ const PARTNERS = [
     stat: 'All 50 states',
   },
   {
-    name: '50-State Firearm Reports',
+    name: 'Stolen Firearms Databases',
     category: 'Firearms',
     type: 'community',
-    detail: 'National stolen-firearms registry of victim-reported guns. Federal systems (NCIC, ATF eTrace) are law-enforcement only and are not queried.',
+    detail: 'Stolen firearms databases. Federal systems (NCIC, ATF eTrace) are law-enforcement only and are not queried.',
     link: '/firearms-check',
     stat: '32,000+ records',
   },
@@ -147,7 +147,7 @@ export const PartnerDatabasesSection: React.FC = () => {
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Why we use 100+ sources:</strong>{' '}
                 A single stolen phone may be reported in the carrier and manufacturer blacklists but not yet in a carrier database.
-                A stolen car may be flagged by insurance (NICB) but not yet entered into NCIC. By querying all sources
+By querying all sources
                 simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and
                 protecting buyers and sellers with more complete information than any competing service.
               </p>

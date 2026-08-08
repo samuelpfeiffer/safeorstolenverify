@@ -109,7 +109,12 @@ def main():
         lines = new.split('\n')
         for i, ln in enumerate(lines):
             if KILL_SENTENCE.search(ln) and not SAFE_SKIP.search(ln):
-                lines[i] = scrub_sentences(ln)
+                cand = scrub_sentences(ln)
+                # guard: never break quoting/bracket structure or empty a string
+                if (cand.count('"') == ln.count('"') and cand.count("'") == ln.count("'")
+                        and cand.count('{') == ln.count('{') and cand.count('}') == ln.count('}')
+                        and re.search(r'[A-Za-z]{4}', cand)):
+                    lines[i] = cand
         new = '\n'.join(lines)
         if new != orig:
             if rel.endswith('.json'):

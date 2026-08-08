@@ -22,7 +22,7 @@ const FirearmSerialCheck = () => {
       itemType="Firearm"
       identifierType="Serial Number"
       heroBadge="Firearm Verification"
-      heroSubtitle="Buying a stolen firearm has serious legal consequences. Before any private sale, verify the serial number isn't in stolen firearm reports from all 50 states. Free instant check."
+      heroSubtitle="Buying a stolen firearm has serious legal consequences. Before any private sale, verify the serial number isn't in stolen firearms databases. Free instant check."
       stats={[
         { value: "380K+", label: "Guns Stolen Yearly" },
         { value: "3 sec", label: "Verification Time" },
@@ -30,7 +30,7 @@ const FirearmSerialCheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Firearm Serial Number Verification?"
-      whatIsContent="Every firearm manufactured after 1968 has a unique serial number. When stolen, firearms are reported by police to the FBI's National Crime Information Center (NCIC), which is restricted to law enforcement and cannot be queried by us or any other consumer service. Buying a stolen firearm, even unknowingly, can result in federal charges. Our check queries stolen firearm reports from all 50 states (32,000+ victim-reported records) and analyzes the serial number for signs of alteration or obliteration. For a definitive check, ask local police to run the serial through NCIC."
+      whatIsContent="Every firearm manufactured after 1968 has a unique serial number. When stolen, firearms are reported by police to the FBI's National Crime Information Center (NCIC), which is restricted to law enforcement and cannot be queried by us or any other consumer service. Buying a stolen firearm, even unknowingly, can result in federal charges. Our check queries stolen firearms databases and analyzes the serial number for signs of alteration or obliteration. For a definitive check, ask local police to run the serial through NCIC."
       howItWorksSteps={[
         "Find the serial number: Usually on the frame/receiver, often on the right side or under the barrel",
         "Enter the serial number into our free verification tool",

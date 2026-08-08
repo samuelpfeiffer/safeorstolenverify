@@ -150,7 +150,7 @@ export default function FeaturesPage() {
                   <CardContent className="pt-6">
                     <div className="text-3xl mb-2">🔫</div>
                     <h3 className="font-bold">Firearms</h3>
-                    <p className="text-sm text-muted-foreground">nationwide stolen firearm reports check</p>
+                    <p className="text-sm text-muted-foreground">stolen firearms databases check</p>
                   </CardContent>
                 </Card>
               </div>

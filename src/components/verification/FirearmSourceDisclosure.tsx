@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils';
 /**
  * Honest source disclosure for firearm verification results.
  *
- * SafeOrStolen checks stolen firearm reports from all 50 states and
- * validates serial number integrity. It does NOT query NCIC, ATF eTrace, or
+ * SafeOrStolen checks stolen firearms databases and
+ * validates serial number integrity.
  * state police systems — those are restricted to law enforcement.
  *
  * Rendered on EVERY firearm result, including clean ones.
@@ -13,12 +13,12 @@ import { cn } from '@/lib/utils';
 export const FirearmSourceDisclosure: React.FC<{ className?: string }> = ({ className }) => (
   <div className={cn('space-y-2 text-[11px] leading-relaxed text-muted-foreground', className)}>
     <p>
-      Source: stolen firearm reports from all 50 states. This is not a federal
+      Source: stolen firearms databases. This is not a federal
       database check.
     </p>
     <p>
       For a definitive check, contact your local police non-emergency line and ask them to run the
-      serial through NCIC. This is the only database containing all reported stolen firearms, and it
+This is the only database containing all reported stolen firearms, and it
       is restricted to law enforcement.
     </p>
   </div>

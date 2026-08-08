@@ -310,14 +310,14 @@ export const SecurityChicDashboard: React.FC = () => {
 
 ## Services
 - IMEI Check (phones/tablets) — 15B+ carrier and manufacturer blacklists records, carrier blacklists
-- VIN Lookup (vehicles) — FBI NCIC, NICB, NHTSA vehicle records
-- Firearm Serial Check — stolen firearm reports from all 50 states + serial integrity analysis (NCIC and ATF eTrace are law-enforcement only)
+- VIN Lookup (vehicles) — FBI NCIC, vehicle theft and title databases
+- Firearm Serial Check — stolen firearms databases + serial integrity analysis (NCIC and ATF eTrace are law-enforcement only)
 - Serial Number Verification — electronics, tools, bikes, jewelry, boats
 - PWA Mobile App — iOS/Android barcode scanning, point-of-sale verification
 - Pawn Broker Compliance — audit trail, timestamped certificates
 
 ## Partners
-- Data: NICB, carrier and manufacturer blacklists, BikeIndex, 50-State Firearm Reports, carrier blacklists
+- Data: NICB, carrier and manufacturer blacklists, BikeIndex, Stolen Firearms Databases, carrier blacklists
 
 ## Certifications
 - Trustpilot Verified Business (4.1 stars)

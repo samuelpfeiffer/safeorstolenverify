@@ -140,7 +140,7 @@ const AffiliateDisclosurePage: React.FC = () => {
               <p>
                 SafeOrStolen's verification services and affiliate partner recommendations are optimized for and 
                 primarily serve users in the <strong className="text-foreground">United States</strong>. Our database 
-                sources include NICB, carrier and manufacturer blacklists, 50-State Firearm Reports, and community theft registries across all 50 US states. 
+                sources include NICB, carrier and manufacturer blacklists, Stolen Firearms Databases, and community theft registries across all 50 US states. 
                 Partner service availability may vary by location.
               </p>
             </CardContent>

@@ -102,7 +102,7 @@ const GunShowSerialNumberCheckGuide = () => {
               <li><strong className="text-foreground">Ask to see the serial number.</strong> Any legitimate seller will let you examine the firearm and read the serial number. If they refuse, walk away immediately.</li>
               <li><strong className="text-foreground">Open SafeOrStolen on your phone.</strong> Go to safeorstolen.com/firearms-check — no app download needed.</li>
               <li><strong className="text-foreground">Enter the serial number exactly as engraved.</strong> Include all letters, numbers, and hyphens.</li>
-              <li><strong className="text-foreground">Wait 3 seconds for results.</strong> SafeOrStolen checks the HotGunz national stolen-firearms registry and validates serial number integrity. It is not a federal database check.</li>
+              <li><strong className="text-foreground">Wait 3 seconds for results.</strong> SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration. It is not a federal database check.</li>
               <li><strong className="text-foreground">Review the result.</strong> Clean = proceed with negotiation. Flagged = do NOT purchase, leave safely, contact law enforcement.</li>
             </ol>
           </section>
@@ -143,7 +143,7 @@ const GunShowSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check a gun serial number at a gun show?</summary>
-                <p className="text-muted-foreground mt-2">Open safeorstolen.com on your phone, enter the serial number, get results in 3 seconds. Checks the HotGunz national stolen-firearms registry and validates serial integrity. 2 free checks, no app needed. For a definitive check, ask police to run the serial through NCIC.</p>
+ <p className="text-muted-foreground mt-2">Open safeorstolen.com on your phone, enter the serial number, get results in 3 seconds. Checks stolen firearms databases and validates serial integrity. 2 free checks, no app needed.
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Are private sales at gun shows legal?</summary>

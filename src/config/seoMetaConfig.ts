@@ -225,7 +225,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/firearms-check': {
     title: 'Gun Serial Number Check — All 50 States',
-    description: 'Free gun serial number check. Search stolen firearm reports from all 50 states and flag altered or obliterated serials — an ATF-enforced federal violation. Instant results, 2 free checks.',
+    description: 'Free gun serial number check. Search stolen firearms databases and flag altered or obliterated serials — a federal violation. Instant results, 2 free checks.',
 
     keywords: 'firearm serial check, stolen gun lookup, stolen gun registry, gun verification',
     canonical: '/firearms-check'

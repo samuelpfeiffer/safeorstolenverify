@@ -300,7 +300,7 @@ const ComparisonSwappa = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <Zap className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
- <span>You're checking a <strong>firearm serial number</strong> against stolen firearm reports from all 50 states</span>
+ <span>You're checking a <strong>firearm serial number</strong> against stolen firearms databases</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Zap className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
@@ -368,7 +368,7 @@ const ComparisonSwappa = () => {
                       <li>✅ stolen property reports from all 50 states</li>
                       <li>✅ NICB (National Insurance Crime Bureau)</li>
                       <li>✅ carrier and manufacturer blacklists Global Blacklist (phone carriers)</li>
-                      <li>✅ nationwide stolen firearm reports</li>
+                      <li>✅ stolen firearms databases</li>
                       <li>✅ All 50 state community theft registries</li>
                       <li>✅ International stolen vehicle registries</li>
                       <li>✅ BikeIndex stolen bicycle database</li>
@@ -455,7 +455,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="databases">
                     <AccordionTrigger>How many databases does SafeOrStolen check compared to Swappa?</AccordionTrigger>
                     <AccordionContent>
-                      SafeOrStolen checks 100+ databases including NICB, carrier and manufacturer blacklists, 50-State Firearm Reports, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
+                      SafeOrStolen checks 100+ databases including NICB, carrier and manufacturer blacklists, Stolen Firearms Databases, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="any-source">

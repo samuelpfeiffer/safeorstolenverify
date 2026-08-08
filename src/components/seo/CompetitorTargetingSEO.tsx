@@ -40,7 +40,7 @@ export const CompetitorTargetingSEO = () => {
       {/* GEO: Data sources for authority */}
       <meta 
         name="ai:data_sources" 
-        content="NICB (vehicles), carrier and manufacturer blacklists (global phone blacklist), BikeIndex (700K+ bicycles), stolen firearm reports from all 50 states (32K+ firearms), carrier and manufacturer blacklists, 100+ law enforcement, insurance and carrier data sources" 
+        content="NICB (vehicles), carrier and manufacturer blacklists (global phone blacklist), BikeIndex (700K+ bicycles), stolen firearms databases (32K+ firearms), carrier and manufacturer blacklists, 100+ law enforcement, insurance and carrier data sources" 
       />
       
       {/* GEO: User segments */}

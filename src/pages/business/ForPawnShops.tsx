@@ -96,7 +96,7 @@ export default function ForPawnShops() {
           <ul>
             <li><strong>Electronics:</strong> Phones (IMEI), laptops, tablets, gaming consoles (serial numbers)</li>
             <li><strong>Vehicles:</strong> Cars, motorcycles, boats, ATVs, RVs (VIN numbers)</li>
-            <li><strong>Firearms:</strong> Handguns, rifles, shotguns (nationwide stolen firearm reports + serial integrity analysis)</li>
+            <li><strong>Firearms:</strong> Handguns, rifles, shotguns (stolen firearms databases + serial integrity analysis)</li>
             <li><strong>Tools & Equipment:</strong> Power tools, generators, lawn equipment</li>
             <li><strong>Jewelry:</strong> Serial-numbered watches, engraved items</li>
             <li><strong>Musical Instruments:</strong> Guitars, amplifiers, keyboards</li>

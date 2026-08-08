@@ -40,7 +40,7 @@ const EXAMPLES = [
 ];
 
 const FEATURES = [
-  { Icon: ShieldCheck, label: '100+ databases', sub: 'Stolen property reports from all 50 states · NICB · carrier and manufacturer blacklists · 50-State Firearm Reports' },
+  { Icon: ShieldCheck, label: '100+ databases', sub: 'Stolen property reports from all 50 states · NICB · carrier and manufacturer blacklists · Stolen Firearms Databases' },
   { Icon: Zap, label: '~3 second results', sub: 'Real-time aggregated checks' },
   { Icon: Sparkles, label: 'AI follow-ups', sub: 'Ask anything about your result' },
 ];

@@ -19,8 +19,8 @@ const FAQ_ITEMS = [
     answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), NHTSA vehicle records, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
   },
   {
- question: "Does SafeOrStolen check stolen firearm reports from all 50 states for firearm serial numbers?",
-    answer: "Yes. Firearm serial number verification checks stolen firearm reports from all 50 states (~32,000 user-reported stolen firearms) and validates serial number integrity. It is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
+ question: "Does SafeOrStolen check stolen firearms databases for firearm serial numbers?",
+ answer: "Yes. Firearm serial number verification checks stolen firearms databases and validates serial number integrity. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
   },
   {
     question: "How often are the databases updated?",
@@ -247,7 +247,7 @@ const DATA_CATEGORIES = [
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
     title: "Industry & Community Registries",
-    subtitle: "BikeIndex, 50-State Firearm Reports, GIA, NMVTIS & Specialist Networks",
+    subtitle: "BikeIndex, Stolen Firearms Databases, GIA, NMVTIS & Specialist Networks",
     description: "Beyond law enforcement and insurance, specialized community registries track item-specific theft with granular detail that general databases miss. These sources are particularly critical for bicycles, firearms, marine vessels, and high-value collectibles.",
     sources: [
       {

@@ -243,7 +243,7 @@ const MarketplaceURLChecker: React.FC = () => {
                 { step: '1', title: 'Copy the Listing URL', desc: 'Find a listing on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. Copy the full URL from your browser\'s address bar.' },
                 { step: '2', title: 'Paste into SafeOrStolen', desc: 'Paste the URL into the analyzer above. Our AI uses the Jina Reader API to scrape and read the entire listing page, including photos and descriptions.' },
                 { step: '3', title: 'AI Extracts Identifiers', desc: 'The AI identifies IMEI numbers, VIN numbers, serial numbers, model information, and pricing. It also flags risk factors like below-market pricing.' },
-                { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against 100+ databases: stolen property reports from all 50 states, NICB, carrier and manufacturer blacklists, 50-State Firearm Reports, carrier blacklists, and stolen property reports from all 50 states.' },
+                { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against 100+ databases: stolen property reports from all 50 states, NICB, carrier and manufacturer blacklists, Stolen Firearms Databases, carrier blacklists, and stolen property reports from all 50 states.' },
               ].map((item) => (
                 <div key={item.step} className="text-center">
                   <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">

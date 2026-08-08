@@ -21,7 +21,7 @@ const PressPage = () => {
     {
       metric: "100+",
       label: "Databases Searched",
-      context: "Including carrier and manufacturer blacklists, NICB, BikeIndex, and 50-State Firearm Reports"
+      context: "Including carrier and manufacturer blacklists, NICB, BikeIndex, and Stolen Firearms Databases"
     },
     {
       metric: "3 sec",

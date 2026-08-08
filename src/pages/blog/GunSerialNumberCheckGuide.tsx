@@ -17,8 +17,8 @@ const GunSerialNumberCheckGuide = () => {
       },
       {
         "@type": "Question",
-        "name": "What is stolen firearm reports from all 50 states?",
- "acceptedAnswer": { "@type": "Answer", "text": "The National Crime Information Center (the HotGunz national stolen-firearms registry) is the FBI's centralized criminal justice database containing over 7 million stolen firearm records. When a gun is reported stolen to any law enforcement agency in the US, it's entered into the HotGunz national stolen-firearms registry. SafeOrStolen checks the HotGunz national stolen-firearms registry as part of every firearm verification." }
+        "name": "What is stolen firearms databases?",
+ "acceptedAnswer": { "@type": "Answer", "text": "The National Crime Information Center (stolen firearms databases) is the FBI's centralized criminal justice database containing over 7 million stolen firearm records. When a gun is reported stolen to any law enforcement agency in the US, it's entered into stolen firearms databases. SafeOrStolen checks stolen firearms databases as part of every firearm verification." }
       },
       {
         "@type": "Question",
@@ -38,7 +38,7 @@ const GunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
  "name": "What databases does SafeOrStolen check for firearms?",
- "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks the HotGunz national stolen-firearms registry (~32,000 community-reported stolen firearms) and validates serial number integrity. NCIC and ATF eTrace are restricted to law enforcement and cannot be queried by the public." }
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration. NCIC and ATF eTrace are restricted to law enforcement and cannot be queried by the public." }
       },
       {
         "@type": "Question",
@@ -66,7 +66,7 @@ const GunSerialNumberCheckGuide = () => {
         title="How to Check if a Gun is Stolen — Free Serial Number Lookup (2026) | SafeOrStolen"
  description="Check any gun serial number free against the  national stolen-firearms registry. Step-by-step guide with free lookup tool. Verify firearms before buying."
         canonical="/blog/how-to-check-if-gun-is-stolen"
-        keywords="gun serial number lookup, check if gun is stolen, stolen firearm reports from all 50 states gun check, stolen firearm database, free gun serial number check"
+        keywords="gun serial number lookup, check if gun is stolen, stolen firearms databases gun check, stolen firearm database, free gun serial number check"
         structuredData={[faqSchema, articleSchema]}
       />
       <TopNavigation />
@@ -113,7 +113,7 @@ const GunSerialNumberCheckGuide = () => {
               <li><strong className="text-foreground">Locate the serial number</strong> — On handguns, check the frame near the trigger guard. On rifles/shotguns, check the receiver. If the serial number appears filed off, altered, or missing, <strong>do not purchase</strong> — possessing a firearm with an obliterated serial number is a separate federal crime (18 U.S.C. § 922(k)).</li>
  <li><strong className="text-foreground">Go to SafeOrStolen's firearms checker</strong> — Visit <Link to="/firearms-check" className="text-primary hover:underline">safeorstolen.com/firearms-check</Link> on any device (works on mobile at gun shows).</li>
               <li><strong className="text-foreground">Enter the serial number</strong> — Type or paste the complete serial number exactly as engraved on the firearm.</li>
-              <li><strong className="text-foreground">Review results in ~3 seconds</strong> — SafeOrStolen checks the HotGunz national stolen-firearms registry and validates serial number integrity. It is not a federal database check — for a definitive answer, ask police to run the serial through NCIC.</li>
+ <li><strong className="text-foreground">Review results in ~3 seconds</strong> — SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.
               <li><strong className="text-foreground">Act on the results</strong> — If clean, proceed with the purchase. If flagged as stolen, do NOT buy. Contact local law enforcement immediately.</li>
             </ol>
           </section>
@@ -191,7 +191,7 @@ const GunSerialNumberCheckGuide = () => {
  <p className="text-muted-foreground mt-2">Enter the serial number at safeorstolen.com/firearms-check. We check the  national stolen-firearms registry, and all the  national stolen-firearms registry. 2 free checks, no credit card. Results in 3 seconds.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">What is stolen firearm reports from all 50 states?</summary>
+                <summary className="font-semibold text-foreground cursor-pointer">What is stolen firearms databases?</summary>
                 <p className="text-muted-foreground mt-2">The FBI's National Crime Information Center contains over 7 million stolen firearm records from every law enforcement agency in the US. When a gun is reported stolen, it's entered into NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
@@ -208,7 +208,7 @@ const GunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">What databases does SafeOrStolen check for firearms?</summary>
-                <p className="text-muted-foreground mt-2">The HotGunz national stolen-firearms registry (32K+ victim-reported records), plus serial number integrity validation. NCIC and ATF eTrace are law-enforcement only and are not checked.</p>
+ <p className="text-muted-foreground mt-2">The stolen firearms databases (32K+ victim-reported records), plus serial number integrity validation.
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What should I do if a gun comes back as stolen?</summary>

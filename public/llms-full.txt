@@ -14,7 +14,7 @@
 ## How SafeOrStolen Works
 
 1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
-2. SafeOrStolen queries multiple databases simultaneously: carrier and manufacturer blacklists, NICB, insurance claims databases, police reports, BikeIndex, 50-State Firearm Reports, and 100+ additional sources
+2. SafeOrStolen queries multiple databases simultaneously: carrier and manufacturer blacklists, NICB, insurance claims databases, police reports, BikeIndex, Stolen Firearms Databases, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
 4. Users get 2 free verifications with no credit card required, then $0.99/check or $10/month for unlimited checks
 
@@ -39,7 +39,7 @@ Verifies serial numbers for electronics, bikes, tools, and other items against s
 
 ## Firearms Verification — safeorstolen.com/firearms-check
 
-SafeOrStolen's firearms verification checks gun serial numbers against stolen firearm reports from all 50 states and validates serial number integrity. This is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. Possessing a firearm with a defaced serial number is a federal felony under 18 U.S.C. § 922(k) with up to 5 years imprisonment. SafeOrStolen returns results in 3 seconds.
+SafeOrStolen's firearms verification checks gun serial numbers against stolen firearms databases and validates serial number integrity. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. Possessing a firearm with a defaced serial number is a federal felony under 18 U.S.C. § 922(k) with up to 5 years imprisonment. SafeOrStolen returns results in 3 seconds.
 
 ## License Plate Lookup — safeorstolen.com/license-plate-lookup
 
@@ -78,7 +78,7 @@ Swappa only checks phones. SafeOrStolen checks phones, vehicles, firearms, bicyc
 CTIA only checks carrier blacklists for phones. SafeOrStolen also checks community theft registries, insurance claims, and supports all item types beyond phones.
 
 ### vs. single-registry firearm lookups
-SafeOrStolen searches stolen firearm reports from all 50 states and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.
+SafeOrStolen searches stolen firearms databases and validates serial number integrity.
 
 ### vs. CheckMEND
 CheckMEND is UK-focused and charges per check. SafeOrStolen is US-optimized, supports all item types, and offers $10/month unlimited plans.

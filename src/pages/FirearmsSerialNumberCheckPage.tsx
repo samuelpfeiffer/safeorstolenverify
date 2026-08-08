@@ -107,7 +107,7 @@ const FirearmsSerialNumberCheckPage = () => {
         title="Free Stolen Gun Serial Number Check | SafeOrStolen"
  description="Enter a firearm serial number and instantly check if a gun is reported stolen. SafeOrStolen searches multiple theft signals so buyers and sellers avoid legal trouble before a transfer."
         canonical="/firearms-serial-number-check"
-        keywords="stolen gun check, firearm serial number lookup, check if gun is stolen, gun serial number database, stolen firearm verification, stolen firearm reports from all 50 states gun check alternative"
+        keywords="stolen gun check, firearm serial number lookup, check if gun is stolen, gun serial number database, stolen firearm verification, stolen firearms databases gun check alternative"
         schemaJson={schema}
       />
 
@@ -235,7 +235,7 @@ const FirearmsSerialNumberCheckPage = () => {
                   Law-enforcement and public theft reports where available
                 </h3>
                 <p className="text-muted-foreground">
-                  Some jurisdictions make theft reports publicly accessible. We aggregate these public records to provide additional theft indicators. While we cannot access NCIC directly (law enforcement only), we search available public databases for reported firearms.
+ Some jurisdictions make theft reports publicly accessible. We aggregate these public records to provide additional theft indicators.
                 </p>
               </div>
 
@@ -252,13 +252,13 @@ const FirearmsSerialNumberCheckPage = () => {
           </div>
         </section>
 
-        {/* stolen firearm reports from all 50 states Explanation */}
+        {/* stolen firearms databases Explanation */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Can Civilians Use stolen firearm reports from all 50 states or "National Stolen Gun Databases"?</h2>
+            <h2 className="text-3xl font-bold mb-6">Can Civilians Use stolen firearms databases or "National Stolen Gun Databases"?</h2>
             
             <p className="text-lg text-muted-foreground mb-6">
-              The National Crime Information Center (stolen firearm reports from all 50 states) is the FBI's nationwide database used by law enforcement agencies to track stolen property, including firearms. <strong>Stolen firearm reports from all 50 states is not accessible to the general public.</strong> Only authorized law enforcement officers, certain government agencies, and licensed firearms dealers (through stolen firearm reports from all 50 states) can query stolen firearm reports from all 50 states.
+              The National Crime Information Center (stolen firearms databases) is the FBI's nationwide database used by law enforcement agencies to track stolen property, including firearms. <strong>Stolen firearm reports from all 50 states is not accessible to the general public.</strong> Only authorized law enforcement officers, certain government agencies, and licensed firearms dealers (through stolen firearms databases) can query stolen firearms databases.
             </p>
             
             <p className="text-lg text-muted-foreground mb-6">
@@ -277,7 +277,7 @@ const FirearmsSerialNumberCheckPage = () => {
                   <strong>We can show:</strong> Insurance theft claims, public theft reports, salvage records, and risk indicators from available databases.
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  <strong>We cannot show:</strong> NCIC records, registered owner information, or law enforcement-only databases. For official verification, visit your local police department or licensed firearms dealer.
+For official verification, visit your local police department or licensed firearms dealer.
                 </p>
               </CardContent>
             </Card>

@@ -128,7 +128,7 @@ const CrunchbasePage: React.FC = () => {
               <li>IMEI Verification — smartphones and mobile devices</li>
               <li>VIN Lookup — cars, trucks, motorcycles, boats</li>
               <li>Serial Number Verification — electronics, tools, equipment</li>
-              <li>Firearm Serial Number Check — nationwide stolen firearm reports + serial integrity validation</li>
+              <li>Firearm Serial Number Check — stolen firearms databases + serial integrity validation</li>
               <li>License Plate Lookup — all 50 US states</li>
             </ul>
             
@@ -313,7 +313,7 @@ const CrunchbasePage: React.FC = () => {
                 <li><strong>IMEI Verification</strong> — Smartphones via carrier and manufacturer blacklists</li>
                 <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles via NICB and NMVTIS</li>
                 <li><strong>Serial Number Verification</strong> — Electronics, tools, equipment</li>
-                <li><strong>Firearm Check</strong> — stolen firearm reports from all 50 states + serial integrity analysis</li>
+                <li><strong>Firearm Check</strong> — stolen firearms databases + serial integrity analysis</li>
                 <li><strong>License Plate Lookup</strong> — All 50 US states</li>
               </ul>
               <p className="mt-4">

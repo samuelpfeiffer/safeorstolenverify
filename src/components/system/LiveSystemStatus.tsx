@@ -56,7 +56,7 @@ const systemComponents: SystemComponent[] = [
     description: 'Bicycle registry and recovery database'
   },
   {
-    name: '50-State Firearm Reports Database',
+    name: 'Stolen Firearms Databases Database',
     status: 'operational',
     uptime: 98.95,
     responseTime: 2.4,

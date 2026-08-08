@@ -24,7 +24,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "What databases does SafeOrStolen check?",
- answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, carrier and manufacturer blacklists global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, NHTSA vehicle records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, carrier and manufacturer blacklists global blacklist for phones, the stolen firearms databases for firearms, state law enforcement records, NHTSA vehicle records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
     },
     {
       question: "How do I check if a car is stolen using VIN?",
@@ -36,7 +36,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "How do I check a gun serial number for free?",
- answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search stolen firearm reports from all 50 states and validate serial number integrity. Unlimited checks for $10/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
+ answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search stolen firearms databases and validate serial number integrity. Unlimited checks for $10/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
     },
     {
       question: "What items can SafeOrStolen verify?",
@@ -52,7 +52,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "What should I do if an item shows as stolen?",
-      answer: "Do NOT purchase the item. Leave without confronting the seller. Report to local police with the listing details and seller information. For firearms, also report to ATF at 1-800-283-4867. For vehicles, report to NICB at 1-800-TEL-NICB. Take screenshots of the listing as evidence before it's removed. You may help recover stolen property and prevent others from being victimized."
+ answer: "Do NOT purchase the item. Leave without confronting the seller. Report to local police with the listing details and seller information. For vehicles, report to NICB at 1-800-TEL-NICB. Take screenshots of the listing as evidence before it's removed. You may help recover stolen property and prevent others from being victimized."
     },
     {
       question: "Can pawn shops use SafeOrStolen?",
@@ -94,7 +94,7 @@ export const HomeContentSections = () => {
                 items: "Pistols, rifles, shotguns, AR-15s — all manufacturers",
                 identifier: "Serial Number",
                 link: "/firearms-check",
-                detail: "nationwide stolen firearm reports + serial integrity check"
+                detail: "stolen firearms databases + serial integrity check"
               },
               {
                 title: "🎮 Gaming Consoles",
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
               <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
               <h3 className="font-bold text-lg mb-2">We Search 100+ Databases</h3>
               <p className="text-sm text-muted-foreground">
-                In parallel, we query NICB, carrier and manufacturer blacklists, 50-State Firearm Reports, BikeIndex, state records, NHTSA vehicle records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
+                In parallel, we query NICB, carrier and manufacturer blacklists, Stolen Firearms Databases, BikeIndex, state records, NHTSA vehicle records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
               </p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg border border-border">

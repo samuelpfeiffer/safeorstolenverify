@@ -176,7 +176,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
               <Database className="w-4 h-4 text-primary mb-1.5" />
               <div className="text-[11px] font-semibold">100+ databases</div>
               <div className="text-[10px] text-muted-foreground">
-                carrier and manufacturer blacklists, NICB, BikeIndex, 50-State Firearm Reports + 100 more
+                carrier and manufacturer blacklists, NICB, BikeIndex, Stolen Firearms Databases + 100 more
               </div>
             </div>
             <div className="rounded-xl border border-border/60 bg-card/40 p-3">

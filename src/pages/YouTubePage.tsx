@@ -244,7 +244,7 @@ const YouTubePage: React.FC = () => {
     },
     {
       label: 'FFL Gun Dealers',
- text: 'Verify firearms serial numbers against stolen firearm reports from all 50 states. SafeOrStolen is used by 500+ FFL dealers for compliance under 18 U.S.C. § 922.',
+ text: 'Verify firearms serial numbers against stolen firearms databases. SafeOrStolen is used by 500+ FFL dealers for compliance under 18 U.S.C. § 922.',
       link: '/firearms-check'
     }
   ];
@@ -503,7 +503,7 @@ const YouTubePage: React.FC = () => {
               </p>
 
               <p className="leading-relaxed">
-                The <Link to="/serial-number-checker" className="text-primary hover:underline">serial number verification tutorials</Link> cover a wide range of high-value items including laptops, DeWalt/Milwaukee power tools, gaming consoles, bicycles (via BikeIndex frame numbers), and firearms (via stolen firearm reports from all 50 states, with the legal stakes set by <strong>18 U.S.C. § 922</strong>). These tutorials are particularly valuable for pawn shop operators who must comply with state pawn broker laws requiring stolen goods checks.
+                The <Link to="/serial-number-checker" className="text-primary hover:underline">serial number verification tutorials</Link> cover a wide range of high-value items including laptops, DeWalt/Milwaukee power tools, gaming consoles, bicycles (via BikeIndex frame numbers), and firearms (via stolen firearms databases, with the legal stakes set by <strong>18 U.S.C. § 922</strong>). These tutorials are particularly valuable for pawn shop operators who must comply with state pawn broker laws requiring stolen goods checks.
               </p>
 
               <p className="leading-relaxed">
@@ -563,7 +563,7 @@ const YouTubePage: React.FC = () => {
                 { to: '/vin-checker', title: 'Free VIN Checker', desc: 'Verify any vehicle for stolen status, title fraud, and history.', cta: 'Check VIN Free' },
                 { to: '/serial-number-checker', title: 'Serial Number Check', desc: 'Verify electronics, tools, bikes, and firearms by serial number.', cta: 'Check Serial Free' },
                 { to: '/app', title: 'Mobile App (PWA)', desc: 'Barcode scanning for point-of-sale verification. iOS & Android.', cta: 'Download App' },
-                { to: '/firearms-check', title: 'Firearms Verification', desc: 'nationwide stolen firearm reports checks plus serial number integrity validation.', cta: 'Check Firearm' },
+                { to: '/firearms-check', title: 'Firearms Verification', desc: 'stolen firearms databases checks plus serial number integrity validation.', cta: 'Check Firearm' },
                 { to: '/facebook-marketplace-safety', title: 'Marketplace Safety Guide', desc: 'Red flags and verification steps for Facebook Marketplace buyers.', cta: 'Read Guide' }
               ].map((tool) => (
                 <Link

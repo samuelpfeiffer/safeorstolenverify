@@ -80,7 +80,7 @@ export const PressMediaSection = () => {
       icon: Shield,
       label: '100+ Databases',
       description: 'Law enforcement, insurance & carrier sources',
-      detail: 'More data sources than any competitor — including FBI, NICB, carrier and manufacturer blacklists, 50-State Firearm Reports, all stolen property reports from all 50 states, and 200+ carrier blacklists.',
+      detail: 'More data sources than any competitor — including FBI, NICB, carrier and manufacturer blacklists, Stolen Firearms Databases, all stolen property reports from all 50 states, and 200+ carrier blacklists.',
       link: '/data-sources',
     },
     {

@@ -132,7 +132,7 @@ const ReportStolenPageContent = () => {
                 'Laptops & Computers (serial number)',
                 'Gaming Consoles — PS5, Xbox, Switch',
                 'Bicycles (serial number)',
- 'Firearms (serial number — checked against stolen firearm reports from all 50 states)',
+ 'Firearms (serial number — checked against stolen firearms databases)',
                 'Watches — Rolex, Omega, Tag Heuer',
                 'Cameras & Photography Equipment',
                 'Power Tools & Construction Equipment',

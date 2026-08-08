@@ -10,7 +10,7 @@ const FirearmsCheckPage = () => {
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
         title="Gun Serial Number Check — All 50 States | SafeOrStolen"
-        description="Free gun serial number check. Search stolen firearm reports from all 50 states and flag altered or obliterated serials — an ATF-enforced federal violation. Instant results, 2 free checks."
+        description="Free gun serial number check. Search stolen firearms databases and flag altered or obliterated serials — a federal violation. Instant results, 2 free checks."
         canonical="/firearms-check"
       />
 
@@ -26,7 +26,7 @@ const FirearmsCheckPage = () => {
             <span className="text-primary">All 50 States</span>
           </h1>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Search nationwide stolen firearm reports and verify serial integrity before you buy.
+            Search stolen firearms databases and verify serial integrity before you buy.
           </p>
 
 
@@ -50,7 +50,7 @@ const FirearmsCheckPage = () => {
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Enter the firearm serial number into SafeOrStolen's lookup tool above.
-            The system checks stolen firearm reports from all 50 states (~32,000
+            The system checks stolen firearms databases (~32,000
             community-reported stolen firearms) and validates the serial number for
             obliteration or alteration. A result returns in approximately 3 seconds.
             This is not a federal database check — NCIC and ATF eTrace are restricted to
@@ -104,7 +104,7 @@ const FirearmsCheckPage = () => {
             Which Databases Does SafeOrStolen Check for Firearms?
           </h2>
           <p className="text-muted-foreground text-sm italic mb-4">
-            Quick answer: SafeOrStolen checks stolen firearm reports from all 50 states and validates serial number integrity. It does not query NCIC, ATF eTrace, or state police systems — those are restricted to law enforcement.
+ Quick answer: SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
             No single public database captures all stolen firearms in the United States.
@@ -148,7 +148,7 @@ const FirearmsCheckPage = () => {
           <div className="mt-4 p-4 bg-primary/10 border border-primary/30 rounded-xl">
             <p className="text-primary text-sm">
               <strong>Important disclosure:</strong> SafeOrStolen is a commercial aggregation service, 
-              not a law enforcement agency. We are not affiliated with the FBI, ATF, or any government 
+ not a law enforcement agency.
               agency. A clean result means no records were found in our aggregated database — it does not 
               constitute a government clearance or guarantee the firearm has never been stolen.
             </p>
@@ -318,7 +318,7 @@ const FirearmsCheckPage = () => {
           </h2>
           <div className="space-y-3">
             {[
- { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not law enforcement and cannot query federal systems — our results come from stolen firearm reports from all 50 states and serial integrity analysis.' },
+ { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not law enforcement and cannot query federal systems — our results come from stolen firearms databases and serial integrity analysis.' },
               { q: "What if the serial number comes back clean — does that guarantee it's not stolen?", a: 'No. A clean result means no records were found in our aggregated database at the time of the check. Not all stolen firearms are reported to all databases. A clean result significantly reduces your risk but does not constitute a guarantee. We strongly recommend also requesting the original purchase receipt from the seller.' },
               { q: 'Can a gun show vendor refuse to let me check the serial number?', a: 'Yes, a private seller can refuse. If they do, that is itself a significant red flag. Legitimate sellers with nothing to hide generally welcome verification.' },
  { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can report the stolen firearm to your local police and to a public stolen-firearm registry. Reports that reach the nationwide stolen firearm feeds will be included in future SafeOrStolen checks.' },
@@ -369,7 +369,7 @@ const FirearmsCheckPage = () => {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Gun Serial Number Check — All 50 States",
- "description": "Check any firearm serial number against stolen firearm reports from all 50 states. Results in 3 seconds.",
+ "description": "Check any firearm serial number against stolen firearms databases. Results in 3 seconds.",
               "url": "https://safeorstolen.com/firearms-check",
               "breadcrumb": {
                 "@type": "BreadcrumbList",
@@ -388,7 +388,7 @@ const FirearmsCheckPage = () => {
                   "name": "How can I check if a firearm is reported stolen?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Enter the serial number stamped on the frame or receiver at SafeOrStolen, which searches stolen firearm reports from all 50 states and insurance claim records, and flags serials that appear altered or obliterated. A match means the serial appears in a stolen-property report. This is a stolen-property check only \u2014 it does not establish who legally owns the firearm, and for a definitive answer your local police non-emergency line can run the serial through NCIC."
+                    "text": "Enter the serial number stamped on the frame or receiver at SafeOrStolen, which searches stolen firearms databases and insurance claim records, and flags serials that appear altered or obliterated. A match means the serial appears in a stolen-property report. This is a stolen-property check only \u2014 it does not establish who legally owns the firearm, and for a definitive answer your local police non-emergency line can run the serial through NCIC."
                   }
                 },
                 {
@@ -396,7 +396,7 @@ const FirearmsCheckPage = () => {
                   "name": "Can a private buyer check whether a firearm is reported stolen?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. A private buyer can enter a firearm serial number at SafeOrStolen and search stolen firearm reports without any licence or law-enforcement access. What a private buyer cannot do is look up ownership: registration and trace systems such as NCIC and ATF eTrace are restricted to law enforcement, so a stolen-property result never tells you whose gun it legally is. Checking is legal and is a sensible step before any private-party transfer."
+ "text": "Yes. A private buyer can enter a firearm serial number at SafeOrStolen and search stolen firearm reports without any licence or law-enforcement access. Checking is legal and is a sensible step before any private-party transfer."
                   }
                 },
                 {
@@ -412,7 +412,7 @@ const FirearmsCheckPage = () => {
                   "name": "Is there a stolen firearm database?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "There is no single public database of every stolen firearm \u2014 the FBI's NCIC holds stolen-gun records but is restricted to law enforcement, while other reports sit with individual agencies, insurers, and community registries. SafeOrStolen searches stolen firearm reports from all 50 states along with insurance claim records and community theft registries, which is the practical option available to a private buyer. Because coverage is fragmented, no match found means nothing was located in the sources checked rather than confirmation the firearm was never stolen."
+                    "text": "There is no single public database of every stolen firearm \u2014 the FBI's NCIC holds stolen-gun records but is restricted to law enforcement, while other reports sit with individual agencies, insurers, and community registries. SafeOrStolen searches stolen firearms databases along with insurance claim records and community theft registries, which is the practical option available to a private buyer. Because coverage is fragmented, no match found means nothing was located in the sources checked rather than confirmation the firearm was never stolen."
                   }
                 },
                 {
@@ -420,7 +420,7 @@ const FirearmsCheckPage = () => {
                   "name": "How do I check if a gun serial number is stolen?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Enter the firearm serial number at SafeOrStolen.com/firearms-check. The system checks stolen firearm reports from all 50 states and validates serial number integrity. Results return in approximately 3 seconds. This is not a federal database check — for a definitive check, ask your local police non-emergency line to run the serial through NCIC."
+                    "text": "Enter the firearm serial number at SafeOrStolen.com/firearms-check. The system checks stolen firearms databases and validates serial number integrity. Results return in approximately 3 seconds. This is not a federal database check — for a definitive check, ask your local police non-emergency line to run the serial through NCIC."
                   }
                 },
                 {

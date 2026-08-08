@@ -35,7 +35,7 @@ export const KeywordTargeting = () => {
           <ul>
             <li>IMEI checker for iPhone and Android phones - verify device not stolen or blacklisted</li>
             <li>VIN lookup for cars, trucks, motorcycles - check vehicle not reported stolen</li>
-            <li>Firearm serial number verification - avoid ATF violations and federal charges</li>
+            <li>Firearm serial number verification - avoid federal charges</li>
             <li>Electronics verification - laptops, MacBooks, cameras, gaming consoles</li>
             <li>Power tools and equipment serial number check</li>
             <li>Bicycle registration verification through BikeIndex</li>

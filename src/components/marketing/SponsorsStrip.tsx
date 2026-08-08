@@ -56,18 +56,18 @@ export const SponsorsStrip: React.FC = () => {
             <span className="text-sm font-semibold tracking-wide">Recipero</span>
           </a>
 
-          {/* 50-State Firearm Reports */}
+          {/* Stolen Firearms Databases */}
           <a
             href="https://www.safeorstolen.com/firearms-check"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center"
-            aria-label="Visit 50-State Firearm Reports"
-            title="50-State Firearm Reports"
+            aria-label="Visit Stolen Firearms Databases"
+            title="Stolen Firearms Databases"
           >
             <img
               src="/lovable-uploads/03461ed0-873b-46ba-8871-8ed6fd1c51b2.png"
-              alt="nationwide stolen firearm reports logo"
+              alt="stolen firearms databases logo"
               loading="lazy"
               className="h-8 md:h-10 w-auto"
             />
