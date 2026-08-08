@@ -185,7 +185,7 @@ const BarcodeScannerPage = () => {
                 {[
                   {
                     title: "📱 Phone IMEI Barcodes",
-                    desc: "Found on phone boxes, under batteries, SIM trays. Checks GSMA (15B+ records), AT&T, Verizon, T-Mobile blacklists.",
+                    desc: "Found on phone boxes, under batteries, SIM trays. Checks carrier and manufacturer blacklists.",
                     link: "/imei-checker"
                   },
                   {

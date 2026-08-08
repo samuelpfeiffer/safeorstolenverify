@@ -26,7 +26,7 @@ export const HomepageFAQ = () => {
     },
     {
       question: 'Can I check items from other countries?',
-      answer: 'Yes! SafeOrStolen works globally with coverage in 150+ countries. We query international databases including INTERPOL stolen property database, GSMA global registry, and community theft registries worldwide. Perfect for checking items from international sellers.'
+      answer: 'Yes! SafeOrStolen works globally with coverage in 150+ countries. We query international databases including INTERPOL stolen property database, carrier and manufacturer blacklists global registry, and community theft registries worldwide. Perfect for checking items from international sellers.'
     }
   ];
 

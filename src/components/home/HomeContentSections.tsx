@@ -24,7 +24,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "What databases does SafeOrStolen check?",
- answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, NHTSA vehicle records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, carrier and manufacturer blacklists global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, NHTSA vehicle records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
     },
     {
       question: "How do I check if a car is stolen using VIN?",

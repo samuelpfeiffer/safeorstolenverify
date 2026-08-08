@@ -92,7 +92,7 @@ const TheftAZAlternativePage = () => {
                     ['Arizona stolen property records', true, true],
                     ['Stolen property reports from all 50 states (7M+ records)', false, true],
                     ['NICB (vehicles)', false, true],
-                    ['GSMA (phones)', false, true],
+                    ['carrier and manufacturer blacklists (phones)', false, true],
                     ['All 50 state databases', false, true],
                     ['Carrier blacklists (AT&T, Verizon, T-Mobile)', false, true],
                     ['Insurance theft claims', false, true],

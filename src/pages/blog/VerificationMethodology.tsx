@@ -144,7 +144,7 @@ export default function VerificationMethodology() {
                       <h3 className="text-2xl font-bold mb-3">4. Carrier & Manufacturer Blacklists</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>Mobile Carriers:</strong> AT&T, Verizon, T-Mobile, Sprint blacklisted IMEI databases</li>
-                        <li><strong>GSMA Database:</strong> Global mobile device blacklist (195 countries)</li>
+                        <li><strong>carrier and manufacturer blacklists Database:</strong> Global mobile device blacklist (195 countries)</li>
                         <li><strong>Apple & Samsung:</strong> Manufacturer-level device lock and theft reports</li>
                         <li><strong>Find My iPhone/Android:</strong> Lost mode and activation lock status checks</li>
                       </ul>

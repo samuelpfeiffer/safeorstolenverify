@@ -90,7 +90,7 @@ const CheckPhonePage = () => {
         {
           title: 'What is a blacklisted IMEI (and can it be fixed)?',
           href: '/blog/what-is-a-blacklisted-imei',
-          blurb: 'How carrier blacklists work, the GSMA block list, and why "cleaning" services are scams.',
+          blurb: 'How carrier blacklists work, the carrier and manufacturer blacklists block list, and why "cleaning" services are scams.',
         },
         {
           title: 'iCloud locked phone: what it means when you\'re buying',

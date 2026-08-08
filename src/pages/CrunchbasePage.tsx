@@ -310,7 +310,7 @@ const CrunchbasePage: React.FC = () => {
                 SafeOrStolen is the "Carfax for Everything" — a universal verification platform for the secondhand market. The platform helps buyers avoid purchasing stolen goods and helps sellers prove their items are legitimate.
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li><strong>IMEI Verification</strong> — Smartphones via GSMA (15B+ records)</li>
+                <li><strong>IMEI Verification</strong> — Smartphones via carrier and manufacturer blacklists</li>
                 <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles via NICB and NMVTIS</li>
                 <li><strong>Serial Number Verification</strong> — Electronics, tools, equipment</li>
                 <li><strong>Firearm Check</strong> — stolen firearm reports from all 50 states + serial integrity analysis</li>

@@ -33,7 +33,7 @@ export default function WhatIsABlacklistedImei() {
             participates.
           </p>
           <p>
-            Globally there is also the GSMA IMEI Device Registry, which many international
+            Globally there is also the carrier and manufacturer blacklists IMEI Device Registry, which many international
             carriers cross-reference. That's why a phone blacklisted in the US often can't be
             "escaped" by flying it to Mexico or the UK either.
           </p>

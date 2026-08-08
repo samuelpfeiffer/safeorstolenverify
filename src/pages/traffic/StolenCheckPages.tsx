@@ -166,7 +166,7 @@ export const CheckStolenFirearm = () => (
       },
       {
         q: 'What databases do you check?',
-        a: 'We check 100+ aggregated stolen-item sources, including GSMA device registries, NICB vehicle data, BikeIndex, and the nationwide stolen firearm reports. Federal systems like FBI NCIC and ATF eTrace are restricted to law enforcement and are not queried by us or any consumer service.'
+        a: 'We check 100+ aggregated stolen-item sources, including carrier and manufacturer blacklists, NICB vehicle data, BikeIndex, and the nationwide stolen firearm reports. Federal systems like FBI NCIC and ATF eTrace are restricted to law enforcement and are not queried by us or any consumer service.'
       },
       {
         q: 'Should I use an FFL dealer?',

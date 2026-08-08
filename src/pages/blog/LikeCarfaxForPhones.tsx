@@ -236,7 +236,7 @@ const LikeCarfaxForPhones = () => {
               SafeOrStolen checks the IMEI against 150+ databases including:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>GSMA Device Check</strong> - Global IMEI blacklist (carrier-reported stolen phones)</li>
+              <li><strong>carrier and manufacturer blacklists Device Check</strong> - Global IMEI blacklist (carrier-reported stolen phones)</li>
               <li><strong>FBI/stolen property reports from all 50 states Database</strong> - Law enforcement stolen property reports</li>
               <li><strong>Insurance Claims</strong> - Phones reported stolen to insurance companies</li>
               <li><strong>Carrier Blacklists</strong> - AT&T, Verizon, T-Mobile stolen device databases</li>

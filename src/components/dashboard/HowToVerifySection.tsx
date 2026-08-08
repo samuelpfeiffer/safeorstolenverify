@@ -13,7 +13,7 @@ interface HowToVerifySectionProps {
 const FAQS = [
   {
     question: 'How does SafeOrStolen verify if an item is stolen?',
-    answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including stolen property reports from all 50 states, GSMA global blacklist, NICB, stolen property reports from all 50 states, all 50 state community theft registries, and insurance theft claims. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
+    answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including stolen property reports from all 50 states, carrier and manufacturer blacklists global blacklist, NICB, stolen property reports from all 50 states, all 50 state community theft registries, and insurance theft claims. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
   },
   {
     question: 'How much does it cost to check if a phone is stolen?',

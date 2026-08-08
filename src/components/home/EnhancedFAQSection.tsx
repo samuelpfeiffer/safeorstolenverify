@@ -34,7 +34,7 @@ export const EnhancedFAQSection = () => {
       faqs: [
         {
           question: "Is this database global? What countries are covered?",
-          answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access NICB (USA), GSMA (global phones), CheckMEND (UK/Europe), Bike Index (worldwide), police databases, and insurance registries."
+          answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access NICB (USA), carrier and manufacturer blacklists (global phones), CheckMEND (UK/Europe), Bike Index (worldwide), police databases, and insurance registries."
         },
         {
           question: "How accurate are SafeOrStolen results?",

@@ -17,7 +17,7 @@ const VsStolenPhoneChecker = () => {
         "name": "What is CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The CTIA Stolen Phone Checker (stolenphonechecker.org) is a service powered by GSMA Device Check that allows consumers to verify if a mobile device has been reported lost or stolen. It's sponsored by US wireless carriers."
+          "text": "The CTIA Stolen Phone Checker (stolenphonechecker.org) is a service powered by carrier and manufacturer blacklists Device Check that allows consumers to verify if a mobile device has been reported lost or stolen. It's sponsored by US wireless carriers."
         }
       },
       {
@@ -59,7 +59,7 @@ const VsStolenPhoneChecker = () => {
       <PageSEO
         title="Best CTIA Stolen Phone Checker Alternative 2026"
         description="Compare SafeOrStolen and CTIA Stolen Phone Checker. Multi-category verification, mobile app, and marketplace analysis. Free to try."
-        keywords="CTIA stolen phone checker alternative, stolenphonechecker.org, GSMA device check, stolen phone verification, IMEI check comparison"
+        keywords="CTIA stolen phone checker alternative, stolenphonechecker.org, carrier and manufacturer blacklists device check, stolen phone verification, IMEI check comparison"
         canonical="/vs-stolenphonechecker"
         structuredData={faqSchema}
       />
@@ -101,7 +101,7 @@ const VsStolenPhoneChecker = () => {
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">What is CTIA Stolen Phone Checker?</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                The CTIA Stolen Phone Checker (stolenphonechecker.org) is a free service sponsored by US wireless carriers and powered by GSMA Device Check. It allows consumers to verify if a mobile phone has been reported lost or stolen by checking its IMEI number.
+                The CTIA Stolen Phone Checker (stolenphonechecker.org) is a free service sponsored by US wireless carriers and powered by carrier and manufacturer blacklists Device Check. It allows consumers to verify if a mobile phone has been reported lost or stolen by checking its IMEI number.
               </p>
               <p className="text-lg text-muted-foreground">
                 <strong>Limitation:</strong> CTIA only checks mobile phones. It cannot verify vehicles, bicycles, laptops, gaming consoles, or other commonly stolen items.

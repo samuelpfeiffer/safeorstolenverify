@@ -23,7 +23,7 @@ export const HowSafeOrStolenWorksSection = () => {
       description: 'Our AI-powered system simultaneously queries multiple databases including NICB, carrier and manufacturer blacklists, community theft registries, BikeIndex, manufacturer records, and carrier blacklists across 150+ countries.',
       details: [
         'NICB stolen vehicle database',
-        'GSMA global IMEI registry',
+        'carrier and manufacturer blacklists global IMEI registry',
         'Police stolen property reports',
         'Manufacturer warranty systems',
         'Carrier blacklist databases'

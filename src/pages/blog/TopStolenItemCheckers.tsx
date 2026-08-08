@@ -94,7 +94,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
-      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $10/month plan searches GSMA global blacklist, police databases, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
+      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $10/month plan searches carrier and manufacturer blacklists global blacklist, police databases, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
     },
     {
       question: "Is it illegal to buy stolen items?",

@@ -161,13 +161,13 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="bg-card border rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <CheckCircle className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold text-foreground">GSMA Device Check (IMEI Blacklist)</h3>
+                  <h3 className="text-xl font-semibold text-foreground">carrier and manufacturer blacklists Device Check (IMEI Blacklist)</h3>
                 </div>
                 <p className="text-muted-foreground mb-2">
                   <strong>Credibility: Very High (90%)</strong>
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  The GSMA (Global System for Mobile Communications Association) maintains a global IMEI blacklist 
+                  The carrier and manufacturer blacklists (Global System for Mobile Communications Association) maintains a global IMEI blacklist 
                   shared across major carriers worldwide. When a phone is reported stolen, its IMEI is blacklisted, 
                   preventing activation on participating networks.
                 </p>
@@ -261,7 +261,7 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li><strong>Real-time stolen property reports from all 50 states</strong> for vehicles and firearms through authorized law enforcement partnerships</li>
-              <li><strong>GSMA IMEI blacklist</strong> covering all major U.S. and global carriers</li>
+              <li><strong>carrier and manufacturer blacklists IMEI blacklist</strong> covering all major U.S. and global carriers</li>
               <li><strong>State NHTSA vehicle records</strong> for all 50 states via NMVTIS integration</li>
               <li><strong>Manufacturer databases</strong> including Apple, Samsung, Microsoft activation lock status</li>
               <li><strong>Insurance aggregators</strong> from 200+ insurance companies</li>

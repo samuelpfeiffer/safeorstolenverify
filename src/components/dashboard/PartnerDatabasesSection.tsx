@@ -13,7 +13,7 @@ const PARTNERS = [
     stat: '50 states',
   },
   {
-    name: 'GSMA IMEI Registry',
+    name: 'carrier and manufacturer blacklists IMEI Registry',
     category: 'Telecom / Global',
     type: 'industry',
     detail: 'Global System for Mobile Communications — 15 billion+ IMEI records from 200+ carriers worldwide.',

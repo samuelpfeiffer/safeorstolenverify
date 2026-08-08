@@ -64,7 +64,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "What databases does SafeOrStolen check?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries."
+          "text": "SafeOrStolen checks 100+ databases including carrier and manufacturer blacklists IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries."
         }
       }
     ]
@@ -192,7 +192,7 @@ const StolenPhoneCheckerPage = () => {
             <Card className="text-center">
               <CardContent className="pt-6">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">GSMA Database</h3>
+                <h3 className="font-semibold mb-2">carrier and manufacturer blacklists Database</h3>
                 <p className="text-sm text-muted-foreground">Global System for Mobile Association worldwide IMEI registry</p>
               </CardContent>
             </Card>
@@ -310,7 +310,7 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What databases does SafeOrStolen check?</h3>
-                <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries.</p>
+                <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including carrier and manufacturer blacklists IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries.</p>
               </CardContent>
             </Card>
           </div>

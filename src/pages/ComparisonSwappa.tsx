@@ -367,7 +367,7 @@ const ComparisonSwappa = () => {
                     <ul className="text-sm space-y-2">
                       <li>✅ stolen property reports from all 50 states</li>
                       <li>✅ NICB (National Insurance Crime Bureau)</li>
-                      <li>✅ GSMA Global Blacklist (phone carriers)</li>
+                      <li>✅ carrier and manufacturer blacklists Global Blacklist (phone carriers)</li>
                       <li>✅ nationwide stolen firearm reports</li>
                       <li>✅ All 50 state community theft registries</li>
                       <li>✅ International stolen vehicle registries</li>
