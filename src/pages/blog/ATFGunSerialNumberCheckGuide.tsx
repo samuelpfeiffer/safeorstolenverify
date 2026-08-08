@@ -23,7 +23,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "How do I verify a firearm online for free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use SafeOrStolen.com — enter the serial number and get results from ATF eTrace, FBI NCIC, HotGunz, and all 50 state databases in 3 seconds. 2 free checks with no credit card required. This is the most comprehensive free option available to consumers." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter the serial number at SafeOrStolen.com. We check the HotGunz national stolen-firearms registry (32,000+ user-reported records) and analyze the serial number for signs of alteration or obliteration, in about 3 seconds. 2 free checks with no credit card required. No consumer service can query ATF eTrace or FBI NCIC — those are restricted to law enforcement." }
       },
       {
         "@type": "Question",
