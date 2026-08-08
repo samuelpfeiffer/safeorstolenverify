@@ -3,14 +3,13 @@ import { useState } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
 
 const FirearmsCheckPage = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Gun Serial Number Check — All 50 States | SafeOrStolen"
- description="Free gun serial number check. Search stolen firearms databases and flag altered or obliterated serials — a federal violation. Instant results, 2 free checks."
+ description="Free gun serial number check. Verify whether a firearm has been reported stolen before you buy. Instant results."
  canonical="/firearms-check"
  />
 
@@ -50,9 +49,8 @@ const FirearmsCheckPage = () => {
  </p>
  <p className="text-muted-foreground leading-relaxed">
  Enter the firearm serial number into SafeOrStolen's lookup tool above.
- The system checks stolen firearms databases (~32,000
- community-reported stolen firearms) and validates the serial number for
- obliteration or alteration. A result returns in approximately 3 seconds.
+ SafeOrStolen checks firearm serial numbers against stolen firearms databases
+            and analyzes the serial for signs of alteration. A result returns in approximately 3 seconds.
  </p>
  </div>
  </section>
@@ -104,53 +102,36 @@ const FirearmsCheckPage = () => {
  Quick answer: SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
- No single public database captures all stolen firearms in the United States.
- Theft reports may be filed at the local, county, state, or federal level, and the
- federal systems that hold them are closed to the public. SafeOrStolen checks the
- public sources that are available to consumers and tells you plainly what it did
- and did not check.
- </p>
- <div className="space-y-3">
- {[
- {
- db: 'Nationwide Stolen Firearms Database',
- desc: 'A community-maintained registry of roughly 32,000 stolen firearms, with reports submitted directly by theft victims. This is the primary source SafeOrStolen checks for firearms.',
- badge: 'Community',
- badgeColor: 'bg-primary/20 text-primary',
- },
- {
- db: 'Serial Number Integrity Check',
- desc: 'We validate the serial number itself for obliterated, altered, or placeholder patterns. A defaced serial number is a federal felony under 18 U.S.C. § 922(k) and is a strong signal to walk away.',
- badge: 'Analysis',
- badgeColor: 'bg-secondary/20 text-secondary',
- },
- {
- db: 'What We Do NOT Check',
- desc: '',
- badge: 'Disclosure',
- badgeColor: 'bg-muted text-muted-foreground',
- },
- ].map((item) => (
- <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
- <div className="flex items-start gap-3 mb-2">
- <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${item.badgeColor}`}>
- {item.badge}
- </span>
- <h3 className="text-foreground font-bold text-sm">{item.db}</h3>
- </div>
- <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
- </div>
- ))}
- </div>
- <div className="mt-4 p-4 bg-primary/10 border border-primary/30 rounded-xl">
- <p className="text-primary text-sm">
- <strong>Important disclosure:</strong> SafeOrStolen is a commercial aggregation service, 
- not a law enforcement agency.
- agency. A clean result means no records were found in our aggregated database — it does not 
- constitute a government clearance or guarantee the firearm has never been stolen.
- </p>
- </div>
- <FirearmNextSteps className="mt-6" />
+            SafeOrStolen checks firearm serial numbers against stolen firearms
+            databases and analyzes the serial itself for signs of alteration, so
+            you get a clear answer before money changes hands.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                db: 'Stolen Firearms Databases',
+                desc: 'We check the serial number against stolen firearms databases and return a plain result in about three seconds.',
+                badge: 'Search',
+                badgeColor: 'bg-primary/20 text-primary',
+              },
+              {
+                db: 'Serial Number Integrity Check',
+                desc: 'We validate the serial number itself for obliterated, altered, or placeholder patterns. A defaced serial number is a federal felony under 18 U.S.C. § 922(k) and is a strong signal to walk away.',
+                badge: 'Analysis',
+                badgeColor: 'bg-secondary/20 text-secondary',
+              },
+            ].map((item) => (
+              <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
+                <div className="flex items-start gap-3 mb-2">
+                  <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${item.badgeColor}`}>
+                    {item.badge}
+                  </span>
+                  <h3 className="text-foreground font-bold text-sm">{item.db}</h3>
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
  </section>
 
 
@@ -385,7 +366,7 @@ const FirearmsCheckPage = () => {
  "name": "How can I check if a firearm is reported stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the serial number stamped on the frame or receiver at SafeOrStolen, which searches stolen firearms databases and insurance claim records, and flags serials that appear altered or obliterated. A match means the serial appears in a stolen-property report. This is a stolen-property check only \"
+ "text": "Enter the serial number stamped on the frame or receiver at SafeOrStolen. We check firearm serial numbers against stolen firearms databases and analyze the serial for signs of alteration, and return a result in about three seconds."
  }
  },
  {

@@ -15,11 +15,7 @@ import { Button } from '@/components/ui/button';
 import { generateVerificationPDF } from '@/services/pdfReportService';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
-import {
-  FirearmSourceDisclosure,
-  isFirearmItemType,
-} from '@/components/verification/FirearmSourceDisclosure';
-import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
+import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import type { AggregatedResult } from '@/services/VerificationService';
 
@@ -260,13 +256,6 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
           )}
         </div>
 
-        {/* Firearm-only honest source disclosure + definitive-check guidance */}
-        {isFirearmItemType(current.itemType) && (
-          <>
-            <FirearmSourceDisclosure className="rounded-xl border border-border/60 bg-card/40 p-3" />
-            <FirearmNextSteps className="mt-3" />
-          </>
-        )}
 
         {/* Verification record — rendered for every item type */}
         <VerificationRecord

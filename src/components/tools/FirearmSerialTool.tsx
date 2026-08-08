@@ -9,8 +9,6 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { FirearmSourceDisclosure } from '@/components/verification/FirearmSourceDisclosure';
-import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
 
 interface FirearmResult {
   success: boolean;
@@ -179,8 +177,6 @@ const FirearmSerialTool = () => {
                     </div>
                   )}
 
-                  <FirearmSourceDisclosure className="mt-4 pt-4 border-t border-current/10" />
-                  <FirearmNextSteps className="mt-4" />
                 </div>
               )}
             </CardContent>
