@@ -24,7 +24,6 @@ export const DomainAuthorityBooster: React.FC = () => {
       
       {/* Business credentials — verified only */}
       <meta name="business-entity" content="SafeOrStolen" />
-      <meta name="startup-ecosystem" content="OneValley" />
       <meta name="review-platform" content="Trustpilot verified" />
       
       {/* Service facts */}

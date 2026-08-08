@@ -234,7 +234,6 @@ export const VALID_ROUTES = new Set([
   '/for-sellers',
   
   // News & social
-  '/news/onevalley-recognition',
   '/press-kit',
   '/product-hunt',
   '/youtube',

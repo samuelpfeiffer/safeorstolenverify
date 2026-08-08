@@ -352,7 +352,6 @@ const SelfHostedVideoWatchPage = lazy(() => import('@/pages/videos/SelfHostedVid
 const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
 const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
-const OneValleyRecognitionPage = lazy(() => import('@/pages/news/OneValleyRecognitionPage'));
 
 // Admin Pages
 const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
@@ -735,7 +734,6 @@ export const AppRoutes = () => {
 
         {/* NEWS PAGES */}
         <Route path="/news" element={<NewsIndexPage />} />
-        <Route path="/news/onevalley-recognition" element={<OneValleyRecognitionPage />} />
 
         {/* PRESS & SOCIAL PAGES */}
         <Route path="/press-kit" element={<PressKitPage />} />

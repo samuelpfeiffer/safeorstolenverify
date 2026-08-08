@@ -31,6 +31,9 @@ const RedirectWithNoIndex = ({ to }: { to: string }) => (
  * Organized by category for maintainability
  */
 const REDIRECT_MAP: Record<string, string> = {
+  // ===== REMOVED PAGES =====
+  '/news/onevalley-recognition': '/press',
+
   // ===== APP VARIANT URLS =====
   '/android-app': '/app',
   '/mobile-app': '/app',

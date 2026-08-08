@@ -246,22 +246,7 @@ const PressPage = () => {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Recognition & Awards</h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card>
-                <CardHeader>
-                  <Award className="w-10 h-10 text-primary mb-2" />
-                  <CardTitle>OneValley Recognition</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Recognized by OneValley for innovation in consumer protection technology.
-                  </p>
-                  <Button asChild variant="link" className="px-0">
-                    <Link to="/news/onevalley-recognition">Read more →</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
+            <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
                   <TrendingUp className="w-10 h-10 text-primary mb-2" />

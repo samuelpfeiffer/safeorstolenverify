@@ -12,7 +12,6 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 - Founded: August 2024
 - Headquarters: United States
 - Founders: Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)
-- Member of OneValley startup ecosystem
 - Trustpilot verified business
 
 ---

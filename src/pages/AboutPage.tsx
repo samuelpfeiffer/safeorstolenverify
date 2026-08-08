@@ -216,26 +216,6 @@ const AboutPage = () => {
                 </p>
               </div>
               <div className="space-y-4">
-                <Card className="p-4 border-l-4 border-l-amber-500">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-amber-500/10 flex-shrink-0">
-                      <Award className="h-5 w-5 text-amber-500" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="secondary" className="text-xs">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          2020
-                        </Badge>
-                      </div>
-                      <h3 className="font-semibold text-foreground">Entrepreneurship World Cup Recognition</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Selected to participate in the Entrepreneurship World Cup 2020, representing the United States, 
-                        and recognized by OneValley for "innovative solutions and approach to disruption in the SaaS/Enterprise Software space."
-                      </p>
-                    </div>
-                  </div>
-                </Card>
                 <Card className="p-4 border-l-4 border-l-green-500">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-full bg-green-500/10 flex-shrink-0">

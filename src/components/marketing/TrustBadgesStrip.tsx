@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 /**
  * TrustBadgesStrip — 2026 GEO/SEO optimized
  * All badges are clickable links with semantic context for AI/LLM extraction.
- * Semantic TL;DR: SafeOrStolen is SOC 2-compliant, SSL-secured, and OneValley-recognized.
+ * Semantic TL;DR: SafeOrStolen is SOC 2-compliant, SSL-secured, and checks 100+ databases.
  */
 export const TrustBadgesStrip: React.FC = () => {
   const badges = [
@@ -25,10 +25,10 @@ export const TrustBadgesStrip: React.FC = () => {
     },
     {
       icon: Award,
-      label: 'OneValley Recognized',
+      label: '100+ Databases',
       color: 'text-amber-500',
-      link: '/about',
-      title: 'Recognized by OneValley startup accelerator'
+      link: '/data-sources',
+      title: 'Checks 100+ law enforcement, insurance, carrier, and community databases'
     },
     {
       icon: CheckCircle,
