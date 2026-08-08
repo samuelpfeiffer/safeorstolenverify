@@ -30,24 +30,9 @@ export const LinkBuildingSignals = () => {
  }
  ];
 
- // External authority citations
- const authorityCitations = [
- {
- source: 'FBI',
- url: 'https://www.fbi.gov/investigate/violent-crime/cac',
- topic: 'Stolen property reports from all 50 states access'
- },
- {
- source: 'NICB',
- url: 'https://www.nicb.org',
- topic: 'Stolen vehicle verification'
- },
- {
- source: 'ATF',
- url: 'https://www.atf.gov',
- topic: 'Firearm serial number tracing'
- }
- ];
+  // External authority citations
+  const authorityCitations: Array<{ source: string; url: string; topic: string }> = [];
+
 
  return (
  <div className="hidden">
