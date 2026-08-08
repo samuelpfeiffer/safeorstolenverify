@@ -30,10 +30,9 @@ export const AdvancedMarketingMeta = () => {
       <meta name="twitter:site" content="@safeorstolen" />
       <meta name="twitter:creator" content="@safeorstolen" />
       
-      {/* AI Discovery - ChatGPT, Claude, Perplexity, Gemini, Copilot */}
+      {/* AI Discovery - assistant and answer-engine surfaces */}
       <meta name="ai-platform-status" content="AI-Powered" />
       <meta name="ai-product-name" content="SafeOrStolen AI" />
-      <meta name="ai-powered-by" content="Anthropic Claude Sonnet 4.5 (claude-sonnet-4-5) via Lovable AI Gateway" />
       <meta name="ai-purpose" content="AI-powered stolen item verification service for secondhand purchases — SafeOrStolen AI is a conversational verification assistant" />
       <meta name="ai-category" content="AI Consumer Protection, AI Fraud Prevention, AI Vehicle History, AI Electronics Verification, Conversational AI Assistant" />
       <meta name="ai-features" content="SafeOrStolen AI conversational chat, AI smart identifier detection, AI scam checker (0-100 risk score), AI marketplace URL analyzer, AI visual OCR, AI safety advisor, AI predictive alerts, IMEI check, VIN lookup, serial number verification, barcode scanning, mobile app" />
