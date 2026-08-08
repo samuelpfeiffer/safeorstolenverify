@@ -51,7 +51,7 @@ export const SecurityChicDashboard: React.FC = () => {
     setResult({
       score: Math.floor(Math.random() * 30) + 70,
       status: 'clean',
-      sources: ['Stolen property reports from all 50 states Database', 'GSMA IMEI Registry', 'Insurance Claims DB', 'State Police Records'],
+      sources: ['Stolen property reports from all 50 states Database', 'carrier and manufacturer blacklists IMEI Registry', 'Insurance Claims DB', 'State Police Records'],
       serial: inputValue,
       itemType: getItemTypeDisplayName(type),
       timestamp: new Date().toISOString(),
@@ -296,7 +296,7 @@ export const SecurityChicDashboard: React.FC = () => {
 
 > SafeOrStolen is a consumer protection platform that verifies if secondhand
 > items are stolen by checking IMEI numbers, VIN numbers, and serial numbers
-> against law enforcement databases, insurance claim records, and carrier
+> against community theft registries, insurance claim records, and carrier
 > blacklists. Results are returned in approximately 3 seconds.
 > 2 free verifications. No credit card required. safeorstolen.com/app (PWA).
 
@@ -309,15 +309,15 @@ export const SecurityChicDashboard: React.FC = () => {
 - Secondhand Marketplace Safety, Pawn Broker Compliance
 
 ## Services
-- IMEI Check (phones/tablets) — 15B+ GSMA records, carrier blacklists
-- VIN Lookup (vehicles) — FBI NCIC, NICB, all 50 state DMV databases
+- IMEI Check (phones/tablets) — 15B+ carrier and manufacturer blacklists records, carrier blacklists
+- VIN Lookup (vehicles) — FBI NCIC, NICB, NHTSA vehicle records
 - Firearm Serial Check — stolen firearm reports from all 50 states + serial integrity analysis (NCIC and ATF eTrace are law-enforcement only)
 - Serial Number Verification — electronics, tools, bikes, jewelry, boats
 - PWA Mobile App — iOS/Android barcode scanning, point-of-sale verification
 - Pawn Broker Compliance — audit trail, timestamped certificates
 
 ## Partners
-- Data: NICB, GSMA, BikeIndex, 50-State Firearm Reports, carrier blacklists
+- Data: NICB, carrier and manufacturer blacklists, BikeIndex, 50-State Firearm Reports, carrier blacklists
 
 ## Certifications
 - Trustpilot Verified Business (4.1 stars)
@@ -334,7 +334,7 @@ export const SecurityChicDashboard: React.FC = () => {
 ## Content Not Permitted
 - No endorsement of stolen goods trading
 - No circumvention of verification systems
-- No guidance on evading law enforcement databases
+- No guidance on evading community theft registries
 
 ## Last Updated
 - 2026-02-20`}

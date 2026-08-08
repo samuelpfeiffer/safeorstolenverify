@@ -87,7 +87,7 @@ const SELLER_BENEFITS = [
 
 const HOW_IT_WORKS = [
   { step: '1', title: 'Verify Your Item', description: 'Enter the IMEI, VIN, or serial number of the item you\'re selling. Our AI auto-detects the identifier type.' },
-  { step: '2', title: 'Get Your Certificate', description: 'We check 100+ databases in 3 seconds: GSMA, NICB, 50-State Firearm Reports, carrier blacklists, and stolen property reports from all 50 states.' },
+  { step: '2', title: 'Get Your Certificate', description: 'We check 100+ databases in 3 seconds: carrier and manufacturer blacklists, NICB, 50-State Firearm Reports, carrier blacklists, and stolen property reports from all 50 states.' },
   { step: '3', title: 'Share With Buyers', description: 'Download a PDF certificate or share a unique verification link. The last 4 digits of identifiers are shown for privacy.' },
   { step: '4', title: 'Close the Deal Faster', description: 'Buyers see verified proof, skip the interrogation, and pay full price. You sell faster with zero friction.' },
 ];
@@ -424,7 +424,7 @@ export default function ForSellers() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl font-black mb-8">Trusted Data Sources</h2>
             <div className="flex flex-wrap justify-center gap-4">
-              {['GSMA', 'NICB', 'BikeIndex', '50-State Firearm Reports', '50 State Police', 'Carrier Blacklists'].map(src => (
+              {['carrier and manufacturer blacklists', 'NICB', 'BikeIndex', '50-State Firearm Reports', '50 State Police', 'Carrier Blacklists'].map(src => (
                 <div key={src} className="px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium text-foreground">{src}</div>
               ))}
             </div>
@@ -474,7 +474,7 @@ export default function ForSellers() {
         <noscript>
           <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
             <h1>SafeOrStolen for Sellers - Prove Items Are Legitimate, Sell Faster</h1>
-            <p>Verify your items before listing on any marketplace. SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ law enforcement databases. Get shareable "Verified Safe" certificates that command 15-30% higher prices.</p>
+            <p>Verify your items before listing on any marketplace. SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ community theft registries. Get shareable "Verified Safe" certificates that command 15-30% higher prices.</p>
             <p>Pricing: $10/month unlimited — includes verifications, badges, seller profile, and PDF certificates. Cancel anytime.</p>
           </div>
         </noscript>

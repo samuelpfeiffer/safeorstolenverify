@@ -87,7 +87,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
       localLaws: "Under Oregon Revised Statutes §164.095, receiving stolen property valued over $1,000 is a felony with penalties up to 5 years in prison. Oregon requires title transfers within 30 days. The Oregon DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I verify an Oregon vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Oregon title status. Enter the VIN to check OR DMV records, theft databases, and title brands. Oregon has electronic titles, so always verify the VIN matches the physical vehicle before purchase." },
+      { question: "How do I verify an Oregon vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Oregon title status. Enter the VIN to check OR NHTSA vehicle records, theft databases, and title brands. Oregon has electronic titles, so always verify the VIN matches the physical vehicle before purchase." },
       { question: "Does Oregon require VIN inspections?", answer: "Oregon requires VIN inspections for out-of-state vehicles and vehicles without existing OR titles. The inspection verifies the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
       { question: "What is Oregon's title transfer process?", answer: "In Oregon, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the OR DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
     ]
@@ -110,7 +110,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
       localLaws: "Rhode Island General Laws §11-41-3 makes receiving stolen property valued over $1,500 a felony with penalties up to 10 years in prison. Rhode Island requires title transfers within 30 days. The RI DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I check a Rhode Island VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Rhode Island DMV records, NICB theft database, and accident history. Our mobile app provides instant barcode scanning for faster verification at RI dealerships." },
+      { question: "How do I check a Rhode Island VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Rhode Island NHTSA vehicle records, NICB theft database, and accident history. Our mobile app provides instant barcode scanning for faster verification at RI dealerships." },
       { question: "Is a VIN check required in Rhode Island?", answer: "Rhode Island law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase to protect themselves legally." },
       { question: "How do I detect rust damage on a Rhode Island vehicle?", answer: "While VIN checks reveal accident and flood history, rust damage from coastal salt air often isn't documented. Combine SafeOrStolen's VIN verification with a physical inspection focusing on frame, rocker panels, and wheel wells where RI salt causes hidden corrosion." }
     ]

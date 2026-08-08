@@ -25,7 +25,7 @@ export const QuestionBasedContent = () => {
     },
     {
       question: "Is there a free database to check stolen items?",
-      answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against 100+ databases including NICB, GSMA, police records, and insurance claims.",
+      answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against 100+ databases including NICB, carrier and manufacturer blacklists, police records, and insurance claims.",
       icon: CheckCircle2,
       link: "/verify"
     }

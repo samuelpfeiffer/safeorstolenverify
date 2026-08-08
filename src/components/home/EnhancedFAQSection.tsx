@@ -34,11 +34,11 @@ export const EnhancedFAQSection = () => {
       faqs: [
         {
           question: "Is this database global? What countries are covered?",
-          answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access NICB (USA), GSMA (global phones), CheckMEND (UK/Europe), Bike Index (worldwide), police databases, and insurance registries."
+          answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access NICB (USA), carrier and manufacturer blacklists (global phones), CheckMEND (UK/Europe), Bike Index (worldwide), police databases, and insurance registries."
         },
         {
           question: "How accurate are SafeOrStolen results?",
-          answer: "Our accuracy rate is 98.7% with real-time database updates. We search official police databases, insurance claims (NICB), carrier blacklists (GSMA), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
+          answer: "Our accuracy rate is 98.7% with real-time database updates. We search official police databases, insurance claims (NICB), carrier blacklists (carrier and manufacturer blacklists), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
         },
         {
           question: "What if an item shows 'Safe' but turns out stolen?",

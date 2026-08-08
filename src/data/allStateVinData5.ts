@@ -19,7 +19,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
     },
     faqs: [
       { question: "Is a VIN check required in Illinois?", answer: "Illinois law doesn't mandate VIN checks for private sales, but dealerships must verify title status. However, buyers who unknowingly purchase stolen vehicles can face criminal charges and lose both the car and money paid." },
-      { question: "How do I check an Illinois VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to instantly check Illinois DMV records, NICB theft database, and title status. Our mobile app provides 3-second barcode scanning for even faster checks." },
+      { question: "How do I check an Illinois VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to instantly check Illinois NHTSA vehicle records, NICB theft database, and title status. Our mobile app provides 3-second barcode scanning for even faster checks." },
       { question: "What is the Illinois title transfer process?", answer: "In Illinois, both buyer and seller must complete the title transfer within 30 days. The seller signs the title, buyer submits it to the IL Secretary of State with odometer disclosure and bill of sale. Verify the VIN matches the title before signing." }
     ]
   },

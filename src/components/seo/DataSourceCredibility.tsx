@@ -103,7 +103,7 @@ export const DataSourceCredibility: React.FC = () => {
             Verified Data Sources & Official Partnerships
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-            Our verification system integrates with official law enforcement databases, 
+            Our verification system integrates with official community theft registries, 
             verified registries, and trusted industry partners to provide accurate, 
             legally-actionable stolen item checks.
           </p>
@@ -167,7 +167,7 @@ export const DataSourceCredibility: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">Official Database Verification</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
               Unlike unverified third-party services, SafeOrStolen maintains direct 
-              integrations with official law enforcement databases, verified industry 
+              integrations with official community theft registries, verified industry 
               registries, and trusted data providers. Our verification methodology
               registries, and trusted data providers. Our verification methodology 
               is transparent and legally actionable.

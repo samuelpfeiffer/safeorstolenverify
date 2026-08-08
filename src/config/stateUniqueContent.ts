@@ -36,7 +36,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
     commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Honda Accord', 'Toyota Camry', 'Dodge Ram'],
     verificationAdvice: 'Always run both a license plate and VIN check for Alabama vehicles. Cross-reference the Alabama title with NMVTIS history to catch vehicles that may have been title-washed through neighboring states like Mississippi or Tennessee.',
     uniqueFaqs: [
-      { question: 'Does Alabama have a public stolen vehicle database?', answer: 'Alabama does not maintain a public database. However, SafeOrStolen searches stolen property reports from all 50 states and NICB databases which include all Alabama law enforcement stolen vehicle reports. Our search covers Birmingham, Montgomery, Mobile, and all Alabama jurisdictions.' },
+      { question: 'Does Alabama have a public stolen vehicle database?', answer: 'Alabama does not maintain a public database. However, SafeOrStolen searches stolen property reports from all 50 states and NICB databases which include all Alabama stolen property reports from all 50 states. Our search covers Birmingham, Montgomery, Mobile, and all Alabama jurisdictions.' },
       { question: 'Are flood-damaged vehicles common in Alabama?', answer: 'Yes, particularly after hurricanes affecting the Gulf Coast. Mobile and coastal counties see flood vehicles. Always check NMVTIS for salvage or flood title brands. Our VIN check includes insurance total loss records to flag potential flood damage.' }
     ]
   },

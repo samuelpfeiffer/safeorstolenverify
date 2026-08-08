@@ -93,7 +93,7 @@ import { z as z2 } from "npm:zod@^3.23.8";
 var verify_imei_default = defineTool2({
   name: "verify_imei",
   title: "Verify phone IMEI",
-  description: "Check a 15-digit phone IMEI against SafeOrStolen's stolen-device sources (GSMA blacklists, carrier data, community reports). Returns a status (safe / stolen / unknown) with any known metadata.",
+  description: "Check a 15-digit phone IMEI against SafeOrStolen's stolen-device sources (carrier and manufacturer blacklists, carrier data, community reports). Returns a status (safe / stolen / unknown) with any known metadata.",
   inputSchema: {
     imei: z2.string().describe("A 15-digit IMEI. Digits only; SafeOrStolen strips spaces and dashes.")
   },

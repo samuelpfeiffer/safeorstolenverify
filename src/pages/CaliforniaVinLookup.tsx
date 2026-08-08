@@ -6,7 +6,7 @@ const CaliforniaVinLookup = () => {
       state="California"
       stateCode="CA"
       title="California VIN Lookup - Free CA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free California VIN lookup. Check if a CA vehicle is stolen from DMV and law enforcement databases. Instant verification for cars, trucks, and motorcycles."
+      metaDescription="Free California VIN lookup. Check if a CA vehicle is stolen from DMV and community theft registries. Instant verification for cars, trucks, and motorcycles."
       topCities={["Los Angeles", "Oakland", "San Francisco"]}
       dmvLink="https://www.dmv.ca.gov"
       content={{

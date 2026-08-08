@@ -30,14 +30,14 @@ const SamsungIMEICheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Samsung IMEI Verification?"
-      whatIsContent="Every Samsung Galaxy phone has a unique 15-digit IMEI (International Mobile Equipment Identity) number. When a Samsung device is reported stolen, lost, or has unpaid financing, the IMEI gets added to carrier blacklists and global stolen device databases. Our verification service instantly checks your Samsung's IMEI against GSMA, carrier blacklists (AT&T, Verizon, T-Mobile), and law enforcement records. A blacklisted Samsung won't work on cellular networks, making it essentially worthless."
+      whatIsContent="Every Samsung Galaxy phone has a unique 15-digit IMEI (International Mobile Equipment Identity) number. When a Samsung device is reported stolen, lost, or has unpaid financing, the IMEI gets added to carrier blacklists and global stolen device databases. Our verification service instantly checks your Samsung's IMEI against carrier and manufacturer blacklists, and law enforcement records. A blacklisted Samsung won't work on cellular networks, making it essentially worthless."
       howItWorksSteps={[
         "Find the Samsung IMEI: Dial *#06# on the phone, go to Settings > About Phone > Status > IMEI, or check the original box",
         "Enter the 15-digit IMEI number into our free verification tool",
         "Our system checks 100+ law enforcement, insurance, and carrier databases in real-time",
         "Get instant results - know if your Samsung is SAFE, STOLEN, or BLACKLISTED"
       ]}
-      howItWorksDescription="We check multiple databases simultaneously including GSMA Device Registry, US carrier blacklists, Samsung's Find My Mobile reports, law enforcement records, and insurance claim databases. Our comprehensive check ensures you're protected from purchasing a stolen or financed device."
+      howItWorksDescription="We check multiple databases simultaneously including carrier and manufacturer blacklists, US carrier blacklists, Samsung's Find My Mobile reports, law enforcement records, and insurance claim databases. Our comprehensive check ensures you're protected from purchasing a stolen or financed device."
       whyVerifyTitle="Why Verify Samsung Phones Before Buying?"
       whyVerifyContent="Samsung Galaxy devices, especially flagship models like the S24 Ultra, Z Fold, and Z Flip, are high-value targets for thieves. With prices exceeding $1,000 for premium models, the financial risk of buying stolen is significant."
       whyVerifyBenefits={[

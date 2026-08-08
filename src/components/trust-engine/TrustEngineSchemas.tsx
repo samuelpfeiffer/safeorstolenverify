@@ -84,7 +84,7 @@ export const TrustEngineSchemas: React.FC = () => {
         "name": "What databases does SafeOrStolen check?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen aggregates data from federal law enforcement records, GSMA device registries, NICB vehicle databases, carrier blacklists, insurance claims databases, and state police records — over 100 sources in total."
+          "text": "SafeOrStolen aggregates data from federal law enforcement records, carrier and manufacturer blacklists, NICB vehicle databases, carrier blacklists, insurance claims databases, and state police records — over 100 sources in total."
         }
       }
     ]

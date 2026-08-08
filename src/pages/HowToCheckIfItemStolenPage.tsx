@@ -80,7 +80,7 @@ export default function HowToCheckIfItemStolenPage() {
                       </ul>
                       <h4>What we check:</h4>
                       <ul>
-                        <li>GSMA blacklist (global carrier database)</li>
+                        <li>carrier and manufacturer blacklists (global carrier database)</li>
                         <li>Carrier-specific blacklists (AT&T, Verizon, T-Mobile)</li>
                         <li>Insurance claim records</li>
                         <li>Law enforcement stolen property files</li>

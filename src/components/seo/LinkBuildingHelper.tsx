@@ -52,7 +52,7 @@ export const LinkBuildingHelper: React.FC<LinkBuildingHelperProps> = ({
             {
               "@type": "HowToStep", 
               "name": "Database Check",
-              "text": "System checks multiple law enforcement databases"
+              "text": "System checks multiple community theft registries"
             },
             {
               "@type": "HowToStep",

@@ -92,7 +92,7 @@ const BicycleSerialCheck = () => {
         },
         {
           question: "What databases does SafeOrStolen check for bikes?",
-          answer: "We search Bike Index (the largest stolen bike database with 500,000+ bikes registered), local and national police databases, insurance claim records, and manufacturer registries. This comprehensive search gives you the best protection."
+          answer: "We search Bike Index (the largest stolen bike database with 500,000+ bikes registered), local and community theft registries, insurance claim records, and manufacturer registries. This comprehensive search gives you the best protection."
         },
         {
           question: "What if the bike is reported stolen?",

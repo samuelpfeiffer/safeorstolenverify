@@ -4,7 +4,7 @@ const CheckCarPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Car is Stolen - Free VIN Verification"
-      metaDescription="Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax for theft."
+      metaDescription="Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and community theft registries. Safer alternative to Carfax for theft."
       h1="Check if Car is Stolen Before Buying"
       itemType="Car"
       keywords={[
@@ -16,14 +16,14 @@ const CheckCarPage = () => {
         'stolen vehicle lookup'
       ]}
       content={{
-        intro: "Verify if any car, truck, or SUV is stolen in 3 seconds. Free VIN verification from NICB, state DMV databases, and law enforcement. Check before buying from Craigslist, Facebook Marketplace, or used car dealers. Looking for Carfax alternatives? Read our <a href='/blog/carfax-vs-free-vin-alternatives'>Carfax and Free VIN Alternatives guide</a>.",
-        whatIs: "Checking if a car is stolen means verifying the vehicle's VIN (Vehicle Identification Number) against national and state stolen vehicle databases. Every car has a unique 17-character VIN that serves as its permanent identifier. SafeOrStolen's car checker instantly searches the National Insurance Crime Bureau (NICB) database, all 50 state DMV title records, FBI's National Crime Information Center (stolen property reports from all 50 states), insurance theft claims, and salvage auction records to determine if a vehicle has been reported stolen, salvaged, or has title issues. This protects buyers from purchasing stolen cars, trucks, SUVs, or motorcycles. For detailed pricing comparisons, see our <a href='/blog/carfax-vs-free-vin-alternatives'>free VIN check alternatives</a>.",
-        howItWorks: "Our car verification system queries authoritative databases in real-time. We check: (1) NICB VINCheck - the official FBI-partnered stolen vehicle database, (2) NMVTIS - National Motor Vehicle Title Information System with all state DMV records, (3) Law enforcement stolen vehicle reports from local, state, and federal agencies, (4) Insurance total loss and theft claim databases, (5) Salvage auction records (Copart, IAAI), (6) Title history showing previous owners, liens, and brand history. Within 3 seconds, you receive a comprehensive report showing whether the car is clean, reported stolen, has a salvage title, has outstanding liens, or has been in major accidents. We also verify the VIN hasn't been altered or cloned.",
+        intro: "Verify if any car, truck, or SUV is stolen in 3 seconds. Free VIN verification from NICB, NHTSA vehicle records, and law enforcement. Check before buying from Craigslist, Facebook Marketplace, or used car dealers. Looking for Carfax alternatives? Read our <a href='/blog/carfax-vs-free-vin-alternatives'>Carfax and Free VIN Alternatives guide</a>.",
+        whatIs: "Checking if a car is stolen means verifying the vehicle's VIN (Vehicle Identification Number) against national and state stolen vehicle databases. Every car has a unique 17-character VIN that serves as its permanent identifier. SafeOrStolen's car checker instantly searches the National Insurance Crime Bureau (NICB) database, NHTSA vehicle records, FBI's National Crime Information Center (stolen property reports from all 50 states), insurance theft claims, and salvage auction records to determine if a vehicle has been reported stolen, salvaged, or has title issues. This protects buyers from purchasing stolen cars, trucks, SUVs, or motorcycles. For detailed pricing comparisons, see our <a href='/blog/carfax-vs-free-vin-alternatives'>free VIN check alternatives</a>.",
+        howItWorks: "Our car verification system queries authoritative databases in real-time. We check: (1) NICB VINCheck - the official FBI-partnered stolen vehicle database, (2) NMVTIS - National Motor Vehicle Title Information System with all NHTSA vehicle records, (3) Stolen property reports from all 50 states from local, state, and federal agencies, (4) Insurance total loss and theft claim databases, (5) Salvage auction records (Copart, IAAI), (6) Title history showing previous owners, liens, and brand history. Within 3 seconds, you receive a comprehensive report showing whether the car is clean, reported stolen, has a salvage title, has outstanding liens, or has been in major accidents. We also verify the VIN hasn't been altered or cloned.",
         whyCheck: "Buying a stolen car will financially devastate you and could land you in jail. Here's what happens: (1) Police will confiscate the vehicle with ZERO compensation to you, (2) You could face criminal charges for receiving stolen property, (3) You lose your entire purchase price with no legal recourse, (4) Your state DMV will reject the title application making registration impossible, (5) Insurance won't cover a stolen vehicle, (6) Banks won't finance stolen vehicles. In 2024, over 1 million vehicles were reported stolen in the United States (one every 32 seconds). Stolen cars frequently appear on Craigslist, Facebook Marketplace, and even legitimate-looking used car lots. Thieves often use fake titles, VIN cloning, and title washing to make stolen vehicles appear legitimate. Our free car checker protects you from this $7.5 billion annual crime.",
         benefits: [
           "Check cars, trucks, SUVs, vans, and motorcycles",
           "Verify VIN against NICB and FBI stolen vehicle databases",
-          "Check all 50 state DMV title records and lien information",
+          "Check NHTSA vehicle records and lien information",
           "Detect VIN cloning and title washing fraud",
           "Verify salvage, rebuilt, and flood damage history",
           "Free VIN check - 2 free verifications (Carfax charges $44.99)",
@@ -41,7 +41,7 @@ const CheckCarPage = () => {
         faqs: [
           {
             question: "How do I check if a car is stolen for free?",
-            answer: "To check if a car is stolen for free: (1) Get the VIN from the dashboard (visible through windshield) or door jamb, (2) Use SafeOrStolen's free VIN checker at safeorstolen.com/verify - we search NICB, DMV, and law enforcement databases, (3) Also check NICB's VINCheck at nicb.org (limited data), (4) Check your state DMV's title search (if available), (5) Ask the seller for the title and verify it's not branded as salvage/rebuilt. SafeOrStolen offers the most comprehensive free check with 2 free verifications. Carfax charges $44.99 and focuses on history rather than theft."
+            answer: "To check if a car is stolen for free: (1) Get the VIN from the dashboard (visible through windshield) or door jamb, (2) Use SafeOrStolen's free VIN checker at safeorstolen.com/verify - we search NICB, DMV, and community theft registries, (3) Also check NICB's VINCheck at nicb.org (limited data), (4) Check your state DMV's title search (if available), (5) Ask the seller for the title and verify it's not branded as salvage/rebuilt. SafeOrStolen offers the most comprehensive free check with 2 free verifications. Carfax charges $44.99 and focuses on history rather than theft."
           },
           {
             question: "What is a VIN and where do I find it?",
@@ -65,7 +65,7 @@ const CheckCarPage = () => {
           },
           {
             question: "How long does a car check take?",
-            answer: "Our car verification takes only 3 seconds. Enter the 17-character VIN, click verify, and receive instant results showing theft status, title history, salvage status, and any red flags from NICB, DMV, and law enforcement databases."
+            answer: "Our car verification takes only 3 seconds. Enter the 17-character VIN, click verify, and receive instant results showing theft status, title history, salvage status, and any red flags from NICB, DMV, and community theft registries."
           },
           {
             question: "Can a salvage or rebuilt title car be safe to buy?",

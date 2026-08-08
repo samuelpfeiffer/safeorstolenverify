@@ -12,11 +12,11 @@ import {
 const FAQ_ITEMS = [
   {
     question: "What databases does SafeOrStolen check for IMEI verification?",
-    answer: "SafeOrStolen checks the GSMA global IMEI database (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier blacklists, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier blacklists across 190+ countries. Results are returned in approximately 3 seconds."
+    answer: "SafeOrStolen checks the carrier and manufacturer blacklists (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier blacklists, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier blacklists across 190+ countries. Results are returned in approximately 3 seconds."
   },
   {
-    question: "Which law enforcement databases are included in vehicle VIN checks?",
-    answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), all 50 state DMV databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+    question: "Which community theft registries are included in vehicle VIN checks?",
+    answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), NHTSA vehicle records, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
   },
   {
  question: "Does SafeOrStolen check stolen firearm reports from all 50 states for firearm serial numbers?",
@@ -44,7 +44,7 @@ const DATA_CATEGORIES = [
     bgColor: "bg-blue-500/10",
     title: "Law Enforcement Databases",
     subtitle: "Federal, State & International Police Records",
-    description: "SafeOrStolen integrates with the most authoritative law enforcement databases in the United States and internationally. Every search queries these sources simultaneously in real-time.",
+    description: "SafeOrStolen integrates with the most authoritative community theft registries in the United States and internationally. Every search queries these sources simultaneously in real-time.",
     sources: [
       {
         name: "Stolen property reports from all 50 states",
@@ -175,7 +175,7 @@ const DATA_CATEGORIES = [
       },
       {
         name: "NMVTIS — National Motor Vehicle Title Information System",
-        detail: "Federal system connecting all 50 state DMVs, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
+        detail: "Federal system connecting state motor vehicle agencies, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
         link: "/vin-checker"
       },
       {
@@ -206,12 +206,12 @@ const DATA_CATEGORIES = [
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
     title: "Carrier Blacklists",
-    subtitle: "GSMA Global IMEI Database & Carrier Networks",
+    subtitle: "carrier and manufacturer blacklists Global IMEI Database & Carrier Networks",
     description: "Mobile carrier blacklists are the gold standard for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network worldwide.",
     sources: [
       {
-        name: "GSMA Global IMEI Database — 15 Billion+ Records",
-        detail: "The GSMA (Global System for Mobile Communications Association) maintains the world's most comprehensive IMEI database with records from 800+ carriers across 200+ countries. The GSMA Device Check API is the authoritative source for device blacklist status.",
+        name: "carrier and manufacturer blacklists Global IMEI Database — 15 Billion+ Records",
+        detail: "The carrier and manufacturer blacklists (Global System for Mobile Communications Association) maintains the world's most comprehensive IMEI database with records from 800+ carriers across 200+ countries. The carrier and manufacturer blacklists Device Check API is the authoritative source for device blacklist status.",
         link: "/imei-checker"
       },
       {
@@ -329,11 +329,11 @@ export default function DataSourcesPage() {
     <>
       <Helmet>
         <title>Data Sources — 100+ Databases SafeOrStolen Checks | SafeOrStolen</title>
-        <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
+        <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, carrier and manufacturer blacklists (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://safeorstolen.com/data-sources" />
         <meta property="og:title" content="100+ Data Sources SafeOrStolen Checks | SafeOrStolen" />
-        <meta property="og:description" content="We check stolen property reports from all 50 states, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
+        <meta property="og:description" content="We check stolen property reports from all 50 states, carrier and manufacturer blacklists (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
         <meta property="og:url" content="https://safeorstolen.com/data-sources" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -360,7 +360,7 @@ export default function DataSourcesPage() {
               {/* Semantic TL;DR for AI extraction */}
               <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
                 <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
-                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including GSMA (15 billion IMEI records), NICB, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including carrier and manufacturer blacklists (15 billion IMEI records), NICB, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
               </div>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg">
@@ -382,7 +382,7 @@ export default function DataSourcesPage() {
             <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
                 { value: "100+", label: "Databases Checked" },
-                { value: "15B+", label: "IMEI Records (GSMA)" },
+                { value: "15B+", label: "IMEI Records (carrier and manufacturer blacklists)" },
                 { value: "3 sec", label: "Average Result Time" },
                 { value: "190+", label: "Countries Covered" },
               ].map(stat => (
@@ -569,7 +569,7 @@ export default function DataSourcesPage() {
               Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
             </p>
             <p className="text-xs text-muted-foreground mb-2">
-              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including GSMA (15B+ IMEI records), NICB, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including carrier and manufacturer blacklists (15B+ IMEI records), NICB, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

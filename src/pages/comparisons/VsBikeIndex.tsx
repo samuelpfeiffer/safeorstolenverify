@@ -309,7 +309,7 @@ const VsBikeIndex = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      We query NICB, GSMA, law enforcement, carrier blacklists, and more. 
+                      We query NICB, carrier and manufacturer blacklists, law enforcement, carrier blacklists, and more. 
                       Bike Index relies on user-submitted reports only.
                     </p>
                   </CardContent>

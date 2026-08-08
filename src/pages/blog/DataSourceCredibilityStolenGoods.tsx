@@ -82,7 +82,7 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <p className="text-muted-foreground mb-6">
               In 2026, the stolen goods verification industry relies on a complex ecosystem of data sources ranging from 
-              government law enforcement databases to private carrier blacklists and insurance company reports. 
+              government community theft registries to private carrier blacklists and insurance company reports. 
               Understanding which sources are most credible is critical for making informed decisions.
             </p>
 
@@ -161,13 +161,13 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="bg-card border rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <CheckCircle className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold text-foreground">GSMA Device Check (IMEI Blacklist)</h3>
+                  <h3 className="text-xl font-semibold text-foreground">carrier and manufacturer blacklists Device Check (IMEI Blacklist)</h3>
                 </div>
                 <p className="text-muted-foreground mb-2">
                   <strong>Credibility: Very High (90%)</strong>
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  The GSMA (Global System for Mobile Communications Association) maintains a global IMEI blacklist 
+                  The carrier and manufacturer blacklists (Global System for Mobile Communications Association) maintains a global IMEI blacklist 
                   shared across major carriers worldwide. When a phone is reported stolen, its IMEI is blacklisted, 
                   preventing activation on participating networks.
                 </p>
@@ -192,7 +192,7 @@ export default function DataSourceCredibilityStolenGoods() {
                 </p>
                 <p className="text-muted-foreground">
                   <strong>Coverage:</strong> Phones, electronics, bicycles, tools. Strong UK/Europe coverage, 
-                  limited U.S. coverage. Does NOT include U.S. law enforcement databases.
+                  limited U.S. coverage. Does NOT include U.S. community theft registries.
                 </p>
               </div>
 
@@ -261,8 +261,8 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li><strong>Real-time stolen property reports from all 50 states</strong> for vehicles and firearms through authorized law enforcement partnerships</li>
-              <li><strong>GSMA IMEI blacklist</strong> covering all major U.S. and global carriers</li>
-              <li><strong>State DMV databases</strong> for all 50 states via NMVTIS integration</li>
+              <li><strong>carrier and manufacturer blacklists IMEI blacklist</strong> covering all major U.S. and global carriers</li>
+              <li><strong>State NHTSA vehicle records</strong> for all 50 states via NMVTIS integration</li>
               <li><strong>Manufacturer databases</strong> including Apple, Samsung, Microsoft activation lock status</li>
               <li><strong>Insurance aggregators</strong> from 200+ insurance companies</li>
               <li><strong>Local police records</strong> from 5,000+ departments</li>
@@ -281,7 +281,7 @@ export default function DataSourceCredibilityStolenGoods() {
                 <h3 className="text-xl font-semibold mb-2 text-foreground">What data sources do they access?</h3>
                 <p className="text-muted-foreground">
                   Demand specifics. "50+ databases" is meaningless without naming them. Do they have stolen property reports from all 50 states? 
-                  GSMA? State DMVs? If they can't or won't tell you, assume limited coverage.
+                  carrier and manufacturer blacklists? State DMVs? If they can't or won't tell you, assume limited coverage.
                 </p>
               </div>
               <div className="border-l-4 border-primary pl-4">
@@ -328,7 +328,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <Database className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify with Law Enforcement-Grade Data</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, GSMA, and all 50 state DMVs. 
+                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, carrier and manufacturer blacklists, and state motor vehicle agencies. 
                 Free verification available.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">

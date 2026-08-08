@@ -55,7 +55,7 @@ export default function TransparencyPage() {
 
               <h3>Industry Databases</h3>
               <ul>
-                <li><strong>GSMA IMEI Database:</strong> Global blacklist maintained by mobile carriers worldwide</li>
+                <li><strong>carrier and manufacturer blacklists IMEI Database:</strong> Global blacklist maintained by mobile carriers worldwide</li>
                 <li><strong>NICB (National Insurance Crime Bureau):</strong> Insurance company stolen vehicle records</li>
                 <li><strong>Carrier Blacklists:</strong> AT&T, Verizon, T-Mobile, and other carrier-specific blacklists</li>
               </ul>

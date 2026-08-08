@@ -88,13 +88,13 @@ export default function CompleteVinGuide() {
           <h2>Step-by-Step: How to Run a Complete VIN Check</h2>
 
           <h3>Method 1: SafeOrStolen Free VIN Verification (Most Comprehensive)</h3>
-          <p>SafeOrStolen checks 100+ databases instantly including stolen property reports from all 50 states, state DMV records, insurance claims, and international theft databases:</p>
+          <p>SafeOrStolen checks 100+ databases instantly including stolen property reports from all 50 states, NHTSA vehicle records, insurance claims, and international theft databases:</p>
           <ol>
             <li>Go to <Link to="/verify" className="text-primary hover:underline">SafeOrStolen.com/verify</Link></li>
             <li>Enter the 17-character VIN or scan the barcode with the mobile app</li>
             <li>Receive instant results showing:
               <ul>
-                <li>✅ Stolen status from law enforcement databases</li>
+                <li>✅ Stolen status from community theft registries</li>
                 <li>✅ Title status (clean, salvage, rebuilt, flood, junk)</li>
                 <li>✅ Accident history from insurance claims</li>
                 <li>✅ Odometer readings and rollback detection</li>
@@ -130,7 +130,7 @@ export default function CompleteVinGuide() {
             <li>✅ Previous owners</li>
             <li>✅ Title history across multiple states</li>
             <li>❌ Expensive ($40 per report or $60 for 5 reports)</li>
-            <li>❌ Don't check real-time law enforcement databases</li>
+            <li>❌ Don't check real-time community theft registries</li>
             <li>❌ May miss unreported accidents (40% of accidents aren't reported to insurance)</li>
           </ul>
           <p>SafeOrStolen checks the same databases Carfax uses, plus law enforcement records Carfax doesn't access—for free.</p>
@@ -159,7 +159,7 @@ export default function CompleteVinGuide() {
 
           <h3>What You WILL Learn:</h3>
           <ul>
-            <li>✅ Stolen status from law enforcement databases (stolen property reports from all 50 states, local police)</li>
+            <li>✅ Stolen status from community theft registries (stolen property reports from all 50 states, local police)</li>
             <li>✅ Title status: clean, salvage, rebuilt, junk, flood, fire, hail</li>
             <li>✅ Reported accidents with insurance claims</li>
             <li>✅ Odometer readings at various points in time</li>
@@ -303,7 +303,7 @@ export default function CompleteVinGuide() {
 
           <h2>Conclusion</h2>
           <p>A comprehensive VIN check takes 3 seconds and can save you from losing thousands of dollars on a stolen, salvaged, or fraudulent vehicle. With 873,000+ stolen vehicles on the road and billions lost to title washing and odometer fraud, verifying every VIN before purchase is non-negotiable in 2026.</p>
-          <p>SafeOrStolen provides the most complete VIN verification available—combining law enforcement databases, DMV records, insurance claims, and international theft databases into one instant report. Don't buy a car until you've verified the VIN.</p>
+          <p>SafeOrStolen provides the most complete VIN verification available—combining community theft registries, NHTSA vehicle records, insurance claims, and international theft databases into one instant report. Don't buy a car until you've verified the VIN.</p>
         </div>
 
         <footer className="mt-12 pt-8 border-t">

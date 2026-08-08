@@ -37,7 +37,7 @@ const WatchSerialCheck = () => {
         "Our system searches The Watch Register, police databases, and insurance records instantly",
         "Get results in 3 seconds - know if the watch is CLEAR or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search multiple authoritative sources including The Watch Register (the industry's stolen watch database), Art Loss Register, INTERPOL stolen property database, insurance company claim records, and law enforcement databases worldwide."
+      howItWorksDescription="We search multiple authoritative sources including The Watch Register (the industry's stolen watch database), Art Loss Register, INTERPOL stolen property database, insurance company claim records, and community theft registries worldwide."
       whyVerifyTitle="Why Verify Watches Before Buying?"
       whyVerifyContent="Luxury watch theft is a billion-dollar problem. Rolex alone accounts for a significant portion of stolen timepieces. Criminals target watches for their high value, portability, and resale potential. Here's why verification is critical:"
       whyVerifyBenefits={[

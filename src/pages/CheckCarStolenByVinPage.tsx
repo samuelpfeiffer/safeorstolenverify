@@ -18,15 +18,15 @@ const CheckCarStolenByVinPage = () => {
         'is this car stolen vin'
       ]}
       content={{
-        intro: "Before buying any used car, truck, or SUV, check if it's stolen using the 17-digit VIN (Vehicle Identification Number). Our free <a href='/vin-checker'>VIN checker</a> searches the NICB (National Insurance Crime Bureau), NMVTIS, state DMV databases, and law enforcement records to verify the vehicle is safe to purchase.",
-        whatIs: "Checking if a car is stolen by VIN means verifying the vehicle hasn't been reported to police, insurance companies, or federal databases as stolen property. Every vehicle manufactured after 1981 has a unique 17-character VIN that can be traced through its entire history. When a vehicle is reported stolen, the VIN is added to stolen property reports from all 50 states, NICB theft database, state DMV records, and insurance company databases. SafeOrStolen's VIN checker searches all these sources simultaneously to determine if a vehicle is safe to buy or if it's stolen, salvaged, or has other title issues.",
-        howItWorks: "Our VIN verification system performs comprehensive checks across multiple databases. We query the NICB (National Insurance Crime Bureau) stolen vehicle database, NMVTIS (National Motor Vehicle Title Information System), stolen property reports from all 50 states, all 50 state DMV databases, insurance company total loss records, auction salvage records, and user-reported theft registries. Within 3 seconds, you receive a detailed report showing: (1) Stolen/recovered status, (2) Title status (clean, salvage, rebuilt, flood), (3) Odometer discrepancies, (4) Lien/finance status, (5) Accident history, (6) Previous state registrations.",
+        intro: "Before buying any used car, truck, or SUV, check if it's stolen using the 17-digit VIN (Vehicle Identification Number). Our free <a href='/vin-checker'>VIN checker</a> searches the NICB (National Insurance Crime Bureau), NMVTIS, NHTSA vehicle records, and law enforcement records to verify the vehicle is safe to purchase.",
+        whatIs: "Checking if a car is stolen by VIN means verifying the vehicle hasn't been reported to police, insurance companies, or federal databases as stolen property. Every vehicle manufactured after 1981 has a unique 17-character VIN that can be traced through its entire history. When a vehicle is reported stolen, the VIN is added to stolen property reports from all 50 states, NICB theft database, NHTSA vehicle records, and insurance company databases. SafeOrStolen's VIN checker searches all these sources simultaneously to determine if a vehicle is safe to buy or if it's stolen, salvaged, or has other title issues.",
+        howItWorks: "Our VIN verification system performs comprehensive checks across multiple databases. We query the NICB (National Insurance Crime Bureau) stolen vehicle database, NMVTIS (National Motor Vehicle Title Information System), stolen property reports from all 50 states, NHTSA vehicle records, insurance company total loss records, auction salvage records, and user-reported theft registries. Within 3 seconds, you receive a detailed report showing: (1) Stolen/recovered status, (2) Title status (clean, salvage, rebuilt, flood), (3) Odometer discrepancies, (4) Lien/finance status, (5) Accident history, (6) Previous state registrations.",
         whyCheck: "Buying a stolen vehicle can result in criminal prosecution and total financial loss. Here's what happens: (1) Police will seize the vehicle as evidence with zero compensation, (2) You could face criminal charges for possession of stolen property, (3) Insurance will not cover a stolen vehicle, (4) You cannot register or title a stolen vehicle legally, (5) The original owner or their insurance company can sue you for the vehicle's return. In 2024, over 1 million vehicles were stolen in the United States. Many end up on Craigslist, Facebook Marketplace, and even at sketchy used car lots with falsified paperwork. VIN cloning (putting a clean VIN on a stolen car) is increasingly common. Always verify the VIN before purchasing any used vehicle.",
         benefits: [
           "Check any vehicle - cars, trucks, SUVs, motorcycles, RVs, trailers",
           "Search NICB (National Insurance Crime Bureau) stolen vehicle database",
           "Verify against NMVTIS federal records",
-          "Check all 50 state DMV databases simultaneously",
+          "Check NHTSA vehicle records simultaneously",
           "Detect VIN cloning and VIN tampering",
           "Instant 3-second verification from multiple sources",
           "Unlimited VIN checks — $0.99/check or $10/month",
@@ -43,7 +43,7 @@ const CheckCarStolenByVinPage = () => {
         faqs: [
           {
             question: "How do I check if a car is stolen using the VIN?",
-            answer: "To check if a car is stolen: (1) Get the VIN from the dashboard (visible through windshield), door jamb, or registration, (2) Enter the 17-character VIN at SafeOrStolen.com/verify, (3) Review the instant report showing stolen status, title condition, and history. Our check searches NICB, NMVTIS, and law enforcement databases in 3 seconds."
+            answer: "To check if a car is stolen: (1) Get the VIN from the dashboard (visible through windshield), door jamb, or registration, (2) Enter the 17-character VIN at SafeOrStolen.com/verify, (3) Review the instant report showing stolen status, title condition, and history. Our check searches NICB, NMVTIS, and community theft registries in 3 seconds."
           },
           {
             question: "Where can I find the VIN on a vehicle?",

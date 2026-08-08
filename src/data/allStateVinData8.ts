@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
       localLaws: "Under Nevada Revised Statutes §205.275, receiving stolen property valued over $1,200 is a felony with penalties up to 10 years in prison. Nevada requires title transfers within 30 days. The Nevada DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I check a Nevada VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Nevada DMV records, NICB theft database, and accident history. Our mobile app provides instant barcode scanning for faster verification at Las Vegas dealerships." },
+      { question: "How do I check a Nevada VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Nevada NHTSA vehicle records, NICB theft database, and accident history. Our mobile app provides instant barcode scanning for faster verification at Las Vegas dealerships." },
       { question: "Does Nevada require VIN inspections?", answer: "Nevada requires VIN inspections for out-of-state vehicles and vehicles without existing NV titles. The inspection verifies the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
       { question: "What is Nevada's title transfer process?", answer: "In Nevada, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the NV DMV with bill of sale and smog certification (if applicable). Always verify the VIN matches the title before signing to prevent fraud." }
     ]
@@ -41,7 +41,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
       localLaws: "New Hampshire RSA 637:7 makes receiving stolen property valued over $1,500 a felony with penalties up to 7 years in prison. New Hampshire requires title transfers within 10 days. The NH DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I verify a New Hampshire vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify New Hampshire title status. Enter the VIN to check NH DMV records, theft databases, and title brands. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase." },
+      { question: "How do I verify a New Hampshire vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify New Hampshire title status. Enter the VIN to check NH NHTSA vehicle records, theft databases, and title brands. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase." },
       { question: "Is a VIN check required in New Hampshire?", answer: "New Hampshire law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase to protect themselves legally and financially." },
       { question: "Does New Hampshire have vehicle inspections?", answer: "New Hampshire requires annual safety inspections but not emissions testing (no inspection sticker needed). However, the safety inspection doesn't verify if a vehicle is stolen. Always run an independent VIN check before purchase to detect theft records and title fraud." }
     ]

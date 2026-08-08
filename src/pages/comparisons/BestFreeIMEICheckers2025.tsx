@@ -475,7 +475,7 @@ const BestFreeIMEICheckers2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Why do some services charge for blacklist checks?</h3>
                     <p className="text-muted-foreground">
-                      Accessing carrier and law enforcement databases has costs. Some services pass this 
+                      Accessing carrier and community theft registries has costs. Some services pass this 
                       to users per-check, while others like SafeOrStolen include it free with limits.
                     </p>
                   </CardContent>

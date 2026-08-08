@@ -51,7 +51,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
 
   const categories = [
     { icon: <Smartphone className="w-6 h-6" />, title: 'Smartphones', desc: 'IMEI verification against blacklists and carrier databases' },
-    { icon: <Car className="w-6 h-6" />, title: 'Vehicles', desc: 'VIN lookup for cars, trucks, motorcycles in stolen property reports from all 50 states and DMV records' },
+    { icon: <Car className="w-6 h-6" />, title: 'Vehicles', desc: 'VIN lookup for cars, trucks, motorcycles in stolen property reports from all 50 states and NHTSA vehicle records' },
     { icon: <Laptop className="w-6 h-6" />, title: 'Electronics', desc: 'Serial number checks for laptops, cameras, gaming consoles' },
     { icon: <Wrench className="w-6 h-6" />, title: 'Tools & Equipment', desc: 'Verification of power tools and machinery serial numbers' },
     { icon: <Watch className="w-6 h-6" />, title: 'Jewelry & Watches', desc: 'Serial verification against insurance claim databases' },

@@ -7,7 +7,7 @@ const sosLogo = '/sos-logo.png';
 const DATA_PARTNERS = [
   { name: 'Stolen property reports from all 50 states', verified: true },
   { name: 'NICB', verified: true },
-  { name: 'GSMA', verified: true },
+  { name: 'carrier and manufacturer blacklists', verified: true },
   { name: 'BikeIndex', verified: true },
   { name: '50-State Firearm Reports', verified: true },
   { name: 'NHTSA', verified: true },

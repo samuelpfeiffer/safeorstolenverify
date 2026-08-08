@@ -166,7 +166,7 @@ const StolenPhoneCheckerApp = () => {
               {[
                 "Stolen phone reports (stolen property reports from all 50 states, FBI databases)",
                 "Carrier blacklist status (AT&T, Verizon, T-Mobile)",
-                "GSMA Global Stolen Phone Registry",
+                "carrier and manufacturer blacklists Global Stolen Phone Registry",
                 "Insurance claim fraud reports",
                 "Outstanding finance/lease status",
                 "iCloud Activation Lock (iPhone)",

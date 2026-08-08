@@ -26,7 +26,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 ### VIN Vehicle Lookup
 - Verifies Vehicle Identification Numbers against theft and insurance records
-- Sources include NICB, NHTSA, and law enforcement databases
+- Sources include NICB, NHTSA, and community theft registries
 - Supports cars, trucks, motorcycles, RVs, and boats
 - VIN is located on the dashboard near the windshield or driver's door jamb
 - URL: https://safeorstolen.com/vin-checker
@@ -115,7 +115,7 @@ SafeOrStolen aggregates data from multiple categories of databases:
 
 **Phone Databases:**
 - Carrier blacklists (AT&T, Verizon, T-Mobile)
-- GSMA Device Registry
+- carrier and manufacturer blacklists
 
 **Community Databases:**
 - BikeIndex.org (1.4M+ bikes)

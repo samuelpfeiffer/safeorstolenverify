@@ -30,14 +30,14 @@ const CarVINStolenCheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is VIN Stolen Vehicle Verification?"
-      whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the NICB (National Insurance Crime Bureau), NMVTIS (National Motor Vehicle Title Information System), and law enforcement databases. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Unlike Carfax which costs $44.99, our stolen check is FREE."
+      whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the NICB (National Insurance Crime Bureau), NMVTIS (National Motor Vehicle Title Information System), and community theft registries. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Unlike Carfax which costs $44.99, our stolen check is FREE."
       howItWorksSteps={[
         "Find the VIN: Check the dashboard (driver's side, visible through windshield), driver's door jamb, vehicle registration, or title",
         "Enter the 17-character VIN into our free verification tool",
         "Our system searches NICB, NMVTIS, law enforcement, and insurance databases instantly",
         "Get results in 3 seconds - see if the vehicle is CLEAR or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search multiple authoritative databases including the NICB stolen vehicle database, NMVTIS title records, state DMV records, law enforcement databases, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."
+      howItWorksDescription="We search multiple authoritative databases including the NICB stolen vehicle database, NMVTIS title records, NHTSA vehicle records, community theft registries, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."
       whyVerifyTitle="Why Check VIN Before Buying a Used Car?"
       whyVerifyContent="Vehicle theft is a $6 billion annual problem in America. Over 810,000 vehicles were stolen in 2024, with many eventually sold to unsuspecting buyers through private sales, Facebook Marketplace, and Craigslist. The consequences of buying a stolen car are severe:"
       whyVerifyBenefits={[
@@ -92,7 +92,7 @@ const CarVINStolenCheck = () => {
         },
         {
           question: "How quickly are stolen vehicles added to databases?",
-          answer: "Most stolen vehicles are added to NICB and law enforcement databases within 24-48 hours of being reported. However, some reports take longer. If a vehicle was very recently stolen, it may not yet appear in databases."
+          answer: "Most stolen vehicles are added to NICB and community theft registries within 24-48 hours of being reported. However, some reports take longer. If a vehicle was very recently stolen, it may not yet appear in databases."
         },
         {
           question: "What other issues does the VIN check find?",

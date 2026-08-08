@@ -84,7 +84,7 @@ export default function CompleteImeiGuide() {
               two devices share the same IMEI.
             </p>
             <p className="text-muted-foreground mb-6">
-              IMEI numbers were created by the GSMA (Global System for Mobile Communications Association) to track 
+              IMEI numbers were created by the carrier and manufacturer blacklists (Global System for Mobile Communications Association) to track 
               devices across cellular networks, prevent phone cloning, and enable law enforcement to identify stolen 
               phones. In 2026, IMEI tracking is the global standard used by all major carriers.
             </p>
@@ -160,7 +160,7 @@ export default function CompleteImeiGuide() {
               rendering them worthless for normal use.
             </p>
             <p className="text-muted-foreground mb-6">
-              In 2026, the GSMA Device Check database connects 800+ carriers across 100+ countries. When an IMEI is 
+              In 2026, the carrier and manufacturer blacklists Device Check database connects 800+ carriers across 100+ countries. When an IMEI is 
               blacklisted in the U.S., it's automatically blacklisted globally within 24 hours. Thieves cannot simply 
               sell stolen phones overseas to bypass blacklists.
             </p>
@@ -192,8 +192,8 @@ export default function CompleteImeiGuide() {
                   <h3 className="text-xl font-semibold text-foreground">Recommended: SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  SafeOrStolen checks 50+ databases simultaneously including GSMA global blacklist, stolen property reports from all 50 states, all major 
-                  U.S. carriers, manufacturer records, and law enforcement databases. Results in 3 seconds.
+                  SafeOrStolen checks 50+ databases simultaneously including carrier and manufacturer blacklists global blacklist, stolen property reports from all 50 states, all major 
+                  U.S. carriers, manufacturer records, and community theft registries. Results in 3 seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />

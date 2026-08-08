@@ -53,7 +53,7 @@
     ]
   },
   "featureList": [
-    "IMEI phone verification against GSMA Device Registry and carrier blacklists (AT&T, Verizon, T-Mobile)",
+    "IMEI phone verification against carrier and manufacturer blacklists",
     "VIN vehicle theft status verification via NICB and NHTSA",
     "Firearm serial number verification via stolen firearm reports from all 50 states plus serial number integrity validation (not a federal database check)",
     "Bicycle serial number verification via BikeIndex (700K+ registered bikes)",

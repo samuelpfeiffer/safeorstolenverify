@@ -4,7 +4,7 @@ const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Electronics Are Stolen - Verification"
-      metaDescription="Check if cameras, tablets, or game consoles are stolen. Serial number verification against law enforcement databases. $0.99/check or $10/month unlimited."
+      metaDescription="Check if cameras, tablets, or game consoles are stolen. Serial number verification against community theft registries. $0.99/check or $10/month unlimited."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[

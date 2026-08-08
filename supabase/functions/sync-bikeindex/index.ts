@@ -1,5 +1,5 @@
-import { createClient } from 'npm:@supabase/supabase-js@2';
-import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 
 const PER_PAGE = 100;
 const MAX_PAGES = 150;
@@ -39,10 +39,10 @@ function normalizeSerial(serial: string): string {
 }
 
 Deno.serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
-  }
+  const corsResponse = handleCorsPreFlight(req);
+  if (corsResponse) return corsResponse;
 
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
   const started = Date.now();
 
   try {

@@ -6,7 +6,7 @@ export default defineTool({
   name: "verify_imei",
   title: "Verify phone IMEI",
   description:
-    "Check a 15-digit phone IMEI against SafeOrStolen's stolen-device sources (GSMA blacklists, carrier data, community reports). Returns a status (safe / stolen / unknown) with any known metadata.",
+    "Check a 15-digit phone IMEI against SafeOrStolen's stolen-device sources (carrier and manufacturer blacklists, carrier data, community reports). Returns a status (safe / stolen / unknown) with any known metadata.",
   inputSchema: {
     imei: z
       .string()

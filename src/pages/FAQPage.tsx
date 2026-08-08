@@ -26,15 +26,15 @@ const FAQPage = () => {
         },
         {
           question: "Can I check if a car is stolen using the VIN number?",
-          answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check NICB databases, state DMV records, and insurance theft reports to verify if the vehicle has been reported stolen."
+          answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check NICB databases, NHTSA vehicle records, and insurance theft reports to verify if the vehicle has been reported stolen."
         },
         {
           question: "How accurate is SafeOrStolen.com's verification process?",
-          answer: "Our verification system maintains a 99.7% accuracy rate, verified through independent third-party audits. We cross-reference multiple law enforcement databases including stolen property reports from all 50 states, FBI databases, and international stolen property registries to ensure comprehensive coverage."
+          answer: "Our verification system maintains a 99.7% accuracy rate, verified through independent third-party audits. We cross-reference multiple community theft registries including stolen property reports from all 50 states, FBI databases, and international stolen property registries to ensure comprehensive coverage."
         },
         {
           question: "What databases do you search when checking items?",
-          answer: "We search the National Crime Information Center (stolen property reports from all 50 states), FBI's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional law enforcement databases across North America and internationally."
+          answer: "We search the National Crime Information Center (stolen property reports from all 50 states), FBI's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional community theft registries across North America and internationally."
         },
         {
           question: "How long does a verification check take?",
@@ -98,7 +98,7 @@ const FAQPage = () => {
         },
         {
           question: "Can you check items without serial numbers?",
-          answer: "Unfortunately, no. Our verification system requires a unique identifier such as a serial number, IMEI, or VIN number to perform accurate searches across law enforcement databases."
+          answer: "Unfortunately, no. Our verification system requires a unique identifier such as a serial number, IMEI, or VIN number to perform accurate searches across community theft registries."
         },
         {
           question: "Do you support international device identifiers?",
@@ -182,7 +182,7 @@ const FAQPage = () => {
         },
         {
           question: "Can I check license plates?",
-          answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search state DMV records, NICB databases, and law enforcement reports."
+          answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search NHTSA vehicle records, NICB databases, and law enforcement reports."
         },
         {
           question: "Do you have state-specific VIN checkers?",

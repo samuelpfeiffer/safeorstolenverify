@@ -5,7 +5,7 @@ import type { PageMetadata } from './types';
 const SITE_CONFIG = {
   name: 'Safe or Stolen',
   tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
-  description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Comprehensive multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Real-time database checks via NICB, GSMA, CheckMEND, Bike Index protecting consumers and businesses from fraud.',
+  description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Comprehensive multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Real-time database checks via NICB, carrier and manufacturer blacklists, CheckMEND, Bike Index protecting consumers and businesses from fraud.',
   url: 'https://safeorstolen.com',
   ogImage: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
   twitterHandle: '@safeorstolen',
@@ -161,10 +161,10 @@ const SITE_CONFIG = {
 const PAGE_METADATA: Record<string, PageMetadata> = {
   home: {
     title: `Complete Stolen Item Verification | Multi-Database IMEI, VIN & Serial Number Check`,
-    description: 'Fast, accurate stolen item verification across multiple databases including NICB, GSMA, CheckMEND, and Bike Index. Instant IMEI, VIN, and serial number checks for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Serving the US with international expansion. Free trial.',
+    description: 'Fast, accurate stolen item verification across multiple databases including NICB, carrier and manufacturer blacklists, CheckMEND, and Bike Index. Instant IMEI, VIN, and serial number checks for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Serving the US with international expansion. Free trial.',
     keywords: SITE_CONFIG.keywords.join(', ') + ', multi-database verification, stolen item check, IMEI checker, VIN verification, comprehensive verification service, trusted verification platform',
     ogTitle: `Complete Multi-Database Verification - IMEI, VIN & Serial Number Check`,
-    ogDescription: 'Trusted verification across multiple databases. Comprehensive stolen item checking for all categories via NICB, GSMA, CheckMEND, Bike Index.',
+    ogDescription: 'Trusted verification across multiple databases. Comprehensive stolen item checking for all categories via NICB, carrier and manufacturer blacklists, CheckMEND, Bike Index.',
     ogImage: SITE_CONFIG.ogImage,
     robotsDirectives: 'index, follow, max-image-preview:large'
   },

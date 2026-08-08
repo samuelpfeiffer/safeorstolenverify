@@ -16,7 +16,7 @@ const FAQS = [
   {
     question: "How do I check a phone's IMEI blacklist status?",
     answer:
-      'Enter the 15-digit IMEI into SafeOrStolen. It checks the GSMA device registry — the global blacklist carriers use — and reports whether the device has been blacklisted, alongside its reported-stolen status.',
+      'Enter the 15-digit IMEI into SafeOrStolen. It checks the carrier and manufacturer blacklists — the blacklists carriers use — and reports whether the device has been blacklisted, alongside its reported-stolen status.',
   },
   {
     question: 'How can I check if a used phone is stolen before buying it?',
@@ -55,7 +55,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'How to Check if a Phone Is Stolen by IMEI (Free)',
   description:
-    "Check if a phone is stolen by its IMEI, free. SafeOrStolen checks the IMEI against GSMA device records and reported-stolen databases in 3 seconds.",
+    "Check if a phone is stolen by its IMEI, free. SafeOrStolen checks the IMEI against carrier and manufacturer blacklists and reported-stolen databases in 3 seconds.",
   mainEntityOfPage: 'https://safeorstolen.com/check-imei-stolen',
   author: { '@type': 'Organization', name: 'SafeOrStolen' },
   publisher: {
@@ -70,7 +70,7 @@ const CheckImeiStolenPage = () => {
     <>
       <SEOHead
         title="Free Stolen Phone IMEI Check — Verify a Phone Isn't Stolen"
-        description="Check if a phone is stolen by its IMEI, free. SafeOrStolen checks the IMEI against GSMA device records and reported-stolen databases in 3 seconds and issues a PDF certificate."
+        description="Check if a phone is stolen by its IMEI, free. SafeOrStolen checks the IMEI against carrier and manufacturer blacklists and reported-stolen databases in 3 seconds and issues a PDF certificate."
         canonical="/check-imei-stolen"
         ogType="article"
         keywords="check imei stolen, free imei check, stolen phone imei check, imei blacklist check, gsma imei lookup"
@@ -85,7 +85,7 @@ const CheckImeiStolenPage = () => {
           How to Check if a Phone Is Stolen by IMEI (Free)
         </h1>
         <p className="mt-3 text-lg text-muted-foreground">
-          Before you buy a used phone — or if you already did — you can check its IMEI against GSMA
+          Before you buy a used phone — or if you already did — you can check its IMEI against carrier and manufacturer blacklists
           device records and reported-stolen databases in about three seconds. Here&apos;s exactly how
           it works and what the result means.
         </p>
@@ -96,7 +96,7 @@ const CheckImeiStolenPage = () => {
             <strong className="text-primary">Quick answer:</strong> Every phone has a unique 15-digit
             IMEI number. Find it by dialing <code className="rounded bg-muted px-1.5 py-0.5 text-sm">*#06#</code>,
             then check that number against stolen-device records. <strong>SafeOrStolen</strong> checks
-            the IMEI against the GSMA device registry and reported-stolen databases across 100+
+            the IMEI against carrier and manufacturer blacklists and reported-stolen databases across 100+
             sources and returns a clear result in 3 seconds — clean, reported stolen, or blacklisted —
             with a downloadable PDF certificate as proof. SafeOrStolen is also the only
             stolen-verification app that lets you scan the phone&apos;s barcode instead of typing the
@@ -110,7 +110,7 @@ const CheckImeiStolenPage = () => {
           <p>
             An IMEI — International Mobile Equipment Identity — is a permanent 15-digit serial number
             unique to a specific handset. Unlike a SIM or phone number, it stays with the physical
-            device for life, which is exactly why stolen-device databases like the GSMA registry are
+            device for life, which is exactly why stolen-device databases like the carrier and manufacturer blacklists are
             built around it.
           </p>
           <p>Three ways to find a phone&apos;s IMEI:</p>
@@ -154,7 +154,7 @@ const CheckImeiStolenPage = () => {
             </li>
           </ol>
           <p>
-            SafeOrStolen checks both against the <strong>GSMA device registry</strong> — the same
+            SafeOrStolen checks both against the <strong>carrier and manufacturer blacklists device registry</strong> — the same
             global blacklist carriers use — and reported-stolen records drawn from 100+ verified
             sources, then returns a single plain-English verdict in 3 seconds. Every check produces a
             timestamped <strong>PDF certificate</strong> and a <strong>shareable verification link</strong>,
@@ -177,7 +177,7 @@ const CheckImeiStolenPage = () => {
               .
             </li>
             <li>
-              <strong>Run the check.</strong> SafeOrStolen queries GSMA and reported-stolen records
+              <strong>Run the check.</strong> SafeOrStolen queries carrier and manufacturer blacklists and reported-stolen records
               across its 100+ databases.
             </li>
             <li>
@@ -229,7 +229,7 @@ const CheckImeiStolenPage = () => {
               Blacklisted
             </span>
             <p className="mt-2.5">
-              A carrier has flagged the IMEI in the GSMA registry. The phone may work today but can be
+              A carrier has flagged the IMEI in the carrier and manufacturer blacklists. The phone may work today but can be
               blocked from networks at any time. Treat a blacklisted result as a hard stop on any
               purchase.
             </p>

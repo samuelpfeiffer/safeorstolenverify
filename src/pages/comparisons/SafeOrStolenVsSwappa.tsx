@@ -430,7 +430,7 @@ const SafeOrStolenVsSwappa = () => {
                     <h3 className="font-semibold mb-2">Which has a bigger stolen item database?</h3>
                     <p className="text-muted-foreground">
                       SafeOrStolen has 50M+ verified stolen items from law enforcement and insurance partners. 
-                      Swappa performs basic carrier ESN checks but doesn't have access to law enforcement databases.
+                      Swappa performs basic carrier ESN checks but doesn't have access to community theft registries.
                     </p>
                   </CardContent>
                 </Card>

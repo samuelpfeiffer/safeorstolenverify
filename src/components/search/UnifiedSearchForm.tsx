@@ -262,7 +262,7 @@ const UnifiedSearchFormComponent = ({
             Universal Theft Database Search
           </h3>
           <p className="text-sm text-muted-foreground">
-            Search across NICB, GSMA, CheckMEND, Bike Index, and more
+            Search across NICB, carrier and manufacturer blacklists, CheckMEND, Bike Index, and more
           </p>
         </div>
 

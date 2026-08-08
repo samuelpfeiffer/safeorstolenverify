@@ -84,7 +84,7 @@ export default function HowToCheckPhoneStolen() {
             <li>Enter the 15-digit IMEI number</li>
             <li>Get results in 3 seconds showing:
               <ul>
-                <li>Stolen status from law enforcement databases</li>
+                <li>Stolen status from community theft registries</li>
                 <li>Carrier blacklist status (AT&T, Verizon, T-Mobile, Sprint)</li>
                 <li>International theft reports</li>
                 <li>Finance/lease status</li>
@@ -132,7 +132,7 @@ export default function HowToCheckPhoneStolen() {
             <li><strong>Document everything</strong> - Screenshots, messages, phone numbers</li>
           </ol>
           <p className="bg-destructive/10 border border-destructive/20 p-4 rounded-lg my-6">
-            <strong>⚠️ Warning:</strong> Attempting to "unlock" or "clean" a blacklisted IMEI is illegal and ineffective. Carriers share blacklists internationally through the GSMA database.
+            <strong>⚠️ Warning:</strong> Attempting to "unlock" or "clean" a blacklisted IMEI is illegal and ineffective. Carriers share blacklists internationally through the carrier and manufacturer blacklists.
           </p>
 
           <h2>Buying from Marketplaces: Platform-Specific Tips</h2>

@@ -23,14 +23,14 @@ const WashingtonDCLicensePlateLookup = () => {
     }
     setIsLoading(true);
     navigate(`/verify?q=${encodeURIComponent(plateNumber)}&type=plate&state=DC`);
-    toast.success('Searching Washington DC DMV databases...');
+    toast.success('Searching Washington DC NHTSA vehicle records...');
   };
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Washington DC License Plate Lookup - Free DC DMV Plate Search",
-    "description": "Free Washington DC license plate lookup. Check vehicle registration, theft status, and owner information for DC plates. Instant results from DC DMV records.",
+    "description": "Free Washington DC license plate lookup. Check vehicle registration, theft status, and owner information for DC plates. Instant results from DC NHTSA vehicle records.",
     "url": "https://safeorstolen.com/washington-dc-license-plate-lookup",
     "mainEntity": {
       "@type": "Service",
@@ -56,7 +56,7 @@ const WashingtonDCLicensePlateLookup = () => {
         "name": "How do I look up a DC license plate for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Enter the DC license plate number into SafeOrStolen's verification tool. We instantly search DC DMV records, NICB theft databases, and law enforcement reports to provide comprehensive vehicle information including registration status and theft history."
+          "text": "Enter the DC license plate number into SafeOrStolen's verification tool. We instantly search DC NHTSA vehicle records, NICB theft databases, and law enforcement reports to provide comprehensive vehicle information including registration status and theft history."
         }
       },
       {
@@ -82,7 +82,7 @@ const WashingtonDCLicensePlateLookup = () => {
     <>
       <PageSEO
         title="Washington DC License Plate Lookup Free - DC DMV Plate Search | SafeOrStolen"
-        description="Free Washington DC license plate lookup. Get VIN, check theft status, and view vehicle history for any DC plate. Instant results from DC DMV records and NICB database."
+        description="Free Washington DC license plate lookup. Get VIN, check theft status, and view vehicle history for any DC plate. Instant results from DC NHTSA vehicle records and NICB database."
         keywords="DC license plate lookup, Washington DC plate search, DC DMV plate check, District of Columbia vehicle search, DC stolen car check, DC plate to VIN, Washington DC DMV lookup free"
         canonical="/washington-dc-license-plate-lookup"
         structuredData={[structuredData, faqSchema]}
@@ -104,7 +104,7 @@ const WashingtonDCLicensePlateLookup = () => {
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Free instant DC license plate search. Get vehicle information, check theft status, 
-                and verify registration from DC DMV databases.
+                and verify registration from DC NHTSA vehicle records.
               </p>
 
               {/* Search Form */}
@@ -295,7 +295,7 @@ const WashingtonDCLicensePlateLookup = () => {
                   <CardContent>
                     <p className="text-muted-foreground">
                       Enter the DC license plate number into SafeOrStolen's verification tool above. 
-                      We instantly search DC DMV records, NICB theft databases, and law enforcement 
+                      We instantly search DC NHTSA vehicle records, NICB theft databases, and law enforcement 
                       reports to provide comprehensive vehicle information including registration 
                       status and theft history. Get 2 free searches to start.
                     </p>
@@ -340,7 +340,7 @@ const WashingtonDCLicensePlateLookup = () => {
             <h2 className="text-2xl font-bold mb-4">Ready to Check a DC Vehicle?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
               Don't risk buying a stolen vehicle. Get instant verification from 
-              DC DMV records and national theft databases.
+              DC NHTSA vehicle records and national theft databases.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">

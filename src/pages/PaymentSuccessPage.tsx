@@ -42,7 +42,7 @@ const PaymentSuccessPage = () => {
           setPaymentDetails({
             verificationId,
             planName: 'Unlimited Plan',
-            amount: '$1.00'
+            amount: '$0.99'
           });
         }
       } catch (error) {
@@ -99,7 +99,7 @@ const PaymentSuccessPage = () => {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Amount paid</span>
-                    <span className="font-bold text-primary">{paymentDetails.amount || '$1.00'}</span>
+                    <span className="font-bold text-primary">{paymentDetails.amount || '$0.99'}</span>
                   </div>
                   {sessionId && (
                     <div className="flex justify-between text-sm">

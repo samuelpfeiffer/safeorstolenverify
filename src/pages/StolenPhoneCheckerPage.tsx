@@ -32,7 +32,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "How do I check if a phone is stolen before buying?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker. We verify against 100+ global databases including carrier blacklists, GSMA, police records, and insurance claims. Results in 3 seconds."
+          "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker. We verify against 100+ global databases including carrier blacklists, carrier and manufacturer blacklists, police records, and insurance claims. Results in 3 seconds."
         }
       },
       {
@@ -64,7 +64,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "What databases does SafeOrStolen check?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier blacklists (AT&T, Verizon, T-Mobile), police stolen property records, insurance claim databases, and international registries."
+          "text": "SafeOrStolen checks 100+ databases including carrier and manufacturer blacklists IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries."
         }
       }
     ]
@@ -102,7 +102,7 @@ const StolenPhoneCheckerPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
         title="Free Stolen Phone Checker - IMEI Lookup"
-        description="Free stolen phone checker. Verify IMEI against 100+ databases in 3 seconds. Carrier blacklists, GSMA, police records."
+        description="Free stolen phone checker. Verify IMEI against 100+ databases in 3 seconds. Carrier blacklists, carrier and manufacturer blacklists, police records."
         keywords="stolen phone checker, check if phone is stolen, IMEI blacklist check, free phone verification, is my phone stolen, phone stolen check"
         canonical="/stolen-phone-checker"
         structuredData={[faqSchema, howToSchema]}
@@ -121,7 +121,7 @@ const StolenPhoneCheckerPage = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Verify if any phone is stolen before buying. Enter the IMEI number below for instant verification against 100+ global databases including carrier blacklists, GSMA, and police records.
+            Verify if any phone is stolen before buying. Enter the IMEI number below for instant verification against 100+ global databases including carrier blacklists, carrier and manufacturer blacklists, and police records.
           </p>
 
           {/* IMEI Checker Tool */}
@@ -161,7 +161,7 @@ const StolenPhoneCheckerPage = () => {
           <ul className="grid md:grid-cols-2 gap-4">
             <li className="flex items-start gap-3">
               <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span>SafeOrStolen checks 100+ databases including GSMA, carrier blacklists, and police records</span>
+              <span>SafeOrStolen checks 100+ databases including carrier and manufacturer blacklists, carrier blacklists, and police records</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -192,7 +192,7 @@ const StolenPhoneCheckerPage = () => {
             <Card className="text-center">
               <CardContent className="pt-6">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">GSMA Database</h3>
+                <h3 className="font-semibold mb-2">carrier and manufacturer blacklists Database</h3>
                 <p className="text-sm text-muted-foreground">Global System for Mobile Association worldwide IMEI registry</p>
               </CardContent>
             </Card>
@@ -249,7 +249,7 @@ const StolenPhoneCheckerPage = () => {
                   <Database className="w-10 h-10 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold mb-2">100+ Database Sources</h3>
-                    <p className="text-muted-foreground">More comprehensive than any competitor. We check carrier blacklists, GSMA, police records, and insurance claims.</p>
+                    <p className="text-muted-foreground">More comprehensive than any competitor. We check carrier blacklists, carrier and manufacturer blacklists, police records, and insurance claims.</p>
                   </div>
                 </div>
               </CardContent>
@@ -286,7 +286,7 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">How do I check if a phone is stolen before buying?</h3>
-                <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We verify against 100+ global databases including carrier blacklists, GSMA, police records, and insurance claims. Results in 3 seconds.</p>
+                <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We verify against 100+ global databases including carrier blacklists, carrier and manufacturer blacklists, police records, and insurance claims. Results in 3 seconds.</p>
               </CardContent>
             </Card>
             <Card>
@@ -310,7 +310,7 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What databases does SafeOrStolen check?</h3>
-                <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier blacklists (AT&T, Verizon, T-Mobile), police stolen property records, insurance claim databases, and international registries.</p>
+                <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including carrier and manufacturer blacklists IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries.</p>
               </CardContent>
             </Card>
           </div>

@@ -57,7 +57,7 @@ const OhioLicensePlateLookupPage = () => {
           },
           {
             question: "What information can I get from an Ohio plate lookup?",
-            answer: "An Ohio plate lookup through our secure gov-connected system provides: Ohio BMV registered owner name, vehicle make/model/year, VIN, Ohio registration status, title information (including salvage/rebuilt status), and theft status from law enforcement databases. This website belongs to an official government organization verification network - your personal information are protected by all federal and state digital guidelines."
+            answer: "An Ohio plate lookup through our secure gov-connected system provides: Ohio BMV registered owner name, vehicle make/model/year, VIN, Ohio registration status, title information (including salvage/rebuilt status), and theft status from community theft registries. This website belongs to an official government organization verification network - your personal information are protected by all federal and state digital guidelines."
           },
           {
             question: "Is Ohio plate lookup really free?",

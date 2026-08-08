@@ -502,7 +502,7 @@ const VerifyPage = () => {
                   <h3 className="font-semibold">Comprehensive Verification</h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
                     <li>• Global carrier blacklists & device registries</li>
-                    <li>• Federal & state law enforcement databases</li>
+                    <li>• Federal & state community theft registries</li>
                     <li>• Insurance theft & loss claim records</li>
                     <li>• National vehicle title & history databases</li>
                     <li>• State DMV & police records (All 50 States)</li>

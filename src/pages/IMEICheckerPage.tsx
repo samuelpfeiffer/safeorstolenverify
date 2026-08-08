@@ -4,7 +4,7 @@ const IMEICheckerPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Free IMEI Check — Is This Phone Stolen or Blacklisted? | SafeOrStolen"
-      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks GSMA, AT&T, Verizon, T-Mobile carrier blacklists, and stolen property reports from all 50 states simultaneously. Results in 3 seconds."
+      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks carrier and manufacturer blacklists, and stolen property reports from all 50 states simultaneously. Results in 3 seconds."
       h1="Free IMEI Check — Stolen & Blacklist Verification"
       itemType="Phone"
       keywords={[
@@ -20,13 +20,13 @@ const IMEICheckerPage = () => {
         'reseller phone verification'
       ]}
       content={{
-        intro: "Verify any phone's IMEI number in 3 seconds. Check if a smartphone is reported stolen, lost, or blacklisted before buying. Free IMEI verification from multiple databases including GSMA, carriers, and law enforcement.",
+        intro: "Verify any phone's IMEI number in 3 seconds. Check if a smartphone is reported stolen, lost, or blacklisted before buying. Free IMEI verification from multiple databases including carrier and manufacturer blacklists, carriers, and law enforcement.",
         whatIs: "An IMEI (International Mobile Equipment Identity) checker is a tool that verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number that can be used to track its status across global databases. SafeOrStolen's IMEI checker instantly searches multiple databases to determine if a phone is safe to buy or if it's been reported as stolen or lost. This protects buyers from purchasing phones that could be remotely locked, reported to authorities, or unusable on cellular networks.",
-        howItWorks: "Our IMEI checker works by querying multiple international databases simultaneously, including GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), law enforcement databases, and user-reported theft databases. Within 3 seconds, you'll receive a comprehensive report showing whether the phone is clean, stolen, blacklisted, or has outstanding finance. We also check if the phone has been reported lost, if it's locked to a specific carrier, and if there are any insurance claims filed against it.",
+        howItWorks: "Our IMEI checker works by querying multiple international databases simultaneously, including carrier and manufacturer blacklists, community theft registries, and user-reported theft databases. Within 3 seconds, you'll receive a comprehensive report showing whether the phone is clean, stolen, blacklisted, or has outstanding finance. We also check if the phone has been reported lost, if it's locked to a specific carrier, and if there are any insurance claims filed against it.",
         whyCheck: "Buying a stolen phone can lead to serious consequences. The phone can be remotely locked or wiped by the original owner, blacklisted by carriers making it unusable, confiscated by law enforcement as stolen property, and you could face criminal charges for possession of stolen goods. Additionally, you lose all your money with zero legal recourse. In 2024 alone, over 2.4 million smartphones were reported stolen in the United States, with many ending up on secondhand marketplaces like Facebook Marketplace, eBay, OfferUp, and Craigslist. Our free IMEI checker helps you avoid these risks.",
         benefits: [
           "Instant verification from multiple databases in 3 seconds",
-          "Check GSMA Device Registry and carrier blacklists",
+          "Check carrier and manufacturer blacklists",
           "Verify phone isn't reported stolen or lost",
           "Check for outstanding finance or insurance claims",
           "Confirm phone works on your carrier network",
@@ -76,7 +76,7 @@ const IMEICheckerPage = () => {
           },
           {
             question: "What databases does SafeOrStolen check?",
-            answer: "We check multiple databases simultaneously including: GSMA Device Registry (global stolen phone database), major US carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), law enforcement databases, insurance claim databases, and user-reported theft databases. This comprehensive approach gives you the most accurate verification results."
+            answer: "We check multiple databases simultaneously including: carrier and manufacturer blacklists, community theft registries, insurance claim databases, and user-reported theft databases. This comprehensive approach gives you the most accurate verification results."
           },
           {
             question: "Can I check an iPhone IMEI?",

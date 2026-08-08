@@ -32,7 +32,7 @@ const ReportStolenPageContent = () => {
       {
         "@type": "Question",
         "name": "Should I also file a police report?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements law enforcement databases by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements community theft registries by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report." }
       },
       {
         "@type": "Question",
@@ -42,7 +42,7 @@ const ReportStolenPageContent = () => {
       {
         "@type": "Question",
         "name": "Can I report a stolen car or vehicle?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and state DMV databases." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and NHTSA vehicle records." }
       }
     ]
   };
@@ -190,7 +190,7 @@ const ReportStolenPageContent = () => {
               <AccordionItem value="police">
                 <AccordionTrigger>Should I also file a police report?</AccordionTrigger>
                 <AccordionContent>
-                  Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements law enforcement databases by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report for faster processing.
+                  Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements community theft registries by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report for faster processing.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="info">
@@ -202,7 +202,7 @@ const ReportStolenPageContent = () => {
               <AccordionItem value="vehicle">
                 <AccordionTrigger>Can I report a stolen car or vehicle?</AccordionTrigger>
                 <AccordionContent>
-                  Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and state DMV databases for comprehensive coverage.
+                  Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and NHTSA vehicle records for comprehensive coverage.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

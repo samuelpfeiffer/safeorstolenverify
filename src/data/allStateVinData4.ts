@@ -4,7 +4,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   northdakota: {
     state: "North Dakota", stateCode: "ND", slug: "north-dakota-vin-lookup",
     title: "North Dakota VIN Lookup - Free ND Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free North Dakota VIN lookup. Check if a ND vehicle is stolen from DOT and law enforcement databases. Instant Fargo and statewide verification.",
+    metaDescription: "Free North Dakota VIN lookup. Check if a ND vehicle is stolen from DOT and community theft registries. Instant Fargo and statewide verification.",
     theftStats: { vehiclesStolen: "600+", recoveryRate: "63%", topCities: ["Fargo", "Bismarck", "Grand Forks"] },
     dmvLink: "https://www.dot.nd.gov/",
     content: {
@@ -20,7 +20,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   ohio: {
     state: "Ohio", stateCode: "OH", slug: "ohio-vin-lookup",
     title: "Ohio VIN Lookup - Free OH Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Ohio VIN lookup. Check if an OH vehicle is stolen from BMV and law enforcement databases. Instant Columbus and statewide verification.",
+    metaDescription: "Free Ohio VIN lookup. Check if an OH vehicle is stolen from BMV and community theft registries. Instant Columbus and statewide verification.",
     theftStats: { vehiclesStolen: "20,500+", recoveryRate: "49%", topCities: ["Columbus", "Cleveland", "Cincinnati"] },
     dmvLink: "https://bmv.ohio.gov/",
     content: {
@@ -36,7 +36,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   oklahoma: {
     state: "Oklahoma", stateCode: "OK", slug: "oklahoma-vin-lookup",
     title: "Oklahoma VIN Lookup - Free OK Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Oklahoma VIN lookup. Check if an OK vehicle is stolen from DPS and law enforcement databases. Instant Oklahoma City and statewide verification.",
+    metaDescription: "Free Oklahoma VIN lookup. Check if an OK vehicle is stolen from DPS and community theft registries. Instant Oklahoma City and statewide verification.",
     theftStats: { vehiclesStolen: "10,200+", recoveryRate: "47%", topCities: ["Oklahoma City", "Tulsa", "Norman"] },
     dmvLink: "https://oklahoma.gov/dps.html",
     content: {
@@ -52,7 +52,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   oregon: {
     state: "Oregon", stateCode: "OR", slug: "oregon-vin-lookup",
     title: "Oregon VIN Lookup - Free OR Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Oregon VIN lookup. Check if an OR vehicle is stolen from DMV and law enforcement databases. Instant Portland and statewide verification.",
+    metaDescription: "Free Oregon VIN lookup. Check if an OR vehicle is stolen from DMV and community theft registries. Instant Portland and statewide verification.",
     theftStats: { vehiclesStolen: "11,800+", recoveryRate: "44%", topCities: ["Portland", "Eugene", "Salem"] },
     dmvLink: "https://www.oregon.gov/odot/dmv/",
     content: {
@@ -68,7 +68,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   rhodeisland: {
     state: "Rhode Island", stateCode: "RI", slug: "rhode-island-vin-lookup",
     title: "Rhode Island VIN Lookup - Free RI Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Rhode Island VIN lookup. Check if a RI vehicle is stolen from DMV and law enforcement databases. Instant Providence and statewide verification.",
+    metaDescription: "Free Rhode Island VIN lookup. Check if a RI vehicle is stolen from DMV and community theft registries. Instant Providence and statewide verification.",
     theftStats: { vehiclesStolen: "1,400+", recoveryRate: "58%", topCities: ["Providence", "Warwick", "Cranston"] },
     dmvLink: "https://dmv.ri.gov/",
     content: {
@@ -84,7 +84,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   southcarolina: {
     state: "South Carolina", stateCode: "SC", slug: "south-carolina-vin-lookup",
     title: "South Carolina VIN Lookup - Free SC Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free South Carolina VIN lookup. Check if a SC vehicle is stolen from SCDMV and law enforcement databases. Instant Columbia and statewide verification.",
+    metaDescription: "Free South Carolina VIN lookup. Check if a SC vehicle is stolen from SCDMV and community theft registries. Instant Columbia and statewide verification.",
     theftStats: { vehiclesStolen: "8,900+", recoveryRate: "50%", topCities: ["Columbia", "Charleston", "North Charleston"] },
     dmvLink: "https://scdmvonline.com/",
     content: {
@@ -100,7 +100,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   southdakota: {
     state: "South Dakota", stateCode: "SD", slug: "south-dakota-vin-lookup",
     title: "South Dakota VIN Lookup - Free SD Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free South Dakota VIN lookup. Check if a SD vehicle is stolen from DOR and law enforcement databases. Instant Sioux Falls and statewide verification.",
+    metaDescription: "Free South Dakota VIN lookup. Check if a SD vehicle is stolen from DOR and community theft registries. Instant Sioux Falls and statewide verification.",
     theftStats: { vehiclesStolen: "900+", recoveryRate: "59%", topCities: ["Sioux Falls", "Rapid City", "Aberdeen"] },
     dmvLink: "https://dor.sd.gov/",
     content: {
@@ -116,7 +116,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   tennessee: {
     state: "Tennessee", stateCode: "TN", slug: "tennessee-vin-lookup",
     title: "Tennessee VIN Lookup - Free TN Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Tennessee VIN lookup. Check if a TN vehicle is stolen from Department of Revenue and law enforcement databases. Instant Nashville and statewide verification.",
+    metaDescription: "Free Tennessee VIN lookup. Check if a TN vehicle is stolen from Department of Revenue and community theft registries. Instant Nashville and statewide verification.",
     theftStats: { vehiclesStolen: "14,200+", recoveryRate: "48%", topCities: ["Nashville", "Memphis", "Knoxville"] },
     dmvLink: "https://www.tn.gov/revenue/title-and-registration.html",
     content: {
@@ -132,7 +132,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   utah: {
     state: "Utah", stateCode: "UT", slug: "utah-vin-lookup",
     title: "Utah VIN Lookup - Free UT Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Utah VIN lookup. Check if a UT vehicle is stolen from DMV and law enforcement databases. Instant Salt Lake City and statewide verification.",
+    metaDescription: "Free Utah VIN lookup. Check if a UT vehicle is stolen from DMV and community theft registries. Instant Salt Lake City and statewide verification.",
     theftStats: { vehiclesStolen: "4,700+", recoveryRate: "52%", topCities: ["Salt Lake City", "West Valley City", "Provo"] },
     dmvLink: "https://dmv.utah.gov/",
     content: {
@@ -148,7 +148,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   vermont: {
     state: "Vermont", stateCode: "VT", slug: "vermont-vin-lookup",
     title: "Vermont VIN Lookup - Free VT Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Vermont VIN lookup. Check if a VT vehicle is stolen from DMV and law enforcement databases. Instant Burlington and statewide verification.",
+    metaDescription: "Free Vermont VIN lookup. Check if a VT vehicle is stolen from DMV and community theft registries. Instant Burlington and statewide verification.",
     theftStats: { vehiclesStolen: "400+", recoveryRate: "66%", topCities: ["Burlington", "South Burlington", "Rutland"] },
     dmvLink: "https://dmv.vermont.gov/",
     content: {
@@ -164,7 +164,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   virginia: {
     state: "Virginia", stateCode: "VA", slug: "virginia-vin-lookup",
     title: "Virginia VIN Lookup - Free VA Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Virginia VIN lookup. Check if a VA vehicle is stolen from DMV and law enforcement databases. Instant Virginia Beach and statewide verification.",
+    metaDescription: "Free Virginia VIN lookup. Check if a VA vehicle is stolen from DMV and community theft registries. Instant Virginia Beach and statewide verification.",
     theftStats: { vehiclesStolen: "10,800+", recoveryRate: "53%", topCities: ["Virginia Beach", "Norfolk", "Richmond"] },
     dmvLink: "https://www.dmv.virginia.gov/",
     content: {
@@ -180,7 +180,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   washington: {
     state: "Washington", stateCode: "WA", slug: "washington-vin-lookup",
     title: "Washington VIN Lookup - Free WA Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Washington VIN lookup. Check if a WA vehicle is stolen from DOL and law enforcement databases. Instant Seattle and statewide verification.",
+    metaDescription: "Free Washington VIN lookup. Check if a WA vehicle is stolen from DOL and community theft registries. Instant Seattle and statewide verification.",
     theftStats: { vehiclesStolen: "19,800+", recoveryRate: "42%", topCities: ["Seattle", "Spokane", "Tacoma"] },
     dmvLink: "https://www.dol.wa.gov/",
     content: {
@@ -196,7 +196,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   westvirginia: {
     state: "West Virginia", stateCode: "WV", slug: "west-virginia-vin-lookup",
     title: "West Virginia VIN Lookup - Free WV Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free West Virginia VIN lookup. Check if a WV vehicle is stolen from DMV and law enforcement databases. Instant Charleston and statewide verification.",
+    metaDescription: "Free West Virginia VIN lookup. Check if a WV vehicle is stolen from DMV and community theft registries. Instant Charleston and statewide verification.",
     theftStats: { vehiclesStolen: "2,100+", recoveryRate: "56%", topCities: ["Charleston", "Huntington", "Morgantown"] },
     dmvLink: "https://transportation.wv.gov/dmv/",
     content: {
@@ -212,7 +212,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   wisconsin: {
     state: "Wisconsin", stateCode: "WI", slug: "wisconsin-vin-lookup",
     title: "Wisconsin VIN Lookup - Free WI Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Wisconsin VIN lookup. Check if a WI vehicle is stolen from DOT and law enforcement databases. Instant Milwaukee and statewide verification.",
+    metaDescription: "Free Wisconsin VIN lookup. Check if a WI vehicle is stolen from DOT and community theft registries. Instant Milwaukee and statewide verification.",
     theftStats: { vehiclesStolen: "10,500+", recoveryRate: "51%", topCities: ["Milwaukee", "Madison", "Green Bay"] },
     dmvLink: "https://wisconsindot.gov/",
     content: {
@@ -228,7 +228,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
   wyoming: {
     state: "Wyoming", stateCode: "WY", slug: "wyoming-vin-lookup",
     title: "Wyoming VIN Lookup - Free WY Stolen Vehicle Check | SafeOrStolen",
-    metaDescription: "Free Wyoming VIN lookup. Check if a WY vehicle is stolen from DOT and law enforcement databases. Instant Cheyenne and statewide verification.",
+    metaDescription: "Free Wyoming VIN lookup. Check if a WY vehicle is stolen from DOT and community theft registries. Instant Cheyenne and statewide verification.",
     theftStats: { vehiclesStolen: "500+", recoveryRate: "61%", topCities: ["Cheyenne", "Casper", "Laramie"] },
     dmvLink: "https://dot.state.wy.us/",
     content: {

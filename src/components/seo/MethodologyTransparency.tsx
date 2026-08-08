@@ -45,7 +45,7 @@ const transparencyMetrics = [
   {
     metric: "15+",
     label: "Data Sources",
-    description: "Official registries and law enforcement databases"
+    description: "Official registries and community theft registries"
   },
   {
     metric: "<2 sec",

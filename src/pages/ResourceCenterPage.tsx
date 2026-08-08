@@ -14,7 +14,7 @@ const educationalFAQs = [
   },
   {
     question: "How do I check if a used phone is stolen before buying it?",
-    answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against GSMA blacklists, carrier databases, and insurance claim records. A clean result with a Trust Score above 85 indicates the device has no theft reports across 100+ databases. Always verify before exchanging money."
+    answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against carrier and manufacturer blacklists, carrier databases, and insurance claim records. A clean result with a Trust Score above 85 indicates the device has no theft reports across 100+ databases. Always verify before exchanging money."
   },
   {
     question: "What happens if I accidentally buy stolen goods?",
@@ -26,7 +26,7 @@ const educationalFAQs = [
   },
   {
     question: "What databases does SafeOrStolen check for verification?",
-    answer: "SafeOrStolen aggregates data from 100+ sources including: GSMA device registries, NICB vehicle databases, carrier blacklists (AT&T, T-Mobile, Verizon), insurance claims databases, BikeIndex for bicycles, nationwide firearm theft reports, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
+    answer: "SafeOrStolen aggregates data from 100+ sources including: carrier and manufacturer blacklists, NICB vehicle databases, carrier blacklists (AT&T, T-Mobile, Verizon), insurance claims databases, BikeIndex for bicycles, nationwide firearm theft reports, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
   },
   {
     question: "Are auction houses required to verify items before selling?",
@@ -34,7 +34,7 @@ const educationalFAQs = [
   },
   {
     question: "How accurate is IMEI blacklist checking in 2026?",
-    answer: "GSMA's IMEI Database covers 200+ network operators across 150+ countries. SafeOrStolen enhances this with carrier-specific blacklists, insurance claim cross-referencing, and law enforcement stolen property databases. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in databases."
+    answer: "carrier and manufacturer blacklists's IMEI Database covers 200+ network operators across 150+ countries. SafeOrStolen enhances this with carrier-specific blacklists, insurance claim cross-referencing, and law enforcement stolen property databases. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in databases."
   },
   {
     question: "What is a compliance certificate and why do businesses need one?",

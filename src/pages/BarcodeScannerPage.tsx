@@ -16,11 +16,11 @@ const faqs = [
   },
   {
     question: "How do I scan a barcode to check if an item is stolen?",
-    answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine which checks 100+ databases including GSMA, NICB, and all 50 state law enforcement databases. Results appear in 3 seconds."
+    answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine which checks 100+ databases including carrier and manufacturer blacklists, NICB, and all 50 state community theft registries. Results appear in 3 seconds."
   },
   {
     question: "Can I scan a phone's IMEI barcode?",
-    answer: "Yes. Every phone has an IMEI barcode: on the original box, under the battery (older phones), on the SIM tray, or in Settings > About Phone. Our scanner reads the IMEI barcode and instantly checks it against GSMA's global database of 15+ billion records, carrier blacklists (AT&T, Verizon, T-Mobile), and law enforcement stolen device databases."
+    answer: "Yes. Every phone has an IMEI barcode: on the original box, under the battery (older phones), on the SIM tray, or in Settings > About Phone. Our scanner reads the IMEI barcode and instantly checks it against carrier and manufacturer blacklists's global database of 15+ billion records, carrier and manufacturer blacklists, and law enforcement stolen device databases."
   },
   {
     question: "Does the barcode scanner work at gun shows?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Can I scan a VIN barcode on a car?",
-    answer: "Absolutely. Every vehicle manufactured since 1981 has a VIN barcode on the driver's side door jamb and on the dashboard near the windshield. Point your camera at either barcode — our scanner extracts the 17-character VIN and checks it against NICB (National Insurance Crime Bureau), NHTSA recalls, and DMV records from all 50 states."
+    answer: "Absolutely. Every vehicle manufactured since 1981 has a VIN barcode on the driver's side door jamb and on the dashboard near the windshield. Point your camera at either barcode — our scanner extracts the 17-character VIN and checks it against NICB (National Insurance Crime Bureau), NHTSA recalls, and NHTSA vehicle records from all 50 states."
   },
   {
     question: "Do I need to download an app to use the barcode scanner?",
@@ -114,7 +114,7 @@ const BarcodeScannerPage = () => {
             <h2>What Barcodes Can You Scan?</h2>
             <p>Our scanner reads IMEI barcodes on phone boxes, VIN barcodes on vehicle door jambs, serial number barcodes on electronics, QR codes on warranty cards, and standard UPC/EAN retail barcodes. Supports 1D and 2D barcode formats including Code 128, Code 39, Data Matrix, and QR codes.</p>
             <h2>How It Works</h2>
-            <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including GSMA, NICB, 50-State Firearm Reports, and all 50 state law enforcement databases. Results in 3 seconds.</p>
+            <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including carrier and manufacturer blacklists, NICB, 50-State Firearm Reports, and all 50 state community theft registries. Results in 3 seconds.</p>
             <h2>Perfect for In-Person Shopping</h2>
             <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
           </article>
@@ -185,12 +185,12 @@ const BarcodeScannerPage = () => {
                 {[
                   {
                     title: "📱 Phone IMEI Barcodes",
-                    desc: "Found on phone boxes, under batteries, SIM trays. Checks GSMA (15B+ records), AT&T, Verizon, T-Mobile blacklists.",
+                    desc: "Found on phone boxes, under batteries, SIM trays. Checks carrier and manufacturer blacklists.",
                     link: "/imei-checker"
                   },
                   {
                     title: "🚗 Vehicle VIN Barcodes",
-                    desc: "On door jambs, dashboards, registration cards. Checks NICB, NHTSA, 50-state DMV records.",
+                    desc: "On door jambs, dashboards, registration cards. Checks NICB, NHTSA, 50-NHTSA vehicle records.",
                     link: "/vin-checker"
                   },
                   {

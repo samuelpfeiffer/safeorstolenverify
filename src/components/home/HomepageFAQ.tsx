@@ -18,7 +18,7 @@ export const HomepageFAQ = () => {
     },
     {
       question: 'How accurate is SafeOrStolen?',
-      answer: 'We query official databases including NICB (National Insurance Crime Bureau), GSMA Device Registry, national police databases, and carrier blacklists. Our data is 99.9% accurate as it comes directly from law enforcement and carrier sources. We update our databases in real-time.'
+      answer: 'We query official databases including NICB (National Insurance Crime Bureau), carrier and manufacturer blacklists, community theft registries, and carrier blacklists. Our data is 99.9% accurate as it comes directly from law enforcement and carrier sources. We update our databases in real-time.'
     },
     {
       question: 'Do you report searches to police?',
@@ -26,7 +26,7 @@ export const HomepageFAQ = () => {
     },
     {
       question: 'Can I check items from other countries?',
-      answer: 'Yes! SafeOrStolen works globally with coverage in 150+ countries. We query international databases including INTERPOL stolen property database, GSMA global registry, and national police databases worldwide. Perfect for checking items from international sellers.'
+      answer: 'Yes! SafeOrStolen works globally with coverage in 150+ countries. We query international databases including INTERPOL stolen property database, carrier and manufacturer blacklists global registry, and community theft registries worldwide. Perfect for checking items from international sellers.'
     }
   ];
 

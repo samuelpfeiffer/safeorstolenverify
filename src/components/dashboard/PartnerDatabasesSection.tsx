@@ -13,7 +13,7 @@ const PARTNERS = [
     stat: '50 states',
   },
   {
-    name: 'GSMA IMEI Registry',
+    name: 'carrier and manufacturer blacklists IMEI Registry',
     category: 'Telecom / Global',
     type: 'industry',
     detail: 'Global System for Mobile Communications — 15 billion+ IMEI records from 200+ carriers worldwide.',
@@ -48,7 +48,7 @@ const PARTNERS = [
     name: 'State Police DBs',
     category: 'Law Enforcement',
     type: 'government',
-    detail: 'All 50 U.S. state law enforcement databases queried simultaneously with every verification.',
+    detail: 'All 50 U.S. state community theft registries queried simultaneously with every verification.',
     link: '/data-sources#law-enforcement',
     stat: 'All 50 states',
   },
@@ -64,7 +64,7 @@ const PARTNERS = [
     name: 'CTIA / Carriers',
     category: 'Carrier Blacklist',
     type: 'industry',
-    detail: 'Cellular Telecommunications Industry Association — AT&T, Verizon, T-Mobile carrier blacklists.',
+    detail: 'Cellular Telecommunications Industry Association — carrier and manufacturer blacklists.',
     link: '/imei-checker',
     stat: '200+ carriers',
   },
@@ -146,7 +146,7 @@ export const PartnerDatabasesSection: React.FC = () => {
               <FileCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Why we use 100+ sources:</strong>{' '}
-                A single stolen phone may be reported in the GSMA blacklist but not yet in a carrier database.
+                A single stolen phone may be reported in the carrier and manufacturer blacklists but not yet in a carrier database.
                 A stolen car may be flagged by insurance (NICB) but not yet entered into NCIC. By querying all sources
                 simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and
                 protecting buyers and sellers with more complete information than any competing service.

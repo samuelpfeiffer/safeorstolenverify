@@ -87,7 +87,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
       localLaws: "Utah Code §76-6-408 makes receiving stolen property valued over $1,500 a felony with penalties up to 5 years in prison. Utah requires title transfers within 60 days. The Utah DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I check a Utah VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Utah DMV records, NICB theft database, and accident history. Our mobile app provides instant barcode scanning for faster verification at UT dealerships." },
+      { question: "How do I check a Utah VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Utah NHTSA vehicle records, NICB theft database, and accident history. Our mobile app provides instant barcode scanning for faster verification at UT dealerships." },
       { question: "Does Utah require VIN inspections?", answer: "Utah requires VIN inspections for out-of-state vehicles and vehicles without existing UT titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden damage before purchase." },
       { question: "What is Utah's title transfer process?", answer: "In Utah, buyers must complete title transfer within 60 days. Both parties sign the title, and buyer submits it to the UT DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
     ]
@@ -110,7 +110,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
       localLaws: "Vermont Statutes Title 13 §2561 makes receiving stolen property valued over $900 a felony with penalties up to 10 years in prison. Vermont requires title transfers within 30 days. The Vermont DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I check a Vermont VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Vermont DMV records, NICB theft database, and accident history. Our mobile app offers instant barcode scanning for faster verification." },
+      { question: "How do I check a Vermont VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Vermont NHTSA vehicle records, NICB theft database, and accident history. Our mobile app offers instant barcode scanning for faster verification." },
       { question: "What is the Vermont title loophole?", answer: "Vermont historically allowed registration without a title for older vehicles, which some people exploited to launder stolen cars or hide salvage titles. While Vermont has tightened restrictions, always verify VIN history nationwide to detect title washing schemes before purchase." },
       { question: "How do I detect rust damage on a Vermont vehicle?", answer: "While VIN checks reveal accident and flood history, rust damage from Vermont winters often isn't documented. Combine SafeOrStolen's VIN verification with a physical inspection focusing on frame, rocker panels, and wheel wells where VT road salt causes hidden corrosion." }
     ]
@@ -133,7 +133,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
       localLaws: "Virginia Code §18.2-108 makes receiving stolen property valued over $1,000 a felony with penalties up to 20 years in prison. Virginia requires title transfers within 30 days. The Virginia DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I verify a Virginia vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Virginia title status. Enter the VIN to check VA DMV records, theft databases, and title brands. Virginia has electronic titles, so always verify the VIN matches the physical vehicle before purchase." },
+      { question: "How do I verify a Virginia vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Virginia title status. Enter the VIN to check VA NHTSA vehicle records, theft databases, and title brands. Virginia has electronic titles, so always verify the VIN matches the physical vehicle before purchase." },
       { question: "Does Virginia require VIN inspections?", answer: "Virginia requires VIN inspections for out-of-state vehicles and vehicles without existing VA titles. The inspection must verify the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
       { question: "What is Virginia's title transfer process?", answer: "In Virginia, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the VA DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
     ]
@@ -179,7 +179,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
       localLaws: "West Virginia Code §61-3-13 makes receiving stolen property valued over $1,000 a felony with penalties up to 10 years in prison. West Virginia requires title transfers within 30 days. The WV DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I check a West Virginia VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check West Virginia DMV records, NICB theft database, and accident history. Our mobile app offers instant barcode scanning for faster verification." },
+      { question: "How do I check a West Virginia VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check West Virginia NHTSA vehicle records, NICB theft database, and accident history. Our mobile app offers instant barcode scanning for faster verification." },
       { question: "Is a VIN check required in West Virginia?", answer: "West Virginia law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase to protect themselves legally." },
       { question: "What is West Virginia's title transfer process?", answer: "In West Virginia, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the WV DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
     ]

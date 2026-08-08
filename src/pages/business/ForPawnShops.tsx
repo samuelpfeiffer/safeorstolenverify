@@ -103,7 +103,7 @@ export default function ForPawnShops() {
           </ul>
 
           <h3>Compliance with State Pawn Laws</h3>
-          <p>Most states mandate pawn shops verify items against law enforcement databases before acceptance:</p>
+          <p>Most states mandate pawn shops verify items against community theft registries before acceptance:</p>
           <ul>
             <li><strong>California (CA Business & Professions Code §21628):</strong> Requires electronic reporting and verification</li>
             <li><strong>Texas (TX Occupations Code §371.151):</strong> Pawnbrokers must check against stolen property databases</li>

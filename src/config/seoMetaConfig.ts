@@ -45,7 +45,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/imei-checker': {
     title: 'Free IMEI Checker App - Verify Phone Not Stolen',
-    description: 'Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, GSMA database. Better than CheckMEND.', // 155 chars
+    description: 'Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, carrier and manufacturer blacklists. Better than CheckMEND.', // 155 chars
     keywords: 'IMEI checker, phone blacklist check, stolen phone checker, IMEI lookup free',
     canonical: '/imei-checker'
   },
@@ -55,7 +55,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/vin-checker': {
     title: 'Free VIN Checker App - Verify Vehicle Not Stolen',
-    description: 'Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check NICB, DMV, law enforcement databases. Better than Carfax.', // 155 chars
+    description: 'Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check NICB, DMV, community theft registries. Better than Carfax.', // 155 chars
     keywords: 'VIN checker, stolen car check, vehicle history free, NICB VIN check, Carfax alternative',
     canonical: '/vin-checker'
   },
@@ -65,7 +65,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/license-plate-lookup': {
     title: 'License Plate Lookup - Free Stolen Vehicle Check',
-    description: 'Check if a vehicle is stolen using license plate number. Free lookup from DMV and law enforcement databases across all 50 states. Instant verification.', // 159 chars
+    description: 'Check if a vehicle is stolen using license plate number. Free lookup from DMV and community theft registries across all 50 states. Instant verification.', // 159 chars
     keywords: 'license plate lookup, plate number search, stolen vehicle check, DMV lookup',
     canonical: '/license-plate-lookup'
   },
@@ -85,7 +85,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/check-car': {
     title: 'Check if Car is Stolen - Free VIN Verification',
-    description: 'Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax for theft.', // 155 chars
+    description: 'Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and community theft registries. Safer alternative to Carfax for theft.', // 155 chars
     keywords: 'check car stolen, VIN verification, stolen car lookup, car theft check',
     canonical: '/check-car'
   },
@@ -195,7 +195,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/how-it-works': {
     title: 'How It Works - Stolen Item Verification Process',
-    description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and GSMA.', // 159 chars
+    description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and carrier and manufacturer blacklists.', // 159 chars
     keywords: 'how SafeOrStolen works, verification process, stolen item check explained',
     canonical: '/how-it-works'
   },
@@ -205,8 +205,8 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/database': {
     title: 'Databases We Search - 100+ Global Sources',
-    description: 'Access 50+ global stolen goods databases. Real-time checks across NICB, GSMA, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
-    keywords: 'stolen item databases, NICB database, GSMA database, global theft databases',
+    description: 'Access 50+ global stolen goods databases. Real-time checks across NICB, carrier and manufacturer blacklists, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
+    keywords: 'stolen item databases, NICB database, carrier and manufacturer blacklists, global theft databases',
     canonical: '/database'
   },
 

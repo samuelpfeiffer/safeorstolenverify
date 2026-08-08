@@ -34,14 +34,14 @@ const topics = [
   {
     icon: Smartphone,
     title: 'IMEI Verification',
-    desc: 'How to find and check your phone\'s IMEI against GSMA\'s 15B+ record database, carrier blacklists, and insurance theft claims before any purchase.',
+    desc: 'How to find and check your phone\'s IMEI against carrier and manufacturer blacklists\'s 15B+ record database, carrier blacklists, and insurance theft claims before any purchase.',
     link: '/imei-checker',
     stat: '15B+ IMEI records'
   },
   {
     icon: Car,
     title: 'VIN & Stolen Cars',
-    desc: 'Step-by-step VIN lookup against stolen property reports from all 50 states, NICB insurance records, and all 50 state DMV databases before buying used vehicles.',
+    desc: 'Step-by-step VIN lookup against stolen property reports from all 50 states, NICB insurance records, and NHTSA vehicle records before buying used vehicles.',
     link: '/vin-checker',
     stat: '50-state coverage'
   },

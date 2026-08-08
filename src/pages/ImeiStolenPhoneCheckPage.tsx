@@ -4,7 +4,7 @@ const ImeiStolenPhoneCheckPage = () => {
   return (
     <ItemLandingPageTemplate
       title="IMEI Stolen Phone Check - Free Blacklist Verification | SafeOrStolen"
-      metaDescription="Check if a phone is stolen using the IMEI number. Free blacklist verification searches GSMA, carrier databases, and theft registries. Instant results for any phone."
+      metaDescription="Check if a phone is stolen using the IMEI number. Free blacklist verification searches carrier and manufacturer blacklists, carrier databases, and theft registries. Instant results for any phone."
       h1="IMEI Stolen Phone Check - Verify Any Phone Instantly"
       itemType="Phone"
       keywords={[
@@ -18,13 +18,13 @@ const ImeiStolenPhoneCheckPage = () => {
         'check phone blacklist imei'
       ]}
       content={{
-        intro: "Use the IMEI number to check if any phone is stolen, blacklisted, or safe to buy. Our free <a href='/imei-checker'>IMEI checker</a> searches the GSMA global database, all carrier blacklists, and law enforcement records to verify a phone's status in just 3 seconds. Works for iPhone, Samsung, Google Pixel, OnePlus, and all smartphones.",
-        whatIs: "An IMEI (International Mobile Equipment Identity) check verifies whether a phone has been reported stolen, lost, or blacklisted by carriers. Every mobile phone has a unique 15-digit IMEI number that acts like a fingerprint - no two phones share the same IMEI. When a phone is reported stolen, carriers add the IMEI to a global blacklist managed by the GSMA (Groupe Spéciale Mobile Association). A blacklisted phone cannot be activated on any major carrier network worldwide. SafeOrStolen's IMEI checker searches these blacklists plus law enforcement databases to tell you if a phone is safe to purchase.",
-        howItWorks: "Our IMEI verification system queries multiple global databases simultaneously. We check the GSMA Device Registry (used by 1,000+ carriers worldwide), all major US carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), international carrier databases, FBI and stolen property reports from all 50 states, iCloud Activation Lock status (for iPhones), Google Find My Device status (for Android), insurance company claim records, and user-reported theft registries. The check takes 3 seconds. You receive a comprehensive report showing: (1) Stolen/lost status, (2) Carrier blacklist status, (3) Activation lock status, (4) Finance/lease status, (5) Network compatibility.",
+        intro: "Use the IMEI number to check if any phone is stolen, blacklisted, or safe to buy. Our free <a href='/imei-checker'>IMEI checker</a> searches the carrier and manufacturer blacklists global database, all carrier blacklists, and law enforcement records to verify a phone's status in just 3 seconds. Works for iPhone, Samsung, Google Pixel, OnePlus, and all smartphones.",
+        whatIs: "An IMEI (International Mobile Equipment Identity) check verifies whether a phone has been reported stolen, lost, or blacklisted by carriers. Every mobile phone has a unique 15-digit IMEI number that acts like a fingerprint - no two phones share the same IMEI. When a phone is reported stolen, carriers add the IMEI to a global blacklist managed by the carrier and manufacturer blacklists (Groupe Spéciale Mobile Association). A blacklisted phone cannot be activated on any major carrier network worldwide. SafeOrStolen's IMEI checker searches these blacklists plus community theft registries to tell you if a phone is safe to purchase.",
+        howItWorks: "Our IMEI verification system queries multiple global databases simultaneously. We check the carrier and manufacturer blacklists, all carrier and manufacturer blacklists, international carrier databases, FBI and stolen property reports from all 50 states, iCloud Activation Lock status (for iPhones), Google Find My Device status (for Android), insurance company claim records, and user-reported theft registries. The check takes 3 seconds. You receive a comprehensive report showing: (1) Stolen/lost status, (2) Carrier blacklist status, (3) Activation lock status, (4) Finance/lease status, (5) Network compatibility.",
         whyCheck: "A phone with a blacklisted IMEI is essentially worthless. Here's what happens: (1) The phone cannot be activated on any major carrier network, (2) Cellular data and calling won't work (only WiFi), (3) The phone can be remotely locked or wiped by the original owner, (4) Police can seize it as stolen property with no compensation, (5) You could face criminal charges for possession. Over 2.4 million phones were reported stolen in the US in 2024. Many appear on Facebook Marketplace, Craigslist, OfferUp, and eBay with sellers claiming they're 'unlocked' or 'carrier-free.' A blacklisted phone might work temporarily on prepaid carriers but will eventually be blocked. Always check the IMEI before buying.",
         benefits: [
           "Check IMEI for any phone - iPhone, Samsung, Google Pixel, OnePlus, Motorola",
-          "Search GSMA global blacklist used by 1,000+ carriers worldwide",
+          "Search carrier and manufacturer blacklists global blacklist used by 1,000+ carriers worldwide",
           "Verify against AT&T, Verizon, T-Mobile, Sprint blacklists",
           "Check iCloud Activation Lock (iPhone) and Google FRP (Android)",
           "Detect phones with outstanding finance/lease agreements",
@@ -51,7 +51,7 @@ const ImeiStolenPhoneCheckPage = () => {
           },
           {
             question: "Can a blacklisted phone be unblacklisted?",
-            answer: "No legitimate service can unblacklist a stolen phone. The GSMA blacklist and carrier blacklists are permanent for stolen devices. The only way to remove a phone from the blacklist is if the original owner or insurance company reports it as found/recovered - which they won't do if you bought it from a thief. Anyone claiming to 'unblacklist' phones is scamming you or doing something illegal."
+            answer: "No legitimate service can unblacklist a stolen phone. The carrier and manufacturer blacklists and carrier blacklists are permanent for stolen devices. The only way to remove a phone from the blacklist is if the original owner or insurance company reports it as found/recovered - which they won't do if you bought it from a thief. Anyone claiming to 'unblacklist' phones is scamming you or doing something illegal."
           },
           {
             question: "What's the difference between blacklisted, stolen, and blocked?",
@@ -63,11 +63,11 @@ const ImeiStolenPhoneCheckPage = () => {
           },
           {
             question: "How accurate is the IMEI blacklist check?",
-            answer: "Our IMEI check queries the GSMA Device Registry, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including law enforcement records and user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
+            answer: "Our IMEI check queries the carrier and manufacturer blacklists, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including law enforcement records and user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
           },
           {
             question: "How much does the IMEI check cost?",
-            answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers comprehensive databases including GSMA, carrier blacklists, and law enforcement records. Many other IMEI checkers charge more per check or only check partial databases."
+            answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers comprehensive databases including carrier and manufacturer blacklists, carrier blacklists, and law enforcement records. Many other IMEI checkers charge more per check or only check partial databases."
           },
           {
             question: "What's the difference between IMEI and serial number?",

@@ -64,7 +64,7 @@ export default function APIPage() {
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same databases that power our web and mobile applications, including stolen property reports from all 50 states, GSMA, carrier blacklists, BikeIndex, NICB, and over 100 other data sources worldwide.
+                  The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same databases that power our web and mobile applications, including stolen property reports from all 50 states, carrier and manufacturer blacklists, carrier blacklists, BikeIndex, NICB, and over 100 other data sources worldwide.
                 </p>
                 <p>
                   Perfect for marketplace platforms, point-of-sale systems, pawn shops, dealerships, and any business that needs to verify items are not stolen before purchase or accepting them as trade-ins. The API supports verification of phones using IMEI numbers, vehicles using VIN numbers, electronics using serial numbers, bicycles, firearms, and more.
@@ -125,7 +125,7 @@ export default function APIPage() {
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  Verify if a phone IMEI number is stolen, blacklisted, or reported lost. This endpoint checks carrier blacklists, the GSMA Device Registry, insurance claims databases, and law enforcement databases across multiple countries. Returns comprehensive device information, blacklist status, carrier lock status, and any theft reports associated with the device.
+                  Verify if a phone IMEI number is stolen, blacklisted, or reported lost. This endpoint checks carrier blacklists, the carrier and manufacturer blacklists, insurance claims databases, and community theft registries. Returns comprehensive device information, blacklist status, carrier lock status, and any theft reports associated with the device.
                 </p>
                 <h4>Request Example</h4>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
@@ -170,7 +170,7 @@ Authorization: Bearer YOUR_API_KEY
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  Check vehicle VIN for theft records, salvage titles, active recalls, and odometer fraud. This endpoint queries NMVTIS (National Motor Vehicle Title Information System), state DMV databases, NICB (National Insurance Crime Bureau), and insurance claim history. Returns comprehensive vehicle history including theft status, title brands, accident history, and safety recalls.
+                  Check vehicle VIN for theft records, salvage titles, active recalls, and odometer fraud. This endpoint queries NMVTIS (National Motor Vehicle Title Information System), NHTSA vehicle records, NICB (National Insurance Crime Bureau), and insurance claim history. Returns comprehensive vehicle history including theft status, title brands, accident history, and safety recalls.
                 </p>
                 <h4>Request Example</h4>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
@@ -218,7 +218,7 @@ Authorization: Bearer YOUR_API_KEY
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches law enforcement databases, manufacturer registries, insurance claims, and user-reported stolen items. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
+                  Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches community theft registries, manufacturer registries, insurance claims, and user-reported stolen items. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
                 </p>
                 <h4>Request Example</h4>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">

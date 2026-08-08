@@ -115,7 +115,7 @@ export default function PhoneVerificationGuide() {
 
               <h3 className="text-2xl font-bold mb-3">What SafeOrStolen Checks:</h3>
               <ul className="list-disc list-inside space-y-2 mb-6 text-lg">
-                <li><strong>Stolen Phone Databases:</strong> Cross-references 50+ global databases including GSMA, police reports, and insurance claims</li>
+                <li><strong>Stolen Phone Databases:</strong> Cross-references 50+ global databases including carrier and manufacturer blacklists, police reports, and insurance claims</li>
                 <li><strong>Carrier Blacklist:</strong> Checks if the device is blacklisted by AT&T, Verizon, T-Mobile, Sprint</li>
                 <li><strong>Find My iPhone/Android Lock Status:</strong> Verifies if device is locked to previous owner</li>
                 <li><strong>Activation Lock Status:</strong> Confirms if you can activate the device</li>

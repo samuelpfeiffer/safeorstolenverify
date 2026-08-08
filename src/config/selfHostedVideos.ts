@@ -25,7 +25,7 @@ export const SELF_HOSTED_VIDEOS: SelfHostedVideo[] = [
     title: 'How SafeOrStolen Works',
     seoTitle: 'How SafeOrStolen Works — Verify Stolen Items in 3 Seconds',
     description: 'Watch how SafeOrStolen verifies any IMEI, VIN, or serial number against 100+ stolen item databases in under 3 seconds.',
-    seoDescription: 'See how SafeOrStolen instantly checks IMEI, VIN, license plates, and serial numbers against NICB, GSMA and 100+ databases. Free to start.',
+    seoDescription: 'See how SafeOrStolen instantly checks IMEI, VIN, license plates, and serial numbers against NICB and 100+ databases. Free to start.',
     src: '/videos/safeorstolen-how-it-works.mp4',
     poster: '/videos/safeorstolen-how-it-works.jpg',
     durationISO: 'PT20S',
