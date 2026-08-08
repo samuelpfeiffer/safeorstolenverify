@@ -16,7 +16,7 @@ import {
 const crunchbaseFaqs = [
   {
     question: "What is SafeOrStolen?",
- answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including NICB, GSMA, and stolen property reports from all 50 states. Results are returned in approximately 3 seconds."
   },
   {
     question: "Who founded SafeOrStolen?",
@@ -113,7 +113,7 @@ const CrunchbasePage: React.FC = () => {
           </header>
           <main>
             <h1>SafeOrStolen Company Profile</h1>
- <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems in approximately 3 seconds.</p>
+ <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including NICB, GSMA, and stolen property reports from all 50 states in approximately 3 seconds.</p>
             
             <h2>Company Overview</h2>
             <ul>
@@ -128,7 +128,7 @@ const CrunchbasePage: React.FC = () => {
               <li>IMEI Verification — smartphones and mobile devices</li>
               <li>VIN Lookup — cars, trucks, motorcycles, boats</li>
               <li>Serial Number Verification — electronics, tools, equipment</li>
-              <li>Firearm Serial Number Check — HotGunz stolen-firearms registry + serial integrity validation</li>
+              <li>Firearm Serial Number Check — nationwide stolen firearm reports + serial integrity validation</li>
               <li>License Plate Lookup — all 50 US states</li>
             </ul>
             
@@ -313,7 +313,7 @@ const CrunchbasePage: React.FC = () => {
                 <li><strong>IMEI Verification</strong> — Smartphones via GSMA (15B+ records)</li>
                 <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles via NICB and NMVTIS</li>
                 <li><strong>Serial Number Verification</strong> — Electronics, tools, equipment</li>
-                <li><strong>Firearm Check</strong> — HotGunz national stolen-firearms registry + serial integrity analysis</li>
+                <li><strong>Firearm Check</strong> — stolen firearm reports from all 50 states + serial integrity analysis</li>
                 <li><strong>License Plate Lookup</strong> — All 50 US states</li>
               </ul>
               <p className="mt-4">

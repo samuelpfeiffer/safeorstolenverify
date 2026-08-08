@@ -165,7 +165,7 @@ export const MobileVerificationInterface: React.FC = () => {
                       <div className="space-y-1">
                         <p className="text-sm font-medium">Firearm Database Verification</p>
                         <p className="text-xs text-muted-foreground">
- We check the HotGunz national stolen-firearms registry and validate serial number integrity. 
+ We check stolen firearm reports from all 50 states and validate serial number integrity. 
                           Results include theft reports and law enforcement alerts.
                         </p>
                       </div>

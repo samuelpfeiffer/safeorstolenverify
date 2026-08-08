@@ -172,7 +172,7 @@ export default function AppDownloadPage() {
                   <th className="text-center py-3 px-3 text-blue-400 font-bold">SafeOrStolen</th>
                   <th className="text-center py-3 px-3 text-gray-400">CheckMEND</th>
                   <th className="text-center py-3 px-3 text-gray-400">NICB</th>
-                  <th className="text-center py-3 px-3 text-gray-400">HotGunz</th>
+                  <th className="text-center py-3 px-3 text-gray-400">50-state firearm theft reports</th>
                 </tr>
               </thead>
               <tbody>

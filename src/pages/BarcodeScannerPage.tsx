@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "How do I scan a barcode to check if an item is stolen?",
-    answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine which checks 100+ databases including FBI NCIC, GSMA, NICB, and all 50 state law enforcement databases. Results appear in 3 seconds."
+    answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine which checks 100+ databases including GSMA, NICB, and all 50 state law enforcement databases. Results appear in 3 seconds."
   },
   {
     question: "Can I scan a phone's IMEI barcode?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Does the barcode scanner work at gun shows?",
- answer: "Yes. Many modern firearms have barcodes on the packaging, warranty cards, or even laser-etched QR codes. Scan the barcode to extract the serial number, then we verify it against the HotGunz national stolen-firearms registry. If no barcode, you can type the serial number manually."
+ answer: "Yes. Many modern firearms have barcodes on the packaging, warranty cards, or even laser-etched QR codes. Scan the barcode to extract the serial number, then we verify it against stolen firearm reports from all 50 states. If no barcode, you can type the serial number manually."
   },
   {
     question: "Can I scan a VIN barcode on a car?",
@@ -114,7 +114,7 @@ const BarcodeScannerPage = () => {
             <h2>What Barcodes Can You Scan?</h2>
             <p>Our scanner reads IMEI barcodes on phone boxes, VIN barcodes on vehicle door jambs, serial number barcodes on electronics, QR codes on warranty cards, and standard UPC/EAN retail barcodes. Supports 1D and 2D barcode formats including Code 128, Code 39, Data Matrix, and QR codes.</p>
             <h2>How It Works</h2>
-            <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including FBI NCIC, GSMA, NICB, HotGunz, and all 50 state law enforcement databases. Results in 3 seconds.</p>
+            <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including GSMA, NICB, 50-state firearm theft reports, and all 50 state law enforcement databases. Results in 3 seconds.</p>
             <h2>Perfect for In-Person Shopping</h2>
             <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
           </article>
@@ -195,7 +195,7 @@ const BarcodeScannerPage = () => {
                   },
                   {
                     title: "🔫 Firearm Barcodes",
-                    desc: "On packaging, warranty cards, QR codes. Checks the HotGunz national stolen-firearms registry and serial integrity.",
+                    desc: "On packaging, warranty cards, QR codes. Checks stolen firearm reports from all 50 states and serial integrity.",
                     link: "/gun-serial-number-lookup"
                   },
                   {

@@ -403,8 +403,8 @@ const FirearmsSerialNumberCheckPage = () => {
                 <p className="text-sm text-muted-foreground">Search reported stolen firearms</p>
               </Link>
               <Link to="/hotgunz-alternative" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
-                <h3 className="font-semibold mb-2">HotGunz Alternative</h3>
-                <p className="text-sm text-muted-foreground">Compare SafeOrStolen and HotGunz</p>
+                <h3 className="font-semibold mb-2">50-state firearm theft reports Alternative</h3>
+                <p className="text-sm text-muted-foreground">Compare SafeOrStolen and 50-state firearm theft reports</p>
               </Link>
             </div>
           </div>

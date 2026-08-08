@@ -11,8 +11,8 @@ export default function CheckFirearmPage() {
     <>
       <PageSEO
         title="Check If Firearm Is Stolen - Free Gun Serial Number Lookup | SafeOrStolen"
- description="Verify if a gun is stolen before buying. Free firearm serial number check against the HotGunz national stolen-firearms registry and law enforcement databases. Protect yourself legally when purchasing firearms."
-        keywords="check if gun stolen, firearm serial number lookup, stolen gun check, HotGunz search, verify firearm, gun serial lookup"
+ description="Verify if a gun is stolen before buying. Free firearm serial number check against stolen firearm reports from all 50 states and law enforcement databases. Protect yourself legally when purchasing firearms."
+        keywords="check if gun stolen, firearm serial number lookup, stolen gun check, 50-state firearm theft reports search, verify firearm, gun serial lookup"
         canonical="https://safeorstolen.com/check-firearm"
       />
       
@@ -107,7 +107,7 @@ export default function CheckFirearmPage() {
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
                 <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold">HotGunz National Stolen-Firearms Registry</h3>
+                  <h3 className="font-bold">Nationwide Stolen Firearms Database</h3>
                   <p className="text-sm text-muted-foreground">Community-maintained registry of roughly 32,000 stolen firearms reported by theft victims</p>
                 </div>
               </div>

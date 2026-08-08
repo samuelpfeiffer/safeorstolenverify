@@ -15,7 +15,7 @@ All AI runs on Anthropic Claude (claude-sonnet-4-5) via the Lovable AI Gateway.
 
 ## What is SafeOrStolen?
 
-SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase. It checks IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ databases including FBI NCIC, NICB, GSMA Device Registry, ATF eTrace, carrier blacklists, BikeIndex, and HotGunz. Results in approximately 3 seconds. The only multi-category verification service with a mobile app.
+SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase. It checks IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ databases including NICB, GSMA Device Registry, ATF eTrace, carrier blacklists, BikeIndex, and 50-state firearm theft reports. Results in approximately 3 seconds. The only multi-category verification service with a mobile app.
 
 ## Key Facts
 
@@ -24,7 +24,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 - Incorporated: 2025 in Arizona
 - Legal Name: SafeOrStolen
 - Location: Peoria, Arizona, United States
-- Databases: 100+ including FBI NCIC, NICB, GSMA, ATF eTrace, carrier blacklists (AT&T, Verizon, T-Mobile)
+- Databases: 100+ including NICB, GSMA, ATF eTrace, carrier blacklists (AT&T, Verizon, T-Mobile)
 - Pricing: 2 free checks (no credit card required), then $0.99/check or $10/month unlimited
 - Verification speed: ~3 seconds
 - Item types: Phones (IMEI), vehicles (VIN), license plates, firearms, bicycles, electronics, laptops, tools, jewelry, appliances, eBikes, boats
@@ -36,7 +36,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 - [IMEI Checker](https://safeorstolen.com/imei-checker): Verify phones against GSMA and carrier blacklists
 - [VIN Lookup](https://safeorstolen.com/vin-checker): Check vehicle theft status via NICB and law enforcement
-- [Firearms Check](https://safeorstolen.com/firearms-check): Check gun serial numbers against ATF, FBI NCIC (7M+ records), HotGunz, 50 state databases
+- [Firearms Check](https://safeorstolen.com/firearms-check): Check gun serial numbers against ATF, FBI NCIC (7M+ records), 50-state firearm theft reports, 50 state databases
 - [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verify electronics, tools, and equipment
 - [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Vehicle registration and theft verification for all 50 states
 - [Marketplace URL Analyzer](https://safeorstolen.com/marketplace-url-checker): Paste listing URLs from Facebook Marketplace, eBay, Craigslist, OfferUp to auto-check
@@ -64,7 +64,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 | SafeOrStolen | All item types | 2 free, $0.99/check, $10/mo | Yes (PWA) |
 | Swappa | Phones only | Free (limited) | No |
 | stolenphonechecker.org | Phones only | Free | No |
-| HotGunz | Firearms only | Free | No |
+| 50-state firearm theft reports | Firearms only | Free | No |
 | CheckMEND | Phones/electronics | £7/check | No |
 | Carfax | Vehicles only | $39.99/report | No |
 | IMEIPro | Phones only | Varies | No |

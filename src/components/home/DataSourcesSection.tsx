@@ -5,7 +5,7 @@ const dataSources = [
   {
     icon: Shield,
     title: 'Law Enforcement',
-    description: 'FBI NCIC, all 50 state police databases, Interpol stolen property records',
+    description: 'FBI NCIC, all stolen property reports from all 50 states, Interpol stolen property records',
     color: 'text-blue-500',
     link: '/data-sources#law-enforcement',
     stat: '50 states',
@@ -45,7 +45,7 @@ const dataSources = [
   {
     icon: Lock,
     title: 'Industry Registries',
-    description: 'BikeIndex, HotGunz, GIA Diamond Registry, NMVTIS, marine HIN databases, pawn networks',
+    description: 'BikeIndex, 50-state firearm theft reports, GIA Diamond Registry, NMVTIS, marine HIN databases, pawn networks',
     color: 'text-orange-500',
     link: '/data-sources#industry',
     stat: '100+ sources',

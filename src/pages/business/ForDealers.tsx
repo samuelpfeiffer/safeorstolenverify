@@ -70,7 +70,7 @@ export default function ForDealers() {
         <section className="max-w-4xl mx-auto mb-16 prose prose-lg">
           <h2>Why Dealerships Choose SafeOrStolen</h2>
           <p>Car dealerships face increasing risk from wholesale fraud, title washing, and salvage vehicles being misrepresented as clean. A single problematic vehicle can cost $20,000+ in legal fees, customer refunds, and reputation damage.</p>
-          <p>SafeOrStolen provides instant VIN verification checking 100+ databases including FBI NCIC, all 50 state DMVs, insurance total loss records, and international theft databases. Every check takes 3 seconds and creates a compliance record protecting your dealership.</p>
+          <p>SafeOrStolen provides instant VIN verification checking 100+ databases including all 50 state DMVs, insurance total loss records, and international theft databases. Every check takes 3 seconds and creates a compliance record protecting your dealership.</p>
 
           <h3>What We Verify for Dealers</h3>
           <ul>

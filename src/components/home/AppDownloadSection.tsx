@@ -64,7 +64,7 @@ export const AppDownloadSection = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-2 text-primary-foreground">Firearms Database Access</h3>
- <p className="text-primary-foreground/80">Search stolen gun databases including the HotGunz national stolen-firearms registry right from your phone</p>
+ <p className="text-primary-foreground/80">Search stolen gun databases including stolen firearm reports from all 50 states right from your phone</p>
                   </div>
                 </div>
               </div>

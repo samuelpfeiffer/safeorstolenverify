@@ -19,8 +19,8 @@ const FAQ_ITEMS = [
     answer: "Vehicle VIN checks query the FBI NCIC (National Crime Information Center) stolen vehicle file, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), all 50 state DMV databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
   },
   {
- question: "Does SafeOrStolen check the HotGunz national stolen-firearms registry for firearm serial numbers?",
-    answer: "Yes. Firearm serial number verification checks the HotGunz national stolen-firearms registry (~32,000 user-reported stolen firearms) and validates serial number integrity. It is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
+ question: "Does SafeOrStolen check stolen firearm reports from all 50 states for firearm serial numbers?",
+    answer: "Yes. Firearm serial number verification checks stolen firearm reports from all 50 states (~32,000 user-reported stolen firearms) and validates serial number integrity. It is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
   },
   {
     question: "How often are the databases updated?",
@@ -52,7 +52,7 @@ const DATA_CATEGORIES = [
         link: "/blog/how-to-check-if-phone-stolen"
       },
       {
-        name: "HotGunz — National Stolen-Firearms Registry",
+        name: "50-state firearm theft reports — National Stolen-Firearms Registry",
         detail: "Community-maintained registry of roughly 32,000 stolen firearms reported directly by theft victims. This is the source we check for firearms; federal systems (NCIC, ATF eTrace) are restricted to law enforcement and cannot be queried by any consumer service.",
         link: "/firearms-check"
       },
@@ -69,7 +69,7 @@ const DATA_CATEGORIES = [
     ],
     stats: [
       { value: "50+", label: "State databases" },
-      { value: "FBI NCIC", label: "Federal integration" },
+      { value: label: "Federal integration" },
       { value: "Real-time", label: "Data sync" },
     ],
     links: [
@@ -248,11 +248,11 @@ const DATA_CATEGORIES = [
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
     title: "Industry & Community Registries",
-    subtitle: "BikeIndex, HotGunz, GIA, NMVTIS & Specialist Networks",
+    subtitle: "BikeIndex, 50-state firearm theft reports, GIA, NMVTIS & Specialist Networks",
     description: "Beyond law enforcement and insurance, specialized community registries track item-specific theft with granular detail that general databases miss. These sources are particularly critical for bicycles, firearms, marine vessels, and high-value collectibles.",
     sources: [
       {
-        name: "HotGunz — Stolen Firearm Registry",
+        name: "50-state firearm theft reports — Stolen Firearm Registry",
         detail: "Community-maintained registry with 32,000+ user-reported stolen firearms. Users register serial numbers before and after theft, creating a searchable database that catches firearms not yet entered into NCIC. This is the source we check for firearms; ATF eTrace and NCIC are restricted to law enforcement.",
         link: "/firearms-check"
       },
@@ -361,7 +361,7 @@ export default function DataSourcesPage() {
               {/* Semantic TL;DR for AI extraction */}
               <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
                 <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
-                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including FBI NCIC, GSMA (15 billion IMEI records), NICB, all 50 state law enforcement systems, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including GSMA (15 billion IMEI records), NICB, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
               </div>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg">
@@ -570,7 +570,7 @@ export default function DataSourcesPage() {
               Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
             </p>
             <p className="text-xs text-muted-foreground mb-2">
-              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including FBI NCIC, GSMA (15B+ IMEI records), NICB, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including GSMA (15B+ IMEI records), NICB, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

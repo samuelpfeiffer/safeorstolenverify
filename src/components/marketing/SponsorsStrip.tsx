@@ -56,18 +56,18 @@ export const SponsorsStrip: React.FC = () => {
             <span className="text-sm font-semibold tracking-wide">Recipero</span>
           </a>
 
-          {/* HotGunz */}
+          {/* 50-state firearm theft reports */}
           <a
             href="https://hotgunz.io"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center"
-            aria-label="Visit HotGunz"
-            title="HotGunz"
+            aria-label="Visit 50-state firearm theft reports"
+            title="50-State Firearm Reports"
           >
             <img
               src="/lovable-uploads/03461ed0-873b-46ba-8871-8ed6fd1c51b2.png"
-              alt="HotGunz stolen firearms database logo"
+              alt="nationwide stolen firearm reports logo"
               loading="lazy"
               className="h-8 md:h-10 w-auto"
             />

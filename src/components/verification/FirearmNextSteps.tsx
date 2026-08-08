@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 /**
  * "Complete your check" panel for firearm verification results.
  *
- * SafeOrStolen checks the HotGunz national stolen-firearms registry and analyzes
+ * SafeOrStolen checks stolen firearm reports from all 50 states and analyzes
  * serial number integrity. It does NOT query NCIC, ATF eTrace, or state police
  * systems. This panel tells the buyer, honestly, how to close that gap.
  *
@@ -74,7 +74,7 @@ export const FirearmNextSteps: React.FC<{ className?: string }> = ({ className }
     </ol>
 
     <p className="mt-4 border-t border-border pt-3 text-xs text-muted-foreground leading-relaxed">
-      SafeOrStolen checks the HotGunz national registry and analyzes serial integrity. A clean
+      SafeOrStolen checks nationwide stolen firearm reports and analyzes serial integrity. A clean
       result means no match was found in that registry — it is not a clearance.
     </p>
   </section>
