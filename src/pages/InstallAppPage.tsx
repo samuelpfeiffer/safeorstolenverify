@@ -222,7 +222,7 @@ const InstallAppPage = () => {
               <div className="text-center p-6">
                 <Shield className="h-10 w-10 mx-auto text-primary mb-4" />
                 <h3 className="font-semibold mb-2">100+ Databases</h3>
-                <p className="text-sm text-muted-foreground">FBI, NICB, ATF, and all 50 state databases</p>
+                <p className="text-sm text-muted-foreground">FBI, NICB, and all 50 state databases</p>
               </div>
               <div className="text-center p-6">
                 <Zap className="h-10 w-10 mx-auto text-primary mb-4" />

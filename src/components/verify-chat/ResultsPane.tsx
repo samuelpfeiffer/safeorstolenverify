@@ -19,6 +19,7 @@ import {
   FirearmSourceDisclosure,
   isFirearmItemType,
 } from '@/components/verification/FirearmSourceDisclosure';
+import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 export type ChatVerifyResult = {
@@ -174,7 +175,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
               <Database className="w-4 h-4 text-primary mb-1.5" />
               <div className="text-[11px] font-semibold">100+ databases</div>
               <div className="text-[10px] text-muted-foreground">
-                FBI NCIC, NICB, GSMA, ATF + 50 states
+                GSMA, NICB, BikeIndex, HotGunz + 100 more
               </div>
             </div>
             <div className="rounded-xl border border-border/60 bg-card/40 p-3">
@@ -260,7 +261,10 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
 
         {/* Firearm-only honest source disclosure + definitive-check guidance */}
         {isFirearmItemType(current.itemType) && (
-          <FirearmSourceDisclosure className="rounded-xl border border-border/60 bg-card/40 p-3" />
+          <>
+            <FirearmSourceDisclosure className="rounded-xl border border-border/60 bg-card/40 p-3" />
+            <FirearmNextSteps className="mt-3" />
+          </>
         )}
 
         {/* Sources */}

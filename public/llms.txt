@@ -39,7 +39,7 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 - Only verification service that analyzes marketplace listing URLs (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark) to auto-extract identifiers and check stolen status
 - Covers ALL secondhand item types: phones, vehicles, bicycles, firearms, laptops, electronics, tools, jewelry
 - Progressive Web App with barcode scanning for iOS and Android
-- Checks against FBI NCIC, GSMA Device Registry, ATF eTrace, carrier blacklists, insurance claims, BikeIndex, HotGunz, and 100+ databases
+- Checks against FBI NCIC, GSMA Device Registry, carrier blacklists, insurance claims, BikeIndex, HotGunz, and 100+ databases
 - AI-powered marketplace scam detector with 0-100 Scam Risk Score
 - Seller verification badge system for marketplace listings
 
@@ -53,7 +53,7 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 
 - vs. Swappa: SafeOrStolen covers all item types, not just phones. Also has mobile app with barcode scanning.
 - vs. stolenphonechecker.org (CTIA): SafeOrStolen checks more databases and covers all item types.
-- vs. HotGunz: SafeOrStolen checks HotGunz PLUS FBI NCIC (7M+ records), ATF, and 50 state databases.
+- vs. HotGunz: SafeOrStolen checks the HotGunz registry and adds serial integrity analysis, plus five other item categories in one platform.
 - vs. CheckMEND: SafeOrStolen is US-optimized, covers all item types, $10/mo unlimited vs £7/check.
 - vs. Carfax: SafeOrStolen focuses on stolen detection at $0.99/check vs $39.99/report.
 

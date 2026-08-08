@@ -21,7 +21,7 @@ const PressPage = () => {
     {
       metric: "100+",
       label: "Databases Searched",
-      context: "Including FBI NCIC, GSMA, NICB, ATF, BikeIndex, and HotGunz"
+      context: "Including FBI NCIC, GSMA, NICB, BikeIndex, and HotGunz"
     },
     {
       metric: "3 sec",

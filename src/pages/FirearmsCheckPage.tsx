@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
 
 const FirearmsCheckPage = () => {
   return (
@@ -133,12 +134,6 @@ const FirearmsCheckPage = () => {
                 badge: 'Disclosure',
                 badgeColor: 'bg-muted text-muted-foreground',
               },
-              {
-                db: 'Insurance Theft Reports',
-                desc: "Insurance company theft claim data provides an additional signal for firearms reported stolen through homeowner or renter's insurance but not necessarily through law enforcement.",
-                badge: 'Commercial',
-                badgeColor: 'bg-accent/20 text-accent-foreground',
-              },
             ].map((item) => (
               <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
                 <div className="flex items-start gap-3 mb-2">
@@ -159,7 +154,10 @@ const FirearmsCheckPage = () => {
               constitute a government clearance or guarantee the firearm has never been stolen.
             </p>
           </div>
+          <FirearmNextSteps className="mt-6" />
         </section>
+
+
 
         {/* Section 3 */}
         <section className="mb-12">

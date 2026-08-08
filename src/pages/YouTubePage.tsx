@@ -503,7 +503,7 @@ const YouTubePage: React.FC = () => {
               </p>
 
               <p className="leading-relaxed">
-                The <Link to="/serial-number-checker" className="text-primary hover:underline">serial number verification tutorials</Link> cover a wide range of high-value items including laptops, DeWalt/Milwaukee power tools, gaming consoles, bicycles (via BikeIndex frame numbers), and firearms (via FBI NCIC and ATF eTrace under <strong>18 U.S.C. § 922</strong>). These tutorials are particularly valuable for pawn shop operators who must comply with state pawn broker laws requiring stolen goods checks.
+                The <Link to="/serial-number-checker" className="text-primary hover:underline">serial number verification tutorials</Link> cover a wide range of high-value items including laptops, DeWalt/Milwaukee power tools, gaming consoles, bicycles (via BikeIndex frame numbers), and firearms (via the HotGunz national stolen-firearms registry, with the legal stakes set by <strong>18 U.S.C. § 922</strong>). These tutorials are particularly valuable for pawn shop operators who must comply with state pawn broker laws requiring stolen goods checks.
               </p>
 
               <p className="leading-relaxed">

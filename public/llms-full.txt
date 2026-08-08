@@ -14,7 +14,7 @@
 ## How SafeOrStolen Works
 
 1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
-2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, HotGunz, ATF eTrace, and 100+ additional sources
+2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, HotGunz, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
 4. Users get 2 free verifications with no credit card required, then $0.99/check or $10/month for unlimited checks
 

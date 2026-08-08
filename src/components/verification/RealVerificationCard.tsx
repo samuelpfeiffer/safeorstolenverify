@@ -20,6 +20,7 @@ import { CertifiedSafeBadge } from './CertifiedSafeBadge';
 import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 import { ShareAfterVerification } from '@/components/growth';
 import { FirearmSourceDisclosure, isFirearmItemType } from './FirearmSourceDisclosure';
+import { FirearmNextSteps } from './FirearmNextSteps';
 
 interface RealVerificationCardProps {
   verificationResult?: VerificationResult;
@@ -197,7 +198,10 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
           )}
 
           {isFirearmItemType(verificationResult.item_type) && (
-            <FirearmSourceDisclosure className="border-t pt-4" />
+            <>
+              <FirearmSourceDisclosure className="border-t pt-4" />
+              <FirearmNextSteps className="mt-4" />
+            </>
           )}
 
           <div className="border-t pt-4 flex items-center justify-between">

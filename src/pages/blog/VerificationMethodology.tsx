@@ -180,7 +180,7 @@ export default function VerificationMethodology() {
                       <h3 className="text-2xl font-bold mb-3">6. Specialized Item Registries</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>Bike Index:</strong> 1.2M registered bicycles and theft reports</li>
-                        <li><strong>ATF eTrace:</strong> Firearm theft and trafficking database</li>
+                        <li><strong>HotGunz:</strong> National stolen-firearms registry of victim-reported guns</li>
                         <li><strong>Art Loss Register:</strong> Stolen fine art and collectibles (500K items)</li>
                         <li><strong>Stolen Camera Database:</strong> Serial numbers for cameras and lenses</li>
                       </ul>

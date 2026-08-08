@@ -42,7 +42,7 @@ const STEPS = [
   },
   {
     name: 'Database scan',
-    text: 'SafeOrStolen queries 100+ law enforcement, insurance, carrier, and manufacturer databases simultaneously in real-time — including FBI NCIC, GSMA, NICB, ATF, and all 50 state police databases.',
+    text: 'SafeOrStolen queries 100+ law enforcement, insurance, carrier, and manufacturer databases simultaneously in real-time — including FBI NCIC, GSMA, NICB, HotGunz, and all 50 state police databases.',
     link: '/data-sources',
     linkText: 'See all 100+ sources'
   },
