@@ -74,9 +74,6 @@ export const ReferralProgram = () => {
       case 'facebook':
         url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent(message)}`;
         break;
-      case 'linkedin':
-        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(referralUrl)}`;
-        break;
     }
 
     if (url) {
@@ -190,17 +187,6 @@ export const ReferralProgram = () => {
                 />
               </div>
 
-              <div className="flex gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => shareOnSocial('linkedin')}
-                  className="gap-2 border-border text-foreground hover:bg-muted"
-                >
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </Button>
-              </div>
 
               <div className="p-4 bg-muted rounded-lg">
                 <h4 className="text-foreground font-medium mb-2">How it works:</h4>

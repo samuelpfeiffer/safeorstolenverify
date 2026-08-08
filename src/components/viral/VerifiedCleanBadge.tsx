@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { 
   Share2, Facebook, Twitter, Copy, Check, Shield, 
-  Download, MessageCircle, Mail, Code, Linkedin
+  Download, MessageCircle, Mail, Code
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -56,7 +56,6 @@ export const VerifiedCleanBadge = ({
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`,
       twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`,
       whatsapp: `https://wa.me/?text=${encodeURIComponent(shareText)}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
       email: `mailto:?subject=Verified Clean Item&body=${encodeURIComponent(shareText)}`
     };
     
@@ -107,16 +106,7 @@ export const VerifiedCleanBadge = ({
             
             {/* Quick Share Buttons */}
             <div className="flex flex-wrap justify-center gap-2">
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="gap-2 text-xs"
-                onClick={() => handleShare('linkedin')}
-              >
-                <Linkedin className="h-3 w-3" />
-                LinkedIn
-              </Button>
+
 
               <Button 
                 variant="ghost" 
