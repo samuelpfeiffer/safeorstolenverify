@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 import Stripe from "https://esm.sh/stripe@16.0.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
+import { toCanonicalItemType } from '../_shared/itemType.ts';
 
 // BULLETPROOF: Always use production URLs
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
@@ -105,7 +106,9 @@ serve(async (req) => {
 
     // Parse request
     const body = await req.json();
-    const { priceId, serialNumber, itemType, isSubscription, planName } = body;
+    const { priceId, serialNumber, itemType: rawItemType, isSubscription, planName } = body;
+    // Canonicalize item_type before it is stored or sent to Stripe metadata
+    const itemType = toCanonicalItemType(rawItemType);
     
     console.log(`[CREATE-CHECKOUT] Request:`, { priceId, planName, isSubscription });
 
@@ -153,7 +156,7 @@ serve(async (req) => {
         .insert({
           user_id: user.id,
           serial_number: serialNumber.trim(),
-          item_type: itemType || 'unknown',
+          item_type: itemType,
         })
         .select()
         .single();
@@ -180,7 +183,7 @@ serve(async (req) => {
       line_items: [{ price: resolvedPriceId, quantity: 1 }],
       metadata: {
         user_id: user.id,
-        item_type: itemType || 'unknown',
+        item_type: itemType,
         serial_number: serialNumber || '',
         verification_id: verificationId || '',
         plan_name: planName || 'Unlimited Plan',
