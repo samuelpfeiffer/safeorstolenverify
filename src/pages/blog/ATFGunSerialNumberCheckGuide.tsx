@@ -164,7 +164,7 @@ const ATFGunSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I check a gun serial number with the ATF directly?</summary>
-                <p className="text-muted-foreground mt-2">No. ATF eTrace is only available to law enforcement. SafeOrStolen queries ATF trace data alongside FBI NCIC and 50 state databases, giving consumers access to information that would otherwise require a police request.</p>
+                <p className="text-muted-foreground mt-2">No. ATF eTrace is only available to law enforcement, and SafeOrStolen cannot query it either. We check the HotGunz national stolen-firearms registry and analyze serial integrity. For a definitive check, ask local police to run the serial through NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What is ATF eTrace?</summary>
