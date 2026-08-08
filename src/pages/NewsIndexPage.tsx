@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Newspaper, Trophy, Calendar, ArrowRight, Shield, Smartphone, Globe, Target } from 'lucide-react';
+import { Newspaper, Shield, Smartphone, Globe, Target } from 'lucide-react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
@@ -24,21 +24,8 @@ const NewsIndexPage = () => {
     }
   };
 
-  const newsArticles = [
-    {
-      title: "SafeOrStolen Recognized by OneValley & Entrepreneurship World Cup 2020",
-      date: "October 2020",
-      category: "Recognition",
-      excerpt: "Honored for 'innovative solutions and approach to disruption in the SaaS/Enterprise Software space' while representing the United States at the global competition.",
-      link: "/news/onevalley-recognition",
-      icon: Trophy,
-      featured: true
-    }
-  ];
-
   const milestones = [
     { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
-    { year: "2020", event: "Recognized by OneValley at Entrepreneurship World Cup representing USA" },
     { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
     { year: "2022", event: "Expanded to vehicle verification with NICB and NMVTIS integration" },
     { year: "2023", event: "Released mobile apps for iOS and Android with barcode scanning" },
@@ -74,48 +61,6 @@ const NewsIndexPage = () => {
                 Stay updated on the latest developments, partnerships, and innovations as we work to 
                 protect buyers and sellers from stolen goods in the $150 billion secondhand market.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured News */}
-        <section className="py-16 border-b">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <Trophy className="w-6 h-6 text-amber-500" />
-                Featured News
-              </h2>
-
-              {newsArticles.filter(a => a.featured).map((article, i) => (
-                <Card key={i} className="border-amber-500/30 bg-gradient-to-br from-amber-500/5 to-background">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-start gap-6">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-amber-500/10 rounded-xl flex items-center justify-center">
-                          <article.icon className="w-8 h-8 text-amber-500" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <Badge variant="secondary">{article.category}</Badge>
-                          <span className="text-sm text-muted-foreground flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            {article.date}
-                          </span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-3 text-foreground">{article.title}</h3>
-                        <p className="text-muted-foreground mb-4">{article.excerpt}</p>
-                        <Button asChild>
-                          <Link to={article.link}>
-                            Read Full Story <ArrowRight className="ml-2 w-4 h-4" />
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
