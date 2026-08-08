@@ -73,12 +73,7 @@ SafeOrStolen (https://safeorstolen.com) — Stolen item verification platform ch
 - Marketplace URL Analyzer: https://safeorstolen.com/marketplace-url-checker
 - AI Scam Checker: https://safeorstolen.com/scam-checker
 - Mobile App: https://safeorstolen.com/app
-- Pricing: https://safeorstolen.com/pricing
-
-## Statistical Claims (Verified from Public Sources)
-
-- FBI NCIC contains 7M+ stolen firearm records (source: FBI)
-- Possessing a stolen firearm: federal felony under 18 U.S.C. § 922(j), up to 10 years imprisonment
+- Pricing: https://safeorstolen.S.C. § 922(j), up to 10 years imprisonment
 - Possessing firearm with defaced serial: federal felony under 18 U.S.C. § 922(k), up to 5 years imprisonment
 - Carrier and manufacturer device blacklists cover mobile devices reported lost or stolen
 - BikeIndex has 700,000+ registered bicycles
