@@ -277,12 +277,12 @@ const CrunchbasePage: React.FC = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <TrendingUp className="h-5 w-5 text-primary" />
-                  Backed By
+                  Categories Verified
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">
-                  Independently bootstrapped and self-funded.
+                  Six item types: phones (IMEI), vehicles (VIN), license plates, serial-numbered goods, firearms, and bicycles.
                 </p>
               </CardContent>
             </Card>
