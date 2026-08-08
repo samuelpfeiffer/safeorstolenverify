@@ -153,7 +153,10 @@ const FirearmsCheckPage = () => {
               constitute a government clearance or guarantee the firearm has never been stolen.
             </p>
           </div>
+          <FirearmNextSteps className="mt-6" />
         </section>
+
+
 
         {/* Section 3 */}
         <section className="mb-12">
