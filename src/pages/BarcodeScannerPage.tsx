@@ -114,7 +114,7 @@ const BarcodeScannerPage = () => {
             <h2>What Barcodes Can You Scan?</h2>
             <p>Our scanner reads IMEI barcodes on phone boxes, VIN barcodes on vehicle door jambs, serial number barcodes on electronics, QR codes on warranty cards, and standard UPC/EAN retail barcodes. Supports 1D and 2D barcode formats including Code 128, Code 39, Data Matrix, and QR codes.</p>
             <h2>How It Works</h2>
-            <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including FBI NCIC, GSMA, NICB, ATF, and all 50 state law enforcement databases. Results in 3 seconds.</p>
+            <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including FBI NCIC, GSMA, NICB, HotGunz, and all 50 state law enforcement databases. Results in 3 seconds.</p>
             <h2>Perfect for In-Person Shopping</h2>
             <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
           </article>
@@ -195,7 +195,7 @@ const BarcodeScannerPage = () => {
                   },
                   {
                     title: "🔫 Firearm Barcodes",
-                    desc: "On packaging, warranty cards, QR codes. Checks ATF, FBI NCIC (7M+ records), HotGunz.",
+                    desc: "On packaging, warranty cards, QR codes. Checks the HotGunz national stolen-firearms registry and serial integrity.",
                     link: "/gun-serial-number-lookup"
                   },
                   {

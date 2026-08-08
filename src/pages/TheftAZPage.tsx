@@ -63,7 +63,7 @@ const TheftAZPage = () => {
           },
           {
             question: "Does TheftAZ work for checking stolen guns in Arizona?",
-            answer: "Yes, TheftAZ contains firearm theft records from Arizona law enforcement. For firearms, we recommend checking both TheftAZ (via SafeOrStolen) and running a separate ATF/NCIC check. Our firearms check searches multiple databases including Arizona records."
+            answer: "Yes, TheftAZ contains firearm theft records from Arizona law enforcement. Our firearms check queries the HotGunz national stolen-firearms registry and analyzes serial integrity — it does not query ATF or NCIC, which are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC."
           }
         ]
       }}

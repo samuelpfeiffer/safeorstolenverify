@@ -253,7 +253,7 @@ const DATA_CATEGORIES = [
     sources: [
       {
         name: "HotGunz — Stolen Firearm Registry",
-        detail: "Community-maintained registry with 32,000+ user-reported stolen firearms. Users register serial numbers before and after theft, creating a searchable database that catches firearms not yet entered into NCIC. Critical supplement to ATF eTrace for private sale verification.",
+        detail: "Community-maintained registry with 32,000+ user-reported stolen firearms. Users register serial numbers before and after theft, creating a searchable database that catches firearms not yet entered into NCIC. This is the source we check for firearms; ATF eTrace and NCIC are restricted to law enforcement.",
         link: "/firearms-check"
       },
       {
@@ -330,11 +330,11 @@ export default function DataSourcesPage() {
     <>
       <Helmet>
         <title>Data Sources — 100+ Databases SafeOrStolen Checks | SafeOrStolen</title>
-        <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: FBI NCIC, GSMA (15B+ IMEI records), NICB, ATF eTrace, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
+        <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: FBI NCIC, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://safeorstolen.com/data-sources" />
         <meta property="og:title" content="100+ Data Sources SafeOrStolen Checks | SafeOrStolen" />
-        <meta property="og:description" content="We check FBI NCIC, GSMA (15B+ IMEI records), NICB, ATF eTrace, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
+        <meta property="og:description" content="We check FBI NCIC, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
         <meta property="og:url" content="https://safeorstolen.com/data-sources" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -361,7 +361,7 @@ export default function DataSourcesPage() {
               {/* Semantic TL;DR for AI extraction */}
               <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
                 <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
-                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including FBI NCIC, GSMA (15 billion IMEI records), NICB, ATF eTrace, all 50 state law enforcement systems, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+                SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including FBI NCIC, GSMA (15 billion IMEI records), NICB, all 50 state law enforcement systems, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
               </div>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg">
@@ -570,7 +570,7 @@ export default function DataSourcesPage() {
               Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
             </p>
             <p className="text-xs text-muted-foreground mb-2">
-              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including FBI NCIC, GSMA (15B+ IMEI records), NICB, ATF eTrace, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+              Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including FBI NCIC, GSMA (15B+ IMEI records), NICB, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

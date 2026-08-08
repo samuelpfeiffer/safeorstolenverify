@@ -313,7 +313,7 @@ const CrunchbasePage: React.FC = () => {
                 <li><strong>IMEI Verification</strong> — Smartphones via GSMA (15B+ records)</li>
                 <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles via NICB and NMVTIS</li>
                 <li><strong>Serial Number Verification</strong> — Electronics, tools, equipment</li>
-                <li><strong>Firearm Check</strong> — FBI NCIC and ATF eTrace databases</li>
+                <li><strong>Firearm Check</strong> — HotGunz national stolen-firearms registry + serial integrity analysis</li>
                 <li><strong>License Plate Lookup</strong> — All 50 US states</li>
               </ul>
               <p className="mt-4">

@@ -368,7 +368,7 @@ const ComparisonSwappa = () => {
                       <li>✅ FBI NCIC (National Crime Information Center)</li>
                       <li>✅ NICB (National Insurance Crime Bureau)</li>
                       <li>✅ GSMA Global Blacklist (phone carriers)</li>
-                      <li>✅ ATF eTrace (firearms)</li>
+                      <li>✅ HotGunz stolen-firearms registry</li>
                       <li>✅ All 50 state law enforcement databases</li>
                       <li>✅ International stolen vehicle registries</li>
                       <li>✅ BikeIndex stolen bicycle database</li>
@@ -455,7 +455,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="databases">
                     <AccordionTrigger>How many databases does SafeOrStolen check compared to Swappa?</AccordionTrigger>
                     <AccordionContent>
-                      SafeOrStolen checks 100+ databases including FBI NCIC, NICB, GSMA blacklists, ATF eTrace, state law enforcement databases across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
+                      SafeOrStolen checks 100+ databases including FBI NCIC, NICB, GSMA blacklists, HotGunz, state law enforcement databases across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="any-source">
