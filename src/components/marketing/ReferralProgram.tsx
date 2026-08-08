@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Gift, Users, Share2, Trophy, Loader2, Linkedin } from 'lucide-react';
+import { Gift, Users, Share2, Trophy, Loader2 } from 'lucide-react';
 import { CopyButton } from '@/components/common/CopyButton';
 import { useAuth } from '@/lib/auth';
 import { supabase } from '@/integrations/supabase/client';
