@@ -64,7 +64,7 @@ export default function ForBusinesses() {
       'Embeddable verification widget',
       'REST API for POS integration',
       'Unlimited IMEI, VIN, serial number checks',
-      '100+ database sources including NICB, GSMA, 50-state firearm theft reports',
+      '100+ database sources including NICB, GSMA, 50-State Firearm Reports',
       'All 50 US state coverage',
       'Compliance reporting and audit logs',
       '3-second verification results',

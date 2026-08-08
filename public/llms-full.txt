@@ -14,7 +14,7 @@
 ## How SafeOrStolen Works
 
 1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
-2. SafeOrStolen queries multiple databases simultaneously: GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, 50-state firearm theft reports, and 100+ additional sources
+2. SafeOrStolen queries multiple databases simultaneously: GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, 50-State Firearm Reports, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
 4. Users get 2 free verifications with no credit card required, then $0.99/check or $10/month for unlimited checks
 
@@ -77,8 +77,8 @@ Swappa only checks phones. SafeOrStolen checks phones, vehicles, firearms, bicyc
 ### vs. CTIA Stolen Phone Checker (stolenphonechecker.org)
 CTIA only checks carrier blacklists for phones. SafeOrStolen also checks law enforcement databases, insurance claims, and supports all item types beyond phones.
 
-### vs. 50-state firearm theft reports (the national stolen firearm registry)
-50-state firearm theft reports is a community-reported database of 32,000+ stolen firearms. SafeOrStolen checks the 50-state firearm theft reports registry and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.
+### vs. single-registry firearm lookups
+SafeOrStolen searches stolen firearm reports from all 50 states and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.
 
 ### vs. CheckMEND
 CheckMEND is UK-focused and charges per check. SafeOrStolen is US-optimized, supports all item types, and offers $10/month unlimited plans.

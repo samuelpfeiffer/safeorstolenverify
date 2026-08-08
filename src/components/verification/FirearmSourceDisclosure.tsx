@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 export const FirearmSourceDisclosure: React.FC<{ className?: string }> = ({ className }) => (
   <div className={cn('space-y-2 text-[11px] leading-relaxed text-muted-foreground', className)}>
     <p>
-      Source: stolen firearm reports from all 50 states (~32,000 records). This is not a federal
+      Source: stolen firearm reports from all 50 states. This is not a federal
       database check.
     </p>
     <p>

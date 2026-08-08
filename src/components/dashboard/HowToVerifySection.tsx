@@ -42,7 +42,7 @@ const STEPS = [
   },
   {
     name: 'Database scan',
-    text: 'SafeOrStolen queries 100+ law enforcement, insurance, carrier, and manufacturer databases simultaneously in real-time — including GSMA, NICB, 50-state firearm theft reports, and stolen property reports from all 50 states.',
+    text: 'SafeOrStolen queries 100+ law enforcement, insurance, carrier, and manufacturer databases simultaneously in real-time — including GSMA, NICB, 50-State Firearm Reports, and stolen property reports from all 50 states.',
     link: '/data-sources',
     linkText: 'See all 100+ sources'
   },

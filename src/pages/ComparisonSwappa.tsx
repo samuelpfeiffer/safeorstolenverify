@@ -455,7 +455,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="databases">
                     <AccordionTrigger>How many databases does SafeOrStolen check compared to Swappa?</AccordionTrigger>
                     <AccordionContent>
-                      SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, 50-state firearm theft reports, state law enforcement databases across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
+                      SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, 50-State Firearm Reports, state law enforcement databases across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="any-source">

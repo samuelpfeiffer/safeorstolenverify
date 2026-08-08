@@ -52,7 +52,7 @@ const DATA_CATEGORIES = [
         link: "/blog/how-to-check-if-phone-stolen"
       },
       {
-        name: "50-state firearm theft reports — National Stolen-Firearms Registry",
+        name: "Nationwide Stolen Firearms Database",
         detail: "Community-maintained registry of roughly 32,000 stolen firearms reported directly by theft victims. This is the source we check for firearms; federal systems (NCIC, ATF eTrace) are restricted to law enforcement and cannot be queried by any consumer service.",
         link: "/firearms-check"
       },
@@ -248,11 +248,11 @@ const DATA_CATEGORIES = [
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
     title: "Industry & Community Registries",
-    subtitle: "BikeIndex, 50-state firearm theft reports, GIA, NMVTIS & Specialist Networks",
+    subtitle: "BikeIndex, 50-State Firearm Reports, GIA, NMVTIS & Specialist Networks",
     description: "Beyond law enforcement and insurance, specialized community registries track item-specific theft with granular detail that general databases miss. These sources are particularly critical for bicycles, firearms, marine vessels, and high-value collectibles.",
     sources: [
       {
-        name: "50-state firearm theft reports — Stolen Firearm Registry",
+        name: "Nationwide Stolen Firearms Database",
         detail: "Community-maintained registry with 32,000+ user-reported stolen firearms. Users register serial numbers before and after theft, creating a searchable database that catches firearms not yet entered into NCIC. This is the source we check for firearms; ATF eTrace and NCIC are restricted to law enforcement.",
         link: "/firearms-check"
       },

@@ -87,7 +87,7 @@ const SELLER_BENEFITS = [
 
 const HOW_IT_WORKS = [
   { step: '1', title: 'Verify Your Item', description: 'Enter the IMEI, VIN, or serial number of the item you\'re selling. Our AI auto-detects the identifier type.' },
-  { step: '2', title: 'Get Your Certificate', description: 'We check 100+ databases in 3 seconds: GSMA, NICB, 50-state firearm theft reports, carrier blacklists, and stolen property reports from all 50 states.' },
+  { step: '2', title: 'Get Your Certificate', description: 'We check 100+ databases in 3 seconds: GSMA, NICB, 50-State Firearm Reports, carrier blacklists, and stolen property reports from all 50 states.' },
   { step: '3', title: 'Share With Buyers', description: 'Download a PDF certificate or share a unique verification link. The last 4 digits of identifiers are shown for privacy.' },
   { step: '4', title: 'Close the Deal Faster', description: 'Buyers see verified proof, skip the interrogation, and pay full price. You sell faster with zero friction.' },
 ];

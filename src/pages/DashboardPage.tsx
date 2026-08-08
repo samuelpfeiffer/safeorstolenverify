@@ -608,7 +608,7 @@ const DashboardPage = () => {
               onClick={() => navigate('/firearms-check')}
               className="bg-red-500/10 border-red-500/20 text-red-600 hover:bg-red-500/20"
             >
-              🔫 50-state firearm theft reports Firearms Check
+              🔫 Firearms Check
             </Button>
             <Button 
               variant="outline" 

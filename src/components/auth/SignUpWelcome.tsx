@@ -115,7 +115,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Firearms database search (50-state firearm theft reports)
+                  Firearms database search (all 50 states)
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />

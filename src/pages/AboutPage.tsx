@@ -24,7 +24,7 @@ const AboutPage = () => {
       description: "VINCheck and theft records - we aggregate insurance crime data for vehicle verification"
     },
     {
-      name: "the national stolen firearm registry",
+      name: "Nationwide Stolen Firearms Database",
       type: "Firearms Database Partner",
       description: "Stolen firearms registry - we aggregate their database for firearms verification"
     },

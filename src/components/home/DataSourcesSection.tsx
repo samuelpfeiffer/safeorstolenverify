@@ -45,7 +45,7 @@ const dataSources = [
   {
     icon: Lock,
     title: 'Industry Registries',
-    description: 'BikeIndex, 50-state firearm theft reports, GIA Diamond Registry, NMVTIS, marine HIN databases, pawn networks',
+    description: 'BikeIndex, 50-State Firearm Reports, GIA Diamond Registry, NMVTIS, marine HIN databases, pawn networks',
     color: 'text-orange-500',
     link: '/data-sources#industry',
     stat: '100+ sources',

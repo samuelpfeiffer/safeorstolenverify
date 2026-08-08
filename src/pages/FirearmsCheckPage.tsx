@@ -26,7 +26,7 @@ const FirearmsCheckPage = () => {
             <span className="text-primary">Is This Firearm Stolen?</span>
           </h1>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Instantly check any firearm serial number against the 50-state firearm theft reports national
+            Instantly check any firearm serial number against the nationwide
             stolen-firearms registry and validate serial number integrity.
             Results in 3 seconds.
           </p>
@@ -333,7 +333,7 @@ const FirearmsCheckPage = () => {
  { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not law enforcement and do not have direct stolen firearm reports from all 50 states access — our results come from authorized data partners and community databases.' },
               { q: "What if the serial number comes back clean — does that guarantee it's not stolen?", a: 'No. A clean result means no records were found in our aggregated database at the time of the check. Not all stolen firearms are reported to all databases. A clean result significantly reduces your risk but does not constitute a guarantee. We strongly recommend also requesting the original purchase receipt from the seller.' },
               { q: 'Can a gun show vendor refuse to let me check the serial number?', a: 'Yes, a private seller can refuse. If they do, that is itself a significant red flag. Legitimate sellers with nothing to hide generally welcome verification.' },
- { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can submit the stolen firearm to 50-state firearm theft reports directly at the national stolen firearm registry. Our system queries 50-state firearm theft reports, so reports submitted there will be included in future SafeOrStolen checks.' },
+ { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can report the stolen firearm to your local police and to a public stolen-firearm registry. Reports that reach the nationwide stolen firearm feeds will be included in future SafeOrStolen checks.' },
               { q: 'Does the search notify the seller that I checked their firearm?', a: 'No. Your search is completely private. The seller has no way of knowing you ran a verification.' },
             ].map((item) => (
               <details key={item.q} className="bg-card border border-border rounded-xl group">

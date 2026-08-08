@@ -96,7 +96,7 @@ const TheftAZAlternativePage = () => {
                     ['All 50 state databases', false, true],
                     ['Carrier blacklists (AT&T, Verizon, T-Mobile)', false, true],
                     ['Insurance theft claims', false, true],
-                    ['50-state firearm theft reports (32K+ firearms)', false, true],
+                    ['Nationwide firearm theft reports', false, true],
                     ['BikeIndex (700K+ bikes)', false, true],
                     ['Mobile app', false, true],
                     ['Phones (IMEI check)', false, true],

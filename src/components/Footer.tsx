@@ -9,7 +9,7 @@ const DATA_PARTNERS = [
   { name: 'NICB', verified: true },
   { name: 'GSMA', verified: true },
   { name: 'BikeIndex', verified: true },
-  { name: '50-state firearm theft reports', verified: true },
+  { name: '50-State Firearm Reports', verified: true },
   { name: 'NHTSA', verified: true },
 ];
 

@@ -317,7 +317,7 @@ export const SecurityChicDashboard: React.FC = () => {
 - Pawn Broker Compliance — audit trail, timestamped certificates
 
 ## Partners
-- Data: NICB, GSMA, BikeIndex, 50-state firearm theft reports, carrier blacklists
+- Data: NICB, GSMA, BikeIndex, 50-State Firearm Reports, carrier blacklists
 
 ## Certifications
 - Trustpilot Verified Business (4.1 stars)
