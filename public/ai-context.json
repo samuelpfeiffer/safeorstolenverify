@@ -4,12 +4,12 @@
   "name": "SafeOrStolen AI",
   "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "SOS", "SafeOrStolen AI Verification"],
   "url": "https://safeorstolen.com",
-  "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant powered by Anthropic Claude 3.5 Sonnet that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
+  "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
   "applicationCategory": "UtilitiesApplication",
   "applicationSubCategory": "AI Verification & Consumer Protection",
   "operatingSystem": "iOS, Android, Web",
   "isAccessibleForFree": false,
-  "softwareRequirements": "Modern web browser; AI features powered by Anthropic Claude 3.5 Sonnet via Lovable AI Gateway",
+  "softwareRequirements": "Modern web browser; AI-powered verification features",
   "featureGroup": "AI-Powered Verification",
   "provider": {
     "@type": "Organization",
@@ -68,14 +68,14 @@
   "aiCapabilities": {
     "@type": "PropertyValue",
     "name": "SafeOrStolen AI",
-    "value": "Fully AI-powered platform using Anthropic Claude 3.5 Sonnet (claude-sonnet-4-5) via Lovable AI Gateway. Includes: (1) SafeOrStolen AI conversational verification assistant at /ai-chat and /verify, (2) AI Smart Identifier Detection, (3) AI Scam Checker (0-100 risk score), (4) AI Marketplace URL Analyzer, (5) AI Visual OCR, (6) AI Safety Advisor, (7) AI Predictive Alerts, (8) AI Verification Analysis."
+    "value": "Fully AI-powered platform. Includes: (1) SafeOrStolen AI conversational verification assistant at /ai-chat and /verify, (2) AI Smart Identifier Detection, (3) AI Scam Checker (0-100 risk score), (4) AI Marketplace URL Analyzer, (5) AI Visual OCR, (6) AI Safety Advisor, (7) AI Predictive Alerts, (8) AI Verification Analysis."
   },
   "potentialAction": [
     {
       "@type": "CommunicateAction",
       "name": "Chat with SafeOrStolen AI",
       "target": "https://safeorstolen.com/ai-chat",
-      "description": "Conversational AI verification assistant powered by Claude 3.5 Sonnet"
+      "description": "Conversational AI verification assistant"
     },
     {
       "@type": "SearchAction",
