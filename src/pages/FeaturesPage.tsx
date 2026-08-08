@@ -73,7 +73,7 @@ export default function FeaturesPage() {
                   <Database className="h-12 w-12 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-3">100+ Databases</h3>
                   <p className="text-muted-foreground mb-4">
-                    Check against NCIC, GSMA, carrier blacklists, insurance claims, and international records simultaneously.
+                    Check against stolen property reports from all 50 states, GSMA, carrier blacklists, insurance claims, and international records simultaneously.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">

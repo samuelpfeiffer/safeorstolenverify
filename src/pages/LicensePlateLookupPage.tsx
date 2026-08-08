@@ -99,7 +99,7 @@ const LicensePlateLookupPage = () => {
     <>
       <PageSEO
         title="Free License Plate Lookup — Check Any Vehicle by Plate Number | SafeOrStolen"
-        description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using state DMV, NICB, NCIC, and insurance databases. Instant results in 3 seconds."
+        description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using state DMV, NICB, stolen property reports from all 50 states, and insurance databases. Instant results in 3 seconds."
         keywords="license plate lookup, plate number search, stolen vehicle check, DMV lookup"
         canonical="/license-plate-lookup"
         structuredData={faqSchema}

@@ -13,7 +13,7 @@ const OrlandoLicensePlateLookupPage = () => {
       {
         "@type": "Question",
         "name": "How do I check if a car is stolen in Orlando?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We search FLHSMV, NICB, FBI NCIC, Orange County Sheriff's Office, and Orlando Police Department records simultaneously. Free results in 3 seconds." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We search FLHSMV, NICB, stolen property reports from all 50 states, Orange County Sheriff's Office, and Orlando Police Department records simultaneously. Free results in 3 seconds." }
       },
       {
         "@type": "Question",
@@ -50,7 +50,7 @@ const OrlandoLicensePlateLookupPage = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-black mb-4">Free Orlando License Plate Lookup</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Verify any vehicle in Orlando, Florida against FLHSMV, NICB, FBI NCIC, Orange County Sheriff, Orlando Police, and insurance theft databases. Free instant results in 3 seconds.
+              Verify any vehicle in Orlando, Florida against FLHSMV, NICB, stolen property reports from all 50 states, Orange County Sheriff, Orlando Police, and insurance theft databases. Free instant results in 3 seconds.
             </p>
           </div>
         </header>
@@ -104,7 +104,7 @@ const OrlandoLicensePlateLookupPage = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Orlando?</summary>
-                <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We search FLHSMV, NICB, FBI NCIC, Orange County Sheriff's Office, and Orlando Police Department records simultaneously. Free results in 3 seconds.</p>
+                <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We search FLHSMV, NICB, stolen property reports from all 50 states, Orange County Sheriff's Office, and Orlando Police Department records simultaneously. Free results in 3 seconds.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Why are rental car scams common in Orlando?</summary>

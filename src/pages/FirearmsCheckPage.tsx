@@ -357,7 +357,7 @@ const FirearmsCheckPage = () => {
               { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
               { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
               { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
-              { title: 'Bike Serial Check', href: '/check-bike', desc: 'BikeIndex + 529 Garage + police' },
+              { title: 'Bike Serial Check', href: '/check-bike', desc: 'BikeIndex + police' },
             ].map((link) => (
               <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
                 <div>

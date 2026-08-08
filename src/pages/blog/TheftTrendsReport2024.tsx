@@ -277,7 +277,7 @@ export default function TheftTrendsReport2024() {
               <div className="bg-primary/10 p-6 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-4">Real-Time Theft Database Integration</h3>
                 <p className="mb-4">
-                  SafeOrStolen aggregates data from 50+ sources including FBI's National Crime Information Center (NCIC), insurance claim databases, police reports from major cities, international stolen goods registries, and marketplace fraud reports.
+                  SafeOrStolen aggregates data from 50+ sources including FBI's National Crime Information Center (stolen property reports from all 50 states), insurance claim databases, police reports from major cities, international stolen goods registries, and marketplace fraud reports.
                 </p>
                 <p className="mb-4">
                   Our AI verification system processes millions of data points to provide instant SAFE or STOLEN status for any item you're considering purchasing.

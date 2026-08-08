@@ -164,7 +164,7 @@ const StolenPhoneCheckerApp = () => {
             
             <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
               {[
-                "Stolen phone reports (NCIC, FBI databases)",
+                "Stolen phone reports (stolen property reports from all 50 states, FBI databases)",
                 "Carrier blacklist status (AT&T, Verizon, T-Mobile)",
                 "GSMA Global Stolen Phone Registry",
                 "Insurance claim fraud reports",

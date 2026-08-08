@@ -50,8 +50,7 @@ export const StateVinPageTemplate = ({
 
     // Combine all FAQs for schema
     const allFaqs = [
-      ...faqs,
-      ...(uniqueContent?.uniqueFaqs || [])
+      ...faqs...(uniqueContent?.uniqueFaqs || [])
     ];
   
     const schema = [
@@ -147,7 +146,7 @@ export const StateVinPageTemplate = ({
                 <li>NMVTIS (National Motor Vehicle Title Information System) - title history</li>
                 <li>{state} DMV records - registration and title status</li>
                 <li>{state} law enforcement - active stolen vehicle reports</li>
-                <li>FBI NCIC - federal stolen vehicle database</li>
+                <li>Stolen property reports from all 50 states - federal stolen vehicle database</li>
                 <li>Insurance claims records across all 50 states</li>
               </ul>
               

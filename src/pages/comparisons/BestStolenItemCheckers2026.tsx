@@ -83,7 +83,7 @@ const BestStolenItemCheckers2026 = () => {
     },
     {
       rank: 7,
-      name: 'HotGunz',
+      name: '',
       url: 'https://hotgunz.com',
       rating: 3.9,
       pros: ['Free stolen gun database', '32,000+ listings', '14 years online'],
@@ -321,7 +321,7 @@ const BestStolenItemCheckers2026 = () => {
                   <strong>Winner: SafeOrStolen</strong> — Consumer-friendly firearm check plus all other item types.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Runners-up: HotGunz (firearms only)
+                  Runners-up:  (firearms only)
                 </p>
               </CardContent>
             </Card>

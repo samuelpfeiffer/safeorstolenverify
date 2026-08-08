@@ -4,7 +4,7 @@ const IMEICheckerPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Free IMEI Check — Is This Phone Stolen or Blacklisted? | SafeOrStolen"
-      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks GSMA, AT&T, Verizon, T-Mobile carrier blacklists, and FBI NCIC simultaneously. Results in 3 seconds."
+      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks GSMA, AT&T, Verizon, T-Mobile carrier blacklists, and stolen property reports from all 50 states simultaneously. Results in 3 seconds."
       h1="Free IMEI Check — Stolen & Blacklist Verification"
       itemType="Phone"
       keywords={[

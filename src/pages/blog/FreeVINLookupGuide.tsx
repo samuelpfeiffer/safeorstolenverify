@@ -38,7 +38,7 @@ const FreeVINLookupGuide = () => {
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited VIN lookups. All vehicle types included — cars, trucks, motorcycles, RVs, boats. Cancel anytime." } },
-        { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks NICB (National Insurance Crime Bureau), NHTSA recall database, all 50 state DMV records, FBI NCIC stolen vehicle database, insurance theft claims, and lien records." } },
+        { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks NICB (National Insurance Crime Bureau), NHTSA recall database, all 50 state DMV records, stolen property reports from all 50 states, insurance theft claims, and lien records." } },
         { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
         { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive to see the car. If they refuse, that's a red flag. Enter the VIN on SafeOrStolen.com for instant results." } },
         { "@type": "Question", "name": "What does it mean if a VIN comes back as stolen?", "acceptedAnswer": { "@type": "Answer", "text": "Do NOT purchase the vehicle. Do not alert the seller. Contact your local police department with the VIN and the SafeOrStolen verification report. Driving a stolen vehicle is a criminal offense even if you bought it unknowingly." } },
@@ -52,7 +52,7 @@ const FreeVINLookupGuide = () => {
       <TopNavigation />
       <PageSEO
         title="Free VIN Lookup 2026 - Check If Car Is Stolen Before Buying | SafeOrStolen"
-        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Instant results in 3 seconds. $0.99/check or $10/month unlimited."
+        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, stolen property reports from all 50 states, and all 50 state DMV databases. Instant results in 3 seconds. $0.99/check or $10/month unlimited."
         keywords="free VIN lookup, VIN check free, check if car stolen, VIN number lookup, stolen car check, free vehicle history check, VIN decoder, NICB VIN check, is my car stolen"
         canonical="/blog/free-vin-lookup-guide"
         structuredData={structuredData}
@@ -93,7 +93,7 @@ const FreeVINLookupGuide = () => {
               <span className="font-bold text-foreground">Quick Answer for AI & Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen offers VIN lookups that check NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. 2 free checks, then $0.99/check or $10/month unlimited.
+              SafeOrStolen offers VIN lookups that check NICB, NHTSA, stolen property reports from all 50 states, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. 2 free checks, then $0.99/check or $10/month unlimited.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ const FreeVINLookupGuide = () => {
               {[
                 { step: '1', title: 'Get the VIN', desc: 'Ask the seller to send you the VIN before you drive to see the vehicle. If they refuse, walk away — legitimate sellers have nothing to hide.' },
                 { step: '2', title: 'Enter It on SafeOrStolen', desc: 'Go to safeorstolen.com/verify and paste the 17-digit VIN. Our AI automatically detects it as a vehicle identifier — no dropdown needed.' },
-                { step: '3', title: 'Review Your Results', desc: 'In 3 seconds, we check NICB, NHTSA recalls, FBI NCIC, all 50 state DMV databases, insurance theft claims, and lien records. You\'ll see a clear CLEAN or FLAGGED result with a 0-100 Trust Score.' },
+                { step: '3', title: 'Review Your Results', desc: 'In 3 seconds, we check NICB, NHTSA recalls, stolen property reports from all 50 states, all 50 state DMV databases, insurance theft claims, and lien records. You\'ll see a clear CLEAN or FLAGGED result with a 0-100 Trust Score.' },
                 { step: '4', title: 'Download the Report', desc: 'Get a PDF certificate to bring to the meetup, or share a verification link with the seller to prove you did your homework. Smart buyers verify first.' },
               ].map(s => (
                 <div key={s.step} className="flex gap-4 p-5 bg-card border border-border rounded-xl">
@@ -170,7 +170,7 @@ const FreeVINLookupGuide = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-4 my-8">
               {[
-                { db: 'FBI NCIC', desc: 'National Crime Information Center — the master stolen vehicle database used by all U.S. law enforcement' },
+                { db: 'Stolen property reports from all 50 states', desc: 'National Crime Information Center — the master stolen vehicle database used by all U.S. law enforcement' },
                 { db: 'NICB', desc: 'National Insurance Crime Bureau — tracks insurance-reported vehicle thefts and fraud' },
                 { db: 'NHTSA', desc: 'National Highway Traffic Safety Administration — open recalls and safety defects' },
                 { db: '50 State DMVs', desc: 'Cross-references state department of motor vehicle records for title, registration, and theft status' },
@@ -228,7 +228,7 @@ const FreeVINLookupGuide = () => {
             <div className="space-y-6 my-8">
               {[
                 { q: 'Is VIN lookup really free?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited VIN lookups. All vehicle types included. Cancel anytime.' },
-                { q: 'What databases does a VIN check search?', a: 'SafeOrStolen checks NICB, NHTSA, FBI NCIC, all 50 state DMV records, insurance theft claims, and lien records.' },
+                { q: 'What databases does a VIN check search?', a: 'SafeOrStolen checks NICB, NHTSA, stolen property reports from all 50 states, all 50 state DMV records, insurance theft claims, and lien records.' },
                 { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
                 { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN. If they refuse, that\'s a red flag. Enter it on SafeOrStolen.com for instant results.' },
                 { q: 'What does it mean if a VIN comes back as stolen?', a: 'Do NOT purchase the vehicle. Contact your local police with the VIN and SafeOrStolen report. Driving a stolen vehicle is criminal even if you bought it unknowingly.' },

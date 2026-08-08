@@ -198,7 +198,7 @@ export const generateVerificationPDF = ({ result, identifier, itemType }: PDFRep
   
   const sources = result.checkedSources || 
     result.providers?.map(p => p.provider) || 
-    ['NCIC Database', 'Insurance Records', 'Law Enforcement Networks', 'Community Reports'];
+    ['Stolen property reports from all 50 states Database', 'Insurance Records', 'Law Enforcement Networks', 'Community Reports'];
   
   // Display sources in a grid
   const sourcesPerRow = 2;

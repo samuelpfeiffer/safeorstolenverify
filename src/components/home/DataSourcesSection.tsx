@@ -5,7 +5,7 @@ const dataSources = [
   {
     icon: Shield,
     title: 'Law Enforcement',
-    description: 'FBI NCIC, all stolen property reports from all 50 states, Interpol stolen property records',
+    description: 'Stolen property reports from all 50 states, Interpol stolen property records',
     color: 'text-blue-500',
     link: '/data-sources#law-enforcement',
     stat: '50 states',

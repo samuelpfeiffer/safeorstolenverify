@@ -206,7 +206,7 @@ const VsFastBound = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                    You need NCIC access for business operations
+                    You need stolen property reports from all 50 states for business operations
                   </li>
                 </ul>
               </CardContent>
@@ -254,7 +254,7 @@ const VsFastBound = () => {
                   The NCIC stolen gun database is only accessible to law enforcement and licensed dealers. That means if you're buying a used gun from a private seller, you have no way to verify it's not stolen — unless you use SafeOrStolen.
                 </p>
                 <p className="mb-4">
-                  We aggregate data from user-submitted reports, HotGunz, and other sources to give consumers a way to check firearm serial numbers before making a purchase.
+                  We aggregate data from user-submitted reports, and other sources to give consumers a way to check firearm serial numbers before making a purchase.
                 </p>
                 <p>
                   <strong>Remember:</strong> If you unknowingly buy a stolen firearm, it can be confiscated by police — and you lose your money.
@@ -282,7 +282,7 @@ const VsFastBound = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Does SafeOrStolen access NCIC?</CardTitle>
+                <CardTitle className="text-lg">Does SafeOrStolen access stolen property reports from all 50 states?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -293,11 +293,11 @@ const VsFastBound = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Is HotGunz better than SafeOrStolen?</CardTitle>
+                <CardTitle className="text-lg">Is  better than SafeOrStolen?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
- HotGunz only checks firearms. SafeOrStolen checks firearms AND phones, cars, bikes, laptops, and more. Plus, we have a mobile app for verification at meetups. See our <Link to="/hotgunz-alternative" className="text-primary hover:underline">HotGunz comparison</Link>.
+  only checks firearms. SafeOrStolen checks firearms AND phones, cars, bikes, laptops, and more. Plus, we have a mobile app for verification at meetups. See our <Link to="/hotgunz-alternative" className="text-primary hover:underline"> comparison</Link>.
                 </p>
               </CardContent>
             </Card>

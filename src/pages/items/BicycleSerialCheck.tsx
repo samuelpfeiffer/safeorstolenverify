@@ -30,14 +30,14 @@ const BicycleSerialCheck = () => {
         { value: "$10/mo", label: "Unlimited Checks" }
       ]}
       whatIsTitle="What is Bicycle Serial Number Verification?"
-      whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is logged in databases like Bike Index, 529 Garage, police records, and insurance claims. Our verification service searches these databases to check if a bicycle has been reported stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
+      whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is logged in databases like Bike Index, police records, and insurance claims. Our verification service searches these databases to check if a bicycle has been reported stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
       howItWorksSteps={[
         "Find the serial number: Usually stamped under the bottom bracket (where the pedals connect), on the head tube, or rear dropout",
         "Enter the serial number into our verification tool",
-        "Our system searches Bike Index, 529 Garage, police databases, and insurance records instantly",
+        "Our system searches Bike Index, police databases, and insurance records instantly",
         "Get results in 3 seconds - see if the bicycle is CLEAR or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search multiple bicycle-specific databases including Bike Index (the largest stolen bike registry), 529 Garage, local police department records, insurance claim databases, and manufacturer registries. For e-bikes, we also check motor and battery serial numbers where applicable."
+      howItWorksDescription="We search multiple bicycle-specific databases including Bike Index (the largest stolen bike registry), local police department records, insurance claim databases, and manufacturer registries. For e-bikes, we also check motor and battery serial numbers where applicable."
       whyVerifyTitle="Why Check Before Buying a Used Bike?"
       whyVerifyContent="Bicycle theft is epidemic in America - a bike is stolen every 30 seconds. Only about 5% of stolen bikes are ever recovered, making the used market a prime destination for stolen property. Here's why verification is essential:"
       whyVerifyBenefits={[
@@ -47,7 +47,7 @@ const BicycleSerialCheck = () => {
         "Police regularly check serial numbers and will confiscate stolen bikes",
         "Possession of stolen property is a criminal offense",
         "No warranty or insurance coverage for stolen bicycles",
-        "Bike Index and 529 Garage actively track and recover stolen bikes",
+        "Bike Index and  actively track and recover stolen bikes",
         "You have zero legal recourse if you unknowingly buy stolen property"
       ]}
       useCases={[
@@ -92,7 +92,7 @@ const BicycleSerialCheck = () => {
         },
         {
           question: "What databases does SafeOrStolen check for bikes?",
-          answer: "We search Bike Index (the largest stolen bike database with 500,000+ bikes registered), 529 Garage, local and national police databases, insurance claim records, and manufacturer registries. This comprehensive search gives you the best protection."
+          answer: "We search Bike Index (the largest stolen bike database with 500,000+ bikes registered), local and national police databases, insurance claim records, and manufacturer registries. This comprehensive search gives you the best protection."
         },
         {
           question: "What if the bike is reported stolen?",

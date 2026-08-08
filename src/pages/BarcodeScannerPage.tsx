@@ -205,7 +205,7 @@ const BarcodeScannerPage = () => {
                   },
                   {
                     title: "🚲 Bicycle Barcodes",
-                    desc: "Frame serial barcodes, warranty labels. Checks BikeIndex (700K+), 529 Garage, police databases.",
+                    desc: "Frame serial barcodes, warranty labels. Checks BikeIndex (700K+), police databases.",
                     link: "/check-bike"
                   },
                   {

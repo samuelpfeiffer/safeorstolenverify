@@ -87,7 +87,7 @@ const ComparisonSwappa = () => {
     { feature: 'VIN Check for Vehicles', safeorstolen: true, swappa: false },
     { feature: 'Firearm Serial Number Check', safeorstolen: true, swappa: false },
     { feature: '100+ Database Sources', safeorstolen: true, swappa: false },
-    { feature: 'FBI NCIC Database Access', safeorstolen: true, swappa: false },
+    { feature: 'Stolen property reports from all 50 states Database Access', safeorstolen: true, swappa: false },
     { feature: 'Works on Any Marketplace Item', safeorstolen: true, swappa: false },
     { feature: 'Free Tier Available', safeorstolen: true, swappa: true },
     { feature: 'Buy/Sell Marketplace', safeorstolen: false, swappa: true },
@@ -365,7 +365,7 @@ const ComparisonSwappa = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="text-sm space-y-2">
-                      <li>✅ FBI NCIC (National Crime Information Center)</li>
+                      <li>✅ stolen property reports from all 50 states</li>
                       <li>✅ NICB (National Insurance Crime Bureau)</li>
                       <li>✅ GSMA Global Blacklist (phone carriers)</li>
                       <li>✅ nationwide stolen firearm reports</li>
@@ -390,7 +390,7 @@ const ComparisonSwappa = () => {
                     <ul className="text-sm space-y-2">
                       <li>✅ Basic ESN/IMEI carrier check</li>
                       <li>✅ Activation lock status</li>
-                      <li>❌ No FBI NCIC access</li>
+                      <li>❌ No stolen property reports from all 50 states</li>
                       <li>❌ No NICB access</li>
                       <li>❌ No state law enforcement databases</li>
                       <li>❌ No firearm databases</li>

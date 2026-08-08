@@ -42,8 +42,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
     `${stateData.abbrev.toLowerCase()} license plate search`,
     `${stateData.name.toLowerCase()} stolen vehicle check`,
     `check ${stateData.abbrev.toLowerCase()} license plate stolen`,
-    `free ${stateData.name.toLowerCase()} plate search`,
-    ...(stateData.hasTheftDatabase ? [`${stateData.theftDatabaseName?.toLowerCase()} lookup`] : [])
+    `free ${stateData.name.toLowerCase()} plate search`...(stateData.hasTheftDatabase ? [`${stateData.theftDatabaseName?.toLowerCase()} lookup`] : [])
   ];
 
   const structuredData = [
@@ -128,7 +127,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
               {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
               <li>NICB (National Insurance Crime Bureau)</li>
               <li>{stateData.name} DMV records</li>
-              <li>Police databases and NCIC</li>
+              <li>Police databases and stolen property reports from all 50 states</li>
               <li>Insurance claims records</li>
             </ul>
             
@@ -272,7 +271,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
               </div>
               <div className="flex gap-3 p-4 bg-background rounded-lg">
                 <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <span className="text-base">NCIC stolen vehicle database</span>
+                <span className="text-base">Stolen property reports from all 50 states</span>
               </div>
             </div>
             <DataPartnerBadges variant="compact" />

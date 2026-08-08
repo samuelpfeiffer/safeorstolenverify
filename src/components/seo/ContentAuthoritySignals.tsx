@@ -92,7 +92,7 @@ export const ContentAuthoritySignals: React.FC<ContentAuthoritySignalsProps> = (
     "isBasedOn": [
       {
         "@type": "GovernmentService",
-        "name": "National Crime Information Center (NCIC)"
+        "name": "National Crime Information Center (stolen property reports from all 50 states)"
       },
       {
         "@type": "Dataset",

@@ -23,7 +23,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "What does SafeOrStolen have that Carfax doesn't?",
- "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks phones (IMEI), firearms, electronics, bikes, and all serial-numbered items — Carfax only checks vehicles. SafeOrStolen also has a mobile app, marketplace URL analysis, and searches law enforcement databases (FBI NCIC, state police) that Carfax doesn't access for stolen vehicle detection." }
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks phones (IMEI), firearms, electronics, bikes, and all serial-numbered items — Carfax only checks vehicles. SafeOrStolen also has a mobile app, marketplace URL analysis, and searches law enforcement databases (stolen property reports from all 50 states) that Carfax doesn't access for stolen vehicle detection." }
       },
       {
         "@type": "Question",
@@ -42,7 +42,7 @@ const CarfaxAlternativePage = () => {
     <>
       <PageSEO
         title="Free Carfax Alternative — Stolen Vehicle Check Without Paying $40 | SafeOrStolen"
-        description="Looking for a free Carfax alternative? SafeOrStolen checks if vehicles are stolen for free. Search NICB, NCIC, DMV, and insurance databases. 2 free checks, then $0.99/check or $10/month unlimited — vs Carfax's $39.99/report."
+        description="Looking for a free Carfax alternative? SafeOrStolen checks if vehicles are stolen for free. Search NICB, stolen property reports from all 50 states, DMV, and insurance databases. 2 free checks, then $0.99/check or $10/month unlimited — vs Carfax's $39.99/report."
         canonical="/carfax-alternative"
         structuredData={[faqSchema]}
       />
@@ -54,7 +54,7 @@ const CarfaxAlternativePage = () => {
               Free Carfax Alternative — Stolen Vehicle Check
             </h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Carfax charges $39.99 per report. SafeOrStolen checks if a vehicle is stolen for free. We search NICB, FBI NCIC, all 50 state DMV records, and insurance databases. Different tools for different purposes — here's when to use each.
+              Carfax charges $39.99 per report. SafeOrStolen checks if a vehicle is stolen for free. We search NICB, stolen property reports from all 50 states, all 50 state DMV records, and insurance databases. Different tools for different purposes — here's when to use each.
             </p>
           </div>
         </header>
@@ -89,7 +89,7 @@ const CarfaxAlternativePage = () => {
                 <tbody className="text-muted-foreground text-sm">
                   {[
                     ['Stolen vehicle check', true, true],
-                    ['FBI NCIC database', false, true],
+                    ['Stolen property reports from all 50 states', false, true],
                     ['All stolen property reports from all 50 states', false, true],
                     ['Accident history', true, false],
                     ['Service records', true, false],
@@ -132,7 +132,7 @@ const CarfaxAlternativePage = () => {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">When to Use SafeOrStolen Instead</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              SafeOrStolen is the better choice for stolen property verification specifically. If your primary concern is "Is this car stolen?" rather than "What's the full history?", SafeOrStolen provides a more thorough theft check at a fraction of the cost. We access FBI NCIC and state law enforcement databases that Carfax doesn't query for stolen vehicle detection.
+              SafeOrStolen is the better choice for stolen property verification specifically. If your primary concern is "Is this car stolen?" rather than "What's the full history?", SafeOrStolen provides a more thorough theft check at a fraction of the cost. We access stolen property reports from all 50 states that Carfax doesn't query for stolen vehicle detection.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               SafeOrStolen is also the right choice if you're:
@@ -187,7 +187,7 @@ const CarfaxAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What does SafeOrStolen have that Carfax doesn't?</summary>
-                <p className="text-muted-foreground mt-2">Phone IMEI checks, firearm verification, electronics/laptop checks, bike checks, marketplace URL analysis, a mobile app, and access to FBI NCIC and state police databases for stolen detection.</p>
+                <p className="text-muted-foreground mt-2">Phone IMEI checks, firearm verification, electronics/laptop checks, bike checks, marketplace URL analysis, a mobile app, and access to stolen property reports from all 50 states for stolen detection.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Should I use Carfax or SafeOrStolen?</summary>

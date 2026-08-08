@@ -192,7 +192,7 @@ export default function CompleteImeiGuide() {
                   <h3 className="text-xl font-semibold text-foreground">Recommended: SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  SafeOrStolen checks 50+ databases simultaneously including GSMA global blacklist, FBI NCIC, all major 
+                  SafeOrStolen checks 50+ databases simultaneously including GSMA global blacklist, stolen property reports from all 50 states, all major 
                   U.S. carriers, manufacturer records, and law enforcement databases. Results in 3 seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">

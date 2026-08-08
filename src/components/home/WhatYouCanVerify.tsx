@@ -51,7 +51,7 @@ export const WhatYouCanVerify = () => {
       icon: Bike,
       title: 'Bicycles',
       subtitle: 'Frame Number Verification',
-      description: 'Check bike frame numbers against BikeIndex, 529 Garage, and police stolen bike registries. Essential for expensive road and mountain bikes.',
+      description: 'Check bike frame numbers against BikeIndex, and police stolen bike registries. Essential for expensive road and mountain bikes.',
       items: ['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX & Fixed gear', 'Vintage bicycles'],
       link: '/check-bike',
       image: bicycles,

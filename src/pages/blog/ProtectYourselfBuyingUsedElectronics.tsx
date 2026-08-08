@@ -56,7 +56,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       question: 'How accurate is SafeOrStolen verification?',
-      answer: 'SafeOrStolen checks 50+ databases including FBI NCIC, carrier blacklists, insurance claims, and manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.'
+      answer: 'SafeOrStolen checks 50+ databases including stolen property reports from all 50 states, carrier blacklists, insurance claims, and manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.'
     }
   ];
 
@@ -319,7 +319,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">How accurate is SafeOrStolen's verification?</h3>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks 50+ databases including FBI NCIC, carrier blacklists, insurance claims, and 
+                  SafeOrStolen checks 50+ databases including stolen property reports from all 50 states, carrier blacklists, insurance claims, and 
                   manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.
                 </p>
               </div>

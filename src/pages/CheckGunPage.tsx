@@ -27,7 +27,7 @@ const CheckGunPage = () => {
         <>
           <h2>What this check is — and what it isn't</h2>
           <p>
-            Be clear-eyed about how firearm records work in the United States. The FBI's NCIC
+            Be clear-eyed about how firearm records work in the United States. The FBI's stolen firearm reports from all 50 states
             stolen-gun file is accessible to law enforcement, not the public. What SafeOrStolen
             checks is <strong>community-reported stolen firearm records</strong>, including the
             stolen firearm reports from all 50 states — including reports filed by theft victims themselves.

@@ -166,7 +166,7 @@ const SMSVerifyPage = () => {
                       <div className="bg-primary/10 rounded-lg p-3">
                         <p className="text-muted-foreground text-xs mb-1">SafeOrStolen will reply:</p>
                         <p className="text-foreground">✅ <strong>CLEAN</strong> — No stolen reports found.</p>
-                        <p className="text-xs text-muted-foreground mt-1">Checked: GSMA, NCIC, carrier blacklists</p>
+                        <p className="text-xs text-muted-foreground mt-1">Checked: GSMA, stolen property reports from all 50 states, carrier blacklists</p>
                       </div>
                     </div>
                   </CardContent>

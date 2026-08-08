@@ -27,7 +27,7 @@ const CheckLaptopPage = () => {
           "Verify Windows laptops — Dell, HP, Lenovo, ASUS, Acer, MSI, Razer",
           "Check Apple iCloud Activation Lock status instantly",
           "Verify Microsoft account lock on Windows PCs",
-          "Search FBI NCIC and state law enforcement stolen property databases",
+          "Search stolen property reports from all 50 states and state law enforcement stolen property databases",
           "Check gaming laptops — Razer Blade, Alienware, ASUS ROG, MSI Stealth",
           "2 checks on us — then $10/month unlimited",
           "Instant 3-second results from 100+ databases"
@@ -44,11 +44,11 @@ const CheckLaptopPage = () => {
         faqs: [
           {
             question: "How do I check if a MacBook is stolen in 2026?",
-            answer: "To check if a MacBook is stolen: (1) Get the serial number from Settings > About This Mac, or the bottom case, (2) Check Apple iCloud Activation Lock at checkcoverage.apple.com — if 'Activation Lock' shows as ON, the MacBook is locked to someone's Apple ID and likely stolen, (3) Use SafeOrStolen's checker to search FBI NCIC, law enforcement, and insurance databases, (4) Ask the seller to sign out of iCloud in front of you (Settings > Apple ID > Sign Out) — if they can't or won't, walk away, (5) Turn on the MacBook and verify it doesn't ask for a firmware password."
+            answer: "To check if a MacBook is stolen: (1) Get the serial number from Settings > About This Mac, or the bottom case, (2) Check Apple iCloud Activation Lock at checkcoverage.apple.com — if 'Activation Lock' shows as ON, the MacBook is locked to someone's Apple ID and likely stolen, (3) Use SafeOrStolen's checker to search stolen property reports from all 50 states, law enforcement, and insurance databases, (4) Ask the seller to sign out of iCloud in front of you (Settings > Apple ID > Sign Out) — if they can't or won't, walk away, (5) Turn on the MacBook and verify it doesn't ask for a firmware password."
           },
           {
             question: "How do I check if a Windows laptop is stolen?",
-            answer: "To check if a Windows laptop is stolen: (1) Get the serial number from Settings > System > About, or the sticker on the bottom, (2) Use SafeOrStolen's serial number checker to search FBI NCIC, LeadsOnline pawn records, and insurance databases, (3) Turn on the laptop and verify it's not locked to a Microsoft account — if it requires a password you don't have during initial setup, it may be stolen, (4) Check the BIOS for a supervisor password — restart and press F2/F12/Del during boot. If BIOS is password protected, it's a red flag, (5) Ask the seller for the original receipt. No receipt + BIOS locked + low price = likely stolen."
+            answer: "To check if a Windows laptop is stolen: (1) Get the serial number from Settings > System > About, or the sticker on the bottom, (2) Use SafeOrStolen's serial number checker to search stolen property reports from all 50 states, LeadsOnline pawn records, and insurance databases, (3) Turn on the laptop and verify it's not locked to a Microsoft account — if it requires a password you don't have during initial setup, it may be stolen, (4) Check the BIOS for a supervisor password — restart and press F2/F12/Del during boot. If BIOS is password protected, it's a red flag, (5) Ask the seller for the original receipt. No receipt + BIOS locked + low price = likely stolen."
           },
           {
             question: "What is iCloud Activation Lock and why does it matter when buying a used MacBook?",

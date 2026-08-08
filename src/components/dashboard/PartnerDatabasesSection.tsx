@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const PARTNERS = [
   {
-    name: 'NCIC / FBI',
+    name: 'Stolen property reports from all 50 states / FBI',
     category: 'Law Enforcement',
     type: 'government',
     detail: 'National Crime Information Center — the U.S. federal stolen property database used by all 50 states.',

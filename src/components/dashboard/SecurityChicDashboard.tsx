@@ -51,7 +51,7 @@ export const SecurityChicDashboard: React.FC = () => {
     setResult({
       score: Math.floor(Math.random() * 30) + 70,
       status: 'clean',
-      sources: ['NCIC Database', 'GSMA IMEI Registry', 'Insurance Claims DB', 'State Police Records'],
+      sources: ['Stolen property reports from all 50 states Database', 'GSMA IMEI Registry', 'Insurance Claims DB', 'State Police Records'],
       serial: inputValue,
       itemType: getItemTypeDisplayName(type),
       timestamp: new Date().toISOString(),

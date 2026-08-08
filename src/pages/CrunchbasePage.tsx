@@ -268,7 +268,7 @@ const CrunchbasePage: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">
-                  All 50 US states. IMEI checks across 200+ countries via GSMA. Vehicle checks via FBI NCIC and NICB.
+                  All 50 US states. IMEI checks across 200+ countries via GSMA. Vehicle checks via stolen property reports from all 50 states and NICB.
                 </p>
               </CardContent>
             </Card>

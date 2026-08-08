@@ -202,7 +202,7 @@ const YouTubePage: React.FC = () => {
     {
       icon: Car,
       title: 'VIN Lookup Guides',
-      desc: 'Locate your vehicle\'s VIN (dashboard or door jamb) and verify against FBI NCIC stolen vehicle database, NICB insurance theft records, and 50 state DMV databases.',
+      desc: 'Locate your vehicle\'s VIN (dashboard or door jamb) and verify against stolen property reports from all 50 states, NICB insurance theft records, and 50 state DMV databases.',
       link: '/vin-checker',
       stat: '50 state DMV databases',
       color: 'text-green-500'
@@ -499,7 +499,7 @@ const YouTubePage: React.FC = () => {
               </p>
 
               <p className="leading-relaxed">
-                The <Link to="/vin-checker" className="text-primary hover:underline">VIN lookup guides</Link> show vehicle buyers how to locate a 17-digit Vehicle Identification Number — typically found on the driver's side dashboard corner or inside the driver's door jamb — and verify it against the FBI's NCIC stolen vehicle database, the National Insurance Crime Bureau (NICB), and state DMV records across all 50 states. This provides a free alternative to paid Carfax reports.
+                The <Link to="/vin-checker" className="text-primary hover:underline">VIN lookup guides</Link> show vehicle buyers how to locate a 17-digit Vehicle Identification Number — typically found on the driver's side dashboard corner or inside the driver's door jamb — and verify it against stolen property reports from all 50 states, the National Insurance Crime Bureau (NICB), and state DMV records across all 50 states. This provides a free alternative to paid Carfax reports.
               </p>
 
               <p className="leading-relaxed">

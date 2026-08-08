@@ -48,7 +48,7 @@ export default function TransparencyPage() {
               
               <h3>Law Enforcement Databases</h3>
               <ul>
-                <li><strong>NCIC (National Crime Information Center):</strong> FBI's database of stolen property, including vehicles and firearms</li>
+                <li><strong>Stolen property reports from all 50 states:</strong> FBI's database of stolen property, including vehicles and firearms</li>
                 <li><strong>State Law Enforcement Systems:</strong> Direct connections to state police stolen property databases</li>
                 <li><strong>International Police Databases:</strong> Interpol and regional law enforcement records</li>
               </ul>
