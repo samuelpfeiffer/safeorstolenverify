@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AlertTriangle, CheckCircle, XCircle, Clock, Shield, Zap, BarChart3 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { toCanonicalItemType, itemTypeLabel } from '@/lib/itemType';
 
 interface VerificationResult {
   serialNumber: string;
@@ -38,8 +39,11 @@ export const EnterpriseDemo = () => {
     // Parse batch input
     const lines = batchInput.split('\n').filter(line => line.trim());
     const items = lines.map(line => {
-      const [serialNumber, itemType] = line.split(',').map(s => s.trim());
-      return { serialNumber, itemType: itemType || 'electronics' };
+      const [serialNumber, rawItemType] = line.split(',').map(s => s.trim());
+      // CSV column is free text (e.g. "Serial Number") — canonicalize before it
+      // is sent anywhere that persists it, and keep the label for display only.
+      const itemType = toCanonicalItemType(rawItemType);
+      return { serialNumber, itemType, itemTypeLabel: itemTypeLabel(itemType) };
     });
 
     if (items.length === 0) {

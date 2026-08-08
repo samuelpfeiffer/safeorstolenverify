@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { runParallelVerification } from '../_shared/parallel-verification.ts';
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { toCanonicalItemType } from '../_shared/itemType.ts';
 
 interface VerificationRequest {
   identifier: string;
@@ -53,7 +54,9 @@ serve(async (req) => {
       );
     }
 
-    const { identifier, itemType, userId } = await req.json() as VerificationRequest;
+    const { identifier, itemType: rawItemType, userId } = await req.json() as VerificationRequest;
+    // Canonicalize item_type at the single server-side write boundary
+    const itemType = toCanonicalItemType(rawItemType);
     
     // Use authenticated user's ID, ignore client-provided userId for security
     const authenticatedUserId = user.id;
@@ -107,7 +110,7 @@ serve(async (req) => {
       
       const parallelResult = await runParallelVerification(supabaseClient, {
         identifier: cleanIdentifier,
-        itemType: itemType || 'unknown',
+        itemType,
         includeWebScraping: true,
         includeAI: true
       });
@@ -200,7 +203,7 @@ serve(async (req) => {
 
     const result = {
       identifier: cleanIdentifier,
-      itemType: itemType || 'unknown',
+      itemType,
       finalStatus,
       confidence: avgConfidence,
       riskLevel,
@@ -217,7 +220,7 @@ serve(async (req) => {
         .insert({
           user_id: authenticatedUserId,
           serial_number: cleanIdentifier,
-          item_type: itemType || 'unknown',
+          item_type: itemType,
           result: { 
             status: finalStatus, 
             confidence: avgConfidence,
@@ -239,7 +242,7 @@ serve(async (req) => {
         .insert({
           user_id: authenticatedUserId,
           serial_number: cleanIdentifier,
-          item_type: itemType || 'unknown',
+          item_type: itemType,
           status: finalStatus,
           confidence_score: avgConfidence,
           api_source: 'verify-item',
