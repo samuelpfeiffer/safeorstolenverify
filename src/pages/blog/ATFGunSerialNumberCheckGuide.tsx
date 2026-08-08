@@ -180,7 +180,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What's the difference between ATF eTrace and FBI NCIC?</summary>
- <p className="text-muted-foreground mt-2">eTrace traces a gun's sales history. The HotGunz national stolen-firearms registry checks if it's been reported stolen. Different purposes — SafeOrStolen checks both simultaneously.</p>
+ <p className="text-muted-foreground mt-2">eTrace traces a gun's sales history; NCIC records whether it's been reported stolen. Both are law-enforcement-only. SafeOrStolen checks neither — it checks the HotGunz registry and serial integrity.</p>
               </details>
             </div>
           </section>
