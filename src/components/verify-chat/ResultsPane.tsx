@@ -19,6 +19,7 @@ import {
   FirearmSourceDisclosure,
   isFirearmItemType,
 } from '@/components/verification/FirearmSourceDisclosure';
+import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 export type ChatVerifyResult = {
@@ -260,7 +261,10 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
 
         {/* Firearm-only honest source disclosure + definitive-check guidance */}
         {isFirearmItemType(current.itemType) && (
-          <FirearmSourceDisclosure className="rounded-xl border border-border/60 bg-card/40 p-3" />
+          <>
+            <FirearmSourceDisclosure className="rounded-xl border border-border/60 bg-card/40 p-3" />
+            <FirearmNextSteps className="mt-3" />
+          </>
         )}
 
         {/* Sources */}
