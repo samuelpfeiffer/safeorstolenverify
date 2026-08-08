@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { 
   Share2, Facebook, Twitter, Copy, Check, Shield, 
-  Download, MessageCircle, Linkedin, Mail, Code
+  Download, MessageCircle, Mail, Code
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -55,7 +55,6 @@ export const VerifiedCleanBadge = ({
     const urls: Record<string, string> = {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`,
       twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
       whatsapp: `https://wa.me/?text=${encodeURIComponent(shareText)}`,
       email: `mailto:?subject=Verified Clean Item&body=${encodeURIComponent(shareText)}`
     };
@@ -107,95 +106,6 @@ export const VerifiedCleanBadge = ({
             
             {/* Quick Share Buttons */}
             <div className="flex flex-wrap justify-center gap-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => handleShare('facebook')}
-                className="gap-2 hover:bg-blue-50 hover:border-blue-300"
-              >
-                <Facebook className="h-4 w-4 text-blue-600" />
-                Facebook
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => handleShare('twitter')}
-                className="gap-2 hover:bg-sky-50 hover:border-sky-300"
-              >
-                <Twitter className="h-4 w-4 text-sky-500" />
-                Twitter
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => handleShare('whatsapp')}
-                className="gap-2 hover:bg-green-50 hover:border-green-300"
-              >
-                <MessageCircle className="h-4 w-4 text-green-600" />
-                WhatsApp
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => handleCopy(shareText, 'link')}
-                className="gap-2"
-              >
-                {copied ? <Check className="h-4 w-4 text-primary" /> : <Copy className="h-4 w-4" />}
-                {copied ? 'Copied!' : 'Copy'}
-              </Button>
-            </div>
-
-            {/* Advanced Options */}
-            <div className="flex justify-center gap-2">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-2 text-xs">
-                    <Code className="h-3 w-3" />
-                    Get Embed Code
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Embed Verified Badge</DialogTitle>
-                  </DialogHeader>
-                  <div className="space-y-4">
-                    <p className="text-sm text-muted-foreground">
-                      Add this badge to your listing to show buyers the item is verified clean.
-                    </p>
-                    <div className="bg-muted p-4 rounded-lg">
-                      <code className="text-xs break-all">{embedCode}</code>
-                    </div>
-                    <Button 
-                      onClick={() => handleCopy(embedCode, 'embed')} 
-                      className="w-full gap-2"
-                    >
-                      {embedCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                      {embedCopied ? 'Copied!' : 'Copy Embed Code'}
-                    </Button>
-                    <div className="pt-4 border-t">
-                      <p className="text-xs text-muted-foreground mb-2">Preview:</p>
-                      <a 
-                        href={shareUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-bold text-sm no-underline"
-                      >
-                        ✓ Verified Clean by SafeOrStolen
-                      </a>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="gap-2 text-xs"
-                onClick={() => handleShare('linkedin')}
-              >
-                <Linkedin className="h-3 w-3" />
-                LinkedIn
-              </Button>
               
               <Button 
                 variant="ghost" 

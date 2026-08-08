@@ -1,13 +1,12 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface TeamMemberCardProps {
   name: string;
   role: string;
   bio: string;
   image: string;
-  linkedinUrl?: string;
   email?: string;
   expertise: string[];
 }
@@ -17,7 +16,6 @@ export const TeamMemberCard = ({
   role, 
   bio, 
   image, 
-  linkedinUrl, 
   email, 
   expertise 
 }: TeamMemberCardProps) => {
@@ -51,16 +49,6 @@ export const TeamMemberCard = ({
         </div>
         
         <div className="flex justify-center gap-4">
-          {linkedinUrl && (
-            <a 
-              href={linkedinUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 bg-sos-orange/20 rounded-full hover:bg-sos-orange/30 transition-colors"
-            >
-              <Linkedin className="h-5 w-5 text-sos-orange" />
-            </a>
-          )}
           {email && (
             <a 
               href={`mailto:${email}`}

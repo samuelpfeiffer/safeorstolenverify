@@ -20,7 +20,7 @@ interface LazySectionProps {
  */
 const detectBot = (): boolean => {
   if (typeof navigator === 'undefined') return true; // SSR - render everything
-  return /bot|crawl|spider|googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot|prerender|headlesschrome|lighthouse|gptbot|claudebot|anthropic|perplexity/i.test(navigator.userAgent);
+  return /bot|crawl|spider|googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|whatsapp|slackbot|telegrambot|prerender|headlesschrome|lighthouse|gptbot|claudebot|anthropic|perplexity/i.test(navigator.userAgent);
 };
 
 // Cache the result since user agent doesn't change during session

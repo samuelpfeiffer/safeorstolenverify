@@ -32,7 +32,6 @@ export {
   getOptimalSocialImageDimensions,
   validateSocialImage,
   generateFacebookTags,
-  generateLinkedInTags,
   generateAllSocialTags
 } from './socialMediaOptimizer';
 
