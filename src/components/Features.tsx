@@ -10,7 +10,7 @@ const Features = () => {
   }, {
     icon: <ShieldCheck className="h-8 w-8 text-secondary" />,
     title: "Firearms Database Verification",
-    description: "Search stolen gun databases including HotGunz, ATF records & NCIC on our mobile app. The ONLY verification app with firearms checking capability - verify before buying at gun shows or online."
+ description: "Search stolen gun databases including the HotGunz national stolen-firearms registry on our mobile app. The ONLY verification app with firearms checking capability - verify before buying at gun shows or online."
   }, {
     icon: <Clock className="h-8 w-8 text-accent" />,
     title: "Instant Verification Results",

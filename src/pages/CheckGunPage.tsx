@@ -11,7 +11,7 @@ const CheckGunPage = () => {
       route="/check-gun"
       pillarName="Check Gun"
       title="Gun Serial Number Check — Is That Firearm Stolen? | SafeOrStolen"
-      description="Check a firearm serial number against community stolen-gun records before a private sale. Know before you buy."
+ description="Check a firearm serial number against community stolen-gun records before a private sale. Know before you buy."
       keywords="gun serial number check, stolen firearm lookup, HotGunz, private gun sale safety, firearm serial number search"
       h1="Check a Gun Serial Number Before You Buy"
       intro={

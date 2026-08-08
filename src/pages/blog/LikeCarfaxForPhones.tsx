@@ -45,7 +45,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "How is SafeOrStolen like Carfax?",
-            answer: "SafeOrStolen works like Carfax but for all items: enter an identifier (IMEI, VIN, serial number), get instant history report showing if item is stolen, blacklisted, or safe. Carfax only checks vehicles. SafeOrStolen checks everything - phones, vehicles, electronics, firearms, boats."
+ answer: "SafeOrStolen works like Carfax but for all items: enter an identifier (IMEI, VIN, serial number), get instant history report showing if item is stolen, blacklisted, or safe. Carfax only checks vehicles. SafeOrStolen checks everything - phones, vehicles, electronics, firearms, boats."
           },
           {
             question: "Can I check phones like Carfax checks cars?",
@@ -53,7 +53,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Is SafeOrStolen better than Carfax?",
-            answer: "SafeOrStolen offers broader coverage than Carfax. Carfax only checks vehicles. SafeOrStolen checks phones, vehicles, electronics, firearms, boats, appliances - everything. We also offer a mobile app with barcode scanning (Carfax doesn't), 3-second results (compared to Carfax's slow reports), and 2 FREE checks."
+ answer: "SafeOrStolen offers broader coverage than Carfax. Carfax only checks vehicles. SafeOrStolen checks phones, vehicles, electronics, firearms, boats, appliances - everything. We also offer a mobile app with barcode scanning (Carfax doesn't), 3-second results (compared to Carfax's slow reports), and 2 FREE checks."
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",

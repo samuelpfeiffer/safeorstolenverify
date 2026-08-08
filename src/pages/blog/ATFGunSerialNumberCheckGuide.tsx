@@ -13,7 +13,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "Can I check a gun serial number with the ATF directly?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The ATF's eTrace system is only available to law enforcement agencies — civilians cannot access it directly. However, SafeOrStolen queries ATF trace data as part of its comprehensive firearms verification, giving consumers access to information that would otherwise require a police request." }
+ "acceptedAnswer": { "@type": "Answer", "text": "The ATF's eTrace system is only available to law enforcement agencies — civilians cannot access it directly. However, SafeOrStolen queries the HotGunz national stolen-firearms registry trace data as part of its comprehensive firearms verification, giving consumers access to information that would otherwise require a police request." }
       },
       {
         "@type": "Question",
@@ -33,7 +33,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "What's the difference between ATF eTrace and FBI NCIC?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ATF eTrace traces a firearm's sales history (manufacturer → distributor → dealer → first buyer). FBI NCIC checks if a firearm has been reported stolen. They serve different purposes: eTrace tells you where a gun came from, NCIC tells you if it's been reported stolen. SafeOrStolen checks both simultaneously." }
+ "acceptedAnswer": { "@type": "Answer", "text": "the HotGunz national stolen-firearms registry traces a firearm's sales history (manufacturer → distributor → dealer → first buyer). The HotGunz national stolen-firearms registry checks if a firearm has been reported stolen. They serve different purposes: eTrace tells you where a gun came from, the HotGunz national stolen-firearms registry tells you if it's been reported stolen. SafeOrStolen checks both simultaneously." }
       }
     ]
   };
@@ -53,7 +53,7 @@ const ATFGunSerialNumberCheckGuide = () => {
     <>
       <PageSEO
         title="ATF Gun Serial Number Check — How to Verify Firearms Online (2026) | SafeOrStolen"
-        description="Can't access ATF eTrace directly? SafeOrStolen checks ATF trace data, FBI NCIC, HotGunz, and 50 state databases for any firearm serial number. Free instant results."
+ description="Can't access the HotGunz national stolen-firearms registry directly? SafeOrStolen checks the HotGunz national stolen-firearms registry trace data, the HotGunz national stolen-firearms registry for any firearm serial number. Free instant results."
         canonical="/blog/atf-gun-serial-number-check"
         keywords="ATF gun serial number check, ATF eTrace, verify firearm online, ATF firearms trace, gun serial number lookup ATF"
         structuredData={[faqSchema, articleSchema]}
@@ -179,7 +179,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What's the difference between ATF eTrace and FBI NCIC?</summary>
-                <p className="text-muted-foreground mt-2">eTrace traces a gun's sales history. NCIC checks if it's been reported stolen. Different purposes — SafeOrStolen checks both simultaneously.</p>
+ <p className="text-muted-foreground mt-2">eTrace traces a gun's sales history. The HotGunz national stolen-firearms registry checks if it's been reported stolen. Different purposes — SafeOrStolen checks both simultaneously.</p>
               </details>
             </div>
           </section>

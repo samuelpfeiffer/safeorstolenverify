@@ -23,7 +23,7 @@ const StateStolenGunDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check a gun serial number in my state?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The easiest method is SafeOrStolen — enter any serial number and we check all 50 state databases simultaneously, plus FBI NCIC, ATF, and HotGunz. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through NCIC, but this takes longer and isn't always available." }
+        "acceptedAnswer": { "@type": "Answer", "text": "The fastest first step is SafeOrStolen — enter any serial number and we check the HotGunz national stolen-firearms registry and validate serial integrity. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through NCIC, but this takes longer and isn't always available." }
       },
       {
         "@type": "Question",
@@ -61,7 +61,7 @@ const StateStolenGunDatabaseGuide = () => {
     <>
       <PageSEO
         title="State-by-State Stolen Gun Database Guide (2026) — All 50 States | SafeOrStolen"
-        description="Complete guide to stolen gun databases in all 50 US states. Top 10 states for gun theft, how to check serial numbers in each state, and how SafeOrStolen searches all 50 simultaneously."
+ description="Complete guide to stolen gun databases in all 50 US states. Top 10 states for gun theft, how to check serial numbers in each state, and how SafeOrStolen searches all 50 simultaneously."
         canonical="/blog/state-stolen-gun-database-guide"
         keywords="stolen gun database by state, state firearms theft database, check stolen gun by state, gun theft statistics by state"
         structuredData={[faqSchema, articleSchema]}
@@ -86,7 +86,7 @@ const StateStolenGunDatabaseGuide = () => {
                 Search All 50 State Databases Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">All 50 states + NCIC + ATF + HotGunz · 2 free checks</p>
+            <p className="text-muted-foreground text-sm mt-3">HotGunz registry + serial integrity check · 2 free checks</p>
           </div>
         </section>
 
@@ -129,7 +129,7 @@ const StateStolenGunDatabaseGuide = () => {
               The I-95 corridor (Florida to Maine), I-10 corridor (Florida to California), and I-75 corridor (Michigan to Florida) are the primary routes for stolen firearm trafficking. Guns move along these interstates between states where they're stolen and states where they're sold.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              This is why SafeOrStolen searches all 50 state databases simultaneously, along with FBI NCIC (which aggregates reports from every law enforcement agency nationally). A single 3-second search covers what would take hours of phone calls to individual state agencies.
+              This is why SafeOrStolen checks the HotGunz national stolen-firearms registry, which collects victim reports from every state, and validates serial number integrity. It is not a substitute for a police NCIC check, but it takes 3 seconds instead of hours of phone calls.
             </p>
           </section>
 
@@ -150,7 +150,7 @@ const StateStolenGunDatabaseGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Does every state have a stolen gun database?</summary>
-                <p className="text-muted-foreground mt-2">Every state has law enforcement databases tracking stolen firearms, but public access varies. SafeOrStolen aggregates all 50 state databases so you don't have to check each one.</p>
+                <p className="text-muted-foreground mt-2">Every state has law enforcement databases tracking stolen firearms, but public access varies. SafeOrStolen checks the nationwide HotGunz victim-reported registry so you have a fast first-pass check.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Which states have the most gun thefts?</summary>
@@ -158,11 +158,11 @@ const StateStolenGunDatabaseGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check a gun serial number in my state?</summary>
-                <p className="text-muted-foreground mt-2">Use SafeOrStolen — enter any serial number and we check all 50 state databases plus FBI NCIC, ATF, and HotGunz in 3 seconds. 2 free checks.</p>
+                <p className="text-muted-foreground mt-2">Use SafeOrStolen — enter any serial number and we check the HotGunz national stolen-firearms registry and validate serial integrity in 3 seconds. 2 free checks. For a definitive check, ask your local police to run it through NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Do I need to check multiple state databases?</summary>
-                <p className="text-muted-foreground mt-2">Yes. Guns cross state lines constantly. SafeOrStolen searches all 50 states in one check so you don't have to.</p>
+ <p className="text-muted-foreground mt-2">Yes. Guns cross state lines constantly. HotGunz is a nationwide victim-reported registry, so SafeOrStolen's check is not limited to one state.</p>
               </details>
             </div>
           </section>

@@ -54,7 +54,7 @@ const ComparisonSwappa = () => {
       {
         "@type": "Question",
         "name": "Can Swappa check if a car or bike is stolen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check), motorcycles, firearms (ATF databases), bicycles, laptops, gaming consoles, watches, and more." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check), motorcycles, firearms, bicycles, laptops, gaming consoles, watches, and more." }
       },
       {
         "@type": "Question",
@@ -116,7 +116,7 @@ const ComparisonSwappa = () => {
           <h2>Key Differences</h2>
           <ul>
             <li><strong>Mobile App:</strong> SafeOrStolen has a dedicated iOS/Android app with barcode scanning. Swappa has no verification app.</li>
-            <li><strong>Item Types:</strong> SafeOrStolen verifies phones, cars, guns, bikes, laptops, watches, and more. Swappa only handles phones and tech.</li>
+ <li><strong>Item Types:</strong> SafeOrStolen verifies phones, cars, guns, bikes, laptops, watches, and more. Swappa only handles phones and tech.</li>
             <li><strong>Databases:</strong> SafeOrStolen checks 100+ databases (FBI NCIC, NICB, GSMA, all 50 state law enforcement). Swappa does a basic ESN check.</li>
             <li><strong>Works Anywhere:</strong> SafeOrStolen works for items from any source. Swappa only verifies items on their marketplace.</li>
             <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $0.99/check or $10/month unlimited. Swappa: free basic check on their listings only.</li>
@@ -125,7 +125,7 @@ const ComparisonSwappa = () => {
           <h3>Does Swappa have a mobile app for verification?</h3>
           <p>No. Swappa does not offer a standalone mobile app for stolen item verification. SafeOrStolen is the only verification service with a dedicated mobile app.</p>
           <h3>Can Swappa check if a car or bike is stolen?</h3>
-          <p>No. Swappa only handles phones and tech devices. SafeOrStolen verifies all item types including vehicles, firearms, bicycles, and more.</p>
+ <p>No. Swappa only handles phones and tech devices. SafeOrStolen verifies all item types including vehicles, firearms, bicycles, and more.</p>
           <h3>Is SafeOrStolen free to use?</h3>
           <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $10/month unlimited.</p>
           <h3>How many databases does SafeOrStolen check?</h3>
@@ -300,7 +300,7 @@ const ComparisonSwappa = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <Zap className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                        <span>You're checking a <strong>firearm serial number</strong> against ATF databases</span>
+ <span>You're checking a <strong>firearm serial number</strong> against the HotGunz national stolen-firearms registry</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Zap className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
@@ -443,7 +443,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="car">
                     <AccordionTrigger>Can Swappa check if a car or bike is stolen?</AccordionTrigger>
                     <AccordionContent>
-                      No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check against NICB and state DMV databases), motorcycles, firearms (ATF eTrace), bicycles (BikeIndex), laptops, gaming consoles, watches, and more.
+ No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check against NICB and state DMV databases), motorcycles, firearms, bicycles (BikeIndex), laptops, gaming consoles, watches, and more.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="free">

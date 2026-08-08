@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Does the barcode scanner work at gun shows?",
-    answer: "Yes. Many modern firearms have barcodes on the packaging, warranty cards, or even laser-etched QR codes. Scan the barcode to extract the serial number, then we verify it against ATF records, FBI NCIC (7+ million stolen guns), HotGunz (32,000+ user-reported stolen guns), and state police databases. If no barcode, you can type the serial number manually."
+ answer: "Yes. Many modern firearms have barcodes on the packaging, warranty cards, or even laser-etched QR codes. Scan the barcode to extract the serial number, then we verify it against the HotGunz national stolen-firearms registry. If no barcode, you can type the serial number manually."
   },
   {
     question: "Can I scan a VIN barcode on a car?",
@@ -68,7 +68,7 @@ const appSchema = {
     "description": "2 free scans, then $0.99/check or $10/month unlimited"
   },
   "featureList": "Barcode scanning, QR code reading, IMEI verification, VIN verification, serial number lookup, stolen item check",
-  "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against 100+ databases.",
+ "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against 100+ databases.",
   "dateModified": "2026-03-08"
 };
 

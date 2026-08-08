@@ -24,7 +24,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "What databases does SafeOrStolen check?",
-      answer: "We search over 100 databases simultaneously including: FBI NCIC (National Crime Information Center), NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, ATF eTrace for firearms, all 50 state law enforcement databases, DMV records, insurance company theft claims, carrier blacklists (AT&T, Verizon, T-Mobile), community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We search over 100 databases simultaneously including: FBI NCIC (National Crime Information Center), NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, the HotGunz stolen-firearms registry for firearms, state law enforcement records, DMV records, insurance company theft claims, carrier blacklists (AT&T, Verizon, T-Mobile), community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
     },
     {
       question: "How do I check if a car is stolen using VIN?",
@@ -36,15 +36,15 @@ export const HomeContentSections = () => {
     },
     {
       question: "How do I check a gun serial number for free?",
-      answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search FBI NCIC, ATF eTrace, all 50 state law enforcement databases, HotGunz (32,000+ user-reported stolen guns), and insurance claims. Unlimited checks for $10/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
+ answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search the HotGunz national stolen-firearms registry and validate serial number integrity. Unlimited checks for $10/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
     },
     {
       question: "What items can SafeOrStolen verify?",
-      answer: "SafeOrStolen verifies virtually any valuable item with an identifier: phones and tablets (IMEI), cars, trucks, and motorcycles (VIN), firearms (serial number), laptops and computers (serial number), gaming consoles like PS5, Xbox, Nintendo Switch (serial number), bicycles (serial number), cameras (serial number), power tools (serial number), watches and jewelry (serial/model number), boats and watercraft (HIN), and more."
+ answer: "SafeOrStolen verifies virtually any valuable item with an identifier: phones and tablets (IMEI), cars, trucks, and motorcycles (VIN), firearms (serial number), laptops and computers (serial number), gaming consoles like PS5, Xbox, Nintendo Switch (serial number), bicycles (serial number), cameras (serial number), power tools (serial number), watches and jewelry (serial/model number), boats and watercraft (HIN), and more."
     },
     {
       question: "How is SafeOrStolen different from Carfax?",
-      answer: "Carfax only checks vehicles and costs $44.99 per report. SafeOrStolen checks ALL item types — phones, cars, firearms, electronics, bikes, and more — for just $0.99/check or $10/month unlimited. We also search more databases (100+ vs Carfax's vehicle-only sources), include a mobile app for on-the-spot verification, and provide results in 3 seconds instead of generating a lengthy PDF report."
+ answer: "Carfax only checks vehicles and costs $44.99 per report. SafeOrStolen checks ALL item types — phones, cars, firearms, electronics, bikes, and more — for just $0.99/check or $10/month unlimited. We also search more databases (100+ vs Carfax's vehicle-only sources), include a mobile app for on-the-spot verification, and provide results in 3 seconds instead of generating a lengthy PDF report."
     },
     {
       question: "Does SafeOrStolen have a mobile app?",
@@ -71,7 +71,7 @@ export const HomeContentSections = () => {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">What SafeOrStolen Checks — Complete Verification Coverage</h2>
           <p className="text-muted-foreground mb-8 text-lg">
-            SafeOrStolen is the only verification platform that checks <strong>all item categories</strong> in one place. Whether you're buying a used phone on Facebook Marketplace, a car from Craigslist, a firearm at a gun show, or electronics from OfferUp — we verify it against law enforcement, insurance, and manufacturer databases in 3 seconds.
+ SafeOrStolen is the only verification platform that checks <strong>all item categories</strong> in one place. Whether you're buying a used phone on Facebook Marketplace, a car from Craigslist, a firearm at a gun show, or electronics from OfferUp — we verify it against law enforcement, insurance, and manufacturer databases in 3 seconds.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
@@ -94,7 +94,7 @@ export const HomeContentSections = () => {
                 items: "Pistols, rifles, shotguns, AR-15s — all manufacturers",
                 identifier: "Serial Number",
                 link: "/firearms-check",
-                detail: "FBI NCIC, ATF eTrace, 50 state databases, HotGunz"
+                detail: "HotGunz stolen-firearms registry + serial integrity check"
               },
               {
                 title: "🎮 Gaming Consoles",
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
               <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
               <h3 className="font-bold text-lg mb-2">We Search 100+ Databases</h3>
               <p className="text-sm text-muted-foreground">
-                In parallel, we query FBI NCIC, NICB, GSMA, ATF, all 50 state databases, DMV records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
+                In parallel, we query NICB, GSMA, HotGunz, BikeIndex, state records, DMV records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
               </p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg border border-border">
@@ -203,7 +203,7 @@ export const HomeContentSections = () => {
             <div className="p-5 bg-background rounded-lg border border-border">
               <h3 className="font-bold mb-2">Gun Dealers & Show Attendees</h3>
               <p className="text-sm text-muted-foreground">
-                <Link to="/firearms-check" className="text-primary hover:underline">Gun dealers</Link> and buyers at gun shows verify serial numbers for ATF compliance and personal protection. Private sales at gun shows carry the highest risk of encountering stolen firearms.
+                <Link to="/firearms-check" className="text-primary hover:underline">Gun dealers</Link> and buyers at gun shows verify serial numbers for compliance and personal protection. Private sales at gun shows carry the highest risk of encountering stolen firearms.
               </p>
             </div>
             <div className="p-5 bg-background rounded-lg border border-border">

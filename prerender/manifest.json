@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T04:16:12.212757+00:00",
+  "generatedAt": "2026-08-08T15:56:14.091062+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -65,7 +65,7 @@
     {
       "route": "/app/stolen-phone-checker",
       "slug": "app__stolen-phone-checker",
-      "title": "Stolen Phone Checker App FREE | Check IMEI Before Buying ...",
+      "title": "Stolen Phone Checker App FREE | Check IMEI Before Buying...",
       "canonical": "https://safeorstolen.com/app/stolen-phone-checker"
     },
     {
@@ -113,7 +113,7 @@
     {
       "route": "/blog/best-ai-llms-2026",
       "slug": "blog__best-ai-llms-2026",
-      "title": "11 Best AI LLMs for 2026 - Complete Ranking & Comparison ...",
+      "title": "11 Best AI LLMs for 2026 - Complete Ranking & Comparison...",
       "canonical": "https://safeorstolen.com/blog/best-ai-llms-2026"
     },
     {
@@ -167,7 +167,7 @@
     {
       "route": "/blog/complete-verification-guide",
       "slug": "blog__complete-verification-guide",
-      "title": "Complete Verification Guide: How to Check If Anything Is ...",
+      "title": "Complete Verification Guide: How to Check If Anything Is...",
       "canonical": "https://safeorstolen.com/blog/complete-verification-guide"
     },
     {
@@ -209,19 +209,19 @@
     {
       "route": "/blog/gun-show-serial-number-check",
       "slug": "blog__gun-show-serial-number-check",
-      "title": "How to Check a Gun Serial Number at a Gun Show (2026) | S...",
+      "title": "How to Check a Gun Serial Number at a Gun Show (2026) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/gun-show-serial-number-check"
     },
     {
       "route": "/blog/hotgunz-database-guide",
       "slug": "blog__hotgunz-database-guide",
-      "title": "HotGunz Database \u2014 What It Is & How to Search Stolen Fire...",
+      "title": "HotGunz Database \u2014 What It Is & How to Search Stolen Firearms (2026)",
       "canonical": "https://safeorstolen.com/blog/hotgunz-database-guide"
     },
     {
       "route": "/blog/how-to-check-if-gun-is-stolen",
       "slug": "blog__how-to-check-if-gun-is-stolen",
-      "title": "How to Check if a Gun is Stolen \u2014 Free NCIC Serial Number...",
+      "title": "How to Check if a Gun is Stolen \u2014 Free Serial Number Lookup (2026)",
       "canonical": "https://safeorstolen.com/blog/how-to-check-if-gun-is-stolen"
     },
     {
@@ -245,7 +245,7 @@
     {
       "route": "/blog/how-to-sell-verified-items",
       "slug": "blog__how-to-sell-verified-items",
-      "title": "How to Sell Verified Items on Marketplace (2026 Guide) | ...",
+      "title": "How to Sell Verified Items on Marketplace (2026 Guide) |...",
       "canonical": "https://safeorstolen.com/blog/how-to-sell-verified-items"
     },
     {
@@ -299,13 +299,13 @@
     {
       "route": "/blog/scammer-tactics-exposed",
       "slug": "blog__scammer-tactics-exposed",
-      "title": "Scammer Tactics Exposed: How Criminals Sell Stolen Goods ...",
+      "title": "Scammer Tactics Exposed: How Criminals Sell Stolen Goods...",
       "canonical": "https://safeorstolen.com/blog/scammer-tactics-exposed"
     },
     {
       "route": "/blog/state-stolen-gun-database-guide",
       "slug": "blog__state-stolen-gun-database-guide",
-      "title": "State-by-State Stolen Gun Database Guide (2026) \u2014 All 50 ...",
+      "title": "State-by-State Stolen Gun Database Guide (2026) \u2014 All 50 States",
       "canonical": "https://safeorstolen.com/blog/state-stolen-gun-database-guide"
     },
     {
@@ -317,14 +317,20 @@
     {
       "route": "/blog/theft-trends-report-2024",
       "slug": "blog__theft-trends-report-2024",
-      "title": "2024 Theft Trends Report: Most Stolen Items & Protection ...",
+      "title": "2024 Theft Trends Report: Most Stolen Items & Protection...",
       "canonical": "https://safeorstolen.com/blog/theft-trends-report-2024"
     },
     {
       "route": "/blog/top-10-stolen-item-checkers",
       "slug": "blog__top-10-stolen-item-checkers",
-      "title": "Top 10 Stolen Item Checkers 2026 - Compare Free Tools | S...",
+      "title": "Top 10 Stolen Item Checkers 2026 - Compare Free Tools | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/top-10-stolen-item-checkers"
+    },
+    {
+      "route": "/blog/top-stolen-item-checkers",
+      "slug": "blog__top-stolen-item-checkers",
+      "title": "Blog Post Not Found | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/blog/top-stolen-item-checkers"
     },
     {
       "route": "/blog/ultimate-marketplace-buyers-guide",
@@ -443,13 +449,13 @@
     {
       "route": "/check-firearm",
       "slug": "check-firearm",
-      "title": "Check If Firearm Is Stolen - Free Gun Serial Number Looku...",
+      "title": "Check If Firearm Is Stolen - Free Gun Serial Number Lookup",
       "canonical": "https://safeorstolen.com/check-firearm"
     },
     {
       "route": "/check-firearm-serial",
       "slug": "check-firearm-serial",
-      "title": "Check if Firearm is Stolen - Gun Serial Number Lookup | S...",
+      "title": "Check if Firearm is Stolen - Gun Serial Number Lookup | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-firearm-serial"
     },
     {
@@ -509,7 +515,7 @@
     {
       "route": "/check-motorcycle-stolen-vin",
       "slug": "check-motorcycle-stolen-vin",
-      "title": "Check if Motorcycle is Stolen by VIN - Free Verification ...",
+      "title": "Check if Motorcycle is Stolen by VIN - Free Verification...",
       "canonical": "https://safeorstolen.com/check-motorcycle-stolen-vin"
     },
     {
@@ -539,7 +545,7 @@
     {
       "route": "/check-stolen-car",
       "slug": "check-stolen-car",
-      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free ...",
+      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free...",
       "canonical": "https://safeorstolen.com/check-stolen-car"
     },
     {
@@ -647,7 +653,7 @@
     {
       "route": "/crunchbase",
       "slug": "crunchbase",
-      "title": "SafeOrStolen Company Profile | AI-Powered Verification | ...",
+      "title": "SafeOrStolen Company Profile | AI-Powered Verification |...",
       "canonical": "https://safeorstolen.com/crunchbase"
     },
     {
@@ -731,7 +737,7 @@
     {
       "route": "/florida/jacksonville-license-plate-lookup",
       "slug": "florida__jacksonville-license-plate-lookup",
-      "title": "Free Jacksonville FL License Plate Lookup \u2014 Check Stolen ...",
+      "title": "Free Jacksonville FL License Plate Lookup \u2014 Check Stolen...",
       "canonical": "https://safeorstolen.com/florida/jacksonville-license-plate-lookup"
     },
     {
@@ -857,7 +863,7 @@
     {
       "route": "/gun-serial-number-lookup",
       "slug": "gun-serial-number-lookup",
-      "title": "Free Gun Serial Number Lookup - Check Firearms | SafeOrSt...",
+      "title": "Free Gun Serial Number Lookup - Check Firearms | SafeOrStolen",
       "canonical": "https://safeorstolen.com/gun-serial-number-lookup"
     },
     {
@@ -971,13 +977,13 @@
     {
       "route": "/is-this-car-stolen",
       "slug": "is-this-car-stolen",
-      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free ...",
+      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free...",
       "canonical": "https://safeorstolen.com/is-this-car-stolen"
     },
     {
       "route": "/is-this-gun-stolen",
       "slug": "is-this-gun-stolen",
-      "title": "Is This Gun Stolen? Free Serial Number Check | SafeOrStol...",
+      "title": "Is This Gun Stolen? Free Serial Number Check | SafeOrStolen - Free",
       "canonical": "https://safeorstolen.com/is-this-gun-stolen"
     },
     {
@@ -1163,7 +1169,7 @@
     {
       "route": "/north-carolina-vin-lookup",
       "slug": "north-carolina-vin-lookup",
-      "title": "North Carolina VIN Lookup - Free NC Stolen Vehicle Check ...",
+      "title": "North Carolina VIN Lookup - Free NC Stolen Vehicle Check...",
       "canonical": "https://safeorstolen.com/north-carolina-vin-lookup"
     },
     {
@@ -1229,7 +1235,7 @@
     {
       "route": "/pennsylvania-vin-lookup",
       "slug": "pennsylvania-vin-lookup",
-      "title": "Pennsylvania VIN Lookup - Free PA Stolen Vehicle Check | ...",
+      "title": "Pennsylvania VIN Lookup - Free PA Stolen Vehicle Check |...",
       "canonical": "https://safeorstolen.com/pennsylvania-vin-lookup"
     },
     {
@@ -1313,7 +1319,7 @@
     {
       "route": "/seller-badge",
       "slug": "seller-badge",
-      "title": "Seller Verification Badge \u2014 Prove Items Are Legitimate | ...",
+      "title": "Seller Verification Badge \u2014 Prove Items Are Legitimate |...",
       "canonical": "https://safeorstolen.com/seller-badge"
     },
     {
@@ -1427,7 +1433,7 @@
     {
       "route": "/stolen-gun-database",
       "slug": "stolen-gun-database",
-      "title": "Stolen Gun Database Search - Free Firearm Serial Lookup |...",
+      "title": "Stolen Gun Database Search - Free Firearm Serial Lookup | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-gun-database"
     },
     {

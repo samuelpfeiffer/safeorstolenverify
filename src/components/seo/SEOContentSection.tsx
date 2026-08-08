@@ -36,7 +36,7 @@ export const SEOContentSection = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>🔫 FIREARMS VERIFICATION:</strong> Only verification mobile app that checks gun serial numbers against HotGunz, ATF & NCIC databases!</span>
+ <span><strong>🔫 FIREARMS VERIFICATION:</strong> Only verification mobile app that checks gun serial numbers against the HotGunz national stolen-firearms registry!</span>
                 </li>
               </ul>
             </div>

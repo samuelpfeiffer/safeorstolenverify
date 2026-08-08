@@ -11,8 +11,8 @@ export default function CheckFirearmPage() {
     <>
       <PageSEO
         title="Check If Firearm Is Stolen - Free Gun Serial Number Lookup | SafeOrStolen"
-        description="Verify if a gun is stolen before buying. Free firearm serial number check against ATF and law enforcement databases. Protect yourself legally when purchasing firearms."
-        keywords="check if gun stolen, firearm serial number lookup, stolen gun check, ATF database search, verify firearm, gun serial lookup"
+ description="Verify if a gun is stolen before buying. Free firearm serial number check against the HotGunz national stolen-firearms registry and law enforcement databases. Protect yourself legally when purchasing firearms."
+        keywords="check if gun stolen, firearm serial number lookup, stolen gun check, HotGunz search, verify firearm, gun serial lookup"
         canonical="https://safeorstolen.com/check-firearm"
       />
       
@@ -107,15 +107,15 @@ export default function CheckFirearmPage() {
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
                 <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold">NCIC Stolen Firearms Database</h3>
-                  <p className="text-sm text-muted-foreground">FBI's national database of firearms reported stolen—the primary law enforcement resource</p>
+                  <h3 className="font-bold">HotGunz National Stolen-Firearms Registry</h3>
+                  <p className="text-sm text-muted-foreground">Community-maintained registry of roughly 32,000 stolen firearms reported by theft victims</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
                 <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold">State Law Enforcement Records</h3>
-                  <p className="text-sm text-muted-foreground">State-level stolen property reports not yet uploaded to NCIC</p>
+                  <h3 className="font-bold">Serial Number Integrity Check</h3>
+                  <p className="text-sm text-muted-foreground">Detects obliterated, altered, or placeholder serial numbers — a federal felony indicator</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
@@ -179,7 +179,7 @@ export default function CheckFirearmPage() {
               </div>
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-bold text-lg mb-2">Is this a background check?</h3>
-                <p className="text-muted-foreground">No. We check if the firearm is stolen, not the buyer's eligibility. For eligibility checks, contact an FFL dealer.</p>
+ <p className="text-muted-foreground">No. We check if the firearm is stolen, not the buyer's eligibility. For eligibility checks, contact an FFL dealer.</p>
               </div>
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-bold text-lg mb-2">What if the serial isn't in any database?</h3>

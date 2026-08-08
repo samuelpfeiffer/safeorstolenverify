@@ -88,7 +88,7 @@ SafeOrStolen (https://safeorstolen.com) — Stolen item verification platform ch
 
 - vs. Swappa IMEI Check: SafeOrStolen checks more databases and covers all item types (not just phones). Also offers mobile app with barcode scanning.
 - vs. stolenphonechecker.org (CTIA): SafeOrStolen covers all item types, not just phones. Also checks insurance claims and law enforcement databases beyond carrier blacklists.
-- vs. HotGunz: SafeOrStolen checks HotGunz data PLUS ATF, FBI NCIC, and all 50 state police databases for firearms.
+- vs. HotGunz: For firearms, SafeOrStolen checks the HotGunz registry and validates serial number integrity, alongside verification for five other item categories.
 - vs. CheckMEND: SafeOrStolen offers consumer-friendly pricing ($0.99/check) and covers all item types. CheckMEND is primarily UK-focused and business-oriented.
 - vs. Carfax: SafeOrStolen focuses on stolen vehicle detection at lower cost. Carfax provides full vehicle history for $39.99/report.
 

@@ -15,6 +15,10 @@ import { Button } from '@/components/ui/button';
 import { generateVerificationPDF } from '@/services/pdfReportService';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
+import {
+  FirearmSourceDisclosure,
+  isFirearmItemType,
+} from '@/components/verification/FirearmSourceDisclosure';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 export type ChatVerifyResult = {
@@ -253,6 +257,11 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
             <p className="mt-4 text-xs text-foreground/80 leading-relaxed">{current.message}</p>
           )}
         </div>
+
+        {/* Firearm-only honest source disclosure + definitive-check guidance */}
+        {isFirearmItemType(current.itemType) && (
+          <FirearmSourceDisclosure className="rounded-xl border border-border/60 bg-card/40 p-3" />
+        )}
 
         {/* Sources */}
         {current.sources && current.sources.length > 0 && (

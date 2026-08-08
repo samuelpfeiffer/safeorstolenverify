@@ -120,7 +120,7 @@ const SMSVerifyPage = () => {
           <article>
             <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from 100+ databases including FBI NCIC, GSMA, NICB, ATF, HotGunz, and all 50 state law enforcement databases.</p>
             <h2>How SMS Verification Works</h2>
-            <p>Find the IMEI (15 digits), VIN (17 characters), or serial number on the item. Text it to our verification number. Receive instant results: CLEAN, STOLEN, or UNKNOWN. Perfect for gun shows, car lots, flea markets, pawn shops, and private sales where you need a quick answer before handing over cash.</p>
+ <p>Find the IMEI (15 digits), VIN (17 characters), or serial number on the item. Text it to our verification number. Receive instant results: CLEAN, STOLEN, or UNKNOWN. Perfect for gun shows, car lots, flea markets, pawn shops, and private sales where you need a quick answer before handing over cash.</p>
             <h2>What Can You Verify by Text?</h2>
             <p>Phones (IMEI), vehicles (VIN), firearms (serial number), laptops, tablets, gaming consoles, bicycles, power tools, cameras, watches, jewelry, and any item with a unique serial number. Our system auto-detects the identifier type and routes to the correct databases.</p>
             <h2>Why Use SMS Instead of an App?</h2>

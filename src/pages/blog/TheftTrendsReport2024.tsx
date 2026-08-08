@@ -164,7 +164,7 @@ export default function TheftTrendsReport2024() {
                     <strong>Total Value:</strong> $340 million | <strong>Recovery Rate:</strong> 18%
                   </p>
                   <p>
-                    Handguns are the most stolen firearm type, with 237,000 incidents reported. Vehicle thefts account for 62% of gun thefts. SafeOrStolen's firearms verification service helps prevent illegal firearm sales and trafficking.
+ Handguns are the most stolen firearm type, with 237,000 incidents reported. Vehicle thefts account for 62% of gun thefts. SafeOrStolen's firearms verification service helps prevent illegal firearm sales and trafficking.
                   </p>
                   <div className="mt-4 bg-destructive/10 border-l-4 border-destructive p-4 rounded">
                     <p className="font-bold mb-2">⚠️ Legal Requirement:</p>

@@ -196,7 +196,7 @@ export const createServiceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Complete Multi-Database Stolen Item Verification - IMEI, VIN & Serial Number Check",
-  "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including NICB, GSMA, CheckMEND, and Bike Index. Fast results in 30 seconds.",
+ "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including NICB, GSMA, CheckMEND, and Bike Index. Fast results in 30 seconds.",
   "provider": {
     "@type": "Organization",
     "name": "SafeOrStolen",

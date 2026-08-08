@@ -33,7 +33,7 @@ const TheftAZAlternativePage = () => {
       {
         "@type": "Question",
         "name": "What types of property can I check with SafeOrStolen vs TheftAZ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "TheftAZ tracks vehicles, firearms, electronics, tools, and other property stolen in Arizona. SafeOrStolen checks all the same item types PLUS phones (via IMEI/GSMA), boats, appliances, and jewelry — across all 50 states, not just Arizona." }
+ "acceptedAnswer": { "@type": "Answer", "text": "TheftAZ tracks vehicles, firearms, electronics, tools, and other property stolen in Arizona. SafeOrStolen checks all the same item types PLUS phones (via IMEI/GSMA), boats, appliances, and jewelry — across all 50 states, not just Arizona." }
       }
     ]
   };
@@ -155,7 +155,7 @@ const TheftAZAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What types of property can I check?</summary>
-                <p className="text-muted-foreground mt-2">SafeOrStolen checks vehicles (VIN/plate), phones (IMEI), firearms (serial number), electronics, laptops, bikes, tools, appliances, jewelry, and more — across all 50 states simultaneously.</p>
+ <p className="text-muted-foreground mt-2">SafeOrStolen checks vehicles (VIN/plate), phones (IMEI), firearms (serial number), electronics, laptops, bikes, tools, appliances, jewelry, and more — across all 50 states simultaneously.</p>
               </details>
             </div>
           </section>

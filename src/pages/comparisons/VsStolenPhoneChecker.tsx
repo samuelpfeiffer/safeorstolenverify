@@ -79,7 +79,7 @@ const VsStolenPhoneChecker = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            CTIA only checks phones. SafeOrStolen verifies phones, cars, bikes, laptops, firearms, and more — with a mobile app and marketplace URL analysis.
+ CTIA only checks phones. SafeOrStolen verifies phones, cars, bikes, laptops, firearms, and more — with a mobile app and marketplace URL analysis.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -86,7 +86,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — including FBI NCIC, ATF eTrace, all 50 state databases, HotGunz, and insurance records. HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
+      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like NCIC and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -316,11 +316,11 @@ const TopStolenItemCheckers = () => {
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold text-sm mb-2">Databases Searched (100+)</h3>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• FBI NCIC (7M+ stolen firearm records)</li>
+                    <li>• HotGunz national stolen-firearms registry (32K+ records)</li>
                     <li>• NICB (National Insurance Crime Bureau)</li>
                     <li>• GSMA Device Registry (global phone blacklist)</li>
-                    <li>• ATF eTrace (traced crime firearms)</li>
-                    <li>• All 50 state stolen property databases</li>
+                    <li>• Serial number integrity validation</li>
+                    <li>• Community-reported stolen property reports</li>
                     <li>• Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
                     <li>• Insurance company theft claims</li>
                     <li>• HotGunz (32K+ community-reported guns)</li>
@@ -537,7 +537,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick free gun serial checks as a first step. For comprehensive verification including NCIC, ATF, and state databases, use <Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen's gun serial number lookup</Link> (2 free checks).
+                <strong>Best for:</strong> Quick free gun serial checks as a first step. For firearm checks alongside every other item category, use <Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen's gun serial number lookup</Link> (2 free checks).
               </p>
             </section>
 
@@ -648,7 +648,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen</Link> (100+ databases including NCIC) or HotGunz (free but only 32K community reports). For legal protection, SafeOrStolen's comprehensive search is recommended.</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen</Link> (HotGunz registry + serial integrity check) or HotGunz (free but only 32K community reports). For legal protection, SafeOrStolen's comprehensive search is recommended.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need multiple item types?</h3>
@@ -686,7 +686,7 @@ const TopStolenItemCheckers = () => {
             <section className="py-8 text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-lg p-8">
               <h2 className="text-2xl font-bold mb-4">Ready to Verify? Start With 2 Free Checks</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                SafeOrStolen searches 100+ databases for phones, vehicles, firearms, electronics, and more. Instant results in 3 seconds. No credit card required.
+ SafeOrStolen searches 100+ databases for phones, vehicles, firearms, electronics, and more. Instant results in 3 seconds. No credit card required.
               </p>
               <Link to="/verify">
                 <Button size="lg" className="gap-2 text-lg px-8 py-6">

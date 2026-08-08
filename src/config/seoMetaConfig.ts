@@ -225,7 +225,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/firearms-check': {
     title: 'Gun Serial Number Lookup Free - Firearm Serial Check',
-    description: 'Free gun serial number lookup to check if firearm is stolen. Check pistol, rifle, shotgun serial numbers against ATF, FBI NCIC databases. Instant verification.', // 159 chars
+ description: 'Free gun serial number lookup to check if firearm is stolen. Check pistol, rifle, shotgun serial numbers against the HotGunz national stolen-firearms registry. Instant verification.', // 159 chars
     keywords: 'firearm serial check, stolen gun lookup, ATF database check, gun verification',
     canonical: '/firearms-check'
   },

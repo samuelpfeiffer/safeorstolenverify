@@ -30,7 +30,7 @@ export const EEATSignals = () => {
       {/* Specific domain knowledge, not vague claims */}
       <meta
         name="expertise"
-        content="IMEI verification (GSMA TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (FBI NCIC, ATF eTrace), bicycle verification (BikeIndex, 529 Garage), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
+        content="IMEI verification (GSMA TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (HotGunz stolen-firearms registry), bicycle verification (BikeIndex, 529 Garage), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
       />
 
       {/* ─── Authoritativeness ──────────────────────── */}
@@ -73,7 +73,7 @@ export const EEATSignals = () => {
       {/* ─── Legal & Compliance Authority ────────────── */}
       <meta
         name="legal-authority"
-        content="SafeOrStolen verification supports compliance with: 18 U.S.C. § 922 (firearms commerce), 18 U.S.C. § 2315 (interstate transport of stolen goods), state pawn broker compliance requirements, marketplace due diligence obligations"
+ content="SafeOrStolen verification supports compliance with: 18 U.S.C. § 922 (firearms commerce), 18 U.S.C. § 2315 (interstate transport of stolen goods), state pawn broker compliance requirements, marketplace due diligence obligations"
       />
 
       {/* ─── Unique Features ─────────────────────────── */}

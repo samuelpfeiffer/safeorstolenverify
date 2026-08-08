@@ -4,7 +4,7 @@
   "name": "SafeOrStolen AI",
   "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "SOS", "SafeOrStolen AI Verification"],
   "url": "https://safeorstolen.com",
-  "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
+ "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
   "applicationCategory": "UtilitiesApplication",
   "applicationSubCategory": "AI Verification & Consumer Protection",
   "operatingSystem": "iOS, Android, Web",
@@ -55,7 +55,7 @@
   "featureList": [
     "IMEI phone verification against GSMA Device Registry and carrier blacklists (AT&T, Verizon, T-Mobile)",
     "VIN vehicle theft status verification via NICB and NHTSA",
-    "Firearm serial number verification via ATF, FBI NCIC (7M+ stolen firearms), HotGunz (32,000+), all 50 state police databases",
+    "Firearm serial number verification via the HotGunz national stolen-firearms registry (~32,000 records) plus serial number integrity validation (not a federal database check)",
     "Bicycle serial number verification via BikeIndex (700K+ registered bikes)",
     "Electronics and laptop serial number checks",
     "License plate lookup for all 50 US states",

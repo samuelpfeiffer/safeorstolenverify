@@ -59,7 +59,7 @@ export const VIDEO_UNIQUE_CONTENT: Record<string, VideoUniqueContent> = {
       { question: 'Is the stolen item check really free?', answer: 'Yes! You get 2 free searches with no credit card required. After that, we offer affordable single checks or subscription plans for frequent buyers. Pawnshops and businesses get volume pricing.' },
       { question: 'What happens if I already bought a stolen item?', answer: 'Unfortunately, if law enforcement identifies your purchase as stolen property, they will confiscate it and return it to the rightful owner. You receive no compensation—the only recourse is against the seller (if you can find them). This is why verification BEFORE purchase is essential.' },
       { question: 'Can sellers use SafeOrStolen too?', answer: 'Absolutely! Sellers can run verification on their own items before listing, then share the verification certificate with potential buyers. This builds instant trust and often helps items sell faster and at better prices.' },
-      { question: 'What items can I check with SafeOrStolen?', answer: 'We verify phones (via IMEI), vehicles (via VIN or license plate), bikes, electronics, tools, jewelry, firearms, and anything with a serial number. If it has an identifier, we can likely check it.' }
+ { question: 'What items can I check with SafeOrStolen?', answer: 'We verify phones (via IMEI), vehicles (via VIN or license plate), bikes, electronics, tools, jewelry, firearms, and anything with a serial number. If it has an identifier, we can likely check it.' }
     ],
     ctaText: 'Start your free stolen item check now and protect yourself from the $13 billion stolen goods problem.',
     keyStatistics: [

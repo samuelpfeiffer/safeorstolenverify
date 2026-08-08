@@ -45,7 +45,7 @@ const ForConsumersPage = () => {
     },
     {
       question: "What items can I verify with SafeOrStolen?",
-      answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including FBI NCIC, GSMA, NICB, carrier blacklists, and all 50 state law enforcement systems."
+ answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including FBI NCIC, GSMA, NICB, carrier blacklists, and all 50 state law enforcement systems."
     },
     {
       question: "Is there a SafeOrStolen mobile app?",

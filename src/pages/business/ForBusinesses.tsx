@@ -88,7 +88,7 @@ export default function ForBusinesses() {
     },
     {
       question: 'What databases does SafeOrStolen check for business verifications?',
-      answer: 'SafeOrStolen checks 100+ databases simultaneously including FBI NCIC (National Crime Information Center), NICB (National Insurance Crime Bureau for stolen vehicles), GSMA TAC (phone blacklists covering AT&T, Verizon, T-Mobile), ATF eTrace (firearms), all 50 state DMV and law enforcement databases, insurance claim databases, and carrier blacklists. Results are returned in under 3 seconds.'
+ answer: 'SafeOrStolen checks 100+ databases simultaneously including FBI NCIC (National Crime Information Center), NICB (National Insurance Crime Bureau for stolen vehicles), GSMA TAC (phone blacklists covering AT&T, Verizon, T-Mobile), all 50 state DMV and law enforcement databases, insurance claim databases, and carrier blacklists. Results are returned in under 3 seconds.'
     },
     {
       question: 'Does SafeOrStolen meet legal compliance requirements for pawn shops?',

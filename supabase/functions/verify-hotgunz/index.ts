@@ -187,10 +187,11 @@ serve(async (req) => {
           lastUpdated: 'Daily updates'
         },
         additionalChecks: [
-          'ATF Pattern Analysis',
-          'Serial Number Format Validation',
-          'Cross-reference with public registries'
-        ]
+          'Serial Number Integrity Check (obliterated/altered pattern detection)',
+          'Serial Number Format Validation'
+        ],
+        disclosure: 'Source: HotGunz national stolen-firearms registry (~32,000 records). This is not a federal database check.',
+        definitiveCheck: 'For a definitive check, contact your local police non-emergency line and ask them to run the serial through NCIC. This is the only database containing all reported stolen firearms, and it is restricted to law enforcement.'
       },
       responseTime: Date.now() - startTime
     };
@@ -282,5 +283,5 @@ function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspic
     return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in the HotGunz stolen firearms registry. Always verify with local law enforcement.';
   }
   
-  return '⚠️ UNVERIFIED: Unable to complete firearm verification. Check with local law enforcement and FFL dealer.';
+  return '⚠️ Could not reach the stolen firearms registry right now. This is NOT a clean result. Contact your local police non-emergency line to have the serial checked before purchasing.';
 }

@@ -19,8 +19,8 @@ const FAQ_ITEMS = [
     answer: "Vehicle VIN checks query the FBI NCIC (National Crime Information Center) stolen vehicle file, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), all 50 state DMV databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
   },
   {
-    question: "Does SafeOrStolen check the ATF database for firearm serial numbers?",
-    answer: "Yes. Firearm serial number verification queries the FBI NCIC stolen firearm file, ATF eTrace system (when legally accessible), all 50 state law enforcement stolen property databases, HotGunz (32,000+ user-reported stolen firearms), and insurance claim databases. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
+ question: "Does SafeOrStolen check the HotGunz national stolen-firearms registry for firearm serial numbers?",
+    answer: "Yes. Firearm serial number verification checks the HotGunz national stolen-firearms registry (~32,000 user-reported stolen firearms) and validates serial number integrity. It is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
   },
   {
     question: "How often are the databases updated?",
@@ -52,8 +52,8 @@ const DATA_CATEGORIES = [
         link: "/blog/how-to-check-if-phone-stolen"
       },
       {
-        name: "ATF eTrace — Bureau of Alcohol, Tobacco, Firearms",
-        detail: "Used for firearm serial number tracing. ATF eTrace is the primary system for tracking the chain of commerce for recovered crime guns. Critical for private firearm sales verification.",
+        name: "HotGunz — National Stolen-Firearms Registry",
+        detail: "Community-maintained registry of roughly 32,000 stolen firearms reported directly by theft victims. This is the source we check for firearms; federal systems (NCIC, ATF eTrace) are restricted to law enforcement and cannot be queried by any consumer service.",
         link: "/firearms-check"
       },
       {
