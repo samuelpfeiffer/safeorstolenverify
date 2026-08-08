@@ -53,12 +53,12 @@ const PARTNERS = [
     stat: 'All 50 states',
   },
   {
-    name: 'ATF eTrace',
+    name: 'HotGunz',
     category: 'Firearms',
-    type: 'government',
-    detail: 'Bureau of Alcohol, Tobacco, Firearms and Explosives — official U.S. firearm tracing system.',
+    type: 'community',
+    detail: 'National stolen-firearms registry of victim-reported guns. Federal systems (NCIC, ATF eTrace) are law-enforcement only and are not queried.',
     link: '/firearms-check',
-    stat: '250M+ records',
+    stat: '32,000+ records',
   },
   {
     name: 'CTIA / Carriers',

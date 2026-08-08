@@ -118,10 +118,9 @@ const HotGunzDatabaseGuide = () => {
             <ul className="space-y-3">
               {[
                 { name: 'HotGunz', desc: '32,000+ community-reported stolen firearms' },
-                { name: 'FBI NCIC', desc: '7,000,000+ law enforcement-reported stolen firearms — 200x more than HotGunz' },
-                { name: 'ATF eTrace', desc: 'Federal firearms trace data from criminal investigations' },
-                { name: '50 State Databases', desc: 'State law enforcement stolen property records — includes firearms reported locally but not yet in NCIC' },
-                { name: 'Insurance Claims', desc: 'Theft claims from firearms insurers and homeowner policies' },
+                { name: 'Serial integrity analysis', desc: 'Automated detection of altered, obliterated, or malformed serial numbers' },
+                { name: 'FBI NCIC (not available to us)', desc: '7,000,000+ law enforcement-reported stolen firearms — restricted to law enforcement, so ask local police to run the serial' },
+                { name: 'ATF eTrace (not available to us)', desc: 'Federal firearms trace data — restricted to law enforcement and licensed dealers' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

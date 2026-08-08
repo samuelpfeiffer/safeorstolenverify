@@ -30,7 +30,7 @@ const FirearmSerialCheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Firearm Serial Number Verification?"
-      whatIsContent="Every firearm manufactured after 1968 has a unique serial number. When stolen, firearms are reported to the ATF's National Crime Information Center (NCIC) database. Law enforcement traces firearms by serial number. Buying a stolen firearm, even unknowingly, can result in federal charges. Our verification checks available databases to help you avoid purchasing stolen firearms."
+      whatIsContent="Every firearm manufactured after 1968 has a unique serial number. When stolen, firearms are reported by police to the FBI's National Crime Information Center (NCIC), which is restricted to law enforcement and cannot be queried by us or any other consumer service. Buying a stolen firearm, even unknowingly, can result in federal charges. Our check queries the HotGunz national stolen-firearms registry (32,000+ victim-reported records) and analyzes the serial number for signs of alteration or obliteration. For a definitive check, ask local police to run the serial through NCIC."
       howItWorksSteps={[
         "Find the serial number: Usually on the frame/receiver, often on the right side or under the barrel",
         "Enter the serial number into our free verification tool",

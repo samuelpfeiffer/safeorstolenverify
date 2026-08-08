@@ -424,7 +424,7 @@ export default function ForSellers() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl font-black mb-8">Trusted Data Sources</h2>
             <div className="flex flex-wrap justify-center gap-4">
-              {['FBI NCIC', 'GSMA', 'NICB', 'ATF eTrace', 'BikeIndex', 'HotGunz', '50 State Police', 'Carrier Blacklists'].map(src => (
+              {['FBI NCIC', 'GSMA', 'NICB', 'BikeIndex', 'HotGunz', '50 State Police', 'Carrier Blacklists'].map(src => (
                 <div key={src} className="px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium text-foreground">{src}</div>
               ))}
             </div>

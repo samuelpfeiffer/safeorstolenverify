@@ -80,7 +80,7 @@ export const PressMediaSection = () => {
       icon: Shield,
       label: '100+ Databases',
       description: 'Law enforcement, insurance & carrier sources',
-      detail: 'More data sources than any competitor — including FBI, ATF, NICB, GSMA, all 50 state police databases, and 200+ carrier blacklists.',
+      detail: 'More data sources than any competitor — including FBI, NICB, GSMA, HotGunz, all 50 state police databases, and 200+ carrier blacklists.',
       link: '/data-sources',
     },
     {
