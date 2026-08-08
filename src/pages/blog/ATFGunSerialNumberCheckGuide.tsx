@@ -172,7 +172,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I verify a firearm online for free?</summary>
-                <p className="text-muted-foreground mt-2">Use SafeOrStolen.com — enter the serial number and get results from ATF, NCIC, HotGunz, and 50 state databases in 3 seconds. 2 free checks, no credit card.</p>
+                <p className="text-muted-foreground mt-2">Enter the serial at SafeOrStolen.com. We check the HotGunz national stolen-firearms registry (32,000+ records) and analyze the serial for alteration or obliteration, in about 3 seconds. 2 free checks, no credit card.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Does ATF keep a national gun registry?</summary>
