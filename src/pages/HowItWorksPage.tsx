@@ -178,7 +178,7 @@ const HowItWorksPage = () => {
                 icon="🛡️"
               />
               <DataSourceCard
-                title="Hotgunz.com"
+                title="the national stolen firearm registry"
                 description="Stolen firearms registry - firearms verification partner"
                 icon="🔫"
               />

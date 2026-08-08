@@ -57,7 +57,7 @@ const GunSerialNumberLookupPage = () => {
           },
           {
             question: "What databases are searched in a gun serial lookup?",
- answer: "We search the stolen firearm reports from all 50 states and validate the serial number for signs of obliteration or alteration. This is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC."
+ answer: "We search stolen firearm reports from all 50 states and validate the serial number for signs of obliteration or alteration. This is not a federal database check — NCIC and ATF eTrace are restricted to law enforcement. For a definitive check, ask your local police non-emergency line to run the serial through NCIC."
           },
           {
             question: "Can I look up a gun serial number before a gun show?",

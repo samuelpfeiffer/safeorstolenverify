@@ -14,7 +14,7 @@ const StolenGunDatabasePage = () => {
         'check gun stolen database',
         'ncic gun search',
         'atf stolen guns',
-        'hotgunz alternative',
+        '50-state firearm theft reports alternative',
         'firearm database check'
       ]}
       content={{

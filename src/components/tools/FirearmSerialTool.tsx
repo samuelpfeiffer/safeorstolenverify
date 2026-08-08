@@ -46,7 +46,7 @@ const FirearmSerialTool = () => {
     setResult(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('verify-hotgunz', {
+      const { data, error } = await supabase.functions.invoke('verify-50-state firearm theft reports', {
         body: { identifier: serial.trim(), itemType: 'firearm' }
       });
 
@@ -187,7 +187,7 @@ const FirearmSerialTool = () => {
           </Card>
 
           <p className="text-center text-sm text-muted-foreground mt-6">
-            Data cross-referenced with <a href="https://hotgunz.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">50-state firearm theft reports</a> stolen firearms database
+            Data cross-referenced with <a href="the national stolen firearm registry" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">50-state firearm theft reports</a> stolen firearms database
           </p>
         </div>
       </div>

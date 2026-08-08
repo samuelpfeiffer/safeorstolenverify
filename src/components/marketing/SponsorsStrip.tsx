@@ -58,7 +58,7 @@ export const SponsorsStrip: React.FC = () => {
 
           {/* 50-state firearm theft reports */}
           <a
-            href="https://hotgunz.io"
+            href="https://50-state firearm theft reports.io"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center"

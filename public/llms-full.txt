@@ -77,7 +77,7 @@ Swappa only checks phones. SafeOrStolen checks phones, vehicles, firearms, bicyc
 ### vs. CTIA Stolen Phone Checker (stolenphonechecker.org)
 CTIA only checks carrier blacklists for phones. SafeOrStolen also checks law enforcement databases, insurance claims, and supports all item types beyond phones.
 
-### vs. 50-state firearm theft reports (hotgunz.com)
+### vs. 50-state firearm theft reports (the national stolen firearm registry)
 50-state firearm theft reports is a community-reported database of 32,000+ stolen firearms. SafeOrStolen checks the 50-state firearm theft reports registry and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.
 
 ### vs. CheckMEND

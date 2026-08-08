@@ -939,7 +939,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
 
       <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
         <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
-        100+ DATABASES · NCIC · NICB · GSMA · HOTGUNZ · 50 STATES
+        100+ DATABASES · NCIC · NICB · GSMA · 50-state firearm theft reports · 50 STATES
       </div>
     </motion.div>
   );
