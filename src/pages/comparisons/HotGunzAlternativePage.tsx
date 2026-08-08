@@ -25,7 +25,7 @@ const HotGunzAlternativePage = () => {
           "name": "What's better than HotGunz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen searches HotGunz data PLUS NCIC, ATF, state databases, and 100+ other sources. Plus we have a mobile app - HotGunz doesn't."
+            "text": "SafeOrStolen searches the same HotGunz national stolen-firearms registry and adds serial number integrity analysis, five other item categories (phones, vehicles, plates, serial numbers, bicycles), AI listing analysis, and a mobile app."
           }
         },
         {
@@ -82,8 +82,10 @@ const HotGunzAlternativePage = () => {
             <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
               <p className="font-bold mb-2">SafeOrStolen includes HotGunz data</p>
               <p className="text-muted-foreground">
-                When you search SafeOrStolen, we query HotGunz along with NCIC, ATF, state databases, 
-                and 100+ other sources. You get HotGunz coverage PLUS comprehensive verification.
+                When you search a firearm serial on SafeOrStolen, we query the HotGunz national
+                stolen-firearms registry and analyze the serial for signs of alteration or obliteration.
+                Federal systems (FBI NCIC, ATF eTrace) are restricted to law enforcement and are not
+                checked by us or by any other consumer service.
               </p>
             </div>
           </div>
@@ -114,24 +116,19 @@ const HotGunzAlternativePage = () => {
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border">
-                    <td className="p-4">FBI NCIC</td>
+                    <td className="p-4">Serial integrity analysis (altered/obliterated)</td>
                     <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">ATF Database</td>
+                    <td className="p-4">FBI NCIC / ATF eTrace (law enforcement only)</td>
                     <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
-                    <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
+                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border">
-                    <td className="p-4">State Databases (TheftAZ, etc.)</td>
+                    <td className="p-4">Other item types (phones, vehicles, plates, serials, bikes)</td>
                     <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
-                  </tr>
-                  <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">Total Databases</td>
-                    <td className="p-4 text-center">1</td>
-                    <td className="p-4 text-center text-primary font-bold">100+</td>
                   </tr>
                   <tr className="border-t border-border">
                     <td className="p-4">Mobile App</td>
@@ -157,26 +154,27 @@ const HotGunzAlternativePage = () => {
         {/* Why More Databases Matter */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Why 100+ Databases Matter</h2>
+            <h2 className="text-3xl font-bold mb-6">Why One Registry Is Never Enough</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              A stolen gun might be reported to police (NCIC) but not HotGunz. Or it might be in TheftAZ 
-              but not NCIC yet. Searching only one database leaves gaps.
+              A stolen gun might be reported to police but never submitted to a public registry like
+              HotGunz. Public sources only contain what victims and departments choose to share, so a
+              clean result narrows the risk — it does not clear the firearm.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-background rounded-lg">
                 <Database className="w-10 h-10 text-primary mb-4" />
-                <h3 className="font-bold mb-2">HotGunz Only</h3>
-                <p className="text-muted-foreground text-sm">32,000 user-reported guns. Good start, but limited to voluntary reports.</p>
+                <h3 className="font-bold mb-2">HotGunz registry</h3>
+                <p className="text-muted-foreground text-sm">32,000+ victim-reported guns nationwide. A valuable public source, limited to voluntary reports.</p>
               </div>
               <div className="p-6 bg-background rounded-lg border-2 border-primary">
                 <Database className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">SafeOrStolen</h3>
-                <p className="text-muted-foreground text-sm">HotGunz + NCIC (7M+ records) + ATF + State DBs + Insurance = Maximum coverage</p>
+                <p className="text-muted-foreground text-sm">The HotGunz registry plus serial integrity analysis, six item categories, and a mobile app.</p>
               </div>
               <div className="p-6 bg-background rounded-lg">
                 <Shield className="w-10 h-10 text-primary mb-4" />
-                <h3 className="font-bold mb-2">Better Protection</h3>
-                <p className="text-muted-foreground text-sm">More databases = higher chance of catching stolen firearms</p>
+                <h3 className="font-bold mb-2">Finish the check</h3>
+                <p className="text-muted-foreground text-sm">For certainty, ask local police to run the serial through NCIC before you buy.</p>
               </div>
             </div>
           </div>
