@@ -53,7 +53,7 @@ const ATFGunSerialNumberCheckGuide = () => {
     <>
       <PageSEO
         title="ATF Gun Serial Number Check — How to Verify Firearms Online (2026) | SafeOrStolen"
- description="Can't access the HotGunz national stolen-firearms registry directly? SafeOrStolen checks the HotGunz national stolen-firearms registry trace data, the HotGunz national stolen-firearms registry for any firearm serial number. Free instant results."
+ description="ATF eTrace and FBI NCIC are restricted to law enforcement. Here's what a civilian can actually check: the HotGunz national stolen-firearms registry plus serial integrity analysis."
         canonical="/blog/atf-gun-serial-number-check"
         keywords="ATF gun serial number check, ATF eTrace, verify firearm online, ATF firearms trace, gun serial number lookup ATF"
         structuredData={[faqSchema, articleSchema]}
