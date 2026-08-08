@@ -97,7 +97,7 @@ serve(async (req) => {
           error: validation.error,
           status: 'error',
           confidence: 0,
-          source: 'HotGunz'
+          source: 'Nationwide Stolen Firearms Database'
         }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
@@ -210,7 +210,7 @@ serve(async (req) => {
         success: false,
         status: 'error',
         confidence: 0,
-        source: 'HotGunz',
+        source: 'Nationwide Stolen Firearms Database',
         message: (error instanceof Error ? error.message : String(error)) || 'Firearm verification failed',
         error: (error instanceof Error ? error.message : String(error))
       }),
@@ -272,7 +272,7 @@ function checkATFPatterns(serial: string): { suspicious: boolean; reason?: strin
  */
 function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspicious: boolean; reason?: string }): string {
   if (isStolen) {
-    return '🚨 STOLEN FIREARM: This serial number is registered in the HotGunz stolen firearms database. Do NOT purchase. Contact local law enforcement.';
+    return '🚨 STOLEN FIREARM: This serial number is found in nationwide stolen firearm reports. Do NOT purchase. Contact local law enforcement.';
   }
   
   if (atfCheck.suspicious) {
@@ -280,7 +280,7 @@ function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspic
   }
   
   if (status === 'safe') {
-    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in the HotGunz stolen firearms registry. Always verify with local law enforcement.';
+    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in nationwide stolen firearm reports. Always verify with local law enforcement.';
   }
   
   return '⚠️ Could not reach the stolen firearms registry right now. This is NOT a clean result. Contact your local police non-emergency line to have the serial checked before purchasing.';
