@@ -5,7 +5,7 @@ import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Github, CheckCircle
 const sosLogo = '/sos-logo.png';
 
 const DATA_PARTNERS = [
-  { name: 'NCIC (FBI)', verified: true },
+  { name: 'Stolen property reports from all 50 states', verified: true },
   { name: 'NICB', verified: true },
   { name: 'GSMA', verified: true },
   { name: 'BikeIndex', verified: true },

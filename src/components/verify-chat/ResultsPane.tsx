@@ -20,6 +20,7 @@ import {
   isFirearmItemType,
 } from '@/components/verification/FirearmSourceDisclosure';
 import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
+import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 export type ChatVerifyResult = {
@@ -266,6 +267,15 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
             <FirearmNextSteps className="mt-3" />
           </>
         )}
+
+        {/* Verification record — rendered for every item type */}
+        <VerificationRecord
+          identifier={current.identifier}
+          itemType={current.itemType}
+          status={current.status}
+          referenceId={(current as { id?: string }).id ?? null}
+          timestamp={current.timestamp ?? null}
+        />
 
         {/* Sources */}
         {current.sources && current.sources.length > 0 && (

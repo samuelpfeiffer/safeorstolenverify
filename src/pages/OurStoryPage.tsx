@@ -137,7 +137,7 @@ const sections: Section[] = [
         </p>
         <p>
           The platform is real. Users scan IMEI numbers, VIN numbers, serial numbers, and license
-          plates to check items against over 100 databases — including NCIC stolen property files,
+          plates to check items against over 100 databases — including stolen property reports from all 50 statess,
           the GSMA Device Registry, insurance claims, and police reports — covering smartphones,
           laptops, vehicles, firearms, bicycles, jewelry, and electronics. The system returns a
           result in seconds. Safe or Stolen. That simple.

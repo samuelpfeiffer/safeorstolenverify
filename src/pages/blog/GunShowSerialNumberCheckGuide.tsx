@@ -13,7 +13,7 @@ const GunShowSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check a gun serial number at a gun show?",
- "acceptedAnswer": { "@type": "Answer", "text": "Open SafeOrStolen.com on your phone, enter the serial number engraved on the firearm, and get results in 3 seconds. SafeOrStolen checks the HotGunz national stolen-firearms registry, and all the HotGunz national stolen-firearms registry. Works on any mobile device with internet access. 2 free checks, no app download required." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Open SafeOrStolen.com on your phone, enter the serial number engraved on the firearm, and get results in 3 seconds. SafeOrStolen checks the  national stolen-firearms registry, and all the  national stolen-firearms registry. Works on any mobile device with internet access. 2 free checks, no app download required." }
       },
       {
         "@type": "Question",
@@ -53,7 +53,7 @@ const GunShowSerialNumberCheckGuide = () => {
     <>
       <PageSEO
         title="How to Check a Gun Serial Number at a Gun Show (2026) | SafeOrStolen"
-        description="Step-by-step guide to verifying firearm serial numbers at gun shows using your phone. Check the HotGunz stolen-firearms registry in 3 seconds. Red flags to watch for. Free tool included."
+        description="Step-by-step guide to verifying firearm serial numbers at gun shows using your phone. Check the  stolen-firearms registry in 3 seconds. Red flags to watch for. Free tool included."
         canonical="/blog/gun-show-serial-number-check"
         keywords="gun show serial number check, check gun at gun show, verify firearm gun show, gun show stolen check"
         structuredData={[faqSchema, articleSchema]}
@@ -169,7 +169,7 @@ const GunShowSerialNumberCheckGuide = () => {
             <div className="flex flex-wrap gap-3">
               <Link to="/blog/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to Check if a Gun is Stolen</Link>
               <Link to="/blog/atf-gun-serial-number-check" className="text-primary hover:underline font-medium">ATF Serial Number Check</Link>
-              <Link to="/blog/hotgunz-database-guide" className="text-primary hover:underline font-medium">HotGunz Database Guide</Link>
+              <Link to="/blog/hotgunz-database-guide" className="text-primary hover:underline font-medium"> Database Guide</Link>
               <Link to="/blog/state-stolen-gun-database-guide" className="text-primary hover:underline font-medium">State-by-State Guide</Link>
               <Link to="/firearms-check" className="text-primary hover:underline font-medium">Free Gun Lookup Tool</Link>
             </div>

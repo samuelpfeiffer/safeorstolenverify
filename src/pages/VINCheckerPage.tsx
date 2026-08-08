@@ -4,7 +4,7 @@ const VINCheckerPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Free Stolen Vehicle VIN Check — Is This Car Stolen? | SafeOrStolen"
-      metaDescription="Free VIN check for stolen vehicles. Search NICB, FBI NCIC, all 50 state DMV records, insurance claims, and salvage databases. Better than Carfax for theft detection. Instant results."
+      metaDescription="Free VIN check for stolen vehicles. Search NICB, stolen property reports from all 50 states, all 50 state DMV records, insurance claims, and salvage databases. Better than Carfax for theft detection. Instant results."
       h1="Free Stolen Vehicle VIN Check"
       itemType="Vehicle"
       keywords={[

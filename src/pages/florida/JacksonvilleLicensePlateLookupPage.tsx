@@ -13,7 +13,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
       {
         "@type": "Question",
         "name": "How do I check if a car is stolen in Jacksonville, FL?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We search FLHSMV, NICB, FBI NCIC, Jacksonville Sheriff's Office (JSO) records, and insurance databases. Results in 3 seconds. 2 free checks, no credit card." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We search FLHSMV, NICB, stolen property reports from all 50 states, Jacksonville Sheriff's Office (JSO) records, and insurance databases. Results in 3 seconds. 2 free checks, no credit card." }
       },
       {
         "@type": "Question",
@@ -23,7 +23,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
       {
         "@type": "Question",
         "name": "Does SafeOrStolen check Jacksonville Sheriff's Office records?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen's verification engine searches JSO stolen vehicle reports as part of our Florida law enforcement database queries, alongside FLHSMV, NICB, and FBI NCIC records." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen's verification engine searches JSO stolen vehicle reports as part of our Florida law enforcement database queries, alongside FLHSMV, NICB, and stolen property reports from all 50 states." }
       },
       {
         "@type": "Question",
@@ -50,7 +50,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-black mb-4">Free Jacksonville License Plate Lookup</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Verify any vehicle in Jacksonville, Florida against FLHSMV, NICB, FBI NCIC, Jacksonville Sheriff's Office (JSO), and insurance databases. Free instant results in 3 seconds.
+              Verify any vehicle in Jacksonville, Florida against FLHSMV, NICB, stolen property reports from all 50 states, Jacksonville Sheriff's Office (JSO), and insurance databases. Free instant results in 3 seconds.
             </p>
           </div>
         </header>
@@ -87,7 +87,6 @@ const JacksonvilleLicensePlateLookupPage = () => {
                 { name: 'FLHSMV Records', desc: 'Florida registration database for Duval County vehicles' },
                 { name: 'JSO Records', desc: 'Jacksonville Sheriff\'s Office stolen vehicle reports' },
                 { name: 'NICB VINCheck', desc: 'National Insurance Crime Bureau theft and total loss records' },
-                { name: desc: 'National Crime Information Center — catches vehicles stolen in other states' },
                 { name: 'I-95 Corridor Data', desc: 'Cross-state stolen vehicle alerts from the I-95 trafficking corridor' },
                 { name: 'Insurance & Salvage', desc: 'Theft claims and flood/salvage titles from Florida hurricanes' },
               ].map(db => (
@@ -104,7 +103,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Jacksonville, FL?</summary>
-                <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We search FLHSMV, NICB, FBI NCIC, Jacksonville Sheriff's Office (JSO) records, and insurance databases. Results in 3 seconds. 2 free checks, no credit card.</p>
+                <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We search FLHSMV, NICB, stolen property reports from all 50 states, Jacksonville Sheriff's Office (JSO) records, and insurance databases. Results in 3 seconds. 2 free checks, no credit card.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What makes Jacksonville a high-risk area for vehicle theft?</summary>
@@ -112,7 +111,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Does SafeOrStolen check Jacksonville Sheriff's Office records?</summary>
-                <p className="text-muted-foreground mt-2">Yes. SafeOrStolen's verification engine searches JSO stolen vehicle reports as part of our Florida law enforcement database queries, alongside FLHSMV, NICB, and FBI NCIC records.</p>
+                <p className="text-muted-foreground mt-2">Yes. SafeOrStolen's verification engine searches JSO stolen vehicle reports as part of our Florida law enforcement database queries, alongside FLHSMV, NICB, and stolen property reports from all 50 states.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup enough or should I also check the VIN?</summary>

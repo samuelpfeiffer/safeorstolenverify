@@ -63,7 +63,7 @@ const MobileAppPage = () => {
     { icon: WifiOff, title: "Offline Mode", desc: "Access recent verifications without internet at marketplace meetups" },
     { icon: Zap, title: "3-Second Results", desc: "Instant verification against 100+ stolen item databases" },
     { icon: Shield, title: "All Item Types", desc: "Phones, vehicles, electronics, firearms, bikes, boats & more" },
-    { icon: Globe, title: "US-Optimized", desc: "FBI NCIC, NICB, and all 50 state law enforcement databases" },
+    { icon: Globe, title: "US-Optimized", desc: "Stolen property reports from all 50 states, NICB, and all 50 state law enforcement databases" },
     { icon: Clock, title: "24/7 Access", desc: "Verify anytime, anywhere—works like a native app" },
   ];
 

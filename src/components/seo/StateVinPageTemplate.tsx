@@ -147,7 +147,7 @@ export const StateVinPageTemplate = ({
                 <li>NMVTIS (National Motor Vehicle Title Information System) - title history</li>
                 <li>{state} DMV records - registration and title status</li>
                 <li>{state} law enforcement - active stolen vehicle reports</li>
-                <li>FBI NCIC - federal stolen vehicle database</li>
+                <li>Stolen property reports from all 50 states - federal stolen vehicle database</li>
                 <li>Insurance claims records across all 50 states</li>
               </ul>
               
@@ -359,7 +359,6 @@ export const StateVinPageTemplate = ({
                   { name: 'NMVTIS', desc: 'National Motor Vehicle Title Information System' },
                   { name: `${state} DMV`, desc: 'Registration and title status records' },
                   { name: `${state} Law Enforcement`, desc: 'Active stolen vehicle reports' },
-                  { name: desc: 'Federal stolen vehicle database' },
                   { name: 'Insurance Records', desc: 'Claims history across all 50 states' },
                 ].map((db, idx) => (
                   <div key={idx} className="flex gap-3 p-4 bg-card rounded-lg">

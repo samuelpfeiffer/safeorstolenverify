@@ -33,7 +33,7 @@ const BicycleStolenSerialNumberCheck = () => {
     },
     {
       question: "What databases track stolen bikes?",
-      answer: "Major databases include BikeIndex (largest with 1M+ bikes), 529 Garage, Project 529, and police department databases. SafeOrStolen checks multiple sources."
+      answer: "Major databases include BikeIndex (largest with 1M+ bikes), and police department databases. SafeOrStolen checks multiple sources."
     },
     {
       question: "Can I verify an e-bike serial number?",

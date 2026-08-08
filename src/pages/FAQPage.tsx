@@ -30,11 +30,11 @@ const FAQPage = () => {
         },
         {
           question: "How accurate is SafeOrStolen.com's verification process?",
-          answer: "Our verification system maintains a 99.7% accuracy rate, verified through independent third-party audits. We cross-reference multiple law enforcement databases including NCIC, FBI databases, and international stolen property registries to ensure comprehensive coverage."
+          answer: "Our verification system maintains a 99.7% accuracy rate, verified through independent third-party audits. We cross-reference multiple law enforcement databases including stolen property reports from all 50 states, FBI databases, and international stolen property registries to ensure comprehensive coverage."
         },
         {
           question: "What databases do you search when checking items?",
-          answer: "We search the National Crime Information Center (NCIC), FBI's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional law enforcement databases across North America and internationally."
+          answer: "We search the National Crime Information Center (stolen property reports from all 50 states), FBI's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional law enforcement databases across North America and internationally."
         },
         {
           question: "How long does a verification check take?",

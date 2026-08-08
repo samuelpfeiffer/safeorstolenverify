@@ -95,13 +95,13 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="bg-card border rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <CheckCircle className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold text-foreground">FBI NCIC (National Crime Information Center)</h3>
+                  <h3 className="text-xl font-semibold text-foreground">Stolen property reports from all 50 states</h3>
                 </div>
                 <p className="text-muted-foreground mb-2">
                   <strong>Credibility: Highest (100%)</strong>
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  The FBI's NCIC database contains records of stolen vehicles, firearms, boats, and other serialized 
+                  The FBI's stolen property reports from all 50 states contains records of stolen vehicles, firearms, boats, and other serialized 
                   property reported to any U.S. law enforcement agency. Updated in real-time across all 50 states and 
                   territories, this is the gold standard for stolen property verification.
                 </p>
@@ -141,7 +141,7 @@ export default function DataSourceCredibilityStolenGoods() {
                 </p>
                 <p className="text-muted-foreground mb-3">
                   Individual police departments maintain local stolen property databases that may include items not 
-                  yet uploaded to NCIC or state databases. These are particularly valuable for recent thefts (within 
+                  yet uploaded to stolen property reports from all 50 states or state databases. These are particularly valuable for recent thefts (within 
                   24 hours) and smaller items like electronics, bikes, and jewelry.
                 </p>
                 <p className="text-muted-foreground">
@@ -260,7 +260,7 @@ export default function DataSourceCredibilityStolenGoods() {
               Our verification process includes:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li><strong>Real-time NCIC access</strong> for vehicles and firearms through authorized law enforcement partnerships</li>
+              <li><strong>Real-time stolen property reports from all 50 states</strong> for vehicles and firearms through authorized law enforcement partnerships</li>
               <li><strong>GSMA IMEI blacklist</strong> covering all major U.S. and global carriers</li>
               <li><strong>State DMV databases</strong> for all 50 states via NMVTIS integration</li>
               <li><strong>Manufacturer databases</strong> including Apple, Samsung, Microsoft activation lock status</li>
@@ -280,7 +280,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">What data sources do they access?</h3>
                 <p className="text-muted-foreground">
-                  Demand specifics. "50+ databases" is meaningless without naming them. Do they have NCIC access? 
+                  Demand specifics. "50+ databases" is meaningless without naming them. Do they have stolen property reports from all 50 states? 
                   GSMA? State DMVs? If they can't or won't tell you, assume limited coverage.
                 </p>
               </div>
@@ -294,7 +294,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">Do they have law enforcement partnerships?</h3>
                 <p className="text-muted-foreground">
-                  Access to NCIC and state databases requires legal authorization. If a service doesn't mention law 
+                  Access to stolen property reports from all 50 states and state databases requires legal authorization. If a service doesn't mention law 
                   enforcement partnerships, they likely don't have Tier 1 access.
                 </p>
               </div>
@@ -328,7 +328,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <Database className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify with Law Enforcement-Grade Data</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks 50+ authoritative databases including FBI NCIC, GSMA, and all 50 state DMVs. 
+                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, GSMA, and all 50 state DMVs. 
                 Free verification available.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">

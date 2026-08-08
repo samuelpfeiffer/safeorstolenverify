@@ -37,7 +37,7 @@ const sectionLabels: Record<string, string> = {
   'checkmend': '4. CheckMEND',
   'swappa': '5. Swappa',
   'nicb-vincheck': '6. NICB VINCheck',
-  'hotgunz': '7. HotGunz',
+  'hotgunz': '7. ',
   'local-police': '8. Local Police',
   'bikeindex': '9. BikeIndex',
   'ebay-verification': '10. eBay Verification',
@@ -74,11 +74,11 @@ const TopStolenItemCheckers = () => {
   const faqs = [
     {
       question: "What is the most comprehensive stolen item checker?",
-      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and HotGunz only checks firearms. SafeOrStolen is the only service that covers all categories in one platform with a mobile app."
+      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. SafeOrStolen is the only service that covers all categories in one platform with a mobile app."
     },
     {
       question: "Are free stolen item checkers reliable?",
-      answer: "Free services like IMEI.info, NICB VINCheck, and HotGunz are reliable within their limitations. IMEI.info checks carrier blacklists for phones but doesn't access police databases. NICB VINCheck only checks insurance theft claims for vehicles. HotGunz relies on community-reported stolen guns (approximately 32,000 entries) versus the 7+ million records in FBI NCIC. Free tools are a good starting point, but paid services like SafeOrStolen search significantly more databases for higher accuracy."
+      answer: "Free services like IMEI.info, NICB VINCheck, and  are reliable within their limitations. IMEI.info checks carrier blacklists for phones but doesn't access police databases. NICB VINCheck only checks insurance theft claims for vehicles.  relies on community-reported stolen guns (approximately 32,000 entries) versus the 7+ million records in stolen property reports from all 50 states. Free tools are a good starting point, but paid services like SafeOrStolen search significantly more databases for higher accuracy."
     },
     {
       question: "How much does Carfax cost compared to SafeOrStolen?",
@@ -101,8 +101,8 @@ const TopStolenItemCheckers = () => {
       answer: "Yes. Receiving stolen property is a crime in all 50 US states. Penalties vary by state and item value but can include felony charges, imprisonment, and fines. Even if you didn't know the item was stolen, you can still face legal consequences — especially if the price was suspiciously low or circumstances were questionable. Checking serial numbers before purchase demonstrates due diligence and provides legal protection."
     },
     {
-      question: "What databases does NCIC check?",
-      answer: "FBI NCIC (National Crime Information Center) is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. NCIC is restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
+      question: "What databases does stolen property reports from all 50 states check?",
+      answer: "Stolen property reports from all 50 states is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. NCIC is restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
     }
   ];
 
@@ -269,7 +269,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Quick VIN check</td>
                     </tr>
                     <tr>
-                      <td className="p-3 font-semibold">HotGunz</td>
+                      <td className="p-3 font-semibold"></td>
                       <td className="p-3">Firearms only</td>
                       <td className="p-3">Community (32K)</td>
                       <td className="p-3">Free unlimited</td>
@@ -279,7 +279,7 @@ const TopStolenItemCheckers = () => {
                     <tr>
                       <td className="p-3 font-semibold">Local Police</td>
                       <td className="p-3">Any item</td>
-                      <td className="p-3">NCIC (official)</td>
+                      <td className="p-3">Stolen property reports from all 50 states (official)</td>
                       <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">High-value items</td>
@@ -316,14 +316,14 @@ const TopStolenItemCheckers = () => {
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold text-sm mb-2">Databases Searched (100+)</h3>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• HotGunz national stolen-firearms registry (32K+ records)</li>
+                    <li>•  national stolen-firearms registry (32K+ records)</li>
                     <li>• NICB (National Insurance Crime Bureau)</li>
                     <li>• GSMA Device Registry (global phone blacklist)</li>
                     <li>• Serial number integrity validation</li>
                     <li>• Community-reported stolen property reports</li>
                     <li>• Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
                     <li>• Insurance company theft claims</li>
-                    <li>• HotGunz (32K+ community-reported guns)</li>
+                    <li>•  (32K+ community-reported guns)</li>
                     <li>• BikeIndex (bicycle theft registry)</li>
                     <li>• Local law enforcement reports</li>
                   </ul>
@@ -510,12 +510,12 @@ const TopStolenItemCheckers = () => {
               </p>
             </section>
 
-            {/* 7. HotGunz */}
+            {/* 7.  */}
             <section id="hotgunz">
-              <h2 className="text-2xl font-bold mb-2">7. HotGunz — Best Free Firearm Serial Lookup</h2>
+              <h2 className="text-2xl font-bold mb-2">7.  — Best Free Firearm Serial Lookup</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">hotgunz.com · Free unlimited · Firearms only</p>
               <p className="text-muted-foreground mb-4">
-                HotGunz is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official law enforcement databases like NCIC.
+                 is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official law enforcement databases like stolen property reports from all 50 states.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -529,7 +529,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> Only 32K entries (vs NCIC's 7M+)</li>
+                    <li><No /> Only 32K entries (vs stolen property reports from all 50 states's 7M+)</li>
                     <li><No /> Community reports only (no police data)</li>
                     <li><No /> Firearms only</li>
                     <li><No /> No app</li>
@@ -546,13 +546,13 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">8. Local Police Department — Most Authoritative</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Your local PD · Free · Any item type</p>
               <p className="text-muted-foreground mb-4">
-                Your local police department can check any serial number against the FBI's NCIC database — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
+                Your local police department can check any serial number against stolen property reports from all 50 states — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Strengths</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><Yes /> Official NCIC access</li>
+                    <li><Yes /> Official stolen property reports from all 50 states</li>
                     <li><Yes /> Free</li>
                     <li><Yes /> Any item type</li>
                     <li><Yes /> Most authoritative source</li>
@@ -648,7 +648,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen</Link> (HotGunz registry + serial integrity check) or HotGunz (free but only 32K community reports). For legal protection, SafeOrStolen's comprehensive search is recommended.</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen</Link> ( registry + serial integrity check) or  (free but only 32K community reports). For legal protection, SafeOrStolen's comprehensive search is recommended.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need multiple item types?</h3>

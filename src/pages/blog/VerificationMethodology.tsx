@@ -90,7 +90,7 @@ export default function VerificationMethodology() {
                     <div>
                       <h3 className="text-2xl font-bold mb-3">1. Law Enforcement Databases (Primary Sources)</h3>
                       <ul className="space-y-2 mb-4">
-                        <li><strong>FBI NCIC (National Crime Information Center):</strong> Federal database of stolen property reports</li>
+                        <li><strong>Stolen property reports from all 50 states:</strong> Federal database of stolen property reports</li>
                         <li><strong>State Police Databases:</strong> Direct access to state-level theft reports in all 50 states</li>
                         <li><strong>Local Police Departments:</strong> 500+ municipal police databases including LAPD, NYPD, Chicago PD</li>
                         <li><strong>International Interpol Database:</strong> Global stolen goods registry for cross-border verification</li>
@@ -180,7 +180,7 @@ export default function VerificationMethodology() {
                       <h3 className="text-2xl font-bold mb-3">6. Specialized Item Registries</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>Bike Index:</strong> 1.2M registered bicycles and theft reports</li>
-                        <li><strong>HotGunz:</strong> National stolen-firearms registry of victim-reported guns</li>
+                        <li><strong>:</strong> National stolen-firearms registry of victim-reported guns</li>
                         <li><strong>Art Loss Register:</strong> Stolen fine art and collectibles (500K items)</li>
                         <li><strong>Stolen Camera Database:</strong> Serial numbers for cameras and lenses</li>
                       </ul>

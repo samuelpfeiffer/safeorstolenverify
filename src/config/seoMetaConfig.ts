@@ -224,8 +224,9 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // FIREARMS CHECK (/firearms-check) - 159 chars
   // ========================================
   '/firearms-check': {
-    title: 'Gun Serial Number Lookup Free - Firearm Serial Check',
- description: 'Free gun serial number lookup to check if firearm is stolen. Check pistol, rifle, shotgun serial numbers against stolen firearm reports from all 50 states. Instant verification.', // 159 chars
+    title: 'Gun Serial Number Check — All 50 States',
+    description: 'Free gun serial number check. Search stolen firearm reports from all 50 states and flag altered or obliterated serials — an ATF-enforced federal violation. Instant results, 2 free checks.',
+
     keywords: 'firearm serial check, stolen gun lookup, stolen gun registry, gun verification',
     canonical: '/firearms-check'
   },

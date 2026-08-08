@@ -64,7 +64,7 @@ const systemComponents: SystemComponent[] = [
     description: 'Firearms verification system'
   },
   {
-    name: 'NCIC Network',
+    name: 'Stolen property reports from all 50 states Network',
     status: 'operational',
     uptime: 99.98,
     responseTime: 1.9,

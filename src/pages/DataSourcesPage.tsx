@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Which law enforcement databases are included in vehicle VIN checks?",
-    answer: "Vehicle VIN checks query the FBI NCIC (National Crime Information Center) stolen vehicle file, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), all 50 state DMV databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+    answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), all 50 state DMV databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
   },
   {
  question: "Does SafeOrStolen check stolen firearm reports from all 50 states for firearm serial numbers?",
@@ -32,7 +32,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Does SafeOrStolen check BikeIndex for stolen bicycles?",
-    answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex.org (the world's largest public bike registry with 120,000+ registered stolen bikes), 529 Garage, Project 529, local law enforcement stolen property databases, and manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
+    answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex.org (the world's largest public bike registry with 120,000+ registered stolen bikes), local law enforcement stolen property databases, and manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
   },
 ];
 
@@ -47,7 +47,7 @@ const DATA_CATEGORIES = [
     description: "SafeOrStolen integrates with the most authoritative law enforcement databases in the United States and internationally. Every search queries these sources simultaneously in real-time.",
     sources: [
       {
-        name: "NCIC — National Crime Information Center",
+        name: "Stolen property reports from all 50 states",
         detail: "FBI's central database for stolen property, vehicles, firearms, and missing persons. The most comprehensive U.S. law enforcement database, containing records from all 50 states, D.C., Puerto Rico, and U.S. territories.",
         link: "/blog/how-to-check-if-phone-stolen"
       },
@@ -69,7 +69,6 @@ const DATA_CATEGORIES = [
     ],
     stats: [
       { value: "50+", label: "State databases" },
-      { value: label: "Federal integration" },
       { value: "Real-time", label: "Data sync" },
     ],
     links: [
@@ -181,7 +180,7 @@ const DATA_CATEGORIES = [
       },
       {
         name: "International Bike Registries",
-        detail: "BikeIndex (120,000+ registered stolen bikes), 529 Garage, Project 529 Shield, and the National Bike Registry. Cross-referenced with police databases in the U.S., Canada, UK, Australia, and Western Europe for imported/exported stolen bicycles.",
+        detail: "BikeIndex (120,000+ registered stolen bikes), and the National Bike Registry. Cross-referenced with police databases in the U.S., Canada, UK, Australia, and Western Europe for imported/exported stolen bicycles.",
         link: "/check-bike"
       },
       {
@@ -330,11 +329,11 @@ export default function DataSourcesPage() {
     <>
       <Helmet>
         <title>Data Sources — 100+ Databases SafeOrStolen Checks | SafeOrStolen</title>
-        <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: FBI NCIC, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
+        <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://safeorstolen.com/data-sources" />
         <meta property="og:title" content="100+ Data Sources SafeOrStolen Checks | SafeOrStolen" />
-        <meta property="og:description" content="We check FBI NCIC, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
+        <meta property="og:description" content="We check stolen property reports from all 50 states, GSMA (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
         <meta property="og:url" content="https://safeorstolen.com/data-sources" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

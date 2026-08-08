@@ -168,7 +168,7 @@ const HowItWorksPage = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
               <DataSourceCard
-                title="NCIC (FBI)"
+                title="Stolen property reports from all 50 states"
                 description="Federal stolen property database - law enforcement partnership"
                 icon="🏛️"
               />

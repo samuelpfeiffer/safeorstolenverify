@@ -18,7 +18,7 @@ const verificationSteps = [
     title: "Multi-Database Query",
     description: "Simultaneous search across verified partner databases",
     icon: Database,
-    details: "NCIC, IMEI.info, Bike Index, 50-State Firearm Reports, and more"
+    details: "Stolen property reports from all 50 states, IMEI.info, Bike Index, 50-State Firearm Reports, and more"
   },
   {
     step: 3,
@@ -140,7 +140,7 @@ export const MethodologyTransparency: React.FC = () => {
                 </h4>
                 <p className="text-sm text-muted-foreground">
                   Every verification clearly shows which official databases were checked, 
-                  including NCIC network access, verified registries, and law enforcement partnerships.
+                  including stolen property reports from all 50 states network access, verified registries, and law enforcement partnerships.
                 </p>
               </div>
               <div>

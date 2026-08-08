@@ -67,7 +67,7 @@ SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.g
 
 ## Carfax Alternative — safeorstolen.com/carfax-alternative
 
-SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $10/month unlimited) using FBI NCIC and state police databases that Carfax doesn't access.
+SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $10/month unlimited) using stolen property reports from all 50 states that Carfax doesn't access.
 
 ## How SafeOrStolen Compares to Other Services
 

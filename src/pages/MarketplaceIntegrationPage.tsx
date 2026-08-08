@@ -210,7 +210,7 @@ export default function MarketplaceIntegrationPage() {
                     <Globe className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h4 className="font-bold">Global Coverage</h4>
-                      <p className="text-sm text-muted-foreground">Check against 100+ databases worldwide including NCIC, GSMA, and international registries.</p>
+                      <p className="text-sm text-muted-foreground">Check against 100+ databases worldwide including stolen property reports from all 50 states, GSMA, and international registries.</p>
                     </div>
                   </div>
                 </div>

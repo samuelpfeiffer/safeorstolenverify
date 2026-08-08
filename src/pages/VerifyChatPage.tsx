@@ -138,15 +138,13 @@ const VerifyChatPage: React.FC = () => {
       setMessages((prev) => [...prev, { ...msg, id }]);
       return id;
     },
-    [setMessages],
-  );
+    [setMessages]);
 
   const updateMessage = useCallback(
     (id: string, patch: Partial<ChatMessage>) => {
       setMessages((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch } : m)));
     },
-    [setMessages],
-  );
+    [setMessages]);
 
   const handleFile = useCallback((file: File) => {
     if (!file.type.startsWith('image/')) {
@@ -171,8 +169,7 @@ const VerifyChatPage: React.FC = () => {
       addResult(r);
       setResultsOpenMobile(true);
     },
-    [addResult],
-  );
+    [addResult]);
 
   const looksLikeIdentifier = useCallback((text: string) => {
     const t = text.trim();
@@ -245,16 +242,14 @@ const VerifyChatPage: React.FC = () => {
         });
       }
     },
-    [messages, currentResult, updateMessage],
-  );
+    [messages, currentResult, updateMessage]);
 
   const runVerification = useCallback(
     async (assistantId: string, identifier: string) => {
       try {
         const { data: detect, error: detectErr } = await supabase.functions.invoke(
           'ai-detect-identifier',
-          { body: { input: identifier } },
-        );
+          { body: { input: identifier } });
         if (detectErr) throw detectErr;
 
         const itemType = detect?.type || 'serial';
@@ -336,8 +331,7 @@ const VerifyChatPage: React.FC = () => {
         });
       }
     },
-    [user, checkGate, publishResult, updateMessage],
-  );
+    [user, checkGate, publishResult, updateMessage]);
 
   const runImageVerification = useCallback(
     async (assistantId: string, dataUrl: string) => {
@@ -369,8 +363,7 @@ const VerifyChatPage: React.FC = () => {
         });
       }
     },
-    [runVerification, updateMessage],
-  );
+    [runVerification, updateMessage]);
 
   const runUrlAnalysis = useCallback(
     async (assistantId: string, url: string) => {
@@ -398,8 +391,7 @@ const VerifyChatPage: React.FC = () => {
         });
       }
     },
-    [updateMessage],
-  );
+    [updateMessage]);
 
   const handleSend = useCallback(
     async (overrideText?: string) => {
@@ -460,8 +452,7 @@ const VerifyChatPage: React.FC = () => {
       looksLikeIdentifier,
       looksLikeVerifyIntent,
       updateMessage,
-    ],
-  );
+    ]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -583,8 +574,7 @@ const VerifyChatPage: React.FC = () => {
           <aside
             className={cn(
               'hidden lg:block shrink-0 transition-[width] duration-200 ease-out',
-              sidebarCollapsed ? 'w-14' : 'w-64',
-            )}
+              sidebarCollapsed ? 'w-14' : 'w-64')}
           >
             {sidebarCollapsed ? (
               <MiniSidebar
@@ -656,8 +646,7 @@ const VerifyChatPage: React.FC = () => {
           <div
             className={cn(
               'flex-1 flex flex-col min-w-0 relative',
-              resultsOpenMobile && 'hidden lg:flex',
-            )}
+              resultsOpenMobile && 'hidden lg:flex')}
           >
             {/* Subtle ambient glow */}
             <div
@@ -939,7 +928,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
 
       <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
         <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
-        100+ DATABASES · NCIC · NICB · GSMA · 50-State Firearm Reports · 50 STATES
+        100+ DATABASES · stolen property reports from all 50 states · NICB · GSMA · 50-State Firearm Reports · 50 STATES
       </div>
     </motion.div>
   );
@@ -1026,8 +1015,7 @@ const ToolButton: React.FC<{
       hideOnMobile && 'hidden sm:inline-flex',
       active
         ? 'text-red-500 bg-red-500/10 animate-pulse'
-        : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
-    )}
+        : 'text-muted-foreground hover:text-primary hover:bg-primary/10')}
   >
     <Icon className="w-4 h-4" />
   </button>
@@ -1074,8 +1062,7 @@ const ChatBubble: React.FC<{
             'rounded-xl px-4 py-3 text-sm leading-relaxed',
             isUser
               ? 'bg-primary text-primary-foreground rounded-br-sm shadow-md shadow-primary/10'
-              : 'bg-card/60 border border-border/60 text-foreground rounded-bl-sm backdrop-blur-sm',
-          )}
+              : 'bg-card/60 border border-border/60 text-foreground rounded-bl-sm backdrop-blur-sm')}
         >
           {msg.attachment?.kind === 'image' && msg.attachment.dataUrl && (
             <img
@@ -1171,8 +1158,7 @@ function renderInline(text: string): string {
   html = html.replace(/_([^_]+)_/g, '<em>$1</em>');
   html = html.replace(
     /`([^`]+)`/g,
-    '<code class="px-1 py-0.5 rounded bg-background/60 text-xs font-mono">$1</code>',
-  );
+    '<code class="px-1 py-0.5 rounded bg-background/60 text-xs font-mono">$1</code>');
   html = html.replace(/\n/g, '<br />');
   return html;
 }

@@ -53,7 +53,7 @@ const StolenGunDatabasePage = () => {
           },
           {
             question: "How much does gun serial number verification cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited gun serial number searches. Law enforcement has direct access to NCIC; civilians cannot. Our service checks the publicly accessible stolen firearm reports from all 50 states and validates serial number integrity. Our service protects buyers at gun shows and private sales where no background check is required."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited gun serial number searches. Law enforcement has direct access to stolen firearm reports from all 50 states; civilians cannot. Our service checks the publicly accessible stolen firearm reports from all 50 states and validates serial number integrity. Our service protects buyers at gun shows and private sales where no background check is required."
           },
           {
             question: "What are 50-state firearm theft reports and why should I check them?",
@@ -69,7 +69,7 @@ const StolenGunDatabasePage = () => {
           },
           {
             question: "How current is the stolen gun database?",
-            answer: "NCIC is updated in real-time as law enforcement agencies enter reports. Public stolen firearm reports update as victims submit them. State databases vary by state. We recommend checking before purchase because a clean result today doesn't guarantee a gun wasn't just reported. If buying online, check again before completing the transfer at the FFL."
+            answer: "Stolen firearm reports from all 50 states is updated in real-time as law enforcement agencies enter reports. Public stolen firearm reports update as victims submit them. State databases vary by state. We recommend checking before purchase because a clean result today doesn't guarantee a gun wasn't just reported. If buying online, check again before completing the transfer at the FFL."
           }
         ]
       }}

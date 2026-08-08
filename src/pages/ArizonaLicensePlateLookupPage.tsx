@@ -4,7 +4,7 @@ const ArizonaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="TheftAZ Alternative — Free Arizona Stolen Property & License Plate Search | SafeOrStolen"
-      metaDescription="Search Arizona stolen property and vehicles using TheftAZ databases plus NICB, NCIC, and Arizona MVD records. Free results in 3 seconds. Check any AZ license plate for theft status."
+      metaDescription="Search Arizona stolen property and vehicles using TheftAZ databases plus NICB, stolen property reports from all 50 states, and Arizona MVD records. Free results in 3 seconds. Check any AZ license plate for theft status."
       h1="Free Arizona License Plate Lookup — TheftAZ Alternative"
       itemType="Vehicle"
       keywords={[
@@ -20,7 +20,7 @@ const ArizonaLicensePlateLookupPage = () => {
         
         whatIs: "Arizona license plate lookup verifies whether a vehicle registered in Arizona is reported stolen by checking the AZ license plate number against TheftAZ (Arizona Attorney General's stolen property database), NICB, state DMV records, and police databases. Perfect for anyone buying or selling a used vehicle in Phoenix, Tucson, Mesa, Chandler, or anywhere in Arizona.",
         
-        howItWorks: "Our Arizona license plate lookup searches multiple databases simultaneously: (1) TheftAZ - the Arizona Attorney General's official stolen property database, (2) NICB (National Insurance Crime Bureau) VINCheck, (3) Arizona MVD vehicle registration records, (4) NCIC stolen vehicle database, (5) Local law enforcement records statewide. You receive comprehensive results in 3 seconds showing theft status, registration validity, and any red flags.",
+        howItWorks: "Our Arizona license plate lookup searches multiple databases simultaneously: (1) TheftAZ - the Arizona Attorney General's official stolen property database, (2) NICB (National Insurance Crime Bureau) VINCheck, (3) Arizona MVD vehicle registration records, (4) stolen property reports from all 50 states, (5) Local law enforcement records statewide. You receive comprehensive results in 3 seconds showing theft status, registration validity, and any red flags.",
         
         whyCheck: "Arizona has one of the highest vehicle theft rates in the country, particularly in Phoenix and Tucson metro areas. Vehicles stolen in California often end up in Arizona due to proximity. The Arizona-Mexico border creates additional stolen vehicle trafficking. TheftAZ tracks stolen property across Arizona - always verify before buying a used vehicle in the Grand Canyon State.",
         

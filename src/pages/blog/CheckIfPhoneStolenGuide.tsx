@@ -156,7 +156,7 @@ const CheckIfPhoneStolenGuide = () => {
           <div className="space-y-6 mb-8">
             {[
               { step: 1, title: 'Get the IMEI from the seller', desc: 'Before you meet up or commit to buying, ask the seller for the IMEI number. If they claim they don\'t know what that is, tell them to dial *#06# — it will display on screen instantly. If they refuse, end the conversation.' },
-              { step: 2, title: 'Run the IMEI through SafeOrStolen', desc: 'Go to safeorstolen.com/verify and enter the 15-digit IMEI. Our system simultaneously queries the GSMA Device Registry, all major U.S. carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), the FBI NCIC stolen property database, and state law enforcement records from all 50 states.' },
+              { step: 2, title: 'Run the IMEI through SafeOrStolen', desc: 'Go to safeorstolen.com/verify and enter the 15-digit IMEI. Our system simultaneously queries the GSMA Device Registry, all major U.S. carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), stolen property reports from all 50 states, and state law enforcement records from all 50 states.' },
               { step: 3, title: 'Review the Trust Score', desc: 'Within 3 seconds, you\'ll receive a Trust Score from 0 to 100 with a detailed breakdown showing exactly which databases returned results. A score of 80+ with no flags means the phone is safe to buy. Any stolen, blacklisted, or financed flags should be dealbreakers.' },
               { step: 4, title: 'Check Activation Lock (iPhone only)', desc: 'For iPhones, go to Settings → [Name] → Find My → Find My iPhone. If Find My is enabled and locked to another Apple ID, the phone cannot be reset or used without the original owner\'s password. This is separate from the IMEI check and equally critical.' },
               { step: 5, title: 'Download the verification certificate', desc: 'Save the PDF certificate as proof of due diligence. If the item is ever questioned by law enforcement, this certificate demonstrates you took reasonable steps to verify it wasn\'t stolen — protecting you legally.' },
@@ -182,7 +182,7 @@ const CheckIfPhoneStolenGuide = () => {
             {[
               { source: 'GSMA Device Registry', what: 'Global blacklist status — if flagged, the phone is reported stolen/lost internationally and won\'t work on any carrier in 50+ countries' },
               { source: 'Carrier Blacklists', what: 'AT&T, Verizon, T-Mobile, Sprint records — checks for unpaid balances, insurance claims, and theft reports filed directly with the carrier' },
-              { source: 'FBI NCIC', what: 'National Crime Information Center — the FBI\'s central database of stolen property reported by law enforcement agencies nationwide' },
+              { source: 'Stolen property reports from all 50 states', what: 'National Crime Information Center — the FBI\'s central database of stolen property reported by law enforcement agencies nationwide' },
               { source: 'State Law Enforcement', what: 'Records from all 50 state police databases — catches stolen phones reported to local police departments' },
               { source: 'Insurance Claims', what: 'Checks if an insurance claim was filed for the device — phones with insurance claims are often still blacklisted even if the owner was paid out' },
             ].map(item => (

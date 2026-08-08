@@ -41,7 +41,7 @@ const topics = [
   {
     icon: Car,
     title: 'VIN & Stolen Cars',
-    desc: 'Step-by-step VIN lookup against the FBI NCIC stolen vehicle database, NICB insurance records, and all 50 state DMV databases before buying used vehicles.',
+    desc: 'Step-by-step VIN lookup against stolen property reports from all 50 states, NICB insurance records, and all 50 state DMV databases before buying used vehicles.',
     link: '/vin-checker',
     stat: '50-state coverage'
   },

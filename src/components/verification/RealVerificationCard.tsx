@@ -21,6 +21,7 @@ import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 import { ShareAfterVerification } from '@/components/growth';
 import { FirearmSourceDisclosure, isFirearmItemType } from './FirearmSourceDisclosure';
 import { FirearmNextSteps } from './FirearmNextSteps';
+import { VerificationRecord } from './VerificationRecord';
 
 interface RealVerificationCardProps {
   verificationResult?: VerificationResult;
@@ -203,6 +204,15 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
               <FirearmNextSteps className="mt-4" />
             </>
           )}
+
+          <VerificationRecord
+            identifier={verificationResult.serial_number}
+            itemType={verificationResult.item_type}
+            status={verificationResult.status}
+            referenceId={verificationResult.id}
+            timestamp={verificationResult.verified_at}
+            className="mt-4"
+          />
 
           <div className="border-t pt-4 flex items-center justify-between">
             <div className="text-sm text-muted-foreground">

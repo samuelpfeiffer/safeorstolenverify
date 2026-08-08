@@ -56,7 +56,7 @@ const VERIFY_CARDS = [
   },
   {
     title: 'Bicycle Serial Check',
-    subtitle: 'BikeIndex (700K+ bikes) + 529 Garage + police',
+    subtitle: 'BikeIndex (700K+ bikes) + police',
     href: '/check-bike',
     image: cardBicycle,
     badge: null,

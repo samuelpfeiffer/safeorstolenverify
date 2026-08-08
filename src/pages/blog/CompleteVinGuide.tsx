@@ -55,7 +55,7 @@ export default function CompleteVinGuide() {
 
         <div className="prose prose-lg max-w-none">
           <h2>Why VIN Checks Are Non-Negotiable in 2026</h2>
-          <p>Buying a used car without checking the VIN is like buying a house without an inspection. In 2026, the FBI's NCIC database recorded over 873,000 stolen vehicles—a 12% increase from 2025. Additionally:</p>
+          <p>Buying a used car without checking the VIN is like buying a house without an inspection. In 2026, stolen property reports from all 50 states recorded over 873,000 stolen vehicles—a 12% increase from 2025. Additionally:</p>
           <ul>
             <li>1 in 5 used cars has hidden damage from accidents</li>
             <li>Title washing fraud costs buyers $1 billion annually</li>
@@ -88,7 +88,7 @@ export default function CompleteVinGuide() {
           <h2>Step-by-Step: How to Run a Complete VIN Check</h2>
 
           <h3>Method 1: SafeOrStolen Free VIN Verification (Most Comprehensive)</h3>
-          <p>SafeOrStolen checks 100+ databases instantly including FBI NCIC, state DMV records, insurance claims, and international theft databases:</p>
+          <p>SafeOrStolen checks 100+ databases instantly including stolen property reports from all 50 states, state DMV records, insurance claims, and international theft databases:</p>
           <ol>
             <li>Go to <Link to="/verify" className="text-primary hover:underline">SafeOrStolen.com/verify</Link></li>
             <li>Enter the 17-character VIN or scan the barcode with the mobile app</li>
@@ -159,7 +159,7 @@ export default function CompleteVinGuide() {
 
           <h3>What You WILL Learn:</h3>
           <ul>
-            <li>✅ Stolen status from law enforcement databases (FBI NCIC, local police)</li>
+            <li>✅ Stolen status from law enforcement databases (stolen property reports from all 50 states, local police)</li>
             <li>✅ Title status: clean, salvage, rebuilt, junk, flood, fire, hail</li>
             <li>✅ Reported accidents with insurance claims</li>
             <li>✅ Odometer readings at various points in time</li>
@@ -294,7 +294,7 @@ export default function CompleteVinGuide() {
           <h2>Why SafeOrStolen is the Best Carfax Alternative</h2>
           <ul>
             <li>✅ <strong>Free VIN checks:</strong> 2 free searches, no credit card required</li>
-            <li>✅ <strong>Real-time law enforcement data:</strong> Checks FBI NCIC and state police databases Carfax doesn't access</li>
+            <li>✅ <strong>Real-time law enforcement data:</strong> Checks stolen property reports from all 50 states Carfax doesn't access</li>
             <li>✅ <strong>3-second results:</strong> Instant verification vs. 30+ seconds with Carfax</li>
             <li>✅ <strong>Mobile app with barcode scanning:</strong> Scan VIN stickers at dealerships instantly</li>
             <li>✅ <strong>All 50 states covered:</strong> Comprehensive title history nationwide</li>

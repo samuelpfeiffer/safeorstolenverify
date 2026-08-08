@@ -140,7 +140,7 @@ export const ItemLandingPageTemplate = ({
             </ul>
             
             <h2>Databases We Search</h2>
-            <p>SafeOrStolen checks 100+ databases including NICB, GSMA, ATF eTrace, and law enforcement records across all 50 US states. Results in 3 seconds.</p>
+            <p>SafeOrStolen checks 100+ databases including NICB, GSMA, stolen property reports from all 50 states, and law enforcement records across all 50 US states. Results in 3 seconds.</p>
             
             <h2>Frequently Asked Questions</h2>
             {content.faqs.map((faq, i) => (

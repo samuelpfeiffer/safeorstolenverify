@@ -18,7 +18,7 @@ const TheftAZAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen better than TheftAZ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including TheftAZ, FBI NCIC, NICB, and stolen property reports from all 50 states. Items stolen in California, Texas, or any other state that end up for sale in Arizona would be missed by TheftAZ alone." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including TheftAZ, stolen property reports from all 50 states, NICB, and stolen property reports from all 50 states. Items stolen in California, Texas, or any other state that end up for sale in Arizona would be missed by TheftAZ alone." }
       },
       {
         "@type": "Question",
@@ -42,7 +42,7 @@ const TheftAZAlternativePage = () => {
     <>
       <PageSEO
         title="TheftAZ Alternative — Search Arizona Stolen Property Database Free | SafeOrStolen"
-        description="Looking for TheftAZ? SafeOrStolen is a faster, more comprehensive alternative to Arizona's TheftAZ stolen property database. Search TheftAZ plus NCIC, NICB, and 100+ databases in 3 seconds."
+        description="Looking for TheftAZ? SafeOrStolen is a faster, more comprehensive alternative to Arizona's TheftAZ stolen property database. Search TheftAZ plus stolen property reports from all 50 states, NICB, and 100+ databases in 3 seconds."
         canonical="/theftaz-alternative"
         structuredData={[faqSchema]}
       />
@@ -90,7 +90,7 @@ const TheftAZAlternativePage = () => {
                 <tbody className="text-muted-foreground">
                   {[
                     ['Arizona stolen property records', true, true],
-                    ['FBI NCIC (7M+ records)', false, true],
+                    ['Stolen property reports from all 50 states (7M+ records)', false, true],
                     ['NICB (vehicles)', false, true],
                     ['GSMA (phones)', false, true],
                     ['All 50 state databases', false, true],

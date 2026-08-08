@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 const AboutPage = () => {
   const dataPartners = [
     {
-      name: "NCIC (National Crime Information Center)",
+      name: "Stolen property reports from all 50 states",
       type: "Federal Law Enforcement",
       description: "FBI's stolen property database - we crawl and cross-reference federal theft records"
     },
@@ -74,7 +74,7 @@ const AboutPage = () => {
     {
       step: 2,
       title: "Cross-Reference Verification",
-      description: "Serial numbers are checked against NCIC and international stolen property databases"
+      description: "Serial numbers are checked against stolen property reports from all 50 states and international stolen property databases"
     },
     {
       step: 3,

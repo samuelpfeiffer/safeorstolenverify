@@ -152,7 +152,7 @@ export const SEOContentSection = () => {
             </h3>
             <div className="space-y-4 mb-12">
               <p className="text-muted-foreground leading-relaxed">
-                Our verification system searches multiple databases including NCIC (National Crime Information Center), 
+                Our verification system searches multiple databases including stolen property reports from all 50 states, 
                 police reports, carrier blacklists, manufacturer databases, and international stolen goods registries. 
                 Simply enter the IMEI, VIN, or serial number and receive instant results.
               </p>

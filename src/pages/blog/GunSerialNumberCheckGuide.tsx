@@ -13,11 +13,11 @@ const GunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check if a gun is stolen for free?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the firearm's serial number on SafeOrStolen.com. We check the HotGunz national stolen-firearms registry. You get 2 free checks with no credit card required. Results in approximately 3 seconds." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the firearm's serial number on SafeOrStolen.com. We check the  national stolen-firearms registry. You get 2 free checks with no credit card required. Results in approximately 3 seconds." }
       },
       {
         "@type": "Question",
-        "name": "What is the NCIC stolen gun database?",
+        "name": "What is stolen firearm reports from all 50 states?",
  "acceptedAnswer": { "@type": "Answer", "text": "The National Crime Information Center (the HotGunz national stolen-firearms registry) is the FBI's centralized criminal justice database containing over 7 million stolen firearm records. When a gun is reported stolen to any law enforcement agency in the US, it's entered into the HotGunz national stolen-firearms registry. SafeOrStolen checks the HotGunz national stolen-firearms registry as part of every firearm verification." }
       },
       {
@@ -56,7 +56,7 @@ const GunSerialNumberCheckGuide = () => {
     "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
     "datePublished": "2026-03-09",
     "dateModified": "2026-03-09",
- "description": "Step-by-step guide to checking any firearm serial number against the HotGunz national stolen-firearms registry. Free lookup tool included.",
+ "description": "Step-by-step guide to checking any firearm serial number against the  national stolen-firearms registry. Free lookup tool included.",
     "mainEntityOfPage": "https://safeorstolen.com/blog/how-to-check-if-gun-is-stolen"
   };
 
@@ -64,9 +64,9 @@ const GunSerialNumberCheckGuide = () => {
     <>
       <PageSEO
         title="How to Check if a Gun is Stolen — Free Serial Number Lookup (2026) | SafeOrStolen"
- description="Check any gun serial number free against the HotGunz national stolen-firearms registry. Step-by-step guide with free lookup tool. Verify firearms before buying."
+ description="Check any gun serial number free against the  national stolen-firearms registry. Step-by-step guide with free lookup tool. Verify firearms before buying."
         canonical="/blog/how-to-check-if-gun-is-stolen"
-        keywords="gun serial number lookup, check if gun is stolen, NCIC gun check, stolen firearm database, free gun serial number check"
+        keywords="gun serial number lookup, check if gun is stolen, stolen firearm reports from all 50 states gun check, stolen firearm database, free gun serial number check"
         structuredData={[faqSchema, articleSchema]}
       />
       <TopNavigation />
@@ -89,7 +89,7 @@ const GunSerialNumberCheckGuide = () => {
                 Check Gun Serial Number Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">2 free checks · HotGunz registry + serial integrity check</p>
+            <p className="text-muted-foreground text-sm mt-3">2 free checks ·  registry + serial integrity check</p>
           </div>
         </section>
 
@@ -122,7 +122,7 @@ const GunSerialNumberCheckGuide = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">What Databases Does SafeOrStolen Check?</h2>
             <ul className="space-y-3">
               {[
-                { name: 'HotGunz', desc: '32,000+ community-reported stolen firearms with detailed descriptions and police report numbers' },
+                { name: '', desc: '32,000+ community-reported stolen firearms with detailed descriptions and police report numbers' },
                 { name: 'Serial Integrity Check', desc: 'Detects obliterated, altered, or placeholder serial numbers — a federal felony indicator under 18 U.S.C. § 922(k)' },
                 { name: 'Not checked: FBI NCIC and ATF eTrace', desc: 'These federal systems are restricted to law enforcement. No consumer service can query them. For a definitive check, contact your local police non-emergency line.' },
               ].map(db => (
@@ -188,10 +188,10 @@ const GunSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check if a gun is stolen for free?</summary>
- <p className="text-muted-foreground mt-2">Enter the serial number at safeorstolen.com/firearms-check. We check the HotGunz national stolen-firearms registry, and all the HotGunz national stolen-firearms registry. 2 free checks, no credit card. Results in 3 seconds.</p>
+ <p className="text-muted-foreground mt-2">Enter the serial number at safeorstolen.com/firearms-check. We check the  national stolen-firearms registry, and all the  national stolen-firearms registry. 2 free checks, no credit card. Results in 3 seconds.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">What is the NCIC stolen gun database?</summary>
+                <summary className="font-semibold text-foreground cursor-pointer">What is stolen firearm reports from all 50 states?</summary>
                 <p className="text-muted-foreground mt-2">The FBI's National Crime Information Center contains over 7 million stolen firearm records from every law enforcement agency in the US. When a gun is reported stolen, it's entered into NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
@@ -221,7 +221,7 @@ const GunSerialNumberCheckGuide = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">Related Guides</h2>
             <div className="flex flex-wrap gap-3">
               <Link to="/blog/atf-gun-serial-number-check" className="text-primary hover:underline font-medium">ATF Serial Number Check Guide</Link>
-              <Link to="/blog/hotgunz-database-guide" className="text-primary hover:underline font-medium">HotGunz Database Guide</Link>
+              <Link to="/blog/hotgunz-database-guide" className="text-primary hover:underline font-medium"> Database Guide</Link>
               <Link to="/blog/state-stolen-gun-database-guide" className="text-primary hover:underline font-medium">State-by-State Stolen Gun Databases</Link>
               <Link to="/blog/gun-show-serial-number-check" className="text-primary hover:underline font-medium">Gun Show Verification Guide</Link>
               <Link to="/firearms-check" className="text-primary hover:underline font-medium">Free Gun Serial Number Lookup Tool</Link>

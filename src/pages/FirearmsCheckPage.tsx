@@ -9,8 +9,8 @@ const FirearmsCheckPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Free Gun Serial Number Lookup — Check if a Gun is Stolen | SafeOrStolen"
-        description="Look up any gun serial number free. Checks stolen firearm reports from all 50 states and validates serial number integrity. Results in 3 seconds."
+        title="Gun Serial Number Check — All 50 States | SafeOrStolen"
+        description="Free gun serial number check. Search stolen firearm reports from all 50 states and flag altered or obliterated serials — an ATF-enforced federal violation. Instant results, 2 free checks."
         canonical="/firearms-check"
       />
 
@@ -21,15 +21,14 @@ const FirearmsCheckPage = () => {
             🔫 Firearm Verification
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
-            Gun Serial Number Lookup —
+            Gun Serial Number Check —
             <br />
-            <span className="text-primary">Is This Firearm Stolen?</span>
+            <span className="text-primary">All 50 States</span>
           </h1>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Instantly check any firearm serial number against the nationwide
-            stolen-firearms registry and validate serial number integrity.
-            Results in 3 seconds.
+            Search nationwide stolen firearm reports and verify serial integrity before you buy.
           </p>
+
 
           {/* VERIFY TOOL — inline if no shared component */}
           <GunVerifyTool />
@@ -187,16 +186,6 @@ const FirearmsCheckPage = () => {
               </li>
             ))}
           </ul>
-          <div className="bg-card border border-border/60 rounded-2xl p-5 text-center">
-            <p className="text-foreground font-bold mb-3">Protect yourself before any private firearm transaction.</p>
-            <Link
-              to="/firearms-check"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all text-sm"
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              Check This Firearm Now — Free →
-            </Link>
-          </div>
         </section>
 
         {/* Section 4 */}
@@ -210,7 +199,6 @@ const FirearmsCheckPage = () => {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               { who: 'Private Buyers', desc: 'Anyone purchasing a used firearm through a private sale on Armslist, Facebook, at a gun show, or from an individual. Private sales in most states have no background check — the serial check is your only protection.' },
-              { who: 'Pawn Shop Operators', desc: 'Most states legally require pawn shops to run stolen property checks before accepting firearms as collateral or for sale. Our Unlimited Plan ($10/mo) generates the compliance-ready PDF certificate you need.' },
               { who: 'Gun Show Vendors & Attendees', desc: 'High volume + cash transactions = elevated risk. Many stolen guns circulate through gun shows precisely because of lighter scrutiny. Run a check on every private transaction.' },
               { who: 'FFL Dealers Buying Used Inventory', desc: 'When buying used firearms from individuals for resale, a serial check provides documented due diligence before you take ownership.' },
               { who: 'Estate Sale Participants', desc: 'Firearms in estates can have complex ownership histories. Verify before purchasing — you have no way to know the history of an inherited firearm.' },
@@ -330,7 +318,7 @@ const FirearmsCheckPage = () => {
           </h2>
           <div className="space-y-3">
             {[
- { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not law enforcement and do not have direct stolen firearm reports from all 50 states access — our results come from authorized data partners and community databases.' },
+ { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not law enforcement and cannot query federal systems — our results come from stolen firearm reports from all 50 states and serial integrity analysis.' },
               { q: "What if the serial number comes back clean — does that guarantee it's not stolen?", a: 'No. A clean result means no records were found in our aggregated database at the time of the check. Not all stolen firearms are reported to all databases. A clean result significantly reduces your risk but does not constitute a guarantee. We strongly recommend also requesting the original purchase receipt from the seller.' },
               { q: 'Can a gun show vendor refuse to let me check the serial number?', a: 'Yes, a private seller can refuse. If they do, that is itself a significant red flag. Legitimate sellers with nothing to hide generally welcome verification.' },
  { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can report the stolen firearm to your local police and to a public stolen-firearm registry. Reports that reach the nationwide stolen firearm feeds will be included in future SafeOrStolen checks.' },
@@ -357,7 +345,7 @@ const FirearmsCheckPage = () => {
               { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
               { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
               { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
-              { title: 'Bike Serial Check', href: '/check-bike', desc: 'BikeIndex + 529 Garage + police' },
+              { title: 'Bike Serial Check', href: '/check-bike', desc: 'BikeIndex + police' },
             ].map((link) => (
               <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
                 <div>
@@ -380,7 +368,7 @@ const FirearmsCheckPage = () => {
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "name": "Gun Serial Number Lookup — Is This Firearm Stolen?",
+              "name": "Gun Serial Number Check — All 50 States",
  "description": "Check any firearm serial number against stolen firearm reports from all 50 states. Results in 3 seconds.",
               "url": "https://safeorstolen.com/firearms-check",
               "breadcrumb": {

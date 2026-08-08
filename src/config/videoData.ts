@@ -56,7 +56,7 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
     title: 'How to Check if a Car is Stolen Using VIN',
     seoTitle: 'How to Check if a Car is Stolen Using VIN Number (Free Method)',
     description: 'Buying a used car? Check the VIN FIRST! Learn where to find VIN and what a VIN check reveals about vehicle history.',
-    seoDescription: 'Buying a used car? Check the VIN FIRST! SafeOrStolen verifies vehicles against NCIC stolen vehicle database, insurance theft claims, police reports, and state DMV records.',
+    seoDescription: 'Buying a used car? Check the VIN FIRST! SafeOrStolen verifies vehicles against stolen property reports from all 50 states, insurance theft claims, police reports, and state DMV records.',
     duration: '0:59',
     durationISO: 'PT59S',
     durationSeconds: 59,
