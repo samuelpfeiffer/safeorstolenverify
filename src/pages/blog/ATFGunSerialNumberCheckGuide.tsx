@@ -155,7 +155,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               No. Federal law (the Firearm Owners' Protection Act of 1986) explicitly prohibits the ATF from establishing a national firearms registry. The ATF cannot maintain a searchable database of gun owners or gun sales. Instead, ATF traces work by sequentially contacting manufacturers, distributors, and dealers — a manual process that can take days or weeks.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              This is why SafeOrStolen's approach is more practical for consumers: rather than tracing a single gun's sales chain (which civilians can't do anyway), we check whether the serial number appears in any stolen property database — providing an instant yes/no answer to the most important question: "Is this gun stolen?"
+              For consumers, the practical question isn't where a gun came from — it's whether it's been reported stolen. SafeOrStolen answers a narrow version of that question instantly by checking the HotGunz registry, then points you to the police check that answers it completely.
             </p>
           </section>
 
