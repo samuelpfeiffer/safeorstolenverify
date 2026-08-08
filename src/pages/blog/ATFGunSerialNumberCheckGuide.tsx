@@ -33,7 +33,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "What's the difference between ATF eTrace and FBI NCIC?",
- "acceptedAnswer": { "@type": "Answer", "text": "the HotGunz national stolen-firearms registry traces a firearm's sales history (manufacturer → distributor → dealer → first buyer). The HotGunz national stolen-firearms registry checks if a firearm has been reported stolen. They serve different purposes: eTrace tells you where a gun came from, the HotGunz national stolen-firearms registry tells you if it's been reported stolen. SafeOrStolen checks both simultaneously." }
+ "acceptedAnswer": { "@type": "Answer", "text": "ATF eTrace traces a firearm's sales history (manufacturer → distributor → dealer → first buyer). FBI NCIC records whether a firearm has been reported stolen. Both are restricted to law enforcement. SafeOrStolen checks neither — it checks the HotGunz national stolen-firearms registry and analyzes serial number integrity." }
       }
     ]
   };
