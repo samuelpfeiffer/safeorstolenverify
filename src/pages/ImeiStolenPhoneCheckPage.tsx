@@ -4,7 +4,7 @@ const ImeiStolenPhoneCheckPage = () => {
   return (
     <ItemLandingPageTemplate
       title="IMEI Stolen Phone Check - Free Blacklist Verification | SafeOrStolen"
-      metaDescription="Check if a phone is stolen using the IMEI number. Free blacklist verification searches GSMA, carrier databases, and theft registries. Instant results for any phone."
+      metaDescription="Check if a phone is stolen using the IMEI number. Free blacklist verification searches carrier and manufacturer blacklists, carrier databases, and theft registries. Instant results for any phone."
       h1="IMEI Stolen Phone Check - Verify Any Phone Instantly"
       itemType="Phone"
       keywords={[
@@ -67,7 +67,7 @@ const ImeiStolenPhoneCheckPage = () => {
           },
           {
             question: "How much does the IMEI check cost?",
-            answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers comprehensive databases including GSMA, carrier blacklists, and law enforcement records. Many other IMEI checkers charge more per check or only check partial databases."
+            answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers comprehensive databases including carrier and manufacturer blacklists, carrier blacklists, and law enforcement records. Many other IMEI checkers charge more per check or only check partial databases."
           },
           {
             question: "What's the difference between IMEI and serial number?",

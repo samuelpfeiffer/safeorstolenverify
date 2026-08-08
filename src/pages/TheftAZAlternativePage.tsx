@@ -33,7 +33,7 @@ const TheftAZAlternativePage = () => {
       {
         "@type": "Question",
         "name": "What types of property can I check with SafeOrStolen vs TheftAZ?",
- "acceptedAnswer": { "@type": "Answer", "text": "TheftAZ tracks vehicles, firearms, electronics, tools, and other property stolen in Arizona. SafeOrStolen checks all the same item types PLUS phones (via IMEI/GSMA), boats, appliances, and jewelry — across all 50 states, not just Arizona." }
+ "acceptedAnswer": { "@type": "Answer", "text": "TheftAZ tracks vehicles, firearms, electronics, tools, and other property stolen in Arizona. SafeOrStolen checks all the same item types PLUS phones (via IMEI/carrier and manufacturer blacklists), boats, appliances, and jewelry — across all 50 states, not just Arizona." }
       }
     ]
   };
@@ -52,7 +52,7 @@ const TheftAZAlternativePage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-black mb-4">TheftAZ Alternative — Arizona Stolen Property Search</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Looking for TheftAZ (theftaz.azag.gov)? SafeOrStolen searches the same Arizona Attorney General stolen property records PLUS 100+ additional databases including NICB, GSMA, and stolen property reports from all 50 states. More databases, faster results, easier to use.
+              Looking for TheftAZ (theftaz.azag.gov)? SafeOrStolen searches the same Arizona Attorney General stolen property records PLUS 100+ additional databases including NICB, carrier and manufacturer blacklists, and stolen property reports from all 50 states. More databases, faster results, easier to use.
             </p>
           </div>
         </header>
@@ -143,7 +143,7 @@ const TheftAZAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen better than TheftAZ?</summary>
-                <p className="text-muted-foreground mt-2">SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including NICB, GSMA, and stolen property reports from all 50 states. Items stolen in other states that end up in Arizona would be missed by TheftAZ alone.</p>
+                <p className="text-muted-foreground mt-2">SafeOrStolen is more comprehensive. While TheftAZ only searches Arizona records, SafeOrStolen checks 100+ databases including NICB, carrier and manufacturer blacklists, and stolen property reports from all 50 states. Items stolen in other states that end up in Arizona would be missed by TheftAZ alone.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I still use TheftAZ directly?</summary>

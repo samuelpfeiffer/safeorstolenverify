@@ -34,7 +34,7 @@ const topics = [
   {
     icon: Smartphone,
     title: 'IMEI Verification',
-    desc: 'How to find and check your phone\'s IMEI against GSMA\'s 15B+ record database, carrier blacklists, and insurance theft claims before any purchase.',
+    desc: 'How to find and check your phone\'s IMEI against carrier and manufacturer blacklists\'s 15B+ record database, carrier blacklists, and insurance theft claims before any purchase.',
     link: '/imei-checker',
     stat: '15B+ IMEI records'
   },

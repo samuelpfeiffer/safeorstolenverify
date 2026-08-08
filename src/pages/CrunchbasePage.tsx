@@ -16,7 +16,7 @@ import {
 const crunchbaseFaqs = [
   {
     question: "What is SafeOrStolen?",
- answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including NICB, GSMA, and stolen property reports from all 50 states. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including NICB, carrier and manufacturer blacklists, and stolen property reports from all 50 states. Results are returned in approximately 3 seconds."
   },
   {
     question: "Who founded SafeOrStolen?",
@@ -113,7 +113,7 @@ const CrunchbasePage: React.FC = () => {
           </header>
           <main>
             <h1>SafeOrStolen Company Profile</h1>
- <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including NICB, GSMA, and stolen property reports from all 50 states in approximately 3 seconds.</p>
+ <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including NICB, carrier and manufacturer blacklists, and stolen property reports from all 50 states in approximately 3 seconds.</p>
             
             <h2>Company Overview</h2>
             <ul>
@@ -268,7 +268,7 @@ const CrunchbasePage: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">
-                  All 50 US states. IMEI checks across 200+ countries via GSMA. Vehicle checks via stolen property reports from all 50 states and NICB.
+                  All 50 US states. IMEI checks across 200+ countries via carrier and manufacturer blacklists. Vehicle checks via stolen property reports from all 50 states and NICB.
                 </p>
               </CardContent>
             </Card>

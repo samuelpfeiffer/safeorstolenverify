@@ -281,7 +281,7 @@ export default function DataSourceCredibilityStolenGoods() {
                 <h3 className="text-xl font-semibold mb-2 text-foreground">What data sources do they access?</h3>
                 <p className="text-muted-foreground">
                   Demand specifics. "50+ databases" is meaningless without naming them. Do they have stolen property reports from all 50 states? 
-                  GSMA? State DMVs? If they can't or won't tell you, assume limited coverage.
+                  carrier and manufacturer blacklists? State DMVs? If they can't or won't tell you, assume limited coverage.
                 </p>
               </div>
               <div className="border-l-4 border-primary pl-4">
@@ -328,7 +328,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <Database className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify with Law Enforcement-Grade Data</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, GSMA, and state motor vehicle agencies. 
+                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, carrier and manufacturer blacklists, and state motor vehicle agencies. 
                 Free verification available.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">

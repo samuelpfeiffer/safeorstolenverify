@@ -110,7 +110,7 @@ const SelfHostedVideoWatchPage: React.FC = () => {
               {[
                 'Avoid losing money — police seize stolen property without refund.',
                 'Stay out of legal trouble — possession of stolen goods is a crime in all 50 US states.',
-                'Cross-checks 100+ sources: NICB, GSMA, state motor vehicle agencies.',
+                'Cross-checks 100+ sources: NICB, carrier and manufacturer blacklists, NHTSA vehicle records.',
                 'Works for IMEI, VIN, license plate, serial number, and firearm checks.',
                 'Results in under 3 seconds. No card required to start.',
               ].map((line) => (

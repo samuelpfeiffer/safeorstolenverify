@@ -85,7 +85,7 @@ const CheckImeiStolenPage = () => {
           How to Check if a Phone Is Stolen by IMEI (Free)
         </h1>
         <p className="mt-3 text-lg text-muted-foreground">
-          Before you buy a used phone — or if you already did — you can check its IMEI against GSMA
+          Before you buy a used phone — or if you already did — you can check its IMEI against carrier and manufacturer blacklists
           device records and reported-stolen databases in about three seconds. Here&apos;s exactly how
           it works and what the result means.
         </p>

@@ -19,7 +19,7 @@ export const TrustSignalsSection = () => {
     {
       icon: Database,
       title: "3,000+ Global Databases",
-      description: "NICB, GSMA, CheckMEND, Police databases",
+      description: "NICB, carrier and manufacturer blacklists, CheckMEND, Police databases",
       color: "text-accent"
     },
     {
@@ -69,7 +69,7 @@ export const TrustSignalsSection = () => {
                 3,000+ Databases Worldwide
               </h3>
               <p className="text-base text-muted-foreground mb-6">
-                Real-time access to NICB, GSMA, CheckMEND, and international registries
+                Real-time access to NICB, carrier and manufacturer blacklists, CheckMEND, and international registries
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
                 <div>

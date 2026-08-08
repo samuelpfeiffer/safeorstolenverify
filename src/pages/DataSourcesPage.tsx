@@ -382,7 +382,7 @@ export default function DataSourcesPage() {
             <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
                 { value: "100+", label: "Databases Checked" },
-                { value: "15B+", label: "IMEI Records (GSMA)" },
+                { value: "15B+", label: "IMEI Records (carrier and manufacturer blacklists)" },
                 { value: "3 sec", label: "Average Result Time" },
                 { value: "190+", label: "Countries Covered" },
               ].map(stat => (

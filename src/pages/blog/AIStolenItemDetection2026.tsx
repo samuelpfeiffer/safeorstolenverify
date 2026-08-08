@@ -50,7 +50,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'What databases does SafeOrStolen AI check?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SafeOrStolen AI checks stolen property reports from all 50 states, NICB (insurance), carrier and manufacturer blacklists, GSMA, police departments, NHTSA vehicle records, insurance claims, pawn shop databases, and international stolen goods registries - over 100 sources total.'
+          text: 'SafeOrStolen AI checks stolen property reports from all 50 states, NICB (insurance), carrier and manufacturer blacklists, carrier and manufacturer blacklists, police departments, NHTSA vehicle records, insurance claims, pawn shop databases, and international stolen goods registries - over 100 sources total.'
         }
       }
     ]

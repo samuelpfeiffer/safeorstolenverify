@@ -37,8 +37,8 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
   '/terms': 'Terms of service for SafeOrStolen verification platform. User agreements, refund policy, acceptable use guidelines, and legal disclaimers for our service.', // 157 chars
   '/report-stolen': 'Report stolen phones, vehicles, electronics, or firearms to SafeOrStolen database. Help prevent resale of stolen goods on marketplaces and pawn shops.', // 158 chars
   '/app': 'Download the SafeOrStolen mobile app for iOS and Android. Verify IMEI, VIN, serial numbers on-the-go. The only stolen item checker with a mobile app.', // 155 chars
-  '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and GSMA.', // 159 chars
-  '/database': 'Access 50+ global stolen goods databases. Real-time checks across NICB, GSMA, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
+  '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and carrier and manufacturer blacklists.', // 159 chars
+  '/database': 'Access 50+ global stolen goods databases. Real-time checks across NICB, carrier and manufacturer blacklists, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
   '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars
  '/firearms-check': 'Verify firearm serial numbers against stolen firearm reports from all 50 states. Instant check for gun buyers, sellers, and FFL dealers. From $0.99/check unlimited.',
   '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and appliances. Verify items are not stolen before buying, selling, or accepting them at intake.', // 156 chars

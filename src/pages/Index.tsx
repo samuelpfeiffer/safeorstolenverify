@@ -191,7 +191,7 @@ const Index = () => {
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>AI Stolen Item Verification for Buyers, Sellers, and Businesses</h1>
           <p>SafeOrStolen is an AI-powered platform that checks whether a secondhand item is reported stolen. Buyers verify before they pay, sellers prove an item is clean, and businesses such as pawn shops, resellers, dealers, and repair shops document diligence at intake.</p>
- <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against 100+ law enforcement, insurance, and carrier databases, including GSMA, NICB, BikeIndex, and 50-State Firearm Reports, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
+ <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against 100+ law enforcement, insurance, and carrier databases, including carrier and manufacturer blacklists, NICB, BikeIndex, and 50-State Firearm Reports, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
         </div>
       </noscript>
 
@@ -362,7 +362,7 @@ const Index = () => {
               {
                 n: '2',
                 title: 'Parallel Database Scan',
-                desc: 'We simultaneously query GSMA, NICB, 50-State Firearm Reports, BikeIndex, state records, carrier blacklists, and insurance theft records. All at once.',
+                desc: 'We simultaneously query carrier and manufacturer blacklists, NICB, 50-State Firearm Reports, BikeIndex, state records, carrier blacklists, and insurance theft records. All at once.',
               },
               {
                 n: '3',

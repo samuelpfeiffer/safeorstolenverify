@@ -181,7 +181,7 @@ export default function ForAuctionHouses() {
                   <CardContent className="pt-6">
                     <Search className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">100+ Database Sources</h3>
-                    <p className="text-sm text-muted-foreground">Every item checked against law enforcement records, insurance claims, carrier blacklists, GSMA, NICB, and pawn shop databases.</p>
+                    <p className="text-sm text-muted-foreground">Every item checked against law enforcement records, insurance claims, carrier blacklists, carrier and manufacturer blacklists, NICB, and pawn shop databases.</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center">
@@ -224,7 +224,7 @@ export default function ForAuctionHouses() {
               <h2 className="text-3xl font-bold text-center mb-8">Auction Item Categories We Verify</h2>
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p>
-                  SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we check VINs against NICB, NMVTIS, insurance total loss records, and state DMV stolen vehicle databases covering cars, trucks, motorcycles, RVs, boats, and trailers. For <strong>electronics and phone auctions</strong>, we verify IMEI numbers against GSMA, carrier blacklists, and insurance claim registries. For <strong>equipment auctions</strong>, serial numbers are checked against law enforcement stolen property databases, LeadsOnline pawn records, and manufacturer theft registries.
+                  SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we check VINs against NICB, NMVTIS, insurance total loss records, and state DMV stolen vehicle databases covering cars, trucks, motorcycles, RVs, boats, and trailers. For <strong>electronics and phone auctions</strong>, we verify IMEI numbers against carrier and manufacturer blacklists, carrier blacklists, and insurance claim registries. For <strong>equipment auctions</strong>, serial numbers are checked against law enforcement stolen property databases, LeadsOnline pawn records, and manufacturer theft registries.
                 </p>
                 <p>
  We also support <strong>firearms auctions</strong> with serial number verification, <strong>jewelry and luxury goods</strong> with insurance claim cross-referencing, <strong>musical instruments</strong> with manufacturer serial number validation, and <strong>power tools and construction equipment</strong> with contractor theft database checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can verify it before it reaches your auction block.

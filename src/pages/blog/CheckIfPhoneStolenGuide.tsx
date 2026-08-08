@@ -22,7 +22,7 @@ const CheckIfPhoneStolenGuide = () => {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "How to Check If a Phone Is Stolen Before Buying (2026 Complete Guide)",
-      "description": "Step-by-step guide to verify any phone isn't stolen using IMEI checks. Covers iPhone, Samsung, Android — check against GSMA, carrier blacklists, and community theft registries.",
+      "description": "Step-by-step guide to verify any phone isn't stolen using IMEI checks. Covers iPhone, Samsung, Android — check against carrier and manufacturer blacklists, carrier blacklists, and community theft registries.",
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
       "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-02",
@@ -45,7 +45,7 @@ const CheckIfPhoneStolenGuide = () => {
       "totalTime": "PT1M",
       "step": [
         { "@type": "HowToStep", "name": "Get the IMEI", "text": "Ask the seller to dial *#06# on the phone or check Settings → About Phone → IMEI. Write down the 15-digit number." },
-        { "@type": "HowToStep", "name": "Run an IMEI check", "text": "Go to safeorstolen.com/verify and enter the IMEI number. The system checks GSMA, carrier blacklists, and community theft registries simultaneously." },
+        { "@type": "HowToStep", "name": "Run an IMEI check", "text": "Go to safeorstolen.com/verify and enter the IMEI number. The system checks carrier and manufacturer blacklists, carrier blacklists, and community theft registries simultaneously." },
         { "@type": "HowToStep", "name": "Review the results", "text": "Within 3 seconds, you'll see a Trust Score (0-100) and detailed source-level breakdown. CLEAN means safe to buy. FLAGGED means stolen, blacklisted, or suspicious." },
         { "@type": "HowToStep", "name": "Check Activation Lock (iPhone)", "text": "For iPhones, also verify that Find My iPhone is turned off and the phone isn't locked to another Apple ID." },
         { "@type": "HowToStep", "name": "Save your proof", "text": "Download the PDF verification certificate for your records. This serves as documented due diligence if the item's status is ever questioned." }

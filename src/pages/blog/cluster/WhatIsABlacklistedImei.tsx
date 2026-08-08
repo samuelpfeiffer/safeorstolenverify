@@ -74,7 +74,7 @@ export default function WhatIsABlacklistedImei() {
           <p>
             Everything else — the $30 online services, the "clean IMEI" listings, the guy on
             a forum promising a database wipe — is a scam. The blacklist databases are
-            controlled by carriers and the GSMA, not by third parties, and no legitimate
+            controlled by carriers and the carrier and manufacturer blacklists, not by third parties, and no legitimate
             service can edit them.
           </p>
 
@@ -128,7 +128,7 @@ export default function WhatIsABlacklistedImei() {
         {
           question: 'Do those $30 IMEI unblacklist services work?',
           answer:
-            'No. The shared blacklist is maintained by carriers and the GSMA, not third parties. Any service promising to remove a real stolen or lost report is either a scam or is offering to illegally alter the phone\'s IMEI, which is a federal offense.',
+            'No. The shared blacklist is maintained by carriers and the carrier and manufacturer blacklists, not third parties. Any service promising to remove a real stolen or lost report is either a scam or is offering to illegally alter the phone\'s IMEI, which is a federal offense.',
         },
         {
           question: 'Will Apple\'s Activation Lock show if the IMEI is blacklisted?',

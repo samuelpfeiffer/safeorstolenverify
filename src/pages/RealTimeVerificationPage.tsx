@@ -94,7 +94,7 @@ export default function RealTimeVerificationPage() {
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Parallel Database Queries</h3>
-                    <p className="text-muted-foreground">Your query simultaneously hits 100+ databases worldwide—stolen property reports from all 50 states, GSMA, carrier blacklists, insurance claims, state registries, and international records.</p>
+                    <p className="text-muted-foreground">Your query simultaneously hits 100+ databases worldwide—stolen property reports from all 50 states, carrier and manufacturer blacklists, carrier blacklists, insurance claims, state registries, and international records.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

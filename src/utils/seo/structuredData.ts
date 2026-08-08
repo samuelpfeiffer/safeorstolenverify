@@ -31,7 +31,7 @@ export const createOrganizationSchema = () => {
   "@type": "Corporation",
   "name": "SafeOrStolen",
   "alternateName": ["Safe Or Stolen", "Safe or Stolen", "SOS", "safe or stolen"],
-  "description": "Fast-growing stolen goods verification platform serving customers across the United States with international expansion underway. Multi-database IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via NICB, GSMA, CheckMEND, Bike Index and growing database partnerships.",
+  "description": "Fast-growing stolen goods verification platform serving customers across the United States with international expansion underway. Multi-database IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via NICB, carrier and manufacturer blacklists, CheckMEND, Bike Index and growing database partnerships.",
   "slogan": "Complete Multi-Database Verification - Protect Every Purchase",
   "url": SITE_CONFIG.url,
   "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
@@ -196,7 +196,7 @@ export const createServiceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Complete Multi-Database Stolen Item Verification - IMEI, VIN & Serial Number Check",
- "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including NICB, GSMA, CheckMEND, and Bike Index. Fast results in 30 seconds.",
+ "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including NICB, carrier and manufacturer blacklists, CheckMEND, and Bike Index. Fast results in 30 seconds.",
   "provider": {
     "@type": "Organization",
     "name": "SafeOrStolen",

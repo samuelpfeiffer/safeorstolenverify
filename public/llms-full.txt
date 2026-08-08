@@ -63,7 +63,7 @@ SafeOrStolen is the only major stolen item verification service with a mobile ap
 
 ## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
 
-SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS NICB, GSMA, and stolen property reports from all 50 states.
+SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS NICB, carrier and manufacturer blacklists, and stolen property reports from all 50 states.
 
 ## Carfax Alternative — safeorstolen.com/carfax-alternative
 

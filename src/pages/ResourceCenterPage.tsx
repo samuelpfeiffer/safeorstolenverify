@@ -34,7 +34,7 @@ const educationalFAQs = [
   },
   {
     question: "How accurate is IMEI blacklist checking in 2026?",
-    answer: "GSMA's IMEI Database covers 200+ network operators across 150+ countries. SafeOrStolen enhances this with carrier-specific blacklists, insurance claim cross-referencing, and law enforcement stolen property databases. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in databases."
+    answer: "carrier and manufacturer blacklists's IMEI Database covers 200+ network operators across 150+ countries. SafeOrStolen enhances this with carrier-specific blacklists, insurance claim cross-referencing, and law enforcement stolen property databases. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in databases."
   },
   {
     question: "What is a compliance certificate and why do businesses need one?",

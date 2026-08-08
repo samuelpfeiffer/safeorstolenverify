@@ -244,7 +244,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Yes, CTIA (stolenphonechecker.org) is a legitimate service backed by US wireless carriers and GSMA. However, it only checks mobile phones and doesn't offer verification for other item types or a mobile app.
+                  Yes, CTIA (stolenphonechecker.org) is a legitimate service backed by US wireless carriers and carrier and manufacturer blacklists. However, it only checks mobile phones and doesn't offer verification for other item types or a mobile app.
                 </p>
               </CardContent>
             </Card>

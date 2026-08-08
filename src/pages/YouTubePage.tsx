@@ -170,7 +170,7 @@ const YouTubePage: React.FC = () => {
         "@type": "HowToStep",
         "position": 3,
         "name": "Enter the identifier on SafeOrStolen",
-        "text": "Go to safeorstolen.com/verify or open the SafeOrStolen PWA app. Enter or scan the IMEI, VIN, or serial number. The system cross-references 100+ databases including GSMA, NICB, and carrier blacklists."
+        "text": "Go to safeorstolen.com/verify or open the SafeOrStolen PWA app. Enter or scan the IMEI, VIN, or serial number. The system cross-references 100+ databases including carrier and manufacturer blacklists, NICB, and carrier blacklists."
       },
       {
         "@type": "HowToStep",
@@ -194,7 +194,7 @@ const YouTubePage: React.FC = () => {
     {
       icon: Smartphone,
       title: 'IMEI Verification Tutorials',
-      desc: 'Find your phone\'s IMEI (dial *#06#) and check it against GSMA\'s 15B+ record database, carrier blacklists, and insurance theft claims in under 3 seconds.',
+      desc: 'Find your phone\'s IMEI (dial *#06#) and check it against carrier and manufacturer blacklists\'s 15B+ record database, carrier blacklists, and insurance theft claims in under 3 seconds.',
       link: '/imei-checker',
       stat: '15B+ IMEI records',
       color: 'text-blue-500'
@@ -495,7 +495,7 @@ const YouTubePage: React.FC = () => {
               </p>
 
               <p className="leading-relaxed">
-                The <Link to="/imei-checker" className="text-primary hover:underline">IMEI checker tutorials</Link> teach buyers to locate their phone's IMEI number (by dialing *#06# on any iPhone or Android, or checking Settings › About Phone) and cross-reference it against the GSMA's global IMEI database containing over 15 billion records, carrier blacklists from AT&T, Verizon, and T-Mobile, and insurance theft claims databases. Results appear in approximately 3 seconds.
+                The <Link to="/imei-checker" className="text-primary hover:underline">IMEI checker tutorials</Link> teach buyers to locate their phone's IMEI number (by dialing *#06# on any iPhone or Android, or checking Settings › About Phone) and cross-reference it against the carrier and manufacturer blacklists's global IMEI database containing over 15 billion records, carrier blacklists from AT&T, Verizon, and T-Mobile, and insurance theft claims databases. Results appear in approximately 3 seconds.
               </p>
 
               <p className="leading-relaxed">

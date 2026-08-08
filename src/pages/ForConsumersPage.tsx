@@ -45,7 +45,7 @@ const ForConsumersPage = () => {
     },
     {
       question: "What items can I verify with SafeOrStolen?",
- answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including GSMA, NICB, carrier blacklists, and stolen property reports from all 50 states."
+ answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including carrier and manufacturer blacklists, NICB, carrier blacklists, and stolen property reports from all 50 states."
     },
     {
       question: "Is there a SafeOrStolen mobile app?",
@@ -90,7 +90,7 @@ const ForConsumersPage = () => {
           </header>
           <main>
             <h1>Buy Secondhand with Confidence</h1>
-            <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against 100+ stolen item databases before you hand over cash. SafeOrStolen checks GSMA, NICB, carrier blacklists, and stolen property reports from all 50 states in 3 seconds.</p>
+            <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against 100+ stolen item databases before you hand over cash. SafeOrStolen checks carrier and manufacturer blacklists, NICB, carrier blacklists, and stolen property reports from all 50 states in 3 seconds.</p>
             
             <h2>What Can You Verify?</h2>
             <ul>
@@ -229,7 +229,7 @@ const ForConsumersPage = () => {
             <div className="space-y-8">
               {[
                 { step: 1, title: "Get the Identifier", desc: "Ask the seller for the IMEI number (phones), VIN (vehicles), or serial number (electronics) before meeting. If they refuse, that's a red flag." },
-                { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against stolen property reports from all 50 states, GSMA, carrier blacklists, NICB, and 100+ community theft registries." },
+                { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against stolen property reports from all 50 states, carrier and manufacturer blacklists, carrier blacklists, NICB, and 100+ community theft registries." },
                 { step: 3, title: "Make an Informed Decision", desc: "If the status is CLEAN, proceed with confidence. If there are any red flags, walk away from the deal." }
               ].map(({ step, title, desc }) => (
                 <div key={step} className="flex items-start gap-6">

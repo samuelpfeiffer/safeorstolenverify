@@ -31,7 +31,7 @@ export const US_STATES: StateData[] = [
     population: 7279000,
     topCities: ['Phoenix', 'Tucson'],
     theftStatistics: { vehicleThefts: 24000, propertyThefts: 180000, theftRate: 2470 },
-    databaseAccess: { hasDirectAccess: true, databases: ['Arizona DOT', 'NICB VINCheck'] },
+    databaseAccess: { hasDirectAccess: true, databases: ['NICB VINCheck', 'NHTSA vPIC'] },
     lawEnforcement: { statePolice: 'Arizona Department of Public Safety', reportingUrl: 'https://www.azdps.gov' },
     dmv: { name: 'Arizona MVD', url: 'https://azdot.gov/motor-vehicles' }
   },
@@ -42,7 +42,7 @@ export const US_STATES: StateData[] = [
     population: 21480000,
     topCities: ['Miami', 'Tampa'],
     theftStatistics: { vehicleThefts: 42000, propertyThefts: 320000, theftRate: 1980 },
-    databaseAccess: { hasDirectAccess: true, databases: ['Florida DHSMV', 'NICB VINCheck'] },
+    databaseAccess: { hasDirectAccess: true, databases: ['NICB VINCheck', 'NHTSA vPIC'] },
     lawEnforcement: { statePolice: 'Florida Highway Patrol', reportingUrl: 'https://www.flhsmv.gov/fhp' },
     dmv: { name: 'Florida DHSMV', url: 'https://www.flhsmv.gov' }
   },
@@ -53,7 +53,7 @@ export const US_STATES: StateData[] = [
     population: 29000000,
     topCities: ['Houston', 'Dallas'],
     theftStatistics: { vehicleThefts: 78000, propertyThefts: 580000, theftRate: 2680 },
-    databaseAccess: { hasDirectAccess: true, databases: ['Texas DPS', 'NICB VINCheck'] },
+    databaseAccess: { hasDirectAccess: true, databases: ['NICB VINCheck', 'NHTSA vPIC'] },
     lawEnforcement: { statePolice: 'Texas Department of Public Safety', reportingUrl: 'https://www.dps.texas.gov' },
     dmv: { name: 'Texas DMV', url: 'https://www.txdmv.gov' }
   },
@@ -64,7 +64,7 @@ export const US_STATES: StateData[] = [
     population: 39510000,
     topCities: ['Los Angeles', 'San Francisco'],
     theftStatistics: { vehicleThefts: 187000, propertyThefts: 890000, theftRate: 2250 },
-    databaseAccess: { hasDirectAccess: true, databases: ['California DMV', 'NICB VINCheck'] },
+    databaseAccess: { hasDirectAccess: true, databases: ['NICB VINCheck', 'NHTSA vPIC'] },
     lawEnforcement: { statePolice: 'California Highway Patrol', reportingUrl: 'https://www.chp.ca.gov' },
     dmv: { name: 'California DMV', url: 'https://www.dmv.ca.gov' }
   },
@@ -75,7 +75,7 @@ export const US_STATES: StateData[] = [
     population: 19450000,
     topCities: ['New York City', 'Buffalo'],
     theftStatistics: { vehicleThefts: 15000, propertyThefts: 210000, theftRate: 1080 },
-    databaseAccess: { hasDirectAccess: true, databases: ['NY DMV', 'NICB VINCheck'] },
+    databaseAccess: { hasDirectAccess: true, databases: ['NICB VINCheck', 'NHTSA vPIC'] },
     lawEnforcement: { statePolice: 'New York State Police', reportingUrl: 'https://www.troopers.ny.gov' },
     dmv: { name: 'New York DMV', url: 'https://dmv.ny.gov' }
   },

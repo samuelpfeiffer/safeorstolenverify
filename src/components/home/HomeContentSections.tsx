@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
               <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
               <h3 className="font-bold text-lg mb-2">We Search 100+ Databases</h3>
               <p className="text-sm text-muted-foreground">
-                In parallel, we query NICB, GSMA, 50-State Firearm Reports, BikeIndex, state records, NHTSA vehicle records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
+                In parallel, we query NICB, carrier and manufacturer blacklists, 50-State Firearm Reports, BikeIndex, state records, NHTSA vehicle records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
               </p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg border border-border">

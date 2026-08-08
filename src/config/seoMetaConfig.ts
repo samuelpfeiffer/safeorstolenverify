@@ -195,7 +195,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/how-it-works': {
     title: 'How It Works - Stolen Item Verification Process',
-    description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and GSMA.', // 159 chars
+    description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and carrier and manufacturer blacklists.', // 159 chars
     keywords: 'how SafeOrStolen works, verification process, stolen item check explained',
     canonical: '/how-it-works'
   },
@@ -205,7 +205,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/database': {
     title: 'Databases We Search - 100+ Global Sources',
-    description: 'Access 50+ global stolen goods databases. Real-time checks across NICB, GSMA, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
+    description: 'Access 50+ global stolen goods databases. Real-time checks across NICB, carrier and manufacturer blacklists, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
     keywords: 'stolen item databases, NICB database, carrier and manufacturer blacklists, global theft databases',
     canonical: '/database'
   },

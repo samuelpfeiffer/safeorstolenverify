@@ -155,7 +155,7 @@ const FacebookMarketplaceScamsGuide = () => {
             <ol className="space-y-3 text-muted-foreground">
               <li><strong className="text-foreground">1.</strong> Ask the seller for the IMEI number (they can find it by dialing *#06# or in Settings → About Phone)</li>
               <li><strong className="text-foreground">2.</strong> Go to <Link to="/verify" className="text-primary hover:underline">safeorstolen.com/verify</Link> and enter the IMEI</li>
-              <li><strong className="text-foreground">3.</strong> Wait 3 seconds for results from GSMA, carrier blacklists, and community theft registries</li>
+              <li><strong className="text-foreground">3.</strong> Wait 3 seconds for results from carrier and manufacturer blacklists, carrier blacklists, and community theft registries</li>
               <li><strong className="text-foreground">4.</strong> If CLEAN → safe to proceed with the purchase (download the certificate for your records)</li>
               <li><strong className="text-foreground">5.</strong> If FLAGGED → do not buy. Report the listing to Facebook and local police.</li>
             </ol>

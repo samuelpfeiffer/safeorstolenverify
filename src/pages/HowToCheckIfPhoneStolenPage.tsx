@@ -149,7 +149,7 @@ const HowToCheckIfPhoneStolenPage = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search 100+ databases including carrier blacklists, GSMA, and police records to protect you from buying stolen or blacklisted devices.
+            Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search 100+ databases including carrier blacklists, carrier and manufacturer blacklists, and police records to protect you from buying stolen or blacklisted devices.
           </p>
 
           {/* Quick Check Tool */}
