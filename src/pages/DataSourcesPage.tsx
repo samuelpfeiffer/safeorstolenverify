@@ -69,7 +69,6 @@ const DATA_CATEGORIES = [
     ],
     stats: [
       { value: "50+", label: "State databases" },
-      { value: label: "Federal integration" },
       { value: "Real-time", label: "Data sync" },
     ],
     links: [

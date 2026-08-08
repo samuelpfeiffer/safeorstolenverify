@@ -42,7 +42,8 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
     `${stateData.abbrev.toLowerCase()} license plate search`,
     `${stateData.name.toLowerCase()} stolen vehicle check`,
     `check ${stateData.abbrev.toLowerCase()} license plate stolen`,
-    `free ${stateData.name.toLowerCase()} plate search`...(stateData.hasTheftDatabase ? [`${stateData.theftDatabaseName?.toLowerCase()} lookup`] : [])
+    `free ${stateData.name.toLowerCase()} plate search`,
+    ...(stateData.hasTheftDatabase ? [`${stateData.theftDatabaseName?.toLowerCase()} lookup`] : [])
   ];
 
   const structuredData = [

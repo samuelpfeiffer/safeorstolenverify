@@ -588,7 +588,8 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
       `check ${state.toLowerCase()} license plate stolen`,
       `${state.toLowerCase()} stolen vehicle plate lookup`,
       `verify ${stateCode} plate number`,
-      `${state.toLowerCase()} dmv plate lookup`...topCities.map(city => `${city.toLowerCase()} vehicle check`)
+      `${state.toLowerCase()} dmv plate lookup`,
+      ...topCities.map(city => `${city.toLowerCase()} vehicle check`)
     ],
     content: {
       intro: `Verify ${state} vehicles using license plate number in 3 seconds. Free ${state} license plate lookup from ${dmvName} and law enforcement databases. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,

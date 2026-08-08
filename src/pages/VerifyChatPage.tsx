@@ -142,7 +142,7 @@ const VerifyChatPage: React.FC = () => {
 
   const updateMessage = useCallback(
     (id: string, patch: Partial<ChatMessage>) => {
-      setMessages((prev) => prev.map((m) => (m.id === id ? { ...m...patch } : m)));
+      setMessages((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch } : m)));
     },
     [setMessages]);
 

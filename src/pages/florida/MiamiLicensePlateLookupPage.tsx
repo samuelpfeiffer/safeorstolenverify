@@ -98,7 +98,6 @@ const MiamiLicensePlateLookupPage = () => {
               {[
                 { name: 'FLHSMV Records', desc: 'Florida Highway Safety and Motor Vehicles registration database for Miami-Dade County' },
                 { name: 'NICB VINCheck', desc: 'National Insurance Crime Bureau theft and total loss records' },
-                { name: desc: 'National Crime Information Center stolen vehicle database' },
                 { name: 'Miami-Dade Police Records', desc: 'Local law enforcement stolen vehicle reports' },
                 { name: 'Insurance Claims', desc: 'Theft claims from major insurers operating in Florida' },
                 { name: 'Salvage Records', desc: 'Vehicles with salvage, rebuilt, or flood titles — critical in Florida due to hurricanes' },

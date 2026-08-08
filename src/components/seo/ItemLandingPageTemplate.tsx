@@ -98,7 +98,7 @@ export const ItemLandingPageTemplate = ({
     }))
   } : null;
 
-  const structuredData = [serviceSchema, howToSchema, breadcrumbSchema...(faqSchema ? [faqSchema] : [])];
+  const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
     <>

@@ -300,7 +300,9 @@ import { STATE_UNIQUE_CONTENT_PART3 } from './stateUniqueContentPart3';
 
 // Merge all state content
 const ALL_STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
-  ...STATE_UNIQUE_CONTENT...STATE_UNIQUE_CONTENT_PART2...STATE_UNIQUE_CONTENT_PART3
+  ...STATE_UNIQUE_CONTENT,
+  ...STATE_UNIQUE_CONTENT_PART2,
+  ...STATE_UNIQUE_CONTENT_PART3
 };
 
 // Helper function to get unique content for a state

@@ -50,7 +50,8 @@ export const StateVinPageTemplate = ({
 
     // Combine all FAQs for schema
     const allFaqs = [
-      ...faqs...(uniqueContent?.uniqueFaqs || [])
+      ...faqs,
+      ...(uniqueContent?.uniqueFaqs || [])
     ];
   
     const schema = [
@@ -358,7 +359,6 @@ export const StateVinPageTemplate = ({
                   { name: 'NMVTIS', desc: 'National Motor Vehicle Title Information System' },
                   { name: `${state} DMV`, desc: 'Registration and title status records' },
                   { name: `${state} Law Enforcement`, desc: 'Active stolen vehicle reports' },
-                  { name: desc: 'Federal stolen vehicle database' },
                   { name: 'Insurance Records', desc: 'Claims history across all 50 states' },
                 ].map((db, idx) => (
                   <div key={idx} className="flex gap-3 p-4 bg-card rounded-lg">

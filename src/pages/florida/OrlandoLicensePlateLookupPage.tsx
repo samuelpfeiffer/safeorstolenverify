@@ -88,7 +88,6 @@ const OrlandoLicensePlateLookupPage = () => {
                 { name: 'Orange County Sheriff', desc: 'OCSO stolen vehicle reports covering greater Orlando metro' },
                 { name: 'Orlando Police (OPD)', desc: 'City of Orlando stolen vehicle records' },
                 { name: 'NICB VINCheck', desc: 'National Insurance Crime Bureau theft and total loss records' },
-                { name: desc: 'National stolen vehicle database — catches cars stolen in other states' },
                 { name: 'Rental & Fleet Records', desc: 'Former rental vehicle indicators and fleet disposal data' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
