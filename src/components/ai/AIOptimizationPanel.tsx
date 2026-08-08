@@ -130,7 +130,7 @@ export const AIOptimizationPanel: React.FC<AIOptimizationPanelProps> = ({
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <h4 className="font-semibold">AI Recommendations</h4>
-              <Badge variant="secondary">Powered by Gemini</Badge>
+              <Badge variant="secondary">AI-Powered</Badge>
             </div>
             
             <div className="bg-muted/30 p-4 rounded-lg space-y-2 max-h-96 overflow-y-auto">

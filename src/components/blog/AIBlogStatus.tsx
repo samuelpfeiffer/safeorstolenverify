@@ -86,7 +86,7 @@ export const AIBlogStatus: React.FC = () => {
                 </Badge>
               </CardTitle>
               <CardDescription>
-                Automated daily content generation powered by Gemini AI
+                Automated daily AI-powered content generation
               </CardDescription>
             </div>
           </div>
