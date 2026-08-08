@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T15:56:14.091062+00:00",
+  "generatedAt": "2026-08-08T20:39:21.510878+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -97,6 +97,12 @@
       "slug": "blog",
       "title": "Blog - Stolen Item Guides & Safety Tips | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog"
+    },
+    {
+      "route": "/blog/50-State Firearm Reports-database-guide",
+      "slug": "blog__hotgunz-database-guide",
+      "title": "50-State Firearm Reports Database \u2014 What It Is & How to Search Stolen Firearms (2026)",
+      "canonical": "https://safeorstolen.com/blog/50-State Firearm Reports-database-guide"
     },
     {
       "route": "/blog/ai-stolen-item-detection-2026",
@@ -211,12 +217,6 @@
       "slug": "blog__gun-show-serial-number-check",
       "title": "How to Check a Gun Serial Number at a Gun Show (2026) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/gun-show-serial-number-check"
-    },
-    {
-      "route": "/blog/50-State Firearm Reports-database-guide",
-      "slug": "blog__hotgunz-database-guide",
-      "title": "50-State Firearm Reports Database \u2014 What It Is & How to Search Stolen Firearms (2026)",
-      "canonical": "https://safeorstolen.com/blog/50-State Firearm Reports-database-guide"
     },
     {
       "route": "/blog/how-to-check-if-gun-is-stolen",
@@ -707,7 +707,7 @@
     {
       "route": "/firearms-check",
       "slug": "firearms-check",
-      "title": "Free Gun Serial Number Lookup \u2014 Check if a Gun is Stolen",
+      "title": "Gun Serial Number Check \u2014 All 50 States | SafeOrStolen",
       "canonical": "https://safeorstolen.com/firearms-check"
     },
     {
@@ -901,6 +901,12 @@
       "slug": "how-to-check-if-phone-stolen",
       "title": "How to Check if a Phone is Stolen Before Buying (2026 Gui...",
       "canonical": "https://safeorstolen.com/how-to-check-if-phone-stolen"
+    },
+    {
+      "route": "/how-to-verify-a-used-item",
+      "slug": "how-to-verify-a-used-item",
+      "title": "How to Verify a Used Item Before You Buy \u2014 Complete Guide",
+      "canonical": "https://safeorstolen.com/how-to-verify-a-used-item"
     },
     {
       "route": "/idaho-license-plate-lookup",
