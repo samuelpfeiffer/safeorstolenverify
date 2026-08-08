@@ -4,7 +4,7 @@ const IMEICheckerPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Free IMEI Check — Is This Phone Stolen or Blacklisted? | SafeOrStolen"
-      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks GSMA, carrier and manufacturer blacklists, and stolen property reports from all 50 states simultaneously. Results in 3 seconds."
+      metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks carrier and manufacturer blacklists, and stolen property reports from all 50 states simultaneously. Results in 3 seconds."
       h1="Free IMEI Check — Stolen & Blacklist Verification"
       itemType="Phone"
       keywords={[
@@ -26,7 +26,7 @@ const IMEICheckerPage = () => {
         whyCheck: "Buying a stolen phone can lead to serious consequences. The phone can be remotely locked or wiped by the original owner, blacklisted by carriers making it unusable, confiscated by law enforcement as stolen property, and you could face criminal charges for possession of stolen goods. Additionally, you lose all your money with zero legal recourse. In 2024 alone, over 2.4 million smartphones were reported stolen in the United States, with many ending up on secondhand marketplaces like Facebook Marketplace, eBay, OfferUp, and Craigslist. Our free IMEI checker helps you avoid these risks.",
         benefits: [
           "Instant verification from multiple databases in 3 seconds",
-          "Check carrier and manufacturer blacklists and carrier blacklists",
+          "Check carrier and manufacturer blacklists",
           "Verify phone isn't reported stolen or lost",
           "Check for outstanding finance or insurance claims",
           "Confirm phone works on your carrier network",

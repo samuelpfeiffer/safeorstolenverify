@@ -506,7 +506,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick free vehicle theft checks. For comprehensive coverage including DMV records and police databases, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
+                <strong>Best for:</strong> Quick free vehicle theft checks. For comprehensive coverage including NHTSA vehicle records and police databases, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
               </p>
             </section>
 

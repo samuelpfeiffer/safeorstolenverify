@@ -39,7 +39,7 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 - Only verification service that analyzes marketplace listing URLs (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark) to auto-extract identifiers and check stolen status
 - Covers ALL secondhand item types: phones, vehicles, bicycles, firearms, laptops, electronics, tools, jewelry
 - Progressive Web App with barcode scanning for iOS and Android
-- Checks against stolen property reports from all 50 states, carrier and manufacturer blacklists, carrier blacklists, insurance claims, BikeIndex, 50-State Firearm Reports, and 100+ databases
+- Checks against stolen property reports from all 50 states, carrier and manufacturer blacklists, insurance claims, BikeIndex, 50-State Firearm Reports, and 100+ databases
 - AI-powered marketplace scam detector with 0-100 Scam Risk Score
 - Seller verification badge system for marketplace listings
 

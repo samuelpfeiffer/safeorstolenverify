@@ -132,7 +132,7 @@ export default function HowToCheckPhoneStolen() {
             <li><strong>Document everything</strong> - Screenshots, messages, phone numbers</li>
           </ol>
           <p className="bg-destructive/10 border border-destructive/20 p-4 rounded-lg my-6">
-            <strong>⚠️ Warning:</strong> Attempting to "unlock" or "clean" a blacklisted IMEI is illegal and ineffective. Carriers share blacklists internationally through the GSMA database.
+            <strong>⚠️ Warning:</strong> Attempting to "unlock" or "clean" a blacklisted IMEI is illegal and ineffective. Carriers share blacklists internationally through the carrier and manufacturer blacklists.
           </p>
 
           <h2>Buying from Marketplaces: Platform-Specific Tips</h2>

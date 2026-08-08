@@ -6,7 +6,7 @@ import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
 const FAQ_ITEMS = [
-  { q: 'How do I check if a phone is stolen before buying it?', a: 'Get the IMEI number from the seller (dial *#06# on the phone or check Settings → About Phone). Enter it into SafeOrStolen\'s IMEI checker to cross-reference GSMA, carrier and manufacturer blacklists, and community theft registries. Results appear in 3 seconds.' },
+  { q: 'How do I check if a phone is stolen before buying it?', a: 'Get the IMEI number from the seller (dial *#06# on the phone or check Settings → About Phone). Enter it into SafeOrStolen\'s IMEI checker to cross-reference carrier and manufacturer blacklists, and community theft registries. Results appear in 3 seconds.' },
   { q: 'What is an IMEI number and where do I find it?', a: 'IMEI (International Mobile Equipment Identity) is a unique 15-digit number assigned to every mobile device. Find it by: (1) dialing *#06#, (2) checking Settings → About Phone → IMEI, (3) looking on the original box, or (4) checking the SIM tray on iPhones. Every phone has one, and it cannot be changed without illegal modification.' },
   { q: 'Can a stolen phone be used after a factory reset?', a: 'A factory reset does NOT clear a stolen phone\'s status. The IMEI remains blacklisted across all carriers regardless of resets. iPhones have Activation Lock tied to the Apple ID, and Android phones have Factory Reset Protection (FRP) — both prevent use without the original owner\'s credentials.' },
   { q: 'What does a blacklisted IMEI mean?', a: 'A blacklisted IMEI means the phone was reported as stolen, lost, or has an unpaid financial balance with a carrier. Blacklisted phones cannot be activated on major U.S. carriers (AT&T, Verizon, T-Mobile). The GSMA maintains a global blacklist shared across 200+ carriers in 50+ countries.' },
@@ -68,7 +68,7 @@ const CheckIfPhoneStolenGuide = () => {
     <div className="min-h-screen bg-background text-foreground pt-20">
       <SEOHead
         title="How to Check If a Phone Is Stolen (2026 Guide) | SafeOrStolen"
-        description="Free IMEI check guide: verify if any phone is stolen before buying. Check iPhone, Samsung, Android against GSMA blacklist and 100+ community theft registries in 3 seconds."
+        description="Free IMEI check guide: verify if any phone is stolen before buying. Check iPhone, Samsung, Android against carrier and manufacturer blacklists and 100+ community theft registries in 3 seconds."
         canonical="/blog/check-if-phone-stolen-guide"
         keywords="check if phone stolen, IMEI check free, how to tell if phone is stolen, stolen phone checker, blacklisted IMEI check, is my phone stolen"
         ogType="article"

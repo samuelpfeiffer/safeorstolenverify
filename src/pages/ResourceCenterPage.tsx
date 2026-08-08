@@ -14,7 +14,7 @@ const educationalFAQs = [
   },
   {
     question: "How do I check if a used phone is stolen before buying it?",
-    answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against GSMA blacklists, carrier databases, and insurance claim records. A clean result with a Trust Score above 85 indicates the device has no theft reports across 100+ databases. Always verify before exchanging money."
+    answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against carrier and manufacturer blacklists, carrier databases, and insurance claim records. A clean result with a Trust Score above 85 indicates the device has no theft reports across 100+ databases. Always verify before exchanging money."
   },
   {
     question: "What happens if I accidentally buy stolen goods?",

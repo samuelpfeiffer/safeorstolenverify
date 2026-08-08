@@ -262,7 +262,7 @@ export default function DataSourceCredibilityStolenGoods() {
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li><strong>Real-time stolen property reports from all 50 states</strong> for vehicles and firearms through authorized law enforcement partnerships</li>
               <li><strong>GSMA IMEI blacklist</strong> covering all major U.S. and global carriers</li>
-              <li><strong>State DMV databases</strong> for all 50 states via NMVTIS integration</li>
+              <li><strong>State NHTSA vehicle records</strong> for all 50 states via NMVTIS integration</li>
               <li><strong>Manufacturer databases</strong> including Apple, Samsung, Microsoft activation lock status</li>
               <li><strong>Insurance aggregators</strong> from 200+ insurance companies</li>
               <li><strong>Local police records</strong> from 5,000+ departments</li>
@@ -328,7 +328,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <Database className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify with Law Enforcement-Grade Data</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, GSMA, and all 50 state DMVs. 
+                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, GSMA, and state motor vehicle agencies. 
                 Free verification available.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">

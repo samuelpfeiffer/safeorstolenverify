@@ -35,21 +35,21 @@ const VERIFY_CARDS = [
   },
   {
     title: 'Vehicle VIN Check',
-    subtitle: 'NICB, NHTSA, DMV records from all 50 states',
+    subtitle: 'NICB, NHTSA, NHTSA vehicle records from all 50 states',
     href: '/vin-checker',
     image: cardVehicle,
     badge: null,
   },
   {
     title: 'Phone IMEI Check',
-    subtitle: 'GSMA, carrier and manufacturer blacklists',
+    subtitle: 'carrier and manufacturer blacklists',
     href: '/imei-checker',
     image: cardPhone,
     badge: null,
   },
   {
     title: 'License Plate Lookup',
-    subtitle: 'State DMV records + theft database cross-check',
+    subtitle: 'State NHTSA vehicle records + theft database cross-check',
     href: '/license-plate-lookup',
     image: cardPlate,
     badge: null,
@@ -126,7 +126,7 @@ const RECENT_VERIFICATIONS = [
 const FAQ_ITEMS = [
   {
     q: 'How do I check if a phone is stolen before buying?',
-    a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks carrier and manufacturer blacklists, carrier blacklists, and community theft registries simultaneously.",
+    a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks carrier and manufacturer blacklists, and community theft registries simultaneously.",
   },
   {
     q: 'How do I check if a used car is stolen?',
@@ -154,7 +154,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How does the license plate lookup work?',
-    a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen. SafeOrStolen queries state DMV records and community theft registries across all 50 states. Results include stolen status, registration state, and vehicle details when available.',
+    a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen. SafeOrStolen queries NHTSA vehicle records and community theft registries across all 50 states. Results include stolen status, registration state, and vehicle details when available.',
   },
   {
     q: 'Can I use SafeOrStolen as a seller to prove my item is legitimate?',

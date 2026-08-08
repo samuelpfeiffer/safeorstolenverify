@@ -28,7 +28,7 @@ const FreeVINLookupGuide = () => {
       "step": [
         { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": "Locate the 17-character VIN on the dashboard (driver's side), driver's door jamb, or vehicle registration." },
         { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Go to SafeOrStolen.com/verify and paste the 17-digit VIN. AI auto-detects it as a vehicle identifier." },
-        { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "Get instant results from NICB, NHTSA, state DMV databases, and insurance records. See if the vehicle is stolen, salvage, or clean." },
+        { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "Get instant results from NICB, NHTSA, NHTSA vehicle records, and insurance records. See if the vehicle is stolen, salvage, or clean." },
         { "@type": "HowToStep", "position": 4, "name": "Download report", "text": "Get a PDF certificate or shareable link to prove the vehicle is clean." }
       ],
       "totalTime": "PT30S"

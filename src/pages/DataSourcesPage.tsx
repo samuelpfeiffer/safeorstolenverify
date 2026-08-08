@@ -175,7 +175,7 @@ const DATA_CATEGORIES = [
       },
       {
         name: "NMVTIS — National Motor Vehicle Title Information System",
-        detail: "Federal system connecting all 50 state DMVs, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
+        detail: "Federal system connecting state motor vehicle agencies, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
         link: "/vin-checker"
       },
       {

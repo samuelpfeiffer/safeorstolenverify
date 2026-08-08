@@ -110,7 +110,7 @@ const CheckImeiStolenPage = () => {
           <p>
             An IMEI — International Mobile Equipment Identity — is a permanent 15-digit serial number
             unique to a specific handset. Unlike a SIM or phone number, it stays with the physical
-            device for life, which is exactly why stolen-device databases like the GSMA registry are
+            device for life, which is exactly why stolen-device databases like the carrier and manufacturer blacklists are
             built around it.
           </p>
           <p>Three ways to find a phone&apos;s IMEI:</p>
@@ -229,7 +229,7 @@ const CheckImeiStolenPage = () => {
               Blacklisted
             </span>
             <p className="mt-2.5">
-              A carrier has flagged the IMEI in the GSMA registry. The phone may work today but can be
+              A carrier has flagged the IMEI in the carrier and manufacturer blacklists. The phone may work today but can be
               blocked from networks at any time. Treat a blacklisted result as a hard stop on any
               purchase.
             </p>

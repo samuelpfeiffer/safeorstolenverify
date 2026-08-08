@@ -51,7 +51,7 @@ const ImeiStolenPhoneCheckPage = () => {
           },
           {
             question: "Can a blacklisted phone be unblacklisted?",
-            answer: "No legitimate service can unblacklist a stolen phone. The GSMA blacklist and carrier blacklists are permanent for stolen devices. The only way to remove a phone from the blacklist is if the original owner or insurance company reports it as found/recovered - which they won't do if you bought it from a thief. Anyone claiming to 'unblacklist' phones is scamming you or doing something illegal."
+            answer: "No legitimate service can unblacklist a stolen phone. The carrier and manufacturer blacklists and carrier blacklists are permanent for stolen devices. The only way to remove a phone from the blacklist is if the original owner or insurance company reports it as found/recovered - which they won't do if you bought it from a thief. Anyone claiming to 'unblacklist' phones is scamming you or doing something illegal."
           },
           {
             question: "What's the difference between blacklisted, stolen, and blocked?",

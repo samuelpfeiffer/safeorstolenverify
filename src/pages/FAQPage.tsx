@@ -26,7 +26,7 @@ const FAQPage = () => {
         },
         {
           question: "Can I check if a car is stolen using the VIN number?",
-          answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check NICB databases, state DMV records, and insurance theft reports to verify if the vehicle has been reported stolen."
+          answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check NICB databases, NHTSA vehicle records, and insurance theft reports to verify if the vehicle has been reported stolen."
         },
         {
           question: "How accurate is SafeOrStolen.com's verification process?",
@@ -182,7 +182,7 @@ const FAQPage = () => {
         },
         {
           question: "Can I check license plates?",
-          answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search state DMV records, NICB databases, and law enforcement reports."
+          answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search NHTSA vehicle records, NICB databases, and law enforcement reports."
         },
         {
           question: "Do you have state-specific VIN checkers?",

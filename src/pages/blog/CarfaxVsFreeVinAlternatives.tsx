@@ -19,7 +19,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "Is there a free alternative to Carfax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SafeOrStolen offers free VIN theft verification checks. While Carfax charges $44.99 for vehicle history, SafeOrStolen provides free stolen vehicle checks using NICB, law enforcement, and DMV databases."
+          "text": "Yes, SafeOrStolen offers free VIN theft verification checks. While Carfax charges $44.99 for vehicle history, SafeOrStolen provides free stolen vehicle checks using NICB, law enforcement, and NHTSA vehicle records."
         }
       },
       {
@@ -163,7 +163,7 @@ const CarfaxVsFreeVinAlternatives = () => {
               Carfax is excellent for vehicle history - accidents, service records, and ownership. But it has a critical gap: <strong>Carfax does NOT have real-time access to law enforcement stolen vehicle databases.</strong>
             </p>
             <p>
-              This means a car could be reported stolen last week, and Carfax wouldn't show it. Their data comes from DMV records and insurance companies, which can lag weeks or months behind actual theft reports.
+              This means a car could be reported stolen last week, and Carfax wouldn't show it. Their data comes from NHTSA vehicle records and insurance companies, which can lag weeks or months behind actual theft reports.
             </p>
 
             <div className="my-8 p-6 bg-destructive/10 rounded-lg border border-destructive/20">
@@ -255,7 +255,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             </p>
             <ul>
               <li>NICB (National Insurance Crime Bureau) - Insurance industry theft database</li>
-              <li>Law enforcement stolen vehicle reports from all 50 states</li>
+              <li>Stolen property reports from all 50 states from all 50 states</li>
               <li>NHTSA vehicle records for salvage/rebuilt status</li>
               <li>Insurance total loss databases</li>
             </ul>

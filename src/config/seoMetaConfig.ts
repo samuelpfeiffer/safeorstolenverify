@@ -45,7 +45,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/imei-checker': {
     title: 'Free IMEI Checker App - Verify Phone Not Stolen',
-    description: 'Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, GSMA database. Better than CheckMEND.', // 155 chars
+    description: 'Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, carrier and manufacturer blacklists. Better than CheckMEND.', // 155 chars
     keywords: 'IMEI checker, phone blacklist check, stolen phone checker, IMEI lookup free',
     canonical: '/imei-checker'
   },
@@ -206,7 +206,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   '/database': {
     title: 'Databases We Search - 100+ Global Sources',
     description: 'Access 50+ global stolen goods databases. Real-time checks across NICB, GSMA, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
-    keywords: 'stolen item databases, NICB database, GSMA database, global theft databases',
+    keywords: 'stolen item databases, NICB database, carrier and manufacturer blacklists, global theft databases',
     canonical: '/database'
   },
 

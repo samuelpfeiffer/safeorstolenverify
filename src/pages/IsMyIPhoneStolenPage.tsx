@@ -43,7 +43,7 @@ const IsMyIPhoneStolenPage = () => {
         faqs: [
           {
             question: "How do I check if an iPhone is stolen using the IMEI?",
-            answer: "To check if an iPhone is stolen: (1) Get the IMEI by dialing *#06# or going to Settings > General > About, (2) Enter the 15-digit IMEI at SafeOrStolen.com/verify, (3) Review the instant report showing stolen status, iCloud lock, and carrier blacklist. The check takes 3 seconds and searches global databases including the GSMA registry, carrier blacklists, and community theft registries."
+            answer: "To check if an iPhone is stolen: (1) Get the IMEI by dialing *#06# or going to Settings > General > About, (2) Enter the 15-digit IMEI at SafeOrStolen.com/verify, (3) Review the instant report showing stolen status, iCloud lock, and carrier blacklist. The check takes 3 seconds and searches global databases including the carrier and manufacturer blacklists, carrier blacklists, and community theft registries."
           },
           {
             question: "What is iCloud Activation Lock and why does it matter?",
@@ -51,7 +51,7 @@ const IsMyIPhoneStolenPage = () => {
           },
           {
             question: "Can I check if an iPhone is stolen without the IMEI?",
-            answer: "You can also check using the iPhone's serial number, which you can find in Settings > General > About, on the original box, or on the SIM tray (some models). However, the IMEI is more reliable for theft checks as it's the primary identifier used by carriers and the GSMA blacklist. If a seller won't provide the IMEI, that's a major red flag."
+            answer: "You can also check using the iPhone's serial number, which you can find in Settings > General > About, on the original box, or on the SIM tray (some models). However, the IMEI is more reliable for theft checks as it's the primary identifier used by carriers and the carrier and manufacturer blacklists. If a seller won't provide the IMEI, that's a major red flag."
           },
           {
             question: "What happens if I buy a stolen iPhone?",

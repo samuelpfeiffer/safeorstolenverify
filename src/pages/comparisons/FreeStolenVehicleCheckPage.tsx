@@ -19,7 +19,7 @@ const FreeStolenVehicleCheckPage = () => {
       ]}
       content={{
         intro: "Check if any vehicle is stolen for free - with no daily limits. Unlike NICB VINCheck which restricts you to 5 searches per day, SafeOrStolen lets you verify unlimited vehicles against 100+ databases. Enter any VIN or license plate to get instant results in 3 seconds.",
-        whatIs: "A stolen vehicle check verifies whether a car, truck, motorcycle, or other vehicle has been reported stolen to law enforcement, insurance companies, or state databases. SafeOrStolen searches 100+ national and state databases simultaneously, giving you comprehensive coverage that single-source checkers like NICB simply can't match. Our verification includes police theft reports, insurance claims, state DMV records, and user-submitted stolen vehicle reports.",
+        whatIs: "A stolen vehicle check verifies whether a car, truck, motorcycle, or other vehicle has been reported stolen to law enforcement, insurance companies, or state databases. SafeOrStolen searches 100+ national and state databases simultaneously, giving you comprehensive coverage that single-source checkers like NICB simply can't match. Our verification includes police theft reports, insurance claims, NHTSA vehicle records, and user-submitted stolen vehicle reports.",
         howItWorks: "Our aggregated search technology queries multiple data sources in parallel. When you enter a VIN or license plate, we simultaneously check law enforcement records, insurance claim databases, state DMV theft records, and our own user-reported stolen vehicle database. Results are returned in approximately 3 seconds with a clear status: CLEAR (safe to buy), STOLEN (walk away immediately), or UNKNOWN (no records found - proceed with caution).",
         whyCheck: "Buying a stolen vehicle can result in losing both the vehicle AND your money when it's recovered by police. You could also face legal trouble for possession of stolen property. Every year, hundreds of thousands of vehicles are stolen in the US, and many end up for sale on Facebook Marketplace, Craigslist, and OfferUp. A 3-second check before you meet with a seller can save you thousands of dollars and significant legal headaches.",
         benefits: [
@@ -32,7 +32,7 @@ const FreeStolenVehicleCheckPage = () => {
         ],
         process: [
           "Enter the vehicle's VIN (17 characters from dashboard or door jamb) or license plate number",
-          "Our system searches 100+ databases including law enforcement, insurance, and state DMV records",
+          "Our system searches 100+ databases including law enforcement, insurance, and NHTSA vehicle records",
           "Receive instant results showing CLEAR, STOLEN, or UNKNOWN status",
           "Get a shareable verification certificate to prove the vehicle is clean"
         ],

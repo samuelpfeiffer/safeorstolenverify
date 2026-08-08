@@ -30,7 +30,7 @@ const IPhoneIMEICheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is iPhone IMEI Verification?"
-      whatIsContent="Every iPhone has a unique 15-digit IMEI (International Mobile Equipment Identity) number that serves as its fingerprint. When an iPhone is reported stolen, this IMEI is added to global blacklist databases. Our verification service checks your iPhone's IMEI against these databases, including GSMA, carrier and manufacturer blacklists, law enforcement records, and insurance claim databases. If the iPhone is stolen, it can be remotely locked via iCloud, blacklisted by carriers (making it unusable), or confiscated by police - leaving you with nothing."
+      whatIsContent="Every iPhone has a unique 15-digit IMEI (International Mobile Equipment Identity) number that serves as its fingerprint. When an iPhone is reported stolen, this IMEI is added to global blacklist databases. Our verification service checks your iPhone's IMEI against these databases, including carrier and manufacturer blacklists, law enforcement records, and insurance claim databases. If the iPhone is stolen, it can be remotely locked via iCloud, blacklisted by carriers (making it unusable), or confiscated by police - leaving you with nothing."
       howItWorksSteps={[
         "Find the iPhone's IMEI: Dial *#06# on the phone, go to Settings > General > About, or check the original box/SIM tray",
         "Enter the 15-digit IMEI number into our free verification tool",

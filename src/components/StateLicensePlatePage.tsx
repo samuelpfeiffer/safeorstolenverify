@@ -127,7 +127,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
             <ul>
               {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
               <li>NICB (National Insurance Crime Bureau)</li>
-              <li>{stateData.name} DMV records</li>
+              <li>{stateData.name} NHTSA vehicle records</li>
               <li>Police databases and stolen property reports from all 50 states</li>
               <li>Insurance claims records</li>
             </ul>
@@ -260,7 +260,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
               </div>
               <div className="flex gap-3 p-4 bg-background rounded-lg">
                 <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <span className="text-base">{stateData.name} DMV records</span>
+                <span className="text-base">{stateData.name} NHTSA vehicle records</span>
               </div>
               <div className="flex gap-3 p-4 bg-background rounded-lg">
                 <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />

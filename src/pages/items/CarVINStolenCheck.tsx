@@ -37,7 +37,7 @@ const CarVINStolenCheck = () => {
         "Our system searches NICB, NMVTIS, law enforcement, and insurance databases instantly",
         "Get results in 3 seconds - see if the vehicle is CLEAR or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search multiple authoritative databases including the NICB stolen vehicle database, NMVTIS title records, state DMV records, community theft registries, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."
+      howItWorksDescription="We search multiple authoritative databases including the NICB stolen vehicle database, NMVTIS title records, NHTSA vehicle records, community theft registries, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."
       whyVerifyTitle="Why Check VIN Before Buying a Used Car?"
       whyVerifyContent="Vehicle theft is a $6 billion annual problem in America. Over 810,000 vehicles were stolen in 2024, with many eventually sold to unsuspecting buyers through private sales, Facebook Marketplace, and Craigslist. The consequences of buying a stolen car are severe:"
       whyVerifyBenefits={[

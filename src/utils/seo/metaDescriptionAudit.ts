@@ -23,7 +23,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
   // CORE PAGES (155-160 chars each)
   '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. From $0.99/check. Results in 3 seconds.',
   '/imei-checker': 'IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and community theft registries. From $0.99.',
-  '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against NICB and DMV databases. Better than Carfax. $10/mo.',
+  '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against NICB and NHTSA vehicle records. Better than Carfax. $10/mo.',
   '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Lookup from DMV and community theft registries across all 50 states. Instant verification.',
   '/check-phone': 'Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. From $0.99/check.',
   '/check-car': 'Check if a car is stolen before buying. VIN verification from NICB, DMV, and community theft registries. Safer alternative to Carfax. From $0.99/check.',

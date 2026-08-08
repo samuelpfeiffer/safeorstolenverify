@@ -145,7 +145,7 @@ export const StateVinPageTemplate = ({
               <ul>
                 <li>NICB (National Insurance Crime Bureau) - insurance theft claims</li>
                 <li>NMVTIS (National Motor Vehicle Title Information System) - title history</li>
-                <li>{state} DMV records - registration and title status</li>
+                <li>{state} NHTSA vehicle records - registration and title status</li>
                 <li>{state} law enforcement - active stolen vehicle reports</li>
                 <li>Stolen property reports from all 50 states - federal stolen vehicle database</li>
                 <li>Insurance claims records across all 50 states</li>

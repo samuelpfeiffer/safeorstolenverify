@@ -170,7 +170,7 @@ Authorization: Bearer YOUR_API_KEY
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  Check vehicle VIN for theft records, salvage titles, active recalls, and odometer fraud. This endpoint queries NMVTIS (National Motor Vehicle Title Information System), state DMV databases, NICB (National Insurance Crime Bureau), and insurance claim history. Returns comprehensive vehicle history including theft status, title brands, accident history, and safety recalls.
+                  Check vehicle VIN for theft records, salvage titles, active recalls, and odometer fraud. This endpoint queries NMVTIS (National Motor Vehicle Title Information System), NHTSA vehicle records, NICB (National Insurance Crime Bureau), and insurance claim history. Returns comprehensive vehicle history including theft status, title brands, accident history, and safety recalls.
                 </p>
                 <h4>Request Example</h4>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">

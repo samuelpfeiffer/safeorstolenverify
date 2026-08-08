@@ -21,7 +21,7 @@ const TheftAZPage = () => {
         
         whatIs: "TheftAZ (theftaz.azag.gov) is the official stolen property database maintained by the Arizona Attorney General's Office. It contains records of vehicles, firearms, electronics, tools, and other property reported stolen throughout Arizona. Law enforcement agencies, pawn shops, and the public can search TheftAZ to verify if items are stolen. SafeOrStolen integrates TheftAZ data with 100+ other databases for comprehensive verification.",
         
-        howItWorks: "When you search through SafeOrStolen, we check TheftAZ alongside NICB, stolen property reports from all 50 states, carrier blacklists, DMV records, and other databases simultaneously. This gives you results from Arizona's official stolen property registry PLUS nationwide databases in one instant search. Enter any identifier (VIN, serial number, IMEI) and we'll search all sources automatically.",
+        howItWorks: "When you search through SafeOrStolen, we check TheftAZ alongside NICB, stolen property reports from all 50 states, carrier blacklists, NHTSA vehicle records, and other databases simultaneously. This gives you results from Arizona's official stolen property registry PLUS nationwide databases in one instant search. Enter any identifier (VIN, serial number, IMEI) and we'll search all sources automatically.",
         
         whyCheck: "Arizona has significant stolen property issues due to its proximity to California (source of many stolen vehicles) and the Mexico border (trafficking route). TheftAZ helps Arizonans verify items before buying. Whether you're in Phoenix, Tucson, Mesa, or anywhere in AZ, checking TheftAZ protects you from unknowingly buying stolen goods and the legal consequences that follow.",
         

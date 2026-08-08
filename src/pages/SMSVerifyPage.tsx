@@ -273,8 +273,8 @@ const SMSVerifyPage = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   { title: "🔫 Gun Shows", desc: "Text any firearm serial number to check stolen firearm reports from all 50 states and analyze the serial for signs of alteration. Handguns, rifles, shotguns — any caliber, any manufacturer.", link: "/gun-serial-number-lookup" },
-                  { title: "🚗 Car Lots & Private Sales", desc: "Text the VIN from any vehicle to check NICB, NHTSA, and 50-state DMV records. Catch title-washed, salvaged, or stolen vehicles in seconds.", link: "/vin-checker" },
-                  { title: "📱 Phone Meetups", desc: "Text the IMEI to check GSMA blacklists, AT&T, Verizon, T-Mobile carrier databases. Verify any iPhone, Samsung, Google Pixel before paying.", link: "/imei-checker" },
+                  { title: "🚗 Car Lots & Private Sales", desc: "Text the VIN from any vehicle to check NICB, NHTSA, and 50-NHTSA vehicle records. Catch title-washed, salvaged, or stolen vehicles in seconds.", link: "/vin-checker" },
+                  { title: "📱 Phone Meetups", desc: "Text the IMEI to check carrier and manufacturer blacklists, AT&T, Verizon, T-Mobile carrier databases. Verify any iPhone, Samsung, Google Pixel before paying.", link: "/imei-checker" },
                   { title: "🏪 Flea Markets & Swap Meets", desc: "Verify electronics, tools, bikes — anything with a serial number. Text it and know within seconds if it's been reported stolen anywhere in the US.", link: "/check-electronics" },
                   { title: "🏚️ Pawn Shops", desc: "Pawn shop owners can text serial numbers to verify items before accepting them. Comply with state laws requiring stolen property checks.", link: "/for-pawn-shops" },
                   { title: "💻 Craigslist & Facebook Meetups", desc: "Meeting a seller from an online listing? Text the serial number while inspecting the item. Get peace of mind before handing over cash.", link: "/facebook-marketplace-safety" }

@@ -23,8 +23,8 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
       case 'vin-lookup':
         return {
           title: 'What is a VIN Checker?',
-          description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches national theft databases, DMV records, insurance claim databases, and law enforcement records to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
-          databases: 'Federal vehicle databases, state DMV records, insurance claims, and law enforcement theft registries',
+          description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches national theft databases, NHTSA vehicle records, insurance claim databases, and law enforcement records to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
+          databases: 'Federal vehicle databases, NHTSA vehicle records, insurance claims, and law enforcement theft registries',
           stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
         };
       case 'unified-verification':

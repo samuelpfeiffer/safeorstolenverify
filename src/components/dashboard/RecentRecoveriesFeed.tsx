@@ -18,7 +18,7 @@ const RECOVERIES = [
     location: 'Houston, TX',
     time: '5 hours ago',
     method: 'VIN Check',
-    detail: 'VIN cross-referenced NICB stolen vehicle registry and Texas DMV records. Title washing attempt detected.',
+    detail: 'VIN cross-referenced NICB stolen vehicle registry and Texas NHTSA vehicle records. Title washing attempt detected.',
     link: '/vin-checker',
     stat: '$22,000 value protected'
   },

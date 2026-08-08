@@ -146,7 +146,7 @@ export const PartnerDatabasesSection: React.FC = () => {
               <FileCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Why we use 100+ sources:</strong>{' '}
-                A single stolen phone may be reported in the GSMA blacklist but not yet in a carrier database.
+                A single stolen phone may be reported in the carrier and manufacturer blacklists but not yet in a carrier database.
                 A stolen car may be flagged by insurance (NICB) but not yet entered into NCIC. By querying all sources
                 simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and
                 protecting buyers and sellers with more complete information than any competing service.

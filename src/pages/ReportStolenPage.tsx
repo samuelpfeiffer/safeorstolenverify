@@ -42,7 +42,7 @@ const ReportStolenPageContent = () => {
       {
         "@type": "Question",
         "name": "Can I report a stolen car or vehicle?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and state DMV databases." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and NHTSA vehicle records." }
       }
     ]
   };
@@ -202,7 +202,7 @@ const ReportStolenPageContent = () => {
               <AccordionItem value="vehicle">
                 <AccordionTrigger>Can I report a stolen car or vehicle?</AccordionTrigger>
                 <AccordionContent>
-                  Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and state DMV databases for comprehensive coverage.
+                  Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone runs a VIN check on SafeOrStolen, they'll see your stolen report. We also cross-reference with NICB and NHTSA vehicle records for comprehensive coverage.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

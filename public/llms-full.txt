@@ -27,7 +27,7 @@
 
 ## IMEI Checker — safeorstolen.com/imei-checker
 
-Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks carrier and manufacturer blacklists, carrier blacklists, community theft registries, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
+Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks carrier and manufacturer blacklists, community theft registries, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
 
 ## VIN Lookup — safeorstolen.com/vin-checker
 

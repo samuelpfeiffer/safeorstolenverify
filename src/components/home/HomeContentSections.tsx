@@ -16,7 +16,7 @@ export const HomeContentSections = () => {
   const faqs = [
     {
       question: "How do I check if a phone is stolen using IMEI?",
-      answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We search GSMA blacklist databases, carrier records (AT&T, Verizon, T-Mobile), insurance claims, and law enforcement stolen property records. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
+      answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We search carrier and manufacturer blacklists databases, carrier records (AT&T, Verizon, T-Mobile), insurance claims, and law enforcement stolen property records. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
     },
     {
       question: "Is SafeOrStolen really free?",
@@ -24,7 +24,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "What databases does SafeOrStolen check?",
- answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, DMV records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, NHTSA vehicle records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
     },
     {
       question: "How do I check if a car is stolen using VIN?",
@@ -80,7 +80,7 @@ export const HomeContentSections = () => {
                 items: "iPhone, Samsung Galaxy, Google Pixel, OnePlus, Motorola, iPad, Surface",
                 identifier: "IMEI Number",
                 link: "/check-phone",
-                detail: "Check GSMA blacklist, carrier locks, insurance claims, stolen reports"
+                detail: "Check carrier and manufacturer blacklists, carrier locks, insurance claims, stolen reports"
               },
               {
                 title: "🚗 Vehicles",
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
               <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
               <h3 className="font-bold text-lg mb-2">We Search 100+ Databases</h3>
               <p className="text-sm text-muted-foreground">
-                In parallel, we query NICB, GSMA, 50-State Firearm Reports, BikeIndex, state records, DMV records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
+                In parallel, we query NICB, GSMA, 50-State Firearm Reports, BikeIndex, state records, NHTSA vehicle records, carrier blacklists, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
               </p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg border border-border">

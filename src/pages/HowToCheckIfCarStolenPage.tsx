@@ -249,7 +249,7 @@ const HowToCheckIfCarStolenPage = () => {
                       <div className="border rounded-lg p-4">
                         <Shield className="w-6 h-6 text-primary mb-2" />
                         <p className="font-medium">Police Records</p>
-                        <p className="text-sm text-muted-foreground">Law enforcement stolen vehicle reports</p>
+                        <p className="text-sm text-muted-foreground">Stolen property reports from all 50 states</p>
                       </div>
                       <div className="border rounded-lg p-4">
                         <FileText className="w-6 h-6 text-primary mb-2" />

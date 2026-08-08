@@ -320,7 +320,7 @@ const LicensePlateLookupPage = () => {
                 </div>
                 <h3 className="font-semibold mb-2">We Search Databases</h3>
                 <p className="text-sm text-muted-foreground">
-                  We query DMV records and community theft registries quickly.
+                  We query NHTSA vehicle records and community theft registries quickly.
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg border border-border bg-card">

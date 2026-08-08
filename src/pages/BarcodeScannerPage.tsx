@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Can I scan a VIN barcode on a car?",
-    answer: "Absolutely. Every vehicle manufactured since 1981 has a VIN barcode on the driver's side door jamb and on the dashboard near the windshield. Point your camera at either barcode — our scanner extracts the 17-character VIN and checks it against NICB (National Insurance Crime Bureau), NHTSA recalls, and DMV records from all 50 states."
+    answer: "Absolutely. Every vehicle manufactured since 1981 has a VIN barcode on the driver's side door jamb and on the dashboard near the windshield. Point your camera at either barcode — our scanner extracts the 17-character VIN and checks it against NICB (National Insurance Crime Bureau), NHTSA recalls, and NHTSA vehicle records from all 50 states."
   },
   {
     question: "Do I need to download an app to use the barcode scanner?",
@@ -190,7 +190,7 @@ const BarcodeScannerPage = () => {
                   },
                   {
                     title: "🚗 Vehicle VIN Barcodes",
-                    desc: "On door jambs, dashboards, registration cards. Checks NICB, NHTSA, 50-state DMV records.",
+                    desc: "On door jambs, dashboards, registration cards. Checks NICB, NHTSA, 50-NHTSA vehicle records.",
                     link: "/vin-checker"
                   },
                   {

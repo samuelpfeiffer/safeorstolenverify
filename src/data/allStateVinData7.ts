@@ -110,7 +110,7 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
       localLaws: "Under Nebraska Revised Statutes §28-516, receiving stolen property valued over $1,500 is a felony with penalties up to 5 years in prison. Nebraska requires title transfers within 30 days. The Nebraska DMV maintains all VIN and title records for verification."
     },
     faqs: [
-      { question: "How do I verify a Nebraska vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Nebraska title status. Enter the VIN to check NE DMV records, theft databases, and title brands. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase." },
+      { question: "How do I verify a Nebraska vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Nebraska title status. Enter the VIN to check NE NHTSA vehicle records, theft databases, and title brands. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase." },
       { question: "Does Nebraska require VIN inspections?", answer: "Nebraska requires VIN inspections for out-of-state vehicles and vehicles without existing NE titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden damage before purchase." },
       { question: "What is Nebraska's title transfer process?", answer: "In Nebraska, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the NE DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
     ]
