@@ -43,6 +43,26 @@ const VINCheckerPage = () => {
         ],
         faqs: [
           {
+            question: "How do I check if a used car is stolen?",
+            answer: "Take the 17-character VIN from the driver's-side dashboard, the door jamb sticker, and the title, confirm all three match, then enter it at SafeOrStolen. SafeOrStolen searches the VIN against stolen property reports from all 50 states, carrier and manufacturer blacklists, insurance claim records, and community theft registries. Mismatched or tampered VIN plates are a stop sign on their own, even before any search result comes back."
+          },
+          {
+            question: "Can I check whether a VIN has been reported stolen?",
+            answer: "Yes. Entering a VIN at SafeOrStolen searches nationwide stolen vehicle reports and related theft records and returns a match or no-match result in a few seconds. A match means the VIN appears in at least one theft record and you should not complete the purchase or confront the seller \u2014 contact local police instead."
+          },
+          {
+            question: "Is there a free stolen vehicle check?",
+            answer: "SafeOrStolen includes 2 free verifications with no card required, which covers a VIN check on a car you are considering. After that it is $0.99 for a single check or $10 per month for unlimited checks across every item type. That makes a theft check cheaper than almost any other step in a used-car purchase."
+          },
+          {
+            question: "What's the best way to verify a used car before buying it?",
+            answer: "Verify in this order: read the VIN off the car in person, confirm it matches the title and the door jamb, run it through SafeOrStolen for theft and salvage signals, then have a mechanic inspect the vehicle. Keep the SafeOrStolen verification record with your bill of sale so you can show you checked before paying. A seller who will not let you photograph the VIN is telling you not to buy."
+          },
+          {
+            question: "How can I verify a used motorcycle isn't stolen?",
+            answer: "A motorcycle has a VIN too, usually stamped on the steering neck and printed on a frame sticker, and you can enter it at SafeOrStolen exactly like a car VIN. Check that the engine and frame numbers have not been ground down or restamped, since motorcycles are stripped and re-identified more often than cars. Ask for the title in the seller's name before money changes hands."
+          },
+          {
             question: "Where do I find a vehicle's VIN number?",
             answer: "The VIN is located in multiple places: (1) Dashboard near the windshield on the driver's side (visible from outside), (2) Driver's side door jamb sticker, (3) Vehicle title document, (4) Insurance card, (5) Under the hood on the engine block. Always verify the VIN matches in all locations - mismatched VINs indicate fraud or title washing."
           },
