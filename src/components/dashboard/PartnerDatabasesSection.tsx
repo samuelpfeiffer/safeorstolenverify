@@ -13,7 +13,7 @@ const PARTNERS = [
  stat: '50 states',
  },
  {
- name: 'carrier and manufacturer blacklists IMEI Registry',
+ name: 'carrier and theft databases IMEI Registry',
  category: 'Telecom / Global',
  type: 'industry',
  detail: 'Global System for Mobile Communications — 15 billion+ IMEI records from 200+ carriers worldwide.',
@@ -21,7 +21,7 @@ const PARTNERS = [
  stat: '15B+ records',
  },
  {
- name: 'NICB',
+ name: 'vehicle theft and title databases',
  category: 'Vehicle & Insurance',
  type: 'insurance',
  detail: 'National Insurance Crime Bureau — cross-references theft claims from 500+ U.S. insurance companies.',
@@ -29,7 +29,7 @@ const PARTNERS = [
  stat: '500+ insurers',
  },
  {
- name: 'NHTSA',
+ name: 'vehicle theft and title databases',
  category: 'Vehicle Safety',
  type: 'government',
  detail: 'National Highway Traffic Safety Administration — official U.S. vehicle recall and theft records.',
@@ -37,7 +37,7 @@ const PARTNERS = [
  stat: 'Federal DB',
  },
  {
- name: 'BikeIndex',
+ name: 'stolen bicycle databases',
  category: 'Bicycle Registry',
  type: 'nonprofit',
  detail: 'World\'s largest bicycle stolen registry — 700,000+ registered bikes across 150 countries.',
@@ -64,7 +64,7 @@ const PARTNERS = [
  name: 'CTIA / Carriers',
  category: 'Carrier Blacklist',
  type: 'industry',
- detail: 'Cellular Telecommunications Industry Association — carrier and manufacturer blacklists.',
+ detail: 'Cellular Telecommunications Industry Association — carrier and theft databases.',
  link: '/imei-checker',
  stat: '200+ carriers',
  },
@@ -146,7 +146,7 @@ export const PartnerDatabasesSection: React.FC = () => {
  <FileCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-xs text-muted-foreground leading-relaxed">
  <strong className="text-foreground">Why we use 100+ sources:</strong>{' '}
- A single stolen phone may be reported in the carrier and manufacturer blacklists but not yet in a carrier database.
+ A single stolen phone may be reported in the carrier and theft databases but not yet in a carrier database.
 By querying all sources
  simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and
  protecting buyers and sellers with more complete information than any competing service.

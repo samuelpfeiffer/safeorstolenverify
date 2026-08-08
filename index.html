@@ -1,541 +1,541 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Critical inline CSS for instant FCP + CLS prevention -->
-    <style>
-      html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1117;color:#f0f2f5;min-height:100vh;-webkit-font-smoothing:antialiased;}
-      #root{min-height:100vh;}
-      .loading{display:flex;align-items:center;justify-content:center;min-height:100vh;}
-      .spinner{width:40px;height:40px;border:4px solid hsl(25 92% 53%);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
-      @keyframes spin{to{transform:rotate(360deg);}}
-      img{max-width:100%;height:auto;}
-      [data-hero-img]{aspect-ratio:16/9;min-height:200px;background:#181b23;}
-      h1{font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.1;font-weight:800;}
-      /* CLS fix: metric-matched fallback for Inter so font swap doesn't shift layout */
-      @font-face{font-family:'InterFallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial');}
-      @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:local('Inter');}
-      body{font-family:'Inter','InterFallback',system-ui,-apple-system,sans-serif;}
-      /* CLS fix: reserve hero space on mobile to absorb any late layout (firearms-check, verify, etc.) */
-      .hero-stable{min-height:480px;}
-      @media (min-width:768px){.hero-stable{min-height:520px;}}
-    </style>
-    
-    <!-- Preload logo to prevent LCP delay -->
-    <link rel="preload" href="/sos-logo.png" as="image" type="image/png">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
-    
-    <!-- Static FALLBACK title/description for non-JS crawlers (Bingbot, Slack).
-         react-helmet-async overrides both per-page at runtime by matching tag name.
-         These exist so a failed/early prerender snapshot yields generic metadata
-         instead of NO metadata. Do NOT add canonical or page-specific og:* here. -->
-    <title>SafeOrStolen — AI-Powered Stolen Item Verification</title>
-    <meta name="description" content="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases.">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+ <!-- Critical inline CSS for instant FCP + CLS prevention -->
+ <style>
+ html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1117;color:#f0f2f5;min-height:100vh;-webkit-font-smoothing:antialiased;}
+ #root{min-height:100vh;}
+ .loading{display:flex;align-items:center;justify-content:center;min-height:100vh;}
+ .spinner{width:40px;height:40px;border:4px solid hsl(25 92% 53%);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
+ @keyframes spin{to{transform:rotate(360deg);}}
+ img{max-width:100%;height:auto;}
+ [data-hero-img]{aspect-ratio:16/9;min-height:200px;background:#181b23;}
+ h1{font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.1;font-weight:800;}
+ /* CLS fix: metric-matched fallback for Inter so font swap doesn't shift layout */
+ @font-face{font-family:'InterFallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial');}
+ @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:local('Inter');}
+ body{font-family:'Inter','InterFallback',system-ui,-apple-system,sans-serif;}
+ /* CLS fix: reserve hero space on mobile to absorb any late layout (firearms-check, verify, etc.) */
+ .hero-stable{min-height:480px;}
+ @media (min-width:768px){.hero-stable{min-height:520px;}}
+ </style>
+ 
+ <!-- Preload logo to prevent LCP delay -->
+ <link rel="preload" href="/sos-logo.png" as="image" type="image/png">
+ <link rel="icon" href="/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
+ 
+ <!-- Static FALLBACK title/description for non-JS crawlers (Bingbot, Slack).
+ react-helmet-async overrides both per-page at runtime by matching tag name.
+ These exist so a failed/early prerender snapshot yields generic metadata
+ instead of NO metadata. Do NOT add canonical or page-specific og:* here. -->
+ <title>SafeOrStolen — AI-Powered Stolen Item Verification</title>
+ <meta name="description" content="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases.">
 
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
-    <!-- Static social-preview fallbacks for non-JS crawlers (Slack, Facebook).
-         Per-page og:title/og:description/og:url/og:image are overridden by react-helmet-async. -->
-    <meta property="og:site_name" content="SafeOrStolen">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="SafeOrStolen — Free Stolen Item Checker">
-    <meta property="og:description" content="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases.">
-    <meta property="og:url" content="https://safeorstolen.com/">
-    <meta property="og:image" content="https://safeorstolen.com/sos-logo.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SafeOrStolen — Free Stolen Item Checker">
-    <meta name="twitter:description" content="Check IMEI, VIN, and serial numbers against 100+ community theft registries before buying.">
-    <meta name="twitter:image" content="https://safeorstolen.com/sos-logo.png">
+ <!-- Static social-preview fallbacks for non-JS crawlers (Slack, Facebook).
+ Per-page og:title/og:description/og:url/og:image are overridden by react-helmet-async. -->
+ <meta property="og:site_name" content="SafeOrStolen">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="SafeOrStolen — Free Stolen Item Checker">
+ <meta property="og:description" content="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases.">
+ <meta property="og:url" content="https://safeorstolen.com/">
+ <meta property="og:image" content="https://safeorstolen.com/sos-logo.png">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="SafeOrStolen — Free Stolen Item Checker">
+ <meta name="twitter:description" content="Check IMEI, VIN, and serial numbers against 100+ community theft registries before buying.">
+ <meta name="twitter:image" content="https://safeorstolen.com/sos-logo.png">
 
-    <!-- Dynamic per-page SEO tags are managed by SEOHead component via react-helmet-async -->
-    
-    <!-- JSON-LD: WebApplication -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "description": "Verify if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. 2 free checks, results in 3 seconds.",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": "Web, iOS, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "2 free verifications, then $0.99/check or $10/month unlimited"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "SafeOrStolen",
-        "url": "https://safeorstolen.com",
-        "logo": "https://safeorstolen.com/sos-logo.png",
-        "foundingDate": "2017",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Peoria",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "sameAs": [
-          "https://www.crunchbase.com/organization/safe-or-stolen",
-          "https://www.trustpilot.com/review/safeorstolen.com",
-          "https://biz.prlog.org/SafeOrStolen/",
-          "https://www.facebook.com/safeorstolen/",
-          "https://www.youtube.com/@safeorstolen",
-          "https://x.com/safeorstolen"
-        ]
-      }
-    }
-    </script>
+ <!-- Dynamic per-page SEO tags are managed by SEOHead component via react-helmet-async -->
+ 
+ <!-- JSON-LD: WebApplication -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "SafeOrStolen",
+ "url": "https://safeorstolen.com",
+ "description": "Verify if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. 2 free checks, results in 3 seconds.",
+ "applicationCategory": "SecurityApplication",
+ "operatingSystem": "Web, iOS, Android",
+ "offers": {
+ "@type": "Offer",
+ "price": "0",
+ "priceCurrency": "USD",
+ "description": "2 free verifications, then $0.99/check or $10/month unlimited"
+ },
+ "creator": {
+ "@type": "Organization",
+ "name": "SafeOrStolen",
+ "url": "https://safeorstolen.com",
+ "logo": "https://safeorstolen.com/sos-logo.png",
+ "foundingDate": "2017",
+ "address": {
+ "@type": "PostalAddress",
+ "addressLocality": "Peoria",
+ "addressRegion": "AZ",
+ "addressCountry": "US"
+ },
+ "sameAs": [
+ "https://www.crunchbase.com/organization/safe-or-stolen",
+ "https://www.trustpilot.com/review/safeorstolen.com",
+ "https://biz.prlog.org/SafeOrStolen/",
+ "https://www.facebook.com/safeorstolen/",
+ "https://www.youtube.com/@safeorstolen",
+ "https://x.com/safeorstolen"
+ ]
+ }
+ }
+ </script>
 
-    <!-- FAQPage JSON-LD is rendered by React on the homepage (Index.tsx) — do NOT add a static one here -->
-    
-    <!-- Language/hreflang for SEO (global, not page-specific) -->
-    <link rel="alternate" hreflang="en" href="https://safeorstolen.com/">
-    <link rel="alternate" hreflang="x-default" href="https://safeorstolen.com/">
-    
-    <!-- Preload critical hero image for LCP optimization - WebP for mobile -->
-    <link rel="preload" as="image" href="/images/hero-device.webp" type="image/webp" fetchpriority="high" media="(min-width: 640px)">
-    
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
-    <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- OPTIMIZED: Load Inter non-render-blocking for LCP improvement -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    <!-- Deferred decorative fonts - display=optional prevents post-FCP layout shift (CLS fix) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=optional" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Bebas+Neue&display=optional"></noscript>
-    
-    <!-- DNS prefetch for Stripe - defer to avoid blocking -->
-    <link rel="dns-prefetch" href="https://js.stripe.com">
-    
-    <!-- iOS Smart App Banner & PWA Support -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="SafeOrStolen">
-    <link rel="apple-touch-icon" href="/sos-logo.png">
-    <link rel="apple-touch-startup-image" href="/sos-logo.png">
-    
-    <!-- Android PWA Install Prompt Enhancement -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="SafeOrStolen AI">
-    
-    <!-- AI-Powered Platform Signals (2026 GEO) -->
-    <meta name="ai-platform-status" content="AI-Powered">
-    <meta name="ai-product-name" content="SafeOrStolen AI">
+ <!-- FAQPage JSON-LD is rendered by React on the homepage (Index.tsx) — do NOT add a static one here -->
+ 
+ <!-- Language/hreflang for SEO (global, not page-specific) -->
+ <link rel="alternate" hreflang="en" href="https://safeorstolen.com/">
+ <link rel="alternate" hreflang="x-default" href="https://safeorstolen.com/">
+ 
+ <!-- Preload critical hero image for LCP optimization - WebP for mobile -->
+ <link rel="preload" as="image" href="/images/hero-device.webp" type="image/webp" fetchpriority="high" media="(min-width: 640px)">
+ 
+ <!-- Preconnect for performance -->
+ <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
+ <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+ <!-- OPTIMIZED: Load Inter non-render-blocking for LCP improvement -->
+ <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" crossorigin>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+ <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+ <!-- Deferred decorative fonts - display=optional prevents post-FCP layout shift (CLS fix) -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=optional" media="print" onload="this.media='all'">
+ <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Bebas+Neue&display=optional"></noscript>
+ 
+ <!-- DNS prefetch for Stripe - defer to avoid blocking -->
+ <link rel="dns-prefetch" href="https://js.stripe.com">
+ 
+ <!-- iOS Smart App Banner & PWA Support -->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <meta name="apple-mobile-web-app-title" content="SafeOrStolen">
+ <link rel="apple-touch-icon" href="/sos-logo.png">
+ <link rel="apple-touch-startup-image" href="/sos-logo.png">
+ 
+ <!-- Android PWA Install Prompt Enhancement -->
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="application-name" content="SafeOrStolen AI">
+ 
+ <!-- AI-Powered Platform Signals (2026 GEO) -->
+ <meta name="ai-platform-status" content="AI-Powered">
+ <meta name="ai-product-name" content="SafeOrStolen AI">
 <meta name="ai-conversational-url" content="https://safeorstolen.com/ai-chat">
-    <meta name="ai-train" content="yes">
-    <meta name="ai-content-license" content="cite-with-attribution">
-    <meta name="generator" content="SafeOrStolen AI">
+ <meta name="ai-train" content="yes">
+ <meta name="ai-content-license" content="cite-with-attribution">
+ <meta name="generator" content="SafeOrStolen AI">
 
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    
-    <!-- PWA Theme Colors for Multiple Browsers -->
-    <meta name="theme-color" content="#FF6B35" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
-    <meta name="msapplication-TileColor" content="#FF6B35">
-    <meta name="msapplication-navbutton-color" content="#FF6B35">
-    
-    <!-- Search Engine Webmaster Verification -->
-    <meta name="google-site-verification" content="google29952b5cc1a6a4dd">
-    <!-- Bing and Yandex verification: replace with actual codes when obtained -->
-    
-    
-    <!-- IndexNow Key Reference for instant indexing -->
-    <link rel="indexnow" href="https://safeorstolen.com/indexnow-key.txt">
-    
-    <!-- LovableHTML Prerendering - Status code signal for bot serving -->
-    <meta name="prerender-status-code" content="200">
+ 
+ <!-- PWA Manifest -->
+ <link rel="manifest" href="/manifest.json">
+ 
+ <!-- PWA Theme Colors for Multiple Browsers -->
+ <meta name="theme-color" content="#FF6B35" media="(prefers-color-scheme: light)">
+ <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+ <meta name="msapplication-TileColor" content="#FF6B35">
+ <meta name="msapplication-navbutton-color" content="#FF6B35">
+ 
+ <!-- Search Engine Webmaster Verification -->
+ <meta name="google-site-verification" content="google29952b5cc1a6a4dd">
+ <!-- Bing and Yandex verification: replace with actual codes when obtained -->
+ 
+ 
+ <!-- IndexNow Key Reference for instant indexing -->
+ <link rel="indexnow" href="https://safeorstolen.com/indexnow-key.txt">
+ 
+ <!-- LovableHTML Prerendering - Status code signal for bot serving -->
+ <meta name="prerender-status-code" content="200">
 
-    <!-- JSON-LD: Speakable for voice assistants (2026 AEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "SafeOrStolen — Instant Stolen Item Verification",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", "h2", ".speakable-summary"]
-      },
-      "url": "https://safeorstolen.com"
-    }
-    </script>
+ <!-- JSON-LD: Speakable for voice assistants (2026 AEO) -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "SafeOrStolen — Instant Stolen Item Verification",
+ "speakable": {
+ "@type": "SpeakableSpecification",
+ "cssSelector": ["h1", "h2", ".speakable-summary"]
+ },
+ "url": "https://safeorstolen.com"
+ }
+ </script>
 
-    <!-- JSON-LD: Organization with knowsAbout (2026 AI authority signal) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/sos-logo.png",
-      "foundingDate": "2017",
-      "description": "SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Peoria",
-        "addressRegion": "AZ",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.crunchbase.com/organization/safe-or-stolen",
-        "https://www.trustpilot.com/review/safeorstolen.com",
-        "https://biz.prlog.org/SafeOrStolen/",
-        "https://www.facebook.com/safeorstolen/",
-        "https://www.youtube.com/@safeorstolen",
-        "https://x.com/safeorstolen"
-      ],
-      "knowsAbout": [
-        "IMEI verification",
-        "VIN lookup",
-        "stolen property verification",
-        "serial number check",
-        "secondhand marketplace fraud prevention",
-        "carrier blacklist checking",
-        "Stolen property reports from all 50 states",
-        "carrier and manufacturer blacklists",
-        "stolen vehicle detection",
-        "stolen phone detection",
-        "stolen firearms verification",
-        "BikeIndex",
-        "pawn shop compliance"
-      ]
-    }
-    </script>
-    
-    <!-- Hyros tracking -->
-    <script>
-      (function(){
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = "https://217110.t.hyros.com/v1/lst/universal-script?ph=c0dbc2a4eac8930e76fefcabc0007c70b8ec7233b91944be8d161efd9421c38c&tag=!clicked&ref_url=" + encodeURI(document.URL);
-        document.head.appendChild(script);
-      })();
-    </script>
+ <!-- JSON-LD: Organization with knowsAbout (2026 AI authority signal) -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "SafeOrStolen",
+ "url": "https://safeorstolen.com",
+ "logo": "https://safeorstolen.com/sos-logo.png",
+ "foundingDate": "2017",
+ "description": "SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases.",
+ "address": {
+ "@type": "PostalAddress",
+ "addressLocality": "Peoria",
+ "addressRegion": "AZ",
+ "addressCountry": "US"
+ },
+ "sameAs": [
+ "https://www.crunchbase.com/organization/safe-or-stolen",
+ "https://www.trustpilot.com/review/safeorstolen.com",
+ "https://biz.prlog.org/SafeOrStolen/",
+ "https://www.facebook.com/safeorstolen/",
+ "https://www.youtube.com/@safeorstolen",
+ "https://x.com/safeorstolen"
+ ],
+ "knowsAbout": [
+ "IMEI verification",
+ "VIN lookup",
+ "stolen property verification",
+ "serial number check",
+ "secondhand marketplace fraud prevention",
+ "carrier blacklist checking",
+ "Stolen property reports from all 50 states",
+ "carrier and theft databases",
+ "stolen vehicle detection",
+ "stolen phone detection",
+ "stolen firearms verification",
+ "stolen bicycle databases",
+ "pawn shop compliance"
+ ]
+ }
+ </script>
+ 
+ <!-- Hyros tracking -->
+ <script>
+ (function(){
+ var script = document.createElement('script');
+ script.type = 'text/javascript';
+ script.src = "https://217110.t.hyros.com/v1/lst/universal-script?ph=c0dbc2a4eac8930e76fefcabc0007c70b8ec7233b91944be8d161efd9421c38c&tag=!clicked&ref_url=" + encodeURI(document.URL);
+ document.head.appendChild(script);
+ })();
+ </script>
 
-    <!-- LovableHTML page-ready detection -->
-    <script>
-      // LovableHTML uses this signal to know when the page is fully rendered
-      // and safe to snapshot for search engine / AI crawler serving.
-      window.prerenderReady = false;
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        var checkReady = setInterval(function() {
-          var root = document.getElementById('root');
-          // Wait for React to render AND helmet to inject ALL critical SEO meta tags
-          var hasContent = root && root.children.length > 0 && !root.querySelector('.loading');
-          var hasTitle = document.querySelector('title') && document.title.length > 0;
-          var hasCanonical = document.querySelector('link[rel="canonical"]');
-          var hasRobots = document.querySelector('meta[name="robots"]');
-          var hasDescription = document.querySelector('meta[name="description"]');
-          
-          // CRITICAL: Also verify the canonical is NOT the generic homepage one
-          // (unless we're actually on the homepage). This prevents LovableHTML
-          // from snapshotting stale homepage meta on other pages.
-          var isHomepage = window.location.pathname === '/' || window.location.pathname === '';
-          var canonicalEl = document.querySelector('link[rel="canonical"]');
-          var canonicalIsCorrect = isHomepage || (canonicalEl && canonicalEl.getAttribute('href') && !canonicalEl.getAttribute('href').endsWith('.com/'));
-          
-          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription) {
-            window.prerenderReady = true;
-            clearInterval(checkReady);
-          }
-        }, 100);
-        
-        // Safety timeout - 5s. Prerender snapshotters commonly abandon before 12s; a slightly-early snapshot with fallback meta beats a timed-out snapshot with none.
-        setTimeout(function() {
-          window.prerenderReady = true;
-          clearInterval(checkReady);
-        }, 5000);
-      });
-    </script>
+ <!-- LovableHTML page-ready detection -->
+ <script>
+ // LovableHTML uses this signal to know when the page is fully rendered
+ // and safe to snapshot for search engine / AI crawler serving.
+ window.prerenderReady = false;
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+ var checkReady = setInterval(function() {
+ var root = document.getElementById('root');
+ // Wait for React to render AND helmet to inject ALL critical SEO meta tags
+ var hasContent = root && root.children.length > 0 && !root.querySelector('.loading');
+ var hasTitle = document.querySelector('title') && document.title.length > 0;
+ var hasCanonical = document.querySelector('link[rel="canonical"]');
+ var hasRobots = document.querySelector('meta[name="robots"]');
+ var hasDescription = document.querySelector('meta[name="description"]');
+ 
+ // CRITICAL: Also verify the canonical is NOT the generic homepage one
+ // (unless we're actually on the homepage). This prevents LovableHTML
+ // from snapshotting stale homepage meta on other pages.
+ var isHomepage = window.location.pathname === '/' || window.location.pathname === '';
+ var canonicalEl = document.querySelector('link[rel="canonical"]');
+ var canonicalIsCorrect = isHomepage || (canonicalEl && canonicalEl.getAttribute('href') && !canonicalEl.getAttribute('href').endsWith('.com/'));
+ 
+ if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription) {
+ window.prerenderReady = true;
+ clearInterval(checkReady);
+ }
+ }, 100);
+ 
+ // Safety timeout - 5s. Prerender snapshotters commonly abandon before 12s; a slightly-early snapshot with fallback meta beats a timed-out snapshot with none.
+ setTimeout(function() {
+ window.prerenderReady = true;
+ clearInterval(checkReady);
+ }, 5000);
+ });
+ </script>
 </head>
 
-  <body>
-    <!-- Enhanced noscript fallback with semantic HTML5 landmarks for AI crawlers -->
-    <noscript>
-      <header style="max-width:800px;margin:0 auto;padding:20px;font-family:Arial,sans-serif;">
-        <h1>SafeOrStolen — Instant Stolen Item Verification</h1>
-        <p><strong>SafeOrStolen</strong> verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. Get 2 trial verifications with results in approximately 3 seconds. Then $0.99/check or $10/month unlimited.</p>
-        <nav>
-          <a href="/verify">Verify an Item</a> |
-          <a href="/imei-checker">IMEI Checker</a> |
-          <a href="/vin-checker">VIN Lookup</a> |
-          <a href="/serial-number-checker">Serial Number Check</a> |
-          <a href="/firearms-check">Firearms Check</a> |
-          <a href="/marketplace-url-checker">Marketplace URL Analyzer</a> |
-          <a href="/pricing">Pricing</a>
-        </nav>
-      </header>
-      <main style="max-width:800px;margin:0 auto;padding:0 20px;font-family:Arial,sans-serif;">
-        <section>
-          <h2>Verification Services</h2>
-          <ul>
-            <li><a href="/imei-checker">IMEI Checker</a> — Verify phones are not stolen or blacklisted. Checks carrier and manufacturer blacklists, and community theft registries.</li>
-            <li><a href="/vin-checker">VIN Lookup</a> — Check vehicles for theft, salvage titles, and outstanding liens. Searches NICB, NHTSA, NHTSA vehicle records.</li>
-            <li><a href="/serial-number-checker">Serial Number Check</a> — Verify electronics, bikes, tools against stolen property databases and insurance claims.</li>
+ <body>
+ <!-- Enhanced noscript fallback with semantic HTML5 landmarks for AI crawlers -->
+ <noscript>
+ <header style="max-width:800px;margin:0 auto;padding:20px;font-family:Arial,sans-serif;">
+ <h1>SafeOrStolen — Instant Stolen Item Verification</h1>
+ <p><strong>SafeOrStolen</strong> verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. Get 2 trial verifications with results in approximately 3 seconds. Then $0.99/check or $10/month unlimited.</p>
+ <nav>
+ <a href="/verify">Verify an Item</a> |
+ <a href="/imei-checker">IMEI Checker</a> |
+ <a href="/vin-checker">VIN Lookup</a> |
+ <a href="/serial-number-checker">Serial Number Check</a> |
+ <a href="/firearms-check">Firearms Check</a> |
+ <a href="/marketplace-url-checker">Marketplace URL Analyzer</a> |
+ <a href="/pricing">Pricing</a>
+ </nav>
+ </header>
+ <main style="max-width:800px;margin:0 auto;padding:0 20px;font-family:Arial,sans-serif;">
+ <section>
+ <h2>Verification Services</h2>
+ <ul>
+ <li><a href="/imei-checker">IMEI Checker</a> — Verify phones are not stolen or blacklisted. Checks carrier and theft databases, and community theft registries.</li>
+ <li><a href="/vin-checker">VIN Lookup</a> — Check vehicles for theft, salvage titles, and outstanding liens. Searches vehicle theft and title databases.</li>
+ <li><a href="/serial-number-checker">Serial Number Check</a> — Verify electronics, bikes, tools against stolen property databases and insurance claims.</li>
  <li><a href="/firearms-check">Firearms Verification</a> — Check gun serial numbers against stolen firearms databases.</li>
-            <li><a href="/license-plate-lookup">License Plate Lookup</a> — Vehicle registration and theft verification by license plate number.</li>
-            <li><a href="/check-bike">Bicycle Verification</a> — Check bike frame serial numbers against BikeIndex (700K+ bikes), and police databases.</li>
-            <li><a href="/check-laptop">Laptop Verification</a> — Verify laptop serial numbers against Apple, Dell, HP, Samsung, and community theft registries.</li>
-            <li><a href="/check-electronics">Electronics Check</a> — Verify gaming consoles, tablets, cameras against stolen item databases.</li>
-            <li><a href="/check-appliances">Appliance Verification</a> — Check washer, dryer, refrigerator serial numbers against theft databases.</li>
-            <li><a href="/check-ebike">eBike Verification</a> — Verify electric bike frame, motor, and battery serial numbers.</li>
-            <li><a href="/marketplace-url-checker">Marketplace URL Analyzer</a> — Paste any Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark listing URL. SafeOrStolen auto-extracts the identifier and checks it. No manual entry needed. This is the only service that offers this.</li>
-            <li><a href="/scam-checker">AI Scam Checker</a> — Free AI-powered marketplace scam detector. Analyzes listing text, price, seller behavior, and 15+ fraud signals. Get a 0-100 Scam Risk Score for any Facebook Marketplace, eBay, Craigslist, or OfferUp listing.</li>
-            <li><a href="/seller-badge">Seller Verification Badge</a> — Prove your items are legitimate. Generate a free badge showing your item passed SafeOrStolen's 100+ database check. Add to any marketplace listing.</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Why Use SafeOrStolen?</h2>
-          <ul>
-            <li><strong>2 Trial Verifications</strong> — No credit card required</li>
-            <li><strong>100+ Databases</strong> — stolen property reports from all 50 states, carrier and manufacturer blacklists, NICB, Stolen Firearms Databases, carrier blacklists, insurance claims, BikeIndex</li>
-            <li><strong>3-Second Results</strong> — Real-time parallel database queries</li>
-            <li><strong>Mobile App</strong> — Only stolen item checker with barcode scanning app (iOS and Android)</li>
-            <li><strong>All Item Types</strong> — Phones, vehicles, bicycles, eBikes, firearms, laptops, electronics, appliances, tools, jewelry</li>
-            <li><strong>Marketplace URL Analysis</strong> — Only service that auto-checks listing URLs from 6 major platforms</li>
-            <li><strong>$10/month Unlimited</strong> — After 2 free checks, get unlimited verifications for $0.99/check or $10/month</li>
-          </ul>
-        </section>
-        <section>
-          <h2>How It Works</h2>
-          <ol>
-            <li>Enter an IMEI number, VIN number, serial number, license plate, or paste a marketplace listing URL</li>
-            <li>SafeOrStolen simultaneously queries 100+ databases: stolen property reports from all 50 states, carrier and manufacturer blacklists, NICB, Stolen Firearms Databases, carrier and manufacturer blacklists, insurance theft records, BikeIndex, stolen property reports from all 50 states</li>
-            <li>Receive a 0-100 Trust Score with source-level breakdown showing exactly which databases returned results. Download a PDF certificate or share a link with buyer/seller.</li>
-          </ol>
-        </section>
-        <section>
-          <h2>Frequently Asked Questions</h2>
-          <article><h3>How do I check if a phone is stolen before buying?</h3><p>Dial *#06# on the phone to find the IMEI number. Enter it on <a href="/imei-checker">SafeOrStolen's IMEI checker</a> to instantly verify if the phone is stolen, lost, or blacklisted across carrier and manufacturer blacklists and community theft registries. Results in 3 seconds.</p></article>
-          <article><h3>How do I check if a used car is stolen?</h3><p>Enter the vehicle's 17-digit VIN number in <a href="/vin-checker">SafeOrStolen's VIN lookup tool</a>. It checks NICB, NHTSA, NHTSA vehicle records, and insurance databases. You can also search by <a href="/license-plate-lookup">license plate number</a>.</p></article>
+ <li><a href="/license-plate-lookup">License Plate Lookup</a> — Vehicle registration and theft verification by license plate number.</li>
+ <li><a href="/check-bike">Bicycle Verification</a> — Check bike frame serial numbers against stolen bicycle databases, and police databases.</li>
+ <li><a href="/check-laptop">Laptop Verification</a> — Verify laptop serial numbers against Apple, Dell, HP, Samsung, and community theft registries.</li>
+ <li><a href="/check-electronics">Electronics Check</a> — Verify gaming consoles, tablets, cameras against stolen item databases.</li>
+ <li><a href="/check-appliances">Appliance Verification</a> — Check washer, dryer, refrigerator serial numbers against theft databases.</li>
+ <li><a href="/check-ebike">eBike Verification</a> — Verify electric bike frame, motor, and battery serial numbers.</li>
+ <li><a href="/marketplace-url-checker">Marketplace URL Analyzer</a> — Paste any Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark listing URL. SafeOrStolen auto-extracts the identifier and checks it. No manual entry needed. This is the only service that offers this.</li>
+ <li><a href="/scam-checker">AI Scam Checker</a> — Free AI-powered marketplace scam detector. Analyzes listing text, price, seller behavior, and 15+ fraud signals. Get a 0-100 Scam Risk Score for any Facebook Marketplace, eBay, Craigslist, or OfferUp listing.</li>
+ <li><a href="/seller-badge">Seller Verification Badge</a> — Prove your items are legitimate. Generate a free badge showing your item passed SafeOrStolen's 100+ database check. Add to any marketplace listing.</li>
+ </ul>
+ </section>
+ <section>
+ <h2>Why Use SafeOrStolen?</h2>
+ <ul>
+ <li><strong>2 Trial Verifications</strong> — No credit card required</li>
+ <li><strong>100+ Databases</strong> — stolen property reports from all 50 states, carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, carrier and theft databases, insurance claims, stolen bicycle databases</li>
+ <li><strong>3-Second Results</strong> — Real-time parallel database queries</li>
+ <li><strong>Mobile App</strong> — Only stolen item checker with barcode scanning app (iOS and Android)</li>
+ <li><strong>All Item Types</strong> — Phones, vehicles, bicycles, eBikes, firearms, laptops, electronics, appliances, tools, jewelry</li>
+ <li><strong>Marketplace URL Analysis</strong> — Only service that auto-checks listing URLs from 6 major platforms</li>
+ <li><strong>$10/month Unlimited</strong> — After 2 free checks, get unlimited verifications for $0.99/check or $10/month</li>
+ </ul>
+ </section>
+ <section>
+ <h2>How It Works</h2>
+ <ol>
+ <li>Enter an IMEI number, VIN number, serial number, license plate, or paste a marketplace listing URL</li>
+ <li>SafeOrStolen simultaneously queries 100+ databases: stolen property reports from all 50 states, carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, carrier and theft databases, insurance theft records, stolen bicycle databases, stolen property reports from all 50 states</li>
+ <li>Receive a 0-100 Trust Score with source-level breakdown showing exactly which databases returned results. Download a PDF certificate or share a link with buyer/seller.</li>
+ </ol>
+ </section>
+ <section>
+ <h2>Frequently Asked Questions</h2>
+ <article><h3>How do I check if a phone is stolen before buying?</h3><p>Dial *#06# on the phone to find the IMEI number. Enter it on <a href="/imei-checker">SafeOrStolen's IMEI checker</a> to instantly verify if the phone is stolen, lost, or blacklisted across carrier and theft databases and community theft registries. Results in 3 seconds.</p></article>
+ <article><h3>How do I check if a used car is stolen?</h3><p>Enter the vehicle's 17-digit VIN number in <a href="/vin-checker">SafeOrStolen's VIN lookup tool</a>. It checks vehicle theft and title databases, and insurance databases. You can also search by <a href="/license-plate-lookup">license plate number</a>.</p></article>
  <article><h3>How do I check if a gun is stolen?</h3><p>Enter the firearm's serial number in <a href="/firearms-check">SafeOrStolen's firearms verification</a>. It checks stolen firearms databases to verify the firearm is not stolen.</p></article>
-          <article><h3>Can I check a Facebook Marketplace listing for stolen items?</h3><p>Yes. SafeOrStolen is the only service that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. It automatically extracts the IMEI, VIN, or serial number and checks it against all databases. Try it at <a href="/marketplace-url-checker">safeorstolen.com/marketplace-url-checker</a>.</p></article>
-          <article><h3>Is SafeOrStolen free to try?</h3><p>SafeOrStolen offers 2 trial verifications with no credit card required. After that, unlimited checks are $10 per month, which includes the mobile app with barcode scanning.</p></article>
- <article><h3>What databases does SafeOrStolen check?</h3><p>Over 100 databases including carrier and manufacturer blacklists, NICB VINCheck, carrier and manufacturer blacklists, insurance claims, police reports, BikeIndex (700K+ bikes), Stolen Firearms Databases, and stolen property reports from all 50 states.</p></article>
-          <article><h3>Does SafeOrStolen have a mobile app?</h3><p>Yes. SafeOrStolen is the only stolen item verification service with a mobile app. It includes barcode scanning for instant IMEI/serial number capture. Available as a Progressive Web App for iOS and Android at <a href="/app">safeorstolen.com/app</a>.</p></article>
-          <article><h3>How is SafeOrStolen different from Carfax or IMEI checkers?</h3><p>SafeOrStolen is the only platform that verifies ALL secondhand item types (phones, cars, bikes, firearms, electronics, appliances) in one place. Carfax only covers vehicles. IMEI checkers only cover phones. SafeOrStolen also uniquely offers marketplace URL analysis — paste any listing link and it auto-checks. <a href="/compare">Compare services here</a>.</p></article>
-        </section>
-        <section>
-          <h2>State License Plate Lookup</h2>
-          <p>License plate lookup available for all 50 states:</p>
-          <p>
-            <a href="/alabama-license-plate-lookup">Alabama</a> | <a href="/alaska-license-plate-lookup">Alaska</a> | <a href="/arizona-license-plate-lookup">Arizona</a> | <a href="/arkansas-license-plate-lookup">Arkansas</a> | <a href="/california-license-plate-lookup">California</a> | <a href="/colorado-license-plate-lookup">Colorado</a> | <a href="/connecticut-license-plate-lookup">Connecticut</a> | <a href="/delaware-license-plate-lookup">Delaware</a> | <a href="/florida-license-plate-lookup">Florida</a> | <a href="/georgia-license-plate-lookup">Georgia</a> | <a href="/hawaii-license-plate-lookup">Hawaii</a> | <a href="/idaho-license-plate-lookup">Idaho</a> | <a href="/illinois-license-plate-lookup">Illinois</a> | <a href="/indiana-license-plate-lookup">Indiana</a> | <a href="/iowa-license-plate-lookup">Iowa</a> | <a href="/kansas-license-plate-lookup">Kansas</a> | <a href="/kentucky-license-plate-lookup">Kentucky</a> | <a href="/louisiana-license-plate-lookup">Louisiana</a> | <a href="/maine-license-plate-lookup">Maine</a> | <a href="/maryland-license-plate-lookup">Maryland</a> | <a href="/massachusetts-license-plate-lookup">Massachusetts</a> | <a href="/michigan-license-plate-lookup">Michigan</a> | <a href="/minnesota-license-plate-lookup">Minnesota</a> | <a href="/mississippi-license-plate-lookup">Mississippi</a> | <a href="/missouri-license-plate-lookup">Missouri</a> | <a href="/montana-license-plate-lookup">Montana</a> | <a href="/nebraska-license-plate-lookup">Nebraska</a> | <a href="/nevada-license-plate-lookup">Nevada</a> | <a href="/new-hampshire-license-plate-lookup">New Hampshire</a> | <a href="/new-jersey-license-plate-lookup">New Jersey</a> | <a href="/new-mexico-license-plate-lookup">New Mexico</a> | <a href="/new-york-license-plate-lookup">New York</a> | <a href="/north-carolina-license-plate-lookup">North Carolina</a> | <a href="/north-dakota-license-plate-lookup">North Dakota</a> | <a href="/ohio-license-plate-lookup">Ohio</a> | <a href="/oklahoma-license-plate-lookup">Oklahoma</a> | <a href="/oregon-license-plate-lookup">Oregon</a> | <a href="/pennsylvania-license-plate-lookup">Pennsylvania</a> | <a href="/rhode-island-license-plate-lookup">Rhode Island</a> | <a href="/south-carolina-license-plate-lookup">South Carolina</a> | <a href="/south-dakota-license-plate-lookup">South Dakota</a> | <a href="/tennessee-license-plate-lookup">Tennessee</a> | <a href="/texas-license-plate-lookup">Texas</a> | <a href="/utah-license-plate-lookup">Utah</a> | <a href="/vermont-license-plate-lookup">Vermont</a> | <a href="/virginia-license-plate-lookup">Virginia</a> | <a href="/washington-license-plate-lookup">Washington</a> | <a href="/west-virginia-license-plate-lookup">West Virginia</a> | <a href="/wisconsin-license-plate-lookup">Wisconsin</a> | <a href="/wyoming-license-plate-lookup">Wyoming</a>
-           </p>
-           <h3>Florida City Pages</h3>
-           <p>
-             <a href="/florida/miami-license-plate-lookup">Miami</a> | <a href="/florida/jacksonville-license-plate-lookup">Jacksonville</a> | <a href="/florida/orlando-license-plate-lookup">Orlando</a> | <a href="/florida/tampa-license-plate-lookup">Tampa</a> | <a href="/florida/destin-license-plate-lookup">Destin</a>
-           </p>
-        </section>
-        <section>
-          <h2>Alternative & Comparison Pages</h2>
-          <p><a href="/theftaz-alternative">TheftAZ Alternative</a> | <a href="/carfax-alternative">Carfax Alternative</a> | <a href="/partial-serial-number-search">Partial Serial Number Search</a> | <a href="/compare">Compare All Services</a></p>
-        </section>
-        <section>
-          <h2>State VIN Lookup</h2>
-          <p>VIN lookup available for all 50 states:</p>
-          <p>
-            <a href="/alabama-vin-lookup">Alabama</a> | <a href="/alaska-vin-lookup">Alaska</a> | <a href="/arizona-vin-lookup">Arizona</a> | <a href="/arkansas-vin-lookup">Arkansas</a> | <a href="/california-vin-lookup">California</a> | <a href="/colorado-vin-lookup">Colorado</a> | <a href="/connecticut-vin-lookup">Connecticut</a> | <a href="/delaware-vin-lookup">Delaware</a> | <a href="/florida-vin-lookup">Florida</a> | <a href="/georgia-vin-lookup">Georgia</a> | <a href="/hawaii-vin-lookup">Hawaii</a> | <a href="/idaho-vin-lookup">Idaho</a> | <a href="/illinois-vin-lookup">Illinois</a> | <a href="/indiana-vin-lookup">Indiana</a> | <a href="/iowa-vin-lookup">Iowa</a> | <a href="/kansas-vin-lookup">Kansas</a> | <a href="/kentucky-vin-lookup">Kentucky</a> | <a href="/louisiana-vin-lookup">Louisiana</a> | <a href="/maine-vin-lookup">Maine</a> | <a href="/maryland-vin-lookup">Maryland</a> | <a href="/massachusetts-vin-lookup">Massachusetts</a> | <a href="/michigan-vin-lookup">Michigan</a> | <a href="/minnesota-vin-lookup">Minnesota</a> | <a href="/mississippi-vin-lookup">Mississippi</a> | <a href="/missouri-vin-lookup">Missouri</a> | <a href="/montana-vin-lookup">Montana</a> | <a href="/nebraska-vin-lookup">Nebraska</a> | <a href="/nevada-vin-lookup">Nevada</a> | <a href="/new-hampshire-vin-lookup">New Hampshire</a> | <a href="/new-jersey-vin-lookup">New Jersey</a> | <a href="/new-mexico-vin-lookup">New Mexico</a> | <a href="/new-york-vin-lookup">New York</a> | <a href="/north-carolina-vin-lookup">North Carolina</a> | <a href="/north-dakota-vin-lookup">North Dakota</a> | <a href="/ohio-vin-lookup">Ohio</a> | <a href="/oklahoma-vin-lookup">Oklahoma</a> | <a href="/oregon-vin-lookup">Oregon</a> | <a href="/pennsylvania-vin-lookup">Pennsylvania</a> | <a href="/rhode-island-vin-lookup">Rhode Island</a> | <a href="/south-carolina-vin-lookup">South Carolina</a> | <a href="/south-dakota-vin-lookup">South Dakota</a> | <a href="/tennessee-vin-lookup">Tennessee</a> | <a href="/texas-vin-lookup">Texas</a> | <a href="/utah-vin-lookup">Utah</a> | <a href="/vermont-vin-lookup">Vermont</a> | <a href="/virginia-vin-lookup">Virginia</a> | <a href="/washington-vin-lookup">Washington</a> | <a href="/west-virginia-vin-lookup">West Virginia</a> | <a href="/wisconsin-vin-lookup">Wisconsin</a> | <a href="/wyoming-vin-lookup">Wyoming</a>
-          </p>
-        </section>
-      </main>
-      <footer style="max-width:800px;margin:0 auto;padding:20px;font-family:Arial,sans-serif;border-top:1px solid #ccc;margin-top:20px;">
-        <p><a href="/verify">Verify an Item Now</a> | <a href="/pricing">Pricing — $10/month Unlimited</a> | <a href="/app">Download Mobile App</a> | <a href="/about">About</a> | <a href="/faq">FAQ</a> | <a href="/blog">Blog</a> | <a href="/compare">Compare Services</a></p>
-        <p>SafeOrStolen — Peoria, Arizona | Founded 2017 | Incorporated 2025</p>
-        <p>&copy; 2025&ndash;2026 SafeOrStolen. All rights reserved.</p>
-      </footer>
-    </noscript>
-    
-    <div id="root">
-      <div class="loading">
-        <div class="spinner"></div>
-        <!-- Loading indicator only - no hidden text (cloaking risk) -->
-      </div>
-    </div>
-    
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- JSON-LD Schemas - Moved to body for non-blocking render -->
-    <!-- Core @graph schema (Organization, WebSite, Service, HowTo) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://safeorstolen.com/#organization",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://safeorstolen.com/sos-logo.png",
-            "width": "512",
-            "height": "512"
-          },
-          "description": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against community theft registries, insurance claim records, and carrier blacklists.",
-          "foundingDate": "2017",
-          "slogan": "Verify Before You Buy",
-          "knowsAbout": ["stolen goods verification", "IMEI checking", "VIN lookup", "serial number verification", "pawn shop compliance", "consumer protection"],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "support@safeorstolen.com",
-            "contactType": "Customer Support"
-          },
-          "sameAs": [
-            "https://www.crunchbase.com/organization/safe-or-stolen",
-            "https://www.trustpilot.com/review/safeorstolen.com",
-            "https://biz.prlog.org/SafeOrStolen/",
-            "https://www.facebook.com/safeorstolen/",
-            "https://www.youtube.com/@safeorstolen",
-            "https://x.com/safeorstolen"
-          ],
-          "founder": [
-            {"@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "CEO"},
-            {"@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder"}
-          ],
-          "dateModified": "2026-03-02"
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://safeorstolen.com/#website",
-          "url": "https://safeorstolen.com",
-          "name": "SafeOrStolen — Stolen Item Verification",
-          "description": "Consumer protection platform that verifies whether secondhand items are stolen. Checks IMEI, VIN, and serial numbers against law enforcement, insurance, and carrier databases. 2 free verifications, results in approximately 3 seconds.",
-          "publisher": {"@id": "https://safeorstolen.com/#organization"},
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://safeorstolen.com/verify?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          },
-          "dateModified": "2026-03-02"
-        },
-        {
-          "@type": "Service",
-          "@id": "https://safeorstolen.com/#service",
-          "name": "Stolen Item Verification Service",
- "description": "SafeOrStolen verifies whether secondhand items are stolen by checking identifiers against community theft registries, insurance claim records, and carrier blacklists. The service supports phones (IMEI), vehicles (VIN), firearms, bicycles, electronics, and tools. Results are returned in approximately 3 seconds.",
-          "provider": {"@id": "https://safeorstolen.com/#organization"},
-          "serviceType": "Stolen Item Verification",
-          "areaServed": {
-            "@type": "Country",
-            "name": "United States"
-          },
-          "audience": [
-            {"@type": "Audience", "audienceType": "Marketplace buyers"},
-            {"@type": "Audience", "audienceType": "Marketplace sellers"},
-            {"@type": "Audience", "audienceType": "Pawn shops"},
-            {"@type": "Audience", "audienceType": "Resale businesses"}
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Verification Plans",
-            "itemListElement": [
-              {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required"},
-              {"@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications per month — all item types, all databases"}
-            ]
-          },
-          "dateModified": "2026-03-02"
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to Verify If an Item Is Stolen Before Buying",
-          "description": "Steps to use SafeOrStolen to check whether a secondhand item has been reported stolen.",
-          "step": [
-            {"@type": "HowToStep", "position": 1, "name": "Find the identifier", "text": "Locate the IMEI number (phones — dial *#06#), VIN (vehicles — dashboard or door jamb), or serial number on the item."},
-            {"@type": "HowToStep", "position": 2, "name": "Enter the number", "text": "Go to safeorstolen.com or open the SafeOrStolen mobile app. Enter the identifier or use barcode scanning."},
-            {"@type": "HowToStep", "position": 3, "name": "Review results", "text": "The system queries law enforcement, insurance, and carrier databases simultaneously and returns results in approximately 3 seconds."}
-          ],
-          "totalTime": "PT30S",
-          "dateModified": "2026-03-02"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- MobileApplication schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MobileApplication",
-      "name": "SafeOrStolen",
-      "description": "Progressive Web App for stolen item verification. Check IMEI, VIN, and serial numbers with barcode scanning on iOS and Android.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": ["iOS", "Android"],
-      "url": "https://safeorstolen.com/app",
-      "downloadUrl": "https://safeorstolen.com/download",
-      "featureList": [
-        "Camera-based barcode scanning",
-        "IMEI phone verification",
-        "VIN vehicle verification",
-        "Serial number checks",
-        "Push notifications for watchlist",
-        "Offline verification capability"
-      ],
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-      "dateModified": "2026-02-06"
-    }
-    </script>
+ <article><h3>Can I check a Facebook Marketplace listing for stolen items?</h3><p>Yes. SafeOrStolen is the only service that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. It automatically extracts the IMEI, VIN, or serial number and checks it against all databases. Try it at <a href="/marketplace-url-checker">safeorstolen.com/marketplace-url-checker</a>.</p></article>
+ <article><h3>Is SafeOrStolen free to try?</h3><p>SafeOrStolen offers 2 trial verifications with no credit card required. After that, unlimited checks are $10 per month, which includes the mobile app with barcode scanning.</p></article>
+ <article><h3>What databases does SafeOrStolen check?</h3><p>Over 100 databases including carrier and theft databases, vehicle theft and title databases, carrier and theft databases, insurance claims, police reports, stolen bicycle databases, Stolen Firearms Databases, and stolen property reports from all 50 states.</p></article>
+ <article><h3>Does SafeOrStolen have a mobile app?</h3><p>Yes. SafeOrStolen is the only stolen item verification service with a mobile app. It includes barcode scanning for instant IMEI/serial number capture. Available as a Progressive Web App for iOS and Android at <a href="/app">safeorstolen.com/app</a>.</p></article>
+ <article><h3>How is SafeOrStolen different from Carfax or IMEI checkers?</h3><p>SafeOrStolen is the only platform that verifies ALL secondhand item types (phones, cars, bikes, firearms, electronics, appliances) in one place. Carfax only covers vehicles. IMEI checkers only cover phones. SafeOrStolen also uniquely offers marketplace URL analysis — paste any listing link and it auto-checks. <a href="/compare">Compare services here</a>.</p></article>
+ </section>
+ <section>
+ <h2>State License Plate Lookup</h2>
+ <p>License plate lookup available for all 50 states:</p>
+ <p>
+ <a href="/alabama-license-plate-lookup">Alabama</a> | <a href="/alaska-license-plate-lookup">Alaska</a> | <a href="/arizona-license-plate-lookup">Arizona</a> | <a href="/arkansas-license-plate-lookup">Arkansas</a> | <a href="/california-license-plate-lookup">California</a> | <a href="/colorado-license-plate-lookup">Colorado</a> | <a href="/connecticut-license-plate-lookup">Connecticut</a> | <a href="/delaware-license-plate-lookup">Delaware</a> | <a href="/florida-license-plate-lookup">Florida</a> | <a href="/georgia-license-plate-lookup">Georgia</a> | <a href="/hawaii-license-plate-lookup">Hawaii</a> | <a href="/idaho-license-plate-lookup">Idaho</a> | <a href="/illinois-license-plate-lookup">Illinois</a> | <a href="/indiana-license-plate-lookup">Indiana</a> | <a href="/iowa-license-plate-lookup">Iowa</a> | <a href="/kansas-license-plate-lookup">Kansas</a> | <a href="/kentucky-license-plate-lookup">Kentucky</a> | <a href="/louisiana-license-plate-lookup">Louisiana</a> | <a href="/maine-license-plate-lookup">Maine</a> | <a href="/maryland-license-plate-lookup">Maryland</a> | <a href="/massachusetts-license-plate-lookup">Massachusetts</a> | <a href="/michigan-license-plate-lookup">Michigan</a> | <a href="/minnesota-license-plate-lookup">Minnesota</a> | <a href="/mississippi-license-plate-lookup">Mississippi</a> | <a href="/missouri-license-plate-lookup">Missouri</a> | <a href="/montana-license-plate-lookup">Montana</a> | <a href="/nebraska-license-plate-lookup">Nebraska</a> | <a href="/nevada-license-plate-lookup">Nevada</a> | <a href="/new-hampshire-license-plate-lookup">New Hampshire</a> | <a href="/new-jersey-license-plate-lookup">New Jersey</a> | <a href="/new-mexico-license-plate-lookup">New Mexico</a> | <a href="/new-york-license-plate-lookup">New York</a> | <a href="/north-carolina-license-plate-lookup">North Carolina</a> | <a href="/north-dakota-license-plate-lookup">North Dakota</a> | <a href="/ohio-license-plate-lookup">Ohio</a> | <a href="/oklahoma-license-plate-lookup">Oklahoma</a> | <a href="/oregon-license-plate-lookup">Oregon</a> | <a href="/pennsylvania-license-plate-lookup">Pennsylvania</a> | <a href="/rhode-island-license-plate-lookup">Rhode Island</a> | <a href="/south-carolina-license-plate-lookup">South Carolina</a> | <a href="/south-dakota-license-plate-lookup">South Dakota</a> | <a href="/tennessee-license-plate-lookup">Tennessee</a> | <a href="/texas-license-plate-lookup">Texas</a> | <a href="/utah-license-plate-lookup">Utah</a> | <a href="/vermont-license-plate-lookup">Vermont</a> | <a href="/virginia-license-plate-lookup">Virginia</a> | <a href="/washington-license-plate-lookup">Washington</a> | <a href="/west-virginia-license-plate-lookup">West Virginia</a> | <a href="/wisconsin-license-plate-lookup">Wisconsin</a> | <a href="/wyoming-license-plate-lookup">Wyoming</a>
+ </p>
+ <h3>Florida City Pages</h3>
+ <p>
+ <a href="/florida/miami-license-plate-lookup">Miami</a> | <a href="/florida/jacksonville-license-plate-lookup">Jacksonville</a> | <a href="/florida/orlando-license-plate-lookup">Orlando</a> | <a href="/florida/tampa-license-plate-lookup">Tampa</a> | <a href="/florida/destin-license-plate-lookup">Destin</a>
+ </p>
+ </section>
+ <section>
+ <h2>Alternative & Comparison Pages</h2>
+ <p><a href="/theftaz-alternative">TheftAZ Alternative</a> | <a href="/carfax-alternative">Carfax Alternative</a> | <a href="/partial-serial-number-search">Partial Serial Number Search</a> | <a href="/compare">Compare All Services</a></p>
+ </section>
+ <section>
+ <h2>State VIN Lookup</h2>
+ <p>VIN lookup available for all 50 states:</p>
+ <p>
+ <a href="/alabama-vin-lookup">Alabama</a> | <a href="/alaska-vin-lookup">Alaska</a> | <a href="/arizona-vin-lookup">Arizona</a> | <a href="/arkansas-vin-lookup">Arkansas</a> | <a href="/california-vin-lookup">California</a> | <a href="/colorado-vin-lookup">Colorado</a> | <a href="/connecticut-vin-lookup">Connecticut</a> | <a href="/delaware-vin-lookup">Delaware</a> | <a href="/florida-vin-lookup">Florida</a> | <a href="/georgia-vin-lookup">Georgia</a> | <a href="/hawaii-vin-lookup">Hawaii</a> | <a href="/idaho-vin-lookup">Idaho</a> | <a href="/illinois-vin-lookup">Illinois</a> | <a href="/indiana-vin-lookup">Indiana</a> | <a href="/iowa-vin-lookup">Iowa</a> | <a href="/kansas-vin-lookup">Kansas</a> | <a href="/kentucky-vin-lookup">Kentucky</a> | <a href="/louisiana-vin-lookup">Louisiana</a> | <a href="/maine-vin-lookup">Maine</a> | <a href="/maryland-vin-lookup">Maryland</a> | <a href="/massachusetts-vin-lookup">Massachusetts</a> | <a href="/michigan-vin-lookup">Michigan</a> | <a href="/minnesota-vin-lookup">Minnesota</a> | <a href="/mississippi-vin-lookup">Mississippi</a> | <a href="/missouri-vin-lookup">Missouri</a> | <a href="/montana-vin-lookup">Montana</a> | <a href="/nebraska-vin-lookup">Nebraska</a> | <a href="/nevada-vin-lookup">Nevada</a> | <a href="/new-hampshire-vin-lookup">New Hampshire</a> | <a href="/new-jersey-vin-lookup">New Jersey</a> | <a href="/new-mexico-vin-lookup">New Mexico</a> | <a href="/new-york-vin-lookup">New York</a> | <a href="/north-carolina-vin-lookup">North Carolina</a> | <a href="/north-dakota-vin-lookup">North Dakota</a> | <a href="/ohio-vin-lookup">Ohio</a> | <a href="/oklahoma-vin-lookup">Oklahoma</a> | <a href="/oregon-vin-lookup">Oregon</a> | <a href="/pennsylvania-vin-lookup">Pennsylvania</a> | <a href="/rhode-island-vin-lookup">Rhode Island</a> | <a href="/south-carolina-vin-lookup">South Carolina</a> | <a href="/south-dakota-vin-lookup">South Dakota</a> | <a href="/tennessee-vin-lookup">Tennessee</a> | <a href="/texas-vin-lookup">Texas</a> | <a href="/utah-vin-lookup">Utah</a> | <a href="/vermont-vin-lookup">Vermont</a> | <a href="/virginia-vin-lookup">Virginia</a> | <a href="/washington-vin-lookup">Washington</a> | <a href="/west-virginia-vin-lookup">West Virginia</a> | <a href="/wisconsin-vin-lookup">Wisconsin</a> | <a href="/wyoming-vin-lookup">Wyoming</a>
+ </p>
+ </section>
+ </main>
+ <footer style="max-width:800px;margin:0 auto;padding:20px;font-family:Arial,sans-serif;border-top:1px solid #ccc;margin-top:20px;">
+ <p><a href="/verify">Verify an Item Now</a> | <a href="/pricing">Pricing — $10/month Unlimited</a> | <a href="/app">Download Mobile App</a> | <a href="/about">About</a> | <a href="/faq">FAQ</a> | <a href="/blog">Blog</a> | <a href="/compare">Compare Services</a></p>
+ <p>SafeOrStolen — Peoria, Arizona | Founded 2017 | Incorporated 2025</p>
+ <p>&copy; 2025&ndash;2026 SafeOrStolen. All rights reserved.</p>
+ </footer>
+ </noscript>
+ 
+ <div id="root">
+ <div class="loading">
+ <div class="spinner"></div>
+ <!-- Loading indicator only - no hidden text (cloaking risk) -->
+ </div>
+ </div>
+ 
+ <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+ <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+ <script type="module" src="/src/main.tsx"></script>
+ 
+ <!-- JSON-LD Schemas - Moved to body for non-blocking render -->
+ <!-- Core @graph schema (Organization, WebSite, Service, HowTo) -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "Organization",
+ "@id": "https://safeorstolen.com/#organization",
+ "name": "SafeOrStolen",
+ "url": "https://safeorstolen.com",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://safeorstolen.com/sos-logo.png",
+ "width": "512",
+ "height": "512"
+ },
+ "description": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against community theft registries, insurance claim records, and carrier and theft databases.",
+ "foundingDate": "2017",
+ "slogan": "Verify Before You Buy",
+ "knowsAbout": ["stolen goods verification", "IMEI checking", "VIN lookup", "serial number verification", "pawn shop compliance", "consumer protection"],
+ "contactPoint": {
+ "@type": "ContactPoint",
+ "email": "support@safeorstolen.com",
+ "contactType": "Customer Support"
+ },
+ "sameAs": [
+ "https://www.crunchbase.com/organization/safe-or-stolen",
+ "https://www.trustpilot.com/review/safeorstolen.com",
+ "https://biz.prlog.org/SafeOrStolen/",
+ "https://www.facebook.com/safeorstolen/",
+ "https://www.youtube.com/@safeorstolen",
+ "https://x.com/safeorstolen"
+ ],
+ "founder": [
+ {"@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "CEO"},
+ {"@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder"}
+ ],
+ "dateModified": "2026-03-02"
+ },
+ {
+ "@type": "WebSite",
+ "@id": "https://safeorstolen.com/#website",
+ "url": "https://safeorstolen.com",
+ "name": "SafeOrStolen — Stolen Item Verification",
+ "description": "Consumer protection platform that verifies whether secondhand items are stolen. Checks IMEI, VIN, and serial numbers against law enforcement, insurance, and carrier databases. 2 free verifications, results in approximately 3 seconds.",
+ "publisher": {"@id": "https://safeorstolen.com/#organization"},
+ "potentialAction": {
+ "@type": "SearchAction",
+ "target": "https://safeorstolen.com/verify?q={search_term_string}",
+ "query-input": "required name=search_term_string"
+ },
+ "dateModified": "2026-03-02"
+ },
+ {
+ "@type": "Service",
+ "@id": "https://safeorstolen.com/#service",
+ "name": "Stolen Item Verification Service",
+ "description": "SafeOrStolen verifies whether secondhand items are stolen by checking identifiers against community theft registries, insurance claim records, and carrier and theft databases. The service supports phones (IMEI), vehicles (VIN), firearms, bicycles, electronics, and tools. Results are returned in approximately 3 seconds.",
+ "provider": {"@id": "https://safeorstolen.com/#organization"},
+ "serviceType": "Stolen Item Verification",
+ "areaServed": {
+ "@type": "Country",
+ "name": "United States"
+ },
+ "audience": [
+ {"@type": "Audience", "audienceType": "Marketplace buyers"},
+ {"@type": "Audience", "audienceType": "Marketplace sellers"},
+ {"@type": "Audience", "audienceType": "Pawn shops"},
+ {"@type": "Audience", "audienceType": "Resale businesses"}
+ ],
+ "hasOfferCatalog": {
+ "@type": "OfferCatalog",
+ "name": "Verification Plans",
+ "itemListElement": [
+ {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required"},
+ {"@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications per month — all item types, all databases"}
+ ]
+ },
+ "dateModified": "2026-03-02"
+ },
+ {
+ "@type": "HowTo",
+ "name": "How to Verify If an Item Is Stolen Before Buying",
+ "description": "Steps to use SafeOrStolen to check whether a secondhand item has been reported stolen.",
+ "step": [
+ {"@type": "HowToStep", "position": 1, "name": "Find the identifier", "text": "Locate the IMEI number (phones — dial *#06#), VIN (vehicles — dashboard or door jamb), or serial number on the item."},
+ {"@type": "HowToStep", "position": 2, "name": "Enter the number", "text": "Go to safeorstolen.com or open the SafeOrStolen mobile app. Enter the identifier or use barcode scanning."},
+ {"@type": "HowToStep", "position": 3, "name": "Review results", "text": "The system queries law enforcement, insurance, and carrier databases simultaneously and returns results in approximately 3 seconds."}
+ ],
+ "totalTime": "PT30S",
+ "dateModified": "2026-03-02"
+ }
+ ]
+ }
+ </script>
+ 
+ <!-- MobileApplication schema -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "MobileApplication",
+ "name": "SafeOrStolen",
+ "description": "Progressive Web App for stolen item verification. Check IMEI, VIN, and serial numbers with barcode scanning on iOS and Android.",
+ "applicationCategory": "UtilitiesApplication",
+ "operatingSystem": ["iOS", "Android"],
+ "url": "https://safeorstolen.com/app",
+ "downloadUrl": "https://safeorstolen.com/download",
+ "featureList": [
+ "Camera-based barcode scanning",
+ "IMEI phone verification",
+ "VIN vehicle verification",
+ "Serial number checks",
+ "Push notifications for watchlist",
+ "Offline verification capability"
+ ],
+ "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+ "dateModified": "2026-02-06"
+ }
+ </script>
 
-    <!-- SafeOrStolen AI — SoftwareApplication schema for AI-Powered Platform Declaration -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "@id": "https://safeorstolen.com/#safeorstolen-ai",
-      "name": "SafeOrStolen AI",
-      "alternateName": ["SafeOrStolen AI Chat", "SOS AI"],
-      "description": "AI-powered conversational verification assistant for stolen item checks. Users chat naturally to verify IMEI, VIN, serial numbers, license plates, and marketplace listing URLs across 100+ community theft registries.",
-      "applicationCategory": "BusinessApplication",
-      "applicationSubCategory": "Conversational AI Verification Assistant",
-      "operatingSystem": "Web, iOS, Android",
-      "url": "https://safeorstolen.com/ai-chat",
-      "sameAs": "https://safeorstolen.com/verify",
-      "softwareVersion": "2026.04",
-      "isAccessibleForFree": false,
-      "creator": {"@id": "https://safeorstolen.com/#organization"},
-      "publisher": {"@id": "https://safeorstolen.com/#organization"},
-      "featureList": [
-        "Conversational AI verification (multi-turn chat)",
-        "AI smart identifier detection (IMEI, VIN, serial, plate, firearm serial)",
-        "AI scam checker with 0-100 risk score",
-        "AI marketplace URL analyzer (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark)",
-        "AI visual OCR for barcode and serial-number capture",
-        "AI safety advisor with natural-language risk explanations",
-        "AI predictive alerts for watchlist monitoring",
-        "AI verification analysis and result summaries"
-      ],
-      "potentialAction": {
-        "@type": "CommunicateAction",
-        "name": "Chat with SafeOrStolen AI",
-        "target": "https://safeorstolen.com/ai-chat"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "USD",
-        "lowPrice": "0.99",
-        "highPrice": "10.00",
-        "offerCount": 2
-      },
-      "additionalProperty": [
+ <!-- SafeOrStolen AI — SoftwareApplication schema for AI-Powered Platform Declaration -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "@id": "https://safeorstolen.com/#safeorstolen-ai",
+ "name": "SafeOrStolen AI",
+ "alternateName": ["SafeOrStolen AI Chat", "SOS AI"],
+ "description": "AI-powered conversational verification assistant for stolen item checks. Users chat naturally to verify IMEI, VIN, serial numbers, license plates, and marketplace listing URLs across 100+ community theft registries.",
+ "applicationCategory": "BusinessApplication",
+ "applicationSubCategory": "Conversational AI Verification Assistant",
+ "operatingSystem": "Web, iOS, Android",
+ "url": "https://safeorstolen.com/ai-chat",
+ "sameAs": "https://safeorstolen.com/verify",
+ "softwareVersion": "2026.04",
+ "isAccessibleForFree": false,
+ "creator": {"@id": "https://safeorstolen.com/#organization"},
+ "publisher": {"@id": "https://safeorstolen.com/#organization"},
+ "featureList": [
+ "Conversational AI verification (multi-turn chat)",
+ "AI smart identifier detection (IMEI, VIN, serial, plate, firearm serial)",
+ "AI scam checker with 0-100 risk score",
+ "AI marketplace URL analyzer (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark)",
+ "AI visual OCR for barcode and serial-number capture",
+ "AI safety advisor with natural-language risk explanations",
+ "AI predictive alerts for watchlist monitoring",
+ "AI verification analysis and result summaries"
+ ],
+ "potentialAction": {
+ "@type": "CommunicateAction",
+ "name": "Chat with SafeOrStolen AI",
+ "target": "https://safeorstolen.com/ai-chat"
+ },
+ "offers": {
+ "@type": "AggregateOffer",
+ "priceCurrency": "USD",
+ "lowPrice": "0.99",
+ "highPrice": "10.00",
+ "offerCount": 2
+ },
+ "additionalProperty": [
 {"@type": "PropertyValue", "name": "AI Gateway", "value": "Lovable AI Gateway"},
-        {"@type": "PropertyValue", "name": "Platform Status", "value": "AI-Powered"}
-      ],
-      "dateModified": "2026-04-23"
-    }
-    </script>
-  </body>
+ {"@type": "PropertyValue", "name": "Platform Status", "value": "AI-Powered"}
+ ],
+ "dateModified": "2026-04-23"
+ }
+ </script>
+ </body>
 </html>

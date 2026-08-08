@@ -239,7 +239,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- We don't rely on a single database. Our verification engine searches 100+ sources including insurance theft claim databases, salvage records, public theft reports, carrier blacklists (for phones), and industry-specific registries. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
+ We don't rely on a single database. Our verification engine searches 100+ sources including insurance theft claim databases, salvage records, public theft reports, carrier and theft databases (for phones), and industry-specific registries. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
  </p>
  </div>
  </div>

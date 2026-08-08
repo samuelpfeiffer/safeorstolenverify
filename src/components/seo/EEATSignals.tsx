@@ -17,77 +17,77 @@ import { Helmet } from 'react-helmet-async';
  */
 
 export const EEATSignals = () => {
-  return (
-    <Helmet>
-      {/* ─── Experience ─────────────────────────────── */}
-      {/* What the platform actually does, operationally */}
-      <meta
-        name="experience"
-        content="Stolen item verification platform operational since August 2024. Processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds. Over 100,000+ verifications processed."
-      />
+ return (
+ <Helmet>
+ {/* ─── Experience ─────────────────────────────── */}
+ {/* What the platform actually does, operationally */}
+ <meta
+ name="experience"
+ content="Stolen item verification platform operational since August 2024. Processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds. Over 100,000+ verifications processed."
+ />
 
-      {/* ─── Expertise ──────────────────────────────── */}
-      {/* Specific domain knowledge, not vague claims */}
-      <meta
-        name="expertise"
-        content="IMEI verification (carrier and manufacturer blacklists TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (stolen firearms databases), bicycle verification (BikeIndex), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
-      />
+ {/* ─── Expertise ──────────────────────────────── */}
+ {/* Specific domain knowledge, not vague claims */}
+ <meta
+ name="expertise"
+ content="IMEI verification (carrier and theft databases TAC database, carrier and theft databases), VIN lookup (vehicle theft and title databases), firearm serial number checks (stolen firearms databases), bicycle verification (stolen bicycle databases), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
+ />
 
-      {/* ─── Authoritativeness ──────────────────────── */}
-      {/* Verifiable credentials and external recognition */}
-      <meta
-        name="authoritativeness"
-        content="Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
-      />
+ {/* ─── Authoritativeness ──────────────────────── */}
+ {/* Verifiable credentials and external recognition */}
+ <meta
+ name="authoritativeness"
+ content="Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
+ />
 
-      {/* ─── Trustworthiness ────────────────────────── */}
-      {/* Concrete, verifiable trust indicators */}
-      <meta
-        name="trustworthiness"
-        content="HTTPS encrypted platform, privacy-first architecture (no personal data stored beyond verification window), transparent pricing published at safeorstolen.com/pricing, full Terms of Service and Privacy Policy published, company registered as SafeOrStolen in Arizona"
-      />
+ {/* ─── Trustworthiness ────────────────────────── */}
+ {/* Concrete, verifiable trust indicators */}
+ <meta
+ name="trustworthiness"
+ content="HTTPS encrypted platform, privacy-first architecture (no personal data stored beyond verification window), transparent pricing published at safeorstolen.com/pricing, full Terms of Service and Privacy Policy published, company registered as SafeOrStolen in Arizona"
+ />
 
-      {/* ─── Verifiable External Profiles ───────────── */}
-      <meta
-        name="external-profiles"
-        content="https://www.trustpilot.com/review/safeorstolen.com, https://www.crunchbase.com/organization/safe-or-stolen, https://www.youtube.com/@safeorstolen, https://www.youtube.com/@safeorstolenoffically"
-      />
+ {/* ─── Verifiable External Profiles ───────────── */}
+ <meta
+ name="external-profiles"
+ content="https://www.trustpilot.com/review/safeorstolen.com, https://www.crunchbase.com/organization/safe-or-stolen, https://www.youtube.com/@safeorstolen, https://www.youtube.com/@safeorstolenoffically"
+ />
 
-      {/* ─── Real Team ──────────────────────────────── */}
-      <meta name="team" content="Samuel Pfeiffer (CEO & Founder), Kelly McEvoy (Co-Founder & YouTube Educator)" />
-      <meta name="organization-contact" content="support@safeorstolen.com" />
-      <meta name="organization-address" content="Peoria, Arizona 85345, United States" />
+ {/* ─── Real Team ──────────────────────────────── */}
+ <meta name="team" content="Samuel Pfeiffer (CEO & Founder), Kelly McEvoy (Co-Founder & YouTube Educator)" />
+ <meta name="organization-contact" content="support@safeorstolen.com" />
+ <meta name="organization-address" content="Peoria, Arizona 85345, United States" />
 
-      {/* ─── Data Sources — Specific, not vague ─────── */}
-      <meta
-        name="data-sources"
-        content="carrier and manufacturer blacklists TAC Database (15B+ IMEI records), NICB VINCheck, stolen property reports from all 50 states, BikeIndex API, Stolen Firearms Databases, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), NMVTIS, all 50 state community theft registries, 500+ insurance claim databases, Interpol stolen property records"
-      />
+ {/* ─── Data Sources — Specific, not vague ─────── */}
+ <meta
+ name="data-sources"
+ content="carrier and theft databases TAC Database (15B+ IMEI records), vehicle theft and title databases, stolen property reports from all 50 states, stolen bicycle databases API, Stolen Firearms Databases, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier and theft databases (AT&T, Verizon, T-Mobile, Sprint), vehicle theft and title databases, all 50 state community theft registries, 500+ insurance claim databases, Interpol stolen property records"
+ />
 
-      {/* ─── Service Scope — factual enumeration ─────── */}
-      <meta
-        name="service-categories"
-        content="Phones & Tablets (IMEI/ESN/MEID), Vehicles (VIN), Firearms (serial number), Bicycles & eBikes (frame number), Laptops & Electronics (serial number), Gaming Consoles (serial number), Power Tools (serial number), Jewelry & Watches (serial/GIA ID), Boats & Watercraft (HIN), Appliances (serial number)"
-      />
+ {/* ─── Service Scope — factual enumeration ─────── */}
+ <meta
+ name="service-categories"
+ content="Phones & Tablets (IMEI/ESN/MEID), Vehicles (VIN), Firearms (serial number), Bicycles & eBikes (frame number), Laptops & Electronics (serial number), Gaming Consoles (serial number), Power Tools (serial number), Jewelry & Watches (serial/GIA ID), Boats & Watercraft (HIN), Appliances (serial number)"
+ />
 
-      {/* ─── Legal & Compliance Authority ────────────── */}
-      <meta
-        name="legal-authority"
+ {/* ─── Legal & Compliance Authority ────────────── */}
+ <meta
+ name="legal-authority"
  content="SafeOrStolen verification supports compliance with: 18 U.S.C. § 922 (firearms commerce), 18 U.S.C. § 2315 (interstate transport of stolen goods), state pawn broker compliance requirements, marketplace due diligence obligations"
-      />
+ />
 
-      {/* ─── Unique Features ─────────────────────────── */}
-      <meta
-        name="unique-features"
-        content="Only multi-category stolen item verification platform covering 10+ item types. Progressive Web App with camera barcode scanning for iOS and Android. Batch verification for pawn shops and auction houses. Compliance certificates with cryptographic timestamps."
-      />
+ {/* ─── Unique Features ─────────────────────────── */}
+ <meta
+ name="unique-features"
+ content="Only multi-category stolen item verification platform covering 10+ item types. Progressive Web App with camera barcode scanning for iOS and Android. Batch verification for pawn shops and auction houses. Compliance certificates with cryptographic timestamps."
+ />
 
-      {/* ─── Business Identity ───────────────────────── */}
-      <meta name="founded" content="August 2024" />
-      <meta name="legal-name" content="SafeOrStolen" />
-      <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
-      <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
-      <meta name="terms-of-service" content="https://safeorstolen.com/terms" />
-    </Helmet>
-  );
+ {/* ─── Business Identity ───────────────────────── */}
+ <meta name="founded" content="August 2024" />
+ <meta name="legal-name" content="SafeOrStolen" />
+ <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
+ <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
+ <meta name="terms-of-service" content="https://safeorstolen.com/terms" />
+ </Helmet>
+ );
 };

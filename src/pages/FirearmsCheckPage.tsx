@@ -50,7 +50,7 @@ const FirearmsCheckPage = () => {
  <p className="text-muted-foreground leading-relaxed">
  Enter the firearm serial number into SafeOrStolen's lookup tool above.
  SafeOrStolen checks firearm serial numbers against stolen firearms databases
-            and analyzes the serial for signs of alteration. A result returns in approximately 3 seconds.
+ and analyzes the serial for signs of alteration. A result returns in approximately 3 seconds.
  </p>
  </div>
  </section>
@@ -102,36 +102,36 @@ const FirearmsCheckPage = () => {
  Quick answer: SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
-            SafeOrStolen checks firearm serial numbers against stolen firearms
-            databases and analyzes the serial itself for signs of alteration, so
-            you get a clear answer before money changes hands.
-          </p>
-          <div className="space-y-3">
-            {[
-              {
-                db: 'Stolen Firearms Databases',
-                desc: 'We check the serial number against stolen firearms databases and return a plain result in about three seconds.',
-                badge: 'Search',
-                badgeColor: 'bg-primary/20 text-primary',
-              },
-              {
-                db: 'Serial Number Integrity Check',
-                desc: 'We validate the serial number itself for obliterated, altered, or placeholder patterns. A defaced serial number is a federal felony under 18 U.S.C. § 922(k) and is a strong signal to walk away.',
-                badge: 'Analysis',
-                badgeColor: 'bg-secondary/20 text-secondary',
-              },
-            ].map((item) => (
-              <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
-                <div className="flex items-start gap-3 mb-2">
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${item.badgeColor}`}>
-                    {item.badge}
-                  </span>
-                  <h3 className="text-foreground font-bold text-sm">{item.db}</h3>
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+ SafeOrStolen checks firearm serial numbers against stolen firearms
+ databases and analyzes the serial itself for signs of alteration, so
+ you get a clear answer before money changes hands.
+ </p>
+ <div className="space-y-3">
+ {[
+ {
+ db: 'Stolen Firearms Databases',
+ desc: 'We check the serial number against stolen firearms databases and return a plain result in about three seconds.',
+ badge: 'Search',
+ badgeColor: 'bg-primary/20 text-primary',
+ },
+ {
+ db: 'Serial Number Integrity Check',
+ desc: 'We validate the serial number itself for obliterated, altered, or placeholder patterns. A defaced serial number is a federal felony under 18 U.S.C. § 922(k) and is a strong signal to walk away.',
+ badge: 'Analysis',
+ badgeColor: 'bg-secondary/20 text-secondary',
+ },
+ ].map((item) => (
+ <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
+ <div className="flex items-start gap-3 mb-2">
+ <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${item.badgeColor}`}>
+ {item.badge}
+ </span>
+ <h3 className="text-foreground font-bold text-sm">{item.db}</h3>
+ </div>
+ <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+ </div>
+ ))}
+ </div>
  </section>
 
 
@@ -323,7 +323,7 @@ const FirearmsCheckPage = () => {
  { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
  { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
  { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
- { title: 'Bike Serial Check', href: '/check-bike', desc: 'BikeIndex + police' },
+ { title: 'Bike Serial Check', href: '/check-bike', desc: 'stolen bicycle databases + police' },
  ].map((link) => (
  <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
  <div>

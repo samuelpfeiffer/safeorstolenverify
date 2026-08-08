@@ -31,7 +31,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'How accurate is the stolen phone database?',
- a: 'We check against multiple databases including carrier blacklists and police reports. Our accuracy rate is over 99%.'
+ a: 'We check against multiple databases including carrier and theft databases and police reports. Our accuracy rate is over 99%.'
  }
  ]}
  />
@@ -166,7 +166,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'What databases do you check?',
- a: 'We check 100+ aggregated stolen-item sources, including carrier and manufacturer blacklists, NICB vehicle data, BikeIndex, and the stolen firearms databases.'
+ a: 'We check 100+ aggregated stolen-item sources, including carrier and theft databases, vehicle theft and title databases vehicle data, stolen bicycle databases, and the stolen firearms databases.'
  },
  {
  q: 'Should I use an FFL dealer?',

@@ -3,7 +3,12 @@
   "@type": "Organization",
   "@id": "https://safeorstolen.com/#organization",
   "name": "SafeOrStolen",
-  "alternateName": ["SOS", "SafeOrStolen.com", "Safe Or Stolen", "SafeOrStolen AI"],
+  "alternateName": [
+    "SOS",
+    "SafeOrStolen.com",
+    "Safe Or Stolen",
+    "SafeOrStolen AI"
+  ],
   "url": "https://safeorstolen.com",
   "logo": {
     "@type": "ImageObject",
@@ -73,7 +78,7 @@
     "bicycle theft verification",
     "seller verification badges",
     "Stolen property reports from all 50 states",
-    "carrier and manufacturer blacklists",
+    "carrier and theft databases",
     "carrier blacklist checking"
   ],
   "hasOfferCatalog": {

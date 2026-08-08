@@ -12,11 +12,11 @@ import {
 const FAQ_ITEMS = [
  {
  question: "What databases does SafeOrStolen check for IMEI verification?",
- answer: "SafeOrStolen checks the carrier and manufacturer blacklists (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier blacklists, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier blacklists across 190+ countries. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen checks the carrier and theft databases (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier and theft databases, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier and theft databases across 190+ countries. Results are returned in approximately 3 seconds."
  },
  {
  question: "Which community theft registries are included in vehicle VIN checks?",
- answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), NHTSA vehicle records, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+ answer: "Vehicle VIN checks query stolen property reports from all 50 states, vehicle theft and title databases database, vehicle theft and title databases (National Motor Vehicle Title Information System), vehicle theft and title databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
  },
  {
  question: "Does SafeOrStolen check stolen firearms databases for firearm serial numbers?",
@@ -31,8 +31,8 @@ const FAQ_ITEMS = [
  answer: "LeadsOnline is the largest national pawn shop transaction database, used by 4,000+ law enforcement agencies across 35 states. It tracks items sold or pawned at secondhand dealers. Over 60% of stolen electronics and 80% of stolen jewelry are pawned within 72 hours of theft, making LeadsOnline critical for detecting stolen goods in the secondhand market."
  },
  {
- question: "Does SafeOrStolen check BikeIndex for stolen bicycles?",
- answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex.org (the world's largest public bike registry with 120,000+ registered stolen bikes), local law enforcement stolen property databases, and manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
+ question: "Does SafeOrStolen check stolen bicycle databases for stolen bicycles?",
+ answer: "Yes. Bicycle and eBike frame serial numbers are checked against stolen bicycle databases (the world's largest public bike registry with 120,000+ registered stolen bikes), local law enforcement stolen property databases, and manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
  },
 ];
 
@@ -83,12 +83,12 @@ const DATA_CATEGORIES = [
  color: "text-red-500",
  bgColor: "bg-red-500/10",
  title: "Insurance Records",
- subtitle: "NICB, Claims Data & Total-Loss Reports",
+ subtitle: "vehicle theft and title databases, Claims Data & Total-Loss Reports",
  description: "Insurance theft claims represent one of the most reliable signals that an item has been stolen. Many items are never reported to police but always reported to insurance for reimbursement.",
  sources: [
  {
- name: "NICB — National Insurance Crime Bureau",
- detail: "The NICB is a non-profit organization supported by 1,100+ property and casualty insurance companies. Tracks stolen vehicles, watercraft, and high-value property. Receives data from insurers representing 80% of U.S. vehicle insurance premiums.",
+ name: "vehicle theft and title databases — National Insurance Crime Bureau",
+ detail: "The vehicle theft and title databases is a non-profit organization supported by 1,100+ property and casualty insurance companies. Tracks stolen vehicles, watercraft, and high-value property. Receives data from insurers representing 80% of U.S. vehicle insurance premiums.",
  link: "/vin-checker"
  },
  {
@@ -103,7 +103,7 @@ const DATA_CATEGORIES = [
  },
  {
  name: "Salvage & Total-Loss Registries",
- detail: "Insurance companies submit total-loss and salvage title data to NMVTIS within 30 days. This catches vehicles retitled in other states to hide salvage status — a common form of title washing fraud.",
+ detail: "Insurance companies submit total-loss and salvage title data to vehicle theft and title databases within 30 days. This catches vehicles retitled in other states to hide salvage status — a common form of title washing fraud.",
  link: "/check-car"
  },
  ],
@@ -174,13 +174,13 @@ const DATA_CATEGORIES = [
  link: "/free-stolen-vehicle-check"
  },
  {
- name: "NMVTIS — National Motor Vehicle Title Information System",
+ name: "vehicle theft and title databases — National Motor Vehicle Title Information System",
  detail: "Federal system connecting state motor vehicle agencies, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
  link: "/vin-checker"
  },
  {
  name: "International Bike Registries",
- detail: "BikeIndex (120,000+ registered stolen bikes), and the National Bike Registry. Cross-referenced with police databases in the U.S., Canada, UK, Australia, and Western Europe for imported/exported stolen bicycles.",
+ detail: "stolen bicycle databases (120,000+ registered stolen bikes), and the National Bike Registry. Cross-referenced with police databases in the U.S., Canada, UK, Australia, and Western Europe for imported/exported stolen bicycles.",
  link: "/check-bike"
  },
  {
@@ -206,12 +206,12 @@ const DATA_CATEGORIES = [
  color: "text-purple-500",
  bgColor: "bg-purple-500/10",
  title: "Carrier Blacklists",
- subtitle: "carrier and manufacturer blacklists Global IMEI Database & Carrier Networks",
- description: "Mobile carrier blacklists are the gold standard for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network worldwide.",
+ subtitle: "carrier and theft databases Global IMEI Database & Carrier Networks",
+ description: "Mobile carrier and theft databases are the gold standard for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network worldwide.",
  sources: [
  {
- name: "carrier and manufacturer blacklists Global IMEI Database — 15 Billion+ Records",
- detail: "The carrier and manufacturer blacklists (Global System for Mobile Communications Association) maintains the world's most comprehensive IMEI database with records from 800+ carriers across 200+ countries. The carrier and manufacturer blacklists Device Check API is the authoritative source for device blacklist status.",
+ name: "carrier and theft databases Global IMEI Database — 15 Billion+ Records",
+ detail: "The carrier and theft databases (Global System for Mobile Communications Association) maintains the world's most comprehensive IMEI database with records from 800+ carriers across 200+ countries. The carrier and theft databases Device Check API is the authoritative source for device blacklist status.",
  link: "/imei-checker"
  },
  {
@@ -226,7 +226,7 @@ const DATA_CATEGORIES = [
  },
  {
  name: "International Carrier Blacklists — 200+ Countries",
- detail: "Phones stolen in the U.S. are frequently exported and unlocked abroad. SafeOrStolen checks international carrier blacklists to detect phones already unlocked and active on foreign networks — a sign that previous blacklist status may have been circumvented.",
+ detail: "Phones stolen in the U.S. are frequently exported and unlocked abroad. SafeOrStolen checks international carrier and theft databases to detect phones already unlocked and active on foreign networks — a sign that previous blacklist status may have been circumvented.",
  link: "/imei-checker"
  },
  ],
@@ -247,7 +247,7 @@ const DATA_CATEGORIES = [
  color: "text-orange-500",
  bgColor: "bg-orange-500/10",
  title: "Industry & Community Registries",
- subtitle: "BikeIndex, Stolen Firearms Databases, GIA, NMVTIS & Specialist Networks",
+ subtitle: "stolen bicycle databases, Stolen Firearms Databases, GIA, vehicle theft and title databases & Specialist Networks",
  description: "Beyond law enforcement and insurance, specialized community registries track item-specific theft with granular detail that general databases miss. These sources are particularly critical for bicycles, firearms, marine vessels, and high-value collectibles.",
  sources: [
  {
@@ -329,11 +329,11 @@ export default function DataSourcesPage() {
  <>
  <Helmet>
  <title>Data Sources — 100+ Databases SafeOrStolen Checks | SafeOrStolen</title>
- <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, carrier and manufacturer blacklists (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and carrier blacklists across 200 countries." />
+ <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, LeadsOnline, stolen bicycle databases, and carrier and theft databases across 200 countries." />
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
  <link rel="canonical" href="https://safeorstolen.com/data-sources" />
  <meta property="og:title" content="100+ Data Sources SafeOrStolen Checks | SafeOrStolen" />
- <meta property="og:description" content="We check stolen property reports from all 50 states, carrier and manufacturer blacklists (15B+ IMEI records), NICB, LeadsOnline, BikeIndex, and 100+ carrier blacklists. Results in 3 seconds." />
+ <meta property="og:description" content="We check stolen property reports from all 50 states, carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, LeadsOnline, stolen bicycle databases, and 100+ carrier and theft databases. Results in 3 seconds." />
  <meta property="og:url" content="https://safeorstolen.com/data-sources" />
  <meta property="og:type" content="website" />
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -355,12 +355,12 @@ export default function DataSourcesPage() {
  Where SafeOrStolen Gets Its Data
  </h1>
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- SafeOrStolen queries <strong>100+ databases simultaneously</strong> — law enforcement, insurance, carrier blacklists, pawn networks, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
+ SafeOrStolen queries <strong>100+ databases simultaneously</strong> — law enforcement, insurance, carrier and theft databases, pawn networks, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
  </p>
  {/* Semantic TL;DR for AI extraction */}
  <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
  <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
- SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including carrier and manufacturer blacklists (15 billion IMEI records), NICB, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier blacklists across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+ SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including carrier and theft databases (15 billion IMEI records), vehicle theft and title databases, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier and theft databases across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
  </div>
  <div className="flex flex-wrap justify-center gap-3">
  <Button asChild size="lg">
@@ -382,7 +382,7 @@ export default function DataSourcesPage() {
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
  {[
  { value: "100+", label: "Databases Checked" },
- { value: "15B+", label: "IMEI Records (carrier and manufacturer blacklists)" },
+ { value: "15B+", label: "IMEI Records (carrier and theft databases)" },
  { value: "3 sec", label: "Average Result Time" },
  { value: "190+", label: "Countries Covered" },
  ].map(stat => (
@@ -569,7 +569,7 @@ export default function DataSourcesPage() {
  Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
  </p>
  <p className="text-xs text-muted-foreground mb-2">
- Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including carrier and manufacturer blacklists (15B+ IMEI records), NICB, and carrier blacklists across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+ Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, and carrier and theft databases across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
  </p>
  <Button size="lg" asChild>
  <Link to="/verify">

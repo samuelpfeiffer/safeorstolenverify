@@ -21,13 +21,13 @@ const TheftAZPage = () => {
  
  whatIs: "TheftAZ (theftaz.azag.gov) is the official stolen property database maintained by the Arizona Attorney General's Office. It contains records of vehicles, firearms, electronics, tools, and other property reported stolen throughout Arizona. Law enforcement agencies, pawn shops, and the public can search TheftAZ to verify if items are stolen. SafeOrStolen integrates TheftAZ data with 100+ other databases for comprehensive verification.",
  
- howItWorks: "When you search through SafeOrStolen, we check TheftAZ alongside NICB, stolen property reports from all 50 states, carrier blacklists, NHTSA vehicle records, and other databases simultaneously. This gives you results from Arizona's official stolen property registry PLUS nationwide databases in one instant search. Enter any identifier (VIN, serial number, IMEI) and we'll search all sources automatically.",
+ howItWorks: "When you search through SafeOrStolen, we check TheftAZ alongside vehicle theft and title databases, stolen property reports from all 50 states, carrier and theft databases, vehicle theft and title databases, and other databases simultaneously. This gives you results from Arizona's official stolen property registry PLUS nationwide databases in one instant search. Enter any identifier (VIN, serial number, IMEI) and we'll search all sources automatically.",
  
  whyCheck: "Arizona has significant stolen property issues due to its proximity to California (source of many stolen vehicles) and the Mexico border (trafficking route). TheftAZ helps Arizonans verify items before buying. Whether you're in Phoenix, Tucson, Mesa, or anywhere in AZ, checking TheftAZ protects you from unknowingly buying stolen goods and the legal consequences that follow.",
  
  benefits: [
  "Search Arizona's official TheftAZ database",
- "Check NICB and 100+ additional databases",
+ "Check vehicle theft and title databases and 100+ additional databases",
  "Arizona stolen vehicle verification",
  "Arizona stolen firearm search",
  "Electronics and tools verification",
@@ -55,7 +55,7 @@ const TheftAZPage = () => {
  },
  {
  question: "Can I search TheftAZ directly?",
- answer: "Yes, TheftAZ is publicly accessible at theftaz.azag.gov. However, SafeOrStolen provides a more comprehensive search by checking TheftAZ PLUS 100+ other databases (NICB, stolen property reports from all 50 states, carrier blacklists, etc.) in one search. This ensures you're checking both Arizona records AND nationwide databases."
+ answer: "Yes, TheftAZ is publicly accessible at theftaz.azag.gov. However, SafeOrStolen provides a more comprehensive search by checking TheftAZ PLUS 100+ other databases (vehicle theft and title databases, stolen property reports from all 50 states, carrier and theft databases, etc.) in one search. This ensures you're checking both Arizona records AND nationwide databases."
  },
  {
  question: "Should I check TheftAZ before buying a used car in Arizona?",
