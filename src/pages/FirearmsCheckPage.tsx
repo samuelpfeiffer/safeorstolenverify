@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { FirearmNextSteps } from '@/components/verification/FirearmNextSteps';
 
 const FirearmsCheckPage = () => {
   return (
