@@ -144,7 +144,7 @@ export const StateVinPageTemplate = ({
  <h2>What Databases We Search for {state} Vehicles</h2>
  <ul>
  <li>vehicle theft and title databases - insurance theft claims</li>
- <li>vehicle theft and title databases (National Motor Vehicle Title Information System) - title history</li>
+ <li>vehicle theft and title databases (vehicle theft and title databases) - title history</li>
  <li>{state} vehicle theft and title databases - registration and title status</li>
  <li>{state} law enforcement - active stolen vehicle reports</li>
  <li>Stolen property reports from all 50 states - federal stolen vehicle database</li>
@@ -355,8 +355,8 @@ export const StateVinPageTemplate = ({
  <h2 className="text-3xl font-bold mb-8">What Databases We Search for {state} Vehicles</h2>
  <div className="grid md:grid-cols-2 gap-4">
  {[
- { name: 'vehicle theft and title databases', desc: 'National Insurance Crime Bureau theft claims' },
- { name: 'vehicle theft and title databases', desc: 'National Motor Vehicle Title Information System' },
+ { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft claims' },
+ { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases' },
  { name: `${state} DMV`, desc: 'Registration and title status records' },
  { name: `${state} Law Enforcement`, desc: 'Active stolen vehicle reports' },
  { name: 'Insurance Records', desc: 'Claims history across all 50 states' },

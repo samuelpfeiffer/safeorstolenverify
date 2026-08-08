@@ -87,7 +87,7 @@ const OrlandoLicensePlateLookupPage = () => {
  { name: 'FLHSMV Records', desc: 'Florida registration database for Orange County and surrounding counties' },
  { name: 'Orange County Sheriff', desc: 'OCSO stolen vehicle reports covering greater Orlando metro' },
  { name: 'Orlando Police (OPD)', desc: 'City of Orlando stolen vehicle records' },
- { name: 'vehicle theft and title databases', desc: 'National Insurance Crime Bureau theft and total loss records' },
+ { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss records' },
  { name: 'Rental & Fleet Records', desc: 'Former rental vehicle indicators and fleet disposal data' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">

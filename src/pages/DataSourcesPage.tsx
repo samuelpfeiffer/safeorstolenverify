@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
  },
  {
  question: "Which community theft registries are included in vehicle VIN checks?",
- answer: "Vehicle VIN checks query stolen property reports from all 50 states, vehicle theft and title databases database, vehicle theft and title databases (National Motor Vehicle Title Information System), vehicle theft and title databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+ answer: "Vehicle VIN checks query stolen property reports from all 50 states, vehicle theft and title databases database, vehicle theft and title databases (vehicle theft and title databases), vehicle theft and title databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
  },
  {
  question: "Does SafeOrStolen check stolen firearms databases for firearm serial numbers?",
@@ -87,7 +87,7 @@ const DATA_CATEGORIES = [
  description: "Insurance theft claims represent one of the most reliable signals that an item has been stolen. Many items are never reported to police but always reported to insurance for reimbursement.",
  sources: [
  {
- name: "vehicle theft and title databases — National Insurance Crime Bureau",
+ name: "vehicle theft and title databases — vehicle theft and title databases",
  detail: "The vehicle theft and title databases is a non-profit organization supported by 1,100+ property and casualty insurance companies. Tracks stolen vehicles, watercraft, and high-value property. Receives data from insurers representing 80% of U.S. vehicle insurance premiums.",
  link: "/vin-checker"
  },
@@ -174,7 +174,7 @@ const DATA_CATEGORIES = [
  link: "/free-stolen-vehicle-check"
  },
  {
- name: "vehicle theft and title databases — National Motor Vehicle Title Information System",
+ name: "vehicle theft and title databases — vehicle theft and title databases",
  detail: "Federal system connecting state motor vehicle agencies, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
  link: "/vin-checker"
  },

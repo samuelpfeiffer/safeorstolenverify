@@ -244,7 +244,7 @@ const HowToCheckIfCarStolenPage = () => {
  <div className="border rounded-lg p-4">
  <Database className="w-6 h-6 text-primary mb-2" />
  <p className="font-medium">vehicle theft and title databases Database</p>
- <p className="text-sm text-muted-foreground">National Insurance Crime Bureau theft records</p>
+ <p className="text-sm text-muted-foreground">vehicle theft and title databases theft records</p>
  </div>
  <div className="border rounded-lg p-4">
  <Shield className="w-6 h-6 text-primary mb-2" />

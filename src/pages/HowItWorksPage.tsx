@@ -174,7 +174,7 @@ const HowItWorksPage = () => {
  />
  <DataSourceCard
  title="vehicle theft and title databases"
- description="National Insurance Crime Bureau - VINCheck and theft records"
+ description="vehicle theft and title databases - VINCheck and theft records"
  icon="🛡️"
  />
  <DataSourceCard

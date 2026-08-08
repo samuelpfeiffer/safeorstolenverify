@@ -88,7 +88,7 @@ export default function ForBusinesses() {
  },
  {
  question: 'What databases does SafeOrStolen check for business verifications?',
- answer: 'SafeOrStolen checks 100+ databases simultaneously including stolen property reports from all 50 states, vehicle theft and title databases (National Insurance Crime Bureau for stolen vehicles), carrier and theft databases TAC (phone blacklists covering AT&T, Verizon, T-Mobile), all 50 state DMV and community theft registries, insurance claim databases, and carrier and theft databases. Results are returned in under 3 seconds.'
+ answer: 'SafeOrStolen checks 100+ databases simultaneously including stolen property reports from all 50 states, vehicle theft and title databases (vehicle theft and title databases for stolen vehicles), carrier and theft databases TAC (phone blacklists covering AT&T, Verizon, T-Mobile), all 50 state DMV and community theft registries, insurance claim databases, and carrier and theft databases. Results are returned in under 3 seconds.'
  },
  {
  question: 'Does SafeOrStolen meet legal compliance requirements for pawn shops?',

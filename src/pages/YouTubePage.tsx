@@ -499,7 +499,7 @@ const YouTubePage: React.FC = () => {
  </p>
 
  <p className="leading-relaxed">
- The <Link to="/vin-checker" className="text-primary hover:underline">VIN lookup guides</Link> show vehicle buyers how to locate a 17-digit Vehicle Identification Number — typically found on the driver's side dashboard corner or inside the driver's door jamb — and verify it against stolen property reports from all 50 states, the National Insurance Crime Bureau (vehicle theft and title databases), and vehicle theft and title databases across all 50 states. This provides a free alternative to paid Carfax reports.
+ The <Link to="/vin-checker" className="text-primary hover:underline">VIN lookup guides</Link> show vehicle buyers how to locate a 17-digit Vehicle Identification Number — typically found on the driver's side dashboard corner or inside the driver's door jamb — and verify it against stolen property reports from all 50 states, the vehicle theft and title databases (vehicle theft and title databases), and vehicle theft and title databases across all 50 states. This provides a free alternative to paid Carfax reports.
  </p>
 
  <p className="leading-relaxed">

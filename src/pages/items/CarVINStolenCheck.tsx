@@ -30,7 +30,7 @@ const CarVINStolenCheck = () => {
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is VIN Stolen Vehicle Verification?"
- whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the vehicle theft and title databases (National Motor Vehicle Title Information System), and community theft registries. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Unlike Carfax which costs $44.99, our stolen check is FREE."
+ whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the vehicle theft and title databases (vehicle theft and title databases), and community theft registries. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Unlike Carfax which costs $44.99, our stolen check is FREE."
  howItWorksSteps={[
  "Find the VIN: Check the dashboard (driver's side, visible through windshield), driver's door jamb, vehicle registration, or title",
  "Enter the 17-character VIN into our free verification tool",

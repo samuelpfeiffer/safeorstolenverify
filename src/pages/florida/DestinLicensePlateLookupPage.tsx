@@ -86,7 +86,7 @@ const DestinLicensePlateLookupPage = () => {
  {[
  { name: 'FLHSMV Records', desc: 'Florida registration database for Okaloosa County vehicles' },
  { name: 'OCSO Records', desc: 'Okaloosa County Sheriff\'s Office stolen vehicle reports' },
- { name: 'vehicle theft and title databases', desc: 'National Insurance Crime Bureau theft and total loss' },
+ { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss' },
  { name: 'Multi-State Search', desc: 'Cross-border databases for the I-10 Panhandle corridor' },
  { name: 'Military Base Records', desc: 'Vehicle registration data from Eglin AFB and Hurlburt Field areas' },
  ].map(db => (

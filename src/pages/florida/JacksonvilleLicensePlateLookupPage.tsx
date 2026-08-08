@@ -86,7 +86,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  {[
  { name: 'FLHSMV Records', desc: 'Florida registration database for Duval County vehicles' },
  { name: 'JSO Records', desc: 'Jacksonville Sheriff\'s Office stolen vehicle reports' },
- { name: 'vehicle theft and title databases', desc: 'National Insurance Crime Bureau theft and total loss records' },
+ { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss records' },
  { name: 'I-95 Corridor Data', desc: 'Cross-state stolen vehicle alerts from the I-95 trafficking corridor' },
  { name: 'Insurance & Salvage', desc: 'Theft claims and flood/salvage titles from Florida hurricanes' },
  ].map(db => (
