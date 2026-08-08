@@ -30,7 +30,7 @@ export const EEATSignals = () => {
       {/* Specific domain knowledge, not vague claims */}
       <meta
         name="expertise"
-        content="IMEI verification (GSMA TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (FBI NCIC, ATF eTrace), bicycle verification (BikeIndex, 529 Garage), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
+        content="IMEI verification (GSMA TAC database, carrier blacklists), VIN lookup (NICB VINCheck, NMVTIS), firearm serial number checks (HotGunz stolen-firearms registry), bicycle verification (BikeIndex, 529 Garage), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
       />
 
       {/* ─── Authoritativeness ──────────────────────── */}
