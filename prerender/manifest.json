@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T21:21:56.574500+00:00",
+  "generatedAt": "2026-08-08T21:28:17.677599+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -1011,6 +1011,12 @@
       "canonical": "https://safeorstolen.com/kentucky-license-plate-lookup"
     },
     {
+      "route": "/learn",
+      "slug": "learn",
+      "title": "How to Verify a Used Item \u2014 Secondhand Verification Guide",
+      "canonical": "https://safeorstolen.com/learn"
+    },
+    {
       "route": "/letgo-stolen-check",
       "slug": "letgo-stolen-check",
       "title": "Letgo/OfferUp Stolen Item Check - Verify Before Meeting |...",
@@ -1069,6 +1075,12 @@
       "slug": "mercari-stolen-check",
       "title": "Mercari Stolen Item Check - Verify Before Buying | SafeOr...",
       "canonical": "https://safeorstolen.com/mercari-stolen-check"
+    },
+    {
+      "route": "/methodology",
+      "slug": "methodology",
+      "title": "How SafeOrStolen Verification Works \u2014 Methodology",
+      "canonical": "https://safeorstolen.com/methodology"
     },
     {
       "route": "/michigan-license-plate-lookup",

@@ -61,6 +61,8 @@ const BestStolenItemCheckers2026 = lazy(() => import('@/pages/comparisons/BestSt
 const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const CheckImeiStolenPage = lazy(() => import('@/pages/CheckImeiStolenPage'));
 const HowToVerifyAUsedItemPage = lazy(() => import('@/pages/HowToVerifyAUsedItemPage'));
+const MethodologyPage = lazy(() => import('@/pages/MethodologyPage'));
+const LearnHubPage = lazy(() => import('@/pages/LearnHubPage'));
 const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
 const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
 const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
@@ -427,6 +429,8 @@ export const AppRoutes = () => {
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
         <Route path="/check-imei-stolen" element={<CheckImeiStolenPage />} />
         <Route path="/how-to-verify-a-used-item" element={<HowToVerifyAUsedItemPage />} />
+        <Route path="/methodology" element={<MethodologyPage />} />
+        <Route path="/learn" element={<LearnHubPage />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
         <Route path="/vin-check" element={<VINCheckPage />} />
         <Route path="/imei-checker-app" element={<IMEICheckerAppPage />} />
