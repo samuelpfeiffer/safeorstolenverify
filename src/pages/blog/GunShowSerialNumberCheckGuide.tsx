@@ -143,7 +143,7 @@ const GunShowSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I check a gun serial number at a gun show?</summary>
- <p className="text-muted-foreground mt-2">Open safeorstolen.com on your phone, enter the serial number, get results in 3 seconds. Checks stolen firearms databases and validates serial integrity. 2 free checks, no app needed.
+ <p className="text-muted-foreground mt-2">Open safeorstolen.com on your phone, enter the serial number, get results in 3 seconds. Checks stolen firearms databases and validates serial integrity. 2 free checks, no app needed.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Are private sales at gun shows legal?</summary>

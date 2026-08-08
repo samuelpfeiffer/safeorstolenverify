@@ -113,7 +113,7 @@ const GunSerialNumberCheckGuide = () => {
               <li><strong className="text-foreground">Locate the serial number</strong> — On handguns, check the frame near the trigger guard. On rifles/shotguns, check the receiver. If the serial number appears filed off, altered, or missing, <strong>do not purchase</strong> — possessing a firearm with an obliterated serial number is a separate federal crime (18 U.S.C. § 922(k)).</li>
  <li><strong className="text-foreground">Go to SafeOrStolen's firearms checker</strong> — Visit <Link to="/firearms-check" className="text-primary hover:underline">safeorstolen.com/firearms-check</Link> on any device (works on mobile at gun shows).</li>
               <li><strong className="text-foreground">Enter the serial number</strong> — Type or paste the complete serial number exactly as engraved on the firearm.</li>
- <li><strong className="text-foreground">Review results in ~3 seconds</strong> — SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.
+ <li><strong className="text-foreground">Review results in ~3 seconds</strong> — SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.</li>
               <li><strong className="text-foreground">Act on the results</strong> — If clean, proceed with the purchase. If flagged as stolen, do NOT buy. Contact local law enforcement immediately.</li>
             </ol>
           </section>
@@ -208,7 +208,7 @@ const GunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">What databases does SafeOrStolen check for firearms?</summary>
- <p className="text-muted-foreground mt-2">The stolen firearms databases (32K+ victim-reported records), plus serial number integrity validation.
+ <p className="text-muted-foreground mt-2">The stolen firearms databases (32K+ victim-reported records), plus serial number integrity validation.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What should I do if a gun comes back as stolen?</summary>
