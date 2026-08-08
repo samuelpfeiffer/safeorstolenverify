@@ -242,10 +242,10 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
  <AlertTriangle className="h-5 w-5 text-destructive" />
- Why no tool (including NCIC) can guarantee 100% coverage
+ What a serial number check can and cannot show
  </h3>
  <p className="text-muted-foreground">
- Even the FBI' Not all thefts are reported. Some agencies don't enter data promptly. International databases aren't connected. Private sales often aren't tracked. This is why SafeOrStolen provides "risk indicators" rather than absolute guarantees—we show you what's available in searchable databases, but a clean result doesn't guarantee a firearm was never stolen.
+ Not all thefts are reported. Some agencies don't enter data promptly. International databases aren't connected. Private sales often aren't tracked. This is why SafeOrStolen provides "risk indicators" rather than absolute guarantees—we show you what's available in searchable databases, but a clean result doesn't guarantee a firearm was never stolen.
  </p>
  </div>
  </div>
@@ -265,8 +265,7 @@ const FirearmsSerialNumberCheckPage = () => {
  When you see websites claiming "Stolen firearm reports from all 50 states" or "national stolen gun database lookup," they're either:
  </p>
  <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
- <li>Misleading—they don't actually have NCIC access</li>
- <li>Aggregating other available databases (like SafeOrStolen does honestly)</li>
+  <li>Aggregating other available databases (like SafeOrStolen does honestly)</li>
  <li>Offering to connect you with an FFL dealer who can run the check</li>
  </ul>
  

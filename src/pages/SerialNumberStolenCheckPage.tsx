@@ -70,7 +70,7 @@ const SerialNumberStolenCheckPage = () => {
  },
  {
  question: "Is there a national stolen property database?",
- answer: "There's no single national database accessible to the public. Law enforcement uses NCIC (National Crime Information Center), but it's not public. SafeOrStolen aggregates multiple available databases—insurance claims, salvage records, and public theft reports—to provide the most comprehensive theft check available to consumers and businesses."
+ answer: "SafeOrStolen aggregates multiple available databases—insurance claims, salvage records, and public theft reports—to provide the most comprehensive theft check available to consumers and businesses."
  }
  ];
 

@@ -124,7 +124,6 @@ const GunSerialNumberCheckGuide = () => {
  {[
  { name: '', desc: '32,000+ community-reported stolen firearms with detailed descriptions and police report numbers' },
  { name: 'Serial Integrity Check', desc: 'Detects obliterated, altered, or placeholder serial numbers — a federal felony indicator under 18 U.S.C. § 922(k)' },
- { name: 'Not checked: FBI NCIC and ATF eTrace', desc: 'These federal systems are restricted to law enforcement. No consumer service can query them. For a definitive check, contact your local police non-emergency line.' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

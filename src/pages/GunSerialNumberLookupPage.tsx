@@ -43,7 +43,7 @@ const GunSerialNumberLookupPage = () => {
  "For rifles: Check receiver (AR-15: lower receiver)",
  "For shotguns: Check receiver or barrel",
  "Enter the complete serial number into our lookup tool",
- "Review results - if stolen, walk away and report to ATF"
+ "Review results - if stolen, walk away from the transaction"
  ],
 
  faqs: [

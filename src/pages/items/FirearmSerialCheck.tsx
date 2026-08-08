@@ -46,8 +46,7 @@ const FirearmSerialCheck = () => {
  "Criminal charges even if you didn't know it was stolen",
  "No legal recourse to recover your money",
  "Firearms used in crimes are traced back to current possessor",
- "Federal databases (NCIC, ATF eTrace) are restricted to law enforcement — ask police to run the serial",
- "Private sales carry the highest risk of stolen firearms"
+  "Private sales carry the highest risk of stolen firearms"
  ]}
  faqs={[
  {

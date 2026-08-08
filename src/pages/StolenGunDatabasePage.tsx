@@ -43,7 +43,7 @@ const StolenGunDatabasePage = () => {
  "Enter the serial number into our verification tool above",
  "We search multiple stolen gun databases simultaneously",
  "Review results showing any database matches or clean status",
- "If stolen, do NOT buy and report to ATF at 1-800-283-4867"
+ "If stolen, do NOT buy — walk away from the transaction"
  ],
 
  faqs: [
@@ -60,12 +60,12 @@ const StolenGunDatabasePage = () => {
  answer: "Our firearm check searches victim- and agency-reported stolen firearm records covering all 50 states. Victims often report a stolen gun to these public feeds before or in addition to a police report. A gun may be reported to police but never appear in the public feeds, and vice versa — so a clean result here is not proof the firearm is clean."
  },
  {
- question: "Can I search NCIC directly?",
- answer: " We check stolen firearms databases and validate serial integrity."
+ question: "What does SafeOrStolen check for firearms?",
+ answer: "We check firearm serial numbers against stolen firearms databases and analyze the serial for signs of alteration."
  },
  {
  question: "What if the stolen gun database shows a match?",
- answer: ""
+ answer: "Do not buy the firearm. Walk away from the transaction and keep a record of the listing and the serial number."
  },
  {
  question: "How current is the stolen gun database?",
