@@ -12,7 +12,7 @@ interface HotGunzWidgetProps {
 const HotGunzWidget: React.FC<HotGunzWidgetProps> = ({
   style = "style4",
   height = 420,
-  title = "HotGunz Stolen Firearms Check",
+  title = "Stolen Firearms Check",
   className,
 }) => {
   const src = `/embeds/hotgunz-${style}.html`;

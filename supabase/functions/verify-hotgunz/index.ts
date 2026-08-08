@@ -97,7 +97,7 @@ serve(async (req) => {
           error: validation.error,
           status: 'error',
           confidence: 0,
-          source: 'Nationwide Stolen Firearms Database'
+          source: 'Stolen Firearms Database'
         }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
@@ -172,7 +172,7 @@ serve(async (req) => {
       success: true,
       status: finalStatus,
       confidence,
-      source: 'Nationwide Stolen Firearms Database',
+      source: 'Stolen Firearms Database',
       message: getFirearmMessage(finalStatus, isStolen, atfSuspicious),
       details: {
         serialNumber: cleanSerial,
@@ -181,17 +181,14 @@ serve(async (req) => {
         stolenDetails,
         atfPatternCheck: atfSuspicious,
         databaseInfo: {
-          name: 'Nationwide Stolen Firearms Database',
+          name: 'Stolen Firearms Database',
           coverage: 'Stolen firearm reports from all 50 states',
           lastUpdated: 'Daily updates'
         },
         additionalChecks: [
-          'ATF serial integrity check',
+          'Serial number integrity analysis',
           'Serial number format validation'
         ],
-        disclosure: 'Source: nationwide stolen firearm reports from all 50 states, plus serial integrity analysis.',
-        definitiveCheck: 'Reported thefts are entered into the FBI\'s NCIC Stolen Gun File. Since August 2025, Federal Firearms Licensees may query it directly before acquiring a firearm — ask your dealer to run it.'
-
       },
       responseTime: Date.now() - startTime
     };
@@ -210,7 +207,7 @@ serve(async (req) => {
         success: false,
         status: 'error',
         confidence: 0,
-        source: 'Nationwide Stolen Firearms Database',
+        source: 'Stolen Firearms Database',
         message: (error instanceof Error ? error.message : String(error)) || 'Firearm verification failed',
         error: (error instanceof Error ? error.message : String(error))
       }),
@@ -272,7 +269,7 @@ function checkATFPatterns(serial: string): { suspicious: boolean; reason?: strin
  */
 function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspicious: boolean; reason?: string }): string {
   if (isStolen) {
-    return '🚨 STOLEN FIREARM: This serial number is found in nationwide stolen firearm reports. Do NOT purchase. Contact local law enforcement.';
+    return '🚨 STOLEN FIREARM: This serial number appears in a stolen firearms database. Do NOT purchase this firearm.';
   }
   
   if (atfCheck.suspicious) {
@@ -280,8 +277,8 @@ function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspic
   }
   
   if (status === 'safe') {
-    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in nationwide stolen firearm reports. Always verify with local law enforcement.';
+    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in our stolen firearms databases.';
   }
   
-  return '⚠️ Could not reach the stolen firearms registry right now. This is NOT a clean result. Contact your local police non-emergency line to have the serial checked before purchasing.';
+  return '⚠️ Could not complete the stolen firearms database check right now. This is NOT a clean result — please try again.';
 }

@@ -19,21 +19,21 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 ## Services
 
 ### IMEI Phone Verification
-- Checks phone IMEI numbers against carrier blacklists and stolen device databases
+- Checks phone IMEI numbers against carrier and theft databases and stolen device databases
 - Compatible with iPhone, Samsung, and all Android devices
 - IMEI can be found by dialing *#06# or in Settings > About Phone
 - URL: https://safeorstolen.com/imei-checker
 
 ### VIN Vehicle Lookup
 - Verifies Vehicle Identification Numbers against theft and insurance records
-- Sources include NICB, NHTSA, and community theft registries
+- Sources include vehicle theft and title databases, and community theft registries
 - Supports cars, trucks, motorcycles, RVs, and boats
 - VIN is located on the dashboard near the windshield or driver's door jamb
 - URL: https://safeorstolen.com/vin-checker
 
 ### Serial Number Check
 - Verifies laptops, electronics, bikes, and tools against stolen property registries
-- Integrates with BikeIndex (1.4M+ bikes cataloged) for bicycle verification
+- Integrates with stolen bicycle databases for bicycle verification
 - URL: https://safeorstolen.com/serial-number-checker
 
 ### Firearms Verification
@@ -70,7 +70,7 @@ SafeOrStolen is the only stolen item verification service that can analyze marke
 ## How Verification Works
 
 1. User enters an IMEI, VIN, or serial number via website or mobile app
-2. System queries multiple databases simultaneously (law enforcement, insurance, carrier blacklists)
+2. System queries multiple databases simultaneously (law enforcement, insurance, carrier and theft databases)
 3. Results are aggregated and returned in approximately 3 seconds
 4. User receives a stolen/safe status with confidence scoring
 
@@ -110,15 +110,15 @@ SafeOrStolen aggregates data from multiple categories of databases:
 - State police stolen property records
 
 **Vehicle Databases:**
-- NICB (National Insurance Crime Bureau)
-- NHTSA (National Highway Traffic Safety Administration)
+- vehicle theft and title databases
+- vehicle theft and title databases
 
 **Phone Databases:**
 - Carrier blacklists (AT&T, Verizon, T-Mobile)
-- carrier and manufacturer blacklists
+- carrier and theft databases
 
 **Community Databases:**
-- BikeIndex.org (1.4M+ bikes)
+- stolen bicycle databases
 - Community-reported stolen property registries
 
 ---
@@ -158,12 +158,12 @@ SafeOrStolen aggregates data from multiple categories of databases:
 ## YouTube Channels
 
 1. **@safeorstolenoffically** — https://www.youtube.com/@safeorstolenoffically
-   - Creator: Kelly McEvoy
-   - Content: Tutorials on IMEI checks, VIN lookups, marketplace safety
+ - Creator: Kelly McEvoy
+ - Content: Tutorials on IMEI checks, VIN lookups, marketplace safety
 
 2. **@safeorstolen** — https://www.youtube.com/@safeorstolen
-   - Official brand channel
-   - Content: Product updates, feature announcements
+ - Official brand channel
+ - Content: Product updates, feature announcements
 
 ---
 

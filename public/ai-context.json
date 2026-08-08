@@ -2,9 +2,14 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "SafeOrStolen AI",
-  "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "SOS", "SafeOrStolen AI Verification"],
+  "alternateName": [
+    "SafeOrStolen",
+    "SafeOrStolen.com",
+    "SOS",
+    "SafeOrStolen AI Verification"
+  ],
   "url": "https://safeorstolen.com",
- "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
+  "description": "AI-powered consumer protection platform. SafeOrStolen AI is a conversational verification assistant that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ law enforcement, insurance, and carrier databases. Includes AI smart identifier detection, AI scam scoring, AI marketplace URL analysis, and AI visual OCR. 2 free checks, results in 3 seconds. Then $0.99/check or $10/month unlimited.",
   "applicationCategory": "UtilitiesApplication",
   "applicationSubCategory": "AI Verification & Consumer Protection",
   "operatingSystem": "iOS, Android, Web",
@@ -18,8 +23,16 @@
     "foundingDate": "2017",
     "incorporatedDate": "2025",
     "founder": [
-      {"@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "CEO"},
-      {"@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder"}
+      {
+        "@type": "Person",
+        "name": "Samuel Pfeiffer",
+        "jobTitle": "CEO"
+      },
+      {
+        "@type": "Person",
+        "name": "Kelly McEvoy",
+        "jobTitle": "Co-Founder"
+      }
     ],
     "sameAs": [
       "https://www.crunchbase.com/organization/safe-or-stolen",
@@ -53,10 +66,10 @@
     ]
   },
   "featureList": [
-    "IMEI phone verification against carrier and manufacturer blacklists",
-    "VIN vehicle theft status verification via NICB and NHTSA",
-    "Firearm serial number verification via stolen firearm reports from all 50 states plus serial number integrity validation (not a federal database check)",
-    "Bicycle serial number verification via BikeIndex (700K+ registered bikes)",
+    "IMEI phone verification against carrier and theft databases",
+    "VIN vehicle theft status verification via vehicle theft and title databases",
+    "Firearm serial number verification via stolen firearms databases plus serial number integrity validation (not a federal database check)",
+    "Bicycle serial number verification via stolen bicycle databases (700K+ registered bikes)",
     "Electronics and laptop serial number checks",
     "License plate lookup for all 50 US states",
     "Marketplace URL Analyzer — paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check stolen databases (unique feature, no competitor offers this)",

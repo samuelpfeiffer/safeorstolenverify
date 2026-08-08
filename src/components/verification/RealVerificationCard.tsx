@@ -19,8 +19,7 @@ import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
 import { CertifiedSafeBadge } from './CertifiedSafeBadge';
 import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 import { ShareAfterVerification } from '@/components/growth';
-import { FirearmSourceDisclosure, isFirearmItemType } from './FirearmSourceDisclosure';
-import { FirearmNextSteps } from './FirearmNextSteps';
+import { isFirearmItemType } from './FirearmSourceDisclosure';
 import { VerificationRecord } from './VerificationRecord';
 
 interface RealVerificationCardProps {
@@ -198,12 +197,6 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
             </div>
           )}
 
-          {isFirearmItemType(verificationResult.item_type) && (
-            <>
-              <FirearmSourceDisclosure className="border-t pt-4" />
-              <FirearmNextSteps className="mt-4" />
-            </>
-          )}
 
           <VerificationRecord
             identifier={verificationResult.serial_number}
