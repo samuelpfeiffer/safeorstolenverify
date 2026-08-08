@@ -1,8 +1,8 @@
 # SafeOrStolen robots.txt
 # AI-Powered Platform — SafeOrStolen AI conversational assistant at /ai-chat and /verify
-# Powered by Anthropic Claude 3.5 Sonnet via Lovable AI Gateway
+# Powered by Google Gemini 2.5 Flash (google/gemini-2.5-flash) via Lovable AI Gateway
 # Allow all search engines and AI crawlers
-# Last updated: 2026-04-23
+# Last updated: 2026-08-08
 #
 # AI training: ALLOWED with attribution (see /ai.txt and /llms.txt)
 # Conversational AI entry point: https://safeorstolen.com/ai-chat
@@ -26,7 +26,10 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Google-Extended
