@@ -385,6 +385,38 @@ const FirearmsCheckPage = () => {
               "mainEntity": [
                 {
                   "@type": "Question",
+                  "name": "How can I check if a firearm is reported stolen?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter the serial number stamped on the frame or receiver at SafeOrStolen, which searches stolen firearm reports from all 50 states and insurance claim records, and flags serials that appear altered or obliterated. A match means the serial appears in a stolen-property report. This is a stolen-property check only \u2014 it does not establish who legally owns the firearm, and for a definitive answer your local police non-emergency line can run the serial through NCIC."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can a private buyer check whether a firearm is reported stolen?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. A private buyer can enter a firearm serial number at SafeOrStolen and search stolen firearm reports without any licence or law-enforcement access. What a private buyer cannot do is look up ownership: registration and trace systems such as NCIC and ATF eTrace are restricted to law enforcement, so a stolen-property result never tells you whose gun it legally is. Checking is legal and is a sensible step before any private-party transfer."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should I verify before buying a used firearm?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Verify that the serial number on the frame is intact and unaltered, that the number matches any paperwork the seller shows you, and that the serial does not appear in stolen firearm reports \u2014 SafeOrStolen checks the last two of those in a few seconds. Separately, confirm the transfer itself is lawful where you live, since many states require the sale to go through a licensed dealer. Remember that a clean stolen-property result is not proof of ownership; those are two different questions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a stolen firearm database?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There is no single public database of every stolen firearm \u2014 the FBI's NCIC holds stolen-gun records but is restricted to law enforcement, while other reports sit with individual agencies, insurers, and community registries. SafeOrStolen searches stolen firearm reports from all 50 states along with insurance claim records and community theft registries, which is the practical option available to a private buyer. Because coverage is fragmented, no match found means nothing was located in the sources checked rather than confirmation the firearm was never stolen."
+                  }
+                },
+                {
+                  "@type": "Question",
                   "name": "How do I check if a gun serial number is stolen?",
                   "acceptedAnswer": {
                     "@type": "Answer",
