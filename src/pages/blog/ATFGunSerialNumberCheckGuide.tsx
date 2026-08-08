@@ -78,7 +78,7 @@ const ATFGunSerialNumberCheckGuide = () => {
                 Check Gun Serial Number Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">Includes ATF + NCIC + HotGunz + 50 state databases</p>
+            <p className="text-muted-foreground text-sm mt-3">Checks the HotGunz national registry + serial integrity analysis</p>
           </div>
         </section>
 
