@@ -133,12 +133,6 @@ const FirearmsCheckPage = () => {
                 badge: 'Disclosure',
                 badgeColor: 'bg-muted text-muted-foreground',
               },
-              {
-                db: 'Insurance Theft Reports',
-                desc: "Insurance company theft claim data provides an additional signal for firearms reported stolen through homeowner or renter's insurance but not necessarily through law enforcement.",
-                badge: 'Commercial',
-                badgeColor: 'bg-accent/20 text-accent-foreground',
-              },
             ].map((item) => (
               <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
                 <div className="flex items-start gap-3 mb-2">
