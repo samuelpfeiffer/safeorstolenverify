@@ -92,7 +92,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               Here's the critical limitation: <strong className="text-foreground">eTrace is not available to civilians</strong>. Only law enforcement agencies with approved access can submit trace requests. If you're a private buyer looking to verify a firearm before purchase, you cannot access eTrace directly.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              This is where SafeOrStolen fills the gap. Our firearms verification engine queries ATF trace data alongside FBI NCIC, HotGunz, and all 50 state law enforcement databases — giving you the comprehensive check that would otherwise require a police request.
+              SafeOrStolen cannot query eTrace either, and we won't pretend otherwise. What we do is check the serial number against the HotGunz national stolen-firearms registry (32,000+ user-reported records) and analyze it for signs of alteration or obliteration. That's a useful first filter for a private sale — not a substitute for a law enforcement check.
             </p>
           </section>
 
