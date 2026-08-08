@@ -128,17 +128,14 @@ const ATFGunSerialNumberCheckGuide = () => {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">How SafeOrStolen Provides ATF-Level Verification</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">What SafeOrStolen Actually Checks</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              While civilians can't access ATF eTrace directly, SafeOrStolen's verification engine aggregates data from multiple federal, state, and community sources to provide equivalent — and in some ways superior — coverage:
+              We'd rather be accurate than impressive. A firearm check on SafeOrStolen does exactly two things:
             </p>
             <ul className="space-y-3">
               {[
-                { name: 'ATF Trace Data', desc: 'Firearms flagged through ATF traces that have been reported in law enforcement databases' },
-                { name: 'FBI NCIC', desc: '7+ million stolen firearm records — the most comprehensive stolen gun database in existence' },
-                { name: 'HotGunz Community Reports', desc: '32,000+ firearms reported stolen by gun owners directly, with police report numbers' },
-                { name: 'State Law Enforcement', desc: 'All 50 state stolen property databases, including states with mandatory reporting' },
-                { name: 'Insurance Claims', desc: 'Theft claims filed with firearms insurers and homeowner policies' },
+                { name: 'HotGunz National Stolen-Firearms Registry', desc: 'A free public registry of 32,000+ firearms reported stolen by owners and theft victims, nationwide' },
+                { name: 'Serial Number Integrity Analysis', desc: 'We analyze the serial itself for obliterated, altered, or placeholder patterns — a defaced serial is a federal felony under 18 U.S.C. § 922(k)' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -146,7 +143,11 @@ const ATFGunSerialNumberCheckGuide = () => {
                 </li>
               ))}
             </ul>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              We do <strong className="text-foreground">not</strong> query ATF eTrace, FBI NCIC, or state police systems. Those are closed to consumer services by law. For a definitive answer, ask your local police non-emergency line to run the serial through NCIC — and if you're buying through an FFL, dealers have been able to voluntarily query the NCIC Stolen Gun File since August 2025.
+            </p>
           </section>
+
 
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">Does the ATF Keep a Gun Registry?</h2>
