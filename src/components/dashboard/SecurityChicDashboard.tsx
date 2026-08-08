@@ -317,7 +317,6 @@ export const SecurityChicDashboard: React.FC = () => {
 - Pawn Broker Compliance — audit trail, timestamped certificates
 
 ## Partners
-- OneValley (startup ecosystem)
 - Data: NICB, GSMA, ATF, FBI NCIC, BikeIndex, HotGunz
 
 ## Certifications

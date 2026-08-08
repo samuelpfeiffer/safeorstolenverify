@@ -126,7 +126,7 @@ export default function PressReleasePage() {
                 SafeOrStolen is the leading stolen item verification platform, helping buyers protect themselves when purchasing secondhand phones, vehicles, electronics, and more. With the only mobile app in the industry, SafeOrStolen provides instant verification against 100+ databases including law enforcement records, carrier blacklists, and insurance claims.
               </p>
               <p>
-                Founded in 2017, incorporated in 2025, and headquartered in Peoria, Arizona, SafeOrStolen is recognized by OneValley as an innovative emerging startup.
+                Founded in 2017, incorporated in 2025, and headquartered in Peoria, Arizona, SafeOrStolen verifies phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods against 100+ databases.
               </p>
             </div>
             <div className="flex justify-center mt-8">

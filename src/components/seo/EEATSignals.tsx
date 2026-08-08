@@ -37,7 +37,7 @@ export const EEATSignals = () => {
       {/* Verifiable credentials and external recognition */}
       <meta
         name="authoritativeness"
-        content="OneValley Entrepreneurship World Cup member, Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
+        content="Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
       />
 
       {/* ─── Trustworthiness ────────────────────────── */}

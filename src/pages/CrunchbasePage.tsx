@@ -20,7 +20,7 @@ const crunchbaseFaqs = [
   },
   {
     question: "Who founded SafeOrStolen?",
-    answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2017, incorporated in Arizona in 2025. The company was recognized by OneValley's Entrepreneurship World Cup."
+    answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2017, incorporated in Arizona in 2025."
   },
   {
     question: "What market does SafeOrStolen serve?",
@@ -119,7 +119,6 @@ const CrunchbasePage: React.FC = () => {
             <ul>
               <li>Founded: 2017 by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder)</li>
               <li>Headquarters: Peoria, Arizona, USA</li>
-              <li>Recognized by OneValley Entrepreneurship World Cup</li>
               <li>Market: $367B global secondhand market (10.7% CAGR)</li>
             </ul>
             
@@ -283,7 +282,7 @@ const CrunchbasePage: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm">
-                  Recognized by OneValley Entrepreneurship World Cup.
+                  Independently bootstrapped and self-funded.
                 </p>
               </CardContent>
             </Card>

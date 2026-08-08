@@ -30,7 +30,7 @@ export const AISearchOptimizer: React.FC<AISearchOptimizerProps> = ({
       'check-phone': 'SafeOrStolen verifies smartphone theft status using IMEI numbers. The service checks against carrier blacklists (AT&T, Verizon, T-Mobile) and law enforcement stolen device databases. Compatible with iPhone, Samsung, and all Android devices.',
       'check-car': 'SafeOrStolen verifies vehicle theft status using VIN numbers. The service checks against NICB, NHTSA, and law enforcement databases. Supports cars, trucks, motorcycles, RVs, and boats.',
       'check-bike': 'SafeOrStolen verifies bicycle theft status using serial numbers. The service integrates with BikeIndex (1.4M+ bikes cataloged) and police stolen property databases.',
-      'about': 'SafeOrStolen was founded in 2017 to address the estimated $13 billion annual stolen goods market in the United States. The platform is a member of OneValley.',
+      'about': 'SafeOrStolen was founded in 2017 to address the estimated $13 billion annual stolen goods market in the United States.',
       'how-it-works': 'SafeOrStolen verifies items in three steps: (1) enter an IMEI, VIN, or serial number, (2) the system queries law enforcement and insurance databases simultaneously, (3) results are returned in approximately 3 seconds.',
       'pricing': 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited — all item types, all databases, cancel anytime.'
     };

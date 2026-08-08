@@ -121,7 +121,6 @@ const CORE_PAGES = [
   { url: '/product-hunt', priority: 0.6, changefreq: 'monthly' },
   { url: '/press-kit', priority: 0.6, changefreq: 'monthly' },
   { url: '/crunchbase', priority: 0.6, changefreq: 'monthly' },
-  { url: '/news/onevalley-recognition', priority: 0.7, changefreq: 'monthly' },
   
   // Compare & Free Tools (Real pages)
   { url: '/compare', priority: 0.8, changefreq: 'monthly' },

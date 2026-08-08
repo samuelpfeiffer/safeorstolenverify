@@ -181,7 +181,7 @@ export default function TransparencyPage() {
               </div>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  SafeOrStolen is a registered business based in Peoria, Arizona, USA. We're recognized by OneValley as an innovative startup.
+                  SafeOrStolen is a registered business based in Peoria, Arizona, USA.
                 </p>
                 <ul>
                   <li><strong>Founded:</strong> 2024</li>

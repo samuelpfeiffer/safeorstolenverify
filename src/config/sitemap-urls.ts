@@ -151,7 +151,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
   { path: '/api', priority: 0.70, changefreq: 'monthly', lastmod: '2026-02-06' },
   { path: '/news', priority: 0.65, changefreq: 'monthly', lastmod: '2026-02-06' },
-  { path: '/news/onevalley-recognition', priority: 0.60, changefreq: 'yearly' },
   { path: '/press-kit', priority: 0.60, changefreq: 'monthly' },
   { path: '/product-hunt', priority: 0.60, changefreq: 'monthly' },
   { path: '/youtube', priority: 0.75, changefreq: 'weekly' },
