@@ -27,7 +27,7 @@ const CheckIfStolenPage = () => {
         
         benefits: [
           "Check phones - iPhone, Samsung, Android, any IMEI",
-          "Check cars - VIN verification against 100+ databases",
+          "Check cars - VIN verification against NICB VINCheck, NHTSA vehicle records, and stolen property reports",
           "Check bikes - serial number lookup for bicycles",
           "Check laptops - MacBook, Dell, HP serial verification",
           "Check power tools - DeWalt, Milwaukee, Makita, Bosch",
