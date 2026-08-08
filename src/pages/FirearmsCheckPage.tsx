@@ -9,8 +9,8 @@ const FirearmsCheckPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Free Gun Serial Number Lookup — Check if a Gun is Stolen | SafeOrStolen"
-        description="Look up any gun serial number free. Checks stolen firearm reports from all 50 states and validates serial number integrity. Results in 3 seconds."
+        title="Gun Serial Number Check — All 50 States | SafeOrStolen"
+        description="Free gun serial number check. Search stolen firearm reports from all 50 states and flag altered or obliterated serials — an ATF-enforced federal violation. Instant results, 2 free checks."
         canonical="/firearms-check"
       />
 
@@ -21,15 +21,14 @@ const FirearmsCheckPage = () => {
             🔫 Firearm Verification
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
-            Gun Serial Number Lookup —
+            Gun Serial Number Check —
             <br />
-            <span className="text-primary">Is This Firearm Stolen?</span>
+            <span className="text-primary">All 50 States</span>
           </h1>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Instantly check any firearm serial number against the nationwide
-            stolen-firearms registry and validate serial number integrity.
-            Results in 3 seconds.
+            Search nationwide stolen firearm reports and verify serial integrity before you buy.
           </p>
+
 
           {/* VERIFY TOOL — inline if no shared component */}
           <GunVerifyTool />
