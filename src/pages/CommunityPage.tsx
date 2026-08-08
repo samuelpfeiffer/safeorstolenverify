@@ -194,11 +194,6 @@ export default function CommunityPage() {
                     YouTube <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://www.linkedin.com/company/safeorstolen" target="_blank" rel="noopener noreferrer">
-                    LinkedIn <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </div>
             </div>
           </div>

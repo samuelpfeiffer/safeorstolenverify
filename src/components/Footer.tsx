@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
 // Logo served from /public to avoid JS bundle bloat
 const sosLogo = '/sos-logo.png';
 
@@ -131,15 +131,6 @@ const Footer = () => {
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Facebook className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/safeorstolen/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="SafeOrStolen on LinkedIn"
-                  className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
-                >
-                  <Linkedin className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
                 <a
                   href="https://www.crunchbase.com/organization/safe-or-stolen"

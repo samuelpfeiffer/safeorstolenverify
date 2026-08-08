@@ -59,7 +59,6 @@ export const createOrganizationSchema = () => {
   ],
   "sameAs": [
     "https://twitter.com/safeorstolen",
-    "https://linkedin.com/company/safeorstolen",
     "https://www.youtube.com/@safeorstolen",
     "https://facebook.com/safeorstolen",
     "https://www.crunchbase.com/organization/safe-or-stolen",

@@ -47,7 +47,6 @@ export const SEO_CONFIG = {
   social: {
     twitter: 'https://twitter.com/safeorstolen',
     facebook: 'https://facebook.com/safeorstolen',
-    linkedin: 'https://linkedin.com/company/safeorstolen',
     youtube: 'https://www.youtube.com/@safeorstolen',
     youtubeHandle: '@safeorstolen',
     crunchbase: 'https://www.crunchbase.com/organization/safe-or-stolen',

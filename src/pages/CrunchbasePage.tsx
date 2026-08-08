@@ -72,7 +72,6 @@ const CrunchbasePage: React.FC = () => {
       "sameAs": [
         "https://www.crunchbase.com/organization/safe-or-stolen",
         "https://twitter.com/safeorstolen",
-        "https://linkedin.com/company/safeorstolen",
         "https://www.youtube.com/@safeorstolen"
       ]
     },

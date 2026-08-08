@@ -167,8 +167,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
     },
     "sameAs": [
       "https://twitter.com/safeorstolen",
-      "https://facebook.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen"
+      "https://facebook.com/safeorstolen"
     ]
   };
 
