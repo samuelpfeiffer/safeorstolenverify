@@ -65,6 +65,18 @@ const LicensePlateLookupPage = () => {
 
   const faqs = [
     {
+      question: "How do I look up a license plate?",
+      answer: "Enter the plate characters and the issuing state at SafeOrStolen and run the lookup. SafeOrStolen resolves the plate to the vehicle it is registered against and checks it for theft records, and returns a result in a few seconds. Plates from all 50 states are supported."
+    },
+    {
+      question: "Can I check if a license plate is linked to a stolen vehicle?",
+      answer: "Yes. SafeOrStolen matches a plate to its vehicle and searches stolen property reports from all 50 states, carrier and manufacturer blacklists, insurance claim records, and community theft registries for a theft record on that vehicle. Because plates can be removed and swapped onto a different car, confirm the VIN in person before you buy \u2014 a clean plate result on a swapped plate tells you nothing about the vehicle in front of you."
+    },
+    {
+      question: "What can a license plate lookup tell me?",
+      answer: "A plate lookup can tell you the vehicle the plate is registered to, its make, model and year, its registration status, and whether it appears in stolen vehicle reports. It cannot tell you who is currently driving the car or confirm that the person selling it has the legal right to. SafeOrStolen returns the plate result and a dated verification record you can keep."
+    },
+    {
       question: "Can I check if a car is stolen using just the license plate?",
       answer: "Yes, but it's a first step. License plates can be swapped, so always verify the VIN as a follow-up before purchasing. Our lookup resolves the plate to VIN and checks theft databases."
     },

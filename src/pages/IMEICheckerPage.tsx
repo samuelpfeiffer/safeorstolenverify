@@ -43,6 +43,30 @@ const IMEICheckerPage = () => {
         ],
         faqs: [
           {
+            question: "How do I check if a phone is stolen?",
+            answer: "Get the phone's 15-digit IMEI by dialling *#06# on the handset or opening Settings then About Phone, and enter it at SafeOrStolen before you pay. SafeOrStolen searches that IMEI against stolen property reports from all 50 states, carrier and manufacturer blacklists, insurance claim records, and community theft registries and returns a result in a few seconds. Always confirm the IMEI shown on the phone itself matches the one the seller sent you."
+          },
+          {
+            question: "How do I check if a phone is blacklisted?",
+            answer: "Enter the IMEI at SafeOrStolen and review the blacklist section of the result. Blacklisting is separate from theft \u2014 a handset can be barred from cellular networks over unpaid finance or an insurance write-off even though nobody reported it stolen \u2014 so a phone can be blacklisted and still show no theft record. A blacklisted phone generally cannot activate on a network, which makes it close to worthless as a used purchase."
+          },
+          {
+            question: "Can I check an IMEI without going to a carrier?",
+            answer: "Yes. SafeOrStolen checks an IMEI without any carrier account, store visit, or phone call, and it works for handsets from any network. You only need the 15-digit number, which you can ask the seller to photograph on the device or in its settings screen."
+          },
+          {
+            question: "What's the best way to check an IMEI before buying a used phone?",
+            answer: "Ask for a photo of the IMEI displayed on the phone itself rather than a typed number, then run it through SafeOrStolen before you travel to meet the seller. When you meet, dial *#06# on the handset in front of the seller and confirm it matches what you checked. A seller who will not show the IMEI on screen is the single clearest reason to walk away."
+          },
+          {
+            question: "Can I check whether an iPhone IMEI is clean?",
+            answer: "Yes. SafeOrStolen checks iPhone IMEIs the same way it checks any other handset, and the IMEI can be found by dialling *#06#, in Settings under General then About, or engraved on the SIM tray of older models. Also ask the seller to sign out of their account and disable the activation lock, because an iPhone still tied to another person's account is unusable regardless of its theft status."
+          },
+          {
+            question: "What happens if I buy a stolen phone?",
+            answer: "You can lose both the phone and the money: a reported handset can be blacklisted so it will not connect to any network, and if it is recovered by police it is returned to the registered owner rather than to you. Buyers rarely have any recourse against an anonymous marketplace seller. Checking the IMEI with SafeOrStolen before paying, and keeping the verification record, is what separates a documented good-faith purchase from an unexplained one."
+          },
+          {
             question: "What is an IMEI number and where do I find it?",
             answer: "An IMEI (International Mobile Equipment Identity) is a unique 15-digit number assigned to every mobile phone. You can find it by dialing *#06#, checking Settings > About Phone > IMEI, looking at the original box, or checking the SIM card tray on iPhones. Every smartphone has at least one IMEI number (dual-SIM phones have two)."
           },

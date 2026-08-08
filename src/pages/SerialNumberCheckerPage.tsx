@@ -39,6 +39,30 @@ const SerialNumberCheckerPage = () => {
         ],
         faqs: [
           {
+            question: "Where can I check a serial number to see if an item is stolen?",
+            answer: "Enter the serial number at SafeOrStolen, which searches stolen property reports from all 50 states, carrier and manufacturer blacklists, insurance claim records, and community theft registries for that identifier. It works for laptops, tablets, cameras, power tools, instruments, watches, and other serialized property. You will get a match or no-match result in a few seconds, along with a dated record of the check."
+          },
+          {
+            question: "Is there a database for stolen serial numbers?",
+            answer: "There is no single national database that the public can query for every stolen serial number \u2014 theft records are spread across individual police agencies, insurers, manufacturers, and community registries. SafeOrStolen searches across those sources at once so you do not have to check them one at a time. Because coverage is fragmented, a no-match result means nothing was found in the sources checked rather than proof the item was never stolen."
+          },
+          {
+            question: "How do I check if a power tool is stolen?",
+            answer: "Find the serial number on the tool's nameplate, battery foot, or motor housing \u2014 most brands print it near the model number \u2014 and enter it at SafeOrStolen. Tools sold in bulk with the serial plates scratched off, or priced far below retail with no case or charger, are the classic jobsite-theft pattern. If the serial has been removed entirely, treat that as a reason not to buy."
+          },
+          {
+            question: "How do I check whether a used laptop is stolen?",
+            answer: "Get the serial number from the underside of the chassis or from the system information screen, and enter it at SafeOrStolen before you pay. Also confirm the machine boots to a clean setup screen with no firmware password, activation lock, or company management profile, because a managed or locked laptop is unusable even if no theft was ever reported. Ask for a photo of the serial and check it against the machine when you meet."
+          },
+          {
+            question: "How do I check if a used camera is stolen?",
+            answer: "Camera bodies carry a serial number on the base plate or inside the battery compartment, and lenses have their own serial printed on the barrel \u2014 check the body and any lens separately at SafeOrStolen. Cameras are among the most commonly stolen and resold items because they hold value and are easy to carry. Ask the seller for a photo of the serial next to a shot taken with the camera that day."
+          },
+          {
+            question: "Can I verify a serial number before buying something?",
+            answer: "Yes, and it takes a few seconds. Ask the seller to photograph the serial number on the item, enter it at SafeOrStolen, and check the result before you commit to meeting or paying. SafeOrStolen also produces a dated verification record you can keep as evidence that you checked in good faith."
+          },
+          {
             question: "What items can I check with a serial number?",
             answer: "You can check almost any valuable item with a serial number including: laptops (MacBook, Dell, HP), tablets (iPad, Surface), cameras (Canon, Nikon, Sony), power tools (DeWalt, Milwaukee), appliances (refrigerators, washers), jewelry and watches (Rolex, Omega), musical instruments (guitars, keyboards), gaming consoles (PlayStation, Xbox), smartphones, firearms, bicycles, and more. If it has a unique serial number, we can check it."
           },
