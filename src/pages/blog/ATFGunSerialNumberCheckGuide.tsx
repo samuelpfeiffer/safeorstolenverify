@@ -65,7 +65,7 @@ const ATFGunSerialNumberCheckGuide = () => {
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Verification Guide</span>
             <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">ATF Gun Serial Number Check — How to Verify Firearms Online</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              The ATF's eTrace system is restricted to law enforcement. Here's how civilians can access ATF trace data, FBI NCIC records, and 50 state databases to verify any firearm serial number — free and instant.
+              The ATF's eTrace system and the FBI's NCIC stolen gun file are both restricted to law enforcement — no consumer service can query them. Here's what you can check yourself, and how to close the gap before you buy.
             </p>
             <p className="text-muted-foreground text-sm mt-3">Updated March 2026 · 7 min read</p>
           </div>
