@@ -64,7 +64,7 @@ const ComparisonSwappa = () => {
       {
         "@type": "Question",
         "name": "How many databases does SafeOrStolen check vs Swappa?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, state law enforcement databases across all 50 states, and international sources. Swappa performs a basic ESN/IMEI check only for devices listed on their platform." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI check only for devices listed on their platform." }
       },
       {
         "@type": "Question",
@@ -129,7 +129,7 @@ const ComparisonSwappa = () => {
           <h3>Is SafeOrStolen free to use?</h3>
           <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $10/month unlimited.</p>
           <h3>How many databases does SafeOrStolen check?</h3>
-          <p>SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, and all 50 state law enforcement databases.</p>
+          <p>SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, and all 50 state community theft registries.</p>
           <nav>
             <a href="/verify">Verify Now — Free</a> | <a href="/app">Download App</a> | <a href="/pricing">See Pricing</a>
           </nav>
@@ -369,7 +369,7 @@ const ComparisonSwappa = () => {
                       <li>✅ NICB (National Insurance Crime Bureau)</li>
                       <li>✅ GSMA Global Blacklist (phone carriers)</li>
                       <li>✅ nationwide stolen firearm reports</li>
-                      <li>✅ All 50 state law enforcement databases</li>
+                      <li>✅ All 50 state community theft registries</li>
                       <li>✅ International stolen vehicle registries</li>
                       <li>✅ BikeIndex stolen bicycle database</li>
                       <li>✅ Insurance company stolen property records</li>
@@ -392,7 +392,7 @@ const ComparisonSwappa = () => {
                       <li>✅ Activation lock status</li>
                       <li>❌ No stolen property reports from all 50 states</li>
                       <li>❌ No NICB access</li>
-                      <li>❌ No state law enforcement databases</li>
+                      <li>❌ No state community theft registries</li>
                       <li>❌ No firearm databases</li>
                       <li>❌ No vehicle VIN databases</li>
                       <li>❌ No bicycle databases</li>
@@ -455,7 +455,7 @@ const ComparisonSwappa = () => {
                   <AccordionItem value="databases">
                     <AccordionTrigger>How many databases does SafeOrStolen check compared to Swappa?</AccordionTrigger>
                     <AccordionContent>
-                      SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, 50-State Firearm Reports, state law enforcement databases across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
+                      SafeOrStolen checks 100+ databases including NICB, GSMA blacklists, 50-State Firearm Reports, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="any-source">

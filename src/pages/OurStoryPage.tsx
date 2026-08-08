@@ -109,7 +109,7 @@ const sections: Section[] = [
           SafeOrStolen exists to interrupt that cycle — not just to protect individual
           transactions, but to reduce the volume of crime that feeds off an unverified market in
           the first place. When people can check before they buy, sellers of stolen goods lose
-          their market. When law enforcement databases are connected directly to the consumer's
+          their market. When community theft registries are connected directly to the consumer's
           fingertips, the pipeline that moves stolen property from crime scenes into living rooms
           gets narrower. Safer transactions mean safer communities. That is the mission, and it is
           bigger than any one app.
@@ -138,7 +138,7 @@ const sections: Section[] = [
         <p>
           The platform is real. Users scan IMEI numbers, VIN numbers, serial numbers, and license
           plates to check items against over 100 databases — including stolen property reports from all 50 statess,
-          the GSMA Device Registry, insurance claims, and police reports — covering smartphones,
+          the carrier and manufacturer blacklists, insurance claims, and police reports — covering smartphones,
           laptops, vehicles, firearms, bicycles, jewelry, and electronics. The system returns a
           result in seconds. Safe or Stolen. That simple.
         </p>

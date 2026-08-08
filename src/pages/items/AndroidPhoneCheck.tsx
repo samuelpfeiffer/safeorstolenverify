@@ -34,7 +34,7 @@ const AndroidPhoneCheck = () => {
       howItWorksSteps={[
         "Find the IMEI: Dial *#06# on the phone, or go to Settings > About Phone > IMEI",
         "Enter the 15-digit IMEI number into our free verification tool",
-        "Our system searches carrier blacklists, Find My Device reports, and law enforcement databases",
+        "Our system searches carrier blacklists, Find My Device reports, and community theft registries",
         "Get instant results - know if the Android phone is SAFE or STOLEN"
       ]}
       whyVerifyTitle="Why Check Android Phones Before Buying?"

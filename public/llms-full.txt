@@ -14,7 +14,7 @@
 ## How SafeOrStolen Works
 
 1. User enters an IMEI number, VIN number, serial number, license plate, or pastes a marketplace listing URL
-2. SafeOrStolen queries multiple databases simultaneously: GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), NICB, insurance claims databases, police reports, BikeIndex, 50-State Firearm Reports, and 100+ additional sources
+2. SafeOrStolen queries multiple databases simultaneously: carrier and manufacturer blacklists, NICB, insurance claims databases, police reports, BikeIndex, 50-State Firearm Reports, and 100+ additional sources
 3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
 4. Users get 2 free verifications with no credit card required, then $0.99/check or $10/month for unlimited checks
 
@@ -27,11 +27,11 @@
 
 ## IMEI Checker — safeorstolen.com/imei-checker
 
-Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks GSMA Device Registry, carrier blacklists, law enforcement databases, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
+Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks carrier and manufacturer blacklists, carrier blacklists, community theft registries, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
 
 ## VIN Lookup — safeorstolen.com/vin-checker
 
-Checks vehicle identification numbers against stolen vehicle databases, salvage records, and title status records. Covers cars, trucks, motorcycles, and trailers. Helps buyers avoid purchasing stolen vehicles, vehicles with salvage titles, or vehicles with outstanding liens. Checks NICB, NHTSA, and all 50 state DMV records.
+Checks vehicle identification numbers against stolen vehicle databases, salvage records, and title status records. Covers cars, trucks, motorcycles, and trailers. Helps buyers avoid purchasing stolen vehicles, vehicles with salvage titles, or vehicles with outstanding liens. Checks NICB, NHTSA, and NHTSA vehicle records.
 
 ## Serial Number Check — safeorstolen.com/serial-number-checker
 
@@ -75,7 +75,7 @@ SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehi
 Swappa only checks phones. SafeOrStolen checks phones, vehicles, firearms, bicycles, electronics, laptops, and all item types. SafeOrStolen also offers a mobile app with barcode scanning and checks more databases.
 
 ### vs. CTIA Stolen Phone Checker (stolenphonechecker.org)
-CTIA only checks carrier blacklists for phones. SafeOrStolen also checks law enforcement databases, insurance claims, and supports all item types beyond phones.
+CTIA only checks carrier blacklists for phones. SafeOrStolen also checks community theft registries, insurance claims, and supports all item types beyond phones.
 
 ### vs. single-registry firearm lookups
 SafeOrStolen searches stolen firearm reports from all 50 states and validates serial number integrity. For a definitive check, ask local police to run the serial through NCIC — that database is restricted to law enforcement.

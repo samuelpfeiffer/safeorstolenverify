@@ -24,11 +24,11 @@ export const HomeContentSections = () => {
     },
     {
       question: "What databases does SafeOrStolen check?",
- answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, DMV records, insurance company theft claims, carrier blacklists (AT&T, Verizon, T-Mobile), community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) for vehicles, GSMA global blacklist for phones, the nationwide stolen firearm reports for firearms, state law enforcement records, DMV records, insurance company theft claims, carrier and manufacturer blacklists, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
     },
     {
       question: "How do I check if a car is stolen using VIN?",
-      answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check NICB theft records, DMV title records, insurance claims, salvage/junk databases, and law enforcement stolen vehicle reports across all 50 states. Results in 3 seconds."
+      answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check NICB theft records, NHTSA vehicle records, insurance claims, salvage/junk databases, and stolen property reports from all 50 states across all 50 states. Results in 3 seconds."
     },
     {
       question: "Can I check items on Facebook Marketplace before buying?",
@@ -122,7 +122,7 @@ export const HomeContentSections = () => {
                 items: "Harley-Davidson, Honda, Yamaha, Kawasaki, BMW, Ducati",
                 identifier: "VIN Number",
                 link: "/check-motorcycle-vin",
-                detail: "NICB, DMV, insurance, law enforcement databases"
+                detail: "NICB, DMV, insurance, community theft registries"
               },
               {
                 title: "⌚ Watches & Jewelry",

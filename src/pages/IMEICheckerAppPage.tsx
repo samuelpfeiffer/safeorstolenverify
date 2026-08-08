@@ -24,7 +24,7 @@ const IMEICheckerAppPage = () => {
     {
       icon: Shield,
       title: "Comprehensive Check",
-      description: "Checks GSMA, carriers, law enforcement databases, and insurance claims"
+      description: "Checks GSMA, carriers, community theft registries, and insurance claims"
     },
     {
       icon: Wifi,

@@ -98,7 +98,7 @@ export default function ForMarketplaces() {
         },
         {
           question: "What databases does the API search?",
-          answer: "We search 100+ databases including carrier blacklists (AT&T, Verizon, T-Mobile), law enforcement stolen property records, insurance company claims, manufacturer registries, and pawn shop databases totaling 50M+ records."
+          answer: "We search 100+ databases including carrier and manufacturer blacklists, law enforcement stolen property records, insurance company claims, manufacturer registries, and pawn shop databases totaling 50M+ records."
         },
         {
           question: "Can we add verified badges to listings?",

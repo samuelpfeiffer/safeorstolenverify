@@ -42,7 +42,7 @@ const VERIFY_CARDS = [
   },
   {
     title: 'Phone IMEI Check',
-    subtitle: 'GSMA, AT&T, Verizon, T-Mobile carrier blacklists',
+    subtitle: 'GSMA, carrier and manufacturer blacklists',
     href: '/imei-checker',
     image: cardPhone,
     badge: null,
@@ -126,7 +126,7 @@ const RECENT_VERIFICATIONS = [
 const FAQ_ITEMS = [
   {
     q: 'How do I check if a phone is stolen before buying?',
-    a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks GSMA Device Registry, carrier blacklists, and law enforcement databases simultaneously.",
+    a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks carrier and manufacturer blacklists, carrier blacklists, and community theft registries simultaneously.",
   },
   {
     q: 'How do I check if a used car is stolen?',
@@ -142,7 +142,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What databases does SafeOrStolen check?',
- a: 'SafeOrStolen checks over 100 databases including FBI GSMA Device Registry, NICB (National Insurance Crime Bureau), the nationwide stolen firearm reports for firearms, major carrier blacklists (AT&T, Verizon, T-Mobile), insurance claims databases, police reports, BikeIndex for bicycles, and nationwide firearm theft reports. This is the most comprehensive coverage of any stolen item verification service.',
+ a: 'SafeOrStolen checks over 100 databases including carrier and manufacturer blacklists, NICB (National Insurance Crime Bureau), the nationwide stolen firearm reports for firearms, carrier and manufacturer blacklists, insurance claims databases, police reports, BikeIndex for bicycles, and nationwide firearm theft reports. This is the most comprehensive coverage of any stolen item verification service.',
   },
   {
     q: 'How do I check if a gun is stolen?',
@@ -154,7 +154,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How does the license plate lookup work?',
-    a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen. SafeOrStolen queries state DMV records and law enforcement databases across all 50 states. Results include stolen status, registration state, and vehicle details when available.',
+    a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen. SafeOrStolen queries state DMV records and community theft registries across all 50 states. Results include stolen status, registration state, and vehicle details when available.',
   },
   {
     q: 'Can I use SafeOrStolen as a seller to prove my item is legitimate?',

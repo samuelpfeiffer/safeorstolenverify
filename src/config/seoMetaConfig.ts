@@ -55,7 +55,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/vin-checker': {
     title: 'Free VIN Checker App - Verify Vehicle Not Stolen',
-    description: 'Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check NICB, DMV, law enforcement databases. Better than Carfax.', // 155 chars
+    description: 'Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check NICB, DMV, community theft registries. Better than Carfax.', // 155 chars
     keywords: 'VIN checker, stolen car check, vehicle history free, NICB VIN check, Carfax alternative',
     canonical: '/vin-checker'
   },
@@ -65,7 +65,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/license-plate-lookup': {
     title: 'License Plate Lookup - Free Stolen Vehicle Check',
-    description: 'Check if a vehicle is stolen using license plate number. Free lookup from DMV and law enforcement databases across all 50 states. Instant verification.', // 159 chars
+    description: 'Check if a vehicle is stolen using license plate number. Free lookup from DMV and community theft registries across all 50 states. Instant verification.', // 159 chars
     keywords: 'license plate lookup, plate number search, stolen vehicle check, DMV lookup',
     canonical: '/license-plate-lookup'
   },
@@ -85,7 +85,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // ========================================
   '/check-car': {
     title: 'Check if Car is Stolen - Free VIN Verification',
-    description: 'Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax for theft.', // 155 chars
+    description: 'Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and community theft registries. Safer alternative to Carfax for theft.', // 155 chars
     keywords: 'check car stolen, VIN verification, stolen car lookup, car theft check',
     canonical: '/check-car'
   },

@@ -17,7 +17,7 @@ export default function ForAuctionHouses() {
         "name": "How do auction houses verify consignment items?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against law enforcement databases, insurance claims, and stolen property registries before listing items for sale."
+          "text": "Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against community theft registries, insurance claims, and stolen property registries before listing items for sale."
         }
       },
       {
@@ -243,7 +243,7 @@ export default function ForAuctionHouses() {
                 <Card>
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">How do auction houses verify consignment items?</h3>
-                    <p className="text-muted-foreground">Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against law enforcement databases, insurance claims, and stolen property registries before listing items for sale.</p>
+                    <p className="text-muted-foreground">Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against community theft registries, insurance claims, and stolen property registries before listing items for sale.</p>
                   </CardContent>
                 </Card>
                 <Card>

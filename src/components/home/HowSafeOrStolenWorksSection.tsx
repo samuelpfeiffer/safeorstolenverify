@@ -20,7 +20,7 @@ export const HowSafeOrStolenWorksSection = () => {
       number: '2',
       icon: Database,
       title: 'We Search 50M+ Records Instantly',
-      description: 'Our AI-powered system simultaneously queries multiple databases including NICB, GSMA, national police databases, BikeIndex, manufacturer records, and carrier blacklists across 150+ countries.',
+      description: 'Our AI-powered system simultaneously queries multiple databases including NICB, GSMA, community theft registries, BikeIndex, manufacturer records, and carrier blacklists across 150+ countries.',
       details: [
         'NICB stolen vehicle database',
         'GSMA global IMEI registry',

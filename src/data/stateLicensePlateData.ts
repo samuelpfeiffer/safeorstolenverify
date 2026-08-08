@@ -579,7 +579,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
 
   return {
     title: `${state} License Plate Lookup - Check ${stateCode} Stolen Vehicle by Plate`,
-    metaDescription: `${state} license plate lookup to verify if a vehicle is stolen. Free ${stateCode} license plate search from ${dmvName} and law enforcement databases. Instant results in 3 seconds. Check vehicles in ${topCities.slice(0, 3).join(', ')}.`,
+    metaDescription: `${state} license plate lookup to verify if a vehicle is stolen. Free ${stateCode} license plate search from ${dmvName} and community theft registries. Instant results in 3 seconds. Check vehicles in ${topCities.slice(0, 3).join(', ')}.`,
     h1: `${state} License Plate Lookup - Check ${stateCode} Vehicles`,
     itemType: "Vehicle",
     keywords: [
@@ -592,11 +592,11 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
       ...topCities.map(city => `${city.toLowerCase()} vehicle check`)
     ],
     content: {
-      intro: `Verify ${state} vehicles using license plate number in 3 seconds. Free ${state} license plate lookup from ${dmvName} and law enforcement databases. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,
+      intro: `Verify ${state} vehicles using license plate number in 3 seconds. Free ${state} license plate lookup from ${dmvName} and community theft registries. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,
       
-      whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against ${dmvName} registration databases and law enforcement stolen vehicle records. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker instantly searches ${dmvName} registration records, ${state} law enforcement stolen vehicle reports, NICB VINCheck database, and insurance databases to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
+      whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against ${dmvName} registration databases and law enforcement stolen vehicle records. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker instantly searches ${dmvName} registration records, ${state} stolen property reports from all 50 states, NICB VINCheck database, and insurance databases to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
       
-      howItWorks: `Our ${state} license plate lookup system queries ${dmvName} databases to resolve the ${state} license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and ${state} registration status. Within 3 seconds, you receive a report showing whether the vehicle is reported stolen in ${state} or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference NICB VINCheck, stolen property reports from all 50 states, and ${state}-specific law enforcement databases for comprehensive results.`,
+      howItWorks: `Our ${state} license plate lookup system queries ${dmvName} databases to resolve the ${state} license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and ${state} registration status. Within 3 seconds, you receive a report showing whether the vehicle is reported stolen in ${state} or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference NICB VINCheck, stolen property reports from all 50 states, and ${state}-specific community theft registries for comprehensive results.`,
       
       whyCheck: `${state} license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the ${state} market. Verify the seller is the registered owner with ${dmvName}, detect stolen plates, check ${state} registration status, and identify ${state}-specific concerns.${uniqueConcerns.length > 0 ? ` Watch for: ${uniqueConcerns.join('; ')}.` : ''} Always verify VIN before final purchase - plates can be swapped but VINs cannot.`,
       
@@ -631,7 +631,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
         },
         {
           question: `What information can I get from a ${state} license plate lookup?`,
-          answer: `A ${state} license plate lookup provides: ${dmvName} registered owner name, vehicle make/model/year, VIN, ${state} registration status, title information, and theft status from law enforcement databases. This helps you screen ${state} vehicles quickly.`
+          answer: `A ${state} license plate lookup provides: ${dmvName} registered owner name, vehicle make/model/year, VIN, ${state} registration status, title information, and theft status from community theft registries. This helps you screen ${state} vehicles quickly.`
         },
         {
           question: `Is ${state} license plate lookup really free?`,

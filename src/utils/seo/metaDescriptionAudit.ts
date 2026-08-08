@@ -22,11 +22,11 @@ export const OPTIMAL_META_LENGTH = { min: 155, max: 160 };
 export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
   // CORE PAGES (155-160 chars each)
   '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. From $0.99/check. Results in 3 seconds.',
-  '/imei-checker': 'IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and law enforcement databases. From $0.99.',
+  '/imei-checker': 'IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and community theft registries. From $0.99.',
   '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against NICB and DMV databases. Better than Carfax. $10/mo.',
-  '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Lookup from DMV and law enforcement databases across all 50 states. Instant verification.',
+  '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Lookup from DMV and community theft registries across all 50 states. Instant verification.',
   '/check-phone': 'Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. From $0.99/check.',
-  '/check-car': 'Check if a car is stolen before buying. VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax. From $0.99/check.',
+  '/check-car': 'Check if a car is stolen before buying. VIN verification from NICB, DMV, and community theft registries. Safer alternative to Carfax. From $0.99/check.',
   '/check-bike': 'Check if a bicycle is stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes. Search BikeIndex and police data. $0.99.',
   '/pricing': 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against 100+ databases. All item types. Cancel anytime.',
   '/verify': 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from buying stolen goods on marketplaces.', // 160 chars

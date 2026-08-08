@@ -202,9 +202,9 @@ const YouTubePage: React.FC = () => {
     {
       icon: Car,
       title: 'VIN Lookup Guides',
-      desc: 'Locate your vehicle\'s VIN (dashboard or door jamb) and verify against stolen property reports from all 50 states, NICB insurance theft records, and 50 state DMV databases.',
+      desc: 'Locate your vehicle\'s VIN (dashboard or door jamb) and verify against stolen property reports from all 50 states, NICB insurance theft records, and NHTSA vehicle records.',
       link: '/vin-checker',
-      stat: '50 state DMV databases',
+      stat: 'NHTSA vehicle records',
       color: 'text-green-500'
     },
     {

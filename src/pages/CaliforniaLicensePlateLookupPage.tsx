@@ -4,7 +4,7 @@ const CaliforniaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="California License Plate Lookup - Check CA Stolen Vehicle by Plate"
-      metaDescription="Free California license plate lookup. Check if a CA vehicle is stolen before buying. Search DMV and law enforcement databases instantly."
+      metaDescription="Free California license plate lookup. Check if a CA vehicle is stolen before buying. Search DMV and community theft registries instantly."
       h1="California License Plate Lookup - Check CA Vehicles"
       itemType="Vehicle"
       keywords={[
@@ -14,7 +14,7 @@ const CaliforniaLicensePlateLookupPage = () => {
         'california stolen vehicle plate lookup'
       ]}
       content={{
-        intro: "Verify California vehicles using license plate number in 3 seconds. Free California license plate lookup from CA DMV and law enforcement databases. Check vehicles in Los Angeles, San Francisco, San Diego.",
+        intro: "Verify California vehicles using license plate number in 3 seconds. Free California license plate lookup from CA DMV and community theft registries. Check vehicles in Los Angeles, San Francisco, San Diego.",
         whatIs: "California license plate lookup verifies whether a vehicle registered in California is reported stolen by checking the CA license plate number against California DMV databases and law enforcement records.",
         howItWorks: "Query California DMV databases to resolve CA plate to VIN and check theft status across the state. Receive results in 3 seconds.",
         whyCheck: "California has the largest used vehicle market. Screen vehicles quickly in LA, SF, SD. Verify seller is CA DMV registered owner.",

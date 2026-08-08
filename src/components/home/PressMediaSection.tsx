@@ -52,7 +52,7 @@ export const PressMediaSection = () => {
       icon: Globe,
       label: '50M+ Records',
       description: 'Verified stolen item database across 100+ sources',
-      detail: 'Cross-referenced from GSMA, NICB, stolen property reports from all 50 states, all 50 state law enforcement databases, and 500+ insurance companies.',
+      detail: 'Cross-referenced from GSMA, NICB, stolen property reports from all 50 states, all 50 state community theft registries, and 500+ insurance companies.',
       link: '/data-sources',
     },
     {

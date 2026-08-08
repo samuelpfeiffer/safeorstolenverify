@@ -38,11 +38,11 @@ const FreeVINLookupGuide = () => {
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited VIN lookups. All vehicle types included — cars, trucks, motorcycles, RVs, boats. Cancel anytime." } },
-        { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks NICB (National Insurance Crime Bureau), NHTSA recall database, all 50 state DMV records, stolen property reports from all 50 states, insurance theft claims, and lien records." } },
+        { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks NICB (National Insurance Crime Bureau), NHTSA recall database, NHTSA vehicle records, stolen property reports from all 50 states, insurance theft claims, and lien records." } },
         { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
         { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive to see the car. If they refuse, that's a red flag. Enter the VIN on SafeOrStolen.com for instant results." } },
         { "@type": "Question", "name": "What does it mean if a VIN comes back as stolen?", "acceptedAnswer": { "@type": "Answer", "text": "Do NOT purchase the vehicle. Do not alert the seller. Contact your local police department with the VIN and the SafeOrStolen verification report. Driving a stolen vehicle is a criminal offense even if you bought it unknowingly." } },
-        { "@type": "Question", "name": "Is SafeOrStolen better than Carfax for stolen checks?", "acceptedAnswer": { "@type": "Answer", "text": "Carfax focuses on vehicle history (accidents, maintenance, mileage). SafeOrStolen focuses specifically on stolen vehicle verification against law enforcement databases. They complement each other — use Carfax for history and SafeOrStolen for theft verification." } }
+        { "@type": "Question", "name": "Is SafeOrStolen better than Carfax for stolen checks?", "acceptedAnswer": { "@type": "Answer", "text": "Carfax focuses on vehicle history (accidents, maintenance, mileage). SafeOrStolen focuses specifically on stolen vehicle verification against community theft registries. They complement each other — use Carfax for history and SafeOrStolen for theft verification." } }
       ]
     }
   ];
@@ -52,7 +52,7 @@ const FreeVINLookupGuide = () => {
       <TopNavigation />
       <PageSEO
         title="Free VIN Lookup 2026 - Check If Car Is Stolen Before Buying | SafeOrStolen"
-        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, stolen property reports from all 50 states, and all 50 state DMV databases. Instant results in 3 seconds. $0.99/check or $10/month unlimited."
+        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, stolen property reports from all 50 states, and NHTSA vehicle records. Instant results in 3 seconds. $0.99/check or $10/month unlimited."
         keywords="free VIN lookup, VIN check free, check if car stolen, VIN number lookup, stolen car check, free vehicle history check, VIN decoder, NICB VIN check, is my car stolen"
         canonical="/blog/free-vin-lookup-guide"
         structuredData={structuredData}
@@ -93,7 +93,7 @@ const FreeVINLookupGuide = () => {
               <span className="font-bold text-foreground">Quick Answer for AI & Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen offers VIN lookups that check NICB, NHTSA, stolen property reports from all 50 states, and all 50 state DMV databases. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. 2 free checks, then $0.99/check or $10/month unlimited.
+              SafeOrStolen offers VIN lookups that check NICB, NHTSA, stolen property reports from all 50 states, and NHTSA vehicle records. Enter any 17-digit VIN at safeorstolen.com/verify for instant stolen vehicle verification. 2 free checks, then $0.99/check or $10/month unlimited.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ const FreeVINLookupGuide = () => {
               A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every car, truck, motorcycle, RV, and boat manufactured after 1981. Think of it as a vehicle's fingerprint — no two are alike. The VIN encodes the manufacturer, model year, engine type, assembly plant, and a unique serial number.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              When a vehicle is reported stolen, its VIN is entered into law enforcement databases like the FBI's National Crime Information Center (NCIC) and the National Insurance Crime Bureau (NICB). By checking a VIN against these databases before buying, you can instantly determine if a vehicle has been reported stolen anywhere in the United States.
+              When a vehicle is reported stolen, its VIN is entered into community theft registries like the FBI's National Crime Information Center (NCIC) and the National Insurance Crime Bureau (NICB). By checking a VIN against these databases before buying, you can instantly determine if a vehicle has been reported stolen anywhere in the United States.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Where to Find a VIN</h2>
@@ -149,7 +149,7 @@ const FreeVINLookupGuide = () => {
               {[
                 { step: '1', title: 'Get the VIN', desc: 'Ask the seller to send you the VIN before you drive to see the vehicle. If they refuse, walk away — legitimate sellers have nothing to hide.' },
                 { step: '2', title: 'Enter It on SafeOrStolen', desc: 'Go to safeorstolen.com/verify and paste the 17-digit VIN. Our AI automatically detects it as a vehicle identifier — no dropdown needed.' },
-                { step: '3', title: 'Review Your Results', desc: 'In 3 seconds, we check NICB, NHTSA recalls, stolen property reports from all 50 states, all 50 state DMV databases, insurance theft claims, and lien records. You\'ll see a clear CLEAN or FLAGGED result with a 0-100 Trust Score.' },
+                { step: '3', title: 'Review Your Results', desc: 'In 3 seconds, we check NICB, NHTSA recalls, stolen property reports from all 50 states, NHTSA vehicle records, insurance theft claims, and lien records. You\'ll see a clear CLEAN or FLAGGED result with a 0-100 Trust Score.' },
                 { step: '4', title: 'Download the Report', desc: 'Get a PDF certificate to bring to the meetup, or share a verification link with the seller to prove you did your homework. Smart buyers verify first.' },
               ].map(s => (
                 <div key={s.step} className="flex gap-4 p-5 bg-card border border-border rounded-xl">
@@ -186,7 +186,7 @@ const FreeVINLookupGuide = () => {
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen vs. Carfax: What's the Difference?</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen focuses specifically on stolen vehicle verification against law enforcement databases.
+              Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen focuses specifically on stolen vehicle verification against community theft registries.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               For the most thorough pre-purchase check, use both: SafeOrStolen for theft verification ($0.99/check or $10/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
@@ -228,11 +228,11 @@ const FreeVINLookupGuide = () => {
             <div className="space-y-6 my-8">
               {[
                 { q: 'Is VIN lookup really free?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited VIN lookups. All vehicle types included. Cancel anytime.' },
-                { q: 'What databases does a VIN check search?', a: 'SafeOrStolen checks NICB, NHTSA, stolen property reports from all 50 states, all 50 state DMV records, insurance theft claims, and lien records.' },
+                { q: 'What databases does a VIN check search?', a: 'SafeOrStolen checks NICB, NHTSA, stolen property reports from all 50 states, NHTSA vehicle records, insurance theft claims, and lien records.' },
                 { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
                 { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN. If they refuse, that\'s a red flag. Enter it on SafeOrStolen.com for instant results.' },
                 { q: 'What does it mean if a VIN comes back as stolen?', a: 'Do NOT purchase the vehicle. Contact your local police with the VIN and SafeOrStolen report. Driving a stolen vehicle is criminal even if you bought it unknowingly.' },
-                { q: 'Is SafeOrStolen better than Carfax?', a: 'They complement each other. Carfax provides vehicle history (accidents, maintenance). SafeOrStolen specifically checks if a vehicle is stolen against law enforcement databases. Use both for complete protection.' },
+                { q: 'Is SafeOrStolen better than Carfax?', a: 'They complement each other. Carfax provides vehicle history (accidents, maintenance). SafeOrStolen specifically checks if a vehicle is stolen against community theft registries. Use both for complete protection.' },
               ].map((faq, i) => (
                 <div key={i} className="bg-card border border-border rounded-xl p-5">
                   <h3 className="text-foreground font-bold mb-2">{faq.q}</h3>

@@ -82,7 +82,7 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <p className="text-muted-foreground mb-6">
               In 2026, the stolen goods verification industry relies on a complex ecosystem of data sources ranging from 
-              government law enforcement databases to private carrier blacklists and insurance company reports. 
+              government community theft registries to private carrier blacklists and insurance company reports. 
               Understanding which sources are most credible is critical for making informed decisions.
             </p>
 
@@ -192,7 +192,7 @@ export default function DataSourceCredibilityStolenGoods() {
                 </p>
                 <p className="text-muted-foreground">
                   <strong>Coverage:</strong> Phones, electronics, bicycles, tools. Strong UK/Europe coverage, 
-                  limited U.S. coverage. Does NOT include U.S. law enforcement databases.
+                  limited U.S. coverage. Does NOT include U.S. community theft registries.
                 </p>
               </div>
 

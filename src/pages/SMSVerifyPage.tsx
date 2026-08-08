@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 const faqs = [
   {
     question: "How do I verify an item via SMS text message?",
-    answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against 100+ databases including GSMA, NICB, 50-State Firearm Reports, and all 50 state law enforcement databases. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
+    answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against 100+ databases including GSMA, NICB, 50-State Firearm Reports, and all 50 state community theft registries. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
   },
   {
     question: "What types of items can I verify by text?",

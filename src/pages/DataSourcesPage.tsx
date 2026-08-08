@@ -12,11 +12,11 @@ import {
 const FAQ_ITEMS = [
   {
     question: "What databases does SafeOrStolen check for IMEI verification?",
-    answer: "SafeOrStolen checks the GSMA global IMEI database (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier blacklists, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier blacklists across 190+ countries. Results are returned in approximately 3 seconds."
+    answer: "SafeOrStolen checks the carrier and manufacturer blacklists (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier blacklists, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier blacklists across 190+ countries. Results are returned in approximately 3 seconds."
   },
   {
-    question: "Which law enforcement databases are included in vehicle VIN checks?",
-    answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), all 50 state DMV databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+    question: "Which community theft registries are included in vehicle VIN checks?",
+    answer: "Vehicle VIN checks query stolen property reports from all 50 states, NICB (National Insurance Crime Bureau) database, NMVTIS (National Motor Vehicle Title Information System), NHTSA vehicle records, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
   },
   {
  question: "Does SafeOrStolen check stolen firearm reports from all 50 states for firearm serial numbers?",
@@ -44,7 +44,7 @@ const DATA_CATEGORIES = [
     bgColor: "bg-blue-500/10",
     title: "Law Enforcement Databases",
     subtitle: "Federal, State & International Police Records",
-    description: "SafeOrStolen integrates with the most authoritative law enforcement databases in the United States and internationally. Every search queries these sources simultaneously in real-time.",
+    description: "SafeOrStolen integrates with the most authoritative community theft registries in the United States and internationally. Every search queries these sources simultaneously in real-time.",
     sources: [
       {
         name: "Stolen property reports from all 50 states",

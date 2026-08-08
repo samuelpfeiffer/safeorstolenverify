@@ -97,7 +97,7 @@ export default function ForDealers() {
           <p><strong>Solution:</strong> Provide SafeOrStolen verification report at point of sale. Customer sees the full history before signing, eliminating post-sale disputes.</p>
 
           <h4>Problem 4: Expensive Carfax Subscriptions</h4>
-          <p>Dealerships pay $1,000+/year for Carfax unlimited access, but Carfax doesn't check real-time law enforcement databases.</p>
+          <p>Dealerships pay $1,000+/year for Carfax unlimited access, but Carfax doesn't check real-time community theft registries.</p>
           <p><strong>Solution:</strong> SafeOrStolen costs less and includes stolen property reports from all 50 states databases, and international theft records Carfax doesn't access.</p>
 
           <h3>Real Dealership Case Studies</h3>
@@ -220,7 +220,7 @@ export default function ForDealers() {
           </blockquote>
 
           <blockquote className="border-l-4 border-primary pl-4 my-6">
-            <p className="italic">"We used to spend $1,400/year on Carfax. SafeOrStolen costs half that and checks law enforcement databases Carfax doesn't. Caught a title-washed flood vehicle at auction last month—would've cost us $15K."</p>
+            <p className="italic">"We used to spend $1,400/year on Carfax. SafeOrStolen costs half that and checks community theft registries Carfax doesn't. Caught a title-washed flood vehicle at auction last month—would've cost us $15K."</p>
             <footer className="text-sm text-muted-foreground mt-2">— David L., Owner, Automotive Express (Florida)</footer>
           </blockquote>
         </section>

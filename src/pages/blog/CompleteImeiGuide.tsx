@@ -193,7 +193,7 @@ export default function CompleteImeiGuide() {
                 </div>
                 <p className="text-muted-foreground mb-3">
                   SafeOrStolen checks 50+ databases simultaneously including GSMA global blacklist, stolen property reports from all 50 states, all major 
-                  U.S. carriers, manufacturer records, and law enforcement databases. Results in 3 seconds.
+                  U.S. carriers, manufacturer records, and community theft registries. Results in 3 seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />

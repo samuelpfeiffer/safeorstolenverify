@@ -56,7 +56,7 @@ const IMEICheckPage = () => {
           },
           {
             question: "What databases does the IMEI check search?",
-            answer: "We check GSMA global device registry, AT&T, Verizon, T-Mobile, international carrier blacklists, law enforcement databases, insurance claims, and user-reported theft databases for comprehensive coverage."
+            answer: "We check GSMA global device registry, AT&T, Verizon, T-Mobile, international carrier blacklists, community theft registries, insurance claims, and user-reported theft databases for comprehensive coverage."
           },
           {
             question: "What if the IMEI shows blacklisted?",

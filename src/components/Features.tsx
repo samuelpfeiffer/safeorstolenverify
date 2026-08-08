@@ -34,7 +34,7 @@ const Features = () => {
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             The ONLY stolen goods verification platform with dedicated mobile apps for iOS & Android. 
             Verify phones, cars, electronics, and firearms instantly - something CheckMend, IMEIinfo, and Stolen Register cannot offer. 
-            Access law enforcement databases, insurance records, and firearms registries from your pocket.
+            Access community theft registries, insurance records, and firearms registries from your pocket.
           </p>
         </div>
 

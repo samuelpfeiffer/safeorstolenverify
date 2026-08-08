@@ -13,7 +13,7 @@ interface HowToVerifySectionProps {
 const FAQS = [
   {
     question: 'How does SafeOrStolen verify if an item is stolen?',
-    answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including stolen property reports from all 50 states, GSMA global blacklist, NICB, stolen property reports from all 50 states, all 50 state law enforcement databases, and insurance theft claims. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
+    answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including stolen property reports from all 50 states, GSMA global blacklist, NICB, stolen property reports from all 50 states, all 50 state community theft registries, and insurance theft claims. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
   },
   {
     question: 'How much does it cost to check if a phone is stolen?',
@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     question: 'Can I verify a used car before buying it?',
-    answer: 'Yes. Enter the 17-character VIN (found on the driver-side dashboard or door jamb) to check against NHTSA records, NICB theft claims, state DMV databases, insurance total-loss records, and 50 state law enforcement databases. Results appear in 3 seconds. Unlike Carfax ($44.99/report), SafeOrStolen VIN checks are included in the free tier and unlimited plans.'
+    answer: 'Yes. Enter the 17-character VIN (found on the driver-side dashboard or door jamb) to check against NHTSA records, NICB theft claims, state DMV databases, insurance total-loss records, and 50 state community theft registries. Results appear in 3 seconds. Unlike Carfax ($44.99/report), SafeOrStolen VIN checks are included in the free tier and unlimited plans.'
   },
   {
     question: 'Can I check a firearm serial number for stolen status?',

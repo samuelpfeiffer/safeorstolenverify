@@ -4,7 +4,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen before buying. Verify against PennDOT and law enforcement databases."
+      metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen before buying. Verify against PennDOT and community theft registries."
       h1="Pennsylvania License Plate Lookup - Verify PA Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
@@ -18,7 +18,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         'PA vehicle stolen database'
       ]}
       content={{
-        intro: "Pennsylvania experiences notable vehicle theft, concentrated in Philadelphia and Pittsburgh metro areas. Before buying any used vehicle in Pennsylvania, verify the license plate against our comprehensive database that includes PennDOT records, stolen property reports from all 50 states, and law enforcement databases.",
+        intro: "Pennsylvania experiences notable vehicle theft, concentrated in Philadelphia and Pittsburgh metro areas. Before buying any used vehicle in Pennsylvania, verify the license plate against our comprehensive database that includes PennDOT records, stolen property reports from all 50 states, and community theft registries.",
         
         whatIs: "A Pennsylvania license plate lookup allows you to verify if a vehicle registered in PA has been reported stolen, salvaged, or has title issues. By entering the PA license plate number, our system cross-references the Pennsylvania Department of Transportation (PennDOT), National Crime Information Center (stolen property reports from all 50 states), Pennsylvania State Police records, and insurance databases. This verification is essential when purchasing vehicles in Philadelphia, Pittsburgh, Allentown, Erie, and throughout Pennsylvania's used vehicle market.",
         

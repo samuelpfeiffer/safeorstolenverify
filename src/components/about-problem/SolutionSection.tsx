@@ -7,7 +7,7 @@ export const SolutionSection = () => {
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Real-Time Database Integration",
-      description: "Direct access to law enforcement databases and theft reports for instant verification"
+      description: "Direct access to community theft registries and theft reports for instant verification"
     },
     {
       icon: <Zap className="h-6 w-6" />,
@@ -34,7 +34,7 @@ export const SolutionSection = () => {
             <h2 className="text-3xl font-bold mb-6">Our Revolutionary Solution</h2>
             <p className="text-xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
               SafeOrStolen is the world's first comprehensive verification system that bridges 
-              law enforcement databases with consumer protection, creating an impenetrable shield 
+              community theft registries with consumer protection, creating an impenetrable shield 
               against stolen goods purchases.
             </p>
           </div>

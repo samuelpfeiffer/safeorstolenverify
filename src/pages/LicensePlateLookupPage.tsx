@@ -82,7 +82,7 @@ const LicensePlateLookupPage = () => {
     },
     {
       question: "What information do I get from a license plate lookup?",
-      answer: "You'll see: registered owner name, vehicle make/model/year, VIN, registration status (valid/expired), title info, and theft status from DMV and law enforcement databases."
+      answer: "You'll see: registered owner name, vehicle make/model/year, VIN, registration status (valid/expired), title info, and theft status from DMV and community theft registries."
     },
     {
       question: "Is license plate lookup free?",
@@ -126,7 +126,7 @@ const LicensePlateLookupPage = () => {
                 License Plate Lookup
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Check if a vehicle is stolen using the license plate number. Select your state and verify instantly against DMV and law enforcement databases.
+                Check if a vehicle is stolen using the license plate number. Select your state and verify instantly against DMV and community theft registries.
               </p>
             </div>
 
@@ -320,7 +320,7 @@ const LicensePlateLookupPage = () => {
                 </div>
                 <h3 className="font-semibold mb-2">We Search Databases</h3>
                 <p className="text-sm text-muted-foreground">
-                  We query DMV records and law enforcement databases quickly.
+                  We query DMV records and community theft registries quickly.
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg border border-border bg-card">

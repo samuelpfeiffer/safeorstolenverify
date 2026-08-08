@@ -102,7 +102,7 @@ const ForInsuranceCompanies = () => {
         },
         {
           question: "What data sources do you check?",
-          answer: "We check law enforcement databases, carrier blacklists, manufacturer records, and a network of insurance company reports totaling 50M+ records."
+          answer: "We check community theft registries, carrier blacklists, manufacturer records, and a network of insurance company reports totaling 50M+ records."
         },
         {
           question: "Is the API suitable for high-volume claims?",

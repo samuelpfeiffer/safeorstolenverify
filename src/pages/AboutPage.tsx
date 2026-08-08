@@ -69,7 +69,7 @@ const AboutPage = () => {
     {
       step: 1,
       title: "Data Collection",
-      description: "We gather information from multiple verified law enforcement databases"
+      description: "We gather information from multiple verified community theft registries"
     },
     {
       step: 2,
@@ -320,7 +320,7 @@ const AboutPage = () => {
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Our Data Partners</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We crawl, scrape, and aggregate data from 50+ trusted sources including law enforcement databases, 
+                We crawl, scrape, and aggregate data from 50+ trusted sources including community theft registries, 
                 stolen property registries, and industry partners
               </p>
             </div>

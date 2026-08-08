@@ -474,7 +474,7 @@ export default function ForSellers() {
         <noscript>
           <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
             <h1>SafeOrStolen for Sellers - Prove Items Are Legitimate, Sell Faster</h1>
-            <p>Verify your items before listing on any marketplace. SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ law enforcement databases. Get shareable "Verified Safe" certificates that command 15-30% higher prices.</p>
+            <p>Verify your items before listing on any marketplace. SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ community theft registries. Get shareable "Verified Safe" certificates that command 15-30% higher prices.</p>
             <p>Pricing: $10/month unlimited — includes verifications, badges, seller profile, and PDF certificates. Cancel anytime.</p>
           </div>
         </noscript>

@@ -318,7 +318,7 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>•  national stolen-firearms registry (32K+ records)</li>
                     <li>• NICB (National Insurance Crime Bureau)</li>
-                    <li>• GSMA Device Registry (global phone blacklist)</li>
+                    <li>• carrier and manufacturer blacklists (global phone blacklist)</li>
                     <li>• Serial number integrity validation</li>
                     <li>• Community-reported stolen property reports</li>
                     <li>• Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
@@ -515,7 +515,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">7.  — Best Free Firearm Serial Lookup</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">hotgunz.com · Free unlimited · Firearms only</p>
               <p className="text-muted-foreground mb-4">
-                 is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official law enforcement databases like stolen property reports from all 50 states.
+                 is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official community theft registries like stolen property reports from all 50 states.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">

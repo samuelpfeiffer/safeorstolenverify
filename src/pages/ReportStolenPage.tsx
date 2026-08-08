@@ -32,7 +32,7 @@ const ReportStolenPageContent = () => {
       {
         "@type": "Question",
         "name": "Should I also file a police report?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements law enforcement databases by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements community theft registries by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report." }
       },
       {
         "@type": "Question",
@@ -190,7 +190,7 @@ const ReportStolenPageContent = () => {
               <AccordionItem value="police">
                 <AccordionTrigger>Should I also file a police report?</AccordionTrigger>
                 <AccordionContent>
-                  Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements law enforcement databases by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report for faster processing.
+                  Yes, absolutely. Filing a police report is essential for legal recovery of your property. SafeOrStolen supplements community theft registries by alerting potential buyers, but a police report is the official legal record. Include your police report number when filing your SafeOrStolen report for faster processing.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="info">

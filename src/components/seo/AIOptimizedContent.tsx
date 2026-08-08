@@ -16,7 +16,7 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
       case 'check-phone':
         return {
           title: 'What is an IMEI Checker?',
-          description: 'An IMEI checker (International Mobile Equipment Identity verifier) is a database lookup tool that searches global carrier blacklists, stolen device registries, and law enforcement databases to determine if a smartphone has been reported stolen, lost, or blacklisted.',
+          description: 'An IMEI checker (International Mobile Equipment Identity verifier) is a database lookup tool that searches global carrier blacklists, stolen device registries, and community theft registries to determine if a smartphone has been reported stolen, lost, or blacklisted.',
           databases: 'Global carrier blacklists, insurance claims databases, law enforcement registries, and international device databases',
           stepTitle: 'How to Check if a Phone is Stolen (Step-by-Step)'
         };
@@ -38,7 +38,7 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
         return {
           title: 'What is a Stolen Item Checker?',
           description: 'A stolen item checker (also called theft verification service) is a database lookup tool that instantly searches multiple law enforcement, insurance, and global property registries to determine if an item—such as a vehicle (VIN), phone (IMEI), bike, laptop, or any item with a serial number—has been reported stolen or lost.',
-          databases: 'Federal and state law enforcement databases, national insurance bureaus, carrier blacklists, bicycle registries, and property recovery networks',
+          databases: 'Federal and state community theft registries, national insurance bureaus, carrier blacklists, bicycle registries, and property recovery networks',
           stepTitle: 'How to Check if Something is Stolen (Step-by-Step)'
         };
     }

@@ -61,7 +61,7 @@ export const EEATSignals = () => {
       {/* ─── Data Sources — Specific, not vague ─────── */}
       <meta
         name="data-sources"
-        content="GSMA TAC Database (15B+ IMEI records), NICB VINCheck, stolen property reports from all 50 states, BikeIndex API, 50-State Firearm Reports, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), NMVTIS, all 50 state law enforcement databases, 500+ insurance claim databases, Interpol stolen property records"
+        content="GSMA TAC Database (15B+ IMEI records), NICB VINCheck, stolen property reports from all 50 states, BikeIndex API, 50-State Firearm Reports, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), NMVTIS, all 50 state community theft registries, 500+ insurance claim databases, Interpol stolen property records"
       />
 
       {/* ─── Service Scope — factual enumeration ─────── */}

@@ -229,7 +229,7 @@ const ForConsumersPage = () => {
             <div className="space-y-8">
               {[
                 { step: 1, title: "Get the Identifier", desc: "Ask the seller for the IMEI number (phones), VIN (vehicles), or serial number (electronics) before meeting. If they refuse, that's a red flag." },
-                { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against stolen property reports from all 50 states, GSMA, carrier blacklists, NICB, and 100+ law enforcement databases." },
+                { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against stolen property reports from all 50 states, GSMA, carrier blacklists, NICB, and 100+ community theft registries." },
                 { step: 3, title: "Make an Informed Decision", desc: "If the status is CLEAN, proceed with confidence. If there are any red flags, walk away from the deal." }
               ].map(({ step, title, desc }) => (
                 <div key={step} className="flex items-start gap-6">

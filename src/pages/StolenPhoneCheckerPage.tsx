@@ -64,7 +64,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "What databases does SafeOrStolen check?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier blacklists (AT&T, Verizon, T-Mobile), police stolen property records, insurance claim databases, and international registries."
+          "text": "SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries."
         }
       }
     ]
@@ -310,7 +310,7 @@ const StolenPhoneCheckerPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">What databases does SafeOrStolen check?</h3>
-                <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier blacklists (AT&T, Verizon, T-Mobile), police stolen property records, insurance claim databases, and international registries.</p>
+                <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including GSMA IMEI Database, carrier and manufacturer blacklists, police stolen property records, insurance claim databases, and international registries.</p>
               </CardContent>
             </Card>
           </div>

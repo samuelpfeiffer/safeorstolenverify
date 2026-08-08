@@ -37,7 +37,7 @@ const dataSources = [
   {
     icon: Database,
     title: 'Carrier Blacklists',
-    description: 'GSMA global IMEI database (15B+ records), AT&T, Verizon, T-Mobile, 200+ carrier blacklists',
+    description: 'Carrier and manufacturer device blacklists and commercial IMEI status providers',
     color: 'text-purple-500',
     link: '/data-sources#carrier',
     stat: '15B+ records',

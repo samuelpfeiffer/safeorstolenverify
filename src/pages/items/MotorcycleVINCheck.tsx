@@ -30,11 +30,11 @@ const MotorcycleVINCheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Motorcycle VIN Verification?"
-      whatIsContent="Every motorcycle has a 17-character VIN (Vehicle Identification Number) stamped on the frame. When stolen, this VIN is reported to NICB, NMVTIS, and law enforcement databases. Motorcycles are stolen at nearly twice the rate of cars, making verification essential. Our service checks these databases to ensure you're not buying stolen property."
+      whatIsContent="Every motorcycle has a 17-character VIN (Vehicle Identification Number) stamped on the frame. When stolen, this VIN is reported to NICB, NMVTIS, and community theft registries. Motorcycles are stolen at nearly twice the rate of cars, making verification essential. Our service checks these databases to ensure you're not buying stolen property."
       howItWorksSteps={[
         "Find the VIN: Usually on the steering neck (right side), frame near the engine, or on registration documents",
         "Enter the 17-character VIN into our free verification tool",
-        "Our system searches NICB, NMVTIS, and law enforcement databases instantly",
+        "Our system searches NICB, NMVTIS, and community theft registries instantly",
         "Get results in 3 seconds - see if the motorcycle is CLEAR or STOLEN"
       ]}
       whyVerifyTitle="Why Check Motorcycles Before Buying?"

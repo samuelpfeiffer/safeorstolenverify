@@ -84,7 +84,7 @@ export default function HowToCheckPhoneStolen() {
             <li>Enter the 15-digit IMEI number</li>
             <li>Get results in 3 seconds showing:
               <ul>
-                <li>Stolen status from law enforcement databases</li>
+                <li>Stolen status from community theft registries</li>
                 <li>Carrier blacklist status (AT&T, Verizon, T-Mobile, Sprint)</li>
                 <li>International theft reports</li>
                 <li>Finance/lease status</li>

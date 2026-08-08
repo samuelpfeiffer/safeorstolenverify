@@ -4,7 +4,7 @@ const CheckEBikePage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if eBike is Stolen - Free Electric Bike Serial Number Verification"
-      metaDescription="Check if electric bikes, e-scooters, or eBikes are stolen before buying. Free serial number verification for eBikes from law enforcement databases. Verify Rad Power, Trek, Specialized, Aventon eBikes."
+      metaDescription="Check if electric bikes, e-scooters, or eBikes are stolen before buying. Free serial number verification for eBikes from community theft registries. Verify Rad Power, Trek, Specialized, Aventon eBikes."
       h1="Check if Your eBike is Stolen Before Buying"
       itemType="eBikes & E-Scooters"
       keywords={[
@@ -65,7 +65,7 @@ const CheckEBikePage = () => {
           },
           {
             question: "How long does an eBike serial number check take?",
-            answer: "Our eBike verification takes only 3 seconds per serial number. Enter the frame, motor, and battery serial numbers, click verify, and receive instant results showing whether any component has been reported stolen. We search BikeIndex, law enforcement databases, manufacturer registries, and insurance claim records simultaneously for comprehensive protection."
+            answer: "Our eBike verification takes only 3 seconds per serial number. Enter the frame, motor, and battery serial numbers, click verify, and receive instant results showing whether any component has been reported stolen. We search BikeIndex, community theft registries, manufacturer registries, and insurance claim records simultaneously for comprehensive protection."
           },
           {
             question: "What are red flags when buying a used eBike?",

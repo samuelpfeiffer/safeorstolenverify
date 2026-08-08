@@ -23,7 +23,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "What does SafeOrStolen have that Carfax doesn't?",
- "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks phones (IMEI), firearms, electronics, bikes, and all serial-numbered items — Carfax only checks vehicles. SafeOrStolen also has a mobile app, marketplace URL analysis, and searches law enforcement databases (stolen property reports from all 50 states) that Carfax doesn't access for stolen vehicle detection." }
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks phones (IMEI), firearms, electronics, bikes, and all serial-numbered items — Carfax only checks vehicles. SafeOrStolen also has a mobile app, marketplace URL analysis, and searches community theft registries (stolen property reports from all 50 states) that Carfax doesn't access for stolen vehicle detection." }
       },
       {
         "@type": "Question",
@@ -54,7 +54,7 @@ const CarfaxAlternativePage = () => {
               Free Carfax Alternative — Stolen Vehicle Check
             </h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Carfax charges $39.99 per report. SafeOrStolen checks if a vehicle is stolen for free. We search NICB, stolen property reports from all 50 states, all 50 state DMV records, and insurance databases. Different tools for different purposes — here's when to use each.
+              Carfax charges $39.99 per report. SafeOrStolen checks if a vehicle is stolen for free. We search NICB, stolen property reports from all 50 states, NHTSA vehicle records, and insurance databases. Different tools for different purposes — here's when to use each.
             </p>
           </div>
         </header>

@@ -125,7 +125,7 @@ export default function APIPage() {
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  Verify if a phone IMEI number is stolen, blacklisted, or reported lost. This endpoint checks carrier blacklists, the GSMA Device Registry, insurance claims databases, and law enforcement databases across multiple countries. Returns comprehensive device information, blacklist status, carrier lock status, and any theft reports associated with the device.
+                  Verify if a phone IMEI number is stolen, blacklisted, or reported lost. This endpoint checks carrier blacklists, the carrier and manufacturer blacklists, insurance claims databases, and community theft registries. Returns comprehensive device information, blacklist status, carrier lock status, and any theft reports associated with the device.
                 </p>
                 <h4>Request Example</h4>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
@@ -218,7 +218,7 @@ Authorization: Bearer YOUR_API_KEY
               </CardHeader>
               <CardContent className="prose prose-lg dark:prose-invert max-w-none">
                 <p>
-                  Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches law enforcement databases, manufacturer registries, insurance claims, and user-reported stolen items. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
+                  Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches community theft registries, manufacturer registries, insurance claims, and user-reported stolen items. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
                 </p>
                 <h4>Request Example</h4>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
