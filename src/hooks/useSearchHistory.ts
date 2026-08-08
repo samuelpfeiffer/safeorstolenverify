@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
+import { toCanonicalItemType } from '@/lib/itemType';
 
 interface SearchHistoryItem {
   id: string;
@@ -55,7 +56,7 @@ export const useSearchHistory = () => {
         .insert({
           user_id: user.id,
           serial_number: serialNumber,
-          item_type: itemType || 'unknown'
+          item_type: toCanonicalItemType(itemType)
         });
 
       if (error) {
