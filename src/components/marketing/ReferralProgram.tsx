@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Gift, Users, Share2, Trophy, Loader2, Linkedin } from 'lucide-react';
+import { Gift, Users, Share2, Trophy, Loader2 } from 'lucide-react';
 import { CopyButton } from '@/components/common/CopyButton';
 import { useAuth } from '@/lib/auth';
 import { supabase } from '@/integrations/supabase/client';
@@ -73,9 +73,6 @@ export const ReferralProgram = () => {
         break;
       case 'facebook':
         url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent(message)}`;
-        break;
-      case 'linkedin':
-        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(referralUrl)}`;
         break;
     }
 
@@ -190,17 +187,6 @@ export const ReferralProgram = () => {
                 />
               </div>
 
-              <div className="flex gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => shareOnSocial('linkedin')}
-                  className="gap-2 border-border text-foreground hover:bg-muted"
-                >
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </Button>
-              </div>
 
               <div className="p-4 bg-muted rounded-lg">
                 <h4 className="text-foreground font-medium mb-2">How it works:</h4>
