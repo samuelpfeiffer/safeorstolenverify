@@ -13,7 +13,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "Can I check a gun serial number with the ATF directly?",
- "acceptedAnswer": { "@type": "Answer", "text": "The ATF's eTrace system is only available to law enforcement agencies — civilians cannot access it directly. However, SafeOrStolen queries the HotGunz national stolen-firearms registry trace data as part of its comprehensive firearms verification, giving consumers access to information that would otherwise require a police request." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No. The ATF's eTrace system is only available to law enforcement agencies — civilians cannot access it, and neither can SafeOrStolen. What SafeOrStolen can do is check the HotGunz national stolen-firearms registry (32,000+ user-reported records) and analyze the serial number for signs of alteration or obliteration. For a definitive check, ask your local police non-emergency line to run the serial through NCIC." }
       },
       {
         "@type": "Question",
