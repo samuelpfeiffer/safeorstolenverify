@@ -72,37 +72,137 @@ serve(async (req) => {
     const startTime = Date.now();
 
     const cleanIdentifier = identifier.trim().toUpperCase();
+    // Normalized form: uppercase, spaces and hyphens stripped
+    const normalizedIdentifier = cleanIdentifier.replace(/[\s\-]/g, '');
+    // Strict allow-list. Anything outside this never touches a query.
+    const isSafeIdentifier = /^[A-Z0-9]{3,50}$/.test(normalizedIdentifier);
+    // Registry matches shorter than 6 chars are too collision-prone to accuse anyone.
+    const canReturnStolen = isSafeIdentifier && normalizedIdentifier.length >= 6;
+    // Candidate exact values (parameterized, never interpolated into a filter string)
+    const exactCandidates = Array.from(new Set([cleanIdentifier, normalizedIdentifier]));
+    const normalize = (v: unknown) =>
+      typeof v === 'string' ? v.trim().toUpperCase().replace(/[\s\-]/g, '') : '';
+
     const providers: any[] = [];
 
-    // 1. Check internal stolen_items database first
+    // 1. Check internal stolen_items database first (EXACT match only)
     try {
-      const { data: stolenItems, error } = await supabaseClient
-        .from('stolen_items')
-        .select('*')
-        .or(`serial_number.ilike.%${cleanIdentifier}%,imei.ilike.%${cleanIdentifier}%,vin.ilike.%${cleanIdentifier}%`)
-        .limit(5);
-
-      if (!error && stolenItems && stolenItems.length > 0) {
+      if (!isSafeIdentifier) {
+        console.warn('[verify-item] Skipping internal registry check: identifier failed sanitization');
         providers.push({
           provider: 'SafeOrStolen Database',
-          status: 'stolen',
-          confidence: 98,
-          message: 'Item found in SafeOrStolen stolen items registry',
-          details: { matches: stolenItems.length },
+          status: 'unknown',
+          confidence: 0,
+          message: 'Identifier format not supported for registry lookup',
           responseTime: Date.now() - startTime,
         });
       } else {
-        providers.push({
-          provider: 'SafeOrStolen Database',
-          status: 'safe',
-          confidence: 85,
-          message: 'Not found in SafeOrStolen stolen items registry',
-          responseTime: Date.now() - startTime,
-        });
+        // Three separate parameterized queries, unioned in JS. No raw .or() interpolation.
+        const [bySerial, byImei, byVin] = await Promise.all([
+          supabaseClient.from('stolen_items').select('*').in('serial_number', exactCandidates).limit(5),
+          supabaseClient.from('stolen_items').select('*').in('imei', exactCandidates).limit(5),
+          supabaseClient.from('stolen_items').select('*').in('vin', exactCandidates).limit(5),
+        ]);
+
+        const seen = new Set<string>();
+        const matches: any[] = [];
+        for (const res of [bySerial, byImei, byVin]) {
+          if (res.error || !res.data) continue;
+          for (const row of res.data) {
+            // Re-verify exact normalized equality defensively
+            const hit =
+              normalize(row.serial_number) === normalizedIdentifier ||
+              normalize(row.imei) === normalizedIdentifier ||
+              normalize(row.vin) === normalizedIdentifier;
+            if (hit && !seen.has(row.id)) {
+              seen.add(row.id);
+              matches.push(row);
+            }
+          }
+        }
+
+        if (matches.length > 0 && canReturnStolen) {
+          providers.push({
+            provider: 'SafeOrStolen Database',
+            status: 'stolen',
+            confidence: 98,
+            message: 'Item found in SafeOrStolen stolen items registry',
+            details: { matches: matches.length },
+            responseTime: Date.now() - startTime,
+          });
+        } else if (matches.length > 0) {
+          providers.push({
+            provider: 'SafeOrStolen Database',
+            status: 'unknown',
+            confidence: 0,
+            message: 'Identifier too short to confirm a registry match',
+            responseTime: Date.now() - startTime,
+          });
+        } else {
+          providers.push({
+            provider: 'SafeOrStolen Database',
+            status: 'safe',
+            confidence: 85,
+            message: 'Not found in SafeOrStolen stolen items registry',
+            responseTime: Date.now() - startTime,
+          });
+        }
       }
     } catch (dbError) {
       console.error('[verify-item] Database check error:', dbError);
     }
+
+    // 1b. Check mirrored stolen registries (stolen_registry) — EXACT normalized match only
+    try {
+      if (!isSafeIdentifier) {
+        console.warn('[verify-item] Skipping stolen_registry check: identifier failed sanitization');
+      } else {
+        const { data: mirrored, error: mirrorError } = await supabaseClient
+          .from('stolen_registry')
+          .select('*')
+          .eq('serial_normalized', normalizedIdentifier)
+          .limit(5);
+
+        const hit = !mirrorError && mirrored && mirrored.length > 0 ? mirrored[0] : null;
+
+        if (hit && canReturnStolen) {
+          const providerName = hit.source === 'bikeindex' ? 'Bike Index' : String(hit.source);
+          const parts: string[] = ['Match found in mirrored stolen registry'];
+          if (hit.manufacturer) parts.push(`Manufacturer: ${hit.manufacturer}`);
+          if (hit.model) parts.push(`Model: ${hit.model}`);
+          if (hit.date_stolen) parts.push(`Date stolen: ${new Date(hit.date_stolen).toISOString().slice(0, 10)}`);
+          if (hit.location) parts.push(`Location: ${hit.location}`);
+          if (hit.source_url) parts.push(`Source: ${hit.source_url}`);
+          providers.push({
+            provider: providerName,
+            status: 'stolen',
+            confidence: 95,
+            message: parts.join(' · '),
+            details: { source: hit.source, source_url: hit.source_url },
+            responseTime: Date.now() - startTime,
+          });
+        } else if (hit) {
+          providers.push({
+            provider: 'Mirrored Stolen Registries',
+            status: 'unknown',
+            confidence: 0,
+            message: 'Identifier too short to confirm a registry match',
+            responseTime: Date.now() - startTime,
+          });
+        } else {
+          providers.push({
+            provider: 'Mirrored Stolen Registries',
+            status: 'safe',
+            confidence: 80,
+            message: 'Not found in mirrored stolen registries',
+            responseTime: Date.now() - startTime,
+          });
+        }
+      }
+    } catch (mirrorErr) {
+      console.error('[verify-item] stolen_registry check error:', mirrorErr);
+    }
+
 
     // 2. Run enhanced parallel verification with item-type-specific sources
     try {
