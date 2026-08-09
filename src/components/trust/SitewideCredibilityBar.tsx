@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Lock, CheckCircle, Award, Database, Zap } from 'lucide-react';
+import { Lock, CheckCircle, Database, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SitewideCredibilityBarProps {
