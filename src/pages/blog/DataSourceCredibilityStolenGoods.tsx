@@ -320,7 +320,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <li><strong>Serial number alterations:</strong> Sophisticated thieves remove or alter serial numbers</li>
             </ul>
             <p className="text-muted-foreground mb-8">
-              SafeOrStolen's 50+ database aggregation minimizes these gaps, but buyers should still use common sense 
+              SafeOrStolen's 100+ database aggregation minimizes these gaps, but buyers should still use common sense 
               and evaluate other red flags (price too low, seller pressure, no receipt) alongside verification results.
             </p>
 
