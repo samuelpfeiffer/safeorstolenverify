@@ -325,7 +325,7 @@ export default function UltimateMarketplaceBuyersGuide() {
               <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify Before You Buy</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks 50+ databases instantly. Verify phones, electronics, vehicles, and more in 3 seconds. 
+                SafeOrStolen checks 100+ databases instantly. Verify phones, electronics, vehicles, and more in 3 seconds. 
                 Free mobile app with barcode scanning.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

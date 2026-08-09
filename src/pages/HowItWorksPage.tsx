@@ -67,7 +67,7 @@ const HowItWorksPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>How SafeOrStolen Works</strong></p>
- <p>SafeOrStolen verifies items against 50+ databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
+ <p>SafeOrStolen verifies items against 100+ databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
  </div>
  </noscript>
 

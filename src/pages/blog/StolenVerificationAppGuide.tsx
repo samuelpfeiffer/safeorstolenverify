@@ -175,7 +175,7 @@ const StolenVerificationAppGuide = () => {
                 <strong>Point at any barcode, QR code, or serial number</strong> - the app automatically reads IMEI, serial numbers, VIN, product codes
               </li>
               <li>
-                <strong>Get results in 3 seconds</strong> - instant verification across 150+ databases including stolen property reports from all 50 states, FBI, Interpol
+                <strong>Get results in 3 seconds</strong> - instant verification across 100+ databases including stolen property reports from all 50 states, FBI, Interpol
               </li>
             </ol>
 

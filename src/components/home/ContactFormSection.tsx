@@ -268,7 +268,7 @@ export const ContactFormSection = () => {
                   <p className="font-medium text-foreground group-hover:text-primary">
                     How accurate are the results?
                   </p>
-                  <p className="text-sm text-muted-foreground">See our accuracy rates →</p>
+                  <p className="text-sm text-muted-foreground">See how verification works →</p>
                 </Link>
               </div>
             </Card>

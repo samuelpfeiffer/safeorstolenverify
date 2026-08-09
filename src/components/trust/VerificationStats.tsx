@@ -8,9 +8,9 @@ interface VerificationStatsProps {
 }
 
 const STATS = [
-  { icon: Database, value: '50+', label: 'Databases Checked', color: 'text-primary' },
+  { icon: Database, value: '100+', label: 'Databases Checked', color: 'text-primary' },
   { icon: Clock, value: '3s', label: 'Average Check Time', color: 'text-secondary' },
-  { icon: CheckCircle, value: '99.2%', label: 'Accuracy Rate', color: 'text-sos-lime' },
+  { icon: CheckCircle, value: '6', label: 'Item Categories', color: 'text-sos-lime' },
   { icon: Shield, value: '100%', label: 'Data Encrypted', color: 'text-primary' },
 ];
 

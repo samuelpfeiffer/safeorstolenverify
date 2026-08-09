@@ -321,7 +321,7 @@ export default function PhoneVerificationGuide() {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">Are free IMEI checkers reliable?</h3>
-                  <p>Free checkers often only verify carrier blacklists, missing 90% of stolen phone databases. SafeOrStolen checks 50+ databases including international theft reports that free tools don't access.</p>
+                  <p>Free checkers often only verify carrier blacklists, missing 90% of stolen phone databases. SafeOrStolen checks 100+ databases including international theft reports that free tools don't access.</p>
                 </Card>
 
                 <Card className="p-6">

@@ -42,9 +42,9 @@ export const ValueProposition: React.FC = () => {
     },
     {
       icon: Database,
-      title: '50+ Databases',
+      title: '100+ Databases',
       description: 'We check police records, insurance claims, and lost/found reports.',
-      stat: '50+',
+      stat: '100+',
       statLabel: 'data sources',
       color: 'text-primary',
       bgColor: 'bg-primary/10',

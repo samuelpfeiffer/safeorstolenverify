@@ -134,7 +134,7 @@ const AboutPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>About SafeOrStolen</strong></p>
- <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 50+ databases. The only mobile app for verification.</p>
+ <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 100+ databases. The only mobile app for verification.</p>
  </div>
  </noscript>
  

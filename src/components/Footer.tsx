@@ -64,7 +64,7 @@ const Footer = () => {
  label: 'Report Issue',
  href: '/about'
  }];
- const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
+ const trustIndicators = ["256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
  return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
  <div className="container mx-auto container-padding">
  {/* Main Footer Content */}

@@ -12,11 +12,10 @@ interface SitewideCredibilityBarProps {
  */
 export const SitewideCredibilityBar: React.FC<SitewideCredibilityBarProps> = ({ className }) => {
   const signals = [
-    { icon: Database, text: '50+ Databases', highlight: true },
+    { icon: Database, text: '100+ Databases', highlight: true },
     { icon: Zap, text: '3-Second Checks' },
     { icon: Lock, text: '256-bit SSL' },
     { icon: CheckCircle, text: '6 Item Categories' },
-    { icon: Award, text: 'SOC 2 Compliant' },
   ];
 
   return (

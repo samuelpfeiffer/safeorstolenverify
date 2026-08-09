@@ -165,7 +165,7 @@ export default function ScammerTacticsExposed() {
                 <h3 className="text-xl font-bold mb-3">Real-Time Verification Process:</h3>
                 <ol className="list-decimal list-inside space-y-2">
                   <li>Scan or enter the item's unique identifier (IMEI, VIN, serial number)</li>
-                  <li>Our AI instantly searches 50+ databases including police reports and insurance claims</li>
+                  <li>Our AI instantly searches 100+ databases including police reports and insurance claims</li>
                   <li>Receive instant SAFE or STOLEN status with confidence score</li>
                   <li>View detailed theft reports if item is flagged as stolen</li>
                   <li>Get legal protection advice if you've already purchased</li>

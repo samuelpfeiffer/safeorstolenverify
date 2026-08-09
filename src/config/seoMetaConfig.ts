@@ -155,7 +155,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/privacy': {
  title: 'Privacy Policy - SafeOrStolen Data Protection',
- description: 'SafeOrStolen privacy policy. Learn how we protect your data, handle verification searches, and comply with GDPR and SOC 2 Type II security standards.', // 155 chars
+ description: 'SafeOrStolen privacy policy. Learn how we protect your data, handle verification searches, and comply with GDPR data protection standards.', // 155 chars
  keywords: 'SafeOrStolen privacy policy, data protection, GDPR compliance',
  canonical: '/privacy'
  },

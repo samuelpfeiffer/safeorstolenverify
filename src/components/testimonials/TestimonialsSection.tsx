@@ -18,7 +18,7 @@ const testimonials = [
     role: "Property Crimes Unit",
     location: "Miami PD",
     rating: 5,
-    content: "We recommend SafeOrStolen.com to all local businesses and citizens. Their database integration is comprehensive and their accuracy rate helps us recover stolen property faster than ever before.",
+    content: "We recommend SafeOrStolen.com to all local businesses and citizens. Their database integration is comprehensive and helps us recover stolen property faster than ever before.",
     result: "Increased recovery rate by 40%",
     verified: true
   },

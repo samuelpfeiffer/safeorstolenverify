@@ -43,7 +43,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  <div className="flex items-center gap-2 mb-3">
  <Database className="h-4 w-4 text-primary" />
  <span className="text-sm font-semibold">Verified Data Sources</span>
- <span className="text-xs bg-secondary/20 text-secondary px-2 py-0.5 rounded-full">50+ Databases</span>
+ <span className="text-xs bg-secondary/20 text-secondary px-2 py-0.5 rounded-full">100+ Databases</span>
  </div>
  <div className="flex flex-wrap gap-2">
  {DATA_PARTNERS.map((partner, index) => (

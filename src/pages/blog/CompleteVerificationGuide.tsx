@@ -288,7 +288,7 @@ export default function CompleteVerificationGuide() {
               <div className="bg-primary/10 p-6 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-4">Universal Verification Platform:</h3>
                 <ul className="space-y-3 text-lg">
-                  <li><strong>One Search, 50+ Databases:</strong> Instantly checks stolen property reports from all 50 states, insurance claims, carrier blacklists, manufacturer registries</li>
+                  <li><strong>One Search, 100+ Databases:</strong> Instantly checks stolen property reports from all 50 states, insurance claims, carrier blacklists, manufacturer registries</li>
                   <li><strong>Mobile App with Barcode Scanner:</strong> Scan any identifier in 3 seconds during transactions</li>
                   <li><strong>Real-Time Results:</strong> Immediate SAFE or STOLEN status with confidence scores</li>
                   <li><strong>Detailed Reports:</strong> See exact theft reports, police case numbers, recovery info</li>

@@ -21,8 +21,8 @@ const trustBadges = [
   },
   {
     icon: Shield,
-    title: '98.7% Accuracy Rate',
-    subtitle: 'Industry-leading precision',
+    title: '6 Item Categories',
+    subtitle: 'Phones, vehicles, plates, serials, firearms, bikes',
     color: 'text-green-400',
     bgColor: 'bg-green-400/10'
   },

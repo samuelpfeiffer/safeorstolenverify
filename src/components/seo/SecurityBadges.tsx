@@ -6,9 +6,9 @@ import { Badge } from '@/components/ui/badge';
 const securityCertifications = [
   {
     icon: Shield,
-    title: "SOC 2 Type II",
-    description: "Certified for security, availability, and confidentiality",
-    badge: "Verified 2024",
+    title: "256-bit SSL",
+    description: "All traffic encrypted in transit",
+    badge: "Always On",
     color: "text-emerald-600"
   },
   {
@@ -27,9 +27,9 @@ const securityCertifications = [
   },
   {
     icon: CheckCircle,
-    title: "PCI DSS",
-    description: "Payment Card Industry Data Security Standard certified",
-    badge: "Level 1",
+    title: "Stripe Payments",
+    description: "Payments are processed by Stripe. Card details never touch our servers.",
+    badge: "Secure",
     color: "text-green-600"
   },
   {
@@ -43,9 +43,9 @@ const securityCertifications = [
 
 const trustIndicators = [
   {
-    metric: "99.7%",
-    label: "Accuracy Rate",
-    description: "Verified by independent audits"
+    metric: "6",
+    label: "Item Categories",
+    description: "Phones, vehicles, plates, serials, firearms, bikes"
   },
   {
     metric: "500K+",

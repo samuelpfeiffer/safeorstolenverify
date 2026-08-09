@@ -43,7 +43,7 @@ export const ContentMarketing: React.FC<ContentMarketingProps> = ({
     { number: "2024", label: "Most Recent Data", description: "Up-to-date theft statistics and trends" },
     { number: "$13B", label: "Annual Stolen Goods Market", description: "Why verification matters" },
     { number: "30 Sec", label: "Average Check Time", description: "Quick verification process" },
-    { number: "98.7%", label: "Accuracy Rate", description: "Reliable database matching" }
+    { number: "6", label: "Item Categories", description: "Phones, vehicles, plates, serials, firearms, bikes" }
   ];
 
   return (

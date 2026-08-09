@@ -24,8 +24,8 @@ const stats: Stat[] = [
   },
   {
     icon: Zap,
-    value: '99.9%',
-    label: 'Accuracy Rate',
+    value: '6',
+    label: 'Item Categories',
     color: 'text-neon-purple',
   },
   {

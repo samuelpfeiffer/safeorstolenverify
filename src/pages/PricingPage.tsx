@@ -13,7 +13,7 @@ const FAQS = [
  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $10/month.' },
  { q: 'Can I cancel the unlimited plan anytime?', a: 'Yes. Cancel from your dashboard with one click. Your plan continues until the end of the billing period — no fees, no hassle.' },
  { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
- { q: 'How accurate are the results?', a: 'We check 100+ sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 US state databases. ~99.2% accuracy.' },
+ { q: 'How accurate are the results?', a: 'We check 100+ sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 US state databases.' },
  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on the unlimited plan, no questions asked.' },
  { q: 'Do I need an account for pay-per-check?', a: 'No. Pay $0.99, enter your item\'s identifier, and get instant results. No account, no sign-up, no recurring charges.' },
  { q: 'How do seller verification badges work?', a: 'Seller badges are included free with the $10/month unlimited plan. Verify your item, generate a badge, and paste it into your marketplace listing. Buyers click it to see the verified result.' },

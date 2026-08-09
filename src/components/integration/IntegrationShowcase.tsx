@@ -20,7 +20,7 @@ export const IntegrationShowcase: React.FC = () => {
       icon: Code,
       title: "RESTful API",
       description: "Easy-to-integrate API with comprehensive documentation and SDKs for major platforms",
-      highlight: "99.9% Uptime"
+      highlight: "24/7 Always Available"
     },
     {
       icon: Zap,
@@ -31,8 +31,8 @@ export const IntegrationShowcase: React.FC = () => {
     {
       icon: Shield,
       title: "Enterprise Security",
-      description: "Bank-level encryption, SOC 2 compliance, and enterprise-grade data protection",
-      highlight: "SOC 2 Certified"
+      description: "Bank-level encryption and enterprise-grade data protection",
+      highlight: "256-bit SSL"
     },
     {
       icon: BarChart3,
@@ -191,8 +191,8 @@ const result = await verification.json();
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-6">
-            <div className="text-3xl font-bold text-sos-orange mb-2">99.9%</div>
-            <div className="text-gray-300">API Uptime</div>
+            <div className="text-3xl font-bold text-sos-orange mb-2">24/7</div>
+            <div className="text-gray-300">Always Available</div>
           </div>
           <div className="p-6">
             <div className="text-3xl font-bold text-sos-lime mb-2">&lt;300ms</div>

@@ -171,7 +171,7 @@ export default function ForBusinesses() {
 
  const features = [
  { icon: Code, title: '1-Line Widget Integration', description: 'Copy-paste one line of HTML. No developer required. Works on any website, CMS, or POS system.' },
- { icon: Lock, title: 'REST API Access', description: 'Full RESTful API with 99.9% uptime SLA, webhooks, and SDKs for JavaScript, Python, PHP, and Ruby.' },
+ { icon: Lock, title: 'REST API Access', description: 'Full RESTful API with 24/7 availability, webhooks, and SDKs for JavaScript, Python, PHP, and Ruby.' },
  { icon: Users, title: 'Multi-Location Support', description: 'Unlimited employee accounts per location. Role-based permissions. Centralized admin dashboard.' },
  { icon: FileCheck, title: 'Compliance Certificates', description: 'PDF compliance certificates with timestamped cryptographic hashes. Legal proof of due diligence.' },
  { icon: BarChart3, title: 'Analytics Dashboard', description: 'Real-time verification stats, trend analysis, and monthly compliance reports exportable to CSV.' },
@@ -542,7 +542,7 @@ export default function ForBusinesses() {
  </CardHeader>
  <CardContent className="space-y-4">
  <ul className="space-y-3">
- {['Everything in Professional', 'Dedicated account manager', '99.9% uptime SLA', 'White-label option', 'Unlimited locations', 'Volume discounts'].map(f => (
+ {['Everything in Professional', 'Dedicated account manager', '24/7 availability', 'White-label option', 'Unlimited locations', 'Volume discounts'].map(f => (
  <li key={f} className="flex items-center gap-2 text-sm">
  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />{f}
  </li>

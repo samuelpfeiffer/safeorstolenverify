@@ -33,7 +33,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  '/blog': 'Expert guides on checking if phones, cars, bikes are stolen. Learn IMEI verification, VIN checks, and how to stay safe on Facebook Marketplace and eBay.', // 159 chars
  '/about': 'SafeOrStolen protects buyers and sellers from stolen goods. Over $15 billion in stolen items sold annually. Our verification service stops theft globally.', // 157 chars
  '/faq': 'Frequently asked questions about SafeOrStolen. Learn about our verification process, pricing, databases checked, and how to protect yourself from theft.', // 156 chars
- '/privacy': 'SafeOrStolen privacy policy. Learn how we protect your data, handle verification searches, and comply with GDPR and SOC 2 Type II security standards.', // 155 chars
+ '/privacy': 'SafeOrStolen privacy policy. Learn how we protect your data, handle verification searches, and comply with GDPR data protection standards.', // 155 chars
  '/terms': 'Terms of service for SafeOrStolen verification platform. User agreements, refund policy, acceptable use guidelines, and legal disclaimers for our service.', // 157 chars
  '/report-stolen': 'Report stolen phones, vehicles, electronics, or firearms to SafeOrStolen database. Help prevent resale of stolen goods on marketplaces and pawn shops.', // 158 chars
  '/app': 'Download the SafeOrStolen mobile app for iOS and Android. Verify IMEI, VIN, serial numbers on-the-go. The only stolen item checker with a mobile app.', // 155 chars
