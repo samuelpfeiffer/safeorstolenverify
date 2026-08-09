@@ -6,24 +6,6 @@ import { Badge } from '@/components/ui/badge';
 export const SecurityCertificates: React.FC = () => {
   const certificates = [
     {
-      icon: Shield,
-      name: "SOC 2 Type II",
-      issuer: "AICPA",
-      status: "Active",
-      validUntil: "Dec 2025",
-      description: "Service Organization Control 2 certification for security, availability, and confidentiality",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      icon: Award,
-      name: "PCI DSS Level 1",
-      issuer: "PCI SSC",
-      status: "Compliant",
-      validUntil: "Jun 2025",
-      description: "Payment Card Industry Data Security Standard compliance",
-      color: "from-emerald-500 to-emerald-600"
-    },
-    {
       icon: CheckCircle2,
       name: "GDPR Compliant",
       issuer: "EU Commission",
@@ -140,8 +122,8 @@ export const SecurityCertificates: React.FC = () => {
                 <div className="text-sm text-green-700 dark:text-green-300">Security Monitoring</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400">99.9%</div>
-                <div className="text-sm text-green-700 dark:text-green-300">Uptime Guarantee</div>
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400">24/7</div>
+                <div className="text-sm text-green-700 dark:text-green-300">Always Available</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600 dark:text-green-400">Zero</div>

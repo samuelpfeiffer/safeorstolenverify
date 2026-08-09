@@ -15,14 +15,6 @@ import {
 
 const securityCertifications = [
   {
-    name: "SOC 2 Type II",
-    provider: "AICPA",
-    status: "Certified",
-    description: "Audited security, availability, and confidentiality controls",
-    logo: null,
-    verificationUrl: "#"
-  },
-  {
     name: "GDPR Compliant",
     provider: "EU",
     status: "Verified",

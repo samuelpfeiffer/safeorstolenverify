@@ -225,16 +225,7 @@ export default function VerificationMethodology() {
                 Our AI models are trained on 15 million verified theft reports, 8 million legitimate transactions, and 3 million fraud cases. We continuously retrain models monthly to adapt to new scammer tactics and theft patterns.
               </p>
 
-              <p className="text-lg mb-4">
-                <strong>Model Accuracy Rates (Validated Against Ground Truth Data):</strong>
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-lg mb-6">
-                <li>Stolen Item Detection: 97.3% accuracy</li>
-                <li>False Positive Rate: 2.1%</li>
-                <li>False Negative Rate: 0.6%</li>
-                <li>Confidence Score Calibration: 95.8% alignment with actual outcomes</li>
-              </ul>
-            </section>
+              </section>
 
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Confidence Scoring System Explained</h2>
@@ -304,21 +295,6 @@ export default function VerificationMethodology() {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">97.3%</div>
-                  <p className="text-lg font-bold">Overall Accuracy</p>
-                  <p className="text-muted-foreground">Validated against ground truth data</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">99.4%</div>
-                  <p className="text-lg font-bold">STOLEN Detection Rate</p>
-                  <p className="text-muted-foreground">When item is actually stolen</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">2.1%</div>
-                  <p className="text-lg font-bold">False Positive Rate</p>
-                  <p className="text-muted-foreground">Legitimate items flagged as stolen</p>
-                </Card>
-                <Card className="p-6 text-center">
                   <div className="text-4xl font-bold text-primary mb-2">3 sec</div>
                   <p className="text-lg font-bold">Average Verification Time</p>
                   <p className="text-muted-foreground">Real-time transaction verification</p>
@@ -367,7 +343,7 @@ export default function VerificationMethodology() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Start Verifying Today</h2>
               <p className="text-lg mb-6">
-                Now that you understand exactly how SafeOrStolen works, you can verify items with confidence knowing our methodology is transparent, accurate, and continuously improving.
+                Now that you understand exactly how SafeOrStolen works, you can verify items with confidence knowing our methodology is transparent and continuously improving.
               </p>
 
               <div className="bg-primary/10 p-6 rounded-lg">

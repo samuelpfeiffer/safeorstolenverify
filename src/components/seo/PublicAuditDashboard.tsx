@@ -18,7 +18,6 @@ import {
 const auditStats = {
  totalVerifications: 254827,
  stolenItemsFound: 3241,
- accuracyRate: 98.7,
  averageResponseTime: 1.8,
  databasesChecked: 15,
  activeDatabases: 14,
@@ -97,19 +96,6 @@ export const PublicAuditDashboard: React.FC = () => {
  <div className="text-sm font-semibold">Stolen Items Found</div>
  <div className="text-xs text-muted-foreground mt-1">
  {((auditStats.stolenItemsFound / auditStats.totalVerifications) * 100).toFixed(2)}% of checks
- </div>
- </CardContent>
- </Card>
-
- <Card className="text-center border-green-200">
- <CardContent className="p-6">
- <CheckCircle className="h-8 w-8 text-green-600 mx-auto mb-2" />
- <div className="text-2xl font-bold text-green-600 mb-1">
- {auditStats.accuracyRate}%
- </div>
- <div className="text-sm font-semibold">Accuracy Rate</div>
- <div className="text-xs text-muted-foreground mt-1">
- Verified against known data
  </div>
  </CardContent>
  </Card>
@@ -231,16 +217,14 @@ export const PublicAuditDashboard: React.FC = () => {
  <div>
  <div className="flex justify-between text-sm mb-2">
  <span>Overall System Health</span>
- <span>98.9%</span>
+ <span>Operational</span>
  </div>
- <Progress value={98.9} className="h-2" />
  </div>
  <div>
  <div className="flex justify-between text-sm mb-2">
  <span>Database Connectivity</span>
- <span>99.2%</span>
+ <span>Operational</span>
  </div>
- <Progress value={99.2} className="h-2" />
  </div>
  <div>
  <div className="flex justify-between text-sm mb-2">
