@@ -152,7 +152,6 @@ export default function TransparencyPage() {
  <ul className="text-sm text-muted-foreground space-y-1">
  <li>• TLS 1.3 encryption in transit</li>
  <li>• AES-256 encryption at rest</li>
- <li>• SOC 2 Type II compliant infrastructure</li>
  </ul>
  </CardContent>
  </Card>

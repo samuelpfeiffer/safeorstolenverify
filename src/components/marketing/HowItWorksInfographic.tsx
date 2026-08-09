@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ className = '' }) => {
  const stats = [
  { value: '50M+', label: 'ITEMS IN DATABASE' },
- { value: '99.2%', label: 'ACCURACY RATE' },
+ { value: '6', label: 'ITEM CATEGORIES' },
  { value: '30sec', label: 'VERIFICATION TIME' },
  ];
 
@@ -60,7 +60,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
 
  const benefits = [
  'Backed by law enforcement and insurance companies',
- 'Real-time verification with 99.2% accuracy',
+ 'Real-time verification across 100+ databases',
  'Protect yourself from legal consequences',
  'Avoid financial loss from blacklisted items',
  'Perfect for Facebook Marketplace, Craigslist, eBay',

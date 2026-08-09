@@ -24,8 +24,8 @@ export const TrustSignalsSection = () => {
  },
  {
  icon: Award,
- title: "SOC 2 Type II Certified",
- description: "Enterprise-grade security compliance",
+ title: "6 Item Categories",
+ description: "Phones, vehicles, plates, serials, firearms, bikes",
  color: "text-primary"
  }
  ];

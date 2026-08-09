@@ -280,10 +280,6 @@ const Footer = () => {
  <span>256-bit SSL</span>
  </div>
  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
- <Award className="h-3.5 w-3.5 text-sos-orange" />
- <span>SOC 2 Compliant</span>
- </div>
- <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
  <Globe className="h-3.5 w-3.5 text-primary" />
  <span>All 50 States</span>
  </div>

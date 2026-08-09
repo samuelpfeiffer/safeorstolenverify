@@ -476,8 +476,8 @@ export default function DataSourcesPage() {
  </Card>
  <Card>
  <CardContent className="pt-6 text-center">
- <div className="text-3xl font-bold text-primary mb-2">99.2%</div>
- <p className="font-medium mb-1">Verification Accuracy</p>
+ <div className="text-3xl font-bold text-primary mb-2">6</div>
+ <p className="font-medium mb-1">Item Categories</p>
  <p className="text-sm text-muted-foreground">Cross-referencing 100+ sources eliminates false positives</p>
  </CardContent>
  </Card>

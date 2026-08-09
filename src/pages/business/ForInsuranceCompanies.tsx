@@ -87,7 +87,7 @@ const ForInsuranceCompanies = () => {
  "Claims management system plugins",
  "Custom report generation",
  "Audit trail documentation",
- "SOC 2 compliance available"
+ "Audit-ready verification records"
  ]
  }}
  pricingNote="Enterprise pricing based on claim volume. Contact our sales team for a custom quote and pilot program."
@@ -106,7 +106,7 @@ const ForInsuranceCompanies = () => {
  },
  {
  question: "Is the API suitable for high-volume claims?",
- answer: "Absolutely. Our enterprise API handles millions of requests with 99.9% uptime SLA and dedicated support."
+ answer: "Absolutely. Our enterprise API is built for high volume, with 24/7 availability and dedicated support."
  }
  ]}
  ctaTitle="Reduce Claim Fraud Today"
