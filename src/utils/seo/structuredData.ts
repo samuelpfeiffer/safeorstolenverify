@@ -344,7 +344,7 @@ export const createFAQSchema = () => ({
  "name": "How does SafeOrStolen use AI and machine learning for fraud detection?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen uses advanced AI and machine learning technology for fraud detection: 1) Predictive analytics identifies suspicious patterns across 50+ databases. 2) Machine learning algorithms detect fraud indicators in real-time. 3) Computer vision technology assists with serial number recognition. 4) Natural language processing analyzes stolen item reports. Our AI-powered verification provides 99.7% accuracy, making us a leader in circular economy trust infrastructure for the $367B global secondhand market."
+ "text": "SafeOrStolen uses advanced AI and machine learning technology for fraud detection: 1) Predictive analytics identifies suspicious patterns across 100+ databases. 2) Machine learning algorithms detect fraud indicators in real-time. 3) Computer vision technology assists with serial number recognition. 4) Natural language processing analyzes stolen item reports. Our AI-powered verification makes us a leader in circular economy trust infrastructure for the $367B global secondhand market."
  }
  },
  {

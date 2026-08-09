@@ -35,7 +35,7 @@ export const EnhancedCTASection: React.FC = () => {
         text: "View Plans",
         href: "/pricing"
       },
-      highlight: "99.9% Uptime"
+      highlight: "24/7 Always Available"
     }
   ];
 

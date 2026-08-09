@@ -30,7 +30,7 @@ const FAQPage = () => {
  },
  {
  question: "How accurate is SafeOrStolen.com's verification process?",
- answer: "Our verification system maintains a 99.7% accuracy rate, verified through independent third-party audits. We cross-reference multiple community theft registries including stolen property reports from all 50 states, FBI databases, and international stolen property registries to ensure comprehensive coverage."
+ answer: "We cross-reference multiple community theft registries including stolen property reports from all 50 states, FBI databases, and international stolen property registries to ensure comprehensive coverage."
  },
  {
  question: "What databases do you search when checking items?",
@@ -80,7 +80,7 @@ const FAQPage = () => {
  },
  {
  question: "How do you protect my personal information?",
- answer: "We use bank-level 256-bit SSL encryption, maintain SOC 2 Type II compliance, and are fully GDPR compliant. All data transmission is encrypted and we never store personal information linked to searches."
+ answer: "We use bank-level 256-bit SSL encryption and are fully GDPR compliant. Payments are processed by Stripe. Card details never touch our servers. All data transmission is encrypted and we never store personal information linked to searches."
  },
  {
  question: "Who has access to the search results?",

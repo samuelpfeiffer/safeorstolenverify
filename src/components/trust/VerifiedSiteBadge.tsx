@@ -75,16 +75,8 @@ export const VerifiedSiteBadge: React.FC<VerifiedSiteBadgeProps> = ({
               <span className="text-xs font-medium text-green-800 dark:text-green-200">256-bit SSL/TLS</span>
             </div>
             <div className="flex items-center gap-2">
-              <Award className="h-4 w-4 text-green-600 dark:text-green-400" />
-              <span className="text-xs font-medium text-green-800 dark:text-green-200">SOC 2 Certified</span>
-            </div>
-            <div className="flex items-center gap-2">
               <Shield className="h-4 w-4 text-green-600 dark:text-green-400" />
               <span className="text-xs font-medium text-green-800 dark:text-green-200">GDPR Compliant</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Verified className="h-4 w-4 text-green-600 dark:text-green-400" />
-              <span className="text-xs font-medium text-green-800 dark:text-green-200">PCI DSS Level 1</span>
             </div>
           </div>
         </div>

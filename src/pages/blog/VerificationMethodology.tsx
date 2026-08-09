@@ -12,7 +12,7 @@ export default function VerificationMethodology() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How SafeOrStolen Verification Works: Our Methodology Explained",
-    "description": "Complete transparency about SafeOrStolen's verification methodology, data sources, AI analysis, and accuracy rates. Learn how we determine if items are stolen.",
+    "description": "Complete transparency about SafeOrStolen's verification methodology, data sources, and AI analysis. Learn how we determine if items are stolen.",
     "author": {
       "@type": "Organization",
       "name": "SafeOrStolen"
@@ -33,8 +33,8 @@ export default function VerificationMethodology() {
     <>
       <PageSEO
         title="Verification Methodology: How SafeOrStolen Works | Data Sources & Accuracy"
-        description="Complete transparency about SafeOrStolen's verification methodology, data sources, AI analysis, and accuracy rates. Learn how we verify stolen items."
-        keywords="verification methodology, how SafeOrStolen works, data sources, AI verification, accuracy rates, stolen item database"
+        description="Complete transparency about SafeOrStolen's verification methodology, data sources, and AI analysis. Learn how we verify stolen items."
+        keywords="verification methodology, how SafeOrStolen works, data sources, AI verification, stolen item database"
         canonical="/blog/verification-methodology"
         structuredData={structuredData}
       />
@@ -54,7 +54,7 @@ export default function VerificationMethodology() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Our Commitment to Transparency</h2>
               <p className="text-lg mb-4">
-                At SafeOrStolen, we believe users deserve complete transparency about how our verification system works. This comprehensive guide explains our data sources, AI analysis methodology, accuracy rates, and quality assurance processes.
+                At SafeOrStolen, we believe users deserve complete transparency about how our verification system works. This comprehensive guide explains our data sources, AI analysis methodology, and quality assurance processes.
               </p>
               <p className="text-lg mb-4">
                 Unlike competitors who hide their methods behind "proprietary algorithms," we provide full transparency so you can make informed decisions about trusting our verification results.
@@ -68,7 +68,7 @@ export default function VerificationMethodology() {
                 <h3 className="text-xl font-bold mb-4">What Happens When You Submit an IMEI, VIN, or Serial Number:</h3>
                 <ol className="list-decimal list-inside space-y-3 text-lg">
                   <li><strong>Input Validation:</strong> Our system validates the identifier format (15-digit IMEI, 17-character VIN, etc.)</li>
-                  <li><strong>Parallel Database Queries:</strong> We simultaneously query 50+ databases in under 1 second</li>
+                  <li><strong>Parallel Database Queries:</strong> We simultaneously query 100+ databases in under 1 second</li>
                   <li><strong>AI Pattern Recognition:</strong> Machine learning models analyze patterns, anomalies, and risk indicators</li>
                   <li><strong>Confidence Scoring:</strong> Our AI assigns a confidence score (0-100%) based on data quality and consistency</li>
                   <li><strong>Result Generation:</strong> You receive instant SAFE, STOLEN, or INCONCLUSIVE status with detailed reports</li>
@@ -96,7 +96,7 @@ export default function VerificationMethodology() {
                         <li><strong>International Interpol Database:</strong> Global stolen goods registry for cross-border verification</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Accuracy: 98.2% | Update Frequency: Real-time (within 15 minutes of report filing)
+                        Update Frequency: Real-time (within 15 minutes of report filing)
                       </p>
                     </div>
                   </div>
@@ -113,7 +113,7 @@ export default function VerificationMethodology() {
                         <li><strong>ISO ClaimSearch:</strong> Nationwide insurance claim verification system</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Accuracy: 96.7% | Update Frequency: Daily batch updates
+                        Update Frequency: Daily batch updates
                       </p>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export default function VerificationMethodology() {
                         <li><strong>SafeOrStolen User Reports:</strong> Community-contributed theft reports with verification</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Accuracy: 89.4% | Update Frequency: Hourly aggregation
+                        Update Frequency: Hourly aggregation
                       </p>
                     </div>
                   </div>
@@ -149,7 +149,7 @@ export default function VerificationMethodology() {
                         <li><strong>Find My iPhone/Android:</strong> Lost mode and activation lock status checks</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Accuracy: 99.1% | Update Frequency: Real-time API access
+                        Update Frequency: Real-time API access
                       </p>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ export default function VerificationMethodology() {
                         <li><strong>NICB VINCheck:</strong> Free theft and total loss database</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Accuracy: 97.8% | Update Frequency: Daily updates from state DMVs
+                        Update Frequency: Daily updates from state DMVs
                       </p>
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export default function VerificationMethodology() {
                         <li><strong>Stolen Camera Database:</strong> Serial numbers for cameras and lenses</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Accuracy: 94.3% | Update Frequency: Weekly updates
+                        Update Frequency: Weekly updates
                       </p>
                     </div>
                   </div>
@@ -225,16 +225,7 @@ export default function VerificationMethodology() {
                 Our AI models are trained on 15 million verified theft reports, 8 million legitimate transactions, and 3 million fraud cases. We continuously retrain models monthly to adapt to new scammer tactics and theft patterns.
               </p>
 
-              <p className="text-lg mb-4">
-                <strong>Model Accuracy Rates (Validated Against Ground Truth Data):</strong>
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-lg mb-6">
-                <li>Stolen Item Detection: 97.3% accuracy</li>
-                <li>False Positive Rate: 2.1%</li>
-                <li>False Negative Rate: 0.6%</li>
-                <li>Confidence Score Calibration: 95.8% alignment with actual outcomes</li>
-              </ul>
-            </section>
+              </section>
 
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Confidence Scoring System Explained</h2>
@@ -304,21 +295,6 @@ export default function VerificationMethodology() {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">97.3%</div>
-                  <p className="text-lg font-bold">Overall Accuracy</p>
-                  <p className="text-muted-foreground">Validated against ground truth data</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">99.4%</div>
-                  <p className="text-lg font-bold">STOLEN Detection Rate</p>
-                  <p className="text-muted-foreground">When item is actually stolen</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">2.1%</div>
-                  <p className="text-lg font-bold">False Positive Rate</p>
-                  <p className="text-muted-foreground">Legitimate items flagged as stolen</p>
-                </Card>
-                <Card className="p-6 text-center">
                   <div className="text-4xl font-bold text-primary mb-2">3 sec</div>
                   <p className="text-lg font-bold">Average Verification Time</p>
                   <p className="text-muted-foreground">Real-time transaction verification</p>
@@ -341,7 +317,7 @@ export default function VerificationMethodology() {
               </div>
 
               <p className="text-lg">
-                We believe in complete transparency about our capabilities and limitations. No verification system is 100% perfect, but our 97.3% accuracy rate makes SafeOrStolen the most reliable stolen goods verification platform available.
+                We believe in complete transparency about our capabilities and limitations. No verification system is 100% perfect, which is why we publish our data sources and review process instead of a headline accuracy number.
               </p>
             </section>
 
@@ -367,7 +343,7 @@ export default function VerificationMethodology() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Start Verifying Today</h2>
               <p className="text-lg mb-6">
-                Now that you understand exactly how SafeOrStolen works, you can verify items with confidence knowing our methodology is transparent, accurate, and continuously improving.
+                Now that you understand exactly how SafeOrStolen works, you can verify items with confidence knowing our methodology is transparent and continuously improving.
               </p>
 
               <div className="bg-primary/10 p-6 rounded-lg">
@@ -375,7 +351,6 @@ export default function VerificationMethodology() {
                 <ul className="list-disc list-inside space-y-2 mb-6">
                   <li>2 free verifications - no credit card required</li>
                   <li>3-second instant results</li>
-                  <li>97.3% accuracy guarantee</li>
                   <li>Mobile app with barcode scanning</li>
                   <li>Legal protection documentation</li>
                 </ul>

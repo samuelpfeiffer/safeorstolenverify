@@ -110,7 +110,7 @@ export default function FeaturesPage() {
  </li>
  <li className="flex items-center gap-2">
  <CheckCircle className="h-4 w-4 text-green-500" />
- 99.9% uptime
+ 24/7 always available
  </li>
  </ul>
  </CardContent>

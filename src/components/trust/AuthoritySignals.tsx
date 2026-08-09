@@ -8,7 +8,6 @@ interface AuthoritySignalsProps {
 }
 
 const AUTHORITY_SIGNALS = [
-  { icon: Shield, label: 'SOC 2 Compliant', description: 'Enterprise security standards' },
   { icon: Lock, label: '256-bit SSL', description: 'Bank-grade encryption' },
   { icon: Award, label: '100+ Databases', description: 'Law enforcement and insurance sources' },
   { icon: Building, label: 'US-Based', description: 'Peoria, Arizona headquarters' },

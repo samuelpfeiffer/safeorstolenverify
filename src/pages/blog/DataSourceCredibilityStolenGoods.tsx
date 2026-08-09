@@ -256,7 +256,7 @@ export default function DataSourceCredibilityStolenGoods() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">How SafeOrStolen Aggregates Data</h2>
             <p className="text-muted-foreground mb-4">
-              SafeOrStolen checks 50+ databases simultaneously, prioritizing Tier 1 sources for maximum accuracy. 
+              SafeOrStolen checks 100+ databases simultaneously, prioritizing Tier 1 sources for maximum accuracy. 
               Our verification process includes:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
@@ -280,7 +280,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">What data sources do they access?</h3>
                 <p className="text-muted-foreground">
-                  Demand specifics. "50+ databases" is meaningless without naming them. Do they have stolen property reports from all 50 states? 
+                  Demand specifics. A raw database count is meaningless without naming the sources. Do they have stolen property reports from all 50 states? 
                   carrier and manufacturer blacklists? State DMVs? If they can't or won't tell you, assume limited coverage.
                 </p>
               </div>
@@ -320,7 +320,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <li><strong>Serial number alterations:</strong> Sophisticated thieves remove or alter serial numbers</li>
             </ul>
             <p className="text-muted-foreground mb-8">
-              SafeOrStolen's 50+ database aggregation minimizes these gaps, but buyers should still use common sense 
+              SafeOrStolen's 100+ database aggregation minimizes these gaps, but buyers should still use common sense 
               and evaluate other red flags (price too low, seller pressure, no receipt) alongside verification results.
             </p>
 

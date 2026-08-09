@@ -31,7 +31,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'How accurate is the stolen phone database?',
- a: 'We check against multiple databases including carrier and theft databases and police reports. Our accuracy rate is over 99%.'
+ a: 'We check against multiple databases including carrier and theft databases and police reports.'
  }
  ]}
  />

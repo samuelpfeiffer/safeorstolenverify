@@ -68,7 +68,7 @@ export default function TransparencyPage() {
 
  <div className="bg-muted p-6 rounded-lg my-6 not-prose">
  <h4 className="font-bold mb-2">Data Accuracy Commitment</h4>
- <p className="text-muted-foreground">Our databases are updated every 15 minutes. We maintain 99.2% accuracy based on independent audits. When discrepancies are found, we investigate within 24 hours.</p>
+ <p className="text-muted-foreground">Our databases are updated every 15 minutes. When discrepancies are found, we investigate within 24 hours.</p>
  </div>
  </div>
  </div>
@@ -152,7 +152,6 @@ export default function TransparencyPage() {
  <ul className="text-sm text-muted-foreground space-y-1">
  <li>• TLS 1.3 encryption in transit</li>
  <li>• AES-256 encryption at rest</li>
- <li>• SOC 2 Type II compliant infrastructure</li>
  </ul>
  </CardContent>
  </Card>

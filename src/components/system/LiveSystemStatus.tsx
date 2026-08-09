@@ -84,7 +84,7 @@ const systemComponents: SystemComponent[] = [
 const currentMetrics: SystemMetric[] = [
  {
  label: 'Overall Uptime',
- value: '99.8%',
+ value: '24/7',
  trend: 'stable',
  icon: CheckCircle
  },
@@ -315,14 +315,12 @@ export const LiveSystemStatus: React.FC = () => {
  <Progress value={85} className="h-2" />
  <div className="flex justify-between items-center">
  <span className="text-sm">Database Connectivity</span>
- <span className="font-semibold">99.8%</span>
+ <span className="font-semibold">Operational</span>
  </div>
- <Progress value={99.8} className="h-2" />
  <div className="flex justify-between items-center">
  <span className="text-sm">Successful Verifications</span>
- <span className="font-semibold">99.2%</span>
+ <span className="font-semibold">Operational</span>
  </div>
- <Progress value={99.2} className="h-2" />
  </div>
  </CardContent>
  </Card>

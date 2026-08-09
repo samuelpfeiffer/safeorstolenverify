@@ -166,7 +166,7 @@ export const ContentClaritySection: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <Clock className="h-8 w-8 text-sos-orange mx-auto mb-2" />
-              <div className="font-semibold">99.9% Uptime</div>
+              <div className="font-semibold">24/7 Always Available</div>
               <div className="text-sm text-muted-foreground">Reliable service</div>
             </div>
             <div className="text-center">

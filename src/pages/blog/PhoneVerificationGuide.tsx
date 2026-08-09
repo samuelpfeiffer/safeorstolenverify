@@ -321,12 +321,12 @@ export default function PhoneVerificationGuide() {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">Are free IMEI checkers reliable?</h3>
-                  <p>Free checkers often only verify carrier blacklists, missing 90% of stolen phone databases. SafeOrStolen checks 50+ databases including international theft reports that free tools don't access.</p>
+                  <p>Free checkers often only verify carrier blacklists, missing 90% of stolen phone databases. SafeOrStolen checks 100+ databases including international theft reports that free tools don't access.</p>
                 </Card>
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">How long does verification take?</h3>
-                  <p>SafeOrStolen provides instant results in 3 seconds or less. Our AI processes 50+ database queries simultaneously while you're completing the transaction.</p>
+                  <p>SafeOrStolen provides instant results in 3 seconds or less. Our AI processes 100+ database queries simultaneously while you're completing the transaction.</p>
                 </Card>
 
                 <Card className="p-6">

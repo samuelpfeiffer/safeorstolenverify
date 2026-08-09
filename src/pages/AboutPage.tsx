@@ -79,7 +79,7 @@ const AboutPage = () => {
  {
  step: 3,
  title: "AI-Powered Analysis",
- description: "Our algorithms analyze patterns and flag potential matches with 99.7% accuracy"
+ description: "Our algorithms analyze patterns and flag potential matches across 100+ databases"
  },
  {
  step: 4,
@@ -134,7 +134,7 @@ const AboutPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>About SafeOrStolen</strong></p>
- <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 50+ databases. The only mobile app for verification.</p>
+ <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 100+ databases. The only mobile app for verification.</p>
  </div>
  </noscript>
  
@@ -158,8 +158,8 @@ const AboutPage = () => {
  <div className="flex flex-wrap justify-center gap-3">
  <Badge variant="secondary" className="px-3 py-1">
  <Shield className="h-4 w-4 mr-2" />
- 99.7% Accuracy
- </Badge>
+ 6 Item Categories
+              </Badge>
  <Badge variant="secondary" className="px-3 py-1">
  <Users className="h-4 w-4 mr-2" />
  5,000+ Checks Processed
@@ -252,8 +252,8 @@ const AboutPage = () => {
  </Card>
  <Card className="p-6 text-center">
  <CheckCircle className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2 text-foreground">99.7% Accuracy</h3>
- <p className="text-muted-foreground text-sm">Third-party verified</p>
+ <h3 className="font-bold mb-2 text-foreground">6 Item Categories</h3>
+ <p className="text-muted-foreground text-sm">Phones, vehicles, plates, serials, firearms, bikes</p>
  </Card>
  <Card className="p-6 text-center">
  <Lock className="h-10 w-10 text-primary mx-auto mb-3" />

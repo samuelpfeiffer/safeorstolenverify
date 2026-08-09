@@ -24,8 +24,8 @@ export const TrustSignalsSection = () => {
  },
  {
  icon: Award,
- title: "SOC 2 Type II Certified",
- description: "Enterprise-grade security compliance",
+ title: "6 Item Categories",
+ description: "Phones, vehicles, plates, serials, firearms, bikes",
  color: "text-primary"
  }
  ];
@@ -98,14 +98,6 @@ export const TrustSignalsSection = () => {
  <Badge variant="outline" className="px-4 py-2">
  <Lock className="h-4 w-4 mr-2" />
  GDPR
- </Badge>
- <Badge variant="outline" className="px-4 py-2">
- <Shield className="h-4 w-4 mr-2" />
- SOC 2
- </Badge>
- <Badge variant="outline" className="px-4 py-2">
- <Lock className="h-4 w-4 mr-2" />
- PCI DSS
  </Badge>
  </div>
  </div>

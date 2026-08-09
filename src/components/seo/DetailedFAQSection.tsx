@@ -42,7 +42,7 @@ export const DetailedFAQSection: React.FC = () => {
  },
  {
  question: "How accurate are your stolen item checks?",
- answer: "Our system has 99.2% accuracy by cross-referencing multiple authoritative databases. We check police reports, insurance claims, manufacturer databases, and international networks. However, remember that a 'clean' result doesn't guarantee the item isn't stolen - it means it's not reported in available databases.",
+ answer: "Our system cross-references multiple authoritative databases. We check police reports, insurance claims, manufacturer databases, and international networks. However, remember that a 'clean' result doesn't guarantee the item isn't stolen - it means it's not reported in available databases.",
  searches: ["stolen item checker accuracy", "how reliable is verification", "database accuracy"]
  }
  ]

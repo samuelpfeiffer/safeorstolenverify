@@ -65,7 +65,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-primary" />
-                  <span>99.2% Accuracy Rate</span>
+                  <span>6 Item Categories</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-primary" />
@@ -140,13 +140,10 @@ export const ConversionOptimizedFooter: React.FC = () => {
             </div>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
               <Badge variant="outline">
-                SOC 2 Compliant
-              </Badge>
-              <Badge variant="outline">
                 GDPR Ready
               </Badge>
               <Badge variant="outline">
-                99.9% Uptime
+                24/7 Always Available
               </Badge>
             </div>
           </div>

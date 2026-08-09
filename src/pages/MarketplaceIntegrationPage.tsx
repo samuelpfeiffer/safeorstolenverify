@@ -64,7 +64,7 @@ export default function MarketplaceIntegrationPage() {
  </li>
  <li className="flex items-center gap-2">
  <CheckCircle className="h-4 w-4 text-green-500" />
- 99.9% uptime SLA
+ 24/7 always-available API
  </li>
  <li className="flex items-center gap-2">
  <CheckCircle className="h-4 w-4 text-green-500" />
@@ -232,7 +232,7 @@ export default function MarketplaceIntegrationPage() {
  <div className="flex items-start gap-3">
  <CheckCircle className="h-6 w-6 text-primary mt-1" />
  <div>
- <h4 className="font-bold">99.9% Uptime SLA</h4>
+ <h4 className="font-bold">24/7 Always Available</h4>
  <p className="text-sm text-muted-foreground">Enterprise-grade infrastructure with redundant systems and 24/7 monitoring.</p>
  </div>
  </div>

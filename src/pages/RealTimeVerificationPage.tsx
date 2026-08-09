@@ -63,8 +63,8 @@ export default function RealTimeVerificationPage() {
  </Card>
  <Card className="text-center">
  <CardContent className="pt-6">
- <div className="text-4xl font-bold text-primary mb-2">99.9%</div>
- <p className="text-sm text-muted-foreground">Uptime</p>
+ <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+ <p className="text-sm text-muted-foreground">Always Available</p>
  </CardContent>
  </Card>
  <Card className="text-center">

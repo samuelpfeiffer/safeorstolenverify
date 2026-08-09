@@ -94,7 +94,7 @@ export const MobileOptimization: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[
               { value: '< 2s', label: 'Load Time' },
-              { value: '99.9%', label: 'Uptime' },
+              { value: '24/7', label: 'Always Available' },
               { value: '< 500KB', label: 'Page Size' },
               { value: '100', label: 'Performance Score' }
             ].map((stat, index) => (

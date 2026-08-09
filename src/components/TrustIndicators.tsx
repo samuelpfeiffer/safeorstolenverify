@@ -8,9 +8,9 @@ export const TrustIndicators: React.FC = () => {
     description: 'Including police, insurance, and manufacturer databases'
   }, {
     icon: CheckCircle,
-    value: '99.2%',
-    label: 'Accuracy Rate',
-    description: 'Verified against law enforcement reports'
+    value: '6',
+    label: 'Item Categories',
+    description: 'Phones, vehicles, plates, serials, firearms, bikes'
   }, {
     icon: Clock,
     value: '<30sec',

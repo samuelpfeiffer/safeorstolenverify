@@ -38,8 +38,8 @@ const verificationSteps = [
 
 const transparencyMetrics = [
  {
- metric: "99.7%",
- label: "Database Uptime",
+ metric: "24/7",
+ label: "Always Available",
  description: "Continuous access to verification sources"
  },
  {

@@ -57,7 +57,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",
-            answer: "Yes, SafeOrStolen works across all 50 US states plus international coverage. Like Carfax provides nationwide vehicle reports, SafeOrStolen provides nationwide and international verification for all item types. Access to 150+ databases globally."
+            answer: "Yes, SafeOrStolen works across all 50 US states plus international coverage. Like Carfax provides nationwide vehicle reports, SafeOrStolen provides nationwide and international verification for all item types. Access to 100+ databases globally."
           }
         ]}
       />
@@ -195,7 +195,7 @@ const LikeCarfaxForPhones = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Shows theft status</strong> across 150+ databases</span>
+                    <span><strong>Shows theft status</strong> across 100+ databases</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -233,7 +233,7 @@ const LikeCarfaxForPhones = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Step 3: Get Instant Results in 3 Seconds</h3>
             <p>
-              SafeOrStolen checks the IMEI against 150+ databases including:
+              SafeOrStolen checks the IMEI against 100+ databases including:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>carrier and manufacturer blacklists Device Check</strong> - Global IMEI blacklist (carrier-reported stolen phones)</li>
@@ -255,7 +255,7 @@ const LikeCarfaxForPhones = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1 text-green-700 dark:text-green-400">SAFE TO BUY</h4>
-                    <p className="text-sm text-muted-foreground">Not reported stolen. Clean IMEI. No theft records found across 150+ databases.</p>
+                    <p className="text-sm text-muted-foreground">Not reported stolen. Clean IMEI. No theft records found across 100+ databases.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

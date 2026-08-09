@@ -38,7 +38,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "How accurate are SafeOrStolen results?",
- answer: "Our accuracy rate is 98.7% with real-time database updates. We search official police databases, insurance claims (vehicle theft and title databases), carrier and theft databases (carrier and theft databases), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
+ answer: "We search official police databases, insurance claims (vehicle theft and title databases), carrier and theft databases (carrier and theft databases), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
  },
  {
  question: "What if an item shows 'Safe' but turns out stolen?",
@@ -70,7 +70,7 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "Is my personal information safe with SafeOrStolen?",
- answer: "Yes. We're SOC 2 Type II certified with bank-level encryption. All payments processed through Stripe (PCI DSS Level 1). We're GDPR compliant and never sell your data. Your verification history is encrypted and private."
+ answer: "Yes. We use bank-level encryption. Payments are processed by Stripe. Card details never touch our servers. We're GDPR compliant and never sell your data. Your verification history is encrypted and private."
  },
  {
  question: "Do you share verification data with law enforcement?",
@@ -162,8 +162,8 @@ export const EnhancedFAQSection = () => {
  </div>
  <div className="text-center">
  <Award className="h-8 w-8 text-primary mx-auto mb-2" />
- <div className="text-2xl font-bold text-foreground mb-1">98.7%</div>
- <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+ <div className="text-2xl font-bold text-foreground mb-1">6</div>
+ <div className="text-sm text-muted-foreground">Item Categories</div>
  </div>
  <div className="text-center">
  <Shield className="h-8 w-8 text-primary mx-auto mb-2" />

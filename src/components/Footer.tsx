@@ -64,7 +64,7 @@ const Footer = () => {
  label: 'Report Issue',
  href: '/about'
  }];
- const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
+ const trustIndicators = ["256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
  return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
  <div className="container mx-auto container-padding">
  {/* Main Footer Content */}
@@ -278,10 +278,6 @@ const Footer = () => {
  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
  <Lock className="h-3.5 w-3.5 text-primary" />
  <span>256-bit SSL</span>
- </div>
- <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
- <Award className="h-3.5 w-3.5 text-sos-orange" />
- <span>SOC 2 Compliant</span>
  </div>
  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
  <Globe className="h-3.5 w-3.5 text-primary" />

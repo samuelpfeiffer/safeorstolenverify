@@ -299,7 +299,7 @@ const VerifyPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Free Stolen Item Verification</h1>
- <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against 50+ databases with results in 3 seconds.</p>
+ <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against 100+ databases with results in 3 seconds.</p>
  </div>
  </noscript>
  <StatusCodeHandler statusCode={200} />
