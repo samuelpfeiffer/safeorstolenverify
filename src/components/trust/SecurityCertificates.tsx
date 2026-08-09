@@ -15,15 +15,6 @@ export const SecurityCertificates: React.FC = () => {
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: Lock,
-      name: "ISO 27001",
-      issuer: "ISO",
-      status: "Certified",
-      validUntil: "Mar 2026",
-      description: "International standard for information security management systems",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
       icon: Award,
       name: "PCI DSS Level 1",
       issuer: "PCI SSC",

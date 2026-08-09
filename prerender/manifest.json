@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-08T21:28:17.677599+00:00",
+  "generatedAt": "2026-08-09T02:33:55.146909+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
       "route": "/",
       "slug": "index",
-      "title": "Free Stolen Item Checker: IMEI, VIN & Serial | SafeOrStolen",
+      "title": "SafeOrStolen \u2014 AI-Powered Stolen Item Verification",
       "canonical": "https://safeorstolen.com/"
     },
     {
@@ -41,7 +41,7 @@
     {
       "route": "/api",
       "slug": "api",
-      "title": "Verification API Docs - IMEI VIN Serial Developer | SafeO...",
+      "title": "Verification API Docs - IMEI VIN Serial Developer | SafeOrStolen",
       "canonical": "https://safeorstolen.com/api"
     },
     {
@@ -59,25 +59,25 @@
     {
       "route": "/app/features",
       "slug": "app__features",
-      "title": "SafeOrStolen App Features | Barcode Scanner, Offline Mode...",
+      "title": "SafeOrStolen App Features | Barcode Scanner, Offline Mode, Instant",
       "canonical": "https://safeorstolen.com/app/features"
     },
     {
       "route": "/app/stolen-phone-checker",
       "slug": "app__stolen-phone-checker",
-      "title": "Stolen Phone Checker App FREE | Check IMEI Before Buying...",
+      "title": "Stolen Phone Checker App FREE | Check IMEI Before Buying",
       "canonical": "https://safeorstolen.com/app/stolen-phone-checker"
     },
     {
       "route": "/app/vin-checker",
       "slug": "app__vin-checker",
-      "title": "VIN Checker App FREE | Check if Car is Stolen Before Buyi...",
+      "title": "VIN Checker App FREE | Check if Car is Stolen Before Buying",
       "canonical": "https://safeorstolen.com/app/vin-checker"
     },
     {
       "route": "/arizona-license-plate-lookup",
       "slug": "arizona-license-plate-lookup",
-      "title": "TheftAZ Alternative \u2014 Free Arizona Stolen Property & Lice...",
+      "title": "TheftAZ Alternative \u2014 Free Arizona Stolen Property & License Plate",
       "canonical": "https://safeorstolen.com/arizona-license-plate-lookup"
     },
     {
@@ -89,7 +89,7 @@
     {
       "route": "/best-stolen-item-checkers-2026",
       "slug": "best-stolen-item-checkers-2026",
-      "title": "Best Stolen Item Checkers 2026 - Compare Top Verification...",
+      "title": "Best Stolen Item Checkers 2026 - Compare Top Verification Tools",
       "canonical": "https://safeorstolen.com/best-stolen-item-checkers-2026"
     },
     {
@@ -107,31 +107,31 @@
     {
       "route": "/blog/ai-stolen-item-detection-2026",
       "slug": "blog__ai-stolen-item-detection-2026",
-      "title": "How AI is Transforming Stolen Item Detection in 2026 | Sa...",
+      "title": "How AI is Transforming Stolen Item Detection in 2026 | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/ai-stolen-item-detection-2026"
     },
     {
       "route": "/blog/atf-gun-serial-number-check",
       "slug": "blog__atf-gun-serial-number-check",
-      "title": "ATF Gun Serial Number Check \u2014 How to Verify Firearms Onli...",
+      "title": "ATF Gun Serial Number Check \u2014 How to Verify Firearms Online (2026)",
       "canonical": "https://safeorstolen.com/blog/atf-gun-serial-number-check"
     },
     {
       "route": "/blog/best-ai-llms-2026",
       "slug": "blog__best-ai-llms-2026",
-      "title": "11 Best AI LLMs for 2026 - Complete Ranking & Comparison...",
+      "title": "11 Best AI LLMs for 2026 - Complete Ranking & Comparison",
       "canonical": "https://safeorstolen.com/blog/best-ai-llms-2026"
     },
     {
       "route": "/blog/best-stolen-item-checkers-2026",
       "slug": "blog__best-stolen-item-checkers-2026",
-      "title": "Best Stolen Item Checkers 2026 - Compare Top Verification...",
+      "title": "Best Stolen Item Checkers 2026 - Compare Top Verification Tools",
       "canonical": "https://safeorstolen.com/blog/best-stolen-item-checkers-2026"
     },
     {
       "route": "/blog/bicycle-stolen-serial-number-check",
       "slug": "blog__bicycle-stolen-serial-number-check",
-      "title": "How to Check If a Bike Is Stolen - Serial Number Lookup |...",
+      "title": "How to Check If a Bike Is Stolen - Serial Number Lookup | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/bicycle-stolen-serial-number-check"
     },
     {
@@ -143,7 +143,7 @@
     {
       "route": "/blog/buying-used-phone-checklist",
       "slug": "blog__buying-used-phone-checklist",
-      "title": "The Used-Phone Buying Checklist That Kills 90% of Scams |...",
+      "title": "The Used-Phone Buying Checklist That Kills 90% of Scams | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/buying-used-phone-checklist"
     },
     {
@@ -155,7 +155,7 @@
     {
       "route": "/blog/check-if-phone-stolen-guide",
       "slug": "blog__check-if-phone-stolen-guide",
-      "title": "How to Check If a Phone Is Stolen (2026 Guide) | SafeOrSt...",
+      "title": "How to Check If a Phone Is Stolen (2026 Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/check-if-phone-stolen-guide"
     },
     {
@@ -167,49 +167,49 @@
     {
       "route": "/blog/complete-imei-guide-protect-yourself",
       "slug": "blog__complete-imei-guide-protect-yourself",
-      "title": "Complete IMEI Guide 2026: Check if Phone is Stolen | Safe...",
+      "title": "Complete IMEI Guide 2026: Check if Phone is Stolen | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/complete-imei-guide-protect-yourself"
     },
     {
       "route": "/blog/complete-verification-guide",
       "slug": "blog__complete-verification-guide",
-      "title": "Complete Verification Guide: How to Check If Anything Is...",
+      "title": "Complete Verification Guide: How to Check If Anything Is Stolen",
       "canonical": "https://safeorstolen.com/blog/complete-verification-guide"
     },
     {
       "route": "/blog/complete-vin-guide",
       "slug": "blog__complete-vin-guide",
-      "title": "Complete VIN Check Guide: How to Verify Vehicle History (...",
+      "title": "Complete VIN Check Guide: How to Verify Vehicle History (2026)",
       "canonical": "https://safeorstolen.com/blog/complete-vin-guide"
     },
     {
       "route": "/blog/data-source-credibility-stolen-goods-verification",
       "slug": "blog__data-source-credibility-stolen-goods-verification",
-      "title": "Data Source Credibility in Stolen Goods Verification | Sa...",
+      "title": "Data Source Credibility in Stolen Goods Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/data-source-credibility-stolen-goods-verification"
     },
     {
       "route": "/blog/facebook-marketplace-scams",
       "slug": "blog__facebook-marketplace-scams",
-      "title": "Facebook Marketplace Scams to Avoid in 2026 (Stolen Items...",
+      "title": "Facebook Marketplace Scams to Avoid in 2026 (Stolen Items, Fake",
       "canonical": "https://safeorstolen.com/blog/facebook-marketplace-scams"
     },
     {
       "route": "/blog/facebook-marketplace-scams-guide",
       "slug": "blog__facebook-marketplace-scams-guide",
-      "title": "Facebook Marketplace Scams: 12 Red Flags (2026 Guide) | S...",
+      "title": "Facebook Marketplace Scams: 12 Red Flags (2026 Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/facebook-marketplace-scams-guide"
     },
     {
       "route": "/blog/firearm-serial-number-verification",
       "slug": "blog__firearm-serial-number-verification",
-      "title": "How to Check If a Gun Is Stolen - Firearm Serial Number V...",
+      "title": "How to Check If a Gun Is Stolen - Firearm Serial Number Verification",
       "canonical": "https://safeorstolen.com/blog/firearm-serial-number-verification"
     },
     {
       "route": "/blog/free-vin-lookup-guide",
       "slug": "blog__free-vin-lookup-guide",
-      "title": "Free VIN Lookup 2026 - Check If Car Is Stolen Before Buyi...",
+      "title": "Free VIN Lookup 2026 - Check If Car Is Stolen Before Buying",
       "canonical": "https://safeorstolen.com/blog/free-vin-lookup-guide"
     },
     {
@@ -217,6 +217,12 @@
       "slug": "blog__gun-show-serial-number-check",
       "title": "How to Check a Gun Serial Number at a Gun Show (2026) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/gun-show-serial-number-check"
+    },
+    {
+      "route": "/blog/hotgunz-database-guide",
+      "slug": "blog__hotgunz-database-guide",
+      "title": "HotGunz Database \u2014 What It Is & How to Search Stolen Firearms (2026)",
+      "canonical": "https://safeorstolen.com/blog/hotgunz-database-guide"
     },
     {
       "route": "/blog/how-to-check-if-gun-is-stolen",
@@ -227,37 +233,37 @@
     {
       "route": "/blog/how-to-check-if-iphone-stolen",
       "slug": "blog__how-to-check-if-iphone-stolen",
-      "title": "How to Check if iPhone is Stolen Before Buying (2026 Guid...",
+      "title": "How to Check if iPhone is Stolen Before Buying (2026 Guide)",
       "canonical": "https://safeorstolen.com/blog/how-to-check-if-iphone-stolen"
     },
     {
       "route": "/blog/how-to-check-if-phone-stolen",
       "slug": "blog__how-to-check-if-phone-stolen",
-      "title": "How to Check if a Phone is Stolen Before Buying (2026 Gui...",
+      "title": "How to Check if a Phone is Stolen Before Buying (2026 Guide)",
       "canonical": "https://safeorstolen.com/blog/how-to-check-if-phone-stolen"
     },
     {
       "route": "/blog/how-to-find-imei-number",
       "slug": "blog__how-to-find-imei-number",
-      "title": "How to Find the IMEI Number on Any Phone (Before You Pay)...",
+      "title": "How to Find the IMEI Number on Any Phone (Before You Pay)",
       "canonical": "https://safeorstolen.com/blog/how-to-find-imei-number"
     },
     {
       "route": "/blog/how-to-sell-verified-items",
       "slug": "blog__how-to-sell-verified-items",
-      "title": "How to Sell Verified Items on Marketplace (2026 Guide) |...",
+      "title": "How to Sell Verified Items on Marketplace (2026 Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/how-to-sell-verified-items"
     },
     {
       "route": "/blog/icloud-locked-phone-meaning",
       "slug": "blog__icloud-locked-phone-meaning",
-      "title": "iCloud Locked Phone: What It Means for a Used-iPhone Buye...",
+      "title": "iCloud Locked Phone: What It Means for a Used-iPhone Buyer",
       "canonical": "https://safeorstolen.com/blog/icloud-locked-phone-meaning"
     },
     {
       "route": "/blog/imei-checker-app-download",
       "slug": "blog__imei-checker-app-download",
-      "title": "IMEI Checker App Download - Free Stolen Phone Verificatio...",
+      "title": "IMEI Checker App Download - Free Stolen Phone Verification",
       "canonical": "https://safeorstolen.com/blog/imei-checker-app-download"
     },
     {
@@ -269,37 +275,37 @@
     {
       "route": "/blog/pawn-shop-stolen-item-verification",
       "slug": "blog__pawn-shop-stolen-item-verification",
-      "title": "How Pawn Shops Check If Items Are Stolen - Complete Guide...",
+      "title": "How Pawn Shops Check If Items Are Stolen - Complete Guide",
       "canonical": "https://safeorstolen.com/blog/pawn-shop-stolen-item-verification"
     },
     {
       "route": "/blog/phone-verification-guide",
       "slug": "blog__phone-verification-guide",
-      "title": "Phone Verification Guide: IMEI Check & Stolen Phone Looku...",
+      "title": "Phone Verification Guide: IMEI Check & Stolen Phone Lookup",
       "canonical": "https://safeorstolen.com/blog/phone-verification-guide"
     },
     {
       "route": "/blog/protect-yourself-buying-used-electronics",
       "slug": "blog__protect-yourself-buying-used-electronics",
-      "title": "How to Protect Yourself When Buying Used Electronics | Sa...",
+      "title": "How to Protect Yourself When Buying Used Electronics | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/protect-yourself-buying-used-electronics"
     },
     {
       "route": "/blog/ps5-stolen-check-guide",
       "slug": "blog__ps5-stolen-check-guide",
-      "title": "How to Check if a Used PlayStation 5 is Stolen Before Buy...",
+      "title": "How to Check if a Used PlayStation 5 is Stolen Before Buying",
       "canonical": "https://safeorstolen.com/blog/ps5-stolen-check-guide"
     },
     {
       "route": "/blog/real-user-stories",
       "slug": "blog__real-user-stories",
-      "title": "Real User Stories: How SafeOrStolen Saved Buyers From Fra...",
+      "title": "Real User Stories: How SafeOrStolen Saved Buyers From Fraud",
       "canonical": "https://safeorstolen.com/blog/real-user-stories"
     },
     {
       "route": "/blog/scammer-tactics-exposed",
       "slug": "blog__scammer-tactics-exposed",
-      "title": "Scammer Tactics Exposed: How Criminals Sell Stolen Goods...",
+      "title": "Scammer Tactics Exposed: How Criminals Sell Stolen Goods",
       "canonical": "https://safeorstolen.com/blog/scammer-tactics-exposed"
     },
     {
@@ -317,7 +323,7 @@
     {
       "route": "/blog/theft-trends-report-2024",
       "slug": "blog__theft-trends-report-2024",
-      "title": "2024 Theft Trends Report: Most Stolen Items & Protection...",
+      "title": "2024 Theft Trends Report: Most Stolen Items & Protection Guide",
       "canonical": "https://safeorstolen.com/blog/theft-trends-report-2024"
     },
     {
@@ -341,67 +347,67 @@
     {
       "route": "/blog/verification-methodology",
       "slug": "blog__verification-methodology",
-      "title": "Verification Methodology: How SafeOrStolen Works | Data S...",
+      "title": "Verification Methodology: How SafeOrStolen Works | Data Sources &",
       "canonical": "https://safeorstolen.com/blog/verification-methodology"
     },
     {
       "route": "/blog/verify-item-before-meetup",
       "slug": "blog__verify-item-before-meetup",
-      "title": "How to Verify Items Before Meeting Sellers - Meetup Safet...",
+      "title": "How to Verify Items Before Meeting Sellers - Meetup Safety Guide",
       "canonical": "https://safeorstolen.com/blog/verify-item-before-meetup"
     },
     {
       "route": "/blog/what-is-a-blacklisted-imei",
       "slug": "blog__what-is-a-blacklisted-imei",
-      "title": "What Is a Blacklisted IMEI? (And Can You Unblacklist One?...",
+      "title": "What Is a Blacklisted IMEI? (And Can You Unblacklist One?)",
       "canonical": "https://safeorstolen.com/blog/what-is-a-blacklisted-imei"
     },
     {
       "route": "/california-license-plate-lookup",
       "slug": "california-license-plate-lookup",
-      "title": "California License Plate Lookup - Check CA Stolen Vehicle...",
+      "title": "California License Plate Lookup - Check CA Stolen Vehicle by Plate",
       "canonical": "https://safeorstolen.com/california-license-plate-lookup"
     },
     {
       "route": "/california-vin-lookup",
       "slug": "california-vin-lookup",
-      "title": "California VIN Lookup - Free CA Stolen Vehicle Check | Sa...",
+      "title": "California VIN Lookup - Free CA Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/california-vin-lookup"
     },
     {
       "route": "/carfax-alternative",
       "slug": "carfax-alternative",
-      "title": "Free Carfax Alternative \u2014 Stolen Vehicle Check Without Pa...",
+      "title": "Free Carfax Alternative \u2014 Stolen Vehicle Check Without Paying $40",
       "canonical": "https://safeorstolen.com/carfax-alternative"
     },
     {
       "route": "/carfax-alternative-free",
       "slug": "carfax-alternative-free",
-      "title": "Free Carfax Alternative - Stolen Vehicle Check | SafeOrSt...",
+      "title": "Free Carfax Alternative - Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/carfax-alternative-free"
     },
     {
       "route": "/check-android",
       "slug": "check-android",
-      "title": "Check If Android Phone Is Stolen - Free IMEI Verification...",
+      "title": "Check If Android Phone Is Stolen - Free IMEI Verification",
       "canonical": "https://safeorstolen.com/check-android"
     },
     {
       "route": "/check-android-phone-stolen",
       "slug": "check-android-phone-stolen",
-      "title": "Check if Android Phone is Stolen - Free IMEI Verification...",
+      "title": "Check if Android Phone is Stolen - Free IMEI Verification",
       "canonical": "https://safeorstolen.com/check-android-phone-stolen"
     },
     {
       "route": "/check-appliances",
       "slug": "check-appliances",
-      "title": "Check if Appliances Are Stolen - Free Washer, Dryer, Refr...",
+      "title": "Check if Appliances Are Stolen - Free Washer, Dryer, Refrigerator",
       "canonical": "https://safeorstolen.com/check-appliances"
     },
     {
       "route": "/check-bicycle-stolen",
       "slug": "check-bicycle-stolen",
-      "title": "Check if Bicycle is Stolen - Serial Number Lookup | SafeO...",
+      "title": "Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-bicycle-stolen"
     },
     {
@@ -413,37 +419,37 @@
     {
       "route": "/check-boat",
       "slug": "check-boat",
-      "title": "Check if Boat is Stolen - HIN Verification for Watercraft...",
+      "title": "Check if Boat is Stolen - HIN Verification for Watercraft",
       "canonical": "https://safeorstolen.com/check-boat"
     },
     {
       "route": "/check-camera-stolen",
       "slug": "check-camera-stolen",
-      "title": "Check if Camera is Stolen - DSLR, Mirrorless, Lenses | Sa...",
+      "title": "Check if Camera is Stolen - DSLR, Mirrorless, Lenses | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-camera-stolen"
     },
     {
       "route": "/check-car",
       "slug": "check-car",
-      "title": "Check if Car is Stolen - Free VIN Verification | SafeOrSt...",
+      "title": "Check if Car is Stolen - Free VIN Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-car"
     },
     {
       "route": "/check-car-stolen-vin",
       "slug": "check-car-stolen-vin",
-      "title": "Check if Car is Stolen by VIN - Free VIN Verification | S...",
+      "title": "Check if Car is Stolen by VIN - Free VIN Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-car-stolen-vin"
     },
     {
       "route": "/check-ebike",
       "slug": "check-ebike",
-      "title": "Check if eBike is Stolen - Free Electric Bike Serial Numb...",
+      "title": "Check if eBike is Stolen - Free Electric Bike Serial Number",
       "canonical": "https://safeorstolen.com/check-ebike"
     },
     {
       "route": "/check-electronics",
       "slug": "check-electronics",
-      "title": "Check if Electronics Are Stolen - Verification | SafeOrSt...",
+      "title": "Check if Electronics Are Stolen - Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-electronics"
     },
     {
@@ -461,7 +467,7 @@
     {
       "route": "/check-gaming-console-stolen",
       "slug": "check-gaming-console-stolen",
-      "title": "Check if Gaming Console is Stolen - PS5, Xbox, Nintendo |...",
+      "title": "Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-gaming-console-stolen"
     },
     {
@@ -479,7 +485,7 @@
     {
       "route": "/check-imei-stolen",
       "slug": "check-imei-stolen",
-      "title": "Free Stolen Phone IMEI Check \u2014 Verify a Phone Isn't Stole...",
+      "title": "Free Stolen Phone IMEI Check \u2014 Verify a Phone Isn't Stolen",
       "canonical": "https://safeorstolen.com/check-imei-stolen"
     },
     {
@@ -491,31 +497,31 @@
     {
       "route": "/check-jewelry",
       "slug": "check-jewelry",
-      "title": "Check if Jewelry is Stolen - Free Diamond, Watch, Ring Se...",
+      "title": "Check if Jewelry is Stolen - Free Diamond, Watch, Ring Serial Number",
       "canonical": "https://safeorstolen.com/check-jewelry"
     },
     {
       "route": "/check-jewelry-stolen",
       "slug": "check-jewelry-stolen",
-      "title": "Check if Jewelry is Stolen - Diamond, Gold Verification |...",
+      "title": "Check if Jewelry is Stolen - Diamond, Gold Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-jewelry-stolen"
     },
     {
       "route": "/check-laptop",
       "slug": "check-laptop",
-      "title": "Stolen Laptop Check \u2014 Verify Serial Number in 3 Sec (2026...",
+      "title": "Stolen Laptop Check \u2014 Verify Serial Number in 3 Sec (2026)",
       "canonical": "https://safeorstolen.com/check-laptop"
     },
     {
       "route": "/check-laptop-stolen",
       "slug": "check-laptop-stolen",
-      "title": "Check if Laptop is Stolen - Free Serial Number Verificati...",
+      "title": "Check if Laptop is Stolen - Free Serial Number Verification",
       "canonical": "https://safeorstolen.com/check-laptop-stolen"
     },
     {
       "route": "/check-motorcycle-stolen-vin",
       "slug": "check-motorcycle-stolen-vin",
-      "title": "Check if Motorcycle is Stolen by VIN - Free Verification...",
+      "title": "Check if Motorcycle is Stolen by VIN - Free Verification",
       "canonical": "https://safeorstolen.com/check-motorcycle-stolen-vin"
     },
     {
@@ -527,43 +533,43 @@
     {
       "route": "/check-power-tools-stolen",
       "slug": "check-power-tools-stolen",
-      "title": "Check if Power Tools are Stolen - DeWalt, Milwaukee, Maki...",
+      "title": "Check if Power Tools are Stolen - DeWalt, Milwaukee, Makita",
       "canonical": "https://safeorstolen.com/check-power-tools-stolen"
     },
     {
       "route": "/check-ps5",
       "slug": "check-ps5",
-      "title": "Free PS5 Serial Number Check - Verify PlayStation 5 | Saf...",
+      "title": "Free PS5 Serial Number Check - Verify PlayStation 5 | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-ps5"
     },
     {
       "route": "/check-samsung-stolen",
       "slug": "check-samsung-stolen",
-      "title": "Check if Samsung Phone is Stolen - Free IMEI Verification...",
+      "title": "Check if Samsung Phone is Stolen - Free IMEI Verification",
       "canonical": "https://safeorstolen.com/check-samsung-stolen"
     },
     {
       "route": "/check-stolen-car",
       "slug": "check-stolen-car",
-      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free...",
+      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free Stolen Item",
       "canonical": "https://safeorstolen.com/check-stolen-car"
     },
     {
       "route": "/check-stolen-phone",
       "slug": "check-stolen-phone",
-      "title": "Is My Phone Stolen? Free IMEI Check | SafeOrStolen - Free...",
+      "title": "Is My Phone Stolen? Free IMEI Check | SafeOrStolen - Free Stolen Item",
       "canonical": "https://safeorstolen.com/check-stolen-phone"
     },
     {
       "route": "/check-tablet-stolen",
       "slug": "check-tablet-stolen",
-      "title": "Check if Tablet is Stolen - iPad, Samsung Galaxy Tab | Sa...",
+      "title": "Check if Tablet is Stolen - iPad, Samsung Galaxy Tab | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-tablet-stolen"
     },
     {
       "route": "/check-tools",
       "slug": "check-tools",
-      "title": "Check if Tools Are Stolen - Free Power Tool Serial Number...",
+      "title": "Check if Tools Are Stolen - Free Power Tool Serial Number",
       "canonical": "https://safeorstolen.com/check-tools"
     },
     {
@@ -575,13 +581,13 @@
     {
       "route": "/check-watch-stolen",
       "slug": "check-watch-stolen",
-      "title": "Check if Watch is Stolen - Rolex, Omega, Tag Heuer | Safe...",
+      "title": "Check if Watch is Stolen - Rolex, Omega, Tag Heuer | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-watch-stolen"
     },
     {
       "route": "/check-xbox",
       "slug": "check-xbox",
-      "title": "Check if Xbox is Stolen - Free Serial Number Verification...",
+      "title": "Check if Xbox is Stolen - Free Serial Number Verification",
       "canonical": "https://safeorstolen.com/check-xbox"
     },
     {
@@ -593,31 +599,31 @@
     {
       "route": "/community",
       "slug": "community",
-      "title": "SafeOrStolen Community - Join the Movement Against Stolen...",
+      "title": "SafeOrStolen Community - Join the Movement Against Stolen Goods",
       "canonical": "https://safeorstolen.com/community"
     },
     {
       "route": "/compare",
       "slug": "compare",
-      "title": "SafeOrStolen vs Carfax vs IMEI Checkers \u2014 Free Alternativ...",
+      "title": "SafeOrStolen vs Carfax vs IMEI Checkers \u2014 Free Alternative Comparison",
       "canonical": "https://safeorstolen.com/compare"
     },
     {
       "route": "/comparisons/best-free-imei-checkers-2025",
       "slug": "comparisons__best-free-imei-checkers-2025",
-      "title": "7 Best Free IMEI Checkers 2026 - Ranked & Compared | Safe...",
+      "title": "7 Best Free IMEI Checkers 2026 - Ranked & Compared | SafeOrStolen",
       "canonical": "https://safeorstolen.com/comparisons/best-free-imei-checkers-2025"
     },
     {
       "route": "/comparisons/nicb-vincheck-alternative",
       "slug": "comparisons__nicb-vincheck-alternative",
-      "title": "NICB VINCheck Alternatives 2026 - Free Multi-Item Check |...",
+      "title": "NICB VINCheck Alternatives 2026 - Free Multi-Item Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/comparisons/nicb-vincheck-alternative"
     },
     {
       "route": "/comparisons/safeorstolen-vs-imei-info",
       "slug": "comparisons__safeorstolen-vs-imei-info",
-      "title": "Best IMEI.info Alternative - IMEI Checker Comparison | Sa...",
+      "title": "Best IMEI.info Alternative - IMEI Checker Comparison | SafeOrStolen",
       "canonical": "https://safeorstolen.com/comparisons/safeorstolen-vs-imei-info"
     },
     {
@@ -629,13 +635,13 @@
     {
       "route": "/comparisons/top-vin-check-services-2025",
       "slug": "comparisons__top-vin-check-services-2025",
-      "title": "Top 5 VIN Check Services 2026 - Carfax Alternatives | Saf...",
+      "title": "Top 5 VIN Check Services 2026 - Carfax Alternatives | SafeOrStolen",
       "canonical": "https://safeorstolen.com/comparisons/top-vin-check-services-2025"
     },
     {
       "route": "/comprehensive-guide",
       "slug": "comprehensive-guide",
-      "title": "Comprehensive Guide to Stolen Item Verification | SafeOrS...",
+      "title": "Comprehensive Guide to Stolen Item Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/comprehensive-guide"
     },
     {
@@ -647,13 +653,13 @@
     {
       "route": "/craigslist-safety-verification",
       "slug": "craigslist-safety-verification",
-      "title": "Craigslist Scam Check - Verify Items Before Meetup | Safe...",
+      "title": "Craigslist Scam Check - Verify Items Before Meetup | SafeOrStolen",
       "canonical": "https://safeorstolen.com/craigslist-safety-verification"
     },
     {
       "route": "/crunchbase",
       "slug": "crunchbase",
-      "title": "SafeOrStolen Company Profile | AI-Powered Verification |...",
+      "title": "SafeOrStolen Company Profile | AI-Powered Verification | Crunchbase",
       "canonical": "https://safeorstolen.com/crunchbase"
     },
     {
@@ -677,7 +683,7 @@
     {
       "route": "/ebay-stolen-item-check",
       "slug": "ebay-stolen-item-check",
-      "title": "eBay Stolen Check - Verify Items Before Bidding Free | Sa...",
+      "title": "eBay Stolen Check - Verify Items Before Bidding Free | SafeOrStolen",
       "canonical": "https://safeorstolen.com/ebay-stolen-item-check"
     },
     {
@@ -689,7 +695,7 @@
     {
       "route": "/facebook-marketplace-stolen-check",
       "slug": "facebook-marketplace-stolen-check",
-      "title": "Facebook Marketplace Stolen Item Check - Free Verificatio...",
+      "title": "Facebook Marketplace Stolen Item Check - Free Verification",
       "canonical": "https://safeorstolen.com/facebook-marketplace-stolen-check"
     },
     {
@@ -719,43 +725,43 @@
     {
       "route": "/florida-license-plate-lookup",
       "slug": "florida-license-plate-lookup",
-      "title": "Free Florida License Plate Lookup \u2014 Check if FL Vehicle i...",
+      "title": "Free Florida License Plate Lookup \u2014 Check if FL Vehicle is Stolen",
       "canonical": "https://safeorstolen.com/florida-license-plate-lookup"
     },
     {
       "route": "/florida-vin-lookup",
       "slug": "florida-vin-lookup",
-      "title": "Florida VIN Lookup - Free FL Stolen Vehicle Check | SafeO...",
+      "title": "Florida VIN Lookup - Free FL Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/florida-vin-lookup"
     },
     {
       "route": "/florida/destin-license-plate-lookup",
       "slug": "florida__destin-license-plate-lookup",
-      "title": "Free Destin FL License Plate Lookup \u2014 Check Vehicles in O...",
+      "title": "Free Destin FL License Plate Lookup \u2014 Check Vehicles in Okaloosa",
       "canonical": "https://safeorstolen.com/florida/destin-license-plate-lookup"
     },
     {
       "route": "/florida/jacksonville-license-plate-lookup",
       "slug": "florida__jacksonville-license-plate-lookup",
-      "title": "Free Jacksonville FL License Plate Lookup \u2014 Check Stolen...",
+      "title": "Free Jacksonville FL License Plate Lookup \u2014 Check Stolen Vehicles",
       "canonical": "https://safeorstolen.com/florida/jacksonville-license-plate-lookup"
     },
     {
       "route": "/florida/miami-license-plate-lookup",
       "slug": "florida__miami-license-plate-lookup",
-      "title": "Free Miami FL License Plate Lookup \u2014 Check Stolen Vehicle...",
+      "title": "Free Miami FL License Plate Lookup \u2014 Check Stolen Vehicles in Miami",
       "canonical": "https://safeorstolen.com/florida/miami-license-plate-lookup"
     },
     {
       "route": "/florida/orlando-license-plate-lookup",
       "slug": "florida__orlando-license-plate-lookup",
-      "title": "Free Orlando FL License Plate Lookup \u2014 Check Stolen Vehic...",
+      "title": "Free Orlando FL License Plate Lookup \u2014 Check Stolen Vehicles",
       "canonical": "https://safeorstolen.com/florida/orlando-license-plate-lookup"
     },
     {
       "route": "/florida/tampa-license-plate-lookup",
       "slug": "florida__tampa-license-plate-lookup",
-      "title": "Free Tampa FL License Plate Lookup \u2014 Check Stolen Vehicle...",
+      "title": "Free Tampa FL License Plate Lookup \u2014 Check Stolen Vehicles",
       "canonical": "https://safeorstolen.com/florida/tampa-license-plate-lookup"
     },
     {
@@ -767,13 +773,13 @@
     {
       "route": "/for-businesses",
       "slug": "for-businesses",
-      "title": "Business Verification Widget & API - Pawn Shop, Dealer, R...",
+      "title": "Business Verification Widget & API - Pawn Shop, Dealer, Reseller",
       "canonical": "https://safeorstolen.com/for-businesses"
     },
     {
       "route": "/for-consumers",
       "slug": "for-consumers",
-      "title": "For Consumers - Protect Yourself When Buying Used Items |...",
+      "title": "For Consumers - Protect Yourself When Buying Used Items | SafeOrStolen",
       "canonical": "https://safeorstolen.com/for-consumers"
     },
     {
@@ -785,7 +791,7 @@
     {
       "route": "/for-electronics-resellers",
       "slug": "for-electronics-resellers",
-      "title": "Electronics Reseller Verification Tools | SafeOrStolen fo...",
+      "title": "Electronics Reseller Verification Tools | SafeOrStolen for Business",
       "canonical": "https://safeorstolen.com/for-electronics-resellers"
     },
     {
@@ -809,13 +815,13 @@
     {
       "route": "/for-pawn-shops",
       "slug": "for-pawn-shops",
-      "title": "SafeOrStolen for Pawn Shops \u2014 Instant Stolen Item Verific...",
+      "title": "SafeOrStolen for Pawn Shops \u2014 Instant Stolen Item Verification (2026)",
       "canonical": "https://safeorstolen.com/for-pawn-shops"
     },
     {
       "route": "/for-sellers",
       "slug": "for-sellers",
-      "title": "For Sellers - Prove Items Are Legitimate, Sell Faster | S...",
+      "title": "For Sellers - Prove Items Are Legitimate, Sell Faster | SafeOrStolen",
       "canonical": "https://safeorstolen.com/for-sellers"
     },
     {
@@ -833,31 +839,31 @@
     {
       "route": "/georgia-license-plate-lookup",
       "slug": "georgia-license-plate-lookup",
-      "title": "Georgia License Plate Lookup - Free GA Stolen Vehicle Che...",
+      "title": "Georgia License Plate Lookup - Free GA Stolen Vehicle Check",
       "canonical": "https://safeorstolen.com/georgia-license-plate-lookup"
     },
     {
       "route": "/georgia-vin-lookup",
       "slug": "georgia-vin-lookup",
-      "title": "Georgia VIN Lookup - Free GA Stolen Vehicle Check | SafeO...",
+      "title": "Georgia VIN Lookup - Free GA Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/georgia-vin-lookup"
     },
     {
       "route": "/guides/ebay-buyer-protection",
       "slug": "guides__ebay-buyer-protection",
-      "title": "eBay Buyer Protection Guide - Avoid Stolen Items | SafeOr...",
+      "title": "eBay Buyer Protection Guide - Avoid Stolen Items | SafeOrStolen",
       "canonical": "https://safeorstolen.com/guides/ebay-buyer-protection"
     },
     {
       "route": "/guides/offerup-scam-protection",
       "slug": "guides__offerup-scam-protection",
-      "title": "OfferUp Scam Protection Guide - Avoid Stolen Items | Safe...",
+      "title": "OfferUp Scam Protection Guide - Avoid Stolen Items | SafeOrStolen",
       "canonical": "https://safeorstolen.com/guides/offerup-scam-protection"
     },
     {
       "route": "/guides/verify-craigslist-items",
       "slug": "guides__verify-craigslist-items",
-      "title": "Craigslist Item Verification Guide - Avoid Stolen Goods |...",
+      "title": "Craigslist Item Verification Guide - Avoid Stolen Goods | SafeOrStolen",
       "canonical": "https://safeorstolen.com/guides/verify-craigslist-items"
     },
     {
@@ -875,7 +881,7 @@
     {
       "route": "/hotgunz-alternative",
       "slug": "hotgunz-alternative",
-      "title": "Firearm Check Comparison - More Gun Databases | SafeOrStolen",
+      "title": "HotGunz Alternative - More Gun Databases | SafeOrStolen",
       "canonical": "https://safeorstolen.com/hotgunz-alternative"
     },
     {
@@ -887,19 +893,19 @@
     {
       "route": "/how-to-check-if-car-stolen",
       "slug": "how-to-check-if-car-stolen",
-      "title": "How to Check if a Car is Stolen Before Buying (2026 Guide...",
+      "title": "How to Check if a Car is Stolen Before Buying (2026 Guide)",
       "canonical": "https://safeorstolen.com/how-to-check-if-car-stolen"
     },
     {
       "route": "/how-to-check-if-item-stolen",
       "slug": "how-to-check-if-item-stolen",
-      "title": "How to Check If an Item Is Stolen - Complete Guide 2026 |...",
+      "title": "How to Check If an Item Is Stolen - Complete Guide 2026 | SafeOrStolen",
       "canonical": "https://safeorstolen.com/how-to-check-if-item-stolen"
     },
     {
       "route": "/how-to-check-if-phone-stolen",
       "slug": "how-to-check-if-phone-stolen",
-      "title": "How to Check if a Phone is Stolen Before Buying (2026 Gui...",
+      "title": "How to Check if a Phone is Stolen Before Buying (2026 Guide)",
       "canonical": "https://safeorstolen.com/how-to-check-if-phone-stolen"
     },
     {
@@ -917,19 +923,19 @@
     {
       "route": "/illinois-license-plate-lookup",
       "slug": "illinois-license-plate-lookup",
-      "title": "Illinois License Plate Lookup - Check IL Stolen Vehicle b...",
+      "title": "Illinois License Plate Lookup - Check IL Stolen Vehicle by Plate",
       "canonical": "https://safeorstolen.com/illinois-license-plate-lookup"
     },
     {
       "route": "/illinois-vin-lookup",
       "slug": "illinois-vin-lookup",
-      "title": "Illinois VIN Lookup - Free IL Stolen Vehicle Check | Safe...",
+      "title": "Illinois VIN Lookup - Free IL Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/illinois-vin-lookup"
     },
     {
       "route": "/imei-check",
       "slug": "imei-check",
-      "title": "IMEI Check - Free Phone Stolen Status Verification | Safe...",
+      "title": "IMEI Check - Free Phone Stolen Status Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/imei-check"
     },
     {
@@ -941,7 +947,7 @@
     {
       "route": "/imei-checker-app",
       "slug": "imei-checker-app",
-      "title": "IMEI Checker App - Free Phone Stolen Check App | SafeOrSt...",
+      "title": "IMEI Checker App - Free Phone Stolen Check App | SafeOrStolen",
       "canonical": "https://safeorstolen.com/imei-checker-app"
     },
     {
@@ -965,25 +971,25 @@
     {
       "route": "/is-my-iphone-stolen",
       "slug": "is-my-iphone-stolen",
-      "title": "Is My iPhone Stolen? Free iPhone Theft Check Tool | SafeO...",
+      "title": "Is My iPhone Stolen? Free iPhone Theft Check Tool | SafeOrStolen",
       "canonical": "https://safeorstolen.com/is-my-iphone-stolen"
     },
     {
       "route": "/is-my-phone-stolen",
       "slug": "is-my-phone-stolen",
-      "title": "Is My Phone Stolen? Free IMEI Check | SafeOrStolen - Free...",
+      "title": "Is My Phone Stolen? Free IMEI Check | SafeOrStolen - Free Stolen Item",
       "canonical": "https://safeorstolen.com/is-my-phone-stolen"
     },
     {
       "route": "/is-this-bike-stolen",
       "slug": "is-this-bike-stolen",
-      "title": "Is This Bike Stolen? Free Serial Number Check | SafeOrSto...",
+      "title": "Is This Bike Stolen? Free Serial Number Check | SafeOrStolen - Free",
       "canonical": "https://safeorstolen.com/is-this-bike-stolen"
     },
     {
       "route": "/is-this-car-stolen",
       "slug": "is-this-car-stolen",
-      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free...",
+      "title": "Is This Car Stolen? Free VIN Check | SafeOrStolen - Free Stolen Item",
       "canonical": "https://safeorstolen.com/is-this-car-stolen"
     },
     {
@@ -995,7 +1001,7 @@
     {
       "route": "/is-this-laptop-stolen",
       "slug": "is-this-laptop-stolen",
-      "title": "Is This Laptop Stolen? Free Serial Number Check | SafeOrS...",
+      "title": "Is This Laptop Stolen? Free Serial Number Check | SafeOrStolen - Free",
       "canonical": "https://safeorstolen.com/is-this-laptop-stolen"
     },
     {
@@ -1019,7 +1025,7 @@
     {
       "route": "/letgo-stolen-check",
       "slug": "letgo-stolen-check",
-      "title": "Letgo/OfferUp Stolen Item Check - Verify Before Meeting |...",
+      "title": "Letgo/OfferUp Stolen Item Check - Verify Before Meeting | SafeOrStolen",
       "canonical": "https://safeorstolen.com/letgo-stolen-check"
     },
     {
@@ -1049,7 +1055,7 @@
     {
       "route": "/marketplace-integration",
       "slug": "marketplace-integration",
-      "title": "Marketplace Integration - SafeOrStolen API for E-Commerce...",
+      "title": "Marketplace Integration - SafeOrStolen API for E-Commerce Platforms",
       "canonical": "https://safeorstolen.com/marketplace-integration"
     },
     {
@@ -1073,7 +1079,7 @@
     {
       "route": "/mercari-stolen-check",
       "slug": "mercari-stolen-check",
-      "title": "Mercari Stolen Item Check - Verify Before Buying | SafeOr...",
+      "title": "Mercari Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/mercari-stolen-check"
     },
     {
@@ -1109,7 +1115,7 @@
     {
       "route": "/mobile",
       "slug": "mobile",
-      "title": "SafeOrStolen Mobile App - Verify Items On-The-Go | Downlo...",
+      "title": "SafeOrStolen Mobile App - Verify Items On-The-Go | Download Free",
       "canonical": "https://safeorstolen.com/mobile"
     },
     {
@@ -1157,13 +1163,13 @@
     {
       "route": "/new-york-license-plate-lookup",
       "slug": "new-york-license-plate-lookup",
-      "title": "New York License Plate Lookup - Check NY Stolen Vehicle b...",
+      "title": "New York License Plate Lookup - Check NY Stolen Vehicle by Plate",
       "canonical": "https://safeorstolen.com/new-york-license-plate-lookup"
     },
     {
       "route": "/new-york-vin-lookup",
       "slug": "new-york-vin-lookup",
-      "title": "New York VIN Lookup - Free NY Stolen Vehicle Check | Safe...",
+      "title": "New York VIN Lookup - Free NY Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/new-york-vin-lookup"
     },
     {
@@ -1187,7 +1193,7 @@
     {
       "route": "/north-carolina-vin-lookup",
       "slug": "north-carolina-vin-lookup",
-      "title": "North Carolina VIN Lookup - Free NC Stolen Vehicle Check...",
+      "title": "North Carolina VIN Lookup - Free NC Stolen Vehicle Check",
       "canonical": "https://safeorstolen.com/north-carolina-vin-lookup"
     },
     {
@@ -1211,13 +1217,13 @@
     {
       "route": "/ohio-license-plate-lookup",
       "slug": "ohio-license-plate-lookup",
-      "title": "Ohio Plate Lookup - Free OH License Plate Search | SafeOr...",
+      "title": "Ohio Plate Lookup - Free OH License Plate Search | SafeOrStolen",
       "canonical": "https://safeorstolen.com/ohio-license-plate-lookup"
     },
     {
       "route": "/ohio-vin-lookup",
       "slug": "ohio-vin-lookup",
-      "title": "Ohio VIN Lookup - Free OH Stolen Vehicle Check | SafeOrSt...",
+      "title": "Ohio VIN Lookup - Free OH Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/ohio-vin-lookup"
     },
     {
@@ -1241,37 +1247,37 @@
     {
       "route": "/partial-serial-number-search",
       "slug": "partial-serial-number-search",
-      "title": "Partial Serial Number Search - Find Stolen Items | SafeOr...",
+      "title": "Partial Serial Number Search - Find Stolen Items | SafeOrStolen",
       "canonical": "https://safeorstolen.com/partial-serial-number-search"
     },
     {
       "route": "/pennsylvania-license-plate-lookup",
       "slug": "pennsylvania-license-plate-lookup",
-      "title": "Pennsylvania License Plate Lookup - Free PA Stolen Vehicl...",
+      "title": "Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check",
       "canonical": "https://safeorstolen.com/pennsylvania-license-plate-lookup"
     },
     {
       "route": "/pennsylvania-vin-lookup",
       "slug": "pennsylvania-vin-lookup",
-      "title": "Pennsylvania VIN Lookup - Free PA Stolen Vehicle Check |...",
+      "title": "Pennsylvania VIN Lookup - Free PA Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/pennsylvania-vin-lookup"
     },
     {
       "route": "/phone-blacklist-check",
       "slug": "phone-blacklist-check",
-      "title": "Free Phone Blacklist Check - IMEI Verification | SafeOrSt...",
+      "title": "Free Phone Blacklist Check - IMEI Verification | SafeOrStolen",
       "canonical": "https://safeorstolen.com/phone-blacklist-check"
     },
     {
       "route": "/poshmark-stolen-check",
       "slug": "poshmark-stolen-check",
-      "title": "Poshmark Stolen Item Check - Verify Designer Goods | Safe...",
+      "title": "Poshmark Stolen Item Check - Verify Designer Goods | SafeOrStolen",
       "canonical": "https://safeorstolen.com/poshmark-stolen-check"
     },
     {
       "route": "/press",
       "slug": "press",
-      "title": "Press & Media - SafeOrStolen News and Resources",
+      "title": "Press & Media \u2014 SafeOrStolen Newsroom",
       "canonical": "https://safeorstolen.com/press"
     },
     {
@@ -1289,7 +1295,7 @@
     {
       "route": "/pricing",
       "slug": "pricing",
-      "title": "Pricing \u2014 Free Stolen Item Checks, $0.99/Check, or $10/Mo...",
+      "title": "Pricing \u2014 Free Stolen Item Checks, $0.99/Check, or $10/Month",
       "canonical": "https://safeorstolen.com/pricing"
     },
     {
@@ -1307,7 +1313,7 @@
     {
       "route": "/real-time-verification",
       "slug": "real-time-verification",
-      "title": "Real-Time Verification - Instant Stolen Item Checks | Saf...",
+      "title": "Real-Time Verification - Instant Stolen Item Checks | SafeOrStolen",
       "canonical": "https://safeorstolen.com/real-time-verification"
     },
     {
@@ -1319,7 +1325,7 @@
     {
       "route": "/resource-center",
       "slug": "resource-center",
-      "title": "Resource Center - Verification Guides & Compliance | Safe...",
+      "title": "Resource Center - Verification Guides & Compliance | SafeOrStolen",
       "canonical": "https://safeorstolen.com/resource-center"
     },
     {
@@ -1337,7 +1343,7 @@
     {
       "route": "/seller-badge",
       "slug": "seller-badge",
-      "title": "Seller Verification Badge \u2014 Prove Items Are Legitimate |...",
+      "title": "Seller Verification Badge \u2014 Prove Items Are Legitimate | SafeOrStolen",
       "canonical": "https://safeorstolen.com/seller-badge"
     },
     {
@@ -1373,79 +1379,79 @@
     {
       "route": "/stockx-verification",
       "slug": "stockx-verification",
-      "title": "StockX Alternative Verification - Check Sneakers & Electr...",
+      "title": "StockX Alternative Verification - Check Sneakers & Electronics",
       "canonical": "https://safeorstolen.com/stockx-verification"
     },
     {
       "route": "/stolen-check-chicago",
       "slug": "stolen-check-chicago",
-      "title": "Chicago Stolen Item Check - Verify Before Buying | SafeOr...",
+      "title": "Chicago Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-chicago"
     },
     {
       "route": "/stolen-check-dallas",
       "slug": "stolen-check-dallas",
-      "title": "Dallas Stolen Item Check - Verify Before Buying | SafeOrS...",
+      "title": "Dallas Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-dallas"
     },
     {
       "route": "/stolen-check-houston",
       "slug": "stolen-check-houston",
-      "title": "Houston Stolen Item Check - Verify Before Buying | SafeOr...",
+      "title": "Houston Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-houston"
     },
     {
       "route": "/stolen-check-los-angeles",
       "slug": "stolen-check-los-angeles",
-      "title": "Los Angeles Stolen Item Check - Verify Before Buying in L...",
+      "title": "Los Angeles Stolen Item Check - Verify Before Buying in LA",
       "canonical": "https://safeorstolen.com/stolen-check-los-angeles"
     },
     {
       "route": "/stolen-check-miami",
       "slug": "stolen-check-miami",
-      "title": "Miami Stolen Item Check - Verify Before Buying in Miami F...",
+      "title": "Miami Stolen Item Check - Verify Before Buying in Miami FL",
       "canonical": "https://safeorstolen.com/stolen-check-miami"
     },
     {
       "route": "/stolen-check-new-york-city",
       "slug": "stolen-check-new-york-city",
-      "title": "New York City Stolen Item Check - Verify Before Buying in...",
+      "title": "New York City Stolen Item Check - Verify Before Buying in NYC",
       "canonical": "https://safeorstolen.com/stolen-check-new-york-city"
     },
     {
       "route": "/stolen-check-philadelphia",
       "slug": "stolen-check-philadelphia",
-      "title": "Philadelphia Stolen Item Check - Verify Before Buying | S...",
+      "title": "Philadelphia Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-philadelphia"
     },
     {
       "route": "/stolen-check-phoenix",
       "slug": "stolen-check-phoenix",
-      "title": "Phoenix Stolen Item Check - Verify Before Buying | SafeOr...",
+      "title": "Phoenix Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-phoenix"
     },
     {
       "route": "/stolen-check-san-antonio",
       "slug": "stolen-check-san-antonio",
-      "title": "San Antonio Stolen Item Check - Verify Before Buying | Sa...",
+      "title": "San Antonio Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-san-antonio"
     },
     {
       "route": "/stolen-check-san-diego",
       "slug": "stolen-check-san-diego",
-      "title": "San Diego Stolen Item Check - Verify Before Buying | Safe...",
+      "title": "San Diego Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-san-diego"
     },
     {
       "route": "/stolen-check-san-jose",
       "slug": "stolen-check-san-jose",
-      "title": "San Jose Stolen Item Check - Verify Before Buying | SafeO...",
+      "title": "San Jose Stolen Item Check - Verify Before Buying | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-check-san-jose"
     },
     {
       "route": "/stolen-database",
       "slug": "stolen-database",
-      "title": "Stolen Items Database - Search Reported Thefts | SafeOrSt...",
+      "title": "Stolen Items Database - Search Reported Thefts | SafeOrStolen",
       "canonical": "https://safeorstolen.com/stolen-database"
     },
     {
@@ -1481,25 +1487,25 @@
     {
       "route": "/texas-license-plate-lookup",
       "slug": "texas-license-plate-lookup",
-      "title": "Texas License Plate Lookup - Check TX Stolen Vehicle by P...",
+      "title": "Texas License Plate Lookup - Check TX Stolen Vehicle by Plate",
       "canonical": "https://safeorstolen.com/texas-license-plate-lookup"
     },
     {
       "route": "/texas-vin-lookup",
       "slug": "texas-vin-lookup",
-      "title": "Texas VIN Lookup - Free TX Stolen Vehicle Check | SafeOrS...",
+      "title": "Texas VIN Lookup - Free TX Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/texas-vin-lookup"
     },
     {
       "route": "/theftaz-alternative",
       "slug": "theftaz-alternative",
-      "title": "TheftAZ Alternative \u2014 Search Arizona Stolen Property Data...",
+      "title": "TheftAZ Alternative \u2014 Search Arizona Stolen Property Database Free",
       "canonical": "https://safeorstolen.com/theftaz-alternative"
     },
     {
       "route": "/transparency",
       "slug": "transparency",
-      "title": "Transparency - How SafeOrStolen Protects Your Data | Safe...",
+      "title": "Transparency - How SafeOrStolen Protects Your Data | SafeOrStolen",
       "canonical": "https://safeorstolen.com/transparency"
     },
     {
@@ -1589,7 +1595,7 @@
     {
       "route": "/vs-stolenphonechecker",
       "slug": "vs-stolenphonechecker",
-      "title": "Best CTIA Stolen Phone Checker Alternative 2026 | SafeOrS...",
+      "title": "Best CTIA Stolen Phone Checker Alternative 2026 | SafeOrStolen",
       "canonical": "https://safeorstolen.com/vs-stolenphonechecker"
     },
     {
@@ -1601,7 +1607,7 @@
     {
       "route": "/vs-swappa",
       "slug": "vs-swappa",
-      "title": "SafeOrStolen vs Swappa 2026 - Full Comparison | App, Feat...",
+      "title": "SafeOrStolen vs Swappa 2026 - Full Comparison | App, Features, Pricing",
       "canonical": "https://safeorstolen.com/vs-swappa"
     },
     {

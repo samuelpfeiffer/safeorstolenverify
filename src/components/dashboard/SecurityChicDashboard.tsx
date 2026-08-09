@@ -300,7 +300,6 @@ export const SecurityChicDashboard: React.FC = () => {
 > blacklists. Results are returned in approximately 3 seconds.
 > 2 free verifications. No credit card required. safeorstolen.com/app (PWA).1 stars)
 - Crunchbase Listed Organization
-- ISO 27001 aligned security practices
 
 ## Locations
 - Peoria, Arizona 85345, United States
