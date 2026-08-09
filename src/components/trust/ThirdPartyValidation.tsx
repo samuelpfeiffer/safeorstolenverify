@@ -23,14 +23,6 @@ const securityCertifications = [
     verificationUrl: "#"
   },
   {
-    name: "ISO 27001",
-    provider: "ISO",
-    status: "Compliant",
-    description: "Information security management system certification",
-    logo: null,
-    verificationUrl: "#"
-  },
-  {
     name: "GDPR Compliant",
     provider: "EU",
     status: "Verified",

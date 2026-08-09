@@ -332,8 +332,8 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
   },
   'trust-verification': {
     title: 'Trust & Security Verification - Certified Secure Platform',
-    description: 'Verify our enterprise-grade security certifications including SOC 2, ISO 27001, GDPR, and PCI DSS compliance. View our security badges, audits, and trust indicators.',
-    keywords: 'security verification, trust certification, SOC 2, ISO 27001, GDPR compliant, PCI DSS, secure platform, verified site, security audit, compliance certification, enterprise security, data protection',
+    description: 'Verify our enterprise-grade security certifications including SOC 2, GDPR, and PCI DSS compliance. View our security badges, audits, and trust indicators.',
+    keywords: 'security verification, trust certification, SOC 2, GDPR compliant, PCI DSS, secure platform, verified site, security audit, compliance certification, enterprise security, data protection',
     type: 'website'
   },
   'security': {

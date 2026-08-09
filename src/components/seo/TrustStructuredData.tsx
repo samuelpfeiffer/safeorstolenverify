@@ -34,7 +34,7 @@ export const TrustStructuredData = () => {
       {
         "@type": "HowToStep",
         "name": "Review Certifications",
-        "text": "Visit our Trust Verification page to see all security certifications including SOC 2, ISO 27001, and PCI DSS"
+        "text": "Visit our Trust Verification page to see all security certifications including SOC 2 and PCI DSS"
       },
       {
         "@type": "HowToStep",

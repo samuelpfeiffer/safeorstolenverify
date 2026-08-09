@@ -37,7 +37,7 @@ const timeline: TimelineItem[] = [
   {
     year: "2025",
     title: "Platform Launch",
-    description: "Incorporated in Arizona and launched the live platform, expanding verification across phones, vehicles, license plates, serial-numbered goods, firearms, and bicycles against 100+ databases.",
+    description: "Launched the live platform, expanding verification across phones, vehicles, license plates, serial-numbered goods, firearms, and bicycles against 100+ databases.",
     icon: <Rocket className="h-6 w-6" />
   }
 ];

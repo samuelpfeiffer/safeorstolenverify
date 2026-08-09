@@ -33,13 +33,6 @@ const securityCertifications = [
     color: "text-green-600"
   },
   {
-    icon: Globe,
-    title: "ISO 27001",
-    description: "International standard for information security management",
-    badge: "Certified",
-    color: "text-orange-600"
-  },
-  {
     icon: Database,
     title: "Zero Retention",
     description: "Search data is never stored or retained after results",

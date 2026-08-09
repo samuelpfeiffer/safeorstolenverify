@@ -53,7 +53,7 @@ export const TrustBadgeStrip: React.FC = () => {
               <CardContent className="p-4">
                 <Award className="h-8 w-8 text-purple-600 mx-auto mb-2" />
                 <div className="font-semibold text-sm mb-1">Certifications</div>
-                <div className="text-xs text-muted-foreground mb-2">SOC 2, ISO 27001</div>
+                <div className="text-xs text-muted-foreground mb-2">SOC 2</div>
                 <Badge className="text-xs bg-purple-100 text-purple-800">
                   Audit Reports
                 </Badge>
