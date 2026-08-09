@@ -210,8 +210,8 @@ const Index = () => {
  {[
  { v: '100+', l: 'Databases Checked' },
  { v: '3 sec', l: 'Average Result Time' },
- { v: '10K+', l: 'Verified Users' },
- { v: '99.2%', l: 'Accuracy Rate' },
+ { v: '6', l: 'Item Categories' },
+ { v: '2', l: 'Free Checks to Start' },
  ].map((s) => (
  <div key={s.l} className="text-center py-5 px-4">
  <div className="text-2xl font-black text-primary">{s.v}</div>

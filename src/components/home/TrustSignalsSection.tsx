@@ -104,10 +104,6 @@ export const TrustSignalsSection = () => {
  SOC 2
  </Badge>
  <Badge variant="outline" className="px-4 py-2">
- <Award className="h-4 w-4 mr-2" />
- ISO 27001
- </Badge>
- <Badge variant="outline" className="px-4 py-2">
  <Lock className="h-4 w-4 mr-2" />
  PCI DSS
  </Badge>
