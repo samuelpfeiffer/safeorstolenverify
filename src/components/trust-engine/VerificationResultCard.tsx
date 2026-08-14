@@ -152,6 +152,17 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
         {/* Affiliate offers for clean results */}
         <CleanResultOffers result={result} />
 
+        {/* Proof of Clean Purchase — offered on clean results only */}
+        {result.status === 'clean' && (
+          <SaveProofPrompt
+            identifier={result.serial}
+            itemType={result.itemType}
+            status={result.status}
+            databasesQueried={result.sources}
+          />
+        )}
+
+
         {/* AI nudge */}
         <p className="text-[11px] text-muted-foreground text-center pt-2">
           Verified by SafeOrStolen AI.{' '}
