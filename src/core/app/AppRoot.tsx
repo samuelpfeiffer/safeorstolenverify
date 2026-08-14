@@ -115,6 +115,7 @@ const AuthAwareContent: React.FC = () => {
     <GA4Provider>
       <PWAProvider>
         <MasterSEO />
+        <SEODuplicateGuard />
         <RedirectHandler />
         <ScrollRestoration />
         <CriticalResourceLoader />
