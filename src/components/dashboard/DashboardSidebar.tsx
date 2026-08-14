@@ -34,11 +34,18 @@ export const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarPro
       hasShare: false,
     },
     {
+      id: 'my-records',
+      label: 'My Records',
+      icon: FileCheck,
+      hasShare: false,
+    },
+    {
       id: 'search-history',
       label: 'Search History',
       icon: History,
       hasShare: true,
     },
+
     {
       id: 'purchase-history',
       label: 'Purchase History',
