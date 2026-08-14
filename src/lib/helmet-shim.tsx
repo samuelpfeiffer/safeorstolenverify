@@ -198,7 +198,23 @@ const applyHead = () => {
     }
   });
 
+  // Single-owner enforcement: canonical links and description metas are owned
+  // exclusively by Helmet (i.e. PageSEO/SEOHead). Any copy left in the document
+  // by the prerender/static shell is removed so the hydrated DOM never carries
+  // more than one of each. Only runs when Helmet actually supplies its own.
+  if (mergedLinks.has('link:canonical')) {
+    document.head
+      .querySelectorAll('link[rel="canonical"]:not([data-helmet-shim="true"])')
+      .forEach((el) => el.parentNode?.removeChild(el));
+  }
+  if (mergedMetas.has('meta:name:description')) {
+    document.head
+      .querySelectorAll('meta[name="description"]:not([data-helmet-shim="true"])')
+      .forEach((el) => el.parentNode?.removeChild(el));
+  }
+
   // Upsert meta tags
+
   for (const [key, m] of mergedMetas.entries()) {
     let el = document.head.querySelector(`meta[data-helmet-shim="true"][data-helmet-key="${key}"]`) as HTMLMetaElement | null;
     if (!el) {
