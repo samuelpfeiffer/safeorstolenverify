@@ -400,7 +400,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
             "@type": "Person",
             "name": "Sam Pfeiffer"
           },
-          "foundingDate": "2024"
+          "foundingDate": "2017"
         }
       },
       {

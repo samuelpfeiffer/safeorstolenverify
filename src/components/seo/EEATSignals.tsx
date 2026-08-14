@@ -23,8 +23,9 @@ export const EEATSignals = () => {
  {/* What the platform actually does, operationally */}
  <meta
  name="experience"
- content="Stolen item verification platform operational since August 2024. Processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds. Over 100,000+ verifications processed."
+ content="Stolen item verification platform publicly launched in 2025, with development of the service beginning in 2017. Processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds."
  />
+
 
  {/* ─── Expertise ──────────────────────────────── */}
  {/* Specific domain knowledge, not vague claims */}
@@ -37,8 +38,9 @@ export const EEATSignals = () => {
  {/* Verifiable credentials and external recognition */}
  <meta
  name="authoritativeness"
- content="Trustpilot verified business (4.1 stars), Crunchbase listed organization, Used by 500+ FFL dealers for firearm compliance under 18 U.S.C. § 922"
+ content="Trustpilot business profile, Crunchbase listed organization, firearm serial verification supporting compliance with 18 U.S.C. § 922"
  />
+
 
  {/* ─── Trustworthiness ────────────────────────── */}
  {/* Concrete, verifiable trust indicators */}
@@ -83,7 +85,9 @@ export const EEATSignals = () => {
  />
 
  {/* ─── Business Identity ───────────────────────── */}
- <meta name="founded" content="August 2024" />
+ <meta name="founded" content="2017" />
+ <meta name="platform-launched" content="2025" />
+
  <meta name="legal-name" content="SafeOrStolen" />
  <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
  <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
