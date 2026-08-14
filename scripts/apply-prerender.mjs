@@ -273,7 +273,23 @@ function main() {
     written++;
   }
 
+  // Build-time assertion: no single meta description may cover >15% of routes.
+  const totalDesc = [...descCounts.values()].reduce((a, b) => a + b, 0);
+  if (totalDesc > 0) {
+    const [topDesc, topCount] = [...descCounts.entries()].sort((a, b) => b[1] - a[1])[0];
+    const share = topCount / totalDesc;
+    if (share > 0.15 && topCount > 1) {
+      throw new Error(
+        `Duplicate meta description across ${topCount}/${totalDesc} prerendered routes ` +
+          `(${(share * 100).toFixed(1)}% > 15% threshold):\n  "${topDesc}"\n` +
+          `Per-route descriptions must be unique. Re-capture snapshots (scripts/capture_prerender.py).`,
+      );
+    }
+    console.log(`🔎 ${descCounts.size} unique descriptions across ${totalDesc} routes (most repeated: ${topCount}x).`);
+  }
+
   for (const route of NOINDEX_STUB_ROUTES) {
+
     writeAtRoute(route, writeStub(shell, route));
   }
   for (const [route, destination] of Object.entries(REDIRECT_STUB_ROUTES)) {
