@@ -23,7 +23,7 @@ export const EEATSignals = () => {
  {/* What the platform actually does, operationally */}
  <meta
  name="experience"
- content="Stolen item verification platform publicly launched in 2025, with development of the service beginning in 2017. Processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds."
+ content="Stolen item verification platform that processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds."
  />
 
 
@@ -85,10 +85,9 @@ export const EEATSignals = () => {
  />
 
  {/* ─── Business Identity ───────────────────────── */}
- <meta name="founded" content="2017" />
- <meta name="platform-launched" content="2025" />
+ <meta name="founded" content="2017-07-20" />
 
- <meta name="legal-name" content="SafeOrStolen" />
+ <meta name="legal-name" content="Safe or Stolen LLC" />
  <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
  <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
  <meta name="terms-of-service" content="https://safeorstolen.com/terms" />

@@ -50,7 +50,7 @@ const CrunchbasePage: React.FC = () => {
  "description": "AI-powered stolen item verification platform checking IMEI, VIN, and serial numbers against 100+ law enforcement, insurance, and carrier databases in 3 seconds.",
  "url": "https://safeorstolen.com",
  "logo": "https://safeorstolen.com/sos-logo.png",
- "foundingDate": "2017",
+ "foundingDate": "2017-07-20",
  "founder": [
  { "@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "Founder & CEO" },
  { "@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder" }

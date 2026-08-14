@@ -400,7 +400,8 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
             "@type": "Person",
             "name": "Sam Pfeiffer"
           },
-          "foundingDate": "2017"
+          "foundingDate": "2017-07-20",
+          "legalName": "Safe or Stolen LLC"
         }
       },
       {
