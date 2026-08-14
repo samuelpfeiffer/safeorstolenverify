@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -285,8 +283,6 @@ const OurStoryPage: React.FC = () => {
  style={{ width: `${progress}%` }}
  />
  </div>
-
- <TopNavigation />
  <div className="min-h-screen bg-background pt-20">
  <div className="container mx-auto px-4 pt-20 md:pt-24 pb-2 max-w-4xl">
  <BreadcrumbNavigation items={[{ name: 'Our Story', href: '/our-story' }]} />
@@ -387,7 +383,6 @@ const OurStoryPage: React.FC = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

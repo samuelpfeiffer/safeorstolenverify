@@ -7,8 +7,6 @@ import {
   Shield, Smartphone, Zap, Globe
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const PressKitPage = () => {
   const companyFacts = [
@@ -109,9 +107,7 @@ const PressKitPage = () => {
         description="Download SafeOrStolen press materials including logos, screenshots, company facts, and story angles. Media resources for journalists and publications."
         canonical="https://safeorstolen.com/press-kit"
       />
-      
-      <TopNavigation />
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
           <div className="container mx-auto px-4 text-center">
@@ -334,8 +330,7 @@ const PressKitPage = () => {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 };

@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Newspaper, Calendar, ExternalLink, ArrowRight, Download, Mail } from 'lucide-react';
 
 export default function PressReleasePage() {
@@ -36,10 +34,7 @@ export default function PressReleasePage() {
  keywords="press releases, news, announcements, SafeOrStolen news, company updates, media"
  canonical="https://safeorstolen.com/press-release"
  />
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -138,9 +133,7 @@ export default function PressReleasePage() {
  </div>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

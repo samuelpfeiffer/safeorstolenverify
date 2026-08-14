@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Shield, CheckCircle, AlertTriangle, Search, ArrowRight, Scale, FileText } from 'lucide-react';
 
 export default function CheckFirearmPage() {
@@ -15,10 +13,7 @@ export default function CheckFirearmPage() {
         keywords="check if gun stolen, firearm serial number lookup, stolen gun check, 50-State Firearm Reports search, verify firearm, gun serial lookup"
         canonical="https://safeorstolen.com/check-firearm"
       />
-      
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -203,9 +198,7 @@ export default function CheckFirearmPage() {
             </Button>
           </div>
         </section>
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 }

@@ -1,8 +1,6 @@
 import { ReactNode, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 
@@ -71,7 +69,6 @@ export const PillarPageTemplate = ({
 
   return (
     <>
-      <TopNavigation />
       <SEOHead
         title={title}
         description={description}
@@ -80,7 +77,7 @@ export const PillarPageTemplate = ({
         schemaJson={schemas}
       />
 
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-8 md:py-14 max-w-4xl">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
@@ -145,9 +142,7 @@ export const PillarPageTemplate = ({
             </section>
           )}
         </div>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

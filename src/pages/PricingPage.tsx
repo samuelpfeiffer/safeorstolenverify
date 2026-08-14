@@ -6,8 +6,6 @@ import { Shield, Zap, Check, ArrowRight, Star, CreditCard } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const FAQS = [
  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $10/month.' },
@@ -51,7 +49,6 @@ const PricingPage = () => {
 
  return (
  <>
- <TopNavigation />
  <div className="min-h-screen bg-background text-foreground pt-20">
  <PageSEO
  title="Pricing — Free Stolen Item Checks, $0.99/Check, or $10/Month Unlimited | SafeOrStolen"
@@ -335,7 +332,6 @@ const PricingPage = () => {
  }}
  />
  </div>
- <Footer />
  </>
  );
 };

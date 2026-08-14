@@ -3,8 +3,6 @@ import { Shield, CheckCircle, Copy, Link as LinkIcon, ArrowRight, Star, Zap, Awa
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const SellerBadgePage: React.FC = () => {
   return (
@@ -14,9 +12,7 @@ const SellerBadgePage: React.FC = () => {
         description="Generate a free SafeOrStolen Verified badge for your marketplace listings. Prove your items are not stolen. Sell faster on Facebook Marketplace, eBay, Craigslist, OfferUp."
         canonical="/seller-badge"
       />
-
-      <TopNavigation />
-      <main className="max-w-4xl mx-auto px-4 py-12 pt-24 space-y-12">
+      <div className="max-w-4xl mx-auto px-4 py-12 pt-24 space-y-12">
         <header className="text-center space-y-4">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">SafeOrStolen Seller Verification Badge</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto speakable-summary">
@@ -98,8 +94,7 @@ const SellerBadgePage: React.FC = () => {
             </details>
           </div>
         </section>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 };

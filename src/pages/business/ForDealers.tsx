@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Zap, Users, TrendingUp, FileCheck, Clock } from 'lucide-react';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 export default function ForDealers() {
  const structuredData = {
  "@context": "https://schema.org",
@@ -32,7 +30,6 @@ export default function ForDealers() {
  keywords="car dealer VIN check, dealership VIN verification, wholesale vehicle verification, dealer title check, automotive inventory verification"
  structuredData={structuredData}
  />
- <TopNavigation />
  <div className="container mx-auto px-4 py-12 pt-24">
  <section className="max-w-4xl mx-auto text-center mb-16">
  <h1 className="text-5xl font-bold mb-6">SafeOrStolen for Car Dealers</h1>
@@ -277,7 +274,6 @@ export default function ForDealers() {
  <AppStoreBadges size="md" />
  </section>
  </div>
- <Footer />
  </>
  );
 }

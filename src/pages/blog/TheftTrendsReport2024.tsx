@@ -3,8 +3,6 @@ import { Card } from '@/components/ui/card';
 import { TrendingUp, AlertTriangle, Shield, BarChart3, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -40,8 +38,6 @@ export default function TheftTrendsReport2024() {
         canonical="/blog/theft-trends-report-2024"
         structuredData={structuredData}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none">
@@ -386,7 +382,6 @@ export default function TheftTrendsReport2024() {
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/theft-trends-report-2024" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 }

@@ -4,8 +4,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { BookOpen, FileText, HelpCircle, Shield, Phone, Car, ArrowRight, Download, Scale, Building2, Gavel } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const educationalFAQs = [
  {
@@ -67,9 +65,7 @@ export default function ResourceCenterPage() {
  <Helmet>
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
  </Helmet>
- 
- <TopNavigation />
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-20 relative overflow-hidden">
  <div className="absolute inset-0 pointer-events-none">
@@ -235,8 +231,7 @@ export default function ResourceCenterPage() {
  </div>
  </div>
  </section>
- </main>
- <Footer />
+ </div>
  </>
  );
 }

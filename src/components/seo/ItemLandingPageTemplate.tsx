@@ -12,8 +12,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 interface ItemLandingPageProps {
  title: string;
@@ -116,7 +114,7 @@ export const ItemLandingPageTemplate = ({
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; {itemType} Verification</nav>
  </header>
- <main>
+ <div>
  <h1>{h1}</h1>
  <p>{content.intro}</p>
  
@@ -162,12 +160,9 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
  {/* Hero Section */}
  <section className="pt-24 pb-16 px-4" style={{ minHeight: '60vh' }}>
@@ -333,8 +328,6 @@ export const ItemLandingPageTemplate = ({
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
 };

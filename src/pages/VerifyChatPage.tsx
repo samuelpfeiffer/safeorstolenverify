@@ -512,7 +512,7 @@ const VerifyChatPage: React.FC = () => {
  <meta name="ai:purpose" content="Conversational AI verification of items against 100+ stolen databases" />
  </Helmet>
 
- {/* AppRoot renders TopNavigation + <main className="pt-20"/>. We negate that
+ {/* AppRoot renders TopNavigation + <div className="pt-20"/>. We negate that
  padding so the chat fills the viewport edge-to-edge (ChatGPT/Claude feel). */}
 
  <div className="-mt-20 pt-20 h-screen bg-background text-foreground flex flex-col overflow-hidden">
@@ -531,9 +531,10 @@ const VerifyChatPage: React.FC = () => {
  S
  </div>
  <div className="min-w-0">
- <h1 className="text-sm font-semibold leading-tight truncate tracking-tight">
+ <p className="text-sm font-semibold leading-tight truncate tracking-tight">
  {active?.title || 'Verification stream'}
- </h1>
+ </p>
+
  <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 font-mono">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
  100+ DATABASES · CLAUDE 4.5

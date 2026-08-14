@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, MapPin, Clock } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const CraigslistSafetyVerification = () => {
   const faqs = [
@@ -57,8 +55,6 @@ const CraigslistSafetyVerification = () => {
         canonical="/craigslist-safety-verification"
         structuredData={faqSchema}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
@@ -316,7 +312,6 @@ const CraigslistSafetyVerification = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

@@ -1,8 +1,6 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { ArrowRight } from 'lucide-react';
 
 export default function VerifyPawnshopsPage() {
@@ -15,10 +13,7 @@ export default function VerifyPawnshopsPage() {
         keywords="pawn shop verification, stolen goods checker pawn, IMEI verification pawn shop, pawn compliance"
         canonical="https://safeorstolen.com/verify/pawnshops"
       />
-      
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-background pt-20 flex items-center justify-center">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-6">Pawn Shop Verification</h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -30,9 +25,7 @@ export default function VerifyPawnshopsPage() {
             </Link>
           </Button>
         </div>
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 }

@@ -3,8 +3,6 @@ import { Shield, CheckCircle, Building2, TrendingUp, Users, Zap, ArrowRight, Pho
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 interface FAQ {
   question: string;
@@ -125,8 +123,6 @@ export const BusinessLandingTemplate = ({
         canonical={canonical}
         structuredData={faqSchema ? [organizationSchema, faqSchema] : [organizationSchema]}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-20 px-4 bg-gradient-to-b from-primary/10 to-background">
@@ -307,7 +303,6 @@ export const BusinessLandingTemplate = ({
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

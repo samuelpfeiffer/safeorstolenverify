@@ -8,8 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const faqs = [
  {
@@ -116,7 +114,7 @@ const SMSVerifyPage = () => {
 
  <noscript>
  <header><h1>SMS Verify — Text Any IMEI, VIN, or Serial Number to Check if Stolen</h1></header>
- <main>
+ <div>
  <article>
  <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from 100+ databases including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, carrier and theft databases, and law enforcement and insurance sources.</p>
  <h2>How SMS Verification Works</h2>
@@ -126,10 +124,8 @@ const SMSVerifyPage = () => {
  <h2>Why Use SMS Instead of an App?</h2>
  <p>No download required. No Wi-Fi needed. Works on any phone — even basic flip phones. Send a text and get verified. When you're at a gun show or meeting a seller in a parking lot, SMS is the fastest way to verify an item is safe to buy.</p>
  </article>
- </main>
+ </div>
  </noscript>
-
- <TopNavigation />
  <div className="min-h-screen bg-background pt-16">
  {/* Hero */}
  <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
@@ -437,7 +433,6 @@ const SMSVerifyPage = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

@@ -12,8 +12,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 interface FAQ {
   question: string;
@@ -180,7 +178,6 @@ export const SEOLandingPageTemplate = ({
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title={title}
         description={metaDescription}
@@ -418,7 +415,6 @@ export const SEOLandingPageTemplate = ({
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

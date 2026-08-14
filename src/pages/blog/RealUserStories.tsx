@@ -3,8 +3,6 @@ import { Card } from '@/components/ui/card';
 import { Quote, CheckCircle, AlertTriangle, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 export default function RealUserStories() {
@@ -38,8 +36,6 @@ export default function RealUserStories() {
         canonical="/blog/real-user-stories"
         structuredData={structuredData}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none">
@@ -386,7 +382,6 @@ export default function RealUserStories() {
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/real-user-stories" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 }

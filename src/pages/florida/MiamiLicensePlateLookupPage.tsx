@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { Shield, Search, CheckCircle, ArrowRight, AlertTriangle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const MiamiLicensePlateLookupPage = () => {
  const faqSchema = {
@@ -53,8 +51,7 @@ const MiamiLicensePlateLookupPage = () => {
  canonical="/florida/miami-license-plate-lookup"
  structuredData={[faqSchema, webPageSchema]}
  />
- <TopNavigation />
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  <header className="py-12 px-4 bg-gradient-to-b from-muted to-background">
  <div className="max-w-3xl mx-auto text-center">
  <div className="flex items-center justify-center gap-2 text-primary text-sm font-bold uppercase tracking-widest mb-3">
@@ -166,8 +163,7 @@ const MiamiLicensePlateLookupPage = () => {
  </div>
  </section>
  </article>
- </main>
- <Footer />
+ </div>
  </>
  );
 };

@@ -3,8 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Check, X, Smartphone, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const ComparisonAutocheck = () => {
   const comparisonSchema = {
@@ -59,8 +57,6 @@ const ComparisonAutocheck = () => {
           </p>
         </div>
       </noscript>
-
-      <TopNavigation />
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
@@ -232,7 +228,6 @@ const ComparisonAutocheck = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

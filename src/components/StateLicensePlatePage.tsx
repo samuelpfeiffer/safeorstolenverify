@@ -12,8 +12,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { StateData, getNeighboringStates } from '@/config/stateData';
 import { getStateUniqueContent, hasUniqueContent } from '@/config/stateUniqueContent';
 import { useState } from 'react';
@@ -119,7 +117,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/license-plate-lookup">License Plate Lookup</a> &gt; {stateData.name}</nav>
  </header>
- <main>
+ <div>
  <h1>Free {stateData.name} License Plate Lookup</h1>
  <p>Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}100+ databases instantly. Verify any {stateData.abbrev} vehicle isn't stolen before buying.</p>
  
@@ -175,12 +173,9 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </ul>
  
  <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
  {/* Hero Section */}
  <section className="pt-24 pb-16 px-4">
@@ -540,8 +535,6 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
 };

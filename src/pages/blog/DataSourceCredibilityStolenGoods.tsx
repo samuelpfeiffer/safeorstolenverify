@@ -3,8 +3,6 @@ import { AppDownloadCTA } from '@/components/app/AppDownloadCTA';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Database, Shield, CheckCircle, AlertTriangle } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -35,7 +33,6 @@ export default function DataSourceCredibilityStolenGoods() {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Data Source Credibility in Stolen Goods Verification | SafeOrStolen"
         description="Comprehensive analysis of data sources used for stolen goods verification, their credibility, accuracy, and how to evaluate verification services in 2026."
@@ -348,7 +345,6 @@ export default function DataSourceCredibilityStolenGoods() {
         currentCategory="blog" 
         maxLinks={5}
       />
-      <Footer />
     </>
   );
 }

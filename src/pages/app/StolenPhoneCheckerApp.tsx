@@ -3,13 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Smartphone, Shield, Scan, Zap, Download, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const StolenPhoneCheckerApp = () => {
  return (
  <>
- <TopNavigation />
  <PageSEO
  title="Stolen Phone Checker App FREE | Check IMEI Before Buying - SafeOrStolen"
  description="FREE stolen phone checker app. Verify any phone's IMEI in 3 seconds before buying. Protects BOTH buyers AND sellers. Works offline. Download now at SafeOrStolen.com."
@@ -201,7 +198,6 @@ const StolenPhoneCheckerApp = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

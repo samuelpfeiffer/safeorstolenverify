@@ -33,8 +33,6 @@ import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatu
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ReferralProgram, ViralShareWidget } from '@/components/growth';
 import { WatchlistSection } from '@/components/dashboard/WatchlistSection';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
@@ -563,7 +561,6 @@ const DashboardPage = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Dashboard | SafeOrStolen"
         description="Manage your SafeOrStolen account, verification history, and subscriptions."
@@ -700,7 +697,6 @@ const DashboardPage = () => {
         />
       </div>
     </div>
-    <Footer />
     </>
   );
 };

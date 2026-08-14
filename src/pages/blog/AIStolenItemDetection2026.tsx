@@ -1,7 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Bot, Brain, Cpu, Database, Shield, Smartphone, Zap, CheckCircle2 } from 'lucide-react';
@@ -88,10 +86,7 @@ const AIStolenItemDetection2026 = () => {
         type="article"
         structuredData={[faqSchema, articleSchema]}
       />
-
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-24">
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-24">
         <article className="container mx-auto px-4 max-w-4xl py-12">
           {/* Hero Section */}
           <header className="text-center mb-12">
@@ -342,9 +337,7 @@ const AIStolenItemDetection2026 = () => {
             </div>
           </section>
         </article>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

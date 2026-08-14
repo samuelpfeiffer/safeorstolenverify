@@ -8,8 +8,6 @@ import { Shield, CheckCircle2, Building2, User, CreditCard } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { toast } from 'sonner';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 export default function BusinessSignup() {
   const navigate = useNavigate();
@@ -58,7 +56,6 @@ export default function BusinessSignup() {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Business Sign Up - 30-Day Free Trial | SafeOrStolen"
         description="Sign up for SafeOrStolen business verification. 30-day free trial, unlimited checks, widget integration, compliance reporting. No credit card required."
@@ -248,7 +245,6 @@ export default function BusinessSignup() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

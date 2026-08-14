@@ -8,8 +8,6 @@ import { Search, Smartphone, Car, FileText, Shield, Home, Bike, MapPin, ArrowRig
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const NotFound = () => {
   const location = useSafeLocation();
@@ -62,7 +60,6 @@ const NotFound = () => {
 
   return (
     <>
-      <TopNavigation />
       <StatusCodeHandler statusCode={404} noIndex={true} />
       <PageSEO
         title="Page Not Found | SafeOrStolen"
@@ -158,7 +155,6 @@ const NotFound = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

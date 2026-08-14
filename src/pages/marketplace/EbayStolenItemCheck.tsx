@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, CreditCard, Package } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const EbayStolenItemCheck = () => {
   const faqs = [
@@ -57,8 +55,6 @@ const EbayStolenItemCheck = () => {
         canonical="/ebay-stolen-item-check"
         structuredData={faqSchema}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-blue-500/10 to-background">
@@ -358,7 +354,6 @@ const EbayStolenItemCheck = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

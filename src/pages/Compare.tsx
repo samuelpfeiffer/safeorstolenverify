@@ -4,8 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Check, X, Smartphone, Shield, Zap, Users, Building2, Download } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const Compare = () => {
  const competitors = [
@@ -156,8 +154,6 @@ const Compare = () => {
  <p>Compare stolen item verification services. SafeOrStolen offers the only mobile app with barcode scanning.</p>
  </div>
  </noscript>
-
- <TopNavigation />
  <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -296,7 +292,6 @@ const Compare = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

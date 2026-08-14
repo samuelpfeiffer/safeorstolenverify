@@ -11,8 +11,6 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { useState } from 'react';
 
 const SerialNumberStolenCheckPage = () => {
@@ -137,9 +135,6 @@ const SerialNumberStolenCheckPage = () => {
  keywords="serial number stolen check, check if item is stolen, stolen property lookup, serial number database, is my item stolen, stolen goods check, serial number verification"
  schemaJson={schema}
  />
-
- <TopNavigation />
-
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
  {/* Hero Section */}
  <section className="pt-24 pb-16 px-4">
@@ -405,8 +400,6 @@ const SerialNumberStolenCheckPage = () => {
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
 };

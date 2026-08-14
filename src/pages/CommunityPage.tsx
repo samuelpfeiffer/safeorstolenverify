@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Users, MessageCircle, Shield, Heart, Trophy, Star, ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function CommunityPage() {
@@ -15,10 +13,7 @@ export default function CommunityPage() {
         keywords="community, stolen item reporting, fraud prevention community, marketplace safety, share experiences, help others"
         canonical="https://safeorstolen.com/community"
       />
-      
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -213,9 +208,7 @@ export default function CommunityPage() {
             </Button>
           </div>
         </section>
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 }

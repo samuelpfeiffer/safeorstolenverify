@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check, X, Crown, Shield, Star, Smartphone, Database, DollarSign, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const BestFreeIMEICheckers2025 = () => {
@@ -212,9 +210,7 @@ const BestFreeIMEICheckers2025 = () => {
         canonical="/comparisons/best-free-imei-checkers-2025"
         structuredData={listSchema}
       />
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -490,9 +486,7 @@ const BestFreeIMEICheckers2025 = () => {
           currentCategory="comparison" 
           maxLinks={6}
         />
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 };

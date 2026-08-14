@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const FAQS: { question: string; answer: string }[] = [
  {
@@ -120,9 +118,7 @@ const HowToVerifyAUsedItemPage = () => {
  />
 
  <div className="min-h-screen bg-background">
- <TopNavigation />
-
- <main className="container mx-auto px-4 py-12 max-w-3xl">
+ <div className="container mx-auto px-4 py-12 max-w-3xl">
  <article className="prose prose-invert max-w-none">
  <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
  How to Verify a Used Item
@@ -238,9 +234,7 @@ const HowToVerifyAUsedItemPage = () => {
  </Link>
  </p>
  </article>
- </main>
-
- <Footer />
+ </div>
  </div>
  </>
  );

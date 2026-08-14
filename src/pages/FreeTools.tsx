@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Wrench, Smartphone, Car, Shield, ArrowRight } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const FreeTools = () => {
   return (
@@ -50,8 +48,6 @@ const FreeTools = () => {
           <p>For complete stolen, lost, and blacklist verification, use SafeOrStolen's full verification service. 2 free checks included.</p>
         </div>
       </noscript>
-
-      <TopNavigation />
       <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -152,7 +148,6 @@ const FreeTools = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

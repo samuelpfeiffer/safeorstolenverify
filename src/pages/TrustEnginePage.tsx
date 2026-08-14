@@ -1,15 +1,12 @@
 import { Suspense, lazy } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const UniversalTrustEngine = lazy(() => import('@/components/trust-engine/UniversalTrustEngine'));
 
 export default function TrustEnginePage() {
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Universal Trust Engine - Verify IMEI, VIN, Serial | SafeOrStolen"
         description="Verify any item instantly. Auto-detect IMEI, VIN, serial numbers, and license plates against 100+ databases. Batch upload for pawn shops and auction houses."
@@ -19,7 +16,6 @@ export default function TrustEnginePage() {
       <Suspense fallback={<AppLoadingScreen />}>
         <UniversalTrustEngine />
       </Suspense>
-      <Footer />
     </>
   );
 }

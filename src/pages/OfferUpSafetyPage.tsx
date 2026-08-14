@@ -4,8 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Shield, AlertTriangle, CheckCircle, XCircle, Smartphone, MapPin, User, Star, MessageSquare, ArrowRight } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 /**
  * OfferUp Safety Page - Target: "OfferUp scams" (14,800 monthly searches)
@@ -66,7 +64,6 @@ const OfferUpSafetyPage = () => {
 
  return (
  <>
- <TopNavigation />
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="OfferUp Scam Check - Free Item Verification"
@@ -314,7 +311,6 @@ const OfferUpSafetyPage = () => {
  </section>
  </div>
  </div>
- <Footer />
  </>
  );
 };

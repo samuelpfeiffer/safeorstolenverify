@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle, Shield, CheckCircle, ArrowRight, Download, Users, DollarSign, Lock } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -12,7 +10,6 @@ import { blogImages } from '@/assets/blog';
 const FacebookMarketplaceScams = () => {
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Facebook Marketplace Scams to Avoid in 2026 (Stolen Items, Fake Sellers)"
         description="Protect yourself from Facebook Marketplace scams. Learn how to spot stolen items, fake sellers, and fraud. Free verification tool to check before you buy."
@@ -209,7 +206,6 @@ const FacebookMarketplaceScams = () => {
           maxLinks={5}
         />
       </div>
-      <Footer />
     </>
   );
 };

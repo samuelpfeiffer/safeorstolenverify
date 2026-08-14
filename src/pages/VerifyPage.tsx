@@ -27,8 +27,6 @@ import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
@@ -285,7 +283,6 @@ const VerifyPage = () => {
 
  return (
  <>
- <TopNavigation />
  {/* SEO Components - Critical for Google indexing */}
  <PageSEO
  title="Free Stolen Item Check - IMEI VIN Serial Verification"
@@ -588,7 +585,6 @@ const VerifyPage = () => {
  </div>
  )}
  </div>
- <Footer />
  </>
  );
 };

@@ -1,8 +1,6 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -39,7 +37,6 @@ const SelfHostedVideoWatchPage: React.FC = () => {
 
  return (
  <>
- <TopNavigation />
  <Helmet>
  <title>{video.seoTitle} | SafeOrStolen</title>
  <meta name="description" content={video.seoDescription} />
@@ -55,7 +52,7 @@ const SelfHostedVideoWatchPage: React.FC = () => {
  <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
  </Helmet>
 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  <div className="container mx-auto px-4 py-8 max-w-5xl">
  <nav className="mb-6" aria-label="Breadcrumb">
  <Link
@@ -148,8 +145,7 @@ const SelfHostedVideoWatchPage: React.FC = () => {
  </section>
  )}
  </div>
- </main>
- <Footer />
+ </div>
  </>
  );
 };

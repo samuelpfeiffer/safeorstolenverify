@@ -8,8 +8,6 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const WashingtonDCLicensePlateLookup = () => {
  const navigate = useNavigate();
@@ -87,8 +85,6 @@ const WashingtonDCLicensePlateLookup = () => {
  canonical="/washington-dc-license-plate-lookup"
  structuredData={[structuredData, faqSchema]}
  />
-
- <TopNavigation />
  <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background pt-16">
  {/* Hero Section */}
  <section className="py-16 md:py-24">
@@ -362,7 +358,6 @@ const WashingtonDCLicensePlateLookup = () => {
  {/* Related Pages */}
  <RelatedPagesSection currentPage="/washington-dc-license-plate-lookup" />
  </div>
- <Footer />
  </>
  );
 };

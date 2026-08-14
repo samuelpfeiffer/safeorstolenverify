@@ -6,8 +6,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const faqs = [
  {
@@ -108,7 +106,7 @@ const BarcodeScannerPage = () => {
 
  <noscript>
  <header><h1>Free Barcode Scanner — Scan Any Item to Check if Stolen</h1></header>
- <main>
+ <div>
  <article>
  <p>SafeOrStolen's barcode scanner lets you use your phone camera to scan any IMEI barcode, VIN barcode, QR code, or serial number barcode to instantly verify if an item has been reported stolen. No app store download needed — works directly in your mobile browser as a Progressive Web App (PWA).</p>
  <h2>What Barcodes Can You Scan?</h2>
@@ -118,10 +116,8 @@ const BarcodeScannerPage = () => {
  <h2>Perfect for In-Person Shopping</h2>
  <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
  </article>
- </main>
+ </div>
  </noscript>
-
- <TopNavigation />
  <div className="min-h-screen bg-background pt-16">
  {/* Hero */}
  <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
@@ -332,7 +328,6 @@ const BarcodeScannerPage = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

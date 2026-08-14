@@ -2,8 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import {
  Database, Shield, Globe, Building2, FileCheck,
  Clock, ArrowRight, CheckCircle, Lock, AlertTriangle
@@ -339,10 +337,7 @@ export default function DataSourcesPage() {
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
  <script type="application/ld+json">{JSON.stringify(datasetSchema)}</script>
  </Helmet>
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -578,9 +573,7 @@ export default function DataSourcesPage() {
  </Button>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

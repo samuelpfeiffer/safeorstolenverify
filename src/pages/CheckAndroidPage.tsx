@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Smartphone, CheckCircle, AlertTriangle, Search, Shield, ArrowRight, Settings, Phone } from 'lucide-react';
 
 export default function CheckAndroidPage() {
@@ -15,10 +13,7 @@ export default function CheckAndroidPage() {
  keywords="check android stolen, android IMEI check, Samsung stolen check, Google Pixel verification, OnePlus IMEI lookup, android blacklist check"
  canonical="https://safeorstolen.com/check-android"
  />
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -190,9 +185,7 @@ export default function CheckAndroidPage() {
  </Button>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 interface BlogPostTemplateProps {
   title: string;
@@ -95,7 +93,6 @@ export const BlogPostTemplate = ({
 
   return (
     <>
-      <TopNavigation />
       <SEOHead
         title={`${title} | Blog`}
         description={metaDescription}
@@ -190,7 +187,6 @@ export const BlogPostTemplate = ({
           )}
         </article>
       </div>
-      <Footer />
     </>
   );
 };

@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { CheckCircle, X, Smartphone, Globe, Zap, Shield, ArrowRight } from 'lucide-react';
 
 export default function VsStolenRegisterPage() {
@@ -15,10 +13,7 @@ export default function VsStolenRegisterPage() {
         keywords="StolenRegister alternative, stolen register alternative, compare stolen item checkers, best stolen property database"
         canonical="https://safeorstolen.com/vs-stolenregister"
       />
-      
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -208,9 +203,7 @@ export default function VsStolenRegisterPage() {
             </Button>
           </div>
         </section>
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 }

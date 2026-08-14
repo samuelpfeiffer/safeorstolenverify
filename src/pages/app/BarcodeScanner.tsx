@@ -3,12 +3,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Scan, Shield, Smartphone, Zap, Download, CheckCircle, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 const BarcodeScanner = () => {
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Barcode Scanner Stolen Checker App | SafeOrStolen"
         description="Free barcode scanner app to check if items are stolen. Scan any IMEI, VIN, or serial number barcode for instant verification."
@@ -243,7 +240,6 @@ const BarcodeScanner = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

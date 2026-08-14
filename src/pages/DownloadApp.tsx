@@ -4,8 +4,6 @@ import { Download, Shield, Smartphone, Wifi, WifiOff, Camera, Clock, CheckCircle
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const DownloadApp = () => {
   const handleInstallClick = () => {
@@ -56,8 +54,6 @@ const DownloadApp = () => {
         canonical="/download"
         structuredData={softwareAppSchema}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background pt-16">
         
         {/* Hero Section */}
@@ -520,7 +516,6 @@ const DownloadApp = () => {
         </section>
 
       </div>
-      <Footer />
     </>
   );
 };

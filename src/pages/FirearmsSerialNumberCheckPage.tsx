@@ -11,8 +11,6 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { useState } from 'react';
 
 const FirearmsSerialNumberCheckPage = () => {
@@ -110,9 +108,6 @@ const FirearmsSerialNumberCheckPage = () => {
  keywords="stolen gun check, firearm serial number lookup, check if gun is stolen, gun serial number database, stolen firearm verification, stolen firearms databases gun check alternative"
  schemaJson={schema}
  />
-
- <TopNavigation />
-
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
  {/* Hero Section */}
  <section className="pt-24 pb-16 px-4">
@@ -424,8 +419,6 @@ For official verification, visit your local police department or licensed firear
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
 };

@@ -6,8 +6,6 @@ import { Smartphone, Shield, AlertTriangle, CheckCircle } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -38,7 +36,6 @@ export default function CompleteImeiGuide() {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Complete IMEI Guide 2026: Check if Phone is Stolen | SafeOrStolen"
         description="Ultimate guide to IMEI numbers, how to find your IMEI, check if a phone is stolen or blacklisted, and protect yourself when buying used smartphones in 2026."
@@ -324,7 +321,6 @@ export default function CompleteImeiGuide() {
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/complete-imei-guide-protect-yourself" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 }

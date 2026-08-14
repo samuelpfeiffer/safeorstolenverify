@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const FAQ_ITEMS = [
   { q: 'How do I check if a phone is stolen before buying it?', a: 'Get the IMEI number from the seller (dial *#06# on the phone or check Settings → About Phone). Enter it into SafeOrStolen\'s IMEI checker to cross-reference carrier and manufacturer blacklists, and community theft registries. Results appear in 3 seconds.' },
@@ -64,7 +62,6 @@ const CheckIfPhoneStolenGuide = () => {
 
   return (
     <>
-    <TopNavigation />
     <div className="min-h-screen bg-background text-foreground pt-20">
       <SEOHead
         title="How to Check If a Phone Is Stolen (2026 Guide) | SafeOrStolen"
@@ -277,7 +274,6 @@ const CheckIfPhoneStolenGuide = () => {
         </section>
       </article>
     </div>
-    <Footer />
     </>
   );
 };
