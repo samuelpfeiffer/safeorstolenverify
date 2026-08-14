@@ -87,7 +87,6 @@ export const EEATSignals = () => {
  {/* ─── Business Identity ───────────────────────── */}
  <meta name="founded" content="2017-07-20" />
 
- <meta name="legal-name" content="Safe or Stolen LLC" />
  <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
  <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
  <meta name="terms-of-service" content="https://safeorstolen.com/terms" />

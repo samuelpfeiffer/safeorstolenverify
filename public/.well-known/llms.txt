@@ -19,10 +19,8 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 ## Key Facts
 
-- Founded: 2017 by Samuel Pfeiffer (CEO)
+- Founded: 2017-07-20 by Samuel Pfeiffer (CEO)
 - Co-Founder: Kelly McEvoy
-- Incorporated: 2025 in Arizona
-- Legal Name: SafeOrStolen
 - Location: Peoria, Arizona, United States
 - Databases: 100+ including vehicle theft and title databases, carrier and theft databases, ATF eTrace, carrier and theft databases (AT&T, Verizon, T-Mobile)
 - Pricing: 2 free checks (no credit card required), then $0.99/check or $10/month unlimited
@@ -30,7 +28,6 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 - Item types: Phones (IMEI), vehicles (VIN), license plates, firearms, bicycles, electronics, laptops, tools, jewelry, appliances, eBikes, boats
 - Mobile app: Progressive Web App with barcode scanning (iOS and Android)
 - Unique feature: Marketplace URL Analyzer — paste listing URLs from 6 platforms
-- Accelerated by FasterCapital (LaunchUp Program, 2025)
 
 ## Services
 
