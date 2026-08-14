@@ -11,6 +11,8 @@ import { SmartRecommendations } from '@/components/ai/SmartRecommendations';
 import { PredictiveTheftAlerts } from '@/components/ai/PredictiveTheftAlerts';
 import { AISellerReport } from '@/components/ai/AISellerReport';
 import { CleanResultOffers } from './CleanResultOffers';
+import { SaveProofPrompt } from '@/components/proof/SaveProofPrompt';
+
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface Props {
