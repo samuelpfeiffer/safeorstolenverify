@@ -57,10 +57,10 @@ export function getRobotsContent(params: {
   /** Optional override for explicit noindex pages */
   noIndex?: boolean;
 }): string {
+  // Only an explicit `true` can force noindex. A default `false` from a caller
+  // must NOT override the path policy, or private routes get indexed.
   const effectiveNoIndex =
-    typeof params.noIndex === 'boolean'
-      ? params.noIndex
-      : isPrivateNoIndexPath(params.pathname);
+    params.noIndex === true || isPrivateNoIndexPath(params.pathname);
 
   if (effectiveNoIndex) {
     return 'noindex, nofollow';
