@@ -257,15 +257,16 @@ function main() {
   }
 
   for (const route of NOINDEX_STUB_ROUTES) {
-    const clean = route.replace(/^\//, '');
-    const dir = path.join(DIST, clean);
-    fs.mkdirSync(dir, { recursive: true });
-    const html = writeStub(shell, route);
-    fs.writeFileSync(path.join(dir, 'index.html'), html);
-    fs.mkdirSync(path.dirname(path.join(DIST, `${clean}.html`)), { recursive: true });
-    fs.writeFileSync(path.join(DIST, `${clean}.html`), html);
+    writeAtRoute(route, writeStub(shell, route));
   }
-  console.log(`🚫 ${NOINDEX_STUB_ROUTES.length} non-content routes written as noindex stubs.`);
+  for (const [route, destination] of Object.entries(REDIRECT_STUB_ROUTES)) {
+    writeAtRoute(route, writeStub(shell, route, destination));
+  }
+  console.log(
+    `🚫 ${NOINDEX_STUB_ROUTES.length} non-content routes written as noindex stubs, ` +
+      `${Object.keys(REDIRECT_STUB_ROUTES).length} legacy paths written as canonicalised redirect stubs.`,
+  );
+
 
   console.log(`✅ Per-route prerender applied to ${written} routes (unique title/description/canonical/og:url + body). ${skipped} private routes skipped.`);
 }
