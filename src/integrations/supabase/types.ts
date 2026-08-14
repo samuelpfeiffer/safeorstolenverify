@@ -964,16 +964,13 @@ export type Database = {
           created_at: string
           databases_queried: Json
           deleted_at: string | null
+          email: string | null
           id: string
           identifier_hash: string
           identifier_masked: string
-          listing_source: string | null
-          meeting_location: string | null
-          purchase_price: number | null
+          marketing_opt_in: boolean
           record_hash: string
           result: string
-          reveal_identifier: boolean
-          seller_name: string | null
           user_id: string | null
         }
         Insert: {
@@ -982,16 +979,13 @@ export type Database = {
           created_at?: string
           databases_queried?: Json
           deleted_at?: string | null
+          email?: string | null
           id?: string
           identifier_hash: string
           identifier_masked: string
-          listing_source?: string | null
-          meeting_location?: string | null
-          purchase_price?: number | null
+          marketing_opt_in?: boolean
           record_hash?: string
           result: string
-          reveal_identifier?: boolean
-          seller_name?: string | null
           user_id?: string | null
         }
         Update: {
@@ -1000,16 +994,13 @@ export type Database = {
           created_at?: string
           databases_queried?: Json
           deleted_at?: string | null
+          email?: string | null
           id?: string
           identifier_hash?: string
           identifier_masked?: string
-          listing_source?: string | null
-          meeting_location?: string | null
-          purchase_price?: number | null
+          marketing_opt_in?: boolean
           record_hash?: string
           result?: string
-          reveal_identifier?: boolean
-          seller_name?: string | null
           user_id?: string | null
         }
         Relationships: []
@@ -1669,12 +1660,11 @@ export type Database = {
           category: string
           created_at: string
           databases_queried: Json
+          deleted_at: string
           id: string
           identifier_masked: string
-          is_deleted: boolean
           record_hash: string
           result: string
-          reveal_identifier: boolean
         }[]
       }
       get_public_community_stories: {
