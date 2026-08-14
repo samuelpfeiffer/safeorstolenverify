@@ -33,6 +33,8 @@ import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatu
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ReferralProgram, ViralShareWidget } from '@/components/growth';
 import { WatchlistSection } from '@/components/dashboard/WatchlistSection';
+import { MyRecordsSection } from '@/components/dashboard/MyRecordsSection';
+
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
