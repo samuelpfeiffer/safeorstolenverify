@@ -4,7 +4,7 @@
  * The disclaimer is legally reviewed copy. Do not soften, shorten or reword it.
  */
 export const PROOF_DISCLAIMER =
-  'This record confirms that a database check was performed on the date shown and what that check returned. It is not proof of ownership, a bill of sale, or a legal document. It does not guarantee the item is not stolen — most stolen property is never reported to any database. This item was not found in any database we checked, as of the date shown.';
+  'This record confirms that a search was performed on the date shown and what that search returned. It is not proof of ownership, a bill of sale, or a legal document. It does not guarantee the item is not stolen — many stolen items are never reported to any database. This item was not found in any database we checked, as of the date shown.';
 
 export type ProofCategory = 'phone' | 'vehicle' | 'plate' | 'serial' | 'firearm' | 'bike';
 
