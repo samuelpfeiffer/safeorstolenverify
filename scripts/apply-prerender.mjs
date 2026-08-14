@@ -254,6 +254,9 @@ function main() {
     const bodyFile = path.join(PRERENDER, 'pages', `${page.slug}.html`);
     const body = fs.existsSync(bodyFile) ? fs.readFileSync(bodyFile, 'utf-8') : '';
     const html = documentFor(shell, page, body);
+    const emittedDesc = descriptionFor(page);
+    if (emittedDesc) descCounts.set(emittedDesc, (descCounts.get(emittedDesc) || 0) + 1);
+
 
     if (page.route === '/') {
       fs.writeFileSync(indexPath, html);
