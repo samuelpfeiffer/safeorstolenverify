@@ -62,6 +62,9 @@ const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const CheckImeiStolenPage = lazy(() => import('@/pages/CheckImeiStolenPage'));
 const HowToVerifyAUsedItemPage = lazy(() => import('@/pages/HowToVerifyAUsedItemPage'));
 const MethodologyPage = lazy(() => import('@/pages/MethodologyPage'));
+const ProofRecordPage = lazy(() => import('@/pages/ProofRecordPage'));
+const ProofOfPurchasePage = lazy(() => import('@/pages/ProofOfPurchasePage'));
+
 const LearnHubPage = lazy(() => import('@/pages/LearnHubPage'));
 const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
 const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
