@@ -957,6 +957,63 @@ export type Database = {
         }
         Relationships: []
       }
+      proof_records: {
+        Row: {
+          category: string
+          check_id: string | null
+          created_at: string
+          databases_queried: Json
+          deleted_at: string | null
+          id: string
+          identifier_hash: string
+          identifier_masked: string
+          listing_source: string | null
+          meeting_location: string | null
+          purchase_price: number | null
+          record_hash: string
+          result: string
+          reveal_identifier: boolean
+          seller_name: string | null
+          user_id: string | null
+        }
+        Insert: {
+          category: string
+          check_id?: string | null
+          created_at?: string
+          databases_queried?: Json
+          deleted_at?: string | null
+          id?: string
+          identifier_hash: string
+          identifier_masked: string
+          listing_source?: string | null
+          meeting_location?: string | null
+          purchase_price?: number | null
+          record_hash?: string
+          result: string
+          reveal_identifier?: boolean
+          seller_name?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          category?: string
+          check_id?: string | null
+          created_at?: string
+          databases_queried?: Json
+          deleted_at?: string | null
+          id?: string
+          identifier_hash?: string
+          identifier_masked?: string
+          listing_source?: string | null
+          meeting_location?: string | null
+          purchase_price?: number | null
+          record_hash?: string
+          result?: string
+          reveal_identifier?: boolean
+          seller_name?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       purchases: {
         Row: {
           amount: number
@@ -1573,8 +1630,10 @@ export type Database = {
         Args: { check_identifier: string; check_type?: string }
         Returns: Json
       }
+      claim_proof_record: { Args: { p_id: string }; Returns: boolean }
       clean_expired_pending_verifications: { Args: never; Returns: undefined }
       generate_api_key: { Args: never; Returns: string }
+      generate_proof_record_id: { Args: never; Returns: string }
       generate_unique_clean_slug: {
         Args: { input_slug: string; post_id: string }
         Returns: string
@@ -1604,6 +1663,20 @@ export type Database = {
       get_complete_schema: { Args: never; Returns: Json }
       get_current_user_role: { Args: never; Returns: string }
       get_newsletter_subscriber_count: { Args: never; Returns: number }
+      get_proof_record_public: {
+        Args: { p_id: string }
+        Returns: {
+          category: string
+          created_at: string
+          databases_queried: Json
+          id: string
+          identifier_masked: string
+          is_deleted: boolean
+          record_hash: string
+          result: string
+          reveal_identifier: boolean
+        }[]
+      }
       get_public_community_stories: {
         Args: never
         Returns: {
