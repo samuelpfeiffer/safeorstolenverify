@@ -126,14 +126,52 @@ export const MyRecordsSection: React.FC = () => {
                 <Badge variant={r.result === 'clean' ? 'secondary' : 'destructive'}>
                   {r.result}
                 </Badge>
+                {r.deleted_at && (
+                  <span className="text-xs text-muted-foreground">deleted</span>
+                )}
                 <Link
                   to={`/proof/${r.id}`}
                   className="ml-auto text-sm text-primary hover:underline font-mono"
                 >
                   {r.id}
                 </Link>
+                {!r.deleted_at && (
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        aria-label={`Delete record ${r.id}`}
+                        disabled={deletingId === r.id}
+                      >
+                        {deletingId === r.id ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Trash2 className="w-4 h-4 text-muted-foreground" />
+                        )}
+                      </Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Delete this record permanently?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          This cannot be undone. Record {r.id} will be marked deleted, and anyone
+                          who opens its link will see that it was deleted by its holder. The
+                          original check details are not recoverable.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction onClick={() => handleDelete(r.id)}>
+                          Delete permanently
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                )}
               </div>
             ))}
+
           </div>
         )}
 
