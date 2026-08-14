@@ -1518,6 +1518,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/videos</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/vin-check</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -1636,29 +1642,5 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/videos</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/videos/how-it-works</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/videos/protect-yourself</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/videos/fortune-teller</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 </urlset>
