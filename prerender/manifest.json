@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T02:45:36.061590+00:00",
+  "generatedAt": "2026-08-14T00:13:35.160298+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -13,6 +13,12 @@
       "slug": "about",
       "title": "About SafeOrStolen - Protecting Buyers and Sellers",
       "canonical": "https://safeorstolen.com/about"
+    },
+    {
+      "route": "/affiliate-disclosure",
+      "slug": "affiliate-disclosure",
+      "title": "Affiliate Disclosure & Advertising Policy | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/affiliate-disclosure"
     },
     {
       "route": "/ai-chat",
@@ -87,6 +93,12 @@
       "canonical": "https://safeorstolen.com/arkansas-license-plate-lookup"
     },
     {
+      "route": "/barcode-scanner",
+      "slug": "barcode-scanner",
+      "title": "Free Barcode Scanner \u2014 Scan to Check if Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/barcode-scanner"
+    },
+    {
       "route": "/best-stolen-item-checkers-2026",
       "slug": "best-stolen-item-checkers-2026",
       "title": "Best Stolen Item Checkers 2026 - Compare Top Verification Tools",
@@ -97,12 +109,6 @@
       "slug": "blog",
       "title": "Blog - Stolen Item Guides & Safety Tips | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog"
-    },
-    {
-      "route": "/blog/hotgunz-database-guide",
-      "slug": "blog__hotgunz-database-guide",
-      "title": "HotGunz Database \u2014 What It Is & How to Search Stolen Firearms (2026)",
-      "canonical": "https://safeorstolen.com/blog/hotgunz-database-guide"
     },
     {
       "route": "/blog/ai-stolen-item-detection-2026",
@@ -675,6 +681,24 @@
       "canonical": "https://safeorstolen.com/delaware-license-plate-lookup"
     },
     {
+      "route": "/developer",
+      "slug": "developer",
+      "title": "Verification API Docs - IMEI VIN Serial Developer | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/developer"
+    },
+    {
+      "route": "/developers",
+      "slug": "developers",
+      "title": "Verification API Docs - IMEI VIN Serial Developer | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/developers"
+    },
+    {
+      "route": "/download",
+      "slug": "download",
+      "title": "Download FREE Stolen Item Checker App | SafeOrStolen - Verify Before",
+      "canonical": "https://safeorstolen.com/download"
+    },
+    {
       "route": "/download-app",
       "slug": "download-app",
       "title": "Download SafeOrStolen Mobile App - iOS & Android",
@@ -825,6 +849,18 @@
       "canonical": "https://safeorstolen.com/for-sellers"
     },
     {
+      "route": "/founder-story",
+      "slug": "founder-story",
+      "title": "Our Story \u2014 A Founder's Note | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/founder-story"
+    },
+    {
+      "route": "/founders-story",
+      "slug": "founders-story",
+      "title": "Our Story \u2014 A Founder's Note | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/founders-story"
+    },
+    {
       "route": "/free-stolen-vehicle-check",
       "slug": "free-stolen-vehicle-check",
       "title": "Free Stolen Vehicle & VIN Check | SafeOrStolen",
@@ -847,6 +883,12 @@
       "slug": "georgia-vin-lookup",
       "title": "Georgia VIN Lookup - Free GA Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/georgia-vin-lookup"
+    },
+    {
+      "route": "/get-app",
+      "slug": "get-app",
+      "title": "Get SafeOrStolen App - Free Stolen Item Checker for iPhone & Android",
+      "canonical": "https://safeorstolen.com/get-app"
     },
     {
       "route": "/guides/ebay-buyer-protection",
@@ -1365,6 +1407,12 @@
       "canonical": "https://safeorstolen.com/sitemap"
     },
     {
+      "route": "/sms-verify",
+      "slug": "sms-verify",
+      "title": "SMS Verify \u2014 Coming Soon \u2014 Text to Check if Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/sms-verify"
+    },
+    {
       "route": "/south-carolina-license-plate-lookup",
       "slug": "south-carolina-license-plate-lookup",
       "title": "Free South Carolina License Plate Lookup | SafeOrStolen",
@@ -1495,6 +1543,12 @@
       "slug": "texas-vin-lookup",
       "title": "Texas VIN Lookup - Free TX Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/texas-vin-lookup"
+    },
+    {
+      "route": "/theftaz",
+      "slug": "theftaz",
+      "title": "TheftAZ Stolen Property Search \u2014 Arizona Alternative | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/theftaz"
     },
     {
       "route": "/theftaz-alternative",
@@ -1633,6 +1687,30 @@
       "slug": "washington-vin-lookup",
       "title": "Washington VIN Lookup - Free WA Stolen Vehicle Check | Sa...",
       "canonical": "https://safeorstolen.com/washington-vin-lookup"
+    },
+    {
+      "route": "/west-virginia-license-plate-lookup",
+      "slug": "west-virginia-license-plate-lookup",
+      "title": "Free West Virginia License Plate Lookup | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/west-virginia-license-plate-lookup"
+    },
+    {
+      "route": "/wisconsin-license-plate-lookup",
+      "slug": "wisconsin-license-plate-lookup",
+      "title": "Free Wisconsin License Plate Lookup | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/wisconsin-license-plate-lookup"
+    },
+    {
+      "route": "/wyoming-license-plate-lookup",
+      "slug": "wyoming-license-plate-lookup",
+      "title": "Free Wyoming License Plate Lookup | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/wyoming-license-plate-lookup"
+    },
+    {
+      "route": "/youtube",
+      "slug": "youtube",
+      "title": "SafeOrStolen YouTube \u2014 Free Stolen Item Verification Tutorials",
+      "canonical": "https://safeorstolen.com/youtube"
     }
   ]
 }
