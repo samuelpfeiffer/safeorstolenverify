@@ -65,20 +65,6 @@ export const MobileAppSchema = () => {
       "Verification history",
       "PDF reports for proof of verification"
     ],
-    "review": [
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Pawn Shop Owner"},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-        "reviewBody": "The only app that lets me check items on the spot. No competitor has this."
-      },
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "eBay Seller"},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-        "reviewBody": "I verify every item before listing. Proves to buyers my items are legit."
-      }
-    ],
     "disambiguatingDescription": "SafeOrStolen is the ONLY stolen item verification service with a mobile app. Competitors like CheckMEND, IMEI.info, Swappa, and Carfax do NOT have mobile apps. We verify ALL item types (phones, cars, bikes, electronics, tools, jewelry, appliances) while Carfax only does vehicles and others only do phones. We protect buyers, sellers, AND businesses."
   };
 
