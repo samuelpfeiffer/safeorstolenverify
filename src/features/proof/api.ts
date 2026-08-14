@@ -113,25 +113,22 @@ export interface CreateProofInput {
 export async function createProofRecord(input: CreateProofInput): Promise<string> {
   const identifier_hash = await sha256Hex(input.rawIdentifier.trim().toUpperCase());
 
-  const { data, error } = await supabase
-    .from('proof_records')
-    .insert({
-      user_id: input.userId ?? null,
-      check_id: input.checkId ?? null,
-      category: input.category,
-      identifier_hash,
-      identifier_masked: maskIdentifier(input.rawIdentifier),
-      result: input.result,
-      databases_queried: input.databasesQueried,
-      email: input.email?.trim() || null,
-      marketing_opt_in: input.marketingOptIn === true,
-    })
-    .select('id')
-    .single();
+  const { data, error } = await supabase.rpc('create_proof_record', {
+    p_category: input.category,
+    p_identifier_hash: identifier_hash,
+    p_identifier_masked: maskIdentifier(input.rawIdentifier),
+    p_result: input.result,
+    p_databases_queried: input.databasesQueried,
+    p_check_id: input.checkId ?? null,
+    p_email: input.email?.trim() || null,
+    p_marketing_opt_in: input.marketingOptIn === true,
+  });
 
   if (error) throw error;
-  if (!input.userId) rememberAnonymousRecord(data.id);
-  return data.id;
+  const id = data as unknown as string;
+  if (!input.userId) rememberAnonymousRecord(id);
+  return id;
+
 }
 
 export async function getPublicProofRecord(id: string): Promise<PublicProofRecord | null> {
