@@ -48,7 +48,9 @@ const PRIVATE_PREFIXES = [
   '/profile/',
   '/.lovable/',
   '/go/',
+  '/proof/', // user-data proof records: noindex, never sitemapped or prerendered
   '/shared/',
+
   '/verified/',
 ];
 
