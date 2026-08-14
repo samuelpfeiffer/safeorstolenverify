@@ -129,12 +129,12 @@ export default function MobilePage() {
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">50K+</div>
-                  <p className="text-sm text-muted-foreground">Downloads</p>
+                  <div className="text-4xl font-bold text-primary mb-2">Free</div>
+                  <p className="text-sm text-muted-foreground">Install from browser</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">4.8★</div>
-                  <p className="text-sm text-muted-foreground">App Store Rating</p>
+                  <div className="text-4xl font-bold text-primary mb-2">6</div>
+                  <p className="text-sm text-muted-foreground">Item Categories</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-primary mb-2">&lt;3s</div>
