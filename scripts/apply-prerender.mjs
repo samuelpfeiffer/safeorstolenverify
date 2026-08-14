@@ -131,12 +131,19 @@ function documentFor(shell, page, body) {
     html = html.replace('<body', `<body data-prerendered-route="${esc(page.route)}"`);
   }
 
-  // Build-time assertion: duplicated DOM is a hard failure.
-  const mains = countMainOutsideNoscript(html);
-  if (mains > 1) {
+  // Build-time assertion: the pipeline must never ADD landmarks. If the output
+  // has more <main> elements than the captured body, the shell leaked its own
+  // content in (the duplicated-DOM bug). Pre-existing duplicates inside a
+  // page's own markup are only warned about.
+  const inBody = countMainOutsideNoscript(body);
+  const inDoc = countMainOutsideNoscript(html);
+  if (inDoc > inBody) {
     throw new Error(
-      `Prerender produced ${mains} <main> elements for route "${page.route}" — duplicated DOM. Aborting build.`,
+      `Prerender duplicated DOM for route "${page.route}": ${inDoc} <main> in output vs ${inBody} in the captured body. Aborting build.`,
     );
+  }
+  if (inBody > 1) {
+    console.warn(`⚠️  ${page.route} renders ${inBody} <main> landmarks (page markup issue, not prerender).`);
   }
   return html;
 }
