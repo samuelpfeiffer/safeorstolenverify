@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { History, Receipt, CreditCard, Settings, Share, Search, Clock, LayoutDashboard, Eye } from 'lucide-react';
+import { History, Receipt, CreditCard, Settings, Share, Search, Clock, LayoutDashboard, Eye, FileCheck } from 'lucide-react';
 
 interface DashboardSidebarProps {
   activeTab: string;
@@ -34,11 +34,18 @@ export const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarPro
       hasShare: false,
     },
     {
+      id: 'my-records',
+      label: 'My Records',
+      icon: FileCheck,
+      hasShare: false,
+    },
+    {
       id: 'search-history',
       label: 'Search History',
       icon: History,
       hasShare: true,
     },
+
     {
       id: 'purchase-history',
       label: 'Purchase History',

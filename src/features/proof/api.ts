@@ -1,0 +1,193 @@
+import { supabase } from '@/integrations/supabase/client';
+import {
+  ANON_PROOF_IDS_KEY,
+  type ProofCategory,
+  type ProofResult,
+} from './constants';
+
+export interface PublicProofRecord {
+  id: string;
+  created_at: string;
+  category: ProofCategory;
+  identifier_masked: string;
+  result: ProofResult;
+  databases_queried: string[];
+  record_hash: string;
+  reveal_identifier: boolean;
+  is_deleted: boolean;
+}
+
+export interface OwnerProofFields {
+  seller_name: string | null;
+  listing_source: string | null;
+  meeting_location: string | null;
+  purchase_price: number | null;
+}
+
+export interface ProofRecordSummary {
+  id: string;
+  created_at: string;
+  category: ProofCategory;
+  identifier_masked: string;
+  result: ProofResult;
+  deleted_at: string | null;
+}
+
+/** SHA-256 hex digest using the Web Crypto API. */
+export async function sha256Hex(value: string): Promise<string> {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+/** Display-only masked identifier, e.g. "...4821". Never store the raw value. */
+export function maskIdentifier(raw: string): string {
+  const clean = (raw || '').replace(/\s+/g, '').toUpperCase();
+  if (!clean) return '...';
+  return `...${clean.slice(-4)}`;
+}
+
+/** Map any internal item type onto one of the six supported proof categories. */
+export function toProofCategory(itemType?: string | null): ProofCategory {
+  const t = (itemType || '').toLowerCase();
+  if (t.includes('imei') || t.includes('phone') || t.includes('android') || t.includes('device'))
+    return 'phone';
+  if (t.includes('plate')) return 'plate';
+  if (t.includes('vin') || t.includes('car') || t.includes('vehicle') || t.includes('truck'))
+    return 'vehicle';
+  if (t.includes('gun') || t.includes('firearm')) return 'firearm';
+  if (t.includes('bike') || t.includes('bicycle')) return 'bike';
+  return 'serial';
+}
+
+/** Map an internal verification status onto the two proof results. */
+export function toProofResult(status?: string | null): ProofResult {
+  const s = (status || '').toLowerCase();
+  return s === 'safe' || s === 'clean' ? 'clean' : 'flagged';
+}
+
+function rememberAnonymousRecord(id: string) {
+  try {
+    const existing: string[] = JSON.parse(localStorage.getItem(ANON_PROOF_IDS_KEY) || '[]');
+    if (!existing.includes(id)) {
+      localStorage.setItem(ANON_PROOF_IDS_KEY, JSON.stringify([...existing, id]));
+    }
+  } catch {
+    /* storage unavailable — anonymous claiming simply won't be offered */
+  }
+}
+
+export function getAnonymousRecordIds(): string[] {
+  try {
+    const ids = JSON.parse(localStorage.getItem(ANON_PROOF_IDS_KEY) || '[]');
+    return Array.isArray(ids) ? ids.filter((v) => typeof v === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+export function clearAnonymousRecordIds() {
+  try {
+    localStorage.removeItem(ANON_PROOF_IDS_KEY);
+  } catch {
+    /* noop */
+  }
+}
+
+export interface CreateProofInput {
+  rawIdentifier: string;
+  category: ProofCategory;
+  result: ProofResult;
+  databasesQueried: string[];
+  checkId?: string | null;
+  sellerName?: string | null;
+  listingSource?: string | null;
+  meetingLocation?: string | null;
+  purchasePrice?: number | null;
+  userId?: string | null;
+}
+
+/**
+ * Creates a proof record. The raw identifier is hashed client-side and never sent.
+ * record_hash is computed by the database on insert.
+ */
+export async function createProofRecord(input: CreateProofInput): Promise<string> {
+  const identifier_hash = await sha256Hex(input.rawIdentifier.trim().toUpperCase());
+
+  const { data, error } = await supabase
+    .from('proof_records')
+    .insert({
+      user_id: input.userId ?? null,
+      check_id: input.checkId ?? null,
+      category: input.category,
+      identifier_hash,
+      identifier_masked: maskIdentifier(input.rawIdentifier),
+      result: input.result,
+      databases_queried: input.databasesQueried,
+      seller_name: input.sellerName || null,
+      listing_source: input.listingSource || null,
+      meeting_location: input.meetingLocation || null,
+      purchase_price:
+        typeof input.purchasePrice === 'number' && !Number.isNaN(input.purchasePrice)
+          ? input.purchasePrice
+          : null,
+    })
+    .select('id')
+    .single();
+
+  if (error) throw error;
+  if (!input.userId) rememberAnonymousRecord(data.id);
+  return data.id;
+}
+
+export async function getPublicProofRecord(id: string): Promise<PublicProofRecord | null> {
+  const { data, error } = await supabase.rpc('get_proof_record_public', { p_id: id });
+  if (error) throw error;
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row) return null;
+  return {
+    ...row,
+    databases_queried: Array.isArray(row.databases_queried)
+      ? (row.databases_queried as string[])
+      : [],
+  } as PublicProofRecord;
+}
+
+/** Private fields — only returned when the caller owns the record (enforced by RLS). */
+export async function getOwnerProofFields(id: string): Promise<OwnerProofFields | null> {
+  const { data, error } = await supabase
+    .from('proof_records')
+    .select('seller_name, listing_source, meeting_location, purchase_price')
+    .eq('id', id)
+    .maybeSingle();
+  if (error) return null;
+  return data as OwnerProofFields | null;
+}
+
+export const PROOF_PAGE_SIZE = 25;
+
+export async function listMyProofRecords(
+  page: number
+): Promise<{ rows: ProofRecordSummary[]; total: number }> {
+  const from = page * PROOF_PAGE_SIZE;
+  const { data, error, count } = await supabase
+    .from('proof_records')
+    .select('id, created_at, category, identifier_masked, result, deleted_at', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, from + PROOF_PAGE_SIZE - 1);
+  if (error) throw error;
+  return { rows: (data || []) as ProofRecordSummary[], total: count || 0 };
+}
+
+/** Attaches records created while signed out to the now signed-in account. */
+export async function claimAnonymousRecords(ids: string[]): Promise<number> {
+  let claimed = 0;
+  for (const id of ids) {
+    const { data, error } = await supabase.rpc('claim_proof_record', { p_id: id });
+    if (!error && data === true) claimed += 1;
+  }
+  clearAnonymousRecordIds();
+  return claimed;
+}

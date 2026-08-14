@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T11:53:14.778718+00:00",
+  "generatedAt": "2026-08-14T23:05:23.786240+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -1315,6 +1315,12 @@
       "slug": "product-hunt",
       "title": "SafeOrStolen on Product Hunt | Support Our Launch",
       "canonical": "https://safeorstolen.com/product-hunt"
+    },
+    {
+      "route": "/proof-of-purchase",
+      "slug": "proof-of-purchase",
+      "title": "Proof of Clean Purchase \u2014 Document Your Due Diligence | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/proof-of-purchase"
     },
     {
       "route": "/real-time-verification",

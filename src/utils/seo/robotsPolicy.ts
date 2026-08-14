@@ -57,6 +57,13 @@ export function getRobotsContent(params: {
   /** Optional override for explicit noindex pages */
   noIndex?: boolean;
 }): string {
+  const path = (params.pathname || '/').split('?')[0].split('#')[0];
+
+  // Proof records contain user data: never index, but links stay crawlable.
+  if (/^\/proof\/[^/]+/i.test(path)) {
+    return 'noindex, follow';
+  }
+
   // Only an explicit `true` can force noindex. A default `false` from a caller
   // must NOT override the path policy, or private routes get indexed.
   const effectiveNoIndex =
@@ -69,3 +76,4 @@ export function getRobotsContent(params: {
   // 2026 full directive set for maximum AI and search engine visibility
   return 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 }
+

@@ -62,6 +62,9 @@ const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const CheckImeiStolenPage = lazy(() => import('@/pages/CheckImeiStolenPage'));
 const HowToVerifyAUsedItemPage = lazy(() => import('@/pages/HowToVerifyAUsedItemPage'));
 const MethodologyPage = lazy(() => import('@/pages/MethodologyPage'));
+const ProofRecordPage = lazy(() => import('@/pages/ProofRecordPage'));
+const ProofOfPurchasePage = lazy(() => import('@/pages/ProofOfPurchasePage'));
+
 const LearnHubPage = lazy(() => import('@/pages/LearnHubPage'));
 const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
 const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
@@ -431,6 +434,9 @@ export const AppRoutes = () => {
         <Route path="/check-imei-stolen" element={<CheckImeiStolenPage />} />
         <Route path="/how-to-verify-a-used-item" element={<HowToVerifyAUsedItemPage />} />
         <Route path="/methodology" element={<MethodologyPage />} />
+        <Route path="/proof-of-purchase" element={<ProofOfPurchasePage />} />
+        <Route path="/proof/:id" element={<ProofRecordPage />} />
+
         <Route path="/learn" element={<LearnHubPage />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
         <Route path="/vin-check" element={<VINCheckPage />} />

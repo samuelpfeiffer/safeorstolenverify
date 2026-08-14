@@ -11,6 +11,8 @@ import { SmartRecommendations } from '@/components/ai/SmartRecommendations';
 import { PredictiveTheftAlerts } from '@/components/ai/PredictiveTheftAlerts';
 import { AISellerReport } from '@/components/ai/AISellerReport';
 import { CleanResultOffers } from './CleanResultOffers';
+import { SaveProofPrompt } from '@/components/proof/SaveProofPrompt';
+
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface Props {
@@ -151,6 +153,17 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
 
         {/* Affiliate offers for clean results */}
         <CleanResultOffers result={result} />
+
+        {/* Proof of Clean Purchase — offered on clean results only */}
+        {result.status === 'clean' && (
+          <SaveProofPrompt
+            identifier={result.serial}
+            itemType={result.itemType}
+            status={result.status}
+            databasesQueried={result.sources}
+          />
+        )}
+
 
         {/* AI nudge */}
         <p className="text-[11px] text-muted-foreground text-center pt-2">
