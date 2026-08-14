@@ -86,11 +86,19 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Disallow admin and internal paths
+# Disallow admin and internal paths.
+# NOTE: this block must declare its own User-agent, otherwise it is parsed as
+# part of the preceding LinkedInBot group and ignored by every other crawler.
+User-agent: *
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
+# /proof/<id> pages hold user-generated records and are rendered client-side
+# only (no static snapshot exists for a dynamic id), so the raw HTTP response
+# is the SPA shell. Blocking the crawl is the only JS-independent directive
+# available on this host.
+Disallow: /proof/
 
 # Sitemaps
 Sitemap: https://safeorstolen.com/sitemap.xml
