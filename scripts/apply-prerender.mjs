@@ -152,6 +152,11 @@ function documentFor(shell, page, body) {
  * Non-content routes still get a static document for crawlers that fetch them
  * directly — a bare shell carrying `noindex, follow` so they can never be
  * indexed with homepage content.
+ *
+ * This is the ONLY layer that can deliver a crawler-visible directive on this
+ * host: the edge is Cloudflare static hosting, which serves `web.config` as a
+ * plain file rather than executing it. A committed static document at the path
+ * wins over the SPA fallback, so the directive is in the raw response.
  */
 const NOINDEX_STUB_ROUTES = [
   '/dashboard',
@@ -160,15 +165,52 @@ const NOINDEX_STUB_ROUTES = [
   '/report-stolen',
   '/app/imei-checker',
   '/app/serial-number-checker',
+  '/mobile-dashboard',
+  '/mobile-onboarding',
+  '/mobile-settings',
+  '/mobile-verify',
+  '/trust-engine',
 ];
 
-function writeStub(shell, route) {
+/**
+ * Legacy paths with a canonical destination. A static file can't emit a 301 on
+ * this host, so each gets a document that is noindex, canonicalises to the
+ * destination and bounces non-JS clients there via meta refresh. The React
+ * <Navigate replace> in RedirectRoutes.tsx still handles in-app navigation.
+ */
+const REDIRECT_STUB_ROUTES = {
+  '/ai-imei-check': '/imei-checker',
+  '/ai-license-plate-check': '/license-plate-lookup',
+  '/ai-serial-number-check': '/serial-number-checker',
+  '/firearms-serial-check': '/firearms-serial-number-check',
+  '/imei': '/imei-checker',
+};
+
+const SITE = 'https://safeorstolen.com';
+
+function writeStub(shell, route, destination = null) {
   let html = shell
     .replace(/<meta[^>]+name=["']robots["'][^>]*>\s*/gi, '')
     .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '');
-  html = html.replace('</head>', `    <meta name="robots" content="noindex, follow">\n  </head>`);
+  const head = destination
+    ? `    <meta name="robots" content="noindex, follow">\n` +
+      `    <link rel="canonical" href="${SITE}${esc(destination)}">\n` +
+      `    <meta http-equiv="refresh" content="0; url=${esc(destination)}">\n  </head>`
+    : `    <meta name="robots" content="noindex, follow">\n  </head>`;
+  html = html.replace('</head>', head);
   return html.replace('<body', `<body data-prerendered-route="${esc(route)}"`);
 }
+
+function writeAtRoute(route, html) {
+  const clean = route.replace(/^\//, '');
+  const dir = path.join(DIST, clean);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), html);
+  const flat = path.join(DIST, `${clean}.html`);
+  fs.mkdirSync(path.dirname(flat), { recursive: true });
+  fs.writeFileSync(flat, html);
+}
+
 
 function main() {
   const manifestPath = path.join(PRERENDER, 'manifest.json');
