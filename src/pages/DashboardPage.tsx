@@ -281,7 +281,11 @@ const DashboardPage = () => {
           </div>
         );
 
+      case 'my-records':
+        return <MyRecordsSection />;
+
       case 'search-history':
+
         return (
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
