@@ -24,8 +24,23 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
     return true;
   }
 
+  // Interactive verification workspace (app UI, not a content page)
+  if (/^\/verify$/i.test(path) || /^\/trust-engine$/i.test(path)) {
+    return true;
+  }
+
+  // /app is a public landing page; /app/* sub-paths are app UI / legacy redirects
+  if (/^\/app\//i.test(path)) {
+    return true;
+  }
+
+  // Mobile app shell screens
+  if (/^\/mobile-(dashboard|onboarding|settings|verify)(\/|$)/i.test(path)) {
+    return true;
+  }
+
   // Transactional / success / utility pages
-  if (/^\/(checkout-redirect|verification-success)(\/|$)/i.test(path)) {
+  if (/^\/(checkout-redirect|verification-success|payment-success|report-stolen)(\/|$)/i.test(path)) {
     return true;
   }
 
@@ -35,6 +50,7 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
 
   return false;
 }
+
 
 export function getRobotsContent(params: {
   pathname: string;
