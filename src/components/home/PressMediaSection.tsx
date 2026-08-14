@@ -8,20 +8,21 @@ const billboardImage = '/images/billboard-campaign.jpg';
  * PressMediaSection — 2026 GEO/SEO/E-E-A-T optimized
  * All press cards are clickable with real external links and verifiable claims.
  * Stats cards link to relevant data pages.
- * Semantic TL;DR: SafeOrStolen is featured on Trustpilot (4.1 stars), Crunchbase, and PRLog.
+ * Semantic TL;DR: SafeOrStolen is listed on Trustpilot, Crunchbase, and PRLog.
  */
 export const PressMediaSection = () => {
  const pressItems = [
  {
  outlet: 'Trustpilot',
- headline: '4.1 Stars — Verified Customer Reviews',
+ headline: 'Customer Reviews on Trustpilot',
  subtext: 'Real reviews from verified buyers who used SafeOrStolen before purchasing secondhand items on Facebook Marketplace, OfferUp, and eBay.',
  url: 'https://www.trustpilot.com/review/safeorstolen.com',
  isExternal: true,
  icon: '⭐',
- stat: '4.1 / 5.0',
- statLabel: 'Verified Rating',
+ stat: 'Reviews',
+ statLabel: 'Trustpilot Profile',
  cta: 'Read Reviews',
+
  },
  {
  outlet: 'Crunchbase',
@@ -57,11 +58,12 @@ export const PressMediaSection = () => {
  },
  {
  icon: Star,
- label: '4.1 Trustpilot',
+ label: 'Trustpilot Reviews',
  description: 'Verified customer reviews from real buyers',
- detail: 'Buyers, sellers, pawn shops, and firearm dealers across all 50 U.S. states rate SafeOrStolen 4.1 out of 5.0 on Trustpilot.',
+ detail: 'Buyers, sellers, pawn shops, and firearm dealers across all 50 U.S. states review SafeOrStolen on Trustpilot.',
  link: '/testimonials',
  },
+
  {
  icon: Award,
  label: 'Global Mission',

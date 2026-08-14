@@ -9,10 +9,10 @@
 SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase. The service checks IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.
 
 **Key Facts:**
-- Founded: August 2024
+- Founded: 2017 (platform publicly launched 2025)
 - Headquarters: United States
 - Founders: Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)
-- Trustpilot verified business
+- Trustpilot business profile: https://www.trustpilot.com/review/safeorstolen.com
 
 ---
 
