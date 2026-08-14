@@ -108,11 +108,11 @@ const DownloadApp = () => {
                 <div className="flex items-center gap-6 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                    <span>4.8/5 Rating</span>
+                    <span>2 free checks</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Users className="w-4 h-4" />
-                    <span>5,000+ Downloads</span>
+                    <span>Install from your browser</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Globe className="w-4 h-4" />
