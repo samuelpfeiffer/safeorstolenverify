@@ -51,7 +51,6 @@ const CrunchbasePage: React.FC = () => {
  "url": "https://safeorstolen.com",
  "logo": "https://safeorstolen.com/sos-logo.png",
  "foundingDate": "2017-07-20",
- "legalName": "Safe or Stolen LLC",
  "founder": [
  { "@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "Founder & CEO" },
  { "@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder" }

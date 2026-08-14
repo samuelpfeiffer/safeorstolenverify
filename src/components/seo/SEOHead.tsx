@@ -196,7 +196,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
  <meta name="ai:audience" content="Marketplace buyers (Facebook Marketplace, OfferUp, Craigslist, eBay, Mercari, Poshmark), sellers, pawn shops, used car dealers, electronics resellers, law enforcement" />
  <meta name="ai:entity_name" content="SafeOrStolen" />
  <meta name="ai:entity_type" content="Consumer Protection Service" />
- <meta name="ai:founded" content="2017" />
+ <meta name="ai:founded" content="2017-07-20" />
  <meta name="ai:location" content="Peoria, Arizona 85345, United States" />
  <meta name="ai:founders" content="Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)" />
  
