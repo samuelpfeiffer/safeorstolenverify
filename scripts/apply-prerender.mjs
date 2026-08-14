@@ -33,6 +33,65 @@ function stripRouteSpecificHead(html) {
     .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '');
 }
 
+/**
+ * Locate the TRUE span of the `<div id="root">…</div>` element by walking
+ * forward and counting nested <div>/</div> pairs. A regex cannot match
+ * nested tags — the old non-greedy `/<div id="root">[\s\S]*?<\/div>/`
+ * stopped at the FIRST close tag, which left the previous body in place and
+ * caused every route to ship duplicated DOM (multiple <main>, <nav>, <h1>).
+ */
+function findRootSpan(html) {
+  const open = html.search(/<div\s+id=["']root["'][^>]*>/i);
+  if (open === -1) return null;
+  const openTag = html.slice(open).match(/^<div\s+id=["']root["'][^>]*>/i)[0];
+  let i = open + openTag.length;
+  let depth = 1;
+  const tag = /<\/?div\b[^>]*>/gi;
+  tag.lastIndex = i;
+  let m;
+  while ((m = tag.exec(html)) !== null) {
+    if (m[0][1] === '/') {
+      depth -= 1;
+      if (depth === 0) {
+        return { start: open, end: m.index + m[0].length, openTag };
+      }
+    } else if (!/\/>$/.test(m[0])) {
+      depth += 1;
+    }
+  }
+  return null;
+}
+
+function setRootContent(html, body) {
+  const span = findRootSpan(html);
+  if (!span) throw new Error('could not locate <div id="root"> in the shell');
+  return `${html.slice(0, span.start)}<div id="root">${body}</div>${html.slice(span.end)}`;
+}
+
+/**
+ * The shell must NEVER carry prerendered body content or another route's
+ * marker comments. Empty #root and drop stale prerender markers, then cache
+ * the pristine copy so later builds cannot pick up a contaminated shell.
+ */
+function pristineShell(distIndexPath, shellCachePath) {
+  if (fs.existsSync(shellCachePath)) {
+    return fs.readFileSync(shellCachePath, 'utf-8');
+  }
+  let shell = fs.readFileSync(distIndexPath, 'utf-8');
+  shell = shell.replace(/<!--\s*✅[^>]*?(PRERENDERED FOR BOTS|SCHEMAS:|Generated:)[\s\S]*?-->\s*/g, '');
+  shell = setRootContent(shell, '');
+  shell = shell.replace(/\sdata-prerendered-route="[^"]*"/g, '');
+  fs.writeFileSync(shellCachePath, shell);
+  return shell;
+}
+
+/** Count <main> elements that are NOT inside a <noscript> fallback block. */
+function countMainOutsideNoscript(html) {
+  const withoutNoscript = html.replace(/<noscript[\s\S]*?<\/noscript>/gi, '');
+  return (withoutNoscript.match(/<main\b/gi) || []).length;
+}
+
+
 function headFor(page) {
   const out = [];
   out.push(`<title>${esc(page.title)}</title>`);
