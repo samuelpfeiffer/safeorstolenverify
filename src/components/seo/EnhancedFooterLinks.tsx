@@ -182,7 +182,7 @@ export const EnhancedFooterLinks: React.FC = () => {
           <div className="text-center text-sm text-gray-400 mt-6">
             © {new Date().getFullYear()} SafeOrStolen. All rights reserved.
             <br />
-            Protecting consumers from stolen goods and marketplace fraud since 2024.
+            Protecting consumers from stolen goods and marketplace fraud since 2017.
           </div>
         </div>
       </div>
