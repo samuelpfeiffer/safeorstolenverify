@@ -138,7 +138,7 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-entity-founded" content="2017" />
  <meta name="ai-entity-location" content="Peoria, Arizona, United States" />
  <meta name="ai-entity-founders" content="Samuel Pfeiffer, Kelly McEvoy" />
- <meta name="ai-legal-name" content="SafeOrStolen" />
+ <meta name="ai-legal-name" content="Safe or Stolen LLC" />
 
  {/* ================================================== */}
  {/* GEO: STRUCTURED FACTS FOR AI EXTRACTION */}
