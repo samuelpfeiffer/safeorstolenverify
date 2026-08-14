@@ -19,6 +19,7 @@ import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceL
 
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
+import { SEODuplicateGuard } from '@/components/seo/SEODuplicateGuard';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import ScrollRestoration from '@/components/ScrollRestoration';
