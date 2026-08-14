@@ -13,15 +13,7 @@ export interface PublicProofRecord {
   result: ProofResult;
   databases_queried: string[];
   record_hash: string;
-  reveal_identifier: boolean;
-  is_deleted: boolean;
-}
-
-export interface OwnerProofFields {
-  seller_name: string | null;
-  listing_source: string | null;
-  meeting_location: string | null;
-  purchase_price: number | null;
+  deleted_at: string | null;
 }
 
 export interface ProofRecordSummary {
@@ -102,16 +94,21 @@ export interface CreateProofInput {
   result: ProofResult;
   databasesQueried: string[];
   checkId?: string | null;
-  sellerName?: string | null;
-  listingSource?: string | null;
-  meetingLocation?: string | null;
-  purchasePrice?: number | null;
+  email?: string | null;
+  marketingOptIn?: boolean;
   userId?: string | null;
 }
 
 /**
  * Creates a proof record. The raw identifier is hashed client-side and never sent.
- * record_hash is computed by the database on insert.
+ *
+ * record_hash is computed by the database trigger `proof_records_set_hash`.
+ * Canonicalization (must be reproducible byte for byte to verify a record):
+ *   SHA-256, hex lowercase, of a JSON object with keys in ASCII-sorted order —
+ *   category, created_at, databases_queried, id, identifier_hash, result —
+ *   serialized with no whitespace, created_at as the UTC instant formatted
+ *   `YYYY-MM-DDTHH:MM:SSZ` (second precision), databases_queried as the compact
+ *   JSON array in stored order.
  */
 export async function createProofRecord(input: CreateProofInput): Promise<string> {
   const identifier_hash = await sha256Hex(input.rawIdentifier.trim().toUpperCase());
@@ -126,13 +123,8 @@ export async function createProofRecord(input: CreateProofInput): Promise<string
       identifier_masked: maskIdentifier(input.rawIdentifier),
       result: input.result,
       databases_queried: input.databasesQueried,
-      seller_name: input.sellerName || null,
-      listing_source: input.listingSource || null,
-      meeting_location: input.meetingLocation || null,
-      purchase_price:
-        typeof input.purchasePrice === 'number' && !Number.isNaN(input.purchasePrice)
-          ? input.purchasePrice
-          : null,
+      email: input.email?.trim() || null,
+      marketing_opt_in: input.marketingOptIn === true,
     })
     .select('id')
     .single();
@@ -148,22 +140,17 @@ export async function getPublicProofRecord(id: string): Promise<PublicProofRecor
   const row = Array.isArray(data) ? data[0] : data;
   if (!row) return null;
   return {
-    ...row,
+    id: row.id,
+    created_at: row.created_at,
+    category: row.category as ProofCategory,
+    identifier_masked: row.identifier_masked,
+    result: row.result as ProofResult,
+    record_hash: row.record_hash,
+    deleted_at: row.deleted_at ?? null,
     databases_queried: Array.isArray(row.databases_queried)
       ? (row.databases_queried as string[])
       : [],
-  } as PublicProofRecord;
-}
-
-/** Private fields — only returned when the caller owns the record (enforced by RLS). */
-export async function getOwnerProofFields(id: string): Promise<OwnerProofFields | null> {
-  const { data, error } = await supabase
-    .from('proof_records')
-    .select('seller_name, listing_source, meeting_location, purchase_price')
-    .eq('id', id)
-    .maybeSingle();
-  if (error) return null;
-  return data as OwnerProofFields | null;
+  };
 }
 
 export const PROOF_PAGE_SIZE = 25;
@@ -179,6 +166,15 @@ export async function listMyProofRecords(
     .range(from, from + PROOF_PAGE_SIZE - 1);
   if (error) throw error;
   return { rows: (data || []) as ProofRecordSummary[], total: count || 0 };
+}
+
+/** Soft delete — the only permitted update. The record stays viewable as deleted. */
+export async function deleteProofRecord(id: string): Promise<void> {
+  const { error } = await supabase
+    .from('proof_records')
+    .update({ deleted_at: new Date().toISOString() })
+    .eq('id', id);
+  if (error) throw error;
 }
 
 /** Attaches records created while signed out to the now signed-in account. */
