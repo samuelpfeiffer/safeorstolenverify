@@ -240,6 +240,8 @@ function main() {
   const { pages: index } = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   let written = 0;
   let skipped = 0;
+  const descCounts = new Map();
+
 
   for (const entry of index) {
     if (isPrivateRoute(entry.route)) {
