@@ -125,12 +125,17 @@ function headFor(page) {
 function documentFor(shell, page, body) {
   let html = stripRouteSpecificHead(shell);
   html = html.replace('</head>', `${headFor(page)}\n  </head>`);
-  html = html.replace(
-    /<div id="root">[\s\S]*?<\/div>/,
-    `<div id="root">${body}</div>`,
-  );
+  html = setRootContent(html, body);
   if (!html.includes('data-prerendered-route')) {
     html = html.replace('<body', `<body data-prerendered-route="${esc(page.route)}"`);
+  }
+
+  // Build-time assertion: duplicated DOM is a hard failure.
+  const mains = countMainOutsideNoscript(html);
+  if (mains > 1) {
+    throw new Error(
+      `Prerender produced ${mains} <main> elements for route "${page.route}" — duplicated DOM. Aborting build.`,
+    );
   }
   return html;
 }
@@ -147,11 +152,16 @@ function main() {
     return;
   }
 
-  const shell = fs.readFileSync(indexPath, 'utf-8');
+  const shell = pristineShell(indexPath, path.join(DIST, '.shell.html'));
   const { pages: index } = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   let written = 0;
+  let skipped = 0;
 
   for (const entry of index) {
+    if (isPrivateRoute(entry.route)) {
+      skipped++;
+      continue;
+    }
     const pageFile = path.join(PRERENDER, 'pages', `${entry.slug}.json`);
     if (!fs.existsSync(pageFile)) continue;
     const page = JSON.parse(fs.readFileSync(pageFile, 'utf-8'));
@@ -174,7 +184,8 @@ function main() {
     written++;
   }
 
-  console.log(`✅ Per-route prerender applied to ${written} routes (unique title/description/canonical/og:url + body).`);
+  console.log(`✅ Per-route prerender applied to ${written} routes (unique title/description/canonical/og:url + body). ${skipped} private routes skipped.`);
 }
+
 
 main();
