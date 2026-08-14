@@ -1,18 +1,31 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Loader2, FileCheck } from 'lucide-react';
+import { Loader2, FileCheck, Trash2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 import { useToast } from '@/hooks/use-toast';
 import {
   claimAnonymousRecords,
+  deleteProofRecord,
   getAnonymousRecordIds,
   listMyProofRecords,
   PROOF_PAGE_SIZE,
   type ProofRecordSummary,
 } from '@/features/proof/api';
 import { PROOF_CATEGORY_LABELS } from '@/features/proof/constants';
+
 
 /** UI 4 — proof record history for the signed-in user, newest first, 25 per page. */
 export const MyRecordsSection: React.FC = () => {
