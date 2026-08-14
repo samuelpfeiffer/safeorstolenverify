@@ -104,6 +104,13 @@ const REDIRECT_MAP: Record<string, string> = {
   // ===== IMEI REDIRECTS =====
   '/imei': '/imei-checker',
 
+  // ===== AI-PREFIXED VARIANTS (no dedicated page exists — 301 to the real one) =====
+  '/ai-imei-check': '/imei-checker',
+  '/ai-license-plate-check': '/license-plate-lookup',
+  '/ai-serial-number-check': '/serial-number-checker',
+  '/firearms-serial-check': '/firearms-serial-number-check',
+
+
   // ===== ABOUT PAGE REDIRECTS =====
   '/crime-prevention-impact': '/about',
   '/trust-verification': '/about',
