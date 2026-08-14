@@ -72,12 +72,20 @@ EXTRACT_JS = """
   }
 
 
+  // The static fallback <meta name="description"> in index.html comes FIRST in
+  // the head; the per-route Helmet-managed one is appended later. Always take
+  // the last (or an explicitly Helmet-managed) one, never the generic fallback.
+  const descEls = [...document.head.querySelectorAll('meta[name="description"]')];
+  const managed = descEls.find((el) => el.hasAttribute('data-rh') || el.hasAttribute('data-react-helmet'));
+  const descEl = managed || descEls[descEls.length - 1];
+
   return {
     title: document.title,
-    description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+    description: descEl?.getAttribute('content') || '',
     metas, links, jsonld, body,
   };
 }
+
 """
 
 
