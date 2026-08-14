@@ -1623,6 +1623,19 @@ export type Database = {
       }
       claim_proof_record: { Args: { p_id: string }; Returns: boolean }
       clean_expired_pending_verifications: { Args: never; Returns: undefined }
+      create_proof_record: {
+        Args: {
+          p_category: string
+          p_check_id?: string
+          p_databases_queried: Json
+          p_email?: string
+          p_identifier_hash: string
+          p_identifier_masked: string
+          p_marketing_opt_in?: boolean
+          p_result: string
+        }
+        Returns: string
+      }
       generate_api_key: { Args: never; Returns: string }
       generate_proof_record_id: { Args: never; Returns: string }
       generate_unique_clean_slug: {
