@@ -279,7 +279,7 @@ const AboutPage = () => {
  <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
  <div className="text-3xl mb-2">⭐</div>
  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">Trustpilot</h3>
- <p className="text-sm text-muted-foreground">4.1★ Rating · 5 Reviews</p>
+ <p className="text-sm text-muted-foreground">Read customer reviews</p>
  </Card>
  </a>
  <a

@@ -81,7 +81,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
         {/* Loss-aversion social proof */}
         <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 flex items-center gap-2 justify-center">
           <TrendingUp className="h-4 w-4 text-accent" />
-          <span className="text-sm font-medium">5,000+ buyers protected this week · 4.1★ Trustpilot</span>
+          <span className="text-sm font-medium">Verify before you buy · Reviews on Trustpilot</span>
         </div>
 
         <div className="space-y-3 mt-2">
@@ -185,7 +185,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
             </span>
             <span className="flex items-center gap-1">
               <Star className="h-3 w-3" />
-              4.1★ Trustpilot
+              Trustpilot
             </span>
           </div>
           <p className="text-center text-xs text-muted-foreground">

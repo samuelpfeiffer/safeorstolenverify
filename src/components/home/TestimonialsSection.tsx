@@ -124,8 +124,8 @@ export const TestimonialsSection = () => {
         {/* Trust Stats - Honest Early-Stage Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto mt-20 pt-12 border-t border-border">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">4.1/5</div>
-            <div className="text-sm text-muted-foreground">Trustpilot Rating</div>
+            <div className="text-4xl font-bold text-primary mb-2">Reviews</div>
+            <div className="text-sm text-muted-foreground">Read them on Trustpilot</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2">New</div>
