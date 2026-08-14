@@ -93,13 +93,21 @@ function countMainOutsideNoscript(html) {
 }
 
 
+/** Per-route description: `metas` is authoritative, top-level is the fallback. */
+function descriptionFor(page) {
+  const fromMetas = (page.metas || []).find((m) => m.name === 'description' && m.content)?.content;
+  return fromMetas || page.description || '';
+}
+
 function headFor(page) {
   const out = [];
   out.push(`<title>${esc(page.title)}</title>`);
-  if (page.description) out.push(`<meta name="description" content="${esc(page.description)}">`);
+  const description = descriptionFor(page);
+  if (description) out.push(`<meta name="description" content="${esc(description)}">`);
   out.push(`<link rel="canonical" href="${esc(page.canonical)}">`);
 
   const seen = new Set(['description']);
+
   for (const m of page.metas || []) {
     const key = m.property ? `p:${m.property}` : `n:${m.name}`;
     if (seen.has(key) || seen.has(m.name)) continue;
