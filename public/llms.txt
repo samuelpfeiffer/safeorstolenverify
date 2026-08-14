@@ -90,3 +90,10 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 - Email: support@safeorstolen.com
 - Location: Peoria, Arizona, United States
 - Founded: 2017
+
+## Videos (full transcripts available on page)
+
+- [All Videos](https://safeorstolen.com/videos)
+- [How SafeOrStolen Works](https://safeorstolen.com/videos/how-it-works) — 20s explainer: any IMEI, VIN, plate, or serial checked against 100+ databases in about 3 seconds.
+- [Protect Yourself on Marketplaces](https://safeorstolen.com/videos/protect-yourself) — 23s: risks of buying stolen goods on Facebook Marketplace, Craigslist, and OfferUp.
+- [The Fortune Teller](https://safeorstolen.com/videos/fortune-teller) — 1m47s sketch: a reseller learns that verifying used goods before resale costs pennies, while selling stolen products carries real legal risk.

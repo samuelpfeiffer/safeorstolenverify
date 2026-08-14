@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T00:22:23.412668+00:00",
+  "generatedAt": "2026-08-14T03:54:26.704122+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -1531,6 +1531,30 @@
       "slug": "vermont-license-plate-lookup",
       "title": "Free Vermont License Plate Lookup | SafeOrStolen",
       "canonical": "https://safeorstolen.com/vermont-license-plate-lookup"
+    },
+    {
+      "route": "/videos",
+      "slug": "videos",
+      "title": "SafeOrStolen Videos \u2014 Watch How Stolen Item Checks Work",
+      "canonical": "https://safeorstolen.com/videos"
+    },
+    {
+      "route": "/videos/fortune-teller",
+      "slug": "videos__fortune-teller",
+      "title": "Fortune Teller Sketch \u2014 Even the Psychic Uses SafeOrStolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/videos/fortune-teller"
+    },
+    {
+      "route": "/videos/how-it-works",
+      "slug": "videos__how-it-works",
+      "title": "How SafeOrStolen Works \u2014 Verify Stolen Items in 3 Seconds | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/videos/how-it-works"
+    },
+    {
+      "route": "/videos/protect-yourself",
+      "slug": "videos__protect-yourself",
+      "title": "Don't Buy Stolen Goods on Marketplaces \u2014 Verify First | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/videos/protect-yourself"
     },
     {
       "route": "/vin-check",
