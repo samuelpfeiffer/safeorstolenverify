@@ -1,6 +1,4 @@
 import React from 'react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 interface BlogLayoutProps {
@@ -15,14 +13,12 @@ interface BlogLayoutProps {
 export const BlogLayout: React.FC<BlogLayoutProps> = ({ children, currentPage }) => {
   return (
     <>
-      <TopNavigation />
       {children}
       <RelatedPagesSection 
         currentPage={currentPage} 
         currentCategory="blog" 
         maxLinks={5}
       />
-      <Footer />
     </>
   );
 };

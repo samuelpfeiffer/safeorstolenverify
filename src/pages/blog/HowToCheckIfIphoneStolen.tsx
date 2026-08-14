@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, AlertTriangle, Smartphone, Shield, ArrowRight, Download } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -12,7 +10,6 @@ import { blogImages } from '@/assets/blog';
 const HowToCheckIfIphoneStolen = () => {
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="How to Check if iPhone is Stolen Before Buying (2026 Guide)"
         description="Free guide to verify any iPhone isn't stolen before you buy. Check IMEI instantly using our free tool. Avoid buying stolen phones on Facebook Marketplace, eBay, Craigslist."
@@ -220,7 +217,6 @@ const HowToCheckIfIphoneStolen = () => {
           maxLinks={5}
         />
       </div>
-      <Footer />
     </>
   );
 };

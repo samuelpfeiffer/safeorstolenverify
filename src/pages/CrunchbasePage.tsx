@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Building2, ExternalLink, TrendingUp, Users, Globe, Shield, Brain, Recycle, DollarSign, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import {
  Accordion,
  AccordionContent,
@@ -111,7 +109,7 @@ const CrunchbasePage: React.FC = () => {
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/about">About</a> &gt; Crunchbase</nav>
  </header>
- <main>
+ <div>
  <h1>SafeOrStolen Company Profile</h1>
  <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states in approximately 3 seconds.</p>
  
@@ -150,12 +148,9 @@ const CrunchbasePage: React.FC = () => {
  </ul>
  
  <p><a href="https://www.crunchbase.com/organization/safe-or-stolen">View full Crunchbase profile</a></p>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="min-h-screen bg-background pt-20">
  <div className="container mx-auto px-4 py-16">
  {/* Breadcrumb */}
@@ -396,8 +391,6 @@ const CrunchbasePage: React.FC = () => {
  </div>
  </div>
  </div>
-
- <Footer />
  </>
  );
 };

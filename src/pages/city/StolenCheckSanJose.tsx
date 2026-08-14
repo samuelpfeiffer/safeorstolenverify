@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download, Laptop, Phone, Car } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 const StolenCheckSanJose = () => {
   const faqs = [
     {
@@ -38,7 +36,6 @@ const StolenCheckSanJose = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="San Jose Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in San Jose. Free IMEI, VIN, and serial number verification. Silicon Valley sees high electronics and laptop theft rates."
@@ -148,7 +145,6 @@ const StolenCheckSanJose = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { Shield, Zap, DollarSign, Scale, Clock, TrendingUp } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 export default function ForPawnShops() {
  const serviceSchema = {
@@ -51,8 +49,6 @@ export default function ForPawnShops() {
  structuredData={[serviceSchema, faqSchema]}
  canonical="/for-pawn-shops"
  />
-
- <TopNavigation />
  <div className="container mx-auto px-4 py-12 pt-24">
  <section className="max-w-4xl mx-auto text-center mb-16">
  <h1 className="text-5xl font-bold mb-6">SafeOrStolen for Pawn Shops</h1>
@@ -239,7 +235,6 @@ export default function ForPawnShops() {
  <AppStoreBadges size="md" />
  </section>
  </div>
- <Footer />
  </>
  );
 }

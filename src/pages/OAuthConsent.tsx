@@ -91,27 +91,27 @@ export default function OAuthConsent() {
 
   if (error) {
     return (
-      <main className="min-h-screen flex items-center justify-center p-6 bg-background">
+      <div className="min-h-screen flex items-center justify-center p-6 bg-background">
         <Card className="max-w-md w-full p-6">
           <h1 className="text-xl font-semibold text-destructive mb-2">Authorization error</h1>
           <p className="text-sm text-muted-foreground">{error}</p>
         </Card>
-      </main>
+      </div>
     );
   }
 
   if (!details) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <Loader2 className="w-6 h-6 animate-spin text-primary" />
-      </main>
+      </div>
     );
   }
 
   const clientName = details.client?.client_name ?? details.client?.name ?? "an app";
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-6 bg-background">
+    <div className="min-h-screen flex items-center justify-center p-6 bg-background">
       <Card className="max-w-md w-full p-6 border-2 border-primary/30">
         <div className="flex items-center gap-3 mb-4">
           <Shield className="w-8 h-8 text-primary" />
@@ -138,6 +138,6 @@ export default function OAuthConsent() {
           </Button>
         </div>
       </Card>
-    </main>
+    </div>
   );
 }

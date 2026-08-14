@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Smartphone, Camera, Zap, Shield, Download, CheckCircle, Star, Wifi } from 'lucide-react';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 
@@ -16,10 +14,7 @@ export default function MobilePage() {
         keywords="mobile app, stolen item checker app, IMEI checker app, VIN scanner, barcode scanner, offline verification, download app"
         canonical="https://safeorstolen.com/mobile"
       />
-      
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -168,9 +163,7 @@ export default function MobilePage() {
             </p>
           </div>
         </section>
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 }

@@ -2,8 +2,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Shield, Check, X, ArrowRight, Smartphone, Database, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const HotGunzAlternativePage = () => {
   const location = useLocation();
@@ -49,9 +47,6 @@ const HotGunzAlternativePage = () => {
         canonical={location.pathname}
         structuredData={structuredData}
       />
-
-      <TopNavigation />
-
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero */}
         <section className="pt-24 pb-16 px-4">
@@ -255,8 +250,6 @@ const HotGunzAlternativePage = () => {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 };

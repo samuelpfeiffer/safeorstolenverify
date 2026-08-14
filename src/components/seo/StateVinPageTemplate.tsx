@@ -3,8 +3,6 @@ import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle, Scale }
 import { Button } from '@/components/ui/button';
 import { getStateUniqueContent, StateUniqueContent } from '@/config/stateUniqueContent';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 import {
@@ -123,7 +121,7 @@ export const StateVinPageTemplate = ({
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/vin-checker">VIN Checker</a> &gt; {state} VIN Lookup</nav>
  </header>
- <main>
+ <div>
  <h1>{state} VIN Lookup — {stateCode} Stolen Vehicle Check (2026)</h1>
  <p>{content.intro}</p>
  
@@ -183,12 +181,9 @@ export const StateVinPageTemplate = ({
  </ul>
  
  <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
  {/* Hero Section */}
  <section className="pt-24 pb-16 px-4">
@@ -456,8 +451,6 @@ export const StateVinPageTemplate = ({
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
  } catch (error) {

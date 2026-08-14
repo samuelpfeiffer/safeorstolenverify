@@ -1,7 +1,5 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { ReportStolenItemForm } from '@/components/ReportStolenItemForm';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AlertTriangle, Shield, Users, Bell, FileText, CheckCircle2 } from 'lucide-react';
@@ -56,9 +54,6 @@ const ReportStolenPageContent = () => {
  canonical="/report-stolen"
  structuredData={faqSchema}
  />
- 
- <TopNavigation />
- 
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Report a Stolen Item — Free</h1>
@@ -87,7 +82,7 @@ const ReportStolenPageContent = () => {
  </div>
  </noscript>
  
- <main className="min-h-screen bg-background pt-20 pb-16">
+ <div className="min-h-screen bg-background pt-20 pb-16">
  <div className="container mx-auto px-4 max-w-4xl">
  {/* Hero */}
  <div className="text-center mb-10">
@@ -224,9 +219,7 @@ const ReportStolenPageContent = () => {
  </div>
  </div>
  </div>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 };

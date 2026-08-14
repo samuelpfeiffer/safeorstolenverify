@@ -12,8 +12,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { useState } from 'react';
 
 const PartialSerialNumberSearchPage = () => {
@@ -96,9 +94,6 @@ const PartialSerialNumberSearchPage = () => {
         canonical={location.pathname}
         structuredData={structuredData}
       />
-
-      <TopNavigation />
-
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
         <section className="pt-24 pb-16 px-4">
@@ -327,8 +322,6 @@ const PartialSerialNumberSearchPage = () => {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 };

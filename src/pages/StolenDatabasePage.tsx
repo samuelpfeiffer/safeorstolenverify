@@ -4,8 +4,6 @@
  */
 
 import { useState, useEffect } from 'react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { useSearchParams, Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
@@ -198,7 +196,7 @@ const StolenDatabasePage = () => {
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; Stolen Items Database</nav>
  </header>
- <main>
+ <div>
  <h1>Stolen Items Database</h1>
  <p>Search our database of reported stolen items including phones, laptops, vehicles, bicycles, firearms, jewelry, and more. Help protect buyers and recover stolen property.</p>
  
@@ -231,12 +229,9 @@ const StolenDatabasePage = () => {
  <li><a href="/vin-checker">VIN Checker</a></li>
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="container mx-auto px-4 py-8 max-w-7xl pt-24">
  <BreadcrumbNavigation 
  items={[{ name: 'Stolen Database', href: '/stolen-database' }]}

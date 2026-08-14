@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Check, X, Shield, Smartphone, Car, ArrowRight, Zap, Globe, Download, Star, Bike } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const VsVinCheckInfo = () => {
   const faqSchema = {
@@ -63,10 +61,7 @@ const VsVinCheckInfo = () => {
         canonical="/vs-vincheck-info"
         structuredData={faqSchema}
       />
-      
-      <TopNavigation />
-      
-      <main className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Hero */}
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -306,9 +301,7 @@ const VsVinCheckInfo = () => {
             </Button>
           </div>
         </section>
-      </main>
-      
-      <Footer />
+      </div>
     </div>
   );
 };

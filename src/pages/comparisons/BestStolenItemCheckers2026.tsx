@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Check, X, Shield, Smartphone, Car, Bike, ArrowRight, Star, Award, Crown, Laptop } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 const BestStolenItemCheckers2026 = () => {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -114,7 +112,6 @@ const BestStolenItemCheckers2026 = () => {
 
   return (
     <>
-      <TopNavigation />
       <div className="min-h-screen bg-background">
       <PageSEO
         title="Best Stolen Item Checkers 2026 - Compare Top Verification Tools"
@@ -124,7 +121,7 @@ const BestStolenItemCheckers2026 = () => {
         structuredData={articleSchema}
       />
       
-      <main className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Hero */}
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -358,9 +355,8 @@ const BestStolenItemCheckers2026 = () => {
             </Button>
           </div>
         </section>
-      </main>
       </div>
-      <Footer />
+      </div>
     </>
   );
 };

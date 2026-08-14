@@ -4,8 +4,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Smartphone, Scan, Wifi, Shield, Zap, Download, Apple, Chrome, MapPin, ShoppingCart, Car, Store, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const AppPage = () => {
  // TIER 1 KEYWORDS: stolen verification app, stolen item scanner app, barcode stolen checker
@@ -633,9 +631,6 @@ const AppPage = () => {
  </p>
  </div>
  </noscript>
-
-
- <TopNavigation />
  <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
  <div className="container mx-auto px-4 pt-24 pb-4">
  <BreadcrumbNavigation items={[{ name: 'Mobile App', href: '/app' }]} />
@@ -1126,7 +1121,6 @@ const AppPage = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

@@ -148,6 +148,28 @@ function documentFor(shell, page, body) {
   return html;
 }
 
+/**
+ * Non-content routes still get a static document for crawlers that fetch them
+ * directly — a bare shell carrying `noindex, follow` so they can never be
+ * indexed with homepage content.
+ */
+const NOINDEX_STUB_ROUTES = [
+  '/dashboard',
+  '/auth',
+  '/verify',
+  '/report-stolen',
+  '/app/imei-checker',
+  '/app/serial-number-checker',
+];
+
+function writeStub(shell, route) {
+  let html = shell
+    .replace(/<meta[^>]+name=["']robots["'][^>]*>\s*/gi, '')
+    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '');
+  html = html.replace('</head>', `    <meta name="robots" content="noindex, follow">\n  </head>`);
+  return html.replace('<body', `<body data-prerendered-route="${esc(route)}"`);
+}
+
 function main() {
   const manifestPath = path.join(PRERENDER, 'manifest.json');
   if (!fs.existsSync(manifestPath)) {
@@ -160,7 +182,7 @@ function main() {
     return;
   }
 
-  const shell = pristineShell(indexPath, path.join(DIST, '.shell.html'));
+  const shell = pristineShell(indexPath, path.join(DIST, 'index.html.shell'));
   const { pages: index } = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   let written = 0;
   let skipped = 0;
@@ -191,6 +213,17 @@ function main() {
     }
     written++;
   }
+
+  for (const route of NOINDEX_STUB_ROUTES) {
+    const clean = route.replace(/^\//, '');
+    const dir = path.join(DIST, clean);
+    fs.mkdirSync(dir, { recursive: true });
+    const html = writeStub(shell, route);
+    fs.writeFileSync(path.join(dir, 'index.html'), html);
+    fs.mkdirSync(path.dirname(path.join(DIST, `${clean}.html`)), { recursive: true });
+    fs.writeFileSync(path.join(DIST, `${clean}.html`), html);
+  }
+  console.log(`🚫 ${NOINDEX_STUB_ROUTES.length} non-content routes written as noindex stubs.`);
 
   console.log(`✅ Per-route prerender applied to ${written} routes (unique title/description/canonical/og:url + body). ${skipped} private routes skipped.`);
 }

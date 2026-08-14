@@ -24,8 +24,6 @@ import {
 } from '@/config/videoData';
 import { getVideoUniqueContent, hasVideoUniqueContent } from '@/config/youtubeUniqueContent';
 
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const VideoWatchPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -135,7 +133,6 @@ const VideoWatchPage: React.FC = () => {
 
   return (
     <>
-      <TopNavigation />
       <SEOHead
         title={`${video.seoTitle} | SafeOrStolen Video Tutorial`}
         description={video.seoDescription}
@@ -474,7 +471,6 @@ const VideoWatchPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

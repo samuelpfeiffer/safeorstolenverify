@@ -6,8 +6,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { ScamAnalysisResultCard } from '@/components/scam/ScamAnalysisResult';
 import { analyzeListingForScams, type ListingData, type ScamAnalysisResult } from '@/lib/scamAnalyzer';
 import { Link } from 'react-router-dom';
@@ -94,9 +92,7 @@ const ScamCheckerPage: React.FC = () => {
         canonical="/scam-checker"
         structuredData={[webAppSchema, faqSchema]}
       />
-
-      <TopNavigation />
-      <main className="max-w-4xl mx-auto px-4 py-12 pt-24 space-y-12">
+      <div className="max-w-4xl mx-auto px-4 py-12 pt-24 space-y-12">
         <header className="text-center space-y-4">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">AI Marketplace Scam Checker</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto speakable-summary">
@@ -246,8 +242,7 @@ const ScamCheckerPage: React.FC = () => {
             </Button>
           </div>
         </section>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 };

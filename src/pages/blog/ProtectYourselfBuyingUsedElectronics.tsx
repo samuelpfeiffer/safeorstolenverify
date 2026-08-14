@@ -6,8 +6,6 @@ import { Shield, AlertTriangle, CheckCircle, Smartphone } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -109,8 +107,6 @@ export default function ProtectYourselfBuyingUsedElectronics() {
         totalTime="PT10M"
         steps={howToSteps}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background">
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <div className="mb-8">
@@ -344,7 +340,6 @@ export default function ProtectYourselfBuyingUsedElectronics() {
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/protect-yourself-buying-used-electronics" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 }

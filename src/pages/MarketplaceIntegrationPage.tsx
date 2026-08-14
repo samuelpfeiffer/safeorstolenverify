@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Shield, Zap, CheckCircle, Code, Globe, Lock, Store, ArrowRight, ShoppingCart, Users, TrendingUp } from 'lucide-react';
 
 export default function MarketplaceIntegrationPage() {
@@ -15,10 +13,7 @@ export default function MarketplaceIntegrationPage() {
  keywords="marketplace integration, stolen item API, e-commerce verification, marketplace safety API, seller verification, buyer protection integration"
  canonical="https://safeorstolen.com/marketplace-integration"
  />
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero Section */}
  <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -261,9 +256,7 @@ export default function MarketplaceIntegrationPage() {
  </div>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

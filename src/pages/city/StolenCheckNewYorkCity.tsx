@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, AlertTriangle, Phone, Car, Download, Train } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 const StolenCheckNewYorkCity = () => {
   const faqs = [
     {
@@ -42,7 +40,6 @@ const StolenCheckNewYorkCity = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="New York City Stolen Item Check - Verify Before Buying in NYC | SafeOrStolen"
         description="Check if items are stolen in New York City. Free IMEI, VIN, and serial number verification for NYC buyers. Verify before buying on Facebook Marketplace or Craigslist."
@@ -192,7 +189,6 @@ const StolenCheckNewYorkCity = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

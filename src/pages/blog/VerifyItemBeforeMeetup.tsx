@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Clock, AlertTriangle, CheckCircle, Download, Users } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -64,8 +62,6 @@ const VerifyItemBeforeMeetup = () => {
         canonical="/blog/verify-item-before-meetup"
         structuredData={[articleSchema, faqSchema]}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">
           <header className="mb-12">
@@ -317,7 +313,6 @@ const VerifyItemBeforeMeetup = () => {
         </article>
       </div>
       <RelatedPagesSection currentPage="/blog/verify-item-before-meetup" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 };

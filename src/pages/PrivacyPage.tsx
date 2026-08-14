@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 const PrivacyPage: React.FC = () => {
   const webPageSchema = {
     "@context": "https://schema.org",
@@ -30,7 +28,6 @@ const PrivacyPage: React.FC = () => {
         canonical="/privacy"
         structuredData={[webPageSchema]}
       />
-    <TopNavigation />
     <div className="min-h-screen bg-sos text-white py-12 pt-24">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
@@ -180,7 +177,6 @@ const PrivacyPage: React.FC = () => {
         </Card>
     </div>
     </div>
-    <Footer />
     </>
   );
 };

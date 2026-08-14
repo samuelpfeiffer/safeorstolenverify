@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Eye, Shield, Database, FileText, CheckCircle, Users, Scale, Lock } from 'lucide-react';
 
 export default function TransparencyPage() {
@@ -15,10 +13,7 @@ export default function TransparencyPage() {
  keywords="transparency, data sources, verification accuracy, privacy policy, how it works, data protection, trust"
  canonical="https://safeorstolen.com/transparency"
  />
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -212,9 +207,7 @@ export default function TransparencyPage() {
  </div>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

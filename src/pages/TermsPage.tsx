@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const TermsPage: React.FC = () => {
   const webPageSchema = {
@@ -31,7 +29,6 @@ const TermsPage: React.FC = () => {
         canonical="/terms"
         structuredData={[webPageSchema]}
       />
-      <TopNavigation />
       <div className="min-h-screen bg-sos text-white py-12 pt-24">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
@@ -161,7 +158,6 @@ const TermsPage: React.FC = () => {
         </Card>
     </div>
     </div>
-    <Footer />
     </>
   );
 };

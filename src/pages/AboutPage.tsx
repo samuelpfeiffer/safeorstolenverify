@@ -8,8 +8,6 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const AboutPage = () => {
  const dataPartners = [
@@ -137,8 +135,6 @@ const AboutPage = () => {
  <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 100+ databases. The only mobile app for verification.</p>
  </div>
  </noscript>
- 
- <TopNavigation />
  <div className="min-h-screen bg-background pt-20">
  <div className="container mx-auto px-4 pt-24 pb-4">
  <BreadcrumbNavigation items={[{ name: 'About Us', href: '/about' }]} />
@@ -353,7 +349,6 @@ const AboutPage = () => {
  {/* Testimonials */}
  <CompactTestimonials />
  </div>
- <Footer />
  </>
  );
 };

@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Shield, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const GunSerialNumberCheckGuide = () => {
  const faqSchema = {
@@ -69,8 +67,7 @@ const GunSerialNumberCheckGuide = () => {
  keywords="gun serial number lookup, check if gun is stolen, stolen firearms databases gun check, stolen firearm database, free gun serial number check"
  structuredData={[faqSchema, articleSchema]}
  />
- <TopNavigation />
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
  <div className="max-w-3xl mx-auto text-center">
  <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Verification Guide</span>
@@ -227,8 +224,7 @@ const GunSerialNumberCheckGuide = () => {
  </div>
  </section>
  </article>
- </main>
- <Footer />
+ </div>
  </>
  );
 };

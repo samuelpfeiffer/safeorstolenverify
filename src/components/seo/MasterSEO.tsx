@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
+import { getRobotsContent } from '@/utils/seo/robotsPolicy';
 
 /**
  * Master SEO Component - Global SEO configuration
@@ -44,7 +45,10 @@ export const MasterSEO: React.FC = () => {
   return (
     <Helmet>
       {/* NOTE: Organization and WebSite schemas are in index.html for guaranteed Google crawling */}
-      {/* NOTE: Robots meta tags are handled ONLY by SEOHead per-page */}
+      {/* Path-derived robots directive. Pages that render SEOHead emit the same
+          value from the same policy; this guarantees private routes are noindex
+          even when a page ships no SEO component of its own. */}
+      <meta name="robots" content={getRobotsContent({ pathname: location.pathname })} />
       
       {/* Site verification */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />

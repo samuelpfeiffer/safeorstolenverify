@@ -7,8 +7,6 @@ import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { toast } from 'sonner';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const PRICING_TIERS = [
  {
@@ -179,7 +177,6 @@ export default function ForSellers() {
  canonical="/for-sellers"
  structuredData={structuredData}
  />
- <TopNavigation />
  <div className="min-h-screen bg-background text-foreground">
  {/* Hero */}
  <section className="pt-32 pb-20 px-4 text-center" style={{ background: 'linear-gradient(180deg, hsl(var(--primary) / 0.08), hsl(var(--background)))' }}>
@@ -479,7 +476,6 @@ export default function ForSellers() {
  </div>
  </noscript>
  </div>
- <Footer />
  </>
  );
 }

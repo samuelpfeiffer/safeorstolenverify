@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const ATFGunSerialNumberCheckGuide = () => {
   const faqSchema = {
@@ -58,8 +56,7 @@ const ATFGunSerialNumberCheckGuide = () => {
         keywords="ATF gun serial number check, ATF eTrace, verify firearm online, ATF firearms trace, gun serial number lookup ATF"
         structuredData={[faqSchema, articleSchema]}
       />
-      <TopNavigation />
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Verification Guide</span>
@@ -195,8 +192,7 @@ const ATFGunSerialNumberCheckGuide = () => {
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 };

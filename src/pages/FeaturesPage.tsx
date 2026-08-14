@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { 
  Smartphone, Database, Zap, Shield, Camera, Globe, 
  Clock, Lock, Users, FileText, ArrowRight, CheckCircle 
@@ -18,10 +16,7 @@ export default function FeaturesPage() {
  keywords="SafeOrStolen features, stolen item checker features, IMEI checker features, VIN checker features, mobile app features"
  canonical="/features"
  />
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -228,9 +223,7 @@ export default function FeaturesPage() {
  </div>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

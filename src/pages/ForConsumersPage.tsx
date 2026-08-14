@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Shield, ShoppingCart, AlertTriangle, Phone, Car, Laptop, Bike, DollarSign, Scale, ArrowRight } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import {
  Accordion,
  AccordionContent,
@@ -88,7 +86,7 @@ const ForConsumersPage = () => {
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; For Consumers</nav>
  </header>
- <main>
+ <div>
  <h1>Buy Secondhand with Confidence</h1>
  <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against 100+ stolen item databases before you hand over cash. SafeOrStolen checks carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states in 3 seconds.</p>
  
@@ -131,12 +129,9 @@ const ForConsumersPage = () => {
  </ul>
  
  <p>SafeOrStolen is the only verification platform with a mobile app. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
@@ -352,8 +347,6 @@ const ForConsumersPage = () => {
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
 };

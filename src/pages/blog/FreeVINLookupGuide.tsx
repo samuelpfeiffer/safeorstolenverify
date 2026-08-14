@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const FreeVINLookupGuide = () => {
  const structuredData = [
@@ -49,7 +47,6 @@ const FreeVINLookupGuide = () => {
 
  return (
  <>
- <TopNavigation />
  <PageSEO
  title="Free VIN Lookup 2026 - Check If Car Is Stolen Before Buying | SafeOrStolen"
  description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, stolen property reports from all 50 states, and NHTSA vehicle records. Instant results in 3 seconds. $0.99/check or $10/month unlimited."
@@ -254,7 +251,6 @@ const FreeVINLookupGuide = () => {
  <RelatedPagesSection currentPage="/blog/free-vin-lookup-guide" currentCategory="blog" maxLinks={5} />
  </div>
  </article>
- <Footer />
  </>
  );
 };

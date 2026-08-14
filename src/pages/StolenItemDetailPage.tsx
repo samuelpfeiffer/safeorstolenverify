@@ -18,8 +18,6 @@ import {
   Link as LinkIcon, ArrowLeft, Shield, Phone, Car, Bike, Monitor
 } from 'lucide-react';
 import { format } from 'date-fns';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 interface StolenItem {
   id: string;
@@ -181,7 +179,6 @@ const StolenItemDetailPage = () => {
         structuredData={[reportSchema]}
         image="/og-stolen-item.jpg"
       />
-      <TopNavigation />
       <div className="container mx-auto px-4 py-8 max-w-4xl pt-24">
         <BreadcrumbNavigation 
           items={[
@@ -343,7 +340,6 @@ const StolenItemDetailPage = () => {
           </CardContent>
         </Card>
       </div>
-      <Footer />
     </>
   );
 };

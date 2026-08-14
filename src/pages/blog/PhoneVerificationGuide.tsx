@@ -3,8 +3,6 @@ import { Card } from '@/components/ui/card';
 import { Smartphone, Shield, AlertCircle, CheckCircle, Search, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 export default function PhoneVerificationGuide() {
@@ -38,8 +36,6 @@ export default function PhoneVerificationGuide() {
         canonical="/blog/phone-verification-guide"
         structuredData={structuredData}
       />
-
-      <TopNavigation />
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none">
@@ -361,7 +357,6 @@ export default function PhoneVerificationGuide() {
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/phone-verification-guide" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 }

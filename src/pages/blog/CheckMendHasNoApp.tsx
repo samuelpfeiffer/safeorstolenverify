@@ -5,8 +5,6 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from 'react-router-dom';
 import { X, Check, AlertTriangle, Download } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const CheckMendHasNoApp = () => {
@@ -61,8 +59,6 @@ const CheckMendHasNoApp = () => {
           }
         ]}
       />
-      
-      <TopNavigation />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation 
@@ -343,7 +339,6 @@ const CheckMendHasNoApp = () => {
         </article>
       </div>
       <RelatedPagesSection currentPage="/blog/checkmend-has-no-app" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 };

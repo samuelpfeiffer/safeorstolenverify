@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 const StolenCheckPhoenix = () => {
   const faqs = [
     {
@@ -38,7 +36,6 @@ const StolenCheckPhoenix = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Phoenix Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Phoenix. Free IMEI, VIN, and serial number verification. Phoenix ranks top 10 for vehicle theft."
@@ -95,7 +92,6 @@ const StolenCheckPhoenix = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

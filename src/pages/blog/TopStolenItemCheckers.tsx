@@ -4,8 +4,6 @@ import { Shield, CheckCircle, XCircle, Smartphone, ArrowRight, ExternalLink, Sta
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import {
   Accordion,
   AccordionContent,
@@ -144,7 +142,6 @@ const TopStolenItemCheckers = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Top 10 Stolen Item Checkers 2026 - Compare Free Tools"
         description="Compare the 10 best ways to check if items are stolen before buying. Free tools for phones (IMEI), vehicles (VIN), firearms, electronics. Side-by-side comparison."
@@ -727,7 +724,6 @@ const TopStolenItemCheckers = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

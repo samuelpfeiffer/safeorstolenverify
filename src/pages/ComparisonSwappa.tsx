@@ -3,8 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Check, X, Smartphone, Download, Shield, Zap, Globe, BarChart3, Star, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const ComparisonSwappa = () => {
@@ -106,9 +104,6 @@ const ComparisonSwappa = () => {
  canonical="/vs-swappa"
  structuredData={[comparisonSchema, faqSchema]}
  />
-
- <TopNavigation />
-
  <noscript>
  <header style={{ padding: '20px', maxWidth: '900px', margin: '0 auto' }}>
  <h1>SafeOrStolen vs Swappa — Full 2026 Comparison</h1>
@@ -496,8 +491,6 @@ const ComparisonSwappa = () => {
  </div>
  </div>
  </div>
-
- <Footer />
  </>
  );
 };

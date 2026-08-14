@@ -5,8 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Newspaper, Shield, Smartphone, Globe, Target } from 'lucide-react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 /**
  * News Index Page - Lists all news articles and company announcements
@@ -43,9 +41,7 @@ const NewsIndexPage = () => {
  canonical="/news"
  structuredData={newsSchema}
  />
- <TopNavigation />
-
- <main className="min-h-screen bg-background">
+ <div className="min-h-screen bg-background">
  {/* Hero Section */}
  <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -189,9 +185,7 @@ const NewsIndexPage = () => {
  </div>
  </div>
  </section>
- </main>
-
- <Footer />
+ </div>
  </>
  );
 };

@@ -1,8 +1,6 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Calendar, ShieldCheck } from 'lucide-react';
 import {
@@ -108,7 +106,6 @@ export const ClusterArticleTemplate = ({
 
   return (
     <>
-      <TopNavigation />
       <SEOHead
         title={meta.title}
         description={metaDescription}
@@ -121,7 +118,7 @@ export const ClusterArticleTemplate = ({
         schemaJson={[articleSchema, faqSchema, breadcrumbSchema]}
       />
 
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-8 md:py-14 max-w-3xl">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
@@ -219,9 +216,7 @@ export const ClusterArticleTemplate = ({
             </div>
           </section>
         </div>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

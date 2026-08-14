@@ -8,8 +8,6 @@ import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 // Card images served from /public for smaller JS bundle (no ES module overhead)
 const cardFirearms = '/images/cards/firearms-check.jpg';
@@ -194,10 +192,6 @@ const Index = () => {
  <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against 100+ law enforcement, insurance, and carrier databases, including carrier and theft databases, vehicle theft and title databases, stolen bicycle databases, and Stolen Firearms Databases, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
  </div>
  </noscript>
-
-
- <TopNavigation />
-
  {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
  <DownloadAppBanner />
 
@@ -749,7 +743,6 @@ const Index = () => {
  })
  }}
  />
- <Footer />
  </div>
  );
 };

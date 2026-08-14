@@ -1,8 +1,6 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
@@ -31,7 +29,6 @@ export default function HowToCheckPhoneStolen() {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="How to Check if a Phone is Stolen Before Buying (2026 Guide)"
         description="Complete guide to verifying if a used phone is stolen using IMEI checker, carrier blacklist lookup, and other verification methods. Protect yourself from buying stolen phones."
@@ -236,7 +233,6 @@ export default function HowToCheckPhoneStolen() {
         </footer>
       </article>
       <RelatedPagesSection currentPage="/blog/how-to-check-if-phone-stolen" currentCategory="blog" maxLinks={5} />
-      <Footer />
     </>
   );
 }

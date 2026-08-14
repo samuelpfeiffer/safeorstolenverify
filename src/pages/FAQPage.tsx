@@ -7,8 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 import { createFAQSchema } from '@/utils/seo/structuredData';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const FAQPage = () => {
  const faqCategories = [
@@ -226,8 +224,6 @@ const FAQPage = () => {
  <p>Common questions about stolen item verification. Check IMEI, VIN, and serial numbers for free.</p>
  </div>
  </noscript>
- 
- <TopNavigation />
  <div className="min-h-screen bg-background pt-20">
  <div className="container mx-auto px-4 pt-24 pb-4">
  <BreadcrumbNavigation items={[{ name: 'FAQ', href: '/faq' }]} />
@@ -297,7 +293,6 @@ const FAQPage = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

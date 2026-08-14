@@ -4,8 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Code, Key, Shield, Zap, AlertTriangle, CheckCircle, Mail, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 /**
  * API Documentation Page
@@ -37,8 +35,6 @@ export default function APIPage() {
  canonical="/api"
  schemaJson={articleSchema}
  />
- 
- <TopNavigation />
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-20">
  <div className="container mx-auto px-4 py-16">
  <div className="max-w-4xl mx-auto">
@@ -436,7 +432,6 @@ console.log('Confidence:', result.confidence + '%');`}
  </div>
  </div>
  </div>
- <Footer />
  </>
  );
 }

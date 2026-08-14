@@ -11,8 +11,6 @@ import { CheckCircle, Shield, ArrowRight, Download, Loader2, PartyPopper } from 
 import { PageSEO } from '@/components/seo/PageSEO';
 import { supabase } from '@/integrations/supabase/client';
 import confetti from 'canvas-confetti';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const PaymentSuccessPage = () => {
   const [searchParams] = useSearchParams();
@@ -65,7 +63,6 @@ const PaymentSuccessPage = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="Payment Successful | SafeOrStolen"
         description="Your payment was successful. Continue to your verification."
@@ -147,7 +144,6 @@ const PaymentSuccessPage = () => {
           </CardContent>
         </Card>
       </div>
-      <Footer />
     </>
   );
 };

@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Zap, Shield, Clock, Database, CheckCircle, ArrowRight, Globe, Lock, Activity } from 'lucide-react';
 
 export default function RealTimeVerificationPage() {
@@ -15,10 +13,7 @@ export default function RealTimeVerificationPage() {
  keywords="real-time verification, instant stolen check, fast IMEI lookup, quick VIN check, live serial number verification, immediate results"
  canonical="https://safeorstolen.com/real-time-verification"
  />
- 
- <TopNavigation />
- 
- <main className="min-h-screen bg-background pt-20">
+ <div className="min-h-screen bg-background pt-20">
  {/* Hero */}
  <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
  <div className="container mx-auto px-4">
@@ -184,9 +179,7 @@ export default function RealTimeVerificationPage() {
  </Button>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 }

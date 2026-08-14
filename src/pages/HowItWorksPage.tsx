@@ -9,8 +9,6 @@ import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWo
 import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { VerificationStats } from '@/components/trust/VerificationStats';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const HowItWorksPage = () => {
  return (
@@ -70,8 +68,6 @@ const HowItWorksPage = () => {
  <p>SafeOrStolen verifies items against 100+ databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
  </div>
  </noscript>
-
- <TopNavigation />
  <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
  <div className="container mx-auto px-4 pt-24 pb-4">
  <BreadcrumbNavigation items={[{ name: 'How It Works', href: '/how-it-works' }]} />
@@ -637,7 +633,6 @@ const HowItWorksPage = () => {
  </div>
  </section>
  </div>
- <Footer />
  </>
  );
 };

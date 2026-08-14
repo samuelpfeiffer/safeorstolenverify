@@ -2,8 +2,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Shield, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEOHead } from '@/components/seo/SEOHead';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import {
  Accordion,
  AccordionContent,
@@ -131,7 +129,7 @@ export const BusinessPageTemplate = ({
  <header>
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/for-businesses">For Businesses</a> &gt; For {businessType}</nav>
  </header>
- <main>
+ <div>
  <h1>{h1}</h1>
  <p>{content.intro}</p>
  
@@ -181,12 +179,9 @@ export const BusinessPageTemplate = ({
  </ul>
  
  <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $0.99/check or $10/month unlimited.</p>
- </main>
+ </div>
  </div>
  </noscript>
-
- <TopNavigation />
-
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
  {/* Hero Section */}
  <section className="pt-24 pb-16 px-4">
@@ -350,8 +345,6 @@ export const BusinessPageTemplate = ({
  </div>
  </section>
  </div>
-
- <Footer />
  </>
  );
 };

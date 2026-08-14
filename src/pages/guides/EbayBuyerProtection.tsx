@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Shield, AlertTriangle, CheckCircle, Search, Smartphone, ArrowRight } from 'lucide-react';
 
@@ -44,9 +42,7 @@ const EbayBuyerProtection = () => {
  keywords="eBay buyer protection, eBay scam protection, verify eBay items, eBay stolen phone, eBay IMEI check, eBay serial number verification"
  structuredData={structuredData}
  />
- <TopNavigation />
- 
- <main className="min-h-screen bg-background">
+ <div className="min-h-screen bg-background">
  {/* Hero Section */}
  <section className="py-16 px-4 bg-gradient-to-br from-background via-background to-muted">
  <div className="container mx-auto max-w-4xl text-center">
@@ -201,9 +197,7 @@ const EbayBuyerProtection = () => {
  </div>
  </div>
  </section>
- </main>
- 
- <Footer />
+ </div>
  </>
  );
 };

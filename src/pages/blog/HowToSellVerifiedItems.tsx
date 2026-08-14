@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 
 const HowToSellVerifiedItems = () => {
   const structuredData = [
@@ -48,7 +46,6 @@ const HowToSellVerifiedItems = () => {
 
   return (
     <>
-      <TopNavigation />
       <PageSEO
         title="How to Sell Verified Items on Marketplace (2026 Guide) | SafeOrStolen"
         description="Verify items before selling to prove they're legitimate. Get Verified Safe badges and shareable certificates. Sell 3x faster and command 15-30% higher prices on any marketplace."
@@ -228,7 +225,6 @@ const HowToSellVerifiedItems = () => {
           <RelatedPagesSection currentPage="/blog/how-to-sell-verified-items" currentCategory="blog" maxLinks={5} />
         </div>
       </article>
-      <Footer />
     </>
   );
 };

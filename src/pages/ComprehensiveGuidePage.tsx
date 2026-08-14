@@ -2,8 +2,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import Footer from '@/components/Footer';
 import { BookOpen, Phone, Car, Laptop, Shield, CheckCircle, AlertTriangle, ArrowRight, FileText } from 'lucide-react';
 
 export default function ComprehensiveGuidePage() {
@@ -15,10 +13,7 @@ export default function ComprehensiveGuidePage() {
         keywords="stolen item guide, verification guide, IMEI guide, VIN guide, how to check stolen, buy secondhand safely"
         canonical="https://safeorstolen.com/comprehensive-guide"
       />
-      
-      <TopNavigation />
-      
-      <main className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -307,9 +302,7 @@ export default function ComprehensiveGuidePage() {
             </Button>
           </div>
         </section>
-      </main>
-      
-      <Footer />
+      </div>
     </>
   );
 }

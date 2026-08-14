@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T00:13:35.160298+00:00",
+  "generatedAt": "2026-08-14T00:22:23.412668+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -27,12 +27,6 @@
       "canonical": "https://safeorstolen.com/ai-chat"
     },
     {
-      "route": "/ai-verify",
-      "slug": "ai-verify",
-      "title": "AI Stolen Item Verification Chat | SafeOrStolen",
-      "canonical": "https://safeorstolen.com/ai-verify"
-    },
-    {
       "route": "/alabama-license-plate-lookup",
       "slug": "alabama-license-plate-lookup",
       "title": "Free Alabama License Plate Lookup | SafeOrStolen",
@@ -55,30 +49,6 @@
       "slug": "app",
       "title": "Download SafeOrStolen Mobile App - iOS & Android",
       "canonical": "https://safeorstolen.com/app"
-    },
-    {
-      "route": "/app/barcode-scanner",
-      "slug": "app__barcode-scanner",
-      "title": "Barcode Scanner Stolen Checker App | SafeOrStolen",
-      "canonical": "https://safeorstolen.com/app/barcode-scanner"
-    },
-    {
-      "route": "/app/features",
-      "slug": "app__features",
-      "title": "SafeOrStolen App Features | Barcode Scanner, Offline Mode, Instant",
-      "canonical": "https://safeorstolen.com/app/features"
-    },
-    {
-      "route": "/app/stolen-phone-checker",
-      "slug": "app__stolen-phone-checker",
-      "title": "Stolen Phone Checker App FREE | Check IMEI Before Buying",
-      "canonical": "https://safeorstolen.com/app/stolen-phone-checker"
-    },
-    {
-      "route": "/app/vin-checker",
-      "slug": "app__vin-checker",
-      "title": "VIN Checker App FREE | Check if Car is Stolen Before Buying",
-      "canonical": "https://safeorstolen.com/app/vin-checker"
     },
     {
       "route": "/arizona-license-plate-lookup",
@@ -337,12 +307,6 @@
       "slug": "blog__top-10-stolen-item-checkers",
       "title": "Top 10 Stolen Item Checkers 2026 - Compare Free Tools | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/top-10-stolen-item-checkers"
-    },
-    {
-      "route": "/blog/top-stolen-item-checkers",
-      "slug": "blog__top-stolen-item-checkers",
-      "title": "Blog Post Not Found | SafeOrStolen",
-      "canonical": "https://safeorstolen.com/blog/top-stolen-item-checkers"
     },
     {
       "route": "/blog/ultimate-marketplace-buyers-guide",
@@ -1161,12 +1125,6 @@
       "canonical": "https://safeorstolen.com/mobile"
     },
     {
-      "route": "/mobile-app",
-      "slug": "mobile-app",
-      "title": "SafeOrStolen Mobile App - Free Download | Stolen Item Checker",
-      "canonical": "https://safeorstolen.com/mobile-app"
-    },
-    {
       "route": "/montana-license-plate-lookup",
       "slug": "montana-license-plate-lookup",
       "title": "Free Montana License Plate Lookup | SafeOrStolen",
@@ -1357,12 +1315,6 @@
       "slug": "real-time-verification",
       "title": "Real-Time Verification - Instant Stolen Item Checks | SafeOrStolen",
       "canonical": "https://safeorstolen.com/real-time-verification"
-    },
-    {
-      "route": "/report-stolen",
-      "slug": "report-stolen",
-      "title": "Sign In or Create Account | SafeOrStolen",
-      "canonical": "https://safeorstolen.com/report-stolen"
     },
     {
       "route": "/resource-center",
@@ -1569,12 +1521,6 @@
       "canonical": "https://safeorstolen.com/utah-license-plate-lookup"
     },
     {
-      "route": "/verify",
-      "slug": "verify",
-      "title": "AI Stolen Item Verification Chat | SafeOrStolen",
-      "canonical": "https://safeorstolen.com/verify"
-    },
-    {
       "route": "/verify/pawnshops",
       "slug": "verify__pawnshops",
       "title": "Pawn Shop Verification - SafeOrStolen for Pawn Shops",
@@ -1647,12 +1593,6 @@
       "canonical": "https://safeorstolen.com/vs-imeiinfo"
     },
     {
-      "route": "/vs-stolenphonechecker",
-      "slug": "vs-stolenphonechecker",
-      "title": "Best CTIA Stolen Phone Checker Alternative 2026 | SafeOrStolen",
-      "canonical": "https://safeorstolen.com/vs-stolenphonechecker"
-    },
-    {
       "route": "/vs-stolenregister",
       "slug": "vs-stolenregister",
       "title": "Best StolenRegister Alternative 2026 | SafeOrStolen",
@@ -1673,19 +1613,19 @@
     {
       "route": "/washington-dc-license-plate-lookup",
       "slug": "washington-dc-license-plate-lookup",
-      "title": "Washington DC License Plate Lookup Free - DC DMV Plate Se...",
+      "title": "Washington DC License Plate Lookup Free - DC DMV Plate Search",
       "canonical": "https://safeorstolen.com/washington-dc-license-plate-lookup"
     },
     {
       "route": "/washington-license-plate-lookup",
       "slug": "washington-license-plate-lookup",
-      "title": "Washington License Plate Lookup - Check WA Stolen Vehicle...",
+      "title": "Washington License Plate Lookup - Check WA Stolen Vehicle by Plate",
       "canonical": "https://safeorstolen.com/washington-license-plate-lookup"
     },
     {
       "route": "/washington-vin-lookup",
       "slug": "washington-vin-lookup",
-      "title": "Washington VIN Lookup - Free WA Stolen Vehicle Check | Sa...",
+      "title": "Washington VIN Lookup - Free WA Stolen Vehicle Check | SafeOrStolen",
       "canonical": "https://safeorstolen.com/washington-vin-lookup"
     },
     {
