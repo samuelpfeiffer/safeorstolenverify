@@ -86,7 +86,6 @@ export default function MarketplaceAdvisorPage() {
           applicationCategory: 'SecurityApplication',
           operatingSystem: 'Web',
           offers: { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: '$10/month unlimited plan' },
-          aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '2847' },
         }) }} />
       </div>
     </>

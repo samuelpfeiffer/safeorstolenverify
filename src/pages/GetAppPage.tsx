@@ -66,11 +66,6 @@ const GetAppPage = () => {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1247"
-    },
     "description": "The only stolen item verification app. Check if phones, cars, bikes are stolen before buying."
   };
 
