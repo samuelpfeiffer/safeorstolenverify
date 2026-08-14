@@ -32,6 +32,11 @@ const PRIVATE_EXACT = new Set([
   '/receipts',
   '/analytics',
   '/404',
+  '/trust-engine',
+  '/mobile-dashboard',
+  '/mobile-onboarding',
+  '/mobile-settings',
+  '/mobile-verify',
 ]);
 
 const PRIVATE_PREFIXES = [
@@ -41,7 +46,7 @@ const PRIVATE_PREFIXES = [
   '/auth/',
   '/dashboard/',
   '/profile/',
-  '/.lovable',
+  '/.lovable/',
   '/go/',
   '/shared/',
   '/verified/',
@@ -50,7 +55,7 @@ const PRIVATE_PREFIXES = [
 export function isPrivateRoute(routePath) {
   const p = (routePath || '/').split('?')[0].split('#')[0];
   if (PRIVATE_EXACT.has(p)) return true;
-  return PRIVATE_PREFIXES.some((prefix) => p === prefix.replace(/\/$/, '') || p.startsWith(prefix));
+  return PRIVATE_PREFIXES.some((prefix) => p.startsWith(prefix));
 }
 
 /** All static (non-parameterised) paths declared in the router. */
