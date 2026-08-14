@@ -72,12 +72,20 @@ EXTRACT_JS = """
   }
 
 
+  // The static fallback <meta name="description"> in index.html comes FIRST in
+  // the head; the per-route Helmet-managed one is appended later. Always take
+  // the last (or an explicitly Helmet-managed) one, never the generic fallback.
+  const descEls = [...document.head.querySelectorAll('meta[name="description"]')];
+  const managed = descEls.find((el) => el.hasAttribute('data-rh') || el.hasAttribute('data-react-helmet'));
+  const descEl = managed || descEls[descEls.length - 1];
+
   return {
     title: document.title,
-    description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+    description: descEl?.getAttribute('content') || '',
     metas, links, jsonld, body,
   };
 }
+
 """
 
 
@@ -109,12 +117,19 @@ def normalize(entry: dict, route: str) -> dict:
     by_key["p:og:url"] = {"property": "og:url", "content": canonical}
     if "p:og:title" not in by_key:
         by_key["p:og:title"] = {"property": "og:title", "content": entry["title"]}
+    # The per-route description lives in `metas` (last write wins above); the
+    # top-level field must mirror it, never the generic index.html fallback.
+    meta_desc = by_key.get("n:description", {}).get("content")
+    if meta_desc:
+        entry["description"] = meta_desc
+    # og:/twitter: descriptions also mirror the per-route value.
     if "p:og:description" not in by_key and entry["description"]:
         by_key["p:og:description"] = {"property": "og:description", "content": entry["description"]}
     if "n:twitter:title" not in by_key:
         by_key["n:twitter:title"] = {"name": "twitter:title", "content": entry["title"]}
     if "n:twitter:description" not in by_key and entry["description"]:
         by_key["n:twitter:description"] = {"name": "twitter:description", "content": entry["description"]}
+
 
     entry["metas"] = list(by_key.values())
     entry["links"] = [{"rel": "canonical", "href": canonical}] + [

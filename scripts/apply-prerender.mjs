@@ -93,13 +93,21 @@ function countMainOutsideNoscript(html) {
 }
 
 
+/** Per-route description: `metas` is authoritative, top-level is the fallback. */
+function descriptionFor(page) {
+  const fromMetas = (page.metas || []).find((m) => m.name === 'description' && m.content)?.content;
+  return fromMetas || page.description || '';
+}
+
 function headFor(page) {
   const out = [];
   out.push(`<title>${esc(page.title)}</title>`);
-  if (page.description) out.push(`<meta name="description" content="${esc(page.description)}">`);
+  const description = descriptionFor(page);
+  if (description) out.push(`<meta name="description" content="${esc(description)}">`);
   out.push(`<link rel="canonical" href="${esc(page.canonical)}">`);
 
   const seen = new Set(['description']);
+
   for (const m of page.metas || []) {
     const key = m.property ? `p:${m.property}` : `n:${m.name}`;
     if (seen.has(key) || seen.has(m.name)) continue;
@@ -232,6 +240,8 @@ function main() {
   const { pages: index } = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   let written = 0;
   let skipped = 0;
+  const descCounts = new Map();
+
 
   for (const entry of index) {
     if (isPrivateRoute(entry.route)) {
@@ -244,6 +254,9 @@ function main() {
     const bodyFile = path.join(PRERENDER, 'pages', `${page.slug}.html`);
     const body = fs.existsSync(bodyFile) ? fs.readFileSync(bodyFile, 'utf-8') : '';
     const html = documentFor(shell, page, body);
+    const emittedDesc = descriptionFor(page);
+    if (emittedDesc) descCounts.set(emittedDesc, (descCounts.get(emittedDesc) || 0) + 1);
+
 
     if (page.route === '/') {
       fs.writeFileSync(indexPath, html);
@@ -260,7 +273,23 @@ function main() {
     written++;
   }
 
+  // Build-time assertion: no single meta description may cover >15% of routes.
+  const totalDesc = [...descCounts.values()].reduce((a, b) => a + b, 0);
+  if (totalDesc > 0) {
+    const [topDesc, topCount] = [...descCounts.entries()].sort((a, b) => b[1] - a[1])[0];
+    const share = topCount / totalDesc;
+    if (share > 0.15 && topCount > 1) {
+      throw new Error(
+        `Duplicate meta description across ${topCount}/${totalDesc} prerendered routes ` +
+          `(${(share * 100).toFixed(1)}% > 15% threshold):\n  "${topDesc}"\n` +
+          `Per-route descriptions must be unique. Re-capture snapshots (scripts/capture_prerender.py).`,
+      );
+    }
+    console.log(`🔎 ${descCounts.size} unique descriptions across ${totalDesc} routes (most repeated: ${topCount}x).`);
+  }
+
   for (const route of NOINDEX_STUB_ROUTES) {
+
     writeAtRoute(route, writeStub(shell, route));
   }
   for (const [route, destination] of Object.entries(REDIRECT_STUB_ROUTES)) {
