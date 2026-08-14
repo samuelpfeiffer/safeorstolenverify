@@ -36,6 +36,8 @@ export const MyRecordsSection: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [pendingAnon, setPendingAnon] = useState<string[]>([]);
   const [claiming, setClaiming] = useState(false);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+
 
   const load = useCallback(async (p: number) => {
     setLoading(true);
