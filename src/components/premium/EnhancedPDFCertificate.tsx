@@ -112,7 +112,7 @@ export const EnhancedPDFCertificate: React.FC<EnhancedPDFCertificateProps> = ({
       doc.setFont('helvetica', 'italic');
       doc.text('This certificate is digitally generated and validates the verification performed.', pageWidth / 2, pageHeight - 20, { align: 'center' });
       doc.text('Certificate ID: ' + Date.now().toString(36), pageWidth / 2, pageHeight - 15, { align: 'center' });
-      doc.text('SafeOrStolen.com - Protecting buyers from stolen goods since 2024', pageWidth / 2, pageHeight - 10, { align: 'center' });
+      doc.text('SafeOrStolen.com - Protecting buyers from stolen goods since 2017', pageWidth / 2, pageHeight - 10, { align: 'center' });
 
       // Save PDF
       const fileName = `SafeOrStolen_Certificate_${verificationData.identifier}_${Date.now()}.pdf`;
