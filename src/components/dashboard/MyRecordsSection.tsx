@@ -76,7 +76,26 @@ export const MyRecordsSection: React.FC = () => {
     }
   };
 
+  const handleDelete = async (id: string) => {
+    setDeletingId(id);
+    try {
+      await deleteProofRecord(id);
+      toast({ title: 'Record deleted', description: `${id} was permanently deleted.` });
+      load(page);
+    } catch (err) {
+      console.error('[MyRecordsSection] delete failed', err);
+      toast({
+        title: 'Could not delete record',
+        description: 'Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
   const totalPages = Math.max(1, Math.ceil(total / PROOF_PAGE_SIZE));
+
 
   return (
     <Card>
