@@ -56,7 +56,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
               </div>
               <p className="text-muted-foreground mb-4">
                 The world's most trusted stolen goods verification platform. 
-                Protecting buyers and businesses since 2024.
+                Protecting buyers and businesses since 2017.
               </p>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">

@@ -65,13 +65,6 @@ export const MobileAppSchema = () => {
       "Verification history",
       "PDF reports for proof of verification"
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "review": [
       {
         "@type": "Review",

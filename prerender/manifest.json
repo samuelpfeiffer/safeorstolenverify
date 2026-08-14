@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T03:54:26.704122+00:00",
+  "generatedAt": "2026-08-14T11:53:14.778718+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -1123,6 +1123,12 @@
       "slug": "mobile",
       "title": "SafeOrStolen Mobile App - Verify Items On-The-Go | Download Free",
       "canonical": "https://safeorstolen.com/mobile"
+    },
+    {
+      "route": "/mobile-app",
+      "slug": "mobile-app",
+      "title": "SafeOrStolen Mobile App - Free Download | Stolen Item Checker",
+      "canonical": "https://safeorstolen.com/mobile-app"
     },
     {
       "route": "/montana-license-plate-lookup",

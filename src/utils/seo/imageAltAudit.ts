@@ -136,7 +136,7 @@ export function generateAltText(imageContext: {
         'clean'
       );
     case 'social':
-      return ALT_TEXT_PATTERNS.socialProof(imageContext.context || '100,000+ users');
+      return ALT_TEXT_PATTERNS.socialProof(imageContext.context || 'buyers and sellers');
     case 'feature':
       return ALT_TEXT_PATTERNS.featureIcon(imageContext.context || 'verification');
     case 'badge':

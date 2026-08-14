@@ -74,7 +74,6 @@ const IMEICheckerAppPage = () => {
  "applicationCategory": "UtilitiesApplication",
  "operatingSystem": "iOS, Android",
  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
- "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1247" }
  };
 
  return (

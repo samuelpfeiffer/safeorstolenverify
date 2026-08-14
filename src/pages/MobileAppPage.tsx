@@ -46,11 +46,6 @@ const MobileAppPage = () => {
  "priceCurrency": "USD",
  "description": "Free download, 2 free checks, then $0.99/check or $10/month unlimited"
  },
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "4.9",
- "ratingCount": "2847"
- },
  "description": "The only mobile app for verifying stolen phones, vehicles, electronics and firearms. Instant barcode scanning, offline mode, 100+ databases checked in 3 seconds.",
  "downloadUrl": "https://safeorstolen.com/mobile-app",
  "installUrl": "https://safeorstolen.com/mobile-app",
@@ -214,13 +209,13 @@ const MobileAppPage = () => {
  </div>
  <div>
  <Users className="h-8 w-8 mx-auto text-primary mb-2" />
- <div className="text-3xl font-bold">50K+</div>
- <div className="text-sm text-muted-foreground">Verifications</div>
+ <div className="text-3xl font-bold">6</div>
+ <div className="text-sm text-muted-foreground">Item Categories</div>
  </div>
  <div>
  <Star className="h-8 w-8 mx-auto text-primary mb-2" />
- <div className="text-3xl font-bold">4.9</div>
- <div className="text-sm text-muted-foreground">User Rating</div>
+ <div className="text-3xl font-bold">2</div>
+ <div className="text-sm text-muted-foreground">Free Checks</div>
  </div>
  </div>
  </div>

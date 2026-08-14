@@ -242,7 +242,7 @@ const YouTubePage: React.FC = () => {
  },
  {
  label: 'FFL Gun Dealers',
- text: 'Verify firearms serial numbers against stolen firearms databases. SafeOrStolen is used by 500+ FFL dealers for compliance under 18 U.S.C. § 922.',
+ text: 'Verify firearms serial numbers against stolen firearms databases. Firearm serial verification supports compliance with 18 U.S.C. § 922.',
  link: '/firearms-check'
  }
  ];

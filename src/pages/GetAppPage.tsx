@@ -66,11 +66,6 @@ const GetAppPage = () => {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1247"
-    },
     "description": "The only stolen item verification app. Check if phones, cars, bikes are stolen before buying."
   };
 
@@ -91,7 +86,7 @@ const GetAppPage = () => {
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full mb-6">
                   <Star className="w-4 h-4 text-green-500 fill-green-500" />
-                  <span className="text-sm font-medium">4.8★ Rating • 1,247 Reviews</span>
+                  <span className="text-sm font-medium">Free to start • No card required</span>
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">

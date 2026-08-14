@@ -61,7 +61,7 @@ export const SecurityBadges = () => {
               />
               <div className="text-left">
                 <h3 className="text-xl font-bold text-foreground mb-1">SafeOrStolen Certified</h3>
-                <p className="text-sm text-muted-foreground">Trusted verification platform since 2024</p>
+                <p className="text-sm text-muted-foreground">Trusted verification platform since 2017</p>
               </div>
             </div>
           </div>

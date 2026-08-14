@@ -551,7 +551,7 @@ const Index = () => {
  <text x="40" y="22" fill="currentColor" fontSize="14" fontWeight="700" fontFamily="system-ui">Trustpilot</text>
  </svg>
  </div>
- <h3 className="text-foreground font-bold text-sm mb-1">4.1★ on Trustpilot</h3>
+ <h3 className="text-foreground font-bold text-sm mb-1">Reviews on Trustpilot</h3>
  <p className="text-muted-foreground text-xs leading-relaxed">
  Real reviews from real users — read what buyers and sellers say about us
  </p>
@@ -717,11 +717,6 @@ const Index = () => {
  { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
  ],
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "4.1",
- "reviewCount": "3"
- },
  "dateModified": "2026-03-02"
  })
  }}

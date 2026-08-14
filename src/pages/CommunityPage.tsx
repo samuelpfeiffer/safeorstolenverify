@@ -45,26 +45,26 @@ export default function CommunityPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <Card>
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">130K+</div>
-                  <p className="text-sm text-muted-foreground">Community Members</p>
+                  <div className="text-4xl font-bold text-primary mb-2">6</div>
+                  <p className="text-sm text-muted-foreground">Item Categories</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">2.8M+</div>
-                  <p className="text-sm text-muted-foreground">Items Verified</p>
+                  <div className="text-4xl font-bold text-primary mb-2">100+</div>
+                  <p className="text-sm text-muted-foreground">Databases Checked</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">50K+</div>
-                  <p className="text-sm text-muted-foreground">Thefts Prevented</p>
+                  <div className="text-4xl font-bold text-primary mb-2">2</div>
+                  <p className="text-sm text-muted-foreground">Free Checks to Start</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">$12M+</div>
-                  <p className="text-sm text-muted-foreground">Saved from Fraud</p>
+                  <div className="text-4xl font-bold text-primary mb-2">~3s</div>
+                  <p className="text-sm text-muted-foreground">Average Result Time</p>
                 </CardContent>
               </Card>
             </div>

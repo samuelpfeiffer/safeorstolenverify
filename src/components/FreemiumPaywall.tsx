@@ -169,7 +169,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
 
         {/* Trust Badges */}
         <div className="text-xs text-muted-foreground space-y-1 pt-2 border-t">
-          <p>🔒 Secure Stripe Payment • ⭐ 4.1★ Trustpilot • 💰 30-day money-back guarantee</p>
+          <p>🔒 Secure Stripe Payment • ⭐ Trustpilot reviews • 💰 30-day money-back guarantee</p>
         </div>
       </CardContent>
     </Card>

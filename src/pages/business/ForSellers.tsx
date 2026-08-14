@@ -78,8 +78,8 @@ const SELLER_BENEFITS = [
  icon: Users,
  title: 'Build Buyer Trust',
  description: 'Repeat buyers come back to sellers they trust. A "Verified Safe" badge tells them you\'re the real deal.',
- stat: '4.8★',
- statLabel: 'avg seller rating',
+ stat: 'Proof',
+ statLabel: 'shareable verification record',
  },
 ];
 
