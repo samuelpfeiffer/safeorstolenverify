@@ -3,26 +3,41 @@ import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ProofDisclaimer } from '@/components/proof/ProofDisclaimer';
 
+/**
+ * Each entry is rendered verbatim as an <h2> question plus its answer paragraph,
+ * and the identical strings feed the FAQPage JSON-LD. Keep them in sync — schema
+ * that does not match the visible text is a structured-data violation.
+ */
 const FAQS: { question: string; answer: string }[] = [
-  {
-    question: 'What is proof of clean purchase?',
-    answer:
-      'Proof of clean purchase is a timestamped record showing that you ran a stolen-property database check on an item before you bought it, and what that check returned. It records the date, the category, a masked identifier, the databases queried, and a tamper-evident hash — it does not record or establish ownership.',
-  },
   {
     question: "How do I prove I didn't know something was stolen?",
     answer:
-      'The practical way is to document the due diligence you performed at the time of the purchase, before money changed hands. A dated record showing which databases were checked and what they returned is contemporaneous evidence of that effort, alongside your receipt, messages with the seller, and any identification you collected.',
+      'You prove it by documenting the due diligence you performed before money changed hands. A dated record showing which stolen-property databases were checked and what they returned is contemporaneous evidence of that effort. Keep it alongside your receipt, your messages with the seller, and any seller identification you collected, because good faith is established by what you did at the time of the purchase rather than by what you say afterwards.',
   },
   {
     question: 'What happens if I accidentally buy stolen property?',
     answer:
-      'Stolen property generally remains the legal property of its original owner, so it can be seized and returned even from a buyer who paid in good faith and had no idea. Report it to local law enforcement, stop using the item, and keep every record of the transaction and the checks you ran, because that documentation is what distinguishes an innocent buyer from a knowing one.',
+      'Stolen property generally remains the legal property of its original owner, so it can be seized and returned even from a buyer who paid full price in good faith. You are usually left to pursue the seller for your money, which is often impossible on an anonymous marketplace. Report it to local law enforcement, stop using the item, and keep every record of the transaction and the checks you ran, because that documentation is what distinguishes an innocent buyer from a knowing one.',
+  },
+  {
+    question: 'How do I protect myself when buying used on Facebook Marketplace?',
+    answer:
+      'Check the item identifier against stolen-property databases before you agree to meet, and save a timestamped record of that check. Meet in a public place, pay traceably, photograph the item and the identifier, and keep the listing and message thread. If a seller refuses to share the IMEI, VIN, plate, or serial number in advance, treat that as a reason to walk away rather than an inconvenience.',
+  },
+  {
+    question: 'What is proof of clean purchase?',
+    answer:
+      'Proof of clean purchase is a timestamped, tamper-evident record showing that a stolen-property database search was run on a specific item before it was bought, and exactly what that search returned. It records the date, the item category, a masked identifier, the databases queried, and a SHA-256 hash of those details so any later alteration is detectable. It is evidence of due diligence, not proof of ownership: it does not transfer title, replace a bill of sale, or certify that an item is clean, and the item identifier itself is stored only as a hash and a masked fragment.',
   },
   {
     question: "Does a clean check mean the item definitely isn't stolen?",
     answer:
-      'No. Most stolen property is never reported to any database, so a clean result means only that no matching report was found in the sources checked on that date — not that the item was never stolen.',
+      'No. A clean result means only that no matching report was found in the databases checked on that date. Most stolen property is never reported to any database, and reports can be filed days or weeks after a theft, so absence of a match is meaningful but never conclusive.',
+  },
+  {
+    question: 'How long does a verification record last?',
+    answer:
+      'A record is permanent and stays available at its link indefinitely unless you delete it. It cannot be edited after creation, so the details and the hash shown today are the same ones captured at the moment of the check. If you delete it, the page reports that the record was deleted by its holder rather than disappearing, so deletion is never mistaken for a record that never existed.',
   },
 ];
 
@@ -94,21 +109,15 @@ const ProofOfPurchasePage: React.FC = () => {
                 The item category — phone, vehicle, license plate, serial number, firearm, or
                 bicycle.
               </li>
-              <li>A masked identifier. The full identifier is hashed and never stored in plain text.</li>
+              <li>
+                A masked identifier. The full identifier is hashed and never stored in plain text.
+              </li>
               <li>The databases queried and the result returned.</li>
               <li>
                 A SHA-256 record hash computed at creation. Records cannot be edited afterwards, so
                 the hash will not match if any detail is altered.
               </li>
             </ul>
-
-            <h2 className="text-2xl font-bold mt-12 mb-4">What stays private</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              You can optionally attach the seller name or handle, where you found the listing,
-              where you met, and the price you paid. Those details are visible only to you when
-              signed in. Anyone who opens the public record page sees the check itself, never your
-              private notes.
-            </p>
 
             <h2 className="text-2xl font-bold mt-12 mb-4">Create a record</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
