@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { MobileAppSchema } from '@/components/seo/MobileAppSchema';
 import { Helmet } from 'react-helmet-async';
 
 interface AppPageTemplateProps {
@@ -51,7 +50,6 @@ export const AppPageTemplate = ({
         canonical={canonical}
         schemaJson={allSchemas}
       />
-      <MobileAppSchema />
       
       {/* Additional AI and mobile meta tags not covered by SEOHead */}
       <Helmet>

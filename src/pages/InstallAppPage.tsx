@@ -14,7 +14,7 @@ const InstallAppPage = () => {
  const navigate = useNavigate();
 
  const faqs = [
- { question: "Why isn't SafeOrStolen in the App Store?", answer: "SafeOrStolen is a Progressive Web App (PWA) that installs directly from your browser. This means instant updates, no app store approval delays, and works on ALL devices including iPhone, Android, tablets, and computers." },
+ { question: "How does SafeOrStolen install on my phone?", answer: "SafeOrStolen is a Progressive Web App (PWA) that installs directly from your browser. This means instant updates and support for all devices including iPhone, Android, tablets, and computers." },
  { question: "Is installing SafeOrStolen safe?", answer: "Yes! PWAs are sandboxed by your browser with the same security as regular websites. SafeOrStolen doesn't require any special permissions and can't access your personal data without consent." },
  { question: "Will SafeOrStolen work offline?", answer: "Yes. Once installed, SafeOrStolen caches recent verifications so you can access them without internet—perfect for marketplace meetups in areas with poor signal." },
  { question: "How much storage does SafeOrStolen use?", answer: "Less than 5MB. SafeOrStolen is lightweight and won't slow down your device or consume significant storage space." },
@@ -57,16 +57,6 @@ const InstallAppPage = () => {
  ]
  };
 
- const appSchema = {
- "@context": "https://schema.org",
- "@type": "MobileApplication",
- "name": "SafeOrStolen",
- "operatingSystem": "iOS, Android, Web",
- "applicationCategory": "UtilitiesApplication",
- "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
- "downloadUrl": "https://safeorstolen.com/install-app",
- "description": "Install the SafeOrStolen stolen item verification app in 30 seconds. Works on all devices."
- };
 
  return (
  <>
@@ -126,7 +116,7 @@ const InstallAppPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
- Get the only stolen item verification app on your phone. No app store needed—install directly from your browser in 30 seconds.
+ Put SafeOrStolen on your phone. No app store needed—install directly from your browser in 30 seconds.
  </p>
 
  <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
