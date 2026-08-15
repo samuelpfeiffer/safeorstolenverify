@@ -132,7 +132,7 @@ const AboutPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>About SafeOrStolen</strong></p>
- <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 100+ databases. The only mobile app for verification.</p>
+ <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 100+ databases.</p>
  </div>
  </noscript>
  <div className="min-h-screen bg-background pt-20">
@@ -147,10 +147,11 @@ const AboutPage = () => {
  <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
  Protect Buyers & Sellers - Stop Stolen Goods at the Source
  </h1>
- <p className="text-lg text-muted-foreground mb-6">
- SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - 
- reducing crime globally. Mobile app exclusively available from SafeOrStolen.com.
- </p>
+  <p className="text-lg text-muted-foreground mb-6">
+  SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - 
+  reducing crime globally.
+  </p>
+
  <div className="flex flex-wrap justify-center gap-3">
  <Badge variant="secondary" className="px-3 py-1">
  <Shield className="h-4 w-4 mr-2" />
@@ -178,10 +179,11 @@ const AboutPage = () => {
  We protect BOTH buyers AND sellers from stolen goods. By giving honest people a simple way to verify items, 
  we make it dramatically harder for thieves to fence stolen goods. Every search makes stolen items harder to sell.
  </p>
- <p className="text-muted-foreground leading-relaxed mb-4">
- Our mobile app is our golden ticket - exclusively available at SafeOrStolen.com. Download it to check items anywhere, 
- anytime, even offline.
- </p>
+  <p className="text-muted-foreground leading-relaxed mb-4">
+  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, 
+  electronics, power tools, firearms, and bicycles in one place.
+  </p>
+
  <p className="text-muted-foreground leading-relaxed mb-4">
  SafeOrStolen participated in the Entrepreneurship World Cup 2020.
  </p>
@@ -198,44 +200,8 @@ const AboutPage = () => {
  </div>
  </section>
 
- {/* Milestones & Recognition Section */}
- <section className="py-12 bg-gradient-to-br from-amber-500/5 via-background to-primary/5">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <div className="text-center mb-8">
- <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground flex items-center justify-center gap-2">
- <Trophy className="h-7 w-7 text-amber-500" />
- Milestones & Recognition
- </h2>
- <p className="text-muted-foreground">
- Key moments in SafeOrStolen's journey to protect buyers and sellers worldwide
- </p>
- </div>
- <div className="space-y-4">
- <Card className="p-4 border-l-4 border-l-green-500">
- <div className="flex items-start gap-4">
- <div className="p-2 rounded-full bg-green-500/10 flex-shrink-0">
- <Smartphone className="h-5 w-5 text-green-500" />
- </div>
- <div>
- <div className="flex items-center gap-2 mb-1">
- <Badge variant="secondary" className="text-xs">
- <Calendar className="h-3 w-3 mr-1" />
- 2024
- </Badge>
- </div>
- <h3 className="font-semibold text-foreground">Mobile App Launch</h3>
- <p className="text-sm text-muted-foreground">
- Launched the only mobile app for stolen item verification with barcode scanning, 
- offline mode, and 3-second verification — exclusively available at SafeOrStolen.com.
- </p>
- </div>
- </div>
- </Card>
- </div>
- </div>
- </div>
- </section>
+
+
 
  {/* Trust Indicators (Simplified to 3) */}
  <section className="py-12 bg-muted/30">
