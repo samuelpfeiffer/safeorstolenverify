@@ -232,7 +232,7 @@ export const SEOLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <CheckCircle className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">50M+ Database</span>
+                <span className="text-sm font-semibold text-center">100+ Database</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Award className="w-8 h-8 text-primary mb-2" />

@@ -260,7 +260,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </div>
  <div className="border rounded-lg p-4">
  <h4 className="font-medium mb-2">On the App (Recommended)</h4>
- <p className="text-sm text-muted-foreground mb-3">Check on the spot when meeting sellers. SafeOrStolen is the ONLY stolen phone checker with a mobile app.</p>
+ <p className="text-sm text-muted-foreground mb-3">Check on the spot when meeting sellers. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
  <Button asChild size="sm" variant="outline">
  <Link to="/app">
  <Download className="w-4 h-4 mr-2" />

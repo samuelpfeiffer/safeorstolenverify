@@ -96,7 +96,7 @@ const HowToCheckIfCarStolenPage = () => {
  "name": "Is SafeOrStolen better than vehicle theft and title databases?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen includes vehicle theft and title databases data plus 100+ additional databases including police records, insurance claims, and international registries. vehicle theft and title databases only shows their own theft data. SafeOrStolen is more comprehensive."
+ "text": "SafeOrStolen includes vehicle theft and title databases data plus 100+ additional databases including police records, insurance claims, and international registries. vehicle theft and title databases only shows their own theft data. SafeOrStolen covers more categories."
  }
  }
  ]
@@ -367,7 +367,7 @@ const HowToCheckIfCarStolenPage = () => {
  { q: "How do I check if a car is stolen for free?", a: "Use SafeOrStolen's free VIN checker. Enter the 17-character VIN and we verify against vehicle theft and title databases, police databases, and insurance records. Free checks available - no credit card required." },
  { q: "Where is the VIN number located on a car?", a: "The VIN is found on the dashboard (visible through windshield on driver's side), driver's door jamb, vehicle registration, insurance card, and under the hood." },
  { q: "What happens if I accidentally buy a stolen car?", a: "If the car is reported stolen, police can seize it from you. You won't get your money back. The original owner or insurance company keeps the car. Always verify the VIN before buying." },
- { q: "Is SafeOrStolen better than vehicle theft and title databases?", a: "SafeOrStolen includes vehicle theft and title databases data plus 100+ additional databases including police records, insurance claims, and international registries. We're more comprehensive than vehicle theft and title databases alone." }
+ { q: "Is SafeOrStolen better than vehicle theft and title databases?", a: "SafeOrStolen includes vehicle theft and title databases data plus 100+ additional databases including police records, insurance claims, and international registries. " }
  ].map((faq, i) => (
  <Card key={i}>
  <CardContent className="pt-6">

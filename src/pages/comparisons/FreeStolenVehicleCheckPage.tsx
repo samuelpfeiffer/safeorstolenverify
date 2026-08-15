@@ -59,7 +59,7 @@ const FreeStolenVehicleCheckPage = () => {
           },
           {
             question: "Can I use this on my phone at a meetup?",
-            answer: "Absolutely! SafeOrStolen is the ONLY stolen vehicle checker with a mobile app. Download our free app for iOS and Android to verify vehicles in person before handing over cash."
+            answer: "Absolutely! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download our free app for iOS and Android to verify vehicles in person before handing over cash."
           }
         ]
       }}

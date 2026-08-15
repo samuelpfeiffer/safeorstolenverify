@@ -26,7 +26,7 @@ const HotGunzDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "How many guns are in the HotGunz database?",
-        "acceptedAnswer": { "@type": "Answer", "text": "HotGunz contains over 32,000 stolen firearm reports as of 2026. Compare this to FBI NCIC which has 7+ million stolen firearm records. HotGunz is valuable as a supplementary source but should never be the only database checked." }
+        "acceptedAnswer": { "@type": "Answer", "text": "HotGunz contains over 32,000 stolen firearm reports as of 2026. Compare this to federal law-enforcement systems which has 7+ million stolen firearm records. HotGunz is valuable as a supplementary source but should never be the only database checked." }
       },
       {
         "@type": "Question",
@@ -62,7 +62,7 @@ const HotGunzDatabaseGuide = () => {
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Database Guide</span>
             <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database — What It Is & How to Search Stolen Firearms</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              HotGunz is a community-driven stolen firearms database with 32,000+ reports. But with 7+ million stolen guns in FBI NCIC alone, HotGunz covers less than 1% of all stolen firearms. Here's what it does, what it misses, and how to get complete coverage.
+              HotGunz is a community-driven stolen firearms database with 32,000+ reports. But with 7+ million stolen guns in federal law-enforcement systems alone, HotGunz covers less than 1% of all stolen firearms. Here's what it does, what it misses, and how to get complete coverage.
             </p>
             <p className="text-muted-foreground text-sm mt-3">Updated March 2026 · 6 min read</p>
           </div>
@@ -96,13 +96,13 @@ const HotGunzDatabaseGuide = () => {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">HotGunz Limitations — Why It's Not Enough</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The biggest limitation of HotGunz is coverage. With 32,000 records, HotGunz contains less than 0.5% of the 7+ million stolen firearms recorded in FBI NCIC. Here's why:
+              The biggest limitation of HotGunz is coverage. With 32,000 records, HotGunz contains less than 0.5% of the 7+ million stolen firearms recorded in federal law-enforcement systems. Here's why:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-              <li><strong className="text-foreground">Voluntary reporting:</strong> Gun owners must manually create an account and submit their stolen firearm. Most theft victims report to police (which enters NCIC) but never think to also post on HotGunz.</li>
+              <li><strong className="text-foreground">Voluntary reporting:</strong> Gun owners must manually create an account and submit their stolen firearm. Most theft victims report to police (which enters federal law-enforcement systems) but never think to also post on HotGunz.</li>
               <li><strong className="text-foreground">No law enforcement integration:</strong> HotGunz doesn't receive data from police departments, the ATF, or the FBI. It's entirely user-generated.</li>
               <li><strong className="text-foreground">Limited awareness:</strong> Most gun owners have never heard of HotGunz. Only a small percentage of theft victims know to report there.</li>
-              <li><strong className="text-foreground">No state database access:</strong> HotGunz doesn't query state-level stolen property databases, many of which contain firearms not yet in NCIC.</li>
+              <li><strong className="text-foreground">No state database access:</strong> HotGunz doesn't query state-level stolen property databases, many of which contain firearms not yet in federal law-enforcement systems.</li>
             </ul>
             <div className="bg-primary/10 border border-primary/30 rounded-xl p-5">
               <p className="text-foreground font-bold mb-2">Bottom line:</p>
@@ -116,7 +116,7 @@ const HotGunzDatabaseGuide = () => {
               {[
                 { name: 'HotGunz', desc: '32,000+ community-reported stolen firearms' },
                 { name: 'Serial integrity analysis', desc: 'Automated detection of altered, obliterated, or malformed serial numbers' },
-                { name: 'FBI NCIC (not available to us)', desc: '7,000,000+ law enforcement-reported stolen firearms — restricted to law enforcement, so ask local police to run the serial' },
+                { name: 'Federal law-enforcement systems (not available to us)', desc: '7,000,000+ law enforcement-reported stolen firearms — restricted to law enforcement, so ask local police to run the serial' },
                 { name: 'ATF eTrace (not available to us)', desc: 'Federal firearms trace data — restricted to law enforcement and licensed dealers' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -132,7 +132,7 @@ const HotGunzDatabaseGuide = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">How to Report a Stolen Gun</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">If your firearm has been stolen, report it to ALL of these sources for maximum recovery chance:</p>
             <ol className="list-decimal list-inside text-muted-foreground space-y-2">
-              <li><strong className="text-foreground">Local police department</strong> — File a police report immediately. This enters the firearm into NCIC.</li>
+              <li><strong className="text-foreground">Local police department</strong> — File a police report immediately. This enters the firearm into federal law-enforcement systems.</li>
               <li><strong className="text-foreground">HotGunz</strong> — Register at hotgunz.com with serial number, make/model, and police report number.</li>
               <li><strong className="text-foreground">SafeOrStolen</strong> — Report at safeorstolen.com/report to add it to our community database.</li>
               <li><strong className="text-foreground">Your insurance company</strong> — File a theft claim if the firearm is covered under your policy.</li>
@@ -149,15 +149,15 @@ const HotGunzDatabaseGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is HotGunz enough to verify a firearm?</summary>
-                <p className="text-muted-foreground mt-2">No. HotGunz has about 32K records vs NCIC's 7M+, and NCIC is restricted to law enforcement. A clean HotGunz result doesn't mean a gun isn't stolen — for a definitive check, ask your local police non-emergency line to run the serial through NCIC.</p>
+                <p className="text-muted-foreground mt-2">No. HotGunz has about 32K records vs federal law-enforcement systems' 7M+, and Federal law-enforcement systems are restricted to law enforcement. A clean HotGunz result doesn't mean a gun isn't stolen — for a definitive check, ask your local police non-emergency line to run the serial through federal law-enforcement systems.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How many guns are in HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">Over 32,000 as of 2026. Compare to FBI NCIC's 7+ million — HotGunz covers less than 0.5% of all stolen firearms.</p>
+                <p className="text-muted-foreground mt-2">Over 32,000 as of 2026. Compare to federal law-enforcement systems' 7+ million — HotGunz covers less than 0.5% of all stolen firearms.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I report my stolen gun on HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">Yes, at hotgunz.com. Also report to police (enters NCIC), SafeOrStolen, and your insurance company for maximum coverage.</p>
+                <p className="text-muted-foreground mt-2">Yes, at hotgunz.com. Also report to police (enters federal law-enforcement systems), SafeOrStolen, and your insurance company for maximum coverage.</p>
               </details>
             </div>
           </section>

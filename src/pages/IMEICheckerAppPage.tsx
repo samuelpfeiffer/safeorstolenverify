@@ -34,7 +34,7 @@ const IMEICheckerAppPage = () => {
  ];
 
  const competitors = [
- { name: "CheckMEND", hasApp: false, note: "No mobile app available" },
+ { name: "CheckMEND", hasApp: false, note: "Phones only" },
  { name: "IMEI.info", hasApp: false, note: "Website only" },
  { name: "Swappa", hasApp: false, note: "No standalone IMEI app" },
  { name: "SafeOrStolen", hasApp: true, note: "Full mobile app with barcode scanning" }
@@ -47,12 +47,12 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is there an app to check IMEI for stolen phones?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes! SafeOrStolen is the only comprehensive IMEI checker with a mobile app. You can scan IMEI barcodes, check against 100+ databases, and get results in 3 seconds. The app works on both iOS and Android." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. You can scan IMEI barcodes, check against 100+ databases, and get results in 3 seconds. The app works on both iOS and Android." }
  },
  {
  "@type": "Question",
  "name": "Does CheckMEND have a mobile app?",
- "acceptedAnswer": { "@type": "Answer", "text": "No, CheckMEND does not have a mobile app. CheckMEND is website-only. SafeOrStolen is the only stolen phone verification service with a full mobile app for on-the-go IMEI checking." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No, CheckMEND is website-only. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
  },
  {
  "@type": "Question",
@@ -80,7 +80,7 @@ const IMEICheckerAppPage = () => {
  <>
  <PageSEO
  title="IMEI Checker App - Free Phone Stolen Check App | SafeOrStolen"
- description="The only IMEI checker app for iPhone and Android. Scan IMEI barcodes, check stolen status, verify phones before buying. Free app with barcode scanner. CheckMEND has no app."
+ description="SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Scan IMEI barcodes, check stolen status, verify phones before buying. Free app with barcode scanner."
  keywords="IMEI checker app, IMEI scanner app, stolen phone app, check IMEI app, phone verification app, barcode IMEI scanner"
  canonical="/imei-checker-app"
  structuredData={[faqSchema, appSchema]}
@@ -94,7 +94,7 @@ const IMEICheckerAppPage = () => {
  <div>
  <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full mb-6">
  <Star className="w-4 h-4 text-green-500 fill-green-500" />
- <span className="text-sm font-medium">The ONLY IMEI Checker App</span>
+ <span className="text-sm font-medium">All Six Item Categories, One Place</span>
  </div>
  
  <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -107,7 +107,7 @@ const IMEICheckerAppPage = () => {
  </p>
 
  <p className="text-lg text-muted-foreground mb-8">
- <strong>CheckMEND has no app.</strong> IMEI.info has no app. 
+ <strong></strong> 
  SafeOrStolen is the <strong>only</strong> IMEI verification service with a real mobile app.
  </p>
  
@@ -166,7 +166,7 @@ const IMEICheckerAppPage = () => {
  {/* Competitor Comparison */}
  <section className="py-16 px-4 bg-muted/30">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Why We're the Only IMEI App</h2>
+ <h2 className="text-3xl font-bold text-center mb-12">Why Multi-Category Verification Matters</h2>
  
  <div className="overflow-x-auto">
  <table className="w-full">
@@ -235,7 +235,7 @@ const IMEICheckerAppPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Get the IMEI Checker App</h2>
  <p className="text-xl text-muted-foreground mb-8">
- The only app that lets you verify phones are not stolen. Free to download, free checks included.
+ SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Free to download, free checks included.
  </p>
  <Button asChild size="lg" className="gap-2">
  <Link to="/app">

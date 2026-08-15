@@ -84,7 +84,7 @@ const PressKitPage = () => {
     },
     {
       angle: "Mobile-First Disruption",
-      pitch: "The only mobile app in a category dominated by desktop-only competitors",
+      pitch: "SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place",
       bestFor: "Mobile tech, app review sites"
     }
   ];

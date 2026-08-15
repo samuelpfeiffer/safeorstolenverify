@@ -49,7 +49,7 @@ class VerificationEngine {
     // Secondary providers can be added here
     // this.addProvider({
     //   name: 'FBI_stolen property reports from all 50 states',
-    //   verify: this.ncicVerification.bind(this),
+    //   verify: this.federalVerification.bind(this),
     //   priority: 2,
     //   enabled: false // Requires special access
     // });

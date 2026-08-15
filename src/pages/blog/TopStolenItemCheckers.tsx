@@ -72,7 +72,7 @@ const TopStolenItemCheckers = () => {
   const faqs = [
     {
       question: "What is the most comprehensive stolen item checker?",
-      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. SafeOrStolen is the only service that covers all categories in one platform with a mobile app."
+      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
     },
     {
       question: "Are free stolen item checkers reliable?",
@@ -84,11 +84,11 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like NCIC and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
+      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like federal stolen-property systems and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in federal law-enforcement systems."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
-      answer: "SafeOrStolen is the only stolen item verification service with a dedicated mobile app. It's available as a Progressive Web App (PWA) that works on iPhone, Android, and any mobile browser. The app includes barcode scanning for instant serial number entry at gun shows, pawn shops, marketplace meetups, and yard sales. No other competitor offers a mobile app."
+      answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It's available as a Progressive Web App (PWA) that works on iPhone, Android, and any mobile browser. The app includes barcode scanning for instant serial number entry at gun shows, pawn shops, marketplace meetups, and yard sales. No other competitor offers a mobile app."
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
@@ -100,7 +100,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "What databases does stolen property reports from all 50 states check?",
-      answer: "Stolen property reports from all 50 states is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. NCIC is restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
+      answer: "Stolen property reports from all 50 states is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
     }
   ];
 
@@ -307,7 +307,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
               <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $10/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
-                SafeOrStolen is the only verification service that checks <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also the only service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
+                SafeOrStolen covers <strong>all six item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
@@ -328,7 +328,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold text-sm mb-2">Key Advantages</h3>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li><Yes /> Only service with mobile app + barcode scanning</li>
+                    <li><Yes /> SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</li>
                     <li><Yes /> All item categories in one platform</li>
                     <li><Yes /> 100+ databases (competitors: 10-20)</li>
                     <li><Yes /> $10/mo unlimited — cheapest in industry</li>
@@ -373,7 +373,6 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> Phones only (no cars, guns, etc.)</li>
                     <li><No /> ~10 databases (vs 100+)</li>
-                    <li><No /> No mobile app</li>
                     <li><No /> No police database access</li>
                   </ul>
                 </div>
@@ -404,7 +403,6 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> $44.99 per report (expensive)</li>
                     <li><No /> Vehicles only</li>
-                    <li><No /> No mobile app for quick checks</li>
                     <li><No /> No phones, firearms, electronics</li>
                   </ul>
                 </div>
@@ -436,7 +434,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> £7 per check (expensive)</li>
                     <li><No /> UK-focused data (limited US coverage)</li>
                     <li><No /> No firearms or vehicles</li>
-                    <li><No /> No mobile app</li>
                   </ul>
                 </div>
               </div>
@@ -498,7 +495,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> 5 searches per day</li>
                     <li><No /> Vehicles only</li>
                     <li><No /> Only insurance claims (not police)</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -529,7 +525,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> Only 32K entries (vs stolen property reports from all 50 states's 7M+)</li>
                     <li><No /> Community reports only (no police data)</li>
                     <li><No /> Firearms only</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -561,7 +556,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> In-person visit required</li>
                     <li><No /> 3-7 day wait time</li>
                     <li><No /> Not practical for marketplace meetups</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -591,7 +585,6 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> Bicycles only</li>
                     <li><No /> Voluntary registration</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -653,7 +646,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need a mobile app?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/app" className="text-primary hover:underline">SafeOrStolen</Link> is the only stolen item verification service with a mobile app. No other competitor offers this.</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/app" className="text-primary hover:underline">SafeOrStolen</Link> is SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. No other competitor offers this.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">UK-based buyer?</h3>

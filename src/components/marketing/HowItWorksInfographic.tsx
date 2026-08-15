@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom';
  */
 export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ className = '' }) => {
  const stats = [
- { value: '50M+', label: 'ITEMS IN DATABASE' },
+ { value: '100+', label: 'ITEMS IN DATABASE' },
  { value: '6', label: 'ITEM CATEGORIES' },
  { value: '30sec', label: 'VERIFICATION TIME' },
  ];

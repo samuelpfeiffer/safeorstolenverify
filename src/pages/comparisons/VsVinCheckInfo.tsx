@@ -23,7 +23,7 @@ const VsVinCheckInfo = () => {
         "name": "Is SafeOrStolen better than VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen is more comprehensive because it checks vehicles AND phones, bikes, laptops, electronics, and firearms. VinCheck.info only checks vehicles. SafeOrStolen also has a mobile app for marketplace meetups."
+          "text": "SafeOrStolen checks vehicles AND phones, bikes, laptops, electronics, and firearms. VinCheck.info only checks vehicles. SafeOrStolen also has a mobile app for marketplace meetups."
         }
       },
       {

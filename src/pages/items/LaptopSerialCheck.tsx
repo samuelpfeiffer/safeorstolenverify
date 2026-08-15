@@ -4,7 +4,7 @@ const LaptopSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Laptop is Stolen - Free Serial Number Verification | SafeOrStolen"
-      metaDescription="Verify any laptop isn't stolen before buying. Free serial number check for MacBook, Dell, HP, Lenovo, ASUS. Search 50M+ stolen item database instantly."
+      metaDescription="Verify any laptop isn't stolen before buying. Free serial number check for MacBook, Dell, HP, Lenovo, ASUS. Search 100+ stolen item database instantly."
       h1="Check if Laptop is Stolen - Free Serial Number Verification"
       keywords={[
         'check if laptop is stolen',
@@ -22,11 +22,11 @@ const LaptopSerialCheck = () => {
       itemType="Laptop"
       identifierType="Serial Number"
       heroBadge="Laptop Theft Verification"
-      heroSubtitle="Before buying a used MacBook, Dell, HP, or any laptop - verify the serial number isn't linked to a stolen device. Instant results from our 50M+ record database. Free."
+      heroSubtitle="Before buying a used MacBook, Dell, HP, or any laptop - verify the serial number isn't linked to a stolen device. Instant results from our 100+ databases. Free."
       stats={[
         { value: "97", label: "Laptops Stolen Every Minute" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "50M+", label: "Records Searched" },
+        { value: "100+", label: "Records Searched" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Laptop Serial Number Verification?"

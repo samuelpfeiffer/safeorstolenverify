@@ -109,7 +109,7 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-accent" />
-              <span>50M+ stolen item database check</span>
+              <span>100+ stolen item database check</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-accent" />

@@ -190,7 +190,7 @@ const HowToCheckIfIphoneStolen = () => {
               <Shield className="h-12 w-12 mx-auto mb-4 text-primary" />
               <h3 className="text-2xl font-bold mb-2">Protect Yourself Today</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks IMEI, VIN, serial numbers and more. The only mobile app for stolen item verification.
+                SafeOrStolen checks IMEI, VIN, serial numbers and more. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">

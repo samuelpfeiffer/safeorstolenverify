@@ -26,7 +26,7 @@ const BicycleSerialCheck = () => {
  stats={[
  { value: "2M+", label: "Bikes Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
- { value: "50M+", label: "Records Searched" },
+ { value: "100+", label: "Records Searched" },
  { value: "$10/mo", label: "Unlimited Checks" }
  ]}
  whatIsTitle="What is Bicycle Serial Number Verification?"

@@ -26,7 +26,7 @@ const IPhoneIMEICheck = () => {
  stats={[
  { value: "1.2M+", label: "iPhones Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
- { value: "50M+", label: "Devices in Database" },
+ { value: "100+", label: "Devices in Database" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is iPhone IMEI Verification?"

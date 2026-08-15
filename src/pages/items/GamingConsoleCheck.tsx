@@ -4,7 +4,7 @@ const GamingConsoleCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen"
-      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against 50M+ database. Instant results before buying used consoles."
+      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against 100+ database. Instant results before buying used consoles."
       h1="Check if Gaming Console is Stolen - Free Verification"
       keywords={[
         'check if ps5 is stolen',
@@ -26,7 +26,7 @@ const GamingConsoleCheck = () => {
       stats={[
         { value: "500K+", label: "Consoles Stolen Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "50M+", label: "Records Searched" },
+        { value: "100+", label: "Records Searched" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Gaming Console Serial Number Verification?"

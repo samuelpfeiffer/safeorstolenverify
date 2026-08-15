@@ -191,7 +191,7 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: Your Defense Against Marketplace Fraud</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            SafeOrStolen is the only verification platform that checks phones, cars, electronics, firearms, bicycles, and more — all in one place. Unlike CheckMEND (which charges £1.99+ per check and is UK-focused) or IMEI.info (which only checks phones), SafeOrStolen offers 2 free verifications with no credit card, results in 3 seconds, and works across every item category. It's also the only verification service with a mobile app — so you can scan barcodes and verify items on the spot at meetups.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMEND (which charges £1.99+ per check and is UK-focused) or IMEI.info (which only checks phones), SafeOrStolen offers 2 free verifications with no credit card, results in 3 seconds, and works across every item category. It's also SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place — so you can scan barcodes and verify items on the spot at meetups.
           </p>
 
           {/* Final CTA */}

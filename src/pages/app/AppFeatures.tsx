@@ -88,7 +88,7 @@ const AppFeatures = () => {
     <>
       <PageSEO
         title="SafeOrStolen App Features | Barcode Scanner, Offline Mode, Instant Verification"
-        description="Explore SafeOrStolen app features: barcode scanning, offline verification, 3-second checks, buyer AND seller protection. The only stolen item checker with a mobile app. Free download."
+        description="Explore SafeOrStolen app features: barcode scanning, offline verification, 3-second checks, buyer AND seller protection. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Free download."
         keywords="stolen verification app features, IMEI checker app, VIN checker app, barcode scanner stolen items, offline stolen checker, mobile verification app, buyer seller protection, stolen item scanner features"
         canonical="/app/features"
         structuredData={softwareSchema}
@@ -109,7 +109,7 @@ const AppFeatures = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              SafeOrStolen is the ONLY stolen item verification service with a downloadable mobile app. 
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
               Features competitors simply don't have.
             </p>
 

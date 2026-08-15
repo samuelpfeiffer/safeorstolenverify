@@ -21,13 +21,13 @@ export default function MobilePage() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
                 <Star className="h-4 w-4 mr-2 fill-current" />
-                <span className="text-sm font-medium">The Only Mobile App</span>
+                <span className="text-sm font-medium">All Six Item Categories, One Place</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 SafeOrStolen Mobile App
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Verify phones, vehicles, and electronics anywhere. The only stolen item checker with a mobile app—scan, check, and buy with confidence.
+                Verify phones, vehicles, and electronics anywhere. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
               </p>
               <AppStoreBadges size="lg" />
             </div>
@@ -114,7 +114,7 @@ export default function MobilePage() {
                 Most stolen item checks happen in the field—at marketplace meetups, car lots, pawn shops, and auctions. A web-only service isn't practical when you need verification in 30 seconds before a sale closes.
               </p>
               <p>
-                SafeOrStolen is the <strong>only stolen item verification service with a mobile app</strong>. Our competitors like CheckMEND and IMEI.info are web-only. That means you're fumbling with a mobile browser while the seller waits impatiently.
+                SafeOrStolen covers <strong>all six item categories</strong>. Our competitors like CheckMEND and IMEI.info are web-only. That means you're fumbling with a mobile browser while the seller waits impatiently.
               </p>
               <p>
                 Our app is designed for real-world use: instant camera scanning, one-tap verification, offline caching, and a clean interface optimized for quick checks on the go.

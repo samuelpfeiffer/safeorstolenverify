@@ -41,7 +41,7 @@ const SafeOrStolenVsSwappa = () => {
   const comparisonData = [
     { feature: 'Primary Purpose', safeOrStolen: 'Stolen item verification', swappa: 'Device marketplace', winner: 'tie' },
     { feature: 'Free Searches', safeOrStolen: '2 free (standalone)', swappa: 'Only for listings', winner: 'sos' },
-    { feature: 'Stolen Database', safeOrStolen: '50M+ verified items', swappa: 'Basic ESN check', winner: 'sos' },
+    { feature: 'Stolen Database', safeOrStolen: '100+ verified items', swappa: 'Basic ESN check', winner: 'sos' },
     { feature: 'Check Without Buying', safeOrStolen: 'Yes', swappa: 'No', winner: 'sos' },
     { feature: 'VIN Check (Cars)', safeOrStolen: 'Yes', swappa: 'No', winner: 'sos' },
     { feature: 'Serial Numbers', safeOrStolen: 'All item types', swappa: 'Phones only', winner: 'sos' },
@@ -199,7 +199,7 @@ const SafeOrStolenVsSwappa = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          50M+ database from law enforcement & insurers
+                          100+ database from law enforcement & insurers
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -425,7 +425,7 @@ const SafeOrStolenVsSwappa = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Which has a bigger stolen item database?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen has 50M+ verified stolen items from law enforcement and insurance partners. 
+                      SafeOrStolen has 100+ verified stolen items from law enforcement and insurance partners. 
                       Swappa performs basic carrier ESN checks but doesn't have access to community theft registries.
                     </p>
                   </CardContent>

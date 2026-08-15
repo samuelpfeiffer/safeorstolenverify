@@ -6,11 +6,11 @@ const Features = () => {
   const features = [{
     icon: <Smartphone className="h-8 w-8 text-primary" />,
     title: "Mobile App - Verify Anything, Anywhere",
-    description: "EXCLUSIVE: Only verification service with iOS & Android apps! Check phones (IMEI), cars (VIN), electronics, AND firearms serial numbers on-the-go. Camera scanning, offline access, instant alerts."
+    description: "EXCLUSIVE: SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Camera scanning, offline access, instant alerts."
   }, {
     icon: <ShieldCheck className="h-8 w-8 text-secondary" />,
     title: "Firearms Database Verification",
- description: "Search stolen gun databases including stolen firearm reports from all 50 states on our mobile app. The ONLY verification app with firearms checking capability - verify before buying at gun shows or online."
+ description: "Search stolen gun databases including stolen firearm reports from all 50 states on our mobile app. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
   }, {
     icon: <Clock className="h-8 w-8 text-accent" />,
     title: "Instant Verification Results",
@@ -26,13 +26,12 @@ const Features = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Smartphone className="h-4 w-4" />
-            Only Verification Service With Mobile App & Firearms Checking
-          </div>
+            SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             Complete Verification - Mobile & Web
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            The ONLY stolen goods verification platform with dedicated mobile apps for iOS & Android. 
+            SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
             Verify phones, cars, electronics, and firearms instantly - something CheckMend, IMEIinfo, and Stolen Register cannot offer. 
             Access community theft registries, insurance records, and firearms registries from your pocket.
           </p>

@@ -54,7 +54,7 @@ const TopVINCheckServices2025 = () => {
       multipleItems: true,
       pros: [
         '$10/month unlimited VIN checks',
-        '50M+ database from law enforcement & insurers',
+        '100+ database from law enforcement & insurers',
         'Checks more than cars (phones, bikes, tools)',
         'Mobile app for instant verification',
         'AI-powered risk analysis'
@@ -148,7 +148,6 @@ const TopVINCheckServices2025 = () => {
       cons: [
         'Limited to 5 searches/day',
         'No detailed history',
-        'No mobile app',
         'Vehicles only'
       ]
     },
@@ -509,7 +508,7 @@ const TopVINCheckServices2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">What can SafeOrStolen check that Carfax can't?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen checks a 50M+ stolen item database from law enforcement and insurance companies. 
+                      SafeOrStolen checks a 100+ stolen item database from law enforcement and insurance companies. 
                       It also checks phones, bikes, tools, and other items - not just vehicles.
                     </p>
                   </CardContent>

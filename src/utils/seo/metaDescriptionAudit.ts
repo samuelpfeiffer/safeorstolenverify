@@ -36,7 +36,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  '/privacy': 'SafeOrStolen privacy policy. Learn how we protect your data, handle verification searches, and comply with GDPR data protection standards.', // 155 chars
  '/terms': 'Terms of service for SafeOrStolen verification platform. User agreements, refund policy, acceptable use guidelines, and legal disclaimers for our service.', // 157 chars
  '/report-stolen': 'Report stolen phones, vehicles, electronics, or firearms to SafeOrStolen database. Help prevent resale of stolen goods on marketplaces and pawn shops.', // 158 chars
- '/app': 'Download the SafeOrStolen mobile app for iOS and Android. Verify IMEI, VIN, serial numbers on-the-go. The only stolen item checker with a mobile app.', // 155 chars
+ '/app': 'Use SafeOrStolen on your phone — installs from your browser. Verify IMEI, VIN, serial numbers on-the-go. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.', // 155 chars
  '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including vehicle theft and title databases and carrier and theft databases.', // 159 chars
  '/database': 'Access 50+ global stolen goods databases. Real-time checks across vehicle theft and title databases, carrier and theft databases, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
  '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars

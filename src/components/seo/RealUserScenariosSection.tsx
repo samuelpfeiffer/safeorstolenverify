@@ -93,7 +93,7 @@ export const RealUserScenariosSection: React.FC = () => {
  ];
 
  const marketplaceStats = [
- { platform: "Facebook Marketplace", riskLevel: "Medium", searches: "50M+ monthly" },
+ { platform: "Facebook Marketplace", riskLevel: "Medium", searches: "100+ monthly" },
  { platform: "eBay", riskLevel: "Low-Medium", searches: "30M+ monthly" },
  { platform: "Craigslist", riskLevel: "High", searches: "20M+ monthly" },
  { platform: "OfferUp", riskLevel: "Medium-High", searches: "15M+ monthly" },

@@ -280,7 +280,7 @@ const VsBikeIndex = () => {
                   <CardContent>
                     <p className="text-muted-foreground">
                       SafeOrStolen has iOS and Android apps for on-the-spot verification. 
-                      Check items before meetups without a laptop. Bike Index has no mobile app.
+                      Check items before meetups without a laptop.
                     </p>
                   </CardContent>
                 </Card>

@@ -19,7 +19,7 @@ const ForInsuranceCompanies = () => {
  canonical="/for-insurance-companies"
  businessType="Insurance Company"
  industryName="Insurance Industry"
- heroSubtitle="Verify stolen property claims instantly. Cross-reference IMEI, VIN, and serial numbers against our 50M+ record database to validate claims and detect fraud."
+ heroSubtitle="Verify stolen property claims instantly. Cross-reference IMEI, VIN, and serial numbers against our 100+ databases to validate claims and detect fraud."
  heroBadge="Insurance Solutions"
  challenges={[
  {
@@ -102,7 +102,7 @@ const ForInsuranceCompanies = () => {
  },
  {
  question: "What data sources do you check?",
- answer: "We check community theft registries, carrier and theft databases, manufacturer records, and a network of insurance company reports totaling 50M+ records."
+ answer: "We check community theft registries, carrier and theft databases, manufacturer records, and a network of insurance company reports totaling 100+ databases."
  },
  {
  question: "Is the API suitable for high-volume claims?",

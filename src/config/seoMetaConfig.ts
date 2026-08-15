@@ -45,7 +45,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/imei-checker': {
  title: 'Free IMEI Checker App - Verify Phone Not Stolen',
- description: 'Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier and theft databases. Better than CheckMEND.', // 155 chars
+ description: 'Free IMEI checker covering all six item categories. Verify phones not stolen in 3 seconds. Check carrier and theft databases. Better than CheckMEND.', // 155 chars
  keywords: 'IMEI checker, phone blacklist check, stolen phone checker, IMEI lookup free',
  canonical: '/imei-checker'
  },
@@ -55,7 +55,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/vin-checker': {
  title: 'Free VIN Checker App - Verify Vehicle Not Stolen',
- description: 'Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check vehicle theft and title databases, DMV, community theft registries. Better than Carfax.', // 155 chars
+ description: 'Free VIN checker covering all six item categories. Verify cars not stolen in 3 seconds. Check vehicle theft and title databases, DMV, community theft registries. Better than Carfax.', // 155 chars
  keywords: 'VIN checker, stolen car check, vehicle history free, vehicle theft and title databases VIN check, Carfax alternative',
  canonical: '/vin-checker'
  },
@@ -185,7 +185,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/app': {
  title: 'Download Mobile App - iOS and Android Verification',
- description: 'Download the SafeOrStolen mobile app for iOS and Android. Verify IMEI, VIN, serial numbers on-the-go. The only stolen item checker with a mobile app.', // 159 chars (needs check)
+ description: 'Use SafeOrStolen on your phone — installs from your browser. Verify IMEI, VIN, serial numbers on-the-go. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.', // 159 chars (needs check)
  keywords: 'SafeOrStolen app, mobile verification app, stolen item checker app',
  canonical: '/app'
  },

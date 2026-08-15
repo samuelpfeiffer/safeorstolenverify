@@ -40,7 +40,7 @@ const BestStolenItemCheckers2026 = () => {
       url: 'https://imei.info',
       rating: 4.5,
       pros: ['Free IMEI lookup', 'Brand-specific checks', 'Warranty info'],
-      cons: ['Phones only', 'No mobile app', 'Paid for detailed reports'],
+      cons: ['Phones only', 'Paid for detailed reports'],
       categories: ['phones']
     },
     {
@@ -94,7 +94,7 @@ const BestStolenItemCheckers2026 = () => {
       url: 'https://checkmend.com',
       rating: 3.8,
       pros: ['Comprehensive device reports', 'Used by pawn shops', 'Global data'],
-      cons: ['Paid service', 'No mobile app', 'Account required'],
+      cons: ['Paid service', 'Account required'],
       categories: ['phones', 'electronics']
     }
   ];
@@ -147,7 +147,7 @@ const BestStolenItemCheckers2026 = () => {
                 <h2 className="text-2xl font-bold">Our Top Pick: SafeOrStolen</h2>
               </div>
               <p className="text-lg text-muted-foreground mb-6">
-                SafeOrStolen is the only platform that verifies <strong>all item types</strong> — phones, vehicles, bikes, electronics, and firearms — in one place. With a free mobile app, marketplace URL analysis, and 2 free searches, it's the most comprehensive solution for marketplace buyers in 2026.
+                SafeOrStolen covers <strong>all item types</strong> — phones, vehicles, bikes, electronics, and firearms — in one place. With a free mobile app, marketplace URL analysis, and 2 free searches, it's the most comprehensive solution for marketplace buyers in 2026.
               </p>
               <Button asChild size="lg">
                 <Link to="/verify">
@@ -330,7 +330,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — The only platform that covers all categories with a mobile app and marketplace integration.
+                  <strong>Winner: SafeOrStolen</strong> — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Why: Universal verification in one place

@@ -134,8 +134,7 @@ const ComparisonAutocheck = () => {
                       <span><strong>Vehicles Only</strong> - No phones, bikes, firearms</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>No Mobile App</strong> - Web only</span>
+                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -215,7 +214,7 @@ const ComparisonAutocheck = () => {
                 <Smartphone className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Choose the Better Autocheck Alternative</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  SafeOrStolen verifies ALL items in 3 seconds with a mobile app. Cheaper, faster, more comprehensive than Autocheck.
+                  SafeOrStolen verifies ALL items in 3 seconds with a mobile app. Cheaper, faster, and covers more item categories than Autocheck.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/verify">

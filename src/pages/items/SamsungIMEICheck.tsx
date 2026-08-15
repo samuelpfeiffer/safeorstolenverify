@@ -4,7 +4,7 @@ const SamsungIMEICheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Samsung Phone is Stolen - Free IMEI Verification | SafeOrStolen"
- metaDescription="Verify any Samsung Galaxy phone isn't stolen before buying. Free IMEI check against 50M+ database. Instant results for Galaxy S24, S23, Z Fold, Z Flip, A series."
+ metaDescription="Verify any Samsung Galaxy phone isn't stolen before buying. Free IMEI check against 100+ database. Instant results for Galaxy S24, S23, Z Fold, Z Flip, A series."
  h1="Check if Samsung Galaxy is Stolen - Free IMEI Check"
  keywords={[
  'samsung imei check',
@@ -26,7 +26,7 @@ const SamsungIMEICheck = () => {
  stats={[
  { value: "800K+", label: "Samsung Phones Stolen Yearly" },
  { value: "3 sec", label: "Verification Time" },
- { value: "50M+", label: "Devices in Database" },
+ { value: "100+", label: "Devices in Database" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Samsung IMEI Verification?"

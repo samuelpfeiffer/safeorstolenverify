@@ -65,7 +65,7 @@ export const AppDownloadCTA = ({ variant = 'default', showBenefits = false }: Ap
         </h3>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          The only mobile app that lets you verify phones, vehicles, electronics, and firearms on-the-go. 
+          SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
           No competitor offers instant mobile verification.
         </p>
 

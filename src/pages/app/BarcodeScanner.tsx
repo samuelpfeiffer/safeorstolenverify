@@ -13,17 +13,16 @@ const BarcodeScanner = () => {
         canonical="/app/barcode-scanner"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "MobileApplication",
+          "@type": "WebApplication",
           "name": "SafeOrStolen - Barcode Scanner Stolen Checker",
           "applicationCategory": "SecurityApplication",
-          "operatingSystem": ["Android", "iOS"],
+          "browserRequirements": "Requires a modern web browser",
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
           },
           "description": "Free barcode scanner app to check if items are stolen. Point camera at any barcode for instant verification.",
-          "downloadUrl": "https://safeorstolen.com/app",
           "featureList": [
             "Instant barcode scanning",
             "IMEI barcode recognition",
@@ -68,8 +67,7 @@ const BarcodeScanner = () => {
             </div>
             
             <p className="text-sm text-muted-foreground">
-              The ONLY stolen verification app with built-in barcode scanning
-            </p>
+              SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</p>
           </div>
         </section>
 
@@ -228,8 +226,7 @@ const BarcodeScanner = () => {
               Get the Barcode Scanner Stolen Checker
             </h2>
             <p className="text-muted-foreground mb-8">
-              SafeOrStolen is the ONLY app with barcode scanning for stolen verification. 
-              Competitors like CheckMEND and IMEI.info have NO mobile apps at all.
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
             </p>
             <Button size="lg" className="text-lg px-8" asChild>
               <Link to="/app">

@@ -98,9 +98,7 @@ const CheckImeiStolenPage = () => {
  then check that number against stolen-device records. <strong>SafeOrStolen</strong> checks
  the IMEI against carrier and theft databases and reported-stolen databases across 100+
  sources and returns a clear result in 3 seconds — clean, reported stolen, or blacklisted —
- with a downloadable PDF certificate as proof. SafeOrStolen is also the only
- stolen-verification app that lets you scan the phone&apos;s barcode instead of typing the
- IMEI. If a phone comes back stolen or blacklisted, don&apos;t buy it — a blacklisted phone
+ with a downloadable PDF certificate as proof. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. If a phone comes back stolen or blacklisted, don&apos;t buy it — a blacklisted phone
  can be blocked from every network even after you&apos;ve paid.
  </p>
  </div>
@@ -275,7 +273,7 @@ const CheckImeiStolenPage = () => {
  <td className="border-b border-border px-3 py-2.5">CheckMEND</td>
  <td className="border-b border-border px-3 py-2.5">~£7 per check</td>
  <td className="border-b border-border px-3 py-2.5">UK-focused</td>
- <td className="border-b border-border px-3 py-2.5">No app</td>
+ <td className="border-b border-border px-3 py-2.5">Phones only</td>
  </tr>
  <tr>
  <td className="border-b border-border px-3 py-2.5">Carrier IMEI tools</td>

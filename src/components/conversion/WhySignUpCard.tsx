@@ -16,7 +16,7 @@ export const WhySignUpCard = ({ onSignUp }: WhySignUpCardProps) => {
     { icon: Shield, text: 'Access 100+ stolen databases' },
     { icon: Bell, text: 'Watchlist alerts when items are searched' },
     { icon: FileText, text: 'PDF verification reports' },
-    { icon: Smartphone, text: 'Mobile app access (only app available)' },
+    { icon: Smartphone, text: 'Mobile web app access' },
     { icon: Check, text: 'No credit card required' },
   ];
 

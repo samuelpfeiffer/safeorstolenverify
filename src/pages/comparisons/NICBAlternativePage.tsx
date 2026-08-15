@@ -74,7 +74,6 @@ const NICBAlternativePage = () => {
                 <h3 className="font-bold text-lg mb-3 text-destructive">❌ NICB Limitations:</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>• Only 5 VIN checks per day</li>
-                  <li>• No mobile app</li>
                   <li>• Only checks NICB database</li>
                   <li>• Vehicles only (no phones, bikes, etc.)</li>
                   <li>• Clunky, outdated interface</li>
@@ -177,7 +176,7 @@ const NICBAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg text-center">
                 <Smartphone className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Mobile App</h3>
-                <p className="text-muted-foreground">The ONLY stolen item checker with a mobile app. Scan barcodes, check on the go.</p>
+                <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Scan barcodes, check on the go.</p>
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />

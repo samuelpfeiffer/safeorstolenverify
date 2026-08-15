@@ -4,7 +4,7 @@ const CameraEquipmentCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Camera is Stolen - DSLR, Mirrorless, Lenses | SafeOrStolen"
-      metaDescription="Verify camera equipment isn't stolen before buying. Free serial number check for Canon, Nikon, Sony cameras and lenses. Search 50M+ stolen item database."
+      metaDescription="Verify camera equipment isn't stolen before buying. Free serial number check for Canon, Nikon, Sony cameras and lenses. Search 100+ stolen item database."
       h1="Check if Camera Equipment is Stolen - Free Verification"
       keywords={[
         'check if camera is stolen',
@@ -26,7 +26,7 @@ const CameraEquipmentCheck = () => {
       stats={[
         { value: "$50K+", label: "Avg. Pro Gear Value" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "50M+", label: "Records Searched" },
+        { value: "100+", label: "Records Searched" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Camera Serial Number Verification?"

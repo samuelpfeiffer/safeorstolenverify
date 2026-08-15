@@ -40,7 +40,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $0.99/check or $10/month unlimited, and works for phones, vehicles, electronics, and firearms in one platform."
+ "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks 100+ databases, and costs $0.99/check or $10/month unlimited."
  }
  },
  {
@@ -169,7 +169,7 @@ const StolenPhoneCheckerPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>Only stolen phone checker with a dedicated mobile app for on-the-spot verification</span>
+ <span>SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -230,15 +230,16 @@ const StolenPhoneCheckerPage = () => {
 
  {/* Why SafeOrStolen */}
  <section className="mb-16">
- <h2 className="text-3xl font-bold text-center mb-8">Why SafeOrStolen is the Best Stolen Phone Checker</h2>
+ <h2 className="text-3xl font-bold text-center mb-8">Why Buyers Use SafeOrStolen</h2>
  <div className="grid md:grid-cols-2 gap-6">
  <Card>
  <CardContent className="pt-6">
  <div className="flex items-start gap-4">
  <Download className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
- <h3 className="font-semibold mb-2">Only Service with Mobile App</h3>
- <p className="text-muted-foreground">Check phones on the spot when meeting sellers. IMEI.info, CheckMEND, and stolenphonechecker.org have NO mobile apps.</p>
+  <h3 className="font-semibold mb-2">Every Category in One Place</h3>
+  <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
+
  </div>
  </div>
  </CardContent>
@@ -249,7 +250,7 @@ const StolenPhoneCheckerPage = () => {
  <Database className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
  <h3 className="font-semibold mb-2">100+ Database Sources</h3>
- <p className="text-muted-foreground">More comprehensive than any competitor. We check carrier and theft databases, police records, and insurance claims.</p>
+ <p className="text-muted-foreground">We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases — including registries that receive reports from and are used by law enforcement.</p>
  </div>
  </div>
  </CardContent>
@@ -292,7 +293,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
- <p className="text-muted-foreground">SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $0.99/check or $10/month unlimited, and works for phones, vehicles, electronics, and firearms in one platform.</p>
+ <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks 100+ databases, and costs $0.99/check or $10/month unlimited.</p>
  </CardContent>
  </Card>
  <Card>

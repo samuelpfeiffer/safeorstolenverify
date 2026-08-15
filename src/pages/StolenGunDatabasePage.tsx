@@ -12,7 +12,7 @@ const StolenGunDatabasePage = () => {
  'gun database search',
  'stolen firearm lookup',
  'check gun stolen database',
- 'ncic gun search',
+ 'federal stolen gun search',
  'atf stolen guns',
  'stolen gun registry search',
  'firearm database check'

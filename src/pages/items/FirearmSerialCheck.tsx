@@ -26,7 +26,7 @@ const FirearmSerialCheck = () => {
  stats={[
  { value: "380K+", label: "Guns Stolen Yearly" },
  { value: "3 sec", label: "Verification Time" },
- { value: "50M+", label: "Records Searched" },
+ { value: "100+", label: "Records Searched" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Firearm Serial Number Verification?"

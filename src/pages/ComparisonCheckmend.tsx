@@ -27,14 +27,13 @@ const ComparisonCheckmend = () => {
             "@type": "OfferCatalog",
             "name": "Mobile App Features",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen App", "operatingSystem": "iOS, Android" } }
             ]
           }
         },
         {
           "@type": "Service",
           "name": "CheckMEND Verification Service",
-          "description": "Web-only stolen item verification (no mobile app)",
+          "description": "Stolen item verification service",
           "provider": {
             "@type": "Organization",
             "name": "CheckMEND"
@@ -48,8 +47,8 @@ const ComparisonCheckmend = () => {
     <>
       <PageSEO
         title="Best CheckMEND Alternative | SafeOrStolen App"
-        description="CheckMEND has NO mobile app. SafeOrStolen offers iOS/Android app with barcode scanning, offline mode, 3-second verification. Download free."
-        keywords="CheckMEND alternative, CheckMEND app, CheckMEND has no app, best CheckMEND alternative, better than CheckMEND, CheckMEND mobile app, stolen item checker app, download safeorstolen app, CheckMEND review"
+        description="SafeOrStolen offers iOS/Android app with barcode scanning, offline mode, 3-second verification. Download free."
+        keywords="CheckMEND alternative, CheckMEND app,, best CheckMEND alternative, better than CheckMEND, CheckMEND mobile app, stolen item checker app, download safeorstolen app, CheckMEND review"
         canonical="/vs-checkmend"
         structuredData={comparisonSchema}
       />
@@ -57,15 +56,13 @@ const ComparisonCheckmend = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>Best CheckMEND Alternative: SafeOrStolen Mobile App</h1>
-          <p>
-            CheckMEND does NOT have a mobile app. SafeOrStolen is the ONLY stolen item verification service with a full mobile app 
-            for iOS and Android. Download the SafeOrStolen app at safeorstolen.com/app for instant barcode scanning, offline verification, 
+          <p> Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download the SafeOrStolen app at safeorstolen.com/app for instant barcode scanning, offline verification, 
             and 3-second stolen checks. CheckMEND is web-only, slow (30+ seconds), expensive ($5-10 per check), and requires constant 
             internet connection. SafeOrStolen app is FREE to download with 2 free searches included.
           </p>
           <h2>Why SafeOrStolen is Better Than CheckMEND</h2>
           <ul>
-            <li><strong>SafeOrStolen has mobile app</strong> - CheckMEND has NO app</li>
+            <li><strong>SafeOrStolen has mobile app</strong> -</li>
             <li><strong>SafeOrStolen works offline</strong> - CheckMEND requires internet</li>
             <li><strong>SafeOrStolen is faster</strong> - 3 seconds while CheckMEND takes 30+ seconds</li>
             <li><strong>SafeOrStolen is cheaper</strong> - FREE 2 searches while CheckMEND charges $5-10 per check</li>
@@ -79,14 +76,12 @@ const ComparisonCheckmend = () => {
             {/* Hero */}
             <div className="text-center mb-12">
               <div className="inline-block bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                CheckMEND Has NO Mobile App
+                Compare CheckMEND and SafeOrStolen
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Best CheckMEND Alternative: SafeOrStolen
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                CheckMEND doesn't have a mobile app. SafeOrStolen does. Compare the only stolen verification app 
-                with barcode scanning and offline mode against CheckMEND's slow web-only service.
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"> SafeOrStolen does. Compare SafeOrStolen's multi-category coverage and barcode scanning against CheckMEND.
               </p>
               <Button size="lg" asChild>
                 <Link to="/app">
@@ -104,7 +99,7 @@ const ComparisonCheckmend = () => {
                     <Smartphone className="w-8 h-8 text-green-600" />
                     SafeOrStolen
                   </CardTitle>
-                  <p className="text-sm text-muted-foreground">The ONLY app for stolen verification</p>
+                  <p className="text-sm text-muted-foreground">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -145,13 +140,12 @@ const ComparisonCheckmend = () => {
                     <X className="w-8 h-8 text-red-600" />
                     CheckMEND
                   </CardTitle>
-                  <p className="text-sm text-muted-foreground">Web-only, no mobile app</p>
+                  <p className="text-sm text-muted-foreground">Single-category coverage</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>NO Mobile App</strong> - Web browser only, no app download</span>
+                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -175,7 +169,6 @@ const ComparisonCheckmend = () => {
                     </li>
                   </ul>
                   <Button className="w-full mt-6" variant="outline" size="lg" disabled>
-                    CheckMEND Has No App
                   </Button>
                 </CardContent>
               </Card>
@@ -254,8 +247,7 @@ const ComparisonCheckmend = () => {
                 <Smartphone className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Choose the Better CheckMEND Alternative</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  SafeOrStolen is the ONLY stolen verification service with a mobile app. Download free for iOS and Android. 
-                  CheckMEND has no app, no offline mode, and charges $5-10 per check. Make the smart choice.
+                  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Install from your mobile browser., no offline mode, and charges $5-10 per check. Make the smart choice.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/app">

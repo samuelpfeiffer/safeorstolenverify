@@ -66,14 +66,14 @@ const GetAppPage = () => {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "The only stolen item verification app. Check if phones, cars, bikes are stolen before buying."
+    "description": "Stolen item verification from your phone browser. Check if phones, cars, bikes are stolen before buying."
   };
 
   return (
     <>
       <PageSEO
         title="Get SafeOrStolen App - Free Stolen Item Checker for iPhone & Android"
-        description="Download the SafeOrStolen app to verify phones, cars, and electronics aren't stolen. Free IMEI checker, VIN scanner, and barcode reader. Works offline. The only verification app."
+        description="Use SafeOrStolen on your phone to verify phones, cars, and electronics aren't stolen. Free IMEI checker, VIN scanner, and barcode reader. Works offline."
         keywords="safeorstolen app, stolen item checker app, IMEI checker app, VIN scanner app, barcode scanner, stolen phone app"
         canonical="/get-app"
         structuredData={[faqSchema, appSchema]}
@@ -94,7 +94,7 @@ const GetAppPage = () => {
                 </h1>
                 
                 <p className="text-xl text-muted-foreground mb-8">
-                  The ONLY mobile app for verifying stolen items. Check IMEI, VIN, and serial numbers 
+                  Verify stolen items from your phone. Check IMEI, VIN, and serial numbers 
                   on the go. Scan barcodes, get instant results, and never buy stolen goods again.
                 </p>
                 
@@ -165,8 +165,8 @@ const GetAppPage = () => {
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">The Only Verification App</h3>
-                  <p className="text-muted-foreground">CheckMEND has no mobile app. IMEI.info has no app. We're the only service with a real mobile verification app.</p>
+                  <h3 className="font-semibold text-lg">Every Category in One Place</h3>
+                  <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
                 </div>
               </div>
 

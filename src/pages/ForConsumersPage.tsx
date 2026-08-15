@@ -47,7 +47,7 @@ const ForConsumersPage = () => {
  },
  {
  question: "Is there a SafeOrStolen mobile app?",
- answer: "Yes. SafeOrStolen is the only stolen item verification platform with a dedicated mobile app. The PWA app includes barcode scanning for instant on-the-spot verification when meeting sellers. Download at safeorstolen.com/app."
+ answer: "Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The PWA app includes barcode scanning for instant on-the-spot verification when meeting sellers. Download at safeorstolen.com/app."
  }
  ];
 
@@ -128,7 +128,7 @@ const ForConsumersPage = () => {
  <li><a href="/facebook-marketplace-safety">Facebook Marketplace Safety Guide</a></li>
  </ul>
  
- <p>SafeOrStolen is the only verification platform with a mobile app. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>

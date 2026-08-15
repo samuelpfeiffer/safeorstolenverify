@@ -26,7 +26,7 @@ const CarVINStolenCheck = () => {
  stats={[
  { value: "810K+", label: "Vehicles Stolen in US (2024)" },
  { value: "3 sec", label: "VIN Check Time" },
- { value: "50M+", label: "Records Searched" },
+ { value: "100+", label: "Records Searched" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is VIN Stolen Vehicle Verification?"

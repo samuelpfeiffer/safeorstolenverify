@@ -179,7 +179,7 @@ const FacebookMarketplaceScams = () => {
               <Shield className="h-12 w-12 mx-auto mb-4 text-primary" />
               <h3 className="text-2xl font-bold mb-2">Don't Get Scammed</h3>
               <p className="text-muted-foreground mb-6">
-                Check any item in 3 seconds before you buy. SafeOrStolen is the only mobile app for stolen item verification.
+                Check any item in 3 seconds before you buy. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">

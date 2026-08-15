@@ -79,7 +79,7 @@ const HotGunzAlternativePage = () => {
               <p className="text-muted-foreground">
                 When you search a firearm serial on SafeOrStolen, we query the HotGunz national
                 stolen-firearms registry and analyze the serial for signs of alteration or obliteration.
-                Federal systems (FBI NCIC, ATF eTrace) are restricted to law enforcement and are not
+                Federal systems (federal law-enforcement systems, ATF eTrace) are restricted to law enforcement and are not
                 checked by us or by any other consumer service.
               </p>
             </div>
@@ -116,7 +116,7 @@ const HotGunzAlternativePage = () => {
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">FBI NCIC / ATF eTrace (law enforcement only)</td>
+                    <td className="p-4">Federal law-enforcement systems / ATF eTrace (law enforcement only)</td>
                     <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                     <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                   </tr>
@@ -169,7 +169,7 @@ const HotGunzAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg">
                 <Shield className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">Finish the check</h3>
-                <p className="text-muted-foreground text-sm">For certainty, ask local police to run the serial through NCIC before you buy.</p>
+                <p className="text-muted-foreground text-sm">For certainty, ask local police to run the serial through federal law-enforcement systems before you buy.</p>
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@ const HotGunzAlternativePage = () => {
               </div>
               <div className="bg-card p-8 rounded-lg text-center">
                 <Smartphone className="w-24 h-24 text-primary mx-auto mb-4" />
-                <p className="font-bold text-lg">The ONLY Stolen Gun Checker with a Mobile App</p>
+                <p className="font-bold text-lg">Check Firearm Serials From Your Phone</p>
                 <Link to="/download" className="inline-block mt-4">
                   <Button variant="outline" size="sm">Download App</Button>
                 </Link>

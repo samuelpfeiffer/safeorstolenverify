@@ -26,7 +26,7 @@ const MotorcycleVINCheck = () => {
  stats={[
  { value: "40K+", label: "Motorcycles Stolen Yearly" },
  { value: "3 sec", label: "VIN Check Time" },
- { value: "50M+", label: "Records Searched" },
+ { value: "100+", label: "Records Searched" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Motorcycle VIN Verification?"

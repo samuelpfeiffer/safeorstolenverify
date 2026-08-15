@@ -187,7 +187,7 @@ export const MobileVerificationInterface: React.FC = () => {
                 <div className="grid grid-cols-3 gap-2 pt-4 border-t">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">
-                      {type.id === 'phone' ? '50M+' : 
+                      {type.id === 'phone' ? '100+' : 
                        type.id === 'vehicle' ? '30M+' :
                        type.id === 'firearms' ? '5M+' : '20M+'}
                     </div>

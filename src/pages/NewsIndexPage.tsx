@@ -22,15 +22,16 @@ const NewsIndexPage = () => {
  }
  };
 
- const milestones = [
- { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
- { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
- { year: "2022", event: "Expanded to vehicle verification with vehicle theft and title databases integration" },
- { year: "2023", event: "Released mobile apps for iOS and Android with barcode scanning" },
- { year: "2024", event: "Reached 50M+ verified items in database, partnered with major insurers" },
- { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
- { year: "2026", event: "Full site-wide 2026 refresh, enhanced SEO, AI-powered verification upgrades" }
- ];
+  const milestones = [
+  { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
+  { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
+  { year: "2022", event: "Expanded to vehicle verification with vehicle theft and title databases integration" },
+  { year: "2023", event: "Added barcode and serial number scanning to the mobile web experience" },
+  { year: "2024", event: "Expanded coverage across firearm and bicycle theft registries" },
+  { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
+  { year: "2026", event: "Full site-wide 2026 refresh, enhanced SEO, AI-powered verification upgrades" }
+  ];
+
 
  return (
  <>
@@ -68,17 +69,18 @@ const NewsIndexPage = () => {
  <h2 className="text-2xl font-bold mb-8">About SafeOrStolen</h2>
  
  <div className="prose prose-lg max-w-none text-muted-foreground mb-12">
- <p className="mb-6">
- SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
- from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
- item with a serial number against 100+ databases aggregated from law enforcement agencies, insurance companies, and carrier and theft databases.
- </p>
- 
- <p className="mb-6">
- Founded in 2017, SafeOrStolen has grown to become a trusted verification service used by individual buyers, 
- marketplaces, pawn shops, and insurance companies. Our mobile apps for iOS and Android feature barcode 
- scanning for instant 3-second verification, making due diligence accessible to everyone.
- </p>
+  <p className="mb-6">
+  SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
+  from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
+  item with a serial number. We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases — including registries that receive reports from and are used by law enforcement.
+  </p>
+  
+  <p className="mb-6">
+  Founded in 2017, SafeOrStolen is built for individual buyers, marketplaces, pawn shops, and insurance 
+  professionals. Barcode and serial scanning on mobile enables 3-second verification, making due 
+  diligence accessible to everyone.
+  </p>
+
 
  <p>
  Our mission is simple: ensure that no one unknowingly buys or sells stolen property. The secondhand market 
@@ -89,10 +91,11 @@ const NewsIndexPage = () => {
 
  <div className="grid md:grid-cols-3 gap-6">
  <Card>
- <CardContent className="pt-6 text-center">
- <Shield className="w-10 h-10 mx-auto mb-3 text-primary" />
- <h3 className="font-semibold text-lg mb-2">50M+ Items</h3>
- <p className="text-sm text-muted-foreground">Verified stolen items in our database</p>
+  <CardContent className="pt-6 text-center">
+  <Shield className="w-10 h-10 mx-auto mb-3 text-primary" />
+  <h3 className="font-semibold text-lg mb-2">100+ Databases</h3>
+  <p className="text-sm text-muted-foreground">Stolen-property registries checked per search</p>
+
  </CardContent>
  </Card>
  <Card>

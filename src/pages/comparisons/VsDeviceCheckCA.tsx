@@ -167,7 +167,7 @@ const VsDeviceCheckCA = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Scan barcodes and verify items instantly at meetups. DeviceCheck.ca has no mobile app.
+                  Scan barcodes and verify items instantly at meetups.
                 </p>
               </CardContent>
             </Card>

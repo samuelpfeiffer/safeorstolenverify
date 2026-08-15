@@ -131,7 +131,7 @@ export const WhatYouCanVerify = () => {
  What You Can Verify With SafeOrStolen
  </h2>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
- From phones to firearms, vehicles to bikes — verify any item before buying or selling. The only platform that checks everything.
+ From phones to firearms, vehicles to bikes — verify any item before buying or selling. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </p>
  </div>
 
@@ -207,7 +207,7 @@ export const WhatYouCanVerify = () => {
  <div className="flex flex-wrap justify-center gap-4 text-sm">
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
- <span>50M+ Database Records</span>
+ <span>100+ Database Records</span>
  </div>
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />

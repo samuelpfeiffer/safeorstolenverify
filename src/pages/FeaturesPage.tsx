@@ -44,7 +44,7 @@ export default function FeaturesPage() {
  <Smartphone className="h-12 w-12 text-primary mb-4" />
  <h3 className="text-xl font-bold mb-3">Mobile App</h3>
  <p className="text-muted-foreground mb-4">
- The only stolen item verification service with a mobile app. Verify anywhere—marketplace meetups, pawn shops, car lots.
+ SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Verify anywhere—marketplace meetups, pawn shops, car lots.
  </p>
  <ul className="space-y-2 text-sm">
  <li className="flex items-center gap-2">
