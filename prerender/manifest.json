@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T23:10:57.190366+00:00",
+  "generatedAt": "2026-08-15T02:37:34.739592+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -47,7 +47,7 @@
     {
       "route": "/app",
       "slug": "app",
-      "title": "Download SafeOrStolen Mobile App - iOS & Android",
+      "title": "SafeOrStolen on Mobile - Install the Web App",
       "canonical": "https://safeorstolen.com/app"
     },
     {
@@ -137,7 +137,7 @@
     {
       "route": "/blog/checkmend-has-no-app",
       "slug": "blog__checkmend-has-no-app",
-      "title": "CheckMEND Has No App - Mobile Alternative | SafeOrStolen",
+      "title": "- Mobile Alternative | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/checkmend-has-no-app"
     },
     {
@@ -293,7 +293,7 @@
     {
       "route": "/blog/stolen-verification-app-guide",
       "slug": "blog__stolen-verification-app-guide",
-      "title": "The Only Stolen Verification App (2025 Guide) | SafeOrStolen",
+      "title": "Verifying Stolen Items From Your Phone (2025 Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/blog/stolen-verification-app-guide"
     },
     {
@@ -665,7 +665,7 @@
     {
       "route": "/download-app",
       "slug": "download-app",
-      "title": "Download SafeOrStolen Mobile App - iOS & Android",
+      "title": "SafeOrStolen on Mobile - Install the Web App",
       "canonical": "https://safeorstolen.com/download-app"
     },
     {
@@ -965,7 +965,7 @@
     {
       "route": "/install-app",
       "slug": "install-app",
-      "title": "Install SafeOrStolen App - Free Download Guide (iPhone & Android)",
+      "title": "SafeOrStolen \u2014 AI-Powered Stolen Item Verification",
       "canonical": "https://safeorstolen.com/install-app"
     },
     {
