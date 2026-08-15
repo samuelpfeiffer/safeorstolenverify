@@ -69,17 +69,18 @@ const NewsIndexPage = () => {
  <h2 className="text-2xl font-bold mb-8">About SafeOrStolen</h2>
  
  <div className="prose prose-lg max-w-none text-muted-foreground mb-12">
- <p className="mb-6">
- SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
- from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
- item with a serial number against 100+ databases aggregated from law enforcement agencies, insurance companies, and carrier and theft databases.
- </p>
- 
- <p className="mb-6">
- Founded in 2017, SafeOrStolen has grown to become a trusted verification service used by individual buyers, 
- marketplaces, pawn shops, and insurance companies. Our mobile apps for iOS and Android feature barcode 
- scanning for instant 3-second verification, making due diligence accessible to everyone.
- </p>
+  <p className="mb-6">
+  SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
+  from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
+  item with a serial number. We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases — including registries that receive reports from and are used by law enforcement.
+  </p>
+  
+  <p className="mb-6">
+  Founded in 2017, SafeOrStolen is built for individual buyers, marketplaces, pawn shops, and insurance 
+  professionals. Barcode and serial scanning on mobile enables 3-second verification, making due 
+  diligence accessible to everyone.
+  </p>
+
 
  <p>
  Our mission is simple: ensure that no one unknowingly buys or sells stolen property. The secondhand market 
