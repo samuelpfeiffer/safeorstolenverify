@@ -84,7 +84,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like NCIC and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
+      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like federal stolen-property systems and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in federal law-enforcement systems."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -100,7 +100,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "What databases does stolen property reports from all 50 states check?",
-      answer: "Stolen property reports from all 50 states is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. NCIC is restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
+      answer: "Stolen property reports from all 50 states is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
     }
   ];
 

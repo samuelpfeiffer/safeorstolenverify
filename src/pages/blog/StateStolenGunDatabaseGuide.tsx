@@ -21,7 +21,7 @@ const StateStolenGunDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check a gun serial number in my state?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The fastest first step is SafeOrStolen — enter any serial number and we check the HotGunz national stolen-firearms registry and validate serial integrity. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through NCIC, but this takes longer and isn't always available." }
+        "acceptedAnswer": { "@type": "Answer", "text": "The fastest first step is SafeOrStolen — enter any serial number and we check the HotGunz national stolen-firearms registry and validate serial integrity. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through federal law-enforcement systems, but this takes longer and isn't always available." }
       },
       {
         "@type": "Question",
@@ -139,7 +139,7 @@ const StateStolenGunDatabaseGuide = () => {
               <li><strong className="text-foreground">Florida:</strong> FDLE offers limited online lookups through county sheriff's offices.</li>
               <li><strong className="text-foreground">California:</strong> DOJ provides some stolen property lookup capabilities through local agencies.</li>
             </ul>
-            <p className="text-muted-foreground mt-4">Most states require you to call the local police non-emergency line and ask them to run a serial number through NCIC — a process that can take 30+ minutes and isn't always available to civilians.</p>
+            <p className="text-muted-foreground mt-4">Most states require you to call the local police non-emergency line and ask them to run a serial number through federal law-enforcement systems — a process that can take 30+ minutes and isn't always available to civilians.</p>
           </section>
 
           <section className="mb-10">
