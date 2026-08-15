@@ -9,7 +9,7 @@ export const SolutionSection = () => {
     <section className="py-16 bg-gradient-to-r from-sos-orange/10 to-transparent">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Our Golden Ticket: The Only Mobile App - Exclusive to SafeOrStolen.com</h2>
+          <h2 className="text-3xl font-bold mb-6 text-white">Our Golden Ticket: SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.com</h2>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
             Unlike CheckMEND, IMEI.info, Swappa, and others, SafeOrStolen offers SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place's exclusively available from SafeOrStolen.com. We protect BOTH buyers AND sellers: buyers avoid financial loss 
             and legal nightmares, sellers prove legitimacy and build trust. Every search makes stolen items harder to sell, 

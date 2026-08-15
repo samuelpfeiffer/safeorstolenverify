@@ -55,7 +55,7 @@ const TheftAZPage = () => {
  },
  {
  question: "Can I search TheftAZ directly?",
- answer: "Yes, TheftAZ is publicly accessible at theftaz.azag.gov. However, SafeOrStolen provides a more comprehensive search by checking TheftAZ PLUS 100+ other databases (vehicle theft and title databases, stolen property reports from all 50 states, carrier and theft databases, etc.) in one search. This ensures you're checking both Arizona records AND nationwide databases."
+ answer: "Yes, TheftAZ is publicly accessible at theftaz.azag.gov. However, SafeOrStolen searches more sources by checking TheftAZ PLUS 100+ other databases (vehicle theft and title databases, stolen property reports from all 50 states, carrier and theft databases, etc.) in one search. This ensures you're checking both Arizona records AND nationwide databases."
  },
  {
  question: "Should I check TheftAZ before buying a used car in Arizona?",

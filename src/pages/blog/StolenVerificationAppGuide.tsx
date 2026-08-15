@@ -94,7 +94,7 @@ const StolenVerificationAppGuide = () => {
               Why SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place </h2>
             
             <p>
-              In 2026, the secondhand market is worth over $200 billion globally. Yet despite this massive industry, <strong>SafeOrStolen remains the ONLY mobile app</strong> that verifies if items are stolen using barcode scanning and instant database checks.
+              In 2026, the secondhand market is worth over $200 billion globally. Yet despite this massive industry, <strong>SafeOrStolen remains SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</strong> that verifies if items are stolen using barcode scanning and instant database checks.
             </p>
 
             <p>

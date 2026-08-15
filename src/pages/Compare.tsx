@@ -135,7 +135,7 @@ const Compare = () => {
  <>
  <PageSEO
  title="SafeOrStolen vs Carfax vs IMEI Checkers — Free Alternative Comparison | SafeOrStolen"
- description="Compare SafeOrStolen to Carfax, CheckMEND, IMEI.info, and vehicle theft and title databases. The only service checking phones, cars, bikes, firearms, and electronics in one place. See why SafeOrStolen is the best free alternative."
+ description="Compare SafeOrStolen to Carfax, CheckMEND, IMEI.info, and vehicle theft and title databases. Checking phones, cars, bikes, firearms, and electronics in one place. See why SafeOrStolen is the best free alternative."
  keywords="CheckMEND alternative, better than IMEI.info, Swappa alternative, Carfax alternative, best stolen item checker, IMEI checker comparison, VIN lookup comparison, stolen verification app"
  canonical="/compare"
  structuredData={{
@@ -151,7 +151,7 @@ const Compare = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>SafeOrStolen, CheckMEND, IMEI.info, and Carfax Comparison</strong></p>
- <p>Compare stolen item verification services. SafeOrStolen offers the only mobile app with barcode scanning.</p>
+ <p>Compare stolen item verification services. SafeOrStolen offers barcode scanning from your phone browser.</p>
  </div>
  </noscript>
  <div className="min-h-screen bg-background pt-20">
@@ -235,11 +235,10 @@ const Compare = () => {
  <Card>
  <CardHeader>
  <Smartphone className="h-10 w-10 text-primary mb-2" />
- <CardTitle>The Only Mobile App</CardTitle>
+ <CardTitle>SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</CardTitle>
  </CardHeader>
  <CardContent>
  <p className="text-muted-foreground">
- CheckMEND, IMEI.info, Swappa, and Carfax have NO mobile apps. 
  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </p>
  </CardContent>

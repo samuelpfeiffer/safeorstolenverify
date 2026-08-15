@@ -72,7 +72,7 @@ const CheckMendHasNoApp = () => {
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <header className="mb-12">
             <div className="inline-block bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              CheckMEND Has NO Mobile App
+              Compare CheckMEND and SafeOrStolen
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground"> - Here's the Mobile Alternative
             </h1>
@@ -305,7 +305,7 @@ const CheckMendHasNoApp = () => {
             <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 my-8">
               <h3 className="font-bold text-lg mb-3 text-green-900 dark:text-green-100">Bottom Line: CheckMEND Alternative</h3>
               <ul className="space-y-2 text-green-800 dark:text-green-200">
-                <li>✅ <strong>CheckMEND has NO mobile app</strong> - SafeOrStolen does</li>
+                <li>✅ <strong>Compare CheckMEND and SafeOrStolen</strong> - SafeOrStolen does</li>
                 <li>✅ <strong>CheckMEND takes 30+ seconds</strong> - SafeOrStolen takes 3 seconds</li>
                 <li>✅ <strong>CheckMEND costs $3.99 per check</strong> - SafeOrStolen offers 2 FREE checks</li>
                 <li>✅ <strong>CheckMEND requires manual typing</strong> - SafeOrStolen has barcode scanning</li>

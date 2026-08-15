@@ -27,7 +27,6 @@ const ComparisonCheckmend = () => {
             "@type": "OfferCatalog",
             "name": "Mobile App Features",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen App", "operatingSystem": "iOS, Android" } }
             ]
           }
         },
@@ -48,7 +47,7 @@ const ComparisonCheckmend = () => {
     <>
       <PageSEO
         title="Best CheckMEND Alternative | SafeOrStolen App"
-        description="CheckMEND has NO mobile app. SafeOrStolen offers iOS/Android app with barcode scanning, offline mode, 3-second verification. Download free."
+        description="SafeOrStolen offers iOS/Android app with barcode scanning, offline mode, 3-second verification. Download free."
         keywords="CheckMEND alternative, CheckMEND app,, best CheckMEND alternative, better than CheckMEND, CheckMEND mobile app, stolen item checker app, download safeorstolen app, CheckMEND review"
         canonical="/vs-checkmend"
         structuredData={comparisonSchema}
@@ -77,7 +76,7 @@ const ComparisonCheckmend = () => {
             {/* Hero */}
             <div className="text-center mb-12">
               <div className="inline-block bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                CheckMEND Has NO Mobile App
+                Compare CheckMEND and SafeOrStolen
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Best CheckMEND Alternative: SafeOrStolen

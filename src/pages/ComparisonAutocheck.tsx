@@ -215,7 +215,7 @@ const ComparisonAutocheck = () => {
                 <Smartphone className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Choose the Better Autocheck Alternative</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  SafeOrStolen verifies ALL items in 3 seconds with a mobile app. Cheaper, faster, more comprehensive than Autocheck.
+                  SafeOrStolen verifies ALL items in 3 seconds with a mobile app. Cheaper, faster, and covers more item categories than Autocheck.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/verify">

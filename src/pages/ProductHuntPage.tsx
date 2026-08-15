@@ -75,8 +75,7 @@ const ProductHuntPage = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              SafeOrStolen is the <strong>Carfax for Everything</strong> - the only mobile app 
-              that verifies if secondhand items are stolen before you buy or sell.
+              SafeOrStolen is the <strong>Carfax for Everything</strong> - SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -142,7 +141,7 @@ const ProductHuntPage = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-4">
-              The Competition Has No Mobile App
+              Multi-Category Coverage
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Here's how we compare:

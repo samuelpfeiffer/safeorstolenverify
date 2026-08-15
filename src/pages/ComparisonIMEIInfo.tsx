@@ -27,7 +27,6 @@ const ComparisonIMEIInfo = () => {
             "@type": "OfferCatalog",
             "name": "Mobile App Features",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen IMEI Checker App", "operatingSystem": "iOS, Android" } }
             ]
           }
         },
@@ -48,7 +47,7 @@ const ComparisonIMEIInfo = () => {
     <>
       <PageSEO
         title="Best IMEI.info Alternative | SafeOrStolen App"
-        description="IMEI.info has no mobile app. SafeOrStolen offers iOS/Android app with barcode scanning. Compare IMEI checkers."
+        description="SafeOrStolen offers iOS/Android app with barcode scanning. Compare IMEI checkers."
         keywords="IMEI.info alternative, IMEI.info app, best IMEI.info alternative, better than IMEI.info, IMEI checker app, IMEI checker comparison"
         canonical="/vs-imeiinfo"
         structuredData={comparisonSchema}
@@ -69,7 +68,7 @@ const ComparisonIMEIInfo = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                IMEI.info Has NO Mobile App
+                Compare IMEI.info and SafeOrStolen
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Best IMEI.info Alternative: SafeOrStolen

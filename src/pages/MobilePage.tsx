@@ -21,7 +21,7 @@ export default function MobilePage() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
                 <Star className="h-4 w-4 mr-2 fill-current" />
-                <span className="text-sm font-medium">The Only Mobile App</span>
+                <span className="text-sm font-medium">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 SafeOrStolen Mobile App
