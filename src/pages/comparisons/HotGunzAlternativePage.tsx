@@ -193,7 +193,7 @@ const HotGunzAlternativePage = () => {
               </div>
               <div className="bg-card p-8 rounded-lg text-center">
                 <Smartphone className="w-24 h-24 text-primary mx-auto mb-4" />
-                <p className="font-bold text-lg">The ONLY Stolen Gun Checker with a Mobile App</p>
+                <p className="font-bold text-lg">Check Firearm Serials From Your Phone</p>
                 <Link to="/download" className="inline-block mt-4">
                   <Button variant="outline" size="sm">Download App</Button>
                 </Link>

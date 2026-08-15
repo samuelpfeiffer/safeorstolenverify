@@ -23,7 +23,7 @@ const VsStolenPhoneChecker = () => {
         "name": "Is SafeOrStolen better than CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen offers more comprehensive verification: it checks phones AND vehicles, bikes, laptops, electronics, and firearms. It also provides a mobile app for on-the-go verification and marketplace URL analysis."
+          "text": "SafeOrStolen checks phones AND vehicles, bikes, laptops, electronics, and firearms. It also provides a mobile app for on-the-go verification and marketplace URL analysis."
         }
       },
       {

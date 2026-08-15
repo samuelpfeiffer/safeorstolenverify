@@ -148,7 +148,6 @@ const TopVINCheckServices2025 = () => {
       cons: [
         'Limited to 5 searches/day',
         'No detailed history',
-        'No mobile app',
         'Vehicles only'
       ]
     },

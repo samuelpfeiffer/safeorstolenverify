@@ -273,7 +273,7 @@ const CheckImeiStolenPage = () => {
  <td className="border-b border-border px-3 py-2.5">CheckMEND</td>
  <td className="border-b border-border px-3 py-2.5">~£7 per check</td>
  <td className="border-b border-border px-3 py-2.5">UK-focused</td>
- <td className="border-b border-border px-3 py-2.5">No app</td>
+ <td className="border-b border-border px-3 py-2.5">Phones only</td>
  </tr>
  <tr>
  <td className="border-b border-border px-3 py-2.5">Carrier IMEI tools</td>

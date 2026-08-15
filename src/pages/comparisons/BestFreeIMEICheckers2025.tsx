@@ -83,7 +83,6 @@ const BestFreeIMEICheckers2025 = () => {
       ],
       cons: [
         'Blacklist check costs $10+ (SafeOrStolen: $10/mo unlimited)',
-        'No mobile app',
         'Phones only - no VIN support',
         'Database size unknown'
       ]
@@ -129,7 +128,6 @@ const BestFreeIMEICheckers2025 = () => {
       cons: [
         'No free searches',
         'UK-centric database',
-        'No mobile app',
         'Limited global coverage'
       ]
     },

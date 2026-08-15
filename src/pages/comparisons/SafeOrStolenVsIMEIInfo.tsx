@@ -262,7 +262,6 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          No mobile app available
                         </li>
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -405,7 +404,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                     <h3 className="font-semibold mb-2">Is there a mobile app?</h3>
                     <p className="text-muted-foreground">
                       SafeOrStolen offers mobile apps for both iOS and Android. IMEI.info is web-only 
-                      with no mobile app available.
+                      with.
                     </p>
                   </CardContent>
                 </Card>

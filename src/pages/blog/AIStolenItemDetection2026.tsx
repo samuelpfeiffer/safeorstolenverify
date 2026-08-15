@@ -114,7 +114,6 @@ const AIStolenItemDetection2026 = () => {
                   <h2 className="text-xl font-bold mb-2">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</h2>
                   <p className="text-muted-foreground">
                     SafeOrStolen remains the <strong>ONLY</strong> stolen item verification service with a mobile app. 
-                    CheckMEND, IMEI.info, Swappa, and Carfax have NO mobile apps for on-the-spot verification. 
                     Download SafeOrStolen free on iOS and Android.
                   </p>
                   <Button asChild className="mt-4">

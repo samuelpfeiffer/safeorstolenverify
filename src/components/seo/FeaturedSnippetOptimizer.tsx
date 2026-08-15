@@ -36,7 +36,7 @@ export const FeaturedSnippetOptimizer = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen is the best stolen phone checker because it's SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMend which has no mobile app, SafeOrStolen provides instant verification on your phone."
+ "text": "SafeOrStolen checks phones against 100+ databases, and SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMend which has no mobile app, SafeOrStolen provides instant verification on your phone."
  }
  }
  },

@@ -74,7 +74,6 @@ const NICBAlternativePage = () => {
                 <h3 className="font-bold text-lg mb-3 text-destructive">❌ NICB Limitations:</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>• Only 5 VIN checks per day</li>
-                  <li>• No mobile app</li>
                   <li>• Only checks NICB database</li>
                   <li>• Vehicles only (no phones, bikes, etc.)</li>
                   <li>• Clunky, outdated interface</li>

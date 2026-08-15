@@ -134,8 +134,7 @@ const ComparisonAutocheck = () => {
                       <span><strong>Vehicles Only</strong> - No phones, bikes, firearms</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>No Mobile App</strong> - Web only</span>
+                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />

@@ -34,7 +34,7 @@ const IMEICheckerAppPage = () => {
  ];
 
  const competitors = [
- { name: "CheckMEND", hasApp: false, note: "No mobile app available" },
+ { name: "CheckMEND", hasApp: false, note: "Phones only" },
  { name: "IMEI.info", hasApp: false, note: "Website only" },
  { name: "Swappa", hasApp: false, note: "No standalone IMEI app" },
  { name: "SafeOrStolen", hasApp: true, note: "Full mobile app with barcode scanning" }

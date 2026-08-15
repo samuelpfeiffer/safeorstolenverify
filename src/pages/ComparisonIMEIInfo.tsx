@@ -33,7 +33,7 @@ const ComparisonIMEIInfo = () => {
         {
           "@type": "Service",
           "name": "IMEI.info",
-          "description": "Web-only IMEI checker (no mobile app)",
+          "description": "IMEI checker",
           "provider": {
             "@type": "Organization",
             "name": "IMEI.info"
@@ -130,8 +130,7 @@ const ComparisonIMEIInfo = () => {
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>NO Mobile App</strong> - Web only, no barcode scanning</span>
+                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />

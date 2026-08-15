@@ -373,7 +373,6 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> Phones only (no cars, guns, etc.)</li>
                     <li><No /> ~10 databases (vs 100+)</li>
-                    <li><No /> No mobile app</li>
                     <li><No /> No police database access</li>
                   </ul>
                 </div>
@@ -404,7 +403,6 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> $44.99 per report (expensive)</li>
                     <li><No /> Vehicles only</li>
-                    <li><No /> No mobile app for quick checks</li>
                     <li><No /> No phones, firearms, electronics</li>
                   </ul>
                 </div>
@@ -436,7 +434,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> £7 per check (expensive)</li>
                     <li><No /> UK-focused data (limited US coverage)</li>
                     <li><No /> No firearms or vehicles</li>
-                    <li><No /> No mobile app</li>
                   </ul>
                 </div>
               </div>
@@ -498,7 +495,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> 5 searches per day</li>
                     <li><No /> Vehicles only</li>
                     <li><No /> Only insurance claims (not police)</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -529,7 +525,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> Only 32K entries (vs stolen property reports from all 50 states's 7M+)</li>
                     <li><No /> Community reports only (no police data)</li>
                     <li><No /> Firearms only</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -561,7 +556,6 @@ const TopStolenItemCheckers = () => {
                     <li><No /> In-person visit required</li>
                     <li><No /> 3-7 day wait time</li>
                     <li><No /> Not practical for marketplace meetups</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>
@@ -591,7 +585,6 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> Bicycles only</li>
                     <li><No /> Voluntary registration</li>
-                    <li><No /> No app</li>
                   </ul>
                 </div>
               </div>

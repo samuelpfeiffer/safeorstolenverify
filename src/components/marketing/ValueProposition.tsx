@@ -34,7 +34,7 @@ export const ValueProposition: React.FC = () => {
     {
       icon: Smartphone,
       title: 'Only Mobile App',
-      description: 'Competitors like CheckMEND have no app. We have iOS & Android.',
+      description: 'Verify on your phone straight from the browser.',
       stat: 'Exclusive',
       statLabel: 'mobile access',
       color: 'text-amber-500',

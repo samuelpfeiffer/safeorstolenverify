@@ -86,7 +86,6 @@ const NICBVINCheckAlternative = () => {
       ],
       cons: [
         'Vehicles only - no phones, bikes, etc.',
-        'No mobile app',
         'Slow - not instant results',
         'Limited to 5 searches per day',
         'US-focused only'

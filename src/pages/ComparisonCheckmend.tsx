@@ -33,7 +33,7 @@ const ComparisonCheckmend = () => {
         {
           "@type": "Service",
           "name": "CheckMEND Verification Service",
-          "description": "Web-only stolen item verification (no mobile app)",
+          "description": "Stolen item verification service",
           "provider": {
             "@type": "Organization",
             "name": "CheckMEND"
@@ -81,7 +81,7 @@ const ComparisonCheckmend = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Best CheckMEND Alternative: SafeOrStolen
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"> SafeOrStolen does. Compare the only stolen verification app 
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"> SafeOrStolen does. Compare Verifying Stolen Items From Your Phone 
                 with barcode scanning and offline mode against CheckMEND's slow web-only service.
               </p>
               <Button size="lg" asChild>
@@ -141,13 +141,12 @@ const ComparisonCheckmend = () => {
                     <X className="w-8 h-8 text-red-600" />
                     CheckMEND
                   </CardTitle>
-                  <p className="text-sm text-muted-foreground">Web-only, no mobile app</p>
+                  <p className="text-sm text-muted-foreground">Single-category coverage</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>NO Mobile App</strong> - Web browser only, no app download</span>
+                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />

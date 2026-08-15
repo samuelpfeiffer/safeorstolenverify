@@ -210,7 +210,7 @@ const ComparisonSwappa = () => {
  <CardContent>
  <ul className="space-y-3">
  {[
- ['NO Mobile App', 'Web-only, no standalone verification tool'],
+ [],
  ['Phones & Tech Only', 'Cannot verify cars, guns, bikes, or other items'],
  ['Basic ESN Check', 'Only for devices listed on Swappa'],
  ['Marketplace Focus', 'Buy/sell platform, not a verification service'],

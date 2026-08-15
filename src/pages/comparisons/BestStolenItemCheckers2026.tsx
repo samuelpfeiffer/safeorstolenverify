@@ -40,7 +40,7 @@ const BestStolenItemCheckers2026 = () => {
       url: 'https://imei.info',
       rating: 4.5,
       pros: ['Free IMEI lookup', 'Brand-specific checks', 'Warranty info'],
-      cons: ['Phones only', 'No mobile app', 'Paid for detailed reports'],
+      cons: ['Phones only', 'Paid for detailed reports'],
       categories: ['phones']
     },
     {
@@ -94,7 +94,7 @@ const BestStolenItemCheckers2026 = () => {
       url: 'https://checkmend.com',
       rating: 3.8,
       pros: ['Comprehensive device reports', 'Used by pawn shops', 'Global data'],
-      cons: ['Paid service', 'No mobile app', 'Account required'],
+      cons: ['Paid service', 'Account required'],
       categories: ['phones', 'electronics']
     }
   ];
