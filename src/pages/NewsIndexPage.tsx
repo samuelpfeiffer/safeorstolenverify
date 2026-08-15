@@ -22,15 +22,16 @@ const NewsIndexPage = () => {
  }
  };
 
- const milestones = [
- { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
- { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
- { year: "2022", event: "Expanded to vehicle verification with vehicle theft and title databases integration" },
- { year: "2023", event: "Released mobile apps for iOS and Android with barcode scanning" },
- { year: "2024", event: "Reached 50M+ verified items in database, partnered with major insurers" },
- { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
- { year: "2026", event: "Full site-wide 2026 refresh, enhanced SEO, AI-powered verification upgrades" }
- ];
+  const milestones = [
+  { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
+  { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
+  { year: "2022", event: "Expanded to vehicle verification with vehicle theft and title databases integration" },
+  { year: "2023", event: "Added barcode and serial number scanning to the mobile web experience" },
+  { year: "2024", event: "Expanded coverage across firearm and bicycle theft registries" },
+  { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
+  { year: "2026", event: "Full site-wide 2026 refresh, enhanced SEO, AI-powered verification upgrades" }
+  ];
+
 
  return (
  <>
