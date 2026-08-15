@@ -135,7 +135,7 @@ export default function AppDownloadPage() {
  <section className="py-16 px-4">
  <div className="max-w-3xl mx-auto">
  <h2 className="text-2xl font-black text-white text-center mb-8">
- The Only App That Does All of This
+ Everything You Can Check From Your Phone
  </h2>
  <div className="overflow-x-auto rounded-2xl border border-gray-700">
  <table className="w-full text-sm">
