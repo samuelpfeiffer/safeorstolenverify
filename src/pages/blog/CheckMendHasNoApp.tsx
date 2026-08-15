@@ -29,7 +29,7 @@ const CheckMendHasNoApp = () => {
     <>
       <PageSEO
         title=" - Mobile Alternative | SafeOrStolen"
-        description=" Only slow website. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.99."
+        description="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.99."
         keywords="CheckMEND app, CheckMEND alternative,, better than CheckMEND, CheckMEND mobile, free CheckMEND alternative"
         canonical="/blog/checkmend-has-no-app"
         structuredData={blogPostSchema}

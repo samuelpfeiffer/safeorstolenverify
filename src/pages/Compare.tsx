@@ -235,7 +235,7 @@ const Compare = () => {
  <Card>
  <CardHeader>
  <Smartphone className="h-10 w-10 text-primary mb-2" />
- <CardTitle>SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</CardTitle>
+ <CardTitle>All Six Item Categories, One Place</CardTitle>
  </CardHeader>
  <CardContent>
  <p className="text-muted-foreground">

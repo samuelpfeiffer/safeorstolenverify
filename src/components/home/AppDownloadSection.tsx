@@ -13,7 +13,7 @@ export const AppDownloadSection = () => {
           {/* Exclusive Badge */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground text-sm font-bold shadow-lg">
-              🏆 EXCLUSIVE: SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</div>
+              🏆 All Six Item Categories, One Place</div>
           </div>
 
           <div className="text-center mb-12">

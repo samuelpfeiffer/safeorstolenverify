@@ -153,7 +153,7 @@ export default function VsStolenRegisterPage() {
                     <Smartphone className="h-10 w-10 text-primary mb-4" />
                     <h3 className="text-xl font-bold mb-3">Mobile App Available</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen offers SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. StolenRegister is web-only, making on-the-go verification difficult.
+                      SafeOrStolen covers all six item categories. StolenRegister is web-only, making on-the-go verification difficult.
                     </p>
                   </CardContent>
                 </Card>

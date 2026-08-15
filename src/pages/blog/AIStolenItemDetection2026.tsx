@@ -220,7 +220,7 @@ const AIStolenItemDetection2026 = () => {
                   { icon: Zap, title: '3-Second Results', desc: 'vs 10-30 minutes for manual checks' },
                   { icon: Database, title: '100+ Databases', desc: 'vs 1-3 sources for manual verification' },
                   { icon: Shield, title: '95%+ Accuracy', desc: 'vs 60-70% for human-only verification' },
-                  { icon: Smartphone, title: 'Mobile App', desc: 'SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place' }
+                  { icon: Smartphone, title: 'Mobile Web App', desc: 'Verify from your phone browser with barcode scanning' }
                 ].map((item) => (
                   <Card key={item.title}>
                     <CardContent className="p-4 flex items-start gap-3">
@@ -267,7 +267,7 @@ const AIStolenItemDetection2026 = () => {
                   </ul>
                   <p className="mt-4 flex items-center gap-2 text-primary font-bold">
                     <CheckCircle2 className="h-5 w-5" />
-                    SafeOrStolen — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</p>
+                    SafeOrStolen — All Six Item Categories, One Place</p>
                 </CardContent>
               </Card>
             </section>
@@ -318,7 +318,7 @@ const AIStolenItemDetection2026 = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <Link to="/blog/checkmend-has-no-app" className="block p-4 rounded-lg border hover:border-primary transition-colors">
                 <h3 className="font-bold mb-2">Compare CheckMEND and SafeOrStolen</h3>
-                <p className="text-sm text-muted-foreground">Why SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place </p>
+                <p className="text-sm text-muted-foreground">Why Multi-Category Verification Matters </p>
               </Link>
               <Link to="/blog/best-stolen-item-checkers-2026" className="block p-4 rounded-lg border hover:border-primary transition-colors">
                 <h3 className="font-bold mb-2">Best Stolen Item Checkers 2026</h3>

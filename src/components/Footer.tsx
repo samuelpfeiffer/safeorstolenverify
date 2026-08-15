@@ -75,7 +75,7 @@ const Footer = () => {
  <div className="flex items-center gap-3 mb-6">
  <img 
  src={sosLogo} 
- alt="SafeOrStolen - SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place" 
+ alt="SafeOrStolen barcode scanning for IMEI, VIN, and serial number verification" 
  width={48}
  height={48}
  className="h-12 w-12 filter drop-shadow-lg"

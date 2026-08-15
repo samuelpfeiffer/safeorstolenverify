@@ -94,7 +94,7 @@ const IMEICheckerAppPage = () => {
  <div>
  <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full mb-6">
  <Star className="w-4 h-4 text-green-500 fill-green-500" />
- <span className="text-sm font-medium">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</span>
+ <span className="text-sm font-medium">All Six Item Categories, One Place</span>
  </div>
  
  <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -166,7 +166,7 @@ const IMEICheckerAppPage = () => {
  {/* Competitor Comparison */}
  <section className="py-16 px-4 bg-muted/30">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Why SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place </h2>
+ <h2 className="text-3xl font-bold text-center mb-12">Why Multi-Category Verification Matters</h2>
  
  <div className="overflow-x-auto">
  <table className="w-full">

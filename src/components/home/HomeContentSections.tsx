@@ -71,7 +71,7 @@ export const HomeContentSections = () => {
  <div className="max-w-5xl mx-auto">
  <h2 className="text-2xl md:text-3xl font-bold mb-6">What SafeOrStolen Checks — Complete Verification Coverage</h2>
  <p className="text-muted-foreground mb-8 text-lg">
- SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place <strong>all item categories</strong> in one place. Whether you're buying a used phone on Facebook Marketplace, a car from Craigslist, a firearm at a gun show, or electronics from OfferUp — we verify it against law enforcement, insurance, and manufacturer databases in 3 seconds.
+ SafeOrStolen covers <strong>all six item categories</strong> in one place. Whether you're buying a used phone on Facebook Marketplace, a car from Craigslist, a firearm at a gun show, or electronics from OfferUp — we verify it against law enforcement, insurance, and manufacturer databases in 3 seconds.
  </p>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
  {[

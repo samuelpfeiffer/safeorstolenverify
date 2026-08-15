@@ -33,7 +33,7 @@ const staticArticles = [
     keywords: ['phone verification 2026', 'IMEI check', 'stolen phone checker']
   },
   {
-    title: 'SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place',
+    title: 'Verify Stolen Items From Your Phone (2026)',
     slug: 'checkmend-has-no-app',
     excerpt: 'Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
     category: 'Mobile App',
