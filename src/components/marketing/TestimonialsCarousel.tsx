@@ -77,7 +77,7 @@ const testimonials: Testimonial[] = [
  name: 'Michael B.',
  role: 'Firearms Collector',
  location: 'Dallas, TX',
- content: 'SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Before every private purchase, I run the serial number. Under 18 U.S.C. 922(j), possession of a stolen firearm is a federal crime — this 3-second check is non-negotiable for any responsible gun buyer.',
+ content: 'The only service that checks firearms against stolen firearms databases simultaneously. Before every private purchase, I run the serial number. Under 18 U.S.C. 922(j), possession of a stolen firearm is a federal crime — this 3-second check is non-negotiable for any responsible gun buyer.',
  rating: 5,
  itemType: 'Firearm',
  savedAmount: 'Federal charge avoided',
