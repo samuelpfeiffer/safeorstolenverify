@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is an **AI-powered** stolen item verification platform — the only service that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND uses AI to analyze marketplace listing URLs. AI powers intelligent identifier detection, scam scoring, conversational verification (SafeOrStolen AI), and risk analysis. 2 free checks, then $0.99/check or $10/month unlimited. Results in 3 seconds.
+> SafeOrStolen is an **AI-powered** stolen item verification platform — a platform covering phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, using AI to analyze marketplace listing URLs. AI powers intelligent identifier detection, scam scoring, conversational verification (SafeOrStolen AI), and risk analysis. 2 free checks, then $0.99/check or $10/month unlimited. Results in 3 seconds.
 
 ## AI Capabilities (SafeOrStolen AI)
 

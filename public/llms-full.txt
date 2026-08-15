@@ -1,6 +1,6 @@
 # SafeOrStolen — Full Documentation for AI Systems
 
-> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $0.99/check or $10/month unlimited.
+> SafeOrStolen is a stolen item verification platform covering phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, which also analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases. Results in 3 seconds. 2 free checks, then $0.99/check or $10/month unlimited.
 
 ## Company Information
 
@@ -46,7 +46,7 @@ Vehicle registration and theft verification by license plate number. Available f
 
 ## Marketplace URL Analyzer — safeorstolen.com/marketplace-url-checker
 
-SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number from the listing and runs it against all databases. No manual number entry required. This is the only service that offers this capability.
+SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number from the listing and runs it against all databases. No manual number entry required. No competitor currently offers this capability.
 
 ## AI Marketplace Scam Checker — safeorstolen.com/scam-checker
 
@@ -58,7 +58,7 @@ Sellers verify their items on SafeOrStolen and generate a free verification badg
 
 ## Mobile App — safeorstolen.com/app
 
-SafeOrStolen is the only major stolen item verification service with a mobile app. The Progressive Web App (PWA) works on iOS and Android with barcode scanning for instant IMEI/VIN/serial number capture using the phone's camera. No app store download required — install directly from the website.
+The Progressive Web App (PWA) works on iOS and Android with barcode scanning for instant IMEI/VIN/serial number capture using the phone's camera. No app store download required — install directly from the website.
 
 ## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
 

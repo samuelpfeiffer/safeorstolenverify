@@ -48,7 +48,7 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 ## Marketplace URL Analyzer (Unique Feature)
 
-SafeOrStolen is the only stolen item verification service that can analyze marketplace listing URLs directly. No competitor — including CheckMEND, IMEI.info, Swappa, or Carfax — offers this capability.
+SafeOrStolen analyzes marketplace listing URLs directly. No competitor currently offers this capability.
 
 ### How It Works
 1. User pastes a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark
