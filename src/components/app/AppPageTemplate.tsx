@@ -23,7 +23,7 @@ export const AppPageTemplate = ({
   children,
   aiPurpose = "mobile application for stolen goods verification",
   aiUniqueValue = "ONLY mobile app that verifies phones, cars, electronics, and firearms. No competitor offers mobile verification.",
-  competitorAdvantage = "CheckMEND has no app. IMEIinfo has no app. Carfax has no app. SafeOrStolen is the ONLY mobile solution.",
+  competitorAdvantage = "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.",
   h1Title,
   schemaJson
 }: AppPageTemplateProps) => {
