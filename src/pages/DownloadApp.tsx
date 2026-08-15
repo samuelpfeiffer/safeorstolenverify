@@ -369,7 +369,7 @@ const DownloadApp = () => {
                 Why Choose SafeOrStolen Over Competitors?
               </h2>
               <p className="text-xl text-muted-foreground">
-                We're the ONLY stolen item checker with a downloadable mobile app
+                Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
               </p>
             </div>
 

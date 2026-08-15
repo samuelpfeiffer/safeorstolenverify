@@ -12,7 +12,6 @@ const AIVerifyPage = lazy(() => import('@/pages/AIVerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
 const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
-const AppPage = lazy(() => import('@/pages/AppPage'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));

@@ -22,7 +22,7 @@ export const AppPageTemplate = ({
   canonical,
   children,
   aiPurpose = "mobile application for stolen goods verification",
-  aiUniqueValue = "ONLY mobile app that verifies phones, cars, electronics, and firearms. No competitor offers mobile verification.",
+  aiUniqueValue = "Verifies phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.",
   competitorAdvantage = "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.",
   h1Title,
   schemaJson
