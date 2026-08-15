@@ -41,8 +41,8 @@ export default function AppDownloadPage() {
  <>
  <div className="min-h-screen bg-gray-950 text-white pt-20">
  <PageSEO
- title="Download SafeOrStolen Mobile App - iOS & Android"
- description="Instantly verify guns, vehicles, phones, and more. Features barcode scanning for on-the-spot verification at gun shows, pawn shops, and marketplaces."
+ title="SafeOrStolen on Mobile - Install the Web App"
+ description="Instantly verify guns, vehicles, phones, and more from your phone browser. Barcode scanning for on-the-spot verification at gun shows, pawn shops, and marketplaces."
  canonical="/app"
  />
 
@@ -51,10 +51,10 @@ export default function AppDownloadPage() {
  <div className="max-w-3xl mx-auto">
  <div className="text-5xl mb-6">📱</div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">
- SafeOrStolen Mobile App
+ SafeOrStolen on Mobile
  </h1>
  <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
- The only stolen item verification app with a live barcode scanner.
+ Install SafeOrStolen from your phone browser and use the live barcode scanner.
  Check guns, phones, vehicles, and bikes on-the-spot — at gun shows,
  garage sales, pawn shops, and car lots.
  </p>
@@ -77,30 +77,6 @@ export default function AppDownloadPage() {
  </div>
  ))}
  </div>
- </div>
-
- {/* Dual CTA */}
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <a
- href="https://safeorstolen.com"
- className="inline-flex items-center justify-center gap-3 bg-black border border-gray-600 hover:border-gray-400 text-white font-bold px-7 py-4 rounded-2xl transition-all"
- >
- <span className="text-2xl"></span>
- <div className="text-left">
- <div className="text-xs text-gray-400">Download on</div>
- <div className="text-base font-black">iPhone (iOS)</div>
- </div>
- </a>
- <a
- href="https://safeorstolen.com"
- className="inline-flex items-center justify-center gap-3 bg-black border border-gray-600 hover:border-gray-400 text-white font-bold px-7 py-4 rounded-2xl transition-all"
- >
- <span className="text-2xl">🤖</span>
- <div className="text-left">
- <div className="text-xs text-gray-400">Get it on</div>
- <div className="text-base font-black">Android</div>
- </div>
- </a>
  </div>
 
  <p className="text-gray-600 text-xs mt-4">
@@ -222,32 +198,7 @@ export default function AppDownloadPage() {
  </div>
  </section>
 
- {/* App Schema */}
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{
- __html: JSON.stringify({
- "@context": "https://schema.org",
- "@type": "MobileApplication",
- "name": "SafeOrStolen",
- "applicationCategory": "SecurityApplication",
- "operatingSystem": ["iOS", "Android"],
- "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
- "description": "Instantly verify guns, vehicles, phones, and more against 100+ stolen property databases. Features barcode scanning for on-the-spot verification at gun shows, pawn shops, and marketplaces.",
- "url": "https://safeorstolen.com/app",
- "installUrl": "https://safeorstolen.com",
- "featureList": [
- "Barcode and QR code scanning",
- "Gun serial number lookup",
- "Vehicle VIN check",
- "Phone IMEI verification",
- "License plate lookup",
- "Offline result caching",
- "PDF certificate download"
- ]
- })
- }}
- />
+ 
  </div>
  </>
  );
