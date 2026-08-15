@@ -330,7 +330,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — The only platform that covers all categories with a mobile app and marketplace integration.
+                  <strong>Winner: SafeOrStolen</strong> — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Why: Universal verification in one place

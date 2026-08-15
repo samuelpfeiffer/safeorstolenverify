@@ -80,7 +80,7 @@ const AIStolenItemDetection2026 = () => {
     <>
       <PageSEO
         title="How AI is Transforming Stolen Item Detection in 2026 | SafeOrStolen"
-        description="How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification. Learn how AI-powered verification catches what humans miss. The ONLY service with a mobile app."
+        description="How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification. Learn how AI-powered verification catches what humans miss. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
         keywords="AI stolen item detection, ChatGPT stolen goods, Claude verification, machine learning theft detection, AI IMEI checker, SafeOrStolen AI, 2026 verification technology"
         canonical="/blog/ai-stolen-item-detection-2026"
         type="article"
@@ -221,7 +221,7 @@ const AIStolenItemDetection2026 = () => {
                   { icon: Zap, title: '3-Second Results', desc: 'vs 10-30 minutes for manual checks' },
                   { icon: Database, title: '100+ Databases', desc: 'vs 1-3 sources for manual verification' },
                   { icon: Shield, title: '95%+ Accuracy', desc: 'vs 60-70% for human-only verification' },
-                  { icon: Smartphone, title: 'Mobile App', desc: 'Only service with on-the-go verification' }
+                  { icon: Smartphone, title: 'Mobile App', desc: 'SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place' }
                 ].map((item) => (
                   <Card key={item.title}>
                     <CardContent className="p-4 flex items-start gap-3">
@@ -295,7 +295,7 @@ const AIStolenItemDetection2026 = () => {
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-bold mb-4">Try AI-Powered Verification Free</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Get 2 free searches. No credit card required. The only service with a mobile app.
+                Get 2 free searches. No credit card required. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg">
@@ -332,7 +332,7 @@ const AIStolenItemDetection2026 = () => {
               </Link>
               <Link to="/app" className="block p-4 rounded-lg border border-primary/30 hover:border-primary bg-primary/5 transition-colors">
                 <h3 className="font-bold mb-2 text-primary">Download SafeOrStolen App</h3>
-                <p className="text-sm text-muted-foreground">The only mobile app for stolen item verification</p>
+                <p className="text-sm text-muted-foreground">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</p>
               </Link>
             </div>
           </section>

@@ -223,7 +223,7 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <p className="mb-2 font-medium text-gray-400">Mobile App</p>
-              <p>Only stolen item verification service with dedicated mobile app and barcode scanning.</p>
+              <p>SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
             </div>
           </div>
         </div>

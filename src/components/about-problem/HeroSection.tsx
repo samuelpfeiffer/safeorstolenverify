@@ -82,8 +82,7 @@ export const HeroSection = () => {
               ✓ This is exactly why we built Safe Or Stolen
             </p>
             <p className="text-muted-foreground">
-              The first and only platform that gives consumers the power to verify items before purchase
-            </p>
+              SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</p>
           </div>
         </div>
       </div>

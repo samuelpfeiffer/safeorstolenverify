@@ -18,7 +18,7 @@ const ProductHuntPage = () => {
     {
       icon: Smartphone,
       title: "Only Mobile App",
-      description: "The ONLY stolen item verification app with barcode scanning"
+      description: "SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place"
     },
     {
       icon: Shield,
@@ -58,7 +58,7 @@ const ProductHuntPage = () => {
     <>
       <PageSEO
         title="SafeOrStolen on Product Hunt | Support Our Launch"
-        description="Support SafeOrStolen on Product Hunt! The only mobile app for stolen item verification. Upvote us and help protect millions of buyers and sellers."
+        description="Support SafeOrStolen on Product Hunt! SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Upvote us and help protect millions of buyers and sellers."
         canonical="https://safeorstolen.com/product-hunt"
       />
       <div className="min-h-screen bg-background pt-20">

@@ -247,7 +247,7 @@ const SitemapPage = () => {
  { to: "/blog/check-if-phone-stolen-guide", label: "Check Phone Stolen Guide" },
  { to: "/blog/imei-checker-app-download", label: "IMEI App Download" },
  { to: "/blog/theft-trends-report-2024", label: "Theft Trends 2024" },
- { to: "/blog/checkmend-has-no-app", label: "CheckMEND Has No App" },
+ { to: "/blog/checkmend-has-no-app", label: "" },
  { to: "/blog/like-carfax-for-phones", label: "Like Carfax For Phones" },
  { to: "/blog/best-ai-llms-2026", label: "Best AI LLMs 2026" },
  { to: "/blog/top-10-stolen-item-checkers", label: "Top 10 Checkers" },

@@ -75,7 +75,7 @@ const Footer = () => {
  <div className="flex items-center gap-3 mb-6">
  <img 
  src={sosLogo} 
- alt="SafeOrStolen - the only stolen verification app with barcode scanning for IMEI checker, VIN checker, serial number lookup" 
+ alt="SafeOrStolen - SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place" 
  width={48}
  height={48}
  className="h-12 w-12 filter drop-shadow-lg"
@@ -88,7 +88,7 @@ const Footer = () => {
  </div>
  
  <p className="text-muted-foreground mb-6 leading-relaxed">
- The ONLY stolen verification app with instant barcode scanning. CheckMEND has NO app. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. Like Carfax for everything. All 50 states + international.
+ SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. Like Carfax for everything. All 50 states + international.
  </p>
 
  <div className="space-y-3 mb-6">

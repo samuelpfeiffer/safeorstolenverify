@@ -230,9 +230,9 @@ const CrunchbasePage: React.FC = () => {
  </CardTitle>
  </CardHeader>
  <CardContent>
- <p className="text-3xl font-bold text-primary mb-2">Only App</p>
+ <p className="text-3xl font-bold text-primary mb-2">All Categories</p>
  <p className="text-muted-foreground text-sm">
- The only stolen item verification platform with a dedicated mobile app for on-the-spot barcode scanning.
+ SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </p>
  </CardContent>
  </Card>

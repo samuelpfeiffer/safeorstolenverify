@@ -36,7 +36,7 @@ export const FeaturedSnippetOptimizer = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen is the best stolen phone checker because it's the only service with mobile apps for iOS and Android, offers 4 free IMEI checks, and checks multiple databases simultaneously. Unlike CheckMend which has no mobile app, SafeOrStolen provides instant verification on your phone."
+ "text": "SafeOrStolen is the best stolen phone checker because it's SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMend which has no mobile app, SafeOrStolen provides instant verification on your phone."
  }
  }
  },
@@ -59,7 +59,7 @@ export const FeaturedSnippetOptimizer = () => {
  <Helmet>
  {/* Featured Snippet Optimization Meta Tags */}
  <meta name="question" content="How to check if a phone is stolen?" />
- <meta name="answer" content="Use SafeOrStolen's free mobile app: 1) Find IMEI by dialing *#06#, 2) Open app on iOS or Android, 3) Enter IMEI, 4) Get instant results. Only service with mobile apps." />
+ <meta name="answer" content="Use SafeOrStolen's free mobile app: 1) Find IMEI by dialing *#06#, 2) Open app on iOS or Android, 3) Enter IMEI, 4) Get instant results. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." />
  
  <meta name="quick-answer" content="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." />
  

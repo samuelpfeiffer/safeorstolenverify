@@ -10,7 +10,7 @@ const staticArticles = [
   {
     title: 'Best Stolen Item Checkers 2026: Complete Comparison Guide',
     slug: 'best-stolen-item-checkers-2026',
-    excerpt: 'Compare the top stolen item verification services in 2026. SafeOrStolen, CheckMEND, IMEI.info, and Swappa compared. Find the only service with a mobile app.',
+    excerpt: 'Compare the top stolen item verification services in 2026. SafeOrStolen, CheckMEND, IMEI.info, and Swappa compared. Find SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
     category: '2026 Guides',
     readTime: '12 min',
     keywords: ['stolen item checker 2026', 'best verification service', 'CheckMEND alternative'],
@@ -33,7 +33,7 @@ const staticArticles = [
     keywords: ['phone verification 2026', 'IMEI check', 'stolen phone checker']
   },
   {
-    title: 'The Only Mobile App for Stolen Item Verification (2026)',
+    title: 'SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place',
     slug: 'checkmend-has-no-app',
     excerpt: 'CheckMEND has NO mobile app. IMEI.info has NO mobile app. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
     category: 'Mobile App',
@@ -225,7 +225,7 @@ export default function BlogIndexPage() {
           '@context': 'https://schema.org',
           '@type': 'Blog',
           name: 'SafeOrStolen Blog - Stolen Item Verification Guides 2026',
-          description: 'Expert 2026 guides on verifying secondhand items and avoiding stolen goods. The ONLY service with a mobile app.',
+          description: 'Expert 2026 guides on verifying secondhand items and avoiding stolen goods. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
           url: 'https://safeorstolen.com/blog',
           publisher: {
             '@type': 'Organization',

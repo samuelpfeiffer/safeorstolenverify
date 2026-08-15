@@ -175,7 +175,7 @@ const Compare = () => {
  <Button asChild variant="outline" size="lg">
  <Link to="/app">
  <Download className="mr-2 h-5 w-5" />
- Download the Only App
+ Download the All Categories
  </Link>
  </Button>
  </div>

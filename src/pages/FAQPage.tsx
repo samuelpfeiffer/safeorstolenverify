@@ -160,7 +160,7 @@ const FAQPage = () => {
  },
  {
  question: "Does CheckMEND have an app?",
- answer: "No, CheckMEND does NOT have a mobile app. They only offer a slow website with manual typing. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual mobile app."
+ answer: "No, They only offer a slow website with manual typing. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual mobile app."
  },
  {
  question: "What's like Carfax but for phones?",

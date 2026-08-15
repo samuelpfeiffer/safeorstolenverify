@@ -603,8 +603,7 @@ const Index = () => {
  <div className="max-w-3xl mx-auto text-center">
  <div className="text-4xl mb-4">📱</div>
  <h2 className="text-2xl font-black text-foreground mb-2">
- The Only Stolen Item Checker With a Mobile App
- </h2>
+ SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</h2>
  <p className="text-muted-foreground text-sm mb-6">
  Barcode scanning, QR codes, offline history — check items on the spot
  at garage sales, gun shows, pawn shops, and car lots.

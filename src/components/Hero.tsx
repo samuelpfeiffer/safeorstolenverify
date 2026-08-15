@@ -76,7 +76,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-sos-gray-200 max-w-3xl mx-auto font-light leading-relaxed">
-              The only mobile app that verifies phones, cars, electronics, AND firearms. Competitors have no app. Install free on iOS & Android.
+              SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Install free on iOS & Android.
             </p>
             
             {/* Press credential badge */}

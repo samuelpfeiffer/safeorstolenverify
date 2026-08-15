@@ -68,8 +68,7 @@ const BarcodeScanner = () => {
             </div>
             
             <p className="text-sm text-muted-foreground">
-              The ONLY stolen verification app with built-in barcode scanning
-            </p>
+              SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</p>
           </div>
         </section>
 

@@ -307,7 +307,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
               <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $10/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
-                SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also the only service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
+                SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
@@ -328,7 +328,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold text-sm mb-2">Key Advantages</h3>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li><Yes /> Only service with mobile app + barcode scanning</li>
+                    <li><Yes /> SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</li>
                     <li><Yes /> All item categories in one platform</li>
                     <li><Yes /> 100+ databases (competitors: 10-20)</li>
                     <li><Yes /> $10/mo unlimited — cheapest in industry</li>

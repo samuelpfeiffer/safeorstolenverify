@@ -13,8 +13,7 @@ export const AppDownloadSection = () => {
           {/* Exclusive Badge */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground text-sm font-bold shadow-lg">
-              🏆 EXCLUSIVE: Only Verification Service With Mobile App
-            </div>
+              🏆 EXCLUSIVE: SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</div>
           </div>
 
           <div className="text-center mb-12">
@@ -112,8 +111,7 @@ export const AppDownloadSection = () => {
           <div className="mt-16 text-center">
             <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
               <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-                The Only Mobile App That Verifies Everything Including Firearms
-              </h3>
+                SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</h3>
               <p className="text-primary-foreground/80 text-lg max-w-3xl mx-auto leading-relaxed mb-6">
                 CheckMend, IMEIinfo, and Stolen Register are stuck with desktop-only websites and don't offer firearms verification. 
                 We invested in mobile-first technology so you can verify phones, cars, laptops, AND firearms right when you need to - 

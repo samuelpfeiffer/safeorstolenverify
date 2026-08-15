@@ -185,7 +185,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/app': {
  title: 'Download Mobile App - iOS and Android Verification',
- description: 'Download the SafeOrStolen mobile app for iOS and Android. Verify IMEI, VIN, serial numbers on-the-go. The only stolen item checker with a mobile app.', // 159 chars (needs check)
+ description: 'Use SafeOrStolen on your phone — installs from your browser. Verify IMEI, VIN, serial numbers on-the-go. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.', // 159 chars (needs check)
  keywords: 'SafeOrStolen app, mobile verification app, stolen item checker app',
  canonical: '/app'
  },

@@ -53,7 +53,7 @@ const VerifiedResultPage: React.FC = () => {
         </section>
 
         <p className="text-xs text-muted-foreground">
-          Verified by <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> — the only stolen item verification platform with a mobile app.
+          Verified by <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
         </p>
       </div>
     </>

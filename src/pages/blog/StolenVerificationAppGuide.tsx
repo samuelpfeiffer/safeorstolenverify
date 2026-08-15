@@ -33,7 +33,7 @@ const StolenVerificationAppGuide = () => {
     <>
       <PageSEO
         title="The Only Stolen Verification App (2025 Guide) | SafeOrStolen"
-        description="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND has NO app. IMEI.info has NO app. Complete guide to the first and only stolen item scanner app with instant barcode scanning, 3-second verification, offline mode."
+        description="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Complete guide to the first and only stolen item scanner app with instant barcode scanning, 3-second verification, offline mode."
         keywords="stolen verification app, stolen item scanner app, CheckMEND app, IMEI checker app, barcode stolen checker, instant stolen verification"
         canonical="/blog/stolen-verification-app-guide"
         structuredData={blogPostSchema}
@@ -47,7 +47,7 @@ const StolenVerificationAppGuide = () => {
           },
           {
             question: "Does CheckMEND have a mobile app?",
-            answer: "No, CheckMEND does NOT have a mobile app. Despite being in business since 2004, they only offer a slow website. SafeOrStolen is the first CheckMEND alternative with a real mobile app featuring barcode scanning and instant verification."
+            answer: "No, Despite being in business since 2004, they only offer a slow website. SafeOrStolen is the first CheckMEND alternative with a real mobile app featuring barcode scanning and instant verification."
           },
           {
             question: "How does SafeOrStolen's barcode scanning work?",

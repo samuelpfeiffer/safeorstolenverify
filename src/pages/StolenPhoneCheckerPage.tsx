@@ -169,7 +169,7 @@ const StolenPhoneCheckerPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>Only stolen phone checker with a dedicated mobile app for on-the-spot verification</span>
+ <span>SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
