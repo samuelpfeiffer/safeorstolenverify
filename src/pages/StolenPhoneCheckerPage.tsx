@@ -230,7 +230,7 @@ const StolenPhoneCheckerPage = () => {
 
  {/* Why SafeOrStolen */}
  <section className="mb-16">
- <h2 className="text-3xl font-bold text-center mb-8">Why SafeOrStolen is the Best Stolen Phone Checker</h2>
+ <h2 className="text-3xl font-bold text-center mb-8">Why Buyers Use SafeOrStolen</h2>
  <div className="grid md:grid-cols-2 gap-6">
  <Card>
  <CardContent className="pt-6">
