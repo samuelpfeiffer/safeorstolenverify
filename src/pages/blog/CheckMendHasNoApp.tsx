@@ -229,13 +229,12 @@ const CheckMendHasNoApp = () => {
               </Card>
 
               <Card className="p-6 border-l-4 border-red-500">
-                <p className="text-muted-foreground italic">
-                  "Why doesn't CheckMEND have an app?? It's 2026. Every other verification service has mobile apps. I'm not typing 17-character VINs on a tiny phone keyboard." - Twitter complaint
+                <p className="text-muted-foreground italic">"I'm not typing 17-character VINs on a tiny phone keyboard." - Twitter complaint
                 </p>
               </Card>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">SafeOrStolen: The Only CheckMEND Alternative with a Real Mobile App</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6">SafeOrStolen: A Multi-Category CheckMEND Alternative</h2>
 
             <p>
               SafeOrStolen was built from the ground up as a <strong>mobile-first</strong> stolen verification platform. Here's what makes us the superior CheckMEND alternative:

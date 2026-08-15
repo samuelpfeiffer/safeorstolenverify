@@ -89,7 +89,7 @@ const IMEICheckerAppDownload = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              The only free IMEI checker app with offline mode and 3-second barcode scanning. 
+              Free IMEI checking with offline mode and 3-second barcode scanning. 
               Verify phones aren't stolen before meeting sellers.
             </p>
 

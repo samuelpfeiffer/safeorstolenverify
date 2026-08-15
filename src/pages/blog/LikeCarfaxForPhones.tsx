@@ -162,8 +162,7 @@ const LikeCarfaxForPhones = () => {
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <span><strong>Shows history</strong> (theft, accidents)</span>
                   </li>
-                  <li className="flex items-start gap-2 opacity-50">
-                    <span>❌ <strong>No mobile app</strong></span>
+                  <li className="flex items-start gap-2 opacity-50"><span>Single-category coverage</span>
                   </li>
                   <li className="flex items-start gap-2 opacity-50">
                     <span>❌ <strong>Expensive</strong> ($39.99+ per report)</span>

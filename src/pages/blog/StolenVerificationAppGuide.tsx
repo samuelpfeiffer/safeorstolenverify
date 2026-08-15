@@ -98,15 +98,15 @@ const StolenVerificationAppGuide = () => {
             </p>
 
             <p>
-              Our competitors - CheckMEND, IMEI.info, Swappa, IMEIPro, LeadsOnline - all lack mobile apps. They offer only slow websites that require manual typing and take 30+ seconds to return results. SafeOrStolen delivers verified results in <strong>3 seconds with instant barcode scanning</strong>.
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen delivers verified results in <strong>3 seconds with instant barcode scanning</strong>.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Competitor Comparison: Why They Have No Apps</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6">Competitor Comparison: Category Coverage</h2>
             
             <Card className="my-8 p-6">
               <div className="space-y-6">
                 <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">❌ CheckMEND - NO Mobile App</h3>
+                  <h3 className="font-bold text-xl mb-2 text-red-600">CheckMEND</h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                     <li>Website only, requires manual typing</li>
                     <li>30+ seconds per verification</li>
@@ -117,7 +117,7 @@ const StolenVerificationAppGuide = () => {
                 </div>
 
                 <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">❌ IMEI.info - NO Mobile App</h3>
+                  <h3 className="font-bold text-xl mb-2 text-red-600">IMEI.info</h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                     <li>Basic web checker only</li>
                     <li>Limited to phones (no vehicles, electronics)</li>
@@ -127,7 +127,7 @@ const StolenVerificationAppGuide = () => {
                 </div>
 
                 <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">❌ Swappa - NO Mobile App</h3>
+                  <h3 className="font-bold text-xl mb-2 text-red-600">Swappa</h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                     <li>Website only, marketplace focused</li>
                     <li>Limited verification features</li>
@@ -137,7 +137,7 @@ const StolenVerificationAppGuide = () => {
                 </div>
 
                 <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg">
-                  <h3 className="font-bold text-xl mb-2 text-green-600">✅ SafeOrStolen - ONLY Mobile App</h3>
+                  <h3 className="font-bold text-xl mb-2 text-green-600">SafeOrStolen</h3>
                   <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Full iOS and Android app</strong></li>
                     <li><strong>Instant barcode scanning</strong> - no typing required</li>
@@ -345,7 +345,7 @@ const StolenVerificationAppGuide = () => {
             </div>
 
             <p>
-              Download the world's first and only stolen verification app today:
+              Start verifying today:
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 my-8">

@@ -81,8 +81,7 @@ const ComparisonCheckmend = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Best CheckMEND Alternative: SafeOrStolen
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"> SafeOrStolen does. Compare Verifying Stolen Items From Your Phone 
-                with barcode scanning and offline mode against CheckMEND's slow web-only service.
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"> SafeOrStolen does. Compare SafeOrStolen's multi-category coverage and barcode scanning against CheckMEND.
               </p>
               <Button size="lg" asChild>
                 <Link to="/app">

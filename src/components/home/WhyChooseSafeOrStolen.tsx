@@ -21,8 +21,8 @@ export const WhyChooseSafeOrStolen = () => {
     },
     {
       icon: Smartphone,
-      title: 'Golden Ticket: Only Mobile App',
-      description: 'Our app is ONLY available from SafeOrStolen.com - the exclusive gateway. We\'re the first and only stolen item scanner app with barcode scanning.',
+      title: 'Verify From Your Phone',
+      description: 'SafeOrStolen installs from your mobile browser at SafeOrStolen.com, with barcode scanning built in.',
       badge: 'Exclusive App',
       color: 'from-yellow-500 to-orange-500'
     },

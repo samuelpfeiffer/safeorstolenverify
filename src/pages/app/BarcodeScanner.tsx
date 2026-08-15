@@ -226,8 +226,7 @@ const BarcodeScanner = () => {
               Get the Barcode Scanner Stolen Checker
             </h2>
             <p className="text-muted-foreground mb-8">
-              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
-              Competitors like CheckMEND and IMEI.info have NO mobile apps at all.
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
             </p>
             <Button size="lg" className="text-lg px-8" asChild>
               <Link to="/app">
