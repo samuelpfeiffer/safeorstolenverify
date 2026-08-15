@@ -97,7 +97,7 @@ export const FeaturedSnippetOptimizer = () => {
  </div>
  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
  <h3 itemProp="name">Step 2: Open SafeOrStolen App</h3>
- <p itemProp="text">Download the free SafeOrStolen app from App Store (iOS) or Google Play (Android)</p>
+ <p itemProp="text">Open safeorstolen.com on your phone and install it from your browser</p>
  </div>
  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
  <h3 itemProp="name">Step 3: Enter or Scan IMEI</h3>

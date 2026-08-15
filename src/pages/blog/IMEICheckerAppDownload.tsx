@@ -206,7 +206,7 @@ const IMEICheckerAppDownload = () => {
 
             <div className="grid md:grid-cols-4 gap-6">
               {[
-                { step: 1, title: "Download App", desc: "Get SafeOrStolen from the App Store, Play Store, or install as PWA" },
+                { step: 1, title: "Install", desc: "Open safeorstolen.com on your phone and install it from your browser" },
                 { step: 2, title: "Find IMEI", desc: "Dial *#06# on the phone or check Settings > About" },
                 { step: 3, title: "Scan or Enter", desc: "Scan the IMEI barcode or type the 15-digit number" },
                 { step: 4, title: "Get Results", desc: "Instant results showing if phone is stolen or safe" }
