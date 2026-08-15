@@ -31,7 +31,7 @@ const VsStolenPhoneChecker = () => {
         "name": "Can I check vehicles on CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, CTIA Stolen Phone Checker only verifies mobile phones. SafeOrStolen is the only platform that verifies phones, cars, bikes, laptops, and more in one place."
+          "text": "No, CTIA Stolen Phone Checker only verifies mobile phones. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
         }
       }
     ]
@@ -250,7 +250,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No, CTIA only checks mobile phone IMEI numbers. For vehicle VIN checks, you need SafeOrStolen or NICB VINCheck. SafeOrStolen is the only platform that checks both phones and vehicles.
+                  No, CTIA only checks mobile phone IMEI numbers. For vehicle VIN checks, you need SafeOrStolen or NICB VINCheck. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
                 </p>
               </CardContent>
             </Card>

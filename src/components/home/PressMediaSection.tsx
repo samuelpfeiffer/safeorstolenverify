@@ -51,7 +51,7 @@ export const PressMediaSection = () => {
  const stats = [
  {
  icon: Globe,
- label: '50M+ Records',
+ label: '100+ databases',
  description: 'Verified stolen item database across 100+ sources',
  detail: 'Cross-referenced from carrier and theft databases, vehicle theft and title databases, stolen property reports from all 50 states, all 50 state community theft registries, and 500+ insurance companies.',
  link: '/data-sources',

@@ -19,7 +19,7 @@ const ForLawEnforcement = () => {
  canonical="/for-law-enforcement"
  businessType="Law Enforcement"
  industryName="Law Enforcement"
- heroSubtitle="Quickly verify recovered property and track stolen items. Our database of 50M+ stolen records helps officers identify stolen property and connect with rightful owners."
+ heroSubtitle="Quickly verify recovered property and track stolen items. Our database of 100+ stolen records helps officers identify stolen property and connect with rightful owners."
  heroBadge="Law Enforcement Solutions"
  challenges={[
  {
@@ -68,7 +68,7 @@ const ForLawEnforcement = () => {
  description: "Officers can verify property status in seconds during traffic stops or investigations."
  },
  {
- stat: "50M+",
+ stat: "100+",
  title: "Records Searched",
  description: "Access one of the largest aggregated stolen property databases available."
  },
@@ -94,7 +94,7 @@ const ForLawEnforcement = () => {
  faqs={[
  {
  question: "What databases do you search?",
- answer: "We aggregate data from carrier and theft databases, manufacturer stolen device registries, insurance company reports, and user-reported theft databases totaling 50M+ records."
+ answer: "We aggregate data from carrier and theft databases, manufacturer stolen device registries, insurance company reports, and user-reported theft databases totaling 100+ databases."
  },
  {
  question: "Can officers use this in the field?",

@@ -186,7 +186,7 @@ const StolenPhoneCheckerApp = () => {
  Download the FREE Stolen Phone Checker App
  </h2>
  <p className="text-muted-foreground mb-8">
- SafeOrStolen is the ONLY stolen verification app. CheckMEND, IMEI.info have NO apps. 
+ Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info have NO apps. 
  Download exclusively from SafeOrStolen.com.
  </p>
  <Button size="lg" className="text-lg px-8" asChild>

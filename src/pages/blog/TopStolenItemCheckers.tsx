@@ -72,7 +72,7 @@ const TopStolenItemCheckers = () => {
   const faqs = [
     {
       question: "What is the most comprehensive stolen item checker?",
-      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. SafeOrStolen is the only service that covers all categories in one platform with a mobile app."
+      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
     },
     {
       question: "Are free stolen item checkers reliable?",
@@ -88,7 +88,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
-      answer: "SafeOrStolen is the only stolen item verification service with a dedicated mobile app. It's available as a Progressive Web App (PWA) that works on iPhone, Android, and any mobile browser. The app includes barcode scanning for instant serial number entry at gun shows, pawn shops, marketplace meetups, and yard sales. No other competitor offers a mobile app."
+      answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It's available as a Progressive Web App (PWA) that works on iPhone, Android, and any mobile browser. The app includes barcode scanning for instant serial number entry at gun shows, pawn shops, marketplace meetups, and yard sales. No other competitor offers a mobile app."
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
@@ -307,7 +307,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
               <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $10/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
-                SafeOrStolen is the only verification service that checks <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also the only service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
+                SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place <strong>all item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also the only service with a <Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
@@ -653,7 +653,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need a mobile app?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/app" className="text-primary hover:underline">SafeOrStolen</Link> is the only stolen item verification service with a mobile app. No other competitor offers this.</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/app" className="text-primary hover:underline">SafeOrStolen</Link> is SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. No other competitor offers this.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">UK-based buyer?</h3>

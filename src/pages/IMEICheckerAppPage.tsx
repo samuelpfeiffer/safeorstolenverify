@@ -47,12 +47,12 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is there an app to check IMEI for stolen phones?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes! SafeOrStolen is the only comprehensive IMEI checker with a mobile app. You can scan IMEI barcodes, check against 100+ databases, and get results in 3 seconds. The app works on both iOS and Android." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. You can scan IMEI barcodes, check against 100+ databases, and get results in 3 seconds. The app works on both iOS and Android." }
  },
  {
  "@type": "Question",
  "name": "Does CheckMEND have a mobile app?",
- "acceptedAnswer": { "@type": "Answer", "text": "No, CheckMEND does not have a mobile app. CheckMEND is website-only. SafeOrStolen is the only stolen phone verification service with a full mobile app for on-the-go IMEI checking." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No, CheckMEND does not have a mobile app. CheckMEND is website-only. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
  },
  {
  "@type": "Question",
@@ -166,7 +166,7 @@ const IMEICheckerAppPage = () => {
  {/* Competitor Comparison */}
  <section className="py-16 px-4 bg-muted/30">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Why We're the Only IMEI App</h2>
+ <h2 className="text-3xl font-bold text-center mb-12">Why SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place </h2>
  
  <div className="overflow-x-auto">
  <table className="w-full">

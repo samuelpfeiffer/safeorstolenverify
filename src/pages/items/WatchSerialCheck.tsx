@@ -4,7 +4,7 @@ const WatchSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Watch is Stolen - Rolex, Omega, Tag Heuer | SafeOrStolen"
-      metaDescription="Verify luxury watches aren't stolen before buying. Free serial number check for Rolex, Omega, Tag Heuer, Breitling. Search 50M+ stolen item database instantly."
+      metaDescription="Verify luxury watches aren't stolen before buying. Free serial number check for Rolex, Omega, Tag Heuer, Breitling. Search 100+ stolen item database instantly."
       h1="Check if Watch is Stolen - Luxury Watch Verification"
       keywords={[
         'check if rolex is stolen',
@@ -26,7 +26,7 @@ const WatchSerialCheck = () => {
       stats={[
         { value: "$1B+", label: "Watch Theft Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "50M+", label: "Records Searched" },
+        { value: "100+", label: "Records Searched" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Watch Serial Number Verification?"

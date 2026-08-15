@@ -207,7 +207,7 @@ export const WhatYouCanVerify = () => {
  <div className="flex flex-wrap justify-center gap-4 text-sm">
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
- <span>50M+ Database Records</span>
+ <span>100+ Database Records</span>
  </div>
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />

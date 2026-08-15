@@ -35,7 +35,7 @@ const staticArticles = [
   {
     title: 'The Only Mobile App for Stolen Item Verification (2026)',
     slug: 'checkmend-has-no-app',
-    excerpt: 'CheckMEND has NO mobile app. IMEI.info has NO mobile app. SafeOrStolen is the ONLY service with iOS and Android apps for on-the-spot verification.',
+    excerpt: 'CheckMEND has NO mobile app. IMEI.info has NO mobile app. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
     category: 'Mobile App',
     readTime: '6 min',
     keywords: ['stolen item app', 'checkmend alternative', 'mobile verification']

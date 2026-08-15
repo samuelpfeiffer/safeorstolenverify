@@ -159,7 +159,7 @@ export const ItemLandingPageTemplate = ({
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>

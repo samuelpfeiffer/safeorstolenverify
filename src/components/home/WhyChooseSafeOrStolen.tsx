@@ -72,7 +72,7 @@ export const WhyChooseSafeOrStolen = () => {
             Why SafeOrStolen is Better Than CheckMEND, IMEI.info, Swappa
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're the only stolen verification app with barcode scanning. CheckMEND has NO app. Better than CheckMEND in every way - faster, cheaper, and mobile-first with instant stolen verification.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND has NO app. Better than CheckMEND in every way - faster, cheaper, and mobile-first with instant stolen verification.
           </p>
         </div>
 

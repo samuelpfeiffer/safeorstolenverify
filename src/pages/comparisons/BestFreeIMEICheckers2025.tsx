@@ -20,7 +20,7 @@ const BestFreeIMEICheckers2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best overall free IMEI checker with 50M+ stolen item database"
+          "description": "Best overall free IMEI checker with 100+ stolen item database"
         }
       },
       {
@@ -45,13 +45,13 @@ const BestFreeIMEICheckers2025 = () => {
       description: 'The most comprehensive free IMEI checker with law enforcement data',
       freeChecks: '2 free (no card required)',
       blacklistCheck: 'Included free',
-      database: '50M+ stolen items',
+      database: '100+ stolen items',
       mobileApp: true,
       itemTypes: 'Phones, cars, bikes, tools, etc.',
       speed: 'Instant',
       pros: [
         'Free stolen/blacklist check included',
-        '50M+ database from law enforcement & insurers',
+        '100+ database from law enforcement & insurers',
         'Checks more than just phones (VIN, serial numbers)',
         'Mobile apps for iOS and Android',
         'AI-powered risk analysis'

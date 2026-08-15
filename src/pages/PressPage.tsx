@@ -229,8 +229,7 @@ const PressPage = () => {
  
  <p className="text-lg text-muted-foreground">
  Founded to protect buyers on Facebook Marketplace, OfferUp, Craigslist, and other 
- secondhand platforms, SafeOrStolen is the only stolen item verification service with 
- a mobile app for on-the-go verification.
+ secondhand platforms, Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </p>
  </div>
  </div>

@@ -240,7 +240,7 @@ const Compare = () => {
  <CardContent>
  <p className="text-muted-foreground">
  CheckMEND, IMEI.info, Swappa, and Carfax have NO mobile apps. 
- SafeOrStolen is the only one with barcode scanning and offline mode.
+ Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </p>
  </CardContent>
  </Card>

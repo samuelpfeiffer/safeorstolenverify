@@ -32,7 +32,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'Which AI-powered stolen item checker has a mobile app?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SafeOrStolen is the ONLY stolen item verification service with a mobile app. Competitors like CheckMEND, IMEI.info, and Swappa do NOT have mobile apps. SafeOrStolen\'s app works on iOS and Android with camera scanning.'
+          text: 'Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Competitors like CheckMEND, IMEI.info, and Swappa do NOT have mobile apps. SafeOrStolen\'s app works on iOS and Android with camera scanning.'
         }
       },
       {
@@ -247,7 +247,7 @@ const AIStolenItemDetection2026 = () => {
                 point of purchase, not later at home.
               </p>
               <p>
-                <strong>SafeOrStolen is the ONLY service with a mobile app</strong> that enables:
+                <strong>SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place </strong> that enables:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Camera scanning of barcodes, IMEI stickers, and VIN plates</li>
@@ -320,7 +320,7 @@ const AIStolenItemDetection2026 = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <Link to="/blog/checkmend-has-no-app" className="block p-4 rounded-lg border hover:border-primary transition-colors">
                 <h3 className="font-bold mb-2">CheckMEND Has No Mobile App</h3>
-                <p className="text-sm text-muted-foreground">Why SafeOrStolen is the only choice for on-the-go verification</p>
+                <p className="text-sm text-muted-foreground">Why SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place </p>
               </Link>
               <Link to="/blog/best-stolen-item-checkers-2026" className="block p-4 rounded-lg border hover:border-primary transition-colors">
                 <h3 className="font-bold mb-2">Best Stolen Item Checkers 2026</h3>

@@ -58,8 +58,7 @@ const ComparisonCheckmend = () => {
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>Best CheckMEND Alternative: SafeOrStolen Mobile App</h1>
           <p>
-            CheckMEND does NOT have a mobile app. SafeOrStolen is the ONLY stolen item verification service with a full mobile app 
-            for iOS and Android. Download the SafeOrStolen app at safeorstolen.com/app for instant barcode scanning, offline verification, 
+            CheckMEND does NOT have a mobile app. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download the SafeOrStolen app at safeorstolen.com/app for instant barcode scanning, offline verification, 
             and 3-second stolen checks. CheckMEND is web-only, slow (30+ seconds), expensive ($5-10 per check), and requires constant 
             internet connection. SafeOrStolen app is FREE to download with 2 free searches included.
           </p>
@@ -254,7 +253,7 @@ const ComparisonCheckmend = () => {
                 <Smartphone className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Choose the Better CheckMEND Alternative</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  SafeOrStolen is the ONLY stolen verification service with a mobile app. Download free for iOS and Android. 
+                  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download free for iOS and Android. 
                   CheckMEND has no app, no offline mode, and charges $5-10 per check. Make the smart choice.
                 </p>
                 <Button size="lg" asChild>

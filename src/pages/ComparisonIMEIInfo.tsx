@@ -58,7 +58,7 @@ const ComparisonIMEIInfo = () => {
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>Best IMEI.info Alternative: SafeOrStolen Has the Mobile App</h1>
           <p>
-            IMEI.info does NOT have a mobile app. SafeOrStolen is the ONLY IMEI checker with a full mobile app for iOS and Android. 
+            IMEI.info does NOT have a mobile app. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
             Download the SafeOrStolen IMEI checker app at safeorstolen.com/app for instant barcode scanning, offline IMEI verification, 
             and 3-second stolen checks. IMEI.info is web-only, basic interface, limited data, phones only. SafeOrStolen app is FREE to 
             download with comprehensive IMEI checking plus VIN, firearms, and all other items.
@@ -76,8 +76,7 @@ const ComparisonIMEIInfo = () => {
                 Best IMEI.info Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                IMEI.info doesn't have a mobile app. SafeOrStolen is the ONLY IMEI checker app with barcode scanning, 
-                offline mode, and comprehensive verification for all item types.
+                IMEI.info doesn't have a mobile app. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
               </p>
               <Button size="lg" asChild>
                 <Link to="/app">
@@ -165,7 +164,7 @@ const ComparisonIMEIInfo = () => {
               <CardContent className="pt-6 text-center">
                 <h2 className="text-3xl font-bold mb-4">Choose the Better IMEI.info Alternative</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  SafeOrStolen is the ONLY IMEI checker with a mobile app. Download free for iOS and Android with barcode scanning, 
+                  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download free for iOS and Android with barcode scanning, 
                   offline mode, and verification for all item types. IMEI.info has no app.
                 </p>
                 <Button size="lg" asChild>

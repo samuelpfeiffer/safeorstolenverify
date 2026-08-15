@@ -44,7 +44,7 @@ const MercariStolenCheck = () => {
       howItWorksSteps={[
         "Ask seller for IMEI/serial number before purchasing",
         "Enter the identifier into SafeOrStolen",
-        "Get instant results from 50M+ record database",
+        "Get instant results from 100+ databases",
         "Buy with confidence or walk away if stolen"
       ]}
       faqs={[

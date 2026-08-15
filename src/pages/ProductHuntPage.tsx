@@ -145,8 +145,7 @@ const ProductHuntPage = () => {
               The Competition Has No Mobile App
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              SafeOrStolen is the only solution with a mobile app, barcode scanning, 
-              and universal coverage. Here's how we compare:
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Here's how we compare:
             </p>
             
             <div className="max-w-4xl mx-auto overflow-x-auto">

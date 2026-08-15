@@ -50,12 +50,12 @@ const NICBVINCheckAlternative = () => {
         instantResults: true,
         lawEnforcement: true,
         freeTier: '2 free checks',
-        database: '50M+ items',
+        database: '100+ items',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
         'Checks more than just vehicles',
-        '50M+ database from law enforcement & insurers',
+        '100+ database from law enforcement & insurers',
         'Mobile app for iOS and Android',
         'AI-powered risk analysis',
         'Instant results'
@@ -212,7 +212,7 @@ const NICBVINCheckAlternative = () => {
                 <CardContent className="space-y-6">
                   <p className="text-lg">
                     SafeOrStolen offers everything NICB VINCheck does, plus support for phones, bikes, 
-                    tools, and any item with a serial number. Access 50M+ stolen items from law enforcement 
+                    tools, and any item with a serial number. Access 100+ stolen items from law enforcement 
                     and insurance databases.
                   </p>
                   
@@ -222,7 +222,7 @@ const NICBVINCheckAlternative = () => {
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>50M+ items compared to NICB's insurance-only data</span>
+                          <span>100+ items compared to NICB's insurance-only data</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
@@ -332,7 +332,7 @@ const NICBVINCheckAlternative = () => {
                     </tr>
                     <tr className="bg-muted/50">
                       <td className="p-4 border-b border-border font-medium">Database Size</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">50M+ items</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">100+ items</td>
                       <td className="p-4 text-center border-b border-border">Insurance only</td>
                       <td className="p-4 text-center border-b border-border">Dealer records</td>
                     </tr>
@@ -395,7 +395,7 @@ const NICBVINCheckAlternative = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Why choose SafeOrStolen over NICB?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen has a larger database (50M+ items), supports more item types 
+                      SafeOrStolen has a larger database (100+ items), supports more item types 
                       (phones, bikes, tools), offers a mobile app, and provides instant results. 
                       NICB only checks vehicles and can be slow.
                     </p>

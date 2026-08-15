@@ -22,7 +22,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "item": {
             "@type": "Product",
             "name": "SafeOrStolen",
-            "description": "Free stolen item verification platform with 50M+ database",
+            "description": "Free stolen item verification platform with 100+ database",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
           }
         },
@@ -42,7 +42,7 @@ const SafeOrStolenVsIMEIInfo = () => {
 
   const comparisonData = [
     { feature: 'Pricing', safeOrStolen: '$10/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
-    { feature: 'Stolen Database Size', safeOrStolen: '50M+ items', imeiInfo: 'Not disclosed', winner: 'sos' },
+    { feature: 'Stolen Database Size', safeOrStolen: '100+ items', imeiInfo: 'Not disclosed', winner: 'sos' },
     { feature: 'Item Types Supported', safeOrStolen: 'Phones, cars, bikes, tools, etc.', imeiInfo: 'Phones only', winner: 'sos' },
     { feature: 'Blacklist Check', safeOrStolen: 'Included in $10/mo', imeiInfo: '$10 per check', winner: 'sos' },
     { feature: 'VIN Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
@@ -185,7 +185,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          50M+ stolen item database from law enforcement & insurers
+                          100+ stolen item database from law enforcement & insurers
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -385,7 +385,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                     <h3 className="font-semibold mb-2">Which service has more accurate data?</h3>
                     <p className="text-muted-foreground">
                       SafeOrStolen partners directly with law enforcement agencies and insurance companies, 
-                      giving access to 50M+ verified stolen items. IMEI.info doesn't disclose their data sources or database size.
+                      giving access to 100+ verified stolen items. IMEI.info doesn't disclose their data sources or database size.
                     </p>
                   </CardContent>
                 </Card>

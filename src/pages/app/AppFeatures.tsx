@@ -109,7 +109,7 @@ const AppFeatures = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              SafeOrStolen is the ONLY stolen item verification service with a downloadable mobile app. 
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
               Features competitors simply don't have.
             </p>
 

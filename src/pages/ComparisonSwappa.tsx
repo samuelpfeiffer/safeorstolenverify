@@ -47,7 +47,7 @@ const ComparisonSwappa = () => {
  {
  "@type": "Question",
  "name": "Does Swappa have a mobile app for verification?",
- "acceptedAnswer": { "@type": "Answer", "text": "No. Swappa does not offer a standalone mobile app for stolen item verification. SafeOrStolen is the only verification service with a dedicated mobile app available on iOS and Android, featuring barcode scanning, offline mode, and instant verification." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No. Swappa does not offer a standalone mobile app for stolen item verification. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
  },
  {
  "@type": "Question",
@@ -118,7 +118,7 @@ const ComparisonSwappa = () => {
  </ul>
  <h2>Frequently Asked Questions</h2>
  <h3>Does Swappa have a mobile app for verification?</h3>
- <p>No. Swappa does not offer a standalone mobile app for stolen item verification. SafeOrStolen is the only verification service with a dedicated mobile app.</p>
+ <p>No. Swappa does not offer a standalone mobile app for stolen item verification. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
  <h3>Can Swappa check if a car or bike is stolen?</h3>
  <p>No. Swappa only handles phones and tech devices. SafeOrStolen verifies all item types including vehicles, firearms, bicycles, and more.</p>
  <h3>Is SafeOrStolen free to use?</h3>
@@ -432,7 +432,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="app">
  <AccordionTrigger>Does Swappa have a mobile app for verification?</AccordionTrigger>
  <AccordionContent>
- No. Swappa does not offer a standalone mobile app for stolen item verification. SafeOrStolen is the only verification service with a dedicated mobile app available on iOS and Android, featuring barcode scanning, offline mode, and instant verification against 100+ databases.
+ No. Swappa does not offer a standalone mobile app for stolen item verification. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="car">

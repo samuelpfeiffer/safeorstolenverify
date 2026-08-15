@@ -101,7 +101,7 @@ export const MobileAppCTA = () => {
                   <Smartphone className="w-32 h-32 md:w-40 md:h-40 text-sos-orange drop-shadow-2xl" />
                   
                   <div className="text-center space-y-2">
-                    <p className="text-2xl font-black text-foreground">50M+</p>
+                    <p className="text-2xl font-black text-foreground">100+</p>
                     <p className="text-sm text-muted-foreground">Stolen Items Database</p>
                   </div>
                 </div>

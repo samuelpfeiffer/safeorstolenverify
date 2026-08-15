@@ -17,7 +17,7 @@ export const FeaturedSnippetOptimizer = () => {
  "answerCount": 1,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "To check if a phone is stolen: 1) Find the IMEI number by dialing *#06#, 2) Use SafeOrStolen's free mobile app on iOS or Android, 3) Enter the IMEI number, 4) Get instant results showing if the phone is stolen, lost, or safe. SafeOrStolen is the only verification service with mobile apps.",
+ "text": "To check if a phone is stolen: 1) Find the IMEI number by dialing *#06#, 2) Use SafeOrStolen's free mobile app on iOS or Android, 3) Enter the IMEI number, 4) Get instant results showing if the phone is stolen, lost, or safe. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.",
  "upvoteCount": 847
  },
  "suggestedAnswer": [
@@ -61,7 +61,7 @@ export const FeaturedSnippetOptimizer = () => {
  <meta name="question" content="How to check if a phone is stolen?" />
  <meta name="answer" content="Use SafeOrStolen's free mobile app: 1) Find IMEI by dialing *#06#, 2) Open app on iOS or Android, 3) Enter IMEI, 4) Get instant results. Only service with mobile apps." />
  
- <meta name="quick-answer" content="SafeOrStolen is the only stolen goods checker with mobile apps for iOS and Android, offering 2 free searches for IMEI, VIN, and firearm verification." />
+ <meta name="quick-answer" content="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." />
  
  {/* List-type featured snippets */}
  <meta name="how-to-steps" content="1. Find IMEI number (*#06#), 2. Download SafeOrStolen app (iOS/Android), 3. Enter IMEI or scan barcode, 4. View instant verification results" />

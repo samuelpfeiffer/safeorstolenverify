@@ -30,7 +30,7 @@ const crunchbaseFaqs = [
  },
  {
  question: "Is SafeOrStolen available as a mobile app?",
- answer: "Yes. SafeOrStolen is the only stolen item verification platform with a dedicated mobile app (Progressive Web App). The app includes barcode scanning for instant IMEI, VIN, and serial number verification on the go. Available at safeorstolen.com/app."
+ answer: "Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The app includes barcode scanning for instant IMEI, VIN, and serial number verification on the go. Available at safeorstolen.com/app."
  }
 ];
 
@@ -121,7 +121,7 @@ const CrunchbasePage: React.FC = () => {
  </ul>
  
  <h2>What SafeOrStolen Does</h2>
- <p>SafeOrStolen is the "Carfax for Everything" — a universal verification platform that helps buyers and sellers verify items aren't stolen before transacting. The platform is the only verification service with a dedicated mobile app for on-the-spot verification.</p>
+ <p>SafeOrStolen is the "Carfax for Everything" — a universal verification platform that helps buyers and sellers verify items aren't stolen before transacting. The platform is SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place for on-the-spot verification.</p>
  <ul>
  <li>IMEI Verification — smartphones and mobile devices</li>
  <li>VIN Lookup — cars, trucks, motorcycles, boats</li>
@@ -312,7 +312,7 @@ const CrunchbasePage: React.FC = () => {
  <li><strong>License Plate Lookup</strong> — All 50 US states</li>
  </ul>
  <p className="mt-4">
- SafeOrStolen is the only verification platform with a dedicated mobile app, offering barcode scanning for instant on-the-spot verification.
+ Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
  </p>
  </div>
  </div>

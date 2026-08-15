@@ -77,7 +77,7 @@ const faqSchema = {
  "name": "Can any other service analyze marketplace listing URLs for stolen items?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "No. SafeOrStolen is the only stolen item verification service that can analyze marketplace listing URLs directly. Competitors like CheckMEND, IMEI.info, Swappa, and Carfax all require manual entry of serial numbers or identifiers. SafeOrStolen's AI-powered URL Analyzer eliminates this friction."
+ "text": "No. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Competitors like CheckMEND, IMEI.info, Swappa, and Carfax all require manual entry of serial numbers or identifiers. SafeOrStolen's AI-powered URL Analyzer eliminates this friction."
  }
  },
  {

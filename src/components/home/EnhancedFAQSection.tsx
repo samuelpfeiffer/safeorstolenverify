@@ -24,7 +24,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "Do I need to download an app?",
- answer: "Yes! SafeOrStolen is the ONLY mobile app for stolen goods verification. Download FREE on iOS (App Store) and Android (Google Play). Our competitors (CheckMend, IMEIinfo) only have websites—no mobile apps!"
+ answer: "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE on iOS (App Store) and Android (Google Play). Our competitors (CheckMend, IMEIinfo) only have websites—no mobile apps!"
  }
  ]
  },

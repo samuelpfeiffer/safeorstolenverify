@@ -132,7 +132,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Can I check a Facebook Marketplace listing for stolen items?',
- a: 'Yes. SafeOrStolen is the only verification service that lets you paste a marketplace listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against 100+ databases. Try it at safeorstolen.com/marketplace-url-checker.',
+ a: 'Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against 100+ databases. Try it at safeorstolen.com/marketplace-url-checker.',
  },
  {
  q: 'Is SafeOrStolen free?',
