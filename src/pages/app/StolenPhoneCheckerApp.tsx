@@ -14,17 +14,16 @@ const StolenPhoneCheckerApp = () => {
  canonical="/app/stolen-phone-checker"
  structuredData={{
  "@context": "https://schema.org",
- "@type": "MobileApplication",
+ "@type": "WebApplication",
  "name": "SafeOrStolen - Stolen Phone Checker App",
  "applicationCategory": "SecurityApplication",
- "operatingSystem": ["Android", "iOS"],
+          "browserRequirements": "Requires a modern web browser",
  "offers": {
  "@type": "Offer",
  "price": "0",
  "priceCurrency": "USD"
  },
  "description": "Free app to check if any phone is stolen before buying. Verify IMEI instantly. Protects both buyers AND sellers.",
- "downloadUrl": "https://safeorstolen.com/app",
  "featureList": [
  "IMEI stolen check in 3 seconds",
  "Works for iPhone, Samsung, Google Pixel, OnePlus",

@@ -13,17 +13,16 @@ const BarcodeScanner = () => {
         canonical="/app/barcode-scanner"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "MobileApplication",
+          "@type": "WebApplication",
           "name": "SafeOrStolen - Barcode Scanner Stolen Checker",
           "applicationCategory": "SecurityApplication",
-          "operatingSystem": ["Android", "iOS"],
+          "browserRequirements": "Requires a modern web browser",
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
           },
           "description": "Free barcode scanner app to check if items are stolen. Point camera at any barcode for instant verification.",
-          "downloadUrl": "https://safeorstolen.com/app",
           "featureList": [
             "Instant barcode scanning",
             "IMEI barcode recognition",

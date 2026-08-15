@@ -14,17 +14,16 @@ const VinCheckerApp = () => {
  canonical="/app/vin-checker"
  structuredData={{
  "@context": "https://schema.org",
- "@type": "MobileApplication",
+ "@type": "WebApplication",
  "name": "SafeOrStolen - VIN Checker App",
  "applicationCategory": "SecurityApplication",
- "operatingSystem": ["Android", "iOS"],
+          "browserRequirements": "Requires a modern web browser",
  "offers": {
  "@type": "Offer",
  "price": "0",
  "priceCurrency": "USD"
  },
  "description": "Free app to check if any vehicle is stolen before buying. Verify VIN instantly. Protects both buyers AND sellers.",
- "downloadUrl": "https://safeorstolen.com/app",
  "featureList": [
  "VIN stolen check in 3 seconds",
  "Works for cars, trucks, motorcycles, boats",
