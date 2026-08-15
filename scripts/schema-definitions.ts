@@ -159,27 +159,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
     path: '/app',
     title: 'Mobile App - Download SafeOrStolen | iOS & Android PWA',
     schemas: [
-      {
-        "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "SafeOrStolen Mobile App",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": ["iOS", "Android", "Web Browser"],
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "featureList": [
-          "Barcode scanning",
-          "Offline verification mode",
-          "3-second results",
-          "IMEI, VIN, serial verification",
-          "License plate lookup"
-        ],
-        "screenshot": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
-      },
-      {
+            {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "SafeOrStolen PWA",
@@ -233,27 +213,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
     path: '/app',
     title: 'Download App - SafeOrStolen Mobile PWA',
     schemas: [
-      {
-        "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "SafeOrStolen Mobile App",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": ["iOS", "Android", "Web Browser"],
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "featureList": [
-          "Barcode scanning",
-          "Offline verification mode",
-          "3-second results",
-          "IMEI, VIN, serial verification",
-          "License plate lookup"
-        ],
-        "screenshot": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
-      },
-      {
+            {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "SafeOrStolen PWA",
