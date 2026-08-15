@@ -20,7 +20,7 @@ const MobileAppPage = () => {
  { question: "Can I use SafeOrStolen without internet?", answer: "Yes. SafeOrStolen features offline mode that caches your recent verifications for access anywhere. Perfect for marketplace meetups in areas with poor signal." },
  { question: "How do I install SafeOrStolen on my phone?", answer: "iPhone: Open Safari, visit safeorstolen.com, tap Share → Add to Home Screen. Android: Open Chrome, tap Menu → Install App. Takes 10 seconds." },
  { question: "What can I verify with the SafeOrStolen app?", answer: "Verify phones (IMEI), vehicles (VIN), license plates, electronics, firearms, bikes, boats, and any item with a serial number against 100+ stolen databases." },
- { question: "Is SafeOrStolen better than CheckMEND?", answer: "SafeOrStolen is the only service with a mobile app. CheckMEND is web-only and UK-focused. We're US-optimized with instant barcode scanning for marketplace meetups." },
+ { question: "How does SafeOrStolen compare to single-category checkers?", answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." },
  ];
 
  const howToSteps = [
@@ -34,24 +34,6 @@ const MobileAppPage = () => {
  { name: "Mobile App", url: "/mobile-app" },
  ];
 
- const appSchema = {
- "@context": "https://schema.org",
- "@type": "MobileApplication",
- "name": "SafeOrStolen - Stolen Item Verification App",
- "operatingSystem": "iOS, Android, Web",
- "applicationCategory": "UtilitiesApplication",
- "offers": {
- "@type": "Offer",
- "price": "0",
- "priceCurrency": "USD",
- "description": "Free download, 2 free checks, then $0.99/check or $10/month unlimited"
- },
- "description": "The only mobile app for verifying stolen phones, vehicles, electronics and firearms. Instant barcode scanning, offline mode, 100+ databases checked in 3 seconds.",
- "downloadUrl": "https://safeorstolen.com/mobile-app",
- "installUrl": "https://safeorstolen.com/mobile-app",
- "screenshot": "https://safeorstolen.com/og-image.png",
- "featureList": "Barcode Scanner, Offline Mode, IMEI Check, VIN Lookup, License Plate Search, Firearm Verification, 100+ Databases"
- };
 
  const features = [
  { icon: QrCode, title: "Barcode Scanner", desc: "Scan IMEI, VIN, or serial numbers instantly—no typing required" },
@@ -74,14 +56,14 @@ const MobileAppPage = () => {
  return (
  <>
  <Helmet>
- <title>SafeOrStolen Mobile App - Free Download | Stolen Item Checker</title>
- <meta name="description" content="Download the only mobile app for verifying stolen phones, vehicles & electronics. Free install, barcode scanner, offline mode. 100+ databases checked in 3 seconds." />
+ <title>SafeOrStolen on Mobile | Stolen Item Checker</title>
+ <meta name="description" content="Use SafeOrStolen on your phone to verify stolen phones, vehicles & electronics. Free install from your browser, barcode scanner, offline mode. 100+ databases in 3 seconds." />
  <meta name="keywords" content="SafeOrStolen app, stolen item checker app, IMEI checker app, VIN lookup app, stolen phone app, download SafeOrStolen" />
  <link rel="canonical" href="https://safeorstolen.com/mobile-app" />
  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
  
  <meta property="og:title" content="SafeOrStolen Mobile App - Free Download" />
- <meta property="og:description" content="The only mobile app for stolen item verification. Barcode scanner, offline mode, 100+ databases." />
+ <meta property="og:description" content="SafeOrStolen on mobile: barcode scanner, offline mode, 100+ databases." />
  <meta property="og:url" content="https://safeorstolen.com/mobile-app" />
  <meta property="og:type" content="website" />
  
@@ -89,7 +71,6 @@ const MobileAppPage = () => {
  <meta name="ai:service_type" content="PWA stolen item checker with barcode scanner and offline mode" />
  <meta name="ai:pricing" content="Free download, 2 free checks, $0.99/check or $10/month unlimited" />
  
- <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
  </Helmet>
  
  <FAQSchema faqs={faqs} />
@@ -104,7 +85,7 @@ const MobileAppPage = () => {
  <noscript>
  <article>
  <h1>SafeOrStolen Mobile App - Free Download</h1>
- <p>Download the only mobile app for verifying stolen phones, vehicles, electronics, and firearms. SafeOrStolen features instant barcode scanning, offline mode, and checks 100+ databases in 3 seconds. Free to install on iPhone, Android, and any device.</p>
+ <p>Use SafeOrStolen on your phone to verify stolen phones, vehicles, electronics, and firearms. SafeOrStolen features instant barcode scanning, offline mode, and checks 100+ databases in 3 seconds. Free to install from any mobile browser.</p>
  <h2>App Features</h2>
  <ul>
  <li>Barcode Scanner - Scan IMEI, VIN, or serial numbers instantly</li>
@@ -127,7 +108,7 @@ const MobileAppPage = () => {
  <div className="max-w-6xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
  <Smartphone className="h-4 w-4" />
- <span>The Only Stolen Item Verification App</span>
+ <span>Stolen Item Verification On Your Phone</span>
  </div>
  
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
@@ -135,7 +116,7 @@ const MobileAppPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify phones, vehicles, electronics, and firearms in 3 seconds. The only mobile app with barcode scanning and offline mode for marketplace meetups.
+ Verify phones, vehicles, electronics, and firearms in 3 seconds, with barcode scanning and offline mode for marketplace meetups.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -160,7 +141,7 @@ const MobileAppPage = () => {
  {/* Features Grid */}
  <section className="container mx-auto px-4 py-16">
  <div className="max-w-6xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Why SafeOrStolen is #1</h2>
+ <h2 className="text-3xl font-bold text-center mb-12">What You Get</h2>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
  {features.map((feature, idx) => (
  <Card key={idx} className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
