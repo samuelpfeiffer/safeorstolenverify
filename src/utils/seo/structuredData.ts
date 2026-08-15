@@ -173,7 +173,7 @@ export const createWebsiteSchema = () => ({
  "@context": "https://schema.org",
  "@type": "WebSite",
  "name": "SafeOrStolen",
- "alternateName": ["Safe Or Stolen", "Safe or Stolen", "World's Leading Verification Platform"],
+ "alternateName": ["Safe Or Stolen", "Safe or Stolen"],
  "description": SITE_CONFIG.description,
  "url": SITE_CONFIG.url,
  "inLanguage": ["en", "es", "fr", "de", "ja", "pt", "it", "zh"],

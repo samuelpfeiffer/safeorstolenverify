@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Users, Award, Lock, CheckCircle, Building, Trophy, Calendar, Smartphone, Rocket } from 'lucide-react';
+import { Shield, Users, Award, Lock, CheckCircle, Building } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card } from '@/components/ui/card';
