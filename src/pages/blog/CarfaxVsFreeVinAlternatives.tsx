@@ -17,7 +17,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "Is there a free alternative to Carfax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SafeOrStolen offers free VIN theft verification checks. While Carfax charges $44.99 for vehicle history, SafeOrStolen provides free stolen vehicle checks using NICB, law enforcement, and NHTSA vehicle records."
+          "text": "Yes, SafeOrStolen offers free VIN theft verification checks. While Carfax charges $44.99 for vehicle history, SafeOrStolen provides free stolen vehicle checks using our verification databases and NHTSA vehicle records."
         }
       },
       {
@@ -33,7 +33,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "How can I check if a car is stolen for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use SafeOrStolen.com to run a free VIN check against NICB (National Insurance Crime Bureau), law enforcement stolen vehicle databases, and NHTSA vehicle records. Results are instant and free for 2 searches."
+          "text": "Use SafeOrStolen.com to run a free VIN check against our verification databases and NHTSA vehicle records. Results are instant and free for 2 searches."
         }
       }
     ]
@@ -65,7 +65,7 @@ const CarfaxVsFreeVinAlternatives = () => {
       name: "SafeOrStolen",
       price: "Free (2 checks) / $10/mo",
       focus: "Theft Verification",
-      pros: ["Free theft checks", "NICB + Law enforcement databases", "Instant results", "Mobile app"],
+      pros: ["Free theft checks", "Our verification databases", "Instant results", "Works on mobile"],
       cons: ["No accident history", "No service records"],
       best: "Checking if a car is stolen before purchase"
     },
@@ -74,23 +74,23 @@ const CarfaxVsFreeVinAlternatives = () => {
       price: "$44.99 per report",
       focus: "Complete Vehicle History",
       pros: ["Accident history", "Service records", "Ownership history", "Odometer readings"],
-      cons: ["Expensive", "No real-time theft data", "No law enforcement database access"],
+      cons: ["—"],
       best: "Full vehicle history for serious buyers"
     },
     {
       name: "AutoCheck",
       price: "$24.99 per report",
       focus: "Vehicle History",
-      pros: ["Cheaper than Carfax", "Auction data", "Score system"],
-      cons: ["Less comprehensive than Carfax", "No theft verification"],
+      pros: ["—"],
+      cons: ["—"],
       best: "Budget-friendly alternative to Carfax"
     },
     {
       name: "NICB VINCheck",
       price: "Free",
       focus: "Theft/Total Loss Only",
-      pros: ["100% free", "Official database", "Insurance claims data"],
-      cons: ["Limited to theft/salvage", "No detailed history", "Manual process"],
+      pros: ["—"],
+      cons: ["—"],
       best: "Quick free theft check (5 per day limit)"
     }
   ];
@@ -156,10 +156,10 @@ const CarfaxVsFreeVinAlternatives = () => {
           <article className="prose prose-lg dark:prose-invert max-w-none">
             <h2>The Problem with Carfax for Theft Checks</h2>
             <p>
-              Carfax is excellent for vehicle history - accidents, service records, and ownership. But it has a critical gap: <strong>Carfax does NOT have real-time access to law enforcement stolen vehicle databases.</strong>
+              Carfax is excellent for vehicle history - accidents, service records, and ownership. But theft verification is a separate need best served by a dedicated tool.
             </p>
             <p>
-              This means a car could be reported stolen last week, and Carfax wouldn't show it. Their data comes from NHTSA vehicle records and insurance companies, which can lag weeks or months behind actual theft reports.
+              A car could be reported stolen last week and not yet reflect in a general vehicle history report, since data sources can lag behind actual theft reports.
             </p>
 
             <div className="my-8 p-6 bg-destructive/10 rounded-lg border border-destructive/20">
@@ -235,42 +235,41 @@ const CarfaxVsFreeVinAlternatives = () => {
             <p>Here's the smart approach when buying a used car:</p>
             <ol>
               <li>
-                <strong>First: Free theft check with SafeOrStolen</strong> - Verify the car isn't stolen using NICB and community theft registries. Takes 3 seconds, costs nothing.
+                <strong>First: Free theft check with SafeOrStolen</strong> - Verify the car isn't stolen using our verification databases and community theft registries. Takes 3 seconds, costs nothing.
               </li>
               <li>
                 <strong>If clear: Carfax for full history</strong> - Once you know the car isn't stolen, pay $44.99 for complete accident, service, and ownership history.
               </li>
               <li>
-                <strong>Use NICB VINCheck as backup</strong> - The official free tool from the National Insurance Crime Bureau (5 checks per day).
+                <strong>Use other free theft-check tools as backup</strong> - Additional free resources are available (usage limits may apply).
               </li>
             </ol>
 
             <h2>Why SafeOrStolen for Theft Verification?</h2>
             <p>
-              Unlike Carfax, SafeOrStolen specializes in theft verification with real-time access to:
+              SafeOrStolen specializes in theft verification with real-time access to:
             </p>
             <ul>
-              <li>NICB (National Insurance Crime Bureau) - Insurance industry theft database</li>
-              <li>Stolen property reports from all 50 states from all 50 states</li>
+              <li>Stolen property reports from all 50 states</li>
               <li>NHTSA vehicle records for salvage/rebuilt status</li>
-              <li>Insurance total loss databases</li>
+              <li>Our verification databases</li>
             </ul>
 
             <h2>Frequently Asked Questions</h2>
             
             <h3>Is there a 100% free Carfax alternative?</h3>
             <p>
-              For theft verification, yes - SafeOrStolen offers 2 free VIN checks. For complete vehicle history (accidents, service), no truly free alternative matches Carfax's data. NICB VINCheck is free but only shows theft/total loss status.
+              For theft verification, yes - SafeOrStolen offers 2 free VIN checks. For complete vehicle history (accidents, service), no truly free alternative matches Carfax's data.
             </p>
 
             <h3>Can I get a free Carfax report?</h3>
             <p>
-              Carfax occasionally offers free reports through dealers or promotions. However, these are full vehicle history reports - they don't include real-time law enforcement theft data that SafeOrStolen provides.
+              Carfax occasionally offers free reports through dealers or promotions. However, these are full vehicle history reports and are not focused on real-time theft verification the way SafeOrStolen is.
             </p>
 
             <h3>What's the best free VIN check for stolen cars?</h3>
             <p>
-              SafeOrStolen is the best free option for theft verification because it combines multiple databases (NICB + law enforcement + DMV) into one instant check. The official NICB VINCheck is also free but limited to 5 checks per day.
+              SafeOrStolen is a free option for theft verification because it combines multiple databases into one instant check.
             </p>
           </article>
 
