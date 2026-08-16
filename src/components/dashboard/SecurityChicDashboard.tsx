@@ -51,7 +51,7 @@ export const SecurityChicDashboard: React.FC = () => {
  setResult({
  score: Math.floor(Math.random() * 30) + 70,
  status: 'clean',
- sources: ['Stolen property reports from all 50 states Database', 'carrier and theft databases IMEI Registry', 'Insurance Claims DB', 'State Police Records'],
+ sources: ['Stolen Property Registry', 'Carrier & Theft Databases', 'Vehicle Theft Records', 'Community Theft Registries'],
  serial: inputValue,
  itemType: getItemTypeDisplayName(type),
  timestamp: new Date().toISOString(),
@@ -92,7 +92,7 @@ export const SecurityChicDashboard: React.FC = () => {
  </h1>
 
  <p className="text-lg text-muted-foreground max-w-lg mx-auto">
- Buyers & sellers — verify IMEI, VIN, or serial numbers against 100+ police & insurance databases before any transaction. Results in 3 seconds.
+ Buyers & sellers — verify IMEI, VIN, or serial numbers against our verification databases before any transaction. Results in 3 seconds.
  </p>
  </motion.div>
 
@@ -267,7 +267,7 @@ export const SecurityChicDashboard: React.FC = () => {
  <p className="text-[11px] text-muted-foreground text-center pt-2">
  Verified by SafeOrStolen.{' '}
  <a href="/pricing" className="text-primary hover:underline">
- Get the official police-certified report here
+ Get the official verification report here
  </a>.
  </p>
  </div>

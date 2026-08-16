@@ -17,28 +17,28 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  return {
  title: 'What is an IMEI Checker?',
  description: 'An IMEI checker (International Mobile Equipment Identity verifier) is a database lookup tool that searches global carrier and theft databases, stolen device registries, and community theft registries to determine if a smartphone has been reported stolen, lost, or blacklisted.',
- databases: 'Global carrier and theft databases, insurance claims databases, law enforcement registries, and international device databases',
+ databases: 'our verification databases',
  stepTitle: 'How to Check if a Phone is Stolen (Step-by-Step)'
  };
  case 'vin-lookup':
  return {
  title: 'What is a VIN Checker?',
- description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches national theft databases, vehicle theft and title databases, insurance claim databases, and law enforcement records to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
- databases: 'Federal vehicle databases, vehicle theft and title databases, insurance claims, and law enforcement theft registries',
+ description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches national theft databases and vehicle theft and title databases to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
+ databases: 'our verification databases',
  stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
  };
  case 'unified-verification':
  return {
  title: 'What is Multi-Database Verification?',
- description: 'Multi-database verification is a comprehensive lookup service that simultaneously searches 100+ specialized databases across vehicles (VIN), phones (IMEI), bikes (serial), and electronics (serial numbers) to verify ownership legitimacy and detect stolen property.',
- databases: 'Federal law enforcement, insurance bureaus, carrier and theft databases, bicycle registries, and regional police databases',
+ description: 'Multi-database verification is a comprehensive lookup service that simultaneously searches our verification databases across vehicles (VIN), phones (IMEI), bikes (serial), and electronics (serial numbers) to verify ownership legitimacy and detect stolen property.',
+ databases: 'our verification databases',
  stepTitle: 'How to Verify Any Item (Step-by-Step)'
  };
  default:
  return {
  title: 'What is a Stolen Item Checker?',
- description: 'A stolen item checker (also called theft verification service) is a database lookup tool that instantly searches multiple law enforcement, insurance, and global property registries to determine if an item—such as a vehicle (VIN), phone (IMEI), bike, laptop, or any item with a serial number—has been reported stolen or lost.',
- databases: 'Federal and state community theft registries, national insurance bureaus, carrier and theft databases, bicycle registries, and property recovery networks',
+ description: 'A stolen item checker (also called theft verification service) is a database lookup tool that instantly searches our verification databases and global property registries to determine if an item—such as a vehicle (VIN), phone (IMEI), bike, laptop, or any item with a serial number—has been reported stolen or lost.',
+ databases: 'our verification databases',
  stepTitle: 'How to Check if Something is Stolen (Step-by-Step)'
  };
  }
@@ -161,7 +161,7 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  <div className="p-4 border border-border rounded">
  <h3 className="font-semibold mb-2">🚗 Used Car Purchases</h3>
  <p className="text-sm text-muted-foreground">
- Check VIN before test driving. Salvage titles, theft records, and odometer fraud are common. vehicle theft and title databases integration provides instant theft history.
+ Check VIN before test driving. Salvage titles, theft records, and odometer fraud are common. VIN verification provides instant theft history.
  </p>
  </div>
  <div className="p-4 border border-border rounded">
@@ -177,7 +177,7 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  <section className="mb-8 bg-primary/5 p-6 rounded-lg">
  <h2 className="text-2xl font-bold mb-4">Stolen Item Statistics (2024-2025)</h2>
  <ul className="space-y-2">
- <li>• <strong>1 million+</strong> vehicles stolen annually in the US (vehicle theft and title databases data)</li>
+ <li>• <strong>1 million+</strong> vehicles stolen annually in the US</li>
  <li>• <strong>$8 billion</strong> worth of stolen property reported yearly</li>
  <li>• <strong>46%</strong> of second-hand buyers don't verify items before purchase</li>
  <li>• <strong>2.5 million</strong> phones reported stolen/lost globally per year</li>

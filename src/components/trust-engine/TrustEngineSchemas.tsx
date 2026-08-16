@@ -19,7 +19,7 @@ export const TrustEngineSchemas: React.FC = () => {
  "result": {
  "@type": "DataFeed",
  "name": "SafeOrStolen Trust Score",
- "description": "0-100 trust score derived from 100+ law enforcement and insurance databases"
+ "description": "0-100 trust score derived from our verification databases"
  }
  };
 
@@ -27,7 +27,7 @@ export const TrustEngineSchemas: React.FC = () => {
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "SafeOrStolen Global Stolen Item Database",
- "description": "Aggregated dataset of stolen and lost consumer goods from 100+ law enforcement, insurance, and carrier databases worldwide.",
+ "description": "Aggregated dataset of stolen and lost consumer goods from our verification databases worldwide.",
  "url": "https://safeorstolen.com/trust-engine",
  "license": "https://safeorstolen.com/terms",
  "creator": {
@@ -76,7 +76,7 @@ export const TrustEngineSchemas: React.FC = () => {
  "name": "How does batch verification work for auction houses?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Upload a CSV file with up to 100 identifiers (IMEI, VIN, serial numbers). Each item is checked against 100+ databases simultaneously. A downloadable audit report with compliance certificates is generated for legal records."
+ "text": "Upload a CSV file with up to 100 identifiers (IMEI, VIN, serial numbers). Each item is checked against our verification databases simultaneously. A downloadable audit report with compliance certificates is generated for legal records."
  }
  },
  {
@@ -84,7 +84,7 @@ export const TrustEngineSchemas: React.FC = () => {
  "name": "What databases does SafeOrStolen check?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen aggregates data from federal law enforcement records, carrier and theft databases, vehicle theft and title databases vehicle databases, carrier and theft databases, insurance claims databases, and state police records — over 100 sources in total."
+ "text": "SafeOrStolen aggregates data from stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases."
  }
  }
  ]

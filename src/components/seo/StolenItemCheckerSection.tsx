@@ -30,9 +30,9 @@ export const StolenItemCheckerSection = () => {
             <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Database className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Police Databases</h3>
+            <h3 className="text-lg font-semibold mb-2">Verification Databases</h3>
             <p className="text-muted-foreground">
-              Connected to official stolen goods databases and law enforcement records
+              Connected to official stolen goods registries and verification databases
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export const StolenItemCheckerSection = () => {
               </div>
               <h4 className="text-lg font-semibold mb-2">Database Search</h4>
               <p className="text-muted-foreground">
-                Our system searches multiple stolen goods databases and police records instantly
+                Our system searches multiple stolen goods databases instantly
               </p>
             </div>
 
@@ -96,9 +96,9 @@ export const StolenItemCheckerSection = () => {
           <h3 className="text-2xl font-bold mb-4">Why Choose Our Stolen Item Checker?</h3>
           <div className="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
             <div>
-              <h4 className="text-lg font-semibold mb-2">✓ Most Comprehensive Database</h4>
+              <h4 className="text-lg font-semibold mb-2">✓ Broad Database Coverage</h4>
               <p className="text-muted-foreground mb-4">
-                Our stolen item checker accesses the largest collection of stolen goods databases worldwide
+                Our stolen item checker searches our verification databases
               </p>
               
               <h4 className="text-lg font-semibold mb-2">✓ Trusted by Millions</h4>
