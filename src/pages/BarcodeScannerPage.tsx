@@ -14,11 +14,11 @@ const faqs = [
  },
  {
  question: "How do I scan a barcode to check if an item is stolen?",
- answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine which checks 100+ databases including carrier and theft databases, vehicle theft and title databases, and all 50 state community theft registries. Results appear in 3 seconds."
+ answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine, which checks our verification databases including carrier blacklists, vehicle theft records, and community theft registries. Results appear in 3 seconds."
  },
  {
  question: "Can I scan a phone's IMEI barcode?",
- answer: "Yes. Every phone has an IMEI barcode: on the original box, under the battery (older phones), on the SIM tray, or in Settings > About Phone. Our scanner reads the IMEI barcode and instantly checks it against carrier and theft databases's global database of 15+ billion records, carrier and theft databases, and law enforcement stolen device databases."
+ answer: "Yes. Every phone has an IMEI barcode: on the original box, under the battery (older phones), on the SIM tray, or in Settings > About Phone. Our scanner reads the IMEI barcode and instantly checks it against carrier blacklist databases and stolen-device registries."
  },
  {
  question: "Does the barcode scanner work at gun shows?",
@@ -26,11 +26,11 @@ const faqs = [
  },
  {
  question: "Can I scan a VIN barcode on a car?",
- answer: "Absolutely. Every vehicle manufactured since 1981 has a VIN barcode on the driver's side door jamb and on the dashboard near the windshield. Point your camera at either barcode — our scanner extracts the 17-character VIN and checks it against vehicle theft and title databases recalls, and vehicle theft and title databases from all 50 states."
+ answer: "Absolutely. Every vehicle manufactured since 1981 has a VIN barcode on the driver's side door jamb and on the dashboard near the windshield. Point your camera at either barcode — our scanner extracts the 17-character VIN and checks it against vehicle theft and title records, and recall data."
  },
  {
  question: "Do I need to download an app to use the barcode scanner?",
- answer: "No download required from any app store. SafeOrStolen is a Progressive Web App (PWA) — open safeorstolen.com on your phone browser, then optionally tap 'Add to Home Screen' to install it like a native app. The barcode scanner uses your phone's built-in camera and works on iPhone (Safari), Android (Chrome), and all modern mobile browsers."
+ answer: "No download required from any app store. SafeOrStolen is an installable Progressive Web App (PWA) — open safeorstolen.com on your phone browser, then optionally tap 'Add to Home Screen' to install it. The barcode scanner uses your phone's built-in camera and works on iPhone (Safari), Android (Chrome), and all modern mobile browsers."
  },
  {
  question: "Is the barcode scanner free?",
@@ -38,7 +38,7 @@ const faqs = [
  },
  {
  question: "What if the barcode is damaged or unreadable?",
- answer: "If a barcode is scratched, faded, or damaged, you can manually type the IMEI, VIN, or serial number into the verification field. Our system auto-detects the identifier type and runs the same 100+ database check. You can also try scanning from different angles or distances — our scanner uses advanced image processing to read partially damaged codes."
+ answer: "If a barcode is scratched, faded, or damaged, you can manually type the IMEI, VIN, or serial number into the verification field. Our system auto-detects the identifier type and runs the same verification database check. You can also try scanning from different angles or distances — our scanner uses advanced image processing to read partially damaged codes."
  }
 ];
 
@@ -66,7 +66,7 @@ const appSchema = {
  "description": "2 free scans, then $0.99/check or $10/month unlimited"
  },
  "featureList": "Barcode scanning, QR code reading, IMEI verification, VIN verification, serial number lookup, stolen item check",
- "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against 100+ databases.",
+ "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against our verification databases.",
  "dateModified": "2026-03-08"
 };
 
@@ -79,7 +79,7 @@ const howToSchema = {
  { "@type": "HowToStep", "position": 1, "name": "Open SafeOrStolen", "text": "Open safeorstolen.com on your phone or launch the installed PWA app." },
  { "@type": "HowToStep", "position": 2, "name": "Tap Scan Barcode", "text": "Tap the 'Scan Barcode or QR' button to activate your phone's camera." },
  { "@type": "HowToStep", "position": 3, "name": "Point at barcode", "text": "Point your camera at any barcode — IMEI, VIN, serial number, QR code. It reads instantly." },
- { "@type": "HowToStep", "position": 4, "name": "Get verification results", "text": "The scanned number is checked against 100+ databases. Get CLEAN, STOLEN, or UNKNOWN in 3 seconds." }
+ { "@type": "HowToStep", "position": 4, "name": "Get verification results", "text": "The scanned number is checked against our verification databases. Get CLEAN, STOLEN, or UNKNOWN in 3 seconds." }
  ]
 };
 
@@ -108,11 +108,11 @@ const BarcodeScannerPage = () => {
  <header><h1>Free Barcode Scanner — Scan Any Item to Check if Stolen</h1></header>
  <div>
  <article>
- <p>SafeOrStolen's barcode scanner lets you use your phone camera to scan any IMEI barcode, VIN barcode, QR code, or serial number barcode to instantly verify if an item has been reported stolen. No app store download needed — works directly in your mobile browser as a Progressive Web App (PWA).</p>
+ <p>SafeOrStolen's barcode scanner lets you use your phone camera to scan any IMEI barcode, VIN barcode, QR code, or serial number barcode to instantly verify if an item has been reported stolen. No app store download needed — works directly in your mobile browser as an installable Progressive Web App (PWA).</p>
  <h2>What Barcodes Can You Scan?</h2>
  <p>Our scanner reads IMEI barcodes on phone boxes, VIN barcodes on vehicle door jambs, serial number barcodes on electronics, QR codes on warranty cards, and standard UPC/EAN retail barcodes. Supports 1D and 2D barcode formats including Code 128, Code 39, Data Matrix, and QR codes.</p>
  <h2>How It Works</h2>
- <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 state community theft registries. Results in 3 seconds.</p>
+ <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against our verification databases including carrier blacklists, vehicle theft records, firearm theft registries, and community theft registries. Results in 3 seconds.</p>
  <h2>Perfect for In-Person Shopping</h2>
  <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
  </article>
@@ -125,7 +125,7 @@ const BarcodeScannerPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
  <ScanLine className="h-5 w-5" />
- <span className="font-semibold">📱 Scan Any Barcode — No App Store Needed</span>
+ <span className="font-semibold">📱 Scan Any Barcode — Works Right in Your Browser</span>
  </div>
 
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
@@ -134,7 +134,7 @@ const BarcodeScannerPage = () => {
 
  <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
  Point your phone camera at any barcode or QR code. We extract the IMEI, VIN, or serial number 
- and check 100+ databases in 3 seconds. Free — no download required.
+ and check our verification databases in 3 seconds. Free — no download required.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
@@ -181,12 +181,12 @@ const BarcodeScannerPage = () => {
  {[
  {
  title: "📱 Phone IMEI Barcodes",
- desc: "Found on phone boxes, under batteries, SIM trays. Checks carrier and theft databases.",
+ desc: "Found on phone boxes, under batteries, SIM trays. Checks carrier blacklist databases.",
  link: "/imei-checker"
  },
  {
  title: "🚗 Vehicle VIN Barcodes",
- desc: "On door jambs, dashboards, registration cards. Checks vehicle theft and title databases, 50-vehicle theft and title databases.",
+ desc: "On door jambs, dashboards, registration cards. Checks vehicle theft and title records across all 50 states.",
  link: "/vin-checker"
  },
  {
@@ -196,12 +196,12 @@ const BarcodeScannerPage = () => {
  },
  {
  title: "💻 Electronics Barcodes",
- desc: "Apple, Dell, HP, Samsung serial barcodes. Checks manufacturer databases and insurance records.",
+ desc: "Apple, Dell, HP, Samsung serial barcodes. Checks manufacturer registration databases.",
  link: "/check-electronics"
  },
  {
  title: "🚲 Bicycle Barcodes",
- desc: "Frame serial barcodes, warranty labels. Checks stolen bicycle databases (700K+), police databases.",
+ desc: "Frame serial barcodes, warranty labels. Checks stolen bicycle registries.",
  link: "/check-bike"
  },
  {
@@ -235,7 +235,7 @@ const BarcodeScannerPage = () => {
  { icon: <Smartphone className="h-10 w-10" />, title: "1. Open Scanner", desc: "No download needed. Open safeorstolen.com or tap the installed PWA on your home screen." },
  { icon: <Camera className="h-10 w-10" />, title: "2. Point Camera", desc: "Aim at any barcode — IMEI, VIN, serial number, QR code. It reads instantly." },
  { icon: <Zap className="h-10 w-10" />, title: "3. Auto-Detect", desc: "We identify the barcode type, extract the number, and route to the right databases." },
- { icon: <CheckCircle className="h-10 w-10" />, title: "4. Get Results", desc: "CLEAN ✅, STOLEN 🚨, or UNKNOWN ⚠️ in 3 seconds from 100+ sources." }
+ { icon: <CheckCircle className="h-10 w-10" />, title: "4. Get Results", desc: "CLEAN ✅, STOLEN 🚨, or UNKNOWN ⚠️ in 3 seconds." }
  ].map((step, i) => (
  <Card key={i} className="text-center">
  <CardContent className="p-6">
@@ -250,14 +250,14 @@ const BarcodeScannerPage = () => {
  </div>
  </section>
 
- {/* Why No App Store Download */}
+ {/* Why Installable Web App */}
  <section className="py-16 bg-muted/30">
  <div className="container mx-auto px-4">
  <div className="max-w-3xl mx-auto text-center">
- <h2 className="text-3xl font-bold mb-6 text-foreground">Why No App Store Download?</h2>
+ <h2 className="text-3xl font-bold mb-6 text-foreground">Why an Installable Web App?</h2>
  <p className="text-lg text-muted-foreground mb-8">
- SafeOrStolen is a <strong>Progressive Web App (PWA)</strong> — it runs in your browser but works like a native app. 
- This means instant access: no App Store wait, no storage space wasted, automatic updates, and it works on 
+ SafeOrStolen is an installable <strong>Progressive Web App (PWA)</strong> — it runs directly in your browser. 
+ This means instant access: no app store wait, no storage space wasted, automatic updates, and it works on 
  every phone (iPhone, Android, even tablets).
  </p>
  <div className="grid sm:grid-cols-3 gap-4">
