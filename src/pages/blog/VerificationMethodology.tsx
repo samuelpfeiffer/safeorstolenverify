@@ -168,7 +168,7 @@ export default function VerificationMethodology() {
                     <strong>Seller Behavior Scoring:</strong> Analyzes seller account age, ratings, listing history, and communication patterns
                   </li>
                   <li>
-                    <strong>Cross-Reference Validation:</strong> Checks for inconsistencies between multiple data sources (e.g., police report in CA but seller located in FL)
+                    <strong>Cross-Reference Validation:</strong> Checks for inconsistencies between multiple data sources (e.g., a theft report location that doesn't match the seller's location)
                   </li>
                   <li>
                     <strong>Temporal Analysis:</strong> Identifies items listed immediately after theft reports or suspicious timing patterns
@@ -216,9 +216,9 @@ export default function VerificationMethodology() {
                 <Card className="p-6 bg-red-50 dark:bg-red-950/20">
                   <h3 className="text-xl font-bold mb-2 text-red-700 dark:text-red-400">STOLEN Status (60-100% Evidence)</h3>
                   <ul className="space-y-1 text-red-900 dark:text-red-100">
-                    <li>✗ Active theft report found in law enforcement database</li>
+                    <li>✗ Active theft report found in our verification databases</li>
                     <li>✗ Carrier/manufacturer blacklist match</li>
-                    <li>✗ Insurance claim filed for theft or loss</li>
+                    <li>✗ Reported lost or stolen by previous owner</li>
                     <li>✗ AI detected high-probability fraud patterns</li>
                   </ul>
                   <p className="mt-3 font-bold">Recommendation: DO NOT PURCHASE - Report to authorities</p>
@@ -248,7 +248,7 @@ export default function VerificationMethodology() {
                   <li><strong>User Feedback Loop:</strong> We track outcomes of verified purchases to measure false positive/negative rates</li>
                   <li><strong>Third-Party Audits:</strong> Quarterly accuracy audits by independent cybersecurity firms</li>
                   <li><strong>Ground Truth Validation:</strong> Monthly validation against 10,000 known stolen and legitimate items</li>
-                  <li><strong>Law Enforcement Partnerships:</strong> Direct feedback from police departments on theft recovery outcomes</li>
+                  <li><strong>Outcome Tracking:</strong> We track reported theft recovery outcomes where available</li>
                 </ol>
               </div>
 
@@ -267,8 +267,8 @@ export default function VerificationMethodology() {
               <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded mb-6">
                 <h3 className="text-xl font-bold mb-3">What SafeOrStolen Cannot Guarantee:</h3>
                 <ul className="space-y-2">
-                  <li><strong>Unreported Thefts:</strong> We can only detect items reported to police, insurance, or carriers. If a victim has not filed a report, we cannot identify the theft.</li>
-                  <li><strong>Very Recent Thefts:</strong> There's a 15-60 minute delay between theft report filing and database updates appearing in our system.</li>
+                  <li><strong>Unreported Thefts:</strong> We can only detect items that have been reported to our verification databases. If a victim has not filed a report, we cannot identify the theft.</li>
+                  <li><strong>Very Recent Thefts:</strong> There can be a delay between a theft being reported and it appearing in our verification databases.</li>
                   <li><strong>International Items (Limited Coverage):</strong> Our data sources are strongest in the US, Canada, UK, and Australia. Coverage in other countries is limited.</li>
                   <li><strong>Modified Identifiers:</strong> If IMEI, VIN, or serial numbers have been tampered with, verification may fail or return inconclusive results.</li>
                   <li><strong>Private Sales Without Documentation:</strong> Items sold privately without any paper trail are harder to verify conclusively.</li>
@@ -290,7 +290,7 @@ export default function VerificationMethodology() {
                   <li><strong>No Personal Data Stored:</strong> We never store personal information linked to verification searches</li>
                   <li><strong>Anonymized Analytics:</strong> Search data is anonymized and used only for improving AI models</li>
                   <li><strong>GDPR & CCPA Compliant:</strong> Full compliance with US and EU privacy regulations</li>
-                  <li><strong>Law Enforcement Access:</strong> Only provided with valid subpoenas; no backdoors for unauthorized access</li>
+                  <li><strong>Data Requests:</strong> Only provided in response to valid legal process; no backdoors for unauthorized access</li>
                 </ul>
               </div>
 

@@ -201,7 +201,7 @@ export default function DataSourcesPage() {
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "SafeOrStolen Stolen Item Verification Database",
- "description": "Aggregated stolen item database combining 100+ law enforcement, insurance, carrier, and community sources for real-time verification of IMEI numbers, VIN numbers, and serial numbers.",
+ "description": "Aggregated stolen item verification database combining IMEI.info, BikeIndex, HotGunz, and community-reported sources for real-time verification of IMEI numbers, VIN numbers, and serial numbers.",
  "publisher": {
  "@type": "Organization",
  "name": "SafeOrStolen",
@@ -227,12 +227,12 @@ export default function DataSourcesPage() {
  return (
  <>
  <Helmet>
- <title>Data Sources — 100+ Databases SafeOrStolen Checks | SafeOrStolen</title>
- <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, LeadsOnline, stolen bicycle databases, and carrier and theft databases across 200 countries." />
+ <title>Data Sources — Our Verification Databases | SafeOrStolen</title>
+ <meta name="description" content="SafeOrStolen checks our verification databases for stolen item verification: vehicle theft records, IMEI.info carrier and theft databases, BikeIndex, and HotGunz firearm registries." />
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
  <link rel="canonical" href="https://safeorstolen.com/data-sources" />
- <meta property="og:title" content="100+ Data Sources SafeOrStolen Checks | SafeOrStolen" />
- <meta property="og:description" content="We check stolen property reports from all 50 states, carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, LeadsOnline, stolen bicycle databases, and 100+ carrier and theft databases. Results in 3 seconds." />
+ <meta property="og:title" content="Data Sources SafeOrStolen Checks | SafeOrStolen" />
+ <meta property="og:description" content="We check vehicle theft records, IMEI.info carrier and theft databases, BikeIndex, and HotGunz firearm registries. Results in 3 seconds." />
  <meta property="og:url" content="https://safeorstolen.com/data-sources" />
  <meta property="og:type" content="website" />
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -245,18 +245,18 @@ export default function DataSourcesPage() {
  <div className="max-w-4xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-sm text-primary mb-6">
  <Database className="h-4 w-4" />
- <span className="font-medium">100+ Verified Data Sources</span>
+ <span className="font-medium">Verified Data Sources</span>
  </div>
  <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
  Where SafeOrStolen Gets Its Data
  </h1>
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- SafeOrStolen queries <strong>100+ databases simultaneously</strong> — law enforcement, insurance, carrier and theft databases, pawn networks, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
+ SafeOrStolen queries <strong>our verification databases simultaneously</strong> — including IMEI.info, BikeIndex, HotGunz, vehicle theft records, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
  </p>
  {/* Semantic TL;DR for AI extraction */}
  <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
  <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
- SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including carrier and theft databases (15 billion IMEI records), vehicle theft and title databases, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier and theft databases across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+ SafeOrStolen is a consumer protection platform that verifies stolen item status by querying our verification databases including IMEI.info, BikeIndex, HotGunz, vehicle theft records, and community-reported theft data. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
  </div>
  <div className="flex flex-wrap justify-center gap-3">
  <Button asChild size="lg">
@@ -277,10 +277,10 @@ export default function DataSourcesPage() {
  <div className="container mx-auto px-4">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
  {[
- { value: "100+", label: "Databases Checked" },
- { value: "15B+", label: "IMEI Records (carrier and theft databases)" },
+ { value: "Multi-source", label: "Databases Checked" },
+ { value: "IMEI.info", label: "Carrier & IMEI Data" },
  { value: "3 sec", label: "Average Result Time" },
- { value: "190+", label: "Countries Covered" },
+ { value: "6", label: "Item Categories" },
  ].map(stat => (
  <div key={stat.label}>
  <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
@@ -359,7 +359,7 @@ export default function DataSourcesPage() {
  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
  <h2 className="text-3xl font-bold mb-4">Real-Time Database Synchronization</h2>
  <p className="text-lg text-muted-foreground">
- SafeOrStolen synchronizes with source databases every 15 minutes. When an item is reported stolen to law enforcement or insurance, it typically appears in our system within 1-4 hours — faster than any single-source checker.
+ SafeOrStolen synchronizes with source databases regularly. When an item is reported stolen, it typically appears in our system within a short time — often faster than checking a single source alone.
  </p>
  </div>
  <div className="grid md:grid-cols-3 gap-6">
@@ -374,14 +374,14 @@ export default function DataSourcesPage() {
  <CardContent className="pt-6 text-center">
  <div className="text-3xl font-bold text-primary mb-2">6</div>
  <p className="font-medium mb-1">Item Categories</p>
- <p className="text-sm text-muted-foreground">Cross-referencing 100+ sources eliminates false positives</p>
+ <p className="text-sm text-muted-foreground">Cross-referencing multiple sources helps reduce false positives</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6 text-center">
  <div className="text-3xl font-bold text-primary mb-2">~3 sec</div>
  <p className="font-medium mb-1">Result Speed</p>
- <p className="text-sm text-muted-foreground">All 100+ databases queried in parallel, not sequentially</p>
+ <p className="text-sm text-muted-foreground">Our databases are queried in parallel, not sequentially</p>
  </CardContent>
  </Card>
  </div>
@@ -418,7 +418,7 @@ export default function DataSourcesPage() {
  <div>
  <h3 className="font-semibold mb-2 text-foreground">Important Accuracy Note</h3>
  <p className="text-sm text-muted-foreground leading-relaxed">
- A "clean" result means the item was not found in any of our 100+ databases at the time of verification. It does not guarantee the item is not stolen — an item may have been stolen but not yet reported to law enforcement or insurance. Always combine database verification with common-sense safety practices: meet sellers in public places (police station parking lots are ideal), request original purchase receipts, and for high-value items, consult a professional appraiser. SafeOrStolen results are for informational purposes and do not constitute a legal guarantee of ownership.
+ A "clean" result means the item was not found in our verification databases at the time of the check. It does not guarantee the item is not stolen — an item may have been stolen but not yet reported to any of our sources. Always combine database verification with common-sense safety practices: meet sellers in public places (police station parking lots are ideal), request original purchase receipts, and for high-value items, consult a professional appraiser. SafeOrStolen results are for informational purposes and do not constitute a legal guarantee of ownership.
  </p>
  </div>
  </div>
@@ -462,10 +462,10 @@ export default function DataSourcesPage() {
  <div className="container mx-auto px-4 text-center">
  <h2 className="text-3xl font-bold mb-4">Run a Free Verification Now</h2>
  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
+ Check any IMEI, VIN, or serial number against our verification databases simultaneously. 2 free verifications — no credit card required.
  </p>
  <p className="text-xs text-muted-foreground mb-2">
- Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, and carrier and theft databases across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+ Semantic TL;DR: SafeOrStolen checks our verification databases in real-time including IMEI.info, BikeIndex, HotGunz, and vehicle theft records. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
  </p>
  <Button size="lg" asChild>
  <Link to="/verify">

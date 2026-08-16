@@ -75,7 +75,6 @@ const InstallAppPage = () => {
  <meta name="ai:service_type" content="Progressive Web App installation tutorial" />
  
  <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
- <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
  </Helmet>
  
  <FAQSchema faqs={faqs} />
