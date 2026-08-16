@@ -15,7 +15,7 @@ export const SampleResultPreview = () => {
  </h2>
  <p className="text-muted-foreground max-w-xl mx-auto">
  Here's a real example of a SafeOrStolen verification result.
- Every check scans 100+ databases and returns a clear verdict in ~3 seconds.
+ Every check scans our verification databases and returns a clear verdict in ~3 seconds.
  </p>
  </div>
 
@@ -50,7 +50,7 @@ export const SampleResultPreview = () => {
  <div className="border-t border-border pt-4">
  <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
  <Database className="w-3.5 h-3.5" />
- Databases Checked (12 of 100+)
+ Databases Checked
  </div>
  <div className="grid grid-cols-2 gap-2">
  {[
@@ -58,7 +58,7 @@ export const SampleResultPreview = () => {
  { name: 'AT&T Blacklist', status: 'clean' },
  { name: 'Verizon Blacklist', status: 'clean' },
  { name: 'T-Mobile Blacklist', status: 'clean' },
- { name: 'Insurance Claims', status: 'clean' },
+ { name: 'Vehicle Title Records', status: 'clean' },
  ].map((db) => (
  <div key={db.name} className="flex items-center gap-2 text-xs">
  <CheckCircle className="w-3 h-3 text-secondary flex-shrink-0" />
@@ -66,7 +66,7 @@ export const SampleResultPreview = () => {
  </div>
  ))}
  </div>
- <p className="text-xs text-muted-foreground/60 mt-2">+ 94 more databases checked</p>
+ <p className="text-xs text-muted-foreground/60 mt-2">+ more databases checked</p>
  </div>
 
  {/* AI Advisory */}
@@ -78,7 +78,7 @@ export const SampleResultPreview = () => {
  <div className="bg-secondary/5 border border-secondary/20 rounded-xl p-3">
  <p className="text-foreground text-sm font-medium mb-1">✓ SAFE TO PROCEED</p>
  <p className="text-muted-foreground text-xs leading-relaxed">
- This device has no theft reports, no carrier blacklisting, and no insurance claims across all checked databases. The IMEI structure is valid and matches an Apple iPhone 15 Pro Max manufactured in Q3 2024.
+ This device has no theft reports and no carrier blacklisting across all checked databases. The IMEI structure is valid and matches an Apple iPhone 15 Pro Max manufactured in Q3 2024.
  </p>
  </div>
  </div>

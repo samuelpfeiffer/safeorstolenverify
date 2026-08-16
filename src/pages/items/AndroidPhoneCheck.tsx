@@ -4,7 +4,7 @@ const AndroidPhoneCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Android Phone is Stolen - Free IMEI Verification | SafeOrStolen"
- metaDescription="Verify any Android phone isn't stolen before buying. Free IMEI check for Google Pixel, OnePlus, Motorola, LG. Search 100+ database instantly."
+ metaDescription="Verify any Android phone isn't stolen before buying. Free IMEI check for Google Pixel, OnePlus, Motorola, LG. Search our verification databases instantly."
  h1="Check if Android Phone is Stolen - Free IMEI Check"
  keywords={[
  'android phone stolen check',
@@ -26,11 +26,11 @@ const AndroidPhoneCheck = () => {
  stats={[
  { value: "2M+", label: "Phones Stolen Yearly" },
  { value: "3 sec", label: "Verification Time" },
- { value: "100+", label: "Records Searched" },
+ { value: "Instant", label: "Results" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Android IMEI Verification?"
- whatIsContent="Every Android phone has a unique 15-digit IMEI number. When stolen, this IMEI gets reported to carrier and theft databases and stolen device databases. A blacklisted Android phone won't work on major carrier networks. Our verification checks Google's Find My Device reports, carrier and theft databases, law enforcement records, and insurance claims to determine if an Android phone is safe to purchase."
+ whatIsContent="Every Android phone has a unique 15-digit IMEI number. When stolen, this IMEI gets reported to carrier and theft databases and stolen device databases. A blacklisted Android phone won't work on major carrier networks. Our verification checks Google's Find My Device reports and carrier and theft databases to determine if an Android phone is safe to purchase."
  howItWorksSteps={[
  "Find the IMEI: Dial *#06# on the phone, or go to Settings > About Phone > IMEI",
  "Enter the 15-digit IMEI number into our free verification tool",

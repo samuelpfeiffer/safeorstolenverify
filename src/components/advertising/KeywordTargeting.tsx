@@ -58,7 +58,7 @@ export const KeywordTargeting = () => {
  <h3>How Our Verification Works</h3>
  <p>
  Step 1: Enter IMEI, VIN, or serial number into our stolen goods database checker.
- Step 2: We scan 100+ law enforcement, insurance, and carrier databases.
+ Step 2: We scan our verification databases.
  Step 3: Get instant results in 30 seconds - stolen, lost, or safe to buy.
  Step 4: Make informed decisions and avoid fraud.
  </p>
@@ -92,7 +92,7 @@ export const KeywordTargeting = () => {
  <dd>SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Enter any IMEI, VIN, or serial number.</dd>
  
  <dt>How do I know if a phone is blacklisted?</dt>
- <dd>Use our IMEI checker - we check carrier and theft databases, stolen phone databases, and insurance claims.</dd>
+ <dd>Use our IMEI checker - we check carrier and theft databases and stolen phone databases.</dd>
  
  <dt>Is buying stolen goods illegal?</dt>
  <dd>Yes, even if you didn't know it was stolen. You can face criminal charges, lose the item, and get no refund. Always verify before buying.</dd>
