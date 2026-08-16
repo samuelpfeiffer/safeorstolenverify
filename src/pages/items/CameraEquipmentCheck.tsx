@@ -4,7 +4,7 @@ const CameraEquipmentCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Camera is Stolen - DSLR, Mirrorless, Lenses | SafeOrStolen"
-      metaDescription="Verify camera equipment isn't stolen before buying. Free serial number check for Canon, Nikon, Sony cameras and lenses. Search 100+ stolen item database."
+      metaDescription="Verify camera equipment isn't stolen before buying. Free serial number check for Canon, Nikon, Sony cameras and lenses. Search our verification databases."
       h1="Check if Camera Equipment is Stolen - Free Verification"
       keywords={[
         'check if camera is stolen',
@@ -26,28 +26,28 @@ const CameraEquipmentCheck = () => {
       stats={[
         { value: "$50K+", label: "Avg. Pro Gear Value" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Camera Serial Number Verification?"
-      whatIsContent="Every camera body and lens has a unique serial number assigned by the manufacturer. Professional photographers, insurance companies, and services like Lenstag and StolenCameraFinder track stolen camera equipment by serial number. When gear is stolen, these numbers are logged in databases. Our verification searches these sources to check if camera equipment has been reported stolen. With professional cameras costing $2,000-$6,000+ and lenses up to $10,000+, verification is essential."
+      whatIsContent="Every camera body and lens has a unique serial number assigned by the manufacturer. Photographers and services like Lenstag and StolenCameraFinder track stolen camera equipment by serial number. When gear is stolen, these numbers are logged in databases. Our verification searches these sources to check if camera equipment has been reported stolen. With professional cameras costing $2,000-$6,000+ and lenses up to $10,000+, verification is essential."
       howItWorksSteps={[
         "Find the serial number: Check the bottom of the camera body, lens barrel, or in the camera's menu settings",
         "Enter the serial number into our free verification tool",
-        "Our system searches Lenstag, StolenCameraFinder, police records, and insurance databases instantly",
+        "Our system searches Lenstag, StolenCameraFinder, and other theft-report databases instantly",
         "Get results in 3 seconds - know if the equipment is SAFE or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search photographer community databases like Lenstag and StolenCameraFinder, law enforcement stolen property records, insurance claim databases, and manufacturer registries. Our comprehensive check helps protect you from purchasing stolen camera gear."
+      howItWorksDescription="We search photographer community databases like Lenstag and StolenCameraFinder, plus manufacturer registries. Our comprehensive check helps protect you from purchasing stolen camera gear."
       whyVerifyTitle="Why Check Before Buying Used Camera Equipment?"
       whyVerifyContent="Camera equipment theft is rampant, especially targeting professional gear. Photographers often lose entire kits worth $20,000+ in a single theft. This stolen gear ends up on eBay, Craigslist, and Facebook Marketplace. Here's why verification matters:"
       whyVerifyBenefits={[
         "Professional camera bodies (Canon R5, Nikon Z9, Sony A1) cost $3,000-$6,500 each",
         "L-series, G-Master, and Nikkor Z lenses can cost $1,000-$10,000+",
         "Photographers actively search for their stolen gear and monitor online listings",
-        "Police recover stolen cameras using serial numbers - you'll lose the equipment",
+        "Cameras recovered as stolen can be lost by the buyer, even in good faith",
         "Possession of stolen property is a crime regardless of how you acquired it",
         "Stolen camera gear may be flagged during manufacturer service",
-        "No warranty or insurance coverage for stolen equipment",
+        "No warranty coverage for stolen equipment",
         "Legitimate sellers always provide serial numbers upfront"
       ]}
       useCases={[
@@ -80,7 +80,7 @@ const CameraEquipmentCheck = () => {
         },
         {
           question: "What is Lenstag and StolenCameraFinder?",
-          answer: "Lenstag and StolenCameraFinder are photographer-created databases where stolen camera equipment is registered. We search these along with law enforcement and insurance databases to provide comprehensive verification."
+          answer: "Lenstag and StolenCameraFinder are photographer-created databases where stolen camera equipment is registered. We search these along with other verification databases to provide comprehensive verification."
         },
         {
           question: "What cameras are most commonly stolen?",

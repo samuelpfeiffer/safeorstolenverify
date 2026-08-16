@@ -150,21 +150,21 @@ export default function AppDownloadPage() {
  </thead>
  <tbody>
  {[
- { f: 'Barcode scanner', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: 'Gun serial lookup', sos: '✓', cm: '—', nicb: '—', hg: '✓' },
- { f: 'VIN vehicle check', sos: '✓', cm: '—', nicb: '✓', hg: '—' },
- { f: 'IMEI phone check', sos: '✓', cm: '✓', nicb: '—', hg: '—' },
- { f: 'License plate lookup', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: 'Bike serial check', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: '100+ databases', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: 'PDF certificate', sos: '✓', cm: '✓', nicb: '—', hg: '—' },
- { f: 'Subscription', sos: '$10/mo unlimited', cm: '$1.99+/check', nicb: 'Free (1 source)', hg: 'Free (1 source)' },
+ { f: 'Barcode scanner', sos: '✓', cm: '—', vehicle theft and title databases: '—', hg: '—' },
+ { f: 'Gun serial lookup', sos: '✓', cm: '—', vehicle theft and title databases: '—', hg: '✓' },
+ { f: 'VIN vehicle check', sos: '✓', cm: '—', vehicle theft and title databases: '✓', hg: '—' },
+ { f: 'IMEI phone check', sos: '✓', cm: '✓', vehicle theft and title databases: '—', hg: '—' },
+ { f: 'License plate lookup', sos: '✓', cm: '—', vehicle theft and title databases: '—', hg: '—' },
+ { f: 'Bike serial check', sos: '✓', cm: '—', vehicle theft and title databases: '—', hg: '—' },
+ { f: 'our verification databases', sos: '✓', cm: '—', vehicle theft and title databases: '—', hg: '—' },
+ { f: 'PDF certificate', sos: '✓', cm: '✓', vehicle theft and title databases: '—', hg: '—' },
+ { f: 'Subscription', sos: '$10/mo unlimited', cm: '$1.99+/check', vehicle theft and title databases: 'Free (1 source)', hg: 'Free (1 source)' },
  ].map((row, i) => (
  <tr key={row.f} className={i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}>
  <td className="py-3 px-4 text-gray-300 text-xs">{row.f}</td>
  <td className={`py-3 px-3 text-center text-xs font-bold ${row.sos === '✓' ? 'text-green-400' : 'text-blue-300'}`}>{row.sos}</td>
  <td className={`py-3 px-3 text-center text-xs ${row.cm === '✓' ? 'text-green-400' : row.cm === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.cm}</td>
- <td className={`py-3 px-3 text-center text-xs ${row.nicb === '✓' ? 'text-green-400' : row.nicb === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.nicb}</td>
+ <td className={`py-3 px-3 text-center text-xs ${row.vehicle theft and title databases === '✓' ? 'text-green-400' : row.vehicle theft and title databases === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.vehicle theft and title databases}</td>
  <td className={`py-3 px-3 text-center text-xs ${row.hg === '✓' ? 'text-green-400' : row.hg === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.hg}</td>
  </tr>
  ))}

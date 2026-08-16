@@ -116,7 +116,7 @@ export default function CheckFirearmPage() {
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
                 <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold">Insurance Claims</h3>
+                  <h3 className="font-bold">theft reports</h3>
                   <p className="text-sm text-muted-foreground">Firearms with theft claims paid by insurers</p>
                 </div>
               </div>

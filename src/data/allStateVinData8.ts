@@ -110,7 +110,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "Under North Carolina General Statutes §14-71.1, receiving stolen property valued over $1,000 is a felony with penalties up to 20 months in prison. North Carolina requires title transfers within 28 days. The NC DMV maintains all VIN and title records for verification."
  },
  faqs: [
- { question: "How do I check for flood damage on a North Carolina vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. North Carolina vehicles frequently have hidden flood damage from hurricanes. Our database searches insurance claims, salvage auctions, and title brands to uncover damage sellers try to hide." },
+ { question: "How do I check for flood damage on a North Carolina vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. North Carolina vehicles frequently have hidden flood damage from hurricanes. Our database searches theft reports, salvage auctions, and title brands to uncover damage sellers try to hide." },
  { question: "Does North Carolina require VIN inspections?", answer: "North Carolina requires VIN inspections for out-of-state vehicles and vehicles without existing NC titles. The inspection must verify the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
  { question: "What is North Carolina's title transfer process?", answer: "In North Carolina, buyers must complete title transfer within 28 days. Both parties sign the title, and buyer submits it to the NC DMV with damage disclosure and odometer statement. Always verify the VIN matches the title before signing to prevent fraud." }
  ]

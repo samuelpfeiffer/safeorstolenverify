@@ -16,8 +16,8 @@ const CheckAppliancesPage = () => {
       ]}
       content={{
         intro: "Verify if washers, dryers, refrigerators, stoves, or any home appliance is stolen in 3 seconds. Free serial number verification for all appliance brands: Samsung, LG, Whirlpool, GE, Maytag, Bosch, KitchenAid. Check before buying from Facebook Marketplace, eBay, Craigslist, or scratch-and-dent stores. Major appliances are frequent theft targets due to high value and easy resale.",
-        whatIs: "Checking if appliances are stolen means verifying model and serial numbers against community theft registries, manufacturer warranty records, and insurance claim registries. Modern appliances (especially smart/connected models) have unique serial numbers that can be tracked. SafeOrStolen's appliance checker instantly searches law enforcement stolen property databases, LeadsOnline (national pawn shop database), manufacturer warranty databases for Samsung, LG, Whirlpool, GE, Maytag, Bosch, insurance claim records, and contractor theft reports. This protects buyers from purchasing stolen appliances that could be confiscated or have warranty issues.",
-        howItWorks: "Our appliance verification system queries multiple databases simultaneously. We check: (1) Law enforcement stolen property databases - local, state, and federal agencies tracking home burglaries and construction site thefts, (2) LeadsOnline - tracks appliances pawned or sold to secondhand dealers, (3) Manufacturer databases - Samsung, LG, Whirlpool, GE, Maytag warranty and registration records, (4) Insurance claim databases - tracks appliances reported stolen to homeowners insurance, (5) Contractor theft reports - many appliances are stolen from construction sites and new home builds, (6) Serial number format validation - verifies the serial matches manufacturer specifications. Within 3 seconds, you receive a report showing whether the appliance has been reported stolen, pawned, or has outstanding insurance claims.",
+        whatIs: "Checking if appliances are stolen means verifying model and serial numbers against community theft registries, manufacturer warranty records, and insurance claim registries. Modern appliances (especially smart/connected models) have unique serial numbers that can be tracked. SafeOrStolen's appliance checker instantly searches stolen-property registries, LeadsOnline (national pawn shop database), manufacturer warranty databases for Samsung, LG, Whirlpool, GE, Maytag, Bosch, theft-report records, and contractor theft reports. This protects buyers from purchasing stolen appliances that could be confiscated or have warranty issues.",
+        howItWorks: "Our appliance verification system queries multiple databases simultaneously. We check: (1) stolen-property registries - multiple regional sources tracking home burglaries and construction site thefts, (2) LeadsOnline - tracks appliances pawned or sold to secondhand dealers, (3) Manufacturer databases - Samsung, LG, Whirlpool, GE, Maytag warranty and registration records, (4) our verification databases - tracks appliances reported stolen to homeowners insurance, (5) Contractor theft reports - many appliances are stolen from construction sites and new home builds, (6) Serial number format validation - verifies the serial matches manufacturer specifications. Within 3 seconds, you receive a report showing whether the appliance has been reported stolen, pawned, or has outstanding theft reports.",
         whyCheck: "Buying stolen appliances has serious consequences. (1) Appliances can be confiscated by police with zero compensation - you lose $500-$5,000, (2) You could face criminal charges for possession of stolen property, (3) Manufacturers void warranties on stolen appliances - no repairs or replacements, (4) Installation companies may refuse to install or report you if serial numbers flag as stolen, (5) Smart appliances can be remotely tracked and disabled by original owners, (6) You can't claim insurance or register the appliance. In 2024, over $1 billion worth of home appliances were reported stolen in the United States. Washers, dryers, refrigerators, and stoves are prime targets during home burglaries, construction site thefts, and moving truck hijackings. Stolen appliances frequently appear on Facebook Marketplace, Craigslist, OfferUp at 40-60% below retail price. Our free appliance checker protects you from this massive theft market.",
         benefits: [
           "Check Samsung appliances - washers, dryers, refrigerators, stoves, dishwashers",
@@ -27,7 +27,7 @@ const CheckAppliancesPage = () => {
           "Check Maytag, Bosch, KitchenAid, Frigidaire, Electrolux appliances",
           "Verify smart appliances - Wi-Fi connected models with tracking capabilities",
           "Check construction site stolen appliances",
-          "Search law enforcement and pawn shop databases",
+          "Search stolen-property registries and pawn shop databases",
           "Free appliance serial number check - 2 free verifications"
         ],
         process: [
@@ -35,7 +35,7 @@ const CheckAppliancesPage = () => {
           "Record BOTH the model number and serial number completely. Take a photo of the rating plate with all information visible. One wrong character can cause false results.",
           "Take photos of the entire appliance including any damage, modifications, or missing parts that could indicate theft",
           "Enter the serial number and model number into our verification tool at SafeOrStolen.com/verify",
-          "Review the comprehensive report showing whether the appliance has been reported stolen, pawned, or has insurance claims",
+          "Review the comprehensive report showing whether the appliance has been reported stolen, pawned, or has been reported stolen",
           "If CLEAN and warranty is valid, proceed with purchase. If STOLEN, pawned by someone other than the seller, or warranty is void, walk away and report to authorities"
         ],
         faqs: [
@@ -57,7 +57,7 @@ const CheckAppliancesPage = () => {
           },
           {
             question: "Why are appliances stolen so frequently?",
-            answer: "Appliances are prime theft targets because: (1) High value - washers/dryers cost $500-$2,000 each, refrigerators $800-$5,000, making them extremely profitable to steal, (2) Easy to resell - huge demand on Facebook Marketplace, Craigslist, OfferUp, especially for matching sets, (3) Construction site thefts - new homes under construction often have appliances stolen before homeowners move in, (4) Home burglaries - thieves target homes during moves or renovations when appliances are visible and accessible, (5) Moving truck hijackings - entire truckloads of household goods including all appliances are stolen, (6) Difficult to track - unlike phones or cars, most people don't register appliance serial numbers. In 2024, over $1 billion worth of appliances were stolen. Theft rate peaks during summer (moving season) and around holidays. Checking serial numbers is the ONLY way to avoid purchasing stolen appliances."
+            answer: "Appliances are prime theft targets because: (1) High value - washers/dryers cost $500-$2,000 each, refrigerators $800-$5,000, making them extremely profitable to steal, (2) Easy to resell - huge demand on Facebook Marketplace, Craigslist, OfferUp, especially for matching sets, (3) Construction site thefts - new homes under construction often have appliances stolen before homeowners move in, (4) Home burglaries - thieves target homes during moves or renovations when appliances are visible and accessible, (5) Moving truck hijackings - entire truckloads of household goods including all appliances are stolen, (6) Difficult to track - unlike phones or cars, most people don't register appliance serial numbers. In 2024, over $1 billion worth of appliances were stolen. Theft rate peaks during summer (moving season) and around holidays. Checking serial numbers is one of the best ways to avoid purchasing stolen appliances."
           },
           {
             question: "Can appliance serial numbers be removed or faked?",
@@ -65,7 +65,7 @@ const CheckAppliancesPage = () => {
           },
           {
             question: "How long does an appliance serial number check take?",
-            answer: "Our appliance verification takes only 3 seconds. Enter the complete model number and serial number, click verify, and receive instant results showing whether the appliance has been reported stolen, pawned, has insurance claims, or has warranty issues from law enforcement, pawn shop, manufacturer, and insurance databases."
+            answer: "Our appliance verification takes only 3 seconds. Enter the complete model number and serial number, click verify, and receive instant results showing whether the appliance has been reported stolen, pawned, has been reported stolen, or has warranty issues from law enforcement, pawn shop, manufacturer, and our verification databases."
           },
           {
             question: "What are red flags when buying used appliances?",

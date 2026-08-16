@@ -15,8 +15,8 @@ const CheckElectronicsPage = () => {
       ]}
       content={{
         intro: "Verify if any electronic device is stolen in 3 seconds. Free serial number verification for cameras, tablets, game consoles, smartwatches, drones, TVs, and appliances. Check before buying from Facebook Marketplace, eBay, Craigslist, or pawn shops.",
-        whatIs: "Checking if electronics are stolen means verifying serial numbers against manufacturer databases, law enforcement records, and pawn shop databases. Most valuable electronic devices have unique serial numbers that can be tracked. SafeOrStolen's electronics checker instantly searches law enforcement stolen property databases, LeadsOnline (national pawn shop database), manufacturer warranty records, insurance claim databases, and user-reported theft registries for cameras, tablets, gaming consoles, smartwatches, drones, TVs, appliances, and more. This protects buyers from purchasing stolen goods that could be confiscated, blacklisted, or lead to criminal charges.",
-        howItWorks: "Our electronics verification system queries multiple databases simultaneously. We check: (1) Law enforcement stolen property databases - local, state, and federal agencies, (2) LeadsOnline - the largest national pawn shop database tracking millions of transactions, (3) Manufacturer databases - Canon, Nikon, Sony, Apple, Samsung, Microsoft warranty and registration records, (4) Insurance claim databases - tracks devices reported stolen to insurance companies, (5) User-reported theft registries - community databases like StolenRegister, (6) Serial number format validation - verifies the serial number matches manufacturer specifications. Within 3 seconds, you receive a report showing whether the device has been reported stolen, pawned, or has outstanding insurance claims.",
+        whatIs: "Checking if electronics are stolen means verifying serial numbers against manufacturer databases, law enforcement records, and pawn shop databases. Most valuable electronic devices have unique serial numbers that can be tracked. SafeOrStolen's electronics checker instantly searches stolen-property registries, LeadsOnline (national pawn shop database), manufacturer warranty records, our verification databases, and user-reported theft registries for cameras, tablets, gaming consoles, smartwatches, drones, TVs, appliances, and more. This protects buyers from purchasing stolen goods that could be confiscated, blacklisted, or lead to criminal charges.",
+        howItWorks: "Our electronics verification system queries multiple databases simultaneously. We check: (1) stolen-property registries - multiple regional sources, (2) LeadsOnline - the largest national pawn shop database tracking millions of transactions, (3) Manufacturer databases - Canon, Nikon, Sony, Apple, Samsung, Microsoft warranty and registration records, (4) our verification databases - tracks devices reported stolen to insurance companies, (5) User-reported theft registries - community databases like StolenRegister, (6) Serial number format validation - verifies the serial number matches manufacturer specifications. Within 3 seconds, you receive a report showing whether the device has been reported stolen, pawned, or has outstanding theft reports.",
         whyCheck: "Buying stolen electronics has serious legal and financial consequences. (1) Devices can be confiscated by police with zero compensation, (2) You could face criminal charges for possession of stolen property, (3) You lose your entire purchase price with no legal recourse, (4) Pawn shops and repair shops may report you to authorities when you bring in stolen goods, (5) Manufacturers may refuse warranty service on stolen devices, (6) Some devices (tablets, smartwatches) can be remotely locked by original owners. In 2024, over $8 billion worth of electronics were reported stolen in the United States. Cameras, tablets, gaming consoles, drones, and high-end appliances are prime targets. Stolen electronics frequently appear on Facebook Marketplace, Craigslist, OfferUp, pawn shops, and eBay, often sold at 40-70% below market value. Our free electronics checker protects you from this massive underground market.",
         benefits: [
           "Check cameras - Canon, Nikon, Sony, Fujifilm, Panasonic DSLRs and mirrorless",
@@ -25,7 +25,7 @@ const CheckElectronicsPage = () => {
           "Verify smartwatches - Apple Watch, Samsung Galaxy Watch, Garmin",
           "Check drones - DJI, Parrot, Autel, Skydio",
           "Verify appliances - washers, dryers, refrigerators, TVs",
-          "Search law enforcement and pawn shop databases",
+          "Search stolen-property registries and pawn shop databases",
           "Instant electronics serial number check — $0.99/check or $10/month unlimited"
         ],
         process: [
@@ -33,7 +33,7 @@ const CheckElectronicsPage = () => {
           "Record the complete serial number including all letters, numbers, and symbols - even one wrong character can cause false results",
           "Take photos of the serial number label and the device for your records",
           "Enter the serial number into our verification tool at SafeOrStolen.com/verify",
-          "Review the report showing whether the device has been reported stolen, pawned, or has insurance claims",
+          "Review the report showing whether the device has been reported stolen, pawned, or has been reported stolen",
           "If CLEAN, proceed with purchase. If STOLEN or PAWNED (without seller being the original pawner), walk away and report to authorities"
         ],
         faqs: [
@@ -63,7 +63,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "How long does an electronics serial number check take?",
-            answer: "Our electronics verification takes only 3 seconds. Enter the complete serial number, click verify, and receive instant results showing whether the device has been reported stolen, pawned, or has outstanding insurance claims from law enforcement, pawn shop, manufacturer, and insurance databases."
+            answer: "Our electronics verification takes only 3 seconds. Enter the complete serial number, click verify, and receive instant results showing whether the device has been reported stolen, pawned, or has outstanding theft reports from law enforcement, pawn shop, manufacturer, and our verification databases."
           },
           {
             question: "What are red flags when buying used electronics?",

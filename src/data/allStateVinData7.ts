@@ -41,7 +41,7 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  localLaws: "Mississippi Code §97-17-65 makes receiving stolen property a felony if vehicle value exceeds $500, with penalties up to 10 years in prison. Mississippi requires title transfers within 30 days. The MS Department of Revenue maintains all title and VIN records."
  },
  faqs: [
- { question: "How do I check for flood damage on a Mississippi vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Mississippi Gulf Coast vehicles frequently have hidden flood damage from hurricanes. Our database searches insurance claims, salvage auctions, and title brands to uncover damage sellers hide." },
+ { question: "How do I check for flood damage on a Mississippi vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Mississippi Gulf Coast vehicles frequently have hidden flood damage from hurricanes. Our database searches theft reports, salvage auctions, and title brands to uncover damage sellers hide." },
  { question: "Is a VIN check required in Mississippi?", answer: "Mississippi law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Always verify VIN history before completing any purchase to protect yourself legally and financially." },
  { question: "What is Mississippi's title transfer process?", answer: "In Mississippi, both buyer and seller must complete the title transfer within 30 days. The seller signs the title, buyer submits it to the MS DOR with bill of sale. Always verify the VIN matches the physical title before signing to prevent fraud." }
  ]
