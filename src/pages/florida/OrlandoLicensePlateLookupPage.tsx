@@ -11,7 +11,7 @@ const OrlandoLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Orlando?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We search FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Orange County Sheriff's Office, and Orlando Police Department records simultaneously. Free results in 3 seconds." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We search our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Free results in 3 seconds." }
  },
  {
  "@type": "Question",
@@ -26,7 +26,7 @@ const OrlandoLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "Is a license plate lookup free in Orlando?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups. We check FLHSMV registration, theft databases, and insurance records. After 2 free checks, $0.99/check or $10/month unlimited." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups against our verification databases, including vehicle theft and title databases. After 2 free checks, $0.99/check or $10/month unlimited." }
  }
  ]
  };
@@ -35,7 +35,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Orlando FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Orlando, Florida license plate lookup. Check if vehicles in Orange County are stolen. Search FLHSMV, vehicle theft and title databases, OPD records. Instant results."
+ description="Free Orlando, Florida license plate lookup. Check if vehicles in Orange County are stolen. Search vehicle theft and title databases and stolen property reports. Instant results."
  canonical="/florida/orlando-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +47,7 @@ const OrlandoLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Orlando License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Orlando, Florida against FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Orange County Sheriff, Orlando Police, and insurance theft databases. Free instant results in 3 seconds.
+ Verify any vehicle in Orlando, Florida against our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Free instant results in 3 seconds.
  </p>
  </div>
  </header>
@@ -81,10 +81,8 @@ const OrlandoLicensePlateLookupPage = () => {
  <h2 className="text-2xl font-bold text-foreground mb-4">What Our Orlando Lookup Checks</h2>
  <ul className="space-y-3">
  {[
- { name: 'FLHSMV Records', desc: 'Florida registration database for Orange County and surrounding counties' },
- { name: 'Orange County Sheriff', desc: 'OCSO stolen vehicle reports covering greater Orlando metro' },
- { name: 'Orlando Police (OPD)', desc: 'City of Orlando stolen vehicle records' },
- { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss records' },
+ { name: 'Vehicle Theft & Title Databases', desc: 'Theft and total loss records for vehicles nationwide' },
+ { name: 'Stolen Property Reports', desc: 'Stolen property reports from all 50 states' },
  { name: 'Rental & Fleet Records', desc: 'Former rental vehicle indicators and fleet disposal data' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -100,7 +98,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Orlando?</summary>
- <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We search FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Orange County Sheriff's Office, and Orlando Police Department records simultaneously. Free results in 3 seconds.</p>
+ <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We search our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Free results in 3 seconds.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Why are rental car scams common in Orlando?</summary>
@@ -112,7 +110,7 @@ const OrlandoLicensePlateLookupPage = () => {
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup free in Orlando?</summary>
- <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups covering FLHSMV registration, theft databases, and insurance records. After 2 free checks, $0.99/check or $10/month unlimited.</p>
+ <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups against our verification databases, including vehicle theft and title databases. After 2 free checks, $0.99/check or $10/month unlimited.</p>
  </details>
  </div>
  </section>

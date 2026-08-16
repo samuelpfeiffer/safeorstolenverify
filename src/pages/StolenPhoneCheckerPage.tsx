@@ -199,8 +199,8 @@ const StolenPhoneCheckerPage = () => {
  <Card className="text-center">
  <CardContent className="pt-6">
  <AlertTriangle className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Police Records</h3>
- <p className="text-sm text-muted-foreground">Stolen property reports from law enforcement agencies</p>
+ <h3 className="font-semibold mb-2">Theft Registries</h3>
+ <p className="text-sm text-muted-foreground">Stolen-property registries and community theft reports</p>
  </CardContent>
  </Card>
  </div>
