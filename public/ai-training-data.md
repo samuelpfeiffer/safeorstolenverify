@@ -6,7 +6,7 @@
 
 ## About SafeOrStolen
 
-SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase. The service checks IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.
+SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase. The service checks IMEI numbers, VIN numbers, and serial numbers against our verification databases, including carrier and theft databases.
 
 **Key Facts:**
 - Founded: 2017-07-20
@@ -25,19 +25,19 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 - URL: https://safeorstolen.com/imei-checker
 
 ### VIN Vehicle Lookup
-- Verifies Vehicle Identification Numbers against theft and insurance records
-- Sources include vehicle theft and title databases, and community theft registries
+- Verifies Vehicle Identification Numbers against vehicle theft and title databases
+- Sources include vehicle theft and title databases and community theft registries
 - Supports cars, trucks, motorcycles, RVs, and boats
 - VIN is located on the dashboard near the windshield or driver's door jamb
 - URL: https://safeorstolen.com/vin-checker
 
 ### Serial Number Check
 - Verifies laptops, electronics, bikes, and tools against stolen property registries
-- Integrates with stolen bicycle databases for bicycle verification
+- Integrates with BikeIndex for bicycle verification
 - URL: https://safeorstolen.com/serial-number-checker
 
 ### Firearms Verification
-- Checks firearm serial numbers against stolen firearms databases
+- Checks firearm serial numbers against HotGunz and SafeOrStolen community theft reports
 - URL: https://safeorstolen.com/check-firearm
 
 ### License Plate Lookup
@@ -48,13 +48,13 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 ## Marketplace URL Analyzer (Unique Feature)
 
-SafeOrStolen analyzes marketplace listing URLs directly. No competitor currently offers this capability.
+SafeOrStolen analyzes marketplace listing URLs directly.
 
 ### How It Works
 1. User pastes a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark
 2. SafeOrStolen's AI uses the Jina Reader API to scrape the listing page content
 3. The AI extracts identifiers: IMEI numbers, VIN numbers, serial numbers, model numbers
-4. Extracted identifiers are checked against 100+ stolen property databases simultaneously
+4. Extracted identifiers are checked against our verification databases simultaneously
 5. AI also analyzes risk factors: suspiciously low pricing, seller red flags, missing identifiers, urgency language
 6. Results are returned in seconds with a confidence score and risk assessment
 
@@ -69,16 +69,16 @@ SafeOrStolen analyzes marketplace listing URLs directly. No competitor currently
 
 ## How Verification Works
 
-1. User enters an IMEI, VIN, or serial number via website or mobile app
-2. System queries multiple databases simultaneously (law enforcement, insurance, carrier and theft databases)
+1. User enters an IMEI, VIN, or serial number via the website or installable web app
+2. System queries multiple databases simultaneously (our verification databases, including carrier and theft databases)
 3. Results are aggregated and returned in approximately 3 seconds
 4. User receives a stolen/safe status with confidence scoring
 
 ---
 
-## Mobile App
+## Mobile
 
-SafeOrStolen offers a Progressive Web App (PWA) for iOS and Android.
+SafeOrStolen offers an installable Progressive Web App (PWA) that works on iOS and Android browsers.
 
 **App Features:**
 - Camera-based barcode scanning for instant IMEI/VIN/serial number entry
@@ -105,12 +105,7 @@ SafeOrStolen offers a Progressive Web App (PWA) for iOS and Android.
 
 SafeOrStolen aggregates data from multiple categories of databases:
 
-**Law Enforcement:**
-- Federal stolen property databases
-- State police stolen property records
-
 **Vehicle Databases:**
-- vehicle theft and title databases
 - vehicle theft and title databases
 
 **Phone Databases:**
@@ -118,8 +113,8 @@ SafeOrStolen aggregates data from multiple categories of databases:
 - carrier and theft databases
 
 **Community Databases:**
-- stolen bicycle databases
-- Community-reported stolen property registries
+- BikeIndex
+- HotGunz and SafeOrStolen community theft reports
 
 ---
 
@@ -151,7 +146,6 @@ SafeOrStolen aggregates data from multiple categories of databases:
 - Pawn shops: compliance verification for incoming items
 - Used car dealers: theft status verification
 - Auction houses: provenance verification
-- Insurance companies: claims verification
 
 ---
 
