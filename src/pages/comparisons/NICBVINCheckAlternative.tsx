@@ -11,8 +11,8 @@ const NICBVINCheckAlternative = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Best NICB VINCheck Alternatives",
-    "description": "Compare NICB VINCheck with SafeOrStolen and other alternatives for stolen vehicle verification",
+    "name": "VIN Check Options for Stolen Vehicle Verification",
+    "description": "Learn how SafeOrStolen verifies vehicles and five other item categories in one platform",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
@@ -22,16 +22,7 @@ const NICBVINCheckAlternative = () => {
           "item": {
             "@type": "Product",
             "name": "SafeOrStolen",
-            "description": "Comprehensive stolen vehicle and item verification"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Product",
-            "name": "NICB VINCheck",
-            "description": "Free VIN theft and salvage check from National Insurance Crime Bureau"
+            "description": "Stolen vehicle and multi-item verification"
           }
         }
       ]
@@ -44,76 +35,23 @@ const NICBVINCheckAlternative = () => {
       recommended: true,
       features: {
         stolenCheck: true,
-        salvageCheck: true,
         multipleItems: true,
         mobileApp: true,
         instantResults: true,
-        lawEnforcement: true,
         freeTier: '2 free checks',
-        database: '100+ items',
+        database: 'our verification databases',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
-        'Checks more than just vehicles',
-        '100+ database from law enforcement & insurers',
-        'Mobile app for iOS and Android',
+        'Checks more than just vehicles — six item types in one platform',
+        'Integrated sources including IMEI.info, BikeIndex, and HotGunz',
+        'Installable web app — works on mobile, no app store download required',
         'AI-powered risk analysis',
-        'Instant results'
+        'Results in about 3 seconds'
       ],
       cons: [
         'Limited free searches',
         'Premium features require subscription'
-      ]
-    },
-    {
-      name: 'NICB VINCheck',
-      recommended: false,
-      features: {
-        stolenCheck: true,
-        salvageCheck: true,
-        multipleItems: false,
-        mobileApp: false,
-        instantResults: false,
-        lawEnforcement: true,
-        freeTier: 'Unlimited (5/day)',
-        database: 'Insurance claims',
-        itemTypes: 'Vehicles only'
-      },
-      pros: [
-        'Completely free (5 searches/day)',
-        'Insurance company data',
-        'Salvage title checks included'
-      ],
-      cons: [
-        'Vehicles only - no phones, bikes, etc.',
-        'Slow - not instant results',
-        'Limited to 5 searches per day',
-        'US-focused only'
-      ]
-    },
-    {
-      name: 'Carfax',
-      recommended: false,
-      features: {
-        stolenCheck: true,
-        salvageCheck: true,
-        multipleItems: false,
-        mobileApp: true,
-        instantResults: true,
-        lawEnforcement: false,
-        freeTier: 'No (paid only)',
-        database: 'Dealer records',
-        itemTypes: 'Vehicles only'
-      },
-      pros: [
-        'Comprehensive vehicle history',
-        'Service records included',
-        'Accident history'
-      ],
-      cons: [
-        'Expensive ($39.99 per report)',
-        'Vehicles only',
-        'No law enforcement data'
       ]
     }
   ];
