@@ -75,7 +75,7 @@ export default function HowToCheckPhoneStolen() {
           <h2>Step-by-Step: How to Check if a Phone is Stolen</h2>
           
           <h3>Method 1: Use SafeOrStolen's Free IMEI Checker (Fastest)</h3>
-          <p>SafeOrStolen checks against 100+ databases instantly including carrier blacklists, police reports, and international theft databases.</p>
+          <p>SafeOrStolen checks our verification databases instantly, including carrier blacklists and community theft registries.</p>
           <ol>
             <li>Go to <Link to="/verify" className="text-primary hover:underline">SafeOrStolen.com/verify</Link></li>
             <li>Enter the 15-digit IMEI number</li>
@@ -89,7 +89,7 @@ export default function HowToCheckPhoneStolen() {
             </li>
           </ol>
           <p className="bg-muted p-4 rounded-lg my-6">
-            <strong>💡 Pro Tip:</strong> Download the <Link to="/app" className="text-primary hover:underline">SafeOrStolen mobile app</Link> to scan phone barcodes instantly at the point of sale. No typing required.
+            <strong>💡 Pro Tip:</strong> Use the <Link to="/app" className="text-primary hover:underline">SafeOrStolen installable web app</Link> to scan phone barcodes instantly at the point of sale. No typing required.
           </p>
 
           <h3>Method 2: Check Carrier Blacklists Directly</h3>
@@ -101,12 +101,6 @@ export default function HowToCheckPhoneStolen() {
             <li><strong>Sprint (now T-Mobile):</strong> sprint.com/en/shop/bring-your-phone-to-sprint.html</li>
           </ul>
           <p><strong>Limitation:</strong> A phone clean on one carrier may still be blacklisted on others or reported stolen to police.</p>
-
-          <h3>Method 3: CheckMEND (Paid Service)</h3>
-          <p>CheckMEND charges $3.99 per check and only covers UK databases. Not recommended for US buyers. SafeOrStolen offers $0.99/check or $10/month unlimited.</p>
-
-          <h3>Method 4: IMEI.info (Limited Free Checks)</h3>
-          <p>Provides basic info but doesn't check police databases or comprehensive blacklists. Results are incomplete.</p>
 
           <h2>Red Flags When Buying Used Phones</h2>
           <p>Even before checking the IMEI, watch for these warning signs:</p>
@@ -206,11 +200,11 @@ export default function HowToCheckPhoneStolen() {
           </ul>
 
           <h2>The SafeOrStolen Advantage</h2>
-          <p>While free carrier checks exist, SafeOrStolen provides the most comprehensive verification:</p>
+          <p>While free carrier checks exist, SafeOrStolen provides a broader verification check:</p>
           <ul>
-            <li>✅ Checks 100+ databases simultaneously (carriers, police, international)</li>
+            <li>✅ Checks our verification databases simultaneously (carrier blacklists and community theft registries)</li>
             <li>✅ 3-second results vs 15+ minutes with manual checks</li>
-            <li>✅ Mobile app with barcode scanning for instant verification</li>
+            <li>✅ Installable web app with barcode scanning for instant verification</li>
             <li>✅ Covers all item types (phones, laptops, bikes, cars, firearms)</li>
             <li>✅ Free trial with 2 checks - no credit card required</li>
             <li>✅ Legal protection documentation if issues arise</li>
