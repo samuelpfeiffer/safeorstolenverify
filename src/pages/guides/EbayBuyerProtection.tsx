@@ -19,7 +19,7 @@ const EbayBuyerProtection = () => {
  {
  "@type": "HowToStep",
  "name": "Verify with SafeOrStolen",
- "text": "Enter the identifier into SafeOrStolen's free checker to search 100+ databases for stolen reports."
+ "text": "Enter the identifier into SafeOrStolen's free checker to search our verification databases for stolen reports."
  },
  {
  "@type": "HowToStep",
@@ -66,7 +66,7 @@ const EbayBuyerProtection = () => {
  <Button asChild variant="outline" size="lg" className="gap-2">
  <Link to="/app">
  <Smartphone className="w-5 h-5" />
- Get the Mobile App
+ Try the Web App
  </Link>
  </Button>
  </div>
@@ -123,9 +123,9 @@ const EbayBuyerProtection = () => {
  <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">2</div>
  <div>
  <h3 className="text-xl font-semibold mb-2">Verify with SafeOrStolen</h3>
- <p className="text-muted-foreground mb-4">Enter the identifier into our free verification tool. We check 100+ databases including:</p>
+ <p className="text-muted-foreground mb-4">Enter the identifier into our free verification tool. We check our verification databases including:</p>
  <ul className="list-disc list-inside text-muted-foreground space-y-2">
- <li>Stolen property reports from all 50 states (FBI stolen property database)</li>
+ <li>Stolen property reports from all 50 states</li>
  <li>vehicle theft and title databases</li>
  <li>Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
  <li>International stolen databases</li>

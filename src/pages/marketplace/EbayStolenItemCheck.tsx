@@ -153,7 +153,7 @@ const EbayStolenItemCheck = () => {
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">The Delayed Discovery Problem</h3>
               <p>
-                One of the most insidious risks with stolen items on eBay is delayed discovery. A stolen phone might work perfectly for months before the original owner files an insurance claim and the IMEI gets blacklisted. A stolen laptop might function fine until the owner registers a police report and the serial number enters national databases. By the time this happens, eBay's standard return period has expired, and you're left holding stolen property with no recourse.
+                One of the most insidious risks with stolen items on eBay is delayed discovery. A stolen phone might work perfectly for months before the IMEI gets blacklisted. A stolen laptop might function fine until the serial number enters theft databases. By the time this happens, eBay's standard return period has expired, and you're left holding stolen property with no recourse.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk eBay Categories</h3>
               <p>

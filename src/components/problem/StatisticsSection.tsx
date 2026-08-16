@@ -24,9 +24,9 @@ export const StatisticsSection = () => {
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      number: "1st",
-      label: "Mobile app for stolen item verification",
-      source: "SafeOrStolen Innovation"
+      number: "~3 sec",
+      label: "Average stolen item verification time",
+      source: "SafeOrStolen Product Data"
     }
   ];
 

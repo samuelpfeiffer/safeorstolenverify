@@ -8,7 +8,7 @@ export const StatsSection = () => {
  icon: <DollarSign className="h-8 w-8" />,
  number: "$13B",
  label: "Annual stolen goods market value",
- source: "vehicle theft and title databases"
+ source: "Industry Analysis"
  },
  {
  icon: <Users className="h-8 w-8" />,

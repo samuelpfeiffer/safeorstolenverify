@@ -87,7 +87,7 @@ const VINVerificationTool = () => {
  <>
  <SEOHead
  title="VIN Verification Tool"
- description="Check vehicle theft history using VIN verification. Cross-references vehicle theft and title databases databases."
+ description="Check vehicle theft history using VIN verification against our verification databases."
  canonical="/tools/vin-verification"
  />
 

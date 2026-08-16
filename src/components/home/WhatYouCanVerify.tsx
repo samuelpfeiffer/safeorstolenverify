@@ -30,10 +30,10 @@ export const WhatYouCanVerify = () => {
  icon: Car,
  title: 'Vehicles',
  subtitle: 'VIN Verification',
- description: 'Check cars, trucks, motorcycles, RVs for stolen status, accident history, title issues, and odometer fraud. Free alternative to Carfax.',
+ description: 'Check cars, trucks, motorcycles, RVs for stolen status, accident history, title issues, and odometer fraud.',
  items: ['Cars & Trucks', 'Motorcycles', 'RVs & Trailers', 'ATVs & Boats', 'Classic vehicles'],
  link: '/vin-checker',
- badge: 'Carfax Alternative',
+ badge: 'VIN Verification',
  image: vehiclesCars,
  cta: 'Check VIN Free',
  },
@@ -41,7 +41,7 @@ export const WhatYouCanVerify = () => {
  icon: Laptop,
  title: 'Electronics, Power Tools & Appliances',
  subtitle: 'Serial Number Verification',
- description: 'Verify laptops, cameras, gaming consoles, power tools, and appliances. Check against police databases and manufacturer records.',
+ description: 'Verify laptops, cameras, gaming consoles, power tools, and appliances. Check against manufacturer records and theft databases.',
  items: ['Laptops (Dell, HP, MacBook)', 'Cameras (Canon, Nikon, Sony)', 'Gaming consoles', 'Power tools (DeWalt, Milwaukee)', 'Appliances (Samsung, LG, Whirlpool)'],
  link: '/serial-number-checker',
  image: electronicsLaptops,
@@ -51,7 +51,7 @@ export const WhatYouCanVerify = () => {
  icon: Bike,
  title: 'Bicycles',
  subtitle: 'Frame Number Verification',
- description: 'Check bike frame numbers against stolen bicycle databases, and police stolen bike registries. Essential for expensive road and mountain bikes.',
+ description: 'Check bike frame numbers against stolen bicycle databases and community stolen bike registries. Essential for expensive road and mountain bikes.',
  items: ['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX & Fixed gear', 'Vintage bicycles'],
  link: '/check-bike',
  image: bicycles,
@@ -72,7 +72,7 @@ export const WhatYouCanVerify = () => {
  icon: Bike,
  title: 'eBikes & E-Scooters',
  subtitle: 'Frame & Battery Verification',
- description: 'Check electric bikes and e-scooters worth $1,500-$10,000. Verify Rad Power, Trek, Specialized, Aventon eBikes against stolen bicycle databases and police databases.',
+ description: 'Check electric bikes and e-scooters worth $1,500-$10,000. Verify Rad Power, Trek, Specialized, Aventon eBikes against stolen bicycle databases.',
  items: ['Rad Power eBikes', 'Trek Verve+', 'Specialized Turbo', 'Aventon Level', 'E-scooters'],
  link: '/check-ebike',
  image: ebikesEscooters,
@@ -92,7 +92,7 @@ export const WhatYouCanVerify = () => {
  icon: Laptop,
  title: 'Power Tools',
  subtitle: 'Serial Number Verification',
- description: 'Check power tools worth $100-$5,000. Verify DeWalt, Milwaukee, Makita, Bosch tools — the #1 most stolen item from construction sites.',
+ description: 'Check power tools worth $100-$5,000. Verify DeWalt, Milwaukee, Makita, Bosch tools — a commonly stolen item from construction sites.',
  items: ['DeWalt tools', 'Milwaukee M18', 'Makita combo kits', 'Bosch power tools', 'Generators'],
  link: '/check-tools',
  image: powerTools,
@@ -113,7 +113,7 @@ export const WhatYouCanVerify = () => {
  icon: Car,
  title: 'Boats & Watercraft',
  subtitle: 'HIN Verification',
- description: 'Verify boats, yachts, jet skis, personal watercraft worth $15,000-$500,000+. Check Hull ID numbers against Coast Guard and state DNR databases.',
+ description: 'Verify boats, yachts, jet skis, personal watercraft worth $15,000-$500,000+. Check Hull ID numbers against marine theft databases.',
  items: ['Boats & Yachts', 'Jet Skis', 'Sailboats', 'Fishing boats', 'Personal watercraft'],
  link: '/check-boat',
  badge: 'Marine Theft',
@@ -126,7 +126,7 @@ export const WhatYouCanVerify = () => {
  <section className="py-16 px-4" aria-labelledby="verify-heading">
  <div className="max-w-6xl mx-auto">
  <div className="text-center mb-12">
- <Badge className="mb-4">Most Comprehensive Verification</Badge>
+ <Badge className="mb-4">Verify Before You Buy</Badge>
  <h2 id="verify-heading" className="text-3xl md:text-4xl font-bold mb-4">
  What You Can Verify With SafeOrStolen
  </h2>
@@ -202,12 +202,12 @@ export const WhatYouCanVerify = () => {
  One Platform. Everything You Need to Verify.
  </h3>
  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
- Stop using different services for phones, cars, and electronics. SafeOrStolen checks everything in one place — instantly and for free. No other platform offers this comprehensive coverage.
+ Stop using different services for phones, cars, and electronics. SafeOrStolen checks everything in one place — instantly and for free.
  </p>
  <div className="flex flex-wrap justify-center gap-4 text-sm">
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
- <span>100+ Database Records</span>
+ <span>Verification Databases</span>
  </div>
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -219,7 +219,7 @@ export const WhatYouCanVerify = () => {
  </div>
  <div className="flex items-center">
  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
- <span>Mobile App Available</span>
+ <span>Works on Mobile</span>
  </div>
  </div>
  </div>

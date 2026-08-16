@@ -271,7 +271,7 @@ const FirearmsCheckPage = () => {
  'Unlimited firearm serial checks at one flat monthly rate',
  'Timestamped, printable PDF compliance certificates for every transaction',
  'Bulk CSV upload — verify a batch of firearms at once',
- 'Full audit trail your staff can pull for law enforcement on request',
+ 'Full audit trail your staff can pull for the relevant authorities on request',
  'API integration to connect directly to your POS or inventory system',
  ].map((f) => (
  <li key={f} className="flex items-start gap-2 text-foreground/80 text-sm">
@@ -296,7 +296,7 @@ const FirearmsCheckPage = () => {
  </h2>
  <div className="space-y-3">
  {[
- { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not law enforcement and cannot query federal systems — our results come from stolen firearms databases and serial integrity analysis.' },
+ { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not the relevant authorities and cannot query federal systems — our results come from stolen firearms databases and serial integrity analysis.' },
  { q: "What if the serial number comes back clean — does that guarantee it's not stolen?", a: 'No. A clean result means no records were found in our aggregated database at the time of the check. Not all stolen firearms are reported to all databases. A clean result significantly reduces your risk but does not constitute a guarantee. We strongly recommend also requesting the original purchase receipt from the seller.' },
  { q: 'Can a gun show vendor refuse to let me check the serial number?', a: 'Yes, a private seller can refuse. If they do, that is itself a significant red flag. Legitimate sellers with nothing to hide generally welcome verification.' },
  { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can report the stolen firearm to your local police and to a public stolen-firearm registry. Reports that reach the nationwide stolen firearm feeds will be included in future SafeOrStolen checks.' },
@@ -390,7 +390,7 @@ const FirearmsCheckPage = () => {
  "name": "Is there a stolen firearm database?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "There is no single public database of every stolen firearm \u2014 the FBI' SafeOrStolen searches stolen firearms databases along with insurance claim records and community theft registries, which is the practical option available to a private buyer. Because coverage is fragmented, no match found means nothing was located in the sources checked rather than confirmation the firearm was never stolen."
+ "text": "There is no single public database of every stolen firearm \u2014 SafeOrStolen searches stolen firearms databases along with community theft reports and community theft registries, which is the practical option available to a private buyer. Because coverage is fragmented, no match found means nothing was located in the sources checked rather than confirmation the firearm was never stolen."
  }
  },
  {
@@ -414,7 +414,7 @@ const FirearmsCheckPage = () => {
  "name": "What does a stolen gun result mean?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "A flagged result means the serial number appears in one or more stolen property databases. Do not purchase the firearm. Contact your local law enforcement agency. SafeOrStolen will indicate which database returned the record."
+ "text": "A flagged result means the serial number appears in one or more stolen property databases. Do not purchase the firearm. Contact your community theft agency. SafeOrStolen will indicate which database returned the record."
  }
  }
  ]

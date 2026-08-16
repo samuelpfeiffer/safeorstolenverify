@@ -34,14 +34,14 @@ const topics = [
  {
  icon: Smartphone,
  title: 'IMEI Verification',
- desc: 'How to find and check your phone\'s IMEI against carrier and theft databases\'s 15B+ record database, carrier and theft databases, and insurance theft claims before any purchase.',
+ desc: 'How to find and check your phone\'s IMEI against carrier and theft databases\'s 15B+ record database, carrier and theft databases, and vehicle title records before any purchase.',
  link: '/imei-checker',
  stat: '15B+ IMEI records'
  },
  {
  icon: Car,
  title: 'VIN & Stolen Cars',
- desc: 'Step-by-step VIN lookup against stolen property reports from all 50 states, vehicle theft and title databases insurance records, and vehicle theft and title databases before buying used vehicles.',
+ desc: 'Step-by-step VIN lookup against stolen property reports from all 50 states, vehicle theft and title databases vehicle title records, and vehicle theft and title databases before buying used vehicles.',
  link: '/vin-checker',
  stat: '50-state coverage'
  },
@@ -55,7 +55,7 @@ const topics = [
  {
  icon: Wrench,
  title: 'Serial Number Checks',
- desc: 'Verify laptops, tools, bikes, firearms, and electronics using serial numbers against police reports, stolen bicycle databases, and insurance theft databases.',
+ desc: 'Verify laptops, tools, bikes, firearms, and electronics using serial numbers against stolen-property reports, stolen bicycle databases, and vehicle title databases.',
  link: '/serial-number-checker',
  stat: '100+ item types'
  },
@@ -269,7 +269,7 @@ export const YouTubeChannelSection = () => {
  Over <strong>$6 billion in stolen goods</strong> are sold annually through U.S. secondhand marketplaces. Buyers who unknowingly purchase stolen property lose both their money and the item when law enforcement recovers it — and may face legal scrutiny under <strong>18 U.S.C. § 2315</strong>. SafeOrStolen's free YouTube tutorials teach every marketplace participant how to run an instant{' '}
  <Link to="/imei-checker" className="text-primary hover:underline">IMEI</Link>,{' '}
  <Link to="/vin-checker" className="text-primary hover:underline">VIN</Link>, or{' '}
- <Link to="/serial-number-checker" className="text-primary hover:underline">serial number</Link> check before money changes hands — with results delivered in approximately 3 seconds, cross-referencing 100+ police databases, carrier and theft databases, and insurance theft records.
+ <Link to="/serial-number-checker" className="text-primary hover:underline">serial number</Link> check before money changes hands — with results delivered in approximately 3 seconds, cross-referencing 100+ stolen-property databases, carrier and theft databases, and insurance theft records.
  </p>
  <p className="text-muted-foreground text-xs leading-relaxed">
  The SafeOrStolen <Link to="/app" className="text-primary hover:underline">mobile app (PWA for iOS and Android)</Link> with barcode scanning allows buyers to verify items at the point of sale, and the{' '}

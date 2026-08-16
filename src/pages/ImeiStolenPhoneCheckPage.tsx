@@ -18,9 +18,9 @@ const ImeiStolenPhoneCheckPage = () => {
  'check phone blacklist imei'
  ]}
  content={{
- intro: "Use the IMEI number to check if any phone is stolen, blacklisted, or safe to buy. Our free <a href='/imei-checker'>IMEI checker</a> searches the carrier and theft databases global database, all carrier and theft databases, and law enforcement records to verify a phone's status in just 3 seconds. Works for iPhone, Samsung, Google Pixel, OnePlus, and all smartphones.",
+ intro: "Use the IMEI number to check if any phone is stolen, blacklisted, or safe to buy. Our free <a href='/imei-checker'>IMEI checker</a> searches the carrier and theft databases global database, all carrier and theft databases, and stolen-property registries to verify a phone's status in just 3 seconds. Works for iPhone, Samsung, Google Pixel, OnePlus, and all smartphones.",
  whatIs: "An IMEI (International Mobile Equipment Identity) check verifies whether a phone has been reported stolen, lost, or blacklisted by carriers. Every mobile phone has a unique 15-digit IMEI number that acts like a fingerprint - no two phones share the same IMEI. When a phone is reported stolen, carriers add the IMEI to a global blacklist managed by the carrier and theft databases (Groupe Spéciale Mobile Association). A blacklisted phone cannot be activated on any major carrier network worldwide. SafeOrStolen's IMEI checker searches these blacklists plus community theft registries to tell you if a phone is safe to purchase.",
- howItWorks: "Our IMEI verification system queries multiple global databases simultaneously. We check the carrier and theft databases, all carrier and theft databases, international carrier databases, FBI and stolen property reports from all 50 states, iCloud Activation Lock status (for iPhones), Google Find My Device status (for Android), insurance company claim records, and user-reported theft registries. The check takes 3 seconds. You receive a comprehensive report showing: (1) Stolen/lost status, (2) Carrier blacklist status, (3) Activation lock status, (4) Finance/lease status, (5) Network compatibility.",
+ howItWorks: "Our IMEI verification system queries multiple global databases simultaneously. We check the carrier and theft databases, all carrier and theft databases, international carrier databases, stolen-property registries, iCloud Activation Lock status (for iPhones), Google Find My Device status (for Android), community theft reports, and user-reported theft registries. The check takes 3 seconds. You receive a comprehensive report showing: (1) Stolen/lost status, (2) Carrier blacklist status, (3) Activation lock status, (4) Finance/lease status, (5) Network compatibility.",
  whyCheck: "A phone with a blacklisted IMEI is essentially worthless. Here's what happens: (1) The phone cannot be activated on any major carrier network, (2) Cellular data and calling won't work (only WiFi), (3) The phone can be remotely locked or wiped by the original owner, (4) Police can seize it as stolen property with no compensation, (5) You could face criminal charges for possession. Over 2.4 million phones were reported stolen in the US in 2024. Many appear on Facebook Marketplace, Craigslist, OfferUp, and eBay with sellers claiming they're 'unlocked' or 'carrier-free.' A blacklisted phone might work temporarily on prepaid carriers but will eventually be blocked. Always check the IMEI before buying.",
  benefits: [
  "Check IMEI for any phone - iPhone, Samsung, Google Pixel, OnePlus, Motorola",
@@ -63,11 +63,11 @@ const ImeiStolenPhoneCheckPage = () => {
  },
  {
  question: "How accurate is the IMEI blacklist check?",
- answer: "Our IMEI check queries the carrier and theft databases, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including law enforcement records and user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
+ answer: "Our IMEI check queries the carrier and theft databases, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including and user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
  },
  {
  question: "How much does the IMEI check cost?",
- answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers comprehensive databases including carrier and theft databases, and law enforcement records. Many other IMEI checkers charge more per check or only check partial databases."
+ answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers comprehensive databases including carrier and theft databases, and stolen-property registries. Many other IMEI checkers charge more per check or only check partial databases."
  },
  {
  question: "What's the difference between IMEI and serial number?",

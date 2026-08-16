@@ -22,24 +22,24 @@ const IPhoneIMEICheck = () => {
  itemType="iPhone"
  identifierType="IMEI"
  heroBadge="Apple Device Verification"
- heroSubtitle="Before you buy that used iPhone from Facebook Marketplace, Craigslist, or eBay - verify it's not reported stolen. Our free IMEI checker searches 100+ law enforcement, insurance, and carrier databases instantly."
+ heroSubtitle="Before you buy that used iPhone from Facebook Marketplace, Craigslist, or eBay - verify it's not reported stolen. Our free IMEI checker searches our verification databases instantly."
  stats={[
  { value: "1.2M+", label: "iPhones Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
- { value: "100+", label: "Devices in Database" },
+ { value: "Instant", label: "Results" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is iPhone IMEI Verification?"
- whatIsContent="Every iPhone has a unique 15-digit IMEI (International Mobile Equipment Identity) number that serves as its fingerprint. When an iPhone is reported stolen, this IMEI is added to global blacklist databases. Our verification service checks your iPhone's IMEI against these databases, including carrier and theft databases, law enforcement records, and insurance claim databases. If the iPhone is stolen, it can be remotely locked via iCloud, blacklisted by carriers (making it unusable), or confiscated by police - leaving you with nothing."
+ whatIsContent="Every iPhone has a unique 15-digit IMEI (International Mobile Equipment Identity) number that serves as its fingerprint. When an iPhone is reported stolen, this IMEI is added to global blacklist databases. Our verification service checks your iPhone's IMEI against these databases, including carrier and theft databases, and other verification databases. If the iPhone is stolen, it can be remotely locked via iCloud, blacklisted by carriers (making it unusable), or confiscated by police - leaving you with nothing."
  howItWorksSteps={[
  "Find the iPhone's IMEI: Dial *#06# on the phone, go to Settings > General > About, or check the original box/SIM tray",
  "Enter the 15-digit IMEI number into our free verification tool",
- "Our system instantly searches 100+ law enforcement, insurance, and carrier databases",
+ "Our system instantly searches our verification databases",
  "Get your results in 3 seconds - see if the iPhone is SAFE or STOLEN"
  ]}
- howItWorksDescription="Our verification checks multiple sources simultaneously: carrier and theft databases, major US carrier and theft databases, community theft registries, iCloud lock status indicators, and user-reported theft databases. We also check for outstanding finance (if the previous owner still owes money) and insurance claims."
+ howItWorksDescription="Our verification checks multiple sources simultaneously: carrier and theft databases, community theft registries, iCloud lock status indicators, and user-reported theft databases. We also check for outstanding finance (if the previous owner still owes money)."
  whyVerifyTitle="Why Check Before Buying an iPhone?"
- whyVerifyContent="iPhones are the #1 most stolen smartphone in America. In 2024, over 1.2 million iPhones were reported stolen in the US alone, with many ending up on secondhand marketplaces. Buying a stolen iPhone can have serious consequences:"
+ whyVerifyContent="iPhones are the among the most commonly stolen smartphone in America. In 2024, over 1.2 million iPhones were reported stolen in the US alone, with many ending up on secondhand marketplaces. Buying a stolen iPhone can have serious consequences:"
  whyVerifyBenefits={[
  "Stolen iPhones can be remotely locked via Find My iPhone, making them useless",
  "Carriers blacklist stolen devices - the iPhone won't work on any network",
@@ -84,7 +84,7 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "How accurate is the iPhone stolen check?",
- answer: "We check 100+ databases, including carrier and theft databases, major carrier and theft databases, law enforcement records, and insurance claims. No database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
+ answer: "We check our verification databases, including carrier and theft databases, major carrier and theft databases, . No database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
  },
  {
  question: "Can someone change an iPhone's IMEI?",

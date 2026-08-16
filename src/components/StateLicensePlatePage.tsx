@@ -126,8 +126,8 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
  <li>vehicle theft and title databases</li>
  <li>{stateData.name} vehicle theft and title databases</li>
- <li>Police databases and stolen property reports from all 50 states</li>
- <li>Insurance claims records</li>
+ <li>Stolen-property databases and stolen property reports from all 50 states</li>
+ <li>Vehicle Title Records records</li>
  </ul>
  
  <h2>Why Verify Vehicles in {stateData.name}?</h2>
@@ -259,11 +259,11 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">Police databases</span>
+ <span className="text-base">Stolen-property databases</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">Insurance claims records</span>
+ <span className="text-base">Vehicle Title Records records</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />

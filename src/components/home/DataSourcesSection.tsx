@@ -5,31 +5,31 @@ const dataSources = [
  {
  icon: Shield,
  title: 'Law Enforcement',
- description: 'Stolen property reports from all 50 states, Interpol stolen property records',
+ description: 'Stolen property reports from all 50 states, cross-border theft registries',
  color: 'text-blue-500',
  link: '/data-sources#law-enforcement',
  stat: '50 states',
  },
  {
  icon: Building2,
- title: 'Insurance Records',
- description: 'vehicle theft and title databases, paid theft claims from 500+ insurers, CLUE reports',
+ title: 'Vehicle Theft Records',
+ description: 'Vehicle theft and title databases, salvage and odometer history',
  color: 'text-red-500',
- link: '/data-sources#insurance',
- stat: '500+ insurers',
+ link: '/data-sources#vehicle',
+ stat: 'Nationwide',
  },
  {
  icon: FileCheck,
- title: 'Claims Databases',
- description: 'LeadsOnline pawn shop network, cross-referenced insurance claims, title washing detection',
+ title: 'Pawn Network Registries',
+ description: 'LeadsOnline pawn shop network, title washing detection',
  color: 'text-amber-500',
- link: '/data-sources#claims',
+ link: '/data-sources#pawn',
  stat: '$3B tracked',
  },
  {
  icon: Globe,
  title: 'Global Networks',
- description: 'Interpol, international databases across 190+ countries, cross-border theft registries',
+ description: 'International databases across 190+ countries, cross-border theft registries',
  color: 'text-green-500',
  link: '/data-sources#global',
  stat: '190+ countries',
@@ -62,7 +62,7 @@ export const DataSourcesSection = () => {
  How We Verify Every Item
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- We cross-reference <strong>100+ databases</strong> in real-time to confirm if an item is safe to buy or sell
+ We cross-reference <strong>our verification databases</strong> in real-time to confirm if an item is safe to buy or sell
  </p>
  </div>
  
@@ -90,7 +90,7 @@ export const DataSourcesSection = () => {
  <p className="text-center text-sm text-muted-foreground mt-8">
  All checks happen in real-time — results delivered in 3 seconds or less.{' '}
  <Link to="/data-sources" className="text-primary hover:underline font-medium">
- See all 100+ data sources →
+ See all data sources →
  </Link>
  </p>
  </div>

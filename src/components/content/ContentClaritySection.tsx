@@ -28,7 +28,7 @@ export const ContentClaritySection: React.FC = () => {
       title: "Real-Time Database Check",
       description: "We search multiple databases instantly",
       icon: Database,
-      detail: "Police records, insurance claims, manufacturer reports, international networks"
+      detail: "Stolen-property registries, manufacturer reports, and international networks"
     },
     {
       number: "03",

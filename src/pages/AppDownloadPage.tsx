@@ -131,45 +131,31 @@ export default function AppDownloadPage() {
  </div>
  </section>
 
- {/* Competitor comparison */}
+ {/* What you can check */}
  <section className="py-16 px-4">
  <div className="max-w-3xl mx-auto">
  <h2 className="text-2xl font-black text-white text-center mb-8">
  Everything You Can Check From Your Phone
  </h2>
- <div className="overflow-x-auto rounded-2xl border border-gray-700">
- <table className="w-full text-sm">
- <thead className="bg-gray-800">
- <tr>
- <th className="text-left py-3 px-4 text-gray-300 font-semibold">Feature</th>
- <th className="text-center py-3 px-3 text-blue-400 font-bold">SafeOrStolen</th>
- <th className="text-center py-3 px-3 text-gray-400">CheckMEND</th>
- <th className="text-center py-3 px-3 text-gray-400">vehicle theft and title databases</th>
- <th className="text-center py-3 px-3 text-gray-400">Stolen Firearms Databases</th>
- </tr>
- </thead>
- <tbody>
+ <div className="rounded-2xl border border-gray-700 overflow-hidden">
+ <ul className="divide-y divide-gray-800">
  {[
- { f: 'Barcode scanner', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: 'Gun serial lookup', sos: '✓', cm: '—', nicb: '—', hg: '✓' },
- { f: 'VIN vehicle check', sos: '✓', cm: '—', nicb: '✓', hg: '—' },
- { f: 'IMEI phone check', sos: '✓', cm: '✓', nicb: '—', hg: '—' },
- { f: 'License plate lookup', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: 'Bike serial check', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: '100+ databases', sos: '✓', cm: '—', nicb: '—', hg: '—' },
- { f: 'PDF certificate', sos: '✓', cm: '✓', nicb: '—', hg: '—' },
- { f: 'Subscription', sos: '$10/mo unlimited', cm: '$1.99+/check', nicb: 'Free (1 source)', hg: 'Free (1 source)' },
- ].map((row, i) => (
- <tr key={row.f} className={i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}>
- <td className="py-3 px-4 text-gray-300 text-xs">{row.f}</td>
- <td className={`py-3 px-3 text-center text-xs font-bold ${row.sos === '✓' ? 'text-green-400' : 'text-blue-300'}`}>{row.sos}</td>
- <td className={`py-3 px-3 text-center text-xs ${row.cm === '✓' ? 'text-green-400' : row.cm === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.cm}</td>
- <td className={`py-3 px-3 text-center text-xs ${row.nicb === '✓' ? 'text-green-400' : row.nicb === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.nicb}</td>
- <td className={`py-3 px-3 text-center text-xs ${row.hg === '✓' ? 'text-green-400' : row.hg === '—' ? 'text-gray-600' : 'text-gray-300'}`}>{row.hg}</td>
- </tr>
+ 'Barcode scanner for serials and IMEIs',
+ 'Firearm serial lookup',
+ 'VIN vehicle check',
+ 'IMEI phone check',
+ 'License plate lookup',
+ 'Bicycle serial check',
+ 'Marketplace listing URL analysis',
+ 'PDF verification certificate',
+ '2 free checks, then $0.99/check or $10/mo unlimited',
+ ].map((f, i) => (
+ <li key={f} className={`flex items-center gap-3 py-3 px-4 text-sm text-gray-300 ${i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}`}>
+ <span className="text-green-400 font-bold">✓</span>
+ <span>{f}</span>
+ </li>
  ))}
- </tbody>
- </table>
+ </ul>
  </div>
  </div>
  </section>

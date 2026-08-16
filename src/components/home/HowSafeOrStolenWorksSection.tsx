@@ -106,7 +106,7 @@ export const HowSafeOrStolenWorksSection = () => {
 
  <div className="mt-12 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-lg p-8 text-center">
  <h3 className="text-2xl font-bold mb-3">
- The Fastest, Most Comprehensive Verification Available
+ The Fastest, Comprehensive Verification Available
  </h3>
  <p className="text-muted-foreground max-w-2xl mx-auto">
  While other services take 24+ hours and charge $25-40 per report, SafeOrStolen delivers comprehensive results in 3 seconds for FREE. Our mobile app even works offline for on-the-spot verification at meetups.

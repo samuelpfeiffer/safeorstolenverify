@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
  localLaws: "South Carolina Code §16-13-180 makes receiving stolen property valued over $2,000 a felony with penalties up to 10 years in prison. South Carolina requires title transfers within 45 days. The SC DMV maintains all VIN and title records for verification."
  },
  faqs: [
- { question: "How do I check for flood damage on a South Carolina vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. South Carolina coastal vehicles frequently have hidden flood damage from hurricanes. Our database searches insurance claims, salvage auctions, and title brands to uncover damage sellers try to hide." },
+ { question: "How do I check for flood damage on a South Carolina vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. South Carolina coastal vehicles frequently have hidden flood damage from hurricanes. Our database searches theft reports, salvage auctions, and title brands to uncover damage sellers try to hide." },
  { question: "Does South Carolina require VIN inspections?", answer: "South Carolina requires VIN inspections for out-of-state vehicles and vehicles without existing SC titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden flood damage before purchase." },
  { question: "What is South Carolina's title transfer process?", answer: "In South Carolina, buyers must complete title transfer within 45 days. Both parties sign the title, and buyer submits it to the SC DMV with bill of sale. Always verify the VIN matches the title before signing to prevent fraud." }
  ]

@@ -38,14 +38,13 @@ export default function TransparencyPage() {
  </div>
  <div className="prose prose-lg max-w-none">
  <p>
- SafeOrStolen aggregates data from 100+ sources to provide comprehensive stolen item verification. Here's where we get our data:
+ SafeOrStolen aggregates data from our verification databases to provide comprehensive stolen item verification. Here's where we get our data:
  </p>
  
- <h3>Law Enforcement Databases</h3>
+ <h3>Stolen Property Registries</h3>
  <ul>
- <li><strong>Stolen property reports from all 50 states:</strong> FBI's database of stolen property, including vehicles and firearms</li>
- <li><strong>State Law Enforcement Systems:</strong> Direct connections to state police stolen property databases</li>
- <li><strong>International Police Databases:</strong> Interpol and regional law enforcement records</li>
+ <li><strong>Stolen property reports from all 50 states:</strong> stolen property registries covering vehicles and firearms</li>
+ <li><strong>Community and Regional Registries:</strong> stolen-property reporting networks</li>
  </ul>
 
  <h3>Industry Databases</h3>
@@ -84,7 +83,7 @@ export default function TransparencyPage() {
  
  <ol>
  <li><strong>Format Validation:</strong> We verify the identifier follows correct format (15-digit IMEI, 17-character VIN, etc.)</li>
- <li><strong>Parallel Queries:</strong> Your query simultaneously hits all relevant databases (average 47 databases per check)</li>
+ <li><strong>Parallel Queries:</strong> Your query simultaneously hits all relevant databases in our verification network</li>
  <li><strong>Result Aggregation:</strong> Results are compiled and any matches flagged</li>
  <li><strong>Confidence Scoring:</strong> We assign confidence levels based on source reliability and recency</li>
  <li><strong>Report Generation:</strong> Final report delivered in under 3 seconds</li>
@@ -96,7 +95,7 @@ export default function TransparencyPage() {
  </p>
  <ul>
  <li>Police report filed by original owner</li>
- <li>Insurance claim paid for theft</li>
+ <li>Reported to our verification network as stolen</li>
  <li>Carrier blacklisted the device (for phones)</li>
  <li>Community report verified by our team</li>
  </ul>

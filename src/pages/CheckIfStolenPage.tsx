@@ -17,9 +17,9 @@ const CheckIfStolenPage = () => {
  'is it stolen'
  ]}
  content={{
- intro: "Enter any identifier to check against 100+ databases. SafeOrStolen verifies phones, vehicles, license plates, bicycles, firearms, and serial-numbered goods including electronics, power tools, and appliances. Instant verification for buyers, sellers, and businesses - protect yourself before any secondhand transaction.",
+ intro: "Enter any identifier to check against our verification databases. SafeOrStolen verifies phones, vehicles, license plates, bicycles, firearms, and serial-numbered goods including electronics, power tools, and appliances. Instant verification for buyers, sellers, and businesses - protect yourself before any secondhand transaction.",
  
- whatIs: "Checking if an item is stolen means verifying the item hasn't been reported as lost, stolen, or fraudulently obtained. Every valuable item has a unique identifier - IMEI for phones, VIN for vehicles, serial numbers for electronics, power tools, and appliances. SafeOrStolen checks these identifiers against community theft registries, carrier and theft databases, insurance claims, and user-reported theft registries to determine if an item is safe to buy.",
+ whatIs: "Checking if an item is stolen means verifying the item hasn't been reported as lost, stolen, or fraudulently obtained. Every valuable item has a unique identifier - IMEI for phones, VIN for vehicles, serial numbers for electronics, power tools, and appliances. SafeOrStolen checks these identifiers against community theft registries, carrier and theft databases, theft reports, and user-reported theft registries to determine if an item is safe to buy.",
  
  howItWorks: "Our universal stolen item checker works with any identifier: (1) Enter the serial number, IMEI, VIN, or license plate, (2) We automatically detect the identifier type and search the appropriate databases, (3) For phones: carrier and theft databases, activation locks, (4) For vehicles: stolen property reports from all 50 states, vehicle theft and title databases, title history, (5) For electronics: manufacturer databases, user reports, police records, (6) You receive instant results showing clean status or any red flags.",
  

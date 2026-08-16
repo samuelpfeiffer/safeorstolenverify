@@ -16,7 +16,7 @@ const GunSerialNumberCheckGuide = () => {
  {
  "@type": "Question",
  "name": "What is stolen firearms databases?",
- "acceptedAnswer": { "@type": "Answer", "text": "The National Crime Information Center (stolen firearms databases) is the FBI's centralized criminal justice database containing over 7 million stolen firearm records. When a gun is reported stolen to any law enforcement agency in the US, it's entered into stolen firearms databases. SafeOrStolen checks stolen firearms databases as part of every firearm verification." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Stolen firearms databases are registries that compile reports of firearms reported stolen. SafeOrStolen checks stolen firearms databases as part of every firearm verification." }
  },
  {
  "@type": "Question",
@@ -188,7 +188,7 @@ const GunSerialNumberCheckGuide = () => {
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">What is stolen firearms databases?</summary>
- <p className="text-muted-foreground mt-2">The FBI's National Crime Information Center contains over 7 million stolen firearm records from every law enforcement agency in the US. When a gun is reported stolen, it'</p>
+ <p className="text-muted-foreground mt-2">Stolen firearms databases compile reports of firearms reported stolen. SafeOrStolen checks these databases as part of every firearm verification.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Is it illegal to buy a stolen gun?</summary>

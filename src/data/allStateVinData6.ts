@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART6: Record<string, any> = {
  localLaws: "Louisiana Revised Statutes 14:69 makes receiving stolen property a felony punishable by up to 10 years in prison if vehicle value exceeds $1,000. Louisiana requires title transfers within 40 days. The LA Office of Motor Vehicles maintains all title and VIN records."
  },
  faqs: [
- { question: "How do I check for flood damage on a Louisiana vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Louisiana vehicles frequently have hidden flood damage from hurricanes. Our database searches insurance claims, salvage auctions, and title brands to uncover flood damage sellers try to hide." },
+ { question: "How do I check for flood damage on a Louisiana vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Louisiana vehicles frequently have hidden flood damage from hurricanes. Our database searches theft reports, salvage auctions, and title brands to uncover flood damage sellers try to hide." },
  { question: "Does Louisiana require VIN inspections?", answer: "Louisiana requires VIN inspections for out-of-state vehicles and vehicles without existing LA titles. However, all buyers should verify VIN history independently to detect stolen vehicles, salvage titles, and flood damage before purchase." },
  { question: "What is Louisiana's title transfer process?", answer: "In Louisiana, buyers must complete title transfer within 40 days. Both parties sign the title, and buyer submits it to the LA OMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to avoid fraud." }
  ]

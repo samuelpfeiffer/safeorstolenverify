@@ -44,7 +44,7 @@ export const WhyCheckBeforeBuying = () => {
                   Americans lose <strong>$15 billion annually</strong> to secondhand marketplace fraud and stolen goods. When you buy a stolen item, you lose 100% of your money - no refunds, no recourse. Sellers of stolen goods disappear immediately after sale, and marketplaces rarely offer buyer protection for in-person transactions.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  <strong>Average loss:</strong> $850 per victim for electronics, $3,200 for vehicles, according to FBI statistics.
+                  <strong>Average loss:</strong> $850 per victim for electronics, $3,200 for vehicles, according to published crime statistics.
                 </p>
               </div>
             </div>

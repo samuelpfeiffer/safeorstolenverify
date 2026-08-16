@@ -25,23 +25,23 @@ const FirearmsSerialNumberCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to check if a gun is stolen?",
- answer: "Yes, SafeOrStolen offers free firearm serial number checks. While the FBI' We offer 2 free searches to get started."
+ answer: "Yes, SafeOrStolen offers free firearm serial number checks. While We offer 2 free searches to get started."
  },
  {
  question: "Can I check a gun serial number online from my phone?",
- answer: "Absolutely. SafeOrStolen works on any mobile device with a web browser. Simply visit safeorstolen.com/verify, enter the firearm's serial number, and get instant results. Our mobile app also offers barcode scanning for faster entry."
+ answer: "Absolutely. SafeOrStolen works on any mobile device with a web browser. Simply visit safeorstolen.com/verify, enter the firearm's serial number, and get instant results. Our installable web app also offers barcode scanning for faster entry."
  },
  {
  question: "What if my gun's serial number was removed or altered?",
- answer: "A removed, obliterated, or altered serial number is a federal crime under 18 U.S.C. § 922(k). If you encounter a firearm with a defaced serial number, do not purchase it and contact local law enforcement immediately. This is a major red flag indicating the weapon may be stolen."
+ answer: "A removed, obliterated, or altered serial number is a federal crime under 18 U.S.C. § 922(k). If you encounter a firearm with a defaced serial number, do not purchase it and contact community theft immediately. This is a major red flag indicating the weapon may be stolen."
  },
  {
  question: "Will this tell me the registered owner of a gun?",
- answer: "No. SafeOrStolen does not provide ownership information, registered owner names, or personal details. We only provide theft risk indicators based on available databases. For ownership verification, contact local law enforcement or a licensed firearms dealer."
+ answer: "No. SafeOrStolen does not provide ownership information, registered owner names, or personal details. We only provide theft risk indicators based on available databases. For ownership verification, contact community theft or a licensed firearms dealer."
  },
  {
  question: "Do I still need to contact police if a gun comes back suspicious?",
- answer: "Yes. If our check returns any theft indicators or risk flags, you should not proceed with the purchase and should contact local law enforcement. SafeOrStolen is a due diligence tool, not a replacement for proper legal verification through official channels."
+ answer: "Yes. If our check returns any theft indicators or risk flags, you should not proceed with the purchase and should contact community theft. SafeOrStolen is a due diligence tool, not a replacement for proper legal verification through official channels."
  }
  ];
 
@@ -81,7 +81,7 @@ const FirearmsSerialNumberCheckPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Review risk signals before you buy or sell",
- "text": "Review the verification results for any theft indicators, insurance claims, or risk flags. If any concerns arise, do not proceed with the transaction."
+ "text": "Review the verification results for any theft indicators, reported theft history, or risk flags. If any concerns arise, do not proceed with the transaction."
  }
  ]
  },
@@ -123,7 +123,7 @@ const FirearmsSerialNumberCheckPage = () => {
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
  Verify any firearm's theft status before buying or selling. Search available theft databases, 
- insurance claims, and public records in seconds. Protect yourself from legal trouble.
+ reported theft history, and public records in seconds. Protect yourself from legal trouble.
  </p>
 
  {/* Search Input */}
@@ -155,7 +155,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
  <div className="flex items-center gap-2">
  <CheckCircle className="h-5 w-5 text-primary" />
- <span>100+ Databases Searched</span>
+ <span>our verification Databases Searched</span>
  </div>
  <div className="flex items-center gap-2">
  <Shield className="h-5 w-5 text-primary" />
@@ -190,7 +190,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter the serial number into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Enter the complete serial number exactly as it appears on the firearm. Include all letters, numbers, and hyphens. Our system searches available databases including insurance theft claims, salvage records, and public theft reports. Results are returned within 3 seconds.
+ Enter the complete serial number exactly as it appears on the firearm. Include all letters, numbers, and hyphens. Our system searches available databases including reported theft history, salvage records, and public theft reports. Results are returned within 3 seconds.
  </p>
  </div>
  </div>
@@ -200,7 +200,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 3 – Review risk signals before you buy or sell</h3>
  <p className="text-muted-foreground">
- Review the verification results carefully. If any theft indicators, insurance claims, or risk flags appear, do not proceed with the transaction. You can download a verification certificate as proof of due diligence for your records. If the firearm shows as potentially stolen, contact local law enforcement.
+ Review the verification results carefully. If any theft indicators, reported theft history, or risk flags appear, do not proceed with the transaction. You can download a verification certificate as proof of due diligence for your records. If the firearm shows as potentially stolen, contact community theft.
  </p>
  </div>
  </div>
@@ -220,7 +220,7 @@ const FirearmsSerialNumberCheckPage = () => {
  Insurance theft claims and salvage records
  </h3>
  <p className="text-muted-foreground">
- When a firearm is reported stolen to an insurance company, the serial number is logged in insurance claim databases. SafeOrStolen accesses these records to identify firearms that may have been reported as stolen property. Salvage records also help identify firearms that were involved in incidents or claims.
+ When a firearm is reported stolen to an insurance company, the serial number is logged in community theft reports. SafeOrStolen accesses these records to identify firearms that may have been reported as stolen property. Salvage records also help identify firearms that were involved in incidents or claims.
  </p>
  </div>
 
@@ -253,7 +253,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <h2 className="text-3xl font-bold mb-6">Can Civilians Use stolen firearms databases or "National Stolen Gun Databases"?</h2>
  
  <p className="text-lg text-muted-foreground mb-6">
- The National Crime Information Center (stolen firearms databases) is the FBI's nationwide database used by law enforcement agencies to track stolen property, including firearms. <strong>Stolen firearm reports from all 50 states is not accessible to the general public.</strong> Only authorized law enforcement officers, certain government agencies, and licensed firearms dealers (through stolen firearms databases) can query stolen firearms databases.
+ The stolen-firearm registries is s nationwide database used by agencies to track stolen property, including firearms. <strong>Stolen firearm reports from all 50 states is not fully accessible to the general public.</strong> Only authorized parties can query certain stolen firearm registries.
  </p>
  
  <p className="text-lg text-muted-foreground mb-6">
@@ -309,7 +309,7 @@ For official verification, visit your local police department or licensed firear
  <CardContent className="p-6">
  <h3 className="font-bold mb-3 text-destructive">Serial number scratched, altered, or removed</h3>
  <p className="text-sm text-muted-foreground">
- A defaced serial number is a federal crime. If the serial number appears scratched, ground down, or otherwise altered, do not purchase the firearm and contact law enforcement immediately.
+ A defaced serial number is a federal crime. If the serial number appears scratched, ground down, or otherwise altered, do not purchase the firearm and contact the relevant authorities immediately.
  </p>
  </CardContent>
  </Card>

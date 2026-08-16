@@ -4,7 +4,7 @@ const GamingConsoleCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen"
-      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against 100+ database. Instant results before buying used consoles."
+      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against our verification databases. Instant results before buying used consoles."
       h1="Check if Gaming Console is Stolen - Free Verification"
       keywords={[
         'check if ps5 is stolen',
@@ -26,7 +26,7 @@ const GamingConsoleCheck = () => {
       stats={[
         { value: "500K+", label: "Consoles Stolen Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Gaming Console Serial Number Verification?"
@@ -34,10 +34,10 @@ const GamingConsoleCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Check the back/bottom of the console, original box, or in System Settings",
         "Enter the serial number into our free verification tool",
-        "Our system searches manufacturer databases, police records, and insurance claims instantly",
+        "Our system searches manufacturer databases, police records instantly",
         "Get results in 3 seconds - know if the console is SAFE or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, law enforcement stolen property databases, insurance claim records, and user-reported theft databases."
+      howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, and user-reported theft databases."
       whyVerifyTitle="Why Check Before Buying a Used Gaming Console?"
       whyVerifyContent="Gaming consoles are highly targeted by thieves due to their high resale value and strong demand. With PS5s still selling for $400+ and Xbox Series X at $500+, the financial risk is significant. Here's why verification is essential:"
       whyVerifyBenefits={[

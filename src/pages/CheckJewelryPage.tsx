@@ -4,7 +4,7 @@ const CheckJewelryPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Jewelry is Stolen - Free Diamond, Watch, Ring Serial Number Verification"
-      metaDescription="Check if jewelry, diamonds, watches, rings, or luxury items are stolen. Free serial number verification for Rolex, Cartier, Tiffany jewelry from law enforcement and pawn shop databases before buying."
+      metaDescription="Check if jewelry, diamonds, watches, rings, or luxury items are stolen. Free serial number verification for Rolex, Cartier, Tiffany jewelry from stolen-property registries and pawn shop databases before buying."
       h1="Check if Jewelry is Stolen Before Buying"
       itemType="Jewelry & Luxury Items"
       keywords={[
@@ -17,8 +17,8 @@ const CheckJewelryPage = () => {
       ]}
       content={{
         intro: "Verify if jewelry, diamonds, luxury watches, rings, or precious items are stolen in 3 seconds. Free serial number verification for Rolex, Cartier, Tiffany, GIA-certified diamonds, Patek Philippe watches. Check before buying from pawn shops, Facebook Marketplace, eBay, Craigslist, or estate sales. Jewelry is a top theft target due to high value and easy concealment.",
-        whatIs: "Checking if jewelry is stolen means verifying serial numbers, laser inscriptions, and certification numbers against community theft registries, LeadsOnline (pawn shop database), and GIA/AGS diamond registries. High-value jewelry, watches, and GIA-certified diamonds have unique serial numbers or laser inscriptions. SafeOrStolen's jewelry checker instantly searches law enforcement stolen property databases, LeadsOnline (national pawn shop database - jewelry is the most commonly pawned stolen item), GIA Diamond Registry, AGS Diamond Registry, manufacturer databases for Rolex, Cartier, Tiffany, Patek Philippe, insurance claim databases, and jeweler theft reports. This protects buyers from purchasing stolen jewelry that could be confiscated.",
-        howItWorks: "Our jewelry verification system queries multiple databases simultaneously. We check: (1) Law enforcement stolen property databases - jewelry theft is one of the most reported crimes across all 50 states, (2) LeadsOnline - the largest national pawn shop database. Over 80% of stolen jewelry is pawned within 72 hours of theft for immediate cash, (3) GIA Diamond Registry - tracks GIA-certified diamonds with laser inscriptions and certification numbers, (4) AGS Diamond Registry - American Gem Society certified diamond tracking, (5) Manufacturer databases - Rolex, Cartier, Tiffany, Patek Philippe serial number registries and warranty records, (6) Insurance claim databases - tracks jewelry reported stolen to insurance companies, (7) Jeweler theft reports - tracks jewelry stolen from jewelry stores, estate sales, or during repairs. Within 3 seconds, you receive a comprehensive report.",
+        whatIs: "Checking if jewelry is stolen means verifying serial numbers, laser inscriptions, and certification numbers against community theft registries, LeadsOnline (pawn shop database), and GIA/AGS diamond registries. High-value jewelry, watches, and GIA-certified diamonds have unique serial numbers or laser inscriptions. SafeOrStolen's jewelry checker instantly searches stolen-property registries, LeadsOnline (national pawn shop database - jewelry is the most commonly pawned stolen item), GIA Diamond Registry, AGS Diamond Registry, manufacturer databases for Rolex, Cartier, Tiffany, Patek Philippe, our verification databases, and jeweler theft reports. This protects buyers from purchasing stolen jewelry that could be confiscated.",
+        howItWorks: "Our jewelry verification system queries multiple databases simultaneously. We check: (1) stolen-property registries - jewelry theft is one of the most reported crimes across all 50 states, (2) LeadsOnline - the largest national pawn shop database. Over 80% of stolen jewelry is pawned within 72 hours of theft for immediate cash, (3) GIA Diamond Registry - tracks GIA-certified diamonds with laser inscriptions and certification numbers, (4) AGS Diamond Registry - American Gem Society certified diamond tracking, (5) Manufacturer databases - Rolex, Cartier, Tiffany, Patek Philippe serial number registries and warranty records, (6) our verification databases - tracks jewelry reported stolen to insurance companies, (7) Jeweler theft reports - tracks jewelry stolen from jewelry stores, estate sales, or during repairs. Within 3 seconds, you receive a comprehensive report.",
         whyCheck: "Buying stolen jewelry has severe legal and financial consequences. (1) Jewelry can be confiscated by police with zero compensation - you lose $1,000-$100,000+, (2) You could face criminal charges for possession of stolen property - even if you didn't know it was stolen, (3) You can't resell stolen jewelry - any reputable jeweler will check serial numbers and report to police, (4) Jewelers and pawn shops refuse to service stolen items and must report you, (5) Insurance companies will not insure stolen jewelry, (6) GIA-certified diamonds with laser inscriptions can be tracked worldwide - you can never sell or reset the stone without being caught. In 2024, over $5 billion worth of jewelry was stolen in the United States. Jewelry theft includes home burglaries, car break-ins, purse snatchings, and jewelry store robberies. Stolen jewelry floods pawn shops, Facebook Marketplace, Craigslist, OfferUp, and eBay at 40-70% below retail value. Our free jewelry checker protects you from this massive theft market.",
         benefits: [
           "Check luxury watches - Rolex, Patek Philippe, Audemars Piguet, Cartier, Omega",
@@ -27,7 +27,7 @@ const CheckJewelryPage = () => {
           "Verify engagement rings - diamond rings, wedding bands, bridal sets",
           "Check gold jewelry - chains, bracelets, necklaces, earrings",
           "Verify estate jewelry - antique, vintage, heirloom pieces",
-          "Search law enforcement and pawn shop databases",
+          "Search stolen-property registries and pawn shop databases",
           "Free jewelry serial number check - 2 free verifications"
         ],
         process: [
@@ -35,7 +35,7 @@ const CheckJewelryPage = () => {
           "Record ALL serial numbers, certification numbers, and hallmarks completely. For GIA diamonds: get the full GIA report number (format: 1234567890). For Rolex: serial number between lugs at 6 o'clock position. Take macro photos of all inscriptions and numbers.",
           "Take detailed photos of the entire piece from multiple angles including any unique characteristics, engravings, damage, or modifications that could aid identification",
           "Enter all serial numbers, certification numbers, and identifiers into our verification tool at SafeOrStolen.com/verify",
-          "Review the comprehensive report showing whether the jewelry, watch, or diamond has been reported stolen, pawned, or has insurance claims",
+          "Review the comprehensive report showing whether the jewelry, watch, or diamond has been reported stolen, pawned, or has been reported stolen",
           "If CLEAN with valid certifications and provenance, proceed with purchase. If STOLEN, recently pawned by someone other than seller, or certifications are fraudulent, walk away immediately and report to authorities"
         ],
         faqs: [
@@ -65,7 +65,7 @@ const CheckJewelryPage = () => {
           },
           {
             question: "How long does a jewelry serial number check take?",
-            answer: "Our jewelry verification takes only 3 seconds per serial number or certification. Enter the watch serial number, GIA report number, or jewelry serial number, click verify, and receive instant results showing whether the item has been reported stolen, pawned, or has insurance claims from law enforcement, pawn shop, GIA registry, manufacturer, and insurance databases."
+            answer: "Our jewelry verification takes only 3 seconds per serial number or certification. Enter the watch serial number, GIA report number, or jewelry serial number, click verify, and receive instant results showing whether the item has been reported stolen, pawned, or has been reported stolen from law enforcement, pawn shop, GIA registry, manufacturer, and our verification databases."
           },
           {
             question: "What are red flags when buying used jewelry or luxury watches?",

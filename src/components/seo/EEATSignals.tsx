@@ -23,7 +23,7 @@ export const EEATSignals = () => {
  {/* What the platform actually does, operationally */}
  <meta
  name="experience"
- content="Stolen item verification platform that processes IMEI, VIN, and serial number checks against law enforcement and insurance databases in approximately 3 seconds."
+ content="Stolen item verification platform that processes IMEI, VIN, and serial number checks against our verification databases in approximately 3 seconds."
  />
 
 
@@ -63,7 +63,7 @@ export const EEATSignals = () => {
  {/* ─── Data Sources — Specific, not vague ─────── */}
  <meta
  name="data-sources"
- content="carrier and theft databases TAC Database (15B+ IMEI records), vehicle theft and title databases, stolen property reports from all 50 states, stolen bicycle databases API, Stolen Firearms Databases, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier and theft databases (AT&T, Verizon, T-Mobile, Sprint), vehicle theft and title databases, all 50 state community theft registries, 500+ insurance claim databases, Interpol stolen property records"
+ content="carrier and theft databases TAC Database (15B+ IMEI records), vehicle theft and title databases, stolen property reports from all 50 states, stolen bicycle databases API, Stolen Firearms Databases, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier and theft databases (AT&T, Verizon, T-Mobile, Sprint), all 50 state community theft registries"
  />
 
  {/* ─── Service Scope — factual enumeration ─────── */}
@@ -81,7 +81,7 @@ export const EEATSignals = () => {
  {/* ─── Unique Features ─────────────────────────── */}
  <meta
  name="unique-features"
- content="Only multi-category stolen item verification platform covering 10+ item types. Progressive Web App with camera barcode scanning for iOS and Android. Batch verification for pawn shops and auction houses. Compliance certificates with cryptographic timestamps."
+ content="Multi-category stolen item verification platform covering 10+ item types. Progressive Web App with camera barcode scanning, works on mobile. Batch verification for pawn shops and auction houses. Compliance certificates with cryptographic timestamps."
  />
 
  {/* ─── Business Identity ───────────────────────── */}

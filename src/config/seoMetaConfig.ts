@@ -35,7 +35,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/': {
  title: 'Free Stolen Item Checker - IMEI VIN Serial Verification',
- description: 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. 2 free searches. Results in 3 seconds.', // 159 chars
+ description: 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against our verification databases. 2 free searches. Results in 3 seconds.', // 159 chars
  keywords: 'stolen item checker, IMEI checker, VIN checker, serial number verification, stolen phone check',
  canonical: '/'
  },
@@ -105,7 +105,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/pricing': {
  title: 'Pricing - $10/mo Unlimited Stolen Item Verification',
- description: 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against 100+ databases. All item types. Cancel anytime.', // 156 chars
+ description: 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against our verification databases. All item types. Cancel anytime.', // 156 chars
  keywords: 'SafeOrStolen pricing, verification pricing, stolen item checker cost',
  canonical: '/pricing'
  },
@@ -115,7 +115,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/verify': {
  title: 'Verify Items - Instant Stolen Check in 3 Seconds',
- description: 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from buying stolen goods on marketplaces.', // 158 chars (needs adjustment)
+ description: 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against our verification databases. Protect yourself from buying stolen goods on marketplaces.', // 158 chars (needs adjustment)
  keywords: 'verify stolen items, instant verification, stolen goods check, marketplace safety',
  canonical: '/verify'
  },
@@ -204,8 +204,8 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // DATABASE (/database) - 158 chars
  // ========================================
  '/database': {
- title: 'Databases We Search - 100+ Global Sources',
- description: 'Access 50+ global stolen goods databases. Real-time checks across vehicle theft and title databases, carrier and theft databases, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
+ title: 'Databases We Search - our verification databases',
+ description: 'Access our verification databases. Real-time checks across vehicle theft and title databases, carrier and theft databases, CheckMEND, and community theft registries worldwide. broad coverage.', // 158 chars
  keywords: 'stolen item databases, vehicle theft and title databases database, carrier and theft databases, global theft databases',
  canonical: '/database'
  },

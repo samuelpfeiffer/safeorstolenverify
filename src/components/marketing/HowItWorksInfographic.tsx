@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom';
  */
 export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ className = '' }) => {
  const stats = [
- { value: '100+', label: 'ITEMS IN DATABASE' },
+ { value: '6', label: 'ITEM CATEGORIES' },
  { value: '6', label: 'ITEM CATEGORIES' },
  { value: '30sec', label: 'VERIFICATION TIME' },
  ];
@@ -38,13 +38,13 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  {
  number: '2',
  title: 'AI Searches Databases',
- description: 'Our AI instantly searches police reports, insurance claims, stolen property reports from all 50 statess, and global stolen goods registries.',
+ description: 'Our AI instantly searches stolen property reports from all 50 states and global stolen goods registries.',
  icon: <Zap className="w-8 h-8" />,
  },
  {
  number: '3',
  title: 'Get Instant Results',
- description: 'See if the item is safe to buy, stolen, blacklisted, or has insurance claims. Results in 30 seconds or less.',
+ description: 'See if the item is safe to buy, stolen, blacklisted, Results in 30 seconds or less.',
  icon: <CheckCircle className="w-8 h-8" />,
  },
  ];
@@ -54,13 +54,13 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  { icon: <Car className="w-6 h-6" />, title: 'Vehicles', desc: 'VIN lookup for cars, trucks, motorcycles in stolen property reports from all 50 states and vehicle theft and title databases' },
  { icon: <Laptop className="w-6 h-6" />, title: 'Electronics', desc: 'Serial number checks for laptops, cameras, gaming consoles' },
  { icon: <Wrench className="w-6 h-6" />, title: 'Tools & Equipment', desc: 'Verification of power tools and machinery serial numbers' },
- { icon: <Watch className="w-6 h-6" />, title: 'Jewelry & Watches', desc: 'Serial verification against insurance claim databases' },
+ { icon: <Watch className="w-6 h-6" />, title: 'Jewelry & Watches', desc: 'Serial verification against theft databases' },
  { icon: <Bike className="w-6 h-6" />, title: 'Bicycles', desc: 'Serial checks against stolen bicycle registries nationwide' },
  ];
 
  const benefits = [
- 'Backed by law enforcement and insurance companies',
- 'Real-time verification across 100+ databases',
+ 'Backed by our verification databases',
+ 'Real-time verification across our verification databases',
  'Protect yourself from legal consequences',
  'Avoid financial loss from blacklisted items',
  'Perfect for Facebook Marketplace, Craigslist, eBay',

@@ -8,7 +8,7 @@ interface DataPartnerBadgesProps {
 }
 
 const DATA_PARTNERS = [
- { name: 'Federal Records', description: 'Law Enforcement Databases', icon: Shield, verified: true },
+ { name: 'Stolen Property Registry', description: 'Verified Theft Reports', icon: Shield, verified: true },
  { name: 'Insurance Bureau', description: 'National Theft Reports', icon: Lock, verified: true },
  { name: 'carrier and theft databases', description: 'Global IMEI Blacklists', icon: Globe, verified: true },
  { name: 'Bicycle Registry', description: '1.4M+ Bikes Cataloged', icon: Database, verified: true },
@@ -73,7 +73,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  </span>
  </div>
  <p className="text-sm text-muted-foreground mb-4">
- We aggregate data from law enforcement, insurance companies, and manufacturer databases in real-time.
+ We aggregate data from stolen-property registries, carrier blacklists, and manufacturer databases in real-time.
  </p>
  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
  {DATA_PARTNERS.map((partner, index) => (

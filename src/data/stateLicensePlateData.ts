@@ -69,7 +69,7 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  dmvName: "California DMV",
  dmvLink: "https://www.dmv.ca.gov",
  topCities: ["Los Angeles", "San Francisco", "San Diego", "Oakland", "Sacramento"],
- theftStats: { annualThefts: "173,000+", recoveryRate: "55%", ranking: "#1" },
+ theftStats: { annualThefts: "173,000+", recoveryRate: "55%", ranking: "a top" },
  uniqueConcerns: ["Highest theft state nationally", "Title washing operations", "Port export to Asia", "VIN cloning rings"],
  requiresFrontPlate: true
  },
@@ -594,7 +594,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  content: {
  intro: `Verify ${state} vehicles using license plate number in 3 seconds. Free ${state} license plate lookup from ${dmvName} and community theft registries. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,
  
- whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against ${dmvName} registration databases and law enforcement stolen vehicle records. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker instantly searches ${dmvName} registration records, ${state} stolen property reports from all 50 states, vehicle theft and title databases database, and insurance databases to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
+ whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against ${dmvName} registration databases and law enforcement stolen vehicle records. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker instantly searches ${dmvName} registration records, ${state} stolen property reports from all 50 states, vehicle theft and title databases database, and our verification databases to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
  
  howItWorks: `Our ${state} license plate lookup system queries ${dmvName} databases to resolve the ${state} license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and ${state} registration status. Within 3 seconds, you receive a report showing whether the vehicle is reported stolen in ${state} or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference vehicle theft and title databases, stolen property reports from all 50 states, and ${state}-specific community theft registries for comprehensive results.`,
  

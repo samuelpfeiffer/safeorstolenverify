@@ -26,18 +26,18 @@ const BicycleSerialCheck = () => {
  stats={[
  { value: "2M+", label: "Bikes Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
- { value: "100+", label: "Records Searched" },
+ { value: "Instant", label: "Results" },
  { value: "$10/mo", label: "Unlimited Checks" }
  ]}
  whatIsTitle="What is Bicycle Serial Number Verification?"
- whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is logged in databases like stolen bicycle databases, police records, and insurance claims. Our verification service searches these databases to check if a bicycle has been reported stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
+ whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is logged in stolen bicycle databases. Our verification service searches these databases to check if a bicycle has been reported stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
  howItWorksSteps={[
  "Find the serial number: Usually stamped under the bottom bracket (where the pedals connect), on the head tube, or rear dropout",
  "Enter the serial number into our verification tool",
- "Our system searches stolen bicycle databases, police databases, and insurance records instantly",
+ "Our system searches stolen bicycle databases instantly",
  "Get results in 3 seconds - see if the bicycle is CLEAR or REPORTED STOLEN"
  ]}
- howItWorksDescription="We search multiple bicycle-specific databases including stolen bicycle databases (the largest stolen bike registry), local police department records, insurance claim databases, and manufacturer registries. For e-bikes, we also check motor and battery serial numbers where applicable."
+ howItWorksDescription="We search multiple bicycle-specific databases including stolen bicycle registries and manufacturer registries. For e-bikes, we also check motor and battery serial numbers where applicable."
  whyVerifyTitle="Why Check Before Buying a Used Bike?"
  whyVerifyContent="Bicycle theft is epidemic in America - a bike is stolen every 30 seconds. Only about 5% of stolen bikes are ever recovered, making the used market a prime destination for stolen property. Here's why verification is essential:"
  whyVerifyBenefits={[
@@ -92,7 +92,7 @@ const BicycleSerialCheck = () => {
  },
  {
  question: "What databases does SafeOrStolen check for bikes?",
- answer: "We search stolen bicycle databases (the largest stolen bike database with 500,000+ bikes registered), local and community theft registries, insurance claim records, and manufacturer registries. This comprehensive search gives you the best protection."
+ answer: "We search stolen bicycle databases, local and community theft registries, and manufacturer registries to give you the best protection."
  },
  {
  question: "What if the bike is reported stolen?",

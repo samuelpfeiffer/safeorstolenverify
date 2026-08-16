@@ -15,7 +15,7 @@ const HowItWorksPage = () => {
  <>
  <PageSEO
  title="How It Works - Verify Items in Seconds"
- description="How SafeOrStolen AI works: enter an IMEI, VIN, plate, or serial number and AI checks 100+ databases for instant 3-second results."
+ description="How SafeOrStolen AI works: enter an IMEI, VIN, plate, or serial number and AI checks our verification databases for instant 3-second results."
  keywords="how SafeOrStolen works, verification process, stolen item check explained"
  canonical="/how-it-works"
  structuredData={[
@@ -33,7 +33,7 @@ const HowItWorksPage = () => {
  {
  "@type": "HowToStep",
  "name": "Automatic Database Search",
- "text": "SafeOrStolen searches 100+ databases, including law enforcement records, insurance claims, manufacturer blacklists, and user reports."
+ "text": "SafeOrStolen searches our verification databases, including stolen-property registries, reported theft history, manufacturer blacklists, and user reports."
  },
  {
  "@type": "HowToStep",
@@ -65,7 +65,7 @@ const HowItWorksPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>How SafeOrStolen Works</strong></p>
- <p>SafeOrStolen verifies items against 100+ databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
+ <p>SafeOrStolen verifies items against our verification databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
  </div>
  </noscript>
  <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
@@ -165,7 +165,7 @@ const HowItWorksPage = () => {
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
  <DataSourceCard
  title="Stolen property reports from all 50 states"
- description="Federal stolen property database - law enforcement partnership"
+ description="Federal stolen property database - the relevant authorities partnership"
  icon="🏛️"
  />
  <DataSourceCard
@@ -444,7 +444,7 @@ const HowItWorksPage = () => {
  />
  <FAQItem
  question="What if I find my stolen item on SafeOrStolen?"
- answer="Contact local law enforcement immediately with the verification report. We can provide supporting documentation to help with recovery."
+ answer="Contact community theft immediately with the verification report. We can provide supporting documentation to help with recovery."
  />
  </div>
  </div>

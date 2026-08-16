@@ -36,7 +36,7 @@ const FreeStolenVehicleCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to see if a car is stolen by VIN?",
- answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search 100+ databases including vehicle theft and title databases, insurance theft claims, salvage records, and available public theft reports. Results are returned in about 3 seconds."
+ answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search our verification databases including vehicle theft and title databases, reported theft history, salvage records, and available public theft reports. Results are returned in about 3 seconds."
  },
  {
  question: "Can I check a stolen vehicle by license plate only?",
@@ -44,11 +44,11 @@ const FreeStolenVehicleCheckPage = () => {
  },
  {
  question: "Will this tell me the owner's name and address?",
- answer: "No. SafeOrStolen does not provide personal information about vehicle owners. We only show theft risk indicators, salvage status, and insurance claim history. For ownership verification, contact your state DMV or use their official lookup services."
+ answer: "No. SafeOrStolen does not provide personal information about vehicle owners. We only show theft risk indicators, salvage status, and reported theft history history. For ownership verification, contact your state DMV or use their official lookup services."
  },
  {
  question: "What should I do if a report suggests the car is stolen?",
- answer: "Do not complete the purchase. Leave the situation safely and contact local law enforcement with the VIN, seller information, and meeting location. Do not confront the seller directly. Keep copies of any communications as evidence."
+ answer: "Do not complete the purchase. Leave the situation safely and contact community theft with the VIN, seller information, and meeting location. Do not confront the seller directly. Keep copies of any communications as evidence."
  },
  {
  question: "Does a clean check mean the car is 100% safe?",
@@ -92,7 +92,7 @@ const FreeStolenVehicleCheckPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Understand stolen-status and risk indicators",
- "text": "Review the results for theft flags, salvage history, insurance claims, and other risk indicators. Download your verification certificate as proof of due diligence."
+ "text": "Review the results for theft flags, salvage history, reported theft history, and other risk indicators. Download your verification certificate as proof of due diligence."
  }
  ]
  },
@@ -133,8 +133,8 @@ const FreeStolenVehicleCheckPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Don't buy a stolen car, truck, or motorcycle. Enter a VIN or license plate to search 100+ databases 
- including vehicle theft and title databases for theft indicators, salvage status, and insurance claims—free.
+ Don't buy a stolen car, truck, or motorcycle. Enter a VIN or license plate to search our verification databases 
+ including vehicle theft and title databases for theft indicators, salvage status, and reported theft history—free.
  </p>
 
  {/* Search Input */}
@@ -201,7 +201,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter details into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. Our system searches vehicle theft and title databases, insurance claim databases, salvage records, and available public theft reports.
+ Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. Our system searches vehicle theft and title databases, community theft reports, salvage records, and available public theft reports.
  </p>
  </div>
  </div>
@@ -233,7 +233,7 @@ const FreeStolenVehicleCheckPage = () => {
  <ul className="space-y-3">
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Theft indicators from vehicle theft and title databases and 100+ databases
+ Theft indicators from vehicle theft and title databases and our verification databases
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

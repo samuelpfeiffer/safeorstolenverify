@@ -4,7 +4,7 @@ const LaptopSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Laptop is Stolen - Free Serial Number Verification | SafeOrStolen"
-      metaDescription="Verify any laptop isn't stolen before buying. Free serial number check for MacBook, Dell, HP, Lenovo, ASUS. Search 100+ stolen item database instantly."
+      metaDescription="Verify any laptop isn't stolen before buying. Free serial number check for MacBook, Dell, HP, Lenovo, ASUS. Search our verification databases instantly."
       h1="Check if Laptop is Stolen - Free Serial Number Verification"
       keywords={[
         'check if laptop is stolen',
@@ -22,11 +22,11 @@ const LaptopSerialCheck = () => {
       itemType="Laptop"
       identifierType="Serial Number"
       heroBadge="Laptop Theft Verification"
-      heroSubtitle="Before buying a used MacBook, Dell, HP, or any laptop - verify the serial number isn't linked to a stolen device. Instant results from our 100+ databases. Free."
+      heroSubtitle="Before buying a used MacBook, Dell, HP, or any laptop - verify the serial number isn't linked to a stolen device. Instant results from our our verification databases. Free."
       stats={[
         { value: "97", label: "Laptops Stolen Every Minute" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Laptop Serial Number Verification?"
@@ -34,10 +34,10 @@ const LaptopSerialCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Check the bottom of the laptop, System Settings (Mac), or Windows Settings > System > About",
         "Enter the serial number into our free verification tool",
-        "Our system searches manufacturer databases, police records, and insurance claims instantly",
+        "Our system searches manufacturer databases, police records instantly",
         "Get results in 3 seconds - know if the laptop is SAFE or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search multiple sources including Apple's stolen device registry, manufacturer databases (Dell, HP, Lenovo, ASUS), law enforcement stolen property records, insurance claim databases, and user-reported theft databases. For MacBooks, we can also check iCloud lock status indicators."
+      howItWorksDescription="We search multiple sources including Apple's stolen device registry, manufacturer databases (Dell, HP, Lenovo, ASUS), and user-reported theft databases. For MacBooks, we can also check iCloud lock status indicators."
       whyVerifyTitle="Why Check Before Buying a Used Laptop?"
       whyVerifyContent="Laptops are one of the most commonly stolen electronics. With a laptop stolen every 53 seconds in the US, chances are high that some of the used laptops on marketplaces are stolen property. Here's why verification matters:"
       whyVerifyBenefits={[
@@ -76,7 +76,7 @@ const LaptopSerialCheck = () => {
         },
         {
           question: "Can I check a MacBook serial number?",
-          answer: "Yes! Our verification works for all Apple MacBooks including MacBook Pro, MacBook Air, and older MacBook models. We check Apple's databases, stolen device registries, and law enforcement records."
+          answer: "Yes! Our verification works for all Apple MacBooks including MacBook Pro, MacBook Air, and older MacBook models. We check Apple's databases, stolen device registries, and ."
         },
         {
           question: "What is MacBook Activation Lock?",

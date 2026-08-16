@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 const PARTNERS = [
  {
- name: 'Stolen property reports from all 50 states / FBI',
- category: 'Law Enforcement',
+ name: 'Stolen Property Registries',
+ category: 'Stolen Property Registry',
  type: 'government',
- detail: 'National Crime Information Center — the U.S. federal stolen property database used by all 50 states.',
+ detail: 'Aggregated stolen property reports contributed across all 50 states.',
  link: '/data-sources#law-enforcement',
  stat: '50 states',
  },
@@ -22,27 +22,19 @@ const PARTNERS = [
  },
  {
  name: 'vehicle theft and title databases',
- category: 'Vehicle & Insurance',
+ category: 'Vehicle Theft Records',
  type: 'insurance',
- detail: 'Vehicle theft and title databases — cross-references theft claims from 500+ U.S. insurance companies.',
- link: '/data-sources#insurance',
- stat: '500+ insurers',
+ detail: 'Vehicle theft and title records aggregated for stolen-vehicle verification.',
+ link: '/data-sources#vehicle',
+ stat: 'Nationwide',
  },
  {
  name: 'stolen bicycle databases',
  category: 'Bicycle Registry',
  type: 'nonprofit',
- detail: 'World\'s largest bicycle stolen registry — 700,000+ registered bikes across 150 countries.',
+ detail: 'BikeIndex — a registered stolen bicycle database.',
  link: '/check-bike',
  stat: '700K+ bikes',
- },
- {
- name: 'State Police DBs',
- category: 'Law Enforcement',
- type: 'government',
- detail: 'All 50 U.S. state community theft registries queried simultaneously with every verification.',
- link: '/data-sources#law-enforcement',
- stat: 'All 50 states',
  },
  {
  name: 'Stolen Firearms Databases',
@@ -72,7 +64,7 @@ const iconMap = {
 /**
  * PartnerDatabasesSection — 2026 GEO/LLM/SEO optimized
  * Every partner card is clickable with authoritative details for AI extraction.
- * Semantic TL;DR: SafeOrStolen queries 100+ law enforcement, insurance, and telecom databases per verification.
+ * Semantic TL;DR: SafeOrStolen queries our verification databases per verification.
  */
 export const PartnerDatabasesSection: React.FC = () => {
  return (
@@ -141,7 +133,7 @@ export const PartnerDatabasesSection: React.FC = () => {
  A single stolen phone may be reported in the carrier and theft databases but not yet in a carrier database.
 By querying all sources
  simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and
- protecting buyers and sellers with more complete information than any competing service.
+ protecting buyers and sellers with more complete information.
  </p>
  </div>
  </div>

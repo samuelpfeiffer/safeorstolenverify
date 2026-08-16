@@ -7,25 +7,25 @@ export const QuestionBasedContent = () => {
  const questions = [
  {
  question: "How to check if a phone is stolen before buying?",
- answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier and theft databases, police reports, and insurance claims. 2 free checks, then $0.99/check or $10/month unlimited.",
+ answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier and theft databases, and stolen property reports. 2 free checks, then $0.99/check or $10/month unlimited.",
  icon: Search,
  link: "/verify"
  },
  {
  question: "Can I check if something is stolen before buying?",
- answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. 2 free checks, then $0.99/check or $10/month unlimited.",
+ answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against stolen-property registries and global stolen goods registries. 2 free checks, then $0.99/check or $10/month unlimited.",
  icon: Database,
  link: "/verify"
  },
  {
  question: "How do I verify a car isn't stolen?",
- answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our database search. We verify against vehicle theft and title databases stolen vehicle database, police records, and DMV theft reports. Results in 3 seconds. From $0.99/check.",
+ answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our database search. We verify against vehicle theft and title databases. Results in 3 seconds. From $0.99/check.",
  icon: Shield,
  link: "/verify"
  },
  {
  question: "Is there a free database to check stolen items?",
- answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against 100+ databases including vehicle theft and title databases, carrier and theft databases, police records, and insurance claims.",
+ answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against our verification databases, including vehicle theft and title databases and carrier and theft databases.",
  icon: CheckCircle2,
  link: "/verify"
  }

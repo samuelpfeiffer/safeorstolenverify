@@ -141,12 +141,9 @@ export const StateVinPageTemplate = ({
  
  <h2>What Databases We Search for {state} Vehicles</h2>
  <ul>
- <li>vehicle theft and title databases - insurance theft claims</li>
- <li>vehicle theft and title databases (vehicle theft and title databases) - title history</li>
- <li>{state} vehicle theft and title databases - registration and title status</li>
- <li>{state} law enforcement - active stolen vehicle reports</li>
- <li>Stolen property reports from all 50 states - federal stolen vehicle database</li>
- <li>Insurance claims records across all 50 states</li>
+ <li>Vehicle theft and title databases - title history</li>
+ <li>{state} vehicle registration and title status databases</li>
+ <li>Stolen property reports from all 50 states</li>
  </ul>
  
  <h2>Top Cities for Vehicle Theft in {state}</h2>
@@ -180,7 +177,7 @@ export const StateVinPageTemplate = ({
  <li><a href="/pricing">Pricing - From $0.99/check</a></li>
  </ul>
  
- <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>SafeOrStolen checks our verification databases in about 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -268,7 +265,7 @@ export const StateVinPageTemplate = ({
  {[
  `Find the 17-character VIN on the ${state} vehicle's dashboard, door jamb, or title document`,
  "Enter the VIN into SafeOrStolen's free verification tool",
- `We check 100+ databases including vehicle theft and title databases, and ${state} law enforcement in 3 seconds`,
+ `We check our verification databases, including vehicle theft and title databases, in about 3 seconds`,
  "Review stolen status, title history, and risk assessment before purchasing"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-background rounded-lg">
@@ -434,7 +431,7 @@ export const StateVinPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
  <p className="text-lg text-muted-foreground mb-8">
- $10/month unlimited VIN verification for {state} vehicles. Quick results from 100+ databases.
+ $10/month unlimited VIN verification for {state} vehicles. Quick results from our verification databases.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

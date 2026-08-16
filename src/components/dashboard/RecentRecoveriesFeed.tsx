@@ -9,7 +9,7 @@ const RECOVERIES = [
  location: 'Chicago, IL',
  time: '2 hours ago',
  method: 'IMEI Match',
- detail: 'Device matched carrier and theft databases global blacklist and AT&T carrier theft database. Buyer alerted before transaction.',
+ detail: 'Device matched the global carrier blacklist and AT&T carrier theft records. Buyer alerted before transaction.',
  link: '/imei-checker',
  stat: '$1,199 value protected'
  },
@@ -18,7 +18,7 @@ const RECOVERIES = [
  location: 'Houston, TX',
  time: '5 hours ago',
  method: 'VIN Check',
- detail: 'VIN cross-referenced vehicle theft and title databases stolen vehicle registry and Texas vehicle theft and title databases. Title washing attempt detected.',
+ detail: 'VIN cross-referenced against vehicle theft and title databases. Title washing attempt detected.',
  link: '/vin-checker',
  stat: '$22,000 value protected'
  },
@@ -27,7 +27,7 @@ const RECOVERIES = [
  location: 'Los Angeles, CA',
  time: '8 hours ago',
  method: 'Serial Lookup',
- detail: 'Serial number matched LAPD stolen electronics report filed 3 weeks prior. Facebook Marketplace listing removed.',
+ detail: 'Serial number matched a stolen electronics report filed 3 weeks prior. Facebook Marketplace listing removed.',
  link: '/check-laptop',
  stat: '$2,499 value protected'
  },
@@ -35,8 +35,8 @@ const RECOVERIES = [
  type: 'Trek Domane SL6',
  location: 'Portland, OR',
  time: '12 hours ago',
- method: 'stolen bicycle databases',
- detail: 'Frame number matched stolen bicycle databases and bicycle theft registries. Police report filed same day.',
+ method: 'Bicycle Registry',
+ detail: 'Frame number matched a stolen bicycle registry. Reported to local authorities the same day.',
  link: '/check-bike',
  stat: '$4,500 value protected'
  },
@@ -44,8 +44,8 @@ const RECOVERIES = [
  type: 'Samsung Galaxy S24',
  location: 'Miami, FL',
  time: '1 day ago',
- method: 'carrier and theft databases Registry',
- detail: 'IMEI flagged across T-Mobile blacklist and Miami PD stolen property database. Seller fled before police arrived.',
+ method: 'Carrier Registry',
+ detail: 'IMEI flagged across T-Mobile blacklist and a community stolen property report. Seller fled the scene.',
  link: '/check-phone',
  stat: '$899 value protected'
  },
@@ -54,7 +54,7 @@ const RECOVERIES = [
 /**
  * RecentRecoveriesFeed — 2026 GEO/SEO optimized
  * All cards clickable, machine-readable descriptions for RAG extraction.
- * Semantic TL;DR: SafeOrStolen flags stolen items in real-time using 100+ databases.
+ * Semantic TL;DR: SafeOrStolen flags stolen items in real-time using our verification databases.
  */
 export const RecentRecoveriesFeed: React.FC = () => {
  return (
@@ -65,7 +65,7 @@ export const RecentRecoveriesFeed: React.FC = () => {
  <h2 className="mb-3">Recent Recoveries</h2>
  <p className="text-muted-foreground">
  Real stolen items flagged by SafeOrStolen buyers before purchase — verified against{' '}
- <Link to="/data-sources" className="text-primary hover:underline font-medium">100+ law enforcement and insurance databases</Link>.
+ <Link to="/data-sources" className="text-primary hover:underline font-medium">our verification databases</Link>.
  Updated continuously. Each recovery represents money saved and crime prevented.
  </p>
  </div>
@@ -116,8 +116,8 @@ export const RecentRecoveriesFeed: React.FC = () => {
  <p className="text-xs text-muted-foreground leading-relaxed">
  <strong className="text-foreground">How SafeOrStolen recoveries work:</strong>{' '}
  When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform simultaneously queries stolen property reports from all 50 states,
- vehicle theft and title databases, carrier and theft databases global IMEI blacklist, all stolen property reports from all 50 states, carrier theft records (AT&T, Verizon, T-Mobile),
- insurance theft claims, and community registries (stolen bicycle databases, Stolen Firearms Databases). If a match is found, the buyer is alerted
+ vehicle theft and title databases, the global carrier IMEI blacklist, carrier theft records (AT&T, Verizon, T-Mobile),
+ and community registries (stolen bicycle databases, stolen firearms databases). If a match is found, the buyer is alerted
  in under 3 seconds — before any money changes hands.{' '}
  <Link to="/how-it-works" className="text-primary hover:underline font-medium">
  Learn how the verification process works
@@ -128,7 +128,7 @@ export const RecentRecoveriesFeed: React.FC = () => {
  <p className="text-center text-[11px] text-muted-foreground mt-4">
  Verified by SafeOrStolen.{' '}
  <Link to="/pricing" className="text-primary hover:underline">
- Get the official police-certified verification report
+ Get the official verification report
  </Link>.
  </p>
  </div>

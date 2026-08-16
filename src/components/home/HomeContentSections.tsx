@@ -16,7 +16,7 @@ export const HomeContentSections = () => {
  const faqs = [
  {
  question: "How do I check if a phone is stolen using IMEI?",
- answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We search carrier and theft databases databases, carrier records (AT&T, Verizon, T-Mobile), insurance claims, and law enforcement stolen property records. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
+ answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We search carrier and theft databases databases, carrier records (AT&T, Verizon, T-Mobile), vehicle title records, and law enforcement stolen property records. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
  },
  {
  question: "Is SafeOrStolen really free?",
@@ -28,7 +28,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "How do I check if a car is stolen using VIN?",
- answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check vehicle theft and title databases theft records, vehicle theft and title databases, insurance claims, salvage/junk databases, and stolen property reports from all 50 states across all 50 states. Results in 3 seconds."
+ answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check vehicle theft and title databases theft records, vehicle theft and title databases, vehicle title records, salvage/junk databases, and stolen property reports from all 50 states across all 50 states. Results in 3 seconds."
  },
  {
  question: "Can I check items on Facebook Marketplace before buying?",
@@ -60,7 +60,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "How accurate is SafeOrStolen?",
- answer: "SafeOrStolen's accuracy depends on the databases we search — and we search more databases than any competitor (100+). If an item has been reported stolen to law enforcement, insurance, or community databases, we will find it. However, an item may be stolen but not yet reported, so a clean result means 'not found in databases' rather than a guarantee. Always combine our verification with common-sense safety practices like meeting at police stations and getting bills of sale."
+ answer: "SafeOrStolen's accuracy depends on the databases we search — and we search many verification databases (100+). If an item has been reported stolen to law enforcement, insurance, or community databases, we will find it. However, an item may be stolen but not yet reported, so a clean result means 'not found in databases' rather than a guarantee. Always combine our verification with common-sense safety practices like meeting at police stations and getting bills of sale."
  }
  ];
 
@@ -80,14 +80,14 @@ export const HomeContentSections = () => {
  items: "iPhone, Samsung Galaxy, Google Pixel, OnePlus, Motorola, iPad, Surface",
  identifier: "IMEI Number",
  link: "/check-phone",
- detail: "Check carrier and theft databases, carrier locks, insurance claims, stolen reports"
+ detail: "Check carrier and theft databases, carrier locks, vehicle title records, stolen reports"
  },
  {
  title: "🚗 Vehicles",
  items: "Cars, trucks, SUVs, vans — all makes and models",
  identifier: "VIN Number",
  link: "/check-car",
- detail: "vehicle theft and title databases theft records, DMV titles, salvage history, insurance claims"
+ detail: "vehicle theft and title databases theft records, DMV titles, salvage history, vehicle title records"
  },
  {
  title: "🔫 Firearms",
@@ -101,14 +101,14 @@ export const HomeContentSections = () => {
  items: "PlayStation 5, Xbox Series X/S, Nintendo Switch, Quest VR",
  identifier: "Serial Number",
  link: "/check-xbox",
- detail: "Police databases, console bans, insurance claims, pawn records"
+ detail: "Stolen-property databases, console bans, vehicle title records, pawn records"
  },
  {
  title: "💻 Laptops & Electronics",
  items: "MacBook, Dell, HP, Lenovo, cameras, monitors, audio equipment",
  identifier: "Serial Number",
  link: "/check-laptop",
- detail: "Police reports, insurance claims, manufacturer databases"
+ detail: "Stolen-property reports, vehicle title records, manufacturer databases"
  },
  {
  title: "🚲 Bikes & E-Bikes",
@@ -129,14 +129,14 @@ export const HomeContentSections = () => {
  items: "Rolex, Omega, TAG Heuer, diamonds, gold jewelry",
  identifier: "Serial/Model Number",
  link: "/check-watch-stolen",
- detail: "Police databases, insurance claims, pawn records"
+ detail: "Stolen-property databases, vehicle title records, pawn records"
  },
  {
  title: "🔧 Power Tools",
  items: "DeWalt, Milwaukee, Makita, Bosch, Festool",
  identifier: "Serial Number",
  link: "/check-power-tools-stolen",
- detail: "Contractor theft databases, police reports, insurance"
+ detail: "Contractor theft databases, stolen-property reports, insurance"
  }
  ].map((category, i) => (
  <Link key={i} to={category.link} className="p-4 bg-background rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-colors group">
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
  <h3 className="font-bold text-lg mb-2">We Search 100+ Databases</h3>
  <p className="text-sm text-muted-foreground">
- In parallel, we query vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, stolen bicycle databases, state records, vehicle theft and title databases, carrier and theft databases, insurance claims, pawn shop records, and community databases. More sources means higher accuracy.
+ In parallel, we query vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, stolen bicycle databases, state records, vehicle theft and title databases, carrier and theft databases, vehicle title records, pawn shop records, and community databases. More sources means higher accuracy.
  </p>
  </div>
  <div className="text-center p-6 bg-card rounded-lg border border-border">

@@ -165,7 +165,7 @@ export const UniversalStateVerificationForm: React.FC<UniversalStateVerification
  <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground pt-2 border-t border-border">
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
- vehicle theft and title databases Database
+ Vehicle Theft Records
  </span>
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
@@ -173,11 +173,11 @@ export const UniversalStateVerificationForm: React.FC<UniversalStateVerification
  </span>
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
- Law Enforcement
+ Stolen Property Registries
  </span>
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
- Insurance Claims
+ Verification Databases
  </span>
  </div>
  </div>

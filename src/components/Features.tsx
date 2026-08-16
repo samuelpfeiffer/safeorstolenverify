@@ -10,7 +10,7 @@ const Features = () => {
   }, {
     icon: <ShieldCheck className="h-8 w-8 text-secondary" />,
     title: "Firearms Database Verification",
- description: "Search stolen gun databases including stolen firearm reports from all 50 states on our mobile app. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
+ description: "Search stolen gun databases including stolen firearm reports from all 50 states, right from our installable web app. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
   }, {
     icon: <Clock className="h-8 w-8 text-accent" />,
     title: "Instant Verification Results",
@@ -18,7 +18,7 @@ const Features = () => {
   }, {
     icon: <Globe className="h-8 w-8 text-primary" />,
     title: "Global Stolen Property Database",
-    description: "Access the world's largest stolen goods database from 50+ countries including firearms registries. Comprehensive anti-theft register accessible from your phone or computer."
+    description: "Access stolen goods registries from 50+ countries including firearms registries. Anti-theft register accessible from your phone or computer."
   }];
   return <section className="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
       <div className="container mx-auto px-4">
@@ -31,9 +31,9 @@ const Features = () => {
             Complete Verification - Mobile & Web
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
-            Verify phones, cars, electronics, and firearms instantly - something CheckMend, IMEIinfo, and Stolen Register cannot offer. 
-            Access community theft registries, insurance records, and firearms registries from your pocket.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates,
+            electronics, firearms, and bicycles in one place.
+            Access community theft registries and firearms registries from your pocket.
           </p>
         </div>
 

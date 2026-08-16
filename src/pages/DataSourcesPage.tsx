@@ -10,228 +10,59 @@ import {
 const FAQ_ITEMS = [
  {
  question: "What databases does SafeOrStolen check for IMEI verification?",
- answer: "SafeOrStolen checks the carrier and theft databases (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier and theft databases, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier and theft databases across 190+ countries. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen checks IMEI.info's device records along with carrier blacklists, Apple Activation Lock status, Samsung Knox security records, and Google Find My Device. Results are returned in approximately 3 seconds."
  },
  {
- question: "Which community theft registries are included in vehicle VIN checks?",
- answer: "Vehicle VIN checks query stolen property reports from all 50 states, vehicle theft and title databases database, vehicle theft and title databases (vehicle theft and title databases), vehicle theft and title databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+ question: "Which sources are included in vehicle VIN checks?",
+ answer: "Vehicle VIN checks query vehicle theft records and title-brand data to help flag vehicles reported stolen or previously salvaged."
  },
  {
- question: "Does SafeOrStolen check stolen firearms databases for firearm serial numbers?",
- answer: "Yes. Firearm serial number verification checks stolen firearms databases and validates serial number integrity. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
+ question: "Does SafeOrStolen check firearm serial numbers against theft registries?",
+ answer: "Yes. Firearm serial number verification checks HotGunz's stolen firearm registry and validates serial number integrity. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
  },
  {
  question: "How often are the databases updated?",
- answer: "SafeOrStolen databases sync every 15 minutes with source systems. When an item is reported stolen to law enforcement or insurance, it typically appears in our system within 1-4 hours. Community-reported items are reviewed and added within 24 hours of verification."
+ answer: "SafeOrStolen's verification databases sync regularly with source systems, and community-reported items are reviewed and added typically within 24 hours of verification."
  },
  {
- question: "What is LeadsOnline and why does SafeOrStolen use it?",
- answer: "LeadsOnline is the largest national pawn shop transaction database, used by 4,000+ law enforcement agencies across 35 states. It tracks items sold or pawned at secondhand dealers. Over 60% of stolen electronics and 80% of stolen jewelry are pawned within 72 hours of theft, making LeadsOnline critical for detecting stolen goods in the secondhand market."
+ question: "Does SafeOrStolen check carrier blacklists for stolen phones?",
+ answer: "Yes. SafeOrStolen checks IMEI.info's carrier blacklist records to detect phones reported stolen or lost, in addition to activation lock status."
  },
  {
- question: "Does SafeOrStolen check stolen bicycle databases for stolen bicycles?",
- answer: "Yes. Bicycle and eBike frame serial numbers are checked against stolen bicycle databases (the world's largest public bike registry with 120,000+ registered stolen bikes), local law enforcement stolen property databases, and manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
+ question: "Does SafeOrStolen check for stolen bicycles?",
+ answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, along with manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
  },
 ];
 
 const DATA_CATEGORIES = [
  {
- id: "law-enforcement",
- icon: Shield,
- color: "text-blue-500",
- bgColor: "bg-blue-500/10",
- title: "Law Enforcement Databases",
- subtitle: "Federal, State & International Police Records",
- description: "SafeOrStolen integrates with the most authoritative community theft registries in the United States and internationally. Every search queries these sources simultaneously in real-time.",
- sources: [
- {
- name: "Stolen property reports from all 50 states",
- detail: "FBI's central database for stolen property, vehicles, firearms, and missing persons. The most comprehensive U.S. law enforcement database, containing records from all 50 states, D.C., Puerto Rico, and U.S. territories.",
- link: "/blog/how-to-check-if-phone-stolen"
- },
- {
- name: "Nationwide Stolen Firearms Database",
- detail: "Community-maintained registry of roughly 32,000 stolen firearms reported directly by theft victims.",
- link: "/firearms-check"
- },
- {
- name: "State Law Enforcement Systems — All 50 States",
- detail: "Direct connections to each state's law enforcement information network. Catches stolen items not yet reported to federal databases — essential for catching local theft rings.",
- link: "/verify"
- },
- {
- name: "Interpol Stolen Property Database",
- detail: "International criminal police organization's database of stolen vehicles, art, and high-value property. Critical for detecting cross-border theft, especially stolen vehicles transported to Mexico, Canada, or overseas.",
- link: "/free-stolen-vehicle-check"
- },
- ],
- stats: [
- { value: "50+", label: "State databases" },
- { value: "Real-time", label: "Data sync" },
- ],
- links: [
- { to: "/verify", label: "Run a Check" },
- { to: "/firearms-check", label: "Firearms Database" },
- { to: "/free-stolen-vehicle-check", label: "Vehicle Database" },
- ]
- },
- {
- id: "insurance",
- icon: Building2,
- color: "text-red-500",
- bgColor: "bg-red-500/10",
- title: "Insurance Records",
- subtitle: "vehicle theft and title databases, Claims Data & Total-Loss Reports",
- description: "Insurance theft claims represent one of the most reliable signals that an item has been stolen. Many items are never reported to police but always reported to insurance for reimbursement.",
- sources: [
- {
- name: "vehicle theft and title databases — vehicle theft and title databases",
- detail: "The vehicle theft and title databases is a non-profit organization supported by 1,100+ property and casualty insurance companies. Tracks stolen vehicles, watercraft, and high-value property. Receives data from insurers representing 80% of U.S. vehicle insurance premiums.",
- link: "/vin-checker"
- },
- {
- name: "CLUE — Comprehensive Loss Underwriting Exchange",
- detail: "Consumer personal property insurance database maintained by LexisNexis. Contains up to 7 years of insurance claim history for properties and vehicles, including theft claims filed but not paid.",
- link: "/check-car"
- },
- {
- name: "State Insurance Fraud Bureaus",
- detail: "Each state maintains its own insurance fraud bureau that tracks suspicious claims and staged theft reports. Cross-referencing these databases detects fraud patterns and previously undiscovered theft rings.",
- link: "/data-sources"
- },
- {
- name: "Salvage & Total-Loss Registries",
- detail: "Insurance companies submit total-loss and salvage title data to vehicle theft and title databases within 30 days. This catches vehicles retitled in other states to hide salvage status — a common form of title washing fraud.",
- link: "/check-car"
- },
- ],
- stats: [
- { value: "1,100+", label: "Insurance partners" },
- { value: "80%", label: "U.S. vehicle coverage" },
- { value: "7 years", label: "Claims history" },
- ],
- links: [
- { to: "/vin-checker", label: "Check VIN" },
- { to: "/check-car", label: "Check Vehicle" },
- { to: "/imei-checker", label: "Check IMEI" },
- ]
- },
- {
- id: "claims",
- icon: FileCheck,
- color: "text-amber-500",
- bgColor: "bg-amber-500/10",
- title: "Pawn Shop & Claims Databases",
- subtitle: "LeadsOnline, Pawn Networks & Cross-Reference Systems",
- description: "The secondhand and pawn shop ecosystem is where most stolen goods are monetized. SafeOrStolen integrates with the primary databases used by law enforcement to track stolen property through pawn transactions.",
- sources: [
- {
- name: "LeadsOnline — National Pawn Transaction Database",
- detail: "Used by 4,000+ law enforcement agencies and 22,000+ businesses across 35 states. Every item pawned or sold at partner dealers is logged with serial number, item description, and seller identity. Over 60% of stolen electronics pass through pawn shops within 48 hours of theft.",
- link: "/for-pawn-shops"
- },
- {
- name: "Pawn Shop Compliance Networks",
- detail: "State-regulated pawn shop reporting systems that require dealers to submit transaction records to law enforcement. Most states mandate electronic reporting within 24-72 hours. SafeOrStolen aggregates these across all participating states.",
- link: "/for-pawn-shops"
- },
- {
- name: "eBay & Marketplace Fraud Signals",
- detail: "Behavioral analysis and cross-reference data identifying suspicious listing patterns on major marketplaces. Detects sellers with multiple high-value item listings, price anomalies, and account patterns correlated with stolen goods trafficking.",
- link: "/facebook-marketplace-stolen-check"
- },
- {
- name: "Insurance Cross-Reference Reports",
- detail: "Automated cross-referencing of items pawned against outstanding insurance claims. When a match is detected, law enforcement is automatically notified. This system has been credited with recovering over $500 million in stolen property annually.",
- link: "/verify"
- },
- ],
- stats: [
- { value: "4,000+", label: "LE agencies" },
- { value: "22,000+", label: "Pawn partners" },
- { value: "48 hrs", label: "Avg pawn time for stolen goods" },
- ],
- links: [
- { to: "/for-pawn-shops", label: "Pawn Shop Tools" },
- { to: "/facebook-marketplace-stolen-check", label: "Marketplace Safety" },
- { to: "/verify", label: "Free Verification" },
- ]
- },
- {
- id: "global",
- icon: Globe,
- color: "text-green-500",
- bgColor: "bg-green-500/10",
- title: "Global Networks",
- subtitle: "International Theft Registries & Cross-Border Detection",
- description: "Stolen goods — especially vehicles, luxury items, and electronics — are frequently transported across state lines and international borders. SafeOrStolen's global network catches theft that domestic-only systems miss.",
- sources: [
- {
- name: "Interpol FIND — Fast ID Network",
- detail: "Interpol's international lost and stolen travel documents and property database. Covers 194 member countries. Particularly critical for vehicles stolen and transported to Central America, the Caribbean, and Eastern Europe.",
- link: "/free-stolen-vehicle-check"
- },
- {
- name: "vehicle theft and title databases — vehicle theft and title databases",
- detail: "Federal system connecting state motor vehicle agencies, insurance companies, junkyards, and salvage yards. Prevents title washing — a common fraud where a salvage or stolen vehicle gets a clean title by re-registering in a different state. Mandated by Anti-Car Theft Act of 1992.",
- link: "/vin-checker"
- },
- {
- name: "International Bike Registries",
- detail: "stolen bicycle databases (120,000+ registered stolen bikes), and the National Bike Registry. Cross-referenced with police databases in the U.S., Canada, UK, Australia, and Western Europe for imported/exported stolen bicycles.",
- link: "/check-bike"
- },
- {
- name: "GIA Diamond Registry & AGS",
- detail: "Gemological Institute of America (GIA) and American Gem Society (AGS) laser inscription registries. GIA report numbers are permanently inscribed on certified diamonds, enabling worldwide tracking. Cross-referenced with insurance claims and law enforcement theft reports.",
- link: "/check-jewelry"
- },
- ],
- stats: [
- { value: "190+", label: "Countries" },
- { value: "194", label: "Interpol members" },
- { value: "120k+", label: "Bike theft records" },
- ],
- links: [
- { to: "/free-stolen-vehicle-check", label: "Vehicle Check" },
- { to: "/check-bike", label: "Bike Check" },
- { to: "/check-jewelry", label: "Jewelry Check" },
- ]
- },
- {
  id: "carrier",
  icon: Database,
  color: "text-purple-500",
  bgColor: "bg-purple-500/10",
- title: "Carrier Blacklists",
- subtitle: "carrier and theft databases Global IMEI Database & Carrier Networks",
- description: "Mobile carrier and theft databases are the gold standard for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network worldwide.",
+ title: "Carrier & IMEI Blacklists",
+ subtitle: "IMEI.info & Carrier Networks",
+ description: "Mobile carrier blacklists are a key signal for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network.",
  sources: [
  {
- name: "carrier and theft databases Global IMEI Database — 15 Billion+ Records",
- detail: "The carrier and theft databases (Global System for Mobile Communications Association) maintains the world's most comprehensive IMEI database with records from 800+ carriers across 200+ countries. The carrier and theft databases Device Check API is the authoritative source for device blacklist status.",
+ name: "IMEI.info Database",
+ detail: "SafeOrStolen integrates with IMEI.info to check device records, carrier blacklist status, and reported theft or loss for a given IMEI.",
  link: "/imei-checker"
  },
  {
- name: "U.S. Carrier Blacklists — AT&T, Verizon, T-Mobile",
- detail: "The four major U.S. carriers (AT&T, Verizon, T-Mobile, Sprint/T-Mobile) share blacklisted IMEI numbers through the U.S. Mobile Device Theft Deterrence initiative. A phone blacklisted on one carrier is typically blocked on all U.S. networks within 24-48 hours.",
+ name: "U.S. Carrier Blacklists",
+ detail: "Major U.S. carriers share blacklisted IMEI numbers so a phone blacklisted on one carrier is typically blocked on other U.S. networks.",
  link: "/check-phone"
  },
  {
  name: "Manufacturer Activation Lock Status",
- detail: "Apple iCloud Activation Lock, Samsung Knox security status, and Google's Find My Device lock detection. Even if an IMEI isn't blacklisted, a locked device cannot be used without the original owner's credentials — a critical verification signal.",
- link: "/imei-checker"
- },
- {
- name: "International Carrier Blacklists — 200+ Countries",
- detail: "Phones stolen in the U.S. are frequently exported and unlocked abroad. SafeOrStolen checks international carrier and theft databases to detect phones already unlocked and active on foreign networks — a sign that previous blacklist status may have been circumvented.",
+ detail: "Apple iCloud Activation Lock, Samsung Knox security status, and Google's Find My Device lock detection. A locked device cannot be used without the original owner's credentials — a useful verification signal.",
  link: "/imei-checker"
  },
  ],
  stats: [
- { value: "15B+", label: "IMEI records" },
- { value: "800+", label: "Carriers checked" },
- { value: "200+", label: "Countries" },
+ { value: "IMEI.info", label: "Integrated source" },
+ { value: "Multi-carrier", label: "Blacklist checks" },
  ],
  links: [
  { to: "/imei-checker", label: "Check IMEI" },
@@ -240,44 +71,114 @@ const DATA_CATEGORIES = [
  ]
  },
  {
- id: "industry",
- icon: Lock,
- color: "text-orange-500",
- bgColor: "bg-orange-500/10",
- title: "Industry & Community Registries",
- subtitle: "stolen bicycle databases, Stolen Firearms Databases, GIA, vehicle theft and title databases & Specialist Networks",
- description: "Beyond law enforcement and insurance, specialized community registries track item-specific theft with granular detail that general databases miss. These sources are particularly critical for bicycles, firearms, marine vessels, and high-value collectibles.",
+ id: "vehicles",
+ icon: Globe,
+ color: "text-green-500",
+ bgColor: "bg-green-500/10",
+ title: "Vehicle Theft Records",
+ subtitle: "VIN Verification & Title Data",
+ description: "Vehicle checks cross-reference VIN numbers against vehicle theft records and title-brand data to help flag vehicles reported stolen or previously salvaged.",
  sources: [
  {
- name: "Nationwide Stolen Firearms Database",
- detail: "Community-maintained registry with 32,000+ user-reported stolen firearms.",
- link: "/firearms-check"
+ name: "Vehicle Theft Records",
+ detail: "Checks VIN numbers against records of vehicles reported stolen.",
+ link: "/vin-checker"
  },
  {
- name: "U.S. Coast Guard Vessel Documentation",
- detail: "Federal database of documented vessels (26 feet+). Contains ownership history, liens, mortgages, and theft reports for federally documented boats and yachts. Cross-referenced with state DNR databases for all 50 states.",
- link: "/check-boat"
- },
- {
- name: "SafeOrStolen Community Database",
- detail: "User-reported stolen items verified by our moderation team before inclusion. Every submission requires police report number or verifiable documentation. Real-time reporting catches items before they appear in official databases — typically 24-48 hours faster.",
- link: "/report-stolen"
- },
- {
- name: "Manufacturer Warranty & Registration Databases",
- detail: "Direct integration with manufacturer warranty registries for Apple, Samsung, Dell, HP, Lenovo, DeWalt, Milwaukee, Makita, and 50+ other brands. A serial number found in warranty records but not matching the seller's account is a theft indicator.",
- link: "/serial-number-checker"
+ name: "Title Brand Data",
+ detail: "Helps identify vehicles with salvage, rebuilt, or flood title history.",
+ link: "/check-car"
  },
  ],
  stats: [
- { value: "32k+", label: "Gun theft records" },
- { value: "120k+", label: "Bike records" },
- { value: "50+", label: "Brand integrations" },
+ { value: "VIN-based", label: "Verification" },
+ { value: "~3 sec", label: "Result time" },
+ ],
+ links: [
+ { to: "/vin-checker", label: "Check VIN" },
+ { to: "/check-car", label: "Check Vehicle" },
+ { to: "/free-stolen-vehicle-check", label: "Free Vehicle Check" },
+ ]
+ },
+ {
+ id: "firearms",
+ icon: Lock,
+ color: "text-orange-500",
+ bgColor: "bg-orange-500/10",
+ title: "Firearms Theft Registry",
+ subtitle: "HotGunz Community Registry",
+ description: "Firearm serial numbers are checked against HotGunz, a community-maintained registry of stolen firearms reported by theft victims.",
+ sources: [
+ {
+ name: "HotGunz Stolen Firearms Registry",
+ detail: "SafeOrStolen integrates with HotGunz to check firearm serial numbers against user-reported stolen firearms.",
+ link: "/firearms-check"
+ },
+ ],
+ stats: [
+ { value: "HotGunz", label: "Integrated source" },
+ { value: "Serial-based", label: "Verification" },
  ],
  links: [
  { to: "/firearms-check", label: "Firearms Hub" },
- { to: "/check-boat", label: "Marine Check" },
- { to: "/serial-number-checker", label: "Serial Checker" },
+ ]
+ },
+ {
+ id: "bicycles",
+ icon: Shield,
+ color: "text-blue-500",
+ bgColor: "bg-blue-500/10",
+ title: "Bicycle Theft Registry",
+ subtitle: "BikeIndex Community Registry",
+ description: "Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, along with manufacturer warranty registries.",
+ sources: [
+ {
+ name: "BikeIndex",
+ detail: "SafeOrStolen integrates with BikeIndex to check bicycle frame serial numbers against community-reported stolen bikes.",
+ link: "/check-bike"
+ },
+ {
+ name: "Manufacturer Warranty & Registration Databases",
+ detail: "Cross-referenced with warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes.",
+ link: "/check-ebike"
+ },
+ ],
+ stats: [
+ { value: "BikeIndex", label: "Integrated source" },
+ { value: "Serial-based", label: "Verification" },
+ ],
+ links: [
+ { to: "/check-bike", label: "Bike Check" },
+ { to: "/check-ebike", label: "eBike Check" },
+ ]
+ },
+ {
+ id: "community",
+ icon: FileCheck,
+ color: "text-amber-500",
+ bgColor: "bg-amber-500/10",
+ title: "Community Theft Reports",
+ subtitle: "SafeOrStolen User Reports",
+ description: "Beyond integrated third-party sources, SafeOrStolen maintains its own community-reported theft database, letting victims flag stolen items directly.",
+ sources: [
+ {
+ name: "SafeOrStolen Community Database",
+ detail: "User-reported stolen items reviewed by our moderation team before inclusion.",
+ link: "/report-stolen"
+ },
+ {
+ name: "Marketplace URL Analyzer",
+ detail: "Analyzes marketplace listings for scam and theft risk signals to help buyers spot suspicious listings before they contact a seller.",
+ link: "/marketplace-url-checker"
+ },
+ ],
+ stats: [
+ { value: "Community", label: "Reported items" },
+ { value: "Reviewed", label: "By our team" },
+ ],
+ links: [
+ { to: "/report-stolen", label: "Report Stolen Item" },
+ { to: "/verify", label: "Free Verification" },
  ]
  },
 ];
@@ -300,7 +201,7 @@ export default function DataSourcesPage() {
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "SafeOrStolen Stolen Item Verification Database",
- "description": "Aggregated stolen item database combining 100+ law enforcement, insurance, carrier, and community sources for real-time verification of IMEI numbers, VIN numbers, and serial numbers.",
+ "description": "Aggregated stolen item verification database combining IMEI.info, BikeIndex, HotGunz, and community-reported sources for real-time verification of IMEI numbers, VIN numbers, and serial numbers.",
  "publisher": {
  "@type": "Organization",
  "name": "SafeOrStolen",
@@ -326,12 +227,12 @@ export default function DataSourcesPage() {
  return (
  <>
  <Helmet>
- <title>Data Sources — 100+ Databases SafeOrStolen Checks | SafeOrStolen</title>
- <meta name="description" content="SafeOrStolen checks 100+ databases for stolen item verification: stolen property reports from all 50 states, carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, LeadsOnline, stolen bicycle databases, and carrier and theft databases across 200 countries." />
+ <title>Data Sources — Our Verification Databases | SafeOrStolen</title>
+ <meta name="description" content="SafeOrStolen checks our verification databases for stolen item verification: vehicle theft records, IMEI.info carrier and theft databases, BikeIndex, and HotGunz firearm registries." />
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
  <link rel="canonical" href="https://safeorstolen.com/data-sources" />
- <meta property="og:title" content="100+ Data Sources SafeOrStolen Checks | SafeOrStolen" />
- <meta property="og:description" content="We check stolen property reports from all 50 states, carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, LeadsOnline, stolen bicycle databases, and 100+ carrier and theft databases. Results in 3 seconds." />
+ <meta property="og:title" content="Data Sources SafeOrStolen Checks | SafeOrStolen" />
+ <meta property="og:description" content="We check vehicle theft records, IMEI.info carrier and theft databases, BikeIndex, and HotGunz firearm registries. Results in 3 seconds." />
  <meta property="og:url" content="https://safeorstolen.com/data-sources" />
  <meta property="og:type" content="website" />
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -344,18 +245,18 @@ export default function DataSourcesPage() {
  <div className="max-w-4xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-sm text-primary mb-6">
  <Database className="h-4 w-4" />
- <span className="font-medium">100+ Verified Data Sources</span>
+ <span className="font-medium">Verified Data Sources</span>
  </div>
  <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
  Where SafeOrStolen Gets Its Data
  </h1>
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- SafeOrStolen queries <strong>100+ databases simultaneously</strong> — law enforcement, insurance, carrier and theft databases, pawn networks, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
+ SafeOrStolen queries <strong>our verification databases simultaneously</strong> — including IMEI.info, BikeIndex, HotGunz, vehicle theft records, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
  </p>
  {/* Semantic TL;DR for AI extraction */}
  <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
  <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
- SafeOrStolen is a consumer protection platform that verifies stolen item status by querying 100+ databases including carrier and theft databases (15 billion IMEI records), vehicle theft and title databases, stolen property reports from all 50 states, LeadsOnline pawn network, and carrier and theft databases across 190+ countries. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+ SafeOrStolen is a consumer protection platform that verifies stolen item status by querying our verification databases including IMEI.info, BikeIndex, HotGunz, vehicle theft records, and community-reported theft data. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
  </div>
  <div className="flex flex-wrap justify-center gap-3">
  <Button asChild size="lg">
@@ -376,10 +277,10 @@ export default function DataSourcesPage() {
  <div className="container mx-auto px-4">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
  {[
- { value: "100+", label: "Databases Checked" },
- { value: "15B+", label: "IMEI Records (carrier and theft databases)" },
+ { value: "Multi-source", label: "Databases Checked" },
+ { value: "IMEI.info", label: "Carrier & IMEI Data" },
  { value: "3 sec", label: "Average Result Time" },
- { value: "190+", label: "Countries Covered" },
+ { value: "6", label: "Item Categories" },
  ].map(stat => (
  <div key={stat.label}>
  <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
@@ -458,7 +359,7 @@ export default function DataSourcesPage() {
  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
  <h2 className="text-3xl font-bold mb-4">Real-Time Database Synchronization</h2>
  <p className="text-lg text-muted-foreground">
- SafeOrStolen synchronizes with source databases every 15 minutes. When an item is reported stolen to law enforcement or insurance, it typically appears in our system within 1-4 hours — faster than any single-source checker.
+ SafeOrStolen synchronizes with source databases regularly. When an item is reported stolen, it typically appears in our system within a short time — often faster than checking a single source alone.
  </p>
  </div>
  <div className="grid md:grid-cols-3 gap-6">
@@ -473,14 +374,14 @@ export default function DataSourcesPage() {
  <CardContent className="pt-6 text-center">
  <div className="text-3xl font-bold text-primary mb-2">6</div>
  <p className="font-medium mb-1">Item Categories</p>
- <p className="text-sm text-muted-foreground">Cross-referencing 100+ sources eliminates false positives</p>
+ <p className="text-sm text-muted-foreground">Cross-referencing multiple sources helps reduce false positives</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6 text-center">
  <div className="text-3xl font-bold text-primary mb-2">~3 sec</div>
  <p className="font-medium mb-1">Result Speed</p>
- <p className="text-sm text-muted-foreground">All 100+ databases queried in parallel, not sequentially</p>
+ <p className="text-sm text-muted-foreground">Our databases are queried in parallel, not sequentially</p>
  </CardContent>
  </Card>
  </div>
@@ -517,7 +418,7 @@ export default function DataSourcesPage() {
  <div>
  <h3 className="font-semibold mb-2 text-foreground">Important Accuracy Note</h3>
  <p className="text-sm text-muted-foreground leading-relaxed">
- A "clean" result means the item was not found in any of our 100+ databases at the time of verification. It does not guarantee the item is not stolen — an item may have been stolen but not yet reported to law enforcement or insurance. Always combine database verification with common-sense safety practices: meet sellers in public places (police station parking lots are ideal), request original purchase receipts, and for high-value items, consult a professional appraiser. SafeOrStolen results are for informational purposes and do not constitute a legal guarantee of ownership.
+ A "clean" result means the item was not found in our verification databases at the time of the check. It does not guarantee the item is not stolen — an item may have been stolen but not yet reported to any of our sources. Always combine database verification with common-sense safety practices: meet sellers in public places (police station parking lots are ideal), request original purchase receipts, and for high-value items, consult a professional appraiser. SafeOrStolen results are for informational purposes and do not constitute a legal guarantee of ownership.
  </p>
  </div>
  </div>
@@ -561,10 +462,10 @@ export default function DataSourcesPage() {
  <div className="container mx-auto px-4 text-center">
  <h2 className="text-3xl font-bold mb-4">Run a Free Verification Now</h2>
  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Check any IMEI, VIN, or serial number against all 100+ databases simultaneously. 2 free verifications — no credit card required.
+ Check any IMEI, VIN, or serial number against our verification databases simultaneously. 2 free verifications — no credit card required.
  </p>
  <p className="text-xs text-muted-foreground mb-2">
- Semantic TL;DR: SafeOrStolen checks 100+ databases in real-time including carrier and theft databases (15B+ IMEI records), vehicle theft and title databases, and carrier and theft databases across 190+ countries. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+ Semantic TL;DR: SafeOrStolen checks our verification databases in real-time including IMEI.info, BikeIndex, HotGunz, and vehicle theft records. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
  </p>
  <Button size="lg" asChild>
  <Link to="/verify">

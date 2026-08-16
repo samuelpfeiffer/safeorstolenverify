@@ -11,7 +11,7 @@ interface ContentAuthoritySignalsProps {
 export const ContentAuthoritySignals: React.FC<ContentAuthoritySignalsProps> = ({
   wordCount,
   lastUpdated,
-  authorExpertise = ['Fraud Prevention', 'Security Analysis', 'Law Enforcement'],
+  authorExpertise = ['Fraud Prevention', 'Security Analysis', 'Consumer Protection'],
   contentDepth = 'comprehensive'
 }) => {
   
@@ -74,39 +74,13 @@ export const ContentAuthoritySignals: React.FC<ContentAuthoritySignalsProps> = (
         {
           "@type": "EducationalOccupationalCredential",
           "name": "Certified Information Systems Security Professional (CISSP)"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "FBI Digital Forensics Specialist"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "IACP Property Recovery Specialist"
         }
       ]
     },
-    "reviewedBy": {
-      "@type": "Organization",
-      "name": "Law Enforcement Advisory Board"
-    },
     "isBasedOn": [
       {
-        "@type": "GovernmentService",
-        "name": "National Crime Information Center (stolen property reports from all 50 states)"
-      },
-      {
         "@type": "Dataset",
-        "name": "FBI Stolen Property Database"
-      }
-    ],
-    "mentions": [
-      {
-        "@type": "Organization",
-        "name": "Federal Bureau of Investigation"
-      },
-      {
-        "@type": "Organization", 
-        "name": "International Association of Chiefs of Police"
+        "name": "Stolen property registries and verification databases"
       }
     ]
   };
@@ -130,7 +104,7 @@ export const ContentAuthoritySignals: React.FC<ContentAuthoritySignalsProps> = (
       <meta name="author-expertise" content={authorExpertise.join(', ')} />
       <meta name="content-reviewed" content="expert-reviewed" />
       <meta name="fact-checked" content="true" />
-      <meta name="source-verification" content="law-enforcement-verified" />
+      <meta name="source-verification" content="editorially-verified" />
       
       {/* Content comprehensiveness */}
       <meta name="content-coverage" content="comprehensive" />
@@ -140,7 +114,7 @@ export const ContentAuthoritySignals: React.FC<ContentAuthoritySignalsProps> = (
       {/* Research and citation quality */}
       <meta name="research-quality" content="primary-sources" />
       <meta name="citation-standard" content="academic" />
-      <meta name="source-credibility" content="government-verified" />
+      <meta name="source-credibility" content="editorially-verified" />
       
       {/* Content uniqueness and originality */}
       <meta name="content-originality" content="100-percent-original" />

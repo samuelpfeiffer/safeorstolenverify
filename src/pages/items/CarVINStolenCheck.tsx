@@ -4,7 +4,7 @@ const CarVINStolenCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Car is Stolen by VIN - Free VIN Verification | SafeOrStolen"
- metaDescription="Free VIN check to verify if a car is stolen before buying. Search stolen vehicle database instantly. Works for all makes - Toyota, Honda, Ford, BMW, Tesla. Better than Carfax."
+ metaDescription="Free VIN check to verify if a car is stolen before buying. Search stolen vehicle database instantly. Works for all makes - Toyota, Honda, Ford, BMW, Tesla. "
  h1="Check if Car is Stolen by VIN Number - Free Verification"
  keywords={[
  'check if car is stolen by vin',
@@ -26,15 +26,15 @@ const CarVINStolenCheck = () => {
  stats={[
  { value: "810K+", label: "Vehicles Stolen in US (2024)" },
  { value: "3 sec", label: "VIN Check Time" },
- { value: "100+", label: "Records Searched" },
+ { value: "Instant", label: "Results" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is VIN Stolen Vehicle Verification?"
- whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the vehicle theft and title databases (vehicle theft and title databases), and community theft registries. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Unlike Carfax which costs $44.99, our stolen check is FREE."
+ whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the vehicle theft and title databases (vehicle theft and title databases), and community theft registries. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Our stolen vehicle check is free."
  howItWorksSteps={[
  "Find the VIN: Check the dashboard (driver's side, visible through windshield), driver's door jamb, vehicle registration, or title",
  "Enter the 17-character VIN into our free verification tool",
- "Our system searches vehicle theft and title databases, law enforcement, and insurance databases instantly",
+ "Our system searches vehicle theft and title databases and other verification databases instantly",
  "Get results in 3 seconds - see if the vehicle is CLEAR or REPORTED STOLEN"
  ]}
  howItWorksDescription="We search multiple authoritative databases including the vehicle theft and title databases stolen vehicle database, vehicle theft and title databases title records, vehicle theft and title databases, community theft registries, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."

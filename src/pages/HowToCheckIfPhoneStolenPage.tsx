@@ -55,7 +55,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Review Verification Results",
- "text": "SafeOrStolen checks 100+ databases and returns results in 3 seconds showing if the phone is safe, stolen, or blacklisted.",
+ "text": "SafeOrStolen checks our verification databases and returns results in 3 seconds showing if the phone is safe, stolen, or blacklisted.",
  "url": "https://safeorstolen.com/how-to-check-if-phone-stolen#step-3"
  },
  {
@@ -127,7 +127,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="How to Check if a Phone is Stolen Before Buying (2026 Guide) | SafeOrStolen"
- description="Complete guide to check if a phone is stolen using IMEI numbers. Free verification against 100+ databases. Protect yourself from buying blacklisted or stolen phones."
+ description="Complete guide to check if a phone is stolen using IMEI numbers. Free verification against our verification databases. Protect yourself from buying blacklisted or stolen phones."
  keywords="how to check if phone is stolen, check phone stolen, verify phone not stolen, IMEI check stolen, is my phone stolen, phone stolen check free"
  canonical="/how-to-check-if-phone-stolen"
  structuredData={[howToSchema, faqSchema]}
@@ -146,7 +146,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search 100+ databases including carrier and theft databases, and police records to protect you from buying stolen or blacklisted devices.
+ Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search our verification databases including carrier and theft databases, and police records to protect you from buying stolen or blacklisted devices.
  </p>
 
  {/* Quick Check Tool */}
@@ -186,7 +186,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen checks 100+ databases including carrier and theft databases and police records</span>
+ <span>SafeOrStolen checks our verification databases including carrier and theft databases and police records</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -282,7 +282,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  <div className="flex-1">
  <h3 className="text-xl font-semibold mb-3">Review Verification Results</h3>
  <p className="text-muted-foreground mb-4">
- SafeOrStolen checks 100+ databases in 3 seconds and returns one of these results:
+ SafeOrStolen checks our verification databases in 3 seconds and returns one of these results:
  </p>
  <div className="grid md:grid-cols-3 gap-4">
  <div className="bg-green-50 dark:bg-green-950/20 border-green-200 border rounded-lg p-4">

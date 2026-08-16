@@ -26,7 +26,7 @@ const JewelryCheck = () => {
       stats={[
         { value: "$2B+", label: "Jewelry Theft Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Jewelry Verification?"
@@ -34,7 +34,7 @@ const JewelryCheck = () => {
       howItWorksSteps={[
         "Find identifying marks: Check for laser inscriptions on diamonds, hallmarks, or engraved serial numbers",
         "Enter any identifying numbers into our verification tool",
-        "Our system searches jewelry theft databases, police records, and insurance claims",
+        "Our system searches jewelry theft databases, police records",
         "Get instant results - know if the piece has been reported stolen"
       ]}
       whyVerifyTitle="Why Check Jewelry Before Buying?"

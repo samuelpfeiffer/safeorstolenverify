@@ -11,8 +11,8 @@ const NICBVINCheckAlternative = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Best NICB VINCheck Alternatives",
-    "description": "Compare NICB VINCheck with SafeOrStolen and other alternatives for stolen vehicle verification",
+    "name": "VIN Check Options for Stolen Vehicle Verification",
+    "description": "Learn how SafeOrStolen verifies vehicles and five other item categories in one platform",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
@@ -22,16 +22,7 @@ const NICBVINCheckAlternative = () => {
           "item": {
             "@type": "Product",
             "name": "SafeOrStolen",
-            "description": "Comprehensive stolen vehicle and item verification"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Product",
-            "name": "NICB VINCheck",
-            "description": "Free VIN theft and salvage check from National Insurance Crime Bureau"
+            "description": "Stolen vehicle and multi-item verification"
           }
         }
       ]
@@ -44,76 +35,23 @@ const NICBVINCheckAlternative = () => {
       recommended: true,
       features: {
         stolenCheck: true,
-        salvageCheck: true,
         multipleItems: true,
         mobileApp: true,
         instantResults: true,
-        lawEnforcement: true,
         freeTier: '2 free checks',
-        database: '100+ items',
+        database: 'our verification databases',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
-        'Checks more than just vehicles',
-        '100+ database from law enforcement & insurers',
-        'Mobile app for iOS and Android',
+        'Checks more than just vehicles — six item types in one platform',
+        'Integrated sources including IMEI.info, BikeIndex, and HotGunz',
+        'Installable web app — works on mobile, no app store download required',
         'AI-powered risk analysis',
-        'Instant results'
+        'Results in about 3 seconds'
       ],
       cons: [
         'Limited free searches',
         'Premium features require subscription'
-      ]
-    },
-    {
-      name: 'NICB VINCheck',
-      recommended: false,
-      features: {
-        stolenCheck: true,
-        salvageCheck: true,
-        multipleItems: false,
-        mobileApp: false,
-        instantResults: false,
-        lawEnforcement: true,
-        freeTier: 'Unlimited (5/day)',
-        database: 'Insurance claims',
-        itemTypes: 'Vehicles only'
-      },
-      pros: [
-        'Completely free (5 searches/day)',
-        'Insurance company data',
-        'Salvage title checks included'
-      ],
-      cons: [
-        'Vehicles only - no phones, bikes, etc.',
-        'Slow - not instant results',
-        'Limited to 5 searches per day',
-        'US-focused only'
-      ]
-    },
-    {
-      name: 'Carfax',
-      recommended: false,
-      features: {
-        stolenCheck: true,
-        salvageCheck: true,
-        multipleItems: false,
-        mobileApp: true,
-        instantResults: true,
-        lawEnforcement: false,
-        freeTier: 'No (paid only)',
-        database: 'Dealer records',
-        itemTypes: 'Vehicles only'
-      },
-      pros: [
-        'Comprehensive vehicle history',
-        'Service records included',
-        'Accident history'
-      ],
-      cons: [
-        'Expensive ($39.99 per report)',
-        'Vehicles only',
-        'No law enforcement data'
       ]
     }
   ];
@@ -160,7 +98,7 @@ const NICBVINCheckAlternative = () => {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-2">
                 <AlertTriangle className="w-6 h-6 text-amber-500" />
-                Why Look for NICB VINCheck Alternatives?
+                Why Verify More Than Just Vehicles?
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card>
@@ -174,14 +112,14 @@ const NICBVINCheckAlternative = () => {
                   <CardContent className="p-4 text-center">
                     <Clock className="w-8 h-8 mx-auto mb-2 text-amber-500" />
                     <h3 className="font-semibold mb-1">5/Day Limit</h3>
-                    <p className="text-sm text-muted-foreground">Restricted to 5 searches per day</p>
+                    <p className="text-sm text-muted-foreground">Some tools restrict how many checks you can run</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardContent className="p-4 text-center">
                     <Database className="w-8 h-8 mx-auto mb-2 text-amber-500" />
-                    <h3 className="font-semibold mb-1">Limited Data</h3>
-                    <p className="text-sm text-muted-foreground">Only insurance claims, not all stolen items</p>
+                    <h3 className="font-semibold mb-1">Single Category</h3>
+                    <p className="text-sm text-muted-foreground">Most tools cover only one item type</p>
                   </CardContent>
                 </Card>
               </div>
@@ -195,7 +133,7 @@ const NICBVINCheckAlternative = () => {
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center justify-center gap-3 mb-8">
                 <Crown className="w-8 h-8 text-yellow-500" />
-                <h2 className="text-3xl font-bold">#1 Recommended Alternative</h2>
+                <h2 className="text-3xl font-bold">SafeOrStolen Overview</h2>
               </div>
               
               <Card className="border-primary border-2 bg-primary/5">
@@ -210,9 +148,8 @@ const NICBVINCheckAlternative = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-lg">
-                    SafeOrStolen offers everything NICB VINCheck does, plus support for phones, bikes, 
-                    tools, and any item with a serial number. Access 100+ stolen items from law enforcement 
-                    and insurance databases.
+                    SafeOrStolen verifies vehicles plus phones, bikes, tools, and any item with a serial
+                    number — six item types in one platform, checked against our verification databases.
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">
@@ -221,7 +158,7 @@ const NICBVINCheckAlternative = () => {
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>100+ items compared to NICB's insurance-only data</span>
+                          <span>Six item types in one platform</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
@@ -229,11 +166,11 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>Mobile app for on-the-spot verification</span>
+                          <span>Installable web app for on-the-spot verification</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>Instant results (NICB can be slow)</span>
+                          <span>Results in about 3 seconds</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
@@ -254,15 +191,15 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          Law enforcement partnerships
+                          Integrated sources: IMEI.info, BikeIndex, HotGunz
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          Insurance company data
+                          $0.99/check or $10/month unlimited
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          iOS & Android apps
+                          Installable web app
                         </li>
                       </ul>
                     </div>
@@ -282,11 +219,11 @@ const NICBVINCheckAlternative = () => {
           </div>
         </section>
 
-        {/* All Alternatives Comparison */}
+        {/* Feature Overview */}
         <section id="alternatives" className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">All NICB VINCheck Alternatives Compared</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">SafeOrStolen Feature Overview</h2>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse bg-background rounded-lg overflow-hidden">
@@ -294,58 +231,36 @@ const NICBVINCheckAlternative = () => {
                     <tr className="bg-muted">
                       <th className="p-4 text-left font-semibold border-b border-border">Feature</th>
                       <th className="p-4 text-center font-semibold border-b border-border bg-primary/10">SafeOrStolen</th>
-                      <th className="p-4 text-center font-semibold border-b border-border">NICB VINCheck</th>
-                      <th className="p-4 text-center font-semibold border-b border-border">Carfax</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td className="p-4 border-b border-border font-medium">Stolen Check</td>
                       <td className="p-4 text-center border-b border-border bg-green-500/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                     </tr>
                     <tr className="bg-muted/50">
                       <td className="p-4 border-b border-border font-medium">Free Tier</td>
                       <td className="p-4 text-center border-b border-border bg-green-500/5">2 free checks</td>
-                      <td className="p-4 text-center border-b border-border">5/day limit</td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
                     </tr>
                     <tr>
                       <td className="p-4 border-b border-border font-medium">Phone/IMEI Check</td>
                       <td className="p-4 text-center border-b border-border bg-green-500/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
                     </tr>
                     <tr className="bg-muted/50">
                       <td className="p-4 border-b border-border font-medium">Bike/Tool Check</td>
                       <td className="p-4 text-center border-b border-border bg-green-500/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
                     </tr>
                     <tr>
-                      <td className="p-4 border-b border-border font-medium">Mobile App</td>
+                      <td className="p-4 border-b border-border font-medium">Installable Web App</td>
                       <td className="p-4 text-center border-b border-border bg-green-500/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                     </tr>
                     <tr className="bg-muted/50">
-                      <td className="p-4 border-b border-border font-medium">Database Size</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">100+ items</td>
-                      <td className="p-4 text-center border-b border-border">Insurance only</td>
-                      <td className="p-4 text-center border-b border-border">Dealer records</td>
+                      <td className="p-4 border-b border-border font-medium">Results Speed</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">~3 seconds</td>
                     </tr>
                     <tr>
-                      <td className="p-4 border-b border-border font-medium">Law Enforcement Data</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                      <td className="p-4 text-center border-b border-border"><X className="w-5 h-5 text-red-500 mx-auto" /></td>
-                    </tr>
-                    <tr className="bg-muted/50">
                       <td className="p-4 border-b border-border font-medium">Price</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">Free + Premium</td>
-                      <td className="p-4 text-center border-b border-border">Free</td>
-                      <td className="p-4 text-center border-b border-border">$39.99/report</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">2 free, then $0.99/check or $10/mo unlimited</td>
                     </tr>
                   </tbody>
                 </table>
@@ -367,7 +282,7 @@ const NICBVINCheckAlternative = () => {
                 <Link to="/verify">Check Any Item Free</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="font-semibold border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link to="/app">Download Mobile App</Link>
+                <Link to="/app">Open Web App</Link>
               </Button>
             </div>
           </div>
@@ -382,41 +297,39 @@ const NICBVINCheckAlternative = () => {
               <div className="space-y-6">
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Is NICB VINCheck free?</h3>
+                    <h3 className="font-semibold mb-2">Is SafeOrStolen free?</h3>
                     <p className="text-muted-foreground">
-                      Yes, NICB VINCheck is completely free but limited to 5 searches per day 
-                      and only checks vehicles against insurance theft and salvage records.
+                      SafeOrStolen includes 2 free checks, then $0.99 per check or $10/month for
+                      unlimited checks.
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Why choose SafeOrStolen over NICB?</h3>
+                    <h3 className="font-semibold mb-2">What can SafeOrStolen check besides vehicles?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen has a larger database (100+ items), supports more item types 
-                      (phones, bikes, tools), offers a mobile app, and provides instant results. 
-                      NICB only checks vehicles and can be slow.
+                      SafeOrStolen verifies phones, vehicles, license plates, electronics, firearms,
+                      and bicycles — six item types in one platform, with results in about 3 seconds.
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Can I use NICB VINCheck for phones?</h3>
+                    <h3 className="font-semibold mb-2">Can I check a phone IMEI on SafeOrStolen?</h3>
                     <p className="text-muted-foreground">
-                      No, NICB VINCheck only works for vehicle VINs. To check phone IMEIs, 
-                      use SafeOrStolen which supports both VIN and IMEI checks.
+                      Yes, SafeOrStolen supports both VIN and IMEI checks in the same platform.
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Does SafeOrStolen have salvage title checks like NICB?</h3>
+                    <h3 className="font-semibold mb-2">Does SafeOrStolen include integrated data sources?</h3>
                     <p className="text-muted-foreground">
-                      Yes, SafeOrStolen's comprehensive database includes salvage, flood, 
-                      and rebuilt title information from insurance companies, similar to NICB.
+                      Yes, SafeOrStolen integrates sources including IMEI.info, BikeIndex, and HotGunz
+                      alongside our own verification databases.
                     </p>
                   </CardContent>
                 </Card>

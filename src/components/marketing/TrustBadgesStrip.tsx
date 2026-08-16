@@ -28,7 +28,7 @@ export const TrustBadgesStrip: React.FC = () => {
       label: '100+ Databases',
       color: 'text-amber-500',
       link: '/data-sources',
-      title: 'Checks 100+ law enforcement, insurance, carrier, and community databases'
+      title: 'Checks our verification databases across multiple data sources'
     },
     {
       icon: Star,
@@ -42,7 +42,7 @@ export const TrustBadgesStrip: React.FC = () => {
       label: 'All 50 States',
       color: 'text-muted-foreground',
       link: '/data-sources',
-      title: 'Law enforcement database coverage across all 50 U.S. states'
+      title: 'Verification database coverage across all 50 U.S. states'
     },
   ];
 

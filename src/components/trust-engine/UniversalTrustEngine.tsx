@@ -69,7 +69,7 @@ const UniversalTrustEngine: React.FC = () => {
  setResult({
  score: Math.floor(Math.random() * 15) + 85,
  status,
- sources: ['Federal Records', 'carrier and theft databases', 'Insurance Claims DB', 'State Police Records', 'Global Blacklist'],
+ sources: ['Stolen Property Registry', 'Carrier Blacklist Database', 'Vehicle Theft Records', 'Bicycle & Firearm Registries', 'Global Blacklist'],
  serial: inputValue,
  itemType: getItemTypeDisplayName(type),
  timestamp: ts,
@@ -123,7 +123,7 @@ const UniversalTrustEngine: React.FC = () => {
 
  <p className="text-lg text-muted-foreground max-w-xl mx-auto">
  Auto-detects IMEI, VIN, serial numbers & license plates.
- Checked against 100+ law enforcement and insurance databases in under 3 seconds.
+ Checked against our verification databases in under 3 seconds.
  </p>
 
  {/* B2B Toggle */}

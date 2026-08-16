@@ -46,7 +46,7 @@ const HowToCheckIfCarStolenPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Review Verification Results",
- "text": "SafeOrStolen checks vehicle theft and title databases, police databases, and insurance claims to show if the vehicle is stolen, salvage, or clean."
+ "text": "SafeOrStolen checks vehicle theft and title databases, police databases, and reported theft history to show if the vehicle is stolen, salvage, or clean."
  },
  {
  "@type": "HowToStep",
@@ -72,7 +72,7 @@ const HowToCheckIfCarStolenPage = () => {
  "name": "How do I check if a car is stolen for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Use SafeOrStolen's free VIN checker. Enter the 17-character VIN and we verify against vehicle theft and title databases, police databases, and insurance records. Free checks available - no credit card required."
+ "text": "Use SafeOrStolen's free VIN checker. Enter the 17-character VIN and we verify against vehicle theft and title databases, police databases, and reported theft history. Free checks available - no credit card required."
  }
  },
  {
@@ -96,7 +96,7 @@ const HowToCheckIfCarStolenPage = () => {
  "name": "Is SafeOrStolen better than vehicle theft and title databases?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen includes vehicle theft and title databases data plus 100+ additional databases including police records, insurance claims, and international registries. vehicle theft and title databases only shows their own theft data. SafeOrStolen covers more categories."
+ "text": "SafeOrStolen includes vehicle theft and title databases data plus our verification additional databases including police records, reported theft history, and international registries. vehicle theft and title databases only shows their own theft data. SafeOrStolen covers more categories."
  }
  }
  ]
@@ -107,7 +107,7 @@ const HowToCheckIfCarStolenPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="How to Check if a Car is Stolen Before Buying (2026 Guide) | SafeOrStolen"
- description="Complete guide to check if a car is stolen using VIN numbers. Free verification against vehicle theft and title databases, police databases, and insurance records. Protect yourself before buying."
+ description="Complete guide to check if a car is stolen using VIN numbers. Free verification against vehicle theft and title databases, police databases, and reported theft history. Protect yourself before buying."
  keywords="check if car is stolen, verify car not stolen, VIN check stolen, is my car stolen, stolen car check free, stolen vehicle check"
  canonical="/how-to-check-if-car-stolen"
  structuredData={[howToSchema, faqSchema]}
@@ -126,7 +126,7 @@ const HowToCheckIfCarStolenPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify any vehicle's VIN number in seconds with SafeOrStolen's free checker. We search vehicle theft and title databases, police databases, insurance records, and 100+ sources to protect you from buying a stolen car.
+ Verify any vehicle's VIN number in seconds with SafeOrStolen's free checker. We search vehicle theft and title databases, police databases, reported theft history, and our verification sources to protect you from buying a stolen car.
  </p>
 
  {/* Quick VIN Check Tool */}
@@ -169,7 +169,7 @@ const HowToCheckIfCarStolenPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen checks vehicle theft and title databases, police databases, insurance claims, and 100+ additional sources</span>
+ <span>SafeOrStolen checks vehicle theft and title databases, police databases, reported theft history, and our verification additional sources</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -364,10 +364,10 @@ const HowToCheckIfCarStolenPage = () => {
  <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
  <div className="space-y-4 max-w-3xl mx-auto">
  {[
- { q: "How do I check if a car is stolen for free?", a: "Use SafeOrStolen's free VIN checker. Enter the 17-character VIN and we verify against vehicle theft and title databases, police databases, and insurance records. Free checks available - no credit card required." },
+ { q: "How do I check if a car is stolen for free?", a: "Use SafeOrStolen's free VIN checker. Enter the 17-character VIN and we verify against vehicle theft and title databases, police databases, and reported theft history. Free checks available - no credit card required." },
  { q: "Where is the VIN number located on a car?", a: "The VIN is found on the dashboard (visible through windshield on driver's side), driver's door jamb, vehicle registration, insurance card, and under the hood." },
  { q: "What happens if I accidentally buy a stolen car?", a: "If the car is reported stolen, police can seize it from you. You won't get your money back. The original owner or insurance company keeps the car. Always verify the VIN before buying." },
- { q: "Is SafeOrStolen better than vehicle theft and title databases?", a: "SafeOrStolen includes vehicle theft and title databases data plus 100+ additional databases including police records, insurance claims, and international registries. " }
+ { q: "Is SafeOrStolen better than vehicle theft and title databases?", a: "SafeOrStolen includes vehicle theft and title databases data plus our verification additional databases including police records, reported theft history, and international registries. " }
  ].map((faq, i) => (
  <Card key={i}>
  <CardContent className="pt-6">

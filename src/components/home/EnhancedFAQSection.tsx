@@ -20,7 +20,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "What items can I verify with SafeOrStolen?",
- answer: "You can verify phones (IMEI), cars (VIN), laptops, power tools, bikes, cameras, electronics, firearms, and almost any item with a serial number. We check across 3,000+ databases including police records, insurance claims, and global stolen goods registries."
+ answer: "You can verify phones (IMEI), cars (VIN), laptops, power tools, bikes, cameras, electronics, firearms, and almost any item with a serial number. We check across 3,000+ databases including stolen-property records, vehicle title records, and global stolen goods registries."
  },
  {
  question: "Do I need to download an app?",
@@ -34,11 +34,11 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "Is this database global? What countries are covered?",
- answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access vehicle theft and title databases (USA), carrier and theft databases (global phones), CheckMEND (UK/Europe), stolen bicycle databases (worldwide), police databases, and insurance registries."
+ answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access vehicle theft and title databases (USA), carrier and theft databases (global phones), CheckMEND (UK/Europe), stolen bicycle databases (worldwide), stolen-property databases, and insurance registries."
  },
  {
  question: "How accurate are SafeOrStolen results?",
- answer: "We search official police databases, insurance claims (vehicle theft and title databases), carrier and theft databases (carrier and theft databases), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
+ answer: "We search official stolen-property databases, vehicle title records (vehicle theft and title databases), carrier and theft databases (carrier and theft databases), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
  },
  {
  question: "What if an item shows 'Safe' but turns out stolen?",
