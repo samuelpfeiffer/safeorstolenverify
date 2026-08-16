@@ -45,12 +45,12 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": `SafeOrStolen and ${data.name}: Service Comparison`,
- "description": `Compare SafeOrStolen and ${data.name} stolen item verification services. See which platform offers better coverage, features, and value.`,
+ "description": `Compare SafeOrStolen and ${data.name} stolen item verification services.`,
  "about": {
  "@type": "Service",
  "serviceType": "Stolen Item Verification Service",
  "name": "SafeOrStolen",
- "description": "Global stolen item verification platform with free searches and mobile apps",
+ "description": "Global stolen item verification platform with free searches and an installable web app",
  "provider": {
  "@type": "Organization",
  "name": "SafeOrStolen",

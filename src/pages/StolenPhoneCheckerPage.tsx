@@ -32,7 +32,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "How do I check if a phone is stolen before buying?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker. We verify against 100+ global databases including carrier and theft databases, police records, and insurance claims. Results in 3 seconds."
+ "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker. We verify against our verification databases. Results in 3 seconds."
  }
  },
  {
@@ -64,7 +64,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What databases does SafeOrStolen check?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen checks 100+ databases including carrier and theft databases IMEI Database, carrier and theft databases, police stolen property records, insurance claim databases, and international registries."
+ "text": "SafeOrStolen checks our verification databases, including carrier and theft databases and international registries."
  }
  }
  ]
@@ -102,7 +102,7 @@ const StolenPhoneCheckerPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
  <PageSEO
  title="Free Stolen Phone Checker - IMEI Lookup"
- description="Free stolen phone checker. Verify IMEI against 100+ databases in 3 seconds. Carrier blacklists, carrier and theft databases, police records."
+ description="Free stolen phone checker. Verify IMEI against our verification databases in 3 seconds. Carrier blacklists and carrier and theft databases."
  keywords="stolen phone checker, check if phone is stolen, IMEI blacklist check, free phone verification, is my phone stolen, phone stolen check"
  canonical="/stolen-phone-checker"
  structuredData={[faqSchema, howToSchema]}
@@ -113,7 +113,7 @@ const StolenPhoneCheckerPage = () => {
  <section className="text-center mb-16">
  <Badge variant="secondary" className="mb-4 text-sm px-4 py-2">
  <Shield className="w-4 h-4 mr-2 inline" />
- 100+ Databases • Instant Results • $10/mo Unlimited
+ Verification Databases • Instant Results • $10/mo Unlimited
  </Badge>
  
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -121,7 +121,7 @@ const StolenPhoneCheckerPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify if any phone is stolen before buying. Enter the IMEI number below for instant verification against 100+ global databases including carrier and theft databases, and police records.
+ Verify if any phone is stolen before buying. Enter the IMEI number below for instant verification against our verification databases, including carrier and theft databases.
  </p>
 
  {/* IMEI Checker Tool */}
@@ -161,7 +161,7 @@ const StolenPhoneCheckerPage = () => {
  <ul className="grid md:grid-cols-2 gap-4">
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen checks 100+ databases including carrier and theft databases, and police records</span>
+ <span>SafeOrStolen checks our verification databases, including carrier and theft databases</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -249,8 +249,8 @@ const StolenPhoneCheckerPage = () => {
  <div className="flex items-start gap-4">
  <Database className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
- <h3 className="font-semibold mb-2">100+ Database Sources</h3>
- <p className="text-muted-foreground">We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases — including registries that receive reports from and are used by law enforcement.</p>
+ <h3 className="font-semibold mb-2">Verification Database Sources</h3>
+ <p className="text-muted-foreground">We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases.</p>
  </div>
  </div>
  </CardContent>
@@ -287,13 +287,13 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">How do I check if a phone is stolen before buying?</h3>
- <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We verify against 100+ global databases including carrier and theft databases, police records, and insurance claims. Results in 3 seconds.</p>
+ <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We verify against our verification databases, including carrier and theft databases. Results in 3 seconds.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
- <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks 100+ databases, and costs $0.99/check or $10/month unlimited.</p>
+ <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks our verification databases, and costs $0.99/check or $10/month unlimited.</p>
  </CardContent>
  </Card>
  <Card>
@@ -311,7 +311,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What databases does SafeOrStolen check?</h3>
- <p className="text-muted-foreground">SafeOrStolen checks 100+ databases including carrier and theft databases IMEI Database, carrier and theft databases, police stolen property records, insurance claim databases, and international registries.</p>
+ <p className="text-muted-foreground">SafeOrStolen checks our verification databases, including carrier and theft databases and international registries.</p>
  </CardContent>
  </Card>
  </div>
