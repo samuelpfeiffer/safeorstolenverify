@@ -4,7 +4,7 @@ const WatchSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Watch is Stolen - Rolex, Omega, Tag Heuer | SafeOrStolen"
-      metaDescription="Verify luxury watches aren't stolen before buying. Free serial number check for Rolex, Omega, Tag Heuer, Breitling. Search 100+ stolen item database instantly."
+      metaDescription="Verify luxury watches aren't stolen before buying. Free serial number check for Rolex, Omega, Tag Heuer, Breitling. Search our verification databases instantly."
       h1="Check if Watch is Stolen - Luxury Watch Verification"
       keywords={[
         'check if rolex is stolen',
@@ -30,11 +30,11 @@ const WatchSerialCheck = () => {
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Watch Serial Number Verification?"
-      whatIsContent="Every luxury watch has a unique serial number engraved by the manufacturer. When a Rolex, Omega, Patek Philippe, or other high-end watch is reported stolen, this serial number is logged in databases maintained by law enforcement, insurance companies, and organizations like The Watch Register. Our verification searches these databases to check if a watch has been reported stolen. Given that luxury watches can cost $5,000 to $500,000+, verification is essential before any significant purchase."
+      whatIsContent="Every luxury watch has a unique serial number engraved by the manufacturer. When a Rolex, Omega, Patek Philippe, or other high-end watch is reported stolen, this serial number is logged in databases maintained by organizations like The Watch Register. Our verification searches these databases to check if a watch has been reported stolen. Given that luxury watches can cost $5,000 to $500,000+, verification is essential before any significant purchase."
       howItWorksSteps={[
         "Find the serial number: Usually between the lugs (where the strap connects), on the caseback, or on warranty papers",
         "Enter the serial number into our free verification tool",
-        "Our system searches The Watch Register, police databases, and insurance records instantly",
+        "Our system searches The Watch Register and other verification databases instantly",
         "Get results in 3 seconds - know if the watch is CLEAR or REPORTED STOLEN"
       ]}
       howItWorksDescription="We search multiple authoritative sources including The Watch Register (the industry's stolen watch database), Art Loss Register, INTERPOL stolen property database, insurance company claim records, and community theft registries worldwide."
@@ -80,7 +80,7 @@ const WatchSerialCheck = () => {
         },
         {
           question: "What is The Watch Register?",
-          answer: "The Watch Register is the world's largest database of lost and stolen watches, used by law enforcement, insurers, and the watch trade. We search this database along with other sources to provide comprehensive verification."
+          answer: "The Watch Register is a widely used database of lost and stolen watches. We search this database along with other sources to provide comprehensive verification."
         },
         {
           question: "What if my watch check shows stolen?",

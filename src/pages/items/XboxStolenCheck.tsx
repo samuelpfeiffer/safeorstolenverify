@@ -15,7 +15,7 @@ const XboxStolenCheck = () => {
   const faqs = [
     {
       question: "Can a stolen Xbox be traced?",
-      answer: "Yes. Microsoft tracks Xbox console serial numbers and can ban stolen consoles remotely from Xbox Live and all online services. When a stolen Xbox is reported to police and Microsoft, the serial number is flagged. If anyone connects that console to the internet, Microsoft can identify it and lock it from online functionality. Law enforcement also tracks console serial numbers through stolen property databases including stolen property reports from all 50 states."
+      answer: "Yes. Microsoft tracks Xbox console serial numbers and can ban stolen consoles remotely from Xbox Live and all online services. When a stolen Xbox is reported to Microsoft, the serial number is flagged. If anyone connects that console to the internet, Microsoft can identify it and lock it from online functionality. Our verification checks stolen property reports from all 50 states."
     },
     {
       question: "What if I already bought a stolen Xbox?",
@@ -27,7 +27,7 @@ const XboxStolenCheck = () => {
     },
     {
       question: "How long does an Xbox serial number check take?",
-      answer: "Instant — under 3 seconds. We search police stolen property databases, insurance theft claims, pawn shop records, and community-reported stolen consoles simultaneously. You receive a clear result immediately."
+      answer: "Instant — under 3 seconds. We search our verification databases, pawn shop records, and community-reported stolen consoles simultaneously. You receive a clear result immediately."
     },
     {
       question: "Is it illegal to buy a stolen Xbox?",
@@ -67,7 +67,7 @@ const XboxStolenCheck = () => {
       "step": [
         { "@type": "HowToStep", "position": 1, "name": "Find the Xbox serial number", "text": "Find the Xbox serial number on the back or bottom of the console, or in Settings → System → Console Info" },
         { "@type": "HowToStep", "position": 2, "name": "Enter the serial number", "text": "Enter the 12-digit serial number into SafeOrStolen's free verification tool" },
-        { "@type": "HowToStep", "position": 3, "name": "We search databases", "text": "We search police databases, insurance claims, pawn shop records, and Microsoft ban lists" },
+        { "@type": "HowToStep", "position": 3, "name": "We search databases", "text": "We search our verification databases, pawn shop records, and Microsoft ban lists" },
         { "@type": "HowToStep", "position": 4, "name": "Get instant results", "text": "Get instant results in 3 seconds showing if the Xbox is safe or reported stolen" }
       ]
     },
@@ -135,7 +135,7 @@ const XboxStolenCheck = () => {
               {[
                 { value: "500K+", label: "Consoles Stolen Yearly" },
                 { value: "3 sec", label: "Verification Time" },
-                { value: "100+", label: "Databases Searched" },
+                { value: "Instant", label: "Results" },
                 { value: "Free", label: "First 2 Checks" }
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col items-center p-4 bg-card rounded-lg border border-border">
@@ -206,7 +206,7 @@ const XboxStolenCheck = () => {
             <h2 className="text-3xl font-bold mb-6">What SafeOrStolen Checks for Xbox Consoles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                "Police stolen property databases (all 50 states)",
+                "Stolen property reports (all 50 states)",
                 "Insurance theft claims and reports",
                 "Pawn shop stolen property records",
                 "Community-reported stolen consoles",

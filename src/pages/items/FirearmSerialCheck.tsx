@@ -30,7 +30,7 @@ const FirearmSerialCheck = () => {
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Firearm Serial Number Verification?"
- whatIsContent="Every firearm manufactured after 1968 has a unique serial number. When stolen, firearms are reported by police to the FBI' Buying a stolen firearm, even unknowingly, can result in federal charges. Our check queries stolen firearms databases and analyzes the serial number for signs of alteration or obliteration."
+ whatIsContent="Every firearm manufactured after 1968 has a unique serial number. Buying a stolen firearm, even unknowingly, can result in federal charges. Our check queries stolen firearms databases and analyzes the serial number for signs of alteration or obliteration."
  howItWorksSteps={[
  "Find the serial number: Usually on the frame/receiver, often on the right side or under the barrel",
  "Enter the serial number into our free verification tool",
@@ -41,7 +41,7 @@ const FirearmSerialCheck = () => {
  whyVerifyContent="Over 380,000 firearms are stolen annually in the US. Possessing a stolen firearm is a federal crime, even if you didn't know it was stolen. The legal consequences are severe."
  whyVerifyBenefits={[
  "Federal crime to possess a stolen firearm - up to 10 years in prison",
- "Law enforcement traces all recovered firearms by serial number",
+ "Recovered firearms are traced by serial number",
  "Stolen firearms are NEVER returned to buyers - confiscated permanently",
  "Criminal charges even if you didn't know it was stolen",
  "No legal recourse to recover your money",

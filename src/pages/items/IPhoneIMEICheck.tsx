@@ -26,7 +26,7 @@ const IPhoneIMEICheck = () => {
  stats={[
  { value: "1.2M+", label: "iPhones Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
- { value: "100+", label: "Devices in Database" },
+ { value: "Instant", label: "Results" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is iPhone IMEI Verification?"
@@ -37,7 +37,7 @@ const IPhoneIMEICheck = () => {
  "Our system instantly searches our verification databases",
  "Get your results in 3 seconds - see if the iPhone is SAFE or STOLEN"
  ]}
- howItWorksDescription="Our verification checks multiple sources simultaneously: carrier and theft databases, major US carrier and theft databases, community theft registries, iCloud lock status indicators, and user-reported theft databases. We also check for outstanding finance (if the previous owner still owes money) and insurance claims."
+ howItWorksDescription="Our verification checks multiple sources simultaneously: carrier and theft databases, community theft registries, iCloud lock status indicators, and user-reported theft databases. We also check for outstanding finance (if the previous owner still owes money)."
  whyVerifyTitle="Why Check Before Buying an iPhone?"
  whyVerifyContent="iPhones are the among the most commonly stolen smartphone in America. In 2024, over 1.2 million iPhones were reported stolen in the US alone, with many ending up on secondhand marketplaces. Buying a stolen iPhone can have serious consequences:"
  whyVerifyBenefits={[

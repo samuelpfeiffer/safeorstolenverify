@@ -4,7 +4,7 @@ const GamingConsoleCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen"
-      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against 100+ database. Instant results before buying used consoles."
+      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against our verification databases. Instant results before buying used consoles."
       h1="Check if Gaming Console is Stolen - Free Verification"
       keywords={[
         'check if ps5 is stolen',
@@ -37,7 +37,7 @@ const GamingConsoleCheck = () => {
         "Our system searches manufacturer databases, police records instantly",
         "Get results in 3 seconds - know if the console is SAFE or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, law enforcement stolen property databases, insurance claim records, and user-reported theft databases."
+      howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, and user-reported theft databases."
       whyVerifyTitle="Why Check Before Buying a Used Gaming Console?"
       whyVerifyContent="Gaming consoles are highly targeted by thieves due to their high resale value and strong demand. With PS5s still selling for $400+ and Xbox Series X at $500+, the financial risk is significant. Here's why verification is essential:"
       whyVerifyBenefits={[

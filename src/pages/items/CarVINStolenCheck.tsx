@@ -34,7 +34,7 @@ const CarVINStolenCheck = () => {
  howItWorksSteps={[
  "Find the VIN: Check the dashboard (driver's side, visible through windshield), driver's door jamb, vehicle registration, or title",
  "Enter the 17-character VIN into our free verification tool",
- "Our system searches vehicle theft and title databases, law enforcement, and other verification databases instantly",
+ "Our system searches vehicle theft and title databases and other verification databases instantly",
  "Get results in 3 seconds - see if the vehicle is CLEAR or REPORTED STOLEN"
  ]}
  howItWorksDescription="We search multiple authoritative databases including the vehicle theft and title databases stolen vehicle database, vehicle theft and title databases title records, vehicle theft and title databases, community theft registries, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."

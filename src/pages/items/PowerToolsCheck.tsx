@@ -34,10 +34,10 @@ const PowerToolsCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Usually engraved on the tool body, motor housing, or on a label near the battery connection",
         "Enter the serial number into our free verification tool",
-        "Our system searches contractor reports, police databases, and insurance records instantly",
+        "Our system searches contractor theft reports and manufacturer registries instantly",
         "Get results in 3 seconds - know if the tool is SAFE or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search law enforcement stolen property databases, insurance company records, contractor theft reports, and manufacturer systems like Milwaukee One-Key. Contractors actively track and report stolen tools, making verification essential."
+      howItWorksDescription="We search contractor theft reports and manufacturer systems like Milwaukee One-Key. Contractors actively track and report stolen tools, making verification essential."
       whyVerifyTitle="Why Check Power Tools Before Buying?"
       whyVerifyContent="Power tool theft from construction sites and work vehicles is epidemic. A single work truck can contain $10,000-$30,000 worth of tools. Criminals target premium brands that have high resale value. Here's why verification is critical:"
       whyVerifyBenefits={[

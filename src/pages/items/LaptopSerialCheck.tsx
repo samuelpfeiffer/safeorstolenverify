@@ -4,7 +4,7 @@ const LaptopSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Laptop is Stolen - Free Serial Number Verification | SafeOrStolen"
-      metaDescription="Verify any laptop isn't stolen before buying. Free serial number check for MacBook, Dell, HP, Lenovo, ASUS. Search 100+ stolen item database instantly."
+      metaDescription="Verify any laptop isn't stolen before buying. Free serial number check for MacBook, Dell, HP, Lenovo, ASUS. Search our verification databases instantly."
       h1="Check if Laptop is Stolen - Free Serial Number Verification"
       keywords={[
         'check if laptop is stolen',
@@ -37,7 +37,7 @@ const LaptopSerialCheck = () => {
         "Our system searches manufacturer databases, police records instantly",
         "Get results in 3 seconds - know if the laptop is SAFE or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We search multiple sources including Apple's stolen device registry, manufacturer databases (Dell, HP, Lenovo, ASUS), law enforcement stolen property records, and user-reported theft databases. For MacBooks, we can also check iCloud lock status indicators."
+      howItWorksDescription="We search multiple sources including Apple's stolen device registry, manufacturer databases (Dell, HP, Lenovo, ASUS), and user-reported theft databases. For MacBooks, we can also check iCloud lock status indicators."
       whyVerifyTitle="Why Check Before Buying a Used Laptop?"
       whyVerifyContent="Laptops are one of the most commonly stolen electronics. With a laptop stolen every 53 seconds in the US, chances are high that some of the used laptops on marketplaces are stolen property. Here's why verification matters:"
       whyVerifyBenefits={[
