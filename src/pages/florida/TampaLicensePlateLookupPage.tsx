@@ -11,7 +11,7 @@ const TampaLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Tampa?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate or VIN on SafeOrStolen. We search FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Tampa Police Department (TPD), Hillsborough County Sheriff, and insurance databases. Results in 3 seconds. 2 free checks." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate or VIN on SafeOrStolen. We search our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Results in 3 seconds. 2 free checks." }
  },
  {
  "@type": "Question",
@@ -21,12 +21,12 @@ const TampaLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "Does SafeOrStolen check Hillsborough County Sheriff records?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our verification engine searches Hillsborough County Sheriff's Office (HCSO) and Tampa Police Department stolen vehicle records as part of our Florida law enforcement database queries." }
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen does not have direct access to Hillsborough County Sheriff's Office or Tampa Police Department systems. If you suspect a vehicle is stolen, contact local police directly. Our verification engine searches our own verification databases, including vehicle theft and title records." }
  },
  {
  "@type": "Question",
  "name": "Should I check for flood damage on Tampa vehicles?",
- "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Tampa Bay is highly vulnerable to hurricanes and flooding. Our lookup checks for flood titles, salvage brands, and insurance total loss records. Florida is one of the worst states for title washing — where flood-damaged vehicles are re-titled as clean in another state and sold back in Florida." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Tampa Bay is highly vulnerable to hurricanes and flooding. Our lookup checks for flood titles and salvage brands in our verification databases. Florida is one of the worst states for title washing — where flood-damaged vehicles are re-titled as clean in another state and sold back in Florida." }
  }
  ]
  };
@@ -35,7 +35,7 @@ const TampaLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Tampa FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Tampa, Florida license plate lookup. Check Hillsborough County vehicles for theft status. FLHSMV, vehicle theft and title databases, TPD databases. Instant results."
+ description="Free Tampa, Florida license plate lookup. Check Hillsborough County vehicles for theft status. Vehicle theft and title databases. Instant results."
  canonical="/florida/tampa-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +47,7 @@ const TampaLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Tampa License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Tampa, Florida against FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Tampa Police, Hillsborough County Sheriff, and insurance databases. Free results in 3 seconds.
+ Verify any vehicle in Tampa, Florida against our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Free results in 3 seconds.
  </p>
  </div>
  </header>
@@ -73,7 +73,7 @@ const TampaLicensePlateLookupPage = () => {
  Port Tampa Bay handles international vehicle shipping, creating another avenue for stolen cars to leave the country. The Tampa Police Department (TPD) and Hillsborough County Sheriff's Office (HCSO) report steady vehicle theft numbers, with particular hotspots around Ybor City, South Tampa, Brandon, and the University of South Florida area. Catalytic converter theft has also surged, affecting vehicle value and integrity.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- Tampa Bay is also highly vulnerable to hurricanes and flooding. After major storms, flood-damaged vehicles enter the used car market — sometimes with washed titles that hide the damage history. Florida is one of the worst states for title washing, where a flood-damaged car is re-titled in a lenient state and then sold back in Florida as "clean." Our lookup checks for flood titles, salvage brands, and insurance total loss records specific to the Tampa Bay region.
+ Tampa Bay is also highly vulnerable to hurricanes and flooding. After major storms, flood-damaged vehicles enter the used car market — sometimes with washed titles that hide the damage history. Florida is one of the worst states for title washing, where a flood-damaged car is re-titled in a lenient state and then sold back in Florida as "clean." Our lookup checks for flood titles and salvage brands specific to the Tampa Bay region.
  </p>
  </section>
 
@@ -81,10 +81,8 @@ const TampaLicensePlateLookupPage = () => {
  <h2 className="text-2xl font-bold text-foreground mb-4">What Our Tampa Lookup Checks</h2>
  <ul className="space-y-3">
  {[
- { name: 'FLHSMV Records', desc: 'Florida registration database for Hillsborough County' },
- { name: 'Tampa Police (TPD)', desc: 'City of Tampa stolen vehicle reports' },
- { name: 'HCSO Records', desc: 'Hillsborough County Sheriff\'s Office stolen property reports' },
- { name: 'vehicle theft and title databases', desc: 'Theft, total loss, and flood damage records' },
+ { name: 'Vehicle Theft & Title Databases', desc: 'Theft, total loss, and flood damage records' },
+ { name: 'Stolen Property Reports', desc: 'Stolen property reports from all 50 states' },
  { name: 'Flood & Salvage', desc: 'Hurricane damage titles, salvage brands, and title washing detection' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -100,7 +98,7 @@ const TampaLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Tampa?</summary>
- <p className="text-muted-foreground mt-2">Enter the Florida license plate or VIN on SafeOrStolen. We search FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Tampa Police Department, Hillsborough County Sheriff, and insurance databases. Results in 3 seconds. 2 free checks.</p>
+ <p className="text-muted-foreground mt-2">Enter the Florida license plate or VIN on SafeOrStolen. We search our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Results in 3 seconds. 2 free checks.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Why is Tampa a hotspot for vehicle theft?</summary>
@@ -108,7 +106,7 @@ const TampaLicensePlateLookupPage = () => {
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Should I check for flood damage on Tampa vehicles?</summary>
- <p className="text-muted-foreground mt-2">Absolutely. Tampa Bay is highly vulnerable to hurricanes. Our lookup checks for flood titles, salvage brands, and insurance total loss records. Florida is one of the worst states for title washing.</p>
+ <p className="text-muted-foreground mt-2">Absolutely. Tampa Bay is highly vulnerable to hurricanes. Our lookup checks for flood titles and salvage brands. Florida is one of the worst states for title washing.</p>
  </details>
  </div>
  </section>

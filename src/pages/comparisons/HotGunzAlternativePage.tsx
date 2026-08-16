@@ -11,7 +11,7 @@ const HotGunzAlternativePage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "HotGunz Alternative",
- "description": "Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included.",
+ "description": "SafeOrStolen integrates the HotGunz stolen-firearms registry alongside verification for phones, vehicles, license plates, electronics, and bicycles in one installable web app.",
       "url": "https://safeorstolen.com/hotgunz-alternative"
     },
     {
@@ -23,7 +23,7 @@ const HotGunzAlternativePage = () => {
           "name": "What's better than HotGunz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen searches the same HotGunz national stolen-firearms registry and adds serial number integrity analysis, five other item categories (phones, vehicles, plates, serial numbers, bicycles), AI listing analysis, and a mobile app."
+            "text": "SafeOrStolen integrates the HotGunz national stolen-firearms registry and adds serial number integrity analysis, five other item categories (phones, vehicles, plates, serial numbers, bicycles), and AI-powered listing analysis."
           }
         },
         {
@@ -31,7 +31,7 @@ const HotGunzAlternativePage = () => {
           "name": "Does SafeOrStolen include HotGunz data?",
           "acceptedAnswer": {
             "@type": "Answer",
- "text": "Yes, SafeOrStolen searches HotGunz's 32,000+ stolen gun records as part of our comprehensive 100+ database search."
+ "text": "Yes, SafeOrStolen integrates HotGunz's stolen-firearms registry as part of our verification databases."
           }
         }
       ]
@@ -41,8 +41,8 @@ const HotGunzAlternativePage = () => {
   return (
     <>
       <PageSEO
-        title="HotGunz Alternative - More Gun Databases | SafeOrStolen"
- description="Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included."
+        title="HotGunz Alternative - Firearm Verification | SafeOrStolen"
+ description="SafeOrStolen integrates the HotGunz stolen-firearms registry alongside verification for phones, vehicles, license plates, electronics, and bicycles in one installable web app."
         keywords="hotgunz alternative, hotgunz safeorstolen comparison, stolen gun database, gun serial lookup, firearm verification"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -55,7 +55,7 @@ const HotGunzAlternativePage = () => {
               HotGunz Alternative
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
- SafeOrStolen searches <strong>HotGunz + 100 additional databases</strong> for the most comprehensive stolen gun verification. Plus a mobile app HotGunz doesn't have.
+ SafeOrStolen integrates the <strong>HotGunz stolen-firearms registry</strong> along with verification for phones, vehicles, license plates, electronics, and bicycles — all in one installable web app.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">
@@ -70,9 +70,9 @@ const HotGunzAlternativePage = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">What is HotGunz?</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              HotGunz is a free public database of stolen firearms with over 32,000 user-reported entries. 
-              Victims report their stolen guns directly, often before or in addition to police reports. 
-              It's a valuable resource, but it's just ONE database.
+              HotGunz is a community-reported registry of stolen firearms. Victims can report their stolen
+              guns directly, often before or in addition to police reports. It's a valuable resource focused
+              on one item category.
             </p>
             <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
               <p className="font-bold mb-2">SafeOrStolen includes HotGunz data</p>
@@ -122,17 +122,12 @@ const HotGunzAlternativePage = () => {
                   </tr>
                   <tr className="border-t border-border">
                     <td className="p-4">Other item types (phones, vehicles, plates, serials, bikes)</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
+                    <td className="p-4 text-center">—</td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border">
-                    <td className="p-4">Mobile App</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
-                    <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
-                  </tr>
-                  <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">Check Other Items (Phones, Cars)</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
+                    <td className="p-4">Installable Web App</td>
+                    <td className="p-4 text-center">—</td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border">
@@ -151,20 +146,20 @@ const HotGunzAlternativePage = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Why One Registry Is Never Enough</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              A stolen gun might be reported to police but never submitted to a public registry like
-              HotGunz. Public sources only contain what victims and departments choose to share, so a
+              A stolen gun might be reported to police but never submitted to a public registry.
+              Public sources only contain what victims and departments choose to share, so a
               clean result narrows the risk — it does not clear the firearm.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-background rounded-lg">
                 <Database className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">HotGunz registry</h3>
-                <p className="text-muted-foreground text-sm">32,000+ victim-reported guns nationwide. A valuable public source, limited to voluntary reports.</p>
+                <p className="text-muted-foreground text-sm">A community-reported firearms registry. A valuable public source, limited to voluntary reports.</p>
               </div>
               <div className="p-6 bg-background rounded-lg border-2 border-primary">
                 <Database className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">SafeOrStolen</h3>
-                <p className="text-muted-foreground text-sm">The HotGunz registry plus serial integrity analysis, six item categories, and a mobile app.</p>
+                <p className="text-muted-foreground text-sm">The HotGunz registry plus serial integrity analysis, six item categories, and an installable web app.</p>
               </div>
               <div className="p-6 bg-background rounded-lg">
                 <Shield className="w-10 h-10 text-primary mb-4" />
@@ -180,9 +175,9 @@ const HotGunzAlternativePage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Mobile App for Gun Shows</h2>
+                <h2 className="text-3xl font-bold mb-4">Verify Firearms On the Go</h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  HotGunz doesn't have a mobile app. SafeOrStolen does. Check firearms on the spot at:
+                  SafeOrStolen works as an installable web app — no app store download required. Check firearms on the spot at:
                 </p>
                 <ul className="space-y-3">
                   <li className="flex gap-2"><Check className="w-5 h-5 text-primary flex-shrink-0" /> Gun shows</li>
@@ -195,7 +190,7 @@ const HotGunzAlternativePage = () => {
                 <Smartphone className="w-24 h-24 text-primary mx-auto mb-4" />
                 <p className="font-bold text-lg">Check Firearm Serials From Your Phone</p>
                 <Link to="/download" className="inline-block mt-4">
-                  <Button variant="outline" size="sm">Download App</Button>
+                  <Button variant="outline" size="sm">Open Web App</Button>
                 </Link>
               </div>
             </div>
@@ -213,7 +208,7 @@ const HotGunzAlternativePage = () => {
               <ol className="space-y-4">
                 <li className="flex gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">1</span>
-                  <span><strong>Use SafeOrStolen first</strong> - We search HotGunz + 100 other databases in one search</span>
+                  <span><strong>Use SafeOrStolen first</strong> - We integrate the HotGunz registry along with our other verification databases in one search</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">2</span>
@@ -231,7 +226,7 @@ const HotGunzAlternativePage = () => {
         {/* CTA */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Search HotGunz + 100 More Databases</h2>
+            <h2 className="text-3xl font-bold mb-4">Search the HotGunz Registry and More</h2>
             <p className="text-lg text-muted-foreground mb-8">
               Get comprehensive stolen gun verification with one search.
             </p>
