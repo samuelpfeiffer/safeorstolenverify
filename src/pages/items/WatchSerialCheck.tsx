@@ -26,7 +26,7 @@ const WatchSerialCheck = () => {
       stats={[
         { value: "$1B+", label: "Watch Theft Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Watch Serial Number Verification?"

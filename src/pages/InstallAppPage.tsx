@@ -210,8 +210,8 @@ const InstallAppPage = () => {
  </div>
  <div className="text-center p-6">
  <Shield className="h-10 w-10 mx-auto text-primary mb-4" />
- <h3 className="font-semibold mb-2">100+ Databases</h3>
- <p className="text-sm text-muted-foreground">FBI, vehicle theft and title databases, and all 50 state databases</p>
+ <h3 className="font-semibold mb-2">our verification Databases</h3>
+ <p className="text-sm text-muted-foreground">public theft-report registries, vehicle theft and title databases, and all 50 state databases</p>
  </div>
  <div className="text-center p-6">
  <Zap className="h-10 w-10 mx-auto text-primary mb-4" />

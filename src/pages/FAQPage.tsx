@@ -16,11 +16,11 @@ const FAQPage = () => {
  faqs: [
  {
  question: "How do I check if something is stolen?",
- answer: "Enter the IMEI, VIN, or serial number into our free verification tool at safeorstolen.com/verify. We search 100+ databases across law enforcement, insurance, and stolen goods databases. Results appear in 3 seconds showing if the item is safe or stolen."
+ answer: "Enter the IMEI, VIN, or serial number into our free verification tool at safeorstolen.com/verify. We search our verification databases across the relevant authorities, insurance, and stolen goods databases. Results appear in 3 seconds showing if the item is safe or stolen."
  },
  {
  question: "How do I know if a phone is stolen before I buy it?",
- answer: "Find the phone's IMEI number (dial *#06# or check Settings → About Phone), enter it into our free IMEI checker at safeorstolen.com/verify, and we'll check it against global carrier and theft databases, stolen phone databases, and insurance claims in 3 seconds."
+ answer: "Find the phone's IMEI number (dial *#06# or check Settings → About Phone), enter it into our free IMEI checker at safeorstolen.com/verify, and we'll check it against global carrier and theft databases, stolen phone databases, and reported theft history in 3 seconds."
  },
  {
  question: "Can I check if a car is stolen using the VIN number?",
@@ -28,11 +28,11 @@ const FAQPage = () => {
  },
  {
  question: "How accurate is SafeOrStolen.com's verification process?",
- answer: "We cross-reference multiple community theft registries including stolen property reports from all 50 states, FBI databases, and international stolen property registries to ensure comprehensive coverage."
+ answer: "We cross-reference multiple community theft registries including stolen property reports from all 50 states, public theft-report registries databases, and international stolen property registries to ensure comprehensive coverage."
  },
  {
  question: "What databases do you search when checking items?",
- answer: "We search the National Crime Information Center (stolen property reports from all 50 states), FBI's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional community theft registries across North America and internationally."
+ answer: "We search the stolen-property registries, public theft-report registries's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional community theft registries across North America and internationally."
  },
  {
  question: "How long does a verification check take?",
@@ -82,7 +82,7 @@ const FAQPage = () => {
  },
  {
  question: "Who has access to the search results?",
- answer: "Only you have access to your search results. We do not share, sell, or provide search data to third parties, including law enforcement, without a valid court order."
+ answer: "Only you have access to your search results. We do not share, sell, or provide search data to third parties, including the relevant authorities, without a valid court order."
  }
  ]
  },
@@ -114,7 +114,7 @@ const FAQPage = () => {
  faqs: [
  {
  question: "What should I do if an item shows as stolen?",
- answer: "If an item is flagged as stolen, DO NOT purchase or transfer ownership. Contact local law enforcement immediately. We provide a detailed report that can be shared with police to help with recovery efforts."
+ answer: "If an item is flagged as stolen, DO NOT purchase or transfer ownership. Contact community theft immediately. We provide a detailed report that can be shared with police to help with recovery efforts."
  },
  {
  question: "What does 'Clean' result mean?",
@@ -140,19 +140,19 @@ const FAQPage = () => {
  faqs: [
  {
  question: "What does the $10/month plan include?",
- answer: "The $10/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to 100+ databases. Cancel anytime. Or pay $0.99 per individual check."
+ answer: "The $10/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to our verification databases. Cancel anytime. Or pay $0.99 per individual check."
  },
  {
  question: "Do you offer discounts for businesses?",
- answer: "Yes, we offer enterprise pricing for businesses, pawn shops, electronics retailers, and law enforcement agencies. Contact our business development team for custom pricing based on volume needs."
+ answer: "Yes, we offer enterprise pricing for businesses, pawn shops, electronics retailers, and agencies. Contact our business development team for custom pricing based on volume needs."
  },
  {
  question: "How do I get started?",
  answer: "Sign up at safeorstolen.com. You get 2 free checks, then $0.99/check or subscribe for $10/month unlimited across all item types."
  },
  {
- question: "How do I download the SafeOrStolen mobile app?",
- answer: "Visit safeorstolen.com/app to download our mobile app. The app is available as a Progressive Web App (PWA) for both iOS and Android. Click 'Install' or 'Add to Home Screen' when prompted by your browser. The app offers exclusive features like barcode scanning for instant verification in 3 seconds."
+ question: "How do I download the SafeOrStolen installable web app?",
+ answer: "Visit safeorstolen.com/app to download our installable web app. The app is available as a Progressive Web App (PWA) for both iOS and Android. Click 'Install' or 'Add to Home Screen' when prompted by your browser. The app offers exclusive features like barcode scanning for instant verification in 3 seconds."
  },
  {
  question: "Is there a stolen verification app?",
@@ -160,7 +160,7 @@ const FAQPage = () => {
  },
  {
  question: "Does CheckMEND have an app?",
- answer: "No, They only offer a slow website with manual typing. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual mobile app."
+ answer: "No, They only offer a slow website with manual typing. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual installable web app."
  },
  {
  question: "What's like Carfax but for phones?",
@@ -180,15 +180,15 @@ const FAQPage = () => {
  },
  {
  question: "Can I check license plates?",
- answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search vehicle theft and title databases databases, and law enforcement reports."
+ answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search vehicle theft and title databases databases, and stolen-property registries."
  },
  {
  question: "Do you have state-specific VIN checkers?",
  answer: "Yes, we offer dedicated VIN lookup pages for all 50 US states with state-specific theft statistics and local laws. Visit safeorstolen.com/california-vin-lookup (or any state) for tailored verification and local vehicle theft data."
  },
  {
- question: "Can I use the mobile app offline?",
- answer: "Yes! The SafeOrStolen mobile app includes offline mode for barcode scanning and cached database searches. Download the app at safeorstolen.com/app to verify items even without internet connection."
+ question: "Can I use the installable web app offline?",
+ answer: "Yes! The SafeOrStolen installable web app includes offline mode for barcode scanning and cached database searches. Download the app at safeorstolen.com/app to verify items even without internet connection."
  }
  ]
  }
@@ -198,7 +198,7 @@ const FAQPage = () => {
  <>
  <PageSEO
  title="FAQ - Frequently Asked Questions"
- description="Answers about SafeOrStolen AI: how AI verification works, pricing, the 100+ databases we check, and how to avoid buying or selling stolen goods."
+ description="Answers about SafeOrStolen AI: how AI verification works, pricing, the our verification databases we check, and how to avoid buying or selling stolen goods."
  keywords="SafeOrStolen FAQ, verification questions, stolen item checker help"
  canonical="/faq"
  structuredData={{

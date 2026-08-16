@@ -26,7 +26,7 @@ const PowerToolsCheck = () => {
       stats={[
         { value: "$1B+", label: "Tool Theft Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Power Tool Serial Number Verification?"

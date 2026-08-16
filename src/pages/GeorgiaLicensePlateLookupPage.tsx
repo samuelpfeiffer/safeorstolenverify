@@ -20,7 +20,7 @@ const GeorgiaLicensePlateLookupPage = () => {
       content={{
         intro: "Georgia experiences notable vehicle theft, with Atlanta accounting for a significant portion of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our comprehensive database that includes Georgia DDS records, stolen property reports from all 50 states, and community theft registries.",
         
-        whatIs: "A Georgia license plate lookup allows you to verify if a vehicle registered in Georgia has been reported stolen, salvaged, or has title issues. By entering the GA license plate number, our system cross-references the Georgia Department of Driver Services (DDS), National Crime Information Center (stolen property reports from all 50 states), insurance databases, and local law enforcement records. This verification is essential when purchasing vehicles in Atlanta, Savannah, Augusta, Columbus, and throughout Georgia's active used vehicle market.",
+        whatIs: "A Georgia license plate lookup allows you to verify if a vehicle registered in Georgia has been reported stolen, salvaged, or has title issues. By entering the GA license plate number, our system cross-references the Georgia Department of Driver Services (DDS), stolen-property registries, our verification databases, and local stolen-property registries. This verification is essential when purchasing vehicles in Atlanta, Savannah, Augusta, Columbus, and throughout Georgia's active used vehicle market.",
         
         howItWorks: "Our Georgia license plate lookup works by querying multiple databases simultaneously: (1) Georgia DDS vehicle registration records to verify the plate is actively registered, (2) stolen property reports from all 50 states for federal theft reports, (3) Georgia Bureau of Investigation records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt or junked designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
         
@@ -52,7 +52,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           },
           {
             question: "How accurate is the Georgia license plate stolen vehicle check?",
-            answer: "Our Georgia license plate lookup is accurate for registered vehicles. We check official Georgia DDS records, stolen property reports from all 50 states (FBI's database), and Georgia Bureau of Investigation records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+            answer: "Our Georgia license plate lookup is accurate for registered vehicles. We check official Georgia DDS records, stolen property reports from all 50 states (public theft-report registries), and Georgia Bureau of Investigation records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
           },
           {
             question: "Does the lookup work for vehicles in Savannah and coastal Georgia?",
@@ -60,7 +60,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           },
           {
             question: "What if the Georgia plate comes back as stolen?",
-            answer: "Do NOT purchase the vehicle. Walk away immediately and report the listing to the platform (Facebook Marketplace, Craigslist, OfferUp) and consider notifying local law enforcement or the Georgia Bureau of Investigation. Never confront the seller directly."
+            answer: "Do NOT purchase the vehicle. Walk away immediately and report the listing to the platform (Facebook Marketplace, Craigslist, OfferUp) and consider notifying community theft or the Georgia Bureau of Investigation. Never confront the seller directly."
           },
           {
             question: "Can I check temporary Georgia tags or dealer plates?",

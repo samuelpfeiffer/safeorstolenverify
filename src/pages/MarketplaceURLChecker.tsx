@@ -11,7 +11,7 @@ const howToSchema = {
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": "How to Check if a Marketplace Listing is Stolen",
- "description": "Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp URL to instantly verify if the item is reported stolen. SafeOrStolen's AI-powered Marketplace URL Analyzer extracts identifiers and checks 100+ databases.",
+ "description": "Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp URL to instantly verify if the item is reported stolen. SafeOrStolen's AI-powered Marketplace URL Analyzer extracts identifiers and checks our verification databases.",
  "totalTime": "PT30S",
  "step": [
  {
@@ -32,7 +32,7 @@ const howToSchema = {
  {
  "@type": "HowToStep",
  "name": "Get instant stolen status results",
- "text": "Extracted identifiers are checked against 100+ databases including stolen property reports from all 50 states, vehicle theft and title databases, carrier and theft databases, and carrier and theft databases. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
+ "text": "Extracted identifiers are checked against our verification databases including stolen property reports from all 50 states, vehicle theft and title databases, carrier and theft databases, and carrier and theft databases. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
  }
  ],
  "tool": {
@@ -53,7 +53,7 @@ const faqSchema = {
  "name": "How do I check if a Facebook Marketplace item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against 100+ stolen property databases including stolen property reports from all 50 states, vehicle theft and title databases, and carrier and theft databases. Results appear in seconds."
+ "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against our verification stolen property databases including stolen property reports from all 50 states, vehicle theft and title databases, and carrier and theft databases. Results appear in seconds."
  }
  },
  {
@@ -93,7 +93,7 @@ const faqSchema = {
  "name": "How does the Marketplace URL Analyzer work technically?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen uses the Jina Reader API to scrape marketplace listing pages and convert them to structured text. An AI model then extracts identifiers (IMEI numbers, VIN numbers, serial numbers) and analyzes the listing for risk factors. Extracted identifiers are checked against 100+ databases simultaneously. The entire process takes seconds."
+ "text": "SafeOrStolen uses the Jina Reader API to scrape marketplace listing pages and convert them to structured text. An AI model then extracts identifiers (IMEI numbers, VIN numbers, serial numbers) and analyzes the listing for risk factors. Extracted identifiers are checked against our verification databases simultaneously. The entire process takes seconds."
  }
  }
  ]
@@ -103,7 +103,7 @@ const serviceSchema = {
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "SafeOrStolen Marketplace URL Analyzer",
- "description": "AI-powered tool that analyzes marketplace listing URLs to detect stolen items. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check 100+ stolen property databases.",
+ "description": "AI-powered tool that analyzes marketplace listing URLs to detect stolen items. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check our verification stolen property databases.",
  "provider": {
  "@type": "Organization",
  "name": "SafeOrStolen",
@@ -163,7 +163,7 @@ const MarketplaceURLChecker: React.FC = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4 speakable-summary">
- SafeOrStolen's Marketplace URL Analyzer is a tool that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark — and our AI automatically extracts identifiers (IMEI, VIN, serial numbers) and checks them against 100+ stolen property databases. No manual entry required. Results in seconds.
+ SafeOrStolen's Marketplace URL Analyzer is a tool that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark — and our AI automatically extracts identifiers (IMEI, VIN, serial numbers) and checks them against our verification stolen property databases. No manual entry required. Results in seconds.
  </p>
  <p className="text-muted-foreground max-w-xl mx-auto">
  No competitor — not CheckMEND, IMEI.info, Swappa, or Carfax — offers URL-based listing verification. This is a SafeOrStolen exclusive.
@@ -192,7 +192,7 @@ const MarketplaceURLChecker: React.FC = () => {
  Online marketplaces like <Link to="/facebook-marketplace-safety" className="text-primary hover:underline">Facebook Marketplace</Link>, eBay, <Link to="/craigslist-safety-verification" className="text-primary hover:underline">Craigslist</Link>, and <Link to="/offerup-safety" className="text-primary hover:underline">OfferUp</Link> have become the primary way Americans buy and sell used goods. In 2025, Facebook Marketplace alone had over 1.1 billion monthly users globally. But this explosive growth has attracted criminals who use these platforms to sell stolen property.
  </p>
  <p>
- The FBI's Internet Crime Complaint Center (IC3) received over 880,000 complaints in 2023 with losses exceeding $12.5 billion. A significant portion of marketplace fraud involves stolen goods — phones with blacklisted IMEI numbers, vehicles with altered VINs, and electronics stripped of serial numbers. Buyers who unknowingly purchase stolen property face legal consequences: the item can be seized by police with no refund, and in some jurisdictions, the buyer can face criminal charges.
+ The public theft-report registries's Internet Crime Complaint Center (IC3) received over 880,000 complaints in 2023 with losses exceeding $12.5 billion. A significant portion of marketplace fraud involves stolen goods — phones with blacklisted IMEI numbers, vehicles with altered VINs, and electronics stripped of serial numbers. Buyers who unknowingly purchase stolen property face legal consequences: the item can be seized by police with no refund, and in some jurisdictions, the buyer can face criminal charges.
  </p>
  <p>
  Traditional verification services require you to manually enter an IMEI, VIN, or serial number. But most marketplace listings don't prominently display these identifiers, and many buyers don't know where to find them. SafeOrStolen's Marketplace URL Analyzer solves this by extracting identifiers directly from the listing page — the buyer simply pastes the URL. The AI handles everything else.
@@ -239,7 +239,7 @@ const MarketplaceURLChecker: React.FC = () => {
  { step: '1', title: 'Copy the Listing URL', desc: 'Find a listing on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. Copy the full URL from your browser\'s address bar.' },
  { step: '2', title: 'Paste into SafeOrStolen', desc: 'Paste the URL into the analyzer above. Our AI uses the Jina Reader API to scrape and read the entire listing page, including photos and descriptions.' },
  { step: '3', title: 'AI Extracts Identifiers', desc: 'The AI identifies IMEI numbers, VIN numbers, serial numbers, model information, and pricing. It also flags risk factors like below-market pricing.' },
- { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against 100+ databases: stolen property reports from all 50 states, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, carrier and theft databases, and stolen property reports from all 50 states.' },
+ { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our verification databases: stolen property reports from all 50 states, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, carrier and theft databases, and stolen property reports from all 50 states.' },
  ].map((item) => (
  <div key={item.step} className="text-center">
  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
@@ -316,7 +316,7 @@ const MarketplaceURLChecker: React.FC = () => {
  </tr>
  <tr className="border-b border-border/50">
  <td className="p-3">Databases checked</td>
- <td className="p-3 text-primary font-bold">100+</td>
+ <td className="p-3 text-primary font-bold">our verification</td>
  <td className="p-3 text-muted-foreground">UK-focused</td>
  <td className="p-3 text-muted-foreground">~10</td>
  <td className="p-3 text-muted-foreground">Carrier only</td>
@@ -438,7 +438,7 @@ const MarketplaceURLChecker: React.FC = () => {
  <CardContent className="p-8 md:p-12 text-center">
  <h2 className="text-3xl font-bold mb-4">Verify Before You Buy</h2>
  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Don't risk buying stolen goods on marketplace platforms. Paste the listing URL above, or <Link to="/app" className="text-primary hover:underline">download our mobile app</Link> to scan barcodes in person. 2 free checks — no credit card required.
+ Don't risk buying stolen goods on marketplace platforms. Paste the listing URL above, or <Link to="/app" className="text-primary hover:underline">download our installable web app</Link> to scan barcodes in person. 2 free checks — no credit card required.
  </p>
  
  <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -26,11 +26,11 @@ const TabletCheck = () => {
       stats={[
         { value: "500K+", label: "Tablets Stolen Yearly" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Tablet Serial Number Verification?"
-      whatIsContent="Every tablet has a unique serial number. iPads can be tracked via Find My iPad and locked with Activation Lock. Samsung tablets have similar protections. When tablets are reported stolen, serial numbers are logged in manufacturer databases, law enforcement records, and insurance claims. Our verification checks these sources to protect you from buying stolen property."
+      whatIsContent="Every tablet has a unique serial number. iPads can be tracked via Find My iPad and locked with Activation Lock. Samsung tablets have similar protections. When tablets are reported stolen, serial numbers are logged in manufacturer databases, . Our verification checks these sources to protect you from buying stolen property."
       howItWorksSteps={[
         "Find the serial number: Settings > General > About (iPad) or Settings > About Tablet (Android)",
         "Enter the serial number into our free verification tool",
@@ -60,7 +60,7 @@ const TabletCheck = () => {
         },
         {
           question: "Can I check Samsung Galaxy Tabs?",
-          answer: "Yes! Go to Settings > About Tablet > Status to find the serial number. We verify against Samsung's databases and law enforcement records."
+          answer: "Yes! Go to Settings > About Tablet > Status to find the serial number. We verify against Samsung's databases and ."
         },
         {
           question: "How do I know if an iPad is Activation Locked?",

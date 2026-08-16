@@ -456,7 +456,7 @@ const XboxStolenCheck = () => {
               </Button>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              2 free checks · 100+ databases · Instant results · No credit card required
+              2 free checks · our verification databases · Instant results · No credit card required
             </p>
           </div>
         </section>

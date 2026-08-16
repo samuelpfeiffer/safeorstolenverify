@@ -19,12 +19,12 @@ const IMEICheckerAppPage = () => {
  {
  icon: Zap,
  title: "3-Second Results",
- description: "Get complete stolen/blacklist status in under 3 seconds from 100+ databases"
+ description: "Get complete stolen/blacklist status in under 3 seconds from our verification databases"
  },
  {
  icon: Shield,
  title: "Comprehensive Check",
- description: "Checks carrier and theft databases, carriers, community theft registries, and insurance claims"
+ description: "Checks carrier and theft databases, carriers, community theft registries, and reported theft history"
  },
  {
  icon: Wifi,
@@ -37,7 +37,7 @@ const IMEICheckerAppPage = () => {
  { name: "CheckMEND", hasApp: false, note: "Phones only" },
  { name: "IMEI.info", hasApp: false, note: "Website only" },
  { name: "Swappa", hasApp: false, note: "No standalone IMEI app" },
- { name: "SafeOrStolen", hasApp: true, note: "Full mobile app with barcode scanning" }
+ { name: "SafeOrStolen", hasApp: true, note: "Full installable web app with barcode scanning" }
  ];
 
  const faqSchema = {
@@ -47,11 +47,11 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is there an app to check IMEI for stolen phones?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. You can scan IMEI barcodes, check against 100+ databases, and get results in 3 seconds. The app works on both iOS and Android." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. You can scan IMEI barcodes, check against our verification databases, and get results in 3 seconds. The app works on both iOS and Android." }
  },
  {
  "@type": "Question",
- "name": "Does CheckMEND have a mobile app?",
+ "name": "Does CheckMEND have a installable web app?",
  "acceptedAnswer": { "@type": "Answer", "text": "No, CheckMEND is website-only. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
  },
  {
@@ -108,7 +108,7 @@ const IMEICheckerAppPage = () => {
 
  <p className="text-lg text-muted-foreground mb-8">
  <strong></strong> 
- SafeOrStolen is the <strong>only</strong> IMEI verification service with a real mobile app.
+ SafeOrStolen is the <strong>only</strong> IMEI verification service with a real installable web app.
  </p>
  
  <div className="flex flex-col sm:flex-row gap-4">

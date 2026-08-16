@@ -26,7 +26,7 @@ const FirearmSerialCheck = () => {
  stats={[
  { value: "380K+", label: "Guns Stolen Yearly" },
  { value: "3 sec", label: "Verification Time" },
- { value: "100+", label: "Records Searched" },
+ { value: "Instant", label: "Results" },
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Firearm Serial Number Verification?"
@@ -34,7 +34,7 @@ const FirearmSerialCheck = () => {
  howItWorksSteps={[
  "Find the serial number: Usually on the frame/receiver, often on the right side or under the barrel",
  "Enter the serial number into our free verification tool",
- "Our system searches available stolen firearm databases and law enforcement records",
+ "Our system searches available stolen firearm databases and ",
  "Get instant results - know if the firearm has been reported stolen"
  ]}
  whyVerifyTitle="Why Verify Firearms Before Buying?"

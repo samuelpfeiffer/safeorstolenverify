@@ -26,7 +26,7 @@ const GamingConsoleCheck = () => {
       stats={[
         { value: "500K+", label: "Consoles Stolen Annually" },
         { value: "3 sec", label: "Verification Time" },
-        { value: "100+", label: "Records Searched" },
+        { value: "Instant", label: "Results" },
         { value: "Free", label: "First 2 Checks" }
       ]}
       whatIsTitle="What is Gaming Console Serial Number Verification?"
@@ -34,7 +34,7 @@ const GamingConsoleCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Check the back/bottom of the console, original box, or in System Settings",
         "Enter the serial number into our free verification tool",
-        "Our system searches manufacturer databases, police records, and insurance claims instantly",
+        "Our system searches manufacturer databases, police records instantly",
         "Get results in 3 seconds - know if the console is SAFE or REPORTED STOLEN"
       ]}
       howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, law enforcement stolen property databases, insurance claim records, and user-reported theft databases."

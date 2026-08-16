@@ -61,7 +61,7 @@ const VERIFY_CARDS = [
  },
  {
  title: 'Electronics, Power Tools & Appliances',
- subtitle: 'Apple, Dell, DeWalt, Milwaukee, Samsung, LG + insurance databases',
+ subtitle: 'Apple, Dell, DeWalt, Milwaukee, Samsung, LG + our verification databases',
  href: '/check-laptop',
  image: cardLaptop,
  badge: null,
@@ -132,19 +132,19 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Can I check a Facebook Marketplace listing for stolen items?',
- a: 'Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against 100+ databases. Try it at safeorstolen.com/marketplace-url-checker.',
+ a: 'Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against our verification databases. Try it at safeorstolen.com/marketplace-url-checker.',
  },
  {
  q: 'Is SafeOrStolen free?',
- a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, you can run a single check for $0.99 or get unlimited checks for $10 per month, which includes access to the mobile app with barcode scanning.',
+ a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, you can run a single check for $0.99 or get unlimited checks for $10 per month, which includes access to the installable web app with barcode scanning.',
  },
  {
  q: 'What databases does SafeOrStolen check?',
- a: 'SafeOrStolen checks over 100 databases including carrier and theft databases, vehicle theft and title databases, the stolen firearms databases for firearms, carrier and theft databases, insurance claims databases, police reports, stolen bicycle databases for bicycles, and nationwide firearm theft reports. This is the most comprehensive coverage of any stolen item verification service.',
+ a: 'SafeOrStolen checks over 100 databases including carrier and theft databases, vehicle theft and title databases, the stolen firearms databases for firearms, carrier and theft databases, reported theft history databases, police reports, stolen bicycle databases for bicycles, and nationwide firearm theft reports. This is the comprehensive coverage of any stolen item verification service.',
  },
  {
  q: 'How do I check if a gun is stolen?',
- a: "Use SafeOrStolen's firearms verification at safeorstolen.com/firearms-check. Enter the firearm's serial number to check it against stolen firearms databases and law enforcement records. This helps verify the firearm is not stolen before purchasing.",
+ a: "Use SafeOrStolen's firearms verification at safeorstolen.com/firearms-check. Enter the firearm's serial number to check it against stolen firearms databases and stolen-property registries. This helps verify the firearm is not stolen before purchasing.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
@@ -160,7 +160,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'What should I do if an item comes back flagged as stolen?',
- a: 'Do not purchase the item. Report the listing to the marketplace platform (Facebook Marketplace, eBay, Craigslist, etc.) and contact your local law enforcement with the verification details. SafeOrStolen provides a downloadable report you can share with police. Never confront the seller directly.',
+ a: 'Do not purchase the item. Report the listing to the marketplace platform (Facebook Marketplace, eBay, Craigslist, etc.) and contact your community theft with the verification details. SafeOrStolen provides a downloadable report you can share with police. Never confront the seller directly.',
  },
  {
  q: 'Does the Unlimited plan work for pawn shops?',
@@ -179,7 +179,7 @@ const Index = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="SafeOrStolen — AI-Powered Stolen Item Verification"
- description="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across 100+ databases."
+ description="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across our verification databases."
  keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
  canonical="/"
  />
@@ -189,7 +189,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>AI Stolen Item Verification for Buyers, Sellers, and Businesses</h1>
  <p>SafeOrStolen is an AI-powered platform that checks whether a secondhand item is reported stolen. Buyers verify before they pay, sellers prove an item is clean, and businesses such as pawn shops, resellers, dealers, and repair shops document diligence at intake.</p>
- <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against 100+ law enforcement, insurance, and carrier databases, including carrier and theft databases, vehicle theft and title databases, stolen bicycle databases, and Stolen Firearms Databases, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
+ <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against our verification the relevant authorities, insurance, and carrier databases, including carrier and theft databases, vehicle theft and title databases, stolen bicycle databases, and Stolen Firearms Databases, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
  </div>
  </noscript>
  {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
@@ -202,7 +202,7 @@ const Index = () => {
  <div className="bg-card border-y border-border">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
  {[
- { v: '100+', l: 'Databases Checked' },
+ { v: 'our verification', l: 'Databases Checked' },
  { v: '3 sec', l: 'Average Result Time' },
  { v: '6', l: 'Item Categories' },
  { v: '2', l: 'Free Checks to Start' },
@@ -227,7 +227,7 @@ const Index = () => {
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
  Need just one verification? Pay <strong className="text-foreground">$0.99</strong> — no account required.
  Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
- mobile app, and PDF certificates included. Cancel anytime, 30-day refund.
+ installable web app, and PDF certificates included. Cancel anytime, 30-day refund.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-3">
  <Link
@@ -439,7 +439,7 @@ const Index = () => {
  'Unlimited verifications — no per-item cost',
  'Timestamped PDF certificates for every transaction',
  'Bulk CSV upload — verify 100 items at once',
- 'Full audit trail for law enforcement requests',
+ 'Full audit trail for the relevant authorities requests',
  'API integration with your existing POS system',
  'Multi-user seats for your entire staff',
  ].map((f) => (
@@ -688,7 +688,7 @@ const Index = () => {
  "@type": "WebPage",
  "name": "Free Stolen Item Checker - IMEI VIN Serial Verification",
  "url": "https://safeorstolen.com",
- "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against 100+ law enforcement, insurance, and carrier databases.",
+ "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against our verification the relevant authorities, insurance, and carrier databases.",
  "speakable": {
  "@type": "SpeakableSpecification",
  "cssSelector": ["h1", ".speakable-summary"]
