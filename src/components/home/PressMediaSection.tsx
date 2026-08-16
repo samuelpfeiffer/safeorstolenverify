@@ -82,14 +82,14 @@ export const PressMediaSection = () => {
  icon: Shield,
  label: '100+ Databases',
  description: 'Law enforcement, insurance & carrier sources',
- detail: 'More data sources than any competitor — including FBI, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, all stolen property reports from all 50 states, and 200+ carrier and theft databases.',
+ detail: 'More data sources  — including vehicle theft and title databases, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, all stolen property reports from all 50 states, and 200+ carrier and theft databases.',
  link: '/data-sources',
  },
  {
  icon: Globe,
  label: '3-Second Results',
  description: 'Fastest stolen item verification available',
- detail: 'SafeOrStolen delivers verification results in under 3 seconds — faster than any competitor, including Carfax (PDF generation) and CheckMEND.',
+ detail: 'SafeOrStolen delivers verification results in under 3 seconds —  including Carfax (PDF generation) and CheckMEND.',
  link: '/compare',
  },
  ];

@@ -48,7 +48,7 @@ const AboutPage = () => {
  },
  {
  name: "vehicle theft and title databases Vehicle Database",
- type: "Government Partner",
+ type: "Vehicle Records Partner",
  description: "Official vehicle identification records - VIN verification source"
  },
  {
@@ -77,7 +77,7 @@ const AboutPage = () => {
  {
  step: 3,
  title: "AI-Powered Analysis",
- description: "Our algorithms analyze patterns and flag potential matches across 100+ databases"
+ description: "Our algorithms analyze patterns and flag potential matches across our verification databases"
  },
  {
  step: 4,
@@ -132,7 +132,7 @@ const AboutPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>About SafeOrStolen</strong></p>
- <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 100+ databases.</p>
+ <p>Stolen item verification service. Check IMEI, VIN, serial numbers against our verification databases.</p>
  </div>
  </noscript>
  <div className="min-h-screen bg-background pt-20">
@@ -192,7 +192,7 @@ const AboutPage = () => {
  </p>
  <div className="border-t pt-4 mt-4">
  <p className="text-muted-foreground text-sm">
- Six item categories · 100+ databases · Results in about 3 seconds
+ Six item categories · our verification databases · Results in about 3 seconds
  </p>
  </div>
  </Card>

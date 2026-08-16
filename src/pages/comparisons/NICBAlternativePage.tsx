@@ -65,29 +65,27 @@ const NICBAlternativePage = () => {
           </div>
         </section>
 
-        {/* Problem with NICB */}
+        {/* What SafeOrStolen Offers */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Why Look for a NICB Alternative?</h2>
+            <h2 className="text-3xl font-bold mb-6">What SafeOrStolen Offers</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-background rounded-lg">
-                <h3 className="font-bold text-lg mb-3 text-destructive">❌ NICB Limitations:</h3>
+                <h3 className="font-bold text-lg mb-3">Many tools focus on one category</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Only 5 VIN checks per day</li>
-                  <li>• Only checks NICB database</li>
-                  <li>• Vehicles only (no phones, bikes, etc.)</li>
-                  <li>• Clunky, outdated interface</li>
-                  <li>• Can't check license plates</li>
+                  <li>• Most stolen-item tools cover a single item type</li>
+                  <li>• Some are limited to a set number of searches per day</li>
+                  <li>• License plate lookup isn't always included</li>
                 </ul>
               </div>
               <div className="p-6 bg-background rounded-lg border-2 border-primary">
-                <h3 className="font-bold text-lg mb-3 text-primary">✓ SafeOrStolen Advantage:</h3>
+                <h3 className="font-bold text-lg mb-3 text-primary">✓ SafeOrStolen:</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• No daily limits (unlimited with paid plan)</li>
-                  <li>• Mobile app with barcode scanning</li>
-                  <li>• NICB + 100 additional databases</li>
+                  <li>• 2 free checks, then $0.99/check or $10/month unlimited</li>
+                  <li>• Installable web app with barcode scanning</li>
+                  <li>• Six item categories in one platform</li>
                   <li>• Cars, phones, bikes, guns, electronics</li>
-                  <li>• Modern, fast interface</li>
+                  <li>• Results in about 3 seconds</li>
                   <li>• License plate lookup included</li>
                 </ul>
               </div>
@@ -95,93 +93,76 @@ const NICBAlternativePage = () => {
           </div>
         </section>
 
-        {/* Comparison Table */}
+        {/* Feature Overview */}
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">NICB and SafeOrStolen Comparison</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">SafeOrStolen Feature Overview</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-card rounded-lg overflow-hidden">
                 <thead>
                   <tr className="bg-muted">
                     <th className="p-4 text-left">Feature</th>
-                    <th className="p-4 text-center">NICB VINCheck</th>
                     <th className="p-4 text-center">SafeOrStolen</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-t border-border">
-                    <td className="p-4">Daily Search Limit</td>
-                    <td className="p-4 text-center text-destructive font-bold">5 per day</td>
-                    <td className="p-4 text-center text-primary font-bold">Unlimited*</td>
+                    <td className="p-4">Free Checks</td>
+                    <td className="p-4 text-center text-primary font-bold">2 free, then $0.99/check or $10/mo unlimited</td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">Mobile App</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
+                    <td className="p-4">Installable Web App</td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border">
-                    <td className="p-4">Databases Searched</td>
-                    <td className="p-4 text-center">1 (NICB only)</td>
-                    <td className="p-4 text-center text-primary font-bold">100+</td>
-                  </tr>
-                  <tr className="border-t border-border bg-muted/50">
                     <td className="p-4">Vehicles</td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
-                    <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
-                  <tr className="border-t border-border">
+                  <tr className="border-t border-border bg-muted/50">
                     <td className="p-4">Phones/Electronics</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
-                  <tr className="border-t border-border bg-muted/50">
+                  <tr className="border-t border-border">
                     <td className="p-4">Firearms</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
-                    <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
-                  </tr>
-                  <tr className="border-t border-border">
-                    <td className="p-4">License Plate Lookup</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">Bicycles</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
+                    <td className="p-4">License Plate Lookup</td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
                   <tr className="border-t border-border">
-                    <td className="p-4">Price</td>
-                    <td className="p-4 text-center">Free (limited)</td>
-                    <td className="p-4 text-center">Free + Paid Plans</td>
+                    <td className="p-4">Bicycles</td>
+                    <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
+                  </tr>
+                  <tr className="border-t border-border bg-muted/50">
+                    <td className="p-4">Results Speed</td>
+                    <td className="p-4 text-center">~3 seconds</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-muted-foreground mt-4 text-center">
-              *$0.99/check or $10/month unlimited
-            </p>
           </div>
         </section>
 
         {/* Key Advantages */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why SafeOrStolen is Better</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Choose SafeOrStolen</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-background rounded-lg text-center">
                 <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">No Daily Limits</h3>
-                <p className="text-muted-foreground">Check as many VINs as you need. Perfect for dealers, pawn shops, and high-volume buyers.</p>
+                <h3 className="font-bold text-lg mb-2">Unlimited Plan Available</h3>
+                <p className="text-muted-foreground">2 free checks, then $0.99/check or $10/month unlimited. Built for dealers, pawn shops, and high-volume buyers.</p>
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <Smartphone className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Mobile App</h3>
-                <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Scan barcodes, check on the go.</p>
+                <h3 className="font-bold text-lg mb-2">Installable Web App</h3>
+                <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, license plates, electronics, firearms, and bicycles in one place. Scan barcodes, check on the go.</p>
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">100+ Databases</h3>
-                <p className="text-muted-foreground">We search NICB data PLUS 100 additional sources. More coverage = better protection.</p>
+                <h3 className="font-bold text-lg mb-2">Our Verification Databases</h3>
+                <p className="text-muted-foreground">We check our verification databases across stolen-property registries, carrier blacklists, and vehicle theft records for broader coverage.</p>
               </div>
             </div>
           </div>
@@ -190,7 +171,7 @@ const NICBAlternativePage = () => {
         {/* Who Needs This */}
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Who Needs Unlimited VIN Checks?</h2>
+            <h2 className="text-3xl font-bold mb-6">Who Needs Frequent VIN Checks?</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-card rounded-lg flex gap-3">
                 <Check className="w-6 h-6 text-primary flex-shrink-0" />
@@ -227,9 +208,9 @@ const NICBAlternativePage = () => {
         {/* CTA */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Switch to Unlimited VIN Checks</h2>
+            <h2 className="text-3xl font-bold mb-4">Get Unlimited VIN Checks</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Stop hitting NICB's daily limit. Get unlimited access to 100+ databases.
+              Start with 2 free checks, then unlock unlimited checks across our verification databases.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">

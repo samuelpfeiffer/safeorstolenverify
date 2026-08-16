@@ -84,7 +84,7 @@ export default function VerificationMethodology() {
                   <div className="flex items-start gap-4">
                     <Brain className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-2xl font-bold mb-3">3. Marketplace Fraud Detection</h3>
+                      <h3 className="text-2xl font-bold mb-3">1. Marketplace Fraud Detection</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>eBay Fraud Reports:</strong> Verified seller scam reports and item disputes</li>
                         <li><strong>Facebook Marketplace Flags:</strong> Community-reported suspicious listings</li>
@@ -102,7 +102,7 @@ export default function VerificationMethodology() {
                   <div className="flex items-start gap-4">
                     <Lock className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-2xl font-bold mb-3">4. Carrier & Manufacturer Blacklists</h3>
+                      <h3 className="text-2xl font-bold mb-3">2. Carrier & Manufacturer Blacklists</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>Mobile Carriers:</strong> AT&T, Verizon, T-Mobile, Sprint blacklisted IMEI databases</li>
                         <li><strong>carrier and manufacturer blacklists Database:</strong> Global mobile device blacklist (195 countries)</li>
@@ -120,15 +120,13 @@ export default function VerificationMethodology() {
                   <div className="flex items-start gap-4">
                     <Database className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-2xl font-bold mb-3">5. Vehicle-Specific Databases (VIN Checks)</h3>
+                      <h3 className="text-2xl font-bold mb-3">3. Vehicle-Specific Databases (VIN Checks)</h3>
                       <ul className="space-y-2 mb-4">
-                        <li><strong>NMVTIS (National Motor Vehicle Title Information System):</strong> Federal title and theft database</li>
-                        <li><strong>Carfax & AutoCheck:</strong> Vehicle history and theft reports</li>
-                        <li><strong>State DMV Records:</strong> Title history, salvage status, theft reports in all 50 states</li>
-                        <li><strong>NICB VINCheck:</strong> Free theft and total loss database</li>
+                        <li><strong>Community Theft Registries:</strong> Victim-reported stolen vehicle records</li>
+                        <li><strong>Recall & Vehicle Data:</strong> NHTSA vehicle records for identification</li>
                       </ul>
                       <p className="text-muted-foreground">
-                        Update Frequency: Daily updates from state DMVs
+                        Update Frequency: Regularly updated
                       </p>
                     </div>
                   </div>
@@ -138,10 +136,10 @@ export default function VerificationMethodology() {
                   <div className="flex items-start gap-4">
                     <AlertTriangle className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-2xl font-bold mb-3">6. Specialized Item Registries</h3>
+                      <h3 className="text-2xl font-bold mb-3">4. Specialized Item Registries</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>Bike Index:</strong> 1.2M registered bicycles and theft reports</li>
-                        <li><strong>:</strong> Stolen firearms databases</li>
+                        <li><strong>HotGunz:</strong> Stolen firearms databases</li>
                         <li><strong>Art Loss Register:</strong> Stolen fine art and collectibles (500K items)</li>
                         <li><strong>Stolen Camera Database:</strong> Serial numbers for cameras and lenses</li>
                       </ul>

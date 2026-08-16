@@ -30,7 +30,7 @@ export const ItemSpecificQuestionsSection = () => {
                 <li>• <strong>Find the VIN:</strong> Located on dashboard, driver's door, or title</li>
                 <li>• <strong>Enter VIN:</strong> Use our stolen car checker tool above</li>
                 <li>• <strong>Get Results:</strong> Instant verification against stolen vehicle databases</li>
-                <li>• <strong>Check Multiple Sources:</strong> We search police and insurance databases</li>
+                <li>• <strong>Check Multiple Sources:</strong> We search our verification databases</li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4 italic">
                 "How to check if a car is stolen by VIN" is one of our most searched queries - and for good reason!
@@ -73,7 +73,7 @@ export const ItemSpecificQuestionsSection = () => {
                 <li>• <strong>Brand-Specific:</strong> Apple, Dell, HP, Lenovo databases checked</li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4 italic">
-                "How do I check if a laptop is stolen?" - We verify against manufacturer and police databases.
+                "How do I check if a laptop is stolen?" - We verify against manufacturer databases and our verification registries.
               </p>
             </div>
 
@@ -87,9 +87,9 @@ export const ItemSpecificQuestionsSection = () => {
               </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <strong>Serial Number:</strong> Located on frame, barrel, or receiver</li>
- <li>• <strong>The stolen firearm reports from all 50 states Database:</strong> We check stolen firearm reports from all 50 states</li>
-                <li>• <strong>Stolen property reports from all 50 states Database:</strong> National Crime Information Center verification</li>
-                <li>• <strong>State Records:</strong> Local law enforcement stolen firearm databases</li>
+ <li>• <strong>Stolen Firearm Reports:</strong> We check stolen firearm reports from all 50 states</li>
+                <li>• <strong>Serial Number Database:</strong> Cross-referenced against our verification databases</li>
+                <li>• <strong>State Records:</strong> State-level stolen firearm registries</li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4 italic">
                 Always verify firearms through official channels - we provide preliminary screening only.
