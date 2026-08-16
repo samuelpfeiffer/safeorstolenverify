@@ -66,7 +66,7 @@ const OfferupScamProtection = () => {
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link to="/app">
                   <Smartphone className="w-5 h-5" />
-                  Get the Mobile App
+                  Try the Web App
                 </Link>
               </Button>
             </div>
@@ -129,7 +129,7 @@ const OfferupScamProtection = () => {
                 <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">★</div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Verify with SafeOrStolen</h3>
-                  <p className="text-muted-foreground mb-4">Enter the identifier into SafeOrStolen—takes 3 seconds, first 2 checks are free. We search 100+ databases including police stolen property records.</p>
+                  <p className="text-muted-foreground mb-4">Enter the identifier into SafeOrStolen—takes 3 seconds, first 2 checks are free. We search our verification databases.</p>
                   <Button asChild className="gap-2">
                     <Link to="/verify">
                       <Search className="w-4 h-4" />
@@ -149,7 +149,7 @@ const OfferupScamProtection = () => {
                 <div className="flex-shrink-0 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">✓</div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Re-Verify at Meetup</h3>
-                  <p className="text-muted-foreground">Bring SafeOrStolen's mobile app. Before paying, confirm the serial number on the actual item matches what was provided, and run one more check.</p>
+                  <p className="text-muted-foreground">Bring up SafeOrStolen on your phone browser. Before paying, confirm the serial number on the actual item matches what was provided, and run one more check.</p>
                 </div>
               </div>
             </div>
@@ -172,8 +172,8 @@ const OfferupScamProtection = () => {
                 <p className="text-muted-foreground">Time to verify with SafeOrStolen</p>
               </div>
               <div className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">100+</div>
-                <p className="text-muted-foreground">Databases we check</p>
+                <div className="text-4xl font-bold text-primary mb-2">2 Free</div>
+                <p className="text-muted-foreground">Checks before you pay</p>
               </div>
             </div>
           </div>
@@ -198,7 +198,7 @@ const OfferupScamProtection = () => {
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link to="/app">
                   <Smartphone className="w-5 h-5" />
-                  Get the Mobile App
+                  Try the Web App
                 </Link>
               </Button>
             </div>

@@ -86,7 +86,7 @@ const CarfaxVsFreeVinAlternatives = () => {
       best: "Budget-friendly alternative to Carfax"
     },
     {
-      name: "NICB VINCheck",
+      name: "Other Free Tools",
       price: "Free",
       focus: "Theft/Total Loss Only",
       pros: ["—"],
@@ -141,7 +141,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg">
-                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen (free)</Link> - it checks NICB and community theft registries.
+                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen (free)</Link> - it checks our verification databases and community theft registries.
               </p>
               <p className="text-lg mt-2">
                 <strong>For complete history:</strong> Use Carfax ($44.99) after confirming the car isn't stolen.

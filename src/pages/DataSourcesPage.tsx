@@ -10,27 +10,27 @@ import {
 const FAQ_ITEMS = [
  {
  question: "What databases does SafeOrStolen check for IMEI verification?",
- answer: "SafeOrStolen checks the carrier and theft databases (15 billion+ device records), AT&T, Verizon, T-Mobile, and Sprint carrier and theft databases, Apple Activation Lock status, Samsung Knox security records, Google Find My Device, and international carrier and theft databases across 190+ countries. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen checks IMEI.info's device records along with carrier blacklists, Apple Activation Lock status, Samsung Knox security records, and Google Find My Device. Results are returned in approximately 3 seconds."
  },
  {
- question: "Which community theft registries are included in vehicle VIN checks?",
- answer: "Vehicle VIN checks query stolen property reports from all 50 states, vehicle theft and title databases database, vehicle theft and title databases (vehicle theft and title databases), vehicle theft and title databases, insurance company total-loss records, and Interpol's stolen vehicle database for cross-border theft detection."
+ question: "Which sources are included in vehicle VIN checks?",
+ answer: "Vehicle VIN checks query vehicle theft records and title-brand data to help flag vehicles reported stolen or previously salvaged."
  },
  {
- question: "Does SafeOrStolen check stolen firearms databases for firearm serial numbers?",
- answer: "Yes. Firearm serial number verification checks stolen firearms databases and validates serial number integrity. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
+ question: "Does SafeOrStolen check firearm serial numbers against theft registries?",
+ answer: "Yes. Firearm serial number verification checks HotGunz's stolen firearm registry and validates serial number integrity. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
  },
  {
  question: "How often are the databases updated?",
- answer: "SafeOrStolen databases sync every 15 minutes with source systems. When an item is reported stolen to law enforcement or insurance, it typically appears in our system within 1-4 hours. Community-reported items are reviewed and added within 24 hours of verification."
+ answer: "SafeOrStolen's verification databases sync regularly with source systems, and community-reported items are reviewed and added typically within 24 hours of verification."
  },
  {
- question: "What is LeadsOnline and why does SafeOrStolen use it?",
- answer: "LeadsOnline is the largest national pawn shop transaction database, used by 4,000+ law enforcement agencies across 35 states. It tracks items sold or pawned at secondhand dealers. Over 60% of stolen electronics and 80% of stolen jewelry are pawned within 72 hours of theft, making LeadsOnline critical for detecting stolen goods in the secondhand market."
+ question: "Does SafeOrStolen check carrier blacklists for stolen phones?",
+ answer: "Yes. SafeOrStolen checks IMEI.info's carrier blacklist records to detect phones reported stolen or lost, in addition to activation lock status."
  },
  {
- question: "Does SafeOrStolen check stolen bicycle databases for stolen bicycles?",
- answer: "Yes. Bicycle and eBike frame serial numbers are checked against stolen bicycle databases (the world's largest public bike registry with 120,000+ registered stolen bikes), local law enforcement stolen property databases, and manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
+ question: "Does SafeOrStolen check for stolen bicycles?",
+ answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, along with manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
  },
 ];
 

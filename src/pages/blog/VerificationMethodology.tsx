@@ -82,41 +82,6 @@ export default function VerificationMethodology() {
               <div className="space-y-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Database className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">1. Law Enforcement Databases (Primary Sources)</h3>
-                      <ul className="space-y-2 mb-4">
-                        <li><strong>Stolen property reports from all 50 states:</strong> Federal database of stolen property reports</li>
-                        <li><strong>State Police Databases:</strong> Direct access to state-level theft reports in all 50 states</li>
-                        <li><strong>Local Police Departments:</strong> 500+ municipal police databases including LAPD, NYPD, Chicago PD</li>
-                        <li><strong>International Interpol Database:</strong> Global stolen goods registry for cross-border verification</li>
-                      </ul>
-                      <p className="text-muted-foreground">
-                        Update Frequency: Real-time (within 15 minutes of report filing)
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Shield className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">2. Insurance Company Claims</h3>
-                      <ul className="space-y-2 mb-4">
-                        <li><strong>Major Insurers:</strong> Partnerships with Allstate, State Farm, GEICO, Progressive, Farmers</li>
-                        <li><strong>NICB (National Insurance Crime Bureau):</strong> Insurance fraud and theft database</li>
-                        <li><strong>ISO ClaimSearch:</strong> Nationwide insurance claim verification system</li>
-                      </ul>
-                      <p className="text-muted-foreground">
-                        Update Frequency: Daily batch updates
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
                     <Brain className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-2xl font-bold mb-3">3. Marketplace Fraud Detection</h3>

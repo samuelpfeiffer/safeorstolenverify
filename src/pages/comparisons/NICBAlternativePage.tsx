@@ -11,7 +11,7 @@ const NICBAlternativePage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "NICB VINCheck Alternative",
-      "description": "NICB VINCheck alternative without the 5 searches per day limit. SafeOrStolen offers unlimited VIN checks plus 100+ additional databases.",
+      "description": "Comparing VIN check tools? SafeOrStolen offers 2 free VIN checks, then $0.99/check or $10/month unlimited, across six item categories.",
       "url": "https://safeorstolen.com/nicb-alternative"
     },
     {
@@ -20,18 +20,18 @@ const NICBAlternativePage = () => {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What's better than NICB VINCheck?",
+          "name": "What does SafeOrStolen check beyond vehicles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen offers everything NICB has plus no daily limits, a mobile app, 100+ additional databases, and the ability to check items beyond vehicles."
+            "text": "SafeOrStolen verifies phones, vehicles, license plates, electronics, firearms, and bicycles in one platform, with results in about 3 seconds."
           }
         },
         {
           "@type": "Question",
-          "name": "Why does NICB have a 5 per day limit?",
+          "name": "How much does SafeOrStolen cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "NICB limits searches to prevent commercial use of their free service. SafeOrStolen offers unlimited searches for professionals."
+            "text": "SafeOrStolen includes 2 free checks, then $0.99 per check or $10/month for unlimited checks."
           }
         }
       ]
@@ -41,8 +41,8 @@ const NICBAlternativePage = () => {
   return (
     <>
       <PageSEO
-        title="NICB VINCheck Alternative - No Daily Limits | SafeOrStolen"
-        description="Looking for NICB VINCheck alternative without the 5 searches per day limit? SafeOrStolen offers unlimited VIN checks plus 100+ additional databases."
+        title="VIN Check Options Compared | SafeOrStolen"
+        description="Comparing VIN check options? SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited, for vehicles and five other item categories."
         keywords="nicb alternative, nicb vincheck alternative, vin check no limit, unlimited vin check, nicb replacement"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -52,10 +52,10 @@ const NICBAlternativePage = () => {
         <section className="pt-24 pb-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
-              NICB VINCheck Alternative
+              VIN Check Options Compared
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Tired of NICB's <strong>5 searches per day limit</strong>? SafeOrStolen offers unlimited VIN checks plus 100+ additional databases.
+              Many tools focus on a single category. SafeOrStolen verifies <strong>vehicles, phones, license plates, electronics, firearms, and bicycles</strong> in one place, with 2 free checks to start.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

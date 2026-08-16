@@ -79,7 +79,7 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <p className="text-muted-foreground mb-6">
               In 2026, the stolen goods verification industry relies on a complex ecosystem of data sources ranging from 
-              government community theft registries to private carrier blacklists and insurance company reports. 
+              community theft registries to private carrier blacklists. 
               Understanding which sources are most credible is critical for making informed decisions.
             </p>
 
@@ -112,25 +112,6 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="bg-card border rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <CheckCircle className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold text-foreground">CheckMEND Global Database</h3>
-                </div>
-                <p className="text-muted-foreground mb-2">
-                  <strong>Credibility: High (80-85%)</strong>
-                </p>
-                <p className="text-muted-foreground mb-3">
-                  CheckMEND is a UK-based private database that aggregates theft reports from insurance companies, 
-                  carriers, retailers, and law enforcement across 35 countries. Widely used by pawn shops and 
-                  secondhand dealers in Europe and UK.
-                </p>
-                <p className="text-muted-foreground">
-                  <strong>Coverage:</strong> Phones, electronics, bicycles, tools. Strong UK/Europe coverage, 
-                  limited U.S. coverage. Does NOT include U.S. community theft registries.
-                </p>
-              </div>
-
-              <div className="bg-card border rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <CheckCircle className="h-6 w-6 text-primary" />
                   <h3 className="text-xl font-semibold text-foreground">Manufacturer Warranty & Theft Databases</h3>
                 </div>
                 <p className="text-muted-foreground mb-2">
@@ -147,26 +128,8 @@ export default function DataSourceCredibilityStolenGoods() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Tier 3: Insurance & Private Databases</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Tier 3: Community & Crowdsourced Databases</h2>
             <div className="space-y-6 mb-8">
-              <div className="bg-card border rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                  <h3 className="text-xl font-semibold text-foreground">Insurance Company Claims Databases</h3>
-                </div>
-                <p className="text-muted-foreground mb-2">
-                  <strong>Credibility: Moderate (60-70%)</strong>
-                </p>
-                <p className="text-muted-foreground mb-3">
-                  Insurance companies maintain databases of items reported stolen in claims. However, these are often 
-                  proprietary, not shared publicly, and may include false claims or disputes.
-                </p>
-                <p className="text-muted-foreground">
-                  <strong>Limitations:</strong> Not all thefts are insured. Lag time between theft and claim. 
-                  No centralized database—each insurer maintains separate records.
-                </p>
-              </div>
-
               <div className="bg-card border rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <AlertTriangle className="h-6 w-6 text-yellow-500" />
@@ -188,20 +151,16 @@ export default function DataSourceCredibilityStolenGoods() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">How SafeOrStolen Aggregates Data</h2>
             <p className="text-muted-foreground mb-4">
-              SafeOrStolen checks 100+ databases simultaneously, prioritizing Tier 1 sources for maximum accuracy. 
-              Our verification process includes:
+              SafeOrStolen checks our verification databases simultaneously. Our verification process includes:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li><strong>Real-time stolen property reports from all 50 states</strong> for vehicles and firearms through authorized law enforcement partnerships</li>
-              <li><strong>carrier and manufacturer blacklists IMEI blacklist</strong> covering all major U.S. and global carriers</li>
-              <li><strong>State NHTSA vehicle records</strong> for all 50 states via NMVTIS integration</li>
-              <li><strong>Manufacturer databases</strong> including Apple, Samsung, Microsoft activation lock status</li>
-              <li><strong>Insurance aggregators</strong> from 200+ insurance companies</li>
-              <li><strong>Local police records</strong> from 5,000+ departments</li>
+              <li><strong>carrier and manufacturer blacklists IMEI blacklist</strong> covering major U.S. and global carriers</li>
+              <li><strong>Manufacturer databases</strong> including activation lock status where available</li>
+              <li><strong>Community theft registries</strong> such as BikeIndex and other victim-reported sources</li>
             </ul>
             <p className="text-muted-foreground mb-6">
-              Unlike competitors who rely solely on carrier blacklists (IMEI.info) or UK databases (CheckMEND), 
-              SafeOrStolen provides comprehensive U.S.-focused verification with law enforcement-grade data sources.
+              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, 
+              electronics, firearms, and bicycles in one place.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Evaluating Verification Service Credibility</h2>
@@ -212,8 +171,8 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">What data sources do they access?</h3>
                 <p className="text-muted-foreground">
-                  Demand specifics. A raw database count is meaningless without naming the sources. Do they have stolen property reports from all 50 states? 
-                  carrier and manufacturer blacklists? State DMVs? If they can't or won't tell you, assume limited coverage.
+                  Demand specifics. A raw database count is meaningless without naming the sources. If a service 
+                  can't or won't tell you, assume limited coverage.
                 </p>
               </div>
               <div className="border-l-4 border-primary pl-4">
@@ -221,20 +180,6 @@ export default function DataSourceCredibilityStolenGoods() {
                 <p className="text-muted-foreground">
                   Real-time is ideal. Daily is acceptable. Weekly or monthly is outdated and unreliable. Thieves 
                   sell stolen goods within 48 hours—outdated databases miss these.
-                </p>
-              </div>
-              <div className="border-l-4 border-primary pl-4">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Do they have law enforcement partnerships?</h3>
-                <p className="text-muted-foreground">
-                  Access to stolen property reports from all 50 states and state databases requires legal authorization. If a service doesn't mention law 
-                  enforcement partnerships, they likely don't have Tier 1 access.
-                </p>
-              </div>
-              <div className="border-l-4 border-primary pl-4">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">What's their geographic coverage?</h3>
-                <p className="text-muted-foreground">
-                  UK-based services (CheckMEND) have limited U.S. data. U.S.-based services (SafeOrStolen) have 
-                  limited UK data. Match the service to your location.
                 </p>
               </div>
             </div>
@@ -252,15 +197,15 @@ export default function DataSourceCredibilityStolenGoods() {
               <li><strong>Serial number alterations:</strong> Sophisticated thieves remove or alter serial numbers</li>
             </ul>
             <p className="text-muted-foreground mb-8">
-              SafeOrStolen's 100+ database aggregation minimizes these gaps, but buyers should still use common sense 
+              Checking our verification databases minimizes these gaps, but buyers should still use common sense 
               and evaluate other red flags (price too low, seller pressure, no receipt) alongside verification results.
             </p>
 
             <div className="bg-card border-2 border-primary rounded-lg p-8 text-center mt-12">
               <Database className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Verify with Law Enforcement-Grade Data</h3>
+              <h3 className="text-2xl font-bold mb-3 text-foreground">Verify Before You Buy</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks 50+ authoritative databases including stolen property reports from all 50 states, carrier and manufacturer blacklists, and state motor vehicle agencies. 
+                SafeOrStolen checks our verification databases, including carrier and manufacturer blacklists and community theft registries. 
                 Free verification available.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
