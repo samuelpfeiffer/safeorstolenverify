@@ -13,8 +13,8 @@ export const MissionSection = () => {
           </div>
           
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            To eliminate the $13 billion stolen goods crisis and reduce crime globally by creating the 
-            world's most comprehensive verification platform, protecting millions of innocent people from 
+            To eliminate the $13 billion stolen goods crisis and reduce crime globally by creating a 
+            comprehensive verification platform, protecting millions of innocent people from 
             financial loss, legal consequences, and emotional trauma caused by unknowingly purchasing stolen items.
           </p>
           
@@ -26,8 +26,8 @@ export const MissionSection = () => {
                   <h3 className="text-xl font-semibold text-sos-orange">Vision 2025</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  To become the global standard for item verification, partnering with law enforcement 
-                  agencies worldwide and reducing fraud-related losses by 80% while protecting 
+                  To become a global standard for item verification, expanding our verification databases 
+                  worldwide and helping reduce fraud-related losses while protecting 
                   millions of consumers from marketplace deception.
                 </p>
               </CardContent>
@@ -40,7 +40,7 @@ export const MissionSection = () => {
                   <h3 className="text-xl font-semibold text-blue-400">Global Impact</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  Building the world's largest verification network to protect consumers, 
+                  Building a global verification network to protect consumers, 
                   businesses, and law enforcement agencies from the hidden dangers of the 
                   stolen goods marketplace.
                 </p>

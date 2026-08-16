@@ -135,7 +135,7 @@ export default function TransparencyPage() {
  <ul className="text-sm text-muted-foreground space-y-1">
  <li>• Sell your data to third parties</li>
  <li>• Track your location</li>
- <li>• Share your search data with third parties</li>
+ <li>• Share searches with law enforcement (unless legally required)</li>
  </ul>
  </CardContent>
  </Card>
