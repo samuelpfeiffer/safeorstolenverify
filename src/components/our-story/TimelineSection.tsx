@@ -31,13 +31,13 @@ const timeline: TimelineItem[] = [
   {
     year: "2024",
     title: "Platform Development",
-    description: "Development began on the world's most comprehensive verification database, establishing partnerships with law enforcement agencies, insurance companies, and manufacturers to create a global verification network.",
+    description: "Development began on a comprehensive verification database, integrating data from carriers, registries, and manufacturers to create a global verification network.",
     icon: <Target className="h-6 w-6" />
   },
   {
     year: "2025",
     title: "Platform Launch",
-    description: "Launched the live platform, expanding verification across phones, vehicles, license plates, serial-numbered goods, firearms, and bicycles against 100+ databases.",
+    description: "Launched the live platform, expanding verification across phones, vehicles, license plates, serial-numbered goods, firearms, and bicycles against our verification databases.",
     icon: <Rocket className="h-6 w-6" />
   }
 ];

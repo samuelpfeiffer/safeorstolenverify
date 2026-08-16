@@ -33,7 +33,7 @@ export const ValueProposition: React.FC = () => {
     },
     {
       icon: Smartphone,
-      title: 'Only Mobile App',
+      title: 'Installable Web App',
       description: 'Verify on your phone straight from the browser.',
       stat: 'Exclusive',
       statLabel: 'mobile access',
@@ -43,7 +43,7 @@ export const ValueProposition: React.FC = () => {
     {
       icon: Database,
       title: '100+ Databases',
-      description: 'We check police records, insurance claims, and lost/found reports.',
+      description: 'We check our verification databases and lost/found reports.',
       stat: '100+',
       statLabel: 'data sources',
       color: 'text-primary',

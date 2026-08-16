@@ -10,7 +10,7 @@ export const SolutionDevelopmentSection = () => {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Building the Solution</h2>
             <p className="text-lg text-gray-300">
-              How we transformed the vision into the world's most comprehensive verification platform
+              How we transformed the vision into a comprehensive verification platform
             </p>
           </div>
           
@@ -24,7 +24,7 @@ export const SolutionDevelopmentSection = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Comprehensive Database Network</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      We began building partnerships with law enforcement agencies, insurance companies, and manufacturers worldwide to create the most comprehensive stolen goods database ever assembled.
+                      We began integrating data from carriers, registries, and manufacturers worldwide to build a comprehensive stolen goods database.
                     </p>
                   </div>
                 </div>
@@ -40,7 +40,7 @@ export const SolutionDevelopmentSection = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Instant Verification Technology</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      Our platform delivers verification results in under 5 seconds, cross-referencing millions of records including police reports, insurance claims, and manufacturer databases.
+                      Our platform delivers verification results in under 5 seconds, cross-referencing millions of records including theft registries and manufacturer databases.
                     </p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ export const SolutionDevelopmentSection = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Global Accessibility</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      We made verification accessible to everyone - consumers, businesses, and law enforcement - through our web platform, API integrations, and mobile applications.
+                      We made verification accessible to everyone - consumers and businesses - through our web platform, API integrations, and installable web app.
                     </p>
                   </div>
                 </div>

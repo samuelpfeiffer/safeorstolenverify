@@ -17,15 +17,10 @@ export const FeaturedSnippetOptimizer = () => {
  "answerCount": 1,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "To check if a phone is stolen: 1) Find the IMEI number by dialing *#06#, 2) Use SafeOrStolen's free mobile app on iOS or Android, 3) Enter the IMEI number, 4) Get instant results showing if the phone is stolen, lost, or safe. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.",
+ "text": "To check if a phone is stolen: 1) Find the IMEI number by dialing *#06#, 2) Use SafeOrStolen's free installable web app, 3) Enter the IMEI number, 4) Get instant results showing if the phone is stolen, lost, or safe. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.",
  "upvoteCount": 847
  },
- "suggestedAnswer": [
- {
- "@type": "Answer",
- "text": "SafeOrStolen offers 4 free IMEI checks through their mobile app. CheckMend and IMEIinfo do not have mobile apps and require payment upfront."
- }
- ]
+ 
  }
  },
  {
@@ -36,7 +31,7 @@ export const FeaturedSnippetOptimizer = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen checks phones against 100+ databases and covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMend which has no mobile app, SafeOrStolen provides instant verification on your phone."
+ "text": "SafeOrStolen checks phones against our verification databases and covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
  }
  }
  },
@@ -48,7 +43,7 @@ export const FeaturedSnippetOptimizer = () => {
  "name": "Can you check if a car is stolen by VIN?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Yes, you can check if a car is stolen by VIN using SafeOrStolen's mobile app. Enter the 17-character VIN number to instantly verify against vehicle theft and title databases stolen vehicle databases, police reports, and insurance records. Available free on iOS and Android."
+ "text": "Yes, you can check if a car is stolen by VIN using SafeOrStolen's installable web app. Enter the 17-character VIN number to instantly verify against our verification databases, including vehicle theft and title databases."
  }
  }
  }
@@ -59,12 +54,12 @@ export const FeaturedSnippetOptimizer = () => {
  <Helmet>
  {/* Featured Snippet Optimization Meta Tags */}
  <meta name="question" content="How to check if a phone is stolen?" />
- <meta name="answer" content="Use SafeOrStolen's free mobile app: 1) Find IMEI by dialing *#06#, 2) Open app on iOS or Android, 3) Enter IMEI, 4) Get instant results. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." />
+ <meta name="answer" content="Use SafeOrStolen's free installable web app: 1) Find IMEI by dialing *#06#, 2) Open the app on your phone browser, 3) Enter IMEI, 4) Get instant results. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." />
  
  <meta name="quick-answer" content="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." />
  
  {/* List-type featured snippets */}
- <meta name="how-to-steps" content="1. Find IMEI number (*#06#), 2. Download SafeOrStolen app (iOS/Android), 3. Enter IMEI or scan barcode, 4. View instant verification results" />
+ <meta name="how-to-steps" content="1. Find IMEI number (*#06#), 2. Open SafeOrStolen's installable web app, 3. Enter IMEI or scan barcode, 4. View instant verification results" />
  
  {/* Comparison table data */}
  <meta name="comparison-safeorstolen" content="Mobile apps: YES, Free searches: 2, Firearms checking: YES, Platforms: iOS+Android" />
@@ -96,7 +91,7 @@ export const FeaturedSnippetOptimizer = () => {
  <p itemProp="text">Dial *#06# on the phone or check Settings → About Phone → IMEI</p>
  </div>
  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
- <h3 itemProp="name">Step 2: Open SafeOrStolen App</h3>
+ <h3 itemProp="name">Step 2: Open SafeOrStolen's Web App</h3>
  <p itemProp="text">Open safeorstolen.com on your phone and install it from your browser</p>
  </div>
  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
@@ -111,11 +106,11 @@ export const FeaturedSnippetOptimizer = () => {
  
  {/* Comparison table for featured snippet */}
  <table>
- <caption>Best Stolen Phone Checkers Comparison 2025</caption>
+ <caption>SafeOrStolen Stolen Phone Checker Overview 2025</caption>
  <thead>
  <tr>
  <th>Service</th>
- <th>Mobile App</th>
+ <th>Installable Web App</th>
  <th>Free Searches</th>
  <th>Firearm Checking</th>
  </tr>
@@ -123,21 +118,9 @@ export const FeaturedSnippetOptimizer = () => {
  <tbody>
  <tr>
  <td>SafeOrStolen</td>
- <td>✓ iOS & Android</td>
- <td>4 free</td>
  <td>✓ Yes</td>
- </tr>
- <tr>
- <td>CheckMend</td>
- <td>✗ None</td>
- <td>0 (paid only)</td>
- <td>✗ No</td>
- </tr>
- <tr>
- <td>IMEIinfo</td>
- <td>✗ None</td>
- <td>Limited</td>
- <td>✗ No</td>
+ <td>2 free</td>
+ <td>✓ Yes</td>
  </tr>
  </tbody>
  </table>

@@ -31,7 +31,7 @@ export const DetailedFAQSection: React.FC = () => {
  questions: [
  {
  question: "How to check if something is stolen before buying?",
- answer: "Enter the item's serial number, IMEI, or VIN into our stolen item checker. We search multiple databases including police records, insurance claims, and manufacturer reports to give you instant results. This takes less than 3 seconds and helps you avoid legal issues and financial loss.",
+ answer: "Enter the item's serial number, IMEI, or VIN into our stolen item checker. We search our verification databases, including manufacturer reports, to give you instant results. This takes less than 3 seconds and helps you avoid legal issues and financial loss.",
  searches: ["how to check if something is stolen", "stolen item verification", "pre-purchase verification"],
  popular: true
  },
@@ -42,7 +42,7 @@ export const DetailedFAQSection: React.FC = () => {
  },
  {
  question: "How accurate are your stolen item checks?",
- answer: "Our system cross-references multiple authoritative databases. We check police reports, insurance claims, manufacturer databases, and international networks. However, remember that a 'clean' result doesn't guarantee the item isn't stolen - it means it's not reported in available databases.",
+ answer: "Our system cross-references multiple authoritative databases, including manufacturer databases and international networks. However, remember that a 'clean' result doesn't guarantee the item isn't stolen - it means it's not reported in available databases.",
  searches: ["stolen item checker accuracy", "how reliable is verification", "database accuracy"]
  }
  ]
@@ -75,13 +75,13 @@ export const DetailedFAQSection: React.FC = () => {
  questions: [
  {
  question: "How to check if a phone is stolen by IMEI?",
- answer: "Enter the phone's IMEI number (dial *#06# or check settings) into our checker. We verify against carrier and theft databases, police databases, and insurance claims. A stolen phone may be blocked from networks, worthless for resale, and could get you in legal trouble.",
+ answer: "Enter the phone's IMEI number (dial *#06# or check settings) into our checker. We verify against carrier and theft databases and our verification registries. A stolen phone may be blocked from networks, worthless for resale, and could get you in legal trouble.",
  searches: ["IMEI stolen check", "check phone stolen IMEI", "stolen phone verification", "iPhone stolen check"],
  popular: true
  },
  {
  question: "What's the difference between blacklisted and stolen phones?",
- answer: "Blacklisted phones are blocked by carriers (often for non-payment), while stolen phones are taken illegally. Stolen phones may not always be blacklisted immediately. Our service checks both scenarios - carrier and theft databases AND police stolen databases for complete protection.",
+ answer: "Blacklisted phones are blocked by carriers (often for non-payment), while stolen phones are taken illegally. Stolen phones may not always be blacklisted immediately. Our service checks both scenarios - carrier and theft databases and stolen device registries for complete protection.",
  searches: ["blacklisted and stolen phone", "carrier blacklist and police database", "phone verification types"]
  },
  {
@@ -97,7 +97,7 @@ export const DetailedFAQSection: React.FC = () => {
  questions: [
  {
  question: "How to check if a car is stolen by VIN number?",
- answer: "Enter the 17-character VIN (Vehicle Identification Number) found on the dashboard, driver's door, or registration. We check against national databases, insurance records, and police reports. Stolen vehicles represent huge financial and legal risks - always verify before purchase.",
+ answer: "Enter the 17-character VIN (Vehicle Identification Number) found on the dashboard, driver's door, or registration. We check against our verification databases. Stolen vehicles represent huge financial and legal risks - always verify before purchase.",
  searches: ["VIN stolen check", "check car stolen VIN", "vehicle theft verification", "stolen car database"],
  popular: true
  },
