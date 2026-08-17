@@ -31,8 +31,36 @@ function stripRouteSpecificHead(html) {
     .replace(/<title>[\s\S]*?<\/title>\s*/gi, '')
     .replace(/<meta[^>]+name=["'](description|twitter:title|twitter:description|twitter:url|keywords)["'][^>]*>\s*/gi, '')
     .replace(/<meta[^>]+property=["']og:(title|description|url)["'][^>]*>\s*/gi, '')
-    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '');
+    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '')
+    // The shell's own JSON-LD was already harvested into `page.jsonld` when the
+    // route was captured, and `headFor()` re-supplies every entry. Leaving the
+    // shell blocks in place emits each schema twice, byte-identical.
+    .replace(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, '');
 }
+
+/**
+ * De-duplicate raw JSON-LD strings by SEMANTIC equality: parse each block and
+ * key on the re-serialised value so whitespace and key-order differences still
+ * collapse. Unparseable blocks fall back to their trimmed raw text. Original
+ * order and the original raw strings are preserved.
+ */
+function dedupeJsonld(raws = []) {
+  const seen = new Set();
+  const out = [];
+  for (const raw of raws) {
+    let key;
+    try {
+      key = JSON.stringify(JSON.parse(raw));
+    } catch {
+      key = String(raw).trim();
+    }
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(raw);
+  }
+  return out;
+}
+
 
 /**
  * Locate the TRUE span of the `<div id="root">…</div>` element by walking
@@ -124,7 +152,7 @@ function headFor(page) {
     out.push(`<link ${attrs.join(' ')}>`);
   }
 
-  for (const raw of page.jsonld || []) {
+  for (const raw of dedupeJsonld(page.jsonld || [])) {
     out.push(`<script type="application/ld+json">${raw.replace(/<\/script/gi, '<\\/script')}</script>`);
   }
 
@@ -153,6 +181,34 @@ function documentFor(shell, page, body) {
   if (inBody > 1) {
     console.warn(`⚠️  ${page.route} renders ${inBody} <main> landmarks (page markup issue, not prerender).`);
   }
+
+  // Build-time assertion: every JSON-LD block in the finished document must be
+  // semantically unique. A duplicate means the shell's schema leaked back in.
+  const blocks = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)].map(
+    (m) => m[1],
+  );
+  const keys = blocks.map((b) => {
+    try {
+      return JSON.stringify(JSON.parse(b));
+    } catch {
+      throw new Error(`Prerender emitted unparseable JSON-LD for route "${page.route}". Aborting build.`);
+    }
+  });
+  const uniqueKeys = new Set(keys);
+  if (uniqueKeys.size !== keys.length) {
+    const counts = new Map();
+    keys.forEach((k, i) => counts.set(k, [...(counts.get(k) || []), i]));
+    const dupTypes = [...counts.entries()]
+      .filter(([, idxs]) => idxs.length > 1)
+      .map(([k]) => {
+        const t = JSON.parse(k)['@type'];
+        return Array.isArray(t) ? t.join('/') : t || 'unknown';
+      });
+    throw new Error(
+      `Prerender duplicated JSON-LD for route "${page.route}": ${keys.length} blocks, ${uniqueKeys.size} unique. Duplicated @type: ${dupTypes.join(', ')}. Aborting build.`,
+    );
+  }
+
   return html;
 }
 
