@@ -31,8 +31,36 @@ function stripRouteSpecificHead(html) {
     .replace(/<title>[\s\S]*?<\/title>\s*/gi, '')
     .replace(/<meta[^>]+name=["'](description|twitter:title|twitter:description|twitter:url|keywords)["'][^>]*>\s*/gi, '')
     .replace(/<meta[^>]+property=["']og:(title|description|url)["'][^>]*>\s*/gi, '')
-    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '');
+    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '')
+    // The shell's own JSON-LD was already harvested into `page.jsonld` when the
+    // route was captured, and `headFor()` re-supplies every entry. Leaving the
+    // shell blocks in place emits each schema twice, byte-identical.
+    .replace(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, '');
 }
+
+/**
+ * De-duplicate raw JSON-LD strings by SEMANTIC equality: parse each block and
+ * key on the re-serialised value so whitespace and key-order differences still
+ * collapse. Unparseable blocks fall back to their trimmed raw text. Original
+ * order and the original raw strings are preserved.
+ */
+function dedupeJsonld(raws = []) {
+  const seen = new Set();
+  const out = [];
+  for (const raw of raws) {
+    let key;
+    try {
+      key = JSON.stringify(JSON.parse(raw));
+    } catch {
+      key = String(raw).trim();
+    }
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(raw);
+  }
+  return out;
+}
+
 
 /**
  * Locate the TRUE span of the `<div id="root">…</div>` element by walking
