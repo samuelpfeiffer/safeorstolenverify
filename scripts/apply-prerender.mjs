@@ -284,6 +284,30 @@ function writeStub(shell, route, destination = null) {
   return html.replace('<body', `<body data-prerendered-route="${esc(route)}"`);
 }
 
+/**
+ * dist/404.html — served with a real 404 status by the _redirects catch-all.
+ * Reuses the shell so the built bundle refs stay correct and React still boots
+ * for humans landing on legitimate client-side-only routes. No canonical.
+ */
+function writeNotFound(shell) {
+  let html = shell
+    .replace(/<meta[^>]+name=["']robots["'][^>]*>\s*/gi, '')
+    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '')
+    .replace(/<title>[\s\S]*?<\/title>/i, '<title>Page Not Found — SafeOrStolen</title>');
+  html = html.replace('</head>', `    <meta name="robots" content="noindex, follow">\n  </head>`);
+  html = setRootContent(
+    html,
+    '<main><h1>Page Not Found</h1>' +
+      '<p>The page you requested does not exist at SafeOrStolen.</p>' +
+      '<ul>' +
+      '<li><a href="/">Home</a></li>' +
+      '<li><a href="/verify">Verify an item</a></li>' +
+      '<li><a href="/blog">Blog</a></li>' +
+      '</ul></main>',
+  );
+  return html.replace('<body', '<body data-prerendered-route="/404"');
+}
+
 function writeAtRoute(route, html) {
   const clean = route.replace(/^\//, '');
   const dir = path.join(DIST, clean);
