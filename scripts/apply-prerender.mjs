@@ -61,6 +61,18 @@ function dedupeJsonld(raws = []) {
   return out;
 }
 
+/**
+ * Remove every JSON-LD block from a captured body snapshot. The <head> is the
+ * authoritative location for structured data and `headFor()` already emits
+ * every unique block, so React-rendered body schema is pure duplication: it
+ * adds nothing a crawler consumes and trips the duplicate-JSON-LD assertion.
+ */
+function stripBodyJsonld(body = '') {
+  return body.replace(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, '');
+}
+
+
+
 
 /**
  * Locate the TRUE span of the `<div id="root">…</div>` element by walking
