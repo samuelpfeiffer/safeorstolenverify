@@ -61,6 +61,18 @@ function dedupeJsonld(raws = []) {
   return out;
 }
 
+/**
+ * Remove every JSON-LD block from a captured body snapshot. The <head> is the
+ * authoritative location for structured data and `headFor()` already emits
+ * every unique block, so React-rendered body schema is pure duplication: it
+ * adds nothing a crawler consumes and trips the duplicate-JSON-LD assertion.
+ */
+function stripBodyJsonld(body = '') {
+  return body.replace(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, '');
+}
+
+
+
 
 /**
  * Locate the TRUE span of the `<div id="root">…</div>` element by walking
@@ -160,9 +172,12 @@ function headFor(page) {
 }
 
 function documentFor(shell, page, body) {
+  // Head is authoritative for structured data; drop any body-level JSON-LD
+  // before it is inserted so it cannot duplicate the head blocks.
+  const cleanBody = stripBodyJsonld(body);
   let html = stripRouteSpecificHead(shell);
   html = html.replace('</head>', `${headFor(page)}\n  </head>`);
-  html = setRootContent(html, body);
+  html = setRootContent(html, cleanBody);
   if (!html.includes('data-prerendered-route')) {
     html = html.replace('<body', `<body data-prerendered-route="${esc(page.route)}"`);
   }
@@ -171,7 +186,7 @@ function documentFor(shell, page, body) {
   // has more <main> elements than the captured body, the shell leaked its own
   // content in (the duplicated-DOM bug). Pre-existing duplicates inside a
   // page's own markup are only warned about.
-  const inBody = countMainOutsideNoscript(body);
+  const inBody = countMainOutsideNoscript(cleanBody);
   const inDoc = countMainOutsideNoscript(html);
   if (inDoc > inBody) {
     throw new Error(
