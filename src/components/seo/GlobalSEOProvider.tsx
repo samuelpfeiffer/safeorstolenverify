@@ -77,29 +77,10 @@ export const GlobalSEOProvider: React.FC = () => {
       <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
       <link rel="manifest" href="/manifest.json" />
 
-      {/* ─── AI Crawler Allowlist ─────────────────────── */}
-      {/* Reinforces robots.txt — explicit permission for 2026 AI agents */}
-      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="googlebot-news" content="index, follow" />
-      <meta name="bingbot" content="index, follow" />
-      <meta name="slurp" content="index, follow" />
-      {/* OpenAI SearchBot — powers ChatGPT live search */}
-      <meta name="oai-searchbot" content="index, follow" />
-      {/* Meta AI / LLaMA crawler */}
-      <meta name="meta-externalagent" content="index, follow" />
-      {/* Apple Siri / AppleGPT */}
-      <meta name="applebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
-      <meta name="applebot-extended" content="index, follow" />
-      {/* Perplexity AI */}
-      <meta name="perplexitybot" content="index, follow" />
-      {/* Anthropic Claude */}
-      <meta name="claudebot" content="index, follow" />
-      {/* You.com AI */}
-      <meta name="youbot" content="index, follow" />
-      {/* Cohere AI */}
-      <meta name="coherecrawler" content="index, follow" />
-      {/* Google Extended (Gemini training) */}
-      <meta name="google-extended" content="index, follow" />
+      {/* Crawler access is granted in robots.txt. Bot-specific robots metas are
+          intentionally NOT emitted: they override the generic <meta name="robots">
+          for that crawler and would drop max-snippet/max-image-preview. */}
+
 
       {/* ─── Structured Data: SiteNavigationElement ──── */}
       {/* Helps AI understand site architecture */}
