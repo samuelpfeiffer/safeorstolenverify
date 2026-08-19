@@ -37,8 +37,6 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
       {/* Enhanced Performance Hints */}
       <meta name="format-detection" content="telephone=no" />
       
-      {/* Googlebot-specific directives (supplements robots set by SEOHead) */}
-      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="google" content="nositelinksearchbox" />
       <meta name="google" content="notranslate" />
       

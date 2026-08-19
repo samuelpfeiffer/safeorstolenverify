@@ -6,6 +6,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -67,10 +68,10 @@ export default function DynamicBlogPost() {
   if (error || !post) {
     return (
       <>
+        <StatusCodeHandler statusCode={404} noIndex={true} />
         <PageSEO
           title="Blog Post Not Found | SafeOrStolen"
           description="The blog post you're looking for doesn't exist or has been removed. Browse our blog for guides on avoiding stolen goods."
-          canonical="/blog"
           noIndex={true}
         />
         <div className="min-h-screen bg-background flex items-center justify-center">

@@ -840,4 +840,17 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # SPA FALLBACK (MUST BE LAST)
 # ============================================
-/*  /index.html  200
+# Dynamic client-side routes are real pages resolved at runtime — they must
+# stay 200 so the SPA can render them.
+/blog/*      /index.html  200
+/youtube/*   /index.html  200
+/videos/*    /index.html  200
+/item/*      /index.html  200
+/shared/*    /index.html  200
+/proof/*     /index.html  200
+/verified/*  /index.html  200
+/go/*        /index.html  200
+
+# Everything else that matched no prerendered file and no rule above does not
+# exist: serve the real 404 document with a 404 status, never the homepage.
+/*  /404.html  404

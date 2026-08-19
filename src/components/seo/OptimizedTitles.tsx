@@ -97,7 +97,6 @@ export const OptimizedTitles: React.FC<OptimizedTitlesProps> = ({
       
       {/* Additional SEO meta tags - max-video-preview:0 to prevent video indexing on non-watch pages */}
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:0" />
-      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:0" />
     </Helmet>
   );
 };

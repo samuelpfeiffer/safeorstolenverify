@@ -147,8 +147,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
  {/* Robots Directive */}
  <meta name="robots" content={robotsContent} />
  
- {/* Canonical URL */}
- <link rel="canonical" href={canonicalUrl} />
+ {/* Canonical URL — never emitted on an explicitly noindexed page (404 etc.),
+ where a canonical would hand the URL a conflicting indexable identity. */}
+ {!noIndex && <link rel="canonical" href={canonicalUrl} />}
  
  {/* GEO 2026: Content freshness signal for AI systems */}
  {modifiedTime && <meta name="article:modified_time" content={modifiedTime} />}

@@ -290,21 +290,32 @@ function writeStub(shell, route, destination = null) {
  * for humans landing on legitimate client-side-only routes. No canonical.
  */
 function writeNotFound(shell) {
-  let html = shell
-    .replace(/<meta[^>]+name=["']robots["'][^>]*>\s*/gi, '')
-    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '')
-    .replace(/<title>[\s\S]*?<\/title>/i, '<title>Page Not Found — SafeOrStolen</title>');
-  html = html.replace('</head>', `    <meta name="robots" content="noindex, follow">\n  </head>`);
-  html = setRootContent(
-    html,
-    '<main><h1>Page Not Found</h1>' +
+  const snapshotBody = path.join(PRERENDER, 'pages', '404.html');
+  const snapshotJson = path.join(PRERENDER, 'pages', '404.json');
+  const snap = fs.existsSync(snapshotJson) ? JSON.parse(fs.readFileSync(snapshotJson, 'utf-8')) : null;
+  const title = snap?.title || 'Page Not Found — SafeOrStolen';
+  const description = snap ? descriptionFor(snap) : '';
+  const body = fs.existsSync(snapshotBody)
+    ? stripBodyJsonld(fs.readFileSync(snapshotBody, 'utf-8'))
+    : '<main><h1>Page Not Found</h1>' +
       '<p>The page you requested does not exist at SafeOrStolen.</p>' +
       '<ul>' +
       '<li><a href="/">Home</a></li>' +
       '<li><a href="/verify">Verify an item</a></li>' +
       '<li><a href="/blog">Blog</a></li>' +
-      '</ul></main>',
-  );
+      '</ul></main>';
+
+  let html = shell
+    .replace(/<meta[^>]+name=["'](robots|prerender-status-code)["'][^>]*>\s*/gi, '')
+    .replace(/<link[^>]+rel=["']canonical["'][^>]*>\s*/gi, '')
+    .replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
+  const head =
+    `    <meta name="robots" content="noindex, nofollow">\n` +
+    `    <meta name="prerender-status-code" content="404">\n` +
+    (description ? `    <meta name="description" content="${esc(description)}">\n` : '') +
+    `  </head>`;
+  html = html.replace('</head>', head);
+  html = setRootContent(html, body);
   return html.replace('<body', '<body data-prerendered-route="/404"');
 }
 
@@ -395,6 +406,12 @@ function main() {
       `${Object.keys(REDIRECT_STUB_ROUTES).length} legacy paths written as canonicalised redirect stubs.`,
   );
 
+
+  // dist/404.html — the _redirects catch-all serves this with a real 404 for
+  // any URL that is not a known route, so unmatched URLs can never return the
+  // homepage snapshot with an indexable canonical.
+  fs.writeFileSync(path.join(DIST, '404.html'), writeNotFound(shell));
+  console.log('🧭 dist/404.html written (noindex, nofollow + prerender-status-code 404, no canonical).');
 
   console.log(`✅ Per-route prerender applied to ${written} routes (unique title/description/canonical/og:url + body). ${skipped} private routes skipped.`);
 }
