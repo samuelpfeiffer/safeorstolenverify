@@ -207,22 +207,9 @@ export const GlobalAISEO: React.FC = () => {
  content="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, firearms, bikes, electronics, tools, jewelry, and boats in one place. PWA with barcode scanning. Results in 3 seconds. 2 free checks, no credit card."
  />
 
- {/* ================================================== */}
- {/* AI CRAWLER EXPLICIT ALLOWLIST */}
- {/* ================================================== */}
- <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
- <meta name="bingbot" content="index, follow" />
- <meta name="slurp" content="index, follow" />
- {/* OAI-SearchBot — ChatGPT live search crawler */}
- <meta name="oai-searchbot" content="index, follow" />
- {/* Meta-ExternalAgent — Meta AI crawler */}
- <meta name="meta-externalagent" content="index, follow" />
- {/* Applebot-Extended — Apple AI/Siri */}
- <meta name="applebot-extended" content="index, follow" />
- {/* PerplexityBot */}
- <meta name="perplexitybot" content="index, follow" />
- {/* ClaudeBot — Anthropic */}
- <meta name="claudebot" content="index, follow" />
+ {/* Crawler access is granted in robots.txt. Bot-specific robots metas are
+     intentionally NOT emitted — they override the generic robots directive. */}
+
 
  {/* ================================================== */}
  {/* SCHEMAS: QAPage + DefinedTerm + ItemList + Speakable */}
