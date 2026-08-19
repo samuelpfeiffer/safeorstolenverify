@@ -10,8 +10,6 @@ export const AdvancedMarketingMeta = () => {
     <Helmet>
       {/* Primary SEO */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
-      <meta name="bingbot" content="index, follow" />
       
       {/* Advertising & Marketing Pixels Preparation */}
       <meta name="google-site-verification" content="verification-code" />

@@ -40,7 +40,6 @@ export const GoogleDiscoverOptimizer: React.FC<GoogleDiscoverOptimizerProps> = (
     <Helmet>
       {/* Google Discover Optimization */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
       
       {/* RSS Feed for Follow Feature */}
       {enableFollow && (
