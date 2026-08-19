@@ -840,4 +840,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # SPA FALLBACK (MUST BE LAST)
 # ============================================
-/*  /index.html  200
+# Unmatched URLs get the real 404 document with a 404 status — never the
+# homepage snapshot. All 301s, RSS rewrites and asset passthroughs above win.
+/*  /404.html  404
