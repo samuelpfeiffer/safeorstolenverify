@@ -746,8 +746,6 @@ export const AppRoutes = () => {
         {/* PRESS & SOCIAL PAGES */}
         <Route path="/press-kit" element={<PressKitPage />} />
         <Route path="/product-hunt" element={<ProductHuntPage />} />
-        <Route path="/youtube/:slug" element={<VideoWatchPage />} />
-        <Route path="/videos/:slug" element={<SelfHostedVideoWatchPage />} />
         <Route path="/crunchbase" element={<CrunchbasePage />} />
 
         {/* ADMIN ROUTES - Protected by AdminRoute guard */}
