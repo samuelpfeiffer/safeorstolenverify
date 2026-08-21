@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)
 import {
@@ -26,7 +26,6 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
-    { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/compare', label: 'Compare' },
     { to: '/mobile-app', label: 'App' },
   ];

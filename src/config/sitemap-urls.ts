@@ -153,11 +153,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/news', priority: 0.65, changefreq: 'monthly', lastmod: '2026-02-06' },
   { path: '/press-kit', priority: 0.60, changefreq: 'monthly' },
   { path: '/product-hunt', priority: 0.60, changefreq: 'monthly' },
-  { path: '/youtube', priority: 0.75, changefreq: 'weekly' },
-  { path: '/youtube/stolen-item-check', priority: 0.70, changefreq: 'weekly' },
-  { path: '/youtube/marketplace-safety', priority: 0.70, changefreq: 'weekly' },
-  { path: '/youtube/vin-check', priority: 0.70, changefreq: 'weekly' },
-  { path: '/youtube/imei-check', priority: 0.70, changefreq: 'weekly' },
   { path: '/crunchbase', priority: 0.55, changefreq: 'monthly' },
 
   // ============================================

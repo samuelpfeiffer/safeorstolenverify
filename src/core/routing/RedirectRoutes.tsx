@@ -34,6 +34,12 @@ const REDIRECT_MAP: Record<string, string> = {
   // ===== REMOVED PAGES =====
   '/news/onevalley-recognition': '/press',
 
+  // ===== REMOVED VIDEO PAGES (video content retired) =====
+  '/youtube': '/',
+  '/youtube/*': '/',
+  '/videos': '/',
+  '/videos/*': '/',
+
   // ===== APP VARIANT URLS =====
   '/android-app': '/app',
   '/mobile-app': '/app',

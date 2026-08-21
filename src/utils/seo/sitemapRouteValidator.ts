@@ -236,12 +236,6 @@ export const VALID_ROUTES = new Set([
   // News & social
   '/press-kit',
   '/product-hunt',
-  '/youtube',
-  '/youtube/stolen-item-check',
-  '/youtube/marketplace-safety',
-  '/youtube/vin-check',
-  '/youtube/imei-check',
-  '/youtube/help-big-trouble-stolen-check',
   '/crunchbase',
 ]);
 
@@ -409,7 +403,6 @@ export const REDIRECT_URLS = new Set([
   '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles',
   '/for-college-students',
   '/check-atv',
-  '/videos',
   '/app/marketplace',
   '/how-to-check-laptop-serial-number',
   '/for-seniors',

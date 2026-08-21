@@ -120,7 +120,6 @@ export const ConversionOptimizedFooter: React.FC = () => {
                 <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
                 <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
                 <li><Link to="/testimonials" className="hover:text-foreground transition-colors">Reviews</Link></li>
-                <li><Link to="/youtube" className="hover:text-foreground transition-colors">YouTube</Link></li>
                 <li><a href="https://www.youtube.com/@safeorstolenoffically" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">@safeorstolenoffically</a></li>
                 <li><a href="https://www.youtube.com/@safeorstolen" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">@safeorstolen</a></li>
                 <li><Link to="/privacy" className="hover:text-foreground transition-colors">Privacy</Link></li>
