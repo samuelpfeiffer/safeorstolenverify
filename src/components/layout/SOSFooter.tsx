@@ -62,7 +62,6 @@ export const SOSFooter: React.FC = () => {
  { label: 'About Us', to: '/about' },
  { label: 'Press Kit', to: '/press-kit' },
  { label: 'Press Release', to: '/press-release' },
- { label: 'YouTube', to: '/youtube' },
  { label: 'Community', to: '/community' },
  { label: 'Terms', to: '/terms' },
  { label: 'Privacy', to: '/privacy' },

@@ -1523,12 +1523,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/videos</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://safeorstolen.com/vin-check</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -1638,12 +1632,6 @@
   </url>
   <url>
     <loc>https://safeorstolen.com/wyoming-license-plate-lookup</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/youtube</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

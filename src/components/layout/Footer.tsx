@@ -124,14 +124,6 @@ export const Footer: React.FC = () => {
         <div className="mb-8">
           <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect With Us</p>
           <div className="flex flex-wrap gap-3">
-            {/* YouTube Button - links to indexable page */}
-            <Link
-              to="/youtube"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium text-sm"
-            >
-              <Youtube className="h-5 w-5" />
-              YouTube
-            </Link>
             
             {/* Crunchbase Button - links to indexable page */}
             <Link

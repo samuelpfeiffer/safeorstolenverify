@@ -117,7 +117,6 @@ const CORE_PAGES = [
   { url: '/download', priority: 0.8, changefreq: 'monthly' },
   
   // News/External Pages (Real pages)
-  { url: '/youtube', priority: 0.6, changefreq: 'monthly' },
   { url: '/product-hunt', priority: 0.6, changefreq: 'monthly' },
   { url: '/press-kit', priority: 0.6, changefreq: 'monthly' },
   { url: '/crunchbase', priority: 0.6, changefreq: 'monthly' },

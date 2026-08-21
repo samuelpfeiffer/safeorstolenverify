@@ -299,7 +299,6 @@ const SitemapPage = () => {
  { to: "/press", label: "Press" },
  { to: "/press-kit", label: "Press Kit" },
  { to: "/press-release", label: "Press Release" },
- { to: "/youtube", label: "YouTube" },
  { to: "/product-hunt", label: "Product Hunt" },
  { to: "/crunchbase", label: "Crunchbase" },
  { to: "/terms", label: "Terms of Service" },
