@@ -45,36 +45,27 @@ const toneFor = (status: ChatVerifyResult['status']) => {
  Icon: AlertTriangle,
  color: 'text-red-500',
  bg: 'bg-red-500/10',
- border: 'border-red-500/30',
- label: 'Stolen Match Found',
+ border: 'border-red-500/40',
+ label: 'REPORTED STOLEN',
  ring: 'ring-red-500/20',
- };
- case 'lost':
- return {
- Icon: AlertTriangle,
- color: 'text-amber-500',
- bg: 'bg-amber-500/10',
- border: 'border-amber-500/30',
- label: 'Reported Lost',
- ring: 'ring-amber-500/20',
  };
  case 'safe':
  return {
  Icon: CheckCircle2,
  color: 'text-emerald-500',
  bg: 'bg-emerald-500/10',
- border: 'border-emerald-500/30',
- label: 'No Theft Reports Found',
+ border: 'border-emerald-500/40',
+ label: 'SAFE',
  ring: 'ring-emerald-500/20',
  };
  default:
  return {
- Icon: ShieldCheck,
- color: 'text-muted-foreground',
- bg: 'bg-muted',
- border: 'border-border',
- label: status.toUpperCase(),
- ring: 'ring-border',
+ Icon: AlertTriangle,
+ color: 'text-amber-500',
+ bg: 'bg-amber-500/10',
+ border: 'border-amber-500/40',
+ label: 'NO RECORD FOUND',
+ ring: 'ring-amber-500/20',
  };
  }
 };
@@ -219,41 +210,24 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </div>
 
  <div className="flex-1 overflow-y-auto p-5 space-y-5">
- {/* Status header card */}
- <div className={cn('rounded-2xl border p-5', tone.bg, tone.border, 'ring-1', tone.ring)}>
- <div className="flex items-start gap-3">
- <div className={cn('w-12 h-12 rounded-xl flex items-center justify-center', 'bg-background/60')}>
- <tone.Icon className={cn('w-6 h-6', tone.color)} />
- </div>
- <div className="flex-1 min-w-0">
- <div className={cn('text-xs font-bold uppercase tracking-wide', tone.color)}>
+ {/* Verdict banner — largest, first element */}
+ <div className={cn('rounded-2xl border-2 p-6 text-center', tone.bg, tone.border, 'ring-1', tone.ring)}>
+ <tone.Icon className={cn('w-10 h-10 mx-auto mb-3', tone.color)} />
+ <div className={cn('text-3xl sm:text-4xl font-extrabold tracking-tight leading-none', tone.color)}>
  {tone.label}
  </div>
- <div className="mt-1 text-sm font-semibold text-foreground truncate">
+ {current.message && (
+ <p className="mt-3 text-sm text-foreground/80 leading-relaxed">{current.message}</p>
+ )}
+ <div className="mt-3 text-xs font-semibold text-foreground">
  {current.itemType.toUpperCase()}{' '}
  <code className="text-xs bg-background/70 px-1.5 py-0.5 rounded ml-1">
  {current.identifier}
  </code>
  </div>
- {typeof current.confidence === 'number' && (
- <div className="mt-2 flex items-center gap-2">
- <div className="flex-1 h-1.5 bg-background/50 rounded-full overflow-hidden">
- <div
- className={cn('h-full rounded-full', tone.color.replace('text-', 'bg-'))}
- style={{ width: `${current.confidence}%` }}
- />
- </div>
- <span className="text-[10px] font-semibold text-muted-foreground">
- {current.confidence}%
- </span>
- </div>
- )}
- </div>
- </div>
-
- {current.message && (
- <p className="mt-4 text-xs text-foreground/80 leading-relaxed">{current.message}</p>
- )}
+ <p className="mt-2 text-xs text-muted-foreground">
+ Checked {current.sources?.length ?? 0} source{(current.sources?.length ?? 0) === 1 ? '' : 's'}
+ </p>
  </div>
 
 
@@ -278,21 +252,26 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  const provider = current.providers?.find(
  (p) => p.provider.toLowerCase() === src.toLowerCase(),
  );
- const ok = provider?.status === 'safe' || !provider;
  const flagged = provider?.status === 'stolen' || provider?.status === 'lost';
+ const unknown = !provider || provider.status === 'unknown' || provider.status === 'error';
+ const outcome = flagged
+ ? 'theft report found'
+ : unknown
+ ? 'no data available'
+ : 'no theft report found';
  return (
  <div
  key={`${src}-${i}`}
- className="flex items-center justify-between text-xs px-3 py-2 rounded-lg bg-card/60 border border-border/60"
+ className="flex items-center justify-between gap-3 text-xs px-3 py-2 rounded-lg bg-card/60 border border-border/60"
  >
  <span className="text-foreground truncate">{src}</span>
  <span
  className={cn(
- 'text-[10px] font-semibold uppercase',
- flagged ? 'text-red-500' : ok ? 'text-emerald-500' : 'text-muted-foreground',
+ 'text-[11px] whitespace-nowrap',
+ flagged ? 'text-red-500 font-semibold' : unknown ? 'text-muted-foreground' : 'text-emerald-500',
  )}
  >
- {flagged ? 'Match' : ok ? 'Clear' : 'Checked'}
+ {outcome}
  </span>
  </div>
  );

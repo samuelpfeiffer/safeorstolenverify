@@ -851,6 +851,25 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /verified/*  /index.html  200
 /go/*        /index.html  200
 
+# Real client-side routes with no prerendered snapshot. These must resolve 200
+# so React can render them. Any future router entry without a snapshot must be
+# added here or the catch-all below will 404 it.
+/verify                /index.html  200
+/verify/*              /index.html  200
+/auth                  /index.html  200
+/dashboard             /index.html  200
+/profile               /index.html  200
+/payment-success       /index.html  200
+/checkout-redirect     /index.html  200
+/verification-success  /index.html  200
+/ai-verify             /index.html  200
+/api-docs              /index.html  200
+/report-stolen         /index.html  200
+/trust-engine          /index.html  200
+/vs-stolenphonechecker /index.html  200
+/app/*                 /index.html  200
+/mobile-*              /index.html  200
+
 # Everything else that matched no prerendered file and no rule above does not
 # exist: serve the real 404 document with a 404 status, never the homepage.
 /*  /404.html  404

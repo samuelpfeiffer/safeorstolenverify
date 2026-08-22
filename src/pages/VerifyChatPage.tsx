@@ -292,11 +292,7 @@ const VerifyChatPage: React.FC = () => {
  timestamp: verify?.timestamp || new Date().toISOString(),
  };
 
- const lowConfidence =
- typeof result.confidence === 'number' && result.confidence < 70;
- const uncertaintyNote = lowConfidence
- ? `\n\n_Heads up: confidence is **${result.confidence}%** — treat this as a strong signal, not a final verdict. For high-value purchases, also verify with local law enforcement._`
- : '';
+                const uncertaintyNote = '';
 
  const headline =
  result.status === 'stolen'
@@ -1205,11 +1201,11 @@ const InlineResultMini: React.FC<{ result: ChatVerifyResult }> = ({ result }) =>
  <span className={cn('text-[10px] font-mono font-bold tracking-wider', tone.color)}>
  {tone.label}
  </span>
- {typeof result.confidence === 'number' && (
- <span className="ml-auto text-[10px] font-mono text-muted-foreground">
- {result.confidence}% confidence
- </span>
- )}
+                {Array.isArray(result.sources) && (
+                  <span className="ml-auto text-[10px] font-mono text-muted-foreground">
+                    Checked {result.sources.length} source{result.sources.length === 1 ? '' : 's'}
+                  </span>
+                )}
  </div>
  <div className="mt-1.5 text-xs text-foreground/80 font-mono truncate">
  {result.itemType.toUpperCase()} · {result.identifier}
