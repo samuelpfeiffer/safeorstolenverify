@@ -274,10 +274,16 @@ serve(async (req) => {
     // Aggregate results
     const hasStolenReport = providers.some(p => p.status === 'stolen');
     const hasLostReport = providers.some(p => p.status === 'lost');
-    const successfulChecks = providers.filter(p => p.status !== 'error' && p.confidence > 0);
-    const avgConfidence = successfulChecks.length > 0
-      ? Math.round(successfulChecks.reduce((sum, p) => sum + p.confidence, 0) / successfulChecks.length)
-      : 0;
+    // Only sources that actually answered count toward confidence.
+    // "unknown" (and errored) sources are excluded entirely; if nothing
+    // answered, confidence is null rather than a misleading low number.
+    const answeredChecks = providers.filter(
+      p => p.status !== 'error' && p.status !== 'unknown' && p.confidence > 0
+    );
+    const avgConfidence: number | null = answeredChecks.length > 0
+      ? Math.round(answeredChecks.reduce((sum, p) => sum + p.confidence, 0) / answeredChecks.length)
+      : null;
+    const successfulChecks = answeredChecks;
 
     let finalStatus: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
     let riskLevel: 'low' | 'medium' | 'high' | 'critical';
