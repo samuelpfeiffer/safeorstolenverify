@@ -71,7 +71,7 @@ const TopNavigation = () => {
                       : 'flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50'
                   }
                 >
-                  {'icon' in link && link.icon && <link.icon className="w-3.5 h-3.5 text-red-600" aria-hidden="true" />}
+                  {link.label}
                   {link.label}
                 </Link>
               );
