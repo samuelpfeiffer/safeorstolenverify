@@ -72,7 +72,6 @@ const TopNavigation = () => {
                   }
                 >
                   {link.label}
-                  {link.label}
                 </Link>
               );
             })}
