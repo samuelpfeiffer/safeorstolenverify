@@ -45,36 +45,27 @@ const toneFor = (status: ChatVerifyResult['status']) => {
  Icon: AlertTriangle,
  color: 'text-red-500',
  bg: 'bg-red-500/10',
- border: 'border-red-500/30',
- label: 'Stolen Match Found',
+ border: 'border-red-500/40',
+ label: 'REPORTED STOLEN',
  ring: 'ring-red-500/20',
- };
- case 'lost':
- return {
- Icon: AlertTriangle,
- color: 'text-amber-500',
- bg: 'bg-amber-500/10',
- border: 'border-amber-500/30',
- label: 'Reported Lost',
- ring: 'ring-amber-500/20',
  };
  case 'safe':
  return {
  Icon: CheckCircle2,
  color: 'text-emerald-500',
  bg: 'bg-emerald-500/10',
- border: 'border-emerald-500/30',
- label: 'No Theft Reports Found',
+ border: 'border-emerald-500/40',
+ label: 'SAFE',
  ring: 'ring-emerald-500/20',
  };
  default:
  return {
- Icon: ShieldCheck,
- color: 'text-muted-foreground',
- bg: 'bg-muted',
- border: 'border-border',
- label: status.toUpperCase(),
- ring: 'ring-border',
+ Icon: AlertTriangle,
+ color: 'text-amber-500',
+ bg: 'bg-amber-500/10',
+ border: 'border-amber-500/40',
+ label: 'NO RECORD FOUND',
+ ring: 'ring-amber-500/20',
  };
  }
 };
