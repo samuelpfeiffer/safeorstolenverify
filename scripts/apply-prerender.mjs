@@ -16,7 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { isPrivateRoute } from './route-manifest.mjs';
+import { isPrivateRoute, routesFromRouter } from './route-manifest.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -268,6 +268,98 @@ const REDIRECT_STUB_ROUTES = {
   '/firearms-serial-check': '/firearms-serial-number-check',
   '/imei': '/imei-checker',
 };
+
+/**
+ * Legacy slugs Google Search Console reports as "Not found (404)". Static
+ * hosting has no pattern matching, so wildcard rules in public/_redirects
+ * (e.g. `/*-stolen-item-check`) can never fire — every slug must be explicit.
+ * Destinations are validated against the real router below.
+ */
+const EXTRA_REDIRECT_STUBS = {
+  // State VIN lookups that never had their own page
+  '/idaho-vin-lookup': '/vin-checker',
+  '/utah-vin-lookup': '/vin-checker',
+  '/nevada-vin-lookup': '/vin-checker',
+  '/kansas-vin-lookup': '/vin-checker',
+  // "-stolen-item-check" slugs (the _redirects wildcard is inert on this host)
+  '/wisconsin-stolen-item-check': '/verify',
+  '/maine-stolen-item-check': '/verify',
+  '/washington-dc-stolen-item-check': '/verify',
+  '/virginia-stolen-item-check': '/verify',
+  '/ohio-stolen-item-check': '/verify',
+  '/alabama-stolen-item-check': '/verify',
+  '/memphis-stolen-item-check': '/verify',
+  '/minneapolis-stolen-item-check': '/verify',
+  '/miami-stolen-item-check': '/stolen-check-miami',
+  // Competitor comparison
+  '/vs-nicb': '/nicb-alternative',
+  // Blog slugs that never existed — mapped to the closest real article
+  '/blog/safeorstolen-app-guide': '/blog/stolen-verification-app-guide',
+  '/blog/imei-checker-app-comparison': '/comparisons/best-free-imei-checkers-2025',
+  '/blog/avoid-buying-stolen-items': '/blog/ultimate-marketplace-buyers-guide',
+};
+
+/**
+ * Reported slugs with NO good destination in the router. They get the real 404
+ * document (noindex, nofollow, no canonical) rather than an arbitrary target.
+ * There is no statistics page anywhere in AppRoutes.tsx.
+ */
+const NOT_FOUND_STUB_ROUTES = ['/statistics/stolen-goods', '/statistics'];
+
+/**
+ * public/_redirects is INERT on this host (verified live: `/verification-app`,
+ * which has a `301!` rule, returned 200 with the homepage snapshot). It is
+ * still the maintained source of truth for legacy slugs, so its 301 table is
+ * read at build time and every orphan slug is materialised as a static stub —
+ * the only mechanism that actually changes the bytes a crawler receives.
+ *
+ * Only rules that are safe are used: no wildcards (static hosting cannot match
+ * patterns), source must not be a real route, destination must be a real route.
+ */
+function redirectsFromFile(realRoutes) {
+  const file = path.join(ROOT, 'public', '_redirects');
+  if (!fs.existsSync(file)) return {};
+  const out = {};
+  for (const line of fs.readFileSync(file, 'utf-8').split('\n')) {
+    const t = line.trim();
+    if (!t || t.startsWith('#')) continue;
+    const [from, to, code = ''] = t.split(/\s+/);
+    if (!from?.startsWith('/') || !to?.startsWith('/')) continue;
+    if (code.replace('!', '') !== '301') continue;
+    if (from.includes('*') || from.includes(':') || to.includes('*') || to.includes(':')) continue;
+    if (realRoutes.has(from)) continue; // never redirect a page that exists
+    if (!realRoutes.has(to)) continue; // never redirect into another 404
+    if (isPrivateRoute(from)) continue;
+    out[from] = to;
+  }
+  return out;
+}
+
+/**
+ * Final stub table: derived _redirects rules, then the hand-curated maps, which
+ * win. Build-time assertion: every destination must be a real router path and
+ * no source may collide with one, otherwise the build fails.
+ */
+function buildRedirectStubs() {
+  const realRoutes = routesFromRouter();
+  const derived = redirectsFromFile(realRoutes);
+  const map = { ...derived, ...REDIRECT_STUB_ROUTES, ...EXTRA_REDIRECT_STUBS };
+  for (const route of NOT_FOUND_STUB_ROUTES) delete map[route];
+
+  const bad = [];
+  for (const [from, to] of Object.entries(map)) {
+    if (!realRoutes.has(to)) bad.push(`${from} -> ${to} (destination is not a route)`);
+    if (realRoutes.has(from)) bad.push(`${from} -> ${to} (source IS a real route)`);
+  }
+  if (bad.length) {
+    throw new Error(`Invalid redirect stub targets. Aborting build:\n  ${bad.join('\n  ')}`);
+  }
+  const badNotFound = NOT_FOUND_STUB_ROUTES.filter((r) => realRoutes.has(r));
+  if (badNotFound.length) {
+    throw new Error(`404 stub routes collide with real routes: ${badNotFound.join(', ')}`);
+  }
+  return { map, derivedCount: Object.keys(derived).length };
+}
 
 const SITE = 'https://safeorstolen.com';
 
