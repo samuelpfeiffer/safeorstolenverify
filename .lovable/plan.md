@@ -1,75 +1,106 @@
-# SafeOrStolen — Topical Authority Build Plan
+# Fix: unmatched URLs serve the homepage's baked HTML
 
-This is a large 5-prompt scope. I'll ship it in phases so you can review each phase before the next starts. Each phase is a real, working milestone — not a partial skeleton.
+## (a) What is actually being served
 
-## Phase 1 — Pillar architecture (Lovable Prompt 1)
-Build the four pillar pages using the exact copy you provided:
-- `/check-phone` — "Check If a Phone Is Stolen Before You Buy"
-- `/check-bike` — "Check If a Bike Is Stolen"
-- `/check-gun` — "Check a Gun Serial Number Before You Buy"
-- `/check-vin` — "Check a VIN for Theft and Title Problems"
+Verified live with curl against the custom domain (not the editor preview):
 
-Each page:
-- Single H1 with the target phrase, unique title tag + meta description you supplied
-- Existing verification tool component embedded directly under the H1, pre-configured to the item type (phone/IMEI, bike serial, gun serial, VIN)
-- Body sections from your copy (how to find the identifier, what we check, honest limits, "already bought?" callout)
-- "Related guides" card grid linking down to the cluster articles for that pillar
-- Canonical URL, OG tags, mobile-first, lazy-load below the fold
-- Added to sitemap and route validator
-- Wired into TopNavigation "Resources" dropdown and Footer
+```text
+curl -A Googlebot https://safeorstolen.com/idaho-vin-lookup
+HTTP/2 200 · server: cloudflare · x-deployment-id: 89d95a3e-…
+<title>SafeOrStolen — AI-Powered Stolen Item Verification</title>
+<link rel="canonical" href="https://safeorstolen.com/">
+```
 
-Does not touch the home page or the check tool's logic.
+Same result for `/qwertyzzz`, `/vs-nicb`, and `/verification-app` — including
+`/verification-app`, which has an explicit `301!` rule in `public/_redirects`.
+That rule not firing is direct proof that `_redirects` is inert here.
 
-## Phase 2 — Blog cluster system (Lovable Prompt 2)
-Build a reusable article template and publish all 15 cluster routes as stubs wired to the pillar structure, then fill content:
-- Template: H1, AuthorBio byline, "Last reviewed" date, pillar CTA banner after paragraph 2, FAQ accordion, "Related guides" footer linking parent pillar + 2 siblings, breadcrumbs
-- 15 routes grouped under 4 pillars exactly as you specified
-- Internal linking (pillar ↔ cluster ↔ siblings) generated from the grouping map — no manual link maintenance
-- I'll write the full 800–1,200-word article bodies from the briefs you provided, starting with the 5 phone-cluster articles (highest search volume), then bikes, guns, vehicles
+What *does* work:
 
-I'll do phone cluster in this phase; bikes/guns/vehicles clusters in a follow-up so you can review the template + first 5 articles before I generate the other 10.
+- `/imei-checker` → its own title and self-canonical (a committed static file exists at that path).
+- `/404.html` → returns the real 404 document, but with **HTTP 200** (it is only reachable by direct request).
+- `/nonexistent.html` → HTTP 404 (paths that look like files are not SPA-fallen-back).
+- `/ai-imei-check` → `noindex, follow` + `canonical https://safeorstolen.com/imei-checker`. This path is in `REDIRECT_STUB_ROUTES` in `scripts/apply-prerender.mjs`, so the build writes a static stub file for it. **This is the only redirect mechanism that is actually effective in production.**
 
-## Phase 3 — E-E-A-T trust layer (Lovable Prompt 3)
-- `/editorial-standards` page with the exact copy you provided
-- `AuthorBio` component (Samuel Pfeiffer, founder bio, links to About)
-- Per-page editable "Last reviewed" date field
-- `Sources` component (styled "Sources & further reading" block with follow links)
-- Footer links to `/editorial-standards` and `/about`
+The fallback for any extensionless unmatched path is `dist/index.html`, served by
+Lovable hosting's built-in SPA fallback.
 
-## Phase 4 — Schema + LLM SEO (Lovable Prompt 4)
-- Organization schema on home
-- WebApplication schema on the 4 pillars (SecurityApplication, free offer)
-- Article schema on every blog post (author = Person: Samuel Pfeiffer, dates from Last-reviewed)
-- FAQPage schema auto-generated from each article's FAQ accordion
-- BreadcrumbList schema from breadcrumbs
-- Update `public/llms.txt` with site description, 4 pillar URLs, hub URLs
-- Regenerate `sitemap.xml`: pillars 0.9, hubs 0.8, articles 0.7
-- Audit every new page for exactly one H1 and unique title/meta
+## (b) Why it is the homepage's content
 
-Coordinates with your existing schema registry / SSR setup — no duplicate schemas (per your `HomeStructuredData` note).
+`scripts/apply-prerender.mjs` (`main()`) writes each route's baked document to
+`dist/<route>/index.html` — except the homepage:
 
-## Phase 5 — Linkable assets (Lovable Prompt 5)
-- `/stolen-property-statistics` — data-driven hub. Editable data array (`stat, label, source, sourceUrl, year`), category sections (Phones/Bikes/Firearms/Vehicles), 2–3 recharts charts, "Cite this page" box, Dataset schema. **I will not invent statistics** — I'll seed the array with placeholder entries clearly marked `TODO: verify source` and you (or your team) fill in real sourced numbers before publish.
-- `/receiving-stolen-property-laws` — 50-state filterable/searchable table (state, statute, felony threshold, notes), per-state anchor IDs, "not legal advice" disclaimer, editable data array with TODOs for statute values.
-- `/templates` — page with 3 download cards (used-phone receipt, bike bill of sale, firearm bill of sale). **You upload the PDFs** to `/public/templates/` — I'll wire the download buttons.
-- Footer "Resources" section + relevant pillar-page links to both hubs.
+```js
+if (page.route === '/') {
+  fs.writeFileSync(indexPath, html);   // dist/index.html
+}
+```
 
-## What I need from you along the way
-- **Phase 5:** the 3 template PDFs, and the real sourced stats/statute values (I will not fabricate)
-- **Phase 3:** confirm the founder bio one-liner (I'll draft from your Our Story page unless you paste a different one)
-- Everything else: I have all the copy I need from your message.
+`dist/index.html` is simultaneously the homepage document *and* the SPA fallback
+file. So every unmatched path receives the homepage's title, H1, JSON-LD and
+`rel="canonical" href="https://safeorstolen.com/"`. `dist/404.html` is written
+correctly but nothing routes to it, because the `/* /404.html 404` catch-all
+lives in `public/_redirects`, which this host does not read. Same for
+`netlify.toml`, `public/_headers` and `public/web.config` — all inert files.
 
-## Execution order (matches yours)
-1. Phase 1 now
-2. Phase 2 (phone cluster) next
-3. Phases 3 + 4 together
-4. Phase 5 (with TODOs where real data is required)
-5. Remaining cluster articles (bikes → guns → vehicles), 2–3 at a time
+`RedirectHandler.tsx` / `REDIRECT_MAP` do run, but only after the JS bundle
+boots. Googlebot reads the raw HTML it was served first, and that HTML is
+already a self-consistent homepage.
 
-## Technical notes
-- Reuses the existing verification tool component — I won't fork or duplicate it
-- Uses your existing `SEOHead`, `BlogLayout`, `BlogPostTemplate`, `FAQSchema`, `BreadcrumbSchema`, `RelatedPagesSection`, and schema-registry patterns
-- All new routes added to `sitemapRouteValidator.ts` and both sitemap files
-- Follows your project memory: dark security-chic theme, orange primary, no blue, no "FREE" affiliate wording, no phone numbers, support@safeorstolen.com only, 800+ words per page, distinct indexable URLs, never delete URLs
+## (c) Proposed fix
 
-Approve and I'll start Phase 1 immediately.
+The only layer that can change the raw bytes at a given path on this host is a
+committed static file produced at build time. So the fix extends the mechanism
+that is already proven to work (`REDIRECT_STUB_ROUTES`).
+
+1. **Add every reported legacy slug to `REDIRECT_STUB_ROUTES`** in
+   `scripts/apply-prerender.mjs`, mirroring the destinations already declared in
+   `public/_redirects`:
+   - `/idaho-vin-lookup`, `/utah-vin-lookup`, `/nevada-vin-lookup`, `/kansas-vin-lookup` → `/vin-checker`
+   - `/wisconsin-…`, `/maine-…`, `/washington-dc-…`, `/virginia-…`, `/ohio-…`, `/alabama-…`, `/memphis-…`, `/minneapolis-…` `-stolen-item-check` → `/verify`
+   - `/miami-stolen-item-check` → `/stolen-check-miami` (a real page exists)
+   - `/vs-nicb` → `/nicb-alternative`
+   - `/statistics/stolen-goods`, `/blog/safeorstolen-app-guide`, `/blog/imei-checker-app-comparison`, `/blog/avoid-buying-stolen-items` → nearest real page (confirmed against the router before writing; if no good match exists the slug goes to the 404 stub list instead of an arbitrary target)
+
+   Each gets a static file carrying `noindex, follow`, a canonical to the real
+   destination, and a `meta refresh` — the exact shape that already works for
+   `/ai-imei-check`. Google resolves these as redirects and drops the 404 report.
+
+2. **Mirror the same slugs into `REDIRECT_MAP`** (`src/core/routing/RedirectRoutes.tsx`)
+   so in-app navigation and hydration land on the same destination and no route
+   falls through to `NotFound`.
+
+3. **Build-time assertion**: every stub destination must be a real route in
+   `AppRoutes.tsx` (via `scripts/route-manifest.mjs`), otherwise the build fails.
+   This prevents redirecting to another 404.
+
+4. **Wildcard note**: `/*-stolen-item-check` in `_redirects` can never work here —
+   static hosting has no pattern matching. The slug list must be explicit. I will
+   also cross-check the `_redirects` 301 table against the router and port any
+   *other* orphan slug it lists, so this class of bug is closed, not just the 20
+   Google happened to report.
+
+### On the hard-404 requirement
+
+Honest constraint: I cannot make an arbitrary unknown path return HTTP 404 on
+this host. The SPA fallback is Lovable-platform behaviour and is not
+configurable from the repo — `_redirects`, `netlify.toml`, `_headers` and
+`web.config` are all ignored, which the curl evidence above confirms. Known
+slugs get a working redirect (fully solves the GSC report). For genuinely
+unknown paths the realistic options are:
+
+- **A (recommended, default):** leave `dist/index.html` as the homepage document, so unknown paths keep returning 200 with the homepage's *self*-canonical to `/`. Google treats them as duplicates of the homepage rather than indexing them under the wrong URL. No SEO risk to `/`.
+- **B:** make `dist/index.html` the 404 document (noindex, no canonical) so unknown paths signal "not a page" — but this strips the homepage's own baked title, H1 and JSON-LD, since `/` and the fallback are the same file. That is a real SEO downgrade to the most important URL.
+
+I will implement A unless you tell me otherwise.
+
+## Verification before anything is called done
+
+After the change is published I will re-run, against `https://safeorstolen.com`
+with `-A Googlebot`, and paste raw output for:
+
+- each fixed slug: expect `200` + `robots: noindex, follow` + `canonical` pointing at the real destination
+- `/imei-checker`, `/vin-checker`, `/`: expect unchanged self-canonicals and their own titles
+- a random unknown path: current behaviour recorded as-is
+
+Nothing is reported as fixed on editor-preview evidence.
