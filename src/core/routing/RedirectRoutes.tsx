@@ -286,7 +286,7 @@ const REDIRECT_MAP: Record<string, string> = {
   '/louisville-stolen-item-check': '/verify',
   '/ultimate-guide-not-buying-stolen-goods': '/faq',
   '/about-problem': '/about',
-  '/blog/imei-checker-app-comparison': '/blog',
+  '/blog/imei-checker-app-comparison': '/comparisons/best-free-imei-checkers-2025',
   '/blog/red-flags-buying-used-electronics-1759314016.095080': '/blog',
   '/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080': '/blog',
   '/blog/vin-verification-complete-guide-used-cars-1759314016.095080': '/blog',
@@ -344,6 +344,24 @@ const REDIRECT_MAP: Record<string, string> = {
   // /blog/firearm-serial-number-verification, /blog/verify-item-before-meetup,
   // /blog/pawn-shop-stolen-item-verification, /blog/theft-trends-report-2024,
   // /blog/ultimate-marketplace-buyers-guide, /blog/like-carfax-for-phones
+
+  // ===== GSC "Not found (404)" slugs (mirrors EXTRA_REDIRECT_STUBS in
+  // scripts/apply-prerender.mjs — keep the two lists in sync) =====
+  '/idaho-vin-lookup': '/vin-checker',
+  '/utah-vin-lookup': '/vin-checker',
+  '/nevada-vin-lookup': '/vin-checker',
+  '/kansas-vin-lookup': '/vin-checker',
+  '/wisconsin-stolen-item-check': '/verify',
+  '/maine-stolen-item-check': '/verify',
+  '/washington-dc-stolen-item-check': '/verify',
+  '/virginia-stolen-item-check': '/verify',
+  '/ohio-stolen-item-check': '/verify',
+  '/alabama-stolen-item-check': '/verify',
+  '/memphis-stolen-item-check': '/verify',
+  '/miami-stolen-item-check': '/stolen-check-miami',
+  '/vs-nicb': '/nicb-alternative',
+  '/blog/safeorstolen-app-guide': '/blog/stolen-verification-app-guide',
+  '/blog/avoid-buying-stolen-items': '/blog/ultimate-marketplace-buyers-guide',
 };
 
 /**
