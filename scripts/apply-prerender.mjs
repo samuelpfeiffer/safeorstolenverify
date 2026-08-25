@@ -490,12 +490,19 @@ function main() {
 
     writeAtRoute(route, writeStub(shell, route));
   }
-  for (const [route, destination] of Object.entries(REDIRECT_STUB_ROUTES)) {
+  const { map: redirectStubs, derivedCount } = buildRedirectStubs();
+  for (const [route, destination] of Object.entries(redirectStubs)) {
     writeAtRoute(route, writeStub(shell, route, destination));
+  }
+  const notFoundDoc = writeNotFound(shell);
+  for (const route of NOT_FOUND_STUB_ROUTES) {
+    writeAtRoute(route, notFoundDoc);
   }
   console.log(
     `🚫 ${NOINDEX_STUB_ROUTES.length} non-content routes written as noindex stubs, ` +
-      `${Object.keys(REDIRECT_STUB_ROUTES).length} legacy paths written as canonicalised redirect stubs.`,
+      `${Object.keys(redirectStubs).length} legacy paths written as canonicalised redirect stubs ` +
+      `(${derivedCount} derived from public/_redirects), ` +
+      `${NOT_FOUND_STUB_ROUTES.length} slugs written as real 404 documents.`,
   );
 
 
