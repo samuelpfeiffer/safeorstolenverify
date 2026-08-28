@@ -67,6 +67,10 @@ export default defineConfig(({ mode }) => ({
           return 'assets/[name].[hash].[ext]';
         },
         manualChunks: (id) => {
+          // Keep Vite's dynamic-import preload helper in the always-loaded vendor
+          // chunk, otherwise it lands in a lazy chunk (e.g. scanner) and drags
+          // that chunk into the initial request wave.
+          if (id.includes('vite/preload-helper')) return 'vendor';
           if (id.includes('node_modules')) {
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
               return 'vendor';
