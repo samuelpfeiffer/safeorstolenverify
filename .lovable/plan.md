@@ -1,106 +1,97 @@
-# Fix: unmatched URLs serve the homepage's baked HTML
+# Mobile LCP diagnosis — real Lighthouse measurements (no fixes proposed yet)
 
-## (a) What is actually being served
+Method: Lighthouse 12 (headless Chromium) run from this sandbox against the **live** safeorstolen.com,
+mobile form factor, Moto-G-class screen emulation, simulated 4G throttling + 4x CPU slowdown —
+the same configuration PSI/CrUX-equivalent lab runs use. Six pages, one run each.
 
-Verified live with curl against the custom domain (not the editor preview):
+## 1. Measured results (mobile, throttled)
 
-```text
-curl -A Googlebot https://safeorstolen.com/idaho-vin-lookup
-HTTP/2 200 · server: cloudflare · x-deployment-id: 89d95a3e-…
-<title>SafeOrStolen — AI-Powered Stolen Item Verification</title>
-<link rel="canonical" href="https://safeorstolen.com/">
-```
+| Page | Perf | FCP | **LCP** | TBT | CLS | Total bytes |
+|---|---|---|---|---|---|---|
+| `/` | 43 | 5.6 s | **10.3 s** | 680 ms | 0 | 1,812 KiB |
+| `/verify` | 55 | 3.3 s | **9.1 s** | 510 ms | 0 | — |
+| `/imei-checker` | 54 | 4.9 s | **8.7 s** | 380 ms | 0 | — |
+| `/texas-vin-lookup` | 51 | 4.8 s | **8.8 s** | 490 ms | 0 | 1,404 KiB |
+| `/california-license-plate-lookup` | 55 | 4.7 s | **8.6 s** | 350 ms | 0 | — |
+| `/idaho-vin-lookup` (redirect stub) | 49 | 4.7 s | **10.7 s** | 540 ms | 0 | — |
 
-Same result for `/qwertyzzz`, `/vs-nicb`, and `/verification-app` — including
-`/verification-app`, which has an explicit `301!` rule in `public/_redirects`.
-That rule not firing is direct proof that `_redirects` is inert here.
+Every page measured is well past 2.5 s. This is not a subset of 48 URLs — it is site-wide,
+and the templated state pages behave identically to each other (8.6–8.8 s), which is consistent
+with GSC grouping ~48 similar URLs together.
 
-What *does* work:
+Note on the stub page: `/idaho-vin-lookup` client-redirected to `/vin-checker` during the run,
+so its 10.7 s includes the redirect hop. The stub document itself is small; the cost is the
+second full app boot, not the stub.
 
-- `/imei-checker` → its own title and self-canonical (a committed static file exists at that path).
-- `/404.html` → returns the real 404 document, but with **HTTP 200** (it is only reachable by direct request).
-- `/nonexistent.html` → HTTP 404 (paths that look like files are not SPA-fallen-back).
-- `/ai-imei-check` → `noindex, follow` + `canonical https://safeorstolen.com/imei-checker`. This path is in `REDIRECT_STUB_ROUTES` in `scripts/apply-prerender.mjs`, so the build writes a static stub file for it. **This is the only redirect mechanism that is actually effective in production.**
+## 2. What the LCP element actually is
 
-The fallback for any extensionless unmatched path is `dist/index.html`, served by
-Lovable hosting's built-in SPA fallback.
+On **every** page measured, the LCP element is a **text paragraph**, not an image:
 
-## (b) Why it is the homepage's content
+- `/` → `div.min-h-screen > section.relative > div.max-w-3xl > p.text-center`
+  ("Paste any IMEI, VIN, serial number, license plate, or marketplace URL…")
+- `/verify` → `p.text-base` ("AI-powered stolen-item check. Paste an IMEI, VIN…")
+- `/imei-checker` → `section.pt-24 > div.max-w-6xl > div.text-center > p.text-xl`
+- `/texas-vin-lookup` → `section.pt-24 > div.max-w-6xl > p.text-xl`
+- `/california-license-plate-lookup` → same selector as above
 
-`scripts/apply-prerender.mjs` (`main()`) writes each route's baked document to
-`dist/<route>/index.html` — except the homepage:
+Phase breakdown (Lighthouse `lcp-breakdown-insight`, unsimulated trace times):
 
-```js
-if (page.route === '/') {
-  fs.writeFileSync(indexPath, html);   // dist/index.html
-}
-```
+| Page | TTFB | Load delay | Load time | **Element render delay** |
+|---|---|---|---|---|
+| `/` | 101 ms | n/a (text) | n/a | **2,261 ms** |
+| `/texas-vin-lookup` | 197 ms | n/a | n/a | **1,178 ms** |
+| `/verify` | 210 ms | n/a | n/a | **1,022 ms** |
+| `/imei-checker` | 251 ms | n/a | n/a | **1,201 ms** |
+| `/california-license-plate-lookup` | 232 ms | n/a | n/a | **1,176 ms** |
 
-`dist/index.html` is simultaneously the homepage document *and* the SPA fallback
-file. So every unmatched path receives the homepage's title, H1, JSON-LD and
-`rel="canonical" href="https://safeorstolen.com/"`. `dist/404.html` is written
-correctly but nothing routes to it, because the `/* /404.html 404` catch-all
-lives in `public/_redirects`, which this host does not read. Same for
-`netlify.toml`, `public/_headers` and `public/web.config` — all inert files.
+There is **no image load-delay/load-time component at all** — 100% of the non-TTFB LCP time is
+render delay. Observed FCP and observed LCP are the *same* timestamp on every page
+(e.g. home: both 2,362 ms), meaning the LCP text paints on the very first paint. So the problem
+is purely "how long until the browser can paint anything", not "which element paints last".
 
-`RedirectHandler.tsx` / `REDIRECT_MAP` do run, but only after the JS bundle
-boots. Googlebot reads the raw HTML it was served first, and that HTML is
-already a self-consistent homepage.
+## 3. What is delaying first paint
 
-## (c) Proposed fix
+Confirmed from the traces:
 
-The only layer that can change the raw bytes at a given path on this host is a
-committed static file produced at build time. So the fix extends the mechanism
-that is already proven to work (`REDIRECT_STUB_ROUTES`).
+- **Render-blocking stylesheet**: `/assets/index.CrPR73mR.css` (25 KiB) — Lighthouse attributes
+  **778 ms** of blocking on `/` and **621 ms** on `/texas-vin-lookup`. It is the only
+  render-blocking resource.
+- **`/sos-logo.png` is 266 KiB and is fetched twice** — once as the unconditional
+  `<link rel="preload" as="image">` and once again as the actual image (home trace shows a 266 KiB
+  `Image` request at 188–331 ms and a second 266 KiB request at 1211–1247 ms). A high-priority
+  266 KiB PNG preload is competing for the same throttled mobile bandwidth as the render-blocking
+  CSS. This is ~532 KiB of transfer for a logo, on the critical path, on every page.
+- **JS bulk before paint**: `vendor` 129 KiB + `scanner` 113 KiB + `index` 58 KiB + `framer` 37 KiB
+  + `supabase` 31 KiB, all starting ~190–225 ms, plus GTM 171 KiB. Bootup time 2.1 s on home,
+  main-thread work 4.3 s, unused JS ≈ 289 KiB. This does not block first paint directly but it
+  saturates the link and the CPU during the window when CSS and fonts need to land.
+- **Third-party font**: `cdn.gpteng.co/.../CameraPlainVariable.woff2` — **131 KiB**, larger than the
+  Inter subset (47 KiB), fetched on both pages measured.
+- Home carries six ~55–62 KiB card JPEGs (`/images/cards/*.jpg`) all fetched in the first wave.
 
-1. **Add every reported legacy slug to `REDIRECT_STUB_ROUTES`** in
-   `scripts/apply-prerender.mjs`, mirroring the destinations already declared in
-   `public/_redirects`:
-   - `/idaho-vin-lookup`, `/utah-vin-lookup`, `/nevada-vin-lookup`, `/kansas-vin-lookup` → `/vin-checker`
-   - `/wisconsin-…`, `/maine-…`, `/washington-dc-…`, `/virginia-…`, `/ohio-…`, `/alabama-…`, `/memphis-…`, `/minneapolis-…` `-stolen-item-check` → `/verify`
-   - `/miami-stolen-item-check` → `/stolen-check-miami` (a real page exists)
-   - `/vs-nicb` → `/nicb-alternative`
-   - `/statistics/stolen-goods`, `/blog/safeorstolen-app-guide`, `/blog/imei-checker-app-comparison`, `/blog/avoid-buying-stolen-items` → nearest real page (confirmed against the router before writing; if no good match exists the slug goes to the 404 stub list instead of an arbitrary target)
+## 4. Answering the index.html preload question directly
 
-   Each gets a static file carrying `noindex, follow`, a canonical to the real
-   destination, and a `meta refresh` — the exact shape that already works for
-   `/ai-imei-check`. Google resolves these as redirects and drops the 404 report.
+- The `media="(min-width: 640px)"` preload of `/images/hero-device.webp` is **not** the problem, and
+  adding a mobile-width preload would **not** help: at 412 px viewport `hero-device.webp` is never
+  requested at all, and no image is the LCP element on mobile. Confirmed — zero `hero` URLs in the
+  mobile network log.
+- The unconditional `/sos-logo.png` preload **is** actively harmful (see above): 266 KiB, duplicated,
+  high priority, not the LCP element.
+- The Inter `swap` technique is fine; `font-display` raised no failures and CLS is 0 everywhere.
 
-2. **Mirror the same slugs into `REDIRECT_MAP`** (`src/core/routing/RedirectRoutes.tsx`)
-   so in-app navigation and hydration land on the same destination and no route
-   falls through to `NotFound`.
+So the "wrong preload for the real mobile LCP image" hypothesis is half-right: the preloads are
+mismatched, but the fix direction is *removing/shrinking* a wasteful preload rather than adding one,
+because the real mobile LCP is text gated on CSS + bandwidth contention.
 
-3. **Build-time assertion**: every stub destination must be a real route in
-   `AppRoutes.tsx` (via `scripts/route-manifest.mjs`), otherwise the build fails.
-   This prevents redirecting to another 404.
+## 5. Diagnosis summary
 
-4. **Wildcard note**: `/*-stolen-item-check` in `_redirects` can never work here —
-   static hosting has no pattern matching. The slug list must be explicit. I will
-   also cross-check the `_redirects` 301 table against the router and port any
-   *other* orphan slug it lists, so this class of bug is closed, not just the 20
-   Google happened to report.
+Site-wide mobile LCP failure is caused by **time-to-first-paint**, not by a slow hero image:
+a single render-blocking stylesheet plus a saturated first request wave (266 KiB duplicated logo
+preload, ~370 KiB of app JS, 171 KiB GTM, 131 KiB third-party font) pushes the first paint —
+which is also the LCP paint — past 2.5 s on throttled mobile. Templated state pages are not
+special; they inherit the same shell cost.
 
-### On the hard-404 requirement
+## Next step
 
-Honest constraint: I cannot make an arbitrary unknown path return HTTP 404 on
-this host. The SPA fallback is Lovable-platform behaviour and is not
-configurable from the repo — `_redirects`, `netlify.toml`, `_headers` and
-`web.config` are all ignored, which the curl evidence above confirms. Known
-slugs get a working redirect (fully solves the GSC report). For genuinely
-unknown paths the realistic options are:
-
-- **A (recommended, default):** leave `dist/index.html` as the homepage document, so unknown paths keep returning 200 with the homepage's *self*-canonical to `/`. Google treats them as duplicates of the homepage rather than indexing them under the wrong URL. No SEO risk to `/`.
-- **B:** make `dist/index.html` the 404 document (noindex, no canonical) so unknown paths signal "not a page" — but this strips the homepage's own baked title, H1 and JSON-LD, since `/` and the fallback are the same file. That is a real SEO downgrade to the most important URL.
-
-I will implement A unless you tell me otherwise.
-
-## Verification before anything is called done
-
-After the change is published I will re-run, against `https://safeorstolen.com`
-with `-A Googlebot`, and paste raw output for:
-
-- each fixed slug: expect `200` + `robots: noindex, follow` + `canonical` pointing at the real destination
-- `/imei-checker`, `/vin-checker`, `/`: expect unchanged self-canonicals and their own titles
-- a random unknown path: current behaviour recorded as-is
-
-Nothing is reported as fixed on editor-preview evidence.
+No fixes proposed in this document, per your instruction. Say the word and I'll come back with a
+prioritized fix plan (with predicted and then re-measured LCP for each change).
