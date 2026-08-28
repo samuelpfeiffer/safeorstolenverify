@@ -516,4 +516,57 @@ function main() {
 }
 
 
+/**
+ * Critical-CSS pass. The single 169 KB stylesheet is render-blocking (~0.6-0.8s
+ * of blocking time measured on mobile). Beasties inlines the CSS actually used
+ * by the prerendered markup and rewrites the <link> to load the full stylesheet
+ * asynchronously (preload + onload swap, <noscript> fallback), so first paint
+ * no longer waits on it.
+ */
+async function inlineCriticalCss() {
+  const { default: Beasties } = await import('beasties');
+  const beasties = new Beasties({
+    path: DIST,
+    publicPath: '/',
+    preload: 'swap',
+    inlineFonts: false,
+    preloadFonts: false,
+    pruneSource: false,
+    reduceInlineStyles: false,
+    mergeStylesheets: false,
+    logLevel: 'silent',
+  });
+
+  const files = [];
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) walk(full);
+      else if (e.name.endsWith('.html')) files.push(full);
+    }
+  })(DIST);
+
+  const cache = new Map();
+  let processed = 0;
+  for (const file of files) {
+    const html = fs.readFileSync(file, 'utf-8');
+    let out = cache.get(html);
+    if (out === undefined) {
+      try {
+        out = await beasties.process(html);
+      } catch (err) {
+        console.warn(`⚠️  critical CSS skipped for ${path.relative(DIST, file)}: ${err.message}`);
+        out = html;
+      }
+      cache.set(html, out);
+    }
+    if (out !== html) {
+      fs.writeFileSync(file, out);
+      processed++;
+    }
+  }
+  console.log(`🎨 Critical CSS inlined into ${processed}/${files.length} documents (full stylesheet now loads async).`);
+}
+
 main();
+await inlineCriticalCss();

@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import QrScanner from '@/components/hero/QrScanner';
+const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 import { Search, ScanLine, CheckCircle, X, Receipt, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
@@ -346,11 +346,13 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
         )}
 
         {isScanning && (
-          <QrScanner
-            isOpen={isScanning}
-            onOpenChange={setIsScanning}
-            onScanSuccess={handleQrScan}
-          />
+          <Suspense fallback={null}>
+            <QrScanner
+              isOpen={isScanning}
+              onOpenChange={setIsScanning}
+              onScanSuccess={handleQrScan}
+            />
+          </Suspense>
         )}
       </CardContent>
     </Card>

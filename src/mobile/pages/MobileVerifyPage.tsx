@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Camera, Search, History } from 'lucide-react';
-import { CameraScanner } from '../components/CameraScanner';
+const CameraScanner = lazy(() => import('../components/CameraScanner').then(m => ({ default: m.CameraScanner })));
 import { useAdvancedVerification } from '@/verification/hooks/useAdvancedVerification';
 import { useNavigate } from 'react-router-dom';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
@@ -56,10 +56,12 @@ const MobileVerifyPage: React.FC = () => {
 
   if (showScanner) {
     return (
-      <CameraScanner
-        onScan={handleScan}
-        onClose={() => setShowScanner(false)}
-      />
+      <Suspense fallback={null}>
+        <CameraScanner
+          onScan={handleScan}
+          onClose={() => setShowScanner(false)}
+        />
+      </Suspense>
     );
   }
 
