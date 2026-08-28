@@ -71,7 +71,7 @@ export const GlobalSEOProvider: React.FC = () => {
       <link rel="preconnect" href="https://img.youtube.com" />
 
       {/* ─── Favicon & Icons ──────────────────────────── */}
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" type="image/png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
