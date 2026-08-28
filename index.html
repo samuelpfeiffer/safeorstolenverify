@@ -23,10 +23,10 @@
  @media (min-width:768px){.hero-stable{min-height:520px;}}
  </style>
  
- <!-- Preload logo to prevent LCP delay -->
- <link rel="preload" href="/sos-logo.png" as="image" type="image/png">
- <link rel="icon" href="/favicon.ico" type="image/x-icon">
- <link rel="icon" href="/sos-logo.png" type="image/png" sizes="512x512">
+  <!-- Lightweight icons (og:image / schema logo still use the full-size /sos-logo.png) -->
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512">
  
  <!-- Static FALLBACK title/description for non-JS crawlers (Bingbot, Slack).
  react-helmet-async overrides both per-page at runtime by matching tag name.
