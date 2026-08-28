@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -13,7 +13,7 @@ import {
   Shield,
   ChevronRight
 } from 'lucide-react';
-import QrScanner from '@/components/hero/QrScanner';
+const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 import { useToast } from '@/hooks/use-toast';
 
 /**
@@ -231,11 +231,13 @@ export const MobileVerificationInterface: React.FC = () => {
 
       {/* QR Scanner Modal */}
       {isScanning && (
-        <QrScanner
-          isOpen={isScanning}
-          onOpenChange={setIsScanning}
-          onScanSuccess={handleQrScan}
-        />
+        <Suspense fallback={null}>
+          <QrScanner
+            isOpen={isScanning}
+            onOpenChange={setIsScanning}
+            onScanSuccess={handleQrScan}
+          />
+        </Suspense>
       )}
     </div>
   );

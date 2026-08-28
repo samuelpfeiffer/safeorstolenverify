@@ -3,7 +3,7 @@
  * All verification happens here with item type cards, scanner, and voice search
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,7 +14,7 @@ import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, 
 import { useSmartDetection } from '@/hooks/useSmartDetection';
 import { mapDetectedTypeToItemType } from '@/lib/aiDetection';
 import { SmartDetectionIndicator } from '@/components/verification/SmartDetectionIndicator';
-import { QRScanner } from '@/components/futuristic/QRScanner';
+const QRScanner = lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -568,11 +568,15 @@ const VerifyPage = () => {
  <SitewideCredibilityBar className="mt-12" />
  
  {/* QR/Barcode Scanner Modal */}
+ {isScannerOpen && (
+ <Suspense fallback={null}>
  <QRScanner
  isOpen={isScannerOpen}
  onScan={handleScanResult}
  onClose={() => setIsScannerOpen(false)}
  />
+ </Suspense>
+ )}
 
  {/* Server-side paywall upgrade modal */}
  <UpgradeModal isOpen={isBlocked} reason={blockReason} onClose={resetGate} />
