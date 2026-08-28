@@ -1,97 +1,122 @@
-# Mobile LCP diagnosis — real Lighthouse measurements (no fixes proposed yet)
+# Mobile LCP fix plan — prioritized (no code changes yet)
 
-Method: Lighthouse 12 (headless Chromium) run from this sandbox against the **live** safeorstolen.com,
-mobile form factor, Moto-G-class screen emulation, simulated 4G throttling + 4x CPU slowdown —
-the same configuration PSI/CrUX-equivalent lab runs use. Six pages, one run each.
+Baseline (live, Lighthouse mobile, simulated 4G + 4x CPU): `/` LCP **10.3 s**, state pages **8.6–8.8 s**,
+`/verify` **9.1 s**, `/imei-checker` **8.7 s**. LCP element is a text paragraph on every page;
+100% of non-TTFB LCP time is **element render delay**. So every fix below targets *time to first paint*.
 
-## 1. Measured results (mobile, throttled)
+Ordered by impact-to-risk ratio (best ratio first).
 
-| Page | Perf | FCP | **LCP** | TBT | CLS | Total bytes |
-|---|---|---|---|---|---|---|
-| `/` | 43 | 5.6 s | **10.3 s** | 680 ms | 0 | 1,812 KiB |
-| `/verify` | 55 | 3.3 s | **9.1 s** | 510 ms | 0 | — |
-| `/imei-checker` | 54 | 4.9 s | **8.7 s** | 380 ms | 0 | — |
-| `/texas-vin-lookup` | 51 | 4.8 s | **8.8 s** | 490 ms | 0 | 1,404 KiB |
-| `/california-license-plate-lookup` | 55 | 4.7 s | **8.6 s** | 350 ms | 0 | — |
-| `/idaho-vin-lookup` (redirect stub) | 49 | 4.7 s | **10.7 s** | 540 ms | 0 | — |
+---
 
-Every page measured is well past 2.5 s. This is not a subset of 48 URLs — it is site-wide,
-and the templated state pages behave identically to each other (8.6–8.8 s), which is consistent
-with GSC grouping ~48 similar URLs together.
+## 1. Drop the unconditional `/sos-logo.png` preload  — highest ratio, lowest risk
 
-Note on the stub page: `/idaho-vin-lookup` client-redirected to `/vin-checker` during the run,
-so its 10.7 s includes the redirect hop. The stub document itself is small; the cost is the
-second full app boot, not the stub.
+**Facts checked:** `public/sos-logo.png` is **271,605 bytes**. `index.html:27` preloads it as an image on
+every page. It is also `rel="icon"` (line 29), `apple-touch-icon` (124), `apple-touch-startup-image` (125),
+and the og:image / schema logo. The only place it renders as a visible `<img>` in the app is
+`src/pages/AffiliateRedirectPage.tsx:50`. The home trace shows it fetched **twice** (266 KiB at 188–331 ms
+as the preload, 266 KiB again at 1211–1247 ms as the icon).
 
-## 2. What the LCP element actually is
+**Change:** remove the `rel="preload"` line, and generate a small dedicated favicon/apple-touch asset
+(e.g. 180×180 and 512×512 PNG, ~10–20 KiB each) instead of pointing icons at the 265 KiB og:image file.
+Keep the full-size file at its current URL untouched for og:image and JSON-LD `logo` (social scrapers and
+schema validators reference it; changing that URL is out of scope).
 
-On **every** page measured, the LCP element is a **text paragraph**, not an image:
+**Expected LCP impact:** frees ~265–530 KiB of high-priority bandwidth in the exact window where the
+render-blocking CSS is downloading. On a simulated 4G link that is roughly **0.7–1.5 s off first paint**.
+This is the single biggest cheap win.
 
-- `/` → `div.min-h-screen > section.relative > div.max-w-3xl > p.text-center`
-  ("Paste any IMEI, VIN, serial number, license plate, or marketplace URL…")
-- `/verify` → `p.text-base` ("AI-powered stolen-item check. Paste an IMEI, VIN…")
-- `/imei-checker` → `section.pt-24 > div.max-w-6xl > div.text-center > p.text-xl`
-- `/texas-vin-lookup` → `section.pt-24 > div.max-w-6xl > p.text-xl`
-- `/california-license-plate-lookup` → same selector as above
+**Risk:** very low. The logo is not the LCP element, so removing the preload cannot delay LCP.
+No SEO/social impact as long as the og:image URL and byte content stay as-is.
 
-Phase breakdown (Lighthouse `lcp-breakdown-insight`, unsimulated trace times):
+---
 
-| Page | TTFB | Load delay | Load time | **Element render delay** |
-|---|---|---|---|---|
-| `/` | 101 ms | n/a (text) | n/a | **2,261 ms** |
-| `/texas-vin-lookup` | 197 ms | n/a | n/a | **1,178 ms** |
-| `/verify` | 210 ms | n/a | n/a | **1,022 ms** |
-| `/imei-checker` | 251 ms | n/a | n/a | **1,201 ms** |
-| `/california-license-plate-lookup` | 232 ms | n/a | n/a | **1,176 ms** |
+## 2. Inline critical CSS / unblock `index.CrPR73mR.css`
 
-There is **no image load-delay/load-time component at all** — 100% of the non-TTFB LCP time is
-render delay. Observed FCP and observed LCP are the *same* timestamp on every page
-(e.g. home: both 2,362 ms), meaning the LCP text paints on the very first paint. So the problem
-is purely "how long until the browser can paint anything", not "which element paints last".
+**Facts checked:** it is the **only** render-blocking resource — 25 KiB, Lighthouse attributes
+**778 ms** blocking on `/` and **621 ms** on `/texas-vin-lookup`. `vite.config.ts:85` already has
+`cssCodeSplit: true`, so this is the Tailwind base bundle, not a per-page file.
 
-## 3. What is delaying first paint
+**Change:** two options, in preference order.
+- **2a (preferred):** inline above-the-fold critical CSS into `<head>` at build time in
+  `scripts/apply-prerender.mjs` (which already post-processes every prerendered page), and load the full
+  stylesheet non-blocking (`media="print"` + `onload`, same technique already used for the Google Fonts
+  links at index.html:111/114), with a `<noscript>` fallback.
+- **2b (fallback if 2a proves fragile):** keep the stylesheet blocking but shrink it — audit Tailwind
+  `content` globs and safelists so unused utilities stop shipping.
 
-Confirmed from the traces:
+**Expected LCP impact:** removes most of the 621–778 ms of blocking → **~0.5–0.8 s off first paint**,
+site-wide, on top of fix 1.
 
-- **Render-blocking stylesheet**: `/assets/index.CrPR73mR.css` (25 KiB) — Lighthouse attributes
-  **778 ms** of blocking on `/` and **621 ms** on `/texas-vin-lookup`. It is the only
-  render-blocking resource.
-- **`/sos-logo.png` is 266 KiB and is fetched twice** — once as the unconditional
-  `<link rel="preload" as="image">` and once again as the actual image (home trace shows a 266 KiB
-  `Image` request at 188–331 ms and a second 266 KiB request at 1211–1247 ms). A high-priority
-  266 KiB PNG preload is competing for the same throttled mobile bandwidth as the render-blocking
-  CSS. This is ~532 KiB of transfer for a logo, on the critical path, on every page.
-- **JS bulk before paint**: `vendor` 129 KiB + `scanner` 113 KiB + `index` 58 KiB + `framer` 37 KiB
-  + `supabase` 31 KiB, all starting ~190–225 ms, plus GTM 171 KiB. Bootup time 2.1 s on home,
-  main-thread work 4.3 s, unused JS ≈ 289 KiB. This does not block first paint directly but it
-  saturates the link and the CPU during the window when CSS and fonts need to land.
-- **Third-party font**: `cdn.gpteng.co/.../CameraPlainVariable.woff2` — **131 KiB**, larger than the
-  Inter subset (47 KiB), fetched on both pages measured.
-- Home carries six ~55–62 KiB card JPEGs (`/images/cards/*.jpg`) all fetched in the first wave.
+**Risk:** medium, and **I am not confident of 2a without live testing.** Getting critical CSS wrong causes
+a visible unstyled flash or a layout shift (current CLS is a clean 0 on all six pages — protecting that is
+a hard requirement). This one must be measured live before and after, per page type, and reverted if CLS
+moves off 0. I would ship fixes 1 and 3 first, re-measure, then attempt this one on its own commit.
 
-## 4. Answering the index.html preload question directly
+---
 
-- The `media="(min-width: 640px)"` preload of `/images/hero-device.webp` is **not** the problem, and
-  adding a mobile-width preload would **not** help: at 412 px viewport `hero-device.webp` is never
-  requested at all, and no image is the LCP element on mobile. Confirmed — zero `hero` URLs in the
-  mobile network log.
-- The unconditional `/sos-logo.png` preload **is** actively harmful (see above): 266 KiB, duplicated,
-  high priority, not the LCP element.
-- The Inter `swap` technique is fine; `font-display` raised no failures and CLS is 0 everywhere.
+## 3. Trim the first JS wave — code-split `scanner`, defer GTM slightly
 
-So the "wrong preload for the real mobile LCP image" hypothesis is half-right: the preloads are
-mismatched, but the fix direction is *removing/shrinking* a wasteful preload rather than adding one,
-because the real mobile LCP is text gated on CSS + bandwidth contention.
+**Facts checked:** first wave on `/` starts ~190 ms: `vendor` 129 KiB, `scanner` **113 KiB**, `index`
+58 KiB, `framer` 37 KiB, `supabase` 31 KiB. Bootup 2.1 s, main-thread work 4.3 s, unused JS ≈ 289 KiB.
+GTM (171 KiB) is **already deferred** — `src/components/seo/GA4Provider.tsx` injects it from a `useEffect`,
+so it starts at ~580–844 ms, after DOMContentLoaded. It does not block paint.
 
-## 5. Diagnosis summary
+**Change:**
+- **3a:** lazy-load the 113 KiB `scanner` chunk (camera/barcode OCR). It cannot be needed at first paint on
+  any page — it is only reachable after a user opts into scanning. Import it dynamically at the point of use.
+- **3b:** confirm `framer` (37 KiB) is only pulled by below-the-fold animated sections and split it the same
+  way if so.
+- **3c:** delay the GTM injection until after the first paint settles (e.g. `requestIdleCallback`, or on
+  first interaction) so its 171 KiB stops competing with fonts and images during the LCP window.
 
-Site-wide mobile LCP failure is caused by **time-to-first-paint**, not by a slow hero image:
-a single render-blocking stylesheet plus a saturated first request wave (266 KiB duplicated logo
-preload, ~370 KiB of app JS, 171 KiB GTM, 131 KiB third-party font) pushes the first paint —
-which is also the LCP paint — past 2.5 s on throttled mobile. Templated state pages are not
-special; they inherit the same shell cost.
+**Expected LCP impact:** 3a alone removes ~113 KiB from the critical wave → **~0.3–0.6 s**. 3c is smaller
+for LCP (it lands post-DCL) but helps TBT (currently 350–680 ms) and Speed Index.
 
-## Next step
+**Risk:**
+- 3a: low-to-medium. Risk is a regression in the scan flow, not in SEO — needs a live click-through test of
+  the camera/scan path on `/verify` after the change.
+- 3c: **needs your call on the business side.** Deferring GTM by ~1–2 s can lose attribution for users who
+  bounce immediately, and it delays any conversion tag that fires on landing. If Stripe conversion tracking
+  or an ad platform tag depends on early firing, I would leave GTM exactly where it is — the LCP payoff is
+  small and it is currently not on the paint path anyway. Tell me whether anything business-critical rides
+  on GTM firing within the first second.
 
-No fixes proposed in this document, per your instruction. Say the word and I'll come back with a
-prioritized fix plan (with predicted and then re-measured LCP for each change).
+---
+
+## 4. The 131 KiB `cdn.gpteng.co` font — lowest ratio, external dependency
+
+**Facts checked:** `CameraPlainVariable.woff2` (131 KiB — larger than the Inter subset at 47 KiB) is pulled
+by `https://cdn.gpteng.co/gptengineer.js`, loaded at **index.html:367**. It is the Lovable editor/badge
+script, not our own asset. We do not control its font URL, and it cannot be subset or self-hosted by us.
+
+**Change options:**
+- **4a:** if the Lovable badge is not wanted on production, turn it off through publish/badge settings —
+  that is the clean way to stop the script and its font on the live domain.
+- **4b:** if the badge stays, leave the script tag alone. Do **not** hand-edit or conditionally strip it in
+  `index.html` — it is platform-managed and stripping it can break in-editor select/preview tooling.
+
+**Expected LCP impact:** modest. The font starts at ~394–704 ms, after the CSS is already in flight, so it
+mostly steals bandwidth rather than blocking paint — call it **0.1–0.3 s**, and only if the script is
+removed entirely.
+
+**Risk:** removing the script affects the Lovable editing experience, not the site's users. This is a
+product decision for you, not a technical one. I would not touch it until fixes 1–3 are measured.
+
+---
+
+## Suggested sequence
+
+1. Ship **fix 1** on its own → re-measure the same six URLs live → expect `/` LCP ~8.8–9.6 s.
+2. Ship **fix 3a** (+3b if confirmed) → re-measure → expect `/` LCP ~8.2–9.0 s.
+3. Attempt **fix 2a** on its own commit, with a CLS check on every page type → this is the one that should
+   push the templated state pages under or near the 2.5 s field threshold over time.
+4. Revisit **3c** and **4** only after seeing where 1–3 land.
+
+## Honest caveats
+
+- Lab LCP and CrUX field LCP are different numbers. Even a large lab improvement takes ~28 days to move the
+  GSC "Page experience" report, since CrUX is a trailing 28-day p75 of real users.
+- These simulated numbers are pessimistic relative to typical real-world mobile; the *relative* deltas
+  between before and after are the trustworthy signal, not the absolute values.
+- I am confident on fixes 1, 3a and 3b. I am **not** confident on fix 2a landing cleanly without live
+  iteration, and 3c/4 are decisions I need from you rather than engineering judgment.
