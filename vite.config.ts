@@ -79,7 +79,6 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('@supabase/supabase-js')) return 'supabase';
             // Split heavy libraries into separate chunks for better code splitting
             if (id.includes('framer-motion')) return 'framer';
-            if (id.includes('qr-scanner') || id.includes('html5-qrcode') || id.includes('@zxing')) return 'scanner';
             if (id.includes('recharts')) return 'charts';
             if (id.includes('three') || id.includes('@react-three')) return 'three';
           }
