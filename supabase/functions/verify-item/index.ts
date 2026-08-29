@@ -8,7 +8,13 @@ interface VerificationRequest {
   identifier: string;
   itemType: string;
   userId?: string;
+  fingerprint?: string;
 }
+
+// Anonymous checks are allowed only if check-gate has just granted this
+// fingerprint a free check (row exists, within the free limit, recent).
+const ANON_FREE_LIMIT = 2;
+const ANON_GRANT_WINDOW_MS = 10 * 60 * 1000;
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -19,47 +25,62 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(origin);
 
   try {
-    // SECURITY: Require authentication for all verification requests
-    const authHeader = req.headers.get('Authorization');
-    if (!authHeader) {
-      console.log('[verify-item] Unauthorized request - no auth header');
-      return new Response(
-        JSON.stringify({ 
-          error: 'Authentication required',
-          code: 'AUTH_REQUIRED',
-          message: 'Please sign in to verify items'
-        }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    // Validate the JWT token
+    console.log('[verify-item] build:anon-gate-v2');
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    const token = authHeader.replace('Bearer ', '');
-    const { data: { user }, error: authError } = await supabaseClient.auth.getUser(token);
-
-    if (authError || !user) {
-      console.log('[verify-item] Invalid token:', authError?.message);
-      return new Response(
-        JSON.stringify({ 
-          error: 'Invalid or expired token',
-          code: 'INVALID_TOKEN',
-          message: 'Your session has expired. Please sign in again.'
-        }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    const { identifier, itemType: rawItemType, userId } = await req.json() as VerificationRequest;
+    const body = await req.json() as VerificationRequest;
+    const { identifier, itemType: rawItemType, fingerprint } = body;
     // Canonicalize item_type at the single server-side write boundary
     const itemType = toCanonicalItemType(rawItemType);
-    
-    // Use authenticated user's ID, ignore client-provided userId for security
-    const authenticatedUserId = user.id;
+
+    // Resolve identity: a valid JWT wins; otherwise fall back to the
+    // fingerprint free-check grant. Client-supplied userId is never trusted.
+    let authenticatedUserId: string | null = null;
+    const authHeader = req.headers.get('Authorization');
+    const anonKey = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
+    const token = authHeader?.replace('Bearer ', '').trim() ?? '';
+
+    if (token && token !== anonKey) {
+      // A non-user token (the project's publishable/anon key) simply resolves to
+      // no user — fall through to the gated anonymous path rather than 401.
+      const { data: { user } } = await supabaseClient.auth.getUser(token);
+      authenticatedUserId = user?.id ?? null;
+    }
+
+    if (!authenticatedUserId) {
+      // Anonymous path — must present a fingerprint that check-gate just cleared.
+      if (!fingerprint || typeof fingerprint !== 'string' || fingerprint.length > 128) {
+        return new Response(
+          JSON.stringify({ error: 'fingerprint required', code: 'GATE_REQUIRED' }),
+          { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+
+      const { data: usage } = await supabaseClient
+        .from('usage_tracking')
+        .select('check_count, last_check_at')
+        .eq('fingerprint', fingerprint)
+        .maybeSingle();
+
+      const lastCheck = usage?.last_check_at ? new Date(usage.last_check_at).getTime() : 0;
+      const fresh = Date.now() - lastCheck < ANON_GRANT_WINDOW_MS;
+      const withinLimit = (usage?.check_count ?? 0) <= ANON_FREE_LIMIT;
+
+      if (!usage || !fresh || !withinLimit) {
+        console.log('[verify-item] Anonymous gate rejected for fingerprint');
+        return new Response(
+          JSON.stringify({
+            error: 'Free check limit reached',
+            code: 'GATE_BLOCKED',
+            message: 'Create a free account to continue verifying items.'
+          }),
+          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
 
     if (!identifier || identifier.trim().length === 0) {
       return new Response(
@@ -68,7 +89,8 @@ serve(async (req) => {
       );
     }
 
-    console.log(`[verify-item] Authenticated verification for user ${authenticatedUserId}, ${itemType}: ${identifier}`);
+    console.log(`[verify-item] Verification for ${authenticatedUserId ?? 'anonymous'}, ${itemType}: ${identifier}`);
+
     const startTime = Date.now();
 
     const cleanIdentifier = identifier.trim().toUpperCase();

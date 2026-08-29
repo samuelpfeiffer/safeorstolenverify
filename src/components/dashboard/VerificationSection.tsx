@@ -101,9 +101,10 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
 
       if (error) throw error;
 
-      if (data?.status === 'stolen' || data?.status === 'lost') {
+      const resolvedStatus = data?.finalStatus ?? data?.status;
+      if (resolvedStatus === 'stolen' || resolvedStatus === 'lost') {
         setVerificationResult({
-          status: data.status,
+          status: resolvedStatus,
           item: {
             name: data.itemType || selectedItemType || 'Item',
             image: '/placeholder.svg',
@@ -111,7 +112,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
             serialNumber: searchQuery
           }
         });
-      } else if (data?.status === 'safe') {
+      } else if (resolvedStatus === 'safe') {
         setVerificationResult({
           status: 'safe',
           item: {
@@ -127,9 +128,9 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
       }
 
       toast({
-        title: data?.status === 'safe' ? "Item Verified Safe" : data?.status === 'stolen' ? "WARNING: Stolen Item" : "Verification Complete",
+        title: resolvedStatus === 'safe' ? "Item Verified Safe" : resolvedStatus === 'stolen' ? "WARNING: Stolen Item" : "Verification Complete",
         description: data?.message || "Verification completed.",
-        variant: data?.status === 'stolen' ? "destructive" : "default",
+        variant: resolvedStatus === 'stolen' ? "destructive" : "default",
       });
 
     } catch (error: any) {
