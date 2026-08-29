@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from './useUnifiedAuth';
+import { useVerifyGate } from './useVerifyGate';
 import { verificationService, type AggregatedResult } from '@/services/VerificationService';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { supabase } from '@/integrations/supabase/client';
@@ -16,6 +17,7 @@ export const useParallelVerification = () => {
   const [result, setResult] = useState<AggregatedResult | null>(null);
   const [progress, setProgress] = useState<string>('');
   const { user } = useUnifiedAuth();
+  const { checkGate } = useVerifyGate();
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -29,40 +31,23 @@ export const useParallelVerification = () => {
       return null;
     }
 
-    // CRITICAL: Require authentication
-    if (!user?.id) {
+    // Free-check gate (2 free checks for anonymous + free users, then upgrade).
+    // Same server-side gate used by /verify — no hard block to /pricing.
+    const allowed = await checkGate();
+    if (!allowed) {
       toast({
-        title: "Sign Up Required",
-        description: "Create an account to verify items. $0.99/check or $10/month unlimited.",
-        variant: "default",
+        title: "Free checks used",
+        description: user?.id
+          ? "Subscribe for $10/month for unlimited verifications, or pay $0.99 per check."
+          : "Create a free account to keep verifying, or upgrade for unlimited checks.",
+        variant: "destructive",
       });
-      navigate('/auth', { state: { redirect: '/verify', pendingSearch: identifier } });
+      navigate(user?.id ? '/pricing' : '/auth', {
+        state: { reason: 'free-limit', redirect: '/verify', pendingSearch: identifier },
+      });
       return null;
     }
 
-    // Check subscription status - 2 free checks, then subscription required
-    try {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('subscription_tier')
-        .eq('id', user.id)
-        .single();
-
-      const isSubscribed = profile?.subscription_tier && 
-        !['free', 'starter', null, ''].includes(profile.subscription_tier);
-
-      if (!isSubscribed) {
-        toast({
-          title: "Subscription Required",
-          description: "Subscribe for $10/month for unlimited verifications, or pay $0.99 per check.",
-          variant: "destructive",
-        });
-        navigate('/pricing', { state: { reason: 'no-subscription' } });
-        return null;
-      }
-    } catch (profileError) {
-      console.error('[useParallelVerification] Profile check error:', profileError);
-    }
 
     setIsLoading(true);
     setResult(null);

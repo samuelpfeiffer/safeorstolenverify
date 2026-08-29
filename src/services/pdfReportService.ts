@@ -38,257 +38,301 @@ const generateCertificateId = (): string => {
   ).join('-');
 };
 
+/**
+ * Vector glyphs. jsPDF's built-in Helvetica has no Unicode coverage, so
+ * characters like ✓ / ✗ / ⚠ render as stray apostrophes. Draw them instead.
+ */
+const drawCheck = (doc: jsPDF, x: number, y: number, size: number, color: [number, number, number]) => {
+  doc.setDrawColor(...color);
+  doc.setLineWidth(size * 0.16);
+  doc.line(x, y - size * 0.15, x + size * 0.35, y + size * 0.25);
+  doc.line(x + size * 0.35, y + size * 0.25, x + size, y - size * 0.7);
+};
+
+const drawCross = (doc: jsPDF, x: number, y: number, size: number, color: [number, number, number]) => {
+  doc.setDrawColor(...color);
+  doc.setLineWidth(size * 0.16);
+  doc.line(x, y - size * 0.7, x + size, y + size * 0.25);
+  doc.line(x + size, y - size * 0.7, x, y + size * 0.25);
+};
+
+const drawBang = (doc: jsPDF, x: number, y: number, size: number, color: [number, number, number]) => {
+  doc.setDrawColor(...color);
+  doc.setFillColor(...color);
+  doc.setLineWidth(size * 0.16);
+  doc.line(x + size / 2, y - size * 0.7, x + size / 2, y - size * 0.05);
+  doc.circle(x + size / 2, y + size * 0.2, size * 0.09, 'F');
+};
+
+
 export const generateVerificationPDF = ({ result, identifier, itemType }: PDFReportOptions): void => {
   const doc = new jsPDF();
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
   const certificateId = generateCertificateId();
   const verificationDate = new Date();
-  
+
+  // Reserved footer band — nothing above may intrude into it.
+  const FOOTER_TOP = pageHeight - 52;
+
   // === DECORATIVE BORDER ===
-  // Outer border
   doc.setDrawColor(...BRAND_ORANGE);
   doc.setLineWidth(3);
   doc.rect(10, 10, pageWidth - 20, pageHeight - 20);
-  
-  // Inner decorative border
+
   doc.setDrawColor(...BRAND_DARK);
   doc.setLineWidth(0.5);
   doc.rect(15, 15, pageWidth - 30, pageHeight - 30);
-  
+
   // Corner decorations
-  const cornerSize = 15;
   [[20, 20], [pageWidth - 20, 20], [20, pageHeight - 20], [pageWidth - 20, pageHeight - 20]].forEach(([x, y]) => {
     doc.setFillColor(...BRAND_ORANGE);
     doc.circle(x, y, 3, 'F');
   });
 
-  let y = 35;
+  let y = 28;
 
   // === HEADER SECTION ===
-  // Logo area with brand styling
   doc.setFillColor(...BRAND_DARK);
   doc.roundedRect(pageWidth / 2 - 45, y - 8, 90, 22, 4, 4, 'F');
-  
+
   doc.setTextColor(...WHITE);
   doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
   doc.text('SafeOrStolen', pageWidth / 2, y + 5, { align: 'center' });
-  
-  y += 28;
-  
+
+  y += 24;
+
   // Certificate Title
   doc.setTextColor(...BRAND_DARK);
-  doc.setFontSize(28);
+  doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
   doc.text('CERTIFICATE OF VERIFICATION', pageWidth / 2, y, { align: 'center' });
-  
-  y += 8;
-  
-  // Decorative line under title
+
+  y += 7;
+
   doc.setDrawColor(...BRAND_ORANGE);
   doc.setLineWidth(2);
   doc.line(40, y, pageWidth - 40, y);
-  
-  y += 20;
+
+  y += 10;
 
   // === STATUS BANNER ===
   const statusColor = getStatusColor(result.finalStatus);
   doc.setFillColor(...statusColor);
-  doc.roundedRect(30, y, pageWidth - 60, 35, 5, 5, 'F');
-  
-  doc.setTextColor(...WHITE);
-  doc.setFontSize(20);
-  doc.setFont('helvetica', 'bold');
-  
-  const statusIcon = result.finalStatus === 'safe' ? '✓' : result.finalStatus === 'stolen' ? '✗' : '?';
-  const statusText = result.finalStatus === 'safe' 
-    ? 'VERIFIED SAFE' 
-    : result.finalStatus === 'stolen' 
-    ? 'STOLEN ITEM DETECTED' 
+  doc.roundedRect(30, y, pageWidth - 60, 24, 5, 5, 'F');
+
+  const statusText =
+    result.finalStatus === 'safe' ? 'VERIFIED SAFE'
+    : result.finalStatus === 'stolen' ? 'STOLEN ITEM DETECTED'
+    : result.finalStatus === 'lost' ? 'REPORTED LOST'
     : 'VERIFICATION INCONCLUSIVE';
-  
-  doc.text(`${statusIcon}  ${statusText}`, pageWidth / 2, y + 22, { align: 'center' });
-  
-  y += 50;
+
+  doc.setTextColor(...WHITE);
+  doc.setFontSize(18);
+  doc.setFont('helvetica', 'bold');
+
+  // Centre the glyph + label as one unit (vector glyph, never a Unicode char).
+  const labelWidth = doc.getTextWidth(statusText);
+  const glyphSize = 6;
+  const groupStart = pageWidth / 2 - (labelWidth + glyphSize + 5) / 2;
+  const glyphBaseline = y + 15;
+
+  if (result.finalStatus === 'safe') drawCheck(doc, groupStart, glyphBaseline, glyphSize, WHITE);
+  else if (result.finalStatus === 'stolen') drawCross(doc, groupStart, glyphBaseline, glyphSize, WHITE);
+  else drawBang(doc, groupStart, glyphBaseline, glyphSize, WHITE);
+
+  doc.text(statusText, groupStart + glyphSize + 5, y + 16);
+
+  y += 30;
 
   // === CERTIFICATION STATEMENT ===
   doc.setTextColor(...BRAND_DARK);
-  doc.setFontSize(12);
+  doc.setFontSize(11);
   doc.setFont('helvetica', 'normal');
-  
-  const statement = result.finalStatus === 'safe'
-    ? 'This is to certify that the item described below has been verified against multiple databases and no theft records were found at the time of verification.'
-    : result.finalStatus === 'stolen'
-    ? 'WARNING: This item has been flagged as stolen in one or more databases. Do not proceed with any transaction involving this item.'
-    : 'This item could not be definitively verified. Exercise caution and perform additional due diligence before proceeding.';
-  
+
+  const statement =
+    result.finalStatus === 'safe'
+      ? 'This is to certify that the item described below was checked against the databases listed and no theft records were found at the time of verification.'
+      : result.finalStatus === 'stolen'
+      ? 'WARNING: This item has been flagged as stolen in one or more of the databases listed below. Do not proceed with any transaction involving this item.'
+      : result.finalStatus === 'lost'
+      ? 'This item has been reported lost in one or more of the databases listed below. Contact the original owner before proceeding.'
+      : 'This item could not be definitively verified. Exercise caution and perform additional due diligence before proceeding.';
+
   const statementLines = doc.splitTextToSize(statement, pageWidth - 80);
   doc.text(statementLines, pageWidth / 2, y, { align: 'center', maxWidth: pageWidth - 80 });
-  
-  y += statementLines.length * 7 + 15;
+
+  y += statementLines.length * 6 + 8;
 
   // === ITEM DETAILS BOX ===
+  const detailsBoxTop = y;
+  const detailsBoxHeight = 46;
   doc.setFillColor(...GRAY_LIGHT);
-  doc.roundedRect(30, y, pageWidth - 60, 60, 3, 3, 'F');
-  
+  doc.roundedRect(30, detailsBoxTop, pageWidth - 60, detailsBoxHeight, 3, 3, 'F');
   doc.setDrawColor(...GRAY_MEDIUM);
   doc.setLineWidth(0.5);
-  doc.roundedRect(30, y, pageWidth - 60, 60, 3, 3, 'S');
-  
-  y += 12;
-  
+  doc.roundedRect(30, detailsBoxTop, pageWidth - 60, detailsBoxHeight, 3, 3, 'S');
+
+  y = detailsBoxTop + 10;
+
   doc.setTextColor(...BRAND_DARK);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'bold');
   doc.text('ITEM DETAILS', 40, y);
-  
-  y += 12;
-  doc.setFont('helvetica', 'normal');
+
+  y += 11;
   doc.setFontSize(10);
-  
-  // Two column layout for details
-  const leftCol = 45;
-  const rightCol = pageWidth / 2 + 10;
-  
+
+  const leftCol = 40;
+  const rightCol = pageWidth / 2 + 5;
+
   doc.setFont('helvetica', 'bold');
   doc.text('Identifier:', leftCol, y);
   doc.setFont('helvetica', 'normal');
-  doc.text(identifier, leftCol + 28, y);
-  
+  doc.text(String(identifier).slice(0, 32), leftCol + 24, y);
+
   if (itemType) {
     doc.setFont('helvetica', 'bold');
     doc.text('Item Type:', rightCol, y);
     doc.setFont('helvetica', 'normal');
-    doc.text(itemType.charAt(0).toUpperCase() + itemType.slice(1), rightCol + 25, y);
+    doc.text(itemType.charAt(0).toUpperCase() + itemType.slice(1), rightCol + 24, y);
   }
-  
-  y += 12;
-  
+
+  y += 11;
+
   doc.setFont('helvetica', 'bold');
   doc.text('Status:', leftCol, y);
-  doc.setFont('helvetica', 'normal');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(...statusColor);
-  doc.text(result.finalStatus.toUpperCase(), leftCol + 18, y);
+  doc.text(result.finalStatus.toUpperCase(), leftCol + 24, y);
   doc.setTextColor(...BRAND_DARK);
-  
+
   doc.setFont('helvetica', 'bold');
-  doc.text('Confidence:', rightCol, y);
+  doc.text('Risk Level:', rightCol, y);
   doc.setFont('helvetica', 'normal');
-  doc.text(`${result.confidence}%`, rightCol + 27, y);
-  
-  y += 12;
-  
+  doc.text(result.riskLevel?.toUpperCase() || 'N/A', rightCol + 24, y);
+
+  y += 11;
+
   doc.setFont('helvetica', 'bold');
-  doc.text('Risk Level:', leftCol, y);
+  doc.text('Sources Checked:', leftCol, y);
   doc.setFont('helvetica', 'normal');
-  doc.text(result.riskLevel?.toUpperCase() || 'N/A', leftCol + 25, y);
-  
-  y += 25;
+  const allSources = result.checkedSources?.length
+    ? result.checkedSources
+    : (result.providers?.map(p => p.provider) ?? []);
+  doc.text(String(allSources.length), leftCol + 36, y);
+
+  doc.setFont('helvetica', 'bold');
+  doc.text('Verified:', rightCol, y);
+  doc.setFont('helvetica', 'normal');
+  doc.text(verificationDate.toLocaleDateString('en-US'), rightCol + 24, y);
+
+  y = detailsBoxTop + detailsBoxHeight + 10;
 
   // === DATABASES CHECKED ===
   doc.setTextColor(...BRAND_DARK);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'bold');
   doc.text('DATABASES VERIFIED', 40, y);
-  
+
   y += 8;
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
-  
-  const sources = result.checkedSources || 
-    result.providers?.map(p => p.provider) || 
-    ['Stolen property reports from all 50 states Database', 'Insurance Records', 'Law Enforcement Networks', 'Community Reports'];
-  
-  // Display sources in a grid
+
+  const metaBoxHeightReserve = 36; // meta box (24) + gaps
   const sourcesPerRow = 2;
-  const sourceWidth = (pageWidth - 80) / sourcesPerRow;
-  
-  sources.slice(0, 6).forEach((source, index) => {
+  const colWidth = (pageWidth - 80) / sourcesPerRow;
+  const rowHeight = 6;
+  // Cap rows so the list can never grow into the footer band.
+  const maxRows = Math.max(1, Math.floor((FOOTER_TOP - metaBoxHeightReserve - y) / rowHeight));
+  const maxSources = maxRows * sourcesPerRow;
+  const shown = allSources.slice(0, maxSources);
+
+  shown.forEach((source, index) => {
     const col = index % sourcesPerRow;
     const row = Math.floor(index / sourcesPerRow);
-    const xPos = 45 + col * sourceWidth;
-    const yPos = y + row * 8;
-    
-    doc.setTextColor(...SAFE_GREEN);
-    doc.text('✓', xPos, yPos);
-    doc.setTextColor(...BRAND_DARK);
-    doc.text(source, xPos + 8, yPos);
-  });
-  
-  y += Math.ceil(sources.length / sourcesPerRow) * 8 + 15;
+    const xPos = 42 + col * colWidth;
+    const yPos = y + row * rowHeight;
 
-  // === VERIFICATION DETAILS ===
+    drawCheck(doc, xPos, yPos - 1, 3, SAFE_GREEN);
+    doc.setTextColor(...BRAND_DARK);
+    doc.text(String(source).slice(0, 38), xPos + 6, yPos);
+  });
+
+  y += Math.max(1, Math.ceil(shown.length / sourcesPerRow)) * rowHeight;
+
+  if (allSources.length > shown.length) {
+    doc.setTextColor(...GRAY_MEDIUM);
+    doc.text(`+ ${allSources.length - shown.length} more source(s)`, 42, y + 1);
+    y += 6;
+  }
+
+  // === CERTIFICATE META BOX === (pinned directly above the footer band)
+  const metaBoxHeight = 24;
+  const metaBoxTop = Math.max(y + 6, FOOTER_TOP - metaBoxHeight - 10);
+
   doc.setFillColor(...WHITE);
   doc.setDrawColor(...GRAY_MEDIUM);
-  doc.roundedRect(30, y, pageWidth - 60, 35, 3, 3, 'FD');
-  
-  y += 10;
-  
-  // Certificate ID and Date in a professional layout
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'bold');
-  doc.setTextColor(...GRAY_MEDIUM);
-  doc.text('CERTIFICATE ID', 45, y);
-  doc.text('VERIFICATION DATE', pageWidth / 2, y);
-  doc.text('VALID FOR', pageWidth - 65, y);
-  
-  y += 8;
-  doc.setFontSize(11);
-  doc.setTextColor(...BRAND_DARK);
-  doc.text(certificateId, 45, y);
-  doc.text(verificationDate.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  }), pageWidth / 2, y);
-  doc.text('30 Days', pageWidth - 65, y);
+  doc.setLineWidth(0.5);
+  doc.roundedRect(30, metaBoxTop, pageWidth - 60, metaBoxHeight, 3, 3, 'FD');
 
-  // === SIGNATURE AREA ===
-  y = pageHeight - 60;
-  
-  // Decorative seal
+  // Seal sits on the box's left edge — clear of the sources list.
   doc.setFillColor(...BRAND_ORANGE);
-  doc.circle(pageWidth / 2, y - 5, 12, 'F');
+  doc.circle(44, metaBoxTop + metaBoxHeight / 2, 8, 'F');
   doc.setFillColor(...WHITE);
-  doc.circle(pageWidth / 2, y - 5, 8, 'F');
+  doc.circle(44, metaBoxTop + metaBoxHeight / 2, 5.5, 'F');
   doc.setTextColor(...BRAND_ORANGE);
-  doc.setFontSize(8);
+  doc.setFontSize(7);
   doc.setFont('helvetica', 'bold');
-  doc.text('SOS', pageWidth / 2, y - 3, { align: 'center' });
-  
-  y += 10;
-  
-  // Digital verification text
-  doc.setTextColor(...GRAY_MEDIUM);
-  doc.setFontSize(8);
-  doc.setFont('helvetica', 'normal');
-  doc.text('Digitally verified by SafeOrStolen Verification System', pageWidth / 2, y, { align: 'center' });
-  
-  y += 6;
-  doc.text(`Verification ID: ${result.identifier?.slice(0, 12) || certificateId}`, pageWidth / 2, y, { align: 'center' });
+  doc.text('SOS', 44, metaBoxTop + metaBoxHeight / 2 + 2, { align: 'center' });
 
-  // === FOOTER ===
-  y = pageHeight - 25;
-  
+  const metaCols: Array<[string, string]> = [
+    ['CERTIFICATE ID', certificateId],
+    ['VERIFICATION DATE', verificationDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })],
+    ['VALID FOR', '30 Days'],
+  ];
+  const metaStart = 58;
+  const metaWidth = (pageWidth - 30 - metaStart) / metaCols.length;
+
+  metaCols.forEach(([label, value], i) => {
+    const x = metaStart + i * metaWidth;
+    doc.setFontSize(7);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...GRAY_MEDIUM);
+    doc.text(label, x, metaBoxTop + 9);
+    doc.setFontSize(10);
+    doc.setTextColor(...BRAND_DARK);
+    doc.text(value, x, metaBoxTop + 17);
+  });
+
+  // === FOOTER === (entirely inside the inner border)
+  let fy = FOOTER_TOP;
+
   doc.setDrawColor(...GRAY_MEDIUM);
   doc.setLineWidth(0.3);
-  doc.line(30, y - 5, pageWidth - 30, y - 5);
-  
+  doc.line(30, fy, pageWidth - 30, fy);
+
+  fy += 7;
   doc.setTextColor(...GRAY_MEDIUM);
   doc.setFontSize(7);
-  doc.text('This certificate is provided for informational purposes only. SafeOrStolen makes no guarantees regarding', pageWidth / 2, y, { align: 'center' });
-  doc.text('the completeness of database records. Always verify with official sources before completing any transaction.', pageWidth / 2, y + 5, { align: 'center' });
-  
-  y += 12;
-  doc.setTextColor(...BRAND_ORANGE);
-  doc.setFont('helvetica', 'bold');
-  doc.text('www.SafeOrStolen.com', pageWidth / 2, y, { align: 'center' });
+  doc.setFont('helvetica', 'normal');
+  doc.text('Digitally generated by the SafeOrStolen Verification System. Provided for informational purposes only.', pageWidth / 2, fy, { align: 'center' });
+  fy += 5;
+  doc.text('Not all thefts are reported, so no service can guarantee 100% accuracy. Always verify with official', pageWidth / 2, fy, { align: 'center' });
+  fy += 5;
+  doc.text('sources and contact local law enforcement before completing a high-value transaction.', pageWidth / 2, fy, { align: 'center' });
 
-  // Save the PDF
+  fy += 9;
+  doc.setTextColor(...BRAND_ORANGE);
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'bold');
+  doc.text('www.SafeOrStolen.com', pageWidth / 2, fy, { align: 'center' });
+
   const filename = `SafeOrStolen-Certificate-${certificateId}.pdf`;
   doc.save(filename);
 };
+
 
 export const generateStolenReportPDF = (item: {
   id: string;
@@ -326,7 +370,13 @@ export const generateStolenReportPDF = (item: {
   
   doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
-  doc.text('⚠ STOLEN ITEM REPORT ⚠', pageWidth / 2, 35, { align: 'center' });
+  doc.text('STOLEN ITEM REPORT', pageWidth / 2, 35, { align: 'center' });
+  {
+    const w = doc.getTextWidth('STOLEN ITEM REPORT');
+    drawBang(doc, pageWidth / 2 - w / 2 - 14, 33, 8, WHITE);
+    drawBang(doc, pageWidth / 2 + w / 2 + 6, 33, 8, WHITE);
+  }
+
   
   y = 65;
 

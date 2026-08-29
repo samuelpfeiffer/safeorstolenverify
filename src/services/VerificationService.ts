@@ -11,6 +11,14 @@ export interface VerificationRequest {
   userId?: string;
 }
 
+const getFingerprint = (): string | undefined => {
+  try {
+    return localStorage.getItem('sos_fp_v2') ?? undefined;
+  } catch {
+    return undefined;
+  }
+};
+
 export interface ProviderResult {
   provider: string;
   status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
@@ -47,6 +55,7 @@ class VerificationService {
           identifier: identifier.trim(),
           itemType,
           userId,
+          fingerprint: getFingerprint(),
         }
       });
 

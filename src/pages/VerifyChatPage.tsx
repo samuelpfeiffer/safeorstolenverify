@@ -33,7 +33,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
-import { useVerifyGate } from '@/hooks/useVerifyGate';
+import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
@@ -256,29 +256,28 @@ const VerifyChatPage: React.FC = () => {
  const cleanedIdentifier = detect?.extractedValue || identifier;
  const confidence = detect?.confidence || 50;
 
- if (!user) {
- updateMessage(assistantId, {
- loading: false,
- content: `I detected this looks like a **${itemType.toUpperCase()}** (${confidence}% confidence). To run a full verification across 100+ databases, [sign in free](/auth?redirect=/verify) — you get **2 free checks**.`,
- suggestions: ['What is an IMEI?', 'How do I find a VIN?', 'Pricing'],
- });
- return;
- }
+        const allowed = await checkGate();
+        if (!allowed) {
+          updateMessage(assistantId, {
+            loading: false,
+            content: user
+              ? `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`
+              : `You've used your 2 free checks. [Create a free account](/auth?redirect=/verify) to keep verifying, or **Upgrade to Unlimited at $10/mo**.`,
+            suggestions: ['Why upgrade?', 'Compare plans'],
+          });
+          return;
+        }
 
- const allowed = await checkGate();
- if (!allowed) {
- updateMessage(assistantId, {
- loading: false,
- content: `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`,
- suggestions: ['Why upgrade?', 'Compare plans'],
- });
- return;
- }
+        const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
+          body: {
+            identifier: cleanedIdentifier,
+            itemType,
+            userId: user?.id ?? null,
+            fingerprint: getOrCreateFingerprint(),
+          },
+        });
+        if (verifyErr) throw verifyErr;
 
- const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
- body: { identifier: cleanedIdentifier, itemType, userId: user.id },
- });
- if (verifyErr) throw verifyErr;
 
  const result: ChatVerifyResult = {
  status: verify?.finalStatus || 'unknown',
@@ -533,7 +532,7 @@ const VerifyChatPage: React.FC = () => {
 
  <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 font-mono">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- 100+ DATABASES · CLAUDE 4.5
+ 100+ DATABASES · AI-POWERED
  </p>
  </div>
  </div>
