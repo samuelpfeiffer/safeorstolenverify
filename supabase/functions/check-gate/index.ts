@@ -232,7 +232,8 @@ serve(async (req) => {
       JSON.stringify({
         allowed: true,
         checks_remaining: FREE_LIMIT - newCount,
-        plan: 'free'
+        plan: 'free',
+        build: 'anon-gate-v2'
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
