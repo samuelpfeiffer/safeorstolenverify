@@ -4,8 +4,9 @@ project_id = "lxrdzbknktwlubbmlsqe"
 # VERIFICATION FUNCTIONS - Public with rate limiting
 # =====================================================
 [functions.verify-item]
-# Anonymous free checks are gated server-side via fingerprint + check-gate
-verify_jwt = false
+# Gateway accepts the publishable anon JWT; the function itself gates anonymous
+# free checks server-side via fingerprint + check-gate.
+verify_jwt = true
 
 [functions.verify-bikeindex]
 verify_jwt = false
