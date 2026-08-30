@@ -8,6 +8,10 @@ project_id = "lxrdzbknktwlubbmlsqe"
 # free checks server-side via fingerprint + check-gate.
 verify_jwt = true
 
+[functions.verify-item-public]
+# Same gating as verify-item; the anon path is validated against check-gate.
+verify_jwt = true
+
 [functions.verify-bikeindex]
 verify_jwt = false
 
