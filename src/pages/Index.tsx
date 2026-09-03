@@ -9,6 +9,8 @@ import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
 
+
+
 // Card images served from /public for smaller JS bundle (no ES module overhead)
 const cardFirearms = '/images/cards/firearms-check.jpg';
 const cardVehicle = '/images/cards/vehicle-vin.jpg';
@@ -343,10 +345,27 @@ const Index = () => {
  {/* ── HOW IT WORKS ────────────────────────────────── */}
  <section className="py-16 px-4">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-black text-foreground text-center mb-12">
+ <h2 className="text-3xl font-black text-foreground text-center mb-8">
  3 Steps. 3 Seconds. Full Protection.
  </h2>
+ <figure className="mb-12">
+ <div className="rounded-2xl overflow-hidden border border-border bg-card">
+ <img
+ src="/images/item-verified-result.jpg"
+ alt="A person reviewing a SafeOrStolen 'Item Verified' result on a laptop and a phone at the same time, showing the item's serial number, brand, and product details with a View Details button"
+ width={960}
+ height={640}
+ loading="lazy"
+ decoding="async"
+ className="w-full h-auto block"
+ />
+ </div>
+ <figcaption className="text-center text-xs text-muted-foreground mt-3">
+ A completed verification result, viewable on desktop and mobile — share it with your buyer in seconds.
+ </figcaption>
+ </figure>
  <div className="grid md:grid-cols-3 gap-8">
+
  {[
  {
  n: '1',
