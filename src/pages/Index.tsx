@@ -8,7 +8,7 @@ import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
-import itemVerifiedResult from '@/assets/item-verified-result.jpg.asset.json';
+
 
 
 // Card images served from /public for smaller JS bundle (no ES module overhead)
@@ -351,7 +351,7 @@ const Index = () => {
  <figure className="mb-12">
  <div className="rounded-2xl overflow-hidden border border-border bg-card">
  <img
- src={itemVerifiedResult.url}
+ src="/images/item-verified-result.jpg"
  alt="A person reviewing a SafeOrStolen 'Item Verified' result on a laptop and a phone at the same time, showing the item's serial number, brand, and product details with a View Details button"
  width={960}
  height={640}
