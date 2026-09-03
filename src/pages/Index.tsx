@@ -8,6 +8,8 @@ import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
+import itemVerifiedResult from '@/assets/item-verified-result.jpg.asset.json';
+
 
 // Card images served from /public for smaller JS bundle (no ES module overhead)
 const cardFirearms = '/images/cards/firearms-check.jpg';
