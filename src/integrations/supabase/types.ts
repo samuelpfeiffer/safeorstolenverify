@@ -1487,26 +1487,32 @@ export type Database = {
       verification_searches: {
         Row: {
           created_at: string
+          fingerprint: string | null
           id: string
           item_type: string
           result: Json | null
           serial_number: string
+          share_token: string
           user_id: string | null
         }
         Insert: {
           created_at?: string
+          fingerprint?: string | null
           id?: string
           item_type: string
           result?: Json | null
           serial_number: string
+          share_token?: string
           user_id?: string | null
         }
         Update: {
           created_at?: string
+          fingerprint?: string | null
           id?: string
           item_type?: string
           result?: Json | null
           serial_number?: string
+          share_token?: string
           user_id?: string | null
         }
         Relationships: []
