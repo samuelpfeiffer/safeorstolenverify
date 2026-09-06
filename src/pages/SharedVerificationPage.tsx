@@ -141,7 +141,7 @@ const SharedVerificationPage = () => {
         <PageSEO
           title="Shared Verification Result | SafeOrStolen"
           description="View a shared SafeOrStolen verification result."
-          canonicalUrl="https://safeorstolen.com/verification/shared"
+          canonical="https://safeorstolen.com/verification/shared"
           noIndex
         />
         <Loader2 className="w-6 h-6 animate-spin text-primary" />
@@ -156,7 +156,7 @@ const SharedVerificationPage = () => {
         <PageSEO
           title="Shared Verification Result | SafeOrStolen"
           description="View a shared SafeOrStolen verification result."
-          canonicalUrl="https://safeorstolen.com/verification/shared"
+          canonical="https://safeorstolen.com/verification/shared"
           noIndex
         />
         <div className="w-full max-w-md text-center">
@@ -183,7 +183,7 @@ const SharedVerificationPage = () => {
       <PageSEO
         title="Shared Verification Result | SafeOrStolen"
         description="View a shared SafeOrStolen verification result."
-        canonicalUrl="https://safeorstolen.com/verification/shared"
+        canonical="https://safeorstolen.com/verification/shared"
         noIndex
       />
 
