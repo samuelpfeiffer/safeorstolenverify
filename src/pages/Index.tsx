@@ -343,7 +343,7 @@ const Index = () => {
  <SampleResultPreview />
 
  {/* ── HOW IT WORKS ────────────────────────────────── */}
- <section className="py-16 px-4">
+ <section className="py-16 px-4" data-deploy-marker="deploy-probe-20260906">
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-black text-foreground text-center mb-8">
  3 Steps. 3 Seconds. Full Protection.
