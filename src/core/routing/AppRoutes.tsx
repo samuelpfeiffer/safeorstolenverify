@@ -367,6 +367,7 @@ const AIOrchestrator = lazy(() => import('@/pages/admin/AIOrchestrator'));
 const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
 const StolenItemDetailPage = lazy(() => import('@/pages/StolenItemDetailPage'));
 const SharedReportPage = lazy(() => import('@/pages/SharedReportPage'));
+const SharedVerificationPage = lazy(() => import('@/pages/SharedVerificationPage'));
 
 // Guide Pages
 const EbayBuyerProtection = lazy(() => import('@/pages/guides/EbayBuyerProtection'));
