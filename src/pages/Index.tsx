@@ -8,6 +8,8 @@ import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
+import demoVideoAsset from '@/assets/video/safeorstolen-demo.mp4.asset.json';
+import demoPosterAsset from '@/assets/video/safeorstolen-demo-poster.jpg.asset.json';
 
 
 
