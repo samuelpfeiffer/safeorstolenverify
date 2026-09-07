@@ -424,6 +424,7 @@ export const AppRoutes = () => {
         <Route path="/stolen-database" element={<StolenDatabasePage />} />
         <Route path="/item/:slug" element={<StolenItemDetailPage />} />
         <Route path="/shared/:shareCode" element={<SharedReportPage />} />
+        <Route path="/verification/shared/:token" element={<SharedVerificationPage />} />
 
         {/* ITEM LANDING PAGES */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
