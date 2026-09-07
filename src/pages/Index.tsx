@@ -419,6 +419,7 @@ const Index = () => {
           >
             <video
               className="block w-full h-auto"
+              style={{ aspectRatio: '9 / 16' }}
               controls
               playsInline
               preload="none"
