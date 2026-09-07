@@ -367,6 +367,7 @@ const AIOrchestrator = lazy(() => import('@/pages/admin/AIOrchestrator'));
 const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
 const StolenItemDetailPage = lazy(() => import('@/pages/StolenItemDetailPage'));
 const SharedReportPage = lazy(() => import('@/pages/SharedReportPage'));
+const SharedVerificationPage = lazy(() => import('@/pages/SharedVerificationPage'));
 
 // Guide Pages
 const EbayBuyerProtection = lazy(() => import('@/pages/guides/EbayBuyerProtection'));
@@ -423,6 +424,7 @@ export const AppRoutes = () => {
         <Route path="/stolen-database" element={<StolenDatabasePage />} />
         <Route path="/item/:slug" element={<StolenItemDetailPage />} />
         <Route path="/shared/:shareCode" element={<SharedReportPage />} />
+        <Route path="/verification/shared/:token" element={<SharedVerificationPage />} />
 
         {/* ITEM LANDING PAGES */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
