@@ -8,6 +8,8 @@ import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { useState } from 'react';
+import demoVideoAsset from '@/assets/video/safeorstolen-demo.mp4.asset.json';
+import demoPosterAsset from '@/assets/video/safeorstolen-demo-poster.jpg.asset.json';
 
 
 
@@ -393,9 +395,59 @@ const Index = () => {
  ))}
  </div>
  </div>
- </section>
+  </section>
 
- {/* ── FOR SELLERS SECTION ─────────────────────────── */}
+  {/* ── DEMO VIDEO ─────────────────────────────────── */}
+  <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/20 border-y border-border">
+    <div className="max-w-5xl mx-auto">
+      <div className="text-center mb-10">
+        <div className="text-primary text-sm font-bold uppercase tracking-widest mb-2">See It In Action</div>
+        <h2 className="text-3xl font-black text-foreground mb-3">
+          Watch SafeOrStolen Verify an Item in Real Time
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          A 107-second walkthrough of the AI-powered verification flow — from identifier entry to a
+          clear Safe / Stolen verdict and shareable result. No sign-up required to watch.
+        </p>
+      </div>
+
+      <div className="flex justify-center">
+        <figure className="w-full max-w-[380px]">
+          <div
+            className="relative rounded-[1.75rem] overflow-hidden border border-primary/30 bg-card shadow-2xl"
+            style={{ boxShadow: '0 0 40px -8px hsl(25 92% 53% / 0.35), 0 20px 50px -20px rgba(0,0,0,0.7)' }}
+          >
+            <video
+              className="block w-full h-auto"
+              style={{ aspectRatio: '9 / 16' }}
+              controls
+              playsInline
+              preload="none"
+              poster={demoPosterAsset.url}
+              aria-label="SafeOrStolen verification demo video"
+            >
+              <source src={demoVideoAsset.url} type="video/mp4" />
+              Your browser does not support the video tag. <a href={demoVideoAsset.url}>Watch the demo</a>.
+            </video>
+          </div>
+          <figcaption className="text-center text-xs text-muted-foreground mt-3">
+            Real promotional footage of a SafeOrStolen verification — ~1:47.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <Link
+          to="/verify"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
+        >
+          Try It Yourself — 2 Free Checks →
+        </Link>
+      </div>
+    </div>
+  </section>
+
+  {/* ── FOR SELLERS SECTION ─────────────────────────── */}
  <section className="py-16 px-4 bg-card">
  <div className="max-w-5xl mx-auto">
  <div className="text-center mb-10">
