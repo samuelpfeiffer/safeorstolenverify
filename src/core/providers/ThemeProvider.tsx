@@ -11,9 +11,19 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    return (localStorage.getItem('theme') as Theme) || 'dark';
-  });
+  // Always start at 'dark' so SSR and first client render agree; the stored
+  // preference is applied after hydration in the effect below.
+  const [theme, setTheme] = useState<Theme>('dark');
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('theme') as Theme | null;
+      if (stored) setTheme(stored);
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
+
 
   const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('dark');
 
