@@ -1,6 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import VerifyChatPage from "@/pages/VerifyChatPage";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/verify")({
-  component: VerifyChatPage,
+  component: Outlet,
 });
