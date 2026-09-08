@@ -31,7 +31,7 @@ export const BlogContentEnricher = () => {
       console.error('Error enriching blog content:', error);
       toast({
         title: "Enrichment Failed",
-        description: error.message || "Failed to enrich blog content. Please try again.",
+        description: (error instanceof Error ? error.message : undefined) || "Failed to enrich blog content. Please try again.",
         variant: "destructive",
       });
     } finally {

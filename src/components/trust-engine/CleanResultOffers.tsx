@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Shield, FileText, ShoppingBag, Wrench, Lock, Bike, Copy, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { generateCompliancePDF } from '@/utils/complianceCertificate';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface OfferCard {

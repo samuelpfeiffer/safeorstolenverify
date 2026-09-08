@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, X, Smartphone, Bike, Car, Shield, ArrowRight, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const VsBikeIndex = () => {

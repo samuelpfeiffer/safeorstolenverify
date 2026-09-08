@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { VALID_ROUTES as VALID_APP_ROUTES } from '@/utils/seo/sitemapRouteValidator';
 

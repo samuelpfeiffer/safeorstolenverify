@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { 
   Car, Smartphone, MapPin, Building2, Scale, BookOpen, ChevronRight 
 } from 'lucide-react';

@@ -4,7 +4,7 @@
  * URL: /serial-number-stolen-check
  */
 
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Shield, Search, AlertTriangle, CheckCircle, FileText, Smartphone, Laptop, Wrench, Bike, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

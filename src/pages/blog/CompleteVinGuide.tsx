@@ -1,6 +1,6 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { ArrowRight, Shield, Clock, CheckCircle, Smartphone, Zap } from 'lucide-react';
 
 const CTASection = () => {

@@ -1,5 +1,5 @@
 import { Download, Smartphone } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { usePWAContext } from '@/core/providers/PWAProvider';
 import { useToast } from '@/hooks/use-toast';
 

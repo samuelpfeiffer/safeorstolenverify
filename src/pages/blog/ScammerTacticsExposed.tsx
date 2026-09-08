@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Card } from '@/components/ui/card';
 import { Shield, AlertTriangle, Eye, Lock, Brain, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';

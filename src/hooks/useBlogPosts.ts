@@ -112,6 +112,10 @@ export const useBlogPost = (slug: string) => {
         throw error;
       }
 
+      if (!data) {
+        throw new Error('Blog post not found');
+      }
+
       // Transform the data to include categories and tags
       const transformedData: BlogPost = {
         ...data,

@@ -76,7 +76,7 @@ export const checkRateLimiting = async (action: string): Promise<boolean> => {
 
     if (!data) return true; // No previous limits, allow
 
-    const windowStart = new Date(data.window_start);
+    const windowStart = new Date(data.window_start ?? 0);
     const now = new Date();
     const hoursSinceWindow = (now.getTime() - windowStart.getTime()) / (1000 * 60 * 60);
 

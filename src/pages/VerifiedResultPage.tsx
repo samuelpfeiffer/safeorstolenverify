@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield, CheckCircle, ArrowRight, Database, Clock, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from '@/lib/router-compat';
 
 const VerifiedResultPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

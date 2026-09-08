@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Lock, CreditCard, CheckCircle, Loader2, AlertTriangle, Zap } from 'lucide-react';

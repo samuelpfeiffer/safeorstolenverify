@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Shield, Zap, Camera, WifiOff, Star } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 

@@ -10,7 +10,7 @@ export const initAnalytics = () => {
     // Create dataLayer array for Google Analytics
     window.dataLayer = window.dataLayer || [];
     window.gtag = function() {
-      window.dataLayer.push(arguments);
+      window.dataLayer?.push(arguments);
     };
     
     // Initialize with your Google Analytics measurement ID

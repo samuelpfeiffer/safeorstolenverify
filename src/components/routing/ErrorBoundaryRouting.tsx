@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from '@/lib/router-compat';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 

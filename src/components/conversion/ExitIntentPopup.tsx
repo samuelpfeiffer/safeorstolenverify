@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { X, AlertCircle, Zap, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 export const ExitIntentPopup = () => {

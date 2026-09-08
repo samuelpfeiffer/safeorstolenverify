@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield, CheckCircle, Copy, Link as LinkIcon, ArrowRight, Star, Zap, Award, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 const SellerBadgePage: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from '@/lib/router-compat';
 import { ShieldCheck, Loader2 } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ProofDisclaimer } from '@/components/proof/ProofDisclaimer';

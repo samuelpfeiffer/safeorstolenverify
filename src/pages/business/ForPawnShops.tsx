@@ -1,7 +1,7 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Shield, Zap, DollarSign, Scale, Clock, TrendingUp } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';

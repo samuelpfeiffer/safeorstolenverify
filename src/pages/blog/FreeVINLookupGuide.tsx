@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Shield, CheckCircle, AlertTriangle, ArrowRight, Search, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';

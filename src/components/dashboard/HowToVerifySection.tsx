@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Shield, FileCheck, ArrowRight, BookOpen } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';

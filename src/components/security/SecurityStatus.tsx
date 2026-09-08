@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { securityService } from '@/services/securityService';
 
 export const SecurityStatus = () => {
-  const [securityMetrics, setSecurityMetrics] = useState(null);
+  const [securityMetrics, setSecurityMetrics] = useState<Record<string, unknown> | null>(null);
   const [securityScore, setSecurityScore] = useState(0);
 
   useEffect(() => {

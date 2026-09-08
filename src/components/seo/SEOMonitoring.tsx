@@ -9,7 +9,7 @@ export const SEOMonitoring: React.FC = () => {
         window.addEventListener('load', () => {
           const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
           
-          window.gtag('event', 'page_performance', {
+          window.gtag?.('event', 'page_performance', {
             event_category: 'SEO',
             event_action: 'Page Load Time',
             value: Math.round(loadTime),
@@ -29,7 +29,7 @@ export const SEOMonitoring: React.FC = () => {
             
             // Track milestone scroll depths
             if ([25, 50, 75, 90, 100].includes(scrollPercent)) {
-              window.gtag('event', 'scroll_depth', {
+              window.gtag?.('event', 'scroll_depth', {
                 event_category: 'Engagement',
                 event_action: 'Scroll Depth',
                 value: scrollPercent,
@@ -46,7 +46,7 @@ export const SEOMonitoring: React.FC = () => {
         window.addEventListener('beforeunload', () => {
           const timeOnPage = Math.round((Date.now() - startTime) / 1000);
           
-          window.gtag('event', 'time_on_page', {
+          window.gtag?.('event', 'time_on_page', {
             event_category: 'Engagement',
             event_action: 'Time on Page',
             value: timeOnPage,

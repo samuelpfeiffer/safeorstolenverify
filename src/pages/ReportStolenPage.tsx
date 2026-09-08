@@ -4,7 +4,7 @@ import { ReportStolenItemForm } from '@/components/ReportStolenItemForm';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AlertTriangle, Shield, Users, Bell, FileText, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const ReportStolenPageContent = () => {

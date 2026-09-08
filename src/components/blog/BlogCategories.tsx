@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useBlogCategories } from '@/hooks/useBlogPosts';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

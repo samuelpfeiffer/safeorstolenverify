@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
 // Logo served from /public to avoid JS bundle bloat

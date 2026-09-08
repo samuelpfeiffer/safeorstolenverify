@@ -61,7 +61,7 @@ export const BlogSetupHelper = () => {
       console.error('Error fixing blog posts:', error);
       toast({
         title: "Setup Failed",
-        description: error.message || "Failed to fix blog posts. Please try again.",
+        description: (error instanceof Error ? error.message : undefined) || "Failed to fix blog posts. Please try again.",
         variant: "destructive",
       });
     } finally {

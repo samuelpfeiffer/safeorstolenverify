@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckCircle, ArrowRight, Shield, Smartphone, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 export const WhyVerifySection: React.FC = () => {
   const reasons = [

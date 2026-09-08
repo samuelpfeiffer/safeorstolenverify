@@ -2,7 +2,7 @@
 import React, { memo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Building2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroActionButtons = memo(() => {

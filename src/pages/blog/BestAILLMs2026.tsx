@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useState, useEffect } from 'react';
 import { ArrowRight, Brain, Zap, Code, DollarSign, Globe, Shield, Sparkles, BookOpen, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';

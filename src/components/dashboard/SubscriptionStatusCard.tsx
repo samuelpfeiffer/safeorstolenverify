@@ -5,7 +5,7 @@ import { Crown, Calendar, CreditCard, ArrowUpRight, Zap } from 'lucide-react';
 import { useAuth } from '@/lib/auth';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
 import { FREE_SEARCH_LIMIT } from '@/features/pricing/constants';

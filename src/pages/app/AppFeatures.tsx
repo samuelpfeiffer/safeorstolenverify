@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { 
   Shield, Smartphone, Camera, WifiOff, Clock, CheckCircle, Star, 
   Zap, Globe, ArrowRight, Download, Car, Phone, Laptop, Bike, 

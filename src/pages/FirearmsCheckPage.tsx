@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useState } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';

@@ -35,13 +35,13 @@ export const useVoiceSearch = ({ onResult, onError }: UseVoiceSearchProps = {}) 
       setIsListening(false);
     };
 
-    recognition.onresult = (event) => {
+    recognition.onresult = (event: any) => {
       const result = event.results[0][0].transcript;
       setTranscript(result);
       onResult?.(result);
     };
 
-    recognition.onerror = (event) => {
+    recognition.onerror = (event: any) => {
       setIsListening(false);
       onError?.(event.error);
     };

@@ -4,7 +4,7 @@
  * URL: /free-stolen-vehicle-check
  */
 
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Shield, Search, Car, AlertTriangle, CheckCircle, FileText, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

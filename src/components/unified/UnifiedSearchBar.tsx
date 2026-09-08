@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useUnifiedVerification } from '@/hooks/useUnifiedVerification';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useAuth } from '@/lib/auth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';

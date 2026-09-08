@@ -52,7 +52,7 @@ const VerifiedItem = () => {
             .eq('id', verificationId)
             .maybeSingle();
 
-          if (error) {
+          if (error || !data) {
             console.error('Error fetching verification result:', error);
             setError('Verification result not found');
             return;
@@ -64,7 +64,7 @@ const VerifiedItem = () => {
           setVerificationResult({
             id: data.id,
             status: normalizedStatus,
-            confidence: data.confidence_score,
+            confidence: data.confidence_score ?? 0,
             source: data.api_source,
             details: data.api_response,
             message: `Verified via ${data.api_source}`,

@@ -58,11 +58,11 @@ export const WatchlistSection = () => {
       const { data, error } = await supabase
         .from('user_watchlist')
         .select('*')
-        .eq('user_id', user?.id)
+        .eq('user_id', user?.id ?? '')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setItems(data || []);
+      setItems((data ?? []).map((r) => ({ ...r, alert_email: r.alert_email ?? false, created_at: r.created_at ?? '', description: r.description ?? '' })));
     } catch (error) {
       console.error('Error fetching watchlist:', error);
     } finally {

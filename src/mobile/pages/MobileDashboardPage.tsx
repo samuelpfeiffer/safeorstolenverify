@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useAdvancedVerification } from '@/verification/hooks/useAdvancedVerification';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { Search, TrendingUp, Shield, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
 import { useGestures } from '../hooks/useGestures';
 import { format } from 'date-fns';

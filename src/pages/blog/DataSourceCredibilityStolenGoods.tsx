@@ -1,7 +1,7 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { AppDownloadCTA } from '@/components/app/AppDownloadCTA';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { Database, Shield, CheckCircle, AlertTriangle } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';

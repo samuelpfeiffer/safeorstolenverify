@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, Copy, CheckCircle2, BarChart3, Search, AlertTriangle, Code, Key, Settings, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useAuth } from '@/lib/auth';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 export default function BusinessDashboard() {

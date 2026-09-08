@@ -1,6 +1,6 @@
 import { Shield, Zap, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 export const UrgencyBanner = () => {

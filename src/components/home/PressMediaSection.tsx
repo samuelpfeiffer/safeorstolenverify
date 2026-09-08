@@ -1,6 +1,6 @@
 import { ExternalLink, Award, Globe, Star, Shield, TrendingUp, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 const billboardImage = '/images/billboard-campaign.jpg';
 

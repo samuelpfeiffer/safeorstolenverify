@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { X, Check, AlertTriangle, Download } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 

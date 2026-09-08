@@ -239,7 +239,7 @@ export const monitorPerformanceMetrics = (): void => {
       // Track performance metrics
       if (window.gtag) {
         Object.entries(metrics).forEach(([key, value]) => {
-          window.gtag('event', 'performance_timing', {
+          window.gtag?.('event', 'performance_timing', {
             name: key,
             value: Math.round(value),
             event_category: 'performance'

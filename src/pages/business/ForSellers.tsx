@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Shield, CheckCircle, ArrowRight, Star, DollarSign, Clock, FileText, Share2, BadgeCheck, TrendingUp, Users, Lock, Crown, Rocket, Loader2 } from 'lucide-react';

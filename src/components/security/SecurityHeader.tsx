@@ -1,7 +1,7 @@
 
 import { Shield, Settings, Activity, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 
 export const SecurityHeader = () => {
   const navigate = useNavigate();

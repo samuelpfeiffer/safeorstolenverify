@@ -24,7 +24,7 @@ import { ViralShareCard } from '@/components/conversion/ViralShareCard';
 import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';
 import { WhySignUpCard } from '@/components/conversion/WhySignUpCard';
 import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from '@/lib/router-compat';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
@@ -525,7 +525,7 @@ const VerifyPage = () => {
  if (type.link) {
  navigate(type.link);
  } else {
- setManualOverrideType(type.id);
+ setManualOverrideType((type as { id: string }).id);
  setShowManualSelect(false);
  }
  }}

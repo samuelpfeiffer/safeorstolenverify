@@ -3,7 +3,7 @@ import { OptimizedImage } from '@/components/performance/OptimizedImage';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import handshakeConfidence from '@/assets/ads/handshake-confidence.jpg';
 import smartphoneCheck from '@/assets/ads/smartphone-check.jpg';
 import laptopVerify from '@/assets/ads/laptop-verify.jpg';

@@ -1,5 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Bot, Brain, Cpu, Database, Shield, Smartphone, Zap, CheckCircle2 } from 'lucide-react';

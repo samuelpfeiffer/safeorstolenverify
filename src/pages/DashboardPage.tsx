@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from '@/lib/router-compat';
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';

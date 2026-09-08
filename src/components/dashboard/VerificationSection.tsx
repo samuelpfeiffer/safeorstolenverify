@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 import { Search, ScanLine, CheckCircle, X, Receipt, Camera } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useAuth } from '@/lib/auth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { ContactCard } from '@/components/ContactCard';

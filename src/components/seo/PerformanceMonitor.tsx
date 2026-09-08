@@ -34,7 +34,7 @@ export const PerformanceMonitor = () => {
             window.gtag('event', 'web_vitals', {
               event_category: 'Web Vitals',
               event_label: 'LCP',
-              value: Math.round(metrics.lcp),
+              value: Math.round(metrics.lcp ?? 0),
               page_path: location.pathname,
             });
           }
@@ -91,7 +91,7 @@ export const PerformanceMonitor = () => {
                 window.gtag('event', 'web_vitals', {
                   event_category: 'Web Vitals',
                   event_label: 'FCP',
-                  value: Math.round(metrics.fcp),
+                  value: Math.round(metrics.fcp ?? 0),
                   page_path: location.pathname,
                 });
               }

@@ -4,7 +4,7 @@ import {
  AccordionItem,
  AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { HelpCircle, Shield, DollarSign, Globe, Smartphone, Lock, Clock, Award } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 

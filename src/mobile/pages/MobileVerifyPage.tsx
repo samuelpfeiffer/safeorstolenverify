@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Camera, Search, History } from 'lucide-react';
 const CameraScanner = lazy(() => import('../components/CameraScanner').then(m => ({ default: m.CameraScanner })));
 import { useAdvancedVerification } from '@/verification/hooks/useAdvancedVerification';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useSmartDetection } from '@/hooks/useSmartDetection';
 import { mapDetectedTypeToItemType } from '@/lib/aiDetection';

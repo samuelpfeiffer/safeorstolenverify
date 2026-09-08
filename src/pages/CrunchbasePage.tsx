@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Building2, ExternalLink, TrendingUp, Users, Globe, Shield, Brain, Recycle, DollarSign, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import {
  Accordion,
  AccordionContent,

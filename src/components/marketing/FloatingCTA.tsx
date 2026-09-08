@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 export const FloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

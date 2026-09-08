@@ -1,7 +1,7 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Zap, Shield, Clock, Database, CheckCircle, ArrowRight, Globe, Lock, Activity } from 'lucide-react';
 
 export default function RealTimeVerificationPage() {

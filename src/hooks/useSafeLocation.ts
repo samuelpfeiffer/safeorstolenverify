@@ -1,10 +1,12 @@
-import { useLocation as useRouterLocation, Location } from 'react-router-dom';
+import { useLocation as useRouterLocation } from '@/lib/router-compat';
+
+export type SafeLocation = ReturnType<typeof useRouterLocation>;
 
 /**
  * Safe wrapper around useLocation that handles cases where Router context is unavailable
  * Returns null instead of throwing an error when Router context is missing
  */
-export const useSafeLocation = (): Location | null => {
+export const useSafeLocation = (): SafeLocation | null => {
   try {
     const location = useRouterLocation();
     return location || null;

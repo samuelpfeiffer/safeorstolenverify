@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

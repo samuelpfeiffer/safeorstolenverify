@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { FreeIMEIValidator } from '@/components/tools/FreeIMEIValidator';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Wrench, Smartphone, Car, Shield, ArrowRight } from 'lucide-react';
 
 const FreeTools = () => {

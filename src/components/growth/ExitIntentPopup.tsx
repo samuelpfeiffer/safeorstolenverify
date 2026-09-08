@@ -55,7 +55,7 @@ export const ExitIntentPopup: React.FC = () => {
     try {
       const { error } = await supabase
         .from('newsletter_subscribers')
-        .insert({ email, source: 'exit_intent' });
+        .insert({ email, source: 'exit_intent' } as never); // generated types lag live schema
 
       if (error && error.code !== '23505') throw error;
 

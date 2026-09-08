@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Smartphone, Car, Laptop, Bike, Shield, CheckCircle, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import firearmsVerification from '@/assets/firearms-verification.jpg';
 import ebikesEscooters from '@/assets/thumbnails/ebikes-escooters.jpg';
 import appliances from '@/assets/thumbnails/appliances.jpg';

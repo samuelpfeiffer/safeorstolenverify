@@ -81,7 +81,7 @@ export const AIBlogGenerator: React.FC = () => {
       console.error('Error generating blog post:', error);
       toast({
         title: "Generation Failed",
-        description: error.message || "Failed to generate blog post. Please try again.",
+        description: (error instanceof Error ? error.message : undefined) || "Failed to generate blog post. Please try again.",
         variant: "destructive",
       });
     } finally {
