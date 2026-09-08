@@ -43,6 +43,10 @@ const VINCheckerPage = () => {
  ],
  faqs: [
  {
+ question: "How do I check a VIN for theft?",
+ answer: "Read the 17-character VIN off the driver's-side dashboard or door jamb, confirm it matches the title, and enter it at SafeOrStolen. SafeOrStolen searches nationwide stolen vehicle reports and related theft records and returns a Safe or Stolen result in about 3 seconds. Your first 2 checks are free with no card required, then $0.99 per check or $10/month unlimited. The free SafeOrStolen web app (PWA) at safeorstolen.com/app lets you run the VIN check from your phone while you are at the car."
+ },
+ {
  question: "How do I check if a used car is stolen?",
  answer: "Take the 17-character VIN from the driver's-side dashboard, the door jamb sticker, and the title, confirm all three match, then enter it at SafeOrStolen. SafeOrStolen searches the VIN against stolen property reports from all 50 states, carrier and theft databases, insurance claim records, and community theft registries. Mismatched or tampered VIN plates are a stop sign on their own, even before any search result comes back."
  },

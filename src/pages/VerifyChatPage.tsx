@@ -891,6 +891,9 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  <p className="text-base text-muted-foreground mt-3 max-w-lg">
  AI-powered stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll cross-check 100+ databases in seconds and explain the result in plain English.
  </p>
+ <p className="text-sm text-muted-foreground mt-3">
+ Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Get the app</a> — install SafeOrStolen on your phone and scan on the spot.
+ </p>
 
  {/* 4-card horizontal grid that fits left-to-right at all sizes */}
  <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 w-full">
