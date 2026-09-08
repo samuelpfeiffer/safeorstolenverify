@@ -37,6 +37,7 @@ const TopNavigation = () => {
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
     { to: '/theftaz', label: 'TheftAZ Search', icon: Search },
     { to: '/partial-serial-number-search', label: 'Partial Serial Search', icon: Search },
+    { to: '/state-pawnshop-laws', label: 'State Pawnshop Laws', icon: FileText },
   ];
 
   return (
