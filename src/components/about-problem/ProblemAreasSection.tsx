@@ -36,7 +36,7 @@ export const ProblemAreasSection = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-red-400 mb-3">{problem.title}</h3>
                   <p className="text-gray-300 leading-relaxed mb-4">{problem.description}</p>
-                  <div className="bg-red-950/30 p-3 rounded border border-red-800/30">
+                  <div className="bg-red-950/30 p-3 rounded-[0.25rem] border border-red-800/30">
                     <p className="text-sm text-red-300 font-medium">Impact: {problem.impact}</p>
                   </div>
                 </CardContent>

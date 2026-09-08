@@ -262,7 +262,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
                       {link.text}
                     </h4>
                     {link.isHighPriority && (
-                      <span className="px-2 py-1 bg-orange-100 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-medium rounded">
+                      <span className="px-2 py-1 bg-orange-100 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-medium rounded-[0.25rem]">
                         Popular
                       </span>
                     )}
@@ -280,7 +280,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
                       {link.keywords.slice(0, 3).map((keyword) => (
                         <span 
                           key={keyword}
-                          className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded"
+                          className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-[0.25rem]"
                         >
                           {keyword}
                         </span>

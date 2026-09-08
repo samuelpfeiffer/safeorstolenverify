@@ -15,7 +15,7 @@ export const CompactMobileAppCTA = () => {
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm font-bold bg-accent text-accent-foreground px-2 py-0.5 rounded">
+                  <span className="text-sm font-bold bg-accent text-accent-foreground px-2 py-0.5 rounded-[0.25rem]">
                     GOLDEN TICKET
                   </span>
                   <span className="text-sm font-medium">Only Available on SafeOrStolen.com</span>

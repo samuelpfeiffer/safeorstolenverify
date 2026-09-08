@@ -89,7 +89,7 @@ export const SystemStatusFeedback: React.FC<SystemStatusFeedbackProps> = ({
             {onRetry && status === 'error' && (
               <button
                 onClick={onRetry}
-                className="ml-2 p-1 hover:bg-white/10 rounded transition-colors"
+                className="ml-2 p-1 hover:bg-white/10 rounded-[0.25rem] transition-colors"
                 aria-label="Retry"
               >
                 <RefreshCw className="h-4 w-4 text-white" />

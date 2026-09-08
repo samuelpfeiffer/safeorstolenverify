@@ -47,8 +47,8 @@ export const RecentActivityCard = () => {
               <div key={i} className="animate-pulse flex items-center gap-3 p-3 rounded-lg bg-muted/50">
                 <div className="h-10 w-10 rounded-full bg-muted"></div>
                 <div className="flex-1">
-                  <div className="h-4 bg-muted rounded mb-2 w-3/4"></div>
-                  <div className="h-3 bg-muted rounded w-1/2"></div>
+                  <div className="h-4 bg-muted rounded-[0.25rem] mb-2 w-3/4"></div>
+                  <div className="h-3 bg-muted rounded-[0.25rem] w-1/2"></div>
                 </div>
               </div>
             ))}

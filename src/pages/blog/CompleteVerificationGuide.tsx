@@ -110,7 +110,7 @@ export default function CompleteVerificationGuide() {
                     </ul>
                   </div>
 
-                  <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded">
+                  <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded-[0.25rem]">
                     <p className="font-bold mb-2">⚠️ Critical Warning:</p>
                     <p>If Find My iPhone or Android Device Protection is still enabled, the previous owner can remotely lock or erase the phone at any time—even after you've paid.</p>
                   </div>
@@ -207,7 +207,7 @@ export default function CompleteVerificationGuide() {
                     </ul>
                   </div>
 
-                  <div className="bg-primary/10 p-4 rounded">
+                  <div className="bg-primary/10 p-4 rounded-[0.25rem]">
                     <p className="font-bold mb-2">E-Bike Specific Tip:</p>
                     <p>High-end e-bikes ($3,000+) are prime theft targets. Always verify battery and motor serial numbers separately—thieves sometimes swap components.</p>
                   </div>
@@ -270,7 +270,7 @@ export default function CompleteVerificationGuide() {
                     </ul>
                   </div>
 
-                  <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded">
+                  <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded-[0.25rem]">
                     <p className="font-bold mb-2">⚠️ Luxury Watch Warning:</p>
                     <p>Organized theft rings target luxury watches in violent robberies. Always meet in police station parking lots for high-value watch transactions and verify thoroughly.</p>
                   </div>

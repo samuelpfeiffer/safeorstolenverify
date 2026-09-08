@@ -53,7 +53,7 @@ export class ErrorBoundary extends Component<Props, State> {
           </CardHeader>
           <CardContent className="space-y-4">
             {this.state.error && (
-              <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded">
+              <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-[0.25rem]">
                 {this.state.error.message}
               </div>
             )}

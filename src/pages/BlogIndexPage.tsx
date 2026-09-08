@@ -323,7 +323,7 @@ export default function BlogIndexPage() {
               <Card key={article.slug} className="overflow-hidden hover:border-primary/40 transition-all hover:shadow-lg group">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-bold">
+                    <span className="px-2 py-1 rounded-[0.25rem] bg-secondary/10 text-secondary text-xs font-bold">
                       {article.category}
                     </span>
                     <span className="text-xs text-muted-foreground flex items-center gap-1">
@@ -345,7 +345,7 @@ export default function BlogIndexPage() {
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div className="flex flex-wrap gap-1">
                       {article.keywords.slice(0, 2).map((keyword) => (
-                        <span key={keyword} className="text-xs px-2 py-1 rounded bg-muted/50 text-muted-foreground">
+                        <span key={keyword} className="text-xs px-2 py-1 rounded-[0.25rem] bg-muted/50 text-muted-foreground">
                           {keyword}
                         </span>
                       ))}

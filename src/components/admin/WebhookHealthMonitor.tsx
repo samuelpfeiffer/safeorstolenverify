@@ -134,7 +134,7 @@ export const WebhookHealthMonitor = () => {
                 <p className="text-muted-foreground mt-1">
                   Configure webhook in Stripe Dashboard → Developers → Webhooks
                 </p>
-                <p className="text-xs mt-2 font-mono bg-muted p-2 rounded">
+                <p className="text-xs mt-2 font-mono bg-muted p-2 rounded-[0.25rem]">
                   https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/stripe-webhook
                 </p>
               </div>

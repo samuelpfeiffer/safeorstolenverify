@@ -258,7 +258,7 @@ const StolenItemDetailPage = () => {
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
                     {item.imei ? 'IMEI' : item.vin ? 'VIN' : 'Serial Number'}
                   </h3>
-                  <code className="bg-muted px-3 py-1.5 rounded font-mono text-sm">
+                  <code className="bg-muted px-3 py-1.5 rounded-[0.25rem] font-mono text-sm">
                     {identifier}
                   </code>
                 </div>

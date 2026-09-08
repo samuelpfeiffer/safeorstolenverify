@@ -137,7 +137,7 @@ export const BulkVerification = () => {
           <FileSpreadsheet className="h-5 w-5 text-primary" />
           <h3 className="font-semibold">Bulk Verification</h3>
         </div>
-        <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
+        <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-[0.25rem]">
           Professional Feature
         </span>
       </div>
@@ -200,7 +200,7 @@ export const BulkVerification = () => {
             
             <div className="max-h-64 overflow-y-auto space-y-2">
               {results.map((result, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded text-sm">
+                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-[0.25rem] text-sm">
                   <div className="flex items-center gap-2 flex-1 min-w-0">
                     {result.status === 'safe' ? (
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
@@ -211,7 +211,7 @@ export const BulkVerification = () => {
                     )}
                     <span className="font-mono truncate">{result.identifier}</span>
                   </div>
-                  <span className={`text-xs px-2 py-1 rounded ${
+                  <span className={`text-xs px-2 py-1 rounded-[0.25rem] ${
                     result.status === 'safe' ? 'bg-green-500/10 text-green-600' :
                     result.status === 'error' ? 'bg-gray-500/10 text-gray-600' :
                     'bg-red-500/10 text-red-600'
@@ -227,7 +227,7 @@ export const BulkVerification = () => {
         {/* Instructions */}
         <div className="mt-4 p-4 bg-primary/5 rounded-lg text-sm">
           <p className="font-semibold mb-2">📋 CSV Format Example:</p>
-          <pre className="bg-muted p-2 rounded text-xs overflow-x-auto">
+          <pre className="bg-muted p-2 rounded-[0.25rem] text-xs overflow-x-auto">
 {`Identifier,Type,Description
 1HGBH41JXMN109186,Vehicle,2021 Honda Accord
 356789012345678,Phone,iPhone 13 Pro

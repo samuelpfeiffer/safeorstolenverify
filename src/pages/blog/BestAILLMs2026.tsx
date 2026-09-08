@@ -169,7 +169,7 @@ const BestAILLMs2026 = () => {
                     <button
                       key={id}
                       onClick={() => scrollToSection(id)}
-                      className={`block w-full text-left text-sm py-1.5 px-3 rounded transition-colors ${
+                      className={`block w-full text-left text-sm py-1.5 px-3 rounded-[0.25rem] transition-colors ${
                         activeSection === id
                           ? 'text-primary font-semibold bg-primary/10'
                           : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'

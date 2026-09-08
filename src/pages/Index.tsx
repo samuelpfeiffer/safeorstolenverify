@@ -314,7 +314,7 @@ const Index = () => {
  className="flex items-center justify-between bg-card border border-border rounded-xl px-4 py-3"
  >
  <div className="flex items-center gap-3">
- <span className="text-xs font-mono bg-muted text-muted-foreground px-2 py-1 rounded">
+ <span className="text-xs font-mono bg-muted text-muted-foreground px-2 py-1 rounded-[0.25rem]">
  {v.type}
  </span>
  <div>

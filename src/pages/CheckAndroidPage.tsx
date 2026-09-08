@@ -45,7 +45,7 @@ export default function CheckAndroidPage() {
  <Phone className="h-10 w-10 text-primary mb-4" />
  <h3 className="text-xl font-bold mb-3">Method 1: Dial *#06#</h3>
  <p className="text-muted-foreground">
- Open the phone app and dial <code className="bg-muted px-2 py-1 rounded">*#06#</code>. The IMEI will display automatically—no need to press call.
+ Open the phone app and dial <code className="bg-muted px-2 py-1 rounded-[0.25rem]">*#06#</code>. The IMEI will display automatically—no need to press call.
  </p>
  </CardContent>
  </Card>

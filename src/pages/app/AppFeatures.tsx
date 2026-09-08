@@ -155,7 +155,7 @@ const AppFeatures = () => {
                     <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       {feature.icon}
                     </div>
-                    <div className="inline-block bg-green-500/10 text-green-600 text-xs font-medium px-2 py-1 rounded mb-3">
+                    <div className="inline-block bg-green-500/10 text-green-600 text-xs font-medium px-2 py-1 rounded-[0.25rem] mb-3">
                       {feature.highlight}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{feature.title}</h3>

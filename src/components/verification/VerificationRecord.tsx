@@ -71,7 +71,7 @@ export const VerificationRecord: React.FC<VerificationRecordProps> = ({
       `}</style>
 
       <div className="flex items-center gap-3 mb-4">
-        <img src={sosLogo} alt="SafeOrStolen" className="h-8 w-8 rounded" loading="lazy" />
+        <img src={sosLogo} alt="SafeOrStolen" className="h-8 w-8 rounded-[0.25rem]" loading="lazy" />
         <h3 className="text-sm font-bold uppercase tracking-wide text-foreground">
           Verification Record
         </h3>

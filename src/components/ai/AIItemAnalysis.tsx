@@ -229,7 +229,7 @@ export const AIItemAnalysis = () => {
                 </h4>
                 <div className="space-y-2">
                   {result.redFlags.map((flag, i) => (
-                    <div key={i} className="p-3 rounded bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900">
+                    <div key={i} className="p-3 rounded-[0.25rem] bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900">
                       <div className="flex items-center justify-between">
                         <span className="font-medium text-sm">{flag.flag}</span>
                         <Badge variant="outline" className="text-xs">{flag.severity}</Badge>
@@ -250,7 +250,7 @@ export const AIItemAnalysis = () => {
                 </h4>
                 <div className="space-y-2">
                   {result.greenFlags.map((flag, i) => (
-                    <div key={i} className="p-3 rounded bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900">
+                    <div key={i} className="p-3 rounded-[0.25rem] bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900">
                       <span className="font-medium text-sm">{flag.flag}</span>
                       <p className="text-sm text-muted-foreground mt-1">{flag.explanation}</p>
                     </div>

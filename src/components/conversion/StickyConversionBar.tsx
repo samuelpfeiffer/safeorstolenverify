@@ -41,7 +41,7 @@ export const StickyConversionBar = () => {
           </Button>
           <button
             onClick={() => setDismissed(true)}
-            className="p-1 rounded hover:bg-primary-foreground/20 transition-colors"
+            className="p-1 rounded-[0.25rem] hover:bg-primary-foreground/20 transition-colors"
             aria-label="Dismiss"
           >
             <X className="w-4 h-4" />

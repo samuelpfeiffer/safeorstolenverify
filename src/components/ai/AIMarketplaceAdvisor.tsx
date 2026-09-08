@@ -206,7 +206,7 @@ export const AIMarketplaceAdvisor: React.FC = () => {
                   <div className="mt-2 space-y-2">
                     {analysis.redFlags.map((rf, i) => (
                       <div key={i} className="flex items-start gap-2 p-2 rounded-lg bg-red-500/5 border border-red-500/10">
-                        <span className={cn("text-[10px] px-1.5 py-0.5 rounded uppercase font-bold mt-0.5 shrink-0",
+                        <span className={cn("text-[10px] px-1.5 py-0.5 rounded-[0.25rem] uppercase font-bold mt-0.5 shrink-0",
                           rf.severity === 'critical' ? 'bg-red-500/20 text-red-400' :
                           rf.severity === 'high' ? 'bg-orange-500/20 text-orange-400' :
                           'bg-amber-500/20 text-amber-400'

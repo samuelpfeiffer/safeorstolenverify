@@ -86,9 +86,9 @@ export const SubscriptionStatusCard = () => {
         </CardHeader>
         <CardContent>
           <div className="animate-pulse space-y-3">
-            <div className="h-6 bg-muted rounded w-1/2"></div>
-            <div className="h-4 bg-muted rounded w-3/4"></div>
-            <div className="h-10 bg-muted rounded"></div>
+            <div className="h-6 bg-muted rounded-[0.25rem] w-1/2"></div>
+            <div className="h-4 bg-muted rounded-[0.25rem] w-3/4"></div>
+            <div className="h-10 bg-muted rounded-[0.25rem]"></div>
           </div>
         </CardContent>
       </Card>

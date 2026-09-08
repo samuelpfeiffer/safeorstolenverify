@@ -16,7 +16,7 @@ export const BlogCategories = () => {
         <CardContent>
           <div className="space-y-2">
             {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-8 bg-gray-200 rounded animate-pulse" />
+              <div key={i} className="h-8 bg-gray-200 rounded-[0.25rem] animate-pulse" />
             ))}
           </div>
         </CardContent>
@@ -37,7 +37,7 @@ export const BlogCategories = () => {
         <div className="space-y-2">
           <Link 
             to="/blog"
-            className="block p-2 rounded hover:bg-gray-50 transition-colors"
+            className="block p-2 rounded-[0.25rem] hover:bg-gray-50 transition-colors"
           >
             <Badge variant="outline" className="w-full justify-start">
               All Posts
@@ -47,7 +47,7 @@ export const BlogCategories = () => {
             <Link 
               key={category.id}
               to={`/blog/category/${category.slug}`}
-              className="block p-2 rounded hover:bg-gray-50 transition-colors"
+              className="block p-2 rounded-[0.25rem] hover:bg-gray-50 transition-colors"
             >
               <Badge 
                 style={{ backgroundColor: category.color || '#3B82F6' }}

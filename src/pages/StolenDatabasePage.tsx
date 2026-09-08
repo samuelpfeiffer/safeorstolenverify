@@ -381,7 +381,7 @@ const StolenDatabasePage = () => {
  </div>
  )}
  {(item.serial_number || item.imei || item.vin) && (
- <div className="text-xs font-mono bg-muted px-2 py-1 rounded truncate">
+ <div className="text-xs font-mono bg-muted px-2 py-1 rounded-[0.25rem] truncate">
  {item.serial_number || item.imei || item.vin}
  </div>
  )}

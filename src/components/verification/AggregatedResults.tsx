@@ -74,7 +74,7 @@ export const AggregatedResults: React.FC<AggregatedResultsProps> = ({
  <div className="mt-4 text-muted-foreground">
  <p className="text-sm">
  {getQueryTypeName(result.queryType)}:{' '}
- <code className="bg-muted px-2 py-1 rounded font-mono">
+ <code className="bg-muted px-2 py-1 rounded-[0.25rem] font-mono">
  {result.query}
  </code>
  </p>

@@ -76,7 +76,7 @@ export default function TheftTrendsReport2024() {
                   <p>
                     iPhones remain the #1 theft target globally. The iPhone 15 Pro Max, Samsung Galaxy S24 Ultra, and iPad Pro are the most frequently stolen devices. Organized theft rings target Apple Stores, electronics retailers, and package deliveries.
                   </p>
-                  <div className="mt-4 bg-muted p-4 rounded">
+                  <div className="mt-4 bg-muted p-4 rounded-[0.25rem]">
                     <p className="font-bold mb-2">Protection Tip:</p>
                     <p>Always enable Find My iPhone/Android Device Protection, use strong passcodes, and verify IMEI numbers before buying secondhand phones using SafeOrStolen.</p>
                   </div>
@@ -93,7 +93,7 @@ export default function TheftTrendsReport2024() {
                   <p>
                     Full-size pickup trucks (Ford F-150, Chevrolet Silverado, Ram 1500) are the most stolen vehicles in 2024. Thieves target specific models using relay attacks to bypass keyless entry systems. California, Texas, and Florida report the highest vehicle theft rates.
                   </p>
-                  <div className="mt-4 bg-muted p-4 rounded">
+                  <div className="mt-4 bg-muted p-4 rounded-[0.25rem]">
                     <p className="font-bold mb-2">Protection Tip:</p>
                     <p>Verify VIN numbers using SafeOrStolen before purchasing used vehicles. Check for title washing, salvage history, and theft reports across all 50 states.</p>
                   </div>
@@ -162,7 +162,7 @@ export default function TheftTrendsReport2024() {
                   <p>
  Handguns are the most stolen firearm type, with 237,000 incidents reported. Vehicle thefts account for 62% of gun thefts. SafeOrStolen's firearms verification service helps prevent illegal firearm sales and trafficking.
                   </p>
-                  <div className="mt-4 bg-destructive/10 border-l-4 border-destructive p-4 rounded">
+                  <div className="mt-4 bg-destructive/10 border-l-4 border-destructive p-4 rounded-[0.25rem]">
                     <p className="font-bold mb-2">⚠️ Legal Requirement:</p>
                     <p>Purchasing or possessing a stolen firearm is a federal crime. Always verify serial numbers before firearm transactions.</p>
                   </div>

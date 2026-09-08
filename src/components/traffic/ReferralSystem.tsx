@@ -59,7 +59,7 @@ export const ReferralSystem = () => {
         <div className="p-3 bg-muted rounded-lg">
           <p className="text-sm text-muted-foreground mb-2">Your referral link:</p>
           <div className="flex gap-2">
-            <code className="flex-1 p-2 bg-background rounded text-xs truncate border">
+            <code className="flex-1 p-2 bg-background rounded-[0.25rem] text-xs truncate border">
               {referralLink}
             </code>
             <Button size="sm" onClick={copyReferralLink} variant="default">

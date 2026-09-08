@@ -80,7 +80,7 @@ export const VoiceSearchButton: React.FC<VoiceSearchButtonProps> = ({
         {/* Pulse animation when listening */}
         {isListening && (
           <motion.div
-            className="absolute inset-0 bg-gradient-cyber opacity-30 rounded"
+            className="absolute inset-0 bg-gradient-cyber opacity-30 rounded-[0.25rem]"
             animate={{
               scale: [1, 1.5, 1],
               opacity: [0.3, 0, 0.3],

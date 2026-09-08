@@ -270,22 +270,22 @@ export const AIBlogGenerator: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label className="text-sm font-medium">Title</Label>
-                  <p className="text-sm bg-muted p-2 rounded">{generatedPost.title}</p>
+                  <p className="text-sm bg-muted p-2 rounded-[0.25rem]">{generatedPost.title}</p>
                 </div>
                 <div>
                   <Label className="text-sm font-medium">Reading Time</Label>
-                  <p className="text-sm bg-muted p-2 rounded">{generatedPost.reading_time} min read</p>
+                  <p className="text-sm bg-muted p-2 rounded-[0.25rem]">{generatedPost.reading_time} min read</p>
                 </div>
               </div>
 
               <div>
                 <Label className="text-sm font-medium">Meta Description</Label>
-                <p className="text-sm bg-muted p-2 rounded">{generatedPost.meta_description}</p>
+                <p className="text-sm bg-muted p-2 rounded-[0.25rem]">{generatedPost.meta_description}</p>
               </div>
 
               <div>
                 <Label className="text-sm font-medium">Excerpt</Label>
-                <p className="text-sm bg-muted p-2 rounded">{generatedPost.excerpt}</p>
+                <p className="text-sm bg-muted p-2 rounded-[0.25rem]">{generatedPost.excerpt}</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -311,7 +311,7 @@ export const AIBlogGenerator: React.FC = () => {
                 <div className="border-t pt-4">
                   <Label className="text-sm font-medium">Content Preview</Label>
                   <div 
-                    className="prose max-w-none mt-2 p-4 bg-muted rounded"
+                    className="prose max-w-none mt-2 p-4 bg-muted rounded-[0.25rem]"
                     dangerouslySetInnerHTML={{ 
                       __html: DOMPurify.sanitize(generatedPost.content, {
                         ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'a', 'blockquote', 'code', 'pre'],

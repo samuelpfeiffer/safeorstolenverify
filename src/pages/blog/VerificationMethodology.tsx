@@ -264,7 +264,7 @@ export default function VerificationMethodology() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Limitations & Transparency</h2>
               
-              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded mb-6">
+              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded-[0.25rem] mb-6">
                 <h3 className="text-xl font-bold mb-3">What SafeOrStolen Cannot Guarantee:</h3>
                 <ul className="space-y-2">
                   <li><strong>Unreported Thefts:</strong> We can only detect items that have been reported to our verification databases. If a victim has not filed a report, we cannot identify the theft.</li>

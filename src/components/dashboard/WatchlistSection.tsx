@@ -272,7 +272,7 @@ export const WatchlistSection = () => {
                     <Badge variant="secondary" className="capitalize">
                       {item.item_type}
                     </Badge>
-                    <code className="text-sm font-mono bg-muted px-2 py-0.5 rounded">
+                    <code className="text-sm font-mono bg-muted px-2 py-0.5 rounded-[0.25rem]">
                       {item.identifier}
                     </code>
                   </div>

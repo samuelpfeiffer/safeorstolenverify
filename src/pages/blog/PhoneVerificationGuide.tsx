@@ -65,7 +65,7 @@ export default function PhoneVerificationGuide() {
                   <strong>IMEI (International Mobile Equipment Identity)</strong> is a unique 15-digit code assigned to every mobile phone. Think of it as your phone's fingerprint—no two devices share the same IMEI.
                 </p>
                 <p className="text-lg">
-                  Format: <code className="bg-background px-2 py-1 rounded">123456789012345</code>
+                  Format: <code className="bg-background px-2 py-1 rounded-[0.25rem]">123456789012345</code>
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ export default function PhoneVerificationGuide() {
               <div className="grid gap-4 mb-6">
                 <Card className="p-4">
                   <h4 className="font-bold mb-2">Method 1: Dial Code (Works on All Phones)</h4>
-                  <p>Dial <code className="bg-muted px-2 py-1 rounded">*#06#</code> on your phone's keypad. The IMEI will display instantly.</p>
+                  <p>Dial <code className="bg-muted px-2 py-1 rounded-[0.25rem]">*#06#</code> on your phone's keypad. The IMEI will display instantly.</p>
                 </Card>
 
                 <Card className="p-4">
@@ -239,7 +239,7 @@ export default function PhoneVerificationGuide() {
                 If you unknowingly purchase a stolen phone, you face multiple serious consequences:
               </p>
               
-              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded mb-6">
+              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded-[0.25rem] mb-6">
                 <ul className="space-y-3">
                   <li><strong>Criminal Charges:</strong> You can be charged with possession of stolen property even if you purchased it unknowingly</li>
                   <li><strong>Device Blacklisting:</strong> Carriers will blacklist the IMEI, making the phone unusable on any network</li>

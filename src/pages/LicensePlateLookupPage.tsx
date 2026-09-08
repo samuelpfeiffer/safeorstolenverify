@@ -186,7 +186,7 @@ const LicensePlateLookupPage = () => {
  <Shield className="h-4 w-4" />
  Cross-Reference Vehicle Details (Detect Plate Swapping)
  </span>
- <span className="text-xs bg-muted px-2 py-0.5 rounded">{showCrossRef ? 'Hide' : 'Optional'}</span>
+ <span className="text-xs bg-muted px-2 py-0.5 rounded-[0.25rem]">{showCrossRef ? 'Hide' : 'Optional'}</span>
  </button>
  
  {showCrossRef && (

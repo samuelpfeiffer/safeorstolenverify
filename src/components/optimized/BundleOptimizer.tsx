@@ -54,7 +54,7 @@ export const BundleAnalyzer = memo(() => {
     <div className="fixed bottom-4 right-4 z-50 opacity-20 hover:opacity-100 transition-opacity">
       <button
         onClick={analyzeBundles}
-        className="bg-gray-800 text-white p-2 rounded text-xs"
+        className="bg-gray-800 text-white p-2 rounded-[0.25rem] text-xs"
       >
         📦 Analyze
       </button>

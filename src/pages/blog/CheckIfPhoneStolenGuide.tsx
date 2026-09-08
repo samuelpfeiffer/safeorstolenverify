@@ -126,7 +126,7 @@ const CheckIfPhoneStolenGuide = () => {
             <div className="bg-card border border-border rounded-xl p-5">
               <h3 className="text-foreground font-bold mb-3">📱 iPhone</h3>
               <ul className="text-muted-foreground text-sm space-y-2">
-                <li>• Dial <code className="bg-muted px-1.5 py-0.5 rounded text-xs">*#06#</code></li>
+                <li>• Dial <code className="bg-muted px-1.5 py-0.5 rounded-[0.25rem] text-xs">*#06#</code></li>
                 <li>• Settings → General → About → IMEI</li>
                 <li>• Printed on the SIM tray</li>
                 <li>• On the original box barcode</li>
@@ -135,7 +135,7 @@ const CheckIfPhoneStolenGuide = () => {
             <div className="bg-card border border-border rounded-xl p-5">
               <h3 className="text-foreground font-bold mb-3">🤖 Android (Samsung, Pixel, etc.)</h3>
               <ul className="text-muted-foreground text-sm space-y-2">
-                <li>• Dial <code className="bg-muted px-1.5 py-0.5 rounded text-xs">*#06#</code></li>
+                <li>• Dial <code className="bg-muted px-1.5 py-0.5 rounded-[0.25rem] text-xs">*#06#</code></li>
                 <li>• Settings → About Phone → IMEI</li>
                 <li>• Under the battery (older models)</li>
                 <li>• On the original box</li>

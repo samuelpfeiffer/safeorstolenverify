@@ -188,7 +188,7 @@ const CarfaxVsFreeVinAlternatives = () => {
                       {alt.name === "Carfax" && <Car className="w-5 h-5" />}
                       {alt.name}
                       {alt.name === "SafeOrStolen" && (
-                        <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded">RECOMMENDED</span>
+                        <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-[0.25rem]">RECOMMENDED</span>
                       )}
                     </CardTitle>
                     <span className="flex items-center gap-1 text-lg font-bold">
@@ -221,7 +221,7 @@ const CarfaxVsFreeVinAlternatives = () => {
                       </ul>
                     </div>
                   </div>
-                  <p className="mt-4 text-sm bg-muted p-3 rounded">
+                  <p className="mt-4 text-sm bg-muted p-3 rounded-[0.25rem]">
                     <strong>Best for:</strong> {alt.best}
                   </p>
                 </CardContent>

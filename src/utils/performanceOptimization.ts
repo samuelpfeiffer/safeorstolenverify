@@ -41,14 +41,9 @@ export const optimizeImages = () => {
 };
 
 export const setupServiceWorker = async () => {
-  if ('serviceWorker' in navigator && 'caches' in window) {
-    try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('ServiceWorker registered:', registration);
-    } catch (error) {
-      console.log('ServiceWorker registration failed:', error);
-    }
-  }
+  // Service-worker registration removed during the TanStack Start migration.
+  // The browser's automatic SW update polling delivers the kill-switch at /sw.js
+  // to returning users; new visitors never register a SW.
 };
 
 // Cache critical resources

@@ -125,7 +125,7 @@ export const MarketingDashboard = () => {
  <div>
  <label className="text-sm font-medium text-muted-foreground">Title:</label>
  <div className="flex gap-2 mt-1">
- <code className="flex-1 p-2 bg-muted rounded text-sm">{post.title}</code>
+ <code className="flex-1 p-2 bg-muted rounded-[0.25rem] text-sm">{post.title}</code>
  <Button 
  size="icon" 
  variant="ghost"
@@ -138,7 +138,7 @@ export const MarketingDashboard = () => {
  <div>
  <label className="text-sm font-medium text-muted-foreground">Body:</label>
  <div className="flex gap-2 mt-1">
- <pre className="flex-1 p-3 bg-muted rounded text-sm whitespace-pre-wrap">{post.body}</pre>
+ <pre className="flex-1 p-3 bg-muted rounded-[0.25rem] text-sm whitespace-pre-wrap">{post.body}</pre>
  <Button 
  size="icon" 
  variant="ghost"
@@ -166,7 +166,7 @@ export const MarketingDashboard = () => {
  </CardHeader>
  <CardContent>
  <div className="flex gap-2">
- <pre className="flex-1 p-3 bg-muted rounded text-sm whitespace-pre-wrap">{post.answer}</pre>
+ <pre className="flex-1 p-3 bg-muted rounded-[0.25rem] text-sm whitespace-pre-wrap">{post.answer}</pre>
  <Button 
  size="icon" 
  variant="ghost"
@@ -193,7 +193,7 @@ export const MarketingDashboard = () => {
  </CardHeader>
  <CardContent>
  <div className="flex gap-2">
- <pre className="flex-1 p-3 bg-muted rounded text-sm whitespace-pre-wrap">{post.post}</pre>
+ <pre className="flex-1 p-3 bg-muted rounded-[0.25rem] text-sm whitespace-pre-wrap">{post.post}</pre>
  <Button 
  size="icon" 
  variant="ghost"
@@ -220,7 +220,7 @@ export const MarketingDashboard = () => {
  </CardHeader>
  <CardContent>
  <div className="flex gap-2">
- <pre className="flex-1 p-3 bg-muted rounded text-sm whitespace-pre-wrap">{post.content}</pre>
+ <pre className="flex-1 p-3 bg-muted rounded-[0.25rem] text-sm whitespace-pre-wrap">{post.content}</pre>
  <Button 
  size="icon" 
  variant="ghost"

@@ -38,7 +38,7 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 
 // Skeleton loader for content
 export const SkeletonLoader: React.FC<{ className?: string }> = ({ className }) => (
-  <div className={`bg-gray-600 rounded ${className}`} />
+  <div className={`bg-gray-600 rounded-[0.25rem] ${className}`} />
 );
 
 // Card skeleton

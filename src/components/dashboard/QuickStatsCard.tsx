@@ -55,8 +55,8 @@ export const QuickStatsCard = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="animate-pulse">
-                <div className="h-4 bg-muted rounded mb-2"></div>
-                <div className="h-6 bg-muted rounded"></div>
+                <div className="h-4 bg-muted rounded-[0.25rem] mb-2"></div>
+                <div className="h-6 bg-muted rounded-[0.25rem]"></div>
               </div>
             ))}
           </div>

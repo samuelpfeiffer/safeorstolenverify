@@ -45,7 +45,7 @@ export const PerformanceMonitor = () => {
               </span>
             </div>
             {metrics.loadTime > 3000 && (
-              <div className="flex items-start gap-2 mt-3 p-2 bg-red-500/20 rounded text-xs">
+              <div className="flex items-start gap-2 mt-3 p-2 bg-red-500/20 rounded-[0.25rem] text-xs">
                 <AlertCircle className="h-4 w-4 text-red-400" />
                 <p className="text-red-300">AI optimizing...</p>
               </div>

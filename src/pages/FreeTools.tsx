@@ -125,7 +125,7 @@ const FreeTools = () => {
                     <div className="space-y-3">
                       <h3 className="font-semibold">On iPhone:</h3>
                       <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• Dial <code className="bg-muted px-1 rounded">*#06#</code></li>
+                        <li>• Dial <code className="bg-muted px-1 rounded-[0.25rem]">*#06#</code></li>
                         <li>• Settings → General → About</li>
                         <li>• Check the SIM tray</li>
                         <li>• Original box or receipt</li>
@@ -134,7 +134,7 @@ const FreeTools = () => {
                     <div className="space-y-3">
                       <h3 className="font-semibold">On Android:</h3>
                       <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• Dial <code className="bg-muted px-1 rounded">*#06#</code></li>
+                        <li>• Dial <code className="bg-muted px-1 rounded-[0.25rem]">*#06#</code></li>
                         <li>• Settings → About Phone → Status</li>
                         <li>• Under the battery (older models)</li>
                         <li>• Original box or receipt</li>
