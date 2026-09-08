@@ -48,11 +48,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/api-docs</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://safeorstolen.com/app</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -1122,11 +1117,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/mobile-app</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://safeorstolen.com/montana-license-plate-lookup</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1601,11 +1591,6 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/vs-stolenphonechecker</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vs-stolenregister</loc>

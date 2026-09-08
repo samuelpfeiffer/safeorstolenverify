@@ -15,5 +15,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [mcpPlugin()],
+    // react-helmet-async ships CJS; bundle it for SSR so named exports resolve.
+    ssr: { noExternal: ["react-helmet-async"] },
   },
+
 });
