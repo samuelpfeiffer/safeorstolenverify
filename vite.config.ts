@@ -15,8 +15,16 @@ export default defineConfig({
   },
   vite: {
     plugins: [mcpPlugin()],
-    // react-helmet-async ships CJS; bundle it for SSR so named exports resolve.
-    ssr: { noExternal: ["react-helmet-async"] },
+    // Route every react-helmet-async import to our SSR-capable shim so per-page
+    // title/description/canonical land in the server-rendered HTML.
+    resolve: {
+      alias: [
+        {
+          find: /^react-helmet-async$/,
+          replacement: new URL("./src/lib/helmet-shim.tsx", import.meta.url).pathname,
+        },
+      ],
+    },
   },
 
 });
