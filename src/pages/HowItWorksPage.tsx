@@ -318,7 +318,7 @@ const HowItWorksPage = () => {
  <CardHeader className="bg-primary/5">
  <CardTitle className="flex items-center gap-2">
  Premium Plan
- <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded">Popular</span>
+ <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded-[0.25rem]">Popular</span>
  </CardTitle>
  <CardDescription>For serious buyers & sellers</CardDescription>
  </CardHeader>
@@ -584,7 +584,7 @@ const HowItWorksPage = () => {
  <CardHeader className="bg-primary/5">
  <CardTitle className="flex items-center gap-2">
  Premium Plan
- <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded">Popular</span>
+ <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded-[0.25rem]">Popular</span>
  </CardTitle>
  <CardDescription>For serious buyers & sellers</CardDescription>
  </CardHeader>
@@ -662,7 +662,7 @@ function ItemTypeCard({ icon, title, description, examples }: { icon: string; ti
  <p className="text-muted-foreground mb-3">{description}</p>
  <div className="flex flex-wrap gap-2">
  {examples.map((example, idx) => (
- <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
+ <span key={idx} className="text-xs bg-muted px-2 py-1 rounded-[0.25rem]">
  {example}
  </span>
  ))}

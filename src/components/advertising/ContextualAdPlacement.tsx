@@ -91,7 +91,7 @@ export const ContextualAdPlacement: React.FC<ContextualAdProps> = ({
             }`}
           />
           <div className="absolute top-3 right-3">
-            <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
+            <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-[0.25rem]">
               SPONSORED
             </span>
           </div>

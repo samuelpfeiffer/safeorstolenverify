@@ -56,7 +56,7 @@ export const InternalLinkingOptimizer: React.FC<InternalLinkingOptimizerProps> =
           <Link 
             key={index}
             to={link.url}
-            className={`${className} block p-3 bg-gray-800/50 rounded hover:bg-gray-800/70 transition-colors`}
+            className={`${className} block p-3 bg-gray-800/50 rounded-[0.25rem] hover:bg-gray-800/70 transition-colors`}
           >
             {link.anchor}
           </Link>

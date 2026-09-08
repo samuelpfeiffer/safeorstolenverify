@@ -263,7 +263,7 @@ const Footer = () => {
  </div>
  <div className="flex flex-wrap justify-center gap-3">
  {DATA_PARTNERS.map((partner, index) => (
- <div key={index} className="flex items-center gap-1.5 px-2 py-1 bg-card border border-border rounded text-xs">
+ <div key={index} className="flex items-center gap-1.5 px-2 py-1 bg-card border border-border rounded-[0.25rem] text-xs">
  <CheckCircle className="h-3 w-3 text-sos-lime" />
  <span className="font-medium text-muted-foreground">{partner.name}</span>
  </div>

@@ -102,7 +102,7 @@ export const BikeIndexResults: React.FC<BikeIndexResultsProps> = ({
  {bike.serial && (
  <p className="text-sm mt-1">
  <span className="text-muted-foreground">Serial:</span>{' '}
- <code className="bg-muted px-1 py-0.5 rounded text-xs">
+ <code className="bg-muted px-1 py-0.5 rounded-[0.25rem] text-xs">
  {bike.serial}
  </code>
  </p>

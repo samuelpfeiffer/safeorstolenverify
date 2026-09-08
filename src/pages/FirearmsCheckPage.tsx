@@ -463,7 +463,7 @@ function GunVerifyTool() {
  value={identifier}
  onChange={(e) => setIdentifier(e.target.value)}
  placeholder="Enter firearm serial number..."
- className="flex-1 bg-input border border-border rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary text-sm"
+ className="flex-1 bg-input border border-border rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-hidden focus:border-primary text-sm"
  />
  <button
  type="submit"

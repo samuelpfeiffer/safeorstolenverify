@@ -818,9 +818,9 @@ const VerifyChatPage: React.FC = () => {
  <span>100+ DATABASES · ~3S RESULTS · ANONYMOUS</span>
  <span className="hidden md:inline-flex items-center gap-1">
  ·
- <kbd className="px-1 py-px rounded border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>
+ <kbd className="px-1 py-px rounded-[0.25rem] border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>
  <span>focus</span>
- <kbd className="px-1 py-px rounded border border-border/60 bg-muted/40 text-[9px]">⌘B</kbd>
+ <kbd className="px-1 py-px rounded-[0.25rem] border border-border/60 bg-muted/40 text-[9px]">⌘B</kbd>
  <span>sidebar</span>
  </span>
  {!user && (
@@ -1091,7 +1091,7 @@ const ChatBubble: React.FC<{
  <div className="flex items-center gap-1 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
  <button
  onClick={copy}
- className="p-1.5 text-muted-foreground hover:text-foreground rounded hover:bg-card transition-colors"
+ className="p-1.5 text-muted-foreground hover:text-foreground rounded-[0.25rem] hover:bg-card transition-colors"
  aria-label="Copy"
  title="Copy"
  >
@@ -1104,7 +1104,7 @@ const ChatBubble: React.FC<{
  {onRegenerate && (
  <button
  onClick={onRegenerate}
- className="p-1.5 text-muted-foreground hover:text-foreground rounded hover:bg-card transition-colors"
+ className="p-1.5 text-muted-foreground hover:text-foreground rounded-[0.25rem] hover:bg-card transition-colors"
  aria-label="Regenerate"
  title="Regenerate"
  >

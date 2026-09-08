@@ -89,7 +89,7 @@ export default function CompleteImeiGuide() {
             <div className="bg-card border rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-3 text-foreground">IMEI Format Breakdown</h3>
               <p className="text-muted-foreground mb-3">
-                Example IMEI: <code className="bg-muted px-2 py-1 rounded">356938035643809</code>
+                Example IMEI: <code className="bg-muted px-2 py-1 rounded-[0.25rem]">356938035643809</code>
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li><strong>First 8 digits (TAC):</strong> Type Allocation Code identifying manufacturer and model</li>
@@ -108,7 +108,7 @@ export default function CompleteImeiGuide() {
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Method 1: Dial *#06#</h3>
                 <p className="text-muted-foreground mb-3">
                   Universal method that works on all smartphones (iPhone, Android, any carrier). Open your phone dialer 
-                  and type <code className="bg-muted px-2 py-1 rounded">*#06#</code>. Your IMEI will instantly display 
+                  and type <code className="bg-muted px-2 py-1 rounded-[0.25rem]">*#06#</code>. Your IMEI will instantly display 
                   on screen. No call is made.
                 </p>
                 <p className="text-muted-foreground text-sm">

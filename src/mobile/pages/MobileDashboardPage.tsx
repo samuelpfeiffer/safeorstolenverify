@@ -189,7 +189,7 @@ const MobileDashboardPage: React.FC = () => {
                       </p>
 
                       {item.status === 'stolen' && (
-                        <div className="mt-3 p-2 bg-destructive/10 rounded text-xs text-destructive font-semibold">
+                        <div className="mt-3 p-2 bg-destructive/10 rounded-[0.25rem] text-xs text-destructive font-semibold">
                           ⚠️ REPORTED STOLEN
                         </div>
                       )}

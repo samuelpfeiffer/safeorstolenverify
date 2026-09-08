@@ -94,7 +94,7 @@ const CheckImeiStolenPage = () => {
  <div className="my-7 rounded-lg border border-border border-l-[3px] border-l-primary bg-card p-5">
  <p className="text-foreground">
  <strong className="text-primary">Quick answer:</strong> Every phone has a unique 15-digit
- IMEI number. Find it by dialing <code className="rounded bg-muted px-1.5 py-0.5 text-sm">*#06#</code>,
+ IMEI number. Find it by dialing <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code>,
  then check that number against stolen-device records. <strong>SafeOrStolen</strong> checks
  the IMEI against carrier and theft databases and reported-stolen databases across 100+
  sources and returns a clear result in 3 seconds — clean, reported stolen, or blacklisted —
@@ -114,7 +114,7 @@ const CheckImeiStolenPage = () => {
  <p>Three ways to find a phone&apos;s IMEI:</p>
  <ul>
  <li>
- <strong>Dial <code className="rounded bg-muted px-1.5 py-0.5 text-sm">*#06#</code></strong>{' '}
+ <strong>Dial <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code></strong>{' '}
  on the phone&apos;s keypad — the IMEI appears instantly.
  </li>
  <li>
@@ -131,7 +131,7 @@ const CheckImeiStolenPage = () => {
  </ul>
  <p>
  When buying used, always read the IMEI off the actual device with{' '}
- <code className="rounded bg-muted px-1.5 py-0.5 text-sm">*#06#</code> — not off a box or a
+ <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code> — not off a box or a
  screenshot a seller sends you.
  </p>
 
@@ -164,7 +164,7 @@ const CheckImeiStolenPage = () => {
  <ol className="[&>li]:my-3">
  <li>
  <strong>Get the IMEI.</strong> Dial{' '}
- <code className="rounded bg-muted px-1.5 py-0.5 text-sm">*#06#</code> on the phone, read
+ <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code> on the phone, read
  it from Settings → About, or scan the barcode in the app.
  </li>
  <li>
@@ -201,7 +201,7 @@ const CheckImeiStolenPage = () => {
  <h2>What your result means</h2>
 
  <div className="my-3 rounded-lg border border-border bg-card p-4">
- <span className="rounded px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary bg-primary/10">
+ <span className="rounded-[0.25rem] px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary bg-primary/10">
  Clean
  </span>
  <p className="mt-2.5">
@@ -212,7 +212,7 @@ const CheckImeiStolenPage = () => {
  </div>
 
  <div className="my-3 rounded-lg border border-border bg-card p-4">
- <span className="rounded bg-destructive/10 px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-destructive">
+ <span className="rounded-[0.25rem] bg-destructive/10 px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-destructive">
  Reported stolen
  </span>
  <p className="mt-2.5">
@@ -223,7 +223,7 @@ const CheckImeiStolenPage = () => {
  </div>
 
  <div className="my-3 rounded-lg border border-border bg-card p-4">
- <span className="rounded bg-amber-500/10 px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-500">
+ <span className="rounded-[0.25rem] bg-amber-500/10 px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-500">
  Blacklisted
  </span>
  <p className="mt-2.5">

@@ -236,7 +236,7 @@ export const AIVerificationAnalysis: React.FC<Props> = ({ identifier, itemType, 
                   <div className="mt-1.5 space-y-2">
                     {analysis.riskFactors.map((rf, i) => (
                       <div key={i} className="flex items-start gap-2">
-                        <span className={cn("text-[10px] px-1.5 py-0.5 rounded uppercase font-bold",
+                        <span className={cn("text-[10px] px-1.5 py-0.5 rounded-[0.25rem] uppercase font-bold",
                           rf.severity === 'low' ? 'bg-emerald-500/10 text-emerald-400' :
                           rf.severity === 'medium' ? 'bg-amber-500/10 text-amber-400' :
                           'bg-red-500/10 text-red-400'

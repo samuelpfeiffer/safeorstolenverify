@@ -158,7 +158,7 @@ export const AIEnhancedSearch: React.FC<AIEnhancedSearchProps> = ({
             </h4>
             <div className="space-y-1">
               {aiSuggestions.map((suggestion, index) => (
-                <div key={index} className="flex items-start gap-2 text-sm p-2 rounded bg-muted/30">
+                <div key={index} className="flex items-start gap-2 text-sm p-2 rounded-[0.25rem] bg-muted/30">
                   <Sparkles className="h-3 w-3 text-primary mt-0.5 flex-shrink-0" />
                   <span>{suggestion}</span>
                 </div>

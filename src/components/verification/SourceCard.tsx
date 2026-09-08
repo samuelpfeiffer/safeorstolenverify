@@ -130,7 +130,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
           <div className="space-y-2 border-t border-border pt-3">
             <p className="text-xs font-semibold text-muted-foreground">Matches:</p>
             {result.items.slice(0, 3).map((item, idx) => (
-              <div key={idx} className="text-xs space-y-1 p-2 bg-background/50 rounded">
+              <div key={idx} className="text-xs space-y-1 p-2 bg-background/50 rounded-[0.25rem]">
                 <p className="font-medium">{item.description || item.title}</p>
                 {(item.date || item.reportedDate || item.location) && (
                   <p className="text-muted-foreground">

@@ -170,7 +170,7 @@ const FirearmSerialTool = () => {
                         </div>
                       )}
                       {result.details.suspiciousReason && (
-                        <div className="mt-2 p-2 bg-yellow-500/10 rounded text-yellow-700">
+                        <div className="mt-2 p-2 bg-yellow-500/10 rounded-[0.25rem] text-yellow-700">
                           ⚠️ {result.details.suspiciousReason}
                         </div>
                       )}

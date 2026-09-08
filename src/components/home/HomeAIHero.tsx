@@ -300,7 +300,7 @@ export const HomeAIHero: React.FC = () => {
  placeholder="Paste IMEI, VIN, serial, plate, or a marketplace URL — or ask a question…"
  rows={1}
  disabled={isStreaming}
- className="flex-1 resize-none bg-background border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 min-h-[48px] max-h-32"
+ className="flex-1 resize-none bg-background border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:border-primary/60 focus:ring-2 focus:ring-primary/20 min-h-[48px] max-h-32"
  />
  <button
  onClick={() => send(input)}

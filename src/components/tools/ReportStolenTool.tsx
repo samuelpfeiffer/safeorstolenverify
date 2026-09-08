@@ -113,7 +113,7 @@ const ReportStolenTool = () => {
             </p>
             {reportId && (
               <p className="text-sm text-muted-foreground mb-6">
-                Report ID: <code className="bg-muted px-2 py-1 rounded">{reportId}</code>
+                Report ID: <code className="bg-muted px-2 py-1 rounded-[0.25rem]">{reportId}</code>
               </p>
             )}
             <div className="flex gap-4 justify-center">

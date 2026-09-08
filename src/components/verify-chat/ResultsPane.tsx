@@ -221,7 +221,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  )}
  <div className="mt-3 text-xs font-semibold text-foreground">
  {current.itemType.toUpperCase()}{' '}
- <code className="text-xs bg-background/70 px-1.5 py-0.5 rounded ml-1">
+ <code className="text-xs bg-background/70 px-1.5 py-0.5 rounded-[0.25rem] ml-1">
  {current.identifier}
  </code>
  </div>

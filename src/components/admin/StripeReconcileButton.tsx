@@ -153,7 +153,7 @@ export const StripeReconcileButton: React.FC = () => {
                   {result.details
                     .filter(d => d.action === 'recovered')
                     .map((detail, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-2 bg-green-500/10 rounded text-sm">
+                      <div key={idx} className="flex items-center justify-between p-2 bg-green-500/10 rounded-[0.25rem] text-sm">
                         <div className="flex items-center gap-2">
                           {getActionIcon(detail.action)}
                           <span>{detail.email || 'Unknown'}</span>

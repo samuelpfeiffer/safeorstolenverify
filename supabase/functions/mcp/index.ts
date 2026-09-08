@@ -7,7 +7,7 @@ import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.26.1";
 
 // src/lib/mcp/tools/detect-identifier.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.26.1";
-import { z } from "npm:zod@^3.23.8";
+import { z } from "npm:zod@^3.25.76";
 
 // src/lib/mcp/supabase.ts
 import { createClient } from "npm:@supabase/supabase-js@^2.52.0";
@@ -89,7 +89,7 @@ var detect_identifier_default = defineTool({
 
 // src/lib/mcp/tools/verify-imei.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.26.1";
-import { z as z2 } from "npm:zod@^3.23.8";
+import { z as z2 } from "npm:zod@^3.25.76";
 var verify_imei_default = defineTool2({
   name: "verify_imei",
   title: "Verify phone IMEI",
@@ -118,7 +118,7 @@ var verify_imei_default = defineTool2({
 
 // src/lib/mcp/tools/verify-vin.ts
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.26.1";
-import { z as z3 } from "npm:zod@^3.23.8";
+import { z as z3 } from "npm:zod@^3.25.76";
 var verify_vin_default = defineTool3({
   name: "verify_vin",
   title: "Verify vehicle VIN",
@@ -147,7 +147,7 @@ var verify_vin_default = defineTool3({
 
 // src/lib/mcp/tools/verify-serial.ts
 import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.26.1";
-import { z as z4 } from "npm:zod@^3.23.8";
+import { z as z4 } from "npm:zod@^3.25.76";
 var verify_serial_default = defineTool4({
   name: "verify_serial",
   title: "Verify serial number",
@@ -181,7 +181,7 @@ var verify_serial_default = defineTool4({
 
 // src/lib/mcp/tools/list-recent-verifications.ts
 import { defineTool as defineTool5 } from "npm:@lovable.dev/mcp-js@0.26.1";
-import { z as z5 } from "npm:zod@^3.23.8";
+import { z as z5 } from "npm:zod@^3.25.76";
 var list_recent_verifications_default = defineTool5({
   name: "list_recent_verifications",
   title: "List my recent verifications",

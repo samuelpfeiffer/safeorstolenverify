@@ -49,7 +49,7 @@ export const SecureAuthWrapper = ({ children, requireAuth = false }: SecureAuthW
             </p>
             <a
               href="/auth"
-              className="inline-block bg-sos-orange text-white px-4 py-2 rounded hover:bg-sos-orange/90 transition-colors"
+              className="inline-block bg-sos-orange text-white px-4 py-2 rounded-[0.25rem] hover:bg-sos-orange/90 transition-colors"
             >
               Sign In
             </a>

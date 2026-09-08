@@ -100,7 +100,7 @@ export const ConversationSidebar: React.FC<Props> = ({
                         if (e.key === 'Enter') commitEdit();
                         if (e.key === 'Escape') setEditingId(null);
                       }}
-                      className="flex-1 bg-background border border-border rounded px-2 py-1 text-xs"
+                      className="flex-1 bg-background border border-border rounded-[0.25rem] px-2 py-1 text-xs"
                     />
                     <button
                       onClick={commitEdit}
@@ -162,7 +162,7 @@ export const ConversationSidebar: React.FC<Props> = ({
                             startEdit(t);
                           }
                         }}
-                        className="p-1 text-muted-foreground hover:text-foreground rounded cursor-pointer"
+                        className="p-1 text-muted-foreground hover:text-foreground rounded-[0.25rem] cursor-pointer"
                         aria-label="Rename"
                       >
                         <Pencil className="w-3 h-3" />
@@ -180,7 +180,7 @@ export const ConversationSidebar: React.FC<Props> = ({
                             onDelete(t.id);
                           }
                         }}
-                        className="p-1 text-muted-foreground hover:text-red-500 rounded cursor-pointer"
+                        className="p-1 text-muted-foreground hover:text-red-500 rounded-[0.25rem] cursor-pointer"
                         aria-label="Delete"
                       >
                         <Trash2 className="w-3 h-3" />

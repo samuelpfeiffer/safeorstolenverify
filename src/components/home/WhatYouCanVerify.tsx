@@ -140,7 +140,7 @@ export const WhatYouCanVerify = () => {
  <Link
  key={index}
  to={type.link}
- className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
+ className="group block focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
  aria-label={`${type.title} verification — ${type.subtitle}`}
  >
  <Card className="overflow-hidden hover:shadow-xl hover:border-primary/40 transition-all duration-300 h-full cursor-pointer">

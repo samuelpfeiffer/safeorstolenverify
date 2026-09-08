@@ -194,7 +194,7 @@ const BestStolenItemCheckers2026 = () => {
                       <p className="text-sm text-muted-foreground mb-2">Categories:</p>
                       <div className="flex flex-wrap gap-2">
                         {tool.categories.map((cat) => (
-                          <span key={cat} className="inline-flex items-center gap-1 bg-muted px-2 py-1 rounded text-xs">
+                          <span key={cat} className="inline-flex items-center gap-1 bg-muted px-2 py-1 rounded-[0.25rem] text-xs">
                             {getCategoryIcon(cat)}
                             {cat}
                           </span>

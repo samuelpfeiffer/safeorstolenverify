@@ -154,7 +154,7 @@ export const StripeStatusDashboard = () => {
                 <li>Enter this URL:</li>
               </ol>
               
-              <div className="flex items-center gap-2 bg-muted p-2 rounded">
+              <div className="flex items-center gap-2 bg-muted p-2 rounded-[0.25rem]">
                 <code className="text-xs flex-1 break-all">{WEBHOOK_URL}</code>
                 <Button size="sm" variant="ghost" onClick={() => copyToClipboard(WEBHOOK_URL)}>
                   <Copy className="h-4 w-4" />
@@ -208,7 +208,7 @@ export const StripeStatusDashboard = () => {
           <div>
             <label className="text-sm font-medium">Webhook Endpoint URL</label>
             <div className="flex items-center gap-2 mt-1">
-              <code className="flex-1 p-2 bg-muted rounded text-sm break-all">{WEBHOOK_URL}</code>
+              <code className="flex-1 p-2 bg-muted rounded-[0.25rem] text-sm break-all">{WEBHOOK_URL}</code>
               <Button size="sm" variant="outline" onClick={() => copyToClipboard(WEBHOOK_URL)}>
                 <Copy className="h-4 w-4" />
               </Button>

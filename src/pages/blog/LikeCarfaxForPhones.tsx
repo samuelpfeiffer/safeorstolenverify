@@ -215,7 +215,7 @@ const LikeCarfaxForPhones = () => {
               Just like a VIN uniquely identifies a vehicle, <strong>IMEI (International Mobile Equipment Identity)</strong> uniquely identifies a phone. Find it by:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Dial <code className="bg-muted px-2 py-1 rounded">*#06#</code> on the phone - IMEI displays instantly</li>
+              <li>Dial <code className="bg-muted px-2 py-1 rounded-[0.25rem]">*#06#</code> on the phone - IMEI displays instantly</li>
               <li>Go to Settings → About Phone → IMEI Information</li>
               <li>Check the original box or SIM card tray</li>
               <li>Look on the back of the phone (some models)</li>

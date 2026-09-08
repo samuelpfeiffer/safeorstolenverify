@@ -26,7 +26,7 @@ export const AggressiveConversionBanner = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <button 
             onClick={() => setDismissed(true)}
-            className="absolute top-2 right-2 md:relative md:top-0 md:right-0 md:order-last p-1 hover:bg-white/20 rounded"
+            className="absolute top-2 right-2 md:relative md:top-0 md:right-0 md:order-last p-1 hover:bg-white/20 rounded-[0.25rem]"
           >
             <X className="h-5 w-5 text-white" />
           </button>

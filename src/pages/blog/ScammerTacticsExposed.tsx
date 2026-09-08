@@ -193,7 +193,7 @@ export default function ScammerTacticsExposed() {
                 <li><strong>Seek Legal Advice</strong> - Consult an attorney about recovering your money</li>
               </ol>
 
-              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded">
+              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded-[0.25rem]">
                 <p className="font-bold mb-2">Important Legal Note:</p>
                 <p>You can be charged with possession of stolen property even if you purchased it unknowingly. Always verify items before completing transactions.</p>
               </div>

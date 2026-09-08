@@ -183,7 +183,7 @@ const TopStolenItemCheckers = () => {
                 <a
                   key={id}
                   href={`#${id}`}
-                  className={`block text-xs py-1.5 px-2 rounded transition-colors ${
+                  className={`block text-xs py-1.5 px-2 rounded-[0.25rem] transition-colors ${
                     activeSection === id
                       ? 'bg-primary/10 text-primary font-semibold'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'

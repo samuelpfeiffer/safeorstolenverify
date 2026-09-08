@@ -156,7 +156,7 @@ export const CrawlForm = () => {
                 {crawlResult.data && crawlResult.data.length > 0 && (
                   <div className="mt-4">
                     <h3 className="font-semibold mb-2">Crawled Pages:</h3>
-                    <div className="bg-muted p-4 rounded overflow-auto max-h-96">
+                    <div className="bg-muted p-4 rounded-[0.25rem] overflow-auto max-h-96">
                       <pre className="text-sm whitespace-pre-wrap">
                         {JSON.stringify(crawlResult.data, null, 2)}
                       </pre>

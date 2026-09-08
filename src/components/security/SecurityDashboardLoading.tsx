@@ -11,7 +11,7 @@ export const SecurityDashboardLoading = () => {
       <CardContent>
         <div className="space-y-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-4 bg-gray-700 rounded animate-pulse" />
+            <div key={i} className="h-4 bg-gray-700 rounded-[0.25rem] animate-pulse" />
           ))}
         </div>
       </CardContent>

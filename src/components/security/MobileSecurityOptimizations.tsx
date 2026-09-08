@@ -174,7 +174,7 @@ export const MobileSecurityOptimizations = ({ className }: SecurityOptimizations
           </div>
           
           {showSensitiveInfo && deviceInfo && (
-            <div className="text-xs text-gray-400 space-y-1 bg-gray-800 p-2 rounded">
+            <div className="text-xs text-gray-400 space-y-1 bg-gray-800 p-2 rounded-[0.25rem]">
               <div><span className="font-medium">Platform:</span> {deviceInfo.platform}</div>
               <div><span className="font-medium">User Agent:</span> {deviceInfo.userAgent.substring(0, 50)}...</div>
             </div>

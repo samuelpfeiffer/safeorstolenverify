@@ -267,7 +267,7 @@ const EbayStolenItemCheck = () => {
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <CardTitle className="text-lg">{category.title}</CardTitle>
-                      <span className={`text-xs px-2 py-1 rounded ${
+                      <span className={`text-xs px-2 py-1 rounded-[0.25rem] ${
                         category.risk === 'Very High' ? 'bg-red-100 text-red-700' :
                         category.risk === 'High' ? 'bg-orange-100 text-orange-700' :
                         'bg-yellow-100 text-yellow-700'

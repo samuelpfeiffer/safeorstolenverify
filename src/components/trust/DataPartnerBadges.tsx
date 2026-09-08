@@ -49,7 +49,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  {DATA_PARTNERS.map((partner, index) => (
  <div 
  key={index}
- className="flex items-center gap-1.5 px-2 py-1 bg-card border border-border rounded text-xs"
+ className="flex items-center gap-1.5 px-2 py-1 bg-card border border-border rounded-[0.25rem] text-xs"
  >
  {partner.verified && <CheckCircle className="h-3 w-3 text-secondary" />}
  <span className="font-medium">{partner.name}</span>

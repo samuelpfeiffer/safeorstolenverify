@@ -146,25 +146,25 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  <section className="mb-8">
  <h2 className="text-2xl font-bold mb-4">When You Need a Stolen Item Checker</h2>
  <div className="grid md:grid-cols-2 gap-6">
- <div className="p-4 border border-border rounded">
+ <div className="p-4 border border-border rounded-[0.25rem]">
  <h3 className="font-semibold mb-2">🛒 Buying Second-Hand Items</h3>
  <p className="text-sm text-muted-foreground">
  Craigslist, Facebook Marketplace, eBay, OfferUp - verify before purchasing to avoid legal trouble and financial loss. Stolen items can be seized by police with no refund.
  </p>
  </div>
- <div className="p-4 border border-border rounded">
+ <div className="p-4 border border-border rounded-[0.25rem]">
  <h3 className="font-semibold mb-2">💼 Business Inventory</h3>
  <p className="text-sm text-muted-foreground">
  Pawn shops, car dealerships, phone repair shops, resale stores - verify all incoming inventory to comply with regulations and protect your business license.
  </p>
  </div>
- <div className="p-4 border border-border rounded">
+ <div className="p-4 border border-border rounded-[0.25rem]">
  <h3 className="font-semibold mb-2">🚗 Used Car Purchases</h3>
  <p className="text-sm text-muted-foreground">
  Check VIN before test driving. Salvage titles, theft records, and odometer fraud are common. VIN verification provides instant theft history.
  </p>
  </div>
- <div className="p-4 border border-border rounded">
+ <div className="p-4 border border-border rounded-[0.25rem]">
  <h3 className="font-semibold mb-2">📱 Phone Purchases</h3>
  <p className="text-sm text-muted-foreground">
  IMEI blacklist check prevents buying locked/stolen phones. Carriers blacklist stolen IMEIs making phones unusable even if unlocked.

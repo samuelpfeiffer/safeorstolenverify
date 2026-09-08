@@ -180,7 +180,7 @@ export function SchemaAuditDashboard() {
               {highMissing.slice(0, 10).map((page, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-2 bg-white dark:bg-gray-900 border border-orange-200 rounded"
+                  className="flex items-center justify-between p-2 bg-white dark:bg-gray-900 border border-orange-200 rounded-[0.25rem]"
                 >
                   <div>
                     <code className="text-xs font-mono">{page.path}</code>
