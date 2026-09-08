@@ -263,29 +263,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-      // Static FALLBACK title/description — react-helmet-async overrides per page.
-      { title: "SafeOrStolen — AI-Powered Stolen Item Verification" },
-      {
-        name: "description",
-        content:
-          "AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes in one platform.",
-      },
+      // NOTE: title / description / og:title / og:description / og:url /
+      // twitter:title / twitter:description are emitted PER PAGE by SEOHead
+      // (React 19 head hoisting). Never add fallbacks here — they would render
+      // before the page's own tags and crawlers would read the wrong one.
       { property: "og:site_name", content: "SafeOrStolen" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "SafeOrStolen — Free Stolen Item Checker" },
-      {
-        property: "og:description",
-        content:
-          "AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes in one platform.",
-      },
-      { property: "og:url", content: "https://safeorstolen.com/" },
       { property: "og:image", content: "https://safeorstolen.com/sos-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "SafeOrStolen — Free Stolen Item Checker" },
-      {
-        name: "twitter:description",
-        content: "Check IMEI, VIN, and serial numbers against our verification databases before buying.",
-      },
       { name: "twitter:image", content: "https://safeorstolen.com/sos-logo.png" },
       // iOS / PWA support
       { name: "apple-mobile-web-app-capable", content: "yes" },
