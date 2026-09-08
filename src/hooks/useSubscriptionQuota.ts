@@ -53,14 +53,14 @@ export const useSubscriptionQuota = () => {
 
       // Check trial for users without subscription
       if (!profile.subscription_tier) {
-        const trialExpired = new Date() > new Date(profile.trial_end_date);
+        const trialExpired = new Date() > new Date(profile.trial_end_date ?? 0);
         const checksExhausted = used >= 2;
         canPerformCheck = !trialExpired && !checksExhausted;
         if (!canPerformCheck) needsPayment = true;
       }
 
       // Check if over quota for limited tiers
-      if (tier === 'personal' && used >= limit) {
+      if (tier === 'personal' && used >= (limit ?? 0)) {
         needsPayment = true; // Will need to pay overage
       }
 
@@ -71,9 +71,9 @@ export const useSubscriptionQuota = () => {
 
       setQuota({
         tier,
-        monthlyLimit: isUnlimited ? 'unlimited' : limit,
+        monthlyLimit: isUnlimited ? 'unlimited' : (limit ?? 0),
         used,
-        remaining: isUnlimited ? 'unlimited' : Math.max(0, limit - used),
+        remaining: isUnlimited ? 'unlimited' : Math.max(0, (limit ?? 0) - used),
         isUnlimited,
         overageRate: tier === 'personal' ? 0.40 : null,
         canPerformCheck,

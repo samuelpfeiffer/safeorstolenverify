@@ -5,7 +5,7 @@ import {
  Smartphone, Download, Apple, Chrome, Share, Plus,
  Menu, Check, ArrowRight, QrCode, Shield, Zap
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';

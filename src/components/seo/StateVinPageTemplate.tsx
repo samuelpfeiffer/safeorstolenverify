@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getStateUniqueContent, StateUniqueContent } from '@/config/stateUniqueContent';

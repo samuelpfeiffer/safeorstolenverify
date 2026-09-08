@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)
 const sosLogo = '/sos-logo.png';
 

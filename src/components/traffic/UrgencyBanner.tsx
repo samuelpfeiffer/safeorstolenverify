@@ -1,6 +1,6 @@
 import React from 'react';
 import { Shield, TrendingUp, Smartphone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 
 export const UrgencyBanner = () => {

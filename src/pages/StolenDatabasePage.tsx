@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -344,7 +344,7 @@ const StolenDatabasePage = () => {
  const slug = generateSlug(item);
  
  return (
- <Link key={item.id} to={`/item/${slug}`} state={{ itemId: item.id }}>
+ <Link key={item.id} to={`/item/${slug}`} state={{ itemId: item.id } as never}>
  <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer">
  <CardHeader className="pb-2">
  <div className="flex items-start justify-between">

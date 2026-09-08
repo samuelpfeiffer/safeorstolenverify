@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { useAuth } from '@/lib/auth';
 import { trackPageView } from '@/utils/analytics';
@@ -47,7 +47,7 @@ export const useAuthPageLogic = () => {
         duration: 3000,
       });
       
-      const from = location.state?.from?.pathname || '/dashboard';
+      const from = (location?.state as { from?: { pathname?: string } } | undefined)?.from?.pathname || '/dashboard';
       
       setTimeout(() => {
         navigate(from, { replace: true });

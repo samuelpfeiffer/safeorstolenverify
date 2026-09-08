@@ -1,6 +1,6 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, AlertTriangle, Smartphone, Shield, ArrowRight, Download } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';

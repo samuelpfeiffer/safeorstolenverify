@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Shield, Search, CheckCircle, ArrowRight, AlertTriangle, Gamepad2, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {

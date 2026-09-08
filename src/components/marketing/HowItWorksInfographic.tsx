@@ -15,7 +15,7 @@ import {
  ArrowRight,
  Clock
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 /**
  * How It Works Infographic Component

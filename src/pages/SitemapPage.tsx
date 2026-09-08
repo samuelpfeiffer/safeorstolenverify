@@ -1,5 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { 
  Car, Smartphone, Laptop, Bike, Wrench, Gem, Ship, 
  MapPin, FileText, Building2, Users, HelpCircle, 

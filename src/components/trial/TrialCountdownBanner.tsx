@@ -3,7 +3,7 @@ import { useTrialStatus } from '@/hooks/useTrialStatus';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Clock, AlertTriangle, Zap, Shield } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 

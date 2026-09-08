@@ -2,7 +2,7 @@ import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Check, X, Shield, Smartphone, Car, Bike, Laptop, ArrowRight, Zap, Globe, Star, Home } from 'lucide-react';
 
 const VsDeviceCheckCA = () => {

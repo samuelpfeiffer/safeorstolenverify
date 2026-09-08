@@ -575,7 +575,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  const data = STATE_LICENSE_PLATE_DATA[stateKey];
  if (!data) return null;
 
- const { state, stateCode, dmvName, dmvLink, topCities, theftStats, uniqueConcerns, requiresFrontPlate } = data;
+ const { state, stateCode, dmvName, dmvLink, topCities, theftStats = { annualThefts: 'N/A', recoveryRate: 'N/A', ranking: '' }, uniqueConcerns, requiresFrontPlate } = data;
 
  return {
  title: `${state} License Plate Lookup - Check ${stateCode} Stolen Vehicle by Plate`,

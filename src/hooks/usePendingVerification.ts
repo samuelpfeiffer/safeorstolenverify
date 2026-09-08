@@ -40,8 +40,8 @@ export const usePendingVerification = () => {
       const { error } = await supabase.rpc('save_pending_verification', {
         p_session_id: sessionId,
         p_serial_number: serialNumber,
-        p_item_type: itemType || null,
-        p_user_intent: userIntent || null
+        p_item_type: itemType || undefined,
+        p_user_intent: userIntent || undefined
       });
 
       if (error) {

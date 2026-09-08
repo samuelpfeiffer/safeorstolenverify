@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Apple, PlayCircle, Download } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 
 interface AppStoreBadgesProps {
   showPWA?: boolean;

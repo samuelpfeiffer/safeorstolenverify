@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ScamAnalysisResultCard } from '@/components/scam/ScamAnalysisResult';
 import { analyzeListingForScams, type ListingData, type ScamAnalysisResult } from '@/lib/scamAnalyzer';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 const webAppSchema = {
   "@context": "https://schema.org",

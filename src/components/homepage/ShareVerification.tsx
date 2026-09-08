@@ -1,6 +1,6 @@
 import { Share2, Link as LinkIcon, MessageCircle, Copy, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 /**
  * Referral/share section on the homepage — encourages users to share results

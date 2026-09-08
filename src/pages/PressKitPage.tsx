@@ -6,7 +6,7 @@ import {
   Download, FileText, Image, Video, Quote, ExternalLink,
   Shield, Smartphone, Zap, Globe
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 const PressKitPage = () => {
   const companyFacts = [

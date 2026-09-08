@@ -25,6 +25,11 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/ai-verify</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/alabama-license-plate-lookup</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -41,6 +46,11 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/api-docs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/app</loc>
@@ -1112,6 +1122,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/mobile-app</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/montana-license-plate-lookup</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1511,6 +1526,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/verify/classic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/verify/pawnshops</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -1581,6 +1601,11 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/vs-stolenphonechecker</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vs-stolenregister</loc>

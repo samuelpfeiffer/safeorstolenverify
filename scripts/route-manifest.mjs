@@ -60,27 +60,35 @@ export function isPrivateRoute(routePath) {
   return PRIVATE_PREFIXES.some((prefix) => p.startsWith(prefix));
 }
 
-/** All static (non-parameterised) paths declared in the router. */
+/** All static (non-parameterised) paths declared in the router (TanStack file routes). */
 export function routesFromRouter() {
-  const src = fs.readFileSync(path.join(ROOT, 'src/core/routing/AppRoutes.tsx'), 'utf-8');
+  const routesDir = path.join(ROOT, 'src/routes');
   const paths = new Set();
-  for (const m of src.matchAll(/<Route\s+path=["']([^"']+)["']([\s\S]{0,120}?)\/?>/g)) {
-    const p = m[1];
-    const rest = m[2] || '';
-    if (!p.startsWith('/')) continue;
-    if (p.includes(':') || p.includes('*')) continue;
-    // Routes whose element is a <Navigate> are redirects, not destinations.
-    if (/<Navigate\b/.test(rest)) continue;
-    paths.add(p.length > 1 ? p.replace(/\/$/, '') : '/');
-  }
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(full); continue; }
+      if (!entry.name.endsWith('.tsx') && !entry.name.endsWith('.ts')) continue;
+      const rel = path.relative(routesDir, full).replace(/\\/g, '/');
+      if (rel === '__root.tsx') continue;
+      let p = '/' + rel.replace(/\.(tsx|ts)$/, '');
+      // TanStack conventions: dots become slashes, [.] is an escaped literal dot,
+      // index maps to the parent path, $param/$ are dynamic.
+      p = p.replace(/\./g, '/').replace(/\[\/\]/g, '.');
+      if (p.endsWith('/index')) p = p.slice(0, -'/index'.length) || '/';
+      if (p.includes('$')) continue; // dynamic segments are not sitemapped
+      paths.add(p.length > 1 ? p.replace(/\/$/, '') : '/');
+    }
+  };
+  walk(routesDir);
   return paths;
 }
 
-/** Legacy paths handled by REDIRECT_MAP — they 301 and must not be sitemapped. */
+/** Legacy paths handled by the redirect map — they 301 and must not be sitemapped. */
 export function redirectPaths() {
-  const src = fs.readFileSync(path.join(ROOT, 'src/core/routing/RedirectRoutes.tsx'), 'utf-8');
+  const src = fs.readFileSync(path.join(ROOT, 'src/utils/legacyRedirectMap.ts'), 'utf-8');
   const out = new Set();
-  const body = src.slice(src.indexOf('REDIRECT_MAP'));
+  const body = src.slice(src.indexOf('LEGACY_REDIRECT_MAP'));
   for (const m of body.matchAll(/^\s*'([^']+)':\s*'([^']+)'/gm)) out.add(m[1]);
   return out;
 }

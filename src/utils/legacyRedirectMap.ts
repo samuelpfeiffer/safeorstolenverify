@@ -1,36 +1,9 @@
 /**
- * RedirectRoutes - React-level redirects for all legacy URLs
- * 
- * CRITICAL: These must exist as React routes (not just _redirects) because
- * the prerenderer/SSR executes React code. Without these, legacy URLs hit
- * the NotFound component which sets noindex, causing GSC exclusion.
- * 
- * The _redirects file handles the server-side 301s for direct browser requests,
- * but React Navigate handles the prerenderer/SSR path.
+ * Legacy URL -> destination map, extracted from the pre-migration RedirectRoutes.tsx.
+ * Served as real 301 redirects from the root route's beforeLoad (SSR-aware).
+ * NEVER delete entries - URL preservation mandate.
  */
-import { Route, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-
-/**
- * Intermediate redirect state: emits noindex + a 301 prerender signal so a
- * crawler that snapshots the pre-navigation frame never indexes a duplicate.
- */
-const RedirectWithNoIndex = ({ to }: { to: string }) => (
-  <>
-    <Helmet>
-      <meta name="robots" content="noindex, nofollow" />
-      <meta name="prerender-status-code" content="301" />
-      <meta name="prerender-header" content={`Location: https://safeorstolen.com${to}`} />
-    </Helmet>
-    <Navigate to={to} replace />
-  </>
-);
-
-/**
- * Map of legacy paths → redirect targets
- * Organized by category for maintainability
- */
-const REDIRECT_MAP: Record<string, string> = {
+export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   // ===== REMOVED PAGES =====
   '/news/onevalley-recognition': '/press',
 
@@ -364,16 +337,15 @@ const REDIRECT_MAP: Record<string, string> = {
   '/blog/avoid-buying-stolen-items': '/blog/ultimate-marketplace-buyers-guide',
 };
 
-/**
- * Generate Route elements for all redirects.
- * Must be placed BEFORE the catch-all "*" route in AppRoutes.
- */
-export const getRedirectRoutes = () =>
-  Object.entries(REDIRECT_MAP).map(([from, to]) => (
-    <Route key={from} path={from} element={<RedirectWithNoIndex to={to} />} />
-  ));
-
-/** @deprecated Use getRedirectRoutes() instead */
-export const RedirectRoutes = getRedirectRoutes;
-
-export default RedirectRoutes;
+/** Resolve a legacy path to its destination, handling trailing slashes and wildcard entries. */
+export function resolveLegacyRedirect(pathname: string): string | null {
+  const p = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  const direct = LEGACY_REDIRECT_MAP[p];
+  if (direct) return direct;
+  for (const [from, to] of Object.entries(LEGACY_REDIRECT_MAP)) {
+    if (from.endsWith("/*") && (p === from.slice(0, -2) || p.startsWith(from.slice(0, -1)))) {
+      return to;
+    }
+  }
+  return null;
+}

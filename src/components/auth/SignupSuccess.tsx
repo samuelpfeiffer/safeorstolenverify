@@ -11,7 +11,7 @@ import {
   Gift,
   BookOpen
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 interface SignupSuccessProps {
   userEmail?: string;

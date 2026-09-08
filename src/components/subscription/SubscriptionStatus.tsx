@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Search, Crown, Clock, Settings, RefreshCw } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { formatPrice, getSubscriptionPriceId, SUBSCRIPTION_TIERS, getSubscriptionTier } from '@/features/pricing';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { useCallback, useMemo } from 'react';
@@ -29,7 +29,7 @@ export const SubscriptionStatus = () => {
   const isSubscribed = Boolean(subscriptionData?.subscribed);
   const currentTier = useMemo(() => {
     try {
-      return getSubscriptionTier(subscriptionData?.subscription_tier);
+      return getSubscriptionTier(subscriptionData?.subscription_tier ?? undefined);
     } catch (error) {
       console.error('Error getting subscription tier:', error);
       return SUBSCRIPTION_TIERS.starter;

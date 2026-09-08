@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, CheckCircle, AlertTriangle, Zap, Download, Crown, CreditCard, Loader2, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { PAY_PER_CHECK_PRICE_ID, UNLIMITED_PRICE_ID } from '@/features/pricing/constants';

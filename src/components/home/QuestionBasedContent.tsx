@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle2, Database, Shield, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 
 export const QuestionBasedContent = () => {

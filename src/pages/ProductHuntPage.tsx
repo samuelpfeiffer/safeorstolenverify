@@ -6,7 +6,7 @@ import {
   Rocket, Trophy, Users, Star, ArrowRight, CheckCircle, 
   Smartphone, Shield, Zap, Clock, Target, Heart
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 const ProductHuntPage = () => {
   const launchDate = new Date('2026-01-06');

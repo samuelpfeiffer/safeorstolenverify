@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Youtube, Twitter, ChevronDown, ChevronUp } from 'lucide-react';
 import { handleExternalNavigation } from '@/utils/navigationUtils';
 import { Logo } from '@/components/common/Logo';

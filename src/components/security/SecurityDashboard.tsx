@@ -39,7 +39,7 @@ export const SecurityDashboard = () => {
       const { count: verificationCount } = await supabase
         .from('verification_results')
         .select('*', { count: 'exact', head: true })
-        .eq('user_id', user?.id);
+        .eq('user_id', user?.id ?? '');
 
       // Fetch recent audit logs count (last 7 days)
       const weekAgo = new Date();
@@ -48,7 +48,7 @@ export const SecurityDashboard = () => {
       const { count: auditCount } = await supabase
         .from('audit_logs')
         .select('*', { count: 'exact', head: true })
-        .eq('user_id', user?.id)
+        .eq('user_id', user?.id ?? '')
         .gte('created_at', weekAgo.toISOString());
 
       // Fetch rate limit usage (current hour)
@@ -58,7 +58,7 @@ export const SecurityDashboard = () => {
       const { count: rateLimitCount } = await supabase
         .from('rate_limits')
         .select('*', { count: 'exact', head: true })
-        .eq('user_id', user?.id)
+        .eq('user_id', user?.id ?? '')
         .gte('window_start', hourAgo.toISOString());
 
       // Calculate security score based on activity and settings

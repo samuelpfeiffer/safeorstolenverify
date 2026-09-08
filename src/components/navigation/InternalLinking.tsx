@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { trackSEOInteraction } from '@/utils/seo/analyticsOptimizer';
 import { ExternalLink, ArrowRight, Shield, Search, FileText, Users } from 'lucide-react';
 

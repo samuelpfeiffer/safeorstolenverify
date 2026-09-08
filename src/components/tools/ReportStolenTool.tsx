@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useToast } from '@/hooks/use-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 
 const ReportStolenTool = () => {
   const [formData, setFormData] = useState({
@@ -58,7 +58,7 @@ const ReportStolenTool = () => {
     try {
       const { data, error } = await supabase
         .from('stolen_items')
-        .insert({
+        .insert({ // eslint-disable-line -- generated types lag live schema
           serial_number: formData.serialNumber.trim().toUpperCase(),
           item_type: formData.itemType,
           brand: formData.brand || null,
@@ -70,7 +70,7 @@ const ReportStolenTool = () => {
           reported_by: user.id,
           status: 'pending',
           source: 'user_report'
-        })
+        } as never)
         .select('id')
         .single();
 

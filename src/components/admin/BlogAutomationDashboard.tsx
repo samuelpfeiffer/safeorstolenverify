@@ -55,7 +55,7 @@ export const BlogAutomationDashboard: React.FC = () => {
       console.error('Error generating blog post:', error);
       toast({
         title: "Generation Failed",
-        description: error.message || "Failed to generate blog post automatically.",
+        description: (error instanceof Error ? error.message : undefined) || "Failed to generate blog post automatically.",
         variant: "destructive",
       });
     } finally {
@@ -89,7 +89,7 @@ export const BlogAutomationDashboard: React.FC = () => {
       console.error('Error running scheduler:', error);
       toast({
         title: "Scheduler Error",
-        description: error.message || "Failed to run blog scheduler.",
+        description: (error instanceof Error ? error.message : undefined) || "Failed to run blog scheduler.",
         variant: "destructive",
       });
     }

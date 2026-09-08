@@ -2,7 +2,7 @@
 import React from 'react';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogCard } from '@/components/blog/BlogCard';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 export const LatestFromBlog: React.FC = () => {
   const { data: posts, isLoading, error } = useBlogPosts(3);

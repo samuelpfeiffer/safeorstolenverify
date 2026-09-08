@@ -24,7 +24,7 @@ export const AppLoadingScreen: React.FC = () => {
       <div className="text-center w-80 h-48 flex flex-col items-center justify-center">
         {/* Logo with fixed size */}
         <div className="w-24 h-24 flex items-center justify-center mb-4">
-          <Logo size="xl" linkTo={null} />
+          <Logo size="xl" linkTo={undefined} />
         </div>
         
         {/* Loading Spinner - fixed height */}

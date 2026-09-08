@@ -16,7 +16,7 @@ export const initEnhancedAnalytics = (): void => {
   // Initialize dataLayer
   window.dataLayer = window.dataLayer || [];
   window.gtag = function() {
-    window.dataLayer.push(arguments);
+    window.dataLayer?.push(arguments);
   };
 
   // Initialize GA4 with enhanced settings
@@ -113,7 +113,7 @@ export const trackCoreWebVitalsGA4 = (): void => {
         const lcp = entry.startTime;
         const rating = lcp <= 2500 ? 'good' : lcp <= 4000 ? 'needs_improvement' : 'poor';
         
-        window.gtag('event', 'core_web_vital', {
+        window.gtag?.('event', 'core_web_vital', {
           metric_name: 'LCP',
           metric_value: Math.round(lcp),
           metric_rating: rating,
@@ -130,7 +130,7 @@ export const trackCoreWebVitalsGA4 = (): void => {
         const fid = perfEntry.processingStart - perfEntry.startTime;
         const rating = fid <= 100 ? 'good' : fid <= 300 ? 'needs_improvement' : 'poor';
         
-        window.gtag('event', 'core_web_vital', {
+        window.gtag?.('event', 'core_web_vital', {
           metric_name: 'FID',
           metric_value: Math.round(fid),
           metric_rating: rating,
@@ -152,7 +152,7 @@ export const trackCoreWebVitalsGA4 = (): void => {
       
       const rating = clsScore <= 0.1 ? 'good' : clsScore <= 0.25 ? 'needs_improvement' : 'poor';
       
-      window.gtag('event', 'core_web_vital', {
+      window.gtag?.('event', 'core_web_vital', {
         metric_name: 'CLS',
         metric_value: Math.round(clsScore * 1000) / 1000,
         metric_rating: rating,
@@ -489,7 +489,7 @@ export const trackSchemaMarkup = (): void => {
       validSchemas.push(schemaType);
       
       // Track specific schema types
-      window.gtag('event', 'schema_validation', {
+      window.gtag?.('event', 'schema_validation', {
         event_category: 'Schema_Markup',
         event_action: 'Valid_Schema',
         event_label: schemaType,
@@ -500,7 +500,7 @@ export const trackSchemaMarkup = (): void => {
     } catch {
       invalidSchemas.push(`schema_${index}`);
       
-      window.gtag('event', 'schema_validation', {
+      window.gtag?.('event', 'schema_validation', {
         event_category: 'Schema_Markup',
         event_action: 'Invalid_Schema',
         event_label: `schema_${index}`,
@@ -594,7 +594,7 @@ export const trackEnhancedWebVitals = (): void => {
         const lcp = entry.startTime;
         const rating = lcp <= 2500 ? 'good' : lcp <= 4000 ? 'needs_improvement' : 'poor';
         
-        window.gtag('event', 'comprehensive_web_vitals', {
+        window.gtag?.('event', 'comprehensive_web_vitals', {
           event_category: 'Core_Web_Vitals_Enhanced',
           metric_name: 'LCP',
           metric_value: Math.round(lcp),
@@ -634,7 +634,7 @@ export const trackEnhancedWebVitals = (): void => {
         const fid = perfEntry.processingStart - perfEntry.startTime;
         const rating = fid <= 100 ? 'good' : fid <= 300 ? 'needs_improvement' : 'poor';
         
-        window.gtag('event', 'comprehensive_web_vitals', {
+        window.gtag?.('event', 'comprehensive_web_vitals', {
           event_category: 'Core_Web_Vitals_Enhanced',
           metric_name: 'FID',
           metric_value: Math.round(fid),
@@ -663,7 +663,7 @@ export const trackEnhancedWebVitals = (): void => {
       
       const rating = clsScore <= 0.1 ? 'good' : clsScore <= 0.25 ? 'needs_improvement' : 'poor';
       
-      window.gtag('event', 'comprehensive_web_vitals', {
+      window.gtag?.('event', 'comprehensive_web_vitals', {
         event_category: 'Core_Web_Vitals_Enhanced',
         metric_name: 'CLS',
         metric_value: Math.round(clsScore * 1000) / 1000,

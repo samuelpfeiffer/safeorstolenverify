@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Card } from '@/components/ui/card';
 import { Smartphone, Shield, AlertCircle, CheckCircle, Search, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 export default function PhoneVerificationGuide() {

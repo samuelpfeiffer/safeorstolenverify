@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from '@/lib/router-compat';
 import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)

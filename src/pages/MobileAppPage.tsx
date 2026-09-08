@@ -6,7 +6,7 @@ import {
  QrCode, Car, Phone, Package, Check, Star, Globe,
  Clock, Database, Users, Award, ArrowRight
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';

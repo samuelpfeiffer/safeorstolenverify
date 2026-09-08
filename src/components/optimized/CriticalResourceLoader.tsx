@@ -9,20 +9,9 @@ export const CriticalResourceLoader = () => {
     // Preload critical images
     preloadResource('/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png', 'image');
     
-    // Preload critical JavaScript chunks
-    if ('modulepreload' in HTMLLinkElement.prototype) {
-      const criticalModules = [
-        '/src/main.tsx',
-        '/src/core/app/AppRoot.tsx',
-      ];
-      
-      criticalModules.forEach(module => {
-        const link = document.createElement('link');
-        link.rel = 'modulepreload';
-        link.href = module;
-        document.head.appendChild(link);
-      });
-    }
+    // Module preload hints removed during the TanStack Start migration —
+    // the old SPA entry points (/src/main.tsx, AppRoot.tsx) no longer exist.
+    
     
     // DNS prefetch for external domains
     const externalDomains = [

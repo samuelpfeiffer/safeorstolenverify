@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Calendar, ShieldCheck } from 'lucide-react';

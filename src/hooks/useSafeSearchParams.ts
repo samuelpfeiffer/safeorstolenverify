@@ -1,4 +1,4 @@
-import { useSearchParams as useRouterSearchParams } from 'react-router-dom';
+import { useSearchParams as useRouterSearchParams } from '@/lib/router-compat';
 
 /**
  * Safe wrapper around useSearchParams that handles Router context errors

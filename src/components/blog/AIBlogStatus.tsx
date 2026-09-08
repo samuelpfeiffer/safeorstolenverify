@@ -27,8 +27,8 @@ export const AIBlogStatus: React.FC = () => {
       const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-      const thisWeek = allPosts?.filter(p => new Date(p.published_at) >= weekAgo).length || 0;
-      const todayCount = allPosts?.filter(p => new Date(p.published_at) >= today).length || 0;
+      const thisWeek = allPosts?.filter(p => new Date(p.published_at ?? 0) >= weekAgo).length || 0;
+      const todayCount = allPosts?.filter(p => new Date(p.published_at ?? 0) >= today).length || 0;
       const lastPost = allPosts?.[0];
 
       setStats({
@@ -38,7 +38,7 @@ export const AIBlogStatus: React.FC = () => {
       });
 
       if (lastPost) {
-        setLastGenerated(new Date(lastPost.published_at));
+        setLastGenerated(new Date(lastPost.published_at ?? 0));
       }
     } catch (error) {
       console.error('Error loading stats:', error);

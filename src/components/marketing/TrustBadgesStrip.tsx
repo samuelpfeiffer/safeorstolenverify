@@ -1,6 +1,6 @@
 import React from 'react';
 import { Shield, Lock, Award, CheckCircle, Star, Users, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 /**
  * TrustBadgesStrip — 2026 GEO/SEO optimized

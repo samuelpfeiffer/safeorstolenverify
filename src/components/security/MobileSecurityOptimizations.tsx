@@ -50,10 +50,10 @@ export const MobileSecurityOptimizations = ({ className }: SecurityOptimizations
   }, []);
 
   const getSecurityStatus = () => {
-    if (!deviceInfo) return { level: 'unknown', color: 'gray' };
+    if (!deviceInfo) return { level: 'unknown', color: 'gray', score: 0, issues: [] as string[] };
     
     let score = 0;
-    let issues = [];
+    let issues: string[] = [];
 
     // Check HTTPS
     if (deviceInfo.isSecureContext) {
@@ -130,7 +130,7 @@ export const MobileSecurityOptimizations = ({ className }: SecurityOptimizations
             <Wifi className={cn('h-4 w-4', deviceInfo?.isOnline ? 'text-green-400' : 'text-red-400')} />
             <span className="text-gray-300 text-sm">
               {deviceInfo?.isOnline ? 'Online' : 'Offline'} 
-              {deviceInfo?.connectionType !== 'unknown' && ` (${deviceInfo.connectionType.toUpperCase()})`}
+              {deviceInfo && deviceInfo.connectionType !== 'unknown' && ` (${deviceInfo.connectionType.toUpperCase()})`}
             </span>
           </div>
         </div>

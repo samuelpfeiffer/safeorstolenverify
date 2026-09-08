@@ -2,7 +2,7 @@ import React from 'react';
 import { OptimizedImage } from '@/components/performance/OptimizedImage';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { ArrowRight } from 'lucide-react';
 import handshakeConfidence from '@/assets/ads/handshake-confidence.jpg';
 import smartphoneCheck from '@/assets/ads/smartphone-check.jpg';

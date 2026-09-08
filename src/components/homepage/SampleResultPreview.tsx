@@ -1,5 +1,5 @@
 import { Shield, CheckCircle, AlertTriangle, Database, Clock, FileText, Share2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 /**
  * Shows a realistic sample verification result on the homepage

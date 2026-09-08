@@ -5,8 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { securityService } from '@/services/securityService';
 
+type SecurityMetricsState = ReturnType<typeof securityService.getSecurityMetrics>;
+
 export const SecurityStatus = () => {
-  const [securityMetrics, setSecurityMetrics] = useState(null);
+  const [securityMetrics, setSecurityMetrics] = useState<SecurityMetricsState | null>(null);
   const [securityScore, setSecurityScore] = useState(0);
 
   useEffect(() => {

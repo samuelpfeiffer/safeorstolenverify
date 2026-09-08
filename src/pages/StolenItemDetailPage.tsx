@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useParams, useLocation, Link } from 'react-router-dom';
+import { useParams, useLocation, Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -51,7 +51,7 @@ const StolenItemDetailPage = () => {
   const [shareUrl, setShareUrl] = useState('');
 
   // Get item ID from state or extract from slug
-  const itemIdFromState = location.state?.itemId;
+  const itemIdFromState = (location.state as { itemId?: string } | undefined)?.itemId;
 
   useEffect(() => {
     fetchItem();

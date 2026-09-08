@@ -4,8 +4,8 @@ import { ArrowRight, Shield, AlertTriangle, CheckCircle2, Link2, Sparkles, Exter
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
+import { Link } from '@/lib/router-compat';
 
 const howToSchema = {
  "@context": "https://schema.org",

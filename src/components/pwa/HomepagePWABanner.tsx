@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Download, X, Smartphone, Zap, Shield, Wifi } from 'lucide-react';
 import { usePWA } from '@/hooks/usePWA';
 import { useToast } from '@/hooks/use-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/lib/router-compat';
 
 export const HomepagePWABanner = () => {
   const [isVisible, setIsVisible] = useState(false);

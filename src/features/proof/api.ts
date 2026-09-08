@@ -119,8 +119,8 @@ export async function createProofRecord(input: CreateProofInput): Promise<string
     p_identifier_masked: maskIdentifier(input.rawIdentifier),
     p_result: input.result,
     p_databases_queried: input.databasesQueried,
-    p_check_id: input.checkId ?? null,
-    p_email: input.email?.trim() || null,
+    p_check_id: input.checkId ?? undefined,
+    p_email: input.email?.trim() || undefined,
     p_marketing_opt_in: input.marketingOptIn === true,
   });
 

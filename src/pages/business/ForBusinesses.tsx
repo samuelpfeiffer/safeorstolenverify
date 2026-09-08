@@ -1,6 +1,6 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { Shield, Building2, Smartphone, FileCheck, Users, BarChart3, Lock, Zap, CheckCircle2, Copy, Code, Globe, TrendingUp, DollarSign, AlertTriangle, Scale, Award, ArrowRight, Loader2 } from 'lucide-react';

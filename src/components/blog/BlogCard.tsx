@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { Calendar, Clock, User, Tag } from 'lucide-react';
 import { BlogPost } from '@/hooks/useBlogPosts';
 import { Badge } from '@/components/ui/badge';

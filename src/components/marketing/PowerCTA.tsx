@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, ArrowRight, CheckCircle, Clock, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 
 export const PowerCTA: React.FC = () => {
   return (

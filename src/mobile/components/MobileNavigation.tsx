@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-compat';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Home, Search, History, Settings, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
