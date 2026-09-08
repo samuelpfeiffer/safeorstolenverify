@@ -37,6 +37,21 @@ const STEPS = [
 ];
 
 export default function AppDownloadPage() {
+ const appSchema = {
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "SafeOrStolen",
+ "applicationCategory": "UtilitiesApplication",
+ "operatingSystem": "Any (PWA)",
+ "url": "https://safeorstolen.com/app",
+ "description": "Installable SafeOrStolen web app for verifying whether phones (IMEI), vehicles (VIN), license plates, serialized electronics, firearms, and bicycles are reported stolen. Includes barcode and serial scanning, with results in about 3 seconds.",
+ "offers": [
+ { "@type": "Offer", "name": "Free checks", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },
+ { "@type": "Offer", "name": "Single check", "price": "0.99", "priceCurrency": "USD", "description": "One-time single verification" },
+ { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, $10 per month, cancel anytime" }
+ ]
+ };
+
  return (
  <>
  <div className="min-h-screen bg-gray-950 text-white pt-20">
@@ -44,6 +59,7 @@ export default function AppDownloadPage() {
  title="SafeOrStolen on Mobile - Install the Web App"
  description="Instantly verify guns, vehicles, phones, and more from your phone browser. Barcode scanning for on-the-spot verification at gun shows, pawn shops, and marketplaces."
  canonical="/app"
+ structuredData={appSchema}
  />
 
  {/* Hero */}

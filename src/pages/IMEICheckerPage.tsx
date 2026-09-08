@@ -44,6 +44,10 @@ const IMEICheckerPage = () => {
  faqs: [
  {
  question: "How do I check if a phone is stolen?",
+ answer: "Dial *#06# on the phone to display its 15-digit IMEI, then enter that IMEI at SafeOrStolen. SafeOrStolen checks it against carrier blacklists and theft records and returns a Safe or Stolen result in about 3 seconds. Your first 2 checks are free with no credit card, then it is $0.99 per check or $10/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and check the IMEI from your own phone while you are standing with the seller."
+ },
+ {
+ question: "How do I check if a phone is stolen?",
  answer: "Get the phone's 15-digit IMEI by dialling *#06# on the handset or opening Settings then About Phone, and enter it at SafeOrStolen before you pay. SafeOrStolen searches that IMEI against stolen property reports from all 50 states, carrier and theft databases, community theft reports, and community theft registries and returns a result in a few seconds. Always confirm the IMEI shown on the phone itself matches the one the seller sent you."
  },
  {

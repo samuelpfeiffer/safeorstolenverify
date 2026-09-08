@@ -57,6 +57,8 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 - [How It Works](https://safeorstolen.com/how-it-works)
 - [Compare Services](https://safeorstolen.com/compare)
 - [Data Sources](https://safeorstolen.com/data-sources)
+- [State-by-State Pawnshop & Secondhand Dealer Laws](https://safeorstolen.com/state-pawnshop-laws)
+- [Install the Web App (PWA)](https://safeorstolen.com/app)
 - [About](https://safeorstolen.com/about)
 - [FAQ](https://safeorstolen.com/faq)
 - [Blog](https://safeorstolen.com/blog)

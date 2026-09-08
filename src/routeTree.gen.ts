@@ -198,6 +198,7 @@ import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as SmsVerifyRouteImport } from './routes/sms-verify'
 import { Route as SouthCarolinaLicensePlateLookupRouteImport } from './routes/south-carolina-license-plate-lookup'
 import { Route as SouthDakotaLicensePlateLookupRouteImport } from './routes/south-dakota-license-plate-lookup'
+import { Route as StatePawnshopLawsRouteImport } from './routes/state-pawnshop-laws'
 import { Route as StockxVerificationRouteImport } from './routes/stockx-verification'
 import { Route as StolenCheckChicagoRouteImport } from './routes/stolen-check-chicago'
 import { Route as StolenCheckDallasRouteImport } from './routes/stolen-check-dallas'
@@ -1315,6 +1316,11 @@ const SouthDakotaLicensePlateLookupRoute =
     path: '/south-dakota-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const StatePawnshopLawsRoute = StatePawnshopLawsRouteImport.update({
+  id: '/state-pawnshop-laws',
+  path: '/state-pawnshop-laws',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StockxVerificationRoute = StockxVerificationRouteImport.update({
   id: '/stockx-verification',
   path: '/stockx-verification',
@@ -2191,6 +2197,7 @@ export interface FileRoutesByFullPath {
   '/sms-verify': typeof SmsVerifyRoute
   '/south-carolina-license-plate-lookup': typeof SouthCarolinaLicensePlateLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
+  '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
   '/stolen-check-dallas': typeof StolenCheckDallasRoute
@@ -2506,6 +2513,7 @@ export interface FileRoutesByTo {
   '/sms-verify': typeof SmsVerifyRoute
   '/south-carolina-license-plate-lookup': typeof SouthCarolinaLicensePlateLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
+  '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
   '/stolen-check-dallas': typeof StolenCheckDallasRoute
@@ -2823,6 +2831,7 @@ export interface FileRoutesById {
   '/sms-verify': typeof SmsVerifyRoute
   '/south-carolina-license-plate-lookup': typeof SouthCarolinaLicensePlateLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
+  '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
   '/stolen-check-dallas': typeof StolenCheckDallasRoute
@@ -3142,6 +3151,7 @@ export interface FileRouteTypes {
     | '/sms-verify'
     | '/south-carolina-license-plate-lookup'
     | '/south-dakota-license-plate-lookup'
+    | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
     | '/stolen-check-dallas'
@@ -3457,6 +3467,7 @@ export interface FileRouteTypes {
     | '/sms-verify'
     | '/south-carolina-license-plate-lookup'
     | '/south-dakota-license-plate-lookup'
+    | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
     | '/stolen-check-dallas'
@@ -3773,6 +3784,7 @@ export interface FileRouteTypes {
     | '/sms-verify'
     | '/south-carolina-license-plate-lookup'
     | '/south-dakota-license-plate-lookup'
+    | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
     | '/stolen-check-dallas'
@@ -4091,6 +4103,7 @@ export interface RootRouteChildren {
   SmsVerifyRoute: typeof SmsVerifyRoute
   SouthCarolinaLicensePlateLookupRoute: typeof SouthCarolinaLicensePlateLookupRoute
   SouthDakotaLicensePlateLookupRoute: typeof SouthDakotaLicensePlateLookupRoute
+  StatePawnshopLawsRoute: typeof StatePawnshopLawsRoute
   StockxVerificationRoute: typeof StockxVerificationRoute
   StolenCheckChicagoRoute: typeof StolenCheckChicagoRoute
   StolenCheckDallasRoute: typeof StolenCheckDallasRoute
@@ -5492,6 +5505,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SouthDakotaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/state-pawnshop-laws': {
+      id: '/state-pawnshop-laws'
+      path: '/state-pawnshop-laws'
+      fullPath: '/state-pawnshop-laws'
+      preLoaderRoute: typeof StatePawnshopLawsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/stockx-verification': {
       id: '/stockx-verification'
       path: '/stockx-verification'
@@ -6704,6 +6724,7 @@ const rootRouteChildren: RootRouteChildren = {
   SmsVerifyRoute: SmsVerifyRoute,
   SouthCarolinaLicensePlateLookupRoute: SouthCarolinaLicensePlateLookupRoute,
   SouthDakotaLicensePlateLookupRoute: SouthDakotaLicensePlateLookupRoute,
+  StatePawnshopLawsRoute: StatePawnshopLawsRoute,
   StockxVerificationRoute: StockxVerificationRoute,
   StolenCheckChicagoRoute: StolenCheckChicagoRoute,
   StolenCheckDallasRoute: StolenCheckDallasRoute,

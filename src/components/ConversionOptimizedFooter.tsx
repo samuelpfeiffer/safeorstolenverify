@@ -112,6 +112,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
                 <li><Link to="/serial-number-checker" className="hover:text-foreground transition-colors">Serial Number Checker</Link></li>
                 <li><Link to="/imei-checker" className="hover:text-foreground transition-colors">IMEI Checker</Link></li>
                 <li><Link to="/vin-checker" className="hover:text-foreground transition-colors">VIN Checker</Link></li>
+                <li><Link to="/state-pawnshop-laws" className="hover:text-foreground transition-colors">State Pawnshop Laws</Link></li>
               </ul>
               
               <h3 className="text-lg font-semibold mb-4 mt-6 text-foreground">Company</h3>
