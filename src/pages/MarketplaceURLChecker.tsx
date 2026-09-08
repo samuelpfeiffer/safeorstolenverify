@@ -50,6 +50,14 @@ const faqSchema = {
  "mainEntity": [
  {
  "@type": "Question",
+ "name": "How do I check if a marketplace listing is a scam or a stolen item?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Paste the listing URL into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. SafeOrStolen reads the listing, extracts any identifier it contains (IMEI, VIN, serial number, or plate), checks it against stolen property databases, and scores the listing for scam risk — results in about 3 seconds. It works with Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, and Poshmark. Your first 2 checks are free with no card, then $0.99 per check or $10/month unlimited. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app to check listings from your phone."
+ }
+ },
+ {
+ "@type": "Question",
  "name": "How do I check if a Facebook Marketplace item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
