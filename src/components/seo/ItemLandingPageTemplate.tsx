@@ -1,6 +1,17 @@
 import { Link, useLocation } from '@/lib/router-compat';
 import DOMPurify from 'dompurify';
 import { Shield, Search, CheckCircle, Clock, Award, ArrowRight } from 'lucide-react';
+
+// DOMPurify requires a browser DOM (window/document). Under SSR (TanStack Start
+// server render, no DOM) its sanitize() throws, which kills the entire page
+// component — no body content AND no PageSEO title/description/canonical reach
+// the server-rendered HTML. These content strings are trusted author copy (hard
+// coded in each page component), so on the server we render them verbatim and
+// only sanitize in the browser where DOMPurify is functional.
+const sanitizeHtml = (html: string): string =>
+  typeof window !== 'undefined'
+    ? DOMPurify.sanitize(html, { ALLOWED_TAGS: ['a', 'strong', 'em', 'p', 'br', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel', 'class'] })
+    : html;
 import { Button } from '@/components/ui/button';
 import {
  Accordion,
@@ -173,8 +184,8 @@ export const ItemLandingPageTemplate = ({
  </h1>
  <p 
  className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
- dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.intro, { ALLOWED_TAGS: ['a', 'strong', 'em', 'p', 'br', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel', 'class'] }) }}
- />
+  dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.intro) }}
+  />
  <Link to="/verify">
  <Button size="lg" className="gap-2">
  Check {itemType} Now <ArrowRight className="w-4 h-4" />
@@ -212,8 +223,8 @@ export const ItemLandingPageTemplate = ({
  <h2 className="text-3xl font-bold mb-6">What is {itemType} Verification?</h2>
  <p 
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
- dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.whatIs, { ALLOWED_TAGS: ['a', 'strong', 'em', 'p', 'br', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel', 'class'] }) }}
- />
+  dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.whatIs) }}
+  />
  <DataPartnerBadges variant="compact" />
  </div>
  </section>
