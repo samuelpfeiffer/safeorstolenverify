@@ -252,10 +252,12 @@ import { Route as AdminGscCallbackRouteImport } from './routes/admin/gsc-callbac
 import { Route as AdminIndexnowRouteImport } from './routes/admin/indexnow'
 import { Route as AdminMarketingRouteImport } from './routes/admin/marketing'
 import { Route as AdminStripeRouteImport } from './routes/admin/stripe'
+import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppBarcodeScannerRouteImport } from './routes/app/barcode-scanner'
 import { Route as AppFeaturesRouteImport } from './routes/app/features'
 import { Route as AppStolenPhoneCheckerRouteImport } from './routes/app/stolen-phone-checker'
 import { Route as AppVinCheckerRouteImport } from './routes/app/vin-checker'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as BlogAiStolenItemDetection2026RouteImport } from './routes/blog/ai-stolen-item-detection-2026'
 import { Route as BlogAtfGunSerialNumberCheckRouteImport } from './routes/blog/atf-gun-serial-number-check'
@@ -317,6 +319,7 @@ import { Route as ItemSlugRouteImport } from './routes/item/$slug'
 import { Route as ProofIdRouteImport } from './routes/proof/$id'
 import { Route as SharedShareCodeRouteImport } from './routes/shared/$shareCode'
 import { Route as VerifiedIdRouteImport } from './routes/verified/$id'
+import { Route as VerifyIndexRouteImport } from './routes/verify.index'
 import { Route as VerifyClassicRouteImport } from './routes/verify/classic'
 import { Route as VerifyPawnshopsRouteImport } from './routes/verify/pawnshops'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable/oauth/consent'
@@ -1590,6 +1593,11 @@ const AdminStripeRoute = AdminStripeRouteImport.update({
   path: '/admin/stripe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppBarcodeScannerRoute = AppBarcodeScannerRouteImport.update({
   id: '/barcode-scanner',
   path: '/barcode-scanner',
@@ -1609,6 +1617,11 @@ const AppVinCheckerRoute = AppVinCheckerRouteImport.update({
   id: '/vin-checker',
   path: '/vin-checker',
   getParentRoute: () => AppRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -1962,6 +1975,11 @@ const VerifiedIdRoute = VerifiedIdRouteImport.update({
   path: '/verified/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerifyIndexRoute = VerifyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => VerifyRoute,
+} as any)
 const VerifyClassicRoute = VerifyClassicRouteImport.update({
   id: '/classic',
   path: '/classic',
@@ -2294,6 +2312,9 @@ export interface FileRoutesByFullPath {
   '/verified/$id': typeof VerifiedIdRoute
   '/verify/classic': typeof VerifyClassicRoute
   '/verify/pawnshops': typeof VerifyPawnshopsRoute
+  '/app/': typeof AppIndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/verify/': typeof VerifyIndexRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/verification/shared/$token': typeof VerificationSharedTokenRoute
 }
@@ -2308,13 +2329,11 @@ export interface FileRoutesByTo {
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
   '/api': typeof ApiRoute
   '/api-docs': typeof ApiDocsRoute
-  '/app': typeof AppRouteWithChildren
   '/arizona-license-plate-lookup': typeof ArizonaLicensePlateLookupRoute
   '/arkansas-license-plate-lookup': typeof ArkansasLicensePlateLookupRoute
   '/auth': typeof AuthRoute
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
-  '/blog': typeof BlogRouteWithChildren
   '/california-license-plate-lookup': typeof CaliforniaLicensePlateLookupRoute
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
@@ -2513,7 +2532,6 @@ export interface FileRoutesByTo {
   '/trust-engine': typeof TrustEngineRoute
   '/utah-license-plate-lookup': typeof UtahLicensePlateLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
-  '/verify': typeof VerifyRouteWithChildren
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
@@ -2608,6 +2626,9 @@ export interface FileRoutesByTo {
   '/verified/$id': typeof VerifiedIdRoute
   '/verify/classic': typeof VerifyClassicRoute
   '/verify/pawnshops': typeof VerifyPawnshopsRoute
+  '/app': typeof AppIndexRoute
+  '/blog': typeof BlogIndexRoute
+  '/verify': typeof VerifyIndexRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/verification/shared/$token': typeof VerificationSharedTokenRoute
 }
@@ -2923,6 +2944,9 @@ export interface FileRoutesById {
   '/verified/$id': typeof VerifiedIdRoute
   '/verify/classic': typeof VerifyClassicRoute
   '/verify/pawnshops': typeof VerifyPawnshopsRoute
+  '/app/': typeof AppIndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/verify/': typeof VerifyIndexRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/verification/shared/$token': typeof VerificationSharedTokenRoute
 }
@@ -3239,6 +3263,9 @@ export interface FileRouteTypes {
     | '/verified/$id'
     | '/verify/classic'
     | '/verify/pawnshops'
+    | '/app/'
+    | '/blog/'
+    | '/verify/'
     | '/.lovable/oauth/consent'
     | '/verification/shared/$token'
   fileRoutesByTo: FileRoutesByTo
@@ -3253,13 +3280,11 @@ export interface FileRouteTypes {
     | '/alaska-license-plate-lookup'
     | '/api'
     | '/api-docs'
-    | '/app'
     | '/arizona-license-plate-lookup'
     | '/arkansas-license-plate-lookup'
     | '/auth'
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
-    | '/blog'
     | '/california-license-plate-lookup'
     | '/california-vin-lookup'
     | '/carfax-alternative'
@@ -3458,7 +3483,6 @@ export interface FileRouteTypes {
     | '/trust-engine'
     | '/utah-license-plate-lookup'
     | '/verification-success'
-    | '/verify'
     | '/vermont-license-plate-lookup'
     | '/vin-check'
     | '/vin-checker'
@@ -3553,6 +3577,9 @@ export interface FileRouteTypes {
     | '/verified/$id'
     | '/verify/classic'
     | '/verify/pawnshops'
+    | '/app'
+    | '/blog'
+    | '/verify'
     | '/.lovable/oauth/consent'
     | '/verification/shared/$token'
   id:
@@ -3867,6 +3894,9 @@ export interface FileRouteTypes {
     | '/verified/$id'
     | '/verify/classic'
     | '/verify/pawnshops'
+    | '/app/'
+    | '/blog/'
+    | '/verify/'
     | '/.lovable/oauth/consent'
     | '/verification/shared/$token'
   fileRoutesById: FileRoutesById
@@ -5840,6 +5870,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminStripeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/barcode-scanner': {
       id: '/app/barcode-scanner'
       path: '/barcode-scanner'
@@ -5867,6 +5904,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/app/vin-checker'
       preLoaderRoute: typeof AppVinCheckerRouteImport
       parentRoute: typeof AppRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -6295,6 +6339,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VerifiedIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verify/': {
+      id: '/verify/'
+      path: '/'
+      fullPath: '/verify/'
+      preLoaderRoute: typeof VerifyIndexRouteImport
+      parentRoute: typeof VerifyRoute
+    }
     '/verify/classic': {
       id: '/verify/classic'
       path: '/classic'
@@ -6331,6 +6382,7 @@ interface AppRouteChildren {
   AppFeaturesRoute: typeof AppFeaturesRoute
   AppStolenPhoneCheckerRoute: typeof AppStolenPhoneCheckerRoute
   AppVinCheckerRoute: typeof AppVinCheckerRoute
+  AppIndexRoute: typeof AppIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
@@ -6338,6 +6390,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppFeaturesRoute: AppFeaturesRoute,
   AppStolenPhoneCheckerRoute: AppStolenPhoneCheckerRoute,
   AppVinCheckerRoute: AppVinCheckerRoute,
+  AppIndexRoute: AppIndexRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
@@ -6386,6 +6439,7 @@ interface BlogRouteChildren {
   BlogVerificationMethodologyRoute: typeof BlogVerificationMethodologyRoute
   BlogVerifyItemBeforeMeetupRoute: typeof BlogVerifyItemBeforeMeetupRoute
   BlogWhatIsABlacklistedImeiRoute: typeof BlogWhatIsABlacklistedImeiRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
@@ -6440,6 +6494,7 @@ const BlogRouteChildren: BlogRouteChildren = {
   BlogVerificationMethodologyRoute: BlogVerificationMethodologyRoute,
   BlogVerifyItemBeforeMeetupRoute: BlogVerifyItemBeforeMeetupRoute,
   BlogWhatIsABlacklistedImeiRoute: BlogWhatIsABlacklistedImeiRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
@@ -6447,11 +6502,13 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 interface VerifyRouteChildren {
   VerifyClassicRoute: typeof VerifyClassicRoute
   VerifyPawnshopsRoute: typeof VerifyPawnshopsRoute
+  VerifyIndexRoute: typeof VerifyIndexRoute
 }
 
 const VerifyRouteChildren: VerifyRouteChildren = {
   VerifyClassicRoute: VerifyClassicRoute,
   VerifyPawnshopsRoute: VerifyPawnshopsRoute,
+  VerifyIndexRoute: VerifyIndexRoute,
 }
 
 const VerifyRouteWithChildren =
