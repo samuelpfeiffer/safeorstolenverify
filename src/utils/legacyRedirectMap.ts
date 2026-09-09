@@ -20,6 +20,8 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/mobile-verification': '/app',
   '/app/download': '/app',
   '/app/buyers': '/app',
+  '/app/stolen-phone-checker': '/stolen-phone-checker',
+  '/app/vin-checker': '/vin-checker',
 
   // ===== VERIFY/CHECK CATCH-ALL =====
   '/tennessee-stolen-item-check': '/verify',
@@ -166,6 +168,8 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/case-studies': '/testimonials',
   '/service-limitations': '/terms',
   '/ebay-stolen-item-checker': '/ebay-stolen-item-check',
+  '/ebay-stolen-check': '/ebay-stolen-item-check',
+  '/offerup-stolen-check': '/offerup-verify-not-stolen',
   '/craigslist-verification-guide': '/craigslist-safety-verification',
 
   // ===== MARKETPLACE VERIFY REDIRECTS =====
@@ -290,6 +294,9 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/blog/business-guide-preventing-stolen-goods': '/blog/pawn-shop-stolen-item-verification',
   '/blog/how-to-check-phone-stolen': '/blog/how-to-check-if-phone-stolen',
   '/blog/stolen-gun-database-search': '/blog/firearm-serial-number-verification',
+  '/blog/firearms-app-exclusive': '/blog/firearm-serial-number-verification',
+  '/blog/firearms-verification-what-sellers-need-to-know-1760259614826': '/blog/firearm-serial-number-verification',
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942': '/blog/complete-vin-guide',
   '/blog/data-source-credibility': '/blog/data-source-credibility-stolen-goods-verification',
   '/blog/scan-and-verify-using-safeorstolen-camera-feature-1': '/app',
   '/blog/vin-verification-for-used-cars-what-you-need-to-know-1': '/blog/complete-vin-guide',
