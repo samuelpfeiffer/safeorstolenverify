@@ -14,14 +14,14 @@ export const Route = createFileRoute("/blog/$slug")({
     }
 
     if (post) {
+      let canonicalSlug: string | null = null;
       try {
-        const canonicalSlug = await getCanonicalBlogSlug(post.title);
-        if (canonicalSlug && canonicalSlug !== params.slug) {
-          throw redirect({ href: `/blog/${canonicalSlug}`, statusCode: 301, replace: true });
-        }
-      } catch (error) {
-        if (error instanceof Response) throw error;
+        canonicalSlug = await getCanonicalBlogSlug(post.title);
+      } catch {
         // Keep the article available if canonical lookup is temporarily unavailable.
+      }
+      if (canonicalSlug && canonicalSlug !== params.slug) {
+        throw redirect({ href: `/blog/${canonicalSlug}`, statusCode: 301, replace: true });
       }
     }
     return null;
