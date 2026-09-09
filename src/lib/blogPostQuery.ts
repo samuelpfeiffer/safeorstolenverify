@@ -37,3 +37,22 @@ export const blogPostQueryOptions = (slug: string) => ({
   },
   staleTime: 5 * 60 * 1000,
 });
+
+/**
+ * Published imports sometimes created numbered copies of the same article.
+ * Keep the earliest published slug as the single indexable URL.
+ */
+export async function getCanonicalBlogSlug(title: string): Promise<string | null> {
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select('slug')
+    .eq('title', title)
+    .eq('status', 'published')
+    .order('published_at', { ascending: true, nullsFirst: false })
+    .order('created_at', { ascending: true })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) throw error;
+  return data?.slug ?? null;
+}

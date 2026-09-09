@@ -289,6 +289,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/blog/how-to-use-imei-checker-app': '/blog/imei-checker-app-download',
   '/blog/business-guide-preventing-stolen-goods': '/blog/pawn-shop-stolen-item-verification',
   '/blog/how-to-check-phone-stolen': '/blog/how-to-check-if-phone-stolen',
+  '/blog/stolen-gun-database-search': '/blog/firearm-serial-number-verification',
   '/blog/data-source-credibility': '/blog/data-source-credibility-stolen-goods-verification',
   '/blog/scan-and-verify-using-safeorstolen-camera-feature-1': '/app',
   '/blog/vin-verification-for-used-cars-what-you-need-to-know-1': '/blog/complete-vin-guide',
