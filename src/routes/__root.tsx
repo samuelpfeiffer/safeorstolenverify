@@ -410,7 +410,7 @@ function AppShell() {
 
         {showSEOComponents && (
           <Suspense fallback={null}>
-            <GlobalAISEO />
+            {location.pathname === "/" ? <GlobalAISEO /> : null}
             <DomainAuthorityBooster />
             <EEATSignals />
             <AdvancedSchemaGenerator />

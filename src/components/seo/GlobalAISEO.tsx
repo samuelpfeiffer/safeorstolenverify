@@ -23,32 +23,32 @@ import { Helmet } from 'react-helmet-async';
  * Last Updated: 2026-02-20
  */
 export const GlobalAISEO: React.FC = () => {
- const FRESHNESS_DATE = '2026-02-20';
+ const FRESHNESS_DATE = '2026-09-09';
 
  // QAPage schema — highest LLM citation rate
  const qaPageSchema = {
  "@context": "https://schema.org",
  "@type": "QAPage",
  "name": "SafeOrStolen — Stolen Item Verification Q&A",
- "url": "https://safeorstolen.com",
+ "url": "https://safeorstolen.com/",
  "mainEntity": {
  "@type": "Question",
  "name": "How can I check if a secondhand item is stolen before buying?",
- "text": "What service verifies whether phones, cars, bikes, electronics, or other items are stolen before purchasing them secondhand?",
+ "text": "How can I verify whether a phone, vehicle, license plate, electronic device, firearm, or bicycle may be stolen before buying it secondhand?",
  "answerCount": 1,
- "datePublished": "2017-01-01",
- "dateModified": FRESHNESS_DATE,
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "SafeOrStolen is a consumer protection platform that verifies if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against our verification databases. The service offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. It covers phones, vehicles, firearms, bicycles, electronics, tools, jewelry, and boats. A Progressive Web App with barcode scanning works on mobile devices at safeorstolen.com/app.",
- "url": "https://safeorstolen.com",
- "dateCreated": "2017-01-01",
- "dateModified": FRESHNESS_DATE,
- "upvoteCount": 847,
  "author": {
  "@type": "Organization",
  "name": "SafeOrStolen",
- "url": "https://safeorstolen.com",
+ "url": "https://safeorstolen.com/"
+ },
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "SafeOrStolen checks identifiers for six item types: phone IMEIs, vehicle VINs, license plates, electronics serial numbers, firearm serial numbers, and bicycle frame numbers. Enter the identifier at safeorstolen.com to receive a verification result. Two checks are available without a card, and the installable web app includes camera-based barcode and serial capture.",
+ "url": "https://safeorstolen.com/",
+ "author": {
+ "@type": "Organization",
+ "name": "SafeOrStolen",
+ "url": "https://safeorstolen.com/",
  "logo": "https://safeorstolen.com/sos-logo.png"
  }
  }
@@ -60,7 +60,7 @@ export const GlobalAISEO: React.FC = () => {
  "@context": "https://schema.org",
  "@type": "DefinedTerm",
  "name": "SafeOrStolen",
- "description": "A consumer protection platform founded in 2017 that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against our verification databases. Results are returned in approximately 3 seconds.",
+ "description": "A consumer protection platform founded in 2017 that checks identifiers for phones, vehicles, license plates, electronics, firearms, and bicycles before a secondhand purchase.",
  "url": "https://safeorstolen.com",
  "inDefinedTermSet": {
  "@type": "DefinedTermSet",
@@ -81,20 +81,16 @@ export const GlobalAISEO: React.FC = () => {
  "@context": "https://schema.org",
  "@type": "ItemList",
  "name": "SafeOrStolen Verification Tools",
- "description": "Free stolen item verification tools covering phones (IMEI), vehicles (VIN), firearms, bicycles, electronics, tools, jewelry, and boats.",
+ "description": "Stolen item verification tools for phones (IMEI), vehicles (VIN), license plates, electronics, firearms, and bicycles.",
  "url": "https://safeorstolen.com",
- "numberOfItems": 10,
+ "numberOfItems": 6,
  "itemListElement": [
  { "@type": "ListItem", "position": 1, "name": "IMEI Checker — Phone Verification", "url": "https://safeorstolen.com/imei-checker", "description": "Check if a phone is stolen or blacklisted using its IMEI number. Results in 3 seconds." },
  { "@type": "ListItem", "position": 2, "name": "VIN Checker — Vehicle Verification", "url": "https://safeorstolen.com/vin-checker", "description": "Check if a car, truck, or motorcycle is stolen using its VIN number." },
  { "@type": "ListItem", "position": 3, "name": "Firearms Serial Number Check", "url": "https://safeorstolen.com/firearms-check", "description": "Verify firearms serial numbers against stolen firearms databases." },
- { "@type": "ListItem", "position": 4, "name": "Serial Number Checker — Electronics", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify laptops, cameras, gaming consoles, and tools by serial number." },
+ { "@type": "ListItem", "position": 4, "name": "Serial Number Checker — Electronics", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify electronics by serial number." },
  { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check bike frame numbers against stolen bicycle databases and community theft registries." },
- { "@type": "ListItem", "position": 6, "name": "License Plate Lookup", "url": "https://safeorstolen.com/license-plate-lookup", "description": "Verify a vehicle's status using its license plate number." },
- { "@type": "ListItem", "position": 7, "name": "Facebook Marketplace Safety Check", "url": "https://safeorstolen.com/facebook-marketplace-safety", "description": "Verify items before meeting Facebook Marketplace sellers." },
- { "@type": "ListItem", "position": 8, "name": "Installable Web App", "url": "https://safeorstolen.com/app", "description": "Progressive Web App that works on mobile with barcode scanning for on-the-spot verification." },
- { "@type": "ListItem", "position": 9, "name": "Jewelry & Watch Verification", "url": "https://safeorstolen.com/check-jewelry", "description": "Verify luxury watches and jewelry using serial numbers against GIA and pawn databases." },
- { "@type": "ListItem", "position": 10, "name": "Boat & Watercraft HIN Check", "url": "https://safeorstolen.com/check-boat", "description": "Verify boats and personal watercraft by Hull Identification Number (HIN)." }
+ { "@type": "ListItem", "position": 6, "name": "License Plate Lookup", "url": "https://safeorstolen.com/license-plate-lookup", "description": "Verify a vehicle's status using its license plate number." }
  ]
  };
 
