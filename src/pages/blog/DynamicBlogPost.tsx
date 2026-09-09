@@ -5,7 +5,7 @@
 
 import { useParams, Link } from '@/lib/router-compat';
 import { useQuery } from '@tanstack/react-query';
-import { supabase } from '@/integrations/supabase/client';
+
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
