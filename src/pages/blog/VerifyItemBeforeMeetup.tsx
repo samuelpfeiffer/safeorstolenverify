@@ -7,6 +7,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
 
 const VerifyItemBeforeMeetup = () => {
   const articleSchema = {
@@ -89,6 +90,12 @@ const VerifyItemBeforeMeetup = () => {
           </header>
 
           <BlogHeroImage src={blogImages.meetup} alt="Two people at safe exchange zone verifying item with phone - marketplace meetup safety" />
+          <SafeOrStolenVideo
+            src={safeOrStolenVideos[4].src}
+            title={safeOrStolenVideos[4].title}
+            caption={safeOrStolenVideos[4].caption}
+            className="mx-auto mb-12 max-w-xs"
+          />
 
           {/* Pre-Meetup Checklist */}
           <section className="mb-12">
