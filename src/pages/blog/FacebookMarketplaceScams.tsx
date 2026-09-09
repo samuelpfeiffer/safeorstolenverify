@@ -6,6 +6,7 @@ import { AlertTriangle, Shield, CheckCircle, ArrowRight, Download, Users, Dollar
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
 
 const FacebookMarketplaceScams = () => {
   return (
@@ -47,6 +48,13 @@ const FacebookMarketplaceScams = () => {
               $1 billion lost to social media scams last year. Here's how to protect yourself from stolen items, fake sellers, and fraud on Facebook Marketplace.
             </p>
             <BlogHeroImage src={blogImages.fbScams} alt="Laptop showing Facebook Marketplace with scam alert warnings - how to avoid marketplace scams" />
+            <SafeOrStolenVideo
+              src={safeOrStolenVideos[1].src}
+              title={safeOrStolenVideos[1].title}
+              caption={safeOrStolenVideos[1].caption}
+              poster={safeOrStolenVideos[1].poster}
+              className="mx-auto mt-8 max-w-xs"
+            />
           </div>
         </section>
 
