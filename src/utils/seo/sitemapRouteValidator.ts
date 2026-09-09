@@ -55,8 +55,6 @@ export const VALID_ROUTES = new Set([
   
   // App pages
   '/app/features',
-  '/app/stolen-phone-checker',
-  '/app/vin-checker',
   '/app/barcode-scanner',
 
   // Mobile PWA pages (standalone install) - real routes but NOT in sitemap

@@ -45,7 +45,6 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
   }
 
   // NOTE: /api is NOT noindexed — it has developer docs content and should be indexed.
-  // NOTE: /youtube and /youtube/* are NOT noindexed — critical for VideoObject indexing.
   // NOTE: All public content pages (blog, state, city, comparison) are indexable.
 
   return false;

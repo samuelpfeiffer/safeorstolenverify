@@ -40,7 +40,7 @@ export const StateVinPageTemplate = ({
  slug
 }: StateVinPageProps) => {
  try {
- const urlPath = slug || window.location.pathname.replace(/^\//, '');
+ const urlPath = slug || `${state.toLowerCase().replace(/\s+/g, '-')}-vin-lookup`;
  const canonicalUrl = `https://safeorstolen.com/${urlPath}`;
  
  const licensePlateSlug = `${state.toLowerCase().replace(/\s+/g, '-')}-license-plate-lookup`;
