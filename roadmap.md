@@ -5,5 +5,6 @@
 - [x] Repair the Pennsylvania VIN page's server-rendered metadata
 - [x] Redirect missing marketplace aliases and retired article URLs
 - [x] Consolidate numbered duplicate blog imports to their earliest canonical article
-- [ ] Validate locally and publish
+- [x] Remove retired app/video URLs from sitemap sources
+- [x] Validate locally and publish
 - [ ] Verify representative live URLs after publishing

@@ -111,8 +111,6 @@ const CORE_PAGES = [
   
   // App Pages (Real pages)
   { url: '/app/features', priority: 0.7, changefreq: 'monthly' },
-  { url: '/app/stolen-phone-checker', priority: 0.7, changefreq: 'monthly' },
-  { url: '/app/vin-checker', priority: 0.7, changefreq: 'monthly' },
   { url: '/app/barcode-scanner', priority: 0.7, changefreq: 'monthly' },
   { url: '/download', priority: 0.8, changefreq: 'monthly' },
   

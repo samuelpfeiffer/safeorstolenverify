@@ -29,10 +29,8 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
   { path: '/app', priority: 0.95, changefreq: 'weekly' },
   { path: '/app/features', priority: 0.90, changefreq: 'weekly' },
-  { path: '/app/stolen-phone-checker', priority: 0.90, changefreq: 'weekly' },
   { path: '/app/barcode-scanner', priority: 0.90, changefreq: 'weekly' },
   { path: '/download', priority: 0.95, changefreq: 'weekly' },
-  { path: '/app/vin-checker', priority: 0.85, changefreq: 'weekly' },
 
   // ============================================
   // ITEM LANDING PAGES (15)
