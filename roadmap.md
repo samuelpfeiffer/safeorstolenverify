@@ -7,4 +7,4 @@
 - [x] Consolidate numbered duplicate blog imports to their earliest canonical article
 - [x] Remove retired app/video URLs from sitemap sources
 - [x] Validate locally and publish
-- [ ] Verify representative live URLs after publishing
+- [x] Verify representative live URLs after publishing
