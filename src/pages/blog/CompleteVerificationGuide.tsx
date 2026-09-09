@@ -60,6 +60,7 @@ export default function CompleteVerificationGuide() {
                 src={safeOrStolenVideos[0].src}
                 title={safeOrStolenVideos[0].title}
                 caption={safeOrStolenVideos[0].caption}
+                poster={safeOrStolenVideos[0].poster}
                 className="mx-auto mt-8 max-w-xs"
               />
             </section>

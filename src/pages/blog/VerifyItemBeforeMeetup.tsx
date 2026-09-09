@@ -94,6 +94,7 @@ const VerifyItemBeforeMeetup = () => {
             src={safeOrStolenVideos[4].src}
             title={safeOrStolenVideos[4].title}
             caption={safeOrStolenVideos[4].caption}
+            poster={safeOrStolenVideos[4].poster}
             className="mx-auto mb-12 max-w-xs"
           />
 

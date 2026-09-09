@@ -3,6 +3,11 @@ import facebookAsset from '@/assets/video/Before_you_buy_or_sell_on_Facebook_Mar
 import ebayAsset from '@/assets/video/Before_you_buy_or_sell_on_eBay_Verify.mp4.asset.json';
 import secondhandAsset from '@/assets/video/Before_you_buy_or_sell_any_secondhand_item.mp4.asset.json';
 import transactionAsset from '@/assets/video/Before_any_transaction_i_verify.mp4.asset.json';
+import generalVerifyPoster from '@/assets/video/Before_You_buy_or_sell_verify.jpg.asset.json';
+import facebookPoster from '@/assets/video/Before_you_buy_or_sell_on_Facebook_Marketplace.jpg.asset.json';
+import ebayPoster from '@/assets/video/Before_you_buy_or_sell_on_eBay_Verify.jpg.asset.json';
+import secondhandPoster from '@/assets/video/Before_you_buy_or_sell_any_secondhand_item.jpg.asset.json';
+import transactionPoster from '@/assets/video/Before_any_transaction_i_verify.jpg.asset.json';
 
 export const safeOrStolenVideos = [
   {
@@ -10,30 +15,35 @@ export const safeOrStolenVideos = [
     title: 'Verify Before You Buy or Sell',
     caption: 'Run a SafeOrStolen check before completing a secondhand sale.',
     src: generalVerifyAsset.url,
+    poster: generalVerifyPoster.url,
   },
   {
     id: 'facebook',
     title: 'Facebook Marketplace',
     caption: 'Verify the item before meeting a Facebook Marketplace buyer or seller.',
     src: facebookAsset.url,
+    poster: facebookPoster.url,
   },
   {
     id: 'ebay',
     title: 'eBay',
     caption: 'Check the identifier before buying or selling through eBay.',
     src: ebayAsset.url,
+    poster: ebayPoster.url,
   },
   {
     id: 'secondhand',
     title: 'Any Secondhand Item',
     caption: 'Check phones, vehicles, plates, electronics, firearms, and bicycles.',
     src: secondhandAsset.url,
+    poster: secondhandPoster.url,
   },
   {
     id: 'transaction',
     title: 'Before Any Transaction',
     caption: 'Make verification part of every secondhand transaction.',
     src: transactionAsset.url,
+    poster: transactionPoster.url,
   },
 ] as const;
 
@@ -41,10 +51,11 @@ type SafeOrStolenVideoProps = {
   src: string;
   title: string;
   caption?: string;
+  poster?: string;
   className?: string;
 };
 
-export function SafeOrStolenVideo({ src, title, caption, className = '' }: SafeOrStolenVideoProps) {
+export function SafeOrStolenVideo({ src, title, caption, poster, className = '' }: SafeOrStolenVideoProps) {
   return (
     <figure className={className}>
       <div className="overflow-hidden rounded-lg border border-primary/30 bg-card shadow-lg">
@@ -52,7 +63,8 @@ export function SafeOrStolenVideo({ src, title, caption, className = '' }: SafeO
           className="block aspect-[29/43] w-full object-cover"
           controls
           playsInline
-          preload="metadata"
+          preload="none"
+          poster={poster}
           aria-label={`${title} video`}
         >
           <source src={src} type="video/mp4" />

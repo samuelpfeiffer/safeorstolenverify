@@ -52,6 +52,7 @@ const FacebookMarketplaceScams = () => {
               src={safeOrStolenVideos[1].src}
               title={safeOrStolenVideos[1].title}
               caption={safeOrStolenVideos[1].caption}
+              poster={safeOrStolenVideos[1].poster}
               className="mx-auto mt-8 max-w-xs"
             />
           </div>

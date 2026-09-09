@@ -65,11 +65,13 @@ export default function UltimateMarketplaceBuyersGuide() {
               src={safeOrStolenVideos[2].src}
               title={safeOrStolenVideos[2].title}
               caption={safeOrStolenVideos[2].caption}
+              poster={safeOrStolenVideos[2].poster}
             />
             <SafeOrStolenVideo
               src={safeOrStolenVideos[3].src}
               title={safeOrStolenVideos[3].title}
               caption={safeOrStolenVideos[3].caption}
+              poster={safeOrStolenVideos[3].poster}
             />
           </div>
 

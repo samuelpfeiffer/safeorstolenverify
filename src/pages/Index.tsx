@@ -416,6 +416,7 @@ const Index = () => {
             src={video.src}
             title={video.title}
             caption={video.title}
+            poster={video.poster}
           />
         ))}
       </div>
