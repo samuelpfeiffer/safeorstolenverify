@@ -13,41 +13,12 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
-
-interface BlogPost {
-  id: string;
-  title: string;
-  content: string;
-  excerpt: string | null;
-  slug: string;
-  meta_title: string | null;
-  meta_description: string | null;
-  meta_keywords: string | null;
-  featured_image_url: string | null;
-  reading_time: number | null;
-  published_at: string | null;
-  created_at: string;
-  status: string;
-}
+import { blogPostQueryOptions } from '@/lib/blogPostQuery';
 
 export default function DynamicBlogPost() {
   const { slug } = useParams<{ slug: string }>();
 
-  const { data: post, isLoading, error } = useQuery({
-    queryKey: ['blog-post', slug],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .maybeSingle();
-
-      if (error) throw error;
-      return data as BlogPost | null;
-    },
-    staleTime: 5 * 60 * 1000,
-  });
+  const { data: post, isLoading, error } = useQuery(blogPostQueryOptions(slug ?? ''));
 
   if (isLoading) {
     return (
