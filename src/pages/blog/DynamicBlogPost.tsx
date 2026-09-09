@@ -5,7 +5,7 @@
 
 import { useParams, Link } from '@/lib/router-compat';
 import { useQuery } from '@tanstack/react-query';
-import { supabase } from '@/integrations/supabase/client';
+
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
@@ -13,41 +13,12 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
-
-interface BlogPost {
-  id: string;
-  title: string;
-  content: string;
-  excerpt: string | null;
-  slug: string;
-  meta_title: string | null;
-  meta_description: string | null;
-  meta_keywords: string | null;
-  featured_image_url: string | null;
-  reading_time: number | null;
-  published_at: string | null;
-  created_at: string;
-  status: string;
-}
+import { blogPostQueryOptions } from '@/lib/blogPostQuery';
 
 export default function DynamicBlogPost() {
   const { slug } = useParams<{ slug: string }>();
 
-  const { data: post, isLoading, error } = useQuery({
-    queryKey: ['blog-post', slug],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .maybeSingle();
-
-      if (error) throw error;
-      return data as BlogPost | null;
-    },
-    staleTime: 5 * 60 * 1000,
-  });
+  const { data: post, isLoading, error } = useQuery(blogPostQueryOptions(slug ?? ''));
 
   if (isLoading) {
     return (
@@ -96,10 +67,19 @@ export default function DynamicBlogPost() {
   }
 
   const publishedDate = post.published_at || post.created_at;
-  const sanitizedContent = DOMPurify.sanitize(post.content, {
-    ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre', 'blockquote', 'img', 'br', 'hr'],
-    ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'target', 'rel'],
-  });
+  // DOMPurify needs a DOM, which does not exist during server rendering.
+  // On the server strip active markup with a conservative pass; the browser
+  // re-sanitizes with the full allow-list on hydration.
+  const sanitizedContent =
+    typeof window !== 'undefined'
+      ? DOMPurify.sanitize(post.content, {
+          ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre', 'blockquote', 'img', 'br', 'hr'],
+          ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'target', 'rel'],
+        })
+      : (post.content || '')
+          .replace(/<\s*(script|style|iframe|object|embed|form)[\s\S]*?<\s*\/\s*\1\s*>/gi, '')
+          .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+          .replace(/javascript:/gi, '');
 
   return (
     <>

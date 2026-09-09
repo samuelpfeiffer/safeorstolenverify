@@ -45,10 +45,13 @@ export const MasterSEO: React.FC = () => {
   return (
     <Helmet>
       {/* NOTE: Organization and WebSite schemas are in index.html for guaranteed Google crawling */}
-      {/* Path-derived robots directive. Pages that render SEOHead emit the same
-          value from the same policy; this guarantees private routes are noindex
-          even when a page ships no SEO component of its own. */}
-      <meta name="robots" content={getRobotsContent({ pathname: location.pathname })} />
+      {/* Only emit a global robots directive for paths the policy already
+          knows are private. Emitting "index, follow" here raced ahead of a
+          page's own noindex (notably the 404 page), so crawlers read the
+          wrong directive. Public pages emit their own tag via SEOHead. */}
+      {getRobotsContent({ pathname: location.pathname }).startsWith('noindex') ? (
+        <meta name="robots" content={getRobotsContent({ pathname: location.pathname })} />
+      ) : null}
       
       {/* Site verification */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
