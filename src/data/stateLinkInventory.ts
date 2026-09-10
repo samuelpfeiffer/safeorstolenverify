@@ -37,10 +37,8 @@ const titleCase = (slug: string) =>
 
 const PLATE_STATE_SLUGS = Object.keys(REGION_BY_STATE);
 
-const VIN_STATE_SLUGS = [
-  'california', 'florida', 'georgia', 'illinois', 'new-york',
-  'north-carolina', 'ohio', 'pennsylvania', 'texas', 'washington',
-];
+const VIN_STATE_SLUGS = Object.keys(REGION_BY_STATE);
+
 
 export const STATE_PLATE_LINKS: StateLink[] = PLATE_STATE_SLUGS.map((slug) => ({
   name: titleCase(slug),
