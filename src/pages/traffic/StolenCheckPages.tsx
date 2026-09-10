@@ -143,6 +143,7 @@ export const CheckStolenBike = () => (
 );
 
 export const CheckStolenFirearm = () => (
+ <>
  <StolenCheckLanding
  itemType="Firearm"
  title="Is This Gun Stolen? Free Serial Number Check"
