@@ -32,6 +32,7 @@ import { AIFloatingChat } from "@/components/ai/AIFloatingChat";
 import NotFound from "@/pages/NotFound";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import appCss from "../styles.css?url";
+import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 
 // Lazy load SEO components - NOT needed for initial render/LCP
 const GlobalAISEO = React.lazy(() => import("@/components/seo/GlobalAISEO").then((m) => ({ default: m.GlobalAISEO })));
@@ -306,11 +307,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "alternate", hrefLang: "x-default", href: "https://safeorstolen.com/" },
       { rel: "preconnect", href: "https://lxrdzbknktwlubbmlsqe.supabase.co" },
       { rel: "dns-prefetch", href: "https://lxrdzbknktwlubbmlsqe.supabase.co" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: interLatinWoff2,
+        crossOrigin: "anonymous",
       },
       { rel: "dns-prefetch", href: "https://js.stripe.com" },
       { rel: "indexnow", href: "https://safeorstolen.com/indexnow-key.txt" },
