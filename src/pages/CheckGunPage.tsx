@@ -56,7 +56,8 @@ const CheckGunPage = () => {
             <li>Ask for a bill of sale with both parties' names, the serial, date, and price</li>
             <li>
               Know your state's private-transfer laws — many states require the sale to go through
-              an FFL
+              an FFL. See our{' '}
+              <Link to="/state-firearm-transfer-laws">state-by-state firearm transfer law guide</Link>
             </li>
             <li>If the price is far below market and the seller wants cash today, walk away</li>
           </ul>

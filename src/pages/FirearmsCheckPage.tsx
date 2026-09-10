@@ -324,6 +324,7 @@ const FirearmsCheckPage = () => {
  { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
  { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
  { title: 'Bike Serial Check', href: '/check-bike', desc: 'stolen bicycle databases + police' },
+ { title: 'State Firearm Transfer Laws', href: '/state-firearm-transfer-laws', desc: 'Which states require a private-sale background check' },
  ].map((link) => (
  <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
  <div>
