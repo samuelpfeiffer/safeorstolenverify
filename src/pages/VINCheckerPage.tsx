@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 
 const VINCheckerPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Free Stolen Vehicle VIN Check — Is This Car Stolen? | SafeOrStolen"
  metaDescription="Free VIN check for stolen vehicles. Search vehicle theft and title databases, stolen property reports from all 50 states, vehicle theft and title databases, insurance claims, and salvage databases. Better than Carfax for theft detection. Instant results."
@@ -101,6 +103,8 @@ const VINCheckerPage = () => {
  ]
  }}
  />
+ <StateLinksGrid kind="vin" />
+ </>
  );
 };
 
