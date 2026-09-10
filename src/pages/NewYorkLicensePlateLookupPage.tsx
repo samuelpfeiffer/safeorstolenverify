@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const NewYorkLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="New York License Plate Lookup - Check NY Stolen Vehicle by Plate"
  metaDescription="Free New York license plate lookup. Check if a NY vehicle is stolen before buying. Search NY DMV and community theft registries instantly."
@@ -78,6 +80,8 @@ const NewYorkLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/new-york-license-plate-lookup" />
+ </>
  );
 };
 

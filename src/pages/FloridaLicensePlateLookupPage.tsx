@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const FloridaLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Free Florida License Plate Lookup — Check if FL Vehicle is Stolen | SafeOrStolen"
  metaDescription="Free Florida license plate lookup. Check any FL vehicle for theft status using FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, and our verification databases. Works for Miami, Jacksonville, Orlando, Tampa, and all FL cities. Instant results."
@@ -74,6 +76,8 @@ const FloridaLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/florida-license-plate-lookup" />
+ </>
  );
 };
 

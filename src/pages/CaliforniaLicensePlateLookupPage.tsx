@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const CaliforniaLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="California License Plate Lookup - Check CA Stolen Vehicle by Plate"
  metaDescription="Free California license plate lookup. Check if a CA vehicle is stolen before buying. Search DMV and community theft registries instantly."
@@ -45,6 +47,8 @@ const CaliforniaLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/california-license-plate-lookup" />
+ </>
  );
 };
 

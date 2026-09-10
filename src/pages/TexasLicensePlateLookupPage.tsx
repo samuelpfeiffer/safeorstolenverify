@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const TexasLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Texas License Plate Lookup - Check TX Stolen Vehicle by Plate"
  metaDescription="Free Texas license plate lookup. Check if a TX vehicle is stolen before buying. Verify against TxDMV and community theft registries instantly."
@@ -78,6 +80,8 @@ const TexasLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/texas-license-plate-lookup" />
+ </>
  );
 };
 

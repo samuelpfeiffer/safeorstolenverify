@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const WashingtonLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Washington License Plate Lookup - Check WA Stolen Vehicle by Plate"
  metaDescription="Washington license plate lookup to verify if a vehicle is stolen. Free WA license plate search from Washington DOL and community theft registries. Check vehicles in Seattle, Spokane, Tacoma."
@@ -78,6 +80,8 @@ const WashingtonLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/washington-license-plate-lookup" />
+ </>
  );
 };
 

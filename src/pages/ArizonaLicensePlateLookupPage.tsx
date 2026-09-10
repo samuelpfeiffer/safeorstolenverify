@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const ArizonaLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="TheftAZ Alternative — Free Arizona Stolen Property & License Plate Search | SafeOrStolen"
  metaDescription="Search Arizona stolen property and vehicles using TheftAZ databases plus vehicle theft and title databases, stolen property reports from all 50 states, and Arizona MVD records. Free results in 3 seconds. Check any AZ license plate for theft status."
@@ -59,6 +61,8 @@ const ArizonaLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/arizona-license-plate-lookup" />
+ </>
  );
 };
 

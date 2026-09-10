@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const OhioLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Ohio Plate Lookup - Free OH License Plate Search | SafeOrStolen"
  metaDescription="Ohio plate lookup to verify if a vehicle is stolen. Free OH license plate search using official Ohio BMV databases. Secure gov-grade verification for Columbus, Cleveland, Cincinnati vehicles."
@@ -78,6 +80,8 @@ const OhioLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/ohio-license-plate-lookup" />
+ </>
  );
 };
 

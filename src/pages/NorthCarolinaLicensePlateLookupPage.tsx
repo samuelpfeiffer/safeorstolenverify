@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const NorthCarolinaLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="NC License Plate Lookup - Free Stolen Check"
  metaDescription="Free North Carolina plate lookup. Check if a NC vehicle is stolen before buying in Charlotte, Raleigh, Greensboro. Searches NCDMV databases."
@@ -81,6 +83,8 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/north-carolina-license-plate-lookup" />
+ </>
  );
 };
 

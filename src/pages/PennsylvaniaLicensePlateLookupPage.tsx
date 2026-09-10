@@ -1,4 +1,5 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const PennsylvaniaLicensePlateLookupPage = () => {
   return (
