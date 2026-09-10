@@ -84,23 +84,26 @@ function applyCacheHeaders(request: Request, response: Response): Response {
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("text/html")) return response;
 
+  // Headers on a handler response can be immutable; re-wrap so we can set them.
+  const cached = new Response(response.body, response);
+
   // Never cache a response that is already personalized or sets a session cookie.
   if (response.headers.has("set-cookie")) return response;
   if (request.headers.get("cookie")?.includes("sb-")) return response;
 
   const url = new URL(request.url);
   if (isPersonalizedPath(url.pathname)) {
-    response.headers.set("cache-control", "private, no-store");
-    return response;
+    cached.headers.set("cache-control", "private, no-store");
+    return cached;
   }
 
-  response.headers.set(
+  cached.headers.set(
     "cache-control",
     "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
   );
-  response.headers.set("cdn-cache-control", "max-age=3600, stale-while-revalidate=86400");
-  response.headers.set("vary", "Accept-Encoding");
-  return response;
+  cached.headers.set("cdn-cache-control", "max-age=3600, stale-while-revalidate=86400");
+  cached.headers.set("vary", "Accept-Encoding");
+  return cached;
 }
 
 export default {
