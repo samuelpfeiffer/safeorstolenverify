@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const GeorgiaLicensePlateLookupPage = () => {
   return (
+    <>
     <ItemLandingPageTemplate
       title="Georgia License Plate Lookup - Free GA Stolen Vehicle Check | SafeOrStolen"
       metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is stolen before buying. Verify against Georgia DDS and community theft registries."
@@ -81,6 +83,8 @@ const GeorgiaLicensePlateLookupPage = () => {
         ]
       }}
     />
+      <OtherStatesModule kind="plate" currentPath="/georgia-license-plate-lookup" />
+    </>
   );
 };
 

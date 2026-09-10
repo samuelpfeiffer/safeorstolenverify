@@ -273,6 +273,31 @@ const Compare = () => {
  </div>
  </section>
 
+  {/* Individual comparisons */}
+ <section className="py-12 border-t">
+ <div className="container mx-auto px-4 max-w-4xl">
+ <h2 className="text-2xl font-bold mb-6 text-center">Detailed Comparisons</h2>
+ <div className="grid sm:grid-cols-2 gap-4">
+ <Link to="/vs-checkmend" className="block p-5 rounded-lg border hover:border-primary transition-colors">
+ <h3 className="font-semibold mb-1">SafeOrStolen vs CheckMEND</h3>
+ <p className="text-sm text-muted-foreground">Coverage and pricing side by side.</p>
+ </Link>
+ <Link to="/vs-imeiinfo" className="block p-5 rounded-lg border hover:border-primary transition-colors">
+ <h3 className="font-semibold mb-1">SafeOrStolen vs IMEI.info</h3>
+ <p className="text-sm text-muted-foreground">Phone IMEI checks compared.</p>
+ </Link>
+ <Link to="/theftaz-alternative" className="block p-5 rounded-lg border hover:border-primary transition-colors">
+ <h3 className="font-semibold mb-1">TheftAZ Alternative</h3>
+ <p className="text-sm text-muted-foreground">Arizona stolen property searches.</p>
+ </Link>
+ <Link to="/carfax-alternative" className="block p-5 rounded-lg border hover:border-primary transition-colors">
+ <h3 className="font-semibold mb-1">Carfax Alternative</h3>
+ <p className="text-sm text-muted-foreground">Vehicle theft checks by VIN.</p>
+ </Link>
+ </div>
+ </div>
+ </section>
+
  {/* CTA */}
  <section className="py-16">
  <div className="container mx-auto px-4 text-center">

@@ -1,3 +1,4 @@
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 import { Link } from '@/lib/router-compat';
 import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -427,6 +428,8 @@ export const StateVinPageTemplate = ({
  </section>
 
  {/* CTA Section */}
+ <OtherStatesModule kind="vin" currentPath={`/${urlPath}`} />
+
  <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>

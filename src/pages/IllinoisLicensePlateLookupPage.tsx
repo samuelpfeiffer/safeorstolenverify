@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const IllinoisLicensePlateLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Illinois License Plate Lookup - Check IL Stolen Vehicle by Plate"
  metaDescription="Free Illinois license plate lookup. Check if an IL vehicle is stolen before buying. Search Secretary of State and community theft registries."
@@ -78,6 +80,8 @@ const IllinoisLicensePlateLookupPage = () => {
  ]
  }}
  />
+ <OtherStatesModule kind="plate" currentPath="/illinois-license-plate-lookup" />
+ </>
  );
 };
 

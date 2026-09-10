@@ -1,7 +1,9 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const PennsylvaniaLicensePlateLookupPage = () => {
   return (
+    <>
     <ItemLandingPageTemplate
       title="Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check | SafeOrStolen"
       metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen before buying. Verify against PennDOT and community theft registries."
@@ -81,6 +83,8 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         ]
       }}
     />
+      <OtherStatesModule kind="plate" currentPath="/pennsylvania-license-plate-lookup" />
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ import { useNavigate } from '@/lib/router-compat';
 import { toast } from 'sonner';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 const WashingtonDCLicensePlateLookup = () => {
  const navigate = useNavigate();
@@ -354,6 +355,8 @@ const WashingtonDCLicensePlateLookup = () => {
  </div>
  </div>
  </section>
+
+ <OtherStatesModule kind="plate" currentPath="/washington-dc-license-plate-lookup" />
 
  {/* Related Pages */}
  <RelatedPagesSection currentPage="/washington-dc-license-plate-lookup" />
