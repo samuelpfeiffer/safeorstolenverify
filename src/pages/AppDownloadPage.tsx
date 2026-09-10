@@ -176,6 +176,22 @@ export default function AppDownloadPage() {
  </div>
  </section>
 
+ <section className="py-12 px-4 bg-gray-950 border-t border-gray-800">
+ <div className="max-w-4xl mx-auto">
+ <h2 className="text-2xl font-bold text-white mb-4">More in the App</h2>
+ <div className="grid sm:grid-cols-2 gap-4">
+ <Link to="/app/stolen-phone-checker" className="block p-5 rounded-xl bg-gray-900 border border-gray-800 hover:border-gray-600 transition-colors">
+ <h3 className="font-semibold text-white mb-1">Stolen Phone Checker</h3>
+ <p className="text-sm text-gray-400">Check any phone by IMEI from your phone browser.</p>
+ </Link>
+ <Link to="/app/vin-checker" className="block p-5 rounded-xl bg-gray-900 border border-gray-800 hover:border-gray-600 transition-colors">
+ <h3 className="font-semibold text-white mb-1">VIN Checker</h3>
+ <p className="text-sm text-gray-400">Scan or type a VIN and get a theft result in seconds.</p>
+ </Link>
+ </div>
+ </div>
+ </section>
+
  {/* Final install CTA */}
  <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
  <div className="max-w-xl mx-auto">
