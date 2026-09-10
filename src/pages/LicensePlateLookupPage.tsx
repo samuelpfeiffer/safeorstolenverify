@@ -10,6 +10,7 @@ import { US_STATES } from '@/data/stateVerificationData';
 import { toast } from 'sonner';
 import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 
 const LicensePlateLookupPage = () => {
  const navigate = useNavigate();
@@ -303,6 +304,8 @@ const LicensePlateLookupPage = () => {
  </div>
  </div>
  </section>
+
+ <StateLinksGrid kind="plate" />
 
  {/* How It Works */}
  <section className="py-12">
