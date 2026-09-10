@@ -1,7 +1,9 @@
+import { Link } from '@/lib/router-compat';
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
 const GunSerialNumberLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Free Gun Serial Number Lookup - Check Firearms | SafeOrStolen"
  metaDescription="Free gun serial number lookup. Check if any firearm is stolen before buying. Searches stolen firearms databases and validates serial integrity."
