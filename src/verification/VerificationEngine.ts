@@ -123,7 +123,8 @@ class VerificationEngine {
       body: {
         identifier: request.serialNumber,
         itemType: request.itemType,
-        userId: request.metadata?.user_id
+        userId: request.metadata?.user_id,
+        fingerprint: typeof window !== 'undefined' ? getOrCreateFingerprint() : undefined
       }
     });
 
