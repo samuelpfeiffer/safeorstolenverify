@@ -1,6 +1,7 @@
 import { supabase } from '@/integrations/supabase/client';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { validateSerialNumber, sanitizeInput } from '@/utils/inputValidation';
+import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 
 export interface VerificationRequest {
   serialNumber: string;
@@ -123,7 +124,8 @@ class VerificationEngine {
       body: {
         identifier: request.serialNumber,
         itemType: request.itemType,
-        userId: request.metadata?.user_id
+        userId: request.metadata?.user_id,
+        fingerprint: typeof window !== 'undefined' ? getOrCreateFingerprint() : undefined
       }
     });
 

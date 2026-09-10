@@ -4,6 +4,7 @@
  */
 
 import { supabase } from '@/integrations/supabase/client';
+import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 
 export interface VerificationRequest {
   identifier: string;
@@ -13,7 +14,10 @@ export interface VerificationRequest {
 
 const getFingerprint = (): string | undefined => {
   try {
-    return localStorage.getItem('sos_fp_v2') ?? undefined;
+    if (typeof window === 'undefined') return undefined;
+    // Creates and persists the anonymous id if it doesn't exist yet,
+    // so anonymous verification never hits FINGERPRINT_REQUIRED.
+    return getOrCreateFingerprint();
   } catch {
     return undefined;
   }
