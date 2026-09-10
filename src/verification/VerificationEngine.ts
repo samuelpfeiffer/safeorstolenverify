@@ -1,6 +1,7 @@
 import { supabase } from '@/integrations/supabase/client';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { validateSerialNumber, sanitizeInput } from '@/utils/inputValidation';
+import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 
 export interface VerificationRequest {
   serialNumber: string;
