@@ -16,12 +16,16 @@ import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disc
 import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as AiVerifyRouteImport } from './routes/ai-verify'
 import { Route as AlabamaLicensePlateLookupRouteImport } from './routes/alabama-license-plate-lookup'
+import { Route as AlabamaVinLookupRouteImport } from './routes/alabama-vin-lookup'
 import { Route as AlaskaLicensePlateLookupRouteImport } from './routes/alaska-license-plate-lookup'
+import { Route as AlaskaVinLookupRouteImport } from './routes/alaska-vin-lookup'
 import { Route as ApiRouteImport } from './routes/api'
 import { Route as ApiDocsRouteImport } from './routes/api-docs'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as ArizonaLicensePlateLookupRouteImport } from './routes/arizona-license-plate-lookup'
+import { Route as ArizonaVinLookupRouteImport } from './routes/arizona-vin-lookup'
 import { Route as ArkansasLicensePlateLookupRouteImport } from './routes/arkansas-license-plate-lookup'
+import { Route as ArkansasVinLookupRouteImport } from './routes/arkansas-vin-lookup'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BarcodeScannerRouteImport } from './routes/barcode-scanner'
 import { Route as BestStolenItemCheckers2026RouteImport } from './routes/best-stolen-item-checkers-2026'
@@ -66,15 +70,18 @@ import { Route as CheckWatchStolenRouteImport } from './routes/check-watch-stole
 import { Route as CheckXboxRouteImport } from './routes/check-xbox'
 import { Route as CheckoutRedirectRouteImport } from './routes/checkout-redirect'
 import { Route as ColoradoLicensePlateLookupRouteImport } from './routes/colorado-license-plate-lookup'
+import { Route as ColoradoVinLookupRouteImport } from './routes/colorado-vin-lookup'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as ComprehensiveGuideRouteImport } from './routes/comprehensive-guide'
 import { Route as ConnecticutLicensePlateLookupRouteImport } from './routes/connecticut-license-plate-lookup'
+import { Route as ConnecticutVinLookupRouteImport } from './routes/connecticut-vin-lookup'
 import { Route as CraigslistSafetyVerificationRouteImport } from './routes/craigslist-safety-verification'
 import { Route as CrunchbaseRouteImport } from './routes/crunchbase'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DataSourcesRouteImport } from './routes/data-sources'
 import { Route as DelawareLicensePlateLookupRouteImport } from './routes/delaware-license-plate-lookup'
+import { Route as DelawareVinLookupRouteImport } from './routes/delaware-vin-lookup'
 import { Route as DeveloperRouteImport } from './routes/developer'
 import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as DownloadRouteImport } from './routes/download'
@@ -107,6 +114,7 @@ import { Route as GeorgiaVinLookupRouteImport } from './routes/georgia-vin-looku
 import { Route as GetAppRouteImport } from './routes/get-app'
 import { Route as GunSerialNumberLookupRouteImport } from './routes/gun-serial-number-lookup'
 import { Route as HawaiiLicensePlateLookupRouteImport } from './routes/hawaii-license-plate-lookup'
+import { Route as HawaiiVinLookupRouteImport } from './routes/hawaii-vin-lookup'
 import { Route as HotgunzAlternativeRouteImport } from './routes/hotgunz-alternative'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as HowToCheckIfCarStolenRouteImport } from './routes/how-to-check-if-car-stolen'
@@ -114,14 +122,17 @@ import { Route as HowToCheckIfItemStolenRouteImport } from './routes/how-to-chec
 import { Route as HowToCheckIfPhoneStolenRouteImport } from './routes/how-to-check-if-phone-stolen'
 import { Route as HowToVerifyAUsedItemRouteImport } from './routes/how-to-verify-a-used-item'
 import { Route as IdahoLicensePlateLookupRouteImport } from './routes/idaho-license-plate-lookup'
+import { Route as IdahoVinLookupRouteImport } from './routes/idaho-vin-lookup'
 import { Route as IllinoisLicensePlateLookupRouteImport } from './routes/illinois-license-plate-lookup'
 import { Route as IllinoisVinLookupRouteImport } from './routes/illinois-vin-lookup'
 import { Route as ImeiCheckRouteImport } from './routes/imei-check'
 import { Route as ImeiCheckerRouteImport } from './routes/imei-checker'
 import { Route as ImeiCheckerAppRouteImport } from './routes/imei-checker-app'
 import { Route as IndianaLicensePlateLookupRouteImport } from './routes/indiana-license-plate-lookup'
+import { Route as IndianaVinLookupRouteImport } from './routes/indiana-vin-lookup'
 import { Route as InstallAppRouteImport } from './routes/install-app'
 import { Route as IowaLicensePlateLookupRouteImport } from './routes/iowa-license-plate-lookup'
+import { Route as IowaVinLookupRouteImport } from './routes/iowa-vin-lookup'
 import { Route as IsMyIphoneStolenRouteImport } from './routes/is-my-iphone-stolen'
 import { Route as IsMyPhoneStolenRouteImport } from './routes/is-my-phone-stolen'
 import { Route as IsThisBikeStolenRouteImport } from './routes/is-this-bike-stolen'
@@ -129,23 +140,33 @@ import { Route as IsThisCarStolenRouteImport } from './routes/is-this-car-stolen
 import { Route as IsThisGunStolenRouteImport } from './routes/is-this-gun-stolen'
 import { Route as IsThisLaptopStolenRouteImport } from './routes/is-this-laptop-stolen'
 import { Route as KansasLicensePlateLookupRouteImport } from './routes/kansas-license-plate-lookup'
+import { Route as KansasVinLookupRouteImport } from './routes/kansas-vin-lookup'
 import { Route as KentuckyLicensePlateLookupRouteImport } from './routes/kentucky-license-plate-lookup'
+import { Route as KentuckyVinLookupRouteImport } from './routes/kentucky-vin-lookup'
 import { Route as LearnRouteImport } from './routes/learn'
 import { Route as LetgoStolenCheckRouteImport } from './routes/letgo-stolen-check'
 import { Route as LicensePlateLookupRouteImport } from './routes/license-plate-lookup'
 import { Route as LouisianaLicensePlateLookupRouteImport } from './routes/louisiana-license-plate-lookup'
+import { Route as LouisianaVinLookupRouteImport } from './routes/louisiana-vin-lookup'
 import { Route as MaineLicensePlateLookupRouteImport } from './routes/maine-license-plate-lookup'
+import { Route as MaineVinLookupRouteImport } from './routes/maine-vin-lookup'
 import { Route as MarketplaceAdvisorRouteImport } from './routes/marketplace-advisor'
 import { Route as MarketplaceIntegrationRouteImport } from './routes/marketplace-integration'
 import { Route as MarketplaceUrlCheckerRouteImport } from './routes/marketplace-url-checker'
 import { Route as MarylandLicensePlateLookupRouteImport } from './routes/maryland-license-plate-lookup'
+import { Route as MarylandVinLookupRouteImport } from './routes/maryland-vin-lookup'
 import { Route as MassachusettsLicensePlateLookupRouteImport } from './routes/massachusetts-license-plate-lookup'
+import { Route as MassachusettsVinLookupRouteImport } from './routes/massachusetts-vin-lookup'
 import { Route as MercariStolenCheckRouteImport } from './routes/mercari-stolen-check'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as MichiganLicensePlateLookupRouteImport } from './routes/michigan-license-plate-lookup'
+import { Route as MichiganVinLookupRouteImport } from './routes/michigan-vin-lookup'
 import { Route as MinnesotaLicensePlateLookupRouteImport } from './routes/minnesota-license-plate-lookup'
+import { Route as MinnesotaVinLookupRouteImport } from './routes/minnesota-vin-lookup'
 import { Route as MississippiLicensePlateLookupRouteImport } from './routes/mississippi-license-plate-lookup'
+import { Route as MississippiVinLookupRouteImport } from './routes/mississippi-vin-lookup'
 import { Route as MissouriLicensePlateLookupRouteImport } from './routes/missouri-license-plate-lookup'
+import { Route as MissouriVinLookupRouteImport } from './routes/missouri-vin-lookup'
 import { Route as MobileRouteImport } from './routes/mobile'
 import { Route as MobileAppRouteImport } from './routes/mobile-app'
 import { Route as MobileDashboardRouteImport } from './routes/mobile-dashboard'
@@ -153,11 +174,17 @@ import { Route as MobileOnboardingRouteImport } from './routes/mobile-onboarding
 import { Route as MobileSettingsRouteImport } from './routes/mobile-settings'
 import { Route as MobileVerifyRouteImport } from './routes/mobile-verify'
 import { Route as MontanaLicensePlateLookupRouteImport } from './routes/montana-license-plate-lookup'
+import { Route as MontanaVinLookupRouteImport } from './routes/montana-vin-lookup'
 import { Route as NebraskaLicensePlateLookupRouteImport } from './routes/nebraska-license-plate-lookup'
+import { Route as NebraskaVinLookupRouteImport } from './routes/nebraska-vin-lookup'
 import { Route as NevadaLicensePlateLookupRouteImport } from './routes/nevada-license-plate-lookup'
+import { Route as NevadaVinLookupRouteImport } from './routes/nevada-vin-lookup'
 import { Route as NewHampshireLicensePlateLookupRouteImport } from './routes/new-hampshire-license-plate-lookup'
+import { Route as NewHampshireVinLookupRouteImport } from './routes/new-hampshire-vin-lookup'
 import { Route as NewJerseyLicensePlateLookupRouteImport } from './routes/new-jersey-license-plate-lookup'
+import { Route as NewJerseyVinLookupRouteImport } from './routes/new-jersey-vin-lookup'
 import { Route as NewMexicoLicensePlateLookupRouteImport } from './routes/new-mexico-license-plate-lookup'
+import { Route as NewMexicoVinLookupRouteImport } from './routes/new-mexico-vin-lookup'
 import { Route as NewYorkLicensePlateLookupRouteImport } from './routes/new-york-license-plate-lookup'
 import { Route as NewYorkVinLookupRouteImport } from './routes/new-york-vin-lookup'
 import { Route as NewsRouteImport } from './routes/news'
@@ -165,12 +192,15 @@ import { Route as NicbAlternativeRouteImport } from './routes/nicb-alternative'
 import { Route as NorthCarolinaLicensePlateLookupRouteImport } from './routes/north-carolina-license-plate-lookup'
 import { Route as NorthCarolinaVinLookupRouteImport } from './routes/north-carolina-vin-lookup'
 import { Route as NorthDakotaLicensePlateLookupRouteImport } from './routes/north-dakota-license-plate-lookup'
+import { Route as NorthDakotaVinLookupRouteImport } from './routes/north-dakota-vin-lookup'
 import { Route as OfferupSafetyRouteImport } from './routes/offerup-safety'
 import { Route as OfferupVerifyNotStolenRouteImport } from './routes/offerup-verify-not-stolen'
 import { Route as OhioLicensePlateLookupRouteImport } from './routes/ohio-license-plate-lookup'
 import { Route as OhioVinLookupRouteImport } from './routes/ohio-vin-lookup'
 import { Route as OklahomaLicensePlateLookupRouteImport } from './routes/oklahoma-license-plate-lookup'
+import { Route as OklahomaVinLookupRouteImport } from './routes/oklahoma-vin-lookup'
 import { Route as OregonLicensePlateLookupRouteImport } from './routes/oregon-license-plate-lookup'
+import { Route as OregonVinLookupRouteImport } from './routes/oregon-vin-lookup'
 import { Route as OurStoryRouteImport } from './routes/our-story'
 import { Route as PartialSerialNumberSearchRouteImport } from './routes/partial-serial-number-search'
 import { Route as PaymentSuccessRouteImport } from './routes/payment-success'
@@ -190,6 +220,7 @@ import { Route as RealTimeVerificationRouteImport } from './routes/real-time-ver
 import { Route as ReportStolenRouteImport } from './routes/report-stolen'
 import { Route as ResourceCenterRouteImport } from './routes/resource-center'
 import { Route as RhodeIslandLicensePlateLookupRouteImport } from './routes/rhode-island-license-plate-lookup'
+import { Route as RhodeIslandVinLookupRouteImport } from './routes/rhode-island-vin-lookup'
 import { Route as ScamCheckerRouteImport } from './routes/scam-checker'
 import { Route as SellerBadgeRouteImport } from './routes/seller-badge'
 import { Route as SerialNumberCheckerRouteImport } from './routes/serial-number-checker'
@@ -197,7 +228,9 @@ import { Route as SerialNumberStolenCheckRouteImport } from './routes/serial-num
 import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as SmsVerifyRouteImport } from './routes/sms-verify'
 import { Route as SouthCarolinaLicensePlateLookupRouteImport } from './routes/south-carolina-license-plate-lookup'
+import { Route as SouthCarolinaVinLookupRouteImport } from './routes/south-carolina-vin-lookup'
 import { Route as SouthDakotaLicensePlateLookupRouteImport } from './routes/south-dakota-license-plate-lookup'
+import { Route as SouthDakotaVinLookupRouteImport } from './routes/south-dakota-vin-lookup'
 import { Route as StatePawnshopLawsRouteImport } from './routes/state-pawnshop-laws'
 import { Route as StockxVerificationRouteImport } from './routes/stockx-verification'
 import { Route as StolenCheckChicagoRouteImport } from './routes/stolen-check-chicago'
@@ -215,6 +248,7 @@ import { Route as StolenDatabaseRouteImport } from './routes/stolen-database'
 import { Route as StolenGunDatabaseRouteImport } from './routes/stolen-gun-database'
 import { Route as StolenPhoneCheckerRouteImport } from './routes/stolen-phone-checker'
 import { Route as TennesseeLicensePlateLookupRouteImport } from './routes/tennessee-license-plate-lookup'
+import { Route as TennesseeVinLookupRouteImport } from './routes/tennessee-vin-lookup'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TexasLicensePlateLookupRouteImport } from './routes/texas-license-plate-lookup'
@@ -224,12 +258,15 @@ import { Route as TheftazAlternativeRouteImport } from './routes/theftaz-alterna
 import { Route as TransparencyRouteImport } from './routes/transparency'
 import { Route as TrustEngineRouteImport } from './routes/trust-engine'
 import { Route as UtahLicensePlateLookupRouteImport } from './routes/utah-license-plate-lookup'
+import { Route as UtahVinLookupRouteImport } from './routes/utah-vin-lookup'
 import { Route as VerificationSuccessRouteImport } from './routes/verification-success'
 import { Route as VerifyRouteImport } from './routes/verify'
 import { Route as VermontLicensePlateLookupRouteImport } from './routes/vermont-license-plate-lookup'
+import { Route as VermontVinLookupRouteImport } from './routes/vermont-vin-lookup'
 import { Route as VinCheckRouteImport } from './routes/vin-check'
 import { Route as VinCheckerRouteImport } from './routes/vin-checker'
 import { Route as VirginiaLicensePlateLookupRouteImport } from './routes/virginia-license-plate-lookup'
+import { Route as VirginiaVinLookupRouteImport } from './routes/virginia-vin-lookup'
 import { Route as VsAutocheckRouteImport } from './routes/vs-autocheck'
 import { Route as VsBikeindexRouteImport } from './routes/vs-bikeindex'
 import { Route as VsCarfaxRouteImport } from './routes/vs-carfax'
@@ -242,11 +279,15 @@ import { Route as VsStolenregisterRouteImport } from './routes/vs-stolenregister
 import { Route as VsSwappaRouteImport } from './routes/vs-swappa'
 import { Route as VsVincheckInfoRouteImport } from './routes/vs-vincheck-info'
 import { Route as WashingtonDcLicensePlateLookupRouteImport } from './routes/washington-dc-license-plate-lookup'
+import { Route as WashingtonDcVinLookupRouteImport } from './routes/washington-dc-vin-lookup'
 import { Route as WashingtonLicensePlateLookupRouteImport } from './routes/washington-license-plate-lookup'
 import { Route as WashingtonVinLookupRouteImport } from './routes/washington-vin-lookup'
 import { Route as WestVirginiaLicensePlateLookupRouteImport } from './routes/west-virginia-license-plate-lookup'
+import { Route as WestVirginiaVinLookupRouteImport } from './routes/west-virginia-vin-lookup'
 import { Route as WisconsinLicensePlateLookupRouteImport } from './routes/wisconsin-license-plate-lookup'
+import { Route as WisconsinVinLookupRouteImport } from './routes/wisconsin-vin-lookup'
 import { Route as WyomingLicensePlateLookupRouteImport } from './routes/wyoming-license-plate-lookup'
+import { Route as WyomingVinLookupRouteImport } from './routes/wyoming-vin-lookup'
 import { Route as AdminAiOrchestratorRouteImport } from './routes/admin/ai-orchestrator'
 import { Route as AdminBatchIndexRouteImport } from './routes/admin/batch-index'
 import { Route as AdminGscCallbackRouteImport } from './routes/admin/gsc-callback'
@@ -362,12 +403,22 @@ const AlabamaLicensePlateLookupRoute =
     path: '/alabama-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AlabamaVinLookupRoute = AlabamaVinLookupRouteImport.update({
+  id: '/alabama-vin-lookup',
+  path: '/alabama-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AlaskaLicensePlateLookupRoute =
   AlaskaLicensePlateLookupRouteImport.update({
     id: '/alaska-license-plate-lookup',
     path: '/alaska-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AlaskaVinLookupRoute = AlaskaVinLookupRouteImport.update({
+  id: '/alaska-vin-lookup',
+  path: '/alaska-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiRoute = ApiRouteImport.update({
   id: '/api',
   path: '/api',
@@ -389,12 +440,22 @@ const ArizonaLicensePlateLookupRoute =
     path: '/arizona-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ArizonaVinLookupRoute = ArizonaVinLookupRouteImport.update({
+  id: '/arizona-vin-lookup',
+  path: '/arizona-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArkansasLicensePlateLookupRoute =
   ArkansasLicensePlateLookupRouteImport.update({
     id: '/arkansas-license-plate-lookup',
     path: '/arkansas-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ArkansasVinLookupRoute = ArkansasVinLookupRouteImport.update({
+  id: '/arkansas-vin-lookup',
+  path: '/arkansas-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -620,6 +681,11 @@ const ColoradoLicensePlateLookupRoute =
     path: '/colorado-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ColoradoVinLookupRoute = ColoradoVinLookupRouteImport.update({
+  id: '/colorado-vin-lookup',
+  path: '/colorado-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CommunityRoute = CommunityRouteImport.update({
   id: '/community',
   path: '/community',
@@ -641,6 +707,11 @@ const ConnecticutLicensePlateLookupRoute =
     path: '/connecticut-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ConnecticutVinLookupRoute = ConnecticutVinLookupRouteImport.update({
+  id: '/connecticut-vin-lookup',
+  path: '/connecticut-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CraigslistSafetyVerificationRoute =
   CraigslistSafetyVerificationRouteImport.update({
     id: '/craigslist-safety-verification',
@@ -668,6 +739,11 @@ const DelawareLicensePlateLookupRoute =
     path: '/delaware-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DelawareVinLookupRoute = DelawareVinLookupRouteImport.update({
+  id: '/delaware-vin-lookup',
+  path: '/delaware-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DeveloperRoute = DeveloperRouteImport.update({
   id: '/developer',
   path: '/developer',
@@ -834,6 +910,11 @@ const HawaiiLicensePlateLookupRoute =
     path: '/hawaii-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const HawaiiVinLookupRoute = HawaiiVinLookupRouteImport.update({
+  id: '/hawaii-vin-lookup',
+  path: '/hawaii-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HotgunzAlternativeRoute = HotgunzAlternativeRouteImport.update({
   id: '/hotgunz-alternative',
   path: '/hotgunz-alternative',
@@ -869,6 +950,11 @@ const IdahoLicensePlateLookupRoute = IdahoLicensePlateLookupRouteImport.update({
   path: '/idaho-license-plate-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IdahoVinLookupRoute = IdahoVinLookupRouteImport.update({
+  id: '/idaho-vin-lookup',
+  path: '/idaho-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IllinoisLicensePlateLookupRoute =
   IllinoisLicensePlateLookupRouteImport.update({
     id: '/illinois-license-plate-lookup',
@@ -901,6 +987,11 @@ const IndianaLicensePlateLookupRoute =
     path: '/indiana-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const IndianaVinLookupRoute = IndianaVinLookupRouteImport.update({
+  id: '/indiana-vin-lookup',
+  path: '/indiana-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InstallAppRoute = InstallAppRouteImport.update({
   id: '/install-app',
   path: '/install-app',
@@ -909,6 +1000,11 @@ const InstallAppRoute = InstallAppRouteImport.update({
 const IowaLicensePlateLookupRoute = IowaLicensePlateLookupRouteImport.update({
   id: '/iowa-license-plate-lookup',
   path: '/iowa-license-plate-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IowaVinLookupRoute = IowaVinLookupRouteImport.update({
+  id: '/iowa-vin-lookup',
+  path: '/iowa-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IsMyIphoneStolenRoute = IsMyIphoneStolenRouteImport.update({
@@ -947,12 +1043,22 @@ const KansasLicensePlateLookupRoute =
     path: '/kansas-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const KansasVinLookupRoute = KansasVinLookupRouteImport.update({
+  id: '/kansas-vin-lookup',
+  path: '/kansas-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KentuckyLicensePlateLookupRoute =
   KentuckyLicensePlateLookupRouteImport.update({
     id: '/kentucky-license-plate-lookup',
     path: '/kentucky-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const KentuckyVinLookupRoute = KentuckyVinLookupRouteImport.update({
+  id: '/kentucky-vin-lookup',
+  path: '/kentucky-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearnRoute = LearnRouteImport.update({
   id: '/learn',
   path: '/learn',
@@ -974,9 +1080,19 @@ const LouisianaLicensePlateLookupRoute =
     path: '/louisiana-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LouisianaVinLookupRoute = LouisianaVinLookupRouteImport.update({
+  id: '/louisiana-vin-lookup',
+  path: '/louisiana-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MaineLicensePlateLookupRoute = MaineLicensePlateLookupRouteImport.update({
   id: '/maine-license-plate-lookup',
   path: '/maine-license-plate-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaineVinLookupRoute = MaineVinLookupRouteImport.update({
+  id: '/maine-vin-lookup',
+  path: '/maine-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketplaceAdvisorRoute = MarketplaceAdvisorRouteImport.update({
@@ -1000,12 +1116,22 @@ const MarylandLicensePlateLookupRoute =
     path: '/maryland-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MarylandVinLookupRoute = MarylandVinLookupRouteImport.update({
+  id: '/maryland-vin-lookup',
+  path: '/maryland-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MassachusettsLicensePlateLookupRoute =
   MassachusettsLicensePlateLookupRouteImport.update({
     id: '/massachusetts-license-plate-lookup',
     path: '/massachusetts-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MassachusettsVinLookupRoute = MassachusettsVinLookupRouteImport.update({
+  id: '/massachusetts-vin-lookup',
+  path: '/massachusetts-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MercariStolenCheckRoute = MercariStolenCheckRouteImport.update({
   id: '/mercari-stolen-check',
   path: '/mercari-stolen-check',
@@ -1022,24 +1148,44 @@ const MichiganLicensePlateLookupRoute =
     path: '/michigan-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MichiganVinLookupRoute = MichiganVinLookupRouteImport.update({
+  id: '/michigan-vin-lookup',
+  path: '/michigan-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MinnesotaLicensePlateLookupRoute =
   MinnesotaLicensePlateLookupRouteImport.update({
     id: '/minnesota-license-plate-lookup',
     path: '/minnesota-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MinnesotaVinLookupRoute = MinnesotaVinLookupRouteImport.update({
+  id: '/minnesota-vin-lookup',
+  path: '/minnesota-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MississippiLicensePlateLookupRoute =
   MississippiLicensePlateLookupRouteImport.update({
     id: '/mississippi-license-plate-lookup',
     path: '/mississippi-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MississippiVinLookupRoute = MississippiVinLookupRouteImport.update({
+  id: '/mississippi-vin-lookup',
+  path: '/mississippi-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MissouriLicensePlateLookupRoute =
   MissouriLicensePlateLookupRouteImport.update({
     id: '/missouri-license-plate-lookup',
     path: '/missouri-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MissouriVinLookupRoute = MissouriVinLookupRouteImport.update({
+  id: '/missouri-vin-lookup',
+  path: '/missouri-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MobileRoute = MobileRouteImport.update({
   id: '/mobile',
   path: '/mobile',
@@ -1076,36 +1222,66 @@ const MontanaLicensePlateLookupRoute =
     path: '/montana-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MontanaVinLookupRoute = MontanaVinLookupRouteImport.update({
+  id: '/montana-vin-lookup',
+  path: '/montana-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NebraskaLicensePlateLookupRoute =
   NebraskaLicensePlateLookupRouteImport.update({
     id: '/nebraska-license-plate-lookup',
     path: '/nebraska-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NebraskaVinLookupRoute = NebraskaVinLookupRouteImport.update({
+  id: '/nebraska-vin-lookup',
+  path: '/nebraska-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NevadaLicensePlateLookupRoute =
   NevadaLicensePlateLookupRouteImport.update({
     id: '/nevada-license-plate-lookup',
     path: '/nevada-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NevadaVinLookupRoute = NevadaVinLookupRouteImport.update({
+  id: '/nevada-vin-lookup',
+  path: '/nevada-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewHampshireLicensePlateLookupRoute =
   NewHampshireLicensePlateLookupRouteImport.update({
     id: '/new-hampshire-license-plate-lookup',
     path: '/new-hampshire-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NewHampshireVinLookupRoute = NewHampshireVinLookupRouteImport.update({
+  id: '/new-hampshire-vin-lookup',
+  path: '/new-hampshire-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewJerseyLicensePlateLookupRoute =
   NewJerseyLicensePlateLookupRouteImport.update({
     id: '/new-jersey-license-plate-lookup',
     path: '/new-jersey-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NewJerseyVinLookupRoute = NewJerseyVinLookupRouteImport.update({
+  id: '/new-jersey-vin-lookup',
+  path: '/new-jersey-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewMexicoLicensePlateLookupRoute =
   NewMexicoLicensePlateLookupRouteImport.update({
     id: '/new-mexico-license-plate-lookup',
     path: '/new-mexico-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NewMexicoVinLookupRoute = NewMexicoVinLookupRouteImport.update({
+  id: '/new-mexico-vin-lookup',
+  path: '/new-mexico-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewYorkLicensePlateLookupRoute =
   NewYorkLicensePlateLookupRouteImport.update({
     id: '/new-york-license-plate-lookup',
@@ -1144,6 +1320,11 @@ const NorthDakotaLicensePlateLookupRoute =
     path: '/north-dakota-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NorthDakotaVinLookupRoute = NorthDakotaVinLookupRouteImport.update({
+  id: '/north-dakota-vin-lookup',
+  path: '/north-dakota-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OfferupSafetyRoute = OfferupSafetyRouteImport.update({
   id: '/offerup-safety',
   path: '/offerup-safety',
@@ -1170,12 +1351,22 @@ const OklahomaLicensePlateLookupRoute =
     path: '/oklahoma-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const OklahomaVinLookupRoute = OklahomaVinLookupRouteImport.update({
+  id: '/oklahoma-vin-lookup',
+  path: '/oklahoma-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OregonLicensePlateLookupRoute =
   OregonLicensePlateLookupRouteImport.update({
     id: '/oregon-license-plate-lookup',
     path: '/oregon-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const OregonVinLookupRoute = OregonVinLookupRouteImport.update({
+  id: '/oregon-vin-lookup',
+  path: '/oregon-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurStoryRoute = OurStoryRouteImport.update({
   id: '/our-story',
   path: '/our-story',
@@ -1274,6 +1465,11 @@ const RhodeIslandLicensePlateLookupRoute =
     path: '/rhode-island-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const RhodeIslandVinLookupRoute = RhodeIslandVinLookupRouteImport.update({
+  id: '/rhode-island-vin-lookup',
+  path: '/rhode-island-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScamCheckerRoute = ScamCheckerRouteImport.update({
   id: '/scam-checker',
   path: '/scam-checker',
@@ -1310,12 +1506,22 @@ const SouthCarolinaLicensePlateLookupRoute =
     path: '/south-carolina-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SouthCarolinaVinLookupRoute = SouthCarolinaVinLookupRouteImport.update({
+  id: '/south-carolina-vin-lookup',
+  path: '/south-carolina-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SouthDakotaLicensePlateLookupRoute =
   SouthDakotaLicensePlateLookupRouteImport.update({
     id: '/south-dakota-license-plate-lookup',
     path: '/south-dakota-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SouthDakotaVinLookupRoute = SouthDakotaVinLookupRouteImport.update({
+  id: '/south-dakota-vin-lookup',
+  path: '/south-dakota-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StatePawnshopLawsRoute = StatePawnshopLawsRouteImport.update({
   id: '/state-pawnshop-laws',
   path: '/state-pawnshop-laws',
@@ -1402,6 +1608,11 @@ const TennesseeLicensePlateLookupRoute =
     path: '/tennessee-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TennesseeVinLookupRoute = TennesseeVinLookupRouteImport.update({
+  id: '/tennessee-vin-lookup',
+  path: '/tennessee-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -1447,6 +1658,11 @@ const UtahLicensePlateLookupRoute = UtahLicensePlateLookupRouteImport.update({
   path: '/utah-license-plate-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UtahVinLookupRoute = UtahVinLookupRouteImport.update({
+  id: '/utah-vin-lookup',
+  path: '/utah-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VerificationSuccessRoute = VerificationSuccessRouteImport.update({
   id: '/verification-success',
   path: '/verification-success',
@@ -1463,6 +1679,11 @@ const VermontLicensePlateLookupRoute =
     path: '/vermont-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const VermontVinLookupRoute = VermontVinLookupRouteImport.update({
+  id: '/vermont-vin-lookup',
+  path: '/vermont-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VinCheckRoute = VinCheckRouteImport.update({
   id: '/vin-check',
   path: '/vin-check',
@@ -1479,6 +1700,11 @@ const VirginiaLicensePlateLookupRoute =
     path: '/virginia-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const VirginiaVinLookupRoute = VirginiaVinLookupRouteImport.update({
+  id: '/virginia-vin-lookup',
+  path: '/virginia-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VsAutocheckRoute = VsAutocheckRouteImport.update({
   id: '/vs-autocheck',
   path: '/vs-autocheck',
@@ -1540,6 +1766,11 @@ const WashingtonDcLicensePlateLookupRoute =
     path: '/washington-dc-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const WashingtonDcVinLookupRoute = WashingtonDcVinLookupRouteImport.update({
+  id: '/washington-dc-vin-lookup',
+  path: '/washington-dc-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WashingtonLicensePlateLookupRoute =
   WashingtonLicensePlateLookupRouteImport.update({
     id: '/washington-license-plate-lookup',
@@ -1557,18 +1788,33 @@ const WestVirginiaLicensePlateLookupRoute =
     path: '/west-virginia-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const WestVirginiaVinLookupRoute = WestVirginiaVinLookupRouteImport.update({
+  id: '/west-virginia-vin-lookup',
+  path: '/west-virginia-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WisconsinLicensePlateLookupRoute =
   WisconsinLicensePlateLookupRouteImport.update({
     id: '/wisconsin-license-plate-lookup',
     path: '/wisconsin-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const WisconsinVinLookupRoute = WisconsinVinLookupRouteImport.update({
+  id: '/wisconsin-vin-lookup',
+  path: '/wisconsin-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WyomingLicensePlateLookupRoute =
   WyomingLicensePlateLookupRouteImport.update({
     id: '/wyoming-license-plate-lookup',
     path: '/wyoming-license-plate-lookup',
     getParentRoute: () => rootRouteImport,
   } as any)
+const WyomingVinLookupRoute = WyomingVinLookupRouteImport.update({
+  id: '/wyoming-vin-lookup',
+  path: '/wyoming-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminAiOrchestratorRoute = AdminAiOrchestratorRouteImport.update({
   id: '/admin/ai-orchestrator',
   path: '/admin/ai-orchestrator',
@@ -2015,12 +2261,16 @@ export interface FileRoutesByFullPath {
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
   '/alabama-license-plate-lookup': typeof AlabamaLicensePlateLookupRoute
+  '/alabama-vin-lookup': typeof AlabamaVinLookupRoute
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
+  '/alaska-vin-lookup': typeof AlaskaVinLookupRoute
   '/api': typeof ApiRoute
   '/api-docs': typeof ApiDocsRoute
   '/app': typeof AppRouteWithChildren
   '/arizona-license-plate-lookup': typeof ArizonaLicensePlateLookupRoute
+  '/arizona-vin-lookup': typeof ArizonaVinLookupRoute
   '/arkansas-license-plate-lookup': typeof ArkansasLicensePlateLookupRoute
+  '/arkansas-vin-lookup': typeof ArkansasVinLookupRoute
   '/auth': typeof AuthRoute
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
@@ -2065,15 +2315,18 @@ export interface FileRoutesByFullPath {
   '/check-xbox': typeof CheckXboxRoute
   '/checkout-redirect': typeof CheckoutRedirectRoute
   '/colorado-license-plate-lookup': typeof ColoradoLicensePlateLookupRoute
+  '/colorado-vin-lookup': typeof ColoradoVinLookupRoute
   '/community': typeof CommunityRoute
   '/compare': typeof CompareRoute
   '/comprehensive-guide': typeof ComprehensiveGuideRoute
   '/connecticut-license-plate-lookup': typeof ConnecticutLicensePlateLookupRoute
+  '/connecticut-vin-lookup': typeof ConnecticutVinLookupRoute
   '/craigslist-safety-verification': typeof CraigslistSafetyVerificationRoute
   '/crunchbase': typeof CrunchbaseRoute
   '/dashboard': typeof DashboardRoute
   '/data-sources': typeof DataSourcesRoute
   '/delaware-license-plate-lookup': typeof DelawareLicensePlateLookupRoute
+  '/delaware-vin-lookup': typeof DelawareVinLookupRoute
   '/developer': typeof DeveloperRoute
   '/developers': typeof DevelopersRoute
   '/download': typeof DownloadRoute
@@ -2106,6 +2359,7 @@ export interface FileRoutesByFullPath {
   '/get-app': typeof GetAppRoute
   '/gun-serial-number-lookup': typeof GunSerialNumberLookupRoute
   '/hawaii-license-plate-lookup': typeof HawaiiLicensePlateLookupRoute
+  '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
@@ -2113,14 +2367,17 @@ export interface FileRoutesByFullPath {
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
+  '/idaho-vin-lookup': typeof IdahoVinLookupRoute
   '/illinois-license-plate-lookup': typeof IllinoisLicensePlateLookupRoute
   '/illinois-vin-lookup': typeof IllinoisVinLookupRoute
   '/imei-check': typeof ImeiCheckRoute
   '/imei-checker': typeof ImeiCheckerRoute
   '/imei-checker-app': typeof ImeiCheckerAppRoute
   '/indiana-license-plate-lookup': typeof IndianaLicensePlateLookupRoute
+  '/indiana-vin-lookup': typeof IndianaVinLookupRoute
   '/install-app': typeof InstallAppRoute
   '/iowa-license-plate-lookup': typeof IowaLicensePlateLookupRoute
+  '/iowa-vin-lookup': typeof IowaVinLookupRoute
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
@@ -2128,23 +2385,33 @@ export interface FileRoutesByFullPath {
   '/is-this-gun-stolen': typeof IsThisGunStolenRoute
   '/is-this-laptop-stolen': typeof IsThisLaptopStolenRoute
   '/kansas-license-plate-lookup': typeof KansasLicensePlateLookupRoute
+  '/kansas-vin-lookup': typeof KansasVinLookupRoute
   '/kentucky-license-plate-lookup': typeof KentuckyLicensePlateLookupRoute
+  '/kentucky-vin-lookup': typeof KentuckyVinLookupRoute
   '/learn': typeof LearnRoute
   '/letgo-stolen-check': typeof LetgoStolenCheckRoute
   '/license-plate-lookup': typeof LicensePlateLookupRoute
   '/louisiana-license-plate-lookup': typeof LouisianaLicensePlateLookupRoute
+  '/louisiana-vin-lookup': typeof LouisianaVinLookupRoute
   '/maine-license-plate-lookup': typeof MaineLicensePlateLookupRoute
+  '/maine-vin-lookup': typeof MaineVinLookupRoute
   '/marketplace-advisor': typeof MarketplaceAdvisorRoute
   '/marketplace-integration': typeof MarketplaceIntegrationRoute
   '/marketplace-url-checker': typeof MarketplaceUrlCheckerRoute
   '/maryland-license-plate-lookup': typeof MarylandLicensePlateLookupRoute
+  '/maryland-vin-lookup': typeof MarylandVinLookupRoute
   '/massachusetts-license-plate-lookup': typeof MassachusettsLicensePlateLookupRoute
+  '/massachusetts-vin-lookup': typeof MassachusettsVinLookupRoute
   '/mercari-stolen-check': typeof MercariStolenCheckRoute
   '/methodology': typeof MethodologyRoute
   '/michigan-license-plate-lookup': typeof MichiganLicensePlateLookupRoute
+  '/michigan-vin-lookup': typeof MichiganVinLookupRoute
   '/minnesota-license-plate-lookup': typeof MinnesotaLicensePlateLookupRoute
+  '/minnesota-vin-lookup': typeof MinnesotaVinLookupRoute
   '/mississippi-license-plate-lookup': typeof MississippiLicensePlateLookupRoute
+  '/mississippi-vin-lookup': typeof MississippiVinLookupRoute
   '/missouri-license-plate-lookup': typeof MissouriLicensePlateLookupRoute
+  '/missouri-vin-lookup': typeof MissouriVinLookupRoute
   '/mobile': typeof MobileRoute
   '/mobile-app': typeof MobileAppRoute
   '/mobile-dashboard': typeof MobileDashboardRoute
@@ -2152,11 +2419,17 @@ export interface FileRoutesByFullPath {
   '/mobile-settings': typeof MobileSettingsRoute
   '/mobile-verify': typeof MobileVerifyRoute
   '/montana-license-plate-lookup': typeof MontanaLicensePlateLookupRoute
+  '/montana-vin-lookup': typeof MontanaVinLookupRoute
   '/nebraska-license-plate-lookup': typeof NebraskaLicensePlateLookupRoute
+  '/nebraska-vin-lookup': typeof NebraskaVinLookupRoute
   '/nevada-license-plate-lookup': typeof NevadaLicensePlateLookupRoute
+  '/nevada-vin-lookup': typeof NevadaVinLookupRoute
   '/new-hampshire-license-plate-lookup': typeof NewHampshireLicensePlateLookupRoute
+  '/new-hampshire-vin-lookup': typeof NewHampshireVinLookupRoute
   '/new-jersey-license-plate-lookup': typeof NewJerseyLicensePlateLookupRoute
+  '/new-jersey-vin-lookup': typeof NewJerseyVinLookupRoute
   '/new-mexico-license-plate-lookup': typeof NewMexicoLicensePlateLookupRoute
+  '/new-mexico-vin-lookup': typeof NewMexicoVinLookupRoute
   '/new-york-license-plate-lookup': typeof NewYorkLicensePlateLookupRoute
   '/new-york-vin-lookup': typeof NewYorkVinLookupRoute
   '/news': typeof NewsRoute
@@ -2164,12 +2437,15 @@ export interface FileRoutesByFullPath {
   '/north-carolina-license-plate-lookup': typeof NorthCarolinaLicensePlateLookupRoute
   '/north-carolina-vin-lookup': typeof NorthCarolinaVinLookupRoute
   '/north-dakota-license-plate-lookup': typeof NorthDakotaLicensePlateLookupRoute
+  '/north-dakota-vin-lookup': typeof NorthDakotaVinLookupRoute
   '/offerup-safety': typeof OfferupSafetyRoute
   '/offerup-verify-not-stolen': typeof OfferupVerifyNotStolenRoute
   '/ohio-license-plate-lookup': typeof OhioLicensePlateLookupRoute
   '/ohio-vin-lookup': typeof OhioVinLookupRoute
   '/oklahoma-license-plate-lookup': typeof OklahomaLicensePlateLookupRoute
+  '/oklahoma-vin-lookup': typeof OklahomaVinLookupRoute
   '/oregon-license-plate-lookup': typeof OregonLicensePlateLookupRoute
+  '/oregon-vin-lookup': typeof OregonVinLookupRoute
   '/our-story': typeof OurStoryRoute
   '/partial-serial-number-search': typeof PartialSerialNumberSearchRoute
   '/payment-success': typeof PaymentSuccessRoute
@@ -2189,6 +2465,7 @@ export interface FileRoutesByFullPath {
   '/report-stolen': typeof ReportStolenRoute
   '/resource-center': typeof ResourceCenterRoute
   '/rhode-island-license-plate-lookup': typeof RhodeIslandLicensePlateLookupRoute
+  '/rhode-island-vin-lookup': typeof RhodeIslandVinLookupRoute
   '/scam-checker': typeof ScamCheckerRoute
   '/seller-badge': typeof SellerBadgeRoute
   '/serial-number-checker': typeof SerialNumberCheckerRoute
@@ -2196,7 +2473,9 @@ export interface FileRoutesByFullPath {
   '/sitemap': typeof SitemapRoute
   '/sms-verify': typeof SmsVerifyRoute
   '/south-carolina-license-plate-lookup': typeof SouthCarolinaLicensePlateLookupRoute
+  '/south-carolina-vin-lookup': typeof SouthCarolinaVinLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
+  '/south-dakota-vin-lookup': typeof SouthDakotaVinLookupRoute
   '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
@@ -2214,6 +2493,7 @@ export interface FileRoutesByFullPath {
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
+  '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/texas-license-plate-lookup': typeof TexasLicensePlateLookupRoute
@@ -2223,12 +2503,15 @@ export interface FileRoutesByFullPath {
   '/transparency': typeof TransparencyRoute
   '/trust-engine': typeof TrustEngineRoute
   '/utah-license-plate-lookup': typeof UtahLicensePlateLookupRoute
+  '/utah-vin-lookup': typeof UtahVinLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
   '/verify': typeof VerifyRouteWithChildren
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
+  '/vermont-vin-lookup': typeof VermontVinLookupRoute
   '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
   '/virginia-license-plate-lookup': typeof VirginiaLicensePlateLookupRoute
+  '/virginia-vin-lookup': typeof VirginiaVinLookupRoute
   '/vs-autocheck': typeof VsAutocheckRoute
   '/vs-bikeindex': typeof VsBikeindexRoute
   '/vs-carfax': typeof VsCarfaxRoute
@@ -2241,11 +2524,15 @@ export interface FileRoutesByFullPath {
   '/vs-swappa': typeof VsSwappaRoute
   '/vs-vincheck-info': typeof VsVincheckInfoRoute
   '/washington-dc-license-plate-lookup': typeof WashingtonDcLicensePlateLookupRoute
+  '/washington-dc-vin-lookup': typeof WashingtonDcVinLookupRoute
   '/washington-license-plate-lookup': typeof WashingtonLicensePlateLookupRoute
   '/washington-vin-lookup': typeof WashingtonVinLookupRoute
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
+  '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
+  '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
+  '/wyoming-vin-lookup': typeof WyomingVinLookupRoute
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
@@ -2333,11 +2620,15 @@ export interface FileRoutesByTo {
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
   '/alabama-license-plate-lookup': typeof AlabamaLicensePlateLookupRoute
+  '/alabama-vin-lookup': typeof AlabamaVinLookupRoute
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
+  '/alaska-vin-lookup': typeof AlaskaVinLookupRoute
   '/api': typeof ApiRoute
   '/api-docs': typeof ApiDocsRoute
   '/arizona-license-plate-lookup': typeof ArizonaLicensePlateLookupRoute
+  '/arizona-vin-lookup': typeof ArizonaVinLookupRoute
   '/arkansas-license-plate-lookup': typeof ArkansasLicensePlateLookupRoute
+  '/arkansas-vin-lookup': typeof ArkansasVinLookupRoute
   '/auth': typeof AuthRoute
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
@@ -2381,15 +2672,18 @@ export interface FileRoutesByTo {
   '/check-xbox': typeof CheckXboxRoute
   '/checkout-redirect': typeof CheckoutRedirectRoute
   '/colorado-license-plate-lookup': typeof ColoradoLicensePlateLookupRoute
+  '/colorado-vin-lookup': typeof ColoradoVinLookupRoute
   '/community': typeof CommunityRoute
   '/compare': typeof CompareRoute
   '/comprehensive-guide': typeof ComprehensiveGuideRoute
   '/connecticut-license-plate-lookup': typeof ConnecticutLicensePlateLookupRoute
+  '/connecticut-vin-lookup': typeof ConnecticutVinLookupRoute
   '/craigslist-safety-verification': typeof CraigslistSafetyVerificationRoute
   '/crunchbase': typeof CrunchbaseRoute
   '/dashboard': typeof DashboardRoute
   '/data-sources': typeof DataSourcesRoute
   '/delaware-license-plate-lookup': typeof DelawareLicensePlateLookupRoute
+  '/delaware-vin-lookup': typeof DelawareVinLookupRoute
   '/developer': typeof DeveloperRoute
   '/developers': typeof DevelopersRoute
   '/download': typeof DownloadRoute
@@ -2422,6 +2716,7 @@ export interface FileRoutesByTo {
   '/get-app': typeof GetAppRoute
   '/gun-serial-number-lookup': typeof GunSerialNumberLookupRoute
   '/hawaii-license-plate-lookup': typeof HawaiiLicensePlateLookupRoute
+  '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
@@ -2429,14 +2724,17 @@ export interface FileRoutesByTo {
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
+  '/idaho-vin-lookup': typeof IdahoVinLookupRoute
   '/illinois-license-plate-lookup': typeof IllinoisLicensePlateLookupRoute
   '/illinois-vin-lookup': typeof IllinoisVinLookupRoute
   '/imei-check': typeof ImeiCheckRoute
   '/imei-checker': typeof ImeiCheckerRoute
   '/imei-checker-app': typeof ImeiCheckerAppRoute
   '/indiana-license-plate-lookup': typeof IndianaLicensePlateLookupRoute
+  '/indiana-vin-lookup': typeof IndianaVinLookupRoute
   '/install-app': typeof InstallAppRoute
   '/iowa-license-plate-lookup': typeof IowaLicensePlateLookupRoute
+  '/iowa-vin-lookup': typeof IowaVinLookupRoute
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
@@ -2444,23 +2742,33 @@ export interface FileRoutesByTo {
   '/is-this-gun-stolen': typeof IsThisGunStolenRoute
   '/is-this-laptop-stolen': typeof IsThisLaptopStolenRoute
   '/kansas-license-plate-lookup': typeof KansasLicensePlateLookupRoute
+  '/kansas-vin-lookup': typeof KansasVinLookupRoute
   '/kentucky-license-plate-lookup': typeof KentuckyLicensePlateLookupRoute
+  '/kentucky-vin-lookup': typeof KentuckyVinLookupRoute
   '/learn': typeof LearnRoute
   '/letgo-stolen-check': typeof LetgoStolenCheckRoute
   '/license-plate-lookup': typeof LicensePlateLookupRoute
   '/louisiana-license-plate-lookup': typeof LouisianaLicensePlateLookupRoute
+  '/louisiana-vin-lookup': typeof LouisianaVinLookupRoute
   '/maine-license-plate-lookup': typeof MaineLicensePlateLookupRoute
+  '/maine-vin-lookup': typeof MaineVinLookupRoute
   '/marketplace-advisor': typeof MarketplaceAdvisorRoute
   '/marketplace-integration': typeof MarketplaceIntegrationRoute
   '/marketplace-url-checker': typeof MarketplaceUrlCheckerRoute
   '/maryland-license-plate-lookup': typeof MarylandLicensePlateLookupRoute
+  '/maryland-vin-lookup': typeof MarylandVinLookupRoute
   '/massachusetts-license-plate-lookup': typeof MassachusettsLicensePlateLookupRoute
+  '/massachusetts-vin-lookup': typeof MassachusettsVinLookupRoute
   '/mercari-stolen-check': typeof MercariStolenCheckRoute
   '/methodology': typeof MethodologyRoute
   '/michigan-license-plate-lookup': typeof MichiganLicensePlateLookupRoute
+  '/michigan-vin-lookup': typeof MichiganVinLookupRoute
   '/minnesota-license-plate-lookup': typeof MinnesotaLicensePlateLookupRoute
+  '/minnesota-vin-lookup': typeof MinnesotaVinLookupRoute
   '/mississippi-license-plate-lookup': typeof MississippiLicensePlateLookupRoute
+  '/mississippi-vin-lookup': typeof MississippiVinLookupRoute
   '/missouri-license-plate-lookup': typeof MissouriLicensePlateLookupRoute
+  '/missouri-vin-lookup': typeof MissouriVinLookupRoute
   '/mobile': typeof MobileRoute
   '/mobile-app': typeof MobileAppRoute
   '/mobile-dashboard': typeof MobileDashboardRoute
@@ -2468,11 +2776,17 @@ export interface FileRoutesByTo {
   '/mobile-settings': typeof MobileSettingsRoute
   '/mobile-verify': typeof MobileVerifyRoute
   '/montana-license-plate-lookup': typeof MontanaLicensePlateLookupRoute
+  '/montana-vin-lookup': typeof MontanaVinLookupRoute
   '/nebraska-license-plate-lookup': typeof NebraskaLicensePlateLookupRoute
+  '/nebraska-vin-lookup': typeof NebraskaVinLookupRoute
   '/nevada-license-plate-lookup': typeof NevadaLicensePlateLookupRoute
+  '/nevada-vin-lookup': typeof NevadaVinLookupRoute
   '/new-hampshire-license-plate-lookup': typeof NewHampshireLicensePlateLookupRoute
+  '/new-hampshire-vin-lookup': typeof NewHampshireVinLookupRoute
   '/new-jersey-license-plate-lookup': typeof NewJerseyLicensePlateLookupRoute
+  '/new-jersey-vin-lookup': typeof NewJerseyVinLookupRoute
   '/new-mexico-license-plate-lookup': typeof NewMexicoLicensePlateLookupRoute
+  '/new-mexico-vin-lookup': typeof NewMexicoVinLookupRoute
   '/new-york-license-plate-lookup': typeof NewYorkLicensePlateLookupRoute
   '/new-york-vin-lookup': typeof NewYorkVinLookupRoute
   '/news': typeof NewsRoute
@@ -2480,12 +2794,15 @@ export interface FileRoutesByTo {
   '/north-carolina-license-plate-lookup': typeof NorthCarolinaLicensePlateLookupRoute
   '/north-carolina-vin-lookup': typeof NorthCarolinaVinLookupRoute
   '/north-dakota-license-plate-lookup': typeof NorthDakotaLicensePlateLookupRoute
+  '/north-dakota-vin-lookup': typeof NorthDakotaVinLookupRoute
   '/offerup-safety': typeof OfferupSafetyRoute
   '/offerup-verify-not-stolen': typeof OfferupVerifyNotStolenRoute
   '/ohio-license-plate-lookup': typeof OhioLicensePlateLookupRoute
   '/ohio-vin-lookup': typeof OhioVinLookupRoute
   '/oklahoma-license-plate-lookup': typeof OklahomaLicensePlateLookupRoute
+  '/oklahoma-vin-lookup': typeof OklahomaVinLookupRoute
   '/oregon-license-plate-lookup': typeof OregonLicensePlateLookupRoute
+  '/oregon-vin-lookup': typeof OregonVinLookupRoute
   '/our-story': typeof OurStoryRoute
   '/partial-serial-number-search': typeof PartialSerialNumberSearchRoute
   '/payment-success': typeof PaymentSuccessRoute
@@ -2505,6 +2822,7 @@ export interface FileRoutesByTo {
   '/report-stolen': typeof ReportStolenRoute
   '/resource-center': typeof ResourceCenterRoute
   '/rhode-island-license-plate-lookup': typeof RhodeIslandLicensePlateLookupRoute
+  '/rhode-island-vin-lookup': typeof RhodeIslandVinLookupRoute
   '/scam-checker': typeof ScamCheckerRoute
   '/seller-badge': typeof SellerBadgeRoute
   '/serial-number-checker': typeof SerialNumberCheckerRoute
@@ -2512,7 +2830,9 @@ export interface FileRoutesByTo {
   '/sitemap': typeof SitemapRoute
   '/sms-verify': typeof SmsVerifyRoute
   '/south-carolina-license-plate-lookup': typeof SouthCarolinaLicensePlateLookupRoute
+  '/south-carolina-vin-lookup': typeof SouthCarolinaVinLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
+  '/south-dakota-vin-lookup': typeof SouthDakotaVinLookupRoute
   '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
@@ -2530,6 +2850,7 @@ export interface FileRoutesByTo {
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
+  '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/texas-license-plate-lookup': typeof TexasLicensePlateLookupRoute
@@ -2539,11 +2860,14 @@ export interface FileRoutesByTo {
   '/transparency': typeof TransparencyRoute
   '/trust-engine': typeof TrustEngineRoute
   '/utah-license-plate-lookup': typeof UtahLicensePlateLookupRoute
+  '/utah-vin-lookup': typeof UtahVinLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
+  '/vermont-vin-lookup': typeof VermontVinLookupRoute
   '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
   '/virginia-license-plate-lookup': typeof VirginiaLicensePlateLookupRoute
+  '/virginia-vin-lookup': typeof VirginiaVinLookupRoute
   '/vs-autocheck': typeof VsAutocheckRoute
   '/vs-bikeindex': typeof VsBikeindexRoute
   '/vs-carfax': typeof VsCarfaxRoute
@@ -2556,11 +2880,15 @@ export interface FileRoutesByTo {
   '/vs-swappa': typeof VsSwappaRoute
   '/vs-vincheck-info': typeof VsVincheckInfoRoute
   '/washington-dc-license-plate-lookup': typeof WashingtonDcLicensePlateLookupRoute
+  '/washington-dc-vin-lookup': typeof WashingtonDcVinLookupRoute
   '/washington-license-plate-lookup': typeof WashingtonLicensePlateLookupRoute
   '/washington-vin-lookup': typeof WashingtonVinLookupRoute
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
+  '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
+  '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
+  '/wyoming-vin-lookup': typeof WyomingVinLookupRoute
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
@@ -2649,12 +2977,16 @@ export interface FileRoutesById {
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
   '/alabama-license-plate-lookup': typeof AlabamaLicensePlateLookupRoute
+  '/alabama-vin-lookup': typeof AlabamaVinLookupRoute
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
+  '/alaska-vin-lookup': typeof AlaskaVinLookupRoute
   '/api': typeof ApiRoute
   '/api-docs': typeof ApiDocsRoute
   '/app': typeof AppRouteWithChildren
   '/arizona-license-plate-lookup': typeof ArizonaLicensePlateLookupRoute
+  '/arizona-vin-lookup': typeof ArizonaVinLookupRoute
   '/arkansas-license-plate-lookup': typeof ArkansasLicensePlateLookupRoute
+  '/arkansas-vin-lookup': typeof ArkansasVinLookupRoute
   '/auth': typeof AuthRoute
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
@@ -2699,15 +3031,18 @@ export interface FileRoutesById {
   '/check-xbox': typeof CheckXboxRoute
   '/checkout-redirect': typeof CheckoutRedirectRoute
   '/colorado-license-plate-lookup': typeof ColoradoLicensePlateLookupRoute
+  '/colorado-vin-lookup': typeof ColoradoVinLookupRoute
   '/community': typeof CommunityRoute
   '/compare': typeof CompareRoute
   '/comprehensive-guide': typeof ComprehensiveGuideRoute
   '/connecticut-license-plate-lookup': typeof ConnecticutLicensePlateLookupRoute
+  '/connecticut-vin-lookup': typeof ConnecticutVinLookupRoute
   '/craigslist-safety-verification': typeof CraigslistSafetyVerificationRoute
   '/crunchbase': typeof CrunchbaseRoute
   '/dashboard': typeof DashboardRoute
   '/data-sources': typeof DataSourcesRoute
   '/delaware-license-plate-lookup': typeof DelawareLicensePlateLookupRoute
+  '/delaware-vin-lookup': typeof DelawareVinLookupRoute
   '/developer': typeof DeveloperRoute
   '/developers': typeof DevelopersRoute
   '/download': typeof DownloadRoute
@@ -2740,6 +3075,7 @@ export interface FileRoutesById {
   '/get-app': typeof GetAppRoute
   '/gun-serial-number-lookup': typeof GunSerialNumberLookupRoute
   '/hawaii-license-plate-lookup': typeof HawaiiLicensePlateLookupRoute
+  '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
@@ -2747,14 +3083,17 @@ export interface FileRoutesById {
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
+  '/idaho-vin-lookup': typeof IdahoVinLookupRoute
   '/illinois-license-plate-lookup': typeof IllinoisLicensePlateLookupRoute
   '/illinois-vin-lookup': typeof IllinoisVinLookupRoute
   '/imei-check': typeof ImeiCheckRoute
   '/imei-checker': typeof ImeiCheckerRoute
   '/imei-checker-app': typeof ImeiCheckerAppRoute
   '/indiana-license-plate-lookup': typeof IndianaLicensePlateLookupRoute
+  '/indiana-vin-lookup': typeof IndianaVinLookupRoute
   '/install-app': typeof InstallAppRoute
   '/iowa-license-plate-lookup': typeof IowaLicensePlateLookupRoute
+  '/iowa-vin-lookup': typeof IowaVinLookupRoute
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
@@ -2762,23 +3101,33 @@ export interface FileRoutesById {
   '/is-this-gun-stolen': typeof IsThisGunStolenRoute
   '/is-this-laptop-stolen': typeof IsThisLaptopStolenRoute
   '/kansas-license-plate-lookup': typeof KansasLicensePlateLookupRoute
+  '/kansas-vin-lookup': typeof KansasVinLookupRoute
   '/kentucky-license-plate-lookup': typeof KentuckyLicensePlateLookupRoute
+  '/kentucky-vin-lookup': typeof KentuckyVinLookupRoute
   '/learn': typeof LearnRoute
   '/letgo-stolen-check': typeof LetgoStolenCheckRoute
   '/license-plate-lookup': typeof LicensePlateLookupRoute
   '/louisiana-license-plate-lookup': typeof LouisianaLicensePlateLookupRoute
+  '/louisiana-vin-lookup': typeof LouisianaVinLookupRoute
   '/maine-license-plate-lookup': typeof MaineLicensePlateLookupRoute
+  '/maine-vin-lookup': typeof MaineVinLookupRoute
   '/marketplace-advisor': typeof MarketplaceAdvisorRoute
   '/marketplace-integration': typeof MarketplaceIntegrationRoute
   '/marketplace-url-checker': typeof MarketplaceUrlCheckerRoute
   '/maryland-license-plate-lookup': typeof MarylandLicensePlateLookupRoute
+  '/maryland-vin-lookup': typeof MarylandVinLookupRoute
   '/massachusetts-license-plate-lookup': typeof MassachusettsLicensePlateLookupRoute
+  '/massachusetts-vin-lookup': typeof MassachusettsVinLookupRoute
   '/mercari-stolen-check': typeof MercariStolenCheckRoute
   '/methodology': typeof MethodologyRoute
   '/michigan-license-plate-lookup': typeof MichiganLicensePlateLookupRoute
+  '/michigan-vin-lookup': typeof MichiganVinLookupRoute
   '/minnesota-license-plate-lookup': typeof MinnesotaLicensePlateLookupRoute
+  '/minnesota-vin-lookup': typeof MinnesotaVinLookupRoute
   '/mississippi-license-plate-lookup': typeof MississippiLicensePlateLookupRoute
+  '/mississippi-vin-lookup': typeof MississippiVinLookupRoute
   '/missouri-license-plate-lookup': typeof MissouriLicensePlateLookupRoute
+  '/missouri-vin-lookup': typeof MissouriVinLookupRoute
   '/mobile': typeof MobileRoute
   '/mobile-app': typeof MobileAppRoute
   '/mobile-dashboard': typeof MobileDashboardRoute
@@ -2786,11 +3135,17 @@ export interface FileRoutesById {
   '/mobile-settings': typeof MobileSettingsRoute
   '/mobile-verify': typeof MobileVerifyRoute
   '/montana-license-plate-lookup': typeof MontanaLicensePlateLookupRoute
+  '/montana-vin-lookup': typeof MontanaVinLookupRoute
   '/nebraska-license-plate-lookup': typeof NebraskaLicensePlateLookupRoute
+  '/nebraska-vin-lookup': typeof NebraskaVinLookupRoute
   '/nevada-license-plate-lookup': typeof NevadaLicensePlateLookupRoute
+  '/nevada-vin-lookup': typeof NevadaVinLookupRoute
   '/new-hampshire-license-plate-lookup': typeof NewHampshireLicensePlateLookupRoute
+  '/new-hampshire-vin-lookup': typeof NewHampshireVinLookupRoute
   '/new-jersey-license-plate-lookup': typeof NewJerseyLicensePlateLookupRoute
+  '/new-jersey-vin-lookup': typeof NewJerseyVinLookupRoute
   '/new-mexico-license-plate-lookup': typeof NewMexicoLicensePlateLookupRoute
+  '/new-mexico-vin-lookup': typeof NewMexicoVinLookupRoute
   '/new-york-license-plate-lookup': typeof NewYorkLicensePlateLookupRoute
   '/new-york-vin-lookup': typeof NewYorkVinLookupRoute
   '/news': typeof NewsRoute
@@ -2798,12 +3153,15 @@ export interface FileRoutesById {
   '/north-carolina-license-plate-lookup': typeof NorthCarolinaLicensePlateLookupRoute
   '/north-carolina-vin-lookup': typeof NorthCarolinaVinLookupRoute
   '/north-dakota-license-plate-lookup': typeof NorthDakotaLicensePlateLookupRoute
+  '/north-dakota-vin-lookup': typeof NorthDakotaVinLookupRoute
   '/offerup-safety': typeof OfferupSafetyRoute
   '/offerup-verify-not-stolen': typeof OfferupVerifyNotStolenRoute
   '/ohio-license-plate-lookup': typeof OhioLicensePlateLookupRoute
   '/ohio-vin-lookup': typeof OhioVinLookupRoute
   '/oklahoma-license-plate-lookup': typeof OklahomaLicensePlateLookupRoute
+  '/oklahoma-vin-lookup': typeof OklahomaVinLookupRoute
   '/oregon-license-plate-lookup': typeof OregonLicensePlateLookupRoute
+  '/oregon-vin-lookup': typeof OregonVinLookupRoute
   '/our-story': typeof OurStoryRoute
   '/partial-serial-number-search': typeof PartialSerialNumberSearchRoute
   '/payment-success': typeof PaymentSuccessRoute
@@ -2823,6 +3181,7 @@ export interface FileRoutesById {
   '/report-stolen': typeof ReportStolenRoute
   '/resource-center': typeof ResourceCenterRoute
   '/rhode-island-license-plate-lookup': typeof RhodeIslandLicensePlateLookupRoute
+  '/rhode-island-vin-lookup': typeof RhodeIslandVinLookupRoute
   '/scam-checker': typeof ScamCheckerRoute
   '/seller-badge': typeof SellerBadgeRoute
   '/serial-number-checker': typeof SerialNumberCheckerRoute
@@ -2830,7 +3189,9 @@ export interface FileRoutesById {
   '/sitemap': typeof SitemapRoute
   '/sms-verify': typeof SmsVerifyRoute
   '/south-carolina-license-plate-lookup': typeof SouthCarolinaLicensePlateLookupRoute
+  '/south-carolina-vin-lookup': typeof SouthCarolinaVinLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
+  '/south-dakota-vin-lookup': typeof SouthDakotaVinLookupRoute
   '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
@@ -2848,6 +3209,7 @@ export interface FileRoutesById {
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
+  '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/texas-license-plate-lookup': typeof TexasLicensePlateLookupRoute
@@ -2857,12 +3219,15 @@ export interface FileRoutesById {
   '/transparency': typeof TransparencyRoute
   '/trust-engine': typeof TrustEngineRoute
   '/utah-license-plate-lookup': typeof UtahLicensePlateLookupRoute
+  '/utah-vin-lookup': typeof UtahVinLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
   '/verify': typeof VerifyRouteWithChildren
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
+  '/vermont-vin-lookup': typeof VermontVinLookupRoute
   '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
   '/virginia-license-plate-lookup': typeof VirginiaLicensePlateLookupRoute
+  '/virginia-vin-lookup': typeof VirginiaVinLookupRoute
   '/vs-autocheck': typeof VsAutocheckRoute
   '/vs-bikeindex': typeof VsBikeindexRoute
   '/vs-carfax': typeof VsCarfaxRoute
@@ -2875,11 +3240,15 @@ export interface FileRoutesById {
   '/vs-swappa': typeof VsSwappaRoute
   '/vs-vincheck-info': typeof VsVincheckInfoRoute
   '/washington-dc-license-plate-lookup': typeof WashingtonDcLicensePlateLookupRoute
+  '/washington-dc-vin-lookup': typeof WashingtonDcVinLookupRoute
   '/washington-license-plate-lookup': typeof WashingtonLicensePlateLookupRoute
   '/washington-vin-lookup': typeof WashingtonVinLookupRoute
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
+  '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
+  '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
+  '/wyoming-vin-lookup': typeof WyomingVinLookupRoute
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
@@ -2969,12 +3338,16 @@ export interface FileRouteTypes {
     | '/ai-chat'
     | '/ai-verify'
     | '/alabama-license-plate-lookup'
+    | '/alabama-vin-lookup'
     | '/alaska-license-plate-lookup'
+    | '/alaska-vin-lookup'
     | '/api'
     | '/api-docs'
     | '/app'
     | '/arizona-license-plate-lookup'
+    | '/arizona-vin-lookup'
     | '/arkansas-license-plate-lookup'
+    | '/arkansas-vin-lookup'
     | '/auth'
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
@@ -3019,15 +3392,18 @@ export interface FileRouteTypes {
     | '/check-xbox'
     | '/checkout-redirect'
     | '/colorado-license-plate-lookup'
+    | '/colorado-vin-lookup'
     | '/community'
     | '/compare'
     | '/comprehensive-guide'
     | '/connecticut-license-plate-lookup'
+    | '/connecticut-vin-lookup'
     | '/craigslist-safety-verification'
     | '/crunchbase'
     | '/dashboard'
     | '/data-sources'
     | '/delaware-license-plate-lookup'
+    | '/delaware-vin-lookup'
     | '/developer'
     | '/developers'
     | '/download'
@@ -3060,6 +3436,7 @@ export interface FileRouteTypes {
     | '/get-app'
     | '/gun-serial-number-lookup'
     | '/hawaii-license-plate-lookup'
+    | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
     | '/how-to-check-if-car-stolen'
@@ -3067,14 +3444,17 @@ export interface FileRouteTypes {
     | '/how-to-check-if-phone-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
+    | '/idaho-vin-lookup'
     | '/illinois-license-plate-lookup'
     | '/illinois-vin-lookup'
     | '/imei-check'
     | '/imei-checker'
     | '/imei-checker-app'
     | '/indiana-license-plate-lookup'
+    | '/indiana-vin-lookup'
     | '/install-app'
     | '/iowa-license-plate-lookup'
+    | '/iowa-vin-lookup'
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
@@ -3082,23 +3462,33 @@ export interface FileRouteTypes {
     | '/is-this-gun-stolen'
     | '/is-this-laptop-stolen'
     | '/kansas-license-plate-lookup'
+    | '/kansas-vin-lookup'
     | '/kentucky-license-plate-lookup'
+    | '/kentucky-vin-lookup'
     | '/learn'
     | '/letgo-stolen-check'
     | '/license-plate-lookup'
     | '/louisiana-license-plate-lookup'
+    | '/louisiana-vin-lookup'
     | '/maine-license-plate-lookup'
+    | '/maine-vin-lookup'
     | '/marketplace-advisor'
     | '/marketplace-integration'
     | '/marketplace-url-checker'
     | '/maryland-license-plate-lookup'
+    | '/maryland-vin-lookup'
     | '/massachusetts-license-plate-lookup'
+    | '/massachusetts-vin-lookup'
     | '/mercari-stolen-check'
     | '/methodology'
     | '/michigan-license-plate-lookup'
+    | '/michigan-vin-lookup'
     | '/minnesota-license-plate-lookup'
+    | '/minnesota-vin-lookup'
     | '/mississippi-license-plate-lookup'
+    | '/mississippi-vin-lookup'
     | '/missouri-license-plate-lookup'
+    | '/missouri-vin-lookup'
     | '/mobile'
     | '/mobile-app'
     | '/mobile-dashboard'
@@ -3106,11 +3496,17 @@ export interface FileRouteTypes {
     | '/mobile-settings'
     | '/mobile-verify'
     | '/montana-license-plate-lookup'
+    | '/montana-vin-lookup'
     | '/nebraska-license-plate-lookup'
+    | '/nebraska-vin-lookup'
     | '/nevada-license-plate-lookup'
+    | '/nevada-vin-lookup'
     | '/new-hampshire-license-plate-lookup'
+    | '/new-hampshire-vin-lookup'
     | '/new-jersey-license-plate-lookup'
+    | '/new-jersey-vin-lookup'
     | '/new-mexico-license-plate-lookup'
+    | '/new-mexico-vin-lookup'
     | '/new-york-license-plate-lookup'
     | '/new-york-vin-lookup'
     | '/news'
@@ -3118,12 +3514,15 @@ export interface FileRouteTypes {
     | '/north-carolina-license-plate-lookup'
     | '/north-carolina-vin-lookup'
     | '/north-dakota-license-plate-lookup'
+    | '/north-dakota-vin-lookup'
     | '/offerup-safety'
     | '/offerup-verify-not-stolen'
     | '/ohio-license-plate-lookup'
     | '/ohio-vin-lookup'
     | '/oklahoma-license-plate-lookup'
+    | '/oklahoma-vin-lookup'
     | '/oregon-license-plate-lookup'
+    | '/oregon-vin-lookup'
     | '/our-story'
     | '/partial-serial-number-search'
     | '/payment-success'
@@ -3143,6 +3542,7 @@ export interface FileRouteTypes {
     | '/report-stolen'
     | '/resource-center'
     | '/rhode-island-license-plate-lookup'
+    | '/rhode-island-vin-lookup'
     | '/scam-checker'
     | '/seller-badge'
     | '/serial-number-checker'
@@ -3150,7 +3550,9 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sms-verify'
     | '/south-carolina-license-plate-lookup'
+    | '/south-carolina-vin-lookup'
     | '/south-dakota-license-plate-lookup'
+    | '/south-dakota-vin-lookup'
     | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
@@ -3168,6 +3570,7 @@ export interface FileRouteTypes {
     | '/stolen-gun-database'
     | '/stolen-phone-checker'
     | '/tennessee-license-plate-lookup'
+    | '/tennessee-vin-lookup'
     | '/terms'
     | '/testimonials'
     | '/texas-license-plate-lookup'
@@ -3177,12 +3580,15 @@ export interface FileRouteTypes {
     | '/transparency'
     | '/trust-engine'
     | '/utah-license-plate-lookup'
+    | '/utah-vin-lookup'
     | '/verification-success'
     | '/verify'
     | '/vermont-license-plate-lookup'
+    | '/vermont-vin-lookup'
     | '/vin-check'
     | '/vin-checker'
     | '/virginia-license-plate-lookup'
+    | '/virginia-vin-lookup'
     | '/vs-autocheck'
     | '/vs-bikeindex'
     | '/vs-carfax'
@@ -3195,11 +3601,15 @@ export interface FileRouteTypes {
     | '/vs-swappa'
     | '/vs-vincheck-info'
     | '/washington-dc-license-plate-lookup'
+    | '/washington-dc-vin-lookup'
     | '/washington-license-plate-lookup'
     | '/washington-vin-lookup'
     | '/west-virginia-license-plate-lookup'
+    | '/west-virginia-vin-lookup'
     | '/wisconsin-license-plate-lookup'
+    | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
+    | '/wyoming-vin-lookup'
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
     | '/admin/gsc-callback'
@@ -3287,11 +3697,15 @@ export interface FileRouteTypes {
     | '/ai-chat'
     | '/ai-verify'
     | '/alabama-license-plate-lookup'
+    | '/alabama-vin-lookup'
     | '/alaska-license-plate-lookup'
+    | '/alaska-vin-lookup'
     | '/api'
     | '/api-docs'
     | '/arizona-license-plate-lookup'
+    | '/arizona-vin-lookup'
     | '/arkansas-license-plate-lookup'
+    | '/arkansas-vin-lookup'
     | '/auth'
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
@@ -3335,15 +3749,18 @@ export interface FileRouteTypes {
     | '/check-xbox'
     | '/checkout-redirect'
     | '/colorado-license-plate-lookup'
+    | '/colorado-vin-lookup'
     | '/community'
     | '/compare'
     | '/comprehensive-guide'
     | '/connecticut-license-plate-lookup'
+    | '/connecticut-vin-lookup'
     | '/craigslist-safety-verification'
     | '/crunchbase'
     | '/dashboard'
     | '/data-sources'
     | '/delaware-license-plate-lookup'
+    | '/delaware-vin-lookup'
     | '/developer'
     | '/developers'
     | '/download'
@@ -3376,6 +3793,7 @@ export interface FileRouteTypes {
     | '/get-app'
     | '/gun-serial-number-lookup'
     | '/hawaii-license-plate-lookup'
+    | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
     | '/how-to-check-if-car-stolen'
@@ -3383,14 +3801,17 @@ export interface FileRouteTypes {
     | '/how-to-check-if-phone-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
+    | '/idaho-vin-lookup'
     | '/illinois-license-plate-lookup'
     | '/illinois-vin-lookup'
     | '/imei-check'
     | '/imei-checker'
     | '/imei-checker-app'
     | '/indiana-license-plate-lookup'
+    | '/indiana-vin-lookup'
     | '/install-app'
     | '/iowa-license-plate-lookup'
+    | '/iowa-vin-lookup'
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
@@ -3398,23 +3819,33 @@ export interface FileRouteTypes {
     | '/is-this-gun-stolen'
     | '/is-this-laptop-stolen'
     | '/kansas-license-plate-lookup'
+    | '/kansas-vin-lookup'
     | '/kentucky-license-plate-lookup'
+    | '/kentucky-vin-lookup'
     | '/learn'
     | '/letgo-stolen-check'
     | '/license-plate-lookup'
     | '/louisiana-license-plate-lookup'
+    | '/louisiana-vin-lookup'
     | '/maine-license-plate-lookup'
+    | '/maine-vin-lookup'
     | '/marketplace-advisor'
     | '/marketplace-integration'
     | '/marketplace-url-checker'
     | '/maryland-license-plate-lookup'
+    | '/maryland-vin-lookup'
     | '/massachusetts-license-plate-lookup'
+    | '/massachusetts-vin-lookup'
     | '/mercari-stolen-check'
     | '/methodology'
     | '/michigan-license-plate-lookup'
+    | '/michigan-vin-lookup'
     | '/minnesota-license-plate-lookup'
+    | '/minnesota-vin-lookup'
     | '/mississippi-license-plate-lookup'
+    | '/mississippi-vin-lookup'
     | '/missouri-license-plate-lookup'
+    | '/missouri-vin-lookup'
     | '/mobile'
     | '/mobile-app'
     | '/mobile-dashboard'
@@ -3422,11 +3853,17 @@ export interface FileRouteTypes {
     | '/mobile-settings'
     | '/mobile-verify'
     | '/montana-license-plate-lookup'
+    | '/montana-vin-lookup'
     | '/nebraska-license-plate-lookup'
+    | '/nebraska-vin-lookup'
     | '/nevada-license-plate-lookup'
+    | '/nevada-vin-lookup'
     | '/new-hampshire-license-plate-lookup'
+    | '/new-hampshire-vin-lookup'
     | '/new-jersey-license-plate-lookup'
+    | '/new-jersey-vin-lookup'
     | '/new-mexico-license-plate-lookup'
+    | '/new-mexico-vin-lookup'
     | '/new-york-license-plate-lookup'
     | '/new-york-vin-lookup'
     | '/news'
@@ -3434,12 +3871,15 @@ export interface FileRouteTypes {
     | '/north-carolina-license-plate-lookup'
     | '/north-carolina-vin-lookup'
     | '/north-dakota-license-plate-lookup'
+    | '/north-dakota-vin-lookup'
     | '/offerup-safety'
     | '/offerup-verify-not-stolen'
     | '/ohio-license-plate-lookup'
     | '/ohio-vin-lookup'
     | '/oklahoma-license-plate-lookup'
+    | '/oklahoma-vin-lookup'
     | '/oregon-license-plate-lookup'
+    | '/oregon-vin-lookup'
     | '/our-story'
     | '/partial-serial-number-search'
     | '/payment-success'
@@ -3459,6 +3899,7 @@ export interface FileRouteTypes {
     | '/report-stolen'
     | '/resource-center'
     | '/rhode-island-license-plate-lookup'
+    | '/rhode-island-vin-lookup'
     | '/scam-checker'
     | '/seller-badge'
     | '/serial-number-checker'
@@ -3466,7 +3907,9 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sms-verify'
     | '/south-carolina-license-plate-lookup'
+    | '/south-carolina-vin-lookup'
     | '/south-dakota-license-plate-lookup'
+    | '/south-dakota-vin-lookup'
     | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
@@ -3484,6 +3927,7 @@ export interface FileRouteTypes {
     | '/stolen-gun-database'
     | '/stolen-phone-checker'
     | '/tennessee-license-plate-lookup'
+    | '/tennessee-vin-lookup'
     | '/terms'
     | '/testimonials'
     | '/texas-license-plate-lookup'
@@ -3493,11 +3937,14 @@ export interface FileRouteTypes {
     | '/transparency'
     | '/trust-engine'
     | '/utah-license-plate-lookup'
+    | '/utah-vin-lookup'
     | '/verification-success'
     | '/vermont-license-plate-lookup'
+    | '/vermont-vin-lookup'
     | '/vin-check'
     | '/vin-checker'
     | '/virginia-license-plate-lookup'
+    | '/virginia-vin-lookup'
     | '/vs-autocheck'
     | '/vs-bikeindex'
     | '/vs-carfax'
@@ -3510,11 +3957,15 @@ export interface FileRouteTypes {
     | '/vs-swappa'
     | '/vs-vincheck-info'
     | '/washington-dc-license-plate-lookup'
+    | '/washington-dc-vin-lookup'
     | '/washington-license-plate-lookup'
     | '/washington-vin-lookup'
     | '/west-virginia-license-plate-lookup'
+    | '/west-virginia-vin-lookup'
     | '/wisconsin-license-plate-lookup'
+    | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
+    | '/wyoming-vin-lookup'
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
     | '/admin/gsc-callback'
@@ -3602,12 +4053,16 @@ export interface FileRouteTypes {
     | '/ai-chat'
     | '/ai-verify'
     | '/alabama-license-plate-lookup'
+    | '/alabama-vin-lookup'
     | '/alaska-license-plate-lookup'
+    | '/alaska-vin-lookup'
     | '/api'
     | '/api-docs'
     | '/app'
     | '/arizona-license-plate-lookup'
+    | '/arizona-vin-lookup'
     | '/arkansas-license-plate-lookup'
+    | '/arkansas-vin-lookup'
     | '/auth'
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
@@ -3652,15 +4107,18 @@ export interface FileRouteTypes {
     | '/check-xbox'
     | '/checkout-redirect'
     | '/colorado-license-plate-lookup'
+    | '/colorado-vin-lookup'
     | '/community'
     | '/compare'
     | '/comprehensive-guide'
     | '/connecticut-license-plate-lookup'
+    | '/connecticut-vin-lookup'
     | '/craigslist-safety-verification'
     | '/crunchbase'
     | '/dashboard'
     | '/data-sources'
     | '/delaware-license-plate-lookup'
+    | '/delaware-vin-lookup'
     | '/developer'
     | '/developers'
     | '/download'
@@ -3693,6 +4151,7 @@ export interface FileRouteTypes {
     | '/get-app'
     | '/gun-serial-number-lookup'
     | '/hawaii-license-plate-lookup'
+    | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
     | '/how-to-check-if-car-stolen'
@@ -3700,14 +4159,17 @@ export interface FileRouteTypes {
     | '/how-to-check-if-phone-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
+    | '/idaho-vin-lookup'
     | '/illinois-license-plate-lookup'
     | '/illinois-vin-lookup'
     | '/imei-check'
     | '/imei-checker'
     | '/imei-checker-app'
     | '/indiana-license-plate-lookup'
+    | '/indiana-vin-lookup'
     | '/install-app'
     | '/iowa-license-plate-lookup'
+    | '/iowa-vin-lookup'
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
@@ -3715,23 +4177,33 @@ export interface FileRouteTypes {
     | '/is-this-gun-stolen'
     | '/is-this-laptop-stolen'
     | '/kansas-license-plate-lookup'
+    | '/kansas-vin-lookup'
     | '/kentucky-license-plate-lookup'
+    | '/kentucky-vin-lookup'
     | '/learn'
     | '/letgo-stolen-check'
     | '/license-plate-lookup'
     | '/louisiana-license-plate-lookup'
+    | '/louisiana-vin-lookup'
     | '/maine-license-plate-lookup'
+    | '/maine-vin-lookup'
     | '/marketplace-advisor'
     | '/marketplace-integration'
     | '/marketplace-url-checker'
     | '/maryland-license-plate-lookup'
+    | '/maryland-vin-lookup'
     | '/massachusetts-license-plate-lookup'
+    | '/massachusetts-vin-lookup'
     | '/mercari-stolen-check'
     | '/methodology'
     | '/michigan-license-plate-lookup'
+    | '/michigan-vin-lookup'
     | '/minnesota-license-plate-lookup'
+    | '/minnesota-vin-lookup'
     | '/mississippi-license-plate-lookup'
+    | '/mississippi-vin-lookup'
     | '/missouri-license-plate-lookup'
+    | '/missouri-vin-lookup'
     | '/mobile'
     | '/mobile-app'
     | '/mobile-dashboard'
@@ -3739,11 +4211,17 @@ export interface FileRouteTypes {
     | '/mobile-settings'
     | '/mobile-verify'
     | '/montana-license-plate-lookup'
+    | '/montana-vin-lookup'
     | '/nebraska-license-plate-lookup'
+    | '/nebraska-vin-lookup'
     | '/nevada-license-plate-lookup'
+    | '/nevada-vin-lookup'
     | '/new-hampshire-license-plate-lookup'
+    | '/new-hampshire-vin-lookup'
     | '/new-jersey-license-plate-lookup'
+    | '/new-jersey-vin-lookup'
     | '/new-mexico-license-plate-lookup'
+    | '/new-mexico-vin-lookup'
     | '/new-york-license-plate-lookup'
     | '/new-york-vin-lookup'
     | '/news'
@@ -3751,12 +4229,15 @@ export interface FileRouteTypes {
     | '/north-carolina-license-plate-lookup'
     | '/north-carolina-vin-lookup'
     | '/north-dakota-license-plate-lookup'
+    | '/north-dakota-vin-lookup'
     | '/offerup-safety'
     | '/offerup-verify-not-stolen'
     | '/ohio-license-plate-lookup'
     | '/ohio-vin-lookup'
     | '/oklahoma-license-plate-lookup'
+    | '/oklahoma-vin-lookup'
     | '/oregon-license-plate-lookup'
+    | '/oregon-vin-lookup'
     | '/our-story'
     | '/partial-serial-number-search'
     | '/payment-success'
@@ -3776,6 +4257,7 @@ export interface FileRouteTypes {
     | '/report-stolen'
     | '/resource-center'
     | '/rhode-island-license-plate-lookup'
+    | '/rhode-island-vin-lookup'
     | '/scam-checker'
     | '/seller-badge'
     | '/serial-number-checker'
@@ -3783,7 +4265,9 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sms-verify'
     | '/south-carolina-license-plate-lookup'
+    | '/south-carolina-vin-lookup'
     | '/south-dakota-license-plate-lookup'
+    | '/south-dakota-vin-lookup'
     | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
@@ -3801,6 +4285,7 @@ export interface FileRouteTypes {
     | '/stolen-gun-database'
     | '/stolen-phone-checker'
     | '/tennessee-license-plate-lookup'
+    | '/tennessee-vin-lookup'
     | '/terms'
     | '/testimonials'
     | '/texas-license-plate-lookup'
@@ -3810,12 +4295,15 @@ export interface FileRouteTypes {
     | '/transparency'
     | '/trust-engine'
     | '/utah-license-plate-lookup'
+    | '/utah-vin-lookup'
     | '/verification-success'
     | '/verify'
     | '/vermont-license-plate-lookup'
+    | '/vermont-vin-lookup'
     | '/vin-check'
     | '/vin-checker'
     | '/virginia-license-plate-lookup'
+    | '/virginia-vin-lookup'
     | '/vs-autocheck'
     | '/vs-bikeindex'
     | '/vs-carfax'
@@ -3828,11 +4316,15 @@ export interface FileRouteTypes {
     | '/vs-swappa'
     | '/vs-vincheck-info'
     | '/washington-dc-license-plate-lookup'
+    | '/washington-dc-vin-lookup'
     | '/washington-license-plate-lookup'
     | '/washington-vin-lookup'
     | '/west-virginia-license-plate-lookup'
+    | '/west-virginia-vin-lookup'
     | '/wisconsin-license-plate-lookup'
+    | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
+    | '/wyoming-vin-lookup'
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
     | '/admin/gsc-callback'
@@ -3921,12 +4413,16 @@ export interface RootRouteChildren {
   AiChatRoute: typeof AiChatRoute
   AiVerifyRoute: typeof AiVerifyRoute
   AlabamaLicensePlateLookupRoute: typeof AlabamaLicensePlateLookupRoute
+  AlabamaVinLookupRoute: typeof AlabamaVinLookupRoute
   AlaskaLicensePlateLookupRoute: typeof AlaskaLicensePlateLookupRoute
+  AlaskaVinLookupRoute: typeof AlaskaVinLookupRoute
   ApiRoute: typeof ApiRoute
   ApiDocsRoute: typeof ApiDocsRoute
   AppRoute: typeof AppRouteWithChildren
   ArizonaLicensePlateLookupRoute: typeof ArizonaLicensePlateLookupRoute
+  ArizonaVinLookupRoute: typeof ArizonaVinLookupRoute
   ArkansasLicensePlateLookupRoute: typeof ArkansasLicensePlateLookupRoute
+  ArkansasVinLookupRoute: typeof ArkansasVinLookupRoute
   AuthRoute: typeof AuthRoute
   BarcodeScannerRoute: typeof BarcodeScannerRoute
   BestStolenItemCheckers2026Route: typeof BestStolenItemCheckers2026Route
@@ -3971,15 +4467,18 @@ export interface RootRouteChildren {
   CheckXboxRoute: typeof CheckXboxRoute
   CheckoutRedirectRoute: typeof CheckoutRedirectRoute
   ColoradoLicensePlateLookupRoute: typeof ColoradoLicensePlateLookupRoute
+  ColoradoVinLookupRoute: typeof ColoradoVinLookupRoute
   CommunityRoute: typeof CommunityRoute
   CompareRoute: typeof CompareRoute
   ComprehensiveGuideRoute: typeof ComprehensiveGuideRoute
   ConnecticutLicensePlateLookupRoute: typeof ConnecticutLicensePlateLookupRoute
+  ConnecticutVinLookupRoute: typeof ConnecticutVinLookupRoute
   CraigslistSafetyVerificationRoute: typeof CraigslistSafetyVerificationRoute
   CrunchbaseRoute: typeof CrunchbaseRoute
   DashboardRoute: typeof DashboardRoute
   DataSourcesRoute: typeof DataSourcesRoute
   DelawareLicensePlateLookupRoute: typeof DelawareLicensePlateLookupRoute
+  DelawareVinLookupRoute: typeof DelawareVinLookupRoute
   DeveloperRoute: typeof DeveloperRoute
   DevelopersRoute: typeof DevelopersRoute
   DownloadRoute: typeof DownloadRoute
@@ -4012,6 +4511,7 @@ export interface RootRouteChildren {
   GetAppRoute: typeof GetAppRoute
   GunSerialNumberLookupRoute: typeof GunSerialNumberLookupRoute
   HawaiiLicensePlateLookupRoute: typeof HawaiiLicensePlateLookupRoute
+  HawaiiVinLookupRoute: typeof HawaiiVinLookupRoute
   HotgunzAlternativeRoute: typeof HotgunzAlternativeRoute
   HowItWorksRoute: typeof HowItWorksRoute
   HowToCheckIfCarStolenRoute: typeof HowToCheckIfCarStolenRoute
@@ -4019,14 +4519,17 @@ export interface RootRouteChildren {
   HowToCheckIfPhoneStolenRoute: typeof HowToCheckIfPhoneStolenRoute
   HowToVerifyAUsedItemRoute: typeof HowToVerifyAUsedItemRoute
   IdahoLicensePlateLookupRoute: typeof IdahoLicensePlateLookupRoute
+  IdahoVinLookupRoute: typeof IdahoVinLookupRoute
   IllinoisLicensePlateLookupRoute: typeof IllinoisLicensePlateLookupRoute
   IllinoisVinLookupRoute: typeof IllinoisVinLookupRoute
   ImeiCheckRoute: typeof ImeiCheckRoute
   ImeiCheckerRoute: typeof ImeiCheckerRoute
   ImeiCheckerAppRoute: typeof ImeiCheckerAppRoute
   IndianaLicensePlateLookupRoute: typeof IndianaLicensePlateLookupRoute
+  IndianaVinLookupRoute: typeof IndianaVinLookupRoute
   InstallAppRoute: typeof InstallAppRoute
   IowaLicensePlateLookupRoute: typeof IowaLicensePlateLookupRoute
+  IowaVinLookupRoute: typeof IowaVinLookupRoute
   IsMyIphoneStolenRoute: typeof IsMyIphoneStolenRoute
   IsMyPhoneStolenRoute: typeof IsMyPhoneStolenRoute
   IsThisBikeStolenRoute: typeof IsThisBikeStolenRoute
@@ -4034,23 +4537,33 @@ export interface RootRouteChildren {
   IsThisGunStolenRoute: typeof IsThisGunStolenRoute
   IsThisLaptopStolenRoute: typeof IsThisLaptopStolenRoute
   KansasLicensePlateLookupRoute: typeof KansasLicensePlateLookupRoute
+  KansasVinLookupRoute: typeof KansasVinLookupRoute
   KentuckyLicensePlateLookupRoute: typeof KentuckyLicensePlateLookupRoute
+  KentuckyVinLookupRoute: typeof KentuckyVinLookupRoute
   LearnRoute: typeof LearnRoute
   LetgoStolenCheckRoute: typeof LetgoStolenCheckRoute
   LicensePlateLookupRoute: typeof LicensePlateLookupRoute
   LouisianaLicensePlateLookupRoute: typeof LouisianaLicensePlateLookupRoute
+  LouisianaVinLookupRoute: typeof LouisianaVinLookupRoute
   MaineLicensePlateLookupRoute: typeof MaineLicensePlateLookupRoute
+  MaineVinLookupRoute: typeof MaineVinLookupRoute
   MarketplaceAdvisorRoute: typeof MarketplaceAdvisorRoute
   MarketplaceIntegrationRoute: typeof MarketplaceIntegrationRoute
   MarketplaceUrlCheckerRoute: typeof MarketplaceUrlCheckerRoute
   MarylandLicensePlateLookupRoute: typeof MarylandLicensePlateLookupRoute
+  MarylandVinLookupRoute: typeof MarylandVinLookupRoute
   MassachusettsLicensePlateLookupRoute: typeof MassachusettsLicensePlateLookupRoute
+  MassachusettsVinLookupRoute: typeof MassachusettsVinLookupRoute
   MercariStolenCheckRoute: typeof MercariStolenCheckRoute
   MethodologyRoute: typeof MethodologyRoute
   MichiganLicensePlateLookupRoute: typeof MichiganLicensePlateLookupRoute
+  MichiganVinLookupRoute: typeof MichiganVinLookupRoute
   MinnesotaLicensePlateLookupRoute: typeof MinnesotaLicensePlateLookupRoute
+  MinnesotaVinLookupRoute: typeof MinnesotaVinLookupRoute
   MississippiLicensePlateLookupRoute: typeof MississippiLicensePlateLookupRoute
+  MississippiVinLookupRoute: typeof MississippiVinLookupRoute
   MissouriLicensePlateLookupRoute: typeof MissouriLicensePlateLookupRoute
+  MissouriVinLookupRoute: typeof MissouriVinLookupRoute
   MobileRoute: typeof MobileRoute
   MobileAppRoute: typeof MobileAppRoute
   MobileDashboardRoute: typeof MobileDashboardRoute
@@ -4058,11 +4571,17 @@ export interface RootRouteChildren {
   MobileSettingsRoute: typeof MobileSettingsRoute
   MobileVerifyRoute: typeof MobileVerifyRoute
   MontanaLicensePlateLookupRoute: typeof MontanaLicensePlateLookupRoute
+  MontanaVinLookupRoute: typeof MontanaVinLookupRoute
   NebraskaLicensePlateLookupRoute: typeof NebraskaLicensePlateLookupRoute
+  NebraskaVinLookupRoute: typeof NebraskaVinLookupRoute
   NevadaLicensePlateLookupRoute: typeof NevadaLicensePlateLookupRoute
+  NevadaVinLookupRoute: typeof NevadaVinLookupRoute
   NewHampshireLicensePlateLookupRoute: typeof NewHampshireLicensePlateLookupRoute
+  NewHampshireVinLookupRoute: typeof NewHampshireVinLookupRoute
   NewJerseyLicensePlateLookupRoute: typeof NewJerseyLicensePlateLookupRoute
+  NewJerseyVinLookupRoute: typeof NewJerseyVinLookupRoute
   NewMexicoLicensePlateLookupRoute: typeof NewMexicoLicensePlateLookupRoute
+  NewMexicoVinLookupRoute: typeof NewMexicoVinLookupRoute
   NewYorkLicensePlateLookupRoute: typeof NewYorkLicensePlateLookupRoute
   NewYorkVinLookupRoute: typeof NewYorkVinLookupRoute
   NewsRoute: typeof NewsRoute
@@ -4070,12 +4589,15 @@ export interface RootRouteChildren {
   NorthCarolinaLicensePlateLookupRoute: typeof NorthCarolinaLicensePlateLookupRoute
   NorthCarolinaVinLookupRoute: typeof NorthCarolinaVinLookupRoute
   NorthDakotaLicensePlateLookupRoute: typeof NorthDakotaLicensePlateLookupRoute
+  NorthDakotaVinLookupRoute: typeof NorthDakotaVinLookupRoute
   OfferupSafetyRoute: typeof OfferupSafetyRoute
   OfferupVerifyNotStolenRoute: typeof OfferupVerifyNotStolenRoute
   OhioLicensePlateLookupRoute: typeof OhioLicensePlateLookupRoute
   OhioVinLookupRoute: typeof OhioVinLookupRoute
   OklahomaLicensePlateLookupRoute: typeof OklahomaLicensePlateLookupRoute
+  OklahomaVinLookupRoute: typeof OklahomaVinLookupRoute
   OregonLicensePlateLookupRoute: typeof OregonLicensePlateLookupRoute
+  OregonVinLookupRoute: typeof OregonVinLookupRoute
   OurStoryRoute: typeof OurStoryRoute
   PartialSerialNumberSearchRoute: typeof PartialSerialNumberSearchRoute
   PaymentSuccessRoute: typeof PaymentSuccessRoute
@@ -4095,6 +4617,7 @@ export interface RootRouteChildren {
   ReportStolenRoute: typeof ReportStolenRoute
   ResourceCenterRoute: typeof ResourceCenterRoute
   RhodeIslandLicensePlateLookupRoute: typeof RhodeIslandLicensePlateLookupRoute
+  RhodeIslandVinLookupRoute: typeof RhodeIslandVinLookupRoute
   ScamCheckerRoute: typeof ScamCheckerRoute
   SellerBadgeRoute: typeof SellerBadgeRoute
   SerialNumberCheckerRoute: typeof SerialNumberCheckerRoute
@@ -4102,7 +4625,9 @@ export interface RootRouteChildren {
   SitemapRoute: typeof SitemapRoute
   SmsVerifyRoute: typeof SmsVerifyRoute
   SouthCarolinaLicensePlateLookupRoute: typeof SouthCarolinaLicensePlateLookupRoute
+  SouthCarolinaVinLookupRoute: typeof SouthCarolinaVinLookupRoute
   SouthDakotaLicensePlateLookupRoute: typeof SouthDakotaLicensePlateLookupRoute
+  SouthDakotaVinLookupRoute: typeof SouthDakotaVinLookupRoute
   StatePawnshopLawsRoute: typeof StatePawnshopLawsRoute
   StockxVerificationRoute: typeof StockxVerificationRoute
   StolenCheckChicagoRoute: typeof StolenCheckChicagoRoute
@@ -4120,6 +4645,7 @@ export interface RootRouteChildren {
   StolenGunDatabaseRoute: typeof StolenGunDatabaseRoute
   StolenPhoneCheckerRoute: typeof StolenPhoneCheckerRoute
   TennesseeLicensePlateLookupRoute: typeof TennesseeLicensePlateLookupRoute
+  TennesseeVinLookupRoute: typeof TennesseeVinLookupRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   TexasLicensePlateLookupRoute: typeof TexasLicensePlateLookupRoute
@@ -4129,12 +4655,15 @@ export interface RootRouteChildren {
   TransparencyRoute: typeof TransparencyRoute
   TrustEngineRoute: typeof TrustEngineRoute
   UtahLicensePlateLookupRoute: typeof UtahLicensePlateLookupRoute
+  UtahVinLookupRoute: typeof UtahVinLookupRoute
   VerificationSuccessRoute: typeof VerificationSuccessRoute
   VerifyRoute: typeof VerifyRouteWithChildren
   VermontLicensePlateLookupRoute: typeof VermontLicensePlateLookupRoute
+  VermontVinLookupRoute: typeof VermontVinLookupRoute
   VinCheckRoute: typeof VinCheckRoute
   VinCheckerRoute: typeof VinCheckerRoute
   VirginiaLicensePlateLookupRoute: typeof VirginiaLicensePlateLookupRoute
+  VirginiaVinLookupRoute: typeof VirginiaVinLookupRoute
   VsAutocheckRoute: typeof VsAutocheckRoute
   VsBikeindexRoute: typeof VsBikeindexRoute
   VsCarfaxRoute: typeof VsCarfaxRoute
@@ -4147,11 +4676,15 @@ export interface RootRouteChildren {
   VsSwappaRoute: typeof VsSwappaRoute
   VsVincheckInfoRoute: typeof VsVincheckInfoRoute
   WashingtonDcLicensePlateLookupRoute: typeof WashingtonDcLicensePlateLookupRoute
+  WashingtonDcVinLookupRoute: typeof WashingtonDcVinLookupRoute
   WashingtonLicensePlateLookupRoute: typeof WashingtonLicensePlateLookupRoute
   WashingtonVinLookupRoute: typeof WashingtonVinLookupRoute
   WestVirginiaLicensePlateLookupRoute: typeof WestVirginiaLicensePlateLookupRoute
+  WestVirginiaVinLookupRoute: typeof WestVirginiaVinLookupRoute
   WisconsinLicensePlateLookupRoute: typeof WisconsinLicensePlateLookupRoute
+  WisconsinVinLookupRoute: typeof WisconsinVinLookupRoute
   WyomingLicensePlateLookupRoute: typeof WyomingLicensePlateLookupRoute
+  WyomingVinLookupRoute: typeof WyomingVinLookupRoute
   AdminAiOrchestratorRoute: typeof AdminAiOrchestratorRoute
   AdminBatchIndexRoute: typeof AdminBatchIndexRoute
   AdminGscCallbackRoute: typeof AdminGscCallbackRoute
@@ -4231,11 +4764,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlabamaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alabama-vin-lookup': {
+      id: '/alabama-vin-lookup'
+      path: '/alabama-vin-lookup'
+      fullPath: '/alabama-vin-lookup'
+      preLoaderRoute: typeof AlabamaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/alaska-license-plate-lookup': {
       id: '/alaska-license-plate-lookup'
       path: '/alaska-license-plate-lookup'
       fullPath: '/alaska-license-plate-lookup'
       preLoaderRoute: typeof AlaskaLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alaska-vin-lookup': {
+      id: '/alaska-vin-lookup'
+      path: '/alaska-vin-lookup'
+      fullPath: '/alaska-vin-lookup'
+      preLoaderRoute: typeof AlaskaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api': {
@@ -4266,11 +4813,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArizonaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/arizona-vin-lookup': {
+      id: '/arizona-vin-lookup'
+      path: '/arizona-vin-lookup'
+      fullPath: '/arizona-vin-lookup'
+      preLoaderRoute: typeof ArizonaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/arkansas-license-plate-lookup': {
       id: '/arkansas-license-plate-lookup'
       path: '/arkansas-license-plate-lookup'
       fullPath: '/arkansas-license-plate-lookup'
       preLoaderRoute: typeof ArkansasLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arkansas-vin-lookup': {
+      id: '/arkansas-vin-lookup'
+      path: '/arkansas-vin-lookup'
+      fullPath: '/arkansas-vin-lookup'
+      preLoaderRoute: typeof ArkansasVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -4581,6 +5142,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColoradoLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/colorado-vin-lookup': {
+      id: '/colorado-vin-lookup'
+      path: '/colorado-vin-lookup'
+      fullPath: '/colorado-vin-lookup'
+      preLoaderRoute: typeof ColoradoVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/community': {
       id: '/community'
       path: '/community'
@@ -4607,6 +5175,13 @@ declare module '@tanstack/react-router' {
       path: '/connecticut-license-plate-lookup'
       fullPath: '/connecticut-license-plate-lookup'
       preLoaderRoute: typeof ConnecticutLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connecticut-vin-lookup': {
+      id: '/connecticut-vin-lookup'
+      path: '/connecticut-vin-lookup'
+      fullPath: '/connecticut-vin-lookup'
+      preLoaderRoute: typeof ConnecticutVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/craigslist-safety-verification': {
@@ -4642,6 +5217,13 @@ declare module '@tanstack/react-router' {
       path: '/delaware-license-plate-lookup'
       fullPath: '/delaware-license-plate-lookup'
       preLoaderRoute: typeof DelawareLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delaware-vin-lookup': {
+      id: '/delaware-vin-lookup'
+      path: '/delaware-vin-lookup'
+      fullPath: '/delaware-vin-lookup'
+      preLoaderRoute: typeof DelawareVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/developer': {
@@ -4868,6 +5450,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HawaiiLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hawaii-vin-lookup': {
+      id: '/hawaii-vin-lookup'
+      path: '/hawaii-vin-lookup'
+      fullPath: '/hawaii-vin-lookup'
+      preLoaderRoute: typeof HawaiiVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hotgunz-alternative': {
       id: '/hotgunz-alternative'
       path: '/hotgunz-alternative'
@@ -4917,6 +5506,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IdahoLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/idaho-vin-lookup': {
+      id: '/idaho-vin-lookup'
+      path: '/idaho-vin-lookup'
+      fullPath: '/idaho-vin-lookup'
+      preLoaderRoute: typeof IdahoVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/illinois-license-plate-lookup': {
       id: '/illinois-license-plate-lookup'
       path: '/illinois-license-plate-lookup'
@@ -4959,6 +5555,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndianaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/indiana-vin-lookup': {
+      id: '/indiana-vin-lookup'
+      path: '/indiana-vin-lookup'
+      fullPath: '/indiana-vin-lookup'
+      preLoaderRoute: typeof IndianaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/install-app': {
       id: '/install-app'
       path: '/install-app'
@@ -4971,6 +5574,13 @@ declare module '@tanstack/react-router' {
       path: '/iowa-license-plate-lookup'
       fullPath: '/iowa-license-plate-lookup'
       preLoaderRoute: typeof IowaLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iowa-vin-lookup': {
+      id: '/iowa-vin-lookup'
+      path: '/iowa-vin-lookup'
+      fullPath: '/iowa-vin-lookup'
+      preLoaderRoute: typeof IowaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/is-my-iphone-stolen': {
@@ -5022,11 +5632,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KansasLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kansas-vin-lookup': {
+      id: '/kansas-vin-lookup'
+      path: '/kansas-vin-lookup'
+      fullPath: '/kansas-vin-lookup'
+      preLoaderRoute: typeof KansasVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kentucky-license-plate-lookup': {
       id: '/kentucky-license-plate-lookup'
       path: '/kentucky-license-plate-lookup'
       fullPath: '/kentucky-license-plate-lookup'
       preLoaderRoute: typeof KentuckyLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kentucky-vin-lookup': {
+      id: '/kentucky-vin-lookup'
+      path: '/kentucky-vin-lookup'
+      fullPath: '/kentucky-vin-lookup'
+      preLoaderRoute: typeof KentuckyVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/learn': {
@@ -5057,11 +5681,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LouisianaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/louisiana-vin-lookup': {
+      id: '/louisiana-vin-lookup'
+      path: '/louisiana-vin-lookup'
+      fullPath: '/louisiana-vin-lookup'
+      preLoaderRoute: typeof LouisianaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/maine-license-plate-lookup': {
       id: '/maine-license-plate-lookup'
       path: '/maine-license-plate-lookup'
       fullPath: '/maine-license-plate-lookup'
       preLoaderRoute: typeof MaineLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maine-vin-lookup': {
+      id: '/maine-vin-lookup'
+      path: '/maine-vin-lookup'
+      fullPath: '/maine-vin-lookup'
+      preLoaderRoute: typeof MaineVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/marketplace-advisor': {
@@ -5092,11 +5730,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarylandLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/maryland-vin-lookup': {
+      id: '/maryland-vin-lookup'
+      path: '/maryland-vin-lookup'
+      fullPath: '/maryland-vin-lookup'
+      preLoaderRoute: typeof MarylandVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/massachusetts-license-plate-lookup': {
       id: '/massachusetts-license-plate-lookup'
       path: '/massachusetts-license-plate-lookup'
       fullPath: '/massachusetts-license-plate-lookup'
       preLoaderRoute: typeof MassachusettsLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/massachusetts-vin-lookup': {
+      id: '/massachusetts-vin-lookup'
+      path: '/massachusetts-vin-lookup'
+      fullPath: '/massachusetts-vin-lookup'
+      preLoaderRoute: typeof MassachusettsVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mercari-stolen-check': {
@@ -5120,11 +5772,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MichiganLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/michigan-vin-lookup': {
+      id: '/michigan-vin-lookup'
+      path: '/michigan-vin-lookup'
+      fullPath: '/michigan-vin-lookup'
+      preLoaderRoute: typeof MichiganVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/minnesota-license-plate-lookup': {
       id: '/minnesota-license-plate-lookup'
       path: '/minnesota-license-plate-lookup'
       fullPath: '/minnesota-license-plate-lookup'
       preLoaderRoute: typeof MinnesotaLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/minnesota-vin-lookup': {
+      id: '/minnesota-vin-lookup'
+      path: '/minnesota-vin-lookup'
+      fullPath: '/minnesota-vin-lookup'
+      preLoaderRoute: typeof MinnesotaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mississippi-license-plate-lookup': {
@@ -5134,11 +5800,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MississippiLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mississippi-vin-lookup': {
+      id: '/mississippi-vin-lookup'
+      path: '/mississippi-vin-lookup'
+      fullPath: '/mississippi-vin-lookup'
+      preLoaderRoute: typeof MississippiVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/missouri-license-plate-lookup': {
       id: '/missouri-license-plate-lookup'
       path: '/missouri-license-plate-lookup'
       fullPath: '/missouri-license-plate-lookup'
       preLoaderRoute: typeof MissouriLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missouri-vin-lookup': {
+      id: '/missouri-vin-lookup'
+      path: '/missouri-vin-lookup'
+      fullPath: '/missouri-vin-lookup'
+      preLoaderRoute: typeof MissouriVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mobile': {
@@ -5190,11 +5870,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MontanaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/montana-vin-lookup': {
+      id: '/montana-vin-lookup'
+      path: '/montana-vin-lookup'
+      fullPath: '/montana-vin-lookup'
+      preLoaderRoute: typeof MontanaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/nebraska-license-plate-lookup': {
       id: '/nebraska-license-plate-lookup'
       path: '/nebraska-license-plate-lookup'
       fullPath: '/nebraska-license-plate-lookup'
       preLoaderRoute: typeof NebraskaLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nebraska-vin-lookup': {
+      id: '/nebraska-vin-lookup'
+      path: '/nebraska-vin-lookup'
+      fullPath: '/nebraska-vin-lookup'
+      preLoaderRoute: typeof NebraskaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nevada-license-plate-lookup': {
@@ -5204,11 +5898,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NevadaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nevada-vin-lookup': {
+      id: '/nevada-vin-lookup'
+      path: '/nevada-vin-lookup'
+      fullPath: '/nevada-vin-lookup'
+      preLoaderRoute: typeof NevadaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/new-hampshire-license-plate-lookup': {
       id: '/new-hampshire-license-plate-lookup'
       path: '/new-hampshire-license-plate-lookup'
       fullPath: '/new-hampshire-license-plate-lookup'
       preLoaderRoute: typeof NewHampshireLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-hampshire-vin-lookup': {
+      id: '/new-hampshire-vin-lookup'
+      path: '/new-hampshire-vin-lookup'
+      fullPath: '/new-hampshire-vin-lookup'
+      preLoaderRoute: typeof NewHampshireVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/new-jersey-license-plate-lookup': {
@@ -5218,11 +5926,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewJerseyLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/new-jersey-vin-lookup': {
+      id: '/new-jersey-vin-lookup'
+      path: '/new-jersey-vin-lookup'
+      fullPath: '/new-jersey-vin-lookup'
+      preLoaderRoute: typeof NewJerseyVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/new-mexico-license-plate-lookup': {
       id: '/new-mexico-license-plate-lookup'
       path: '/new-mexico-license-plate-lookup'
       fullPath: '/new-mexico-license-plate-lookup'
       preLoaderRoute: typeof NewMexicoLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-mexico-vin-lookup': {
+      id: '/new-mexico-vin-lookup'
+      path: '/new-mexico-vin-lookup'
+      fullPath: '/new-mexico-vin-lookup'
+      preLoaderRoute: typeof NewMexicoVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/new-york-license-plate-lookup': {
@@ -5274,6 +5996,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NorthDakotaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/north-dakota-vin-lookup': {
+      id: '/north-dakota-vin-lookup'
+      path: '/north-dakota-vin-lookup'
+      fullPath: '/north-dakota-vin-lookup'
+      preLoaderRoute: typeof NorthDakotaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/offerup-safety': {
       id: '/offerup-safety'
       path: '/offerup-safety'
@@ -5309,11 +6038,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OklahomaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oklahoma-vin-lookup': {
+      id: '/oklahoma-vin-lookup'
+      path: '/oklahoma-vin-lookup'
+      fullPath: '/oklahoma-vin-lookup'
+      preLoaderRoute: typeof OklahomaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/oregon-license-plate-lookup': {
       id: '/oregon-license-plate-lookup'
       path: '/oregon-license-plate-lookup'
       fullPath: '/oregon-license-plate-lookup'
       preLoaderRoute: typeof OregonLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oregon-vin-lookup': {
+      id: '/oregon-vin-lookup'
+      path: '/oregon-vin-lookup'
+      fullPath: '/oregon-vin-lookup'
+      preLoaderRoute: typeof OregonVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/our-story': {
@@ -5449,6 +6192,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RhodeIslandLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rhode-island-vin-lookup': {
+      id: '/rhode-island-vin-lookup'
+      path: '/rhode-island-vin-lookup'
+      fullPath: '/rhode-island-vin-lookup'
+      preLoaderRoute: typeof RhodeIslandVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scam-checker': {
       id: '/scam-checker'
       path: '/scam-checker'
@@ -5498,11 +6248,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SouthCarolinaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/south-carolina-vin-lookup': {
+      id: '/south-carolina-vin-lookup'
+      path: '/south-carolina-vin-lookup'
+      fullPath: '/south-carolina-vin-lookup'
+      preLoaderRoute: typeof SouthCarolinaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/south-dakota-license-plate-lookup': {
       id: '/south-dakota-license-plate-lookup'
       path: '/south-dakota-license-plate-lookup'
       fullPath: '/south-dakota-license-plate-lookup'
       preLoaderRoute: typeof SouthDakotaLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/south-dakota-vin-lookup': {
+      id: '/south-dakota-vin-lookup'
+      path: '/south-dakota-vin-lookup'
+      fullPath: '/south-dakota-vin-lookup'
+      preLoaderRoute: typeof SouthDakotaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/state-pawnshop-laws': {
@@ -5624,6 +6388,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TennesseeLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tennessee-vin-lookup': {
+      id: '/tennessee-vin-lookup'
+      path: '/tennessee-vin-lookup'
+      fullPath: '/tennessee-vin-lookup'
+      preLoaderRoute: typeof TennesseeVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -5687,6 +6458,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UtahLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/utah-vin-lookup': {
+      id: '/utah-vin-lookup'
+      path: '/utah-vin-lookup'
+      fullPath: '/utah-vin-lookup'
+      preLoaderRoute: typeof UtahVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/verification-success': {
       id: '/verification-success'
       path: '/verification-success'
@@ -5708,6 +6486,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VermontLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vermont-vin-lookup': {
+      id: '/vermont-vin-lookup'
+      path: '/vermont-vin-lookup'
+      fullPath: '/vermont-vin-lookup'
+      preLoaderRoute: typeof VermontVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vin-check': {
       id: '/vin-check'
       path: '/vin-check'
@@ -5727,6 +6512,13 @@ declare module '@tanstack/react-router' {
       path: '/virginia-license-plate-lookup'
       fullPath: '/virginia-license-plate-lookup'
       preLoaderRoute: typeof VirginiaLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/virginia-vin-lookup': {
+      id: '/virginia-vin-lookup'
+      path: '/virginia-vin-lookup'
+      fullPath: '/virginia-vin-lookup'
+      preLoaderRoute: typeof VirginiaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vs-autocheck': {
@@ -5813,6 +6605,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WashingtonDcLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/washington-dc-vin-lookup': {
+      id: '/washington-dc-vin-lookup'
+      path: '/washington-dc-vin-lookup'
+      fullPath: '/washington-dc-vin-lookup'
+      preLoaderRoute: typeof WashingtonDcVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/washington-license-plate-lookup': {
       id: '/washington-license-plate-lookup'
       path: '/washington-license-plate-lookup'
@@ -5834,6 +6633,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WestVirginiaLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/west-virginia-vin-lookup': {
+      id: '/west-virginia-vin-lookup'
+      path: '/west-virginia-vin-lookup'
+      fullPath: '/west-virginia-vin-lookup'
+      preLoaderRoute: typeof WestVirginiaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wisconsin-license-plate-lookup': {
       id: '/wisconsin-license-plate-lookup'
       path: '/wisconsin-license-plate-lookup'
@@ -5841,11 +6647,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WisconsinLicensePlateLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wisconsin-vin-lookup': {
+      id: '/wisconsin-vin-lookup'
+      path: '/wisconsin-vin-lookup'
+      fullPath: '/wisconsin-vin-lookup'
+      preLoaderRoute: typeof WisconsinVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wyoming-license-plate-lookup': {
       id: '/wyoming-license-plate-lookup'
       path: '/wyoming-license-plate-lookup'
       fullPath: '/wyoming-license-plate-lookup'
       preLoaderRoute: typeof WyomingLicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wyoming-vin-lookup': {
+      id: '/wyoming-vin-lookup'
+      path: '/wyoming-vin-lookup'
+      fullPath: '/wyoming-vin-lookup'
+      preLoaderRoute: typeof WyomingVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/ai-orchestrator': {
@@ -6542,12 +7362,16 @@ const rootRouteChildren: RootRouteChildren = {
   AiChatRoute: AiChatRoute,
   AiVerifyRoute: AiVerifyRoute,
   AlabamaLicensePlateLookupRoute: AlabamaLicensePlateLookupRoute,
+  AlabamaVinLookupRoute: AlabamaVinLookupRoute,
   AlaskaLicensePlateLookupRoute: AlaskaLicensePlateLookupRoute,
+  AlaskaVinLookupRoute: AlaskaVinLookupRoute,
   ApiRoute: ApiRoute,
   ApiDocsRoute: ApiDocsRoute,
   AppRoute: AppRouteWithChildren,
   ArizonaLicensePlateLookupRoute: ArizonaLicensePlateLookupRoute,
+  ArizonaVinLookupRoute: ArizonaVinLookupRoute,
   ArkansasLicensePlateLookupRoute: ArkansasLicensePlateLookupRoute,
+  ArkansasVinLookupRoute: ArkansasVinLookupRoute,
   AuthRoute: AuthRoute,
   BarcodeScannerRoute: BarcodeScannerRoute,
   BestStolenItemCheckers2026Route: BestStolenItemCheckers2026Route,
@@ -6592,15 +7416,18 @@ const rootRouteChildren: RootRouteChildren = {
   CheckXboxRoute: CheckXboxRoute,
   CheckoutRedirectRoute: CheckoutRedirectRoute,
   ColoradoLicensePlateLookupRoute: ColoradoLicensePlateLookupRoute,
+  ColoradoVinLookupRoute: ColoradoVinLookupRoute,
   CommunityRoute: CommunityRoute,
   CompareRoute: CompareRoute,
   ComprehensiveGuideRoute: ComprehensiveGuideRoute,
   ConnecticutLicensePlateLookupRoute: ConnecticutLicensePlateLookupRoute,
+  ConnecticutVinLookupRoute: ConnecticutVinLookupRoute,
   CraigslistSafetyVerificationRoute: CraigslistSafetyVerificationRoute,
   CrunchbaseRoute: CrunchbaseRoute,
   DashboardRoute: DashboardRoute,
   DataSourcesRoute: DataSourcesRoute,
   DelawareLicensePlateLookupRoute: DelawareLicensePlateLookupRoute,
+  DelawareVinLookupRoute: DelawareVinLookupRoute,
   DeveloperRoute: DeveloperRoute,
   DevelopersRoute: DevelopersRoute,
   DownloadRoute: DownloadRoute,
@@ -6633,6 +7460,7 @@ const rootRouteChildren: RootRouteChildren = {
   GetAppRoute: GetAppRoute,
   GunSerialNumberLookupRoute: GunSerialNumberLookupRoute,
   HawaiiLicensePlateLookupRoute: HawaiiLicensePlateLookupRoute,
+  HawaiiVinLookupRoute: HawaiiVinLookupRoute,
   HotgunzAlternativeRoute: HotgunzAlternativeRoute,
   HowItWorksRoute: HowItWorksRoute,
   HowToCheckIfCarStolenRoute: HowToCheckIfCarStolenRoute,
@@ -6640,14 +7468,17 @@ const rootRouteChildren: RootRouteChildren = {
   HowToCheckIfPhoneStolenRoute: HowToCheckIfPhoneStolenRoute,
   HowToVerifyAUsedItemRoute: HowToVerifyAUsedItemRoute,
   IdahoLicensePlateLookupRoute: IdahoLicensePlateLookupRoute,
+  IdahoVinLookupRoute: IdahoVinLookupRoute,
   IllinoisLicensePlateLookupRoute: IllinoisLicensePlateLookupRoute,
   IllinoisVinLookupRoute: IllinoisVinLookupRoute,
   ImeiCheckRoute: ImeiCheckRoute,
   ImeiCheckerRoute: ImeiCheckerRoute,
   ImeiCheckerAppRoute: ImeiCheckerAppRoute,
   IndianaLicensePlateLookupRoute: IndianaLicensePlateLookupRoute,
+  IndianaVinLookupRoute: IndianaVinLookupRoute,
   InstallAppRoute: InstallAppRoute,
   IowaLicensePlateLookupRoute: IowaLicensePlateLookupRoute,
+  IowaVinLookupRoute: IowaVinLookupRoute,
   IsMyIphoneStolenRoute: IsMyIphoneStolenRoute,
   IsMyPhoneStolenRoute: IsMyPhoneStolenRoute,
   IsThisBikeStolenRoute: IsThisBikeStolenRoute,
@@ -6655,23 +7486,33 @@ const rootRouteChildren: RootRouteChildren = {
   IsThisGunStolenRoute: IsThisGunStolenRoute,
   IsThisLaptopStolenRoute: IsThisLaptopStolenRoute,
   KansasLicensePlateLookupRoute: KansasLicensePlateLookupRoute,
+  KansasVinLookupRoute: KansasVinLookupRoute,
   KentuckyLicensePlateLookupRoute: KentuckyLicensePlateLookupRoute,
+  KentuckyVinLookupRoute: KentuckyVinLookupRoute,
   LearnRoute: LearnRoute,
   LetgoStolenCheckRoute: LetgoStolenCheckRoute,
   LicensePlateLookupRoute: LicensePlateLookupRoute,
   LouisianaLicensePlateLookupRoute: LouisianaLicensePlateLookupRoute,
+  LouisianaVinLookupRoute: LouisianaVinLookupRoute,
   MaineLicensePlateLookupRoute: MaineLicensePlateLookupRoute,
+  MaineVinLookupRoute: MaineVinLookupRoute,
   MarketplaceAdvisorRoute: MarketplaceAdvisorRoute,
   MarketplaceIntegrationRoute: MarketplaceIntegrationRoute,
   MarketplaceUrlCheckerRoute: MarketplaceUrlCheckerRoute,
   MarylandLicensePlateLookupRoute: MarylandLicensePlateLookupRoute,
+  MarylandVinLookupRoute: MarylandVinLookupRoute,
   MassachusettsLicensePlateLookupRoute: MassachusettsLicensePlateLookupRoute,
+  MassachusettsVinLookupRoute: MassachusettsVinLookupRoute,
   MercariStolenCheckRoute: MercariStolenCheckRoute,
   MethodologyRoute: MethodologyRoute,
   MichiganLicensePlateLookupRoute: MichiganLicensePlateLookupRoute,
+  MichiganVinLookupRoute: MichiganVinLookupRoute,
   MinnesotaLicensePlateLookupRoute: MinnesotaLicensePlateLookupRoute,
+  MinnesotaVinLookupRoute: MinnesotaVinLookupRoute,
   MississippiLicensePlateLookupRoute: MississippiLicensePlateLookupRoute,
+  MississippiVinLookupRoute: MississippiVinLookupRoute,
   MissouriLicensePlateLookupRoute: MissouriLicensePlateLookupRoute,
+  MissouriVinLookupRoute: MissouriVinLookupRoute,
   MobileRoute: MobileRoute,
   MobileAppRoute: MobileAppRoute,
   MobileDashboardRoute: MobileDashboardRoute,
@@ -6679,11 +7520,17 @@ const rootRouteChildren: RootRouteChildren = {
   MobileSettingsRoute: MobileSettingsRoute,
   MobileVerifyRoute: MobileVerifyRoute,
   MontanaLicensePlateLookupRoute: MontanaLicensePlateLookupRoute,
+  MontanaVinLookupRoute: MontanaVinLookupRoute,
   NebraskaLicensePlateLookupRoute: NebraskaLicensePlateLookupRoute,
+  NebraskaVinLookupRoute: NebraskaVinLookupRoute,
   NevadaLicensePlateLookupRoute: NevadaLicensePlateLookupRoute,
+  NevadaVinLookupRoute: NevadaVinLookupRoute,
   NewHampshireLicensePlateLookupRoute: NewHampshireLicensePlateLookupRoute,
+  NewHampshireVinLookupRoute: NewHampshireVinLookupRoute,
   NewJerseyLicensePlateLookupRoute: NewJerseyLicensePlateLookupRoute,
+  NewJerseyVinLookupRoute: NewJerseyVinLookupRoute,
   NewMexicoLicensePlateLookupRoute: NewMexicoLicensePlateLookupRoute,
+  NewMexicoVinLookupRoute: NewMexicoVinLookupRoute,
   NewYorkLicensePlateLookupRoute: NewYorkLicensePlateLookupRoute,
   NewYorkVinLookupRoute: NewYorkVinLookupRoute,
   NewsRoute: NewsRoute,
@@ -6691,12 +7538,15 @@ const rootRouteChildren: RootRouteChildren = {
   NorthCarolinaLicensePlateLookupRoute: NorthCarolinaLicensePlateLookupRoute,
   NorthCarolinaVinLookupRoute: NorthCarolinaVinLookupRoute,
   NorthDakotaLicensePlateLookupRoute: NorthDakotaLicensePlateLookupRoute,
+  NorthDakotaVinLookupRoute: NorthDakotaVinLookupRoute,
   OfferupSafetyRoute: OfferupSafetyRoute,
   OfferupVerifyNotStolenRoute: OfferupVerifyNotStolenRoute,
   OhioLicensePlateLookupRoute: OhioLicensePlateLookupRoute,
   OhioVinLookupRoute: OhioVinLookupRoute,
   OklahomaLicensePlateLookupRoute: OklahomaLicensePlateLookupRoute,
+  OklahomaVinLookupRoute: OklahomaVinLookupRoute,
   OregonLicensePlateLookupRoute: OregonLicensePlateLookupRoute,
+  OregonVinLookupRoute: OregonVinLookupRoute,
   OurStoryRoute: OurStoryRoute,
   PartialSerialNumberSearchRoute: PartialSerialNumberSearchRoute,
   PaymentSuccessRoute: PaymentSuccessRoute,
@@ -6716,6 +7566,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReportStolenRoute: ReportStolenRoute,
   ResourceCenterRoute: ResourceCenterRoute,
   RhodeIslandLicensePlateLookupRoute: RhodeIslandLicensePlateLookupRoute,
+  RhodeIslandVinLookupRoute: RhodeIslandVinLookupRoute,
   ScamCheckerRoute: ScamCheckerRoute,
   SellerBadgeRoute: SellerBadgeRoute,
   SerialNumberCheckerRoute: SerialNumberCheckerRoute,
@@ -6723,7 +7574,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapRoute: SitemapRoute,
   SmsVerifyRoute: SmsVerifyRoute,
   SouthCarolinaLicensePlateLookupRoute: SouthCarolinaLicensePlateLookupRoute,
+  SouthCarolinaVinLookupRoute: SouthCarolinaVinLookupRoute,
   SouthDakotaLicensePlateLookupRoute: SouthDakotaLicensePlateLookupRoute,
+  SouthDakotaVinLookupRoute: SouthDakotaVinLookupRoute,
   StatePawnshopLawsRoute: StatePawnshopLawsRoute,
   StockxVerificationRoute: StockxVerificationRoute,
   StolenCheckChicagoRoute: StolenCheckChicagoRoute,
@@ -6741,6 +7594,7 @@ const rootRouteChildren: RootRouteChildren = {
   StolenGunDatabaseRoute: StolenGunDatabaseRoute,
   StolenPhoneCheckerRoute: StolenPhoneCheckerRoute,
   TennesseeLicensePlateLookupRoute: TennesseeLicensePlateLookupRoute,
+  TennesseeVinLookupRoute: TennesseeVinLookupRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
   TexasLicensePlateLookupRoute: TexasLicensePlateLookupRoute,
@@ -6750,12 +7604,15 @@ const rootRouteChildren: RootRouteChildren = {
   TransparencyRoute: TransparencyRoute,
   TrustEngineRoute: TrustEngineRoute,
   UtahLicensePlateLookupRoute: UtahLicensePlateLookupRoute,
+  UtahVinLookupRoute: UtahVinLookupRoute,
   VerificationSuccessRoute: VerificationSuccessRoute,
   VerifyRoute: VerifyRouteWithChildren,
   VermontLicensePlateLookupRoute: VermontLicensePlateLookupRoute,
+  VermontVinLookupRoute: VermontVinLookupRoute,
   VinCheckRoute: VinCheckRoute,
   VinCheckerRoute: VinCheckerRoute,
   VirginiaLicensePlateLookupRoute: VirginiaLicensePlateLookupRoute,
+  VirginiaVinLookupRoute: VirginiaVinLookupRoute,
   VsAutocheckRoute: VsAutocheckRoute,
   VsBikeindexRoute: VsBikeindexRoute,
   VsCarfaxRoute: VsCarfaxRoute,
@@ -6768,11 +7625,15 @@ const rootRouteChildren: RootRouteChildren = {
   VsSwappaRoute: VsSwappaRoute,
   VsVincheckInfoRoute: VsVincheckInfoRoute,
   WashingtonDcLicensePlateLookupRoute: WashingtonDcLicensePlateLookupRoute,
+  WashingtonDcVinLookupRoute: WashingtonDcVinLookupRoute,
   WashingtonLicensePlateLookupRoute: WashingtonLicensePlateLookupRoute,
   WashingtonVinLookupRoute: WashingtonVinLookupRoute,
   WestVirginiaLicensePlateLookupRoute: WestVirginiaLicensePlateLookupRoute,
+  WestVirginiaVinLookupRoute: WestVirginiaVinLookupRoute,
   WisconsinLicensePlateLookupRoute: WisconsinLicensePlateLookupRoute,
+  WisconsinVinLookupRoute: WisconsinVinLookupRoute,
   WyomingLicensePlateLookupRoute: WyomingLicensePlateLookupRoute,
+  WyomingVinLookupRoute: WyomingVinLookupRoute,
   AdminAiOrchestratorRoute: AdminAiOrchestratorRoute,
   AdminBatchIndexRoute: AdminBatchIndexRoute,
   AdminGscCallbackRoute: AdminGscCallbackRoute,

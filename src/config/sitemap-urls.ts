@@ -230,7 +230,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/wyoming-license-plate-lookup', priority: 0.60, changefreq: 'monthly' },
 
   // ============================================
-  // TOP 10 STATE VIN LOOKUPS (have actual routes)
+  // STATE VIN LOOKUPS (all have actual routes)
   // ============================================
   { path: '/california-vin-lookup', priority: 0.75, changefreq: 'monthly' },
   { path: '/texas-vin-lookup', priority: 0.75, changefreq: 'monthly' },
@@ -242,6 +242,48 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/ohio-vin-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/north-carolina-vin-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/washington-vin-lookup', priority: 0.80, changefreq: 'weekly' },
+  { path: '/alabama-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/alaska-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/arizona-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/arkansas-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/colorado-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/connecticut-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/delaware-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/washington-dc-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/hawaii-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/idaho-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/indiana-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/iowa-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/kansas-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/kentucky-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/louisiana-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/maine-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/maryland-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/massachusetts-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/michigan-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/minnesota-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/mississippi-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/missouri-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/montana-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/nebraska-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/nevada-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/new-hampshire-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/new-jersey-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/new-mexico-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/north-dakota-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/oklahoma-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/oregon-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/rhode-island-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/south-carolina-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/south-dakota-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/tennessee-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/utah-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/vermont-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/virginia-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/west-virginia-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/wisconsin-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+  { path: '/wyoming-vin-lookup', priority: 0.60, changefreq: 'monthly' },
+
 
 ];
 
