@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@/lib/router-compat';
 import { StolenCheckLanding } from '@/components/traffic/StolenCheckLanding';
 
 export const CheckStolenPhone = () => (
@@ -143,6 +144,7 @@ export const CheckStolenBike = () => (
 );
 
 export const CheckStolenFirearm = () => (
+ <>
  <StolenCheckLanding
  itemType="Firearm"
  title="Is This Gun Stolen? Free Serial Number Check"
@@ -174,4 +176,14 @@ export const CheckStolenFirearm = () => (
  }
  ]}
  />
+ <section className="max-w-4xl mx-auto px-4 pb-16">
+ <p className="text-sm text-muted-foreground">
+ Buying privately? Whether a background check is required depends on your state — see our{' '}
+ <Link to="/state-firearm-transfer-laws" className="text-primary underline underline-offset-4">
+ state-by-state firearm transfer law guide
+ </Link>
+ .
+ </p>
+ </section>
+ </>
 );

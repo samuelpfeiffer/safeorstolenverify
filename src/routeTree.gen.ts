@@ -231,6 +231,7 @@ import { Route as SouthCarolinaLicensePlateLookupRouteImport } from './routes/so
 import { Route as SouthCarolinaVinLookupRouteImport } from './routes/south-carolina-vin-lookup'
 import { Route as SouthDakotaLicensePlateLookupRouteImport } from './routes/south-dakota-license-plate-lookup'
 import { Route as SouthDakotaVinLookupRouteImport } from './routes/south-dakota-vin-lookup'
+import { Route as StateFirearmTransferLawsRouteImport } from './routes/state-firearm-transfer-laws'
 import { Route as StatePawnshopLawsRouteImport } from './routes/state-pawnshop-laws'
 import { Route as StockxVerificationRouteImport } from './routes/stockx-verification'
 import { Route as StolenCheckChicagoRouteImport } from './routes/stolen-check-chicago'
@@ -1522,6 +1523,12 @@ const SouthDakotaVinLookupRoute = SouthDakotaVinLookupRouteImport.update({
   path: '/south-dakota-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StateFirearmTransferLawsRoute =
+  StateFirearmTransferLawsRouteImport.update({
+    id: '/state-firearm-transfer-laws',
+    path: '/state-firearm-transfer-laws',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const StatePawnshopLawsRoute = StatePawnshopLawsRouteImport.update({
   id: '/state-pawnshop-laws',
   path: '/state-pawnshop-laws',
@@ -2476,6 +2483,7 @@ export interface FileRoutesByFullPath {
   '/south-carolina-vin-lookup': typeof SouthCarolinaVinLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
   '/south-dakota-vin-lookup': typeof SouthDakotaVinLookupRoute
+  '/state-firearm-transfer-laws': typeof StateFirearmTransferLawsRoute
   '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
@@ -2833,6 +2841,7 @@ export interface FileRoutesByTo {
   '/south-carolina-vin-lookup': typeof SouthCarolinaVinLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
   '/south-dakota-vin-lookup': typeof SouthDakotaVinLookupRoute
+  '/state-firearm-transfer-laws': typeof StateFirearmTransferLawsRoute
   '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
@@ -3192,6 +3201,7 @@ export interface FileRoutesById {
   '/south-carolina-vin-lookup': typeof SouthCarolinaVinLookupRoute
   '/south-dakota-license-plate-lookup': typeof SouthDakotaLicensePlateLookupRoute
   '/south-dakota-vin-lookup': typeof SouthDakotaVinLookupRoute
+  '/state-firearm-transfer-laws': typeof StateFirearmTransferLawsRoute
   '/state-pawnshop-laws': typeof StatePawnshopLawsRoute
   '/stockx-verification': typeof StockxVerificationRoute
   '/stolen-check-chicago': typeof StolenCheckChicagoRoute
@@ -3553,6 +3563,7 @@ export interface FileRouteTypes {
     | '/south-carolina-vin-lookup'
     | '/south-dakota-license-plate-lookup'
     | '/south-dakota-vin-lookup'
+    | '/state-firearm-transfer-laws'
     | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
@@ -3910,6 +3921,7 @@ export interface FileRouteTypes {
     | '/south-carolina-vin-lookup'
     | '/south-dakota-license-plate-lookup'
     | '/south-dakota-vin-lookup'
+    | '/state-firearm-transfer-laws'
     | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
@@ -4268,6 +4280,7 @@ export interface FileRouteTypes {
     | '/south-carolina-vin-lookup'
     | '/south-dakota-license-plate-lookup'
     | '/south-dakota-vin-lookup'
+    | '/state-firearm-transfer-laws'
     | '/state-pawnshop-laws'
     | '/stockx-verification'
     | '/stolen-check-chicago'
@@ -4628,6 +4641,7 @@ export interface RootRouteChildren {
   SouthCarolinaVinLookupRoute: typeof SouthCarolinaVinLookupRoute
   SouthDakotaLicensePlateLookupRoute: typeof SouthDakotaLicensePlateLookupRoute
   SouthDakotaVinLookupRoute: typeof SouthDakotaVinLookupRoute
+  StateFirearmTransferLawsRoute: typeof StateFirearmTransferLawsRoute
   StatePawnshopLawsRoute: typeof StatePawnshopLawsRoute
   StockxVerificationRoute: typeof StockxVerificationRoute
   StolenCheckChicagoRoute: typeof StolenCheckChicagoRoute
@@ -6269,6 +6283,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SouthDakotaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/state-firearm-transfer-laws': {
+      id: '/state-firearm-transfer-laws'
+      path: '/state-firearm-transfer-laws'
+      fullPath: '/state-firearm-transfer-laws'
+      preLoaderRoute: typeof StateFirearmTransferLawsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/state-pawnshop-laws': {
       id: '/state-pawnshop-laws'
       path: '/state-pawnshop-laws'
@@ -7577,6 +7598,7 @@ const rootRouteChildren: RootRouteChildren = {
   SouthCarolinaVinLookupRoute: SouthCarolinaVinLookupRoute,
   SouthDakotaLicensePlateLookupRoute: SouthDakotaLicensePlateLookupRoute,
   SouthDakotaVinLookupRoute: SouthDakotaVinLookupRoute,
+  StateFirearmTransferLawsRoute: StateFirearmTransferLawsRoute,
   StatePawnshopLawsRoute: StatePawnshopLawsRoute,
   StockxVerificationRoute: StockxVerificationRoute,
   StolenCheckChicagoRoute: StolenCheckChicagoRoute,

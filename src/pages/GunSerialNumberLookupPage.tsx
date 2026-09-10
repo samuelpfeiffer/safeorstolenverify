@@ -1,7 +1,9 @@
+import { Link } from '@/lib/router-compat';
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
 const GunSerialNumberLookupPage = () => {
  return (
+ <>
  <ItemLandingPageTemplate
  title="Free Gun Serial Number Lookup - Check Firearms | SafeOrStolen"
  metaDescription="Free gun serial number lookup. Check if any firearm is stolen before buying. Searches stolen firearms databases and validates serial integrity."
@@ -78,6 +80,16 @@ const GunSerialNumberLookupPage = () => {
  ]
  }}
  />
+ <section className="max-w-4xl mx-auto px-4 pb-16 -mt-4">
+ <p className="text-sm text-muted-foreground">
+ Private sale? Whether a background check is required depends on your state — see our{' '}
+ <Link to="/state-firearm-transfer-laws" className="text-primary underline underline-offset-4">
+ state-by-state firearm transfer law guide
+ </Link>
+ .
+ </p>
+ </section>
+ </>
  );
 };
 
