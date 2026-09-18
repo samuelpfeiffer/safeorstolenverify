@@ -340,20 +340,21 @@ async function callAIAnalysis(
     // previously flipped clean items to a false STOLEN verdict.
     let status: VerificationResult['status'] = 'unknown';
 
-    console.log(`[AI Analysis] BUILD riskfix-1 risk_level=${analysis.risk_level}`);
+    console.log(`[AI Analysis] BUILD 3state-1 risk_level=${analysis.risk_level}`);
 
+    // Strict three-state result. There is no middle "suspicious" category:
+    // only strong evidence produces a theft accusation, only clean checks
+    // produce a clear verdict, and everything else is "not found".
     switch (analysis.risk_level) {
       case 'critical':
         status = 'stolen';
-        break;
-      case 'high':
-        // High risk is a caution signal, not a theft record.
-        status = 'suspicious';
         break;
       case 'low':
         status = 'safe';
         break;
       default:
+        // 'high', 'medium', missing, or anything unrecognized: we simply
+        // do not have data on this item.
         status = 'unknown';
     }
 
