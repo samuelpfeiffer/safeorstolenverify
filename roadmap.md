@@ -1,11 +1,11 @@
 # Account required before verification
 
-- [ ] Gate /verify and /ai-chat behind a signed-in account
-- [ ] Preserve entered identifier through signup/login and resume the check
-- [ ] Google sign-in on the prompt and auth page
-- [ ] Tie checks to the account (fingerprint secondary)
-- [ ] Backend enforcement in verify-item and check-gate
-- [ ] Copy cleanup: "no signup" wording in source + prerender snapshots
+- [x] Gate /verify and /ai-chat behind a signed-in account
+- [x] Preserve entered identifier through signup/login and resume the check
+- [x] Google sign-in on the prompt and auth page
+- [x] Tie checks to the account (fingerprint secondary)
+- [x] Backend enforcement in verify-item and check-gate
+- [x] Copy cleanup: "no signup" wording in source + prerender snapshots
 - [ ] Finish with a full project publish (not edge-function-only deploy)
 - [ ] Queued: "remove suspicious status" fix must also get a full project publish
 
