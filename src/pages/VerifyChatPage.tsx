@@ -362,6 +362,10 @@ const VerifyChatPage: React.FC = () => {
 
  const runImageVerification = useCallback(
  async (assistantId: string, dataUrl: string) => {
+ if (!user) {
+ requireAccount(assistantId, '');
+ return;
+ }
  try {
  const base64 = dataUrl.split(',')[1];
  const { data: ocr, error: ocrErr } = await supabase.functions.invoke('ai-visual-ocr', {
