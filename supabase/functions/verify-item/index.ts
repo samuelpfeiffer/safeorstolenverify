@@ -5,7 +5,7 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { toCanonicalItemType } from '../_shared/itemType.ts';
 
 // Build marker: lets logs prove which bundle served a request.
-const BUILD_ID = 'verify-item-2026-09-18-ai-riskfix-1';
+const BUILD_ID = 'verify-item-2026-09-19-auth-required-1';
 console.log(`[verify-item] BUILD ${BUILD_ID}`);
 
 interface VerificationRequest {
@@ -14,11 +14,6 @@ interface VerificationRequest {
   userId?: string;
   fingerprint?: string;
 }
-
-// Anonymous checks are allowed only if check-gate has just granted this
-// fingerprint a free check (row exists, within the free limit, recent).
-const ANON_FREE_LIMIT = 2;
-const ANON_GRANT_WINDOW_MS = 10 * 60 * 1000;
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -29,7 +24,7 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(origin);
 
   try {
-    console.log('[verify-item] build:anon-gate-v2');
+    console.log('[verify-item] build:auth-required-v1');
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
