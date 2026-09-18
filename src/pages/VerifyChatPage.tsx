@@ -244,8 +244,14 @@ const VerifyChatPage: React.FC = () => {
  },
  [messages, currentResult, updateMessage]);
 
- const runVerification = useCallback(
+  const runVerification = useCallback(
  async (assistantId: string, identifier: string) => {
+ // An account is required before any check runs.
+ if (!user) {
+ requireAccount(assistantId, identifier);
+ return;
+ }
+
  try {
  const { data: detect, error: detectErr } = await supabase.functions.invoke(
  'ai-detect-identifier',
@@ -256,27 +262,26 @@ const VerifyChatPage: React.FC = () => {
  const cleanedIdentifier = detect?.extractedValue || identifier;
  const confidence = detect?.confidence || 50;
 
-        const allowed = await checkGate();
-        if (!allowed) {
-          updateMessage(assistantId, {
-            loading: false,
-            content: user
-              ? `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`
-              : `You've used your 2 free checks. [Create a free account](/auth?redirect=/verify) to keep verifying, or **Upgrade to Unlimited at $10/mo**.`,
-            suggestions: ['Why upgrade?', 'Compare plans'],
-          });
-          return;
-        }
+         const allowed = await checkGate();
+         if (!allowed) {
+           updateMessage(assistantId, {
+             loading: false,
+             content: `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`,
+             suggestions: ['Why upgrade?', 'Compare plans'],
+           });
+           return;
+         }
 
-        const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
-          body: {
-            identifier: cleanedIdentifier,
-            itemType,
-            userId: user?.id ?? null,
-            fingerprint: getOrCreateFingerprint(),
-          },
-        });
-        if (verifyErr) throw verifyErr;
+         const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
+           body: {
+             identifier: cleanedIdentifier,
+             itemType,
+             fingerprint: getOrCreateFingerprint(),
+           },
+         });
+         if (verifyErr) throw verifyErr;
+
+
 
 
  const result: ChatVerifyResult = {
