@@ -394,7 +394,7 @@ const VerifyChatPage: React.FC = () => {
  });
  }
  },
- [runVerification, updateMessage]);
+ [runVerification, updateMessage, user, requireAccount]);
 
  const runUrlAnalysis = useCallback(
  async (assistantId: string, url: string) => {
