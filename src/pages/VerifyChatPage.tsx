@@ -34,6 +34,8 @@ import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
+import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
@@ -75,6 +77,8 @@ const VerifyChatPage: React.FC = () => {
  const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
  const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+ const [pendingIdentifier, setPendingIdentifier] = useState<string | null>(null);
+ const { savePendingVerification } = usePendingVerification();
 
  const fileInputRef = useRef<HTMLInputElement>(null);
  const cameraInputRef = useRef<HTMLInputElement>(null);
