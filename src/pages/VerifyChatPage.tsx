@@ -358,7 +358,7 @@ const VerifyChatPage: React.FC = () => {
  });
  }
  },
- [user, checkGate, publishResult, updateMessage]);
+ [user, checkGate, publishResult, updateMessage, requireAccount]);
 
  const runImageVerification = useCallback(
  async (assistantId: string, dataUrl: string) => {
