@@ -62,19 +62,34 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     )
 
-    // Extract user_id from JWT if present — never trust client-supplied user_id
+    // Extract user_id from JWT — never trust client-supplied user_id.
+    // An account is now REQUIRED for every verification.
     let user_id: string | null = null
     const authHeader = req.headers.get('authorization')
-    if (authHeader) {
-      const token = authHeader.replace('Bearer ', '')
+    const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!
+    const bearer = authHeader?.replace('Bearer ', '').trim() ?? ''
+    if (bearer && bearer !== anonKey) {
       const { createClient: createAuthClient } = await import("https://esm.sh/@supabase/supabase-js@2.39.7")
       const authClient = createAuthClient(
         Deno.env.get('SUPABASE_URL')!,
-        Deno.env.get('SUPABASE_ANON_KEY')!
+        anonKey
       )
-      const { data: { user } } = await authClient.auth.getUser(token)
+      const { data: { user } } = await authClient.auth.getUser(bearer)
       user_id = user?.id ?? null
     }
+
+    if (!user_id) {
+      return new Response(
+        JSON.stringify({
+          allowed: false,
+          reason: 'auth_required',
+          code: 'AUTH_REQUIRED',
+          message: 'Create a free account to run a verification.'
+        }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
 
     // Check for active subscription (by user_id OR fingerprint)
     let sub = null;
