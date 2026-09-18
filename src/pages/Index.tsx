@@ -151,7 +151,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen offers 2 free checks with no account required. After that, single checks are $0.99 each, or the Unlimited plan is $10 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
+ a: 'SafeOrStolen offers 2 free checks with a free account. After that, single checks are $0.99 each, or the Unlimited plan is $10 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
  },
  {
  q: 'How does the license plate lookup work?',
@@ -228,7 +228,7 @@ const Index = () => {
  Start with <span className="text-primary">2 free checks</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
- Need just one verification? Pay <strong className="text-foreground">$0.99</strong> — no account required.
+ Need just one verification? Pay <strong className="text-foreground">$0.99</strong> with a free account.
  Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
  installable web app, and PDF certificates included. Cancel anytime, 30-day refund.
  </p>

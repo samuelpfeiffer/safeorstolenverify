@@ -122,7 +122,7 @@ const ProofOfPurchasePage: React.FC = () => {
             <h2 className="text-2xl font-bold mt-12 mb-4">Create a record</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Run a check on the item you are considering. If it comes back clean, you will be
-              offered the option to save the record — no account required.
+              offered the option to save the record to their account.
             </p>
 
             <Link

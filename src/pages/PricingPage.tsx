@@ -13,7 +13,7 @@ const FAQS = [
  { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
  { q: 'How accurate are the results?', a: 'We check 100+ sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 US state databases.' },
  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on the unlimited plan, no questions asked.' },
- { q: 'Do I need an account for pay-per-check?', a: 'No. Pay $0.99, enter your item\'s identifier, and get instant results. No account, no sign-up, no recurring charges.' },
+ { q: 'Do I need an account for pay-per-check?', a: 'Yes — a free account is required for every check. Create one in seconds, pay $0.99, and get instant results with no recurring charges.' },
  { q: 'How do seller verification badges work?', a: 'Seller badges are included free with the $10/month unlimited plan. Verify your item, generate a badge, and paste it into your marketplace listing. Buyers click it to see the verified result.' },
  { q: 'Which plan should I choose?', a: 'If you\'re checking one item before buying, use a free check or pay $0.99. If you buy and sell secondhand items regularly (3+ times per month), the $10/month unlimited plan saves you money.' },
 ];
@@ -105,7 +105,7 @@ const PricingPage = () => {
  Try 2 Free Checks
  </Link>
  <p className="text-center text-xs text-muted-foreground mt-2">
- No credit card. No sign-up required.
+ No credit card. Free account required.
  </p>
  </div>
 

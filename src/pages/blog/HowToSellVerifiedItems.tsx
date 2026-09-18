@@ -178,7 +178,7 @@ const HowToSellVerifiedItems = () => {
               SafeOrStolen offers 2 free checks, then flexible pricing:
             </p>
             <ul className="space-y-2 mb-6">
-              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$0.99/check</strong> — Pay per verification, no account needed.</span></li>
+              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$0.99/check</strong> — Pay per verification with a free account.</span></li>
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$10/month unlimited</strong> — Verify as many items as you need. Phones, cars, electronics, and more.</span></li>
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">PDF certificates & shareable links</strong> — Download reports and share with buyers.</span></li>
             </ul>

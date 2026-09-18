@@ -28,7 +28,7 @@ const PLANS = [
     icon: <CreditCard className="w-5 h-5" />,
     label: 'Pay Per Check',
     price: '$0.99',
-    desc: 'One-time payment. No subscription. No account needed.',
+    desc: 'One-time payment. No subscription.',
     cta: 'Buy This Check — $0.99',
     priceId: PAY_PER_CHECK_PRICE_ID,
     planName: 'Pay Per Check',

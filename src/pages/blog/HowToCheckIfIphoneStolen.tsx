@@ -129,7 +129,7 @@ const HowToCheckIfIphoneStolen = () => {
               <CardContent className="p-6 text-center">
                 <Smartphone className="h-12 w-12 mx-auto mb-4 text-primary" />
                 <h3 className="text-xl font-bold mb-2">Free IMEI Check</h3>
-                <p className="text-muted-foreground mb-4">Results in 3 seconds. No signup required.</p>
+                <p className="text-muted-foreground mb-4">Results in 3 seconds with a free account.</p>
                 <Button asChild size="lg">
                   <Link to="/verify">
                     Check IMEI Now <ArrowRight className="ml-2 h-4 w-4" />

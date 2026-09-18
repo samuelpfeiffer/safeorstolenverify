@@ -147,7 +147,7 @@ const FirearmsSerialNumberCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free searches • Results in 3 seconds • No registration required
+ 2 free searches with a free account • Results in 3 seconds
  </p>
  </div>
 

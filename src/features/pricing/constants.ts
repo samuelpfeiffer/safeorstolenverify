@@ -3,7 +3,7 @@
  * 
  * THREE-TIER MODEL (March 2026):
  *   Free  — 2 checks, no credit card
- *   $0.99 — per check, one-time, no account needed
+ *   $0.99 — per check, one-time, free account required
  *   $10/month — unlimited everything + seller badges
  */
 
@@ -57,7 +57,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     tier: "payPerCheck",
     features: [
       "One-time verification",
-      "No account required",
+      "Free account required",
       "Instant results",
       "PDF verification receipt",
     ],

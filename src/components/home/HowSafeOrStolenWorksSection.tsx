@@ -10,7 +10,7 @@ export const HowSafeOrStolenWorksSection = () => {
  title: 'Enter IMEI, VIN, or Serial Number',
  description: 'Simply type or paste the identification number from any phone, vehicle, laptop, bike, or equipment. Our system accepts all formats - IMEI, VIN, serial numbers, frame numbers, ESN, MEID.',
  details: [
- 'No registration required',
+ 'Free account, 2 free checks',
  'Works on any device',
  'Paste from photos/text',
  'Supports all formats'

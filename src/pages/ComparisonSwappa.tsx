@@ -57,7 +57,7 @@ const ComparisonSwappa = () => {
  {
  "@type": "Question",
  "name": "Is SafeOrStolen free to use?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services." }
  },
  {
  "@type": "Question",
@@ -444,7 +444,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="free">
  <AccordionTrigger>Is SafeOrStolen free to use?</AccordionTrigger>
  <AccordionContent>
- Yes. SafeOrStolen offers 2 free verification checks with no account required. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
+ Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="databases">
