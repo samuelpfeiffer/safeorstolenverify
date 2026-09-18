@@ -98,6 +98,10 @@ const VerifyChatPage: React.FC = () => {
 
  // ─── EFFECTS ───────────────────────────────────────────────────────
  useEffect(() => {
+ if (isAuthenticated) setPendingIdentifier(null);
+ }, [isAuthenticated]);
+
+ useEffect(() => {
  setCurrentResult(sessionResults[0] || null);
  // eslint-disable-next-line react-hooks/exhaustive-deps
  }, [activeId]);
