@@ -10,6 +10,7 @@ import {
  Share2,
  Bookmark,
  Sparkles,
+ SearchX,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { generateVerificationPDF } from '@/services/pdfReportService';
@@ -59,13 +60,14 @@ const toneFor = (status: ChatVerifyResult['status']) => {
  ring: 'ring-emerald-500/20',
  };
  default:
+ // Neutral, not a warning: we simply have no data on this item.
  return {
- Icon: AlertTriangle,
- color: 'text-amber-500',
- bg: 'bg-amber-500/10',
- border: 'border-amber-500/40',
- label: 'NO RECORD FOUND',
- ring: 'ring-amber-500/20',
+ Icon: SearchX,
+ color: 'text-muted-foreground',
+ bg: 'bg-muted/30',
+ border: 'border-border',
+ label: 'NOT FOUND',
+ ring: 'ring-border/40',
  };
  }
 };
