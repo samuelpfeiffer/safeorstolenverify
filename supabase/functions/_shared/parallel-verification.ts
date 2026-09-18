@@ -334,12 +334,25 @@ async function callAIAnalysis(
     }
 
     const analysis = data.analysis;
+    // Decide only from the AI's structured risk_level enum.
+    // Never keyword-match the free-text recommendation: advice such as
+    // "check a stolen device database" contains the word "stolen" and
+    // previously flipped clean items to a false STOLEN verdict.
     let status: VerificationResult['status'] = 'unknown';
-    
-    if (analysis.risk_level === 'high' || analysis.recommendation?.includes('stolen')) {
-      status = 'stolen';
-    } else if (analysis.risk_level === 'low') {
-      status = 'safe';
+
+    switch (analysis.risk_level) {
+      case 'critical':
+        status = 'stolen';
+        break;
+      case 'high':
+        // High risk is a caution signal, not a theft record.
+        status = 'suspicious';
+        break;
+      case 'low':
+        status = 'safe';
+        break;
+      default:
+        status = 'unknown';
     }
 
     return {
