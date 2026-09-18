@@ -10,6 +10,7 @@ import {
  Share2,
  Bookmark,
  Sparkles,
+ SearchX,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { generateVerificationPDF } from '@/services/pdfReportService';
