@@ -422,7 +422,7 @@ const VerifyChatPage: React.FC = () => {
  });
  }
  },
- [updateMessage]);
+ [updateMessage, user, requireAccount]);
 
  const handleSend = useCallback(
  async (overrideText?: string) => {
