@@ -105,7 +105,7 @@ const CheckIfPhoneStolenGuide = () => {
 
         <div className="bg-card border border-border rounded-2xl p-6 mb-10 text-center">
           <p className="text-foreground font-bold text-lg mb-3">Got an IMEI number? Check it now.</p>
-          <p className="text-muted-foreground mb-4">Free. No signup. Results in 3 seconds.</p>
+          <p className="text-muted-foreground mb-4">Free with an account. Results in 3 seconds.</p>
           <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-3 rounded-xl hover:bg-primary/90 transition-all">
             Check IMEI Now — Free →
           </Link>

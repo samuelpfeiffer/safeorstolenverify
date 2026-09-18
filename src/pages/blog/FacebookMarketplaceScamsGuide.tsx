@@ -103,7 +103,7 @@ const FacebookMarketplaceScamsGuide = () => {
         {/* CTA */}
         <div className="bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10 text-center">
           <p className="text-foreground font-bold text-lg mb-3">Found something on Facebook Marketplace?</p>
-          <p className="text-muted-foreground mb-4">Verify it's not stolen in 3 seconds — free, no signup required.</p>
+          <p className="text-muted-foreground mb-4">Verify it's not stolen in 3 seconds — free with a free account.</p>
           <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-3 rounded-xl hover:bg-primary/90 transition-all">
             Verify Now — Free →
           </Link>

@@ -29,7 +29,7 @@ const IMEICheckPage = () => {
  howItWorks: "Our IMEI check works instantly by querying multiple databases simultaneously. Enter the 15-digit IMEI number and within seconds, we'll check: carrier and theft databases global device registry, major US carriers (AT&T, Verizon, T-Mobile), international carrier and theft databases, the relevant authorities stolen phone databases, community theft reports, and finance/lease status. You'll receive a comprehensive report showing exactly what we found.",
  whyCheck: "In 2024, over 2.4 million smartphones were reported stolen in the US alone. Many of these end up on secondhand marketplaces. Buying a stolen phone means: the original owner can remotely lock or wipe it, carriers will blacklist it making it unusable, the relevant authorities can confiscate it, and you could face criminal possession charges. A quick IMEI check before purchase prevents all these problems.",
  benefits: [
- "Free IMEI check - no registration required",
+ "Free IMEI check with a free account",
  "Results in under 3 seconds",
  "Checks carrier and theft databases and all major carrier databases",
  "Verifies blacklist and stolen status",

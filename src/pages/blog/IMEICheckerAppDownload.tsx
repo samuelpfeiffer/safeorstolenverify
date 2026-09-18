@@ -137,7 +137,7 @@ const IMEICheckerAppDownload = () => {
                   <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="font-bold mb-2">Free to Use</h3>
                   <p className="text-sm text-muted-foreground">
-                    Basic IMEI checks are completely free. No signup required.
+                    Basic IMEI checks are free with a free account.
                   </p>
                 </CardContent>
               </Card>

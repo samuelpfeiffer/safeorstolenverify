@@ -10,7 +10,7 @@ const FreeTools = () => {
     <>
       <PageSEO
         title="Free IMEI Validator & VIN Checker Tools | SafeOrStolen"
-        description="Free tools to validate IMEI numbers and VIN formats. Check if your IMEI is valid before buying a phone. No signup required. Part of SafeOrStolen's stolen item verification suite."
+        description="Free tools to validate IMEI numbers and VIN formats. Check if your IMEI is valid before buying a phone. Part of SafeOrStolen's stolen item verification suite."
         keywords="free IMEI validator, IMEI checker free, validate IMEI number, VIN format checker, free phone checker, IMEI luhn check, is IMEI valid"
         canonical="/free-tools"
         structuredData={{
@@ -31,7 +31,7 @@ const FreeTools = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>Free IMEI Validator & VIN Checker Tools</h1>
-          <p>Use our free tools to validate IMEI numbers and check VIN formats. No signup required.</p>
+          <p>Use our free tools to validate IMEI numbers and check VIN formats.</p>
           
           <h2>Free IMEI Validator</h2>
           <p>Check if an IMEI number has valid format using the Luhn algorithm. This validates the structure - to check if stolen, use our full verification service.</p>
@@ -57,7 +57,7 @@ const FreeTools = () => {
               <h1 className="text-4xl font-bold">Free Tools</h1>
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Free validation tools for buyers, sellers, and businesses. No signup required.
+              Free validation tools for buyers, sellers, and businesses.
             </p>
           </div>
         </section>

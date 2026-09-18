@@ -176,7 +176,7 @@ export const ConversionOptimizedPricing = ({
           <div className="p-4 rounded-lg bg-card border border-border">
             <h4 className="font-semibold mb-2">Do I need an account for pay-per-check?</h4>
             <p className="text-sm text-muted-foreground">
-              No. Pay $0.99, enter your item's identifier, and get instant results. No account required.
+              No. Create a free account, pay $0.99, enter your item's identifier, and get instant results.
             </p>
           </div>
           <div className="p-4 rounded-lg bg-card border border-border">

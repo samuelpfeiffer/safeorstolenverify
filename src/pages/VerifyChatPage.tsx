@@ -34,6 +34,8 @@ import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
+import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
@@ -75,6 +77,8 @@ const VerifyChatPage: React.FC = () => {
  const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
  const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+ const [pendingIdentifier, setPendingIdentifier] = useState<string | null>(null);
+ const { savePendingVerification } = usePendingVerification();
 
  const fileInputRef = useRef<HTMLInputElement>(null);
  const cameraInputRef = useRef<HTMLInputElement>(null);
@@ -93,6 +97,10 @@ const VerifyChatPage: React.FC = () => {
  const showWelcome = messages.length <= 1 && !isThinking;
 
  // ─── EFFECTS ───────────────────────────────────────────────────────
+ useEffect(() => {
+ if (isAuthenticated) setPendingIdentifier(null);
+ }, [isAuthenticated]);
+
  useEffect(() => {
  setCurrentResult(sessionResults[0] || null);
  // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -244,8 +252,37 @@ const VerifyChatPage: React.FC = () => {
  },
  [messages, currentResult, updateMessage]);
 
- const runVerification = useCallback(
+  /**
+   * Signed-out visitors can't run checks. Stash what they typed, show the
+   * inline sign-up prompt, and explain it in the conversation.
+   */
+  const requireAccount = useCallback(
+    (assistantId: string, pendingText: string) => {
+      const trimmed = pendingText.trim();
+      setPendingIdentifier(trimmed);
+      if (trimmed) {
+        savePendingVerification(trimmed, undefined, 'buyer').catch(() => {
+          /* redirect param still preserves the value */
+        });
+      }
+      updateMessage(assistantId, {
+        loading: false,
+        content:
+          "**Create a free account to run this check.** It takes a few seconds — sign up with Google or email below and I'll pick up right where we left off. You get 2 free checks with a free account.",
+      });
+    },
+    [savePendingVerification, updateMessage],
+  );
+
+
+  const runVerification = useCallback(
  async (assistantId: string, identifier: string) => {
+ // An account is required before any check runs.
+ if (!user) {
+ requireAccount(assistantId, identifier);
+ return;
+ }
+
  try {
  const { data: detect, error: detectErr } = await supabase.functions.invoke(
  'ai-detect-identifier',
@@ -256,27 +293,26 @@ const VerifyChatPage: React.FC = () => {
  const cleanedIdentifier = detect?.extractedValue || identifier;
  const confidence = detect?.confidence || 50;
 
-        const allowed = await checkGate();
-        if (!allowed) {
-          updateMessage(assistantId, {
-            loading: false,
-            content: user
-              ? `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`
-              : `You've used your 2 free checks. [Create a free account](/auth?redirect=/verify) to keep verifying, or **Upgrade to Unlimited at $10/mo**.`,
-            suggestions: ['Why upgrade?', 'Compare plans'],
-          });
-          return;
-        }
+         const allowed = await checkGate();
+         if (!allowed) {
+           updateMessage(assistantId, {
+             loading: false,
+             content: `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`,
+             suggestions: ['Why upgrade?', 'Compare plans'],
+           });
+           return;
+         }
 
-        const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
-          body: {
-            identifier: cleanedIdentifier,
-            itemType,
-            userId: user?.id ?? null,
-            fingerprint: getOrCreateFingerprint(),
-          },
-        });
-        if (verifyErr) throw verifyErr;
+         const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
+           body: {
+             identifier: cleanedIdentifier,
+             itemType,
+             fingerprint: getOrCreateFingerprint(),
+           },
+         });
+         if (verifyErr) throw verifyErr;
+
+
 
 
  const result: ChatVerifyResult = {
@@ -326,10 +362,14 @@ const VerifyChatPage: React.FC = () => {
  });
  }
  },
- [user, checkGate, publishResult, updateMessage]);
+ [user, checkGate, publishResult, updateMessage, requireAccount]);
 
  const runImageVerification = useCallback(
  async (assistantId: string, dataUrl: string) => {
+ if (!user) {
+ requireAccount(assistantId, '');
+ return;
+ }
  try {
  const base64 = dataUrl.split(',')[1];
  const { data: ocr, error: ocrErr } = await supabase.functions.invoke('ai-visual-ocr', {
@@ -358,10 +398,14 @@ const VerifyChatPage: React.FC = () => {
  });
  }
  },
- [runVerification, updateMessage]);
+ [runVerification, updateMessage, user, requireAccount]);
 
  const runUrlAnalysis = useCallback(
  async (assistantId: string, url: string) => {
+ if (!user) {
+ requireAccount(assistantId, url);
+ return;
+ }
  try {
  const { data, error } = await supabase.functions.invoke('marketplace-url-analyzer', {
  body: { url },
@@ -386,7 +430,7 @@ const VerifyChatPage: React.FC = () => {
  });
  }
  },
- [updateMessage]);
+ [updateMessage, user, requireAccount]);
 
  const handleSend = useCallback(
  async (overrideText?: string) => {
@@ -697,6 +741,19 @@ const VerifyChatPage: React.FC = () => {
 
  {/* Composer — Luminal style */}
  <div className="border-t border-border/50 bg-card/40 backdrop-blur-xl shrink-0 relative">
+ {/* Account required before any check can run */}
+ {!isAuthenticated && pendingIdentifier !== null && (
+ <div className="pt-3">
+ <AccountRequiredPrompt
+ redirectPath={
+ pendingIdentifier
+ ? `/verify?q=${encodeURIComponent(pendingIdentifier)}`
+ : '/verify'
+ }
+ onDismiss={() => setPendingIdentifier(null)}
+ />
+ </div>
+ )}
  {/* Slim examples row — appears only after welcome screen is gone */}
  {!showWelcome && (
  <div className="max-w-2xl mx-auto px-4 pt-2.5">
@@ -815,7 +872,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
 
  <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide flex items-center justify-center gap-2 flex-wrap">
- <span>100+ DATABASES · ~3S RESULTS · ANONYMOUS</span>
+ <span>100+ DATABASES · ~3S RESULTS · PRIVATE</span>
  <span className="hidden md:inline-flex items-center gap-1">
  ·
  <kbd className="px-1 py-px rounded-[0.25rem] border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>

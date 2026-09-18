@@ -102,7 +102,7 @@ const TESTIMONIALS = [
 ];
 
 const FAQS = [
- { q: 'How does the "Verified Safe" badge work?', a: 'After verification, you receive a unique link (e.g., safeorstolen.com/verify/abc123) and a downloadable PDF certificate. Add the link to your listing or include the badge image. Buyers can click to see the full verified report — no signup required.' },
+ { q: 'How does the "Verified Safe" badge work?', a: 'After verification, you receive a unique link (e.g., safeorstolen.com/verify/abc123) and a downloadable PDF certificate. Add the link to your listing or include the badge image. Buyers can click to see the full verified report — no signup needed to view it.' },
  { q: 'What information does the buyer see?', a: 'Buyers see the verification result (CLEAN or FLAGGED), the Trust Score (0-100), which databases were checked, and the verification date. For privacy, only the last 4 digits of the identifier are shown. Your personal info is never shared.' },
  { q: 'Does verification guarantee my item isn\'t stolen?', a: 'No verification service can provide a 100% guarantee because not all thefts are reported to databases. However, checking 100+ databases provides the most comprehensive available verification and demonstrates documented due diligence.' },
  { q: 'Can I verify items in bulk?', a: 'Yes! Verified Seller and Premium members can upload a CSV file with multiple serial numbers and receive batch verification reports. Perfect for resellers, estate sale companies, and high-volume sellers.' },

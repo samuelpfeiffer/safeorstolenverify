@@ -29,7 +29,7 @@ const SearchLimitDisplayComponent = ({
     return (
       <div className="text-center mt-3 space-y-1 animate-in fade-in duration-300">
         <p className="text-sm text-muted-foreground">
-          ✅ <span className="font-semibold text-sos-lime">2 Free Checks</span> — no sign-up required
+          ✅ <span className="font-semibold text-sos-lime">2 Free Checks</span> — with a free account
         </p>
         <Link 
           to="/pricing" 

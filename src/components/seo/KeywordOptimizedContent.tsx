@@ -18,7 +18,7 @@ export const KeywordOptimizedContent: React.FC<KeywordOptimizedContentProps> = (
           benefits: [
             "Free checking service for all used items - laptops, phones, cars, bikes, tools, TVs",
             "Mobile app to verify items instantly at yard sales, pawn shops, and online marketplaces",
-            "Check serial numbers, IMEI, and VIN numbers - no signup required",
+            "Check serial numbers, IMEI, and VIN numbers with a free account",
             "Avoid buying stolen goods - protect yourself from legal trouble and financial loss"
           ],
           cta: "Check If Item Is Stolen - Free"

@@ -62,19 +62,34 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     )
 
-    // Extract user_id from JWT if present — never trust client-supplied user_id
+    // Extract user_id from JWT — never trust client-supplied user_id.
+    // An account is now REQUIRED for every verification.
     let user_id: string | null = null
     const authHeader = req.headers.get('authorization')
-    if (authHeader) {
-      const token = authHeader.replace('Bearer ', '')
+    const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!
+    const bearer = authHeader?.replace('Bearer ', '').trim() ?? ''
+    if (bearer && bearer !== anonKey) {
       const { createClient: createAuthClient } = await import("https://esm.sh/@supabase/supabase-js@2.39.7")
       const authClient = createAuthClient(
         Deno.env.get('SUPABASE_URL')!,
-        Deno.env.get('SUPABASE_ANON_KEY')!
+        anonKey
       )
-      const { data: { user } } = await authClient.auth.getUser(token)
+      const { data: { user } } = await authClient.auth.getUser(bearer)
       user_id = user?.id ?? null
     }
+
+    if (!user_id) {
+      return new Response(
+        JSON.stringify({
+          allowed: false,
+          reason: 'auth_required',
+          code: 'AUTH_REQUIRED',
+          message: 'Create a free account to run a verification.'
+        }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
 
     // Check for active subscription (by user_id OR fingerprint)
     let sub = null;
@@ -159,42 +174,52 @@ serve(async (req) => {
       }
     }
 
-    // No subscription — check free tier usage with DUAL enforcement:
-    // 1. Server-side IP rate limit (cannot be spoofed by clearing localStorage)
-    // 2. Fingerprint-based DB tracking (original mechanism)
+    // No subscription — free tier is now account-scoped:
+    // 1. Per-account rate limit in this isolate (cheap abuse brake)
+    // 2. Account-scoped DB tracking, falling back to this browser's
+    //    pre-signup fingerprint row so earlier free checks still count.
     const FREE_LIMIT = 2
-    const clientIP = getClientIP(req);
 
-    // Periodically clean up old IP entries
+    // Periodically clean up old entries
     if (Math.random() < 0.01) cleanupIPMap();
 
-    // IP-based check (defense against fingerprint spoofing)
-    const ipCheck = checkIPRateLimit(clientIP);
-    if (!ipCheck.allowed) {
-      console.log(`[check-gate] IP rate limited: ${clientIP} (${ipCheck.count} checks)`);
+    const rate = checkIPRateLimit(`user:${user_id}`);
+    if (!rate.allowed) {
+      console.log(`[check-gate] rate limited account ${user_id} (${rate.count} checks)`);
       return new Response(
         JSON.stringify({
           allowed: false,
           reason: 'free_limit',
-          checks_used: ipCheck.count,
+          checks_used: rate.count,
           checks_limit: FREE_LIMIT
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
 
-    // Fingerprint-based DB check (original mechanism)
-    const { data: usage, error: usageError } = await supabase
+    // Account-scoped usage row first
+    let { data: usage } = await supabase
       .from('usage_tracking')
       .select('*')
-      .eq('fingerprint', fingerprint)
-      .single()
+      .eq('user_id', user_id)
+      .order('last_check_at', { ascending: false })
+      .limit(1)
+      .maybeSingle()
 
-    if (usageError && usageError.code === 'PGRST116') {
-      // First time user — insert and allow
+    if (!usage) {
+      // Adopt this browser's pre-signup row if it exists
+      const { data: fpUsage } = await supabase
+        .from('usage_tracking')
+        .select('*')
+        .eq('fingerprint', fingerprint)
+        .maybeSingle()
+      usage = fpUsage ?? null
+    }
+
+    if (!usage) {
       await supabase.from('usage_tracking').insert({
         fingerprint,
-        user_id: user_id || null,
+        user_id,
         check_count: 1,
         last_check_at: new Date().toISOString()
       })
@@ -205,7 +230,7 @@ serve(async (req) => {
       )
     }
 
-    if (usage && usage.check_count >= FREE_LIMIT) {
+    if (usage.check_count >= FREE_LIMIT) {
       return new Response(
         JSON.stringify({
           allowed: false,
@@ -218,15 +243,16 @@ serve(async (req) => {
     }
 
     // Allow and increment
-    const newCount = (usage?.check_count || 0) + 1
+    const newCount = (usage.check_count || 0) + 1
     await supabase
       .from('usage_tracking')
       .update({
         check_count: newCount,
         last_check_at: new Date().toISOString(),
-        user_id: user_id || usage?.user_id || null
+        user_id
       })
-      .eq('fingerprint', fingerprint)
+      .eq('id', usage.id)
+
 
     return new Response(
       JSON.stringify({

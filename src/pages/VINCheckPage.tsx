@@ -29,7 +29,7 @@ const VINCheckPage = () => {
  howItWorks: "Our VIN check queries multiple databases instantly. Enter the 17-character VIN and we'll search: stolen property reports from all 50 states, vehicle theft and title databases, insurance total loss records, and our proprietary theft database. Within seconds, you'll know if the vehicle has any theft reports, title issues, or red flags.",
  whyCheck: "Over 800,000 vehicles are stolen in the US each year. Many are sold to unsuspecting buyers who lose their money and the vehicle when police recover it. A stolen vehicle will be seized by law enforcement regardless of whether you paid for it, and you have no legal recourse to recover your money from the seller. A 30-second VIN check prevents this nightmare scenario.",
  benefits: [
- "Free VIN check - no registration required",
+ "Free VIN check with a free account",
  "Results in under 3 seconds",
  "Checks stolen property reports from all 50 states and vehicle theft and title databases stolen vehicle databases",
  "Verifies DMV and title status",

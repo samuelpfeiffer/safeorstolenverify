@@ -222,7 +222,7 @@ const MobileAppPage = () => {
  <div className="max-w-3xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Start Verifying in 30 Seconds</h2>
  <p className="text-muted-foreground mb-8">
- Install SafeOrStolen now. No app store, no account required. Just open, scan, and verify.
+ Install SafeOrStolen now. No app store needed. Create a free account, then scan and verify.
  </p>
  <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/')}>
  <Download className="h-5 w-5" />

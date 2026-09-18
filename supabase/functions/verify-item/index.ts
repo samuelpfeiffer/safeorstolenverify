@@ -5,7 +5,7 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { toCanonicalItemType } from '../_shared/itemType.ts';
 
 // Build marker: lets logs prove which bundle served a request.
-const BUILD_ID = 'verify-item-2026-09-18-ai-riskfix-1';
+const BUILD_ID = 'verify-item-2026-09-19-auth-required-1';
 console.log(`[verify-item] BUILD ${BUILD_ID}`);
 
 interface VerificationRequest {
@@ -14,11 +14,6 @@ interface VerificationRequest {
   userId?: string;
   fingerprint?: string;
 }
-
-// Anonymous checks are allowed only if check-gate has just granted this
-// fingerprint a free check (row exists, within the free limit, recent).
-const ANON_FREE_LIMIT = 2;
-const ANON_GRANT_WINDOW_MS = 10 * 60 * 1000;
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -29,62 +24,44 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(origin);
 
   try {
-    console.log('[verify-item] build:anon-gate-v2');
+    console.log('[verify-item] build:auth-required-v1');
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
     const body = await req.json() as VerificationRequest;
-    const { identifier, itemType: rawItemType, fingerprint } = body;
+    const { identifier, itemType: rawItemType } = body;
     // Canonicalize item_type at the single server-side write boundary
     const itemType = toCanonicalItemType(rawItemType);
 
-    // Resolve identity: a valid JWT wins; otherwise fall back to the
-    // fingerprint free-check grant. Client-supplied userId is never trusted.
+    // Resolve identity from the JWT only. Client-supplied userId is never
+    // trusted, and an account is required for every verification.
     let authenticatedUserId: string | null = null;
     const authHeader = req.headers.get('Authorization');
     const anonKey = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
     const token = authHeader?.replace('Bearer ', '').trim() ?? '';
 
     if (token && token !== anonKey) {
-      // A non-user token (the project's publishable/anon key) simply resolves to
-      // no user — fall through to the gated anonymous path rather than 401.
+      // The project's publishable/anon key resolves to no user, which is
+      // treated the same as being signed out.
       const { data: { user } } = await supabaseClient.auth.getUser(token);
       authenticatedUserId = user?.id ?? null;
     }
 
     if (!authenticatedUserId) {
-      // Anonymous path — must present a fingerprint that check-gate just cleared.
-      if (!fingerprint || typeof fingerprint !== 'string' || fingerprint.length > 128) {
-        return new Response(
-          JSON.stringify({ error: 'fingerprint required', code: 'GATE_REQUIRED' }),
-          { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-
-      const { data: usage } = await supabaseClient
-        .from('usage_tracking')
-        .select('check_count, last_check_at')
-        .eq('fingerprint', fingerprint)
-        .maybeSingle();
-
-      const lastCheck = usage?.last_check_at ? new Date(usage.last_check_at).getTime() : 0;
-      const fresh = Date.now() - lastCheck < ANON_GRANT_WINDOW_MS;
-      const withinLimit = (usage?.check_count ?? 0) <= ANON_FREE_LIMIT;
-
-      if (!usage || !fresh || !withinLimit) {
-        console.log('[verify-item] Anonymous gate rejected for fingerprint');
-        return new Response(
-          JSON.stringify({
-            error: 'Free check limit reached',
-            code: 'GATE_BLOCKED',
-            message: 'Create a free account to continue verifying items.'
-          }),
-          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
+      // An account is now REQUIRED for every verification.
+      console.log('[verify-item] Rejected unauthenticated request');
+      return new Response(
+        JSON.stringify({
+          error: 'Account required',
+          code: 'AUTH_REQUIRED',
+          message: 'Create a free account or sign in to run a verification.'
+        }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
+
 
     if (!identifier || identifier.trim().length === 0) {
       return new Response(

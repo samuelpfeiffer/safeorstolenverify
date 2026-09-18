@@ -34,7 +34,7 @@ const faqs = [
  },
  {
  question: "Is the barcode scanner free?",
- answer: "Your first 2 barcode scans and verifications are completely free — no account needed. After that, it's $0.99/check or $10/month unlimited. The scanner itself always works; it's the database verification that counts toward your free checks."
+ answer: "Your first 2 barcode scans and verifications are free with a free account. After that, it's $0.99/check or $10/month unlimited. The scanner itself always works; it's the database verification that counts toward your free checks."
  },
  {
  question: "What if the barcode is damaged or unreadable?",
