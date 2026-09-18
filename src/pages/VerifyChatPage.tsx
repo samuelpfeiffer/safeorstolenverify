@@ -244,6 +244,29 @@ const VerifyChatPage: React.FC = () => {
  },
  [messages, currentResult, updateMessage]);
 
+  /**
+   * Signed-out visitors can't run checks. Stash what they typed, show the
+   * inline sign-up prompt, and explain it in the conversation.
+   */
+  const requireAccount = useCallback(
+    (assistantId: string, pendingText: string) => {
+      const trimmed = pendingText.trim();
+      setPendingIdentifier(trimmed);
+      if (trimmed) {
+        savePendingVerification(trimmed, undefined, 'buyer').catch(() => {
+          /* redirect param still preserves the value */
+        });
+      }
+      updateMessage(assistantId, {
+        loading: false,
+        content:
+          "**Create a free account to run this check.** It takes a few seconds — sign up with Google or email below and I'll pick up right where we left off. You get 2 free checks with a free account.",
+      });
+    },
+    [savePendingVerification, updateMessage],
+  );
+
+
   const runVerification = useCallback(
  async (assistantId: string, identifier: string) => {
  // An account is required before any check runs.
