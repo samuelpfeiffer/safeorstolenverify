@@ -340,6 +340,8 @@ async function callAIAnalysis(
     // previously flipped clean items to a false STOLEN verdict.
     let status: VerificationResult['status'] = 'unknown';
 
+    console.log(`[AI Analysis] BUILD riskfix-1 risk_level=${analysis.risk_level}`);
+
     switch (analysis.risk_level) {
       case 'critical':
         status = 'stolen';
