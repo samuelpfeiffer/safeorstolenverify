@@ -737,6 +737,19 @@ const VerifyChatPage: React.FC = () => {
 
  {/* Composer — Luminal style */}
  <div className="border-t border-border/50 bg-card/40 backdrop-blur-xl shrink-0 relative">
+ {/* Account required before any check can run */}
+ {!isAuthenticated && pendingIdentifier !== null && (
+ <div className="pt-3">
+ <AccountRequiredPrompt
+ redirectPath={
+ pendingIdentifier
+ ? `/verify?q=${encodeURIComponent(pendingIdentifier)}`
+ : '/verify'
+ }
+ onDismiss={() => setPendingIdentifier(null)}
+ />
+ </div>
+ )}
  {/* Slim examples row — appears only after welcome screen is gone */}
  {!showWelcome && (
  <div className="max-w-2xl mx-auto px-4 pt-2.5">
