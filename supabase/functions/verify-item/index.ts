@@ -55,36 +55,18 @@ serve(async (req) => {
     }
 
     if (!authenticatedUserId) {
-      // Anonymous path — must present a fingerprint that check-gate just cleared.
-      if (!fingerprint || typeof fingerprint !== 'string' || fingerprint.length > 128) {
-        return new Response(
-          JSON.stringify({ error: 'fingerprint required', code: 'GATE_REQUIRED' }),
-          { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-
-      const { data: usage } = await supabaseClient
-        .from('usage_tracking')
-        .select('check_count, last_check_at')
-        .eq('fingerprint', fingerprint)
-        .maybeSingle();
-
-      const lastCheck = usage?.last_check_at ? new Date(usage.last_check_at).getTime() : 0;
-      const fresh = Date.now() - lastCheck < ANON_GRANT_WINDOW_MS;
-      const withinLimit = (usage?.check_count ?? 0) <= ANON_FREE_LIMIT;
-
-      if (!usage || !fresh || !withinLimit) {
-        console.log('[verify-item] Anonymous gate rejected for fingerprint');
-        return new Response(
-          JSON.stringify({
-            error: 'Free check limit reached',
-            code: 'GATE_BLOCKED',
-            message: 'Create a free account to continue verifying items.'
-          }),
-          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
+      // An account is now REQUIRED for every verification.
+      console.log('[verify-item] Rejected unauthenticated request');
+      return new Response(
+        JSON.stringify({
+          error: 'Account required',
+          code: 'AUTH_REQUIRED',
+          message: 'Create a free account or sign in to run a verification.'
+        }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
+
 
     if (!identifier || identifier.trim().length === 0) {
       return new Response(
