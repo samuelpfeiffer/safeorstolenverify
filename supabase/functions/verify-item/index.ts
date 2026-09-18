@@ -31,12 +31,12 @@ serve(async (req) => {
     );
 
     const body = await req.json() as VerificationRequest;
-    const { identifier, itemType: rawItemType, fingerprint } = body;
+    const { identifier, itemType: rawItemType } = body;
     // Canonicalize item_type at the single server-side write boundary
     const itemType = toCanonicalItemType(rawItemType);
 
-    // Resolve identity: a valid JWT wins; otherwise fall back to the
-    // fingerprint free-check grant. Client-supplied userId is never trusted.
+    // Resolve identity from the JWT only. Client-supplied userId is never
+    // trusted, and an account is required for every verification.
     let authenticatedUserId: string | null = null;
     const authHeader = req.headers.get('Authorization');
     const anonKey = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
