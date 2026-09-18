@@ -426,19 +426,21 @@ function aggregateResultsWithConfidence(
     };
   }
 
-  // Priority 2: Any suspicious report
-  const suspiciousResults = results.filter(r => r.status === 'suspicious');
-  if (suspiciousResults.length > 0) {
-    const aggregateConfidence = calculateAggregateConfidence(suspiciousResults);
+  // Priority 2: A source returned something inconclusive. There is no
+  // middle "suspicious" verdict — an inconclusive source means we could
+  // not determine a result, not that the item is flagged.
+  const inconclusiveResults = results.filter(r => r.status === 'suspicious');
+  if (inconclusiveResults.length > 0) {
+    const aggregateConfidence = calculateAggregateConfidence(inconclusiveResults);
     return {
-      status: 'suspicious',
+      status: 'unknown',
       confidence: aggregateConfidence,
       source: 'Multi-Source Verification',
-      message: `⚠️ SUSPICIOUS: Flagged by ${suspiciousResults.length} source(s). Verify before purchase.`,
+      message: `No theft record found for this item in the databases we checked. We could not confirm a result from every source.`,
       details: {
         all_sources: results,
         total_sources_checked: results.length,
-        suspicious_sources: suspiciousResults.map(r => ({ source: r.source, message: r.message }))
+        inconclusive_sources: inconclusiveResults.map(r => ({ source: r.source, message: r.message }))
       }
     };
   }
