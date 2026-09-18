@@ -43,8 +43,8 @@ serve(async (req) => {
     const token = authHeader?.replace('Bearer ', '').trim() ?? '';
 
     if (token && token !== anonKey) {
-      // A non-user token (the project's publishable/anon key) simply resolves to
-      // no user — fall through to the gated anonymous path rather than 401.
+      // The project's publishable/anon key resolves to no user, which is
+      // treated the same as being signed out.
       const { data: { user } } = await supabaseClient.auth.getUser(token);
       authenticatedUserId = user?.id ?? null;
     }
