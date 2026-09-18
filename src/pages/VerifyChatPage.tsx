@@ -394,6 +394,10 @@ const VerifyChatPage: React.FC = () => {
 
  const runUrlAnalysis = useCallback(
  async (assistantId: string, url: string) => {
+ if (!user) {
+ requireAccount(assistantId, url);
+ return;
+ }
  try {
  const { data, error } = await supabase.functions.invoke('marketplace-url-analyzer', {
  body: { url },
