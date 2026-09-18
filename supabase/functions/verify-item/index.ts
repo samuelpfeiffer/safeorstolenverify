@@ -4,6 +4,10 @@ import { runParallelVerification } from '../_shared/parallel-verification.ts';
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { toCanonicalItemType } from '../_shared/itemType.ts';
 
+// Build marker: lets logs prove which bundle served a request.
+const BUILD_ID = 'verify-item-2026-09-18-ai-riskfix-1';
+console.log(`[verify-item] BUILD ${BUILD_ID}`);
+
 interface VerificationRequest {
   identifier: string;
   itemType: string;
