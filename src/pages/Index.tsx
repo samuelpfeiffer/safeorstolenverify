@@ -224,7 +224,6 @@ const Index = () => {
  <div className="max-w-4xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-3">
  <Shield className="w-3.5 h-3.5" /> Simple, honest pricing
- <ProductTour />
  </div>
  <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
  Start with <span className="text-primary">2 free checks</span>. No credit card.
@@ -795,6 +794,7 @@ const Index = () => {
  })
  }}
  />
+ <ProductTour />
  </div>
  );
 };
