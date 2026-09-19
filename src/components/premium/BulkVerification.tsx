@@ -9,7 +9,7 @@ import { useAuth } from '@/lib/auth';
 
 interface BulkVerificationResult {
   identifier: string;
-  status: 'safe' | 'stolen' | 'lost' | 'error';
+  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
   message: string;
   providers: string[];
 }
@@ -79,7 +79,7 @@ export const BulkVerification = () => {
                 identifier,
                 status: data.finalStatus,
                 message: data.message,
-                providers: data.providers || []
+                providers: data.checkedSources || []
               };
             } catch (error) {
               return {

@@ -99,14 +99,14 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
 
       if (error) throw new Error(error.message);
 
-      const resolvedStatus = data?.finalStatus ?? data?.status;
+      const resolvedStatus = data?.finalStatus;
       if (resolvedStatus === 'stolen' || resolvedStatus === 'lost') {
         setVerificationResult({
           status: resolvedStatus,
           item: {
-            name: data.itemType || selectedItemType || 'Item',
+            name: data?.itemType || selectedItemType || 'Item',
             image: '/placeholder.svg',
-            description: data.message || 'This item has been reported.',
+            description: data?.message || 'This item has been reported.',
             serialNumber: searchQuery
           }
         });
@@ -114,7 +114,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
         setVerificationResult({
           status: 'safe',
           item: {
-            name: data.itemType || selectedItemType || 'Item',
+            name: data?.itemType || selectedItemType || 'Item',
             image: '/placeholder.svg',
             description: 'No theft reports found for this item.',
             serialNumber: searchQuery

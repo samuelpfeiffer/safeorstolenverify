@@ -87,7 +87,7 @@ export const EnterpriseDemo = () => {
         verificationResults.push({
           serialNumber: item.serialNumber,
           itemType: item.itemType,
-          status: status === 'clear' ? 'safe' : status,
+          status,
           confidence: data.confidence ?? 75,
           riskScore: 0,
           sources: data.checkedSources || ['SafeOrStolen Database']
