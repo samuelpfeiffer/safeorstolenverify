@@ -165,7 +165,7 @@ const AIVerifyPage: React.FC = () => {
           identifier: cleanedIdentifier,
           itemType,
           message: verify?.message || 'Verification complete',
-          confidence: verify?.confidence,
+          confidence: verify?.confidence ?? undefined,
           riskLevel: verify?.riskLevel,
           sources: verify?.checkedSources,
         };
