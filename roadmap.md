@@ -20,6 +20,13 @@
 - [ ] Publish, then repeat the live checks against the published site
 - [ ] Old verify-item / check-gate left deployed but unused (rollback only)
 
+# First-visit homepage product tour
+
+- [ ] Add a four-step anchored walkthrough for search, quick starts, free checks, and saved history
+- [ ] Persist dismissal/completion so returning visitors are not prompted again
+- [ ] Verify desktop/mobile behavior, keyboard dismissal, and unchanged homepage interactions
+- [ ] Publish and repeat the first-visit and returning-visit checks on the live site
+
 # Indexing cleanup
 
 - [x] Audit all 110 reported URLs against the live site
