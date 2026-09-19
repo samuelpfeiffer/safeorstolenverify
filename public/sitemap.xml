@@ -1701,6 +1701,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/verify-api</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/verify/classic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
