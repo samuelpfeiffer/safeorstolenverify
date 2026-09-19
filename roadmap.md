@@ -25,7 +25,7 @@
 - [x] Add a four-step anchored walkthrough for search, quick starts, free checks, and saved history
 - [x] Persist dismissal/completion so returning visitors are not prompted again
 - [x] Verify desktop/mobile behavior, keyboard dismissal, and unchanged homepage interactions
-- [ ] Publish and repeat the first-visit and returning-visit checks on the live site
+- [x] Publish and repeat the first-visit and returning-visit checks on the live site
 
 # Indexing cleanup
 
