@@ -13,7 +13,7 @@ export function getOrCreateFingerprint(): string {
 }
 
 export type GateStatus = 'idle' | 'checking' | 'allowed' | 'blocked'
-export type BlockReason = 'free_limit' | 'monthly_limit' | 'single_used' | null
+export type BlockReason = 'free_limit' | 'monthly_limit' | 'single_used' | 'auth_required' | null
 
 export function useVerifyGate() {
   const [status, setStatus] = useState<GateStatus>('idle')
@@ -21,40 +21,34 @@ export function useVerifyGate() {
   const [checksRemaining, setChecksRemaining] = useState<number | null>(null)
   const [userPlan, setUserPlan] = useState<string>('free')
 
+  /**
+   * Client-side pre-check only.
+   *
+   * The free-usage allowance and the account requirement are enforced by the
+   * verification endpoint itself (/verify-api), which refuses an
+   * unauthenticated caller with AUTH_REQUIRED and a caller over their
+   * allowance with LIMIT_REACHED. This hook no longer makes its own gate
+   * call; it just avoids sending an obviously signed-out request.
+   */
   const checkGate = useCallback(async (): Promise<boolean> => {
     setStatus('checking')
 
     try {
-      const { data: { user } } = await supabase.auth.getUser()
+      const { data: { session } } = await supabase.auth.getSession()
 
-      // user_id is now extracted server-side from the JWT — not sent in body
-      const { data, error } = await supabase.functions.invoke('check-gate', {
-        body: {
-          fingerprint: getOrCreateFingerprint(),
-        },
-      })
-
-      if (error) {
-        console.error('Gate check failed:', error)
-        // Fail open — don't block on network errors (but log)
-        setStatus('allowed')
-        return true
-      }
-
-      if (data?.allowed) {
-        setStatus('allowed')
-        setChecksRemaining(data.checks_remaining ?? null)
-        setUserPlan(data.plan || 'free')
-        return true
-      } else {
+      if (!session?.access_token) {
         setStatus('blocked')
-        setBlockReason(data?.reason || 'free_limit')
+        setBlockReason('auth_required')
         return false
       }
+
+      setStatus('allowed')
+      return true
     } catch (err) {
-      console.error('Gate check error:', err)
-      setStatus('idle')
-      return true // Fail open on errors
+      console.error('Gate pre-check error:', err)
+      // The server is authoritative; let the request through and let it decide.
+      setStatus('allowed')
+      return true
     }
   }, [])
 
