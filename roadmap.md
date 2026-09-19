@@ -9,6 +9,14 @@
 - [ ] Finish with a full project publish (not edge-function-only deploy)
 - [ ] Queued: "remove suspicious status" fix must also get a full project publish
 
+# Stale verification deploys — v2 cutover
+
+- [x] Audit every runtime caller of verify-item / check-gate
+- [ ] BLOCKED: create verify-item-v2 / check-gate-v2 as new Edge Functions —
+      this project forbids creating new Edge Functions (write and shell both
+      refused). Awaiting user decision on moving the gate + verdict logic to
+      in-app server routes, which publish through the working pipeline.
+
 # Indexing cleanup
 
 - [x] Audit all 110 reported URLs against the live site
