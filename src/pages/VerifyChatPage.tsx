@@ -30,6 +30,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
+import { requestVerification } from '@/lib/verification/verifyClient';
 import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
@@ -303,14 +304,12 @@ const VerifyChatPage: React.FC = () => {
            return;
          }
 
-         const { data: verify, error: verifyErr } = await supabase.functions.invoke('verify-item', {
-           body: {
-             identifier: cleanedIdentifier,
-             itemType,
-             fingerprint: getOrCreateFingerprint(),
-           },
+         const { data: verify, error: verifyErr } = await requestVerification({
+           identifier: cleanedIdentifier,
+           itemType,
+           fingerprint: getOrCreateFingerprint(),
          });
-         if (verifyErr) throw verifyErr;
+         if (verifyErr) throw new Error(verifyErr.message);
 
 
 

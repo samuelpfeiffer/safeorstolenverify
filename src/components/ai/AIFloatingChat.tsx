@@ -4,6 +4,7 @@ import { MessageCircle, X, Send, Brain, Sparkles, Minimize2, Maximize2 } from 'l
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
+import { requestVerification } from '@/lib/verification/verifyClient';
 import { useAuth } from '@/lib/auth';
 
 const LOCAL_KEY = 'sos_ai_floating_chat_v1';
@@ -229,10 +230,11 @@ export const AIFloatingChat: React.FC = () => {
       const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
       const itemType = detect?.type || 'serial';
       const cleaned = detect?.extractedValue || identifier;
-      const { data: verify, error } = await supabase.functions.invoke('verify-item', {
-        body: { identifier: cleaned, itemType, userId: user?.id },
+      const { data: verify, error } = await requestVerification({
+        identifier: cleaned,
+        itemType,
       });
-      if (error) throw error;
+      if (error) throw new Error(error.message);
       const status = verify?.finalStatus || 'unknown';
       const conf = verify?.confidence ? ` (${verify.confidence}% confidence)` : '';
       let result = '';
