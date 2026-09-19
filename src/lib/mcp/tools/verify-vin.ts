@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { supabaseForUser } from "../supabase";
+import { verifyViaApp } from "../verifyViaApp";
 
 export default defineTool({
  name: "verify_vin",
@@ -15,12 +15,12 @@ export default defineTool({
  if (!ctx.isAuthenticated()) {
  return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
  }
- const supabase = supabaseForUser(ctx);
- const { data, error } = await supabase.functions.invoke("check-gate", {
- body: { identifier: vin.trim().toUpperCase(), identifier_type: "vin" },
+ const { data, error } = await verifyViaApp(ctx, {
+ identifier: vin.trim().toUpperCase(),
+ itemType: "vehicle",
  });
  if (error) {
- return { content: [{ type: "text", text: `Verification failed: ${error.message}` }], isError: true };
+ return { content: [{ type: "text", text: `Verification failed: ${error}` }], isError: true };
  }
  return {
  content: [{ type: "text", text: JSON.stringify(data) }],
