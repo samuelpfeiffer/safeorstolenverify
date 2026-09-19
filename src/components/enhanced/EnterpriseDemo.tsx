@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AlertTriangle, CheckCircle, XCircle, Clock, Shield, Zap, BarChart3 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { requestVerification } from '@/lib/verification/verifyClient';
 import { toCanonicalItemType, itemTypeLabel } from '@/lib/itemType';
 
 interface VerificationResult {
@@ -63,15 +64,13 @@ export const EnterpriseDemo = () => {
       setProgress(Math.round(((i + 1) / items.length) * 100));
       
       try {
-        // Call the REAL verification edge function
-        const { data, error } = await supabase.functions.invoke('verify-item', {
-          body: {
-            serialNumber: item.serialNumber,
-            itemType: item.itemType
-          }
+        // Call the app's own verification endpoint
+        const { data, error } = await requestVerification({
+          identifier: item.serialNumber,
+          itemType: item.itemType
         });
 
-        if (error) {
+        if (error || !data) {
           verificationResults.push({
             serialNumber: item.serialNumber,
             itemType: item.itemType,
@@ -83,17 +82,15 @@ export const EnterpriseDemo = () => {
           continue;
         }
 
-        // Map the real API response to our result format
-        const status = data?.status || 'unknown';
-        const riskScore = data?.riskScore || 0;
-        
+        const status = data.finalStatus || 'unknown';
+
         verificationResults.push({
           serialNumber: item.serialNumber,
           itemType: item.itemType,
           status: status === 'clear' ? 'safe' : status,
-          confidence: data?.confidence || 75,
-          riskScore: riskScore,
-          sources: data?.sources || ['SafeOrStolen Database']
+          confidence: data.confidence ?? 75,
+          riskScore: 0,
+          sources: data.checkedSources || ['SafeOrStolen Database']
         });
       } catch (err) {
         console.error('Verification error:', err);

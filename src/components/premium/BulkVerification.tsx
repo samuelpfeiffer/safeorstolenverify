@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Upload, Download, FileSpreadsheet, CheckCircle, XCircle, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
+import { requestVerification } from '@/lib/verification/verifyClient';
 import { useAuth } from '@/lib/auth';
 
 interface BulkVerificationResult {
@@ -70,15 +71,13 @@ export const BulkVerification = () => {
         const batchResults = await Promise.all(
           batch.map(async (identifier) => {
             try {
-              const { data, error } = await supabase.functions.invoke('verify-item', {
-                body: { identifier }
-              });
+              const { data, error } = await requestVerification({ identifier });
 
-              if (error) throw error;
+              if (error || !data) throw new Error(error?.message ?? 'Verification failed');
 
               return {
                 identifier,
-                status: data.status,
+                status: data.finalStatus,
                 message: data.message,
                 providers: data.providers || []
               };
