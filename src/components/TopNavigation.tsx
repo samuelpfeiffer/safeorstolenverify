@@ -95,7 +95,7 @@ const TopNavigation = () => {
           </div>
 
           {/* Desktop Auth */}
-          <div className="hidden md:flex items-center gap-3">
+          <div data-tour="history" className="hidden md:flex items-center gap-3">
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -134,6 +134,7 @@ const TopNavigation = () => {
 
           {/* Mobile menu button */}
           <button
+            data-tour="history"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-muted/50 transition-colors"
             aria-label="Toggle menu"
