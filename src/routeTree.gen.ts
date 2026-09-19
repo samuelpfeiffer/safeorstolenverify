@@ -262,6 +262,7 @@ import { Route as UtahLicensePlateLookupRouteImport } from './routes/utah-licens
 import { Route as UtahVinLookupRouteImport } from './routes/utah-vin-lookup'
 import { Route as VerificationSuccessRouteImport } from './routes/verification-success'
 import { Route as VerifyRouteImport } from './routes/verify'
+import { Route as VerifyApiRouteImport } from './routes/verify-api'
 import { Route as VermontLicensePlateLookupRouteImport } from './routes/vermont-license-plate-lookup'
 import { Route as VermontVinLookupRouteImport } from './routes/vermont-vin-lookup'
 import { Route as VinCheckRouteImport } from './routes/vin-check'
@@ -1680,6 +1681,11 @@ const VerifyRoute = VerifyRouteImport.update({
   path: '/verify',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerifyApiRoute = VerifyApiRouteImport.update({
+  id: '/verify-api',
+  path: '/verify-api',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VermontLicensePlateLookupRoute =
   VermontLicensePlateLookupRouteImport.update({
     id: '/vermont-license-plate-lookup',
@@ -2514,6 +2520,7 @@ export interface FileRoutesByFullPath {
   '/utah-vin-lookup': typeof UtahVinLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
   '/verify': typeof VerifyRouteWithChildren
+  '/verify-api': typeof VerifyApiRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vermont-vin-lookup': typeof VermontVinLookupRoute
   '/vin-check': typeof VinCheckRoute
@@ -2871,6 +2878,7 @@ export interface FileRoutesByTo {
   '/utah-license-plate-lookup': typeof UtahLicensePlateLookupRoute
   '/utah-vin-lookup': typeof UtahVinLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
+  '/verify-api': typeof VerifyApiRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vermont-vin-lookup': typeof VermontVinLookupRoute
   '/vin-check': typeof VinCheckRoute
@@ -3232,6 +3240,7 @@ export interface FileRoutesById {
   '/utah-vin-lookup': typeof UtahVinLookupRoute
   '/verification-success': typeof VerificationSuccessRoute
   '/verify': typeof VerifyRouteWithChildren
+  '/verify-api': typeof VerifyApiRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vermont-vin-lookup': typeof VermontVinLookupRoute
   '/vin-check': typeof VinCheckRoute
@@ -3594,6 +3603,7 @@ export interface FileRouteTypes {
     | '/utah-vin-lookup'
     | '/verification-success'
     | '/verify'
+    | '/verify-api'
     | '/vermont-license-plate-lookup'
     | '/vermont-vin-lookup'
     | '/vin-check'
@@ -3951,6 +3961,7 @@ export interface FileRouteTypes {
     | '/utah-license-plate-lookup'
     | '/utah-vin-lookup'
     | '/verification-success'
+    | '/verify-api'
     | '/vermont-license-plate-lookup'
     | '/vermont-vin-lookup'
     | '/vin-check'
@@ -4311,6 +4322,7 @@ export interface FileRouteTypes {
     | '/utah-vin-lookup'
     | '/verification-success'
     | '/verify'
+    | '/verify-api'
     | '/vermont-license-plate-lookup'
     | '/vermont-vin-lookup'
     | '/vin-check'
@@ -4672,6 +4684,7 @@ export interface RootRouteChildren {
   UtahVinLookupRoute: typeof UtahVinLookupRoute
   VerificationSuccessRoute: typeof VerificationSuccessRoute
   VerifyRoute: typeof VerifyRouteWithChildren
+  VerifyApiRoute: typeof VerifyApiRoute
   VermontLicensePlateLookupRoute: typeof VermontLicensePlateLookupRoute
   VermontVinLookupRoute: typeof VermontVinLookupRoute
   VinCheckRoute: typeof VinCheckRoute
@@ -6500,6 +6513,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VerifyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verify-api': {
+      id: '/verify-api'
+      path: '/verify-api'
+      fullPath: '/verify-api'
+      preLoaderRoute: typeof VerifyApiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vermont-license-plate-lookup': {
       id: '/vermont-license-plate-lookup'
       path: '/vermont-license-plate-lookup'
@@ -7629,6 +7649,7 @@ const rootRouteChildren: RootRouteChildren = {
   UtahVinLookupRoute: UtahVinLookupRoute,
   VerificationSuccessRoute: VerificationSuccessRoute,
   VerifyRoute: VerifyRouteWithChildren,
+  VerifyApiRoute: VerifyApiRoute,
   VermontLicensePlateLookupRoute: VermontLicensePlateLookupRoute,
   VermontVinLookupRoute: VermontVinLookupRoute,
   VinCheckRoute: VinCheckRoute,
