@@ -532,15 +532,24 @@ export async function runVerification(
   }
 
   try {
+    // Column set matches the table: there is no `status`/`details` column —
+    // the verdict lives in verification_status, the detail in risk_assessment.
     await admin.from('verification_results').insert({
       user_id: userId,
       serial_number: cleanIdentifier,
       item_type: itemType,
-      status: result.finalStatus,
-      confidence_score: result.confidence,
       api_source: 'app-server-verify',
       verification_status: result.finalStatus,
-      details: { providers, riskLevel: result.riskLevel, message: result.message },
+      confidence_score: result.confidence,
+      risk_assessment: {
+        riskLevel: result.riskLevel,
+        message: result.message,
+        providers: providers.map((p) => ({
+          provider: p.provider,
+          status: p.status,
+          confidence: p.confidence,
+        })),
+      },
     });
   } catch (error) {
     console.error('[verify] failed to record result:', error);
