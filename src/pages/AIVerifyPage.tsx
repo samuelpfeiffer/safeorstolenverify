@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
+import { requestVerification } from '@/lib/verification/verifyClient';
 import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 
@@ -152,25 +153,19 @@ const AIVerifyPage: React.FC = () => {
         }
 
         // 3. Run real verification
-        const { data: verify, error: verifyErr } = await supabase.functions.invoke(
-          'verify-item',
-          {
-            body: {
-              identifier: cleanedIdentifier,
-              itemType,
-              userId: user.id,
-            },
-          }
-        );
+        const { data: verify, error: verifyErr } = await requestVerification({
+          identifier: cleanedIdentifier,
+          itemType,
+        });
 
-        if (verifyErr) throw verifyErr;
+        if (verifyErr) throw new Error(verifyErr.message);
 
         const result: VerifyResult = {
           status: verify?.finalStatus || 'unknown',
           identifier: cleanedIdentifier,
           itemType,
           message: verify?.message || 'Verification complete',
-          confidence: verify?.confidence,
+          confidence: verify?.confidence ?? undefined,
           riskLevel: verify?.riskLevel,
           sources: verify?.checkedSources,
         };

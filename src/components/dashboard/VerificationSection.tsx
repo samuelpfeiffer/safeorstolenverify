@@ -11,6 +11,7 @@ import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { ContactCard } from '@/components/ContactCard';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { requestVerification } from '@/lib/verification/verifyClient';
 
 interface VerificationSectionProps {
   prePopulatedData?: {
@@ -90,25 +91,22 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
     setShowContactCard(false);
     
     try {
-      // Call the real verify-item edge function
-      const { data, error } = await supabase.functions.invoke('verify-item', {
-        body: {
-          identifier: searchQuery.trim(),
-          itemType: selectedItemType || 'general',
-          userId: user.id
-        }
+      // Call the app's own verification endpoint
+      const { data, error } = await requestVerification({
+        identifier: searchQuery.trim(),
+        itemType: selectedItemType || 'general',
       });
 
-      if (error) throw error;
+      if (error) throw new Error(error.message);
 
-      const resolvedStatus = data?.finalStatus ?? data?.status;
+      const resolvedStatus = data?.finalStatus;
       if (resolvedStatus === 'stolen' || resolvedStatus === 'lost') {
         setVerificationResult({
           status: resolvedStatus,
           item: {
-            name: data.itemType || selectedItemType || 'Item',
+            name: data?.itemType || selectedItemType || 'Item',
             image: '/placeholder.svg',
-            description: data.message || 'This item has been reported.',
+            description: data?.message || 'This item has been reported.',
             serialNumber: searchQuery
           }
         });
@@ -116,7 +114,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
         setVerificationResult({
           status: 'safe',
           item: {
-            name: data.itemType || selectedItemType || 'Item',
+            name: data?.itemType || selectedItemType || 'Item',
             image: '/placeholder.svg',
             description: 'No theft reports found for this item.',
             serialNumber: searchQuery

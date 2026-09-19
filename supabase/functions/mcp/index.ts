@@ -90,6 +90,35 @@ var detect_identifier_default = defineTool({
 // src/lib/mcp/tools/verify-imei.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.26.3";
 import { z as z2 } from "npm:zod@^3.25.76";
+
+// src/lib/mcp/verifyViaApp.ts
+function runtimeEnv2(name) {
+  const runtime = globalThis;
+  return runtime.Deno?.env?.get?.(name) ?? runtime.process?.env?.[name];
+}
+function siteUrl() {
+  return (runtimeEnv2("SITE_URL")?.trim() || runtimeEnv2("VITE_SITE_URL")?.trim() || "https://safeorstolen.com").replace(/\/+$/, "");
+}
+async function verifyViaApp(ctx, input) {
+  const token = ctx.getToken();
+  if (!token) return { data: null, error: "Not authenticated" };
+  const response = await fetch(`${siteUrl()}/verify-api`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({ identifier: input.identifier, itemType: input.itemType })
+  });
+  const payload = await response.json().catch(() => null);
+  if (!response.ok) {
+    const message = payload?.message ?? payload?.error ?? `Verification failed (${response.status})`;
+    return { data: null, error: message };
+  }
+  return { data: payload, error: null };
+}
+
+// src/lib/mcp/tools/verify-imei.ts
 var verify_imei_default = defineTool2({
   name: "verify_imei",
   title: "Verify phone IMEI",
@@ -102,12 +131,12 @@ var verify_imei_default = defineTool2({
     if (!ctx.isAuthenticated()) {
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
-    const supabase = supabaseForUser(ctx);
-    const { data, error } = await supabase.functions.invoke("check-gate", {
-      body: { identifier: imei.replace(/\D/g, ""), identifier_type: "imei" }
+    const { data, error } = await verifyViaApp(ctx, {
+      identifier: imei.replace(/\D/g, ""),
+      itemType: "phone"
     });
     if (error) {
-      return { content: [{ type: "text", text: `Verification failed: ${error.message}` }], isError: true };
+      return { content: [{ type: "text", text: `Verification failed: ${error}` }], isError: true };
     }
     return {
       content: [{ type: "text", text: JSON.stringify(data) }],
@@ -131,12 +160,12 @@ var verify_vin_default = defineTool3({
     if (!ctx.isAuthenticated()) {
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
-    const supabase = supabaseForUser(ctx);
-    const { data, error } = await supabase.functions.invoke("check-gate", {
-      body: { identifier: vin.trim().toUpperCase(), identifier_type: "vin" }
+    const { data, error } = await verifyViaApp(ctx, {
+      identifier: vin.trim().toUpperCase(),
+      itemType: "vehicle"
     });
     if (error) {
-      return { content: [{ type: "text", text: `Verification failed: ${error.message}` }], isError: true };
+      return { content: [{ type: "text", text: `Verification failed: ${error}` }], isError: true };
     }
     return {
       content: [{ type: "text", text: JSON.stringify(data) }],
@@ -161,16 +190,12 @@ var verify_serial_default = defineTool4({
     if (!ctx.isAuthenticated()) {
       return { content: [{ type: "text", text: "Not authenticated" }], isError: true };
     }
-    const supabase = supabaseForUser(ctx);
-    const { data, error } = await supabase.functions.invoke("check-gate", {
-      body: {
-        identifier: serial.trim(),
-        identifier_type: "serial",
-        item_type: item_type ?? void 0
-      }
+    const { data, error } = await verifyViaApp(ctx, {
+      identifier: serial.trim(),
+      itemType: item_type ?? "serial"
     });
     if (error) {
-      return { content: [{ type: "text", text: `Verification failed: ${error.message}` }], isError: true };
+      return { content: [{ type: "text", text: `Verification failed: ${error}` }], isError: true };
     }
     return {
       content: [{ type: "text", text: JSON.stringify(data) }],

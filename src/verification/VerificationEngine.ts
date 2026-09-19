@@ -2,6 +2,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { validateSerialNumber, sanitizeInput } from '@/utils/inputValidation';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
+import { requestVerification } from '@/lib/verification/verifyClient';
 
 export interface VerificationRequest {
   serialNumber: string;
@@ -120,29 +121,25 @@ class VerificationEngine {
   }
 
   private async primaryVerification(request: VerificationRequest): Promise<Partial<VerificationResult>> {
-    const { data, error } = await supabase.functions.invoke('verify-item', {
-      body: {
-        identifier: request.serialNumber,
-        itemType: request.itemType,
-        userId: request.metadata?.user_id,
-        fingerprint: typeof window !== 'undefined' ? getOrCreateFingerprint() : undefined
-      }
+    const { data, error } = await requestVerification({
+      identifier: request.serialNumber,
+      itemType: request.itemType,
+      fingerprint: typeof window !== 'undefined' ? getOrCreateFingerprint() : null,
     });
 
     if (error) {
       throw new Error(`Primary verification failed: ${error.message}`);
     }
 
-    // Handle the new response format from verify-item
-    if (data?.error) {
-      throw new Error(data.error);
+    if (!data) {
+      throw new Error('Invalid response from verification service');
     }
 
     return {
       status: this.normalizeStatus(data.finalStatus || 'unknown'),
-      confidence: data.confidence || 0,
-      source: 'verify-item',
-      details: data.providers || data.details,
+      confidence: data.confidence ?? 0,
+      source: 'app-server-verify',
+      details: data.providers,
       message: data.message || 'Verification completed'
     };
   }

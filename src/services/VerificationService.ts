@@ -3,8 +3,8 @@
  * Calls the verify-item edge function for all verifications
  */
 
-import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
+import { requestVerification } from '@/lib/verification/verifyClient';
 
 export interface VerificationRequest {
   identifier: string;
@@ -54,24 +54,21 @@ class VerificationService {
     const { identifier, itemType, userId } = request;
 
     try {
-      const { data, error } = await supabase.functions.invoke('verify-item', {
-        body: { 
-          identifier: identifier.trim(),
-          itemType,
-          userId,
-          fingerprint: getFingerprint(),
-        }
+      const { data, error } = await requestVerification({
+        identifier: identifier.trim(),
+        itemType,
+        fingerprint: getFingerprint() ?? null,
       });
 
       if (error) {
         throw new Error(error.message || 'Verification failed');
       }
-      
+
       if (!data || typeof data !== 'object') {
         throw new Error('Invalid response from verification service');
       }
 
-      return data as AggregatedResult;
+      return data as unknown as AggregatedResult;
 
     } catch (error: any) {
       console.error('[VerificationService] Error:', error);
