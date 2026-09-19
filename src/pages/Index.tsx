@@ -4,6 +4,7 @@ import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO'
 import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { HomeAIHero } from '@/components/home/HomeAIHero';
+import { ProductTour } from '@/components/onboarding/ProductTour';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
@@ -219,10 +220,11 @@ const Index = () => {
  </div>
 
  {/* ── SOFT VALUE STRIP — trust-led pricing reminder ── */}
- <section className="py-10 px-4 bg-gradient-to-b from-background to-muted/20 border-b border-border">
+ <section data-tour="free-checks" className="py-10 px-4 bg-gradient-to-b from-background to-muted/20 border-b border-border">
  <div className="max-w-4xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-3">
  <Shield className="w-3.5 h-3.5" /> Simple, honest pricing
+ <ProductTour />
  </div>
  <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
  Start with <span className="text-primary">2 free checks</span>. No credit card.

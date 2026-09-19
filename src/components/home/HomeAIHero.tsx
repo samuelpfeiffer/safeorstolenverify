@@ -213,7 +213,7 @@ export const HomeAIHero: React.FC = () => {
  </p>
 
  {/* Chat panel */}
- <div className="rounded-3xl border-2 border-primary/40 bg-card/60 backdrop-blur-md shadow-[0_0_60px_-15px_hsl(var(--primary)/0.5)] overflow-hidden">
+ <div data-tour="search" className="rounded-3xl border-2 border-primary/40 bg-card/60 backdrop-blur-md shadow-[0_0_60px_-15px_hsl(var(--primary)/0.5)] overflow-hidden">
  {/* Header */}
  <div className="flex items-center justify-between px-5 py-3 bg-primary/5 border-b border-border">
  <div className="flex items-center gap-2">
@@ -316,7 +316,7 @@ export const HomeAIHero: React.FC = () => {
 
  {/* Suggestion chips */}
  {!started && (
- <div className="mt-3 flex flex-wrap gap-2">
+ <div data-tour="quick-actions" className="mt-3 flex flex-wrap gap-2">
  {SUGGESTIONS.map((s) => (
  <button
  key={s.label}
