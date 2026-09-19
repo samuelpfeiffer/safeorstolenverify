@@ -49,6 +49,12 @@ export function ProductTour() {
     setIsOpen(false);
   }, []);
 
+  const advance = () => {
+    setTargetRect(null);
+    setPosition(null);
+    setStepIndex((index) => index + 1);
+  };
+
   useEffect(() => {
     try {
       if (!window.localStorage.getItem(SEEN_KEY)) {
@@ -136,8 +142,16 @@ export function ProductTour() {
 
   return createPortal(
     <div className="fixed inset-0 z-[100]" role="dialog" aria-modal="true" aria-label="SafeOrStolen product tour">
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-[1px]" />
-      {spotlightStyle && <div aria-hidden="true" className="pointer-events-none fixed rounded-xl border-2 border-primary bg-transparent shadow-[0_0_0_4px_hsl(var(--primary)/0.16),0_0_34px_hsl(var(--primary)/0.48)]" style={spotlightStyle} />}
+      {!spotlightStyle && <div className="absolute inset-0 bg-background/80" />}
+      {spotlightStyle && (
+        <>
+          <div aria-hidden="true" className="pointer-events-none fixed left-0 right-0 top-0 bg-background/80" style={{ height: spotlightStyle.top }} />
+          <div aria-hidden="true" className="pointer-events-none fixed bottom-0 left-0 right-0 bg-background/80" style={{ top: spotlightStyle.top + spotlightStyle.height }} />
+          <div aria-hidden="true" className="pointer-events-none fixed left-0 bg-background/80" style={{ top: spotlightStyle.top, width: spotlightStyle.left, height: spotlightStyle.height }} />
+          <div aria-hidden="true" className="pointer-events-none fixed right-0 bg-background/80" style={{ top: spotlightStyle.top, left: spotlightStyle.left + spotlightStyle.width, height: spotlightStyle.height }} />
+          <div aria-hidden="true" className="pointer-events-none fixed rounded-xl border-2 border-primary bg-transparent shadow-[0_0_0_4px_hsl(var(--primary)/0.16),0_0_34px_hsl(var(--primary)/0.48)]" style={spotlightStyle} />
+        </>
+      )}
       <div
         ref={calloutRef}
         tabIndex={-1}
@@ -154,7 +168,7 @@ export function ProductTour() {
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{currentStep.description}</p>
         </div>
         <div className="mt-5 flex justify-end">
-          <Button type="button" onClick={() => isLastStep ? finish() : setStepIndex((index) => index + 1)} className="min-w-24 font-semibold">
+          <Button type="button" onClick={() => isLastStep ? finish() : advance()} className="min-w-24 font-semibold">
             {isLastStep ? 'Got it' : 'Next'}
             {!isLastStep && <ArrowRight className="h-4 w-4" />}
           </Button>
