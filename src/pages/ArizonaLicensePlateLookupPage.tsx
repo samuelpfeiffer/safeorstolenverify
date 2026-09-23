@@ -18,7 +18,7 @@ const ArizonaLicensePlateLookupPage = () => {
  'check arizona license plate'
  ]}
  content={{
- intro: "Search Arizona's TheftAZ database and 100+ other sources to verify any AZ vehicle. Free Arizona license plate lookup for buyers AND sellers. Check stolen status in 3 seconds before any used car purchase.",
+ intro: "Search Arizona's TheftAZ database and other sources to verify any AZ vehicle. Free Arizona license plate lookup for buyers AND sellers. Check stolen status in 3 seconds before any used car purchase.",
  
  whatIs: "Arizona license plate lookup verifies whether a vehicle registered in Arizona is reported stolen by checking the AZ license plate number against TheftAZ (Arizona Attorney General's stolen property database), vehicle theft and title databases, and theft reports. Perfect for anyone buying or selling a used vehicle in Phoenix, Tucson, Mesa, Chandler, or anywhere in Arizona.",
  

@@ -305,7 +305,7 @@ const VsBikeIndex = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      We query NICB, carrier and manufacturer blacklists, law enforcement, carrier blacklists, and more. 
+                      We check SafeOrStolen's own stolen-item reports, public web results and AI analysis, plus BikeIndex for bicycles. 
                       Bike Index relies on user-submitted reports only.
                     </p>
                   </CardContent>

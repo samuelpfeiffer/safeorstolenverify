@@ -71,7 +71,7 @@ const TopVINCheckServices2025 = () => {
       rank: 2,
       name: 'Carfax',
       rating: 4.6,
-      badge: 'Most Comprehensive',
+      badge: 'Multi-Category',
       badgeColor: 'bg-blue-500',
       bestFor: 'Complete vehicle history with service records',
       price: '$39.99/report',

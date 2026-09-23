@@ -42,7 +42,7 @@ const ComparisonAutocheck = () => {
       <PageSEO
         title="Best Autocheck Alternative 2026 | SafeOrStolen"
         description="SafeOrStolen verifies EVERYTHING (phones, vehicles, bikes, firearms). Autocheck only checks vehicles. Free mobile app with 2 free searches."
-        keywords="Autocheck alternative, cheaper than Autocheck, Autocheck for phones, Autocheck for firearms, best Autocheck alternative, better than Autocheck, free Autocheck alternative, universal verification"
+        keywords="Autocheck alternative, cheaper than Autocheck, Autocheck for phones, Autocheck for firearms, best Autocheck alternative, free Autocheck alternative, universal verification"
         canonical="/vs-autocheck"
         structuredData={comparisonSchema}
       />

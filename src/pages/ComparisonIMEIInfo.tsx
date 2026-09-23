@@ -48,7 +48,7 @@ const ComparisonIMEIInfo = () => {
       <PageSEO
         title="Best IMEI.info Alternative | SafeOrStolen App"
         description="SafeOrStolen offers iOS/Android app with barcode scanning. Compare IMEI checkers."
-        keywords="IMEI.info alternative, IMEI.info app, best IMEI.info alternative, better than IMEI.info, IMEI checker app, IMEI checker comparison"
+        keywords="IMEI.info alternative, IMEI.info app, best IMEI.info alternative, IMEI checker app, IMEI checker comparison"
         canonical="/vs-imeiinfo"
         structuredData={comparisonSchema}
       />

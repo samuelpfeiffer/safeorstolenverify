@@ -20,7 +20,7 @@ const VsVinCheckInfo = () => {
       },
       {
         "@type": "Question",
-        "name": "Is SafeOrStolen better than VinCheck.info?",
+        "name": "How does SafeOrStolen compare with VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "SafeOrStolen checks vehicles AND phones, bikes, laptops, electronics, and firearms. VinCheck.info only checks vehicles. SafeOrStolen also has a mobile app for marketplace meetups."
@@ -279,7 +279,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks multiple databases including law enforcement signals, and carrier blacklists for comprehensive coverage similar to NICB for vehicles.
+                  SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis. It does not search NICB; use NICB VINCheck separately.
                 </p>
               </CardContent>
             </Card>

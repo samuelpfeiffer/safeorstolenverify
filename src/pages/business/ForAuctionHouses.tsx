@@ -176,7 +176,7 @@ export default function ForAuctionHouses() {
  <Card className="text-center">
  <CardContent className="pt-6">
  <Search className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">100+ Database Sources</h3>
+ <h3 className="font-semibold mb-2">Multiple Sources</h3>
  <p className="text-sm text-muted-foreground">Every item checked against theft reports, insurance claims, carrier and theft databases, vehicle theft and title databases, and pawn shop databases.</p>
  </CardContent>
  </Card>

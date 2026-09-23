@@ -42,7 +42,7 @@ const BestFreeIMEICheckers2025 = () => {
       rating: 4.9,
       badge: 'Best Overall',
       badgeColor: 'bg-green-500',
-      description: 'The most comprehensive free IMEI checker with law enforcement data',
+      description: "Free IMEI checks across SafeOrStolen's own stolen-item reports, public web results and AI analysis",
       freeChecks: '2 free (no card required)',
       blacklistCheck: 'Included free',
       database: '100+ stolen items',
@@ -225,7 +225,7 @@ const BestFreeIMEICheckers2025 = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/verify">Try #1 Pick Free</Link>
+                  <Link to="/verify">Try SafeOrStolen Free</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#rankings">See Full Rankings</a>

@@ -15,7 +15,7 @@ const TheftAZAlternativePage = () => {
       },
       {
         "@type": "Question",
-        "name": "Is SafeOrStolen better than TheftAZ?",
+        "name": "How does SafeOrStolen compare with TheftAZ?",
         "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen covers more categories. While TheftAZ only searches Arizona records, SafeOrStolen checks multiple sources including TheftAZ, community theft reports, NICB, and community theft reports. Items stolen in California, Texas, or any other state that end up for sale in Arizona would be missed by TheftAZ alone." }
       },
       {
@@ -91,7 +91,7 @@ const TheftAZAlternativePage = () => {
                     ['NICB (vehicles)', false, true],
                     ['carrier and manufacturer blacklists (phones)', false, true],
                     ['All 50 state databases', false, true],
-                    ['Carrier blacklists (AT&T, Verizon, T-Mobile)', false, true],
+                    
                     ['Insurance theft claims', false, true],
                     ['Nationwide firearm theft reports', false, true],
                     ['BikeIndex (700K+ bikes)', false, true],
@@ -139,7 +139,7 @@ const TheftAZAlternativePage = () => {
                 <p className="text-muted-foreground mt-2">TheftAZ (theftaz.azag.gov) is the Arizona Attorney General's stolen property database. It contains records of stolen vehicles, firearms, electronics, tools, and other property reported to Arizona law enforcement agencies. It's free to use but limited to Arizona-only records.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen better than TheftAZ?</summary>
+                <summary className="font-semibold text-foreground cursor-pointer">How does SafeOrStolen compare with TheftAZ?</summary>
                 <p className="text-muted-foreground mt-2">SafeOrStolen covers more categories. While TheftAZ only searches Arizona records, SafeOrStolen checks multiple sources including NICB, carrier and manufacturer blacklists, and community theft reports. Items stolen in other states that end up in Arizona would be missed by TheftAZ alone.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
