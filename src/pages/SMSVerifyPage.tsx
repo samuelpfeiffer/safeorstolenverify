@@ -241,7 +241,7 @@ const SMSVerifyPage = () => {
  {[
  { icon: <MessageSquare className="h-10 w-10" />, title: "1. Find the ID", desc: "Locate the IMEI (15 digits), VIN (17 chars), or serial number on the item" },
  { icon: <Smartphone className="h-10 w-10" />, title: "2. Send a Text", desc: "Text the number to SafeOrStolen — works from any phone, no data needed" },
- { icon: <Zap className="h-10 w-10" />, title: "3. Instant Check", desc: "We query carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and our aggregated stolen-item sources" },
+ { icon: <Zap className="h-10 w-10" />, title: "3. Instant Check", desc: "We analyze SafeOrStolen's reports, public web results, AI analysis, and specialized sources like BikeIndex and HotGunz" },
  { icon: <CheckCircle className="h-10 w-10" />, title: "4. Get Results", desc: "Receive CLEAN ✅, STOLEN 🚨, or UNKNOWN ⚠️ within 3-5 seconds" }
  ].map((step, i) => (
  <Card key={i} className="text-center">
@@ -269,8 +269,8 @@ const SMSVerifyPage = () => {
  <div className="grid md:grid-cols-3 gap-6">
  {[
  { title: "🔫 Gun Shows", desc: "Text any firearm serial number to check stolen firearms databases and analyze the serial for signs of alteration. Handguns, rifles, shotguns — any caliber, any manufacturer.", link: "/gun-serial-number-lookup" },
- { title: "🚗 Car Lots & Private Sales", desc: "Text the VIN from any vehicle to check vehicle theft and title databases, and 50-vehicle theft and title databases. Catch title-washed, salvaged, or stolen vehicles in seconds.", link: "/vin-checker" },
- { title: "📱 Phone Meetups", desc: "Text the IMEI to check carrier and theft databases, AT&T, Verizon, T-Mobile carrier databases. Verify any iPhone, Samsung, Google Pixel before paying.", link: "/imei-checker" },
+ { title: "🚗 Car Lots & Private Sales", desc: "Text the VIN from any vehicle to check for stolen reports via SafeOrStolen and public web searches. Catch potentially stolen vehicles in seconds.", link: "/vin-checker" },
+ { title: "📱 Phone Meetups", desc: "Text the IMEI to check SafeOrStolen's reports, public web results, and AI analysis for stolen indications, and to identify phone model details. Verify any iPhone, Samsung, Google Pixel before paying.", link: "/imei-checker" },
  { title: "🏪 Flea Markets & Swap Meets", desc: "Verify electronics, tools, bikes — anything with a serial number. Text it and know within seconds if it's been reported stolen anywhere in the US.", link: "/check-electronics" },
  { title: "🏚️ Pawn Shops", desc: "Pawn shop owners can text serial numbers to verify items before accepting them. Comply with state laws requiring stolen property checks.", link: "/for-pawn-shops" },
  { title: "💻 Craigslist & Facebook Meetups", desc: "Meeting a seller from an online listing? Text the serial number while inspecting the item. Get peace of mind before handing over cash.", link: "/facebook-marketplace-safety" }

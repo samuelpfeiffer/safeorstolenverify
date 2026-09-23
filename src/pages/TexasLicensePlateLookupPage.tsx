@@ -37,7 +37,7 @@ const TexasLicensePlateLookupPage = () => {
  ],
  process: [
  "Record the Texas license plate number including all letters and numbers - TX plates are rear-only (no front plate required)",
- "Note the vehicle's make, model, color, and year for comparison with Texas vehicle theft and title databases",
+ "Note the vehicle's make, model, color, and year for comparison with public vehicle records.",
  "Enter the TX plate number into our verification tool (select Texas as state)",
  "Review the report showing Texas registered owner, vehicle information, and theft status",
  "Verify the Texas DMV registered owner name matches the seller's Texas ID",

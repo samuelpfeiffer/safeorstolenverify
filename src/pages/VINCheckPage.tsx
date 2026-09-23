@@ -31,7 +31,7 @@ const VINCheckPage = () => {
  benefits: [
  "Free VIN check with a free account",
  "Results in under 3 seconds",
- "Checks community theft reports and vehicle theft and title databases stolen vehicle databases",
+ "Analyzes SafeOrStolen reports, public web results, and AI analysis for stolen vehicles",
  "Verifies DMV and title status",
  "Shows insurance total loss history",
  "Works for cars, trucks, motorcycles, RVs, and trailers",

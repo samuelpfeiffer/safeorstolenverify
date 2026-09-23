@@ -272,7 +272,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  commonTargets: ['Chevrolet Silverado', 'Ford F-150', 'Nissan Altima', 'Honda Accord', 'Toyota Camry', 'Dodge Charger'],
  verificationAdvice: 'Mississippi verification must include flood damage checks, especially for coastal and post-hurricane purchases. Review vehicle history for Louisiana title history—flood vehicles often cross state lines.',
  uniqueFaqs: [
- { question: 'Are flood-damaged vehicles common in Mississippi?', answer: 'Yes, the Gulf Coast faces hurricane risks, and flood-damaged vehicles from Louisiana also enter Mississippi. Always check vehicle theft and title databases and inspect carefully regardless of title status.' },
+ { question: 'Are flood-damaged vehicles common in Mississippi?', answer: 'Yes, the Gulf Coast faces hurricane risks, and flood-damaged vehicles from Louisiana also enter Mississippi. Always review vehicle history and inspect carefully regardless of title status.' },
  { question: 'Is Jackson vehicle theft a concern?', answer: 'Jackson has elevated theft rates compared to other Mississippi cities. Verify any Jackson-area purchase carefully.' }
  ]
  },

@@ -89,7 +89,7 @@ export const GlobalAISEO: React.FC = () => {
  { "@type": "ListItem", "position": 2, "name": "VIN Checker — Vehicle Verification", "url": "https://safeorstolen.com/vin-checker", "description": "Check if a car, truck, or motorcycle is stolen using its VIN number." },
  { "@type": "ListItem", "position": 3, "name": "Firearms Serial Number Check", "url": "https://safeorstolen.com/firearms-check", "description": "Verify firearms serial numbers against stolen firearms databases." },
  { "@type": "ListItem", "position": 4, "name": "Serial Number Checker — Electronics", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify electronics by serial number." },
- { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check bike frame numbers against stolen bicycle databases and community theft registries." },
+ { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check bicycle frame numbers using public web results and SafeOrStolen's reports." },
  { "@type": "ListItem", "position": 6, "name": "License Plate Lookup", "url": "https://safeorstolen.com/license-plate-lookup", "description": "Verify a vehicle's status using its license plate number." }
  ]
  };

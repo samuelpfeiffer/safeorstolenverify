@@ -228,7 +228,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  wyoming: {
  state: "Wyoming", stateCode: "WY", slug: "wyoming-vin-lookup",
  title: "Wyoming VIN Lookup - Free WY Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Wyoming VIN lookup. Check if a WY vehicle is stolen from DOT and community theft registries. Instant Cheyenne and statewide verification.",
+ metaDescription: "Free Wyoming VIN lookup. Verify if a WY vehicle appears stolen from public web results and SafeOrStolen's reports. Instant Cheyenne and statewide verification.",
  theftStats: { vehiclesStolen: "500+", recoveryRate: "61%", topCities: ["Cheyenne", "Casper", "Laramie"] },
  dmvLink: "https://dot.state.wy.us/",
  content: {

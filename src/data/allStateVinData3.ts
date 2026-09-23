@@ -148,7 +148,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  northcarolina: {
  state: "North Carolina", stateCode: "NC", slug: "north-carolina-vin-lookup",
  title: "North Carolina VIN Lookup - Free NC Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free North Carolina VIN lookup. Check if a NC vehicle is stolen from DMV and community theft registries. Instant Charlotte and statewide verification.",
+ metaDescription: "Free North Carolina VIN lookup. Verify if a NC vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Charlotte and statewide verification.",
  theftStats: { vehiclesStolen: "16,500+", recoveryRate: "51%", topCities: ["Charlotte", "Raleigh", "Greensboro"] },
  dmvLink: "https://www.ncdot.gov/dmv/",
  content: {

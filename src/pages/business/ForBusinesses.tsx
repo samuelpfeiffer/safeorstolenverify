@@ -93,7 +93,7 @@ export default function ForBusinesses() {
  answer: 'Yes. SafeOrStolen meets stolen property verification requirements in all 50 states. States like Florida (F.S. § 539.001), California (Business and Professions Code § 21628), Texas (Texas Occupations Code Chapter 1956), and New York require pawn shops to check stolen property databases. SafeOrStolen fulfills these requirements and automatically logs all verifications for audit and compliance purposes.'
  },
  {
- question: 'How is SafeOrStolen different from CheckMEND for businesses?',
+ question: 'How is SafeOrStolen different from other verification services for businesses?',
  answer: 'While other services may excel in specific niches, SafeOrStolen is purpose-built for broad US business needs. Key differences: (1) SafeOrStolen offers a copy-paste widget — many competitors require API-only integration with developer resources. (2) SafeOrStolen checks our own reports, public web results, and AI analysis for a wide range of items. (3) SafeOrStolen charges $49-99/month for unlimited checks — many charge per individual check, which adds up fast for busy businesses.'
  },
  {
@@ -133,7 +133,7 @@ export default function ForBusinesses() {
  {
  icon: Smartphone,
  title: 'Phone & Electronics Retailers',
- description: 'Verify IMEI numbers on trade-ins, used device purchases, and refurbished inventory. Check against carrier and theft databases TAC blacklists covering AT&T, Verizon, T-Mobile, and all major carriers before accepting any device.',
+ description: 'Verify IMEI numbers on trade-ins, used device purchases, and refurbished inventory. We provide device model and details before you accept any phone. (To check if a phone is blacklisted, customers should contact the carrier directly.)',
  benefits: ['Check carrier blacklist status instantly', 'Verify device authenticity and unlock status', 'Prevent insurance fraud on trade-ins', 'Protect $800+ average device resale value'],
  link: '/for-electronics-resellers'
  },
@@ -141,7 +141,7 @@ export default function ForBusinesses() {
  icon: Shield,
  title: 'Auto Dealers & Car Lots',
  description: 'VIN verification for used vehicle inventory, trade-ins, and auction purchases. Cross-reference against all 50 state DMV theft records. Full vehicle history verification.',
- benefits: ['Title washing and cloning detection', 'Odometer rollback fraud alerts', 'vehicle theft and title databases stolen vehicle database check', 'Salvage and flood title detection'],
+ benefits: ['SafeOrStolen reports, public web results, AI analysis for vehicles', 'Review vehicle history details', 'Identify vehicles flagged as potentially stolen', 'Detect major title issues'],
  link: '/for-dealers'
  },
  {
@@ -161,7 +161,7 @@ export default function ForBusinesses() {
  {
  icon: Scale,
  title: 'Law Enforcement & Insurance',
- description: 'Cross-reference recovered items against theft databases. Process insurance claims with verified ownership data. Support investigations with comprehensive verification reports and chain of custody documentation.',
+ description: 'Cross-reference recovered items against SafeOrStolen reports, public web results, and AI analysis. Process insurance claims with verified ownership data. Support investigations with comprehensive verification reports and chain of custody documentation.',
  benefits: ['Cross-reference recovered property', 'Streamline insurance claim verification', 'Chain of custody documentation', 'Bulk verification for seized property'],
  link: '/for-law-enforcement'
  }

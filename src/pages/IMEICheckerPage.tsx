@@ -38,7 +38,7 @@ const IMEICheckerPage = () => {
  "Find the IMEI number: Dial *#06# on the phone, check Settings > About Phone, or look at the original box or SIM tray",
  "Enter the 15-digit IMEI number into our verification tool at SafeOrStolen.com/verify",
  "Get instant results showing whether the phone is clean, stolen, blacklisted, or has issues",
- "Review the detailed report including carrier lock status, theft reports, and finance status",
+ "Review the detailed report including phone model, manufacturer, and user-reported theft status.",
  "Make an informed decision - only buy if the report shows 'CLEAN' status"
  ],
  faqs: [

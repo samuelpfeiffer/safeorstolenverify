@@ -115,7 +115,7 @@ export const RecentRecoveriesFeed: React.FC = () => {
  <div className="mt-6 p-4 bg-muted/30 rounded-lg border border-border/50">
  <p className="text-xs text-muted-foreground leading-relaxed">
  <strong className="text-foreground">How SafeOrStolen recoveries work:</strong>{' '}
- When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform simultaneously queries community theft reports,
+ When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform instantly checks its own reported stolen items, public web results, and applies AI analysis.,
  For bicycles, it also checks BikeIndex; for firearms, HotGunz; and for phones, it retrieves device details. If a match is found,
  and community registries (stolen bicycle databases, stolen firearms databases). If a match is found, the buyer is alerted
  in under 3 seconds — before any money changes hands.{' '}

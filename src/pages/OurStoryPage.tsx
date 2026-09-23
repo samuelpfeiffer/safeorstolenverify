@@ -135,7 +135,7 @@ const sections: Section[] = [
  </p>
  <p>
  The platform is real. Users scan IMEI numbers, VIN numbers, serial numbers, and license
- plates to check items against over 100 databases — including community theft reportss,
+ plates to check items against SafeOrStolen's reports, public web results, and AI analysis —,
  and specialized data for bicycles and firearms — covering smartphones,
  laptops, vehicles, firearms, bicycles, jewelry, and electronics. The system returns a
  result in seconds. Safe or Stolen. That simple.

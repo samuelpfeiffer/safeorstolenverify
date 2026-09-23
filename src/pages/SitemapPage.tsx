@@ -216,7 +216,7 @@ const SitemapPage = () => {
  { to: "/vs-vincheck-info", label: "vs VinCheck.info" },
  { to: "/vs-fastbound", label: "vs FastBound" },
  { to: "/carfax-alternative-free", label: "Free Carfax Alternative" },
- { to: "/nicb-alternative", label: "vehicle theft and title databases Alternative" },
+ { to: "/nicb-alternative", label: "SafeOrStolen as a NICB alternative" },
  { to: "/hotgunz-alternative", label: "HotGunz Alternative" },
  { to: "/best-stolen-item-checkers-2026", label: "Best Stolen Item Checkers 2026" },
  ]

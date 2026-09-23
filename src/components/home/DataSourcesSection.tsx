@@ -45,7 +45,7 @@ const dataSources = [
  {
  icon: Lock,
  title: 'Industry Registries',
- description: 'stolen bicycle databases, Stolen Firearms Databases, GIA Diamond Registry, vehicle theft and title databases, marine HIN databases, pawn networks',
+ description: 'Our own reported items, public web data, and AI analysis for theft indicators. We also check BikeIndex for bicycles and HotGunz for firearms.',
  color: 'text-orange-500',
  link: '/data-sources#industry',
  stat: 'multiple sources',

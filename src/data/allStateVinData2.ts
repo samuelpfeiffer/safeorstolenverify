@@ -148,7 +148,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  michigan: {
  state: "Michigan", stateCode: "MI", slug: "michigan-vin-lookup",
  title: "Michigan VIN Lookup - Free MI Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Michigan VIN lookup. Check if a MI vehicle is stolen from Secretary of State and community theft registries. Instant Detroit and statewide verification.",
+ metaDescription: "Free Michigan VIN lookup. Check if a MI vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Detroit and statewide verification.",
  theftStats: { vehiclesStolen: "19,500+", recoveryRate: "46%", topCities: ["Detroit", "Grand Rapids", "Warren"] },
  dmvLink: "https://www.michigan.gov/sos",
  content: {

@@ -89,7 +89,7 @@ export const PressMediaSection = () => {
  icon: Globe,
  label: '3-Second Results',
  description: 'Fastest stolen item verification available',
- detail: 'SafeOrStolen delivers verification results in under 3 seconds —  including Carfax (PDF generation) and CheckMEND.',
+ detail: 'SafeOrStolen delivers verification results in under 3 seconds, drawing from our stolen-item reports, public web results, and AI analysis.',
  link: '/compare',
  },
  ];

@@ -115,7 +115,7 @@ export default function HowToFindImeiNumber() {
         {
           question: 'Is IMEI the same as serial number?',
           answer:
-            'No. The serial number is the manufacturer\'s internal identifier for the physical device. The IMEI is the network identifier used by carriers and the carrier and manufacturer blacklists. A stolen-phone check should use the IMEI, since that is what the blacklist databases key on.',
+            'No. The serial number is the manufacturer\'s internal identifier for the physical device. The IMEI is the network identifier used by carriers and is what network blacklists key on. A stolen phone check should use the IMEI, since that\'s how these blacklists identify devices.',
         },
         {
           question: 'Is it safe to share my IMEI with a buyer?',

@@ -570,7 +570,7 @@ export const US_STATES: StateData[] = [
  population: 580000,
  topCities: ['Cheyenne', 'Casper'],
  theftStatistics: { vehicleThefts: 750, propertyThefts: 7800, theftRate: 1340 },
- databaseAccess: { hasDirectAccess: false, databases: ['vehicle theft and title databases'] },
+ databaseAccess: { hasDirectAccess: false, databases: [] },
  lawEnforcement: { statePolice: 'Wyoming Highway Patrol', reportingUrl: 'https://www.whp.dot.state.wy.us' },
  dmv: { name: 'Wyoming DOT', url: 'https://www.dot.state.wy.us' }
  }

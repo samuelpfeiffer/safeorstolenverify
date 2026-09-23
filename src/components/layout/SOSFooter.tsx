@@ -148,7 +148,7 @@ export const SOSFooter: React.FC = () => {
  { label: 'vs DeviceCheck', to: '/vs-devicecheck-ca' },
  { label: 'vs FastBound', to: '/vs-fastbound' },
  { label: 'Carfax Alternative', to: '/carfax-alternative-free' },
- { label: 'vehicle theft and title databases Alternative', to: '/nicb-alternative' },
+ { label: 'Vehicle Check Alternative', to: '/nicb-alternative' },
  { label: 'Firearm Check Comparison', to: '/hotgunz-alternative' },
  { label: 'Best Checkers 2026', to: '/best-stolen-item-checkers-2026' },
  ]

@@ -745,7 +745,7 @@ const Index = () => {
  "@type": "WebPage",
  "name": "Free Stolen Item Checker - IMEI VIN Serial Verification",
  "url": "https://safeorstolen.com",
- "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against our verification the relevant authorities, insurance, and carrier databases.",
+ "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against SafeOrStolen's own reports, public web data, and AI analysis.",
  "speakable": {
  "@type": "SpeakableSpecification",
  "cssSelector": ["h1", ".speakable-summary"]

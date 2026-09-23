@@ -62,7 +62,7 @@ const CheckCarStolenByVinPage = () => {
  answer: "Yes, motorcycles also have 17-character VINs that can be verified the same way as cars. The VIN is typically located on the steering neck (headstock) or on a metal plate attached to the frame. Motorcycle theft is actually more common than car theft relative to ownership rates, so verification is especially important."
  },
  {
- question: "What's the difference between vehicle theft and title databases?",
+ question: "What's the difference between various databases for stolen vehicles?",
  answer: "Many organizations and authorities maintain databases of stolen vehicles, like those reported to insurance companies or federal systems that track title history and theft status. While SafeOrStolen does not directly access these proprietary or governmental databases, our service checks SafeOrStolen's own reports of stolen items, public web results, and uses AI analysis to help you assess risk."
  },
  {

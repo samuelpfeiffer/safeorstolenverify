@@ -42,7 +42,7 @@ const DATA_CATEGORIES = [
  bgColor: "bg-purple-500/10",
  title: "Carrier & IMEI Blacklists",
  subtitle: "IMEI.info & Carrier Networks",
- description: "Mobile carrier blacklists are a key signal for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network.",
+ description: "Mobile carriers often maintain blacklists for phones reported stolen, which can prevent activation on participating networks. SafeOrStolen does not check these blacklists directly, but you can inquire with your carrier about a phone's blacklist status.",
  sources: [
  {
  name: "IMEI.info Database",
