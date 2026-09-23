@@ -94,7 +94,7 @@ const organizationJsonLd = JSON.stringify({
   logo: "https://safeorstolen.com/sos-logo.png",
   foundingDate: "2017-07-20",
   description:
-    "SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against our verification databases.",
+    "SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items, firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app.",
   address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
   sameAs: [
     "https://www.crunchbase.com/organization/safe-or-stolen",
@@ -131,7 +131,7 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       logo: { "@type": "ImageObject", url: "https://safeorstolen.com/sos-logo.png", width: "512", height: "512" },
       description:
-        "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against community theft registries and carrier blacklists.",
+        "SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items, firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app.",
       foundingDate: "2017-07-20",
       slogan: "Verify Before You Buy",
       knowsAbout: [

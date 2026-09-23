@@ -183,7 +183,7 @@ const Index = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="SafeOrStolen — AI-Powered Stolen Item Verification"
- description="AI-powered stolen-item checks for buyers, sellers, and businesses — phones, vehicles, electronics, power tools, firearms, and bikes across our verification databases."
+ description="Stolen-item check hub for buyers and sellers: phones, vehicles (VIN and plate), electronics, power tools, firearms, and bikes. Get a Proof of Clean Purchase record."
  keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
  canonical="/"
  />
@@ -756,7 +756,7 @@ const Index = () => {
  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com/" }
  ]
  },
- "dateModified": "2026-03-02"
+ "dateModified": "2026-09-23"
  })
  }}
  />
@@ -773,7 +773,7 @@ const Index = () => {
  { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
  ],
- "dateModified": "2026-03-02"
+ "dateModified": "2026-09-23"
  })
  }}
  />
