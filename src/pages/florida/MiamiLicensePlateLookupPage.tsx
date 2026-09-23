@@ -94,7 +94,7 @@ const MiamiLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'FLHSMV Records', desc: 'Florida Highway Safety and Motor Vehicles registration database for Miami-Dade County' },
- { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss records' },
+ { name: 'NMVTIS', desc: 'Federal title history, checked separately at vehiclehistory.bja.ojp.gov' },
  { name: 'Miami-Dade Police Records', desc: 'Local community theft reports' },
  { name: 'Insurance Claims', desc: 'Theft claims from major insurers operating in Florida' },
  { name: 'Salvage Records', desc: 'Vehicles with salvage, rebuilt, or flood titles — critical in Florida due to hurricanes' },

@@ -73,7 +73,7 @@ const CATEGORIES: { label: string; href: string; sentence: string }[] = [
  label: 'Phones (IMEI)',
  href: '/imei-checker',
  sentence:
- 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it against stolen reports and carrier and theft databases before you pay.',
+ 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it for stolen reports and ask a carrier about blacklist status before you pay.',
  },
  {
  label: 'Vehicles (VIN)',
@@ -157,8 +157,8 @@ const HowToVerifyAUsedItemPage = () => {
  Blacklisting is separate from theft. A phone can be barred from cellular networks
  because of unpaid finance, an insurance write-off, or a carrier report, and that
  blocked device is close to worthless even if nobody ever reported it stolen.
- SafeOrStolen checks carrier and theft databases alongside theft records for
- phones and other connected devices. Always check blacklist status before buying a used
+ SafeOrStolen checks its own stolen-item reports, public web results and AI analysis;
+ it does not check carrier blacklists. Always ask a carrier to check blacklist status before buying a used
  phone, because a clean theft result alone does not tell you the handset will activate.
  </p>
 

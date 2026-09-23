@@ -45,7 +45,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/imei-checker': {
  title: 'Free IMEI Checker App - Verify Phone Not Stolen',
- description: 'Free IMEI checker covering all six item categories. Verify phones not stolen in 3 seconds. Check carrier and theft databases. Better than CheckMEND.', // 155 chars
+ description: 'Free IMEI checker covering all six item categories. Verify phones not stolen in 3 seconds. Checks our reports, web and AI.', // 155 chars
  keywords: 'IMEI checker, phone blacklist check, stolen phone checker, IMEI lookup free',
  canonical: '/imei-checker'
  },
@@ -55,7 +55,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/vin-checker': {
  title: 'Free VIN Checker App - Verify Vehicle Not Stolen',
- description: 'Free VIN checker covering all six item categories. Verify cars not stolen in 3 seconds. Check vehicle theft and title databases, DMV, community theft registries. Better than Carfax.', // 155 chars
+ description: 'Free VIN checker covering all six item categories. Verify cars not stolen in 3 seconds. Checks our reports, web results and AI analysis.', // 155 chars
  keywords: 'VIN checker, stolen car check, vehicle history free, VIN check, Carfax alternative',
  canonical: '/vin-checker'
  },
@@ -75,7 +75,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/check-phone': {
  title: 'Check if Phone is Stolen - Free iPhone Android Verify',
- description: 'Check if a phone is stolen before buying. Free IMEI verification for iPhone, Samsung, Google Pixel. Search carrier and theft databases in 3 seconds. Free check.', // 158 chars
+ description: 'Check if a phone is stolen before buying. Free IMEI verification for iPhone, Samsung, Google Pixel. Our reports, web and AI in 3 seconds.', // 158 chars
  keywords: 'check phone stolen, verify phone, iPhone stolen check, Android phone verification',
  canonical: '/check-phone'
  },
@@ -84,7 +84,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/check-bike': {
  title: 'Check if Bike is Stolen - Free Serial Number Lookup',
- description: 'Check if a bicycle is stolen before buying. Free serial number verification for road bikes, mountain bikes, e-bikes. Search stolen bicycle databases and police data.', // 157 chars
+ description: 'Check if a bicycle is stolen before buying. Free serial number verification for road bikes, mountain bikes, e-bikes. Checks BikeIndex and our reports.', // 157 chars
  keywords: 'check bike stolen, bicycle serial lookup, stolen bike check, bike verification',
  canonical: '/check-bike'
  },
@@ -184,7 +184,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/how-it-works': {
  title: 'How It Works - Stolen Item Verification Process',
- description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including carrier and theft databases.', // 159 chars
+ description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers against our reports, web results and AI.', // 159 chars
  keywords: 'how SafeOrStolen works, verification process, stolen item check explained',
  canonical: '/how-it-works'
  },
@@ -194,7 +194,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/database': {
  title: 'Databases We Search - our verification databases',
- description: 'Access our verification databases. Real-time checks across carrier and theft databases, CheckMEND, and community theft registries worldwide. broad coverage.', // 158 chars
+ description: 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bikes and HotGunz for firearms.', // 158 chars
  keywords: 'stolen item reports, public web results, global theft checks',
  canonical: '/database'
  },

@@ -217,7 +217,7 @@ const PricingPage = () => {
  { name: 'SafeOrStolen', price: '$0.99/check or $10/mo', dbs: '100+', types: 'All 6', hl: true },
  { name: 'CheckMEND', price: 'N/A', dbs: 'N/A', types: 'Not integrated', hl: false },
  { name: 'Carfax', price: '$44.99/report', dbs: 'Vehicles', types: 'Cars only', hl: false },
- { name: 'vehicle theft and title databases', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
+ { name: 'NICB VINCheck', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
  { name: 'Stolen Firearms Databases', price: 'Free (limited)', dbs: '1', types: 'Firearms', hl: false },
  ].map((r) => (
  <tr key={r.name} className={`border-b border-border/50 ${r.hl ? 'bg-primary/5' : ''}`}>

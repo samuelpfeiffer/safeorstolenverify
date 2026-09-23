@@ -94,7 +94,7 @@ const BikeSerialTool = () => {
  </div>
  <h1 className="text-3xl font-bold text-foreground mb-2">Bike Serial Lookup</h1>
  <p className="text-muted-foreground">
- Search the stolen bicycle databases stolen bicycle registry
+ Search the BikeIndex stolen bicycle registry
  </p>
  </div>
 

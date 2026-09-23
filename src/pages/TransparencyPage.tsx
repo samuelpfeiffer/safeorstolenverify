@@ -49,8 +49,8 @@ export default function TransparencyPage() {
 
  <h3>Industry Databases</h3>
  <ul>
- <li><strong>carrier and theft databases IMEI Database:</strong> Your mobile carrier maintains a blacklist for stolen phones. SafeOrStolen does not check this.</li>
- <li><strong>vehicle theft and title databases:</strong> SafeOrStolen uses AI to analyze public web results for stolen vehicles and titles.</li>
+ <li><strong>GSMA and carrier blacklists:</strong> Your mobile carrier maintains a blacklist for stolen phones. SafeOrStolen does not check this.</li>
+ <li><strong>Vehicle records (NICB, NMVTIS):</strong> SafeOrStolen does not check these. It uses its own reports, public web results and AI analysis for vehicles.</li>
  <li><strong>Carrier Blacklists:</strong> AT&T, Verizon, T-Mobile, and other carrier-specific blacklists</li>
  </ul>
 

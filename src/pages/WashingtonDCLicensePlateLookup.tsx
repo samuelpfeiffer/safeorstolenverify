@@ -292,9 +292,9 @@ const WashingtonDCLicensePlateLookup = () => {
  <CardContent>
  <p className="text-muted-foreground">
  Enter the DC license plate number into SafeOrStolen's verification tool above. 
- We instantly search DC vehicle theft and title databases theft databases, and law enforcement 
- reports to provide comprehensive vehicle information including registration 
- status and theft history. Get 2 free searches to start.
+ We check SafeOrStolen&apos;s stolen-item reports, public web results 
+ and AI analysis for that plate. For official registration 
+ records, contact the DC DMV. Get 2 free searches to start.
  </p>
  </CardContent>
  </Card>

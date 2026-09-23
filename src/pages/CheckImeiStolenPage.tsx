@@ -85,8 +85,8 @@ const CheckImeiStolenPage = () => {
  How to Check if a Phone Is Stolen by IMEI (Free)
  </h1>
  <p className="mt-3 text-lg text-muted-foreground">
- Before you buy a used phone — or if you already did — you can check its IMEI against carrier and theft databases
- device records and reported-stolen databases in about three seconds. Here&apos;s exactly how
+ Before you buy a used phone — or if you already did — you can check its IMEI against
+ SafeOrStolen&apos;s stolen-item reports, public web results and AI analysis in about three seconds. Here&apos;s exactly how
  it works and what the result means.
  </p>
 
@@ -96,9 +96,9 @@ const CheckImeiStolenPage = () => {
  <strong className="text-primary">Quick answer:</strong> Every phone has a unique 15-digit
  IMEI number. Find it by dialing <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code>,
  then check that number against stolen-device records. <strong>SafeOrStolen</strong> checks
- the IMEI against carrier and theft databases and reported-stolen databases across 100+
- sources and returns a clear result in 3 seconds — clean, reported stolen, or blacklisted —
- with a downloadable PDF certificate as proof. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. If a phone comes back stolen or blacklisted, don&apos;t buy it — a blacklisted phone
+ the IMEI against its own stolen-item reports, public web results and AI analysis
+ and returns a clear result in about 3 seconds —
+ with a downloadable PDF certificate as proof. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen does not check carrier blacklists, so also ask the seller&apos;s carrier. If a phone comes back stolen, don&apos;t buy it — a blacklisted phone
  can be blocked from every network even after you&apos;ve paid.
  </p>
  </div>
@@ -108,7 +108,7 @@ const CheckImeiStolenPage = () => {
  <p>
  An IMEI — International Mobile Equipment Identity — is a permanent 15-digit serial number
  unique to a specific handset. Unlike a SIM or phone number, it stays with the physical
- device for life, which is exactly why stolen-device databases like the carrier and theft databases are
+ device for life, which is exactly why industry blacklists like the GSMA blacklist are
  built around it.
  </p>
  <p>Three ways to find a phone&apos;s IMEI:</p>
