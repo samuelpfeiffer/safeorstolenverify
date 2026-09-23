@@ -158,7 +158,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "Is vehicle theft common in Vermont?", answer: "Vermont has among lowest theft rates nationally, but still occurs. Always verify VIN using SafeOrStolen before purchasing any used vehicle." },
- { question: "What is Vermont's title washing history?", answer: "Vermont historically had lax title requirements attracting salvage title washing. While reformed, always check vehicle theft and title databases for complete title history across all states." }
+ { question: "What is Vermont's title washing history?", answer: "Vermont historically had lax title requirements attracting salvage title washing. While reformed, always check an NMVTIS title history report for complete title history across all states." }
  ]
  },
  virginia: {

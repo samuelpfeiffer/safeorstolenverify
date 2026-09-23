@@ -983,7 +983,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
 
  <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- MULTI-SOURCE · community theft reports · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases · 50 STATES
+ MULTI-SOURCE · OUR REPORTS · WEB RESULTS · AI ANALYSIS · BIKEINDEX · HOTGUNZ
  </div>
  </motion.div>
  );
