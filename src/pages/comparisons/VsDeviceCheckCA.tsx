@@ -31,7 +31,7 @@ const VsDeviceCheckCA = () => {
         "name": "Can I use SafeOrStolen to check Canadian devices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SafeOrStolen provides global IMEI checking that includes Canadian carrier databases, plus additional international databases that DeviceCheck.ca may not cover."
+          "text": "Yes, SafeOrStolen provides global IMEI device information lookups to help you identify a phone and its potential history. For carrier blacklist status, we recommend checking directly with Canadian carriers."
         }
       }
     ]
@@ -243,7 +243,7 @@ const VsDeviceCheckCA = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Yes! SafeOrStolen provides global IMEI checking that includes Canadian carrier databases, plus additional international databases that DeviceCheck.ca may not cover. You get more comprehensive protection.
+                  Yes! SafeOrStolen provides global IMEI device information lookups to help you identify a phone and its potential history. For carrier blacklist status, we recommend checking directly with Canadian carriers. This offers a more comprehensive approach to understanding a device's status.
                 </p>
               </CardContent>
             </Card>

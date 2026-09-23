@@ -52,7 +52,7 @@ export const EnhancedCTASection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Don't become an unknowing victim of the $13 billion stolen goods crisis. 
-            Verify before you buy with our real-time database checks.
+            Verify before you buy using our reports, web data, and AI analysis.
           </p>
           
           {/* Trust Indicators */}

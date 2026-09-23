@@ -40,7 +40,7 @@ const FreeVINLookupGuide = () => {
  { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
  { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive to see the car. If they refuse, that's a red flag. Enter the VIN on SafeOrStolen.com for instant results." } },
  { "@type": "Question", "name": "What does it mean if a VIN comes back as stolen?", "acceptedAnswer": { "@type": "Answer", "text": "Do NOT purchase the vehicle. Do not alert the seller. Contact your local police department with the VIN and the SafeOrStolen verification report. Driving a stolen vehicle is a criminal offense even if you bought it unknowingly." } },
- { "@type": "Question", "name": "Is SafeOrStolen better than Carfax for stolen checks?", "acceptedAnswer": { "@type": "Answer", "text": "Carfax focuses on vehicle history (accidents, maintenance, mileage). SafeOrStolen focuses specifically on stolen vehicle verification against community theft registries. They complement each other — use Carfax for history and SafeOrStolen for theft verification." } }
+ { "@type": "Question", "name": "Is SafeOrStolen better than Carfax for stolen checks?", "acceptedAnswer": { "@type": "Answer", "text": "Carfax focuses on vehicle history (accidents, maintenance, mileage). SafeOrStolen focuses specifically on stolen-item reports, public web results, and AI analysis. They complement each other — use Carfax for history and SafeOrStolen for theft verification." } }
  ]
  }
  ];
@@ -109,7 +109,7 @@ const FreeVINLookupGuide = () => {
  A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every car, truck, motorcycle, RV, and boat manufactured after 1981. Think of it as a vehicle's fingerprint — no two are alike. The VIN encodes the manufacturer, model year, engine type, assembly plant, and a unique serial number.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
- When a vehicle is reported stolen, its VIN is entered into community theft registries like the FBI' By checking a VIN against these databases before buying, you can instantly determine if a vehicle has been reported stolen anywhere in the United States.
+ When a vehicle is reported stolen, its VIN might be shared publicly or appear in our internal reports. By checking a VIN with SafeOrStolen before buying, you can quickly see if there are any current theft reports.
  </p>
 
  <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Where to Find a VIN</h2>
@@ -181,7 +181,7 @@ const FreeVINLookupGuide = () => {
 
  <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen vs. Carfax: What's the Difference?</h2>
  <p className="text-muted-foreground leading-relaxed mb-6">
- Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen focuses specifically on stolen vehicle verification against community theft registries.
+ Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen focuses specifically on stolen-item reports, public web results, and AI analysis.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
  For the most thorough pre-purchase check, use both: SafeOrStolen for theft verification ($0.99/check or $10/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
@@ -227,7 +227,7 @@ const FreeVINLookupGuide = () => {
  { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
  { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN. If they refuse, that\'s a red flag. Enter it on SafeOrStolen.com for instant results.' },
  { q: 'What does it mean if a VIN comes back as stolen?', a: 'Do NOT purchase the vehicle. Contact your local police with the VIN and SafeOrStolen report. Driving a stolen vehicle is criminal even if you bought it unknowingly.' },
- { q: 'Is SafeOrStolen better than Carfax?', a: 'They complement each other. Carfax provides vehicle history (accidents, maintenance). SafeOrStolen specifically checks if a vehicle is stolen against community theft registries. Use both for complete protection.' },
+ { q: 'Is SafeOrStolen better than Carfax?', a: 'They complement each other. Carfax provides vehicle history (accidents, maintenance). SafeOrStolen specifically checks for stolen-item reports, public web results, and AI analysis. Use both for complete protection.' },
  ].map((faq, i) => (
  <div key={i} className="bg-card border border-border rounded-xl p-5">
  <h3 className="text-foreground font-bold mb-2">{faq.q}</h3>

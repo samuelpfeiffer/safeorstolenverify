@@ -19,7 +19,7 @@ export const TrustSignalsSection = () => {
  {
  icon: Database,
  title: "3,000+ Global Databases",
- description: "vehicle theft and title databases, carrier and theft databases, CheckMEND, Police databases",
+ description: "SafeOrStolen's reports, public web results, and AI analysis for comprehensive checks.",
  color: "text-accent"
  },
  {
@@ -39,7 +39,7 @@ export const TrustSignalsSection = () => {
  Why Trust SafeOrStolen
  </h2>
  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
- Enterprise-grade security with real-time database access
+ Enterprise-grade security with comprehensive item checks
  </p>
  </div>
 
@@ -69,7 +69,7 @@ export const TrustSignalsSection = () => {
  3,000+ Databases Worldwide
  </h3>
  <p className="text-base text-muted-foreground mb-6">
- Real-time access to vehicle theft and title databases, carrier and theft databases, CheckMEND, and international registries
+ Every check covers our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bicycles and HotGunz for firearms
  </p>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
  <div>

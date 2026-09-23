@@ -124,7 +124,7 @@ export default function PressReleasePage() {
  <h2 className="text-3xl font-bold text-center mb-8">About SafeOrStolen</h2>
  <div className="prose prose-lg max-w-none text-center">
  <p>
- SafeOrStolen is the leading stolen item verification platform, helping buyers protect themselves when purchasing secondhand phones, vehicles, electronics, and more. covering all six item categories in the industry, SafeOrStolen provides instant verification against multiple sources including theft reports, carrier and theft databases, and insurance claims.
+ SafeOrStolen is the leading stolen item verification platform, helping buyers protect themselves when purchasing secondhand phones, vehicles, electronics, and more. Covering all six item categories in the industry, SafeOrStolen provides instant verification against public records, reported stolen items, and its own AI analysis.
  </p>
  <p>
  Founded in 2017, incorporated in 2025, and headquartered in Peoria, Arizona, SafeOrStolen verifies phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods against multiple sources.

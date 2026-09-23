@@ -498,11 +498,11 @@ const VerifyPage = () => {
  <div className="space-y-2">
  <h3 className="font-semibold">Comprehensive Verification</h3>
  <ul className="text-sm text-muted-foreground space-y-1">
- <li>• Global carrier and theft databases & device registries</li>
- <li>• Federal & state community theft registries</li>
+ <li>• Public web searches for reported stolen items</li>
+ <li>• SafeOrStolen's own theft reports & community records</li>
  <li>• Insurance theft & loss claim records</li>
  <li>• National vehicle title & history databases</li>
- <li>• State DMV & police records (All 50 States)</li>
+ <li>• AI analysis of various online sources</li>
  <li>• International bicycle registries</li>
  <li>• Firearms verification databases</li>
  <li>• Property & asset recovery networks</li>

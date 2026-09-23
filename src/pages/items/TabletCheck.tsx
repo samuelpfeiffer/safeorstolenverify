@@ -34,7 +34,7 @@ const TabletCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Settings > General > About (iPad) or Settings > About Tablet (Android)",
         "Enter the serial number into our free verification tool",
-        "Our system searches Apple's database, manufacturer records, and community theft registries",
+        "Our system checks SafeOrStolen's reports, public web results, and uses AI analysis to find stolen items.",
         "Get instant results - know if the tablet is SAFE or STOLEN"
       ]}
       whyVerifyTitle="Why Check Tablets Before Buying?"

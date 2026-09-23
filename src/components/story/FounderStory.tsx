@@ -45,7 +45,7 @@ export const FounderStory = () => {
               <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
               <h4 className="font-bold mb-2 text-foreground">The Solution</h4>
               <p className="text-sm text-muted-foreground">
-                A simple verification service connecting to community theft registries
+                A simple verification service using AI and public web results
               </p>
             </Card>
             <Card className="p-6 text-center">

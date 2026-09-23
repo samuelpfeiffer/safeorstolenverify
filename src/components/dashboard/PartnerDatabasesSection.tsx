@@ -13,7 +13,7 @@ const PARTNERS = [
  stat: '50 states',
  },
  {
- name: 'carrier and theft databases IMEI Registry',
+ name: 'stolen item reports and web search results',
  category: 'Telecom / Global',
  type: 'industry',
  detail: 'Carrier and theft databases — 15 billion+ IMEI records from carriers worldwide.',
@@ -21,7 +21,7 @@ const PARTNERS = [
  stat: '15B+ records',
  },
  {
- name: 'vehicle theft and title databases',
+ name: 'stolen vehicle reports and web search results',
  category: 'Vehicle Theft Records',
  type: 'insurance',
  detail: 'Vehicle theft and title records aggregated for stolen-vehicle verification.',
@@ -29,7 +29,7 @@ const PARTNERS = [
  stat: 'Nationwide',
  },
  {
- name: 'stolen bicycle databases',
+ name: 'bicycle theft reports and web search results',
  category: 'Bicycle Registry',
  type: 'nonprofit',
  detail: 'BikeIndex — a registered stolen bicycle database.',
@@ -48,7 +48,7 @@ const PARTNERS = [
  name: 'CTIA / Carriers',
  category: 'Carrier Blacklist',
  type: 'industry',
- detail: 'Cellular Telecommunications Industry Association — carrier and theft databases.',
+ detail: 'Cellular Telecommunications Industry Association — phone registration information.',
  link: '/imei-checker',
  stat: '200+ carriers',
  },
@@ -130,7 +130,7 @@ export const PartnerDatabasesSection: React.FC = () => {
  <FileCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-xs text-muted-foreground leading-relaxed">
  <strong className="text-foreground">Why we use multiple sources:</strong>{' '}
- A single stolen phone may be reported in the carrier and theft databases but not yet in a carrier database.
+ A single stolen phone may be reported to a carrier or the GSMA blacklist, but not yet widely listed across all sources.
 By querying all sources
  simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and
  protecting buyers and sellers with more complete information.

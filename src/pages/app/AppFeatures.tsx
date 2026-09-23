@@ -26,7 +26,7 @@ const AppFeatures = () => {
     {
       icon: <Zap className="w-8 h-8" />,
       title: "3-Second Verification",
-      description: "Get instant results the moment you scan or enter a serial number. Real-time database checks across multiple stolen property databases.",
+      description: "Get instant results the moment you scan or enter a serial number. Our system checks SafeOrStolen's reports, public web results, and uses AI analysis.",
       highlight: "Fastest in industry"
     },
     {
@@ -143,7 +143,7 @@ const AppFeatures = () => {
                 Features That Set Us Apart
               </h2>
               <p className="text-xl text-muted-foreground">
-                CheckMEND, IMEI.info, and other competitors are website-only. 
+                Dedicated services like BikeIndex, HotGunz, and phone IMEI lookups are integrated into our comprehensive checks. Other services are website-only.
                 We have a real app with real advantages.
               </p>
             </div>
@@ -341,7 +341,7 @@ const AppFeatures = () => {
                   <tr className="border-b-2">
                     <th className="text-left p-4">Feature</th>
                     <th className="text-center p-4 bg-primary/10 font-bold">SafeOrStolen App</th>
-                    <th className="text-center p-4">CheckMEND</th>
+                    <th className="text-center p-4">Proprietary & Public Data</th>
                     <th className="text-center p-4">IMEI.info</th>
                     <th className="text-center p-4">Carfax</th>
                   </tr>

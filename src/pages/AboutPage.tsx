@@ -22,7 +22,7 @@ const AboutPage = () => {
  description: "Global IMEI database - we cross-reference phone blacklist and carrier records"
  },
  {
- name: "stolen bicycle databases",
+ name: "BikeIndex stolen bicycle reports",
  type: "Bicycle Registry Partner",
  description: "1.4M bikes cataloged - direct API integration for bicycle verification"
  },
@@ -37,7 +37,7 @@ const AboutPage = () => {
  description: "Police detective-founded service - data sharing partnership"
  },
  {
- name: "vehicle theft and title databases Vehicle Database",
+ name: "public vehicle theft reports and online listings",
  type: "Vehicle Records Partner",
  description: "Official vehicle identification records - VIN verification source"
  },
@@ -57,12 +57,12 @@ const AboutPage = () => {
  {
  step: 1,
  title: "Data Collection",
- description: "We gather information from multiple verified community theft registries"
+ description: "We gather information from SafeOrStolen's own reports and publicly available web data."
  },
  {
  step: 2,
  title: "Cross-Reference Verification",
- description: "Serial numbers are checked against community theft reports and international stolen property databases"
+ description: "Serial numbers are checked against SafeOrStolen's reports, public web results, and AI analysis."
  },
  {
  step: 3,
@@ -272,7 +272,7 @@ const AboutPage = () => {
  <div className="text-center mb-8">
  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Our Data Partners</h2>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- We crawl, scrape, and aggregate data from 50+ trusted sources including community theft registries, 
+ We crawl, scrape, and aggregate data from SafeOrStolen's own reports and publicly available web results,
  stolen property registries, and industry partners
  </p>
  </div>
@@ -292,8 +292,8 @@ const AboutPage = () => {
  </div>
  <div className="text-center mt-6">
  <p className="text-sm text-muted-foreground">
- <strong>How it works:</strong> We run parallel crawls across all partner databases, aggregate results in real-time, 
- and provide unified verification in under 3 seconds.
+ <strong>How it works:</strong> Each check runs our own stolen-item reports, public web results and AI analysis in parallel 
+ (plus BikeIndex for bikes and HotGunz for firearms) and returns a result in about 3 seconds.
  </p>
  </div>
  </div>

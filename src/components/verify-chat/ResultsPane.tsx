@@ -165,7 +165,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <Database className="w-4 h-4 text-primary mb-1.5" />
  <div className="text-[11px] font-semibold">multiple sources</div>
  <div className="text-[10px] text-muted-foreground">
- carrier and theft databases, vehicle theft and title databases, stolen bicycle databases, Stolen Firearms Databases + 100 more
+ Our reports, web results, AI analysis, BikeIndex, HotGunz
  </div>
  </div>
  <div className="rounded-xl border border-border/60 bg-card/40 p-3">

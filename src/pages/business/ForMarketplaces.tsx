@@ -54,7 +54,7 @@ export default function ForMarketplaces() {
  },
  {
  title: "Multi-Database Coverage",
- description: "Search multiple sources including carrier and theft databases, theft reports, insurance claims, and pawn shop registries simultaneously."
+ description: "Search public web results, our community's theft reports, and AI analysis simultaneously."
  },
  {
  title: "Webhook Notifications",
@@ -98,7 +98,7 @@ export default function ForMarketplaces() {
  },
  {
  question: "What databases does the API search?",
- answer: "We search multiple sources including carrier and theft databases, law enforcement stolen property records, insurance company claims, manufacturer registries, and pawn shop databases totaling multiple sources."
+ answer: "We search our community's reported stolen items, public web results, and use AI analysis to provide comprehensive information."
  },
  {
  question: "Can we add verified badges to listings?",

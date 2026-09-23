@@ -69,7 +69,7 @@ const StolenGunDatabasePage = () => {
  },
  {
  question: "How current is the stolen gun database?",
- answer: "Stolen firearm reports from all 50 states is updated in real-time as law enforcement agencies enter reports. Public stolen firearm reports update as victims submit them. State databases vary by state. We recommend checking before purchase because a clean result today doesn't guarantee a gun wasn't just reported. If buying online, check again before completing the transfer at the FFL."
+ answer: "Police records are updated by the agencies that keep them, and SafeOrStolen does not search them. Public stolen firearm reports update as victims submit them. State databases vary by state. We recommend checking before purchase because a clean result today doesn't guarantee a gun wasn't just reported. If buying online, check again before completing the transfer at the FFL."
  }
  ]
  }}

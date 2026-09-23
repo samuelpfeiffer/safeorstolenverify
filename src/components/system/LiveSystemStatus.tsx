@@ -48,7 +48,7 @@ const systemComponents: SystemComponent[] = [
  description: 'Mobile device verification database'
  },
  {
- name: 'stolen bicycle databases API',
+ name: 'BikeIndex lookup',
  status: 'operational',
  uptime: 99.89,
  responseTime: 2.1,
@@ -64,7 +64,7 @@ const systemComponents: SystemComponent[] = [
  description: 'Firearms verification system'
  },
  {
- name: 'community theft reports Network',
+ name: 'SafeOrStolen community reports',
  status: 'operational',
  uptime: 99.98,
  responseTime: 1.9,
@@ -72,7 +72,7 @@ const systemComponents: SystemComponent[] = [
  description: 'Federal crime database access'
  },
  {
- name: 'CheckMEND Integration',
+ name: 'Third-party data',
  status: 'degraded',
  uptime: 97.2,
  responseTime: 4.1,
@@ -111,7 +111,7 @@ const currentMetrics: SystemMetric[] = [
 const recentIncidents = [
  {
  date: '2024-03-15',
- title: 'CheckMEND API Slow Response',
+ title: 'Third-party data slow response',
  status: 'investigating',
  impact: 'Some UK electronics checks experiencing delays',
  duration: '15 minutes'

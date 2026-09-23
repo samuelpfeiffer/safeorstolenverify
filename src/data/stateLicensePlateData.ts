@@ -579,7 +579,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
 
  return {
  title: `${state} License Plate Lookup - Check ${stateCode} Stolen Vehicle by Plate`,
- metaDescription: `${state} license plate lookup to verify if a vehicle is stolen. Free ${stateCode} license plate search from ${dmvName} and community theft registries. Instant results in 3 seconds. Check vehicles in ${topCities.slice(0, 3).join(', ')}.`,
+ metaDescription: `${state} license plate lookup to verify if a vehicle is stolen. Free ${stateCode} plate check against SafeOrStolen reports, web results and AI. Instant results in 3 seconds. Check vehicles in ${topCities.slice(0, 3).join(', ')}.`,
  h1: `${state} License Plate Lookup - Check ${stateCode} Vehicles`,
  itemType: "Vehicle",
  keywords: [
@@ -592,11 +592,11 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  ...topCities.map(city => `${city.toLowerCase()} vehicle check`)
  ],
  content: {
- intro: `Verify ${state} vehicles using license plate number in 3 seconds. Free ${state} license plate lookup from ${dmvName} and community theft registries. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,
+ intro: `Verify ${state} vehicles using license plate number in 3 seconds. SafeOrStolen checks its own stolen-item reports, public web results and AI analysis. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,
  
- whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against ${dmvName} registration databases and law enforcement stolen vehicle records. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker instantly searches ${dmvName} registration records, ${state} community theft reports, vehicle theft and title databases database, and our verification databases to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
+ whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against available stolen-vehicle reports. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker checks our own stolen-item reports, public web results and AI analysis to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
  
- howItWorks: `Our ${state} license plate lookup system queries ${dmvName} databases to resolve the ${state} license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and ${state} registration status. Within 3 seconds, you receive a report showing whether the vehicle is reported stolen in ${state} or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference community theft reports, and ${state}-specific community theft registries for comprehensive results.`,
+ howItWorks: `Enter a ${state} plate and SafeOrStolen checks it against our own stolen-item reports, public web results and AI analysis. Within about 3 seconds you get a clear result: reported stolen, clear, or not found. SafeOrStolen does not access ${dmvName} records or owner information; for official registration records, contact ${dmvName} or local police.`,
  
  whyCheck: `${state} license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the ${state} market. Verify the seller is the registered owner with ${dmvName}, detect stolen plates, check ${state} registration status, and identify ${state}-specific concerns.${uniqueConcerns.length > 0 ? ` Watch for: ${uniqueConcerns.join('; ')}.` : ''} Always verify VIN before final purchase - plates can be swapped but VINs cannot.`,
  
@@ -631,7 +631,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  },
  {
  question: `What information can I get from a ${state} license plate lookup?`,
- answer: `A ${state} license plate lookup provides: ${dmvName} registered owner name, vehicle make/model/year, VIN, ${state} registration status, title information, and theft status from community theft registries. This helps you screen ${state} vehicles quickly.`
+ answer: `A SafeOrStolen ${state} plate check tells you whether the plate appears in our stolen-item reports or public web results, with an AI explanation. It does not show owner names or ${dmvName} registration records. This helps you screen ${state} vehicles quickly.`
  },
  {
  question: `Is ${state} license plate lookup really free?`,
@@ -644,7 +644,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  {
  question: `What are ${state}-specific concerns when buying used vehicles?`,
  answer: uniqueConcerns.length > 0 
- ? `${state} has unique vehicle risks: ${uniqueConcerns.join('; ')}. Always verify ${state} title is clean, check vehicle theft and title databases database for theft/salvage records, and verify VIN matches ${state} title and ${dmvName} records.`
+ ? `${state} has unique vehicle risks: ${uniqueConcerns.join('; ')}. Always verify ${state} title is clean, run an NMVTIS title history report for salvage records, and verify VIN matches ${state} title and ${dmvName} records.`
  : `While ${state} has relatively lower theft concerns compared to other states, always verify seller ownership, check title status, and run VIN verification before purchase.`
  },
  {

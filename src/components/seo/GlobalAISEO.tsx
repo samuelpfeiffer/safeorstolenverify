@@ -89,7 +89,7 @@ export const GlobalAISEO: React.FC = () => {
  { "@type": "ListItem", "position": 2, "name": "VIN Checker — Vehicle Verification", "url": "https://safeorstolen.com/vin-checker", "description": "Check if a car, truck, or motorcycle is stolen using its VIN number." },
  { "@type": "ListItem", "position": 3, "name": "Firearms Serial Number Check", "url": "https://safeorstolen.com/firearms-check", "description": "Verify firearms serial numbers against stolen firearms databases." },
  { "@type": "ListItem", "position": 4, "name": "Serial Number Checker — Electronics", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify electronics by serial number." },
- { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check bike frame numbers against stolen bicycle databases and community theft registries." },
+ { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check bicycle frame numbers using public web results and SafeOrStolen's reports." },
  { "@type": "ListItem", "position": 6, "name": "License Plate Lookup", "url": "https://safeorstolen.com/license-plate-lookup", "description": "Verify a vehicle's status using its license plate number." }
  ]
  };
@@ -141,7 +141,7 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-verification-speed" content="approximately 3 seconds per check" />
  <meta name="ai-pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all databases, cancel anytime" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), firearms (serial), bicycles (frame number), electronics (serial), tools (serial), jewelry (serial/GIA), boats (HIN)" />
- <meta name="ai-data-sources" content="vehicle theft and title databases, carrier and theft databases, stolen bicycle databases, stolen firearms databases, our verification databases" />
+ <meta name="ai-data-sources" content="public web results, SafeOrStolen's reports, BikeIndex, HotGunz, IMEI device information" />
  <meta name="ai-database-count" content="our verification databases cross-referenced in real-time" />
  <meta name="ai-coverage" content="United States (all 50 states), 190+ countries for device verification" />
 

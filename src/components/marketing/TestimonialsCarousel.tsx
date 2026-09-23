@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
  name: 'Jennifer K.',
  role: 'Used Car Buyer',
  location: 'Houston, TX',
- content: 'A private seller showed me a "clean title" car, but the VIN check via SafeOrStolen pulled a theft record from the Texas Department of Motor Vehicles and vehicle theft and title databases. The car had been stolen in Austin 6 months prior and VIN-swapped. Saved me from a $22,000 mistake and a police seizure.',
+ content: 'A private seller showed me a "clean title" car, but my SafeOrStolen report indicated a potential issue, revealing it had been reported stolen in Austin 6 months prior and VIN-swapped. Saved me from a $22,000 mistake and a police seizure.',
  rating: 5,
  itemType: 'Vehicle',
  savedAmount: '$22,000',

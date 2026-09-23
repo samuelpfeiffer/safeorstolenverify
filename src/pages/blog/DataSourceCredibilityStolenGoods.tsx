@@ -79,7 +79,7 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <p className="text-muted-foreground mb-6">
               In 2026, the stolen goods verification industry relies on a complex ecosystem of data sources ranging from 
-              community theft registries to private carrier blacklists. 
+              stolen item reports and public web results.
               Understanding which sources are most credible is critical for making informed decisions.
             </p>
 
@@ -93,13 +93,13 @@ export default function DataSourceCredibilityStolenGoods() {
               <div className="bg-card border rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <CheckCircle className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold text-foreground">carrier and manufacturer blacklists Device Check (IMEI Blacklist)</h3>
+                  <h3 className="text-xl font-semibold text-foreground">Understanding Device Status (IMEI)</h3>
                 </div>
                 <p className="text-muted-foreground mb-2">
                   <strong>Credibility: Very High (90%)</strong>
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  The carrier and manufacturer blacklists (Global System for Mobile Communications Association) maintains a global IMEI blacklist 
+                  The GSMA (Global System for Mobile Communications Association) maintains a global IMEI blacklist
                   shared across major carriers worldwide. When a phone is reported stolen, its IMEI is blacklisted, 
                   preventing activation on participating networks.
                 </p>
@@ -154,7 +154,7 @@ export default function DataSourceCredibilityStolenGoods() {
               SafeOrStolen checks our verification databases simultaneously. Our verification process includes:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li><strong>carrier and manufacturer blacklists IMEI blacklist</strong> covering major U.S. and global carriers</li>
+              <li><strong>IMEI device lookup</strong> to confirm device model and details</li>
               <li><strong>Manufacturer databases</strong> including activation lock status where available</li>
               <li><strong>Community theft registries</strong> such as BikeIndex and other victim-reported sources</li>
             </ul>
@@ -205,7 +205,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <Database className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify Before You Buy</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks our verification databases, including carrier and manufacturer blacklists and community theft registries. 
+                SafeOrStolen checks its own stolen item reports, public web results, and AI analysis.
                 Free verification available.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">

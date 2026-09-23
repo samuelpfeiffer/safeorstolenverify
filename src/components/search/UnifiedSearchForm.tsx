@@ -256,13 +256,13 @@ const UnifiedSearchFormComponent = ({
  <div>
  <Badge variant="secondary" className="mb-4 bg-sos-orange/10 text-sos-orange border-sos-orange/20">
  <Shield className="h-3 w-3 mr-1" />
- Secure Real-Time Verification
+ Secure Verification
  </Badge>
  <h3 className="text-lg font-semibold mb-2 text-foreground">
- Universal Theft Database Search
+ Stolen-Item Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Search across carrier and theft databases, CheckMEND, stolen bicycle databases, and more
+ Checks our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bicycles and HotGunz for firearms
  </p>
  </div>
 

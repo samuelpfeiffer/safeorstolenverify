@@ -53,7 +53,7 @@ export const PressMediaSection = () => {
  icon: Globe,
  label: 'multiple sources',
  description: 'Verified stolen item database across multiple sources',
- detail: 'Cross-referenced from carrier and theft databases, vehicle theft and title databases, community theft reports, all 50 state community theft registries, and 500+ insurance companies.',
+ detail: 'Cross-referenced from our stolen-item reports, public web results, and AI analysis to help you check an item\'s history.',
  link: '/data-sources',
  },
  {
@@ -82,14 +82,14 @@ export const PressMediaSection = () => {
  icon: Shield,
  label: 'multiple sources',
  description: 'Law enforcement, insurance & carrier sources',
- detail: 'More data sources  — including vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, all community theft reports, and 200+ carrier and theft databases.',
+ detail: 'More data sources — including our stolen-item reports, public web results, AI analysis, BikeIndex for bicycles, and HotGunz for firearms.',
  link: '/data-sources',
  },
  {
  icon: Globe,
  label: '3-Second Results',
  description: 'Fastest stolen item verification available',
- detail: 'SafeOrStolen delivers verification results in under 3 seconds —  including Carfax (PDF generation) and CheckMEND.',
+ detail: 'SafeOrStolen delivers verification results in under 3 seconds, drawing from our stolen-item reports, public web results, and AI analysis.',
  link: '/compare',
  },
  ];

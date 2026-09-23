@@ -211,7 +211,7 @@ const InstallAppPage = () => {
  <div className="text-center p-6">
  <Shield className="h-10 w-10 mx-auto text-primary mb-4" />
  <h3 className="font-semibold mb-2">our verification Databases</h3>
- <p className="text-sm text-muted-foreground">public theft-report registries, vehicle theft and title databases, and all 50 state databases</p>
+ <p className="text-sm text-muted-foreground">SafeOrStolen's own theft reports, public web results, and AI analysis to find potential matches</p>
  </div>
  <div className="text-center p-6">
  <Zap className="h-10 w-10 mx-auto text-primary mb-4" />

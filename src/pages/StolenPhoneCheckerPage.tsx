@@ -64,7 +64,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What databases does SafeOrStolen check?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen checks our verification databases, including carrier and theft databases and international registries."
+ "text": "SafeOrStolen checks our stolen-item reports, public web results, and performs AI analysis."
  }
  }
  ]
@@ -102,7 +102,7 @@ const StolenPhoneCheckerPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
  <PageSEO
  title="Free Stolen Phone Checker - IMEI Lookup"
- description="Free stolen phone checker. Verify IMEI against our verification databases in 3 seconds. Carrier blacklists and carrier and theft databases."
+ description="Free stolen phone checker. Verify IMEI using our stolen-item reports, public web results, and AI analysis. Understand the status related to carrier blacklists."
  keywords="stolen phone checker, check if phone is stolen, IMEI blacklist check, free phone verification, is my phone stolen, phone stolen check"
  canonical="/stolen-phone-checker"
  structuredData={[faqSchema, howToSchema]}
@@ -121,7 +121,7 @@ const StolenPhoneCheckerPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify if any phone is stolen before buying. Enter the IMEI number below for instant verification against our verification databases, including carrier and theft databases.
+ Verify if any phone is stolen before buying. Enter the IMEI number below for instant verification against our stolen-item reports, public web results, and AI analysis.
  </p>
 
  {/* IMEI Checker Tool */}
@@ -161,7 +161,7 @@ const StolenPhoneCheckerPage = () => {
  <ul className="grid md:grid-cols-2 gap-4">
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen checks our verification databases, including carrier and theft databases</span>
+ <span>SafeOrStolen checks our stolen-item reports, public web results, and performs AI analysis</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -192,7 +192,7 @@ const StolenPhoneCheckerPage = () => {
  <Card className="text-center">
  <CardContent className="pt-6">
  <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">carrier and theft databases Database</h3>
+ <h3 className="font-semibold mb-2">Our Stolen-Item Reports and AI Analysis</h3>
  <p className="text-sm text-muted-foreground">Global System for Mobile Association worldwide IMEI registry</p>
  </CardContent>
  </Card>
@@ -200,7 +200,7 @@ const StolenPhoneCheckerPage = () => {
  <CardContent className="pt-6">
  <AlertTriangle className="w-12 h-12 text-primary mx-auto mb-4" />
  <h3 className="font-semibold mb-2">Theft Registries</h3>
- <p className="text-sm text-muted-foreground">Stolen-property registries and community theft reports</p>
+ <p className="text-sm text-muted-foreground">Our stolen-item reports and public web results.</p>
  </CardContent>
  </Card>
  </div>
@@ -250,7 +250,7 @@ const StolenPhoneCheckerPage = () => {
  <Database className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
  <h3 className="font-semibold mb-2">Verification Database Sources</h3>
- <p className="text-muted-foreground">We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases.</p>
+ <p className="text-muted-foreground">We check our stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex; for firearms, HotGunz; and for phones, we perform an IMEI device lookup.</p>
  </div>
  </div>
  </CardContent>
@@ -287,7 +287,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">How do I check if a phone is stolen before buying?</h3>
- <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We verify against our verification databases, including carrier and theft databases. Results in 3 seconds.</p>
+ <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We verify against our stolen-item reports, public web results, and AI analysis. Results in 3 seconds.</p>
  </CardContent>
  </Card>
  <Card>
@@ -311,7 +311,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What databases does SafeOrStolen check?</h3>
- <p className="text-muted-foreground">SafeOrStolen checks our verification databases, including carrier and theft databases and international registries.</p>
+ <p className="text-muted-foreground">SafeOrStolen checks our stolen-item reports, public web results, and performs AI analysis.</p>
  </CardContent>
  </Card>
  </div>

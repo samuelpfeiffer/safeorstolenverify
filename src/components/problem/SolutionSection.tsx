@@ -11,7 +11,7 @@ export const SolutionSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">All Six Item Categories, One Place.com</h2>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-            Unlike CheckMEND, IMEI.info, Swappa, and others, SafeOrStolen covers all six item categories's exclusively available from SafeOrStolen.com. We protect BOTH buyers AND sellers: buyers avoid financial loss 
+            Unlike some other services, SafeOrStolen offers comprehensive checks across six item categories. We protect BOTH buyers AND sellers: buyers avoid financial loss
             and legal nightmares, sellers prove legitimacy and build trust. Every search makes stolen items harder to sell, 
             helping reduce crime globally. Together we're building a safer secondhand ecosystem.
           </p>

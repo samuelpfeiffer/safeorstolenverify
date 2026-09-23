@@ -18,7 +18,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'How accurate is SafeOrStolen?',
- answer: 'We query official databases including carrier and theft databases, community theft registries, and carrier and theft databases. Our data comes directly from law enforcement and carrier sources. We update our databases in real-time.'
+ answer: 'We analyze public web results, our own community theft reports, and apply AI analysis. For specific items, we also check BikeIndex for bicycles and HotGunz for firearms. For phones, we perform an IMEI lookup to get device model and details.'
  },
  {
  question: 'Do you report searches to police?',
@@ -26,7 +26,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'Can I check items from other countries?',
- answer: 'Yes! SafeOrStolen works globally with coverage in 150+ countries. We query international databases including INTERPOL stolen property database, carrier and theft databases global registry, and community theft registries worldwide. Perfect for checking items from international sellers.'
+ answer: 'Yes! SafeOrStolen works globally. We analyze public web results and our own community theft reports from around the world, making it perfect for checking items from international sellers.'
  }
  ];
 

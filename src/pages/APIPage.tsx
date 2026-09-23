@@ -60,7 +60,7 @@ export default function APIPage() {
  </CardHeader>
  <CardContent className="prose prose-lg dark:prose-invert max-w-none">
  <p>
- The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same databases that power our web and mobile applications, including community theft reports, carrier and theft databases, stolen bicycle databases, vehicle theft and title databases, and over 100 other data sources worldwide.
+ The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same sources that power our web and mobile applications, including community theft reports, public web results, AI analysis, and specialized databases like BikeIndex for bicycles and HotGunz for firearms. For phones, we provide IMEI device details.
  </p>
  <p>
  Perfect for marketplace platforms, point-of-sale systems, pawn shops, dealerships, and any business that needs to verify items are not stolen before purchase or accepting them as trade-ins. The API supports verification of phones using IMEI numbers, vehicles using VIN numbers, electronics using serial numbers, bicycles, firearms, and more.
@@ -214,7 +214,7 @@ Authorization: Bearer YOUR_API_KEY
  </CardHeader>
  <CardContent className="prose prose-lg dark:prose-invert max-w-none">
  <p>
- Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches community theft registries, manufacturer registries, and user-reported stolen items. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
+ Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches SafeOrStolen's stolen-item reports, public web results, and AI analysis. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
  </p>
  <h4>Request Example</h4>
  <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">

@@ -104,7 +104,7 @@ const HowItWorksPage = () => {
  icon={<Database className="h-8 w-8" />}
  number="2"
  title="Multi-Source Check"
- description="We search our database plus stolen bicycle databases, StolenRegister, and more"
+ description="We check SafeOrStolen reports, public web results, AI analysis, and BikeIndex for bicycles"
  />
  <ProcessStep
  icon={<Zap className="h-8 w-8" />}
@@ -142,7 +142,7 @@ const HowItWorksPage = () => {
  <ItemTypeCard
  icon="🚲"
  title="Bicycles"
- description="Search bike serial numbers in stolen bicycle databases and our database"
+ description="Search bicycle serial numbers using BikeIndex and our reported items"
  examples={['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX']}
  />
  <ItemTypeCard
@@ -160,17 +160,17 @@ const HowItWorksPage = () => {
  <div className="container mx-auto px-4">
  <h2 className="text-3xl font-bold text-center mb-4">Our Data Partners</h2>
  <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
- We crawl, scrape, and aggregate data from 50+ partner databases in real-time
+ Every check covers our own reports, public web results and AI analysis, plus BikeIndex and HotGunz where relevant
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
  <DataSourceCard
- title="community theft reports"
+ title="SafeOrStolen reports and public web results"
  description="Federal stolen property database - the relevant authorities partnership"
  icon="🏛️"
  />
  <DataSourceCard
- title="vehicle theft and title databases"
- description="vehicle theft and title databases - VINCheck and theft records"
+ title="vehicle history checks"
+ description="Look up VINs through public web searches and our internal reports"
  icon="🛡️"
  />
  <DataSourceCard
@@ -184,7 +184,7 @@ const HowItWorksPage = () => {
  icon="📲"
  />
  <DataSourceCard
- title="stolen bicycle databases"
+ title="bicycle history checks"
  description="1.4M bikes cataloged - direct API integration"
  icon="🚴"
  />
@@ -199,7 +199,7 @@ const HowItWorksPage = () => {
  icon="🚨"
  />
  <DataSourceCard
- title="vehicle theft and title databases Database"
+ title="vehicle history information"
  description="Official VIN records - government data partner"
  icon="🚗"
  />
@@ -216,8 +216,8 @@ const HowItWorksPage = () => {
  </div>
  <div className="text-center mt-6 p-4 bg-muted/30 rounded-lg max-w-3xl mx-auto">
  <p className="text-sm text-muted-foreground">
- <strong>Real-time aggregation:</strong> When you search, we crawl all partner databases simultaneously 
- and return unified results in under 3 seconds.
+ <strong>Real-time aggregation:</strong> When you search, we run every relevant source at the same time 
+ and return one result in about 3 seconds.
  </p>
  </div>
  </div>
@@ -461,7 +461,7 @@ const HowItWorksPage = () => {
  icon="🏠"
  />
  <DataSourceCard
- title="stolen bicycle databases"
+ title="bicycle history checks"
  description="1.4M bikes cataloged, 159K stolen bikes registered"
  icon="🚴"
  />
@@ -471,7 +471,7 @@ const HowItWorksPage = () => {
  icon="🔍"
  />
  <DataSourceCard
- title="vehicle theft and title databases Database"
+ title="vehicle history information"
  description="Official vehicle identification and specifications"
  icon="🚗"
  />

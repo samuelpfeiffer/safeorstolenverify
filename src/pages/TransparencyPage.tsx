@@ -43,14 +43,14 @@ export default function TransparencyPage() {
  
  <h3>Stolen Property Registries</h3>
  <ul>
- <li><strong>community theft reports:</strong> stolen property registries covering vehicles and firearms</li>
+ <li><strong>community theft reports:</strong> Reports made directly to SafeOrStolen</li>
  <li><strong>Community and Regional Registries:</strong> stolen-property reporting networks</li>
  </ul>
 
  <h3>Industry Databases</h3>
  <ul>
- <li><strong>carrier and theft databases IMEI Database:</strong> Global blacklist maintained by mobile carriers worldwide</li>
- <li><strong>vehicle theft and title databases:</strong> Insurance company stolen vehicle records</li>
+ <li><strong>GSMA and carrier blacklists:</strong> Your mobile carrier maintains a blacklist for stolen phones. SafeOrStolen does not check this.</li>
+ <li><strong>Vehicle records (NICB, NMVTIS):</strong> SafeOrStolen does not check these. It uses its own reports, public web results and AI analysis for vehicles.</li>
  <li><strong>Carrier Blacklists:</strong> AT&T, Verizon, T-Mobile, and other carrier-specific blacklists</li>
  </ul>
 

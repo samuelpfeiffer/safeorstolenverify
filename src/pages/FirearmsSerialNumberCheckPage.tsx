@@ -220,7 +220,7 @@ const FirearmsSerialNumberCheckPage = () => {
  Insurance theft claims and salvage records
  </h3>
  <p className="text-muted-foreground">
- When a firearm is reported stolen to an insurance company, the serial number is logged in community theft reports. SafeOrStolen accesses these records to identify firearms that may have been reported as stolen property. Salvage records also help identify firearms that were involved in incidents or claims.
+ When a firearm is reported stolen, its serial number may appear in public reports or discussions. SafeOrStolen analyzes public web results and its own user reports to identify firearms that may have been reported as stolen.
  </p>
  </div>
 
@@ -268,7 +268,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <CardContent className="p-6">
  <h3 className="font-semibold mb-2">What SafeOrStolen Can and Cannot Show</h3>
  <p className="text-muted-foreground">
- <strong>We can show:</strong> Insurance theft claims, public theft reports, salvage records, and risk indicators from available databases.
+ <strong>We can show:</strong> Publicly available theft reports, SafeOrStolen user reports, and risk indicators from our AI analysis.
  </p>
  <p className="text-muted-foreground mt-2">
 For official verification, visit your local police department or licensed firearms dealer.

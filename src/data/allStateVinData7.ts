@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  localLaws: "Under Minnesota Statutes §609.53, receiving stolen property valued over $500 is a felony with penalties up to 5 years in prison. Minnesota requires title transfers within 10 days. The Minnesota DVS maintains all VIN and title records for verification."
  },
  faqs: [
- { question: "How do I check a Minnesota VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Minnesota DVS records, vehicle theft and title databases, and accident history. Our mobile app offers instant barcode scanning for faster verification." },
+ { question: "How do I check a Minnesota VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check SafeOrStolen's stolen-item reports, public web results, and AI analysis. Our mobile app offers instant barcode scanning for faster verification.", hasAIAnswer: true },
  { question: "Does Minnesota require VIN inspections?", answer: "Minnesota requires VIN inspections for out-of-state vehicles and vehicles without existing MN titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden damage." },
  { question: "What is Minnesota's title transfer process?", answer: "In Minnesota, buyers must complete title transfer within 10 days or face late fees. Both parties sign the title, and buyer submits it to the MN DVS with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing." }
  ]
@@ -41,7 +41,7 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  localLaws: "Mississippi Code §97-17-65 makes receiving stolen property a felony if vehicle value exceeds $500, with penalties up to 10 years in prison. Mississippi requires title transfers within 30 days. The MS Department of Revenue maintains all title and VIN records."
  },
  faqs: [
- { question: "How do I check for flood damage on a Mississippi vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Mississippi Gulf Coast vehicles frequently have hidden flood damage from hurricanes. Our database searches theft reports, salvage auctions, and title brands to uncover damage sellers hide." },
+ { question: "How do I check for flood damage on a Mississippi vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to help reveal flood damage history. Mississippi Gulf Coast vehicles can have hidden flood damage from hurricanes. We analyze SafeOrStolen's stolen-item reports, public web results, and AI analysis to uncover potential issues before you buy.", hasAIAnswer: true },
  { question: "Is a VIN check required in Mississippi?", answer: "Mississippi law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Always verify VIN history before completing any purchase to protect yourself legally and financially." },
  { question: "What is Mississippi's title transfer process?", answer: "In Mississippi, both buyer and seller must complete the title transfer within 30 days. The seller signs the title, buyer submits it to the MS DOR with bill of sale. Always verify the VIN matches the physical title before signing to prevent fraud." }
  ]
@@ -87,7 +87,7 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  localLaws: "Montana Code §45-6-301 makes theft of property valued over $1,500 a felony with penalties up to 10 years in prison, including unknowingly buying stolen vehicles. Montana requires title transfers within 40 days. The Montana MVD maintains all title records."
  },
  faqs: [
- { question: "How do I check a Montana VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search Montana MVD records, vehicle theft and title databases, and accident history. Our mobile app provides instant barcode scanning for faster verification at dealerships." },
+ { question: "How do I check a Montana VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search SafeOrStolen's stolen-item reports, public web results, and AI analysis. Our mobile app provides instant barcode scanning for faster verification at dealerships.", hasAIAnswer: true },
  { question: "What is the Montana vehicle registration loophole?", answer: "Some people register expensive vehicles in Montana (where they don't live) to avoid sales tax in their home state. This is tax evasion and can result in vehicle seizure. Always verify the title is legitimate and matches the seller's actual residence before purchase." },
  { question: "Is a VIN check required in Montana?", answer: "Montana law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal prosecution and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase." }
  ]
@@ -110,7 +110,7 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  localLaws: "Under Nebraska Revised Statutes §28-516, receiving stolen property valued over $1,500 is a felony with penalties up to 5 years in prison. Nebraska requires title transfers within 30 days. The Nebraska DMV maintains all VIN and title records for verification."
  },
  faqs: [
- { question: "How do I verify a Nebraska vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Nebraska title status. Enter the VIN to check NE vehicle theft and title databases, theft databases, and title brands. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase." },
+ { question: "How do I verify a Nebraska vehicle title?", answer: "Use SafeOrStolen's VIN lookup to help verify Nebraska title status. Enter the VIN to check SafeOrStolen's stolen-item reports, public web results, and AI analysis. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase.", hasAIAnswer: true },
  { question: "Does Nebraska require VIN inspections?", answer: "Nebraska requires VIN inspections for out-of-state vehicles and vehicles without existing NE titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden damage before purchase." },
  { question: "What is Nebraska's title transfer process?", answer: "In Nebraska, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the NE DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
  ]

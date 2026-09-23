@@ -34,7 +34,7 @@ const GamingConsoleCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Check the back/bottom of the console, original box, or in System Settings",
         "Enter the serial number into our free verification tool",
-        "Our system searches manufacturer databases, police records instantly",
+        "Our system reviews SafeOrStolen's reports, public web results, and AI analysis.",
         "Get results in 3 seconds - know if the console is SAFE or REPORTED STOLEN"
       ]}
       howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, and user-reported theft databases."

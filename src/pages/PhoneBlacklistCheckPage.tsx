@@ -39,7 +39,7 @@ const PhoneBlacklistCheckPage = () => {
  "name": "How do I check if a phone is blacklisted?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the 15-digit IMEI number into SafeOrStolen's free blacklist checker. We verify against carrier and theft databases from AT&T, Verizon, T-Mobile, and 50+ international carriers. Results in 3 seconds."
+ "text": "Enter the 15-digit IMEI number into SafeOrStolen's free lookup. We analyze public web results and our own reports, plus we tell you about the phone model and details. Results in 3 seconds."
  }
  },
  {
@@ -65,7 +65,7 @@ const PhoneBlacklistCheckPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
  <PageSEO
  title="Free Phone Blacklist Check - IMEI Verification"
- description="Check if a phone is blacklisted before buying. Free IMEI blacklist checker verifies against AT&T, Verizon, T-Mobile and 50+ carrier databases. Instant."
+ description="Look up a phone's IMEI before buying. Free IMEI lookup provides phone details and checks against SafeOrStolen's reports and public web results. Instant."
  keywords="phone blacklist check, IMEI blacklist checker, check if phone blacklisted, carrier blacklist check, phone blacklist status, blacklisted phone checker"
  canonical="/phone-blacklist-check"
  structuredData={faqSchema}
@@ -84,7 +84,7 @@ const PhoneBlacklistCheckPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify if a phone is blacklisted before buying. We check carrier and theft databases from AT&T, Verizon, T-Mobile, Sprint, and 50+ international carriers. A blacklisted phone cannot be activated!
+ Verify a phone's IMEI before buying. We check SafeOrStolen's reports and public web results, and provide phone details. If a phone is blacklisted by carriers, it cannot be activated!
  </p>
 
  {/* Blacklist Checker Tool */}
@@ -180,7 +180,7 @@ const PhoneBlacklistCheckPage = () => {
  <CardContent className="pt-6 text-center">
  <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
  <h3 className="font-semibold text-lg mb-2">Clean / Not Blacklisted</h3>
- <p className="text-sm text-muted-foreground">Phone is clear on all carrier and theft databases. Safe to purchase and will activate on any network.</p>
+ <p className="text-sm text-muted-foreground">We found no stolen reports in our system or public web results for this phone. A carrier blacklist check would need to be done with the carrier.</p>
  </CardContent>
  </Card>
  <Card className="border-red-200 bg-red-50 dark:bg-red-950/20">
@@ -211,7 +211,7 @@ const PhoneBlacklistCheckPage = () => {
  },
  {
  q: "How do I check if a phone is blacklisted?",
- a: "Enter the 15-digit IMEI number into SafeOrStolen's free blacklist checker above. We verify against carrier and theft databases from AT&T, Verizon, T-Mobile, and 50+ international carriers. Results in 3 seconds."
+ a: "Enter the 15-digit IMEI number into SafeOrStolen's free lookup above. We analyze public web results and our own reports, plus we tell you about the phone model and details. Results in 3 seconds."
  },
  {
  q: "Can a blacklisted phone be fixed?",

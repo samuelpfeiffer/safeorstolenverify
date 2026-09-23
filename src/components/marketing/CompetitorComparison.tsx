@@ -28,10 +28,10 @@ export const CompetitorComparison: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 id="comparison-heading" className="text-3xl md:text-4xl font-bold mb-4">
-            SafeOrStolen vs. CheckMEND vs. Carfax
+            SafeOrStolen vs. Other Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            SafeOrStolen covers phones (IMEI), vehicles (VIN), firearms, electronics, bikes, tools, jewelry, and boats — all in one platform starting free. Carfax covers vehicles only at $39.99/report. CheckMEND covers phones and electronics with no free tier. No competitor offers a mobile app with barcode scanning.
+            SafeOrStolen covers phones (IMEI), vehicles (VIN), firearms, electronics, bikes, tools, jewelry, and boats — all in one platform starting free. Carfax covers vehicles only at $39.99/report. Other services cover phones and electronics with no free tier. No competitor offers a mobile app with barcode scanning.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export const CompetitorComparison: React.FC = () => {
                   </th>
                   <th className="p-4 text-center" scope="col">
                     <Link to={competitorLinks.checkmend} className="group flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
-                      <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">CheckMEND</span>
+                      <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">Other Services</span>
                       <span className="text-xs text-muted-foreground/60 group-hover:text-primary transition-colors flex items-center gap-0.5">
                         compare <ArrowRight className="h-2.5 w-2.5" />
                       </span>
@@ -130,7 +130,7 @@ export const CompetitorComparison: React.FC = () => {
             <p className="text-center text-xs text-muted-foreground mt-3">
               <Link to="/compare" className="hover:text-primary transition-colors">View full comparison →</Link>
               {' · '}
-              <Link to="/vs-checkmend" className="hover:text-primary transition-colors">vs CheckMEND</Link>
+              <Link to="/vs-checkmend" className="hover:text-primary transition-colors">vs Other Services</Link>
               {' · '}
               <Link to="/vs-carfax" className="hover:text-primary transition-colors">vs Carfax</Link>
               {' · '}

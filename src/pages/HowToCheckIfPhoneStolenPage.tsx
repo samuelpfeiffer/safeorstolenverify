@@ -84,7 +84,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  "name": "How can I check if a phone is stolen for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Use SafeOrStolen's free IMEI checker. Enter the 15-digit IMEI number and we'll verify it against carrier and theft databases and reported-stolen records. You get 2 free checks, no credit card required."
+ "text": "Use SafeOrStolen's free IMEI checker. Enter the 15-digit IMEI number and we'll cross-reference it with reported-stolen records, public web results, and AI analysis. You get 2 free checks, no credit card required."
  }
  },
  {
@@ -146,7 +146,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search our verification databases including carrier and theft databases, and police records to protect you from buying stolen or blacklisted devices.
+ Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search our comprehensive stolen-item reports, public web results, and apply AI analysis to protect you from buying reported-stolen devices.
  </p>
 
  {/* Quick Check Tool */}
@@ -186,7 +186,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen checks our verification databases including carrier and theft databases and police records</span>
+ <span>SafeOrStolen cross-references its stolen-item reports, public web results, and applies AI analysis</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -380,7 +380,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
  <div className="space-y-4 max-w-3xl mx-auto">
  {[
- { q: "How can I check if a phone is stolen for free?", a: "Use SafeOrStolen's free IMEI checker. Enter the 15-digit IMEI number and we'll verify it against carrier and theft databases and reported-stolen records. You get 2 free checks, no credit card required." },
+ { q: "How can I check if a phone is stolen for free?", a: "Use SafeOrStolen's free IMEI checker. Enter the 15-digit IMEI number and we'll cross-reference it with reported-stolen records, public web results, and AI analysis. You get 2 free checks, no credit card required." },
  { q: "Where do I find the IMEI number on a phone?", a: "Dial *#06# to display the IMEI. On iPhone: Settings > General > About. On Android: Settings > About Phone > Status. It's also on the original box or SIM tray." },
  { q: "What happens if I buy a stolen phone?", a: "A stolen phone may be reported to police, who can confiscate it. The phone may also be blacklisted, preventing activation on any carrier network. You lose your money and the phone." },
  { q: "Can a stolen phone be unlocked?", a: "No legitimate service can unlock a stolen phone. The IMEI remains blacklisted regardless of carrier unlock. iCloud/Google locks cannot be bypassed without original owner's credentials." },

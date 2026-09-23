@@ -43,7 +43,7 @@ const ForConsumersPage = () => {
  },
  {
  question: "What items can I verify with SafeOrStolen?",
- answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks multiple sources including carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and community theft reports."
+ answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform utilizes its own stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex, and for firearms, HotGunz."
  },
  {
  question: "Is there a SafeOrStolen mobile app?",
@@ -88,7 +88,7 @@ const ForConsumersPage = () => {
  </header>
  <div>
  <h1>Buy Secondhand with Confidence</h1>
- <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against multiple sources before you hand over cash. SafeOrStolen checks carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and community theft reports in 3 seconds.</p>
+ <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against multiple sources before you hand over cash. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis in 3 seconds.</p>
  
  <h2>What Can You Verify?</h2>
  <ul>
@@ -224,7 +224,7 @@ const ForConsumersPage = () => {
  <div className="space-y-8">
  {[
  { step: 1, title: "Get the Identifier", desc: "Ask the seller for the IMEI number (phones), VIN (vehicles), or serial number (electronics) before meeting. If they refuse, that's a red flag." },
- { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against community theft reports, carrier and theft databases, vehicle theft and title databases, and 100+ community theft registries." },
+ { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against our own reported stolen items, public web results, and analyze findings using AI."},
  { step: 3, title: "Make an Informed Decision", desc: "If the status is CLEAN, proceed with confidence. If there are any red flags, walk away from the deal." }
  ].map(({ step, title, desc }) => (
  <div key={step} className="flex items-start gap-6">

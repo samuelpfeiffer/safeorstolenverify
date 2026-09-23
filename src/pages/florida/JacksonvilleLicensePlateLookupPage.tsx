@@ -11,7 +11,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Jacksonville, FL?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We search FLHSMV, community theft reports, Jacksonville Sheriff's Office (JSO) records. Results in 3 seconds. 2 free checks, no credit card." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We analyze public web results, our own stolen-item reports, and official FLHSMV records. Results in 3 seconds. 2 free checks, no credit card." }
  },
  {
  "@type": "Question",
@@ -21,7 +21,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "Does SafeOrStolen check Jacksonville Sheriff's Office records?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen's verification engine searches JSO stolen vehicle reports as part of our Florida theft reports queries, alongside FLHSMV, vehicle theft and title databases, and community theft reports." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen's verification engine analyzes public web results, our own stolen-item reports, and official FLHSMV records for vehicle theft information." }
  },
  {
  "@type": "Question",
@@ -35,7 +35,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Jacksonville FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Jacksonville, Florida license plate lookup. Check if vehicles in Duval County are stolen using FLHSMV, vehicle theft and title databases, and JSO databases. Instant results in 3 seconds."
+ description="Free Jacksonville, Florida license plate lookup. Check if vehicles in Duval County are stolen by analyzing public web results, our own stolen-item reports, and official FLHSMV records. Instant results in 3 seconds."
  canonical="/florida/jacksonville-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +47,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Jacksonville License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Jacksonville, Florida against FLHSMV, vehicle theft and title databases, community theft reports, Jacksonville Sheriff's Office (JSO). Free instant results in 3 seconds.
+ Verify any vehicle in Jacksonville, Florida by analyzing public web results, our own stolen-item reports, and official FLHSMV records. Free instant results in 3 seconds.
  </p>
  </div>
  </header>
@@ -83,7 +83,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  {[
  { name: 'FLHSMV Records', desc: 'Florida registration database for Duval County vehicles' },
  { name: 'JSO Records', desc: 'Jacksonville Sheriff\'s Office stolen vehicle reports' },
- { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss records' },
+ { name: 'public web results', desc: 'public web search results and SafeOrStolen user reports' },
  { name: 'I-95 Corridor Data', desc: 'Cross-state stolen vehicle alerts from the I-95 trafficking corridor' },
  { name: 'Insurance & Salvage', desc: 'Theft claims and flood/salvage titles from Florida hurricanes' },
  ].map(db => (
@@ -100,7 +100,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Jacksonville, FL?</summary>
- <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We search FLHSMV, community theft reports, Jacksonville Sheriff's Office (JSO) records. Results in 3 seconds. 2 free checks, no credit card.</p>
+ <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We analyze public web results, our own stolen-item reports, and official FLHSMV records. Results in 3 seconds. 2 free checks, no credit card.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">What makes Jacksonville a high-risk area for vehicle theft?</summary>
@@ -108,7 +108,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Does SafeOrStolen check Jacksonville Sheriff's Office records?</summary>
- <p className="text-muted-foreground mt-2">Yes. SafeOrStolen's verification engine searches JSO stolen vehicle reports as part of our Florida theft reports queries, alongside FLHSMV, vehicle theft and title databases, and community theft reports.</p>
+ <p className="text-muted-foreground mt-2">Yes. SafeOrStolen's verification engine analyzes public web results, our own stolen-item reports, and official FLHSMV records for vehicle theft information.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup enough or should I also check the VIN?</summary>

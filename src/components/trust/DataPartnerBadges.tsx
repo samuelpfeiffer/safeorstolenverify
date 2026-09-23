@@ -10,7 +10,7 @@ interface DataPartnerBadgesProps {
 const DATA_PARTNERS = [
  { name: 'Stolen Property Registry', description: 'Verified Theft Reports', icon: Shield, verified: true },
  { name: 'Insurance Bureau', description: 'National Theft Reports', icon: Lock, verified: true },
- { name: 'carrier and theft databases', description: 'Global IMEI Blacklists', icon: Globe, verified: true },
+ { name: 'our theft reports and public web data', description: 'SafeOrStolen Data Checks', icon: Globe, verified: true },
  { name: 'Bicycle Registry', description: '1.4M+ Bikes Cataloged', icon: Database, verified: true },
  { name: 'Firearms Database', description: 'National Gun Registry', icon: Server, verified: true },
  { name: 'Vehicle Records', description: 'VIN & Title History', icon: CheckCircle, verified: true },
@@ -73,7 +73,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  </span>
  </div>
  <p className="text-sm text-muted-foreground mb-4">
- We aggregate data from stolen-property registries, carrier blacklists, and manufacturer databases in real-time.
+ We aggregate data from our community reports, public web results, and AI analysis to help you identify stolen items.
  </p>
  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
  {DATA_PARTNERS.map((partner, index) => (

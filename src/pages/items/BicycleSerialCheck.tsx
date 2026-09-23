@@ -30,11 +30,11 @@ const BicycleSerialCheck = () => {
  { value: "$10/mo", label: "Unlimited Checks" }
  ]}
  whatIsTitle="What is Bicycle Serial Number Verification?"
- whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is logged in stolen bicycle databases. Our verification service searches these databases to check if a bicycle has been reported stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
+ whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is often recorded. Our verification service checks various sources, including SafeOrStolen's own reports, public web results, AI analysis, and BikeIndex, to see if a bicycle appears to be stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
  howItWorksSteps={[
  "Find the serial number: Usually stamped under the bottom bracket (where the pedals connect), on the head tube, or rear dropout",
  "Enter the serial number into our verification tool",
- "Our system searches stolen bicycle databases instantly",
+ "Our system checks SafeOrStolen reports, public web results, and BikeIndex instantly",
  "Get results in 3 seconds - see if the bicycle is CLEAR or REPORTED STOLEN"
  ]}
  howItWorksDescription="We search multiple bicycle-specific databases including stolen bicycle registries and manufacturer registries. For e-bikes, we also check motor and battery serial numbers where applicable."
@@ -47,7 +47,7 @@ const BicycleSerialCheck = () => {
  "Police regularly check serial numbers and will confiscate stolen bikes",
  "Possession of stolen property is a criminal offense",
  "No warranty or insurance coverage for stolen bicycles",
- "stolen bicycle databases and actively track and recover stolen bikes",
+ "BikeIndex and actively track and recover stolen bikes",
  "You have zero legal recourse if you unknowingly buy stolen property"
  ]}
  useCases={[
@@ -92,15 +92,15 @@ const BicycleSerialCheck = () => {
  },
  {
  question: "What databases does SafeOrStolen check for bikes?",
- answer: "We search stolen bicycle databases, local and community theft registries, and manufacturer registries to give you the best protection."
+ answer: "We check SafeOrStolen's own reports, public web results, AI analysis, and BikeIndex to give you the best protection."
  },
  {
  question: "What if the bike is reported stolen?",
- answer: "Do NOT purchase the bicycle. Walk away immediately. You can report the listing to stolen bicycle databases and the marketplace. Consider notifying local police. The original owner may be actively looking for their bike."
+ answer: "Do NOT purchase the bicycle. Walk away immediately. You can report the listing to BikeIndex and the marketplace. Consider notifying local police. The original owner may be actively looking for their bike."
  },
  {
  question: "Should I register my own bike?",
- answer: "Yes! Register your bike on stolen bicycle databases (it's free) and record your serial number. If your bike is stolen, registration dramatically increases recovery chances. Many police departments check stolen bicycle databases when they recover stolen bikes."
+ answer: "Yes! Register your bike on BikeIndex (it's free) and record your serial number. If your bike is stolen, registration dramatically increases recovery chances. Many police departments check BikeIndex when they recover stolen bikes."
  }
  ]}
  ctaTitle="Don't Buy a Stolen Bicycle"

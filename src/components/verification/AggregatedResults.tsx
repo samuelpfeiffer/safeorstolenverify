@@ -178,7 +178,7 @@ export const AggregatedResults: React.FC<AggregatedResultsProps> = ({
  </CardContent>
  </Card>
  
- {/* stolen bicycle databases Specific Results */}
+ {/* BikeIndex.org Bicycle Checks Specific Results */}
  {result.bikeIndexResults && result.bikeIndexResults.length > 0 && (
  <BikeIndexResults results={result.bikeIndexResults} />
  )}

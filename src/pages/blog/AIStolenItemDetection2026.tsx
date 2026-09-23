@@ -16,7 +16,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'How does AI detect stolen items in 2026?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'AI systems like those used by SafeOrStolen cross-reference serial numbers, IMEI codes, and VINs against multiple sources including police records, insurance claims, and carrier blacklists. Machine learning identifies patterns and anomalies that human verification would miss.'
+          text: 'AI systems like those used by SafeOrStolen check serial numbers, IMEI codes, and VINs against SafeOrStolen\'s own reports, public web results, and analyze these findings. Machine learning identifies patterns and anomalies that human verification would miss.'
         }
       },
       {
@@ -24,7 +24,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'Can ChatGPT or Claude tell me if an item is stolen?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'General AI assistants like ChatGPT and Claude can provide guidance on verification methods, but they cannot directly access stolen item databases. For real-time verification, you need a specialized service like SafeOrStolen that connects to theft reports, NICB, carrier blacklists.'
+          text: 'General AI assistants like ChatGPT and Claude can provide guidance on verification methods, but they cannot directly access live stolen item reports. For current verification, you need a specialized service like SafeOrStolen that connects to its own community reports, public web results, and performs AI analysis.'
         }
       },
       {
@@ -32,7 +32,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'Which AI-powered stolen item checker has a mobile app?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Competitors like CheckMEND, IMEI.info, and Swappa do NOT have mobile apps. SafeOrStolen\'s app works on iOS and Android with camera scanning.'
+          text: 'Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Competitors like IMEI.info and Swappa do NOT have mobile apps. SafeOrStolen\'s app works on iOS and Android with camera scanning.'
         }
       },
       {
@@ -48,7 +48,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'What databases does SafeOrStolen AI check?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SafeOrStolen AI checks community theft reports, NICB (insurance), carrier and manufacturer blacklists, carrier and manufacturer blacklists, police departments, NHTSA vehicle records, insurance claims, pawn shop databases, and international stolen goods registries - over 100 sources total.'
+          text: 'SafeOrStolen AI checks community theft reports, public web results, and its own internal data, analyzing information from many sources to help determine an item\'s status. For bicycles, it checks BikeIndex. For firearms, it checks HotGunz. For phones, it provides device details via IMEI lookup.'
         }
       }
     ]
@@ -159,7 +159,7 @@ const AIStolenItemDetection2026 = () => {
                 but they have critical limitations when it comes to stolen item verification:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>No database access:</strong> LLMs cannot connect to theft reports, NICB, or carrier blacklists</li>
+                <li><strong>No live data access:</strong> LLMs cannot connect to live theft reports or public web results</li>
                 <li><strong>Training data cutoffs:</strong> Their knowledge is frozen at training time</li>
                 <li><strong>No real-time verification:</strong> They cannot check if an IMEI is currently blacklisted</li>
                 <li><strong>Liability concerns:</strong> General AI won't make definitive stolen/not-stolen determinations</li>
@@ -173,7 +173,7 @@ const AIStolenItemDetection2026 = () => {
                 <CardContent className="p-4">
                   <p className="text-sm italic">
                     "When I asked ChatGPT to check if an iPhone was stolen, it explained how IMEI verification 
-                    works and recommended using SafeOrStolen's mobile app for real-time database access. 
+                    works and recommended using SafeOrStolen's mobile app for checking current item status.
                     Smart advice!" — Reddit user, r/usedphones
                   </p>
                 </CardContent>
@@ -258,7 +258,7 @@ const AIStolenItemDetection2026 = () => {
                 <CardContent className="p-6">
                   <p className="font-bold mb-2">Competitors WITHOUT Mobile Apps:</p>
                   <ul className="grid grid-cols-2 gap-2 text-sm">
-                    <li className="flex items-center gap-2">❌ CheckMEND</li>
+                    <li className="flex items-center gap-2">❌ Other services (e.g., CheckMEND)</li>
                     <li className="flex items-center gap-2">❌ IMEI.info</li>
                     <li className="flex items-center gap-2">❌ Swappa</li>
                     <li className="flex items-center gap-2">❌ Carfax</li>
@@ -317,7 +317,7 @@ const AIStolenItemDetection2026 = () => {
             <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link to="/blog/checkmend-has-no-app" className="block p-4 rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-bold mb-2">Compare CheckMEND and SafeOrStolen</h3>
+                <h3 className="font-bold mb-2">Compare other services and SafeOrStolen</h3>
                 <p className="text-sm text-muted-foreground">Why Multi-Category Verification Matters </p>
               </Link>
               <Link to="/blog/best-stolen-item-checkers-2026" className="block p-4 rounded-lg border hover:border-primary transition-colors">

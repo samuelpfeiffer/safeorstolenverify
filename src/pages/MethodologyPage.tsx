@@ -147,7 +147,7 @@ const MethodologyPage = () => {
               </h2>
               <p className="text-base md:text-lg text-foreground leading-relaxed">
                 SafeOrStolen verifies secondhand property by checking submitted identifiers against
-                available stolen-property reports, carrier and manufacturer blacklists,
+                available stolen-item reports, public web results, and AI analysis.
                 insurance-related records, and participating theft registries. Every check produces
                 a timestamped Verification Record. A verification indicates whether a matching
                 stolen report was found — it does not establish legal ownership, title, or

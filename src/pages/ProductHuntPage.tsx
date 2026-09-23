@@ -155,7 +155,7 @@ const ProductHuntPage = () => {
                     <th className="p-4 text-center bg-primary/10">
                       <span className="font-bold text-primary">SafeOrStolen</span>
                     </th>
-                    <th className="p-4 text-center">CheckMEND</th>
+                    <th className="p-4 text-center">GSMA / Carrier Blacklist</th>
                     <th className="p-4 text-center">IMEI.info</th>
                   </tr>
                 </thead>

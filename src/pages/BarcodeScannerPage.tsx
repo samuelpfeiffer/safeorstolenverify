@@ -14,7 +14,7 @@ const faqs = [
  },
  {
  question: "How do I scan a barcode to check if an item is stolen?",
- answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine, which checks our verification databases including carrier blacklists, vehicle theft records, and community theft registries. Results appear in 3 seconds."
+ answer: "Open SafeOrStolen on your phone browser or install the PWA app. Tap 'Scan Barcode or QR' on the homepage. Point your camera at the barcode — it reads instantly. The scanned number is automatically sent to our verification engine, which checks SafeOrStolen's reports, public web results, and uses AI analysis. Results appear in 3 seconds."
  },
  {
  question: "Can I scan a phone's IMEI barcode?",
@@ -112,7 +112,7 @@ const BarcodeScannerPage = () => {
  <h2>What Barcodes Can You Scan?</h2>
  <p>Our scanner reads IMEI barcodes on phone boxes, VIN barcodes on vehicle door jambs, serial number barcodes on electronics, QR codes on warranty cards, and standard UPC/EAN retail barcodes. Supports 1D and 2D barcode formats including Code 128, Code 39, Data Matrix, and QR codes.</p>
  <h2>How It Works</h2>
- <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against our verification databases including carrier blacklists, vehicle theft records, firearm theft registries, and community theft registries. Results in 3 seconds.</p>
+ <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against SafeOrStolen's reports, public web results, and using AI analysis. Results in 3 seconds.</p>
  <h2>Perfect for In-Person Shopping</h2>
  <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
  </article>

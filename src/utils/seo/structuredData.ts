@@ -31,7 +31,7 @@ export const createOrganizationSchema = () => {
  "@type": "Corporation",
  "name": "SafeOrStolen",
  "alternateName": ["Safe Or Stolen", "Safe or Stolen", "SOS", "safe or stolen"],
- "description": "Fast-growing stolen goods verification platform serving customers across the United States with international expansion underway. Multi-database IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via vehicle theft and title databases, carrier and theft databases, CheckMEND, stolen bicycle databases and growing database partnerships.",
+ "description": "Fast-growing stolen item verification platform serving customers across the United States with international expansion underway. IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via our community reports, public web results, AI analysis, and specialized registries like BikeIndex for bicycles and HotGunz for firearms.",
  "slogan": "Complete Multi-Database Verification - Protect Every Purchase",
  "url": SITE_CONFIG.url,
  "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
@@ -196,7 +196,7 @@ export const createServiceSchema = () => ({
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "Complete Multi-Database Stolen Item Verification - IMEI, VIN & Serial Number Check",
- "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including carrier and theft databases, CheckMEND, and stolen bicycle databases. Fast results in 30 seconds.",
+ "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against our community reports, public web results, AI analysis, and specialized registries like BikeIndex and HotGunz. Fast results in 30 seconds.",
  "provider": {
  "@type": "Organization",
  "name": "SafeOrStolen",
@@ -320,7 +320,7 @@ export const createFAQSchema = () => ({
  "name": "Can I check if a phone is stolen for free?",
  "acceptedAnswer": {
  "@type": "Answer", 
- "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from multiple sources including carrier and theft databases."
+ "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from our community reports, public web results, and AI analysis."
  }
  },
  {

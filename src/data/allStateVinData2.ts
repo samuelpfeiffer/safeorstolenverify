@@ -4,7 +4,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  illinois: {
  state: "Illinois", stateCode: "IL", slug: "illinois-vin-lookup",
  title: "Illinois VIN Lookup - Free IL Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Illinois VIN lookup. Check if an IL vehicle is stolen from Secretary of State and community theft registries. Instant Chicago and statewide verification.",
+ metaDescription: "Free Illinois VIN lookup. Check if an IL vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Chicago and statewide verification.",
  theftStats: { vehiclesStolen: "25,000+", recoveryRate: "44%", topCities: ["Chicago", "Aurora", "Rockford"] },
  dmvLink: "https://www.ilsos.gov/",
  content: {
@@ -20,7 +20,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  indiana: {
  state: "Indiana", stateCode: "IN", slug: "indiana-vin-lookup",
  title: "Indiana VIN Lookup - Free IN Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Indiana VIN lookup. Check if an IN vehicle is stolen from BMV and community theft registries. Instant Indianapolis and statewide verification.",
+ metaDescription: "Free Indiana VIN lookup. Check if an IN vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Indianapolis and statewide verification.",
  theftStats: { vehiclesStolen: "11,000+", recoveryRate: "51%", topCities: ["Indianapolis", "Fort Wayne", "Evansville"] },
  dmvLink: "https://www.in.gov/bmv/",
  content: {
@@ -29,14 +29,14 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  localLaws: "Under Indiana Code § 35-43-4-2, auto theft is a Level 6 felony with up to 2.5 years imprisonment. Possessing stolen vehicles results in confiscation regardless of buyer knowledge."
  },
  faqs: [
- { question: "What should I check when buying a used car in Indiana?", answer: "Verify VIN with SafeOrStolen, check for liens with Indiana BMV, inspect title authenticity, request vehicle theft and title databases history report, and verify emissions compliance if applicable." },
+ { question: "What should I check when buying a used car in Indiana?", answer: "Verify VIN with SafeOrStolen, check for liens with Indiana BMV, inspect title authenticity, request a vehicle history report, and verify emissions compliance if applicable." },
  { question: "How strict is Indiana BMV on title verification?", answer: "Indiana requires thorough documentation and VIN inspection for out-of-state vehicles. Use SafeOrStolen to pre-verify clean history before attempting title transfer." }
  ]
  },
  iowa: {
  state: "Iowa", stateCode: "IA", slug: "iowa-vin-lookup",
  title: "Iowa VIN Lookup - Free IA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Iowa VIN lookup. Check if an IA vehicle is stolen from DOT and community theft registries. Instant Des Moines and statewide verification.",
+ metaDescription: "Free Iowa VIN lookup. Check if an IA vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Des Moines and statewide verification.",
  theftStats: { vehiclesStolen: "3,400+", recoveryRate: "56%", topCities: ["Des Moines", "Cedar Rapids", "Davenport"] },
  dmvLink: "https://iowadot.gov/mvd/",
  content: {
@@ -52,7 +52,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  kansas: {
  state: "Kansas", stateCode: "KS", slug: "kansas-vin-lookup",
  title: "Kansas VIN Lookup - Free KS Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Kansas VIN lookup. Check if a KS vehicle is stolen from DMV and community theft registries. Instant Wichita and statewide verification.",
+ metaDescription: "Free Kansas VIN lookup. Check if a KS vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Wichita and statewide verification.",
  theftStats: { vehiclesStolen: "4,100+", recoveryRate: "54%", topCities: ["Wichita", "Overland Park", "Kansas City"] },
  dmvLink: "https://www.ksrevenue.gov/",
  content: {
@@ -68,7 +68,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  kentucky: {
  state: "Kentucky", stateCode: "KY", slug: "kentucky-vin-lookup",
  title: "Kentucky VIN Lookup - Free KY Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Kentucky VIN lookup. Check if a KY vehicle is stolen from Transportation Cabinet and community theft registries. Instant Louisville and statewide verification.",
+ metaDescription: "Free Kentucky VIN lookup. Check if a KY vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Louisville and statewide verification.",
  theftStats: { vehiclesStolen: "5,900+", recoveryRate: "52%", topCities: ["Louisville", "Lexington", "Bowling Green"] },
  dmvLink: "https://drive.ky.gov/",
  content: {
@@ -84,7 +84,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  louisiana: {
  state: "Louisiana", stateCode: "LA", slug: "louisiana-vin-lookup",
  title: "Louisiana VIN Lookup - Free LA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Louisiana VIN lookup. Check if a LA vehicle is stolen from OMV and community theft registries. Instant New Orleans and statewide verification.",
+ metaDescription: "Free Louisiana VIN lookup. Check if a LA vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant New Orleans and statewide verification.",
  theftStats: { vehiclesStolen: "9,200+", recoveryRate: "43%", topCities: ["New Orleans", "Baton Rouge", "Shreveport"] },
  dmvLink: "https://www.expresslane.org/",
  content: {
@@ -100,7 +100,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  maine: {
  state: "Maine", stateCode: "ME", slug: "maine-vin-lookup",
  title: "Maine VIN Lookup - Free ME Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Maine VIN lookup. Check if a ME vehicle is stolen from Bureau of Motor Vehicles and community theft registries. Instant Portland and statewide verification.",
+ metaDescription: "Free Maine VIN lookup. Check if a ME vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Portland and statewide verification.",
  theftStats: { vehiclesStolen: "800+", recoveryRate: "64%", topCities: ["Portland", "Lewiston", "Bangor"] },
  dmvLink: "https://www.maine.gov/sos/bmv/",
  content: {
@@ -116,7 +116,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  maryland: {
  state: "Maryland", stateCode: "MD", slug: "maryland-vin-lookup",
  title: "Maryland VIN Lookup - Free MD Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Maryland VIN lookup. Check if a MD vehicle is stolen from MVA and community theft registries. Instant Baltimore and statewide verification.",
+ metaDescription: "Free Maryland VIN lookup. Check if a MD vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Baltimore and statewide verification.",
  theftStats: { vehiclesStolen: "12,500+", recoveryRate: "48%", topCities: ["Baltimore", "Silver Spring", "Waldorf"] },
  dmvLink: "https://mva.maryland.gov/",
  content: {
@@ -132,7 +132,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  massachusetts: {
  state: "Massachusetts", stateCode: "MA", slug: "massachusetts-vin-lookup",
  title: "Massachusetts VIN Lookup - Free MA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Massachusetts VIN lookup. Check if a MA vehicle is stolen from RMV and community theft registries. Instant Boston and statewide verification.",
+ metaDescription: "Free Massachusetts VIN lookup. Check if a MA vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Boston and statewide verification.",
  theftStats: { vehiclesStolen: "6,800+", recoveryRate: "61%", topCities: ["Boston", "Worcester", "Springfield"] },
  dmvLink: "https://www.mass.gov/rmv",
  content: {
@@ -142,13 +142,13 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  },
  faqs: [
  { question: "What vehicles are most stolen in Massachusetts?", answer: "Luxury sedans (BMW, Mercedes, Lexus) and SUVs are frequently targeted in Boston area. Always verify VIN using SafeOrStolen before purchasing any high-end vehicle." },
- { question: "How does Massachusetts RMV verify titles?", answer: "Massachusetts requires VIN inspection and thorough documentation. RMV cross-references vehicle theft and title databases databases. Use SafeOrStolen to pre-verify before registration attempts." }
+ { question: "How does Massachusetts RMV verify titles?", answer: "Massachusetts requires VIN inspection and thorough documentation. Use SafeOrStolen to pre-verify before registration attempts." }
  ]
  },
  michigan: {
  state: "Michigan", stateCode: "MI", slug: "michigan-vin-lookup",
  title: "Michigan VIN Lookup - Free MI Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Michigan VIN lookup. Check if a MI vehicle is stolen from Secretary of State and community theft registries. Instant Detroit and statewide verification.",
+ metaDescription: "Free Michigan VIN lookup. Check if a MI vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Detroit and statewide verification.",
  theftStats: { vehiclesStolen: "19,500+", recoveryRate: "46%", topCities: ["Detroit", "Grand Rapids", "Warren"] },
  dmvLink: "https://www.michigan.gov/sos",
  content: {

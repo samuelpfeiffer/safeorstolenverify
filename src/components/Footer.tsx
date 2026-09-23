@@ -5,10 +5,10 @@ import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Github, CheckCircle
 const sosLogo = '/sos-logo.png';
 
 const DATA_PARTNERS = [
- { name: 'community theft reports', verified: true },
- { name: 'vehicle theft and title databases', verified: true },
- { name: 'carrier and theft databases', verified: true },
- { name: 'stolen bicycle databases', verified: true },
+ { name: 'our own stolen item reports', verified: true },
+ { name: 'public web results and AI analysis', verified: true },
+ { name: 'Bicycle Index for bicycles and HotGunz for firearms', verified: true },
+ { name: 'IMEI device lookup for phones', verified: true },
  { name: 'Stolen Firearms Databases', verified: true },
 ];
 
@@ -64,7 +64,7 @@ const Footer = () => {
  label: 'Report Issue',
  href: '/about'
  }];
- const trustIndicators = ["256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
+ const trustIndicators = ["256-bit SSL Encryption", "GDPR Compliant", "Results in about 3 seconds"];
  return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
  <div className="container mx-auto container-padding">
  {/* Main Footer Content */}
@@ -246,7 +246,7 @@ const Footer = () => {
  All Systems Operational
  </Badge>
  <p className="text-xs text-muted-foreground">
- Real-time database connections verified and secure.
+ Reliable checks through our platform. Secure and accurate.
  </p>
  </div>
  </div>

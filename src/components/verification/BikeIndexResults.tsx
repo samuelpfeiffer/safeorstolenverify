@@ -1,6 +1,6 @@
 /**
- * stolen bicycle databases Results Display Component
- * Shows bicycle search results from stolen bicycle databases
+ * SafeOrStolen and BikeIndex bicycle check results display component
+ * Shows bicycle search results from SafeOrStolen reports and BikeIndex.
  */
 
 import React from 'react';
@@ -25,7 +25,7 @@ export const BikeIndexResults: React.FC<BikeIndexResultsProps> = ({
  <CardContent className="py-8">
  <div className="flex items-center justify-center gap-3">
  <div className="animate-spin h-5 w-5 border-2 border-primary border-t-transparent rounded-full" />
- <span className="text-muted-foreground">Searching stolen bicycle databases...</span>
+ <span className="text-muted-foreground">Searching SafeOrStolen and BikeIndex...</span>
  </div>
  </CardContent>
  </Card>
@@ -43,7 +43,7 @@ export const BikeIndexResults: React.FC<BikeIndexResultsProps> = ({
  <CardHeader className="pb-3">
  <CardTitle className="flex items-center gap-2 text-lg">
  <Bike className="h-5 w-5" />
- stolen bicycle databases Results
+ SafeOrStolen & BikeIndex Results
  <Badge variant={hasStolenBikes ? 'destructive' : 'default'} className="ml-auto">
  {results.length} match{results.length !== 1 ? 'es' : ''} found
  </Badge>
@@ -135,7 +135,7 @@ export const BikeIndexResults: React.FC<BikeIndexResultsProps> = ({
  rel="noopener noreferrer"
  className="flex items-center gap-1"
  >
- View on stolen bicycle databases
+ View on BikeIndex
  <ExternalLink className="h-3 w-3" />
  </a>
  </Button>
@@ -154,7 +154,7 @@ export const BikeIndexResults: React.FC<BikeIndexResultsProps> = ({
  rel="noopener noreferrer"
  className="text-primary hover:underline"
  >
- stolen bicycle databases
+ BikeIndex
  </a>
  {' '}— the world's largest open-source bike registry
  </p>

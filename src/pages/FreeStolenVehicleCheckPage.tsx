@@ -116,7 +116,7 @@ const FreeStolenVehicleCheckPage = () => {
  title="Free Stolen Vehicle & VIN Check | SafeOrStolen"
  description="Run a free stolen vehicle check before you buy. Enter a VIN or plate to see theft and risk signals so you avoid buying a stolen or problematic car, truck or motorcycle."
  canonical="/vin-checker"
- keywords="free stolen vehicle check, VIN check stolen car, is my car stolen, free VIN lookup, stolen car database, check if car is stolen free, vehicle theft and title databases free check"
+ keywords="free stolen vehicle check, VIN check stolen car, is my car stolen, free VIN lookup, stolen car reports, check if car is stolen free, public theft reports free check"
  schemaJson={schema}
  />
  <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
@@ -158,7 +158,7 @@ const FreeStolenVehicleCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free searches • vehicle theft and title databases + 100 databases • Results in 3 seconds
+ 2 free searches • our stolen item reports + public web results • Results in 3 seconds
  </p>
  </div>
 
@@ -166,7 +166,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
  <div className="flex items-center gap-2">
  <CheckCircle className="h-5 w-5 text-primary" />
- <span>vehicle theft and title databases Database</span>
+ <span>our stolen item reports Database</span>
  </div>
  <div className="flex items-center gap-2">
  <Shield className="h-5 w-5 text-primary" />
@@ -201,7 +201,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter details into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. Our system searches vehicle theft and title databases, community theft reports, salvage records, and available public theft reports.
+ Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. Our system checks SafeOrStolen's existing reports, public web results, and applies AI analysis to identify potential theft.
  </p>
  </div>
  </div>
@@ -294,9 +294,9 @@ const FreeStolenVehicleCheckPage = () => {
  
  <div className="space-y-6">
  <div className="p-6 bg-background rounded-lg">
- <h3 className="text-xl font-semibold mb-3">Free Tools (Like SafeOrStolen & vehicle theft and title databases)</h3>
+ <h3 className="text-xl font-semibold mb-3">Free Tools (Like SafeOrStolen & public theft checks)</h3>
  <p className="text-muted-foreground">
- Free checks focus on <strong>theft and fraud risk</strong>. SafeOrStolen and the vehicle theft and title databases's VINCheck service let you verify if a vehicle is reported stolen or has a salvage/junk title. This is the critical first step before buying—if a vehicle shows theft indicators, you shouldn't proceed regardless of other factors.
+ Free checks focus on <strong>theft and fraud risk</strong>. SafeOrStolen's service lets you verify if a vehicle is flagged in our reports or public web results. This is the critical first step before buying—if a vehicle shows theft indicators, you shouldn't proceed regardless of other factors.
  </p>
  </div>
  
@@ -418,7 +418,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any Vehicle Free Before You Buy</h2>
  <p className="text-lg text-muted-foreground mb-8">
- 2 free VIN or license plate checks. Search vehicle theft and title databases + 100 databases. Instant results.
+ 2 free VIN or license plate checks. Search our stolen item reports + public web results. Instant results.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

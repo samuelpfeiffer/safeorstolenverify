@@ -11,7 +11,7 @@ const DestinLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Destin, FL?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate or VIN on SafeOrStolen. We search FLHSMV, community theft reports, Okaloosa County Sheriff's Office (OCSO). Results in 3 seconds. 2 free checks, no credit card." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate or VIN on SafeOrStolen. We check for stolen reports on our platform, public web results, and AI analysis. We also review local law enforcement records for Okaloosa County. Results in 3 seconds. 2 free checks, no credit card." }
  },
  {
  "@type": "Question",
@@ -35,7 +35,7 @@ const DestinLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Destin FL License Plate Lookup — Check Vehicles in Okaloosa County | SafeOrStolen"
- description="Free Destin, Florida license plate lookup. Verify vehicles in Okaloosa County are not stolen. Search FLHSMV, vehicle theft and title databases, OCSO databases. 3-second results."
+ description="Free Destin, Florida license plate lookup. Verify vehicles in Okaloosa County are not stolen. We check for stolen reports, public web results, AI analysis, and local law enforcement records for Okaloosa County. 3-second results."
  canonical="/florida/destin-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +47,7 @@ const DestinLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Destin License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Destin and the Emerald Coast against FLHSMV, vehicle theft and title databases, community theft reports, Okaloosa County Sheriff's Office. Free instant results in 3 seconds.
+ Verify any vehicle in Destin and the Emerald Coast against our stolen-item reports, public web results, AI analysis, and local law enforcement records for Okaloosa County. Free instant results in 3 seconds.
  </p>
  </div>
  </header>
@@ -83,7 +83,7 @@ const DestinLicensePlateLookupPage = () => {
  {[
  { name: 'FLHSMV Records', desc: 'Florida registration database for Okaloosa County vehicles' },
  { name: 'OCSO Records', desc: 'Okaloosa County Sheriff\'s Office stolen vehicle reports' },
- { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss' },
+ { name: 'our stolen-item reports', desc: 'our stolen-item reports, public web results, and AI analysis for stolen and total loss indicators' },
  { name: 'Multi-State Search', desc: 'Cross-border databases for the I-10 Panhandle corridor' },
  { name: 'Military Base Records', desc: 'Vehicle registration data from Eglin AFB and Hurlburt Field areas' },
  ].map(db => (
@@ -100,7 +100,7 @@ const DestinLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Destin, FL?</summary>
- <p className="text-muted-foreground mt-2">Enter the Florida license plate or VIN on SafeOrStolen. We search FLHSMV, community theft reports, Okaloosa County Sheriff's Office. Results in 3 seconds. 2 free checks, no credit card.</p>
+ <p className="text-muted-foreground mt-2">Enter the Florida license plate or VIN on SafeOrStolen. We check for stolen reports on our platform, public web results, and AI analysis. We also review local law enforcement records for Okaloosa County. Results in 3 seconds. 2 free checks, no credit card.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Why should I verify vehicles in Destin specifically?</summary>

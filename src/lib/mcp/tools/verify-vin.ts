@@ -6,7 +6,7 @@ export default defineTool({
  name: "verify_vin",
  title: "Verify vehicle VIN",
  description:
- "Check a 17-character vehicle VIN against SafeOrStolen's stolen-vehicle sources (vehicle theft and title databases, state law enforcement, community reports). Returns status plus any known theft record.",
+ "Check a 17-character vehicle VIN against SafeOrStolen's reports, public web sources, and AI analysis for theft records. Returns status plus any known theft history.",
  inputSchema: {
  vin: z.string().describe("A 17-character VIN. Letters and digits; I/O/Q are not valid VIN chars."),
  },

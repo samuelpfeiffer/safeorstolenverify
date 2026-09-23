@@ -102,7 +102,7 @@ const StolenCheckSanDiego = () => {
  </p>
  <p>
  SafeOrStolen checks against multiple databases including police reports, and 
- insurance claims to help identify potentially stolen items. Our free verification 
+ community reports to help identify potentially stolen items. Our free verification 
  takes just 3 seconds and could save you from purchasing a stolen vehicle or device.
  </p>
  <h3>SDPD Safe Exchange Zones</h3>

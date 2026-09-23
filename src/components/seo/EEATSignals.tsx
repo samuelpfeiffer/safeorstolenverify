@@ -31,7 +31,7 @@ export const EEATSignals = () => {
  {/* Specific domain knowledge, not vague claims */}
  <meta
  name="expertise"
- content="IMEI verification (carrier and theft databases TAC database, carrier and theft databases), VIN lookup (vehicle theft and title databases), firearm serial number checks (stolen firearms databases), bicycle verification (stolen bicycle databases), jewelry authentication (GIA diamond registry), boat verification (USCG HIN database)"
+ content="IMEI verification (phone details and public information), VIN lookup (public web results, AI analysis), firearm serial number checks (HotGunz, public web results, AI analysis), bicycle verification (BikeIndex, public web results, AI analysis)"
  />
 
  {/* ─── Authoritativeness ──────────────────────── */}
@@ -63,7 +63,7 @@ export const EEATSignals = () => {
  {/* ─── Data Sources — Specific, not vague ─────── */}
  <meta
  name="data-sources"
- content="carrier and theft databases TAC Database (15B+ IMEI records), vehicle theft and title databases, community theft reports, stolen bicycle databases API, Stolen Firearms Databases, GIA Diamond Registry, USCG HIN database, LeadsOnline pawn network, carrier and theft databases (AT&T, Verizon, T-Mobile, Sprint), all 50 state community theft registries"
+ content="IMEI device details (not a blacklist check), vehicle information, community reports, public web results, AI analysis, BikeIndex API, HotGunz, GIA Diamond Registry, USCG HIN database"
  />
 
  {/* ─── Service Scope — factual enumeration ─────── */}

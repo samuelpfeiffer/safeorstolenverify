@@ -16,7 +16,7 @@ const HotGunzDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "Is HotGunz enough to verify a firearm?",
- "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only contains community-reported stolen firearms — it doesn't access the HotGunz national stolen-firearms registry or state community theft registries. A gun could be stolen and in the HotGunz national stolen-firearms registry but not in HotGunz if the owner never reported it there. SafeOrStolen checks the HotGunz national stolen-firearms registry, and all the HotGunz national stolen-firearms registry for comprehensive coverage." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only contains firearms reported by its community. It does not provide access to official national or state stolen-firearms registries. A firearm could be stolen and listed in an official registry but not appear in HotGunz if the owner never reported it there directly. SafeOrStolen checks its own reported stolen items, public web results, and applies AI analysis, which includes data from HotGunz for firearms, for comprehensive coverage." }
       },
       {
         "@type": "Question",

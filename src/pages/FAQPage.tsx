@@ -20,19 +20,19 @@ const FAQPage = () => {
  },
  {
  question: "How do I know if a phone is stolen before I buy it?",
- answer: "Find the phone's IMEI number (dial *#06# or check Settings → About Phone), enter it into our free IMEI checker at safeorstolen.com/verify, and we'll check it against global carrier and theft databases, stolen phone databases, and reported theft history in 3 seconds."
+ answer: "Find the phone's IMEI number (dial *#06# or check Settings → About Phone), enter it into our free IMEI checker at safeorstolen.com/verify, and we'll check it against reported theft history, public web results, and AI analysis in 3 seconds. For bicycles, we also check BikeIndex. For firearms, we also check HotGunz. If you believe your device is blacklisted, please contact your carrier directly."
  },
  {
  question: "Can I check if a car is stolen using the VIN number?",
- answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check databases, vehicle theft and title databases, and insurance theft reports to verify if the vehicle has been reported stolen."
+ answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check it against reported theft history, public web results, and AI analysis to verify if the vehicle has been reported stolen."
  },
  {
  question: "How accurate is SafeOrStolen.com's verification process?",
- answer: "We cross-reference multiple community theft registries including community theft reports, public theft-report registries databases, and international stolen property registries to ensure comprehensive coverage."
+ answer: "We check SafeOrStolen's own stolen-item reports, public web results, and apply AI analysis to identify potential theft. For bicycles, we also check BikeIndex. For firearms, we also check HotGunz. We also perform an IMEI lookup for phones to get device model and details."
  },
  {
  question: "What databases do you search when checking items?",
- answer: "We search the stolen-property registries, public theft-report registries's National Stolen Property database, Interpol's stolen property database, insurance company databases, and over 50 regional community theft registries across North America and internationally."
+ answer: "We search SafeOrStolen's own stolen-item reports, public web results, and use AI analysis across various sources. For bicycles, we also check BikeIndex. For firearms, we also check HotGunz. We perform an IMEI lookup for phones to get device model and details."
  },
  {
  question: "How long does a verification check take?",
@@ -96,7 +96,7 @@ const FAQPage = () => {
  },
  {
  question: "Can you check items without serial numbers?",
- answer: "Unfortunately, no. Our verification system requires a unique identifier such as a serial number, IMEI, or VIN number to perform accurate searches across community theft registries."
+ answer: "Unfortunately, no. Our verification system requires a unique identifier such as a serial number, IMEI, or VIN number to perform accurate searches of reported theft history and public web results."
  },
  {
  question: "Do you support international device identifiers?",
@@ -156,11 +156,11 @@ const FAQPage = () => {
  },
  {
  question: "Is there a stolen verification app?",
- answer: "Yes, Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info, Swappa, and other competitors have NO mobile apps - they only have websites. SafeOrStolen is the first and only stolen item scanner app with barcode scanning, instant 3-second verification, offline mode, and free download for iOS/Android."
+ answer: "Yes, most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info, Swappa, and other competitors have NO mobile apps - they only have websites. SafeOrStolen is the first and only stolen item scanner app with barcode scanning, instant 3-second verification, offline mode, and free download for iOS/Android."
  },
  {
  question: "Does CheckMEND have an app?",
- answer: "No, They only offer a slow website with manual typing. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual installable web app."
+ answer: "No, they only offer a slow website with manual typing. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual installable web app."
  },
  {
  question: "What's like Carfax but for phones?",
@@ -172,7 +172,7 @@ const FAQPage = () => {
  },
  {
  question: "Does SafeOrStolen work internationally?",
- answer: "Yes! SafeOrStolen offers full verification coverage across all 50 US states plus international support for 45+ countries including Canada, UK, Australia, and most European Union nations. We check against Interpol databases and international stolen property registries for comprehensive global coverage."
+ answer: "Yes! SafeOrStolen offers full verification coverage across all 50 US states plus international support for 45+ countries including Canada, UK, Australia, and most European Union nations. We check against SafeOrStolen's own reports, public web results, and use AI analysis for comprehensive global coverage."
  },
  {
  question: "How is SafeOrStolen like Carfax?",

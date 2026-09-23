@@ -158,7 +158,7 @@ const IMEICheckerAppDownload = () => {
                       <th className="text-left pb-4">Feature</th>
                       <th className="text-center pb-4">SafeOrStolen</th>
                       <th className="text-center pb-4">IMEI.info</th>
-                      <th className="text-center pb-4">CheckMEND</th>
+                      <th className="text-center pb-4">Other Services</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -39,7 +39,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  verificationAdvice: 'Omaha theft has increased, making verification important. Check for both Iowa and Nebraska prior registration in the Omaha metro. Verify hail damage history.',
  uniqueFaqs: [
  { question: 'Is Omaha vehicle theft increasing?', answer: 'Yes, Omaha has seen theft increases in recent years, though rates remain lower than major coastal metros. The Kia/Hyundai trend has affected the city. Verification is increasingly important.' },
- { question: 'Is hail damage common in Nebraska?', answer: 'Yes, Nebraska experiences severe summer hail storms. Check vehicle theft and title databases for salvage history and inspect carefully for repaired hail damage.' }
+ { question: 'Is hail damage common in Nebraska?', answer: 'Yes, Nebraska experiences severe summer hail storms. Look up the item on SafeOrStolen to see if it has been reported stolen, review public web results for salvage history, and inspect carefully for repaired hail damage.' }
  ]
  },
  'new-hampshire-license-plate-lookup': {
@@ -108,7 +108,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  'Confirm no prior salvage history from other states'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Honda Civic', 'Chevrolet Silverado', 'Dodge Charger'],
- verificationAdvice: 'North Carolina\'s growth means many vehicles have out-of-state title history. Verify complete vehicle theft and title databases history. Charlotte purchases require careful Hyundai/Kia verification.',
+ verificationAdvice: 'North Carolina\'s growth means many vehicles have out-of-state title history. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history. Charlotte purchases require careful Hyundai/Kia verification.',
  uniqueFaqs: [
  { question: 'Is Charlotte vehicle theft high?', answer: 'Yes, Charlotte has significant vehicle theft rates, ranking among the worst in the Southeast. The Kia/Hyundai epidemic has increased theft substantially. Verification is important.' },
  { question: 'Do relocating residents affect the market?', answer: 'Yes, North Carolina\'s rapid growth brings vehicles from across the country. Verify complete title history to catch issues from prior states.' }
@@ -146,7 +146,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Elantra', 'Kia Sportage', 'Ford F-150', 'Chevrolet Silverado', 'Honda Accord', 'Dodge Charger'],
  verificationAdvice: 'Oklahoma\'s severe weather requires checking for storm damage history. The Kia/Hyundai epidemic has hit both major cities. Verify carefully for any metro-area purchase.',
  uniqueFaqs: [
- { question: 'Is weather damage common in Oklahoma vehicles?', answer: 'Yes, Oklahoma experiences tornadoes, hail storms, ice storms, and flooding. Always check vehicle theft and title databases for salvage history and inspect carefully for repaired damage.' },
+ { question: 'Is weather damage common in Oklahoma vehicles?', answer: 'Yes, Oklahoma experiences tornadoes, hail storms, ice storms, and flooding. Always use SafeOrStolen to check if it has been reported stolen, review public web results for salvage history, and inspect carefully for repaired damage.' },
  { question: 'How bad is Oklahoma City theft?', answer: 'Oklahoma City has significant theft rates, and the Kia/Hyundai epidemic has made things worse. Verification is important for OKC-area purchases.' }
  ]
  },
@@ -180,7 +180,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  'Confirm complete ownership chain'
  ],
  commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Toyota Camry', 'Kia Optima', 'Nissan Altima'],
- verificationAdvice: 'Rhode Island\'s small size means vehicles easily cross state lines. Check complete vehicle theft and title databases history for Massachusetts and Connecticut registrations. Rust inspection is important.',
+ verificationAdvice: 'Rhode Island\'s small size means vehicles easily cross state lines. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history, especially for Massachusetts and Connecticut registrations. Rust inspection is important.',
  uniqueFaqs: [
  { question: 'Is vehicle theft high in Rhode Island?', answer: 'Providence has moderate theft rates. The city\'s I-95 position creates transit opportunities. Verification is important, especially for vehicles that may have crossed state lines.' },
  { question: 'Do Massachusetts theft operations affect Rhode Island?', answer: 'Yes, the states are close and theft rings operate across borders. Vehicles stolen in Massachusetts may appear in Rhode Island and vice versa.' }
@@ -288,9 +288,9 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  'Confirm vehicle history given frequent military relocations'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Honda Civic', 'Dodge Charger', 'Nissan Altima'],
- verificationAdvice: 'Virginia\'s multiple metros and military presence create verification complexity. Check complete vehicle theft and title databases history, especially for vehicles with out-of-state prior registration.',
+ verificationAdvice: 'Virginia\'s multiple metros and military presence create verification complexity. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history, especially for vehicles with out-of-state prior registration.',
  uniqueFaqs: [
- { question: 'Does military presence affect Virginia vehicle verification?', answer: 'Yes, frequent military relocations mean many Virginia vehicles have been registered in multiple states. Verify complete title history through vehicle theft and title databases.' },
+ { question: 'Does military presence affect Virginia vehicle verification?', answer: 'Yes, frequent military relocations mean many Virginia vehicles have been registered in multiple states. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full title history.' },
  { question: 'Is Hampton Roads theft connected to other areas?', answer: 'Norfolk and Newport News have significant theft rates. I-64 connects to Richmond, and vehicles may cross into North Carolina. Verify any Hampton Roads purchase carefully.' }
  ]
  },
@@ -345,7 +345,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  verificationAdvice: 'Wyoming theft is rare, but verify vehicles for out-of-state history, particularly from energy workers relocating. Rust inspection is critical given harsh winters.',
  uniqueFaqs: [
  { question: 'Is vehicle theft common in Wyoming?', answer: 'No, Wyoming has some of the lowest theft rates in the nation due to its small population and rural character. However, verify title history for vehicles from other states.' },
- { question: 'Do energy workers affect the Wyoming market?', answer: 'Yes, the oil and gas industry brings workers from across the country. These vehicles may have complex title histories. Verify complete vehicle theft and title databases history.' }
+ { question: 'Do energy workers affect the Wyoming market?', answer: 'Yes, the oil and gas industry brings workers from across the country. These vehicles may have complex title histories. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history.' }
  ]
  }
 };

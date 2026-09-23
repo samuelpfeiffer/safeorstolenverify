@@ -5,7 +5,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'How can I check if a used item is stolen before I buy it?',
  answer:
- "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against community theft reports, carrier and theft databases, community theft reports, and community theft registries, and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
+ "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against our own reports, public web results, and AI analysis (plus specialized sources for bikes and firearms), and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
  },
  {
  question: 'Is there one website where I can check different types of used items for theft?',
@@ -73,7 +73,7 @@ const CATEGORIES: { label: string; href: string; sentence: string }[] = [
  label: 'Phones (IMEI)',
  href: '/imei-checker',
  sentence:
- 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it against stolen reports and carrier and theft databases before you pay.',
+ 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it for stolen reports and ask a carrier about blacklist status before you pay.',
  },
  {
  label: 'Vehicles (VIN)',
@@ -135,8 +135,8 @@ const HowToVerifyAUsedItemPage = () => {
  This is the question most buyers mean when they ask whether something is "safe." To
  answer it, take the item's unique identifier — IMEI, VIN, license plate, serial
  number, firearm serial, or bicycle frame serial — and search it against theft
- records. SafeOrStolen checks community theft reports, carrier and
- manufacturer blacklists, community theft reports, and community theft registries, and
+ records. SafeOrStolen checks its own stolen-item reports, public web results,
+ AI analysis, and specialized sources for certain item types, and
  returns a match or no-match result in a few seconds. A match means the identifier
  appears in at least one theft record and you should not complete the purchase.
  </p>
@@ -157,8 +157,8 @@ const HowToVerifyAUsedItemPage = () => {
  Blacklisting is separate from theft. A phone can be barred from cellular networks
  because of unpaid finance, an insurance write-off, or a carrier report, and that
  blocked device is close to worthless even if nobody ever reported it stolen.
- SafeOrStolen checks carrier and theft databases alongside theft records for
- phones and other connected devices. Always check blacklist status before buying a used
+ SafeOrStolen checks its own stolen-item reports, public web results and AI analysis;
+ it does not check carrier blacklists. Always ask a carrier to check blacklist status before buying a used
  phone, because a clean theft result alone does not tell you the handset will activate.
  </p>
 

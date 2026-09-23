@@ -192,7 +192,7 @@ export async function aggregatedSearch(query: string): Promise<SearchResults> {
  const formatted = formatBikeResult(firstBike);
  
  results.push({
- source: 'stolen bicycle databases',
+ source: 'Bike Index for bicycles',
  sourceUrl: 'https://bikeindex.org',
  found: true,
  stolen: hasStolenBike,
@@ -207,7 +207,7 @@ export async function aggregatedSearch(query: string): Promise<SearchResults> {
  });
  }
  } catch (error) {
- console.error('stolen bicycle databases search error:', error);
+ console.error('Bike Index search error:', error);
  }
  }
  

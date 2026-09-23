@@ -18,7 +18,7 @@ const RECOVERIES = [
  location: 'Houston, TX',
  time: '5 hours ago',
  method: 'VIN Check',
- detail: 'VIN cross-referenced against vehicle theft and title databases. Title washing attempt detected.',
+ detail: 'VIN analyzed for signs of tampering, ownership discrepancies, and public theft reports. Our AI detected indicators of title washing.',
  link: '/vin-checker',
  stat: '$22,000 value protected'
  },
@@ -115,9 +115,8 @@ export const RecentRecoveriesFeed: React.FC = () => {
  <div className="mt-6 p-4 bg-muted/30 rounded-lg border border-border/50">
  <p className="text-xs text-muted-foreground leading-relaxed">
  <strong className="text-foreground">How SafeOrStolen recoveries work:</strong>{' '}
- When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform simultaneously queries community theft reports,
- vehicle theft and title databases, the global carrier IMEI blacklist, carrier theft records (AT&T, Verizon, T-Mobile),
- and community registries (stolen bicycle databases, stolen firearms databases). If a match is found, the buyer is alerted
+ When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform checks its own stolen-item reports, public web results and AI analysis,
+ plus BikeIndex for bicycles and HotGunz for firearms. If a match is found, the buyer is alerted
  in under 3 seconds — before any money changes hands.{' '}
  <Link to="/how-it-works" className="text-primary hover:underline font-medium">
  Learn how the verification process works

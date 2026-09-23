@@ -26,7 +26,7 @@ export const UserSearchQueriesSection: React.FC = () => {
  },
  {
  query: "Is my phone stolen IMEI check",
- answer: "Enter your IMEI number to check against stolen phone databases and carrier and theft databases",
+ answer: "Enter your IMEI number for device information, and to check for SafeOrStolen reports or public mentions of theft.",
  icon: Smartphone,
  category: "Mobile",
  searchVolume: "Very High"

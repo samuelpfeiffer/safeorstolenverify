@@ -37,28 +37,28 @@ const VERIFY_CARDS = [
  },
  {
  title: 'Vehicle VIN Check',
- subtitle: 'vehicle theft and title databases from all 50 states',
+ subtitle: 'SafeOrStolen community reports and public web results',
  href: '/vin-checker',
  image: cardVehicle,
  badge: null,
  },
  {
  title: 'Phone IMEI Check',
- subtitle: 'carrier and theft databases',
+ subtitle: 'SafeOrStolen community reports and public web results',
  href: '/imei-checker',
  image: cardPhone,
  badge: null,
  },
  {
  title: 'License Plate Lookup',
- subtitle: 'State vehicle theft and title databases + theft database cross-check',
+ subtitle: 'SafeOrStolen community reports and public web results',
  href: '/license-plate-lookup',
  image: cardPlate,
  badge: null,
  },
  {
  title: 'Bicycle Serial Check',
- subtitle: 'stolen bicycle databases + police',
+ subtitle: 'SafeOrStolen community reports and BikeIndex checks',
  href: '/check-bike',
  image: cardBicycle,
  badge: null,
@@ -128,7 +128,7 @@ const RECENT_VERIFICATIONS = [
 const FAQ_ITEMS = [
  {
  q: 'How do I check if a phone is stolen before buying?',
- a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks carrier and theft databases, and community theft registries simultaneously.",
+ a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results. Learn more about the phone model and details. You can ask the seller or your carrier about its blacklist status.",
  },
  {
  q: 'How do I check if a used car is stolen?',
@@ -144,7 +144,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'What databases does SafeOrStolen check?',
- a: 'SafeOrStolen checks over 100 databases including carrier and theft databases, vehicle theft and title databases, the stolen firearms databases for firearms, carrier and theft databases, reported theft history databases, police reports, stolen bicycle databases for bicycles, and nationwide firearm theft reports. This is the comprehensive coverage of any stolen item verification service.',
+ a: 'SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. For bicycles, it checks BikeIndex; for firearms, it checks HotGunz. It also provides IMEI device details for phones.',
  },
  {
  q: 'How do I check if a gun is stolen?',
@@ -156,7 +156,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How does the license plate lookup work?',
- a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen. SafeOrStolen queries and community theft registries across all 50 states. Results include stolen status, registration state, and vehicle details when available.',
+ a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen in SafeOrStolen community reports or public web results. Results include stolen status, registration state, and vehicle details when available.',
  },
  {
  q: 'Can I use SafeOrStolen as a seller to prove my item is legitimate?',
@@ -193,7 +193,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>AI Stolen Item Verification for Buyers, Sellers, and Businesses</h1>
  <p>SafeOrStolen is an AI-powered platform that checks whether a secondhand item is reported stolen. Buyers verify before they pay, sellers prove an item is clean, and businesses such as pawn shops, resellers, dealers, and repair shops document diligence at intake.</p>
- <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against our verification the relevant authorities, insurance, and carrier databases, including carrier and theft databases, vehicle theft and title databases, stolen bicycle databases, and Stolen Firearms Databases, with results in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
+ <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against SafeOrStolen's own reports, public web data, and AI analysis. We also consult BikeIndex for bicycles and HotGunz for firearms. Results are typically available in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
  </div>
  </noscript>
  {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
@@ -377,7 +377,7 @@ const Index = () => {
  {
  n: '2',
  title: 'Parallel Database Scan',
- desc: 'We simultaneously query carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, stolen bicycle databases, state records, carrier and theft databases, and insurance theft records. All at once.',
+ desc: 'We simultaneously query SafeOrStolen community reports, public web results, BikeIndex for bicycles, HotGunz for firearms, and perform AI analysis. All at once.',
  },
  {
  n: '3',
@@ -745,7 +745,7 @@ const Index = () => {
  "@type": "WebPage",
  "name": "Free Stolen Item Checker - IMEI VIN Serial Verification",
  "url": "https://safeorstolen.com",
- "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against our verification the relevant authorities, insurance, and carrier databases.",
+ "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against SafeOrStolen's own reports, public web data, and AI analysis.",
  "speakable": {
  "@type": "SpeakableSpecification",
  "cssSelector": ["h1", ".speakable-summary"]

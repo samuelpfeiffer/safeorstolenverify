@@ -1,6 +1,6 @@
 /**
  * MASSIVE SEO EXPANSION - 2000+ URLs to dominate search rankings
- * Competition: CheckMEND, IMEI checkers, Carfax, AutoCheck, vehicle theft and title databases
+ * Competition: IMEI checkers, Carfax, AutoCheck, national vehicle title databases
  */
 
 export interface SEOUrl {
@@ -121,7 +121,7 @@ export const LONG_TAIL_PAGES: SEOUrl[] = [
  { path: '/can-police-track-stolen-phone', priority: 0.7, changefreq: 'monthly', title: 'Can Police Track Stolen Phone', category: 'help' },
  
  // Comparison pages (vs competitors)
- { path: '/vs-checkmend', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen vs CheckMEND', category: 'comparison' },
+ { path: '/vs-checkmend', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen and other item check services', category: 'comparison' },
  { path: '/vs-carfax', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen vs Carfax', category: 'comparison' },
  { path: '/vs-autocheck', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen vs AutoCheck', category: 'comparison' },
  { path: '/vs-imei-checker', priority: 0.7, changefreq: 'monthly', title: 'SafeOrStolen vs IMEI Checkers', category: 'comparison' },

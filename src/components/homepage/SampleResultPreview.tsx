@@ -54,7 +54,7 @@ export const SampleResultPreview = () => {
  </div>
  <div className="grid grid-cols-2 gap-2">
  {[
- { name: 'carrier and theft databases', status: 'clean' },
+ { name: 'our reported stolen items and web results', status: 'clean' },
  { name: 'AT&T Blacklist', status: 'clean' },
  { name: 'Verizon Blacklist', status: 'clean' },
  { name: 'T-Mobile Blacklist', status: 'clean' },

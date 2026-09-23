@@ -68,7 +68,7 @@ export default function FeaturesPage() {
  <Database className="h-12 w-12 text-primary mb-4" />
  <h3 className="text-xl font-bold mb-3">our verification Databases</h3>
  <p className="text-muted-foreground mb-4">
- Check against community theft reports, carrier and theft databases, reported theft history, and international records simultaneously.
+ Check against SafeOrStolen reports, public web results, AI analysis, and relevant specialized databases simultaneously.
  </p>
  <ul className="space-y-2 text-sm">
  <li className="flex items-center gap-2">

@@ -36,7 +36,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Confirm vehicle tax history is current'
  ],
  commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Kia Sportage', 'Toyota Camry', 'BMW 3 Series'],
- verificationAdvice: 'Connecticut\'s position between New York and Boston means stolen vehicles cross state lines quickly. Check full vehicle theft and title databases history for registration in multiple states. Hartford and New Haven purchases require extra verification.',
+ verificationAdvice: 'Connecticut\'s position between New York and Boston means stolen vehicles cross state lines quickly. Review vehicle history for registration in multiple states. Hartford and New Haven purchases require extra verification.',
  uniqueFaqs: [
  { question: 'Why has Hartford vehicle theft increased?', answer: 'Hartford has seen significant theft increases driven by the Kia/Hyundai epidemic and organized theft activity. The city\'s position along I-91 enables quick transport to other states. Verification is essential.' },
  { question: 'Are Connecticut car taxes a concern for buyers?', answer: 'Yes, Connecticut charges property tax on vehicles. Verify the seller is current on taxes to avoid inheriting liability. Also check if the vehicle was titled out-of-state to avoid Connecticut taxes—this could indicate title issues.' }
@@ -90,7 +90,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Confirm complete ownership chain given population growth'
  ],
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Subaru Outback', 'Honda Accord', 'Hyundai Tucson', 'Toyota Tacoma'],
- verificationAdvice: 'Idaho\'s rapid growth means many vehicles have recent out-of-state titles. Verify complete vehicle theft and title databases history to catch any issues from prior states. Pay attention to California and Washington title history.',
+ verificationAdvice: 'Idaho\'s rapid growth means many vehicles have recent out-of-state titles. Verify complete vehicle history to catch any issues from prior states. Pay attention to California and Washington title history.',
  uniqueFaqs: [
  { question: 'Why are so many Idaho vehicles from out of state?', answer: 'Idaho\'s rapid population growth—people moving from California, Washington, and Oregon—means many vehicles were recently titled elsewhere. Verify full history to ensure clean titles across all prior states.' },
  { question: 'Is Boise vehicle theft increasing?', answer: 'Yes, Boise has seen theft increases as the population has grown. While still lower than major metros, verification is increasingly important for Boise-area purchases.' }
@@ -108,7 +108,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Verify vehicle wasn\'t part of rental fleets from Indianapolis airport'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Chevrolet Malibu', 'Honda Accord', 'Dodge Charger', 'Ford Fusion'],
- verificationAdvice: 'Indiana\'s crossroads location means stolen vehicles from many states may appear locally. Check complete vehicle theft and title databases history. Indianapolis-area purchases require extra attention to Hyundai/Kia verification.',
+ verificationAdvice: 'Indiana\'s crossroads location means stolen vehicles from many states may appear locally. Review complete vehicle history. Indianapolis-area purchases require extra attention to Hyundai/Kia verification.',
  uniqueFaqs: [
  { question: 'Why does Indiana\'s location matter for stolen vehicles?', answer: 'Indianapolis sits at the intersection of I-65, I-70, and I-69, making it easy to transport stolen vehicles in any direction. Thieves can reach Chicago, Louisville, Columbus, or St. Louis within hours.' },
  { question: 'Are Kia/Hyundai thefts a problem in Indianapolis?', answer: 'Yes, Indianapolis has seen significant increases in Hyundai/Kia thefts following the national trend. Verify any Hyundai/Kia carefully and check if immobilizer software updates have been applied.' }
@@ -126,7 +126,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Confirm complete ownership history'
  ],
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Honda Accord', 'Toyota Camry', 'Hyundai Sonata', 'Dodge Ram'],
- verificationAdvice: 'Iowa\'s lower theft rates don\'t eliminate risk. Verify complete vehicle theft and title databases history, especially for vehicles from neighboring states with higher theft rates.',
+ verificationAdvice: 'Iowa\'s lower theft rates don\'t eliminate risk. Verify complete vehicle history, especially for vehicles from neighboring states with higher theft rates.',
  uniqueFaqs: [
  { question: 'Is vehicle theft common in Iowa?', answer: 'Iowa has relatively low vehicle theft compared to states with major metros. Des Moines sees the most activity but at modest rates. Still, verification protects against vehicles stolen elsewhere and transported to Iowa.' },
  { question: 'Should I worry about rust on Iowa vehicles?', answer: 'Yes, Iowa uses significant road salt in winter. Carefully inspect undercarriage, frame, and wheel wells for corrosion. Rust is a major depreciation factor for Iowa vehicles.' }
@@ -146,7 +146,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Dodge Ram'],
  verificationAdvice: 'The Kansas City metro market crosses the Kansas/Missouri border seamlessly. Verify complete title history across both states. Check for hail damage history given spring storm prevalence.',
  uniqueFaqs: [
- { question: 'Is hail damage common in Kansas vehicles?', answer: 'Yes, Kansas sees severe spring hail storms that total thousands of vehicles annually. Some are repaired and resold with or without salvage titles. Always check vehicle theft and title databases for title brands and inspect carefully.' },
+ { question: 'Is hail damage common in Kansas vehicles?', answer: 'Yes, Kansas sees severe spring hail storms that total thousands of vehicles annually. Some are repaired and resold with or without salvage titles. Always review vehicle history for title brands and inspect carefully.' },
  { question: 'Does Kansas City theft affect Kansas?', answer: 'Yes, the Kansas City metro market operates across the state line. Theft on the Missouri side directly affects the Kansas market. Verify any KC-area purchase thoroughly.' }
  ]
  },
@@ -162,10 +162,10 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Confirm vehicle wasn\'t flood damaged (Ohio River flooding)'
  ],
  commonTargets: ['Hyundai Sonata', 'Kia Optima', 'Honda Accord', 'Toyota Camry', 'Ford F-150', 'Chevrolet Silverado'],
- verificationAdvice: 'Louisville\'s position at multiple interstate intersections makes it a transit point for stolen vehicles. Check complete vehicle theft and title databases history, especially for Indiana and Ohio prior titles.',
+ verificationAdvice: 'Louisville\'s position at multiple interstate intersections makes it a transit point for stolen vehicles. Review complete vehicle history, especially for Indiana and Ohio prior titles.',
  uniqueFaqs: [
  { question: 'Is Louisville vehicle theft connected to other cities?', answer: 'Yes, Louisville sits at the intersection of I-64, I-65, and I-71. Stolen vehicles can reach Cincinnati, Indianapolis, Nashville, or St. Louis within hours. Regional theft rings operate across these corridors.' },
- { question: 'Should I check for flood damage in Kentucky?', answer: 'Yes, Ohio River flooding periodically affects Louisville and other river communities. Check vehicle theft and title databases for flood title brands and inspect for water damage signs.' }
+ { question: 'Should I check for flood damage in Kentucky?', answer: 'Yes, Ohio River flooding periodically affects Louisville and other river communities. Review vehicle history for flood title brands and inspect for water damage signs.' }
  ]
  },
  'louisiana-license-plate-lookup': {
@@ -175,14 +175,14 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  buyingTips: [
  'Check for flood damage—inspect for water lines, rust, mold, electrical issues',
  'Verify Louisiana OMV title has proper security features',
- 'Always check vehicle theft and title databases for salvage/flood title brands',
+ 'Always review vehicle history for salvage/flood title brands',
  'Be extremely cautious of vehicles bought after hurricanes',
  'Inspect for salt corrosion in coastal vehicles'
  ],
  commonTargets: ['Honda Civic', 'Honda Accord', 'Nissan Altima', 'Chevrolet Silverado', 'Kia Optima', 'Dodge Charger'],
- verificationAdvice: 'Louisiana verification must include flood damage checks. After every hurricane season, thousands of flood vehicles are resold. Check vehicle theft and title databases and inspect carefully regardless of title status.',
+ verificationAdvice: 'Louisiana verification must include flood damage checks. After every hurricane season, thousands of flood vehicles are resold. Review vehicle history and inspect carefully regardless of title status.',
  uniqueFaqs: [
- { question: 'How common are flood-damaged vehicles in Louisiana?', answer: 'Very common. After major hurricanes, tens of thousands of vehicles are flooded. Many are totaled, title-washed in other states, and returned for sale. Always check vehicle theft and title databases and inspect carefully.' },
+ { question: 'How common are flood-damaged vehicles in Louisiana?', answer: 'Very common. After major hurricanes, tens of thousands of vehicles are flooded. Many are totaled, title-washed in other states, and returned for sale. Always review vehicle history and inspect carefully.' },
  { question: 'Is New Orleans vehicle theft high?', answer: 'Yes, New Orleans consistently has high theft rates. The port enables export of stolen vehicles. Combined with flood damage risks, verification is essential for any Louisiana purchase.' }
  ]
  },
@@ -216,10 +216,10 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Verify Hyundai/Kia models carefully'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Honda Civic', 'Dodge Charger', 'Infiniti Q50'],
- verificationAdvice: 'Baltimore\'s high theft rates require careful verification. Check complete vehicle theft and title databases history, especially for vehicles from the DC metro area where multiple jurisdictions intersect.',
+ verificationAdvice: 'Baltimore\'s high theft rates require careful verification. Review complete vehicle history, especially for vehicles from the DC metro area where multiple jurisdictions intersect.',
  uniqueFaqs: [
  { question: 'How bad is Baltimore vehicle theft?', answer: 'Baltimore has high vehicle theft rates, consistently ranking among America\'s worst cities. The Kia/Hyundai epidemic has made things worse. Verification is essential for any Baltimore-area purchase.' },
- { question: 'Does DC-area vehicle history affect Maryland purchases?', answer: 'Yes, the DC metro spans Maryland, Virginia, and DC. Vehicles may have been titled in any jurisdiction. Check complete vehicle theft and title databases history across all relevant states.' }
+ { question: 'Does DC-area vehicle history affect Maryland purchases?', answer: 'Yes, the DC metro spans Maryland, Virginia, and DC. Vehicles may have been titled in any jurisdiction. Review complete vehicle history across all relevant states.' }
  ]
  },
  'massachusetts-license-plate-lookup': {
@@ -234,7 +234,7 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  'Confirm insurance history is clean'
  ],
  commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Kia Soul', 'Toyota Camry', 'Jeep Wrangler'],
- verificationAdvice: 'Massachusetts verification should include full vehicle theft and title databases history. Check for New Hampshire prior registration—some vehicles are titled there to avoid Massachusetts sales tax. Rust inspection is critical.',
+ verificationAdvice: 'Massachusetts verification should include full vehicle history. Check for New Hampshire prior registration—some vehicles are titled there to avoid Massachusetts sales tax. Rust inspection is critical.',
  uniqueFaqs: [
  { question: 'Is Boston vehicle theft improving?', answer: 'Boston has improved from historical highs but still has significant theft rates. The Kia/Hyundai epidemic has caused new increases. Verification remains important.' },
  { question: 'Why do people buy cars in New Hampshire?', answer: 'New Hampshire has no sales tax, saving Massachusetts buyers 6.25%. Some vehicles are titled in NH to avoid MA tax. Verify complete title history to understand ownership.' }
@@ -265,14 +265,14 @@ export const STATE_UNIQUE_CONTENT_PART2: Record<string, StateUniqueContent> = {
  buyingTips: [
  'Check for flood damage, especially Gulf Coast vehicles',
  'Verify Mississippi DPS title has proper security features',
- 'Always check vehicle theft and title databases for salvage/flood title brands',
+ 'Always review vehicle history for salvage/flood title brands',
  'Be cautious of vehicles moved from Louisiana post-hurricane',
  'Inspect for humidity damage—mold, electrical issues'
  ],
  commonTargets: ['Chevrolet Silverado', 'Ford F-150', 'Nissan Altima', 'Honda Accord', 'Toyota Camry', 'Dodge Charger'],
- verificationAdvice: 'Mississippi verification must include flood damage checks, especially for coastal and post-hurricane purchases. Check vehicle theft and title databases for Louisiana title history—flood vehicles often cross state lines.',
+ verificationAdvice: 'Mississippi verification must include flood damage checks, especially for coastal and post-hurricane purchases. Review vehicle history for Louisiana title history—flood vehicles often cross state lines.',
  uniqueFaqs: [
- { question: 'Are flood-damaged vehicles common in Mississippi?', answer: 'Yes, the Gulf Coast faces hurricane risks, and flood-damaged vehicles from Louisiana also enter Mississippi. Always check vehicle theft and title databases and inspect carefully regardless of title status.' },
+ { question: 'Are flood-damaged vehicles common in Mississippi?', answer: 'Yes, the Gulf Coast faces hurricane risks, and flood-damaged vehicles from Louisiana also enter Mississippi. Always review vehicle history and inspect carefully regardless of title status.' },
  { question: 'Is Jackson vehicle theft a concern?', answer: 'Jackson has elevated theft rates compared to other Mississippi cities. Verify any Jackson-area purchase carefully.' }
  ]
  },

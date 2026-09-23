@@ -4,7 +4,7 @@ const CheckCarStolenByVinPage = () => {
  return (
  <ItemLandingPageTemplate
  title="Check if Car is Stolen by VIN - Free Vehicle Theft Check | SafeOrStolen"
- metaDescription="Check if a car is stolen by VIN number. Free vehicle theft verification searches vehicle theft and title databases, and community theft registries. Instant results before buying any used car."
+ metaDescription="Check if a car is stolen by VIN number. Free vehicle verification searches SafeOrStolen reports, public web results, and uses AI analysis. Get instant results before buying any used car."
  h1="Check if a Car is Stolen by VIN Number"
  itemType="Vehicle"
  keywords={[
@@ -18,15 +18,15 @@ const CheckCarStolenByVinPage = () => {
  'is this car stolen vin'
  ]}
  content={{
- intro: "Before buying any used car, truck, or SUV, check if it's stolen using the 17-digit VIN (Vehicle Identification Number). Our free <a href='/vin-checker'>VIN checker</a> searches the vehicle theft and title databases, and theft reports to verify the vehicle is safe to purchase.",
- whatIs: "Checking if a car is stolen by VIN means verifying the vehicle hasn't been reported to police, insurance companies, or federal databases as stolen property. Every vehicle manufactured after 1981 has a unique 17-character VIN that can be traced through its entire history. When a vehicle is reported stolen, the VIN is added to community theft reports, vehicle theft and title databases theft database, vehicle theft and title databases, and insurance company databases. SafeOrStolen's VIN checker searches all these sources simultaneously to determine if a vehicle is safe to buy or if it's stolen, salvaged, or has other title issues.",
- howItWorks: "Our VIN verification system performs comprehensive checks across multiple databases. We query the vehicle theft and title databases stolen vehicle database, vehicle theft and title databases (vehicle theft and title databases), community theft reports, vehicle theft and title databases, salvage auction records, auction salvage records, and user-reported theft registries. Within 3 seconds, you receive a detailed report showing: (1) Stolen/recovered status, (2) Title status (clean, salvage, rebuilt, flood), (3) Odometer discrepancies, (4) Lien/finance status, (5) Accident history, (6) Previous state registrations.",
+ intro: "Before buying any used car, truck, or SUV, check if it's stolen using the 17-digit VIN (Vehicle Identification Number). Our free <a href='/vin-checker'>VIN checker</a> verifies the vehicle is safe to purchase by checking SafeOrStolen reports, public web results, and using AI.",
+ whatIs: "Checking if a car is stolen by VIN means verifying the vehicle hasn't been reported as stolen. Every vehicle manufactured after 1981 has a unique 17-character VIN that can be traced. SafeOrStolen's VIN checker checks our own community reports of stolen items, public web results, and uses AI analysis to determine if a vehicle is safe to buy or if it might be stolen or have other issues.",
+ howItWorks: "Our VIN verification system performs comprehensive checks. We analyze SafeOrStolen's own reported stolen items, public web results, and apply AI analysis. Within seconds, you receive a detailed report showing potential stolen status and other indicators. We do not provide specific title statuses, odometer discrepancies, lien/finance status, accident history, or previous state registrations.",
  whyCheck: "Buying a stolen vehicle can result in criminal prosecution and total financial loss. Here's what happens: (1) Police will seize the vehicle as evidence with zero compensation, (2) You could face criminal charges for possession of stolen property, (3) Insurance will not cover a stolen vehicle, (4) You cannot register or title a stolen vehicle legally, (5) The original owner or their insurance company can sue you for the vehicle's return. In 2024, over 1 million vehicles were stolen in the United States. Many end up on Craigslist, Facebook Marketplace, and even at sketchy used car lots with falsified paperwork. VIN cloning (putting a clean VIN on a stolen car) is increasingly common. Always verify the VIN before purchasing any used vehicle.",
  benefits: [
  "Check any vehicle - cars, trucks, SUVs, motorcycles, RVs, trailers",
- "Search vehicle theft and title databases stolen vehicle database",
+ "Search SafeOrStolen's own reports and public web results",
  "Verify against federal records",
- "Check vehicle theft and title databases simultaneously",
+ "Check SafeOrStolen's reports, public web results, and AI analysis simultaneously",
  "Detect VIN cloning and VIN tampering",
  "Instant 3-second verification from multiple sources",
  "Unlimited VIN checks — $0.99/check or $10/month",
@@ -43,7 +43,7 @@ const CheckCarStolenByVinPage = () => {
  faqs: [
  {
  question: "How do I check if a car is stolen using the VIN?",
- answer: "To check if a car is stolen: (1) Get the VIN from the dashboard (visible through windshield), door jamb, or registration, (2) Enter the 17-character VIN at SafeOrStolen.com/verify, (3) Review the instant report showing stolen status, title condition, and history. Our check searches vehicle theft and title databases, and community theft registries in 3 seconds."
+ answer: "To check if a car is stolen: (1) Get the VIN from the dashboard (visible through windshield), door jamb, or registration, (2) Enter the 17-character VIN at SafeOrStolen.com/verify, (3) Review the instant report showing potential stolen status. Our check searches SafeOrStolen's reports, public web results, and uses AI analysis."
  },
  {
  question: "Where can I find the VIN on a vehicle?",
@@ -62,8 +62,8 @@ const CheckCarStolenByVinPage = () => {
  answer: "Yes, motorcycles also have 17-character VINs that can be verified the same way as cars. The VIN is typically located on the steering neck (headstock) or on a metal plate attached to the frame. Motorcycle theft is actually more common than car theft relative to ownership rates, so verification is especially important."
  },
  {
- question: "What's the difference between vehicle theft and title databases?",
- answer: "vehicle theft and title databases is a nonprofit organization that maintains a database of vehicles reported stolen to insurance companies. vehicle theft and title databases (vehicle theft and title databases) is a federal database that tracks title history, salvage records, and theft status across all 50 states. Our VIN check searches both, plus additional sources, for comprehensive protection."
+ question: "What's the difference between various databases for stolen vehicles?",
+ answer: "Many organizations and authorities maintain databases of stolen vehicles, like those reported to insurance companies or federal systems that track title history and theft status. While SafeOrStolen does not directly access these proprietary or governmental databases, our service checks SafeOrStolen's own reports of stolen items, public web results, and uses AI analysis to help you assess risk."
  },
  {
  question: "What should I do if the VIN check shows the car is stolen?",

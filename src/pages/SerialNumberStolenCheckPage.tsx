@@ -68,7 +68,7 @@ const SerialNumberStolenCheckPage = () => {
  },
  {
  question: "Is there a national stolen property database?",
- answer: "SafeOrStolen aggregates multiple available databases—insurance claims, salvage records, and public theft reports—to provide the most comprehensive theft check available to consumers and businesses."
+ answer: "SafeOrStolen cross-references its own stolen item reports, public web results, and AI analysis to provide a comprehensive theft check for consumers and businesses."
  }
  ];
 
@@ -234,7 +234,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- We don't rely on a single database. Our verification engine searches multiple sources including insurance theft claim databases, salvage records, public theft reports, carrier and theft databases (for phones), and industry-specific registries. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
+ We don't rely on a single source. Our verification engine searches SafeOrStolen's own reports, public web results, and applies AI analysis. For phones, we also check device details via IMEI lookup. For specific item types like bicycles and firearms, we integrate with specialist registries like BikeIndex and HotGunz. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
  </p>
  </div>
  </div>

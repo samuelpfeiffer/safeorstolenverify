@@ -34,7 +34,7 @@ const LaptopSerialCheck = () => {
       howItWorksSteps={[
         "Find the serial number: Check the bottom of the laptop, System Settings (Mac), or Windows Settings > System > About",
         "Enter the serial number into our free verification tool",
-        "Our system searches manufacturer databases, police records instantly",
+        "We check our own reports, public web results, and apply AI analysis.",
         "Get results in 3 seconds - know if the laptop is SAFE or REPORTED STOLEN"
       ]}
       howItWorksDescription="We search multiple sources including Apple's stolen device registry, manufacturer databases (Dell, HP, Lenovo, ASUS), and user-reported theft databases. For MacBooks, we can also check iCloud lock status indicators."

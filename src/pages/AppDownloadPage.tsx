@@ -130,10 +130,10 @@ export default function AppDownloadPage() {
  {[
  { emoji: '🔫', title: 'Gun Shows', desc: 'Scan firearm serial numbers before handing over cash at private sales. Results return before the seller loses patience.' },
  { emoji: '🏚️', title: 'Garage Sales & Estate Sales', desc: 'Quickly scan electronics, tools, and bikes. Protect yourself from unknowingly buying stolen goods from well-meaning estate sellers.' },
- { emoji: '🏍️', title: 'Motorcycle & Bike Lots', desc: 'Scan VINs and bike serials on-the-spot. Our stolen bicycle databases integration covers 700,000+ registered bikes.' },
+ { emoji: '🏍️', title: 'Motorcycle & Bike Lots', desc: 'Scan VINs and bike serials on-the-spot. We check public stolen reports and integrate with BikeIndex for bicycle checks.' },
  { emoji: '🏦', title: 'Pawn Shop Counter', desc: 'Every customer transaction gets a barcode scan before you accept. Generate the compliance PDF right from the app.' },
  { emoji: '📦', title: 'Marketplace Meetups', desc: "When buying from Facebook Marketplace, OfferUp, or Craigslist — scan before you pay. The seller will see you're serious." },
- { emoji: '🚗', title: 'Used Car Lots', desc: 'Scan the VIN plate on the dashboard or door jamb. Get vehicle theft and title databases + vehicle theft and title databases + all state results in seconds.' },
+ { emoji: '🚗', title: 'Used Car Lots', desc: 'Scan the VIN plate on the dashboard or door jamb. Get instant results based on our internal reports, web results, and AI analysis.' },
  ].map((s) => (
  <div key={s.title} className="flex gap-4 bg-gray-800/60 border border-gray-700 rounded-xl p-4">
  <div className="text-3xl flex-shrink-0">{s.emoji}</div>

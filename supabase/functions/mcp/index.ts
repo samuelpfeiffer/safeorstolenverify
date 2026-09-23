@@ -122,7 +122,7 @@ async function verifyViaApp(ctx, input) {
 var verify_imei_default = defineTool2({
   name: "verify_imei",
   title: "Verify phone IMEI",
-  description: "Check a 15-digit phone IMEI against SafeOrStolen's stolen-device sources (carrier and theft databases, carrier data, community reports). Returns a status (safe / stolen / unknown) with any known metadata.",
+  description: "Check a 15-digit phone IMEI against SafeOrStolen's stolen-item reports, public web results, and AI analysis. Returns a status (safe / stolen / unknown) with any known metadata.",
   inputSchema: {
     imei: z2.string().describe("A 15-digit IMEI. Digits only; SafeOrStolen strips spaces and dashes.")
   },
@@ -151,7 +151,7 @@ import { z as z3 } from "npm:zod@^3.25.76";
 var verify_vin_default = defineTool3({
   name: "verify_vin",
   title: "Verify vehicle VIN",
-  description: "Check a 17-character vehicle VIN against SafeOrStolen's stolen-vehicle sources (vehicle theft and title databases, state law enforcement, community reports). Returns status plus any known theft record.",
+  description: "Check a 17-character vehicle VIN against SafeOrStolen's reports, public web sources, and AI analysis for theft records. Returns status plus any known theft history.",
   inputSchema: {
     vin: z3.string().describe("A 17-character VIN. Letters and digits; I/O/Q are not valid VIN chars.")
   },

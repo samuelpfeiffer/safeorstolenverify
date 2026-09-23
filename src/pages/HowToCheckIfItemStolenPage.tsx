@@ -75,7 +75,7 @@ export default function HowToCheckIfItemStolenPage() {
  </ul>
  <h4>What we check:</h4>
  <ul>
- <li>carrier and theft databases (global carrier database)</li>
+ <li>public records, community reports, and AI analysis</li>
  <li>Carrier-specific blacklists (AT&T, Verizon, T-Mobile)</li>
  <li>Insurance claim records</li>
  <li>Law enforcement stolen property files</li>

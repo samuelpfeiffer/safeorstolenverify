@@ -30,14 +30,14 @@ const IPhoneIMEICheck = () => {
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is iPhone IMEI Verification?"
- whatIsContent="Every iPhone has a unique 15-digit IMEI (International Mobile Equipment Identity) number that serves as its fingerprint. When an iPhone is reported stolen, this IMEI is added to global blacklist databases. Our verification service checks your iPhone's IMEI against these databases, including carrier and theft databases, and other verification databases. If the iPhone is stolen, it can be remotely locked via iCloud, blacklisted by carriers (making it unusable), or confiscated by police - leaving you with nothing."
+ whatIsContent="Every iPhone has a unique 15-digit IMEI (International Mobile Equipment Identity) number that serves as its fingerprint. When an iPhone is reported stolen, this IMEI is typically added to carrier blacklists, making the device unusable on those networks. Our service provides device details from the IMEI and checks SafeOrStolen reports and public web results. If the iPhone is stolen, it can be remotely locked via iCloud or blacklisted by carriers - leaving you with nothing. You can check its blacklist status with the respective carrier."
  howItWorksSteps={[
  "Find the iPhone's IMEI: Dial *#06# on the phone, go to Settings > General > About, or check the original box/SIM tray",
  "Enter the 15-digit IMEI number into our free verification tool",
  "Our system instantly searches our verification databases",
  "Get your results in 3 seconds - see if the iPhone is SAFE or STOLEN"
  ]}
- howItWorksDescription="Our verification checks multiple sources simultaneously: carrier and theft databases, community theft registries, iCloud lock status indicators, and user-reported theft databases. We also check for outstanding finance (if the previous owner still owes money)."
+ howItWorksDescription="Our verification checks SafeOrStolen reports, public web results, and AI analysis. We also provide details about the device model. We do not check for outstanding finance. Additionally, we check for indicators of iCloud lock status."
  whyVerifyTitle="Why Check Before Buying an iPhone?"
  whyVerifyContent="iPhones are the among the most commonly stolen smartphone in America. In 2024, over 1.2 million iPhones were reported stolen in the US alone, with many ending up on secondhand marketplaces. Buying a stolen iPhone can have serious consequences:"
  whyVerifyBenefits={[
@@ -84,7 +84,7 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "How accurate is the iPhone stolen check?",
- answer: "We check our verification databases, including carrier and theft databases, major carrier and theft databases. No database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
+ answer: "We check SafeOrStolen reports, public web results, and AI analysis. No single source is 100% complete, and we do not check carrier blacklists directly. A 'clean' result means no records were found in our sources - always combine with other due diligence like meeting in public and testing the device. You can ask the carrier about blacklist status."
  },
  {
  question: "Can someone change an iPhone's IMEI?",

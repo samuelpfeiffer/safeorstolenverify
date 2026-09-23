@@ -15,7 +15,7 @@ export default function ForAuctionHouses() {
  "name": "How do auction houses verify consignment items?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against community theft registries, insurance claims, and stolen property registries before listing items for sale."
+ "text": "Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against publicly available stolen item reports and our own records before listing items for sale."
  }
  },
  {
@@ -98,7 +98,7 @@ export default function ForAuctionHouses() {
  In 2026 alone, law enforcement agencies across the United States recovered over $4.7 billion in stolen property, and a significant portion of that property had been resold through seemingly legitimate channels including auction houses, consignment shops, and online liquidation platforms. The FBI's National Stolen Property Database shows that stolen vehicles, construction equipment, electronics, and firearms are the most commonly laundered items through auction channels.
  </p>
  <p>
- SafeOrStolen provides auction houses with enterprise-grade bulk verification tools that check every consignment item against law enforcement stolen property databases, insurance claim registries, carrier and theft databases, manufacturer records, and pawn shop transaction databases. Whether you run a weekly vehicle auction, estate sale operation, government surplus liquidation, or specialty auction house, SafeOrStolen ensures that every item crossing your auction block has been verified clean.
+ SafeOrStolen provides auction houses with enterprise-grade bulk verification tools that check every consignment item against public stolen property reports and SafeOrStolen's own database. Whether you run a weekly vehicle auction, estate sale operation, government surplus liquidation, or specialty auction house, SafeOrStolen helps ensure that every item crossing your auction block has been reviewed for potential theft flags.
  </p>
  </div>
  </div>
@@ -177,7 +177,7 @@ export default function ForAuctionHouses() {
  <CardContent className="pt-6">
  <Search className="w-12 h-12 text-primary mx-auto mb-4" />
  <h3 className="font-semibold mb-2">Multiple Sources</h3>
- <p className="text-sm text-muted-foreground">Every item checked against theft reports, insurance claims, carrier and theft databases, vehicle theft and title databases, and pawn shop databases.</p>
+ <p className="text-sm text-muted-foreground">Every item checked against public theft reports and SafeOrStolen's own stolen item database.</p>
  </CardContent>
  </Card>
  <Card className="text-center">
@@ -220,10 +220,10 @@ export default function ForAuctionHouses() {
  <h2 className="text-3xl font-bold text-center mb-8">Auction Item Categories We Verify</h2>
  <div className="prose prose-lg max-w-none text-muted-foreground">
  <p>
- SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we check VINs against insurance total loss records, and state DMV stolen vehicle databases covering cars, trucks, motorcycles, RVs, boats, and trailers. For <strong>electronics and phone auctions</strong>, we verify IMEI numbers against carrier and theft databases, and insurance claim registries. For <strong>equipment auctions</strong>, serial numbers are checked against law enforcement stolen property databases, LeadsOnline pawn records, and manufacturer theft registries.
+ SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we review VINs against publicly available theft reports and SafeOrStolen's own records. For <strong>electronics and phone auctions</strong>, we review IMEI numbers against publicly reported stolen device records. For <strong>equipment auctions</strong>, serial numbers are checked against publicly available theft reports and SafeOrStolen's own records.
  </p>
  <p>
- We also support <strong>firearms auctions</strong> with serial number verification, <strong>jewelry and luxury goods</strong> with insurance claim cross-referencing, <strong>musical instruments</strong> with manufacturer serial number validation, and <strong>power tools and construction equipment</strong> with contractor theft database checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can verify it before it reaches your auction block.
+ We also support <strong>firearms auctions</strong> with serial number verification (including HotGunz), <strong>jewelry and luxury goods</strong> with public theft report cross-referencing, <strong>musical instruments</strong> with publicly available serial number validation (including BikeIndex for bicycles), and <strong>power tools and construction equipment</strong> with public theft report checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can help identify potential theft flags before it reaches your auction block.
  </p>
  </div>
  </div>
@@ -239,7 +239,7 @@ export default function ForAuctionHouses() {
  <Card>
  <CardContent className="p-6">
  <h3 className="font-semibold mb-2">How do auction houses verify consignment items?</h3>
- <p className="text-muted-foreground">Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against community theft registries, insurance claims, and stolen property registries before listing items for sale.</p>
+ <p className="text-muted-foreground">Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against publicly available stolen item reports and our own records before listing items for sale.</p>
  </CardContent>
  </Card>
  <Card>

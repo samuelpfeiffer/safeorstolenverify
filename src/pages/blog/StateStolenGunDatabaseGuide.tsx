@@ -11,7 +11,7 @@ const StateStolenGunDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "Does every state have a stolen gun database?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Every state has community theft registries that track stolen firearms, but public access varies widely. Some states (like Arizona's TheftAZ) offer public search tools. Most states require contacting local police. SafeOrStolen aggregates data from all 50 state databases so you don't have to check each one individually." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Every state has community theft registries that track stolen firearms, but public access varies widely. Some states (like Arizona's TheftAZ) offer public search tools. Most states require contacting local police. SafeOrStolen checks its own stolen-item reports and public web data, including HotGunz, for firearms so you dont have to check each one individually." }
       },
       {
         "@type": "Question",
@@ -70,7 +70,7 @@ const StateStolenGunDatabaseGuide = () => {
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Database Guide</span>
             <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">State-by-State Stolen Gun Database Guide (2026)</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Every US state has community theft registries tracking stolen firearms, but public access varies wildly. This guide covers the top 10 states for gun theft, how databases differ by state, and how to search all 50 simultaneously.
+              Every US state has community theft reports tracking stolen firearms, but public access varies wildly. This guide covers the top 10 states for gun theft, how reporting differs by state, and how to check comprehensively.
             </p>
             <p className="text-muted-foreground text-sm mt-3">Updated March 2026 · 9 min read</p>
           </div>
@@ -147,7 +147,7 @@ const StateStolenGunDatabaseGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Does every state have a stolen gun database?</summary>
-                <p className="text-muted-foreground mt-2">Every state has community theft registries tracking stolen firearms, but public access varies. SafeOrStolen checks the nationwide  victim-reported registry so you have a fast first-pass check.</p>
+                <p className="text-muted-foreground mt-2">Every state has community theft reports tracking stolen firearms, but public access varies. SafeOrStolen checks its own stolen-item reports and public web data for a fast first-pass check.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Which states have the most gun thefts?</summary>

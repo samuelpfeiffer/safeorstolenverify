@@ -5,7 +5,7 @@ const dataSources = [
  {
  icon: Shield,
  title: 'Law Enforcement',
- description: 'community theft reports, cross-border theft registries',
+ description: 'Our own reported items, public web data, and AI analysis for theft indicators.',
  color: 'text-blue-500',
  link: '/data-sources#law-enforcement',
  stat: '50 states',
@@ -45,7 +45,7 @@ const dataSources = [
  {
  icon: Lock,
  title: 'Industry Registries',
- description: 'stolen bicycle databases, Stolen Firearms Databases, GIA Diamond Registry, vehicle theft and title databases, marine HIN databases, pawn networks',
+ description: 'Our own reported items, public web data, and AI analysis for theft indicators. We also check BikeIndex for bicycles and HotGunz for firearms.',
  color: 'text-orange-500',
  link: '/data-sources#industry',
  stat: 'multiple sources',

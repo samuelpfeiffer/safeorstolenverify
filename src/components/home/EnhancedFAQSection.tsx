@@ -34,11 +34,11 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "Is this database global? What countries are covered?",
- answer: "Yes! We search 3,000+ databases across 50+ countries including USA, Canada, UK, Australia, Europe, and Asia. We access vehicle theft and title databases (USA), carrier and theft databases (global phones), CheckMEND (UK/Europe), stolen bicycle databases (worldwide), stolen-property databases, and insurance registries."
+ answer: "Yes! We search SafeOrStolen's own reports, public web results, and apply AI analysis. For bicycles, we check BikeIndex, and for firearms, HotGunz. We also perform IMEI device lookups for phones (model/details only, not blacklist checks)."
  },
  {
  question: "How accurate are SafeOrStolen results?",
- answer: "We search official stolen-property databases, vehicle title records (vehicle theft and title databases), carrier and theft databases (carrier and theft databases), and verified stolen goods registries. Results appear in 30 seconds with sources cited."
+ answer: "We search SafeOrStolen's own reports, public web results, and apply AI analysis. For bicycles, we check BikeIndex, and for firearms, HotGunz. Results appear in 30 seconds with sources cited."
  },
  {
  question: "What if an item shows 'Safe' but turns out stolen?",

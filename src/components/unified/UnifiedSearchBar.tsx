@@ -155,10 +155,10 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
  <div className="space-y-4">
  <div>
  <h3 className="text-lg font-semibold mb-2 text-foreground">
- Universal Theft Database Search
+ Stolen-Item Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Search across carrier and theft databases, CheckMEND, stolen bicycle databases, Arizona TheftAZ, and Immobilize databases
+ Checks our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bicycles and HotGunz for firearms
  </p>
  </div>
 

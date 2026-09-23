@@ -1,5 +1,5 @@
 /**
- * stolen bicycle databases API Integration Service
+ * BikeIndex API Integration Service
  * Free public API for searching stolen bicycles
  * Documentation: https://bikeindex.org/documentation/api_v3
  */
@@ -28,9 +28,9 @@ export interface BikeIndexSearchResponse {
 }
 
 /**
- * Search stolen bicycle databases for a bicycle by serial number
+ * Search BikeIndex for a bicycle by serial number
  * @param serial - The bicycle serial number to search
- * @returns Array of matching bikes from stolen bicycle databases
+ * @returns Array of matching bikes from BikeIndex
  */
 export async function searchBikeIndex(serial: string): Promise<BikeIndexResult[]> {
  if (!serial || serial.length < 3) {
@@ -49,20 +49,20 @@ export async function searchBikeIndex(serial: string): Promise<BikeIndexResult[]
  );
 
  if (!response.ok) {
- console.error('stolen bicycle databases API error:', response.status, response.statusText);
+ console.error('BikeIndex API error:', response.status, response.statusText);
  return [];
  }
 
  const data: BikeIndexSearchResponse = await response.json();
  return data.bikes || [];
  } catch (error) {
- console.error('stolen bicycle databases API error:', error);
+ console.error('BikeIndex API error:', error);
  return [];
  }
 }
 
 /**
- * Search stolen bicycle databases for stolen bicycles only
+ * Search BikeIndex for stolen bicycles only
  * @param serial - The bicycle serial number to search
  * @returns Array of stolen bikes matching the serial
  */
@@ -83,21 +83,21 @@ export async function searchBikeIndexStolen(serial: string): Promise<BikeIndexRe
  );
 
  if (!response.ok) {
- console.error('stolen bicycle databases API error:', response.status, response.statusText);
+ console.error('BikeIndex API error:', response.status, response.statusText);
  return [];
  }
 
  const data: BikeIndexSearchResponse = await response.json();
  return data.bikes || [];
  } catch (error) {
- console.error('stolen bicycle databases API error:', error);
+ console.error('BikeIndex API error:', error);
  return [];
  }
 }
 
 /**
- * Search stolen bicycle databases with partial/fuzzy serial matching
- * stolen bicycle databases supports fuzzy matching on their end
+ * Search BikeIndex with partial/fuzzy serial matching
+ * BikeIndex supports fuzzy matching on their end
  * @param partialSerial - Partial serial number
  * @returns Array of potentially matching stolen bikes
  */
@@ -106,7 +106,7 @@ export async function searchBikeIndexPartial(partialSerial: string): Promise<Bik
  return [];
  }
 
- // Remove wildcard characters for stolen bicycle databases API
+ // Remove wildcard characters for BikeIndex API
  const cleanSerial = partialSerial.replace(/[*?]/g, '');
  
  try {
@@ -121,21 +121,21 @@ export async function searchBikeIndexPartial(partialSerial: string): Promise<Bik
  );
 
  if (!response.ok) {
- console.error('stolen bicycle databases API error:', response.status, response.statusText);
+ console.error('BikeIndex API error:', response.status, response.statusText);
  return [];
  }
 
  const data: BikeIndexSearchResponse = await response.json();
  return data.bikes || [];
  } catch (error) {
- console.error('stolen bicycle databases API error:', error);
+ console.error('BikeIndex API error:', error);
  return [];
  }
 }
 
 /**
  * Get details for a specific bike by ID
- * @param bikeId - The stolen bicycle databases bike ID
+ * @param bikeId - The BikeIndex bike ID
  * @returns Bike details or null if not found
  */
 export async function getBikeDetails(bikeId: number): Promise<BikeIndexResult | null> {
@@ -157,13 +157,13 @@ export async function getBikeDetails(bikeId: number): Promise<BikeIndexResult | 
  const data = await response.json();
  return data.bike || null;
  } catch (error) {
- console.error('stolen bicycle databases API error:', error);
+ console.error('BikeIndex API error:', error);
  return null;
  }
 }
 
 /**
- * Format stolen bicycle databases result for display
+ * Format BikeIndex result for display
  */
 export function formatBikeResult(bike: BikeIndexResult): {
  title: string;

@@ -38,7 +38,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  {
  number: '2',
  title: 'AI Searches Databases',
- description: 'Our AI instantly searches community theft reports and global stolen goods registries.',
+ description: 'Our AI instantly searches SafeOrStolen reports and public web results to identify stolen goods.',
  icon: <Zap className="w-8 h-8" />,
  },
  {
@@ -51,7 +51,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
 
  const categories = [
  { icon: <Smartphone className="w-6 h-6" />, title: 'Smartphones', desc: 'IMEI verification against blacklists and carrier databases' },
- { icon: <Car className="w-6 h-6" />, title: 'Vehicles', desc: 'VIN lookup for cars, trucks, motorcycles in community theft reports and vehicle theft and title databases' },
+ { icon: <Car className="w-6 h-6" />, title: 'Vehicles', desc: 'VIN checks for cars, trucks and motorcycles against our reports, web results and AI analysis' },
  { icon: <Laptop className="w-6 h-6" />, title: 'Electronics', desc: 'Serial number checks for laptops, cameras, gaming consoles' },
  { icon: <Wrench className="w-6 h-6" />, title: 'Tools & Equipment', desc: 'Verification of power tools and machinery serial numbers' },
  { icon: <Watch className="w-6 h-6" />, title: 'Jewelry & Watches', desc: 'Serial verification against theft databases' },

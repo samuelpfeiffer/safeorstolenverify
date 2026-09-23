@@ -10,10 +10,10 @@ const staticArticles = [
   {
     title: 'Best Stolen Item Checkers 2026: Complete Comparison Guide',
     slug: 'best-stolen-item-checkers-2026',
-    excerpt: 'Compare the top stolen item verification services in 2026. SafeOrStolen, CheckMEND, IMEI.info, and Swappa compared. Find SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
+    excerpt: 'Compare popular item verification services. SafeOrStolen offers a unique approach to checking phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
     category: '2026 Guides',
     readTime: '12 min',
-    keywords: ['stolen item checker 2026', 'best verification service', 'CheckMEND alternative'],
+    keywords: ['stolen item checker', 'verification service comparison', 'SafeOrStolen alternative'],
     featured: true
   },
   {
@@ -218,7 +218,7 @@ export default function BlogIndexPage() {
       <PageSEO
         title="Blog - Stolen Item Guides & Safety Tips"
         description="Expert guides on verifying secondhand items before buying. Avoid stolen goods on marketplaces. IMEI, VIN, serial number tips from SafeOrStolen."
-        keywords="stolen item checker 2026, verification guides, marketplace safety, IMEI verification, VIN checks, buying guides, CheckMEND alternative, Carfax alternative, mobile app verification"
+        keywords="stolen item checker, verification guides, marketplace safety, IMEI lookup, VIN checks, buying guides, SafeOrStolen alternative, vehicle history alternative, mobile app verification"
         canonical="/blog"
         type="website"
         structuredData={{

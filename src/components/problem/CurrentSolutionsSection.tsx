@@ -20,7 +20,7 @@ export const CurrentSolutionsSection = () => {
  <CardContent className="p-6 text-center">
  <h3 className="text-lg font-semibold text-gray-200 mb-3">IMEI Checkers</h3>
  <p className="text-gray-300 text-sm">
- Only check carrier and theft databases, not theft databases. Miss 80% of stolen phones.
+ Many services claim to detect stolen items but miss critical details. SafeOrStolen helps uncover hidden information.
  </p>
  </CardContent>
  </Card>

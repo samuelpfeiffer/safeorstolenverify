@@ -198,7 +198,7 @@ const OfferUpSafetyPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-3 text-destructive">IMEI Blacklisted Phones</h3>
- <p className="text-muted-foreground">Phones reported lost or stolen are added to carrier and theft databases. They may work on WiFi but can't be activated on any US carrier. Always check IMEI with SafeOrStolen before buying any phone on OfferUp.</p>
+ <p className="text-muted-foreground">Phones reported lost or stolen are typically added to a global blacklist by carriers, rendering them unusable on cellular networks. They may still work on WiFi. Always check IMEI details with SafeOrStolen and confirm with the carrier before buying any phone on OfferUp.</p>
  </CardContent>
  </Card>
  <Card>

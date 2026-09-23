@@ -30,7 +30,7 @@ export const TrustBuildingFAQ = () => {
  <CardContent className="p-6">
  <CheckCircle className="h-12 w-12 text-sos-orange mx-auto mb-4" />
  <h3 className="font-semibold mb-2">Real Partnerships</h3>
- <p className="text-sm text-muted-foreground">Working with stolen bicycle databases, CheckMEND, and more</p>
+ <p className="text-sm text-muted-foreground">Reviewing public information, SafeOrStolen reports, and AI analysis</p>
  </CardContent>
  </Card>
  <Card className="text-center border-blue-500/20">
@@ -82,7 +82,7 @@ export const TrustBuildingFAQ = () => {
  <li>Law enforcement stolen property databases</li>
  <li>Insurance company blacklists</li>
  <li>Manufacturer recall databases</li>
- <li>Partner verification services like CheckMEND for phones</li>
+ <li>Comprehensive checks include SafeOrStolen reports, public web results, and AI analysis</li>
  </ul>
  <p>We're completely transparent about our sources and limitations. View our full methodology on our <a href="/about" className="text-sos-orange hover:underline">About page</a>.</p>
  </div>

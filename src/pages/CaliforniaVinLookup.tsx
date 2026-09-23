@@ -6,7 +6,7 @@ const CaliforniaVinLookup = () => {
  state="California"
  stateCode="CA"
  title="California VIN Lookup - Free CA Stolen Vehicle Check | SafeOrStolen"
- metaDescription="Free California VIN lookup. Check if a CA vehicle is stolen from DMV and community theft registries. Instant verification for cars, trucks, and motorcycles."
+ metaDescription="Free California VIN lookup. Check if a CA vehicle is reported stolen. Instant verification for cars, trucks, and motorcycles."
  topCities={["Los Angeles", "Oakland", "San Francisco"]}
  dmvLink="https://www.dmv.ca.gov"
  content={{
@@ -21,7 +21,7 @@ const CaliforniaVinLookup = () => {
  },
  {
  question: "What is California's title washing problem?",
- answer: "Thieves steal California vehicles, transport them out of state, obtain clean titles in states with different requirements, then bring them back to California to sell. Always check vehicle theft and title databases to see title history across states."
+ answer: "Thieves steal California vehicles, transport them out of state, obtain clean titles in states with different requirements, then bring them back to California to sell. Always check a vehicle for reported theft history."
  }
  ]}
  />

@@ -40,7 +40,7 @@ const MobileAppPage = () => {
  { icon: WifiOff, title: "Offline Mode", desc: "Access recent verifications without internet at marketplace meetups" },
  { icon: Zap, title: "3-Second Results", desc: "Instant verification against multiple sources" },
  { icon: Shield, title: "All Item Types", desc: "Phones, vehicles, electronics, firearms, bikes, boats & more" },
- { icon: Globe, title: "US-Optimized", desc: "community theft reports, vehicle theft and title databases, and all 50 state community theft registries" },
+ { icon: Globe, title: "US-Optimized", desc: "Our own reports, public web results, and AI analysis for comprehensive checks across the US." },
  { icon: Clock, title: "24/7 Access", desc: "Verify anytime, anywhere—works like a native app" },
  ];
 

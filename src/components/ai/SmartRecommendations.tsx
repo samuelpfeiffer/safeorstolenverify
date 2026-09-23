@@ -80,7 +80,7 @@ function generateRecommendations(
  id: 'bike-register',
  icon: '🔐',
  title: 'Register This Bike',
- description: 'Protect your new purchase by registering it on stolen bicycle databases — free forever.',
+ description: 'Protect your new purchase by registering it with services like BikeIndex — free forever.',
  cta: 'Register Free',
  action: 'navigate',
  target: '/check-bike',

@@ -19,7 +19,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "Is a VIN check required in Illinois?", answer: "Illinois law doesn't mandate VIN checks for private sales, but dealerships must verify title status. However, buyers who unknowingly purchase stolen vehicles can face criminal charges and lose both the car and money paid." },
- { question: "How do I check an Illinois VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to instantly check Illinois vehicle theft and title databases, and title status. Our mobile app provides 3-second barcode scanning for even faster checks." },
+ { question: "How do I check an Illinois VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to instantly check SafeOrStolen's community reports, public web results, and AI analysis for stolen vehicle reports. Our mobile app provides 3-second barcode scanning for even faster checks." },
  { question: "What is the Illinois title transfer process?", answer: "In Illinois, both buyer and seller must complete the title transfer within 30 days. The seller signs the title, buyer submits it to the IL Secretary of State with odometer disclosure and bill of sale. Verify the VIN matches the title before signing." }
  ]
  },
@@ -42,7 +42,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "Does Indiana require VIN inspections?", answer: "Indiana requires VIN inspections for out-of-state vehicles, rebuilt titles, and vehicles without existing IN titles. However, private party buyers should always verify VIN history to avoid buying stolen vehicles or salvage titles." },
- { question: "How do I check an Indiana VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search Indiana BMV records, vehicle theft and title databases, and accident history. Our mobile app offers instant barcode scanning for faster verification at dealerships or private sales." },
+ { question: "How do I check an Indiana VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search SafeOrStolen's community reports, public web results, and AI analysis for stolen vehicle reports. Our mobile app offers instant barcode scanning for faster verification at dealerships or private sales." },
  { question: "What happens if I buy a stolen car in Indiana?", answer: "In Indiana, you can face criminal charges for receiving stolen property even if you didn't know the car was stolen. The rightful owner can reclaim the vehicle, and you lose both the car and your money with no legal recourse against the seller." }
  ]
  },
@@ -87,7 +87,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  localLaws: "Kansas law (K.S.A. 21-5801) makes theft of property valued over $1,000 a felony with penalties up to 17 months in prison. This includes unknowingly buying stolen vehicles. Kansas requires title transfers within 60 days. The KS Department of Revenue maintains title records."
  },
  faqs: [
- { question: "How do I check a Kansas VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check Kansas title records, vehicle theft and title databases, and accident history. Our mobile app provides instant barcode scanning for faster verification at dealerships." },
+ { question: "How do I check a Kansas VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check SafeOrStolen's community reports, public web results, and AI analysis for stolen vehicle reports. Our mobile app provides instant barcode scanning for faster verification at dealerships." },
  { question: "Does Kansas require VIN inspections?", answer: "Kansas requires VIN inspections for out-of-state vehicles, vehicles without Kansas titles, and rebuilt/salvage titles. However, all buyers should verify VIN history to avoid purchasing stolen vehicles or cars with hidden damage." },
  { question: "What is title washing in Kansas?", answer: "Title washing is when vehicles with salvage or flood titles are registered in states with weaker disclosure laws, then brought back to Kansas with clean titles. Always run a comprehensive VIN check that searches nationwide databases to catch title washing schemes." }
  ]

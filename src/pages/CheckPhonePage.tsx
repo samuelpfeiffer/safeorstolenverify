@@ -45,7 +45,7 @@ const CheckPhonePage = () => {
  <h2>What we check</h2>
  <p>
  SafeOrStolen queries stolen-device and blacklist records across more than 100 databases,
- including carrier blacklist status, loss and theft reports, and our own user-submitted
+ including public web results, AI analysis, and our own user-submitted
  theft registry. A result comes back in seconds:
  </p>
  <ul>
@@ -90,7 +90,7 @@ const CheckPhonePage = () => {
  {
  title: 'What is a blacklisted IMEI (and can it be fixed)?',
  href: '/blog/what-is-a-blacklisted-imei',
- blurb: 'How carrier and theft databases work, the carrier and theft databases block list, and why "cleaning" services are scams.',
+ blurb: 'How phone blacklists work, why \"cleaning\" services are scams, and how we help you find key information about a device.',
  },
  {
  title: 'iCloud locked phone: what it means when you\'re buying',

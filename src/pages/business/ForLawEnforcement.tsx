@@ -94,7 +94,7 @@ const ForLawEnforcement = () => {
  faqs={[
  {
  question: "What databases do you search?",
- answer: "We aggregate data from carrier and theft databases, manufacturer stolen device registries, insurance company reports, and user-reported theft databases totaling multiple sources."
+ answer: "We analyze information from publicly available web sources, user-reported theft incidents, and our own AI systems. For specific item types, we also consult specialized registries like Bike Index for bicycles or HotGunz for firearms."
  },
  {
  question: "Can officers use this in the field?",

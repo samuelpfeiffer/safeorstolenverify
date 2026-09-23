@@ -54,7 +54,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       question: 'How accurate is SafeOrStolen verification?',
-      answer: 'SafeOrStolen checks multiple sources including community theft reports, carrier blacklists, insurance claims, and manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.'
+      answer: 'SafeOrStolen checks its own reported stolen items, public web results, and applies AI analysis. We also check BikeIndex for bicycles, HotGunz for firearms, and perform an IMEI device lookup for phones. While no system is 100%, we aim to provide comprehensive verification.'
     }
   ];
 
@@ -65,7 +65,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       name: 'Verify with SafeOrStolen',
-      text: 'Run the serial number or IMEI through SafeOrStolen database to check against theft reports, carrier blacklists, and stolen item databases. This takes 3 seconds.',
+      text: 'Run the serial number or IMEI through SafeOrStolen to check against our reported stolen items, public web results, and AI analysis. This takes just a few seconds.',
       url: 'https://safeorstolen.com/verify'
     },
     {
@@ -201,7 +201,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
                 </div>
                 <p className="text-muted-foreground mb-3">
                   Run the serial number or IMEI through SafeOrStolen's database to check against law enforcement 
-                  records, carrier blacklists, and stolen item databases. This takes 3 seconds.
+                  records, public web results, and AI analysis. This takes just a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />
@@ -279,7 +279,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">SafeOrStolen Mobile App Advantage</h2>
             <p className="text-muted-foreground mb-4">
-              Unlike competitors like CheckMEND and IMEI.info that only offer web-based verification, SafeOrStolen 
+              Unlike competitors that might focus solely on web-based verification, SafeOrStolen
               provides a free mobile app with barcode scanning. You can verify devices on-the-spot during meetups in 
               just 3 seconds—competitors require 30+ seconds of manual typing.
             </p>
@@ -315,7 +315,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">How accurate is SafeOrStolen's verification?</h3>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks multiple sources including community theft reports, carrier blacklists, insurance claims, and 
+                  SafeOrStolen checks multiple sources including our own reported stolen items, public web results, and
                   manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.
                 </p>
               </div>

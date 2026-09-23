@@ -1,5 +1,5 @@
 /**
- * Hook for stolen bicycle databases API search integration
+ * Hook for BikeIndex search integration
  * Used in bike verification pages
  */
 

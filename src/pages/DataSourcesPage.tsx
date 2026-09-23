@@ -10,7 +10,7 @@ import {
 const FAQ_ITEMS = [
  {
  question: "What databases does SafeOrStolen check for IMEI verification?",
- answer: "SafeOrStolen checks IMEI.info's device records along with carrier blacklists, Apple Activation Lock status, Samsung Knox security records, and Google Find My Device. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen cross-references its internal stolen item reports with public web results and AI analysis. For phones, we check IMEI.info for device details, but we do not check blacklists or manufacturer lock status. We also do not check carrier blacklists directly; please contact your carrier to inquire about blacklist status. Results are returned in approximately 3 seconds."
  },
  {
  question: "Which sources are included in vehicle VIN checks?",
@@ -42,7 +42,7 @@ const DATA_CATEGORIES = [
  bgColor: "bg-purple-500/10",
  title: "Carrier & IMEI Blacklists",
  subtitle: "IMEI.info & Carrier Networks",
- description: "Mobile carrier blacklists are a key signal for phone theft detection. When a phone is reported stolen, carriers blacklist the IMEI — preventing activation on any participating network.",
+ description: "Mobile carriers often maintain blacklists for phones reported stolen, which can prevent activation on participating networks. SafeOrStolen does not check these blacklists directly, but you can inquire with your carrier about a phone's blacklist status.",
  sources: [
  {
  name: "IMEI.info Database",
@@ -228,11 +228,11 @@ export default function DataSourcesPage() {
  <>
  <Helmet>
  <title>Data Sources — Our Verification Databases | SafeOrStolen</title>
- <meta name="description" content="SafeOrStolen checks our verification databases for stolen item verification: vehicle theft records, IMEI.info carrier and theft databases, BikeIndex, and HotGunz firearm registries." />
+ <meta name="description" content="SafeOrStolen checks its comprehensive stolen item reports, public web results, and AI analysis. For bicycles, we use BikeIndex, and for firearms, HotGunz. We also use IMEI.info for phone details."/>
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
  <link rel="canonical" href="https://safeorstolen.com/data-sources" />
  <meta property="og:title" content="Data Sources SafeOrStolen Checks | SafeOrStolen" />
- <meta property="og:description" content="We check vehicle theft records, IMEI.info carrier and theft databases, BikeIndex, and HotGunz firearm registries. Results in 3 seconds." />
+ <meta property="og:description" content="We check our stolen item reports, public web results, and AI analysis. For bicycles, we use BikeIndex, and for firearms, HotGunz. Results in 3 seconds."/>
  <meta property="og:url" content="https://safeorstolen.com/data-sources" />
  <meta property="og:type" content="website" />
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

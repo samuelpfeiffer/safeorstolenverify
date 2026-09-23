@@ -38,7 +38,7 @@ export const KeywordTargeting = () => {
  <li>Firearm serial number verification - avoid federal charges</li>
  <li>Electronics verification - laptops, MacBooks, cameras, gaming consoles</li>
  <li>Power tools and equipment serial number check</li>
- <li>Bicycle registration verification through stolen bicycle databases</li>
+ <li>Bicycle verification using SafeOrStolen reports and BikeIndex checks</li>
  </ul>
  </section>
 
@@ -92,7 +92,7 @@ export const KeywordTargeting = () => {
  <dd>SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Enter any IMEI, VIN, or serial number.</dd>
  
  <dt>How do I know if a phone is blacklisted?</dt>
- <dd>Use our IMEI checker - we check carrier and theft databases and stolen phone databases.</dd>
+ <dd>Use our IMEI checker - we provide device details and check SafeOrStolen reports.</dd>
  
  <dt>Is buying stolen goods illegal?</dt>
  <dd>Yes, even if you didn't know it was stolen. You can face criminal charges, lose the item, and get no refund. Always verify before buying.</dd>

@@ -16,19 +16,19 @@ export const HomeContentSections = () => {
  const faqs = [
  {
  question: "How do I check if a phone is stolen using IMEI?",
- answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We search carrier and theft databases databases, carrier records (AT&T, Verizon, T-Mobile), vehicle title records, and law enforcement stolen property records. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
+ answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We check SafeOrStolen reports, public web results, and use AI analysis to provide insights. You can also ask your carrier if the device is blacklisted. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
  },
  {
  question: "Is SafeOrStolen really free?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. That's significantly less than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check). Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
+ answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
  },
  {
  question: "What databases does SafeOrStolen check?",
- answer: "We search over 100 databases simultaneously including: community theft reports, vehicle theft and title databases for vehicles, carrier and theft databases global blacklist for phones, the stolen firearms databases for firearms, state theft reports, vehicle theft and title databases, insurance company theft claims, carrier and theft databases, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We combine SafeOrStolen's own reported items, public web results, and AI analysis for comprehensive checks. For bicycles, we also check BikeIndex. For firearms, we use HotGunz. For phones, we perform an IMEI device lookup for model details. This multi-faceted approach helps identify potential stolen items."
  },
  {
  question: "How do I check if a car is stolen using VIN?",
- answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check theft records, vehicle theft and title databases, vehicle title records, salvage/junk databases, and community theft reports across all 50 states. Results in 3 seconds."
+ answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check SafeOrStolen reports, public web results, and use AI analysis to identify potential issues. Results in 3 seconds."
  },
  {
  question: "Can I check items on Facebook Marketplace before buying?",
@@ -52,7 +52,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "What should I do if an item shows as stolen?",
- answer: "Do NOT purchase the item. Leave without confronting the seller. Report to local police with the listing details and seller information. For vehicles, report to vehicle theft and title databases at 1-800-TEL-vehicle theft and title databases. Take screenshots of the listing as evidence before it's removed. You may help recover stolen property and prevent others from being victimized."
+ answer: "Do NOT purchase the item. Leave without confronting the seller. Report to local police with the listing details and seller information. Take screenshots of the listing as evidence before it's removed. You may help recover stolen property and prevent others from being victimized."
  },
  {
  question: "Can pawn shops use SafeOrStolen?",
@@ -80,14 +80,14 @@ export const HomeContentSections = () => {
  items: "iPhone, Samsung Galaxy, Google Pixel, OnePlus, Motorola, iPad, Surface",
  identifier: "IMEI Number",
  link: "/check-phone",
- detail: "Check carrier and theft databases, carrier locks, vehicle title records, stolen reports"
+ detail: "Check SafeOrStolen reports, public web, AI analysis, IMEI details"
  },
  {
  title: "🚗 Vehicles",
  items: "Cars, trucks, SUVs, vans — all makes and models",
  identifier: "VIN Number",
  link: "/vin-checker",
- detail: "vehicle theft and title databases theft records, DMV titles, salvage history, vehicle title records"
+ detail: "SafeOrStolen reports, public web results, AI analysis"
  },
  {
  title: "🔫 Firearms",
@@ -115,14 +115,14 @@ export const HomeContentSections = () => {
  items: "Road bikes, mountain bikes, e-bikes — all brands",
  identifier: "Serial Number",
  link: "/check-bike",
- detail: "stolen bicycle databases, police registries, insurance, community reports"
+ detail: "SafeOrStolen reports, BikeIndex, public web results, AI analysis"
  },
  {
  title: "🏍️ Motorcycles",
  items: "Harley-Davidson, Honda, Yamaha, Kawasaki, BMW, Ducati",
  identifier: "VIN Number",
  link: "/check-motorcycle-vin",
- detail: "vehicle theft and title databases, DMV, insurance, community theft registries"
+ detail: "SafeOrStolen reports, public web results, AI analysis"
  },
  {
  title: "⌚ Watches & Jewelry",
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
  <h3 className="font-bold text-lg mb-2">We Search multiple sources</h3>
  <p className="text-sm text-muted-foreground">
- In parallel, we query vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, stolen bicycle databases, state records, vehicle theft and title databases, carrier and theft databases, vehicle title records, pawn shop records, and community databases. More sources means higher accuracy.
+ In parallel, we query SafeOrStolen's own reports, public web results, and use AI analysis. For bicycles, we check BikeIndex. For firearms, we check HotGunz. For phones, we perform an IMEI device lookup for model details. More sources means higher accuracy.
  </p>
  </div>
  <div className="text-center p-6 bg-card rounded-lg border border-border">

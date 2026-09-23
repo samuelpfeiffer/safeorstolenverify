@@ -84,7 +84,7 @@ export const TrustEngineSchemas: React.FC = () => {
  "name": "What databases does SafeOrStolen check?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen aggregates data from stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases."
+ "text": "SafeOrStolen uses its own reported stolen items, public web results, and AI analysis to help identify potentially stolen items. For specific items, we also check BikeIndex for bicycles and HotGunz for firearms."
  }
  }
  ]

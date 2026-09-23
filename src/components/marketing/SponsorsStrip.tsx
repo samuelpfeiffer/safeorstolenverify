@@ -27,18 +27,18 @@ export const SponsorsStrip: React.FC = () => {
  />
  </a>
 
- {/* stolen bicycle databases */}
+ {/* BikeIndex bicycle registry */}
  <a
  href="https://bikeindex.org"
  target="_blank"
  rel="noopener noreferrer"
  className="inline-flex items-center"
- aria-label="Visit stolen bicycle databases"
- title="stolen bicycle databases"
+ aria-label="Visit BikeIndex bicycle registry"
+ title="BikeIndex bicycle registry"
  >
  <img
  src="/images/partners/bikeindex-logo.svg"
- alt="stolen bicycle databases official logo"
+ alt="BikeIndex bicycle registry official logo"
  loading="lazy"
  className="h-8 md:h-10 w-auto"
  />

@@ -4,7 +4,7 @@ const CheckEBikePage = () => {
  return (
  <ItemLandingPageTemplate
  title="Check if eBike is Stolen - Free Electric Bike Serial Number Verification"
- metaDescription="Check if electric bikes, e-scooters, or eBikes are stolen before buying. Free serial number verification for eBikes from community theft registries. Verify Rad Power, Trek, Specialized, Aventon eBikes."
+ metaDescription="Check if electric bikes, e-scooters, or eBikes are reported stolen before buying. Free serial number verification for eBikes. Verify Rad Power, Trek, Specialized, Aventon eBikes."
  h1="Check if Your eBike is Stolen Before Buying"
  itemType="eBikes & E-Scooters"
  keywords={[
@@ -16,8 +16,8 @@ const CheckEBikePage = () => {
  ]}
  content={{
  intro: "Verify if any eBike or e-scooter is stolen in 3 seconds. Free serial number verification for electric bikes from Rad Power, Trek, Specialized, Aventon, and all brands. Check before buying from Facebook Marketplace, eBay, Craigslist, or bike shops. Electric bikes are prime theft targets due to high value ($1,500-$10,000).",
- whatIs: "Checking if an eBike is stolen means verifying serial numbers and battery IDs against stolen bicycle databases, community theft registries, and manufacturer registries. Electric bikes have multiple identifiers: frame serial number, motor serial number, and battery serial number - all should be verified. SafeOrStolen's eBike checker instantly searches stolen-property registries, stolen bicycle databases (a large bike registry with 120,000+ stolen bikes), manufacturer warranty databases, and theft-report records for all eBike brands. This protects buyers from purchasing stolen electric bikes that could be confiscated or tracked.",
- howItWorks: "Our eBike verification system queries multiple databases simultaneously. We check: (1) stolen bicycle databases - the a large bike registry with 120,000+ registered stolen bikes, (2) - another major bike registry with GPS tracking integration, (3) our verification databases - community theft registries across all 50 states, (4) Manufacturer databases - Rad Power Bikes, Trek, Specialized, Aventon, Giant warranty registries, (5) our verification databases - tracks eBikes reported stolen to insurance companies, (6) Serial number format validation - verifies serial numbers match manufacturer specifications. Check frame serial (bottom bracket), motor serial (motor casing), and battery serial (battery pack). Within 3 seconds, you receive a comprehensive report.",
+ whatIs: "Checking if an eBike is stolen means verifying serial numbers and battery IDs against various reports and records. Electric bikes have multiple identifiers: frame serial number, motor serial number, and battery serial number - all should be checked. SafeOrStolen's eBike checker instantly searches our own reported items, public web results, and leverages AI analysis for all eBike brands. We also check BikeIndex for comprehensive bicycle data. This protects buyers from purchasing reported stolen electric bikes that could be confiscated or tracked.",
+ howItWorks: "Our eBike verification system queries multiple sources simultaneously. We check: (1) BikeIndex - a major registry for reported stolen bicycles, (2) our own reported stolen items, (3) public web results and AI analysis, (4) serial number format validation - verifies serial numbers match manufacturer specifications for known brands. Check frame serial (bottom bracket), motor serial (motor casing), and battery serial (battery pack). Within seconds, you receive a comprehensive report.",
  whyCheck: "Buying a stolen eBike has severe consequences. (1) Police can confiscate the eBike with zero compensation - you lose $1,500-$10,000, (2) You could face criminal charges for possession of stolen property, (3) Many eBikes have GPS tracking - the original owner can track and report you, (4) Bike shops refuse to service stolen eBikes and may report you to police, (5) You can't register the bike or get insurance, (6) Manufacturers refuse warranty service on stolen eBikes. In 2024, over 2 million bicycles (including 400,000+ eBikes) were stolen in the United States. eBikes are 5x more likely to be stolen than regular bikes due to their high value. Stolen eBikes frequently appear on Facebook Marketplace, Craigslist, OfferUp at 50-70% below retail price. Our free eBike checker protects you from this massive theft market.",
  benefits: [
  "Check Rad Power Bikes - RadRunner, RadRover, RadCity, RadMission, RadWagon",
@@ -27,7 +27,7 @@ const CheckEBikePage = () => {
  "Check any eBike brand - Giant, Cannondale, Pedego, Lectric, Super73",
  "Verify e-scooters - Segway, Xiaomi, Bird, Lime, unagi scooters",
  "Check frame, motor, and battery serial numbers",
- "Search stolen bicycle databases and databases",
+ "Search reported stolen bicycle records and public web results,",
  "Free eBike serial number check - 2 free verifications"
  ],
  process: [
@@ -53,7 +53,7 @@ const CheckEBikePage = () => {
  },
  {
  question: "What should I do if my eBike check shows it's stolen?",
- answer: "If our check shows the eBike is reported stolen: (1) Do NOT buy it under any circumstances - you'll lose $1,500-$10,000 when police confiscate it, (2) Walk away immediately without confronting the seller (could be dangerous), (3) Screenshot the listing and record seller information, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, eBay), (5) File an anonymous tip with local police including the listing URL, all serial numbers, and seller details. Include stolen bicycle databases or report number if available, (6) If you already purchased it, contact police immediately and turn over the eBike. You're a fraud victim. Filing a police report helps you recover money through small claims court or insurance."
+ answer: "If our check shows the eBike is reported stolen: (1) Do NOT buy it under any circumstances - you'll risk losing your investment when police confiscate it, (2) Walk away immediately without confronting the seller (could be dangerous), (3) Screenshot the listing and record seller information, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, eBay), (5) File an anonymous tip with local police including the listing URL, all serial numbers, and seller details. Include any report number if available, (6) If you already purchased it, contact police immediately and turn over the eBike. You're a fraud victim. Filing a police report helps you recover money through small claims court or insurance."
  },
  {
  question: "Why are eBikes stolen so frequently?",
@@ -65,7 +65,7 @@ const CheckEBikePage = () => {
  },
  {
  question: "How long does an eBike serial number check take?",
- answer: "Our eBike verification takes only 3 seconds per serial number. Enter the frame, motor, and battery serial numbers, click verify, and receive instant results showing whether any component has been reported stolen. We search stolen bicycle databases, community theft registries, manufacturer registries, and theft-report records simultaneously for comprehensive protection."
+ answer: "Our eBike verification takes only seconds per serial number. Enter the frame, motor, and battery serial numbers, click verify, and receive instant results showing whether any component has been reported stolen. We search BikeIndex, our own reported items, public web results, and leverage AI analysis simultaneously for comprehensive protection."
  },
  {
  question: "What are red flags when buying a used eBike?",

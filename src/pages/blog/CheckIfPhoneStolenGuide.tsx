@@ -4,13 +4,13 @@ import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
 
 const FAQ_ITEMS = [
-  { q: 'How do I check if a phone is stolen before buying it?', a: 'Get the IMEI number from the seller (dial *#06# on the phone or check Settings → About Phone). Enter it into SafeOrStolen\'s IMEI checker to cross-reference carrier and manufacturer blacklists, and community theft registries. Results appear in 3 seconds.' },
+  { q: 'How do I check if a phone is stolen before buying it?', a: 'Get the IMEI number from the seller (dial *#06# on the phone or check Settings → About Phone). Enter it into SafeOrStolen\'s IMEI checker to check against our reports, public web results, and AI analysis. Results appear in 3 seconds.' },
   { q: 'What is an IMEI number and where do I find it?', a: 'IMEI (International Mobile Equipment Identity) is a unique 15-digit number assigned to every mobile device. Find it by: (1) dialing *#06#, (2) checking Settings → About Phone → IMEI, (3) looking on the original box, or (4) checking the SIM tray on iPhones. Every phone has one, and it cannot be changed without illegal modification.' },
   { q: 'Can a stolen phone be used after a factory reset?', a: 'A factory reset does NOT clear a stolen phone\'s status. The IMEI remains blacklisted across all carriers regardless of resets. iPhones have Activation Lock tied to the Apple ID, and Android phones have Factory Reset Protection (FRP) — both prevent use without the original owner\'s credentials.' },
-  { q: 'What does a blacklisted IMEI mean?', a: 'A blacklisted IMEI means the phone was reported as stolen, lost, or has an unpaid financial balance with a carrier. Blacklisted phones cannot be activated on major U.S. carriers (AT&T, Verizon, T-Mobile). The carrier and manufacturer blacklists maintains a global blacklist shared across 200+ carriers in 50+ countries.' },
+  { q: 'What does a blacklisted IMEI mean?', a: 'A blacklisted IMEI means the phone was reported as stolen, lost, or has an unpaid financial balance with a carrier. Blacklisted phones cannot be activated on major U.S. carriers (AT&T, Verizon, T-Mobile). Carrier blacklists maintain a global list shared across 200+ carriers in 50+ countries.' },
   { q: 'Is it illegal to buy a stolen phone?', a: 'Yes. In most U.S. states, receiving stolen property is a criminal offense even if you didn\'t know it was stolen. Under federal law (18 U.S.C. § 2315), knowingly receiving stolen goods worth $5,000+ carries up to 10 years in prison. Law enforcement will seize the phone with no compensation to you.' },
-  { q: 'How much does it cost to check if a phone is stolen?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. This is significantly cheaper than CheckMEND (£1.99+/check) and more comprehensive than free-only tools like IMEI.info.' },
-  { q: 'Can I check if an iPhone is stolen without the IMEI?', a: 'Yes, partially. Check for Activation Lock by going to Settings → [Name] → Find My → Find My iPhone. If it\'s locked to another Apple ID, the phone may be stolen. However, a full IMEI check against community theft registries is the only way to definitively verify theft status.' },
+  { q: 'How much does it cost to check if a phone is stolen?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. This is significantly cheaper than services like CheckMEND (£1.99+/check) and offers more detailed information than basic IMEI lookups.' },
+  { q: 'Can I check if an iPhone is stolen without the IMEI?', a: 'Yes, partially. Check for Activation Lock by going to Settings → [Name] → Find My → Find My iPhone. If it\'s locked to another Apple ID, the phone may be stolen. However, an IMEI check against SafeOrStolen\'s reports and public web results is the best way to verify theft status.' },
   { q: 'What should I do if I discover my phone was stolen?', a: 'Report it immediately to: (1) your carrier to blacklist the IMEI, (2) local police with the IMEI and serial number, (3) your insurance company if applicable, (4) SafeOrStolen\'s stolen database to alert future buyers. File a police report within 48 hours for best recovery chances.' },
 ];
 
@@ -20,7 +20,7 @@ const CheckIfPhoneStolenGuide = () => {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "How to Check If a Phone Is Stolen Before Buying (2026 Complete Guide)",
-      "description": "Step-by-step guide to verify any phone isn't stolen using IMEI checks. Covers iPhone, Samsung, Android — check against carrier and manufacturer blacklists, carrier blacklists, and community theft registries.",
+      "description": "Step-by-step guide to verify any phone isn't stolen using IMEI checks. Covers iPhone, Samsung, Android — checking against SafeOrStolen\'s reports, public web results, and AI analysis.",
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
       "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-02",
@@ -43,7 +43,7 @@ const CheckIfPhoneStolenGuide = () => {
       "totalTime": "PT1M",
       "step": [
         { "@type": "HowToStep", "name": "Get the IMEI", "text": "Ask the seller to dial *#06# on the phone or check Settings → About Phone → IMEI. Write down the 15-digit number." },
-        { "@type": "HowToStep", "name": "Run an IMEI check", "text": "Go to safeorstolen.com/verify and enter the IMEI number. The system checks carrier and manufacturer blacklists, carrier blacklists, and community theft registries simultaneously." },
+        { "@type": "HowToStep", "name": "Run an IMEI check", "text": "Go to safeorstolen.com/verify and enter the IMEI number. The system checks SafeOrStolen\'s reports, public web results, and AI analysis simultaneously." },
         { "@type": "HowToStep", "name": "Review the results", "text": "Within 3 seconds, you'll see a Trust Score (0-100) and detailed source-level breakdown. CLEAN means safe to buy. FLAGGED means stolen, blacklisted, or suspicious." },
         { "@type": "HowToStep", "name": "Check Activation Lock (iPhone)", "text": "For iPhones, also verify that Find My iPhone is turned off and the phone isn't locked to another Apple ID." },
         { "@type": "HowToStep", "name": "Save your proof", "text": "Download the PDF verification certificate for your records. This serves as documented due diligence if the item's status is ever questioned." }
@@ -65,7 +65,7 @@ const CheckIfPhoneStolenGuide = () => {
     <div className="min-h-screen bg-background text-foreground pt-20">
       <SEOHead
         title="How to Check If a Phone Is Stolen (2026 Guide) | SafeOrStolen"
-        description="Free IMEI check guide: verify if any phone is stolen before buying. Check iPhone, Samsung, Android against carrier and manufacturer blacklists and 100+ community theft registries in 3 seconds."
+        description="Free IMEI check guide: verify if any phone is stolen before buying. Check iPhone, Samsung, Android against SafeOrStolen\'s reports and public web results in 3 seconds."
         canonical="/blog/check-if-phone-stolen-guide"
         keywords="check if phone stolen, IMEI check free, how to tell if phone is stolen, stolen phone checker, blacklisted IMEI check, is my phone stolen"
         ogType="article"
@@ -114,7 +114,7 @@ const CheckIfPhoneStolenGuide = () => {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What Is an IMEI Number and Why Does It Matter?</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Every mobile phone manufactured since 2004 has a unique 15-digit IMEI (International Mobile Equipment Identity) number — think of it as the phone's fingerprint. This number is permanently embedded in the device's hardware and is used by carriers worldwide to identify, track, and blacklist devices. When a phone is reported stolen, the carrier adds its IMEI to the carrier and manufacturer blacklists — a global blacklist shared across 200+ carriers in 50+ countries. A blacklisted phone cannot be activated on any major carrier network.
+            Every mobile phone manufactured since 2004 has a unique 15-digit IMEI (International Mobile Equipment Identity) number — think of it as the phone\'s fingerprint. This number is permanently embedded in the device\'s hardware and is used by carriers worldwide to identify, track, and blacklist devices. When a phone is reported stolen, the carrier adds its IMEI to their blacklist — a global blacklist shared across 200+ carriers in 50+ countries. A blacklisted phone cannot be activated on any major carrier network.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
             This is exactly why checking the IMEI before buying a used phone is the single most important step you can take. Without this check, you could end up with a $1,000+ device that's essentially a paperweight — unable to make calls, send texts, or use cellular data on any major network.
@@ -153,7 +153,7 @@ const CheckIfPhoneStolenGuide = () => {
           <div className="space-y-6 mb-8">
             {[
               { step: 1, title: 'Get the IMEI from the seller', desc: 'Before you meet up or commit to buying, ask the seller for the IMEI number. If they claim they don\'t know what that is, tell them to dial *#06# — it will display on screen instantly. If they refuse, end the conversation.' },
-              { step: 2, title: 'Run the IMEI through SafeOrStolen', desc: 'Go to safeorstolen.com/verify and enter the 15-digit IMEI. Our system simultaneously queries the carrier and manufacturer blacklists, all major U.S. carrier blacklists (AT&T, Verizon, T-Mobile, Sprint), community theft reports, and state theft reports from all 50 states.' },
+              { step: 2, title: 'Run the IMEI through SafeOrStolen', desc: 'Go to safeorstolen.com/verify and enter the 15-digit IMEI. Our system simultaneously queries SafeOrStolen\'s reports, public web results, and AI analysis.' },
               { step: 3, title: 'Review the Trust Score', desc: 'Within 3 seconds, you\'ll receive a Trust Score from 0 to 100 with a detailed breakdown showing exactly which databases returned results. A score of 80+ with no flags means the phone is safe to buy. Any stolen, blacklisted, or financed flags should be dealbreakers.' },
               { step: 4, title: 'Check Activation Lock (iPhone only)', desc: 'For iPhones, go to Settings → [Name] → Find My → Find My iPhone. If Find My is enabled and locked to another Apple ID, the phone cannot be reset or used without the original owner\'s password. This is separate from the IMEI check and equally critical.' },
               { step: 5, title: 'Download the verification certificate', desc: 'Save the PDF certificate as proof of due diligence. If the item is ever questioned by law enforcement, this certificate demonstrates you took reasonable steps to verify it wasn\'t stolen — protecting you legally.' },
@@ -177,11 +177,11 @@ const CheckIfPhoneStolenGuide = () => {
 
           <div className="space-y-3 mb-8">
             {[
-              { source: 'carrier and manufacturer blacklists', what: 'Global blacklist status — if flagged, the phone is reported stolen/lost internationally and won\'t work on any carrier in 50+ countries' },
-              { source: 'Carrier Blacklists', what: 'AT&T, Verizon, T-Mobile, Sprint records — checks for unpaid balances, insurance claims, and theft reports filed directly with the carrier' },
-              { source: 'community theft reports', what: 'National Crime Information Center — the FBI\'s central database of stolen property reported by law enforcement agencies nationwide' },
+              { source: 'IMEI Device Information', what: 'Provides phone model, manufacturer, and technical specifications — useful for verifying the phone\'s identity' },
+              { source: 'Public Web Results & AI Analysis', what: 'Scans the internet for mentions of the IMEI, identifying potential theft reports or warnings' },
+              { source: 'SafeOrStolen Reports', what: 'Checks against our own database of user-reported stolen or missing items' },
               { source: 'State Law Enforcement', what: 'Records from all 50 theft reports — catches stolen phones reported to local police departments' },
-              { source: 'Insurance Claims', what: 'Checks if an insurance claim was filed for the device — phones with insurance claims are often still blacklisted even if the owner was paid out' },
+              { source: 'Carrier Blacklists (Context)', what: 'While SafeOrStolen does not check carrier blacklists directly, if a phone is blacklisted, it generally cannot be activated on major networks. You can contact a carrier to ask about a phone\'s blacklist status.' },
             ].map(item => (
               <div key={item.source} className="bg-card border border-border rounded-xl p-4">
                 <span className="text-primary font-bold text-sm">{item.source}</span>
@@ -219,7 +219,7 @@ const CheckIfPhoneStolenGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: The Best IMEI Checker</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            While there are several IMEI checkers available online, SafeOrStolen is the most comprehensive option for U.S. buyers. Unlike IMEI.info (which only checks basic device info) or CheckMEND (UK-focused, £1.99+ per check), SafeOrStolen queries multiple sources simultaneously — including theft reports that consumer-grade tools don't access. $0.99/check or $10/month unlimited, and the results include a downloadable PDF certificate for legal protection.
+            While there are several IMEI checkers available online, SafeOrStolen is a comprehensive option for buyers. Unlike IMEI.info (which only checks basic device info), SafeOrStolen queries multiple sources simultaneously — including SafeOrStolen\'s reports, public web results, and AI analysis. $0.99/check or $10/month unlimited, and the results include a downloadable PDF certificate for your records.
           </p>
 
           <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center mt-12">

@@ -50,7 +50,7 @@ export const CompetitiveAnalytics: React.FC = () => {
           "dateModified": new Date().toISOString(),
           "mainEntityOfPage": "https://safeorstolen.com",
           "proficiencyLevel": "Expert",
-          "dependencies": "Real-time community theft registries",
+          "dependencies": "Community-reported stolen item listings",
           "applicationCategory": "Consumer Protection Technology"
         })}
       </script>

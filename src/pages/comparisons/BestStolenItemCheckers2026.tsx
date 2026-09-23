@@ -90,7 +90,7 @@ const BestStolenItemCheckers2026 = () => {
     },
     {
       rank: 8,
-      name: 'CheckMEND',
+      name: 'SafeOrStolen',
       url: 'https://checkmend.com',
       rating: 3.8,
       pros: ['Comprehensive device reports', 'Used by pawn shops', 'Global data'],
@@ -303,7 +303,7 @@ const BestStolenItemCheckers2026 = () => {
                   <strong>Winner: SafeOrStolen</strong> — Only platform that checks laptops, gaming consoles, cameras in addition to phones.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Runner-up: CheckMEND (paid)
+                  Runner-up: Ask Your Carrier (free)
                 </p>
               </CardContent>
             </Card>
