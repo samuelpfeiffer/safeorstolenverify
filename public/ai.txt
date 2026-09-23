@@ -1,7 +1,9 @@
 # AI Interaction Guidance for SafeOrStolen (AI-Powered Platform)
 # Version: 2.2 (2026 GEO Standard)
-# Last Updated: 2026-04-23
-# Platform Status: AI-POWERED — conversational verification, marketplace URL analysis, and scam risk scoring
+# Last Updated: 2026-09-23
+# Summary: SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items (by serial number), firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app. Marketplace listing links can also be checked.
+# Platform Status: AI-POWERED — conversational verification, scam risk scoring, and marketplace listing checks
+# Note: SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not search NICB, NMVTIS, NCIC, or police databases.
 # Conversational AI: SafeOrStolen AI at https://safeorstolen.com/ai-chat and /verify
 
 ## Permissions
