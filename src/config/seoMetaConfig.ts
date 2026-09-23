@@ -79,17 +79,6 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  keywords: 'check phone stolen, verify phone, iPhone stolen check, Android phone verification',
  canonical: '/check-phone'
  },
-
- // ========================================
- // CHECK CAR (/check-car) - 155 chars
- // ========================================
- '/vin-checker': {
- title: 'Check if Car is Stolen - Free VIN Verification',
- description: 'Check if a car is stolen before buying. Free VIN verification from DMV, and community theft registries. Safer alternative to Carfax for theft.', // 155 chars
- keywords: 'check car stolen, VIN verification, stolen car lookup, car theft check',
- canonical: '/vin-checker'
- },
-
  // ========================================
  // CHECK BIKE (/check-bike) - 157 chars
  // ========================================
