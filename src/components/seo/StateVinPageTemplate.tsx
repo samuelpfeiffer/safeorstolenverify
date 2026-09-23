@@ -100,7 +100,7 @@ export const StateVinPageTemplate = ({
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": `Locate the 17-character VIN on the ${state} vehicle's dashboard, driver-side door jamb, or title document.` },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Enter the VIN into SafeOrStolen's verification tool on the verify page." },
- { "@type": "HowToStep", "position": 3, "name": "Review results", "text": `SafeOrStolen checks the VIN against multiple sources including and ${state} theft reports in 3 seconds.` },
+ { "@type": "HowToStep", "position": 3, "name": "Review results", "text": `SafeOrStolen checks the VIN against multiple sources including ${state} theft reports in 3 seconds.` },
  { "@type": "HowToStep", "position": 4, "name": "Make your decision", "text": "Review the verification certificate showing stolen status, title history, and risk assessment before purchasing." }
  ]
  }
@@ -136,7 +136,7 @@ export const StateVinPageTemplate = ({
  <ol>
  <li>Find the 17-character VIN on the vehicle dashboard, door jamb, or title.</li>
  <li>Enter the VIN into SafeOrStolen's verification tool.</li>
- <li>We check multiple sources including and {state} theft reports in 3 seconds.</li>
+ <li>We check multiple sources including {state} theft reports in 3 seconds.</li>
  <li>Review stolen status, title history, and risk assessment before purchasing.</li>
  </ol>
  
