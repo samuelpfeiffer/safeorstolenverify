@@ -146,7 +146,7 @@ const FreeVINLookupGuide = () => {
  {[
  { step: '1', title: 'Get the VIN', desc: 'Ask the seller to send you the VIN before you drive to see the vehicle. If they refuse, walk away — legitimate sellers have nothing to hide.' },
  { step: '2', title: 'Enter It on SafeOrStolen', desc: 'Go to safeorstolen.com/verify and paste the 17-digit VIN. Our AI automatically detects it as a vehicle identifier — no dropdown needed.' },
- { step: '3', title: 'Review Your Results', desc: 'In 3 seconds, we check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. You\'ll see a clear Stolen, Not stolen, or Not found result.' },
+ { step: '3', title: 'Review Your Results', desc: 'In 3 seconds, we check SafeOrStolen\'s own stolen-item reports, public web results, and AI analysis. You\'ll see a clear Stolen, Not stolen, or Not found result.' },
  { step: '4', title: 'Download the Report', desc: 'Get a PDF certificate to bring to the meetup, or share a verification link with the seller to prove you did your homework. Smart buyers verify first.' },
  ].map(s => (
  <div key={s.step} className="flex gap-4 p-5 bg-card border border-border rounded-xl">
