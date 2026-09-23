@@ -1,79 +1,69 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/**
+ * Boats: SafeOrStolen has NO marine-specific data source. A HIN can only be run
+ * through the general serial check. Official HIN resources are listed for the
+ * reader to check themselves.
+ */
 const CheckBoatPage = () => {
  return (
  <ItemLandingPageTemplate
- title="Check if Boat is Stolen - HIN Verification for Watercraft"
- metaDescription="Check if boats, jet skis, or yachts are stolen before buying. HIN (Hull Identification Number) verification from Coast Guard, state DNR, and community theft registries. $0.99/check or $10/month unlimited."
- h1="Check if Boat is Stolen Before Buying"
- itemType="Boat & Watercraft"
+ title="How to Check if a Boat Is Stolen (HIN Guide) | SafeOrStolen"
+ metaDescription="Check a boat's hull ID (HIN) before buying: where to find it, official places to check it yourself, tampering signs, and running it through SafeOrStolen's serial check."
+ h1="How to Check if a Boat Is Stolen"
+ itemType="Boat"
+ dateModified="2026-09-23"
  keywords={[
- 'check if boat stolen',
- 'stolen boat check',
+ 'check if boat is stolen',
  'boat HIN lookup',
- 'hull identification number verification',
- 'verify boat not stolen',
- 'jet ski stolen check'
+ 'hull identification number check',
+ 'stolen jet ski check',
+ 'used boat buying checklist'
  ]}
  content={{
- intro: "Verify if any boat, yacht, jet ski, or watercraft is stolen in 3 seconds. Free HIN (Hull Identification Number) verification from U.S. Coast Guard, state DNR (Department of Natural Resources), and community theft registries. Check before buying from private sellers, boat shows, or marinas. Boats are high-value targets ($15,000-$500,000+) with sophisticated theft rings.",
- whatIs: "Checking if a boat is stolen means verifying the Hull Identification Number (HIN) against federal and state databases. Every boat manufactured after 1972 has a unique 12-character HIN similar to a car's VIN. SafeOrStolen's boat checker instantly searches the U.S. Coast Guard vessel documentation database, vehicle theft and title databases (vehicle theft and title databases, which includes boats), state DNR stolen watercraft databases (all 50 states), law enforcement stolen property reports, our verification databases, and marina theft registries. This protects buyers from purchasing stolen boats, yachts, jet skis, sailboats, or personal watercraft that could be confiscated by authorities or the Coast Guard.",
- howItWorks: "Our boat verification system searches authoritative marine databases simultaneously. We check: (1) U.S. Coast Guard Vessel Documentation Database - tracks federally documented vessels and theft reports, (2) state watercraft registries - all 50 state stolen watercraft registries, (3) vehicle theft and title databases - vehicle theft and title databases includes boats, (4) stolen-property registries - federal, state, and local agencies, (5) Marine our verification databases - tracks boats reported stolen to insurance companies, (6) National Boat Owners Association registry, (7) BoatHistory.com reports (when available), (8) HIN format validation - verifies the HIN matches manufacturer specifications and wasn't altered. Within 3 seconds, you receive a comprehensive report showing whether the boat has been reported stolen, has outstanding liens, has salvage/total loss history, or has title issues.",
- whyCheck: "Buying a stolen boat will financially devastate you and potentially result in criminal charges. (1) Coast Guard or local authorities will CONFISCATE the boat with ZERO compensation - you lose $20,000-$500,000+, (2) You could face criminal charges for receiving stolen property, (3) You lose your entire purchase price with no legal recourse, (4) You cannot register the boat with your state DNR or Coast Guard, (5) Insurance will NOT cover a stolen boat, (6) Banks will NOT finance stolen boats, (7) Marinas may refuse to dock stolen boats or report you to authorities. In 2024, over 8,000 boats were reported stolen in the United States with an average value of $42,000. High-end fishing boats, yachts, jet skis, and personal watercraft are prime targets. Stolen boats frequently appear on Craigslist, Facebook Marketplace, boat classifieds, and even boat shows. Thieves often transport stolen boats across state lines or to other countries (especially Mexico, Caribbean, Central America). Our free boat checker protects you from this multimillion-dollar marine theft industry.",
+ intro: "Before you buy a used boat, jet ski or other watercraft, find its Hull Identification Number (HIN), confirm it matches the paperwork, and check it with the official agencies listed below. SafeOrStolen has no marine-specific data source, but you can run the HIN through SafeOrStolen's general serial number check, which covers SafeOrStolen's own stolen-item reports, public web results and AI analysis.",
+ whatIs: "A HIN is the 12-character code that identifies a boat, similar to a car's VIN. Checking whether a boat is stolen means confirming the HIN on the hull matches the title and registration, and asking the agencies that hold boat records. Those official resources include your state's boat registration and titling agency, the U.S. Coast Guard National Vessel Documentation Center (for federally documented vessels), and your local police or marine patrol. SafeOrStolen does not search Coast Guard, state registration or police records.",
+ howItWorks: "Enter the HIN on the SafeOrStolen serial number checker. It checks SafeOrStolen's own stolen-item reports, runs a public web search for the HIN, and uses AI analysis to explain the result. You get a result — Stolen, Not stolen, or Not found in the sources we checked — and it's saved to your account. After a clean check you can keep a Proof of Clean Purchase record showing you did your due diligence. Because there is no marine-specific source behind this check, always also use the official resources above.",
+ whyCheck: "A stolen boat can be recovered by authorities and returned to its owner even after you pay, and a boat with mismatched or altered HINs may not be registrable. Checking the HIN and paperwork before you pay — and keeping a record that you checked — protects buyers, and gives honest sellers a way to show they have nothing to hide. No service can guarantee 100% accuracy and not every theft is reported.",
  benefits: [
- "Check boats, yachts, sailboats, and pontoon boats",
- "Verify jet skis, WaveRunners, and personal watercraft (PWC)",
- "Search U.S. Coast Guard and all 50 state DNR databases",
- "Check fishing boats, bass boats, center consoles, sportfish",
- "Verify cabin cruisers, bowriders, deck boats, ski boats",
- "Check houseboats, trawlers, and liveaboard yachts",
- "Detect HIN tampering and VIN cloning",
- "Instant HIN verification — $0.99/check or $10/month unlimited boat checks"
+ "Run a HIN through SafeOrStolen's general serial check in seconds",
+ "Checks SafeOrStolen's own stolen-item reports, public web results and AI analysis",
+ "Result saved to your account; Proof of Clean Purchase record after a clean check",
+ "2 free checks with a free account, then $0.99 per check or $10/month unlimited",
+ "Same account checks phones, vehicles, electronics, power tools, firearms and bicycles"
  ],
  process: [
- "Locate the HIN (Hull Identification Number): Usually on the transom (rear of boat) on the starboard (right) side near the waterline. Also check the hull's interior for duplicate HIN. Federal law requires HINs to be permanently affixed in two locations.",
- "Record the complete 12-character HIN exactly - HIN format is ABCDEFGH1234 where ABC=Manufacturer Code, DEFGH=Hull Serial Number, 1234=Build Date. One wrong character causes false results.",
- "Also record the boat's make, model, year, length, and engine serial numbers for verification",
- "Enter the HIN into our verification tool at SafeOrStolen.com/verify",
- "Review the comprehensive report showing theft status, liens, salvage history, and registration status",
- "For expensive boats ($50,000+), also get a professional marine survey. If STOLEN, walk away and report to Coast Guard at 1-800-368-5647 and local local authorities"
+ "Find the HIN on the transom (starboard side, near the top) and the second, hidden location inside the hull; both must match",
+ "Confirm the HIN matches the title and registration, and that the seller's name matches the title",
+ "Contact your state's boat registration and titling agency about the HIN, and search the U.S. Coast Guard National Vessel Documentation Center if the vessel is federally documented",
+ "Call your local police or marine patrol non-emergency line with the HIN and trailer plate",
+ "Run the HIN through SafeOrStolen's serial number check and save the result",
+ "If anything doesn't match or shows stolen, don't pay — leave and report it to police"
  ],
  faqs: [
  {
- question: "What is a HIN and where do I find it on a boat?",
- answer: "HIN (Hull Identification Number) is a unique 12-character code assigned to every boat manufactured after 1972. It's the boat's permanent fingerprint, similar to a car's VIN. Find the HIN: (1) Transom (rear of boat) on starboard (right) side near the waterline - most common location, (2) Inside the hull (required duplicate location) - usually near the bow or under a hatch, (3) Federal law requires boats to have HINs in TWO permanent locations, (4) HIN format: ABC12345D404 where ABC=Manufacturer Identification Code, 12345=Hull Serial Number, D=Month/Year (D=April), 404=Year (2004). Always verify BOTH HINs match exactly - if they don't match, the boat has been tampered with (stolen). Walk away immediately."
+ question: "What is a HIN and where do I find it?",
+ answer: "A Hull Identification Number is a 12-character code that identifies a boat. It's usually on the transom on the starboard side near the top, with a second copy in a less visible spot inside the hull. Both must match each other and the paperwork."
  },
  {
- question: "Can I check if a jet ski or WaveRunner is stolen?",
- answer: "Yes, jet skis, WaveRunners, Sea-Doos, and all personal watercraft (PWC) manufactured after 1972 have HINs just like boats. Use SafeOrStolen to search the HIN against Coast Guard, state DNR, and community theft registries. Jet skis are EXTREMELY high theft targets because: (1) Easy to transport on trailers, (2) High value ($8,000-$20,000), (3) Popular on marketplaces, (4) Often not properly secured at docks/beaches. ALWAYS check jet ski HINs before buying - stolen jet skis are frequently sold on Craigslist and Facebook Marketplace at 40-60% below market value."
+ question: "Does SafeOrStolen search Coast Guard or state boat records?",
+ answer: "No. SafeOrStolen has no marine-specific data source. You can run a HIN through its general serial check (SafeOrStolen's own stolen-item reports, public web results and AI analysis). Check with your state's boat registration agency, the Coast Guard National Vessel Documentation Center for documented vessels, and local police yourself."
  },
  {
- question: "What if the boat has no HIN or the HIN looks tampered with?",
- answer: "RED FLAG! All boats manufactured after 1972 are required by federal law (33 CFR 181) to have permanent HINs. If there's no HIN or it looks tampered: (1) The boat may be pre-1972 (very old) - verify with documentation, (2) The boat may be homemade/custom built - require detailed build documentation, (3) THE HIN WAS REMOVED OR ALTERED - this is a federal crime (18 U.S. Code § 2312) and the boat is almost certainly stolen. Signs of HIN tampering: scratched/ground area, re-engraved numbers, replaced transom section, no interior duplicate HIN. If you suspect tampering, walk away immediately and report to Coast Guard Marine Safety at 1-800-368-5647. Do NOT buy boats without clear, untampered HINs."
+ question: "Where can I check a HIN myself?",
+ answer: "Your state's boat registration and titling agency, the U.S. Coast Guard National Vessel Documentation Center (for federally documented vessels), and your local police or marine patrol non-emergency line."
  },
  {
- question: "Is checking a boat's HIN really free?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $10/month unlimited. Our tool searches ALL databases simultaneously (Coast Guard + 50 state DNRs + law enforcement + insurance) in 3 seconds versus spending hours checking each individually."
+ question: "What are signs a boat's HIN was tampered with?",
+ answer: "A HIN plate that is scratched, re-riveted, glued on or painted over; the two HIN locations not matching; a HIN that doesn't match the title; or a seller who can't produce a title or registration in their name."
  },
  {
- question: "What should I do if the boat check shows it's stolen?",
- answer: "If our check shows the boat is reported stolen: (1) Do NOT buy or touch the boat under ANY circumstances, (2) Walk away immediately without confronting the seller (they may be dangerous or part of organized crime), (3) Do NOT board the boat or take control of it in any way, (4) Record the seller's information, boat location, and listing details (discreetly), (5) Report immediately to: U.S. Coast Guard Investigative Service at 1-800-368-5647 AND your state DNR AND local local authorities, (6) Report to community theft reports at 1-800-TEL-community theft reports, (7) If you already purchased it, contact Coast Guard and local authorities IMMEDIATELY - you're a fraud victim. Voluntarily surrender the boat to avoid criminal charges for possessing stolen property."
+ question: "What about the trailer and outboard motor?",
+ answer: "Trailers usually have their own VIN and plate, and outboard motors have their own serial numbers. Check each one against the paperwork. A trailer VIN can be checked with the SafeOrStolen VIN checker, and a motor serial with the serial number checker."
  },
  {
- question: "Why are boats stolen so frequently?",
- answer: "Boats are prime theft targets because: (1) Extremely high value - average stolen boat worth $42,000, yachts worth $100,000-$5,000,000+, (2) Easy to transport across state lines and international borders (Mexico, Caribbean), (3) Lower security than cars - often left unattended at docks, marinas, boat ramps, (4) Marine title laws vary by state - easier to title wash, (5) Sophisticated theft rings operate boat 'chop shops' stripping valuable components (engines, electronics, trailers), (6) Insurance fraud - owners stage thefts to collect insurance payouts, (7) High demand, limited enforcement - local authorities have fewer resources than car theft units. In 2024, over 8,000 boats were reported stolen with only 43% recovered. Always check HINs - this is an important protection step."
- },
- {
- question: "What are red flags when buying a used boat?",
- answer: "Major red flags for stolen boats: (1) Price is 50%+ below market value (a $40,000 boat selling for $18,000), (2) Seller won't provide HIN or won't let you inspect transom/hull, (3) HIN area looks scratched, ground, re-engraved, or transom replaced, (4) No matching interior duplicate HIN (federal requirement), (5) No title, registration, or bill of sale from previous owner, (6) Seller has multiple boats for sale (boat theft ring), (7) Meeting at remote location (not their home/marina), (8) Seller can't answer basic questions about boat history, usage, or why they're selling, (9) Boat has fresh damage to locks, hatches, or trailer hitch, (10) Title is from a different state and seller can't explain why, (11) Engine serial numbers don't match manufacturer records. If ANY red flags exist, walk away - stolen boats are not worth the risk."
- },
- {
- question: "How long does a boat HIN check take?",
- answer: "Our boat verification takes only 3 seconds. Enter the 12-character HIN, click verify, and receive instant results showing whether the boat has been reported stolen, has outstanding liens, has salvage history, or has title issues from Coast Guard, 50 state DNR databases, law enforcement, and theft-report records."
- },
- {
- question: "Should I also check the trailer and engine serial numbers?",
- answer: "YES! Boat thieves often steal boats, trailers, and engines separately and reassemble mismatched components to avoid detection. Always check: (1) Boat HIN - transom and interior duplicate, (2) Trailer VIN - located on trailer tongue or frame, (3) Outboard motor serial number - on mounting bracket or cowling, (4) All three should have matching ownership documentation. If the trailer VIN or engine serial is stolen even though the boat HIN is clean, the entire package will be confiscated. Use SafeOrStolen to check all three components separately for complete protection."
+ question: "What should I do if the boat might be stolen?",
+ answer: "Don't pay and don't confront the seller. Save the listing and messages, leave, and report it to your local police or marine patrol."
  }
  ]
  }}
