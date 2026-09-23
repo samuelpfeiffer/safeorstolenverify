@@ -292,8 +292,8 @@ const AboutPage = () => {
  </div>
  <div className="text-center mt-6">
  <p className="text-sm text-muted-foreground">
- <strong>How it works:</strong> We run parallel crawls across all partner databases, aggregate results in real-time, 
- and provide unified verification in under 3 seconds.
+ <strong>How it works:</strong> Each check runs our own stolen-item reports, public web results and AI analysis in parallel 
+ (plus BikeIndex for bikes and HotGunz for firearms) and returns a result in about 3 seconds.
  </p>
  </div>
  </div>

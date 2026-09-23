@@ -65,7 +65,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/license-plate-lookup': {
  title: 'License Plate Lookup - Free Stolen Vehicle Check',
- description: 'Check if a vehicle is stolen using license plate number. Free lookup from DMV and community theft registries across all 50 states. Instant verification.', // 159 chars
+ description: 'Check if a vehicle is stolen using license plate number. Checks our reports, web results and AI analysis. Instant results.', // 159 chars
  keywords: 'license plate lookup, plate number search, stolen vehicle check, DMV lookup',
  canonical: '/license-plate-lookup'
  },

@@ -160,7 +160,7 @@ const HowItWorksPage = () => {
  <div className="container mx-auto px-4">
  <h2 className="text-3xl font-bold text-center mb-4">Our Data Partners</h2>
  <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
- We crawl, scrape, and aggregate data from 50+ partner databases in real-time
+ Every check covers our own reports, public web results and AI analysis, plus BikeIndex and HotGunz where relevant
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
  <DataSourceCard
@@ -216,8 +216,8 @@ const HowItWorksPage = () => {
  </div>
  <div className="text-center mt-6 p-4 bg-muted/30 rounded-lg max-w-3xl mx-auto">
  <p className="text-sm text-muted-foreground">
- <strong>Real-time aggregation:</strong> When you search, we crawl all partner databases simultaneously 
- and return unified results in under 3 seconds.
+ <strong>Real-time aggregation:</strong> When you search, we run every relevant source at the same time 
+ and return one result in about 3 seconds.
  </p>
  </div>
  </div>

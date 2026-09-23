@@ -135,7 +135,7 @@ const HowToVerifyAUsedItemPage = () => {
  This is the question most buyers mean when they ask whether something is "safe." To
  answer it, take the item's unique identifier — IMEI, VIN, license plate, serial
  number, firearm serial, or bicycle frame serial — and search it against theft
- records. SafeOrStolen checks community theft reports, carrier and
+ records. SafeOrStolen checks its own stolen-item reports, public web results,
  AI analysis, and specialized sources for certain item types, and
  returns a match or no-match result in a few seconds. A match means the identifier
  appears in at least one theft record and you should not complete the purchase.

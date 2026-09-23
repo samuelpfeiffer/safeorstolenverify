@@ -72,7 +72,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  commonTargets: ['Honda Civic', 'Honda Accord', 'Chevrolet Silverado', 'Ford F-150', 'Toyota Camry', 'GMC Sierra'],
  verificationAdvice: 'Arizona buyers should always check TheftAZ for statewide stolen property, then use SafeOrStolen to check its stolen-item reports, public web results and AI analysis. Given the high theft rates, never skip verification for any Arizona vehicle purchase, especially popular models.',
  uniqueFaqs: [
- { question: 'What is TheftAZ and does SafeOrStolen search it?', answer: 'TheftAZ is Arizona\'s official stolen property database maintained by the Attorney General. SafeOrStolen searches and national databases including community theft reports, which contains Arizona law enforcement reports. For comprehensive coverage, we recommend checking both TheftAZ directly and using SafeOrStolen\'s broader search.' },
+ { question: 'What is TheftAZ and does SafeOrStolen search it?', answer: 'TheftAZ is Arizona\'s official stolen property database maintained by the Attorney General. SafeOrStolen does not search TheftAZ. It checks its own stolen-item reports, public web results and AI analysis, so we recommend checking TheftAZ directly as well.' },
  { question: 'Why is Arizona vehicle theft so high?', answer: 'Arizona\'s proximity to Mexico (60 miles from Tucson), extensive highway system, and large metropolitan area create opportunities for theft. Stolen vehicles can cross the border before owners even realize they\'re missing. The dry climate also attracts buyers from other states, creating a large market for reselling stolen vehicles.' }
  ]
  },
@@ -216,7 +216,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Sonata', 'Kia Optima', 'Honda Accord', 'Chevrolet Cruze', 'Ford Focus', 'Dodge Charger'],
  verificationAdvice: 'Ohio buyers should check both state and national databases. The Ohio Attorney General maintains stolen property records. For Hyundai/Kia models, verify theft history carefully given the nationwide epidemic affecting these vehicles.',
  uniqueFaqs: [
- { question: 'Does Ohio have its own stolen vehicle database?', answer: 'The Ohio Attorney General maintains stolen property records that complement national databases like community theft reports. SafeOrStolen searches national databases which include Ohio law enforcement reports. For comprehensive coverage, verification is essential.' },
+ { question: 'Does Ohio have its own stolen vehicle database?', answer: 'The Ohio Attorney General maintains stolen property records. SafeOrStolen does not search them; it checks its own stolen-item reports, public web results and AI analysis. For official records, contact local police.' },
  { question: 'Which Ohio cities have the highest vehicle theft?', answer: 'Cleveland leads Ohio in vehicle theft, followed by Columbus and Cincinnati. These three cities account for the majority of the state\'s thefts. The Kia/Hyundai theft trend has affected all three cities significantly.' }
  ]
  },

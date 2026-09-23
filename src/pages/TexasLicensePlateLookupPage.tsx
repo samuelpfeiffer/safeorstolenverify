@@ -22,8 +22,8 @@ const TexasLicensePlateLookupPage = () => {
  ]}
  content={{
  intro: "Verify Texas vehicles using license plate number. Free Texas license plate lookup from public records and community reports. Check if cars, trucks, or motorcycles with TX plates are stolen before buying from private sellers or used car lots in Houston, Dallas, San Antonio, Austin, Fort Worth, and anywhere in Texas. Texas is among the top states for vehicle theft nationally.",
- whatIs: "Texas license plate lookup is a service that verifies whether a vehicle registered in Texas is reported stolen by checking the TX license plate number against public records and reported incidents. Texas uses unique plate formats managed by the Texas DMV. SafeOrStolen's Texas license plate checker searches public records and community theft reports to determine if a vehicle with that TX plate has been reported stolen. Key Texas-specific concerns include: Mexico border export operations, Houston organized theft rings, and VIN cloning operations that make Texas a higher-risk state for vehicle fraud.",
- howItWorks: "Our Texas license plate lookup system queries public records to resolve the Texas license plate number to available vehicle information. This can provide vehicle make/model/year and registration status. You receive a report showing whether the vehicle is reported stolen through SafeOrStolen's system or public web results. We cross-reference community theft reports for comprehensive results.",
+ whatIs: "Texas license plate lookup is a service that verifies whether a vehicle registered in Texas is reported stolen by checking the TX license plate number against public records and reported incidents. Texas uses unique plate formats managed by the Texas DMV. SafeOrStolen's Texas license plate checker checks its own stolen-item reports, public web results and AI analysis to determine if a vehicle with that TX plate has been reported stolen. Key Texas-specific concerns include: Mexico border export operations, Houston organized theft rings, and VIN cloning operations that make Texas a higher-risk state for vehicle fraud.",
+ howItWorks: "Enter a Texas plate and SafeOrStolen checks it. You receive a report showing whether the vehicle is reported stolen through SafeOrStolen's system or public web results. SafeOrStolen does not access Texas DMV records.",
  whyCheck: "Texas is among the top states for vehicle theft. Texas license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the massive Texas market. Verify the seller is the registered owner with Texas DMV, detect stolen plates, check Texas registration status, and identify Texas-specific concerns. Watch for: Mexico border export risk (stolen vehicles may cross into Mexico); Houston organized theft rings targeting high-end vehicles; VIN cloning operations in Dallas-Fort Worth. Texas's massive size and border location make it a target for organized vehicle theft. Always verify VIN before final purchase - plates can be swapped but VINs cannot.",
  benefits: [
  "Quick Texas vehicle screening using TX license plate number",
@@ -55,7 +55,7 @@ const TexasLicensePlateLookupPage = () => {
  },
  {
  question: "What information can I get from a Texas license plate lookup?",
- answer: "A Texas license plate lookup provides: available vehicle make/model/year, VIN, and theft status from community theft registries. This helps you screen Texas vehicles quickly before scheduling a viewing in Houston, Dallas, San Antonio, Austin, or anywhere in Texas."
+ answer: "A Texas license plate lookup tells you whether the plate appears in SafeOrStolen reports or public web results, with an AI explanation. This helps you screen Texas vehicles quickly before scheduling a viewing in Houston, Dallas, San Antonio, Austin, or anywhere in Texas."
  },
  {
  question: "Is Texas license plate lookup really free?",

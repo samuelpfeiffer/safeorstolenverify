@@ -296,8 +296,7 @@ export const SecurityChicDashboard: React.FC = () => {
 
 > SafeOrStolen is a consumer protection platform that verifies if secondhand
 > items are stolen by checking IMEI numbers, VIN numbers, and serial numbers
-> against community theft registries, vehicle theft records, and carrier
-> blacklists. Results are returned in approximately 3 seconds.
+> against its own stolen-item reports, public web results and AI analysis. Results are returned in approximately 3 seconds.
 > 2 free verifications. No credit card required. safeorstolen.com/app (PWA).1 stars)
 - Crunchbase Listed Organization
 

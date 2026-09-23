@@ -164,13 +164,11 @@ export const DataSourceCredibility: React.FC = () => {
  <Card className="bg-primary/5 border-primary/20">
  <CardContent className="p-8 text-center">
  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
- <h3 className="text-xl font-bold mb-4">Official Database Verification</h3>
+ <h3 className="text-xl font-bold mb-4">Transparent Verification</h3>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
- Unlike unverified third-party services, SafeOrStolen maintains direct 
- integrations with official community theft registries, verified industry 
- registries, and trusted data providers. Our verification methodology
- registries, and trusted data providers. Our verification methodology 
- is transparent and legally actionable.
+ Every SafeOrStolen check covers our own stolen-item reports, public web 
+ results and AI analysis, plus BikeIndex for bicycles and HotGunz for 
+ firearms. We say exactly which sources were checked on every result.
  </p>
  <div className="flex flex-wrap justify-center gap-4 text-sm">
  <Badge variant="secondary" className="bg-green-100 text-green-800">
