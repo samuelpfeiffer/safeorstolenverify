@@ -73,7 +73,7 @@ const CATEGORIES: { label: string; href: string; sentence: string }[] = [
  label: 'Phones (IMEI)',
  href: '/imei-checker',
  sentence:
- 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it against SafeOrStolen's reports and public web results before you pay.',
+ 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it against stolen reports and carrier and theft databases before you pay.',
  },
  {
  label: 'Vehicles (VIN)',
