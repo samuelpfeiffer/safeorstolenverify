@@ -48,8 +48,8 @@ export const ItemSpecificQuestionsSection = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <strong>Find IMEI:</strong> Dial *#06# or check Settings → About Phone</li>
                 <li>• <strong>IMEI Stolen Check:</strong> Enter the 15-digit IMEI above</li>
-                <li>• <strong>Carrier Blacklist:</strong> We check all major carrier stolen phone databases</li>
-                <li>• <strong>Global Check:</strong> International stolen phone verification included</li>
+                <li>• <strong>Carrier Blacklist:</strong> We don&apos;t check carrier blacklists; ask the carrier directly</li>
+                <li>• <strong>What we check:</strong> Our stolen-item reports, public web results and AI analysis</li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4 italic">
                 Millions search "how to check if iPhone is stolen" or "how to check if Android is stolen" monthly.
