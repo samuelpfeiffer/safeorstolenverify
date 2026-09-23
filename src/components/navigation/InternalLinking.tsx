@@ -143,7 +143,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
       keywords: ['phone check', 'mobile verification', 'device safety']
     },
     {
-      href: '/check-car',
+      href: '/vin-checker',
       text: 'Check Car History',
       description: 'Vehicle verification and safety check',
       category: 'verification', 

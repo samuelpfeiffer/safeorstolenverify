@@ -72,7 +72,7 @@ export const EnhancedFooterLinks: React.FC = () => {
 
   const quickAccessItems = [
     { href: '/check-phone', text: 'Check Phone', icon: <Phone className="h-4 w-4" /> },
-    { href: '/check-car', text: 'Check Car', icon: <Car className="h-4 w-4" /> },
+    { href: '/vin-checker', text: 'Check Car', icon: <Car className="h-4 w-4" /> },
     { href: '/check-electronics', text: 'Check Electronics', icon: <Laptop className="h-4 w-4" /> }
   ];
 

@@ -31,7 +31,7 @@ export const PILLARS: Record<PillarKey, { name: string; path: string; ctaLine: s
  },
  vin: {
  name: 'Check VIN',
- path: '/check-vin',
+ path: '/vin-checker',
  ctaLine: 'Run a free VIN check for theft and title problems.',
  },
 };

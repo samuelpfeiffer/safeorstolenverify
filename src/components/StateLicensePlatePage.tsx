@@ -165,7 +165,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  
  <h2>Related Resources</h2>
  <ul>
- <li><a href="/check-car">VIN Lookup</a></li>
+ <li><a href="/vin-checker">VIN Lookup</a></li>
  <li><a href="/imei-checker">IMEI Checker</a></li>
  <li><a href="/firearms-check">Firearm Check</a></li>
  <li><a href="/verify">Verify Any Item</a></li>
@@ -445,7 +445,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <AccordionContent className="text-muted-foreground">
  Yes, we recommend running both a license plate lookup AND a VIN check before purchasing. 
  License plate lookup provides quick screening, while VIN check gives complete history. 
- <Link to="/check-car" className="text-primary hover:underline ml-1">Use our free VIN checker →</Link>
+ <Link to="/vin-checker" className="text-primary hover:underline ml-1">Use our free VIN checker →</Link>
  </AccordionContent>
  </AccordionItem>
  {stateData.hasTheftDatabase && (
@@ -479,7 +479,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-bold mb-6">Related Searches</h2>
  <div className="grid md:grid-cols-3 gap-4 mb-8">
- <Link to="/check-car" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+ <Link to="/vin-checker" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">VIN Lookup</h3>
  <p className="text-sm text-muted-foreground">Full vehicle history by VIN</p>
  </Link>

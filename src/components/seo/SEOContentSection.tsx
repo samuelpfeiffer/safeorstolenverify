@@ -169,7 +169,7 @@ export const SEOContentSection = () => {
  <Link to="/check-phone" className="text-sm text-muted-foreground hover:text-primary transition-colors">
  Check if phone is stolen
  </Link>
- <Link to="/check-car" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+ <Link to="/vin-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">
  Verify car is not stolen
  </Link>
  <Link to="/check-laptop" className="text-sm text-muted-foreground hover:text-primary transition-colors">

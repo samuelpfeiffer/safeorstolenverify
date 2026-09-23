@@ -18,7 +18,7 @@ const CarVINStolenCheck = () => {
  'vin verification',
  'carfax alternative free'
  ]}
- canonical="/check-car-stolen-vin"
+ canonical="/vin-checker"
  itemType="Vehicle"
  identifierType="VIN"
  heroBadge="Vehicle Theft Verification"

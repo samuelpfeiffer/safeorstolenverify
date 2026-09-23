@@ -83,11 +83,11 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  // CHECK CAR (/check-car) - 155 chars
  // ========================================
- '/check-car': {
+ '/vin-checker': {
  title: 'Check if Car is Stolen - Free VIN Verification',
  description: 'Check if a car is stolen before buying. Free VIN verification from vehicle theft and title databases, DMV, and community theft registries. Safer alternative to Carfax for theft.', // 155 chars
  keywords: 'check car stolen, VIN verification, stolen car lookup, car theft check',
- canonical: '/check-car'
+ canonical: '/vin-checker'
  },
 
  // ========================================

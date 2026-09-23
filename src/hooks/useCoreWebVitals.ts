@@ -93,7 +93,7 @@ export const optimizeImages = () => {
 export const prefetchCriticalResources = () => {
   const criticalUrls = [
     '/check-phone',
-    '/check-car',
+    '/vin-checker',
     '/check-electronics',
     '/dashboard'
   ];

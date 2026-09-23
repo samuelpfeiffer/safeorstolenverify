@@ -70,7 +70,7 @@ export const RouteValidator: React.FC = () => {
       '/verification-hub': '/verify',
       '/for-consumers': '/verify',
       '/imei-check': '/imei-checker',
-      '/vin-check': '/vin-checker',
+      '/vin-checker': '/vin-checker',
       '/vin-verification': '/vin-checker',
 
       // Support / info

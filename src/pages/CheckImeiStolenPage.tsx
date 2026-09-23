@@ -286,7 +286,7 @@ const CheckImeiStolenPage = () => {
  </div>
  <p>
  SafeOrStolen also verifies{' '}
- <Link to="/check-vin" className="text-primary underline-offset-4 hover:underline">
+ <Link to="/vin-checker" className="text-primary underline-offset-4 hover:underline">
  vehicles (VIN)
  </Link>
  ,{' '}

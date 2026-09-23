@@ -87,7 +87,7 @@ const DATA_CATEGORIES = [
  {
  name: "Title Brand Data",
  detail: "Helps identify vehicles with salvage, rebuilt, or flood title history.",
- link: "/check-car"
+ link: "/vin-checker"
  },
  ],
  stats: [
@@ -96,8 +96,8 @@ const DATA_CATEGORIES = [
  ],
  links: [
  { to: "/vin-checker", label: "Check VIN" },
- { to: "/check-car", label: "Check Vehicle" },
- { to: "/free-stolen-vehicle-check", label: "Free Vehicle Check" },
+ { to: "/vin-checker", label: "Check Vehicle" },
+ { to: "/vin-checker", label: "Free Vehicle Check" },
  ]
  },
  {
@@ -436,7 +436,7 @@ export default function DataSourcesPage() {
  { to: "/serial-number-checker", label: "Serial Number Checker" },
  { to: "/firearms-check", label: "Firearms Check" },
  { to: "/check-phone", label: "Check Phone" },
- { to: "/check-car", label: "Check Car" },
+ { to: "/vin-checker", label: "Check Car" },
  { to: "/check-bike", label: "Check Bike" },
  { to: "/check-jewelry", label: "Check Jewelry" },
  { to: "/check-tools", label: "Check Tools" },

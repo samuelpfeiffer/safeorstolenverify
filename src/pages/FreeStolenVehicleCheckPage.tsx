@@ -115,7 +115,7 @@ const FreeStolenVehicleCheckPage = () => {
  <SEOHead
  title="Free Stolen Vehicle & VIN Check | SafeOrStolen"
  description="Run a free stolen vehicle check before you buy. Enter a VIN or plate to see theft and risk signals so you avoid buying a stolen or problematic car, truck or motorcycle."
- canonical="/free-stolen-vehicle-check"
+ canonical="/vin-checker"
  keywords="free stolen vehicle check, VIN check stolen car, is my car stolen, free VIN lookup, stolen car database, check if car is stolen free, vehicle theft and title databases free check"
  schemaJson={schema}
  />

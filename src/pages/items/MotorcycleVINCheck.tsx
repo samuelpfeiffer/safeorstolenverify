@@ -70,7 +70,7 @@ const MotorcycleVINCheck = () => {
  ctaTitle="Don't Risk Buying a Stolen Motorcycle"
  ctaDescription="A free VIN check takes 3 seconds and could save you from losing your bike to police recovery."
  relatedLinks={[
- { title: "Car VIN Check", href: "/check-car-stolen-vin" },
+ { title: "Car VIN Check", href: "/vin-checker" },
  { title: "VIN Checker", href: "/vin-checker" },
  { title: "Craigslist Safety", href: "/craigslist-safety-verification" }
  ]}

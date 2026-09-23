@@ -31,10 +31,10 @@ export const VALID_ROUTES = new Set([
   '/vin-checker',
   '/serial-number-checker',
   '/check-phone',
-  '/check-car',
+  '/vin-checker',
   '/check-bike',
   '/check-gun',
-  '/check-vin',
+  '/vin-checker',
   '/check-laptop',
   '/check-electronics',
   '/check-ebike',
@@ -187,12 +187,12 @@ export const VALID_ROUTES = new Set([
   
   // Traffic landing pages
   '/is-my-phone-stolen',
-  '/is-this-car-stolen',
+  '/vin-checker',
   '/is-this-laptop-stolen',
   '/is-this-bike-stolen',
   '/is-this-gun-stolen',
   '/check-stolen-phone',
-  '/check-stolen-car',
+  '/vin-checker',
   '/stolen-phone-check',
   '/stolen-car-check',
   

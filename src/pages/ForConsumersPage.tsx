@@ -14,7 +14,7 @@ import {
 const ForConsumersPage = () => {
  const useCases = [
  { icon: Phone, title: "Buying Used Phones", description: "Verify IMEI before buying from Facebook Marketplace, OfferUp, Craigslist, or local sellers", link: "/check-phone" },
- { icon: Car, title: "Buying Used Cars", description: "Check VIN against stolen vehicle databases before purchasing any vehicle", link: "/check-car" },
+ { icon: Car, title: "Buying Used Cars", description: "Check VIN against stolen vehicle databases before purchasing any vehicle", link: "/vin-checker" },
  { icon: Laptop, title: "Buying Electronics", description: "Verify laptops, gaming consoles, cameras aren't stolen before buying", link: "/check-electronics" },
  { icon: Bike, title: "Buying Bikes & E-Bikes", description: "Check serial numbers against bicycle theft registries", link: "/check-bike" }
  ];
@@ -93,7 +93,7 @@ const ForConsumersPage = () => {
  <h2>What Can You Verify?</h2>
  <ul>
  <li><a href="/check-phone">Used Phones</a> — Verify IMEI before buying from Facebook Marketplace, OfferUp, Craigslist</li>
- <li><a href="/check-car">Used Cars</a> — Check VIN against stolen vehicle databases</li>
+ <li><a href="/vin-checker">Used Cars</a> — Check VIN against stolen vehicle databases</li>
  <li><a href="/check-electronics">Electronics</a> — Verify laptops, gaming consoles, cameras</li>
  <li><a href="/check-bike">Bikes & E-Bikes</a> — Check serial numbers against theft registries</li>
  </ul>

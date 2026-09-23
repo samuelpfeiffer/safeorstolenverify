@@ -165,7 +165,7 @@ export const usePerformanceOptimization = () => {
 
   const prefetchCriticalResources = () => {
     // Prefetch next likely pages
-    const criticalPages = ['/pricing', '/check-phone', '/check-car', '/auth'];
+    const criticalPages = ['/pricing', '/check-phone', '/vin-checker', '/auth'];
     criticalPages.forEach(page => {
       const link = document.createElement('link');
       link.rel = 'prefetch';

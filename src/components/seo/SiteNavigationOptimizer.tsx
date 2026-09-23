@@ -31,7 +31,7 @@ export const SiteNavigationOptimizer: React.FC = () => {
     description: 'Comprehensive phone theft verification',
     priority: 'high'
   }, {
-    href: '/check-car',
+    href: '/vin-checker',
     text: 'Check if Car is Stolen',
     description: 'Complete vehicle theft verification',
     priority: 'high'

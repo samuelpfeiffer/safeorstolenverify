@@ -17,7 +17,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({ currentPage })
       case 'check-phone':
         return [
           ...baseLinks,
-          { href: '/check-car', text: 'Check if Car is Stolen', rel: 'related' },
+          { href: '/vin-checker', text: 'Check if Car is Stolen', rel: 'related' },
           { href: '/check-electronics', text: 'Check Electronics', rel: 'related' },
           { href: '/check-bike', text: 'Check Bicycle', rel: 'related' },
         ];
@@ -32,21 +32,21 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({ currentPage })
         return [
           ...baseLinks,
           { href: '/check-phone', text: 'Check if Phone is Stolen', rel: 'related' },
-          { href: '/check-car', text: 'Check if Car is Stolen', rel: 'related' },
+          { href: '/vin-checker', text: 'Check if Car is Stolen', rel: 'related' },
           { href: '/check-bike', text: 'Check Bicycle', rel: 'related' },
         ];
       case 'check-bike':
         return [
           ...baseLinks,
           { href: '/check-phone', text: 'Check if Phone is Stolen', rel: 'related' },
-          { href: '/check-car', text: 'Check if Car is Stolen', rel: 'related' },
+          { href: '/vin-checker', text: 'Check if Car is Stolen', rel: 'related' },
           { href: '/check-electronics', text: 'Check Electronics', rel: 'related' },
         ];
       default:
         return [
           ...baseLinks,
           { href: '/check-phone', text: 'Check if Phone is Stolen - IMEI Lookup', rel: 'related' },
-          { href: '/check-car', text: 'Check if Car is Stolen - VIN Lookup', rel: 'related' },
+          { href: '/vin-checker', text: 'Check if Car is Stolen - VIN Lookup', rel: 'related' },
           { href: '/check-electronics', text: 'Check Electronics - Serial Number', rel: 'related' },
           { href: '/check-bike', text: 'Check if Bike is Stolen', rel: 'related' },
         ];

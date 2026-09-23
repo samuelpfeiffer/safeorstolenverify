@@ -24,7 +24,7 @@ const Footer = () => {
  href: '/check-gun'
  }, {
  label: 'Check a VIN for Theft',
- href: '/check-vin'
+ href: '/vin-checker'
  }, {
  label: 'Instant Stolen Verification',
  href: '/verify'

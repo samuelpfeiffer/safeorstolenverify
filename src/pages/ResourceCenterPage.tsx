@@ -180,7 +180,7 @@ export default function ResourceCenterPage() {
  <Car className="h-10 w-10 text-primary mx-auto mb-3" />
  <h3 className="font-bold mb-2">Vehicles</h3>
  <ul className="text-sm space-y-1.5">
- <li><Link to="/check-car" className="text-muted-foreground hover:text-primary transition-colors">Check Vehicle</Link></li>
+ <li><Link to="/vin-checker" className="text-muted-foreground hover:text-primary transition-colors">Check Vehicle</Link></li>
  <li><Link to="/vin-checker" className="text-muted-foreground hover:text-primary transition-colors">VIN Checker</Link></li>
  <li><Link to="/license-plate-lookup" className="text-muted-foreground hover:text-primary transition-colors">License Plate</Link></li>
  </ul>

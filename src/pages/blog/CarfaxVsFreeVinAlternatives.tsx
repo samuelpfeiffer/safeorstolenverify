@@ -310,7 +310,7 @@ const CarfaxVsFreeVinAlternatives = () => {
                 <h4 className="font-semibold">SafeOrStolen and Carfax Comparison</h4>
                 <p className="text-sm text-muted-foreground">Detailed service comparison</p>
               </Link>
-              <Link to="/check-car" className="p-4 bg-card rounded-lg hover:bg-accent transition-colors">
+              <Link to="/vin-checker" className="p-4 bg-card rounded-lg hover:bg-accent transition-colors">
                 <h4 className="font-semibold">Check If Car Is Stolen</h4>
                 <p className="text-sm text-muted-foreground">Complete car verification guide</p>
               </Link>

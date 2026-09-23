@@ -54,7 +54,7 @@ export const RichContentHub = () => {
       description: "Comprehensive vehicle history and theft checking",
       links: [
         { text: "VIN Number Checker", url: "/vin-checker" },
-        { text: "Check Car", url: "/check-car" },
+        { text: "Check Car", url: "/vin-checker" },
         { text: "Check Boat", url: "/check-boat" },
         { text: "License Plate Lookup", url: "/license-plate-lookup" },
         { text: "California VIN Lookup", url: "/california-vin-lookup" },
