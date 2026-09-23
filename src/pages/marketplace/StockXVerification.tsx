@@ -44,7 +44,7 @@ const StockXVerification = () => {
       howItWorksSteps={[
         "Get serial number from seller or listing photos",
         "Enter into SafeOrStolen verification",
-        "Check against 100+ databases",
+        "Check against multiple sources",
         "Buy confidently or avoid stolen goods"
       ]}
       faqs={[

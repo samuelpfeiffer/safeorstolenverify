@@ -164,7 +164,7 @@ const HowItWorksPage = () => {
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
  <DataSourceCard
- title="Stolen property reports from all 50 states"
+ title="community theft reports"
  description="Federal stolen property database - the relevant authorities partnership"
  icon="🏛️"
  />

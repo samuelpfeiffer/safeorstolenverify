@@ -42,7 +42,7 @@ const SellerBadgePage: React.FC = () => {
                 <p className="text-xs text-muted-foreground">by SafeOrStolen</p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground mb-2">This item was verified against 100+ law enforcement and insurance databases</p>
+            <p className="text-sm text-muted-foreground mb-2">This item was verified against SafeOrStolen's stolen-item reports, web results and AI analysis</p>
             <p className="text-xs text-muted-foreground">Checked: {new Date().toLocaleDateString()} | ID: vrf_a1b2c3d4</p>
             <p className="text-xs text-primary mt-2">Click to view full verification report →</p>
           </div>

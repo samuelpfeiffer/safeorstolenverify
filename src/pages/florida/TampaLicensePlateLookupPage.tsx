@@ -11,7 +11,7 @@ const TampaLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Tampa?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate or VIN on SafeOrStolen. We search our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Results in 3 seconds. 2 free checks." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate or VIN on SafeOrStolen. We search our verification databases, including community theft reports. Results in 3 seconds. 2 free checks." }
  },
  {
  "@type": "Question",
@@ -47,7 +47,7 @@ const TampaLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Tampa License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Tampa, Florida against our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Free results in 3 seconds.
+ Verify any vehicle in Tampa, Florida against our verification databases, including community theft reports. Free results in 3 seconds.
  </p>
  </div>
  </header>
@@ -82,7 +82,7 @@ const TampaLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'Vehicle Theft & Title Databases', desc: 'Theft, total loss, and flood damage records' },
- { name: 'Stolen Property Reports', desc: 'Stolen property reports from all 50 states' },
+ { name: 'Stolen Property Reports', desc: 'community theft reports' },
  { name: 'Flood & Salvage', desc: 'Hurricane damage titles, salvage brands, and title washing detection' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -98,7 +98,7 @@ const TampaLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Tampa?</summary>
- <p className="text-muted-foreground mt-2">Enter the Florida license plate or VIN on SafeOrStolen. We search our verification databases, including vehicle theft and title databases and stolen property reports from all 50 states. Results in 3 seconds. 2 free checks.</p>
+ <p className="text-muted-foreground mt-2">Enter the Florida license plate or VIN on SafeOrStolen. We search our verification databases, including community theft reports. Results in 3 seconds. 2 free checks.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Why is Tampa a hotspot for vehicle theft?</summary>

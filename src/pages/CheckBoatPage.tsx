@@ -57,7 +57,7 @@ const CheckBoatPage = () => {
  },
  {
  question: "What should I do if the boat check shows it's stolen?",
- answer: "If our check shows the boat is reported stolen: (1) Do NOT buy or touch the boat under ANY circumstances, (2) Walk away immediately without confronting the seller (they may be dangerous or part of organized crime), (3) Do NOT board the boat or take control of it in any way, (4) Record the seller's information, boat location, and listing details (discreetly), (5) Report immediately to: U.S. Coast Guard Investigative Service at 1-800-368-5647 AND your state DNR AND local local authorities, (6) Report to stolen property reports from all 50 states at 1-800-TEL-stolen property reports from all 50 states, (7) If you already purchased it, contact Coast Guard and local authorities IMMEDIATELY - you're a fraud victim. Voluntarily surrender the boat to avoid criminal charges for possessing stolen property."
+ answer: "If our check shows the boat is reported stolen: (1) Do NOT buy or touch the boat under ANY circumstances, (2) Walk away immediately without confronting the seller (they may be dangerous or part of organized crime), (3) Do NOT board the boat or take control of it in any way, (4) Record the seller's information, boat location, and listing details (discreetly), (5) Report immediately to: U.S. Coast Guard Investigative Service at 1-800-368-5647 AND your state DNR AND local local authorities, (6) Report to community theft reports at 1-800-TEL-community theft reports, (7) If you already purchased it, contact Coast Guard and local authorities IMMEDIATELY - you're a fraud victim. Voluntarily surrender the boat to avoid criminal charges for possessing stolen property."
  },
  {
  question: "Why are boats stolen so frequently?",

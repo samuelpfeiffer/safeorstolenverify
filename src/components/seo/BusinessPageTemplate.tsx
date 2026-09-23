@@ -53,7 +53,7 @@ export const BusinessPageTemplate = ({
  const businessFaqs = [
  {
  question: `How does SafeOrStolen help ${businessType.toLowerCase()}?`,
- answer: `SafeOrStolen provides instant stolen item verification for ${businessType.toLowerCase()}. Check IMEI, VIN, and serial numbers against 100+ databases in 3 seconds. Reduce legal risk, ensure compliance, and protect your business from unknowingly handling stolen property.`
+ answer: `SafeOrStolen provides instant stolen item verification for ${businessType.toLowerCase()}. Check IMEI, VIN, and serial numbers against multiple sources in 3 seconds. Reduce legal risk, ensure compliance, and protect your business from unknowingly handling stolen property.`
  },
  {
  question: `What does SafeOrStolen cost for ${businessType.toLowerCase()}?`,
@@ -65,7 +65,7 @@ export const BusinessPageTemplate = ({
  },
  {
  question: `How quickly does SafeOrStolen return results?`,
- answer: `Results are returned in approximately 3 seconds. SafeOrStolen simultaneously queries 100+ databases including vehicle theft and title databases, carrier and theft databases, and state law enforcement records.`
+ answer: `Results are returned in approximately 3 seconds. SafeOrStolen simultaneously queries multiple sources including carrier and theft databases, and state theft reports.`
  }
  ];
  
@@ -178,7 +178,7 @@ export const BusinessPageTemplate = ({
  <li><a href="/data-sources">Our Data Sources</a></li>
  </ul>
  
- <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $0.99/check or $10/month unlimited.</p>
+ <p>SafeOrStolen checks multiple sources in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -310,7 +310,7 @@ export const BusinessPageTemplate = ({
  </Link>
  <Link to="/data-sources" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Our Data Sources</h3>
- <p className="text-sm text-muted-foreground">100+ databases we check</p>
+ <p className="text-sm text-muted-foreground">multiple sources we check</p>
  </Link>
  <Link to="/verify" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Try It Free</h3>

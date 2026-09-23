@@ -40,7 +40,7 @@ const PartialSerialNumberSearchPage = () => {
         "@type": "Place",
         "name": "Worldwide"
       },
-      "description": "Search for stolen items with partial or incomplete serial numbers using fuzzy matching across 100+ databases."
+      "description": "Search for stolen items with partial or incomplete serial numbers using fuzzy matching across multiple sources."
     },
     {
       "@context": "https://schema.org",
@@ -89,7 +89,7 @@ const PartialSerialNumberSearchPage = () => {
     <>
       <PageSEO
         title="Partial Serial Number Search - Find Stolen Items | SafeOrStolen"
-        description="Search for stolen items with partial or incomplete serial numbers. SafeOrStolen uses fuzzy matching across 100+ databases."
+        description="Search for stolen items with partial or incomplete serial numbers. SafeOrStolen uses fuzzy matching across multiple sources."
         keywords="partial serial number search, incomplete serial lookup, fuzzy serial search, find serial number, worn serial number check"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -103,7 +103,7 @@ const PartialSerialNumberSearchPage = () => {
                 Partial Serial Number Search
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Don't have the full serial? We can still help. Enter the characters you CAN read and use * for unknown characters. Our fuzzy matching searches across 100+ databases for potential matches.
+                Don't have the full serial? We can still help. Enter the characters you CAN read and use * for unknown characters. Our fuzzy matching searches across multiple sources for potential matches.
               </p>
               
               {/* Search Input */}
@@ -137,7 +137,7 @@ const PartialSerialNumberSearchPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
               <div className="flex flex-col items-center p-4 bg-card rounded-lg">
                 <Shield className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">100+ Databases</span>
+                <span className="text-sm font-semibold">multiple sources</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg">
                 <Clock className="w-8 h-8 text-primary mb-2" />

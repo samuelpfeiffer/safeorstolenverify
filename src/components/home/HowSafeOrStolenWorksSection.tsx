@@ -19,8 +19,8 @@ export const HowSafeOrStolenWorksSection = () => {
  {
  number: '2',
  icon: Database,
- title: 'We Search 100+ databases Instantly',
- description: 'Our AI-powered system simultaneously queries multiple databases including vehicle theft and title databases, carrier and theft databases, community theft registries, stolen bicycle databases, manufacturer records, and carrier and theft databases across 150+ countries.',
+ title: 'We Search multiple sources Instantly',
+ description: 'Our AI-powered system simultaneously queries multiple databases including carrier and theft databases, community theft registries, stolen bicycle databases, manufacturer records, and carrier and theft databases across 150+ countries.',
  details: [
  'vehicle theft and title databases stolen vehicle database',
  'carrier and theft databases global IMEI registry',

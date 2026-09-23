@@ -111,7 +111,7 @@ const organizationJsonLd = JSON.stringify({
     "serial number check",
     "secondhand marketplace fraud prevention",
     "carrier blacklist checking",
-    "Stolen property reports from all 50 states",
+    "community theft reports",
     "carrier and theft databases",
     "stolen vehicle detection",
     "stolen phone detection",

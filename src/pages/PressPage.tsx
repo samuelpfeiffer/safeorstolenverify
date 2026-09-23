@@ -229,7 +229,7 @@ const PressPage = () => {
  
  <p className="text-lg text-muted-foreground mb-6">
  Our platform searches over 100 databases including global device registries, 
- federal law enforcement records, carrier and theft databases, and insurance claims databases 
+ federal theft reports, carrier and theft databases 
  to provide comprehensive verification in under 3 seconds.
  </p>
  

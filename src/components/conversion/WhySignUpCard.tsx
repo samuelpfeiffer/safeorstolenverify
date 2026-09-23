@@ -13,7 +13,7 @@ interface WhySignUpCardProps {
 export const WhySignUpCard = ({ onSignUp }: WhySignUpCardProps) => {
   const benefits = [
     { icon: Zap, text: '2 free verifications', highlight: true },
-    { icon: Shield, text: 'Access 100+ stolen databases' },
+    { icon: Shield, text: 'Access multiple sources' },
     { icon: Bell, text: 'Watchlist alerts when items are searched' },
     { icon: FileText, text: 'PDF verification reports' },
     { icon: Smartphone, text: 'Mobile web app access' },

@@ -36,7 +36,7 @@ const FreeStolenVehicleCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to see if a car is stolen by VIN?",
- answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search our verification databases including vehicle theft and title databases, reported theft history, salvage records, and available public theft reports. Results are returned in about 3 seconds."
+ answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search our verification databases including reported theft history, salvage records, and available public theft reports. Results are returned in about 3 seconds."
  },
  {
  question: "Can I check a stolen vehicle by license plate only?",
@@ -134,7 +134,7 @@ const FreeStolenVehicleCheckPage = () => {
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
  Don't buy a stolen car, truck, or motorcycle. Enter a VIN or license plate to search our verification databases 
- including vehicle theft and title databases for theft indicators, salvage status, and reported theft history—free.
+ including for theft indicators, salvage status, and reported theft history—free.
  </p>
 
  {/* Search Input */}
@@ -233,7 +233,7 @@ const FreeStolenVehicleCheckPage = () => {
  <ul className="space-y-3">
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Theft indicators from vehicle theft and title databases and our verification databases
+ Theft indicators from our verification databases
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

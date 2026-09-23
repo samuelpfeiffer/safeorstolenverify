@@ -75,7 +75,7 @@ const LicensePlateLookupPage = () => {
  },
  {
  question: "Can I check if a license plate is linked to a stolen vehicle?",
- answer: "Yes. SafeOrStolen matches a plate to its vehicle and searches stolen property reports from all 50 states, carrier and theft databases, community theft reports, and community theft registries for a theft record on that vehicle. Because plates can be removed and swapped onto a different car, confirm the VIN in person before you buy \u2014 a clean plate result on a swapped plate tells you nothing about the vehicle in front of you."
+ answer: "Yes. SafeOrStolen matches a plate to its vehicle and searches community theft reports, carrier and theft databases, community theft reports, and community theft registries for a theft record on that vehicle. Because plates can be removed and swapped onto a different car, confirm the VIN in person before you buy \u2014 a clean plate result on a swapped plate tells you nothing about the vehicle in front of you."
  },
  {
  question: "What can a license plate lookup tell me?",
@@ -116,7 +116,7 @@ const LicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free License Plate Lookup — Check Any Vehicle by Plate Number | SafeOrStolen"
- description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using state DMV, vehicle theft and title databases, stolen property reports from all 50 states, and our verification databases. Instant results in 3 seconds."
+ description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using state DMV, vehicle theft and title databases, community theft reports, and our verification databases. Instant results in 3 seconds."
  keywords="license plate lookup, plate number search, stolen vehicle check, DMV lookup"
  canonical="/license-plate-lookup"
  structuredData={faqSchema}
@@ -327,7 +327,7 @@ const LicensePlateLookupPage = () => {
  </div>
  <h3 className="font-semibold mb-2">We Search Databases</h3>
  <p className="text-sm text-muted-foreground">
- We query vehicle theft and title databases and community theft registries quickly.
+ We query and community theft registries quickly.
  </p>
  </div>
  <div className="text-center p-6 rounded-lg border border-border bg-card">

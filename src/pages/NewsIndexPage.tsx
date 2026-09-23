@@ -93,7 +93,7 @@ const NewsIndexPage = () => {
  <Card>
   <CardContent className="pt-6 text-center">
   <Shield className="w-10 h-10 mx-auto mb-3 text-primary" />
-  <h3 className="font-semibold text-lg mb-2">100+ Databases</h3>
+  <h3 className="font-semibold text-lg mb-2">multiple sources</h3>
   <p className="text-sm text-muted-foreground">Stolen-property registries checked per search</p>
 
  </CardContent>

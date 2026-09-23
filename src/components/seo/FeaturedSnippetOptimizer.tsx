@@ -43,7 +43,7 @@ export const FeaturedSnippetOptimizer = () => {
  "name": "Can you check if a car is stolen by VIN?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Yes, you can check if a car is stolen by VIN using SafeOrStolen's installable web app. Enter the 17-character VIN number to instantly verify against our verification databases, including vehicle theft and title databases."
+ "text": "Yes, you can check if a car is stolen by VIN using SafeOrStolen's installable web app. Enter the 17-character VIN number to instantly verify against our verification databases, including."
  }
  }
  }

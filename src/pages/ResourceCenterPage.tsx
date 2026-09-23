@@ -12,7 +12,7 @@ const educationalFAQs = [
  },
  {
  question: "How do I check if a used phone is stolen before buying it?",
- answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against carrier and theft databases, carrier databases, and insurance claim records. A clean result with a Trust Score above 85 indicates the device has no theft reports across 100+ databases. Always verify before exchanging money."
+ answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against carrier and theft databases, carrier databases. A clean result with a Trust Score above 85 indicates the device has no theft reports across multiple sources. Always verify before exchanging money."
  },
  {
  question: "What happens if I accidentally buy stolen goods?",
@@ -20,11 +20,11 @@ const educationalFAQs = [
  },
  {
  question: "How does VIN verification prevent car fraud?",
- answer: "A Vehicle Identification Number (VIN) check cross-references the 17-character code against vehicle theft and title databases theft records, vehicle theft and title databases recalls, insurance total-loss databases, and state DMV registrations. SafeOrStolen queries these sources simultaneously, detecting title washing, odometer fraud, and stolen vehicle reports. The vehicle theft and title databases reports approximately 750,000 vehicles stolen annually in the U.S."
+ answer: "A Vehicle Identification Number (VIN) check cross-references the 17-character code against theft records, vehicle theft and title databases recalls, insurance total-loss databases, and state DMV registrations. SafeOrStolen queries these sources simultaneously, detecting title washing, odometer fraud, and stolen vehicle reports. The vehicle theft and title databases reports approximately 750,000 vehicles stolen annually in the U.S."
  },
  {
  question: "What databases does SafeOrStolen check for verification?",
- answer: "SafeOrStolen aggregates data from 100+ sources including: carrier and theft databases, vehicle theft and title databases vehicle databases, carrier and theft databases (AT&T, T-Mobile, Verizon), insurance claims databases, stolen bicycle databases for bicycles, nationwide firearm theft reports, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
+ answer: "SafeOrStolen aggregates data from multiple sources including: carrier and theft databases, vehicle theft and title databases vehicle databases, carrier and theft databases (AT&T, T-Mobile, Verizon), stolen bicycle databases for bicycles, nationwide firearm theft reports, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
  },
  {
  question: "Are auction houses required to verify items before selling?",

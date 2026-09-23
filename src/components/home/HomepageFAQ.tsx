@@ -18,7 +18,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'How accurate is SafeOrStolen?',
- answer: 'We query official databases including vehicle theft and title databases, carrier and theft databases, community theft registries, and carrier and theft databases. Our data comes directly from law enforcement and carrier sources. We update our databases in real-time.'
+ answer: 'We query official databases including carrier and theft databases, community theft registries, and carrier and theft databases. Our data comes directly from law enforcement and carrier sources. We update our databases in real-time.'
  },
  {
  question: 'Do you report searches to police?',

@@ -189,7 +189,7 @@ export default function CompleteImeiGuide() {
                   <h3 className="text-xl font-semibold text-foreground">Recommended: SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  SafeOrStolen checks 100+ databases simultaneously including carrier and manufacturer blacklists global blacklist, stolen property reports from all 50 states, all major 
+                  SafeOrStolen checks multiple sources simultaneously including carrier and manufacturer blacklists global blacklist, community theft reports, all major 
                   U.S. carriers, manufacturer records, and community theft registries. Results in 3 seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">

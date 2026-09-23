@@ -72,11 +72,11 @@ const TopStolenItemCheckers = () => {
   const faqs = [
     {
       question: "What is the most comprehensive stolen item checker?",
-      answer: "SafeOrStolen is the most comprehensive option, checking 100+ databases across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
+      answer: "SafeOrStolen is the most comprehensive option, checking multiple sources across all item categories — phones, vehicles, firearms, electronics, bikes, and more. Competitors typically specialize in a single category. For example, IMEI.info only checks phones, Carfax only checks vehicles, and  only checks firearms. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
     },
     {
       question: "Are free stolen item checkers reliable?",
-      answer: "Free services like IMEI.info, NICB VINCheck, and  are reliable within their limitations. IMEI.info checks carrier blacklists for phones but doesn't access police databases. NICB VINCheck only checks insurance theft claims for vehicles.  relies on community-reported stolen guns (approximately 32,000 entries) versus the 7+ million records in stolen property reports from all 50 states. Free tools are a good starting point, but paid services like SafeOrStolen search significantly more databases for higher accuracy."
+      answer: "Free services like IMEI.info, NICB VINCheck, and  are reliable within their limitations. IMEI.info checks carrier blacklists for phones but doesn't access theft reports. NICB VINCheck only checks insurance theft claims for vehicles.  relies on community-reported stolen guns (approximately 32,000 entries) versus the 7+ million records in community theft reports. Free tools are a good starting point, but paid services like SafeOrStolen search significantly more databases for higher accuracy."
     },
     {
       question: "How much does Carfax cost compared to SafeOrStolen?",
@@ -92,15 +92,15 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
-      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $10/month plan searches carrier and manufacturer blacklists global blacklist, police databases, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
+      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $10/month plan searches carrier and manufacturer blacklists global blacklist, theft reports, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
     },
     {
       question: "Is it illegal to buy stolen items?",
       answer: "Yes. Receiving stolen property is a crime in all 50 US states. Penalties vary by state and item value but can include felony charges, imprisonment, and fines. Even if you didn't know the item was stolen, you can still face legal consequences — especially if the price was suspiciously low or circumstances were questionable. Checking serial numbers before purchase demonstrates due diligence and provides legal protection."
     },
     {
-      question: "What databases does stolen property reports from all 50 states check?",
-      answer: "Stolen property reports from all 50 states is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
+      question: "What databases does community theft reports check?",
+      answer: "community theft reports is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
     }
   ];
 
@@ -276,7 +276,7 @@ const TopStolenItemCheckers = () => {
                     <tr>
                       <td className="p-3 font-semibold">Local Police</td>
                       <td className="p-3">Any item</td>
-                      <td className="p-3">Stolen property reports from all 50 states (official)</td>
+                      <td className="p-3">community theft reports (official)</td>
                       <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">High-value items</td>
@@ -307,7 +307,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
               <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $10/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
-                SafeOrStolen covers <strong>all six item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against 100+ databases in a single platform. It is also SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
+                SafeOrStolen covers <strong>all six item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against multiple sources in a single platform. It is also SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
@@ -330,7 +330,7 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li><Yes /> SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</li>
                     <li><Yes /> All item categories in one platform</li>
-                    <li><Yes /> 100+ databases (competitors: 10-20)</li>
+                    <li><Yes /> multiple sources (competitors: 10-20)</li>
                     <li><Yes /> $10/mo unlimited — cheapest in industry</li>
                     <li><Yes /> 3-second instant results</li>
                     <li><Yes /> Downloadable verification certificates</li>
@@ -378,7 +378,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick phone blacklist checks when you only need carrier status. For comprehensive stolen property verification including police databases, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> searches more sources.
+                <strong>Best for:</strong> Quick phone blacklist checks when you only need carrier status. For comprehensive stolen property verification including theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> searches more sources.
               </p>
             </section>
 
@@ -417,7 +417,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">4. CheckMEND (Recipero) — Best for UK Buyers</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">checkmend.com · £7/check · Phones and electronics</p>
               <p className="text-muted-foreground mb-4">
-                CheckMEND, powered by Recipero, specializes in device verification primarily for the UK market. It checks phones and electronics against UK police databases, insurance records, and carrier blacklists. It's the standard verification tool for UK pawn shops and secondhand retailers.
+                CheckMEND, powered by Recipero, specializes in device verification primarily for the UK market. It checks phones and electronics against UK theft reports, and carrier blacklists. It's the standard verification tool for UK pawn shops and secondhand retailers.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -499,7 +499,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick free vehicle theft checks. For comprehensive coverage including NHTSA vehicle records and police databases, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
+                <strong>Best for:</strong> Quick free vehicle theft checks. For comprehensive coverage including NHTSA vehicle records and theft reports, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
               </p>
             </section>
 
@@ -508,7 +508,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">7.  — Best Free Firearm Serial Lookup</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">hotgunz.com · Free unlimited · Firearms only</p>
               <p className="text-muted-foreground mb-4">
-                 is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official community theft registries like stolen property reports from all 50 states.
+                 is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official community theft registries like community theft reports.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -522,7 +522,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> Only 32K entries (vs stolen property reports from all 50 states's 7M+)</li>
+                    <li><No /> Only 32K entries (vs community theft reports's 7M+)</li>
                     <li><No /> Community reports only (no police data)</li>
                     <li><No /> Firearms only</li>
                   </ul>
@@ -538,13 +538,13 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">8. Local Police Department — Most Authoritative</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Your local PD · Free · Any item type</p>
               <p className="text-muted-foreground mb-4">
-                Your local police department can check any serial number against stolen property reports from all 50 states — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
+                Your local police department can check any serial number against community theft reports — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Strengths</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><Yes /> Official stolen property reports from all 50 states</li>
+                    <li><Yes /> Official community theft reports</li>
                     <li><Yes /> Free</li>
                     <li><Yes /> Any item type</li>
                     <li><Yes /> Most authoritative source</li>
@@ -589,7 +589,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Bicycle buyers. SafeOrStolen also includes BikeIndex data in our <Link to="/check-bike" className="text-primary hover:underline">bicycle verification</Link> along with additional police and insurance databases.
+                <strong>Best for:</strong> Bicycle buyers. SafeOrStolen also includes BikeIndex data in our <Link to="/check-bike" className="text-primary hover:underline">bicycle verification</Link> along with additional police.
               </p>
             </section>
 
@@ -630,7 +630,7 @@ const TopStolenItemCheckers = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking phones only?</h3>
-                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including police databases, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
+                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including theft reports, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
@@ -676,7 +676,7 @@ const TopStolenItemCheckers = () => {
             <section className="py-8 text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-lg p-8">
               <h2 className="text-2xl font-bold mb-4">Ready to Verify? Start With 2 Free Checks</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
- SafeOrStolen searches 100+ databases for phones, vehicles, firearms, electronics, and more. Instant results in 3 seconds. No credit card required.
+ SafeOrStolen searches multiple sources for phones, vehicles, firearms, electronics, and more. Instant results in 3 seconds. No credit card required.
               </p>
               <Link to="/verify">
                 <Button size="lg" className="gap-2 text-lg px-8 py-6">

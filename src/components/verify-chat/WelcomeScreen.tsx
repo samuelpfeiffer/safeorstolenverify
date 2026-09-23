@@ -40,7 +40,7 @@ const EXAMPLES = [
 ];
 
 const FEATURES = [
- { Icon: ShieldCheck, label: '100+ databases', sub: 'Stolen property reports from all 50 states · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases' },
+ { Icon: ShieldCheck, label: 'multiple sources', sub: 'community theft reports · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases' },
  { Icon: Zap, label: '~3 second results', sub: 'Real-time aggregated checks' },
  { Icon: Sparkles, label: 'AI follow-ups', sub: 'Ask anything about your result' },
 ];
@@ -62,7 +62,7 @@ export const WelcomeScreen: React.FC<Props> = ({ onPick }) => {
  </h1>
  <p className="text-sm text-muted-foreground mb-8 max-w-md mx-auto">
  Paste an identifier, upload a photo, or drop a marketplace URL. I'll cross-check it against
- 100+ stolen-item databases and explain the result in plain English.
+ multiple sources and explain the result in plain English.
  </p>
 
  {/* Examples grid */}

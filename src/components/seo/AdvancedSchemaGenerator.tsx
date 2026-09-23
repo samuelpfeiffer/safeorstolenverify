@@ -63,7 +63,7 @@ export const AdvancedSchemaGenerator = () => {
  "numberOfItems": 8,
  "itemListElement": [
  { "@type": "ListItem", "position": 1, "name": "IMEI Phone Checker", "url": "https://safeorstolen.com/imei-checker", "description": "Verify phones against carrier and theft databases, carrier records, and community theft registries" },
- { "@type": "ListItem", "position": 2, "name": "VIN Vehicle Lookup", "url": "https://safeorstolen.com/vin-checker", "description": "Check vehicles against vehicle theft and title databases, DMV, and stolen vehicle databases" },
+ { "@type": "ListItem", "position": 2, "name": "VIN Vehicle Lookup", "url": "https://safeorstolen.com/vin-checker", "description": "Check vehicles against DMV, and stolen vehicle databases" },
  { "@type": "ListItem", "position": 3, "name": "Serial Number Checker", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify electronics, laptops, and equipment serial numbers" },
  { "@type": "ListItem", "position": 4, "name": "Firearm Serial Check", "url": "https://safeorstolen.com/firearms-check", "description": "Check gun serial numbers against stolen firearms databases" },
  { "@type": "ListItem", "position": 5, "name": "Bicycle Check", "url": "https://safeorstolen.com/check-bike", "description": "Verify bicycle serial numbers via stolen bicycle databases integration" },

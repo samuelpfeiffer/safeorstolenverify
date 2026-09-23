@@ -15,7 +15,7 @@ const XboxStolenCheck = () => {
   const faqs = [
     {
       question: "Can a stolen Xbox be traced?",
-      answer: "Yes. Microsoft tracks Xbox console serial numbers and can ban stolen consoles remotely from Xbox Live and all online services. When a stolen Xbox is reported to Microsoft, the serial number is flagged. If anyone connects that console to the internet, Microsoft can identify it and lock it from online functionality. Our verification checks stolen property reports from all 50 states."
+      answer: "Yes. Microsoft tracks Xbox console serial numbers and can ban stolen consoles remotely from Xbox Live and all online services. When a stolen Xbox is reported to Microsoft, the serial number is flagged. If anyone connects that console to the internet, Microsoft can identify it and lock it from online functionality. Our verification checks community theft reports."
     },
     {
       question: "What if I already bought a stolen Xbox?",
@@ -23,7 +23,7 @@ const XboxStolenCheck = () => {
     },
     {
       question: "Will SafeOrStolen tell me who the real owner is?",
-      answer: "For privacy reasons, SafeOrStolen only shows 'SAFE' or 'STOLEN/FLAGGED' status. We do not disclose the identity of the original owner. If you need owner information for a stolen item, contact local police with the serial number — they can access stolen property reports from all 50 states and coordinate with the reporting jurisdiction."
+      answer: "For privacy reasons, SafeOrStolen only shows 'SAFE' or 'STOLEN/FLAGGED' status. We do not disclose the identity of the original owner. If you need owner information for a stolen item, contact local police with the serial number — they can access community theft reports and coordinate with the reporting jurisdiction."
     },
     {
       question: "How long does an Xbox serial number check take?",
@@ -94,7 +94,7 @@ const XboxStolenCheck = () => {
     <>
       <PageSEO
         title="Check if Xbox is Stolen - Free Serial Number Verification | SafeOrStolen"
-        description="Verify Xbox Series X, Series S, Xbox One isn't stolen before buying. Check serial numbers against police databases. 2 free checks. Avoid Xbox Live bans. Instant results."
+        description="Verify Xbox Series X, Series S, Xbox One isn't stolen before buying. Check serial numbers against theft reports. 2 free checks. Avoid Xbox Live bans. Instant results."
         keywords="check if xbox is stolen, xbox serial number check, xbox stolen check, stolen xbox database, xbox series x stolen, verify xbox not stolen, used xbox verification, xbox live ban check"
         canonical="/check-xbox"
         structuredData={structuredData}
@@ -103,7 +103,7 @@ const XboxStolenCheck = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Check if Xbox is Stolen - Free Serial Number Verification</h1>
-          <p>Verify Xbox Series X, Series S, and Xbox One consoles are not stolen before buying used. Check serial numbers against police databases. 2 free checks with instant results.</p>
+          <p>Verify Xbox Series X, Series S, and Xbox One consoles are not stolen before buying used. Check serial numbers against theft reports. 2 free checks with instant results.</p>
           <p>Visit safeorstolen.com/verify to check any Xbox serial number.</p>
         </div>
       </noscript>

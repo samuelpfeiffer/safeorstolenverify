@@ -17,7 +17,7 @@ const VsBikeIndex = () => {
     { feature: 'Marketplace URL Paste', sos: true, bikeindex: false },
     { feature: 'Police Partnerships', sos: true, bikeindex: true },
     { feature: 'Free Searches', sos: '2 free', bikeindex: 'Unlimited' },
-    { feature: 'Real-Time Databases', sos: '100+ sources', bikeindex: 'User reports' },
+    { feature: 'Real-Time Databases', sos: 'multiple sources', bikeindex: 'User reports' },
     { feature: 'API Access', sos: true, bikeindex: true },
   ];
 
@@ -38,7 +38,7 @@ const VsBikeIndex = () => {
         "name": "What's the difference between SafeOrStolen and Bike Index?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bike Index is a free bicycle-only registry with 1.5M+ bikes and police partnerships. SafeOrStolen is an all-in-one verification platform checking bikes, phones, cars, electronics, and more from 100+ databases. SafeOrStolen also has a mobile app for on-the-spot verification."
+          "text": "Bike Index is a free bicycle-only registry with 1.5M+ bikes and police partnerships. SafeOrStolen is an all-in-one verification platform checking bikes, phones, cars, electronics, and more from multiple sources. SafeOrStolen also has a mobile app for on-the-spot verification."
         }
       },
       {
@@ -301,7 +301,7 @@ const VsBikeIndex = () => {
                 <Card>
                   <CardHeader>
                     <Car className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>100+ Databases</CardTitle>
+                    <CardTitle>multiple sources</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
@@ -374,7 +374,7 @@ const VsBikeIndex = () => {
                     <p className="text-muted-foreground">
                       Yes! When you check a bicycle serial number on SafeOrStolen, we query the Bike Index 
                       API along with other databases. You get Bike Index coverage plus additional sources 
-                      like police reports and insurance databases.
+                      like police reports.
                     </p>
                   </CardContent>
                 </Card>

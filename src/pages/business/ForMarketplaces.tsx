@@ -19,7 +19,7 @@ export default function ForMarketplaces() {
  canonical="/for-marketplaces"
  businessType="Marketplace"
  industryName="Online Marketplaces"
- heroSubtitle="Integrate instant stolen goods verification into your marketplace platform. Protect buyers and sellers, reduce fraud by up to 85%, and build lasting trust with verified listings powered by 100+ databases."
+ heroSubtitle="Integrate instant stolen goods verification into your marketplace platform. Protect buyers and sellers, reduce fraud by up to 85%, and build lasting trust with verified listings powered by multiple sources."
  heroBadge="Marketplace Solutions"
  challenges={[
  {
@@ -54,7 +54,7 @@ export default function ForMarketplaces() {
  },
  {
  title: "Multi-Database Coverage",
- description: "Search 100+ databases including carrier and theft databases, law enforcement records, insurance claims, and pawn shop registries simultaneously."
+ description: "Search multiple sources including carrier and theft databases, theft reports, insurance claims, and pawn shop registries simultaneously."
  },
  {
  title: "Webhook Notifications",
@@ -98,7 +98,7 @@ export default function ForMarketplaces() {
  },
  {
  question: "What databases does the API search?",
- answer: "We search 100+ databases including carrier and theft databases, law enforcement stolen property records, insurance company claims, manufacturer registries, and pawn shop databases totaling 100+ databases."
+ answer: "We search multiple sources including carrier and theft databases, law enforcement stolen property records, insurance company claims, manufacturer registries, and pawn shop databases totaling multiple sources."
  },
  {
  question: "Can we add verified badges to listings?",

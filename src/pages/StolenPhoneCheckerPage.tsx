@@ -40,7 +40,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks 100+ databases, and costs $0.99/check or $10/month unlimited."
+ "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks multiple sources, and costs $0.99/check or $10/month unlimited."
  }
  },
  {

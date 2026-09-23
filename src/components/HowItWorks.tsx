@@ -21,7 +21,7 @@ const HowItWorks = () => {
     {
       number: "2", 
       title: "We Scan Databases",
-      description: "Check 100+ databases in seconds",
+      description: "Check multiple sources in seconds",
       icon: <Database className="h-6 w-6 text-primary" />
     },
     {

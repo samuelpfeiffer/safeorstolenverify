@@ -9,7 +9,7 @@ const trustBadges = [
   },
   {
     icon: Award,
-    text: "100+ databases checked",
+    text: "multiple sources checked",
     description: "Law enforcement and insurance sources"
   },
   {

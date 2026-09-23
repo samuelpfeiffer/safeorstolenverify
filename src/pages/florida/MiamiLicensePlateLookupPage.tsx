@@ -11,7 +11,7 @@ const MiamiLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Miami?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate number or VIN on SafeOrStolen. We check FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Miami-Dade Police, and insurance databases simultaneously. Results are returned in about 3 seconds. You get 2 free checks with no credit card required." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate number or VIN on SafeOrStolen. We check FLHSMV, community theft reports, Miami-Dade Police simultaneously. Results are returned in about 3 seconds. You get 2 free checks with no credit card required." }
  },
  {
  "@type": "Question",
@@ -47,7 +47,7 @@ const MiamiLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Miami FL License Plate Lookup — Check Stolen Vehicles in Miami | SafeOrStolen"
- description="Free Miami, Florida license plate lookup. Check if any vehicle in Miami-Dade County is stolen. Search FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, and Miami-Dade Police databases. Instant results."
+ description="Free Miami, Florida license plate lookup. Check if any vehicle in Miami-Dade County is stolen. Search FLHSMV, vehicle theft and title databases, community theft reports, and Miami-Dade Police databases. Instant results."
  canonical="/florida/miami-license-plate-lookup"
  structuredData={[faqSchema, webPageSchema]}
  />
@@ -59,7 +59,7 @@ const MiamiLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Miami License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Check if any vehicle in Miami, Florida is stolen by searching the license plate number against FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Miami-Dade Police, and insurance theft databases. Free instant results in 3 seconds.
+ Check if any vehicle in Miami, Florida is stolen by searching the license plate number against FLHSMV, vehicle theft and title databases, community theft reports, Miami-Dade Police, and insurance theft databases. Free instant results in 3 seconds.
  </p>
  </div>
  </header>
@@ -95,7 +95,7 @@ const MiamiLicensePlateLookupPage = () => {
  {[
  { name: 'FLHSMV Records', desc: 'Florida Highway Safety and Motor Vehicles registration database for Miami-Dade County' },
  { name: 'vehicle theft and title databases', desc: 'vehicle theft and title databases theft and total loss records' },
- { name: 'Miami-Dade Police Records', desc: 'Local stolen property reports from all 50 states' },
+ { name: 'Miami-Dade Police Records', desc: 'Local community theft reports' },
  { name: 'Insurance Claims', desc: 'Theft claims from major insurers operating in Florida' },
  { name: 'Salvage Records', desc: 'Vehicles with salvage, rebuilt, or flood titles — critical in Florida due to hurricanes' },
  ].map(db => (
@@ -124,7 +124,7 @@ const MiamiLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Miami?</summary>
- <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate number or VIN on SafeOrStolen. We check FLHSMV, vehicle theft and title databases, stolen property reports from all 50 states, Miami-Dade Police, and insurance databases simultaneously. Results are returned in about 3 seconds. You get 2 free checks with no credit card required.</p>
+ <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate number or VIN on SafeOrStolen. We check FLHSMV, community theft reports, Miami-Dade Police simultaneously. Results are returned in about 3 seconds. You get 2 free checks with no credit card required.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Why is vehicle theft so high in Miami?</summary>

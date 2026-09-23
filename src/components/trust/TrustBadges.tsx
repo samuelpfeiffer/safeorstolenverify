@@ -13,7 +13,7 @@ export const TrustBadges: React.FC = () => {
     },
     {
       icon: Award,
-      title: '100+ Databases',
+      title: 'multiple sources',
       description: 'Law enforcement and insurance sources',
       color: 'text-sos-orange-500'
     },

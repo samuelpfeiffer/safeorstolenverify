@@ -250,7 +250,7 @@ const CarfaxVsFreeVinAlternatives = () => {
               SafeOrStolen specializes in theft verification with real-time access to:
             </p>
             <ul>
-              <li>Stolen property reports from all 50 states</li>
+              <li>community theft reports</li>
               <li>NHTSA vehicle records for salvage/rebuilt status</li>
               <li>Our verification databases</li>
             </ul>

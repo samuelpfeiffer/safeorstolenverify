@@ -279,7 +279,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks multiple databases including law enforcement signals, insurance records, and carrier blacklists for comprehensive coverage similar to NICB for vehicles.
+                  SafeOrStolen checks multiple databases including law enforcement signals, and carrier blacklists for comprehensive coverage similar to NICB for vehicles.
                 </p>
               </CardContent>
             </Card>

@@ -32,7 +32,7 @@ const howToSchema = {
  {
  "@type": "HowToStep",
  "name": "Get instant stolen status results",
- "text": "Extracted identifiers are checked against our verification databases including stolen property reports from all 50 states, vehicle theft and title databases, carrier and theft databases, and carrier and theft databases. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
+ "text": "Extracted identifiers are checked against our verification databases including community theft reports, vehicle theft and title databases, carrier and theft databases, and carrier and theft databases. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
  }
  ],
  "tool": {
@@ -61,7 +61,7 @@ const faqSchema = {
  "name": "How do I check if a Facebook Marketplace item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against our verification stolen property databases including stolen property reports from all 50 states, vehicle theft and title databases, and carrier and theft databases. Results appear in seconds."
+ "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against our verification stolen property databases including community theft reports, vehicle theft and title databases, and carrier and theft databases. Results appear in seconds."
  }
  },
  {
@@ -247,7 +247,7 @@ const MarketplaceURLChecker: React.FC = () => {
  { step: '1', title: 'Copy the Listing URL', desc: 'Find a listing on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. Copy the full URL from your browser\'s address bar.' },
  { step: '2', title: 'Paste into SafeOrStolen', desc: 'Paste the URL into the analyzer above. Our AI uses the Jina Reader API to scrape and read the entire listing page, including photos and descriptions.' },
  { step: '3', title: 'AI Extracts Identifiers', desc: 'The AI identifies IMEI numbers, VIN numbers, serial numbers, model information, and pricing. It also flags risk factors like below-market pricing.' },
- { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our verification databases: stolen property reports from all 50 states, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, carrier and theft databases, and stolen property reports from all 50 states.' },
+ { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our verification databases: community theft reports, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, carrier and theft databases, and community theft reports.' },
  ].map((item) => (
  <div key={item.step} className="text-center">
  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
@@ -385,7 +385,7 @@ const MarketplaceURLChecker: React.FC = () => {
  <Card className="bg-card border-border">
  <CardContent className="p-6">
  <h3 className="font-bold text-lg mb-2">👮 Law Enforcement</h3>
- <p className="text-muted-foreground text-sm">Officers investigating stolen property cases can paste suspicious listings to quickly verify if items match stolen property reports in <Link to="/stolen-database" className="text-primary hover:underline">stolen item databases</Link> including stolen property reports from all 50 states and state systems.</p>
+ <p className="text-muted-foreground text-sm">Officers investigating stolen property cases can paste suspicious listings to quickly verify if items match stolen property reports in <Link to="/stolen-database" className="text-primary hover:underline">stolen item databases</Link> including community theft reports and state systems.</p>
  </CardContent>
  </Card>
  </div>

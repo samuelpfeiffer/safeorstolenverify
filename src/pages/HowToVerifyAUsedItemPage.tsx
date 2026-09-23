@@ -5,7 +5,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'How can I check if a used item is stolen before I buy it?',
  answer:
- "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against stolen property reports from all 50 states, carrier and theft databases, community theft reports, and community theft registries, and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
+ "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against community theft reports, carrier and theft databases, community theft reports, and community theft registries, and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
  },
  {
  question: 'Is there one website where I can check different types of used items for theft?',
@@ -135,7 +135,7 @@ const HowToVerifyAUsedItemPage = () => {
  This is the question most buyers mean when they ask whether something is "safe." To
  answer it, take the item's unique identifier — IMEI, VIN, license plate, serial
  number, firearm serial, or bicycle frame serial — and search it against theft
- records. SafeOrStolen checks stolen property reports from all 50 states, carrier and
+ records. SafeOrStolen checks community theft reports, carrier and
  manufacturer blacklists, community theft reports, and community theft registries, and
  returns a match or no-match result in a few seconds. A match means the identifier
  appears in at least one theft record and you should not complete the purchase.

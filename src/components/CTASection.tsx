@@ -61,7 +61,7 @@ const CTASection = () => {
             </div>
             
             <p className="text-sm text-muted-foreground mt-6">
-              Cancel anytime • 30-day guarantee • 100+ databases checked
+              Cancel anytime • 30-day guarantee • multiple sources checked
             </p>
           </div>
         </Card>

@@ -463,7 +463,7 @@ const VerifyChatPage: React.FC = () => {
  updateMessage(assistantId, {
  loading: false,
  content:
- "Got it — happy to verify that. **Paste the identifier** and I'll check 100+ databases:\n\n• **Phone** → 15-digit IMEI (dial `*#06#`)\n• **Car / motorcycle** → 17-character VIN (dashboard or driver-door sticker)\n• **Bike / electronics / firearm** → serial number on the frame or label\n• **License plate** → plate + state\n• **Marketplace listing** → paste the URL (eBay, FB Marketplace, Craigslist, OfferUp)",
+ "Got it — happy to verify that. **Paste the identifier** and I'll check multiple sources:\n\n• **Phone** → 15-digit IMEI (dial `*#06#`)\n• **Car / motorcycle** → 17-character VIN (dashboard or driver-door sticker)\n• **Bike / electronics / firearm** → serial number on the frame or label\n• **License plate** → plate + state\n• **Marketplace listing** → paste the URL (eBay, FB Marketplace, Craigslist, OfferUp)",
  suggestions: [
  'How do I find my IMEI?',
  'Where is the VIN on a car?',
@@ -547,7 +547,7 @@ const VerifyChatPage: React.FC = () => {
  content="ChatGPT-style stolen-item verification powered by AI. IMEI, VIN, serial, plate, URL — all in one chat with downloadable PDF reports."
  />
  <meta property="og:url" content="https://safeorstolen.com/verify" />
- <meta name="ai:purpose" content="Conversational AI verification of items against 100+ stolen databases" />
+ <meta name="ai:purpose" content="Conversational AI verification of items against multiple sources" />
  </Helmet>
 
  {/* AppRoot renders TopNavigation + <div className="pt-20"/>. We negate that
@@ -945,7 +945,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  Verify before you buy.
  </h1>
  <p className="text-base text-muted-foreground mt-3 max-w-lg">
- AI-powered stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll cross-check 100+ databases in seconds and explain the result in plain English.
+ AI-powered stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll cross-check multiple sources in seconds and explain the result in plain English.
  </p>
  <p className="text-sm text-muted-foreground mt-3">
  Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Get the app</a> — install SafeOrStolen on your phone and scan on the spot.
@@ -983,7 +983,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
 
  <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- 100+ DATABASES · stolen property reports from all 50 states · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases · 50 STATES
+ 100+ DATABASES · community theft reports · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases · 50 STATES
  </div>
  </motion.div>
  );

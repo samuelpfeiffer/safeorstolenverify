@@ -5,7 +5,7 @@ import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Github, CheckCircle
 const sosLogo = '/sos-logo.png';
 
 const DATA_PARTNERS = [
- { name: 'Stolen property reports from all 50 states', verified: true },
+ { name: 'community theft reports', verified: true },
  { name: 'vehicle theft and title databases', verified: true },
  { name: 'carrier and theft databases', verified: true },
  { name: 'stolen bicycle databases', verified: true },

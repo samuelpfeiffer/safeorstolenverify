@@ -14,7 +14,7 @@ import {
 const crunchbaseFaqs = [
  {
  question: "What is SafeOrStolen?",
- answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against multiple sources including carrier and theft databases, and community theft reports. Results are returned in approximately 3 seconds."
  },
  {
  question: "Who founded SafeOrStolen?",
@@ -111,7 +111,7 @@ const CrunchbasePage: React.FC = () => {
  </header>
  <div>
  <h1>SafeOrStolen Company Profile</h1>
- <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against 100+ databases including vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states in approximately 3 seconds.</p>
+ <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against multiple sources including carrier and theft databases, and community theft reports in approximately 3 seconds.</p>
  
  <h2>Company Overview</h2>
  <ul>
@@ -176,7 +176,7 @@ const CrunchbasePage: React.FC = () => {
  AI-powered trust infrastructure for the $367 billion global secondhand market.
  </p>
  <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
- Founded by Samuel Pfeiffer and Kelly McEvoy. Checking 100+ databases in 3 seconds.
+ Founded by Samuel Pfeiffer and Kelly McEvoy. Checking multiple sources in 3 seconds.
  </p>
  <Button 
  size="lg" 
@@ -263,7 +263,7 @@ const CrunchbasePage: React.FC = () => {
  </CardHeader>
  <CardContent>
  <p className="text-muted-foreground text-sm">
- All 50 US states. IMEI checks across 200+ countries via carrier and theft databases. Vehicle checks via stolen property reports from all 50 states and vehicle theft and title databases.
+ All 50 US states. IMEI checks across 200+ countries via carrier and theft databases. Vehicle checks via community theft reports and vehicle theft and title databases.
  </p>
  </CardContent>
  </Card>
@@ -348,7 +348,7 @@ const CrunchbasePage: React.FC = () => {
  </Link>
  <Link to="/data-sources" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Our Data Sources</h3>
- <p className="text-sm text-muted-foreground">100+ databases we check</p>
+ <p className="text-sm text-muted-foreground">multiple sources we check</p>
  </Link>
  <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Pricing</h3>

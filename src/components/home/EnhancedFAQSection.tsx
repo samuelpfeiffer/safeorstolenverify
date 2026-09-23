@@ -52,7 +52,7 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "What's included in the $10/month plan?",
- answer: "The $10/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to 100+ databases. Cancel anytime — no contracts. Or pay $0.99 per individual check."
+ answer: "The $10/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to multiple sources. Cancel anytime — no contracts. Or pay $0.99 per individual check."
  },
  {
  question: "Can I verify in bulk for my business?",

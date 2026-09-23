@@ -44,7 +44,7 @@ export default function ForPawnShops() {
  <>
  <PageSEO
  title="SafeOrStolen for Pawn Shops — Instant Stolen Item Verification (2026)"
- description="Pawn shop compliance verification in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Meet state pawn laws. Timestamped PDF certificates for audits."
+ description="Pawn shop compliance verification in 3 seconds. Check IMEI, VIN, serial numbers against multiple sources. Meet state pawn laws. Timestamped PDF certificates for audits."
  keywords="pawn shop verification, stolen goods checker for pawn shops, IMEI verification pawn, VIN check pawn shop, serial number lookup pawn, pawn compliance software, pawn shop stolen property check"
  structuredData={[serviceSchema, faqSchema]}
  canonical="/for-pawn-shops"
@@ -86,7 +86,7 @@ export default function ForPawnShops() {
  <section className="max-w-4xl mx-auto mb-16 prose prose-lg">
  <h2>Why Pawn Shops Choose SafeOrStolen</h2>
  <p>Pawn shops face unique challenges: accepting stolen goods can result in asset seizure, criminal charges, and license revocation. State laws require verification before accepting items, but manual checks are slow, incomplete, and error-prone.</p>
- <p>SafeOrStolen automates compliance by checking 100+ databases instantly—including federal law enforcement records, state databases, carrier and theft databases, and international theft registries. Every check creates a timestamped compliance record admissible in court.</p>
+ <p>SafeOrStolen automates compliance by checking multiple sources instantly—including federal theft reports, state databases, carrier and theft databases, and international theft registries. Every check creates a timestamped compliance record admissible in court.</p>
 
  <h3>What We Verify for Pawn Shops</h3>
  <ul>

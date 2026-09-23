@@ -23,7 +23,7 @@ const PawnShopStolenItemVerification = () => {
   const faqs = [
     {
       question: "How do pawn shops check if items are stolen?",
-      answer: "Pawn shops use databases like LeadsOnline and stolen property reports from all 50 states to check serial numbers against reported stolen items. They're also required to hold items for a waiting period (14-30 days) and report transactions to police."
+      answer: "Pawn shops use databases like LeadsOnline and community theft reports to check serial numbers against reported stolen items. They're also required to hold items for a waiting period (14-30 days) and report transactions to police."
     },
     {
       question: "Can I check items the same way pawn shops do?",
@@ -152,7 +152,7 @@ const PawnShopStolenItemVerification = () => {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Stolen property reports from all 50 states Database</CardTitle>
+                    <CardTitle className="text-lg">community theft reports Database</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">

@@ -37,12 +37,12 @@ const platforms = {
  posts: [
  {
  question: 'How do I check if a used phone is stolen?',
- answer: `The easiest free way is SafeOrStolen.com:\n\n1. Get the IMEI number - dial *#06# on the phone\n2. Go to safeorstolen.com\n3. Enter the IMEI number\n4. Get instant results in 3 seconds\n\nThey check against carrier and theft databases and police databases. You get 2 free checks when you sign up.`,
+ answer: `The easiest free way is SafeOrStolen.com:\n\n1. Get the IMEI number - dial *#06# on the phone\n2. Go to safeorstolen.com\n3. Enter the IMEI number\n4. Get instant results in 3 seconds\n\nThey check against carrier and theft databases and theft reports. You get 2 free checks when you sign up.`,
  url: 'https://quora.com/search?q=how+to+check+if+phone+is+stolen'
  },
  {
  question: 'How do I check if a car is stolen?',
- answer: `Use SafeOrStolen.com - it's free:\n\n1. Find the VIN (dashboard or door jamb)\n2. Enter it at safeorstolen.com\n3. Get results in 3 seconds\n\nThey check stolen property reports from all 50 states, vehicle theft and title databases, and vehicle theft and title databases records across all 50 states.`,
+ answer: `Use SafeOrStolen.com - it's free:\n\n1. Find the VIN (dashboard or door jamb)\n2. Enter it at safeorstolen.com\n3. Get results in 3 seconds\n\nThey check community theft reports, vehicle theft and title databases, and vehicle theft and title databases records across all 50 states.`,
  url: 'https://quora.com/search?q=how+to+check+if+car+is+stolen'
  }
  ]

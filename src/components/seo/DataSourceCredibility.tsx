@@ -64,7 +64,7 @@ const trustIndicators = [
  {
  icon: Shield,
  title: "Law Enforcement Verified",
- description: "Direct integration with official police databases"
+ description: "Direct integration with official theft reports"
  },
  {
  icon: Database,

@@ -45,7 +45,7 @@ const databaseStatus = [
  { name: 'stolen bicycle databases', status: 'Online', uptime: 99.7, responseTime: 1.8 },
  { name: 'Stolen Firearms Databases', status: 'Online', uptime: 98.9, responseTime: 2.1 },
  { name: 'CheckMEND', status: 'Online', uptime: 99.5, responseTime: 1.5 },
- { name: 'Stolen property reports from all 50 states Network', status: 'Online', uptime: 99.8, responseTime: 1.9 },
+ { name: 'community theft reports Network', status: 'Online', uptime: 99.8, responseTime: 1.9 },
  { name: 'Recipero', status: 'Maintenance', uptime: 95.2, responseTime: 3.2 }
 ];
 

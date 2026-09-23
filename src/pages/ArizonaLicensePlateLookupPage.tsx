@@ -6,7 +6,7 @@ const ArizonaLicensePlateLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="TheftAZ Alternative — Free Arizona Stolen Property & License Plate Search | SafeOrStolen"
- metaDescription="Search Arizona stolen property and vehicles using TheftAZ databases plus vehicle theft and title databases, stolen property reports from all 50 states, and Arizona MVD records. Free results in 3 seconds. Check any AZ license plate for theft status."
+ metaDescription="Search Arizona stolen property and vehicles using TheftAZ databases plus vehicle theft and title databases, community theft reports, and Arizona MVD records. Free results in 3 seconds. Check any AZ license plate for theft status."
  h1="Free Arizona License Plate Lookup — TheftAZ Alternative"
  itemType="Vehicle"
  keywords={[
@@ -20,15 +20,15 @@ const ArizonaLicensePlateLookupPage = () => {
  content={{
  intro: "Search Arizona's TheftAZ database and 100+ other sources to verify any AZ vehicle. Free Arizona license plate lookup for buyers AND sellers. Check stolen status in 3 seconds before any used car purchase.",
  
- whatIs: "Arizona license plate lookup verifies whether a vehicle registered in Arizona is reported stolen by checking the AZ license plate number against TheftAZ (Arizona Attorney General's stolen property database), vehicle theft and title databases, and police databases. Perfect for anyone buying or selling a used vehicle in Phoenix, Tucson, Mesa, Chandler, or anywhere in Arizona.",
+ whatIs: "Arizona license plate lookup verifies whether a vehicle registered in Arizona is reported stolen by checking the AZ license plate number against TheftAZ (Arizona Attorney General's stolen property database), vehicle theft and title databases, and theft reports. Perfect for anyone buying or selling a used vehicle in Phoenix, Tucson, Mesa, Chandler, or anywhere in Arizona.",
  
- howItWorks: "Our Arizona license plate lookup searches multiple databases simultaneously: (1) TheftAZ - the Arizona Attorney General's official stolen property database, (2) vehicle theft and title databases VINCheck, (3) Arizona MVD vehicle registration records, (4) stolen property reports from all 50 states, (5) Local law enforcement records statewide. You receive comprehensive results in 3 seconds showing theft status, registration validity, and any red flags.",
+ howItWorks: "Our Arizona license plate lookup searches multiple databases simultaneously: (1) TheftAZ - the Arizona Attorney General's official stolen property database, (2) vehicle theft and title databases VINCheck, (3) Arizona MVD vehicle registration records, (4) community theft reports, (5) Local theft reports statewide. You receive comprehensive results in 3 seconds showing theft status, registration validity, and any red flags.",
  
  whyCheck: "Arizona has one of the highest vehicle theft rates in the country, particularly in Phoenix and Tucson metro areas. Vehicles stolen in California often end up in Arizona due to proximity. The Arizona-Mexico border creates additional stolen vehicle trafficking. TheftAZ tracks stolen property across Arizona - always verify before buying a used vehicle in the Grand Canyon State.",
  
  benefits: [
  "Search TheftAZ Arizona stolen property database",
- "Check vehicle theft and title databases and 100+ other databases",
+ "Check vehicle theft and title databases and multiple sources",
  "Verify Arizona MVD registration status",
  "Phoenix, Tucson, Mesa, Chandler coverage",
  "Free Arizona license plate lookup",
@@ -48,7 +48,7 @@ const ArizonaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "What is TheftAZ and how does SafeOrStolen use it?",
- answer: "TheftAZ is the Arizona Attorney General's official stolen property database. It tracks stolen vehicles, firearms, electronics, and tools reported in Arizona. SafeOrStolen searches TheftAZ as one of 100+ databases we check, giving you comprehensive stolen property verification for Arizona and nationwide."
+ answer: "TheftAZ is the Arizona Attorney General's official stolen property database. It tracks stolen vehicles, firearms, electronics, and tools reported in Arizona. SafeOrStolen searches TheftAZ as one of multiple sources we check, giving you comprehensive stolen property verification for Arizona and nationwide."
  },
  {
  question: "Can I check if a car is stolen in Phoenix using the license plate?",

@@ -176,7 +176,7 @@ const CheckImeiStolenPage = () => {
  </li>
  <li>
  <strong>Run the check.</strong> SafeOrStolen queries carrier and theft databases and reported-stolen records
- across its 100+ databases.
+ across its multiple sources.
  </li>
  <li>
  <strong>Read the verdict</strong> — clean, reported stolen, or blacklisted — and save the

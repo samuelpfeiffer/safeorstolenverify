@@ -127,7 +127,7 @@ export default function ComprehensiveGuidePage() {
               </ul>
               <h3>What a VIN Check Reveals</h3>
               <ul>
-                <li>Theft history (stolen property reports from all 50 states, state databases)</li>
+                <li>Theft history (community theft reports, state databases)</li>
                 <li>Title status (clean, salvage, rebuilt, flood)</li>
                 <li>Lien status (money owed on vehicle)</li>
                 <li>Odometer rollback</li>

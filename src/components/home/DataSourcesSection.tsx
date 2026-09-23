@@ -5,7 +5,7 @@ const dataSources = [
  {
  icon: Shield,
  title: 'Law Enforcement',
- description: 'Stolen property reports from all 50 states, cross-border theft registries',
+ description: 'community theft reports, cross-border theft registries',
  color: 'text-blue-500',
  link: '/data-sources#law-enforcement',
  stat: '50 states',
@@ -48,7 +48,7 @@ const dataSources = [
  description: 'stolen bicycle databases, Stolen Firearms Databases, GIA Diamond Registry, vehicle theft and title databases, marine HIN databases, pawn networks',
  color: 'text-orange-500',
  link: '/data-sources#industry',
- stat: '100+ sources',
+ stat: 'multiple sources',
  },
 ];
 

@@ -24,11 +24,11 @@ export const HomeContentSections = () => {
  },
  {
  question: "What databases does SafeOrStolen check?",
- answer: "We search over 100 databases simultaneously including: stolen property reports from all 50 states, vehicle theft and title databases for vehicles, carrier and theft databases global blacklist for phones, the stolen firearms databases for firearms, state law enforcement records, vehicle theft and title databases, insurance company theft claims, carrier and theft databases, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
+ answer: "We search over 100 databases simultaneously including: community theft reports, vehicle theft and title databases for vehicles, carrier and theft databases global blacklist for phones, the stolen firearms databases for firearms, state theft reports, vehicle theft and title databases, insurance company theft claims, carrier and theft databases, community-reported stolen property databases, and pawn shop records. This comprehensive approach catches stolen items that single-database checks miss."
  },
  {
  question: "How do I check if a car is stolen using VIN?",
- answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check vehicle theft and title databases theft records, vehicle theft and title databases, vehicle title records, salvage/junk databases, and stolen property reports from all 50 states across all 50 states. Results in 3 seconds."
+ answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check theft records, vehicle theft and title databases, vehicle title records, salvage/junk databases, and community theft reports across all 50 states. Results in 3 seconds."
  },
  {
  question: "Can I check items on Facebook Marketplace before buying?",
@@ -167,7 +167,7 @@ export const HomeContentSections = () => {
  </div>
  <div className="text-center p-6 bg-card rounded-lg border border-border">
  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
- <h3 className="font-bold text-lg mb-2">We Search 100+ Databases</h3>
+ <h3 className="font-bold text-lg mb-2">We Search multiple sources</h3>
  <p className="text-sm text-muted-foreground">
  In parallel, we query vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, stolen bicycle databases, state records, vehicle theft and title databases, carrier and theft databases, vehicle title records, pawn shop records, and community databases. More sources means higher accuracy.
  </p>
@@ -262,7 +262,7 @@ export const HomeContentSections = () => {
  For sellers, SafeOrStolen adds trust and transparency to your listings. Share a verification certificate to prove your items are legitimate, increase buyer confidence, and command higher prices. For businesses like <Link to="/for-pawn-shops" className="text-primary hover:underline">pawn shops</Link>, dealers, and <Link to="/for-electronics-resellers" className="text-primary hover:underline">electronics resellers</Link>, our business plans include bulk verification, API integration, compliance reporting, and audit trails to meet state due diligence requirements.
  </p>
  <p>
- SafeOrStolen verifies all six item types — phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods — against 100+ databases. We are SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> for on-the-spot verification at gun shows, pawn shops, yard sales, and marketplace meetups. Unlimited verifications for just $10/month.
+ SafeOrStolen verifies all six item types — phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods — against multiple sources. We are SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> for on-the-spot verification at gun shows, pawn shops, yard sales, and marketplace meetups. Unlimited verifications for just $10/month.
  </p>
  </div>
  </div>

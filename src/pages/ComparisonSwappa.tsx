@@ -19,7 +19,7 @@ const ComparisonSwappa = () => {
  "@type": "Service",
  "name": "SafeOrStolen",
  "url": "https://safeorstolen.com",
- "description": "Dedicated stolen item verification service with mobile app, all item types, 100+ databases, offline mode",
+ "description": "Dedicated stolen item verification service with mobile app, all item types, multiple sources, offline mode",
  "provider": { "@type": "Organization", "name": "SafeOrStolen" },
  "hasOfferCatalog": {
  "@type": "OfferCatalog",
@@ -62,7 +62,7 @@ const ComparisonSwappa = () => {
  {
  "@type": "Question",
  "name": "How many databases does SafeOrStolen check vs Swappa?",
- "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks 100+ databases including vehicle theft and title databases, carrier and theft databases, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI check only for devices listed on their platform." }
+ "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks multiple sources including carrier and theft databases, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI check only for devices listed on their platform." }
  },
  {
  "@type": "Question",
@@ -85,7 +85,7 @@ const ComparisonSwappa = () => {
  { feature: 'VIN Check for Vehicles', safeorstolen: true, swappa: false },
  { feature: 'Firearm Serial Number Check', safeorstolen: true, swappa: false },
  { feature: '100+ Database Sources', safeorstolen: true, swappa: false },
- { feature: 'Stolen property reports from all 50 states Database Access', safeorstolen: true, swappa: false },
+ { feature: 'community theft reports Database Access', safeorstolen: true, swappa: false },
  { feature: 'Works on Any Marketplace Item', safeorstolen: true, swappa: false },
  { feature: 'Free Tier Available', safeorstolen: true, swappa: true },
  { feature: 'Buy/Sell Marketplace', safeorstolen: false, swappa: true },
@@ -99,7 +99,7 @@ const ComparisonSwappa = () => {
  <>
  <PageSEO
  title="SafeOrStolen vs Swappa 2026 - Full Comparison | App, Features, Pricing"
- description="SafeOrStolen vs Swappa: SafeOrStolen has a mobile app, verifies ALL item types (phones, cars, guns, bikes), and checks 100+ databases. Swappa is phone-only. See the full comparison."
+ description="SafeOrStolen vs Swappa: SafeOrStolen has a mobile app, verifies ALL item types (phones, cars, guns, bikes), and checks multiple sources. Swappa is phone-only. See the full comparison."
  keywords="Swappa alternative, Swappa app, SafeOrStolen vs Swappa, better than Swappa, verification app, Swappa IMEI check alternative, Swappa review 2026"
  canonical="/vs-swappa"
  structuredData={[comparisonSchema, faqSchema]}
@@ -112,7 +112,7 @@ const ComparisonSwappa = () => {
  <ul>
  <li><strong>Mobile App:</strong> SafeOrStolen has a dedicated iOS/Android app with barcode scanning. Swappa has no verification app.</li>
  <li><strong>Item Types:</strong> SafeOrStolen verifies phones, cars, guns, bikes, laptops, watches, and more. Swappa only handles phones and tech.</li>
- <li><strong>Databases:</strong> SafeOrStolen checks 100+ databases (vehicle theft and title databases, carrier and theft databases, all 50 state law enforcement). Swappa does a basic ESN check.</li>
+ <li><strong>Databases:</strong> SafeOrStolen checks multiple sources (vehicle theft and title databases, carrier and theft databases, all 50 state law enforcement). Swappa does a basic ESN check.</li>
  <li><strong>Works Anywhere:</strong> SafeOrStolen works for items from any source. Swappa only verifies items on their marketplace.</li>
  <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $0.99/check or $10/month unlimited. Swappa: free basic check on their listings only.</li>
  </ul>
@@ -124,7 +124,7 @@ const ComparisonSwappa = () => {
  <h3>Is SafeOrStolen free to use?</h3>
  <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $10/month unlimited.</p>
  <h3>How many databases does SafeOrStolen check?</h3>
- <p>SafeOrStolen checks 100+ databases including vehicle theft and title databases, carrier and theft databases, and all 50 state community theft registries.</p>
+ <p>SafeOrStolen checks multiple sources including carrier and theft databases, and all 50 state community theft registries.</p>
  <nav>
  <a href="/verify">Verify Now — Free</a> | <a href="/app">Download App</a> | <a href="/pricing">See Pricing</a>
  </nav>
@@ -144,7 +144,7 @@ const ComparisonSwappa = () => {
  </h1>
  <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto">
  Swappa is a used phone marketplace. SafeOrStolen is a dedicated verification service with a mobile app 
- that checks <strong>all item types</strong> against <strong>100+ stolen databases</strong>.
+ that checks <strong>all item types</strong> against <strong>multiple sources</strong>.
  </p>
  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
  They serve different purposes — but if you want to verify an item before buying, SafeOrStolen 
@@ -181,7 +181,7 @@ const ComparisonSwappa = () => {
  {[
  ['Dedicated Mobile App', 'iOS & Android with barcode scanner'],
  ['All Item Types', 'Phones, cars, guns, bikes, laptops, watches, electronics'],
- ['100+ Databases', 'vehicle theft and title databases, carrier and theft databases, all 50 state law enforcement'],
+ ['multiple sources', 'vehicle theft and title databases, carrier and theft databases, all 50 state law enforcement'],
  ['Works Offline', 'Verify at garage sales, flea markets, anywhere'],
  ['3-Second Results', 'Instant verification with trust score'],
  ['2 Free Checks', 'Then $0.99/check or $10/month unlimited'],
@@ -360,7 +360,7 @@ const ComparisonSwappa = () => {
  </CardHeader>
  <CardContent>
  <ul className="text-sm space-y-2">
- <li>✅ stolen property reports from all 50 states</li>
+ <li>✅ community theft reports</li>
  <li>✅ vehicle theft and title databases</li>
  <li>✅ carrier and theft databases Global Blacklist (phone carriers)</li>
  <li>✅ stolen firearms databases</li>
@@ -385,7 +385,7 @@ const ComparisonSwappa = () => {
  <ul className="text-sm space-y-2">
  <li>✅ Basic ESN/IMEI carrier check</li>
  <li>✅ Activation lock status</li>
- <li>❌ No stolen property reports from all 50 states</li>
+ <li>❌ No community theft reports</li>
  <li>❌ No vehicle theft and title databases access</li>
  <li>❌ No state community theft registries</li>
  <li>❌ No firearm databases</li>
@@ -438,7 +438,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="car">
  <AccordionTrigger>Can Swappa check if a car or bike is stolen?</AccordionTrigger>
  <AccordionContent>
- No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check against vehicle theft and title databases vehicle records), motorcycles, firearms, bicycles (stolen bicycle databases), laptops, gaming consoles, watches, and more.
+ No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check against vehicle records), motorcycles, firearms, bicycles (stolen bicycle databases), laptops, gaming consoles, watches, and more.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="free">
@@ -450,7 +450,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="databases">
  <AccordionTrigger>How many databases does SafeOrStolen check compared to Swappa?</AccordionTrigger>
  <AccordionContent>
- SafeOrStolen checks 100+ databases including vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
+ SafeOrStolen checks multiple sources including carrier and theft databases, Stolen Firearms Databases, state community theft registries across all 50 states, and international sources. Swappa performs a basic ESN/IMEI carrier check only for devices listed on their platform.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="any-source">
@@ -462,7 +462,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="which-better">
  <AccordionTrigger>Which is better for buying used phones — Swappa or SafeOrStolen?</AccordionTrigger>
  <AccordionContent>
- They serve different purposes. Swappa is a marketplace where you buy/sell phones with seller ratings and price history. SafeOrStolen is a verification tool that checks ANY phone (from any source) against 100+ stolen databases. For maximum protection, use SafeOrStolen to verify phones found anywhere — including on Swappa.
+ They serve different purposes. Swappa is a marketplace where you buy/sell phones with seller ratings and price history. SafeOrStolen is a verification tool that checks ANY phone (from any source) against multiple sources. For maximum protection, use SafeOrStolen to verify phones found anywhere — including on Swappa.
  </AccordionContent>
  </AccordionItem>
  </Accordion>

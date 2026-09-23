@@ -20,11 +20,11 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  'NC vehicle stolen database'
  ]}
  content={{
- intro: "North Carolina sees notable vehicle theft, with Charlotte and Raleigh accounting for a significant portion of stolen vehicles. Before buying any used vehicle in North Carolina, verify the license plate against our comprehensive database that includes NC vehicle theft and title databases, stolen property reports from all 50 states, and community theft registries.",
+ intro: "North Carolina sees notable vehicle theft, with Charlotte and Raleigh accounting for a significant portion of stolen vehicles. Before buying any used vehicle in North Carolina, verify the license plate against our comprehensive database that includes NC vehicle theft and title databases, community theft reports, and community theft registries.",
  
  whatIs: "A North Carolina license plate lookup allows you to verify if a vehicle registered in NC has been reported stolen, salvaged, or has title issues. This verification is essential when purchasing vehicles in Charlotte, Raleigh, Durham, Greensboro, Winston-Salem, and throughout North Carolina's active used vehicle market.",
  
- howItWorks: "Our North Carolina license plate lookup works by querying multiple databases simultaneously: (1) NCDMV vehicle registration records to verify the plate is actively registered, (2) stolen property reports from all 50 states for federal theft reports, (3) NC State Highway Patrol and local law enforcement records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt, salvage, or flood damage designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
+ howItWorks: "Our North Carolina license plate lookup works by querying multiple databases simultaneously: (1) NCDMV vehicle registration records to verify the plate is actively registered, (2) community theft reports for federal theft reports, (3) NC State Highway Patrol and local theft reports, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt, salvage, or flood damage designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
  
  whyCheck: "North Carolina's I-85 and I-95 corridors are transit routes for stolen vehicles between Florida and the Northeast. Charlotte has emerged as a vehicle theft hotspot, particularly for luxury vehicles and trucks. The Triangle area (Raleigh-Durham-Chapel Hill) also sees vehicle crime. Additionally, hurricane flood-damaged vehicles from coastal North Carolina and neighboring states are sometimes resold with clean titles inland. Always verify before purchasing.",
  
@@ -33,7 +33,7 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  "Charlotte, Raleigh, Durham, Greensboro verification",
  "Check for salvage, rebuilt, and flood damage titles",
  "Verify seller is registered owner in North Carolina",
- "Access stolen property reports from all 50 states and NC State Highway Patrol records",
+ "Access community theft reports and NC State Highway Patrol records",
  "Detect cloned plates and VIN switching",
  "Free North Carolina license plate lookup"
  ],
@@ -50,11 +50,11 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "Can I check if a car is stolen in Charlotte using the license plate?",
- answer: "Yes, SafeOrStolen's North Carolina license plate lookup checks vehicles registered in Charlotte and all of Mecklenburg County against NCDMV, stolen property reports from all 50 states, and community theft registries. This is essential for screening vehicles when meeting sellers in the Charlotte metro area."
+ answer: "Yes, SafeOrStolen's North Carolina license plate lookup checks vehicles registered in Charlotte and all of Mecklenburg County against NCDMV, community theft reports, and community theft registries. This is essential for screening vehicles when meeting sellers in the Charlotte metro area."
  },
  {
  question: "How accurate is the North Carolina license plate stolen vehicle check?",
- answer: "Our North Carolina license plate lookup is accurate for registered vehicles. We check official NCDMV records, stolen property reports from all 50 states (FBI's database), and NC State Highway Patrol records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+ answer: "Our North Carolina license plate lookup is accurate for registered vehicles. We check official NCDMV records, community theft reports (FBI's database), and NC State Highway Patrol records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
  },
  {
  question: "Does the lookup work for vehicles in the Raleigh-Durham area?",

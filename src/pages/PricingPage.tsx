@@ -11,7 +11,7 @@ const FAQS = [
  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $10/month.' },
  { q: 'Can I cancel the unlimited plan anytime?', a: 'Yes. Cancel from your dashboard with one click. Your plan continues until the end of the billing period — no fees, no hassle.' },
  { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
- { q: 'How accurate are the results?', a: 'We check 100+ sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 US state databases.' },
+ { q: 'How accurate are the results?', a: 'We check multiple sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 US state databases.' },
  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on the unlimited plan, no questions asked.' },
  { q: 'Do I need an account for pay-per-check?', a: 'Yes — a free account is required for every check. Create one in seconds, pay $0.99, and get instant results with no recurring charges.' },
  { q: 'How do seller verification badges work?', a: 'Seller badges are included free with the $10/month unlimited plan. Verify your item, generate a badge, and paste it into your marketplace listing. Buyers click it to see the verified result.' },
@@ -52,7 +52,7 @@ const PricingPage = () => {
  <div className="min-h-screen bg-background text-foreground pt-20">
  <PageSEO
  title="Pricing — Free Stolen Item Checks, $0.99/Check, or $10/Month Unlimited | SafeOrStolen"
- description="SafeOrStolen pricing: 2 free checks, $0.99 per single check, or $10/month for unlimited verifications. All plans include 100+ databases, 3-second results, scam analysis, and seller badges. No hidden fees."
+ description="SafeOrStolen pricing: 2 free checks, $0.99 per single check, or $10/month for unlimited verifications. All plans include multiple sources, 3-second results, scam analysis, and seller badges. No hidden fees."
  canonical="/pricing"
  />
 
@@ -87,7 +87,7 @@ const PricingPage = () => {
  {[
  '2 free checks — no credit card required',
  'All item types (phones, cars, bikes, guns, electronics)',
- 'All 100+ databases',
+ 'All multiple sources',
  '3-second results',
  'Scam risk analysis included',
  ].map((f) => (
@@ -307,7 +307,7 @@ const PricingPage = () => {
  "@context": "https://schema.org",
  "@type": "Product",
  "name": "SafeOrStolen Verification",
- "description": "2 free checks, then $0.99 per check or $10/month unlimited stolen item verification — phones, cars, guns, electronics & more. 100+ databases. 3-second results.",
+ "description": "2 free checks, then $0.99 per check or $10/month unlimited stolen item verification — phones, cars, guns, electronics & more. multiple sources. 3-second results.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },

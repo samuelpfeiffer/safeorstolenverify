@@ -43,7 +43,7 @@ export default function TransparencyPage() {
  
  <h3>Stolen Property Registries</h3>
  <ul>
- <li><strong>Stolen property reports from all 50 states:</strong> stolen property registries covering vehicles and firearms</li>
+ <li><strong>community theft reports:</strong> stolen property registries covering vehicles and firearms</li>
  <li><strong>Community and Regional Registries:</strong> stolen-property reporting networks</li>
  </ul>
 

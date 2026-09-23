@@ -4,7 +4,7 @@ const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
  title="Free Serial Number Lookup — Check if Item is Stolen | SafeOrStolen"
- metaDescription="AI-powered serial number checker for electronics, power tools, and appliances. Search 100+ law enforcement and insurance databases instantly."
+ metaDescription="AI-powered serial number checker for electronics, power tools, and appliances. Search SafeOrStolen's stolen-item reports, web results and AI analysis instantly."
  h1="Free Serial Number Lookup — Stolen Item Check"
  itemType="Item"
  keywords={[
@@ -18,7 +18,7 @@ const SerialNumberCheckerPage = () => {
  content={{
  intro: "Verify serial numbers for electronics, tools, appliances, jewelry, and more in 3 seconds. Check if laptops, cameras, power tools, or other items are reported stolen before buying. Free serial number verification from law enforcement and crowdsourced theft databases.",
  whatIs: "A serial number checker is a tool that verifies whether items like laptops, cameras, power tools, appliances, watches, musical instruments, or firearms have been reported stolen. Nearly every valuable manufactured item has a unique serial number that can be tracked across theft databases. SafeOrStolen's serial number checker instantly searches community theft registries, pawn shop records, user-reported theft databases, and manufacturer warranty records to determine if an item is safe to buy. This protects buyers purchasing used goods on Facebook Marketplace, eBay, Craigslist, OfferUp, and yard sales.",
- howItWorks: "Our serial number checker searches multiple databases simultaneously including local and federal law enforcement stolen property databases, LeadsOnline (the largest national pawn shop database), user-reported theft registries, manufacturer warranty and registration records, and insurance claim databases. Within 3 seconds, you receive a report showing whether the item has been reported stolen, pawned, or has insurance claims filed against it. We also verify the serial number format matches the manufacturer's specifications to detect fake or altered serial numbers.",
+ howItWorks: "Our serial number checker searches multiple databases simultaneously including local and federal law enforcement stolen property databases, LeadsOnline (the largest national pawn shop database), user-reported theft registries, manufacturer warranty and registration records. Within 3 seconds, you receive a report showing whether the item has been reported stolen, pawned, or has insurance claims filed against it. We also verify the serial number format matches the manufacturer's specifications to detect fake or altered serial numbers.",
  whyCheck: "Buying stolen property has serious legal and financial consequences. Stolen items can be confiscated by police with zero compensation, you could face criminal charges for possession of stolen property (even if you didn't know), you lose your entire purchase price with no recourse, and pawn shops and repair shops may report you to authorities when you bring in stolen goods. In 2024, over $15 billion worth of personal property was reported stolen in the United States, with laptops, tools, jewelry, and electronics being the most frequently stolen items. Our free serial number checker protects you from unknowingly purchasing stolen goods.",
  benefits: [
  "Check electronics (laptops, cameras, tablets, gaming consoles)",
@@ -44,7 +44,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "Where can I check a serial number to see if an item is stolen?",
- answer: "Enter the serial number at SafeOrStolen, which searches stolen property reports from all 50 states, carrier and theft databases, insurance claim records, and community theft registries for that identifier. It works for laptops, tablets, cameras, power tools, instruments, watches, and other serialized property. You will get a match or no-match result in a few seconds, along with a dated record of the check."
+ answer: "Enter the serial number at SafeOrStolen, which searches community theft reports, carrier and theft databases, and community theft registries for that identifier. It works for laptops, tablets, cameras, power tools, instruments, watches, and other serialized property. You will get a match or no-match result in a few seconds, along with a dated record of the check."
  },
  {
  question: "Is there a database for stolen serial numbers?",
