@@ -25,7 +25,7 @@ const NewsIndexPage = () => {
   const milestones = [
   { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
   { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
-  { year: "2022", event: "Expanded to vehicle verification with vehicle theft and title databases integration" },
+  { year: "2022", event: "Expanded to vehicle verification, analyzing publicly available information and AI insights" },
   { year: "2023", event: "Added barcode and serial number scanning to the mobile web experience" },
   { year: "2024", event: "Expanded coverage across firearm and bicycle theft registries" },
   { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
@@ -72,7 +72,7 @@ const NewsIndexPage = () => {
   <p className="mb-6">
   SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
   from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
-  item with a serial number. We check stolen-property registries, carrier blacklists, vehicle theft records, and firearm and bicycle theft databases — including registries that receive reports from and are used by law enforcement.
+  item with a serial number. We check SafeOrStolen's own stolen-item reports, public web results, and apply AI analysis. For specific item types, we integrate with trusted, specialized registries like BikeIndex for bicycles and HotGunz for firearms. The information we provide helps you understand an item's history.
   </p>
   
   <p className="mb-6">

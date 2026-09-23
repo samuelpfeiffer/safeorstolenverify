@@ -86,7 +86,7 @@ export default function ForPawnShops() {
  <section className="max-w-4xl mx-auto mb-16 prose prose-lg">
  <h2>Why Pawn Shops Choose SafeOrStolen</h2>
  <p>Pawn shops face unique challenges: accepting stolen goods can result in asset seizure, criminal charges, and license revocation. State laws require verification before accepting items, but manual checks are slow, incomplete, and error-prone.</p>
- <p>SafeOrStolen automates compliance by checking multiple sources instantly—including federal theft reports, state databases, carrier and theft databases, and international theft registries. Every check creates a timestamped compliance record admissible in court.</p>
+ <p>SafeOrStolen automates compliance by checking multiple sources instantly—including our own reported stolen items, public web results, and AI analysis. Additional checks are performed for bicycles (BikeIndex) and firearms (HotGunz). Every check creates a timestamped compliance record.</p>
 
  <h3>What We Verify for Pawn Shops</h3>
  <ul>
@@ -99,7 +99,7 @@ export default function ForPawnShops() {
  </ul>
 
  <h3>Compliance with State Pawn Laws</h3>
- <p>Most states mandate pawn shops verify items against community theft registries before acceptance:</p>
+ <p>Most states mandate pawn shops verify items, often against local theft reports, before acceptance:</p>
  <ul>
  <li><strong>California (CA Business & Professions Code §21628):</strong> Requires electronic reporting and verification</li>
  <li><strong>Texas (TX Occupations Code §371.151):</strong> Pawnbrokers must check against stolen property databases</li>

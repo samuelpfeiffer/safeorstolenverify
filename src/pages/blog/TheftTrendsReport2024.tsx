@@ -12,7 +12,7 @@ export default function TheftTrendsReport2024() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "2024 Theft Trends Report: What Items Are Most Stolen & How to Protect Yourself",
-    "description": "Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies based on real police data and insurance claims.",
+    "description": "Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies.",
     "author": {
       "@type": "Organization",
       "name": "SafeOrStolen"
@@ -33,7 +33,7 @@ export default function TheftTrendsReport2024() {
     <>
       <PageSEO
         title="2024 Theft Trends Report: Most Stolen Items & Protection Guide | SafeOrStolen"
-        description="Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies. Based on real police data and insurance claims."
+        description="Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies."
         keywords="theft trends 2024, most stolen items, theft statistics, crime report, theft prevention, stolen goods data"
         canonical="/blog/theft-trends-report-2024"
         structuredData={structuredData}
@@ -54,7 +54,7 @@ export default function TheftTrendsReport2024() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Executive Summary</h2>
               <p className="text-lg mb-4">
-                In 2024, property theft in the United States reached record levels with over $15.3 billion in stolen goods reported to police. This comprehensive report analyzes FBI crime data, insurance claims, and marketplace fraud patterns to identify the most targeted items, theft hot spots, and emerging criminal tactics.
+                In 2024, property theft in the United States reached record levels with billions in stolen goods reported. This comprehensive report analyzes various theft patterns to identify the most targeted items, hot spots, and emerging criminal tactics.
               </p>
               <p className="text-lg mb-4">
                 Our analysis reveals that smartphones, vehicles, and electronics remain the top targets, but thieves are increasingly focusing on high-value items that can be quickly resold online through platforms like eBay, Facebook Marketplace, and OfferUp.
@@ -273,7 +273,7 @@ export default function TheftTrendsReport2024() {
               <div className="bg-primary/10 p-6 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-4">Real-Time Theft Database Integration</h3>
                 <p className="mb-4">
-                  SafeOrStolen aggregates data from 50+ sources including FBI's National Crime Information Center (community theft reports), police reports from major cities, international stolen goods registries, and marketplace fraud reports.
+                  SafeOrStolen aggregates data from its own user reports, public web results, and sophisticated AI analysis. For bicycles, it checks BikeIndex, and for firearms, HotGunz.
                 </p>
                 <p className="mb-4">
                   Our AI verification system processes millions of data points to provide instant SAFE or STOLEN status for any item you're considering purchasing.

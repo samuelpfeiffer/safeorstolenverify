@@ -6,7 +6,7 @@ const GeorgiaLicensePlateLookupPage = () => {
     <>
     <ItemLandingPageTemplate
       title="Georgia License Plate Lookup - Free GA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is stolen before buying. Verify against Georgia DDS and community theft registries."
+      metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is reported stolen. Verify against our stolen item reports and public web data."
       h1="Georgia License Plate Lookup - Verify GA Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
@@ -20,11 +20,11 @@ const GeorgiaLicensePlateLookupPage = () => {
         'GA vehicle stolen database'
       ]}
       content={{
-        intro: "Georgia experiences notable vehicle theft, with Atlanta accounting for a significant portion of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our comprehensive database that includes Georgia DDS records, community theft reports, and community theft registries.",
+        intro: "Georgia experiences notable vehicle theft, with Atlanta accounting for a significant portion of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our stolen item reports and public web results.",
         
         whatIs: "A Georgia license plate lookup allows you to verify if a vehicle registered in Georgia has been reported stolen, salvaged, or has title issues. By entering the GA license plate number, our system cross-references the Georgia Department of Driver Services (DDS), stolen-property registries, our verification databases, and local stolen-property registries. This verification is essential when purchasing vehicles in Atlanta, Savannah, Augusta, Columbus, and throughout Georgia's active used vehicle market.",
         
-        howItWorks: "Our Georgia license plate lookup works by querying multiple databases simultaneously: (1) Georgia DDS vehicle registration records to verify the plate is actively registered, (2) community theft reports for federal theft reports, (3) Georgia Bureau of Investigation records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt or junked designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
+        howItWorks: "Our Georgia license plate lookup works by checking SafeOrStolen's own reported stolen items, analyzing public web results, and using AI analysis. You receive a report showing potential red flags related to theft.",
         
         whyCheck: "Georgia has notable vehicle theft activity, with Atlanta being a hotspot. The I-85 and I-75 corridors are used by theft rings to transport stolen vehicles between states. Georgia's proximity to ports in Savannah makes it a potential target for vehicle export schemes. Additionally, flood-damaged vehicles from coastal storms are sometimes resold with clean titles. Always verify before purchasing any vehicle in Georgia.",
         
@@ -33,7 +33,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           "Atlanta, Savannah, Augusta, and Columbus verification",
           "Check for salvage, rebuilt, and flood damage titles",
           "Verify seller is registered owner in Georgia",
-          "Access community theft reports and Georgia Bureau of Investigation records",
+          "Review SafeOrStolen's own reported stolen items and public web data",
           "Detect cloned plates and VIN switching",
           "Free Georgia license plate lookup"
         ],
@@ -50,11 +50,11 @@ const GeorgiaLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "Can I check if a car is stolen in Atlanta using the license plate?",
-            answer: "Yes, SafeOrStolen's Georgia license plate lookup checks vehicles registered in Atlanta and all of Fulton County against Georgia DDS, community theft reports, and community theft registries. This is ideal for initial screening when meeting sellers on Facebook Marketplace or Craigslist in the Atlanta metro area."
+            answer: "Yes, SafeOrStolen's Georgia license plate lookup checks vehicles registered in Atlanta and all of Fulton County against our reported stolen items and public web results. This is ideal for initial screening when meeting sellers on Facebook Marketplace or Craigslist in the Atlanta metro area."
           },
           {
             question: "How accurate is the Georgia license plate stolen vehicle check?",
-            answer: "Our Georgia license plate lookup is accurate for registered vehicles. We check official Georgia DDS records, community theft reports (public theft-report registries), and Georgia Bureau of Investigation records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+            answer: "Our Georgia license plate lookup is accurate for identifying potential theft. We check SafeOrStolen's own reported stolen items and public web results. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
           },
           {
             question: "Does the lookup work for vehicles in Savannah and coastal Georgia?",

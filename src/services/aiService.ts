@@ -352,7 +352,7 @@ class AIService {
       narrativeSummary: `Basic verification completed for this ${data.category || 'item'}. AI analysis was limited - please use standard precautions.`,
       additionalChecks: [
         'Verify serial number with manufacturer',
-        'Check local police records',
+        'Review SafeOrStolen reports and public web results',
         'Research market pricing'
       ]
     };

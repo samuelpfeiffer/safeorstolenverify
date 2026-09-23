@@ -379,7 +379,7 @@ const DownloadApp = () => {
                   <tr className="border-b">
                     <th className="text-left p-4">Feature</th>
                     <th className="text-center p-4 bg-primary/10">SafeOrStolen</th>
-                    <th className="text-center p-4">CheckMEND</th>
+                    <th className="text-center p-4">Public Databases</th>
                     <th className="text-center p-4">IMEI.info</th>
                   </tr>
                 </thead>

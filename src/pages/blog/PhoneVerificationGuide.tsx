@@ -111,7 +111,7 @@ export default function PhoneVerificationGuide() {
 
               <h3 className="text-2xl font-bold mb-3">What SafeOrStolen Checks:</h3>
               <ul className="list-disc list-inside space-y-2 mb-6 text-lg">
-                <li><strong>Stolen Phone Databases:</strong> Cross-references 50+ global databases including carrier and manufacturer blacklists, police reports, and insurance claims</li>
+                <li><strong>Comprehensive Stolen Phone Checks:</strong> We analyze our own incident reports, public web results, and apply AI analysis to identify potentially stolen phones.</li>
                 <li><strong>Carrier Blacklist:</strong> Checks if the device is blacklisted by AT&T, Verizon, T-Mobile, Sprint</li>
                 <li><strong>Find My iPhone/Android Lock Status:</strong> Verifies if device is locked to previous owner</li>
                 <li><strong>Activation Lock Status:</strong> Confirms if you can activate the device</li>
@@ -317,7 +317,7 @@ export default function PhoneVerificationGuide() {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">Are free IMEI checkers reliable?</h3>
-                  <p>Free checkers often only verify carrier blacklists, missing 90% of stolen phone databases. SafeOrStolen checks multiple sources including international theft reports that free tools don't access.</p>
+                  <p>Free checkers often only verify carrier blacklists, missing a wider range of stolen phone indicators. SafeOrStolen analyzes our own reports, public web data, and applies AI analysis for a more thorough check.</p>
                 </Card>
 
                 <Card className="p-6">

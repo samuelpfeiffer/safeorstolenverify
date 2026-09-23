@@ -32,7 +32,7 @@ const sectionLabels: Record<string, string> = {
   'safeorstolen': '1. SafeOrStolen',
   'imei-info': '2. IMEI.info',
   'carfax': '3. Carfax',
-  'checkmend': '4. CheckMEND',
+  'checkmend': '4. CheckMEND (UK)',
   'swappa': '5. Swappa',
   'nicb-vincheck': '6. NICB VINCheck',
   'hotgunz': '7. ',
@@ -76,7 +76,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "Are free stolen item checkers reliable?",
-      answer: "Free services like IMEI.info, NICB VINCheck, and  are reliable within their limitations. IMEI.info checks carrier blacklists for phones but doesn't access theft reports. NICB VINCheck only checks insurance theft claims for vehicles.  relies on community-reported stolen guns (approximately 32,000 entries) versus the 7+ million records in community theft reports. Free tools are a good starting point, but paid services like SafeOrStolen search significantly more databases for higher accuracy."
+      answer: "Free services like IMEI.info and NICB VINCheck are reliable within their limitations. IMEI.info checks phone blacklists but does not access theft reports. NICB VINCheck only checks insurance theft claims for vehicles. HotGunz relies on community-reported stolen guns (approximately 32,000 entries) versus the 7+ million official records. Free tools are a good starting point, but paid services like SafeOrStolen search significantly more sources for higher accuracy."
     },
     {
       question: "How much does Carfax cost compared to SafeOrStolen?",
@@ -92,15 +92,15 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
-      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $10/month plan searches carrier and manufacturer blacklists global blacklist, theft reports, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
+      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen checks its own reports, public web results, and AI analysis for phones, bicycles, and firearms. Both services return results instantly."
     },
     {
       question: "Is it illegal to buy stolen items?",
       answer: "Yes. Receiving stolen property is a crime in all 50 US states. Penalties vary by state and item value but can include felony charges, imprisonment, and fines. Even if you didn't know the item was stolen, you can still face legal consequences — especially if the price was suspiciously low or circumstances were questionable. Checking serial numbers before purchase demonstrates due diligence and provides legal protection."
     },
     {
-      question: "What databases does community theft reports check?",
-      answer: "community theft reports is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. SafeOrStolen provides indirect access through data partnerships."
+      question: "What databases does the NCIC (National Crime Information Center) check?",
+      answer: "The National Crime Information Center (NCIC) is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. You can ask your local police department to check NCIC for you."
     }
   ];
 
@@ -242,7 +242,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Full vehicle history</td>
                     </tr>
                     <tr>
-                      <td className="p-3 font-semibold">CheckMEND</td>
+                      <td className="p-3 font-semibold">CheckMEND (UK)</td>
                       <td className="p-3">Phones, electronics</td>
                       <td className="p-3">UK-focused</td>
                       <td className="p-3">£7/check</td>
@@ -276,7 +276,7 @@ const TopStolenItemCheckers = () => {
                     <tr>
                       <td className="p-3 font-semibold">Local Police</td>
                       <td className="p-3">Any item</td>
-                      <td className="p-3">community theft reports (official)</td>
+                      <td className="p-3">NCIC (via police)</td>
                       <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">High-value items</td>
@@ -508,7 +508,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">7.  — Best Free Firearm Serial Lookup</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">hotgunz.com · Free unlimited · Firearms only</p>
               <p className="text-muted-foreground mb-4">
-                 is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official community theft registries like community theft reports.
+                 HotGunz is a community-driven stolen firearm database where gun owners can report and search for stolen weapons. It contains approximately 32,000 user-reported stolen guns. Free and unlimited, but relies entirely on voluntary community reporting — it does not access official government registries like NCIC.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">

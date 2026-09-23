@@ -76,7 +76,7 @@ const FreeCarfaxAlternativePage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">🔒 SafeOrStolen (FREE)</h3>
-                  <p className="text-muted-foreground">Verifies if a vehicle is <strong>stolen</strong>. Checks NICB, theft reports, insurance claims. Essential before any purchase.</p>
+                  <p className="text-muted-foreground">Verifies if a vehicle is <strong>stolen</strong> by cross-referencing public web results, AI analysis, and our own reported items. Essential before any purchase.</p>
                 </div>
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">📋 Carfax ($44.99)</h3>

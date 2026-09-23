@@ -29,7 +29,7 @@ export const WhyChooseSafeOrStolen = () => {
     {
       icon: Zap,
       title: 'Instant Verification - 3 Seconds',
-      description: 'CheckMEND takes 30+ seconds. We deliver instant stolen verification in 3 seconds with barcode scanning. No manual typing. Perfect for meetups - scan and verify instantly.',
+      description: 'CheckMEND takes 30+ seconds. We deliver instant verification in 3 seconds with barcode scanning. No manual typing. Perfect for meetups - scan and check instantly.',
       badge: '10x Faster',
       color: 'from-pink-500 to-red-500'
     },
@@ -43,7 +43,7 @@ export const WhyChooseSafeOrStolen = () => {
     {
       icon: Award,
       title: 'Best Value — From $0.99',
-      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers $0.99/check or $10/month unlimited. Better than CheckMEND — a real mobile app, not a slow website.',
+      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers $0.99/check or $10/month unlimited. We provide a real mobile app, not just a slow website.',
       badge: 'Best Value',
       color: 'from-indigo-500 to-purple-500'
     },
@@ -69,10 +69,10 @@ export const WhyChooseSafeOrStolen = () => {
         <div className="text-center mb-12">
           <Badge className="mb-4">Why We're Different</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why SafeOrStolen is Better Than CheckMEND, IMEI.info, Swappa
+            Why SafeOrStolen is a Stronger Choice
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Better than CheckMEND in every way - faster, cheaper, and mobile-first with instant stolen verification.
+            Other tools may focus on just one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles all in one place. We offer instant checks through our mobile app.
           </p>
         </div>
 

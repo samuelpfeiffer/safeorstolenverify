@@ -17,7 +17,7 @@ const CheckVinPage = () => {
       intro={
         <>
           <p>
-            A vehicle's 17-character VIN carries its entire history — theft reports, salvage
+            A vehicle's 17-character VIN identifies it — our own stolen reports and public web results
             titles, flood damage, odometer rollbacks. Sellers know most buyers never run it.
           </p>
         </>

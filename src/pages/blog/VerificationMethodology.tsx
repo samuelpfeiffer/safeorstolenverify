@@ -105,7 +105,7 @@ export default function VerificationMethodology() {
                       <h3 className="text-2xl font-bold mb-3">2. Carrier & Manufacturer Blacklists</h3>
                       <ul className="space-y-2 mb-4">
                         <li><strong>Mobile Carriers:</strong> AT&T, Verizon, T-Mobile, Sprint blacklisted IMEI databases</li>
-                        <li><strong>carrier and manufacturer blacklists Database:</strong> Global mobile device blacklist (195 countries)</li>
+                        <li><strong>Blacklists and device lookups:</strong> Information on how phone blacklists and device identifiers work. (Note: SafeOrStolen does not check blacklists directly.)</li>
                         <li><strong>Apple & Samsung:</strong> Manufacturer-level device lock and theft reports</li>
                         <li><strong>Find My iPhone/Android:</strong> Lost mode and activation lock status checks</li>
                       </ul>
@@ -181,7 +181,7 @@ export default function VerificationMethodology() {
 
               <h3 className="text-2xl font-bold mb-3">Machine Learning Training Data</h3>
               <p className="text-lg mb-4">
-                Our AI models are trained on 15 million verified theft reports, 8 million legitimate transactions, and 3 million fraud cases. We continuously retrain models monthly to adapt to new scammer tactics and theft patterns.
+                Our AI models are trained on millions of reported stolen items and other relevant data to identify potential risks. We continuously update models to adapt to new patterns and help detect suspicious activity.
               </p>
 
               </section>

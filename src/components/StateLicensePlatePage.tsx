@@ -33,7 +33,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  };
 
  const title = `Free ${stateData.name} License Plate Lookup | SafeOrStolen`;
- const metaDescription = `Free ${stateData.name} license plate lookup. Check if any ${stateData.abbrev} vehicle is stolen. ${stateData.hasTheftDatabase ? `Search ${stateData.theftDatabaseName} and ` : 'Search '}vehicle theft and title databases databases instantly.`;
+ const metaDescription = `Free ${stateData.name} license plate lookup. Check if any ${stateData.abbrev} vehicle is stolen. ${stateData.hasTheftDatabase ? `Search ${stateData.theftDatabaseName} and ` : ''}SafeOrStolen reports and public web results instantly.`;
  
  const keywords = [
  `${stateData.name.toLowerCase()} license plate lookup`,
@@ -124,9 +124,9 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
  {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
- <li>vehicle theft and title databases</li>
- <li>{stateData.name} vehicle theft and title databases</li>
- <li>Stolen-property databases and community theft reports</li>
+ <li>public web results</li>
+ <li>SafeOrStolen reports and public web results</li>
+ <li>SafeOrStolen reports and public web results</li>
  <li>Vehicle Title Records records</li>
  </ul>
  
@@ -217,7 +217,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Shield className="w-8 h-8 text-primary mb-2" />
  <span className="text-sm font-semibold">
- {stateData.hasTheftDatabase ? stateData.theftDatabaseName : 'vehicle theft and title databases'}
+ {stateData.hasTheftDatabase ? stateData.theftDatabaseName : 'SafeOrStolen reports and public web results'}
  </span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
@@ -251,11 +251,11 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  )}
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">vehicle theft and title databases</span>
+ <span className="text-base">public web results</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">{stateData.name} vehicle theft and title databases</span>
+ <span className="text-base">SafeOrStolen reports and public web results</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
@@ -267,7 +267,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">community theft reports</span>
+ <span className="text-base">SafeOrStolen reports and public web results</span>
  </div>
  </div>
  <DataPartnerBadges variant="compact" />
@@ -427,7 +427,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $10/month unlimited. 
- Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}vehicle theft and title databases and multiple sources.
+ Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}SafeOrStolen reports, public web results, and AI analysis.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="item-1" className="bg-background px-6 rounded-lg">

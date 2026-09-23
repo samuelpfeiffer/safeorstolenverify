@@ -11,7 +11,7 @@ const VerifiedResultPage: React.FC = () => {
     <>
       <PageSEO
         title="SafeOrStolen Verified ✓ — Item Passed a SafeOrStolen Check"
-        description="This item was verified clean by SafeOrStolen against law enforcement, insurance, and carrier databases."
+        description="This item was verified by SafeOrStolen by analyzing SafeOrStolen reports, public web data, and AI insights."
         canonical={`/verified/${id}`}
       />
       <div className="max-w-lg mx-auto px-4 py-16 pt-24 text-center space-y-8">
@@ -20,7 +20,7 @@ const VerifiedResultPage: React.FC = () => {
             <CheckCircle className="w-10 h-10 text-green-600" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">✓ VERIFIED CLEAN</h1>
-          <p className="text-muted-foreground">This item was verified by SafeOrStolen against 100+ law enforcement, insurance, and carrier databases.</p>
+          <p className="text-muted-foreground">This item was verified by SafeOrStolen by analyzing SafeOrStolen reports, public web data, and AI insights.</p>
         </header>
 
         <section className="bg-card border border-border rounded-xl p-6 text-left space-y-4">

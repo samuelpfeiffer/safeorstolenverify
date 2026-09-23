@@ -33,7 +33,7 @@ const Features = () => {
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates,
             electronics, firearms, and bicycles in one place.
-            Access community theft registries and firearms registries from your pocket.
+            Search SafeOrStolen's reports and firearms data from your pocket.
           </p>
         </div>
 

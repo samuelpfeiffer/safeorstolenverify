@@ -111,7 +111,7 @@ const BestFreeIMEICheckers2025 = () => {
     },
     {
       rank: 4,
-      name: 'CheckMEND',
+      name: 'Dedicated stolen-item lookup services (which SafeOrStolen is not)',
       rating: 3.7,
       badge: null,
       description: 'UK-focused service with good coverage in specific regions',
@@ -469,7 +469,7 @@ const BestFreeIMEICheckers2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Why do some services charge for blacklist checks?</h3>
                     <p className="text-muted-foreground">
-                      Accessing carrier and community theft registries has costs. Some services pass this 
+                      Checking various stolen-item sources and processing public web results incurs costs. Some services pass this
                       to users per-check, while others like SafeOrStolen include it free with limits.
                     </p>
                   </CardContent>

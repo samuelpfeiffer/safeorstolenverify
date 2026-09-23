@@ -129,7 +129,7 @@ const LikeCarfaxForPhones = () => {
                 <li>❌ Buyers had no way to verify if phones were stolen</li>
                 <li>❌ Sellers couldn't prove phones were legitimate</li>
                 <li>❌ $13 billion in stolen phones sold annually</li>
-                <li>❌ Existing services (CheckMEND, IMEI.info) were slow, expensive, web-only</li>
+                <li>❌ Existing services (CheckMEND, IMEI.info) were slow, expensive, web-only, and often unreliable.</li>
               </ul>
             </Card>
 
@@ -257,7 +257,7 @@ const LikeCarfaxForPhones = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1 text-red-700 dark:text-red-400">STOLEN</h4>
-                    <p className="text-sm text-muted-foreground">Device reported stolen. Found in law enforcement/carrier databases. DO NOT PURCHASE.</p>
+                    <p className="text-sm text-muted-foreground">Device reported as potentially stolen. Our analysis of public data indicates a high risk. Exercise extreme caution. </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

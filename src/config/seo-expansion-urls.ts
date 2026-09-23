@@ -1,6 +1,6 @@
 /**
  * MASSIVE SEO EXPANSION - 2000+ URLs to dominate search rankings
- * Competition: CheckMEND, IMEI checkers, Carfax, AutoCheck, vehicle theft and title databases
+ * Competition: IMEI checkers, Carfax, AutoCheck, national vehicle title databases
  */
 
 export interface SEOUrl {

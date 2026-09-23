@@ -6,7 +6,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
     <>
     <ItemLandingPageTemplate
       title="Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen before buying. Verify against PennDOT and community theft registries."
+      metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen before buying. Verify its status through our analysis."
       h1="Pennsylvania License Plate Lookup - Verify PA Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
@@ -20,11 +20,11 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         'PA vehicle stolen database'
       ]}
       content={{
-        intro: "Pennsylvania experiences notable vehicle theft, concentrated in Philadelphia and Pittsburgh metro areas. Before buying any used vehicle in Pennsylvania, verify the license plate against our comprehensive database that includes PennDOT records, community theft reports, and community theft registries.",
+        intro: "Pennsylvania experiences notable vehicle theft, concentrated in Philadelphia and Pittsburgh metro areas. Before buying any used vehicle in Pennsylvania, verify the license plate through our service to see if it has been reported as stolen.",
         
-        whatIs: "A Pennsylvania license plate lookup allows you to verify if a vehicle registered in PA has been reported stolen, salvaged, or has title issues. By entering the PA license plate number, our system cross-references the Pennsylvania Department of Transportation (PennDOT), National Crime Information Center (community theft reports), Pennsylvania State Police records. This verification is essential when purchasing vehicles in Philadelphia, Pittsburgh, Allentown, Erie, and throughout Pennsylvania's used vehicle market.",
+        whatIs: "A Pennsylvania license plate lookup allows you to verify if a vehicle registered in PA has been reported stolen. By entering the PA license plate number, our system cross-references publicly available information, SafeOrStolen's own reported items, and uses AI analysis. This verification is essential when purchasing vehicles in Philadelphia, Pittsburgh, Allentown, Erie, and throughout Pennsylvania's used vehicle market.",
         
-        howItWorks: "Our Pennsylvania license plate lookup works by querying multiple databases simultaneously: (1) PennDOT vehicle registration records to verify the plate is actively registered, (2) community theft reports for federal theft reports, (3) Pennsylvania State Police records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt, salvage, or junk designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
+        howItWorks: "Our Pennsylvania license plate lookup works by querying publicly available information, SafeOrStolen's own reported items, and using AI analysis. You receive a comprehensive report showing the vehicle's theft status and any red flags.",
         
         whyCheck: "Pennsylvania's location between major metropolitan areas (NYC, DC, Baltimore) makes it a transit corridor for stolen vehicles. The I-76, I-95, and Pennsylvania Turnpike are used by theft rings moving vehicles between states. Philadelphia has notable vehicle theft activity. Additionally, flood-damaged vehicles from neighboring states are sometimes resold in PA with clean titles. Always verify before purchasing.",
         
@@ -33,7 +33,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           "Philadelphia, Pittsburgh, Allentown, Erie verification",
           "Check for salvage, rebuilt, and flood damage titles",
           "Verify seller is registered owner in Pennsylvania",
-          "Access community theft reports and Pennsylvania State Police records",
+          "Access SafeOrStolen's item reports and public web data",
           "Detect cloned plates and VIN switching",
           "Free Pennsylvania license plate lookup"
         ],
@@ -50,7 +50,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "Can I check if a car is stolen in Philadelphia using the license plate?",
-            answer: "Yes, SafeOrStolen's Pennsylvania license plate lookup checks vehicles registered in Philadelphia and all surrounding counties against PennDOT, community theft reports, and Pennsylvania State Police databases. This is essential for screening vehicles when meeting sellers in the Philadelphia metro area."
+            answer: "Yes, SafeOrStolen's Pennsylvania license plate lookup checks vehicles registered in Philadelphia and all surrounding counties against public information, SafeOrStolen's own reported items, and AI analysis. This is essential for screening vehicles when meeting sellers in the Philadelphia metro area."
           },
           {
             question: "How accurate is the Pennsylvania license plate stolen vehicle check?",

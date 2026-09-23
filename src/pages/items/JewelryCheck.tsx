@@ -34,7 +34,7 @@ const JewelryCheck = () => {
       howItWorksSteps={[
         "Find identifying marks: Check for laser inscriptions on diamonds, hallmarks, or engraved serial numbers",
         "Enter any identifying numbers into our verification tool",
-        "Our system searches jewelry theft databases, police records",
+        "Our system checks SafeOrStolen's reports, public web results, and uses AI analysis to identify potentially stolen jewelry.",
         "Get instant results - know if the piece has been reported stolen"
       ]}
       whyVerifyTitle="Why Check Jewelry Before Buying?"

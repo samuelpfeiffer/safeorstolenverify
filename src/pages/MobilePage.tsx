@@ -114,7 +114,7 @@ export default function MobilePage() {
                 Most stolen item checks happen in the field—at marketplace meetups, car lots, pawn shops, and auctions. A web-only service isn't practical when you need verification in 30 seconds before a sale closes.
               </p>
               <p>
-                SafeOrStolen covers <strong>all six item categories</strong>. Our competitors like CheckMEND and IMEI.info are web-only. That means you're fumbling with a mobile browser while the seller waits impatiently.
+                SafeOrStolen helps you verify items in <strong>all six categories</strong>. Our competitors are often web-only, meaning you're fumbling with a mobile browser while the seller waits impatiently.
               </p>
               <p>
                 Our app is designed for real-world use: instant camera scanning, one-tap verification, offline caching, and a clean interface optimized for quick checks on the go.

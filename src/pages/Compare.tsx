@@ -135,14 +135,14 @@ const Compare = () => {
  <>
  <PageSEO
  title="SafeOrStolen vs Carfax vs IMEI Checkers — Free Alternative Comparison | SafeOrStolen"
- description="Compare SafeOrStolen to Carfax, CheckMEND, IMEI.info, and vehicle theft and title databases. Checking phones, cars, bikes, firearms, and electronics in one place. See why SafeOrStolen is the best free alternative."
- keywords="CheckMEND alternative, better than IMEI.info, Swappa alternative, Carfax alternative, best stolen item checker, IMEI checker comparison, VIN lookup comparison, stolen verification app"
+ description="Compare SafeOrStolen to other services. SafeOrStolen checks phones, cars, bikes, firearms, and electronics in one place. See how it works."
+ keywords="SafeOrStolen alternative, stolen item checker, IMEI device lookup, VIN lookup, stolen verification app"
  canonical="/compare"
  structuredData={{
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Stolen Item Checker Comparison - SafeOrStolen and Competitors",
- "description": "Compare SafeOrStolen with CheckMEND, IMEI.info, Swappa, and Carfax",
+ "description": "Compare SafeOrStolen to other services to understand what it checks.",
  "specialty": "comparison"
  }}
  />
@@ -150,7 +150,7 @@ const Compare = () => {
  {/* Minimal noscript fallback */}
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <p><strong>SafeOrStolen, CheckMEND, IMEI.info, and Carfax Comparison</strong></p>
+ <p><strong>Compare SafeOrStolen to Other Services</strong></p>
  <p>Compare stolen item verification services. SafeOrStolen offers barcode scanning from your phone browser.</p>
  </div>
  </noscript>
@@ -279,7 +279,7 @@ const Compare = () => {
  <h2 className="text-2xl font-bold mb-6 text-center">Detailed Comparisons</h2>
  <div className="grid sm:grid-cols-2 gap-4">
  <Link to="/vs-checkmend" className="block p-5 rounded-lg border hover:border-primary transition-colors">
- <h3 className="font-semibold mb-1">SafeOrStolen vs CheckMEND</h3>
+ <h3 className="font-semibold mb-1">SafeOrStolen compared to other services</h3>
  <p className="text-sm text-muted-foreground">Coverage and pricing side by side.</p>
  </Link>
  <Link to="/vs-imeiinfo" className="block p-5 rounded-lg border hover:border-primary transition-colors">

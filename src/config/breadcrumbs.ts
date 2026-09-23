@@ -67,7 +67,7 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     ],
     '/vs-checkmend': [
       { name: 'Comparisons', href: '/compare' },
-      { name: 'vs CheckMEND', href: '/vs-checkmend' }
+      { name: 'vs other services', href: '/vs-other-services' }
     ],
     '/vs-imeiinfo': [
       { name: 'Comparisons', href: '/compare' },

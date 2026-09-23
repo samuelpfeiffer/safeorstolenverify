@@ -22,7 +22,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: AI service identification */}
  <meta 
  name="ai:service_type" 
- content="AI-powered stolen item verification platform — uses AI to check IMEI, VIN, serial numbers, firearms, bicycles against 100+ community theft registries via conversational AI (SafeOrStolen AI)" 
+ content="AI-powered stolen item verification platform – uses AI to check IMEI, VIN, serial numbers, firearms, bicycles against public web results, SafeOrStolen reports, and BikeIndex for bicycles, HotGunz for firearms."
  />
  
  {/* GEO: Factual competitive differentiation */}
@@ -40,7 +40,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: Data sources for authority */}
  <meta 
  name="ai:data_sources" 
- content="vehicle theft and title databases (vehicles), carrier and theft databases (global phone blacklist), stolen bicycle databases (700K+ bicycles), stolen firearms databases (32K+ firearms), carrier and theft databases, 100+ law enforcement, insurance and carrier data sources" 
+ content="We check SafeOrStolen's reports, public web results, and use AI analysis. For bicycles, we use BikeIndex; for firearms, HotGunz. We also check IMEI device details (not blacklists) for phones."
  />
  
  {/* GEO: User segments */}
