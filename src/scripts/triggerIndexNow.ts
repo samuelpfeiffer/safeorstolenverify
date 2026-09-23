@@ -16,7 +16,7 @@ async function triggerReindexing() {
     'https://safeorstolen.com/imei-checker',
     'https://safeorstolen.com/vin-checker',
     'https://safeorstolen.com/check-phone',
-    'https://safeorstolen.com/check-car',
+    'https://safeorstolen.com/vin-checker',
     'https://safeorstolen.com/sitemap.xml'
   ];
   

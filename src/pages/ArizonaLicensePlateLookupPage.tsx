@@ -56,7 +56,7 @@ const ArizonaLicensePlateLookupPage = () => {
  },
  {
  question: "Should I also run a VIN check for Arizona vehicles?",
- answer: "Yes, we recommend running both a license plate lookup AND a VIN check before purchasing. License plate lookup provides quick screening, while VIN check gives you complete history including accidents, title brands, and odometer fraud. Use our free VIN checker at safeorstolen.com/check-car."
+ answer: "Yes, we recommend running both a license plate lookup AND a VIN check before purchasing. License plate lookup provides quick screening, while VIN check gives you complete history including accidents, title brands, and odometer fraud. Use our free VIN checker at safeorstolen.com/vin-checker."
  }
  ]
  }}
