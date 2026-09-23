@@ -39,6 +39,7 @@ interface ItemLandingPageProps {
  process: string[];
  faqs: { question: string; answer: string }[];
  };
+ dateModified?: string;
 }
 
 export const ItemLandingPageTemplate = ({
@@ -47,7 +48,8 @@ export const ItemLandingPageTemplate = ({
  h1,
  itemType,
  keywords,
- content
+ content,
+ dateModified = "2026-03-10"
 }: ItemLandingPageProps) => {
  const location = useLocation();
  
@@ -69,14 +71,14 @@ export const ItemLandingPageTemplate = ({
  "name": "Worldwide"
  },
  "description": metaDescription,
- "dateModified": "2026-03-10"
+ "dateModified": dateModified
  };
 
  const howToSchema = {
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": `How to Check if ${itemType} is Stolen`,
- "dateModified": "2026-03-10",
+ "dateModified": dateModified,
  "step": content.process.map((step, index) => ({
  "@type": "HowToStep",
  "position": index + 1,
