@@ -12,16 +12,6 @@ import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 const AboutPage = () => {
  const dataPartners = [
  {
- name: "community theft reports",
- type: "Federal Law Enforcement",
- description: "FBI's stolen property database - we crawl and cross-reference federal theft records"
- },
- {
- name: "vehicle theft and title databases",
- type: "Insurance Crime Database",
- description: "VINCheck and theft records - we aggregate insurance crime data for vehicle verification"
- },
- {
  name: "Nationwide Stolen Firearms Database",
  type: "Firearms Database Partner",
  description: "Stolen firearms registry - we aggregate their database for firearms verification"
