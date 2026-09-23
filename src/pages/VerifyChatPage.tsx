@@ -575,7 +575,7 @@ const VerifyChatPage: React.FC = () => {
 
  <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 font-mono">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- 100+ DATABASES · AI-POWERED
+ MULTI-SOURCE · AI-POWERED
  </p>
  </div>
  </div>
@@ -871,7 +871,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
 
  <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide flex items-center justify-center gap-2 flex-wrap">
- <span>100+ DATABASES · ~3S RESULTS · PRIVATE</span>
+ <span>MULTI-SOURCE · ~3S RESULTS · PRIVATE</span>
  <span className="hidden md:inline-flex items-center gap-1">
  ·
  <kbd className="px-1 py-px rounded-[0.25rem] border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>
@@ -983,7 +983,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
 
  <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- 100+ DATABASES · community theft reports · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases · 50 STATES
+ MULTI-SOURCE · community theft reports · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases · 50 STATES
  </div>
  </motion.div>
  );

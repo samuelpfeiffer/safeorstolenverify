@@ -51,7 +51,7 @@ const BestFreeIMEICheckers2025 = () => {
       speed: 'Instant',
       pros: [
         'Free stolen/blacklist check included',
-        '100+ database from law enforcement & insurers',
+        'SafeOrStolen reports, web results & AI analysis',
         'Checks more than just phones (VIN, serial numbers)',
         'Mobile apps for iOS and Android',
         'AI-powered risk analysis'

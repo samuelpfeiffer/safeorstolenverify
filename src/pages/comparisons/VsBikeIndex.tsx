@@ -134,7 +134,7 @@ const VsBikeIndex = () => {
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
-                        100+ database sources
+                        multiple sources
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />

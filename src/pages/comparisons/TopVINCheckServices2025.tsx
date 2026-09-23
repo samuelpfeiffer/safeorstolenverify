@@ -54,7 +54,7 @@ const TopVINCheckServices2025 = () => {
       multipleItems: true,
       pros: [
         '$10/month unlimited VIN checks',
-        '100+ database from law enforcement & insurers',
+        'SafeOrStolen reports, web results & AI analysis',
         'Checks more than cars (phones, bikes, tools)',
         'Mobile app for instant verification',
         'AI-powered risk analysis'

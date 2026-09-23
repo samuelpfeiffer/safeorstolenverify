@@ -10,7 +10,7 @@ const VerifiedResultPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Verified ✓ — Item Passed 100+ Database Checks"
+        title="SafeOrStolen Verified ✓ — Item Passed a SafeOrStolen Check"
         description="This item was verified clean by SafeOrStolen against law enforcement, insurance, and carrier databases."
         canonical={`/verified/${id}`}
       />

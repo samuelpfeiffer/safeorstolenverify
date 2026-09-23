@@ -322,7 +322,7 @@ export default function PhoneVerificationGuide() {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">How long does verification take?</h3>
-                  <p>SafeOrStolen provides instant results in 3 seconds or less. Our AI processes 100+ database queries simultaneously while you're completing the transaction.</p>
+                  <p>SafeOrStolen provides instant results in 3 seconds or less. Our AI processes queries simultaneously while you're completing the transaction.</p>
                 </Card>
 
                 <Card className="p-6">

@@ -40,7 +40,7 @@ const faqs = [
  },
  {
  question: "What's the difference between SMS verify and the SafeOrStolen app?",
- answer: "SMS verification requires zero downloads — just send a text. It's perfect for quick checks when you don't have the app installed. The SafeOrStolen mobile app offers additional features: barcode/QR scanning, detailed verification reports, search history, saved items watchlist, and a verification badge you can share with buyers. Both use the same 100+ database verification engine."
+ answer: "SMS verification requires zero downloads — just send a text. It's perfect for quick checks when you don't have the app installed. The SafeOrStolen mobile app offers additional features: barcode/QR scanning, detailed verification reports, search history, saved items watchlist, and a verification badge you can share with buyers. Both use the same verification engine."
  }
 ];
 
@@ -78,7 +78,7 @@ const howToSchema = {
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the identifier", "text": "Locate the IMEI (15 digits), VIN (17 characters), or serial number on the item you want to verify." },
  { "@type": "HowToStep", "position": 2, "name": "Send a text message", "text": "Text the IMEI, VIN, or serial number to the SafeOrStolen verification number." },
- { "@type": "HowToStep", "position": 3, "name": "Receive instant results", "text": "Get a reply within 3-5 seconds showing CLEAN, STOLEN, or UNKNOWN status based on 100+ database checks." },
+ { "@type": "HowToStep", "position": 3, "name": "Receive instant results", "text": "Get a reply within 3-5 seconds showing CLEAN, STOLEN, or UNKNOWN status based on checks." },
  { "@type": "HowToStep", "position": 4, "name": "Make an informed decision", "text": "If CLEAN, proceed with confidence. If STOLEN, walk away and report. If UNKNOWN, exercise caution and get a full report." }
  ]
 };

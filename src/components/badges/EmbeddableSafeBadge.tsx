@@ -23,7 +23,7 @@ export const EmbeddableSafeBadge: React.FC<EmbeddableSafeBadgeProps> = ({
   const badgeDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
   // Plain text for Facebook Marketplace / Craigslist descriptions
-  const plainTextSnippet = `✅ VERIFIED SAFE — This item passed SafeOrStolen's 100+ database check.
+  const plainTextSnippet = `✅ VERIFIED SAFE — This item passed SafeOrStolen's check.
 View verification: ${badgeUrl}
 Checked: ${badgeDate} | ID: ${verificationId.slice(0, 8)}`;
 

@@ -22,7 +22,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "item": {
             "@type": "Product",
             "name": "SafeOrStolen",
-            "description": "Free stolen item verification platform with 100+ database",
+            "description": "Free stolen item verification platform",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
           }
         },

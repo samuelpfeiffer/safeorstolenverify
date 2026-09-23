@@ -17,7 +17,7 @@ const SellerBadgePage: React.FC = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">SafeOrStolen Seller Verification Badge</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto speakable-summary">
             Prove your items are legitimate. Generate a free verification badge showing your item passed SafeOrStolen's 
-            100+ database check. Add it to your Facebook Marketplace, eBay, Craigslist, or OfferUp listing. 
+            multi-source check. Add it to your Facebook Marketplace, eBay, Craigslist, or OfferUp listing. 
             Buyers trust verified sellers — sell faster and get full price.
           </p>
         </header>

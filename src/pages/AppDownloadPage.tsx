@@ -21,7 +21,7 @@ const APP_FEATURES = [
  {
  icon: <Shield className="w-6 h-6" />,
  title: 'Full Database Access',
- desc: 'Same 100+ database coverage as the web version — gun serial, IMEI, VIN, license plate, bike serial, and general serial numbers all in one app.',
+ desc: 'Same verification coverage as the web version — gun serial, IMEI, VIN, license plate, bike serial, and general serial numbers all in one app.',
  },
  {
  icon: <Star className="w-6 h-6" />,

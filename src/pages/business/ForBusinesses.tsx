@@ -62,7 +62,7 @@ export default function ForBusinesses() {
  'Embeddable verification widget',
  'REST API for POS integration',
  'Unlimited IMEI, VIN, serial number checks',
- '100+ database sources including carrier and theft databases, Stolen Firearms Databases',
+ 'SafeOrStolen reports, web results and AI analysis',
  'All 50 US state coverage',
  'Compliance reporting and audit logs',
  '3-second verification results',
