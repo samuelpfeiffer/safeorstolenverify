@@ -4,6 +4,16 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // ===== 2026-09-23 car-page consolidation: survivors are /how-to-check-if-car-stolen (guide) and /vin-checker (tool) =====
+  '/check-car': '/vin-checker',
+  '/check-stolen-car': '/vin-checker',
+  '/check-car-stolen-vin': '/vin-checker',
+  '/free-stolen-vehicle-check': '/vin-checker',
+  '/vin-check': '/vin-checker',
+  '/check-vin': '/vin-checker',
+  '/is-this-car-stolen': '/vin-checker',
+  '/check/car': '/vin-checker',
+
   // ===== REMOVED PAGES =====
   '/news/onevalley-recognition': '/press',
 
@@ -106,20 +116,20 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/check-ipad': '/check-electronics',
   '/check-tablet': '/check-electronics',
   '/check-macbook': '/check-laptop',
-  '/check-toyota': '/check-car',
-  '/check-honda': '/check-car',
-  '/check-ford': '/check-car',
-  '/check-bmw': '/check-car',
-  '/check-mercedes': '/check-car',
-  '/check-tesla': '/check-car',
-  '/check-motorcycle': '/check-car',
-  '/check-harley-davidson': '/check-car',
+  '/check-toyota': '/vin-checker',
+  '/check-honda': '/vin-checker',
+  '/check-ford': '/vin-checker',
+  '/check-bmw': '/vin-checker',
+  '/check-mercedes': '/vin-checker',
+  '/check-tesla': '/vin-checker',
+  '/check-motorcycle': '/vin-checker',
+  '/check-harley-davidson': '/vin-checker',
 
   // ===== HOW-TO REDIRECTS =====
   '/how-to-verify-phone-not-stolen': '/check-phone',
   '/how-to-check-if-iphone-is-stolen': '/check-phone',
   '/how-to-avoid-buying-stolen-iphone': '/check-phone',
-  '/how-to-check-if-car-is-stolen-before-buying': '/check-car',
+  '/how-to-check-if-car-is-stolen-before-buying': '/vin-checker',
 
   // ===== SPECIFIC PAGE REDIRECTS =====
   '/ultimate-guide': '/how-it-works',
@@ -220,7 +230,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/facebook-marketplace-verification': '/facebook-marketplace-stolen-check',
   '/craigslist-verification': '/craigslist-safety-verification',
   '/how-to-check-if-phone-is-stolen': '/check-phone',
-  '/how-to-verify-car-not-stolen': '/check-car',
+  '/how-to-verify-car-not-stolen': '/vin-checker',
   '/refunds': '/terms',
   '/app/serial-number-checker': '/serial-number-checker',
   '/app/imei-checker': '/imei-checker',
@@ -417,7 +427,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/state/texas/stolen-item-checker': '/texas-vin-lookup',
   '/state/illinois/stolen-item-checker': '/illinois-vin-lookup',
   '/stolen-phone-check': '/check-stolen-phone',
-  '/stolen-car-check': '/check-stolen-car',
+  '/stolen-car-check': '/vin-checker',
   '/check-drone': '/verify',
   '/can-police-track-stolen-phone': '/faq',
   '/blog/mobile-app-features': '/app',
