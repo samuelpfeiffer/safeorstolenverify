@@ -286,7 +286,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Verify inspection sticker matches vehicle VIN records'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Honda Accord', 'Honda Civic', 'Dodge Charger', 'Nissan Altima'],
- verificationAdvice: 'Pennsylvania\'s position between major East Coast markets means stolen vehicles may transit through from other states. Check vehicle theft and title databases for complete title history across all states. For Philadelphia-area purchases, verification is especially important.',
+ verificationAdvice: 'Pennsylvania\'s position between major East Coast markets means stolen vehicles may transit through from other states. Run an NMVTIS title history report for complete title history across all states. For Philadelphia-area purchases, verification is especially important.',
  uniqueFaqs: [
  { question: 'How does Philadelphia vehicle theft compare to other cities?', answer: 'Philadelphia has significant vehicle theft rates, particularly in certain neighborhoods. The city\'s proximity to I-95 and multiple state borders allows quick transport of stolen vehicles. The Kia/Hyundai epidemic has also affected the city.' },
  { question: 'Should I be concerned about rust on Pennsylvania vehicles?', answer: 'Yes, Pennsylvania uses significant road salt in winter. Vehicles from Pittsburgh and mountainous areas may have more rust than those from Philadelphia. Carefully inspect the undercarriage, wheel wells, and frame for corrosion.' }
