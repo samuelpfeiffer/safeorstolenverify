@@ -161,7 +161,6 @@ const VinCheckerApp = () => {
  <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
  {[
  "vehicle theft and title databases stolen vehicle database",
- "FBI National Crime Information Center",
  "State DMV theft reports (all 50 states)",
  "Insurance total loss/theft claims",
  "Title brand checks (salvage, rebuilt)",

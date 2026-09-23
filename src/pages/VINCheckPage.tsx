@@ -56,7 +56,7 @@ const VINCheckPage = () => {
  },
  {
  question: "What databases does the VIN check search?",
- answer: "We check community theft reports (FBI's stolen vehicle database), vehicle theft and title databases (insurance industry database), vehicle theft and title databases, insurance total loss records, and our proprietary user-reported theft database for comprehensive coverage."
+ answer: "We check SafeOrStolen's own stolen-item reports, public web results and AI analysis. SafeOrStolen does not search NICB, NMVTIS, NCIC or police databases; check those yourself."
  },
  {
  question: "Is this the same as Carfax?",

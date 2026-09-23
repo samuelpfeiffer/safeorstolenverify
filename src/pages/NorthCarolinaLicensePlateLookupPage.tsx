@@ -54,7 +54,7 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  },
  {
  question: "How accurate is the North Carolina license plate stolen vehicle check?",
- answer: "Our North Carolina license plate lookup is accurate for registered vehicles. We check official NCDMV records, community theft reports (FBI's database), and NC State Highway Patrol records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+ answer: "Our North Carolina license plate lookup is accurate for registered vehicles. We check SafeOrStolen's own stolen-item reports, public web results and AI analysis. For official records, contact NCDMV or local police. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
  },
  {
  question: "Does the lookup work for vehicles in the Raleigh-Durham area?",

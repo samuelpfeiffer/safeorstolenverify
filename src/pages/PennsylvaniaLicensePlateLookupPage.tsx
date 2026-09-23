@@ -54,7 +54,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           },
           {
             question: "How accurate is the Pennsylvania license plate stolen vehicle check?",
-            answer: "Our Pennsylvania license plate lookup is accurate for registered vehicles. We check official PennDOT records, community theft reports (FBI's database), and Pennsylvania State Police records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+            answer: "Our Pennsylvania license plate lookup is accurate for registered vehicles. We check SafeOrStolen's own stolen-item reports, public web results and AI analysis. For official records, contact PennDOT or local police. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
           },
           {
             question: "Does the lookup work for vehicles in Pittsburgh and western Pennsylvania?",
