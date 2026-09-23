@@ -208,7 +208,7 @@ Automatically targeted through KeywordTargeting component
 
 ### Advantages Over Competitors:
 1. **Faster verification** (30s vs 5+ minutes)
-2. **Broader coverage** (100+ databases)
+2. **Broader coverage** (multiple sources)
 3. **Better UX** (mobile app + web)
 4. **More affordable** (4 free vs 0 free)
 5. **Superior SEO** (this system)

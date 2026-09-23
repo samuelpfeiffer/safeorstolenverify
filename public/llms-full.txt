@@ -26,7 +26,7 @@
 
 ## IMEI Checker — safeorstolen.com/imei-checker
 
-Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks carrier and theft databases, community theft registries, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
+Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks the IMEI against its own stolen-item reports, public web results, and AI analysis. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
 
 ## VIN Lookup — safeorstolen.com/vin-checker
 
@@ -62,11 +62,11 @@ The installable Progressive Web App (PWA) works on iOS and Android browsers with
 
 ## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
 
-SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states.
+SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis across phones, vehicles, serial-numbered items, firearms, and bicycles; TheftAZ is a separate official Arizona resource you can search yourself.
 
 ## Carfax Alternative — safeorstolen.com/carfax-alternative
 
-SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $10/month unlimited) using stolen property reports from all 50 states.
+SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $0.99/check or $10/month unlimited) using SafeOrStolen's own stolen-item reports, public web results, and AI analysis.
 
 ## Who Uses SafeOrStolen
 

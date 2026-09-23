@@ -4,7 +4,7 @@ const IMEICheckerPage = () => {
  return (
  <ItemLandingPageTemplate
  title="Free IMEI Check — Is This Phone Stolen or Blacklisted? | SafeOrStolen"
- metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks carrier and theft databases, and stolen property reports from all 50 states simultaneously. Results in 3 seconds."
+ metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks carrier and theft databases, and community theft reports simultaneously. Results in 3 seconds."
  h1="Free IMEI Check — Stolen & Blacklist Verification"
  itemType="Phone"
  keywords={[
@@ -48,7 +48,7 @@ const IMEICheckerPage = () => {
  },
  {
  question: "How do I check if a phone is stolen?",
- answer: "Get the phone's 15-digit IMEI by dialling *#06# on the handset or opening Settings then About Phone, and enter it at SafeOrStolen before you pay. SafeOrStolen searches that IMEI against stolen property reports from all 50 states, carrier and theft databases, community theft reports, and community theft registries and returns a result in a few seconds. Always confirm the IMEI shown on the phone itself matches the one the seller sent you."
+ answer: "Get the phone's 15-digit IMEI by dialling *#06# on the handset or opening Settings then About Phone, and enter it at SafeOrStolen before you pay. SafeOrStolen searches that IMEI against community theft reports, carrier and theft databases, community theft reports, and community theft registries and returns a result in a few seconds. Always confirm the IMEI shown on the phone itself matches the one the seller sent you."
  },
  {
  question: "How do I check if a phone is blacklisted?",

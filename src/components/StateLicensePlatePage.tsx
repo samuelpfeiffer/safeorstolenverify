@@ -86,7 +86,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `How much does the ${stateData.name} license plate lookup cost?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $10/month. Or pay $0.99 per check. Check any ${stateData.abbrev} vehicle against vehicle theft and title databases and 100+ databases.`
+ "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $10/month. Or pay $0.99 per check. Check any ${stateData.abbrev} vehicle against multiple sources.`
  }
  },
  {
@@ -119,14 +119,14 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </header>
  <div>
  <h1>Free {stateData.name} License Plate Lookup</h1>
- <p>Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}100+ databases instantly. Verify any {stateData.abbrev} vehicle isn't stolen before buying.</p>
+ <p>Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}multiple sources instantly. Verify any {stateData.abbrev} vehicle isn't stolen before buying.</p>
  
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
  {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
  <li>vehicle theft and title databases</li>
  <li>{stateData.name} vehicle theft and title databases</li>
- <li>Stolen-property databases and stolen property reports from all 50 states</li>
+ <li>Stolen-property databases and community theft reports</li>
  <li>Vehicle Title Records records</li>
  </ul>
  
@@ -165,14 +165,14 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  
  <h2>Related Resources</h2>
  <ul>
- <li><a href="/check-car">VIN Lookup</a></li>
+ <li><a href="/vin-checker">VIN Lookup</a></li>
  <li><a href="/imei-checker">IMEI Checker</a></li>
  <li><a href="/firearms-check">Firearm Check</a></li>
  <li><a href="/verify">Verify Any Item</a></li>
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>SafeOrStolen checks multiple sources in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -185,7 +185,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Free {stateData.name} License Plate Lookup
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}100+ databases instantly. 
+ Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}multiple sources instantly. 
  Verify any {stateData.abbrev} vehicle isn't stolen before buying. Free license plate lookup for 
  {stateData.majorCities.slice(0, 3).join(', ')} and all of {stateData.name}.
  </p>
@@ -226,7 +226,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <CheckCircle className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">100+ Databases</span>
+ <span className="text-sm font-semibold">multiple sources</span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Award className="w-8 h-8 text-primary mb-2" />
@@ -267,7 +267,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">Stolen property reports from all 50 states</span>
+ <span className="text-base">community theft reports</span>
  </div>
  </div>
  <DataPartnerBadges variant="compact" />
@@ -427,7 +427,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $10/month unlimited. 
- Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}vehicle theft and title databases and 100+ databases.
+ Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}vehicle theft and title databases and multiple sources.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="item-1" className="bg-background px-6 rounded-lg">
@@ -445,7 +445,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <AccordionContent className="text-muted-foreground">
  Yes, we recommend running both a license plate lookup AND a VIN check before purchasing. 
  License plate lookup provides quick screening, while VIN check gives complete history. 
- <Link to="/check-car" className="text-primary hover:underline ml-1">Use our free VIN checker →</Link>
+ <Link to="/vin-checker" className="text-primary hover:underline ml-1">Use our free VIN checker →</Link>
  </AccordionContent>
  </AccordionItem>
  {stateData.hasTheftDatabase && (
@@ -455,7 +455,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  {stateData.theftDatabaseName} is {stateData.name}'s official stolen property database. 
- SafeOrStolen searches {stateData.theftDatabaseName} along with 100+ other databases in one search.
+ SafeOrStolen searches {stateData.theftDatabaseName} along with multiple sources in one search.
  </AccordionContent>
  </AccordionItem>
  )}
@@ -479,7 +479,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-bold mb-6">Related Searches</h2>
  <div className="grid md:grid-cols-3 gap-4 mb-8">
- <Link to="/check-car" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+ <Link to="/vin-checker" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">VIN Lookup</h3>
  <p className="text-sm text-muted-foreground">Full vehicle history by VIN</p>
  </Link>

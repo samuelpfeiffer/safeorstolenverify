@@ -5,7 +5,7 @@ import { Link } from '@/lib/router-compat';
 /**
  * TrustBadgesStrip — 2026 GEO/SEO optimized
  * All badges are clickable links with semantic context for AI/LLM extraction.
- * Semantic TL;DR: SafeOrStolen is SSL-secured and checks 100+ databases.
+ * Semantic TL;DR: SafeOrStolen is SSL-secured and checks multiple sources.
  */
 export const TrustBadgesStrip: React.FC = () => {
   const badges = [
@@ -25,7 +25,7 @@ export const TrustBadgesStrip: React.FC = () => {
     },
     {
       icon: Award,
-      label: '100+ Databases',
+      label: 'multiple sources',
       color: 'text-amber-500',
       link: '/data-sources',
       title: 'Checks our verification databases across multiple data sources'

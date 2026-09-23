@@ -54,7 +54,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       question: 'How accurate is SafeOrStolen verification?',
-      answer: 'SafeOrStolen checks 100+ databases including stolen property reports from all 50 states, carrier blacklists, insurance claims, and manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.'
+      answer: 'SafeOrStolen checks multiple sources including community theft reports, carrier blacklists, insurance claims, and manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.'
     }
   ];
 
@@ -65,7 +65,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       name: 'Verify with SafeOrStolen',
-      text: 'Run the serial number or IMEI through SafeOrStolen database to check against law enforcement records, carrier blacklists, and stolen item databases. This takes 3 seconds.',
+      text: 'Run the serial number or IMEI through SafeOrStolen database to check against theft reports, carrier blacklists, and stolen item databases. This takes 3 seconds.',
       url: 'https://safeorstolen.com/verify'
     },
     {
@@ -315,7 +315,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">How accurate is SafeOrStolen's verification?</h3>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks 100+ databases including stolen property reports from all 50 states, carrier blacklists, insurance claims, and 
+                  SafeOrStolen checks multiple sources including community theft reports, carrier blacklists, insurance claims, and 
                   manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.
                 </p>
               </div>

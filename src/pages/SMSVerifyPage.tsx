@@ -12,7 +12,7 @@ import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBa
 const faqs = [
  {
  question: "How do I verify an item via SMS text message?",
- answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against 100+ databases including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 state community theft registries. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
+ answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against multiple sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 state community theft registries. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
  },
  {
  question: "What types of items can I verify by text?",
@@ -32,7 +32,7 @@ const faqs = [
  },
  {
  question: "What does the SMS verification result look like?",
- answer: "You'll receive a clear text message with one of three statuses: ✅ CLEAN (no stolen reports found across 100+ databases), 🚨 STOLEN (item has been reported stolen — do not purchase), or ⚠️ UNKNOWN (not enough data to confirm — exercise caution). Each result includes the identifier you checked and a link to get the full detailed report on SafeOrStolen.com."
+ answer: "You'll receive a clear text message with one of three statuses: ✅ CLEAN (no stolen reports found across multiple sources), 🚨 STOLEN (item has been reported stolen — do not purchase), or ⚠️ UNKNOWN (not enough data to confirm — exercise caution). Each result includes the identifier you checked and a link to get the full detailed report on SafeOrStolen.com."
  },
  {
  question: "Is SMS verification secure and private?",
@@ -40,7 +40,7 @@ const faqs = [
  },
  {
  question: "What's the difference between SMS verify and the SafeOrStolen app?",
- answer: "SMS verification requires zero downloads — just send a text. It's perfect for quick checks when you don't have the app installed. The SafeOrStolen mobile app offers additional features: barcode/QR scanning, detailed verification reports, search history, saved items watchlist, and a verification badge you can share with buyers. Both use the same 100+ database verification engine."
+ answer: "SMS verification requires zero downloads — just send a text. It's perfect for quick checks when you don't have the app installed. The SafeOrStolen mobile app offers additional features: barcode/QR scanning, detailed verification reports, search history, saved items watchlist, and a verification badge you can share with buyers. Both use the same verification engine."
  }
 ];
 
@@ -66,7 +66,7 @@ const serviceSchema = {
  },
  "serviceType": "SMS Stolen Item Verification",
  "areaServed": { "@type": "Country", "name": "United States" },
- "description": "Text any IMEI, VIN, or serial number to instantly verify if an item is stolen. No app needed. Results in 3 seconds from 100+ databases.",
+ "description": "Text any IMEI, VIN, or serial number to instantly verify if an item is stolen. No app needed. Results in 3 seconds from multiple sources.",
  "dateModified": "2026-03-08"
 };
 
@@ -78,7 +78,7 @@ const howToSchema = {
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the identifier", "text": "Locate the IMEI (15 digits), VIN (17 characters), or serial number on the item you want to verify." },
  { "@type": "HowToStep", "position": 2, "name": "Send a text message", "text": "Text the IMEI, VIN, or serial number to the SafeOrStolen verification number." },
- { "@type": "HowToStep", "position": 3, "name": "Receive instant results", "text": "Get a reply within 3-5 seconds showing CLEAN, STOLEN, or UNKNOWN status based on 100+ database checks." },
+ { "@type": "HowToStep", "position": 3, "name": "Receive instant results", "text": "Get a reply within 3-5 seconds showing CLEAN, STOLEN, or UNKNOWN status based on checks." },
  { "@type": "HowToStep", "position": 4, "name": "Make an informed decision", "text": "If CLEAN, proceed with confidence. If STOLEN, walk away and report. If UNKNOWN, exercise caution and get a full report." }
  ]
 };
@@ -116,7 +116,7 @@ const SMSVerifyPage = () => {
  <header><h1>SMS Verify — Text Any IMEI, VIN, or Serial Number to Check if Stolen</h1></header>
  <div>
  <article>
- <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from 100+ databases including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, carrier and theft databases, and law enforcement and insurance sources.</p>
+ <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from multiple sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, carrier and theft databases, and law enforcement and insurance sources.</p>
  <h2>How SMS Verification Works</h2>
  <p>Find the IMEI (15 digits), VIN (17 characters), or serial number on the item. Text it to our verification number. Receive instant results: CLEAN, STOLEN, or UNKNOWN. Perfect for gun shows, car lots, flea markets, pawn shops, and private sales where you need a quick answer before handing over cash.</p>
  <h2>What Can You Verify by Text?</h2>
@@ -141,7 +141,7 @@ const SMSVerifyPage = () => {
  </h1>
 
  <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
- Soon you'll be able to text any IMEI, VIN, or serial number to instantly check 100+ databases. 
+ Soon you'll be able to text any IMEI, VIN, or serial number to instantly check multiple sources. 
  No app download. No Wi-Fi. Works on any phone.
  </p>
 
@@ -162,7 +162,7 @@ const SMSVerifyPage = () => {
  <div className="bg-primary/10 rounded-lg p-3">
  <p className="text-muted-foreground text-xs mb-1">SafeOrStolen will reply:</p>
  <p className="text-foreground">✅ <strong>CLEAN</strong> — No stolen reports found.</p>
- <p className="text-xs text-muted-foreground mt-1">Checked: carrier and theft databases, stolen property reports from all 50 states, carrier and theft databases</p>
+ <p className="text-xs text-muted-foreground mt-1">Checked: carrier and theft databases, community theft reports, carrier and theft databases</p>
  </div>
  </div>
  </CardContent>
@@ -215,7 +215,7 @@ const SMSVerifyPage = () => {
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
  <div className="flex items-center gap-2">
  <CheckCircle className="h-5 w-5 text-green-500" />
- <span>100+ Databases</span>
+ <span>multiple sources</span>
  </div>
  <div className="flex items-center gap-2">
  <Clock className="h-5 w-5 text-yellow-500" />
@@ -415,7 +415,7 @@ const SMSVerifyPage = () => {
  Verify Before You Buy — Text or Click
  </h2>
  <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
- Whether you text, scan, or type — SafeOrStolen checks 100+ databases in 3 seconds. 
+ Whether you text, scan, or type — SafeOrStolen checks multiple sources in 3 seconds. 
  Start with 2 free verifications today.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">

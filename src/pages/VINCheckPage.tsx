@@ -8,7 +8,7 @@ const VINCheckPage = () => {
  return (
  <ItemLandingPageTemplate
  title="VIN Check - Free Stolen Vehicle Verification | SafeOrStolen"
- metaDescription="Free VIN check to verify if any car, truck, or motorcycle is stolen. Check VIN number instantly against police, DMV, and insurance databases. Verify before buying."
+ metaDescription="Free VIN check to verify if any car, truck, or motorcycle is stolen. Check VIN number instantly against police, DMV. Verify before buying."
  h1="Free VIN Check - Verify Vehicle Not Stolen"
  itemType="Car"
  keywords={[
@@ -24,14 +24,14 @@ const VINCheckPage = () => {
  'stolen vehicle check'
  ]}
  content={{
- intro: "Check any vehicle's VIN instantly to verify if it's been reported stolen. Our free VIN check searches stolen property reports from all 50 states/vehicle theft and title databases databases, vehicle theft and title databases, and insurance claims to ensure the car, truck, or motorcycle you're buying is clean and safe.",
+ intro: "Check any vehicle's VIN instantly to verify if it's been reported stolen. Our free VIN check searches community theft reports/vehicle theft and title databases databases, vehicle theft and title databases, and insurance claims to ensure the car, truck, or motorcycle you're buying is clean and safe.",
  whatIs: "A VIN check is a verification that uses a vehicle's 17-character Vehicle Identification Number to determine if it's been reported stolen, salvaged, or has title issues. Every vehicle manufactured since 1981 has a unique VIN that's registered in national databases. Running a VIN check before buying a used vehicle protects you from purchasing stolen property, salvage frauds, or vehicles with hidden liens.",
- howItWorks: "Our VIN check queries multiple databases instantly. Enter the 17-character VIN and we'll search: stolen property reports from all 50 states, vehicle theft and title databases, insurance total loss records, and our proprietary theft database. Within seconds, you'll know if the vehicle has any theft reports, title issues, or red flags.",
+ howItWorks: "Our VIN check queries multiple databases instantly. Enter the 17-character VIN and we'll search: community theft reports, vehicle theft and title databases, insurance total loss records, and our proprietary theft database. Within seconds, you'll know if the vehicle has any theft reports, title issues, or red flags.",
  whyCheck: "Over 800,000 vehicles are stolen in the US each year. Many are sold to unsuspecting buyers who lose their money and the vehicle when police recover it. A stolen vehicle will be seized by law enforcement regardless of whether you paid for it, and you have no legal recourse to recover your money from the seller. A 30-second VIN check prevents this nightmare scenario.",
  benefits: [
  "Free VIN check with a free account",
  "Results in under 3 seconds",
- "Checks stolen property reports from all 50 states and vehicle theft and title databases stolen vehicle databases",
+ "Checks community theft reports and vehicle theft and title databases stolen vehicle databases",
  "Verifies DMV and title status",
  "Shows insurance total loss history",
  "Works for cars, trucks, motorcycles, RVs, and trailers",
@@ -56,7 +56,7 @@ const VINCheckPage = () => {
  },
  {
  question: "What databases does the VIN check search?",
- answer: "We check stolen property reports from all 50 states (FBI's stolen vehicle database), vehicle theft and title databases (insurance industry database), vehicle theft and title databases, insurance total loss records, and our proprietary user-reported theft database for comprehensive coverage."
+ answer: "We check SafeOrStolen's own stolen-item reports, public web results and AI analysis. SafeOrStolen does not search NICB, NMVTIS, NCIC or police databases; check those yourself."
  },
  {
  question: "Is this the same as Carfax?",

@@ -9,7 +9,7 @@ export default function TrustEnginePage() {
     <>
       <PageSEO
         title="Universal Trust Engine - Verify IMEI, VIN, Serial | SafeOrStolen"
-        description="Verify any item instantly. Auto-detect IMEI, VIN, serial numbers, and license plates against 100+ databases. Batch upload for pawn shops and auction houses."
+        description="Verify any item instantly. Auto-detect IMEI, VIN, serial numbers, and license plates against multiple sources. Batch upload for pawn shops and auction houses."
         keywords="trust engine, IMEI check, VIN check, serial number verification, batch verification, pawn shop compliance, auction house verification"
         canonical="https://safeorstolen.com/trust-engine"
       />

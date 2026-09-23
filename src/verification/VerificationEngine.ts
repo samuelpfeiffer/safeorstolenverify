@@ -50,7 +50,7 @@ class VerificationEngine {
 
     // Secondary providers can be added here
     // this.addProvider({
-    //   name: 'FBI_stolen property reports from all 50 states',
+    //   name: 'FBI_community theft reports',
     //   verify: this.federalVerification.bind(this),
     //   priority: 2,
     //   enabled: false // Requires special access

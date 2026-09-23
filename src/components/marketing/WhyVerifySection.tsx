@@ -63,7 +63,7 @@ export const WhyVerifySection: React.FC = () => {
                   Protect Yourself in 3 Seconds
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Enter any IMEI, VIN, or serial number and get instant verification against 100+ databases.
+                  Enter any IMEI, VIN, or serial number and get instant verification against multiple sources.
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                   <div className="flex items-center gap-2">
@@ -72,7 +72,7 @@ export const WhyVerifySection: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Database className="h-4 w-4 text-secondary" />
-                    <span className="text-muted-foreground">100+ Databases</span>
+                    <span className="text-muted-foreground">multiple sources</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Shield className="h-4 w-4 text-secondary" />

@@ -14,7 +14,7 @@ import {
 const ForConsumersPage = () => {
  const useCases = [
  { icon: Phone, title: "Buying Used Phones", description: "Verify IMEI before buying from Facebook Marketplace, OfferUp, Craigslist, or local sellers", link: "/check-phone" },
- { icon: Car, title: "Buying Used Cars", description: "Check VIN against stolen vehicle databases before purchasing any vehicle", link: "/check-car" },
+ { icon: Car, title: "Buying Used Cars", description: "Check VIN against stolen vehicle databases before purchasing any vehicle", link: "/vin-checker" },
  { icon: Laptop, title: "Buying Electronics", description: "Verify laptops, gaming consoles, cameras aren't stolen before buying", link: "/check-electronics" },
  { icon: Bike, title: "Buying Bikes & E-Bikes", description: "Check serial numbers against bicycle theft registries", link: "/check-bike" }
  ];
@@ -31,7 +31,7 @@ const ForConsumersPage = () => {
  const consumerFaqs = [
  {
  question: "How do I protect myself when buying used items?",
- answer: "Always verify the IMEI, VIN, or serial number before purchasing. Use SafeOrStolen's free verification tool to check against 100+ stolen item databases. Meet in public places, never pay in cash before verification, and trust your instincts if something feels wrong."
+ answer: "Always verify the IMEI, VIN, or serial number before purchasing. Use SafeOrStolen's free verification tool to check against multiple sources. Meet in public places, never pay in cash before verification, and trust your instincts if something feels wrong."
  },
  {
  question: "What happens if I accidentally buy a stolen item?",
@@ -43,7 +43,7 @@ const ForConsumersPage = () => {
  },
  {
  question: "What items can I verify with SafeOrStolen?",
- answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks 100+ databases including carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states."
+ answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform checks multiple sources including carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and community theft reports."
  },
  {
  question: "Is there a SafeOrStolen mobile app?",
@@ -88,12 +88,12 @@ const ForConsumersPage = () => {
  </header>
  <div>
  <h1>Buy Secondhand with Confidence</h1>
- <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against 100+ stolen item databases before you hand over cash. SafeOrStolen checks carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and stolen property reports from all 50 states in 3 seconds.</p>
+ <p>Protect yourself when buying used phones, cars, electronics, and more. Free verification against multiple sources before you hand over cash. SafeOrStolen checks carrier and theft databases, vehicle theft and title databases, carrier and theft databases, and community theft reports in 3 seconds.</p>
  
  <h2>What Can You Verify?</h2>
  <ul>
  <li><a href="/check-phone">Used Phones</a> — Verify IMEI before buying from Facebook Marketplace, OfferUp, Craigslist</li>
- <li><a href="/check-car">Used Cars</a> — Check VIN against stolen vehicle databases</li>
+ <li><a href="/vin-checker">Used Cars</a> — Check VIN against stolen vehicle databases</li>
  <li><a href="/check-electronics">Electronics</a> — Verify laptops, gaming consoles, cameras</li>
  <li><a href="/check-bike">Bikes & E-Bikes</a> — Check serial numbers against theft registries</li>
  </ul>
@@ -106,7 +106,7 @@ const ForConsumersPage = () => {
  <h2>How SafeOrStolen Protects You</h2>
  <ol>
  <li>Get the identifier — Ask the seller for IMEI (phones), VIN (vehicles), or serial number (electronics)</li>
- <li>Run the verification — Enter the number in SafeOrStolen. We check 100+ databases.</li>
+ <li>Run the verification — Enter the number in SafeOrStolen. We check multiple sources.</li>
  <li>Make an informed decision — If CLEAN, proceed. If flagged, walk away.</li>
  </ol>
  
@@ -147,7 +147,7 @@ const ForConsumersPage = () => {
  
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
  Protect yourself when buying used phones, cars, electronics, and more. 
- Free verification against 100+ stolen item databases before you hand over cash.
+ Free verification against multiple sources before you hand over cash.
  </p>
  
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -224,7 +224,7 @@ const ForConsumersPage = () => {
  <div className="space-y-8">
  {[
  { step: 1, title: "Get the Identifier", desc: "Ask the seller for the IMEI number (phones), VIN (vehicles), or serial number (electronics) before meeting. If they refuse, that's a red flag." },
- { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against stolen property reports from all 50 states, carrier and theft databases, vehicle theft and title databases, and 100+ community theft registries." },
+ { step: 2, title: "Run the Verification", desc: "Enter the number in SafeOrStolen's free verification tool. We check against community theft reports, carrier and theft databases, vehicle theft and title databases, and 100+ community theft registries." },
  { step: 3, title: "Make an Informed Decision", desc: "If the status is CLEAN, proceed with confidence. If there are any red flags, walk away from the deal." }
  ].map(({ step, title, desc }) => (
  <div key={step} className="flex items-start gap-6">
@@ -266,7 +266,7 @@ const ForConsumersPage = () => {
  <Shield className="w-8 h-8 text-primary" />
  </div>
  <h3 className="font-semibold text-lg mb-2">Peace of Mind</h3>
- <p className="text-muted-foreground">Buy with confidence knowing the item is legitimate and clean. 3-second results from 100+ databases.</p>
+ <p className="text-muted-foreground">Buy with confidence knowing the item is legitimate and clean. 3-second results from multiple sources.</p>
  </div>
  </div>
  </div>

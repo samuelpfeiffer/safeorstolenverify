@@ -225,7 +225,7 @@ const ScamCheckerPage: React.FC = () => {
             </details>
             <details className="border border-border rounded-lg p-4 bg-card">
               <summary className="font-medium text-foreground cursor-pointer">Does SafeOrStolen check if items are stolen AND if listings are scams?</summary>
-              <p className="text-sm text-muted-foreground mt-2">Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The stolen item check verifies IMEI, VIN, and serial numbers against 100+ databases. The AI scam checker analyzes the listing itself for fraud signals. Use the <a href="/marketplace-url-checker" className="text-primary hover:underline">Marketplace URL Analyzer</a> for BOTH checks simultaneously.</p>
+              <p className="text-sm text-muted-foreground mt-2">Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The stolen item check verifies IMEI, VIN, and serial numbers against multiple sources. The AI scam checker analyzes the listing itself for fraud signals. Use the <a href="/marketplace-url-checker" className="text-primary hover:underline">Marketplace URL Analyzer</a> for BOTH checks simultaneously.</p>
             </details>
           </div>
         </section>

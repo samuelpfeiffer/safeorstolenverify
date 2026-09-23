@@ -563,7 +563,7 @@ const BestAILLMs2026 = () => {
                   <div className="p-5 bg-card rounded-lg border border-border">
                     <h3 className="font-bold mb-2">Consumer Protection & Verification</h3>
                     <p className="text-sm text-muted-foreground">
-                      Services like <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> use LLMs to analyze stolen property databases, detect fraudulent marketplace listings, and verify item authenticity. AI models help cross-reference serial numbers, IMEI numbers, and VIN numbers across 100+ databases in seconds — work that would take humans hours to perform manually. <Link to="/verify" className="text-primary hover:underline">Try a free verification →</Link>
+                      Services like <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> use LLMs to analyze stolen property databases, detect fraudulent marketplace listings, and verify item authenticity. AI models help cross-reference serial numbers, IMEI numbers, and VIN numbers across multiple sources in seconds — work that would take humans hours to perform manually. <Link to="/verify" className="text-primary hover:underline">Try a free verification →</Link>
                     </p>
                   </div>
                   <div className="p-5 bg-card rounded-lg border border-border">
@@ -649,7 +649,7 @@ const BestAILLMs2026 = () => {
               <section className="p-8 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-xl border border-primary/20 mb-12">
                 <h2 className="text-2xl font-bold mb-3">AI Powers SafeOrStolen's Verification Engine</h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  SafeOrStolen leverages frontier AI models to search 100+ stolen property databases in 3 seconds. Whether you're buying a used phone, car, firearm, or electronics — our AI-powered verification protects you from purchasing stolen goods. 2 free checks, no credit card required.
+                  SafeOrStolen leverages frontier AI models to search multiple sources in 3 seconds. Whether you're buying a used phone, car, firearm, or electronics — our AI-powered verification protects you from purchasing stolen goods. 2 free checks, no credit card required.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link to="/verify">

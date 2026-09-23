@@ -9,7 +9,7 @@ export default function RealTimeVerificationPage() {
  <>
  <PageSEO
  title="Real-Time Verification - Instant Stolen Item Checks | SafeOrStolen"
- description="Get instant stolen item verification in under 3 seconds. Real-time IMEI, VIN, and serial number checks against 100+ global databases. No waiting, immediate results."
+ description="Get instant stolen item verification in under 3 seconds. Real-time IMEI, VIN, and serial number checks against multiple sources. No waiting, immediate results."
  keywords="real-time verification, instant stolen check, fast IMEI lookup, quick VIN check, live serial number verification, immediate results"
  canonical="https://safeorstolen.com/real-time-verification"
  />
@@ -26,7 +26,7 @@ export default function RealTimeVerificationPage() {
  Real-Time Verification
  </h1>
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- Verify any item instantly. Our real-time system checks 100+ databases simultaneously, delivering results before you finish typing.
+ Verify any item instantly. Our real-time system checks multiple sources simultaneously, delivering results before you finish typing.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button size="lg" asChild>
@@ -89,7 +89,7 @@ export default function RealTimeVerificationPage() {
  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
  <div>
  <h3 className="text-xl font-bold mb-2">Parallel Database Queries</h3>
- <p className="text-muted-foreground">Your query simultaneously hits 100+ databases worldwide—stolen property reports from all 50 states, carrier and theft databases, insurance claims, state registries, and international records.</p>
+ <p className="text-muted-foreground">Your query simultaneously hits multiple sources worldwide—community theft reports, carrier and theft databases, insurance claims, state registries, and international records.</p>
  </div>
  </div>
  <div className="flex items-start gap-4">
@@ -120,7 +120,7 @@ export default function RealTimeVerificationPage() {
  <CardContent className="p-6">
  <Database className="h-10 w-10 text-primary mb-4" />
  <h3 className="text-xl font-bold mb-3">Unified Database Access</h3>
- <p className="text-muted-foreground">Direct connections to law enforcement, carrier, and insurance databases. No middlemen, no delays.</p>
+ <p className="text-muted-foreground">Direct connections to law enforcement, carrier. No middlemen, no delays.</p>
  </CardContent>
  </Card>
  <Card>

@@ -38,7 +38,7 @@ export const ViralShareCard = ({ status, itemLabel, shareUrl }: ViralShareCardPr
     status === 'stolen' || status === 'lost'
       ? `⚠️ Heads up — I just ran a stolen-item check${itemText} on SafeOrStolen and it came back FLAGGED. Always verify before you buy used items:`
       : status === 'safe'
-      ? `✅ Just verified${itemText} on SafeOrStolen — clean across 100+ stolen-item databases. Free tool, takes 3 seconds. Worth checking before you buy used:`
+      ? `✅ Just verified${itemText} on SafeOrStolen — clean across multiple sources. Free tool, takes 3 seconds. Worth checking before you buy used:`
       : `Just used SafeOrStolen to check${itemText} against stolen-item databases. Solid free tool for buying used stuff:`;
 
   const encodedMsg = encodeURIComponent(message);

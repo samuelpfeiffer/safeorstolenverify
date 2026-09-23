@@ -42,7 +42,7 @@ const FreeCarfaxAlternativePage = () => {
     <>
       <PageSEO
         title="Free Carfax Alternative - Stolen Vehicle Check | SafeOrStolen"
-        description="Free Carfax alternative for stolen vehicle checks. SafeOrStolen verifies theft status against NICB and 100+ databases. No payment required."
+        description="Free Carfax alternative for stolen vehicle checks. SafeOrStolen verifies theft status against NICB and multiple sources. No payment required."
         keywords="carfax alternative, free carfax, carfax alternative free, free vin check, stolen car check free"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -76,7 +76,7 @@ const FreeCarfaxAlternativePage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">🔒 SafeOrStolen (FREE)</h3>
-                  <p className="text-muted-foreground">Verifies if a vehicle is <strong>stolen</strong>. Checks NICB, police databases, insurance claims. Essential before any purchase.</p>
+                  <p className="text-muted-foreground">Verifies if a vehicle is <strong>stolen</strong>. Checks NICB, theft reports, insurance claims. Essential before any purchase.</p>
                 </div>
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">📋 Carfax ($44.99)</h3>

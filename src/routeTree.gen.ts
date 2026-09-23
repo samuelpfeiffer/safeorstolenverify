@@ -41,8 +41,6 @@ import { Route as CheckBicycleStolenRouteImport } from './routes/check-bicycle-s
 import { Route as CheckBikeRouteImport } from './routes/check-bike'
 import { Route as CheckBoatRouteImport } from './routes/check-boat'
 import { Route as CheckCameraStolenRouteImport } from './routes/check-camera-stolen'
-import { Route as CheckCarRouteImport } from './routes/check-car'
-import { Route as CheckCarStolenVinRouteImport } from './routes/check-car-stolen-vin'
 import { Route as CheckEbikeRouteImport } from './routes/check-ebike'
 import { Route as CheckElectronicsRouteImport } from './routes/check-electronics'
 import { Route as CheckFirearmRouteImport } from './routes/check-firearm'
@@ -61,11 +59,9 @@ import { Route as CheckPhoneRouteImport } from './routes/check-phone'
 import { Route as CheckPowerToolsStolenRouteImport } from './routes/check-power-tools-stolen'
 import { Route as CheckPs5RouteImport } from './routes/check-ps5'
 import { Route as CheckSamsungStolenRouteImport } from './routes/check-samsung-stolen'
-import { Route as CheckStolenCarRouteImport } from './routes/check-stolen-car'
 import { Route as CheckStolenPhoneRouteImport } from './routes/check-stolen-phone'
 import { Route as CheckTabletStolenRouteImport } from './routes/check-tablet-stolen'
 import { Route as CheckToolsRouteImport } from './routes/check-tools'
-import { Route as CheckVinRouteImport } from './routes/check-vin'
 import { Route as CheckWatchStolenRouteImport } from './routes/check-watch-stolen'
 import { Route as CheckXboxRouteImport } from './routes/check-xbox'
 import { Route as CheckoutRedirectRouteImport } from './routes/checkout-redirect'
@@ -107,7 +103,6 @@ import { Route as ForPawnShopsRouteImport } from './routes/for-pawn-shops'
 import { Route as ForSellersRouteImport } from './routes/for-sellers'
 import { Route as FounderStoryRouteImport } from './routes/founder-story'
 import { Route as FoundersStoryRouteImport } from './routes/founders-story'
-import { Route as FreeStolenVehicleCheckRouteImport } from './routes/free-stolen-vehicle-check'
 import { Route as FreeToolsRouteImport } from './routes/free-tools'
 import { Route as GeorgiaLicensePlateLookupRouteImport } from './routes/georgia-license-plate-lookup'
 import { Route as GeorgiaVinLookupRouteImport } from './routes/georgia-vin-lookup'
@@ -136,7 +131,6 @@ import { Route as IowaVinLookupRouteImport } from './routes/iowa-vin-lookup'
 import { Route as IsMyIphoneStolenRouteImport } from './routes/is-my-iphone-stolen'
 import { Route as IsMyPhoneStolenRouteImport } from './routes/is-my-phone-stolen'
 import { Route as IsThisBikeStolenRouteImport } from './routes/is-this-bike-stolen'
-import { Route as IsThisCarStolenRouteImport } from './routes/is-this-car-stolen'
 import { Route as IsThisGunStolenRouteImport } from './routes/is-this-gun-stolen'
 import { Route as IsThisLaptopStolenRouteImport } from './routes/is-this-laptop-stolen'
 import { Route as KansasLicensePlateLookupRouteImport } from './routes/kansas-license-plate-lookup'
@@ -265,7 +259,6 @@ import { Route as VerifyRouteImport } from './routes/verify'
 import { Route as VerifyApiRouteImport } from './routes/verify-api'
 import { Route as VermontLicensePlateLookupRouteImport } from './routes/vermont-license-plate-lookup'
 import { Route as VermontVinLookupRouteImport } from './routes/vermont-vin-lookup'
-import { Route as VinCheckRouteImport } from './routes/vin-check'
 import { Route as VinCheckerRouteImport } from './routes/vin-checker'
 import { Route as VirginiaLicensePlateLookupRouteImport } from './routes/virginia-license-plate-lookup'
 import { Route as VirginiaVinLookupRouteImport } from './routes/virginia-vin-lookup'
@@ -535,16 +528,6 @@ const CheckCameraStolenRoute = CheckCameraStolenRouteImport.update({
   path: '/check-camera-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CheckCarRoute = CheckCarRouteImport.update({
-  id: '/check-car',
-  path: '/check-car',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CheckCarStolenVinRoute = CheckCarStolenVinRouteImport.update({
-  id: '/check-car-stolen-vin',
-  path: '/check-car-stolen-vin',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CheckEbikeRoute = CheckEbikeRouteImport.update({
   id: '/check-ebike',
   path: '/check-ebike',
@@ -637,11 +620,6 @@ const CheckSamsungStolenRoute = CheckSamsungStolenRouteImport.update({
   path: '/check-samsung-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CheckStolenCarRoute = CheckStolenCarRouteImport.update({
-  id: '/check-stolen-car',
-  path: '/check-stolen-car',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CheckStolenPhoneRoute = CheckStolenPhoneRouteImport.update({
   id: '/check-stolen-phone',
   path: '/check-stolen-phone',
@@ -655,11 +633,6 @@ const CheckTabletStolenRoute = CheckTabletStolenRouteImport.update({
 const CheckToolsRoute = CheckToolsRouteImport.update({
   id: '/check-tools',
   path: '/check-tools',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CheckVinRoute = CheckVinRouteImport.update({
-  id: '/check-vin',
-  path: '/check-vin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckWatchStolenRoute = CheckWatchStolenRouteImport.update({
@@ -875,11 +848,6 @@ const FoundersStoryRoute = FoundersStoryRouteImport.update({
   path: '/founders-story',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FreeStolenVehicleCheckRoute = FreeStolenVehicleCheckRouteImport.update({
-  id: '/free-stolen-vehicle-check',
-  path: '/free-stolen-vehicle-check',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FreeToolsRoute = FreeToolsRouteImport.update({
   id: '/free-tools',
   path: '/free-tools',
@@ -1022,11 +990,6 @@ const IsMyPhoneStolenRoute = IsMyPhoneStolenRouteImport.update({
 const IsThisBikeStolenRoute = IsThisBikeStolenRouteImport.update({
   id: '/is-this-bike-stolen',
   path: '/is-this-bike-stolen',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IsThisCarStolenRoute = IsThisCarStolenRouteImport.update({
-  id: '/is-this-car-stolen',
-  path: '/is-this-car-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IsThisGunStolenRoute = IsThisGunStolenRouteImport.update({
@@ -1697,11 +1660,6 @@ const VermontVinLookupRoute = VermontVinLookupRouteImport.update({
   path: '/vermont-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VinCheckRoute = VinCheckRouteImport.update({
-  id: '/vin-check',
-  path: '/vin-check',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const VinCheckerRoute = VinCheckerRouteImport.update({
   id: '/vin-checker',
   path: '/vin-checker',
@@ -2299,8 +2257,6 @@ export interface FileRoutesByFullPath {
   '/check-bike': typeof CheckBikeRoute
   '/check-boat': typeof CheckBoatRoute
   '/check-camera-stolen': typeof CheckCameraStolenRoute
-  '/check-car': typeof CheckCarRoute
-  '/check-car-stolen-vin': typeof CheckCarStolenVinRoute
   '/check-ebike': typeof CheckEbikeRoute
   '/check-electronics': typeof CheckElectronicsRoute
   '/check-firearm': typeof CheckFirearmRoute
@@ -2319,11 +2275,9 @@ export interface FileRoutesByFullPath {
   '/check-power-tools-stolen': typeof CheckPowerToolsStolenRoute
   '/check-ps5': typeof CheckPs5Route
   '/check-samsung-stolen': typeof CheckSamsungStolenRoute
-  '/check-stolen-car': typeof CheckStolenCarRoute
   '/check-stolen-phone': typeof CheckStolenPhoneRoute
   '/check-tablet-stolen': typeof CheckTabletStolenRoute
   '/check-tools': typeof CheckToolsRoute
-  '/check-vin': typeof CheckVinRoute
   '/check-watch-stolen': typeof CheckWatchStolenRoute
   '/check-xbox': typeof CheckXboxRoute
   '/checkout-redirect': typeof CheckoutRedirectRoute
@@ -2365,7 +2319,6 @@ export interface FileRoutesByFullPath {
   '/for-sellers': typeof ForSellersRoute
   '/founder-story': typeof FounderStoryRoute
   '/founders-story': typeof FoundersStoryRoute
-  '/free-stolen-vehicle-check': typeof FreeStolenVehicleCheckRoute
   '/free-tools': typeof FreeToolsRoute
   '/georgia-license-plate-lookup': typeof GeorgiaLicensePlateLookupRoute
   '/georgia-vin-lookup': typeof GeorgiaVinLookupRoute
@@ -2394,7 +2347,6 @@ export interface FileRoutesByFullPath {
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
-  '/is-this-car-stolen': typeof IsThisCarStolenRoute
   '/is-this-gun-stolen': typeof IsThisGunStolenRoute
   '/is-this-laptop-stolen': typeof IsThisLaptopStolenRoute
   '/kansas-license-plate-lookup': typeof KansasLicensePlateLookupRoute
@@ -2523,7 +2475,6 @@ export interface FileRoutesByFullPath {
   '/verify-api': typeof VerifyApiRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vermont-vin-lookup': typeof VermontVinLookupRoute
-  '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
   '/virginia-license-plate-lookup': typeof VirginiaLicensePlateLookupRoute
   '/virginia-vin-lookup': typeof VirginiaVinLookupRoute
@@ -2658,8 +2609,6 @@ export interface FileRoutesByTo {
   '/check-bike': typeof CheckBikeRoute
   '/check-boat': typeof CheckBoatRoute
   '/check-camera-stolen': typeof CheckCameraStolenRoute
-  '/check-car': typeof CheckCarRoute
-  '/check-car-stolen-vin': typeof CheckCarStolenVinRoute
   '/check-ebike': typeof CheckEbikeRoute
   '/check-electronics': typeof CheckElectronicsRoute
   '/check-firearm': typeof CheckFirearmRoute
@@ -2678,11 +2627,9 @@ export interface FileRoutesByTo {
   '/check-power-tools-stolen': typeof CheckPowerToolsStolenRoute
   '/check-ps5': typeof CheckPs5Route
   '/check-samsung-stolen': typeof CheckSamsungStolenRoute
-  '/check-stolen-car': typeof CheckStolenCarRoute
   '/check-stolen-phone': typeof CheckStolenPhoneRoute
   '/check-tablet-stolen': typeof CheckTabletStolenRoute
   '/check-tools': typeof CheckToolsRoute
-  '/check-vin': typeof CheckVinRoute
   '/check-watch-stolen': typeof CheckWatchStolenRoute
   '/check-xbox': typeof CheckXboxRoute
   '/checkout-redirect': typeof CheckoutRedirectRoute
@@ -2724,7 +2671,6 @@ export interface FileRoutesByTo {
   '/for-sellers': typeof ForSellersRoute
   '/founder-story': typeof FounderStoryRoute
   '/founders-story': typeof FoundersStoryRoute
-  '/free-stolen-vehicle-check': typeof FreeStolenVehicleCheckRoute
   '/free-tools': typeof FreeToolsRoute
   '/georgia-license-plate-lookup': typeof GeorgiaLicensePlateLookupRoute
   '/georgia-vin-lookup': typeof GeorgiaVinLookupRoute
@@ -2753,7 +2699,6 @@ export interface FileRoutesByTo {
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
-  '/is-this-car-stolen': typeof IsThisCarStolenRoute
   '/is-this-gun-stolen': typeof IsThisGunStolenRoute
   '/is-this-laptop-stolen': typeof IsThisLaptopStolenRoute
   '/kansas-license-plate-lookup': typeof KansasLicensePlateLookupRoute
@@ -2881,7 +2826,6 @@ export interface FileRoutesByTo {
   '/verify-api': typeof VerifyApiRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vermont-vin-lookup': typeof VermontVinLookupRoute
-  '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
   '/virginia-license-plate-lookup': typeof VirginiaLicensePlateLookupRoute
   '/virginia-vin-lookup': typeof VirginiaVinLookupRoute
@@ -3019,8 +2963,6 @@ export interface FileRoutesById {
   '/check-bike': typeof CheckBikeRoute
   '/check-boat': typeof CheckBoatRoute
   '/check-camera-stolen': typeof CheckCameraStolenRoute
-  '/check-car': typeof CheckCarRoute
-  '/check-car-stolen-vin': typeof CheckCarStolenVinRoute
   '/check-ebike': typeof CheckEbikeRoute
   '/check-electronics': typeof CheckElectronicsRoute
   '/check-firearm': typeof CheckFirearmRoute
@@ -3039,11 +2981,9 @@ export interface FileRoutesById {
   '/check-power-tools-stolen': typeof CheckPowerToolsStolenRoute
   '/check-ps5': typeof CheckPs5Route
   '/check-samsung-stolen': typeof CheckSamsungStolenRoute
-  '/check-stolen-car': typeof CheckStolenCarRoute
   '/check-stolen-phone': typeof CheckStolenPhoneRoute
   '/check-tablet-stolen': typeof CheckTabletStolenRoute
   '/check-tools': typeof CheckToolsRoute
-  '/check-vin': typeof CheckVinRoute
   '/check-watch-stolen': typeof CheckWatchStolenRoute
   '/check-xbox': typeof CheckXboxRoute
   '/checkout-redirect': typeof CheckoutRedirectRoute
@@ -3085,7 +3025,6 @@ export interface FileRoutesById {
   '/for-sellers': typeof ForSellersRoute
   '/founder-story': typeof FounderStoryRoute
   '/founders-story': typeof FoundersStoryRoute
-  '/free-stolen-vehicle-check': typeof FreeStolenVehicleCheckRoute
   '/free-tools': typeof FreeToolsRoute
   '/georgia-license-plate-lookup': typeof GeorgiaLicensePlateLookupRoute
   '/georgia-vin-lookup': typeof GeorgiaVinLookupRoute
@@ -3114,7 +3053,6 @@ export interface FileRoutesById {
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
-  '/is-this-car-stolen': typeof IsThisCarStolenRoute
   '/is-this-gun-stolen': typeof IsThisGunStolenRoute
   '/is-this-laptop-stolen': typeof IsThisLaptopStolenRoute
   '/kansas-license-plate-lookup': typeof KansasLicensePlateLookupRoute
@@ -3243,7 +3181,6 @@ export interface FileRoutesById {
   '/verify-api': typeof VerifyApiRoute
   '/vermont-license-plate-lookup': typeof VermontLicensePlateLookupRoute
   '/vermont-vin-lookup': typeof VermontVinLookupRoute
-  '/vin-check': typeof VinCheckRoute
   '/vin-checker': typeof VinCheckerRoute
   '/virginia-license-plate-lookup': typeof VirginiaLicensePlateLookupRoute
   '/virginia-vin-lookup': typeof VirginiaVinLookupRoute
@@ -3382,8 +3319,6 @@ export interface FileRouteTypes {
     | '/check-bike'
     | '/check-boat'
     | '/check-camera-stolen'
-    | '/check-car'
-    | '/check-car-stolen-vin'
     | '/check-ebike'
     | '/check-electronics'
     | '/check-firearm'
@@ -3402,11 +3337,9 @@ export interface FileRouteTypes {
     | '/check-power-tools-stolen'
     | '/check-ps5'
     | '/check-samsung-stolen'
-    | '/check-stolen-car'
     | '/check-stolen-phone'
     | '/check-tablet-stolen'
     | '/check-tools'
-    | '/check-vin'
     | '/check-watch-stolen'
     | '/check-xbox'
     | '/checkout-redirect'
@@ -3448,7 +3381,6 @@ export interface FileRouteTypes {
     | '/for-sellers'
     | '/founder-story'
     | '/founders-story'
-    | '/free-stolen-vehicle-check'
     | '/free-tools'
     | '/georgia-license-plate-lookup'
     | '/georgia-vin-lookup'
@@ -3477,7 +3409,6 @@ export interface FileRouteTypes {
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
-    | '/is-this-car-stolen'
     | '/is-this-gun-stolen'
     | '/is-this-laptop-stolen'
     | '/kansas-license-plate-lookup'
@@ -3606,7 +3537,6 @@ export interface FileRouteTypes {
     | '/verify-api'
     | '/vermont-license-plate-lookup'
     | '/vermont-vin-lookup'
-    | '/vin-check'
     | '/vin-checker'
     | '/virginia-license-plate-lookup'
     | '/virginia-vin-lookup'
@@ -3741,8 +3671,6 @@ export interface FileRouteTypes {
     | '/check-bike'
     | '/check-boat'
     | '/check-camera-stolen'
-    | '/check-car'
-    | '/check-car-stolen-vin'
     | '/check-ebike'
     | '/check-electronics'
     | '/check-firearm'
@@ -3761,11 +3689,9 @@ export interface FileRouteTypes {
     | '/check-power-tools-stolen'
     | '/check-ps5'
     | '/check-samsung-stolen'
-    | '/check-stolen-car'
     | '/check-stolen-phone'
     | '/check-tablet-stolen'
     | '/check-tools'
-    | '/check-vin'
     | '/check-watch-stolen'
     | '/check-xbox'
     | '/checkout-redirect'
@@ -3807,7 +3733,6 @@ export interface FileRouteTypes {
     | '/for-sellers'
     | '/founder-story'
     | '/founders-story'
-    | '/free-stolen-vehicle-check'
     | '/free-tools'
     | '/georgia-license-plate-lookup'
     | '/georgia-vin-lookup'
@@ -3836,7 +3761,6 @@ export interface FileRouteTypes {
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
-    | '/is-this-car-stolen'
     | '/is-this-gun-stolen'
     | '/is-this-laptop-stolen'
     | '/kansas-license-plate-lookup'
@@ -3964,7 +3888,6 @@ export interface FileRouteTypes {
     | '/verify-api'
     | '/vermont-license-plate-lookup'
     | '/vermont-vin-lookup'
-    | '/vin-check'
     | '/vin-checker'
     | '/virginia-license-plate-lookup'
     | '/virginia-vin-lookup'
@@ -4101,8 +4024,6 @@ export interface FileRouteTypes {
     | '/check-bike'
     | '/check-boat'
     | '/check-camera-stolen'
-    | '/check-car'
-    | '/check-car-stolen-vin'
     | '/check-ebike'
     | '/check-electronics'
     | '/check-firearm'
@@ -4121,11 +4042,9 @@ export interface FileRouteTypes {
     | '/check-power-tools-stolen'
     | '/check-ps5'
     | '/check-samsung-stolen'
-    | '/check-stolen-car'
     | '/check-stolen-phone'
     | '/check-tablet-stolen'
     | '/check-tools'
-    | '/check-vin'
     | '/check-watch-stolen'
     | '/check-xbox'
     | '/checkout-redirect'
@@ -4167,7 +4086,6 @@ export interface FileRouteTypes {
     | '/for-sellers'
     | '/founder-story'
     | '/founders-story'
-    | '/free-stolen-vehicle-check'
     | '/free-tools'
     | '/georgia-license-plate-lookup'
     | '/georgia-vin-lookup'
@@ -4196,7 +4114,6 @@ export interface FileRouteTypes {
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
-    | '/is-this-car-stolen'
     | '/is-this-gun-stolen'
     | '/is-this-laptop-stolen'
     | '/kansas-license-plate-lookup'
@@ -4325,7 +4242,6 @@ export interface FileRouteTypes {
     | '/verify-api'
     | '/vermont-license-plate-lookup'
     | '/vermont-vin-lookup'
-    | '/vin-check'
     | '/vin-checker'
     | '/virginia-license-plate-lookup'
     | '/virginia-vin-lookup'
@@ -4463,8 +4379,6 @@ export interface RootRouteChildren {
   CheckBikeRoute: typeof CheckBikeRoute
   CheckBoatRoute: typeof CheckBoatRoute
   CheckCameraStolenRoute: typeof CheckCameraStolenRoute
-  CheckCarRoute: typeof CheckCarRoute
-  CheckCarStolenVinRoute: typeof CheckCarStolenVinRoute
   CheckEbikeRoute: typeof CheckEbikeRoute
   CheckElectronicsRoute: typeof CheckElectronicsRoute
   CheckFirearmRoute: typeof CheckFirearmRoute
@@ -4483,11 +4397,9 @@ export interface RootRouteChildren {
   CheckPowerToolsStolenRoute: typeof CheckPowerToolsStolenRoute
   CheckPs5Route: typeof CheckPs5Route
   CheckSamsungStolenRoute: typeof CheckSamsungStolenRoute
-  CheckStolenCarRoute: typeof CheckStolenCarRoute
   CheckStolenPhoneRoute: typeof CheckStolenPhoneRoute
   CheckTabletStolenRoute: typeof CheckTabletStolenRoute
   CheckToolsRoute: typeof CheckToolsRoute
-  CheckVinRoute: typeof CheckVinRoute
   CheckWatchStolenRoute: typeof CheckWatchStolenRoute
   CheckXboxRoute: typeof CheckXboxRoute
   CheckoutRedirectRoute: typeof CheckoutRedirectRoute
@@ -4529,7 +4441,6 @@ export interface RootRouteChildren {
   ForSellersRoute: typeof ForSellersRoute
   FounderStoryRoute: typeof FounderStoryRoute
   FoundersStoryRoute: typeof FoundersStoryRoute
-  FreeStolenVehicleCheckRoute: typeof FreeStolenVehicleCheckRoute
   FreeToolsRoute: typeof FreeToolsRoute
   GeorgiaLicensePlateLookupRoute: typeof GeorgiaLicensePlateLookupRoute
   GeorgiaVinLookupRoute: typeof GeorgiaVinLookupRoute
@@ -4558,7 +4469,6 @@ export interface RootRouteChildren {
   IsMyIphoneStolenRoute: typeof IsMyIphoneStolenRoute
   IsMyPhoneStolenRoute: typeof IsMyPhoneStolenRoute
   IsThisBikeStolenRoute: typeof IsThisBikeStolenRoute
-  IsThisCarStolenRoute: typeof IsThisCarStolenRoute
   IsThisGunStolenRoute: typeof IsThisGunStolenRoute
   IsThisLaptopStolenRoute: typeof IsThisLaptopStolenRoute
   KansasLicensePlateLookupRoute: typeof KansasLicensePlateLookupRoute
@@ -4687,7 +4597,6 @@ export interface RootRouteChildren {
   VerifyApiRoute: typeof VerifyApiRoute
   VermontLicensePlateLookupRoute: typeof VermontLicensePlateLookupRoute
   VermontVinLookupRoute: typeof VermontVinLookupRoute
-  VinCheckRoute: typeof VinCheckRoute
   VinCheckerRoute: typeof VinCheckerRoute
   VirginiaLicensePlateLookupRoute: typeof VirginiaLicensePlateLookupRoute
   VirginiaVinLookupRoute: typeof VirginiaVinLookupRoute
@@ -4966,20 +4875,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckCameraStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/check-car': {
-      id: '/check-car'
-      path: '/check-car'
-      fullPath: '/check-car'
-      preLoaderRoute: typeof CheckCarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/check-car-stolen-vin': {
-      id: '/check-car-stolen-vin'
-      path: '/check-car-stolen-vin'
-      fullPath: '/check-car-stolen-vin'
-      preLoaderRoute: typeof CheckCarStolenVinRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/check-ebike': {
       id: '/check-ebike'
       path: '/check-ebike'
@@ -5106,13 +5001,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckSamsungStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/check-stolen-car': {
-      id: '/check-stolen-car'
-      path: '/check-stolen-car'
-      fullPath: '/check-stolen-car'
-      preLoaderRoute: typeof CheckStolenCarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/check-stolen-phone': {
       id: '/check-stolen-phone'
       path: '/check-stolen-phone'
@@ -5132,13 +5020,6 @@ declare module '@tanstack/react-router' {
       path: '/check-tools'
       fullPath: '/check-tools'
       preLoaderRoute: typeof CheckToolsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/check-vin': {
-      id: '/check-vin'
-      path: '/check-vin'
-      fullPath: '/check-vin'
-      preLoaderRoute: typeof CheckVinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/check-watch-stolen': {
@@ -5428,13 +5309,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoundersStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/free-stolen-vehicle-check': {
-      id: '/free-stolen-vehicle-check'
-      path: '/free-stolen-vehicle-check'
-      fullPath: '/free-stolen-vehicle-check'
-      preLoaderRoute: typeof FreeStolenVehicleCheckRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/free-tools': {
       id: '/free-tools'
       path: '/free-tools'
@@ -5629,13 +5503,6 @@ declare module '@tanstack/react-router' {
       path: '/is-this-bike-stolen'
       fullPath: '/is-this-bike-stolen'
       preLoaderRoute: typeof IsThisBikeStolenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/is-this-car-stolen': {
-      id: '/is-this-car-stolen'
-      path: '/is-this-car-stolen'
-      fullPath: '/is-this-car-stolen'
-      preLoaderRoute: typeof IsThisCarStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/is-this-gun-stolen': {
@@ -6534,13 +6401,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VermontVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vin-check': {
-      id: '/vin-check'
-      path: '/vin-check'
-      fullPath: '/vin-check'
-      preLoaderRoute: typeof VinCheckRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/vin-checker': {
       id: '/vin-checker'
       path: '/vin-checker'
@@ -7428,8 +7288,6 @@ const rootRouteChildren: RootRouteChildren = {
   CheckBikeRoute: CheckBikeRoute,
   CheckBoatRoute: CheckBoatRoute,
   CheckCameraStolenRoute: CheckCameraStolenRoute,
-  CheckCarRoute: CheckCarRoute,
-  CheckCarStolenVinRoute: CheckCarStolenVinRoute,
   CheckEbikeRoute: CheckEbikeRoute,
   CheckElectronicsRoute: CheckElectronicsRoute,
   CheckFirearmRoute: CheckFirearmRoute,
@@ -7448,11 +7306,9 @@ const rootRouteChildren: RootRouteChildren = {
   CheckPowerToolsStolenRoute: CheckPowerToolsStolenRoute,
   CheckPs5Route: CheckPs5Route,
   CheckSamsungStolenRoute: CheckSamsungStolenRoute,
-  CheckStolenCarRoute: CheckStolenCarRoute,
   CheckStolenPhoneRoute: CheckStolenPhoneRoute,
   CheckTabletStolenRoute: CheckTabletStolenRoute,
   CheckToolsRoute: CheckToolsRoute,
-  CheckVinRoute: CheckVinRoute,
   CheckWatchStolenRoute: CheckWatchStolenRoute,
   CheckXboxRoute: CheckXboxRoute,
   CheckoutRedirectRoute: CheckoutRedirectRoute,
@@ -7494,7 +7350,6 @@ const rootRouteChildren: RootRouteChildren = {
   ForSellersRoute: ForSellersRoute,
   FounderStoryRoute: FounderStoryRoute,
   FoundersStoryRoute: FoundersStoryRoute,
-  FreeStolenVehicleCheckRoute: FreeStolenVehicleCheckRoute,
   FreeToolsRoute: FreeToolsRoute,
   GeorgiaLicensePlateLookupRoute: GeorgiaLicensePlateLookupRoute,
   GeorgiaVinLookupRoute: GeorgiaVinLookupRoute,
@@ -7523,7 +7378,6 @@ const rootRouteChildren: RootRouteChildren = {
   IsMyIphoneStolenRoute: IsMyIphoneStolenRoute,
   IsMyPhoneStolenRoute: IsMyPhoneStolenRoute,
   IsThisBikeStolenRoute: IsThisBikeStolenRoute,
-  IsThisCarStolenRoute: IsThisCarStolenRoute,
   IsThisGunStolenRoute: IsThisGunStolenRoute,
   IsThisLaptopStolenRoute: IsThisLaptopStolenRoute,
   KansasLicensePlateLookupRoute: KansasLicensePlateLookupRoute,
@@ -7652,7 +7506,6 @@ const rootRouteChildren: RootRouteChildren = {
   VerifyApiRoute: VerifyApiRoute,
   VermontLicensePlateLookupRoute: VermontLicensePlateLookupRoute,
   VermontVinLookupRoute: VermontVinLookupRoute,
-  VinCheckRoute: VinCheckRoute,
   VinCheckerRoute: VinCheckerRoute,
   VirginiaLicensePlateLookupRoute: VirginiaLicensePlateLookupRoute,
   VirginiaVinLookupRoute: VirginiaVinLookupRoute,

@@ -147,7 +147,7 @@ const BestStolenItemCheckers2026 = () => {
                 <h2 className="text-2xl font-bold">Our Top Pick: SafeOrStolen</h2>
               </div>
               <p className="text-lg text-muted-foreground mb-6">
-                SafeOrStolen covers <strong>all item types</strong> — phones, vehicles, bikes, electronics, and firearms — in one place. With a free mobile app, marketplace URL analysis, and 2 free searches, it's the most comprehensive solution for marketplace buyers in 2026.
+                SafeOrStolen covers <strong>all item types</strong> — phones, vehicles, bikes, electronics, and firearms — in one place. With an installable web app, marketplace URL analysis, and 2 free searches, it's a single place for marketplace buyers and sellers to check before they pay.
               </p>
               <Button asChild size="lg">
                 <Link to="/verify">

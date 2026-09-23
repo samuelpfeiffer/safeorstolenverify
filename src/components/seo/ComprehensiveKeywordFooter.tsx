@@ -37,7 +37,7 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
               <Link to="/check-phone" className="block hover:text-primary">
                 IMEI Device Check
               </Link>
-              <Link to="/check-car" className="block hover:text-primary">
+              <Link to="/vin-checker" className="block hover:text-primary">
                 VIN Lookup Service
               </Link>
               <Link to="/check-electronics" className="block hover:text-primary">

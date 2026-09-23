@@ -286,7 +286,7 @@ const VerifyPage = () => {
  {/* SEO Components - Critical for Google indexing */}
  <PageSEO
  title="Free Stolen Item Check - IMEI VIN Serial Verification"
- description="Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from stolen goods."
+ description="Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against multiple sources. Protect yourself from stolen goods."
  keywords="verify stolen items, instant verification, stolen goods check, marketplace safety"
  canonical="/verify"
  structuredData={verificationServiceSchema}
@@ -296,7 +296,7 @@ const VerifyPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Free Stolen Item Verification</h1>
- <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against 100+ databases with results in 3 seconds.</p>
+ <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against multiple sources with results in 3 seconds.</p>
  </div>
  </noscript>
  <StatusCodeHandler statusCode={200} />
@@ -508,7 +508,7 @@ const VerifyPage = () => {
  <li>• Property & asset recovery networks</li>
  </ul>
  <p className="text-xs text-muted-foreground pt-2">
- All checks are performed in parallel across 100+ databases for fast, comprehensive results.
+ All checks are performed in parallel across multiple sources for fast, comprehensive results.
  </p>
  </div>
  </div>

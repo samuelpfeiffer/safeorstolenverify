@@ -21,13 +21,13 @@ const CheckIfStolenPage = () => {
  
  whatIs: "Checking if an item is stolen means verifying the item hasn't been reported as lost, stolen, or fraudulently obtained. Every valuable item has a unique identifier - IMEI for phones, VIN for vehicles, serial numbers for electronics, power tools, and appliances. SafeOrStolen checks these identifiers against community theft registries, carrier and theft databases, theft reports, and user-reported theft registries to determine if an item is safe to buy.",
  
- howItWorks: "Our universal stolen item checker works with any identifier: (1) Enter the serial number, IMEI, VIN, or license plate, (2) We automatically detect the identifier type and search the appropriate databases, (3) For phones: carrier and theft databases, activation locks, (4) For vehicles: stolen property reports from all 50 states, vehicle theft and title databases, title history, (5) For electronics: manufacturer databases, user reports, police records, (6) You receive instant results showing clean status or any red flags.",
+ howItWorks: "Our universal stolen item checker works with any identifier: (1) Enter the serial number, IMEI, VIN, or license plate, (2) We automatically detect the identifier type and search the appropriate databases, (3) For phones: carrier and theft databases, activation locks, (4) For vehicles: community theft reports, vehicle theft and title databases, title history, (5) For electronics: manufacturer databases, user reports, police records, (6) You receive instant results showing clean status or any red flags.",
  
  whyCheck: "Buying stolen property can result in losing your money AND facing criminal charges. You have no legal ownership of stolen goods - they can be confiscated by police at any time with zero compensation. Phones get blacklisted and become useless. Cars get impounded. Electronics get seized. Protect yourself with a verification before any secondhand purchase. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited.",
  
  benefits: [
  "Check phones - iPhone, Samsung, Android, any IMEI",
- "Check cars - VIN verification against vehicle theft and title databases, and stolen property reports",
+ "Check cars - VIN verification against and stolen property reports",
  "Check bikes - serial number lookup for bicycles",
  "Check laptops - MacBook, Dell, HP serial verification",
  "Check power tools - DeWalt, Milwaukee, Makita, Bosch",

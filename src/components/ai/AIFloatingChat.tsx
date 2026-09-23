@@ -225,7 +225,7 @@ export const AIFloatingChat: React.FC = () => {
   });
 
   const runVerification = useCallback(async (identifier: string) => {
-    setMessages(prev => [...prev, { role: 'assistant', content: '🔎 Detecting identifier and verifying across 100+ databases…' }]);
+    setMessages(prev => [...prev, { role: 'assistant', content: '🔎 Detecting identifier and verifying across multiple sources…' }]);
     try {
       const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
       const itemType = detect?.type || 'serial';
@@ -292,7 +292,7 @@ export const AIFloatingChat: React.FC = () => {
     if (messages.length === 0) {
       setMessages([{
         role: 'assistant',
-        content: "👋 Hi! I'm your SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll verify it instantly across 100+ databases. Or ask me anything about buying safely.",
+        content: "👋 Hi! I'm your SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll verify it instantly across multiple sources. Or ask me anything about buying safely.",
       }]);
     }
   };

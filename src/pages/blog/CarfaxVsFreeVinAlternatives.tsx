@@ -250,7 +250,7 @@ const CarfaxVsFreeVinAlternatives = () => {
               SafeOrStolen specializes in theft verification with real-time access to:
             </p>
             <ul>
-              <li>Stolen property reports from all 50 states</li>
+              <li>community theft reports</li>
               <li>NHTSA vehicle records for salvage/rebuilt status</li>
               <li>Our verification databases</li>
             </ul>
@@ -310,7 +310,7 @@ const CarfaxVsFreeVinAlternatives = () => {
                 <h4 className="font-semibold">SafeOrStolen and Carfax Comparison</h4>
                 <p className="text-sm text-muted-foreground">Detailed service comparison</p>
               </Link>
-              <Link to="/check-car" className="p-4 bg-card rounded-lg hover:bg-accent transition-colors">
+              <Link to="/vin-checker" className="p-4 bg-card rounded-lg hover:bg-accent transition-colors">
                 <h4 className="font-semibold">Check If Car Is Stolen</h4>
                 <p className="text-sm text-muted-foreground">Complete car verification guide</p>
               </Link>

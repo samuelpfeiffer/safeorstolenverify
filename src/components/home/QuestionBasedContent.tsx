@@ -7,7 +7,7 @@ export const QuestionBasedContent = () => {
  const questions = [
  {
  question: "How to check if a phone is stolen before buying?",
- answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier and theft databases, and stolen property reports. 2 free checks, then $0.99/check or $10/month unlimited.",
+ answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches multiple sources including carrier and theft databases, and stolen property reports. 2 free checks, then $0.99/check or $10/month unlimited.",
  icon: Search,
  link: "/verify"
  },
@@ -25,7 +25,7 @@ export const QuestionBasedContent = () => {
  },
  {
  question: "Is there a free database to check stolen items?",
- answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against our verification databases, including vehicle theft and title databases and carrier and theft databases.",
+ answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against our verification databases, including carrier and theft databases.",
  icon: CheckCircle2,
  link: "/verify"
  }

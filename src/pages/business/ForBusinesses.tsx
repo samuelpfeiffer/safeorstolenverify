@@ -62,7 +62,7 @@ export default function ForBusinesses() {
  'Embeddable verification widget',
  'REST API for POS integration',
  'Unlimited IMEI, VIN, serial number checks',
- '100+ database sources including vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases',
+ 'SafeOrStolen reports, web results and AI analysis',
  'All 50 US state coverage',
  'Compliance reporting and audit logs',
  '3-second verification results',
@@ -86,7 +86,7 @@ export default function ForBusinesses() {
  },
  {
  question: 'What databases does SafeOrStolen check for business verifications?',
- answer: 'SafeOrStolen checks 100+ databases simultaneously including stolen property reports from all 50 states, vehicle theft and title databases (vehicle theft and title databases for stolen vehicles), carrier and theft databases TAC (phone blacklists covering AT&T, Verizon, T-Mobile), all 50 state DMV and community theft registries, insurance claim databases, and carrier and theft databases. Results are returned in under 3 seconds.'
+ answer: 'SafeOrStolen checks multiple sources simultaneously including community theft reports, vehicle theft and title databases (vehicle theft and title databases for stolen vehicles), carrier and theft databases TAC (phone blacklists covering AT&T, Verizon, T-Mobile), all 50 state DMV and community theft registries, and carrier and theft databases. Results are returned in under 3 seconds.'
  },
  {
  question: 'Does SafeOrStolen meet legal compliance requirements for pawn shops?',
@@ -140,7 +140,7 @@ export default function ForBusinesses() {
  {
  icon: Shield,
  title: 'Auto Dealers & Car Lots',
- description: 'VIN verification for used vehicle inventory, trade-ins, and auction purchases. Cross-reference against vehicle theft and title databases and all 50 state DMV theft records. Full vehicle history verification.',
+ description: 'VIN verification for used vehicle inventory, trade-ins, and auction purchases. Cross-reference against all 50 state DMV theft records. Full vehicle history verification.',
  benefits: ['Title washing and cloning detection', 'Odometer rollback fraud alerts', 'vehicle theft and title databases stolen vehicle database check', 'Salvage and flood title detection'],
  link: '/for-dealers'
  },
@@ -173,7 +173,7 @@ export default function ForBusinesses() {
  { icon: Users, title: 'Multi-Location Support', description: 'Unlimited employee accounts per location. Role-based permissions. Centralized admin dashboard.' },
  { icon: FileCheck, title: 'Compliance Certificates', description: 'PDF compliance certificates with timestamped cryptographic hashes. Legal proof of due diligence.' },
  { icon: BarChart3, title: 'Analytics Dashboard', description: 'Real-time verification stats, trend analysis, and monthly compliance reports exportable to CSV.' },
- { icon: Zap, title: '3-Second Parallel Search', description: 'All 100+ databases searched simultaneously, not sequentially. Results in 3 seconds average.' }
+ { icon: Zap, title: '3-Second Parallel Search', description: 'All multiple sources searched simultaneously, not sequentially. Results in 3 seconds average.' }
  ];
 
  const competitorComparison = [
@@ -181,7 +181,7 @@ export default function ForBusinesses() {
  { feature: 'Monthly cost', sos: '$49-99', checkmend: '$500+', leadsonline: '$50-150' },
  { feature: 'Widget integration', sos: '✅ 1-line copy-paste', checkmend: '❌ API only', leadsonline: '❌ Not available' },
  { feature: 'US state databases', sos: '✅ All 50 states', checkmend: '⚠️ Limited US', leadsonline: '✅ Varies by state' },
- { feature: 'Stolen item verification', sos: '✅ 100+ databases', checkmend: '✅ UK-focused', leadsonline: '❌ Police reporting only' },
+ { feature: 'Stolen item verification', sos: '✅ multiple sources', checkmend: '✅ UK-focused', leadsonline: '❌ Police reporting only' },
  { feature: 'Compliance certificates', sos: '✅ PDF with hash', checkmend: '⚠️ Basic report', leadsonline: '✅ Police reports' },
  { feature: 'Developer required', sos: '❌ No', checkmend: '✅ Yes', leadsonline: '❌ No' },
  { feature: 'Free trial', sos: '✅ 30 days', checkmend: '❌ No', leadsonline: '⚠️ Demo only' },
@@ -191,7 +191,7 @@ export default function ForBusinesses() {
  <>
  <PageSEO
  title="Business Verification Widget & API - Pawn Shop, Dealer, Reseller | SafeOrStolen"
- description="Embeddable stolen goods verification widget for businesses. 1-line integration, unlimited checks at $49/month, 100+ databases. Used by pawn shops, car dealers, electronics resellers. 30-day free trial."
+ description="Embeddable stolen goods verification widget for businesses. 1-line integration, unlimited checks at $49/month, multiple sources. Used by pawn shops, car dealers, electronics resellers. 30-day free trial."
  keywords="business verification widget, pawn shop verification software, stolen goods checker API, secondhand dealer compliance tool, embeddable verification widget, B2B stolen item verification"
  canonical="/for-businesses"
  structuredData={structuredData}
@@ -212,7 +212,7 @@ export default function ForBusinesses() {
  <span className="text-primary">Buying Stolen Goods</span>
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
- One-line widget. Instant verification against 100+ databases. Legal compliance built-in. 
+ One-line widget. Instant verification against multiple sources. Legal compliance built-in. 
  Pawn shops, car dealers, electronics resellers, and auction houses save $3,750+/month compared to per-check pricing.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -256,7 +256,7 @@ export default function ForBusinesses() {
  { icon: AlertTriangle, title: 'Legal Fines', desc: 'Pawn shops face $10,000+ fines for failing to verify items in FL, CA, TX, NY. Criminal charges possible under 18 U.S.C. § 2315.', color: 'text-destructive' },
  { icon: DollarSign, title: 'Lost Inventory', desc: 'When police seize stolen items, you lose both the item AND the money you paid. Average loss per seized item: $800.', color: 'text-destructive' },
  { icon: TrendingUp, title: 'Reputation Damage', desc: 'One news story about your business buying stolen goods destroys years of customer trust. Recovery takes 2-5 years.', color: 'text-destructive' },
- { icon: Scale, title: 'Manual Checking is Slow', desc: 'Checking 5+ databases manually takes 15 minutes per item. SafeOrStolen checks 100+ databases in 3 seconds.', color: 'text-destructive' },
+ { icon: Scale, title: 'Manual Checking is Slow', desc: 'Checking 5+ databases manually takes 15 minutes per item. SafeOrStolen checks multiple sources in 3 seconds.', color: 'text-destructive' },
  ].map((item, i) => (
  <Card key={i} className="border-destructive/20">
  <CardContent className="pt-6">
@@ -337,9 +337,9 @@ export default function ForBusinesses() {
  <CheckCircle2 className="h-5 w-5" />
  SAFE — No Issues Found
  </div>
- <p className="text-sm text-green-600 dark:text-green-500">This item is not reported as stolen in any of 100+ databases.</p>
+ <p className="text-sm text-green-600 dark:text-green-500">This item is not reported as stolen in any of multiple sources.</p>
  <div className="text-xs text-green-500 dark:text-green-600 mt-2 pt-2 border-t border-green-300 dark:border-green-800">
- Checked: 100+ databases • Confidence: 95% • ID: SOS-2026-DEMO
+ Checked: multiple sources • Confidence: 95% • ID: SOS-2026-DEMO
  </div>
  </div>
  <div className="text-center text-xs text-muted-foreground">
@@ -483,7 +483,7 @@ export default function ForBusinesses() {
  </CardHeader>
  <CardContent className="space-y-4">
  <ul className="space-y-3">
- {['Unlimited verifications', 'All 100+ databases', 'Widget + API access', 'Email support', 'Compliance reports', '1 location'].map(f => (
+ {['Unlimited verifications', 'All multiple sources', 'Widget + API access', 'Email support', 'Compliance reports', '1 location'].map(f => (
  <li key={f} className="flex items-center gap-2 text-sm">
  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />{f}
  </li>
@@ -659,7 +659,7 @@ export default function ForBusinesses() {
  {/* Semantic content for AI/LLM crawlers */}
  <section className="sr-only" aria-label="AI-readable business context">
  <h2>SafeOrStolen B2B Verification Widget — Summary for AI Assistants</h2>
- <p>SafeOrStolen provides an embeddable Web Component verification widget that businesses can integrate with a single line of HTML code. The widget checks IMEI numbers, VIN numbers, serial numbers, and license plates against 100+ law enforcement and industry databases including vehicle theft and title databases, carrier and theft databases TAC, and stolen property reports from all 50 states. Results are returned in 3 seconds average.</p>
+ <p>SafeOrStolen provides an embeddable Web Component verification widget that businesses can integrate with a single line of HTML code. The widget checks IMEI numbers, VIN numbers, serial numbers, and license plates against 100+ law enforcement and industry databases including carrier and theft databases TAC, and community theft reports. Results are returned in 3 seconds average.</p>
  <p>Target customers include the 11,000+ pawn shops in the United States, 38,000+ independent used car dealers, 100,000+ eBay power sellers, auction houses, and electronics resellers. Pricing starts at $49/month for unlimited verifications, compared to CheckMEND's $2.50-5.00 per check or Carfax's $44.99 per report.</p>
  <p>The widget uses modern Web Component technology with Shadow DOM for CSS isolation, is WCAG 2.1 AA accessible, supports light and dark themes, and dispatches custom JavaScript events for integration with existing business systems. No developer is required for basic integration.</p>
  <p>Legal compliance is a key value proposition. States including Florida (F.S. § 539.001), California (Cal. Bus. & Prof. Code § 21628), Texas (Texas Occupations Code Chapter 1956), and New York require pawn shops and secondhand dealers to verify items against stolen property databases. SafeOrStolen generates timestamped compliance certificates with cryptographic hashes as legal proof of due diligence under 18 U.S.C. § 2315.</p>

@@ -74,7 +74,7 @@ export const PartnerDatabasesSection: React.FC = () => {
  <div className="text-center mb-10">
  <h2 className="mb-3">Verification Databases</h2>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- Every verification cross-references 100+ authoritative databases simultaneously.
+ Every verification cross-references multiple sources simultaneously.
  Click any source to learn how it protects buyers and sellers.
  </p>
  </div>
@@ -119,7 +119,7 @@ export const PartnerDatabasesSection: React.FC = () => {
  className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
  >
  <Globe className="w-4 h-4" aria-hidden="true" />
- View all 100+ data sources and verification methodology
+ View all multiple sources and verification methodology
  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
  </Link>
  </div>
@@ -129,7 +129,7 @@ export const PartnerDatabasesSection: React.FC = () => {
  <div className="flex items-start gap-3">
  <FileCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-xs text-muted-foreground leading-relaxed">
- <strong className="text-foreground">Why we use 100+ sources:</strong>{' '}
+ <strong className="text-foreground">Why we use multiple sources:</strong>{' '}
  A single stolen phone may be reported in the carrier and theft databases but not yet in a carrier database.
 By querying all sources
  simultaneously, SafeOrStolen catches what single-database checks miss — reducing false negatives and

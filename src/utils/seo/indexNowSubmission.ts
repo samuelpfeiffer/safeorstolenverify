@@ -137,7 +137,7 @@ export function getAllSitemapUrls(): string[] {
     '/vin-checker',
     '/serial-number-checker',
     '/check-phone',
-    '/check-car',
+    '/vin-checker',
     '/check-electronics',
     '/check-bike',
     '/check-ebike',
@@ -191,7 +191,7 @@ export async function submitHighPriorityPages(): Promise<IndexNowResponse> {
     '/imei-checker',
     '/vin-checker',
     '/check-phone',
-    '/check-car',
+    '/vin-checker',
     '/pricing',
   ];
   

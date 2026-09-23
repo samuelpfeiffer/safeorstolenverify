@@ -84,7 +84,7 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "How accurate is the iPhone stolen check?",
- answer: "We check our verification databases, including carrier and theft databases, major carrier and theft databases, . No database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
+ answer: "We check our verification databases, including carrier and theft databases, major carrier and theft databases. No database is 100% complete. A 'clean' result means no records were found - always combine with other due diligence like meeting in public and testing the device."
  },
  {
  question: "Can someone change an iPhone's IMEI?",

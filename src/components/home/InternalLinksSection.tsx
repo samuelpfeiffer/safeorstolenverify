@@ -14,7 +14,7 @@ export const InternalLinksSection = () => {
         { to: "/serial-number-checker", label: "Serial Number Checker" },
         { to: "/firearms-check", label: "Gun Serial Lookup" },
         { to: "/check-phone", label: "Check Phone" },
-        { to: "/check-car", label: "Check Car" },
+        { to: "/vin-checker", label: "Check Car" },
       ]
     },
     {

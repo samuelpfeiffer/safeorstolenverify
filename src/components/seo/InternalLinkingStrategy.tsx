@@ -17,7 +17,7 @@ export const InternalLinkingStrategy: React.FC = () => {
     ],
     guides: [
       { title: 'How to Check If Phone Is Stolen', path: '/check-phone', keywords: 'phone verification guide' },
-      { title: 'Car Theft Verification Guide', path: '/check-car', keywords: 'vehicle theft check' },
+      { title: 'Car Theft Verification Guide', path: '/vin-checker', keywords: 'vehicle theft check' },
       { title: 'Laptop Stolen Check', path: '/check-laptop', keywords: 'laptop verification' },
       { title: 'How to Check Gun Serial Number', path: '/firearms-check', keywords: 'firearm verification' },
       { title: 'How It Works', path: '/how-it-works', keywords: 'safe buying tips' }
@@ -107,7 +107,7 @@ export const InternalLinkingStrategy: React.FC = () => {
               {' '}<Link to="/imei-checker" className="hover:text-primary">free IMEI checker</Link>
               {' • '}<Link to="/vin-checker" className="hover:text-primary">VIN verification</Link>
               {' • '}<Link to="/check-phone" className="hover:text-primary">check if phone is stolen</Link>
-              {' • '}<Link to="/check-car" className="hover:text-primary">verify car not stolen</Link>
+              {' • '}<Link to="/vin-checker" className="hover:text-primary">verify car not stolen</Link>
               {' • '}<Link to="/firearms-check" className="hover:text-primary">gun serial number check</Link>
               {' • '}<Link to="/serial-number-checker" className="hover:text-primary">serial number lookup</Link>
               {' • '}<Link to="/verify" className="hover:text-primary">verify any item</Link>

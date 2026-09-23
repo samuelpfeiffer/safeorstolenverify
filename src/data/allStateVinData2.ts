@@ -78,7 +78,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  },
  faqs: [
  { question: "How do I verify a Kentucky title?", answer: "Contact Kentucky Transportation Cabinet, use SafeOrStolen's VIN checker for theft verification, and physically inspect the title certificate for proper signatures and security features." },
- { question: "What should I check when buying a used car in Kentucky?", answer: "Verify VIN with SafeOrStolen, check for liens with Kentucky Transportation Cabinet, inspect title authenticity, request complete vehicle history including vehicle theft and title databases data." }
+ { question: "What should I check when buying a used car in Kentucky?", answer: "Verify VIN with SafeOrStolen, check for liens with Kentucky Transportation Cabinet, inspect title authenticity, request complete vehicle history including data." }
  ]
  },
  louisiana: {

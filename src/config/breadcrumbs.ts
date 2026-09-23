@@ -32,7 +32,7 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     // Verification Tools
     '/verify': [{ name: 'Verify Item', href: '/verify' }],
     '/check-phone': [{ name: 'Check Phone', href: '/check-phone' }],
-    '/check-car': [{ name: 'Check Car', href: '/check-car' }],
+    '/vin-checker': [{ name: 'Check Car', href: '/vin-checker' }],
     '/check-bike': [{ name: 'Check Bike', href: '/check-bike' }],
     '/check-electronics': [{ name: 'Check Electronics', href: '/check-electronics' }],
     '/imei-checker': [{ name: 'IMEI Checker', href: '/imei-checker' }],

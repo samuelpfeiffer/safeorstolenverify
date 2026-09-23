@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
         { name: 'License Plate Lookup', href: '/license-plate-lookup' },
         { name: 'Firearms Check', href: '/firearms-check' },
         { name: 'Check Phone', href: '/check-phone' },
-        { name: 'Check Car', href: '/check-car' },
+        { name: 'Check Car', href: '/vin-checker' },
       ]
     },
     {

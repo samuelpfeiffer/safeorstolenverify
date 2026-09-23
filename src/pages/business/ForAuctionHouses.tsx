@@ -47,7 +47,7 @@ export default function ForAuctionHouses() {
  "name": "Does SafeOrStolen provide compliance documentation for auctions?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Yes. Every verification generates a timestamped compliance report showing the item was checked against law enforcement and insurance databases before auction. These reports serve as due diligence documentation."
+ "text": "Yes. Every verification generates a timestamped compliance report showing the item was checked against law enforcement before auction. These reports serve as due diligence documentation."
  }
  }
  ]
@@ -176,15 +176,15 @@ export default function ForAuctionHouses() {
  <Card className="text-center">
  <CardContent className="pt-6">
  <Search className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">100+ Database Sources</h3>
- <p className="text-sm text-muted-foreground">Every item checked against law enforcement records, insurance claims, carrier and theft databases, vehicle theft and title databases, and pawn shop databases.</p>
+ <h3 className="font-semibold mb-2">Multiple Sources</h3>
+ <p className="text-sm text-muted-foreground">Every item checked against theft reports, insurance claims, carrier and theft databases, vehicle theft and title databases, and pawn shop databases.</p>
  </CardContent>
  </Card>
  <Card className="text-center">
  <CardContent className="pt-6">
  <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
  <h3 className="font-semibold mb-2">Compliance Reports</h3>
- <p className="text-sm text-muted-foreground">Timestamped verification reports for every item. Downloadable PDF documentation for your compliance files and insurance records.</p>
+ <p className="text-sm text-muted-foreground">Timestamped verification reports for every item. Downloadable PDF documentation for your compliance files.</p>
  </CardContent>
  </Card>
  <Card className="text-center">
@@ -220,7 +220,7 @@ export default function ForAuctionHouses() {
  <h2 className="text-3xl font-bold text-center mb-8">Auction Item Categories We Verify</h2>
  <div className="prose prose-lg max-w-none text-muted-foreground">
  <p>
- SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we check VINs against vehicle theft and title databases, insurance total loss records, and state DMV stolen vehicle databases covering cars, trucks, motorcycles, RVs, boats, and trailers. For <strong>electronics and phone auctions</strong>, we verify IMEI numbers against carrier and theft databases, and insurance claim registries. For <strong>equipment auctions</strong>, serial numbers are checked against law enforcement stolen property databases, LeadsOnline pawn records, and manufacturer theft registries.
+ SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we check VINs against insurance total loss records, and state DMV stolen vehicle databases covering cars, trucks, motorcycles, RVs, boats, and trailers. For <strong>electronics and phone auctions</strong>, we verify IMEI numbers against carrier and theft databases, and insurance claim registries. For <strong>equipment auctions</strong>, serial numbers are checked against law enforcement stolen property databases, LeadsOnline pawn records, and manufacturer theft registries.
  </p>
  <p>
  We also support <strong>firearms auctions</strong> with serial number verification, <strong>jewelry and luxury goods</strong> with insurance claim cross-referencing, <strong>musical instruments</strong> with manufacturer serial number validation, and <strong>power tools and construction equipment</strong> with contractor theft database checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can verify it before it reaches your auction block.
@@ -263,7 +263,7 @@ export default function ForAuctionHouses() {
  <Card>
  <CardContent className="p-6">
  <h3 className="font-semibold mb-2">Does SafeOrStolen provide compliance documentation?</h3>
- <p className="text-muted-foreground">Every verification generates a timestamped compliance report showing the item was checked against law enforcement and insurance databases. These reports serve as due diligence documentation for regulatory compliance and insurance purposes.</p>
+ <p className="text-muted-foreground">Every verification generates a timestamped compliance report showing the item was checked against law enforcement. These reports serve as due diligence documentation for regulatory compliance and insurance purposes.</p>
  </CardContent>
  </Card>
  </div>

@@ -7,7 +7,7 @@ export const TrustSignalsSection = () => {
  {
  icon: Shield,
  title: "Law Enforcement Partner",
- description: "Integrated with police databases nationwide",
+ description: "Integrated with theft reports nationwide",
  color: "text-primary"
  },
  {

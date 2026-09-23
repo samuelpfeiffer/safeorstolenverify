@@ -19,7 +19,7 @@ const GetAppPage = () => {
     {
       icon: Zap,
       title: "Instant Results",
-      description: "Get verification results in under 3 seconds from 100+ databases"
+      description: "Get verification results in under 3 seconds from multiple sources"
     },
     {
       icon: Wifi,

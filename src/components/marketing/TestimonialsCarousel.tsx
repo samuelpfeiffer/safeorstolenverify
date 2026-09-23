@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
  name: 'David R.',
  role: 'Pawn Shop Owner',
  location: 'Miami, FL',
- content: 'SafeOrStolen is mandatory at intake now. In the first week, it flagged 3 items against Florida police databases. We avoided felony charges for receiving stolen property. The API integration with our POS system makes compliance effortless — and our insurance premiums dropped 18%.',
+ content: 'SafeOrStolen is mandatory at intake now. In the first week, it flagged 3 items against Florida theft reports. We avoided felony charges for receiving stolen property. The API integration with our POS system makes compliance effortless — and our insurance premiums dropped 18%.',
  rating: 5,
  itemType: 'Business / Pawn',
  savedAmount: 'Legal liability',

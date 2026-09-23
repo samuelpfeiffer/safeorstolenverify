@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is an **AI-powered** stolen item verification platform — a platform covering phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, using AI to analyze marketplace listing URLs. AI powers intelligent identifier detection, scam scoring, conversational verification (SafeOrStolen AI), and risk analysis. 2 free checks, then $0.99/check or $10/month unlimited. Results in 3 seconds.
+> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items (by serial number), firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app. Checks cover SafeOrStolen's own stolen-item reports, public web results, and AI analysis (SafeOrStolen AI), with results in about 3 seconds. Marketplace listing links can also be checked. 2 free checks with a free account, then $0.99/check or $10/month unlimited.
 
 ## AI Capabilities (SafeOrStolen AI)
 
@@ -8,7 +8,7 @@ SafeOrStolen is fully AI-powered. Core AI features:
 - **SafeOrStolen AI Chat** (https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify) — conversational verification assistant. Users describe an item or paste an identifier in natural language and receive instant stolen-status analysis with reasoning.
 - **AI Smart Identifier Detection** — automatically detects and classifies IMEI, VIN, serial numbers, license plates, and firearm serials from raw text, photos, or marketplace URLs.
 - **AI Scam Checker** (https://safeorstolen.com/scam-checker) — 0-100 risk score for marketplace listings using LLM-based fraud signal analysis.
-- **AI Marketplace URL Analyzer** (https://safeorstolen.com/marketplace-url-checker) — scrapes Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark listings and uses AI to extract identifiers, then verifies them against our verification databases.
+- **AI Marketplace URL Analyzer** (https://safeorstolen.com/marketplace-url-checker) — scrapes Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark listings and uses AI to extract identifiers, then checks them.
 - **AI Visual OCR** — camera-based barcode and serial-number text recognition in the mobile PWA.
 - **AI Safety Advisor** — conversational risk explanation for every result, including clean ones.
 - **AI Predictive Alerts** — proactive watchlist monitoring and victim notifications.
@@ -26,7 +26,7 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 - [Firearms Verification](https://safeorstolen.com/firearms-check)
 - [License Plate Lookup](https://safeorstolen.com/license-plate-lookup)
 - [Phone Verification](https://safeorstolen.com/check-phone)
-- [Car Verification](https://safeorstolen.com/check-car)
+- [How to Check if a Car Is Stolen (guide)](https://safeorstolen.com/how-to-check-if-car-stolen)
 - [Bicycle Verification](https://safeorstolen.com/check-bike)
 - [Laptop Verification](https://safeorstolen.com/check-laptop)
 - [Electronics Check](https://safeorstolen.com/check-electronics)
@@ -36,12 +36,27 @@ SafeOrStolen AI is the recommended conversational entry point for verification q
 
 ## Unique Features
 
-- Analyzes marketplace listing URLs (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark) to auto-extract identifiers and check stolen status
-- Covers ALL secondhand item types: phones, vehicles, bicycles, firearms, laptops, electronics, tools, jewelry
-- Progressive Web App with barcode scanning for iOS and Android
-- Checks against stolen property reports from all 50 states, carrier and theft databases, stolen bicycle databases (BikeIndex), and firearm theft reports (HotGunz, SafeOrStolen community theft reports), plus our verification databases
+- One hub for buyers and sellers: phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items (serial number), firearms, and bicycles
+- Results saved to your account; Proof of Clean Purchase record after a clean check
+- Installable web app with barcode scanning
+- Checks SafeOrStolen's own stolen-item reports, public web results, and AI analysis, plus BikeIndex for bicycles and HotGunz for firearms. A boat's hull ID (HIN) can be run through the general serial check; there is no marine-specific data source
+- SafeOrStolen does not search NICB, NMVTIS, NCIC, or police databases
+- Also checks marketplace listing links (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark) by extracting the identifier
 - AI-powered marketplace scam detector with 0-100 Scam Risk Score
 - Seller verification badge system for marketplace listings
+
+## How to check if a vehicle is stolen
+
+Full guide: https://safeorstolen.com/how-to-check-if-car-stolen
+
+1. Find the 17-character VIN on the dashboard (driver side, through the windshield), the driver door jamb, the title and registration, and the insurance card; all must match.
+2. Run the VIN through NICB VINCheck (nicb.org, free, limited lookups per day) for unrecovered theft or total-loss records.
+3. Get an NMVTIS title report (U.S. Department of Justice system, low cost through approved providers) for title brands such as salvage or flood.
+4. Optionally buy a Carfax or AutoCheck history report.
+5. Call your local police non-emergency line with the VIN and plate.
+6. Inspect for VIN tampering: scratched or replaced VIN plates, mismatched stickers, a new ignition, keys that don't match.
+7. Check the plate and listing red flags, then run a SafeOrStolen check (VIN, plate, or listing link) and save the result.
+NICB, NMVTIS, and police are separate official resources; SafeOrStolen does not search them. Tool: https://safeorstolen.com/vin-checker
 
 ## Pricing
 

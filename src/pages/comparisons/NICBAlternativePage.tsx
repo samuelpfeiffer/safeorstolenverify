@@ -162,7 +162,7 @@ const NICBAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Our Verification Databases</h3>
-                <p className="text-muted-foreground">We check our verification databases across stolen-property registries, carrier blacklists, and vehicle theft records for broader coverage.</p>
+                <p className="text-muted-foreground">We check SafeOrStolen's own stolen-item reports, public web results and AI analysis across phones, vehicles, serial-numbered items, firearms and bicycles. NICB VINCheck remains a separate free resource worth using.</p>
               </div>
             </div>
           </div>

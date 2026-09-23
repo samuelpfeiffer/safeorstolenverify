@@ -17,7 +17,7 @@ const StolenCheckMiami = () => {
   const faqs = [
     {
       question: "How do I check if a used car in Miami is stolen?",
-      answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to verify against Florida DMV, Miami-Dade Police, and stolen property reports from all 50 states. Florida has one of the highest vehicle theft rates in the nation."
+      answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to verify against Florida DMV, Miami-Dade Police, and community theft reports. Florida has one of the highest vehicle theft rates in the nation."
     },
     {
       question: "Where should I meet sellers in Miami to buy used items?",

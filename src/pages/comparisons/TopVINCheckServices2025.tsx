@@ -54,7 +54,7 @@ const TopVINCheckServices2025 = () => {
       multipleItems: true,
       pros: [
         '$10/month unlimited VIN checks',
-        '100+ database from law enforcement & insurers',
+        'SafeOrStolen reports, web results & AI analysis',
         'Checks more than cars (phones, bikes, tools)',
         'Mobile app for instant verification',
         'AI-powered risk analysis'
@@ -71,7 +71,7 @@ const TopVINCheckServices2025 = () => {
       rank: 2,
       name: 'Carfax',
       rating: 4.6,
-      badge: 'Most Comprehensive',
+      badge: 'Multi-Category',
       badgeColor: 'bg-blue-500',
       bestFor: 'Complete vehicle history with service records',
       price: '$39.99/report',

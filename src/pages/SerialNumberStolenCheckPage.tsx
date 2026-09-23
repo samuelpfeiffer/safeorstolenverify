@@ -52,7 +52,7 @@ const SerialNumberStolenCheckPage = () => {
  const faqs = [
  {
  question: "Can I check if something is stolen with just a serial number?",
- answer: "Yes. SafeOrStolen searches 100+ databases for theft indicators associated with serial numbers. We check insurance theft claims, salvage records, and available public theft reports. Enter any serial number to see if there are theft flags associated with it. Note that not all stolen items are reported, so a clean result means no records found—not a guarantee the item was never stolen."
+ answer: "Yes. SafeOrStolen searches multiple sources for theft indicators associated with serial numbers. We check insurance theft claims, salvage records, and available public theft reports. Enter any serial number to see if there are theft flags associated with it. Note that not all stolen items are reported, so a clean result means no records found—not a guarantee the item was never stolen."
  },
  {
  question: "What if I only have a partial serial?",
@@ -150,7 +150,7 @@ const SerialNumberStolenCheckPage = () => {
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
  Buying used? Check any serial number for theft risk before you pay. 
- Search 100+ databases for phones, laptops, tools, bikes, firearms, electronics, and more.
+ Search multiple sources for phones, laptops, tools, bikes, firearms, electronics, and more.
  </p>
 
  {/* Search Input */}
@@ -234,7 +234,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- We don't rely on a single database. Our verification engine searches 100+ sources including insurance theft claim databases, salvage records, public theft reports, carrier and theft databases (for phones), and industry-specific registries. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
+ We don't rely on a single database. Our verification engine searches multiple sources including insurance theft claim databases, salvage records, public theft reports, carrier and theft databases (for phones), and industry-specific registries. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
  </p>
  </div>
  </div>

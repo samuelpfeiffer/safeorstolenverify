@@ -125,7 +125,7 @@ const EbayBuyerProtection = () => {
  <h3 className="text-xl font-semibold mb-2">Verify with SafeOrStolen</h3>
  <p className="text-muted-foreground mb-4">Enter the identifier into our free verification tool. We check our verification databases including:</p>
  <ul className="list-disc list-inside text-muted-foreground space-y-2">
- <li>Stolen property reports from all 50 states</li>
+ <li>community theft reports</li>
  <li>vehicle theft and title databases</li>
  <li>Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
  <li>International stolen databases</li>

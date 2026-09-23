@@ -67,11 +67,11 @@ export default function ForDealers() {
  <section className="max-w-4xl mx-auto mb-16 prose prose-lg">
  <h2>Why Dealerships Choose SafeOrStolen</h2>
  <p>Car dealerships face increasing risk from wholesale fraud, title washing, and salvage vehicles being misrepresented as clean. A single problematic vehicle can cost $20,000+ in legal fees, customer refunds, and reputation damage.</p>
- <p>SafeOrStolen provides instant VIN verification checking 100+ databases including state motor vehicle agencies, insurance total loss records, and international theft databases. Every check takes 3 seconds and creates a compliance record protecting your dealership.</p>
+ <p>SafeOrStolen provides instant VIN verification checking multiple sources including state motor vehicle agencies, insurance total loss records, and international theft databases. Every check takes 3 seconds and creates a compliance record protecting your dealership.</p>
 
  <h3>What We Verify for Dealers</h3>
  <ul>
- <li><strong>Stolen Status:</strong> Stolen property reports from all 50 states</li>
+ <li><strong>Stolen Status:</strong> community theft reports</li>
  <li><strong>Title History:</strong> Clean, salvage, rebuilt, flood, junk, lemon law buyback</li>
  <li><strong>Total Loss Records:</strong> Insurance company claims across all 50 states</li>
  <li><strong>Odometer Readings:</strong> Historical mileage to detect rollbacks</li>
@@ -95,7 +95,7 @@ export default function ForDealers() {
 
  <h4>Problem 4: Expensive Carfax Subscriptions</h4>
  <p>Dealerships pay $1,000+/year for Carfax unlimited access, but Carfax doesn't check real-time community theft registries.</p>
- <p><strong>Solution:</strong> SafeOrStolen costs less and includes stolen property reports from all 50 states databases, and international theft records Carfax doesn't access.</p>
+ <p><strong>Solution:</strong> SafeOrStolen costs less and includes community theft reports databases, and international theft records Carfax doesn't access.</p>
 
  <h3>Real Dealership Case Studies</h3>
  
@@ -198,7 +198,7 @@ export default function ForDealers() {
  <h3>Why SafeOrStolen vs. Carfax for Dealers</h3>
  <ul>
  <li>✅ <strong>Cheaper:</strong> $588/year vs. $1,200+/year for Carfax unlimited</li>
- <li>✅ <strong>Real-time law enforcement data:</strong> Stolen property reports from all 50 states databases (Carfax doesn't check)</li>
+ <li>✅ <strong>Real-time law enforcement data:</strong> community theft reports databases (Carfax doesn't check)</li>
  <li>✅ <strong>Faster:</strong> 3 seconds vs. 30+ seconds with Carfax</li>
  <li>✅ <strong>Mobile app:</strong> Verify VINs at auctions, on trade-ins, anywhere</li>
  <li>✅ <strong>White-label reports:</strong> Your dealership branding, not Carfax logo</li>

@@ -196,7 +196,7 @@ export const createServiceSchema = () => ({
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "Complete Multi-Database Stolen Item Verification - IMEI, VIN & Serial Number Check",
- "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including vehicle theft and title databases, carrier and theft databases, CheckMEND, and stolen bicycle databases. Fast results in 30 seconds.",
+ "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including carrier and theft databases, CheckMEND, and stolen bicycle databases. Fast results in 30 seconds.",
  "provider": {
  "@type": "Organization",
  "name": "SafeOrStolen",
@@ -320,7 +320,7 @@ export const createFAQSchema = () => ({
  "name": "Can I check if a phone is stolen for free?",
  "acceptedAnswer": {
  "@type": "Answer", 
- "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from 100+ databases including carrier and theft databases."
+ "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from multiple sources including carrier and theft databases."
  }
  },
  {
@@ -344,7 +344,7 @@ export const createFAQSchema = () => ({
  "name": "How does SafeOrStolen use AI and machine learning for fraud detection?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen uses advanced AI and machine learning technology for fraud detection: 1) Predictive analytics identifies suspicious patterns across 100+ databases. 2) Machine learning algorithms detect fraud indicators in real-time. 3) Computer vision technology assists with serial number recognition. 4) Natural language processing analyzes stolen item reports. Our AI-powered verification makes us a leader in circular economy trust infrastructure for the $367B global secondhand market."
+ "text": "SafeOrStolen uses advanced AI and machine learning technology for fraud detection: 1) Predictive analytics identifies suspicious patterns across multiple sources. 2) Machine learning algorithms detect fraud indicators in real-time. 3) Computer vision technology assists with serial number recognition. 4) Natural language processing analyzes stolen item reports. Our AI-powered verification makes us a leader in circular economy trust infrastructure for the $367B global secondhand market."
  }
  },
  {

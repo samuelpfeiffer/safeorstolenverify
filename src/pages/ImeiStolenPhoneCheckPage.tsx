@@ -63,7 +63,7 @@ const ImeiStolenPhoneCheckPage = () => {
  },
  {
  question: "How accurate is the IMEI blacklist check?",
- answer: "Our IMEI check queries the carrier and theft databases, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including and user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
+ answer: "Our IMEI check queries the carrier and theft databases, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
  },
  {
  question: "How much does the IMEI check cost?",

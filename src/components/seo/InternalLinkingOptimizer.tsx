@@ -18,7 +18,7 @@ export const InternalLinkingOptimizer: React.FC<InternalLinkingOptimizerProps> =
         { url: "/blog/complete-verification-guide", anchor: "how to check if something is stolen", priority: "high" },
         { url: "/blog/theft-trends-report-2024", anchor: "stolen goods statistics", priority: "high" },
         { url: "/check-phone", anchor: "IMEI checker", priority: "medium" },
-        { url: "/check-car", anchor: "VIN verification", priority: "medium" },
+        { url: "/vin-checker", anchor: "VIN verification", priority: "medium" },
         { url: "/pricing", anchor: "our verification services", priority: "medium" }
       ],
       guide: [

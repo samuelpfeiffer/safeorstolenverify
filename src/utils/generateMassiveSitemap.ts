@@ -33,7 +33,7 @@ const CORE_PAGES = [
   { url: '/vin-checker', priority: 0.9, changefreq: 'weekly' },
   { url: '/serial-number-checker', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-phone', priority: 0.9, changefreq: 'weekly' },
-  { url: '/check-car', priority: 0.9, changefreq: 'weekly' },
+  { url: '/vin-checker', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-electronics', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-bike', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-ebike', priority: 0.8, changefreq: 'weekly' },
@@ -104,7 +104,7 @@ const CORE_PAGES = [
   
   // Traffic Pages (Real pages)
   { url: '/check-stolen-phone', priority: 0.8, changefreq: 'weekly' },
-  { url: '/check-stolen-car', priority: 0.8, changefreq: 'weekly' },
+  { url: '/vin-checker', priority: 0.8, changefreq: 'weekly' },
   { url: '/check-stolen-laptop', priority: 0.8, changefreq: 'weekly' },
   { url: '/check-stolen-bike', priority: 0.8, changefreq: 'weekly' },
   { url: '/check-stolen-firearm', priority: 0.8, changefreq: 'weekly' },

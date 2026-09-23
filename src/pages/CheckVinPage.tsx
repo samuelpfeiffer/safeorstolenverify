@@ -8,7 +8,7 @@ import { PillarPageTemplate } from '@/components/seo/PillarPageTemplate';
 const CheckVinPage = () => {
   return (
     <PillarPageTemplate
-      route="/check-vin"
+      route="/vin-checker"
       pillarName="Check VIN"
       title="Stolen Vehicle VIN Check — Verify Before You Buy | SafeOrStolen"
       description="Run a VIN to check theft records, title problems, and history before buying a used car, motorcycle, or trailer."

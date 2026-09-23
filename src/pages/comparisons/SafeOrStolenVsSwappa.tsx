@@ -199,7 +199,7 @@ const SafeOrStolenVsSwappa = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          100+ database from law enforcement & insurers
+                          SafeOrStolen reports, web results & AI analysis
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />

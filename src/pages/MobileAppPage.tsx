@@ -19,7 +19,7 @@ const MobileAppPage = () => {
  { question: "Does SafeOrStolen work on iPhone and Android?", answer: "Yes! SafeOrStolen is a Progressive Web App (PWA) that works on all devices: iPhone, Android, tablets, and desktop computers. Install directly from your browser—no app store required." },
  { question: "Can I use SafeOrStolen without internet?", answer: "Yes. SafeOrStolen features offline mode that caches your recent verifications for access anywhere. Perfect for marketplace meetups in areas with poor signal." },
  { question: "How do I install SafeOrStolen on my phone?", answer: "iPhone: Open Safari, visit safeorstolen.com, tap Share → Add to Home Screen. Android: Open Chrome, tap Menu → Install App. Takes 10 seconds." },
- { question: "What can I verify with the SafeOrStolen app?", answer: "Verify phones (IMEI), vehicles (VIN), license plates, electronics, firearms, bikes, boats, and any item with a serial number against 100+ stolen databases." },
+ { question: "What can I verify with the SafeOrStolen app?", answer: "Verify phones (IMEI), vehicles (VIN), license plates, electronics, firearms, bikes, boats, and any item with a serial number against multiple sources." },
  { question: "How does SafeOrStolen compare to single-category checkers?", answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." },
  ];
 
@@ -38,9 +38,9 @@ const MobileAppPage = () => {
  const features = [
  { icon: QrCode, title: "Barcode Scanner", desc: "Scan IMEI, VIN, or serial numbers instantly—no typing required" },
  { icon: WifiOff, title: "Offline Mode", desc: "Access recent verifications without internet at marketplace meetups" },
- { icon: Zap, title: "3-Second Results", desc: "Instant verification against 100+ stolen item databases" },
+ { icon: Zap, title: "3-Second Results", desc: "Instant verification against multiple sources" },
  { icon: Shield, title: "All Item Types", desc: "Phones, vehicles, electronics, firearms, bikes, boats & more" },
- { icon: Globe, title: "US-Optimized", desc: "Stolen property reports from all 50 states, vehicle theft and title databases, and all 50 state community theft registries" },
+ { icon: Globe, title: "US-Optimized", desc: "community theft reports, vehicle theft and title databases, and all 50 state community theft registries" },
  { icon: Clock, title: "24/7 Access", desc: "Verify anytime, anywhere—works like a native app" },
  ];
 
@@ -57,13 +57,13 @@ const MobileAppPage = () => {
  <>
  <Helmet>
  <title>SafeOrStolen on Mobile | Stolen Item Checker</title>
- <meta name="description" content="Use SafeOrStolen on your phone to verify stolen phones, vehicles & electronics. Free install from your browser, barcode scanner, offline mode. 100+ databases in 3 seconds." />
+ <meta name="description" content="Use SafeOrStolen on your phone to verify stolen phones, vehicles & electronics. Free install from your browser, barcode scanner, offline mode. multiple sources in 3 seconds." />
  <meta name="keywords" content="SafeOrStolen app, stolen item checker app, IMEI checker app, VIN lookup app, stolen phone app, download SafeOrStolen" />
  <link rel="canonical" href="https://safeorstolen.com/mobile-app" />
  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
  
  <meta property="og:title" content="SafeOrStolen Mobile App - Free Download" />
- <meta property="og:description" content="SafeOrStolen on mobile: barcode scanner, offline mode, 100+ databases." />
+ <meta property="og:description" content="SafeOrStolen on mobile: barcode scanner, offline mode, multiple sources." />
  <meta property="og:url" content="https://safeorstolen.com/mobile-app" />
  <meta property="og:type" content="website" />
  
@@ -85,12 +85,12 @@ const MobileAppPage = () => {
  <noscript>
  <article>
  <h1>SafeOrStolen Mobile App - Free Download</h1>
- <p>Use SafeOrStolen on your phone to verify stolen phones, vehicles, electronics, and firearms. SafeOrStolen features instant barcode scanning, offline mode, and checks 100+ databases in 3 seconds. Free to install from any mobile browser.</p>
+ <p>Use SafeOrStolen on your phone to verify stolen phones, vehicles, electronics, and firearms. SafeOrStolen features instant barcode scanning, offline mode, and checks multiple sources in 3 seconds. Free to install from any mobile browser.</p>
  <h2>App Features</h2>
  <ul>
  <li>Barcode Scanner - Scan IMEI, VIN, or serial numbers instantly</li>
  <li>Offline Mode - Access verifications without internet</li>
- <li>3-Second Results - 100+ databases checked instantly</li>
+ <li>3-Second Results - multiple sources checked instantly</li>
  <li>All Item Types - Phones, vehicles, electronics, firearms</li>
  </ul>
  <h2>How to Install</h2>

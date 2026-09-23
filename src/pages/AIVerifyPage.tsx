@@ -68,7 +68,7 @@ const AIVerifyPage: React.FC = () => {
       id: 'welcome',
       role: 'assistant',
       content:
-        "Hi 👋 I'm the SafeOrStolen AI. Paste any **IMEI**, **VIN**, **serial number**, **license plate**, or **marketplace URL** — or upload a photo of the item. I'll check it against 100+ databases in seconds.",
+        "Hi 👋 I'm the SafeOrStolen AI. Paste any **IMEI**, **VIN**, **serial number**, **license plate**, or **marketplace URL** — or upload a photo of the item. I'll check it against multiple sources in seconds.",
     },
   ]);
   const [input, setInput] = useState('');
@@ -147,7 +147,7 @@ const AIVerifyPage: React.FC = () => {
         if (!user) {
           updateMessage(assistantId, {
             loading: false,
-            content: `I detected this looks like a **${itemType.toUpperCase()}** (${confidence}% confidence). To run a full verification across 100+ databases, please [sign in](/auth?redirect=/ai-verify) — it's free and takes 10 seconds. You'll get **2 free checks**.`,
+            content: `I detected this looks like a **${itemType.toUpperCase()}** (${confidence}% confidence). To run a full verification across multiple sources, please [sign in](/auth?redirect=/ai-verify) — it's free and takes 10 seconds. You'll get **2 free checks**.`,
           });
           return;
         }
@@ -352,7 +352,7 @@ const AIVerifyPage: React.FC = () => {
                 <h1 className="text-base font-semibold leading-tight">AI Verification Chat</h1>
                 <p className="text-xs text-muted-foreground flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Powered by Claude · 100+ databases
+                  Powered by Claude · multiple sources
                 </p>
               </div>
             </div>

@@ -42,7 +42,7 @@ const OfferUpSafetyPage = () => {
  "name": "How do I verify if an OfferUp item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Ask the seller for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen's free checker before meeting. SafeOrStolen checks 100+ databases to verify the item isn't reported stolen."
+ "text": "Ask the seller for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen's free checker before meeting. SafeOrStolen checks multiple sources to verify the item isn't reported stolen."
  }
  }
  ]
@@ -67,7 +67,7 @@ const OfferUpSafetyPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="OfferUp Scam Check - Free Item Verification"
- description="Avoid OfferUp scams with free IMEI, VIN and serial number verification. Check if items are stolen before meeting sellers. Instant results from 100+ databases."
+ description="Avoid OfferUp scams with free IMEI, VIN and serial number verification. Check if items are stolen before meeting sellers. Instant results from multiple sources."
  keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid OfferUp scams, OfferUp fraud protection"
  canonical="/offerup-safety"
  structuredData={faqSchema}

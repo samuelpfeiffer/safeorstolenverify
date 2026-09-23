@@ -107,7 +107,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Access to 100+ stolen goods databases
+                  Access to multiple sources
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />

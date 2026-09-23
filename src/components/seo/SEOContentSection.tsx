@@ -151,7 +151,7 @@ export const SEOContentSection = () => {
  </h3>
  <div className="space-y-4 mb-12">
  <p className="text-muted-foreground leading-relaxed">
- Our verification system searches multiple databases including stolen property reports from all 50 states, 
+ Our verification system searches multiple databases including community theft reports, 
  police reports, carrier and theft databases, manufacturer databases, and international stolen goods registries. 
  Simply enter the IMEI, VIN, or serial number and receive instant results.
  </p>
@@ -169,7 +169,7 @@ export const SEOContentSection = () => {
  <Link to="/check-phone" className="text-sm text-muted-foreground hover:text-primary transition-colors">
  Check if phone is stolen
  </Link>
- <Link to="/check-car" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+ <Link to="/vin-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">
  Verify car is not stolen
  </Link>
  <Link to="/check-laptop" className="text-sm text-muted-foreground hover:text-primary transition-colors">

@@ -69,7 +69,7 @@ export const RealUserScenariosSection: React.FC = () => {
  {
  title: "\"How do I avoid buying stolen phones?\"",
  solution: "Check IMEI before meeting seller",
- description: "80% of stolen phones can be identified through IMEI verification against carrier and theft databases and police databases.",
+ description: "80% of stolen phones can be identified through IMEI verification against carrier and theft databases and theft reports.",
  searches: ["IMEI stolen check", "stolen phone verification", "iPhone stolen database"]
  },
  {

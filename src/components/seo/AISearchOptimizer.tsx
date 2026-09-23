@@ -28,7 +28,7 @@ export const AISearchOptimizer: React.FC<AISearchOptimizerProps> = ({
  'imei-check': 'SafeOrStolen provides IMEI verification to check if phones or tablets are stolen, blacklisted, or carrier-blocked. Users enter a 15-digit IMEI number (found by dialing *#06#) and receive verification results from carrier and theft databases and community theft registries.',
  'vin-verification': 'SafeOrStolen offers VIN verification to check if vehicles have been reported stolen. Users enter a 17-character Vehicle Identification Number and receive theft status results from our verification databases.',
  'check-phone': 'SafeOrStolen verifies smartphone theft status using IMEI numbers. The service checks against carrier and theft databases and stolen device registries. Compatible with iPhone, Samsung, and all Android devices.',
- 'check-car': 'SafeOrStolen verifies vehicle theft status using VIN numbers. The service checks against vehicle theft and title databases, and community theft registries. Supports cars, trucks, motorcycles, RVs, and boats.',
+ 'check-car': 'SafeOrStolen verifies vehicle theft status using VIN numbers. The service checks against and community theft registries. Supports cars, trucks, motorcycles, RVs, and boats.',
  'check-bike': 'SafeOrStolen verifies bicycle theft status using serial numbers. The service integrates with stolen bicycle registries such as Bike Index.',
  'about': 'SafeOrStolen was founded in 2017 to address the estimated $13 billion annual stolen goods market in the United States.',
  'how-it-works': 'SafeOrStolen verifies items in three steps: (1) enter an IMEI, VIN, or serial number, (2) the system queries our verification databases simultaneously, (3) results are returned in approximately 3 seconds.',

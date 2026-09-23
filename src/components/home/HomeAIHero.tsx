@@ -114,7 +114,7 @@ export const HomeAIHero: React.FC = () => {
  }, []);
 
  const runVerification = useCallback(async (identifier: string) => {
- setMessages((p) => [...p, { role: 'assistant', content: '🔎 Detecting identifier and verifying across 100+ databases…' }]);
+ setMessages((p) => [...p, { role: 'assistant', content: '🔎 Detecting identifier and verifying across multiple sources…' }]);
  try {
  const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
  const itemType = detect?.type || 'serial';
@@ -197,7 +197,7 @@ export const HomeAIHero: React.FC = () => {
  <div className="flex justify-center mb-5">
  <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm">
  <Shield className="w-4 h-4" />
- SafeOrStolen AI · 100+ databases · 3-second results
+ SafeOrStolen AI · multiple sources · 3-second results
  </div>
  </div>
 

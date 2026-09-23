@@ -20,7 +20,7 @@ const VsDeviceCheckCA = () => {
       },
       {
         "@type": "Question",
-        "name": "How is SafeOrStolen better than DeviceCheck.ca?",
+        "name": "How does SafeOrStolen compare with DeviceCheck.ca?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "SafeOrStolen offers global coverage (not just Canada), checks multiple item types (phones, vehicles, bikes, electronics, firearms), provides a mobile app for instant verification, and includes more databases for comprehensive results."
@@ -228,7 +228,7 @@ const VsDeviceCheckCA = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How is SafeOrStolen better than DeviceCheck.ca?</CardTitle>
+                <CardTitle className="text-lg">How does SafeOrStolen compare with DeviceCheck.ca?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">

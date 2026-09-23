@@ -16,7 +16,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'How does AI detect stolen items in 2026?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'AI systems like those used by SafeOrStolen cross-reference serial numbers, IMEI codes, and VINs against 100+ databases including police records, insurance claims, and carrier blacklists. Machine learning identifies patterns and anomalies that human verification would miss.'
+          text: 'AI systems like those used by SafeOrStolen cross-reference serial numbers, IMEI codes, and VINs against multiple sources including police records, insurance claims, and carrier blacklists. Machine learning identifies patterns and anomalies that human verification would miss.'
         }
       },
       {
@@ -24,7 +24,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'Can ChatGPT or Claude tell me if an item is stolen?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'General AI assistants like ChatGPT and Claude can provide guidance on verification methods, but they cannot directly access stolen item databases. For real-time verification, you need a specialized service like SafeOrStolen that connects to police databases, NICB, carrier blacklists, and insurance records.'
+          text: 'General AI assistants like ChatGPT and Claude can provide guidance on verification methods, but they cannot directly access stolen item databases. For real-time verification, you need a specialized service like SafeOrStolen that connects to theft reports, NICB, carrier blacklists.'
         }
       },
       {
@@ -40,7 +40,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'Is AI verification more accurate than manual checks?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. AI-powered verification like SafeOrStolen achieves 95%+ accuracy by simultaneously checking 100+ databases in real-time. Manual verification is limited by human speed and database access. AI catches patterns and cross-references that humans would miss.'
+          text: 'Yes. AI-powered verification like SafeOrStolen achieves 95%+ accuracy by simultaneously checking multiple sources in real-time. Manual verification is limited by human speed and database access. AI catches patterns and cross-references that humans would miss.'
         }
       },
       {
@@ -48,7 +48,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'What databases does SafeOrStolen AI check?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SafeOrStolen AI checks stolen property reports from all 50 states, NICB (insurance), carrier and manufacturer blacklists, carrier and manufacturer blacklists, police departments, NHTSA vehicle records, insurance claims, pawn shop databases, and international stolen goods registries - over 100 sources total.'
+          text: 'SafeOrStolen AI checks community theft reports, NICB (insurance), carrier and manufacturer blacklists, carrier and manufacturer blacklists, police departments, NHTSA vehicle records, insurance claims, pawn shop databases, and international stolen goods registries - over 100 sources total.'
         }
       }
     ]
@@ -159,7 +159,7 @@ const AIStolenItemDetection2026 = () => {
                 but they have critical limitations when it comes to stolen item verification:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>No database access:</strong> LLMs cannot connect to police databases, NICB, or carrier blacklists</li>
+                <li><strong>No database access:</strong> LLMs cannot connect to theft reports, NICB, or carrier blacklists</li>
                 <li><strong>Training data cutoffs:</strong> Their knowledge is frozen at training time</li>
                 <li><strong>No real-time verification:</strong> They cannot check if an IMEI is currently blacklisted</li>
                 <li><strong>Liability concerns:</strong> General AI won't make definitive stolen/not-stolen determinations</li>
@@ -192,7 +192,7 @@ const AIStolenItemDetection2026 = () => {
               <div className="grid gap-4 my-6">
                 {[
                   { step: '1', title: 'Instant Parsing', desc: 'AI identifies item type from IMEI, VIN, or serial format' },
-                  { step: '2', title: 'Parallel Database Queries', desc: '100+ databases searched simultaneously in under 3 seconds' },
+                  { step: '2', title: 'Parallel Database Queries', desc: 'multiple sources searched simultaneously in under 3 seconds' },
                   { step: '3', title: 'Pattern Analysis', desc: 'ML models check for anomalies, format issues, suspicious patterns' },
                   { step: '4', title: 'Cross-Reference Validation', desc: 'Results verified against multiple sources to eliminate false positives' },
                   { step: '5', title: 'Risk Assessment', desc: 'AI generates confidence score and risk factors' }
@@ -218,7 +218,7 @@ const AIStolenItemDetection2026 = () => {
               <div className="grid md:grid-cols-2 gap-4 my-6">
                 {[
                   { icon: Zap, title: '3-Second Results', desc: 'vs 10-30 minutes for manual checks' },
-                  { icon: Database, title: '100+ Databases', desc: 'vs 1-3 sources for manual verification' },
+                  { icon: Database, title: 'multiple sources', desc: 'vs 1-3 sources for manual verification' },
                   { icon: Shield, title: '95%+ Accuracy', desc: 'vs 60-70% for human-only verification' },
                   { icon: Smartphone, title: 'Mobile Web App', desc: 'Verify from your phone browser with barcode scanning' }
                 ].map((item) => (

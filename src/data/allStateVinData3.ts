@@ -78,7 +78,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I verify a Nebraska title?", answer: "Contact Nebraska DMV, use SafeOrStolen's VIN checker for theft verification, verify title security features, and check for liens or salvage status with NE DMV." },
- { question: "What should I check when buying a used car in Nebraska?", answer: "Verify VIN with SafeOrStolen, check for liens with Nebraska DMV, inspect title authenticity, request complete vehicle history including vehicle theft and title databases data." }
+ { question: "What should I check when buying a used car in Nebraska?", answer: "Verify VIN with SafeOrStolen, check for liens with Nebraska DMV, inspect title authenticity, request complete vehicle history including data." }
  ]
  },
  nevada: {

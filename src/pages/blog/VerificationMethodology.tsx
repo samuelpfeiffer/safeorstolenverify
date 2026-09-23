@@ -64,7 +64,7 @@ export default function VerificationMethodology() {
                 <h3 className="text-xl font-bold mb-4">What Happens When You Submit an IMEI, VIN, or Serial Number:</h3>
                 <ol className="list-decimal list-inside space-y-3 text-lg">
                   <li><strong>Input Validation:</strong> Our system validates the identifier format (15-digit IMEI, 17-character VIN, etc.)</li>
-                  <li><strong>Parallel Database Queries:</strong> We simultaneously query 100+ databases in under 1 second</li>
+                  <li><strong>Parallel Database Queries:</strong> We simultaneously query multiple sources in under 1 second</li>
                   <li><strong>AI Pattern Recognition:</strong> Machine learning models analyze patterns, anomalies, and risk indicators</li>
                   <li><strong>Confidence Scoring:</strong> Our AI assigns a confidence score (0-100%) based on data quality and consistency</li>
                   <li><strong>Result Generation:</strong> You receive instant SAFE, STOLEN, or INCONCLUSIVE status with detailed reports</li>

@@ -16,7 +16,7 @@ export const SEOFooterLinks = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/check-phone" className="text-muted-foreground hover:text-primary">Check Phone (IMEI)</Link></li>
               <li><Link to="/check-laptop" className="text-muted-foreground hover:text-primary">Check Laptop</Link></li>
-              <li><Link to="/check-car" className="text-muted-foreground hover:text-primary">Check Vehicle (VIN)</Link></li>
+              <li><Link to="/vin-checker" className="text-muted-foreground hover:text-primary">Check Vehicle (VIN)</Link></li>
               <li><Link to="/check-bike" className="text-muted-foreground hover:text-primary">Check Bike</Link></li>
               <li><Link to="/firearms-check" className="text-muted-foreground hover:text-primary">Check Firearm</Link></li>
               <li><Link to="/check-jewelry" className="text-muted-foreground hover:text-primary">Check Jewelry</Link></li>

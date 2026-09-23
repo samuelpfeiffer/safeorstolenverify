@@ -79,17 +79,6 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  keywords: 'check phone stolen, verify phone, iPhone stolen check, Android phone verification',
  canonical: '/check-phone'
  },
-
- // ========================================
- // CHECK CAR (/check-car) - 155 chars
- // ========================================
- '/check-car': {
- title: 'Check if Car is Stolen - Free VIN Verification',
- description: 'Check if a car is stolen before buying. Free VIN verification from vehicle theft and title databases, DMV, and community theft registries. Safer alternative to Carfax for theft.', // 155 chars
- keywords: 'check car stolen, VIN verification, stolen car lookup, car theft check',
- canonical: '/check-car'
- },
-
  // ========================================
  // CHECK BIKE (/check-bike) - 157 chars
  // ========================================
@@ -195,7 +184,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/how-it-works': {
  title: 'How It Works - Stolen Item Verification Process',
- description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including vehicle theft and title databases and carrier and theft databases.', // 159 chars
+ description: 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including carrier and theft databases.', // 159 chars
  keywords: 'how SafeOrStolen works, verification process, stolen item check explained',
  canonical: '/how-it-works'
  },
@@ -205,7 +194,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/database': {
  title: 'Databases We Search - our verification databases',
- description: 'Access our verification databases. Real-time checks across vehicle theft and title databases, carrier and theft databases, CheckMEND, and community theft registries worldwide. broad coverage.', // 158 chars
+ description: 'Access our verification databases. Real-time checks across carrier and theft databases, CheckMEND, and community theft registries worldwide. broad coverage.', // 158 chars
  keywords: 'stolen item databases, vehicle theft and title databases database, carrier and theft databases, global theft databases',
  canonical: '/database'
  },

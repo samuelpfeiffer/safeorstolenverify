@@ -94,7 +94,7 @@ const ForLawEnforcement = () => {
  faqs={[
  {
  question: "What databases do you search?",
- answer: "We aggregate data from carrier and theft databases, manufacturer stolen device registries, insurance company reports, and user-reported theft databases totaling 100+ databases."
+ answer: "We aggregate data from carrier and theft databases, manufacturer stolen device registries, insurance company reports, and user-reported theft databases totaling multiple sources."
  },
  {
  question: "Can officers use this in the field?",

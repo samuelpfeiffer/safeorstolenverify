@@ -80,7 +80,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link to="/check-if-stolen" className="hover:text-foreground transition-colors">Check If Stolen</Link></li>
                 <li><Link to="/check-phone" className="hover:text-foreground transition-colors">Check Phone</Link></li>
-                <li><Link to="/check-car" className="hover:text-foreground transition-colors">Check Car</Link></li>
+                <li><Link to="/vin-checker" className="hover:text-foreground transition-colors">Check Car</Link></li>
                 <li><Link to="/check-bike" className="hover:text-foreground transition-colors">Check Bike</Link></li>
                 <li><Link to="/check-laptop" className="hover:text-foreground transition-colors">Check Laptop</Link></li>
                 <li><Link to="/firearms-check" className="hover:text-foreground transition-colors">Check Firearms</Link></li>

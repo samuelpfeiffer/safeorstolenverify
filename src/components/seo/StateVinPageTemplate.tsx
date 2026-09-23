@@ -100,7 +100,7 @@ export const StateVinPageTemplate = ({
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": `Locate the 17-character VIN on the ${state} vehicle's dashboard, driver-side door jamb, or title document.` },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Enter the VIN into SafeOrStolen's verification tool on the verify page." },
- { "@type": "HowToStep", "position": 3, "name": "Review results", "text": `SafeOrStolen checks the VIN against 100+ databases including vehicle theft and title databases, and ${state} law enforcement records in 3 seconds.` },
+ { "@type": "HowToStep", "position": 3, "name": "Review results", "text": `SafeOrStolen checks the VIN against multiple sources including ${state} theft reports in 3 seconds.` },
  { "@type": "HowToStep", "position": 4, "name": "Make your decision", "text": "Review the verification certificate showing stolen status, title history, and risk assessment before purchasing." }
  ]
  }
@@ -136,7 +136,7 @@ export const StateVinPageTemplate = ({
  <ol>
  <li>Find the 17-character VIN on the vehicle dashboard, door jamb, or title.</li>
  <li>Enter the VIN into SafeOrStolen's verification tool.</li>
- <li>We check 100+ databases including vehicle theft and title databases, and {state} law enforcement records in 3 seconds.</li>
+ <li>We check multiple sources including {state} theft reports in 3 seconds.</li>
  <li>Review stolen status, title history, and risk assessment before purchasing.</li>
  </ol>
  
@@ -144,7 +144,7 @@ export const StateVinPageTemplate = ({
  <ul>
  <li>Vehicle theft and title databases - title history</li>
  <li>{state} vehicle registration and title status databases</li>
- <li>Stolen property reports from all 50 states</li>
+ <li>community theft reports</li>
  </ul>
  
  <h2>Top Cities for Vehicle Theft in {state}</h2>
@@ -266,7 +266,7 @@ export const StateVinPageTemplate = ({
  {[
  `Find the 17-character VIN on the ${state} vehicle's dashboard, door jamb, or title document`,
  "Enter the VIN into SafeOrStolen's free verification tool",
- `We check our verification databases, including vehicle theft and title databases, in about 3 seconds`,
+ `We check our verification databases, including in about 3 seconds`,
  "Review stolen status, title history, and risk assessment before purchasing"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-background rounded-lg">

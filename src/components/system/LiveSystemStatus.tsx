@@ -64,7 +64,7 @@ const systemComponents: SystemComponent[] = [
  description: 'Firearms verification system'
  },
  {
- name: 'Stolen property reports from all 50 states Network',
+ name: 'community theft reports Network',
  status: 'operational',
  uptime: 99.98,
  responseTime: 1.9,

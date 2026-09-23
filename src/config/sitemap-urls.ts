@@ -39,7 +39,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/vin-checker', priority: 0.90, changefreq: 'weekly' },
   { path: '/serial-number-checker', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-phone', priority: 0.85, changefreq: 'weekly' },
-  { path: '/check-car', priority: 0.85, changefreq: 'weekly' },
+  { path: '/vin-checker', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-bike', priority: 0.80, changefreq: 'weekly' },
   { path: '/check-laptop', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-electronics', priority: 0.80, changefreq: 'weekly' },
@@ -136,12 +136,12 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // HIGH-TRAFFIC SEARCH LANDING PAGES (7)
   // ============================================
   { path: '/is-my-phone-stolen', priority: 0.85, changefreq: 'weekly' },
-  { path: '/is-this-car-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/vin-checker', priority: 0.85, changefreq: 'weekly' },
   { path: '/is-this-laptop-stolen', priority: 0.85, changefreq: 'weekly' },
   { path: '/is-this-bike-stolen', priority: 0.85, changefreq: 'weekly' },
   { path: '/is-this-gun-stolen', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-stolen-phone', priority: 0.85, changefreq: 'weekly' },
-  { path: '/check-stolen-car', priority: 0.85, changefreq: 'weekly' },
+  { path: '/vin-checker', priority: 0.85, changefreq: 'weekly' },
   { path: '/report-stolen', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
@@ -184,7 +184,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/carfax-alternative-free', priority: 0.80, changefreq: 'monthly' },
   { path: '/nicb-alternative', priority: 0.80, changefreq: 'monthly' },
   { path: '/hotgunz-alternative', priority: 0.80, changefreq: 'monthly' },
-  { path: '/free-stolen-vehicle-check', priority: 0.85, changefreq: 'weekly' },
+  { path: '/vin-checker', priority: 0.85, changefreq: 'weekly' },
 
   // ============================================
   // REMAINING 39 STATE LICENSE PLATE LOOKUPS (All 50 states)

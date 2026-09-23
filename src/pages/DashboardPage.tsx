@@ -624,7 +624,7 @@ const DashboardPage = () => {
             <Button 
               variant="outline" 
               size="sm" 
-              onClick={() => navigate('/check-car')}
+              onClick={() => navigate('/vin-checker')}
               className="bg-green-500/10 border-green-500/20 text-green-600 hover:bg-green-500/20"
             >
               🚗 VIN Car Check

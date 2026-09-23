@@ -17,7 +17,7 @@ export const LinkBuildingSignals = () => {
  {
  pillar: '/vin-checker',
  supporting: [
- '/check-car',
+ '/vin-checker',
  '/verify?type=vehicle',
  '/verify?type=motorcycle'
  ]

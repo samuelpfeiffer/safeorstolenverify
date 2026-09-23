@@ -135,7 +135,7 @@ const sections: Section[] = [
  </p>
  <p>
  The platform is real. Users scan IMEI numbers, VIN numbers, serial numbers, and license
- plates to check items against over 100 databases — including stolen property reports from all 50 statess,
+ plates to check items against over 100 databases — including community theft reportss,
  the carrier and theft databases, insurance claims, and police reports — covering smartphones,
  laptops, vehicles, firearms, bicycles, jewelry, and electronics. The system returns a
  result in seconds. Safe or Stolen. That simple.
@@ -371,7 +371,7 @@ const OurStoryPage: React.FC = () => {
  <p>
  Samuel Edward Joseph Pfeiffer is the Founder and CEO of SafeOrStolen.com, an
  AI-powered stolen-item verification platform incorporated in Arizona and
- integrated with law enforcement and insurance databases nationwide. The platform
+ integrated with law enforcement nationwide. The platform
  is live at{' '}
  <a href="https://safeorstolen.com" className="text-primary hover:underline">
  safeorstolen.com

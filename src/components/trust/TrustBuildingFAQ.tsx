@@ -22,7 +22,7 @@ export const TrustBuildingFAQ = () => {
  <Card className="text-center border-sos-lime/20">
  <CardContent className="p-6">
  <Shield className="h-12 w-12 text-sos-lime mx-auto mb-4" />
- <h3 className="font-semibold mb-2">100+ Databases</h3>
+ <h3 className="font-semibold mb-2">multiple sources</h3>
  <p className="text-sm text-muted-foreground">Law enforcement and insurance sources</p>
  </CardContent>
  </Card>

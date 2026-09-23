@@ -23,7 +23,7 @@ const allRelatedPages: RelatedPage[] = [
  { title: 'Check Samsung IMEI', href: '/check-samsung-stolen', category: 'item' },
  { title: 'VIN Checker', href: '/vin-checker', category: 'item' },
  { title: 'IMEI Checker', href: '/imei-checker', category: 'item' },
- { title: 'Car Stolen Check', href: '/check-car-stolen-vin', category: 'item' },
+ { title: 'Car Stolen Check', href: '/vin-checker', category: 'item' },
  { title: 'Laptop Serial Check', href: '/check-laptop-stolen', category: 'item' },
  { title: 'Bicycle Serial Check', href: '/check-bicycle-stolen', category: 'item' },
  

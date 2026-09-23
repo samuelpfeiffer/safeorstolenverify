@@ -16,7 +16,7 @@ export const SecurityBadges = () => {
     {
       icon: Award,
       title: 'Verified Database',
-      description: '100+ databases'
+      description: 'multiple sources'
     },
     {
       icon: Zap,

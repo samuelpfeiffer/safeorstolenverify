@@ -19,7 +19,7 @@ const CheckPS5Page = () => {
       content={{
         intro: "Verify if a PlayStation 5 is stolen before buying. Free PS5 serial number check against multiple databases. Find the PS5 serial number on the box, back of console, or in Settings. Instant results in 3 seconds - protect yourself from buying stolen gaming consoles.",
         
-        whatIs: "PS5 serial number verification checks whether a PlayStation 5 console has been reported stolen or is associated with fraudulent activity. Every PS5 has a unique serial number that can be tracked. Our verification searches police databases, user-reported theft registries, and pawn shop records to determine if a PS5 is safe to buy.",
+        whatIs: "PS5 serial number verification checks whether a PlayStation 5 console has been reported stolen or is associated with fraudulent activity. Every PS5 has a unique serial number that can be tracked. Our verification searches theft reports, user-reported theft registries, and pawn shop records to determine if a PS5 is safe to buy.",
         
         howItWorks: "Our PS5 stolen check works by searching multiple databases: (1) Law enforcement stolen property databases, (2) User-reported theft registries, (3) Pawn shop records where stolen goods surface, (4) PlayStation/Sony console databases when available. Enter the PS5 serial number and receive instant results showing clean status or any theft reports.",
         

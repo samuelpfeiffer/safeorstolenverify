@@ -21,15 +21,14 @@ export const OPTIMAL_META_LENGTH = { min: 155, max: 160 };
  */
 export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  // CORE PAGES (155-160 chars each)
- '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. From $0.99/check. Results in 3 seconds.',
+ '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against multiple sources. From $0.99/check. Results in 3 seconds.',
  '/imei-checker': 'IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and community theft registries. From $0.99.',
- '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against vehicle theft and title databases vehicle records. Better than Carfax. $10/mo.',
+ '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against vehicle records. Better than Carfax. $10/mo.',
  '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Lookup from DMV and community theft registries across all 50 states. Instant verification.',
  '/check-phone': 'Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier and theft databases in 3 seconds. From $0.99/check.',
- '/check-car': 'Check if a car is stolen before buying. VIN verification from vehicle theft and title databases, DMV, and community theft registries. Safer alternative to Carfax. From $0.99/check.',
  '/check-bike': 'Check if a bicycle is stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes. Search stolen bicycle databases and police data. $0.99.',
- '/pricing': 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against 100+ databases. All item types. Cancel anytime.',
- '/verify': 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from buying stolen goods on marketplaces.', // 160 chars
+ '/pricing': 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against multiple sources. All item types. Cancel anytime.',
+ '/verify': 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against multiple sources. Protect yourself from buying stolen goods on marketplaces.', // 160 chars
  '/blog': 'Expert guides on checking if phones, cars, bikes are stolen. Learn IMEI verification, VIN checks, and how to stay safe on Facebook Marketplace and eBay.', // 159 chars
  '/about': 'SafeOrStolen protects buyers and sellers from stolen goods. Over $15 billion in stolen items sold annually. Our verification service stops theft globally.', // 157 chars
  '/faq': 'Frequently asked questions about SafeOrStolen. Learn about our verification process, pricing, databases checked, and how to protect yourself from theft.', // 156 chars
@@ -37,8 +36,8 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  '/terms': 'Terms of service for SafeOrStolen verification platform. User agreements, refund policy, acceptable use guidelines, and legal disclaimers for our service.', // 157 chars
  '/report-stolen': 'Report stolen phones, vehicles, electronics, or firearms to SafeOrStolen database. Help prevent resale of stolen goods on marketplaces and pawn shops.', // 158 chars
  '/app': 'Use SafeOrStolen on your phone — installs from your browser. Verify IMEI, VIN, serial numbers on-the-go. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.', // 155 chars
- '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including vehicle theft and title databases and carrier and theft databases.', // 159 chars
- '/database': 'Access 50+ global stolen goods databases. Real-time checks across vehicle theft and title databases, carrier and theft databases, CheckMEND, and police databases worldwide. Most comprehensive coverage.', // 158 chars
+ '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including carrier and theft databases.', // 159 chars
+ '/database': 'Access 50+ global stolen goods databases. Real-time checks across carrier and theft databases, CheckMEND, and theft reports worldwide. Most comprehensive coverage.', // 158 chars
  '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars
  '/firearms-check': 'Verify firearm serial numbers against stolen firearms databases. Instant check for gun buyers, sellers, and FFL dealers. From $0.99/check unlimited.',
  '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and appliances. Verify items are not stolen before buying, selling, or accepting them at intake.', // 156 chars

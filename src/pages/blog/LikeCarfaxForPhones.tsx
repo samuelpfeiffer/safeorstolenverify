@@ -55,7 +55,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",
-            answer: "Yes, SafeOrStolen works across all 50 US states plus international coverage. Like Carfax provides nationwide vehicle reports, SafeOrStolen provides nationwide and international verification for all item types. Access to 100+ databases globally."
+            answer: "Yes, SafeOrStolen works across all 50 US states plus international coverage. Like Carfax provides nationwide vehicle reports, SafeOrStolen provides nationwide and international verification for all item types. Access to multiple sources globally."
           }
         ]}
       />
@@ -190,7 +190,7 @@ const LikeCarfaxForPhones = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Shows theft status</strong> across 100+ databases</span>
+                    <span><strong>Shows theft status</strong> across multiple sources</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -228,14 +228,12 @@ const LikeCarfaxForPhones = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Step 3: Get Instant Results in 3 Seconds</h3>
             <p>
-              SafeOrStolen checks the IMEI against 100+ databases including:
+              SafeOrStolen checks the IMEI against:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>carrier and manufacturer blacklists Device Check</strong> - Global IMEI blacklist (carrier-reported stolen phones)</li>
-              <li><strong>FBI/stolen property reports from all 50 states Database</strong> - Law enforcement stolen property reports</li>
-              <li><strong>Insurance Claims</strong> - Phones reported stolen to insurance companies</li>
-              <li><strong>Carrier Blacklists</strong> - AT&T, Verizon, T-Mobile stolen device databases</li>
-              <li><strong>International Registries</strong> - Interpol and global stolen phone databases</li>
+              <li><strong>SafeOrStolen stolen-item reports</strong> - items reported stolen to SafeOrStolen</li>
+              <li><strong>Public web results</strong> - a web search for the IMEI</li>
+              <li><strong>AI analysis</strong> - a plain-language explanation of what was found</li>
             </ul>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">Step 4: Review the Verification Report</h3>
@@ -250,7 +248,7 @@ const LikeCarfaxForPhones = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1 text-green-700 dark:text-green-400">SAFE TO BUY</h4>
-                    <p className="text-sm text-muted-foreground">Not reported stolen. Clean IMEI. No theft records found across 100+ databases.</p>
+                    <p className="text-sm text-muted-foreground">Not reported stolen. Clean IMEI. No theft records found across multiple sources.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

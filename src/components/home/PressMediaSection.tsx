@@ -51,9 +51,9 @@ export const PressMediaSection = () => {
  const stats = [
  {
  icon: Globe,
- label: '100+ databases',
- description: 'Verified stolen item database across 100+ sources',
- detail: 'Cross-referenced from carrier and theft databases, vehicle theft and title databases, stolen property reports from all 50 states, all 50 state community theft registries, and 500+ insurance companies.',
+ label: 'multiple sources',
+ description: 'Verified stolen item database across multiple sources',
+ detail: 'Cross-referenced from carrier and theft databases, vehicle theft and title databases, community theft reports, all 50 state community theft registries, and 500+ insurance companies.',
  link: '/data-sources',
  },
  {
@@ -80,9 +80,9 @@ export const PressMediaSection = () => {
  },
  {
  icon: Shield,
- label: '100+ Databases',
+ label: 'multiple sources',
  description: 'Law enforcement, insurance & carrier sources',
- detail: 'More data sources  — including vehicle theft and title databases, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, all stolen property reports from all 50 states, and 200+ carrier and theft databases.',
+ detail: 'More data sources  — including vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, all community theft reports, and 200+ carrier and theft databases.',
  link: '/data-sources',
  },
  {

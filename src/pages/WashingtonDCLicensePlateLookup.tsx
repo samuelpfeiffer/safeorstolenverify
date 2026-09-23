@@ -306,7 +306,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <CardContent>
  <p className="text-muted-foreground">
  A DC license plate lookup reveals: vehicle make, model, and year; registration 
- status; theft reports from vehicle theft and title databases and Metropolitan Police; salvage title history; 
+ status; theft reports from Metropolitan Police; salvage title history; 
  and whether the vehicle has been in major accidents. This helps you verify any 
  used vehicle before making a purchase in the DC area.
  </p>

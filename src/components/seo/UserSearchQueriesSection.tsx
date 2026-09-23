@@ -33,7 +33,7 @@ export const UserSearchQueriesSection: React.FC = () => {
  },
  {
  query: "Check if car is stolen by VIN",
- answer: "Verify vehicle history and stolen status using VIN lookup across insurance and police databases",
+ answer: "Verify vehicle history and stolen status using VIN lookup across insurance and theft reports",
  icon: Car,
  category: "Automotive",
  searchVolume: "High"

@@ -39,6 +39,7 @@ interface ItemLandingPageProps {
  process: string[];
  faqs: { question: string; answer: string }[];
  };
+ dateModified?: string;
 }
 
 export const ItemLandingPageTemplate = ({
@@ -47,7 +48,8 @@ export const ItemLandingPageTemplate = ({
  h1,
  itemType,
  keywords,
- content
+ content,
+ dateModified = "2026-03-10"
 }: ItemLandingPageProps) => {
  const location = useLocation();
  
@@ -69,14 +71,14 @@ export const ItemLandingPageTemplate = ({
  "name": "Worldwide"
  },
  "description": metaDescription,
- "dateModified": "2026-03-10"
+ "dateModified": dateModified
  };
 
  const howToSchema = {
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": `How to Check if ${itemType} is Stolen`,
- "dateModified": "2026-03-10",
+ "dateModified": dateModified,
  "step": content.process.map((step, index) => ({
  "@type": "HowToStep",
  "position": index + 1,
@@ -149,7 +151,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>Databases We Search</h2>
- <p>SafeOrStolen checks 100+ databases including vehicle theft and title databases, carrier and theft databases, stolen property reports from all 50 states, and law enforcement records across all 50 US states. Results in 3 seconds.</p>
+ <p>SafeOrStolen checks multiple sources including carrier and theft databases, community theft reports, and theft reports across all 50 US states. Results in 3 seconds.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -205,7 +207,7 @@ export const ItemLandingPageTemplate = ({
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <CheckCircle className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">100+ Databases</span>
+ <span className="text-sm font-semibold">multiple sources</span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Award className="w-8 h-8 text-primary mb-2" />
