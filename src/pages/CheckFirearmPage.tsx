@@ -9,7 +9,7 @@ export default function CheckFirearmPage() {
     <>
       <PageSEO
         title="Check If Firearm Is Stolen - Free Gun Serial Number Lookup | SafeOrStolen"
- description="Verify if a gun is stolen before buying. Free firearm serial number check against stolen firearm reports from all 50 states and community theft registries. Protect yourself legally when purchasing firearms."
+ description="Verify if a gun is stolen before buying. Free firearm serial number check using SafeOrStolen reports, public web data, AI analysis, and HotGunz to help determine if a firearm has been reported stolen. Protect yourself when purchasing firearms."
         keywords="check if gun stolen, firearm serial number lookup, stolen gun check, 50-State Firearm Reports search, verify firearm, gun serial lookup"
         canonical="https://safeorstolen.com/check-firearm"
       />

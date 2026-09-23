@@ -22,11 +22,11 @@ export const OPTIMAL_META_LENGTH = { min: 155, max: 160 };
 export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  // CORE PAGES (155-160 chars each)
  '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against multiple sources. From $0.99/check. Results in 3 seconds.',
- '/imei-checker': 'IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and community theft registries. From $0.99.',
+ '/imei-checker': 'IMEI checker for phones. Verify details and check against SafeOrStolen reports and public data. You can ask your carrier about blacklisting. From $0.99.',
  '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against vehicle records. Better than Carfax. $10/mo.',
- '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Lookup from DMV and community theft registries across all 50 states. Instant verification.',
- '/check-phone': 'Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier and theft databases in 3 seconds. From $0.99/check.',
- '/check-bike': 'Check if a bicycle is stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes. Search stolen bicycle databases and police data. $0.99.',
+ '/license-plate-lookup': 'Check if a vehicle is reported stolen using its license plate number. Lookup SafeOrStolen reports and public web data. Instant verification.',
+ '/check-phone': 'Check if a phone is reported stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search SafeOrStolen reports and public web data. From $0.99/check.',
+ '/check-bike': 'Check if a bicycle is reported stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes against SafeOrStolen reports and BikeIndex. $0.99.',
  '/pricing': 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against multiple sources. All item types. Cancel anytime.',
  '/verify': 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against multiple sources. Protect yourself from buying stolen goods on marketplaces.', // 160 chars
  '/blog': 'Expert guides on checking if phones, cars, bikes are stolen. Learn IMEI verification, VIN checks, and how to stay safe on Facebook Marketplace and eBay.', // 159 chars

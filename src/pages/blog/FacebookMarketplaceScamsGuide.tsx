@@ -144,7 +144,7 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">How to Verify Any Item Before Buying on Facebook Marketplace</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            The single most effective protection against buying stolen goods is running the item's identifier through a verification database before you pay. SafeOrStolen checks IMEI numbers, VINs, serial numbers, and license plates against SafeOrStolen's stolen-item reports, web results and AI analysis simultaneously — including community theft reports, carrier and manufacturer blacklists, NICB, carrier and manufacturer blacklists, and all 50 state law enforcement systems.
+            The single most effective protection against buying stolen goods is running the item's identifier through a verification system before you pay. SafeOrStolen checks IMEI numbers, VINs, serial numbers, and license plates against SafeOrStolen's stolen-item reports, public web results, and AI analysis simultaneously. For bicycles, it checks BikeIndex, and for firearms, HotGunz.
           </p>
 
           <div className="bg-card border border-border rounded-2xl p-6 mb-8">

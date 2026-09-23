@@ -5,7 +5,7 @@ import { Shield, Database, CheckCircle, Users, Globe, Lock } from 'lucide-react'
 
 const dataSources = [
  {
- name: "Global carrier and theft databases",
+ name: "Trusted public web sources and reported stolen items",
  logo: null,
  type: "Mobile Device Database",
  description: "Official IMEI verification and stolen device registry",
@@ -103,7 +103,7 @@ export const DataSourceCredibility: React.FC = () => {
  Verified Data Sources & Official Partnerships
  </h2>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
- Our verification system integrates with official community theft registries, 
+ Our verification system checks SafeOrStolen's item reports, public web results, and applies AI analysis,
  verified registries, and trusted industry partners to provide accurate, 
  legally-actionable stolen item checks.
  </p>

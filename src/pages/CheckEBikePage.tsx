@@ -4,7 +4,7 @@ const CheckEBikePage = () => {
  return (
  <ItemLandingPageTemplate
  title="Check if eBike is Stolen - Free Electric Bike Serial Number Verification"
- metaDescription="Check if electric bikes, e-scooters, or eBikes are stolen before buying. Free serial number verification for eBikes from community theft registries. Verify Rad Power, Trek, Specialized, Aventon eBikes."
+ metaDescription="Check if electric bikes, e-scooters, or eBikes are reported stolen before buying. Free serial number verification for eBikes. Verify Rad Power, Trek, Specialized, Aventon eBikes."
  h1="Check if Your eBike is Stolen Before Buying"
  itemType="eBikes & E-Scooters"
  keywords={[
@@ -53,7 +53,7 @@ const CheckEBikePage = () => {
  },
  {
  question: "What should I do if my eBike check shows it's stolen?",
- answer: "If our check shows the eBike is reported stolen: (1) Do NOT buy it under any circumstances - you'll lose $1,500-$10,000 when police confiscate it, (2) Walk away immediately without confronting the seller (could be dangerous), (3) Screenshot the listing and record seller information, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, eBay), (5) File an anonymous tip with local police including the listing URL, all serial numbers, and seller details. Include stolen bicycle databases or report number if available, (6) If you already purchased it, contact police immediately and turn over the eBike. You're a fraud victim. Filing a police report helps you recover money through small claims court or insurance."
+ answer: "If our check shows the eBike is reported stolen: (1) Do NOT buy it under any circumstances - you'll risk losing your investment when police confiscate it, (2) Walk away immediately without confronting the seller (could be dangerous), (3) Screenshot the listing and record seller information, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, eBay), (5) File an anonymous tip with local police including the listing URL, all serial numbers, and seller details. Include any report number if available, (6) If you already purchased it, contact police immediately and turn over the eBike. You're a fraud victim. Filing a police report helps you recover money through small claims court or insurance."
  },
  {
  question: "Why are eBikes stolen so frequently?",
@@ -65,7 +65,7 @@ const CheckEBikePage = () => {
  },
  {
  question: "How long does an eBike serial number check take?",
- answer: "Our eBike verification takes only 3 seconds per serial number. Enter the frame, motor, and battery serial numbers, click verify, and receive instant results showing whether any component has been reported stolen. We search stolen bicycle databases, community theft registries, manufacturer registries, and theft-report records simultaneously for comprehensive protection."
+ answer: "Our eBike verification takes only seconds per serial number. Enter the frame, motor, and battery serial numbers, click verify, and receive instant results showing whether any component has been reported stolen. We search BikeIndex, our own reported items, public web results, and leverage AI analysis simultaneously for comprehensive protection."
  },
  {
  question: "What are red flags when buying a used eBike?",

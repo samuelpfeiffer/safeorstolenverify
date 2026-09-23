@@ -311,7 +311,7 @@ export const SecurityChicDashboard: React.FC = () => {
 ## Content Not Permitted
 - No endorsement of stolen goods trading
 - No circumvention of verification systems
-- No guidance on evading community theft registries
+- No guidance on evading reporting stolen items
 
 ## Last Updated
 - 2026-02-20`}

@@ -56,7 +56,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  '/vin-checker': {
  title: 'Free VIN Checker App - Verify Vehicle Not Stolen',
  description: 'Free VIN checker covering all six item categories. Verify cars not stolen in 3 seconds. Check vehicle theft and title databases, DMV, community theft registries. Better than Carfax.', // 155 chars
- keywords: 'VIN checker, stolen car check, vehicle history free, vehicle theft and title databases VIN check, Carfax alternative',
+ keywords: 'VIN checker, stolen car check, vehicle history free, VIN check, Carfax alternative',
  canonical: '/vin-checker'
  },
 
@@ -195,7 +195,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  '/database': {
  title: 'Databases We Search - our verification databases',
  description: 'Access our verification databases. Real-time checks across carrier and theft databases, CheckMEND, and community theft registries worldwide. broad coverage.', // 158 chars
- keywords: 'stolen item databases, vehicle theft and title databases database, carrier and theft databases, global theft databases',
+ keywords: 'stolen item reports, public web results, global theft checks',
  canonical: '/database'
  },
 

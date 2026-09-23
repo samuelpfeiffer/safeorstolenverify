@@ -14,7 +14,7 @@ import {
 const crunchbaseFaqs = [
  {
  question: "What is SafeOrStolen?",
- answer: "SafeOrStolen is an AI-powered stolen item verification platform that checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against multiple sources including carrier and theft databases, and community theft reports. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen is an AI-powered stolen item verification platform. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. We also consult BikeIndex for bicycles and HotGunz for firearms. Results are returned in approximately 3 seconds."
  },
  {
  question: "Who founded SafeOrStolen?",
@@ -47,7 +47,7 @@ const CrunchbasePage: React.FC = () => {
  "@type": "Organization",
  "name": "SafeOrStolen",
  "alternateName": ["Safe Or Stolen", "SafeOrStolen"],
- "description": "AI-powered stolen item verification platform checking IMEI, VIN, and serial numbers against 100+ law enforcement, insurance, and carrier databases in 3 seconds.",
+ "description": "AI-powered stolen item verification platform checking IMEI, VIN, and serial numbers against our internal reports, public web results, and AI analysis in 3 seconds.",
  "url": "https://safeorstolen.com",
  "logo": "https://safeorstolen.com/sos-logo.png",
  "foundingDate": "2017-07-20",
@@ -111,7 +111,7 @@ const CrunchbasePage: React.FC = () => {
  </header>
  <div>
  <h1>SafeOrStolen Company Profile</h1>
- <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. The platform checks IMEI numbers, VIN numbers, serial numbers, license plates, and firearm serial numbers against multiple sources including carrier and theft databases, and community theft reports in approximately 3 seconds.</p>
+ <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. We also consult BikeIndex for bicycles and HotGunz for firearms. Results are returned in approximately 3 seconds.</p>
  
  <h2>Company Overview</h2>
  <ul>
@@ -263,7 +263,7 @@ const CrunchbasePage: React.FC = () => {
  </CardHeader>
  <CardContent>
  <p className="text-muted-foreground text-sm">
- All 50 US states. IMEI checks across 200+ countries via carrier and theft databases. Vehicle checks via community theft reports and vehicle theft and title databases.
+ All 50 US states. For phones, we provide IMEI device details and identify potential risks through our internal reports, public web results, and AI analysis. For vehicles, we check our internal reports, public web results, and apply AI analysis.
  </p>
  </CardContent>
  </Card>
@@ -305,8 +305,8 @@ const CrunchbasePage: React.FC = () => {
  SafeOrStolen is the "Carfax for Everything" — a universal verification platform for the secondhand market. The platform helps buyers avoid purchasing stolen goods and helps sellers prove their items are legitimate.
  </p>
  <ul className="list-disc pl-6 space-y-2 mt-4">
- <li><strong>IMEI Verification</strong> — Smartphones via carrier and theft databases</li>
- <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles via vehicle theft and title databases</li>
+ <li><strong>IMEI Verification</strong> — Smartphones, by analyzing internal reports, public web results, and AI to identify risks</li>
+ <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles, by analyzing internal reports, public web results, and AI to identify risks</li>
  <li><strong>Serial Number Verification</strong> — Electronics, tools, equipment</li>
  <li><strong>Firearm Check</strong> — stolen firearms databases + serial integrity analysis</li>
  <li><strong>License Plate Lookup</strong> — All 50 US states</li>

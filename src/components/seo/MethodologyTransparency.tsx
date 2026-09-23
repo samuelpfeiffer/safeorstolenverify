@@ -18,7 +18,7 @@ const verificationSteps = [
  title: "Multi-Database Query",
  description: "Simultaneous search across verified partner databases",
  icon: Database,
- details: "community theft reports, IMEI.info, stolen bicycle databases, Stolen Firearms Databases, and more"
+ details: "our own reports, BikeIndex for bicycles, HotGunz for firearms, public web results, and AI analysis"
  },
  {
  step: 3,
@@ -45,7 +45,7 @@ const transparencyMetrics = [
  {
  metric: "15+",
  label: "Data Sources",
- description: "Official registries and community theft registries"
+ description: "Our own reported items and public web results"
  },
  {
  metric: "<2 sec",
@@ -140,7 +140,7 @@ export const MethodologyTransparency: React.FC = () => {
  </h4>
  <p className="text-sm text-muted-foreground">
  Every verification clearly shows which official databases were checked, 
- including community theft reports network access, verified registries, and law enforcement partnerships.
+ including our own reported items, public web results, and AI analysis.
  </p>
  </div>
  <div>
@@ -149,7 +149,7 @@ export const MethodologyTransparency: React.FC = () => {
  Verifiable Partnerships
  </h4>
  <p className="text-sm text-muted-foreground">
- Our partnerships with IMEI.info, stolen bicycle databases, Stolen Firearms Databases, and others are publicly 
+ Our checks, including BikeIndex for bicycles and HotGunz for firearms, are publicly
  verifiable and documented with direct API integrations.
  </p>
  </div>

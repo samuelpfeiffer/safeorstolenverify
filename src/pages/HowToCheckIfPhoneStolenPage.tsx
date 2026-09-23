@@ -84,7 +84,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  "name": "How can I check if a phone is stolen for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Use SafeOrStolen's free IMEI checker. Enter the 15-digit IMEI number and we'll verify it against carrier and theft databases and reported-stolen records. You get 2 free checks, no credit card required."
+ "text": "Use SafeOrStolen's free IMEI checker. Enter the 15-digit IMEI number and we'll cross-reference it with reported-stolen records, public web results, and AI analysis. You get 2 free checks, no credit card required."
  }
  },
  {
@@ -146,7 +146,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search our verification databases including carrier and theft databases, and police records to protect you from buying stolen or blacklisted devices.
+ Verify any phone's IMEI number in 3 seconds with SafeOrStolen's free checker. We search our comprehensive stolen-item reports, public web results, and apply AI analysis to protect you from buying reported-stolen devices.
  </p>
 
  {/* Quick Check Tool */}
@@ -186,7 +186,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen checks our verification databases including carrier and theft databases and police records</span>
+ <span>SafeOrStolen cross-references its stolen-item reports, public web results, and applies AI analysis</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />

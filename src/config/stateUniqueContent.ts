@@ -34,10 +34,10 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Be cautious of prices significantly below Kelly Blue Book for Alabama region'
  ],
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Honda Accord', 'Toyota Camry', 'Dodge Ram'],
- verificationAdvice: 'Always run both a license plate and VIN check for Alabama vehicles. Cross-reference the Alabama title with vehicle theft and title databases history to catch vehicles that may have been title-washed through neighboring states like Mississippi or Tennessee.',
+ verificationAdvice: 'Always run both a license plate and VIN check for Alabama vehicles. Cross-reference the Alabama title with SafeOrStolen's own reports and public web data to catch vehicles that may have been title-washed through neighboring states like Mississippi or Tennessee.',
  uniqueFaqs: [
- { question: 'Does Alabama have a public stolen vehicle database?', answer: 'Alabama does not maintain a public database. However, SafeOrStolen searches community theft reports and vehicle theft and title databases databases which include all Alabama community theft reports. Our search covers Birmingham, Montgomery, Mobile, and all Alabama jurisdictions.' },
- { question: 'Are flood-damaged vehicles common in Alabama?', answer: 'Yes, particularly after hurricanes affecting the Gulf Coast. Mobile and coastal counties see flood vehicles. Always check vehicle theft and title databases for salvage or flood title brands. Our VIN check includes insurance total loss records to flag potential flood damage.' }
+ { question: 'Does Alabama have a public stolen vehicle database?', answer: 'Alabama does not maintain a public database. However, SafeOrStolen searches its own stolen-item reports, which include Alabama law enforcement data and community submissions. Our search covers Birmingham, Montgomery, Mobile, and all Alabama jurisdictions.' },
+ { question: 'Are flood-damaged vehicles common in Alabama?', answer: 'Yes, particularly after hurricanes affecting the Gulf Coast. Mobile and coastal counties see flood vehicles. Always check public web data for salvage or flood title brands. Our VIN check includes insurance total loss records to flag potential flood damage.' }
  ]
  },
  'alaska-license-plate-lookup': {
@@ -54,7 +54,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  commonTargets: ['Toyota 4Runner', 'Ford F-150', 'Subaru Outback', 'Chevrolet Silverado', 'Jeep Wrangler'],
  verificationAdvice: 'For Alaska vehicles, especially verify the title history to see where the vehicle originated. Many vehicles are imported from Washington state. Check both the current Alaska plate and any previous Washington or other state registrations.',
  uniqueFaqs: [
- { question: 'Do Alaska vehicles have different VIN requirements?', answer: 'No, Alaska uses standard 17-character VINs. However, many Alaska vehicles were first titled in Washington or other states before being shipped north. Always check the full vehicle theft and title databases title history to see all previous registrations.' },
+ { question: 'Do Alaska vehicles have different VIN requirements?', answer: 'No, Alaska uses standard 17-character VINs. However, many Alaska vehicles were first titled in Washington or other states before being shipped north. Always check public web data and SafeOrStolen's own reports to see all previous registrations.' },
  { question: 'Why are used cars more expensive in Alaska?', answer: 'Shipping costs from the Lower 48 add $1,500-$4,000 to vehicle prices. Limited local selection and high demand for AWD/4WD vehicles also increase prices. This premium makes verification essential—you can\'t afford to lose a $25,000+ investment to theft.' }
  ]
  },
@@ -70,9 +70,9 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Check for prior damage from dust storms (haboobs) or flash floods'
  ],
  commonTargets: ['Honda Civic', 'Honda Accord', 'Chevrolet Silverado', 'Ford F-150', 'Toyota Camry', 'GMC Sierra'],
- verificationAdvice: 'Arizona buyers should always check TheftAZ for statewide stolen property, then use SafeOrStolen to search vehicle theft and title databases and national databases. Given the high theft rates, never skip verification for any Arizona vehicle purchase, especially popular models.',
+ verificationAdvice: 'Arizona buyers should always check TheftAZ for statewide stolen property, then use SafeOrStolen to search its own reports and public web data. Given the high theft rates, never skip verification for any Arizona vehicle purchase, especially popular models.',
  uniqueFaqs: [
- { question: 'What is TheftAZ and does SafeOrStolen search it?', answer: 'TheftAZ is Arizona\'s official stolen property database maintained by the Attorney General. SafeOrStolen searches and national databases including community theft reports, which contains Arizona law enforcement reports. For comprehensive coverage, we recommend checking both TheftAZ directly and using SafeOrStolen\'s broader search.' },
+ { question: 'What is TheftAZ and does SafeOrStolen search it?', answer: 'TheftAZ is Arizona's official stolen property database maintained by the Attorney General. SafeOrStolen searches its own reports and public web data, which contains Arizona law enforcement reports. For comprehensive coverage, we recommend checking both TheftAZ directly and using SafeOrStolen's broader search.' },
  { question: 'Why is Arizona vehicle theft so high?', answer: 'Arizona\'s proximity to Mexico (60 miles from Tucson), extensive highway system, and large metropolitan area create opportunities for theft. Stolen vehicles can cross the border before owners even realize they\'re missing. The dry climate also attracts buyers from other states, creating a large market for reselling stolen vehicles.' }
  ]
  },
@@ -83,14 +83,14 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  buyingTips: [
  'Verify California Certificate of Title has DMV watermarks and proper formatting',
  'Check smog certification history through California BAR (Bureau of Automotive Repair)',
- 'Run vehicle theft and title databases to catch vehicles title-washed through other states',
+ 'Run SafeOrStolen's search to catch vehicles title-washed through other states',
  'Be extremely cautious of prices below market value for popular models',
  'Verify VINs match on dashboard, door jamb, and engine bay'
  ],
  commonTargets: ['Honda Civic', 'Honda Accord', 'Toyota Camry', 'Chevrolet Silverado', 'Ford F-150', 'Toyota Prius'],
- verificationAdvice: 'Given California\'s massive theft problem and title washing schemes, always run both license plate and VIN checks. Cross-reference vehicle theft and title databases title history to identify vehicles that may have passed through multiple states—a red flag for title washing.',
+ verificationAdvice: 'Given California's massive theft problem and title washing schemes, always run both license plate and VIN checks. Cross-reference public web data and SafeOrStolen's own reports to identify vehicles that may have passed through multiple states—a red flag for title washing.',
  uniqueFaqs: [
- { question: 'What is California title washing?', answer: 'Title washing occurs when thieves steal a California vehicle, take it to a state with less stringent title requirements, falsely claim ownership to obtain a "clean" title, then bring the vehicle back to California for sale. Always check vehicle theft and title databases for complete title history across all 50 states.' },
+ { question: 'What is California title washing?', answer: 'Title washing occurs when thieves steal a California vehicle, take it to a state with less stringent title requirements, falsely claim ownership to obtain a "clean" title, then bring the vehicle back to California for sale. Always check public web data and SafeOrStolen's own reports for complete title history across all 50 states.' },
  { question: 'Which California cities have the highest theft rates?', answer: 'Los Angeles, Oakland, San Francisco, Bakersfield, Stockton, and Fresno consistently rank among the highest theft cities. However, stolen vehicles are resold throughout the state. Verification is essential regardless of where you\'re buying in California.' }
  ]
  },
@@ -115,18 +115,18 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'florida-license-plate-lookup': {
  vehicleMarketParagraph: `Florida's vehicle market is the third-largest in the nation with over 17 million registered vehicles. Miami-Dade County alone rivals many states in vehicle registrations, while Orlando, Tampa, and Jacksonville each represent major markets. Florida's status as a retirement destination means the market includes many low-mileage vehicles from snowbirds. However, Florida also faces unique challenges: hurricane damage, salt-air corrosion in coastal areas, and a transient population that makes ownership verification complex. The state's ports—Miami, Jacksonville, and Tampa—serve as both import and export hubs, adding international dimensions to the market. Florida's no-inspection policy means vehicles with mechanical issues may circulate freely.`,
  theftPatternsParagraph: `Florida ranks among the top 10 states for vehicle theft with Miami-Dade and Broward counties leading the state. Miami's major port enables stolen vehicles to be shipped to Caribbean islands, Central America, and South America before they're even reported missing. Professional theft rings operate sophisticated export operations targeting luxury vehicles and SUVs. Hurricane seasons create additional problems: flood-damaged vehicles are totaled by insurance, then title-washed through other states and resold in Florida with clean titles. The state's tourist population provides cover for thieves, and rental car fraud is common. Jacksonville and Orlando also see significant theft activity, often tied to I-95 and I-4 corridor operations.`,
- legalConsequencesParagraph: `Under Florida Statute § 812.014, grand theft auto is a third-degree felony punishable by up to 5 years in prison and $5,000 fines. Trafficking in stolen vehicles under § 812.019 is a second-degree felony with penalties up to 15 years. Florida's "receiving stolen property" statute doesn't require proof that you knew the vehicle was stolen—possession itself creates liability. The vehicle is forfeited when recovered regardless of your good faith. Given Florida's hurricane damage and title washing problems, verification must include flood damage checks through vehicle theft and title databases and insurance total loss records. Without proper verification, you risk losing your entire investment with no recourse.`,
+ legalConsequencesParagraph: `Under Florida Statute § 812.014, grand theft auto is a third-degree felony punishable by up to 5 years in prison and $5,000 fines. Trafficking in stolen vehicles under § 812.019 is a second-degree felony with penalties up to 15 years. Florida's "receiving stolen property" statute doesn't require proof that you knew the vehicle was stolen—possession itself creates liability. The vehicle is forfeited when recovered regardless of your good faith. Given Florida's hurricane damage and title washing problems, verification must include flood damage checks through SafeOrStolen's reports, public web data, and insurance total loss records. Without proper verification, you risk losing your entire investment with no recourse.`,
  buyingTips: [
- 'Always check for flood/salvage title brands via vehicle theft and title databases, especially after hurricane seasons',
+ 'Always check for flood/salvage title brands via SafeOrStolen's reports and public web data, especially after hurricane seasons',
  'Inspect for water damage signs: musty smell, water lines, rust under carpets',
  'Verify FLHSMV title has proper security features and formatting',
  'Be cautious of vehicles from Miami-Dade and Broward counties without clear history',
  'Check for salt corrosion on coastal Florida vehicles'
  ],
  commonTargets: ['Honda Civic', 'Honda Accord', 'Toyota Camry', 'Nissan Altima', 'Ford F-150', 'Chevrolet Tahoe'],
- verificationAdvice: 'Florida verification must include flood damage checks. After every hurricane season, thousands of flood-damaged vehicles are title-washed and resold. Use SafeOrStolen to check theft status plus vehicle theft and title databases for salvage/flood title brands.',
+ verificationAdvice: 'Florida verification must include flood damage checks. After every hurricane season, thousands of flood-damaged vehicles are title-washed and resold. Use SafeOrStolen to check theft status plus public web data for salvage/flood title brands.',
  uniqueFaqs: [
- { question: 'How common are flood-damaged vehicles in Florida?', answer: 'After major hurricanes (Irma, Michael, Ian), tens of thousands of vehicles are flood-damaged. Many are totaled by insurance, then title-washed through other states and resold in Florida with clean titles. Always check vehicle theft and title databases and insurance total loss records before buying any Florida vehicle.' },
+ { question: 'How common are flood-damaged vehicles in Florida?', answer: 'After major hurricanes (Irma, Michael, Ian), tens of thousands of vehicles are flood-damaged. Many are totaled by insurance, then title-washed through other states and resold in Florida with clean titles. Always check public web data and insurance total loss records before buying any Florida vehicle.' },
  { question: 'Are vehicles shipped out of Florida ports when stolen?', answer: 'Yes, Miami and Port Everglades are known export points for stolen vehicles heading to Caribbean islands and South/Central America. Professional theft rings target luxury vehicles and SUVs for export. Once a vehicle leaves the country, recovery is nearly impossible.' }
  ]
  },
@@ -142,7 +142,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Be cautious of NYC-area vehicles without clear parking/garage history'
  ],
  commonTargets: ['Honda Accord', 'Honda Civic', 'Toyota Camry', 'Nissan Altima', 'BMW 3 Series', 'Range Rover'],
- verificationAdvice: 'New York buyers should verify both theft status and title history. For luxury vehicles especially, confirm the vehicle wasn\'t stolen via relay attack (common for keyless entry BMW, Mercedes, Range Rover). Always check vehicle theft and title databases for complete title history.',
+ verificationAdvice: 'New York buyers should verify both theft status and title history. For luxury vehicles especially, confirm the vehicle wasn't stolen via relay attack (common for keyless entry BMW, Mercedes, Range Rover). Always check public web data for complete title history.',
  uniqueFaqs: [
  { question: 'What is relay attack theft and how does it affect NY buyers?', answer: 'Relay attacks use devices to amplify keyless fob signals, allowing thieves to unlock and start vehicles without the actual key. Common in NYC for luxury vehicles. When buying a recent-model luxury vehicle, verify VIN thoroughly and ask about theft history.' },
  { question: 'Are NYC stolen vehicles shipped overseas?', answer: 'Yes, Port Newark and Port Elizabeth (technically New Jersey but serving NYC) are major shipping points. Professional theft rings target high-value vehicles for export to Africa, Eastern Europe, and the Middle East. Once shipped, recovery is essentially impossible.' }
@@ -178,10 +178,10 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Check for salvage titles from neighboring states (Florida flood vehicles)'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Chevrolet Silverado', 'Ford F-150', 'Dodge Charger', 'Dodge Challenger'],
- verificationAdvice: 'Georgia\'s position as a major transit hub means stolen vehicles from across the Southeast may be resold here. Always verify VIN history through vehicle theft and title databases to catch vehicles from other states, and pay special attention to Hyundai/Kia models.',
+ verificationAdvice: 'Georgia's position as a major transit hub means stolen vehicles from across the Southeast may be resold here. Always verify VIN history through SafeOrStolen's reports and public web data to catch vehicles from other states, and pay special attention to Hyundai/Kia models.',
  uniqueFaqs: [
  { question: 'Why is Atlanta vehicle theft so high?', answer: 'Atlanta\'s intersection of I-75, I-85, and I-20 allows stolen vehicles to be transported across state lines within hours. Professional theft rings target the metro area, and the "Kia Boys" trend has caused surges in Hyundai/Kia thefts. Always verify before purchasing.' },
- { question: 'Should I worry about Florida flood vehicles in Georgia?', answer: 'Yes, after Florida hurricanes, flood-damaged vehicles often appear in Georgia with washed titles. Always check vehicle theft and title databases for salvage/flood title brands and inspect for water damage signs like musty smells, rust, and electrical issues.' }
+ { question: 'Should I worry about Florida flood vehicles in Georgia?', answer: 'Yes, after Florida hurricanes, flood-damaged vehicles often appear in Georgia with washed titles. Always check SafeOrStolen's reports and public web data for salvage/flood title brands and inspect for water damage signs like musty smells, rust, and electrical issues.' }
  ]
  },
  'illinois-license-plate-lookup': {
@@ -216,7 +216,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Sonata', 'Kia Optima', 'Honda Accord', 'Chevrolet Cruze', 'Ford Focus', 'Dodge Charger'],
  verificationAdvice: 'Ohio buyers should check both state and national databases. The Ohio Attorney General maintains stolen property records. For Hyundai/Kia models, verify theft history carefully given the nationwide epidemic affecting these vehicles.',
  uniqueFaqs: [
- { question: 'Does Ohio have its own stolen vehicle database?', answer: 'The Ohio Attorney General maintains stolen property records that complement national databases like community theft reports. SafeOrStolen searches national databases which include Ohio law enforcement reports. For comprehensive coverage, verification is essential.' },
+ { question: 'Does Ohio have its own stolen vehicle database?', answer: 'The Ohio Attorney General maintains stolen property records that complement national data. SafeOrStolen searches its own reports and public web data, which includes Ohio law enforcement reports. For comprehensive coverage, verification is essential.' },
  { question: 'Which Ohio cities have the highest vehicle theft?', answer: 'Cleveland leads Ohio in vehicle theft, followed by Columbus and Cincinnati. These three cities account for the majority of the state\'s thefts. The Kia/Hyundai theft trend has affected all three cities significantly.' }
  ]
  },
@@ -247,13 +247,13 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Verify Colorado DMV title has proper security features',
  'Inspect brakes and transmission for mountain driving wear',
  'Be cautious of Hyundai/Kia models without immobilizer updates',
- 'Confirm vehicle wasn\'t totaled in past hail storms (check vehicle theft and title databases)'
+ 'Confirm vehicle wasn\'t totaled in past hail storms (check SafeOrStolen\'s reports and public web data)'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Subaru Outback', 'Honda Accord', 'Chevrolet Silverado', 'Ford F-150'],
  verificationAdvice: 'Colorado\'s surging theft rates make verification essential. Check for both theft status and salvage history (hail damage is common). For Hyundai/Kia models, verify carefully and check for immobilizer recall completion.',
  uniqueFaqs: [
  { question: 'Why has Colorado vehicle theft increased so much?', answer: 'Denver has seen dramatic increases in vehicle theft, driven by the Kia/Hyundai epidemic, reduced enforcement resources, and organized theft operations. Denver now ranks among America\'s worst cities for auto theft. Verification is more important than ever.' },
- { question: 'Is hail damage common in Colorado vehicles?', answer: 'Yes, Colorado experiences severe summer hailstorms that total thousands of vehicles annually. Many are repaired with salvage titles. Always check vehicle theft and title databases for title brands and inspect carefully for repaired hail damage.' }
+ { question: 'Is hail damage common in Colorado vehicles?', answer: 'Yes, Colorado experiences severe summer hailstorms that total thousands of vehicles annually. Many are repaired with salvage titles. Always check public web data and SafeOrStolen's own reports for title brands and inspect carefully for repaired hail damage.' }
  ]
  },
  'nevada-license-plate-lookup': {
@@ -286,7 +286,7 @@ export const STATE_UNIQUE_CONTENT: Record<string, StateUniqueContent> = {
  'Verify inspection sticker matches vehicle VIN records'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Honda Accord', 'Honda Civic', 'Dodge Charger', 'Nissan Altima'],
- verificationAdvice: 'Pennsylvania\'s position between major East Coast markets means stolen vehicles may transit through from other states. Check vehicle theft and title databases for complete title history across all states. For Philadelphia-area purchases, verification is especially important.',
+ verificationAdvice: 'Pennsylvania's position between major East Coast markets means stolen vehicles may transit through from other states. Check SafeOrStolen's reports and public web data for complete title history across all states. For Philadelphia-area purchases, verification is especially important.',
  uniqueFaqs: [
  { question: 'How does Philadelphia vehicle theft compare to other cities?', answer: 'Philadelphia has significant vehicle theft rates, particularly in certain neighborhoods. The city\'s proximity to I-95 and multiple state borders allows quick transport of stolen vehicles. The Kia/Hyundai epidemic has also affected the city.' },
  { question: 'Should I be concerned about rust on Pennsylvania vehicles?', answer: 'Yes, Pennsylvania uses significant road salt in winter. Vehicles from Pittsburgh and mountainous areas may have more rust than those from Philadelphia. Carefully inspect the undercarriage, wheel wells, and frame for corrosion.' }

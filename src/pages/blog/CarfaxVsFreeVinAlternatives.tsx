@@ -25,7 +25,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "What's the difference between Carfax and SafeOrStolen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Carfax focuses on complete vehicle history (accidents, service records, ownership) for $44.99. SafeOrStolen specializes in theft verification from community theft registries for free. For buying used cars, use both: SafeOrStolen (free) for theft check, Carfax (paid) for maintenance history."
+          "text": "Carfax focuses on complete vehicle history (accidents, service records, ownership) for $44.99. SafeOrStolen specializes in verifying potential theft using its own reports and public web data for free. For buying used cars, use both: SafeOrStolen (free) for theft verification, Carfax (paid) for maintenance history."
         }
       },
       {
@@ -141,7 +141,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg">
-                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen (free)</Link> - it checks our verification databases and community theft registries.
+                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen (free)</Link> - it checks our reported stolen items and public web results.
               </p>
               <p className="text-lg mt-2">
                 <strong>For complete history:</strong> Use Carfax ($44.99) after confirming the car isn't stolen.
@@ -235,7 +235,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             <p>Here's the smart approach when buying a used car:</p>
             <ol>
               <li>
-                <strong>First: Free theft check with SafeOrStolen</strong> - Verify the car isn't stolen using our verification databases and community theft registries. Takes 3 seconds, costs nothing.
+                <strong>First: Free theft check with SafeOrStolen</strong> - Verify the car isn't listed as stolen using our reports and public web data. Takes 3 seconds, costs nothing.
               </li>
               <li>
                 <strong>If clear: Carfax for full history</strong> - Once you know the car isn't stolen, pay $44.99 for complete accident, service, and ownership history.
@@ -250,7 +250,7 @@ const CarfaxVsFreeVinAlternatives = () => {
               SafeOrStolen specializes in theft verification with real-time access to:
             </p>
             <ul>
-              <li>community theft reports</li>
+              <li>our reported stolen items</li>
               <li>NHTSA vehicle records for salvage/rebuilt status</li>
               <li>Our verification databases</li>
             </ul>

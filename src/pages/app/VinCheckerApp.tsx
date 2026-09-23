@@ -27,7 +27,7 @@ const VinCheckerApp = () => {
  "featureList": [
  "VIN stolen check in 3 seconds",
  "Works for cars, trucks, motorcycles, boats",
- "vehicle theft and title databases theft database verification",
+ "SafeOrStolen reports, public web results, and AI analysis for theft verification",
  "Works offline",
  "Protects buyers AND sellers"
  ]
@@ -160,7 +160,7 @@ const VinCheckerApp = () => {
  
  <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
  {[
- "vehicle theft and title databases stolen vehicle database",
+ "SafeOrStolen reports, public web results, and AI analysis for stolen vehicles",
  "State DMV theft reports (all 50 states)",
  "Insurance total loss/theft claims",
  "Title brand checks (salvage, rebuilt)",

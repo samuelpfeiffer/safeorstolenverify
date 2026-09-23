@@ -75,13 +75,13 @@ export const DetailedFAQSection: React.FC = () => {
  questions: [
  {
  question: "How to check if a phone is stolen by IMEI?",
- answer: "Enter the phone's IMEI number (dial *#06# or check settings) into our checker. We verify against carrier and theft databases and our verification registries. A stolen phone may be blocked from networks, worthless for resale, and could get you in legal trouble.",
+ answer: "Enter the phone's IMEI number (dial *#06# or check settings) into our checker. We cross-reference our stolen-item reports, public web results, and apply AI analysis. A stolen phone may be blocked from networks, worthless for resale, and could get you in legal trouble.",
  searches: ["IMEI stolen check", "check phone stolen IMEI", "stolen phone verification", "iPhone stolen check"],
  popular: true
  },
  {
  question: "What's the difference between blacklisted and stolen phones?",
- answer: "Blacklisted phones are blocked by carriers (often for non-payment), while stolen phones are taken illegally. Stolen phones may not always be blacklisted immediately. Our service checks both scenarios - carrier and theft databases and stolen device registries for complete protection.",
+ answer: "Blacklisted phones are blocked by carriers (often for non-payment), while stolen phones are taken illegally. Stolen phones may not always be blacklisted immediately by carriers. Our service checks our stolen-item reports and public web results for comprehensive insights.",
  searches: ["blacklisted and stolen phone", "carrier blacklist and police database", "phone verification types"]
  },
  {

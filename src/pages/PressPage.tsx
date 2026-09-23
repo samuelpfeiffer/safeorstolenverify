@@ -19,7 +19,7 @@ const PressPage = () => {
  {
  metric: "100+",
  label: "Databases Searched",
- context: "Including carrier and theft databases, vehicle theft and title databases, stolen bicycle databases, and Stolen Firearms Databases"
+ context: "By combining our own stolen-item reports, public web results, and AI analysis, SafeOrStolen offers a comprehensive check. We also leverage BikeIndex for bicycles and HotGunz for firearms."
  },
  {
  metric: "3 sec",
@@ -229,7 +229,7 @@ const PressPage = () => {
  
  <p className="text-lg text-muted-foreground mb-6">
  Our platform searches over 100 databases including global device registries, 
- federal theft reports, carrier and theft databases 
+ public reports, web results, and AI analysis
  to provide comprehensive verification in under 3 seconds.
  </p>
  

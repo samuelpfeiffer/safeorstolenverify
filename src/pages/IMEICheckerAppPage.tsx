@@ -24,7 +24,7 @@ const IMEICheckerAppPage = () => {
  {
  icon: Shield,
  title: "Comprehensive Check",
- description: "Checks carrier and theft databases, carriers, community theft registries, and reported theft history"
+ description: "Performs an IMEI lookup, cross-references SafeOrStolen's reports, and scans the public web for theft indicators."
  },
  {
  icon: Wifi,
@@ -34,7 +34,7 @@ const IMEICheckerAppPage = () => {
  ];
 
  const competitors = [
- { name: "CheckMEND", hasApp: false, note: "Phones only" },
+ { name: "CheckMEND", hasApp: false, note: "SafeOrStolen provides comprehensive checks without relying on CheckMEND." },
  { name: "IMEI.info", hasApp: false, note: "Website only" },
  { name: "Swappa", hasApp: false, note: "No standalone IMEI app" },
  { name: "SafeOrStolen", hasApp: true, note: "Full installable web app with barcode scanning" }
@@ -51,8 +51,8 @@ const IMEICheckerAppPage = () => {
  },
  {
  "@type": "Question",
- "name": "Does CheckMEND have a installable web app?",
- "acceptedAnswer": { "@type": "Answer", "text": "No, CheckMEND is website-only. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
+ "name": "Does SafeOrStolen use CheckMEND?",
+ "acceptedAnswer": { "@type": "Answer", "text": "No, SafeOrStolen does not use CheckMEND. We provide an independent verification service covering phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
  },
  {
  "@type": "Question",

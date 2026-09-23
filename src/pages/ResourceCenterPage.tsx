@@ -12,7 +12,7 @@ const educationalFAQs = [
  },
  {
  question: "How do I check if a used phone is stolen before buying it?",
- answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks against carrier and theft databases, carrier databases. A clean result with a Trust Score above 85 indicates the device has no theft reports across multiple sources. Always verify before exchanging money."
+ answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks our community reports, public web data, and AI analysis. A clean result with a Trust Score above 85 indicates the device has no theft reports from these sources. Always verify before exchanging money."
  },
  {
  question: "What happens if I accidentally buy stolen goods?",
@@ -20,11 +20,11 @@ const educationalFAQs = [
  },
  {
  question: "How does VIN verification prevent car fraud?",
- answer: "A Vehicle Identification Number (VIN) check cross-references the 17-character code against theft records, vehicle theft and title databases recalls, insurance total-loss databases, and state DMV registrations. SafeOrStolen queries these sources simultaneously, detecting title washing, odometer fraud, and stolen vehicle reports. The vehicle theft and title databases reports approximately 750,000 vehicles stolen annually in the U.S."
+ answer: "A Vehicle Identification Number (VIN) check uses the 17-character code to search SafeOrStolen's reports, public web results, and AI analysis for stolen vehicle reports. We do not check other external vehicle databases. The industry reports approximately 750,000 vehicles stolen annually in the U.S."
  },
  {
  question: "What databases does SafeOrStolen check for verification?",
- answer: "SafeOrStolen aggregates data from multiple sources including: carrier and theft databases, vehicle theft and title databases vehicle databases, carrier and theft databases (AT&T, T-Mobile, Verizon), stolen bicycle databases for bicycles, nationwide firearm theft reports, and state police records. Each source is weighted by reliability for the final Trust Score calculation."
+ answer: "SafeOrStolen aggregates data from multiple sources including: our own stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex. For firearms, we check HotGunz. Each source is weighted by reliability for the final Trust Score calculation."
  },
  {
  question: "Are auction houses required to verify items before selling?",
@@ -32,7 +32,7 @@ const educationalFAQs = [
  },
  {
  question: "How accurate is IMEI blacklist checking in 2026?",
- answer: "carrier and theft databases's IMEI Database covers 200+ network operators across 150+ countries. SafeOrStolen enhances this with carrier-specific blacklists, insurance claim cross-referencing, and law enforcement stolen property databases. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in databases."
+ answer: "SafeOrStolen's verification engine checks against our internal reports, public web data, and AI analysis. For phones, we perform an IMEI lookup to provide model and device details. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in these sources."
  },
  {
  question: "What is a compliance certificate and why do businesses need one?",

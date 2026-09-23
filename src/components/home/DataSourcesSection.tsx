@@ -5,7 +5,7 @@ const dataSources = [
  {
  icon: Shield,
  title: 'Law Enforcement',
- description: 'community theft reports, cross-border theft registries',
+ description: 'Our own reported items, public web data, and AI analysis for theft indicators.',
  color: 'text-blue-500',
  link: '/data-sources#law-enforcement',
  stat: '50 states',

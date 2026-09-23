@@ -20,10 +20,10 @@ export const HowSafeOrStolenWorksSection = () => {
  number: '2',
  icon: Database,
  title: 'We Search multiple sources Instantly',
- description: 'Our AI-powered system simultaneously queries multiple databases including carrier and theft databases, community theft registries, stolen bicycle databases, manufacturer records, and carrier and theft databases across 150+ countries.',
+ description: 'Our AI-powered system simultaneously checks SafeOrStolen reports, public web results, and specialized registries like BikeIndex for bicycles and HotGunz for firearms, all augmented by AI analysis.',
  details: [
- 'vehicle theft and title databases stolen vehicle database',
- 'carrier and theft databases global IMEI registry',
+ 'SafeOrStolen reports and public web results, combined with AI analysis.',
+ 'public web results, SafeOrStolen reports, and device details lookup for phones, all powered by AI analysis.',
  'Police stolen property reports',
  'Manufacturer warranty systems',
  'Carrier blacklist databases'

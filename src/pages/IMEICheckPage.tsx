@@ -24,14 +24,14 @@ const IMEICheckPage = () => {
  'IMEI blacklist check'
  ]}
  content={{
- intro: "Check any phone's IMEI number instantly to verify if it's stolen, blacklisted, or safe to purchase. Our free IMEI check searches global databases including carrier and theft databases, and stolen-property registries to give you complete peace of mind.",
+ intro: "Check any phone's IMEI number instantly to verify its model and details. Our free IMEI lookup provides details about the device to help you make an informed decision.",
  whatIs: "An IMEI check is a verification process that uses a phone's unique 15-digit identifier to determine its status. Every mobile phone has a unique IMEI (International Mobile Equipment Identity) number that can be checked against global databases to see if the device has been reported stolen, lost, blacklisted by carriers, or has outstanding finance. Running an IMEI check before buying a used phone protects you from purchasing a device that could be remotely disabled, confiscated, or unusable.",
- howItWorks: "Our IMEI check works instantly by querying multiple databases simultaneously. Enter the 15-digit IMEI number and within seconds, we'll check: carrier and theft databases global device registry, major US carriers (AT&T, Verizon, T-Mobile), international carrier and theft databases, the relevant authorities stolen phone databases, community theft reports, and finance/lease status. You'll receive a comprehensive report showing exactly what we found.",
+ howItWorks: "Our IMEI lookup works instantly by querying publicly available device information. Enter the 15-digit IMEI number and within seconds, we'll provide device details, potential alerts from our stolen-item reports, and public web results. You'll receive a comprehensive report showing exactly what we found.",
  whyCheck: "In 2024, over 2.4 million smartphones were reported stolen in the US alone. Many of these end up on secondhand marketplaces. Buying a stolen phone means: the original owner can remotely lock or wipe it, carriers will blacklist it making it unusable, the relevant authorities can confiscate it, and you could face criminal possession charges. A quick IMEI check before purchase prevents all these problems.",
  benefits: [
  "Free IMEI check with a free account",
  "Results in under 3 seconds",
- "Checks carrier and theft databases and all major carrier databases",
+ "Checks SafeOrStolen's reports and public web results",
  "Verifies blacklist and stolen status",
  "Shows finance/lease obligations",
  "Works for iPhone, Samsung, Google, and all phones",
@@ -56,7 +56,7 @@ const IMEICheckPage = () => {
  },
  {
  question: "What databases does the IMEI check search?",
- answer: "We check carrier and theft databases global device registry, AT&T, Verizon, T-Mobile, international carrier and theft databases, community theft registries, reported theft history, and user-reported theft databases for comprehensive coverage."
+ answer: "We check SafeOrStolen's own stolen-item reports and public web results for comprehensive coverage."
  },
  {
  question: "What if the IMEI shows blacklisted?",

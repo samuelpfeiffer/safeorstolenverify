@@ -138,13 +138,13 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'Compare Services',
  links: [
- { label: 'vs CheckMEND', to: '/vs-checkmend' },
+ { label: 'Why choose SafeOrStolen', to: '/vs-checkmend' },
  { label: 'vs IMEI.info', to: '/vs-imeiinfo' },
  { label: 'vs Swappa', to: '/vs-swappa' },
  { label: 'vs Carfax', to: '/vs-carfax' },
  { label: 'vs AutoCheck', to: '/vs-autocheck' },
  { label: 'vs StolenRegister', to: '/vs-stolenregister' },
- { label: 'vs stolen bicycle databases', to: '/vs-bikeindex' },
+ { label: 'Bike Check Alternative', to: '/vs-bikeindex' },
  { label: 'vs DeviceCheck', to: '/vs-devicecheck-ca' },
  { label: 'vs FastBound', to: '/vs-fastbound' },
  { label: 'Carfax Alternative', to: '/carfax-alternative-free' },

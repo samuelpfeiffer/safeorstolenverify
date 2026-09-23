@@ -4,7 +4,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  minnesota: {
  state: "Minnesota", stateCode: "MN", slug: "minnesota-vin-lookup",
  title: "Minnesota VIN Lookup - Free MN Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Minnesota VIN lookup. Check if a MN vehicle is stolen from DVS and community theft registries. Instant Minneapolis and statewide verification.",
+ metaDescription: "Free Minnesota VIN lookup. Verify if a MN vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Minneapolis and statewide verification.",
  theftStats: { vehiclesStolen: "9,800+", recoveryRate: "53%", topCities: ["Minneapolis", "St. Paul", "Rochester"] },
  dmvLink: "https://dps.mn.gov/divisions/dvs/",
  content: {
@@ -20,7 +20,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  mississippi: {
  state: "Mississippi", stateCode: "MS", slug: "mississippi-vin-lookup",
  title: "Mississippi VIN Lookup - Free MS Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Mississippi VIN lookup. Check if a MS vehicle is stolen from DPS and community theft registries. Instant Jackson and statewide verification.",
+ metaDescription: "Free Mississippi VIN lookup. Verify if a MS vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Jackson and statewide verification.",
  theftStats: { vehiclesStolen: "3,800+", recoveryRate: "49%", topCities: ["Jackson", "Gulfport", "Southaven"] },
  dmvLink: "https://www.dps.ms.gov/",
  content: {
@@ -30,13 +30,13 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I verify a Mississippi title?", answer: "Contact Mississippi Department of Public Safety, use SafeOrStolen's VIN checker, verify title security features, and check for liens or salvage status with MS DPS." },
- { question: "What should I check when buying a used truck in Mississippi?", answer: "Verify VIN with SafeOrStolen, check for flood damage history (especially post-hurricane), inspect title authenticity, request complete vehicle theft and title databases history report." }
+ { question: "What should I check when buying a used truck in Mississippi?", answer: "Verify VIN with SafeOrStolen, check for flood damage history (especially post-hurricane), inspect title authenticity, and review SafeOrStolen's reports for any theft indicators." }
  ]
  },
  missouri: {
  state: "Missouri", stateCode: "MO", slug: "missouri-vin-lookup",
  title: "Missouri VIN Lookup - Free MO Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Missouri VIN lookup. Check if a MO vehicle is stolen from DOR and community theft registries. Instant Kansas City and statewide verification.",
+ metaDescription: "Free Missouri VIN lookup. Verify if a MO vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Kansas City and statewide verification.",
  theftStats: { vehiclesStolen: "13,200+", recoveryRate: "48%", topCities: ["Kansas City", "St. Louis", "Springfield"] },
  dmvLink: "https://dor.mo.gov/motor-vehicle/",
  content: {
@@ -52,7 +52,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  montana: {
  state: "Montana", stateCode: "MT", slug: "montana-vin-lookup",
  title: "Montana VIN Lookup - Free MT Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Montana VIN lookup. Check if a MT vehicle is stolen from MVD and community theft registries. Instant Billings and statewide verification.",
+ metaDescription: "Free Montana VIN lookup. Verify if a MT vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Billings and statewide verification.",
  theftStats: { vehiclesStolen: "1,100+", recoveryRate: "57%", topCities: ["Billings", "Missoula", "Great Falls"] },
  dmvLink: "https://dojmt.gov/driving/",
  content: {
@@ -68,7 +68,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  nebraska: {
  state: "Nebraska", stateCode: "NE", slug: "nebraska-vin-lookup",
  title: "Nebraska VIN Lookup - Free NE Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Nebraska VIN lookup. Check if a NE vehicle is stolen from DMV and community theft registries. Instant Omaha and statewide verification.",
+ metaDescription: "Free Nebraska VIN lookup. Verify if a NE vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Omaha and statewide verification.",
  theftStats: { vehiclesStolen: "2,900+", recoveryRate: "55%", topCities: ["Omaha", "Lincoln", "Bellevue"] },
  dmvLink: "https://dmv.nebraska.gov/",
  content: {
@@ -84,7 +84,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  nevada: {
  state: "Nevada", stateCode: "NV", slug: "nevada-vin-lookup",
  title: "Nevada VIN Lookup - Free NV Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Nevada VIN lookup. Check if a NV vehicle is stolen from DMV and community theft registries. Instant Las Vegas and statewide verification.",
+ metaDescription: "Free Nevada VIN lookup. Verify if a NV vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Las Vegas and statewide verification.",
  theftStats: { vehiclesStolen: "8,400+", recoveryRate: "45%", topCities: ["Las Vegas", "Henderson", "Reno"] },
  dmvLink: "https://dmv.nv.gov/",
  content: {
@@ -100,7 +100,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  newhampshire: {
  state: "New Hampshire", stateCode: "NH", slug: "new-hampshire-vin-lookup",
  title: "New Hampshire VIN Lookup - Free NH Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New Hampshire VIN lookup. Check if a NH vehicle is stolen from DMV and community theft registries. Instant Manchester and statewide verification.",
+ metaDescription: "Free New Hampshire VIN lookup. Verify if a NH vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Manchester and statewide verification.",
  theftStats: { vehiclesStolen: "1,000+", recoveryRate: "62%", topCities: ["Manchester", "Nashua", "Concord"] },
  dmvLink: "https://www.nh.gov/safety/divisions/dmv/",
  content: {
@@ -116,7 +116,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  newjersey: {
  state: "New Jersey", stateCode: "NJ", slug: "new-jersey-vin-lookup",
  title: "New Jersey VIN Lookup - Free NJ Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New Jersey VIN lookup. Check if a NJ vehicle is stolen from MVC and community theft registries. Instant Newark and statewide verification.",
+ metaDescription: "Free New Jersey VIN lookup. Verify if a NJ vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Newark and statewide verification.",
  theftStats: { vehiclesStolen: "12,800+", recoveryRate: "49%", topCities: ["Newark", "Jersey City", "Paterson"] },
  dmvLink: "https://www.nj.gov/mvc/",
  content: {
@@ -132,7 +132,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  newmexico: {
  state: "New Mexico", stateCode: "NM", slug: "new-mexico-vin-lookup",
  title: "New Mexico VIN Lookup - Free NM Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New Mexico VIN lookup. Check if a NM vehicle is stolen from MVD and community theft registries. Instant Albuquerque and statewide verification.",
+ metaDescription: "Free New Mexico VIN lookup. Verify if a NM vehicle is reported stolen on SafeOrStolen's platform and public web results. Instant Albuquerque and statewide verification.",
  theftStats: { vehiclesStolen: "5,600+", recoveryRate: "44%", topCities: ["Albuquerque", "Las Cruces", "Rio Rancho"] },
  dmvLink: "https://www.mvd.newmexico.gov/",
  content: {

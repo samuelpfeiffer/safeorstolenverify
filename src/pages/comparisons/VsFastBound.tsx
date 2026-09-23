@@ -201,7 +201,7 @@ const VsFastBound = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                    You need community theft reports for business operations
+                    You need stolen-item reports for business operations
                   </li>
                 </ul>
               </CardContent>
@@ -277,7 +277,7 @@ const VsFastBound = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Does SafeOrStolen access community theft reports?</CardTitle>
+                <CardTitle className="text-lg">Does SafeOrStolen access its own stolen-item reports?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">

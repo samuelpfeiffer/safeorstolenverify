@@ -11,7 +11,7 @@ const OrlandoLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "How do I check if a car is stolen in Orlando?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We search our verification databases, including community theft reports. Free results in 3 seconds." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We check our reported stolen items, public web results, and apply AI analysis. Free results in 3 seconds." }
  },
  {
  "@type": "Question",
@@ -35,7 +35,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Orlando FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Orlando, Florida license plate lookup. Check if vehicles in Orange County are stolen. Search vehicle theft and title databases and stolen property reports. Instant results."
+ description="Free Orlando, Florida license plate lookup. Check if vehicles in Orange County are reported stolen. We search public web results and our reported stolen items. Instant results."
  canonical="/florida/orlando-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +47,7 @@ const OrlandoLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Orlando License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Orlando, Florida against our verification databases, including community theft reports. Free instant results in 3 seconds.
+ Verify any vehicle in Orlando, Florida against our reported stolen items, public web results, and AI analysis. Free instant results in 3 seconds.
  </p>
  </div>
  </header>
@@ -82,7 +82,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'Vehicle Theft & Title Databases', desc: 'Theft and total loss records for vehicles nationwide' },
- { name: 'Stolen Property Reports', desc: 'community theft reports' },
+ { name: 'Stolen Property Reports', desc: 'reported stolen items' },
  { name: 'Rental & Fleet Records', desc: 'Former rental vehicle indicators and fleet disposal data' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -98,7 +98,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <div className="space-y-3">
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Orlando?</summary>
- <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We search our verification databases, including community theft reports. Free results in 3 seconds.</p>
+ <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We check our reported stolen items, public web results, and apply AI analysis. Free results in 3 seconds.</p>
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Why are rental car scams common in Orlando?</summary>

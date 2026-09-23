@@ -106,7 +106,7 @@ const StolenVerificationAppGuide = () => {
             <Card className="my-8 p-6">
               <div className="space-y-6">
                 <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">CheckMEND</h3>
+                  <h3 className="font-bold text-xl mb-2 text-red-600">Other Services</h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                     <li>Website only, requires manual typing</li>
                     <li>30+ seconds per verification</li>
@@ -142,7 +142,7 @@ const StolenVerificationAppGuide = () => {
                     <li><strong>Full iOS and Android app</strong></li>
                     <li><strong>Instant barcode scanning</strong> - no typing required</li>
                     <li><strong>3-second verification</strong> - 10x faster than competitors</li>
-                    <li><strong>2 FREE checks</strong> compared to CheckMEND's $3.99</li>
+                    <li><strong>2 FREE checks</strong> compared to typical paid services</li>
                     <li><strong>Offline mode</strong> - works without internet</li>
                     <li><strong>All item types</strong> - phones, vehicles, electronics, firearms, boats</li>
                   </ul>
@@ -175,7 +175,7 @@ const StolenVerificationAppGuide = () => {
             </ol>
 
             <p>
-              This <strong>instant stolen verification</strong> process is <strong>10x faster</strong> than CheckMEND's manual website entry, and infinitely more convenient than typing 15-digit IMEI numbers by hand.
+              This <strong>instant verification</strong> process is <strong>10x faster</strong> than manual website entry, and infinitely more convenient than typing 15-digit IMEI numbers by hand.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-6">What Items Can You Verify with the App?</h2>
@@ -225,7 +225,7 @@ const StolenVerificationAppGuide = () => {
 
             <ul className="list-disc pl-6 space-y-3">
               <li>
-                <strong>No awkward waiting</strong> - CheckMEND takes 30+ seconds, making sellers suspicious. SafeOrStolen returns results before the seller even notices you checked.
+                <strong>No awkward waiting</strong> - other services can take 30+ seconds, making sellers suspicious. SafeOrStolen returns results before the seller even notices you checked.
               </li>
               <li>
                 <strong>Verify at meetups</strong> - Scan barcodes instantly at gas stations, parking lots, OfferUp exchanges. No need to type on small keyboards.
@@ -297,7 +297,7 @@ const StolenVerificationAppGuide = () => {
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏪 Pawn Shop Verification</h3>
                 <p className="text-muted-foreground">
-                  "We process 50+ items daily. SafeOrStolen's barcode scanner lets us verify everything in minutes. Before this app, we spent hours typing serial numbers into CheckMEND's slow website." - Gold Rush Pawn, Las Vegas NV
+                  "We process 50+ items daily. SafeOrStolen's barcode scanner lets us verify everything in minutes. Before this app, we spent hours typing serial numbers into slow websites." - Gold Rush Pawn, Las Vegas NV
                 </p>
               </Card>
 
@@ -331,7 +331,7 @@ const StolenVerificationAppGuide = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>2 FREE checks</strong> compared to CheckMEND's $3.99 per check</span>
+                  <span><strong>2 FREE checks</strong> compared to typical paid services</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

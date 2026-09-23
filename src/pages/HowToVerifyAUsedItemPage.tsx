@@ -5,7 +5,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'How can I check if a used item is stolen before I buy it?',
  answer:
- "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against community theft reports, carrier and theft databases, community theft reports, and community theft registries, and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
+ "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against our own reports, public web results, and AI analysis (plus specialized sources for bikes and firearms), and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
  },
  {
  question: 'Is there one website where I can check different types of used items for theft?',
@@ -73,7 +73,7 @@ const CATEGORIES: { label: string; href: string; sentence: string }[] = [
  label: 'Phones (IMEI)',
  href: '/imei-checker',
  sentence:
- 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it against stolen reports and carrier and theft databases before you pay.',
+ 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it against SafeOrStolen's reports and public web results before you pay.',
  },
  {
  label: 'Vehicles (VIN)',
@@ -136,7 +136,7 @@ const HowToVerifyAUsedItemPage = () => {
  answer it, take the item's unique identifier — IMEI, VIN, license plate, serial
  number, firearm serial, or bicycle frame serial — and search it against theft
  records. SafeOrStolen checks community theft reports, carrier and
- manufacturer blacklists, community theft reports, and community theft registries, and
+ AI analysis, and specialized sources for certain item types, and
  returns a match or no-match result in a few seconds. A match means the identifier
  appears in at least one theft record and you should not complete the purchase.
  </p>

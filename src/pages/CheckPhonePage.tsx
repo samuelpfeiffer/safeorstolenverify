@@ -45,7 +45,7 @@ const CheckPhonePage = () => {
  <h2>What we check</h2>
  <p>
  SafeOrStolen queries stolen-device and blacklist records across more than 100 databases,
- including carrier blacklist status, loss and theft reports, and our own user-submitted
+ including public web results, AI analysis, and our own user-submitted
  theft registry. A result comes back in seconds:
  </p>
  <ul>

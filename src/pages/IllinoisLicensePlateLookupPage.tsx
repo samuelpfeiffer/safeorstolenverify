@@ -6,7 +6,7 @@ const IllinoisLicensePlateLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="Illinois License Plate Lookup - Check IL Stolen Vehicle by Plate"
- metaDescription="Free Illinois license plate lookup. Check if an IL vehicle is stolen before buying. Search Secretary of State and community theft registries."
+ metaDescription="Free Illinois license plate lookup. Check if an IL vehicle is reported stolen before buying. Search SafeOrStolen's records and public reports."
  h1="Illinois License Plate Lookup - Check IL Vehicles"
  itemType="Vehicle"
  keywords={[
@@ -55,7 +55,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "What information can I get from an Illinois license plate lookup?",
- answer: "An Illinois license plate lookup provides: Illinois Secretary of State registered owner name, vehicle make/model/year, VIN, Illinois registration status, title information (including salvage/rebuilt status), and theft status from community theft registries including Chicago Police and Illinois State Police. This helps you screen Illinois vehicles quickly."
+ answer: "An Illinois license plate lookup provides insights on registered owner name, vehicle make/model/year, VIN, Illinois registration status, and theft status from SafeOrStolen's records and public reports. This helps you screen Illinois vehicles quickly."
  },
  {
  question: "How much does Illinois license plate lookup cost?",
@@ -71,7 +71,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "What are Illinois-specific concerns when buying used vehicles?",
- answer: "Illinois has unique vehicle risks: (1) Chicago has notable vehicle theft activity with stolen vehicles entering the used market, (2) Organized theft rings target specific makes and models, (3) Indiana border allows movement of stolen vehicles across state lines, (4) Title jumping and curbstoning occur in suburban Chicago markets. Always verify Illinois title is clean, check vehicle theft and title databases database for theft records, and verify VIN matches Illinois records."
+ answer: "Illinois has unique vehicle risks: (1) Chicago has notable vehicle theft activity with stolen vehicles entering the used market, (2) Organized theft rings target specific makes and models, (3) Indiana border allows movement of stolen vehicles across state lines, (4) Title jumping and curbstoning occur in suburban Chicago markets. Always verify the Illinois title is clean, check for reported theft records, and verify the VIN matches records."
  },
  {
  question: "Does SafeOrStolen cover all cities in Illinois?",

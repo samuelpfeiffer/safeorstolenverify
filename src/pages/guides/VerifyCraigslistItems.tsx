@@ -126,7 +126,7 @@ const VerifyCraigslistItems = () => {
  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl">2</div>
  <div>
  <h3 className="text-xl font-semibold mb-2">Verify with SafeOrStolen</h3>
- <p className="text-muted-foreground mb-4">Enter the identifier into our free tool. We check multiple sources including community theft reports, vehicle theft and title databases, and carrier and theft databases.</p>
+ <p className="text-muted-foreground mb-4">Enter the identifier into our free tool. We check multiple sources including SafeOrStolen's own reports, public web results, and AI analysis. For bicycles, we also check BikeIndex.</p>
  <Button asChild className="gap-2">
  <Link to="/verify">
  <Search className="w-4 h-4" />

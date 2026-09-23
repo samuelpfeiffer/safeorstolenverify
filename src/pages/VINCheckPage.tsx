@@ -24,9 +24,9 @@ const VINCheckPage = () => {
  'stolen vehicle check'
  ]}
  content={{
- intro: "Check any vehicle's VIN instantly to verify if it's been reported stolen. Our free VIN check searches community theft reports/vehicle theft and title databases databases, vehicle theft and title databases, and insurance claims to ensure the car, truck, or motorcycle you're buying is clean and safe.",
+ intro: "Check any vehicle's VIN instantly to see if it has been reported stolen. Our free VIN check analyzes our stolen-item reports, public web information, and uses AI analysis to help ensure the car, truck, or motorcycle you're buying is clean and safe.",
  whatIs: "A VIN check is a verification that uses a vehicle's 17-character Vehicle Identification Number to determine if it's been reported stolen, salvaged, or has title issues. Every vehicle manufactured since 1981 has a unique VIN that's registered in national databases. Running a VIN check before buying a used vehicle protects you from purchasing stolen property, salvage frauds, or vehicles with hidden liens.",
- howItWorks: "Our VIN check queries multiple databases instantly. Enter the 17-character VIN and we'll search: community theft reports, vehicle theft and title databases, insurance total loss records, and our proprietary theft database. Within seconds, you'll know if the vehicle has any theft reports, title issues, or red flags.",
+ howItWorks: "Our VIN check analyzes available public information and our own reported stolen items instantly. Enter the 17-character VIN and we'll search: SafeOrStolen reports, public web results, and apply AI analysis. Within seconds, you'll know if the vehicle has any theft reports or red flags.",
  whyCheck: "Over 800,000 vehicles are stolen in the US each year. Many are sold to unsuspecting buyers who lose their money and the vehicle when police recover it. A stolen vehicle will be seized by law enforcement regardless of whether you paid for it, and you have no legal recourse to recover your money from the seller. A 30-second VIN check prevents this nightmare scenario.",
  benefits: [
  "Free VIN check with a free account",

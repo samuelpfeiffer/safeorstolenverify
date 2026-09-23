@@ -11,7 +11,7 @@ const FAQS = [
  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $10/month.' },
  { q: 'Can I cancel the unlimited plan anytime?', a: 'Yes. Cancel from your dashboard with one click. Your plan continues until the end of the billing period — no fees, no hassle.' },
  { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
- { q: 'How accurate are the results?', a: 'We check multiple sources including carrier and theft databases, vehicle theft and title databases, Stolen Firearms Databases, and all 50 US state databases.' },
+ { q: 'How accurate are the results?', a: 'We analyze web results, SafeOrStolen reports, and use AI to evaluate item history. We also integrate with specialized sources like Bike Index for bicycles and HotGunz for firearms.' },
  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on the unlimited plan, no questions asked.' },
  { q: 'Do I need an account for pay-per-check?', a: 'Yes — a free account is required for every check. Create one in seconds, pay $0.99, and get instant results with no recurring charges.' },
  { q: 'How do seller verification badges work?', a: 'Seller badges are included free with the $10/month unlimited plan. Verify your item, generate a badge, and paste it into your marketplace listing. Buyers click it to see the verified result.' },
@@ -215,7 +215,7 @@ const PricingPage = () => {
  <tbody>
  {[
  { name: 'SafeOrStolen', price: '$0.99/check or $10/mo', dbs: '100+', types: 'All 6', hl: true },
- { name: 'CheckMEND', price: '£7/check', dbs: 'UK only', types: 'Electronics', hl: false },
+ { name: 'CheckMEND', price: 'N/A', dbs: 'N/A', types: 'Not integrated', hl: false },
  { name: 'Carfax', price: '$44.99/report', dbs: 'Vehicles', types: 'Cars only', hl: false },
  { name: 'vehicle theft and title databases', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
  { name: 'Stolen Firearms Databases', price: 'Free (limited)', dbs: '1', types: 'Firearms', hl: false },

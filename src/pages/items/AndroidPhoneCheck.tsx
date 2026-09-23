@@ -30,11 +30,11 @@ const AndroidPhoneCheck = () => {
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is Android IMEI Verification?"
- whatIsContent="Every Android phone has a unique 15-digit IMEI number. When stolen, this IMEI gets reported to carrier and theft databases and stolen device databases. A blacklisted Android phone won't work on major carrier networks. Our verification checks Google's Find My Device reports and carrier and theft databases to determine if an Android phone is safe to purchase."
+ whatIsContent="Every Android phone has a unique 15-digit IMEI number. When reported stolen, this IMEI is typically added to carrier blacklists, rendering the phone unusable on major networks. Our verification uses SafeOrStolen's reports, public web results, and AI analysis to determine if an Android phone is safe to purchase."
  howItWorksSteps={[
  "Find the IMEI: Dial *#06# on the phone, or go to Settings > About Phone > IMEI",
  "Enter the 15-digit IMEI number into our free verification tool",
- "Our system searches carrier and theft databases, Find My Device reports, and community theft registries",
+ "Our system searches SafeOrStolen's reports, public web results, and community theft reports",
  "Get instant results - know if the Android phone is SAFE or STOLEN"
  ]}
  whyVerifyTitle="Why Check Android Phones Before Buying?"

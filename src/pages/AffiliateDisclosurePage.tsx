@@ -137,7 +137,7 @@ const AffiliateDisclosurePage: React.FC = () => {
  <p>
  SafeOrStolen's verification services and affiliate partner recommendations are optimized for and 
  primarily serve users in the <strong className="text-foreground">United States</strong>. Our database 
- sources include vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, and community theft registries across all 50 US states. 
+ sources include our own SafeOrStolen reports, public web results, AI analysis, and specialized databases like BikeIndex for bicycles and HotGunz for firearms.
  Partner service availability may vary by location.
  </p>
  </CardContent>

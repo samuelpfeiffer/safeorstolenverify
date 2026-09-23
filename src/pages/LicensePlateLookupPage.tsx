@@ -75,7 +75,7 @@ const LicensePlateLookupPage = () => {
  },
  {
  question: "Can I check if a license plate is linked to a stolen vehicle?",
- answer: "Yes. SafeOrStolen matches a plate to its vehicle and searches community theft reports, carrier and theft databases, community theft reports, and community theft registries for a theft record on that vehicle. Because plates can be removed and swapped onto a different car, confirm the VIN in person before you buy \u2014 a clean plate result on a swapped plate tells you nothing about the vehicle in front of you."
+ answer: "Yes. SafeOrStolen checks its own theft reports, public web results, and applies AI analysis to identify if a vehicle has been reported stolen. Because plates can be removed and swapped onto a different car, confirm the VIN in person before you buy — a clean plate result on a swapped plate tells you nothing about the vehicle in front of you."
  },
  {
  question: "What can a license plate lookup tell me?",
@@ -87,7 +87,7 @@ const LicensePlateLookupPage = () => {
  },
  {
  question: "What information do I get from a license plate lookup?",
- answer: "You'll see: registered owner name, vehicle make/model/year, VIN, registration status (valid/expired), title info, and theft status from DMV and community theft registries."
+ answer: "You'll see: vehicle make/model/year, VIN, and any theft status identified through our checks."
  },
  {
  question: "Is license plate lookup free?",
@@ -116,7 +116,7 @@ const LicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free License Plate Lookup — Check Any Vehicle by Plate Number | SafeOrStolen"
- description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using state DMV, vehicle theft and title databases, community theft reports, and our verification databases. Instant results in 3 seconds."
+ description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using our extensive search, public web results, and AI analysis. Instant results in 3 seconds."
  keywords="license plate lookup, plate number search, stolen vehicle check, DMV lookup"
  canonical="/license-plate-lookup"
  structuredData={faqSchema}
@@ -131,7 +131,7 @@ const LicensePlateLookupPage = () => {
  License Plate Lookup
  </h1>
  <p className="text-lg md:text-xl text-muted-foreground">
- Check if a vehicle is stolen using the license plate number. Select your state and verify instantly against DMV and community theft registries.
+ Check if a vehicle is stolen using the license plate number. Select your state and verify instantly against our theft reports and public data.
  </p>
  </div>
 
@@ -327,7 +327,7 @@ const LicensePlateLookupPage = () => {
  </div>
  <h3 className="font-semibold mb-2">We Search Databases</h3>
  <p className="text-sm text-muted-foreground">
- We query and community theft registries quickly.
+ We process public web results and our own theft reports quickly.
  </p>
  </div>
  <div className="text-center p-6 rounded-lg border border-border bg-card">

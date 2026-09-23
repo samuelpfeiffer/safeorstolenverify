@@ -75,13 +75,13 @@ export default function HowToCheckPhoneStolen() {
           <h2>Step-by-Step: How to Check if a Phone is Stolen</h2>
           
           <h3>Method 1: Use SafeOrStolen's Free IMEI Checker (Fastest)</h3>
-          <p>SafeOrStolen checks our verification databases instantly, including carrier blacklists and community theft registries.</p>
+          <p>SafeOrStolen checks our stolen item reports, public web results, and uses AI analysis to verify a device's history.</p>
           <ol>
             <li>Go to <Link to="/verify" className="text-primary hover:underline">SafeOrStolen.com/verify</Link></li>
             <li>Enter the 15-digit IMEI number</li>
             <li>Get results in 3 seconds showing:
               <ul>
-                <li>Stolen status from community theft registries</li>
+                <li>Reported stolen status from our internal reports and public web sources</li>
                 <li>Carrier blacklist status (AT&T, Verizon, T-Mobile, Sprint)</li>
                 <li>International theft reports</li>
                 <li>Finance/lease status</li>
@@ -123,7 +123,7 @@ export default function HowToCheckPhoneStolen() {
             <li><strong>Document everything</strong> - Screenshots, messages, phone numbers</li>
           </ol>
           <p className="bg-destructive/10 border border-destructive/20 p-4 rounded-lg my-6">
-            <strong>⚠️ Warning:</strong> Attempting to "unlock" or "clean" a blacklisted IMEI is illegal and ineffective. Carriers share blacklists internationally through the carrier and manufacturer blacklists.
+            <strong>⚠️ Warning:</strong> Attempting to "unlock" or "clean" a blacklisted IMEI is illegal and ineffective. Carriers share blacklists internationally through the GSMA and other carrier systems.
           </p>
 
           <h2>Buying from Marketplaces: Platform-Specific Tips</h2>
@@ -202,7 +202,7 @@ export default function HowToCheckPhoneStolen() {
           <h2>The SafeOrStolen Advantage</h2>
           <p>While free carrier checks exist, SafeOrStolen provides a broader verification check:</p>
           <ul>
-            <li>✅ Checks our verification databases simultaneously (carrier blacklists and community theft registries)</li>
+            <li>✅ Checks our internal stolen item reports, public web results, and uses AI analysis simultaneously</li>
             <li>✅ 3-second results vs 15+ minutes with manual checks</li>
             <li>✅ Installable web app with barcode scanning for instant verification</li>
             <li>✅ Covers all item types (phones, laptops, bikes, cars, firearms)</li>

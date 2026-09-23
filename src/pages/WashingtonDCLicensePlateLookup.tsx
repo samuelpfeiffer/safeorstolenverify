@@ -22,14 +22,14 @@ const WashingtonDCLicensePlateLookup = () => {
  }
  setIsLoading(true);
  navigate(`/verify?q=${encodeURIComponent(plateNumber)}&type=plate&state=DC`);
- toast.success('Searching Washington DC vehicle theft and title databases...');
+ toast.success('Searching for Washington DC vehicle information...');
  };
 
  const structuredData = {
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Washington DC License Plate Lookup - Free DC DMV Plate Search",
- "description": "Free Washington DC license plate lookup. Check vehicle registration, theft status, and owner information for DC plates. Instant results from DC vehicle theft and title databases.",
+ "description": "Free Washington DC license plate lookup. Check vehicle status and history for DC plates. Instant results from SafeOrStolen's analysis and public data.",
  "url": "https://safeorstolen.com/washington-dc-license-plate-lookup",
  "mainEntity": {
  "@type": "Service",
@@ -55,7 +55,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "How do I look up a DC license plate for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the DC license plate number into SafeOrStolen's verification tool. We instantly search DC vehicle theft and title databases theft databases, and law enforcement reports to provide comprehensive vehicle information including registration status and theft history."
+ "text": "Enter the DC license plate number into SafeOrStolen's verification tool. We instantly analyze publicly available information and SafeOrStolen's own reports to provide comprehensive vehicle information, including registration status and potential red flags."
  }
  },
  {
@@ -63,7 +63,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "What can I find with a Washington DC plate lookup?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "A DC license plate lookup reveals: vehicle make/model/year, registration status, theft reports, salvage title history, and whether the vehicle has been in major accidents. This helps verify any used vehicle before purchase."
+ "text": "A DC license plate lookup can help reveal vehicle make/model/year, registration status, and other publicly available details, assisting in verifying a used vehicle before purchase."
  }
  },
  {
@@ -81,7 +81,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <>
  <PageSEO
  title="Washington DC License Plate Lookup Free - DC DMV Plate Search | SafeOrStolen"
- description="Free Washington DC license plate lookup. Get VIN, check theft status, and view vehicle history for any DC plate. Instant results from DC vehicle theft and title databases database."
+ description="Free Washington DC license plate lookup. Get VIN, check for reported issues, and view vehicle history for any DC plate. Instant results from SafeOrStolen's analysis and public data."
  keywords="DC license plate lookup, Washington DC plate search, DC DMV plate check, District of Columbia vehicle search, DC stolen car check, DC plate to VIN, Washington DC DMV lookup free"
  canonical="/washington-dc-license-plate-lookup"
  structuredData={[structuredData, faqSchema]}
@@ -101,7 +101,7 @@ const WashingtonDCLicensePlateLookup = () => {
  </h1>
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
  Free instant DC license plate search. Get vehicle information, check theft status, 
- and verify registration from DC vehicle theft and title databases.
+ and verify vehicle details through SafeOrStolen's analysis.
  </p>
 
  {/* Search Form */}
@@ -167,7 +167,7 @@ const WashingtonDCLicensePlateLookup = () => {
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>vehicle theft and title databases stolen vehicle database</span>
+ <span>SafeOrStolen's analysis and public records</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -337,7 +337,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <h2 className="text-2xl font-bold mb-4">Ready to Check a DC Vehicle?</h2>
  <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
  Don't risk buying a stolen vehicle. Get instant verification from 
- DC vehicle theft and title databases and national theft databases.
+ SafeOrStolen's analysis and publicly available vehicle data.
  </p>
  <div className="flex flex-wrap justify-center gap-4">
  <Button asChild size="lg">

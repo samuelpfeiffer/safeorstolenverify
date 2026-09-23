@@ -32,7 +32,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'How accurate is the stolen phone database?',
- a: 'We check against multiple databases including carrier and theft databases and police reports.'
+ a: 'We check against SafeOrStolen reports, publicly available web results, and AI analysis. For bicycles, we integrate with BikeIndex, and for firearms, HotGunz.'
  }
  ]}
  />
@@ -168,7 +168,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'What databases do you check?',
- a: 'We check 100+ aggregated stolen-item sources, including carrier and theft databases, vehicle theft and title databases vehicle data, stolen bicycle databases, and the stolen firearms databases.'
+ a: 'We check SafeOrStolen reports, publicly available web results, and apply AI analysis. For specific item types like bicycles and firearms, we also integrate with specialized sources like BikeIndex and HotGunz.'
  },
  {
  q: 'Should I use an FFL dealer?',

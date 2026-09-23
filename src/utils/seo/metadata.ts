@@ -5,7 +5,7 @@ import type { PageMetadata } from './types';
 const SITE_CONFIG = {
  name: 'Safe or Stolen',
  tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
- description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Comprehensive multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Real-time database checks via vehicle theft and title databases, carrier and theft databases, CheckMEND, stolen bicycle databases protecting consumers and businesses from fraud.',
+ description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Verify vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment against our stolen reports, public web data, and AI analysis. We check BikeIndex for bicycles, HotGunz for firearms, and provide IMEI device details for phones, helping protect consumers and businesses from fraud.',
  url: 'https://safeorstolen.com',
  ogImage: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
  twitterHandle: '@safeorstolen',
@@ -83,7 +83,7 @@ const SITE_CONFIG = {
  'blacklist registry search',
  
  // Competitor Brand Alternatives
- 'CheckMEND alternative',
+ 'stolen item checker alternative',
  'Stolen 911 alternative',
  'IMEICheck.com alternative',
  'Swappa IMEI Check alternative',
@@ -161,10 +161,10 @@ const SITE_CONFIG = {
 const PAGE_METADATA: Record<string, PageMetadata> = {
  home: {
  title: `Complete Stolen Item Verification | Multi-Database IMEI, VIN & Serial Number Check`,
- description: 'Fast, accurate stolen item verification across multiple databases including carrier and theft databases, CheckMEND, and stolen bicycle databases. Instant IMEI, VIN, and serial number checks for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Serving the US with international expansion. Free trial.',
+ description: 'Fast, accurate stolen item verification using our reported stolen items, public web results, and AI analysis. Instant IMEI, VIN, and serial number checks for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Serving the US with international expansion. Free trial.',
  keywords: SITE_CONFIG.keywords.join(', ') + ', multi-database verification, stolen item check, IMEI checker, VIN verification, comprehensive verification service, trusted verification platform',
  ogTitle: `Complete Multi-Database Verification - IMEI, VIN & Serial Number Check`,
- ogDescription: 'Trusted verification across multiple databases. Comprehensive stolen item checking for all categories via vehicle theft and title databases, carrier and theft databases, CheckMEND, stolen bicycle databases.',
+ ogDescription: 'Trusted verification for stolen items. Comprehensive checking for all categories using our reported stolen items, public web results, and AI analysis.',
  ogImage: SITE_CONFIG.ogImage,
  robotsDirectives: 'index, follow, max-image-preview:large'
  },
@@ -174,14 +174,14 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
  description: 'Learn how our real-time verification system protects you from stolen goods. Simple 3-step process: Search, Verify, Buy Safely.',
  keywords: 'how stolen goods verification works, item verification process, safe buying guide, fraud prevention steps',
  ogTitle: 'How Safe or Stolen Works - 3 Simple Steps to Safe Buying',
- ogDescription: 'Discover how our verification system protects millions from stolen goods with real-time database checks.',
+ ogDescription: 'Discover how our verification system helps protect millions from stolen goods.',
  robotsDirectives: 'index, follow'
  },
 
  'about-problem': {
  title: `The $13 Billion Stolen Goods Crisis - ${SITE_CONFIG.name}`,
  description: 'Learn about the massive stolen goods problem affecting millions of Americans. Discover why 2.3M people unknowingly buy stolen items yearly and how to protect yourself.',
- keywords: 'stolen goods crisis, secondhand fraud, vehicle theft and title databases statistics, stolen property market, consumer protection',
+ keywords: 'stolen goods crisis, secondhand fraud, stolen property market, consumer protection, phone IMEI lookup',
  ogTitle: 'The Hidden $13 Billion Stolen Goods Crisis in America',
  ogDescription: 'Shocking statistics reveal 2.3 million Americans unknowingly buy stolen goods yearly. Learn how to protect yourself.',
  robotsDirectives: 'index, follow'
@@ -261,7 +261,7 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
 
  'stolen-item-checker': {
  title: `Stolen Item Checker - Free Online Stolen Items Search | Report Stolen Items`,
- description: 'Free stolen item checker & online stolen items search. Report stolen items, find stolen property, search stolen database. Best CheckMEND & Stolen 911 alternative.',
+ description: 'Free stolen item checker & online stolen items search. Report stolen items, find stolen property, search stolen database. Best stolen item checker alternative.',
  keywords: 'stolen item checker, online stolen items search, report stolen items, find stolen property, search stolen database, stolen item lookup, stolen item check',
  ogTitle: 'Free Stolen Item Checker - Search Database & Report Items',
  ogDescription: 'Comprehensive stolen item checker. Search stolen database, report items & find stolen property online.',

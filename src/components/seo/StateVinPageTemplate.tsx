@@ -144,7 +144,7 @@ export const StateVinPageTemplate = ({
  <ul>
  <li>Vehicle theft and title databases - title history</li>
  <li>{state} vehicle registration and title status databases</li>
- <li>community theft reports</li>
+ <li>SafeOrStolen community reports</li>
  </ul>
  
  <h2>Top Cities for Vehicle Theft in {state}</h2>

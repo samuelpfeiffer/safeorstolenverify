@@ -262,7 +262,7 @@ const UnifiedSearchFormComponent = ({
  Universal Theft Database Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Search across carrier and theft databases, CheckMEND, stolen bicycle databases, and more
+ Search across our stolen-item reports, public web results, and more
  </p>
  </div>
 

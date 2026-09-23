@@ -205,7 +205,7 @@ export default function MarketplaceIntegrationPage() {
  <Globe className="h-6 w-6 text-primary mt-1" />
  <div>
  <h4 className="font-bold">Global Coverage</h4>
- <p className="text-sm text-muted-foreground">Check against multiple sources worldwide including community theft reports, carrier and theft databases, and international registries.</p>
+ <p className="text-sm text-muted-foreground">SafeOrStolen leverages its own reports, public web results, and AI analysis to help verify items. Specialized checks are available for bicycles, firearms, and phones.</p>
  </div>
  </div>
  </div>

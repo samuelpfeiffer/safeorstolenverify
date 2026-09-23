@@ -104,7 +104,7 @@ const HowItWorksPage = () => {
  icon={<Database className="h-8 w-8" />}
  number="2"
  title="Multi-Source Check"
- description="We search our database plus stolen bicycle databases, StolenRegister, and more"
+ description="We check SafeOrStolen reports, public web results, AI analysis, and BikeIndex for bicycles"
  />
  <ProcessStep
  icon={<Zap className="h-8 w-8" />}
@@ -142,7 +142,7 @@ const HowItWorksPage = () => {
  <ItemTypeCard
  icon="🚲"
  title="Bicycles"
- description="Search bike serial numbers in stolen bicycle databases and our database"
+ description="Search bicycle serial numbers using BikeIndex and our reported items"
  examples={['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX']}
  />
  <ItemTypeCard
@@ -164,13 +164,13 @@ const HowItWorksPage = () => {
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
  <DataSourceCard
- title="community theft reports"
+ title="SafeOrStolen reports and public web results"
  description="Federal stolen property database - the relevant authorities partnership"
  icon="🏛️"
  />
  <DataSourceCard
- title="vehicle theft and title databases"
- description="vehicle theft and title databases - VINCheck and theft records"
+ title="vehicle history checks"
+ description="Look up VINs through public web searches and our internal reports"
  icon="🛡️"
  />
  <DataSourceCard
@@ -184,7 +184,7 @@ const HowItWorksPage = () => {
  icon="📲"
  />
  <DataSourceCard
- title="stolen bicycle databases"
+ title="bicycle history checks"
  description="1.4M bikes cataloged - direct API integration"
  icon="🚴"
  />
@@ -199,7 +199,7 @@ const HowItWorksPage = () => {
  icon="🚨"
  />
  <DataSourceCard
- title="vehicle theft and title databases Database"
+ title="vehicle history information"
  description="Official VIN records - government data partner"
  icon="🚗"
  />
@@ -461,7 +461,7 @@ const HowItWorksPage = () => {
  icon="🏠"
  />
  <DataSourceCard
- title="stolen bicycle databases"
+ title="bicycle history checks"
  description="1.4M bikes cataloged, 159K stolen bikes registered"
  icon="🚴"
  />
@@ -471,7 +471,7 @@ const HowItWorksPage = () => {
  icon="🔍"
  />
  <DataSourceCard
- title="vehicle theft and title databases Database"
+ title="vehicle history information"
  description="Official vehicle identification and specifications"
  icon="🚗"
  />

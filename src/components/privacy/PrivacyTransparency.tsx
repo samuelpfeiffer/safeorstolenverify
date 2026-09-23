@@ -40,7 +40,7 @@ export const PrivacyTransparency: React.FC = () => {
                   <strong>Platform:</strong> SafeOrStolen.com is a stolen goods verification platform operated by SafeOrStolen.
                 </p>
                 <p>
-                  <strong>Mission:</strong> To protect consumers and businesses from purchasing stolen goods through real-time database verification.
+                  <strong>Mission:</strong> To protect consumers and businesses from purchasing stolen goods through comprehensive checks and analysis.
                 </p>
                 <p>
                   <strong>Contact:</strong> support@safeorstolen.com

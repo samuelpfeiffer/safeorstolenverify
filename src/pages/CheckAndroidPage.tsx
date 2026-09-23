@@ -26,7 +26,7 @@ export default function CheckAndroidPage() {
  Check If Android Phone Is Stolen
  </h1>
  <p className="text-xl text-muted-foreground mb-8">
- Verify Samsung, Google Pixel, OnePlus, Xiaomi, and any Android device before buying. Check IMEI against carrier and theft databases and stolen property databases.
+ Verify Samsung, Google Pixel, OnePlus, Xiaomi, and any Android device before buying. We check our stolen-item reports, public web results, and analyze the data for indicators of theft.
  </p>
  <Button size="lg" asChild>
  <Link to="/verify">Check Android IMEI Now</Link>
@@ -96,7 +96,7 @@ export default function CheckAndroidPage() {
  <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
  <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
  <div>
- <h3 className="font-bold">carrier and theft databases Global Blacklist</h3>
+ <h3 className="font-bold">IMEI Blacklists (Industry Standard)</h3>
  <p className="text-sm text-muted-foreground">Verify against the worldwide carrier database with 15B+ device records</p>
  </div>
  </div>
@@ -104,7 +104,7 @@ export default function CheckAndroidPage() {
  <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
  <div>
  <h3 className="font-bold">Stolen Property Reports</h3>
- <p className="text-sm text-muted-foreground">Check community theft registries for theft reports</p>
+ <p className="text-sm text-muted-foreground">We check SafeOrStolen's reports and public web results for theft indicators.</p>
  </div>
  </div>
  <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">

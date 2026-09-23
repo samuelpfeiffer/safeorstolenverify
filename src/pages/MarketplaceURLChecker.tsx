@@ -32,7 +32,7 @@ const howToSchema = {
  {
  "@type": "HowToStep",
  "name": "Get instant stolen status results",
- "text": "Extracted identifiers are checked against our verification databases including community theft reports, vehicle theft and title databases, carrier and theft databases, and carrier and theft databases. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
+ "text": "Extracted identifiers are checked against SafeOrStolen's stolen item reports, public web results, and AI analysis. Additional checks include BikeIndex for bicycles and HotGunz for firearms. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
  }
  ],
  "tool": {
@@ -61,7 +61,7 @@ const faqSchema = {
  "name": "How do I check if a Facebook Marketplace item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against our verification stolen property databases including community theft reports, vehicle theft and title databases, and carrier and theft databases. Results appear in seconds."
+ "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against SafeOrStolen's stolen item reports, public web results, and AI analysis. Results appear in seconds."
  }
  },
  {
@@ -77,7 +77,7 @@ const faqSchema = {
  "name": "Is the Marketplace URL Analyzer free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $0.99/check or $10/month unlimited — significantly cheaper than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check)."
+ "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $0.99/check or $10/month unlimited — a competitive rate."
  }
  },
  {
@@ -85,7 +85,7 @@ const faqSchema = {
  "name": "Can any other service analyze marketplace listing URLs for stolen items?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "No. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Competitors like CheckMEND, IMEI.info, Swappa, and Carfax all require manual entry of serial numbers or identifiers. SafeOrStolen's AI-powered URL Analyzer eliminates this friction."
+ "text": "No. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Other services often require manual entry of serial numbers or identifiers. SafeOrStolen's AI-powered URL Analyzer eliminates this friction."
  }
  },
  {
@@ -174,7 +174,7 @@ const MarketplaceURLChecker: React.FC = () => {
  SafeOrStolen's Marketplace URL Analyzer is a tool that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark — and our AI automatically extracts identifiers (IMEI, VIN, serial numbers) and checks them against our verification stolen property databases. No manual entry required. Results in seconds.
  </p>
  <p className="text-muted-foreground max-w-xl mx-auto">
- No competitor — not CheckMEND, IMEI.info, Swappa, or Carfax — offers URL-based listing verification. This is a SafeOrStolen exclusive.
+ No competitor offers URL-based listing verification. This is a SafeOrStolen exclusive.
  </p>
  </div>
 
@@ -247,7 +247,7 @@ const MarketplaceURLChecker: React.FC = () => {
  { step: '1', title: 'Copy the Listing URL', desc: 'Find a listing on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. Copy the full URL from your browser\'s address bar.' },
  { step: '2', title: 'Paste into SafeOrStolen', desc: 'Paste the URL into the analyzer above. Our AI uses the Jina Reader API to scrape and read the entire listing page, including photos and descriptions.' },
  { step: '3', title: 'AI Extracts Identifiers', desc: 'The AI identifies IMEI numbers, VIN numbers, serial numbers, model information, and pricing. It also flags risk factors like below-market pricing.' },
- { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our verification databases: community theft reports, vehicle theft and title databases, carrier and theft databases, Stolen Firearms Databases, carrier and theft databases, and community theft reports.' },
+ { step: '4', title: 'Instant Check', desc: 'Extracted identifiers are checked against SafeOrStolen's stolen item reports, public web results, and AI analysis. Additional checks include BikeIndex for bicycles and HotGunz for firearms.' },
  ].map((item) => (
  <div key={item.step} className="text-center">
  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
@@ -295,7 +295,7 @@ const MarketplaceURLChecker: React.FC = () => {
  <tr className="border-b border-border">
  <th className="p-3 font-semibold">Feature</th>
  <th className="p-3 font-semibold text-primary">SafeOrStolen</th>
- <th className="p-3 font-semibold">CheckMEND</th>
+ <th className="p-3 font-semibold">Other Services</th>
  <th className="p-3 font-semibold">IMEI.info</th>
  <th className="p-3 font-semibold">Swappa</th>
  </tr>
@@ -385,7 +385,7 @@ const MarketplaceURLChecker: React.FC = () => {
  <Card className="bg-card border-border">
  <CardContent className="p-6">
  <h3 className="font-bold text-lg mb-2">👮 Law Enforcement</h3>
- <p className="text-muted-foreground text-sm">Officers investigating stolen property cases can paste suspicious listings to quickly verify if items match stolen property reports in <Link to="/stolen-database" className="text-primary hover:underline">stolen item databases</Link> including community theft reports and state systems.</p>
+ <p className="text-muted-foreground text-sm">Officers investigating stolen property cases can paste suspicious listings to quickly verify if items match stolen property reports in <Link to="/stolen-database" className="text-primary hover:underline">SafeOrStolen's reports</Link> and public web results.</p>
  </CardContent>
  </Card>
  </div>

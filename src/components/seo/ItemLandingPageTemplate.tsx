@@ -151,7 +151,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>Databases We Search</h2>
- <p>SafeOrStolen checks multiple sources including carrier and theft databases, community theft reports, and theft reports across all 50 US states. Results in 3 seconds.</p>
+ <p>SafeOrStolen checks its own stolen-item reports, public web results, and uses AI analysis. For bicycles, it checks BikeIndex, for firearms, HotGunz, and for phones, it performs an IMEI device lookup. Results in 3 seconds.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (

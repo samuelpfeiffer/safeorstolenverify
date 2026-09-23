@@ -11,8 +11,8 @@ const CheckBikePage = () => {
  route="/check-bike"
  pillarName="Check Bike"
  title="Check If a Bike Is Stolen — Free Serial Number Check | SafeOrStolen"
- description="Look up any bicycle serial number against theft registries including stolen bicycle databases before you buy a used bike."
- keywords="check if bike stolen, bike serial number check, stolen bike lookup, stolen bicycle databases search, used bike safe to buy"
+ description="Look up any bicycle serial number against theft registries including our reports, public web results, and BikeIndex before you buy a used bike."
+ keywords="check if bike stolen, bike serial number check, stolen bike lookup, BikeIndex search, used bike safe to buy"
  h1="Check If a Bike Is Stolen"
  intro={
  <>
@@ -46,7 +46,7 @@ const CheckBikePage = () => {
 
  <h2>What we check</h2>
  <p>
- Your search runs against theft registries including <strong>stolen bicycle databases</strong>, the
+ Your search runs against theft registries including <strong>our reports, public web results, and BikeIndex</strong>, the
  largest bicycle registration database in the world, plus our own submitted-theft
  records. If the serial matches a theft report, you'll see when and where it was
  reported.
@@ -61,23 +61,23 @@ const CheckBikePage = () => {
 
  <h2>If your own bike was stolen</h2>
  <p>
- Register the serial with us and with stolen bicycle databases immediately — recovery almost always
+ Register the serial with us and with BikeIndex immediately — recovery almost always
  happens because a buyer or a shop ran a check.{' '}
  <Link to="/report-stolen">Report a stolen bike →</Link>
  </p>
 
  <h2>Frequently asked questions</h2>
  <h3>How can I check if a used bicycle was stolen?</h3>
- <p>Find the serial number stamped into the frame — usually underneath the bottom bracket where the pedal cranks meet — and enter it at SafeOrStolen before you buy. SafeOrStolen searches that serial against community theft reports, theft-report records, and community theft registries. Ask the seller to photograph the frame serial before you travel; a refusal is the most common warning sign on a stolen bike.</p>
+ <p>Find the serial number stamped into the frame — usually underneath the bottom bracket where the pedal cranks meet — and enter it at SafeOrStolen before you buy. SafeOrStolen searches that serial against its own reports, public web results, AI analysis, and BikeIndex. Ask the seller to photograph the frame serial before you travel; a refusal is the most common warning sign on a stolen bike.</p>
  <h3>Is there a stolen bike database?</h3>
- <p>There is no single national stolen bicycle database that covers every theft — reports are split between individual police departments, insurers, and community theft registries, and many stolen bikes were never registered by their owner in the first place. SafeOrStolen searches across those theft records from one place using the frame serial. A no-match result means nothing was found in the sources checked, not proof the bike was never stolen.</p>
+ <p>There is no single national bicycle theft registry that covers every theft — reports are split between individual police departments, insurers, and community registries, and many stolen bikes were never registered by their owner in the first place. SafeOrStolen searches across available theft records from one place using the frame serial. A no-match result means nothing was found in the sources checked, not proof the bike was never stolen.</p>
  <h3>How do I check a bike serial number?</h3>
  <p>Turn the bike upside down, read the serial stamped into the frame, and enter it at SafeOrStolen — the check takes a few seconds and returns a match or no-match result plus a dated verification record. Compare the number you read against any number the seller sent you in advance. If the serial has been filed, ground off, or painted over, do not buy the bike.</p>
  <h3>Where is the serial number on a bicycle?</h3>
  <p>On most bikes the serial is stamped underneath the bottom bracket, the shell the pedal cranks pass through, so you need to flip the bike over to read it. Other common locations are the head tube at the front, the rear dropout near the back wheel axle, and the underside of the seat tube. The same number should appear on the original receipt or registration if the seller still has it.</p>
  </>
  }
- extraSchema={{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can I check if a used bicycle was stolen?", "acceptedAnswer": {"@type": "Answer", "text": "Find the serial number stamped into the frame \u2014 usually underneath the bottom bracket where the pedal cranks meet \u2014 and enter it at SafeOrStolen before you buy. SafeOrStolen searches that serial against community theft reports, theft-report records, and community theft registries. Ask the seller to photograph the frame serial before you travel; a refusal is the most common warning sign on a stolen bike."}}, {"@type": "Question", "name": "Is there a stolen bike database?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single national stolen bicycle database that covers every theft \u2014 reports are split between individual police departments, insurers, and community theft registries, and many stolen bikes were never registered by their owner in the first place. SafeOrStolen searches across those theft records from one place using the frame serial. A no-match result means nothing was found in the sources checked, not proof the bike was never stolen."}}, {"@type": "Question", "name": "How do I check a bike serial number?", "acceptedAnswer": {"@type": "Answer", "text": "Turn the bike upside down, read the serial stamped into the frame, and enter it at SafeOrStolen \u2014 the check takes a few seconds and returns a match or no-match result plus a dated verification record. Compare the number you read against any number the seller sent you in advance. If the serial has been filed, ground off, or painted over, do not buy the bike."}}, {"@type": "Question", "name": "Where is the serial number on a bicycle?", "acceptedAnswer": {"@type": "Answer", "text": "On most bikes the serial is stamped underneath the bottom bracket, the shell the pedal cranks pass through, so you need to flip the bike over to read it. Other common locations are the head tube at the front, the rear dropout near the back wheel axle, and the underside of the seat tube. The same number should appear on the original receipt or registration if the seller still has it."}}]}}
+ extraSchema={{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can I check if a used bicycle was stolen?", "acceptedAnswer": {"@type": "Answer", "text": "Find the serial number stamped into the frame \u2014 usually underneath the bottom bracket where the pedal cranks meet \u2014 and enter it at SafeOrStolen before you buy. SafeOrStolen searches that serial against its own reports, public web results, AI analysis, and BikeIndex. Ask the seller to photograph the frame serial before you travel; a refusal is the most common warning sign on a stolen bike."}}, {"@type": "Question", "name": "Is there a single bicycle theft registry?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single national bicycle theft registry that covers every theft \u2014 reports are split between individual police departments, insurers, and community registries, and many stolen bikes were never registered by their owner in the first place. SafeOrStolen searches across available theft records from one place using the frame serial. A no-match result means nothing was found in the sources checked, not proof the bike was never stolen."}}, {"@type": "Question", "name": "How do I check a bike serial number?", "acceptedAnswer": {"@type": "Answer", "text": "Turn the bike upside down, read the serial stamped into the frame, and enter it at SafeOrStolen \u2014 the check takes a few seconds and returns a match or no-match result plus a dated verification record. Compare the number you read against any number the seller sent you in advance. If the serial has been filed, ground off, or painted over, do not buy the bike."}}, {"@type": "Question", "name": "Where is the serial number on a bicycle?", "acceptedAnswer": {"@type": "Answer", "text": "On most bikes the serial is stamped underneath the bottom bracket, the shell the pedal cranks pass through, so you need to flip the bike over to read it. Other common locations are the head tube at the front, the rear dropout near the back wheel axle, and the underside of the seat tube. The same number should appear on the original receipt or registration if the seller still has it."}}]}}
  relatedGuides={[
  {
  title: 'How to find your bike\'s serial number',

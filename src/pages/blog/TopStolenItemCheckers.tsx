@@ -315,7 +315,7 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>•  national stolen-firearms registry (32K+ records)</li>
                     <li>• NICB (National Insurance Crime Bureau)</li>
-                    <li>• carrier and manufacturer blacklists (global phone blacklist)</li>
+                    <li>• SafeOrStolen reports, public web results, AI analysis, BikeIndex, HotGunz, IMEI device lookup</li>
                     <li>• Serial number integrity validation</li>
                     <li>• Community-reported stolen property reports</li>
                     <li>• Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
@@ -357,7 +357,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">2. IMEI.info — Best Free Phone-Only Checker</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">imei.info · Free unlimited · Phones only</p>
               <p className="text-muted-foreground mb-4">
-                IMEI.info is a popular free service for checking phone IMEI numbers against carrier blacklists. It provides basic device information including model, storage, color, and blacklist status. It's fast, free, and unlimited — making it a solid choice for phone-only verification.
+                IMEI.info is a popular free service for checking phone IMEI numbers against carrier blacklists. It provides basic device information including model, storage, color, and blacklist status. It's fast, free, and unlimited — making it a solid choice for phone-only verification. You can ask your carrier if your device is blacklisted.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -378,7 +378,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick phone blacklist checks when you only need carrier status. For comprehensive stolen property verification including theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> searches more sources.
+                <strong>Best for:</strong> Quick phone blacklist checks when you only need a basic status. For comprehensive stolen property verification including theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> searches its own reports, public web results, and AI analysis.
               </p>
             </section>
 
@@ -412,12 +412,12 @@ const TopStolenItemCheckers = () => {
               </p>
             </section>
 
-            {/* 4. CheckMEND */}
+            {/* 4. CheckMEND (UK) */}
             <section id="checkmend">
               <h2 className="text-2xl font-bold mb-2">4. CheckMEND (Recipero) — Best for UK Buyers</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">checkmend.com · £7/check · Phones and electronics</p>
               <p className="text-muted-foreground mb-4">
-                CheckMEND, powered by Recipero, specializes in device verification primarily for the UK market. It checks phones and electronics against UK theft reports, and carrier blacklists. It's the standard verification tool for UK pawn shops and secondhand retailers.
+                CheckMEND, powered by Recipero, specializes in device verification primarily for the UK market. It checks phones and electronics against UK theft reports and carrier blacklists. It's the standard verification tool for UK pawn shops and secondhand retailers.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -494,12 +494,12 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> 5 searches per day</li>
                     <li><No /> Vehicles only</li>
-                    <li><No /> Only insurance claims (not police)</li>
+                    <li><No /> Only insurance claims (not police reports)</li>
                   </ul>
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick free vehicle theft checks. For comprehensive coverage including NHTSA vehicle records and theft reports, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
+                <strong>Best for:</strong> Quick free vehicle theft checks. For comprehensive coverage including public web results and AI analysis, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
               </p>
             </section>
 
@@ -522,7 +522,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> Only 32K entries (vs community theft reports's 7M+)</li>
+                    <li><No /> Only 32K entries (vs NCIC's 7M+)</li>
                     <li><No /> Community reports only (no police data)</li>
                     <li><No /> Firearms only</li>
                   </ul>
@@ -538,13 +538,13 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">8. Local Police Department — Most Authoritative</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Your local PD · Free · Any item type</p>
               <p className="text-muted-foreground mb-4">
-                Your local police department can check any serial number against community theft reports — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
+                Your local police department can check any serial number against the National Crime Information Center (NCIC) — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Strengths</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><Yes /> Official community theft reports</li>
+                    <li><Yes /> Official NCIC database</li>
                     <li><Yes /> Free</li>
                     <li><Yes /> Any item type</li>
                     <li><Yes /> Most authoritative source</li>
@@ -630,7 +630,7 @@ const TopStolenItemCheckers = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking phones only?</h3>
-                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including theft reports, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
+                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including SafeOrStolen's own reports, public web results, and AI analysis, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
@@ -650,7 +650,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">UK-based buyer?</h3>
-                  <p className="text-sm text-muted-foreground">CheckMEND has the strongest UK police data. SafeOrStolen is better for US buyers.</p>
+                  <p className="text-sm text-muted-foreground">CheckMEND has strong UK data. SafeOrStolen is better for US buyers.</p>
                 </div>
               </div>
             </section>

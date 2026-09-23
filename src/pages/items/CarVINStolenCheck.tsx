@@ -30,14 +30,14 @@ const CarVINStolenCheck = () => {
  { value: "Free", label: "First 2 Checks" }
  ]}
  whatIsTitle="What is VIN Stolen Vehicle Verification?"
- whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the vehicle theft and title databases (vehicle theft and title databases), and community theft registries. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Our stolen vehicle check is free."
+ whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is reported stolen, its VIN is often recorded. Our VIN verification instantly searches SafeOrStolen's own reports, public web results, and uses AI analysis to determine if a vehicle has been reported stolen, has a salvage title, or has other issues. Our stolen vehicle check is free."
  howItWorksSteps={[
  "Find the VIN: Check the dashboard (driver's side, visible through windshield), driver's door jamb, vehicle registration, or title",
  "Enter the 17-character VIN into our free verification tool",
- "Our system searches vehicle theft and title databases and other verification databases instantly",
+ "Our system instantly searches SafeOrStolen's own reports, public web results, and uses AI analysis to identify reported issues.",
  "Get results in 3 seconds - see if the vehicle is CLEAR or REPORTED STOLEN"
  ]}
- howItWorksDescription="We search multiple authoritative databases including stolen vehicle database, vehicle theft and title databases title records, vehicle theft and title databases, community theft registries, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."
+ howItWorksDescription="We search SafeOrStolen's own reports, public web results, and use AI analysis to identify potential issues. Our comprehensive check identifies reported stolen vehicles, title washing, odometer fraud, and salvage titles."
  whyVerifyTitle="Why Check VIN Before Buying a Used Car?"
  whyVerifyContent="Vehicle theft is a $6 billion annual problem in America. Over 810,000 vehicles were stolen in 2024, with many eventually sold to unsuspecting buyers through private sales, Facebook Marketplace, and Craigslist. The consequences of buying a stolen car are severe:"
  whyVerifyBenefits={[
@@ -92,7 +92,7 @@ const CarVINStolenCheck = () => {
  },
  {
  question: "How quickly are stolen vehicles added to databases?",
- answer: "Most stolen vehicles are added to vehicle theft and title databases and community theft registries within 24-48 hours of being reported. However, some reports take longer. If a vehicle was very recently stolen, it may not yet appear in databases."
+ answer: "When a vehicle is reported stolen, information about it often becomes publicly available. SafeOrStolen's checks rely on these public reports and our own community data. If a vehicle was very recently stolen, it may not yet appear in public sources."
  },
  {
  question: "What other issues does the VIN check find?",

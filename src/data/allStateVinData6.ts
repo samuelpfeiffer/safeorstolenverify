@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART6: Record<string, any> = {
  localLaws: "Louisiana Revised Statutes 14:69 makes receiving stolen property a felony punishable by up to 10 years in prison if vehicle value exceeds $1,000. Louisiana requires title transfers within 40 days. The LA Office of Motor Vehicles maintains all title and VIN records."
  },
  faqs: [
- { question: "How do I check for flood damage on a Louisiana vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Louisiana vehicles frequently have hidden flood damage from hurricanes. Our database searches theft reports, salvage auctions, and title brands to uncover flood damage sellers try to hide." },
+ { question: "How do I check for flood damage on a Louisiana vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal flood damage history. Louisiana vehicles frequently have hidden flood damage from hurricanes. Our service searches public records and AI analysis to uncover flood damage sellers try to hide."},
  { question: "Does Louisiana require VIN inspections?", answer: "Louisiana requires VIN inspections for out-of-state vehicles and vehicles without existing LA titles. However, all buyers should verify VIN history independently to detect stolen vehicles, salvage titles, and flood damage before purchase." },
  { question: "What is Louisiana's title transfer process?", answer: "In Louisiana, buyers must complete title transfer within 40 days. Both parties sign the title, and buyer submits it to the LA OMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to avoid fraud." }
  ]
@@ -41,7 +41,7 @@ export const STATE_VIN_DATA_PART6: Record<string, any> = {
  localLaws: "Under Maine Revised Statutes Title 17-A §359, receiving stolen property valued over $1,000 is a felony with penalties up to 5 years in prison. Maine requires title transfers within 30 days. The Maine Bureau of Motor Vehicles maintains all VIN and title records."
  },
  faqs: [
- { question: "How do I check a Maine VIN for free?", answer: "Use SafeOrStolen's free VIN lookup. Enter the 17-digit VIN to check Maine BMV records, vehicle theft and title databases, and accident history. Our mobile app offers instant barcode scanning for faster verification at dealerships or private sales." },
+ { question: "How do I check a Maine VIN for free?", answer: "Use SafeOrStolen's free VIN lookup. Enter the 17-digit VIN to check public records and accident history. Our mobile app offers instant barcode scanning for faster verification at dealerships or private sales."},
  { question: "Is a VIN check required in Maine?", answer: "Maine law doesn't mandate VIN checks for private sales, but smart buyers always verify title status. Purchasing a stolen vehicle can result in criminal charges and vehicle seizure, even if you had no knowledge of the theft." },
  { question: "How do I detect rust damage on a Maine vehicle?", answer: "While VIN checks reveal accident and flood history, rust damage often isn't documented. Combine SafeOrStolen's VIN verification with a physical inspection focusing on frame, rocker panels, and wheel wells where Maine road salt causes hidden rust damage." }
  ]
@@ -87,7 +87,7 @@ export const STATE_VIN_DATA_PART6: Record<string, any> = {
  localLaws: "Under Massachusetts General Laws Chapter 266 §60, receiving stolen property valued over $1,200 is a felony with up to 15 years in prison. Massachusetts requires title transfers within 10 days. The MA RMV maintains all VIN and title records."
  },
  faqs: [
- { question: "How do I check a Massachusetts VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search Massachusetts RMV records, vehicle theft and title databases, and accident history. Our mobile app provides instant barcode scanning for faster verification." },
+ { question: "How do I check a Massachusetts VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search public records and accident history. Our mobile app provides instant barcode scanning for faster verification."},
  { question: "Is a VIN check required in Massachusetts?", answer: "Massachusetts doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. The MA RMV does verify VINs during title transfer, but by then it's too late to recover your money." },
  { question: "What is Massachusetts' lemon law?", answer: "Massachusetts has one of the strongest used car lemon laws, covering vehicles under 125,000 miles. However, the law doesn't protect buyers who purchase stolen vehicles or cars with title fraud. Always verify VIN history before purchase." }
  ]

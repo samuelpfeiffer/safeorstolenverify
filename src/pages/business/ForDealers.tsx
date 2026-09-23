@@ -71,7 +71,7 @@ export default function ForDealers() {
 
  <h3>What We Verify for Dealers</h3>
  <ul>
- <li><strong>Stolen Status:</strong> community theft reports</li>
+ <li><strong>Stolen Status:</strong> public web results and our user-reported stolen item database</li>
  <li><strong>Title History:</strong> Clean, salvage, rebuilt, flood, junk, lemon law buyback</li>
  <li><strong>Total Loss Records:</strong> Insurance company claims across all 50 states</li>
  <li><strong>Odometer Readings:</strong> Historical mileage to detect rollbacks</li>
@@ -94,14 +94,14 @@ export default function ForDealers() {
  <p><strong>Solution:</strong> Provide SafeOrStolen verification report at point of sale. Customer sees the full history before signing, eliminating post-sale disputes.</p>
 
  <h4>Problem 4: Expensive Carfax Subscriptions</h4>
- <p>Dealerships pay $1,000+/year for Carfax unlimited access, but Carfax doesn't check real-time community theft registries.</p>
- <p><strong>Solution:</strong> SafeOrStolen costs less and includes community theft reports databases, and international theft records Carfax doesn't access.</p>
+ <p>Dealerships pay $1,000+/year for Carfax unlimited access, but Carfax doesn't check all public web results or user-reported stolen item databases.</p>
+ <p><strong>Solution:</strong> SafeOrStolen costs less and includes public web results and our user-reported stolen item database, which Carfax doesn't fully access.</p>
 
  <h3>Real Dealership Case Studies</h3>
  
  <div className="bg-muted p-6 rounded-lg my-6">
  <h4 className="font-bold mb-3">Case Study: Texas Used Car Dealer</h4>
- <p>A Houston dealer purchased 12 vehicles at a wholesale auction. One vehicle showed a clean Texas title but had previously been flood-damaged in Louisiana (Hurricane Ida, 2021). The dealer sold it to a customer who discovered the flood history 2 weeks later via vehicle theft and title databases.</p>
+ <p>A Houston dealer purchased 12 vehicles at a wholesale auction. One vehicle showed a clean Texas title but had previously been flood-damaged in Louisiana (Hurricane Ida, 2021). The dealer sold it to a customer who discovered the flood history 2 weeks later via an independent VIN check.</p>
  <p><strong>Cost to dealer:</strong></p>
  <ul>
  <li>$8,500 - Customer refund (full purchase price)</li>
@@ -198,7 +198,7 @@ export default function ForDealers() {
  <h3>Why SafeOrStolen vs. Carfax for Dealers</h3>
  <ul>
  <li>✅ <strong>Cheaper:</strong> $588/year vs. $1,200+/year for Carfax unlimited</li>
- <li>✅ <strong>Real-time law enforcement data:</strong> community theft reports databases (Carfax doesn't check)</li>
+ <li>✅ <strong>Comprehensive stolen item data:</strong> our user-reported stolen item database and public web results (Carfax doesn't check)</li>
  <li>✅ <strong>Faster:</strong> 3 seconds vs. 30+ seconds with Carfax</li>
  <li>✅ <strong>Mobile app:</strong> Verify VINs at auctions, on trade-ins, anywhere</li>
  <li>✅ <strong>White-label reports:</strong> Your dealership branding, not Carfax logo</li>
@@ -217,7 +217,7 @@ export default function ForDealers() {
  </blockquote>
 
  <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"We used to spend $1,400/year on Carfax. SafeOrStolen costs half that and checks community theft registries Carfax doesn't. Caught a title-washed flood vehicle at auction last month—would've cost us $15K."</p>
+ <p className="italic">"We used to spend $1,400/year on Carfax. SafeOrStolen costs half that and checks our user-reported stolen item database and public web results that Carfax doesn't. Caught a title-washed flood vehicle at auction last month—would've cost us $15K."</p>
  <footer className="text-sm text-muted-foreground mt-2">— David L., Owner, Automotive Express (Florida)</footer>
  </blockquote>
  </section>

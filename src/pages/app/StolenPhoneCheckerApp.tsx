@@ -162,7 +162,7 @@ const StolenPhoneCheckerApp = () => {
  {[
  "SafeOrStolen stolen-item reports, web results and AI analysis",
  "Carrier blacklist status (AT&T, Verizon, T-Mobile)",
- "carrier and theft databases Global Stolen Phone Registry",
+ "SafeOrStolen reports and public web results",
  "Insurance claim fraud reports",
  "Outstanding finance/lease status",
  "iCloud Activation Lock (iPhone)",
@@ -185,7 +185,7 @@ const StolenPhoneCheckerApp = () => {
  Download the FREE Stolen Phone Checker App
  </h2>
  <p className="text-muted-foreground mb-8">
- Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info have NO apps. 
+ Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Other services may not offer an app.
  Download exclusively from SafeOrStolen.com.
  </p>
  <Button size="lg" className="text-lg px-8" asChild>

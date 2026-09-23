@@ -85,7 +85,7 @@ const ComparisonSwappa = () => {
  { feature: 'VIN Check for Vehicles', safeorstolen: true, swappa: false },
  { feature: 'Firearm Serial Number Check', safeorstolen: true, swappa: false },
  { feature: 'Multiple Sources', safeorstolen: true, swappa: false },
- { feature: 'community theft reports Database Access', safeorstolen: true, swappa: false },
+ { feature: 'Stolen-item reports and public web results', safeorstolen: true, swappa: false },
  { feature: 'Works on Any Marketplace Item', safeorstolen: true, swappa: false },
  { feature: 'Free Tier Available', safeorstolen: true, swappa: true },
  { feature: 'Buy/Sell Marketplace', safeorstolen: false, swappa: true },
@@ -423,13 +423,13 @@ const ComparisonSwappa = () => {
  <AccordionItem value="car">
  <AccordionTrigger>Can Swappa check if a car or bike is stolen?</AccordionTrigger>
  <AccordionContent>
- No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (VIN check against vehicle records), motorcycles, firearms, bicycles (stolen bicycle databases), laptops, gaming consoles, watches, and more.
+ No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (using public web results and our reports), motorcycles, firearms (using HotGunz), bicycles (using BikeIndex), laptops, gaming consoles, watches, and more.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="free">
  <AccordionTrigger>Is SafeOrStolen free to use?</AccordionTrigger>
  <AccordionContent>
- Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services like CheckMEND (£1.99+ per check). Cancel anytime.
+ Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services. Cancel anytime.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="databases">
@@ -458,7 +458,7 @@ const ComparisonSwappa = () => {
  <section className="text-center text-sm text-muted-foreground space-y-2 pb-8">
  <p className="font-medium text-foreground">More Comparisons & Tools</p>
  <div className="flex flex-wrap justify-center gap-3">
- <Link to="/vs-checkmend" className="text-primary hover:underline">SafeOrStolen vs CheckMEND</Link>
+ <Link to="/vs-checkmend" className="text-primary hover:underline">SafeOrStolen vs other services</Link>
  <span>•</span>
  <Link to="/vs-imeiinfo" className="text-primary hover:underline">SafeOrStolen vs IMEI.info</Link>
  <span>•</span>

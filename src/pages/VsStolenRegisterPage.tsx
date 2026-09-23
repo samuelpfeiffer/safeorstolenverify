@@ -162,7 +162,7 @@ export default function VsStolenRegisterPage() {
                     <Globe className="h-10 w-10 text-primary mb-4" />
                     <h3 className="text-xl font-bold mb-3">More Database Coverage</h3>
                     <p className="text-muted-foreground">
-                      We check multiple sources compared to StolenRegister's 50+, including more US law enforcement and carrier databases.
+                      We analyze our own community reports, public web results, and apply AI analysis, plus specialized sources like BikeIndex for bicycles and HotGunz for firearms.
                     </p>
                   </CardContent>
                 </Card>

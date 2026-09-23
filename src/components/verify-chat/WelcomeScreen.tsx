@@ -40,7 +40,7 @@ const EXAMPLES = [
 ];
 
 const FEATURES = [
- { Icon: ShieldCheck, label: 'multiple sources', sub: 'community theft reports · vehicle theft and title databases · carrier and theft databases · Stolen Firearms Databases' },
+ { Icon: ShieldCheck, label: 'multiple sources', sub: 'SafeOrStolen reports · public web results · AI analysis · specialized item databases' },
  { Icon: Zap, label: '~3 second results', sub: 'Real-time aggregated checks' },
  { Icon: Sparkles, label: 'AI follow-ups', sub: 'Ask anything about your result' },
 ];

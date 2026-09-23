@@ -8,7 +8,7 @@ interface CompetitorComparisonSchemaProps {
 export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProps> = ({ competitor }) => {
  const competitorData = {
  checkmend: {
- name: 'CheckMEND',
+ name: 'GSMA Blacklist',
  description: 'UK-focused stolen phone checker',
  coverage: 'UK Only'
  },
@@ -33,7 +33,7 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
  coverage: 'United States & Canada'
  },
  nicb: {
- name: 'vehicle theft and title databases',
+ name: 'Official Stolen Vehicle Databases (not checked by SafeOrStolen)',
  description: 'Free vehicle theft and salvage database',
  coverage: 'United States'
  }

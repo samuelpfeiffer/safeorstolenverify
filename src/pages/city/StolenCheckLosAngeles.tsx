@@ -17,7 +17,7 @@ const StolenCheckLosAngeles = () => {
  const faqs = [
  {
  question: "How do I check if a used car in Los Angeles is stolen?",
- answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to verify against LAPD and California vehicle theft and title databases. California has the highest vehicle theft rate in the nation."
+ answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search our comprehensive stolen-item reports, public web results, and AI analysis for theft indicators. You can also search directly with local police."
  },
  {
  question: "Where should I meet sellers in LA to buy used items?",

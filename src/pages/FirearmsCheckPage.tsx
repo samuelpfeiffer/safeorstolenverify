@@ -323,7 +323,7 @@ const FirearmsCheckPage = () => {
  { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
  { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
  { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
- { title: 'Bike Serial Check', href: '/check-bike', desc: 'stolen bicycle databases + police' },
+ { title: 'Bike Serial Check', href: '/check-bike', desc: 'our reports + BikeIndex + public web' },
  { title: 'State Firearm Transfer Laws', href: '/state-firearm-transfer-laws', desc: 'Which states require a private-sale background check' },
  ].map((link) => (
  <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
@@ -391,7 +391,7 @@ const FirearmsCheckPage = () => {
  "name": "Is there a stolen firearm database?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "There is no single public database of every stolen firearm \u2014 SafeOrStolen searches stolen firearms databases along with community theft reports and community theft registries, which is the practical option available to a private buyer. Because coverage is fragmented, no match found means nothing was located in the sources checked rather than confirmation the firearm was never stolen."
+ "text": "There is no single public database of every stolen firearm — SafeOrStolen combines our reports, public web results, and AI analysis to help identify potentially stolen firearms. Because reporting is fragmented, a clear result means nothing was located in the sources checked, not a definitive guarantee the firearm has never been stolen."
  }
  },
  {

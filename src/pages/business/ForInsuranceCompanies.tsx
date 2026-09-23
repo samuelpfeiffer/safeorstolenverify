@@ -12,7 +12,7 @@ const ForInsuranceCompanies = () => {
  'stolen property claims',
  'imei verification insurance',
  'vin verification claims',
- 'insurance claim validation',
+ 'claim validation',
  'property theft verification',
  'claims fraud prevention'
  ]}
@@ -102,7 +102,7 @@ const ForInsuranceCompanies = () => {
  },
  {
  question: "What data sources do you check?",
- answer: "We check community theft registries, carrier and theft databases, manufacturer records, and a network of insurance company reports totaling multiple sources."
+ answer: "We analyze SafeOrStolen's own theft reports, publicly available web results, and use AI analysis to identify potential issues. For bicycles, we consult BikeIndex. For firearms, we check HotGunz. For phones, we perform an IMEI lookup to get model and device details."
  },
  {
  question: "Is the API suitable for high-volume claims?",

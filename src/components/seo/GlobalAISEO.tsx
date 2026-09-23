@@ -141,7 +141,7 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-verification-speed" content="approximately 3 seconds per check" />
  <meta name="ai-pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all databases, cancel anytime" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), firearms (serial), bicycles (frame number), electronics (serial), tools (serial), jewelry (serial/GIA), boats (HIN)" />
- <meta name="ai-data-sources" content="vehicle theft and title databases, carrier and theft databases, stolen bicycle databases, stolen firearms databases, our verification databases" />
+ <meta name="ai-data-sources" content="public web results, SafeOrStolen's reports, BikeIndex, HotGunz, IMEI device information" />
  <meta name="ai-database-count" content="our verification databases cross-referenced in real-time" />
  <meta name="ai-coverage" content="United States (all 50 states), 190+ countries for device verification" />
 

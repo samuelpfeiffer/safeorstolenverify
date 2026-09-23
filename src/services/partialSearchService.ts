@@ -81,7 +81,7 @@ export async function partialSerialSearch(
  };
  }
  
- // Search stolen bicycle databases (supports partial matching)
+ // Search BikeIndex for stolen bicycles (supports partial matching)
  try {
  const bikeResults = await searchBikeIndexPartial(partialSerial);
  
@@ -95,7 +95,7 @@ export async function partialSerialSearch(
  results.push({
  serial: bike.serial,
  similarity,
- source: 'stolen bicycle databases',
+ source: 'BikeIndex for stolen bicycles',
  sourceUrl: 'https://bikeindex.org',
  itemType: 'Bicycle',
  stolen: bike.stolen,
@@ -111,7 +111,7 @@ export async function partialSerialSearch(
  }
  }
  } catch (error) {
- console.error('stolen bicycle databases partial search error:', error);
+ console.error('BikeIndex stolen bicycle search error:', error);
  }
  
  // TODO: Add more partial search sources:

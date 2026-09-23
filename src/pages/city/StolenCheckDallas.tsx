@@ -104,7 +104,7 @@ const StolenCheckDallas = () => {
  </p>
  <p>
  SafeOrStolen's free verification takes just 3 seconds and checks against national 
- databases including police reports, and insurance claims.
+ reports, public web results, and AI analysis.
  </p>
  </div>
  </div>
