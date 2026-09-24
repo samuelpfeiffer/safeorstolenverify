@@ -249,7 +249,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/new-york/vin-check': '/new-york-vin-lookup',
 
   // ===== COMPARISON REDIRECTS (Soft 404 fix) =====
-  '/vs-stolenphonechecker': '/compare',
+  '/vs-stolenphonechecker': '/imei-checker',
   '/vs-imeipro': '/vs-imeiinfo',
   '/vs/checkmend': '/imei-checker',
   '/competitor-alternatives': '/compare',
@@ -539,7 +539,6 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/comparisons/best-free-imei-checkers-2025': '/imei-checker',
   '/comparisons/safeorstolen-vs-imei-info': '/imei-checker',
   '/vs-imeiinfo': '/imei-checker',
-  '/vs-stolenphonechecker': '/imei-checker',
   '/blog/imei-checker-app-download': '/app',
   '/check-iphone-stolen': '/blog/how-to-check-if-iphone-stolen',
   '/is-my-iphone-stolen': '/blog/how-to-check-if-iphone-stolen',
