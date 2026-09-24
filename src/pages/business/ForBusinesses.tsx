@@ -134,14 +134,14 @@ export default function ForBusinesses() {
  icon: Smartphone,
  title: 'Phone & Electronics Retailers',
  description: 'Verify IMEI numbers on trade-ins, used device purchases, and refurbished inventory. We provide device model and details before you accept any phone. (To check if a phone is blacklisted, customers should contact the carrier directly.)',
- benefits: ['Check carrier blacklist status instantly', 'Verify device authenticity and unlock status', 'Prevent insurance fraud on trade-ins', 'Protect $800+ average device resale value'],
+  benefits: ['Review IMEI device details', 'Check carrier status separately', 'Keep a dated verification record', 'Match trade-ins with seller records'],
  link: '/for-electronics-resellers'
  },
  {
  icon: Shield,
  title: 'Auto Dealers & Car Lots',
- description: 'VIN verification for used vehicle inventory, trade-ins, and auction purchases. Cross-reference against all 50 state DMV theft records. Full vehicle history verification.',
- benefits: ['SafeOrStolen reports, public web results, AI analysis for vehicles', 'Review vehicle history details', 'Identify vehicles flagged as potentially stolen', 'Detect major title issues'],
+  description: 'VIN verification for used vehicle inventory, trade-ins, and auction purchases using SafeOrStolen reports, public web results, and AI analysis.',
+  benefits: ['Review SafeOrStolen results', 'Use NICB and NMVTIS separately', 'Match VINs across vehicle and paperwork', 'Keep a dated verification record'],
  link: '/for-dealers'
  },
  {
@@ -154,15 +154,15 @@ export default function ForBusinesses() {
  {
  icon: Globe,
  title: 'Online Sellers (eBay, Mercari, Poshmark)',
- description: 'Display "Verified by SafeOrStolen" trust badges on your listings to increase buyer confidence and conversion rates by 15-30%. Stand out from competitors with verified, clean items.',
- benefits: ['Trust badge increases sales 15-30%', 'Verification ID links to live report', 'Works on all marketplace platforms', 'Prevent buyer disputes and returns'],
+  description: 'Share a dated SafeOrStolen verification record so buyers have concrete information to review alongside the item identifier and your ownership records.',
+  benefits: ['Verification ID links to a live report', 'Works with marketplace listing links', 'Helps answer buyer questions upfront', 'Provides a consistent checking workflow'],
  link: '/for-marketplaces'
  },
  {
  icon: Scale,
  title: 'Law Enforcement & Insurance',
- description: 'Cross-reference recovered items against SafeOrStolen reports, public web results, and AI analysis. Process insurance claims with verified ownership data. Support investigations with comprehensive verification reports and chain of custody documentation.',
- benefits: ['Cross-reference recovered property', 'Streamline insurance claim verification', 'Chain of custody documentation', 'Bulk verification for seized property'],
+  description: 'Review SafeOrStolen reports, public web results, and AI analysis as supplemental public information. SafeOrStolen is not a law-enforcement, insurance, or chain-of-custody system.',
+  benefits: ['Review public context', 'Search SafeOrStolen reports', 'Export account records', 'Use alongside authorized systems'],
  link: '/for-law-enforcement'
  }
  ];
@@ -171,21 +171,11 @@ export default function ForBusinesses() {
  { icon: Code, title: '1-Line Widget Integration', description: 'Copy-paste one line of HTML. No developer required. Works on any website, CMS, or POS system.' },
  { icon: Lock, title: 'REST API Access', description: 'Full RESTful API with 24/7 availability, webhooks, and SDKs for JavaScript, Python, PHP, and Ruby.' },
  { icon: Users, title: 'Multi-Location Support', description: 'Unlimited employee accounts per location. Role-based permissions. Centralized admin dashboard.' },
- { icon: FileCheck, title: 'Compliance Certificates', description: 'PDF compliance certificates with timestamped cryptographic hashes. Legal proof of due diligence.' },
+  { icon: FileCheck, title: 'Verification Records', description: 'Timestamped Proof of Clean Purchase records after clean checks. These are not legal documents or ownership guarantees.' },
  { icon: BarChart3, title: 'Analytics Dashboard', description: 'Real-time verification stats, trend analysis, and monthly compliance reports exportable to CSV.' },
  { icon: Zap, title: '3-Second Parallel Search', description: 'All multiple sources searched simultaneously, not sequentially. Results in 3 seconds average.' }
  ];
 
- const competitorComparison = [
- { feature: 'Price per verification', sos: '$0 (unlimited)', checkmend: '$2.50-5.00', leadsonline: 'N/A (reporting only)' },
- { feature: 'Monthly cost', sos: '$49-99', checkmend: '$500+', leadsonline: '$50-150' },
- { feature: 'Widget integration', sos: '✅ 1-line copy-paste', checkmend: '❌ API only', leadsonline: '❌ Not available' },
- { feature: 'US state databases', sos: '✅ All 50 states', checkmend: '⚠️ Limited US', leadsonline: '✅ Varies by state' },
- { feature: 'Stolen item verification', sos: '✅ multiple sources', checkmend: '✅ UK-focused', leadsonline: '❌ Police reporting only' },
- { feature: 'Compliance certificates', sos: '✅ PDF with hash', checkmend: '⚠️ Basic report', leadsonline: '✅ Police reports' },
- { feature: 'Developer required', sos: '❌ No', checkmend: '✅ Yes', leadsonline: '❌ No' },
- { feature: 'Free trial', sos: '✅ 30 days', checkmend: '❌ No', leadsonline: '⚠️ Demo only' },
- ];
 
  return (
  <>
@@ -561,32 +551,6 @@ export default function ForBusinesses() {
  </Link>
  </div>
 
- {/* Competitor Comparison Table */}
- <div className="max-w-4xl mx-auto">
- <h3 className="text-2xl font-bold text-center mb-6">How We Compare</h3>
- <div className="overflow-x-auto rounded-xl border">
- <table className="w-full text-sm">
- <thead>
- <tr className="bg-muted/50">
- <th className="text-left p-4 font-semibold">Feature</th>
- <th className="text-center p-4 font-semibold text-primary">SafeOrStolen</th>
- <th className="text-center p-4 font-semibold">Other Services</th>
- <th className="text-center p-4 font-semibold">LeadsOnline</th>
- </tr>
- </thead>
- <tbody>
- {competitorComparison.map((row, i) => (
- <tr key={i} className="border-t">
- <td className="p-4 font-medium">{row.feature}</td>
- <td className="p-4 text-center font-semibold text-primary">{row.sos}</td>
- <td className="p-4 text-center text-muted-foreground">{row.checkmend}</td>
- <td className="p-4 text-center text-muted-foreground">{row.leadsonline}</td>
- </tr>
- ))}
- </tbody>
- </table>
- </div>
- </div>
  </div>
  </section>
 
