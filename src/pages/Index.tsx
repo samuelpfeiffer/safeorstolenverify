@@ -507,7 +507,7 @@ const Index = () => {
  <ul className="space-y-2 mb-6">
  {[
  '♾️ Unlimited verifications',
- '📄 PDF compliance certificates',
+ '📄 Proof of Clean Purchase records',
  '📊 Bulk CSV upload',
  '🔌 Full REST API access',
  '📋 Audit trail + export',

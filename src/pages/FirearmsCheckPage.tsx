@@ -269,7 +269,7 @@ const FirearmsCheckPage = () => {
  <ul className="space-y-2">
  {[
  'Unlimited firearm serial checks at one flat monthly rate',
- 'Timestamped, printable PDF compliance certificates for every transaction',
+ 'Timestamped, printable verification records for completed checks',
  'Bulk CSV upload — verify a batch of firearms at once',
  'Full audit trail your staff can pull for the relevant authorities on request',
  'API integration to connect directly to your POS or inventory system',

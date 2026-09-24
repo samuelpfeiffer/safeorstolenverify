@@ -68,7 +68,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/vs-swappa', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-autocheck', priority: 0.80, changefreq: 'monthly' },
   // Detailed comparison pages (updated February 2026)
-  { path: '/comparisons/safeorstolen-vs-swappa', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
 
   // ============================================
   // BUSINESS PAGES (5)
@@ -158,7 +157,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   
   // COMPETITOR ALTERNATIVE PAGES (SEO)
   { path: '/nicb-alternative', priority: 0.80, changefreq: 'monthly' },
-  { path: '/hotgunz-alternative', priority: 0.80, changefreq: 'monthly' },
 
   // ============================================
   // REMAINING 39 STATE LICENSE PLATE LOOKUPS (All 50 states)

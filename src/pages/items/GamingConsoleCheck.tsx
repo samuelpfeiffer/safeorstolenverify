@@ -4,7 +4,7 @@ const GamingConsoleCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen"
-      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against our verification databases. Instant results before buying used consoles."
+      metaDescription="Check a PlayStation, Xbox, or Nintendo serial using SafeOrStolen reports, public web results, and AI analysis before buying."
       h1="Check if Gaming Console is Stolen - Free Verification"
       keywords={[
         'check if ps5 is stolen',

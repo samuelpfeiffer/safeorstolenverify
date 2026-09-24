@@ -127,7 +127,7 @@ export default function ForBusinesses() {
  icon: Building2,
  title: 'Pawn Shops & Buy-Sell-Trade',
  description: 'Instant verification at point of purchase protects against unknowingly buying stolen goods. Meet state compliance requirements automatically under F.S. § 539.001 (Florida), Cal. Bus. & Prof. Code § 21628 (California), and similar statutes in all 50 states.',
- benefits: ['Avoid $10,000+ fines for stolen property', 'Comply with state pawn regulations', 'Build customer trust with verified purchases', 'Generate compliance certificates for audits'],
+ benefits: ['Use a consistent intake workflow', 'Keep item and seller records together', 'Give buyers reviewable verification context', 'Generate dated verification records'],
  link: '/for-pawn-shops'
  },
  {
