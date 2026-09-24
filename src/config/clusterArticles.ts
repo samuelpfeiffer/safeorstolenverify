@@ -68,7 +68,7 @@ export const CLUSTER_ARTICLES: ClusterMeta[] = [
  },
  {
  slug: 'buying-used-phone-checklist',
- title: 'The Used-Phone Buying Checklist That Kills 90% of Scams',
+ title: 'Used Phone Buying Checklist: What to Check Before You Pay',
  blurb: 'The 12-point check to run before you hand over cash for a second-hand phone.',
  pillar: 'phone',
  published: '2026-02-08',
