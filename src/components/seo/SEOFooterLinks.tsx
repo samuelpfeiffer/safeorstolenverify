@@ -55,7 +55,7 @@ export const SEOFooterLinks = () => {
               <li><Link to="/for-businesses" className="text-muted-foreground hover:text-primary">Enterprise Solutions</Link></li>
               <li><Link to="/for-pawn-shops" className="text-muted-foreground hover:text-primary">For Pawnshops</Link></li>
               <li><Link to="/for-dealers" className="text-muted-foreground hover:text-primary">For Dealers</Link></li>
-              <li><Link to="/vs-checkmend" className="text-muted-foreground hover:text-primary">CheckMEND Alternatives</Link></li>
+              <li><Link to="/compare" className="text-muted-foreground hover:text-primary">Compare checking resources</Link></li>
               <li><Link to="/vs-imeiinfo" className="text-muted-foreground hover:text-primary">vs IMEI.info</Link></li>
               <li><Link to="/pricing" className="text-muted-foreground hover:text-primary">Pricing</Link></li>
             </ul>

@@ -138,7 +138,7 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'Compare Services',
  links: [
- { label: 'Why choose SafeOrStolen', to: '/vs-checkmend' },
+ { label: 'Why choose SafeOrStolen', to: '/compare' },
  { label: 'vs IMEI.info', to: '/vs-imeiinfo' },
  { label: 'vs Swappa', to: '/vs-swappa' },
  { label: 'vs Carfax', to: '/vs-carfax' },

@@ -462,7 +462,7 @@ const ComparisonSwappa = () => {
  <span>•</span>
  <Link to="/vs-imeiinfo" className="text-primary hover:underline">SafeOrStolen vs IMEI.info</Link>
  <span>•</span>
- <Link to="/vs-carfax" className="text-primary hover:underline">SafeOrStolen vs Carfax</Link>
+ <Link to="/how-to-check-if-car-stolen" className="text-primary hover:underline">Vehicle checking guide</Link>
  <span>•</span>
  <Link to="/vs-autocheck" className="text-primary hover:underline">SafeOrStolen vs AutoCheck</Link>
  <span>•</span>
