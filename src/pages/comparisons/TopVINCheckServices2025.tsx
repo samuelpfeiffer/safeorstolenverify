@@ -508,8 +508,7 @@ const TopVINCheckServices2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">What can SafeOrStolen check that Carfax can't?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen checks a 100+ stolen item database from law enforcement and insurance companies. 
-                      It also checks phones, bikes, tools, and other items - not just vehicles.
+                      SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It also supports phones, plates, serial-numbered electronics and power tools, firearms, and bicycles.
                     </p>
                   </CardContent>
                 </Card>

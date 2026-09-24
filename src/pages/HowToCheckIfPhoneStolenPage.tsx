@@ -55,7 +55,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Review Verification Results",
- "text": "SafeOrStolen checks our verification databases and returns results in 3 seconds showing if the phone is safe, stolen, or blacklisted.",
+ "text": "SafeOrStolen checks its own reports, public web results, and AI analysis, then returns a result in about 3 seconds. Carrier blacklist status must be checked separately.",
  "url": "https://safeorstolen.com/how-to-check-if-phone-stolen#step-3"
  },
  {
@@ -127,7 +127,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="How to Check if a Phone is Stolen Before Buying (2026 Guide) | SafeOrStolen"
- description="Complete guide to check if a phone is stolen using IMEI numbers. Free verification against our verification databases. Protect yourself from buying blacklisted or stolen phones."
+ description="Learn how to check a used phone's IMEI, review SafeOrStolen reports and public web results, and confirm carrier blacklist and activation-lock status separately."
  keywords="how to check if phone is stolen, check phone stolen, verify phone not stolen, IMEI check stolen, is my phone stolen, phone stolen check free"
  canonical="/how-to-check-if-phone-stolen"
  structuredData={[howToSchema, faqSchema]}
@@ -282,7 +282,7 @@ const HowToCheckIfPhoneStolenPage = () => {
  <div className="flex-1">
  <h3 className="text-xl font-semibold mb-3">Review Verification Results</h3>
  <p className="text-muted-foreground mb-4">
- SafeOrStolen checks our verification databases in 3 seconds and returns one of these results:
+ SafeOrStolen checks its own reports, public web results, and AI analysis in about 3 seconds. Check carrier blacklist status separately. The result will be:
  </p>
  <div className="grid md:grid-cols-3 gap-4">
  <div className="bg-green-50 dark:bg-green-950/20 border-green-200 border rounded-lg p-4">

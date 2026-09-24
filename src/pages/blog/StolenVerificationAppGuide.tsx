@@ -234,7 +234,7 @@ const StolenVerificationAppGuide = () => {
                 <strong>Offline mode</strong> - Works even in areas with poor cell signal. Downloaded database checks work offline.
               </li>
               <li>
-                <strong>Bulk verification</strong> - Pawn shops and dealers can scan 100+ items in minutes, not hours.
+                <strong>Batch workflows</strong> - Pawn shops and dealers can review multiple identifiers through supported business tools.
               </li>
             </ul>
 

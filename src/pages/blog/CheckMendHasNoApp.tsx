@@ -252,7 +252,7 @@ const CheckMendHasNoApp = () => {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">3. $10/mo Unlimited vs $3.99 Per Check</h3>
             <p>
-              CheckMEND charges $3.99 for every verification. SafeOrStolen offers <strong>2 free checks, then $0.99/check or $10/month unlimited</strong>. For businesses checking 100+ items monthly, SafeOrStolen saves thousands compared to CheckMEND.
+              SafeOrStolen offers <strong>2 free checks, then $0.99/check or $10/month unlimited</strong>. Review each service's current pricing before choosing a plan.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">4. Offline Mode</h3>

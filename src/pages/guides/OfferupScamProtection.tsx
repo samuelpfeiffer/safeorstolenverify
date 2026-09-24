@@ -129,7 +129,7 @@ const OfferupScamProtection = () => {
                 <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">★</div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Verify with SafeOrStolen</h3>
-                  <p className="text-muted-foreground mb-4">Enter the identifier into SafeOrStolen—takes 3 seconds, first 2 checks are free. We search our verification databases.</p>
+                  <p className="text-muted-foreground mb-4">Enter the identifier into SafeOrStolen. Results usually arrive in about 3 seconds, and the first 2 checks are included. We check SafeOrStolen reports, public web results, and AI analysis.</p>
                   <Button asChild className="gap-2">
                     <Link to="/verify">
                       <Search className="w-4 h-4" />

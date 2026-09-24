@@ -42,7 +42,7 @@ const SafeOrStolenVsIMEIInfo = () => {
 
   const comparisonData = [
     { feature: 'Pricing', safeOrStolen: '$10/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
-    { feature: 'Stolen Database Size', safeOrStolen: '100+ items', imeiInfo: 'Not disclosed', winner: 'sos' },
+    { feature: 'Verification Sources', safeOrStolen: 'Reports, web results, AI', imeiInfo: 'Device information', winner: 'tie' },
     { feature: 'Item Types Supported', safeOrStolen: 'Phones, cars, bikes, tools, etc.', imeiInfo: 'Phones only', winner: 'sos' },
     { feature: 'Blacklist Check', safeOrStolen: 'Included in $10/mo', imeiInfo: '$10 per check', winner: 'sos' },
     { feature: 'VIN Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
@@ -185,7 +185,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          100+ stolen item database from law enforcement & insurers
+                          SafeOrStolen reports, public web results, and AI analysis
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -383,8 +383,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Which service has more accurate data?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen partners directly with law enforcement agencies and insurance companies, 
-                      giving access to 100+ verified stolen items. IMEI.info doesn't disclose their data sources or database size.
+                      SafeOrStolen uses its own stolen-item reports, public web results, and AI analysis. IMEI.info provides phone device details. SafeOrStolen does not currently check carrier blacklists.
                     </p>
                   </CardContent>
                 </Card>
