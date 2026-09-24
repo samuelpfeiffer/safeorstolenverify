@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Users, MessageCircle, Shield, Heart, Trophy, Star, ArrowRight, ExternalLink } from 'lucide-react';
+import { Users, MessageCircle, Shield, Heart, Trophy, ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function CommunityPage() {
   return (
@@ -116,54 +116,6 @@ export default function CommunityPage() {
                   </CardContent>
                 </Card>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="py-16 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Community Stories</h2>
-            <div className="space-y-6">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg mb-4">
-                    "Was about to buy a 'great deal' MacBook on Facebook Marketplace. Ran the serial through SafeOrStolen—turns out it was reported stolen 3 months ago. Saved me $800 and potential legal trouble."
-                  </p>
-                  <p className="text-sm text-muted-foreground">— Mike T., San Diego</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg mb-4">
-                    "I run a pawn shop in Texas. Before SafeOrStolen, we had 3-4 seizures a year from accepting stolen goods. Now we verify everything—zero seizures in 18 months. Essential for our business."
-                  </p>
-                  <p className="text-sm text-muted-foreground">— Sarah L., Dallas Pawn Shop Owner</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg mb-4">
-                    "My bike was stolen. I reported it through SafeOrStolen, and two weeks later someone ran a check on it at a pawn shop across town. Got my bike back!"
-                  </p>
-                  <p className="text-sm text-muted-foreground">— Alex R., Portland</p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>
