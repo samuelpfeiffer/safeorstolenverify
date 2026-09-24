@@ -51,9 +51,9 @@ const webApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   description:
-    "Verify if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against our verification databases. 2 free checks, results in 3 seconds.",
+    "Check secondhand-item identifiers using SafeOrStolen reports, public web results, and AI analysis. A free account includes two checks.",
   applicationCategory: "SecurityApplication",
-  operatingSystem: "Web, iOS, Android",
+  operatingSystem: "Web",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -110,14 +110,13 @@ const organizationJsonLd = JSON.stringify({
     "stolen property verification",
     "serial number check",
     "secondhand marketplace fraud prevention",
-    "carrier blacklist checking",
     "SafeOrStolen's reports",
     "public web results",
-    "stolen vehicle detection",
-    "stolen phone detection",
-    "stolen firearms verification",
+    "secondhand vehicle checks",
+    "secondhand phone checks",
+    "firearm serial checks",
     "BikeIndex records",
-    "pawn shop compliance",
+    "secondhand-item verification workflows",
   ],
 });
 
@@ -155,7 +154,7 @@ const coreGraphJsonLd = JSON.stringify({
         { "@type": "Person", name: "Samuel Pfeiffer", jobTitle: "CEO" },
         { "@type": "Person", name: "Kelly McEvoy", jobTitle: "Co-Founder" },
       ],
-      dateModified: "2026-03-02",
+      dateModified: "2026-09-24",
     },
     {
       "@type": "WebSite",
@@ -163,21 +162,21 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       name: "SafeOrStolen — Stolen Item Verification",
       description:
-        "Consumer protection platform that verifies whether secondhand items are stolen. Checks IMEI, VIN, and serial numbers against our verification databases. 2 free verifications, results in approximately 3 seconds.",
+        "A stolen-item verification hub using SafeOrStolen reports, public web results, and AI analysis for secondhand buyers and sellers.",
       publisher: { "@id": "https://safeorstolen.com/#organization" },
       potentialAction: {
         "@type": "SearchAction",
         target: "https://safeorstolen.com/verify?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
-      dateModified: "2026-03-02",
+      dateModified: "2026-09-24",
     },
     {
       "@type": "Service",
       "@id": "https://safeorstolen.com/#service",
       name: "Stolen Item Verification Service",
       description:
-        "SafeOrStolen helps you verify if secondhand items are reported stolen by cross-referencing public web results, our own community reports, and AI analysis. For phones, we look up device model information (IMEI). For bicycles, we check BikeIndex. The service also supports firearms (HotGunz), vehicles, electronics, and tools. Results are returned in approximately 3 seconds.",
+        "SafeOrStolen helps users check secondhand items using its own reports, public web results, and AI analysis. Phone checks provide IMEI device details, bicycle checks also query Bike Index, and firearm checks also query HotGunz.",
       provider: { "@id": "https://safeorstolen.com/#organization" },
       serviceType: "Stolen Item Verification",
       areaServed: { "@type": "Country", name: "United States" },
@@ -192,10 +191,10 @@ const coreGraphJsonLd = JSON.stringify({
         name: "Verification Plans",
         itemListElement: [
           { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "2 free verifications, no credit card required" },
-          { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month — all item types, all databases" },
+          { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types" },
         ],
       },
-      dateModified: "2026-03-02",
+      dateModified: "2026-09-24",
     },
     {
       "@type": "HowTo",
@@ -203,11 +202,11 @@ const coreGraphJsonLd = JSON.stringify({
       description: "Steps to use SafeOrStolen to check whether a secondhand item has been reported stolen.",
       step: [
         { "@type": "HowToStep", position: 1, name: "Find the identifier", text: "Locate the IMEI number (phones — dial *#06#), VIN (vehicles — dashboard or door jamb), or serial number on the item." },
-        { "@type": "HowToStep", position: 2, name: "Enter the number", text: "Go to safeorstolen.com or open the SafeOrStolen mobile app. Enter the identifier or use barcode scanning." },
-        { "@type": "HowToStep", position: 3, name: "Review results", text: "The system queries our verification databases simultaneously and returns results in approximately 3 seconds." },
+        { "@type": "HowToStep", position: 2, name: "Enter the number", text: "Open SafeOrStolen on the web or as an installed web app, then enter or scan the identifier." },
+        { "@type": "HowToStep", position: 3, name: "Review results", text: "Review the SafeOrStolen reports, public web results, and AI analysis, then complete the separate official checks in the relevant guide." },
       ],
       totalTime: "PT30S",
-      dateModified: "2026-03-02",
+      dateModified: "2026-09-24",
     },
   ],
 });
@@ -219,10 +218,10 @@ const softwareApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen AI",
   alternateName: ["SafeOrStolen AI Chat", "SOS AI"],
   description:
-    "AI-powered conversational verification assistant for stolen item checks. Users chat naturally to verify IMEI, VIN, serial numbers, license plates, and marketplace listing URLs across our verification databases.",
+    "Conversational assistant for checking supported identifiers and marketplace listing URLs using SafeOrStolen reports, public web results, and AI analysis.",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Conversational AI Verification Assistant",
-  operatingSystem: "Web, iOS, Android",
+  operatingSystem: "Web",
   url: "https://safeorstolen.com/ai-chat",
   sameAs: "https://safeorstolen.com/verify",
   softwareVersion: "2026.04",
@@ -232,20 +231,17 @@ const softwareApplicationJsonLd = JSON.stringify({
   featureList: [
     "Conversational AI verification (multi-turn chat)",
     "AI smart identifier detection (IMEI, VIN, serial, plate, firearm serial)",
-    "AI scam checker with 0-100 risk score",
     "AI marketplace URL analyzer (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark)",
     "AI visual OCR for barcode and serial-number capture",
     "AI safety advisor with natural-language risk explanations",
-    "AI predictive alerts for watchlist monitoring",
     "AI verification analysis and result summaries",
   ],
   potentialAction: { "@type": "CommunicateAction", name: "Chat with SafeOrStolen AI", target: "https://safeorstolen.com/ai-chat" },
   offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "0.99", highPrice: "10.00", offerCount: 2 },
   additionalProperty: [
-    { "@type": "PropertyValue", name: "AI Gateway", value: "Lovable AI Gateway" },
     { "@type": "PropertyValue", name: "Platform Status", value: "AI-Powered" },
   ],
-  dateModified: "2026-04-23",
+  dateModified: "2026-09-24",
 });
 
 const hyrosScript =
