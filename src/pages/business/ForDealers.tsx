@@ -195,37 +195,20 @@ export default function ForDealers() {
  <p className="mt-4 text-sm">Contact us at dealers@safeorstolen.com for enterprise quotes.</p>
  </div>
 
- <h3>Why SafeOrStolen vs. Carfax for Dealers</h3>
+ <h3>What SafeOrStolen Adds to a Dealer Workflow</h3>
  <ul>
- <li>✅ <strong>Cheaper:</strong> $588/year vs. $1,200+/year for Carfax unlimited</li>
- <li>✅ <strong>Comprehensive stolen item data:</strong> our user-reported stolen item database and public web results (Carfax doesn't check)</li>
- <li>✅ <strong>Faster:</strong> 3 seconds vs. 30+ seconds with Carfax</li>
- <li>✅ <strong>Mobile app:</strong> Verify VINs at auctions, on trade-ins, anywhere</li>
- <li>✅ <strong>White-label reports:</strong> Your dealership branding, not Carfax logo</li>
+ <li>✅ <strong>Separate purpose:</strong> checks SafeOrStolen reports, public web results, and AI analysis</li>
+ <li>✅ <strong>Web access:</strong> use the installable web app from a supported browser</li>
+ <li>✅ <strong>Reviewable records:</strong> keep dated results with intake paperwork</li>
  <li>✅ <strong>Beyond vehicles:</strong> Also verify customer trade-in items (phones, tools, electronics)</li>
  </ul>
 
- <h3>Dealer Testimonials</h3>
- <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"We run 200+ VIN checks per month across 3 locations. SafeOrStolen's API integration with CDK made verification automatic at appraisal. Caught 2 stolen trade-ins in the first month—system paid for itself immediately."</p>
- <footer className="text-sm text-muted-foreground mt-2">— Rick M., General Manager, Premier Auto Group (California)</footer>
- </blockquote>
-
- <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"Customers love seeing the SafeOrStolen verification at closing. It's instant credibility—they know we're not hiding anything. Our Google reviews mention it specifically. Best $49/month we spend."</p>
- <footer className="text-sm text-muted-foreground mt-2">— Amanda S., Sales Manager, Hometown Motors (Texas)</footer>
- </blockquote>
-
- <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"We used to spend $1,400/year on Carfax. SafeOrStolen costs half that and checks our user-reported stolen item database and public web results that Carfax doesn't. Caught a title-washed flood vehicle at auction last month—would've cost us $15K."</p>
- <footer className="text-sm text-muted-foreground mt-2">— David L., Owner, Automotive Express (Florida)</footer>
- </blockquote>
  </section>
 
  <section className="max-w-4xl mx-auto mb-16">
  <div className="bg-primary/10 border border-primary/20 p-8 rounded-lg text-center">
  <h2 className="text-3xl font-bold mb-4">Start Protecting Your Inventory Today</h2>
- <p className="text-lg mb-6">Try 2 free VIN verifications. See how SafeOrStolen eliminates wholesale risk and builds customer trust.</p>
+ <p className="text-lg mb-6">Create a free account and use two VIN checks to evaluate the workflow alongside your existing vehicle-history process.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button size="lg" asChild>
  <Link to="/verify">Verify First VIN Free</Link>

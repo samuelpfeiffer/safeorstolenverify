@@ -97,15 +97,15 @@ const HowToSellVerifiedItems = () => {
           <section className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Why Buyers Demand Verification in 2026</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              The secondhand market has exploded to over $350 billion annually, but so has stolen property. The FBI reports over $15 billion in property stolen annually in the United States. Buyers on Facebook Marketplace, eBay, OfferUp, Craigslist, and Mercari are increasingly savvy — they've read the horror stories about buying stolen phones that get blacklisted, cars with cloned VINs, and electronics seized by police.
+              Careful buyers on Facebook Marketplace, eBay, OfferUp, Craigslist, and Mercari may ask for the item's identifier, original receipt, and a chance to inspect it before paying.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              The result? Buyers ask sellers pointed questions: "Can you prove this isn't stolen?" "What's the IMEI?" "Do you have a receipt?" Sellers who can't answer these questions lose the sale. Sellers who provide verified proof close deals faster and at better prices.
+              A prepared seller can answer those questions directly without promising that one verification record proves ownership or guarantees a sale.
             </p>
 
-            <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What Is a "Verified Safe" Certificate?</h2>
+            <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What Is a Proof of Clean Purchase Record?</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
- A Verified Safe certificate from SafeOrStolen proves that an item's IMEI, VIN, or serial number has been checked against our stolen-item reports, public web results, and AI analysis. For bicycles, we check BikeIndex, and for firearms, HotGunz. For phones, we look up device details but do not check blacklists. The check takes 3 seconds and produces either a downloadable PDF certificate or a shareable verification link.
+ A Proof of Clean Purchase records that an item's IMEI, VIN, or serial number received a clean result from the sources available at the time. Those sources include SafeOrStolen reports, public web results, and AI analysis; bicycle checks also query Bike Index and firearm checks also query HotGunz. Phone checks provide device details but do not currently query carrier blacklists. The record is not a legal document, ownership proof, or guarantee.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               For privacy, only the last 4 digits of the identifier are shown in the report. Your personal information is never shared with the buyer.
@@ -116,8 +116,8 @@ const HowToSellVerifiedItems = () => {
             <div className="space-y-6 my-8">
               {[
                 { step: '1', title: 'Find Your Item\'s Identifier', desc: 'Every verifiable item has a unique identifier. For phones, it\'s the 15-digit IMEI (dial *#06# to find it). For vehicles, it\'s the 17-character VIN (on the dashboard or driver\'s door). For electronics, check the back panel or Settings > About for the serial number.' },
-                { step: '2', title: 'Run a Free Verification', desc: 'Go to safeorstolen.com/verify and enter your identifier. Our AI auto-detects whether it\'s an IMEI, VIN, license plate, or serial number — no dropdown needed. Results appear in 3 seconds.' },
-                { step: '3', title: 'Download Your Certificate', desc: 'If the item comes back CLEAN, download the PDF certificate or copy the shareable link (e.g., safeorstolen.com/verify/abc123). The certificate includes the Trust Score, databases checked, and verification timestamp.' },
+                { step: '2', title: 'Run a Verification', desc: 'Sign in at safeorstolen.com/verify and enter the identifier. A free account includes two checks.' },
+                { step: '3', title: 'Save the Record', desc: 'After a clean result, save the Proof of Clean Purchase PDF or shareable result link. It shows the identifier fragment, result, sources checked, and date.' },
                 { step: '4', title: 'Add Proof to Your Listing', desc: 'Include the verification link in your listing description. Many sellers add "✅ Verified Clean by SafeOrStolen" to their title. Some add a screenshot of the verification result to their listing photos.' },
               ].map(s => (
                 <div key={s.step} className="flex gap-4 p-5 bg-card border border-border rounded-xl">
@@ -152,17 +152,17 @@ const HowToSellVerifiedItems = () => {
 
             <h3 className="text-xl font-bold text-foreground mt-8 mb-3">eBay</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              On eBay, trust is everything for your seller rating. Include the verification certificate as a listing photo and mention it in the item condition notes. Verified sellers report fewer returns and disputes.
+               On eBay, include the verification record as supporting context where the listing format permits it, while also showing the receipt, condition, and identifier.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mt-8 mb-3">OfferUp & Mercari</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              These platforms attract deal-hunters who are wary of scams. A verification badge in your listing photos makes you stand out. For meetup sales on OfferUp, bring a printed certificate — it closes deals on the spot.
+               On OfferUp and Mercari, provide the identifier before a meetup and let the buyer repeat the check. A printed record can accompany the item's other paperwork.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mt-8 mb-3">Craigslist</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Craigslist has no built-in buyer protection, which makes buyers extra cautious. Including a SafeOrStolen verification link is the single most effective thing you can do to build trust and justify your asking price.
+               For local listings, provide the identifier and verification link before the meetup, meet in a safe public place, and let the buyer inspect the item and paperwork.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Seller Pricing: What Does It Cost?</h2>
@@ -174,13 +174,9 @@ const HowToSellVerifiedItems = () => {
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$10/month unlimited</strong> — Verify as many items as you need. Phones, cars, electronics, and more.</span></li>
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">PDF certificates & shareable links</strong> — Download reports and share with buyers.</span></li>
             </ul>
+            <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Keep the Record in Context</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Consider the ROI: if verification helps you sell a single iPhone for $200 more, the $10/month cost pays for itself instantly.
-            </p>
-
-            <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Legal Protection for Sellers</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Here's something most sellers don't know: if you unknowingly sell a stolen item, you could face criminal charges for possession of stolen property. Under federal law (18 U.S.C. § 2315), trafficking in stolen goods is a felony. A SafeOrStolen verification creates a timestamped record proving you performed due diligence — which is your strongest legal defense.
+              Keep the record with the original receipt, seller messages, photos, and payment record. It documents a check at one moment in time, but it does not replace legal advice or establish ownership.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
@@ -188,7 +184,7 @@ const HowToSellVerifiedItems = () => {
               {[
                 { q: 'How much does seller verification cost?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.' },
                 { q: 'What can a verification record do for a seller?', a: 'It gives buyers a dated result they can review, helps answer questions about the identifier, and documents the check. It does not guarantee ownership or a sale outcome.' },
-                { q: 'What do buyers see when they click my verification link?', a: 'Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy.' },
+                { q: 'What do buyers see when they click my verification link?', a: 'Buyers see the result, identifier fragment, sources checked, and verification date. The page does not claim to prove ownership.' },
                 { q: 'Does this work on all marketplaces?', a: 'Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform.' },
                 { q: 'What items can be verified?', a: 'Phones (IMEI), vehicles (VIN), electronics (serial number), firearms (serial number), bicycles (serial number), and any item with an identifiable serial number or IMEI.' },
               ].map((faq, i) => (

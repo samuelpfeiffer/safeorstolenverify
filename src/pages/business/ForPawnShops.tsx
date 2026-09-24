@@ -154,39 +154,12 @@ export default function ForPawnShops() {
  <li>✅ White-label option (your branding)</li>
  </ul>
 
- <h3>ROI Calculator: What You Save</h3>
- <div className="bg-muted p-6 rounded-lg my-6">
- <h4 className="font-bold mb-4">Typical Single-Location Pawn Shop:</h4>
- <ul>
- <li><strong>Annual stolen property seizures without verification:</strong> 5-8 incidents</li>
- <li><strong>Average loss per incident:</strong> $2,000 (inventory) + $1,500 (legal) = $3,500</li>
- <li><strong>Total annual risk:</strong> $17,500 - $28,000</li>
- </ul>
- <p className="mt-4"><strong>SafeOrStolen cost:</strong> $348/year (Business plan)</p>
- <p className="text-xl font-bold text-primary">ROI: 5,000% - 8,000%</p>
- </div>
-
- <h3>Testimonials from Pawn Shop Owners</h3>
- <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"Before SafeOrStolen, we had 3 stolen property incidents per year costing $8,000+ each. Since implementing verification 18 months ago: zero incidents. The system paid for itself in the first month."</p>
- <footer className="text-sm text-muted-foreground mt-2">— Mike R., Owner, Phoenix Pawn & Jewelry (Arizona)</footer>
- </blockquote>
-
- <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"Our city requires electronic verification for all transactions. SafeOrStolen's API integration with our PawnMaster system made compliance automatic. The mobile app is perfect for our buy counter."</p>
- <footer className="text-sm text-muted-foreground mt-2">— Sarah L., Operations Manager, Dallas Loan & Pawn (Texas)</footer>
- </blockquote>
-
- <blockquote className="border-l-4 border-primary pl-4 my-6">
- <p className="italic">"We run 40-50 verifications daily across 3 locations. The multi-location dashboard lets me monitor compliance in real-time. Support is excellent—they helped us customize workflows for our specific needs."</p>
- <footer className="text-sm text-muted-foreground mt-2">— James K., Regional Director, Gold & Silver Pawn (6 locations, Nevada)</footer>
- </blockquote>
  </section>
 
  <section className="max-w-4xl mx-auto mb-16">
  <div className="bg-primary/10 border border-primary/20 p-8 rounded-lg text-center">
  <h2 className="text-3xl font-bold mb-4">Start Protecting Your Business Today</h2>
- <p className="text-lg mb-6">Try 2 free verifications. No credit card required. See how SafeOrStolen eliminates your legal risk.</p>
+ <p className="text-lg mb-6">Create a free account and use two checks to evaluate whether the workflow fits your intake process.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button size="lg" asChild>
  <Link to="/verify">Verify First Item Free</Link>
