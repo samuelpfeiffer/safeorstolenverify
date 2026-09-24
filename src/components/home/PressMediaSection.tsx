@@ -15,7 +15,7 @@ export const PressMediaSection = () => {
  {
  outlet: 'Trustpilot',
  headline: 'Customer Reviews on Trustpilot',
- subtext: 'Real reviews from verified buyers who used SafeOrStolen before purchasing secondhand items on Facebook Marketplace, OfferUp, and eBay.',
+  subtext: 'SafeOrStolen has a public Trustpilot profile. Visit it directly to read any published reviews.',
  url: 'https://www.trustpilot.com/review/safeorstolen.com',
  isExternal: true,
  icon: '⭐',
@@ -38,7 +38,7 @@ export const PressMediaSection = () => {
  {
  outlet: 'PRLog Press Room',
  headline: 'Press Releases & News Coverage',
- subtext: 'Official SafeOrStolen press releases covering product launches, law enforcement partnerships, and consumer protection milestones.',
+  subtext: 'Published SafeOrStolen press releases about the company and product.',
  url: 'https://biz.prlog.org/SafeOrStolen/',
  isExternal: true,
  icon: '📰',
@@ -48,51 +48,10 @@ export const PressMediaSection = () => {
  },
  ];
 
- const stats = [
- {
- icon: Globe,
- label: 'multiple sources',
- description: 'Verified stolen item database across multiple sources',
- detail: 'Cross-referenced from our stolen-item reports, public web results, and AI analysis to help you check an item\'s history.',
- link: '/data-sources',
- },
- {
- icon: Star,
- label: 'Trustpilot Reviews',
- description: 'Verified customer reviews from real buyers',
- detail: 'Buyers, sellers, pawn shops, and firearm dealers across all 50 U.S. states review SafeOrStolen on Trustpilot.',
- link: '/testimonials',
- },
-
- {
- icon: Award,
- label: 'Global Mission',
- description: 'Reducing secondhand market crime worldwide',
- detail: 'SafeOrStolen operates in 150+ countries, verifying items from Facebook Marketplace, OfferUp, Craigslist, eBay, and private sales.',
- link: '/about',
- },
- {
- icon: TrendingUp,
- label: '$6B+ Theft Stopped',
- description: 'Annual stolen goods market we protect against',
- detail: 'Over $6 billion in stolen goods are sold annually through U.S. secondhand marketplaces. SafeOrStolen is the primary defense.',
- link: '/how-it-works',
- },
- {
- icon: Shield,
- label: 'multiple sources',
- description: 'Law enforcement, insurance & carrier sources',
- detail: 'More data sources — including our stolen-item reports, public web results, AI analysis, BikeIndex for bicycles, and HotGunz for firearms.',
- link: '/data-sources',
- },
- {
- icon: Globe,
- label: '3-Second Results',
- description: 'Fastest stolen item verification available',
- detail: 'SafeOrStolen delivers verification results in under 3 seconds, drawing from our stolen-item reports, public web results, and AI analysis.',
- link: '/compare',
- },
- ];
+  const stats = [
+  { icon: Shield, label: 'Transparent Sources', description: 'Know what was checked', detail: 'SafeOrStolen reports, public web results, and AI analysis; Bike Index for bicycles and HotGunz for firearms.', link: '/data-sources' },
+  { icon: Globe, label: 'Buyer and Seller Guides', description: 'Practical checking workflows', detail: 'Find identifiers, use official resources separately, inspect warning signs, and preserve transaction records.', link: '/how-to-check-if-item-stolen' },
+  ];
 
  return (
  <section className="py-16 bg-secondary/5" aria-labelledby="press-heading">

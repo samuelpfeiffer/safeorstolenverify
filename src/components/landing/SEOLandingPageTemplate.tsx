@@ -63,7 +63,7 @@ interface SEOLandingPageProps {
   // Use Cases (optional)
   useCases?: UseCase[];
   
-  // Social Proof
+  // Deprecated: retained for compatibility with existing page data but never rendered.
   testimonial?: {
     quote: string;
     author: string;
@@ -100,7 +100,7 @@ export const SEOLandingPageTemplate = ({
   whyVerifyContent,
   whyVerifyBenefits,
   useCases,
-  testimonial,
+  testimonial: _testimonial,
   faqs,
   ctaTitle,
   ctaDescription,
@@ -332,26 +332,6 @@ export const SEOLandingPageTemplate = ({
                     </CardContent>
                   </Card>
                 ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Testimonial Section */}
-        {testimonial && (
-          <section className="py-16 px-4 bg-card/50">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="flex justify-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <blockquote className="text-xl md:text-2xl font-medium mb-6 italic">
-                "{testimonial.quote}"
-              </blockquote>
-              <div>
-                <div className="font-semibold">{testimonial.author}</div>
-                <div className="text-sm text-muted-foreground">{testimonial.role}</div>
               </div>
             </div>
           </section>

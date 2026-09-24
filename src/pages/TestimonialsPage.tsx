@@ -1,26 +1,11 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Shield, ExternalLink, Rocket, MessageSquare } from 'lucide-react';
+import { ExternalLink, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 const TestimonialsPage = () => {
-  // Real press mentions and partnerships only
-  const realCredentials = [
-    {
-      type: "Press Release",
-      source: "PRLog",
-      description: "SafeOrStolen launches comprehensive verification platform to protect marketplace buyers and sellers from stolen goods fraud.",
-      url: "https://www.prlog.org"
-    },
-    {
-      type: "Press Release",
-      source: "IssueWire",
-      description: "New stolen item verification service aims to reduce marketplace fraud and protect consumers.",
-      url: "https://www.issuewire.com"
-    }
-  ];
-
   return (
     <>
       <PageSEO
@@ -49,14 +34,13 @@ const TestimonialsPage = () => {
 
             {/* Real Credentials */}
             <div className="space-y-6 mb-12">
-              {realCredentials.map((credential, index) => (
-                <Card key={index} className="p-6">
+              {PRESS_RELEASES.map((release) => (
+                <Card key={release.url} className="p-6">
                   <div className="flex items-start gap-4">
                     <ExternalLink className="w-8 h-8 text-primary flex-shrink-0" />
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-primary mb-1">{credential.type}</p>
-                      <p className="font-bold text-lg mb-2">{credential.source}</p>
-                      <p className="text-muted-foreground">{credential.description}</p>
+                      <p className="text-xs font-semibold text-primary mb-1">{release.outlet} · {release.date}</p>
+                      <a href={release.url} target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:text-primary">{release.title}</a>
                     </div>
                   </div>
                 </Card>

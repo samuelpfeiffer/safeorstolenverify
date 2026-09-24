@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
-import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 const AboutPage = () => {
@@ -292,8 +291,6 @@ const AboutPage = () => {
  {/* Why Choose SafeOrStolen */}
  <WhyChooseSafeOrStolen />
 
- {/* Testimonials */}
- <CompactTestimonials />
  </div>
  </>
  );
