@@ -16,7 +16,12 @@ const options = [
 export default function Compare() {
   return (
     <>
-      <PageSEO title="Compare Ways to Check a Used Item | SafeOrStolen" description="Compare SafeOrStolen with separate official and specialist resources by purpose, without unsupported rankings or competitor claims." canonical="/compare" dateModified="2026-09-24" />
+      <PageSEO
+        title="Compare Ways to Check a Used Item | SafeOrStolen"
+        description="Compare SafeOrStolen with separate official and specialist resources by purpose, without unsupported rankings or competitor claims."
+        canonical="/compare"
+        structuredData={[{ "@context": "https://schema.org", "@type": "WebPage", name: "Compare Ways to Check a Used Item", dateModified: "2026-09-24" }]}
+      />
       <main className="min-h-screen bg-background pt-24 pb-20">
         <section className="container mx-auto max-w-5xl px-4">
           <div className="mx-auto max-w-3xl text-center mb-12">
