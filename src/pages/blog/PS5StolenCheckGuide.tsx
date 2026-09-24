@@ -57,7 +57,7 @@ const PS5StolenCheckGuide = () => {
         "name": "Can I check if a PS5 is stolen before buying?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can check if a PS5 is stolen by entering the serial number at SafeOrStolen.com. Our database searches police reports, user-reported thefts, and retail theft databases to verify if the console has been reported stolen."
+          "text": "You can enter a PS5 serial number at SafeOrStolen to check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Also compare the serial on the console with its settings and any original receipt or box."
         }
       },
       {
@@ -127,7 +127,7 @@ const PS5StolenCheckGuide = () => {
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-xl font-bold mb-2">Check PS5 Serial Number Instantly</h2>
                     <p className="text-muted-foreground">
-                      Verify any PlayStation 5 isn't stolen in 3 seconds. Enter the serial number to search theft databases.
+                      Enter the serial number to check SafeOrStolen's own reports, public web results, and AI analysis in about 3 seconds.
                     </p>
                   </div>
                   <Link to="/verify">
@@ -278,8 +278,8 @@ const PS5StolenCheckGuide = () => {
                 <div>
                   <h3 className="font-bold mb-2">Run Final Verification</h3>
                   <p className="text-muted-foreground">
-                    Enter the serial number at SafeOrStolen.com to search theft databases, police reports, 
-                    and user-reported stolen items. Only buy if the report comes back clean.
+                    Enter the serial number at SafeOrStolen.com to check SafeOrStolen's own stolen-item reports,
+                    public web results, and AI analysis. Treat a clean result as one part of your due diligence, not a guarantee.
                   </p>
                 </div>
               </div>

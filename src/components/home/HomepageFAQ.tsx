@@ -18,7 +18,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'How accurate is SafeOrStolen?',
- answer: 'We analyze public web results, our own community theft reports, and apply AI analysis. For specific items, we also check BikeIndex for bicycles and HotGunz for firearms. For phones, we perform an IMEI lookup to get device model and details.'
+  answer: "We check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex; for firearms, HotGunz. Phone checks include IMEI device details, but carrier blacklist status must be checked separately. No service can guarantee that every theft has been reported."
  },
  {
  question: 'Do you report searches to police?',

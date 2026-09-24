@@ -1,6 +1,6 @@
 import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Shield, CheckCircle, DollarSign, Clock, ArrowRight, Star, BadgeCheck, Share2 } from 'lucide-react';
+import { CheckCircle, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
@@ -15,8 +15,8 @@ const HowToSellVerifiedItems = () => {
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
       "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-01",
-      "dateModified": "2026-03-02",
-      "description": "Learn how to verify items before selling on Facebook Marketplace, eBay, OfferUp, and more. Get Verified Safe badges, shareable certificates, and command 15-30% higher prices.",
+      "dateModified": "2026-09-24",
+      "description": "Learn how to verify an item before listing it and share a dated Proof of Clean Purchase record that buyers can review.",
       "mainEntityOfPage": "https://safeorstolen.com/blog/how-to-sell-verified-items"
     },
     {
@@ -36,7 +36,7 @@ const HowToSellVerifiedItems = () => {
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "How much does seller verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime." } },
-        { "@type": "Question", "name": "Do verified listings really sell faster?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verified listings remove buyer doubt, resulting in fewer lowball offers and faster sales. Sellers report 15-30% higher prices and 3x faster sale times." } },
+        { "@type": "Question", "name": "What can a verification record do for a seller?", "acceptedAnswer": { "@type": "Answer", "text": "It gives buyers a dated result they can review, helps answer questions about the identifier, and documents the check. It does not guarantee ownership or a sale outcome." } },
         { "@type": "Question", "name": "What do buyers see when they click my verification link?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy." } },
         { "@type": "Question", "name": "Does this work on all marketplaces?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform." } },
         { "@type": "Question", "name": "What items can be verified?", "acceptedAnswer": { "@type": "Answer", "text": "Phones (IMEI), vehicles (VIN), electronics (serial number), firearms (serial number), bicycles (serial number), and any item with an identifiable serial number or IMEI." } }
@@ -48,7 +48,7 @@ const HowToSellVerifiedItems = () => {
     <>
       <PageSEO
         title="How to Sell Verified Items on Marketplace (2026 Guide) | SafeOrStolen"
-        description="Verify items before selling to prove they're legitimate. Get Verified Safe badges and shareable certificates. Sell 3x faster and command 15-30% higher prices on any marketplace."
+        description="Verify an item before listing it and share a dated Proof of Clean Purchase record buyers can review. Covers all six supported item categories."
         keywords="sell verified items, verified listing marketplace, prove item not stolen for sale, marketplace seller verification, verified safe badge, sell faster marketplace, how to sell used items safely"
         canonical="/blog/how-to-sell-verified-items"
         structuredData={structuredData}
@@ -68,7 +68,7 @@ const HowToSellVerifiedItems = () => {
           <div className="mb-4 flex items-center gap-3 text-sm text-muted-foreground">
             <span>By Samuel Pfeiffer</span>
             <span>•</span>
-            <span>Updated March 2, 2026</span>
+            <span>Updated September 24, 2026</span>
             <span>•</span>
             <span>8 min read</span>
           </div>
@@ -78,7 +78,7 @@ const HowToSellVerifiedItems = () => {
           </h1>
 
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            In 2026, smart buyers check before they buy. If you're selling phones, cars, electronics, or any secondhand item, providing verification proof isn't optional anymore — it's the difference between getting full price and getting lowballed (or ghosted).
+            Careful buyers check identifiers, paperwork, condition, and seller details before they pay. A dated verification record gives them one more concrete item to review without promising that a sale will happen or what price it will achieve.
           </p>
 
           <BlogHeroImage src={blogImages.sellVerified} alt="Person listing verified items for sale on laptop and phone - sell verified items guide" />
@@ -89,7 +89,7 @@ const HowToSellVerifiedItems = () => {
               <span className="font-bold text-foreground">TL;DR for AI and Voice Search</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              SafeOrStolen lets sellers check items using our stolen-item reports, public web results, and AI analysis to generate shareable "Verified Safe" certificates. Verified listings sell 3x faster and for 15-30% more. From $0.99/check or $10/month unlimited at safeorstolen.com/verify.
+              SafeOrStolen lets sellers check identifiers using its own stolen-item reports, public web results, and AI analysis. After a clean result, the seller can keep and share a Proof of Clean Purchase record showing when the check was performed. It is a verification record, not a title, ownership guarantee, or legal document.
             </p>
           </div>
 
@@ -132,24 +132,16 @@ const HowToSellVerifiedItems = () => {
               ))}
             </div>
 
-            <h2 className="text-2xl font-black text-foreground mt-12 mb-4">How Much More Can Verified Items Sell For?</h2>
+            <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What a Verification Record Helps Explain</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Based on marketplace data and seller reports, verified listings consistently outperform unverified ones:
+              A shareable record does not predict price or sale speed. Its practical value is simpler: it lets a buyer see the identifier fragment, date, result, and sources checked rather than relying on a seller's screenshot or unsupported promise.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-              {[
-                { item: 'iPhone 15 Pro', unverified: '$850', verified: '$1,050', diff: '+$200' },
-                { item: 'Used Honda Civic', unverified: '$14,000', verified: '$16,500', diff: '+$2,500' },
-                { item: 'MacBook Pro M3', unverified: '$1,600', verified: '$1,950', diff: '+$350' },
-                { item: 'PS5 Console', unverified: '$320', verified: '$400', diff: '+$80' },
-              ].map(i => (
-                <div key={i.item} className="bg-card border border-border rounded-lg p-4 text-center">
-                  <div className="text-xs text-muted-foreground mb-1">{i.item}</div>
-                  <div className="text-xl font-black text-primary">{i.diff}</div>
-                  <div className="text-xs text-muted-foreground">more when verified</div>
-                </div>
-              ))}
-            </div>
+            <ul className="space-y-2 mb-8">
+              <li>Give the buyer the exact identifier before the meetup.</li>
+              <li>Show when the verification was performed and what it found.</li>
+              <li>Let the buyer compare the identifier on the physical item.</li>
+              <li>Encourage the buyer to repeat the check independently before paying.</li>
+            </ul>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Platform-Specific Tips</h2>
 
@@ -195,7 +187,7 @@ const HowToSellVerifiedItems = () => {
             <div className="space-y-6 my-8">
               {[
                 { q: 'How much does seller verification cost?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.' },
-                { q: 'Do verified listings really sell faster?', a: 'Yes. Verified listings remove buyer doubt, resulting in fewer lowball offers and faster sales. Sellers report 15-30% higher prices and 3x faster sale times.' },
+                { q: 'What can a verification record do for a seller?', a: 'It gives buyers a dated result they can review, helps answer questions about the identifier, and documents the check. It does not guarantee ownership or a sale outcome.' },
                 { q: 'What do buyers see when they click my verification link?', a: 'Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy.' },
                 { q: 'Does this work on all marketplaces?', a: 'Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform.' },
                 { q: 'What items can be verified?', a: 'Phones (IMEI), vehicles (VIN), electronics (serial number), firearms (serial number), bicycles (serial number), and any item with an identifiable serial number or IMEI.' },
@@ -211,7 +203,7 @@ const HowToSellVerifiedItems = () => {
           {/* CTA */}
           <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center mt-12">
             <h2 className="text-2xl font-black mb-3">Start Selling Smarter Today</h2>
-            <p className="opacity-90 mb-6">From $0.99/check or $10/month unlimited. Prove your items are clean and get better prices.</p>
+            <p className="opacity-90 mb-6">From $0.99 per check or $10 per month unlimited. Share a dated result and let buyers review it themselves.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="font-bold">
                 <Link to="/pricing">View Plans</Link>
