@@ -1,4 +1,4 @@
-- [ ] Repair damaged shared copy, publish, and report live sitemap phrase counts.
+- [x] Repair damaged shared copy, publish, and report live sitemap phrase counts.
 # Account required before verification
 
 - [x] Gate /verify and /ai-chat behind a signed-in account
