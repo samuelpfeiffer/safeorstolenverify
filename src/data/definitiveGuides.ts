@@ -11,6 +11,17 @@ const commonStolenSteps = [
 const commonSafeOrStolen =
   "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. A check is an additional due-diligence step, not a substitute for inspecting the item, matching documents, checking official resources, or confirming the seller has authority to sell.";
 
+const CTIA_METHOD = {
+  name: "Run CTIA’s free Stolen Phone Checker first",
+  cost: "Free (5 checks per day, US consumers only)",
+  description:
+    "CTIA, the wireless industry association, runs the Stolen Phone Checker using GSMA Device Check data. Enter the IMEI, MEID, or ESN.",
+  tellsYou:
+    "Whether the device has been reported lost or stolen in that data. SafeOrStolen does not query this tool, so run it yourself.",
+  url: "https://stolenphonechecker.org/spc/consumer",
+  linkLabel: "CTIA Stolen Phone Checker",
+};
+
 export const PHONE_GUIDE: DefinitiveGuideProps = {
   slug: "/how-to-check-if-phone-stolen",
   title: "How to Check if a Phone Is Stolen",
