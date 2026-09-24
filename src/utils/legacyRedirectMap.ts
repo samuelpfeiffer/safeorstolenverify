@@ -579,11 +579,15 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/poshmark-stolen-check': '/marketplace-url-checker',
   '/letgo-stolen-check': '/marketplace-url-checker',
   '/vs-stolenregister': '/compare',
-  '/carfax-alternative-free': '/carfax-alternative',
+  '/carfax-alternative': '/how-to-check-if-car-stolen',
+  '/carfax-alternative-free': '/how-to-check-if-car-stolen',
   '/vs-carfax': '/how-to-check-if-car-stolen',
+  '/blog/carfax-vs-free-vin-alternatives': '/how-to-check-if-car-stolen',
   '/comparisons/nicb-vincheck-alternative': '/how-to-check-if-car-stolen',
   '/vs-vincheck-info': '/how-to-check-if-car-stolen',
   '/comparisons/top-vin-check-services-2025': '/how-to-check-if-car-stolen',
+  '/hotgunz-alternative': '/how-to-check-if-gun-is-stolen',
+  '/comparisons/safeorstolen-vs-swappa': '/how-to-check-if-phone-stolen',
 };
 
 /** Resolve a legacy path to its destination, handling trailing slashes and wildcard entries. */
