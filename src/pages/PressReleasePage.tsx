@@ -3,35 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
 import { Newspaper, Calendar, ExternalLink, ArrowRight, Download, Mail } from 'lucide-react';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 export default function PressReleasePage() {
- const pressReleases = [
- {
- title: 'SafeOrStolen Partners with FasterCapital to Tackle Fraud and Build Trust in the Secondhand Market',
- outlet: 'PRLog',
- date: 'August 11, 2025',
- url: 'https://biz.prlog.org/SafeOrStolen/'
- },
- {
- title: 'SafeOrStolen Partners with FasterCapital to Secure Secondhand Market Worldwide',
- outlet: 'PRLog',
- date: 'September 11, 2025',
- url: 'https://www.prlog.org/13098918-safeorstolen-partners-with-fastercapital-to-secure-secondhand-market-worldwide.html'
- },
-  {
-  title: 'SafeOrStolen Partners with FasterCapital to Launch Web App Platform for Trusted Secondhand Verification',
-  outlet: 'IssueWire',
-  date: 'October 11, 2025',
-  url: 'https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904'
-  },
-  {
-  title: 'SafeOrStolen Launches Free Mobile App for Instant Stolen Item Verification',
-  outlet: 'PRLog',
-  date: 'January 2, 2026',
-  url: 'https://www.prlog.org/13119488-safeorstolen-launches-free-mobile-app-for-instant-stolen-item-verification.html'
-  }
-  ];
-
  return (
  <>
  <PageSEO
@@ -60,7 +34,7 @@ export default function PressReleasePage() {
  <section className="py-16 container mx-auto px-4">
  <div className="max-w-4xl mx-auto">
  <div className="space-y-6">
- {pressReleases.map((pr, index) => (
+ {PRESS_RELEASES.map((pr, index) => (
  <Card key={index} className="hover:shadow-lg transition-shadow">
  <CardContent className="p-6">
  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">

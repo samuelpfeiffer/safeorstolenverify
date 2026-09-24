@@ -8,6 +8,7 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 const AboutPage = () => {
  const dataPartners = [
@@ -149,7 +150,7 @@ const AboutPage = () => {
               </Badge>
  <Badge variant="secondary" className="px-3 py-1">
  <Users className="h-4 w-4 mr-2" />
- 5,000+ Checks Processed
+  Results in About 3 Seconds
  </Badge>
  </div>
  </div>
@@ -182,7 +183,7 @@ const AboutPage = () => {
  </p>
  <div className="border-t pt-4 mt-4">
  <p className="text-muted-foreground text-sm">
- Six item categories · our verification databases · Results in about 3 seconds
+  Six item categories · SafeOrStolen reports, public web results, and AI analysis · Results in about 3 seconds
  </p>
  </div>
  </Card>
@@ -221,11 +222,9 @@ const AboutPage = () => {
  <div className="container mx-auto px-4">
  <div className="text-center mb-8">
  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Press & Media</h2>
- <p className="text-muted-foreground max-w-2xl mx-auto">
- Featured in leading business platforms and trusted by verified reviewers
- </p>
+  <p className="text-muted-foreground max-w-2xl mx-auto">Published company announcements and verified public profiles</p>
  </div>
- <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
  <a
  href="https://www.trustpilot.com/review/safeorstolen.com"
  target="_blank"
@@ -263,6 +262,16 @@ const AboutPage = () => {
  </Card>
  </a>
  </div>
+  <div className="max-w-5xl mx-auto space-y-3">
+  {PRESS_RELEASES.map((release) => (
+  <a key={release.url} href={release.url} target="_blank" rel="noopener noreferrer" className="block">
+  <Card className="p-4 hover:border-primary/50 transition-colors">
+  <p className="text-xs text-muted-foreground mb-1">{release.date} · {release.outlet}</p>
+  <h3 className="font-semibold text-foreground">{release.title}</h3>
+  </Card>
+  </a>
+  ))}
+  </div>
  </div>
  </section>
 

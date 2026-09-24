@@ -51,8 +51,8 @@ export default function CommunityPage() {
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">100+</div>
-                  <p className="text-sm text-muted-foreground">Databases Checked</p>
+  <div className="text-4xl font-bold text-primary mb-2">AI</div>
+  <p className="text-sm text-muted-foreground">Plain-Language Analysis</p>
                 </CardContent>
               </Card>
               <Card>

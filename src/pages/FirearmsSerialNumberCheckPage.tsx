@@ -155,7 +155,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
  <div className="flex items-center gap-2">
  <CheckCircle className="h-5 w-5 text-primary" />
- <span>our verification Databases Searched</span>
+  <span>HotGunz + Multi-Source Analysis</span>
  </div>
  <div className="flex items-center gap-2">
  <Shield className="h-5 w-5 text-primary" />

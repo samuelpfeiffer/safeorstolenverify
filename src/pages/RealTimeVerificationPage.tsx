@@ -52,8 +52,8 @@ export default function RealTimeVerificationPage() {
  </Card>
  <Card className="text-center">
  <CardContent className="pt-6">
- <div className="text-4xl font-bold text-primary mb-2">100+</div>
- <p className="text-sm text-muted-foreground">Databases Checked</p>
+  <div className="text-4xl font-bold text-primary mb-2">6</div>
+  <p className="text-sm text-muted-foreground">Item Categories</p>
  </CardContent>
  </Card>
  <Card className="text-center">
@@ -64,8 +64,8 @@ export default function RealTimeVerificationPage() {
  </Card>
  <Card className="text-center">
  <CardContent className="pt-6">
- <div className="text-4xl font-bold text-primary mb-2">2.8M+</div>
- <p className="text-sm text-muted-foreground">Items Verified</p>
+  <div className="text-4xl font-bold text-primary mb-2">2</div>
+  <p className="text-sm text-muted-foreground">Free Checks to Start</p>
  </CardContent>
  </Card>
  </div>

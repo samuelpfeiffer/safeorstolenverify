@@ -55,17 +55,17 @@ const PRICING_TIERS = [
 const SELLER_BENEFITS = [
  {
  icon: DollarSign,
- title: 'Command Higher Prices',
- description: 'Verified listings sell for 15–30% more than unverified ones. Buyers pay a premium for peace of mind.',
- stat: '+23%',
- statLabel: 'average price increase',
+  title: 'Give Buyers More Context',
+  description: 'Share a dated verification record so buyers can review what was checked before they purchase.',
+  stat: 'Proof',
+  statLabel: 'shareable verification record',
  },
  {
  icon: Clock,
- title: 'Sell 3x Faster',
- description: 'Buyers skip verified listings less. Fewer "is this stolen?" messages. More instant purchases.',
- stat: '3x',
- statLabel: 'faster sales',
+  title: 'Answer Questions Up Front',
+  description: 'A verification link gives buyers a clear result and the date of the check before they message you.',
+  stat: 'Clear',
+  statLabel: 'buyer-facing result',
  },
  {
  icon: Shield,
@@ -172,7 +172,7 @@ export default function ForSellers() {
  <>
  <PageSEO
  title="For Sellers - Prove Items Are Legitimate, Sell Faster | SafeOrStolen"
- description="Verify items before listing. Get Verified Safe badges for $10/mo unlimited. Sell 3x faster, command 15-30% higher prices on any marketplace. multiple sources checked in 3 seconds."
+  description="Verify items before listing and share a dated result with buyers. Two free checks, then $0.99 per check or $10 per month unlimited."
  keywords="seller verification, prove item not stolen, verified listing badge, sell faster marketplace, verified seller certificate"
  canonical="/for-sellers"
  structuredData={structuredData}
@@ -186,7 +186,7 @@ export default function ForSellers() {
  For Marketplace Sellers
  </div>
  <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
- Sell Items 3x Faster with
+  Build Buyer Trust with
  <br />
  <span className="text-primary">Verified Badges</span>
  </h1>
@@ -214,10 +214,10 @@ export default function ForSellers() {
  <div className="bg-card border-y border-border">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
  {[
- { v: '15-30%', l: 'Higher Sale Price' },
- { v: '3x', l: 'Faster Sales' },
+  { v: '6', l: 'Item Categories' },
+  { v: '2', l: 'Free Checks to Start' },
  { v: '3 sec', l: 'Verification Time' },
- { v: '100+', l: 'Databases Checked' },
+  { v: 'AI', l: 'Plain-Language Analysis' },
  ].map(s => (
  <div key={s.l} className="text-center py-5 px-4">
  <div className="text-2xl font-black text-primary">{s.v}</div>

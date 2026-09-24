@@ -65,7 +65,7 @@ const VERIFY_CARDS = [
  },
  {
  title: 'Electronics, Power Tools & Appliances',
- subtitle: 'Apple, Dell, DeWalt, Milwaukee, Samsung, LG + our verification databases',
+  subtitle: 'Serial checks using SafeOrStolen reports, public web results, and AI analysis',
  href: '/check-laptop',
  image: cardLaptop,
  badge: null,
@@ -206,9 +206,9 @@ const Index = () => {
  <div className="bg-card border-y border-border">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
  {[
- { v: 'our verification', l: 'Databases Checked' },
- { v: '3 sec', l: 'Average Result Time' },
- { v: '6', l: 'Item Categories' },
+  { v: '3 sec', l: 'Average Result Time' },
+  { v: '6', l: 'Item Categories' },
+  { v: 'AI', l: 'Plain-Language Analysis' },
  { v: '2', l: 'Free Checks to Start' },
  ].map((s) => (
  <div key={s.l} className="text-center py-5 px-4">

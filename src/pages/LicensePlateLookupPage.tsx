@@ -91,7 +91,7 @@ const LicensePlateLookupPage = () => {
  },
  {
  question: "Is license plate lookup free?",
- answer: "Yes, SafeOrStolen offers 2 free license plate lookups. We search both DMV registration AND stolen vehicle databases simultaneously."
+  answer: "Yes. SafeOrStolen offers 2 free license plate lookups. We check SafeOrStolen's stolen-item reports, public web results, and AI analysis. We do not access DMV registration records."
  },
  {
  question: "What if the registered owner doesn't match the seller?",
