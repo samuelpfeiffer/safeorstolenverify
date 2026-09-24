@@ -119,7 +119,7 @@
       this._loading = true;
       btn.disabled = true;
       btn.textContent = 'Checking...';
-      result.innerHTML = '<div class="sos-loading"><div class="sos-spinner"></div>Searching 100+ databases...</div>';
+      result.innerHTML = '<div class="sos-loading"><div class="sos-spinner"></div>Checking available sources...</div>';
 
       var apiKey = this.getAttribute('api-key') || 'widget-demo';
       var apiBase = 'https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1';

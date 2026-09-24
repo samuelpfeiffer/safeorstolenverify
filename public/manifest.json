@@ -1,18 +1,27 @@
 {
   "name": "SafeOrStolen - Stolen Item Verification App",
   "short_name": "SafeOrStolen",
-  "description": "Check if any item is stolen before you buy. Verify phones (IMEI), vehicles (VIN), electronics, firearms. Instant barcode scanning. Works offline. Protect buyers AND sellers from fraud.",
+  "description": "Check supported secondhand-item identifiers using SafeOrStolen reports, public web results, and AI analysis. Installable web app with barcode scanning; checks require internet access.",
   "start_url": "/app?source=pwa",
   "id": "com.safeorstolen.app",
   "display": "standalone",
-  "display_override": ["standalone", "window-controls-overlay"],
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ],
   "background_color": "#0d0d0d",
   "theme_color": "#FF6B35",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
   "dir": "ltr",
-  "categories": ["security", "utilities", "productivity", "business", "shopping"],
+  "categories": [
+    "security",
+    "utilities",
+    "productivity",
+    "business",
+    "shopping"
+  ],
   "screenshots": [
     {
       "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
@@ -47,28 +56,48 @@
       "short_name": "IMEI Check",
       "description": "Check if phone is stolen by IMEI",
       "url": "/verify?type=imei&source=shortcut",
-      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Check VIN",
       "short_name": "VIN Check",
       "description": "Check if vehicle is stolen by VIN",
       "url": "/verify?type=vin&source=shortcut",
-      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Scan Barcode",
       "short_name": "Scan",
       "description": "Scan item barcode with camera",
       "url": "/verify?scan=true&source=shortcut",
-      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Verification History",
       "short_name": "History",
       "description": "View your verification history",
       "url": "/dashboard?source=shortcut",
-      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
   "related_applications": [],
