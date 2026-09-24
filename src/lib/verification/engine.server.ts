@@ -425,12 +425,23 @@ export async function checkUsageGate(
     return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - 1 };
   }
 
-  if ((usage.check_count ?? 0) >= FREE_LIMIT) {
+  // Lifetime allowance: 2 free checks total per account, never reset.
+  // Sum every usage row tied to this account so extra rows can't add checks.
+  const { data: allRows } = await admin
+    .from('usage_tracking')
+    .select('check_count')
+    .eq('user_id', userId);
+  const lifetimeUsed = Math.max(
+    usage.check_count ?? 0,
+    (allRows ?? []).reduce((s: number, r: any) => s + (r.check_count ?? 0), 0),
+  );
+
+  if (lifetimeUsed >= FREE_LIMIT) {
     return {
       allowed: false,
       reason: 'free_limit',
       plan: 'free',
-      checksUsed: usage.check_count ?? 0,
+      checksUsed: lifetimeUsed,
       checksLimit: FREE_LIMIT,
     };
   }
