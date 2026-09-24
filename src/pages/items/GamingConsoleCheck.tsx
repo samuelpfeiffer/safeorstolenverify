@@ -64,11 +64,6 @@ const GamingConsoleCheck = () => {
           description: "Switch consoles are portable and easy to steal. Check the serial before buying from unknown sellers."
         }
       ]}
-      testimonial={{
-        quote: "Found a PS5 for $350 on Facebook Marketplace. SafeOrStolen showed it was reported stolen 3 days earlier. The seller disappeared when I asked about it. Saved me from a big mistake!",
-        author: "Tyler B.",
-        role: "SafeOrStolen User, Austin"
-      }}
       faqs={[
         {
           question: "Where do I find the serial number on a PlayStation 5?",

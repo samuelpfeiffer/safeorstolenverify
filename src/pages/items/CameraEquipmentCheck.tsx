@@ -64,11 +64,6 @@ const CameraEquipmentCheck = () => {
           description: "Blackmagic, RED, and Sony cine cameras are extremely valuable. Verify before purchasing used video gear."
         }
       ]}
-      testimonial={{
-        quote: "A photographer reached out to me after I verified a Canon 70-200mm lens - it was their stolen lens! Thanks to SafeOrStolen, they recovered $2,000 worth of equipment and I avoided buying stolen property.",
-        author: "Amanda K.",
-        role: "SafeOrStolen User, Portland"
-      }}
       faqs={[
         {
           question: "Where do I find the serial number on a camera?",

@@ -64,11 +64,6 @@ const CarVINStolenCheck = () => {
  description: "While most dealers check VINs, some don't. Verify any used car purchase, regardless of source."
  }
  ]}
- testimonial={{
- quote: "The BMW 3 Series I found on Craigslist for $8,000 seemed like a steal - turns out it literally was stolen. SafeOrStolen flagged it immediately. I can't imagine what would have happened if I'd bought it.",
- author: "David K.",
- role: "SafeOrStolen User, Chicago"
- }}
  faqs={[
  {
  question: "Where do I find the VIN on a vehicle?",

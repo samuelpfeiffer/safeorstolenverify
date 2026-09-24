@@ -64,11 +64,6 @@ const LaptopSerialCheck = () => {
           description: "Verify corporate laptops weren't stolen from businesses before purchasing from unknown sellers."
         }
       ]}
-      testimonial={{
-        quote: "Found a MacBook Pro M3 for $1,200 on Facebook Marketplace. SafeOrStolen showed it was reported stolen 2 weeks ago. The seller even had a convincing story. So glad I checked first!",
-        author: "Sarah M.",
-        role: "SafeOrStolen User, Seattle"
-      }}
       faqs={[
         {
           question: "Where do I find my laptop's serial number?",

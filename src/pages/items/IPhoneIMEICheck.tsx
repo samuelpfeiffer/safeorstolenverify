@@ -64,11 +64,6 @@ const IPhoneIMEICheck = () => {
  description: "Pawn shops use our service to verify iPhones before accepting them as collateral or purchasing."
  }
  ]}
- testimonial={{
- quote: "Saved me $800! The iPhone 14 Pro I was about to buy on Craigslist came back as stolen. The seller tried to pressure me into buying without checking. So glad I verified first.",
- author: "Michael R.",
- role: "SafeOrStolen User, Los Angeles"
- }}
  faqs={[
  {
  question: "Where do I find the IMEI number on an iPhone?",

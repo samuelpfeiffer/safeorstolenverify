@@ -64,11 +64,6 @@ const PowerToolsCheck = () => {
           description: "Facebook Marketplace and Craigslist are common places for stolen tools. Always verify."
         }
       ]}
-      testimonial={{
-        quote: "Bought a 'used' DeWalt set from Craigslist for $400. After running the serial, found out it was stolen from a construction site a week ago. Returned it to the rightful owner and reported the seller.",
-        author: "Carlos M.",
-        role: "SafeOrStolen User, Houston"
-      }}
       faqs={[
         {
           question: "Where do I find the serial number on power tools?",

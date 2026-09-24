@@ -64,11 +64,6 @@ const SamsungIMEICheck = () => {
  description: "Even mid-range Samsung phones like the Galaxy A54 are frequently stolen. Always verify before buying."
  }
  ]}
- testimonial={{
- quote: "The Galaxy Z Fold I found on OfferUp was too good to be true - and it was. SafeOrStolen showed it was reported stolen. Saved me $1,200!",
- author: "Jennifer T.",
- role: "SafeOrStolen User, Miami"
- }}
  faqs={[
  {
  question: "How do I find the IMEI on a Samsung Galaxy phone?",
