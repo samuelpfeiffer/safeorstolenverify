@@ -19,7 +19,7 @@ const IMEICheckerAppPage = () => {
  {
  icon: Zap,
  title: "3-Second Results",
- description: "Get complete stolen/blacklist status in under 3 seconds from our verification databases"
+  description: "Review SafeOrStolen reports, public web results, and AI analysis in about 3 seconds; check carrier blacklist status separately"
  },
  {
  icon: Shield,
@@ -47,7 +47,7 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is there an app to check IMEI for stolen phones?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. You can scan IMEI barcodes, check against our verification databases, and get results in 3 seconds. The app works on both iOS and Android." }
+  "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen is an installable web app covering phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles. You can scan an IMEI barcode and review SafeOrStolen reports, public web results, and AI analysis in about 3 seconds. Carrier blacklist status must be checked separately." }
  },
  {
  "@type": "Question",
