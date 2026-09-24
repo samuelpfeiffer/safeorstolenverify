@@ -112,9 +112,17 @@ import { Route as HawaiiLicensePlateLookupRouteImport } from './routes/hawaii-li
 import { Route as HawaiiVinLookupRouteImport } from './routes/hawaii-vin-lookup'
 import { Route as HotgunzAlternativeRouteImport } from './routes/hotgunz-alternative'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as HowToCheckIfBikeStolenRouteImport } from './routes/how-to-check-if-bike-stolen'
+import { Route as HowToCheckIfBoatStolenRouteImport } from './routes/how-to-check-if-boat-stolen'
 import { Route as HowToCheckIfCarStolenRouteImport } from './routes/how-to-check-if-car-stolen'
+import { Route as HowToCheckIfGunIsStolenRouteImport } from './routes/how-to-check-if-gun-is-stolen'
 import { Route as HowToCheckIfItemStolenRouteImport } from './routes/how-to-check-if-item-stolen'
+import { Route as HowToCheckIfLaptopStolenRouteImport } from './routes/how-to-check-if-laptop-stolen'
+import { Route as HowToCheckIfLicensePlateStolenRouteImport } from './routes/how-to-check-if-license-plate-stolen'
 import { Route as HowToCheckIfPhoneStolenRouteImport } from './routes/how-to-check-if-phone-stolen'
+import { Route as HowToCheckIfToolsStolenRouteImport } from './routes/how-to-check-if-tools-stolen'
+import { Route as HowToProveItemIsNotStolenRouteImport } from './routes/how-to-prove-item-is-not-stolen'
+import { Route as HowToTellIfMarketplaceItemIsStolenRouteImport } from './routes/how-to-tell-if-marketplace-item-is-stolen'
 import { Route as HowToVerifyAUsedItemRouteImport } from './routes/how-to-verify-a-used-item'
 import { Route as IdahoLicensePlateLookupRouteImport } from './routes/idaho-license-plate-lookup'
 import { Route as IdahoVinLookupRouteImport } from './routes/idaho-vin-lookup'
@@ -279,6 +287,7 @@ import { Route as WashingtonLicensePlateLookupRouteImport } from './routes/washi
 import { Route as WashingtonVinLookupRouteImport } from './routes/washington-vin-lookup'
 import { Route as WestVirginiaLicensePlateLookupRouteImport } from './routes/west-virginia-license-plate-lookup'
 import { Route as WestVirginiaVinLookupRouteImport } from './routes/west-virginia-vin-lookup'
+import { Route as WhatToDoIfYouBoughtSomethingStolenRouteImport } from './routes/what-to-do-if-you-bought-something-stolen'
 import { Route as WisconsinLicensePlateLookupRouteImport } from './routes/wisconsin-license-plate-lookup'
 import { Route as WisconsinVinLookupRouteImport } from './routes/wisconsin-vin-lookup'
 import { Route as WyomingLicensePlateLookupRouteImport } from './routes/wyoming-license-plate-lookup'
@@ -895,9 +904,24 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowToCheckIfBikeStolenRoute = HowToCheckIfBikeStolenRouteImport.update({
+  id: '/how-to-check-if-bike-stolen',
+  path: '/how-to-check-if-bike-stolen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToCheckIfBoatStolenRoute = HowToCheckIfBoatStolenRouteImport.update({
+  id: '/how-to-check-if-boat-stolen',
+  path: '/how-to-check-if-boat-stolen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowToCheckIfCarStolenRoute = HowToCheckIfCarStolenRouteImport.update({
   id: '/how-to-check-if-car-stolen',
   path: '/how-to-check-if-car-stolen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToCheckIfGunIsStolenRoute = HowToCheckIfGunIsStolenRouteImport.update({
+  id: '/how-to-check-if-gun-is-stolen',
+  path: '/how-to-check-if-gun-is-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowToCheckIfItemStolenRoute = HowToCheckIfItemStolenRouteImport.update({
@@ -905,11 +929,40 @@ const HowToCheckIfItemStolenRoute = HowToCheckIfItemStolenRouteImport.update({
   path: '/how-to-check-if-item-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowToCheckIfLaptopStolenRoute =
+  HowToCheckIfLaptopStolenRouteImport.update({
+    id: '/how-to-check-if-laptop-stolen',
+    path: '/how-to-check-if-laptop-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HowToCheckIfLicensePlateStolenRoute =
+  HowToCheckIfLicensePlateStolenRouteImport.update({
+    id: '/how-to-check-if-license-plate-stolen',
+    path: '/how-to-check-if-license-plate-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HowToCheckIfPhoneStolenRoute = HowToCheckIfPhoneStolenRouteImport.update({
   id: '/how-to-check-if-phone-stolen',
   path: '/how-to-check-if-phone-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowToCheckIfToolsStolenRoute = HowToCheckIfToolsStolenRouteImport.update({
+  id: '/how-to-check-if-tools-stolen',
+  path: '/how-to-check-if-tools-stolen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToProveItemIsNotStolenRoute =
+  HowToProveItemIsNotStolenRouteImport.update({
+    id: '/how-to-prove-item-is-not-stolen',
+    path: '/how-to-prove-item-is-not-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HowToTellIfMarketplaceItemIsStolenRoute =
+  HowToTellIfMarketplaceItemIsStolenRouteImport.update({
+    id: '/how-to-tell-if-marketplace-item-is-stolen',
+    path: '/how-to-tell-if-marketplace-item-is-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HowToVerifyAUsedItemRoute = HowToVerifyAUsedItemRouteImport.update({
   id: '/how-to-verify-a-used-item',
   path: '/how-to-verify-a-used-item',
@@ -1764,6 +1817,12 @@ const WestVirginiaVinLookupRoute = WestVirginiaVinLookupRouteImport.update({
   path: '/west-virginia-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhatToDoIfYouBoughtSomethingStolenRoute =
+  WhatToDoIfYouBoughtSomethingStolenRouteImport.update({
+    id: '/what-to-do-if-you-bought-something-stolen',
+    path: '/what-to-do-if-you-bought-something-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const WisconsinLicensePlateLookupRoute =
   WisconsinLicensePlateLookupRouteImport.update({
     id: '/wisconsin-license-plate-lookup',
@@ -2328,9 +2387,17 @@ export interface FileRoutesByFullPath {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
+  '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
+  '/how-to-check-if-gun-is-stolen': typeof HowToCheckIfGunIsStolenRoute
   '/how-to-check-if-item-stolen': typeof HowToCheckIfItemStolenRoute
+  '/how-to-check-if-laptop-stolen': typeof HowToCheckIfLaptopStolenRoute
+  '/how-to-check-if-license-plate-stolen': typeof HowToCheckIfLicensePlateStolenRoute
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
+  '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
+  '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
+  '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
   '/idaho-vin-lookup': typeof IdahoVinLookupRoute
@@ -2495,6 +2562,7 @@ export interface FileRoutesByFullPath {
   '/washington-vin-lookup': typeof WashingtonVinLookupRoute
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
   '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
+  '/what-to-do-if-you-bought-something-stolen': typeof WhatToDoIfYouBoughtSomethingStolenRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -2680,9 +2748,17 @@ export interface FileRoutesByTo {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
+  '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
+  '/how-to-check-if-gun-is-stolen': typeof HowToCheckIfGunIsStolenRoute
   '/how-to-check-if-item-stolen': typeof HowToCheckIfItemStolenRoute
+  '/how-to-check-if-laptop-stolen': typeof HowToCheckIfLaptopStolenRoute
+  '/how-to-check-if-license-plate-stolen': typeof HowToCheckIfLicensePlateStolenRoute
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
+  '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
+  '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
+  '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
   '/idaho-vin-lookup': typeof IdahoVinLookupRoute
@@ -2846,6 +2922,7 @@ export interface FileRoutesByTo {
   '/washington-vin-lookup': typeof WashingtonVinLookupRoute
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
   '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
+  '/what-to-do-if-you-bought-something-stolen': typeof WhatToDoIfYouBoughtSomethingStolenRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3034,9 +3111,17 @@ export interface FileRoutesById {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
+  '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
+  '/how-to-check-if-gun-is-stolen': typeof HowToCheckIfGunIsStolenRoute
   '/how-to-check-if-item-stolen': typeof HowToCheckIfItemStolenRoute
+  '/how-to-check-if-laptop-stolen': typeof HowToCheckIfLaptopStolenRoute
+  '/how-to-check-if-license-plate-stolen': typeof HowToCheckIfLicensePlateStolenRoute
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
+  '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
+  '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
+  '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
   '/idaho-vin-lookup': typeof IdahoVinLookupRoute
@@ -3201,6 +3286,7 @@ export interface FileRoutesById {
   '/washington-vin-lookup': typeof WashingtonVinLookupRoute
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
   '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
+  '/what-to-do-if-you-bought-something-stolen': typeof WhatToDoIfYouBoughtSomethingStolenRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3390,9 +3476,17 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-bike-stolen'
+    | '/how-to-check-if-boat-stolen'
     | '/how-to-check-if-car-stolen'
+    | '/how-to-check-if-gun-is-stolen'
     | '/how-to-check-if-item-stolen'
+    | '/how-to-check-if-laptop-stolen'
+    | '/how-to-check-if-license-plate-stolen'
     | '/how-to-check-if-phone-stolen'
+    | '/how-to-check-if-tools-stolen'
+    | '/how-to-prove-item-is-not-stolen'
+    | '/how-to-tell-if-marketplace-item-is-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
     | '/idaho-vin-lookup'
@@ -3557,6 +3651,7 @@ export interface FileRouteTypes {
     | '/washington-vin-lookup'
     | '/west-virginia-license-plate-lookup'
     | '/west-virginia-vin-lookup'
+    | '/what-to-do-if-you-bought-something-stolen'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -3742,9 +3837,17 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-bike-stolen'
+    | '/how-to-check-if-boat-stolen'
     | '/how-to-check-if-car-stolen'
+    | '/how-to-check-if-gun-is-stolen'
     | '/how-to-check-if-item-stolen'
+    | '/how-to-check-if-laptop-stolen'
+    | '/how-to-check-if-license-plate-stolen'
     | '/how-to-check-if-phone-stolen'
+    | '/how-to-check-if-tools-stolen'
+    | '/how-to-prove-item-is-not-stolen'
+    | '/how-to-tell-if-marketplace-item-is-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
     | '/idaho-vin-lookup'
@@ -3908,6 +4011,7 @@ export interface FileRouteTypes {
     | '/washington-vin-lookup'
     | '/west-virginia-license-plate-lookup'
     | '/west-virginia-vin-lookup'
+    | '/what-to-do-if-you-bought-something-stolen'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4095,9 +4199,17 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-bike-stolen'
+    | '/how-to-check-if-boat-stolen'
     | '/how-to-check-if-car-stolen'
+    | '/how-to-check-if-gun-is-stolen'
     | '/how-to-check-if-item-stolen'
+    | '/how-to-check-if-laptop-stolen'
+    | '/how-to-check-if-license-plate-stolen'
     | '/how-to-check-if-phone-stolen'
+    | '/how-to-check-if-tools-stolen'
+    | '/how-to-prove-item-is-not-stolen'
+    | '/how-to-tell-if-marketplace-item-is-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
     | '/idaho-vin-lookup'
@@ -4262,6 +4374,7 @@ export interface FileRouteTypes {
     | '/washington-vin-lookup'
     | '/west-virginia-license-plate-lookup'
     | '/west-virginia-vin-lookup'
+    | '/what-to-do-if-you-bought-something-stolen'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4450,9 +4563,17 @@ export interface RootRouteChildren {
   HawaiiVinLookupRoute: typeof HawaiiVinLookupRoute
   HotgunzAlternativeRoute: typeof HotgunzAlternativeRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  HowToCheckIfBikeStolenRoute: typeof HowToCheckIfBikeStolenRoute
+  HowToCheckIfBoatStolenRoute: typeof HowToCheckIfBoatStolenRoute
   HowToCheckIfCarStolenRoute: typeof HowToCheckIfCarStolenRoute
+  HowToCheckIfGunIsStolenRoute: typeof HowToCheckIfGunIsStolenRoute
   HowToCheckIfItemStolenRoute: typeof HowToCheckIfItemStolenRoute
+  HowToCheckIfLaptopStolenRoute: typeof HowToCheckIfLaptopStolenRoute
+  HowToCheckIfLicensePlateStolenRoute: typeof HowToCheckIfLicensePlateStolenRoute
   HowToCheckIfPhoneStolenRoute: typeof HowToCheckIfPhoneStolenRoute
+  HowToCheckIfToolsStolenRoute: typeof HowToCheckIfToolsStolenRoute
+  HowToProveItemIsNotStolenRoute: typeof HowToProveItemIsNotStolenRoute
+  HowToTellIfMarketplaceItemIsStolenRoute: typeof HowToTellIfMarketplaceItemIsStolenRoute
   HowToVerifyAUsedItemRoute: typeof HowToVerifyAUsedItemRoute
   IdahoLicensePlateLookupRoute: typeof IdahoLicensePlateLookupRoute
   IdahoVinLookupRoute: typeof IdahoVinLookupRoute
@@ -4617,6 +4738,7 @@ export interface RootRouteChildren {
   WashingtonVinLookupRoute: typeof WashingtonVinLookupRoute
   WestVirginiaLicensePlateLookupRoute: typeof WestVirginiaLicensePlateLookupRoute
   WestVirginiaVinLookupRoute: typeof WestVirginiaVinLookupRoute
+  WhatToDoIfYouBoughtSomethingStolenRoute: typeof WhatToDoIfYouBoughtSomethingStolenRoute
   WisconsinLicensePlateLookupRoute: typeof WisconsinLicensePlateLookupRoute
   WisconsinVinLookupRoute: typeof WisconsinVinLookupRoute
   WyomingLicensePlateLookupRoute: typeof WyomingLicensePlateLookupRoute
@@ -5372,11 +5494,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-to-check-if-bike-stolen': {
+      id: '/how-to-check-if-bike-stolen'
+      path: '/how-to-check-if-bike-stolen'
+      fullPath: '/how-to-check-if-bike-stolen'
+      preLoaderRoute: typeof HowToCheckIfBikeStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-check-if-boat-stolen': {
+      id: '/how-to-check-if-boat-stolen'
+      path: '/how-to-check-if-boat-stolen'
+      fullPath: '/how-to-check-if-boat-stolen'
+      preLoaderRoute: typeof HowToCheckIfBoatStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-to-check-if-car-stolen': {
       id: '/how-to-check-if-car-stolen'
       path: '/how-to-check-if-car-stolen'
       fullPath: '/how-to-check-if-car-stolen'
       preLoaderRoute: typeof HowToCheckIfCarStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-check-if-gun-is-stolen': {
+      id: '/how-to-check-if-gun-is-stolen'
+      path: '/how-to-check-if-gun-is-stolen'
+      fullPath: '/how-to-check-if-gun-is-stolen'
+      preLoaderRoute: typeof HowToCheckIfGunIsStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-check-if-item-stolen': {
@@ -5386,11 +5529,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowToCheckIfItemStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-to-check-if-laptop-stolen': {
+      id: '/how-to-check-if-laptop-stolen'
+      path: '/how-to-check-if-laptop-stolen'
+      fullPath: '/how-to-check-if-laptop-stolen'
+      preLoaderRoute: typeof HowToCheckIfLaptopStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-check-if-license-plate-stolen': {
+      id: '/how-to-check-if-license-plate-stolen'
+      path: '/how-to-check-if-license-plate-stolen'
+      fullPath: '/how-to-check-if-license-plate-stolen'
+      preLoaderRoute: typeof HowToCheckIfLicensePlateStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-to-check-if-phone-stolen': {
       id: '/how-to-check-if-phone-stolen'
       path: '/how-to-check-if-phone-stolen'
       fullPath: '/how-to-check-if-phone-stolen'
       preLoaderRoute: typeof HowToCheckIfPhoneStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-check-if-tools-stolen': {
+      id: '/how-to-check-if-tools-stolen'
+      path: '/how-to-check-if-tools-stolen'
+      fullPath: '/how-to-check-if-tools-stolen'
+      preLoaderRoute: typeof HowToCheckIfToolsStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-prove-item-is-not-stolen': {
+      id: '/how-to-prove-item-is-not-stolen'
+      path: '/how-to-prove-item-is-not-stolen'
+      fullPath: '/how-to-prove-item-is-not-stolen'
+      preLoaderRoute: typeof HowToProveItemIsNotStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-tell-if-marketplace-item-is-stolen': {
+      id: '/how-to-tell-if-marketplace-item-is-stolen'
+      path: '/how-to-tell-if-marketplace-item-is-stolen'
+      fullPath: '/how-to-tell-if-marketplace-item-is-stolen'
+      preLoaderRoute: typeof HowToTellIfMarketplaceItemIsStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-verify-a-used-item': {
@@ -6541,6 +6719,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WestVirginiaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/what-to-do-if-you-bought-something-stolen': {
+      id: '/what-to-do-if-you-bought-something-stolen'
+      path: '/what-to-do-if-you-bought-something-stolen'
+      fullPath: '/what-to-do-if-you-bought-something-stolen'
+      preLoaderRoute: typeof WhatToDoIfYouBoughtSomethingStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wisconsin-license-plate-lookup': {
       id: '/wisconsin-license-plate-lookup'
       path: '/wisconsin-license-plate-lookup'
@@ -7359,9 +7544,18 @@ const rootRouteChildren: RootRouteChildren = {
   HawaiiVinLookupRoute: HawaiiVinLookupRoute,
   HotgunzAlternativeRoute: HotgunzAlternativeRoute,
   HowItWorksRoute: HowItWorksRoute,
+  HowToCheckIfBikeStolenRoute: HowToCheckIfBikeStolenRoute,
+  HowToCheckIfBoatStolenRoute: HowToCheckIfBoatStolenRoute,
   HowToCheckIfCarStolenRoute: HowToCheckIfCarStolenRoute,
+  HowToCheckIfGunIsStolenRoute: HowToCheckIfGunIsStolenRoute,
   HowToCheckIfItemStolenRoute: HowToCheckIfItemStolenRoute,
+  HowToCheckIfLaptopStolenRoute: HowToCheckIfLaptopStolenRoute,
+  HowToCheckIfLicensePlateStolenRoute: HowToCheckIfLicensePlateStolenRoute,
   HowToCheckIfPhoneStolenRoute: HowToCheckIfPhoneStolenRoute,
+  HowToCheckIfToolsStolenRoute: HowToCheckIfToolsStolenRoute,
+  HowToProveItemIsNotStolenRoute: HowToProveItemIsNotStolenRoute,
+  HowToTellIfMarketplaceItemIsStolenRoute:
+    HowToTellIfMarketplaceItemIsStolenRoute,
   HowToVerifyAUsedItemRoute: HowToVerifyAUsedItemRoute,
   IdahoLicensePlateLookupRoute: IdahoLicensePlateLookupRoute,
   IdahoVinLookupRoute: IdahoVinLookupRoute,
@@ -7526,6 +7720,8 @@ const rootRouteChildren: RootRouteChildren = {
   WashingtonVinLookupRoute: WashingtonVinLookupRoute,
   WestVirginiaLicensePlateLookupRoute: WestVirginiaLicensePlateLookupRoute,
   WestVirginiaVinLookupRoute: WestVirginiaVinLookupRoute,
+  WhatToDoIfYouBoughtSomethingStolenRoute:
+    WhatToDoIfYouBoughtSomethingStolenRoute,
   WisconsinLicensePlateLookupRoute: WisconsinLicensePlateLookupRoute,
   WisconsinVinLookupRoute: WisconsinVinLookupRoute,
   WyomingLicensePlateLookupRoute: WyomingLicensePlateLookupRoute,
