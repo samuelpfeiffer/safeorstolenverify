@@ -230,7 +230,7 @@ export default function ForBusinesses() {
  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
  {[
  { value: '11,000+', label: 'US Pawn Shops Addressable' },
- { value: '100+', label: 'Databases Checked' },
+  { value: '6', label: 'Item Categories' },
  { value: '3 sec', label: 'Average Result Time' },
  { value: '$0', label: 'Per-Check Cost' },
  ].map((stat, i) => (

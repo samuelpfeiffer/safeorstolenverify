@@ -100,8 +100,8 @@ export const StateVinPageTemplate = ({
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": `Locate the 17-character VIN on the ${state} vehicle's dashboard, driver-side door jamb, or title document.` },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Enter the VIN into SafeOrStolen's verification tool on the verify page." },
- { "@type": "HowToStep", "position": 3, "name": "Review results", "text": `SafeOrStolen checks the VIN against multiple sources including ${state} theft reports in 3 seconds.` },
- { "@type": "HowToStep", "position": 4, "name": "Make your decision", "text": "Review the verification certificate showing stolen status, title history, and risk assessment before purchasing." }
+  { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "SafeOrStolen checks its stolen-item reports, public web results, and AI analysis in about 3 seconds." },
+  { "@type": "HowToStep", "position": 4, "name": "Make your decision", "text": "Review the result and compare the VIN across the vehicle and its documents before purchasing." }
  ]
  }
  ];
@@ -136,15 +136,15 @@ export const StateVinPageTemplate = ({
  <ol>
  <li>Find the 17-character VIN on the vehicle dashboard, door jamb, or title.</li>
  <li>Enter the VIN into SafeOrStolen's verification tool.</li>
- <li>We check multiple sources including {state} theft reports in 3 seconds.</li>
- <li>Review stolen status, title history, and risk assessment before purchasing.</li>
+ <li>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds.</li>
+ <li>Review the result and compare the VIN across the vehicle and its documents before purchasing.</li>
  </ol>
  
- <h2>What Databases We Search for {state} Vehicles</h2>
+ <h2>What We Check for {state} Vehicles</h2>
  <ul>
- <li>Vehicle theft and title databases - title history</li>
- <li>{state} vehicle registration and title status databases</li>
- <li>SafeOrStolen community reports</li>
+ <li>SafeOrStolen's stolen-item reports</li>
+ <li>Public web results</li>
+ <li>AI analysis of the available information</li>
  </ul>
  
  <h2>Top Cities for Vehicle Theft in {state}</h2>
@@ -178,7 +178,7 @@ export const StateVinPageTemplate = ({
  <li><a href="/pricing">Pricing - From $0.99/check</a></li>
  </ul>
  
- <p>SafeOrStolen checks our verification databases in about 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -266,8 +266,8 @@ export const StateVinPageTemplate = ({
  {[
  `Find the 17-character VIN on the ${state} vehicle's dashboard, door jamb, or title document`,
  "Enter the VIN into SafeOrStolen's free verification tool",
- `We check our verification databases, including in about 3 seconds`,
- "Review stolen status, title history, and risk assessment before purchasing"
+  "We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds",
+  "Review the result and compare the VIN across the vehicle and its documents before purchasing"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-background rounded-lg">
  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
@@ -345,13 +345,12 @@ export const StateVinPageTemplate = ({
  {/* What Databases We Search */}
  <section className="py-16 px-4">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-8">What Databases We Search for {state} Vehicles</h2>
+  <h2 className="text-3xl font-bold mb-8">What We Check for {state} Vehicles</h2>
  <div className="grid md:grid-cols-2 gap-4">
  {[
- { name: 'Vehicle theft and title databases', desc: 'Theft claims, salvage and title records' },
- { name: `${state} DMV`, desc: 'Registration and title status records' },
- { name: `${state} Law Enforcement`, desc: 'Active stolen vehicle reports' },
- { name: 'Insurance Records', desc: 'Claims history across all 50 states' },
+  { name: "SafeOrStolen's stolen-item reports", desc: 'Reports submitted to SafeOrStolen' },
+  { name: 'Public web results', desc: 'Publicly available pages related to the VIN' },
+  { name: 'AI analysis', desc: 'Plain-language analysis of the information found' },
  ].map((db, idx) => (
  <div key={idx} className="flex gap-3 p-4 bg-card rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
@@ -434,7 +433,7 @@ export const StateVinPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
  <p className="text-lg text-muted-foreground mb-8">
- $10/month unlimited VIN verification for {state} vehicles. Quick results from our verification databases.
+  $10/month unlimited VIN verification for {state} vehicles. Results from SafeOrStolen reports, public web results, and AI analysis.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

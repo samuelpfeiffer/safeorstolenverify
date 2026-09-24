@@ -17,7 +17,7 @@ const CheckIfStolenPage = () => {
  'is it stolen'
  ]}
  content={{
- intro: "Enter any identifier to check against our verification databases. SafeOrStolen verifies phones, vehicles, license plates, bicycles, firearms, and serial-numbered goods including electronics, power tools, and appliances. Instant verification for buyers, sellers, and businesses - protect yourself before any secondhand transaction.",
+ intro: "Enter an identifier to check SafeOrStolen reports, public web results, and AI analysis. SafeOrStolen covers phones, vehicles, plates, bicycles, firearms, and serial-numbered electronics, power tools, and appliances.",
  
  whatIs: "Checking if an item is stolen means verifying the item hasn't been reported as lost, stolen, or fraudulently obtained. Every valuable item has a unique identifier - IMEI for phones, VIN for vehicles, serial numbers for electronics, power tools, and appliances. SafeOrStolen checks these identifiers against our own stolen item reports, public web results, and AI analysis to determine if an item is safe to buy.",
  

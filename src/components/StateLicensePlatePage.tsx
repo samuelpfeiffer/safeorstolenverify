@@ -119,15 +119,13 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </header>
  <div>
  <h1>Free {stateData.name} License Plate Lookup</h1>
- <p>Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}multiple sources instantly. Verify any {stateData.abbrev} vehicle isn't stolen before buying.</p>
+ <p>Check SafeOrStolen's stolen-item reports, public web results, and AI analysis before buying a {stateData.abbrev} vehicle.</p>
  
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
- {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
- <li>public web results</li>
- <li>SafeOrStolen reports and public web results</li>
- <li>SafeOrStolen reports and public web results</li>
- <li>Vehicle Title Records records</li>
+ <li>SafeOrStolen's stolen-item reports</li>
+ <li>Public web results</li>
+ <li>AI analysis of the available information</li>
  </ul>
  
  <h2>Why Verify Vehicles in {stateData.name}?</h2>
@@ -147,7 +145,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2>How It Works</h2>
  <ol>
  <li>Enter {stateData.name} license plate number</li>
- <li>We search {stateData.hasTheftDatabase ? stateData.theftDatabaseName + ' + ' : ''}100 databases in 3 seconds</li>
+ <li>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds</li>
  <li>Get instant results — Safe or Stolen</li>
  </ol>
  
@@ -185,7 +183,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Free {stateData.name} License Plate Lookup
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}multiple sources instantly. 
+ Check SafeOrStolen's stolen-item reports, public web results, and AI analysis. 
  Verify any {stateData.abbrev} vehicle isn't stolen before buying. Free license plate lookup for 
  {stateData.majorCities.slice(0, 3).join(', ')} and all of {stateData.name}.
  </p>
@@ -243,31 +241,17 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-bold mb-6">What We Search</h2>
  <div className="grid md:grid-cols-2 gap-4 mb-8">
- {stateData.hasTheftDatabase && (
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">{stateData.theftDatabaseName} ({stateData.name} stolen property database)</span>
- </div>
- )}
- <div className="flex gap-3 p-4 bg-background rounded-lg">
- <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">public web results</span>
+ <span className="text-base">SafeOrStolen's stolen-item reports</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">SafeOrStolen reports and public web results</span>
+ <span className="text-base">Public web results</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">Stolen-property databases</span>
- </div>
- <div className="flex gap-3 p-4 bg-background rounded-lg">
- <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">Vehicle Title Records records</span>
- </div>
- <div className="flex gap-3 p-4 bg-background rounded-lg">
- <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">SafeOrStolen reports and public web results</span>
+ <span className="text-base">AI analysis of the available information</span>
  </div>
  </div>
  <DataPartnerBadges variant="compact" />
@@ -402,7 +386,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="space-y-6">
  {[
  `Enter ${stateData.name} license plate above`,
- `We search ${stateData.hasTheftDatabase ? stateData.theftDatabaseName + ' + ' : ''}100 databases in 3 seconds`,
+  "We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds",
  "Get instant results - Safe or Stolen"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-card rounded-lg">

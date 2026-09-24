@@ -59,11 +59,11 @@ const TexasLicensePlateLookupPage = () => {
  },
  {
  question: "Is Texas license plate lookup really free?",
- answer: "Yes, SafeOrStolen offers 2 free Texas license plate lookups. Our tool searches both Texas DMV registration AND stolen vehicle databases simultaneously. Additional Texas lookups require a paid plan, but our free tier protects casual buyers shopping in the massive Texas used vehicle market."
+ answer: "Yes. SafeOrStolen offers 2 free Texas license plate lookups using its stolen-item reports, public web results, and AI analysis. It does not access Texas DMV registration records. Additional checks are $0.99 each or included with the $10 monthly plan."
  },
  {
  question: "What if the Texas registered owner doesn't match the seller?",
- answer: "If the Texas DMV registered owner name doesn't match the seller's name, this is a MAJOR red flag in Texas transactions. Texas has problems with title jumping (illegal reselling without title transfer) and organized theft rings. The vehicle may be stolen, or the seller doesn't have legal authority to sell. ALWAYS ask why names don't match, request documentation, and walk away if explanations seem suspicious."
+ answer: "SafeOrStolen does not provide registered-owner names. Ask the seller to show identification and title documents, compare the VIN across the vehicle and paperwork, and use the Texas DMV directly for official title guidance. Walk away if the seller cannot document authority to sell the vehicle."
  },
  {
  question: "What are Texas-specific concerns when buying used vehicles?",

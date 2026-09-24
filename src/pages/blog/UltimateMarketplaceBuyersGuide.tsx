@@ -183,7 +183,7 @@ export default function UltimateMarketplaceBuyersGuide() {
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Check Seller Ratings</h4>
                 <p className="text-muted-foreground">
-                  Minimum 98% positive feedback with 100+ transactions. Read negative reviews—patterns of "item not 
+                  Review the seller's feedback history and completed transactions. Read negative reviews—patterns of "item not 
                   as described" or "counterfeit" are major red flags.
                 </p>
               </div>

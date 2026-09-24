@@ -214,7 +214,7 @@ const PricingPage = () => {
  </thead>
  <tbody>
  {[
- { name: 'SafeOrStolen', price: '$0.99/check or $10/mo', dbs: '100+', types: 'All 6', hl: true },
+  { name: 'SafeOrStolen', price: '$0.99/check or $10/mo', dbs: 'Multi-source', types: 'All 6', hl: true },
  { name: 'CheckMEND', price: 'N/A', dbs: 'N/A', types: 'Not integrated', hl: false },
  { name: 'Carfax', price: '$44.99/report', dbs: 'Vehicles', types: 'Cars only', hl: false },
  { name: 'NICB VINCheck', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
@@ -241,7 +241,7 @@ const PricingPage = () => {
  <Link to="/for-sellers" className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition-all">
  <h3 className="font-black text-lg text-foreground mb-2">🏷️ Selling Items?</h3>
  <p className="text-muted-foreground text-sm mb-3">
- Get verified badges to prove items aren't stolen. Sell 3x faster and command higher prices.
+  Get verification records that help buyers review your listing with more context.
  </p>
  <span className="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
  Seller badges included in $10/mo plan <ArrowRight className="w-4 h-4" />

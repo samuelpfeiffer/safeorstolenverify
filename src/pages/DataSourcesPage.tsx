@@ -22,15 +22,15 @@ const FAQ_ITEMS = [
  },
  {
  question: "How often are the databases updated?",
- answer: "SafeOrStolen's verification databases sync regularly with source systems, and community-reported items are reviewed and added typically within 24 hours of verification."
+  answer: "SafeOrStolen checks current information returned by its available sources at the time of each verification."
  },
  {
  question: "Does SafeOrStolen check carrier blacklists for stolen phones?",
- answer: "Yes. SafeOrStolen checks IMEI.info's carrier blacklist records to detect phones reported stolen or lost, in addition to activation lock status."
+  answer: "No. Phone checks provide device details and review SafeOrStolen reports, public web results, and AI analysis, but they do not currently check carrier blacklists or activation-lock status."
  },
  {
  question: "Does SafeOrStolen check for stolen bicycles?",
- answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, along with manufacturer warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes."
+  answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, alongside SafeOrStolen reports, public web results, and AI analysis."
  },
 ];
 
@@ -40,13 +40,13 @@ const DATA_CATEGORIES = [
  icon: Database,
  color: "text-purple-500",
  bgColor: "bg-purple-500/10",
- title: "Carrier & IMEI Blacklists",
- subtitle: "IMEI.info & Carrier Networks",
+  title: "Phone Device Details",
+  subtitle: "IMEI.info and multi-source analysis",
  description: "Mobile carriers often maintain blacklists for phones reported stolen, which can prevent activation on participating networks. SafeOrStolen does not check these blacklists directly, but you can inquire with your carrier about a phone's blacklist status.",
  sources: [
  {
  name: "IMEI.info Database",
- detail: "SafeOrStolen integrates with IMEI.info to check device records, carrier blacklist status, and reported theft or loss for a given IMEI.",
+  detail: "SafeOrStolen uses IMEI.info for device details. It does not currently check carrier blacklist or activation-lock status.",
  link: "/imei-checker"
  },
  {
@@ -62,7 +62,7 @@ const DATA_CATEGORIES = [
  ],
  stats: [
  { value: "IMEI.info", label: "Integrated source" },
- { value: "Multi-carrier", label: "Blacklist checks" },
+  { value: "6", label: "Item categories" },
  ],
  links: [
  { to: "/imei-checker", label: "Check IMEI" },
@@ -77,16 +77,16 @@ const DATA_CATEGORIES = [
  bgColor: "bg-green-500/10",
  title: "Vehicle Theft Records",
  subtitle: "VIN Verification & Title Data",
- description: "Vehicle checks cross-reference VIN numbers against vehicle theft records and title-brand data to help flag vehicles reported stolen or previously salvaged.",
+  description: "Vehicle checks review SafeOrStolen reports, public web results, and AI analysis for information connected to a VIN.",
  sources: [
  {
- name: "Vehicle Theft Records",
- detail: "Checks VIN numbers against records of vehicles reported stolen.",
+  name: "VIN Search Results",
+  detail: "Reviews SafeOrStolen reports and public web results connected to the VIN.",
  link: "/vin-checker"
  },
  {
- name: "Title Brand Data",
- detail: "Helps identify vehicles with salvage, rebuilt, or flood title history.",
+  name: "AI Analysis",
+  detail: "Explains the available results and highlights details a buyer should verify separately.",
  link: "/vin-checker"
  },
  ],
@@ -130,17 +130,12 @@ const DATA_CATEGORIES = [
  bgColor: "bg-blue-500/10",
  title: "Bicycle Theft Registry",
  subtitle: "BikeIndex Community Registry",
- description: "Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, along with manufacturer warranty registries.",
+  description: "Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, alongside SafeOrStolen reports, public web results, and AI analysis.",
  sources: [
  {
  name: "BikeIndex",
  detail: "SafeOrStolen integrates with BikeIndex to check bicycle frame serial numbers against community-reported stolen bikes.",
  link: "/check-bike"
- },
- {
- name: "Manufacturer Warranty & Registration Databases",
- detail: "Cross-referenced with warranty registries for brands including Specialized, Trek, Giant, Cannondale, and Rad Power Bikes.",
- link: "/check-ebike"
  },
  ],
  stats: [
@@ -201,7 +196,7 @@ export default function DataSourcesPage() {
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "SafeOrStolen Stolen Item Verification Database",
- "description": "Aggregated stolen item verification database combining IMEI.info, BikeIndex, HotGunz, and community-reported sources for real-time verification of IMEI numbers, VIN numbers, and serial numbers.",
+  "description": "SafeOrStolen verification information covering phones, vehicles, plates, serial-numbered items, firearms, and bicycles.",
  "publisher": {
  "@type": "Organization",
  "name": "SafeOrStolen",
@@ -227,7 +222,7 @@ export default function DataSourcesPage() {
  return (
  <>
  <Helmet>
- <title>Data Sources — Our Verification Databases | SafeOrStolen</title>
+  <title>Data Sources Used by SafeOrStolen</title>
  <meta name="description" content="SafeOrStolen checks its comprehensive stolen item reports, public web results, and AI analysis. For bicycles, we use BikeIndex, and for firearms, HotGunz. We also use IMEI.info for phone details."/>
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
  <link rel="canonical" href="https://safeorstolen.com/data-sources" />
@@ -251,12 +246,12 @@ export default function DataSourcesPage() {
  Where SafeOrStolen Gets Its Data
  </h1>
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- SafeOrStolen queries <strong>our verification databases simultaneously</strong> — including IMEI.info, BikeIndex, HotGunz, vehicle theft records, and community registries — to verify if items are stolen. Results in approximately 3 seconds.
+  SafeOrStolen checks <strong>its own stolen-item reports, public web results, and AI analysis</strong>. Bicycle checks also use BikeIndex, firearm checks use HotGunz, and phone checks use IMEI.info for device details. Results usually arrive in about 3 seconds.
  </p>
  {/* Semantic TL;DR for AI extraction */}
  <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
  <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
- SafeOrStolen is a consumer protection platform that verifies stolen item status by querying our verification databases including IMEI.info, BikeIndex, HotGunz, vehicle theft records, and community-reported theft data. Free tier: 2 verifications. Source: SafeOrStolen, Peoria, AZ.
+  SafeOrStolen checks six item categories using its own stolen-item reports, public web results, and AI analysis. BikeIndex supports bicycle checks, HotGunz supports firearm checks, and IMEI.info provides phone device details. Free tier: 2 verifications.
  </div>
  <div className="flex flex-wrap justify-center gap-3">
  <Button asChild size="lg">
@@ -418,7 +413,7 @@ export default function DataSourcesPage() {
  <div>
  <h3 className="font-semibold mb-2 text-foreground">Important Accuracy Note</h3>
  <p className="text-sm text-muted-foreground leading-relaxed">
- A "clean" result means the item was not found in our verification databases at the time of the check. It does not guarantee the item is not stolen — an item may have been stolen but not yet reported to any of our sources. Always combine database verification with common-sense safety practices: meet sellers in public places (police station parking lots are ideal), request original purchase receipts, and for high-value items, consult a professional appraiser. SafeOrStolen results are for informational purposes and do not constitute a legal guarantee of ownership.
+  A "clear" result means the item was not found in the sources checked at that time. It does not guarantee the item is not stolen because not every theft is reported or publicly available. Always combine verification with common-sense safety practices: meet sellers in public, request the original receipt, and seek specialist advice for high-value items. SafeOrStolen results are informational and do not guarantee ownership.
  </p>
  </div>
  </div>
@@ -462,10 +457,10 @@ export default function DataSourcesPage() {
  <div className="container mx-auto px-4 text-center">
  <h2 className="text-3xl font-bold mb-4">Run a Free Verification Now</h2>
  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Check any IMEI, VIN, or serial number against our verification databases simultaneously. 2 free verifications — no credit card required.
+  Check an IMEI, VIN, plate, or serial number using SafeOrStolen reports, public web results, and AI analysis. Two free verifications are included.
  </p>
  <p className="text-xs text-muted-foreground mb-2">
- Semantic TL;DR: SafeOrStolen checks our verification databases in real-time including IMEI.info, BikeIndex, HotGunz, and vehicle theft records. Free tier available. Source: SafeOrStolen. Verified: {new Date().toISOString().split('T')[0]}.
+  Semantic TL;DR: SafeOrStolen checks its own reports, public web results, and AI analysis. BikeIndex supports bicycle checks, HotGunz supports firearm checks, and IMEI.info provides phone device details. Verified: {new Date().toISOString().split('T')[0]}.
  </p>
  <Button size="lg" asChild>
  <Link to="/verify">

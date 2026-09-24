@@ -4,7 +4,7 @@ const AndroidPhoneCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Android Phone is Stolen - Free IMEI Verification | SafeOrStolen"
- metaDescription="Verify any Android phone isn't stolen before buying. Free IMEI check for Google Pixel, OnePlus, Motorola, LG. Search our verification databases instantly."
+ metaDescription="Check an Android phone IMEI before buying. SafeOrStolen reviews its reports, public web results, and AI analysis and provides device details."
  h1="Check if Android Phone is Stolen - Free IMEI Check"
  keywords={[
  'android phone stolen check',

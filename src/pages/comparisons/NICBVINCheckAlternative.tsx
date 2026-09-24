@@ -39,7 +39,7 @@ const NICBVINCheckAlternative = () => {
         mobileApp: true,
         instantResults: true,
         freeTier: '2 free checks',
-        database: 'our verification databases',
+        database: 'SafeOrStolen reports, public web results, and AI analysis',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
@@ -149,7 +149,7 @@ const NICBVINCheckAlternative = () => {
                 <CardContent className="space-y-6">
                   <p className="text-lg">
                     SafeOrStolen verifies vehicles plus phones, bikes, tools, and any item with a serial
-                    number — six item types in one platform, checked against our verification databases.
+                    number — six item types in one platform, checked using SafeOrStolen reports, public web results, and AI analysis.
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">

@@ -220,7 +220,7 @@ const TopStolenItemCheckers = () => {
                     <tr className="bg-primary/5">
                       <td className="p-3 font-bold text-primary flex items-center gap-1"><Crown className="w-3 h-3" /> SafeOrStolen</td>
                       <td className="p-3">All (phones, cars, guns, electronics, bikes)</td>
-                      <td className="p-3">100+</td>
+                      <td className="p-3">Multi-source</td>
                       <td className="p-3">$10/mo unlimited</td>
                       <td className="p-3 text-center"><Yes /></td>
                       <td className="p-3">Everything</td>
@@ -311,7 +311,7 @@ const TopStolenItemCheckers = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
-                  <h3 className="font-bold text-sm mb-2">Databases Searched (100+)</h3>
+                  <h3 className="font-bold text-sm mb-2">Sources Checked</h3>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>•  national stolen-firearms registry (32K+ records)</li>
                     <li>• NICB (National Insurance Crime Bureau)</li>
@@ -372,7 +372,7 @@ const TopStolenItemCheckers = () => {
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> Phones only (no cars, guns, etc.)</li>
-                    <li><No /> ~10 databases (vs 100+)</li>
+                    <li><No /> Coverage varies by service and item type</li>
                     <li><No /> No police database access</li>
                   </ul>
                 </div>

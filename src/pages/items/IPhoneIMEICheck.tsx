@@ -22,7 +22,7 @@ const IPhoneIMEICheck = () => {
  itemType="iPhone"
  identifierType="IMEI"
  heroBadge="Apple Device Verification"
- heroSubtitle="Before you buy that used iPhone from Facebook Marketplace, Craigslist, or eBay - verify it's not reported stolen. Our free IMEI checker searches our verification databases instantly."
+ heroSubtitle="Before buying a used iPhone, check its IMEI against SafeOrStolen reports, public web results, and AI analysis, then confirm carrier status separately."
  stats={[
  { value: "1.2M+", label: "iPhones Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
@@ -34,7 +34,7 @@ const IPhoneIMEICheck = () => {
  howItWorksSteps={[
  "Find the iPhone's IMEI: Dial *#06# on the phone, go to Settings > General > About, or check the original box/SIM tray",
  "Enter the 15-digit IMEI number into our free verification tool",
- "Our system instantly searches our verification databases",
+ "Our system checks SafeOrStolen reports, public web results, and AI analysis",
  "Get your results in 3 seconds - see if the iPhone is SAFE or STOLEN"
  ]}
  howItWorksDescription="Our verification checks SafeOrStolen reports, public web results, and AI analysis. We also provide details about the device model. We do not check for outstanding finance. Additionally, we check for indicators of iCloud lock status."

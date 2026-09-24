@@ -41,7 +41,7 @@ const SafeOrStolenVsSwappa = () => {
   const comparisonData = [
     { feature: 'Primary Purpose', safeOrStolen: 'Stolen item verification', swappa: 'Device marketplace', winner: 'tie' },
     { feature: 'Free Searches', safeOrStolen: '2 free (standalone)', swappa: 'Only for listings', winner: 'sos' },
-    { feature: 'Stolen Database', safeOrStolen: '100+ verified items', swappa: 'Basic ESN check', winner: 'sos' },
+    { feature: 'Verification Sources', safeOrStolen: 'Reports, web results, AI', swappa: 'Phone-focused checks', winner: 'tie' },
     { feature: 'Check Without Buying', safeOrStolen: 'Yes', swappa: 'No', winner: 'sos' },
     { feature: 'VIN Check (Cars)', safeOrStolen: 'Yes', swappa: 'No', winner: 'sos' },
     { feature: 'Serial Numbers', safeOrStolen: 'All item types', swappa: 'Phones only', winner: 'sos' },
@@ -425,8 +425,7 @@ const SafeOrStolenVsSwappa = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Which has a bigger stolen item database?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen has 100+ verified stolen items from law enforcement and insurance partners. 
-                      Swappa performs basic phone carrier status checks but doesn't have access to community-reported stolen item data.
+                      SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Swappa's checks serve its marketplace workflow; review each service's current documentation for exact coverage.
                     </p>
                   </CardContent>
                 </Card>

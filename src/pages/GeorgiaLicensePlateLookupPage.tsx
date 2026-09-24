@@ -22,17 +22,17 @@ const GeorgiaLicensePlateLookupPage = () => {
       content={{
         intro: "Georgia experiences notable vehicle theft, with Atlanta accounting for a significant portion of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our stolen item reports and public web results.",
         
-        whatIs: "A Georgia license plate lookup allows you to verify if a vehicle registered in Georgia has been reported stolen, salvaged, or has title issues. By entering the GA license plate number, our system cross-references the Georgia Department of Driver Services (DDS), stolen-property registries, our verification databases, and local stolen-property registries. This verification is essential when purchasing vehicles in Atlanta, Savannah, Augusta, Columbus, and throughout Georgia's active used vehicle market.",
+        whatIs: "A Georgia license plate lookup helps you review information connected to a plate before buying. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not access Georgia DDS registration records, title records, or owner information.",
         
         howItWorks: "Our Georgia license plate lookup works by checking SafeOrStolen's own reported stolen items, analyzing public web results, and using AI analysis. You receive a report showing potential red flags related to theft.",
         
         whyCheck: "Georgia has notable vehicle theft activity, with Atlanta being a hotspot. The I-85 and I-75 corridors are used by theft rings to transport stolen vehicles between states. Georgia's proximity to ports in Savannah makes it a potential target for vehicle export schemes. Additionally, flood-damaged vehicles from coastal storms are sometimes resold with clean titles. Always verify before purchasing any vehicle in Georgia.",
         
         benefits: [
-          "Comprehensive Georgia DDS database coverage",
+          "SafeOrStolen reports and public web results",
           "Atlanta, Savannah, Augusta, and Columbus verification",
-          "Check for salvage, rebuilt, and flood damage titles",
-          "Verify seller is registered owner in Georgia",
+          "Guidance for checking title history separately",
+          "Prompts to compare the plate, VIN, and seller documents",
           "Review SafeOrStolen's own reported stolen items and public web data",
           "Detect cloned plates and VIN switching",
           "Free Georgia license plate lookup"

@@ -216,7 +216,7 @@ export default function VerificationMethodology() {
                 <Card className="p-6 bg-red-50 dark:bg-red-950/20">
                   <h3 className="text-xl font-bold mb-2 text-red-700 dark:text-red-400">STOLEN Status (60-100% Evidence)</h3>
                   <ul className="space-y-1 text-red-900 dark:text-red-100">
-                    <li>✗ Active theft report found in our verification databases</li>
+                    <li>✗ Strong evidence from a checked source identifies the item as stolen</li>
                     <li>✗ Carrier/manufacturer blacklist match</li>
                     <li>✗ Reported lost or stolen by previous owner</li>
                     <li>✗ AI detected high-probability fraud patterns</li>
@@ -267,8 +267,8 @@ export default function VerificationMethodology() {
               <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded-[0.25rem] mb-6">
                 <h3 className="text-xl font-bold mb-3">What SafeOrStolen Cannot Guarantee:</h3>
                 <ul className="space-y-2">
-                  <li><strong>Unreported Thefts:</strong> We can only detect items that have been reported to our verification databases. If a victim has not filed a report, we cannot identify the theft.</li>
-                  <li><strong>Very Recent Thefts:</strong> There can be a delay between a theft being reported and it appearing in our verification databases.</li>
+                  <li><strong>Unreported Thefts:</strong> If a theft was never reported or published in an available source, a check may not find it.</li>
+                  <li><strong>Very Recent Thefts:</strong> New reports may not be available online or in an integrated source immediately.</li>
                   <li><strong>International Items (Limited Coverage):</strong> Our data sources are strongest in the US, Canada, UK, and Australia. Coverage in other countries is limited.</li>
                   <li><strong>Modified Identifiers:</strong> If IMEI, VIN, or serial numbers have been tampered with, verification may fail or return inconclusive results.</li>
                   <li><strong>Private Sales Without Documentation:</strong> Items sold privately without any paper trail are harder to verify conclusively.</li>

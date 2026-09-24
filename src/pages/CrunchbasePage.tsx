@@ -121,7 +121,7 @@ const CrunchbasePage: React.FC = () => {
  </ul>
  
  <h2>What SafeOrStolen Does</h2>
- <p>SafeOrStolen is the "Carfax for Everything" — a universal verification platform that helps buyers and sellers verify items aren't stolen before transacting. The platform is SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place for on-the-spot verification.</p>
+ <p>SafeOrStolen is an AI-powered verification platform that helps buyers and sellers check secondhand items before transacting. It covers phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles.</p>
  <ul>
  <li>IMEI Verification — smartphones and mobile devices</li>
  <li>VIN Lookup — cars, trucks, motorcycles, boats</li>
@@ -143,8 +143,8 @@ const CrunchbasePage: React.FC = () => {
  <li><a href="/about">About SafeOrStolen</a></li>
  <li><a href="/verify">Verify Any Item</a></li>
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
- <li><a href="/data-sources">Our 100+ Data Sources</a></li>
- <li><a href="/app">Download Mobile App</a></li>
+ <li><a href="/data-sources">How Our Checks Work</a></li>
+ <li><a href="/app">Install the Web App</a></li>
  </ul>
  
  <p><a href="https://www.crunchbase.com/organization/safe-or-stolen">View full Crunchbase profile</a></p>
@@ -215,9 +215,9 @@ const CrunchbasePage: React.FC = () => {
  </CardTitle>
  </CardHeader>
  <CardContent>
- <p className="text-3xl font-bold text-primary mb-2">100+</p>
+ <p className="text-3xl font-bold text-primary mb-2">AI</p>
  <p className="text-muted-foreground text-sm">
- Databases checked simultaneously. AI-powered fraud detection with results in 3 seconds.
+ Plain-language analysis alongside SafeOrStolen reports and public web results, usually in about 3 seconds.
  </p>
  </CardContent>
  </Card>
@@ -226,7 +226,7 @@ const CrunchbasePage: React.FC = () => {
  <CardHeader>
  <CardTitle className="flex items-center gap-2 text-lg">
  <Recycle className="h-5 w-5 text-primary" />
- Mobile App
+ Installable Web App
  </CardTitle>
  </CardHeader>
  <CardContent>
@@ -355,8 +355,8 @@ const CrunchbasePage: React.FC = () => {
  <p className="text-sm text-muted-foreground">$10/mo unlimited verifications</p>
  </Link>
  <Link to="/app" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">Mobile App</h3>
- <p className="text-sm text-muted-foreground">Download for iOS & Android</p>
+ <h3 className="font-bold mb-2">Installable Web App</h3>
+ <p className="text-sm text-muted-foreground">Install from a supported browser</p>
  </Link>
  <Link to="/for-businesses" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">For Businesses</h3>

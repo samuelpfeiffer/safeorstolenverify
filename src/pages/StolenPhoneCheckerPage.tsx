@@ -32,7 +32,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "How do I check if a phone is stolen before buying?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker. We verify against our verification databases. Results in 3 seconds."
+ "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen. We check SafeOrStolen reports, public web results, and AI analysis in about 3 seconds. Check carrier blacklist status separately."
  }
  },
  {
@@ -293,7 +293,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
- <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks our verification databases, and costs $0.99/check or $10/month unlimited.</p>
+ <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own reports, public web results, and AI analysis. Checks cost $0.99 each or $10/month unlimited after the free tier.</p>
  </CardContent>
  </Card>
  <Card>

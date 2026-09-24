@@ -38,7 +38,7 @@ export default function TransparencyPage() {
  </div>
  <div className="prose prose-lg max-w-none">
  <p>
- SafeOrStolen aggregates data from our verification databases to provide comprehensive stolen item verification. Here's where we get our data:
+ SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Bicycle checks also use BikeIndex, firearm checks use HotGunz, and phone checks use IMEI.info for device details.
  </p>
  
  <h3>Stolen Property Registries</h3>

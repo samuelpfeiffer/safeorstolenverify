@@ -161,7 +161,7 @@ const NICBAlternativePage = () => {
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Our Verification Databases</h3>
+                <h3 className="font-bold text-lg mb-2">Multi-Source Analysis</h3>
                 <p className="text-muted-foreground">We check SafeOrStolen's own stolen-item reports, public web results and AI analysis across phones, vehicles, serial-numbered items, firearms and bicycles. NICB VINCheck remains a separate free resource worth using.</p>
               </div>
             </div>
@@ -210,7 +210,7 @@ const NICBAlternativePage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Get Unlimited VIN Checks</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Start with 2 free checks, then unlock unlimited checks across our verification databases.
+              Start with 2 free checks, then unlock unlimited checks across all six supported item categories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">

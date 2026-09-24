@@ -210,7 +210,7 @@ const InstallAppPage = () => {
  </div>
  <div className="text-center p-6">
  <Shield className="h-10 w-10 mx-auto text-primary mb-4" />
- <h3 className="font-semibold mb-2">our verification Databases</h3>
+ <h3 className="font-semibold mb-2">Multi-Source Analysis</h3>
  <p className="text-sm text-muted-foreground">SafeOrStolen's own theft reports, public web results, and AI analysis to find potential matches</p>
  </div>
  <div className="text-center p-6">

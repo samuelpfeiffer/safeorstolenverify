@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { FileText, Download, Mail, ExternalLink, Award, Users, Shield, TrendingUp } from 'lucide-react';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 /**
  * Press Page - Real page for /press URL
@@ -17,8 +18,8 @@ const PressPage = () => {
  context: "Phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods"
  },
  {
- metric: "100+",
- label: "Databases Searched",
+  metric: "AI",
+  label: "Plain-Language Analysis",
  context: "By combining our own stolen-item reports, public web results, and AI analysis, SafeOrStolen offers a comprehensive check. We also leverage BikeIndex for bicycles and HotGunz for firearms."
  },
  {
@@ -45,33 +46,6 @@ const PressPage = () => {
  description: "For business and platform integrations"
  }
  ];
-
- const pressReleases = [
- {
- title: 'SafeOrStolen Partners with FasterCapital to Tackle Fraud and Build Trust in the Secondhand Market',
- outlet: 'PRLog',
- date: 'August 11, 2025',
- url: 'https://biz.prlog.org/SafeOrStolen/'
- },
- {
- title: 'SafeOrStolen Partners with FasterCapital to Secure Secondhand Market Worldwide',
- outlet: 'PRLog',
- date: 'September 11, 2025',
- url: 'https://www.prlog.org/13098918-safeorstolen-partners-with-fastercapital-to-secure-secondhand-market-worldwide.html'
- },
-  {
-  title: 'SafeOrStolen Partners with FasterCapital to Launch Web App Platform for Trusted Secondhand Verification',
-  outlet: 'IssueWire',
-  date: 'October 11, 2025',
-  url: 'https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904'
-  },
-  {
-  title: 'SafeOrStolen Launches Free Mobile App for Instant Stolen Item Verification',
-  outlet: 'PRLog',
-  date: 'January 2, 2026',
-  url: 'https://www.prlog.org/13119488-safeorstolen-launches-free-mobile-app-for-instant-stolen-item-verification.html'
-  }
-  ];
 
  const verifiedProfiles = [
  { name: 'Crunchbase', url: 'https://www.crunchbase.com/organization/safe-or-stolen' },
@@ -151,7 +125,7 @@ const PressPage = () => {
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-bold text-center mb-12">Published Press Releases</h2>
  <div className="space-y-6">
- {pressReleases.map((pr, index) => (
+  {PRESS_RELEASES.map((pr, index) => (
  <Card key={index}>
  <CardContent className="pt-6">
  <p className="text-sm text-muted-foreground mb-2">
@@ -228,14 +202,14 @@ const PressPage = () => {
  </p>
  
  <p className="text-lg text-muted-foreground mb-6">
- Our platform searches over 100 databases including global device registries, 
- public reports, web results, and AI analysis
- to provide comprehensive verification in under 3 seconds.
+  Each check combines SafeOrStolen's stolen-item reports, public web results, and AI analysis.
+  Bicycle checks also use BikeIndex, and firearm checks also use HotGunz. Results usually arrive in about 3 seconds.
  </p>
  
  <p className="text-lg text-muted-foreground">
- Founded to protect buyers on Facebook Marketplace, OfferUp, Craigslist, and other 
- secondhand platforms, Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
+  SafeOrStolen was founded to protect buyers and sellers on Facebook Marketplace, OfferUp,
+  Craigslist, and other secondhand platforms. It covers phones, vehicles, license plates,
+  serial-numbered electronics and power tools, firearms, and bicycles in one place.
  </p>
  </div>
  </div>
@@ -250,11 +224,11 @@ const PressPage = () => {
  <Card>
  <CardHeader>
  <TrendingUp className="w-10 h-10 text-primary mb-2" />
- <CardTitle>Product Hunt Featured</CardTitle>
+  <CardTitle>Product Hunt Listing</CardTitle>
  </CardHeader>
  <CardContent>
  <p className="text-muted-foreground mb-4">
- Featured on Product Hunt as a top new product in consumer protection.
+  View SafeOrStolen's public Product Hunt listing.
  </p>
  <Button asChild variant="link" className="px-0">
  <Link to="/product-hunt">View listing →</Link>

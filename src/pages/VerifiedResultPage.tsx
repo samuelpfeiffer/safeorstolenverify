@@ -34,8 +34,8 @@ const VerifiedResultPage: React.FC = () => {
               <span className="text-foreground flex items-center gap-1"><Clock className="w-3 h-3" /> {new Date().toLocaleDateString()}</span>
             </div>
             <div>
-              <span className="text-muted-foreground text-xs uppercase tracking-wider block mb-1">Databases Checked</span>
-              <span className="text-foreground flex items-center gap-1"><Database className="w-3 h-3" /> 100+</span>
+              <span className="text-muted-foreground text-xs uppercase tracking-wider block mb-1">Check Type</span>
+              <span className="text-foreground flex items-center gap-1"><Database className="w-3 h-3" /> Multi-source</span>
             </div>
             <div>
               <span className="text-muted-foreground text-xs uppercase tracking-wider block mb-1">Status</span>

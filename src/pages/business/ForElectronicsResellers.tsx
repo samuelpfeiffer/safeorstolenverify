@@ -90,11 +90,11 @@ const ForElectronicsResellers = () => {
           "White-label options available"
         ]
       }}
-      pricingNote="Volume pricing available for businesses checking 100+ devices per month. Contact us for enterprise rates."
+      pricingNote="Volume pricing is available for businesses with frequent device checks. Contact us for enterprise rates."
       faqs={[
         {
           question: "How many devices can I check?",
-          answer: "Our business plans support unlimited checks. We offer volume pricing for businesses checking 100+ devices monthly."
+          answer: "Our business plans support frequent checks, with volume pricing available for qualifying businesses."
         },
         {
           question: "Do you have an API?",

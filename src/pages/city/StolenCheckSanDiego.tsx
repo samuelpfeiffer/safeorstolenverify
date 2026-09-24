@@ -101,8 +101,8 @@ const StolenCheckSanDiego = () => {
  vehicles are sometimes used on stolen cars.
  </p>
  <p>
- SafeOrStolen checks against multiple databases including police reports, and 
- community reports to help identify potentially stolen items. Our free verification 
+  SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis
+  to help identify potentially stolen items. Verification 
  takes just 3 seconds and could save you from purchasing a stolen vehicle or device.
  </p>
  <h3>SDPD Safe Exchange Zones</h3>

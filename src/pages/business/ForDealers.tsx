@@ -169,7 +169,7 @@ export default function ForDealers() {
  <li>✅ Salesperson accounts with individual tracking</li>
  <li>✅ White-label verification reports (your dealership branding)</li>
  <li>✅ API access for DMS integration</li>
- <li>✅ Bulk VIN verification (upload CSV of 100+ VINs)</li>
+ <li>✅ Bulk VIN verification by CSV</li>
  <li>✅ Priority phone/email support</li>
  <li>✅ Custom verification workflows</li>
  <li>✅ Compliance documentation for state regulators</li>
@@ -251,7 +251,7 @@ export default function ForDealers() {
  </div>
  <div>
  <h3 className="text-xl font-bold mb-2">Can we verify bulk VINs from wholesale purchases?</h3>
- <p className="text-muted-foreground">Yes. Upload a CSV file with 100+ VINs and receive results for all within minutes. Perfect for large wholesale purchases.</p>
+ <p className="text-muted-foreground">Yes. Upload a CSV file of VINs for batch review. Processing time depends on the file size and available sources.</p>
  </div>
  <div>
  <h3 className="text-xl font-bold mb-2">What happens if a vehicle passes verification but is later reported stolen?</h3>

@@ -19,7 +19,7 @@ const EbayBuyerProtection = () => {
  {
  "@type": "HowToStep",
  "name": "Verify with SafeOrStolen",
- "text": "Enter the identifier into SafeOrStolen's free checker to search our verification databases for stolen reports."
+ "text": "Enter the identifier into SafeOrStolen to check its own stolen-item reports, public web results, and AI analysis."
  },
  {
  "@type": "HowToStep",
@@ -123,12 +123,12 @@ const EbayBuyerProtection = () => {
  <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">2</div>
  <div>
  <h3 className="text-xl font-semibold mb-2">Verify with SafeOrStolen</h3>
- <p className="text-muted-foreground mb-4">Enter the identifier into our free verification tool. We check our verification databases including:</p>
+ <p className="text-muted-foreground mb-4">Enter the identifier into SafeOrStolen. We check:</p>
  <ul className="list-disc list-inside text-muted-foreground space-y-2">
  <li>SafeOrStolen's own reported items</li>
  <li>publicly available web information</li>
- <li>Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
- <li>International stolen databases</li>
+ <li>AI analysis of the available information</li>
+ <li>BikeIndex for bicycles and HotGunz for firearms</li>
  </ul>
  </div>
  </div>

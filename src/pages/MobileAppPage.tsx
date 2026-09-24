@@ -180,8 +180,8 @@ const MobileAppPage = () => {
  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
  <div>
  <Database className="h-8 w-8 mx-auto text-primary mb-2" />
- <div className="text-3xl font-bold">100+</div>
- <div className="text-sm text-muted-foreground">Databases Checked</div>
+  <div className="text-3xl font-bold">AI</div>
+  <div className="text-sm text-muted-foreground">Plain-Language Analysis</div>
  </div>
  <div>
  <Clock className="h-8 w-8 mx-auto text-primary mb-2" />

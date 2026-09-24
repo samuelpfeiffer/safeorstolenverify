@@ -8,48 +8,34 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 const AboutPage = () => {
  const dataPartners = [
  {
- name: "Nationwide Stolen Firearms Database",
- type: "Firearms Database Partner",
- description: "Stolen firearms registry - we aggregate their database for firearms verification"
+  name: "SafeOrStolen Reports",
+  type: "All Categories",
+  description: "Stolen-item reports submitted to SafeOrStolen"
  },
  {
- name: "IMEI.info",
- type: "Phone Verification Partner",
- description: "Global IMEI database - we cross-reference phone blacklist and carrier records"
+  name: "Public Web Results",
+  type: "All Categories",
+  description: "Publicly available pages related to the submitted identifier"
  },
  {
- name: "BikeIndex stolen bicycle reports",
- type: "Bicycle Registry Partner",
- description: "1.4M bikes cataloged - direct API integration for bicycle verification"
+  name: "AI Analysis",
+  type: "All Categories",
+  description: "Plain-language analysis of the information returned"
  },
  {
- name: "StolenRegister.com",
- type: "Community Database Partner",
- description: "Global stolen property reports - we scrape and aggregate their listings"
+  name: "BikeIndex",
+  type: "Bicycle Source",
+  description: "Additional bicycle checks through the live BikeIndex integration"
  },
  {
- name: "Stolen911",
- type: "Law Enforcement Partner",
- description: "Police detective-founded service - data sharing partnership"
- },
- {
- name: "public vehicle theft reports and online listings",
- type: "Vehicle Records Partner",
- description: "Official vehicle identification records - VIN verification source"
- },
- {
- name: "Carrier Blacklist Databases",
- type: "Telecom Partners",
- description: "AT&T, Verizon, T-Mobile - IMEI blacklist verification"
- },
- {
- name: "Insurance Claims Networks",
- type: "Insurance Partners",
- description: "Aggregated insurance theft claims for comprehensive coverage"
+  name: "HotGunz",
+  type: "Firearm Source",
+  description: "Additional firearm checks through the live HotGunz integration"
  }
  ];
 
@@ -67,12 +53,12 @@ const AboutPage = () => {
  {
  step: 3,
  title: "AI-Powered Analysis",
- description: "Our algorithms analyze patterns and flag potential matches across our verification databases"
+  description: "Our system analyzes the available information and explains relevant signals in plain language"
  },
  {
  step: 4,
  title: "Human Review",
- description: "All flagged items undergo manual verification by our expert team"
+  description: "Results show the sources checked and any relevant matches"
  },
  {
  step: 5,
@@ -85,7 +71,7 @@ const AboutPage = () => {
  <>
  <PageSEO
  title="About SafeOrStolen - Protecting Buyers and Sellers"
- description="SafeOrStolen protects buyers and sellers from stolen goods. Over $15 billion in stolen items sold annually. Our verification service stops theft globally."
+  description="SafeOrStolen helps buyers and sellers check phones, vehicles, plates, serial-numbered goods, firearms, and bicycles before a secondhand transaction."
  keywords="about SafeOrStolen, stolen item verification company, protect buyers sellers"
  canonical="/about"
  structuredData={[
@@ -98,7 +84,7 @@ const AboutPage = () => {
  "@type": "Organization",
  "name": "SafeOrStolen",
  "alternateName": ["Safe Or Stolen", "SOS"],
- "description": "Protects buyers AND sellers from stolen goods. Mobile app exclusively available from SafeOrStolen.com.",
+  "description": "AI-powered stolen-item verification for buyers and sellers, available as an installable web app.",
  "url": "https://safeorstolen.com",
  "slogan": "Protect Buyers & Sellers - Stop Stolen Goods at the Source"
  }
@@ -122,7 +108,7 @@ const AboutPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>About SafeOrStolen</strong></p>
- <p>Stolen item verification service. Check IMEI, VIN, serial numbers against our verification databases.</p>
+  <p>Stolen-item verification for six categories using SafeOrStolen reports, public web results, and AI analysis.</p>
  </div>
  </noscript>
  <div className="min-h-screen bg-background pt-20">
@@ -149,7 +135,7 @@ const AboutPage = () => {
               </Badge>
  <Badge variant="secondary" className="px-3 py-1">
  <Users className="h-4 w-4 mr-2" />
- 5,000+ Checks Processed
+  Results in About 3 Seconds
  </Badge>
  </div>
  </div>
@@ -175,14 +161,11 @@ const AboutPage = () => {
   </p>
 
  <p className="text-muted-foreground leading-relaxed mb-4">
- SafeOrStolen participated in the Entrepreneurship World Cup 2020.
- </p>
- <p className="text-muted-foreground leading-relaxed mb-4">
  FasterCapital is SafeOrStolen's accelerator/incubator. SafeOrStolen joined the FasterCapital Acceleration Program in 2025.
  </p>
  <div className="border-t pt-4 mt-4">
  <p className="text-muted-foreground text-sm">
- Six item categories · our verification databases · Results in about 3 seconds
+  Six item categories · SafeOrStolen reports, public web results, and AI analysis · Results in about 3 seconds
  </p>
  </div>
  </Card>
@@ -221,11 +204,9 @@ const AboutPage = () => {
  <div className="container mx-auto px-4">
  <div className="text-center mb-8">
  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Press & Media</h2>
- <p className="text-muted-foreground max-w-2xl mx-auto">
- Featured in leading business platforms and trusted by verified reviewers
- </p>
+  <p className="text-muted-foreground max-w-2xl mx-auto">Published company announcements and verified public profiles</p>
  </div>
- <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
  <a
  href="https://www.trustpilot.com/review/safeorstolen.com"
  target="_blank"
@@ -233,7 +214,7 @@ const AboutPage = () => {
  className="group"
  >
  <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
- <div className="text-3xl mb-2">⭐</div>
+  <Award className="h-8 w-8 text-primary mx-auto mb-2" />
  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">Trustpilot</h3>
  <p className="text-sm text-muted-foreground">Read customer reviews</p>
  </Card>
@@ -263,6 +244,16 @@ const AboutPage = () => {
  </Card>
  </a>
  </div>
+  <div className="max-w-5xl mx-auto space-y-3">
+  {PRESS_RELEASES.map((release) => (
+  <a key={release.url} href={release.url} target="_blank" rel="noopener noreferrer" className="block">
+  <Card className="p-4 hover:border-primary/50 transition-colors">
+  <p className="text-xs text-muted-foreground mb-1">{release.date} · {release.outlet}</p>
+  <h3 className="font-semibold text-foreground">{release.title}</h3>
+  </Card>
+  </a>
+  ))}
+  </div>
  </div>
  </section>
 
@@ -270,10 +261,9 @@ const AboutPage = () => {
  <section className="py-12 bg-muted/30">
  <div className="container mx-auto px-4">
  <div className="text-center mb-8">
- <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Our Data Partners</h2>
+  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Sources Used in Our Checks</h2>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- We crawl, scrape, and aggregate data from SafeOrStolen's own reports and publicly available web results,
- stolen property registries, and industry partners
+  Each category uses only the sources shown below.
  </p>
  </div>
  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">

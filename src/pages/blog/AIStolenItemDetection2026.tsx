@@ -142,10 +142,8 @@ const AIStolenItemDetection2026 = () => {
                 and anomalies that human verification could never catch.
               </p>
               <p>
-                SafeOrStolen pioneered AI-powered verification by combining machine learning algorithms 
-                with real-time access to over 100 databases worldwide. Our AI doesn't just check if a 
-                serial number is listed as stolen—it analyzes patterns, cross-references historical data, 
-                and identifies suspicious indicators that suggest an item may be compromised.
+  SafeOrStolen combines its own stolen-item reports, public web results, and AI analysis.
+  The AI reviews the available information and explains relevant risk signals in plain language.
               </p>
             </section>
 

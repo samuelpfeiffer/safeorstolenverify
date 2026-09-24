@@ -59,8 +59,8 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  ];
 
  const benefits = [
- 'Backed by our verification databases',
- 'Real-time verification across our verification databases',
+ 'Checks SafeOrStolen reports and public web results',
+ 'AI analysis explains the available information',
  'Protect yourself from legal consequences',
  'Avoid financial loss from blacklisted items',
  'Perfect for Facebook Marketplace, Craigslist, eBay',

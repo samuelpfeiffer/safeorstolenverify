@@ -12,7 +12,7 @@ export default function FeaturesPage() {
  <>
  <PageSEO
  title="Features - SafeOrStolen Verification Platform"
- description="Explore SafeOrStolen features: installable web app, our verification databases, instant verification, barcode scanning, offline mode, API access. Free 2 checks included."
+  description="Explore SafeOrStolen features: AI-powered checks, marketplace listing analysis, barcode scanning, history, and an installable web app. Two free checks included."
  keywords="SafeOrStolen features, stolen item checker features, IMEI checker features, VIN checker features, installable web app features"
  canonical="/features"
  />
@@ -66,22 +66,22 @@ export default function FeaturesPage() {
  <Card>
  <CardContent className="p-6">
  <Database className="h-12 w-12 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">our verification Databases</h3>
+  <h3 className="text-xl font-bold mb-3">Multi-Source Verification</h3>
  <p className="text-muted-foreground mb-4">
  Check against SafeOrStolen reports, public web results, AI analysis, and relevant specialized databases simultaneously.
  </p>
  <ul className="space-y-2 text-sm">
  <li className="flex items-center gap-2">
  <CheckCircle className="h-4 w-4 text-green-500" />
- Law enforcement records
+  SafeOrStolen stolen-item reports
  </li>
  <li className="flex items-center gap-2">
  <CheckCircle className="h-4 w-4 text-green-500" />
- Carrier blacklists
+  Public web results
  </li>
  <li className="flex items-center gap-2">
  <CheckCircle className="h-4 w-4 text-green-500" />
- Insurance claims
+  AI analysis
  </li>
  </ul>
  </CardContent>

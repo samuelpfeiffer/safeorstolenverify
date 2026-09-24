@@ -163,15 +163,15 @@ const WashingtonDCLicensePlateLookup = () => {
  <ul className="space-y-3">
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>DC DMV registration status and history</span>
+  <span>SafeOrStolen's stolen-item reports</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>SafeOrStolen's analysis and public records</span>
+  <span>Public web results</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>Metropolitan Police Department reports</span>
+  <span>AI analysis of the available information</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />

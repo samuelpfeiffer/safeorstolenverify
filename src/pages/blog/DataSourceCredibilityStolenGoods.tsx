@@ -151,7 +151,7 @@ export default function DataSourceCredibilityStolenGoods() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">How SafeOrStolen Aggregates Data</h2>
             <p className="text-muted-foreground mb-4">
-              SafeOrStolen checks our verification databases simultaneously. Our verification process includes:
+              SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Its verification process includes:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li><strong>IMEI device lookup</strong> to confirm device model and details</li>
@@ -197,7 +197,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <li><strong>Serial number alterations:</strong> Sophisticated thieves remove or alter serial numbers</li>
             </ul>
             <p className="text-muted-foreground mb-8">
-              Checking our verification databases minimizes these gaps, but buyers should still use common sense 
+              Checking multiple available sources can reduce these gaps, but buyers should still use common sense 
               and evaluate other red flags (price too low, seller pressure, no receipt) alongside verification results.
             </p>
 
