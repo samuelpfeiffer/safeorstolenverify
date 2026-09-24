@@ -367,19 +367,12 @@ const PS5StolenCheckGuide = () => {
           </div>
         </section>
 
-        {/* Data Partner Badges */}
-        <section className="px-4 pb-12">
-          <div className="max-w-4xl mx-auto">
-            <DataPartnerBadges variant="compact" />
-          </div>
-        </section>
-
         {/* Final CTA */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Check a PS5?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Get instant verification results in 3 seconds. Protect yourself from buying stolen gaming consoles.
+              Check the console serial against SafeOrStolen reports, public web results, and AI analysis.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

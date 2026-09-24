@@ -28,15 +28,12 @@ const IMEICheckerAppPage = () => {
  },
  {
  icon: Wifi,
- title: "Works Offline",
- description: "Download the database to check IMEIs even without cell service"
+  title: "Installable Web App",
+  description: "Add SafeOrStolen to your home screen from a supported browser; checks require an internet connection"
  }
  ];
 
  const competitors = [
- { name: "CheckMEND", hasApp: false, note: "SafeOrStolen provides comprehensive checks without relying on CheckMEND." },
- { name: "IMEI.info", hasApp: false, note: "Website only" },
- { name: "Swappa", hasApp: false, note: "No standalone IMEI app" },
  { name: "SafeOrStolen", hasApp: true, note: "Full installable web app with barcode scanning" }
  ];
 
@@ -48,11 +45,6 @@ const IMEICheckerAppPage = () => {
  "@type": "Question",
  "name": "Is there an app to check IMEI for stolen phones?",
   "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen is an installable web app covering phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles. You can scan an IMEI barcode and review SafeOrStolen reports, public web results, and AI analysis in about 3 seconds. Carrier blacklist status must be checked separately." }
- },
- {
- "@type": "Question",
- "name": "Does SafeOrStolen use CheckMEND?",
- "acceptedAnswer": { "@type": "Answer", "text": "No, SafeOrStolen does not use CheckMEND. We provide an independent verification service covering phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." }
  },
  {
  "@type": "Question",
@@ -72,7 +64,7 @@ const IMEICheckerAppPage = () => {
  "@type": "SoftwareApplication",
  "name": "SafeOrStolen IMEI Checker",
  "applicationCategory": "UtilitiesApplication",
- "operatingSystem": "iOS, Android",
+  "operatingSystem": "Web",
  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
  };
 

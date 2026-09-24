@@ -8,15 +8,6 @@ import { supabase } from '@/integrations/supabase/client';
 // Static articles for SEO (always shown as fallback + featured)
 const staticArticles = [
   {
-    title: 'Best Stolen Item Checkers 2026: Complete Comparison Guide',
-    slug: 'best-stolen-item-checkers-2026',
-    excerpt: 'Compare popular item verification services. SafeOrStolen offers a unique approach to checking phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
-    category: '2026 Guides',
-    readTime: '12 min',
-    keywords: ['stolen item checker', 'verification service comparison', 'SafeOrStolen alternative'],
-    featured: true
-  },
-  {
     title: 'Carfax and Free VIN Alternatives: Complete 2026 Guide',
     slug: 'carfax-vs-free-vin-alternatives',
     excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives in 2026. Learn which vehicle history service is best for checking if a car is stolen.',
@@ -31,14 +22,6 @@ const staticArticles = [
     category: 'Buying Guides',
     readTime: '8 min',
     keywords: ['phone verification 2026', 'IMEI check', 'stolen phone checker']
-  },
-  {
-    title: 'Verify Stolen Items From Your Phone (2026)',
-    slug: 'checkmend-has-no-app',
-    excerpt: 'Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
-    category: 'Mobile App',
-    readTime: '6 min',
-    keywords: ['stolen item app', 'checkmend alternative', 'mobile verification']
   },
   {
     title: 'How AI is Transforming Stolen Item Detection in 2026',
@@ -136,14 +119,6 @@ const staticArticles = [
     readTime: '9 min',
     keywords: ['theft statistics', 'stolen goods trends', 'crime data']
   },
-  {
-    title: 'Real User Stories: How SafeOrStolen Helped',
-    slug: 'real-user-stories',
-    excerpt: 'True stories from buyers and sellers who avoided scams, financial loss, and legal trouble using SafeOrStolen verification.',
-    category: 'Case Studies',
-    readTime: '8 min',
-    keywords: ['success stories', 'testimonials', 'user experiences']
-  }
 ];
 
 const categories = [
