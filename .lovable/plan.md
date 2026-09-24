@@ -1,41 +1,20 @@
-# First-visit SafeOrStolen product tour
+# Repair damaged public-site copy
 
-## Experience
+## Scope
+- Replace damaged “our verification” and “100+” wording in the shared homepage, feature, firearm, state VIN, and related content sources with truthful source descriptions or supported category/time statistics.
+- Repair the shared state license-plate “What We Search” section once so all state pages list SafeOrStolen reports, public web results, and AI analysis cleanly.
+- Remove unsupported database, volume, sales-lift, speed, DMV, and police-access claims from the named pages. Use the live database total only if it is accurate and appropriate; otherwise remove the volume tile.
+- Centralize the four supplied press releases in one shared list and render that list on press, press-release, about, and any other genuine press-coverage section.
+- Remove unsupported Product Hunt recognition/ranking language. Keep only a verified listing link if one exists; retain Trustpilot without a rating.
+- Hand-fix the named empty-parenthesis and broken-sentence cases at their source. Do not run another bulk rewrite.
 
-Add a four-step walkthrough that opens automatically only on a visitor's first homepage visit:
+## Validation and release
+- Check the changed source for every prohibited phrase and verify the affected pages render naturally.
+- Publish the site.
+- Crawl the live sitemap pages and count each requested phrase in rendered prose, allowing DMV only where it is reader advice.
+- Confirm the live About page lists all four supplied press releases.
 
-1. **Search or ask** — spotlight the homepage composer: “Paste an IMEI, VIN, serial number, or marketplace link here, or just ask a question.”
-2. **Quick starts** — spotlight the existing suggestion buttons: “Or tap one of these to get started.”
-3. **Two free checks** — spotlight the pricing/trust line: “Your first 2 checks are free once you create an account — no credit card needed.”
-4. **Saved history** — spotlight the visible account/dashboard control: “Every check you run is saved in your Dashboard so you can find it again.”
-
-Stop at four steps. The existing page does not have a fifth control that adds enough new value without repeating the marketplace-link or AI messaging already covered.
-
-Each callout will include a short title, description, `1 / 4` progress, an orange **Next** button, and an **X** available at every step. The final action becomes **Got it**. Closing or finishing permanently marks the tour as seen in that browser.
-
-## Visual behavior
-
-- Use the existing dark surfaces, orange semantic tokens, typography, borders, spacing, and Button component.
-- Dim the rest of the page while leaving the current target clear and outlined with an orange focus ring.
-- Anchor the callout beside the highlighted control where space allows; place it above or below on narrow screens so it never covers the target.
-- Smoothly bring off-screen targets into view between steps and recalculate placement after scrolling, resizing, or device rotation.
-- Keep the underlying controls inactive while the tour is open so an accidental tap does not launch a check.
-- Respect reduced-motion preferences and support keyboard focus, Escape-to-close, descriptive labels, and focus restoration.
-
-## Implementation
-
-- Add one small reusable `ProductTour` component using the browser DOM and a portal; no new package is needed.
-- Mount it only on the homepage after browser hydration, avoiding any server-rendering mismatch or flash.
-- Add stable tour markers to the existing homepage composer, suggestion group, free-check line, and account/dashboard navigation areas.
-- For the final step, select whichever marked navigation control is actually visible: desktop Account/Get Started controls or the mobile menu control. The explanation will point users to Dashboard after sign-in; the tour will not navigate away or expose the private dashboard.
-- Store a versioned local flag such as `sos-product-tour-v1-seen`. Dismissal at any step and final completion both set it, so returning visitors are not prompted again.
-- Do not change verification, authentication, pricing, dashboard data, SEO content, or backend behavior.
-
-## Verification
-
-- First clean desktop visit: all four targets are correctly spotlighted; Next advances; Got it closes and stores the flag.
-- First clean mobile visit: each target scrolls into view and the callout stays fully within the screen without overlap.
-- X and Escape close from every step and prevent the tour from reopening on refresh.
-- A returning visit with the seen flag never opens the tour.
-- Keyboard focus stays inside the callout while open and returns safely after dismissal.
-- Existing search, quick actions, sign-in/account navigation, and homepage layout still work after the tour closes.
+## Technical details
+- Prefer shared templates and data modules over per-page edits.
+- Do not edit generated route files or use automated prose generation.
+- Do not resend IndexNow.
