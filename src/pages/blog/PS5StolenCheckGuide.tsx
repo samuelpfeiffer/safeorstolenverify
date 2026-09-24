@@ -2,7 +2,6 @@ import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, AlertTriangle, Shield, Search, Clock, ArrowRight, Gamepad2, AlertCircle } from 'lucide-react';
-import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
@@ -10,7 +9,7 @@ import { blogImages } from '@/assets/blog';
 
 const PS5StolenCheckGuide = () => {
   const publishDate = "2024-12-23";
-  const modifiedDate = "2024-12-23";
+  const modifiedDate = "2026-09-24";
   
   const articleSchema = {
     "@context": "https://schema.org",
@@ -18,11 +17,7 @@ const PS5StolenCheckGuide = () => {
     "headline": "How to Check if a Used PlayStation 5 is Stolen Before Buying",
     "description": "Complete guide to verifying a PS5 isn't stolen before purchasing. Learn how to check serial numbers, spot red flags, and protect yourself from buying stolen gaming consoles.",
     "image": "https://safeorstolen.com/og-image-ps5.png",
-    "author": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com"
-    },
+    "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
     "publisher": {
       "@type": "Organization",
       "name": "SafeOrStolen",
@@ -57,7 +52,7 @@ const PS5StolenCheckGuide = () => {
         "name": "Can I check if a PS5 is stolen before buying?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can check if a PS5 is stolen by entering the serial number at SafeOrStolen.com. Our database searches police reports, user-reported thefts, and retail theft databases to verify if the console has been reported stolen."
+          "text": "You can enter a PS5 serial number at SafeOrStolen to check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Also compare the serial on the console with its settings and any original receipt or box."
         }
       },
       {
@@ -65,7 +60,7 @@ const PS5StolenCheckGuide = () => {
         "name": "What happens if I accidentally buy a stolen PS5?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "If you buy a stolen PS5, police can seize it as evidence with no compensation to you. You could potentially face charges for possession of stolen property. You lose your money with no legal recourse against the seller. Sony may also ban the console from PSN."
+          "text": "Stop using or reselling the console, preserve the listing, messages, serial number, and payment record, then contact local police and your payment provider. Laws and remedies vary by jurisdiction."
         }
       }
     ]
@@ -127,7 +122,7 @@ const PS5StolenCheckGuide = () => {
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-xl font-bold mb-2">Check PS5 Serial Number Instantly</h2>
                     <p className="text-muted-foreground">
-                      Verify any PlayStation 5 isn't stolen in 3 seconds. Enter the serial number to search theft databases.
+                      Enter the serial number to check SafeOrStolen's own reports, public web results, and AI analysis in about 3 seconds.
                     </p>
                   </div>
                   <Link to="/verify">
@@ -151,23 +146,11 @@ const PS5StolenCheckGuide = () => {
             </h2>
             
             <p>
-              Since its launch in November 2020, the PlayStation 5 has been one of the most stolen gaming consoles in history. 
-              The combination of high demand, limited supply (during the chip shortage), and strong resale value made it a 
-              prime target for organized retail theft rings and individual thieves.
+              A used PlayStation 5 is a high-value purchase with a serial number, an online account, and hardware you can inspect.
+              Checking those details before payment can reveal mismatches, copied listings, account problems, and unclear ownership histories.
             </p>
 
-            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 my-8">
-              <h3 className="text-lg font-bold text-destructive mb-4 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5" />
-                PS5 Theft Statistics
-              </h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Gaming consoles are among the top 10 most stolen retail items</li>
-                <li>• PS5 thefts increased 340% during the console shortage era</li>
-                <li>• Many stolen consoles end up on Facebook Marketplace within 24 hours</li>
-                <li>• Organized retail crime rings specifically target gaming sections</li>
-              </ul>
-            </div>
+            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 my-8"><p className="text-muted-foreground">A serial search is only one step. Match the physical console, settings, receipt, seller account, accessories, and listing before paying.</p></div>
 
             <h2 className="flex items-center gap-2 text-2xl font-bold mt-12 mb-6">
               <Search className="w-6 h-6 text-primary" />
@@ -278,8 +261,8 @@ const PS5StolenCheckGuide = () => {
                 <div>
                   <h3 className="font-bold mb-2">Run Final Verification</h3>
                   <p className="text-muted-foreground">
-                    Enter the serial number at SafeOrStolen.com to search theft databases, police reports, 
-                    and user-reported stolen items. Only buy if the report comes back clean.
+                    Enter the serial number at SafeOrStolen.com to check SafeOrStolen's own stolen-item reports,
+                    public web results, and AI analysis. Treat a clean result as one part of your due diligence, not a guarantee.
                   </p>
                 </div>
               </div>
@@ -292,12 +275,12 @@ const PS5StolenCheckGuide = () => {
 
             <div className="grid md:grid-cols-2 gap-4 my-8">
               {[
-                "Price significantly below market value ($200-300 off)",
+                "Price significantly below comparable used consoles",
                 "Seller refuses to provide serial number",
                 "No original box, cables, or controller",
-                "Meeting in unusual locations (parking lots, alleys)",
-                "Seller seems rushed or nervous",
-                "Cash only, no digital payment options",
+                "Seller repeatedly changes the meeting place",
+                "Seller pressures you to skip testing",
+                "Irreversible payment required before inspection",
                 "Seller has multiple consoles for sale",
                 "New account with no history/reviews",
                 "Serial number sticker looks tampered with",
@@ -322,8 +305,8 @@ const PS5StolenCheckGuide = () => {
                 "Original receipt or digital order confirmation",
                 "Controller, cables, and documentation included",
                 "Seller comfortable with verification process",
-                "Reasonable pricing (within 10-15% of market)",
-                "Clean theft check from SafeOrStolen",
+                "Pricing consistent with comparable used consoles",
+                "SafeOrStolen result reviewed as one due-diligence step",
                 "Seller has positive marketplace history"
               ].map((sign, index) => (
                 <div key={index} className="flex gap-2 p-3 bg-green-500/10 rounded-lg">
@@ -351,9 +334,9 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">Can I check if a PS5 is stolen before buying?</h3>
                   <p className="text-muted-foreground">
-                    Yes, you can check if a PS5 is stolen by entering the serial number at SafeOrStolen.com. 
-                    Our database searches police reports, user-reported thefts, and retail theft databases 
-                    to verify if the console has been reported stolen.
+                    Enter the serial number at SafeOrStolen to check SafeOrStolen reports, public web results,
+                    and AI analysis. Also compare the serial on the console with Settings, the box, receipt,
+                    and seller records; SafeOrStolen does not search police or retail-theft databases.
                   </p>
                 </CardContent>
               </Card>
@@ -362,9 +345,8 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">What happens if I accidentally buy a stolen PS5?</h3>
                   <p className="text-muted-foreground">
-                    If you buy a stolen PS5, police can seize it as evidence with no compensation to you. 
-                    You could potentially face charges for possession of stolen property. You lose your money 
-                    with no legal recourse against the seller. Sony may also ban the console from PSN.
+                    Stop using or reselling it, preserve the listing, messages, serial, and payment record, then
+                    contact local police, the marketplace, and your payment provider. Laws and remedies vary.
                   </p>
                 </CardContent>
               </Card>
@@ -373,9 +355,8 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">Can Sony track stolen PS5 consoles?</h3>
                   <p className="text-muted-foreground">
-                    Sony maintains records of console serial numbers and can flag stolen units when they connect 
-                    to PSN. If a console is reported stolen, Sony may ban it from online services. However, 
-                    they generally don't actively track stolen consoles unless law enforcement requests it.
+                    Sony does not provide a public stolen-console serial search. Contact PlayStation Support for
+                    account or console-access problems, and contact police if you believe the console is stolen.
                   </p>
                 </CardContent>
               </Card>
@@ -384,19 +365,12 @@ const PS5StolenCheckGuide = () => {
           </div>
         </section>
 
-        {/* Data Partner Badges */}
-        <section className="px-4 pb-12">
-          <div className="max-w-4xl mx-auto">
-            <DataPartnerBadges variant="compact" />
-          </div>
-        </section>
-
         {/* Final CTA */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Check a PS5?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Get instant verification results in 3 seconds. Protect yourself from buying stolen gaming consoles.
+              Check the console serial against SafeOrStolen reports, public web results, and AI analysis.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

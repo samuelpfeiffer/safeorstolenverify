@@ -38,3 +38,13 @@
 - [x] Remove retired app/video URLs from sitemap sources
 - [x] Validate locally and publish
 - [x] Verify representative live URLs after publishing
+
+# Definitive item-guide consolidation
+
+- [ ] Fix remaining homepage, seller, PS5, and unsupported testimonial copy without empty sections
+- [ ] Retire CheckMEND and unsupported competitor/ranking pages with direct 301 redirects
+- [ ] Keep and fact-check the used-phone buying checklist
+- [ ] Build or upgrade one authoritative question guide and one matching tool per item type
+- [ ] Add `/app/vin-checker` → `/vin-checker` and eliminate redirect chains
+- [ ] Update internal links, sitemap, llms files, metadata, schemas, and prerender snapshots
+- [ ] Validate locally, publish, verify live pages and 301s, and report submission URLs

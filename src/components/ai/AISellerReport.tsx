@@ -80,7 +80,7 @@ export const AISellerReport: React.FC<AISellerReportProps> = ({
           <Badge variant="secondary" className="text-[10px]">PRO</Badge>
         </CardTitle>
         <p className="text-xs text-muted-foreground">
-          Generate a professional verification report to share with buyers. Verified items sell 3x faster.
+          Generate a verification record buyers can review alongside the item identifier and your ownership records.
         </p>
       </CardHeader>
       <CardContent className="space-y-4">

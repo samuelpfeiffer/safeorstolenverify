@@ -16,15 +16,15 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "How much does SafeOrStolen cost?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $10/month for unlimited verifications. All item types — phones, vehicles, electronics, firearms, and more — all databases, cancel anytime. The best value in stolen item verification."
+  answer: "A free account includes 2 checks. Additional checks cost $0.99 each, or $10 per month for unlimited supported checks."
  },
  {
  question: "What items can I verify with SafeOrStolen?",
- answer: "You can verify phones (IMEI), cars (VIN), laptops, power tools, bikes, cameras, electronics, firearms, and almost any item with a serial number. We check across 3,000+ databases including stolen-property records, vehicle title records, and global stolen goods registries."
+  answer: "You can check phones, vehicles, license plates, laptops, power tools, bicycles, cameras, firearms, and other serial-numbered items. Checks use SafeOrStolen reports, public web results, and AI analysis, with Bike Index for bicycles and HotGunz for firearms."
  },
  {
  question: "Do I need to download an app?",
- answer: "Yes! Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Download FREE on iOS (App Store) and Android (Google Play). Our competitors (CheckMend, IMEIinfo) only have websites—no mobile apps!"
+  answer: "No native app download is required. SafeOrStolen is an installable web app that runs in a supported browser and requires an internet connection for checks."
  }
  ]
  },
@@ -42,7 +42,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "What if an item shows 'Safe' but turns out stolen?",
- answer: "While rare (<1.3% error rate), if an item wasn't reported yet or just entered databases, our nightly updates catch it. We offer verification guarantee: if an item verified 'Safe' is proven stolen within 30 days, we'll refund your check cost."
+  answer: "A clear result means no matching stolen report was found in the sources checked at that time. It is not a guarantee; compare the identifier, seller records, physical item, and relevant official resources before buying."
  }
  ]
  },
@@ -60,7 +60,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "Do you offer refunds if I'm not satisfied?",
- answer: "Absolutely! 30-day money-back guarantee on all subscription plans. If you're not 100% satisfied with verification accuracy or service, we'll refund you in full—no questions asked."
+  answer: "Review the published refund policy for current eligibility and contact support with your account and payment details."
  }
  ]
  },
@@ -74,7 +74,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "Do you share verification data with law enforcement?",
- answer: "We partner with police departments but ONLY share aggregated theft trends—never individual user data without a valid legal warrant. Your buyer/seller verification searches are confidential."
+  answer: "SafeOrStolen does not claim police partnerships. Requests for account information are handled under the privacy policy and applicable legal process."
  },
  {
  question: "Can sellers see if I checked their item?",
@@ -88,7 +88,7 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "How fast do I get verification results?",
- answer: "Instant! Most verifications complete in 15-30 seconds. We search 3,000+ databases in real-time. For complex items (vehicles with title history), results may take up to 2 minutes but you'll get a notification."
+  answer: "Response time depends on the sources available for the item. The result page shows the verdict and sources checked when processing completes."
  },
  {
  question: "Can I verify items before meeting a seller in person?",
@@ -96,7 +96,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "What if the seller refuses to provide serial numbers?",
- answer: "🚩 RED FLAG! Legitimate sellers have nothing to hide. If someone won't share the IMEI, VIN, or serial number for verification, walk away. Likely stolen goods. Our app has helped 100K+ buyers avoid scams."
+  answer: "Refusing to share an identifier is a reason not to proceed, but it does not by itself prove the item is stolen. Ask for the identifier, receipt, and an in-person match before paying."
  }
  ]
  }
@@ -146,30 +146,6 @@ export const EnhancedFAQSection = () => {
  </Accordion>
  </Card>
  ))}
- </div>
-
- {/* Quick Stats */}
- <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16 pt-12 border-t border-border">
- <div className="text-center">
- <Clock className="h-8 w-8 text-primary mx-auto mb-2" />
- <div className="text-2xl font-bold text-foreground mb-1">30s</div>
- <div className="text-sm text-muted-foreground">Average Response Time</div>
- </div>
- <div className="text-center">
- <Globe className="h-8 w-8 text-primary mx-auto mb-2" />
- <div className="text-2xl font-bold text-foreground mb-1">50+</div>
- <div className="text-sm text-muted-foreground">Countries Covered</div>
- </div>
- <div className="text-center">
- <Award className="h-8 w-8 text-primary mx-auto mb-2" />
- <div className="text-2xl font-bold text-foreground mb-1">6</div>
- <div className="text-sm text-muted-foreground">Item Categories</div>
- </div>
- <div className="text-center">
- <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
- <div className="text-2xl font-bold text-foreground mb-1">100K+</div>
- <div className="text-sm text-muted-foreground">Users Protected</div>
- </div>
  </div>
 
  {/* Still Have Questions CTA */}

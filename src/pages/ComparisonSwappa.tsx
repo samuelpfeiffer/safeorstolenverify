@@ -458,11 +458,11 @@ const ComparisonSwappa = () => {
  <section className="text-center text-sm text-muted-foreground space-y-2 pb-8">
  <p className="font-medium text-foreground">More Comparisons & Tools</p>
  <div className="flex flex-wrap justify-center gap-3">
- <Link to="/vs-checkmend" className="text-primary hover:underline">SafeOrStolen vs other services</Link>
+ <Link to="/compare" className="text-primary hover:underline">Compare checking resources</Link>
  <span>•</span>
  <Link to="/vs-imeiinfo" className="text-primary hover:underline">SafeOrStolen vs IMEI.info</Link>
  <span>•</span>
- <Link to="/vs-carfax" className="text-primary hover:underline">SafeOrStolen vs Carfax</Link>
+ <Link to="/how-to-check-if-car-stolen" className="text-primary hover:underline">Vehicle checking guide</Link>
  <span>•</span>
  <Link to="/vs-autocheck" className="text-primary hover:underline">SafeOrStolen vs AutoCheck</Link>
  <span>•</span>

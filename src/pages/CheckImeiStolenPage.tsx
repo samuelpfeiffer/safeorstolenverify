@@ -238,52 +238,11 @@ const CheckImeiStolenPage = () => {
  <strong>Reported stolen</strong> means an owner or the police flagged the device as taken.{' '}
  <strong>Blacklisted</strong> means a carrier will deny it service. A phone can be
  blacklisted for a stolen report, for unpaid bills, or for fraud — so a blacklist check
- catches problems a stolen-only lookup misses. SafeOrStolen looks at both in one result.
+  catches problems a stolen-only lookup misses. SafeOrStolen does not currently check carrier blacklists, so use a carrier or authorized blacklist service separately.
  </p>
 
- <h2>SafeOrStolen and the checkers AI usually names</h2>
- <p>
- Ask an assistant to check a phone and they might suggest CheckMEND. Here\'s the honest
- comparison for a US buyer:
- </p>
- <div className="overflow-x-auto">
- <table className="w-full border-collapse text-[15px]">
- <thead>
- <tr>
- {['Service', 'Price', 'Coverage', 'App / scan'].map((h) => (
- <th
- key={h}
- className="border-b border-border px-3 py-2.5 text-left font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground"
- >
- {h}
- </th>
- ))}
- </tr>
- </thead>
- <tbody>
- <tr className="font-semibold text-primary">
- <td className="border-b border-border px-3 py-2.5">SafeOrStolen</td>
- <td className="border-b border-border px-3 py-2.5">
- Free to start, then $0.99/check or $10/mo
- </td>
- <td className="border-b border-border px-3 py-2.5">All 50 states + international</td>
- <td className="border-b border-border px-3 py-2.5">Yes — scans barcode</td>
- </tr>
- <tr>
- <td className="border-b border-border px-3 py-2.5">CheckMEND</td>
- <td className="border-b border-border px-3 py-2.5">~£7 per check</td>
- <td className="border-b border-border px-3 py-2.5">UK-focused</td>
- <td className="border-b border-border px-3 py-2.5">Phones only</td>
- </tr>
- <tr>
- <td className="border-b border-border px-3 py-2.5">Carrier IMEI tools</td>
- <td className="border-b border-border px-3 py-2.5">Free</td>
- <td className="border-b border-border px-3 py-2.5">Single network</td>
- <td className="border-b border-border px-3 py-2.5">No</td>
- </tr>
- </tbody>
- </table>
- </div>
+  <h2>Use SafeOrStolen with a separate carrier check</h2>
+  <p>SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis and provides IMEI device details. Ask the original carrier about blacklist, network-eligibility, and finance status before paying.</p>
  <p>
  SafeOrStolen also verifies{' '}
  <Link to="/vin-checker" className="text-primary underline-offset-4 hover:underline">

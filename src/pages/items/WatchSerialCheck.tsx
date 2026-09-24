@@ -64,11 +64,6 @@ const WatchSerialCheck = () => {
           description: "Buying from individuals carries the highest risk. Never purchase a luxury watch without verification."
         }
       ]}
-      testimonial={{
-        quote: "Was about to wire $15,000 for a Rolex Submariner from an online seller. SafeOrStolen flagged it as stolen in Paris 6 months ago. The seller had all the papers and everything looked legit. This service is invaluable.",
-        author: "Richard H.",
-        role: "SafeOrStolen User, New York"
-      }}
       faqs={[
         {
           question: "Where is the serial number on a Rolex?",

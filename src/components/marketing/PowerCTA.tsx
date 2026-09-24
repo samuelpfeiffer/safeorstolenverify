@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Shield, ArrowRight, CheckCircle, Clock, Star } from 'lucide-react';
+import { Shield, ArrowRight, CheckCircle, Clock } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 
 export const PowerCTA: React.FC = () => {
@@ -16,8 +16,8 @@ export const PowerCTA: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-background/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
-            <Star className="h-4 w-4 fill-current" />
-            <span className="font-semibold">Trusted by 10,000+ Buyers</span>
+            <Shield className="h-4 w-4" />
+            <span className="font-semibold">Two checks included with a free account</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">

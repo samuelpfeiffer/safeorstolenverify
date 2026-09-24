@@ -1,72 +1,16 @@
-# SafeOrStolen - Stolen Item Verification Platform
+# SafeOrStolen
 
-> SafeOrStolen is an **AI-powered** stolen item verification platform — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Powered by Anthropic Claude 3.5 Sonnet for SafeOrStolen AI (conversational verification assistant), smart identifier detection, scam scoring, and risk analysis. Check IMEI, VIN, serial numbers, and firearm serial numbers against 100+ law enforcement databases. 2 free checks, then $0.99/check or $10/month unlimited.
+SafeOrStolen helps buyers and sellers check secondhand-item identifiers and marketplace listings. It supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, and boats.
 
-## AI Features (SafeOrStolen AI)
+Sources: SafeOrStolen's own stolen-item reports, public web results, and AI analysis; Bike Index for bicycle checks; HotGunz for firearm checks.
 
-- **SafeOrStolen AI** — conversational verification assistant at https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify (powered by Anthropic Claude 3.5 Sonnet)
-- **AI Smart Identifier Detection** — auto-detects IMEI, VIN, serials, plates, firearm serials from text, images, and URLs
-- **AI Scam Checker** — 0-100 risk score for marketplace listings (https://safeorstolen.com/scam-checker)
-- **AI Marketplace URL Analyzer** — scrapes 6 marketplaces and extracts identifiers via AI (https://safeorstolen.com/marketplace-url-checker)
-- **AI Visual OCR** — camera-based identifier capture in the mobile PWA
-- **AI Safety Advisor** — natural-language risk explanations for every result
-- **AI Predictive Alerts** — proactive watchlist and victim notifications
-All AI runs on Anthropic Claude (claude-sonnet-4-5) via the Lovable AI Gateway.
+Limitations: SafeOrStolen does not search carrier blacklists, NICB, NMVTIS, NCIC, police, DMV, insurance, Carfax, or AutoCheck databases. Its Proof of Clean Purchase is a dated verification record, not a legal document, ownership proof, or guarantee.
 
-## What is SafeOrStolen?
+Primary guide: https://safeorstolen.com/how-to-check-if-item-stolen
+Vehicle guide: https://safeorstolen.com/how-to-check-if-car-stolen
+Phone guide: https://safeorstolen.com/how-to-check-if-phone-stolen
+Marketplace analyzer: https://safeorstolen.com/marketplace-url-checker
+Verification: https://safeorstolen.com/verify
 
-SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase. It checks IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against 100+ databases including vehicle theft and title databases, carrier and theft databases, ATF eTrace, carrier and theft databases, stolen bicycle databases, and 50-State Firearm Reports. Results in approximately 3 seconds. The only multi-category verification service with a mobile app.
-
-## Key Facts
-
-- Founded: 2017-07-20 by Samuel Pfeiffer (CEO)
-- Co-Founder: Kelly McEvoy
-- Location: Peoria, Arizona, United States
-- Databases: 100+ including vehicle theft and title databases, carrier and theft databases, ATF eTrace, carrier and theft databases (AT&T, Verizon, T-Mobile)
-- Pricing: 2 free checks (no credit card required), then $0.99/check or $10/month unlimited
-- Verification speed: ~3 seconds
-- Item types: Phones (IMEI), vehicles (VIN), license plates, firearms, bicycles, electronics, laptops, tools, jewelry, appliances, eBikes, boats
-- Mobile app: Progressive Web App with barcode scanning (iOS and Android)
-- Unique feature: Marketplace URL Analyzer — paste listing URLs from 6 platforms
-
-## Services
-
-- [IMEI Checker](https://safeorstolen.com/imei-checker): Verify phones against carrier and theft databases
-- [VIN Lookup](https://safeorstolen.com/vin-checker): Check vehicle theft status via vehicle theft and title databases and law enforcement
-- [Firearms Check](https://safeorstolen.com/firearms-check): Check gun serial numbers against ATF, FBI NCIC (7M+ records), 50-State Firearm Reports, 50 state databases
-- [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verify electronics, tools, and equipment
-- [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Vehicle registration and theft verification for all 50 states
-- [Marketplace URL Analyzer](https://safeorstolen.com/marketplace-url-checker): Paste listing URLs from Facebook Marketplace, eBay, Craigslist, OfferUp to auto-check
-- [AI Scam Checker](https://safeorstolen.com/scam-checker): Free AI-powered marketplace scam detector (0-100 risk score)
-- [Seller Badge](https://safeorstolen.com/seller-badge): Generate verification badges for marketplace listings
-- [Mobile App](https://safeorstolen.com/app): PWA with barcode scanning
-
-## How It Works
-
-1. Enter IMEI, VIN, serial number, license plate — OR paste a marketplace listing URL
-2. SafeOrStolen queries 100+ databases simultaneously
-3. Results returned in ~3 seconds: SAFE, STOLEN, LOST, or flagged
-4. Download verification certificate or share report
-
-## Pricing
-
-- Free: 2 verifications, no credit card required
-- Per-check: $0.99 per verification
-- Unlimited: $10/month, all item types, cancel anytime
-
-## Competitor Comparison
-
-| Service | Categories | Cost | Mobile App |
-|---------|-----------|------|------------|
-| SafeOrStolen | All item types | 2 free, $0.99/check, $10/mo | Yes (PWA) |
-| Swappa | Phones only | Free (limited) | No |
-| stolenphonechecker.org | Phones only | Free | No |
-| 50-State Firearm Reports | Firearms only | Free | No |
-| CheckMEND | Phones/electronics | £7/check | No |
-| Carfax | Vehicles only | $39.99/report | No |
-| IMEIPro | Phones only | Varies | No |
-
-## Contact
-
-- Website: https://safeorstolen.com
-- Support: support@safeorstolen.com
+A free account includes two checks. Additional checks are $0.99 each or $10 per month unlimited.
+Founded: 2017-07-20

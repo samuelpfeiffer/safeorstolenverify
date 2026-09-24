@@ -204,7 +204,7 @@ const SitemapPage = () => {
  icon: Scale,
  links: [
  { to: "/compare", label: "Compare All Services" },
- { to: "/vs-checkmend", label: "Why SafeOrStolen doesn't check CheckMEND" },
+ { to: "/compare", label: "Compare checking resources" },
  { to: "/vs-imeiinfo", label: "vs IMEI.info" },
  { to: "/vs-swappa", label: "vs Swappa" },
  { to: "/vs-carfax", label: "vs CARFAX" },
@@ -247,7 +247,6 @@ const SitemapPage = () => {
  { to: "/blog/check-if-phone-stolen-guide", label: "Check Phone Stolen Guide" },
  { to: "/blog/imei-checker-app-download", label: "IMEI App Download" },
  { to: "/blog/theft-trends-report-2024", label: "Theft Trends 2024" },
- { to: "/blog/checkmend-has-no-app", label: "" },
  { to: "/blog/like-carfax-for-phones", label: "Like Carfax For Phones" },
  { to: "/blog/best-ai-llms-2026", label: "Best AI LLMs 2026" },
  { to: "/blog/top-10-stolen-item-checkers", label: "Top 10 Checkers" },

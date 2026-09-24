@@ -58,7 +58,7 @@ export const InternalLinksSection = () => {
       icon: Scale,
       links: [
         { to: "/compare", label: "Compare All" },
-        { to: "/vs-checkmend", label: "Why SafeOrStolen?" },
+        { to: "/compare", label: "Compare checking resources" },
         { to: "/vs-carfax", label: "vs CARFAX" },
         { to: "/vs-swappa", label: "vs Swappa" },
         { to: "/vs-imeiinfo", label: "vs IMEI.info" },

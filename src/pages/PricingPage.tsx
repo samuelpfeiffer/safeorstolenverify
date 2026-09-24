@@ -52,7 +52,7 @@ const PricingPage = () => {
  <div className="min-h-screen bg-background text-foreground pt-20">
  <PageSEO
  title="Pricing — Free Stolen Item Checks, $0.99/Check, or $10/Month Unlimited | SafeOrStolen"
- description="SafeOrStolen pricing: 2 free checks, $0.99 per single check, or $10/month for unlimited verifications. All plans include multiple sources, 3-second results, scam analysis, and seller badges. No hidden fees."
+  description="SafeOrStolen pricing: 2 free checks, $0.99 per single check, or $10/month for unlimited verifications across six supported item categories."
  canonical="/pricing"
  />
 
@@ -87,7 +87,7 @@ const PricingPage = () => {
  {[
  '2 free checks — no credit card required',
  'All item types (phones, cars, bikes, guns, electronics)',
- 'All multiple sources',
+  'SafeOrStolen reports, public web results, and AI analysis',
  '3-second results',
  'Scam risk analysis included',
  ].map((f) => (
@@ -123,10 +123,10 @@ const PricingPage = () => {
  <ul className="space-y-2 flex-1 mb-6">
  {[
  'Single verification — pay only when you need it',
- 'All item types and databases',
+  'All 6 supported item categories',
  '3-second results',
  'Scam risk analysis included',
- 'PDF certificate included',
+  'Proof of Clean Purchase record after a clean check',
  'Shareable verification link',
  'No subscription — no recurring charges',
  ].map((f) => (
@@ -166,10 +166,10 @@ const PricingPage = () => {
  <ul className="space-y-2 flex-1 mb-6">
  {[
  'Unlimited verifications',
- 'All item types and databases',
+  'All 6 supported item categories',
  '3-second results',
  'Scam risk analysis included',
- 'PDF certificates on every check',
+  'Proof of Clean Purchase records after clean checks',
  'Shareable verification links',
  'Seller verification badges included free',
  'Bulk CSV upload',
@@ -194,43 +194,6 @@ const PricingPage = () => {
  <p className="text-center text-xs text-muted-foreground mt-2">
  Saves money after just 3 checks per month. Cancel anytime.
  </p>
- </div>
- </div>
- </div>
-
- {/* Competitor comparison */}
- <div className="max-w-3xl mx-auto px-4 mb-16">
- <div className="bg-card border border-border rounded-2xl p-6">
- <h2 className="text-2xl font-black text-foreground mb-6 text-center">How We Compare</h2>
- <div className="overflow-x-auto">
- <table className="w-full text-sm">
- <thead>
- <tr className="border-b border-border">
- <th className="text-left py-3 pr-4 text-muted-foreground font-medium">Service</th>
- <th className="text-center py-3 px-3 text-muted-foreground font-medium">Price</th>
- <th className="text-center py-3 px-3 text-muted-foreground font-medium">Databases</th>
- <th className="text-center py-3 px-3 text-muted-foreground font-medium">Item Types</th>
- </tr>
- </thead>
- <tbody>
- {[
-  { name: 'SafeOrStolen', price: '$0.99/check or $10/mo', dbs: 'Multi-source', types: 'All 6', hl: true },
- { name: 'CheckMEND', price: 'N/A', dbs: 'N/A', types: 'Not integrated', hl: false },
- { name: 'Carfax', price: '$44.99/report', dbs: 'Vehicles', types: 'Cars only', hl: false },
- { name: 'NICB VINCheck', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
- { name: 'Stolen Firearms Databases', price: 'Free (limited)', dbs: '1', types: 'Firearms', hl: false },
- ].map((r) => (
- <tr key={r.name} className={`border-b border-border/50 ${r.hl ? 'bg-primary/5' : ''}`}>
- <td className={`py-3 pr-4 font-semibold ${r.hl ? 'text-primary' : 'text-muted-foreground'}`}>
- {r.name} {r.hl && '←'}
- </td>
- <td className="py-3 px-3 text-center text-muted-foreground">{r.price}</td>
- <td className="py-3 px-3 text-center text-muted-foreground">{r.dbs}</td>
- <td className="py-3 px-3 text-center text-muted-foreground">{r.types}</td>
- </tr>
- ))}
- </tbody>
- </table>
  </div>
  </div>
  </div>
@@ -307,7 +270,7 @@ const PricingPage = () => {
  "@context": "https://schema.org",
  "@type": "Product",
  "name": "SafeOrStolen Verification",
- "description": "2 free checks, then $0.99 per check or $10/month unlimited stolen item verification — phones, cars, guns, electronics & more. multiple sources. 3-second results.",
+  "description": "2 free checks, then $0.99 per check or $10/month unlimited verification across six supported item categories.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },

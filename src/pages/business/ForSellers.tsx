@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, ArrowRight, Star, DollarSign, Clock, FileText, Share2, BadgeCheck, TrendingUp, Users, Lock, Crown, Rocket, Loader2 } from 'lucide-react';
+import { Shield, CheckCircle, ArrowRight, DollarSign, Clock, BadgeCheck, Users, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { redirectToStripe } from '@/utils/stripeRedirect';
@@ -69,15 +69,15 @@ const SELLER_BENEFITS = [
  },
  {
  icon: Shield,
- title: 'Legal Protection',
- description: 'A documented verification proves due diligence. If a buyer later claims the item was stolen, you have timestamped proof you checked.',
- stat: '100%',
- statLabel: 'documented diligence',
+  title: 'Keep a Dated Record',
+  description: 'A Proof of Clean Purchase records when the identifier was checked and what the result showed at that time.',
+  stat: 'Dated',
+  statLabel: 'record of the check',
  },
  {
  icon: Users,
  title: 'Build Buyer Trust',
- description: 'Repeat buyers come back to sellers they trust. A "Verified Safe" badge tells them you\'re the real deal.',
+  description: 'A shareable result lets a buyer review the check directly instead of relying on a screenshot or sales claim.',
  stat: 'Proof',
  statLabel: 'shareable verification record',
  },
@@ -87,18 +87,12 @@ const HOW_IT_WORKS = [
  { step: '1', title: 'Verify Your Item', description: 'Enter the IMEI, VIN, or serial number of the item you\'re selling. Our AI auto-detects the identifier type.' },
  { step: '2', title: 'Get Your Certificate', description: 'We check SafeOrStolen reports, public web results, and analyze data using AI. Bicycles are checked against BikeIndex, and firearms against HotGunz. We also perform an IMEI device lookup for phones.' },
  { step: '3', title: 'Share With Buyers', description: 'Download a PDF certificate or share a unique verification link. The last 4 digits of identifiers are shown for privacy.' },
- { step: '4', title: 'Close the Deal Faster', description: 'Buyers see verified proof, skip the interrogation, and pay full price. You sell faster with zero friction.' },
+  { step: '4', title: 'Answer Buyer Questions', description: 'Invite buyers to review the dated result, compare the identifier in person, and run their own check before paying.' },
 ];
 
 const MARKETPLACE_PLATFORMS = [
  'Facebook Marketplace', 'eBay', 'Craigslist', 'OfferUp', 'Mercari', 'Poshmark',
  'Swappa', 'Amazon Marketplace', 'Gun Broker', 'AutoTrader', 'CarGurus', 'BikeExchange'
-];
-
-const TESTIMONIALS = [
- { quote: 'Sold my iPhone in 2 days instead of 2 weeks. The verified badge made all the difference.', name: 'Sarah M.', role: 'Marketplace Seller' },
- { quote: 'Got $150 more because buyers trusted the badge. Best $10/mo I ever spent.', name: 'Mike T.', role: 'Electronics Reseller' },
- { quote: 'No more "is this stolen?" messages. Buyers just buy. Game changer.', name: 'Jessica L.', role: 'OfferUp Seller' },
 ];
 
 const FAQS = [
@@ -147,7 +141,7 @@ export default function ForSellers() {
  "serviceType": "Item Verification for Sellers",
  "provider": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
  "areaServed": "United States",
- "description": "Verify items before selling to prove legitimacy, build buyer trust, and command higher prices.",
+  "description": "Verify items before selling and share a dated result so buyers can review the check themselves.",
  "offers": [
  { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited monthly plan" },
  ],
@@ -191,8 +185,8 @@ export default function ForSellers() {
  <span className="text-primary">Verified Badges</span>
  </h1>
  <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
- Prove your items aren't stolen. Build buyer trust. Close deals faster.
- A SafeOrStolen badge <strong className="text-foreground">eliminates doubt, prevents lowball offers, and closes deals faster</strong>.
+  Give buyers a dated verification result they can review before paying.
+  A SafeOrStolen record <strong className="text-foreground">helps answer legitimacy questions without making promises a check cannot support</strong>.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
  <Button asChild size="lg" className="gap-2 font-bold text-base px-8 py-6">
@@ -231,10 +225,10 @@ export default function ForSellers() {
  <section className="py-20 px-4">
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-black text-center mb-4">Why Buyers Don't Trust You (Yet)</h2>
- <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">Without proof, buyers assume the worst. Here's what happens:</p>
+  <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">Used-item buyers often need more than a listing description before they feel ready to proceed.</p>
  <div className="grid md:grid-cols-3 gap-6 mb-10">
  {[
- { emoji: '❌', title: 'No proof item isn\'t stolen', desc: 'Buyers scroll past your listing to verified ones.' },
+  { emoji: '❌', title: 'No identifier to review', desc: 'Buyers cannot independently check the exact item.' },
  { emoji: '😰', title: 'Could be a scam', desc: 'Especially on Facebook Marketplace and Craigslist.' },
  { emoji: '⚖️', title: 'Legal concerns', desc: 'Buying stolen property is a crime — buyers know this.' },
  ].map(p => (
@@ -245,8 +239,8 @@ export default function ForSellers() {
  </div>
  ))}
  </div>
- <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6 text-center">
- <p className="text-foreground font-bold">Result: Items sit unsold for weeks. Low offers. Constant haggling. 📉</p>
+  <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6 text-center">
+  <p className="text-foreground font-bold">Clear identifiers, honest condition details, and a dated check give buyers better information.</p>
  </div>
  </div>
  </section>
@@ -255,8 +249,8 @@ export default function ForSellers() {
  <section className="py-20 px-4 bg-muted/30">
  <div className="max-w-6xl mx-auto">
  <div className="text-center mb-14">
- <h2 className="text-3xl font-black mb-3">Why Smart Sellers Verify First</h2>
- <p className="text-muted-foreground max-w-2xl mx-auto">Verified Badge = Instant Trust. Buyers see proof → Trust you → Buy faster.</p>
+  <h2 className="text-3xl font-black mb-3">Why Sellers Verify Before Listing</h2>
+  <p className="text-muted-foreground max-w-2xl mx-auto">A dated result gives buyers a concrete starting point for their own due diligence.</p>
  </div>
  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
  {SELLER_BENEFITS.map(b => (
@@ -266,27 +260,6 @@ export default function ForSellers() {
  <div className="text-xs text-muted-foreground mb-3">{b.statLabel}</div>
  <h3 className="text-foreground font-bold mb-2">{b.title}</h3>
  <p className="text-muted-foreground text-sm leading-relaxed">{b.description}</p>
- </div>
- ))}
- </div>
- </div>
- </section>
-
- {/* Testimonials */}
- <section className="py-16 px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-2xl font-black text-center mb-10">Verified Sellers Report</h2>
- <div className="grid md:grid-cols-3 gap-6">
- {TESTIMONIALS.map(t => (
- <div key={t.name} className="bg-card border border-border rounded-xl p-6">
- <div className="flex gap-1 mb-3">
- {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
- </div>
- <p className="text-foreground text-sm mb-4 italic">"{t.quote}"</p>
- <div className="text-sm">
- <span className="font-bold text-foreground">{t.name}</span>
- <span className="text-muted-foreground"> · {t.role}</span>
- </div>
  </div>
  ))}
  </div>
@@ -396,26 +369,6 @@ export default function ForSellers() {
  </div>
  </section>
 
- {/* Social Proof Stats */}
- <section className="py-16 px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-2xl font-black text-center mb-8">Verified Sellers Report</h2>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
- {[
- { v: '3x', l: 'Faster sales' },
- { v: '+20%', l: 'Higher offers' },
- { v: '90%', l: 'Fewer lowball offers' },
- { v: '50%', l: 'Less haggling' },
- ].map(s => (
- <div key={s.l} className="bg-card border border-border rounded-xl p-5 text-center">
- <div className="text-2xl font-black text-primary">{s.v}</div>
- <div className="text-muted-foreground text-xs mt-1">{s.l}</div>
- </div>
- ))}
- </div>
- </div>
- </section>
-
  {/* Trust Signals */}
  <section className="py-16 px-4 bg-muted/30">
  <div className="max-w-4xl mx-auto text-center">
@@ -451,9 +404,9 @@ export default function ForSellers() {
  {/* Final CTA */}
  <section className="py-20 px-4 bg-primary text-primary-foreground">
  <div className="max-w-3xl mx-auto text-center">
- <h2 className="text-3xl font-black mb-4">Stop Leaving Money on the Table.</h2>
+  <h2 className="text-3xl font-black mb-4">Give Buyers Something They Can Check.</h2>
  <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
- Verified listings sell faster and for more. Your first 2 verifications are free — prove your items are legitimate and close deals with confidence.
+  Share a dated verification record, disclose the identifier, and encourage buyers to confirm it in person. Your first 2 verifications are free.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg" variant="secondary" className="font-bold text-base px-8 py-6">

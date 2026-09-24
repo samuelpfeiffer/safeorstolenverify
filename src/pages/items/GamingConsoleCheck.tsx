@@ -4,7 +4,7 @@ const GamingConsoleCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen"
-      metaDescription="Verify PlayStation 5, Xbox Series X, Nintendo Switch isn't stolen. Free serial number check against our verification databases. Instant results before buying used consoles."
+      metaDescription="Check a PlayStation, Xbox, or Nintendo serial using SafeOrStolen reports, public web results, and AI analysis before buying."
       h1="Check if Gaming Console is Stolen - Free Verification"
       keywords={[
         'check if ps5 is stolen',
@@ -64,11 +64,6 @@ const GamingConsoleCheck = () => {
           description: "Switch consoles are portable and easy to steal. Check the serial before buying from unknown sellers."
         }
       ]}
-      testimonial={{
-        quote: "Found a PS5 for $350 on Facebook Marketplace. SafeOrStolen showed it was reported stolen 3 days earlier. The seller disappeared when I asked about it. Saved me from a big mistake!",
-        author: "Tyler B.",
-        role: "SafeOrStolen User, Austin"
-      }}
       faqs={[
         {
           question: "Where do I find the serial number on a PlayStation 5?",

@@ -69,7 +69,7 @@ const CheckCarPage = () => {
  },
  {
  question: "Can a salvage or rebuilt title car be safe to buy?",
- answer: "Salvage/rebuilt titles mean the vehicle was declared a total loss by insurance (usually from major accident, flood, or theft recovery). These vehicles CAN be safe IF properly repaired and inspected, but be very cautious: (1) Have a trusted mechanic inspect it thoroughly, (2) Get a detailed repair history, (3) Be aware salvage vehicles are worth 20-50% less than clean title vehicles, (4) Some insurance companies won't cover salvage vehicles, (5) Financing is difficult. Our checker flags salvage titles so you know what you're buying. Never pay clean title prices for salvage vehicles."
+ answer: "A salvage or rebuilt brand can reflect a prior total-loss event. Ask the seller for title and repair records, obtain an NMVTIS report from an approved provider, arrange an independent inspection, and ask your insurer and lender about their requirements before agreeing to buy."
  }
  ]
  }}

@@ -1,102 +1,43 @@
 # SafeOrStolen
 
-> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items (by serial number), firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app. Checks cover SafeOrStolen's own stolen-item reports, public web results, and AI analysis (SafeOrStolen AI), with results in about 3 seconds. Marketplace listing links can also be checked. 2 free checks with a free account, then $0.99/check or $10/month unlimited.
+> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Checks use SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Bicycle checks also query Bike Index, and firearm checks also query HotGunz. SafeOrStolen does not search carrier blacklists, NICB, NMVTIS, NCIC, police, insurance, or DMV databases.
 
-## AI Capabilities (SafeOrStolen AI)
+## Core tools
+- [Verify an item](https://safeorstolen.com/verify)
+- [IMEI checker](https://safeorstolen.com/imei-checker)
+- [VIN checker](https://safeorstolen.com/vin-checker)
+- [Serial-number checker](https://safeorstolen.com/serial-number-checker)
+- [Firearm checker](https://safeorstolen.com/firearms-check)
+- [Bicycle checker](https://safeorstolen.com/check-bike)
+- [License-plate lookup](https://safeorstolen.com/license-plate-lookup)
+- [Marketplace URL analyzer](https://safeorstolen.com/marketplace-url-checker)
 
-SafeOrStolen is fully AI-powered. Core AI features:
-- **SafeOrStolen AI Chat** (https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify) — conversational verification assistant. Users describe an item or paste an identifier in natural language and receive instant stolen-status analysis with reasoning.
-- **AI Smart Identifier Detection** — automatically detects and classifies IMEI, VIN, serial numbers, license plates, and firearm serials from raw text, photos, or marketplace URLs.
-- **AI Scam Checker** (https://safeorstolen.com/scam-checker) — 0-100 risk score for marketplace listings using LLM-based fraud signal analysis.
-- **AI Marketplace URL Analyzer** (https://safeorstolen.com/marketplace-url-checker) — scrapes Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark listings and uses AI to extract identifiers, then checks them.
-- **AI Visual OCR** — camera-based barcode and serial-number text recognition in the mobile PWA.
-- **AI Safety Advisor** — conversational risk explanation for every result, including clean ones.
-- **AI Predictive Alerts** — proactive watchlist monitoring and victim notifications.
-- **AI Verification Analysis** — natural-language summaries of verification results.
+## Definitive guides
+- [How to check if any item is stolen](https://safeorstolen.com/how-to-check-if-item-stolen)
+- [How to check if a vehicle is stolen](https://safeorstolen.com/how-to-check-if-car-stolen)
+- [How to check if a phone is stolen](https://safeorstolen.com/how-to-check-if-phone-stolen)
+- [How to check if an iPhone is stolen](https://safeorstolen.com/blog/how-to-check-if-iphone-stolen)
+- [Used-phone buying checklist](https://safeorstolen.com/blog/buying-used-phone-checklist)
+- [How to check if a firearm is stolen](https://safeorstolen.com/how-to-check-if-gun-is-stolen)
+- [How to check if a bicycle or e-bike is stolen](https://safeorstolen.com/how-to-check-if-bike-stolen)
+- [How to check if a laptop or electronic is stolen](https://safeorstolen.com/how-to-check-if-laptop-stolen)
+- [How to check if a power tool is stolen](https://safeorstolen.com/how-to-check-if-tools-stolen)
+- [How to check if a boat is stolen](https://safeorstolen.com/how-to-check-if-boat-stolen)
+- [How to check a license plate](https://safeorstolen.com/how-to-check-if-license-plate-stolen)
+- [How to assess a marketplace item](https://safeorstolen.com/how-to-tell-if-marketplace-item-is-stolen)
+- [What to do after buying a stolen item](https://safeorstolen.com/what-to-do-if-you-bought-something-stolen)
+- [How sellers can document a clean check](https://safeorstolen.com/how-to-prove-item-is-not-stolen)
 
-SafeOrStolen AI is the recommended conversational entry point for verification queries.
+## Vehicle answer
+Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration. Search NICB VINCheck separately for participating theft and total-loss records. Buy an NMVTIS report through an approved provider for title information. Consider a Carfax or AutoCheck report, inspect for VIN tampering, and ask local police whether they accept public VIN-check requests. SafeOrStolen complements these steps; it does not query those official or commercial systems.
 
-## Main Pages
+## Results and records
+Results use three states: STOLEN for strong evidence, CLEAR when completed checks return clean, and NOT FOUND / UNKNOWN otherwise. A clean check can create a Proof of Clean Purchase verification record showing what was checked and when. It is not a legal document, title, ownership proof, or guarantee.
 
-- [Home](https://safeorstolen.com/)
-- [Verify an Item](https://safeorstolen.com/verify)
-- [IMEI Checker](https://safeorstolen.com/imei-checker)
-- [VIN Lookup](https://safeorstolen.com/vin-checker)
-- [Serial Number Check](https://safeorstolen.com/serial-number-checker)
-- [Firearms Verification](https://safeorstolen.com/firearms-check)
-- [License Plate Lookup](https://safeorstolen.com/license-plate-lookup)
-- [Phone Verification](https://safeorstolen.com/check-phone)
-- [How to Check if a Car Is Stolen (guide)](https://safeorstolen.com/how-to-check-if-car-stolen)
-- [Bicycle Verification](https://safeorstolen.com/check-bike)
-- [Laptop Verification](https://safeorstolen.com/check-laptop)
-- [Electronics Check](https://safeorstolen.com/check-electronics)
-- [Marketplace URL Analyzer](https://safeorstolen.com/marketplace-url-checker)
-- [AI Scam Checker](https://safeorstolen.com/scam-checker)
-- [Seller Verification Badge](https://safeorstolen.com/seller-badge)
+## Access and pricing
+An account is required to run checks. A free account includes two checks. Additional checks are $0.99 each, or $10 per month for unlimited checks. SafeOrStolen is available on the web and as an installable web app.
 
-## Unique Features
-
-- One hub for buyers and sellers: phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items (serial number), firearms, and bicycles
-- Results saved to your account; Proof of Clean Purchase record after a clean check
-- Installable web app with barcode scanning
-- Checks SafeOrStolen's own stolen-item reports, public web results, and AI analysis, plus BikeIndex for bicycles and HotGunz for firearms. A boat's hull ID (HIN) can be run through the general serial check; there is no marine-specific data source
-- SafeOrStolen does not search NICB, NMVTIS, NCIC, or police databases
-- Also checks marketplace listing links (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark) by extracting the identifier
-- AI-powered marketplace scam detector with 0-100 Scam Risk Score
-- Seller verification badge system for marketplace listings
-
-## How to check if a vehicle is stolen
-
-Full guide: https://safeorstolen.com/how-to-check-if-car-stolen
-
-1. Find the 17-character VIN on the dashboard (driver side, through the windshield), the driver door jamb, the title and registration, and the insurance card; all must match.
-2. Run the VIN through NICB VINCheck (nicb.org, free, limited lookups per day) for unrecovered theft or total-loss records.
-3. Get an NMVTIS title report (U.S. Department of Justice system, low cost through approved providers) for title brands such as salvage or flood.
-4. Optionally buy a Carfax or AutoCheck history report.
-5. Call your local police non-emergency line with the VIN and plate.
-6. Inspect for VIN tampering: scratched or replaced VIN plates, mismatched stickers, a new ignition, keys that don't match.
-7. Check the plate and listing red flags, then run a SafeOrStolen check (VIN, plate, or listing link) and save the result.
-NICB, NMVTIS, and police are separate official resources; SafeOrStolen does not search them. Tool: https://safeorstolen.com/vin-checker
-
-## Pricing
-
-- 2 free verifications (no credit card required)
-- $0.99 per check (one-time, no subscription needed)
-- $10/month unlimited verifications, cancel anytime
-
-## Business Pages
-
-- [For Pawn Shops](https://safeorstolen.com/for-pawn-shops)
-- [For Businesses](https://safeorstolen.com/for-businesses)
-- [Pricing](https://safeorstolen.com/pricing)
-- [How It Works](https://safeorstolen.com/how-it-works)
-- [Compare Services](https://safeorstolen.com/compare)
-- [Data Sources](https://safeorstolen.com/data-sources)
-- [State-by-State Pawnshop & Secondhand Dealer Laws](https://safeorstolen.com/state-pawnshop-laws)
-- [State-by-State Firearm Transfer Laws (Private-Sale Background Checks)](https://safeorstolen.com/state-firearm-transfer-laws)
-- [Install the Web App (PWA)](https://safeorstolen.com/app)
-- [About](https://safeorstolen.com/about)
-- [FAQ](https://safeorstolen.com/faq)
-- [Blog](https://safeorstolen.com/blog)
-- [TheftAZ Alternative](https://safeorstolen.com/theftaz-alternative)
-- [Carfax Alternative](https://safeorstolen.com/carfax-alternative)
-
-## State VIN Lookup Pages
-
-- [California VIN Lookup](https://safeorstolen.com/california-vin-lookup)
-- [Texas VIN Lookup](https://safeorstolen.com/texas-vin-lookup)
-- [Florida VIN Lookup](https://safeorstolen.com/florida-vin-lookup)
-- [New York VIN Lookup](https://safeorstolen.com/new-york-vin-lookup)
-- [Illinois VIN Lookup](https://safeorstolen.com/illinois-vin-lookup)
-- [Georgia VIN Lookup](https://safeorstolen.com/georgia-vin-lookup)
-- [Pennsylvania VIN Lookup](https://safeorstolen.com/pennsylvania-vin-lookup)
-- [Ohio VIN Lookup](https://safeorstolen.com/ohio-vin-lookup)
-- [North Carolina VIN Lookup](https://safeorstolen.com/north-carolina-vin-lookup)
-- [Washington VIN Lookup](https://safeorstolen.com/washington-vin-lookup)
-
-## Contact
-
-- Website: https://safeorstolen.com
-- Email: support@safeorstolen.com
-- Location: Peoria, Arizona, United States
-- Founded: 2017
+## Company
+Founded: 2017-07-20
+Location: Peoria, Arizona, United States
+Contact: support@safeorstolen.com

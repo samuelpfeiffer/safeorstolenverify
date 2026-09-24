@@ -64,11 +64,6 @@ const BicycleSerialCheck = () => {
  description: "High-end mountain bikes are frequently stolen from trailheads. Verify before buying used."
  }
  ]}
- testimonial={{
- quote: "Almost bought a 'barely used' Specialized Turbo Levo e-bike for $2,000 on Craigslist. SafeOrStolen flagged it as stolen in Portland. The seller ghosted when I asked about it.",
- author: "Marcus J.",
- role: "SafeOrStolen User, Denver"
- }}
  faqs={[
  {
  question: "Where is the serial number on a bicycle?",

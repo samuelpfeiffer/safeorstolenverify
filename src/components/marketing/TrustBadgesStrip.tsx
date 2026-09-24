@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Lock, Award, CheckCircle, Star, Users, ArrowRight } from 'lucide-react';
+import { Shield, Lock, Award, CheckCircle, FileCheck, Users, ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 
 /**
@@ -31,18 +31,18 @@ export const TrustBadgesStrip: React.FC = () => {
       title: 'Checks SafeOrStolen reports, public web results, and AI analysis'
     },
     {
-      icon: Star,
-      label: 'Trusted by 10,000+',
+      icon: FileCheck,
+      label: 'Verification Records',
       color: 'text-primary',
-      link: '/testimonials',
-      title: 'Over 10,000 buyers and sellers trust SafeOrStolen'
+      link: '/how-to-prove-item-is-not-stolen',
+      title: 'Proof of Clean Purchase records for completed clean checks'
     },
     {
       icon: Users,
       label: 'All 50 States',
       color: 'text-muted-foreground',
       link: '/data-sources',
-      title: 'Verification database coverage across all 50 U.S. states'
+      title: 'State-specific vehicle and license-plate education guides'
     },
   ];
 

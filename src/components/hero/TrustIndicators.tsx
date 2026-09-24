@@ -7,15 +7,15 @@ import { CheckCircle, Star, Shield, Award, Zap, Globe } from 'lucide-react';
 const trustBadges = [
   {
     icon: CheckCircle,
-    title: 'Real Database Integration',
-    subtitle: 'Live police & insurance data',
+    title: 'Named Sources',
+    subtitle: 'Each result shows available sources',
     color: 'text-sos-lime',
     bgColor: 'bg-sos-lime/10'
   },
   {
     icon: Star,
-    title: 'Law Enforcement Verified',
-    subtitle: 'Trusted by 500+ agencies',
+    title: 'Own Report Registry',
+    subtitle: 'Search SafeOrStolen reports',
     color: 'text-sos-orange',
     bgColor: 'bg-sos-orange/10'
   },
@@ -28,15 +28,15 @@ const trustBadges = [
   },
   {
     icon: Zap,
-    title: 'Instant Verification',
-    subtitle: 'Results in under 3 seconds',
+    title: 'Clear Verdicts',
+    subtitle: 'Stolen, clear, or not found',
     color: 'text-yellow-400',
     bgColor: 'bg-yellow-400/10'
   },
   {
     icon: Globe,
-    title: 'Global Coverage',
-    subtitle: '50+ countries supported',
+    title: 'Public Web Analysis',
+    subtitle: 'Public results plus AI analysis',
     color: 'text-purple-400',
     bgColor: 'bg-purple-400/10'
   }

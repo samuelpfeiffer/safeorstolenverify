@@ -1,7 +1,7 @@
 import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO';
-import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
+import { Shield, Zap, Lock, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { ProductTour } from '@/components/onboarding/ProductTour';
@@ -30,7 +30,7 @@ const cardListing = '/images/cards/paste-listing.jpg';
 const VERIFY_CARDS = [
  {
  title: 'Gun Serial Number Lookup',
- subtitle: 'stolen firearms databases + serial integrity check',
+  subtitle: 'HotGunz, SafeOrStolen reports, public web results, and AI analysis',
  href: '/firearms-check',
  image: cardFirearms,
  badge: '🔥 Top Search',
@@ -87,34 +87,10 @@ const VERIFY_CARDS = [
 ];
 
 const FOR_SELLERS_FEATURES = [
- { icon: '📄', title: 'Verified Certificate', desc: 'Generate a shareable PDF proving your item is clean — commands higher sale prices' },
+  { icon: '📄', title: 'Verification Record', desc: 'Generate a shareable Proof of Clean Purchase record showing what was checked and when' },
  { icon: '🔗', title: 'Shareable Link', desc: 'Send buyers a direct link to your verified result — no login required to view' },
  { icon: '⚡', title: '3-Second Results', desc: 'Check before you list, not after — protect your reputation as a seller' },
- { icon: '🛡️', title: 'Legal Protection', desc: 'Documented due diligence protects you if a buyer later claims the item was stolen' },
-];
-
-const TESTIMONIALS = [
- {
- name: 'Mike T.',
- role: 'Pawn Shop Owner, Phoenix AZ',
- quote: "SafeOrStolen paid for itself week one. Caught a stolen MacBook worth $1,800. Now I check every single item that comes through the door — it's non-negotiable.",
- stars: 5,
- plan: 'Unlimited Plan',
- },
- {
- name: 'Sarah K.',
- role: 'Used Car Buyer, Houston TX',
- quote: 'Ran the VIN on a Craigslist Honda Civic before I drove 2 hours to look at it. Came back salvage title. Saved me from a $12,000 disaster.',
- stars: 5,
- plan: 'Unlimited Plan',
- },
- {
- name: 'James R.',
- role: 'Private Firearms Collector',
- quote: "At gun shows you can't be too careful. The 50-state firearm reports check plus the serial integrity check gives me real peace of mind on every private sale. Worth every penny.",
- stars: 5,
- plan: 'Unlimited Plan',
- },
+  { icon: '🛡️', title: 'Clear Context', desc: 'Give buyers a dated record they can review alongside the identifier and your ownership documents' },
 ];
 
 const RECENT_VERIFICATIONS = [
@@ -132,11 +108,11 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How do I check if a used car is stolen?',
- a: "Use SafeOrStolen's free VIN lookup at safeorstolen.com/vin-checker. Enter the vehicle's 17-digit VIN number to check it against stolen vehicle databases, salvage records, and title status records. Results are returned in approximately 3 seconds.",
+  a: "Use the VIN checker at safeorstolen.com/vin-checker for SafeOrStolen reports, public web results, and AI analysis. Then use the official NICB and NMVTIS resources linked in our vehicle guide, inspect the VIN in every location, and compare it with the title.",
  },
  {
  q: 'Can I check a Facebook Marketplace listing for stolen items?',
- a: 'Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against our verification databases. Try it at safeorstolen.com/marketplace-url-checker.',
+  a: "Yes. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The marketplace URL analyzer extracts available listing details and identifiers, then checks SafeOrStolen's own stolen-item reports, public web results, and AI analysis.",
  },
  {
  q: 'Is SafeOrStolen free?',
@@ -148,7 +124,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How do I check if a gun is stolen?',
- a: "Use SafeOrStolen's firearms verification at safeorstolen.com/firearms-check. Enter the firearm's serial number to check it against stolen firearms databases and stolen-property registries. This helps verify the firearm is not stolen before purchasing.",
+  a: "Private buyers cannot search NCIC. Use SafeOrStolen's firearm checker for HotGunz, SafeOrStolen reports, public web results, and AI analysis, then ask local police whether they will check the serial and follow every required transfer step.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
@@ -531,7 +507,7 @@ const Index = () => {
  <ul className="space-y-2 mb-6">
  {[
  '♾️ Unlimited verifications',
- '📄 PDF compliance certificates',
+ '📄 Proof of Clean Purchase records',
  '📊 Bulk CSV upload',
  '🔌 Full REST API access',
  '📋 Audit trail + export',
@@ -554,28 +530,6 @@ const Index = () => {
  Start Unlimited Plan
  </Link>
  </div>
- </div>
- </div>
- </section>
-
- {/* ── TESTIMONIALS ────────────────────────────────── */}
- <section className="py-16 px-4">
- <div className="max-w-5xl mx-auto">
- <h2 className="text-3xl font-black text-foreground text-center mb-10">
- What Our Users Say
- </h2>
- <div className="grid md:grid-cols-3 gap-6">
- {TESTIMONIALS.map((t) => (
- <div key={t.name} className="modern-card p-6 flex flex-col">
- <div className="text-primary text-lg mb-3">{'★'.repeat(t.stars)}</div>
- <p className="text-foreground/80 text-sm leading-relaxed flex-1">"{t.quote}"</p>
- <div className="border-t border-border mt-5 pt-4">
- <div className="text-foreground font-semibold text-sm">{t.name}</div>
- <div className="text-muted-foreground text-xs">{t.role}</div>
- <div className="text-primary text-xs mt-1">✓ Verified {t.plan} subscriber</div>
- </div>
- </div>
- ))}
  </div>
  </div>
  </section>
