@@ -42,10 +42,10 @@ export const ValueProposition: React.FC = () => {
     },
     {
       icon: Database,
-      title: 'multiple sources',
-      description: 'We check our verification databases and lost/found reports.',
-      stat: '100+',
-      statLabel: 'data sources',
+      title: 'Relevant Sources',
+      description: 'We check SafeOrStolen reports, public web results, and AI analysis.',
+      stat: '6',
+      statLabel: 'item categories',
       color: 'text-primary',
       bgColor: 'bg-primary/10',
     },
@@ -65,7 +65,7 @@ export const ValueProposition: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why <span className="text-primary">10,000+</span> People Trust SafeOrStolen
+            Why Verify Before You Buy
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Don't risk buying stolen goods. One quick check protects your money and keeps you legal.

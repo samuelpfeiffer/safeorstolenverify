@@ -9,8 +9,8 @@ export const QuickValueProof = () => {
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
       <div className="p-3 rounded-lg bg-primary/5 border border-primary/10">
         <Database className="h-5 w-5 mx-auto mb-1 text-primary" />
-        <div className="text-lg font-bold text-foreground">100+</div>
-        <div className="text-xs text-muted-foreground">Databases</div>
+        <div className="text-lg font-bold text-foreground">6</div>
+        <div className="text-xs text-muted-foreground">Categories</div>
       </div>
       <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">
         <Clock className="h-5 w-5 mx-auto mb-1 text-emerald-500" />
@@ -24,8 +24,8 @@ export const QuickValueProof = () => {
       </div>
       <div className="p-3 rounded-lg bg-amber-500/5 border border-amber-500/10">
         <Smartphone className="h-5 w-5 mx-auto mb-1 text-amber-500" />
-        <div className="text-lg font-bold text-foreground">Only</div>
-        <div className="text-xs text-muted-foreground">Mobile App</div>
+        <div className="text-lg font-bold text-foreground">Web</div>
+        <div className="text-xs text-muted-foreground">Installable App</div>
       </div>
       <div className="p-3 rounded-lg bg-purple-500/5 border border-purple-500/10">
         <Users className="h-5 w-5 mx-auto mb-1 text-purple-500" />

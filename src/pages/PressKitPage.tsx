@@ -167,8 +167,7 @@ const PressKitPage = () => {
                      six item categories using SafeOrStolen reports, public web results, and AI analysis.
                   </p>
                   <p>
-                    Founded in 2017, SafeOrStolen is the 
-                     installable web app includes barcode scanning on supported phone cameras. The platform serves individual buyers and sellers on marketplaces like 
+                    Founded in 2017, SafeOrStolen offers an installable web app with barcode scanning on supported phone cameras. The platform serves individual buyers and sellers on marketplaces like 
                     Facebook Marketplace, eBay, and OfferUp, as well as businesses including pawn shops, 
                     auto dealers, and auction houses.
                   </p>
