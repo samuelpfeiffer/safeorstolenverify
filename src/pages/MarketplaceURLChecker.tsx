@@ -11,7 +11,7 @@ const howToSchema = {
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": "How to Check if a Marketplace Listing is Stolen",
- "description": "Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp URL to instantly verify if the item is reported stolen. SafeOrStolen's AI-powered Marketplace URL Analyzer extracts identifiers and checks our verification databases.",
+  "description": "Paste a Facebook Marketplace, eBay, Craigslist, or OfferUp URL. SafeOrStolen's AI-powered Marketplace URL Analyzer extracts available identifiers and checks SafeOrStolen reports, public web results, and AI analysis.",
  "totalTime": "PT30S",
  "step": [
  {
@@ -101,7 +101,7 @@ const faqSchema = {
  "name": "How does the Marketplace URL Analyzer work technically?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen uses the Jina Reader API to scrape marketplace listing pages and convert them to structured text. An AI model then extracts identifiers (IMEI numbers, VIN numbers, serial numbers) and analyzes the listing for risk factors. Extracted identifiers are checked against our verification databases simultaneously. The entire process takes seconds."
+  "text": "SafeOrStolen reads accessible listing content, extracts identifiers such as IMEI, VIN, and serial numbers, and analyzes listing risk factors. Extracted identifiers are checked against SafeOrStolen reports, public web results, and AI analysis."
  }
  }
  ]
@@ -111,7 +111,7 @@ const serviceSchema = {
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "SafeOrStolen Marketplace URL Analyzer",
- "description": "AI-powered tool that analyzes marketplace listing URLs to detect stolen items. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check our verification stolen property databases.",
+  "description": "AI-powered tool that analyzes marketplace listing URLs, extracts available identifiers, and checks SafeOrStolen reports, public web results, and AI analysis.",
  "provider": {
  "@type": "Organization",
  "name": "SafeOrStolen",

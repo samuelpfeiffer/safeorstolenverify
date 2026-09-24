@@ -17,7 +17,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "Is there a free alternative to Carfax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SafeOrStolen offers free VIN theft verification checks. While Carfax charges $44.99 for vehicle history, SafeOrStolen provides free stolen vehicle checks using our verification databases and NHTSA vehicle records."
+          "text": "Yes. SafeOrStolen includes two free VIN checks using its own stolen-item reports, public web results, and AI analysis. A full vehicle-history report is a separate service."
         }
       },
       {
@@ -33,7 +33,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "How can I check if a car is stolen for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use SafeOrStolen.com to run a free VIN check against our verification databases and NHTSA vehicle records. Results are instant and free for 2 searches."
+          "text": "Use SafeOrStolen.com to check a VIN against SafeOrStolen reports, public web results, and AI analysis. The first two checks are included."
         }
       }
     ]
@@ -65,7 +65,7 @@ const CarfaxVsFreeVinAlternatives = () => {
       name: "SafeOrStolen",
       price: "Free (2 checks) / $10/mo",
       focus: "Theft Verification",
-      pros: ["Free theft checks", "Our verification databases", "Instant results", "Works on mobile"],
+      pros: ["Two checks included", "Multi-source analysis", "Results in about 3 seconds", "Works on mobile"],
       cons: ["No accident history", "No service records"],
       best: "Checking if a car is stolen before purchase"
     },
@@ -252,7 +252,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             <ul>
               <li>our reported stolen items</li>
               <li>NHTSA vehicle records for salvage/rebuilt status</li>
-              <li>Our verification databases</li>
+              <li>AI analysis of the available information</li>
             </ul>
 
             <h2>Frequently Asked Questions</h2>

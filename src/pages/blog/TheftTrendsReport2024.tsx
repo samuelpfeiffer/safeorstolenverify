@@ -68,7 +68,7 @@ export default function TheftTrendsReport2024() {
                 <Card className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-2xl font-bold">1. Smartphones & Tablets</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">2.8M stolen</span>
+                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">High resale risk</span>
                   </div>
                   <p className="mb-3">
                     <strong>Total Value:</strong> $4.2 billion | <strong>Recovery Rate:</strong> 15%
