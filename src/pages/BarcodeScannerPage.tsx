@@ -66,7 +66,7 @@ const appSchema = {
  "description": "2 free scans, then $0.99/check or $10/month unlimited"
  },
  "featureList": "Barcode scanning, QR code reading, IMEI verification, VIN verification, serial number lookup, stolen item check",
- "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against our verification databases.",
+ "description": "Scan a barcode or QR code, then check the identifier against SafeOrStolen reports, public web results, and AI analysis.",
  "dateModified": "2026-03-08"
 };
 
@@ -79,7 +79,7 @@ const howToSchema = {
  { "@type": "HowToStep", "position": 1, "name": "Open SafeOrStolen", "text": "Open safeorstolen.com on your phone or launch the installed PWA app." },
  { "@type": "HowToStep", "position": 2, "name": "Tap Scan Barcode", "text": "Tap the 'Scan Barcode or QR' button to activate your phone's camera." },
  { "@type": "HowToStep", "position": 3, "name": "Point at barcode", "text": "Point your camera at any barcode — IMEI, VIN, serial number, QR code. It reads instantly." },
- { "@type": "HowToStep", "position": 4, "name": "Get verification results", "text": "The scanned number is checked against our verification databases. Get CLEAN, STOLEN, or UNKNOWN in 3 seconds." }
+ { "@type": "HowToStep", "position": 4, "name": "Get verification results", "text": "The scanned number is checked against SafeOrStolen reports, public web results, and AI analysis. Results usually arrive in about 3 seconds." }
  ]
 };
 
@@ -134,7 +134,7 @@ const BarcodeScannerPage = () => {
 
  <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
  Point your phone camera at any barcode or QR code. We extract the IMEI, VIN, or serial number 
- and check our verification databases in 3 seconds. Free — no download required.
+ and check SafeOrStolen reports, public web results, and AI analysis in about 3 seconds. No download required.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">

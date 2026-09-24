@@ -27,7 +27,7 @@ const XboxStolenCheck = () => {
     },
     {
       question: "How long does an Xbox serial number check take?",
-      answer: "Instant — under 3 seconds. We search our verification databases, pawn shop records, and community-reported stolen consoles simultaneously. You receive a clear result immediately."
+      answer: "Results usually arrive in about 3 seconds. We check SafeOrStolen reports, public web results, and AI analysis, then return a clear result."
     },
     {
       question: "Is it illegal to buy a stolen Xbox?",
@@ -67,7 +67,7 @@ const XboxStolenCheck = () => {
       "step": [
         { "@type": "HowToStep", "position": 1, "name": "Find the Xbox serial number", "text": "Find the Xbox serial number on the back or bottom of the console, or in Settings → System → Console Info" },
         { "@type": "HowToStep", "position": 2, "name": "Enter the serial number", "text": "Enter the 12-digit serial number into SafeOrStolen's free verification tool" },
-        { "@type": "HowToStep", "position": 3, "name": "We search databases", "text": "We search our verification databases, pawn shop records, and Microsoft ban lists" },
+        { "@type": "HowToStep", "position": 3, "name": "We check relevant sources", "text": "We check SafeOrStolen reports, public web results, and AI analysis" },
         { "@type": "HowToStep", "position": 4, "name": "Get instant results", "text": "Get instant results in 3 seconds showing if the Xbox is safe or reported stolen" }
       ]
     },
@@ -456,7 +456,7 @@ const XboxStolenCheck = () => {
               </Button>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              2 free checks · our verification databases · Instant results · No credit card required
+              2 free checks · Multi-source analysis · Results in about 3 seconds · No credit card required
             </p>
           </div>
         </section>

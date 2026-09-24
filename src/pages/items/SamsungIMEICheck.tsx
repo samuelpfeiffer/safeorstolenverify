@@ -4,7 +4,7 @@ const SamsungIMEICheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Samsung Phone is Stolen - Free IMEI Verification | SafeOrStolen"
- metaDescription="Verify any Samsung Galaxy phone isn't stolen before buying. Free IMEI check against our verification databases. Instant results for Galaxy S24, S23, Z Fold, Z Flip, A series."
+ metaDescription="Check a Samsung Galaxy IMEI before buying. SafeOrStolen reviews its reports, public web results, and AI analysis and provides device details."
  h1="Check if Samsung Galaxy is Stolen - Free IMEI Check"
  keywords={[
  'samsung imei check',
@@ -34,7 +34,7 @@ const SamsungIMEICheck = () => {
  howItWorksSteps={[
  "Find the Samsung IMEI: Dial *#06# on the phone, go to Settings > About Phone > Status > IMEI, or check the original box",
  "Enter the 15-digit IMEI number into our free verification tool",
- "Our system checks our verification databases in real-time",
+ "Our system checks SafeOrStolen reports, public web results, and AI analysis",
  "Get instant results - know if your Samsung is SAFE, STOLEN, or BLACKLISTED"
  ]}
  howItWorksDescription="We check multiple data sources, including our own community-reported stolen item database, public web results, and analyze information using AI to help you determine if a device may be problematic. Our comprehensive check helps you make an informed decision and avoid purchasing a potentially problematic device."

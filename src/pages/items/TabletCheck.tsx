@@ -4,7 +4,7 @@ const TabletCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Tablet is Stolen - iPad, Samsung Galaxy Tab | SafeOrStolen"
-      metaDescription="Verify iPad or Samsung tablet isn't stolen before buying. Free serial number check against our verification databases. Instant results for iPad Pro, Air, Galaxy Tab."
+      metaDescription="Check an iPad or Samsung tablet serial number before buying. SafeOrStolen reviews its reports, public web results, and AI analysis."
       h1="Check if Tablet is Stolen - Free Serial Verification"
       keywords={[
         'check if ipad is stolen',

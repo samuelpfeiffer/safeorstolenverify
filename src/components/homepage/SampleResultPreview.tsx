@@ -15,7 +15,7 @@ export const SampleResultPreview = () => {
  </h2>
  <p className="text-muted-foreground max-w-xl mx-auto">
  Here's a real example of a SafeOrStolen verification result.
- Every check scans our verification databases and returns a clear verdict in ~3 seconds.
+ Every check uses SafeOrStolen reports, public web results, and AI analysis, returning a clear verdict in about 3 seconds.
  </p>
  </div>
 

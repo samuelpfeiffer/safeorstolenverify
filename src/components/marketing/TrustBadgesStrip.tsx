@@ -28,7 +28,7 @@ export const TrustBadgesStrip: React.FC = () => {
       label: 'multiple sources',
       color: 'text-amber-500',
       link: '/data-sources',
-      title: 'Checks our verification databases across multiple data sources'
+      title: 'Checks SafeOrStolen reports, public web results, and AI analysis'
     },
     {
       icon: Star,

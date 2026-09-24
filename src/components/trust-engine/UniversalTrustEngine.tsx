@@ -123,7 +123,7 @@ const UniversalTrustEngine: React.FC = () => {
 
  <p className="text-lg text-muted-foreground max-w-xl mx-auto">
  Auto-detects IMEI, VIN, serial numbers & license plates.
- Checked against our verification databases in under 3 seconds.
+ Checked against SafeOrStolen reports, public web results, and AI analysis in about 3 seconds.
  </p>
 
  {/* B2B Toggle */}
