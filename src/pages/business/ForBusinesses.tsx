@@ -195,15 +195,14 @@ export default function ForBusinesses() {
  <div className="text-center mb-12">
  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
  <Shield className="h-4 w-4" />
- Trusted by 500+ Businesses Nationwide
+ Verification tools for secondhand businesses
  </div>
  <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
  Protect Your Business From<br />
  <span className="text-primary">Buying Stolen Goods</span>
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
- One-line widget. Instant verification against multiple sources. Legal compliance built-in. 
- Pawn shops, car dealers, electronics resellers, and auction houses save $3,750+/month compared to per-check pricing.
+ Add a consistent identifier check to intake workflows for pawn shops, dealers, electronics resellers, and auction houses. Results supplement required records and official checks; they do not establish legal compliance.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
  <Button size="lg" asChild className="text-lg px-8 py-6">

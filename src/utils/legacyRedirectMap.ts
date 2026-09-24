@@ -300,7 +300,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   '/blog/enterprise-security': '/blog',
   '/blog/2025-stolen-goods-statistics': '/blog',
   '/blog/most-stolen-items-2025': '/blog',
-  '/blog/real-user-stories-stolen-goods-verification': '/blog/real-user-stories',
+  '/blog/real-user-stories-stolen-goods-verification': '/how-to-check-if-item-stolen',
   '/blog/verification-methodology-how-we-check-stolen-items': '/blog/verification-methodology',
   '/blog/what-to-do-if-stolen': '/blog',
   '/blog/what-to-do-if-you-bought-stolen': '/blog',
