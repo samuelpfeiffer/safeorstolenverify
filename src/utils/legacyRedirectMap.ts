@@ -563,7 +563,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/complete-imei-guide-protect-yourself": "/how-to-check-if-phone-stolen",
   "/is-my-phone-stolen": "/how-to-check-if-phone-stolen",
   "/check-stolen-phone": "/how-to-check-if-phone-stolen",
-  "/stolen-phone-checker": "/how-to-check-if-phone-stolen",
+  "/stolen-phone-checker": "/imei-checker",
   "/check-android-phone-stolen": "/how-to-check-if-phone-stolen",
   "/check-imei-stolen": "/imei-checker",
   "/check-phone": "/imei-checker",
