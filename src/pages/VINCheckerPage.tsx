@@ -56,7 +56,7 @@ const VINCheckerPage = () => {
  },
  {
  question: "Is there a free stolen vehicle check?",
- answer: "NICB VINCheck is free with a limited number of lookups per day. SafeOrStolen includes 2 free checks with a free account (no card), then $0.99 for a single check or $10 per month for unlimited checks across every item type."
+ answer: "NICB VINCheck is free. SafeOrStolen includes 2 free checks with a free account (no card), then $0.99 for a single check or $10 per month for unlimited checks across every item type."
  },
  {
  question: "How is SafeOrStolen different from a vehicle history report?",

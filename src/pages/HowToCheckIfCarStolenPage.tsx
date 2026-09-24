@@ -35,7 +35,7 @@ const STEPS = [
   },
   {
     name: 'Run the VIN through NICB VINCheck',
-    text: 'NICB VINCheck (nicb.org) is free and allows a limited number of lookups per day. It shows whether the VIN appears in participating insurers\u2019 records as an unrecovered theft or a total loss.',
+    text: 'NICB VINCheck (nicb.org) is free. It shows whether the VIN appears in participating insurers\u2019 records as an unrecovered theft or a total loss.',
   },
   {
     name: 'Get an NMVTIS title report',
@@ -66,7 +66,7 @@ const STEPS = [
 const FAQS = [
   {
     q: 'How do I check if a car is stolen for free?',
-    a: 'Use NICB VINCheck, which is free with a limited number of lookups per day, and call your local police non-emergency line with the VIN and plate. You can also run 2 free checks with a free SafeOrStolen account, which checks SafeOrStolen\u2019s own stolen-item reports, public web results and AI analysis.',
+    a: 'Use NICB VINCheck, which is free, and call your local police non-emergency line with the VIN and plate. You can also try SafeOrStolen free, which checks SafeOrStolen\u2019s own stolen-item reports, public web results and AI analysis.',
   },
   {
     q: 'Where is the VIN on a car?',
@@ -194,7 +194,7 @@ const HowToCheckIfCarStolenPage = () => {
         <p>No single source catches everything. Theft records, title records and history reports each cover different things, so use several. These are listed roughly in the order most buyers use them.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">1. NICB VINCheck — free</h3>
-        <p>The National Insurance Crime Bureau runs a free tool at <a href="https://www.nicb.org/vincheck" target="_blank" rel="noopener noreferrer" className="text-primary underline">nicb.org/vincheck<ExternalLink className="inline w-3 h-3 ml-1" /></a>. It allows a limited number of lookups per day. <strong className="text-foreground">What it tells you:</strong> whether participating insurance companies have recorded the VIN as an unrecovered theft or a total loss. <strong className="text-foreground">What it doesn’t:</strong> thefts that were never reported to a participating insurer, or title brands.</p>
+        <p>The National Insurance Crime Bureau runs a free tool at <a href="https://www.nicb.org/vincheck" target="_blank" rel="noopener noreferrer" className="text-primary underline">nicb.org/vincheck<ExternalLink className="inline w-3 h-3 ml-1" /></a>. <strong className="text-foreground">What it tells you:</strong> whether participating insurance companies have recorded the VIN as an unrecovered theft or a total loss. <strong className="text-foreground">What it doesn’t:</strong> thefts that were never reported to a participating insurer, or title brands.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">2. NMVTIS title report — low cost</h3>
         <p>The National Motor Vehicle Title Information System is run by the U.S. Department of Justice. You buy reports through approved providers listed at <a href="https://vehiclehistory.bja.ojp.gov" target="_blank" rel="noopener noreferrer" className="text-primary underline">vehiclehistory.bja.ojp.gov<ExternalLink className="inline w-3 h-3 ml-1" /></a>, usually for a few dollars. <strong className="text-foreground">What it tells you:</strong> title brands such as salvage, junk, rebuilt or flood, the latest title state and date, and the last reported odometer reading. A title that recently moved between states or carries a brand the seller didn’t mention deserves a closer look.</p>

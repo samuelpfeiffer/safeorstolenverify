@@ -13,7 +13,7 @@ const commonSafeOrStolen =
 
 const CTIA_METHOD = {
   name: "Run CTIA’s free Stolen Phone Checker first",
-  cost: "Free (5 checks per day, US consumers only)",
+  cost: "Free (US consumers)",
   description:
     "CTIA, the wireless industry association, runs the Stolen Phone Checker using GSMA Device Check data. Enter the IMEI, MEID, or ESN.",
   tellsYou:
@@ -74,7 +74,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen IMEI check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, and provides IMEI device details. It does not check carrier blacklist status.",
       tellsYou:
@@ -97,12 +97,12 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Is there an official free stolen phone database?",
       answer:
-        "In the US, CTIA’s Stolen Phone Checker (stolenphonechecker.org) is free. CTIA, the wireless industry association, runs it using GSMA Device Check data, and it shows whether a device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers and is limited to 5 free checks per day. SafeOrStolen does not query it, so run it yourself.",
+        "In the US, CTIA’s Stolen Phone Checker (stolenphonechecker.org) is free. CTIA, the wireless industry association, runs it using GSMA Device Check data, and it shows whether a device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers. SafeOrStolen does not query it, so run it yourself.",
     },
     {
       question: "Can I check an IMEI for free?",
       answer:
-        "Carrier eligibility tools are often free, and SafeOrStolen includes 2 free account checks. Availability and details vary by carrier. SafeOrStolen does not currently check carrier blacklists.",
+        "Carrier eligibility tools are often free, and SafeOrStolen is free to try with a free account. Availability and details vary by carrier. SafeOrStolen does not currently check carrier blacklists.",
     },
     {
       question: "Does a clean IMEI mean the phone is safe to buy?",
@@ -186,7 +186,7 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen IMEI check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, and provides IMEI device details. Carrier blacklist and Activation Lock checks remain separate.",
       tellsYou:
@@ -261,7 +261,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen firearm check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks HotGunz, its own stolen-item reports, public web results, and AI analysis. It does not access NCIC, ATF eTrace, or police systems.",
       tellsYou:
@@ -375,7 +375,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen bicycle check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks Bike Index, its own stolen-item reports, public web results, and AI analysis.",
       tellsYou:
@@ -471,7 +471,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not query Apple, Microsoft, manufacturer, police, or insurance databases.",
       tellsYou:
@@ -563,7 +563,7 @@ export const TOOLS_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not query manufacturer, contractor, police, or insurance databases.",
       tellsYou:
@@ -665,7 +665,7 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run the HIN through SafeOrStolen",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen treats the HIN as a general serial number and checks its own reports, public web results, and AI analysis. It has no marine-specific source.",
       tellsYou:
@@ -760,7 +760,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen plate check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not access DMV registration records or reveal an owner’s private information.",
       tellsYou:
@@ -860,7 +860,7 @@ export const MARKETPLACE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Use the SafeOrStolen marketplace URL analyzer",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "Paste a Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark URL. The tool extracts available listing details and identifiers, then uses SafeOrStolen reports, public web results, and AI analysis.",
       tellsYou:
@@ -1047,7 +1047,7 @@ export const SELLER_PROOF_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a current SafeOrStolen check",
-      cost: "2 free checks; then $0.99 or $10/month unlimited",
+      cost: "Free to try with a free account",
       description:
         "Check the identifier and save the result to your account. If the checked sources return clean, create a Proof of Clean Purchase record.",
       tellsYou:
