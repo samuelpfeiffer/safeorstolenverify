@@ -37,6 +37,13 @@ export default function WhatIsABlacklistedImei() {
             carriers cross-reference. That's why a phone blacklisted in the US often can't be
             "escaped" by flying it to Mexico or the UK either.
           </p>
+          <p>
+            In the US you can check this yourself for free with CTIA’s{" "}
+            <a href="https://stolenphonechecker.org/spc/consumer" target="_blank" rel="noopener noreferrer">Stolen Phone Checker</a>.
+            It is run by CTIA, the wireless industry association, using GSMA Device Check data, and shows whether a
+            device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers and allows 5 free
+            checks per day. SafeOrStolen does not query it for you.
+          </p>
 
           <h2>The three reasons a phone gets blacklisted</h2>
           <ol>

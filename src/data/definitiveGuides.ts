@@ -11,6 +11,17 @@ const commonStolenSteps = [
 const commonSafeOrStolen =
   "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. A check is an additional due-diligence step, not a substitute for inspecting the item, matching documents, checking official resources, or confirming the seller has authority to sell.";
 
+const CTIA_METHOD = {
+  name: "Run CTIA’s free Stolen Phone Checker first",
+  cost: "Free (5 checks per day, US consumers only)",
+  description:
+    "CTIA, the wireless industry association, runs the Stolen Phone Checker using GSMA Device Check data. Enter the IMEI, MEID, or ESN.",
+  tellsYou:
+    "Whether the device has been reported lost or stolen in that data. SafeOrStolen does not query this tool, so run it yourself.",
+  url: "https://stolenphonechecker.org/spc/consumer",
+  linkLabel: "CTIA Stolen Phone Checker",
+};
+
 export const PHONE_GUIDE: DefinitiveGuideProps = {
   slug: "/how-to-check-if-phone-stolen",
   title: "How to Check if a Phone Is Stolen",
@@ -32,6 +43,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     "Dual-SIM phones may have IMEI 1 and IMEI 2; record both.",
   ],
   methods: [
+    CTIA_METHOD,
     {
       name: "Ask the original carrier",
       cost: "Usually free",
@@ -82,6 +94,11 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
   toolHref: "/imei-checker",
   toolLabel: "Open the IMEI checker",
   faqs: [
+    {
+      question: "Is there an official free stolen phone database?",
+      answer:
+        "In the US, CTIA’s Stolen Phone Checker (stolenphonechecker.org) is free. CTIA, the wireless industry association, runs it using GSMA Device Check data, and it shows whether a device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers and is limited to 5 free checks per day. SafeOrStolen does not query it, so run it yourself.",
+    },
     {
       question: "Can I check an IMEI for free?",
       answer:
@@ -148,6 +165,7 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
       url: "https://checkcoverage.apple.com/",
       linkLabel: "Apple Check Coverage",
     },
+    CTIA_METHOD,
     {
       name: "Remove Find My and Activation Lock",
       cost: "Free",
@@ -328,6 +346,16 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
         "Whether a matching registration or stolen report appears in Bike Index.",
       url: "https://bikeindex.org/search/registrations",
       linkLabel: "Bike Index search",
+    },
+    {
+      name: "Search 529 Garage (Project 529)",
+      cost: "Free",
+      description:
+        "529 Garage is a free bike registry. Buyers can enter a serial number to see whether a bike is listed as missing.",
+      tellsYou:
+        "Whether a 529 Garage user has registered the bike and reported it missing. SafeOrStolen does not query 529 Garage.",
+      url: "https://project529.com/garage/",
+      linkLabel: "529 Garage",
     },
     {
       name: "Check manufacturer or shop registration",

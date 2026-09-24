@@ -32,7 +32,11 @@ export default function BuyingUsedPhoneChecklist() {
           </p>
           <h3>2. Research the IMEI in more than one place</h3>
           <p>
-            Use the original carrier’s eligibility tool or support team for
+            Start with CTIA’s free{" "}
+            <a href="https://stolenphonechecker.org/spc/consumer" target="_blank" rel="noopener noreferrer">Stolen Phone Checker</a>{" "}
+            (US consumers, 5 free checks per day), which uses GSMA Device Check
+            data to show whether the IMEI has been reported lost or stolen.
+            Then use the original carrier’s eligibility tool or support team for
             network and finance restrictions. Run the IMEI through the{" "}
             <a href="/imei-checker">SafeOrStolen IMEI checker</a> for
             SafeOrStolen reports, public web results, AI analysis, and device
