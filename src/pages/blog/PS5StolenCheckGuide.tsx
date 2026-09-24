@@ -345,9 +345,8 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">What happens if I accidentally buy a stolen PS5?</h3>
                   <p className="text-muted-foreground">
-                    If you buy a stolen PS5, police can seize it as evidence with no compensation to you. 
-                    You could potentially face charges for possession of stolen property. You lose your money 
-                    with no legal recourse against the seller. Sony may also ban the console from PSN.
+                    Stop using or reselling it, preserve the listing, messages, serial, and payment record, then
+                    contact local police, the marketplace, and your payment provider. Laws and remedies vary.
                   </p>
                 </CardContent>
               </Card>
@@ -356,9 +355,8 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">Can Sony track stolen PS5 consoles?</h3>
                   <p className="text-muted-foreground">
-                    Sony maintains records of console serial numbers and can flag stolen units when they connect 
-                    to PSN. If a console is reported stolen, Sony may ban it from online services. However, 
-                    they generally don't actively track stolen consoles unless law enforcement requests it.
+                    Sony does not provide a public stolen-console serial search. Contact PlayStation Support for
+                    account or console-access problems, and contact police if you believe the console is stolen.
                   </p>
                 </CardContent>
               </Card>

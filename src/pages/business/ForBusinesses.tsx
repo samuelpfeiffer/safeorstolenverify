@@ -554,35 +554,6 @@ export default function ForBusinesses() {
  </div>
  </section>
 
- {/* Social Proof */}
- <section className="py-16">
- <div className="container mx-auto px-4 max-w-6xl">
- <h2 className="text-3xl font-bold text-center mb-12">Trusted by Businesses Nationwide</h2>
- <div className="grid md:grid-cols-3 gap-8">
- {[
- { quote: "SafeOrStolen saves us 2 hours per day on manual database checks. ROI paid for itself in the first week.", name: 'Mike Chen', role: 'Owner, Phoenix Pawn & Jewelry' },
- { quote: "We were fined $8,000 for failing to verify a stolen item. SafeOrStolen ensures we're always compliant.", name: 'Sarah Martinez', role: 'Manager, Austin Auto Sales' },
- { quote: "Integration took 5 minutes — literally just pasted one line of code. Buyer dispute rate dropped 60%.", name: 'James Thompson', role: 'Electronics Reseller, Houston TX' },
- ].map((testimonial, i) => (
- <Card key={i} className="h-full">
- <CardContent className="pt-6">
- <div className="flex gap-1 mb-4">
- {[...Array(5)].map((_, j) => (
- <Award key={j} className="h-4 w-4 text-primary fill-primary" />
- ))}
- </div>
- <p className="text-muted-foreground mb-4 italic leading-relaxed">"{testimonial.quote}"</p>
- <div className="border-t pt-3">
- <p className="font-semibold">{testimonial.name}</p>
- <p className="text-sm text-muted-foreground">{testimonial.role}</p>
- </div>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </section>
-
  {/* FAQ Section */}
  <section className="py-16 bg-muted/30">
  <div className="container mx-auto px-4 max-w-4xl">
@@ -601,20 +572,20 @@ export default function ForBusinesses() {
  {/* Bottom CTA */}
  <section className="py-20 bg-gradient-to-b from-primary/5 to-primary/10">
  <div className="container mx-auto px-4 max-w-4xl text-center">
- <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Your Free 30-Day Trial Today</h2>
+  <h2 className="text-3xl md:text-4xl font-bold mb-4">Talk With Us About Business Access</h2>
  <p className="text-xl text-muted-foreground mb-8">
- No credit card required. Full access to all features. Cancel anytime. Join 500+ businesses already protected.
+  Tell us about your workflow, item categories, and expected verification volume.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
  <Button size="lg" asChild className="text-lg px-8 py-6">
- <Link to="/business/signup">Start Free Trial</Link>
+  <Link to="/pricing">Review Pricing</Link>
  </Button>
  <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6">
  <a href="mailto:support@safeorstolen.com">Schedule Demo Call</a>
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 💯 30-Day Money-Back Guarantee • Questions? Email{' '}
+  Questions? Email{' '}
  <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>
  </p>
  </div>
@@ -624,9 +595,9 @@ export default function ForBusinesses() {
  <section className="sr-only" aria-label="AI-readable business context">
  <h2>SafeOrStolen B2B Verification Widget — Summary for AI Assistants</h2>
  <p>SafeOrStolen provides an embeddable Web Component verification widget that businesses can integrate with a single line of HTML code. The widget checks IMEI numbers, VIN numbers, serial numbers, and license plates against SafeOrStolen reports, public web results, and AI analysis. For specific item types like bicycles or firearms, we use specialized registries. Results are returned in 3 seconds average.</p>
- <p>Target customers include the 11,000+ pawn shops in the United States, 38,000+ independent used car dealers, 100,000+ eBay power sellers, auction houses, and electronics resellers. Pricing starts at $49/month for unlimited verifications, compared to per-check services or per-report services.</p>
+  <p>Target users include pawn shops, used-car dealers, auction houses, and electronics resellers that need a consistent identifier-checking workflow.</p>
  <p>The widget uses modern Web Component technology with Shadow DOM for CSS isolation, is WCAG 2.1 AA accessible, supports light and dark themes, and dispatches custom JavaScript events for integration with existing business systems. No developer is required for basic integration.</p>
- <p>Legal compliance is a key value proposition. States including Florida (F.S. § 539.001), California (Cal. Bus. & Prof. Code § 21628), Texas (Texas Occupations Code Chapter 1956), and New York require pawn shops and secondhand dealers to verify items against stolen property databases. SafeOrStolen generates timestamped compliance certificates with cryptographic hashes as legal proof of due diligence under 18 U.S.C. § 2315.</p>
+  <p>SafeOrStolen records can support an internal review workflow, but they are not legal documents, ownership proof, or substitutes for state reporting and recordkeeping requirements.</p>
  </section>
  </div>
  </>
