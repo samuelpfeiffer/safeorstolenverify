@@ -35,7 +35,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/': {
  title: 'Free Stolen Item Checker - IMEI VIN Serial Verification',
- description: 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against our verification databases. 2 free searches. Results in 3 seconds.', // 159 chars
+  description: 'Check phones, vehicles, plates, serial-numbered goods, firearms, and bikes using SafeOrStolen reports, public web results, and AI analysis.',
  keywords: 'stolen item checker, IMEI checker, VIN checker, serial number verification, stolen phone check',
  canonical: '/'
  },
@@ -94,7 +94,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/pricing': {
  title: 'Pricing - $10/mo Unlimited Stolen Item Verification',
- description: 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against our verification databases. All item types. Cancel anytime.', // 156 chars
+  description: 'Stolen-item verification starts with 2 free checks, then costs $0.99 per check or $10 per month for unlimited checks across all six categories.',
  keywords: 'SafeOrStolen pricing, verification pricing, stolen item checker cost',
  canonical: '/pricing'
  },
@@ -104,7 +104,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/verify': {
  title: 'Verify Items - Instant Stolen Check in 3 Seconds',
- description: 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against our verification databases. Protect yourself from buying stolen goods on marketplaces.', // 158 chars (needs adjustment)
+  description: 'Check an IMEI, VIN, plate, or serial number using SafeOrStolen reports, public web results, and AI analysis before buying a secondhand item.',
  keywords: 'verify stolen items, instant verification, stolen goods check, marketplace safety',
  canonical: '/verify'
  },
@@ -193,7 +193,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // DATABASE (/database) - 158 chars
  // ========================================
  '/database': {
- title: 'Databases We Search - our verification databases',
+  title: 'Sources Used in SafeOrStolen Checks',
  description: 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bikes and HotGunz for firearms.', // 158 chars
  keywords: 'stolen item reports, public web results, global theft checks',
  canonical: '/database'

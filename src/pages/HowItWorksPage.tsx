@@ -15,7 +15,7 @@ const HowItWorksPage = () => {
  <>
  <PageSEO
  title="How It Works - Verify Items in Seconds"
- description="How SafeOrStolen AI works: enter an IMEI, VIN, plate, or serial number and AI checks our verification databases for instant 3-second results."
+  description="Enter an IMEI, VIN, plate, or serial number. SafeOrStolen checks its reports, public web results, and AI analysis, usually in about 3 seconds."
  keywords="how SafeOrStolen works, verification process, stolen item check explained"
  canonical="/how-it-works"
  structuredData={[
@@ -33,7 +33,7 @@ const HowItWorksPage = () => {
  {
  "@type": "HowToStep",
  "name": "Automatic Database Search",
- "text": "SafeOrStolen searches our verification databases, including stolen-property registries, reported theft history, manufacturer blacklists, and user reports."
+  "text": "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Bicycle checks also use BikeIndex, and firearm checks also use HotGunz."
  },
  {
  "@type": "HowToStep",
@@ -43,7 +43,7 @@ const HowItWorksPage = () => {
  {
  "@type": "HowToStep",
  "name": "View Detailed Report",
- "text": "Access detailed report including theft date, location, police case number (if available), and recommended actions."
+  "text": "Review the sources checked, any matches found, and the recommended next steps."
  }
  ]
  },
@@ -65,7 +65,7 @@ const HowItWorksPage = () => {
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>How SafeOrStolen Works</strong></p>
- <p>SafeOrStolen verifies items against our verification databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
+  <p>SafeOrStolen checks its stolen-item reports, public web results, and AI analysis, usually in about 3 seconds. Enter an IMEI, VIN, plate, or serial number.</p>
  </div>
  </noscript>
  <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
@@ -384,7 +384,7 @@ const HowItWorksPage = () => {
  <Shield className="h-12 w-12 text-green-500 mb-4" />
  <h3 className="text-xl font-bold mb-2">Peace of Mind</h3>
  <p className="text-muted-foreground">
- Buy with confidence knowing you've checked all available databases
+  Make a more informed decision using the sources shown in your result
  </p>
  </CardContent>
  </Card>
@@ -405,16 +405,16 @@ const HowItWorksPage = () => {
  <h2 className="text-3xl font-bold text-center mb-8">Our Impact</h2>
  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
  <div>
- <div className="text-5xl font-bold mb-2">50,000+</div>
- <div className="text-xl opacity-90">Items Verified</div>
+  <div className="text-5xl font-bold mb-2">6</div>
+  <div className="text-xl opacity-90">Item Categories</div>
  </div>
  <div>
- <div className="text-5xl font-bold mb-2">1,200+</div>
- <div className="text-xl opacity-90">Stolen Items Identified</div>
+  <div className="text-5xl font-bold mb-2">3 sec</div>
+  <div className="text-xl opacity-90">Average Result Time</div>
  </div>
  <div>
- <div className="text-5xl font-bold mb-2">$2.5M+</div>
- <div className="text-xl opacity-90">Fraud Prevented</div>
+  <div className="text-5xl font-bold mb-2">2</div>
+  <div className="text-xl opacity-90">Free Checks to Start</div>
  </div>
  </div>
  </div>
@@ -453,7 +453,7 @@ const HowItWorksPage = () => {
  {/* What We Check - Item Types */}
  <section className="py-12">
  <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">Data Sources We Check</h2>
+  <h2 className="text-3xl font-bold text-center mb-8">Sources Used in Our Checks</h2>
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
  <DataSourceCard
  title="SafeOrStolen Database"
@@ -461,23 +461,23 @@ const HowItWorksPage = () => {
  icon="🏠"
  />
  <DataSourceCard
- title="bicycle history checks"
- description="1.4M bikes cataloged, 159K stolen bikes registered"
+  title="BikeIndex"
+  description="Additional source used for bicycle checks"
  icon="🚴"
  />
  <DataSourceCard
- title="StolenRegister.com"
- description="Community-reported stolen property database"
+  title="Public Web Results"
+  description="Publicly available pages related to the submitted identifier"
  icon="🔍"
  />
  <DataSourceCard
- title="vehicle history information"
- description="Official vehicle identification and specifications"
+  title="AI Analysis"
+  description="Plain-language analysis of the information returned"
  icon="🚗"
  />
  <DataSourceCard
- title="Stolen911"
- description="Police detective-founded stolen property service"
+  title="HotGunz"
+  description="Additional source used for firearm checks"
  icon="🚨"
  />
  <DataSourceCard

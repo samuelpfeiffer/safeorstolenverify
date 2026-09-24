@@ -7,36 +7,22 @@ import {
   Shield, Smartphone, Zap, Globe
 } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 const PressKitPage = () => {
   const companyFacts = [
-    { label: "Founded", value: "2024" },
-    { label: "Headquarters", value: "Seattle, Washington" },
+    { label: "Founded", value: "2017" },
+    { label: "Headquarters", value: "Peoria, Arizona" },
     { label: "Industry", value: "SaaS / Consumer Protection" },
-    { label: "Items Verified", value: "5,000+" },
-    { label: "Coverage", value: "50 US States + Global" }
+    { label: "Categories", value: "6 item categories" },
+    { label: "Product", value: "AI-powered web app" }
   ];
 
   const keyStats = [
-    { icon: Shield, stat: "5,000+", label: "Items Verified" },
-    { icon: Smartphone, stat: "Only", label: "Mobile App in Category" },
+    { icon: Shield, stat: "6", label: "Item Categories" },
+    { icon: Smartphone, stat: "Web", label: "Installable App" },
     { icon: Zap, stat: "3 sec", label: "Average Verification Time" },
-    { icon: Globe, stat: "50+", label: "States Covered" }
-  ];
-
-  const pressReleases = [
-    {
-      title: "SafeOrStolen Partners with FasterCapital to Tackle Fraud and Build Trust in the Secondhand Market",
-      date: "August 11, 2025",
-      outlet: "PRLog",
-      url: "https://biz.prlog.org/SafeOrStolen/"
-    },
-    {
-      title: "SafeOrStolen Launches Revolutionary Verification Platform",
-      date: "December 2024",
-      outlet: "IssueWire",
-      url: "https://www.issuewire.com/safeorstolen-launches-platform"
-    }
+    { icon: Globe, stat: "2", label: "Free Checks" }
   ];
 
   const mediaAssets = [
@@ -120,10 +106,10 @@ const PressKitPage = () => {
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Everything journalists, bloggers, and media professionals need to 
-              cover SafeOrStolen - the Carfax for Everything.
+               cover SafeOrStolen and its AI-powered verification tools.
             </p>
             <Button size="lg" className="gap-2" asChild>
-              <a href="mailto:press@safeorstolen.com">
+               <a href="mailto:support@safeorstolen.com">
                 <FileText className="h-5 w-5" />
                 Contact Press Team
               </a>
@@ -178,12 +164,11 @@ const PressKitPage = () => {
                     <strong>SafeOrStolen</strong> is a SaaS stolen-item verification platform that allows 
                     users to instantly check if secondhand items are reported as lost, stolen, or safe to 
                     purchase. The platform supports IMEI, VIN, and serial number verification across all 
-                    50 US states with global database coverage.
+                     six item categories using SafeOrStolen reports, public web results, and AI analysis.
                   </p>
                   <p>
                     Founded in 2017, SafeOrStolen is the 
-                    only solution in the market with a dedicated mobile app featuring barcode scanning 
-                    technology. The platform serves individual buyers and sellers on marketplaces like 
+                     installable web app includes barcode scanning on supported phone cameras. The platform serves individual buyers and sellers on marketplaces like 
                     Facebook Marketplace, eBay, and OfferUp, as well as businesses including pawn shops, 
                     auto dealers, and auction houses.
                   </p>
@@ -267,7 +252,7 @@ const PressKitPage = () => {
                         {asset.description}
                       </p>
                       <Button variant="outline" size="sm" className="gap-2" asChild>
-                        <a href={`mailto:press@safeorstolen.com?subject=Media Asset Request: ${asset.title}`}>
+                         <a href={`mailto:support@safeorstolen.com?subject=Media Asset Request: ${asset.title}`}>
                           <Download className="h-4 w-4" />
                           Request
                         </a>
@@ -285,7 +270,7 @@ const PressKitPage = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Recent Press Releases</h2>
             <div className="max-w-3xl mx-auto space-y-4">
-              {pressReleases.map((release, index) => (
+              {PRESS_RELEASES.map((release, index) => (
                 <Card key={index} className="hover:shadow-md transition-shadow">
                   <CardContent className="py-4">
                     <div className="flex items-center justify-between">
@@ -318,8 +303,8 @@ const PressKitPage = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild>
-                <a href="mailto:press@safeorstolen.com">
-                  press@safeorstolen.com
+               <a href="mailto:support@safeorstolen.com">
+                   support@safeorstolen.com
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>

@@ -44,7 +44,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "How is SafeOrStolen different from Carfax?",
- answer: "Carfax only checks vehicles and costs $44.99 per report. SafeOrStolen checks ALL item types — phones, cars, firearms, electronics, bikes, and more — for just $0.99/check or $10/month unlimited. We also search more databases (100+ vs Carfax's vehicle-only sources), include a mobile app for on-the-spot verification, and provide results in 3 seconds instead of generating a lengthy PDF report."
+  answer: "Carfax provides vehicle-history reports. SafeOrStolen checks six item categories for stolen-item signals using its reports, public web results, and AI analysis. The services can be used for different parts of a pre-purchase review."
  },
  {
  question: "Does SafeOrStolen have a mobile app?",
@@ -60,7 +60,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "How accurate is SafeOrStolen?",
- answer: "SafeOrStolen's accuracy depends on the databases we search — and we search many verification databases (100+). If an item has been reported stolen to law enforcement, insurance, or community databases, we will find it. However, an item may be stolen but not yet reported, so a clean result means 'not found in databases' rather than a guarantee. Always combine our verification with common-sense safety practices like meeting at police stations and getting bills of sale."
+  answer: "A result depends on the information available when the check runs. Not found means the identifier was not found in the sources checked; it is not a guarantee that an item was never stolen. Compare identifiers, seller details, and purchase records before paying."
  }
  ];
 
@@ -71,7 +71,7 @@ export const HomeContentSections = () => {
  <div className="max-w-5xl mx-auto">
  <h2 className="text-2xl md:text-3xl font-bold mb-6">What SafeOrStolen Checks — Complete Verification Coverage</h2>
  <p className="text-muted-foreground mb-8 text-lg">
- SafeOrStolen covers <strong>all six item categories</strong> in one place. Whether you're buying a used phone on Facebook Marketplace, a car from Craigslist, a firearm at a gun show, or electronics from OfferUp — we verify it against law enforcement, insurance, and manufacturer databases in 3 seconds.
+  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports, public web results, and AI analysis, with BikeIndex for bicycles and HotGunz for firearms.
  </p>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
  {[
@@ -256,13 +256,13 @@ export const HomeContentSections = () => {
  Over $15 billion worth of property is stolen annually in the United States, and a significant portion of stolen goods ends up on secondhand marketplaces including Facebook Marketplace, Craigslist, OfferUp, eBay, and local pawn shops. For buyers, the risk is real: if you unknowingly purchase stolen property, law enforcement can seize it and you lose both the item and your money with no legal recourse. In some cases, buyers can face criminal charges for receiving stolen property, especially if the price was suspiciously low or the circumstances were questionable.
  </p>
  <p>
- SafeOrStolen exists to solve this problem. By aggregating over 100 law enforcement, insurance, manufacturer, and community databases into a single 3-second check, we give buyers the ability to verify any item before completing a purchase. Whether it's checking an <Link to="/imei-checker" className="text-primary hover:underline">IMEI number on a used iPhone</Link>, running a <Link to="/vin-checker" className="text-primary hover:underline">VIN check on a used car</Link>, or performing a <Link to="/firearms-check" className="text-primary hover:underline">gun serial number lookup</Link> at a gun show, SafeOrStolen provides comprehensive coverage that no single database can match.
+  SafeOrStolen combines its own stolen-item reports, public web results, and AI analysis into one check. Whether it's checking an <Link to="/imei-checker" className="text-primary hover:underline">IMEI number on a used iPhone</Link>, running a <Link to="/vin-checker" className="text-primary hover:underline">VIN check on a used car</Link>, or performing a <Link to="/firearms-check" className="text-primary hover:underline">gun serial number lookup</Link>, the result explains what was found in the sources checked.
  </p>
  <p>
  For sellers, SafeOrStolen adds trust and transparency to your listings. Share a verification certificate to prove your items are legitimate, increase buyer confidence, and command higher prices. For businesses like <Link to="/for-pawn-shops" className="text-primary hover:underline">pawn shops</Link>, dealers, and <Link to="/for-electronics-resellers" className="text-primary hover:underline">electronics resellers</Link>, our business plans include bulk verification, API integration, compliance reporting, and audit trails to meet state due diligence requirements.
  </p>
  <p>
- SafeOrStolen verifies all six item types — phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods — against multiple sources. We are SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> for on-the-spot verification at gun shows, pawn shops, yard sales, and marketplace meetups. Unlimited verifications for just $10/month.
+  SafeOrStolen verifies all six item types — phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods — against relevant sources. The <Link to="/app" className="text-primary hover:underline">installable web app</Link> supports on-the-spot checks at pawn shops, yard sales, and marketplace meetups. Unlimited verifications are $10 per month.
  </p>
  </div>
  </div>
