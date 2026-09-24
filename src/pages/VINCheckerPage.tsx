@@ -10,7 +10,7 @@ const VINCheckerPage = () => {
  <>
  <ItemLandingPageTemplate
  title="VIN Checker — Check if a Car Is Stolen | SafeOrStolen"
- metaDescription="Run a stolen-vehicle VIN or plate check in seconds against SafeOrStolen's stolen-item reports, web results and AI analysis. 2 free checks with a free account."
+ metaDescription="Run a stolen-vehicle VIN or plate check in seconds against SafeOrStolen's stolen-item reports, web results and AI analysis. Free to try."
  h1="VIN Checker: Is This Car Stolen?"
  itemType="Vehicle"
  dateModified="2026-09-23"
@@ -31,7 +31,7 @@ const VINCheckerPage = () => {
  whyCheck: "A stolen vehicle can be recovered by police and returned to its owner even after you pay for it, leaving you without the car or your money. Checking before you pay — and keeping a record that you checked — protects buyers, and gives honest sellers a way to show a vehicle checked clean. No service can guarantee 100% accuracy and not every theft is reported, so also use the official resources in our <a href='/how-to-check-if-car-stolen'>stolen car guide</a> and check with local law enforcement on high-value purchases.",
  benefits: [
  "Results in about 3 seconds from SafeOrStolen's stolen-item reports, web results and AI analysis",
- "2 free checks with a free account — no credit card required",
+ "Free to try — no credit card required",
  "Check by VIN, license plate, or marketplace listing link",
  "Plain-language AI explanation of every result",
  "Results saved to your account; Proof of Clean Purchase record after a clean check",

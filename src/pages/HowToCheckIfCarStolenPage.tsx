@@ -214,7 +214,7 @@ const HowToCheckIfCarStolenPage = () => {
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">7. Review the listing and the seller — free</h3>
         <p>Many stolen cars are sold through online marketplaces. See the <a href="#listing" className="text-primary underline">listing red flags</a> below, or paste the link into SafeOrStolen’s <Link to="/marketplace-url-checker" className="text-primary underline">marketplace listing checker</Link>.</p>
 
-        <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">8. SafeOrStolen check — 2 free checks with a free account</h3>
+        <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">8. SafeOrStolen check — free to try</h3>
         <p>Enter the VIN, plate or listing link to check it against SafeOrStolen’s own stolen-item reports, public web results and AI analysis in about 3 seconds, then save the result to your account. After a clean check you can keep a Proof of Clean Purchase record. SafeOrStolen does not search NICB, NMVTIS or police databases, so use it alongside the official resources above, not instead of them.</p>
 
         <H2 id="tampering">Physical signs of VIN tampering</H2>
