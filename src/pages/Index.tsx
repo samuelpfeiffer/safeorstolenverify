@@ -116,7 +116,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Is SafeOrStolen free?',
- a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, you can run a single check for $0.99 or get unlimited checks for $10 per month, which includes access to the installable web app with barcode scanning.',
+ a: 'SafeOrStolen includes 2 free checks with a free account, then $0.99 per check or $10/month unlimited, which includes access to the installable web app with barcode scanning.',
  },
  {
  q: 'What databases does SafeOrStolen check?',
@@ -128,7 +128,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen offers 2 free checks with a free account. After that, single checks are $0.99 each, or the Unlimited plan is $10 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
+ a: 'SafeOrStolen includes 2 free checks with a free account, then $0.99 per check or $10/month unlimited, covering verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
  },
  {
  q: 'How does the license plate lookup work?',
@@ -202,7 +202,7 @@ const Index = () => {
  <Shield className="w-3.5 h-3.5" /> Simple, honest pricing
  </div>
  <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
- Start with <span className="text-primary">2 free checks</span>. No credit card.
+ <span className="text-primary">Check for free</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
  Need just one verification? Pay <strong className="text-foreground">$0.99</strong> with a free account.
@@ -403,7 +403,7 @@ const Index = () => {
           to="/verify"
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
         >
-          Try It Yourself — 2 Free Checks →
+          Try It Yourself — Free →
         </Link>
       </div>
     </div>
@@ -439,7 +439,7 @@ const Index = () => {
  to="/verify"
  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
  >
- Try 2 Free Checks — Then $10/mo Unlimited →
+ Check for Free →
  </Link>
  <Link
  to="/for-sellers"
@@ -675,7 +675,7 @@ const Index = () => {
  </h2>
  <p className="text-muted-foreground mb-8 text-lg">
  Law enforcement seizes stolen property with zero compensation to buyers.
- Two free checks. No credit card. 3 seconds. Protect yourself now.
+ Free to try. No credit card. 3 seconds. Protect yourself now.
  </p>
  <Link
  to="/verify"
@@ -685,7 +685,7 @@ const Index = () => {
  Start Free Verification Now
  </Link>
  <p className="text-muted-foreground/50 text-sm mt-4">
- 2 free checks · Results in 3 seconds · No credit card
+ Free to try · Results in 3 seconds · No credit card
  </p>
  </div>
  </section>

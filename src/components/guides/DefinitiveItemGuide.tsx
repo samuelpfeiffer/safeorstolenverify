@@ -39,7 +39,42 @@ export type DefinitiveGuideProps = {
   faqs: GuideFaq[];
   related: { href: string; label: string }[];
   published?: string;
+  /** buyer (default), victim (had something stolen), or legal information */
+  variant?: "buyer" | "victim" | "legal";
 };
+
+const LABELS = {
+  buyer: {
+    badge: "Buyer and seller guide",
+    identifier: "Find the identifier",
+    methods: "Checks to run before you pay",
+    methodsToc: "Checks to run, costs, and limits",
+    methodsIntro:
+      "No single search proves ownership or catches every theft. Use several independent checks and understand what each one can—and cannot—tell you.",
+    redFlags: "Warning signs",
+    stolen: "What to do if the item may be stolen",
+  },
+  victim: {
+    badge: "Theft victim guide",
+    identifier: "Find your identifier",
+    methods: "Steps to take now",
+    methodsToc: "Steps to take now",
+    methodsIntro:
+      "Work through these in order. Speed matters for tracking, blocking, and insurance, and the identifier is what police, carriers, registries, and insurers ask for.",
+    redFlags: "Mistakes to avoid",
+    stolen: "Keep records and follow up",
+  },
+  legal: {
+    badge: "General legal information",
+    identifier: "Key points",
+    methods: "How to protect yourself as a buyer",
+    methodsToc: "How to protect yourself",
+    methodsIntro:
+      "This is general information, not legal advice. Laws differ by state and situation; speak with a licensed attorney about your facts.",
+    redFlags: "Warning signs a deal may involve stolen property",
+    stolen: "If you think you bought stolen property",
+  },
+} as const;
 
 const DATE_MODIFIED = "2026-09-24";
 
@@ -62,9 +97,14 @@ export function DefinitiveItemGuide({
   faqs,
   related,
   published = DATE_MODIFIED,
+  variant = "buyer",
 }: DefinitiveGuideProps) {
+  const L = LABELS[variant];
   const pageUrl = `https://safeorstolen.com${slug}`;
-  const steps = [
+  const steps = variant !== "buyer" ? [
+    `${identifierTitle}. ${identifierIntro}`,
+    ...methods.map((method) => `${method.name}: ${method.description}`),
+  ] : [
     `Find and photograph the item's identifier. ${identifierIntro}`,
     ...methods.map((method) => `${method.name}: ${method.description}`),
     "Compare the identifier on the physical item with the listing, receipt, packaging, and any account or registration screen.",
@@ -126,7 +166,7 @@ export function DefinitiveItemGuide({
       />
       <article className="container mx-auto max-w-3xl px-4 py-16 text-muted-foreground leading-relaxed">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-          <Shield className="h-4 w-4" /> Buyer and seller guide
+          <Shield className="h-4 w-4" /> {L.badge}
         </div>
         <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
           {title}
@@ -162,22 +202,22 @@ export function DefinitiveItemGuide({
           <ol className="list-decimal space-y-1 pl-5">
             <li>
               <a className="hover:text-primary" href="#identifier">
-                Find the identifier
+                {L.identifier}
               </a>
             </li>
             <li>
               <a className="hover:text-primary" href="#methods">
-                Checks to run, costs, and limits
+                {L.methodsToc}
               </a>
             </li>
             <li>
               <a className="hover:text-primary" href="#red-flags">
-                Warning signs
+                {L.redFlags}
               </a>
             </li>
             <li>
               <a className="hover:text-primary" href="#if-stolen">
-                What to do if it may be stolen
+                {L.stolen}
               </a>
             </li>
             <li>
@@ -205,23 +245,21 @@ export function DefinitiveItemGuide({
             <li key={location}>{location}</li>
           ))}
         </ul>
-        <p>
-          Photograph the identifier before paying and compare every place it
-          appears. A mismatch, missing label, altered plate, or seller who
-          refuses to provide it is a reason to stop.
-        </p>
+        {variant === "buyer" && (
+          <p>
+            Photograph the identifier before paying and compare every place it
+            appears. A mismatch, missing label, altered plate, or seller who
+            refuses to provide it is a reason to stop.
+          </p>
+        )}
 
         <h2
           id="methods"
           className="mb-4 mt-12 text-3xl font-bold text-foreground"
         >
-          Checks to run before you pay
+          {L.methods}
         </h2>
-        <p className="mb-6">
-          No single search proves ownership or catches every theft. Use several
-          independent checks and understand what each one can—and cannot—tell
-          you.
-        </p>
+        <p className="mb-6">{L.methodsIntro}</p>
         <div className="space-y-6">
           {methods.map((method, index) => (
             <section
@@ -258,7 +296,7 @@ export function DefinitiveItemGuide({
           id="red-flags"
           className="mb-4 mt-12 text-3xl font-bold text-foreground"
         >
-          Warning signs
+          {L.redFlags}
         </h2>
         <ul className="list-disc space-y-2 pl-6">
           {redFlags.map((flag) => (
@@ -270,7 +308,7 @@ export function DefinitiveItemGuide({
           id="if-stolen"
           className="mb-4 mt-12 text-3xl font-bold text-foreground"
         >
-          What to do if the item may be stolen
+          {L.stolen}
         </h2>
         <ol className="list-decimal space-y-2 pl-6">
           {stolenSteps.map((step) => (
@@ -280,11 +318,28 @@ export function DefinitiveItemGuide({
         <div className="my-8 flex gap-3 rounded-lg border border-border bg-card p-4 text-sm">
           <AlertTriangle className="mt-1 h-5 w-5 shrink-0 text-primary" />
           <p>
-            No service can guarantee 100% accuracy, and not every theft is
-            reported. Do not confront a seller. For a high-value purchase or a
-            strong warning sign, contact local law enforcement.
+            {variant === "legal"
+              ? "This page is general information, not legal advice. Laws differ by state and by the facts of each case. Speak with a licensed attorney in your state about your situation."
+              : variant === "victim"
+                ? "Do not try to recover an item yourself or confront anyone who has it. Give the information to police. Call emergency services only if someone is in immediate danger."
+                : "No service can guarantee 100% accuracy, and not every theft is reported. Do not confront a seller. For a high-value purchase or a strong warning sign, contact local law enforcement."}
           </p>
         </div>
+        {variant === "victim" && (
+          <div className="my-8 rounded-lg border border-primary/40 bg-card p-5">
+            <p className="mb-3 text-foreground">
+              <strong>Log it on SafeOrStolen.</strong> Add the item and its
+              identifier to SafeOrStolen's stolen-item reports, so anyone who
+              checks that identifier on SafeOrStolen sees it was reported
+              stolen. This does not replace a police report.
+            </p>
+            <Button asChild>
+              <Link to="/report-stolen">
+                Report a stolen item <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        )}
 
         <h2
           id="safeorstolen"

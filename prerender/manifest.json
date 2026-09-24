@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T02:44:37.669932+00:00",
+  "generatedAt": "2026-09-24T03:14:04.568820+00:00",
   "site": "https://safeorstolen.com",
   "pages": [
     {
@@ -395,7 +395,7 @@
     {
       "route": "/check-camera-stolen",
       "slug": "check-camera-stolen",
-      "title": "Check if Camera is Stolen - DSLR, Mirrorless, Lenses | SafeOrStolen",
+      "title": "How to Check if a Camera or Lens Is Stolen | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-camera-stolen"
     },
     {
@@ -491,7 +491,7 @@
     {
       "route": "/check-motorcycle-stolen-vin",
       "slug": "check-motorcycle-stolen-vin",
-      "title": "Check if Motorcycle is Stolen by VIN - Free Verification",
+      "title": "How to Check if a Motorcycle Is Stolen (VIN Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-motorcycle-stolen-vin"
     },
     {
@@ -551,7 +551,7 @@
     {
       "route": "/check-watch-stolen",
       "slug": "check-watch-stolen",
-      "title": "Check if Watch is Stolen - Rolex, Omega, Tag Heuer | SafeOrStolen",
+      "title": "How to Check if a Watch Is Stolen (Serial Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/check-watch-stolen"
     },
     {
@@ -759,16 +759,136 @@
       "canonical": "https://safeorstolen.com/for-auction-houses"
     },
     {
+      "route": "/how-to-check-if-apple-device-stolen",
+      "slug": "how-to-check-if-apple-device-stolen",
+      "title": "Check if AirPods, Apple Watch or iPad Is Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-apple-device-stolen"
+    },
+    {
       "route": "/how-to-check-if-bike-stolen",
       "slug": "how-to-check-if-bike-stolen",
       "title": "How to Check if a Bike Is Stolen (2026) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/how-to-check-if-bike-stolen"
     },
     {
+      "route": "/how-to-check-if-boat-stolen",
+      "slug": "how-to-check-if-boat-stolen",
+      "title": "How to Check if a Boat Is Stolen (HIN Guide) | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-boat-stolen"
+    },
+    {
+      "route": "/how-to-check-if-car-stolen",
+      "slug": "how-to-check-if-car-stolen",
+      "title": "How to Check if a Car Is Stolen (2026 Guide) | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-car-stolen"
+    },
+    {
+      "route": "/how-to-check-if-gun-is-stolen",
+      "slug": "how-to-check-if-gun-is-stolen",
+      "title": "How to Check if a Gun Is Stolen Safely | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-gun-is-stolen"
+    },
+    {
+      "route": "/how-to-check-if-item-stolen",
+      "slug": "how-to-check-if-item-stolen",
+      "title": "How to Check if an Item Is Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-item-stolen"
+    },
+    {
+      "route": "/how-to-check-if-laptop-stolen",
+      "slug": "how-to-check-if-laptop-stolen",
+      "title": "How to Check if a Laptop Is Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-laptop-stolen"
+    },
+    {
+      "route": "/how-to-check-if-license-plate-stolen",
+      "slug": "how-to-check-if-license-plate-stolen",
+      "title": "How to Check if a License Plate Is Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-license-plate-stolen"
+    },
+    {
       "route": "/how-to-check-if-phone-stolen",
       "slug": "how-to-check-if-phone-stolen",
       "title": "How to Check if a Phone Is Stolen (IMEI Guide) | SafeOrStolen",
       "canonical": "https://safeorstolen.com/how-to-check-if-phone-stolen"
+    },
+    {
+      "route": "/how-to-check-if-tools-stolen",
+      "slug": "how-to-check-if-tools-stolen",
+      "title": "How to Check if Power Tools Are Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-tools-stolen"
+    },
+    {
+      "route": "/how-to-check-if-trailer-atv-stolen",
+      "slug": "how-to-check-if-trailer-atv-stolen",
+      "title": "Check if a Trailer, ATV or Dirt Bike Is Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-check-if-trailer-atv-stolen"
+    },
+    {
+      "route": "/how-to-find-stolen-item-for-sale-online",
+      "slug": "how-to-find-stolen-item-for-sale-online",
+      "title": "How to Find Your Stolen Item for Sale Online | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-find-stolen-item-for-sale-online"
+    },
+    {
+      "route": "/how-to-prove-item-is-not-stolen",
+      "slug": "how-to-prove-item-is-not-stolen",
+      "title": "How to Show an Item Wasn't Reported Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-prove-item-is-not-stolen"
+    },
+    {
+      "route": "/how-to-report-a-stolen-item",
+      "slug": "how-to-report-a-stolen-item",
+      "title": "How to Report a Stolen Item: Police, Registries & More | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-report-a-stolen-item"
+    },
+    {
+      "route": "/how-to-tell-if-marketplace-item-is-stolen",
+      "slug": "how-to-tell-if-marketplace-item-is-stolen",
+      "title": "How to Spot a Stolen Marketplace Item | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/how-to-tell-if-marketplace-item-is-stolen"
+    },
+    {
+      "route": "/is-it-illegal-to-buy-stolen-property",
+      "slug": "is-it-illegal-to-buy-stolen-property",
+      "title": "Is It Illegal to Buy Stolen Property Unknowingly? | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/is-it-illegal-to-buy-stolen-property"
+    },
+    {
+      "route": "/vin-checker",
+      "slug": "vin-checker",
+      "title": "VIN Checker \u2014 Check if a Car Is Stolen | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/vin-checker"
+    },
+    {
+      "route": "/what-to-do-if-you-bought-something-stolen",
+      "slug": "what-to-do-if-you-bought-something-stolen",
+      "title": "What to Do After Buying a Stolen Item | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/what-to-do-if-you-bought-something-stolen"
+    },
+    {
+      "route": "/what-to-do-if-your-bike-is-stolen",
+      "slug": "what-to-do-if-your-bike-is-stolen",
+      "title": "What to Do if Your Bike Is Stolen: Report & Recover | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/what-to-do-if-your-bike-is-stolen"
+    },
+    {
+      "route": "/what-to-do-if-your-car-is-stolen",
+      "slug": "what-to-do-if-your-car-is-stolen",
+      "title": "What to Do if Your Car Is Stolen: First Steps | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/what-to-do-if-your-car-is-stolen"
+    },
+    {
+      "route": "/what-to-do-if-your-gun-is-stolen",
+      "slug": "what-to-do-if-your-gun-is-stolen",
+      "title": "What to Do if Your Gun Is Stolen: Report It Now | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/what-to-do-if-your-gun-is-stolen"
+    },
+    {
+      "route": "/what-to-do-if-your-phone-is-stolen",
+      "slug": "what-to-do-if-your-phone-is-stolen",
+      "title": "What to Do if Your Phone Is Stolen: Step by Step | SafeOrStolen",
+      "canonical": "https://safeorstolen.com/what-to-do-if-your-phone-is-stolen"
     }
   ]
 }

@@ -112,6 +112,7 @@ import { Route as HawaiiLicensePlateLookupRouteImport } from './routes/hawaii-li
 import { Route as HawaiiVinLookupRouteImport } from './routes/hawaii-vin-lookup'
 import { Route as HotgunzAlternativeRouteImport } from './routes/hotgunz-alternative'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as HowToCheckIfAppleDeviceStolenRouteImport } from './routes/how-to-check-if-apple-device-stolen'
 import { Route as HowToCheckIfBikeStolenRouteImport } from './routes/how-to-check-if-bike-stolen'
 import { Route as HowToCheckIfBoatStolenRouteImport } from './routes/how-to-check-if-boat-stolen'
 import { Route as HowToCheckIfCarStolenRouteImport } from './routes/how-to-check-if-car-stolen'
@@ -121,7 +122,10 @@ import { Route as HowToCheckIfLaptopStolenRouteImport } from './routes/how-to-ch
 import { Route as HowToCheckIfLicensePlateStolenRouteImport } from './routes/how-to-check-if-license-plate-stolen'
 import { Route as HowToCheckIfPhoneStolenRouteImport } from './routes/how-to-check-if-phone-stolen'
 import { Route as HowToCheckIfToolsStolenRouteImport } from './routes/how-to-check-if-tools-stolen'
+import { Route as HowToCheckIfTrailerAtvStolenRouteImport } from './routes/how-to-check-if-trailer-atv-stolen'
+import { Route as HowToFindStolenItemForSaleOnlineRouteImport } from './routes/how-to-find-stolen-item-for-sale-online'
 import { Route as HowToProveItemIsNotStolenRouteImport } from './routes/how-to-prove-item-is-not-stolen'
+import { Route as HowToReportAStolenItemRouteImport } from './routes/how-to-report-a-stolen-item'
 import { Route as HowToTellIfMarketplaceItemIsStolenRouteImport } from './routes/how-to-tell-if-marketplace-item-is-stolen'
 import { Route as HowToVerifyAUsedItemRouteImport } from './routes/how-to-verify-a-used-item'
 import { Route as IdahoLicensePlateLookupRouteImport } from './routes/idaho-license-plate-lookup'
@@ -136,6 +140,7 @@ import { Route as IndianaVinLookupRouteImport } from './routes/indiana-vin-looku
 import { Route as InstallAppRouteImport } from './routes/install-app'
 import { Route as IowaLicensePlateLookupRouteImport } from './routes/iowa-license-plate-lookup'
 import { Route as IowaVinLookupRouteImport } from './routes/iowa-vin-lookup'
+import { Route as IsItIllegalToBuyStolenPropertyRouteImport } from './routes/is-it-illegal-to-buy-stolen-property'
 import { Route as IsMyIphoneStolenRouteImport } from './routes/is-my-iphone-stolen'
 import { Route as IsMyPhoneStolenRouteImport } from './routes/is-my-phone-stolen'
 import { Route as IsThisBikeStolenRouteImport } from './routes/is-this-bike-stolen'
@@ -288,6 +293,10 @@ import { Route as WashingtonVinLookupRouteImport } from './routes/washington-vin
 import { Route as WestVirginiaLicensePlateLookupRouteImport } from './routes/west-virginia-license-plate-lookup'
 import { Route as WestVirginiaVinLookupRouteImport } from './routes/west-virginia-vin-lookup'
 import { Route as WhatToDoIfYouBoughtSomethingStolenRouteImport } from './routes/what-to-do-if-you-bought-something-stolen'
+import { Route as WhatToDoIfYourBikeIsStolenRouteImport } from './routes/what-to-do-if-your-bike-is-stolen'
+import { Route as WhatToDoIfYourCarIsStolenRouteImport } from './routes/what-to-do-if-your-car-is-stolen'
+import { Route as WhatToDoIfYourGunIsStolenRouteImport } from './routes/what-to-do-if-your-gun-is-stolen'
+import { Route as WhatToDoIfYourPhoneIsStolenRouteImport } from './routes/what-to-do-if-your-phone-is-stolen'
 import { Route as WisconsinLicensePlateLookupRouteImport } from './routes/wisconsin-license-plate-lookup'
 import { Route as WisconsinVinLookupRouteImport } from './routes/wisconsin-vin-lookup'
 import { Route as WyomingLicensePlateLookupRouteImport } from './routes/wyoming-license-plate-lookup'
@@ -904,6 +913,12 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowToCheckIfAppleDeviceStolenRoute =
+  HowToCheckIfAppleDeviceStolenRouteImport.update({
+    id: '/how-to-check-if-apple-device-stolen',
+    path: '/how-to-check-if-apple-device-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HowToCheckIfBikeStolenRoute = HowToCheckIfBikeStolenRouteImport.update({
   id: '/how-to-check-if-bike-stolen',
   path: '/how-to-check-if-bike-stolen',
@@ -951,12 +966,29 @@ const HowToCheckIfToolsStolenRoute = HowToCheckIfToolsStolenRouteImport.update({
   path: '/how-to-check-if-tools-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowToCheckIfTrailerAtvStolenRoute =
+  HowToCheckIfTrailerAtvStolenRouteImport.update({
+    id: '/how-to-check-if-trailer-atv-stolen',
+    path: '/how-to-check-if-trailer-atv-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HowToFindStolenItemForSaleOnlineRoute =
+  HowToFindStolenItemForSaleOnlineRouteImport.update({
+    id: '/how-to-find-stolen-item-for-sale-online',
+    path: '/how-to-find-stolen-item-for-sale-online',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HowToProveItemIsNotStolenRoute =
   HowToProveItemIsNotStolenRouteImport.update({
     id: '/how-to-prove-item-is-not-stolen',
     path: '/how-to-prove-item-is-not-stolen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const HowToReportAStolenItemRoute = HowToReportAStolenItemRouteImport.update({
+  id: '/how-to-report-a-stolen-item',
+  path: '/how-to-report-a-stolen-item',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowToTellIfMarketplaceItemIsStolenRoute =
   HowToTellIfMarketplaceItemIsStolenRouteImport.update({
     id: '/how-to-tell-if-marketplace-item-is-stolen',
@@ -1030,6 +1062,12 @@ const IowaVinLookupRoute = IowaVinLookupRouteImport.update({
   path: '/iowa-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IsItIllegalToBuyStolenPropertyRoute =
+  IsItIllegalToBuyStolenPropertyRouteImport.update({
+    id: '/is-it-illegal-to-buy-stolen-property',
+    path: '/is-it-illegal-to-buy-stolen-property',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IsMyIphoneStolenRoute = IsMyIphoneStolenRouteImport.update({
   id: '/is-my-iphone-stolen',
   path: '/is-my-iphone-stolen',
@@ -1823,6 +1861,30 @@ const WhatToDoIfYouBoughtSomethingStolenRoute =
     path: '/what-to-do-if-you-bought-something-stolen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const WhatToDoIfYourBikeIsStolenRoute =
+  WhatToDoIfYourBikeIsStolenRouteImport.update({
+    id: '/what-to-do-if-your-bike-is-stolen',
+    path: '/what-to-do-if-your-bike-is-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WhatToDoIfYourCarIsStolenRoute =
+  WhatToDoIfYourCarIsStolenRouteImport.update({
+    id: '/what-to-do-if-your-car-is-stolen',
+    path: '/what-to-do-if-your-car-is-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WhatToDoIfYourGunIsStolenRoute =
+  WhatToDoIfYourGunIsStolenRouteImport.update({
+    id: '/what-to-do-if-your-gun-is-stolen',
+    path: '/what-to-do-if-your-gun-is-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WhatToDoIfYourPhoneIsStolenRoute =
+  WhatToDoIfYourPhoneIsStolenRouteImport.update({
+    id: '/what-to-do-if-your-phone-is-stolen',
+    path: '/what-to-do-if-your-phone-is-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const WisconsinLicensePlateLookupRoute =
   WisconsinLicensePlateLookupRouteImport.update({
     id: '/wisconsin-license-plate-lookup',
@@ -2387,6 +2449,7 @@ export interface FileRoutesByFullPath {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-apple-device-stolen': typeof HowToCheckIfAppleDeviceStolenRoute
   '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
   '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
@@ -2396,7 +2459,10 @@ export interface FileRoutesByFullPath {
   '/how-to-check-if-license-plate-stolen': typeof HowToCheckIfLicensePlateStolenRoute
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
+  '/how-to-check-if-trailer-atv-stolen': typeof HowToCheckIfTrailerAtvStolenRoute
+  '/how-to-find-stolen-item-for-sale-online': typeof HowToFindStolenItemForSaleOnlineRoute
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
+  '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
   '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
@@ -2411,6 +2477,7 @@ export interface FileRoutesByFullPath {
   '/install-app': typeof InstallAppRoute
   '/iowa-license-plate-lookup': typeof IowaLicensePlateLookupRoute
   '/iowa-vin-lookup': typeof IowaVinLookupRoute
+  '/is-it-illegal-to-buy-stolen-property': typeof IsItIllegalToBuyStolenPropertyRoute
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
@@ -2563,6 +2630,10 @@ export interface FileRoutesByFullPath {
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
   '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
   '/what-to-do-if-you-bought-something-stolen': typeof WhatToDoIfYouBoughtSomethingStolenRoute
+  '/what-to-do-if-your-bike-is-stolen': typeof WhatToDoIfYourBikeIsStolenRoute
+  '/what-to-do-if-your-car-is-stolen': typeof WhatToDoIfYourCarIsStolenRoute
+  '/what-to-do-if-your-gun-is-stolen': typeof WhatToDoIfYourGunIsStolenRoute
+  '/what-to-do-if-your-phone-is-stolen': typeof WhatToDoIfYourPhoneIsStolenRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -2748,6 +2819,7 @@ export interface FileRoutesByTo {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-apple-device-stolen': typeof HowToCheckIfAppleDeviceStolenRoute
   '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
   '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
@@ -2757,7 +2829,10 @@ export interface FileRoutesByTo {
   '/how-to-check-if-license-plate-stolen': typeof HowToCheckIfLicensePlateStolenRoute
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
+  '/how-to-check-if-trailer-atv-stolen': typeof HowToCheckIfTrailerAtvStolenRoute
+  '/how-to-find-stolen-item-for-sale-online': typeof HowToFindStolenItemForSaleOnlineRoute
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
+  '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
   '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
@@ -2772,6 +2847,7 @@ export interface FileRoutesByTo {
   '/install-app': typeof InstallAppRoute
   '/iowa-license-plate-lookup': typeof IowaLicensePlateLookupRoute
   '/iowa-vin-lookup': typeof IowaVinLookupRoute
+  '/is-it-illegal-to-buy-stolen-property': typeof IsItIllegalToBuyStolenPropertyRoute
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
@@ -2923,6 +2999,10 @@ export interface FileRoutesByTo {
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
   '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
   '/what-to-do-if-you-bought-something-stolen': typeof WhatToDoIfYouBoughtSomethingStolenRoute
+  '/what-to-do-if-your-bike-is-stolen': typeof WhatToDoIfYourBikeIsStolenRoute
+  '/what-to-do-if-your-car-is-stolen': typeof WhatToDoIfYourCarIsStolenRoute
+  '/what-to-do-if-your-gun-is-stolen': typeof WhatToDoIfYourGunIsStolenRoute
+  '/what-to-do-if-your-phone-is-stolen': typeof WhatToDoIfYourPhoneIsStolenRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3111,6 +3191,7 @@ export interface FileRoutesById {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-apple-device-stolen': typeof HowToCheckIfAppleDeviceStolenRoute
   '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
   '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
   '/how-to-check-if-car-stolen': typeof HowToCheckIfCarStolenRoute
@@ -3120,7 +3201,10 @@ export interface FileRoutesById {
   '/how-to-check-if-license-plate-stolen': typeof HowToCheckIfLicensePlateStolenRoute
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
+  '/how-to-check-if-trailer-atv-stolen': typeof HowToCheckIfTrailerAtvStolenRoute
+  '/how-to-find-stolen-item-for-sale-online': typeof HowToFindStolenItemForSaleOnlineRoute
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
+  '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
   '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
@@ -3135,6 +3219,7 @@ export interface FileRoutesById {
   '/install-app': typeof InstallAppRoute
   '/iowa-license-plate-lookup': typeof IowaLicensePlateLookupRoute
   '/iowa-vin-lookup': typeof IowaVinLookupRoute
+  '/is-it-illegal-to-buy-stolen-property': typeof IsItIllegalToBuyStolenPropertyRoute
   '/is-my-iphone-stolen': typeof IsMyIphoneStolenRoute
   '/is-my-phone-stolen': typeof IsMyPhoneStolenRoute
   '/is-this-bike-stolen': typeof IsThisBikeStolenRoute
@@ -3287,6 +3372,10 @@ export interface FileRoutesById {
   '/west-virginia-license-plate-lookup': typeof WestVirginiaLicensePlateLookupRoute
   '/west-virginia-vin-lookup': typeof WestVirginiaVinLookupRoute
   '/what-to-do-if-you-bought-something-stolen': typeof WhatToDoIfYouBoughtSomethingStolenRoute
+  '/what-to-do-if-your-bike-is-stolen': typeof WhatToDoIfYourBikeIsStolenRoute
+  '/what-to-do-if-your-car-is-stolen': typeof WhatToDoIfYourCarIsStolenRoute
+  '/what-to-do-if-your-gun-is-stolen': typeof WhatToDoIfYourGunIsStolenRoute
+  '/what-to-do-if-your-phone-is-stolen': typeof WhatToDoIfYourPhoneIsStolenRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3476,6 +3565,7 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-apple-device-stolen'
     | '/how-to-check-if-bike-stolen'
     | '/how-to-check-if-boat-stolen'
     | '/how-to-check-if-car-stolen'
@@ -3485,7 +3575,10 @@ export interface FileRouteTypes {
     | '/how-to-check-if-license-plate-stolen'
     | '/how-to-check-if-phone-stolen'
     | '/how-to-check-if-tools-stolen'
+    | '/how-to-check-if-trailer-atv-stolen'
+    | '/how-to-find-stolen-item-for-sale-online'
     | '/how-to-prove-item-is-not-stolen'
+    | '/how-to-report-a-stolen-item'
     | '/how-to-tell-if-marketplace-item-is-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
@@ -3500,6 +3593,7 @@ export interface FileRouteTypes {
     | '/install-app'
     | '/iowa-license-plate-lookup'
     | '/iowa-vin-lookup'
+    | '/is-it-illegal-to-buy-stolen-property'
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
@@ -3652,6 +3746,10 @@ export interface FileRouteTypes {
     | '/west-virginia-license-plate-lookup'
     | '/west-virginia-vin-lookup'
     | '/what-to-do-if-you-bought-something-stolen'
+    | '/what-to-do-if-your-bike-is-stolen'
+    | '/what-to-do-if-your-car-is-stolen'
+    | '/what-to-do-if-your-gun-is-stolen'
+    | '/what-to-do-if-your-phone-is-stolen'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -3837,6 +3935,7 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-apple-device-stolen'
     | '/how-to-check-if-bike-stolen'
     | '/how-to-check-if-boat-stolen'
     | '/how-to-check-if-car-stolen'
@@ -3846,7 +3945,10 @@ export interface FileRouteTypes {
     | '/how-to-check-if-license-plate-stolen'
     | '/how-to-check-if-phone-stolen'
     | '/how-to-check-if-tools-stolen'
+    | '/how-to-check-if-trailer-atv-stolen'
+    | '/how-to-find-stolen-item-for-sale-online'
     | '/how-to-prove-item-is-not-stolen'
+    | '/how-to-report-a-stolen-item'
     | '/how-to-tell-if-marketplace-item-is-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
@@ -3861,6 +3963,7 @@ export interface FileRouteTypes {
     | '/install-app'
     | '/iowa-license-plate-lookup'
     | '/iowa-vin-lookup'
+    | '/is-it-illegal-to-buy-stolen-property'
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
@@ -4012,6 +4115,10 @@ export interface FileRouteTypes {
     | '/west-virginia-license-plate-lookup'
     | '/west-virginia-vin-lookup'
     | '/what-to-do-if-you-bought-something-stolen'
+    | '/what-to-do-if-your-bike-is-stolen'
+    | '/what-to-do-if-your-car-is-stolen'
+    | '/what-to-do-if-your-gun-is-stolen'
+    | '/what-to-do-if-your-phone-is-stolen'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4199,6 +4306,7 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-apple-device-stolen'
     | '/how-to-check-if-bike-stolen'
     | '/how-to-check-if-boat-stolen'
     | '/how-to-check-if-car-stolen'
@@ -4208,7 +4316,10 @@ export interface FileRouteTypes {
     | '/how-to-check-if-license-plate-stolen'
     | '/how-to-check-if-phone-stolen'
     | '/how-to-check-if-tools-stolen'
+    | '/how-to-check-if-trailer-atv-stolen'
+    | '/how-to-find-stolen-item-for-sale-online'
     | '/how-to-prove-item-is-not-stolen'
+    | '/how-to-report-a-stolen-item'
     | '/how-to-tell-if-marketplace-item-is-stolen'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
@@ -4223,6 +4334,7 @@ export interface FileRouteTypes {
     | '/install-app'
     | '/iowa-license-plate-lookup'
     | '/iowa-vin-lookup'
+    | '/is-it-illegal-to-buy-stolen-property'
     | '/is-my-iphone-stolen'
     | '/is-my-phone-stolen'
     | '/is-this-bike-stolen'
@@ -4375,6 +4487,10 @@ export interface FileRouteTypes {
     | '/west-virginia-license-plate-lookup'
     | '/west-virginia-vin-lookup'
     | '/what-to-do-if-you-bought-something-stolen'
+    | '/what-to-do-if-your-bike-is-stolen'
+    | '/what-to-do-if-your-car-is-stolen'
+    | '/what-to-do-if-your-gun-is-stolen'
+    | '/what-to-do-if-your-phone-is-stolen'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4563,6 +4679,7 @@ export interface RootRouteChildren {
   HawaiiVinLookupRoute: typeof HawaiiVinLookupRoute
   HotgunzAlternativeRoute: typeof HotgunzAlternativeRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  HowToCheckIfAppleDeviceStolenRoute: typeof HowToCheckIfAppleDeviceStolenRoute
   HowToCheckIfBikeStolenRoute: typeof HowToCheckIfBikeStolenRoute
   HowToCheckIfBoatStolenRoute: typeof HowToCheckIfBoatStolenRoute
   HowToCheckIfCarStolenRoute: typeof HowToCheckIfCarStolenRoute
@@ -4572,7 +4689,10 @@ export interface RootRouteChildren {
   HowToCheckIfLicensePlateStolenRoute: typeof HowToCheckIfLicensePlateStolenRoute
   HowToCheckIfPhoneStolenRoute: typeof HowToCheckIfPhoneStolenRoute
   HowToCheckIfToolsStolenRoute: typeof HowToCheckIfToolsStolenRoute
+  HowToCheckIfTrailerAtvStolenRoute: typeof HowToCheckIfTrailerAtvStolenRoute
+  HowToFindStolenItemForSaleOnlineRoute: typeof HowToFindStolenItemForSaleOnlineRoute
   HowToProveItemIsNotStolenRoute: typeof HowToProveItemIsNotStolenRoute
+  HowToReportAStolenItemRoute: typeof HowToReportAStolenItemRoute
   HowToTellIfMarketplaceItemIsStolenRoute: typeof HowToTellIfMarketplaceItemIsStolenRoute
   HowToVerifyAUsedItemRoute: typeof HowToVerifyAUsedItemRoute
   IdahoLicensePlateLookupRoute: typeof IdahoLicensePlateLookupRoute
@@ -4587,6 +4707,7 @@ export interface RootRouteChildren {
   InstallAppRoute: typeof InstallAppRoute
   IowaLicensePlateLookupRoute: typeof IowaLicensePlateLookupRoute
   IowaVinLookupRoute: typeof IowaVinLookupRoute
+  IsItIllegalToBuyStolenPropertyRoute: typeof IsItIllegalToBuyStolenPropertyRoute
   IsMyIphoneStolenRoute: typeof IsMyIphoneStolenRoute
   IsMyPhoneStolenRoute: typeof IsMyPhoneStolenRoute
   IsThisBikeStolenRoute: typeof IsThisBikeStolenRoute
@@ -4739,6 +4860,10 @@ export interface RootRouteChildren {
   WestVirginiaLicensePlateLookupRoute: typeof WestVirginiaLicensePlateLookupRoute
   WestVirginiaVinLookupRoute: typeof WestVirginiaVinLookupRoute
   WhatToDoIfYouBoughtSomethingStolenRoute: typeof WhatToDoIfYouBoughtSomethingStolenRoute
+  WhatToDoIfYourBikeIsStolenRoute: typeof WhatToDoIfYourBikeIsStolenRoute
+  WhatToDoIfYourCarIsStolenRoute: typeof WhatToDoIfYourCarIsStolenRoute
+  WhatToDoIfYourGunIsStolenRoute: typeof WhatToDoIfYourGunIsStolenRoute
+  WhatToDoIfYourPhoneIsStolenRoute: typeof WhatToDoIfYourPhoneIsStolenRoute
   WisconsinLicensePlateLookupRoute: typeof WisconsinLicensePlateLookupRoute
   WisconsinVinLookupRoute: typeof WisconsinVinLookupRoute
   WyomingLicensePlateLookupRoute: typeof WyomingLicensePlateLookupRoute
@@ -5494,6 +5619,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-to-check-if-apple-device-stolen': {
+      id: '/how-to-check-if-apple-device-stolen'
+      path: '/how-to-check-if-apple-device-stolen'
+      fullPath: '/how-to-check-if-apple-device-stolen'
+      preLoaderRoute: typeof HowToCheckIfAppleDeviceStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-to-check-if-bike-stolen': {
       id: '/how-to-check-if-bike-stolen'
       path: '/how-to-check-if-bike-stolen'
@@ -5557,11 +5689,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowToCheckIfToolsStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-to-check-if-trailer-atv-stolen': {
+      id: '/how-to-check-if-trailer-atv-stolen'
+      path: '/how-to-check-if-trailer-atv-stolen'
+      fullPath: '/how-to-check-if-trailer-atv-stolen'
+      preLoaderRoute: typeof HowToCheckIfTrailerAtvStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-find-stolen-item-for-sale-online': {
+      id: '/how-to-find-stolen-item-for-sale-online'
+      path: '/how-to-find-stolen-item-for-sale-online'
+      fullPath: '/how-to-find-stolen-item-for-sale-online'
+      preLoaderRoute: typeof HowToFindStolenItemForSaleOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-to-prove-item-is-not-stolen': {
       id: '/how-to-prove-item-is-not-stolen'
       path: '/how-to-prove-item-is-not-stolen'
       fullPath: '/how-to-prove-item-is-not-stolen'
       preLoaderRoute: typeof HowToProveItemIsNotStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-report-a-stolen-item': {
+      id: '/how-to-report-a-stolen-item'
+      path: '/how-to-report-a-stolen-item'
+      fullPath: '/how-to-report-a-stolen-item'
+      preLoaderRoute: typeof HowToReportAStolenItemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-tell-if-marketplace-item-is-stolen': {
@@ -5660,6 +5813,13 @@ declare module '@tanstack/react-router' {
       path: '/iowa-vin-lookup'
       fullPath: '/iowa-vin-lookup'
       preLoaderRoute: typeof IowaVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/is-it-illegal-to-buy-stolen-property': {
+      id: '/is-it-illegal-to-buy-stolen-property'
+      path: '/is-it-illegal-to-buy-stolen-property'
+      fullPath: '/is-it-illegal-to-buy-stolen-property'
+      preLoaderRoute: typeof IsItIllegalToBuyStolenPropertyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/is-my-iphone-stolen': {
@@ -6726,6 +6886,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhatToDoIfYouBoughtSomethingStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/what-to-do-if-your-bike-is-stolen': {
+      id: '/what-to-do-if-your-bike-is-stolen'
+      path: '/what-to-do-if-your-bike-is-stolen'
+      fullPath: '/what-to-do-if-your-bike-is-stolen'
+      preLoaderRoute: typeof WhatToDoIfYourBikeIsStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-to-do-if-your-car-is-stolen': {
+      id: '/what-to-do-if-your-car-is-stolen'
+      path: '/what-to-do-if-your-car-is-stolen'
+      fullPath: '/what-to-do-if-your-car-is-stolen'
+      preLoaderRoute: typeof WhatToDoIfYourCarIsStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-to-do-if-your-gun-is-stolen': {
+      id: '/what-to-do-if-your-gun-is-stolen'
+      path: '/what-to-do-if-your-gun-is-stolen'
+      fullPath: '/what-to-do-if-your-gun-is-stolen'
+      preLoaderRoute: typeof WhatToDoIfYourGunIsStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-to-do-if-your-phone-is-stolen': {
+      id: '/what-to-do-if-your-phone-is-stolen'
+      path: '/what-to-do-if-your-phone-is-stolen'
+      fullPath: '/what-to-do-if-your-phone-is-stolen'
+      preLoaderRoute: typeof WhatToDoIfYourPhoneIsStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wisconsin-license-plate-lookup': {
       id: '/wisconsin-license-plate-lookup'
       path: '/wisconsin-license-plate-lookup'
@@ -7544,6 +7732,7 @@ const rootRouteChildren: RootRouteChildren = {
   HawaiiVinLookupRoute: HawaiiVinLookupRoute,
   HotgunzAlternativeRoute: HotgunzAlternativeRoute,
   HowItWorksRoute: HowItWorksRoute,
+  HowToCheckIfAppleDeviceStolenRoute: HowToCheckIfAppleDeviceStolenRoute,
   HowToCheckIfBikeStolenRoute: HowToCheckIfBikeStolenRoute,
   HowToCheckIfBoatStolenRoute: HowToCheckIfBoatStolenRoute,
   HowToCheckIfCarStolenRoute: HowToCheckIfCarStolenRoute,
@@ -7553,7 +7742,10 @@ const rootRouteChildren: RootRouteChildren = {
   HowToCheckIfLicensePlateStolenRoute: HowToCheckIfLicensePlateStolenRoute,
   HowToCheckIfPhoneStolenRoute: HowToCheckIfPhoneStolenRoute,
   HowToCheckIfToolsStolenRoute: HowToCheckIfToolsStolenRoute,
+  HowToCheckIfTrailerAtvStolenRoute: HowToCheckIfTrailerAtvStolenRoute,
+  HowToFindStolenItemForSaleOnlineRoute: HowToFindStolenItemForSaleOnlineRoute,
   HowToProveItemIsNotStolenRoute: HowToProveItemIsNotStolenRoute,
+  HowToReportAStolenItemRoute: HowToReportAStolenItemRoute,
   HowToTellIfMarketplaceItemIsStolenRoute:
     HowToTellIfMarketplaceItemIsStolenRoute,
   HowToVerifyAUsedItemRoute: HowToVerifyAUsedItemRoute,
@@ -7569,6 +7761,7 @@ const rootRouteChildren: RootRouteChildren = {
   InstallAppRoute: InstallAppRoute,
   IowaLicensePlateLookupRoute: IowaLicensePlateLookupRoute,
   IowaVinLookupRoute: IowaVinLookupRoute,
+  IsItIllegalToBuyStolenPropertyRoute: IsItIllegalToBuyStolenPropertyRoute,
   IsMyIphoneStolenRoute: IsMyIphoneStolenRoute,
   IsMyPhoneStolenRoute: IsMyPhoneStolenRoute,
   IsThisBikeStolenRoute: IsThisBikeStolenRoute,
@@ -7722,6 +7915,10 @@ const rootRouteChildren: RootRouteChildren = {
   WestVirginiaVinLookupRoute: WestVirginiaVinLookupRoute,
   WhatToDoIfYouBoughtSomethingStolenRoute:
     WhatToDoIfYouBoughtSomethingStolenRoute,
+  WhatToDoIfYourBikeIsStolenRoute: WhatToDoIfYourBikeIsStolenRoute,
+  WhatToDoIfYourCarIsStolenRoute: WhatToDoIfYourCarIsStolenRoute,
+  WhatToDoIfYourGunIsStolenRoute: WhatToDoIfYourGunIsStolenRoute,
+  WhatToDoIfYourPhoneIsStolenRoute: WhatToDoIfYourPhoneIsStolenRoute,
   WisconsinLicensePlateLookupRoute: WisconsinLicensePlateLookupRoute,
   WisconsinVinLookupRoute: WisconsinVinLookupRoute,
   WyomingLicensePlateLookupRoute: WyomingLicensePlateLookupRoute,

@@ -41,8 +41,8 @@ export default function WhatIsABlacklistedImei() {
             In the US you can check this yourself for free with CTIA’s{" "}
             <a href="https://stolenphonechecker.org/spc/consumer" target="_blank" rel="noopener noreferrer">Stolen Phone Checker</a>.
             It is run by CTIA, the wireless industry association, using GSMA Device Check data, and shows whether a
-            device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers and allows 5 free
-            checks per day. SafeOrStolen does not query it for you.
+            device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers.
+            SafeOrStolen does not query it for you.
           </p>
 
           <h2>The three reasons a phone gets blacklisted</h2>

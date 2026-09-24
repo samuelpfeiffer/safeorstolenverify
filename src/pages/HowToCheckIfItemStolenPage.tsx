@@ -11,16 +11,31 @@ const guides = [
   ['/how-to-check-if-laptop-stolen', 'Laptop or electronics', 'Serials, manufacturer details, account locks, and receipts'],
   ['/how-to-check-if-tools-stolen', 'Power tools', 'Tool serials, registration, tracking programs, and seller records'],
   ['/how-to-check-if-boat-stolen', 'Boat', 'HIN, Coast Guard documentation, state records, trailer, and motor'],
+  ['/check-motorcycle-stolen-vin', 'Motorcycle', 'Frame VIN, title match, NICB VINCheck, NMVTIS, and tampering'],
+  ['/how-to-check-if-trailer-atv-stolen', 'Trailer, ATV, or dirt bike', 'VIN or serial, title and registration, and state rules'],
+  ['/check-watch-stolen', 'Watch', 'Serial and reference numbers, papers, and a lost-watch database'],
+  ['/check-camera-stolen', 'Camera or lens', 'Body and lens serials, photo-serial search, and owner settings'],
+  ['/how-to-check-if-apple-device-stolen', 'AirPods, Apple Watch, iPad', 'Serial check, Activation Lock, Find My, and pairing'],
   ['/how-to-check-if-license-plate-stolen', 'License plate', 'Public-access limits, plate/VIN matching, and state guidance'],
   ['/how-to-tell-if-marketplace-item-is-stolen', 'Marketplace listing', 'Listing analysis, identifiers, payment, and meeting safety'],
   ['/what-to-do-if-you-bought-something-stolen', 'Already bought it?', 'Preserve evidence, contact police, marketplace, and payment provider'],
   ['/how-to-prove-item-is-not-stolen', 'Selling an item?', 'Records, independent checks, and Proof of Clean Purchase'],
+  ['/is-it-illegal-to-buy-stolen-property', 'Is buying stolen property illegal?', 'General legal information on knowledge, ownership, and protecting yourself'],
+] as const;
+
+const victimGuides = [
+  ['/how-to-report-a-stolen-item', 'How to report a stolen item', 'Police first, then carrier, insurer, or registry, then SafeOrStolen'],
+  ['/what-to-do-if-your-phone-is-stolen', 'Phone stolen', 'Find My, carrier IMEI block, police report, and accounts'],
+  ['/what-to-do-if-your-car-is-stolen', 'Car stolen', 'Rule out towing, police, insurer, lender, and tracking'],
+  ['/what-to-do-if-your-bike-is-stolen', 'Bike stolen', 'Police report, Bike Index, and 529 Garage alerts'],
+  ['/what-to-do-if-your-gun-is-stolen', 'Gun stolen', 'Report to police right away and check your state law'],
+  ['/how-to-find-stolen-item-for-sale-online', 'Find it for sale online', 'Search marketplaces safely and give listings to police'],
 ] as const;
 
 export default function HowToCheckIfItemStolenPage() {
   const schema = {
     '@context': 'https://schema.org', '@type': 'ItemList', name: 'How to check if an item is stolen',
-    itemListElement: guides.map(([url, name], index) => ({ '@type': 'ListItem', position: index + 1, name, url: `https://safeorstolen.com${url}` })),
+    itemListElement: [...guides, ...victimGuides].map(([url, name], index) => ({ '@type': 'ListItem', position: index + 1, name, url: `https://safeorstolen.com${url}` })),
   };
   return <div className="min-h-screen bg-background">
     <PageSEO title="How to Check if an Item Is Stolen" description="Choose a factual, item-specific guide for checking a phone, car, firearm, bicycle, laptop, power tool, boat, plate, or marketplace listing before buying." keywords="how to check if item stolen, stolen item guide, serial number check" canonical="/how-to-check-if-item-stolen" modifiedTime="2026-09-24" structuredData={schema} />
@@ -37,6 +52,16 @@ export default function HowToCheckIfItemStolenPage() {
           <p className="mt-2 text-muted-foreground">{description}</p>
         </Link>)}
       </div>
+      <section className="mt-16">
+        <h2 className="mb-2 text-3xl font-bold text-foreground">Had something stolen?</h2>
+        <p className="mb-6 text-muted-foreground">Step-by-step guides for theft victims. After you report to police, you can <Link to="/report-stolen" className="text-primary underline">log your item on SafeOrStolen</Link> so buyers who check its identifier see it was reported stolen.</p>
+        <div className="grid gap-4 md:grid-cols-2">
+          {victimGuides.map(([href, title, description]) => <Link key={href} to={href} className="group rounded-xl border border-border bg-card p-6 transition hover:border-primary/60">
+            <h3 className="flex items-center justify-between text-xl font-semibold text-foreground">{title}<ArrowRight className="h-5 w-5 text-primary transition group-hover:translate-x-1" /></h3>
+            <p className="mt-2 text-muted-foreground">{description}</p>
+          </Link>)}
+        </div>
+      </section>
       <section className="mx-auto mt-12 max-w-3xl rounded-xl border border-primary/30 bg-card p-6 text-muted-foreground">
         <h2 className="text-2xl font-bold text-foreground">Where SafeOrStolen fits</h2>
         <p className="mt-3">SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It also checks BikeIndex for bicycles and HotGunz for firearms. Outside sources described in these guides are separate checks for the reader to perform.</p>

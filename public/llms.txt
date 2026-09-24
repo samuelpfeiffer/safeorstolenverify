@@ -27,6 +27,21 @@
 - [How to assess a marketplace item](https://safeorstolen.com/how-to-tell-if-marketplace-item-is-stolen)
 - [What to do after buying a stolen item](https://safeorstolen.com/what-to-do-if-you-bought-something-stolen)
 - [How sellers can document a clean check](https://safeorstolen.com/how-to-prove-item-is-not-stolen)
+- [How to check if a motorcycle is stolen](https://safeorstolen.com/check-motorcycle-stolen-vin)
+- [How to check if a trailer, ATV, or dirt bike is stolen](https://safeorstolen.com/how-to-check-if-trailer-atv-stolen)
+- [How to check if a watch is stolen](https://safeorstolen.com/check-watch-stolen)
+- [How to check if a camera or lens is stolen](https://safeorstolen.com/check-camera-stolen)
+- [How to check if AirPods, an Apple Watch, or an iPad is stolen](https://safeorstolen.com/how-to-check-if-apple-device-stolen)
+- [Is it illegal to buy stolen property if you didn't know? (general information)](https://safeorstolen.com/is-it-illegal-to-buy-stolen-property)
+
+## Had something stolen? (victim guides)
+- [How to report a stolen item](https://safeorstolen.com/how-to-report-a-stolen-item)
+- [What to do if your phone is stolen](https://safeorstolen.com/what-to-do-if-your-phone-is-stolen)
+- [What to do if your car is stolen](https://safeorstolen.com/what-to-do-if-your-car-is-stolen)
+- [What to do if your bike is stolen](https://safeorstolen.com/what-to-do-if-your-bike-is-stolen)
+- [What to do if your gun is stolen](https://safeorstolen.com/what-to-do-if-your-gun-is-stolen)
+- [How to find your stolen item for sale online](https://safeorstolen.com/how-to-find-stolen-item-for-sale-online)
+- [Log a stolen item on SafeOrStolen](https://safeorstolen.com/report-stolen) — adds it to SafeOrStolen's own stolen-item reports; it does not file a police report.
 
 ## Vehicle answer
 Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration. Search NICB VINCheck separately for participating theft and total-loss records. Buy an NMVTIS report through an approved provider for title information. Consider a Carfax or AutoCheck report, inspect for VIN tampering, and ask local police whether they accept public VIN-check requests. SafeOrStolen complements these steps; it does not query those official or commercial systems.

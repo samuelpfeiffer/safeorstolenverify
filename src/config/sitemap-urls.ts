@@ -48,6 +48,15 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/how-to-tell-if-marketplace-item-is-stolen', priority: 0.90, changefreq: 'monthly', lastmod: '2026-09-24' },
   { path: '/what-to-do-if-you-bought-something-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
   { path: '/how-to-prove-item-is-not-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/what-to-do-if-your-phone-is-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/what-to-do-if-your-car-is-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/what-to-do-if-your-bike-is-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/what-to-do-if-your-gun-is-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/how-to-find-stolen-item-for-sale-online', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/how-to-report-a-stolen-item', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/how-to-check-if-trailer-atv-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/how-to-check-if-apple-device-stolen', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
+  { path: '/is-it-illegal-to-buy-stolen-property', priority: 0.85, changefreq: 'monthly', lastmod: '2026-09-24' },
 
   // ============================================
   // ITEM LANDING PAGES (15)
