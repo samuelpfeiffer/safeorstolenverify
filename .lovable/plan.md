@@ -1,184 +1,55 @@
-# Definitive Item Guides and Content Consolidation
+# Next phase: victim guides and more buyer guides
 
-## Goal
-Create one authoritative answer page and one clear verification tool per item type, remove unsupported claims and reviews, retire CheckMEND content, and preserve every retired URL with a permanent redirect.
+Every guide uses the same format as the existing item guides: a direct answer at the top, where to find the identifier, real steps with their cost and purpose, official links, red flags or mistakes to avoid, an honest description of what SafeOrStolen does, FAQs, HowTo and FAQPage schema that match the visible text, Samuel Pfeiffer as author, and today's date as the last-updated date. Each official fact gets checked on the official site before it goes in. If I can't confirm it, it stays out.
 
-## Confirmed current state
-- The site has active duplicate routes across phone, firearm, bicycle, laptop/electronics, tools, boat, plate, and marketplace topics.
-- Permanent redirects are maintained in the existing redirect map and generated deployment/prerender flow; the sitemap and AI-facing text files also list many duplicate pages.
-- Multiple hard-coded testimonial collections have no review URL or other provenance. These include the homepage quotes, seller quotes, item-page quotes, testimonial carousels, and success stories.
-- `/blog/top-10-stolen-item-checkers`, `/best-stolen-item-checkers-2026`, and `/blog/best-stolen-item-checkers-2026` are primarily competitor/ranking content with unsupported prices, ratings, or comparative claims.
+## A. Victim guides (6 new pages)
 
-## 1. Remove the remaining unsupported copy
-- Rewrite the homepage FAQ to say SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.
-- Replace seller speed, price, offer, lowball, and haggling statistics with plain benefits: a shareable verification record gives buyers something concrete to review and helps sellers answer legitimacy questions upfront.
-- Rewrite the PS5 guide to describe SafeOrStolen reports, public web results, and AI analysis only.
-- Remove every customer quote, star rating, subscriber badge, “verified customer” label, recovery story, and numerical customer outcome that lacks a real source URL or stored provenance.
-- Replace removed testimonial sections with factual product benefits or the four verified press releases. Keep the Trustpilot profile link without a rating or quoted review.
-- Keep founder/press quotations only when they are clearly attributed as company statements, not customer reviews.
+Each one ends with "Log it at /report-stolen." That page lets you add your item to SafeOrStolen's reports, so buyers who check that identifier see it.
 
-## 2. Retire CheckMEND and unsupported ranking content
-- Remove CheckMEND from pricing, FAQs, phone/app pages, shared comparison components, navigation, schemas, metadata, blog indexes, sitemap sources, and all AI-facing text files.
-- Remove unsupported competitor prices, rankings, ratings, app-availability claims, and “better/faster/only” language.
-- Retire the three broad “best checker” pages because their main purpose is unsupported competitor ranking; redirect them to the general item guide hub.
-- Preserve unrelated, factual pages only when they answer a distinct question without unsupported comparisons.
-
-## 3. Build or upgrade the definitive guides
-Each guide will include a 2–3 sentence direct answer, identifier locations, step-by-step options with confirmed cost and purpose, red flags, what to do after a stolen result, an honest SafeOrStolen section for buyers and sellers, Proof of Clean Purchase positioning, visible FAQs, matching HowTo and FAQPage schema, Samuel Pfeiffer as author, and `2026-09-24` as the modification date.
-
-Canonical guide/tool pairs:
-
-| Topic | Definitive guide | Tool |
+| # | New URL | Main content |
 |---|---|---|
-| Phone / IMEI | `/how-to-check-if-phone-stolen` | `/imei-checker` |
-| iPhone | `/blog/how-to-check-if-iphone-stolen` | `/imei-checker` |
-| Firearm | `/how-to-check-if-gun-is-stolen` | `/firearms-check` |
-| Bicycle / e-bike | `/how-to-check-if-bike-stolen` | `/check-bike` |
-| Laptop / electronics | `/how-to-check-if-laptop-stolen` | `/serial-number-checker` |
-| Power tools | `/how-to-check-if-tools-stolen` | `/serial-number-checker` |
-| Boat | `/how-to-check-if-boat-stolen` | No separate marine lookup claim; direct readers to identifier and official-record checks |
-| License plate | `/how-to-check-if-license-plate-stolen` | `/license-plate-lookup` |
-| Marketplace listing | `/how-to-tell-if-marketplace-item-is-stolen` | `/marketplace-url-checker` |
-| Bought stolen item | `/what-to-do-if-you-bought-something-stolen` | `/verify` where an identifier is available |
-| All item types | `/how-to-check-if-item-stolen` | Links to every guide and matching tool |
+| 1 | /what-to-do-if-your-phone-is-stolen | Apple Find My and Google Find My Device (mark as lost, erase), ask your carrier to suspend the line and blacklist the IMEI, how to find your IMEI without the phone (box, carrier account, Apple/Google account pages), police report, insurance claim, change passwords |
+| 2 | /what-to-do-if-your-car-is-stolen | Confirm it wasn't towed or repossessed, call police with the VIN and plate, notify your insurer and lender, connected-car app or tracker, toll and plate notifications only where confirmed |
+| 3 | /what-to-do-if-your-bike-is-stolen | Police report with serial number, mark it stolen on Bike Index and 529 Garage, watch marketplaces |
+| 4 | /what-to-do-if-your-gun-is-stolen | Report to local police right away with make, model, and serial. Federal licensees report to ATF (links to the official ATF page). State reporting deadlines appear only for states whose official statute I can confirm; every other state gets "check your state law" |
+| 5 | /how-to-find-stolen-item-for-sale-online | Search marketplaces by model, area, and photos, save alerts, keep evidence. Never confront the seller or set up a meetup yourself. Give the police the listing |
+| 6 | /how-to-report-a-stolen-item | Hub: police report first, then carrier/insurer/registry for each item type, then /report-stolen. Links to guides 1–5 |
 
-The existing car guide and VIN tool remain unchanged except for new cross-links.
+No existing page covers the victim side. /what-to-do-if-you-bought-something-stolen and /blog/bought-stolen-phone-what-to-do cover buyers, so they stay as they are and get cross-links.
 
-## 4. Full proposed redirect map
-These are the new consolidation redirects. Existing unrelated legacy redirects remain in place.
+## B. Buyer guides (upgrade existing pages where they exist)
 
-### CheckMEND and ranking pages
-```text
-/vs-checkmend                              → /imei-checker
-/blog/checkmend-has-no-app                 → /imei-checker
-/vs/checkmend                              → /imei-checker
-/comparison-checkmend                      → /imei-checker
-/app/vs-checkmend                          → /imei-checker
-/blog/top-10-stolen-item-checkers          → /how-to-check-if-item-stolen
-/best-stolen-item-checkers-2026            → /how-to-check-if-item-stolen
-/blog/best-stolen-item-checkers-2026       → /how-to-check-if-item-stolen
-```
+| # | Question | URL | Action |
+|---|---|---|---|
+| 7 | Motorcycle | /check-motorcycle-stolen-vin | Upgrade in place to guide standard, keep URL |
+| 8 | Trailer, ATV, dirt bike | /how-to-check-if-trailer-atv-stolen | New (no existing page). Covers VIN/PIN locations, title status, and state off-highway registration as general guidance only |
+| 9 | Watch | /check-watch-stolen | Upgrade in place, keep URL |
+| 10 | Camera or lens | /check-camera-stolen | Upgrade in place, keep URL |
+| 11 | AirPods, Apple Watch, iPad | /how-to-check-if-apple-device-stolen | New. Apple's own guidance on Activation Lock, pairing, and serial checks. /check-tablet-stolen stays as it is and links here |
+| 12 | Is buying stolen property illegal if you didn't know? | /is-it-illegal-to-buy-stolen-property | New. General legal information with a clear "not legal advice" notice. Knowledge/intent concept explained generally, with the federal statute only if confirmed on the official source (uscode.house.gov). No state-specific claims unless confirmed |
 
-### Phone and IMEI
-```text
-/blog/how-to-check-if-phone-stolen         → /how-to-check-if-phone-stolen
-/blog/check-if-phone-stolen-guide          → /how-to-check-if-phone-stolen
-/blog/phone-verification-guide             → /how-to-check-if-phone-stolen
-/blog/complete-imei-guide-protect-yourself → /how-to-check-if-phone-stolen
-/blog/buying-used-phone-checklist          → /how-to-check-if-phone-stolen
-/is-my-phone-stolen                        → /how-to-check-if-phone-stolen
-/check-stolen-phone                        → /how-to-check-if-phone-stolen
-/stolen-phone-checker                      → /how-to-check-if-phone-stolen
-/check-android-phone-stolen                → /how-to-check-if-phone-stolen
-/check-imei-stolen                         → /imei-checker
-/check-phone                               → /imei-checker
-/imei-check                                → /imei-checker
-/phone-blacklist-check                     → /imei-checker
-/imei-checker-app                          → /imei-checker
-/blog/like-carfax-for-phones               → /imei-checker
-/comparisons/best-free-imei-checkers-2025  → /imei-checker
-/comparisons/safeorstolen-vs-imei-info     → /imei-checker
-/vs-imeiinfo                               → /imei-checker
-/vs-stolenphonechecker                     → /imei-checker
-/app/stolen-phone-checker                  → /imei-checker
-/blog/imei-checker-app-download            → /app
-```
+The upgraded pages keep their URLs and canonicals. Content on them is replaced, not duplicated. I found no redirects that currently point away from these URLs.
 
-### iPhone
-```text
-/check-iphone-stolen                       → /blog/how-to-check-if-iphone-stolen
-/is-my-iphone-stolen                       → /blog/how-to-check-if-iphone-stolen
-```
+## Linking and discovery
+- /how-to-check-if-item-stolen hub: add the new buyer guides, plus a new "Had something stolen?" section linking guides 1–6.
+- Footer resources: add "How to report a stolen item" and the victim-guide links.
+- llms.txt (and llms-full.txt): add a victim-guides section and the new buyer guides.
+- Sitemap: add the 8 new URLs (the 3 upgraded pages are already listed).
+- Cross-links between related guides (for example, phone buyer guide and stolen-phone victim guide).
 
-Keep as distinct questions: `/blog/what-is-a-blacklisted-imei`, `/blog/icloud-locked-phone-meaning`, `/blog/how-to-find-imei-number`, and `/blog/bought-stolen-phone-what-to-do`.
+## Honesty rules applied
+- Where it's relevant, each guide states plainly that SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, plus Bike Index for bikes and HotGunz for firearms. It does not check police, carrier, insurance, NCIC, NICB, or DMV systems.
+- No statistics or recovery rates unless they come from a named official source.
+- /report-stolen is described accurately: it adds your item to SafeOrStolen's reports and does not file a police report.
 
-### Firearms
-```text
-/blog/how-to-check-if-gun-is-stolen        → /how-to-check-if-gun-is-stolen
-/is-this-gun-stolen                        → /how-to-check-if-gun-is-stolen
-/blog/firearm-serial-number-verification   → /how-to-check-if-gun-is-stolen
-/check-gun                                 → /firearms-check
-/check-firearm                             → /firearms-check
-/check-firearm-serial                      → /firearms-check
-/firearms-serial-number-check              → /firearms-check
-/gun-serial-number-lookup                  → /firearms-check
-/stolen-gun-database                       → /firearms-check
-```
+## Delivery
+1. Finish the current task first. The site-wide free-resource audit from the last request (item 3) is still open, so I'll ask whether to do it before this phase.
+2. Build the 6 victim guides, then the 6 buyer guides, then the linking updates.
+3. Refresh the search-engine copies of every new or changed page.
+4. Publish, check each URL live (loads, canonical, schema, date), and send you the list of new URLs.
 
-Keep and fact-check as distinct questions: `/blog/atf-gun-serial-number-check`, `/blog/gun-show-serial-number-check`, `/blog/hotgunz-database-guide`, `/blog/state-stolen-gun-database-guide`, and `/state-firearm-transfer-laws`.
-
-### Bikes and e-bikes
-```text
-/blog/bicycle-stolen-serial-number-check   → /how-to-check-if-bike-stolen
-/is-this-bike-stolen                       → /how-to-check-if-bike-stolen
-/check-bicycle-stolen                      → /check-bike
-/check-ebike                               → /check-bike
-/vs-bikeindex                              → /how-to-check-if-bike-stolen
-```
-
-### Laptops, electronics, and tools
-```text
-/is-this-laptop-stolen                     → /how-to-check-if-laptop-stolen
-/check-laptop-stolen                       → /how-to-check-if-laptop-stolen
-/blog/protect-yourself-buying-used-electronics → /how-to-check-if-laptop-stolen
-/check-laptop                              → /serial-number-checker
-/check-electronics                         → /serial-number-checker
-/check-tools                               → /how-to-check-if-tools-stolen
-/check-power-tools-stolen                  → /how-to-check-if-tools-stolen
-```
-
-Product-specific PS5, Xbox, camera, tablet, appliance, watch, and jewelry pages remain because they answer distinct item questions; their unsupported testimonials and source claims will be removed.
-
-### Boat and license plate
-```text
-/check-boat                                → /how-to-check-if-boat-stolen
-```
-
-All state license-plate pages remain. `/license-plate-lookup` remains the tool; the new plate guide explains public-access limits and links to every state page.
-
-### Marketplace safety
-```text
-/facebook-marketplace-safety               → /how-to-tell-if-marketplace-item-is-stolen
-/facebook-marketplace-stolen-check         → /how-to-tell-if-marketplace-item-is-stolen
-/blog/facebook-marketplace-scams-guide     → /how-to-tell-if-marketplace-item-is-stolen
-/blog/facebook-marketplace-scams           → /how-to-tell-if-marketplace-item-is-stolen
-/blog/ultimate-marketplace-buyers-guide    → /how-to-tell-if-marketplace-item-is-stolen
-/offerup-safety                            → /how-to-tell-if-marketplace-item-is-stolen
-/craigslist-safety-verification            → /how-to-tell-if-marketplace-item-is-stolen
-/guides/offerup-scam-protection            → /how-to-tell-if-marketplace-item-is-stolen
-/guides/verify-craigslist-items            → /how-to-tell-if-marketplace-item-is-stolen
-/offerup-verify-not-stolen                 → /marketplace-url-checker
-/ebay-stolen-item-check                    → /marketplace-url-checker
-/mercari-stolen-check                      → /marketplace-url-checker
-/poshmark-stolen-check                     → /marketplace-url-checker
-/letgo-stolen-check                        → /marketplace-url-checker
-```
-
-Keep `/scam-checker` and `/marketplace-advisor` because they are distinct shipped AI workflows.
-
-## 5. Research and honesty controls
-- Research outside resources from official pages only and link those pages directly.
-- State costs only when the official source confirms them; otherwise omit the price.
-- SafeOrStolen coverage remains limited to its own stolen-item reports, public web results, AI analysis, BikeIndex for bicycles, HotGunz for firearms, and IMEI.info device details.
-- Outside resources are clearly presented as checks the reader performs themselves.
-- Firearm guidance will explain that private buyers cannot query NCIC; police may run a serial within their authorized process. State online lookup references will appear only after confirmation from the state’s official site.
-- Boat guidance will cover HIN, official Coast Guard documentation tools when applicable, and state registration/title resources without claiming SafeOrStolen queries them.
-- Proof of Clean Purchase remains a timestamped verification record, never a guarantee, title, ownership proof, or legal document.
-
-## 6. Search, navigation, and technical cleanup
-- Give every surviving/new guide unique metadata, self-canonical, social metadata, visible schema-matching text, internal links, and the required author/date.
-- Update the hub, breadcrumbs, related links, homepage links, footer resources, blog index, and all in-page links so nothing points through a redirect.
-- Remove retired URLs from sitemap sources and all `llms.txt` variants; add only the surviving canonical guides/tools.
-- Update prerendered crawler copies for every changed and retired route.
-- Preserve permanent redirects through the project’s existing redirect and prerender mechanisms; do not delete historical redirect entries.
-
-## 7. Verification and delivery
-- Validate every new/changed guide on desktop and mobile, including schemas, canonicals, links, and visible FAQ parity.
-- Search rendered pages and crawler copies for CheckMEND, unsupported seller statistics, unsupported testimonials, and prohibited source claims; expected count is zero outside historical code comments that are not served.
-- Verify every redirect above returns HTTP 301 and lands directly on its final URL without chains.
-- Confirm retired URLs are absent from sitemap and AI-facing text files.
-- Publish once the complete set passes locally, then repeat the redirect/page/schema checks on `safeorstolen.com`.
-- Deliver the final list of new and materially changed guide URLs for Google and Bing submission, plus exact live redirect results.
-
-## Scope note
-This consolidation does not alter verification logic, authentication, payments, databases, legal pages, or the six supported item categories.
+## Technical details
+- Reuse `DefinitiveItemGuide` and add entries to `src/data/definitiveGuides.ts`. Victim guides use the same renderer with "Steps to take now" wording and a /report-stolen call to action (small optional prop).
+- New route files under `src/routes/`, each with its own unique head metadata and self-canonical.
+- The upgraded routes switch their component to the guide renderer. The old page components stay in the codebase unless they're unused.
+- Run the capture script on every new or changed route.
