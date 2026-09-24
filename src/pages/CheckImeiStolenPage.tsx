@@ -152,9 +152,9 @@ const CheckImeiStolenPage = () => {
  </li>
  </ol>
  <p>
- SafeOrStolen checks <strong>public records and our own stolen item reports</strong> — the same
- global blacklist carriers use — and reported-stolen records drawn from 100+ verified
- sources, then returns a single plain-English verdict in 3 seconds. Every check produces a
+ SafeOrStolen checks <strong>its own stolen-item reports, public web results, and AI analysis</strong>,
+ then returns a plain-language verdict in about 3 seconds. Phone checks also provide device details,
+ but do not currently check the carrier blacklist. Every completed check can produce a
  timestamped <strong>PDF certificate</strong> and a <strong>shareable verification link</strong>,
  so you can prove the phone was checked. It also runs a scam-risk analysis on the listing
  alongside the IMEI result.

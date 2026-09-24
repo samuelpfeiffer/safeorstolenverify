@@ -187,19 +187,17 @@ export const MobileVerificationInterface: React.FC = () => {
                 <div className="grid grid-cols-3 gap-2 pt-4 border-t">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">
-                      {type.id === 'phone' ? '100+' : 
-                       type.id === 'vehicle' ? '30M+' :
-                       type.id === 'firearms' ? '5M+' : '20M+'}
+                      6
                     </div>
-                    <div className="text-xs text-muted-foreground">Database</div>
+                    <div className="text-xs text-muted-foreground">Categories</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-secondary">&lt;3s</div>
                     <div className="text-xs text-muted-foreground">Verify</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-accent">99%</div>
-                    <div className="text-xs text-muted-foreground">Accurate</div>
+                    <div className="text-2xl font-bold text-accent">AI</div>
+                    <div className="text-xs text-muted-foreground">Analysis</div>
                   </div>
                 </div>
               </TabsContent>

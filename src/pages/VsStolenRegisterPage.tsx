@@ -90,9 +90,9 @@ export default function VsStolenRegisterPage() {
                         </td>
                       </tr>
                       <tr className="border-b">
-                        <td className="p-4 font-medium">Databases Checked</td>
+                        <td className="p-4 font-medium">Sources Used</td>
                         <td className="text-center p-4 bg-primary/5">
-                          <span className="font-bold text-primary">100+</span>
+                          <span className="font-bold text-primary">Multi-source</span>
                         </td>
                         <td className="text-center p-4">
                           <span className="text-muted-foreground">50+</span>

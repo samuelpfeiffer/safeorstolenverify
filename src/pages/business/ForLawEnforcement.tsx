@@ -19,7 +19,7 @@ const ForLawEnforcement = () => {
  canonical="/for-law-enforcement"
  businessType="Law Enforcement"
  industryName="Law Enforcement"
- heroSubtitle="Quickly verify recovered property and track stolen items. Our database of 100+ stolen records helps officers identify stolen property and connect with rightful owners."
+  heroSubtitle="Check recovered property against SafeOrStolen reports, public web results, and AI analysis. Results identify possible matches for further investigation."
  heroBadge="Law Enforcement Solutions"
  challenges={[
  {
@@ -68,9 +68,9 @@ const ForLawEnforcement = () => {
  description: "Officers can verify property status in seconds during traffic stops or investigations."
  },
  {
- stat: "100+",
- title: "Records Searched",
- description: "Access one of the largest aggregated stolen property databases available."
+  stat: "6",
+  title: "Item Categories",
+  description: "Check phones, vehicles, plates, serial-numbered goods, firearms, and bicycles."
  },
  {
  stat: "24/7",

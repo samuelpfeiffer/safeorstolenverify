@@ -12,7 +12,7 @@ export const ServiceOfferSchema = () => {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "SafeOrStolen Free Verification",
-      "description": "2 free stolen item verification checks for IMEI, VIN, or serial number. Instant results from 100+ global database records.",
+      "description": "2 free stolen-item checks using SafeOrStolen reports, public web results, and AI analysis.",
       "provider": {
         "@type": "Organization",
         "name": "SafeOrStolen"

@@ -173,15 +173,15 @@ export const DataSourceCredibility: React.FC = () => {
  <div className="flex flex-wrap justify-center gap-4 text-sm">
  <Badge variant="secondary" className="bg-green-100 text-green-800">
  <CheckCircle className="h-3 w-3 mr-1" />
- Federal Database Access
+  SafeOrStolen Reports
  </Badge>
  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
  <Database className="h-3 w-3 mr-1" />
- 100+ Verified Sources
+  Public Web Results
  </Badge>
  <Badge variant="secondary" className="bg-purple-100 text-purple-800">
  <Shield className="h-3 w-3 mr-1" />
- Law Enforcement Integrated
+  AI Analysis
  </Badge>
  </div>
  </CardContent>
