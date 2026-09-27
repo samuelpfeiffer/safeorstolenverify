@@ -104,7 +104,13 @@ async function callSource(
 
   const text = await response.text();
   if (!response.ok) {
-    throw new Error(`[${slug}] ${response.status}: ${text.slice(0, 300)}`);
+    const err = new Error(`[${slug}] ${response.status}: ${text.slice(0, 300)}`) as Error & {
+      status?: number;
+      body?: any;
+    };
+    err.status = response.status;
+    try { err.body = text ? JSON.parse(text) : null; } catch { err.body = null; }
+    throw err;
   }
   return text ? JSON.parse(text) : null;
 }
@@ -129,6 +135,18 @@ async function runSource(
     const payload = await callSource(slug, body);
     return { ...sourceFromPayload(provider, payload), responseTime: Date.now() - startedAt };
   } catch (error) {
+    // A 400 means the user's input was bad (e.g. an invalid VIN). Show the real reason.
+    const e = error as { status?: number; body?: any };
+    if (e?.status === 400 && typeof e.body?.message === 'string') {
+      return {
+        provider,
+        status: 'error',
+        confidence: 0,
+        message: e.body.message,
+        details: { invalidInput: true, ...(e.body.details ?? {}) },
+        responseTime: Date.now() - startedAt,
+      };
+    }
     console.error(`[verify] source ${provider} failed:`, error);
     return {
       provider,
@@ -209,12 +227,14 @@ async function runAIAnalysis(
       `[verify] BUILD ${VERIFY_BUILD_ID} AI risk_level=${analysis.risk_level} -> ${status}`,
     );
 
+    // AI is advisory only: status is always 'unknown' and confidence 0.
     return {
       provider: 'AI_Analysis',
       status,
-      confidence: typeof analysis.confidence === 'number' ? analysis.confidence : 65,
+      confidence: 0,
       message: analysis.summary ?? 'AI analysis completed',
       details: {
+        advisory: true,
         risk_level: analysis.risk_level,
         reasoning: analysis.reasoning,
         recommendation: analysis.recommendation,
