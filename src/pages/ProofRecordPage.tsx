@@ -99,17 +99,37 @@ const ProofRecordPage: React.FC = () => {
                     <Row label="Masked identifier">
                       <span className="font-mono">{record.identifier_masked}</span>
                     </Row>
-                    <Row label="Databases queried">
-                      {record.databases_queried.length ? (
-                        <ul className="list-disc pl-5 space-y-1">
-                          {record.databases_queried.map((d) => (
-                            <li key={d}>{d}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        'Not recorded'
-                      )}
-                    </Row>
+                    {(() => {
+                      const BUYER = 'Checked by buyer: ';
+                      const ours = record.databases_queried.filter((d) => !d.startsWith(BUYER));
+                      const buyer = record.databases_queried
+                        .filter((d) => d.startsWith(BUYER))
+                        .map((d) => d.slice(BUYER.length));
+                      return (
+                        <>
+                          <Row label={buyer.length ? 'Checked by SafeOrStolen' : 'Databases queried'}>
+                            {ours.length ? (
+                              <ul className="list-disc pl-5 space-y-1">
+                                {ours.map((d) => (
+                                  <li key={d}>{d}</li>
+                                ))}
+                              </ul>
+                            ) : (
+                              'Not recorded'
+                            )}
+                          </Row>
+                          {buyer.length > 0 && (
+                            <Row label="Checked by the buyer">
+                              <ul className="list-disc pl-5 space-y-1">
+                                {buyer.map((d) => (
+                                  <li key={d}>{d}</li>
+                                ))}
+                              </ul>
+                            </Row>
+                          )}
+                        </>
+                      );
+                    })()}
                     <Row label="Record hash (SHA-256)">
                       <span className="font-mono text-xs break-all">{record.record_hash}</span>
                     </Row>

@@ -81,6 +81,19 @@ export const Route = createFileRoute('/verify-api')({
             '@/lib/verification/engine.server'
           );
 
+          // 2b. A mistyped VIN must never use up a check. Validate before the gate.
+          const { toCanonicalItemType } = await import('@/lib/itemType');
+          if (toCanonicalItemType(itemType ?? undefined) === 'vehicle') {
+            const { validateVin } = await import('@/lib/verification/vin');
+            const vinCheck = validateVin(identifier);
+            if (!vinCheck.valid) {
+              return json(
+                { error: 'Invalid VIN', code: 'INVALID_INPUT', message: vinCheck.message },
+                400,
+              );
+            }
+          }
+
           const gate = await checkUsageGate(supabaseAdmin, userId, fingerprint);
           if (!gate.allowed) {
             return json(

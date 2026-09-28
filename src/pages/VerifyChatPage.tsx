@@ -31,6 +31,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { requestVerification } from '@/lib/verification/verifyClient';
+import { toCanonicalItemType } from '@/lib/itemType';
 import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
@@ -335,7 +336,9 @@ const VerifyChatPage: React.FC = () => {
  ? `✅ **No theft reports found** for this ${itemType.toUpperCase()}. Full report with sources is on the right →${uncertaintyNote}`
  : result.status === 'lost'
  ? `⚠️ This ${itemType.toUpperCase()} was reported **lost**. Reach out to the original owner before buying. Details on the right →${uncertaintyNote}`
- : `ℹ️ **Not found.** We didn't find this ${itemType.toUpperCase()} in any database we checked. ${result.message}\n\nNot every stolen item is reported — absence of a match is not a guarantee. Try a clearer photo, a related identifier, or check the marketplace listing URL.`;
+ : result.riskLevel === 'high' || result.riskLevel === 'critical'
+ ? `⚠️ **Warning.** ${result.message}`
+ : `ℹ️ **No theft report found.** ${result.message}\n\nNot every stolen item is reported, so a clean result is not a guarantee.${toCanonicalItemType(itemType) === 'vehicle' ? " Use the **Buyer's Check** on the right to finish checking this car." : ''}`;
 
  const suggestions =
  result.status === 'stolen'

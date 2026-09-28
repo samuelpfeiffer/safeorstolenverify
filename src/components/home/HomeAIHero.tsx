@@ -130,7 +130,8 @@ export const HomeAIHero: React.FC = () => {
  if (status === 'stolen') result = `⚠️ MATCH FOUND — this ${itemType.toUpperCase()} appears in stolen-item databases${conf}. Do not purchase.`;
  else if (status === 'safe') result = `✅ No theft reports found for this ${itemType.toUpperCase()}${conf}.`;
  else if (status === 'lost') result = `⚠️ This ${itemType.toUpperCase()} was reported lost${conf}.`;
- else result = `ℹ️ Inconclusive. ${verify?.message || 'Try a clearer identifier.'}`;
+ else if (verify?.riskLevel === 'high' || verify?.riskLevel === 'critical') result = `⚠️ Warning. ${verify?.message || ''}`;
+ else result = `ℹ️ No theft report found. ${verify?.message || ''}`;
  replaceLastAssistant(result + '\n\nOpen the full Verify workspace for sources → /verify');
  } catch (err: any) {
  replaceLastAssistant(`Couldn't verify that: ${err?.message || 'unknown error'}.`);

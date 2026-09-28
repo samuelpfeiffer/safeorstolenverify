@@ -18,6 +18,8 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
+import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
+import { toCanonicalItemType } from '@/lib/itemType';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 export type ChatVerifyResult = {
@@ -39,8 +41,27 @@ interface ResultsPaneProps {
  isAuthenticated: boolean;
 }
 
-const toneFor = (status: ChatVerifyResult['status']) => {
+const toneFor = (status: ChatVerifyResult['status'], riskLevel?: string) => {
+ if (status === 'unknown' && (riskLevel === 'high' || riskLevel === 'critical')) {
+ return {
+ Icon: AlertTriangle,
+ color: 'text-amber-500',
+ bg: 'bg-amber-500/10',
+ border: 'border-amber-500/40',
+ label: 'WARNING',
+ ring: 'ring-amber-500/20',
+ };
+ }
  switch (status) {
+ case 'lost':
+ return {
+ Icon: AlertTriangle,
+ color: 'text-amber-500',
+ bg: 'bg-amber-500/10',
+ border: 'border-amber-500/40',
+ label: 'REPORTED LOST',
+ ring: 'ring-amber-500/20',
+ };
  case 'stolen':
  return {
  Icon: AlertTriangle,
@@ -195,7 +216,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  );
  }
 
- const tone = toneFor(current.status);
+ const tone = toneFor(current.status, current.riskLevel);
 
  return (
  <div className="h-full flex flex-col">
@@ -232,6 +253,20 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </p>
  </div>
 
+
+ {/* Buyer's Check — vehicles with a valid VIN, unless already reported stolen */}
+ {toCanonicalItemType(current.itemType) === 'vehicle' &&
+ current.status !== 'stolen' &&
+ current.identifier.replace(/[\s-]/g, '').length === 17 &&
+ !current.providers?.some(
+ (p) => p.provider === 'Vehicle_Verification' && (p as { details?: { invalidInput?: boolean } }).details?.invalidInput,
+ ) && (
+ <BuyerCheck
+ key={`${current.identifier}-${current.timestamp ?? ''}`}
+ vin={current.identifier}
+ providers={current.providers as any}
+ />
+ )}
 
  {/* Verification record — rendered for every item type */}
  <VerificationRecord
@@ -329,7 +364,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  .filter((h) => h.identifier !== current.identifier)
  .slice(0, 8)
  .map((h, i) => {
- const t = toneFor(h.status);
+ const t = toneFor(h.status, h.riskLevel);
  return (
  <button
  key={`${h.identifier}-${i}`}
