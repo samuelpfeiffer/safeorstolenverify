@@ -98,7 +98,7 @@ function aggregateConfidence(results: SourceResult[]): number {
 /** Plain-English name for a source, used in verdict messages. */
 function sourceLabel(s: SourceResult): string {
   if (s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.found === true) {
-    return 'Arizona law enforcement records (TheftAZ, Arizona Attorney General)';
+    return "TheftAZ, the Arizona Attorney General's database of law enforcement stolen-vehicle records,";
   }
   const names: Record<string, string> = {
     'SafeOrStolen Database': 'the SafeOrStolen registry',
