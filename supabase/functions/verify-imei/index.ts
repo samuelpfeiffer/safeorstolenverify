@@ -56,7 +56,7 @@ function getClientIP(req: Request): string {
 }
 
 /**
- * IMEI Verification Edge Function
+ * IMEI Verification Edge Function (HONEST VERSION Sept 28 2026: never 'safe' without a real blacklist answer)
  * Validates IMEI numbers and checks blacklist status
  * Uses IMEI.info API for comprehensive device verification
  * 
@@ -237,39 +237,50 @@ serve(async (req) => {
       }
     }
 
-    // Determine final status
-    const finalStatus = blacklistStatus === 'unknown' 
-      ? (isValidChecksum ? 'safe' : 'suspicious')
-      : blacklistStatus;
-    
-    const finalConfidence = blacklistStatus !== 'unknown' 
-      ? apiConfidence 
-      : (isValidChecksum ? 75 : 40);
+    // Determine final status (HONEST VERSION, Sept 28 2026):
+    // Only a real blacklist answer can say "safe" or "stolen". A valid checksum
+    // only proves the number is well-formed, not that the phone is clean.
+    const blacklistChecked = blacklistStatus !== 'unknown';
+
+    if (!isValidChecksum && !blacklistChecked) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          status: 'error',
+          confidence: 0,
+          source: 'IMEI_Verification',
+          message: "This IMEI fails the built-in math check, so it is mistyped, fake, or altered. Dial *#06# on the phone to see the real IMEI and compare. If the seller's phone shows this exact number, treat that as a serious red flag.",
+          details: { checksumValid: false, invalidInput: true, databases: [] },
+        }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const finalStatus = blacklistChecked ? blacklistStatus : 'unknown';
+    const finalConfidence = blacklistChecked ? apiConfidence : 0;
+    const databases: string[] = [];
+    if (blacklistChecked) databases.push(apiResult ? 'IMEI.info blacklist check' : 'IMEI Lookup blacklist check');
 
     const result = {
       success: true,
       status: finalStatus,
       confidence: finalConfidence,
       source: 'IMEI_Verification',
-      message: getStatusMessage(finalStatus, deviceInfo),
+      message: getStatusMessage(finalStatus, deviceInfo, blacklistChecked),
       details: {
         imei: cleanImei.substring(0, 8) + '*******',
         checksumValid: isValidChecksum,
         tac,
         deviceInfo,
-        blacklistChecked: blacklistStatus !== 'unknown',
+        blacklistChecked,
         apiResult: apiResult ? {
           manufacturer: apiResult.brand || apiResult.manufacturer,
           model: apiResult.model || apiResult.model_name,
           deviceType: apiResult.device_type,
           blacklistStatus: apiResult.blacklist_status
         } : null,
-        databases: [
-          'GSMA Blacklist',
-          'IMEI.info Database',
-          'Carrier Blacklists',
-          'International Stolen Device Database'
-        ]
+        databases, // ONLY sources that actually answered
+        notChecked: blacklistChecked ? [] : ['Phone blacklists (no blacklist service answered)'],
       },
       responseTime: Date.now() - startTime
     };
@@ -358,17 +369,18 @@ function getDeviceInfoFromTAC(tac: string): { manufacturer: string; modelRange: 
 /**
  * Generate user-friendly status message
  */
-function getStatusMessage(status: string, deviceInfo: any): string {
-  const device = deviceInfo ? `${deviceInfo.manufacturer} ${deviceInfo.modelRange}` : 'device';
-  
+function getStatusMessage(status: string, deviceInfo: any, blacklistChecked: boolean): string {
+  const device = deviceInfo && deviceInfo.manufacturer !== 'Unknown' && deviceInfo.manufacturer !== 'Various'
+    ? `${deviceInfo.manufacturer} ${deviceInfo.modelRange}` : 'phone';
+
   switch (status) {
     case 'stolen':
-      return `🚨 BLACKLISTED: This ${device} IMEI is reported as stolen/lost. Do NOT purchase.`;
+      return `🚨 BLACKLISTED: This ${device} IMEI is reported lost or stolen on a phone blacklist. Do NOT purchase.`;
     case 'safe':
-      return `✅ CLEAR: This ${device} IMEI is not on any blacklists. Valid checksum.`;
-    case 'suspicious':
-      return `⚠️ SUSPICIOUS: Invalid IMEI checksum. This may be a counterfeit or tampered device.`;
+      return `✅ NOT BLACKLISTED: This ${device} IMEI was not on the phone blacklist we searched.`;
     default:
-      return `⚠️ UNVERIFIED: Could not fully verify this IMEI. Proceed with caution.`;
+      return blacklistChecked
+        ? `This ${device} IMEI could not be confirmed.`
+        : `The IMEI number is valid, but no phone blacklist could be searched right now, so its theft status is not confirmed. Ask the seller to show the phone unlocked, signed out of iCloud or Google, and check with the carrier before you pay.`;
   }
 }

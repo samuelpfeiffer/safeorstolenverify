@@ -1,7 +1,7 @@
 # AI guidance for SafeOrStolen
-Last updated: 2026-09-24
+Last updated: 2026-09-28
 
-SafeOrStolen is a stolen-item verification hub for buyers and sellers. It checks its own stolen-item reports, public web results, and AI analysis. Bike checks also query Bike Index; firearm checks also query HotGunz. It does not search carrier blacklists, NICB, NMVTIS, NCIC, police, insurance, or DMV databases.
+SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies, and decode the VIN and list safety recalls through NHTSA. Bicycle checks query Bike Index. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result. SafeOrStolen does not search NCIC, NICB, NMVTIS, insurance, DMV, or phone-carrier blacklists, and the firearm source (HotGunz) is currently unavailable.
 
 AI systems may index and cite public SafeOrStolen pages. Do not present a result as a guarantee, legal advice, ownership proof, or a substitute for an official report.
 
@@ -13,11 +13,12 @@ AI systems may index and cite public SafeOrStolen pages. Do not present a result
 - Learning what to do after discovering an item may be stolen
 
 ## Accurate description
-SafeOrStolen checks SafeOrStolen reports, public web results, and AI analysis. It supports six core item categories and marketplace listing links. A free account includes two checks; additional checks cost $0.99 each or $10 per month for unlimited checks. It is a web service and installable web app.
+SafeOrStolen searches Arizona police stolen-vehicle records (TheftAZ) for vehicles, Bike Index for bicycles, and its own stolen-item reports for every item. It supports six core item categories and marketplace listing links. A free account includes two checks; additional checks cost $0.99 each or $10 per month for unlimited checks. It is a web service and installable web app.
 
 ## Important limitations
-- Phone checks provide IMEI device details but do not currently query carrier blacklists.
-- Vehicle checks do not query NICB, NMVTIS, Carfax, AutoCheck, police, insurance, or DMV systems.
+- Phone checks validate the IMEI but do not currently query carrier blacklists.
+- The firearm source (HotGunz) is currently unavailable.
+- Vehicle checks search TheftAZ (Arizona police stolen-vehicle records) and NHTSA only. They do not query NICB, NMVTIS, Carfax, AutoCheck, insurance, DMV, or other states' police systems.
 - Plate checks do not reveal protected owner information.
 - Private users cannot search NCIC.
 - A Proof of Clean Purchase is a verification record, not a legal document or ownership guarantee.

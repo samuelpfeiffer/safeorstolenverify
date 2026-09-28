@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Checks use SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Bicycle checks also query Bike Index, and firearm checks also query HotGunz. SafeOrStolen does not search carrier blacklists, NICB, NMVTIS, NCIC, police, insurance, or DMV databases.
+> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Vehicle checks (VIN or Arizona license plate) search TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies, and decode the VIN and list safety recalls through NHTSA. Bicycle checks query Bike Index. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result. SafeOrStolen does not search NCIC, NICB, NMVTIS, insurance, DMV, or phone-carrier blacklists, and the firearm source (HotGunz) is currently unavailable.
 
 ## Core tools
 - [Verify an item](https://safeorstolen.com/verify)
@@ -15,6 +15,8 @@
 ## Definitive guides
 - [How to check if any item is stolen](https://safeorstolen.com/how-to-check-if-item-stolen)
 - [How to check if a vehicle is stolen](https://safeorstolen.com/how-to-check-if-car-stolen)
+- [TheftAZ search: Arizona police stolen-vehicle records](https://safeorstolen.com/theftaz)
+- [Arizona license plate lookup](https://safeorstolen.com/arizona-license-plate-lookup)
 - [How to check if a phone is stolen](https://safeorstolen.com/how-to-check-if-phone-stolen)
 - [How to check if an iPhone is stolen](https://safeorstolen.com/blog/how-to-check-if-iphone-stolen)
 - [Used-phone buying checklist](https://safeorstolen.com/blog/buying-used-phone-checklist)
@@ -44,10 +46,12 @@
 - [Log a stolen item on SafeOrStolen](https://safeorstolen.com/report-stolen) — adds it to SafeOrStolen's own stolen-item reports; it does not file a police report.
 
 ## Vehicle answer
-Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration. Search NICB VINCheck separately for participating theft and total-loss records. Buy an NMVTIS report through an approved provider for title information. Consider a Carfax or AutoCheck report, inspect for VIN tampering, and ask local police whether they accept public VIN-check requests. SafeOrStolen complements these steps; it does not query those official or commercial systems.
+SafeOrStolen searches Arizona police stolen-vehicle records (TheftAZ) on every VIN and Arizona plate check, verifies the VIN check digit, decodes the VIN, and lists safety recalls. Its Buyer's Check then guides the user through the free nationwide NICB VINCheck, a door-jamb VIN match, and a title-to-seller-ID comparison, and records each step. TheftAZ covers thefts reported to participating Arizona agencies only.
+
+Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration. Search NICB VINCheck separately for participating theft and total-loss records. Buy an NMVTIS report through an approved provider for title information. Consider a Carfax or AutoCheck report, inspect for VIN tampering, and ask local police whether they accept public VIN-check requests. SafeOrStolen complements these steps; apart from TheftAZ and NHTSA, it does not query those official or commercial systems.
 
 ## Results and records
-Results use three states: STOLEN for strong evidence, CLEAR when completed checks return clean, and NOT FOUND / UNKNOWN otherwise. A clean check can create a Proof of Clean Purchase verification record showing what was checked and when. It is not a legal document, title, ownership proof, or guarantee.
+Results use three states: STOLEN when a theft database or registry lists the item, CLEAR when a theft database that was actually searched returns clean, and NOT FOUND / UNKNOWN otherwise. High-risk warnings (an invalid VIN, a mismatched VIN, or a possible web mention) are shown separately and are never stated as a theft report. A clean check can create a Proof of Clean Purchase verification record showing what was checked and when. It is not a legal document, title, ownership proof, or guarantee.
 
 ## Access and pricing
 An account is required to run checks. A free account includes two checks. Additional checks are $0.99 each, or $10 per month for unlimited checks. SafeOrStolen is available on the web and as an installable web app.

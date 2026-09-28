@@ -3,7 +3,14 @@
 SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers. Users can check an IMEI, VIN, license plate, firearm serial, bicycle serial, or another serial-numbered item. They can also submit a marketplace listing URL for identifier extraction and analysis.
 
 ## Sources actually checked
-SafeOrStolen uses its own stolen-item reports, public web results, and AI analysis. Bicycle checks also query Bike Index. Firearm checks also query HotGunz. Phone checks can return device details, but carrier-blacklist checking is not currently active. SafeOrStolen does not query NICB, NMVTIS, NCIC, police, DMV, insurance, Carfax, or AutoCheck systems.
+- Vehicles (VIN or Arizona plate): TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies (updated twice daily); NHTSA VIN decoding and model safety recalls; VIN check-digit validation.
+- Bicycles: Bike Index stolen registry.
+- All items: SafeOrStolen's own stolen-item reports.
+- Phones: IMEI format and check-digit validation only. Carrier-blacklist checking is not currently active.
+- Firearms: the HotGunz source is currently unavailable.
+- Public web mentions and AI notes may be added when available. AI never decides a result, and a web mention is shown as a possible match, never as a theft report.
+
+SafeOrStolen does not query NCIC, NICB, NMVTIS, DMV, insurance, Carfax, or AutoCheck systems. TheftAZ is its only law enforcement source, and it covers Arizona vehicle thefts only.
 
 ## Verdicts
 - STOLEN: strong evidence was returned.
@@ -27,10 +34,11 @@ Guides cover vehicles, phones, iPhones, firearms, bicycles and e-bikes, laptops 
 4. Consider a Carfax or AutoCheck report for additional history.
 5. Inspect the vehicle for altered, replaced, or mismatched VIN labels.
 6. Ask local police whether they accept public VIN-check requests.
-7. Run the VIN or listing through SafeOrStolen as an additional check.
+7. Run the VIN or Arizona plate through SafeOrStolen. It searches TheftAZ (Arizona police stolen-vehicle records), decodes the VIN, lists recalls, and its Buyer's Check records steps 1, 2, and the title-to-seller-ID comparison in a Proof of Clean Purchase.
 
 Guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Tool: https://safeorstolen.com/vin-checker
+Arizona: https://safeorstolen.com/theftaz
 
 ## Phone workflow
 Match the IMEI shown by *#06#, Settings, the box, and the receipt. Confirm that iPhone Activation Lock or Android account protection has been removed in person. Ask the carrier separately about network eligibility, blacklist status, and outstanding finance. SafeOrStolen does not perform that carrier check.

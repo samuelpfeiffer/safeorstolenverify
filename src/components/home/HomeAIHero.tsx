@@ -210,7 +210,7 @@ export const HomeAIHero: React.FC = () => {
 
  <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
  Paste any IMEI, VIN, serial number, license plate, or marketplace URL — or just ask a question.
- Verified against community reports, public web results, and AI analysis. Also checking specialist databases for bicycles and firearms.
+ Car checks search police stolen-vehicle records (Arizona's TheftAZ). Bike checks search the BikeIndex stolen registry. Every check searches SafeOrStolen's own theft reports.
  </p>
 
  {/* Chat panel */}
