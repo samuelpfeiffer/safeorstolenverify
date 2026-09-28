@@ -500,7 +500,12 @@ export async function runVerification(
     tasks.push(runSource('IMEI_Verification', 'verify-imei', { identifier: cleanIdentifier }));
   }
   if (sources.includes('vehicle')) {
-    tasks.push(runSource('Vehicle_Verification', 'verify-vehicle', { identifier: cleanIdentifier }));
+    // Plates search TheftAZ (Arizona law enforcement records) by plate; VINs get the full vehicle check.
+    const body =
+      itemType === 'plate'
+        ? { plate: normalizedIdentifier, state: 'AZ' }
+        : { identifier: cleanIdentifier };
+    tasks.push(runSource('Vehicle_Verification', 'verify-vehicle', body));
   }
   if (sources.includes('hotgunz')) {
     tasks.push(runSource('HotGunz', 'verify-hotgunz', { identifier: cleanIdentifier }));

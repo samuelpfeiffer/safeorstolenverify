@@ -175,6 +175,12 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
               </>
             ) : null}
           </p>
+          {vehicle?.details?.theftaz?.checked === true && (
+            <p className="mt-1">
+              Not reported stolen in Arizona law enforcement records (TheftAZ, run by the Arizona
+              Attorney General) as of today.
+            </p>
+          )}
           <p className="mt-1">
             If the listing described a different car, stop here.
           </p>
@@ -183,7 +189,7 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
         {/* Step 2 — NICB, done by the buyer side by side */}
         <Step
           n={2}
-          title="Check NICB for theft and salvage records"
+          title="Check NICB nationwide for theft and salvage records"
           state={nicb === null ? 'todo' : nicb === 'none' ? 'pass' : 'fail'}
         >
           <p>

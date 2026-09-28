@@ -95,6 +95,19 @@ function aggregateConfidence(results: SourceResult[]): number {
   return Math.min(base + multiSourceBonus, 99);
 }
 
+/** Plain-English name for a source, used in verdict messages. */
+function sourceLabel(s: SourceResult): string {
+  if (s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.found === true) {
+    return 'Arizona law enforcement records (TheftAZ, Arizona Attorney General)';
+  }
+  const names: Record<string, string> = {
+    'SafeOrStolen Database': 'the SafeOrStolen registry',
+    IMEI_Verification: 'phone blacklist records',
+    Vehicle_Verification: 'vehicle records',
+  };
+  return names[s.provider] ?? s.provider;
+}
+
 /**
  * Combine every source into one verdict. Deterministic: the same set of
  * source statuses always produces the same result.
@@ -112,7 +125,7 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
       finalStatus: 'stolen',
       riskLevel: 'critical',
       confidence: aggregateConfidence(stolen),
-      message: `🚨 THEFT REPORT FOUND: ${stolen.map((s) => s.provider).join(', ')} lists this item as stolen. Do NOT purchase until this is resolved with police.`,
+      message: `🚨 THEFT REPORT FOUND: ${stolen.map(sourceLabel).join(' and ')} ${stolen.length > 1 ? 'list' : 'lists'} this item as stolen. Do NOT purchase until this is resolved with police.`,
     };
   }
 
@@ -122,7 +135,7 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
       finalStatus: 'lost',
       riskLevel: 'high',
       confidence: aggregateConfidence(lost),
-      message: `⚠️ LOST REPORT FOUND: ${lost.map((s) => s.provider).join(', ')} lists this item as lost. Exercise extreme caution.`,
+      message: `⚠️ LOST REPORT FOUND: ${lost.map(sourceLabel).join(' and ')} ${lost.length > 1 ? 'list' : 'lists'} this item as lost. Exercise extreme caution.`,
     };
   }
 
@@ -154,7 +167,7 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
       finalStatus: 'safe',
       riskLevel: 'low',
       confidence: aggregateConfidence(safe),
-      message: `✅ NO THEFT REPORTS FOUND in ${safe.map((s) => s.provider).join(', ')}. No check can guarantee an item was never stolen, so keep your receipt and the seller's info.`,
+      message: `✅ NO THEFT REPORTS FOUND in ${safe.map(sourceLabel).join(' and ')}. No check can guarantee an item was never stolen, so keep your receipt and the seller's info.`,
     };
   }
 
@@ -163,12 +176,19 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
     .filter((s) => THEFT_DATABASES.has(s.provider) && s.provider !== 'SafeOrStolen Database' && s.status !== 'error')
     .map((s) => s.provider);
   const isVehicle = data.some((s) => s.provider === 'Vehicle_Verification');
+  // The vehicle check searches TheftAZ (Arizona Attorney General, law enforcement records).
+  const azChecked = data.some(
+    (s) => s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.checked === true,
+  );
+  if (azChecked) answeredOutside.push('Arizona law enforcement records (TheftAZ)');
 
   let message = answeredOutside.length > 0
     ? `No theft record found in the SafeOrStolen registry or ${answeredOutside.join(', ')}. That does not prove the item is clean, so ask the seller for proof of ownership.`
     : 'No theft record found in the SafeOrStolen registry, but no outside theft database could confirm this item. Ask the seller for proof of ownership and keep a record of the sale.';
   if (isVehicle) {
-    message += ' For vehicles, run the free NICB VINCheck at nicb.org/vincheck and ask to see the title.';
+    message += azChecked
+      ? ' Arizona records only cover Arizona reports, so for a nationwide check run the free NICB VINCheck at nicb.org/vincheck and ask to see the title.'
+      : ' For vehicles, run the free NICB VINCheck at nicb.org/vincheck and ask to see the title.';
   }
 
   return {
