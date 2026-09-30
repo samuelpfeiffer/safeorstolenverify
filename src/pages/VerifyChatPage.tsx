@@ -279,12 +279,8 @@ const VerifyChatPage: React.FC = () => {
 
   const runVerification = useCallback(
  async (assistantId: string, identifier: string) => {
- // An account is required before any check runs.
- if (!user) {
- requireAccount(assistantId, identifier);
- return;
- }
-
+ // No account needed for the 2 free checks (Sept 30 2026). The server enforces
+ // the limit; signed-out visitors are asked to sign up once it's used.
  try {
  const { data: detect, error: detectErr } = await supabase.functions.invoke(
  'ai-detect-identifier',
@@ -310,6 +306,10 @@ const VerifyChatPage: React.FC = () => {
            itemType,
            fingerprint: getOrCreateFingerprint(),
          });
+         if (verifyErr && !user && (verifyErr.code === 'LIMIT_REACHED' || verifyErr.code === 'AUTH_REQUIRED')) {
+           requireAccount(assistantId, identifier);
+           return;
+         }
          if (verifyErr) throw new Error(verifyErr.message);
 
 
@@ -886,7 +886,7 @@ const VerifyChatPage: React.FC = () => {
  <>
  <span>·</span>
  <a href="/auth?redirect=/verify" className="text-primary hover:underline">
- SIGN IN — 2 FREE CHECKS
+ 2 FREE CHECKS — NO SIGN-UP NEEDED
  </a>
  </>
  )}

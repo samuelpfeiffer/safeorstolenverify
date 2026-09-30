@@ -349,11 +349,55 @@ async function runInternalRegistry(
  * Free-usage allowance and plan limits, scoped to the account.
  * The database counter is authoritative; server instances are stateless.
  */
+const ANON_DAILY_PER_IP = 6;
+
+async function sha256Hex(v: string): Promise<string> {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(v));
+  return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+/** No-account visitors: 2 lifetime free checks per browser, 6 per connection per day. */
+async function anonymousGate(
+  admin: AdminClient,
+  fingerprint: string,
+  clientIp: string | null,
+): Promise<GateResult> {
+  if (clientIp) {
+    const day = new Date().toISOString().slice(0, 10);
+    const ipKey = `ip:${(await sha256Hex(clientIp)).slice(0, 32)}:${day}`;
+    const { data: ipRow } = await admin.from('usage_tracking').select('*').eq('fingerprint', ipKey).maybeSingle();
+    if ((ipRow?.check_count ?? 0) >= ANON_DAILY_PER_IP) {
+      return { allowed: false, reason: 'free_limit', plan: 'free', checksUsed: FREE_LIMIT, checksLimit: FREE_LIMIT };
+    }
+    if (ipRow) {
+      await admin.from('usage_tracking').update({ check_count: (ipRow.check_count ?? 0) + 1, last_check_at: new Date().toISOString() }).eq('id', ipRow.id);
+    } else {
+      await admin.from('usage_tracking').insert({ fingerprint: ipKey, user_id: null, check_count: 1, last_check_at: new Date().toISOString() });
+    }
+  }
+  const { data: usage } = await admin.from('usage_tracking').select('*').eq('fingerprint', fingerprint).maybeSingle();
+  const used = usage?.check_count ?? 0;
+  if (used >= FREE_LIMIT) {
+    return { allowed: false, reason: 'free_limit', plan: 'free', checksUsed: used, checksLimit: FREE_LIMIT };
+  }
+  if (usage) {
+    await admin.from('usage_tracking').update({ check_count: used + 1, last_check_at: new Date().toISOString() }).eq('id', usage.id);
+  } else {
+    await admin.from('usage_tracking').insert({ fingerprint, user_id: null, check_count: 1, last_check_at: new Date().toISOString() });
+  }
+  return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - (used + 1) };
+}
+
 export async function checkUsageGate(
   admin: AdminClient,
-  userId: string,
+  userId: string | null,
   fingerprint: string | null,
+  clientIp: string | null = null,
 ): Promise<GateResult> {
+  if (!userId) {
+    if (!fingerprint) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: FREE_LIMIT };
+    return anonymousGate(admin, fingerprint, clientIp);
+  }
   let sub: any = null;
 
   const byUser = await admin
@@ -484,7 +528,7 @@ export async function checkUsageGate(
  */
 export async function runVerification(
   admin: AdminClient,
-  userId: string,
+  userId: string | null,
   input: VerifyInput,
   gate: GateAllowed,
 ): Promise<VerifyResponse> {
@@ -553,6 +597,7 @@ export async function runVerification(
   try {
     await admin.from('verification_searches').insert({
       user_id: userId,
+      fingerprint: userId ? null : (input.fingerprint ?? null),
       serial_number: cleanIdentifier,
       item_type: itemType,
       result: {
@@ -572,7 +617,8 @@ export async function runVerification(
     console.error('[verify] failed to record search:', error);
   }
 
-  try {
+  // Dashboard history only exists for signed-in users.
+  if (userId) try {
     // Column set matches the table: there is no `status`/`details` column —
     // the verdict lives in verification_status, the detail in risk_assessment.
     await admin.from('verification_results').insert({

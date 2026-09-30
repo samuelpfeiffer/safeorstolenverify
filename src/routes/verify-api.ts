@@ -1,9 +1,9 @@
 /**
  * Verification endpoint served by the app's own backend.
  *
- * An account is REQUIRED: a request without a valid signed-in user token is
- * refused with 401 AUTH_REQUIRED before any check runs. This replaces the
- * previous split between the separate gate and verification services.
+ * Visitors get 2 free checks without an account (Sept 30 2026: the Sep 19
+ * account wall stopped all sales). Limits: 2 per browser fingerprint and
+ * 6 per connection per day (bot protection). After that: sign up or pay.
  */
 
 import { createFileRoute } from '@tanstack/react-router';
@@ -35,33 +35,20 @@ export const Route = createFileRoute('/verify-api')({
             token !== SUPABASE_PUBLISHABLE_KEY &&
             token.split('.').length === 3;
 
-          if (!looksLikeUserToken) {
-            return json(
-              {
-                error: 'Account required',
-                code: 'AUTH_REQUIRED',
-                message: 'Create a free account or sign in to run a verification.',
-              },
-              401,
-            );
+          let userId: string | null = null;
+          if (looksLikeUserToken) {
+            const authClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+              auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+            });
+            const { data: userData } = await authClient.auth.getUser(token);
+            userId = userData?.user?.id ?? null;
           }
-
-          const authClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
-            auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
-          });
-          const { data: userData } = await authClient.auth.getUser(token);
-          const userId = userData?.user?.id ?? null;
-
-          if (!userId) {
-            return json(
-              {
-                error: 'Account required',
-                code: 'AUTH_REQUIRED',
-                message: 'Create a free account or sign in to run a verification.',
-              },
-              401,
-            );
-          }
+          // No account: allowed for the 2 free checks (per browser + per connection limits in the gate).
+          const clientIp =
+            request.headers.get('cf-connecting-ip') ||
+            request.headers.get('x-real-ip') ||
+            request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+            null;
 
           // 2. Validate input.
           const body = (await request.json().catch(() => null)) as
@@ -73,7 +60,13 @@ export const Route = createFileRoute('/verify-api')({
           }
 
           const itemType = typeof body?.itemType === 'string' ? body.itemType : null;
-          const fingerprint = typeof body?.fingerprint === 'string' ? body.fingerprint : null;
+          const fingerprint = typeof body?.fingerprint === 'string' ? body.fingerprint.slice(0, 100) : null;
+          if (!userId && !fingerprint) {
+            return json(
+              { error: 'Account required', code: 'AUTH_REQUIRED', message: 'Create a free account or sign in to run a verification.' },
+              401,
+            );
+          }
 
           // 3. Privileged work only after the caller is authenticated.
           const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
@@ -94,7 +87,7 @@ export const Route = createFileRoute('/verify-api')({
             }
           }
 
-          const gate = await checkUsageGate(supabaseAdmin, userId, fingerprint);
+          const gate = await checkUsageGate(supabaseAdmin, userId, fingerprint, clientIp);
           if (!gate.allowed) {
             return json(
               {

@@ -64,16 +64,8 @@ export async function requestVerification(request: VerifyRequest): Promise<Verif
     const { data: sessionData } = await supabase.auth.getSession();
     const token = sessionData.session?.access_token;
 
-    if (!token) {
-      return {
-        data: null,
-        error: {
-          code: 'AUTH_REQUIRED',
-          status: 401,
-          message: 'Create a free account or sign in to run a verification.',
-        },
-      };
-    }
+    // No account needed for the 2 free checks; the server enforces the limit
+    // per browser and per connection (Sept 30 2026).
 
     let fingerprint = request.fingerprint ?? null;
     if (!fingerprint && typeof window !== 'undefined') {
@@ -88,7 +80,7 @@ export async function requestVerification(request: VerifyRequest): Promise<Verif
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: JSON.stringify({
         identifier: request.identifier,
