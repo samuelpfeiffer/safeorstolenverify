@@ -216,8 +216,8 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
   }
   if (isVehicle) {
     message += azChecked
-      ? ' Arizona records only cover Arizona reports, so for a nationwide check run the free NICB VINCheck at nicb.org/vincheck and ask to see the title.'
-      : ' For vehicles, run the free NICB VINCheck at nicb.org/vincheck and ask to see the title.';
+      ? ' Arizona records only cover Arizona reports, so for a nationwide check, enter the VIN in the free NICB VINCheck at nicb.org/vincheck. Before you pay, also ask the seller to show you the title.'
+      : ' For vehicles, enter the VIN in the free NICB VINCheck at nicb.org/vincheck. Before you pay, also ask the seller to show you the title.';
   }
 
   return {

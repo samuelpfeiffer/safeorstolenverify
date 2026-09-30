@@ -5,11 +5,11 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
  * Vehicle VIN Verification — HONEST VERSION (Sept 27 2026) + TheftAZ Arizona law enforcement records (Sept 28 2026)
  * Rules:
  *  - Only list sources that were actually queried and answered.
- *  - Never return "safe"/"stolen" without a real theft database answer.
- *    No automated theft database is available for vehicles right now, so
- *    theft status is always "unknown" and the user gets the free NICB
- *    VINCheck link to check it themselves.
+ *  - "stolen" ONLY when TheftAZ (Arizona AG, law enforcement records) returns a record for this exact VIN/plate.
+ *  - "Not reported stolen" in TheftAZ is Arizona-only, so the status stays "unknown" (never "safe").
+ *  - NICB (national) has no public API; users are pointed to the free NICB VINCheck.
  *  - Response contract unchanged: success, status, confidence, source, message, details.
+ *  - Plate mode: POST { plate, state? } searches TheftAZ by plate (default state AZ).
  */
 
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
@@ -245,5 +245,5 @@ function getVehicleMessage(mismatch: boolean, issues: string[], v: Record<string
   const azText = taz.checked
     ? ' Not reported stolen in Arizona law enforcement records (TheftAZ) as of today.'
     : ' Arizona law enforcement records (TheftAZ) could not be searched right now.';
-  return `ℹ️ VIN is valid${desc ? ` and decodes to a ${desc}` : ''}.${recallText}${azText} For a nationwide check, run the free NICB VINCheck (nicb.org/vincheck) and ask to see the title before you pay.`;
+  return `ℹ️ VIN is valid${desc ? ` and decodes to a ${desc}` : ''}.${recallText}${azText} For a nationwide check, enter the VIN in the free NICB VINCheck (nicb.org/vincheck). Before you pay, also ask the seller to show you the title.`;
 }
