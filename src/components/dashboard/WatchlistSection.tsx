@@ -22,11 +22,16 @@ interface WatchlistItem {
   description: string | null;
   alert_email: boolean;
   created_at: string;
+  watch_until?: string | null;
+  last_checked_at?: string | null;
+  last_status?: string | null;
+  alerted_at?: string | null;
 }
 
 const ITEM_TYPES = [
   { value: 'smartphone', label: 'Phone/IMEI' },
   { value: 'vehicle', label: 'Vehicle/VIN' },
+  { value: 'plate', label: 'License plate (Arizona)' },
   { value: 'bicycle', label: 'Bicycle' },
   { value: 'laptop', label: 'Laptop' },
   { value: 'electronics', label: 'Electronics' },
@@ -258,7 +263,7 @@ export const WatchlistSection = () => {
           <div className="text-center py-8 text-muted-foreground">
             <Bell className="w-8 h-8 mx-auto mb-2 opacity-50" />
             <p>No items in your watchlist yet.</p>
-            <p className="text-sm">Add items to get notified if they're reported stolen.</p>
+            <p className="text-sm">Add items and we'll re-check them every morning for 30 days, and email you if they're reported stolen.</p>
           </div>
         ) : (
           <div className="space-y-3">
@@ -281,6 +286,15 @@ export const WatchlistSection = () => {
                       {item.description}
                     </p>
                   )}
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {item.alerted_at
+                      ? `Reported stolen. We emailed you on ${new Date(item.alerted_at).toLocaleDateString()}.`
+                      : item.watch_until && new Date(item.watch_until) < new Date()
+                        ? `Daily re-checks ended ${new Date(item.watch_until).toLocaleDateString()}.`
+                        : item.last_checked_at
+                          ? `Re-checked daily${item.watch_until ? ` until ${new Date(item.watch_until).toLocaleDateString()}` : ''}. Last check ${new Date(item.last_checked_at).toLocaleDateString()}: ${item.last_status === 'error' ? "couldn't reach the source, will retry" : 'no theft report'}.`
+                          : `Re-checked every morning${item.watch_until ? ` until ${new Date(item.watch_until).toLocaleDateString()}` : ''}. First check is tomorrow morning.`}
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-2">

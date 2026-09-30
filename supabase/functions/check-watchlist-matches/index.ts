@@ -19,6 +19,21 @@ serve(async (req: Request): Promise<Response> => {
     const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
+    // --- DAILY RE-CHECK MODE (Sept 28 2026) ---
+    // Called by pg_cron with the private watchlist secret. Re-checks each watched item
+    // against real sources and emails the owner ONCE if it is reported stolen.
+    const peek = await req.clone().json().catch(() => ({}));
+    if (peek?.mode === 'sweep') {
+      const admin = createClient(supabaseUrl, supabaseServiceKey);
+      const { data: cfg } = await admin.from('app_config').select('value').eq('key', 'watchlist_cron_secret').maybeSingle();
+      const given = req.headers.get('x-watch-secret') ?? '';
+      if (!cfg?.value || given !== cfg.value) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: jsonHeaders });
+      }
+      const summary = await runSweep(admin, supabaseUrl, supabaseAnonKey, resendApiKey);
+      return new Response(JSON.stringify({ success: true, ...summary }), { status: 200, headers: jsonHeaders });
+    }
+
     // --- Authentication: require signed-in caller ---
     const authHeader = req.headers.get('authorization') ?? '';
     if (!authHeader.startsWith('Bearer ')) {
@@ -69,7 +84,7 @@ serve(async (req: Request): Promise<Response> => {
       .from("user_watchlist")
       .select(`id, identifier, item_type, description, alert_email, user_id`)
       .eq("alert_email", true)
-      .or(`identifier.ilike.%${identifier}%,identifier.eq.${identifier.toUpperCase()}`);
+      .eq("identifier", identifier.trim().toUpperCase()); // exact match only (was substring)
 
     if (matchError) {
       console.error("Error finding matches:", matchError);
@@ -163,3 +178,170 @@ serve(async (req: Request): Promise<Response> => {
     );
   }
 });
+
+
+// ---------------------------------------------------------------------------
+// Daily re-check ("Watch this") — Sept 28 2026
+// ---------------------------------------------------------------------------
+type CheckOutcome = { status: 'stolen' | 'unknown' | 'error'; source?: string; message?: string; sources: string[] };
+
+function kindOf(itemType: string, identifier: string): 'vin' | 'plate' | 'firearm' | 'bicycle' | 'other' {
+  const t = (itemType || '').toLowerCase();
+  if (t.includes('gun') || t.includes('firearm') || t.includes('rifle') || t.includes('pistol')) return 'firearm';
+  if (t.includes('bike') || t.includes('bicycle')) return 'bicycle';
+  if (t.includes('plate')) return 'plate';
+  if (t.includes('vehicle') || t.includes('car') || t.includes('vin') || t.includes('truck') || t.includes('motorcycle')) {
+    return identifier.replace(/[\s-]/g, '').length === 17 ? 'vin' : 'plate';
+  }
+  return 'other';
+}
+
+async function callCheck(supabaseUrl: string, anonKey: string, fn: string, body: unknown): Promise<any | null> {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 25000);
+  try {
+    const r = await fetch(`${supabaseUrl}/functions/v1/${fn}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${anonKey}`, 'apikey': anonKey, 'Origin': 'https://safeorstolen.com' },
+      body: JSON.stringify(body),
+      signal: ctrl.signal,
+    });
+    const text = await r.text();
+    return text ? JSON.parse(text) : null;
+  } catch (e) {
+    console.error(`[watch] ${fn} failed:`, e);
+    return null;
+  } finally { clearTimeout(t); }
+}
+
+async function checkOne(admin: any, supabaseUrl: string, anonKey: string, w: any): Promise<CheckOutcome> {
+  const id = String(w.identifier || '').trim().toUpperCase();
+  const sources: string[] = [];
+
+  // 1. SafeOrStolen registry, exact match
+  const { data: reg } = await admin
+    .from('stolen_items')
+    .select('id')
+    .or(`serial_number.eq.${id},imei.eq.${id},vin.eq.${id}`)
+    .limit(1);
+  sources.push('SafeOrStolen registry');
+  if (reg && reg.length > 0) {
+    return { status: 'stolen', source: 'the SafeOrStolen stolen-item registry', sources };
+  }
+
+  // 2. Outside source for the item type
+  const kind = kindOf(w.item_type, id);
+  let res: any = null;
+  if (kind === 'vin') res = await callCheck(supabaseUrl, anonKey, 'verify-vehicle', { identifier: id });
+  else if (kind === 'plate') res = await callCheck(supabaseUrl, anonKey, 'verify-vehicle', { plate: id, state: 'AZ' });
+  else if (kind === 'firearm') res = await callCheck(supabaseUrl, anonKey, 'verify-hotgunz', { identifier: id });
+  else if (kind === 'bicycle') res = await callCheck(supabaseUrl, anonKey, 'verify-bikeindex', { identifier: id });
+
+  if (kind !== 'other') {
+    if (!res || res.status === 'error') return { status: 'error', message: res?.message, sources };
+    for (const d of (res.details?.databases ?? [])) sources.push(String(d));
+    if (res.status === 'stolen') {
+      const source =
+        kind === 'firearm' ? "the Ohio Attorney General's stolen gun database (Ohio law enforcement records)"
+        : kind === 'bicycle' ? 'the BikeIndex stolen bike registry'
+        : "TheftAZ, the Arizona Attorney General's database of law enforcement stolen-vehicle records";
+      return { status: 'stolen', source, message: res.message, sources };
+    }
+  }
+  return { status: 'unknown', sources };
+}
+
+async function runSweep(admin: any, supabaseUrl: string, anonKey: string, resendApiKey?: string) {
+  const nowIso = new Date().toISOString();
+  const since = new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(); // at most once per ~day
+  const { data: watches, error } = await admin
+    .from('user_watchlist')
+    .select('id, user_id, item_type, identifier, description, watch_until, last_checked_at')
+    .eq('alert_email', true)
+    .is('alerted_at', null)
+    .or(`watch_until.is.null,watch_until.gt.${nowIso}`)
+    .or(`last_checked_at.is.null,last_checked_at.lt.${since}`)
+    .order('last_checked_at', { ascending: true, nullsFirst: true })
+    .limit(60);
+  if (error) {
+    console.error('[watch] select failed', error);
+    return { checked: 0, stolen: 0, emailed: 0, errors: 1 };
+  }
+
+  let checked = 0, stolen = 0, emailed = 0, errors = 0;
+  const resend = resendApiKey ? new Resend(resendApiKey) : null;
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  const queue = [...(watches ?? [])];
+  const worker = async () => {
+    while (queue.length) {
+      const w = queue.shift()!;
+      const out = await checkOne(admin, supabaseUrl, anonKey, w);
+      checked++;
+      if (out.status === 'error') errors++;
+      const update: Record<string, unknown> = {
+        last_checked_at: new Date().toISOString(),
+        last_status: out.status,
+        last_sources: out.sources,
+      };
+
+      if (out.status === 'stolen') {
+        stolen++;
+        const { data: profile } = await admin
+          .from('profiles').select('email, full_name, email_notifications_enabled').eq('id', w.user_id).maybeSingle();
+        if (resend && profile?.email && profile.email_notifications_enabled !== false) {
+          try {
+            const idSafe = esc(String(w.identifier));
+            await resend.emails.send({
+              from: 'SafeOrStolen <support@safeorstolen.com>',
+              to: [profile.email],
+              subject: '🚨 An item you are watching was reported stolen',
+              html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                  <h1 style="color: #ef4444;">Watched item reported stolen</h1>
+                  <p>Hi ${esc(profile.full_name || 'there')},</p>
+                  <p>Our daily re-check found a theft report for an item on your watchlist.</p>
+                  <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 16px; margin: 20px 0;">
+                    <p style="margin: 0;"><strong>Number:</strong> ${idSafe}</p>
+                    ${w.description ? `<p style="margin: 8px 0 0 0;"><strong>Your note:</strong> ${esc(String(w.description))}</p>` : ''}
+                    <p style="margin: 8px 0 0 0;"><strong>Found in:</strong> ${esc(out.source || 'a theft database')}</p>
+                  </div>
+                  <p><strong>What to do:</strong></p>
+                  <ul>
+                    <li>If you haven't bought it yet, don't.</li>
+                    <li>Don't confront the seller.</li>
+                    <li>Contact your local police non-emergency line with this number.</li>
+                  </ul>
+                  <p style="margin-top: 24px;">
+                    <a href="https://safeorstolen.com/verify?q=${encodeURIComponent(String(w.identifier))}"
+                       style="background: #f97316; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;">
+                      Run the check again
+                    </a>
+                  </p>
+                  <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e5e5;">
+                  <p style="color: #737373; font-size: 12px;">
+                    You're getting this because this item is on your SafeOrStolen watchlist.
+                    <br><a href="https://safeorstolen.com/dashboard" style="color: #737373;">Manage your watchlist</a>
+                  </p>
+                </div>`,
+            });
+            emailed++;
+            update.alerted_at = new Date().toISOString();
+          } catch (e) {
+            console.error('[watch] email failed', e);
+          }
+        }
+      }
+      await admin.from('user_watchlist').update(update).eq('id', w.id);
+    }
+  };
+  await Promise.all([worker(), worker(), worker()]);
+
+  await admin.from('audit_logs').insert({
+    action: 'WATCHLIST_DAILY_RECHECK',
+    table_name: 'user_watchlist',
+    new_values: { checked, stolen, emailed, errors, timestamp: new Date().toISOString() },
+  });
+  console.log(`[watch] sweep checked=${checked} stolen=${stolen} emailed=${emailed} errors=${errors}`);
+  return { checked, stolen, emailed, errors };
+}

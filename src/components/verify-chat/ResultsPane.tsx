@@ -19,6 +19,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
+import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
 import type { AggregatedResult } from '@/services/VerificationService';
 
@@ -253,6 +254,19 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </p>
  </div>
 
+
+ {/* Watch this — daily re-check for items with a real outside source */}
+ {current.status !== 'stolen' &&
+ (() => {
+ const kind = toCanonicalItemType(current.itemType);
+ const ok = kind === 'vehicle' || kind === 'plate' || kind === 'firearm' || kind === 'bicycle';
+ const invalid = current.providers?.some(
+ (p) => (p as { details?: { invalidInput?: boolean } }).details?.invalidInput,
+ );
+ return ok && !invalid ? (
+ <WatchButton key={`watch-${current.identifier}`} identifier={current.identifier} itemType={kind as 'vehicle' | 'plate' | 'firearm' | 'bicycle'} />
+ ) : null;
+ })()}
 
  {/* Buyer's Check — vehicles with a valid VIN, unless already reported stolen */}
  {toCanonicalItemType(current.itemType) === 'vehicle' &&
