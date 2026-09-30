@@ -27,6 +27,7 @@ export const SOURCE_WEIGHTS: Record<string, number> = {
   IMEI_Verification: 0.92,
   Vehicle_Verification: 0.9,
   HotGunz: 0.88,
+  Firearm_Verification: 0.95,
   Web_Scraper: 0.75,
   AI_Analysis: 0.65,
 };
@@ -70,6 +71,7 @@ export const THEFT_DATABASES = new Set([
   'BikeIndex',
   'IMEI_Verification',
   'HotGunz',
+  'Firearm_Verification',
 ]);
 
 export interface Verdict {
@@ -97,6 +99,9 @@ function aggregateConfidence(results: SourceResult[]): number {
 
 /** Plain-English name for a source, used in verdict messages. */
 function sourceLabel(s: SourceResult): string {
+  if (s.provider === 'Firearm_Verification' && (s.details as any)?.ohio?.found === true) {
+    return "the Ohio Attorney General's stolen gun database (Ohio law enforcement records)";
+  }
   if (s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.found === true) {
     return "TheftAZ, the Arizona Attorney General's database of law enforcement stolen-vehicle records,";
   }
@@ -151,6 +156,16 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
     };
   }
 
+  const possible = data.filter((s) => (s.details as any)?.possibleMatch === true);
+  if (possible.length > 0) {
+    return {
+      finalStatus: 'unknown',
+      riskLevel: 'high',
+      confidence: null,
+      message: possible[0].message,
+    };
+  }
+
   if (web.some((s) => s.status === 'stolen')) {
     return {
       finalStatus: 'unknown',
@@ -173,7 +188,13 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
 
   // Nothing confirmed. Be exact about what was and was not checked.
   const answeredOutside = data
-    .filter((s) => THEFT_DATABASES.has(s.provider) && s.provider !== 'SafeOrStolen Database' && s.status !== 'error')
+    .filter(
+      (s) =>
+        THEFT_DATABASES.has(s.provider) &&
+        s.provider !== 'SafeOrStolen Database' &&
+        s.provider !== 'Firearm_Verification' &&
+        s.status !== 'error',
+    )
     .map((s) => s.provider);
   const isVehicle = data.some((s) => s.provider === 'Vehicle_Verification');
   // The vehicle check searches TheftAZ (Arizona Attorney General, law enforcement records).
@@ -181,10 +202,18 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
     (s) => s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.checked === true,
   );
   if (azChecked) answeredOutside.push('Arizona law enforcement records (TheftAZ)');
+  const ohioChecked = data.some(
+    (s) => s.provider === 'Firearm_Verification' && (s.details as any)?.ohio?.checked === true,
+  );
+  const isFirearm = data.some((s) => s.provider === 'Firearm_Verification');
+  if (ohioChecked) answeredOutside.push('Ohio law enforcement stolen-gun records');
 
   let message = answeredOutside.length > 0
     ? `No theft record found in the SafeOrStolen registry or ${answeredOutside.join(', ')}. That does not prove the item is clean, so ask the seller for proof of ownership.`
     : 'No theft record found in the SafeOrStolen registry, but no outside theft database could confirm this item. Ask the seller for proof of ownership and keep a record of the sale.';
+  if (isFirearm) {
+    message += " Other states' police records can't be searched by the public, so buy through a licensed dealer (FFL) or ask local police to run the serial. In Florida, you can also search FDLE's free stolen gun database.";
+  }
   if (isVehicle) {
     message += azChecked
       ? ' Arizona records only cover Arizona reports, so for a nationwide check run the free NICB VINCheck at nicb.org/vincheck and ask to see the title.'

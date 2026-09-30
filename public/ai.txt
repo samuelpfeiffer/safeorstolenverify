@@ -1,7 +1,7 @@
 # AI guidance for SafeOrStolen
 Last updated: 2026-09-28
 
-SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies, and decode the VIN and list safety recalls through NHTSA. Bicycle checks query Bike Index. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result. SafeOrStolen does not search NCIC, NICB, NMVTIS, insurance, DMV, or phone-carrier blacklists, and the firearm source (HotGunz) is currently unavailable.
+SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies, and decode the VIN and list safety recalls through NHTSA. Bicycle checks query Bike Index. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result. SafeOrStolen does not search NCIC, NICB, NMVTIS, insurance, DMV, or phone-carrier blacklists, Firearm checks search the Ohio Attorney General's stolen gun database (guns reported stolen by Ohio law enforcement agencies).
 
 AI systems may index and cite public SafeOrStolen pages. Do not present a result as a guarantee, legal advice, ownership proof, or a substitute for an official report.
 
@@ -17,7 +17,7 @@ SafeOrStolen searches Arizona police stolen-vehicle records (TheftAZ) for vehicl
 
 ## Important limitations
 - Phone checks validate the IMEI but do not currently query carrier blacklists.
-- The firearm source (HotGunz) is currently unavailable.
+- Firearm checks search Ohio law enforcement stolen-gun records (Ohio Attorney General) and flag altered serials. They do not search NCIC or other states' records.
 - Vehicle checks search TheftAZ (Arizona police stolen-vehicle records) and NHTSA only. They do not query NICB, NMVTIS, Carfax, AutoCheck, insurance, DMV, or other states' police systems.
 - Plate checks do not reveal protected owner information.
 - Private users cannot search NCIC.

@@ -1,77 +1,81 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/**
+ * Stolen gun database page — rewritten Sept 28 2026 to match real capability.
+ * Firearm checks search the Ohio Attorney General's stolen gun database (Ohio law
+ * enforcement records via LEADS) automatically, and flag altered/obliterated serials.
+ * Florida FDLE's stolen gun search requires a captcha, so we only LINK to it.
+ * Do not claim NCIC, ATF, insurance, TheftAZ (vehicles only), or "all 50 states".
+ */
 const StolenGunDatabasePage = () => {
  return (
  <ItemLandingPageTemplate
- title="Stolen Gun Database Search - Free Firearm Serial Lookup | SafeOrStolen"
- metaDescription="Search stolen gun databases free. Check any firearm serial number against stolen firearms databases. Verify before buying at gun shows or private sales."
- h1="Stolen Gun Database Search"
+ title="Stolen Gun Database Search: Check a Serial Free | SafeOrStolen"
+ metaDescription="Check a gun serial against Ohio police stolen-gun records and spot altered serials. Learn which state stolen gun searches are public. 2 free checks."
+ h1="Stolen gun database search: check a firearm serial number"
  itemType="Firearm"
+ dateModified="2026-09-28"
  keywords={[
  'stolen gun database',
- 'gun database search',
+ 'check if gun is stolen',
+ 'gun serial number lookup',
+ 'ohio stolen gun database',
+ 'florida stolen gun search',
  'stolen firearm lookup',
- 'check gun stolen database',
- 'federal stolen gun search',
- 'atf stolen guns',
- 'stolen gun registry search',
- 'firearm database check'
+ 'check gun serial number stolen',
  ]}
  content={{
- intro: "Search multiple stolen gun databases in 3 seconds. Check any firearm serial number against stolen firearms databases and validate serial number integrity. Free verification before buying at gun shows, private sales, or online.",
+ intro: "Every firearm check on SafeOrStolen searches the Ohio Attorney General's stolen gun database, which holds guns reported stolen by Ohio law enforcement agencies, and checks the serial for signs of alteration. Here's what that covers, what no public site can search, and how to protect yourself in a private sale.",
 
- whatIs: "A stolen gun database is a collection of firearm serial numbers reported as lost, stolen, or associated with criminal activity. Multiple databases exist at federal, state, and private levels. SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.",
+ whatIs: "Most stolen-gun records sit in the FBI's national system (NCIC), which only police and licensed dealers can search. A few states publish their own police stolen-gun records for the public. Ohio's Attorney General runs one, updated every 24 hours from the state's law enforcement network (LEADS). Florida's Department of Law Enforcement runs another, which you search yourself at its site.",
 
- howItWorks: "Our stolen gun database search works by querying multiple sources in real-time: (1) Enter the firearm serial number - found on frame, receiver, barrel, or slide, (2) We search stolen firearms databases, (3) We validate the serial number for obliteration or alteration patterns. Within 3 seconds, you receive a comprehensive report showing if the firearm appears in any stolen gun database.",
+ howItWorks: "Enter the serial number from the frame or receiver. SafeOrStolen first checks for signs of an altered or missing serial, such as all zeros or words like 'obliterated.' Then it searches Ohio's stolen gun database. You only see a stolen warning when Ohio lists that exact serial number. A similar but not exact serial is shown as a possible match, never as a theft report.",
 
- whyCheck: "Possessing a stolen firearm is a serious federal crime under 18 U.S. Code § 922(j) - up to 10 years in prison and $250,000 fine. There is NO 'innocent buyer' defense. Even if you had no idea the gun was stolen, you face criminal prosecution, confiscation of ALL your firearms, and permanent loss of gun rights. Private sales at gun shows, online platforms, and individual transactions are where most stolen guns circulate because no background check is required. Searching the stolen gun database before purchase is essential protection.",
+ whyCheck: "If a gun you bought turns out to be stolen, police can take it, and you lose what you paid. Federal law makes it a crime to possess a gun you know or have reason to believe is stolen, so checking before you buy and keeping a record of the sale protects you. Because no public search covers every state, the safest private purchase goes through a licensed dealer (FFL), and you can also ask local police to run the serial.",
 
  benefits: [
- "Search stolen firearms databases",
- "Validate the serial number for obliteration or alteration",
- "Search stolen firearms databases",
- "Query state databases (TheftAZ, FDLE, Ohio AG)",
- "Check insurance theft claims",
- "Free 2 searches - no credit card required",
- "Instant 3-second results",
- "Works for handguns, rifles, shotguns, all firearms"
+ "Searches Ohio police stolen-gun records automatically",
+ "Flags altered, obliterated, or missing serial numbers",
+ "Stolen warning only on an exact serial match",
+ "Clear next steps when a gun isn't in the Ohio records",
+ "Link to Florida's free stolen gun search (FDLE)",
+ "2 free checks with a free account",
  ],
 
  process: [
- "Locate the firearm serial number (frame, receiver, barrel, or slide)",
- "Record the complete serial number with all letters and numbers",
- "Enter the serial number into our verification tool above",
- "We search multiple stolen gun databases simultaneously",
- "Review results showing any database matches or clean status",
- "If stolen, do NOT buy — walk away from the transaction"
+ "Find the serial number on the frame or receiver",
+ "Copy it exactly, including letters and dashes",
+ "Enter it into SafeOrStolen's verification tool",
+ "Review the Ohio records result and the serial check",
+ "For a private sale, transfer through a licensed dealer (FFL) or ask local police to run the serial",
  ],
 
  faqs: [
  {
- question: "What stolen gun databases does SafeOrStolen search?",
- answer: "We search stolen firearms databases and validate serial number integrity."
+ question: "What stolen gun database does SafeOrStolen search?",
+ answer: "The Ohio Attorney General's stolen gun database, which contains guns reported stolen by Ohio law enforcement agencies through the state's LEADS network and is updated every 24 hours. SafeOrStolen also checks the serial number itself for signs of alteration.",
  },
  {
- question: "How much does gun serial number verification cost?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited gun serial number searches. Law enforcement has direct access to stolen firearms databases; civilians cannot. Our service checks the publicly accessible stolen firearms databases and validates serial number integrity. Our service protects buyers at gun shows and private sales where no background check is required."
+ question: "Can I search the FBI's stolen gun database?",
+ answer: "No. The FBI's NCIC is limited to law enforcement and licensed firearm dealers. Ask your local police department to run the serial, or complete the sale through a licensed dealer (FFL).",
  },
  {
- question: "What are 50-state firearm theft reports and why should I check them?",
- answer: "Our firearm check searches victim- and agency-reported stolen firearm records covering all 50 states. Victims often report a stolen gun to these public feeds before or in addition to a police report. A gun may be reported to police but never appear in the public feeds, and vice versa — so a clean result here is not proof the firearm is clean."
+ question: "Does a clean result mean the gun isn't stolen?",
+ answer: "No. The Ohio search only covers guns reported to Ohio agencies. A gun stolen in another state won't appear. Treat a clean result as one check, not a guarantee, and keep a record of who you bought from.",
  },
  {
- question: "What does SafeOrStolen check for firearms?",
- answer: "We check firearm serial numbers against stolen firearms databases and analyze the serial for signs of alteration."
+ question: "Which states have a public stolen gun search?",
+ answer: "Ohio (ohioattorneygeneral.gov/stolengun) and Florida (FDLE's Public Access System) both publish police stolen-gun records for the public. SafeOrStolen searches Ohio automatically. Florida's search requires you to complete a captcha, so we link you to it.",
  },
  {
- question: "What if the stolen gun database shows a match?",
- answer: "Do not buy the firearm. Walk away from the transaction and keep a record of the listing and the serial number."
+ question: "What if the serial number looks scratched off or altered?",
+ answer: "Don't buy the firearm. An altered or removed serial number is illegal under federal law, and it's a strong sign of theft. Contact local police.",
  },
  {
- question: "How current is the stolen gun database?",
- answer: "Police records are updated by the agencies that keep them, and SafeOrStolen does not search them. Public stolen firearm reports update as victims submit them. State databases vary by state. We recommend checking before purchase because a clean result today doesn't guarantee a gun wasn't just reported. If buying online, check again before completing the transfer at the FFL."
- }
- ]
+ question: "What if the gun shows up as stolen?",
+ answer: "Don't buy it and don't confront the seller. Contact the reporting agency listed in the result, or your local police non-emergency line, with the serial number.",
+ },
+ ],
  }}
  />
  );

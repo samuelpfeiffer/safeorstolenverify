@@ -21,9 +21,11 @@ function checkRateLimit(identifier: string): { allowed: boolean; resetAt: number
 }
 
 /**
- * HotGunz Stolen Firearms Verification
- * Searches HotGunz.com database of 32,000+ stolen firearms
- * Uses web scraping for public stolen firearms registry
+ * Firearm Verification (rewritten Sept 28 2026)
+ * Searches the Ohio Attorney General's stolen gun database (Ohio law enforcement
+ * records via LEADS). HotGunz was removed: its site is down and the old parser
+ * flagged any page containing the word "stolen" as a stolen gun.
+ * "stolen" ONLY on an exact serial match in Ohio's results.
  */
 // Input validation patterns (security)
 const SERIAL_NUMBER_REGEX = /^[A-Z0-9\-_]{3,50}$/i;
@@ -53,7 +55,7 @@ function validateSerialInput(serial: string): { valid: boolean; sanitized?: stri
   // Check for dangerous patterns (XSS/SQL injection)
   for (const pattern of DANGEROUS_PATTERNS) {
     if (pattern.test(trimmed)) {
-      console.warn(`[HotGunz] Blocked dangerous input pattern: ${pattern}`);
+      console.warn(`[Firearm] Blocked dangerous input pattern: ${pattern}`);
       return { valid: false, error: 'Invalid characters detected' };
     }
   }
@@ -104,96 +106,59 @@ serve(async (req) => {
     }
 
     const cleanSerial = validation.sanitized!;
-    console.log(`[HotGunz] Searching for firearm serial: ${cleanSerial}`);
+    console.log(`[Firearm] Searching serial: ${cleanSerial.slice(0, 3)}***`);
 
-    // Search HotGunz public database
-    // Note: This searches the publicly accessible stolen firearms registry
-    const searchUrl = `https://www.hotgunz.com/search.php?serial=${encodeURIComponent(cleanSerial)}`;
-    
-    let isStolen = false;
-    let stolenDetails: any = null;
-    let searchSuccessful = false;
-
-    try {
-      const response = await fetch(searchUrl, {
-        method: 'GET',
-        headers: {
-          'Accept': 'text/html,application/xhtml+xml',
-          'User-Agent': 'SafeOrStolen/1.0 Verification Bot (https://safeorstolen.com)'
-        }
-      });
-
-      if (response.ok) {
-        const html = await response.text();
-        searchSuccessful = true;
-        
-        // Parse response to check for stolen matches
-        // HotGunz displays stolen firearms in a specific format
-        const stolenIndicators = [
-          'STOLEN',
-          'stolen firearm',
-          'reported stolen',
-          'theft report',
-          'Match Found'
-        ];
-        
-        const htmlLower = html.toLowerCase();
-        isStolen = stolenIndicators.some(indicator => htmlLower.includes(indicator.toLowerCase()));
-        
-        // Try to extract details if stolen
-        if (isStolen) {
-          // Extract basic info from the page
-          const makeMatch = html.match(/Make:\s*([^<\n]+)/i);
-          const modelMatch = html.match(/Model:\s*([^<\n]+)/i);
-          const caliberMatch = html.match(/Caliber:\s*([^<\n]+)/i);
-          const dateMatch = html.match(/Date\s*(?:Stolen|Reported):\s*([^<\n]+)/i);
-          const locationMatch = html.match(/Location:\s*([^<\n]+)/i);
-          
-          stolenDetails = {
-            make: makeMatch ? makeMatch[1].trim() : null,
-            model: modelMatch ? modelMatch[1].trim() : null,
-            caliber: caliberMatch ? caliberMatch[1].trim() : null,
-            dateStolen: dateMatch ? dateMatch[1].trim() : null,
-            location: locationMatch ? locationMatch[1].trim() : null
-          };
-        }
-      }
-    } catch (scrapeError) {
-      console.error('[HotGunz] Web scraping error:', scrapeError);
+    // Altered / obliterated serial = high-risk warning, not a database result.
+    const atfSuspicious = checkATFPatterns(cleanSerial);
+    if (atfSuspicious.suspicious) {
+      return new Response(
+        JSON.stringify({
+          success: false, status: 'error', confidence: 0, source: 'Firearm_Verification',
+          message: `${atfSuspicious.reason}. An altered or missing serial number is a serious red flag. Do not buy this firearm, and contact local police.`,
+          details: { invalidInput: true, databases: [] },
+        }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
-    // Also check ATF patterns for suspicious serials
-    const atfSuspicious = checkATFPatterns(cleanSerial);
+    // Ohio Attorney General stolen gun search (LEADS: Ohio law enforcement records).
+    const ohio = await searchOhioStolenGuns(cleanSerial);
 
-    const finalStatus = isStolen ? 'stolen' : (searchSuccessful ? 'safe' : 'unknown');
-    const confidence = isStolen ? 92 : (searchSuccessful ? 85 : 60);
+    const finalStatus = ohio.found ? 'stolen' : 'unknown';
+    const confidence = ohio.found ? 95 : 0;
+    const databases = ohio.checked ? [OHIO_LABEL] : [];
+
+    let message: string;
+    if (ohio.found) {
+      message = `🚨 REPORTED STOLEN in Ohio law enforcement records (Ohio Attorney General stolen gun database). Do NOT buy this firearm. Contact ${ohio.agency ? ohio.agency : 'the reporting agency or local police'}.`;
+    } else if (ohio.possible) {
+      message = `⚠️ POSSIBLE MATCH: Ohio's stolen gun database returned a similar serial number, but not an exact match. Compare the serial carefully and ask local police to run it before you buy.`;
+    } else if (ohio.checked) {
+      message = 'Not reported stolen in Ohio law enforcement records (Ohio Attorney General stolen gun database) as of today. That search covers Ohio reports only. Private buyers cannot search the national FBI database, so buy through a licensed dealer (FFL) or ask local police to run the serial.';
+    } else {
+      message = "Ohio's stolen gun database could not be searched right now, so this firearm's theft status is not confirmed. Buy through a licensed dealer (FFL) or ask local police to run the serial.";
+    }
 
     const result = {
       success: true,
-      status: finalStatus,
+      status: ohio.possible && !ohio.found ? 'suspicious' : finalStatus,
       confidence,
-      source: 'Stolen Firearms Database',
-      message: getFirearmMessage(finalStatus, isStolen, atfSuspicious),
+      source: 'Firearm_Verification',
+      message,
       details: {
         serialNumber: cleanSerial,
-        searchSuccessful,
-        stolenInDatabase: isStolen,
-        stolenDetails,
-        atfPatternCheck: atfSuspicious,
-        databaseInfo: {
-          name: 'Stolen Firearms Database',
-          coverage: 'Stolen firearm reports from all 50 states',
-          lastUpdated: 'Daily updates'
-        },
-        additionalChecks: [
-          'Serial number integrity analysis',
-          'Serial number format validation'
+        ohio,
+        databases, // ONLY sources that actually answered
+        notChecked: [
+          ...(ohio.checked ? [] : ['Ohio stolen gun database (did not respond)']),
+          'FBI NCIC (law enforcement and licensed dealers only)',
         ],
+        floridaSearchUrl: 'https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenGun.jsf',
       },
       responseTime: Date.now() - startTime
     };
 
-    console.log(`[HotGunz] Complete in ${result.responseTime}ms - Status: ${result.status}`);
+    console.log(`[Firearm] Complete in ${result.responseTime}ms - Status: ${result.status} ohioChecked=${ohio.checked}`);
 
     return new Response(
       JSON.stringify(result),
@@ -201,7 +166,7 @@ serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('[HotGunz] Error:', error);
+    console.error('[Firearm] Error:', error);
     return new Response(
       JSON.stringify({
         success: false,
@@ -264,21 +229,74 @@ function checkATFPatterns(serial: string): { suspicious: boolean; reason?: strin
   return { suspicious: false };
 }
 
+const OHIO_URL = 'https://www.ohioattorneygeneral.gov/stolengun';
+const OHIO_LABEL = 'Ohio Attorney General stolen gun database (Ohio law enforcement records via LEADS)';
+type OhioResult = { checked: boolean; found: boolean; possible: boolean; total?: number; agency?: string; message: string };
+
 /**
- * Generate user-friendly message for firearm verification
+ * Ohio Attorney General stolen gun search. Public, no captcha.
+ * "found" ONLY when the results include this exact serial number.
  */
-function getFirearmMessage(status: string, isStolen: boolean, atfCheck: { suspicious: boolean; reason?: string }): string {
-  if (isStolen) {
-    return '🚨 STOLEN FIREARM: This serial number appears in a stolen firearms database. Do NOT purchase this firearm.';
+async function searchOhioStolenGuns(serial: string): Promise<OhioResult> {
+  const UA = 'Mozilla/5.0 (compatible; SafeOrStolen/1.0; +https://safeorstolen.com)';
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 12000);
+  try {
+    const first = await fetch(OHIO_URL, { headers: { 'User-Agent': UA }, signal: ctrl.signal });
+    if (!first.ok) return { checked: false, found: false, possible: false, message: `Ohio HTTP ${first.status}` };
+    const html = await first.text();
+    const cookies = (first.headers as any).getSetCookie?.() ?? [];
+    const cookieHeader = cookies.map((c: string) => c.split(';')[0]).join('; ');
+    const val = (name: string) => {
+      const esc = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const m = html.match(new RegExp(`name="${esc}"[^>]*value="([^"]*)"`)) || html.match(new RegExp(`value="([^"]*)"[^>]*name="${esc}"`));
+      return m ? m[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&') : '';
+    };
+    const P = 'p$lt$zoneContent$pageplaceholder1$p$lt$zoneRight$StolenGunSearch$';
+    const form = new URLSearchParams();
+    for (const n of ['__CMSCsrfToken', '__EVENTTARGET', '__EVENTARGUMENT',
+      'p_lt_zoneContent_pageplaceholder1_p_lt_zoneRight_TabsLayout_tabs_ClientState', 'lng',
+      '__VIEWSTATEGENERATOR', '__SCROLLPOSITIONX', '__SCROLLPOSITIONY', '__VIEWSTATEENCRYPTED',
+      'p$lt$zoneSearch$cmssearchbox$txtWord']) form.append(n, val(n));
+    form.append(P + 'txtSerialNumber', serial);
+    form.append(P + 'BtnSearch.x', '20');
+    form.append(P + 'BtnSearch.y', '10');
+    form.append('__VIEWSTATE', val('__VIEWSTATE'));
+
+    const res = await fetch(OHIO_URL, {
+      method: 'POST',
+      headers: {
+        'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded',
+        'Origin': 'https://www.ohioattorneygeneral.gov', 'Referer': OHIO_URL,
+        ...(cookieHeader ? { 'Cookie': cookieHeader } : {}),
+      },
+      body: form.toString(),
+      signal: ctrl.signal,
+    });
+    if (!res.ok) return { checked: false, found: false, possible: false, message: `Ohio HTTP ${res.status}` };
+    const text = (await res.text())
+      .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ');
+    const m = text.match(/Total result\(s\):\s*(\d+)/i);
+    if (!m) {
+      console.error('[Firearm] Ohio: no result count found');
+      return { checked: false, found: false, possible: false, message: 'Ohio result not recognized' };
+    }
+    const total = parseInt(m[1], 10);
+    if (total === 0) return { checked: true, found: false, possible: false, total, message: 'Not reported stolen in Ohio' };
+
+    const i = text.search(/Total result\(s\):/i);
+    const section = text.slice(i, i + 3000).toUpperCase();
+    const exact = new RegExp(`(^|[^A-Z0-9])${serial.replace(/[-_]/g, '[-_ ]?')}([^A-Z0-9]|$)`).test(section);
+    const agencyMatch = section.match(/(?:REPORTING AGENCY|AGENCY)[:\s]+([A-Z0-9 .,'&-]{3,80}?)(?:\s{2}|PHONE|$)/);
+    if (exact) {
+      return { checked: true, found: true, possible: false, total, agency: agencyMatch?.[1]?.trim(), message: 'Reported stolen in Ohio' };
+    }
+    return { checked: true, found: false, possible: true, total, message: 'Similar serial in Ohio results' };
+  } catch (e) {
+    console.error('[Firearm] Ohio search error:', e);
+    return { checked: false, found: false, possible: false, message: 'Ohio unavailable' };
+  } finally {
+    clearTimeout(timer);
   }
-  
-  if (atfCheck.suspicious) {
-    return `⚠️ SUSPICIOUS: ${atfCheck.reason}. This firearm requires additional verification before purchase.`;
-  }
-  
-  if (status === 'safe') {
-    return '✅ NOT FOUND IN STOLEN DATABASE: This serial number was not found in our stolen firearms databases.';
-  }
-  
-  return '⚠️ Could not complete the stolen firearms database check right now. This is NOT a clean result — please try again.';
 }

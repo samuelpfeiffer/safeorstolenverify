@@ -121,7 +121,11 @@ function sourceFromPayload(provider: string, payload: any): SourceResult {
     status: normalizeSourceStatus(payload?.status),
     confidence: typeof payload?.confidence === 'number' ? payload.confidence : 0,
     message: typeof payload?.message === 'string' ? payload.message : 'Check completed',
-    details: payload?.details,
+    // 'suspicious' from a real database = possible match; keep it as a flag, never a verdict.
+    details:
+      payload?.status === 'suspicious'
+        ? { ...(payload?.details ?? {}), possibleMatch: true }
+        : payload?.details,
   };
 }
 
@@ -508,7 +512,8 @@ export async function runVerification(
     tasks.push(runSource('Vehicle_Verification', 'verify-vehicle', body));
   }
   if (sources.includes('hotgunz')) {
-    tasks.push(runSource('HotGunz', 'verify-hotgunz', { identifier: cleanIdentifier }));
+    // verify-hotgunz now searches the Ohio Attorney General stolen gun database (Sept 28 2026).
+    tasks.push(runSource('Firearm_Verification', 'verify-hotgunz', { identifier: cleanIdentifier }));
   }
   if (sources.includes('webscraper')) {
     tasks.push(runWebScraper(cleanIdentifier, itemType));

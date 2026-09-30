@@ -7,10 +7,10 @@ SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers
 - Bicycles: Bike Index stolen registry.
 - All items: SafeOrStolen's own stolen-item reports.
 - Phones: IMEI format and check-digit validation only. Carrier-blacklist checking is not currently active.
-- Firearms: the HotGunz source is currently unavailable.
+- Firearms: the Ohio Attorney General's stolen gun database (guns reported stolen by Ohio law enforcement agencies via LEADS, updated every 24 hours), plus a check for altered or obliterated serials.
 - Public web mentions and AI notes may be added when available. AI never decides a result, and a web mention is shown as a possible match, never as a theft report.
 
-SafeOrStolen does not query NCIC, NICB, NMVTIS, DMV, insurance, Carfax, or AutoCheck systems. TheftAZ is its only law enforcement source, and it covers Arizona vehicle thefts only.
+SafeOrStolen does not query NCIC, NICB, NMVTIS, DMV, insurance, Carfax, or AutoCheck systems. Its law enforcement sources are TheftAZ (Arizona vehicle thefts) and the Ohio Attorney General's stolen gun database (Ohio gun thefts).
 
 ## Verdicts
 - STOLEN: strong evidence was returned.

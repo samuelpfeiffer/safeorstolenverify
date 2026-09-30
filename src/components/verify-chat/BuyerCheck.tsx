@@ -202,6 +202,18 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
             Copy VIN and open NICB
             <ExternalLink className="ml-2 h-3.5 w-3.5" aria-hidden />
           </Button>
+          <p className="mt-2 text-xs">
+            Buying in Florida? Also search the{' '}
+            <a
+              href="https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenVehicles.jsf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Florida Department of Law Enforcement's free stolen vehicle search
+            </a>
+            .
+          </p>
           {(nicbOpened || nicb !== null) && (
             <fieldset className="mt-4">
               <legend className="text-sm font-medium text-foreground">What did NICB say?</legend>
