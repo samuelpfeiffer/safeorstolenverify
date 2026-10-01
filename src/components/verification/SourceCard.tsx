@@ -147,17 +147,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({
           </div>
         )}
 
-        {result?.link && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full text-xs"
-            onClick={() => window.open(result.link, '_blank')}
-          >
-            <ExternalLink className="h-3 w-3 mr-1" />
-            View on {title}
-          </Button>
-        )}
+        
 
         {result?.timestamp && (
           <p className="text-xs text-muted-foreground">

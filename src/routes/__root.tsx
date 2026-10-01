@@ -27,6 +27,7 @@ import { MasterSEO } from "@/components/seo/MasterSEO";
 import { SEODuplicateGuard } from "@/components/seo/SEODuplicateGuard";
 import { AppDownloadBot } from "@/components/pwa/AppDownloadBot";
 import { RedirectHandler } from "@/components/routing/RedirectHandler";
+import { OffsiteLinkGuard } from "@/components/routing/OffsiteLinkGuard";
 import ScrollRestoration from "@/components/ScrollRestoration";
 import { AIFloatingChat } from "@/components/ai/AIFloatingChat";
 import NotFound from "@/pages/NotFound";
@@ -403,6 +404,7 @@ function AppShell() {
         <MasterSEO />
         <SEODuplicateGuard />
         <RedirectHandler />
+        <OffsiteLinkGuard />
         <ScrollRestoration />
         <CriticalResourceLoader />
 
