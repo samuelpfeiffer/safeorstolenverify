@@ -7,7 +7,7 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
  *  - Only list sources that were actually queried and answered.
  *  - "stolen" ONLY when TheftAZ (Arizona AG, law enforcement records) returns a record for this exact VIN/plate.
  *  - "Not reported stolen" in TheftAZ is Arizona-only, so the status stays "unknown" (never "safe").
- *  - NICB (national) has no public API; users are pointed to the free NICB VINCheck.
+ *  - NICB (national) has no public API. Owner rule: never send users off-site; we only show on-site next steps.
  *  - Response contract unchanged: success, status, confidence, source, message, details.
  *  - Plate mode: POST { plate, state? } searches TheftAZ by plate (default state AZ).
  */
@@ -24,7 +24,6 @@ function checkRateLimit(id: string) {
   e.count++; return { allowed: true, resetAt: e.resetAt };
 }
 
-const NICB_URL = 'https://www.nicb.org/vincheck';
 
 async function fetchJson(url: string, ms = 8000): Promise<any | null> {
   const ctrl = new AbortController();
@@ -167,8 +166,8 @@ serve(async (req) => {
       }
     }
 
-    // 4. NICB (national) cannot be queried automatically.
-    notChecked.push('NICB VINCheck (no public API; check it yourself for free at nicb.org/vincheck)');
+    // 4. National insurance theft records (NICB) have no automatic access. Never send users off-site (owner rule).
+    notChecked.push('National insurance-industry theft records (not available for automatic search)');
 
     const finalStatus = taz.found ? 'stolen' : crossRefMismatch ? 'suspicious' : 'unknown';
     const confidence = taz.found ? 95 : crossRefMismatch ? 60 : 0;
@@ -192,8 +191,7 @@ serve(async (req) => {
           automated: taz.checked,
           arizonaRecords: taz.checked ? (taz.found ? 'reported stolen' : 'not reported stolen') : 'not checked',
           status: taz.found ? 'stolen' : 'unknown',
-          nextStep: `Run the free NICB VINCheck: ${NICB_URL}`,
-          nicbUrl: NICB_URL,
+          nextStep: 'Compare the VIN on the dashboard, the driver door sticker, and the title. Make sure the name on the title matches the seller\'s photo ID.',
         },
         crossReference: { mismatchDetected: crossRefMismatch, issues: crossRefDetails },
         databases: checked,          // ONLY sources that actually answered
@@ -245,5 +243,5 @@ function getVehicleMessage(mismatch: boolean, issues: string[], v: Record<string
   const azText = taz.checked
     ? ' Not reported stolen in Arizona law enforcement records (TheftAZ) as of today.'
     : ' Arizona law enforcement records (TheftAZ) could not be searched right now.';
-  return `ℹ️ VIN is valid${desc ? ` and decodes to a ${desc}` : ''}.${recallText}${azText} For a nationwide check, enter the VIN in the free NICB VINCheck (nicb.org/vincheck). Before you pay, also ask the seller to show you the title.`;
+  return `ℹ️ VIN is valid${desc ? ` and decodes to a ${desc}` : ''}.${recallText}${azText} Before you pay, compare the VIN on the dashboard, the driver door sticker, and the title, and make sure the name on the title matches the seller\'s photo ID.`;
 }

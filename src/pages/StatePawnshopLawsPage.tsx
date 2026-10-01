@@ -252,14 +252,9 @@ export default function StatePawnshopLawsPage() {
               <h2 className="font-semibold mb-2 text-base">Source</h2>
               <p className="text-sm text-muted-foreground">
                 State licensing summary adapted from{' '}
-                <a
-                  href="https://pawn-software.com/pawn-licensing-us.htm"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-primary underline underline-offset-4"
-                >
+                
                   pawn-software.com — Pawn Licensing in the US
-                </a>
+                
                 .
               </p>
             </div>

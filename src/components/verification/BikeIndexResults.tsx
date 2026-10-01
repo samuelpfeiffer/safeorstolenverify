@@ -148,14 +148,9 @@ export const BikeIndexResults: React.FC<BikeIndexResultsProps> = ({
  {/* Attribution */}
  <p className="text-xs text-muted-foreground text-center pt-2 border-t">
  Bicycle data powered by{' '}
- <a 
- href="https://bikeindex.org" 
- target="_blank" 
- rel="noopener noreferrer"
- className="text-primary hover:underline"
- >
+ <span className="inline-flex items-center">
  BikeIndex
- </a>
+ </span>
  {' '}— the world's largest open-source bike registry
  </p>
  </CardContent>

@@ -6,55 +6,29 @@ export const SponsorsStrip: React.FC = () => {
  <div className="container mx-auto px-4 py-6">
  <div className="w-full flex items-center justify-center mb-4">
  <p className="text-xs md:text-sm uppercase tracking-wider text-muted-foreground">
- Trusted by leading registries and partners
+ Data sources we use
  </p>
  </div>
  <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
  {/* IMEI.info */}
- <a
- href="https://www.imei.info"
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex items-center"
- aria-label="Visit IMEI.info"
- title="IMEI.info"
- >
+ <span className="inline-flex items-center">
  <img
  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png"
  alt="IMEI.info official logo"
  loading="lazy"
  className="h-8 md:h-10 w-auto"
  />
- </a>
+ </span>
 
  {/* BikeIndex bicycle registry */}
- <a
- href="https://bikeindex.org"
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex items-center"
- aria-label="Visit BikeIndex bicycle registry"
- title="BikeIndex bicycle registry"
- >
+ <span className="inline-flex items-center">
  <img
  src="/images/partners/bikeindex-logo.svg"
  alt="BikeIndex bicycle registry official logo"
  loading="lazy"
  className="h-8 md:h-10 w-auto"
  />
- </a>
-
- {/* Recipero (text fallback if logo not available) */}
- <a
- href="https://www.recipero.com"
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex items-center px-3 py-1 rounded-md border border-border text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
- aria-label="Visit Recipero"
- title="Recipero"
- >
- <span className="text-sm font-semibold tracking-wide">Recipero</span>
- </a>
+ </span>
 
  {/* Stolen Firearms Databases */}
  <a

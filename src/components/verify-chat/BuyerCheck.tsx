@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils';
 import {
   CheckCircle2,
   XCircle,
-  ExternalLink,
   Copy,
   ShieldCheck,
   Loader2,
@@ -23,13 +22,12 @@ import { ProofDisclaimer } from '@/components/proof/ProofDisclaimer';
  *
  * SafeOrStolen does the checks it can run itself (VIN math, NHTSA decode,
  * NHTSA recalls, our registry). The buyer does the checks only they can do
- * (NICB VINCheck, door-sticker VIN, title vs. seller ID) and we record them.
+ * (door-sticker VIN, title vs. seller ID) and we record them.
+ * Owner rule (Sept 30 2026): never send users to another website. No outbound links or popups.
  *
  * Honesty rules: steps done by the buyer are always labeled "checked by buyer".
  * A Proof of Clean Purchase is offered ONLY when every step passes.
  */
-
-const NICB_URL = 'https://www.nicb.org/vincheck';
 
 type NicbAnswer = 'none' | 'theft' | 'salvage' | null;
 type YesNo = 'yes' | 'no' | null;
@@ -57,8 +55,6 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
     ? vehicle!.details.databases
     : [];
 
-  const [nicb, setNicb] = useState<NicbAnswer>(null);
-  const [nicbOpened, setNicbOpened] = useState(false);
   const [doorVin, setDoorVin] = useState('');
   const [titleVin, setTitleVin] = useState<YesNo>(null);
   const [titleName, setTitleName] = useState<YesNo>(null);
@@ -71,7 +67,6 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
 
   const steps = [
     { done: true, passed: true },
-    { done: nicb !== null, passed: nicb === 'none' },
     { done: doorAnswered, passed: doorMatches },
     { done: titleVin !== null && titleName !== null, passed: titleVin === 'yes' && titleName === 'yes' },
   ];
@@ -80,31 +75,11 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
   const allPassed = steps.every((s) => s.passed);
   const anyFailed = steps.some((s) => s.done && !s.passed);
 
-  const openNicb = async () => {
-    try {
-      await navigator.clipboard.writeText(cleanVin);
-      toast.success('VIN copied. Paste it into the NICB box.');
-    } catch {
-      toast.message(`Your VIN is ${cleanVin}`);
-    }
-    const w = Math.min(560, window.screen.availWidth);
-    const h = Math.min(860, window.screen.availHeight);
-    const left = Math.max(0, window.screen.availWidth - w);
-    const popup = window.open(
-      NICB_URL,
-      'nicb_vincheck',
-      `width=${w},height=${h},left=${left},top=0,noopener=no`,
-    );
-    if (!popup) window.open(NICB_URL, '_blank', 'noopener');
-    setNicbOpened(true);
-  };
-
   const databasesQueried = useMemo(() => {
     const auto = autoChecked.length ? autoChecked : ['NHTSA VIN Decoder'];
     return [
       'SafeOrStolen registry',
       ...auto,
-      'Checked by buyer: NICB VINCheck returned no theft or salvage record',
       'Checked by buyer: door-jamb sticker VIN matches the dashboard VIN',
       'Checked by buyer: VIN on the title matches the vehicle',
       "Checked by buyer: name on the title matches the seller's photo ID",
@@ -162,17 +137,7 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
             {recalls && typeof recalls.count === 'number' ? (
               <>
                 {' '}
-                {recalls.count} safety recall{recalls.count === 1 ? '' : 's'} on record for this model.{' '}
-                <a
-                  href={`https://www.nhtsa.gov/recalls?vin=${encodeURIComponent(cleanVin)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:text-foreground"
-                >
-                  See which apply to this exact car
-                </a>
-                .
-              </>
+                {recalls.count} safety recall{recalls.count === 1 ? '' : 's'} on record for this model.</>
             ) : null}
           </p>
           {vehicle?.details?.theftaz?.checked === true && (
@@ -186,67 +151,9 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
           </p>
         </Step>
 
-        {/* Step 2 — NICB, done by the buyer side by side */}
+        {/* Step 2 — door sticker */}
         <Step
           n={2}
-          title="Check NICB nationwide for theft and salvage records"
-          state={nicb === null ? 'todo' : nicb === 'none' ? 'pass' : 'fail'}
-        >
-          <p>
-            NICB is the insurance industry's free theft and salvage lookup. It only allows
-            people, not websites, to search, so we open it next to this page and copy your VIN
-            for you.
-          </p>
-          <Button type="button" size="sm" variant="secondary" className="mt-3" onClick={openNicb}>
-            <Copy className="mr-2 h-3.5 w-3.5" aria-hidden />
-            Copy VIN and open NICB
-            <ExternalLink className="ml-2 h-3.5 w-3.5" aria-hidden />
-          </Button>
-          <p className="mt-2 text-xs">
-            Buying in Florida? Also search the{' '}
-            <a
-              href="https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenVehicles.jsf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              Florida Department of Law Enforcement's free stolen vehicle search
-            </a>
-            .
-          </p>
-          {(nicbOpened || nicb !== null) && (
-            <fieldset className="mt-4">
-              <legend className="text-sm font-medium text-foreground">What did NICB say?</legend>
-              <div className="mt-2 flex flex-wrap gap-2">
-                <Choice selected={nicb === 'none'} onClick={() => setNicb('none')}>
-                  No record found
-                </Choice>
-                <Choice selected={nicb === 'theft'} tone="bad" onClick={() => setNicb('theft')}>
-                  Theft record
-                </Choice>
-                <Choice selected={nicb === 'salvage'} tone="bad" onClick={() => setNicb('salvage')}>
-                  Salvage record
-                </Choice>
-              </div>
-            </fieldset>
-          )}
-          {nicb === 'theft' && (
-            <Warning>
-              Do not buy this vehicle. A car reported stolen can be taken back by police and you
-              lose what you paid. Call your local police non-emergency line with the VIN.
-            </Warning>
-          )}
-          {nicb === 'salvage' && (
-            <Warning>
-              An insurer declared this car a total loss. It may have been rebuilt, and the title
-              should say "salvage" or "rebuilt." If the seller didn't tell you, walk away.
-            </Warning>
-          )}
-        </Step>
-
-        {/* Step 3 — door sticker */}
-        <Step
-          n={3}
           title="Match the door-jamb sticker"
           state={!doorAnswered ? 'todo' : doorMatches ? 'pass' : 'fail'}
         >
@@ -281,9 +188,9 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
           )}
         </Step>
 
-        {/* Step 4 — title and ID */}
+        {/* Step 3 — title and ID */}
         <Step
-          n={4}
+          n={3}
           title="Compare the title to the seller"
           state={
             titleVin === null || titleName === null

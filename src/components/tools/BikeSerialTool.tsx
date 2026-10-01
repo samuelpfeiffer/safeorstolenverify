@@ -187,7 +187,7 @@ const BikeSerialTool = () => {
  </Card>
 
  <p className="text-center text-sm text-muted-foreground mt-6">
- Data provided by <a href="https://bikeindex.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">BikeIndex</a>
+ Data provided by <span className="inline-flex items-center">BikeIndex</span>
  </p>
  </div>
  </div>
