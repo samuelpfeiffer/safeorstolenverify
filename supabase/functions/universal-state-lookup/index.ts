@@ -75,24 +75,54 @@ serve(async (req) => {
     // Fallback: Use parallel verification with web scraping + AI
     console.log(`No dedicated function for ${upperStateCode}, using parallel verification`);
     
-    const result = await runParallelVerification(supabase, {
-      identifier: value,
-      itemType: type === 'vin' ? 'vehicle' : 'license_plate',
-      includeWebScraping: true,
-      includeAI: true,
-    });
+    const isVin = String(type).toLowerCase() === 'vin';
+    const [result, plateCheck] = await Promise.all([
+      runParallelVerification(supabase, {
+        identifier: value,
+        itemType: isVin ? 'vehicle' : 'license_plate',
+        includeWebScraping: true,
+        includeAI: true,
+      }),
+      // Plates: also search real law-enforcement records (TheftAZ) through verify-vehicle.
+      isVin
+        ? Promise.resolve(null)
+        : supabase.functions.invoke('verify-vehicle', { body: { plate: value, state: upperStateCode } })
+            .then((r: any) => r.data).catch(() => null),
+    ]);
+
+    // List ONLY the sources that actually answered for this check (Sept 30 2026).
+    const allSources: any[] = result.details?.all_sources || [];
+    const dbs = new Set<string>();
+    for (const s of allSources) for (const d of (s?.details?.databases || [])) dbs.add(d);
+    for (const d of (plateCheck?.details?.databases || [])) dbs.add(d);
+    const usedWeb = allSources.some((s) => s?.source === 'Web_Scraper' && s?.status !== 'error');
+    const usedAI = allSources.some((s) => s?.source === 'AI_Analysis' && s?.status !== 'error');
+    const parts = [...dbs];
+    if (usedWeb) parts.push('a public web search for theft reports');
+    if (usedAI) parts.push('an AI risk review');
+    const disclaimer = parts.length
+      ? `Sources checked for this result: ${parts.join('; ')}. No single database covers every state, so before you pay, ask the seller to show the title and proof of ownership.`
+      : 'Our sources could not be reached for this check. Please try again in a few minutes, and ask the seller to show the title and proof of ownership.';
+
+    const plateStolen = plateCheck?.status === 'stolen';
+    const finalStatus = plateStolen ? 'stolen' : result.status;
+    const finalMessage = plateStolen
+      ? plateCheck.message
+      : (result.message || `Verification completed for ${upperStateCode} ${type.toUpperCase()}: ${value}`);
 
     return new Response(JSON.stringify({
-      status: result.status,
-      message: result.message || `Verification completed for ${upperStateCode} ${type.toUpperCase()}: ${value}`,
+      status: finalStatus,
+      message: finalMessage,
       details: {
         ...result.details,
+        plate_check: plateCheck?.details || undefined,
         state: upperStateCode,
         verification_date: new Date().toISOString(),
-        sources_checked: result.details?.total_sources_checked || 2,
-        disclaimer: 'This check uses web scraping and AI analysis. For state-specific verification, contact local law enforcement.'
+        sources_checked: parts.length,
+        databases: [...dbs],
+        disclaimer,
       },
-      confidence: result.confidence,
+      confidence: plateStolen ? plateCheck.confidence : result.confidence,
       source: result.source,
       timestamp: new Date().toISOString()
     }), {
