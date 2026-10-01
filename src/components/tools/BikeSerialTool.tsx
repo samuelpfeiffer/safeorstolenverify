@@ -82,7 +82,7 @@ const BikeSerialTool = () => {
  <>
  <SEOHead
  title="Bike Serial Lookup"
- description="Check if a bicycle is reported stolen using SafeOrStolen.com's community reports and BikeIndex. Free bike serial number lookup tool."
+ description="Check if a bicycle is reported stolen using SafeOrStolen.com's community reports and a national stolen-bicycle registry. Free bike serial number lookup tool."
  canonical="/tools/bike-serial"
  />
 
@@ -94,7 +94,7 @@ const BikeSerialTool = () => {
  </div>
  <h1 className="text-3xl font-bold text-foreground mb-2">Bike Serial Lookup</h1>
  <p className="text-muted-foreground">
- Search the BikeIndex stolen bicycle registry
+ Search a national stolen-bicycle registry
  </p>
  </div>
 
@@ -169,16 +169,7 @@ const BikeSerialTool = () => {
  <span className="font-medium">{result.details.stolenDate}</span>
  </div>
  )}
- {result.details.bikeIndexUrl && (
- <a 
- href={result.details.bikeIndexUrl} 
- target="_blank" 
- rel="noopener noreferrer"
- className="block mt-3 text-primary hover:underline"
- >
- View on BikeIndex →
- </a>
- )}
+ 
  </div>
  )}
  </div>
@@ -187,7 +178,7 @@ const BikeSerialTool = () => {
  </Card>
 
  <p className="text-center text-sm text-muted-foreground mt-6">
- Data provided by <span className="inline-flex items-center">BikeIndex</span>
+ Data from a national stolen-bicycle registry
  </p>
  </div>
  </div>

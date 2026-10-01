@@ -18,6 +18,36 @@ const WEB_SOURCES = new Set(['Web_Scraper']);
 const INTERNAL_REGISTRY = 'SafeOrStolen Database';
 const PAID_TIERS = ['unlimited', 'starter', 'personal', 'professional', 'enterprise', 'pay_per_use'];
 
+// Owner rule (Sept 30 2026): never name our data suppliers to users. Describe the TYPE of source only.
+const DISPLAY: Record<string, string> = {
+  'SafeOrStolen Database': 'the SafeOrStolen registry',
+  'BikeIndex': 'a national stolen-bicycle registry',
+  'HotGunz': 'a stolen-firearm database',
+  'IMEI_Verification': 'the lost and stolen phone blacklist',
+  'Vehicle_Verification': 'law-enforcement vehicle records',
+  'Web_Scraper': 'a public web search',
+  'AI_Analysis': 'an AI risk review',
+};
+const displayName = (p: string) => DISPLAY[p] || String(p).replace(/_/g, ' ');
+const SCRUB: Array<[RegExp, string]> = [
+  [/\s*\(via IMEI\.info\)/gi, ''], [/IMEI\.info/gi, 'the phone blacklist'],
+  [/Bike ?Index stolen bike registry/gi, 'national stolen-bicycle registry'],
+  [/the Bike ?Index registry/gi, 'a national stolen-bicycle registry'], [/Bike ?Index/gi, 'a national bike registry'],
+  [/HotGunz/gi, 'a stolen-firearm database'],
+  [/\s*\(TheftAZ[^)]*\)/gi, ''], [/TheftAZ/gi, 'Arizona law-enforcement records'],
+  [/NHTSA/g, 'federal'],
+];
+const scrub = (t: any) => (typeof t === 'string' ? SCRUB.reduce((s, [r, v]) => s.replace(r, v), t) : t);
+const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
+function scrubDetails(d: any) {
+  if (!d || typeof d !== 'object') return d;
+  const o = { ...d };
+  if (Array.isArray(o.databases)) o.databases = o.databases.map(scrub);
+  if (Array.isArray(o.notChecked)) o.notChecked = o.notChecked.map(scrub);
+  if (o.blacklistProvider) o.blacklistProvider = 'phone_blacklist';
+  return o;
+}
+
 interface VerificationRequest {
   identifier: string;
   itemType: string;
@@ -98,11 +128,11 @@ serve(async (req) => {
 
       if (!error && stolenItems && stolenItems.length > 0) {
         providers.push({ provider: INTERNAL_REGISTRY, status: 'stolen', confidence: 98,
-          message: 'Item found in SafeOrStolen stolen items registry', details: { matches: stolenItems.length },
+          message: 'Item found in SafeOrStolen stolen items registry', details: { matches: stolenItems.length }, displayName: displayName(INTERNAL_REGISTRY),
           responseTime: Date.now() - startTime });
       } else {
         providers.push({ provider: INTERNAL_REGISTRY, status: 'unknown', confidence: 0,
-          message: 'No report in the SafeOrStolen registry', responseTime: Date.now() - startTime });
+          message: 'No report in the SafeOrStolen registry', displayName: displayName(INTERNAL_REGISTRY), responseTime: Date.now() - startTime });
       }
     } catch (dbError) {
       console.error('[verify-item] Database check error:', dbError);
@@ -116,7 +146,7 @@ serve(async (req) => {
       for (const source of sources) {
         if (!providers.find(p => p.provider === source.source)) {
           providers.push({ provider: source.source, status: source.status, confidence: source.confidence,
-            message: source.message, details: source.details, responseTime: source.responseTime || (Date.now() - startTime) });
+            message: scrub(source.message), details: scrubDetails(source.details), displayName: displayName(source.source), responseTime: source.responseTime || (Date.now() - startTime) });
         }
       }
     } catch (parallelError) {
@@ -143,12 +173,12 @@ serve(async (req) => {
       finalStatus = 'stolen';
       riskLevel = 'critical';
       confidence = Math.max(...stolenFrom.map(p => p.confidence));
-      message = `🚨 THEFT REPORT FOUND: ${stolenFrom.map(p => p.provider === 'IMEI_Verification' ? 'The phone blacklist' : p.provider).join(', ')} lists this item as lost or stolen. Do NOT purchase until this is resolved with police.`;
+      message = `🚨 THEFT REPORT FOUND: ${cap(stolenFrom.map(p => displayName(p.provider)).join(', '))} lists this item as lost or stolen. Do NOT purchase until this is resolved with police.`;
     } else if (lostFrom.length > 0) {
       finalStatus = 'lost';
       riskLevel = 'high';
       confidence = Math.max(...lostFrom.map(p => p.confidence));
-      message = `⚠️ LOST REPORT FOUND: ${lostFrom.map(p => p.provider).join(', ')} lists this item as lost. Exercise extreme caution.`;
+      message = `⚠️ LOST REPORT FOUND: ${cap(lostFrom.map(p => displayName(p.provider)).join(', '))} lists this item as lost. Exercise extreme caution.`;
     } else if (invalidFrom.length > 0) {
       finalStatus = 'unknown';
       riskLevel = 'high';
@@ -158,7 +188,7 @@ serve(async (req) => {
       finalStatus = 'unknown';
       riskLevel = 'high';
       confidence = 0;
-      message = suspiciousFrom[0].message || '⚠️ The details do not match. Do not buy until this is explained.';
+      message = scrub(suspiciousFrom[0].message) || '⚠️ The details do not match. Do not buy until this is explained.';
     } else if (webFlag.length > 0) {
       finalStatus = 'unknown';
       riskLevel = 'high';
@@ -168,7 +198,7 @@ serve(async (req) => {
       finalStatus = 'safe';
       riskLevel = 'low';
       confidence = Math.round(cleanFrom.reduce((s, p) => s + p.confidence, 0) / cleanFrom.length);
-      const names = cleanFrom.map(p => p.provider === 'IMEI_Verification' ? 'the lost and stolen phone blacklist' : p.provider).join(', ');
+      const names = cleanFrom.map(p => displayName(p.provider)).join(', ');
       message = `✅ NO THEFT REPORTS FOUND in ${names}. No check can guarantee an item was never stolen, so keep your receipt and the seller's info.`;
     } else if (phone && !paid) {
       finalStatus = 'unknown';
@@ -182,7 +212,7 @@ serve(async (req) => {
       message = '⚠️ NO THEFT REPORTS FOUND, but no theft database for this item type could confirm it. Ask the seller for proof of ownership and keep a record of the sale.';
     }
 
-    const aiNotes = aiSources.map(p => ({ note: p.message, riskLevel: p.details?.risk_level, reasoning: p.details?.reasoning })).filter(n => n.note);
+    const aiNotes = aiSources.map(p => ({ note: scrub(p.message), riskLevel: p.details?.risk_level, reasoning: p.details?.reasoning })).filter(n => n.note);
 
     const result: Record<string, unknown> = {
       identifier: cleanIdentifier,
@@ -192,6 +222,7 @@ serve(async (req) => {
       aiNotes,
       aiDisclaimer: aiNotes.length ? 'AI notes are general guidance only and never determine whether an item is stolen.' : undefined,
       checkedSources: providers.map(p => p.provider),
+      checkedSourceNames: providers.map(p => displayName(p.provider)),
       paidCheck: paid,
       upgradeRequired: phone && !paid,
       timestamp: new Date().toISOString(),

@@ -53,12 +53,12 @@ async function searchTheftAZ(q: { vin?: string; plate?: string; state?: string }
       body: form.toString(),
       signal: ctrl.signal,
     });
-    if (!r.ok) return { checked: false, found: false, message: `TheftAZ HTTP ${r.status}` };
+    if (!r.ok) return { checked: false, found: false, message: `Records lookup error ${r.status}` };
     const text = (await r.text())
       .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ')
       .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ');
     const i = text.indexOf('Search Results:');
-    if (i < 0) return { checked: false, found: false, message: 'TheftAZ returned no result section' };
+    if (i < 0) return { checked: false, found: false, message: 'Records lookup returned no results' };
     const end = text.indexOf('Disclaimer', i);
     const results = text.slice(i + 15, end > i ? end : i + 1500).trim();
     if (/not reported stolen/i.test(results)) return { checked: true, found: false, message: 'Not reported stolen' };
@@ -67,14 +67,14 @@ async function searchTheftAZ(q: { vin?: string; plate?: string; state?: string }
       return { checked: true, found: true, message: 'Reported stolen', record: results.slice(0, 600) };
     }
     console.error('[TheftAZ] Unrecognized result:', results.slice(0, 300));
-    return { checked: false, found: false, message: 'TheftAZ result not recognized' };
+    return { checked: false, found: false, message: 'Records lookup result not recognized' };
   } catch (e) {
     console.error('[TheftAZ] Error:', e);
-    return { checked: false, found: false, message: 'TheftAZ unavailable' };
+    return { checked: false, found: false, message: 'Records lookup unavailable' };
   } finally { clearTimeout(t); }
 }
 
-const TAZ_LABEL = 'TheftAZ (Arizona Attorney General, law enforcement stolen-vehicle records)';
+const TAZ_LABEL = 'Arizona law-enforcement stolen-vehicle records'; // Owner rule: never name suppliers to users
 
 serve(async (req) => {
   const pre = handleCorsPreFlight(req);
@@ -98,11 +98,11 @@ serve(async (req) => {
       }
       const st = typeof state === 'string' && /^[A-Z]{2}$/i.test(state) ? state.toUpperCase() : 'AZ';
       const taz = await searchTheftAZ({ plate: cleanPlate, state: st });
-      const details = { plate: cleanPlate, state: st, theftaz: taz, databases: taz.checked ? [TAZ_LABEL] : [], notChecked: taz.checked ? [] : ['TheftAZ (did not respond)'] };
+      const details = { plate: cleanPlate, state: st, theftaz: taz, databases: taz.checked ? [TAZ_LABEL] : [], notChecked: taz.checked ? [] : ['Arizona law-enforcement records (did not respond)'] };
       if (taz.found) {
-        return json({ success: true, status: 'stolen', confidence: 95, source: 'Vehicle_Verification', message: `🚨 REPORTED STOLEN in Arizona law enforcement records (TheftAZ) for ${st} plate ${cleanPlate}. Do not buy or approach the vehicle. Contact local police.`, details, responseTime: Date.now() - startTime });
+        return json({ success: true, status: 'stolen', confidence: 95, source: 'Vehicle_Verification', message: `🚨 REPORTED STOLEN in Arizona law-enforcement records for ${st} plate ${cleanPlate}. Do not buy or approach the vehicle. Contact local police.`, details, responseTime: Date.now() - startTime });
       }
-      return json({ success: true, status: 'unknown', confidence: 0, source: 'Vehicle_Verification', message: taz.checked ? `${st} plate ${cleanPlate} is not reported stolen in Arizona law enforcement records (TheftAZ) as of today.` : 'Arizona law enforcement records (TheftAZ) could not be searched right now.', details, responseTime: Date.now() - startTime });
+      return json({ success: true, status: 'unknown', confidence: 0, source: 'Vehicle_Verification', message: taz.checked ? `${st} plate ${cleanPlate} is not reported stolen in Arizona law-enforcement records as of today.` : 'Arizona law-enforcement records could not be searched right now.', details, responseTime: Date.now() - startTime });
     }
 
     if (!identifier || String(identifier).trim().length === 0) {
@@ -123,7 +123,7 @@ serve(async (req) => {
       fetchJson(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${cleanVin}?format=json`),
       searchTheftAZ({ vin: cleanVin }),
     ]);
-    if (taz.checked) checked.push(TAZ_LABEL); else notChecked.push('TheftAZ Arizona records (did not respond)');
+    if (taz.checked) checked.push(TAZ_LABEL); else notChecked.push('Arizona law-enforcement records (did not respond)');
     const get = (v: string) => {
       const val = nhtsaData?.Results?.find((r: any) => r.Variable === v)?.Value;
       return val && String(val).trim() !== '' ? String(val).trim() : null;
@@ -131,14 +131,14 @@ serve(async (req) => {
     const vinInfo = decodeVIN(cleanVin);
     let vehicleDetails: Record<string, unknown> = { year: vinInfo.modelYear };
     if (nhtsaData?.Results) {
-      checked.push('NHTSA VIN Decoder (U.S. Dept. of Transportation)');
+      checked.push('Federal vehicle identification records');
       vehicleDetails = {
         make: get('Make'), model: get('Model'), year: get('Model Year') ?? vinInfo.modelYear,
         trim: get('Trim'), vehicleType: get('Vehicle Type'), bodyClass: get('Body Class'),
         plantCountry: get('Plant Country'), engineSize: get('Displacement (L)'), fuelType: get('Fuel Type - Primary'),
       };
     } else {
-      notChecked.push('NHTSA VIN Decoder (did not respond)');
+      notChecked.push('Federal vehicle identification records (did not respond)');
     }
 
     // 2. Cross-check against details the user typed in (VIN swap red flag)
@@ -156,13 +156,13 @@ serve(async (req) => {
     if (nMake && nModel && nYear) {
       const r = await fetchJson(`https://api.nhtsa.gov/recalls/recallsByVehicle?make=${encodeURIComponent(nMake)}&model=${encodeURIComponent(nModel)}&modelYear=${encodeURIComponent(nYear)}`);
       if (r && Array.isArray(r.results)) {
-        checked.push('NHTSA Safety Recalls (model-level)');
+        checked.push('Federal safety recall records (model-level)');
         recalls = {
           count: r.results.length,
           items: r.results.slice(0, 10).map((x: any) => ({ campaign: x.NHTSACampaignNumber, component: x.Component, date: x.ReportReceivedDate })),
         };
       } else {
-        notChecked.push('NHTSA Safety Recalls (did not respond)');
+        notChecked.push('Federal safety recall records (did not respond)');
       }
     }
 
@@ -178,7 +178,7 @@ serve(async (req) => {
       confidence,
       source: 'Vehicle_Verification',
       message: taz.found
-        ? `🚨 REPORTED STOLEN in Arizona law enforcement records (TheftAZ). Do not buy or approach the vehicle. Contact local police with this VIN.`
+        ? `🚨 REPORTED STOLEN in Arizona law-enforcement records. Do not buy or approach the vehicle. Contact local police with this VIN.`
         : getVehicleMessage(crossRefMismatch, crossRefDetails, vehicleDetails, recalls, taz),
       details: {
         vin: cleanVin,
@@ -241,7 +241,7 @@ function getVehicleMessage(mismatch: boolean, issues: string[], v: Record<string
   if (mismatch) return `⚠️ MISMATCH: ${issues.join('. ')}. The VIN does not match the vehicle described, which can be a sign of a swapped or cloned VIN. Do not buy until this is explained.`;
   const recallText = recalls ? ` ${recalls.count} safety recall${recalls.count === 1 ? '' : 's'} on record for this model.` : '';
   const azText = taz.checked
-    ? ' Not reported stolen in Arizona law enforcement records (TheftAZ) as of today.'
-    : ' Arizona law enforcement records (TheftAZ) could not be searched right now.';
+    ? ' Not reported stolen in Arizona law-enforcement records as of today.'
+    : ' Arizona law-enforcement records could not be searched right now.';
   return `ℹ️ VIN is valid${desc ? ` and decodes to a ${desc}` : ''}.${recallText}${azText} Before you pay, compare the VIN on the dashboard, the driver door sticker, and the title, and make sure the name on the title matches the seller\'s photo ID.`;
 }

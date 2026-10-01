@@ -23,6 +23,19 @@ import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
 import type { AggregatedResult } from '@/services/VerificationService';
 
+// Owner rule: never show supplier names to users. Show the TYPE of source only.
+const SOURCE_LABELS: Record<string, string> = {
+  'safeorstolen database': 'SafeOrStolen registry',
+  bikeindex: 'National stolen-bicycle registry',
+  hotgunz: 'Stolen-firearm database',
+  imei_verification: 'Lost & stolen phone blacklist',
+  vehicle_verification: 'Law-enforcement & federal vehicle records',
+  web_scraper: 'Public web search',
+  ai_analysis: 'AI risk review',
+};
+const sourceLabel = (s: string) => SOURCE_LABELS[String(s).toLowerCase()] ?? String(s).replace(/_/g, ' ');
+
+
 export type ChatVerifyResult = {
  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
  identifier: string;
@@ -187,7 +200,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <Database className="w-4 h-4 text-primary mb-1.5" />
  <div className="text-[11px] font-semibold">multiple sources</div>
  <div className="text-[10px] text-muted-foreground">
- Our reports, web results, AI analysis, BikeIndex, HotGunz
+ Our registry, law-enforcement records, phone blacklist, bike and firearm theft databases
  </div>
  </div>
  <div className="rounded-xl border border-border/60 bg-card/40 p-3">
@@ -315,7 +328,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  key={`${src}-${i}`}
  className="flex items-center justify-between gap-3 text-xs px-3 py-2 rounded-lg bg-card/60 border border-border/60"
  >
- <span className="text-foreground truncate">{src}</span>
+ <span className="text-foreground truncate">{sourceLabel(src)}</span>
  <span
  className={cn(
  'text-[11px] whitespace-nowrap',

@@ -10,25 +10,9 @@ export const SponsorsStrip: React.FC = () => {
  </p>
  </div>
  <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
- {/* IMEI.info */}
- <span className="inline-flex items-center">
- <img
- src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png"
- alt="IMEI.info official logo"
- loading="lazy"
- className="h-8 md:h-10 w-auto"
- />
- </span>
-
- {/* BikeIndex bicycle registry */}
- <span className="inline-flex items-center">
- <img
- src="/images/partners/bikeindex-logo.svg"
- alt="BikeIndex bicycle registry official logo"
- loading="lazy"
- className="h-8 md:h-10 w-auto"
- />
- </span>
+ {['Lost & stolen phone blacklist', 'National stolen-bicycle registry', 'Law-enforcement vehicle records'].map((t) => (
+ <span key={t} className="inline-flex items-center px-3 py-1 rounded-md border border-border text-sm font-semibold text-muted-foreground">{t}</span>
+ ))}
 
  {/* Stolen Firearms Databases */}
  <a

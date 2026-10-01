@@ -142,8 +142,7 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
           </p>
           {vehicle?.details?.theftaz?.checked === true && (
             <p className="mt-1">
-              Not reported stolen in Arizona law enforcement records (TheftAZ, run by the Arizona
-              Attorney General) as of today.
+              Not reported stolen in Arizona law-enforcement records as of today.
             </p>
           )}
           <p className="mt-1">
