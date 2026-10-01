@@ -73,9 +73,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
   // COMPETITOR COMPARISON PAGES (11)
   // ============================================
-  { path: '/compare', priority: 0.85, changefreq: 'monthly' },
-  { path: '/vs-swappa', priority: 0.80, changefreq: 'monthly' },
-  { path: '/vs-autocheck', priority: 0.80, changefreq: 'monthly' },
   // Detailed comparison pages (updated February 2026)
 
   // ============================================
@@ -165,7 +162,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // GUN VERIFICATION PAGES (HIGH-VALUE SEO)
   
   // COMPETITOR ALTERNATIVE PAGES (SEO)
-  { path: '/nicb-alternative', priority: 0.80, changefreq: 'monthly' },
 
   // ============================================
   // REMAINING 39 STATE LICENSE PLATE LOOKUPS (All 50 states)

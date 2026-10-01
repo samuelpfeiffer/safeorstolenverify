@@ -43,7 +43,6 @@ export const Footer: React.FC = () => {
         { name: 'About Us', href: '/about' },
         { name: 'How It Works', href: '/how-it-works' },
         { name: 'Pricing', href: '/pricing' },
-        { name: 'Compare Plans', href: '/compare' },
         { name: 'Free Tools', href: '/free-tools' },
         { name: 'Testimonials', href: '/testimonials' },
       ]

@@ -51,11 +51,6 @@ const CORE_PAGES = [
   { url: '/for-businesses', priority: 0.8, changefreq: 'monthly' },
   
   // Comparison Pages (Competitor SEO)
-  { url: '/vs-checkmend', priority: 0.8, changefreq: 'monthly' },
-  { url: '/vs-imeiinfo', priority: 0.8, changefreq: 'monthly' },
-  { url: '/vs-swappa', priority: 0.8, changefreq: 'monthly' },
-  { url: '/vs-carfax', priority: 0.8, changefreq: 'monthly' },
-  { url: '/vs-autocheck', priority: 0.8, changefreq: 'monthly' },
   
   // Blog
   { url: '/blog', priority: 0.8, changefreq: 'weekly' },
@@ -120,7 +115,6 @@ const CORE_PAGES = [
   { url: '/crunchbase', priority: 0.6, changefreq: 'monthly' },
   
   // Compare & Free Tools (Real pages)
-  { url: '/compare', priority: 0.8, changefreq: 'monthly' },
   { url: '/free-tools', priority: 0.8, changefreq: 'monthly' },
   
   // Business Pages (Real pages)
@@ -145,8 +139,6 @@ const CORE_PAGES = [
   { url: '/blog/real-user-stories', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/complete-verification-guide', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/stolen-verification-app-guide', priority: 0.7, changefreq: 'monthly' },
-  { url: '/blog/checkmend-has-no-app', priority: 0.7, changefreq: 'monthly' },
-  { url: '/blog/like-carfax-for-phones', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/how-to-check-if-iphone-stolen', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/facebook-marketplace-scams', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/pawn-shop-stolen-item-verification', priority: 0.7, changefreq: 'monthly' },

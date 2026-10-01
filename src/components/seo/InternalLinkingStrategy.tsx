@@ -23,9 +23,6 @@ export const InternalLinkingStrategy: React.FC = () => {
       { title: 'How It Works', path: '/how-it-works', keywords: 'safe buying tips' }
     ],
     comparisons: [
-      { title: 'Best CheckMend Alternative', path: '/vs-checkmend', keywords: 'better than CheckMend + mobile app' },
-      { title: 'Free Alternative to IMEIinfo', path: '/vs-imeiinfo', keywords: 'IMEIinfo alternative with app' },
-      { title: 'Compare All Services', path: '/compare', keywords: 'vs competitors + firearms' }
     ]
   };
 
@@ -112,8 +109,6 @@ export const InternalLinkingStrategy: React.FC = () => {
               {' • '}<Link to="/serial-number-checker" className="hover:text-primary">serial number lookup</Link>
               {' • '}<Link to="/verify" className="hover:text-primary">verify any item</Link>
               {' • '}<Link to="/app" className="hover:text-primary">mobile app download</Link>
-              {' • '}<Link to="/vs-checkmend" className="hover:text-primary">CheckMend alternative</Link>
-              {' • '}<Link to="/vs-imeiinfo" className="hover:text-primary">IMEIinfo alternative</Link>
             </p>
           </div>
         </div>

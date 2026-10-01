@@ -396,9 +396,9 @@ For official verification, visit your local police department or licensed firear
  <h3 className="font-semibold mb-2">Stolen Gun Database</h3>
  <p className="text-sm text-muted-foreground">Search reported stolen firearms</p>
  </Link>
- <Link to="/hotgunz-alternative" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
- <h3 className="font-semibold mb-2">Firearm Check Comparison</h3>
- <p className="text-sm text-muted-foreground">Compare firearm verification options</p>
+ <Link to="/how-to-check-if-gun-is-stolen" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
+ <h3 className="font-semibold mb-2">How to Check If a Gun Is Stolen</h3>
+ <p className="text-sm text-muted-foreground">Step-by-step guide before you buy</p>
  </Link>
  </div>
  </div>

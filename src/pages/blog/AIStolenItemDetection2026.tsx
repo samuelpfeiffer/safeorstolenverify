@@ -314,12 +314,12 @@ const AIStolenItemDetection2026 = () => {
           <section className="mt-12">
             <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <Link to="/blog/checkmend-has-no-app" className="block p-4 rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-bold mb-2">Compare other services and SafeOrStolen</h3>
+              <Link to="/imei-checker" className="block p-4 rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-bold mb-2">Check a phone before you buy</h3>
                 <p className="text-sm text-muted-foreground">Why Multi-Category Verification Matters </p>
               </Link>
-              <Link to="/blog/best-stolen-item-checkers-2026" className="block p-4 rounded-lg border hover:border-primary transition-colors">
-                <h3 className="font-bold mb-2">Best Stolen Item Checkers 2026</h3>
+              <Link to="/how-to-check-if-item-stolen" className="block p-4 rounded-lg border hover:border-primary transition-colors">
+                <h3 className="font-bold mb-2">How to Check If an Item Is Stolen</h3>
                 <p className="text-sm text-muted-foreground">Complete comparison of verification services</p>
               </Link>
               <Link to="/blog/how-to-check-if-phone-is-stolen" className="block p-4 rounded-lg border hover:border-primary transition-colors">

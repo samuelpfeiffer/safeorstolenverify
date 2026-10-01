@@ -121,9 +121,6 @@ export const LONG_TAIL_PAGES: SEOUrl[] = [
  { path: '/can-police-track-stolen-phone', priority: 0.7, changefreq: 'monthly', title: 'Can Police Track Stolen Phone', category: 'help' },
  
  // Comparison pages (vs competitors)
- { path: '/vs-checkmend', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen and other item check services', category: 'comparison' },
- { path: '/vs-carfax', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen vs Carfax', category: 'comparison' },
- { path: '/vs-autocheck', priority: 0.8, changefreq: 'monthly', title: 'SafeOrStolen vs AutoCheck', category: 'comparison' },
  { path: '/vs-imei-checker', priority: 0.7, changefreq: 'monthly', title: 'SafeOrStolen vs IMEI Checkers', category: 'comparison' },
  { path: '/cheaper-than-carfax', priority: 0.8, changefreq: 'monthly', title: 'Cheaper Alternative to Carfax', category: 'comparison' },
  { path: '/free-vin-check-alternative', priority: 0.9, changefreq: 'monthly', title: 'Free VIN Check Alternative', category: 'comparison' },

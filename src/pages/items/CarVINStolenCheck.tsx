@@ -104,7 +104,6 @@ const CarVINStolenCheck = () => {
  { title: "California VIN Lookup", href: "/california-vin-lookup" },
  { title: "Texas VIN Check", href: "/texas-vin-lookup" },
  { title: "Motorcycle VIN Check", href: "/check-bike" },
- { title: "vs Carfax", href: "/vs-carfax" }
  ]}
  />
  );

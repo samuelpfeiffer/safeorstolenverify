@@ -277,17 +277,7 @@ export function DefinitiveItemGuide({
                 <strong className="text-foreground">What it tells you:</strong>{" "}
                 {method.tellsYou}
               </p>
-              {method.url && (
-                <a
-                  className="mt-2 inline-flex items-center text-primary underline"
-                  href={method.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {method.linkLabel ?? "Official resource"}
-                  <ExternalLink className="ml-1 h-3 w-3" />
-                </a>
-              )}
+              
             </section>
           ))}
         </div>

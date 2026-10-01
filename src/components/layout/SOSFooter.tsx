@@ -48,7 +48,6 @@ export const SOSFooter: React.FC = () => {
  { label: 'How It Works', to: '/how-it-works' },
  { label: 'FAQ', to: '/faq' },
  { label: 'Pricing', to: '/pricing' },
- { label: 'Compare Services', to: '/compare' },
   { label: 'Item Check Guides', to: '/how-to-check-if-item-stolen' },
   { label: 'How to Report a Stolen Item', to: '/how-to-report-a-stolen-item' },
   { label: 'Phone Stolen? What to Do', to: '/what-to-do-if-your-phone-is-stolen' },
@@ -144,19 +143,6 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'Compare Services',
  links: [
- { label: 'Why choose SafeOrStolen', to: '/compare' },
- { label: 'vs IMEI.info', to: '/vs-imeiinfo' },
- { label: 'vs Swappa', to: '/vs-swappa' },
- { label: 'vs Carfax', to: '/vs-carfax' },
- { label: 'vs AutoCheck', to: '/vs-autocheck' },
- { label: 'vs StolenRegister', to: '/vs-stolenregister' },
- { label: 'Bike Check Alternative', to: '/vs-bikeindex' },
- { label: 'vs DeviceCheck', to: '/vs-devicecheck-ca' },
- { label: 'vs FastBound', to: '/vs-fastbound' },
- { label: 'Carfax Alternative', to: '/carfax-alternative-free' },
- { label: 'Vehicle Check Alternative', to: '/nicb-alternative' },
- { label: 'Firearm Check Comparison', to: '/hotgunz-alternative' },
- { label: 'Best Checkers 2026', to: '/best-stolen-item-checkers-2026' },
  ]
  },
  {

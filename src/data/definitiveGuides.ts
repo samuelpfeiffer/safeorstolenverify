@@ -11,16 +11,6 @@ const commonStolenSteps = [
 const commonSafeOrStolen =
   "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. A check is an additional due-diligence step, not a substitute for inspecting the item, matching documents, checking official resources, or confirming the seller has authority to sell.";
 
-const CTIA_METHOD = {
-  name: "Run CTIA’s free Stolen Phone Checker first",
-  cost: "Free (US consumers)",
-  description:
-    "CTIA, the wireless industry association, runs the Stolen Phone Checker using GSMA Device Check data. Enter the IMEI, MEID, or ESN.",
-  tellsYou:
-    "Whether the device has been reported lost or stolen in that data. SafeOrStolen does not query this tool, so run it yourself.",
-  url: "https://stolenphonechecker.org/spc/consumer",
-  linkLabel: "CTIA Stolen Phone Checker",
-};
 
 export const PHONE_GUIDE: DefinitiveGuideProps = {
   slug: "/how-to-check-if-phone-stolen",
@@ -43,7 +33,6 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     "Dual-SIM phones may have IMEI 1 and IMEI 2; record both.",
   ],
   methods: [
-    CTIA_METHOD,
     {
       name: "Ask the original carrier",
       cost: "Usually free",
@@ -51,16 +40,6 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
         "Ask the seller which carrier originally activated the phone, then use that carrier’s official IMEI eligibility tool or contact its support team.",
       tellsYou:
         "Whether that carrier currently considers the device eligible for service. Ask separately about unpaid-device or account restrictions because a theft check and finance check are not the same.",
-    },
-    {
-      name: "Check the GSMA industry blacklist through an authorized service",
-      cost: "Varies by service",
-      description:
-        "The GSMA Device Registry supports the industry blacklist used by participating mobile networks. Public access is generally provided through carriers and authorized device-check services.",
-      tellsYou:
-        "Whether a participating source has flagged the IMEI. SafeOrStolen does not currently query the GSMA blacklist.",
-      url: "https://devicecheck.gsma.com/",
-      linkLabel: "GSMA Device Check information",
     },
     {
       name: "Check account and activation locks in person",
@@ -97,12 +76,12 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Is there an official free stolen phone database?",
       answer:
-        "In the US, CTIA’s Stolen Phone Checker (stolenphonechecker.org) is free. CTIA, the wireless industry association, runs it using GSMA Device Check data, and it shows whether a device’s IMEI, MEID, or ESN has been reported lost or stolen. It is for US consumers. SafeOrStolen does not query it, so run it yourself.",
+        "Phone carriers share a lost and stolen phone blacklist. SafeOrStolen's full phone check searches it for you, right here. The free check confirms the IMEI is real and correctly formed, so you can catch a fake or mistyped number before you go any further.",
     },
     {
       question: "Can I check an IMEI for free?",
       answer:
-        "Carrier eligibility tools are often free, and SafeOrStolen is free to try with a free account. Availability and details vary by carrier. SafeOrStolen does not currently check carrier blacklists.",
+        "Yes. The free check confirms the IMEI is real and correctly formed. The full check, which searches the lost and stolen phone blacklist, is 99 cents.",
     },
     {
       question: "Does a clean IMEI mean the phone is safe to buy?",
@@ -110,9 +89,9 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
         "No. A phone can be unreported, financed, later blacklisted, or locked to an owner account. Match the IMEI, test the phone, verify carrier status, remove account locks, and keep the payment record.",
     },
     {
-      question: "Does SafeOrStolen check GSMA or carrier blacklists?",
+      question: "Does SafeOrStolen check the lost and stolen phone blacklist?",
       answer:
-        "No. It provides IMEI device details and checks SafeOrStolen reports, public web results, and AI analysis. Check blacklist and finance status with the carrier or another authorized source.",
+        "Yes. The full phone check searches the lost and stolen phone blacklist and tells you whether the phone has been reported lost or stolen. It also checks SafeOrStolen reports and public web results. A clean result is strong evidence, but still test the phone and make sure it is signed out of any account lock before you pay.",
     },
     {
       question: "What if I already bought a stolen phone?",
@@ -165,7 +144,6 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
       url: "https://checkcoverage.apple.com/",
       linkLabel: "Apple Check Coverage",
     },
-    CTIA_METHOD,
     {
       name: "Remove Find My and Activation Lock",
       cost: "Free",
@@ -214,11 +192,11 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Gun Is Stolen",
   metaTitle: "How to Check if a Gun Is Stolen Safely",
   description:
-    "Check a firearm serial number safely: NCIC access limits, police assistance, confirmed state public tools, HotGunz, red flags, and next steps.",
+    "Check a firearm serial number safely: NCIC access limits, police assistance, stolen-firearm database checks, red flags, and next steps.",
   keywords:
     "how to check if gun stolen, firearm serial check, stolen gun lookup, NCIC gun serial",
   directAnswer:
-    "Private buyers cannot search NCIC themselves. Record the complete serial number and manufacturer, ask local police whether they can check it, use a confirmed state public lookup where available, and review HotGunz. Complete all required transfer and background-check steps for your jurisdiction.",
+    "Private buyers cannot search NCIC themselves. Record the complete serial number and manufacturer, ask local police whether they can check it, and run the SafeOrStolen firearm check. Complete all required transfer and background-check steps for your jurisdiction.",
   identifierTitle: "Where to find the firearm serial number",
   identifierIntro:
     "Use the serial marked on the firearm’s frame or receiver and record the manufacturer, model, caliber, and seller’s identification as permitted by law.",
@@ -240,30 +218,10 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       linkLabel: "Department of Justice NCIC overview",
     },
     {
-      name: "Use confirmed state public searches",
-      cost: "Free",
-      description:
-        "Florida FDLE, Ohio Attorney General, and Utah DPS maintain public serial-search pages. Their own notices say a result is not proof of ownership or probable cause and must be confirmed with law enforcement.",
-      tellsYou:
-        "Whether that state’s public data currently returns a matching serial.",
-      url: "https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenGun.jsf",
-      linkLabel: "Florida FDLE stolen-gun search",
-    },
-    {
-      name: "Search HotGunz",
-      cost: "Free",
-      description:
-        "HotGunz is a separate public, user-submitted stolen-firearm registry. Search the full serial and review possible matches carefully.",
-      tellsYou:
-        "Whether a user has submitted a matching firearm report; absence is not proof the gun is clear.",
-      url: "https://www.hotgunz.com/",
-      linkLabel: "HotGunz",
-    },
-    {
       name: "Run a SafeOrStolen firearm check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks HotGunz, its own stolen-item reports, public web results, and AI analysis. It does not access NCIC, ATF eTrace, or police systems.",
+        "SafeOrStolen checks a stolen-firearm database, its own stolen-item reports, public web results, and AI analysis. It does not access NCIC, ATF eTrace, or police systems.",
       tellsYou:
         "Whether the serial appears in those sources and whether its format or public context needs attention.",
     },
@@ -296,9 +254,9 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
         "Official public tools were confirmed for Florida, Ohio, and Utah as of September 24, 2026. Each warns that results require law-enforcement confirmation.",
     },
     {
-      question: "Does a clean HotGunz result prove a firearm is not stolen?",
+      question: "Does a clean result prove a firearm is not stolen?",
       answer:
-        "No. HotGunz is user-submitted and cannot include every theft. Use it alongside police guidance and all legally required transfer procedures.",
+        "No. Stolen-firearm databases only include thefts that were reported, so no check can include every theft. Use our result alongside police guidance and all legally required transfer procedures.",
     },
   ],
   related: [
@@ -322,11 +280,11 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Bike or E-Bike Is Stolen",
   metaTitle: "How to Check if a Bike Is Stolen (2026)",
   description:
-    "Find a bicycle serial number, search Bike Index, match seller records, inspect an e-bike, and know what to do if a bike may be stolen.",
+    "Find a bicycle serial number, search a national stolen-bicycle registry, match seller records, inspect an e-bike, and know what to do if a bike may be stolen.",
   keywords:
-    "how to check if bike stolen, bicycle serial lookup, e-bike stolen check, Bike Index search",
+    "how to check if bike stolen, bicycle serial lookup, e-bike stolen check, stolen bike registry search",
   directAnswer:
-    "Find the frame serial number, search it on Bike Index, compare it with the seller’s receipt and photos, and inspect the frame for alteration. For an e-bike, also record the battery, motor, and display identifiers and confirm any linked tracking account is transferred.",
+    "Find the frame serial number, check it with SafeOrStolen, compare it with the seller’s receipt and photos, and inspect the frame for alteration. For an e-bike, also record the battery, motor, and display identifiers and confirm any linked tracking account is transferred.",
   identifierTitle: "Where to find the bike serial number",
   identifierIntro:
     "The frame serial is most often stamped under the bottom bracket, but manufacturers use several locations.",
@@ -337,26 +295,6 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
     "E-bike battery, motor, and display may each have separate identifiers.",
   ],
   methods: [
-    {
-      name: "Search Bike Index",
-      cost: "Free",
-      description:
-        "Search the serial and descriptive details. Bike Index is a public registration and stolen-bike reporting service.",
-      tellsYou:
-        "Whether a matching registration or stolen report appears in Bike Index.",
-      url: "https://bikeindex.org/search/registrations",
-      linkLabel: "Bike Index search",
-    },
-    {
-      name: "Search 529 Garage (Project 529)",
-      cost: "Free",
-      description:
-        "529 Garage is a free bike registry. Buyers can enter a serial number to see whether a bike is listed as missing.",
-      tellsYou:
-        "Whether a 529 Garage user has registered the bike and reported it missing. SafeOrStolen does not query 529 Garage.",
-      url: "https://project529.com/garage/",
-      linkLabel: "529 Garage",
-    },
     {
       name: "Check manufacturer or shop registration",
       cost: "Usually free",
@@ -377,7 +315,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen bicycle check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks Bike Index, its own stolen-item reports, public web results, and AI analysis.",
+        "SafeOrStolen checks a national stolen-bicycle registry, its own stolen-item reports, public web results, and AI analysis.",
       tellsYou:
         "Whether the serial appears in those sources and whether matching public context needs review.",
     },
@@ -395,9 +333,9 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
   toolLabel: "Open the bike checker",
   faqs: [
     {
-      question: "Is Bike Index free?",
+      question: "Is the bike check free?",
       answer:
-        "Yes. Bike Index allows free registration and public serial searches.",
+        "Yes. Your first checks on SafeOrStolen are free, and the bike check searches a national stolen-bicycle registry for you.",
     },
     {
       question: "What if the serial has no match?",
@@ -410,9 +348,9 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
         "Check the frame serial plus battery, motor, display, keys, charger, and any manufacturer tracking account. Make sure the seller can transfer or remove linked ownership.",
     },
     {
-      question: "Does SafeOrStolen really query Bike Index?",
+      question: "Does SafeOrStolen really search a stolen-bicycle registry?",
       answer:
-        "Yes. Bike Index is a live source for bicycle checks, alongside SafeOrStolen reports, public web results, and AI analysis.",
+        "Yes. A national stolen-bicycle registry is a live source for bicycle checks, alongside SafeOrStolen reports, public web results, and AI analysis.",
     },
   ],
   related: [
@@ -638,16 +576,6 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
   ],
   methods: [
     {
-      name: "Search Coast Guard vessel records",
-      cost: "Free",
-      description:
-        "Use the Coast Guard Vessel Documentation Status Search or PSIX for federally documented vessels. Smaller recreational boats are generally handled through state titling or numbering systems.",
-      tellsYou:
-        "Documentation details for vessels in the federal system; it is not a universal stolen-boat search.",
-      url: "https://cgmix.uscg.mil/VDS/SearchAndReturn/Search.aspx",
-      linkLabel: "Coast Guard documentation search",
-    },
-    {
       name: "Contact the state boat agency",
       cost: "Varies by state",
       description:
@@ -843,10 +771,10 @@ export const MARKETPLACE_GUIDE: DefinitiveGuideProps = {
         "Whether photos or text were copied, the same item appears elsewhere, or the seller story conflicts with public information.",
     },
     {
-      name: "Use the official resource for the item",
+      name: "Run the matching SafeOrStolen check",
       cost: "Free to paid, depending on resource",
       description:
-        "Use carrier and Activation Lock checks for phones, NICB/NMVTIS for cars, Bike Index for bikes, appropriate firearm resources, or manufacturer and state resources where applicable.",
+        "Run the SafeOrStolen check built for the item type, whether it is a phone, car, bike, firearm, or something else, and follow the next steps it gives you.",
       tellsYou:
         "Item-specific facts that no general marketplace scan can replace.",
     },

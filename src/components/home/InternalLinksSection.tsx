@@ -57,12 +57,6 @@ export const InternalLinksSection = () => {
       title: "Compare Services",
       icon: Scale,
       links: [
-        { to: "/compare", label: "Compare All" },
-        { to: "/compare", label: "Compare checking resources" },
-        { to: "/vs-carfax", label: "vs CARFAX" },
-        { to: "/vs-swappa", label: "vs Swappa" },
-        { to: "/vs-imeiinfo", label: "vs IMEI.info" },
-        { to: "/vs-autocheck", label: "vs AutoCheck" },
       ]
     },
     {
@@ -70,7 +64,6 @@ export const InternalLinksSection = () => {
       icon: BookOpen,
       links: [
         { to: "/blog", label: "Blog" },
-        { to: "/blog/carfax-vs-free-vin-alternatives", label: "Free Carfax Alternatives" },
         { to: "/how-it-works", label: "How It Works" },
         { to: "/faq", label: "FAQ" },
         { to: "/facebook-marketplace-stolen-check", label: "Marketplace Safety" },

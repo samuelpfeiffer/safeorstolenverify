@@ -4,6 +4,15 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // ===== 2026-09-30 OWNER RULE: no competitor/supplier comparison pages. Retired -> our own checkers =====
+  "/compare": "/how-to-check-if-item-stolen",
+  "/vs-autocheck": "/vin-checker",
+  "/nicb-alternative": "/vin-checker",
+  "/theftaz-alternative": "/vin-checker",
+  "/vs-fastbound": "/firearms-check",
+  "/vs-swappa": "/imei-checker",
+  "/vs-devicecheck-ca": "/imei-checker",
+
   "/blog/real-user-stories": "/how-to-check-if-item-stolen",
   // ===== 2026-09-23 car-page consolidation: survivors are /how-to-check-if-car-stolen (guide) and /vin-checker (tool) =====
   "/check-car": "/vin-checker",
@@ -169,8 +178,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/ebay-stolen-item-checker": "/marketplace-url-checker",
   "/ebay-stolen-check": "/marketplace-url-checker",
   "/offerup-stolen-check": "/marketplace-url-checker",
-  "/craigslist-verification-guide":
-    "/how-to-tell-if-marketplace-item-is-stolen",
+  "/craigslist-verification-guide": "/how-to-tell-if-marketplace-item-is-stolen",
 
   // ===== MARKETPLACE VERIFY REDIRECTS =====
   "/verify/auctions": "/for-auction-houses",
@@ -228,8 +236,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/stolen-property-lookup": "/verify",
   "/firearm-serial-check": "/firearms-check",
   "/ebay-verification": "/marketplace-url-checker",
-  "/facebook-marketplace-verification":
-    "/how-to-tell-if-marketplace-item-is-stolen",
+  "/facebook-marketplace-verification": "/how-to-tell-if-marketplace-item-is-stolen",
   "/craigslist-verification": "/how-to-tell-if-marketplace-item-is-stolen",
   "/how-to-check-if-phone-is-stolen": "/how-to-check-if-phone-stolen",
   "/how-to-verify-car-not-stolen": "/vin-checker",
@@ -254,7 +261,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/vs-stolenphonechecker": "/imei-checker",
   "/vs-imeipro": "/imei-checker",
   "/vs/checkmend": "/imei-checker",
-  "/competitor-alternatives": "/compare",
+  "/competitor-alternatives": "/how-to-check-if-item-stolen",
 
   // ===== GSC 404 FIX 2026-03-08 =====
   "/minneapolis-stolen-item-check": "/verify",
@@ -263,8 +270,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/about-problem": "/about",
   "/blog/imei-checker-app-comparison": "/imei-checker",
   "/blog/red-flags-buying-used-electronics-1759314016.095080": "/blog",
-  "/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080":
-    "/blog",
+  "/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080": "/blog",
   "/blog/vin-verification-complete-guide-used-cars-1759314016.095080": "/blog",
 
   // ===== STATE/CITY DIRECTORY REDIRECTS =====
@@ -275,62 +281,42 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/mesa-stolen-item-check": "/verify",
 
   // ===== BLOG REDIRECTS =====
-  "/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983":
-    "/how-to-check-if-phone-stolen",
-  "/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027":
-    "/how-to-check-if-phone-stolen",
-  "/blog/how-law-enforcement-tracks-stolen-goods-1759827620043":
-    "/blog/data-source-credibility-stolen-goods-verification",
-  "/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229":
-    "/blog/pawn-shop-stolen-item-verification",
-  "/blog/playstation-5-serial-number-verification-guide-1":
-    "/blog/ps5-stolen-check-guide",
-  "/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1":
-    "/blog/complete-verification-guide",
-  "/blog/los-angeles-imei-verification-phone-fraud-protection-1":
-    "/how-to-check-if-phone-stolen",
-  "/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide":
-    "/blog/how-to-check-if-iphone-stolen",
-  "/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1":
-    "/blog/how-to-check-if-iphone-stolen",
-  "/blog/how-law-enforcement-tracks-stolen-goods-2":
-    "/blog/data-source-credibility-stolen-goods-verification",
-  "/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification":
-    "/blog/stolen-verification-app-guide",
+  "/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983": "/how-to-check-if-phone-stolen",
+  "/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027": "/how-to-check-if-phone-stolen",
+  "/blog/how-law-enforcement-tracks-stolen-goods-1759827620043": "/blog/data-source-credibility-stolen-goods-verification",
+  "/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229": "/blog/pawn-shop-stolen-item-verification",
+  "/blog/playstation-5-serial-number-verification-guide-1": "/blog/ps5-stolen-check-guide",
+  "/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1": "/blog/complete-verification-guide",
+  "/blog/los-angeles-imei-verification-phone-fraud-protection-1": "/how-to-check-if-phone-stolen",
+  "/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide": "/blog/how-to-check-if-iphone-stolen",
+  "/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1": "/blog/how-to-check-if-iphone-stolen",
+  "/blog/how-law-enforcement-tracks-stolen-goods-2": "/blog/data-source-credibility-stolen-goods-verification",
+  "/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification": "/blog/stolen-verification-app-guide",
   "/blog/avoid-buying-stolen-laptops": "/how-to-check-if-laptop-stolen",
   "/blog/5-signs-used-phone-might-be-stolen": "/how-to-check-if-phone-stolen",
-  "/blog/craigslist-scam-prevention-item-verification-checklist":
-    "/blog/scammer-tactics-exposed",
+  "/blog/craigslist-scam-prevention-item-verification-checklist": "/blog/scammer-tactics-exposed",
   "/blog/how-to-use-imei-checker-app": "/app",
-  "/blog/business-guide-preventing-stolen-goods":
-    "/blog/pawn-shop-stolen-item-verification",
+  "/blog/business-guide-preventing-stolen-goods": "/blog/pawn-shop-stolen-item-verification",
   "/blog/how-to-check-phone-stolen": "/how-to-check-if-phone-stolen",
   "/blog/stolen-gun-database-search": "/how-to-check-if-gun-is-stolen",
   "/blog/firearms-app-exclusive": "/how-to-check-if-gun-is-stolen",
-  "/blog/firearms-verification-what-sellers-need-to-know-1760259614826":
-    "/how-to-check-if-gun-is-stolen",
-  "/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942":
-    "/blog/complete-vin-guide",
-  "/blog/data-source-credibility":
-    "/blog/data-source-credibility-stolen-goods-verification",
+  "/blog/firearms-verification-what-sellers-need-to-know-1760259614826": "/how-to-check-if-gun-is-stolen",
+  "/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942": "/blog/complete-vin-guide",
+  "/blog/data-source-credibility": "/blog/data-source-credibility-stolen-goods-verification",
   "/blog/scan-and-verify-using-safeorstolen-camera-feature-1": "/app",
-  "/blog/vin-verification-for-used-cars-what-you-need-to-know-1":
-    "/blog/complete-vin-guide",
+  "/blog/vin-verification-for-used-cars-what-you-need-to-know-1": "/blog/complete-vin-guide",
   "/blog/enterprise-security": "/blog",
   "/blog/2025-stolen-goods-statistics": "/blog",
   "/blog/most-stolen-items-2025": "/blog",
-  "/blog/real-user-stories-stolen-goods-verification":
-    "/how-to-check-if-item-stolen",
-  "/blog/verification-methodology-how-we-check-stolen-items":
-    "/blog/verification-methodology",
+  "/blog/real-user-stories-stolen-goods-verification": "/how-to-check-if-item-stolen",
+  "/blog/verification-methodology-how-we-check-stolen-items": "/blog/verification-methodology",
   "/blog/what-to-do-if-stolen": "/blog",
   "/blog/what-to-do-if-you-bought-stolen": "/blog",
   "/blog/industry-insights-2024": "/blog",
   "/blog/ai-verification-technology": "/blog",
   "/blog/verification-data-privacy": "/blog",
   "/blog/serial-numbers-stolen-goods-101": "/blog",
-  "/blog/marketplace-red-flags-protection-guide":
-    "/blog/scammer-tactics-exposed",
+  "/blog/marketplace-red-flags-protection-guide": "/blog/scammer-tactics-exposed",
   // GSC Soft 404 fix 2026-03-08: Blog slugs hitting NotFound in prerenderer
   "/blog/how-to-check-if-phone-is-stolen": "/how-to-check-if-phone-stolen",
   "/blog/best-stolen-item-checker-apps-2025": "/blog",
@@ -338,8 +324,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/complete-marketplace-buyers-checklist": "/blog",
   "/blog/how-to-install-safeorstolen-app": "/app",
   "/blog/scan-and-verify-using-safeorstolen-camera-feature": "/app",
-  "/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1":
-    "/blog",
+  "/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1": "/blog",
   // REMOVED: These blog posts have REAL routes - they must NOT be redirected
   // /blog/phone-verification-guide, /blog/bicycle-stolen-serial-number-check,
   // /blog/firearm-serial-number-verification, /blog/verify-item-before-meetup,
@@ -356,10 +341,9 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/alabama-stolen-item-check": "/verify",
   "/memphis-stolen-item-check": "/verify",
   "/miami-stolen-item-check": "/stolen-check-miami",
-  "/vs-nicb": "/nicb-alternative",
+  "/vs-nicb": "/vin-checker",
   "/blog/safeorstolen-app-guide": "/blog/stolen-verification-app-guide",
-  "/blog/avoid-buying-stolen-items":
-    "/how-to-tell-if-marketplace-item-is-stolen",
+  "/blog/avoid-buying-stolen-items": "/how-to-tell-if-marketplace-item-is-stolen",
 
   // ===== GSC 404 / soft-404 cleanup (slugs previously only in public/_redirects,
   // which this host does not honor). Every destination is a real router path. =====
@@ -423,7 +407,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/comparison-checkmend": "/imei-checker",
   "/vs/imeiinfo": "/imei-checker",
   "/vs/carfax": "/how-to-check-if-car-stolen",
-  "/vs/nicb": "/nicb-alternative",
+  "/vs/nicb": "/vin-checker",
   "/vs/hotgunz": "/how-to-check-if-gun-is-stolen",
   "/gun-check": "/firearms-check",
   "/firearm-check": "/firearms-check",
@@ -464,11 +448,9 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/verify-used-electronics-before-buying": "/blog",
   "/blog/buying-used-phones-red-flags": "/blog",
   "/blog/buying-used-bikes-verification-guide": "/blog",
-  "/blog/playstation-5-serial-number-verification-guide":
-    "/serial-number-checker",
+  "/blog/playstation-5-serial-number-verification-guide": "/serial-number-checker",
   "/blog/our-mission": "/about",
-  "/blog/how-to-check-if-device-is-safe-stolen":
-    "/how-to-check-if-phone-stolen",
+  "/blog/how-to-check-if-device-is-safe-stolen": "/how-to-check-if-phone-stolen",
   "/city/miami": "/stolen-check-los-angeles",
   "/city/philadelphia": "/stolen-check-philadelphia",
   "/city/san-antonio": "/stolen-check-san-antonio",
@@ -494,13 +476,10 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/guides/serial-number-guide": "/serial-number-checker",
   "/guides/imei-verification-guide": "/imei-checker",
   "/app/vs-checkmend": "/imei-checker",
-  "/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379":
-    "/how-to-check-if-phone-stolen",
-  "/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281":
-    "/blog",
+  "/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379": "/how-to-check-if-phone-stolen",
+  "/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281": "/blog",
   "/blog/how-law-enforcement-tracks-stolen-goods-1760086814875": "/blog",
-  "/blog/los-angeles-imei-verification-phone-fraud-protection":
-    "/stolen-check-los-angeles",
+  "/blog/los-angeles-imei-verification-phone-fraud-protection": "/stolen-check-los-angeles",
   "/guides/how-to-check-stolen-items": "/verify",
   "/community-watch": "/community",
   "/blog/serial-numbers-101": "/blog",
@@ -519,17 +498,12 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/safer-buyer-flow": "/blog",
   "/blog/mobile-app-vs-website-verification": "/app",
   "/blog/arizona-theftaz-guide": "/blog",
-  "/blog/complete-verification-guide-stolen-goods-check":
-    "/blog/complete-verification-guide",
+  "/blog/complete-verification-guide-stolen-goods-check": "/blog/complete-verification-guide",
   "/blog/vin-verification-checklist": "/blog/complete-vin-guide",
-  "/blog/vin-verification-for-used-cars-what-you-need-to-know":
-    "/blog/complete-vin-guide",
-  "/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide":
-    "/how-to-check-if-phone-stolen",
-  "/blog/stolen-item-checker-in-new-york-city-complete-2025-guide":
-    "/stolen-check-new-york-city",
-  "/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles":
-    "/blog/complete-vin-guide",
+  "/blog/vin-verification-for-used-cars-what-you-need-to-know": "/blog/complete-vin-guide",
+  "/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide": "/how-to-check-if-phone-stolen",
+  "/blog/stolen-item-checker-in-new-york-city-complete-2025-guide": "/stolen-check-new-york-city",
+  "/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles": "/blog/complete-vin-guide",
   "/for-college-students": "/verify",
   "/check-atv": "/vin-checker",
   "/app/marketplace": "/app",
@@ -537,13 +511,13 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/for-seniors": "/verify",
   "/check-airpods": "/serial-number-checker",
   "/how-to-verify-used-electronics": "/serial-number-checker",
-  "/safeorstolen-vs-autocheck": "/vs-autocheck",
-  "/app/vs-stolen-register": "/compare",
+  "/safeorstolen-vs-autocheck": "/vin-checker",
+  "/app/vs-stolen-register": "/how-to-check-if-item-stolen",
   "/marketplace": "/for-marketplaces",
   "/account": "/dashboard",
   "/top-vin-check-services-2025": "/how-to-check-if-car-stolen",
   "/nicb-vin-check-alternative": "/how-to-check-if-car-stolen",
-  "/safeorstolen-vs-swappa": "/vs-swappa",
+  "/safeorstolen-vs-swappa": "/imei-checker",
   "/safeorstolen-vs-imeiinfo": "/imei-checker",
   "/best-free-imei-checkers-2025": "/imei-checker",
   "/our-team": "/about",
@@ -556,6 +530,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/checkmend-has-no-app": "/imei-checker",
   "/blog/top-10-stolen-item-checkers": "/how-to-check-if-item-stolen",
   "/best-stolen-item-checkers-2026": "/how-to-check-if-item-stolen",
+  "/blog/hotgunz-database-guide": "/how-to-check-if-gun-is-stolen",
   "/blog/best-stolen-item-checkers-2026": "/how-to-check-if-item-stolen",
   "/blog/how-to-check-if-phone-stolen": "/how-to-check-if-phone-stolen",
   "/blog/check-if-phone-stolen-guide": "/how-to-check-if-phone-stolen",
@@ -590,46 +565,38 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/is-this-bike-stolen": "/how-to-check-if-bike-stolen",
   "/check-bicycle-stolen": "/check-bike",
   "/check-ebike": "/check-bike",
-  "/vs-bikeindex": "/how-to-check-if-bike-stolen",
+  "/vs-bikeindex": "/check-bike",
   "/is-this-laptop-stolen": "/how-to-check-if-laptop-stolen",
   "/check-laptop-stolen": "/how-to-check-if-laptop-stolen",
-  "/blog/protect-yourself-buying-used-electronics":
-    "/how-to-check-if-laptop-stolen",
+  "/blog/protect-yourself-buying-used-electronics": "/how-to-check-if-laptop-stolen",
   "/check-laptop": "/serial-number-checker",
   "/check-electronics": "/serial-number-checker",
   "/check-tools": "/how-to-check-if-tools-stolen",
   "/check-power-tools-stolen": "/how-to-check-if-tools-stolen",
   "/check-boat": "/how-to-check-if-boat-stolen",
   "/facebook-marketplace-safety": "/how-to-tell-if-marketplace-item-is-stolen",
-  "/facebook-marketplace-stolen-check":
-    "/how-to-tell-if-marketplace-item-is-stolen",
-  "/blog/facebook-marketplace-scams-guide":
-    "/how-to-tell-if-marketplace-item-is-stolen",
-  "/blog/facebook-marketplace-scams":
-    "/how-to-tell-if-marketplace-item-is-stolen",
-  "/blog/ultimate-marketplace-buyers-guide":
-    "/how-to-tell-if-marketplace-item-is-stolen",
+  "/facebook-marketplace-stolen-check": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/blog/facebook-marketplace-scams-guide": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/blog/facebook-marketplace-scams": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/blog/ultimate-marketplace-buyers-guide": "/how-to-tell-if-marketplace-item-is-stolen",
   "/offerup-safety": "/how-to-tell-if-marketplace-item-is-stolen",
-  "/craigslist-safety-verification":
-    "/how-to-tell-if-marketplace-item-is-stolen",
-  "/guides/offerup-scam-protection":
-    "/how-to-tell-if-marketplace-item-is-stolen",
-  "/guides/verify-craigslist-items":
-    "/how-to-tell-if-marketplace-item-is-stolen",
+  "/craigslist-safety-verification": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/guides/offerup-scam-protection": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/guides/verify-craigslist-items": "/how-to-tell-if-marketplace-item-is-stolen",
   "/offerup-verify-not-stolen": "/marketplace-url-checker",
   "/ebay-stolen-item-check": "/marketplace-url-checker",
   "/mercari-stolen-check": "/marketplace-url-checker",
   "/poshmark-stolen-check": "/marketplace-url-checker",
   "/letgo-stolen-check": "/marketplace-url-checker",
-  "/vs-stolenregister": "/compare",
-  "/carfax-alternative": "/how-to-check-if-car-stolen",
-  "/carfax-alternative-free": "/how-to-check-if-car-stolen",
-  "/vs-carfax": "/how-to-check-if-car-stolen",
+  "/vs-stolenregister": "/how-to-check-if-item-stolen",
+  "/carfax-alternative": "/vin-checker",
+  "/carfax-alternative-free": "/vin-checker",
+  "/vs-carfax": "/vin-checker",
   "/blog/carfax-vs-free-vin-alternatives": "/how-to-check-if-car-stolen",
   "/comparisons/nicb-vincheck-alternative": "/how-to-check-if-car-stolen",
-  "/vs-vincheck-info": "/how-to-check-if-car-stolen",
+  "/vs-vincheck-info": "/vin-checker",
   "/comparisons/top-vin-check-services-2025": "/how-to-check-if-car-stolen",
-  "/hotgunz-alternative": "/how-to-check-if-gun-is-stolen",
+  "/hotgunz-alternative": "/firearms-check",
   "/comparisons/safeorstolen-vs-swappa": "/how-to-check-if-phone-stolen",
 };
 

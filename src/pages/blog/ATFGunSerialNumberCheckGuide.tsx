@@ -186,7 +186,7 @@ const ATFGunSerialNumberCheckGuide = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">Related Guides</h2>
             <div className="flex flex-wrap gap-3">
               <Link to="/blog/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to Check if a Gun is Stolen</Link>
-              <Link to="/blog/hotgunz-database-guide" className="text-primary hover:underline font-medium">HotGunz Database Guide</Link>
+              <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to Check If a Gun Is Stolen</Link>
               <Link to="/blog/state-stolen-gun-database-guide" className="text-primary hover:underline font-medium">State-by-State Guide</Link>
               <Link to="/firearms-check" className="text-primary hover:underline font-medium">Free Gun Serial Number Lookup</Link>
             </div>

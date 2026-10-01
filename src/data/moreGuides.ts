@@ -260,17 +260,17 @@ export const STOLEN_BIKE_VICTIM_GUIDE: DefinitiveGuideProps = {
   title: "What to Do if Your Bike Is Stolen",
   metaTitle: "What to Do if Your Bike Is Stolen: Report & Recover",
   description:
-    "Bike stolen? File a police report with the serial number, mark it stolen on Bike Index and 529 Garage, log it on SafeOrStolen, and watch local listings.",
+    "Bike stolen? File a police report with the serial number, log it on SafeOrStolen, and watch local listings.",
   keywords:
-    "what to do if bike is stolen, stolen bike report, bike index stolen, 529 garage stolen bike",
+    "what to do if bike is stolen, stolen bike report, report a stolen bicycle, stolen bike registry",
   directAnswer:
-    "Find your bike's serial number, file a police report, and mark the bike stolen on Bike Index and 529 Garage so their communities and partners are alerted. Log it on SafeOrStolen too, then watch local marketplaces and send any match to police rather than meeting the seller.",
+    "Find your bike's serial number, file a police report, and log it on SafeOrStolen so anyone who checks that serial sees it was reported stolen. Then watch local marketplaces and send any match to police rather than meeting the seller.",
   identifierTitle: "Where to find your bike serial number",
   identifierIntro:
     "The frame serial is usually stamped under the bottom bracket. If the bike is gone, look for it in your records.",
   identifierLocations: [
     "Your receipt, warranty card, or the shop that sold you the bike.",
-    "An existing Bike Index or 529 Garage registration.",
+    "An existing bike registration or SafeOrStolen record.",
     "Photos of the bike, especially of the underside of the frame.",
     "E-bikes: the manufacturer app or account may list the frame, battery, or motor numbers.",
   ],
@@ -281,26 +281,6 @@ export const STOLEN_BIKE_VICTIM_GUIDE: DefinitiveGuideProps = {
       description:
         "Report the theft with the serial number, make, model, color, size, photos, and any distinctive parts.",
       tellsYou: "You get a report number registries and insurers can reference.",
-    },
-    {
-      name: "Mark it stolen on Bike Index",
-      cost: "Free",
-      description:
-        "Register the bike if you haven't, then mark it lost or stolen. Bike Index says this notifies the Bike Index community and its partners.",
-      tellsYou:
-        "Anyone searching the serial on Bike Index sees the stolen report. SafeOrStolen also checks Bike Index during bicycle checks.",
-      url: "https://bikeindex.org/",
-      linkLabel: "Bike Index",
-    },
-    {
-      name: "Report it on 529 Garage",
-      cost: "Free",
-      description:
-        "Register the bike on 529 Garage and report it missing. 529 says one alert reaches riders, bike shops, and police near you.",
-      tellsYou:
-        "Buyers who search that serial on 529 Garage see it listed as missing.",
-      url: "https://project529.com/garage/",
-      linkLabel: "529 Garage",
     },
     reportStep,
     {
@@ -324,7 +304,7 @@ export const STOLEN_BIKE_VICTIM_GUIDE: DefinitiveGuideProps = {
     {
       question: "Where should I report a stolen bike?",
       answer:
-        "File a police report, then mark it stolen on Bike Index and 529 Garage. Both are free. You can also log it on SafeOrStolen so buyers who check the serial here see it.",
+        "File a police report, then log it on SafeOrStolen so buyers who check the serial here see it was reported stolen.",
     },
     {
       question: "What if I don't know my bike's serial number?",
@@ -332,9 +312,9 @@ export const STOLEN_BIKE_VICTIM_GUIDE: DefinitiveGuideProps = {
         "Check your receipt, the shop that sold it, old photos of the frame underside, or any registry account. Without a serial, give police a detailed description and photos.",
     },
     {
-      question: "Does SafeOrStolen check Bike Index?",
+      question: "Does SafeOrStolen search a stolen-bicycle registry?",
       answer:
-        "Yes. Bike Index is a live source for SafeOrStolen bicycle checks. SafeOrStolen does not check 529 Garage.",
+        "Yes. A national stolen-bicycle registry is a live source for SafeOrStolen bicycle checks.",
     },
   ],
   related: [
@@ -532,7 +512,7 @@ export const REPORT_STOLEN_HUB_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to report a stolen item, report stolen property, stolen item report, where to report stolen items",
   directAnswer:
-    "Report the theft to local police first, with the item's serial number, IMEI, or VIN and a description. Then contact whoever can block or flag the item: your carrier for a phone, your insurer and lender for a car, Bike Index and 529 Garage for a bike. Finally, log the item on SafeOrStolen so buyers who check its identifier see it was reported stolen.",
+    "Report the theft to local police first, with the item's serial number, IMEI, or VIN and a description. Then contact whoever can block or flag the item: your carrier for a phone, your insurer and lender for a car. Finally, log the item on SafeOrStolen so buyers who check its identifier see it was reported stolen.",
   identifierTitle: "Find the item's identifier",
   identifierIntro:
     "Every report goes further with the right identifier.",
@@ -565,9 +545,9 @@ export const REPORT_STOLEN_HUB_GUIDE: DefinitiveGuideProps = {
       tellsYou: "See the full stolen car guide.",
     },
     {
-      name: "Bike: Bike Index and 529 Garage",
+      name: "Bike: log it on SafeOrStolen",
       cost: "Free",
-      description: "Mark it stolen on both free registries.",
+      description: "Log the serial number on SafeOrStolen so buyers who check it see the report.",
       tellsYou: "See the full stolen bike guide.",
     },
     {
@@ -622,11 +602,11 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Motorcycle Is Stolen",
   metaTitle: "How to Check if a Motorcycle Is Stolen (VIN Guide)",
   description:
-    "Match a motorcycle's VIN on the frame and title, run NICB VINCheck and an NMVTIS report, inspect for tampering, and verify the seller before you buy.",
+    "Match a motorcycle's VIN on the frame and title, run it through SafeOrStolen's VIN check, inspect for tampering, and verify the seller before you buy.",
   keywords:
     "how to check if motorcycle is stolen, motorcycle VIN check, stolen motorcycle check",
   directAnswer:
-    "Find the VIN on the steering neck and the engine number on the crankcase, match the VIN to the title and registration in the seller's name, then run it through NICB VINCheck and an NMVTIS vehicle history report. Inspect the VIN plate and ignition for tampering, and ask police to check the VIN if anything seems off.",
+    "Find the VIN on the steering neck and the engine number on the crankcase, match the VIN to the title and registration in the seller's name, then run it through SafeOrStolen's VIN check. Inspect the VIN plate and ignition for tampering, and ask police to check the VIN if anything seems off.",
   identifierTitle: "Where to find a motorcycle VIN",
   identifierIntro:
     "Motorcycles made for road use since 1981 have a 17-character VIN.",
@@ -642,25 +622,6 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
       description:
         "Compare the frame VIN with the title and registration and confirm the seller's name and ID match the title.",
       tellsYou: "Whether the seller appears to have authority to sell.",
-    },
-    {
-      name: "Run NICB VINCheck",
-      cost: "Free",
-      description:
-        "Enter the VIN at NICB VINCheck.",
-      tellsYou:
-        "Whether participating insurers have recorded it as an unrecovered theft or a total loss.",
-      url: "https://www.nicb.org/vincheck",
-      linkLabel: "NICB VINCheck",
-    },
-    {
-      name: "Get an NMVTIS report",
-      cost: "Small fee from approved providers",
-      description:
-        "NMVTIS reports come from providers approved by the U.S. Department of Justice.",
-      tellsYou: "Title history and brands such as salvage or junk.",
-      url: "https://vehiclehistory.bja.ojp.gov/",
-      linkLabel: "NMVTIS (vehiclehistory.bja.ojp.gov)",
     },
     {
       name: "Ask police to check the VIN",
@@ -683,9 +644,9 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
   toolLabel: "Open the VIN checker",
   faqs: [
     {
-      question: "Does NICB VINCheck work for motorcycles?",
+      question: "Does the VIN check work for motorcycles?",
       answer:
-        "NICB VINCheck accepts vehicle VINs, including many motorcycles. It shows theft and total-loss records from participating insurers only.",
+        "Yes. SafeOrStolen's VIN check accepts 17-character motorcycle VINs. Older bikes built before 1981 may have shorter serials that need a police check instead.",
     },
     {
       question: "What if the motorcycle has no title?",
@@ -693,9 +654,9 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
         "Treat it as a serious warning sign. Ask your state's motor vehicle agency how title transfer works, and don't pay until you can get a proper title.",
     },
     {
-      question: "Does SafeOrStolen check NICB or NMVTIS?",
+      question: "What does SafeOrStolen's motorcycle check search?",
       answer:
-        "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Run NICB VINCheck and NMVTIS separately.",
+        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. No single database covers every state, so also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -710,11 +671,11 @@ export const TRAILER_ATV_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Trailer, ATV, or Dirt Bike Is Stolen",
   metaTitle: "Check if a Trailer, ATV or Dirt Bike Is Stolen",
   description:
-    "Find the VIN or serial on a trailer, ATV, UTV, or dirt bike, match it to the title or registration, run NICB VINCheck where it applies, and verify the seller.",
+    "Find the VIN or serial on a trailer, ATV, UTV, or dirt bike, match it to the title or registration, run it through SafeOrStolen's VIN check, and verify the seller.",
   keywords:
     "check if trailer is stolen, stolen ATV check, dirt bike VIN check, UTV stolen check",
   directAnswer:
-    "Find the VIN or serial number on the frame, match it to the title, registration, or manufacturer's certificate in the seller's name, and look for tampering. Run the VIN through NICB VINCheck where it applies, ask your state's titling agency how that vehicle type is titled or registered, and ask police to check the number if you have doubts.",
+    "Find the VIN or serial number on the frame, match it to the title, registration, or manufacturer's certificate in the seller's name, and look for tampering. Run the VIN through SafeOrStolen's VIN check, ask your state's titling agency how that vehicle type is titled or registered, and ask police to check the number if you have doubts.",
   identifierTitle: "Where to find the VIN or serial",
   identifierIntro:
     "Locations vary by type and manufacturer; check the frame first.",
@@ -731,16 +692,6 @@ export const TRAILER_ATV_GUIDE: DefinitiveGuideProps = {
       description:
         "Compare the frame number with the title, registration, or certificate of origin, and the seller's ID with the owner's name.",
       tellsYou: "Whether the seller appears to have authority to sell.",
-    },
-    {
-      name: "Run NICB VINCheck where it applies",
-      cost: "Free",
-      description:
-        "Enter a 17-character VIN at NICB VINCheck.",
-      tellsYou:
-        "Whether participating insurers recorded it as an unrecovered theft or total loss. Some off-road vehicles and small trailers may not appear.",
-      url: "https://www.nicb.org/vincheck",
-      linkLabel: "NICB VINCheck",
     },
     {
       name: "Ask your state's titling agency",
@@ -779,9 +730,9 @@ export const TRAILER_ATV_GUIDE: DefinitiveGuideProps = {
         "It depends on your state and the vehicle type. Ask your state's titling agency before you buy.",
     },
     {
-      question: "Does SafeOrStolen check NICB or state records?",
+      question: "What does SafeOrStolen's check search for trailers and off-road vehicles?",
       answer:
-        "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Use NICB VINCheck and your state agency separately.",
+        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. No single database covers every state, so also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -799,7 +750,7 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to check if watch is stolen, rolex stolen check, watch serial number check, stolen watch database",
   directAnswer:
-    "Get the serial and reference numbers from the seller before you meet, match them with the case, box, papers, and receipt, and search them on a lost-and-stolen watch database such as The Watch Register. For a high-value watch, buy through a jeweler who can inspect it or have the brand's service center or an independent watchmaker examine it before you pay.",
+    "Get the serial and reference numbers from the seller before you meet, match them with the case, box, papers, and receipt, and run them through SafeOrStolen. For a high-value watch, buy through a jeweler who can inspect it or have the brand's service center or an independent watchmaker examine it before you pay.",
   identifierTitle: "Where to find a watch's serial number",
   identifierIntro:
     "Locations vary by brand; many put the serial on the caseback or between the lugs.",
@@ -815,15 +766,6 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
       description:
         "Compare the serial and reference on the watch with the warranty card, receipt, and box.",
       tellsYou: "Whether the documents belong to this watch.",
-    },
-    {
-      name: "Search The Watch Register",
-      cost: "Paid search credits",
-      description:
-        "The Watch Register describes itself as a global database of lost, stolen, and counterfeit watches and sells search credits.",
-      tellsYou: "Whether a matching loss has been registered there.",
-      url: "https://www.thewatchregister.com/",
-      linkLabel: "The Watch Register",
     },
     {
       name: "Have it inspected",
@@ -848,7 +790,7 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
     {
       question: "Is there a stolen watch database?",
       answer:
-        "Yes. The Watch Register is a paid database of lost, stolen, and counterfeit watches. SafeOrStolen does not query it.",
+        "SafeOrStolen checks watch serial numbers against its own stolen-item reports and public web results. For a high-value watch, also have a jeweler or the brand's service center inspect it before you pay.",
     },
     {
       question: "Can a missing serial number be normal?",
@@ -856,7 +798,7 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
         "Some watches have serials in less visible places, but a serial that has been removed or polished away is a strong warning sign. Have it inspected before you buy.",
     },
     {
-      question: "Does SafeOrStolen check The Watch Register?",
+      question: "What does SafeOrStolen check for watches?",
       answer:
         "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
     },
@@ -874,9 +816,9 @@ export const CAMERA_GUIDE: DefinitiveGuideProps = {
   description:
     "Find camera body and lens serial numbers, match them to the receipt, search the web for photos taken with that camera, and verify the seller before paying.",
   keywords:
-    "how to check if camera is stolen, lens serial number check, stolen camera finder, used camera buying",
+    "how to check if camera is stolen, lens serial number check, stolen camera check, used camera buying",
   directAnswer:
-    "Get the serial numbers for the body and every lens, match them to the receipt and box, and search the web for them. Stolen Camera Finder searches for serial numbers embedded in photo files online. Test the gear in person, take a sample photo, and check the camera's menu for owner or copyright information.",
+    "Get the serial numbers for the body and every lens, match them to the receipt and box, and run them through SafeOrStolen. Test the gear in person, take a sample photo, and check the camera's menu for owner or copyright information.",
   identifierTitle: "Where to find camera and lens serials",
   identifierIntro:
     "Record the body serial and each lens serial separately.",
@@ -892,16 +834,6 @@ export const CAMERA_GUIDE: DefinitiveGuideProps = {
       cost: "Free",
       description: "Compare every serial with the seller's paperwork.",
       tellsYou: "Whether the documents belong to this gear.",
-    },
-    {
-      name: "Search with Stolen Camera Finder",
-      cost: "Free",
-      description:
-        "Stolen Camera Finder searches the web for serial numbers embedded in photo files. Take a photo with the camera and upload it, or enter the serial.",
-      tellsYou:
-        "Where photos taken with that camera appear online, which can reveal the previous owner.",
-      url: "https://www.stolencamerafinder.com/",
-      linkLabel: "Stolen Camera Finder",
     },
     {
       name: "Check owner and copyright settings",
@@ -926,7 +858,7 @@ export const CAMERA_GUIDE: DefinitiveGuideProps = {
     {
       question: "Can I check a camera serial for free?",
       answer:
-        "Yes. Stolen Camera Finder is free and searches for photos online that carry the serial. SafeOrStolen is free to try with a free account.",
+        "Yes. Your first checks on SafeOrStolen are free.",
     },
     {
       question: "Do lenses have serial numbers?",
@@ -934,7 +866,7 @@ export const CAMERA_GUIDE: DefinitiveGuideProps = {
         "Most interchangeable lenses do, usually on the barrel or mount. Record them separately from the body.",
     },
     {
-      question: "Does SafeOrStolen check Stolen Camera Finder?",
+      question: "What does SafeOrStolen check for cameras?",
       answer:
         "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
     },
