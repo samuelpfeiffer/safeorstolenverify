@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { runParallelVerification } from '../_shared/parallel-verification.ts';
+import { runParallelVerification } from '../verify-item/parallel-verification.ts';
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 
 const STATE_FUNCTIONS: Record<string, string> = {
@@ -72,7 +72,7 @@ serve(async (req) => {
       });
     }
 
-    // Fallback: Use parallel verification with web scraping + AI
+    // Fallback: real databases (NHTSA + TheftAZ via verify-vehicle) plus web search and AI advice
     console.log(`No dedicated function for ${upperStateCode}, using parallel verification`);
     
     const isVin = String(type).toLowerCase() === 'vin';
@@ -104,11 +104,28 @@ serve(async (req) => {
       ? `Sources checked for this result: ${parts.join('; ')}. No single database covers every state, so before you pay, ask the seller to show the title and proof of ownership.`
       : 'Our sources could not be reached for this check. Please try again in a few minutes, and ask the seller to show the title and proof of ownership.';
 
+    // HONEST VERDICT (Sept 30 2026): only real databases can say stolen. AI is advice only;
+    // a web mention is a "possible match", never a theft report.
+    const realSources = allSources.filter((s) => s?.source !== 'Web_Scraper' && s?.source !== 'AI_Analysis');
+    const realStolen = realSources.find((s) => s?.status === 'stolen');
+    const webFlag = allSources.find((s) => s?.source === 'Web_Scraper' && s?.status === 'stolen');
     const plateStolen = plateCheck?.status === 'stolen';
-    const finalStatus = plateStolen ? 'stolen' : result.status;
-    const finalMessage = plateStolen
-      ? plateCheck.message
-      : (result.message || `Verification completed for ${upperStateCode} ${type.toUpperCase()}: ${value}`);
+    const label = `${upperStateCode} ${isVin ? 'VIN' : 'plate'} ${value}`;
+    let finalStatus = 'unknown';
+    let finalMessage: string;
+    let finalConfidence = 0;
+    if (plateStolen) {
+      finalStatus = 'stolen'; finalConfidence = plateCheck.confidence || 95; finalMessage = plateCheck.message;
+    } else if (realStolen) {
+      finalStatus = 'stolen'; finalConfidence = realStolen.confidence || 90;
+      finalMessage = realStolen.message || `🚨 THEFT REPORT FOUND for ${label}. Do not buy. Contact local police.`;
+    } else if (webFlag) {
+      finalMessage = `⚠️ POSSIBLE MATCH: A web page may mention ${label} in a theft context. This is not an official report. Ask the seller for the title and proof of ownership before buying.`;
+    } else if (dbs.size > 0) {
+      finalMessage = `No theft report found for ${label} in the records we checked. ${disclaimer}`;
+    } else {
+      finalMessage = `No theft report found for ${label}. ${disclaimer}`;
+    }
 
     return new Response(JSON.stringify({
       status: finalStatus,
@@ -122,8 +139,8 @@ serve(async (req) => {
         databases: [...dbs],
         disclaimer,
       },
-      confidence: plateStolen ? plateCheck.confidence : result.confidence,
-      source: result.source,
+      confidence: finalConfidence,
+      source: 'Multi-Source Verification',
       timestamp: new Date().toISOString()
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
