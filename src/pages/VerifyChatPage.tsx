@@ -87,6 +87,8 @@ const VerifyChatPage: React.FC = () => {
  const scrollRef = useRef<HTMLDivElement>(null);
  const textareaRef = useRef<HTMLTextAreaElement>(null);
  const consumedParamRef = useRef(false);
+ // Type hint from tool pages (e.g. ?type=firearm). Gun serials look like any serial, so the hint matters.
+ const typeHintRef = useRef<string | null>(null);
 
  const voice = useVoiceSearch({
  onResult: (text) => setInput((prev) => (prev ? `${prev} ${text}` : text)),
@@ -287,7 +289,12 @@ const VerifyChatPage: React.FC = () => {
  { body: { input: identifier } });
  if (detectErr) throw detectErr;
 
- const itemType = detect?.type || 'serial';
+ const detected = detect?.type || 'serial';
+ const hint = typeHintRef.current;
+ typeHintRef.current = null;
+ // Firearm hint always wins (a gun serial can't be told apart from other serials).
+ // Other hints only fill in when detection could not tell what it is.
+ const itemType = hint && (hint === 'firearm' || detected === 'serial' || detected === 'unknown') ? hint : detected;
  const cleanedIdentifier = detect?.extractedValue || identifier;
  const confidence = detect?.confidence || 50;
 
@@ -522,13 +529,20 @@ const VerifyChatPage: React.FC = () => {
  if (consumedParamRef.current) return;
  const q = searchParams.get('q');
  const url = searchParams.get('url');
- const incoming = (url || q || '').trim();
+ // Accept every format our tool pages use (Oct 1 2026 fix: ?identifier=, ?serial=, ?plate=, ?value= were ignored,
+ // so visitors from the gun, phone, car, plate, and partial-serial pages landed on an empty page).
+ const incoming = (url || q || searchParams.get('identifier') || searchParams.get('serial') ||
+ searchParams.get('plate') || searchParams.get('value') || '').trim();
+ const HINTS: Record<string, string> = { firearm: 'firearm', gun: 'firearm', imei: 'phone', phone: 'phone', tablet: 'electronics',
+ vin: 'vehicle', vehicle: 'vehicle', motorcycle: 'vehicle', plate: 'plate', bike: 'bicycle', bicycle: 'bicycle' };
+ typeHintRef.current = HINTS[(searchParams.get('type') || '').toLowerCase()] || null;
  if (!incoming) return;
  consumedParamRef.current = true;
  const next = new URLSearchParams(searchParams);
  next.delete('q');
  next.delete('url');
  next.delete('type');
+ ['identifier', 'serial', 'plate', 'value', 'state'].forEach((k) => next.delete(k));
  setSearchParams(next, { replace: true });
  setTimeout(() => handleSend(incoming), 50);
  // eslint-disable-next-line react-hooks/exhaustive-deps

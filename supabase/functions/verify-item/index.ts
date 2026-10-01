@@ -209,7 +209,12 @@ serve(async (req) => {
       finalStatus = 'unknown';
       riskLevel = 'medium';
       confidence = 0;
-      message = '⚠️ NO THEFT REPORTS FOUND, but no theft database for this item type could confirm it. Ask the seller for proof of ownership and keep a record of the sale.';
+      // Oct 1 2026: if a real database answered (e.g. state stolen-gun or vehicle records), say so
+      // instead of claiming nothing could be checked.
+      const answered = dataSources.find(p => p.provider !== INTERNAL_REGISTRY && (p.details?.databases?.length || 0) > 0 && p.message);
+      message = answered
+        ? `ℹ️ ${scrub(answered.message)}`
+        : '⚠️ NO THEFT REPORTS FOUND, but no theft database for this item type could confirm it. Ask the seller for proof of ownership and keep a record of the sale.';
     }
 
     const aiNotes = aiSources.map(p => ({ note: scrub(p.message), riskLevel: p.details?.risk_level, reasoning: p.details?.reasoning })).filter(n => n.note);

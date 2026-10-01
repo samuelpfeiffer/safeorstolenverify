@@ -130,11 +130,11 @@ serve(async (req) => {
 
     let message: string;
     if (ohio.found) {
-      message = `🚨 REPORTED STOLEN in Ohio law enforcement records (Ohio Attorney General stolen gun database). Do NOT buy this firearm. Contact ${ohio.agency ? ohio.agency : 'the reporting agency or local police'}.`;
+      message = `🚨 REPORTED STOLEN in Ohio law-enforcement stolen-gun records. Do NOT buy this firearm. Contact ${ohio.agency ? ohio.agency : 'the reporting agency or local police'}.`;
     } else if (ohio.possible) {
       message = `⚠️ POSSIBLE MATCH: Ohio's stolen gun database returned a similar serial number, but not an exact match. Compare the serial carefully and ask local police to run it before you buy.`;
     } else if (ohio.checked) {
-      message = 'Not reported stolen in Ohio law enforcement records (Ohio Attorney General stolen gun database) as of today. That search covers Ohio reports only. Private buyers cannot search the national FBI database, so buy through a licensed dealer (FFL) or ask local police to run the serial.';
+      message = 'Not reported stolen in Ohio law-enforcement stolen-gun records as of today. That search covers Ohio reports only. Private buyers cannot search the national FBI database, so buy through a licensed dealer (FFL) or ask local police to run the serial.';
     } else {
       message = "Ohio's stolen gun database could not be searched right now, so this firearm's theft status is not confirmed. Buy through a licensed dealer (FFL) or ask local police to run the serial.";
     }
@@ -153,7 +153,6 @@ serve(async (req) => {
           ...(ohio.checked ? [] : ['Ohio stolen gun database (did not respond)']),
           'FBI NCIC (law enforcement and licensed dealers only)',
         ],
-        floridaSearchUrl: 'https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenGun.jsf',
       },
       responseTime: Date.now() - startTime
     };
@@ -230,7 +229,7 @@ function checkATFPatterns(serial: string): { suspicious: boolean; reason?: strin
 }
 
 const OHIO_URL = 'https://www.ohioattorneygeneral.gov/stolengun';
-const OHIO_LABEL = 'Ohio Attorney General stolen gun database (Ohio law enforcement records via LEADS)';
+const OHIO_LABEL = 'Ohio law-enforcement stolen-gun records'; // Owner rule: never name suppliers to users
 type OhioResult = { checked: boolean; found: boolean; possible: boolean; total?: number; agency?: string; message: string };
 
 /**

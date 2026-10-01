@@ -448,12 +448,10 @@ function GunVerifyTool() {
  e.preventDefault()
  if (!identifier.trim()) return
 
- const allowed = await checkGate()
- if (!allowed) return
-
+ // Oct 1 2026: the check page counts the free check itself, so don't spend one here too.
+ // Send it as a FIREARM check so the stolen-firearm database is searched.
  setLoading(true)
- window.location.href = `/verify?identifier=${identifier}&type=serial`
- setLoading(false)
+ window.location.href = `/verify?q=${encodeURIComponent(identifier.trim())}&type=firearm`
  }
 
  return (

@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import { useState } from "react";
 import { PageSEO } from "@/components/seo/PageSEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/router-compat";
@@ -77,6 +78,42 @@ const LABELS = {
 } as const;
 
 const DATE_MODIFIED = "2026-09-24";
+
+
+// Oct 1 2026: let readers check right on the guide instead of clicking through to another page.
+const TOOL_TYPES: Record<string, { type: string; placeholder: string }> = {
+  "/firearms-check": { type: "firearm", placeholder: "Enter the gun's serial number" },
+  "/imei-checker": { type: "imei", placeholder: "Enter the phone's IMEI (dial *#06#)" },
+  "/check-bike": { type: "bike", placeholder: "Enter the bike's frame serial number" },
+  "/vin-checker": { type: "vin", placeholder: "Enter the 17-character VIN" },
+};
+
+function InlineCheck({ toolHref }: { toolHref: string }) {
+  const [value, setValue] = useState("");
+  const cfg = TOOL_TYPES[toolHref] ?? { type: "", placeholder: "Enter the serial number, IMEI, or VIN" };
+  const go = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    const v = value.trim();
+    if (!v) return;
+    window.location.href = `/verify?q=${encodeURIComponent(v)}${cfg.type ? `&type=${cfg.type}` : ""}`;
+  };
+  return (
+    <form onSubmit={go} className="flex w-full flex-col gap-3 sm:flex-row">
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder={cfg.placeholder}
+        aria-label={cfg.placeholder}
+        className="flex-1 rounded-xl border border-border bg-input px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:border-primary focus:outline-hidden"
+      />
+      <Button type="submit" size="lg" disabled={!value.trim()}>
+        Check it free
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+    </form>
+  );
+}
 
 export function DefinitiveItemGuide({
   slug,
@@ -182,8 +219,11 @@ export function DefinitiveItemGuide({
           </p>
         </div>
 
+        <div className="mb-4">
+          <InlineCheck toolHref={toolHref} />
+        </div>
         <div className="mb-10 flex flex-wrap gap-3">
-          <Button asChild size="lg">
+          <Button asChild size="lg" variant="outline">
             <Link to={toolHref}>
               {toolLabel}
               <ArrowRight className="ml-2 h-4 w-4" />
