@@ -1,12 +1,22 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { runParallelVerification } from '../_shared/parallel-verification.ts';
+import { runParallelVerification } from './parallel-verification.ts';
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
-import { toCanonicalItemType } from '../_shared/itemType.ts';
 
-// Build marker: lets logs prove which bundle served a request.
-const BUILD_ID = 'verify-item-2026-09-19-auth-required-1';
-console.log(`[verify-item] BUILD ${BUILD_ID}`);
+// RULES (Sept 2026 - no-hallucination fix):
+// 1. Only real data sources (theft registries/databases) can produce a STOLEN verdict.
+// 2. AI_Analysis is advisory only. It can never set the verdict.
+// 3. Web page mentions are "possible match", never "reported stolen".
+// 4. "Not found" in our own registry is not evidence of safety.
+// 5. (Sept 27) Bad input (e.g. invalid VIN) and data mismatches (e.g. VIN vs. listing) are shown
+//    to the user as high-risk warnings, never hidden as "unavailable".
+// 6. (Sept 30) PAYWALL: paid lookups that cost us money (phone blacklist) only run for paying
+//    customers. Paid status is decided HERE on the server, never trusted from the browser.
+
+const AI_SOURCES = new Set(['AI_Analysis']);
+const WEB_SOURCES = new Set(['Web_Scraper']);
+const INTERNAL_REGISTRY = 'SafeOrStolen Database';
+const PAID_TIERS = ['unlimited', 'starter', 'personal', 'professional', 'enterprise', 'pay_per_use'];
 
 interface VerificationRequest {
   identifier: string;
@@ -15,8 +25,30 @@ interface VerificationRequest {
   fingerprint?: string;
 }
 
+function isPhoneType(t: string): boolean {
+  const s = (t || '').toLowerCase();
+  return s.includes('phone') || s.includes('mobile') || s.includes('imei') || s.includes('cell');
+}
+
+async function isPaidCustomer(supabase: any, userId: string | null, fingerprint?: string): Promise<boolean> {
+  try {
+    if (userId) {
+      const { data } = await supabase.from('subscriptions').select('id').eq('status', 'active').eq('user_id', userId).limit(1);
+      if (data && data.length) return true;
+      const { data: p } = await supabase.from('profiles').select('subscription_tier, subscription_end').eq('id', userId).maybeSingle();
+      if (p && PAID_TIERS.includes(p.subscription_tier) && (!p.subscription_end || new Date(p.subscription_end) > new Date())) return true;
+    }
+    if (fingerprint) {
+      const { data } = await supabase.from('subscriptions').select('id').eq('status', 'active').eq('fingerprint', fingerprint).limit(1);
+      if (data && data.length) return true;
+    }
+  } catch (e) {
+    console.error('[verify-item] paid check error:', e);
+  }
+  return false;
+}
+
 serve(async (req) => {
-  // Handle CORS preflight
   const corsResponse = handleCorsPreFlight(req);
   if (corsResponse) return corsResponse;
 
@@ -24,370 +56,197 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(origin);
 
   try {
-    console.log('[verify-item] build:auth-required-v1');
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    const body = await req.json() as VerificationRequest;
-    const { identifier, itemType: rawItemType } = body;
-    // Canonicalize item_type at the single server-side write boundary
-    const itemType = toCanonicalItemType(rawItemType);
-
-    // Resolve identity from the JWT only. Client-supplied userId is never
-    // trusted, and an account is required for every verification.
     let authenticatedUserId: string | null = null;
     const authHeader = req.headers.get('Authorization');
-    const anonKey = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
-    const token = authHeader?.replace('Bearer ', '').trim() ?? '';
-
-    if (token && token !== anonKey) {
-      // The project's publishable/anon key resolves to no user, which is
-      // treated the same as being signed out.
+    if (authHeader) {
+      const token = authHeader.replace('Bearer ', '');
       const { data: { user } } = await supabaseClient.auth.getUser(token);
-      authenticatedUserId = user?.id ?? null;
+      if (user) authenticatedUserId = user.id;
     }
 
-    if (!authenticatedUserId) {
-      // An account is now REQUIRED for every verification.
-      console.log('[verify-item] Rejected unauthenticated request');
-      return new Response(
-        JSON.stringify({
-          error: 'Account required',
-          code: 'AUTH_REQUIRED',
-          message: 'Create a free account or sign in to run a verification.'
-        }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
+    const { identifier, itemType, fingerprint } = await req.json() as VerificationRequest;
 
     if (!identifier || identifier.trim().length === 0) {
-      return new Response(
-        JSON.stringify({ error: 'Identifier is required' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      return new Response(JSON.stringify({ error: 'Identifier is required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
-    console.log(`[verify-item] Verification for ${authenticatedUserId ?? 'anonymous'}, ${itemType}: ${identifier}`);
+    if (!authenticatedUserId && !fingerprint) {
+      return new Response(JSON.stringify({ error: 'Fingerprint required for anonymous verification', code: 'FINGERPRINT_REQUIRED' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
 
     const startTime = Date.now();
-
     const cleanIdentifier = identifier.trim().toUpperCase();
-    // Normalized form: uppercase, spaces and hyphens stripped
-    const normalizedIdentifier = cleanIdentifier.replace(/[\s\-]/g, '');
-    // Strict allow-list. Anything outside this never touches a query.
-    const isSafeIdentifier = /^[A-Z0-9]{3,50}$/.test(normalizedIdentifier);
-    // Registry matches shorter than 6 chars are too collision-prone to accuse anyone.
-    const canReturnStolen = isSafeIdentifier && normalizedIdentifier.length >= 6;
-    // Candidate exact values (parameterized, never interpolated into a filter string)
-    const exactCandidates = Array.from(new Set([cleanIdentifier, normalizedIdentifier]));
-    const normalize = (v: unknown) =>
-      typeof v === 'string' ? v.trim().toUpperCase().replace(/[\s\-]/g, '') : '';
-
     const providers: any[] = [];
+    const paid = await isPaidCustomer(supabaseClient, authenticatedUserId, fingerprint);
+    const phone = isPhoneType(itemType || '');
+    console.log(`[verify-item] type=${itemType} paid=${paid}`);
 
-    // 1. Check internal stolen_items database first (EXACT match only)
+    // Internal registry: a match is real evidence; no match is NOT evidence of safety.
     try {
-      if (!isSafeIdentifier) {
-        console.warn('[verify-item] Skipping internal registry check: identifier failed sanitization');
-        providers.push({
-          provider: 'SafeOrStolen Database',
-          status: 'unknown',
-          confidence: 0,
-          message: 'Identifier format not supported for registry lookup',
-          responseTime: Date.now() - startTime,
-        });
+      const { data: stolenItems, error } = await supabaseClient
+        .from('stolen_items')
+        .select('*')
+        .or(`serial_number.ilike.%${cleanIdentifier}%,imei.ilike.%${cleanIdentifier}%,vin.ilike.%${cleanIdentifier}%`)
+        .limit(5);
+
+      if (!error && stolenItems && stolenItems.length > 0) {
+        providers.push({ provider: INTERNAL_REGISTRY, status: 'stolen', confidence: 98,
+          message: 'Item found in SafeOrStolen stolen items registry', details: { matches: stolenItems.length },
+          responseTime: Date.now() - startTime });
       } else {
-        // Three separate parameterized queries, unioned in JS. No raw .or() interpolation.
-        const [bySerial, byImei, byVin] = await Promise.all([
-          supabaseClient.from('stolen_items').select('*').in('serial_number', exactCandidates).limit(5),
-          supabaseClient.from('stolen_items').select('*').in('imei', exactCandidates).limit(5),
-          supabaseClient.from('stolen_items').select('*').in('vin', exactCandidates).limit(5),
-        ]);
-
-        const seen = new Set<string>();
-        const matches: any[] = [];
-        for (const res of [bySerial, byImei, byVin]) {
-          if (res.error || !res.data) continue;
-          for (const row of res.data) {
-            // Re-verify exact normalized equality defensively
-            const hit =
-              normalize(row.serial_number) === normalizedIdentifier ||
-              normalize(row.imei) === normalizedIdentifier ||
-              normalize(row.vin) === normalizedIdentifier;
-            if (hit && !seen.has(row.id)) {
-              seen.add(row.id);
-              matches.push(row);
-            }
-          }
-        }
-
-        if (matches.length > 0 && canReturnStolen) {
-          providers.push({
-            provider: 'SafeOrStolen Database',
-            status: 'stolen',
-            confidence: 98,
-            message: 'Item found in SafeOrStolen stolen items registry',
-            details: { matches: matches.length },
-            responseTime: Date.now() - startTime,
-          });
-        } else if (matches.length > 0) {
-          providers.push({
-            provider: 'SafeOrStolen Database',
-            status: 'unknown',
-            confidence: 0,
-            message: 'Identifier too short to confirm a registry match',
-            responseTime: Date.now() - startTime,
-          });
-        } else {
-          providers.push({
-            provider: 'SafeOrStolen Database',
-            status: 'safe',
-            confidence: 85,
-            message: 'Not found in SafeOrStolen stolen items registry',
-            responseTime: Date.now() - startTime,
-          });
-        }
+        providers.push({ provider: INTERNAL_REGISTRY, status: 'unknown', confidence: 0,
+          message: 'No report in the SafeOrStolen registry', responseTime: Date.now() - startTime });
       }
     } catch (dbError) {
       console.error('[verify-item] Database check error:', dbError);
     }
 
-    // 1b. Check mirrored stolen registries (stolen_registry) — EXACT normalized match only
     try {
-      if (!isSafeIdentifier) {
-        console.warn('[verify-item] Skipping stolen_registry check: identifier failed sanitization');
-      } else {
-        const { data: mirrored, error: mirrorError } = await supabaseClient
-          .from('stolen_registry')
-          .select('*')
-          .eq('serial_normalized', normalizedIdentifier)
-          .limit(5);
-
-        const hit = !mirrorError && mirrored && mirrored.length > 0 ? mirrored[0] : null;
-
-        if (hit && canReturnStolen) {
-          const providerName = hit.source === 'bikeindex' ? 'Bike Index' : String(hit.source);
-          const parts: string[] = ['Match found in mirrored stolen registry'];
-          if (hit.manufacturer) parts.push(`Manufacturer: ${hit.manufacturer}`);
-          if (hit.model) parts.push(`Model: ${hit.model}`);
-          if (hit.date_stolen) parts.push(`Date stolen: ${new Date(hit.date_stolen).toISOString().slice(0, 10)}`);
-          if (hit.location) parts.push(`Location: ${hit.location}`);
-          if (hit.source_url) parts.push(`Source: ${hit.source_url}`);
-          providers.push({
-            provider: providerName,
-            status: 'stolen',
-            confidence: 95,
-            message: parts.join(' · '),
-            details: { source: hit.source, source_url: hit.source_url },
-            responseTime: Date.now() - startTime,
-          });
-        } else if (hit) {
-          providers.push({
-            provider: 'Mirrored Stolen Registries',
-            status: 'unknown',
-            confidence: 0,
-            message: 'Identifier too short to confirm a registry match',
-            responseTime: Date.now() - startTime,
-          });
-        } else {
-          providers.push({
-            provider: 'Mirrored Stolen Registries',
-            status: 'safe',
-            confidence: 80,
-            message: 'Not found in mirrored stolen registries',
-            responseTime: Date.now() - startTime,
-          });
-        }
-      }
-    } catch (mirrorErr) {
-      console.error('[verify-item] stolen_registry check error:', mirrorErr);
-    }
-
-
-    // 2. Run enhanced parallel verification with item-type-specific sources
-    try {
-      console.log(`[verify-item] Running enhanced parallel verification for ${itemType}...`);
-      
       const parallelResult = await runParallelVerification(supabaseClient, {
-        identifier: cleanIdentifier,
-        itemType,
-        includeWebScraping: true,
-        includeAI: true
+        identifier: cleanIdentifier, itemType: itemType || 'unknown', includeWebScraping: true, includeAI: true, paid
       });
-
-      // Add results from parallel verification
-      if (parallelResult.details?.all_sources) {
-        for (const source of parallelResult.details.all_sources) {
-          // Avoid duplicate providers
-          const existingProvider = providers.find(p => p.provider === source.source);
-          if (!existingProvider) {
-            providers.push({
-              provider: source.source,
-              status: source.status,
-              confidence: source.confidence,
-              message: source.message,
-              details: source.details,
-              responseTime: source.responseTime || (Date.now() - startTime),
-            });
-          }
+      const sources = parallelResult.details?.all_sources || [parallelResult];
+      for (const source of sources) {
+        if (!providers.find(p => p.provider === source.source)) {
+          providers.push({ provider: source.source, status: source.status, confidence: source.confidence,
+            message: source.message, details: source.details, responseTime: source.responseTime || (Date.now() - startTime) });
         }
-      } else {
-        providers.push({
-          provider: parallelResult.source,
-          status: parallelResult.status,
-          confidence: parallelResult.confidence,
-          message: parallelResult.message,
-          details: parallelResult.details,
-          responseTime: Date.now() - startTime,
-        });
       }
-      
-      console.log(`[verify-item] Parallel verification added ${providers.length - 1} additional sources`);
     } catch (parallelError) {
       console.error('[verify-item] Parallel verification error:', parallelError);
     }
 
-    // 3. Check external verification cache
-    try {
-      const { data: cachedResult } = await supabaseClient
-        .from('external_verification_cache')
-        .select('*')
-        .eq('identifier', cleanIdentifier)
-        .gt('expires_at', new Date().toISOString())
-        .single();
+    const dataSources = providers.filter(p => !AI_SOURCES.has(p.provider) && !WEB_SOURCES.has(p.provider));
+    const webSources = providers.filter(p => WEB_SOURCES.has(p.provider));
+    const aiSources = providers.filter(p => AI_SOURCES.has(p.provider));
 
-      if (cachedResult) {
-        const cachedData = cachedResult.result as any;
-        providers.push({
-          provider: cachedResult.source || 'Cached Verification',
-          status: cachedData.status || 'safe',
-          confidence: cachedData.confidence || 75,
-          message: 'Previously verified - cached result',
-          details: cachedData,
-          responseTime: Date.now() - startTime,
-        });
-      }
-    } catch (cacheError) {
-      // Cache miss is fine, continue
-    }
-
-    // Aggregate results
-    const hasStolenReport = providers.some(p => p.status === 'stolen');
-    const hasLostReport = providers.some(p => p.status === 'lost');
-    // Only sources that actually answered count toward confidence.
-    // "unknown" (and errored) sources are excluded entirely; if nothing
-    // answered, confidence is null rather than a misleading low number.
-    const answeredChecks = providers.filter(
-      p => p.status !== 'error' && p.status !== 'unknown' && p.confidence > 0
-    );
-    const avgConfidence: number | null = answeredChecks.length > 0
-      ? Math.round(answeredChecks.reduce((sum, p) => sum + p.confidence, 0) / answeredChecks.length)
-      : null;
-    const successfulChecks = answeredChecks;
+    const stolenFrom = dataSources.filter(p => p.status === 'stolen');
+    const lostFrom = dataSources.filter(p => p.status === 'lost');
+    const invalidFrom = dataSources.filter(p => p.status === 'error' && p.details?.invalidInput);
+    const suspiciousFrom = dataSources.filter(p => p.status === 'suspicious');
+    const cleanFrom = dataSources.filter(p => p.status === 'safe' && p.confidence > 0);
+    const webFlag = webSources.filter(p => p.status === 'stolen');
 
     let finalStatus: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
     let riskLevel: 'low' | 'medium' | 'high' | 'critical';
     let message: string;
+    let confidence: number;
 
-    if (hasStolenReport) {
+    if (stolenFrom.length > 0) {
       finalStatus = 'stolen';
       riskLevel = 'critical';
-      message = '🚨 STOLEN: This item has been reported as stolen. Do NOT purchase.';
-    } else if (hasLostReport) {
+      confidence = Math.max(...stolenFrom.map(p => p.confidence));
+      message = `🚨 THEFT REPORT FOUND: ${stolenFrom.map(p => p.provider === 'IMEI_Verification' ? 'The phone blacklist' : p.provider).join(', ')} lists this item as lost or stolen. Do NOT purchase until this is resolved with police.`;
+    } else if (lostFrom.length > 0) {
       finalStatus = 'lost';
       riskLevel = 'high';
-      message = '⚠️ LOST: This item has been reported as lost. Exercise extreme caution.';
-    } else if (successfulChecks.length > 0) {
+      confidence = Math.max(...lostFrom.map(p => p.confidence));
+      message = `⚠️ LOST REPORT FOUND: ${lostFrom.map(p => p.provider).join(', ')} lists this item as lost. Exercise extreme caution.`;
+    } else if (invalidFrom.length > 0) {
+      finalStatus = 'unknown';
+      riskLevel = 'high';
+      confidence = 0;
+      message = `⚠️ CHECK THIS NUMBER: ${invalidFrom[0].message} Re-enter it carefully. If the seller's paperwork or the item itself shows this exact number, treat that as a serious red flag.`;
+    } else if (suspiciousFrom.length > 0) {
+      finalStatus = 'unknown';
+      riskLevel = 'high';
+      confidence = 0;
+      message = suspiciousFrom[0].message || '⚠️ The details do not match. Do not buy until this is explained.';
+    } else if (webFlag.length > 0) {
+      finalStatus = 'unknown';
+      riskLevel = 'high';
+      confidence = 50;
+      message = '⚠️ POSSIBLE MATCH: A web page may mention this number in a theft context. This is not an official report. Ask the seller for proof of ownership before buying.';
+    } else if (cleanFrom.length > 0) {
       finalStatus = 'safe';
       riskLevel = 'low';
-      message = `✅ SAFE: Checked ${successfulChecks.length} source(s). No theft reports found.`;
+      confidence = Math.round(cleanFrom.reduce((s, p) => s + p.confidence, 0) / cleanFrom.length);
+      const names = cleanFrom.map(p => p.provider === 'IMEI_Verification' ? 'the lost and stolen phone blacklist' : p.provider).join(', ');
+      message = `✅ NO THEFT REPORTS FOUND in ${names}. No check can guarantee an item was never stolen, so keep your receipt and the seller's info.`;
+    } else if (phone && !paid) {
+      finalStatus = 'unknown';
+      riskLevel = 'medium';
+      confidence = 0;
+      message = '🔒 FREE CHECK DONE: This IMEI number is real and correctly formed. The official lost and stolen phone blacklist search is part of the full check. Run the full check before you hand over any money.';
     } else {
       finalStatus = 'unknown';
       riskLevel = 'medium';
-      message = '⚠️ INCONCLUSIVE: Unable to verify. Proceed with caution.';
+      confidence = 0;
+      message = '⚠️ NO THEFT REPORTS FOUND, but no theft database for this item type could confirm it. Ask the seller for proof of ownership and keep a record of the sale.';
     }
 
-    const result = {
+    const aiNotes = aiSources.map(p => ({ note: p.message, riskLevel: p.details?.risk_level, reasoning: p.details?.reasoning })).filter(n => n.note);
+
+    const result: Record<string, unknown> = {
       identifier: cleanIdentifier,
-      itemType,
-      finalStatus,
-      confidence: avgConfidence,
-      riskLevel,
-      message,
+      itemType: itemType || 'unknown',
+      finalStatus, confidence, riskLevel, message,
       providers,
+      aiNotes,
+      aiDisclaimer: aiNotes.length ? 'AI notes are general guidance only and never determine whether an item is stolen.' : undefined,
       checkedSources: providers.map(p => p.provider),
+      paidCheck: paid,
+      upgradeRequired: phone && !paid,
       timestamp: new Date().toISOString(),
     };
 
-    // Store result in verification_searches (main search log)
     try {
-      await supabaseClient
+      const { data: inserted } = await supabaseClient
         .from('verification_searches')
         .insert({
           user_id: authenticatedUserId,
           serial_number: cleanIdentifier,
-          item_type: itemType,
-          result: { 
-            status: finalStatus, 
-            confidence: avgConfidence,
-            riskLevel,
-            message,
+          item_type: itemType || 'unknown',
+          fingerprint: authenticatedUserId ? null : fingerprint,
+          result: { status: finalStatus, confidence, riskLevel, message, paid,
             providers: providers.map(p => ({ provider: p.provider, status: p.status, confidence: p.confidence })),
-            checkedSources: providers.map(p => p.provider)
-          },
-        });
-      console.log('[verify-item] Search recorded in verification_searches');
+            checkedSources: providers.map(p => p.provider), verdictRules: 'v4-paywall' },
+        })
+        .select('id, share_token')
+        .single();
+      if (inserted?.share_token) {
+        result.shareToken = inserted.share_token;
+        result.shareUrl = `https://safeorstolen.com/verification/shared/${inserted.share_token}`;
+      }
     } catch (searchError) {
       console.error('[verify-item] Failed to store search:', searchError);
     }
 
-    // Also store in verification_results for detailed analysis
-    try {
-      await supabaseClient
+    if (authenticatedUserId) {
+      const { error: storeError } = await supabaseClient
         .from('verification_results')
         .insert({
           user_id: authenticatedUserId,
           serial_number: cleanIdentifier,
-          item_type: itemType,
-          status: finalStatus,
-          confidence_score: avgConfidence,
-          api_source: 'verify-item',
+          item_type: itemType || 'unknown',
           verification_status: finalStatus,
-          details: { providers, riskLevel, message },
+          confidence_score: confidence,
+          api_source: 'verify-item',
+          api_response: { providers, riskLevel, message, aiNotes },
+          risk_assessment: { riskLevel, finalStatus },
         });
-    } catch (storeError) {
-      console.error('[verify-item] Failed to store result:', storeError);
+      if (storeError) console.error('[verify-item] Failed to store result:', storeError);
+      result.savedToDashboard = !storeError;
+    } else {
+      result.savedToDashboard = false;
     }
 
     console.log(`[verify-item] Complete in ${Date.now() - startTime}ms - Status: ${finalStatus}`);
-
-    return new Response(
-      JSON.stringify(result),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify(result), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
 
   } catch (error) {
     console.error('[verify-item] Internal error:', error);
-    
-    // Get CORS headers for error response
-    const origin = req.headers.get('origin');
-    const errorCorsHeaders = getCorsHeaders(origin);
-    
-    return new Response(
-      JSON.stringify({ 
-        error: 'Verification failed',
-        code: 'INTERNAL_ERROR',
-        finalStatus: 'error',
-        riskLevel: 'medium',
-        message: 'Unable to complete verification. Please try again.',
-        providers: [],
-        checkedSources: [],
-        timestamp: new Date().toISOString(),
-      }),
-      { status: 500, headers: { ...errorCorsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify({
+      error: 'Verification failed', code: 'INTERNAL_ERROR', finalStatus: 'error', riskLevel: 'medium',
+      message: 'Unable to complete verification. Please try again.', providers: [], checkedSources: [],
+      timestamp: new Date().toISOString(),
+    }), { status: 500, headers: { ...getCorsHeaders(req.headers.get('origin')), 'Content-Type': 'application/json' } });
   }
 });
