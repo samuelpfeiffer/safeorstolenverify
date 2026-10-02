@@ -107,7 +107,7 @@ export default function CompleteVinGuide() {
             <li>Theft reports in the last 5 years</li>
             <li>Publicly available total loss information</li>
           </ul>
-          <p><strong>Limitation:</strong> Does not show accident history, title status, odometer readings, or liens. Limited to 5 checks per day.</p>
+          <p><strong>Limitation:</strong> Does not show accident history, title status, odometer readings, or liens. Free to use.</p>
 
           <h3>Method 3: State DMV VIN Verification</h3>
           <p>Each state's DMV provides title history, but only for vehicles registered in that state:</p>

@@ -356,15 +356,14 @@ async function sha256Hex(v: string): Promise<string> {
   return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-/** No-account visitors: 2 lifetime free checks per browser, 6 per connection per day. */
+/** No-account visitors: 2 lifetime free checks per browser, plus a lifetime cap per connection (bot protection). Nothing resets. */
 async function anonymousGate(
   admin: AdminClient,
   fingerprint: string,
   clientIp: string | null,
 ): Promise<GateResult> {
   if (clientIp) {
-    const day = new Date().toISOString().slice(0, 10);
-    const ipKey = `ip:${(await sha256Hex(clientIp)).slice(0, 32)}:${day}`;
+    const ipKey = `ip:${(await sha256Hex(clientIp)).slice(0, 32)}`;
     const { data: ipRow } = await admin.from('usage_tracking').select('*').eq('fingerprint', ipKey).maybeSingle();
     if ((ipRow?.check_count ?? 0) >= ANON_DAILY_PER_IP) {
       return { allowed: false, reason: 'free_limit', plan: 'free', checksUsed: FREE_LIMIT, checksLimit: FREE_LIMIT };
