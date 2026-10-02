@@ -349,7 +349,7 @@ async function runInternalRegistry(
  * Free-usage allowance and plan limits, scoped to the account.
  * The database counter is authoritative; server instances are stateless.
  */
-const ANON_DAILY_PER_IP = 6;
+const ANON_LIFETIME_PER_IP = 6;
 
 async function sha256Hex(v: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(v));
@@ -365,7 +365,7 @@ async function anonymousGate(
   if (clientIp) {
     const ipKey = `ip:${(await sha256Hex(clientIp)).slice(0, 32)}`;
     const { data: ipRow } = await admin.from('usage_tracking').select('*').eq('fingerprint', ipKey).maybeSingle();
-    if ((ipRow?.check_count ?? 0) >= ANON_DAILY_PER_IP) {
+    if ((ipRow?.check_count ?? 0) >= ANON_LIFETIME_PER_IP) {
       return { allowed: false, reason: 'free_limit', plan: 'free', checksUsed: FREE_LIMIT, checksLimit: FREE_LIMIT };
     }
     if (ipRow) {
