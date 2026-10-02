@@ -203,6 +203,24 @@ export type Database = {
         }
         Relationships: []
       }
+      app_config: {
+        Row: {
+          key: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          key: string
+          updated_at?: string
+          value: string
+        }
+        Update: {
+          key?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
       audit_logs: {
         Row: {
           action: string
@@ -439,6 +457,33 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_posts_status_backup_20260930: {
+        Row: {
+          backed_up_at: string | null
+          id: string | null
+          published_at: string | null
+          slug: string | null
+          status: string | null
+          title: string | null
+        }
+        Insert: {
+          backed_up_at?: string | null
+          id?: string | null
+          published_at?: string | null
+          slug?: string | null
+          status?: string | null
+          title?: string | null
+        }
+        Update: {
+          backed_up_at?: string | null
+          id?: string | null
+          published_at?: string | null
+          slug?: string | null
+          status?: string | null
+          title?: string | null
+        }
+        Relationships: []
+      }
       blog_tags: {
         Row: {
           created_at: string
@@ -499,6 +544,36 @@ export type Database = {
           user_id?: string | null
           verdict?: string
           verification_id?: string | null
+        }
+        Relationships: []
+      }
+      chat_threads: {
+        Row: {
+          created_at: string
+          id: string
+          messages: Json
+          results: Json
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          messages?: Json
+          results?: Json
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          messages?: Json
+          results?: Json
+          title?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -1010,36 +1085,42 @@ export type Database = {
           amount: number
           created_at: string
           currency: string | null
+          fingerprint: string | null
+          guest_email: string | null
           id: string
           status: string | null
           stripe_customer_id: string | null
           stripe_session_id: string | null
           updated_at: string
-          user_id: string
+          user_id: string | null
           verification_id: string | null
         }
         Insert: {
           amount: number
           created_at?: string
           currency?: string | null
+          fingerprint?: string | null
+          guest_email?: string | null
           id?: string
           status?: string | null
           stripe_customer_id?: string | null
           stripe_session_id?: string | null
           updated_at?: string
-          user_id: string
+          user_id?: string | null
           verification_id?: string | null
         }
         Update: {
           amount?: number
           created_at?: string
           currency?: string | null
+          fingerprint?: string | null
+          guest_email?: string | null
           id?: string
           status?: string | null
           stripe_customer_id?: string | null
           stripe_session_id?: string | null
           updated_at?: string
-          user_id?: string
+          user_id?: string | null
           verification_id?: string | null
         }
         Relationships: [
@@ -1379,30 +1460,45 @@ export type Database = {
       user_watchlist: {
         Row: {
           alert_email: boolean | null
+          alerted_at: string | null
           created_at: string | null
           description: string | null
           id: string
           identifier: string
           item_type: string
+          last_checked_at: string | null
+          last_sources: Json | null
+          last_status: string | null
           user_id: string
+          watch_until: string | null
         }
         Insert: {
           alert_email?: boolean | null
+          alerted_at?: string | null
           created_at?: string | null
           description?: string | null
           id?: string
           identifier: string
           item_type: string
+          last_checked_at?: string | null
+          last_sources?: Json | null
+          last_status?: string | null
           user_id: string
+          watch_until?: string | null
         }
         Update: {
           alert_email?: boolean | null
+          alerted_at?: string | null
           created_at?: string | null
           description?: string | null
           id?: string
           identifier?: string
           item_type?: string
+          last_checked_at?: string | null
+          last_sources?: Json | null
+          last_status?: string | null
           user_id?: string
+          watch_until?: string | null
         }
         Relationships: []
       }
@@ -1493,6 +1589,7 @@ export type Database = {
           result: Json | null
           serial_number: string
           share_token: string
+          updated_at: string | null
           user_id: string | null
         }
         Insert: {
@@ -1503,6 +1600,7 @@ export type Database = {
           result?: Json | null
           serial_number: string
           share_token?: string
+          updated_at?: string | null
           user_id?: string | null
         }
         Update: {
@@ -1513,6 +1611,7 @@ export type Database = {
           result?: Json | null
           serial_number?: string
           share_token?: string
+          updated_at?: string | null
           user_id?: string | null
         }
         Relationships: []
@@ -1672,6 +1771,7 @@ export type Database = {
       }
       get_complete_schema: { Args: never; Returns: Json }
       get_current_user_role: { Args: never; Returns: string }
+      get_my_plan_summary: { Args: never; Returns: Json }
       get_newsletter_subscriber_count: { Args: never; Returns: number }
       get_proof_record_public: {
         Args: { p_id: string }
