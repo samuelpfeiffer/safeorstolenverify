@@ -3,14 +3,14 @@
 SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers. Users can check an IMEI, VIN, license plate, firearm serial, bicycle serial, or another serial-numbered item. They can also submit a marketplace listing URL for identifier extraction and analysis.
 
 ## Sources actually checked
-- Vehicles (VIN or Arizona plate): TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies (updated twice daily); NHTSA VIN decoding and model safety recalls; VIN check-digit validation.
-- Bicycles: Bike Index stolen registry.
+- Vehicles (VIN or Arizona plate): Arizona law-enforcement stolen-vehicle records (thefts reported by participating Arizona agencies); federal VIN decoding and model safety recalls; VIN check-digit validation.
+- Bicycles: a national stolen-bicycle registry.
 - All items: SafeOrStolen's own stolen-item reports.
 - Phones: IMEI format and check-digit validation only. Carrier-blacklist checking is not currently active.
-- Firearms: the Ohio Attorney General's stolen gun database (guns reported stolen by Ohio law enforcement agencies via LEADS, updated every 24 hours), plus a check for altered or obliterated serials.
+- Firearms: Ohio law-enforcement stolen-gun records (guns reported stolen by Ohio agencies), plus altered-serial checks.
 - Public web mentions and AI notes may be added when available. AI never decides a result, and a web mention is shown as a possible match, never as a theft report.
 
-SafeOrStolen does not query NCIC, NICB, NMVTIS, DMV, insurance, Carfax, or AutoCheck systems. Its law enforcement sources are TheftAZ (Arizona vehicle thefts) and the Ohio Attorney General's stolen gun database (Ohio gun thefts).
+SafeOrStolen says plainly which records each result searched. Its law-enforcement sources cover Arizona vehicle thefts and Ohio gun thefts, so a clean result elsewhere is not proof an item was never stolen.
 
 ## Verdicts
 - STOLEN: strong evidence was returned.
@@ -29,16 +29,15 @@ Guides cover vehicles, phones, iPhones, firearms, bicycles and e-bikes, laptops 
 
 ## Vehicle workflow
 1. Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration.
-2. Search NICB VINCheck separately for participating theft and total-loss records.
-3. Buy an NMVTIS report from an approved provider for title information.
-4. Consider a Carfax or AutoCheck report for additional history.
+2. Compare the title to the seller's photo ID and make sure the names match.
+3. Check that the title is not marked salvage, rebuilt, or flood.
+4. Ask the seller for maintenance records and the bill of sale history.
 5. Inspect the vehicle for altered, replaced, or mismatched VIN labels.
 6. Ask local police whether they accept public VIN-check requests.
-7. Run the VIN or Arizona plate through SafeOrStolen. It searches TheftAZ (Arizona police stolen-vehicle records), decodes the VIN, lists recalls, and its Buyer's Check records steps 1, 2, and the title-to-seller-ID comparison in a Proof of Clean Purchase.
+7. Run the VIN or Arizona plate through SafeOrStolen. It searches Arizona law-enforcement stolen-vehicle records, decodes the VIN, lists recalls, and its Buyer's Check records the VIN match and the title-to-seller-ID comparison in a Proof of Clean Purchase.
 
 Guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Tool: https://safeorstolen.com/vin-checker
-Arizona: https://safeorstolen.com/theftaz
 
 ## Phone workflow
 Match the IMEI shown by *#06#, Settings, the box, and the receipt. Confirm that iPhone Activation Lock or Android account protection has been removed in person. Ask the carrier separately about network eligibility, blacklist status, and outstanding finance. SafeOrStolen does not perform that carrier check.

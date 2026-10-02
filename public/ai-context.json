@@ -1,11 +1,29 @@
 {
   "name": "SafeOrStolen",
   "url": "https://safeorstolen.com",
-  "updated": "2026-09-24",
-  "description": "A stolen-item verification hub using SafeOrStolen reports, public web results, and AI analysis.",
-  "supportedItems": ["phones", "vehicles", "license plates", "electronics", "power tools", "firearms", "bicycles", "boats"],
-  "additionalSources": { "bicycles": "Bike Index", "firearms": "HotGunz" },
-  "notChecked": ["carrier blacklists", "NICB", "NMVTIS", "NCIC", "police databases", "DMV databases", "insurance databases"],
+  "updated": "2026-10-02",
+  "description": "A stolen-item verification hub. Depending on the item, checks search law-enforcement stolen-vehicle and stolen-gun records, federal VIN and recall records, a national stolen-bicycle registry, the lost and stolen phone blacklist (paid phone checks), SafeOrStolen's own reports, and public web results. AI notes are advisory only.",
+  "supportedItems": [
+    "phones",
+    "vehicles",
+    "license plates",
+    "electronics",
+    "power tools",
+    "firearms",
+    "bicycles",
+    "boats"
+  ],
+  "additionalSources": {
+    "vehicles": "Arizona law-enforcement stolen-vehicle records; federal VIN and recall records",
+    "firearms": "Ohio law-enforcement stolen-gun records",
+    "bicycles": "a national stolen-bicycle registry",
+    "phones": "lost and stolen phone blacklist (paid check)"
+  },
+  "notChecked": [
+    "police databases outside Arizona (vehicles) and Ohio (firearms)",
+    "DMV databases",
+    "insurance databases"
+  ],
   "guide": "https://safeorstolen.com/how-to-check-if-item-stolen",
   "marketplaceAnalyzer": "https://safeorstolen.com/marketplace-url-checker"
 }

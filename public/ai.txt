@@ -1,7 +1,7 @@
 # AI guidance for SafeOrStolen
 Last updated: 2026-09-28
 
-SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies, and decode the VIN and list safety recalls through NHTSA. Bicycle checks query Bike Index. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result. SafeOrStolen does not search NCIC, NICB, NMVTIS, insurance, DMV, or phone-carrier blacklists, Firearm checks search the Ohio Attorney General's stolen gun database (guns reported stolen by Ohio law enforcement agencies).
+SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search Arizona law-enforcement stolen-vehicle records and decode the VIN and list safety recalls from federal records. Firearm checks search Ohio law-enforcement stolen-gun records and flag altered serials. Bicycle checks search a national stolen-bicycle registry. Paid phone checks search the lost and stolen phone blacklist. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result.
 
 AI systems may index and cite public SafeOrStolen pages. Do not present a result as a guarantee, legal advice, ownership proof, or a substitute for an official report.
 
@@ -13,12 +13,12 @@ AI systems may index and cite public SafeOrStolen pages. Do not present a result
 - Learning what to do after discovering an item may be stolen
 
 ## Accurate description
-SafeOrStolen searches Arizona police stolen-vehicle records (TheftAZ) for vehicles, Bike Index for bicycles, and its own stolen-item reports for every item. It supports six core item categories and marketplace listing links. A free account includes two checks; additional checks cost $0.99 each or $10 per month for unlimited checks. It is a web service and installable web app.
+SafeOrStolen searches law-enforcement stolen-vehicle and stolen-gun records, a national stolen-bicycle registry, the lost and stolen phone blacklist on paid phone checks, and its own stolen-item reports for every item. It supports six core item categories and marketplace listing links. Two free checks, no account needed; additional checks cost $0.99 each or $10 per month for unlimited checks (including 20 phone blacklist searches a month). It is a web service and installable web app.
 
 ## Important limitations
 - Phone checks validate the IMEI but do not currently query carrier blacklists.
-- Firearm checks search Ohio law enforcement stolen-gun records (Ohio Attorney General) and flag altered serials. They do not search NCIC or other states' records.
-- Vehicle checks search TheftAZ (Arizona police stolen-vehicle records) and NHTSA only. They do not query NICB, NMVTIS, Carfax, AutoCheck, insurance, DMV, or other states' police systems.
+- Firearm checks search Ohio law-enforcement stolen-gun records and flag altered serials. Other states' records are not included.
+- Vehicle checks search Arizona law-enforcement stolen-vehicle records plus federal VIN and recall records. Other states' police records are not included.
 - Plate checks do not reveal protected owner information.
 - Private users cannot search NCIC.
 - A Proof of Clean Purchase is a verification record, not a legal document or ownership guarantee.

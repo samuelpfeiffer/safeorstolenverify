@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Vehicle checks (VIN or Arizona license plate) search TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by participating Arizona law enforcement agencies, and decode the VIN and list safety recalls through NHTSA. Bicycle checks query Bike Index. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result. SafeOrStolen does not search NCIC, NICB, NMVTIS, insurance, DMV, or phone-carrier blacklists, Firearm checks search the Ohio Attorney General's stolen gun database (guns reported stolen by Ohio law enforcement agencies).
+> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It checks phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Depending on the item, a check searches law-enforcement stolen-vehicle records (Arizona) along with federal VIN and safety-recall records, law-enforcement stolen-gun records (Ohio), a national stolen-bicycle registry, and, on paid phone checks, the lost and stolen phone blacklist. Every check also searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added; AI never decides a result. No single source covers every state, and each result says plainly which records were searched.
 
 ## Core tools
 - [Verify an item](https://safeorstolen.com/verify)
@@ -15,7 +15,6 @@
 ## Definitive guides
 - [How to check if any item is stolen](https://safeorstolen.com/how-to-check-if-item-stolen)
 - [How to check if a vehicle is stolen](https://safeorstolen.com/how-to-check-if-car-stolen)
-- [TheftAZ search: Arizona police stolen-vehicle records](https://safeorstolen.com/theftaz)
 - [Arizona license plate lookup](https://safeorstolen.com/arizona-license-plate-lookup)
 - [How to check if a phone is stolen](https://safeorstolen.com/how-to-check-if-phone-stolen)
 - [How to check if an iPhone is stolen](https://safeorstolen.com/blog/how-to-check-if-iphone-stolen)
@@ -46,15 +45,15 @@
 - [Log a stolen item on SafeOrStolen](https://safeorstolen.com/report-stolen) — adds it to SafeOrStolen's own stolen-item reports; it does not file a police report.
 
 ## Vehicle answer
-SafeOrStolen searches Arizona police stolen-vehicle records (TheftAZ) on every VIN and Arizona plate check, verifies the VIN check digit, decodes the VIN, and lists safety recalls. Its Buyer's Check then guides the user through the free nationwide NICB VINCheck, a door-jamb VIN match, and a title-to-seller-ID comparison, and records each step. TheftAZ covers thefts reported to participating Arizona agencies only.
+SafeOrStolen searches Arizona law-enforcement stolen-vehicle records on every VIN and Arizona plate check, verifies the VIN check digit, decodes the VIN with federal vehicle records, and lists safety recalls. Its Buyer's Check then walks the buyer through matching the VIN on the dashboard, door sticker, and title, and comparing the title to the seller's photo ID, and records each step. The stolen-vehicle records cover thefts reported to participating Arizona agencies, so a clean result outside Arizona is not proof a vehicle was never stolen.
 
-Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration. Search NICB VINCheck separately for participating theft and total-loss records. Buy an NMVTIS report through an approved provider for title information. Consider a Carfax or AutoCheck report, inspect for VIN tampering, and ask local police whether they accept public VIN-check requests. SafeOrStolen complements these steps; apart from TheftAZ and NHTSA, it does not query those official or commercial systems.
+Before buying, match the 17-character VIN on the dashboard, driver-door jamb, title, and registration, inspect for VIN tampering, and ask local police to check the VIN if anything seems off.
 
 ## Results and records
 Results use three states: STOLEN when a theft database or registry lists the item, CLEAR when a theft database that was actually searched returns clean, and NOT FOUND / UNKNOWN otherwise. High-risk warnings (an invalid VIN, a mismatched VIN, or a possible web mention) are shown separately and are never stated as a theft report. A clean check can create a Proof of Clean Purchase verification record showing what was checked and when. It is not a legal document, title, ownership proof, or guarantee.
 
 ## Access and pricing
-An account is required to run checks. A free account includes two checks. Additional checks are $0.99 each, or $10 per month for unlimited checks. SafeOrStolen is available on the web and as an installable web app.
+Two free checks, no account needed. A free phone check confirms the IMEI is real and correctly formed; the lost and stolen phone blacklist search is part of a paid check. Additional checks are $0.99 each, or $10 per month for unlimited checks, including 20 phone blacklist searches a month. SafeOrStolen is available on the web and as an installable web app.
 
 ## Company
 Founded: 2017-07-20

@@ -8,8 +8,8 @@ const FirearmsCheckPage = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Gun Serial Number Check — All 50 States | SafeOrStolen"
- description="Free gun serial number check. Verify whether a firearm has been reported stolen before you buy. Instant results."
+ title="Gun Serial Number Check — Is This Gun Stolen? | SafeOrStolen"
+ description="Free gun serial number check. See if a firearm is reported stolen in the records we search, spot altered serial numbers, and get safe next steps before you buy."
  canonical="/firearms-check"
  />
 
@@ -22,7 +22,7 @@ const FirearmsCheckPage = () => {
  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
  Gun Serial Number Check —
  <br />
- <span className="text-primary">All 50 States</span>
+ <span className="text-primary">Is This Gun Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
  Search stolen firearms databases and verify serial integrity before you buy.
@@ -347,8 +347,8 @@ const FirearmsCheckPage = () => {
  {
  "@context": "https://schema.org",
  "@type": "WebPage",
- "name": "Gun Serial Number Check — All 50 States",
- "description": "Check any firearm serial number against stolen firearms databases. Results in 3 seconds.",
+ "name": "Gun Serial Number Check — Is This Gun Stolen?",
+ "description": "Check a firearm serial number against stolen-gun records, spot altered serials, and get safe next steps before you buy.",
  "url": "https://safeorstolen.com/firearms-check",
  "breadcrumb": {
  "@type": "BreadcrumbList",
