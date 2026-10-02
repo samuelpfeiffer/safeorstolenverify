@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import {
   Plus, MessageSquare, Trash2, Pencil, Check, X, ShieldCheck, Search,
   FileCheck2, Award, LogOut, CreditCard, LogIn, Smartphone,
@@ -159,12 +160,10 @@ export const ConversationSidebar: React.FC<Props> = ({
   );
 
   return (
-    <div className="h-full flex flex-col bg-card/40 border-r border-border/60">
+    <div className="h-full flex flex-col bg-card/40 border-r border-border">
       {/* Header */}
-      <div className="px-3 py-3 border-b border-border/60 flex items-center gap-2">
-        <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
-          <ShieldCheck className="w-4 h-4 text-primary" />
-        </div>
+      <div className="px-3 py-3 border-b border-border flex items-center gap-2">
+        <ShieldLogo size={28} className="shrink-0" />
         <div className="flex-1 min-w-0">
           <div className="text-xs font-bold text-foreground leading-tight">SafeOrStolen</div>
           <div className="text-[10px] text-muted-foreground leading-tight">Your dashboard</div>
@@ -179,7 +178,7 @@ export const ConversationSidebar: React.FC<Props> = ({
       {/* New check + search + tabs */}
       <div className="p-2 space-y-2">
         <Button onClick={onNew} variant="outline"
-          className="w-full justify-start gap-2 h-9 text-sm border-border/60 hover:border-primary/50 hover:bg-primary/5">
+          className="w-full justify-start gap-2 h-9 text-sm border-border hover:border-primary/50 hover:bg-primary/5">
           <Plus className="w-4 h-4" />
           New check
         </Button>
@@ -190,7 +189,7 @@ export const ConversationSidebar: React.FC<Props> = ({
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search chats, results, certificates"
             aria-label="Search"
-            className="w-full h-8 pl-8 pr-7 rounded-md bg-background border border-border/60 text-xs focus:outline-none focus:border-primary/50"
+            className="w-full h-8 pl-8 pr-7 rounded-md bg-background border border-border text-xs focus:outline-none focus:border-primary/50"
           />
           {query && (
             <button onClick={() => setQuery('')} className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground" aria-label="Clear search">
@@ -308,7 +307,7 @@ export const ConversationSidebar: React.FC<Props> = ({
       </div>
 
       {/* Profile */}
-      <div className="border-t border-border/60 p-2">
+      <div className="border-t border-border p-2">
         {user ? (
           <div className="space-y-1">
             <div className="flex items-center gap-2 px-1.5 py-1.5">

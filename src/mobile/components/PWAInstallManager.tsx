@@ -168,53 +168,26 @@ export const PWAInstallManager: React.FC = () => {
     );
   }
 
-  // Desktop Bot
+  // Desktop: small, compact card (Oct 2 2026: was a large panel covering the chat)
   return (
-    <div className="fixed bottom-6 right-6 z-50 max-w-sm animate-slideUp">
-      <Card className="border-primary shadow-xl">
-        <CardContent className="p-6">
-          <div className="flex justify-between items-start mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <Download className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-bold">Install Our App</h3>
-                <p className="text-xs text-muted-foreground">Access offline</p>
-              </div>
+    <div className="fixed bottom-4 right-4 z-50 w-72 animate-slideUp">
+      <Card className="border-primary/70 shadow-lg">
+        <CardContent className="p-3">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+              <Download className="h-4 w-4 text-primary" />
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleDismiss}
-            >
-              <X className="h-4 w-4" />
+            <div className="flex-1 min-w-0">
+              <h3 className="text-sm font-semibold leading-tight">Install the app</h3>
+              <p className="text-[11px] text-muted-foreground leading-tight">Faster checks, works offline</p>
+            </div>
+            <Button onClick={handleInstall} size="sm" className="h-7 px-2.5 text-xs">
+              Install
             </Button>
+            <button onClick={handleDismiss} aria-label="Close" className="p-1 text-muted-foreground hover:text-foreground">
+              <X className="h-3.5 w-3.5" />
+            </button>
           </div>
-
-          <p className="text-sm text-muted-foreground mb-4">
-            Install SafeOrStolen for instant access and offline verification capabilities.
-          </p>
-
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center gap-2 text-sm">
-              <Check className="h-4 w-4 text-primary" />
-              <span>Works offline</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Check className="h-4 w-4 text-primary" />
-              <span>Faster performance</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Check className="h-4 w-4 text-primary" />
-              <span>Push notifications</span>
-            </div>
-          </div>
-
-          <Button onClick={handleInstall} className="w-full">
-            <Download className="h-4 w-4 mr-2" />
-            Install Now
-          </Button>
         </CardContent>
       </Card>
     </div>

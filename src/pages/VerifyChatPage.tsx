@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate, useSearchParams } from '@/lib/router-compat';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -572,7 +573,7 @@ const VerifyChatPage: React.FC = () => {
 
  <div className="-mt-20 pt-20 h-screen bg-background text-foreground flex flex-col overflow-hidden">
  {/* Top status bar */}
- <div className="border-b border-border/50 bg-card/30 backdrop-blur-xl shrink-0">
+ <div className="border-b border-border bg-card/30 backdrop-blur-xl shrink-0">
  <div className="px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
  <div className="flex items-center gap-2.5 min-w-0">
  <button
@@ -756,7 +757,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
 
  {/* Composer — Luminal style */}
- <div className="border-t border-border/50 bg-card/40 backdrop-blur-xl shrink-0 relative">
+ <div className="border-t border-border bg-card/40 backdrop-blur-xl shrink-0 relative">
  {/* Account required before any check can run */}
  {!isAuthenticated && pendingIdentifier !== null && (
  <div className="pt-3">
@@ -784,7 +785,7 @@ const VerifyChatPage: React.FC = () => {
  setInput(p.text);
  textareaRef.current?.focus();
  }}
- className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wide px-2 py-1 rounded-md border border-border/60 bg-background/60 hover:border-primary/40 hover:bg-primary/5 hover:text-primary text-muted-foreground transition-colors"
+ className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wide px-2 py-1 rounded-md border border-border bg-background/60 hover:border-primary/40 hover:bg-primary/5 hover:text-primary text-muted-foreground transition-colors"
  >
  <span className="text-primary/80">{p.tag}</span>
  <span className="opacity-70 truncate max-w-[120px]">{p.text}</span>
@@ -795,7 +796,7 @@ const VerifyChatPage: React.FC = () => {
  )}
  <div className="max-w-2xl mx-auto px-4 py-3.5">
  {attachment && (
- <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border/60 rounded-lg px-3 py-1.5">
+ <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border rounded-lg px-3 py-1.5">
  <ImageIcon className="w-3.5 h-3.5 text-primary" />
  <span className="text-xs text-foreground truncate max-w-[200px] font-mono">
  {attachment.name}
@@ -822,7 +823,7 @@ const VerifyChatPage: React.FC = () => {
  disabled={isThinking}
  className="w-full resize-none bg-transparent border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm px-4 py-3 min-h-0 max-h-40 placeholder:text-muted-foreground/70"
  />
- <div className="flex items-center justify-between px-2 py-1.5 border-t border-border/40">
+ <div className="flex items-center justify-between px-2 py-1.5 border-t border-border/80">
  <div className="flex items-center gap-0.5">
  <ToolButton
  icon={Paperclip}
@@ -893,9 +894,9 @@ const VerifyChatPage: React.FC = () => {
  <span>MULTI-SOURCE · ~3S RESULTS · PRIVATE</span>
  <span className="hidden md:inline-flex items-center gap-1">
  ·
- <kbd className="px-1 py-px rounded-[0.25rem] border border-border/60 bg-muted/40 text-[9px]">⌘K</kbd>
+ <kbd className="px-1 py-px rounded-[0.25rem] border border-border bg-muted/40 text-[9px]">⌘K</kbd>
  <span>focus</span>
- <kbd className="px-1 py-px rounded-[0.25rem] border border-border/60 bg-muted/40 text-[9px]">⌘B</kbd>
+ <kbd className="px-1 py-px rounded-[0.25rem] border border-border bg-muted/40 text-[9px]">⌘B</kbd>
  <span>sidebar</span>
  </span>
  {!user && (
@@ -912,7 +913,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
 
  {/* RESULTS PANE (desktop) — narrower for better balance */}
- <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border/50">
+ <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border">
  <ResultsPane
  current={currentResult}
  history={sessionResults}
@@ -954,10 +955,8 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  >
  {/* Glowing logo orb */}
  <div className="relative mb-6">
- <div className="absolute inset-0 rounded-3xl bg-primary/40 blur-2xl animate-pulse" />
- <div className="relative size-16 rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/60 grid place-items-center shadow-2xl shadow-primary/40 ring-1 ring-primary/30">
- <Shield className="w-8 h-8 text-primary-foreground" />
- </div>
+ <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl" />
+ <ShieldLogo size={72} glow className="relative" />
  </div>
 
  <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
@@ -980,7 +979,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.35, delay: 0.1 + i * 0.06 }}
  whileHover={{ y: -3 }}
- className="group relative text-left rounded-2xl border border-border/60 bg-gradient-to-b from-card/80 to-card/40 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all p-4 overflow-hidden"
+ className="group relative text-left rounded-2xl border border-border bg-gradient-to-b from-card/80 to-card/40 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all p-4 overflow-hidden"
  >
  {/* Hover glow */}
  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -1037,7 +1036,7 @@ const MiniSidebar: React.FC<{
  onNew: () => void;
  threadCount: number;
 }> = ({ onExpand, onNew, threadCount }) => (
- <div className="h-full flex flex-col items-center bg-card/40 border-r border-border/60 py-3 gap-1">
+ <div className="h-full flex flex-col items-center bg-card/40 border-r border-border py-3 gap-1">
  <button
  onClick={onExpand}
  title="Expand sidebar (⌘B)"
@@ -1138,7 +1137,7 @@ const ChatBubble: React.FC<{
  'rounded-xl px-4 py-3 text-sm leading-relaxed',
  isUser
  ? 'bg-primary text-primary-foreground rounded-br-sm shadow-md shadow-primary/10'
- : 'bg-card/60 border border-border/60 text-foreground rounded-bl-sm backdrop-blur-sm')}
+ : 'bg-card/60 border border-border text-foreground rounded-bl-sm backdrop-blur-sm')}
  >
  {msg.attachment?.kind === 'image' && msg.attachment.dataUrl && (
  <img
@@ -1200,7 +1199,7 @@ const ChatBubble: React.FC<{
  <button
  key={s}
  onClick={() => onSuggestion(s)}
- className="text-[11px] px-2.5 py-1 rounded-md border border-border/60 bg-card/60 hover:border-primary/50 hover:bg-primary/5 text-foreground/80 hover:text-foreground transition-colors"
+ className="text-[11px] px-2.5 py-1 rounded-md border border-border bg-card/60 hover:border-primary/50 hover:bg-primary/5 text-foreground/80 hover:text-foreground transition-colors"
  >
  {s}
  </button>

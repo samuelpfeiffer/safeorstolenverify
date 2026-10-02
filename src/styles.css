@@ -141,7 +141,7 @@
   --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 12% 17%;
+  --border: 220 12% 27%; /* Oct 2 2026: was 17%, borders were too hard to see */
   --input: 220 14% 12%;
   --ring: 25 92% 53%;
   --radius: 1rem;
@@ -200,7 +200,7 @@
   --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 12% 17%;
+  --border: 220 12% 27%; /* Oct 2 2026: was 17%, borders were too hard to see */
   --input: 220 14% 12%;
   --ring: 25 92% 53%;
 }

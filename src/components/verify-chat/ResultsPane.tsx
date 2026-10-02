@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import { cn } from '@/lib/utils';
 import {
  ShieldCheck,
@@ -173,7 +174,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  if (!current) {
  return (
  <div className="h-full flex flex-col">
- <div className="px-5 py-4 border-b border-border/60">
+ <div className="px-5 py-4 border-b border-border">
  <h2 className="text-sm font-semibold flex items-center gap-2">
  <Sparkles className="w-4 h-4 text-primary" />
  Verification Results
@@ -185,8 +186,8 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
 
  <div className="flex-1 overflow-y-auto p-5">
  <div className="rounded-2xl border border-dashed border-border bg-card/40 p-6 text-center">
- <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
- <ShieldCheck className="w-7 h-7 text-primary" />
+ <div className="flex items-center justify-center mx-auto mb-4">
+ <ShieldLogo size={48} />
  </div>
  <h3 className="text-sm font-semibold mb-1">Ready when you are</h3>
  <p className="text-xs text-muted-foreground leading-relaxed">
@@ -196,28 +197,28 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </div>
 
  <div className="mt-5 grid grid-cols-2 gap-3">
- <div className="rounded-xl border border-border/60 bg-card/40 p-3">
+ <div className="rounded-xl border border-border bg-card/40 p-3">
  <Database className="w-4 h-4 text-primary mb-1.5" />
  <div className="text-[11px] font-semibold">multiple sources</div>
  <div className="text-[10px] text-muted-foreground">
  Our registry, law-enforcement records, phone blacklist, bike and firearm theft databases
  </div>
  </div>
- <div className="rounded-xl border border-border/60 bg-card/40 p-3">
+ <div className="rounded-xl border border-border bg-card/40 p-3">
  <Clock className="w-4 h-4 text-primary mb-1.5" />
  <div className="text-[11px] font-semibold">~3 second results</div>
  <div className="text-[10px] text-muted-foreground">
  Real-time aggregated checks
  </div>
  </div>
- <div className="rounded-xl border border-border/60 bg-card/40 p-3">
+ <div className="rounded-xl border border-border bg-card/40 p-3">
  <FileDown className="w-4 h-4 text-primary mb-1.5" />
  <div className="text-[11px] font-semibold">PDF reports</div>
  <div className="text-[10px] text-muted-foreground">
  Download proof for any check
  </div>
  </div>
- <div className="rounded-xl border border-border/60 bg-card/40 p-3">
+ <div className="rounded-xl border border-border bg-card/40 p-3">
  <Share2 className="w-4 h-4 text-primary mb-1.5" />
  <div className="text-[11px] font-semibold">Shareable links</div>
  <div className="text-[10px] text-muted-foreground">
@@ -234,7 +235,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
 
  return (
  <div className="h-full flex flex-col">
- <div className="px-5 py-4 border-b border-border/60 flex items-center justify-between">
+ <div className="px-5 py-4 border-b border-border flex items-center justify-between">
  <div>
  <h2 className="text-sm font-semibold flex items-center gap-2">
  <Sparkles className="w-4 h-4 text-primary" />
@@ -326,7 +327,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  return (
  <div
  key={`${src}-${i}`}
- className="flex items-center justify-between gap-3 text-xs px-3 py-2 rounded-lg bg-card/60 border border-border/60"
+ className="flex items-center justify-between gap-3 text-xs px-3 py-2 rounded-lg bg-card/60 border border-border"
  >
  <span className="text-foreground truncate">{sourceLabel(src)}</span>
  <span
@@ -382,7 +383,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
 
  {/* Session history */}
  {history.length > 1 && (
- <div className="pt-2 border-t border-border/60">
+ <div className="pt-2 border-t border-border">
  <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
  Session History
  </div>
@@ -396,7 +397,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <button
  key={`${h.identifier}-${i}`}
  onClick={() => onSelectHistory(h)}
- className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg bg-card/40 border border-border/40 hover:border-primary/40 hover:bg-card transition-colors"
+ className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg bg-card/40 border border-border/80 hover:border-primary/40 hover:bg-card transition-colors"
  >
  <t.Icon className={cn('w-3.5 h-3.5 shrink-0', t.color)} />
  <span className="text-xs text-foreground truncate flex-1">

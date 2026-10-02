@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import { Smartphone, Car, Hash, IdCard, Link2, Sparkles, ShieldCheck, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -53,8 +54,8 @@ export const WelcomeScreen: React.FC<Props> = ({ onPick }) => {
  transition={{ duration: 0.4 }}
  className="max-w-2xl mx-auto px-4 py-10 text-center"
  >
- <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center mx-auto mb-5 ring-4 ring-primary/5">
- <ShieldCheck className="w-8 h-8 text-primary" />
+ <div className="flex items-center justify-center mx-auto mb-5">
+ <ShieldLogo size={64} glow />
  </div>
 
  <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
