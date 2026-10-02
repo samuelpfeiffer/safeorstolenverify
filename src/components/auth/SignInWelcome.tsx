@@ -14,7 +14,7 @@ export const SignInWelcome = ({ userName, onContinue, isLoading = false }: SignI
   const navigate = useNavigate();
 
   const handleStartVerification = () => {
-    navigate('/dashboard');
+    navigate('/verify');
   };
 
   const handleViewHistory = () => {

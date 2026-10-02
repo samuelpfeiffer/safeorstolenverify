@@ -104,11 +104,11 @@ const TopNavigation = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48 rounded-xl">
-                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>Dashboard</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/verify')}>Dashboard</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/profile')}>Profile</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => navigate('/dashboard')}>
-                    <BarChart className="w-4 h-4 mr-2" />Analytics
+                    <BarChart className="w-4 h-4 mr-2" />Account &amp; billing
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/report-stolen')}>
                     <AlertCircle className="w-4 h-4 mr-2" />Report Stolen
@@ -174,7 +174,7 @@ const TopNavigation = () => {
             <div className="pt-4 px-4 space-y-2 border-t border-border/50 mt-3">
               {isAuthenticated ? (
                 <>
-                  <Button variant="outline" className="w-full justify-start gap-2 rounded-lg" onClick={() => { navigate('/dashboard'); setIsMobileMenuOpen(false); }}>
+                  <Button variant="outline" className="w-full justify-start gap-2 rounded-lg" onClick={() => { navigate('/verify'); setIsMobileMenuOpen(false); }}>
                     Dashboard
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-2 rounded-lg text-destructive" onClick={() => { handleSignOut(); setIsMobileMenuOpen(false); }}>

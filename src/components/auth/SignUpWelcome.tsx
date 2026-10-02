@@ -15,7 +15,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
   const navigate = useNavigate();
 
   const handleStartVerification = () => {
-    navigate('/dashboard');
+    navigate('/verify');
   };
 
   const nextSteps = [

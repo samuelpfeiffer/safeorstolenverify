@@ -630,7 +630,7 @@ const VerifyChatPage: React.FC = () => {
  <aside
  className={cn(
  'hidden lg:block shrink-0 transition-[width] duration-200 ease-out',
- sidebarCollapsed ? 'w-14' : 'w-64')}
+ sidebarCollapsed ? 'w-14' : 'w-72')}
  >
  {sidebarCollapsed ? (
  <MiniSidebar

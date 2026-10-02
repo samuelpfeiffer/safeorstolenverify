@@ -47,7 +47,7 @@ export const useAuthPageLogic = () => {
         duration: 3000,
       });
       
-      const from = (location?.state as { from?: { pathname?: string } } | undefined)?.from?.pathname || '/dashboard';
+      const from = (location?.state as { from?: { pathname?: string } } | undefined)?.from?.pathname || '/verify'; // Oct 2 2026: the chat is the new dashboard
       
       setTimeout(() => {
         navigate(from, { replace: true });
