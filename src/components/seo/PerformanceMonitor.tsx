@@ -35,7 +35,7 @@ export const PerformanceMonitor = () => {
               event_category: 'Web Vitals',
               event_label: 'LCP',
               value: Math.round(metrics.lcp ?? 0),
-              page_path: location.pathname,
+              page_path: location?.pathname ?? "",
             });
           }
         });
@@ -52,7 +52,7 @@ export const PerformanceMonitor = () => {
                 event_category: 'Web Vitals',
                 event_label: 'FID',
                 value: Math.round(metrics.fid),
-                page_path: location.pathname,
+                page_path: location?.pathname ?? "",
               });
             }
           });
@@ -74,7 +74,7 @@ export const PerformanceMonitor = () => {
               event_category: 'Web Vitals',
               event_label: 'CLS',
               value: Math.round(clsValue * 1000),
-              page_path: location.pathname,
+              page_path: location?.pathname ?? "",
             });
           }
         });
@@ -92,7 +92,7 @@ export const PerformanceMonitor = () => {
                   event_category: 'Web Vitals',
                   event_label: 'FCP',
                   value: Math.round(metrics.fcp ?? 0),
-                  page_path: location.pathname,
+                  page_path: location?.pathname ?? "",
                 });
               }
             }
@@ -109,7 +109,7 @@ export const PerformanceMonitor = () => {
               event_category: 'Web Vitals',
               event_label: 'TTFB',
               value: Math.round(metrics.ttfb),
-              page_path: location.pathname,
+              page_path: location?.pathname ?? "",
             });
           }
         }
@@ -136,7 +136,7 @@ export const PerformanceMonitor = () => {
         console.error('Error setting up performance monitoring:', error);
       }
     }
-  }, [location.pathname]);
+  }, [location?.pathname ?? ""]);
 
   // Register service worker for PWA
   useEffect(() => {

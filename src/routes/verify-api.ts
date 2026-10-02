@@ -3,7 +3,7 @@
  *
  * Visitors get 2 free checks without an account (Sept 30 2026: the Sep 19
  * account wall stopped all sales). Limits: 2 per browser fingerprint and
- * 6 per connection per day (bot protection). After that: sign up or pay.
+ * a lifetime cap per connection (bot protection); nothing resets. After that: sign up or pay.
  */
 
 import { createFileRoute } from '@tanstack/react-router';

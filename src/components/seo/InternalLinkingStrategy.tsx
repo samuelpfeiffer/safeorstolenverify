@@ -22,8 +22,7 @@ export const InternalLinkingStrategy: React.FC = () => {
       { title: 'How to Check Gun Serial Number', path: '/firearms-check', keywords: 'firearm verification' },
       { title: 'How It Works', path: '/how-it-works', keywords: 'safe buying tips' }
     ],
-    comparisons: [
-    ]
+    comparisons: [] as { title: string; path: string; keywords: string }[],
   };
 
   return (

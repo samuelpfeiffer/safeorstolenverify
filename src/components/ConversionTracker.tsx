@@ -18,7 +18,7 @@ export const ConversionTracker: React.FC = () => {
   const trackEvent = (event: string, properties?: Record<string, any>) => {
     const conversionEvent: ConversionEvent = {
       event,
-      page: location.pathname,
+      page: location?.pathname ?? "",
       user_id: user?.id,
       timestamp: new Date().toISOString(),
       properties: {
@@ -45,12 +45,12 @@ export const ConversionTracker: React.FC = () => {
       title: document.title,
       url: window.location.href
     });
-  }, [location.pathname]);
+  }, [location?.pathname ?? ""]);
 
   useEffect(() => {
     if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     // Track conversion funnel stages
-    const path = location.pathname;
+    const path = location?.pathname ?? "";
     
     if (path === '/') {
       trackEvent('landing_page_view');
@@ -65,7 +65,7 @@ export const ConversionTracker: React.FC = () => {
     } else if (path === '/enterprise-demo') {
       trackEvent('demo_page_view');
     }
-  }, [location.pathname]);
+  }, [location?.pathname ?? ""]);
 
   if (!location) return null;
   return null; // This component only tracks, doesn't render
