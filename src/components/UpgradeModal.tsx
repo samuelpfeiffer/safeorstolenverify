@@ -17,7 +17,7 @@ const PLANS = [
     icon: <Zap className="w-5 h-5" />,
     label: 'Unlimited Plan',
     price: '$10/month',
-    desc: 'Unlimited verifications, seller badges, PDF certs, priority support. Cancel anytime.',
+    desc: 'Unlimited verifications (20 phone blacklist searches a month), seller badges, PDF certs, priority support. Cancel anytime.',
     cta: 'Go Unlimited — $10/mo',
     priceId: UNLIMITED_PRICE_ID,
     planName: 'Unlimited',

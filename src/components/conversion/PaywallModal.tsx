@@ -102,7 +102,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
                     BEST VALUE
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">Unlimited checks • Seller badges • Cancel anytime</p>
+                <p className="text-sm text-muted-foreground">Unlimited checks (20 phone blacklist searches/mo) • Seller badges • Cancel anytime</p>
               </div>
               <div className="text-right">
                 {isLoading === UNLIMITED_PRICE_ID ? (

@@ -8,7 +8,8 @@ import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants';
 
 const FAQS = [
- { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, pay $0.99 per check or go unlimited for $10/month.' },
+ { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. A free phone check confirms the IMEI is real; the lost and stolen phone blacklist search is part of a paid check. After that, pay $0.99 per check or go unlimited for $10/month.' },
+  { q: 'Is anything limited on the unlimited plan?', a: 'Only one thing: phone blacklist searches. The $10 plan includes 20 a month, because each one costs us to run. Every other check — cars, guns, bikes, electronics, serial numbers, and anything else used — is unlimited. Need more phone searches in a month? Run a single check for $0.99.' },
  { q: 'Can I cancel the unlimited plan anytime?', a: 'Yes. Cancel from your dashboard with one click. Your plan continues until the end of the billing period — no fees, no hassle.' },
  { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
  { q: 'How accurate are the results?', a: 'We analyze web results, SafeOrStolen reports, and use AI to evaluate item history. We also integrate with specialized sources like Bike Index for bicycles and HotGunz for firearms.' },
@@ -165,7 +166,7 @@ const PricingPage = () => {
 
  <ul className="space-y-2 flex-1 mb-6">
  {[
- 'Unlimited verifications',
+ 'Unlimited verifications (includes 20 phone blacklist searches a month)',
   'All 6 supported item categories',
  '3-second results',
  'Scam risk analysis included',

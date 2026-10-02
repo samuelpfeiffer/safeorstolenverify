@@ -60,22 +60,80 @@ function isPhoneType(t: string): boolean {
   return s.includes('phone') || s.includes('mobile') || s.includes('imei') || s.includes('cell');
 }
 
-async function isPaidCustomer(supabase: any, userId: string | null, fingerprint?: string): Promise<boolean> {
+// Oct 1 2026: phone blacklist searches cost us money (about 42 cents each), so they are counted.
+//  - Single check ($0.99): exactly 1 phone blacklist search.
+//  - $10/month plan: 20 phone blacklist searches per 30 days. Everything else stays unlimited.
+//  - Subscribers who signed up before Oct 2 2026 keep true unlimited (they were promised it).
+//  - Expired plans do not count as paid.
+const PHONE_CAP_PER_MONTH = 20;
+const GRANDFATHER_BEFORE = new Date('2026-10-02T00:00:00Z');
+const UNLIMITED_PLANS = ['pro', 'unlimited', 'enterprise', 'professional', 'personal', 'starter', 'pay_per_use'];
+
+type Allowance = { allowed: boolean; reason: 'free' | 'ok' | 'single_used' | 'monthly_cap' };
+
+const cleanFp = (fp?: string) => (typeof fp === 'string' && /^[A-Za-z0-9_\-:.]{6,200}$/.test(fp.trim()) ? fp.trim() : '');
+
+async function countPaidPhoneLookups(supabase: any, userId: string | null, fingerprint: string, since: Date): Promise<number> {
+  let total = 0;
+  if (userId) {
+    const { count } = await supabase.from('verification_searches').select('id', { count: 'exact', head: true })
+      .eq('user_id', userId).eq('result->>paidLookup', 'true').gte('created_at', since.toISOString());
+    total += count || 0;
+  }
+  if (fingerprint) {
+    const { count } = await supabase.from('verification_searches').select('id', { count: 'exact', head: true })
+      .eq('fingerprint', fingerprint).eq('result->>paidLookup', 'true').gte('created_at', since.toISOString());
+    total += count || 0;
+  }
+  return total;
+}
+
+async function phoneLookupAllowance(supabase: any, userId: string | null, fingerprintRaw?: string): Promise<Allowance> {
   try {
+    const fingerprint = cleanFp(fingerprintRaw);
+    const now = new Date();
+    const subs: any[] = [];
     if (userId) {
-      const { data } = await supabase.from('subscriptions').select('id').eq('status', 'active').eq('user_id', userId).limit(1);
-      if (data && data.length) return true;
-      const { data: p } = await supabase.from('profiles').select('subscription_tier, subscription_end').eq('id', userId).maybeSingle();
-      if (p && PAID_TIERS.includes(p.subscription_tier) && (!p.subscription_end || new Date(p.subscription_end) > new Date())) return true;
+      const { data } = await supabase.from('subscriptions').select('plan, checks_limit, period_end, created_at').eq('status', 'active').eq('user_id', userId);
+      subs.push(...(data || []));
     }
     if (fingerprint) {
-      const { data } = await supabase.from('subscriptions').select('id').eq('status', 'active').eq('fingerprint', fingerprint).limit(1);
-      if (data && data.length) return true;
+      const { data } = await supabase.from('subscriptions').select('plan, checks_limit, period_end, created_at').eq('status', 'active').eq('fingerprint', fingerprint);
+      subs.push(...(data || []));
     }
+    const live = subs.filter((x) => !x.period_end || new Date(x.period_end) > now);
+
+    // Legacy paid tier stored on the profile (older accounts): keep them working.
+    if (!live.length && userId) {
+      const { data: p } = await supabase.from('profiles').select('subscription_tier, subscription_end').eq('id', userId).maybeSingle();
+      if (p && PAID_TIERS.includes(p.subscription_tier) && (!p.subscription_end || new Date(p.subscription_end) > now)) return { allowed: true, reason: 'ok' };
+    }
+    if (!live.length) return { allowed: false, reason: 'free' };
+
+    let blocked: Allowance['reason'] = 'free';
+    for (const sub of live) {
+      const plan = String(sub.plan || '').toLowerCase();
+      const created = new Date(sub.created_at);
+      const isUnlimited = UNLIMITED_PLANS.includes(plan) || (sub.checks_limit || 0) >= 1000;
+      if (isUnlimited) {
+        if (created < GRANDFATHER_BEFORE) return { allowed: true, reason: 'ok' };
+        const since = new Date(now.getTime() - 30 * 24 * 3600 * 1000);
+        const used = await countPaidPhoneLookups(supabase, userId, fingerprint, since);
+        if (used < PHONE_CAP_PER_MONTH) return { allowed: true, reason: 'ok' };
+        blocked = 'monthly_cap';
+      } else {
+        // Limited plans (single = 1, older "basic" plans = their own limit)
+        const limit = Math.max(1, sub.checks_limit || 1);
+        const used = await countPaidPhoneLookups(supabase, userId, fingerprint, created);
+        if (used < limit) return { allowed: true, reason: 'ok' };
+        if (blocked !== 'monthly_cap') blocked = 'single_used';
+      }
+    }
+    return { allowed: false, reason: blocked };
   } catch (e) {
-    console.error('[verify-item] paid check error:', e);
+    console.error('[verify-item] allowance check error:', e);
+    return { allowed: false, reason: 'free' };
   }
-  return false;
 }
 
 serve(async (req) => {
@@ -114,8 +172,10 @@ serve(async (req) => {
     const startTime = Date.now();
     const cleanIdentifier = identifier.trim().toUpperCase();
     const providers: any[] = [];
-    const paid = await isPaidCustomer(supabaseClient, authenticatedUserId, fingerprint);
     const phone = isPhoneType(itemType || '');
+    // Only phone checks cost us money, so only they go through the allowance check.
+    const allowance: Allowance = phone ? await phoneLookupAllowance(supabaseClient, authenticatedUserId, fingerprint) : { allowed: false, reason: 'free' };
+    const paid = allowance.allowed;
     console.log(`[verify-item] type=${itemType} paid=${paid}`);
 
     // Internal registry: a match is real evidence; no match is NOT evidence of safety.
@@ -204,7 +264,11 @@ serve(async (req) => {
       finalStatus = 'unknown';
       riskLevel = 'medium';
       confidence = 0;
-      message = '🔒 FREE CHECK DONE: This IMEI number is real and correctly formed. The official lost and stolen phone blacklist search is part of the full check. Run the full check before you hand over any money.';
+      message = allowance.reason === 'monthly_cap'
+        ? `🔒 This IMEI number is real and correctly formed. You've used this month's ${PHONE_CAP_PER_MONTH} phone blacklist searches on your plan. Run a single full check for $0.99 to search the lost and stolen phone blacklist now.`
+        : allowance.reason === 'single_used'
+          ? '🔒 This IMEI number is real and correctly formed. Your single check has already been used. Run another full check for $0.99 to search the lost and stolen phone blacklist.'
+          : '🔒 FREE CHECK DONE: This IMEI number is real and correctly formed. The official lost and stolen phone blacklist search is part of the full check. Run the full check before you hand over any money.';
     } else {
       finalStatus = 'unknown';
       riskLevel = 'medium';
@@ -216,6 +280,9 @@ serve(async (req) => {
         ? `ℹ️ ${scrub(answered.message)}`
         : '⚠️ NO THEFT REPORTS FOUND, but no theft database for this item type could confirm it. Ask the seller for proof of ownership and keep a record of the sale.';
     }
+
+    const imeiProvider = providers.find(p => p.provider === 'IMEI_Verification');
+    const paidLookup = !!(paid && imeiProvider?.details?.blacklistChecked);
 
     const aiNotes = aiSources.map(p => ({ note: scrub(p.message), riskLevel: p.details?.risk_level, reasoning: p.details?.reasoning })).filter(n => n.note);
 
@@ -230,6 +297,7 @@ serve(async (req) => {
       checkedSourceNames: providers.map(p => displayName(p.provider)),
       paidCheck: paid,
       upgradeRequired: phone && !paid,
+      upgradeReason: phone && !paid ? allowance.reason : undefined,
       timestamp: new Date().toISOString(),
     };
 
@@ -241,7 +309,7 @@ serve(async (req) => {
           serial_number: cleanIdentifier,
           item_type: itemType || 'unknown',
           fingerprint: authenticatedUserId ? null : fingerprint,
-          result: { status: finalStatus, confidence, riskLevel, message, paid,
+          result: { status: finalStatus, confidence, riskLevel, message, paid, paidLookup,
             providers: providers.map(p => ({ provider: p.provider, status: p.status, confidence: p.confidence })),
             checkedSources: providers.map(p => p.provider), verdictRules: 'v4-paywall' },
         })
