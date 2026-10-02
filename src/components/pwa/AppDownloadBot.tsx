@@ -14,10 +14,13 @@ export const AppDownloadBot = () => {
   // Hide on the AI chat experience — the chat IS the primary conversion surface here.
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
   const hiddenOn = ['/verify', '/ai-verify', '/ai-chat', '/auth', '/checkout', '/admin'];
-  if (hiddenOn.some((p) => pathname.startsWith(p))) return null;
-
+  // Oct 2 2026 CRASH FIX: this used to `return null` here, BEFORE the hooks below. React requires the
+  // same hooks every render, so moving between a hidden page (/verify, /auth) and any other page crashed
+  // the whole site (React errors #300 / #310). Now every hook always runs, and we hide at the end.
+  const hiddenHere = hiddenOn.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
+    if (hiddenHere) return;
     const dismissed = localStorage.getItem('app-download-bot-dismissed');
     if (dismissed) {
       const dismissedTime = parseInt(dismissed);
@@ -42,7 +45,7 @@ export const AppDownloadBot = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [isInstalled, isDismissed]);
+  }, [isInstalled, isDismissed, hiddenHere]);
 
   const handleInstall = async () => {
     if (isInstallAvailable) {
@@ -84,7 +87,7 @@ export const AppDownloadBot = () => {
     localStorage.setItem('app-download-bot-dismissed', Date.now().toString());
   };
 
-  if (isInstalled || (!isVisible && !showTyping)) {
+  if (hiddenHere || isInstalled || (!isVisible && !showTyping)) {
     return null;
   }
 

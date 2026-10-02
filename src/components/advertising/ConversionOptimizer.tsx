@@ -10,9 +10,9 @@ export const ConversionOptimizer: React.FC = () => {
   const location = useSafeLocation();
   const [showExitIntent, setShowExitIntent] = useState(false);
   
-  if (!location) return null;
 
   useEffect(() => {
+    if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     // Track conversion funnel steps
     const funnelStep = getFunnelStep(location.pathname);
     trackFunnelProgress(funnelStep);
@@ -62,6 +62,7 @@ export const ConversionOptimizer: React.FC = () => {
     console.log('Conversion Event:', event);
   };
 
+  if (!location) return null;
   return (
     <Helmet>
       {/* Tracking scripts disabled - add your tracking IDs to enable */}

@@ -17,9 +17,9 @@ interface PerformanceMetrics {
 export const PerformanceMonitor = () => {
   const location = useSafeLocation();
   
-  if (!location) return null;
 
   useEffect(() => {
+    if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     const metrics: PerformanceMetrics = {};
 
     // Largest Contentful Paint (LCP)
@@ -140,6 +140,7 @@ export const PerformanceMonitor = () => {
 
   // Register service worker for PWA
   useEffect(() => {
+    if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
       window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -154,6 +155,7 @@ export const PerformanceMonitor = () => {
     }
   }, []);
 
+  if (!location) return null;
   return null;
 };
 

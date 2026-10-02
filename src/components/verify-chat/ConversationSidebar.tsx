@@ -86,7 +86,7 @@ export const ConversationSidebar: React.FC<Props> = ({
   const [plan, setPlan] = useState<PlanSummary | null>(null);
 
   const displayName =
-    (user?.user_metadata as any)?.full_name || (user?.user_metadata as any)?.name || user?.email || 'Guest';
+    (user as any)?.fullName || (user as any)?.user_metadata?.full_name || (user as any)?.user_metadata?.name || user?.email || 'Guest';
   const initial = String(displayName).trim().charAt(0).toUpperCase() || 'G';
   const resultCount = threads.reduce((n, t) => n + t.results.length, 0);
 

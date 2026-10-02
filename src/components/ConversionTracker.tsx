@@ -14,7 +14,6 @@ export const ConversionTracker: React.FC = () => {
   const location = useSafeLocation();
   const { user, isAuthenticated } = useUnifiedAuth();
   
-  if (!location) return null;
 
   const trackEvent = (event: string, properties?: Record<string, any>) => {
     const conversionEvent: ConversionEvent = {
@@ -40,6 +39,7 @@ export const ConversionTracker: React.FC = () => {
   };
 
   useEffect(() => {
+    if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     // Track page views
     trackEvent('page_view', {
       title: document.title,
@@ -48,6 +48,7 @@ export const ConversionTracker: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
+    if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     // Track conversion funnel stages
     const path = location.pathname;
     
@@ -66,6 +67,7 @@ export const ConversionTracker: React.FC = () => {
     }
   }, [location.pathname]);
 
+  if (!location) return null;
   return null; // This component only tracks, doesn't render
 };
 

@@ -6,10 +6,10 @@ export const ConversionTracking: React.FC = () => {
   const location = useSafeLocation();
   const { user } = useUnifiedAuth();
   
-  if (!location) return null;
 
   // Track page views
   useEffect(() => {
+    if (!location) return; // Oct 2 2026: hooks must always run; guard inside instead
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
         page_path: location.pathname + location.search,
@@ -19,6 +19,7 @@ export const ConversionTracking: React.FC = () => {
     }
   }, [location, user]);
 
+  if (!location) return null;
   return null;
 };
 

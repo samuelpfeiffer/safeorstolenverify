@@ -826,13 +826,15 @@ const VerifyChatPage: React.FC = () => {
  <div className="flex items-center gap-0.5">
  <ToolButton
  icon={Paperclip}
- label="Upload image"
+ label="Attach a photo or file"
+ shortLabel="Attach"
  onClick={() => fileInputRef.current?.click()}
  disabled={isThinking}
  />
  <ToolButton
  icon={Camera}
  label="Scan with camera"
+ shortLabel="Scan"
  onClick={() => cameraInputRef.current?.click()}
  disabled={isThinking}
  hideOnMobile
@@ -1000,7 +1002,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
 
  <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- MULTI-SOURCE · OUR REPORTS · WEB RESULTS · AI ANALYSIS · BIKEINDEX · HOTGUNZ
+ MULTI-SOURCE · OUR REPORTS · LAW-ENFORCEMENT RECORDS · PHONE BLACKLIST · BIKE & GUN THEFT RECORDS
  </div>
  </motion.div>
  );
@@ -1076,20 +1078,22 @@ const ToolButton: React.FC<{
  disabled?: boolean;
  active?: boolean;
  hideOnMobile?: boolean;
-}> = ({ icon: Icon, label, onClick, disabled, active, hideOnMobile }) => (
+ shortLabel?: string;
+}> = ({ icon: Icon, label, onClick, disabled, active, hideOnMobile, shortLabel }) => (
  <button
  onClick={onClick}
  disabled={disabled}
  title={label}
  aria-label={label}
  className={cn(
- 'p-2 rounded-md transition-colors disabled:opacity-50',
+ 'inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors disabled:opacity-50',
  hideOnMobile && 'hidden sm:inline-flex',
  active
  ? 'text-red-500 bg-red-500/10 animate-pulse'
- : 'text-muted-foreground hover:text-primary hover:bg-primary/10')}
+ : 'text-foreground/80 hover:text-primary hover:bg-primary/10')}
  >
- <Icon className="w-4 h-4" />
+ <Icon className="w-[18px] h-[18px]" />
+ <span className="hidden sm:inline">{shortLabel ?? label}</span>
  </button>
 );
 
