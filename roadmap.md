@@ -48,3 +48,13 @@
 - [ ] Add `/app/vin-checker` → `/vin-checker` and eliminate redirect chains
 - [ ] Update internal links, sitemap, llms files, metadata, schemas, and prerender snapshots
 - [ ] Validate locally, publish, verify live pages and 301s, and report submission URLs
+
+# Victim reports and My items (approved plan)
+- [x] Database: report fields, registered items, problem reports, review log, owner alert log, private photo storage
+- [x] Server: /reports-api (report, register, recovered/remove, problem report, admin queue/decide/stats) with guardrails
+- [x] Checks: only active reports count; "Reported stolen on [date]" + police/user label + next steps + problem link
+- [x] Owner alert email (max 1/hour, never names the checker)
+- [ ] Rebuild /report-stolen form on the new server route (bike links on confirmation)
+- [ ] /my-items page and /admin/reports page
+- [ ] Privacy and terms wording — waiting on owner approval
+- [ ] Seller share/badge (queued earlier) still not started
