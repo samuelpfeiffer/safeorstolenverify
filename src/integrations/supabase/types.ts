@@ -915,6 +915,42 @@ export type Database = {
         }
         Relationships: []
       }
+      owner_alert_log: {
+        Row: {
+          created_at: string
+          general_area: string | null
+          id: string
+          stolen_item_id: string
+        }
+        Insert: {
+          created_at?: string
+          general_area?: string | null
+          id?: string
+          stolen_item_id: string
+        }
+        Update: {
+          created_at?: string
+          general_area?: string | null
+          id?: string
+          stolen_item_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "owner_alert_log_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "owner_alert_log_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       pending_verifications: {
         Row: {
           created_at: string
@@ -1160,6 +1196,135 @@ export type Database = {
         }
         Relationships: []
       }
+      registered_items: {
+        Row: {
+          brand: string | null
+          created_at: string
+          description: string | null
+          id: string
+          identifier: string
+          item_type: string
+          model: string | null
+          photo_paths: string[]
+          proof_path: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          brand?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          identifier: string
+          item_type: string
+          model?: string | null
+          photo_paths?: string[]
+          proof_path?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          brand?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          identifier?: string
+          item_type?: string
+          model?: string | null
+          photo_paths?: string[]
+          proof_path?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      report_disputes: {
+        Row: {
+          contact_email: string | null
+          created_at: string
+          id: string
+          reason: string
+          resolved_at: string | null
+          status: string
+          stolen_item_id: string
+        }
+        Insert: {
+          contact_email?: string | null
+          created_at?: string
+          id?: string
+          reason: string
+          resolved_at?: string | null
+          status?: string
+          stolen_item_id: string
+        }
+        Update: {
+          contact_email?: string | null
+          created_at?: string
+          id?: string
+          reason?: string
+          resolved_at?: string | null
+          status?: string
+          stolen_item_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "report_disputes_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "report_disputes_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      report_review_log: {
+        Row: {
+          action: string
+          admin_id: string | null
+          created_at: string
+          id: string
+          note: string | null
+          stolen_item_id: string
+        }
+        Insert: {
+          action: string
+          admin_id?: string | null
+          created_at?: string
+          id?: string
+          note?: string | null
+          stolen_item_id: string
+        }
+        Update: {
+          action?: string
+          admin_id?: string | null
+          created_at?: string
+          id?: string
+          note?: string | null
+          stolen_item_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "report_review_log_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "report_review_log_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       shared_reports: {
         Row: {
           created_at: string | null
@@ -1271,6 +1436,8 @@ export type Database = {
       stolen_items: {
         Row: {
           brand: string | null
+          city: string | null
+          contact_pref: string
           created_at: string
           date_stolen: string | null
           description: string | null
@@ -1279,15 +1446,24 @@ export type Database = {
           item_type: string
           location: string | null
           model: string | null
+          photo_paths: string[]
           police_report_number: string | null
+          police_report_provided: boolean
+          registered_item_id: string | null
+          review_reason: string | null
           serial_number: string | null
+          state: string | null
           status: string
+          status_changed_at: string | null
+          terms_accepted_at: string | null
           updated_at: string
           user_id: string | null
           vin: string | null
         }
         Insert: {
           brand?: string | null
+          city?: string | null
+          contact_pref?: string
           created_at?: string
           date_stolen?: string | null
           description?: string | null
@@ -1296,15 +1472,24 @@ export type Database = {
           item_type: string
           location?: string | null
           model?: string | null
+          photo_paths?: string[]
           police_report_number?: string | null
+          police_report_provided?: boolean
+          registered_item_id?: string | null
+          review_reason?: string | null
           serial_number?: string | null
+          state?: string | null
           status?: string
+          status_changed_at?: string | null
+          terms_accepted_at?: string | null
           updated_at?: string
           user_id?: string | null
           vin?: string | null
         }
         Update: {
           brand?: string | null
+          city?: string | null
+          contact_pref?: string
           created_at?: string
           date_stolen?: string | null
           description?: string | null
@@ -1313,9 +1498,16 @@ export type Database = {
           item_type?: string
           location?: string | null
           model?: string | null
+          photo_paths?: string[]
           police_report_number?: string | null
+          police_report_provided?: boolean
+          registered_item_id?: string | null
+          review_reason?: string | null
           serial_number?: string | null
+          state?: string | null
           status?: string
+          status_changed_at?: string | null
+          terms_accepted_at?: string | null
           updated_at?: string
           user_id?: string | null
           vin?: string | null
@@ -1397,6 +1589,72 @@ export type Database = {
           stripe_subscription_id?: string | null
           updated_at?: string | null
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      theft_records: {
+        Row: {
+          agency: string | null
+          caliber: string | null
+          case_number: string | null
+          city: string | null
+          description: string | null
+          id: number
+          identifier_norm: string
+          identifier_raw: string | null
+          imported_at: string
+          item_type: string
+          item_type_detail: string | null
+          make: string | null
+          model: string | null
+          reported_date: string | null
+          reported_year: number | null
+          source_key: string
+          source_record_id: string | null
+          state: string | null
+          status: string
+        }
+        Insert: {
+          agency?: string | null
+          caliber?: string | null
+          case_number?: string | null
+          city?: string | null
+          description?: string | null
+          id?: number
+          identifier_norm: string
+          identifier_raw?: string | null
+          imported_at?: string
+          item_type: string
+          item_type_detail?: string | null
+          make?: string | null
+          model?: string | null
+          reported_date?: string | null
+          reported_year?: number | null
+          source_key: string
+          source_record_id?: string | null
+          state?: string | null
+          status: string
+        }
+        Update: {
+          agency?: string | null
+          caliber?: string | null
+          case_number?: string | null
+          city?: string | null
+          description?: string | null
+          id?: number
+          identifier_norm?: string
+          identifier_raw?: string | null
+          imported_at?: string
+          item_type?: string
+          item_type_detail?: string | null
+          make?: string | null
+          model?: string | null
+          reported_date?: string | null
+          reported_year?: number | null
+          source_key?: string
+          source_record_id?: string | null
+          state?: string | null
+          status?: string
         }
         Relationships: []
       }
