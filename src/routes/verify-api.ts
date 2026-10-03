@@ -105,7 +105,15 @@ export const Route = createFileRoute('/verify-api')({
           const result = await runVerification(
             supabaseAdmin,
             userId,
-            { identifier, itemType, fingerprint },
+            {
+              identifier,
+              itemType,
+              fingerprint,
+              area:
+                [request.headers.get('cf-ipcity'), request.headers.get('cf-region')]
+                  .filter(Boolean)
+                  .join(', ') || null,
+            },
             gate,
           );
 

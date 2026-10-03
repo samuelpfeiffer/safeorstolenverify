@@ -26,6 +26,8 @@ export interface VerifyInput {
   identifier: string;
   itemType?: string | null;
   fingerprint?: string | null;
+  /** General area of the checker (city/region), used only in owner alerts. */
+  area?: string | null;
 }
 
 export interface VerifyResponse {
@@ -284,9 +286,9 @@ async function runInternalRegistry(
 
   try {
     const [bySerial, byImei, byVin] = await Promise.all([
-      admin.from('stolen_items').select('*').in('serial_number', candidates).limit(5),
-      admin.from('stolen_items').select('*').in('imei', candidates).limit(5),
-      admin.from('stolen_items').select('*').in('vin', candidates).limit(5),
+      admin.from('stolen_items').select('*').in('serial_number', candidates).in('status', ['active', 'reported']).limit(5),
+      admin.from('stolen_items').select('*').in('imei', candidates).in('status', ['active', 'reported']).limit(5),
+      admin.from('stolen_items').select('*').in('vin', candidates).in('status', ['active', 'reported']).limit(5),
     ]);
 
     const seen = new Set<string>();
@@ -310,8 +312,16 @@ async function runInternalRegistry(
         provider: 'SafeOrStolen Database',
         status: 'stolen',
         confidence: 98,
-        message: 'Item found in SafeOrStolen stolen items registry',
-        details: { matches: matches.length },
+        message: `Reported stolen to SafeOrStolen on ${new Date(matches[0].created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`,
+        // Public-safe fields only: never reporter identity, contact, police number or photos.
+        details: {
+          matches: matches.length,
+          reportId: matches[0].id,
+          reportedAt: matches[0].created_at,
+          policeReportProvided: !!(matches[0].police_report_provided || matches[0].police_report_number),
+          generalArea: matches[0].state ?? null,
+          reportIds: matches.map((m: any) => m.id),
+        },
         responseTime: Date.now() - startedAt,
       };
     }
@@ -343,6 +353,41 @@ async function runInternalRegistry(
       responseTime: Date.now() - startedAt,
     };
   }
+}
+
+async function sendOwnerAlert(admin: AdminClient, reportId: string, area: string | null) {
+  const { data: recent } = await admin
+    .from('owner_alert_log').select('id')
+    .eq('stolen_item_id', reportId)
+    .gte('created_at', new Date(Date.now() - 3600_000).toISOString())
+    .limit(1);
+  if (recent && recent.length) return; // at most one alert per report per hour
+  const { data: item } = await admin
+    .from('stolen_items').select('id,user_id,item_type,brand,model,contact_pref').eq('id', reportId).maybeSingle();
+  if (!item?.user_id || item.contact_pref === 'none') return;
+  await admin.from('owner_alert_log').insert({ stolen_item_id: reportId, general_area: area });
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return;
+  const { data: userData } = await admin.auth.admin.getUserById(item.user_id);
+  const email = userData?.user?.email;
+  if (!email) return;
+  const name = [item.brand, item.model].filter(Boolean).join(' ') || item.item_type;
+  const when = new Date().toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'long', timeStyle: 'short' }) + ' UTC';
+  const esc = (v: string) => v.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+  const html = `<p>Your reported ${esc(name)} was just checked on SafeOrStolen.</p>
+<p><strong>When:</strong> ${esc(when)}<br/><strong>General area:</strong> ${esc(area || 'Not available')}</p>
+<p>We never share who ran a check. If you think your item is being sold, contact the police department that took your report and give them this date and time. Do not try to recover the item yourself.</p>
+<p>If you got your item back, mark it recovered in My items: https://safeorstolen.com/my-items</p>`;
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      from: 'SafeOrStolen <support@safeorstolen.com>',
+      to: [email],
+      subject: `Your reported ${name} was just checked`,
+      html,
+    }),
+  });
 }
 
 /**
@@ -578,6 +623,17 @@ export async function runVerification(
   );
 
   const verdict = decideVerdict(providers);
+
+  // Owner alert: tell the reporter their item was just checked (never who checked).
+  const registry = providers.find((p) => p.provider === 'SafeOrStolen Database');
+  const reportIds = (registry?.status === 'stolen' && (registry.details as any)?.reportIds) || [];
+  for (const reportId of reportIds as string[]) {
+    try {
+      await sendOwnerAlert(admin, reportId, input.area ?? null);
+    } catch (error) {
+      console.error('[verify] owner alert failed:', error);
+    }
+  }
 
   const result: VerifyResponse = {
     identifier: cleanIdentifier,
