@@ -115,55 +115,16 @@ export const PWAInstallManager: React.FC = () => {
     );
   }
 
-  // Mobile Banner
+  // Mobile: slim one-line bar (Oct 2 2026: was a tall card)
   if (isMobile) {
     return (
-      <div className="fixed bottom-4 left-4 right-4 z-50 animate-slideUp">
-        <Card className="border-primary shadow-lg">
-          <CardContent className="p-4">
-            <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Smartphone className="h-6 w-6 text-primary" />
-              </div>
-              
-              <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-sm mb-1">
-                  Install SafeOrStolen App
-                </h3>
-                <p className="text-xs text-muted-foreground mb-3">
-                  Get faster access & offline verification
-                </p>
-                
-                <div className="flex gap-2">
-                  <Button
-                    size="sm"
-                    onClick={handleInstall}
-                    className="flex-1"
-                  >
-                    <Download className="h-3 w-3 mr-1" />
-                    Install
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={handleDismiss}
-                  >
-                    Later
-                  </Button>
-                </div>
-              </div>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                className="flex-shrink-0 h-8 w-8"
-                onClick={handleDismiss}
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="fixed bottom-3 left-3 right-3 z-50 animate-slideUp">
+        <div className="flex items-center gap-2 rounded-xl border border-primary/70 bg-card px-3 py-2 shadow-lg">
+          <Download className="h-4 w-4 shrink-0 text-primary" />
+          <span className="flex-1 truncate text-xs font-medium">Install the SafeOrStolen app</span>
+          <Button onClick={handleInstall} size="sm" className="h-7 px-2.5 text-xs">Install</Button>
+          <button onClick={handleDismiss} aria-label="Close" className="p-1 text-muted-foreground"><X className="h-3.5 w-3.5" /></button>
+        </div>
       </div>
     );
   }

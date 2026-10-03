@@ -91,82 +91,15 @@ export const AppDownloadBot = () => {
     return null;
   }
 
-  // Typing indicator
-  if (showTyping) {
-    return (
-      <div className="fixed bottom-6 right-6 z-50 animate-slideUp">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-2xl border border-gray-200 dark:border-gray-700 max-w-sm">
-          <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-r from-sos-orange to-orange-500 p-2 rounded-full">
-              <MessageCircle className="h-5 w-5 text-white" />
-            </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+  // Oct 2 2026: slim bar instead of a big chat bubble.
+  if (showTyping) return null;
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-slideUp">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-700 max-w-sm">
-        <div className="flex items-start gap-4">
-          <div className="bg-gradient-to-r from-sos-orange to-orange-500 p-3 rounded-full flex-shrink-0">
-            <Sparkles className="h-6 w-6 text-white" />
-          </div>
-          
-          <div className="flex-1">
-            <div className="mb-3">
-              <h3 className="text-gray-900 dark:text-white font-bold text-lg mb-1">
-                Hi there! 👋
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                I'm your SafeOrStolen assistant! Want <strong>instant access</strong> to verify items? 
-                Install our app for lightning-fast checks! ⚡
-              </p>
-            </div>
-            
-            <div className="space-y-3">
-              <Button
-                onClick={handleInstall}
-                className="w-full bg-gradient-to-r from-sos-orange to-orange-500 hover:from-sos-orange/90 hover:to-orange-500/90 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                {isInstallAvailable ? 'Install App Now' : 'Add to Home Screen'}
-              </Button>
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
-                  <Smartphone className="h-3 w-3 mr-1" />
-                  Works offline too!
-                </div>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={handleDismiss}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-xs px-3"
-                >
-                  Maybe later
-                </Button>
-              </div>
-            </div>
-          </div>
-          
-          <Button
-            size="sm"
-            variant="ghost"
-            onClick={handleDismiss}
-            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 h-auto flex-shrink-0"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        </div>
+    <div className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-4 sm:w-72 z-50 animate-slideUp">
+      <div className="flex items-center gap-2 rounded-xl border border-primary/70 bg-card px-3 py-2 shadow-lg">
+        <Download className="h-4 w-4 shrink-0 text-primary" />
+        <span className="flex-1 truncate text-xs font-medium text-foreground">Install the SafeOrStolen app</span>
+        <Button onClick={handleInstall} size="sm" className="h-7 px-2.5 text-xs">Install</Button>
+        <button onClick={handleDismiss} aria-label="Close" className="p-1 text-muted-foreground"><X className="h-3.5 w-3.5" /></button>
       </div>
     </div>
   );

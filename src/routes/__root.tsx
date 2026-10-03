@@ -431,7 +431,7 @@ function AppShell() {
           {!hideFooter && <SOSFooter />}
         </div>
         <PWAInstallManager />
-        <AppDownloadBot />
+        {/* Oct 2 2026: removed duplicate install pop-up; PWAInstallManager shows the single slim bar */}
         <MobileNavigation />
         <AIFloatingChat />
 
