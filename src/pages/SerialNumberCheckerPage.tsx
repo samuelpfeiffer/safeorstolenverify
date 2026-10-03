@@ -4,7 +4,7 @@ const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
  title="Free Serial Number Lookup — Check if Item is Stolen | SafeOrStolen"
- metaDescription="AI-powered serial number checker for electronics, power tools, and appliances. Search SafeOrStolen's stolen-item reports, web results and AI analysis instantly."
+ metaDescription="Free serial number lookup for electronics, tools, guns, and more. Searches SafeOrStolen theft reports, police stolen-gun records from 34 states, and the web. 2 free checks."
  h1="Free Serial Number Lookup — Stolen Item Check"
  itemType="Item"
  dateModified="2026-09-23"
@@ -81,7 +81,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "What databases does SafeOrStolen check?",
- answer: "SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis. It does not search police, pawn-shop, manufacturer or insurance databases. Bicycles are also checked against BikeIndex and firearms against HotGunz."
+ answer: "Every serial number check searches SafeOrStolen's own stolen-item reports, police stolen-gun records from 34 states, and public web results, with AI notes that never decide the result on their own. Firearms are also checked against live Ohio law-enforcement stolen-gun records, bicycles against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records plus federal VIN data. It does not search pawn-shop, manufacturer, or insurance databases."
  },
  {
  question: "What if the serial number check shows the item is stolen?",
