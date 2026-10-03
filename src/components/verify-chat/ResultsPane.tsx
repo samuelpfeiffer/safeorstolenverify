@@ -1,3 +1,4 @@
+import { RegistryReportNotice } from '@/components/reports/RegistryReportNotice';
 import React from 'react';
 import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import { cn } from '@/lib/utils';
@@ -268,6 +269,8 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </p>
  </div>
 
+
+ <RegistryReportNotice providers={current.providers as any} />
 
  {/* Watch this — daily re-check for items with a real outside source */}
  {current.status !== 'stolen' &&

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, XCircle, AlertTriangle, Clock } from 'lucide-react';
 import type { AggregatedResult } from '@/services/VerificationService';
+import { RegistryReportNotice } from '@/components/reports/RegistryReportNotice';
 import { SourceCard } from './SourceCard';
 import { TrustBadge } from './TrustBadge';
 import { DownloadReportButton } from './DownloadReportButton';
@@ -54,6 +55,7 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
 
   return (
     <div className="space-y-6">
+      <RegistryReportNotice providers={result.providers as any} />
       {/* Trust Badge for Safe Items */}
       {(result.finalStatus === 'safe' || result.riskLevel === 'low') && (
         <TrustBadge
