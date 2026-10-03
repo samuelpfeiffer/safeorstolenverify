@@ -59,7 +59,7 @@ const TexasLicensePlateLookupPage = () => {
  },
  {
  question: "Is Texas license plate lookup really free?",
- answer: "Yes. SafeOrStolen offers 2 free Texas license plate lookups using its stolen-item reports, public web results, and AI analysis. It does not access Texas DMV registration records. Additional checks are $0.99 each or included with the $10 monthly plan."
+ answer: "Yes. SafeOrStolen offers 2 free Texas license plate lookups using its stolen-item reports, public web results, and AI analysis. It does not access Texas DMV registration records. Additional checks are $3.99 each or included with the $14.99 monthly plan."
  },
  {
  question: "What if the Texas registered owner doesn't match the seller?",

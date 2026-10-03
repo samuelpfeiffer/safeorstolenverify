@@ -11,7 +11,7 @@ const NICBAlternativePage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "NICB VINCheck Alternative",
-      "description": "Comparing VIN check tools? SafeOrStolen offers 2 free VIN checks, then $0.99/check or $10/month unlimited, across six item categories.",
+      "description": "Comparing VIN check tools? SafeOrStolen offers 2 free VIN checks, then $3.99/check or $14.99/month unlimited, across six item categories.",
       "url": "https://safeorstolen.com/nicb-alternative"
     },
     {
@@ -31,7 +31,7 @@ const NICBAlternativePage = () => {
           "name": "How much does SafeOrStolen cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen includes 2 free checks, then $0.99 per check or $10/month for unlimited checks."
+            "text": "SafeOrStolen includes 2 free checks, then $3.99 per check or $14.99/month for unlimited checks."
           }
         }
       ]
@@ -42,7 +42,7 @@ const NICBAlternativePage = () => {
     <>
       <PageSEO
         title="VIN Check Options Compared | SafeOrStolen"
-        description="Comparing VIN check options? SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited, for vehicles and five other item categories."
+        description="Comparing VIN check options? SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited, for vehicles and five other item categories."
         keywords="nicb alternative, nicb vincheck alternative, vin check no limit, unlimited vin check, nicb replacement"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -81,7 +81,7 @@ const NICBAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg border-2 border-primary">
                 <h3 className="font-bold text-lg mb-3 text-primary">✓ SafeOrStolen:</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• 2 free checks, then $0.99/check or $10/month unlimited</li>
+                  <li>• 2 free checks, then $3.99/check or $14.99/month unlimited</li>
                   <li>• Installable web app with barcode scanning</li>
                   <li>• Six item categories in one platform</li>
                   <li>• Cars, phones, bikes, guns, electronics</li>
@@ -108,7 +108,7 @@ const NICBAlternativePage = () => {
                 <tbody>
                   <tr className="border-t border-border">
                     <td className="p-4">Free Checks</td>
-                    <td className="p-4 text-center text-primary font-bold">2 free, then $0.99/check or $10/mo unlimited</td>
+                    <td className="p-4 text-center text-primary font-bold">2 free, then $3.99/check or $14.99/mo unlimited</td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
                     <td className="p-4">Installable Web App</td>
@@ -152,7 +152,7 @@ const NICBAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg text-center">
                 <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Unlimited Plan Available</h3>
-                <p className="text-muted-foreground">2 free checks, then $0.99/check or $10/month unlimited. Built for dealers, pawn shops, and high-volume buyers.</p>
+                <p className="text-muted-foreground">2 free checks, then $3.99/check or $14.99/month unlimited. Built for dealers, pawn shops, and high-volume buyers.</p>
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <Smartphone className="w-12 h-12 text-primary mx-auto mb-4" />

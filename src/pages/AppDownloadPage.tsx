@@ -47,8 +47,8 @@ export default function AppDownloadPage() {
  "description": "Installable SafeOrStolen web app for verifying whether phones (IMEI), vehicles (VIN), license plates, serialized electronics, firearms, and bicycles are reported stolen. Includes barcode and serial scanning, with results in about 3 seconds.",
  "offers": [
  { "@type": "Offer", "name": "Free checks", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },
- { "@type": "Offer", "name": "Single check", "price": "0.99", "priceCurrency": "USD", "description": "One-time single verification" },
- { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, $10 per month, cancel anytime" }
+ { "@type": "Offer", "name": "Single check", "price": "3.99", "priceCurrency": "USD", "description": "One-time single verification" },
+ { "@type": "Offer", "name": "Unlimited monthly", "price": "14.99", "priceCurrency": "USD", "description": "Unlimited verifications, $14.99 per month, cancel anytime" }
  ]
  };
 
@@ -164,7 +164,7 @@ export default function AppDownloadPage() {
  'Bicycle serial check',
  'Marketplace listing URL analysis',
  'PDF verification certificate',
- '2 free checks, then $0.99/check or $10/mo unlimited',
+ '2 free checks, then $3.99/check or $14.99/mo unlimited',
  ].map((f, i) => (
  <li key={f} className={`flex items-center gap-3 py-3 px-4 text-sm text-gray-300 ${i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}`}>
  <span className="text-green-400 font-bold">✓</span>

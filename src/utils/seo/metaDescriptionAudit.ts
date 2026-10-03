@@ -21,13 +21,13 @@ export const OPTIMAL_META_LENGTH = { min: 155, max: 160 };
  */
 export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  // CORE PAGES (155-160 chars each)
- '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against multiple sources. From $0.99/check. Results in 3 seconds.',
- '/imei-checker': 'IMEI checker for phones. Verify details and check against SafeOrStolen reports and public data. You can ask your carrier about blacklisting. From $0.99.',
- '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against vehicle records. Better than Carfax. $10/mo.',
+ '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against multiple sources. From $3.99/check. Results in 3 seconds.',
+ '/imei-checker': 'IMEI checker for phones. Verify details and check against SafeOrStolen reports and public data. You can ask your carrier about blacklisting. From $3.99.',
+ '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against vehicle records. Better than Carfax. $14.99/mo.',
  '/license-plate-lookup': 'Check if a vehicle is reported stolen using its license plate number. Lookup SafeOrStolen reports and public web data. Instant verification.',
- '/check-phone': 'Check if a phone is reported stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search SafeOrStolen reports and public web data. From $0.99/check.',
- '/check-bike': 'Check if a bicycle is reported stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes against SafeOrStolen reports and BikeIndex. $0.99.',
- '/pricing': 'Stolen item verification from $0.99/check or $10/month unlimited. Check IMEI, VIN, serial numbers against multiple sources. All item types. Cancel anytime.',
+ '/check-phone': 'Check if a phone is reported stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search SafeOrStolen reports and public web data. From $3.99/check.',
+ '/check-bike': 'Check if a bicycle is reported stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes against SafeOrStolen reports and BikeIndex. $3.99.',
+ '/pricing': 'Stolen item verification from $3.99/check or $14.99/month unlimited. Check IMEI, VIN, serial numbers against multiple sources. All item types. Cancel anytime.',
  '/verify': 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against multiple sources. Protect yourself from buying stolen goods on marketplaces.', // 160 chars
  '/blog': 'Expert guides on checking if phones, cars, bikes are stolen. Learn IMEI verification, VIN checks, and how to stay safe on Facebook Marketplace and eBay.', // 159 chars
  '/about': 'SafeOrStolen protects buyers and sellers from stolen goods. Over $15 billion in stolen items sold annually. Our verification service stops theft globally.', // 157 chars
@@ -39,7 +39,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers against our reports, web results and AI.', // 159 chars
  '/database': 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bikes and HotGunz for firearms.', // 158 chars
  '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars
- '/firearms-check': 'Verify firearm serial numbers against stolen firearms databases. Instant check for gun buyers, sellers, and FFL dealers. From $0.99/check unlimited.',
+ '/firearms-check': 'Verify firearm serial numbers against stolen firearms databases. Instant check for gun buyers, sellers, and FFL dealers. From $3.99/check unlimited.',
  '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and appliances. Verify items are not stolen before buying, selling, or accepting them at intake.', // 156 chars
  
  // MARKETPLACE PAGES (155-160 chars each)

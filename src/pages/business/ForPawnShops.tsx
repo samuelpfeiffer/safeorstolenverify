@@ -29,7 +29,7 @@ export default function ForPawnShops() {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      price: "10.00",
+      price: "14.99",
       priceValidUntil: "2026-12-31",
       url: "https://safeorstolen.com/pricing",
     },
@@ -76,7 +76,7 @@ export default function ForPawnShops() {
         name: "How much does pawn shop verification cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "SafeOrStolen offers 2 verifications to try, then unlimited checks for $10/month. Business plans with API access and multi-location support are available.",
+          text: "SafeOrStolen offers 2 verifications to try, then unlimited checks for $14.99/month. Business plans with API access and multi-location support are available.",
         },
       },
       {

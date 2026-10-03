@@ -26,7 +26,7 @@ const ComparisonSwappa = () => {
  "name": "Verification Plans",
  "itemListElement": [
  { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks" },
- { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited monthly" }
+ { "@type": "Offer", "price": "14.99", "priceCurrency": "USD", "description": "Unlimited monthly" }
  ]
  }
  },
@@ -57,7 +57,7 @@ const ComparisonSwappa = () => {
  {
  "@type": "Question",
  "name": "Is SafeOrStolen free to use?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $3.99 each or $14.99/month unlimited — significantly cheaper than per-check services." }
  },
  {
  "@type": "Question",
@@ -114,7 +114,7 @@ const ComparisonSwappa = () => {
  <li><strong>Item Types:</strong> SafeOrStolen verifies phones, cars, guns, bikes, laptops, watches, and more. Swappa only handles phones and tech.</li>
  <li><strong>Databases:</strong> SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis.</li>
  <li><strong>Works Anywhere:</strong> SafeOrStolen works for items from any source. Swappa only verifies items on their marketplace.</li>
- <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $0.99/check or $10/month unlimited. Swappa: free basic check on their listings only.</li>
+ <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $3.99/check or $14.99/month unlimited. Swappa: free basic check on their listings only.</li>
  </ul>
  <h2>Frequently Asked Questions</h2>
  <h3>Does Swappa have a mobile app for verification?</h3>
@@ -122,7 +122,7 @@ const ComparisonSwappa = () => {
  <h3>Can Swappa check if a car or bike is stolen?</h3>
  <p>No. Swappa only handles phones and tech devices. SafeOrStolen verifies all item types including vehicles, firearms, bicycles, and more.</p>
  <h3>Is SafeOrStolen free to use?</h3>
- <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $10/month unlimited.</p>
+ <p>Yes. SafeOrStolen offers 2 free verification checks. Then $3.99/check or $14.99/month unlimited.</p>
  <h3>How many databases does SafeOrStolen check?</h3>
  <p>SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis.</p>
  <nav>
@@ -184,7 +184,7 @@ const ComparisonSwappa = () => {
  ['Sources', "SafeOrStolen reports, web results, AI analysis"],
  ['Works Offline', 'Verify at garage sales, flea markets, anywhere'],
  ['3-Second Results', 'Instant verification with trust score'],
- ['2 Free Checks', 'Then $0.99/check or $10/month unlimited'],
+ ['2 Free Checks', 'Then $3.99/check or $14.99/month unlimited'],
  ['Verification Certificate', 'Downloadable PDF proof for your records'],
  ].map(([title, desc]) => (
  <li key={title} className="flex items-start gap-2">
@@ -390,7 +390,7 @@ const ComparisonSwappa = () => {
  <h2 className="text-3xl font-bold mb-4">The Better Swappa Alternative for Verification</h2>
  <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
  SafeOrStolen is the dedicated verification tool with a mobile app. Swappa is a marketplace.
- For maximum protection when buying used items, use SafeOrStolen — 2 free checks, then $0.99/check or $10/month.
+ For maximum protection when buying used items, use SafeOrStolen — 2 free checks, then $3.99/check or $14.99/month.
  </p>
  <div className="flex flex-wrap justify-center gap-4">
  <Button size="lg" asChild>
@@ -429,7 +429,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="free">
  <AccordionTrigger>Is SafeOrStolen free to use?</AccordionTrigger>
  <AccordionContent>
- Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $0.99 each or $10/month unlimited — significantly cheaper than per-check services. Cancel anytime.
+ Yes. SafeOrStolen offers 2 free verification checks with a free account. After that, checks cost $3.99 each or $14.99/month unlimited — significantly cheaper than per-check services. Cancel anytime.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="databases">

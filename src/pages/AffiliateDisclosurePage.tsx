@@ -48,7 +48,7 @@ const AffiliateDisclosurePage: React.FC = () => {
  <CardContent className="space-y-4 text-sm text-muted-foreground leading-relaxed">
  <p>
  SafeOrStolen ("we," "us," "our") is committed to transparency about how we generate revenue. 
- Our primary revenue comes from verification subscriptions ($0.99/check or $10/month unlimited). 
+ Our primary revenue comes from verification subscriptions ($3.99/check or $14.99/month unlimited). 
  Additionally, when an item is verified as clean, we may recommend complementary third-party services 
  through affiliate partnerships.
  </p>

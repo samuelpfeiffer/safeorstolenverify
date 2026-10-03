@@ -55,7 +55,7 @@ const StolenVerificationAppGuide = () => {
           },
           {
             question: "How much does the SafeOrStolen app cost?",
-            answer: "The SafeOrStolen app is free to download for iOS and Android. 2 free checks, then $0.99/check or $10/month unlimited — significantly more affordable than many single-item checks."
+            answer: "The SafeOrStolen app is free to download for iOS and Android. 2 free checks, then $3.99/check or $14.99/month unlimited — significantly more affordable than many single-item checks."
           },
           {
             question: "Can I use the stolen verification app offline?",

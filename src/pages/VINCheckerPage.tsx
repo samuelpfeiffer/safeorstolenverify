@@ -25,7 +25,7 @@ const VINCheckerPage = () => {
  'reseller vehicle verification'
  ]}
  content={{
- intro: "Enter a 17-character VIN to check a car, truck, motorcycle or RV against SafeOrStolen's own stolen-item reports, public web results and AI analysis — results in about 3 seconds. 2 free checks with a free account (no card), then $0.99 per check or $10/month unlimited. New to this? Read the full guide: <a href='/how-to-check-if-car-stolen'>How to check if a car is stolen</a>, which also covers NICB VINCheck, NMVTIS, history reports and calling police.",
+ intro: "Enter a 17-character VIN to check a car, truck, motorcycle or RV against SafeOrStolen's own stolen-item reports, public web results and AI analysis — results in about 3 seconds. 2 free checks with a free account (no card), then $3.99 per check or $14.99/month unlimited. New to this? Read the full guide: <a href='/how-to-check-if-car-stolen'>How to check if a car is stolen</a>, which also covers NICB VINCheck, NMVTIS, history reports and calling police.",
  whatIs: "A VIN (Vehicle Identification Number) is the 17-character code that identifies a vehicle built since 1981. SafeOrStolen's VIN checker looks that code up in SafeOrStolen's own stolen-item report registry, searches public web results for theft reports and suspicious listings, and uses AI analysis to explain the result in plain language. It is one step in a used-car check, alongside official resources you run yourself: NICB VINCheck (free), an NMVTIS title report (low cost), a paid history report such as Carfax or AutoCheck, and your local police non-emergency line. SafeOrStolen does not search NICB, NMVTIS or police databases.",
  howItWorks: "Type or paste the VIN (or a license plate, or a marketplace listing link). SafeOrStolen checks its own stolen-item reports, runs a public web search for the identifier, and applies AI analysis. You get a clear result — Stolen, Not stolen, or Not found in the sources we checked — plus a list of the sources checked. The result is saved to your account, and after a clean check you can keep a Proof of Clean Purchase record, a timestamped record showing you did your due diligence.",
  whyCheck: "A stolen vehicle can be recovered by police and returned to its owner even after you pay for it, leaving you without the car or your money. Checking before you pay — and keeping a record that you checked — protects buyers, and gives honest sellers a way to show a vehicle checked clean. No service can guarantee 100% accuracy and not every theft is reported, so also use the official resources in our <a href='/how-to-check-if-car-stolen'>stolen car guide</a> and check with local law enforcement on high-value purchases.",
@@ -56,7 +56,7 @@ const VINCheckerPage = () => {
  },
  {
  question: "Is there a free stolen vehicle check?",
- answer: "NICB VINCheck is free. SafeOrStolen includes 2 free checks with a free account (no card), then $0.99 for a single check or $10 per month for unlimited checks across every item type."
+ answer: "NICB VINCheck is free. SafeOrStolen includes 2 free checks with a free account (no card), then $3.99 for a single check or $14.99 per month for unlimited checks across every item type."
  },
  {
  question: "How is SafeOrStolen different from a vehicle history report?",

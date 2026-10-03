@@ -23,7 +23,7 @@ const PRICING_TIERS = [
  'PDF certificate downloads',
  'Cancel anytime',
  ],
- cta: 'Subscribe — $10/month',
+ cta: 'Subscribe — $14.99/month',
  priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
  planName: 'Unlimited Plan',
  isSub: true,
@@ -44,7 +44,7 @@ const PRICING_TIERS = [
  'Priority support',
  'Cancel anytime',
  ],
- cta: 'Subscribe — $10/mo',
+ cta: 'Subscribe — $14.99/mo',
  priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
  planName: 'Unlimited',
  isSub: true,
@@ -104,7 +104,7 @@ const FAQS = [
  { q: 'What if my item comes back as FLAGGED?', a: 'Do not sell the item. Contact your local police with the verification report. If you purchased the item legitimately, file a police report and contact the original seller. Our report provides the evidence law enforcement needs.' },
  { q: 'Where can I use the badge?', a: 'Anywhere you sell: Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform. The badge is an image and the report is a URL — works everywhere.' },
  { q: 'What platforms accept verified badges?', a: 'All of them. The badge is a standard image file and the verification report is a URL. Any platform that allows images or links in listings supports SafeOrStolen badges.' },
- { q: 'What\'s included in the plan?', a: '$10/month gets you unlimited verifications, unlimited badges, seller profile, verification history, PDF certificates, and priority support. Cancel anytime.' },
+ { q: 'What\'s included in the plan?', a: '$14.99/month gets you unlimited verifications, unlimited badges, seller profile, verification history, PDF certificates, and priority support. Cancel anytime.' },
  { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your dashboard anytime. Your subscription continues until the end of the billing period. No cancellation fees.' },
 ];
 
@@ -143,7 +143,7 @@ export default function ForSellers() {
  "areaServed": "United States",
   "description": "Verify items before selling and share a dated result so buyers can review the check themselves.",
  "offers": [
- { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited monthly plan" },
+ { "@type": "Offer", "price": "14.99", "priceCurrency": "USD", "description": "Unlimited monthly plan" },
  ],
  "dateModified": "2026-03-02"
  },
@@ -166,7 +166,7 @@ export default function ForSellers() {
  <>
  <PageSEO
  title="For Sellers - Prove Items Are Legitimate, Sell Faster | SafeOrStolen"
-  description="Verify items before listing and share a dated result with buyers. Two free checks, then $0.99 per check or $10 per month unlimited."
+  description="Verify items before listing and share a dated result with buyers. Two free checks, then $3.99 per check or $14.99 per month unlimited."
  keywords="seller verification, prove item not stolen, verified listing badge, sell faster marketplace, verified seller certificate"
  canonical="/for-sellers"
  structuredData={structuredData}
@@ -425,7 +425,7 @@ export default function ForSellers() {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>SafeOrStolen for Sellers - Prove Items Are Legitimate, Sell Faster</h1>
  <p>Verify your items before listing on any marketplace. SafeOrStolen checks IMEI, VIN, and serial numbers against its own reports, public web results, and AI analysis. Get shareable "Verified Safe" certificates that instill buyer confidence.</p>
- <p>Pricing: $10/month unlimited — includes verifications, badges, seller profile, and PDF certificates. Cancel anytime.</p>
+ <p>Pricing: $14.99/month unlimited — includes verifications, badges, seller profile, and PDF certificates. Cancel anytime.</p>
  </div>
  </noscript>
  </div>

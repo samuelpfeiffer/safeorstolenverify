@@ -25,9 +25,9 @@ const DownloadApp = () => {
     "description": "Free app to check if items are stolen before buying or selling. Verify IMEI, VIN, serial numbers instantly. Protects both buyers AND sellers from stolen goods.",
     "offers": {
       "@type": "Offer",
-      "price": "10.00",
+      "price": "14.99",
       "priceCurrency": "USD",
-      "description": "$10/month unlimited verifications"
+      "description": "$14.99/month unlimited verifications"
     },
     "featureList": [
       "Instant IMEI verification",
@@ -403,7 +403,7 @@ const DownloadApp = () => {
                     <td className="text-center p-4 text-red-500">✗</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-4 font-medium">$10/mo Unlimited</td>
+                    <td className="p-4 font-medium">$14.99/mo Unlimited</td>
                     <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
                     <td className="text-center p-4 text-red-500">✗ Paid Only</td>
                     <td className="text-center p-4 text-red-500">✗ Paid Only</td>
@@ -439,7 +439,7 @@ const DownloadApp = () => {
                   <h3 className="font-bold text-lg mb-2">Is the SafeOrStolen app really free to download?</h3>
                   <p className="text-muted-foreground">
                     Yes! The app is completely free to download and install. Unlimited verifications are available 
-                    for $0.99/check or $10/month unlimited. Cancel anytime with a 30-day money-back guarantee.
+                    for $3.99/check or $14.99/month unlimited. Cancel anytime with a 30-day money-back guarantee.
                   </p>
                 </CardContent>
               </Card>

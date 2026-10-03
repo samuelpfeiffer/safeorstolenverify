@@ -284,7 +284,7 @@ const FirearmsCheckPage = () => {
  to="/pricing"
  className="inline-flex mt-4 items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-5 py-3 rounded-xl transition-all text-sm"
  >
- Get Unlimited Plan — $10/mo →
+ Get Unlimited Plan — $14.99/mo →
  </Link>
  </div>
  </section>

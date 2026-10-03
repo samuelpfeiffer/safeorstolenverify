@@ -29,7 +29,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'A free account includes 2 checks. After that, checks are $0.99 each, or $10 per month for unlimited checks.',
+    a: 'A free account includes 2 checks. After that, checks are $3.99 each, or $14.99 per month for unlimited checks.',
   },
 ];
 
@@ -42,7 +42,7 @@ const ROWS: [string, boolean | string, boolean | string][] = [
   ["Guided Buyer's Check (NICB, door-sticker VIN, title vs. seller ID)", false, true],
   ['Saved Proof of Clean Purchase record', false, true],
   ['Stolen bike search (BikeIndex registry)', false, true],
-  ['Cost', 'Free', '2 free checks, then $0.99 or $10/mo'],
+  ['Cost', 'Free', '2 free checks, then $3.99 or $14.99/mo'],
 ];
 
 const TheftAZAlternativePage = () => {

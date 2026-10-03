@@ -19,7 +19,7 @@ const InstallAppPage = () => {
  { question: "Will SafeOrStolen work offline?", answer: "Yes. Once installed, SafeOrStolen caches recent verifications so you can access them without internet—perfect for marketplace meetups in areas with poor signal." },
  { question: "How much storage does SafeOrStolen use?", answer: "Less than 5MB. SafeOrStolen is lightweight and won't slow down your device or consume significant storage space." },
  { question: "Can I uninstall SafeOrStolen?", answer: "Yes, just like any app. iPhone: Long-press the icon → Remove App. Android: Long-press → Uninstall. Desktop: Right-click → Uninstall." },
- { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 2 free checks, saves your verification history, and unlimited checks are $10/month." },
+ { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 2 free checks, saves your verification history, and unlimited checks are $14.99/month." },
  ];
 
  const iosSteps = [

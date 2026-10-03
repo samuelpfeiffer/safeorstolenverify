@@ -9,7 +9,7 @@ import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
-import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
+import { SafeOrStolenVideo } from '@/components/video/SafeOrStolenVideo';
 
 export default function UltimateMarketplaceBuyersGuide() {
   const navigate = useNavigate();
@@ -61,18 +61,8 @@ export default function UltimateMarketplaceBuyersGuide() {
           <BlogHeroImage src={blogImages.marketplace} alt="Two people meeting in parking lot exchanging verified item - marketplace buyers guide" />
 
           <div className="my-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <SafeOrStolenVideo
-              src={safeOrStolenVideos[2].src}
-              title={safeOrStolenVideos[2].title}
-              caption={safeOrStolenVideos[2].caption}
-              poster={safeOrStolenVideos[2].poster}
-            />
-            <SafeOrStolenVideo
-              src={safeOrStolenVideos[3].src}
-              title={safeOrStolenVideos[3].title}
-              caption={safeOrStolenVideos[3].caption}
-              poster={safeOrStolenVideos[3].poster}
-            />
+            <SafeOrStolenVideo withSchema={false} caption="Verify any used item before you buy or sell." />
+            
           </div>
 
           <div className="prose prose-lg max-w-none">

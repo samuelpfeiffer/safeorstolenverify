@@ -4,7 +4,7 @@ const BicycleSerialCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen"
- metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. $0.99/check or $10/month unlimited. Instant results."
+ metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. $3.99/check or $14.99/month unlimited. Instant results."
  h1="Check if Bicycle is Stolen - Serial Number Verification"
  keywords={[
  'check if bike is stolen',
@@ -22,12 +22,12 @@ const BicycleSerialCheck = () => {
  itemType="Bicycle"
  identifierType="Serial Number"
  heroBadge="Bicycle Theft Verification"
- heroSubtitle="Before buying a used bicycle or e-bike, verify the serial number isn't in stolen bike databases. With 2 million bikes stolen annually in the US, protection is essential. $0.99/check or $10/month unlimited."
+ heroSubtitle="Before buying a used bicycle or e-bike, verify the serial number isn't in stolen bike databases. With 2 million bikes stolen annually in the US, protection is essential. $3.99/check or $14.99/month unlimited."
  stats={[
  { value: "2M+", label: "Bikes Stolen Annually (US)" },
  { value: "3 sec", label: "Verification Time" },
  { value: "Instant", label: "Results" },
- { value: "$10/mo", label: "Unlimited Checks" }
+ { value: "$14.99/mo", label: "Unlimited Checks" }
  ]}
  whatIsTitle="What is Bicycle Serial Number Verification?"
  whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is often recorded. Our verification service checks various sources, including SafeOrStolen's own reports, public web results, AI analysis, and BikeIndex, to see if a bicycle appears to be stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."

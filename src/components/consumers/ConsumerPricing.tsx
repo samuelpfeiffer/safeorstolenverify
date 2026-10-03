@@ -71,7 +71,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading: externalLoading }
     <div className="max-w-4xl mx-auto pt-8" id="subscriptions">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
-        <p className="text-xl mb-4">Unlimited verifications — just $10/month</p>
+        <p className="text-xl mb-4">Unlimited verifications — just $14.99/month</p>
         <div className="flex justify-center items-center gap-6 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>

@@ -1,6 +1,6 @@
 /**
  * Inline Checkout Component
- * Subscribe for $10/month unlimited — directly in the verification flow
+ * Subscribe for $14.99/month unlimited — directly in the verification flow
  */
 
 import React, { useState } from 'react';
@@ -96,7 +96,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
         ) : (
           <>
             <Shield className="w-5 h-5 mr-2" />
-            Subscribe — $10/month Unlimited
+            Subscribe — $14.99/month Unlimited
           </>
         )}
       </Button>
@@ -168,7 +168,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             ) : (
               <>
                 <CreditCard className="w-5 h-5 mr-2" />
-                Subscribe — $10/mo Unlimited
+                Subscribe — $14.99/mo Unlimited
               </>
             )}
           </Button>

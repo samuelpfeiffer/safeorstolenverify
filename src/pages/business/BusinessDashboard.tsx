@@ -265,7 +265,7 @@ export default function BusinessDashboard() {
                 </div>
                 <div className="border-t pt-6">
                   <h4 className="font-semibold mb-2">Subscription</h4>
-                  <p className="text-sm text-muted-foreground mb-4">Subscribe for <strong>$10/month unlimited</strong> verifications to unlock all features.</p>
+                  <p className="text-sm text-muted-foreground mb-4">Subscribe for <strong>$14.99/month unlimited</strong> verifications to unlock all features.</p>
                   <Button asChild>
                     <Link to="/for-businesses#pricing">Upgrade Plan</Link>
                   </Button>

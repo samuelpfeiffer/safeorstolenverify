@@ -59,7 +59,7 @@ const NewYorkLicensePlateLookupPage = () => {
  },
  {
  question: "Is New York license plate lookup really free?",
-  answer: "Yes. SafeOrStolen offers 2 free New York license plate lookups. We check SafeOrStolen's stolen-item reports, public web results, and AI analysis. We do not access NY DMV registration records. Additional checks are $0.99 each or included with the $10 monthly plan."
+  answer: "Yes. SafeOrStolen offers 2 free New York license plate lookups. We check SafeOrStolen's stolen-item reports, public web results, and AI analysis. We do not access NY DMV registration records. Additional checks are $3.99 each or included with the $14.99 monthly plan."
  },
  {
  question: "What if the New York registered owner doesn't match the seller?",

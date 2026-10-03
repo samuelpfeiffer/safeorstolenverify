@@ -125,7 +125,7 @@ All redirect to `/verify` with marketplace-specific SEO:
 
 **Estimated Revenue Impact:**
 - 5% conversion to paid plans = 750-1,250 paying users
-- Average $10/month = **$7,500-12,500/month recurring revenue**
+- Average $14.99/month = **$7,500-12,500/month recurring revenue**
 - Plus one-time verification purchases
 
 ---

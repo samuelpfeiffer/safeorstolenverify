@@ -53,7 +53,7 @@ Before buying, match the 17-character VIN on the dashboard, driver-door jamb, ti
 Results use three states: STOLEN when a theft database or registry lists the item, CLEAR when a theft database that was actually searched returns clean, and NOT FOUND / UNKNOWN otherwise. High-risk warnings (an invalid VIN, a mismatched VIN, or a possible web mention) are shown separately and are never stated as a theft report. A clean check can create a Proof of Clean Purchase verification record showing what was checked and when. It is not a legal document, title, ownership proof, or guarantee.
 
 ## Access and pricing
-2 free checks with a free account, then $0.99 per check or $10/month unlimited. A free phone check confirms the IMEI is real and correctly formed; the lost and stolen phone blacklist search is part of a paid check. The unlimited plan includes 20 phone blacklist searches a month. SafeOrStolen is available on the web and as an installable web app.
+2 free checks with a free account, then $3.99 per check or $14.99/month unlimited. A free phone check confirms the IMEI is real and correctly formed; the lost and stolen phone blacklist search is part of a paid check. The unlimited plan includes 20 phone blacklist searches a month. SafeOrStolen is available on the web and as an installable web app.
 
 ## Company
 Founded: 2017-07-20

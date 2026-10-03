@@ -303,7 +303,7 @@ const VerifyChatPage: React.FC = () => {
          if (!allowed) {
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`,
+             content: `You've used your free checks for this period. **Upgrade to Unlimited at $14.99/mo** or grab a [single check for $3.99](/pricing) to continue.`,
              suggestions: ['Why upgrade?', 'Compare plans'],
            });
            return;

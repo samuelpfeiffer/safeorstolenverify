@@ -44,9 +44,9 @@ export const ServiceOfferSchema = () => {
         "@type": "Offer",
         "url": "https://safeorstolen.com/pricing",
         "priceCurrency": "USD",
-        "price": "10.00",
+        "price": "14.99",
         "priceValidUntil": "2027-12-31",
-        "description": "Unlimited verifications for $10/month",
+        "description": "Unlimited verifications for $14.99/month",
         "availability": "https://schema.org/InStock"
       }
     }

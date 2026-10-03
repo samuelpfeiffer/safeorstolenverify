@@ -11,7 +11,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen a free Carfax alternative?",
-        "acceptedAnswer": { "@type": "Answer", "text": "For stolen-vehicle verification specifically, yes. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited, and focuses on whether a vehicle is reported stolen. If your goal is theft verification rather than a full vehicle history report, SafeOrStolen is a low-cost option." }
+        "acceptedAnswer": { "@type": "Answer", "text": "For stolen-vehicle verification specifically, yes. SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited, and focuses on whether a vehicle is reported stolen. If your goal is theft verification rather than a full vehicle history report, SafeOrStolen is a low-cost option." }
       },
       {
         "@type": "Question",
@@ -26,12 +26,12 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Should I use a vehicle history report or SafeOrStolen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use both for a high-value purchase. SafeOrStolen for theft verification ($10/month unlimited covers all item types), and a dedicated vehicle history report for full accident/ownership history. Different tools serve different purposes." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Use both for a high-value purchase. SafeOrStolen for theft verification ($14.99/month unlimited covers all item types), and a dedicated vehicle history report for full accident/ownership history. Different tools serve different purposes." }
       },
       {
         "@type": "Question",
         "name": "How much does SafeOrStolen cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited on all item types (not just vehicles)." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited on all item types (not just vehicles)." }
       }
     ]
   };
@@ -40,7 +40,7 @@ const CarfaxAlternativePage = () => {
     <>
       <PageSEO
         title="Free Carfax Alternative — Stolen Vehicle Check | SafeOrStolen"
-        description="Looking for a free Carfax alternative for theft verification? SafeOrStolen checks if a vehicle is reported stolen. 2 free checks, then $0.99/check or $10/month unlimited."
+        description="Looking for a free Carfax alternative for theft verification? SafeOrStolen checks if a vehicle is reported stolen. 2 free checks, then $3.99/check or $14.99/month unlimited."
         canonical="/carfax-alternative"
         structuredData={[faqSchema]}
       />
@@ -63,7 +63,7 @@ const CarfaxAlternativePage = () => {
                 Check Vehicle Stolen Status — Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">2 free VIN checks · No credit card · $10/month unlimited</p>
+            <p className="text-muted-foreground text-sm mt-3">2 free VIN checks · No credit card · $14.99/month unlimited</p>
           </div>
         </section>
 
@@ -91,7 +91,7 @@ const CarfaxAlternativePage = () => {
                     ['Bicycle check', true],
                     ['Installable web app', true],
                     ['Marketplace URL analysis', true],
-                    ['Price', '2 free, then $0.99/check or $10/mo unlimited'],
+                    ['Price', '2 free, then $3.99/check or $14.99/mo unlimited'],
                   ].map(([feature, sos], i) => (
                     <tr key={i} className="border-t border-border">
                       <td className="p-3 text-foreground">{feature as string}</td>
@@ -124,7 +124,7 @@ const CarfaxAlternativePage = () => {
               SafeOrStolen is also a good fit if you're:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-              <li>Checking multiple vehicles (unlimited at $10/month)</li>
+              <li>Checking multiple vehicles (unlimited at $14.99/month)</li>
               <li>Checking non-vehicle items (phones, firearms, electronics, bikes)</li>
               <li>Screening marketplace listings before meeting sellers</li>
               <li>Operating a pawn shop or dealership that checks inventory regularly</li>
@@ -143,7 +143,7 @@ const CarfaxAlternativePage = () => {
                 <h3 className="text-primary font-bold mb-2">SafeOrStolen</h3>
                 <ul className="text-muted-foreground text-sm space-y-1">
                   <li>2 free checks (any item type)</li>
-                  <li>$0.99/check or $10/month unlimited</li>
+                  <li>$3.99/check or $14.99/month unlimited</li>
                   <li>All items: vehicles, phones, guns, electronics</li>
                   <li>Installable web app included</li>
                 </ul>
@@ -156,7 +156,7 @@ const CarfaxAlternativePage = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen a free Carfax alternative?</summary>
-                <p className="text-muted-foreground mt-2">For stolen-vehicle detection, yes. SafeOrStolen focuses on theft verification (2 free, then $10/month unlimited) rather than full vehicle history.</p>
+                <p className="text-muted-foreground mt-2">For stolen-vehicle detection, yes. SafeOrStolen focuses on theft verification (2 free, then $14.99/month unlimited) rather than full vehicle history.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What does a vehicle history report include that SafeOrStolen doesn't?</summary>
@@ -172,7 +172,7 @@ const CarfaxAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How much does SafeOrStolen cost?</summary>
-                <p className="text-muted-foreground mt-2">2 free checks, then $0.99/check or $10/month unlimited for all item types.</p>
+                <p className="text-muted-foreground mt-2">2 free checks, then $3.99/check or $14.99/month unlimited for all item types.</p>
               </details>
             </div>
           </section>

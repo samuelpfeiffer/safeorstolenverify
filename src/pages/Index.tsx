@@ -116,7 +116,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Is SafeOrStolen free?',
- a: 'SafeOrStolen includes 2 free checks with a free account, then $0.99 per check or $10/month unlimited, which includes access to the installable web app with barcode scanning.',
+ a: 'SafeOrStolen includes 2 free checks with a free account, then $3.99 per check or $14.99/month unlimited, which includes access to the installable web app with barcode scanning.',
  },
  {
  q: 'What databases does SafeOrStolen check?',
@@ -128,7 +128,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen includes 2 free checks with a free account, then $0.99 per check or $10/month unlimited, covering verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
+ a: 'SafeOrStolen includes 2 free checks with a free account, then $3.99 per check or $14.99/month unlimited, covering verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
  },
  {
  q: 'How does the license plate lookup work?',
@@ -144,7 +144,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Does the Unlimited plan work for pawn shops?',
- a: "Yes. SafeOrStolen's Unlimited plan ($10/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
+ a: "Yes. SafeOrStolen's Unlimited plan ($14.99/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
  },
 ];
 
@@ -205,8 +205,8 @@ const Index = () => {
  <span className="text-primary">Check for free</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
- Need just one verification? Pay <strong className="text-foreground">$0.99</strong> with a free account.
- Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
+ Need just one verification? Pay <strong className="text-foreground">$3.99</strong> with a free account.
+ Verifying often? Get <strong className="text-foreground">$14.99/month unlimited</strong> with the seller badge,
  installable web app, and PDF certificates included. Cancel anytime, 30-day refund.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-3">
@@ -382,21 +382,11 @@ const Index = () => {
           Verify Before You Buy or Sell
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Five quick videos show how SafeOrStolen fits into marketplace meetups and secondhand transactions.
+          See how SafeOrStolen checks a used item before you buy or sell.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-        {safeOrStolenVideos.map((video) => (
-          <SafeOrStolenVideo
-            key={video.id}
-            src={video.src}
-            title={video.title}
-            caption={video.title}
-            poster={video.poster}
-          />
-        ))}
-      </div>
+      <SafeOrStolenVideo caption="Verify any used item before you buy or sell." />
 
       <div className="flex justify-center mt-8">
         <Link
@@ -488,7 +478,7 @@ const Index = () => {
  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
  >
  <Building2 className="w-4 h-4" />
- Get Unlimited Plan — $10/mo
+ Get Unlimited Plan — $14.99/mo
  </Link>
  <Link
  to="/for-pawn-shops"
@@ -502,7 +492,7 @@ const Index = () => {
  <div className="flex-shrink-0 w-full md:w-72 modern-card p-6">
  <div className="flex items-center gap-2 mb-4">
  <Building2 className="w-5 h-5 text-primary" />
- <span className="text-foreground font-bold">Unlimited Plan — $10/mo</span>
+ <span className="text-foreground font-bold">Unlimited Plan — $14.99/mo</span>
  </div>
  <ul className="space-y-2 mb-6">
  {[
@@ -725,7 +715,7 @@ const Index = () => {
  "operatingSystem": ["Web", "iOS", "Android"],
  "offers": [
  { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
- { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
+ { "@type": "Offer", "name": "Unlimited", "price": "14.99", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
  ],
  "dateModified": "2026-09-23"
  })

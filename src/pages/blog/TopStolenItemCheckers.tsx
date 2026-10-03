@@ -80,11 +80,11 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does Carfax cost compared to SafeOrStolen?",
-      answer: "Carfax charges $44.99 per single vehicle report or $99.99 for 6 reports. SafeOrStolen costs $0.99/check or $10/month unlimited across ALL item types (not just vehicles). If you only need vehicle theft verification (not full vehicle history), SafeOrStolen provides comparable theft data at a fraction of the cost."
+      answer: "Carfax charges $44.99 per single vehicle report or $99.99 for 6 reports. SafeOrStolen costs $3.99/check or $14.99/month unlimited across ALL item types (not just vehicles). If you only need vehicle theft verification (not full vehicle history), SafeOrStolen provides comparable theft data at a fraction of the cost."
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen offers unlimited firearm serial number checks for $10/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like federal stolen-property systems and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in federal law-enforcement systems."
+      answer: "SafeOrStolen offers unlimited firearm serial number checks for $14.99/month — covering the HotGunz national stolen-firearms registry plus serial number integrity validation (federal systems like federal stolen-property systems and ATF eTrace are law-enforcement only). HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in federal law-enforcement systems."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -221,7 +221,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-bold text-primary flex items-center gap-1"><Crown className="w-3 h-3" /> SafeOrStolen</td>
                       <td className="p-3">All (phones, cars, guns, electronics, bikes)</td>
                       <td className="p-3">Multi-source</td>
-                      <td className="p-3">$10/mo unlimited</td>
+                      <td className="p-3">$14.99/mo unlimited</td>
                       <td className="p-3 text-center"><Yes /></td>
                       <td className="p-3">Everything</td>
                     </tr>
@@ -305,7 +305,7 @@ const TopStolenItemCheckers = () => {
             {/* 1. SafeOrStolen */}
             <section id="safeorstolen">
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
-              <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $10/mo unlimited · All item types</p>
+              <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $14.99/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
                 SafeOrStolen covers <strong>all six item categories</strong> — phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry — against multiple sources in a single platform. It is also SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place<Link to="/app" className="text-primary hover:underline">dedicated mobile app</Link> featuring barcode scanning for on-the-spot verification.
               </p>
@@ -331,7 +331,7 @@ const TopStolenItemCheckers = () => {
                     <li><Yes /> SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</li>
                     <li><Yes /> All item categories in one platform</li>
                     <li><Yes /> multiple sources (competitors: 10-20)</li>
-                    <li><Yes /> $10/mo unlimited — cheapest in industry</li>
+                    <li><Yes /> $14.99/mo unlimited — cheapest in industry</li>
                     <li><Yes /> 3-second instant results</li>
                     <li><Yes /> Downloadable verification certificates</li>
                     <li><Yes /> Business API for pawn shops and dealers</li>
@@ -343,11 +343,11 @@ const TopStolenItemCheckers = () => {
                 <strong>Best for:</strong> Anyone buying used items from <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>, OfferUp, Craigslist, eBay, pawn shops, gun shows, or private sellers. The mobile app makes it ideal for in-person meetups where you need to verify on the spot.
               </p>
               <p className="text-muted-foreground text-sm">
-                <strong>Pricing:</strong> 2 free checks, then $0.99/check or $10/month unlimited across all item types. Cancel anytime. Business API also available.
+                <strong>Pricing:</strong> 2 free checks, then $3.99/check or $14.99/month unlimited across all item types. Cancel anytime. Business API also available.
               </p>
               <div className="mt-4">
                 <Link to="/verify">
-                  <Button className="gap-2">Check Item Now — $10/mo <ArrowRight className="w-4 h-4" /></Button>
+                  <Button className="gap-2">Check Item Now — $14.99/mo <ArrowRight className="w-4 h-4" /></Button>
                 </Link>
               </div>
             </section>
@@ -408,7 +408,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($10/mo vs $44.99/report).
+                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($14.99/mo vs $44.99/report).
               </p>
             </section>
 
@@ -630,11 +630,11 @@ const TopStolenItemCheckers = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking phones only?</h3>
-                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including SafeOrStolen's own reports, public web results, and AI analysis, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
+                  <p className="text-sm text-muted-foreground">Start with IMEI.info (free unlimited) for carrier blacklist checks. For comprehensive verification including SafeOrStolen's own reports, public web results, and AI analysis, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($14.99/mo unlimited).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
-                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($10/mo).</p>
+                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($14.99/mo).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>

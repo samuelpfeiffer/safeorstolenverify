@@ -61,7 +61,7 @@ export const ExitIntentPopup: React.FC = () => {
 
       toast({
         title: "You're in!",
-        description: "Subscribe for $10/mo unlimited verifications.",
+        description: "Subscribe for $14.99/mo unlimited verifications.",
       });
       setIsVisible(false);
     } catch (error) {

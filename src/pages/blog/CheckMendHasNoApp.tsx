@@ -47,11 +47,11 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "What is the best CheckMEND alternative with an app?",
-            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $10/month unlimited (vs CheckMEND's $3.99/check), offline mode, and coverage for many item types."
+            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $14.99/month unlimited (vs CheckMEND's $3.99/check), offline mode, and coverage for many item types."
           },
           {
             question: "Is SafeOrStolen cheaper than CheckMEND?",
-            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Plus you get a mobile app with barcode scanning that CheckMEND does not offer."
+            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. Plus you get a mobile app with barcode scanning that CheckMEND does not offer."
           },
           {
             question: "Can I scan barcodes with CheckMEND?",
@@ -250,9 +250,9 @@ const CheckMendHasNoApp = () => {
               SafeOrStolen delivers verified results in <strong>3 seconds</strong>. CheckMEND takes 30+ seconds. When you are standing in a parking lot with cash in hand, every second counts.
             </p>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">3. $10/mo Unlimited vs $3.99 Per Check</h3>
+            <h3 className="text-2xl font-bold mt-8 mb-4">3. $14.99/mo Unlimited vs $3.99 Per Check</h3>
             <p>
-              SafeOrStolen offers <strong>2 free checks, then $0.99/check or $10/month unlimited</strong>. Review each service's current pricing before choosing a plan.
+              SafeOrStolen offers <strong>2 free checks, then $3.99/check or $14.99/month unlimited</strong>. Review each service's current pricing before choosing a plan.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">4. Offline Mode</h3>
@@ -284,7 +284,7 @@ const CheckMendHasNoApp = () => {
                 Tap "Install App" - no App Store/Google Play download required (it's a Progressive Web App)
               </li>
               <li>
-                Create an account and subscribe to the $10/month Unlimited Plan
+                Create an account and subscribe to the $14.99/month Unlimited Plan
               </li>
               <li>
                 Start scanning barcodes instantly - experience 3-second verification

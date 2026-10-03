@@ -53,7 +53,7 @@ const faqSchema = {
  "name": "How do I check if a marketplace listing is a scam or a stolen item?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Paste the listing URL into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. SafeOrStolen reads the listing, extracts any identifier it contains (IMEI, VIN, serial number, or plate), checks it against stolen property databases, and scores the listing for scam risk — results in about 3 seconds. It works with Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, and Poshmark. Your first 2 checks are free with no card, then $0.99 per check or $10/month unlimited. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app to check listings from your phone."
+ "text": "Paste the listing URL into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. SafeOrStolen reads the listing, extracts any identifier it contains (IMEI, VIN, serial number, or plate), checks it against stolen property databases, and scores the listing for scam risk — results in about 3 seconds. It works with Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, and Poshmark. Your first 2 checks are free with no card, then $3.99 per check or $14.99/month unlimited. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app to check listings from your phone."
  }
  },
  {
@@ -77,7 +77,7 @@ const faqSchema = {
  "name": "Is the Marketplace URL Analyzer free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $0.99/check or $10/month unlimited — a competitive rate."
+ "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $3.99/check or $14.99/month unlimited — a competitive rate."
  }
  },
  {
@@ -338,7 +338,7 @@ const MarketplaceURLChecker: React.FC = () => {
  </tr>
  <tr>
  <td className="p-3">Price</td>
- <td className="p-3 text-primary font-bold">2 free, $10/mo</td>
+ <td className="p-3 text-primary font-bold">2 free, $14.99/mo</td>
  <td className="p-3 text-muted-foreground">£7/check</td>
  <td className="p-3 text-muted-foreground">Free (limited)</td>
  <td className="p-3 text-muted-foreground">Free (10/day)</td>

@@ -43,12 +43,12 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
             <div>
               <h3 className="font-semibold text-lg">Welcome!</h3>
               <Badge variant="secondary" className="bg-sos-lime/20 text-sos-lime border-sos-lime/30">
-                $0.99/check or $10/mo Unlimited
+                $3.99/check or $14.99/mo Unlimited
               </Badge>
             </div>
           </div>
           <p className="text-sm text-muted-foreground">
-            Get a single check for $0.99 or subscribe for $10/month for unlimited verifications across all item types. Cancel anytime.
+            Get a single check for $3.99 or subscribe for $14.99/month for unlimited verifications across all item types. Cancel anytime.
           </p>
         </div>
 

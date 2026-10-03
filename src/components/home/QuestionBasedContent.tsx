@@ -7,25 +7,25 @@ export const QuestionBasedContent = () => {
  const questions = [
  {
  question: "How to check if a phone is stolen before buying?",
- answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone reports. Enter the 15-digit IMEI into our checker and get instant results. Our system checks SafeOrStolen's reports, public web results, and uses AI analysis to help you understand if a phone is likely stolen. 2 free checks, then $0.99/check or $10/month unlimited.",
+ answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone reports. Enter the 15-digit IMEI into our checker and get instant results. Our system checks SafeOrStolen's reports, public web results, and uses AI analysis to help you understand if a phone is likely stolen. 2 free checks, then $3.99/check or $14.99/month unlimited.",
  icon: Search,
  link: "/verify"
  },
  {
  question: "Can I check if something is stolen before buying?",
- answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against stolen-property registries and global stolen goods registries. 2 free checks, then $0.99/check or $10/month unlimited.",
+ answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against stolen-property registries and global stolen goods registries. 2 free checks, then $3.99/check or $14.99/month unlimited.",
  icon: Database,
  link: "/verify"
  },
  {
  question: "How do I verify a car isn't stolen?",
- answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our search. We check SafeOrStolen's reports, public web results, and use AI analysis to help you understand if a vehicle is likely stolen. Results in 3 seconds. From $0.99/check.",
+ answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our search. We check SafeOrStolen's reports, public web results, and use AI analysis to help you understand if a vehicle is likely stolen. Results in 3 seconds. From $3.99/check.",
  icon: Shield,
  link: "/verify"
  },
  {
  question: "Is there a free database to check stolen items?",
- answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against SafeOrStolen's reports, public web results, and use AI analysis to help you understand if an item is likely stolen.",
+ answer: "Yes! SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against SafeOrStolen's reports, public web results, and use AI analysis to help you understand if an item is likely stolen.",
  icon: CheckCircle2,
  link: "/verify"
  }
@@ -51,7 +51,7 @@ export const QuestionBasedContent = () => {
  </p>
  <Link to={item.link}>
  <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
- Verify Now — From $0.99 →
+ Verify Now — From $3.99 →
  </Button>
  </Link>
  </div>

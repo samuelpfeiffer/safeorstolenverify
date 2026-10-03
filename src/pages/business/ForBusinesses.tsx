@@ -823,7 +823,7 @@ export default function ForBusinesses() {
                 to="/for-sellers"
                 className="text-primary hover:underline flex items-center gap-1"
               >
-                Seller pricing — $10/month unlimited{" "}
+                Seller pricing — $14.99/month unlimited{" "}
                 <ArrowRight className="w-3 h-3" />
               </Link>
             </div>

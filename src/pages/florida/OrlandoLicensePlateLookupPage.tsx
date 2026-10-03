@@ -26,7 +26,7 @@ const OrlandoLicensePlateLookupPage = () => {
  {
  "@type": "Question",
  "name": "Is a license plate lookup free in Orlando?",
-  "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups using its stolen-item reports, public web results, and AI analysis. After 2 free checks, each check is $0.99 or unlimited checks are $10 per month." }
+  "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups using its stolen-item reports, public web results, and AI analysis. After 2 free checks, each check is $3.99 or unlimited checks are $14.99 per month." }
  }
  ]
  };
@@ -110,7 +110,7 @@ const OrlandoLicensePlateLookupPage = () => {
  </details>
  <details className="bg-card/50 border border-border rounded-xl p-4">
  <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup free in Orlando?</summary>
-  <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups using its stolen-item reports, public web results, and AI analysis. After 2 free checks, each check is $0.99 or unlimited checks are $10 per month.</p>
+  <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups using its stolen-item reports, public web results, and AI analysis. After 2 free checks, each check is $3.99 or unlimited checks are $14.99 per month.</p>
  </details>
  </div>
  </section>

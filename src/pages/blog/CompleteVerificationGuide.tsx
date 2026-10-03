@@ -4,7 +4,7 @@ import { Shield, Smartphone, Car, Laptop, Bike, Wrench, Heart } from 'lucide-rea
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
+import { SafeOrStolenVideo } from '@/components/video/SafeOrStolenVideo';
 
 export default function CompleteVerificationGuide() {
   const structuredData = {
@@ -56,13 +56,7 @@ export default function CompleteVerificationGuide() {
               <p className="text-lg mb-4">
                 Whether you're shopping on eBay, Facebook Marketplace, Craigslist, or OfferUp, this guide will teach you how to protect yourself from buying stolen property and potentially facing criminal charges.
               </p>
-              <SafeOrStolenVideo
-                src={safeOrStolenVideos[0].src}
-                title={safeOrStolenVideos[0].title}
-                caption={safeOrStolenVideos[0].caption}
-                poster={safeOrStolenVideos[0].poster}
-                className="mx-auto mt-8 max-w-xs"
-              />
+              <SafeOrStolenVideo withSchema={false} className="mx-auto mt-8 max-w-xs" caption="Verify any used item before you buy or sell." />
             </section>
 
             <section className="mb-12">

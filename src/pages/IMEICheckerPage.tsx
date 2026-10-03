@@ -44,7 +44,7 @@ const IMEICheckerPage = () => {
  faqs: [
  {
  question: "How do I check if a phone is stolen?",
- answer: "Dial *#06# on the phone to display its 15-digit IMEI, then enter that IMEI at SafeOrStolen. SafeOrStolen checks it against our own reports, public web results, and AI analysis, returning a Safe or Potential Red Flags result in about 3 seconds. Your first 2 checks are free with no credit card, then it is $0.99 per check or $10/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and check the IMEI from your own phone while you are standing with the seller. For carrier blacklist status, you should contact the phone's carrier."
+ answer: "Dial *#06# on the phone to display its 15-digit IMEI, then enter that IMEI at SafeOrStolen. SafeOrStolen checks it against our own reports, public web results, and AI analysis, returning a Safe or Potential Red Flags result in about 3 seconds. Your first 2 checks are free with no credit card, then it is $3.99 per check or $14.99/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and check the IMEI from your own phone while you are standing with the seller. For carrier blacklist status, you should contact the phone's carrier."
  },
  {
  question: "How do I check if a phone is stolen?",
@@ -76,7 +76,7 @@ const IMEICheckerPage = () => {
  },
  {
  question: "How much does the IMEI check cost?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Covers all item types — not just phones. Cancel anytime with a 30-day money-back guarantee."
+ answer: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. Covers all item types — not just phones. Cancel anytime with a 30-day money-back guarantee."
  },
  {
  question: "What databases does SafeOrStolen check?",

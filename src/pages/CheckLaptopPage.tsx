@@ -29,7 +29,7 @@ const CheckLaptopPage = () => {
           "Verify Microsoft account lock on Windows PCs",
           "Search stolen-property registries reported across all 50 states",
           "Check gaming laptops — Razer Blade, Alienware, ASUS ROG, MSI Stealth",
-          "2 checks on us — then $10/month unlimited",
+          "2 checks on us — then $14.99/month unlimited",
           "Results in about 3 seconds from SafeOrStolen reports, public web results, and AI analysis"
         ],
         process: [

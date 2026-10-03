@@ -16,7 +16,7 @@ const CTASection = () => {
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
               <Zap className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">From $0.99/Check</span>
+              <span className="text-sm font-semibold text-primary">From $3.99/Check</span>
             </div>
             
             <Shield className="h-16 w-16 text-primary mx-auto mb-6 animate-pulse" />
@@ -34,7 +34,7 @@ const CTASection = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle className="h-4 w-4 text-secondary" />
-                $10/mo Unlimited
+                $14.99/mo Unlimited
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-secondary" />

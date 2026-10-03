@@ -41,7 +41,7 @@ const SerialNumberCheckerPage = () => {
  faqs: [
  {
  question: "How do I check a serial number?",
- answer: "Find the serial number on the item — usually on the base, back panel, battery compartment, or nameplate — and enter it at SafeOrStolen. SafeOrStolen checks it against SafeOrStolen's own stolen-item reports, public web results and AI analysis and returns a Safe or Stolen result in about 3 seconds. Your first 2 checks are free with no card required, then it is $0.99 per check or $10/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and scan or type the serial from your phone while you are with the seller."
+ answer: "Find the serial number on the item — usually on the base, back panel, battery compartment, or nameplate — and enter it at SafeOrStolen. SafeOrStolen checks it against SafeOrStolen's own stolen-item reports, public web results and AI analysis and returns a Safe or Stolen result in about 3 seconds. Your first 2 checks are free with no card required, then it is $3.99 per check or $14.99/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and scan or type the serial from your phone while you are with the seller."
  },
  {
  question: "Where can I check a serial number to see if an item is stolen?",

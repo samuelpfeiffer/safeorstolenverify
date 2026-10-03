@@ -35,7 +35,7 @@ export const ConversionOptimizedPricing = ({
           Simple, Honest Pricing
         </h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-6">
-          Start with 2 free checks. Then pay <span className="font-bold text-sos-lime">$0.99/check</span> or go unlimited for <span className="font-bold text-sos-lime">$10/month</span>.
+          Start with 2 free checks. Then pay <span className="font-bold text-sos-lime">$3.99/check</span> or go unlimited for <span className="font-bold text-sos-lime">$14.99/month</span>.
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span className="flex items-center gap-1 text-sos-lime font-semibold">
@@ -84,7 +84,7 @@ export const ConversionOptimizedPricing = ({
             ) : (
               <>
                 <CreditCard className="mr-2 h-4 w-4" />
-                Buy a Check — $0.99
+                Buy a Check — $3.99
               </>
             )}
           </Button>
@@ -133,7 +133,7 @@ export const ConversionOptimizedPricing = ({
               </>
             ) : (
               <>
-                Go Unlimited — $10/month
+                Go Unlimited — $14.99/month
                 <ArrowRight className="ml-2 h-5 w-5" />
               </>
             )}
@@ -164,7 +164,7 @@ export const ConversionOptimizedPricing = ({
           <div className="p-4 rounded-lg bg-card border border-border">
             <h4 className="font-semibold mb-2">Which plan should I choose?</h4>
             <p className="text-sm text-muted-foreground">
-              Checking one item? Use a free check or pay $0.99. Buying/selling regularly (3+ times/month)? The $10/month unlimited plan saves you money and includes seller badges.
+              Checking one item? Use a free check or pay $3.99. Buying/selling regularly (3+ times/month)? The $14.99/month unlimited plan saves you money and includes seller badges.
             </p>
           </div>
           <div className="p-4 rounded-lg bg-card border border-border">
@@ -176,7 +176,7 @@ export const ConversionOptimizedPricing = ({
           <div className="p-4 rounded-lg bg-card border border-border">
             <h4 className="font-semibold mb-2">Do I need an account for pay-per-check?</h4>
             <p className="text-sm text-muted-foreground">
-              No. Create a free account, pay $0.99, enter your item's identifier, and get instant results.
+              No. Create a free account, pay $3.99, enter your item's identifier, and get instant results.
             </p>
           </div>
           <div className="p-4 rounded-lg bg-card border border-border">
