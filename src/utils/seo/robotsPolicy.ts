@@ -24,8 +24,8 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
     return true;
   }
 
-  // Interactive verification workspace (app UI, not a content page)
-  if (/^\/verify$/i.test(path) || /^\/trust-engine$/i.test(path)) {
+  // Oct 2 2026: /verify (main check page + dashboard) is now indexed; it's the site's most important page.
+  if (/^\/trust-engine$/i.test(path)) {
     return true;
   }
 
