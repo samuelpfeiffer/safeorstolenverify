@@ -1400,6 +1400,72 @@ export type Database = {
         }
         Relationships: []
       }
+      theft_records: {
+        Row: {
+          agency: string | null
+          caliber: string | null
+          case_number: string | null
+          city: string | null
+          description: string | null
+          id: number
+          identifier_norm: string
+          identifier_raw: string | null
+          imported_at: string
+          item_type: string
+          item_type_detail: string | null
+          make: string | null
+          model: string | null
+          reported_date: string | null
+          reported_year: number | null
+          source_key: string
+          source_record_id: string | null
+          state: string | null
+          status: string
+        }
+        Insert: {
+          agency?: string | null
+          caliber?: string | null
+          case_number?: string | null
+          city?: string | null
+          description?: string | null
+          id?: number
+          identifier_norm: string
+          identifier_raw?: string | null
+          imported_at?: string
+          item_type: string
+          item_type_detail?: string | null
+          make?: string | null
+          model?: string | null
+          reported_date?: string | null
+          reported_year?: number | null
+          source_key: string
+          source_record_id?: string | null
+          state?: string | null
+          status: string
+        }
+        Update: {
+          agency?: string | null
+          caliber?: string | null
+          case_number?: string | null
+          city?: string | null
+          description?: string | null
+          id?: number
+          identifier_norm?: string
+          identifier_raw?: string | null
+          imported_at?: string
+          item_type?: string
+          item_type_detail?: string | null
+          make?: string | null
+          model?: string | null
+          reported_date?: string | null
+          reported_year?: number | null
+          source_key?: string
+          source_record_id?: string | null
+          state?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       usage_tracking: {
         Row: {
           check_count: number | null
