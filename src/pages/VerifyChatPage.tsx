@@ -318,6 +318,15 @@ const VerifyChatPage: React.FC = () => {
            requireAccount(assistantId, identifier);
            return;
          }
+         // Oct 4 2026: signed-in people who used their free checks get the paid options, not an error.
+         if (verifyErr && user && verifyErr.code === 'LIMIT_REACHED') {
+           updateMessage(assistantId, {
+             loading: false,
+             content: `You've used your free checks. **Get unlimited checks for $14.99/month** or run a [single full check for $3.99](/pricing).`,
+             suggestions: ['Why upgrade?', 'Compare plans'],
+           });
+           return;
+         }
          if (verifyErr) throw new Error(verifyErr.message);
 
 
