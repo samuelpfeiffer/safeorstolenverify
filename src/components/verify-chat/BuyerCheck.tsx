@@ -12,8 +12,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
 import { toast } from 'sonner';
-import { useAuth } from '@/lib/auth';
-import { createProofRecord } from '@/features/proof/api';
+import { supabase } from '@/integrations/supabase/client';
+import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { normalizeVin } from '@/lib/verification/vin';
 import { ProofDisclaimer } from '@/components/proof/ProofDisclaimer';
 
@@ -41,10 +41,11 @@ interface VehicleProvider {
 interface BuyerCheckProps {
   vin: string;
   providers?: VehicleProvider[];
+  /** Saved check id; the certificate is issued from it on the server. */
+  checkId?: string | null;
 }
 
-export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) => {
-  const { user } = useAuth();
+export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [], checkId }) => {
   const cleanVin = normalizeVin(vin);
 
   const vehicle = providers.find((p) => p.provider === 'Vehicle_Verification');
@@ -86,19 +87,33 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
     ];
   }, [autoChecked]);
 
+  // Oct 5 2026: issued on the server from the saved check ($1.99, free for members).
   const save = async () => {
-    if (!allDone || !allPassed) return;
+    if (!allDone || !allPassed || !checkId) return;
     setSaving(true);
     try {
-      const id = await createProofRecord({
-        rawIdentifier: cleanVin,
-        category: 'vehicle',
-        result: 'clean',
-        databasesQueried,
-        userId: user?.id ?? null,
+      const { data: s } = await supabase.auth.getSession();
+      const token = s.session?.access_token;
+      let fingerprint: string | null = null;
+      try { fingerprint = getOrCreateFingerprint(); } catch { fingerprint = null; }
+      const buyerSteps = databasesQueried.filter((d) => d.startsWith('Checked by buyer: '));
+      const res = await fetch('/certificate-api', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+        body: JSON.stringify({ checkId, fingerprint, buyerSteps }),
       });
-      setRecordId(id);
-      toast.success('Proof of Clean Purchase saved.');
+      const cert = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(cert?.error || "Couldn't create the certificate.");
+      if (cert.paid) {
+        setRecordId(cert.id);
+        toast.success('Certificate issued.');
+        return;
+      }
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { product: 'certificate', proofId: cert.id, fingerprint },
+      });
+      if (error || !data?.url) throw new Error('Could not open checkout.');
+      window.location.href = data.url;
     } catch (err: any) {
       toast.error(err?.message ? `Couldn't save: ${err.message}` : "Couldn't save the record. Try again.");
     } finally {
@@ -256,7 +271,7 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [] }) =
           <div className="space-y-3">
             <Button onClick={save} disabled={!allDone || saving} className="w-full sm:w-auto">
               {saving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden /> : null}
-              Save Proof of Clean Purchase
+              Get Proof of Clean Purchase — $1.99
             </Button>
             {!allDone && (
               <p className="text-xs text-muted-foreground">Finish all four steps to save your record.</p>

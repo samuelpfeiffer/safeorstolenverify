@@ -20,6 +20,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
+import { CertificateOffer } from '@/components/proof/CertificateOffer';
 import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
 import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
@@ -50,6 +51,8 @@ export type ChatVerifyResult = {
  sources?: string[];
  providers?: AggregatedResult['providers'];
  timestamp?: string;
+ /** Saved check id (verification_searches) for the certificate offer. */
+ checkId?: string | null;
 };
 
 interface ResultsPaneProps {
@@ -298,6 +301,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  key={`${current.identifier}-${current.timestamp ?? ''}`}
  vin={current.identifier}
  providers={current.providers as any}
+ checkId={current.checkId}
  />
  )}
 
@@ -306,9 +310,11 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  identifier={current.identifier}
  itemType={current.itemType}
  status={current.status}
- referenceId={(current as { id?: string }).id ?? null}
+ referenceId={current.checkId ?? null}
  timestamp={current.timestamp ?? null}
  />
+
+ <CertificateOffer checkId={current.checkId} />
 
  {/* Sources */}
  {current.sources && current.sources.length > 0 && (

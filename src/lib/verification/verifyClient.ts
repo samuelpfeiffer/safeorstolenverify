@@ -34,6 +34,8 @@ export interface VerifyApiResult {
   checksRemaining: number | null;
   plan: string;
   timestamp: string;
+  /** Saved check id; used to issue a verification certificate. */
+  checkId?: string | null;
 }
 
 export interface VerifyApiError {

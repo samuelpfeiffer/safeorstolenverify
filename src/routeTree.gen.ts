@@ -34,6 +34,7 @@ import { Route as CaliforniaLicensePlateLookupRouteImport } from './routes/calif
 import { Route as CaliforniaVinLookupRouteImport } from './routes/california-vin-lookup'
 import { Route as CarfaxAlternativeRouteImport } from './routes/carfax-alternative'
 import { Route as CarfaxAlternativeFreeRouteImport } from './routes/carfax-alternative-free'
+import { Route as CertificateApiRouteImport } from './routes/certificate-api'
 import { Route as CheckAndroidRouteImport } from './routes/check-android'
 import { Route as CheckAndroidPhoneStolenRouteImport } from './routes/check-android-phone-stolen'
 import { Route as CheckAppliancesRouteImport } from './routes/check-appliances'
@@ -514,6 +515,11 @@ const CarfaxAlternativeRoute = CarfaxAlternativeRouteImport.update({
 const CarfaxAlternativeFreeRoute = CarfaxAlternativeFreeRouteImport.update({
   id: '/carfax-alternative-free',
   path: '/carfax-alternative-free',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificateApiRoute = CertificateApiRouteImport.update({
+  id: '/certificate-api',
+  path: '/certificate-api',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckAndroidRoute = CheckAndroidRouteImport.update({
@@ -2401,6 +2407,7 @@ export interface FileRoutesByFullPath {
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
   '/carfax-alternative-free': typeof CarfaxAlternativeFreeRoute
+  '/certificate-api': typeof CertificateApiRoute
   '/check-android': typeof CheckAndroidRoute
   '/check-android-phone-stolen': typeof CheckAndroidPhoneStolenRoute
   '/check-appliances': typeof CheckAppliancesRoute
@@ -2776,6 +2783,7 @@ export interface FileRoutesByTo {
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
   '/carfax-alternative-free': typeof CarfaxAlternativeFreeRoute
+  '/certificate-api': typeof CertificateApiRoute
   '/check-android': typeof CheckAndroidRoute
   '/check-android-phone-stolen': typeof CheckAndroidPhoneStolenRoute
   '/check-appliances': typeof CheckAppliancesRoute
@@ -3153,6 +3161,7 @@ export interface FileRoutesById {
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
   '/carfax-alternative-free': typeof CarfaxAlternativeFreeRoute
+  '/certificate-api': typeof CertificateApiRoute
   '/check-android': typeof CheckAndroidRoute
   '/check-android-phone-stolen': typeof CheckAndroidPhoneStolenRoute
   '/check-appliances': typeof CheckAppliancesRoute
@@ -3532,6 +3541,7 @@ export interface FileRouteTypes {
     | '/california-vin-lookup'
     | '/carfax-alternative'
     | '/carfax-alternative-free'
+    | '/certificate-api'
     | '/check-android'
     | '/check-android-phone-stolen'
     | '/check-appliances'
@@ -3907,6 +3917,7 @@ export interface FileRouteTypes {
     | '/california-vin-lookup'
     | '/carfax-alternative'
     | '/carfax-alternative-free'
+    | '/certificate-api'
     | '/check-android'
     | '/check-android-phone-stolen'
     | '/check-appliances'
@@ -4283,6 +4294,7 @@ export interface FileRouteTypes {
     | '/california-vin-lookup'
     | '/carfax-alternative'
     | '/carfax-alternative-free'
+    | '/certificate-api'
     | '/check-android'
     | '/check-android-phone-stolen'
     | '/check-appliances'
@@ -4661,6 +4673,7 @@ export interface RootRouteChildren {
   CaliforniaVinLookupRoute: typeof CaliforniaVinLookupRoute
   CarfaxAlternativeRoute: typeof CarfaxAlternativeRoute
   CarfaxAlternativeFreeRoute: typeof CarfaxAlternativeFreeRoute
+  CertificateApiRoute: typeof CertificateApiRoute
   CheckAndroidRoute: typeof CheckAndroidRoute
   CheckAndroidPhoneStolenRoute: typeof CheckAndroidPhoneStolenRoute
   CheckAppliancesRoute: typeof CheckAppliancesRoute
@@ -5136,6 +5149,13 @@ declare module '@tanstack/react-router' {
       path: '/carfax-alternative-free'
       fullPath: '/carfax-alternative-free'
       preLoaderRoute: typeof CarfaxAlternativeFreeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificate-api': {
+      id: '/certificate-api'
+      path: '/certificate-api'
+      fullPath: '/certificate-api'
+      preLoaderRoute: typeof CertificateApiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/check-android': {
@@ -7754,6 +7774,7 @@ const rootRouteChildren: RootRouteChildren = {
   CaliforniaVinLookupRoute: CaliforniaVinLookupRoute,
   CarfaxAlternativeRoute: CarfaxAlternativeRoute,
   CarfaxAlternativeFreeRoute: CarfaxAlternativeFreeRoute,
+  CertificateApiRoute: CertificateApiRoute,
   CheckAndroidRoute: CheckAndroidRoute,
   CheckAndroidPhoneStolenRoute: CheckAndroidPhoneStolenRoute,
   CheckAppliancesRoute: CheckAppliancesRoute,

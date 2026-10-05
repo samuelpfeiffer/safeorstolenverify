@@ -102,15 +102,6 @@ export function ReportStolenForm() {
             </p>
           </div>
         </div>
-        {result.itemType === 'bicycle' && (
-          <p className="text-sm text-muted-foreground">
-            For bikes, also register the theft with{' '}
-            <a href="https://bikeindex.org" target="_blank" rel="noopener noreferrer" className="text-primary underline">Bike Index</a>{' '}
-            and{' '}
-            <a href="https://project529.com/garage" target="_blank" rel="noopener noreferrer" className="text-primary underline">529 Garage</a>,
-            the registries bike shops and police check.
-          </p>
-        )}
         <div className="flex flex-wrap gap-3">
           <Button asChild><Link to="/my-items">See my items</Link></Button>
           <Button variant="outline" onClick={() => { setResult(null); setIdentifier(''); setPhotos([]); setTermsAccepted(false); }}>

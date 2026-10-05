@@ -42,6 +42,8 @@ export interface VerifyResponse {
   checksRemaining: number | null;
   plan: string;
   timestamp: string;
+  /** verification_searches row id; a paid certificate is issued from this saved check. */
+  checkId?: string | null;
 }
 
 export interface GateDenied {
@@ -761,7 +763,7 @@ export async function runVerification(
   };
 
   try {
-    await admin.from('verification_searches').insert({
+    const { data: saved } = await admin.from('verification_searches').insert({
       user_id: userId,
       fingerprint: userId ? null : (input.fingerprint ?? null),
       serial_number: cleanIdentifier,
@@ -778,7 +780,8 @@ export async function runVerification(
         })),
         checkedSources: result.checkedSources,
       },
-    });
+    }).select('id').single();
+    result.checkId = saved?.id ?? null;
   } catch (error) {
     console.error('[verify] failed to record search:', error);
   }

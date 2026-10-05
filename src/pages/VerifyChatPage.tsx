@@ -342,6 +342,7 @@ const VerifyChatPage: React.FC = () => {
  sources: verify?.checkedSources,
  providers: verify?.providers?.map((p) => ({ ...p, responseTime: p.responseTime ?? 0 })),
  timestamp: verify?.timestamp || new Date().toISOString(),
+ checkId: verify?.checkId ?? null,
  };
 
                 const uncertaintyNote = '';
