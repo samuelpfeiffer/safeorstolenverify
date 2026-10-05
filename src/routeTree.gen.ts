@@ -300,6 +300,7 @@ import { Route as WhatToDoIfYourBikeIsStolenRouteImport } from './routes/what-to
 import { Route as WhatToDoIfYourCarIsStolenRouteImport } from './routes/what-to-do-if-your-car-is-stolen'
 import { Route as WhatToDoIfYourGunIsStolenRouteImport } from './routes/what-to-do-if-your-gun-is-stolen'
 import { Route as WhatToDoIfYourPhoneIsStolenRouteImport } from './routes/what-to-do-if-your-phone-is-stolen'
+import { Route as WhereToFindSerialNumberRouteImport } from './routes/where-to-find-serial-number'
 import { Route as WisconsinLicensePlateLookupRouteImport } from './routes/wisconsin-license-plate-lookup'
 import { Route as WisconsinVinLookupRouteImport } from './routes/wisconsin-vin-lookup'
 import { Route as WyomingLicensePlateLookupRouteImport } from './routes/wyoming-license-plate-lookup'
@@ -1904,6 +1905,11 @@ const WhatToDoIfYourPhoneIsStolenRoute =
     path: '/what-to-do-if-your-phone-is-stolen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const WhereToFindSerialNumberRoute = WhereToFindSerialNumberRouteImport.update({
+  id: '/where-to-find-serial-number',
+  path: '/where-to-find-serial-number',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WisconsinLicensePlateLookupRoute =
   WisconsinLicensePlateLookupRouteImport.update({
     id: '/wisconsin-license-plate-lookup',
@@ -2661,6 +2667,7 @@ export interface FileRoutesByFullPath {
   '/what-to-do-if-your-car-is-stolen': typeof WhatToDoIfYourCarIsStolenRoute
   '/what-to-do-if-your-gun-is-stolen': typeof WhatToDoIfYourGunIsStolenRoute
   '/what-to-do-if-your-phone-is-stolen': typeof WhatToDoIfYourPhoneIsStolenRoute
+  '/where-to-find-serial-number': typeof WhereToFindSerialNumberRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3034,6 +3041,7 @@ export interface FileRoutesByTo {
   '/what-to-do-if-your-car-is-stolen': typeof WhatToDoIfYourCarIsStolenRoute
   '/what-to-do-if-your-gun-is-stolen': typeof WhatToDoIfYourGunIsStolenRoute
   '/what-to-do-if-your-phone-is-stolen': typeof WhatToDoIfYourPhoneIsStolenRoute
+  '/where-to-find-serial-number': typeof WhereToFindSerialNumberRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3411,6 +3419,7 @@ export interface FileRoutesById {
   '/what-to-do-if-your-car-is-stolen': typeof WhatToDoIfYourCarIsStolenRoute
   '/what-to-do-if-your-gun-is-stolen': typeof WhatToDoIfYourGunIsStolenRoute
   '/what-to-do-if-your-phone-is-stolen': typeof WhatToDoIfYourPhoneIsStolenRoute
+  '/where-to-find-serial-number': typeof WhereToFindSerialNumberRoute
   '/wisconsin-license-plate-lookup': typeof WisconsinLicensePlateLookupRoute
   '/wisconsin-vin-lookup': typeof WisconsinVinLookupRoute
   '/wyoming-license-plate-lookup': typeof WyomingLicensePlateLookupRoute
@@ -3789,6 +3798,7 @@ export interface FileRouteTypes {
     | '/what-to-do-if-your-car-is-stolen'
     | '/what-to-do-if-your-gun-is-stolen'
     | '/what-to-do-if-your-phone-is-stolen'
+    | '/where-to-find-serial-number'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4162,6 +4172,7 @@ export interface FileRouteTypes {
     | '/what-to-do-if-your-car-is-stolen'
     | '/what-to-do-if-your-gun-is-stolen'
     | '/what-to-do-if-your-phone-is-stolen'
+    | '/where-to-find-serial-number'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4538,6 +4549,7 @@ export interface FileRouteTypes {
     | '/what-to-do-if-your-car-is-stolen'
     | '/what-to-do-if-your-gun-is-stolen'
     | '/what-to-do-if-your-phone-is-stolen'
+    | '/where-to-find-serial-number'
     | '/wisconsin-license-plate-lookup'
     | '/wisconsin-vin-lookup'
     | '/wyoming-license-plate-lookup'
@@ -4915,6 +4927,7 @@ export interface RootRouteChildren {
   WhatToDoIfYourCarIsStolenRoute: typeof WhatToDoIfYourCarIsStolenRoute
   WhatToDoIfYourGunIsStolenRoute: typeof WhatToDoIfYourGunIsStolenRoute
   WhatToDoIfYourPhoneIsStolenRoute: typeof WhatToDoIfYourPhoneIsStolenRoute
+  WhereToFindSerialNumberRoute: typeof WhereToFindSerialNumberRoute
   WisconsinLicensePlateLookupRoute: typeof WisconsinLicensePlateLookupRoute
   WisconsinVinLookupRoute: typeof WisconsinVinLookupRoute
   WyomingLicensePlateLookupRoute: typeof WyomingLicensePlateLookupRoute
@@ -6987,6 +7000,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhatToDoIfYourPhoneIsStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/where-to-find-serial-number': {
+      id: '/where-to-find-serial-number'
+      path: '/where-to-find-serial-number'
+      fullPath: '/where-to-find-serial-number'
+      preLoaderRoute: typeof WhereToFindSerialNumberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wisconsin-license-plate-lookup': {
       id: '/wisconsin-license-plate-lookup'
       path: '/wisconsin-license-plate-lookup'
@@ -8002,6 +8022,7 @@ const rootRouteChildren: RootRouteChildren = {
   WhatToDoIfYourCarIsStolenRoute: WhatToDoIfYourCarIsStolenRoute,
   WhatToDoIfYourGunIsStolenRoute: WhatToDoIfYourGunIsStolenRoute,
   WhatToDoIfYourPhoneIsStolenRoute: WhatToDoIfYourPhoneIsStolenRoute,
+  WhereToFindSerialNumberRoute: WhereToFindSerialNumberRoute,
   WisconsinLicensePlateLookupRoute: WisconsinLicensePlateLookupRoute,
   WisconsinVinLookupRoute: WisconsinVinLookupRoute,
   WyomingLicensePlateLookupRoute: WyomingLicensePlateLookupRoute,

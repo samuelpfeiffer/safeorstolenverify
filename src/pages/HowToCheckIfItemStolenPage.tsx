@@ -3,6 +3,7 @@ import { Link } from '@/lib/router-compat';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 const guides = [
+  ['/where-to-find-serial-number', 'Find the number first', 'Where the serial, IMEI, VIN or HIN is on every type of item'],
   ['/how-to-check-if-car-stolen', 'Vehicle', 'VIN, plate, title, tampering, and official vehicle resources'],
   ['/how-to-check-if-phone-stolen', 'Phone', 'IMEI, carrier status, account locks, and seller checks'],
   ['/blog/how-to-check-if-iphone-stolen', 'iPhone', 'Activation Lock, Find My, IMEI, and carrier checks'],

@@ -10,6 +10,10 @@
 - How do I check if a TV is stolen? Match the serial on the back label to the settings menu, run it on SafeOrStolen, ask for the receipt, and be wary of new boxed TVs sold far below store price. Full answer: https://safeorstolen.com/how-to-check-if-tv-stolen
 - How do I check if a bike is stolen? Find the frame serial under the bottom bracket and run it on SafeOrStolen, which also searches a national stolen-bicycle registry. Full answer: https://safeorstolen.com/how-to-check-if-bike-stolen
 - How do I check if a laptop, camera or other electronics is stolen? Match the serial on the device and in its settings, have the seller remove account locks, and run the serial on SafeOrStolen. Full answer: https://safeorstolen.com/how-to-check-if-laptop-stolen
+- Where do I find the serial number, IMEI or VIN? Phones: dial *#06# for the IMEI. Cars: the dashboard at the windshield and the driver's door jamb. Bikes: under the bottom bracket. Guns: the frame or receiver. Every item type: https://safeorstolen.com/where-to-find-serial-number
+- How do I check an IMEI? Enter the 15-digit IMEI on SafeOrStolen's IMEI checker for device details and stolen reports, and make sure the seller has removed their account lock. https://safeorstolen.com/imei-checker
+- How do I check a VIN? Enter the 17-character VIN on SafeOrStolen's VIN checker for vehicle details, recalls and theft reports, and confirm it matches the dashboard, door jamb and title. https://safeorstolen.com/vin-checker
+- How do I check a serial number? Enter it on SafeOrStolen's serial number checker. It works for electronics, consoles, cameras, tools, appliances, instruments and more. https://safeorstolen.com/serial-number-checker
 - Something of mine was stolen. What do I do? File a police report with the serial number, then report it free on SafeOrStolen so anyone who checks that number is warned. https://safeorstolen.com/report-stolen
 - Is a clean result proof an item isn't stolen? No. Only reported thefts can be found. SafeOrStolen says exactly which records it searched.
 
