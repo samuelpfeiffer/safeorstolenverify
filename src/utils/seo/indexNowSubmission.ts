@@ -5,7 +5,8 @@
  */
 
 const BASE_URL = 'https://safeorstolen.com';
-const INDEX_NOW_KEY = '4e8f3a2b1c9d0f6e5a7b8c1d2e3f4g5h'; // Public key for IndexNow
+// Oct 5 2026: must match the contents of public/indexnow-key.txt (the old key matched no hosted file).
+const INDEX_NOW_KEY = '290890a314344654bf01fae854029860';
 
 interface IndexNowResponse {
   success: boolean;
