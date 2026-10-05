@@ -512,6 +512,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/how-to-check-if-tv-stolen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/how-to-find-stolen-item-for-sale-online</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -657,6 +662,11 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/report-stolen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/reports-api</loc>
