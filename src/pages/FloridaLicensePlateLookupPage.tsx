@@ -11,9 +11,9 @@ const FloridaLicensePlateLookupPage = () => {
  return (
  <>
  <ItemLandingPageTemplate
- title="Florida License Plate Lookup: Check if a FL Plate or Car Is Stolen | SafeOrStolen"
- metaDescription="Check a Florida plate before you buy: search SafeOrStolen's theft reports, then Florida's free FDLE stolen plate and stolen vehicle search. What a plate check can and can't tell you."
- h1="Florida License Plate Lookup"
+ title="Florida License Plate Lookup: Owner, Tag Status & Stolen Check (Free) | SafeOrStolen"
+ metaDescription="Florida license plate lookup, free: check if a FL plate or car is stolen, what you can legally find about the owner, how to check tag and registration status, and who to call in Jacksonville, Miami, Tampa, Destin and more."
+ h1="Florida License Plate Lookup: Owner, Tag Status and Stolen Check"
  itemType="Vehicle"
  searchType="plate"
  searchPlaceholder="Enter the license plate number"
@@ -26,10 +26,58 @@ const FloridaLicensePlateLookupPage = () => {
  'florida license plate lookup owner',
  'florida license plate lookup owner free',
  'florida license plate lookup',
+ 'jacksonville florida license plate lookup owner',
+ 'destin florida license plate lookup owner',
+ 'license plate search in miami fl',
+ 'check florida tag status',
+ 'car registration lookup florida',
  'FL license plate search',
  'check florida license plate stolen',
  'florida stolen vehicle plate lookup',
  'FDLE stolen plate search'
+ ]}
+ sections={[
+ {
+ heading: "What you can find from a Florida license plate",
+ paragraphs: [
+ "Florida plate records are split between what anyone can check and what only police, insurers and courts can see. Here is what a member of the public can get, and where."
+ ],
+ table: {
+ columns: ["What you want to know", "Can the public get it?", "How"],
+ rows: [
+ ["Who owns the car (name and address)", "No", "Protected by the federal Driver's Privacy Protection Act. Police, insurers handling a claim and parties to a court case can request it from the state with a permitted purpose."],
+ ["Whether the plate or car is reported stolen", "Yes, free", "Check the plate in the box above, then search the plate and VIN in FDLE's free Public Access System."],
+ ["Year, make and model", "Yes, from the VIN", "Ask the seller for the VIN and run a VIN check. Plates can be swapped between cars, so the VIN is the reliable identifier."],
+ ["Your own tag or registration status", "Yes, for your own vehicle", "Through the FLHSMV MyDMV Portal or your county tax collector's office, which handles Florida registrations."],
+ ["Title history and brands (salvage, flood)", "Yes, by VIN", "Florida title records are searched by VIN, not by plate. Ask for the VIN and check the title before you buy."]
+ ]
+ }
+ },
+ {
+ heading: "License plate lookup in Florida cities",
+ paragraphs: [
+ "The rules are the same in every Florida city: no public owner lookup, a free stolen check, and police who can identify the owner when there is a reason to. What changes from city to city is who you call. Use the non-emergency line for a parked or abandoned car, and 911 for anything happening right now."
+ ],
+ table: {
+ columns: ["City", "Who to contact about a plate"],
+ rows: [
+ ["Jacksonville", "Jacksonville Sheriff's Office"],
+ ["Miami", "City of Miami Police Department (Miami-Dade Sheriff's Office outside city limits)"],
+ ["Tampa", "Tampa Police Department"],
+ ["Orlando", "Orlando Police Department"],
+ ["Destin", "Okaloosa County Sheriff's Office, which polices Destin"],
+ ["Clearwater", "Clearwater Police Department"],
+ ["Crystal Springs", "Pasco Sheriff's Office"],
+ ["Anywhere else in Florida", "Your city police department or county sheriff's office"]
+ ]
+ }
+ },
+ {
+ heading: "Why sites that promise a Florida plate owner's name can't deliver",
+ paragraphs: [
+ "Sites that advertise a 'Florida license plate lookup owner' service either show general vehicle details or run a people-search on whatever name they can match, which is often wrong or out of date. None of them can legally pull the registered owner from Florida's records for a general member of the public. If you need the owner for a hit-and-run, damage to your car or a safety concern, the police can identify them, and your insurer can work through the claim."
+ ]
+ }
  ]}
  content={{
  intro: "Before you buy a car in Florida, check the plate and the VIN. SafeOrStolen checks a plate against its own theft reports and public web results. Florida also runs a free public search of plates and vehicles reported stolen to Florida police: the FDLE Public Access System. Use both, then check the VIN.",
@@ -62,6 +110,18 @@ const FloridaLicensePlateLookupPage = () => {
  {
  question: "What does SafeOrStolen check for a Florida plate?",
  answer: "SafeOrStolen's own theft reports and public web results for that plate. It does not search Florida DMV (FLHSMV) records. For Florida police reports, use FDLE's Public Access System."
+ },
+ {
+ question: "Is there a free Florida license plate lookup?",
+ answer: "Yes, for stolen checks. Check the plate in the box on this page and in FDLE's free Public Access System, which lists plates and vehicles reported stolen to Florida police. There is no free public lookup of a Florida plate's owner."
+ },
+ {
+ question: "How do I check my Florida tag or registration status?",
+ answer: "For your own vehicle, use the FLHSMV MyDMV Portal or visit your county tax collector's office, which handles registrations in Florida. Have your plate number, VIN or driver license number ready."
+ },
+ {
+ question: "Can police look up a Florida license plate owner?",
+ answer: "Yes. Police can identify a plate's registered owner as part of their work. Report a hit-and-run, an abandoned car or a safety concern to your local police or sheriff's office with the plate number."
  },
  {
  question: "Where are Florida license plates?",
