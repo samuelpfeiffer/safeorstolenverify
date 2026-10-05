@@ -265,7 +265,7 @@ const BestAILLMs2026 = () => {
                     <li>• <strong>Access:</strong> ChatGPT Plus ($20/mo), API, Azure OpenAI</li>
                   </ul>
                   <p className="text-sm text-muted-foreground">
-                    <strong>SafeOrStolen uses</strong> GPT-5 series models through the <Link to="/how-it-works" className="text-primary hover:underline">Lovable AI gateway</Link> for intelligent verification analysis and fraud pattern detection.
+                    <strong>On SafeOrStolen,</strong> AI writes a plain-language note on each check result. The note never decides whether an item is stolen; that comes only from the theft records searched. <Link to="/how-it-works" className="text-primary hover:underline">How a check works</Link>.
                   </p>
                 </div>
 
