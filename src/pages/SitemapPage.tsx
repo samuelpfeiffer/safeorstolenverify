@@ -66,7 +66,7 @@ const SitemapPage = () => {
  { to: "/check-gaming-console-stolen", label: "Gaming Console Check" },
  { to: "/check-watch-stolen", label: "Watch Serial Check" },
  { to: "/check-camera-stolen", label: "Camera Equipment Check" },
- { to: "/check-power-tools-stolen", label: "Power Tools Check" },
+ { to: "/how-to-check-if-tools-stolen", label: "Power Tools Check" },
  { to: "/check-firearm-serial", label: "Firearm Serial Check" },
  { to: "/check-jewelry-stolen", label: "Jewelry Check" },
  ]
@@ -226,7 +226,7 @@ const SitemapPage = () => {
  { to: "/blog/how-to-sell-verified-items", label: "How to Sell Verified Items" },
  { to: "/blog/free-vin-lookup-guide", label: "Free VIN Lookup Guide" },
  { to: "/blog/ai-stolen-item-detection-2026", label: "AI Stolen Detection 2026" },
- { to: "/blog/ps5-stolen-check-guide", label: "PS5 Stolen Check" },
+ { to: "/check-ps5", label: "PS5 Serial Number Check" },
  { to: "/blog/check-if-phone-stolen-guide", label: "Check Phone Stolen Guide" },
  { to: "/blog/imei-checker-app-download", label: "IMEI App Download" },
  { to: "/blog/theft-trends-report-2024", label: "Theft Trends 2024" },

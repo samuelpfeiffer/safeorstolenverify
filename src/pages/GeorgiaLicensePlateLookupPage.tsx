@@ -9,6 +9,8 @@ const GeorgiaLicensePlateLookupPage = () => {
       metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is reported stolen. Verify against our stolen item reports and public web data."
       h1="Georgia License Plate Lookup - Verify GA Vehicles Aren't Stolen"
       itemType="Vehicle"
+      searchType="plate"
+      searchPlaceholder="Enter the license plate number"
       keywords={[
         'georgia license plate lookup',
         'GA license plate search',

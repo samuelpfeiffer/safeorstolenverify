@@ -14,6 +14,8 @@ const ArizonaLicensePlateLookupPage = () => {
  metaDescription="Check any Arizona plate against Arizona police stolen-vehicle records (TheftAZ). Then run the VIN for a decode, recalls, and a guided buyer's check. 2 free checks."
  h1="Arizona license plate lookup: check a plate against police stolen-vehicle records"
  itemType="Arizona License Plate"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  dateModified="2026-09-28"
  keywords={[
  'arizona license plate lookup',

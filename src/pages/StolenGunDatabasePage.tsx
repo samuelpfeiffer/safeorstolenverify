@@ -15,6 +15,8 @@ const StolenGunDatabasePage = () => {
  metaDescription="Check a gun serial number against police theft records from 34 states and live Ohio stolen-gun records, and spot altered serials. 2 free checks, no account needed."
  h1="Stolen gun database search: check a firearm serial number"
  itemType="Firearm"
+ searchType="firearm"
+ searchPlaceholder="Enter the gun's serial number"
  dateModified="2026-10-02"
  keywords={[
  'stolen gun database',

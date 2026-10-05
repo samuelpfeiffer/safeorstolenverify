@@ -7,6 +7,8 @@ const CheckCarPage = () => {
  metaDescription="Check if a car is stolen before buying. Free VIN verification using our community reports and AI analysis. Safer alternative to Carfax for theft."
  h1="Check if Car is Stolen Before Buying"
  itemType="Car"
+ searchType="vin"
+ searchPlaceholder="Enter the 17-character VIN"
  keywords={[
  'check if car stolen',
  'check car stolen',

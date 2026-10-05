@@ -9,6 +9,8 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  metaDescription="Free North Carolina plate lookup. Check if a NC vehicle is stolen before buying in Charlotte, Raleigh, Greensboro. Searches NCDMV databases."
  h1="North Carolina License Plate Lookup - Verify NC Vehicles Aren't Stolen"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'north carolina license plate lookup',
  'NC license plate search',

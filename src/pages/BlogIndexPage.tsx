@@ -88,14 +88,6 @@ const staticArticles = [
     keywords: ['pawn shop compliance', 'resale verification', 'business tools']
   },
   {
-    title: 'PS5 Stolen Check Guide: Verify Gaming Consoles',
-    slug: 'ps5-stolen-check-guide',
-    excerpt: 'How to check if a PS5, Xbox, or Nintendo Switch is stolen before buying. Serial number verification for gaming consoles.',
-    category: 'Electronics Safety',
-    readTime: '6 min',
-    keywords: ['PS5 stolen check', 'gaming console verification', 'Xbox check']
-  },
-  {
     title: 'How to Check if iPhone is Stolen',
     slug: 'how-to-check-if-iphone-stolen',
     excerpt: 'Step-by-step guide to verify any iPhone isn\'t stolen or blacklisted. IMEI check, Activation Lock, and SafeOrStolen verification.',

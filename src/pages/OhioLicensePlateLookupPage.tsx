@@ -9,6 +9,8 @@ const OhioLicensePlateLookupPage = () => {
  metaDescription="Ohio plate lookup to verify if a vehicle is stolen. Free OH license plate search using official Ohio BMV databases. Secure gov-grade verification for Columbus, Cleveland, Cincinnati vehicles."
  h1="Ohio Plate Lookup - Free License Plate Search"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'ohio plate lookup',
  'ohio license plate lookup',

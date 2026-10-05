@@ -135,7 +135,7 @@ export const HomeContentSections = () => {
  title: "🔧 Power Tools",
  items: "DeWalt, Milwaukee, Makita, Bosch, Festool",
  identifier: "Serial Number",
- link: "/check-power-tools-stolen",
+ link: "/how-to-check-if-tools-stolen",
  detail: "Contractor theft databases, stolen-property reports, insurance"
  }
  ].map((category, i) => (

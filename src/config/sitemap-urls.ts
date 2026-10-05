@@ -115,7 +115,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/blog/pawn-shop-stolen-item-verification', priority: 0.75, changefreq: 'monthly', lastmod: '2026-02-06' },
   { path: '/blog/verify-item-before-meetup', priority: 0.75, changefreq: 'monthly', lastmod: '2026-02-06' },
   { path: '/blog/how-to-check-if-iphone-stolen', priority: 0.90, changefreq: 'weekly', lastmod: '2026-02-06' },
-  { path: '/blog/ps5-stolen-check-guide', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
 
   // ============================================
   // FREE TOOLS (1)

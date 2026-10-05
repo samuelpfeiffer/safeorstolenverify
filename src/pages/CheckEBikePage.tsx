@@ -7,6 +7,8 @@ const CheckEBikePage = () => {
  metaDescription="Check if electric bikes, e-scooters, or eBikes are reported stolen before buying. Free serial number verification for eBikes. Verify Rad Power, Trek, Specialized, Aventon eBikes."
  h1="Check if Your eBike is Stolen Before Buying"
  itemType="eBikes & E-Scooters"
+ searchType="bike"
+ searchPlaceholder="Enter the frame or motor serial number"
  keywords={[
  'check if ebike stolen',
  'stolen ebike check',

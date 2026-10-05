@@ -12,6 +12,7 @@ const CheckBoatPage = () => {
  metaDescription="Check a boat's hull ID (HIN) before buying: where to find it, official places to check it yourself, tampering signs, and running it through SafeOrStolen's serial check."
  h1="How to Check if a Boat Is Stolen"
  itemType="Boat"
+ searchPlaceholder="Enter the 12-character hull ID (HIN)"
  dateModified="2026-09-23"
  keywords={[
  'check if boat is stolen',
