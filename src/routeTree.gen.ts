@@ -30,6 +30,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BarcodeScannerRouteImport } from './routes/barcode-scanner'
 import { Route as BestStolenItemCheckers2026RouteImport } from './routes/best-stolen-item-checkers-2026'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BulkCheckRouteImport } from './routes/bulk-check'
 import { Route as CaliforniaLicensePlateLookupRouteImport } from './routes/california-license-plate-lookup'
 import { Route as CaliforniaVinLookupRouteImport } from './routes/california-vin-lookup'
 import { Route as CarfaxAlternativeRouteImport } from './routes/carfax-alternative'
@@ -497,6 +498,11 @@ const BestStolenItemCheckers2026Route =
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BulkCheckRoute = BulkCheckRouteImport.update({
+  id: '/bulk-check',
+  path: '/bulk-check',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaliforniaLicensePlateLookupRoute =
@@ -2422,6 +2428,7 @@ export interface FileRoutesByFullPath {
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
   '/blog': typeof BlogRouteWithChildren
+  '/bulk-check': typeof BulkCheckRoute
   '/california-license-plate-lookup': typeof CaliforniaLicensePlateLookupRoute
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
@@ -2801,6 +2808,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
+  '/bulk-check': typeof BulkCheckRoute
   '/california-license-plate-lookup': typeof CaliforniaLicensePlateLookupRoute
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
@@ -3182,6 +3190,7 @@ export interface FileRoutesById {
   '/barcode-scanner': typeof BarcodeScannerRoute
   '/best-stolen-item-checkers-2026': typeof BestStolenItemCheckers2026Route
   '/blog': typeof BlogRouteWithChildren
+  '/bulk-check': typeof BulkCheckRoute
   '/california-license-plate-lookup': typeof CaliforniaLicensePlateLookupRoute
   '/california-vin-lookup': typeof CaliforniaVinLookupRoute
   '/carfax-alternative': typeof CarfaxAlternativeRoute
@@ -3565,6 +3574,7 @@ export interface FileRouteTypes {
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
     | '/blog'
+    | '/bulk-check'
     | '/california-license-plate-lookup'
     | '/california-vin-lookup'
     | '/carfax-alternative'
@@ -3944,6 +3954,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
+    | '/bulk-check'
     | '/california-license-plate-lookup'
     | '/california-vin-lookup'
     | '/carfax-alternative'
@@ -4324,6 +4335,7 @@ export interface FileRouteTypes {
     | '/barcode-scanner'
     | '/best-stolen-item-checkers-2026'
     | '/blog'
+    | '/bulk-check'
     | '/california-license-plate-lookup'
     | '/california-vin-lookup'
     | '/carfax-alternative'
@@ -4706,6 +4718,7 @@ export interface RootRouteChildren {
   BarcodeScannerRoute: typeof BarcodeScannerRoute
   BestStolenItemCheckers2026Route: typeof BestStolenItemCheckers2026Route
   BlogRoute: typeof BlogRouteWithChildren
+  BulkCheckRoute: typeof BulkCheckRoute
   CaliforniaLicensePlateLookupRoute: typeof CaliforniaLicensePlateLookupRoute
   CaliforniaVinLookupRoute: typeof CaliforniaVinLookupRoute
   CarfaxAlternativeRoute: typeof CarfaxAlternativeRoute
@@ -5161,6 +5174,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bulk-check': {
+      id: '/bulk-check'
+      path: '/bulk-check'
+      fullPath: '/bulk-check'
+      preLoaderRoute: typeof BulkCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/california-license-plate-lookup': {
@@ -7831,6 +7851,7 @@ const rootRouteChildren: RootRouteChildren = {
   BarcodeScannerRoute: BarcodeScannerRoute,
   BestStolenItemCheckers2026Route: BestStolenItemCheckers2026Route,
   BlogRoute: BlogRouteWithChildren,
+  BulkCheckRoute: BulkCheckRoute,
   CaliforniaLicensePlateLookupRoute: CaliforniaLicensePlateLookupRoute,
   CaliforniaVinLookupRoute: CaliforniaVinLookupRoute,
   CarfaxAlternativeRoute: CarfaxAlternativeRoute,
