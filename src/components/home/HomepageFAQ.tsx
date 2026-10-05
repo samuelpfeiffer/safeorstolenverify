@@ -18,7 +18,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'How accurate is SafeOrStolen?',
-  answer: "We check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex; for firearms, HotGunz. Phone checks include IMEI device details, but carrier blacklist status must be checked separately. No service can guarantee that every theft has been reported."
+  answer: "We check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft and loss reports from 34 states plus live Ohio records. Free phone checks confirm the IMEI is real; paid phone checks also search the lost and stolen phone blacklist. No service can guarantee that every theft has been reported."
  },
  {
  question: 'Do you report searches to police?',

@@ -20,7 +20,7 @@ export const HowSafeOrStolenWorksSection = () => {
  number: '2',
  icon: Database,
  title: 'We Search multiple sources Instantly',
- description: 'Our AI-powered system simultaneously checks SafeOrStolen reports, public web results, and specialized registries like BikeIndex for bicycles and HotGunz for firearms, all augmented by AI analysis.',
+ description: 'Our AI-powered system simultaneously checks SafeOrStolen reports, public web results, a national stolen-bicycle registry for bikes, and police gun theft records from 34 states for guns, with AI notes that never decide the result on their own.',
  details: [
  'SafeOrStolen reports and public web results, combined with AI analysis.',
  'public web results, SafeOrStolen reports, and device details lookup for phones, all powered by AI analysis.',

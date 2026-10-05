@@ -11,7 +11,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "Can I check a gun serial number with the ATF directly?",
- "acceptedAnswer": { "@type": "Answer", "text": "No. The ATF's eTrace system is only available to law enforcement agencies — civilians cannot access it, and neither can SafeOrStolen. What SafeOrStolen can do is check the HotGunz national stolen-firearms registry (32,000+ user-reported records) and analyze the serial number for signs of alteration or obliteration. For a definitive check, ask your local police non-emergency line to run the serial through federal law-enforcement systems." }
+ "acceptedAnswer": { "@type": "Answer", "text": "No. The ATF's eTrace system is only available to law enforcement agencies — civilians cannot access it, and neither can SafeOrStolen. What SafeOrStolen can do is search the serial number against 242,839 police theft and loss reports from 34 states, live Ohio law-enforcement records and SafeOrStolen's own theft reports, and analyze it for signs of alteration or obliteration. For a definitive check, ask your local police non-emergency line to run the serial through federal law-enforcement systems." }
       },
       {
         "@type": "Question",
@@ -21,7 +21,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "How do I verify a firearm online for free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Enter the serial number at SafeOrStolen.com. We check the HotGunz national stolen-firearms registry (32,000+ user-reported records) and analyze the serial number for signs of alteration or obliteration, in about 3 seconds. 2 free checks with no credit card required. No consumer service can query ATF eTrace or federal law-enforcement systems — those are restricted to law enforcement." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter the serial number at SafeOrStolen.com. We search 242,839 police theft and loss reports from 34 states, live Ohio law-enforcement records and SafeOrStolen's own theft reports, and analyze the serial for signs of alteration, in a few seconds. 2 free checks with no credit card required. No consumer service can query ATF eTrace or federal law-enforcement systems — those are restricted to law enforcement." }
       },
       {
         "@type": "Question",
@@ -31,7 +31,7 @@ const ATFGunSerialNumberCheckGuide = () => {
       {
         "@type": "Question",
         "name": "What's the difference between ATF eTrace and federal stolen-property systems?",
- "acceptedAnswer": { "@type": "Answer", "text": "ATF eTrace traces a firearm's sales history (manufacturer → distributor → dealer → first buyer). federal law-enforcement systems records whether a firearm has been reported stolen. Both are restricted to law enforcement. SafeOrStolen checks neither — it checks the HotGunz national stolen-firearms registry and analyzes serial number integrity." }
+ "acceptedAnswer": { "@type": "Answer", "text": "ATF eTrace traces a firearm's sales history (manufacturer → distributor → dealer → first buyer). federal law-enforcement systems records whether a firearm has been reported stolen. Both are restricted to law enforcement. SafeOrStolen checks neither. It searches police theft and loss reports from 34 states, live Ohio records and its own theft reports, and analyzes the serial for tampering." }
       }
     ]
   };
@@ -51,7 +51,7 @@ const ATFGunSerialNumberCheckGuide = () => {
     <>
       <PageSEO
         title="ATF Gun Serial Number Check — How to Verify Firearms Online (2026) | SafeOrStolen"
- description="ATF eTrace and federal law-enforcement systems are restricted to law enforcement. Here's what a civilian can actually check: the HotGunz national stolen-firearms registry plus serial integrity analysis."
+ description="ATF eTrace and federal law-enforcement systems are restricted to law enforcement. Here's what a civilian can check instead: police gun theft reports from 34 states, live Ohio records and a serial tampering check."
         canonical="/blog/atf-gun-serial-number-check"
         keywords="ATF gun serial number check, ATF eTrace, verify firearm online, ATF firearms trace, gun serial number lookup ATF"
         structuredData={[faqSchema, articleSchema]}
@@ -75,7 +75,7 @@ const ATFGunSerialNumberCheckGuide = () => {
                 Check Gun Serial Number Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">Checks the HotGunz national registry + serial integrity analysis</p>
+            <p className="text-muted-foreground text-sm mt-3">Searches police theft reports from 34 states + live Ohio records</p>
           </div>
         </section>
 
@@ -89,7 +89,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               Here's the critical limitation: <strong className="text-foreground">eTrace is not available to civilians</strong>. Only law enforcement agencies with approved access can submit trace requests. If you're a private buyer looking to verify a firearm before purchase, you cannot access eTrace directly.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              SafeOrStolen cannot query eTrace either, and we won't pretend otherwise. What we do is check the serial number against the HotGunz national stolen-firearms registry (32,000+ user-reported records) and analyze it for signs of alteration or obliteration. That's a useful first filter for a private sale — not a substitute for a law enforcement check.
+              SafeOrStolen cannot query eTrace either, and we won't pretend otherwise. What we do is search the serial number against 242,839 police theft and loss reports from 34 states, live Ohio law-enforcement records and SafeOrStolen's own theft reports, and analyze it for signs of alteration or obliteration. That's a useful first filter for a private sale — not a substitute for a law enforcement check.
             </p>
           </section>
 
@@ -127,11 +127,13 @@ const ATFGunSerialNumberCheckGuide = () => {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">What SafeOrStolen Actually Checks</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We'd rather be accurate than impressive. A firearm check on SafeOrStolen does exactly two things:
+              We'd rather be accurate than impressive. A gun check on SafeOrStolen does exactly these things:
             </p>
             <ul className="space-y-3">
               {[
-                { name: 'HotGunz National Stolen-Firearms Registry', desc: 'A free public registry of 32,000+ firearms reported stolen by owners and theft victims, nationwide' },
+                { name: 'Police firearm theft and loss reports', desc: '242,839 reports filed with police in 33 states and Washington, DC, mostly from 2006 to 2017' },
+                { name: 'Live Ohio law-enforcement records', desc: 'Ohio stolen-gun records, searched live on every check' },
+                { name: 'SafeOrStolen theft reports and public web results', desc: 'Guns reported stolen by owners on SafeOrStolen, and public posts or listings that mention the serial' },
                 { name: 'Serial Number Integrity Analysis', desc: 'We analyze the serial itself for obliterated, altered, or placeholder patterns — a defaced serial is a federal felony under 18 U.S.C. § 922(k)' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -141,7 +143,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               ))}
             </ul>
             <p className="text-muted-foreground leading-relaxed mt-4">
-              We do <strong className="text-foreground">not</strong> query ATF eTrace, federal law-enforcement systems, or state police systems. Those are closed to consumer services by law. For a definitive answer, ask your local police non-emergency line to run the serial through federal law-enforcement systems — and if you're buying through an FFL, dealers have been able to voluntarily query the federal law-enforcement systems Stolen Gun File since August 2025.
+              We do <strong className="text-foreground">not</strong> query ATF eTrace or the FBI's national stolen-gun file. Those are closed to consumer services by law. For a definitive answer, ask your local police non-emergency line to run the serial through federal law-enforcement systems — and if you're buying through an FFL, dealers have been able to voluntarily query the federal law-enforcement systems Stolen Gun File since August 2025.
             </p>
           </section>
 
@@ -152,7 +154,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               No. Federal law (the Firearm Owners' Protection Act of 1986) explicitly prohibits the ATF from establishing a national firearms registry. The ATF cannot maintain a searchable database of gun owners or gun sales. Instead, ATF traces work by sequentially contacting manufacturers, distributors, and dealers — a manual process that can take days or weeks.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              For consumers, the practical question isn't where a gun came from — it's whether it's been reported stolen. SafeOrStolen answers a narrow version of that question instantly by checking the HotGunz registry, then points you to the police check that answers it completely.
+              For consumers, the practical question isn't where a gun came from — it's whether it's been reported stolen. SafeOrStolen answers a narrower version of that question in seconds, by searching police theft reports from 34 states and live Ohio records, then points you to the police check that answers it completely.
             </p>
           </section>
 
@@ -161,7 +163,7 @@ const ATFGunSerialNumberCheckGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I check a gun serial number with the ATF directly?</summary>
-                <p className="text-muted-foreground mt-2">No. ATF eTrace is only available to law enforcement, and SafeOrStolen cannot query it either. We check the HotGunz national stolen-firearms registry and analyze serial integrity. For a definitive check, ask local police to run the serial through federal law-enforcement systems.</p>
+                <p className="text-muted-foreground mt-2">No. ATF eTrace is only available to law enforcement, and SafeOrStolen cannot query it either. We search police theft reports from 34 states, live Ohio records and our own theft reports, and check the serial for tampering. For a definitive check, ask local police to run the serial through federal law-enforcement systems.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What is ATF eTrace?</summary>
@@ -169,7 +171,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How do I verify a firearm online for free?</summary>
-                <p className="text-muted-foreground mt-2">Enter the serial at SafeOrStolen.com. We check the HotGunz national stolen-firearms registry (32,000+ records) and analyze the serial for alteration or obliteration, in about 3 seconds. 2 free checks, no credit card.</p>
+                <p className="text-muted-foreground mt-2">Enter the serial at SafeOrStolen.com. We search 242,839 police theft and loss reports from 34 states, live Ohio records and our own theft reports, and check the serial for tampering, in a few seconds. 2 free checks, no credit card.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Does ATF keep a national gun registry?</summary>
@@ -177,7 +179,7 @@ const ATFGunSerialNumberCheckGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What's the difference between ATF eTrace and federal stolen-property systems?</summary>
- <p className="text-muted-foreground mt-2">eTrace traces a gun's sales history; federal law-enforcement systems records whether it's been reported stolen. Both are law-enforcement-only. SafeOrStolen checks neither — it checks the HotGunz registry and serial integrity.</p>
+ <p className="text-muted-foreground mt-2">eTrace traces a gun's sales history; federal law-enforcement systems records whether it's been reported stolen. Both are law-enforcement-only. SafeOrStolen checks neither. It searches police theft reports from 34 states, live Ohio records and its own theft reports.</p>
               </details>
             </div>
           </section>

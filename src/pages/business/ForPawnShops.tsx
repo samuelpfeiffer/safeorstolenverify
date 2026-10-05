@@ -163,8 +163,9 @@ export default function ForPawnShops() {
           <p>
             SafeOrStolen automates compliance by checking multiple sources
             instantly—including our own reported stolen items, public web
-            results, and AI analysis. Additional checks are performed for
-            bicycles (BikeIndex) and firearms (HotGunz). Every check creates a
+            results. Gun serials are also searched against police theft and
+            loss reports from 34 states plus live Ohio records, and bike
+            serials against a national stolen-bicycle registry. Every check creates a
             timestamped compliance record.
           </p>
 

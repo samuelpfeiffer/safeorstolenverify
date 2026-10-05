@@ -20,7 +20,7 @@ export const EnhancedFAQSection = () => {
  },
  {
  question: "What items can I verify with SafeOrStolen?",
-  answer: "You can check phones, vehicles, license plates, laptops, power tools, bicycles, cameras, firearms, and other serial-numbered items. Checks use SafeOrStolen reports, public web results, and AI analysis, with Bike Index for bicycles and HotGunz for firearms."
+  answer: "You can check phones, vehicles, license plates, laptops, power tools, bicycles, cameras, firearms, and other serial-numbered items. Checks use SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns."
  },
  {
  question: "Do I need to download an app?",
@@ -34,11 +34,11 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "Is this database global? What countries are covered?",
- answer: "Yes! We search SafeOrStolen's own reports, public web results, and apply AI analysis. For bicycles, we check BikeIndex, and for firearms, HotGunz. We also perform IMEI device lookups for phones (model/details only, not blacklist checks)."
+ answer: "Yes! We search SafeOrStolen's own reports, public web results, and apply AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states plus live Ohio records. Paid phone checks search the lost and stolen phone blacklist."
  },
  {
  question: "How accurate are SafeOrStolen results?",
- answer: "We search SafeOrStolen's own reports, public web results, and apply AI analysis. For bicycles, we check BikeIndex, and for firearms, HotGunz. Results appear in 30 seconds with sources cited."
+ answer: "We search SafeOrStolen's own reports, public web results, and apply AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states. Results appear in seconds, with every source listed."
  },
  {
  question: "What if an item shows 'Safe' but turns out stolen?",

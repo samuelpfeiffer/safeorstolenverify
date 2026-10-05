@@ -43,7 +43,7 @@ const ForConsumersPage = () => {
  },
  {
  question: "What items can I verify with SafeOrStolen?",
- answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform utilizes its own stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex, and for firearms, HotGunz."
+ answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial number), bicycles (frame serial), firearms (serial number), and license plates. The platform utilizes its own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states plus live Ohio records."
  },
  {
  question: "Is there a SafeOrStolen mobile app?",

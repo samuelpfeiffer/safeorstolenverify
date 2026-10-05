@@ -5,7 +5,7 @@ import type { PageMetadata } from './types';
 const SITE_CONFIG = {
  name: 'Safe or Stolen',
  tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
- description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Verify vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment against our stolen reports, public web data, and AI analysis. We check BikeIndex for bicycles, HotGunz for firearms, and provide IMEI device details for phones, helping protect consumers and businesses from fraud.',
+ description: 'Fast-growing stolen goods verification platform serving customers across the US and expanding internationally. Verify vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment against our stolen reports, public web data, and AI analysis. Guns are also checked against police theft reports from 34 states, bikes against a national stolen-bicycle registry, and paid phone checks search the phone blacklist, helping protect consumers and businesses from fraud.',
  url: 'https://safeorstolen.com',
  ogImage: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
  twitterHandle: '@safeorstolen',

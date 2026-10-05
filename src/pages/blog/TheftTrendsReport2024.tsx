@@ -273,7 +273,7 @@ export default function TheftTrendsReport2024() {
               <div className="bg-primary/10 p-6 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-4">Real-Time Theft Database Integration</h3>
                 <p className="mb-4">
-                  SafeOrStolen aggregates data from its own user reports, public web results, and sophisticated AI analysis. For bicycles, it checks BikeIndex, and for firearms, HotGunz.
+                  SafeOrStolen aggregates data from its own user reports, public web results, and sophisticated AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states.
                 </p>
                 <p className="mb-4">
                   Our AI verification system processes millions of data points to provide instant SAFE or STOLEN status for any item you're considering purchasing.

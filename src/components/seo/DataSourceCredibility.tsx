@@ -167,8 +167,8 @@ export const DataSourceCredibility: React.FC = () => {
  <h3 className="text-xl font-bold mb-4">Transparent Verification</h3>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
  Every SafeOrStolen check covers our own stolen-item reports, public web 
- results and AI analysis, plus BikeIndex for bicycles and HotGunz for 
- firearms. We say exactly which sources were checked on every result.
+ results, plus a national stolen-bicycle registry for bikes and police gun
+ theft records from 34 states for guns. We say exactly which sources were checked on every result.
  </p>
  <div className="flex flex-wrap justify-center gap-4 text-sm">
  <Badge variant="secondary" className="bg-green-100 text-green-800">

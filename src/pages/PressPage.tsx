@@ -20,7 +20,7 @@ const PressPage = () => {
  {
   metric: "AI",
   label: "Plain-Language Analysis",
- context: "By combining our own stolen-item reports, public web results, and AI analysis, SafeOrStolen offers a comprehensive check. We also leverage BikeIndex for bicycles and HotGunz for firearms."
+ context: "By combining our own stolen-item reports, public web results, and AI analysis, SafeOrStolen offers a comprehensive check. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry."
  },
  {
  metric: "3 sec",
@@ -203,7 +203,7 @@ const PressPage = () => {
  
  <p className="text-lg text-muted-foreground mb-6">
   Each check combines SafeOrStolen's stolen-item reports, public web results, and AI analysis.
-  Bicycle checks also use BikeIndex, and firearm checks also use HotGunz. Results usually arrive in about 3 seconds.
+  Gun checks also search police theft and loss reports from 34 states plus live Ohio records, and bike checks a national stolen-bicycle registry. Results usually arrive in a few seconds.
  </p>
  
  <p className="text-lg text-muted-foreground">

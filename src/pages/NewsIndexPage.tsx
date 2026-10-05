@@ -72,7 +72,7 @@ const NewsIndexPage = () => {
   <p className="mb-6">
   SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
   from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
-  item with a serial number. We check SafeOrStolen's own stolen-item reports, public web results, and apply AI analysis. For specific item types, we integrate with trusted, specialized registries like BikeIndex for bicycles and HotGunz for firearms. The information we provide helps you understand an item's history.
+  item with a serial number. We check SafeOrStolen's own stolen-item reports, public web results, and apply AI analysis. For specific item types, we also search police gun theft records from 34 states and a national stolen-bicycle registry. The information we provide helps you understand an item's history.
   </p>
   
   <p className="mb-6">

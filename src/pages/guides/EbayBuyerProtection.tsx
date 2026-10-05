@@ -173,7 +173,7 @@ const EbayBuyerProtection = () => {
                     <li>SafeOrStolen's own reported items</li>
                     <li>publicly available web information</li>
                     <li>AI analysis of the available information</li>
-                    <li>BikeIndex for bicycles and HotGunz for firearms</li>
+                    <li>Police gun theft records from 34 states, and a national stolen-bicycle registry</li>
                   </ul>
                 </div>
               </div>

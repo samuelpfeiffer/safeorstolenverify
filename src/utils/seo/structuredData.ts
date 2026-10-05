@@ -31,7 +31,7 @@ export const createOrganizationSchema = () => {
  "@type": "Corporation",
  "name": "SafeOrStolen",
  "alternateName": ["Safe Or Stolen", "Safe or Stolen", "SOS", "safe or stolen"],
- "description": "Fast-growing stolen item verification platform serving customers across the United States with international expansion underway. IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via our community reports, public web results, AI analysis, and specialized registries like BikeIndex for bicycles and HotGunz for firearms.",
+ "description": "Fast-growing stolen item verification platform serving customers across the United States with international expansion underway. IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via our community reports, public web results, AI analysis, police gun theft records from 34 states, and a national stolen-bicycle registry.",
  "slogan": "Complete Multi-Database Verification - Protect Every Purchase",
  "url": SITE_CONFIG.url,
  "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
@@ -196,7 +196,7 @@ export const createServiceSchema = () => ({
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "Complete Multi-Database Stolen Item Verification - IMEI, VIN & Serial Number Check",
- "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against our community reports, public web results, AI analysis, and specialized registries like BikeIndex and HotGunz. Fast results in 30 seconds.",
+ "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against our community reports, public web results, AI analysis, police gun theft records from 34 states, and a national stolen-bicycle registry. Results in seconds.",
  "provider": {
  "@type": "Organization",
  "name": "SafeOrStolen",

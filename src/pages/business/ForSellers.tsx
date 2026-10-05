@@ -85,7 +85,7 @@ const SELLER_BENEFITS = [
 
 const HOW_IT_WORKS = [
  { step: '1', title: 'Verify Your Item', description: 'Enter the IMEI, VIN, or serial number of the item you\'re selling. Our AI auto-detects the identifier type.' },
- { step: '2', title: 'Get Your Certificate', description: 'We check SafeOrStolen reports, public web results, and analyze data using AI. Bicycles are checked against BikeIndex, and firearms against HotGunz. We also perform an IMEI device lookup for phones.' },
+ { step: '2', title: 'Get Your Certificate', description: 'We check SafeOrStolen reports, public web results, and analyze data using AI. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 34 states, and paid phone checks search the phone blacklist.' },
  { step: '3', title: 'Share With Buyers', description: 'Download a PDF certificate or share a unique verification link. The last 4 digits of identifiers are shown for privacy.' },
   { step: '4', title: 'Answer Buyer Questions', description: 'Invite buyers to review the dated result, compare the identifier in person, and run their own check before paying.' },
 ];
@@ -374,7 +374,7 @@ export default function ForSellers() {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-2xl font-black mb-8">Trusted Data Sources</h2>
  <div className="flex flex-wrap justify-center gap-4">
- {['SafeOrStolen reports', 'public web results', 'AI analysis', 'BikeIndex for bicycles', 'HotGunz for firearms', 'IMEI device details'].map(src => (
+ {['SafeOrStolen reports', 'public web results', 'AI analysis', 'National stolen-bicycle registry', 'Police gun theft records (34 states)', 'Phone blacklist (paid checks)'].map(src => (
  <div key={src} className="px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium text-foreground">{src}</div>
  ))}
  </div>

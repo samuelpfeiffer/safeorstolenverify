@@ -30,7 +30,7 @@ const cardListing = '/images/cards/paste-listing.jpg';
 const VERIFY_CARDS = [
  {
  title: 'Gun Serial Number Lookup',
-  subtitle: 'HotGunz, SafeOrStolen reports, public web results, and AI analysis',
+  subtitle: 'Police theft reports from 34 states, live Ohio records and SafeOrStolen reports',
  href: '/firearms-check',
  image: cardFirearms,
  badge: '🔥 Top Search',
@@ -120,11 +120,11 @@ const FAQ_ITEMS = [
  },
  {
  q: 'What databases does SafeOrStolen check?',
- a: 'SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. For bicycles, it checks BikeIndex; for firearms, it checks HotGunz. It also provides IMEI device details for phones.',
+ a: 'SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states plus live Ohio records, bikes against a national stolen-bicycle registry, and paid phone checks search the lost and stolen phone blacklist.',
  },
  {
  q: 'How do I check if a gun is stolen?',
-  a: "Private buyers cannot search NCIC. Use SafeOrStolen's firearm checker for HotGunz, SafeOrStolen reports, public web results, and AI analysis, then ask local police whether they will check the serial and follow every required transfer step.",
+  a: "Private buyers cannot search NCIC. Run the serial on SafeOrStolen's gun checker, which searches police theft and loss reports from 34 states, live Ohio records and SafeOrStolen reports, then ask local police whether they will check the serial and follow every required transfer step.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
@@ -169,7 +169,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>AI Stolen Item Verification for Buyers, Sellers, and Businesses</h1>
  <p>SafeOrStolen is an AI-powered platform that checks whether a secondhand item is reported stolen. Buyers verify before they pay, sellers prove an item is clean, and businesses such as pawn shops, resellers, dealers, and repair shops document diligence at intake.</p>
- <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against SafeOrStolen's own reports, public web data, and AI analysis. We also consult BikeIndex for bicycles and HotGunz for firearms. Results are typically available in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
+ <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against SafeOrStolen's own reports, public web data, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Results are typically available in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
  </div>
  </noscript>
  {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
@@ -353,7 +353,7 @@ const Index = () => {
  {
  n: '2',
  title: 'Parallel Database Scan',
- desc: 'We simultaneously query SafeOrStolen community reports, public web results, BikeIndex for bicycles, HotGunz for firearms, and perform AI analysis. All at once.',
+ desc: 'We simultaneously query SafeOrStolen community reports, public web results, police gun theft records from 34 states and a national stolen-bicycle registry. All at once.',
  },
  {
  n: '3',

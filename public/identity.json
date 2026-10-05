@@ -4,7 +4,7 @@
   "name": "SafeOrStolen",
   "url": "https://safeorstolen.com",
   "foundingDate": "2017-07-20",
-  "description": "SafeOrStolen is a stolen-item verification hub for buyers and sellers. It checks its own stolen-item reports, public web results, and AI analysis, with Bike Index for bicycles and HotGunz for firearms.",
+  "description": "SafeOrStolen is a stolen-item verification hub for buyers and sellers. It searches its own theft reports and public web results, 242,839 police gun theft reports from 34 states plus live Ohio records, Arizona stolen-vehicle records, a national stolen-bicycle registry, and the phone blacklist on paid phone checks.",
   "email": "support@safeorstolen.com",
   "address": { "@type": "PostalAddress", "addressLocality": "Peoria", "addressRegion": "AZ", "addressCountry": "US" }
 }

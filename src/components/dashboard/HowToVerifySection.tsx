@@ -13,7 +13,7 @@ interface HowToVerifySectionProps {
 const FAQS = [
  {
  question: 'How does SafeOrStolen verify if an item is stolen?',
- answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against its own stolen-item reports, public web results, and AI analysis. Additionally, it checks BikeIndex for bicycles and HotGunz for firearms. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
+ answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against its own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states plus live Ohio records. Results return in a few seconds, with every source listed.'
  },
  {
  question: 'How much does it cost to check if a phone is stolen?',
@@ -42,7 +42,7 @@ const STEPS = [
  },
  {
  name: 'Database scan',
- text: 'SafeOrStolen queries its own stolen-item reports, public web results, and AI analysis. Additionally, it checks BikeIndex for bicycles and HotGunz for firearms.',
+ text: 'SafeOrStolen queries its own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states.',
  link: '/data-sources',
  linkText: 'See all multiple sources'
  },

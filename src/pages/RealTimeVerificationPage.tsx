@@ -89,7 +89,7 @@ export default function RealTimeVerificationPage() {
  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
  <div>
  <h3 className="text-xl font-bold mb-2">Parallel Database Queries</h3>
- <p className="text-muted-foreground">Your query checks SafeOrStolen's own reports, public web results, and AI analysis. For bikes, we also check BikeIndex; for firearms, HotGunz; and for phones, we identify device details via IMEI.</p>
+ <p className="text-muted-foreground">Your query checks SafeOrStolen's own reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, bikes against a national stolen-bicycle registry, and paid phone checks search the lost and stolen phone blacklist.</p>
  </div>
  </div>
  <div className="flex items-start gap-4">

@@ -38,7 +38,7 @@ export default function TransparencyPage() {
  </div>
  <div className="prose prose-lg max-w-none">
  <p>
- SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Bicycle checks also use BikeIndex, firearm checks use HotGunz, and phone checks use IMEI.info for device details.
+ SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Gun checks also search police theft and loss reports from 34 states plus live Ohio records, bike checks a national stolen-bicycle registry, and paid phone checks the lost and stolen phone blacklist.
  </p>
  
  <h3>Stolen Property Registries</h3>
