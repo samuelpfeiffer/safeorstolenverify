@@ -336,11 +336,14 @@ async function runInternalRegistry(
       };
     }
 
+    // Not being in our own registry is not evidence the item is clean, so this
+    // must never produce a "safe" verdict on its own. Only outside theft
+    // databases (BikeIndex, phone blacklist, etc.) can clear an item.
     return {
       provider: 'SafeOrStolen Database',
-      status: 'safe',
-      confidence: 85,
-      message: 'Not found in SafeOrStolen stolen items registry',
+      status: 'unknown',
+      confidence: 0,
+      message: 'No report in the SafeOrStolen registry',
       responseTime: Date.now() - startedAt,
     };
   } catch (error) {
