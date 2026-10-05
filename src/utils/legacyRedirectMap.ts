@@ -142,6 +142,10 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   // ===== APP VARIANT URLS =====
   "/android-app": "/app",
   "/mobile-app": "/app",
+  // Oct 5 2026: one app page instead of four competing ones.
+  "/download-app": "/app",
+  "/get-app": "/app",
+  "/install-app": "/app",
   "/ios-app": "/app",
   "/mobile-verification": "/app",
   "/app/download": "/download",

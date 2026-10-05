@@ -11,6 +11,7 @@ import { CheckCircle, Shield, ArrowRight, Download, Loader2, PartyPopper } from 
 import { PageSEO } from '@/components/seo/PageSEO';
 import { supabase } from '@/integrations/supabase/client';
 import confetti from 'canvas-confetti';
+import { takePendingCheck, clearPendingCheck, pendingCheckUrl, type PendingCheck } from '@/lib/pendingCheck';
 
 const PaymentSuccessPage = () => {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,8 @@ const PaymentSuccessPage = () => {
 
   const sessionId = searchParams.get('session_id');
   const verificationId = searchParams.get('verification_id');
+  // Oct 5 2026: the item the visitor paid to check (saved before checkout), so we can run it now.
+  const [pending, setPending] = useState<PendingCheck | null>(null);
 
   useEffect(() => {
     // Trigger confetti
@@ -33,31 +36,23 @@ const PaymentSuccessPage = () => {
       origin: { y: 0.6 }
     });
 
-    // Fetch payment details
-    const fetchDetails = async () => {
-      try {
-        if (verificationId) {
-          setPaymentDetails({
-            verificationId,
-            planName: 'Unlimited Plan',
-            amount: '$3.99'
-          });
-        }
-      } catch (error) {
-        console.error('Error fetching payment details:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchDetails();
+    // Oct 5 2026: the old copy always said "Unlimited Plan / $3.99", whatever was bought, and
+    // the button sent guests to a dashboard they don't have. Give Stripe's webhook a few seconds
+    // to record the purchase, then offer to run the check they paid for.
+    setPending(takePendingCheck());
+    if (verificationId) setPaymentDetails({ verificationId });
+    const t = setTimeout(() => setIsLoading(false), 4000);
+    return () => clearTimeout(t);
   }, [sessionId, verificationId]);
 
   const handleContinue = () => {
-    if (verificationId) {
+    if (pending) {
+      clearPendingCheck();
+      navigate(pendingCheckUrl(pending));
+    } else if (verificationId) {
       navigate(`/verify?verification_id=${verificationId}`);
     } else {
-      navigate('/dashboard');
+      navigate('/verify');
     }
   };
 
@@ -92,11 +87,7 @@ const PaymentSuccessPage = () => {
                 <div className="bg-muted/50 rounded-lg p-4 space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Product</span>
-                    <span className="font-medium">{paymentDetails.planName || 'Verification'}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Amount paid</span>
-                    <span className="font-bold text-primary">{paymentDetails.amount || '$3.99'}</span>
+                    <span className="font-medium">{pending ? `Full check for ${pending.q}` : 'SafeOrStolen purchase'}</span>
                   </div>
                   {sessionId && (
                     <div className="flex justify-between text-sm">
@@ -115,9 +106,11 @@ const PaymentSuccessPage = () => {
                       <Shield className="w-4 h-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm">Your verification is ready</p>
+                      <p className="font-medium text-sm">{pending ? 'Your full check is ready to run' : 'Your purchase is active'}</p>
                       <p className="text-xs text-muted-foreground">
-                        Click below to view your full stolen item check results
+                        {pending
+                          ? 'We saved the number you were checking. Run it now to get the full result, including every paid source.'
+                          : 'Run your check now. Paid checks include every source, such as the phone blacklist for IMEIs.'}
                       </p>
                     </div>
                   </div>
@@ -129,7 +122,7 @@ const PaymentSuccessPage = () => {
                   size="lg"
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
                 >
-                  View Your Verification Results
+                  {pending ? 'Run my full check now' : 'Start checking'}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
 

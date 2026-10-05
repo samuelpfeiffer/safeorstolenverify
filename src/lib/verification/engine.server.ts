@@ -90,6 +90,7 @@ function sourcesForItemType(itemType: CanonicalItemType): string[] {
 async function callSource(
   slug: string,
   body: Record<string, unknown>,
+  timeoutMs: number = SOURCE_TIMEOUT_MS,
 ): Promise<unknown> {
   const url = process.env['SUPABASE_URL'];
   const key = process.env['SUPABASE_SERVICE_ROLE_KEY'];
@@ -103,7 +104,7 @@ async function callSource(
       apikey: key,
     },
     body: JSON.stringify(body),
-    signal: AbortSignal.timeout(SOURCE_TIMEOUT_MS),
+    signal: AbortSignal.timeout(timeoutMs),
   });
 
   const text = await response.text();
@@ -137,10 +138,11 @@ async function runSource(
   provider: string,
   slug: string,
   body: Record<string, unknown>,
+  timeoutMs?: number,
 ): Promise<SourceResult> {
   const startedAt = Date.now();
   try {
-    const payload = await callSource(slug, body);
+    const payload = await callSource(slug, body, timeoutMs);
     return { ...sourceFromPayload(provider, payload), responseTime: Date.now() - startedAt };
   } catch (error) {
     // A 400 means the user's input was bad (e.g. an invalid VIN). Show the real reason.
@@ -525,6 +527,59 @@ async function anonymousGate(
   return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - (used + 1) };
 }
 
+/** Monthly plan includes 20 phone blacklist searches a month; a single check includes one. */
+const MONTHLY_PHONE_BLACKLIST_LIMIT = 20;
+
+async function phoneBlacklistAllowed(
+  admin: AdminClient,
+  userId: string | null,
+  gate: GateAllowed,
+): Promise<boolean> {
+  if (gate.plan === 'free') return false;
+  if (gate.plan === 'single' || !userId) return true;
+  const monthStart = new Date();
+  monthStart.setUTCDate(1);
+  monthStart.setUTCHours(0, 0, 0, 0);
+  const { count } = await admin
+    .from('verification_searches')
+    .select('id', { count: 'exact', head: true })
+    .eq('user_id', userId)
+    .in('item_type', ['phone', 'imei'])
+    .gte('created_at', monthStart.toISOString());
+  return (count ?? 0) < MONTHLY_PHONE_BLACKLIST_LIMIT;
+}
+
+/**
+ * Oct 5 2026 fix: guests who paid (stripe-webhook stores the purchase against their browser
+ * fingerprint) were sent straight to the free gate, so the check they bought was never used.
+ * Use a paid guest purchase before any free check.
+ */
+async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<GateAllowed | null> {
+  const { data: rows } = await admin
+    .from('subscriptions')
+    .select('*')
+    .eq('status', 'active')
+    .eq('fingerprint', fingerprint)
+    .is('user_id', null);
+  const now = new Date();
+  const list: any[] = rows ?? [];
+  const monthly = list.find((r) => r.plan !== 'single' && (!r.period_end || new Date(r.period_end) > now));
+  if (monthly) return { allowed: true, plan: monthly.plan, checksRemaining: null };
+  const single = list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < 1);
+  if (!single) return null;
+  // Claim it only if still unused, so two tabs can't spend one purchase twice.
+  let claim = admin
+    .from('subscriptions')
+    .update({ checks_used_this_month: 1, updated_at: now.toISOString() })
+    .eq('id', single.id);
+  claim = single.checks_used_this_month == null
+    ? claim.is('checks_used_this_month', null)
+    : claim.eq('checks_used_this_month', single.checks_used_this_month);
+  const { data: claimed } = await claim.select('id');
+  if (!claimed || claimed.length === 0) return null;
+  return { allowed: true, plan: 'single', checksRemaining: 0 };
+}
+
 export async function checkUsageGate(
   admin: AdminClient,
   userId: string | null,
@@ -533,6 +588,8 @@ export async function checkUsageGate(
 ): Promise<GateResult> {
   if (!userId) {
     if (!fingerprint) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: FREE_LIMIT };
+    const paid = await guestPaidGate(admin, fingerprint);
+    if (paid) return paid;
     return anonymousGate(admin, fingerprint, clientIp);
   }
   // A user can have several rows (e.g. two single-check purchases), so load
@@ -701,7 +758,12 @@ export async function runVerification(
     tasks.push(runSource('BikeIndex', 'verify-bikeindex', { identifier: cleanIdentifier }));
   }
   if (sources.includes('imei')) {
-    tasks.push(runSource('IMEI_Verification', 'verify-imei', { identifier: cleanIdentifier }));
+    // Oct 5 2026 fix: the paid blacklist search never ran (verify-imei only runs it when told the
+    // check is paid, and nothing told it). Paid checks now get it; the lookup can take ~30s.
+    const blacklist = await phoneBlacklistAllowed(admin, userId, gate);
+    tasks.push(
+      runSource('IMEI_Verification', 'verify-imei', { identifier: cleanIdentifier, paid: blacklist }, blacklist ? 45_000 : undefined),
+    );
   }
   if (sources.includes('vehicle')) {
     // Plates search TheftAZ (Arizona law enforcement records) by plate; VINs get the full vehicle check.

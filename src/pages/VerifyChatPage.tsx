@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate, useSearchParams } from '@/lib/router-compat';
+import { savePendingCheck } from '@/lib/pendingCheck';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
  Paperclip,
@@ -320,6 +321,8 @@ const VerifyChatPage: React.FC = () => {
          }
          // Oct 4 2026: signed-in people who used their free checks get the paid options, not an error.
          if (verifyErr && user && verifyErr.code === 'LIMIT_REACHED') {
+           // Remember this item so it runs automatically after they buy (see /payment-success).
+           savePendingCheck(cleanedIdentifier, itemType);
            updateMessage(assistantId, {
              loading: false,
              content: `You've used your free checks. **Get unlimited checks for $14.99/month** or run a [single full check for $3.99](/pricing).`,
