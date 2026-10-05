@@ -387,6 +387,10 @@ export const ItemLandingPageTemplate = ({
  <h3 className="font-bold mb-2">License Plate Lookup</h3>
  <p className="text-sm text-muted-foreground">Check vehicles by plate</p>
  </Link>
+ <Link to="/license-plate-owner-lookup" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+ <h3 className="font-bold mb-2">Plate Owner Lookup</h3>
+ <p className="text-sm text-muted-foreground">What you can legally find from a plate</p>
+ </Link>
  <Link to="/app" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Mobile App</h3>
  <p className="text-sm text-muted-foreground">Scan barcodes on the go</p>

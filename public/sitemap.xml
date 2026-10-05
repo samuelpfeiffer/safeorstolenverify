@@ -722,6 +722,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/license-plate-owner-lookup</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/marketplace-advisor</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>

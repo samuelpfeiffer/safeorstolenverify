@@ -155,6 +155,7 @@ import { Route as KentuckyVinLookupRouteImport } from './routes/kentucky-vin-loo
 import { Route as LearnRouteImport } from './routes/learn'
 import { Route as LetgoStolenCheckRouteImport } from './routes/letgo-stolen-check'
 import { Route as LicensePlateLookupRouteImport } from './routes/license-plate-lookup'
+import { Route as LicensePlateOwnerLookupRouteImport } from './routes/license-plate-owner-lookup'
 import { Route as LouisianaLicensePlateLookupRouteImport } from './routes/louisiana-license-plate-lookup'
 import { Route as LouisianaVinLookupRouteImport } from './routes/louisiana-vin-lookup'
 import { Route as MaineLicensePlateLookupRouteImport } from './routes/maine-license-plate-lookup'
@@ -1146,6 +1147,11 @@ const LetgoStolenCheckRoute = LetgoStolenCheckRouteImport.update({
 const LicensePlateLookupRoute = LicensePlateLookupRouteImport.update({
   id: '/license-plate-lookup',
   path: '/license-plate-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicensePlateOwnerLookupRoute = LicensePlateOwnerLookupRouteImport.update({
+  id: '/license-plate-owner-lookup',
+  path: '/license-plate-owner-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LouisianaLicensePlateLookupRoute =
@@ -2541,6 +2547,7 @@ export interface FileRoutesByFullPath {
   '/learn': typeof LearnRoute
   '/letgo-stolen-check': typeof LetgoStolenCheckRoute
   '/license-plate-lookup': typeof LicensePlateLookupRoute
+  '/license-plate-owner-lookup': typeof LicensePlateOwnerLookupRoute
   '/louisiana-license-plate-lookup': typeof LouisianaLicensePlateLookupRoute
   '/louisiana-vin-lookup': typeof LouisianaVinLookupRoute
   '/maine-license-plate-lookup': typeof MaineLicensePlateLookupRoute
@@ -2919,6 +2926,7 @@ export interface FileRoutesByTo {
   '/learn': typeof LearnRoute
   '/letgo-stolen-check': typeof LetgoStolenCheckRoute
   '/license-plate-lookup': typeof LicensePlateLookupRoute
+  '/license-plate-owner-lookup': typeof LicensePlateOwnerLookupRoute
   '/louisiana-license-plate-lookup': typeof LouisianaLicensePlateLookupRoute
   '/louisiana-vin-lookup': typeof LouisianaVinLookupRoute
   '/maine-license-plate-lookup': typeof MaineLicensePlateLookupRoute
@@ -3299,6 +3307,7 @@ export interface FileRoutesById {
   '/learn': typeof LearnRoute
   '/letgo-stolen-check': typeof LetgoStolenCheckRoute
   '/license-plate-lookup': typeof LicensePlateLookupRoute
+  '/license-plate-owner-lookup': typeof LicensePlateOwnerLookupRoute
   '/louisiana-license-plate-lookup': typeof LouisianaLicensePlateLookupRoute
   '/louisiana-vin-lookup': typeof LouisianaVinLookupRoute
   '/maine-license-plate-lookup': typeof MaineLicensePlateLookupRoute
@@ -3681,6 +3690,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/letgo-stolen-check'
     | '/license-plate-lookup'
+    | '/license-plate-owner-lookup'
     | '/louisiana-license-plate-lookup'
     | '/louisiana-vin-lookup'
     | '/maine-license-plate-lookup'
@@ -4059,6 +4069,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/letgo-stolen-check'
     | '/license-plate-lookup'
+    | '/license-plate-owner-lookup'
     | '/louisiana-license-plate-lookup'
     | '/louisiana-vin-lookup'
     | '/maine-license-plate-lookup'
@@ -4438,6 +4449,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/letgo-stolen-check'
     | '/license-plate-lookup'
+    | '/license-plate-owner-lookup'
     | '/louisiana-license-plate-lookup'
     | '/louisiana-vin-lookup'
     | '/maine-license-plate-lookup'
@@ -4819,6 +4831,7 @@ export interface RootRouteChildren {
   LearnRoute: typeof LearnRoute
   LetgoStolenCheckRoute: typeof LetgoStolenCheckRoute
   LicensePlateLookupRoute: typeof LicensePlateLookupRoute
+  LicensePlateOwnerLookupRoute: typeof LicensePlateOwnerLookupRoute
   LouisianaLicensePlateLookupRoute: typeof LouisianaLicensePlateLookupRoute
   LouisianaVinLookupRoute: typeof LouisianaVinLookupRoute
   MaineLicensePlateLookupRoute: typeof MaineLicensePlateLookupRoute
@@ -6023,6 +6036,13 @@ declare module '@tanstack/react-router' {
       path: '/license-plate-lookup'
       fullPath: '/license-plate-lookup'
       preLoaderRoute: typeof LicensePlateLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/license-plate-owner-lookup': {
+      id: '/license-plate-owner-lookup'
+      path: '/license-plate-owner-lookup'
+      fullPath: '/license-plate-owner-lookup'
+      preLoaderRoute: typeof LicensePlateOwnerLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/louisiana-license-plate-lookup': {
@@ -7937,6 +7957,7 @@ const rootRouteChildren: RootRouteChildren = {
   LearnRoute: LearnRoute,
   LetgoStolenCheckRoute: LetgoStolenCheckRoute,
   LicensePlateLookupRoute: LicensePlateLookupRoute,
+  LicensePlateOwnerLookupRoute: LicensePlateOwnerLookupRoute,
   LouisianaLicensePlateLookupRoute: LouisianaLicensePlateLookupRoute,
   LouisianaVinLookupRoute: LouisianaVinLookupRoute,
   MaineLicensePlateLookupRoute: MaineLicensePlateLookupRoute,
