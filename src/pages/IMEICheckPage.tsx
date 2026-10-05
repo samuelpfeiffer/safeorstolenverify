@@ -11,6 +11,8 @@ const IMEICheckPage = () => {
  metaDescription="Free IMEI check to verify if any phone is stolen, blacklisted, or safe to buy. Check IMEI number instantly against global databases. Works for iPhone, Samsung, all phones."
  h1="Free IMEI Check - Verify Phone Status Instantly"
  itemType="Phone"
+ searchType="imei"
+ searchPlaceholder="Enter the IMEI (dial *#06# to see it)"
  keywords={[
  'IMEI check',
  'check IMEI',

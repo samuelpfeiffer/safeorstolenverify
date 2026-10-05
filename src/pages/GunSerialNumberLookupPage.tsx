@@ -9,6 +9,8 @@ const GunSerialNumberLookupPage = () => {
  metaDescription="Free gun serial number lookup. Check if any firearm is stolen before buying. Searches stolen firearms databases and validates serial integrity."
  h1="Free Gun Serial Number Lookup"
  itemType="Firearm"
+ searchType="firearm"
+ searchPlaceholder="Enter the gun's serial number"
  keywords={[
  'gun serial number lookup',
  'gun serial lookup',

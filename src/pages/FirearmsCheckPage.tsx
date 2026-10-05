@@ -4,12 +4,64 @@ import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { PageSEO } from '@/components/seo/PageSEO';
 
+// Oct 5 2026: police firearm theft and loss reports we hold, by state (counted from theft_records).
+// Ohio is also searched live against Ohio law-enforcement records on every gun check.
+const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
+ { state: 'California', reports: 80176, years: '1979–2017' },
+ { state: 'Florida', reports: 64642, years: '2006–2017' },
+ { state: 'Texas', reports: 21558, years: '2000–2017' },
+ { state: 'Washington', reports: 10951, years: '2010–2017' },
+ { state: 'Arizona', reports: 9702, years: '1990–2017' },
+ { state: 'North Carolina', reports: 8455, years: '2006–2017' },
+ { state: 'Illinois', reports: 7459, years: '1973–2017' },
+ { state: 'Georgia', reports: 6967, years: '2010–2017' },
+ { state: 'Missouri', reports: 5099, years: '1974–2017' },
+ { state: 'Nevada', reports: 4597, years: '—' },
+ { state: 'Kansas', reports: 3731, years: '2006–2017' },
+ { state: 'Indiana', reports: 3567, years: '1993–2017' },
+ { state: 'Colorado', reports: 3520, years: '2002–2017' },
+ { state: 'Wisconsin', reports: 2829, years: '2010–2017' },
+ { state: 'South Carolina', reports: 1817, years: '1997–2017' },
+ { state: 'Maryland', reports: 1464, years: '2010–2017' },
+ { state: 'Utah', reports: 916, years: '2010–2016' },
+ { state: 'Oregon', reports: 739, years: '2010–2017' },
+ { state: 'Virginia', reports: 643, years: '2011–2017' },
+ { state: 'Oklahoma', reports: 625, years: '2010–2017' },
+ { state: 'New York', reports: 590, years: '2010–2017' },
+ { state: 'Idaho', reports: 590, years: '2010–2017' },
+ { state: 'Michigan', reports: 493, years: '2009–2016' },
+ { state: 'Nebraska', reports: 317, years: '1993–2017' },
+ { state: 'District of Columbia', reports: 238, years: '2011–2017' },
+ { state: 'New Jersey', reports: 230, years: '2008–2017' },
+ { state: 'Connecticut', reports: 227, years: '2006–2016' },
+ { state: 'Massachusetts', reports: 225, years: '2010–2017' },
+ { state: 'New Hampshire', reports: 138, years: '2010–2017' },
+ { state: 'Rhode Island', reports: 132, years: '2010–2017' },
+ { state: 'Louisiana', reports: 99, years: '2010–2017' },
+ { state: 'Ohio', reports: 73, years: '2010–2016' },
+ { state: 'Pennsylvania', reports: 24, years: '2012–2017' },
+ { state: 'Delaware', reports: 6, years: '2014–2017' },
+];
+
+// One list for the visible FAQ and the FAQPage schema, so they always match.
+const FIREARM_FAQS: { q: string; a: string }[] = [
+ { q: 'How do I check if a gun is stolen by serial number?', a: "Type the serial number from the frame or receiver into the search box at the top of this page. SafeOrStolen searches more than 240,000 police firearm theft and loss reports from 34 states, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results, and checks the serial for signs of tampering. You get a result in a few seconds. The first 2 checks are free." },
+ { q: 'Is the gun serial number lookup free?', a: 'Yes. Your first 2 checks are free with a free account and no credit card. After that it is $3.99 per check or $14.99 a month for unlimited checks.' },
+ { q: 'Is there a national stolen gun database I can search?', a: "Not one the public can search. The FBI's national stolen-gun file is only open to law enforcement. SafeOrStolen brings together the records the public can use, including police theft and loss reports from 34 states and live Ohio records. A no-match result means nothing was found in those records, not proof the gun was never stolen." },
+ { q: 'My state is not on the list. Can I still check a gun?', a: "Yes. Every check still searches SafeOrStolen's own theft reports and public web results, and a gun reported stolen in one of the 34 states can turn up for sale anywhere. For an extra check, call your local police non-emergency line and ask whether they will run the serial for a private buyer. Some departments will and some won't." },
+ { q: 'Is it legal to check a gun serial number?', a: 'Yes. Looking up whether a serial number has been reported stolen is legal for anyone. SafeOrStolen is a private service and is not a government agency. It never shows who owns a gun or who reported it.' },
+ { q: "Does a clean result guarantee the gun isn't stolen?", a: 'No. It means no report was found in the records searched at the time of the check. Many stolen guns are never reported, and our state records are historical, mostly from 2006 to 2017. Also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
+ { q: 'What should I do if the gun comes back as stolen?', a: "Don't buy it and don't confront the seller. Leave, and give the serial number and the seller's details to your local police on their non-emergency line." },
+ { q: 'Will the seller know I checked the serial number?', a: 'No. Your searches are private and the seller is never told.' },
+ { q: 'How do I report my own stolen gun?', a: 'File a report with your local police first and give them the serial number. Then report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial number before buying will see it.' },
+];
+
 const FirearmsCheckPage = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Gun Serial Number Check — Is This Gun Stolen? | SafeOrStolen"
- description="Free gun serial number check. See if a firearm is reported stolen in the records we search, spot altered serial numbers, and get safe next steps before you buy."
+ title="Free Gun Serial Number Lookup — Is This Gun Stolen? | SafeOrStolen"
+ description="Free gun serial number lookup. Search over 240,000 police firearm theft and loss reports from 34 states plus live Ohio records, spot altered serials, and know what to do before you buy."
  canonical="/firearms-check"
  />
 
@@ -20,12 +72,12 @@ const FirearmsCheckPage = () => {
  🔫 Firearm Verification
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
- Gun Serial Number Check —
+ Free Gun Serial Number Lookup
  <br />
  <span className="text-primary">Is This Gun Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Search stolen firearms databases and verify serial integrity before you buy.
+ Search over 240,000 police firearm theft and loss reports from 34 states, plus live Ohio records, before you buy.
  </p>
 
 
@@ -48,9 +100,7 @@ const FirearmsCheckPage = () => {
  How do I check if a gun serial number is stolen?
  </p>
  <p className="text-muted-foreground leading-relaxed">
- Enter the firearm serial number into SafeOrStolen's lookup tool above.
- SafeOrStolen checks firearm serial numbers against stolen firearms databases
- and analyzes the serial for signs of alteration. A result returns in approximately 3 seconds.
+ {FIREARM_FAQS[0].a}
  </p>
  </div>
  </section>
@@ -99,18 +149,17 @@ const FirearmsCheckPage = () => {
  Which Databases Does SafeOrStolen Check for Firearms?
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: SafeOrStolen checks firearm serial numbers against stolen firearms databases and analyzes the serial for signs of alteration.
+ Quick answer: every gun check searches police theft and loss reports from 34 states, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and checks the serial for tampering.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
- SafeOrStolen checks firearm serial numbers against stolen firearms
- databases and analyzes the serial itself for signs of alteration, so
- you get a clear answer before money changes hands.
+ All of these are searched at the same time, and the result lists each one, so
+ you know exactly what was checked before money changes hands.
  </p>
  <div className="space-y-3">
  {[
  {
- db: 'Stolen Firearms Databases',
- desc: 'We check the serial number against stolen firearms databases and return a plain result in about three seconds.',
+ db: 'Police firearm theft and loss reports (34 states)',
+ desc: 'More than 240,000 reports of stolen and lost guns filed with police in 33 states and Washington, DC. Matches show the make, model, state and year of the report.',
  badge: 'Search',
  badgeColor: 'bg-primary/20 text-primary',
  },
@@ -119,6 +168,18 @@ const FirearmsCheckPage = () => {
  desc: 'We validate the serial number itself for obliterated, altered, or placeholder patterns. A defaced serial number is a federal felony under 18 U.S.C. § 922(k) and is a strong signal to walk away.',
  badge: 'Analysis',
  badgeColor: 'bg-secondary/20 text-secondary',
+ },
+ {
+ db: 'Live Ohio law-enforcement records',
+ desc: 'Checked live on every gun search, against stolen-gun records kept by Ohio law enforcement.',
+ badge: 'Live',
+ badgeColor: 'bg-primary/20 text-primary',
+ },
+ {
+ db: 'SafeOrStolen theft reports and public web results',
+ desc: 'Guns reported stolen by owners on SafeOrStolen, and public listings or posts that mention the serial number.',
+ badge: 'Search',
+ badgeColor: 'bg-primary/20 text-primary',
  },
  ].map((item) => (
  <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
@@ -135,6 +196,45 @@ const FirearmsCheckPage = () => {
  </section>
 
 
+
+ {/* State coverage — real counts */}
+ <section className="mb-12" id="states">
+ <h2 className="text-2xl font-black text-foreground mb-3">
+ Gun Serial Number Lookup by State
+ </h2>
+ <p className="text-muted-foreground text-sm italic mb-4">
+ Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
+ </p>
+ <p className="text-muted-foreground leading-relaxed mb-4">
+ These are reports filed with police, mostly from 2006 to 2017. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.
+ </p>
+ <div className="overflow-x-auto rounded-xl border border-border mb-4">
+ <table className="w-full text-left text-sm">
+ <thead className="bg-muted/60">
+ <tr>
+ <th className="px-4 py-3 font-semibold">State</th>
+ <th className="px-4 py-3 font-semibold text-right">Police reports</th>
+ <th className="px-4 py-3 font-semibold">Years reported</th>
+ </tr>
+ </thead>
+ <tbody>
+ {STATE_COVERAGE.map((r) => (
+ <tr key={r.state} className="border-t border-border">
+ <td className="px-4 py-2 font-medium">{r.state}</td>
+ <td className="px-4 py-2 text-right text-muted-foreground">{r.reports.toLocaleString('en-US')}</td>
+ <td className="px-4 py-2 text-muted-foreground">{r.years}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ <p className="text-muted-foreground leading-relaxed">
+ <strong className="text-foreground">Tennessee, Kentucky, Alabama and other states not listed:</strong> you can still
+ check any gun here. The search covers SafeOrStolen's own reports and public web results, plus all 34 jurisdictions above,
+ where guns stolen elsewhere often turn up. For an extra check, ask your local police on their non-emergency line
+ whether they will run the serial for a private buyer.
+ </p>
+ </section>
 
  {/* Section 3 */}
  <section className="mb-12">
@@ -223,17 +323,16 @@ const FirearmsCheckPage = () => {
  Sellers: Verify Your Own Firearm First
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: Run a SafeOrStolen check on your own firearm, download the clean PDF certificate, and include it in your listing. Serious buyers will pay more for verified guns.
+ Quick answer: Run a SafeOrStolen check on your own firearm, get the $1.99 verification certificate, and share its link with buyers so they can see the check for themselves.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
  Smart sellers use SafeOrStolen to prove legitimacy upfront. Here's why it matters:
  </p>
  <ul className="space-y-2 mb-6">
  {[
- "Verified listings sell faster — buyers don't have to take your word for it",
- 'Clean verification certificate commands $50–$200 higher prices on popular handguns',
- 'Protects you legally — documented that you verified no stolen records at time of sale',
- 'Differentiates your listing from the hundreds of unverified options on Armslist or Facebook',
+ "Buyers don't have to take your word for it; the certificate shows the date and what was searched",
+ 'A dated record that you checked before the sale, if questions come up later',
+ 'Makes your listing stand out from unverified ones',
  ].map((point) => (
  <li key={point} className="flex items-start gap-3 text-foreground/80 text-sm">
  <span className="text-primary flex-shrink-0">✓</span>
@@ -256,7 +355,7 @@ const FirearmsCheckPage = () => {
  Pawn Shop Firearm Compliance Requirements
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: Most U.S. states legally require pawn shops to verify firearms against stolen property databases before accepting them. Failure to comply can result in criminal charges and loss of license.
+ Quick answer: Pawn shops are commonly required by state or local law to report the guns they take in to police, and they carry more risk than private buyers when a gun turns out to be stolen. Checking every serial before you accept it, and keeping the record, is basic due diligence.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
  Pawn shop operators face significant legal exposure when accepting stolen firearms. 
@@ -269,10 +368,9 @@ const FirearmsCheckPage = () => {
  <ul className="space-y-2">
  {[
  'Unlimited firearm serial checks at one flat monthly rate',
- 'Timestamped, printable verification records for completed checks',
- 'Bulk CSV upload — verify a batch of firearms at once',
- 'Full audit trail your staff can pull for the relevant authorities on request',
- 'API integration to connect directly to your POS or inventory system',
+ 'Dated record of every check saved to your account',
+ 'Verification certificates included free with the monthly plan',
+ 'Check history your staff can pull up when asked',
  ].map((f) => (
  <li key={f} className="flex items-start gap-2 text-foreground/80 text-sm">
  <span className="text-primary flex-shrink-0">✓</span>
@@ -292,16 +390,10 @@ const FirearmsCheckPage = () => {
  {/* FAQ Schema Section */}
  <section className="mb-12">
  <h2 className="text-2xl font-black text-foreground mb-6">
- Gun Serial Number Check — FAQ
+ Gun Serial Number Lookup — FAQ
  </h2>
  <div className="space-y-3">
- {[
- { q: 'Is it legal to check a gun serial number?', a: 'Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service that aggregates publicly available and licensed data. We are not the relevant authorities and cannot query federal systems — our results come from stolen firearms databases and serial integrity analysis.' },
- { q: "What if the serial number comes back clean — does that guarantee it's not stolen?", a: 'No. A clean result means no records were found in our aggregated database at the time of the check. Not all stolen firearms are reported to all databases. A clean result significantly reduces your risk but does not constitute a guarantee. We strongly recommend also requesting the original purchase receipt from the seller.' },
- { q: 'Can a gun show vendor refuse to let me check the serial number?', a: 'Yes, a private seller can refuse. If they do, that is itself a significant red flag. Legitimate sellers with nothing to hide generally welcome verification.' },
- { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can report the stolen firearm to your local police and to a public stolen-firearm registry. Reports that reach the nationwide stolen firearm feeds will be included in future SafeOrStolen checks.' },
- { q: 'Does the search notify the seller that I checked their firearm?', a: 'No. Your search is completely private. The seller has no way of knowing you ran a verification.' },
- ].map((item) => (
+ {FIREARM_FAQS.map((item) => (
  <details key={item.q} className="bg-card border border-border rounded-xl group">
  <summary className="flex justify-between items-center p-4 cursor-pointer text-foreground font-semibold text-sm list-none hover:text-primary transition-colors">
  {item.q}
@@ -322,8 +414,8 @@ const FirearmsCheckPage = () => {
  {[
  { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
  { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
- { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
- { title: 'Bike Serial Check', href: '/check-bike', desc: 'our reports + BikeIndex + public web' },
+ { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'Stolen-vehicle records by plate' },
+ { title: 'Bike Serial Check', href: '/check-bike', desc: 'Stolen-bike registry and our reports' },
  { title: 'State Firearm Transfer Laws', href: '/state-firearm-transfer-laws', desc: 'Which states require a private-sale background check' },
  ].map((link) => (
  <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
@@ -347,8 +439,9 @@ const FirearmsCheckPage = () => {
  {
  "@context": "https://schema.org",
  "@type": "WebPage",
- "name": "Gun Serial Number Check — Is This Gun Stolen?",
- "description": "Check a firearm serial number against stolen-gun records, spot altered serials, and get safe next steps before you buy.",
+ "name": "Free Gun Serial Number Lookup — Is This Gun Stolen?",
+ "description": "Search a gun serial number against police firearm theft and loss reports from 34 states and live Ohio records, and spot altered serials before you buy.",
+ "dateModified": "2026-10-05",
  "url": "https://safeorstolen.com/firearms-check",
  "breadcrumb": {
  "@type": "BreadcrumbList",
@@ -361,64 +454,7 @@ const FirearmsCheckPage = () => {
  {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "How can I check if a firearm is reported stolen?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Enter the serial number stamped on the frame or receiver at SafeOrStolen. We check firearm serial numbers against stolen firearms databases and analyze the serial for signs of alteration, and return a result in about three seconds."
- }
- },
- {
- "@type": "Question",
- "name": "Can a private buyer check whether a firearm is reported stolen?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. A private buyer can enter a firearm serial number at SafeOrStolen and search stolen firearm reports without any licence or law-enforcement access. Checking is legal and is a sensible step before any private-party transfer."
- }
- },
- {
- "@type": "Question",
- "name": "What should I verify before buying a used firearm?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Verify that the serial number on the frame is intact and unaltered, that the number matches any paperwork the seller shows you, and that the serial does not appear in stolen firearm reports \u2014 SafeOrStolen checks the last two of those in a few seconds. Separately, confirm the transfer itself is lawful where you live, since many states require the sale to go through a licensed dealer. Remember that a clean stolen-property result is not proof of ownership; those are two different questions."
- }
- },
- {
- "@type": "Question",
- "name": "Is there a stolen firearm database?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "There is no single public database of every stolen firearm — SafeOrStolen combines our reports, public web results, and AI analysis to help identify potentially stolen firearms. Because reporting is fragmented, a clear result means nothing was located in the sources checked, not a definitive guarantee the firearm has never been stolen."
- }
- },
- {
- "@type": "Question",
- "name": "How do I check if a gun serial number is stolen?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Enter the firearm serial number at SafeOrStolen.com/firearms-check. The system checks stolen firearms databases and validates serial number integrity. Results return in approximately 3 seconds."
- }
- },
- {
- "@type": "Question",
- "name": "Is it legal to check a gun serial number online?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service aggregating publicly available and licensed data. The service is not affiliated with any government agency."
- }
- },
- {
- "@type": "Question",
- "name": "What does a stolen gun result mean?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "A flagged result means the serial number appears in one or more stolen property databases. Do not purchase the firearm. Contact your community theft agency. SafeOrStolen will indicate which database returned the record."
- }
- }
- ]
+ "mainEntity": FIREARM_FAQS.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
  },
  {
  "@context": "https://schema.org",
@@ -427,7 +463,7 @@ const FirearmsCheckPage = () => {
  "step": [
  { "@type": "HowToStep", "name": "Find the serial number", "text": "Locate the serial number engraved on the frame or receiver of the firearm. The location varies by firearm type." },
  { "@type": "HowToStep", "name": "Enter the serial number", "text": "Go to SafeOrStolen.com/firearms-check and enter the serial number in the search field." },
- { "@type": "HowToStep", "name": "Review results", "text": "The system returns a Trust Score and database-by-database breakdown within 3 seconds. If flagged, do not complete the transaction." }
+ { "@type": "HowToStep", "name": "Review results", "text": "The result lists every source searched, in a few seconds. If the gun is reported stolen, do not complete the transaction." }
  ]
  }
  ])

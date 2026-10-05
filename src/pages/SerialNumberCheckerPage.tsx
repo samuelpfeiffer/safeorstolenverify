@@ -1,103 +1,137 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+// Oct 5 2026: rewritten for the searches this page already ranks for ("free serial number search",
+// "serial number lookup", "product serial number check online"). Every claim matches what the
+// check actually searches. No outbound links, no supplier names.
 const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
- title="Free Serial Number Lookup — Check if Item is Stolen | SafeOrStolen"
- metaDescription="Free serial number lookup for electronics, tools, guns, and more. Searches SafeOrStolen theft reports, police stolen-gun records from 34 states, and the web. 2 free checks."
- h1="Free Serial Number Lookup — Stolen Item Check"
+ title="Free Serial Number Search & Lookup — Check If Stolen | SafeOrStolen"
+ metaDescription="Search any serial number free. See if a laptop, tool, camera, console, gun or other item is reported stolen before you buy. Results in seconds, 2 free checks, no card."
+ h1="Free Serial Number Search & Lookup"
  itemType="Item"
- dateModified="2026-09-23"
+ dateModified="2026-10-05"
+ searchPlaceholder="Type or paste any serial number"
  keywords={[
- 'serial number checker',
- 'check serial number stolen',
+ 'free serial number search',
  'serial number lookup',
- 'verify electronics not stolen',
- 'stolen property check',
- 'serial number verification'
+ 'free serial number lookup',
+ 'serial number search',
+ 'product serial number check online',
+ 'check if item is stolen by serial number',
+ 'stolen serial number lookup',
+ 'serial number lookup database'
+ ]}
+ quickAnswer={{
+ question: "How do I check if an item is stolen by its serial number?",
+ answer: "Type the serial number into the search box above. SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 34 states. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first 2 checks are free with no card. Do it before you pay, and save the result as proof you checked."
+ }}
+ sections={[
+ {
+ heading: "What a free serial number search can and can't tell you",
+ paragraphs: [
+ "A serial number search answers one question: has anyone reported this exact item stolen or lost in the records we search? If there is a match, you see what the report says and you should not buy the item. If there is no match, the result says so plainly, and lists every source that was searched.",
+ "No match is not a guarantee. Theft reports in the United States are split across thousands of police departments, and many owners never write down their serial numbers, so plenty of stolen items have never been reported anywhere. That is why the check also looks at how the item is being sold, and why the red flags below still matter.",
+ "A stolen-item search does not tell you who owns the item, whether the warranty is still active, or the exact model and build date. Those details belong to the manufacturer. What you get from SafeOrStolen is the part a buyer needs before handing over money: is this item flagged as stolen?"
+ ]
+ },
+ {
+ heading: "Where to find the serial number",
+ paragraphs: [
+ "Ask the seller for a clear photo of the serial number before you meet, then check the same number on the item in person. A seller who won't share it is giving you your answer."
+ ],
+ table: {
+ columns: ["Item", "Where the serial number is"],
+ rows: [
+ ["Windows laptop", "Label on the bottom of the case, or open PowerShell and run: Get-CimInstance Win32_BIOS"],
+ ["MacBook", "Apple menu > About This Mac, and printed on the bottom case"],
+ ["iPhone or iPad", "Settings > General > About (for a phone, also check the IMEI by dialing *#06#)"],
+ ["PlayStation 5", "Sticker on the back of the console, and Settings > System > System Software > Console Information"],
+ ["Xbox Series X|S", "Settings > System > Console info, and the sticker on the back"],
+ ["Nintendo Switch", "Bottom edge of the console, and System Settings > System > Serial Information"],
+ ["Power tools", "Nameplate on the motor housing or the battery foot, next to the model number"],
+ ["Cameras and lenses", "Base plate or battery door on the body; lenses carry their own serial on the barrel or mount"],
+ ["Guitars", "Back of the headstock, or the neck plate on bolt-on necks"],
+ ["Bicycles", "Underneath the bottom bracket, where the pedals meet the frame"],
+ ["Guns", "Stamped on the frame or receiver, sometimes also on the slide or barrel"],
+ ["TVs", "Label on the back panel, and in the TV's settings under Support or About"]
+ ]
+ }
+ },
+ {
+ heading: "Red flags that matter as much as the serial number",
+ list: [
+ "The serial number is scratched, ground off, painted over, or covered by a new sticker",
+ "The serial on the item doesn't match the box, the receipt, or the photo the seller sent",
+ "The price is far below what the same item sells for used",
+ "Several of the same expensive item for sale at once, often new in box, with no receipts",
+ "The seller won't share the serial number before meeting, or wants cash only and right now",
+ "A laptop or phone that is still signed in to someone else's account or locked by a company"
+ ]
+ }
  ]}
  content={{
- intro: "Verify serial numbers for electronics, tools, appliances, jewelry, and more in 3 seconds. Check if laptops, cameras, power tools, or other items are reported stolen before buying. Each check covers SafeOrStolen's own stolen-item reports, public web results and AI analysis. 2 free checks with a free account.",
- whatIs: "A serial number checker is a tool that verifies whether items like laptops, cameras, power tools, appliances, watches, musical instruments, or firearms have been reported stolen. Nearly every valuable manufactured item has a unique serial number that can be tracked across theft databases. SafeOrStolen's serial number checker runs any serial — including power tools and other serial-numbered items — through SafeOrStolen's own stolen-item reports, public web results and AI analysis. A boat's hull ID (HIN) can be run through the same general check. This protects buyers purchasing used goods on Facebook Marketplace, eBay, Craigslist, OfferUp, and yard sales.",
- howItWorks: "Enter the serial number and SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis. In about 3 seconds you get a result — Stolen, Not stolen, or Not found in the sources we checked — saved to your account. After a clean check you can keep a Proof of Clean Purchase record. SafeOrStolen does not search police, pawn-shop or insurance databases; for high-value items, also check with local law enforcement.",
- whyCheck: "Buying stolen property has serious legal and financial consequences. Stolen items can be confiscated by police with zero compensation, you could face criminal charges for possession of stolen property (even if you didn't know), you lose your entire purchase price with no recourse, and pawn shops and repair shops may report you to authorities when you bring in stolen goods. Checking the serial before you pay — and keeping a record that you checked — protects buyers and helps honest sellers show an item checked clean.",
+ intro: "Search any serial number for free and see whether the item is reported stolen before you buy it. It works for laptops, power tools, cameras, game consoles, guitars, bikes, guns, TVs and anything else with a serial number. Results in a few seconds, 2 free checks, no credit card.",
+ whatIs: "A serial number lookup checks whether a specific item has been reported stolen or lost. Almost every valuable manufactured item carries a unique serial number, and that number is what owners give the police and their insurer when the item is stolen. SafeOrStolen searches its own theft reports and public web results for every serial number. Gun serial numbers are also checked against police firearm theft and loss reports from 34 states and live Ohio law-enforcement records. Bikes are checked against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records and federal VIN data.",
+ howItWorks: "Type the serial number into the search box. SafeOrStolen searches every source that applies to that kind of item at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched, and it is saved to your account with the date and time. After a check you can also get a $1.99 verification certificate, a dated record with its own link, showing you checked before the sale.",
+ whyCheck: "In most states, buying stolen property means losing it. Police can return it to the owner without paying you back, and you can be questioned about how you got it. Checking the serial number before you pay, and keeping a record that you checked, protects you as a buyer. It also helps honest sellers show that the item checked clean.",
  benefits: [
- "Check electronics (laptops, cameras, tablets, gaming consoles)",
- "Verify power tools (DeWalt, Milwaukee, Makita, Bosch)",
- "Check appliances (washers, dryers, refrigerators)",
- "Verify jewelry and luxury watches (Rolex, Omega)",
- "Check musical instruments (guitars, keyboards, violins)",
- "Verify firearms and gun serial numbers",
- "Results in about 3 seconds from SafeOrStolen's own stolen-item reports, public web results and AI analysis",
- "2 free checks with a free account - no credit card required"
+ "Works on any serial number: electronics, tools, instruments, cameras, consoles, guns, bikes",
+ "Searches SafeOrStolen theft reports and public web results on every check",
+ "Gun serials: police theft and loss reports from 34 states plus live Ohio records",
+ "Results in a few seconds, with every source listed",
+ "2 free checks with a free account, no credit card",
+ "Dated record of every check saved to your account",
+ "Optional $1.99 verification certificate to share with the buyer or seller",
+ "Install the free web app and check from your phone at the meetup"
  ],
  process: [
- "Locate the serial number: Usually found on the back, bottom, or inside battery compartment. Check product manuals or manufacturer websites for exact location",
- "Record the complete serial number including all letters, numbers, and symbols - even one wrong character can cause false results",
- "Enter the serial number into our verification tool at SafeOrStolen.com/verify",
- "Review the result and the list of sources checked",
- "If CLEAN, proceed with purchase. If STOLEN, walk away and report the seller to police"
+ "Ask the seller for a photo of the serial number before you agree to meet",
+ "Type the full serial number into the search box, including every letter and number",
+ "Read the result and the list of sources that were searched",
+ "When you meet, make sure the serial number on the item matches the one you checked",
+ "If it is reported stolen, don't buy it, and pass the listing to your local police"
  ],
  faqs: [
  {
- question: "How do I check a serial number?",
- answer: "Find the serial number on the item — usually on the base, back panel, battery compartment, or nameplate — and enter it at SafeOrStolen. SafeOrStolen checks it against SafeOrStolen's own stolen-item reports, public web results and AI analysis and returns a Safe or Stolen result in about 3 seconds. Your first 2 checks are free with no card required, then it is $3.99 per check or $14.99/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and scan or type the serial from your phone while you are with the seller."
+ question: "Is the serial number search really free?",
+ answer: "Yes. Your first 2 checks are free with a free account and no credit card. After that it is $3.99 for a single check, or $14.99 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
  },
  {
- question: "Where can I check a serial number to see if an item is stolen?",
- answer: "Enter the serial number at SafeOrStolen, which checks SafeOrStolen's own stolen-item reports, public web results and AI analysis for that identifier. It works for laptops, tablets, cameras, power tools, instruments, watches, and other serialized property. You will get a match or no-match result in a few seconds, along with a dated record of the check."
+ question: "Is there a national database of stolen serial numbers?",
+ answer: "Not one the public can search. The FBI's national stolen-property file is only open to law enforcement, and other theft records are split across police departments, insurers and registries. SafeOrStolen brings together the sources the public can use, including its own theft reports and police firearm theft and loss reports from 34 states. A no-match result means nothing was found in those sources, not proof that the item was never stolen."
  },
  {
- question: "Is there a database for stolen serial numbers?",
- answer: "There is no single national database that the public can query for every stolen serial number \u2014 theft records are spread across individual police agencies, insurers, manufacturers, and community registries. SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis; it does not search police, insurer or manufacturer records. Because coverage is fragmented, a no-match result means nothing was found in the sources checked rather than proof the item was never stolen."
- },
- {
- question: "How do I check if a power tool is stolen?",
- answer: "Find the serial number on the tool's nameplate, battery foot, or motor housing \u2014 most brands print it near the model number \u2014 and enter it at SafeOrStolen. Tools sold in bulk with the serial plates scratched off, or priced far below retail with no case or charger, are the classic jobsite-theft pattern. If the serial has been removed entirely, treat that as a reason not to buy."
- },
- {
- question: "How do I check whether a used laptop is stolen?",
- answer: "Get the serial number from the underside of the chassis or from the system information screen, and enter it at SafeOrStolen before you pay. Also confirm the machine boots to a clean setup screen with no firmware password, activation lock, or company management profile, because a managed or locked laptop is unusable even if no theft was ever reported. Ask for a photo of the serial and check it against the machine when you meet."
- },
- {
- question: "How do I check if a used camera is stolen?",
- answer: "Camera bodies carry a serial number on the base plate or inside the battery compartment, and lenses have their own serial printed on the barrel \u2014 check the body and any lens separately at SafeOrStolen. Cameras are among the most commonly stolen and resold items because they hold value and are easy to carry. Ask the seller for a photo of the serial next to a shot taken with the camera that day."
- },
- {
- question: "Can I verify a serial number before buying something?",
- answer: "Yes, and it takes a few seconds. Ask the seller to photograph the serial number on the item, enter it at SafeOrStolen, and check the result before you commit to meeting or paying. SafeOrStolen also produces a dated verification record you can keep as evidence that you checked in good faith."
+ question: "Can I look up who owns an item by its serial number?",
+ answer: "No. Ownership records are private, and SafeOrStolen never shows who owns an item or who reported it. What the search tells you is whether the item has been reported stolen or lost, which is the part a buyer needs to know."
  },
  {
  question: "What items can I check with a serial number?",
- answer: "You can check almost any valuable item with a serial number including: laptops (MacBook, Dell, HP), tablets (iPad, Surface), cameras (Canon, Nikon, Sony), power tools (DeWalt, Milwaukee), appliances (refrigerators, washers), jewelry and watches (Rolex, Omega), musical instruments (guitars, keyboards), gaming consoles (PlayStation, Xbox), smartphones, firearms, bicycles, and more. If it has a unique serial number, you can run it through the check."
+ answer: "Anything with a unique serial number: laptops, tablets, cameras and lenses, power tools, game consoles, TVs, guitars and other instruments, watches, bikes and e-bikes, guns, boats (by hull number), and more. Phones are best checked by IMEI, and cars by VIN or license plate."
  },
  {
- question: "Where do I find an item's serial number?",
- answer: "Serial number locations vary by item type: (1) Laptops: Bottom case, battery compartment, or BIOS, (2) Cameras: Bottom of camera body, (3) Power tools: Motor housing or battery area, (4) Appliances: Back panel or inside door, (5) Watches: Case back between lugs, (6) Bicycles: Bottom bracket or head tube, (7) Firearms: Receiver, frame, or barrel. Check the original box, receipt, or manufacturer documentation if the serial number is worn or illegible."
+ question: "How do I check if a power tool is stolen?",
+ answer: "Find the serial number on the tool's nameplate, usually on the motor housing near the model number, and enter it in the search box. Tools sold in bulk, with the nameplates scratched off, or far below the usual used price are the classic job-site theft pattern. If the serial has been removed, don't buy it."
  },
  {
- question: "Is the serial number check really free?",
- answer: "Yes, SafeOrStolen offers 2 free serial number checks. This allows you to verify items before buying without any cost. Additional checks require a paid plan, but our free tier is designed to protect casual buyers shopping on marketplaces, yard sales, or from individuals."
+ question: "How do I check whether a used laptop is stolen?",
+ answer: "Get the serial number from the bottom of the case or from the system information screen, and search it before you pay. Also make sure the laptop starts up to a fresh setup screen with no firmware password, no activation lock and no company management profile. A locked or company-managed laptop may be unusable even if it was never reported stolen."
  },
  {
- question: "What databases does SafeOrStolen check?",
- answer: "Every serial number check searches SafeOrStolen's own stolen-item reports, police stolen-gun records from 34 states, and public web results, with AI notes that never decide the result on their own. Firearms are also checked against live Ohio law-enforcement stolen-gun records, bicycles against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records plus federal VIN data. It does not search pawn-shop, manufacturer, or insurance databases."
+ question: "What happens if the serial number comes back as stolen?",
+ answer: "Don't buy it, and don't confront the seller. Leave, report the listing to the marketplace, and give the listing details to your local police on their non-emergency line. If you already bought it, contact the police yourself and keep your messages and payment record."
  },
  {
- question: "What if the serial number check shows the item is stolen?",
- answer: "If our check shows the item is reported stolen: (1) Do NOT buy it under any circumstances, (2) Walk away immediately - do not accuse the seller (they may be unaware it's stolen), (3) Report the listing to the marketplace platform (Facebook, Craigslist, OfferUp), (4) Consider filing an anonymous tip with local police (include listing URL and seller information), (5) If you've already purchased it, contact police immediately - you may be eligible for victim assistance."
+ question: "Can serial numbers be removed or changed?",
+ answer: "Yes, and that is a warning sign in itself. Look for scratched, ground or polished areas where the serial should be, a replacement sticker, or a serial that doesn't match the box. For guns, possessing one with an obliterated serial number is a federal crime. If the serial looks tampered with, walk away."
  },
  {
- question: "Can serial numbers be removed or altered?",
- answer: "Yes, criminals sometimes remove, file off, or alter serial numbers on stolen goods. This is actually a federal crime and a major red flag. Signs of tampering include: (1) Serial number area looks scratched or polished, (2) Serial number sticker is obviously replaced or damaged, (3) Seller can't provide serial number, (4) Multiple serial numbers don't match. If you suspect tampering, walk away and report to authorities."
+ question: "How long does a serial number search take?",
+ answer: "Usually a few seconds. All the sources that apply to that kind of item are searched at the same time, and the result lists each one."
  },
  {
- question: "How long does a serial number check take?",
- answer: "Our serial number verification takes only 3 seconds. Simply enter the complete serial number, click verify, and receive instant results showing whether the item was found in the sources checked."
- },
- {
- question: "Do I need the original receipt to check a serial number?",
- answer: "No, you only need the serial number itself. However, if you're buying an item and the seller has the original receipt, that's a very good sign - ask to see it and verify the serial number matches. Be wary of sellers who can't provide any proof of purchase, as this is a common red flag for stolen goods."
+ question: "Do I need the receipt to check a serial number?",
+ answer: "No, the serial number is all you need. But if the seller has the original receipt, check that the serial on it matches the item. A seller who can't explain where the item came from is a red flag."
  }
  ]
  }}

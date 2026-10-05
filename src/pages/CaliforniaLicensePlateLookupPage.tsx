@@ -9,6 +9,8 @@ const CaliforniaLicensePlateLookupPage = () => {
  metaDescription="Free California license plate lookup. Check if a CA vehicle is reported stolen using SafeOrStolen reports, public web results, and AI analysis."
  h1="California License Plate Lookup - Check CA Vehicles"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'california license plate lookup',
  'CA license plate search',

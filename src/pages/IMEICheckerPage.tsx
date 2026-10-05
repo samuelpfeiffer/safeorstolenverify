@@ -7,6 +7,8 @@ const IMEICheckerPage = () => {
  metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks our own reports, public web results, and uses AI analysis simultaneously. Results in 3 seconds."
  h1="Free IMEI Check — Stolen & Blacklist Verification"
  itemType="Phone"
+ searchType="imei"
+ searchPlaceholder="Enter the IMEI (dial *#06# to see it)"
  keywords={[
  'IMEI checker app',
  'IMEI checker free',

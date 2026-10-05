@@ -14,6 +14,8 @@ const TheftAZPage = () => {
  metaDescription="Search Arizona police stolen-vehicle records (TheftAZ) by VIN or plate, plus a VIN decode, safety recalls, and a guided buyer's check. 2 free checks."
  h1="TheftAZ search: check Arizona police stolen-vehicle records"
  itemType="Arizona Stolen Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the plate number or VIN"
  dateModified="2026-09-28"
  keywords={[
  'theftaz',

@@ -304,7 +304,7 @@ const SMSVerifyPage = () => {
  { label: "Bicycles", link: "/check-bike" },
  { label: "Tablets", link: "/check-tablet-stolen" },
  { label: "Gaming Consoles", link: "/check-gaming-console-stolen" },
- { label: "Power Tools", link: "/check-power-tools-stolen" },
+ { label: "Power Tools", link: "/how-to-check-if-tools-stolen" },
  { label: "Cameras", link: "/check-camera-stolen" },
  { label: "Watches", link: "/check-watch-stolen" },
  { label: "Jewelry", link: "/check-jewelry-stolen" },

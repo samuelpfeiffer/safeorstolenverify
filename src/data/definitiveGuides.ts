@@ -489,9 +489,9 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
 export const LAPTOP_GUIDE: DefinitiveGuideProps = {
   slug: "/how-to-check-if-laptop-stolen",
   title: "How to Check if a Laptop or Electronics Item Is Stolen",
-  metaTitle: "How to Check if a Laptop Is Stolen",
+  metaTitle: "How to Check if a Laptop Is Stolen (Free Serial Number Check)",
   description:
-    "Match a laptop serial number, check manufacturer details and account locks, inspect seller records, and verify used electronics before buying.",
+    "How to check if a laptop is stolen: search its serial number free, match it to the device, clear account and company locks, and check the seller's records before you pay.",
   keywords:
     "how to check if laptop stolen, laptop serial number lookup, used electronics check",
   directAnswer:
@@ -574,7 +574,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
   ],
   related: [
     { href: "/serial-number-checker", label: "Serial-number checker" },
-    { href: "/blog/ps5-stolen-check-guide", label: "Used PS5 guide" },
+    { href: "/check-ps5", label: "PS5 serial number check" },
     { href: "/how-to-check-if-tools-stolen", label: "Power-tool guide" },
   ],
 };
@@ -582,9 +582,9 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
 export const TOOLS_GUIDE: DefinitiveGuideProps = {
   slug: "/how-to-check-if-tools-stolen",
   title: "How to Check if Power Tools Are Stolen",
-  metaTitle: "How to Check if Power Tools Are Stolen",
+  metaTitle: "How to Check if a Tool Is Stolen — Free Serial Number Lookup",
   description:
-    "Find tool serial numbers, check seller and manufacturer records, understand tracking programs, spot altered tools, and verify before buying.",
+    "How to check if a power tool is stolen: look up the serial number free, compare it with the receipt, spot removed labels and owner markings, and know when to walk away.",
   keywords:
     "how to check if tools stolen, power tool serial number check, used DeWalt Milwaukee Makita",
   directAnswer:

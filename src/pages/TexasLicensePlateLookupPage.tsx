@@ -9,6 +9,8 @@ const TexasLicensePlateLookupPage = () => {
  metaDescription="Free Texas license plate lookup. Check if a TX vehicle is stolen before buying. Verify against public records and community reports instantly."
  h1="Texas License Plate Lookup - Check TX Vehicles"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'texas license plate lookup',
  'TX license plate search',

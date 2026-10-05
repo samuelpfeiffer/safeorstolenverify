@@ -7,6 +7,8 @@ const ImeiStolenPhoneCheckPage = () => {
  metaDescription="Check if a phone is stolen using its IMEI. We search SafeOrStolen reports, public web results, and use AI analysis to help you verify a phone's status."
  h1="IMEI Stolen Phone Check - Verify Any Phone Instantly"
  itemType="Phone"
+ searchType="imei"
+ searchPlaceholder="Enter the IMEI (dial *#06# to see it)"
  keywords={[
  'imei stolen phone check',
  'check imei stolen',

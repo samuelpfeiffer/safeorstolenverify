@@ -9,6 +9,8 @@ const PennsylvaniaLicensePlateLookupPage = () => {
       metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen before buying. Verify its status through our analysis."
       h1="Pennsylvania License Plate Lookup - Verify PA Vehicles Aren't Stolen"
       itemType="Vehicle"
+      searchType="plate"
+      searchPlaceholder="Enter the license plate number"
       keywords={[
         'pennsylvania license plate lookup',
         'PA license plate search',

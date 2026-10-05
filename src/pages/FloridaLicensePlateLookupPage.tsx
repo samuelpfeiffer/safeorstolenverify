@@ -15,6 +15,8 @@ const FloridaLicensePlateLookupPage = () => {
  metaDescription="Check a Florida plate before you buy: search SafeOrStolen's theft reports, then Florida's free FDLE stolen plate and stolen vehicle search. What a plate check can and can't tell you."
  h1="Florida License Plate Lookup"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'florida license plate lookup',
  'FL license plate search',

@@ -9,6 +9,8 @@ const NewYorkLicensePlateLookupPage = () => {
  metaDescription="Free New York license plate lookup. Check if a NY vehicle is reported stolen before buying. Search SafeOrStolen reports and public data instantly."
  h1="New York License Plate Lookup - Check NY Vehicles"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'new york license plate lookup',
  'NY license plate search',

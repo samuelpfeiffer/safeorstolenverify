@@ -7,6 +7,8 @@ const CheckCarStolenByVinPage = () => {
  metaDescription="Check if a car is stolen by VIN number. Free vehicle verification searches SafeOrStolen reports, public web results, and uses AI analysis. Get instant results before buying any used car."
  h1="Check if a Car is Stolen by VIN Number"
  itemType="Vehicle"
+ searchType="vin"
+ searchPlaceholder="Enter the 17-character VIN"
  keywords={[
  'check if car is stolen by vin',
  'is my car stolen vin check',

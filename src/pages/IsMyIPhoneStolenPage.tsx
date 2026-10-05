@@ -7,6 +7,8 @@ const IsMyIPhoneStolenPage = () => {
  metaDescription="Check if an iPhone is stolen before buying. Free IMEI verification for all models. Instant results show theft status, iCloud lock, and blacklist."
  h1="Is My iPhone Stolen? Check Any iPhone Instantly"
  itemType="iPhone"
+ searchType="imei"
+ searchPlaceholder="Enter the iPhone's IMEI (dial *#06#)"
  keywords={[
  'is my iphone stolen',
  'check if iphone is stolen',

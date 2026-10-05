@@ -13,6 +13,8 @@ const VINCheckerPage = () => {
  metaDescription="Run a stolen-vehicle VIN or plate check in seconds against SafeOrStolen's stolen-item reports, web results and AI analysis. Free to try."
  h1="VIN Checker: Is This Car Stolen?"
  itemType="Vehicle"
+ searchType="vin"
+ searchPlaceholder="Enter the 17-character VIN"
  dateModified="2026-09-23"
  keywords={[
  'VIN checker',

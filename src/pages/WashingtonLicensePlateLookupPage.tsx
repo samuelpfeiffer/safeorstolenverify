@@ -9,6 +9,8 @@ const WashingtonLicensePlateLookupPage = () => {
  metaDescription="Washington license plate lookup to verify if a vehicle is stolen. Free WA license plate search using SafeOrStolen's reports, public web results, and AI analysis. Check vehicles in Seattle, Spokane, Tacoma."
  h1="Washington License Plate Lookup - Check WA Vehicles"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'washington license plate lookup',
  'WA license plate search',

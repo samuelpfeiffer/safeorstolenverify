@@ -11,6 +11,8 @@ const VINCheckPage = () => {
  metaDescription="Free VIN check to verify if any car, truck, or motorcycle is stolen. Check VIN number instantly against police, DMV. Verify before buying."
  h1="Free VIN Check - Verify Vehicle Not Stolen"
  itemType="Car"
+ searchType="vin"
+ searchPlaceholder="Enter the 17-character VIN"
  keywords={[
  'VIN check',
  'check VIN',

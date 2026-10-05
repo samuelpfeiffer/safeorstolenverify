@@ -1,6 +1,6 @@
 import { Link, useLocation } from '@/lib/router-compat';
 import DOMPurify from 'dompurify';
-import { Shield, Search, CheckCircle, Clock, Award, ArrowRight } from 'lucide-react';
+import { Shield, Search, CheckCircle, Clock, Award } from 'lucide-react';
 
 // DOMPurify requires a browser DOM (window/document). Under SSR (TanStack Start
 // server render, no DOM) its sanitize() throws, which kills the entire page
@@ -23,6 +23,15 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import { InlineSerialCheck } from '@/components/seo/InlineSerialCheck';
+
+/** Extra hand-written sections a page can add below the quick answer. */
+export interface LandingSection {
+ heading: string;
+ paragraphs?: string[];
+ list?: string[];
+ table?: { columns: string[]; rows: string[][] };
+}
 
 interface ItemLandingPageProps {
  title: string;
@@ -40,6 +49,12 @@ interface ItemLandingPageProps {
  faqs: { question: string; answer: string }[];
  };
  dateModified?: string;
+ /** Item hint passed to /verify (e.g. 'firearm', 'imei', 'vin', 'bike'). */
+ searchType?: string;
+ searchPlaceholder?: string;
+ /** Short direct answer shown near the top (and first in the FAQ schema). */
+ quickAnswer?: { question: string; answer: string };
+ sections?: LandingSection[];
 }
 
 export const ItemLandingPageTemplate = ({
@@ -49,7 +64,11 @@ export const ItemLandingPageTemplate = ({
  itemType,
  keywords,
  content,
- dateModified = "2026-03-10"
+ dateModified = "2026-03-10",
+ searchType,
+ searchPlaceholder,
+ quickAnswer,
+ sections = []
 }: ItemLandingPageProps) => {
  const location = useLocation();
  
@@ -96,10 +115,11 @@ export const ItemLandingPageTemplate = ({
  ]
  };
 
- const faqSchema = content.faqs && content.faqs.length > 0 ? {
+ const allFaqs = quickAnswer ? [quickAnswer, ...content.faqs.filter((f) => f.question !== quickAnswer.question)] : content.faqs;
+ const faqSchema = allFaqs && allFaqs.length > 0 ? {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": content.faqs.map(faq => ({
+ "mainEntity": allFaqs.map(faq => ({
  "@type": "Question",
  "name": faq.question,
  "acceptedAnswer": {
@@ -130,6 +150,18 @@ export const ItemLandingPageTemplate = ({
  <div>
  <h1>{h1}</h1>
  <p>{content.intro}</p>
+ {quickAnswer && (<><h2>{quickAnswer.question}</h2><p>{quickAnswer.answer}</p></>)}
+ {sections.map((sec, i) => (
+ <div key={i}>
+ <h2>{sec.heading}</h2>
+ {sec.paragraphs?.map((t, j) => <p key={j}>{t}</p>)}
+ {sec.list && <ul>{sec.list.map((t, j) => <li key={j}>{t}</li>)}</ul>}
+ {sec.table && (
+ <table><thead><tr>{sec.table.columns.map((c) => <th key={c}>{c}</th>)}</tr></thead>
+ <tbody>{sec.table.rows.map((r, j) => <tr key={j}>{r.map((c, k) => <td key={k}>{c}</td>)}</tr>)}</tbody></table>
+ )}
+ </div>
+ ))}
  
  <h2>What is {itemType} Verification?</h2>
  <p>{content.whatIs}</p>
@@ -151,7 +183,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>Databases We Search</h2>
- <p>SafeOrStolen checks its own stolen-item reports, public web results, and uses AI analysis. For bicycles, it checks BikeIndex, for firearms, HotGunz, and for phones, it performs an IMEI device lookup. Results in 3 seconds.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 34 states and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records and federal VIN data. AI notes are advisory and never decide the result.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -188,11 +220,10 @@ export const ItemLandingPageTemplate = ({
  className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.intro) }}
   />
- <Link to="/verify">
- <Button size="lg" className="gap-2">
- Check {itemType} Now <ArrowRight className="w-4 h-4" />
- </Button>
- </Link>
+ <InlineSerialCheck type={searchType} placeholder={searchPlaceholder} />
+ <p className="text-sm text-muted-foreground mt-3">
+ 2 free checks · No credit card · Updated {new Date(dateModified + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+ </p>
  </div>
 
  {/* Trust Indicators */}
@@ -218,6 +249,53 @@ export const ItemLandingPageTemplate = ({
  </section>
 
  <SitewideCredibilityBar />
+
+ {quickAnswer && (
+ <section className="py-10 px-4">
+ <div className="max-w-4xl mx-auto rounded-2xl border border-primary/30 bg-primary/5 p-6">
+ <p className="text-xs font-bold uppercase tracking-wide text-primary mb-2">Quick answer</p>
+ <h2 className="text-xl md:text-2xl font-bold mb-3">{quickAnswer.question}</h2>
+ <p className="text-lg text-muted-foreground leading-relaxed">{quickAnswer.answer}</p>
+ </div>
+ </section>
+ )}
+
+ {sections.map((sec, i) => (
+ <section key={i} className={`py-12 px-4 ${i % 2 === 0 ? '' : 'bg-card/50'}`}>
+ <div className="max-w-4xl mx-auto">
+ <h2 className="text-3xl font-bold mb-6">{sec.heading}</h2>
+ {sec.paragraphs?.map((t, j) => (
+ <p key={j} className="text-lg text-muted-foreground leading-relaxed mb-4">{t}</p>
+ ))}
+ {sec.list && (
+ <ul className="space-y-2 mb-4">
+ {sec.list.map((t, j) => (
+ <li key={j} className="flex gap-3 text-base">
+ <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+ <span>{t}</span>
+ </li>
+ ))}
+ </ul>
+ )}
+ {sec.table && (
+ <div className="overflow-x-auto rounded-lg border border-border">
+ <table className="w-full text-left text-sm">
+ <thead className="bg-muted/60">
+ <tr>{sec.table.columns.map((c) => <th key={c} className="px-4 py-3 font-semibold">{c}</th>)}</tr>
+ </thead>
+ <tbody>
+ {sec.table.rows.map((r, j) => (
+ <tr key={j} className="border-t border-border">
+ {r.map((c, k) => <td key={k} className={`px-4 py-3 ${k === 0 ? 'font-medium' : 'text-muted-foreground'}`}>{c}</td>)}
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ )}
+ </div>
+ </section>
+ ))}
 
  {/* What Is Section */}
  <section className="py-16 px-4 bg-card/50">

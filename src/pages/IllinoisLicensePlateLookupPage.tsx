@@ -9,6 +9,8 @@ const IllinoisLicensePlateLookupPage = () => {
  metaDescription="Free Illinois license plate lookup. Check if an IL vehicle is reported stolen before buying. Search SafeOrStolen's records and public reports."
  h1="Illinois License Plate Lookup - Check IL Vehicles"
  itemType="Vehicle"
+ searchType="plate"
+ searchPlaceholder="Enter the license plate number"
  keywords={[
  'illinois license plate lookup',
  'IL license plate search',

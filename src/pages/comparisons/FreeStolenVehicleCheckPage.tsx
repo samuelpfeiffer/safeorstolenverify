@@ -7,6 +7,8 @@ const FreeStolenVehicleCheckPage = () => {
       metaDescription="Free stolen vehicle check with no daily limits. Unlike NICB VINCheck (5/day limit), SafeOrStolen offers unlimited free searches against multiple sources."
       h1="Free Stolen Vehicle Check"
       itemType="Vehicle"
+      searchType="vin"
+      searchPlaceholder="Enter the 17-character VIN"
       keywords={[
         'free stolen vehicle check',
         'free vin check',
