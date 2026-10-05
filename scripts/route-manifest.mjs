@@ -27,7 +27,6 @@ const PRIVATE_EXACT = new Set([
   '/checkout-redirect',
   '/verification-success',
   '/payment-success',
-  '/report-stolen',
   '/search-history',
   '/receipts',
   '/analytics',
@@ -37,6 +36,7 @@ const PRIVATE_EXACT = new Set([
   '/mobile-onboarding',
   '/mobile-settings',
   '/mobile-verify',
+  '/my-items',
 ]);
 
 const PRIVATE_PREFIXES = [

@@ -1,7 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { ReportStolenItemForm } from '@/components/ReportStolenItemForm';
-import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
+import { ReportStolenForm } from '@/components/reports/ReportStolenForm';
 import { AlertTriangle, Shield, Users, Bell, FileText, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
@@ -15,7 +14,7 @@ const ReportStolenPageContent = () => {
  {
  "@type": "Question",
  "name": "How do I report a stolen item on SafeOrStolen?",
- "acceptedAnswer": { "@type": "Answer", "text": "Fill out the form on this page with your item's details including type, brand, model, serial number (or IMEI/VIN), location stolen, and date. All reports are reviewed before being added to our searchable stolen database." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Fill out the form on this page with your item's details including type, brand, model, serial number (or IMEI/VIN), location stolen, and date. Most reports go live right away; reports that need a closer look are reviewed first." }
  },
  {
  "@type": "Question",
@@ -25,7 +24,7 @@ const ReportStolenPageContent = () => {
  {
  "@type": "Question",
  "name": "What happens after I report a stolen item?",
- "acceptedAnswer": { "@type": "Answer", "text": "Your report is reviewed by our team, then added to our stolen items database. When anyone searches for your item's serial number, IMEI, or VIN, they'll be alerted that it was reported stolen. You'll receive a notification if someone searches for your item." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Your report is added to SafeOrStolen's stolen items database, or reviewed first if it needs a closer look. When anyone checks your item's serial number, IMEI or VIN, they'll see it was reported stolen, without your name or contact details. If you choose, we'll email you when someone checks it." }
  },
  {
  "@type": "Question",
@@ -142,16 +141,16 @@ const ReportStolenPageContent = () => {
  </section>
  
  {/* Form */}
- <div className="bg-card border border-border rounded-xl p-6 md:p-8 shadow-lg mb-10">
+ <div className="mb-10">
  <h2 className="text-xl font-bold mb-4">Stolen Item Report Form</h2>
- <ReportStolenItemForm />
+ <ReportStolenForm />
  </div>
  
  {/* Important Info */}
  <div className="p-4 bg-muted/50 rounded-lg border border-border mb-10">
  <h2 className="font-semibold text-foreground mb-2">Important Information</h2>
  <ul className="text-sm text-muted-foreground space-y-1">
- <li>• All reports are reviewed before being added to our database</li>
+ <li>• Reports that need a closer look are reviewed before they go live</li>
  <li>• False reports may result in account suspension</li>
  <li>• We strongly recommend also filing a police report for your stolen item</li>
  <li>• Your contact information will remain private</li>
@@ -167,7 +166,7 @@ const ReportStolenPageContent = () => {
  <AccordionItem value="how">
  <AccordionTrigger>How do I report a stolen item on SafeOrStolen?</AccordionTrigger>
  <AccordionContent>
- Fill out the form above with your item's details including type, brand, model, serial number (or IMEI/VIN), location stolen, and date. All reports are reviewed by our team before being added to our searchable stolen database.
+ Fill out the form above with your item's details including type, brand, model, serial number (or IMEI/VIN), location stolen, and date. Most reports go live right away; reports that need a closer look are reviewed first.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="free">
@@ -179,7 +178,7 @@ const ReportStolenPageContent = () => {
  <AccordionItem value="after">
  <AccordionTrigger>What happens after I report a stolen item?</AccordionTrigger>
  <AccordionContent>
- Your report is reviewed by our team, then added to our stolen items database. When anyone searches for your item's serial number, IMEI, or VIN using SafeOrStolen, they'll be alerted that it was reported stolen. You'll also receive a notification if someone searches for your item.
+ Your report is added to SafeOrStolen's stolen items database, or reviewed first if it needs a closer look. When anyone checks your item's serial number, IMEI or VIN, they'll see it was reported stolen, without your name or contact details. If you choose, we'll email you when someone checks it.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="police">
@@ -224,12 +223,8 @@ const ReportStolenPageContent = () => {
  );
 };
 
-const ReportStolenPage = () => {
- return (
- <ProtectedRoute>
- <ReportStolenPageContent />
- </ProtectedRoute>
- );
-};
+// Public page (Oct 5 2026): the guides link here and search engines should see it.
+// The form itself asks visitors to sign in before a report is filed.
+const ReportStolenPage = () => <ReportStolenPageContent />;
 
 export default ReportStolenPage;
