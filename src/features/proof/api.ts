@@ -14,6 +14,8 @@ export interface PublicProofRecord {
   databases_queried: string[];
   record_hash: string;
   deleted_at: string | null;
+  /** When the certificate was paid for (or issued free to a member); null = not issued yet. */
+  paid_at?: string | null;
 }
 
 export interface ProofRecordSummary {
@@ -147,7 +149,14 @@ export async function getPublicProofRecord(id: string): Promise<PublicProofRecor
     databases_queried: Array.isArray(row.databases_queried)
       ? (row.databases_queried as string[])
       : [],
+    paid_at: await getProofPaidAt(row.id),
   };
+}
+
+/** Certificate payment status (null = not issued yet). */
+export async function getProofPaidAt(id: string): Promise<string | null> {
+  const { data } = await (supabase.rpc as any)('get_proof_record_paid', { p_id: id });
+  return (data as string | null) ?? null;
 }
 
 export const PROOF_PAGE_SIZE = 25;

@@ -242,8 +242,6 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
         "Florida's FDLE Public Access System and the Ohio Attorney General's stolen-gun search let anyone look up a serial reported stolen to police in that state. SafeOrStolen already searches Ohio's records for you.",
       tellsYou:
         "Whether police in that state have reported a gun with this serial number stolen. They do not cover other states.",
-      url: "https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenGun.jsf",
-      linkLabel: "Florida FDLE stolen gun search",
     },
   ],
   redFlags: [

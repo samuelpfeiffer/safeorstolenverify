@@ -1080,8 +1080,11 @@ export type Database = {
           identifier_hash: string
           identifier_masked: string
           marketing_opt_in: boolean
+          paid_at: string | null
           record_hash: string
           result: string
+          source_search_id: string | null
+          stripe_session_id: string | null
           user_id: string | null
         }
         Insert: {
@@ -1095,8 +1098,11 @@ export type Database = {
           identifier_hash: string
           identifier_masked: string
           marketing_opt_in?: boolean
+          paid_at?: string | null
           record_hash?: string
           result: string
+          source_search_id?: string | null
+          stripe_session_id?: string | null
           user_id?: string | null
         }
         Update: {
@@ -1110,8 +1116,11 @@ export type Database = {
           identifier_hash?: string
           identifier_masked?: string
           marketing_opt_in?: boolean
+          paid_at?: string | null
           record_hash?: string
           result?: string
+          source_search_id?: string | null
+          stripe_session_id?: string | null
           user_id?: string | null
         }
         Relationships: []

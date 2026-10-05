@@ -22,7 +22,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'How do I protect myself when buying used on Facebook Marketplace?',
     answer:
-      'Check the item identifier against stolen-property databases before you agree to meet, and save a timestamped record of that check. Meet in a public place, pay traceably, photograph the item and the identifier, and keep the listing and message thread. If a seller refuses to share the IMEI, VIN, plate, or serial number in advance, treat that as a reason to walk away rather than an inconvenience.',
+      'Check the item identifier against SafeOrStolen.com databases before you agree to meet, and save a timestamped record of that check. Meet in a public place, pay traceably, photograph the item and the identifier, and keep the listing and message thread. If a seller refuses to share the IMEI, VIN, plate, or serial number in advance, treat that as a reason to walk away rather than an inconvenience.',
   },
   {
     question: 'What is proof of clean purchase?',

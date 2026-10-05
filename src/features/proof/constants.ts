@@ -17,7 +17,13 @@ export const PROOF_CATEGORY_LABELS: Record<ProofCategory, string> = {
   bike: 'Bicycle',
 };
 
-export type ProofResult = 'clean' | 'flagged';
+export type ProofResult = 'clean' | 'flagged' | 'no_report';
+
+export const PROOF_RESULT_LABELS: Record<ProofResult, string> = {
+  clean: 'Clean — no match found',
+  no_report: 'No theft report found in the records searched',
+  flagged: 'Flagged — a theft or loss report matched',
+};
 
 /** localStorage key holding proof record ids created while signed out. */
 export const ANON_PROOF_IDS_KEY = 'sos_anon_proof_ids';
