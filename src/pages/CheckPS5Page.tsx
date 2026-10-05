@@ -25,7 +25,7 @@ const CheckPS5Page = () => {
       ]}
       quickAnswer={{
         question: "How do I check a PS5 serial number?",
-        answer: "Find the serial number on the label on the back of the console, or on the PS5 itself under Settings > System > System Software > Console Information. Type it into the box above. SafeOrStolen checks it against its stolen-item reports and public web results and gives you a result in a few seconds. The first 2 checks are free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
+        answer: "Find the serial number on the label on the back of the console, or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and public web results and gives you a result in a few seconds. The first 2 checks are free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
       }}
       sections={[
         {
@@ -65,7 +65,7 @@ const CheckPS5Page = () => {
         {
           heading: "Xbox, Nintendo Switch and other consoles",
           paragraphs: [
-            "The same check works for any console with a serial number. On an Xbox Series X or S the serial is under Settings > System > Console info and on the sticker on the back. On a Nintendo Switch it is on the bottom edge of the console and under System Settings > System > Serial Information. A Steam Deck or PS4 works the same way: find the serial on the console's label and type it into the box above."
+            "The same check works for any console with a serial number. On an Xbox Series X or S the serial is under Settings > System > Console info and on the sticker on the back. On a Nintendo Switch it is on the bottom edge of the console and under System Settings > System > Serial Information. A Steam Deck or PS4 works the same way: find the serial on the console's label and check it on SafeOrStolen."
           ]
         }
       ]}
@@ -91,7 +91,7 @@ const CheckPS5Page = () => {
 
         process: [
           "Ask the seller for a photo of the serial number on the back of the console",
-          "Type the serial number into the search box above",
+          "Enter the serial number on SafeOrStolen",
           "Read the result and the sources that were searched",
           "At the meetup, match the serial on the label, the box and Console Information",
           "Sign in to your own PlayStation account to test for a PSN ban before you pay"
@@ -104,11 +104,11 @@ const CheckPS5Page = () => {
           },
           {
             question: "Is the PS5 serial number check free?",
-            answer: "Yes. Your first 2 checks are free with a free account and no credit card. After that it is $3.99 per check or $14.99 a month for unlimited checks."
+            answer: "Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $3.99 per check or $14.99 a month for unlimited checks."
           },
           {
             question: "How can I tell if a PS5 is stolen?",
-            answer: "Check the serial number here, then look for the usual signs: a price far below other used PS5s, no box or a box with a different serial, a seller who won't share the serial before meeting, several consoles for sale at once, or a console still signed in to someone else's account."
+            answer: "Check the serial number on SafeOrStolen, then look for the usual signs: a price far below other used PS5s, no box or a box with a different serial, a seller who won't share the serial before meeting, several consoles for sale at once, or a console still signed in to someone else's account."
           },
           {
             question: "Can Sony tell me if a PS5 is stolen?",
@@ -116,7 +116,7 @@ const CheckPS5Page = () => {
           },
           {
             question: "Can I check a PS5 Pro or PS5 Slim serial number?",
-            answer: "Yes. The check works the same way for every PS5 model. The PS5 Slim has model numbers starting CFI-20 and the PS5 Pro CFI-70, and both show the serial on the back label and in Console Information."
+            answer: "Yes. SafeOrStolen's check works the same way for every PS5 model. The PS5 Slim has model numbers starting CFI-20 and the PS5 Pro CFI-70, and both show the serial on the back label and in Console Information."
           },
           {
             question: "What should I do if the PS5 comes back as stolen?",

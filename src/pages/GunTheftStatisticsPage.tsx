@@ -32,7 +32,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Can I check if a specific gun is in these records?',
-    a: 'Yes. Type the serial number into the search box on this page. Every gun check searches all of these reports at once, plus live Ohio law-enforcement records and SafeOrStolen\'s own theft reports. The first 2 checks are free.',
+    a: 'Yes. Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). Every gun check searches all of these reports at once, plus live Ohio law-enforcement records and SafeOrStolen\'s own theft reports. The first 2 checks are free.',
   },
   {
     q: 'Where does this data come from?',

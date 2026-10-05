@@ -24,7 +24,7 @@ const SerialNumberCheckerPage = () => {
  ]}
  quickAnswer={{
  question: "How do I check if an item is stolen by its serial number?",
- answer: "Type the serial number into the search box above. SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 34 states. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first 2 checks are free with no card. Do it before you pay, and save the result as proof you checked."
+ answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 34 states. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first 2 checks are free with no card. Do it before you pay, and save the result as proof you checked."
  }}
  sections={[
  {
@@ -95,7 +95,7 @@ const SerialNumberCheckerPage = () => {
  faqs: [
  {
  question: "Is the serial number search really free?",
- answer: "Yes. Your first 2 checks are free with a free account and no credit card. After that it is $3.99 for a single check, or $14.99 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
+ answer: "Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $3.99 for a single check, or $14.99 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
  },
  {
  question: "Is there a national database of stolen serial numbers?",
@@ -107,7 +107,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "What items can I check with a serial number?",
- answer: "Anything with a unique serial number: laptops, tablets, cameras and lenses, power tools, game consoles, TVs, guitars and other instruments, watches, bikes and e-bikes, guns, boats (by hull number), and more. Phones are best checked by IMEI, and cars by VIN or license plate."
+ answer: "On SafeOrStolen you can check anything with a unique serial number: laptops, tablets, cameras and lenses, power tools, game consoles, TVs, guitars and other instruments, watches, bikes and e-bikes, guns, boats (by hull number), and more. Phones are best checked by IMEI, and cars by VIN or license plate."
  },
  {
  question: "How do I check if a power tool is stolen?",
@@ -127,7 +127,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "How long does a serial number search take?",
- answer: "Usually a few seconds. All the sources that apply to that kind of item are searched at the same time, and the result lists each one."
+ answer: "Usually a few seconds. SafeOrStolen searches all the sources that apply to that kind of item at the same time, and the result lists each one."
  },
  {
  question: "Do I need the receipt to check a serial number?",
