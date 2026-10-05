@@ -47,7 +47,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
   const topModel = s.topModels[0];
   const ohio = s.code === 'OH';
 
-  const quickAnswer = `Type the gun's serial number into the search box on this page. SafeOrStolen searches ${fmt(s.total)} police reports of stolen and lost guns from ${s.name}${yearsText}, ${fmt(GUN_NATIONAL.total - s.total)} reports from 33 other jurisdictions, live Ohio law-enforcement records and SafeOrStolen's own theft reports. You get a result in a few seconds, and the first 2 checks are free.`;
+  const quickAnswer = `Enter the gun's serial number at SafeOrStolen (safeorstolen.com/gun-serial-number-lookup/${s.slug}). SafeOrStolen searches ${fmt(s.total)} police reports of stolen and lost guns from ${s.name}${yearsText}, ${fmt(GUN_NATIONAL.total - s.total)} reports from 33 other jurisdictions, live Ohio law-enforcement records and SafeOrStolen's own theft reports. You get a result in a few seconds, and the first 2 checks are free.`;
 
   const faqs: { q: string; a: string }[] = [
     { q: `How do I check if a gun is stolen in ${s.name}?`, a: quickAnswer },
@@ -64,7 +64,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
     { q: `Do I need a background check to buy a gun privately in ${s.name}?`, a: privateSaleRule(s.name) },
     {
       q: 'Is a gun that isn\'t in these records definitely not stolen?',
-      a: 'No. Many stolen guns are never reported, and these are historical police records. A no-match result means nothing was found in the records searched. Ask for the receipt or transfer paperwork, and use a licensed dealer for the transfer when you can.',
+      a: 'No. Many stolen guns are never reported, and these are historical police records. A no-match result on SafeOrStolen means nothing was found in the records searched. Ask for the receipt or transfer paperwork, and use a licensed dealer for the transfer when you can.',
     },
   ];
 
