@@ -97,34 +97,19 @@ export const SOSFooter: React.FC = () => {
  ]
  },
  {
- title: 'State VIN Checks',
+ title: 'Vehicle Checks',
  links: [
- { label: 'California', to: '/california-vin-lookup' },
- { label: 'Texas', to: '/texas-vin-lookup' },
- { label: 'Florida', to: '/florida-vin-lookup' },
- { label: 'New York', to: '/new-york-vin-lookup' },
- { label: 'Illinois', to: '/illinois-vin-lookup' },
- { label: 'Georgia', to: '/georgia-vin-lookup' },
- { label: 'Pennsylvania', to: '/pennsylvania-vin-lookup' },
- { label: 'Ohio', to: '/ohio-vin-lookup' },
- { label: 'North Carolina', to: '/north-carolina-vin-lookup' },
- { label: 'Washington', to: '/washington-vin-lookup' },
+ { label: 'VIN Checker (all states)', to: '/vin-checker' },
+ { label: 'Arizona VIN Lookup', to: '/arizona-vin-lookup' },
+ { label: 'Florida VIN Lookup', to: '/florida-vin-lookup' },
  ]
  },
  {
- title: 'License Plates (Top 11)',
+ title: 'License Plates',
  links: [
- { label: 'California', to: '/california-license-plate-lookup' },
- { label: 'Texas', to: '/texas-license-plate-lookup' },
- { label: 'Florida', to: '/florida-license-plate-lookup' },
- { label: 'New York', to: '/new-york-license-plate-lookup' },
- { label: 'Illinois', to: '/illinois-license-plate-lookup' },
- { label: 'Georgia', to: '/georgia-license-plate-lookup' },
- { label: 'Pennsylvania', to: '/pennsylvania-license-plate-lookup' },
- { label: 'Ohio', to: '/ohio-license-plate-lookup' },
- { label: 'North Carolina', to: '/north-carolina-license-plate-lookup' },
- { label: 'Washington', to: '/washington-license-plate-lookup' },
+ { label: 'Plate Lookup (all states)', to: '/license-plate-lookup' },
  { label: 'Arizona', to: '/arizona-license-plate-lookup' },
+ { label: 'Florida', to: '/florida-license-plate-lookup' },
  ]
  },
  {

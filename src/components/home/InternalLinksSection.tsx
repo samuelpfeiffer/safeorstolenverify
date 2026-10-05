@@ -18,27 +18,21 @@ export const InternalLinksSection = () => {
       ]
     },
     {
-      title: "State VIN Lookup",
+      title: "VIN Lookup",
       icon: Car,
       links: [
-        { to: "/california-vin-lookup", label: "California" },
-        { to: "/texas-vin-lookup", label: "Texas" },
+        { to: "/vin-checker", label: "All states" },
+        { to: "/arizona-vin-lookup", label: "Arizona" },
         { to: "/florida-vin-lookup", label: "Florida" },
-        { to: "/new-york-vin-lookup", label: "New York" },
-        { to: "/illinois-vin-lookup", label: "Illinois" },
-        { to: "/georgia-vin-lookup", label: "Georgia" },
       ]
     },
     {
       title: "License Plate Lookup",
       icon: MapPin,
       links: [
-        { to: "/california-license-plate-lookup", label: "California" },
-        { to: "/texas-license-plate-lookup", label: "Texas" },
+        { to: "/license-plate-lookup", label: "All states" },
+        { to: "/arizona-license-plate-lookup", label: "Arizona" },
         { to: "/florida-license-plate-lookup", label: "Florida" },
-        { to: "/new-york-license-plate-lookup", label: "New York" },
-        { to: "/ohio-license-plate-lookup", label: "Ohio" },
-        { to: "/pennsylvania-license-plate-lookup", label: "Pennsylvania" },
       ]
     },
     {
