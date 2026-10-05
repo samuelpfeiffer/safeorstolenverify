@@ -5,7 +5,7 @@ import { Link } from '@/lib/router-compat';
 import { Bike, Car, CircleDot, ExternalLink, Search, Smartphone } from 'lucide-react';
 
 const options = [
-  { title: 'SafeOrStolen', icon: Search, text: "Checks SafeOrStolen's own reports, public web results, and AI analysis across supported item types. Bicycle checks also query Bike Index; firearm checks also query HotGunz.", href: '/how-to-check-if-item-stolen', external: false },
+  { title: 'SafeOrStolen', icon: Search, text: "Checks SafeOrStolen's own reports, public web results, and AI analysis across supported item types. Bicycle checks also query Bike Index; firearm checks also search the Ohio Attorney General's stolen gun records.", href: '/how-to-check-if-item-stolen', external: false },
   { title: 'Carrier or GSMA-authorized check', icon: Smartphone, text: 'Use separately for phone blacklist, network eligibility, and finance status. SafeOrStolen does not currently perform carrier-blacklist checks.', href: 'https://devicecheck.gsma.com/', external: true },
   { title: 'NICB VINCheck', icon: Car, text: 'A separate free vehicle resource for participating unrecovered-theft and total-loss records, subject to its limits.', href: 'https://www.nicb.org/vincheck', external: true },
   { title: 'NMVTIS provider', icon: Car, text: 'Use an approved provider for title, brand, odometer, and certain loss or salvage information. Provider fees vary.', href: 'https://vehiclehistory.bja.ojp.gov/nmvtis_consumer_access', external: true },

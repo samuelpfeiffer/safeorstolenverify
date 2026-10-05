@@ -445,25 +445,38 @@ export async function checkUsageGate(
     if (!fingerprint) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: FREE_LIMIT };
     return anonymousGate(admin, fingerprint, clientIp);
   }
-  let sub: any = null;
-
+  // A user can have several rows (e.g. two single-check purchases), so load
+  // them all instead of maybeSingle(), which returns nothing when >1 match.
   const byUser = await admin
     .from('subscriptions')
     .select('*')
     .eq('status', 'active')
-    .eq('user_id', userId)
-    .maybeSingle();
-  sub = byUser.data ?? null;
+    .eq('user_id', userId);
+  let subRows: any[] = byUser.data ?? [];
 
-  if (!sub && fingerprint) {
+  if (subRows.length === 0 && fingerprint) {
     const byFingerprint = await admin
       .from('subscriptions')
       .select('*')
       .eq('status', 'active')
-      .eq('fingerprint', fingerprint)
-      .maybeSingle();
-    sub = byFingerprint.data ?? null;
+      .eq('fingerprint', fingerprint);
+    subRows = byFingerprint.data ?? [];
   }
+
+  // Monthly rows are written once at checkout and never updated on renewal or
+  // cancellation, so a lapsed period_end is not trusted here; renewals are
+  // checked against profiles.subscription_end (kept current by stripe-webhook).
+  // A single-check purchase stays valid until it is used.
+  const now = new Date();
+  const usable = (r: any) =>
+    r.plan === 'single'
+      ? (r.checks_used_this_month ?? 0) < 1
+      : !r.period_end || new Date(r.period_end) > now;
+  const sub: any =
+    subRows.find((r) => r.plan !== 'single' && usable(r)) ??
+    subRows.find((r) => r.plan === 'single' && usable(r)) ??
+    null;
+  const hasUsedSingle = subRows.some((r) => r.plan === 'single' && !usable(r));
 
   if (sub) {
     const used = sub.checks_used_this_month ?? 0;
@@ -493,13 +506,15 @@ export async function checkUsageGate(
     .maybeSingle();
 
   if (profile?.subscription_tier) {
+    // Recurring plans only. 'pay_per_use' is a one-time purchase with no end
+    // date, so treating it as a plan here gave unlimited checks forever; its
+    // single check is counted through the subscriptions row above.
     const paidTiers = [
       'unlimited',
       'starter',
       'personal',
       'professional',
       'enterprise',
-      'pay_per_use',
     ];
     const active =
       paidTiers.includes(profile.subscription_tier) &&
@@ -507,6 +522,10 @@ export async function checkUsageGate(
     if (active) {
       return { allowed: true, plan: profile.subscription_tier, checksRemaining: null };
     }
+  }
+
+  if (hasUsedSingle) {
+    return { allowed: false, reason: 'single_used', plan: 'single' };
   }
 
   // Free tier: account-scoped, adopting this browser's pre-signup row so

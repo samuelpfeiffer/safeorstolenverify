@@ -198,7 +198,8 @@ const HowToSellVerifiedItems = () => {
               serial number received a clean result from the sources available
               at the time. Those sources include SafeOrStolen reports, public
               web results, and AI analysis; bicycle checks also query Bike Index
-              and firearm checks also query HotGunz. Phone checks provide device
+              and firearm checks also search the Ohio Attorney General's
+              stolen gun records. Phone checks provide device
               details but do not currently query carrier blacklists. The record
               is not a legal document, ownership proof, or guarantee.
             </p>
