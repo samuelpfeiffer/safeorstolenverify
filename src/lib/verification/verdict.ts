@@ -207,12 +207,18 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
   );
   const isFirearm = data.some((s) => s.provider === 'Firearm_Verification');
   if (ohioChecked) answeredOutside.push('Ohio law enforcement stolen-gun records');
+  const policeChecked = data.some(
+    (s) => s.provider === 'Police_Theft_Records' && (s.details as any)?.checked === true,
+  );
+  if (policeChecked) answeredOutside.push('police theft records from 34 states');
 
   let message = answeredOutside.length > 0
     ? `No theft record found in the SafeOrStolen registry or ${answeredOutside.join(', ')}. That does not prove the item is clean, so ask the seller for proof of ownership.`
     : 'No theft record found in the SafeOrStolen registry, but no outside theft database could confirm this item. Ask the seller for proof of ownership and keep a record of the sale.';
   if (isFirearm) {
-    message += " Other states' police records can't be searched by the public, so buy through a licensed dealer (FFL) or ask local police to run the serial. In Florida, you can also search FDLE's free stolen gun database.";
+    message += policeChecked
+      ? " Those police records are mostly older reports and don't cover every state, so buy through a licensed dealer (FFL) or ask local police to run the serial. In Florida, you can also search FDLE's free stolen gun database."
+      : " Other states' police records can't be searched by the public, so buy through a licensed dealer (FFL) or ask local police to run the serial. In Florida, you can also search FDLE's free stolen gun database.";
   }
   if (isVehicle) {
     message += azChecked
