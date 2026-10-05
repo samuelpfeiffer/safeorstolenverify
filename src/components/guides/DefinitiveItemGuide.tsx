@@ -380,10 +380,11 @@ export function DefinitiveItemGuide({
         <p>{safeOrStolenText}</p>
         <p className="mt-4">
           SafeOrStolen checks its own stolen-item reports, public web results,
-          and AI analysis. It also checks BikeIndex for bicycles and HotGunz for
-          firearms. It does not search NCIC, police, DMV, insurance,
-          carrier-blacklist, or other outside registries described in this
-          guide; those are separate checks for the reader to perform.
+          and AI notes. Guns are also checked against police theft and loss
+          reports from 34 states plus live Ohio records, bikes against a
+          national stolen-bicycle registry, and paid phone checks search the
+          lost and stolen phone blacklist. It does not search NCIC, DMV or
+          insurance records; those are separate checks described in this guide.
         </p>
         <p className="mt-4">
           Buyers can save the result with their other due-diligence records.

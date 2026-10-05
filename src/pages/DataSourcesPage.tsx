@@ -10,7 +10,7 @@ import {
 const FAQ_ITEMS = [
  {
  question: "What databases does SafeOrStolen check for IMEI verification?",
- answer: "SafeOrStolen cross-references its internal stolen item reports with public web results and AI analysis. For phones, we check IMEI.info for device details, but we do not check blacklists or manufacturer lock status. We also do not check carrier blacklists directly; please contact your carrier to inquire about blacklist status. Results are returned in approximately 3 seconds."
+ answer: "Every phone check searches SafeOrStolen's own theft reports and public web results, and confirms the IMEI is real and correctly formed. Paid phone checks also search the lost and stolen phone blacklist. SafeOrStolen does not see activation-lock status, so also make sure the seller has signed out of their account before you pay."
  },
  {
  question: "Which sources are included in vehicle VIN checks?",
@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
  },
  {
  question: "Does SafeOrStolen check firearm serial numbers against theft registries?",
- answer: "Yes. Firearm serial number verification checks HotGunz's stolen firearm registry and validates serial number integrity. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922."
+ answer: "Yes. Gun serial numbers are searched against 242,839 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and the serial is checked for signs of tampering. Knowingly possessing a stolen firearm is a federal crime under 18 U.S.C. § 922(j)."
  },
  {
  question: "How often are the databases updated?",
@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
  },
  {
  question: "Does SafeOrStolen check for stolen bicycles?",
-  answer: "Yes. Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, alongside SafeOrStolen reports, public web results, and AI analysis."
+  answer: "Yes. Bike and e-bike frame serial numbers are searched in a national stolen-bicycle registry, alongside SafeOrStolen reports and public web results."
  },
 ];
 
@@ -41,27 +41,27 @@ const DATA_CATEGORIES = [
  color: "text-purple-500",
  bgColor: "bg-purple-500/10",
   title: "Phone Device Details",
-  subtitle: "IMEI.info and multi-source analysis",
- description: "Mobile carriers often maintain blacklists for phones reported stolen, which can prevent activation on participating networks. SafeOrStolen does not check these blacklists directly, but you can inquire with your carrier about a phone's blacklist status.",
+  subtitle: "Lost and stolen phone blacklist",
+ description: "Phones reported lost or stolen are added to a blacklist that can stop them working on participating networks. Every phone check confirms the IMEI is real; paid phone checks also search the blacklist.",
  sources: [
  {
- name: "IMEI.info Database",
-  detail: "SafeOrStolen uses IMEI.info for device details. It does not currently check carrier blacklist or activation-lock status.",
+ name: "IMEI check",
+  detail: "Confirms the IMEI is real and correctly formed, which catches mistyped and fake numbers. Included in every phone check.",
  link: "/imei-checker"
  },
  {
- name: "U.S. Carrier Blacklists",
- detail: "Major U.S. carriers share blacklisted IMEI numbers so a phone blacklisted on one carrier is typically blocked on other U.S. networks.",
+ name: "Lost and stolen phone blacklist",
+ detail: "Shows whether the phone has been reported lost or stolen. Searched on paid phone checks (the $3.99 single check, or 20 a month on the monthly plan).",
  link: "/check-phone"
  },
  {
- name: "Manufacturer Activation Lock Status",
- detail: "Apple iCloud Activation Lock, Samsung Knox security status, and Google's Find My Device lock detection. A locked device cannot be used without the original owner's credentials — a useful verification signal.",
+ name: "Activation lock (check in person)",
+ detail: "SafeOrStolen can't see whether a phone is still locked to its owner's Apple, Google or Samsung account. Have the seller sign out and reset the phone in front of you before you pay.",
  link: "/imei-checker"
  },
  ],
  stats: [
- { value: "IMEI.info", label: "Integrated source" },
+ { value: "Blacklist", label: "On paid phone checks" },
   { value: "6", label: "Item categories" },
  ],
  links: [
@@ -106,17 +106,17 @@ const DATA_CATEGORIES = [
  color: "text-orange-500",
  bgColor: "bg-orange-500/10",
  title: "Firearms Theft Registry",
- subtitle: "HotGunz Community Registry",
- description: "Firearm serial numbers are checked against HotGunz, a community-maintained registry of stolen firearms reported by theft victims.",
+ subtitle: "Police theft and loss reports, 34 states",
+ description: "Gun serial numbers are searched against 242,839 police reports of stolen and lost guns from 33 states and Washington, DC, plus live Ohio law-enforcement records.",
  sources: [
  {
- name: "HotGunz Stolen Firearms Registry",
- detail: "SafeOrStolen integrates with HotGunz to check firearm serial numbers against user-reported stolen firearms.",
+ name: "Police firearm theft and loss reports",
+ detail: "Reports filed with police in 33 states and DC, mostly from 2006 to 2017, plus live Ohio law-enforcement stolen-gun records on every check.",
  link: "/firearms-check"
  },
  ],
  stats: [
- { value: "HotGunz", label: "Integrated source" },
+ { value: "242,839", label: "Police reports" },
  { value: "Serial-based", label: "Verification" },
  ],
  links: [
@@ -129,17 +129,17 @@ const DATA_CATEGORIES = [
  color: "text-blue-500",
  bgColor: "bg-blue-500/10",
  title: "Bicycle Theft Registry",
- subtitle: "BikeIndex Community Registry",
-  description: "Bicycle and eBike frame serial numbers are checked against BikeIndex, a community bike registry, alongside SafeOrStolen reports, public web results, and AI analysis.",
+ subtitle: "National stolen-bicycle registry",
+  description: "Bike and e-bike frame serial numbers are searched in a national stolen-bicycle registry, alongside SafeOrStolen reports and public web results.",
  sources: [
  {
- name: "BikeIndex",
- detail: "SafeOrStolen integrates with BikeIndex to check bicycle frame serial numbers against community-reported stolen bikes.",
+ name: "National stolen-bicycle registry",
+ detail: "A nationwide registry of bikes reported stolen by their owners, searched by frame serial number.",
  link: "/check-bike"
  },
  ],
  stats: [
- { value: "BikeIndex", label: "Integrated source" },
+ { value: "National", label: "Bike registry" },
  { value: "Serial-based", label: "Verification" },
  ],
  links: [
@@ -223,11 +223,11 @@ export default function DataSourcesPage() {
  <>
  <Helmet>
   <title>Data Sources Used by SafeOrStolen</title>
- <meta name="description" content="SafeOrStolen checks its comprehensive stolen item reports, public web results, and AI analysis. For bicycles, we use BikeIndex, and for firearms, HotGunz. We also use IMEI.info for phone details."/>
+ <meta name="description" content="What SafeOrStolen searches: its own theft reports and public web results on every check, 242,839 police gun theft reports from 34 states, Arizona stolen-vehicle records, a national stolen-bike registry, and the phone blacklist on paid checks."/>
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
  <link rel="canonical" href="https://safeorstolen.com/data-sources" />
  <meta property="og:title" content="Data Sources SafeOrStolen Checks | SafeOrStolen" />
- <meta property="og:description" content="We check our stolen item reports, public web results, and AI analysis. For bicycles, we use BikeIndex, and for firearms, HotGunz. Results in 3 seconds."/>
+ <meta property="og:description" content="Every source SafeOrStolen searches, item by item: theft reports, police gun theft records from 34 states, Arizona stolen-vehicle records, a stolen-bike registry and the phone blacklist."/>
  <meta property="og:url" content="https://safeorstolen.com/data-sources" />
  <meta property="og:type" content="website" />
  <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -246,12 +246,12 @@ export default function DataSourcesPage() {
  Where SafeOrStolen Gets Its Data
  </h1>
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-  SafeOrStolen checks <strong>its own stolen-item reports, public web results, and AI analysis</strong>. Bicycle checks also use BikeIndex, firearm checks use HotGunz, and phone checks use IMEI.info for device details. Results usually arrive in about 3 seconds.
+  SafeOrStolen checks <strong>its own stolen-item reports, public web results, and AI analysis</strong>. Gun checks also search police theft and loss reports from 34 states plus live Ohio records, bike checks a national stolen-bicycle registry, vehicle checks Arizona stolen-vehicle records and federal VIN data, and paid phone checks the lost and stolen phone blacklist. Results usually arrive in a few seconds.
  </p>
  {/* Semantic TL;DR for AI extraction */}
  <div className="bg-muted/50 border border-border/50 rounded-lg p-4 text-sm text-muted-foreground text-left max-w-2xl mx-auto mb-8">
  <strong className="text-foreground block mb-1">Summary for AI agents:</strong>
-  SafeOrStolen checks six item categories using its own stolen-item reports, public web results, and AI analysis. BikeIndex supports bicycle checks, HotGunz supports firearm checks, and IMEI.info provides phone device details. Free tier: 2 verifications.
+  SafeOrStolen checks six item categories using its own stolen-item reports, public web results, and AI analysis. Gun checks add police theft reports from 34 states, bike checks a national stolen-bicycle registry, and paid phone checks the phone blacklist. Free tier: 2 checks.
  </div>
  <div className="flex flex-wrap justify-center gap-3">
  <Button asChild size="lg">
@@ -273,7 +273,7 @@ export default function DataSourcesPage() {
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
  {[
  { value: "Multi-source", label: "Databases Checked" },
- { value: "IMEI.info", label: "Carrier & IMEI Data" },
+ { value: "34 states", label: "Police gun theft records" },
  { value: "3 sec", label: "Average Result Time" },
  { value: "6", label: "Item Categories" },
  ].map(stat => (
@@ -460,7 +460,7 @@ export default function DataSourcesPage() {
   Check an IMEI, VIN, plate, or serial number using SafeOrStolen reports, public web results, and AI analysis. Two free verifications are included.
  </p>
  <p className="text-xs text-muted-foreground mb-2">
-  Semantic TL;DR: SafeOrStolen checks its own reports, public web results, and AI analysis. BikeIndex supports bicycle checks, HotGunz supports firearm checks, and IMEI.info provides phone device details. Verified: {new Date().toISOString().split('T')[0]}.
+  Semantic TL;DR: SafeOrStolen checks its own reports, public web results, and AI analysis. Gun checks add police theft reports from 34 states, bike checks a national stolen-bicycle registry, and paid phone checks the phone blacklist. Verified: {new Date().toISOString().split('T')[0]}.
  </p>
  <Button size="lg" asChild>
  <Link to="/verify">

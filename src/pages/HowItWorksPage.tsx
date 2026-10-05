@@ -33,7 +33,7 @@ const HowItWorksPage = () => {
  {
  "@type": "HowToStep",
  "name": "Automatic Database Search",
-  "text": "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Bicycle checks also use BikeIndex, and firearm checks also use HotGunz."
+  "text": "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Gun checks also search police theft reports from 34 states plus live Ohio records, and bike checks a national stolen-bicycle registry."
  },
  {
  "@type": "HowToStep",
@@ -160,7 +160,7 @@ const HowItWorksPage = () => {
  <div className="container mx-auto px-4">
  <h2 className="text-3xl font-bold text-center mb-4">Our Data Partners</h2>
  <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
- Every check covers our own reports, public web results and AI analysis, plus BikeIndex and HotGunz where relevant
+ Every check covers our own reports, public web results and AI analysis, plus police gun theft records and a stolen-bike registry where relevant
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
  <DataSourceCard
@@ -476,8 +476,8 @@ const HowItWorksPage = () => {
  icon="🚗"
  />
  <DataSourceCard
-  title="HotGunz"
-  description="Additional source used for firearm checks"
+  title="Police gun theft records"
+  description="242,839 police theft and loss reports from 34 states, plus live Ohio records"
  icon="🚨"
  />
  <DataSourceCard

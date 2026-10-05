@@ -48,7 +48,7 @@ const AIStolenItemDetection2026 = () => {
         name: 'What databases does SafeOrStolen AI check?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SafeOrStolen AI checks community theft reports, public web results, and its own internal data, analyzing information from many sources to help determine an item\'s status. For bicycles, it checks BikeIndex. For firearms, it checks HotGunz. For phones, it provides device details via IMEI lookup.'
+          text: 'SafeOrStolen AI checks community theft reports, public web results, and its own internal data, analyzing information from many sources to help determine an item\'s status. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 34 states, and paid phone checks search the phone blacklist.'
         }
       }
     ]

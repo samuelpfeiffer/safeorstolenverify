@@ -14,7 +14,7 @@ import {
 const crunchbaseFaqs = [
  {
  question: "What is SafeOrStolen?",
- answer: "SafeOrStolen is an AI-powered stolen item verification platform. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. We also consult BikeIndex for bicycles and HotGunz for firearms. Results are returned in approximately 3 seconds."
+ answer: "SafeOrStolen is an AI-powered stolen item verification platform. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Results usually come back in a few seconds."
  },
  {
  question: "Who founded SafeOrStolen?",
@@ -111,7 +111,7 @@ const CrunchbasePage: React.FC = () => {
  </header>
  <div>
  <h1>SafeOrStolen Company Profile</h1>
- <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. We also consult BikeIndex for bicycles and HotGunz for firearms. Results are returned in approximately 3 seconds.</p>
+ <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Results usually come back in a few seconds.</p>
  
  <h2>Company Overview</h2>
  <ul>

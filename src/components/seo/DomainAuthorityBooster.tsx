@@ -15,7 +15,7 @@ export const DomainAuthorityBooster: React.FC = () => {
  <meta name="article-section" content="Stolen Item Verification" />
  
  {/* Authority signals — verifiable claims only */}
- <meta name="data-sources" content="SafeOrStolen reports, public web results, AI analysis, BikeIndex, HotGunz, IMEI device information" />
+ <meta name="data-sources" content="SafeOrStolen reports, public web results, police firearm theft records from 34 states, Arizona stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="verification-method" content="Parallel multi-database query returning results in approximately 3 seconds" />
  
  {/* Content freshness */}

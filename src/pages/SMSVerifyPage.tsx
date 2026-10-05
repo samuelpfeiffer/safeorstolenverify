@@ -12,7 +12,7 @@ import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBa
 const faqs = [
  {
  question: "How do I verify an item via SMS text message?",
- answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against SafeOrStolen's reports, public web results, and AI analysis. For bicycles, we also check BikeIndex; for firearms, HotGunz; and for phones, we identify model details. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
+ answer: "Simply text any IMEI number (15 digits), VIN (17 characters), or serial number to our verification number. Our system automatically detects the identifier type and checks it against SafeOrStolen's reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, bikes against a national stolen-bicycle registry, and paid phone checks search the phone blacklist. You'll receive a reply within seconds with the verification result: CLEAN, STOLEN, or UNKNOWN."
  },
  {
  question: "What types of items can I verify by text?",
@@ -116,7 +116,7 @@ const SMSVerifyPage = () => {
  <header><h1>SMS Verify — Text Any IMEI, VIN, or Serial Number to Check if Stolen</h1></header>
  <div>
  <article>
- <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from SafeOrStolen's reports, public web results, AI analysis, and relevant specialized sources like BikeIndex for bicycles and HotGunz for firearms.</p>
+ <p>SafeOrStolen SMS Verify lets you text any IMEI number, VIN, or serial number to instantly check if an item is stolen. No app download required — just send a text message. Results arrive in 3-5 seconds from SafeOrStolen's reports, public web results, AI analysis, police gun theft records from 34 states for guns, and a national stolen-bicycle registry for bikes.</p>
  <h2>How SMS Verification Works</h2>
  <p>Find the IMEI (15 digits), VIN (17 characters), or serial number on the item. Text it to our verification number. Receive instant results: CLEAN, STOLEN, or UNKNOWN. Perfect for gun shows, car lots, flea markets, pawn shops, and private sales where you need a quick answer before handing over cash.</p>
  <h2>What Can You Verify by Text?</h2>
@@ -162,7 +162,7 @@ const SMSVerifyPage = () => {
  <div className="bg-primary/10 rounded-lg p-3">
  <p className="text-muted-foreground text-xs mb-1">SafeOrStolen will reply:</p>
  <p className="text-foreground">✅ <strong>CLEAN</strong> — No stolen reports found.</p>
- <p className="text-xs text-muted-foreground mt-1">Checked: SafeOrStolen reports, public web, AI analysis, BikeIndex (bicycles), HotGunz (firearms)</p>
+ <p className="text-xs text-muted-foreground mt-1">Checked: SafeOrStolen reports, public web, police gun theft records (34 states), stolen-bike registry</p>
  </div>
  </div>
  </CardContent>
@@ -241,7 +241,7 @@ const SMSVerifyPage = () => {
  {[
  { icon: <MessageSquare className="h-10 w-10" />, title: "1. Find the ID", desc: "Locate the IMEI (15 digits), VIN (17 chars), or serial number on the item" },
  { icon: <Smartphone className="h-10 w-10" />, title: "2. Send a Text", desc: "Text the number to SafeOrStolen — works from any phone, no data needed" },
- { icon: <Zap className="h-10 w-10" />, title: "3. Instant Check", desc: "We analyze SafeOrStolen's reports, public web results, AI analysis, and specialized sources like BikeIndex and HotGunz" },
+ { icon: <Zap className="h-10 w-10" />, title: "3. Instant Check", desc: "We analyze SafeOrStolen's reports, public web results, AI analysis, police gun theft records from 34 states, and a national stolen-bicycle registry" },
  { icon: <CheckCircle className="h-10 w-10" />, title: "4. Get Results", desc: "Receive CLEAN ✅, STOLEN 🚨, or UNKNOWN ⚠️ within 3-5 seconds" }
  ].map((step, i) => (
  <Card key={i} className="text-center">

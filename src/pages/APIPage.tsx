@@ -60,7 +60,7 @@ export default function APIPage() {
  </CardHeader>
  <CardContent className="prose prose-lg dark:prose-invert max-w-none">
  <p>
- The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same sources that power our web and mobile applications, including community theft reports, public web results, AI analysis, and specialized databases like BikeIndex for bicycles and HotGunz for firearms. For phones, we provide IMEI device details.
+ The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same sources that power our web and mobile applications, including community theft reports, public web results, AI analysis, police firearm theft and loss reports from 34 states, Arizona stolen-vehicle records, a national stolen-bicycle registry, and the lost and stolen phone blacklist on paid phone checks.
  </p>
  <p>
  Perfect for marketplace platforms, point-of-sale systems, pawn shops, dealerships, and any business that needs to verify items are not stolen before purchase or accepting them as trade-ins. The API supports verification of phones using IMEI numbers, vehicles using VIN numbers, electronics using serial numbers, bicycles, firearms, and more.

@@ -12,7 +12,7 @@ export const CompetitiveKeywords: React.FC<CompetitiveKeywordsProps> = ({ pageTy
  return {
  primary: "how to check if something is stolen, is this stolen, check if stolen before buying, free stolen item checker, verify used items, how do I know if stolen",
  longtail: "how do I check if something is stolen before I buy it, is this phone stolen check free, can I verify if item is stolen, how to tell if used item is stolen, check if stolen on Facebook Marketplace, is there a way to check stolen goods, avoid buying stolen merchandise",
- competitor: "SafeOrStolen report lookup, public web search, AI analysis, BikeIndex for bicycles, HotGunz for firearms, IMEI device details"
+ competitor: "SafeOrStolen report lookup, public web search, AI analysis, national stolen-bicycle registry, police gun theft records from 34 states, phone blacklist on paid checks"
  };
  case 'imei':
  return {

@@ -117,7 +117,7 @@ export default function ForBusinesses() {
       question:
         "What databases does SafeOrStolen check for business verifications?",
       answer:
-        "SafeOrStolen checks multiple sources simultaneously including SafeOrStolen's own reports, public web results, AI analysis, and specialized registries like BikeIndex for bicycles or HotGunz for firearms. For phones, we provide IMEI details and model information. Results are returned in under 3 seconds.",
+        "SafeOrStolen checks multiple sources simultaneously including SafeOrStolen's own reports, public web results, AI analysis, police gun theft records from 34 states, Arizona stolen-vehicle records and a national stolen-bicycle registry. Paid phone checks also search the lost and stolen phone blacklist. Results usually come back in a few seconds.",
     },
     {
       question:

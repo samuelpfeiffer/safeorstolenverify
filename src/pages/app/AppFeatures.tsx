@@ -143,7 +143,7 @@ const AppFeatures = () => {
                 Features That Set Us Apart
               </h2>
               <p className="text-xl text-muted-foreground">
-                Dedicated services like BikeIndex, HotGunz, and phone IMEI lookups are integrated into our comprehensive checks. Other services are website-only.
+                Police gun theft records from 34 states, a national stolen-bicycle registry and the phone blacklist (paid checks) are all searched from the app. Other services are website-only.
                 We have a real app with real advantages.
               </p>
             </div>

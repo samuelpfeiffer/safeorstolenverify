@@ -24,7 +24,7 @@ const educationalFAQs = [
  },
  {
  question: "What databases does SafeOrStolen check for verification?",
- answer: "SafeOrStolen aggregates data from multiple sources including: our own stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex. For firearms, we check HotGunz. Each source is weighted by reliability for the final Trust Score calculation."
+ answer: "SafeOrStolen aggregates data from multiple sources including: our own stolen-item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states plus live Ohio records, and bikes against a national stolen-bicycle registry. The result lists every source searched."
  },
  {
  question: "Are auction houses required to verify items before selling?",

@@ -18,7 +18,7 @@ const verificationSteps = [
  title: "Multi-Database Query",
  description: "Simultaneous search across verified partner databases",
  icon: Database,
- details: "our own reports, BikeIndex for bicycles, HotGunz for firearms, public web results, and AI analysis"
+ details: "our own reports, public web results, a national stolen-bicycle registry for bikes, police gun theft records from 34 states for guns, and AI notes"
  },
  {
  step: 3,
@@ -149,8 +149,8 @@ export const MethodologyTransparency: React.FC = () => {
  Verifiable Partnerships
  </h4>
  <p className="text-sm text-muted-foreground">
- Our checks, including BikeIndex for bicycles and HotGunz for firearms, are publicly
- verifiable and documented with direct API integrations.
+ Every result lists the sources that were searched, including police gun theft
+ records from 34 states for guns and a national stolen-bicycle registry for bikes.
  </p>
  </div>
  <div>

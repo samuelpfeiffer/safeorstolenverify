@@ -234,7 +234,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- We don't rely on a single source. Our verification engine searches SafeOrStolen's own reports, public web results, and applies AI analysis. For phones, we also check device details via IMEI lookup. For specific item types like bicycles and firearms, we integrate with specialist registries like BikeIndex and HotGunz. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
+ We don't rely on a single source. Our verification engine searches SafeOrStolen's own reports, public web results, and applies AI analysis. For phones, we also check device details via IMEI lookup. For specific item types like bicycles and firearms, we also search police gun theft records from 34 states and a national stolen-bicycle registry. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
  </p>
  </div>
  </div>

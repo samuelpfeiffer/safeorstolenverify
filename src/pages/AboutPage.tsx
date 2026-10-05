@@ -27,14 +27,14 @@ const AboutPage = () => {
   description: "Plain-language analysis of the information returned"
  },
  {
-  name: "BikeIndex",
+  name: "National stolen-bicycle registry",
   type: "Bicycle Source",
-  description: "Additional bicycle checks through the live BikeIndex integration"
+  description: "Bike frame serial numbers are also searched in a national stolen-bicycle registry"
  },
  {
-  name: "HotGunz",
+  name: "Police firearm theft records",
   type: "Firearm Source",
-  description: "Additional firearm checks through the live HotGunz integration"
+  description: "Gun serials are searched against 242,839 police theft and loss reports from 34 states, plus live Ohio law-enforcement records"
  }
  ];
 
@@ -282,7 +282,7 @@ const AboutPage = () => {
  <div className="text-center mt-6">
  <p className="text-sm text-muted-foreground">
  <strong>How it works:</strong> Each check runs our own stolen-item reports, public web results and AI analysis in parallel 
- (plus BikeIndex for bikes and HotGunz for firearms) and returns a result in about 3 seconds.
+ (plus police theft records from 34 states for guns and a national stolen-bicycle registry for bikes) and returns a result in about 3 seconds.
  </p>
  </div>
  </div>

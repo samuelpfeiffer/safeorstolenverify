@@ -94,7 +94,7 @@ const ForLawEnforcement = () => {
  faqs={[
  {
  question: "What databases do you search?",
- answer: "We analyze information from publicly available web sources, user-reported theft incidents, and our own AI systems. For specific item types, we also consult specialized registries like Bike Index for bicycles or HotGunz for firearms."
+ answer: "We analyze information from publicly available web sources, user-reported theft incidents, and our own AI systems. Gun serials are also searched against police theft and loss reports from 34 states plus live Ohio records, and bikes against a national stolen-bicycle registry. SafeOrStolen does not access NCIC."
  },
  {
  question: "Can officers use this in the field?",

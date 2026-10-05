@@ -32,7 +32,7 @@ const howToSchema = {
  {
  "@type": "HowToStep",
  "name": "Get instant stolen status results",
- "text": "Extracted identifiers are checked against SafeOrStolen's stolen item reports, public web results, and AI analysis. Additional checks include BikeIndex for bicycles and HotGunz for firearms. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
+ "text": "Extracted identifiers are checked against SafeOrStolen's stolen item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
  }
  ],
  "tool": {
@@ -247,7 +247,7 @@ const MarketplaceURLChecker: React.FC = () => {
  { step: '1', title: 'Copy the Listing URL', desc: 'Find a listing on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. Copy the full URL from your browser\'s address bar.' },
  { step: '2', title: 'Paste into SafeOrStolen', desc: 'Paste the URL into the analyzer above. Our AI uses the Jina Reader API to scrape and read the entire listing page, including photos and descriptions.' },
  { step: '3', title: 'AI Extracts Identifiers', desc: 'The AI identifies IMEI numbers, VIN numbers, serial numbers, model information, and pricing. It also flags risk factors like below-market pricing.' },
- { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our own stolen-item reports, public web results and AI analysis, plus BikeIndex for bicycles and HotGunz for firearms.' },
+ { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 34 states and a national stolen-bicycle registry.' },
  ].map((item) => (
  <div key={item.step} className="text-center">
  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">

@@ -1,6 +1,6 @@
 # SafeOrStolen factual reference
 
-SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Bicycle checks also query Bike Index; firearm checks also query HotGunz. Phone checks provide IMEI device details but do not currently query carrier blacklists. SafeOrStolen does not query NICB, NMVTIS, NCIC, police, DMV, or insurance databases.
+SafeOrStolen searches its own stolen-item reports and public web results on every check. Gun serials are also searched against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Vehicle checks add Arizona law-enforcement stolen-vehicle records and federal VIN and recall data. Bike serials are searched in a national stolen-bicycle registry. Paid phone checks search the lost and stolen phone blacklist. SafeOrStolen does not query NICB, NMVTIS, NCIC, DMV or insurance databases.
 
 Canonical guide: https://safeorstolen.com/how-to-check-if-item-stolen
 Vehicle guide: https://safeorstolen.com/how-to-check-if-car-stolen

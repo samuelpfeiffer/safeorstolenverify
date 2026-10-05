@@ -11,7 +11,7 @@ const StateStolenGunDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "Does every state have a stolen gun database?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Every state has community theft registries that track stolen firearms, but public access varies widely. Some states (like Arizona's TheftAZ) offer public search tools. Most states require contacting local police. SafeOrStolen checks its own stolen-item reports and public web data, including HotGunz, for firearms so you dont have to check each one individually." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Police in every state record stolen guns, but only a few states let the public search those records, and most require you to ask local police. SafeOrStolen brings together the records the public can use: 242,839 police theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, so one search covers them all." }
       },
       {
         "@type": "Question",
@@ -21,7 +21,7 @@ const StateStolenGunDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "How do I check a gun serial number in my state?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The fastest first step is SafeOrStolen — enter any serial number and we check the HotGunz national stolen-firearms registry and validate serial integrity. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through federal law-enforcement systems, but this takes longer and isn't always available." }
+        "acceptedAnswer": { "@type": "Answer", "text": "The fastest first step is SafeOrStolen — enter the serial number and we search police theft and loss reports from 34 states, live Ohio records and our own theft reports, and check the serial for tampering. Each state's page at safeorstolen.com/gun-serial-number-lookup shows what we hold for that state. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through federal law-enforcement systems, but this takes longer and isn't always available." }
       },
       {
         "@type": "Question",

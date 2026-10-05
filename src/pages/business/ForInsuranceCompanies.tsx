@@ -102,7 +102,7 @@ const ForInsuranceCompanies = () => {
  },
  {
  question: "What data sources do you check?",
- answer: "We analyze SafeOrStolen's own theft reports, publicly available web results, and use AI analysis to identify potential issues. For bicycles, we consult BikeIndex. For firearms, we check HotGunz. For phones, we perform an IMEI lookup to get model and device details."
+ answer: "We analyze SafeOrStolen's own theft reports, publicly available web results, and use AI analysis to identify potential issues. Guns are also checked against police theft reports from 34 states, bikes against a national stolen-bicycle registry, and paid phone checks search the lost and stolen phone blacklist."
  },
  {
  question: "Is the API suitable for high-volume claims?",

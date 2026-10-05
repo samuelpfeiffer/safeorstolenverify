@@ -223,7 +223,7 @@ export default function ForAuctionHouses() {
  SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we review VINs against publicly available theft reports and SafeOrStolen's own records. For <strong>electronics and phone auctions</strong>, we review IMEI numbers against publicly reported stolen device records. For <strong>equipment auctions</strong>, serial numbers are checked against publicly available theft reports and SafeOrStolen's own records.
  </p>
  <p>
- We also support <strong>firearms auctions</strong> with serial number verification (including HotGunz), <strong>jewelry and luxury goods</strong> with public theft report cross-referencing, <strong>musical instruments</strong> with publicly available serial number validation (including BikeIndex for bicycles), and <strong>power tools and construction equipment</strong> with public theft report checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can help identify potential theft flags before it reaches your auction block.
+ We also support <strong>firearms auctions</strong> with serial numbers searched against police theft and loss reports from 34 states, <strong>jewelry and luxury goods</strong> with public theft report cross-referencing, <strong>musical instruments</strong> and <strong>bicycles</strong> (bikes are also searched in a national stolen-bicycle registry), and <strong>power tools and construction equipment</strong> with public theft report checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can help identify potential theft flags before it reaches your auction block.
  </p>
  </div>
  </div>
