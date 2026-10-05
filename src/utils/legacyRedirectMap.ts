@@ -587,6 +587,8 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/bulk": "/pricing",
   "/stolen-goods-checker": "/verify",
   "/guides/serial-number-guide": "/serial-number-checker",
+  // Oct 5 2026: Google still requests this old guide URL (404 in Search Console).
+  "/guides/phone-check": "/how-to-check-if-phone-stolen",
   "/guides/imei-verification-guide": "/imei-checker",
   "/app/vs-checkmend": "/imei-checker",
   "/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379": "/how-to-check-if-phone-stolen",
