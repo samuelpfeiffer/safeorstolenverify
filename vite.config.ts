@@ -15,6 +15,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [mcpPlugin()],
+    // Build id for the edge HTML cache key in src/server.ts (new publish = fresh cache).
+    define: { __SOS_BUILD_ID__: JSON.stringify(Date.now().toString(36)) },
     // Route every react-helmet-async import to our SSR-capable shim so per-page
     // title/description/canonical land in the server-rendered HTML.
     resolve: {

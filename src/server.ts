@@ -105,13 +105,70 @@ function applyCacheHeaders(request: Request, response: Response): Response {
   return cached;
 }
 
+// Oct 5 2026: the hosting platform rewrites cache-control to no-cache and Cloudflare does not
+// cache Worker responses on its own, so every visit paid for a full SSR render (real-user
+// time to first byte was ~2.4s). Keep rendered public HTML in the Worker's edge cache instead.
+// The key includes the build id, so a new publish never serves pages from the old build.
+declare const __SOS_BUILD_ID__: string | undefined;
+const BUILD_ID = typeof __SOS_BUILD_ID__ !== "undefined" ? __SOS_BUILD_ID__ : "dev";
+const EDGE_TTL_SECONDS = 600;
+
+function edgeCache(): Cache | null {
+  const c = (globalThis as { caches?: { default?: Cache } }).caches;
+  return c?.default ?? null;
+}
+
+function edgeCacheKey(request: Request): Request | null {
+  if (request.method !== "GET") return null;
+  const url = new URL(request.url);
+  // Query strings (tracking params, ?q= searches) are rendered fresh.
+  if (url.search) return null;
+  if (isPersonalizedPath(url.pathname)) return null;
+  if (request.headers.get("authorization")) return null;
+  if (request.headers.get("cookie")?.includes("sb-")) return null;
+  return new Request(`${url.origin}${url.pathname}?__build=${encodeURIComponent(BUILD_ID)}`, { method: "GET" });
+}
+
+function waitUntil(ctx: unknown, task: Promise<unknown>) {
+  const w = (ctx as { waitUntil?: (p: Promise<unknown>) => void } | null)?.waitUntil;
+  if (typeof w === "function") w.call(ctx, task.catch(() => {}));
+  else task.catch(() => {});
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const cache = edgeCache();
+      const key = cache ? edgeCacheKey(request) : null;
+      if (cache && key) {
+        const hit = await cache.match(key).catch(() => undefined);
+        if (hit) {
+          const served = new Response(hit.body, hit);
+          served.headers.set("x-sos-cache", "HIT");
+          return served;
+        }
+      }
+
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       const normalized = await normalizeCatastrophicSsrResponse(response);
-      return applyCacheHeaders(request, normalized);
+      const finalResponse = applyCacheHeaders(request, normalized);
+
+      if (
+        cache && key &&
+        finalResponse.status === 200 &&
+        (finalResponse.headers.get("content-type") ?? "").includes("text/html") &&
+        !finalResponse.headers.has("set-cookie")
+      ) {
+        const out = new Response(finalResponse.body, finalResponse);
+        const stored = out.clone();
+        const toStore = new Response(stored.body, stored);
+        toStore.headers.set("cache-control", `public, max-age=${EDGE_TTL_SECONDS}`);
+        waitUntil(ctx, cache.put(key, toStore));
+        out.headers.set("x-sos-cache", "MISS");
+        return out;
+      }
+      return finalResponse;
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
