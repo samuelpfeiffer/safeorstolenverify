@@ -182,6 +182,7 @@ import { Route as MobileSettingsRouteImport } from './routes/mobile-settings'
 import { Route as MobileVerifyRouteImport } from './routes/mobile-verify'
 import { Route as MontanaLicensePlateLookupRouteImport } from './routes/montana-license-plate-lookup'
 import { Route as MontanaVinLookupRouteImport } from './routes/montana-vin-lookup'
+import { Route as MyItemsRouteImport } from './routes/my-items'
 import { Route as NebraskaLicensePlateLookupRouteImport } from './routes/nebraska-license-plate-lookup'
 import { Route as NebraskaVinLookupRouteImport } from './routes/nebraska-vin-lookup'
 import { Route as NevadaLicensePlateLookupRouteImport } from './routes/nevada-license-plate-lookup'
@@ -307,6 +308,7 @@ import { Route as AdminBatchIndexRouteImport } from './routes/admin/batch-index'
 import { Route as AdminGscCallbackRouteImport } from './routes/admin/gsc-callback'
 import { Route as AdminIndexnowRouteImport } from './routes/admin/indexnow'
 import { Route as AdminMarketingRouteImport } from './routes/admin/marketing'
+import { Route as AdminReportsRouteImport } from './routes/admin/reports'
 import { Route as AdminStripeRouteImport } from './routes/admin/stripe'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppBarcodeScannerRouteImport } from './routes/app/barcode-scanner'
@@ -1284,6 +1286,11 @@ const MontanaVinLookupRoute = MontanaVinLookupRouteImport.update({
   path: '/montana-vin-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyItemsRoute = MyItemsRouteImport.update({
+  id: '/my-items',
+  path: '/my-items',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NebraskaLicensePlateLookupRoute =
   NebraskaLicensePlateLookupRouteImport.update({
     id: '/nebraska-license-plate-lookup',
@@ -1938,6 +1945,11 @@ const AdminMarketingRoute = AdminMarketingRouteImport.update({
   path: '/admin/marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminStripeRoute = AdminStripeRouteImport.update({
   id: '/admin/stripe',
   path: '/admin/stripe',
@@ -2525,6 +2537,7 @@ export interface FileRoutesByFullPath {
   '/mobile-verify': typeof MobileVerifyRoute
   '/montana-license-plate-lookup': typeof MontanaLicensePlateLookupRoute
   '/montana-vin-lookup': typeof MontanaVinLookupRoute
+  '/my-items': typeof MyItemsRoute
   '/nebraska-license-plate-lookup': typeof NebraskaLicensePlateLookupRoute
   '/nebraska-vin-lookup': typeof NebraskaVinLookupRoute
   '/nevada-license-plate-lookup': typeof NevadaLicensePlateLookupRoute
@@ -2650,6 +2663,7 @@ export interface FileRoutesByFullPath {
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/admin/marketing': typeof AdminMarketingRoute
+  '/admin/reports': typeof AdminReportsRoute
   '/admin/stripe': typeof AdminStripeRoute
   '/app/barcode-scanner': typeof AppBarcodeScannerRoute
   '/app/features': typeof AppFeaturesRoute
@@ -2896,6 +2910,7 @@ export interface FileRoutesByTo {
   '/mobile-verify': typeof MobileVerifyRoute
   '/montana-license-plate-lookup': typeof MontanaLicensePlateLookupRoute
   '/montana-vin-lookup': typeof MontanaVinLookupRoute
+  '/my-items': typeof MyItemsRoute
   '/nebraska-license-plate-lookup': typeof NebraskaLicensePlateLookupRoute
   '/nebraska-vin-lookup': typeof NebraskaVinLookupRoute
   '/nevada-license-plate-lookup': typeof NevadaLicensePlateLookupRoute
@@ -3020,6 +3035,7 @@ export interface FileRoutesByTo {
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/admin/marketing': typeof AdminMarketingRoute
+  '/admin/reports': typeof AdminReportsRoute
   '/admin/stripe': typeof AdminStripeRoute
   '/app/barcode-scanner': typeof AppBarcodeScannerRoute
   '/app/features': typeof AppFeaturesRoute
@@ -3269,6 +3285,7 @@ export interface FileRoutesById {
   '/mobile-verify': typeof MobileVerifyRoute
   '/montana-license-plate-lookup': typeof MontanaLicensePlateLookupRoute
   '/montana-vin-lookup': typeof MontanaVinLookupRoute
+  '/my-items': typeof MyItemsRoute
   '/nebraska-license-plate-lookup': typeof NebraskaLicensePlateLookupRoute
   '/nebraska-vin-lookup': typeof NebraskaVinLookupRoute
   '/nevada-license-plate-lookup': typeof NevadaLicensePlateLookupRoute
@@ -3394,6 +3411,7 @@ export interface FileRoutesById {
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/admin/marketing': typeof AdminMarketingRoute
+  '/admin/reports': typeof AdminReportsRoute
   '/admin/stripe': typeof AdminStripeRoute
   '/app/barcode-scanner': typeof AppBarcodeScannerRoute
   '/app/features': typeof AppFeaturesRoute
@@ -3644,6 +3662,7 @@ export interface FileRouteTypes {
     | '/mobile-verify'
     | '/montana-license-plate-lookup'
     | '/montana-vin-lookup'
+    | '/my-items'
     | '/nebraska-license-plate-lookup'
     | '/nebraska-vin-lookup'
     | '/nevada-license-plate-lookup'
@@ -3769,6 +3788,7 @@ export interface FileRouteTypes {
     | '/admin/gsc-callback'
     | '/admin/indexnow'
     | '/admin/marketing'
+    | '/admin/reports'
     | '/admin/stripe'
     | '/app/barcode-scanner'
     | '/app/features'
@@ -4015,6 +4035,7 @@ export interface FileRouteTypes {
     | '/mobile-verify'
     | '/montana-license-plate-lookup'
     | '/montana-vin-lookup'
+    | '/my-items'
     | '/nebraska-license-plate-lookup'
     | '/nebraska-vin-lookup'
     | '/nevada-license-plate-lookup'
@@ -4139,6 +4160,7 @@ export interface FileRouteTypes {
     | '/admin/gsc-callback'
     | '/admin/indexnow'
     | '/admin/marketing'
+    | '/admin/reports'
     | '/admin/stripe'
     | '/app/barcode-scanner'
     | '/app/features'
@@ -4387,6 +4409,7 @@ export interface FileRouteTypes {
     | '/mobile-verify'
     | '/montana-license-plate-lookup'
     | '/montana-vin-lookup'
+    | '/my-items'
     | '/nebraska-license-plate-lookup'
     | '/nebraska-vin-lookup'
     | '/nevada-license-plate-lookup'
@@ -4512,6 +4535,7 @@ export interface FileRouteTypes {
     | '/admin/gsc-callback'
     | '/admin/indexnow'
     | '/admin/marketing'
+    | '/admin/reports'
     | '/admin/stripe'
     | '/app/barcode-scanner'
     | '/app/features'
@@ -4761,6 +4785,7 @@ export interface RootRouteChildren {
   MobileVerifyRoute: typeof MobileVerifyRoute
   MontanaLicensePlateLookupRoute: typeof MontanaLicensePlateLookupRoute
   MontanaVinLookupRoute: typeof MontanaVinLookupRoute
+  MyItemsRoute: typeof MyItemsRoute
   NebraskaLicensePlateLookupRoute: typeof NebraskaLicensePlateLookupRoute
   NebraskaVinLookupRoute: typeof NebraskaVinLookupRoute
   NevadaLicensePlateLookupRoute: typeof NevadaLicensePlateLookupRoute
@@ -4886,6 +4911,7 @@ export interface RootRouteChildren {
   AdminGscCallbackRoute: typeof AdminGscCallbackRoute
   AdminIndexnowRoute: typeof AdminIndexnowRoute
   AdminMarketingRoute: typeof AdminMarketingRoute
+  AdminReportsRoute: typeof AdminReportsRoute
   AdminStripeRoute: typeof AdminStripeRoute
   ComparisonsBestFreeImeiCheckers2025Route: typeof ComparisonsBestFreeImeiCheckers2025Route
   ComparisonsNicbVincheckAlternativeRoute: typeof ComparisonsNicbVincheckAlternativeRoute
@@ -6122,6 +6148,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MontanaVinLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-items': {
+      id: '/my-items'
+      path: '/my-items'
+      fullPath: '/my-items'
+      preLoaderRoute: typeof MyItemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/nebraska-license-plate-lookup': {
       id: '/nebraska-license-plate-lookup'
       path: '/nebraska-license-plate-lookup'
@@ -6997,6 +7030,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminMarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/stripe': {
       id: '/admin/stripe'
       path: '/admin/stripe'
@@ -7823,6 +7863,7 @@ const rootRouteChildren: RootRouteChildren = {
   MobileVerifyRoute: MobileVerifyRoute,
   MontanaLicensePlateLookupRoute: MontanaLicensePlateLookupRoute,
   MontanaVinLookupRoute: MontanaVinLookupRoute,
+  MyItemsRoute: MyItemsRoute,
   NebraskaLicensePlateLookupRoute: NebraskaLicensePlateLookupRoute,
   NebraskaVinLookupRoute: NebraskaVinLookupRoute,
   NevadaLicensePlateLookupRoute: NevadaLicensePlateLookupRoute,
@@ -7949,6 +7990,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminGscCallbackRoute: AdminGscCallbackRoute,
   AdminIndexnowRoute: AdminIndexnowRoute,
   AdminMarketingRoute: AdminMarketingRoute,
+  AdminReportsRoute: AdminReportsRoute,
   AdminStripeRoute: AdminStripeRoute,
   ComparisonsBestFreeImeiCheckers2025Route:
     ComparisonsBestFreeImeiCheckers2025Route,

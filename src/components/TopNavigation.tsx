@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from '@/lib/router-compat';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)
 import {
@@ -113,6 +113,9 @@ const TopNavigation = () => {
                   <DropdownMenuItem onClick={() => navigate('/report-stolen')}>
                     <AlertCircle className="w-4 h-4 mr-2" />Report Stolen
                   </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/my-items')}>
+                    <ShieldCheck className="w-4 h-4 mr-2" />My items
+                  </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleSignOut}>
                     <LogOut className="w-4 h-4 mr-2" />Sign Out
@@ -176,6 +179,9 @@ const TopNavigation = () => {
                 <>
                   <Button variant="outline" className="w-full justify-start gap-2 rounded-lg" onClick={() => { navigate('/verify'); setIsMobileMenuOpen(false); }}>
                     Dashboard
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start gap-2 rounded-lg" onClick={() => { navigate('/my-items'); setIsMobileMenuOpen(false); }}>
+                    <ShieldCheck className="w-4 h-4" />My items
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-2 rounded-lg text-destructive" onClick={() => { handleSignOut(); setIsMobileMenuOpen(false); }}>
                     <LogOut className="w-4 h-4" />Sign Out
