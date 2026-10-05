@@ -30,6 +30,8 @@ const SOURCE_LABELS: Record<string, string> = {
   'safeorstolen database': 'SafeOrStolen registry',
   bikeindex: 'National stolen-bicycle registry',
   hotgunz: 'Stolen-firearm database',
+  firearm_verification: 'Ohio law-enforcement stolen-gun records',
+  police_theft_records: 'Police theft records (34 states)',
   imei_verification: 'Lost & stolen phone blacklist',
   vehicle_verification: 'Law-enforcement & federal vehicle records',
   web_scraper: 'Public web search',
@@ -321,9 +323,17 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  (p) => p.provider.toLowerCase() === src.toLowerCase(),
  );
  const flagged = provider?.status === 'stolen' || provider?.status === 'lost';
- const unknown = !provider || provider.status === 'unknown' || provider.status === 'error';
+ const details = (provider as { details?: { possibleMatch?: boolean; checked?: boolean } } | undefined)?.details;
+ const possible = !flagged && details?.possibleMatch === true;
+ // A searched-but-empty source reports 'unknown' with details.checked.
+ const searched = provider?.status === 'unknown' && details?.checked === true;
+ const unknown = !provider || provider.status === 'error' || (provider.status === 'unknown' && !searched);
  const outcome = flagged
  ? 'theft report found'
+ : possible
+ ? 'possible match'
+ : searched
+ ? 'no report found'
  : unknown
  ? 'no data available'
  : 'no theft report found';
@@ -336,7 +346,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <span
  className={cn(
  'text-[11px] whitespace-nowrap',
- flagged ? 'text-red-500 font-semibold' : unknown ? 'text-muted-foreground' : 'text-emerald-500',
+ flagged ? 'text-red-500 font-semibold' : possible ? 'text-amber-500 font-semibold' : unknown || searched ? 'text-muted-foreground' : 'text-emerald-500',
  )}
  >
  {outcome}

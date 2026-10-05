@@ -344,6 +344,7 @@ async function runInternalRegistry(
       status: 'unknown',
       confidence: 0,
       message: 'No report in the SafeOrStolen registry',
+      details: { checked: true },
       responseTime: Date.now() - startedAt,
     };
   } catch (error) {
@@ -353,6 +354,93 @@ async function runInternalRegistry(
       status: 'error',
       confidence: 0,
       message: 'Registry lookup unavailable',
+      responseTime: Date.now() - startedAt,
+    };
+  }
+}
+
+/**
+ * Police firearm theft and loss reports from 34 states (theft_records).
+ * Gun serial numbers repeat across manufacturers, so a serial match alone is a
+ * POSSIBLE match: we show the reported make so the buyer can compare it to the
+ * gun in front of them. It never produces a "stolen" verdict by itself.
+ * A make whose latest report is "recovered" is not shown.
+ */
+async function runPoliceTheftRecords(
+  admin: AdminClient,
+  normalizedIdentifier: string,
+): Promise<SourceResult> {
+  const startedAt = Date.now();
+  const serial = normalizedIdentifier.replace(/[^A-Z0-9]/g, '');
+  if (serial.length < 5) {
+    return {
+      provider: 'Police_Theft_Records',
+      status: 'unknown',
+      confidence: 0,
+      message: 'Serial too short to search police theft records',
+      responseTime: Date.now() - startedAt,
+    };
+  }
+
+  try {
+    const { data, error } = await admin
+      .from('theft_records')
+      .select('make, model, caliber, state, reported_year, reported_date, status')
+      .eq('item_type', 'firearm')
+      .eq('identifier_norm', serial)
+      .limit(25);
+    if (error) throw error;
+
+    // Latest report per make decides whether that make is still outstanding.
+    const latestByMake = new Map<string, any>();
+    for (const row of (data ?? []) as any[]) {
+      const make = (row.make || 'Unknown make').trim().toUpperCase();
+      const prev = latestByMake.get(make);
+      const year = (r: any) => r?.reported_date ?? String(r?.reported_year ?? '');
+      if (!prev || year(row) > year(prev)) latestByMake.set(make, row);
+    }
+    const open = [...latestByMake.entries()]
+      .filter(([, r]) => r.status === 'stolen' || r.status === 'lost')
+      .map(([make, r]) => ({
+        make,
+        model: r.model || null,
+        caliber: r.caliber || null,
+        state: r.state || null,
+        year: r.reported_year ?? null,
+        status: r.status as 'stolen' | 'lost',
+      }));
+
+    if (open.length === 0) {
+      return {
+        provider: 'Police_Theft_Records',
+        status: 'unknown',
+        confidence: 0,
+        message: 'No match in police theft records from 34 states',
+        details: { checked: true },
+        responseTime: Date.now() - startedAt,
+      };
+    }
+
+    const describe = (m: (typeof open)[number]) =>
+      [m.make, m.model].filter(Boolean).join(' ') +
+      ` (reported ${m.status}${m.state ? ` in ${m.state}` : ''}${m.year ? `, ${m.year}` : ''})`;
+    const listed = open.slice(0, 3).map(describe).join('; ');
+    const makes = open.slice(0, 3).map((m) => m.make).join(' or ');
+    return {
+      provider: 'Police_Theft_Records',
+      status: 'unknown',
+      confidence: 0,
+      message: `⚠️ POSSIBLE MATCH: A police report lists a gun with this serial number: ${listed}. Different manufacturers can use the same serial number, so check the make stamped on the gun. If it is made by ${makes}, do not buy it. Contact your local police with the serial number.`,
+      details: { checked: true, possibleMatch: true, matches: open.slice(0, 10) },
+      responseTime: Date.now() - startedAt,
+    };
+  } catch (error) {
+    console.error('[verify] police theft records lookup failed:', error);
+    return {
+      provider: 'Police_Theft_Records',
+      status: 'error',
+      confidence: 0,
+      message: 'Police theft records unavailable',
       responseTime: Date.now() - startedAt,
     };
   }
@@ -624,6 +712,7 @@ export async function runVerification(
   if (sources.includes('hotgunz')) {
     // verify-hotgunz now searches the Ohio Attorney General stolen gun database (Sept 28 2026).
     tasks.push(runSource('Firearm_Verification', 'verify-hotgunz', { identifier: cleanIdentifier }));
+    tasks.push(runPoliceTheftRecords(admin, normalizedIdentifier));
   }
   if (sources.includes('webscraper')) {
     tasks.push(runWebScraper(cleanIdentifier, itemType));
