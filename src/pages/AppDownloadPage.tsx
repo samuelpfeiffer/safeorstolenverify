@@ -1,5 +1,5 @@
 import { Link } from '@/lib/router-compat';
-import { Shield, Zap, Camera, WifiOff, Star } from 'lucide-react';
+import { Shield, Zap, Camera, Smartphone, Star } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 const APP_FEATURES = [
@@ -11,12 +11,12 @@ const APP_FEATURES = [
  {
  icon: <Zap className="w-6 h-6" />,
  title: '3-Second Results On-the-Spot',
- desc: "Get full database results before you hand over any money. The app returns Trust Score, risk indicators, and source breakdown — all while you're still looking at the item.",
+ desc: "Get the result before you hand over any money: reported stolen, possible match, or no report found, with every source that was searched listed, while you're still looking at the item.",
  },
  {
- icon: <WifiOff className="w-6 h-6" />,
- title: 'Offline Result Caching',
- desc: "Already checked an item? Results are cached locally. Useful when you're at a venue with spotty signal — check before you lose connection.",
+ icon: <Smartphone className="w-6 h-6" />,
+ title: 'Installs Like a Native App',
+ desc: "Adds a SafeOrStolen icon to your home screen and opens full screen, on iPhone, Android and desktop. No app store, no download to wait for, and it updates itself.",
  },
  {
  icon: <Shield className="w-6 h-6" />,
@@ -26,7 +26,7 @@ const APP_FEATURES = [
  {
  icon: <Star className="w-6 h-6" />,
  title: 'Check History',
- desc: 'Every verification is saved in your history. Search, filter, and export your past checks — useful for pawn shops maintaining compliance records.',
+ desc: 'Every check is saved to your account with the date and time, so you can show what you checked and when. Add a $1.99 verification certificate to any check (free on the monthly plan).',
  },
 ];
 
@@ -36,13 +36,29 @@ const STEPS = [
  { n: '3', title: 'Launch from your home screen', desc: 'The SafeOrStolen icon appears on your home screen. Tap it to open the full-screen app — no browser bars, no distractions.' },
 ];
 
+// Oct 5 2026: answers the "is there an app to check if ..." searches directly. One list feeds both
+// the visible FAQ and the FAQPage schema.
+const APP_FAQS: { q: string; a: string }[] = [
+ { q: 'Is there an app to check if something is stolen?', a: "Yes. SafeOrStolen installs on your phone's home screen from safeorstolen.com/app, free, with no app store needed. Type or scan a serial number, IMEI, VIN or license plate and see whether it's reported stolen in a few seconds. The first 2 checks are free." },
+ { q: 'Is there an app to check a gun serial number?', a: 'Yes. In the SafeOrStolen app, type or scan the serial number from the frame or receiver. It searches police firearm theft and loss reports from 34 states, live Ohio law-enforcement records and SafeOrStolen theft reports.' },
+ { q: 'Is there an IMEI checker app?', a: "Yes. Dial *#06# on the phone you're buying to see its IMEI, then type it into the SafeOrStolen app. You get the device details, and the full lost-and-stolen blacklist check is included in paid checks." },
+ { q: 'Is the SafeOrStolen app free?', a: 'The app is free to install, and every account gets 2 free checks with no credit card. After that it is $3.99 per check or $14.99 a month for unlimited checks.' },
+ { q: 'Do I need the App Store or Google Play?', a: "No. SafeOrStolen is an installable web app. On iPhone, open safeorstolen.com in Safari, tap Share, then Add to Home Screen. On Android, open it in Chrome and tap Install app. It updates itself, so there is nothing to download again." },
+ { q: 'Does the app work at a meetup or gun show?', a: "Yes, that's what it's built for. Open it, scan or type the number, and read the result before you hand over money. Checks need an internet connection." },
+];
+
 export default function AppDownloadPage() {
+ const faqSchema = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": APP_FAQS.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+ };
  const appSchema = {
  "@context": "https://schema.org",
  "@type": "SoftwareApplication",
  "name": "SafeOrStolen",
  "applicationCategory": "UtilitiesApplication",
- "operatingSystem": "Any (PWA)",
+ "operatingSystem": "iOS, Android, Windows, macOS (installable web app)",
  "url": "https://safeorstolen.com/app",
  "description": "Installable SafeOrStolen web app for verifying whether phones (IMEI), vehicles (VIN), license plates, serialized electronics, firearms, and bicycles are reported stolen. Includes barcode and serial scanning, with results in about 3 seconds.",
  "offers": [
@@ -56,10 +72,10 @@ export default function AppDownloadPage() {
  <>
  <div className="min-h-screen bg-gray-950 text-white pt-20">
  <PageSEO
- title="SafeOrStolen on Mobile - Install the Web App"
- description="Instantly verify guns, vehicles, phones, and more from your phone browser. Barcode scanning for on-the-spot verification at gun shows, pawn shops, and marketplaces."
+ title="Stolen Item Checker App — Check Serials, IMEI & VIN From Your Phone | SafeOrStolen"
+ description="Free stolen item checker app for iPhone and Android. Scan or type a gun serial, phone IMEI, VIN, plate or any serial number and see if it's reported stolen, right at the meetup."
  canonical="/app"
- structuredData={appSchema}
+ structuredData={[appSchema, faqSchema]}
  />
 
  {/* Hero */}
@@ -67,12 +83,12 @@ export default function AppDownloadPage() {
  <div className="max-w-3xl mx-auto">
  <div className="text-5xl mb-6">📱</div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">
- SafeOrStolen on Mobile
+ The Stolen Item Checker App
  </h1>
  <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
- Install SafeOrStolen from your phone browser and use the live barcode scanner.
- Check guns, phones, vehicles, and bikes on-the-spot — at gun shows,
- garage sales, pawn shops, and car lots.
+ Check a gun serial number, phone IMEI, VIN, license plate or any serial number from your phone,
+ right at the meetup, before you pay. Free to install on iPhone and Android, with a camera scanner
+ so you don't have to type. 2 free checks.
  </p>
 
  {/* Install Instructions Highlight */}
@@ -130,10 +146,10 @@ export default function AppDownloadPage() {
  {[
  { emoji: '🔫', title: 'Gun Shows', desc: 'Scan firearm serial numbers before handing over cash at private sales. Results return before the seller loses patience.' },
  { emoji: '🏚️', title: 'Garage Sales & Estate Sales', desc: 'Quickly scan electronics, tools, and bikes. Protect yourself from unknowingly buying stolen goods from well-meaning estate sellers.' },
- { emoji: '🏍️', title: 'Motorcycle & Bike Lots', desc: 'Scan VINs and bike serials on-the-spot. We check public stolen reports and integrate with BikeIndex for bicycle checks.' },
- { emoji: '🏦', title: 'Pawn Shop Counter', desc: 'Every customer transaction gets a barcode scan before you accept. Generate the compliance PDF right from the app.' },
+ { emoji: '🏍️', title: 'Motorcycle & Bike Lots', desc: 'Scan VINs and bike serials on the spot. Bikes are also checked against a national stolen-bicycle registry.' },
+ { emoji: '🏦', title: 'Pawn Shop Counter', desc: 'Scan every item before you accept it. Each check is saved with the date and time, and you can add a verification certificate as a record.' },
  { emoji: '📦', title: 'Marketplace Meetups', desc: "When buying from Facebook Marketplace, OfferUp, or Craigslist — scan before you pay. The seller will see you're serious." },
- { emoji: '🚗', title: 'Used Car Lots', desc: 'Scan the VIN plate on the dashboard or door jamb. Get instant results based on our internal reports, web results, and AI analysis.' },
+ { emoji: '🚗', title: 'Used Car Lots', desc: 'Scan the VIN on the dashboard or door jamb. Get the vehicle details, open safety recalls and any theft reports we hold in seconds.' },
  ].map((s) => (
  <div key={s.title} className="flex gap-4 bg-gray-800/60 border border-gray-700 rounded-xl p-4">
  <div className="text-3xl flex-shrink-0">{s.emoji}</div>
@@ -163,7 +179,7 @@ export default function AppDownloadPage() {
  'License plate lookup',
  'Bicycle serial check',
  'Marketplace listing URL analysis',
- 'PDF verification certificate',
+ '$1.99 verification certificate (free on the monthly plan)',
  '2 free checks, then $3.99/check or $14.99/mo unlimited',
  ].map((f, i) => (
  <li key={f} className={`flex items-center gap-3 py-3 px-4 text-sm text-gray-300 ${i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}`}>
@@ -172,6 +188,20 @@ export default function AppDownloadPage() {
  </li>
  ))}
  </ul>
+ </div>
+ </div>
+ </section>
+
+ <section className="py-16 px-4 bg-gray-900">
+ <div className="max-w-3xl mx-auto">
+ <h2 className="text-3xl font-black text-white text-center mb-8">Questions About the App</h2>
+ <div className="space-y-4">
+ {APP_FAQS.map((f) => (
+ <div key={f.q} className="rounded-2xl border border-gray-700 bg-gray-950 p-5">
+ <h3 className="text-white font-bold mb-2">{f.q}</h3>
+ <p className="text-gray-400 text-sm leading-relaxed">{f.a}</p>
+ </div>
+ ))}
  </div>
  </div>
  </section>

@@ -21,6 +21,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import { CertificateOffer } from '@/components/proof/CertificateOffer';
+import { PhoneBlacklistOffer } from '@/components/verify-chat/PhoneBlacklistOffer';
 import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
 import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
@@ -304,6 +305,12 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  checkId={current.checkId}
  />
  )}
+
+ {/* Free phone check: offer the paid blacklist search right here */}
+ {current.status !== 'stolen' &&
+ current.providers?.some(
+ (p) => p.provider === 'IMEI_Verification' && (p as { details?: { blacklistLocked?: boolean } }).details?.blacklistLocked,
+ ) && <PhoneBlacklistOffer key={`bl-${current.identifier}`} imei={current.identifier} />}
 
  {/* Verification record — rendered for every item type */}
  <VerificationRecord
