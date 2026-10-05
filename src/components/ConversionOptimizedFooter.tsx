@@ -94,11 +94,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
               <h3 className="text-lg font-semibold mb-4 text-foreground">Verify By State</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link to="/arizona-license-plate-lookup" className="hover:text-foreground transition-colors">Arizona</Link></li>
-                <li><Link to="/california-license-plate-lookup" className="hover:text-foreground transition-colors">California</Link></li>
                 <li><Link to="/florida-license-plate-lookup" className="hover:text-foreground transition-colors">Florida</Link></li>
-                <li><Link to="/new-york-license-plate-lookup" className="hover:text-foreground transition-colors">New York</Link></li>
-                <li><Link to="/texas-license-plate-lookup" className="hover:text-foreground transition-colors">Texas</Link></li>
-                <li><Link to="/ohio-license-plate-lookup" className="hover:text-foreground transition-colors">Ohio</Link></li>
                 <li><Link to="/license-plate-lookup" className="hover:text-foreground transition-colors">All States →</Link></li>
               </ul>
             </div>

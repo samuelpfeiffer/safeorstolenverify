@@ -89,7 +89,8 @@ export function redirectPaths() {
   const src = fs.readFileSync(path.join(ROOT, 'src/utils/legacyRedirectMap.ts'), 'utf-8');
   const out = new Set();
   const body = src.slice(src.indexOf('LEGACY_REDIRECT_MAP'));
-  for (const m of body.matchAll(/^\s*'([^']+)':\s*'([^']+)'/gm)) out.add(m[1]);
+  // The map uses double quotes; accept either quote style.
+  for (const m of body.matchAll(/^\s*(['"])([^'"]+)\1:\s*(['"])([^'"]+)\3/gm)) out.add(m[2]);
   return out;
 }
 

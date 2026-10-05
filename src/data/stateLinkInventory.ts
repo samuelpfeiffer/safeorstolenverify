@@ -35,9 +35,12 @@ const titleCase = (slug: string) =>
         .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
         .join(' ');
 
-const PLATE_STATE_SLUGS = Object.keys(REGION_BY_STATE);
+// Oct 5 2026: only states with their own data sources keep a page; the rest 301
+// to /license-plate-lookup and /vin-checker (see legacyRedirectMap).
+const STATES_WITH_PAGES = ['arizona', 'florida'];
+const PLATE_STATE_SLUGS = STATES_WITH_PAGES;
 
-const VIN_STATE_SLUGS = Object.keys(REGION_BY_STATE);
+const VIN_STATE_SLUGS = STATES_WITH_PAGES;
 
 
 export const STATE_PLATE_LINKS: StateLink[] = PLATE_STATE_SLUGS.map((slug) => ({

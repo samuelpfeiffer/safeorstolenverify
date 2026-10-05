@@ -79,23 +79,23 @@ const LicensePlateLookupPage = () => {
  },
  {
  question: "What can a license plate lookup tell me?",
- answer: "A plate lookup can tell you the vehicle the plate is registered to, its make, model and year, its registration status, and whether it appears in stolen vehicle reports. It cannot tell you who is currently driving the car or confirm that the person selling it has the legal right to. SafeOrStolen returns the plate result and a dated verification record you can keep."
+ answer: "SafeOrStolen tells you whether the plate appears in its own theft reports or public web results, and gives you a dated record of the check. Arizona plates are also searched in TheftAZ, Arizona's law-enforcement stolen vehicle records. A plate lookup can't tell you who owns the car: owner details are protected by the federal Driver's Privacy Protection Act. Ask the seller for the title and a matching photo ID instead."
  },
  {
  question: "Can I check if a car is stolen using just the license plate?",
- answer: "Yes, but it's a first step. License plates can be swapped, so always verify the VIN as a follow-up before purchasing. Our lookup resolves the plate to VIN and checks theft databases."
+ answer: "Yes, but it's a first step. License plates can be swapped between cars, so also check the VIN and make sure it matches the dashboard, door jamb and title before you buy."
  },
  {
  question: "What information do I get from a license plate lookup?",
- answer: "You'll see: vehicle make/model/year, VIN, and any theft status identified through our checks."
+ answer: "Whether the plate appears in SafeOrStolen's theft reports or public web results (plus Arizona's TheftAZ records for Arizona plates), with a dated record of the check."
  },
  {
  question: "Is license plate lookup free?",
   answer: "Yes. SafeOrStolen offers 2 free license plate lookups. We check SafeOrStolen's stolen-item reports, public web results, and AI analysis. We do not access DMV registration records."
  },
  {
- question: "What if the registered owner doesn't match the seller?",
- answer: "This is a major red flag. The vehicle could be stolen, or the seller may not have authority to sell. Always ask for documentation and verify the VIN before proceeding."
+ question: "What if the name on the title doesn't match the seller?",
+ answer: "If the name on the title doesn't match the seller's photo ID, treat it as a major red flag. The vehicle could be stolen, or the seller may not have the right to sell it. Ask for documentation and check the VIN before going any further."
  }
  ];
 
@@ -266,11 +266,11 @@ const LicensePlateLookupPage = () => {
  <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-2">
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
- All 50 States
+ 2 Free Checks
  </span>
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
- DMV Records
+ Dated Check Record
  </span>
  <span className="flex items-center gap-1">
  <CheckCircle2 className="h-3 w-3 text-green-500" />
@@ -336,7 +336,7 @@ const LicensePlateLookupPage = () => {
  </div>
  <h3 className="font-semibold mb-2">Get Instant Results</h3>
  <p className="text-sm text-muted-foreground">
- See theft status, registered owner, vehicle info, and registration status.
+ See whether the plate appears in theft reports, plus a dated record of your check.
  </p>
  </div>
  </div>

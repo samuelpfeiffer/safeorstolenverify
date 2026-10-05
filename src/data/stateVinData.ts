@@ -65,7 +65,7 @@ export const STATE_VIN_DATA: Record<string, StateVinData> = {
  state: "Florida",
  stateCode: "FL",
  title: "Florida VIN Lookup - Free FL Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Florida VIN lookup verifies if FL vehicles are stolen. Check cars, trucks, boats, RVs against FLHSMV and available databases. Includes flood damage verification.",
+ metaDescription: "Florida VIN lookup: check a FL car, truck, boat or RV against SafeOrStolen theft reports, then Florida's free FDLE stolen vehicle search. Flood-damage and title tips for Florida buyers.",
  topCities: ["Miami", "Jacksonville", "Tampa", "Orlando", "Fort Lauderdale"],
  dmvLink: "https://www.flhsmv.gov",
  content: {
