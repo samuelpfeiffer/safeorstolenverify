@@ -206,7 +206,7 @@ const FirearmsCheckPage = () => {
  Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
- These are reports filed with police, mostly from 2006 to 2017. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.
+ These are reports filed with police, mostly from 2006 to 2017. Open a state for its most reported brands and models, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">national stolen gun statistics</Link>. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.
  </p>
  <div className="overflow-x-auto rounded-xl border border-border mb-4">
  <table className="w-full text-left text-sm">
@@ -220,7 +220,7 @@ const FirearmsCheckPage = () => {
  <tbody>
  {STATE_COVERAGE.map((r) => (
  <tr key={r.state} className="border-t border-border">
- <td className="px-4 py-2 font-medium">{r.state}</td>
+ <td className="px-4 py-2 font-medium"><Link to={`/gun-serial-number-lookup/${r.state.toLowerCase().replace(/ /g, '-')}`} className="text-primary hover:underline">{r.state}</Link></td>
  <td className="px-4 py-2 text-right text-muted-foreground">{r.reports.toLocaleString('en-US')}</td>
  <td className="px-4 py-2 text-muted-foreground">{r.years}</td>
  </tr>

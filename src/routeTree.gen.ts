@@ -258,6 +258,7 @@ import { Route as StolenCheckSanDiegoRouteImport } from './routes/stolen-check-s
 import { Route as StolenCheckSanJoseRouteImport } from './routes/stolen-check-san-jose'
 import { Route as StolenDatabaseRouteImport } from './routes/stolen-database'
 import { Route as StolenGunDatabaseRouteImport } from './routes/stolen-gun-database'
+import { Route as StolenGunStatisticsRouteImport } from './routes/stolen-gun-statistics'
 import { Route as StolenPhoneCheckerRouteImport } from './routes/stolen-phone-checker'
 import { Route as TennesseeLicensePlateLookupRouteImport } from './routes/tennessee-license-plate-lookup'
 import { Route as TennesseeVinLookupRouteImport } from './routes/tennessee-vin-lookup'
@@ -376,6 +377,7 @@ import { Route as GoSlugRouteImport } from './routes/go/$slug'
 import { Route as GuidesEbayBuyerProtectionRouteImport } from './routes/guides/ebay-buyer-protection'
 import { Route as GuidesOfferupScamProtectionRouteImport } from './routes/guides/offerup-scam-protection'
 import { Route as GuidesVerifyCraigslistItemsRouteImport } from './routes/guides/verify-craigslist-items'
+import { Route as GunSerialNumberLookupStateRouteImport } from './routes/gun-serial-number-lookup_.$state'
 import { Route as ItemSlugRouteImport } from './routes/item/$slug'
 import { Route as ProofIdRouteImport } from './routes/proof/$id'
 import { Route as SharedShareCodeRouteImport } from './routes/shared/$shareCode'
@@ -1685,6 +1687,11 @@ const StolenGunDatabaseRoute = StolenGunDatabaseRouteImport.update({
   path: '/stolen-gun-database',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StolenGunStatisticsRoute = StolenGunStatisticsRouteImport.update({
+  id: '/stolen-gun-statistics',
+  path: '/stolen-gun-statistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StolenPhoneCheckerRoute = StolenPhoneCheckerRouteImport.update({
   id: '/stolen-phone-checker',
   path: '/stolen-phone-checker',
@@ -2335,6 +2342,12 @@ const GuidesVerifyCraigslistItemsRoute =
     path: '/guides/verify-craigslist-items',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GunSerialNumberLookupStateRoute =
+  GunSerialNumberLookupStateRouteImport.update({
+    id: '/gun-serial-number-lookup_/$state',
+    path: '/gun-serial-number-lookup/$state',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ItemSlugRoute = ItemSlugRouteImport.update({
   id: '/item/$slug',
   path: '/item/$slug',
@@ -2631,6 +2644,7 @@ export interface FileRoutesByFullPath {
   '/stolen-check-san-jose': typeof StolenCheckSanJoseRoute
   '/stolen-database': typeof StolenDatabaseRoute
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
+  '/stolen-gun-statistics': typeof StolenGunStatisticsRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
   '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
@@ -2747,6 +2761,7 @@ export interface FileRoutesByFullPath {
   '/guides/ebay-buyer-protection': typeof GuidesEbayBuyerProtectionRoute
   '/guides/offerup-scam-protection': typeof GuidesOfferupScamProtectionRoute
   '/guides/verify-craigslist-items': typeof GuidesVerifyCraigslistItemsRoute
+  '/gun-serial-number-lookup/$state': typeof GunSerialNumberLookupStateRoute
   '/item/$slug': typeof ItemSlugRoute
   '/proof/$id': typeof ProofIdRoute
   '/shared/$shareCode': typeof SharedShareCodeRoute
@@ -3007,6 +3022,7 @@ export interface FileRoutesByTo {
   '/stolen-check-san-jose': typeof StolenCheckSanJoseRoute
   '/stolen-database': typeof StolenDatabaseRoute
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
+  '/stolen-gun-statistics': typeof StolenGunStatisticsRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
   '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
@@ -3122,6 +3138,7 @@ export interface FileRoutesByTo {
   '/guides/ebay-buyer-protection': typeof GuidesEbayBuyerProtectionRoute
   '/guides/offerup-scam-protection': typeof GuidesOfferupScamProtectionRoute
   '/guides/verify-craigslist-items': typeof GuidesVerifyCraigslistItemsRoute
+  '/gun-serial-number-lookup/$state': typeof GunSerialNumberLookupStateRoute
   '/item/$slug': typeof ItemSlugRoute
   '/proof/$id': typeof ProofIdRoute
   '/shared/$shareCode': typeof SharedShareCodeRoute
@@ -3385,6 +3402,7 @@ export interface FileRoutesById {
   '/stolen-check-san-jose': typeof StolenCheckSanJoseRoute
   '/stolen-database': typeof StolenDatabaseRoute
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
+  '/stolen-gun-statistics': typeof StolenGunStatisticsRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
   '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
@@ -3501,6 +3519,7 @@ export interface FileRoutesById {
   '/guides/ebay-buyer-protection': typeof GuidesEbayBuyerProtectionRoute
   '/guides/offerup-scam-protection': typeof GuidesOfferupScamProtectionRoute
   '/guides/verify-craigslist-items': typeof GuidesVerifyCraigslistItemsRoute
+  '/gun-serial-number-lookup_/$state': typeof GunSerialNumberLookupStateRoute
   '/item/$slug': typeof ItemSlugRoute
   '/proof/$id': typeof ProofIdRoute
   '/shared/$shareCode': typeof SharedShareCodeRoute
@@ -3765,6 +3784,7 @@ export interface FileRouteTypes {
     | '/stolen-check-san-jose'
     | '/stolen-database'
     | '/stolen-gun-database'
+    | '/stolen-gun-statistics'
     | '/stolen-phone-checker'
     | '/tennessee-license-plate-lookup'
     | '/tennessee-vin-lookup'
@@ -3881,6 +3901,7 @@ export interface FileRouteTypes {
     | '/guides/ebay-buyer-protection'
     | '/guides/offerup-scam-protection'
     | '/guides/verify-craigslist-items'
+    | '/gun-serial-number-lookup/$state'
     | '/item/$slug'
     | '/proof/$id'
     | '/shared/$shareCode'
@@ -4141,6 +4162,7 @@ export interface FileRouteTypes {
     | '/stolen-check-san-jose'
     | '/stolen-database'
     | '/stolen-gun-database'
+    | '/stolen-gun-statistics'
     | '/stolen-phone-checker'
     | '/tennessee-license-plate-lookup'
     | '/tennessee-vin-lookup'
@@ -4256,6 +4278,7 @@ export interface FileRouteTypes {
     | '/guides/ebay-buyer-protection'
     | '/guides/offerup-scam-protection'
     | '/guides/verify-craigslist-items'
+    | '/gun-serial-number-lookup/$state'
     | '/item/$slug'
     | '/proof/$id'
     | '/shared/$shareCode'
@@ -4518,6 +4541,7 @@ export interface FileRouteTypes {
     | '/stolen-check-san-jose'
     | '/stolen-database'
     | '/stolen-gun-database'
+    | '/stolen-gun-statistics'
     | '/stolen-phone-checker'
     | '/tennessee-license-plate-lookup'
     | '/tennessee-vin-lookup'
@@ -4634,6 +4658,7 @@ export interface FileRouteTypes {
     | '/guides/ebay-buyer-protection'
     | '/guides/offerup-scam-protection'
     | '/guides/verify-craigslist-items'
+    | '/gun-serial-number-lookup_/$state'
     | '/item/$slug'
     | '/proof/$id'
     | '/shared/$shareCode'
@@ -4897,6 +4922,7 @@ export interface RootRouteChildren {
   StolenCheckSanJoseRoute: typeof StolenCheckSanJoseRoute
   StolenDatabaseRoute: typeof StolenDatabaseRoute
   StolenGunDatabaseRoute: typeof StolenGunDatabaseRoute
+  StolenGunStatisticsRoute: typeof StolenGunStatisticsRoute
   StolenPhoneCheckerRoute: typeof StolenPhoneCheckerRoute
   TennesseeLicensePlateLookupRoute: typeof TennesseeLicensePlateLookupRoute
   TennesseeVinLookupRoute: typeof TennesseeVinLookupRoute
@@ -4966,6 +4992,7 @@ export interface RootRouteChildren {
   GuidesEbayBuyerProtectionRoute: typeof GuidesEbayBuyerProtectionRoute
   GuidesOfferupScamProtectionRoute: typeof GuidesOfferupScamProtectionRoute
   GuidesVerifyCraigslistItemsRoute: typeof GuidesVerifyCraigslistItemsRoute
+  GunSerialNumberLookupStateRoute: typeof GunSerialNumberLookupStateRoute
   ItemSlugRoute: typeof ItemSlugRoute
   ProofIdRoute: typeof ProofIdRoute
   SharedShareCodeRoute: typeof SharedShareCodeRoute
@@ -6719,6 +6746,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StolenGunDatabaseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stolen-gun-statistics': {
+      id: '/stolen-gun-statistics'
+      path: '/stolen-gun-statistics'
+      fullPath: '/stolen-gun-statistics'
+      preLoaderRoute: typeof StolenGunStatisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/stolen-phone-checker': {
       id: '/stolen-phone-checker'
       path: '/stolen-phone-checker'
@@ -7545,6 +7579,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesVerifyCraigslistItemsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gun-serial-number-lookup_/$state': {
+      id: '/gun-serial-number-lookup_/$state'
+      path: '/gun-serial-number-lookup/$state'
+      fullPath: '/gun-serial-number-lookup/$state'
+      preLoaderRoute: typeof GunSerialNumberLookupStateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/item/$slug': {
       id: '/item/$slug'
       path: '/item/$slug'
@@ -7999,6 +8040,7 @@ const rootRouteChildren: RootRouteChildren = {
   StolenCheckSanJoseRoute: StolenCheckSanJoseRoute,
   StolenDatabaseRoute: StolenDatabaseRoute,
   StolenGunDatabaseRoute: StolenGunDatabaseRoute,
+  StolenGunStatisticsRoute: StolenGunStatisticsRoute,
   StolenPhoneCheckerRoute: StolenPhoneCheckerRoute,
   TennesseeLicensePlateLookupRoute: TennesseeLicensePlateLookupRoute,
   TennesseeVinLookupRoute: TennesseeVinLookupRoute,
@@ -8074,6 +8116,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesEbayBuyerProtectionRoute: GuidesEbayBuyerProtectionRoute,
   GuidesOfferupScamProtectionRoute: GuidesOfferupScamProtectionRoute,
   GuidesVerifyCraigslistItemsRoute: GuidesVerifyCraigslistItemsRoute,
+  GunSerialNumberLookupStateRoute: GunSerialNumberLookupStateRoute,
   ItemSlugRoute: ItemSlugRoute,
   ProofIdRoute: ProofIdRoute,
   SharedShareCodeRoute: SharedShareCodeRoute,
