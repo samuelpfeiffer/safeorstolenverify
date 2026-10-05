@@ -177,7 +177,7 @@ const coreGraphJsonLd = JSON.stringify({
       "@id": "https://safeorstolen.com/#service",
       name: "Stolen Item Verification Service",
       description:
-        "SafeOrStolen helps users check secondhand items using its own reports, public web results, and AI analysis. Phone checks provide IMEI device details, bicycle checks also query Bike Index, and firearm checks also query HotGunz.",
+        "SafeOrStolen helps users check secondhand items using its own reports, public web results, and AI analysis. Phone checks provide IMEI device details, bicycle checks also query Bike Index, and firearm checks also search the Ohio Attorney General's stolen gun records.",
       provider: { "@id": "https://safeorstolen.com/#organization" },
       serviceType: "Stolen Item Verification",
       areaServed: { "@type": "Country", name: "United States" },
