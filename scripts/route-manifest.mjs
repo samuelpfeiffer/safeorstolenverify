@@ -94,10 +94,16 @@ export function redirectPaths() {
   return out;
 }
 
+/** Dynamic pages with a fixed, known list of params (Oct 5 2026: gun state lookup pages). */
+export function dynamicRoutes() {
+  const src = fs.readFileSync(path.join(ROOT, 'src/data/gunTheftStats.ts'), 'utf-8');
+  return [...src.matchAll(/slug: '([a-z-]+)'/g)].map((m) => `/gun-serial-number-lookup/${m[1]}`);
+}
+
 /** Final public URL list: router routes minus redirects minus private routes. */
 export function publicRoutes() {
   const redirects = redirectPaths();
-  return [...routesFromRouter()]
+  return [...routesFromRouter(), ...dynamicRoutes()]
     .filter((p) => !redirects.has(p))
     .filter((p) => !isPrivateRoute(p))
     .sort();

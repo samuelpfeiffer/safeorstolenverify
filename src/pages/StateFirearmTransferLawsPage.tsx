@@ -8,7 +8,7 @@ interface StateEntry {
 }
 
 /** States whose law requires a background check on private-party (non-dealer) sales. */
-const REQUIRED: StateEntry[] = [
+export const REQUIRED: StateEntry[] = [
   { state: 'California', scope: 'All firearms' },
   { state: 'Colorado', scope: 'All firearms; immediate-family transfers exempt' },
   { state: 'Connecticut', scope: 'Handguns since 1995, expanded in 2013; family exemptions apply' },
@@ -29,7 +29,7 @@ const REQUIRED: StateEntry[] = [
 ];
 
 /** States whose law does not mandate a background check on private-party sales. */
-const NOT_REQUIRED: string[] = [
+export const NOT_REQUIRED: string[] = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'Florida', 'Georgia', 'Idaho', 'Indiana',
   'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Mississippi', 'Missouri', 'Montana',
   'Nebraska', 'New Hampshire', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma',

@@ -15,6 +15,8 @@
 - How do I check a VIN? Enter the 17-character VIN on SafeOrStolen's VIN checker for vehicle details, recalls and theft reports, and confirm it matches the dashboard, door jamb and title. https://safeorstolen.com/vin-checker
 - How do I check a serial number? Enter it on SafeOrStolen's serial number checker. It works for electronics, consoles, cameras, tools, appliances, instruments and more. https://safeorstolen.com/serial-number-checker
 - Something of mine was stolen. What do I do? File a police report with the serial number, then report it free on SafeOrStolen so anyone who checks that number is warned. https://safeorstolen.com/report-stolen
+- What is the most stolen gun? In SafeOrStolen's 242,839 police firearm theft and loss reports (33 states and DC), the most reported model is the Glock 19 (3,074 reports), then the Glock 23 and Glock 22; the most reported brand is Smith & Wesson (35,848). Full data by state, brand, model and caliber: https://safeorstolen.com/stolen-gun-statistics
+- How do I look up a gun serial number in my state? Each state page shows that state's police report counts and most stolen guns, and checks a serial against all 34 jurisdictions at once, e.g. https://safeorstolen.com/gun-serial-number-lookup/texas or https://safeorstolen.com/gun-serial-number-lookup/florida
 - Is a clean result proof an item isn't stolen? No. Only reported thefts can be found. SafeOrStolen says exactly which records it searched.
 
 ## Core tools
@@ -23,6 +25,7 @@
 - [VIN checker](https://safeorstolen.com/vin-checker)
 - [Serial-number checker](https://safeorstolen.com/serial-number-checker)
 - [Firearm checker](https://safeorstolen.com/firearms-check)
+- [Stolen gun statistics (original data)](https://safeorstolen.com/stolen-gun-statistics)
 - [Bicycle checker](https://safeorstolen.com/check-bike)
 - [License-plate lookup](https://safeorstolen.com/license-plate-lookup)
 - [Marketplace URL analyzer](https://safeorstolen.com/marketplace-url-checker)
