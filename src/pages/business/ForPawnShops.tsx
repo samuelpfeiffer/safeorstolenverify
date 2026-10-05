@@ -110,7 +110,10 @@ export default function ForPawnShops() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/verify">Try Verification Now</Link>
+              <Link to="/bulk-check">Check a List of Serials</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/verify">Check One Item</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link to="/pricing">View Business Pricing</Link>
