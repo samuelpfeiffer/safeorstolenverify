@@ -580,6 +580,32 @@ async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<G
   return { allowed: true, plan: 'single', checksRemaining: 0 };
 }
 
+async function claimGuestPurchasesByEmail(admin: AdminClient, userId: string): Promise<boolean> {
+  try {
+    const { data: u } = await admin.auth.admin.getUserById(userId);
+    const email = u?.user?.email?.trim().toLowerCase();
+    // Only a confirmed email can claim, so nobody can take a purchase by signing up with someone else's address.
+    if (!email || !u?.user?.email_confirmed_at) return false;
+    const { data: buys } = await admin
+      .from('purchases')
+      .select('stripe_session_id')
+      .eq('guest_email', email)
+      .eq('status', 'completed');
+    const ids = (buys ?? []).map((b: any) => b.stripe_session_id).filter((v: unknown): v is string => typeof v === 'string' && v.length > 0);
+    if (ids.length === 0) return false;
+    const { data: moved } = await admin
+      .from('subscriptions')
+      .update({ user_id: userId, updated_at: new Date().toISOString() })
+      .in('stripe_subscription_id', ids)
+      .is('user_id', null)
+      .select('id');
+    return (moved?.length ?? 0) > 0;
+  } catch (e) {
+    console.error('[gate] guest purchase claim failed', e);
+    return false;
+  }
+}
+
 export async function checkUsageGate(
   admin: AdminClient,
   userId: string | null,
@@ -600,6 +626,13 @@ export async function checkUsageGate(
     .eq('status', 'active')
     .eq('user_id', userId);
   let subRows: any[] = byUser.data ?? [];
+
+  // Oct 5 2026: a guest purchase paid with this account's (confirmed) email moves to the account,
+  // so a customer can use it from any device after signing in.
+  if (subRows.length === 0 && (await claimGuestPurchasesByEmail(admin, userId))) {
+    const again = await admin.from('subscriptions').select('*').eq('status', 'active').eq('user_id', userId);
+    subRows = again.data ?? [];
+  }
 
   if (subRows.length === 0 && fingerprint) {
     const byFingerprint = await admin
