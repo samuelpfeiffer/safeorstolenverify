@@ -40,7 +40,6 @@ const GlobalAISEO = React.lazy(() => import("@/components/seo/GlobalAISEO").then
 const DomainAuthorityBooster = React.lazy(() => import("@/components/seo/DomainAuthorityBooster").then((m) => ({ default: m.DomainAuthorityBooster })));
 const EEATSignals = React.lazy(() => import("@/components/seo/EEATSignals").then((m) => ({ default: m.EEATSignals })));
 const AdvancedSchemaGenerator = React.lazy(() => import("@/components/seo/AdvancedSchemaGenerator").then((m) => ({ default: m.AdvancedSchemaGenerator })));
-const LiveActivityToast = React.lazy(() => import("@/components/growth").then((m) => ({ default: m.LiveActivityToast })));
 const TrafficBooster = React.lazy(() => import("@/components/traffic/TrafficBooster").then((m) => ({ default: m.TrafficBooster })));
 const FloatingCTA = React.lazy(() => import("@/components/marketing/FloatingCTA").then((m) => ({ default: m.FloatingCTA })));
 
@@ -437,7 +436,6 @@ function AppShell() {
 
         {showGrowthComponents && (
           <Suspense fallback={null}>
-            <LiveActivityToast />
             <FloatingCTA />
           </Suspense>
         )}

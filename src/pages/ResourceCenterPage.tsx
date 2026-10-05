@@ -132,7 +132,6 @@ export default function ResourceCenterPage() {
  <Shield className="h-10 w-10 text-primary mb-4" />
  <h3 className="text-xl font-bold mb-4">Verification Tools</h3>
  <ul className="space-y-3">
- <li><Link to="/trust-engine" className="text-primary hover:underline text-sm">Universal Trust Engine (NEW)</Link></li>
  <li><Link to="/imei-checker" className="text-primary hover:underline text-sm">IMEI Checker for Phones</Link></li>
  <li><Link to="/vin-checker" className="text-primary hover:underline text-sm">VIN Checker for Vehicles</Link></li>
  <li><Link to="/serial-number-checker" className="text-primary hover:underline text-sm">Serial Number Checker</Link></li>
@@ -217,16 +216,13 @@ export default function ResourceCenterPage() {
  <div className="container mx-auto px-4 text-center">
  <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Check phones, vehicles, and electronics in seconds. Use the Universal Trust Engine for single checks or batch verification.
+ Check phones, vehicles, firearms, bikes and electronics in seconds.
  </p>
  <div className="flex flex-wrap gap-4 justify-center">
  <Button size="lg" asChild>
- <Link to="/trust-engine">
- Open Trust Engine <ArrowRight className="ml-2 h-4 w-4" />
+ <Link to="/verify">
+ Start a Check <ArrowRight className="ml-2 h-4 w-4" />
  </Link>
- </Button>
- <Button size="lg" variant="outline" asChild>
- <Link to="/verify">Single Verification</Link>
  </Button>
  </div>
  </div>
