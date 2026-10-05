@@ -192,11 +192,11 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Gun Is Stolen",
   metaTitle: "How to Check if a Gun Is Stolen Safely",
   description:
-    "Check a firearm serial number safely: NCIC access limits, police assistance, stolen-firearm database checks, red flags, and next steps.",
+    "How to check if a gun is stolen: search police theft records by serial number, ask police, use Florida and Ohio's public searches, or buy through a licensed dealer who can check the FBI's stolen-gun file.",
   keywords:
     "how to check if gun stolen, firearm serial check, stolen gun lookup, NCIC gun serial",
   directAnswer:
-    "Private buyers cannot search NCIC themselves. Record the complete serial number and manufacturer, ask local police whether they can check it, and run the SafeOrStolen firearm check. Complete all required transfer and background-check steps for your jurisdiction.",
+    "Private buyers cannot search the FBI's NCIC stolen-gun file themselves. Instead: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 34 states plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI's stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
   identifierTitle: "Where to find the firearm serial number",
   identifierIntro:
     "Use the serial marked on the firearm’s frame or receiver and record the manufacturer, model, caliber, and seller’s identification as permitted by law.",
@@ -219,11 +219,31 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen firearm check",
-      cost: "Free to try with a free account",
+      cost: "2 free checks, no account needed",
       description:
-        "SafeOrStolen checks a stolen-firearm database, its own stolen-item reports, public web results, and AI analysis. It does not access NCIC, ATF eTrace, or police systems.",
+        "SafeOrStolen searches police firearm theft and loss reports from 34 states (more than 240,000 records, mostly from 2010 to 2017), live Ohio law-enforcement stolen-gun records, and theft reports filed on SafeOrStolen. It does not access NCIC, ATF eTrace, or other police-only systems.",
       tellsYou:
-        "Whether the serial appears in those sources and whether its format or public context needs attention.",
+        "Whether a police report lists a gun with this serial number, and which make, model, state and year it names. Different manufacturers can use the same serial, so compare the make stamped on the gun.",
+    },
+    {
+      name: "Buy through a licensed dealer (FFL)",
+      cost: "Dealer transfer fee, often $25 to $75",
+      description:
+        "Since 2024, federal firearms licensees can voluntarily check a serial number against the FBI's NCIC stolen-gun file, including through the FBI's NICS E-Check system. Doing a private sale as a dealer transfer also completes the background check and creates a paper trail.",
+      tellsYou:
+        "Whether the serial matches a gun reported stolen anywhere in the US NCIC file. This is the most complete check available to a private buyer.",
+      url: "https://www.fbi.gov/news/press-releases/new-rule-provides-federal-firearms-licensees-access-to-fbi-records-of-stolen-firearms",
+      linkLabel: "FBI: dealer access to stolen-gun records",
+    },
+    {
+      name: "Search Florida or Ohio's public stolen-gun records",
+      cost: "Free",
+      description:
+        "Florida's FDLE Public Access System and the Ohio Attorney General's stolen-gun search let anyone look up a serial reported stolen to police in that state. SafeOrStolen already searches Ohio's records for you.",
+      tellsYou:
+        "Whether police in that state have reported a gun with this serial number stolen. They do not cover other states.",
+      url: "https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenGun.jsf",
+      linkLabel: "Florida FDLE stolen gun search",
     },
   ],
   redFlags: [
@@ -254,6 +274,21 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
         "Official public tools were confirmed for Florida, Ohio, and Utah as of September 24, 2026. Each warns that results require law-enforcement confirmation.",
     },
     {
+      question: "Can a gun dealer check if a gun is stolen?",
+      answer:
+        "Yes. Since 2024, federal firearms licensees (FFLs) can voluntarily check a serial number against the FBI's NCIC stolen-gun file, for example through NICS E-Check. Doing a private sale as a transfer through a dealer is the most thorough way to check a used gun.",
+    },
+    {
+      question: "What happens if I buy a stolen gun without knowing?",
+      answer:
+        "Police will usually take the gun so it can be returned to its owner, and you lose the money you paid unless you recover it from the seller. Buying without knowing it was stolen is generally not a crime, which is why a bill of sale with the seller's name, ID and the gun's serial number protects you.",
+    },
+    {
+      question: "What if the serial number is scratched off or altered?",
+      answer:
+        "Don't buy it. Possessing a firearm with an altered or removed serial number is a federal crime under 18 U.S.C. 922(k).",
+    },
+    {
       question: "Does a clean result prove a firearm is not stolen?",
       answer:
         "No. Stolen-firearm databases only include thefts that were reported, so no check can include every theft. Use our result alongside police guidance and all legally required transfer procedures.",
@@ -272,6 +307,96 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       href: "/state-firearm-transfer-laws",
       label: "State firearm transfer laws",
     },
+  ],
+};
+
+export const TV_GUIDE: DefinitiveGuideProps = {
+  slug: "/how-to-check-if-tv-stolen",
+  title: "How to Check if a TV Is Stolen",
+  metaTitle: "How to Check if a TV Is Stolen Before You Buy",
+  description:
+    "How to check if a used or new-in-box TV is stolen: find the serial number, search it, match the receipt, spot organized-retail-theft red flags, and what to do if it is stolen.",
+  keywords:
+    "how to check if tv is stolen, tv serial number lookup stolen, stolen tv check, is this tv stolen, buying tv marketplace stolen",
+  directAnswer:
+    "There is no public national database of stolen TVs. To check one: (1) find the serial number on the label on the back and in the TV's settings menu, and make sure they match; (2) search the serial on SafeOrStolen; (3) ask for the original receipt and check the model and date match; (4) be very careful with new, boxed TVs sold far below store price, which is a common sign of retail theft; and (5) if you are unsure, ask local police to check the serial, since police can search stolen-property records the public cannot.",
+  identifierTitle: "Where to find a TV's serial number",
+  identifierIntro:
+    "Use the number on the TV itself, not just the box. The label on the back and the number in the settings menu should match.",
+  identifierLocations: [
+    "The sticker on the back panel, usually near the inputs or the stand mount.",
+    "The settings menu, usually under Support, About This TV, or System Information.",
+    "The original box label and receipt, which should list the same model and serial.",
+    "Do not buy if the label has been removed, covered, or does not match the settings menu.",
+  ],
+  methods: [
+    {
+      name: "Run a SafeOrStolen serial check",
+      cost: "2 free checks, no account needed",
+      description:
+        "SafeOrStolen searches theft reports filed by owners on SafeOrStolen and public web results for the serial number.",
+      tellsYou:
+        "Whether the TV's serial appears in a theft report or in a public post about a theft. A clean result does not prove the TV is not stolen.",
+    },
+    {
+      name: "Match the receipt and the seller's story",
+      cost: "Free",
+      description:
+        "Ask for the original receipt or order confirmation. The model, store and date should make sense, and the seller should be able to explain why they are selling.",
+      tellsYou:
+        "Whether there is a paper trail that ties the seller to the TV.",
+    },
+    {
+      name: "Ask local police to check the serial",
+      cost: "Usually free; policy varies",
+      description:
+        "Call the non-emergency line and ask whether they will check a serial number. Police can search stolen-property records, including pawn and theft reports, that the public cannot.",
+      tellsYou:
+        "Whether the serial has been reported stolen to police, when the agency is able to check it.",
+    },
+  ],
+  redFlags: [
+    "Several new TVs in sealed boxes, or a brand-new model at a price far below any store.",
+    "A seller who wants to meet in a parking lot, has no receipt, and cannot say where it was bought.",
+    "A missing or covered serial label, or a label that does not match the settings menu.",
+    "Store security tags, store stickers, or a damaged box from a forced display.",
+    "Pressure to pay now in cash or with a payment app that has no buyer protection.",
+  ],
+  stolenSteps: commonStolenSteps,
+  safeOrStolenText: commonSafeOrStolen,
+  toolHref: "/serial-number-checker",
+  toolLabel: "Check a TV serial number",
+  faqs: [
+    {
+      question: "Can I look up a TV serial number to see if it is stolen?",
+      answer:
+        "Yes, in part. Search the serial on SafeOrStolen, which checks owner theft reports and public web results. There is no single public national database of stolen TVs, so also match the receipt and, if in doubt, ask local police to check the serial.",
+    },
+    {
+      question: "Can Samsung, LG, Sony or another manufacturer tell me if a TV is stolen?",
+      answer:
+        "Manufacturer support pages can confirm a model and warranty details, but they are not public stolen-property searches. Use them to confirm the serial is real and matches the model, not to prove the TV is clean.",
+    },
+    {
+      question: "Why are cheap new TVs in boxes a red flag?",
+      answer:
+        "Organized retail theft rings often resell new electronics online for far below store prices. A sealed, current-model TV at a big discount with no receipt is one of the most common signs.",
+    },
+    {
+      question: "What happens if I buy a stolen TV?",
+      answer:
+        "If police identify it, the TV is usually returned to its owner and you lose what you paid. Keep the listing, messages and payment record, and report the seller to police and the marketplace.",
+    },
+    {
+      question: "My TV was stolen. What should I do?",
+      answer:
+        "File a police report with the serial number, then report it on SafeOrStolen so anyone who checks that serial sees it was stolen. If you do not know the serial, look for the box, receipt, or the brand account where you registered it.",
+    },
+  ],
+  related: [
+    { href: "/how-to-check-if-laptop-stolen", label: "How to check if a laptop or electronics is stolen" },
+    { href: "/how-to-tell-if-marketplace-item-is-stolen", label: "How to tell if a marketplace item is stolen" },
+    { href: "/report-stolen", label: "Report a stolen item" },
   ],
 };
 

@@ -123,6 +123,7 @@ import { Route as HowToCheckIfLicensePlateStolenRouteImport } from './routes/how
 import { Route as HowToCheckIfPhoneStolenRouteImport } from './routes/how-to-check-if-phone-stolen'
 import { Route as HowToCheckIfToolsStolenRouteImport } from './routes/how-to-check-if-tools-stolen'
 import { Route as HowToCheckIfTrailerAtvStolenRouteImport } from './routes/how-to-check-if-trailer-atv-stolen'
+import { Route as HowToCheckIfTvStolenRouteImport } from './routes/how-to-check-if-tv-stolen'
 import { Route as HowToFindStolenItemForSaleOnlineRouteImport } from './routes/how-to-find-stolen-item-for-sale-online'
 import { Route as HowToProveItemIsNotStolenRouteImport } from './routes/how-to-prove-item-is-not-stolen'
 import { Route as HowToReportAStolenItemRouteImport } from './routes/how-to-report-a-stolen-item'
@@ -975,6 +976,11 @@ const HowToCheckIfTrailerAtvStolenRoute =
     path: '/how-to-check-if-trailer-atv-stolen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const HowToCheckIfTvStolenRoute = HowToCheckIfTvStolenRouteImport.update({
+  id: '/how-to-check-if-tv-stolen',
+  path: '/how-to-check-if-tv-stolen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowToFindStolenItemForSaleOnlineRoute =
   HowToFindStolenItemForSaleOnlineRouteImport.update({
     id: '/how-to-find-stolen-item-for-sale-online',
@@ -2478,6 +2484,7 @@ export interface FileRoutesByFullPath {
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
   '/how-to-check-if-trailer-atv-stolen': typeof HowToCheckIfTrailerAtvStolenRoute
+  '/how-to-check-if-tv-stolen': typeof HowToCheckIfTvStolenRoute
   '/how-to-find-stolen-item-for-sale-online': typeof HowToFindStolenItemForSaleOnlineRoute
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
   '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
@@ -2851,6 +2858,7 @@ export interface FileRoutesByTo {
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
   '/how-to-check-if-trailer-atv-stolen': typeof HowToCheckIfTrailerAtvStolenRoute
+  '/how-to-check-if-tv-stolen': typeof HowToCheckIfTvStolenRoute
   '/how-to-find-stolen-item-for-sale-online': typeof HowToFindStolenItemForSaleOnlineRoute
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
   '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
@@ -3226,6 +3234,7 @@ export interface FileRoutesById {
   '/how-to-check-if-phone-stolen': typeof HowToCheckIfPhoneStolenRoute
   '/how-to-check-if-tools-stolen': typeof HowToCheckIfToolsStolenRoute
   '/how-to-check-if-trailer-atv-stolen': typeof HowToCheckIfTrailerAtvStolenRoute
+  '/how-to-check-if-tv-stolen': typeof HowToCheckIfTvStolenRoute
   '/how-to-find-stolen-item-for-sale-online': typeof HowToFindStolenItemForSaleOnlineRoute
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
   '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
@@ -3603,6 +3612,7 @@ export interface FileRouteTypes {
     | '/how-to-check-if-phone-stolen'
     | '/how-to-check-if-tools-stolen'
     | '/how-to-check-if-trailer-atv-stolen'
+    | '/how-to-check-if-tv-stolen'
     | '/how-to-find-stolen-item-for-sale-online'
     | '/how-to-prove-item-is-not-stolen'
     | '/how-to-report-a-stolen-item'
@@ -3976,6 +3986,7 @@ export interface FileRouteTypes {
     | '/how-to-check-if-phone-stolen'
     | '/how-to-check-if-tools-stolen'
     | '/how-to-check-if-trailer-atv-stolen'
+    | '/how-to-check-if-tv-stolen'
     | '/how-to-find-stolen-item-for-sale-online'
     | '/how-to-prove-item-is-not-stolen'
     | '/how-to-report-a-stolen-item'
@@ -4350,6 +4361,7 @@ export interface FileRouteTypes {
     | '/how-to-check-if-phone-stolen'
     | '/how-to-check-if-tools-stolen'
     | '/how-to-check-if-trailer-atv-stolen'
+    | '/how-to-check-if-tv-stolen'
     | '/how-to-find-stolen-item-for-sale-online'
     | '/how-to-prove-item-is-not-stolen'
     | '/how-to-report-a-stolen-item'
@@ -4726,6 +4738,7 @@ export interface RootRouteChildren {
   HowToCheckIfPhoneStolenRoute: typeof HowToCheckIfPhoneStolenRoute
   HowToCheckIfToolsStolenRoute: typeof HowToCheckIfToolsStolenRoute
   HowToCheckIfTrailerAtvStolenRoute: typeof HowToCheckIfTrailerAtvStolenRoute
+  HowToCheckIfTvStolenRoute: typeof HowToCheckIfTvStolenRoute
   HowToFindStolenItemForSaleOnlineRoute: typeof HowToFindStolenItemForSaleOnlineRoute
   HowToProveItemIsNotStolenRoute: typeof HowToProveItemIsNotStolenRoute
   HowToReportAStolenItemRoute: typeof HowToReportAStolenItemRoute
@@ -5733,6 +5746,13 @@ declare module '@tanstack/react-router' {
       path: '/how-to-check-if-trailer-atv-stolen'
       fullPath: '/how-to-check-if-trailer-atv-stolen'
       preLoaderRoute: typeof HowToCheckIfTrailerAtvStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-check-if-tv-stolen': {
+      id: '/how-to-check-if-tv-stolen'
+      path: '/how-to-check-if-tv-stolen'
+      fullPath: '/how-to-check-if-tv-stolen'
+      preLoaderRoute: typeof HowToCheckIfTvStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-find-stolen-item-for-sale-online': {
@@ -7803,6 +7823,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowToCheckIfPhoneStolenRoute: HowToCheckIfPhoneStolenRoute,
   HowToCheckIfToolsStolenRoute: HowToCheckIfToolsStolenRoute,
   HowToCheckIfTrailerAtvStolenRoute: HowToCheckIfTrailerAtvStolenRoute,
+  HowToCheckIfTvStolenRoute: HowToCheckIfTvStolenRoute,
   HowToFindStolenItemForSaleOnlineRoute: HowToFindStolenItemForSaleOnlineRoute,
   HowToProveItemIsNotStolenRoute: HowToProveItemIsNotStolenRoute,
   HowToReportAStolenItemRoute: HowToReportAStolenItemRoute,
