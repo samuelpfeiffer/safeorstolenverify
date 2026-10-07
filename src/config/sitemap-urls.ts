@@ -90,16 +90,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
   // CITY PAGES - TOP 10 (10)
   // ============================================
-  { path: '/stolen-check-los-angeles', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-new-york-city', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-chicago', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-houston', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-phoenix', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-philadelphia', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-san-antonio', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-san-diego', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-dallas', priority: 0.70, changefreq: 'monthly' },
-  { path: '/stolen-check-san-jose', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
   // BLOG ARTICLES (22)
@@ -118,7 +108,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
   // FREE TOOLS (1)
   // ============================================
-  { path: '/free-tools', priority: 0.85, changefreq: 'weekly' },
 
   // ============================================
   // HIGH-TRAFFIC SEARCH LANDING PAGES (7)
@@ -219,7 +208,6 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/washington-vin-lookup', priority: 0.80, changefreq: 'weekly' },
   { path: '/alabama-vin-lookup', priority: 0.60, changefreq: 'monthly' },
   { path: '/alaska-vin-lookup', priority: 0.60, changefreq: 'monthly' },
-  { path: '/arizona-vin-lookup', priority: 0.60, changefreq: 'monthly' },
   { path: '/arkansas-vin-lookup', priority: 0.60, changefreq: 'monthly' },
   { path: '/colorado-vin-lookup', priority: 0.60, changefreq: 'monthly' },
   { path: '/connecticut-vin-lookup', priority: 0.60, changefreq: 'monthly' },

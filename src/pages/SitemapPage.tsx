@@ -163,24 +163,7 @@ const SitemapPage = () => {
  { to: "/washington-dc-license-plate-lookup", label: "Washington DC" },
  ]
  },
- {
- title: "City Verification",
- icon: Building2,
- links: [
- { to: "/stolen-check-los-angeles", label: "Los Angeles" },
- { to: "/stolen-check-new-york-city", label: "New York City" },
- { to: "/stolen-check-chicago", label: "Chicago" },
- { to: "/stolen-check-houston", label: "Houston" },
- { to: "/stolen-check-phoenix", label: "Phoenix" },
- { to: "/stolen-check-philadelphia", label: "Philadelphia" },
- { to: "/stolen-check-san-antonio", label: "San Antonio" },
- { to: "/stolen-check-san-diego", label: "San Diego" },
- { to: "/stolen-check-dallas", label: "Dallas" },
- { to: "/stolen-check-san-jose", label: "San Jose" },
- { to: "/stolen-check-miami", label: "Miami" },
- ]
- },
- {
+  {
  title: "Marketplace Safety",
  icon: Users,
  links: [
@@ -271,7 +254,6 @@ const SitemapPage = () => {
  { to: "/stolen-database", label: "Stolen Database" },
  { to: "/community", label: "Community" },
  { to: "/transparency", label: "Transparency" },
- { to: "/free-tools", label: "Free Tools" },
  { to: "/news", label: "News" },
  { to: "/press", label: "Press" },
  { to: "/press-kit", label: "Press Kit" },
