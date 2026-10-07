@@ -47,10 +47,6 @@ const allRelatedPages: RelatedPage[] = [
  { title: 'Verify Item Before Meetup', href: '/blog/verify-item-before-meetup', category: 'blog' },
  
  // City pages
- { title: 'Los Angeles Stolen Check', href: '/stolen-check-los-angeles', category: 'city' },
- { title: 'New York City Stolen Check', href: '/stolen-check-new-york-city', category: 'city' },
- { title: 'Chicago Stolen Check', href: '/stolen-check-chicago', category: 'city' },
- { title: 'Houston Stolen Check', href: '/stolen-check-houston', category: 'city' },
  
  // Business pages
  { title: 'For Pawn Shops', href: '/for-pawn-shops', category: 'business' },

@@ -100,7 +100,7 @@ export const SOSFooter: React.FC = () => {
  title: 'Vehicle Checks',
  links: [
  { label: 'VIN Checker (all states)', to: '/vin-checker' },
- { label: 'Arizona VIN Lookup', to: '/arizona-vin-lookup' },
+ { label: 'Arizona Plate & VIN Lookup', to: '/arizona-license-plate-lookup' },
  { label: 'Florida VIN Lookup', to: '/florida-vin-lookup' },
  ]
  },
@@ -130,23 +130,7 @@ export const SOSFooter: React.FC = () => {
  links: [
  ]
  },
- {
- title: 'City Checks',
- links: [
- { label: 'Los Angeles', to: '/stolen-check-los-angeles' },
- { label: 'New York City', to: '/stolen-check-new-york-city' },
- { label: 'Chicago', to: '/stolen-check-chicago' },
- { label: 'Houston', to: '/stolen-check-houston' },
- { label: 'Phoenix', to: '/stolen-check-phoenix' },
- { label: 'Philadelphia', to: '/stolen-check-philadelphia' },
- { label: 'San Antonio', to: '/stolen-check-san-antonio' },
- { label: 'San Diego', to: '/stolen-check-san-diego' },
- { label: 'Dallas', to: '/stolen-check-dallas' },
- { label: 'San Jose', to: '/stolen-check-san-jose' },
- { label: 'Miami', to: '/stolen-check-miami' },
- ]
- },
- {
+  {
  title: 'Hub Pages',
  links: [
  { label: 'Firearms Serial Check', to: '/firearms-serial-number-check' },

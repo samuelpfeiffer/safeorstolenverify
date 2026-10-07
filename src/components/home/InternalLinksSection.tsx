@@ -22,7 +22,7 @@ export const InternalLinksSection = () => {
       icon: Car,
       links: [
         { to: "/vin-checker", label: "All states" },
-        { to: "/arizona-vin-lookup", label: "Arizona" },
+        { to: "/arizona-license-plate-lookup", label: "Arizona" },
         { to: "/florida-vin-lookup", label: "Florida" },
       ]
     },
@@ -33,18 +33,6 @@ export const InternalLinksSection = () => {
         { to: "/license-plate-lookup", label: "All states" },
         { to: "/arizona-license-plate-lookup", label: "Arizona" },
         { to: "/florida-license-plate-lookup", label: "Florida" },
-      ]
-    },
-    {
-      title: "City Verification",
-      icon: Building2,
-      links: [
-        { to: "/stolen-check-los-angeles", label: "Los Angeles" },
-        { to: "/stolen-check-new-york-city", label: "New York City" },
-        { to: "/stolen-check-chicago", label: "Chicago" },
-        { to: "/stolen-check-houston", label: "Houston" },
-        { to: "/stolen-check-phoenix", label: "Phoenix" },
-        { to: "/stolen-check-dallas", label: "Dallas" },
       ]
     },
     {

@@ -40,7 +40,8 @@ const titleCase = (slug: string) =>
 const STATES_WITH_PAGES = ['arizona', 'florida'];
 const PLATE_STATE_SLUGS = STATES_WITH_PAGES;
 
-const VIN_STATE_SLUGS = STATES_WITH_PAGES;
+// Oct 7 2026: Arizona's VIN page was merged into its plate page, which covers both.
+const VIN_STATE_SLUGS = ['florida'];
 
 
 export const STATE_PLATE_LINKS: StateLink[] = PLATE_STATE_SLUGS.map((slug) => ({
