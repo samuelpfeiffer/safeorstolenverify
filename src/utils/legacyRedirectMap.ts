@@ -730,3 +730,29 @@ export function resolveLegacyRedirect(pathname: string): string | null {
   }
   return null;
 }
+
+/**
+ * Retired auto-generated blog series. The database once held many numbered copies of each
+ * (".../chicago-vin-check-...-11", "-12", ...). Most are gone and were answering "Blog Post Not
+ * Found" with a 200, which Search Console reports as soft 404s. Only used when the post lookup
+ * finds nothing, so a numbered copy that still exists keeps rendering (and canonicalising) as before.
+ */
+const RETIRED_BLOG_SERIES: Record<string, string> = {
+  "chicago-vin-check-how-to-verify-used-cars-in-illinois": "/vin-checker",
+  "tesla-model-3-vin-verification-avoid-stolen-electric-vehicles": "/vin-checker",
+  "free-stolen-vehicle-check": "/vin-checker",
+  "los-angeles-imei-verification-phone-fraud-protection": "/stolen-check-los-angeles",
+  "stolen-item-checker-in-new-york-city-complete-2025-guide": "/stolen-check-new-york-city",
+  "samsung-galaxy-s24-ultra-stolen-check-complete-imei-guide": "/check-samsung-stolen",
+  "iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide": "/blog/how-to-check-if-iphone-stolen",
+  "macbook-pro-m3-serial-number-check-avoid-stolen-laptops": "/how-to-check-if-laptop-stolen",
+  "playstation-5-serial-number-verification-guide": "/check-ps5",
+  "facebook-marketplace-safety-2025-complete-stolen-item-guide": "/how-to-tell-if-marketplace-item-is-stolen",
+  "safeorstolen-offline-mode-verify-without-internet": "/app",
+  "safeorstolen-mobile-app-complete-guide-to-on-the-go-verification": "/app",
+  "how-law-enforcement-tracks-stolen-goods": "/how-to-check-if-item-stolen",
+};
+
+export function resolveRetiredBlogSlug(slug: string): string | null {
+  return RETIRED_BLOG_SERIES[slug] ?? RETIRED_BLOG_SERIES[slug.replace(/-\d+$/, "")] ?? null;
+}
