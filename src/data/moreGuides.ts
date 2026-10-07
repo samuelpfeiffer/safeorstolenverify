@@ -320,7 +320,7 @@ export const STOLEN_BIKE_VICTIM_GUIDE: DefinitiveGuideProps = {
   related: [
     { href: "/how-to-report-a-stolen-item", label: "How to report a stolen item" },
     { href: "/how-to-find-stolen-item-for-sale-online", label: "How to find your stolen item for sale online" },
-    { href: "/how-to-check-if-bike-stolen", label: "How to check if a bike is stolen (buyers)" },
+    { href: "/check-bike", label: "How to check if a bike is stolen (buyers)" },
   ],
 };
 

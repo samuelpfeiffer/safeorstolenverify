@@ -84,7 +84,7 @@ export const SOSFooter: React.FC = () => {
  { label: 'Check Android', to: '/check-android' },
   { label: 'Laptop Guide', to: '/how-to-check-if-laptop-stolen' },
  { label: 'Check Bike', to: '/check-bike' },
-  { label: 'Bike & E-Bike Guide', to: '/how-to-check-if-bike-stolen' },
+  { label: 'Bike & E-Bike Guide', to: '/check-bike' },
  { label: 'Check Xbox', to: '/check-xbox' },
  { label: 'Check PS5', to: '/check-ps5' },
   { label: 'Boat Guide', to: '/how-to-check-if-boat-stolen' },
