@@ -43,7 +43,7 @@ const ROWS: { group: string; rows: Row[] }[] = [
   {
     group: 'Bikes, scooters and firearms',
     rows: [
-      { item: 'Bicycle or e-bike', id: 'Frame serial number', where: 'Stamped under the bottom bracket, where the pedals meet the frame. Sometimes on the head tube or rear dropout.', check: '/how-to-check-if-bike-stolen', checkLabel: 'How to check a bike' },
+      { item: 'Bicycle or e-bike', id: 'Frame serial number', where: 'Stamped under the bottom bracket, where the pedals meet the frame. Sometimes on the head tube or rear dropout.', check: '/check-bike', checkLabel: 'How to check a bike' },
       { item: 'Electric scooter', id: 'Serial number', where: 'Under the deck or on the stem, and usually in the scooter’s app.', check: '/serial-number-checker', checkLabel: 'Check a serial' },
       { item: 'Firearm', id: 'Serial number', where: 'Stamped on the frame or receiver. Guns made in the US since 1968 must carry one; never buy one that is missing or altered.', check: '/how-to-check-if-gun-is-stolen', checkLabel: 'How to check a gun' },
     ],
