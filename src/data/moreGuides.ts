@@ -804,7 +804,7 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
     },
   ],
   related: [
-    { href: "/check-jewelry-stolen", label: "Jewelry check" },
+    { href: "/check-jewelry", label: "Jewelry check" },
     { href: "/how-to-tell-if-marketplace-item-is-stolen", label: "Marketplace buying guide" },
   ],
 };

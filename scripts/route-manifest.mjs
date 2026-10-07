@@ -68,7 +68,8 @@ export function routesFromRouter() {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) { walk(full); continue; }
-      if (!entry.name.endsWith('.tsx') && !entry.name.endsWith('.ts')) continue;
+      // .ts route files are server API endpoints (certificate-api, reports-api, verify-api), not pages.
+      if (!entry.name.endsWith('.tsx')) continue;
       const rel = path.relative(routesDir, full).replace(/\\/g, '/');
       if (rel === '__root.tsx') continue;
       let p = '/' + rel.replace(/\.(tsx|ts)$/, '');

@@ -151,7 +151,7 @@ export const SOSFooter: React.FC = () => {
  links: [
  { label: 'Firearms Serial Check', to: '/firearms-serial-number-check' },
  { label: 'Free Vehicle Check', to: '/vin-checker' },
- { label: 'Serial Number Check', to: '/serial-number-stolen-check' },
+ { label: 'Serial Number Check', to: '/serial-number-checker' },
  { label: 'Stolen Gun Database', to: '/stolen-gun-database' },
  { label: 'Gun Serial Lookup', to: '/gun-serial-number-lookup' },
  { label: 'Stolen Phone Checker', to: '/stolen-phone-checker' },

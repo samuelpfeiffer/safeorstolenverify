@@ -27,7 +27,7 @@ const SitemapPage = () => {
  { to: "/check-if-stolen", label: "Check If Stolen" },
  { to: "/how-to-check-if-item-stolen", label: "How to Check If Item Stolen" },
  { to: "/partial-serial-number-search", label: "Partial Serial Number Search" },
- { to: "/verify/pawnshops", label: "Pawn Shop Verification" },
+ { to: "/for-pawn-shops", label: "Pawn Shop Verification" },
  ]
  },
  {
@@ -68,7 +68,6 @@ const SitemapPage = () => {
  { to: "/check-camera-stolen", label: "Camera Equipment Check" },
  { to: "/how-to-check-if-tools-stolen", label: "Power Tools Check" },
  { to: "/check-firearm-serial", label: "Firearm Serial Check" },
- { to: "/check-jewelry-stolen", label: "Jewelry Check" },
  ]
  },
  {
@@ -77,7 +76,6 @@ const SitemapPage = () => {
  links: [
  { to: "/firearms-serial-number-check", label: "Firearms Serial Number Check" },
  { to: "/vin-checker", label: "Free Stolen Vehicle Check" },
- { to: "/serial-number-stolen-check", label: "Serial Number Stolen Check" },
  { to: "/stolen-gun-database", label: "Stolen Gun Database" },
  { to: "/gun-serial-number-lookup", label: "Gun Serial Number Lookup" },
  { to: "/stolen-phone-checker", label: "Stolen Phone Checker" },

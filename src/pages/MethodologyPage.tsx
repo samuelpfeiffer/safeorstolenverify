@@ -228,7 +228,7 @@ const MethodologyPage = () => {
 
             <p className="text-muted-foreground mt-4">
               For a practical walkthrough of verifying an item before buying it, see{' '}
-              <Link to="/learn" className="text-primary underline font-medium">
+              <Link to="/how-to-verify-a-used-item" className="text-primary underline font-medium">
                 the secondhand verification guide
               </Link>
               .

@@ -307,7 +307,7 @@ const SMSVerifyPage = () => {
  { label: "Power Tools", link: "/how-to-check-if-tools-stolen" },
  { label: "Cameras", link: "/check-camera-stolen" },
  { label: "Watches", link: "/check-watch-stolen" },
- { label: "Jewelry", link: "/check-jewelry-stolen" },
+ { label: "Jewelry", link: "/check-jewelry" },
  { label: "License Plates", link: "/license-plate-lookup" }
  ].map((item, i) => (
  <Link key={i} to={item.link} className="bg-background border rounded-lg p-4 text-center hover:border-primary transition-colors">

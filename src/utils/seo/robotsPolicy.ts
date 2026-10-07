@@ -40,7 +40,7 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
   }
 
   // Transactional / success / utility pages
-  if (/^\/(checkout-redirect|verification-success|payment-success|report-stolen)(\/|$)/i.test(path)) {
+  if (/^\/(checkout-redirect|verification-success|payment-success)(\/|$)/i.test(path)) {
     return true;
   }
 
