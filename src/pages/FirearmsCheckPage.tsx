@@ -50,7 +50,7 @@ const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'Is there a national stolen gun database I can search?', a: "Not one the public can search. The FBI's national stolen-gun file is only open to law enforcement. SafeOrStolen brings together the records the public can use, including police theft and loss reports from 34 states and live Ohio records. A no-match result means nothing was found in those records, not proof the gun was never stolen." },
  { q: 'My state is not on the list. Can I still check a gun?', a: "Yes. Every check still searches SafeOrStolen's own theft reports and public web results, and a gun reported stolen in one of the 34 states can turn up for sale anywhere. For an extra check, call your local police non-emergency line and ask whether they will run the serial for a private buyer. Some departments will and some won't." },
  { q: 'Is it legal to check a gun serial number?', a: 'Yes. Looking up whether a serial number has been reported stolen is legal for anyone. SafeOrStolen is a private service and is not a government agency. It never shows who owns a gun or who reported it.' },
- { q: "Does a clean result guarantee the gun isn't stolen?", a: 'No. A clean SafeOrStolen result means no report was found in the records searched at the time of the check. Many stolen guns are never reported, and our state records are historical, mostly from 2006 to 2017. Also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
+ { q: "Does a clean result guarantee the gun isn't stolen?", a: 'No. A clean SafeOrStolen result means no report was found in the records searched at the time of the check. Many stolen guns are never reported, and our state records are historical, filed through 2017 (the years covered vary by state). Also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
  { q: 'What should I do if the gun comes back as stolen?', a: "Don't buy it and don't confront the seller. Leave, and give the serial number and the seller's details to your local police on their non-emergency line." },
  { q: 'Will the seller know I checked the serial number?', a: 'No. Searches on SafeOrStolen are private and the seller is never told.' },
  { q: 'How do I report my own stolen gun?', a: 'File a report with your local police first and give them the serial number. Then report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial number before buying will see it.' },
@@ -60,8 +60,8 @@ const FirearmsCheckPage = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Free Gun Serial Number Lookup — Is This Gun Stolen? | SafeOrStolen"
- description="Free gun serial number lookup. Search over 240,000 police firearm theft and loss reports from 34 states plus live Ohio records, spot altered serials, and know what to do before you buy."
+ title="Free Gun Serial Number Lookup, Any State: Is This Gun Stolen? | SafeOrStolen"
+ description="Free gun serial number lookup for any state. Search 242,839 police firearm theft and loss reports from 33 states and DC plus live Ohio records, and spot altered serials before you buy."
  canonical="/firearms-check"
  />
 
@@ -74,10 +74,10 @@ const FirearmsCheckPage = () => {
  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
  Free Gun Serial Number Lookup
  <br />
- <span className="text-primary">Is This Gun Stolen?</span>
+ <span className="text-primary">Any State. Is This Gun Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Search over 240,000 police firearm theft and loss reports from 34 states, plus live Ohio records, before you buy.
+ Check a gun from any state. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records, before you buy.
  </p>
 
 
@@ -206,7 +206,7 @@ const FirearmsCheckPage = () => {
  Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
- These are reports filed with police, mostly from 2006 to 2017. Open a state for its most reported brands and models, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">national stolen gun statistics</Link>. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.
+ These are reports filed with police, filed through 2017 (the years covered vary by state). Open a state for its most reported brands and models, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">national stolen gun statistics</Link>. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.
  </p>
  <div className="overflow-x-auto rounded-xl border border-border mb-4">
  <table className="w-full text-left text-sm">
