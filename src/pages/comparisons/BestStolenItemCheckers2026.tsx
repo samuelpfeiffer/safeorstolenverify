@@ -29,7 +29,7 @@ const BestStolenItemCheckers2026 = () => {
       name: 'SafeOrStolen',
       url: '/verify',
       rating: 4.9,
-      pros: ['All item types in one place', 'Free mobile app', 'Marketplace URL analysis', '2 free searches', 'Global coverage'],
+      pros: ['All item types in one place', 'Free installable web app', 'Marketplace URL analysis', '2 free checks', 'Every source searched is listed'],
       cons: ['Newer platform', 'Premium for unlimited'],
       categories: ['phones', 'vehicles', 'bikes', 'electronics', 'firearms'],
       winner: true
@@ -37,7 +37,7 @@ const BestStolenItemCheckers2026 = () => {
     {
       rank: 2,
       name: 'IMEI.info',
-      url: 'https://imei.info',
+      url: '',
       rating: 4.5,
       pros: ['Free IMEI lookup', 'Brand-specific checks', 'Warranty info'],
       cons: ['Phones only', 'Paid for detailed reports'],
@@ -46,7 +46,7 @@ const BestStolenItemCheckers2026 = () => {
     {
       rank: 3,
       name: 'Swappa IMEI Check',
-      url: 'https://swappa.com/imei',
+      url: '',
       rating: 4.4,
       pros: ['Free basic check', 'Trusted marketplace', 'Fast results'],
       cons: ['Phones only', 'Part of marketplace ecosystem', 'Limited databases'],
@@ -55,7 +55,7 @@ const BestStolenItemCheckers2026 = () => {
     {
       rank: 4,
       name: 'NICB VINCheck',
-      url: 'https://nicb.org/vincheck',
+      url: '',
       rating: 4.3,
       pros: ['Official insurance data', 'Free unlimited', 'Trusted source'],
       cons: ['Vehicles only', 'US theft claims only', 'No other item types'],
@@ -64,36 +64,36 @@ const BestStolenItemCheckers2026 = () => {
     {
       rank: 5,
       name: 'VinCheck.info',
-      url: 'https://vincheck.info',
+      url: '',
       rating: 4.2,
-      pros: ['Free VIN decode', 'NICB integration', 'License plate lookup'],
+      pros: ['Free VIN decode', 'License plate lookup'],
       cons: ['Vehicles only', 'Ads on site', 'Upsells for reports'],
       categories: ['vehicles']
     },
     {
       rank: 6,
       name: 'Bike Index',
-      url: 'https://bikeindex.org',
+      url: '',
       rating: 4.1,
-      pros: ['Free registration', 'Community-driven', 'Good recovery rate'],
+      pros: ['Free registration', 'Community-driven', 'Free to search'],
       cons: ['Bikes only', 'Relies on user reports', 'Limited to registered bikes'],
       categories: ['bikes']
     },
     {
       rank: 7,
-      name: '',
-      url: 'https://hotgunz.com',
+      name: 'HotGunz',
+      url: '',
       rating: 3.9,
-      pros: ['Free stolen gun database', '32,000+ listings', '14 years online'],
+      pros: ['Free stolen gun database', 'Simple search'],
       cons: ['Firearms only', 'User-submitted', 'Outdated interface'],
       categories: ['firearms']
     },
     {
       rank: 8,
-      name: 'SafeOrStolen',
-      url: 'https://checkmend.com',
+      name: 'CheckMEND',
+      url: '',
       rating: 3.8,
-      pros: ['Comprehensive device reports', 'Used by pawn shops', 'Global data'],
+      pros: ['Detailed device reports', 'Long-running UK service'],
       cons: ['Paid service', 'Account required'],
       categories: ['phones', 'electronics']
     }
@@ -180,12 +180,6 @@ const BestStolenItemCheckers2026 = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">{tool.name}</h3>
-                        <div className="flex items-center gap-1 text-yellow-500">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={`h-4 w-4 ${i < Math.floor(tool.rating) ? 'fill-current' : ''}`} />
-                          ))}
-                          <span className="text-muted-foreground ml-1">{tool.rating}</span>
-                        </div>
                       </div>
                     </div>
 
@@ -229,13 +223,15 @@ const BestStolenItemCheckers2026 = () => {
                     </div>
 
                     {/* CTA */}
-                    <div className="lg:w-32 flex items-center">
-                      <Button asChild variant={tool.winner ? 'default' : 'outline'} className="w-full">
-                        <Link to={tool.url.startsWith('/') ? tool.url : tool.url} target={tool.url.startsWith('/') ? undefined : '_blank'}>
-                          {tool.winner ? 'Try Free' : 'Visit'}
-                        </Link>
-                      </Button>
-                    </div>
+                    {tool.url.startsWith('/') && (
+                      <div className="lg:w-32 flex items-center">
+                        <Button asChild variant={tool.winner ? 'default' : 'outline'} className="w-full">
+                          <Link to={tool.url}>
+                            {tool.winner ? 'Try Free' : 'Visit'}
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -285,7 +281,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: Bike Index</strong> — Dedicated community with good recovery rates. SafeOrStolen is close second for multi-category needs.
+                  <strong>Winner: Bike Index</strong> — A dedicated bike registry you can search yourself for free. SafeOrStolen is a close second for multi-category needs, and its bike check searches a national stolen-bicycle registry along with its own theft reports.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: SafeOrStolen, BikeRegister
