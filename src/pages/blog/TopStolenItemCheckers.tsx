@@ -79,8 +79,8 @@ const TopStolenItemCheckers = () => {
       answer: "Free tools like IMEI.info and NICB VINCheck are useful within their limits. IMEI.info shows device details but is not a police theft-report search. NICB VINCheck only covers vehicle theft reported through insurance claims. HotGunz relies on gun owners reporting their own stolen guns. They are a good starting point, and no single tool covers every record, so check more than one source on a big purchase."
     },
     {
-      question: "How much does Carfax cost compared to SafeOrStolen?",
-      answer: "Carfax charges $44.99 per single vehicle report or $99.99 for 6 reports. SafeOrStolen costs $0.99/check or $10/month unlimited across ALL item types (not just vehicles). If you only need vehicle theft verification (not full vehicle history), SafeOrStolen provides comparable theft data at a fraction of the cost."
+      question: "How does Carfax compare to SafeOrStolen?",
+      answer: "Carfax sells paid vehicle history reports covering accidents, ownership and service records; check its site for current prices. SafeOrStolen costs $0.99 a check or $10 a month for unlimited checks across all item types. A SafeOrStolen VIN check decodes the vehicle, lists open recalls and searches its own theft reports and the web, plus Arizona law-enforcement records for Arizona VINs. It is not a full vehicle history report."
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
@@ -229,7 +229,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-semibold">IMEI.info</td>
                       <td className="p-3">Phones only</td>
                       <td className="p-3">Device details</td>
-                      <td className="p-3">Free unlimited</td>
+                      <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Phone-only checks</td>
                     </tr>
@@ -237,7 +237,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-semibold">Carfax</td>
                       <td className="p-3">Vehicles only</td>
                       <td className="p-3">1 (vehicle history)</td>
-                      <td className="p-3">$44.99/report</td>
+                      <td className="p-3">Paid per report</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Full vehicle history</td>
                     </tr>
@@ -245,7 +245,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-semibold">CheckMEND (UK)</td>
                       <td className="p-3">Phones, electronics</td>
                       <td className="p-3">UK-focused</td>
-                      <td className="p-3">£7/check</td>
+                      <td className="p-3">Paid per check</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">UK buyers</td>
                     </tr>
@@ -253,7 +253,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-semibold">Swappa</td>
                       <td className="p-3">Phones only</td>
                       <td className="p-3">Carrier blacklists</td>
-                      <td className="p-3">Free (10/day)</td>
+                      <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Swappa marketplace</td>
                     </tr>
@@ -261,7 +261,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-semibold">NICB VINCheck</td>
                       <td className="p-3">Vehicles only</td>
                       <td className="p-3">Insurance claims</td>
-                      <td className="p-3">Free (5/day)</td>
+                      <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Quick VIN check</td>
                     </tr>
@@ -269,7 +269,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-semibold">HotGunz</td>
                       <td className="p-3">Firearms only</td>
                       <td className="p-3">Owner-reported</td>
-                      <td className="p-3">Free unlimited</td>
+                      <td className="p-3">Free</td>
                       <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Gun serial lookup</td>
                     </tr>
@@ -353,13 +353,13 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">2. IMEI.info — Best Free Phone-Only Checker</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Free · Phones only</p>
               <p className="text-muted-foreground mb-4">
-                IMEI.info is a popular free service for checking phone IMEI numbers against carrier blacklists. It provides basic device information including model, storage, color, and blacklist status. It's fast, free, and unlimited — making it a solid choice for phone-only verification. You can ask your carrier if your device is blacklisted.
+                IMEI.info is a popular free service for checking phone IMEI numbers against carrier blacklists. It provides basic device information including model, storage, color, and blacklist status. It's fast and free, making it a solid choice for phone-only verification. You can ask your carrier if your device is blacklisted.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Strengths</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><Yes /> Free and unlimited</li>
+                    <li><Yes /> Free</li>
                     <li><Yes /> Device specs included</li>
                     <li><Yes /> Fast results</li>
                   </ul>
@@ -381,7 +381,7 @@ const TopStolenItemCheckers = () => {
             {/* 3. Carfax */}
             <section id="carfax">
               <h2 className="text-2xl font-bold mb-2">3. Carfax — Best Detailed Vehicle History</h2>
-              <p className="text-sm text-muted-foreground font-medium mb-4">carfax.com · $44.99/report · Vehicles only</p>
+              <p className="text-sm text-muted-foreground font-medium mb-4">Paid reports · Vehicles only</p>
               <p className="text-muted-foreground mb-4">
                 Carfax is the industry standard for detailed vehicle history reports including accident history, ownership chain, mileage verification, service records, and theft status. It's the most comprehensive option for vehicles — but it's expensive and vehicles-only.
               </p>
@@ -397,21 +397,21 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> $44.99 per report (expensive)</li>
+                    <li><No /> Paid per report</li>
                     <li><No /> Vehicles only</li>
                     <li><No /> No phones, firearms, electronics</li>
                   </ul>
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> provides comparable theft data at approximately 98% less cost ($10/mo vs $44.99/report).
+                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> decodes the VIN, lists open recalls and searches SafeOrStolen's theft reports and the web for $0.99 a check or $10 a month.
               </p>
             </section>
 
             {/* 4. CheckMEND (UK) */}
             <section id="checkmend">
               <h2 className="text-2xl font-bold mb-2">4. CheckMEND (Recipero) — Best for UK Buyers</h2>
-              <p className="text-sm text-muted-foreground font-medium mb-4">checkmend.com · £7/check · Phones and electronics</p>
+              <p className="text-sm text-muted-foreground font-medium mb-4">Paid per check · Phones and electronics</p>
               <p className="text-muted-foreground mb-4">
                 CheckMEND, powered by Recipero, specializes in device verification primarily for the UK market. It checks phones and electronics against UK theft reports and carrier blacklists. It's the standard verification tool for UK pawn shops and secondhand retailers.
               </p>
@@ -427,7 +427,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> £7 per check (expensive)</li>
+                    <li><No /> Paid per check</li>
                     <li><No /> UK-focused data (limited US coverage)</li>
                     <li><No /> No firearms or vehicles</li>
                   </ul>
@@ -441,9 +441,9 @@ const TopStolenItemCheckers = () => {
             {/* 5. Swappa */}
             <section id="swappa">
               <h2 className="text-2xl font-bold mb-2">5. Swappa — Best Phone Marketplace with Built-In Checks</h2>
-              <p className="text-sm text-muted-foreground font-medium mb-4">swappa.com · Free (10/day limit) · Phones only</p>
+              <p className="text-sm text-muted-foreground font-medium mb-4">Free · Phones only</p>
               <p className="text-muted-foreground mb-4">
-                Swappa is a phone resale marketplace that includes built-in IMEI verification. When buying through Swappa, devices are automatically checked against carrier blacklists before listing. Their standalone ESN/IMEI checker is available for free with a 10-check daily limit.
+                Swappa is a phone resale marketplace that includes built-in IMEI verification. When buying through Swappa, devices are automatically checked against carrier blacklists before listing. Their standalone ESN/IMEI checker is free to use.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -457,8 +457,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> 10 checks/day limit</li>
-                    <li><No /> Phones only</li>
+                                        <li><No /> Phones only</li>
                     <li><No /> Carrier blacklists only</li>
                     <li><No /> No police database access</li>
                   </ul>
@@ -472,9 +471,9 @@ const TopStolenItemCheckers = () => {
             {/* 6. NICB VINCheck */}
             <section id="nicb-vincheck">
               <h2 className="text-2xl font-bold mb-2">6. NICB VINCheck — Best Free Vehicle Theft Check</h2>
-              <p className="text-sm text-muted-foreground font-medium mb-4">Free (5/day) · Vehicles only</p>
+              <p className="text-sm text-muted-foreground font-medium mb-4">Free · Vehicles only</p>
               <p className="text-muted-foreground mb-4">
-                NICB (National Insurance Crime Bureau) offers a free VINCheck service that searches insurance theft and salvage/junk records. It's backed by the insurance industry and provides reliable data on whether a vehicle has been reported stolen through insurance claims. Limited to 5 searches per day.
+                NICB (National Insurance Crime Bureau) offers a free VINCheck service that searches insurance theft and salvage/junk records. It's backed by the insurance industry and provides reliable data on whether a vehicle has been reported stolen through insurance claims.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -488,8 +487,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><No /> 5 searches per day</li>
-                    <li><No /> Vehicles only</li>
+                                        <li><No /> Vehicles only</li>
                     <li><No /> Only insurance claims (not police reports)</li>
                   </ul>
                 </div>
@@ -510,7 +508,7 @@ const TopStolenItemCheckers = () => {
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Strengths</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><Yes /> Free and unlimited</li>
+                    <li><Yes /> Free</li>
                     <li><Yes /> Simple interface</li>
                     <li><Yes /> Community-driven</li>
                   </ul>
@@ -592,7 +590,7 @@ const TopStolenItemCheckers = () => {
             {/* 10. eBay Verification */}
             <section id="ebay-verification">
               <h2 className="text-2xl font-bold mb-2">10. eBay's Built-In Verification — Best for eBay Shoppers</h2>
-              <p className="text-sm text-muted-foreground font-medium mb-4">ebay.com · Built into platform · eBay listings only</p>
+              <p className="text-sm text-muted-foreground font-medium mb-4">Built into platform · eBay listings only</p>
               <p className="text-muted-foreground mb-4">
                 eBay has internal fraud detection and buyer protection that can identify some stolen goods. Their Money Back Guarantee covers most purchases. However, eBay's systems don't check external stolen property databases — they primarily rely on seller reputation and internal fraud patterns.
               </p>
@@ -630,7 +628,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
-                  <p className="text-sm text-muted-foreground">Use Carfax ($44.99) for detailed accident/service/ownership history. For theft verification only, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> is significantly cheaper ($10/mo).</p>
+                  <p className="text-sm text-muted-foreground">Use Carfax for detailed accident, service and ownership history. For a quick VIN decode, recall list and theft-report search, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> costs $0.99 a check or $10 a month.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>

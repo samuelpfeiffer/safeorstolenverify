@@ -65,7 +65,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       name: 'Verify with SafeOrStolen',
-      text: 'Run the serial number or IMEI through SafeOrStolen to check against our reported stolen items, public web results, and AI analysis. This takes just a few seconds.',
+      text: 'Run the serial number or IMEI through SafeOrStolen to check it against SafeOrStolen\'s own theft reports and public web results. This takes a few seconds.',
       url: 'https://safeorstolen.com/verify'
     },
     {
@@ -200,8 +200,8 @@ export default function ProtectYourselfBuyingUsedElectronics() {
                   <h3 className="text-xl font-semibold text-foreground">Verify with SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  Run the serial number or IMEI through SafeOrStolen's database to check against law enforcement 
-                  records, public web results, and AI analysis. This takes just a few seconds.
+                  Run the serial number or IMEI through SafeOrStolen to check it against SafeOrStolen's own theft
+                  reports and public web results. Every source searched is listed, and it takes a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />
@@ -277,22 +277,22 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               BEFORE purchase is critical.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">SafeOrStolen Mobile App Advantage</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Check at the meetup with the web app</h2>
             <p className="text-muted-foreground mb-4">
-              Unlike competitors that might focus solely on web-based verification, SafeOrStolen
-              provides a free mobile app with barcode scanning. You can verify devices on-the-spot during meetups in 
-              just 3 seconds—competitors require 30+ seconds of manual typing.
+              SafeOrStolen has a free web app you can add to your phone's home screen from
+              safeorstolen.com/app. It can scan the IMEI or serial barcode, so you can check a device at the meetup
+              in a few seconds instead of typing a long number.
             </p>
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-3 text-foreground flex items-center gap-2">
                 <Smartphone className="h-5 w-5" />
-                Download SafeOrStolen Mobile App
+                Install the SafeOrStolen web app
               </h3>
               <p className="text-muted-foreground mb-4">
-                Scan barcodes instantly, verify offline, and protect yourself during in-person transactions.
+                Scan the barcode, check the number, and keep a dated record of the check before you pay.
               </p>
               <Button onClick={() => navigate('/app')} size="lg" className="gap-2">
-                Download Free App
+                Get the Free Web App
               </Button>
             </div>
 
@@ -325,7 +325,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Protect Yourself Before Buying</h3>
               <p className="text-muted-foreground mb-6">
-                Verify any electronic device in 3 seconds with SafeOrStolen. From $0.99/check or $10/month unlimited.
+                Check any electronic device in a few seconds with SafeOrStolen. From $0.99/check or $10/month unlimited.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
                 <Shield className="h-5 w-5" />

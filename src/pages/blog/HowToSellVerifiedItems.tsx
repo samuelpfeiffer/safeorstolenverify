@@ -166,7 +166,8 @@ const HowToSellVerifiedItems = () => {
             </div>
             <p className="text-muted-foreground text-sm">
               SafeOrStolen lets sellers check identifiers using its own
-              stolen-item reports, public web results, and AI analysis. After a
+              theft reports and public web results, plus item-specific records
+              for bikes, guns, and Arizona vehicles. After a
               clean result, the seller can keep and share a Proof of Clean
               Purchase record showing when the check was performed. It is a
               verification record, not a title, ownership guarantee, or legal

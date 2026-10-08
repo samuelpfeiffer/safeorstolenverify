@@ -7,7 +7,7 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const VsBikeIndex = () => {
   const comparisonData = [
-    { feature: 'Mobile App', sos: true, bikeindex: false },
+    { feature: 'Installable Web App', sos: true, bikeindex: false },
     { feature: 'Bicycle Verification', sos: true, bikeindex: true },
     { feature: 'Phone/IMEI Verification', sos: true, bikeindex: false },
     { feature: 'Car/VIN Verification', sos: true, bikeindex: false },
@@ -15,9 +15,9 @@ const VsBikeIndex = () => {
     { feature: 'Firearms Verification', sos: true, bikeindex: false },
     { feature: 'License Plate Lookup', sos: true, bikeindex: false },
     { feature: 'Marketplace URL Paste', sos: true, bikeindex: false },
-    { feature: 'Police Partnerships', sos: true, bikeindex: true },
-    { feature: 'Free Searches', sos: '2 free', bikeindex: 'Unlimited' },
-    { feature: 'Real-Time Databases', sos: 'multiple sources', bikeindex: 'User reports' },
+    { feature: 'Police Partnerships', sos: false, bikeindex: true },
+    { feature: 'Free Searches', sos: '2 free', bikeindex: 'Free' },
+    { feature: 'Sources Searched', sos: 'Bike registry, own reports, web', bikeindex: 'User reports' },
     { feature: 'API Access', sos: true, bikeindex: true },
   ];
 
@@ -25,7 +25,7 @@ const VsBikeIndex = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "SafeOrStolen: Best Bike Index Alternative - Bicycle Theft Verification",
-    "description": "Compare SafeOrStolen and Bike Index for stolen bicycle verification. SafeOrStolen's all-in-one mobile app and multi-item coverage is the better choice for secondhand buyers.",
+    "description": "Compare SafeOrStolen and Bike Index for stolen bicycle verification. SafeOrStolen checks bikes, phones, cars and more in one place, with a free installable web app.",
     "url": "https://safeorstolen.com/vs-bikeindex"
   };
 
@@ -38,7 +38,7 @@ const VsBikeIndex = () => {
         "name": "What's the difference between SafeOrStolen and Bike Index?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bike Index is a free bicycle-only registry with 1.5M+ bikes and police partnerships. SafeOrStolen is an all-in-one verification platform checking bikes, phones, cars, electronics, and more from multiple sources. SafeOrStolen also has a mobile app for on-the-spot verification."
+          "text": "Bike Index is a free, bicycle-only registry where owners register bikes and mark them stolen. SafeOrStolen checks bikes, phones, cars, electronics, firearms and more in one place, and lists every source it searched. SafeOrStolen also has a free installable web app for checking items at a meetup."
         }
       },
       {
@@ -46,15 +46,15 @@ const VsBikeIndex = () => {
         "name": "Is Bike Index really free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Bike Index is 100% free and open source. However, it only covers bicycles. SafeOrStolen offers 2 free searches across all item types (bikes, phones, cars, electronics, firearms) with paid plans for unlimited access."
+          "text": "Yes, Bike Index is free and open source, but it only covers bicycles. SafeOrStolen gives you 2 free checks across all item types (bikes, phones, cars, electronics, firearms), then $0.99 for a single check or $10 a month for unlimited checks."
         }
       },
       {
         "@type": "Question",
-        "name": "Does SafeOrStolen check Bike Index data?",
+        "name": "What does a SafeOrStolen bike check search?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SafeOrStolen integrates with Bike Index's API to include their stolen bicycle registry in our verification results. When you check a bicycle serial number on SafeOrStolen, we query Bike Index along with other databases for comprehensive coverage."
+          "text": "A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports, and public web results such as listings and posts that mention the serial number. The result lists every source searched. You can also search Bike Index yourself for free."
         }
       },
       {
@@ -62,7 +62,7 @@ const VsBikeIndex = () => {
         "name": "Which service should I use for stolen bike checks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "If you only buy used bicycles, Bike Index is free and excellent. If you buy multiple item types (phones, cars, bikes, electronics), SafeOrStolen is better because it verifies everything in one place. SafeOrStolen also has a mobile app for checking items before meetups."
+          "text": "If you only buy used bicycles, Bike Index is free and worth searching. If you buy several item types (phones, cars, bikes, electronics), SafeOrStolen checks them all in one place. SafeOrStolen also has a free installable web app for checking items before meetups."
         }
       }
     ]
@@ -72,7 +72,7 @@ const VsBikeIndex = () => {
     <>
       <PageSEO
         title="Best Bike Index Alternative 2026 | SafeOrStolen"
-        description="Compare SafeOrStolen and Bike Index for stolen bicycle verification. Multi-item checking with a mobile app. See the full comparison."
+        description="Compare SafeOrStolen and Bike Index for stolen bicycle verification. Multi-item checking with a free installable web app. See the full comparison."
         keywords="Bike Index alternative, bicycle theft verification, stolen bike checker, bike serial number lookup, best Bike Index alternative, bicycle registry comparison"
         canonical="/vs-bikeindex"
         structuredData={[structuredData, faqSchema]}
@@ -130,11 +130,11 @@ const VsBikeIndex = () => {
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
-                        Mobile app for on-the-spot verification
+                        Free installable web app for on-the-spot checks
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
-                        multiple sources
+                        Searches a national stolen-bicycle registry, its own theft reports and the web
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
@@ -162,11 +162,7 @@ const VsBikeIndex = () => {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
-                        100% free, unlimited searches
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-green-500" />
-                        1.5M+ registered bicycles
+                        Free to search
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
@@ -223,13 +219,13 @@ const VsBikeIndex = () => {
                       {comparisonData.map((row, index) => (
                         <tr key={index} className="border-b border-border last:border-0">
                           <td className="p-4 font-medium">
-                            {row.feature === 'Mobile App' && (
+                            {row.feature === 'Installable Web App' && (
                               <div className="flex items-center gap-2">
                                 <Smartphone className="h-4 w-4 text-primary" />
                                 <span>{row.feature}</span>
                               </div>
                             )}
-                            {row.feature !== 'Mobile App' && row.feature}
+                            {row.feature !== 'Installable Web App' && row.feature}
                           </td>
                           <td className="p-4 text-center bg-primary/5">
                             {typeof row.sos === 'boolean' ? (
@@ -275,12 +271,12 @@ const VsBikeIndex = () => {
                 <Card>
                   <CardHeader>
                     <Smartphone className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Mobile App</CardTitle>
+                    <CardTitle>Installable Web App</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      SafeOrStolen has iOS and Android apps for on-the-spot verification. 
-                      Check items before meetups without a laptop.
+                      SafeOrStolen has a free installable web app that works on iPhone and Android.
+                      Check items at a meetup without a laptop.
                     </p>
                   </CardContent>
                 </Card>
@@ -301,12 +297,12 @@ const VsBikeIndex = () => {
                 <Card>
                   <CardHeader>
                     <Car className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>multiple sources</CardTitle>
+                    <CardTitle>Sources Listed</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      We check SafeOrStolen's own stolen-item reports, public web results and AI analysis, plus BikeIndex for bicycles. 
-                      Bike Index relies on user-submitted reports only.
+                      A SafeOrStolen bike check searches a national stolen-bicycle registry, its own theft reports
+                      and public web results, and lists every source. Bike Index relies on user-submitted reports.
                     </p>
                   </CardContent>
                 </Card>
@@ -333,7 +329,7 @@ const VsBikeIndex = () => {
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                       <div>
                         <strong>You only buy/sell bicycles:</strong> If bicycles are your only 
-                        secondhand purchases, Bike Index is 100% free with unlimited searches.
+                        secondhand purchases, Bike Index is free to search.
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -346,8 +342,8 @@ const VsBikeIndex = () => {
                     <li className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                       <div>
-                        <strong>Budget is critical:</strong> Bike Index is 100% free forever. 
-                        SafeOrStolen offers 2 free searches, then requires a paid plan.
+                        <strong>Budget is critical:</strong> Bike Index is free.
+                        SafeOrStolen gives you 2 free checks, then $0.99 a check or $10 a month.
                       </div>
                     </li>
                   </ul>
@@ -368,25 +364,24 @@ const VsBikeIndex = () => {
               <div className="space-y-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Does SafeOrStolen use Bike Index data?</CardTitle>
+                    <CardTitle className="text-lg">What does a SafeOrStolen bike check search?</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Yes! When you check a bicycle serial number on SafeOrStolen, we query the Bike Index 
-                      API along with other databases. You get Bike Index coverage plus additional sources 
-                      like police reports.
+                      A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's
+                      own theft reports, and public web results that mention the serial number. Every source
+                      searched is listed in the result.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Is Bike Index really 100% free?</CardTitle>
+                    <CardTitle className="text-lg">Is Bike Index really free?</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Yes, Bike Index is a nonprofit open-source project that's completely free. They're 
-                      funded by grants and donations. The tradeoff is they only cover bicycles - no phones, 
+                      Yes, Bike Index is a free nonprofit, open-source project. The tradeoff is they only cover bicycles - no phones, 
                       cars, or other items.
                     </p>
                   </CardContent>
@@ -398,7 +393,7 @@ const VsBikeIndex = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Use both! Check Bike Index (free, unlimited) and SafeOrStolen (comprehensive coverage). 
+                      Use both. Search Bike Index yourself (free) and run the serial through SafeOrStolen, which also checks its own theft reports and the web. 
                       If you also buy phones, cars, or electronics, SafeOrStolen's all-in-one platform saves 
                       time. If you only buy bikes, Bike Index alone may suffice.
                     </p>

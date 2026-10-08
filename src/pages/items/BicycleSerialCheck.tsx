@@ -22,11 +22,11 @@ const BicycleSerialCheck = () => {
  itemType="Bicycle"
  identifierType="Serial Number"
  heroBadge="Bicycle Theft Verification"
- heroSubtitle="Before buying a used bicycle or e-bike, verify the serial number isn't in stolen bike databases. With 2 million bikes stolen annually in the US, protection is essential. $0.99/check or $10/month unlimited."
+ heroSubtitle="Before buying a used bicycle or e-bike, search the serial number against our theft reports, public web results, and a national stolen-bicycle registry. 2 free checks, then $0.99 a check or $10 a month unlimited."
  stats={[
- { value: "2M+", label: "Bikes Stolen Annually (US)" },
+ { value: "2", label: "Free Checks" },
  { value: "3 sec", label: "Verification Time" },
- { value: "Instant", label: "Results" },
+ { value: "$0.99", label: "Single Check" },
  { value: "$10/mo", label: "Unlimited Checks" }
  ]}
  whatIsTitle="What is Bicycle Serial Number Verification?"

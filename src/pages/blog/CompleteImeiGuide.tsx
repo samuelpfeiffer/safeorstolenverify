@@ -178,7 +178,7 @@ export default function CompleteImeiGuide() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">How to Check if an IMEI is Blacklisted</h2>
             <p className="text-muted-foreground mb-6">
-              Before buying any used phone, ALWAYS verify its IMEI status. This takes 3 seconds and can save you 
+              Before buying any used phone, ALWAYS verify its IMEI status. This takes a few seconds and can save you 
               hundreds of dollars and legal trouble.
             </p>
 
@@ -190,7 +190,7 @@ export default function CompleteImeiGuide() {
                 </div>
                 <p className="text-muted-foreground mb-3">
                   SafeOrStolen checks its own theft reports and public web results. For phones it also shows the make and model from the IMEI. Bike checks also search a national stolen-bicycle registry, and gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Results come back in a few seconds.
-                  We do not check carrier blacklists directly; if you need to know if a phone is blacklisted, please contact your carrier. SafeOrStolen focuses on helping you avoid buying stolen goods by providing accessible theft reports. Results in 3 seconds.
+                  To see whether a phone is on the lost/stolen carrier blacklist, you can buy a blacklist check on SafeOrStolen (monthly members get up to 20 a month) or ask the carrier. Results come back in a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />
@@ -282,7 +282,7 @@ export default function CompleteImeiGuide() {
               This is why pre-purchase IMEI verification is absolutely critical. It's the ONLY way to protect yourself.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">SafeOrStolen Mobile App Advantage</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Check at the Meetup with the SafeOrStolen Web App</h2>
             <p className="text-muted-foreground mb-4">
               Some IMEI lookup sites, such as CheckMEND, expect you to type the IMEI by hand.
               SafeOrStolen has a free installable web app at safeorstolen.com/app that can scan the IMEI barcode. At an in-person meetup,
@@ -291,14 +291,14 @@ export default function CompleteImeiGuide() {
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-3 text-foreground flex items-center gap-2">
                 <Smartphone className="h-5 w-5" />
-                Download SafeOrStolen Mobile App
+                Install the Free SafeOrStolen Web App
               </h3>
               <p className="text-muted-foreground mb-4">
-                Instantly scan phone barcodes, verify IMEI status offline, and protect yourself during transactions. 
-                Free to download, no competitor offers this feature.
+                Add SafeOrStolen to your home screen from safeorstolen.com/app, then scan the IMEI barcode on the box
+                or SIM tray at the meetup. It's free and installs from your browser, not an app store.
               </p>
               <Button onClick={() => navigate('/app')} size="lg" className="gap-2">
-                Download Free App
+                Get the Free Web App
               </Button>
             </div>
 
@@ -306,7 +306,7 @@ export default function CompleteImeiGuide() {
               <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify IMEI Before Buying</h3>
               <p className="text-muted-foreground mb-6">
-                Check any phone's IMEI against 50+ global databases in 3 seconds. Free verification available.
+                Check any phone's IMEI against SafeOrStolen's theft reports and public web results in a few seconds. 2 free checks with a free account.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
                 <Shield className="h-5 w-5" />

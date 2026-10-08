@@ -2,13 +2,13 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Bike, Car, CircleDot, ExternalLink, Search, Smartphone } from 'lucide-react';
+import { Bike, Car, CircleDot, Search, Smartphone } from 'lucide-react';
 
 const options = [
   { title: 'SafeOrStolen', icon: Search, text: "Every check searches SafeOrStolen's own theft reports and public web results. Bike checks add a national stolen-bicycle registry; gun checks add police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records; Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.", href: '/how-to-check-if-item-stolen', external: false },
-  { title: 'Carrier or GSMA-authorized check', icon: Smartphone, text: 'Use separately for phone blacklist, network eligibility, and finance status. SafeOrStolen offers a paid lost/stolen blacklist check, but not network eligibility or finance status.', href: 'https://devicecheck.gsma.com/', external: true },
-  { title: 'NICB VINCheck', icon: Car, text: 'A separate free vehicle resource for participating unrecovered-theft and total-loss records, subject to its limits.', href: 'https://www.nicb.org/vincheck', external: true },
-  { title: 'NMVTIS provider', icon: Car, text: 'Use an approved provider for title, brand, odometer, and certain loss or salvage information. Provider fees vary.', href: 'https://vehiclehistory.bja.ojp.gov/nmvtis_consumer_access', external: true },
+  { title: 'Carrier or GSMA-authorized check', icon: Smartphone, text: 'Ask your carrier, or use a GSMA-authorized device check, for network eligibility and finance status. SafeOrStolen offers a paid lost/stolen blacklist check but does not cover those two.', href: null, external: false },
+  { title: 'NICB VINCheck', icon: Car, text: 'A separate free vehicle resource for participating unrecovered-theft and total-loss records, subject to its limits. Search for NICB VINCheck by name to use it.', href: null, external: false },
+  { title: 'NMVTIS provider', icon: Car, text: 'Use an approved provider for title, brand, odometer, and certain loss or salvage information. Provider fees vary. The NMVTIS consumer-access page lists approved providers.', href: null, external: false },
   { title: 'Stolen-bike registries', icon: Bike, text: 'Free bicycle registries let owners record a serial and flag the bike stolen. A SafeOrStolen bike check already searches a national stolen-bicycle registry along with our own reports.', href: '/check-bike', external: false },
   { title: 'Local police', icon: CircleDot, text: 'Private users cannot search NCIC. Ask local police whether they accept identifier-check requests and report suspected stolen property.', href: '/what-to-do-if-you-bought-something-stolen', external: false },
 ];
@@ -30,10 +30,10 @@ export default function Compare() {
             <p className="mt-5 text-lg text-muted-foreground">No single public tool covers every risk. Use SafeOrStolen as one check, then use the relevant official, carrier, registry, or commercial resource separately.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {options.map(({ title, icon: Icon, text, href, external }) => (
+            {options.map(({ title, icon: Icon, text, href }) => (
               <Card key={title}>
                 <CardHeader><Icon className="h-7 w-7 text-primary" /><CardTitle>{title}</CardTitle></CardHeader>
-                <CardContent><p className="mb-5 text-muted-foreground">{text}</p>{external ? <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center font-medium text-primary hover:underline">Open resource <ExternalLink className="ml-1 h-4 w-4" /></a> : <Link to={href} className="font-medium text-primary hover:underline">Read the guide</Link>}</CardContent>
+                <CardContent><p className="mb-5 text-muted-foreground">{text}</p>{href ? <Link to={href} className="font-medium text-primary hover:underline">Read the guide</Link> : null}</CardContent>
               </Card>
             ))}
           </div>

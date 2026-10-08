@@ -148,7 +148,7 @@ const NICBVINCheckAlternative = () => {
                 <CardContent className="space-y-6">
                   <p className="text-lg">
                     SafeOrStolen verifies vehicles plus phones, bikes, tools, and any item with a serial
-                    number — six item types in one platform, checked using SafeOrStolen reports, public web results, and AI analysis.
+                    number — six item types in one platform, each searched against SafeOrStolen theft reports and public web results, with Arizona VINs also checked against Arizona law-enforcement stolen-vehicle records.
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">
@@ -173,7 +173,7 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>AI-powered risk analysis</span>
+                          <span>VIN decode with year, make, model, and open safety recalls</span>
                         </li>
                       </ul>
                     </div>

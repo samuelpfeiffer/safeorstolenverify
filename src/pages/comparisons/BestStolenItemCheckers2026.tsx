@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Check, X, Shield, Smartphone, Car, Bike, ArrowRight, Star, Award, Crown, Laptop } from 'lucide-react';
+import { Check, X, Shield, Smartphone, Car, Bike, ArrowRight, Award, Crown, Laptop } from 'lucide-react';
 const BestStolenItemCheckers2026 = () => {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -28,7 +28,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 1,
       name: 'SafeOrStolen',
       url: '/verify',
-      rating: 4.9,
       pros: ['All item types in one place', 'Free installable web app', 'Marketplace URL analysis', '2 free checks', 'Every source searched is listed'],
       cons: ['Newer platform', 'Premium for unlimited'],
       categories: ['phones', 'vehicles', 'bikes', 'electronics', 'firearms'],
@@ -38,7 +37,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 2,
       name: 'IMEI.info',
       url: '',
-      rating: 4.5,
       pros: ['Free IMEI lookup', 'Brand-specific checks', 'Warranty info'],
       cons: ['Phones only', 'Paid for detailed reports'],
       categories: ['phones']
@@ -47,7 +45,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 3,
       name: 'Swappa IMEI Check',
       url: '',
-      rating: 4.4,
       pros: ['Free basic check', 'Trusted marketplace', 'Fast results'],
       cons: ['Phones only', 'Part of marketplace ecosystem', 'Limited databases'],
       categories: ['phones']
@@ -56,7 +53,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 4,
       name: 'NICB VINCheck',
       url: '',
-      rating: 4.3,
       pros: ['Official insurance data', 'Free unlimited', 'Trusted source'],
       cons: ['Vehicles only', 'US theft claims only', 'No other item types'],
       categories: ['vehicles']
@@ -65,7 +61,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 5,
       name: 'VinCheck.info',
       url: '',
-      rating: 4.2,
       pros: ['Free VIN decode', 'License plate lookup'],
       cons: ['Vehicles only', 'Ads on site', 'Upsells for reports'],
       categories: ['vehicles']
@@ -74,7 +69,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 6,
       name: 'Bike Index',
       url: '',
-      rating: 4.1,
       pros: ['Free registration', 'Community-driven', 'Free to search'],
       cons: ['Bikes only', 'Relies on user reports', 'Limited to registered bikes'],
       categories: ['bikes']
@@ -83,7 +77,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 7,
       name: 'HotGunz',
       url: '',
-      rating: 3.9,
       pros: ['Free stolen gun database', 'Simple search'],
       cons: ['Firearms only', 'User-submitted', 'Outdated interface'],
       categories: ['firearms']
@@ -92,7 +85,6 @@ const BestStolenItemCheckers2026 = () => {
       rank: 8,
       name: 'CheckMEND',
       url: '',
-      rating: 3.8,
       pros: ['Detailed device reports', 'Long-running UK service'],
       cons: ['Paid service', 'Account required'],
       categories: ['phones', 'electronics']
