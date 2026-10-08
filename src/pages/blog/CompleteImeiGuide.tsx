@@ -189,7 +189,7 @@ export default function CompleteImeiGuide() {
                   <h3 className="text-xl font-semibold text-foreground">Recommended: SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  SafeOrStolen checks multiple sources simultaneously including our own reported stolen items, public web results, and AI analysis. You can also check BikeIndex for bicycles or HotGunz for firearms, and we perform an IMEI device lookup for phones. All results are delivered quickly.
+                  SafeOrStolen checks its own theft reports and public web results. For phones it also shows the make and model from the IMEI. Bike checks also search a national stolen-bicycle registry, and gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Results come back in a few seconds.
                   We do not check carrier blacklists directly; if you need to know if a phone is blacklisted, please contact your carrier. SafeOrStolen focuses on helping you avoid buying stolen goods by providing accessible theft reports. Results in 3 seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
@@ -284,9 +284,9 @@ export default function CompleteImeiGuide() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">SafeOrStolen Mobile App Advantage</h2>
             <p className="text-muted-foreground mb-4">
-              Unlike some competitor services (e.g., CheckMEND, IMEI.info) that may offer only web-based lookups requiring manual IMEI typing,
-              SafeOrStolen provides a free mobile app with instant barcode scanning. During in-person meetups, you can 
-              verify the phone in 3 seconds by scanning the barcode on the box or SIM tray.
+              Some IMEI lookup sites, such as CheckMEND, expect you to type the IMEI by hand.
+              SafeOrStolen has a free installable web app at safeorstolen.com/app that can scan the IMEI barcode. At an in-person meetup,
+              you can scan the barcode on the box or SIM tray and get a result in a few seconds.
             </p>
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-3 text-foreground flex items-center gap-2">

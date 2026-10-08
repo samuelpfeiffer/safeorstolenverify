@@ -22,7 +22,7 @@ export const PILLARS: Record<PillarKey, { name: string; path: string; ctaLine: s
  bike: {
  name: 'Check Bike',
  path: '/check-bike',
- ctaLine: 'Check a bike serial against our reports and BikeIndex records — free.',
+ ctaLine: 'Check a bike serial against our theft reports and a national stolen-bicycle registry — free.',
  },
  gun: {
  name: 'Check Gun',

@@ -250,7 +250,7 @@ const StolenPhoneCheckerPage = () => {
  <Database className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
  <h3 className="font-semibold mb-2">Verification Database Sources</h3>
- <p className="text-muted-foreground">We check our stolen-item reports, public web results, and AI analysis. For bicycles, we also check BikeIndex; for firearms, HotGunz; and for phones, we perform an IMEI device lookup.</p>
+ <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports and public web results. For phones, the IMEI also shows the make and model, and a paid carrier blacklist check is available. Bike checks add a national stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records.</p>
  </div>
  </div>
  </CardContent>

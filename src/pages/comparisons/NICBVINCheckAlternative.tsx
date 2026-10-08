@@ -39,14 +39,13 @@ const NICBVINCheckAlternative = () => {
         mobileApp: true,
         instantResults: true,
         freeTier: '2 free checks',
-        database: 'SafeOrStolen reports, public web results, and AI analysis',
+        database: 'SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
         'Checks more than just vehicles — six item types in one platform',
-        'Integrated sources including IMEI.info, BikeIndex, and HotGunz',
+        'Item-specific sources: a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records for guns',
         'Installable web app — works on mobile, no app store download required',
-        'AI-powered risk analysis',
         'Results in about 3 seconds'
       ],
       cons: [
@@ -191,7 +190,7 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          Integrated sources: IMEI.info, BikeIndex, HotGunz
+                          VIN decode with open recalls; Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
@@ -328,8 +327,10 @@ const NICBVINCheckAlternative = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Does SafeOrStolen include integrated data sources?</h3>
                     <p className="text-muted-foreground">
-                      Yes, SafeOrStolen integrates sources including IMEI.info, BikeIndex, and HotGunz
-                      alongside our own verification databases.
+                      Yes. Every check searches SafeOrStolen's own theft reports and public web results. Arizona VINs and plates
+                      are also searched against Arizona law-enforcement stolen-vehicle records, bike checks add a national
+                      stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and
+                      Washington, DC, plus live Ohio law-enforcement records.
                     </p>
                   </CardContent>
                 </Card>

@@ -362,8 +362,8 @@ const ComparisonSwappa = () => {
  <ul className="text-sm space-y-2">
  <li>✅ SafeOrStolen's own stolen-item reports</li>
  <li>✅ Public web results</li>
- <li>✅ AI analysis</li>
- <li>✅ BikeIndex (bicycles) and HotGunz (firearms)</li>
+ <li>✅ A national stolen-bicycle registry (bike checks)</li>
+ <li>✅ Police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records (gun checks)</li>
  </ul>
  </CardContent>
  </Card>
@@ -423,7 +423,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="car">
  <AccordionTrigger>Can Swappa check if a car or bike is stolen?</AccordionTrigger>
  <AccordionContent>
- No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (using public web results and our reports), motorcycles, firearms (using HotGunz), bicycles (using BikeIndex), laptops, gaming consoles, watches, and more.
+ No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen checks vehicles (VIN decode, open recalls, our theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs), motorcycles, firearms (adding police theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records), bicycles (adding a national stolen-bicycle registry), laptops, gaming consoles, watches, and more.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="free">
