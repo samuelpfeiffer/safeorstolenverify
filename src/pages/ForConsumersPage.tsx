@@ -39,7 +39,7 @@ const ForConsumersPage = () => {
  },
  {
  question: "How much does SafeOrStolen cost for consumers?",
- answer: "SafeOrStolen offers 2 free verification checks with a free account. After that, $3.99 per check or $14.99/month unlimited. No hidden costs. Cancel anytime."
+ answer: "SafeOrStolen offers 2 free verification checks with a free account. After that, $0.99 per check or $10/month unlimited. No hidden costs. Cancel anytime."
  },
  {
  question: "What items can I verify with SafeOrStolen?",
@@ -74,7 +74,7 @@ const ForConsumersPage = () => {
  <>
  <PageSEO
  title="For Consumers - Protect Yourself When Buying Used Items | SafeOrStolen"
- description="Free verification for secondhand buyers. Check if phones, cars, electronics, and bikes are stolen before buying on Facebook Marketplace, OfferUp, Craigslist. 2 free checks, then $3.99/check or $14.99/month unlimited."
+ description="Free verification for secondhand buyers. Check if phones, cars, electronics, and bikes are stolen before buying on Facebook Marketplace, OfferUp, Craigslist. 2 free checks, then $0.99/check or $10/month unlimited."
  keywords="buying used items safely, avoid stolen goods, secondhand buyer protection, verify before buying, stolen item checker for consumers, IMEI check free"
  canonical="/for-consumers"
  structuredData={[faqSchema, breadcrumbSchema]}
@@ -124,11 +124,11 @@ const ForConsumersPage = () => {
  <li><a href="/imei-checker">IMEI Checker</a></li>
  <li><a href="/vin-checker">VIN Checker</a></li>
  <li><a href="/app">Download Mobile App</a></li>
- <li><a href="/pricing">Pricing - $14.99/mo Unlimited</a></li>
+ <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  <li><a href="/facebook-marketplace-safety">Facebook Marketplace Safety Guide</a></li>
  </ul>
  
- <p>Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. <a href="/verify">Verify now</a> — 2 free checks, then $3.99/check or $14.99/month unlimited.</p>
+ <p>Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -314,7 +314,7 @@ const ForConsumersPage = () => {
  </Link>
  <Link to="/pricing" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Pricing</h3>
- <p className="text-sm text-muted-foreground">$14.99/mo unlimited verifications</p>
+ <p className="text-sm text-muted-foreground">$10/mo unlimited verifications</p>
  </Link>
  <Link to="/how-it-works" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">How It Works</h3>
@@ -340,7 +340,7 @@ const ForConsumersPage = () => {
  </Button>
  <Button asChild size="lg" variant="outline">
  <Link to="/pricing">
- $14.99/mo Unlimited
+ $10/mo Unlimited
  </Link>
  </Button>
  </div>

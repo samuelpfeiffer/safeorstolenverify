@@ -41,7 +41,7 @@ const FAQS = [
   {
     question: 'Does my state require a background check on a private gun sale?',
     answer:
-      'It depends entirely on the state. Seventeen jurisdictions listed on this page — California, Colorado, Connecticut, Delaware, Hawaii, Illinois, Maryland, Massachusetts, Nevada, New Jersey, New York, Oregon, Pennsylvania, Rhode Island, Vermont, Washington, and the District of Columbia — require a background check on at least some private-party firearm transfers, usually by routing the sale through a licensed dealer or a permit system. Thirty other states listed here do not mandate one under state law. Either way, federal law still prohibits transferring a firearm to someone you know or have reason to believe is a prohibited person, and buying a stolen firearm is a federal offense regardless of where you live. A background check also does not tell you whether the gun itself was reported stolen. SafeOrStolen checks a firearm serial number against community-reported stolen-firearm records and returns a result in about 3 seconds — 2 free checks, then $3.99 per check or $14.99/month unlimited.',
+      'It depends entirely on the state. Seventeen jurisdictions listed on this page — California, Colorado, Connecticut, Delaware, Hawaii, Illinois, Maryland, Massachusetts, Nevada, New Jersey, New York, Oregon, Pennsylvania, Rhode Island, Vermont, Washington, and the District of Columbia — require a background check on at least some private-party firearm transfers, usually by routing the sale through a licensed dealer or a permit system. Thirty other states listed here do not mandate one under state law. Either way, federal law still prohibits transferring a firearm to someone you know or have reason to believe is a prohibited person, and buying a stolen firearm is a federal offense regardless of where you live. A background check also does not tell you whether the gun itself was reported stolen. SafeOrStolen checks a firearm serial number against community-reported stolen-firearm records and returns a result in about 3 seconds — 2 free checks, then $0.99 per check or $10/month unlimited.',
   },
   {
     question: 'What does a background check on a private sale actually cover?',
@@ -257,7 +257,7 @@ export default function StateFirearmTransferLawsPage() {
             <div className="rounded-2xl border border-primary/40 bg-primary/5 p-6 text-center">
               <h2 className="text-xl font-bold mb-2">Check the serial yourself — it takes 3 seconds</h2>
               <p className="text-sm text-muted-foreground mb-4">
-                2 free checks, then $3.99 per check or $14.99/month unlimited. Phones, vehicles, plates,
+                2 free checks, then $0.99 per check or $10/month unlimited. Phones, vehicles, plates,
                 serials, firearms, and bicycles.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">

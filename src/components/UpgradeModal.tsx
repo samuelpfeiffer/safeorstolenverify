@@ -16,9 +16,9 @@ const PLANS = [
     id: 'unlimited',
     icon: <Zap className="w-5 h-5" />,
     label: 'Unlimited Plan',
-    price: '$14.99/month',
+    price: '$10/month',
     desc: 'Unlimited verifications (20 phone blacklist searches a month), seller badges, PDF certs, priority support. Cancel anytime.',
-    cta: 'Go Unlimited — $14.99/mo',
+    cta: 'Go Unlimited — $10/mo',
     priceId: UNLIMITED_PRICE_ID,
     planName: 'Unlimited',
     isSub: true,
@@ -27,9 +27,9 @@ const PLANS = [
     id: 'payPerCheck',
     icon: <CreditCard className="w-5 h-5" />,
     label: 'Pay Per Check',
-    price: '$3.99',
+    price: '$0.99',
     desc: 'One-time payment. No subscription.',
-    cta: 'Buy This Check — $3.99',
+    cta: 'Buy This Check — $0.99',
     priceId: PAY_PER_CHECK_PRICE_ID,
     planName: 'Pay Per Check',
     isSub: false,
@@ -115,7 +115,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
           <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Continue for $3.99/check or go unlimited for $14.99/month.<br />
+            Continue for $0.99/check or go unlimited for $10/month.<br />
             Cancel anytime · 30-day money-back guarantee.
           </p>
         </div>

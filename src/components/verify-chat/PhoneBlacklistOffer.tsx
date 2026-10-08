@@ -7,7 +7,7 @@ import { savePendingCheck } from '@/lib/pendingCheck';
 
 /**
  * Oct 5 2026: free phone checks say the blacklist search is "part of the full check", but there
- * was no way to buy it from the result. This offers the $3.99 single check (blacklist included)
+ * was no way to buy it from the result. This offers the $0.99 single check (blacklist included)
  * and, after payment, /payment-success runs the same IMEI again as a paid check.
  */
 export function PhoneBlacklistOffer({ imei }: { imei: string }) {
@@ -49,10 +49,10 @@ export function PhoneBlacklistOffer({ imei }: { imei: string }) {
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm" className="flex-1" onClick={() => buy('single')} disabled={busy !== null}>
-          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check the blacklist — $3.99'}
+          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check the blacklist — $0.99'}
         </Button>
         <Button size="sm" variant="outline" className="flex-1" onClick={() => buy('monthly')} disabled={busy !== null}>
-          {busy === 'monthly' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : '$14.99/mo: 20 phone checks + unlimited everything else'}
+          {busy === 'monthly' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : '$10/mo: 20 phone checks + unlimited everything else'}
         </Button>
       </div>
       {error && <p className="text-xs text-red-500">{error}</p>}

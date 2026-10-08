@@ -48,7 +48,7 @@ export const MarketplaceSafetySection = () => {
               <Car className="w-12 h-12 text-primary mb-4" />
               <h3 className="text-xl font-bold mb-3">Carfax Alternative</h3>
               <p className="text-muted-foreground mb-4">
-                Don't pay $39.99 for Carfax. Check VIN numbers and stolen vehicle status starting at $3.99/check. Download our app or verify online.
+                Don't pay $39.99 for Carfax. Check VIN numbers and stolen vehicle status starting at $0.99/check. Download our app or verify online.
               </p>
               <Button onClick={() => navigate('/carfax-alternative')}>
                 Try Now

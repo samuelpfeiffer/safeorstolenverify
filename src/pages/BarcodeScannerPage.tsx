@@ -34,7 +34,7 @@ const faqs = [
  },
  {
  question: "Is the barcode scanner free?",
- answer: "Your first 2 barcode scans and verifications are free with a free account. After that, it's $3.99/check or $14.99/month unlimited. The scanner itself always works; it's the database verification that counts toward your free checks."
+ answer: "Your first 2 barcode scans and verifications are free with a free account. After that, it's $0.99/check or $10/month unlimited. The scanner itself always works; it's the database verification that counts toward your free checks."
  },
  {
  question: "What if the barcode is damaged or unreadable?",
@@ -63,7 +63,7 @@ const appSchema = {
  "@type": "Offer",
  "price": "0",
  "priceCurrency": "USD",
- "description": "2 free scans, then $3.99/check or $14.99/month unlimited"
+ "description": "2 free scans, then $0.99/check or $10/month unlimited"
  },
  "featureList": "Barcode scanning, QR code reading, IMEI verification, VIN verification, serial number lookup, stolen item check",
  "description": "Scan a barcode or QR code, then check the identifier against SafeOrStolen reports, public web results, and AI analysis.",
@@ -114,7 +114,7 @@ const BarcodeScannerPage = () => {
  <h2>How It Works</h2>
  <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against SafeOrStolen's reports, public web results, and using AI analysis. Results in 3 seconds.</p>
  <h2>Perfect for In-Person Shopping</h2>
- <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $3.99/check or $14.99/month unlimited.</p>
+ <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $10/month unlimited.</p>
  </article>
  </div>
  </noscript>
@@ -311,7 +311,7 @@ const BarcodeScannerPage = () => {
  </h2>
  <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
  Your phone camera is all you need. Point, scan, verify. 
- 2 free scans, then $3.99/check or $14.99/month unlimited.
+ 2 free scans, then $0.99/check or $10/month unlimited.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg" variant="secondary" className="text-lg h-14 px-10">

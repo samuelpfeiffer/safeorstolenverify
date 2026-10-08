@@ -46,7 +46,7 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 // One list for the visible FAQ and the FAQPage schema, so they always match.
 const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'How do I check if a gun is stolen by serial number?', a: "Enter the serial number from the frame or receiver at SafeOrStolen (safeorstolen.com/firearms-check). SafeOrStolen searches more than 240,000 police firearm theft and loss reports from 34 states, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results, and checks the serial for signs of tampering. You get a result in a few seconds. The first 2 checks are free." },
- { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $3.99 per check or $14.99 a month for unlimited checks.' },
+ { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $0.99 per check or $10 a month for unlimited checks.' },
  { q: 'Is there a national stolen gun database I can search?', a: "Not one the public can search. The FBI's national stolen-gun file is only open to law enforcement. SafeOrStolen brings together the records the public can use, including police theft and loss reports from 34 states and live Ohio records. A no-match result means nothing was found in those records, not proof the gun was never stolen." },
  { q: 'My state is not on the list. Can I still check a gun?', a: "Yes. Every check still searches SafeOrStolen's own theft reports and public web results, and a gun reported stolen in one of the 34 states can turn up for sale anywhere. For an extra check, call your local police non-emergency line and ask whether they will run the serial for a private buyer. Some departments will and some won't." },
  { q: 'Is it legal to check a gun serial number?', a: 'Yes. Looking up whether a serial number has been reported stolen is legal for anyone. SafeOrStolen is a private service and is not a government agency. It never shows who owns a gun or who reported it.' },
@@ -382,7 +382,7 @@ const FirearmsCheckPage = () => {
  to="/pricing"
  className="inline-flex mt-4 items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-5 py-3 rounded-xl transition-all text-sm"
  >
- Get Unlimited Plan — $14.99/mo →
+ Get Unlimited Plan — $10/mo →
  </Link>
  </div>
  </section>

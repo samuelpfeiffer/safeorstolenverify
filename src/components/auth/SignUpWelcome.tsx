@@ -22,7 +22,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Shield,
       title: "Start Verifying Items",
-      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $14.99/month.",
+      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $10/month.",
       action: "Subscribe Now",
       onClick: () => navigate('/pricing')
     },
@@ -36,7 +36,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: CreditCard,
       title: "Unlimited Access",
-      description: "Get unlimited verifications for $14.99/month, or pay $3.99 per check. All item types included. Cancel anytime.",
+      description: "Get unlimited verifications for $10/month, or pay $0.99 per check. All item types included. Cancel anytime.",
       action: "View Plan",
       onClick: () => navigate('/pricing')
     }

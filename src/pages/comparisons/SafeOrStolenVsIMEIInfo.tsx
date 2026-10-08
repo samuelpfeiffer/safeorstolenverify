@@ -33,7 +33,7 @@ const SafeOrStolenVsIMEIInfo = () => {
             "@type": "Product",
             "name": "IMEI.info",
             "description": "IMEI lookup and phone information service",
-            "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
+            "offers": { "@type": "Offer", "price": "10.00", "priceCurrency": "USD" }
           }
         }
       ]
@@ -41,10 +41,10 @@ const SafeOrStolenVsIMEIInfo = () => {
   };
 
   const comparisonData = [
-    { feature: 'Pricing', safeOrStolen: '$14.99/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
+    { feature: 'Pricing', safeOrStolen: '$10/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
     { feature: 'Verification Sources', safeOrStolen: 'Reports, web results, AI', imeiInfo: 'Device information', winner: 'tie' },
     { feature: 'Item Types Supported', safeOrStolen: 'Phones, cars, bikes, tools, etc.', imeiInfo: 'Phones only', winner: 'sos' },
-    { feature: 'Blacklist Check', safeOrStolen: 'Included in $14.99/mo', imeiInfo: '$10 per check', winner: 'sos' },
+    { feature: 'Blacklist Check', safeOrStolen: 'Included in $10/mo', imeiInfo: '$10 per check', winner: 'sos' },
     { feature: 'VIN Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Serial Number Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Carrier Info', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
@@ -373,7 +373,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. 
+                      SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. 
                       IMEI.info charges $10+ for blacklist checks.
                     </p>
                   </CardContent>

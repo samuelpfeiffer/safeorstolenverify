@@ -81,7 +81,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Can I check an IMEI for free?",
       answer:
-        "Yes. The free check confirms the IMEI is real and correctly formed. The full check, which searches the lost and stolen phone blacklist, is $3.99.",
+        "Yes. The free check confirms the IMEI is real and correctly formed. The full check, which searches the lost and stolen phone blacklist, is $0.99.",
     },
     {
       question: "Does a clean IMEI mean the phone is safe to buy?",

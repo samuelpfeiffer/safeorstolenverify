@@ -70,7 +70,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
           <div className="text-center">
             <Badge variant="secondary" className="bg-sos-orange text-white px-4 py-2 text-lg">
               <Gift className="w-4 h-4 mr-2" />
-              $14.99/mo Unlimited Verifications!
+              $10/mo Unlimited Verifications!
             </Badge>
           </div>
 
@@ -164,7 +164,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
               className="flex-1"
               size="lg"
             >
-              View Plans — From $3.99
+              View Plans — From $0.99
             </Button>
           </div>
 

@@ -175,10 +175,10 @@ export const StateVinPageTemplate = ({
  <li><a href="/license-plate-lookup">{state} License Plate Lookup</a></li>
  <li><a href="/imei-checker">IMEI Checker</a></li>
  <li><a href="/verify">Verify Any Item</a></li>
- <li><a href="/pricing">Pricing - From $3.99/check</a></li>
+ <li><a href="/pricing">Pricing - From $0.99/check</a></li>
  </ul>
  
- <p>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $3.99/check or $14.99/month unlimited.</p>
+ <p>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -420,7 +420,7 @@ export const StateVinPageTemplate = ({
  </Link>
  <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Pricing</h3>
- <p className="text-sm text-muted-foreground">From $3.99/check or $14.99/mo unlimited</p>
+ <p className="text-sm text-muted-foreground">From $0.99/check or $10/mo unlimited</p>
  </Link>
  </div>
  </div>
@@ -433,7 +433,7 @@ export const StateVinPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
  <p className="text-lg text-muted-foreground mb-8">
-  $14.99/month unlimited VIN verification for {state} vehicles. Results from SafeOrStolen reports, public web results, and AI analysis.
+  $10/month unlimited VIN verification for {state} vehicles. Results from SafeOrStolen reports, public web results, and AI analysis.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

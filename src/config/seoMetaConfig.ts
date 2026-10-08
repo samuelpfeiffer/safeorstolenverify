@@ -93,8 +93,8 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // PRICING (/pricing) - 156 chars
  // ========================================
  '/pricing': {
- title: 'Pricing - $14.99/mo Unlimited Stolen Item Verification',
-  description: 'Stolen-item verification starts with 2 free checks, then costs $3.99 per check or $14.99 per month for unlimited checks across all six categories.',
+ title: 'Pricing - $10/mo Unlimited Stolen Item Verification',
+  description: 'Stolen-item verification starts with 2 free checks, then costs $0.99 per check or $10 per month for unlimited checks across all six categories.',
  keywords: 'SafeOrStolen pricing, verification pricing, stolen item checker cost',
  canonical: '/pricing'
  },

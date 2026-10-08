@@ -16,7 +16,7 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "How much does SafeOrStolen cost?",
-  answer: "A free account includes 2 checks. Additional checks cost $3.99 each, or $14.99 per month for unlimited supported checks."
+  answer: "A free account includes 2 checks. Additional checks cost $0.99 each, or $10 per month for unlimited supported checks."
  },
  {
  question: "What items can I verify with SafeOrStolen?",
@@ -51,12 +51,12 @@ export const EnhancedFAQSection = () => {
  icon: DollarSign,
  faqs: [
  {
- question: "What's included in the $14.99/month plan?",
- answer: "The $14.99/month Unlimited Plan includes unlimited verifications (with 20 phone blacklist searches a month) across all item types, PDF certificates, AI-powered analysis, seller badges, and access to multiple sources. Cancel anytime — no contracts. Or pay $3.99 per individual check."
+ question: "What's included in the $10/month plan?",
+ answer: "The $10/month Unlimited Plan includes unlimited verifications (with 20 phone blacklist searches a month) across all item types, PDF certificates, AI-powered analysis, seller badges, and access to multiple sources. Cancel anytime — no contracts. Or pay $0.99 per individual check."
  },
  {
  question: "Can I verify in bulk for my business?",
- answer: "Yes! Our $14.99/month Unlimited plan includes unlimited checks (with 20 phone blacklist searches a month), downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers. Contact us for enterprise API access."
+ answer: "Yes! Our $10/month Unlimited plan includes unlimited checks (with 20 phone blacklist searches a month), downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers. Contact us for enterprise API access."
  },
  {
  question: "Do you offer refunds if I'm not satisfied?",

@@ -142,7 +142,7 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
           ) : (
             <>
               <CreditCard className="w-5 h-5 mr-2" />
-              Subscribe — $14.99/mo Unlimited
+              Subscribe — $10/mo Unlimited
             </>
           )}
         </Button>
