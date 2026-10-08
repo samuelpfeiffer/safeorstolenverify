@@ -204,12 +204,12 @@ export const HomeAIHero: React.FC = () => {
 
  {/* H1 (SEO-critical, stays) */}
  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-center leading-tight mb-4 tracking-tight">
- Check if something is stolen{' '}
- <span className="sos-gradient-text">before you buy it.</span>
+ Check if a used phone, car, gun, tool, or bike was{' '}
+ <span className="sos-gradient-text">reported stolen.</span>
  </h1>
 
  <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
- Type an IMEI, VIN, serial number or license plate, or paste a marketplace link. In a few seconds you'll see whether it's reported stolen and which records were searched, including police gun and vehicle theft records and a national stolen-bike registry. Your first 2 checks are free.
+ Paste the phone's IMEI, the car's VIN or license plate, or the serial number on the item.
  </p>
 
  {/* Chat panel */}
