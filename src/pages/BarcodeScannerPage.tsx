@@ -80,7 +80,7 @@ const appSchema = {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: '2 free checks with a free account, then $3.99 a check or $14.99 a month',
+    description: '2 free checks with a free account, then $0.99 a check or $10 a month',
   },
   featureList: 'Live barcode and QR code scanning, reading an IMEI, VIN or serial number from a photo, stolen item check',
   description:

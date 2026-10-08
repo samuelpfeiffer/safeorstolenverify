@@ -20,11 +20,11 @@ export const HomeContentSections = () => {
  },
  {
  question: "Is SafeOrStolen really free?",
- answer: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
+ answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
  },
  {
  question: "What databases does SafeOrStolen check?",
- answer: "We combine SafeOrStolen's own reported items, public web results, and AI analysis for comprehensive checks. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 34 states plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. This multi-faceted approach helps identify potential stolen items."
+ answer: "We combine SafeOrStolen's own reported items, public web results, and AI analysis for comprehensive checks. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. This multi-faceted approach helps identify potential stolen items."
  },
  {
  question: "How do I check if a car is stolen using VIN?",
@@ -36,7 +36,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "How do I check a gun serial number for free?",
- answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search stolen firearms databases and validate serial number integrity. Unlimited checks for $14.99/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
+ answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search stolen firearms databases and validate serial number integrity. Unlimited checks for $10/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
  },
  {
  question: "What items can SafeOrStolen verify?",
@@ -71,7 +71,7 @@ export const HomeContentSections = () => {
  <div className="max-w-5xl mx-auto">
  <h2 className="text-2xl md:text-3xl font-bold mb-6">What SafeOrStolen Checks — Complete Verification Coverage</h2>
  <p className="text-muted-foreground mb-8 text-lg">
-  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns.
+  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns.
  </p>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
  {[
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
  <h3 className="font-bold text-lg mb-2">We Search multiple sources</h3>
  <p className="text-sm text-muted-foreground">
- In parallel, we query SafeOrStolen's own reports, public web results, and use AI analysis. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 34 states plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. More sources means higher accuracy.
+ In parallel, we query SafeOrStolen's own reports, public web results, and use AI analysis. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. More sources means higher accuracy.
  </p>
  </div>
  <div className="text-center p-6 bg-card rounded-lg border border-border">
@@ -209,7 +209,7 @@ export const HomeContentSections = () => {
  <div className="p-5 bg-background rounded-lg border border-border">
  <h3 className="font-bold mb-2">Used Car Buyers</h3>
  <p className="text-sm text-muted-foreground">
- <Link to="/vin-checker" className="text-primary hover:underline">Vehicle buyers</Link> check VINs before purchasing from private sellers, dealerships, or auctions. SafeOrStolen costs $3.99/check or $14.99/month unlimited vs Carfax at $44.99 per report — and checks more databases.
+ <Link to="/vin-checker" className="text-primary hover:underline">Vehicle buyers</Link> check VINs before purchasing from private sellers, dealerships, or auctions. SafeOrStolen costs $0.99/check or $10/month unlimited vs Carfax at $44.99 per report — and checks more databases.
  </p>
  </div>
  <div className="p-5 bg-background rounded-lg border border-border">
@@ -262,7 +262,7 @@ export const HomeContentSections = () => {
  For sellers, SafeOrStolen adds trust and transparency to your listings. Share a verification certificate to prove your items are legitimate, increase buyer confidence, and command higher prices. For businesses like <Link to="/for-pawn-shops" className="text-primary hover:underline">pawn shops</Link>, dealers, and <Link to="/for-electronics-resellers" className="text-primary hover:underline">electronics resellers</Link>, our business plans include bulk verification, API integration, compliance reporting, and audit trails to meet state due diligence requirements.
  </p>
  <p>
-  SafeOrStolen verifies all six item types — phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods — against relevant sources. The <Link to="/app" className="text-primary hover:underline">installable web app</Link> supports on-the-spot checks at pawn shops, yard sales, and marketplace meetups. Unlimited verifications are $14.99 per month.
+  SafeOrStolen verifies all six item types — phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods — against relevant sources. The <Link to="/app" className="text-primary hover:underline">installable web app</Link> supports on-the-spot checks at pawn shops, yard sales, and marketplace meetups. Unlimited verifications are $10 per month.
  </p>
  </div>
  </div>

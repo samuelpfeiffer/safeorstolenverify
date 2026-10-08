@@ -210,7 +210,7 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
   const policeChecked = data.some(
     (s) => s.provider === 'Police_Theft_Records' && (s.details as any)?.checked === true,
   );
-  if (policeChecked) answeredOutside.push('police theft records from 34 states');
+  if (policeChecked) answeredOutside.push('police theft records from 33 states and DC');
 
   let message = answeredOutside.length > 0
     ? `No theft record found in the SafeOrStolen registry or ${answeredOutside.join(', ')}. That does not prove the item is clean, so ask the seller for proof of ownership.`

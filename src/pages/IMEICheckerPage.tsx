@@ -106,7 +106,7 @@ const IMEICheckerPage = () => {
           {
             question: 'Is there a free IMEI check?',
             answer:
-              "Yes. SafeOrStolen (safeorstolen.com/imei-checker) gives you 2 free checks with a free account and no credit card. The free check shows the phone's make and model and searches SafeOrStolen theft reports and public web results. After that it's $3.99 a check or $14.99 a month for unlimited checks.",
+              "Yes. SafeOrStolen (safeorstolen.com/imei-checker) gives you 2 free checks with a free account and no credit card. The free check shows the phone's make and model and searches SafeOrStolen theft reports and public web results. After that it's $0.99 a check or $10 a month for unlimited checks.",
           },
           {
             question: 'How do I check if a phone is stolen with the IMEI?',

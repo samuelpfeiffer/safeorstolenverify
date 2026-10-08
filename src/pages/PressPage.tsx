@@ -34,8 +34,8 @@ const organizationSchema = {
   url: 'https://safeorstolen.com',
   logo: 'https://safeorstolen.com/sos-logo.png',
   description:
-    'SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Seattle, WA.',
-  address: { '@type': 'PostalAddress', addressLocality: 'Seattle', addressRegion: 'WA', addressCountry: 'US' },
+    'SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ.',
+  address: { '@type': 'PostalAddress', addressLocality: 'Peoria', addressRegion: 'AZ', addressCountry: 'US' },
   contactPoint: { '@type': 'ContactPoint', contactType: 'Press', email: PRESS_EMAIL },
 };
 
@@ -59,7 +59,7 @@ const PressPage = () => (
           <h1 className="text-4xl md:text-5xl font-bold mb-6">SafeOrStolen Press Information</h1>
           <p className="text-lg text-muted-foreground mb-4">
             SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
-            number, based in Seattle, WA. You type in an IMEI, VIN, plate or serial number and see whether it has
+            number, based in Peoria, AZ. You type in an IMEI, VIN, plate or serial number and see whether it has
             been reported stolen in the records SafeOrStolen searches, with every source listed. For interviews or
             questions, email {PRESS_EMAIL}.
           </p>
@@ -120,8 +120,8 @@ const PressPage = () => (
           <h2 className="text-2xl font-bold mb-4">Pricing, for reference</h2>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6">
             <li>2 free checks with a free account, no credit card.</li>
-            <li>$3.99 for a single check.</li>
-            <li>$14.99 a month for unlimited checks (phone blacklist checks capped at 20 a month), cancel anytime, 30-day refund on the monthly plan.</li>
+            <li>$0.99 for a single check.</li>
+            <li>$10 a month for unlimited checks (phone blacklist checks capped at 20 a month), cancel anytime, 30-day refund on the monthly plan.</li>
             <li>An optional $1.99 verification certificate: a dated record with its own link showing the buyer checked before the sale. Free for monthly members.</li>
             <li>A free installable web app at safeorstolen.com/app. There is no App Store or Google Play app.</li>
             <li>Bulk checking for pawn shops and dealers at <Link to="/bulk-check" className="text-primary hover:underline">/bulk-check</Link>.</li>

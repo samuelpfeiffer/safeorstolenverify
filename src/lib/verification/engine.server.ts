@@ -419,7 +419,7 @@ async function runPoliceTheftRecords(
         provider: 'Police_Theft_Records',
         status: 'unknown',
         confidence: 0,
-        message: 'No match in police theft records from 34 states',
+        message: 'No match in police theft records from 33 states and DC',
         details: { checked: true },
         responseTime: Date.now() - startedAt,
       };

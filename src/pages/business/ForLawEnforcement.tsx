@@ -46,7 +46,7 @@ const FAQS = [
   {
     question: 'Is there special pricing for police departments?',
     answer:
-      'There is no department plan. Every account gets 2 free checks with no credit card, then $3.99 per check or $14.99 a month for unlimited checks, which covers the bulk check. If your agency has a purchasing requirement, email safeorstolenmail@gmail.com.',
+      'There is no department plan. Every account gets 2 free checks with no credit card, then $0.99 per check or $10 a month for unlimited checks, which covers the bulk check. If your agency has a purchasing requirement, email safeorstolenmail@gmail.com.',
   },
   {
     question: 'Can a SafeOrStolen result be used as evidence?',
@@ -164,7 +164,7 @@ const ForLawEnforcement = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Contact</h2>
             <p className="text-muted-foreground mb-6">
-              SafeOrStolen, Seattle, WA. For a matching report or an agency question, email safeorstolenmail@gmail.com from
+              SafeOrStolen, Peoria, AZ. For a matching report or an agency question, email safeorstolenmail@gmail.com from
               your department address.
             </p>
             <Button size="lg" asChild><a href="mailto:safeorstolenmail@gmail.com">Email us</a></Button>

@@ -30,7 +30,7 @@ const FAQS = [
   {
     question: 'Does the bulk check include the carrier blacklist?',
     answer:
-      'On the $14.99 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist, whether you run them one at a time or in bulk. After 20, phone checks still search theft reports and web results and show the make and model, but skip the blacklist. A $3.99 single phone check includes it. Free checks do not.',
+      'On the $10 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist, whether you run them one at a time or in bulk. After 20, phone checks still search theft reports and web results and show the make and model, but skip the blacklist. A $0.99 single phone check includes it. Free checks do not.',
   },
   {
     question: 'Can I check if a phone is iCloud locked or Google locked by IMEI?',
@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'How much does it cost a reseller?',
     answer:
-      '2 free checks with a free account, no credit card. Then $3.99 per check, or $14.99 a month for unlimited checks with up to 20 blacklist searches a month. Cancel anytime; the monthly plan has a 30-day refund. If you need more blacklist searches than that, email safeorstolenmail@gmail.com.',
+      '2 free checks with a free account, no credit card. Then $0.99 per check, or $10 a month for unlimited checks with up to 20 blacklist searches a month. Cancel anytime; the monthly plan has a 30-day refund. If you need more blacklist searches than that, email safeorstolenmail@gmail.com.',
   },
 ];
 

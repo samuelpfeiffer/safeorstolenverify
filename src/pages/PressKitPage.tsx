@@ -6,8 +6,8 @@ import { Download, FileText, Mail } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 
 /**
- * Oct 7 2026: rewritten by hand for "safeorstolen press kit". Removed: a founding year and an
- * Arizona headquarters that contradict the company facts (SafeOrStolen is in Seattle, WA), an
+ * Oct 7 2026: rewritten by hand for "safeorstolen press kit". Removed: a founding year,
+ * an
  * invented "$500B in stolen goods" pitch, a "3 sec average" stat, two founder quotes nobody can
  * attribute, "Carfax for everything" and "first universal platform" claims, downloadable assets
  * (logo pack, demo video, fact sheet PDF) that don't exist, and off-site press release links.
@@ -17,18 +17,18 @@ import { Link } from '@/lib/router-compat';
 const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 const SHORT_BOILERPLATE =
-  'SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Seattle, WA.';
+  'SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ.';
 
 const LONG_BOILERPLATE =
-  "SafeOrStolen (safeorstolen.com) is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Seattle, WA. A buyer enters an IMEI, VIN, license plate or serial number and sees whether it appears in SafeOrStolen's own theft reports and in public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Each result lists every source searched and is saved to the user's account with the date. The first 2 checks are free.";
+  "SafeOrStolen (safeorstolen.com) is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. A buyer enters an IMEI, VIN, license plate or serial number and sees whether it appears in SafeOrStolen's own theft reports and in public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Each result lists every source searched and is saved to the user's account with the date. The first 2 checks are free.";
 
 const facts: [string, string][] = [
   ['Name', 'SafeOrStolen (one word, capital S, O and S)'],
-  ['Based in', 'Seattle, WA'],
+  ['Based in', 'Peoria, AZ'],
   ['Website', 'safeorstolen.com'],
   ['What it does', 'Checks whether an IMEI, VIN, plate or serial number has been reported stolen in the records it searches'],
   ['Items covered', 'Phones, vehicles, license plates, guns, bikes and serial-numbered items such as laptops, tools and cameras'],
-  ['Price', '2 free checks; $3.99 a check; $14.99 a month unlimited'],
+  ['Price', '2 free checks; $0.99 a check; $10 a month unlimited'],
   ['App', 'Free installable web app at safeorstolen.com/app (no App Store or Google Play app)'],
   ['Press contact', PRESS_EMAIL],
 ];

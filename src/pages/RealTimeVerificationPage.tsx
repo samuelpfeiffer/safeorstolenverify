@@ -74,7 +74,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does a real-time check include Apple Activation Lock or carrier status?',
  answer:
- 'Activation Lock and Google account locks are not searched by any SafeOrStolen check; have the seller sign out of their account in front of you. The lost/stolen carrier blacklist is searched on a paid phone check, either a $3.99 single check or one of the 20 included each month on the $14.99 monthly plan.',
+ 'Activation Lock and Google account locks are not searched by any SafeOrStolen check; have the seller sign out of their account in front of you. The lost/stolen carrier blacklist is searched on a paid phone check, either a $0.99 single check or one of the 20 included each month on the $10 monthly plan.',
  },
 ];
 

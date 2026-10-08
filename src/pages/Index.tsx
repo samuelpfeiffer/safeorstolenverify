@@ -121,7 +121,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'Your first 2 checks are free with a free account and no credit card. After that it is $3.99 for a single check, or $14.99 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
+ a: 'Your first 2 checks are free with a free account and no credit card. After that it is $0.99 for a single check, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
  },
  {
  q: 'Can a license plate lookup tell me who owns a car?',
@@ -137,7 +137,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Does SafeOrStolen work for pawn shops and dealers?',
- a: "Yes. The $14.99 monthly plan includes unlimited checks, and the bulk check at safeorstolen.com/bulk-check lets you paste up to 100 serial numbers, IMEIs or VINs or upload a spreadsheet, then download a dated results file for your records.",
+ a: "Yes. The $10 monthly plan includes unlimited checks, and the bulk check at safeorstolen.com/bulk-check lets you paste up to 100 serial numbers, IMEIs or VINs or upload a spreadsheet, then download a dated results file for your records.",
  },
 ];
 
@@ -162,7 +162,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Check if something is stolen before you buy it</h1>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $3.99 a check or $14.99 a month for unlimited checks.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
@@ -198,8 +198,8 @@ const Index = () => {
  <span className="text-primary">Check for free</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
- Need just one verification? Pay <strong className="text-foreground">$3.99</strong> with a free account.
- Verifying often? Get <strong className="text-foreground">$14.99/month unlimited</strong> with the seller badge,
+ Need just one verification? Pay <strong className="text-foreground">$0.99</strong> with a free account.
+ Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
  installable web app, and verification certificates included. Cancel anytime, 30-day refund.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-3">
@@ -410,7 +410,7 @@ const Index = () => {
  </p>
  <ul className="space-y-3 mb-8">
  {[
- 'Unlimited checks for $14.99 a month',
+ 'Unlimited checks for $10 a month',
  'Bulk check: paste or upload up to 100 items at once',
  'Download a dated results file for your records',
  'Every check saved to your account with the date',
@@ -429,7 +429,7 @@ const Index = () => {
  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
  >
  <Building2 className="w-4 h-4" />
- Get Unlimited Plan — $14.99/mo
+ Get Unlimited Plan — $10/mo
  </Link>
  <Link
  to="/for-pawn-shops"
@@ -443,7 +443,7 @@ const Index = () => {
  <div className="flex-shrink-0 w-full md:w-72 modern-card p-6">
  <div className="flex items-center gap-2 mb-4">
  <Building2 className="w-5 h-5 text-primary" />
- <span className="text-foreground font-bold">Unlimited Plan — $14.99/mo</span>
+ <span className="text-foreground font-bold">Unlimited Plan — $10/mo</span>
  </div>
  <ul className="space-y-2 mb-6">
  {[
@@ -458,7 +458,7 @@ const Index = () => {
  </ul>
  <div className="border-t border-border pt-5">
  <div>
- <span className="text-4xl font-black text-foreground">$14.99</span>
+ <span className="text-4xl font-black text-foreground">$10</span>
  <span className="text-muted-foreground text-sm">/month</span>
  </div>
  <div className="text-muted-foreground text-xs mt-1">Cancel anytime · 30-day money-back guarantee</div>
@@ -592,7 +592,7 @@ const Index = () => {
  "operatingSystem": "Web",
  "offers": [
  { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
- { "@type": "Offer", "name": "Unlimited", "price": "14.99", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
+ { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
  ],
  "dateModified": "2026-10-07"
  })

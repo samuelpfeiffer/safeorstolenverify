@@ -57,7 +57,7 @@ const TestimonialsPage = () => (
               to search those for a few dollars, be skeptical.
             </li>
             <li>
-              The monthly plan ($14.99) can be cancelled anytime and has a 30-day refund. Details are on{' '}
+              The monthly plan ($10) can be cancelled anytime and has a 30-day refund. Details are on{' '}
               <Link to="/pricing" className="text-primary hover:underline">pricing</Link>.
             </li>
           </ul>

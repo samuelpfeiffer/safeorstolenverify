@@ -6,7 +6,7 @@ import { createErrorResponse } from '../_shared/errors.ts';
 
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 
-// Oct 2 2026 pricing: Free (2 checks) -> $3.99 single check -> $14.99/month (20 phone blacklist searches,
+// Oct 2 2026 pricing (reverted Oct 8, see USE_BASE_PRICES): Free (2 checks) -> $3.99 single check -> $14.99/month (20 phone blacklist searches,
 // everything else unlimited). No free trial. Prices are created once in Stripe with fixed lookup keys;
 // stripe-webhook maps those keys to plans. Existing $10 subscribers keep their old price.
 // SAFETY: if the Stripe key cannot create prices yet (needs "Prices: Write"), fall back to the old
@@ -20,7 +20,13 @@ const NEW_PRICES = {
 // matches a plan price; stripe-webhook handles purchase_type=certificate before any plan logic.
 const CERTIFICATE_AMOUNT = 199;
 
+// Oct 8 2026: back to $0.99 per check and $10/month. Sales stopped when the single check went to
+// $3.99 on Oct 3 (14 paid checks Sept 30-Oct 3 at $0.99, none in the 4 days after). The base prices
+// below are the original $0.99 / $10 Stripe prices, which stripe-webhook already maps to plans.
+const USE_BASE_PRICES = true;
+
 async function getOrCreatePrice(stripe: Stripe, cfg: typeof NEW_PRICES[keyof typeof NEW_PRICES]): Promise<string> {
+  if (USE_BASE_PRICES) return cfg.base;
   try {
     const found = await stripe.prices.list({ lookup_keys: [cfg.lookup], active: true, limit: 1 });
     if (found.data[0]) return found.data[0].id;

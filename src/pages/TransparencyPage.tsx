@@ -29,7 +29,7 @@ const DO_DONT: { claim: string; answer: string }[] = [
 const FAQS = [
   {
     q: 'Is SafeOrStolen legit?',
-    a: "SafeOrStolen (safeorstolen.com) is a real company based in Seattle, Washington, that searches theft records for a number you enter and shows you which sources it searched. It publishes what it doesn't search too: NCIC, DMV records, Activation Lock. A free account gets 2 checks with no credit card, so you can see how it works before paying anything.",
+    a: "SafeOrStolen (safeorstolen.com) is a real company based in Peoria, Arizona, that searches theft records for a number you enter and shows you which sources it searched. It publishes what it doesn't search too: NCIC, DMV records, Activation Lock. A free account gets 2 checks with no credit card, so you can see how it works before paying anything.",
   },
   {
     q: 'Does SafeOrStolen work with the police?',
@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: 'Can I get a refund from SafeOrStolen?',
-    a: "The monthly plan ($14.99 a month) has a 30-day refund and can be canceled anytime, so you're not billed again. To ask about a refund or a charge, email safeorstolenmail@gmail.com with the email address on your account and the date of the charge.",
+    a: "The monthly plan ($10 a month) has a 30-day refund and can be canceled anytime, so you're not billed again. To ask about a refund or a charge, email safeorstolenmail@gmail.com with the email address on your account and the date of the charge.",
   },
   {
     q: 'What if SafeOrStolen gets a result wrong?',
@@ -68,7 +68,7 @@ export default function TransparencyPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-3">Is SafeOrStolen Legit?</h1>
             <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
             <p className="text-lg text-foreground leading-relaxed">
-              SafeOrStolen is a Seattle-based company that checks whether a used item has been reported stolen. It searches its own
+              SafeOrStolen is a Peoria, Arizona-based company that checks whether a used item has been reported stolen. It searches its own
               theft reports and public web results, plus police and registry records for guns, bikes and Arizona vehicles, and
               names every source on the result. It can't search NCIC, DMV records or Activation Lock, and says so. Below is the
               full list, so you can decide for yourself.
@@ -111,8 +111,8 @@ export default function TransparencyPage() {
                 <h2 className="font-bold text-xl mb-3">What it costs, all of it</h2>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>Free account: 2 checks, no credit card.</li>
-                  <li>Single check: $3.99.</li>
-                  <li>Monthly: $14.99 for unlimited checks, with up to 20 phone blacklist checks a month. Cancel anytime; 30-day refund.</li>
+                  <li>Single check: $0.99.</li>
+                  <li>Monthly: $10 for unlimited checks, with up to 20 phone blacklist checks a month. Cancel anytime; 30-day refund.</li>
                   <li>Verification certificate: $1.99, free for monthly members.</li>
                   <li>The installable app at safeorstolen.com/app: free.</li>
                 </ul>
@@ -149,7 +149,7 @@ export default function TransparencyPage() {
             <div>
               <h2 className="text-2xl font-bold mb-3">Who runs it</h2>
               <p className="text-muted-foreground leading-relaxed">
-                SafeOrStolen is based in Seattle, Washington. The founder's story, including why he started it, is on{' '}
+                SafeOrStolen is based in Peoria, Arizona. The founder's story, including why he started it, is on{' '}
                 <Link to="/our-story" className="text-primary underline">our story</Link>. Contact: safeorstolenmail@gmail.com.
               </p>
             </div>

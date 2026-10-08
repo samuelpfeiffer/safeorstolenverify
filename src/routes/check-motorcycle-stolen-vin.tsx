@@ -104,7 +104,7 @@ function GuidePage() {
           {
             question: "Can I check a motorcycle VIN for free?",
             answer:
-              "Yes. SafeOrStolen (safeorstolen.com/check-motorcycle-stolen-vin) gives you 2 free VIN checks with a free account and no credit card. Each check searches SafeOrStolen's theft reports and public web results, decodes the year, make and model, and lists open safety recalls. After that a single check costs $3.99, or $14.99 a month for unlimited.",
+              "Yes. SafeOrStolen (safeorstolen.com/check-motorcycle-stolen-vin) gives you 2 free VIN checks with a free account and no credit card. Each check searches SafeOrStolen's theft reports and public web results, decodes the year, make and model, and lists open safety recalls. After that a single check costs $0.99, or $10 a month for unlimited.",
           },
           {
             question: "Where is the VIN on a motorcycle?",

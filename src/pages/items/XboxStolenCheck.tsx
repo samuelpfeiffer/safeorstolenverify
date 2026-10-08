@@ -101,7 +101,7 @@ const XboxStolenCheck = () => (
         {
           question: 'Can I check an Xbox serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-xbox) checks an Xbox serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $3.99 or unlimited checks are $14.99 a month.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-xbox) checks an Xbox serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $0.99 or unlimited checks are $10 a month.',
         },
         {
           question: 'Can Microsoft tell me if an Xbox is stolen?',

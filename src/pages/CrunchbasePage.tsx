@@ -12,8 +12,8 @@ import {
 
 /**
  * Oct 7 2026: rewritten by hand for "safeorstolen company profile". Removed: every link and
- * button to the off-site Crunchbase profile, founder names, a 2017 founding date and a Peoria,
- * Arizona headquarters that we can't confirm (the company is in Seattle, WA), a "$367 billion
+ * button to the off-site Crunchbase profile, founder names, a 2017 founding date,
+ * a "$367 billion
  * secondhand market / 10.7% CAGR" figure, "3 seconds", "34 states" for gun records (it's 33 plus
  * DC), plate lookups in "all 50 US states", "Carfax for Everything", and business plans with API
  * and white-label offers that don't exist on the site. The page now describes the company factually.
@@ -23,12 +23,12 @@ const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 const profileRows: [string, string][] = [
   ['Company', 'SafeOrStolen'],
-  ['Location', 'Seattle, WA'],
+  ['Location', 'Peoria, AZ'],
   ['Website', 'safeorstolen.com'],
   ['Category', 'Consumer protection; stolen-item checks for secondhand buyers'],
   ['Product', 'A stolen-item check for IMEI, VIN, license plate and serial numbers, on the web and as a free installable web app'],
   ['Customers', 'People buying or selling used items, plus pawn shops and dealers using bulk checks'],
-  ['Business model', '2 free checks; $3.99 a single check; $14.99 a month unlimited; optional $1.99 verification certificate'],
+  ['Business model', '2 free checks; $0.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
   ['Contact', PRESS_EMAIL],
 ];
 
@@ -36,17 +36,17 @@ const faqs = [
   {
     question: 'What is SafeOrStolen?',
     answer:
-      "SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Seattle, WA. You enter an IMEI, VIN, plate or serial at safeorstolen.com and it searches SafeOrStolen's own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and plates.",
+      "SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. You enter an IMEI, VIN, plate or serial at safeorstolen.com and it searches SafeOrStolen's own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and plates.",
   },
   {
     question: 'Where is SafeOrStolen based?',
     answer:
-      'SafeOrStolen is based in Seattle, Washington. It runs as a website at safeorstolen.com with a free installable web app at safeorstolen.com/app. There is no App Store or Google Play app. Press and business questions go to safeorstolenmail@gmail.com.',
+      'SafeOrStolen is based in Peoria, Arizona. It runs as a website at safeorstolen.com with a free installable web app at safeorstolen.com/app. There is no App Store or Google Play app. Press and business questions go to safeorstolenmail@gmail.com.',
   },
   {
     question: 'How does SafeOrStolen make money?',
     answer:
-      'From the checks themselves. A free account gets 2 checks with no credit card. After that a single check is $3.99, or $14.99 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
+      'From the checks themselves. A free account gets 2 checks with no credit card. After that a single check is $0.99, or $10 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
   },
   {
     question: 'What records does SafeOrStolen search?',
@@ -67,11 +67,11 @@ const structuredData = [
     name: 'SafeOrStolen',
     alternateName: 'Safe Or Stolen',
     description:
-      'A stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Seattle, WA.',
+      'A stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ.',
     url: 'https://safeorstolen.com',
     logo: 'https://safeorstolen.com/sos-logo.png',
     email: PRESS_EMAIL,
-    address: { '@type': 'PostalAddress', addressLocality: 'Seattle', addressRegion: 'WA', addressCountry: 'US' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Peoria', addressRegion: 'AZ', addressCountry: 'US' },
   },
   {
     '@context': 'https://schema.org',
@@ -97,7 +97,7 @@ const CrunchbasePage: React.FC = () => (
   <>
     <PageSEO
       title="SafeOrStolen Company Profile: What It Is and How It Works"
-      description="SafeOrStolen company profile: a Seattle-based stolen-item check for used phones, cars, guns and bikes. What it searches, how it makes money, how to reach it."
+      description="SafeOrStolen company profile: a Peoria, Arizona-based stolen-item check for used phones, cars, guns and bikes. What it searches, how it makes money, how to reach it."
       keywords="safeorstolen company profile, safeorstolen crunchbase, what is safeorstolen, safeorstolen seattle"
       canonical="/crunchbase"
       structuredData={structuredData}
@@ -122,7 +122,7 @@ const CrunchbasePage: React.FC = () => (
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">SafeOrStolen Company Profile</h1>
           <p className="text-lg text-muted-foreground mb-4">
             SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
-            number, based in Seattle, WA. A buyer enters an IMEI, VIN, plate or serial number and sees whether it
+            number, based in Peoria, AZ. A buyer enters an IMEI, VIN, plate or serial number and sees whether it
             has been reported stolen in the records SafeOrStolen searches, with every source listed. It makes money
             from paid checks and a monthly plan, not ads.
           </p>

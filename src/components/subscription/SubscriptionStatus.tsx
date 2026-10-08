@@ -178,7 +178,7 @@ export const SubscriptionStatus = () => {
         {/* Feature comparison */}
         <div className="text-xs text-gray-500 space-y-1 pt-2 border-t border-gray-700">
           <div className="font-medium">Subscribe for unlimited access:</div>
-          <div>• $14.99/month — unlimited verifications</div>
+          <div>• $10/month — unlimited verifications</div>
           <div>• All item types, all databases</div>
           <div>• Cancel anytime</div>
         </div>

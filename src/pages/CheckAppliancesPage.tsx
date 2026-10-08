@@ -104,7 +104,7 @@ const CheckAppliancesPage = () => (
         {
           question: 'Can I look up an appliance serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-appliances) checks an appliance serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $3.99.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-appliances) checks an appliance serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $0.99.',
         },
         {
           question: 'Is it a red flag if a used appliance is brand new?',

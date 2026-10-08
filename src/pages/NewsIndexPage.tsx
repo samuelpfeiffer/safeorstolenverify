@@ -74,7 +74,7 @@ const NewsIndexPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">SafeOrStolen News</h1>
             <p className="text-lg text-muted-foreground mb-4">
               SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
-              number, based in Seattle, WA. This page sums up what a check covers right now. Buying guides and
+              number, based in Peoria, AZ. This page sums up what a check covers right now. Buying guides and
               how-tos are on the <Link to="/blog" className="text-primary hover:underline">blog</Link>, and press
               questions go to {PRESS_EMAIL}.
             </p>
@@ -130,8 +130,8 @@ const NewsIndexPage = () => {
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <h2 className="text-2xl font-bold mb-4">Check an item</h2>
             <p className="text-muted-foreground mb-6">
-              The first 2 checks are free with a free account, no credit card. After that it's $3.99 a check or
-              $14.99 a month for unlimited checks.
+              The first 2 checks are free with a free account, no credit card. After that it's $0.99 a check or
+              $10 a month for unlimited checks.
             </p>
             <Button asChild size="lg">
               <Link to="/verify">Start a free check</Link>

@@ -24,7 +24,7 @@ const FAQS = [
   {
     question: 'Is there a free app to check if an item is stolen?',
     answer:
-      "SafeOrStolen is free to install from safeorstolen.com/app and comes with 2 free checks on a free account, no credit card. It's an installable web app, not an App Store or Google Play download. After the free checks, a single check is $3.99 or unlimited checks are $14.99 a month.",
+      "SafeOrStolen is free to install from safeorstolen.com/app and comes with 2 free checks on a free account, no credit card. It's an installable web app, not an App Store or Google Play download. After the free checks, a single check is $0.99 or unlimited checks are $10 a month.",
   },
   {
     question: 'What should I check at a meetup before buying a used phone?',

@@ -97,7 +97,7 @@ const GamingConsoleCheck = () => (
         {
           question: 'Can I check a console serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-gaming-console-stolen) checks a console serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $3.99 or unlimited checks are $14.99 a month.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-gaming-console-stolen) checks a console serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $0.99 or unlimited checks are $10 a month.',
         },
         {
           question: 'Can Nintendo, Sony or Microsoft tell me if a console is stolen?',

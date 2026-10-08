@@ -131,9 +131,9 @@ export const SEOLandingPageTemplate = ({
     "dateModified": "2026-03-02",
     "offers": {
       "@type": "Offer",
-      "price": "14.99",
+      "price": "10.00",
       "priceCurrency": "USD",
-      "description": "$14.99/month unlimited verifications"
+      "description": "$10/month unlimited verifications"
     }
   };
 
@@ -236,7 +236,7 @@ export const SEOLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">From $3.99/check</span>
+                <span className="text-sm font-semibold text-center">From $0.99/check</span>
               </div>
             </div>
           </div>
@@ -383,7 +383,7 @@ export const SEOLandingPageTemplate = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">
                 <Button size="lg" className="gap-2 w-full sm:w-auto">
-                  Verify Now — From $3.99 <Search className="w-4 h-4" />
+                  Verify Now — From $0.99 <Search className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/app">

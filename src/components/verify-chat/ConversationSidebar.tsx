@@ -141,7 +141,7 @@ export const ConversationSidebar: React.FC<Props> = ({
 
   const planLine = (() => {
     if (!plan || plan.plan === 'guest') return 'Not signed in';
-    if (plan.plan === 'unlimited') return '$14.99/mo plan';
+    if (plan.plan === 'unlimited') return '$10/mo plan';
     if (plan.plan === 'single') return 'Single check';
     return 'Free plan';
   })();

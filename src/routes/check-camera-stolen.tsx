@@ -101,7 +101,7 @@ function GuidePage() {
           {
             question: 'Can I check a camera serial number for free?',
             answer:
-              'Yes. SafeOrStolen (safeorstolen.com/check-camera-stolen) checks camera body and lens serials against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $3.99 or unlimited checks are $14.99 a month.',
+              'Yes. SafeOrStolen (safeorstolen.com/check-camera-stolen) checks camera body and lens serials against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $0.99 or unlimited checks are $10 a month.',
           },
           {
             question: 'Do lenses have serial numbers?',

@@ -43,7 +43,7 @@ const FAQS = [
   {
     question: 'Is there an IMEI check API?',
     answer:
-      "Not from SafeOrStolen. To check IMEIs in volume, upload them to the bulk check as a .csv file and download the results. Each phone check shows the make and model and searches SafeOrStolen theft reports and web results. On the $14.99 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist.",
+      "Not from SafeOrStolen. To check IMEIs in volume, upload them to the bulk check as a .csv file and download the results. Each phone check shows the make and model and searches SafeOrStolen theft reports and web results. On the $10 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist.",
   },
   {
     question: 'Is there a VIN stolen check API?',
@@ -58,7 +58,7 @@ const FAQS = [
   {
     question: 'How much would API access cost?',
     answer:
-      "There is no API price list because there is no public API. Today's prices are 2 free checks, $3.99 per check, or $14.99 a month for unlimited checks with up to 20 blacklist checks a month. If you need checks to run from your own system, email safeorstolenmail@gmail.com with your item types and monthly volume.",
+      "There is no API price list because there is no public API. Today's prices are 2 free checks, $0.99 per check, or $10 a month for unlimited checks with up to 20 blacklist checks a month. If you need checks to run from your own system, email safeorstolenmail@gmail.com with your item types and monthly volume.",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function APIPage() {
             <Table head={['Parameter', 'What it is', 'Example']} rows={LINK_PARAMS} />
             <p className="text-muted-foreground mt-4">
               The visitor sees the result on SafeOrStolen, not on your site. Visitors get 2 free checks without paying; after
-              that they create an account and pay $3.99 a check or $14.99 a month.
+              that they create an account and pay $0.99 a check or $10 a month.
             </p>
           </section>
 
@@ -151,7 +151,7 @@ ABC123456,gun,ticket 4413`}</pre>
             <h3 className="font-semibold mb-2">Output columns</h3>
             <Table head={['Column', 'Contents']} rows={CSV_OUT} />
             <p className="text-muted-foreground mt-4">
-              Each row uses one check on the account, so this is built for the $14.99 monthly plan. If the account runs out
+              Each row uses one check on the account, so this is built for the $10 monthly plan. If the account runs out
               of checks, the run stops and says so. Every check is also saved to the account with its date.
             </p>
           </section>

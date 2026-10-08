@@ -17,7 +17,7 @@ const OPTIONS: string[][] = [
   ['Ask for the number in the listing form', 'A field for the serial number, IMEI or VIN on phones, laptops, bikes, tools, guns and vehicles', 'Your own form; nothing needed from us'],
   ['Link the listing to a check', 'A "Check this item" link to safeorstolen.com/verify?q=NUMBER&type=imei (or vin, gun, bike, plate). The buyer lands on SafeOrStolen and the check starts.', 'Available now'],
   ['Ask sellers for a certificate link', 'The seller runs a check and adds a $1.99 verification certificate. Its link shows the date, the last four characters of the number, the result and the sources searched.', 'Available now'],
-  ['Review a batch of listings', 'Staff paste up to 100 numbers into /bulk-check and download a CSV of results.', 'Available now, on the $14.99/month plan'],
+  ['Review a batch of listings', 'Staff paste up to 100 numbers into /bulk-check and download a CSV of results.', 'Available now, on the $10/month plan'],
   ['Automatic checks through an API', 'Checks run from your own systems at listing time', 'Not available today. Email safeorstolenmail@gmail.com.'],
 ];
 
@@ -163,7 +163,7 @@ export default function ForMarketplaces() {
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Talk to us about your categories</h2>
             <p className="text-muted-foreground mb-6">
               Tell us which item types you list and roughly how many a month: safeorstolenmail@gmail.com. SafeOrStolen is
-              based in Seattle, WA.
+              based in Peoria, AZ.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" asChild><a href="mailto:safeorstolenmail@gmail.com">Email us</a></Button>

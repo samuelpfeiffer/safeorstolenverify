@@ -69,7 +69,7 @@ export const TrustSignalsSection = () => {
  3,000+ Databases Worldwide
  </h3>
  <p className="text-base text-muted-foreground mb-6">
- Every check covers our own stolen-item reports, public web results and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns
+ Every check covers our own stolen-item reports, public web results and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
  </p>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
  <div>

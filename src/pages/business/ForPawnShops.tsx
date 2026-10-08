@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: 'How much does SafeOrStolen cost for a pawn shop?',
     answer:
-      'Every account gets 2 free checks with no credit card. After that a single check is $3.99, or $14.99 a month for unlimited checks, which is the plan the bulk check is built for. Phone blacklist checks are capped at 20 a month on that plan. Cancel anytime; the monthly plan has a 30-day refund.',
+      'Every account gets 2 free checks with no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, which is the plan the bulk check is built for. Phone blacklist checks are capped at 20 a month on that plan. Cancel anytime; the monthly plan has a 30-day refund.',
   },
   {
     question: 'Does SafeOrStolen work with our pawn software?',
@@ -72,7 +72,7 @@ export default function ForPawnShops() {
       provider: { '@type': 'Organization', name: 'SafeOrStolen', url: 'https://safeorstolen.com' },
       areaServed: { '@type': 'Country', name: 'United States' },
       description: 'Single and bulk serial, gun, IMEI and VIN checks for pawn shops, with a dated record of each check.',
-      offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'USD', description: 'Unlimited checks per month' },
+      offers: { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks per month' },
       dateModified: '2026-10-07',
     },
     {
@@ -154,7 +154,7 @@ export default function ForPawnShops() {
             </ol>
             <p className="text-muted-foreground">
               Each run takes up to 100 items, and each item uses one check on your account, so the bulk check is built for
-              the $14.99 monthly plan. If your account runs out of checks partway, it stops and tells you.
+              the $10 monthly plan. If your account runs out of checks partway, it stops and tells you.
             </p>
           </div>
         </section>

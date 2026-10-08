@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 /**
  * Oct 7 2026: rewritten by hand for "how to prove an item is not stolen" when selling it. Removed:
- * a "$10" plan card (the plan is $14.99), "Verified Safe" badges and badge images, QR codes, PDF
+ * a "$10" plan card (the plan is $10), "Verified Safe" badges and badge images, QR codes, PDF
  * certificates, seller profile pages, a "Trust Score (0-100)", "reports valid for 90 days",
  * priority support, bulk upload for "Verified Seller and Premium members", a list of 12 named
  * marketplaces the badge "works on", "3 sec", an "AI analysis" source, "34 states" (it's 33 plus
@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: 'How much does a verification certificate cost?',
     answer:
-      'The check comes first: 2 free checks with a free account, then $3.99 per check or $14.99 a month for unlimited checks. The certificate is $1.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
+      'The check comes first: 2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks. The certificate is $1.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
   },
   {
     question: 'Does a clean check guarantee my item isn\'t stolen?',
@@ -70,7 +70,7 @@ export default function ForSellers() {
       description: 'Check an item before listing it and share a dated verification certificate link with buyers.',
       offers: [
         { '@type': 'Offer', price: '1.99', priceCurrency: 'USD', description: 'Verification certificate' },
-        { '@type': 'Offer', price: '14.99', priceCurrency: 'USD', description: 'Unlimited checks per month, certificates included' },
+        { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks per month, certificates included' },
       ],
       dateModified: '2026-10-07',
     },
@@ -180,7 +180,7 @@ export default function ForSellers() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Check before you list</h2>
             <p className="text-muted-foreground mb-6">
-              Selling a lot of items? The $14.99 monthly plan covers unlimited checks and includes certificates, and the{' '}
+              Selling a lot of items? The $10 monthly plan covers unlimited checks and includes certificates, and the{' '}
               <Link to="/bulk-check" className="text-primary underline">bulk check</Link> runs up to 100 numbers at once. Cancel
               anytime; 30-day refund on the monthly plan.
             </p>

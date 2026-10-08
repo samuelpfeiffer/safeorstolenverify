@@ -16,11 +16,11 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "How much does SafeOrStolen cost?",
-  answer: "A free account includes 2 checks. Additional checks cost $3.99 each, or $14.99 per month for unlimited supported checks."
+  answer: "A free account includes 2 checks. Additional checks cost $0.99 each, or $10 per month for unlimited supported checks."
  },
  {
  question: "What items can I verify with SafeOrStolen?",
-  answer: "You can check phones, vehicles, license plates, laptops, power tools, bicycles, cameras, firearms, and other serial-numbered items. Checks use SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns."
+  answer: "You can check phones, vehicles, license plates, laptops, power tools, bicycles, cameras, firearms, and other serial-numbered items. Checks use SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns."
  },
  {
  question: "Do I need to download an app?",
@@ -34,11 +34,11 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "Is this database global? What countries are covered?",
- answer: "Yes! We search SafeOrStolen's own reports, public web results, and apply AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states plus live Ohio records. Paid phone checks search the lost and stolen phone blacklist."
+ answer: "Yes! We search SafeOrStolen's own reports, public web results, and apply AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC plus live Ohio records. Paid phone checks search the lost and stolen phone blacklist."
  },
  {
  question: "How accurate are SafeOrStolen results?",
- answer: "We search SafeOrStolen's own reports, public web results, and apply AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states. Results appear in seconds, with every source listed."
+ answer: "We search SafeOrStolen's own reports, public web results, and apply AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC. Results appear in seconds, with every source listed."
  },
  {
  question: "What if an item shows 'Safe' but turns out stolen?",
@@ -51,12 +51,12 @@ export const EnhancedFAQSection = () => {
  icon: DollarSign,
  faqs: [
  {
- question: "What's included in the $14.99/month plan?",
- answer: "The $14.99/month Unlimited Plan includes unlimited verifications (with 20 phone blacklist searches a month) across all item types, PDF certificates, AI-powered analysis, seller badges, and access to multiple sources. Cancel anytime — no contracts. Or pay $3.99 per individual check."
+ question: "What's included in the $10/month plan?",
+ answer: "The $10/month Unlimited Plan includes unlimited verifications (with 20 phone blacklist searches a month) across all item types, PDF certificates, AI-powered analysis, seller badges, and access to multiple sources. Cancel anytime — no contracts. Or pay $0.99 per individual check."
  },
  {
  question: "Can I verify in bulk for my business?",
- answer: "Yes! Our $14.99/month Unlimited plan includes unlimited checks (with 20 phone blacklist searches a month), downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers. Contact us for enterprise API access."
+ answer: "Yes! Our $10/month Unlimited plan includes unlimited checks (with 20 phone blacklist searches a month), downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers. Contact us for enterprise API access."
  },
  {
  question: "Do you offer refunds if I'm not satisfied?",

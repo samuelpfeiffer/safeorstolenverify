@@ -381,7 +381,7 @@ export function DefinitiveItemGuide({
         <p className="mt-4">
           SafeOrStolen checks its own stolen-item reports, public web results,
           and AI notes. Guns are also checked against police theft and loss
-          reports from 34 states plus live Ohio records, bikes against a
+          reports from 33 states and DC plus live Ohio records, bikes against a
           national stolen-bicycle registry, and paid phone checks search the
           lost and stolen phone blacklist. It does not search NCIC, DMV or
           insurance records; those are separate checks described in this guide.

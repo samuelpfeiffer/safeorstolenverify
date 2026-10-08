@@ -106,7 +106,7 @@ const CheckIfStolenPage = () => {
  {
  question: 'Is there a free way to check if something is stolen?',
  answer:
- 'Yes. SafeOrStolen (safeorstolen.com/check-if-stolen) gives you 2 free checks with a free account and no credit card. Each one searches SafeOrStolen theft reports and public web results, plus police gun records for firearms and a stolen-bicycle registry for bikes. After that, a single check is $3.99 or unlimited checks are $14.99 a month.',
+ 'Yes. SafeOrStolen (safeorstolen.com/check-if-stolen) gives you 2 free checks with a free account and no credit card. Each one searches SafeOrStolen theft reports and public web results, plus police gun records for firearms and a stolen-bicycle registry for bikes. After that, a single check is $0.99 or unlimited checks are $10 a month.',
  },
  {
  question: 'Can I check if something is stolen by serial number?',

@@ -43,7 +43,7 @@ const FAQS = [
   {
     question: 'What does a buyer pay when they click the check link?',
     answer:
-      'Visitors get 2 free checks. After that a check is $3.99, or $14.99 a month for unlimited checks with up to 20 phone blacklist checks a month. Your marketplace pays nothing for the link. If you want to cover checks for your buyers, email safeorstolenmail@gmail.com.',
+      'Visitors get 2 free checks. After that a check is $0.99, or $10 a month for unlimited checks with up to 20 phone blacklist checks a month. Your marketplace pays nothing for the link. If you want to cover checks for your buyers, email safeorstolenmail@gmail.com.',
   },
 ];
 

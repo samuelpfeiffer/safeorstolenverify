@@ -49,11 +49,11 @@ const notSearched = [
 const faqs = [
   {
     q: 'What is SafeOrStolen?',
-    a: "SafeOrStolen (safeorstolen.com) is a Seattle-based website that checks whether a used item has been reported stolen before you buy or sell it. You type in an IMEI, VIN, plate, or serial number, and it searches its own theft reports, public web results, and extra records for guns, bikes, phones and Arizona vehicles. The result lists every source it searched.",
+    a: "SafeOrStolen (safeorstolen.com) is a Peoria, Arizona-based website that checks whether a used item has been reported stolen before you buy or sell it. You type in an IMEI, VIN, plate, or serial number, and it searches its own theft reports, public web results, and extra records for guns, bikes, phones and Arizona vehicles. The result lists every source it searched.",
   },
   {
     q: 'Is SafeOrStolen free?',
-    a: 'A free account comes with 2 checks and needs no credit card. After that, a single check costs $3.99, or $14.99 a month gets unlimited checks with up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime, and it has a 30-day refund.',
+    a: 'A free account comes with 2 checks and needs no credit card. After that, a single check costs $0.99, or $10 a month gets unlimited checks with up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime, and it has a 30-day refund.',
   },
   {
     q: 'Is SafeOrStolen a police database?',
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: 'How do I contact SafeOrStolen?',
-    a: 'Email safeorstolenmail@gmail.com. SafeOrStolen is based in Seattle, Washington. For questions about a specific check, include the date of the check and the number you searched so the result can be found in your account history.',
+    a: 'Email safeorstolenmail@gmail.com. SafeOrStolen is based in Peoria, Arizona. For questions about a specific check, include the date of the check and the number you searched so the result can be found in your account history.',
   },
 ];
 
@@ -96,8 +96,8 @@ const AboutPage = () => {
               email: 'safeorstolenmail@gmail.com',
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Seattle',
-                addressRegion: 'WA',
+                addressLocality: 'Peoria',
+                addressRegion: 'AZ',
                 addressCountry: 'US',
               },
               description:
@@ -128,7 +128,7 @@ const AboutPage = () => {
               SafeOrStolen is a website that tells you whether a used item has been reported stolen before you hand over money for it.
               You enter the phone's IMEI, the car's VIN or plate, or the serial number on a gun, bike, laptop or tool. In a few seconds
               you get one of three answers: reported stolen, possible match, or no report found in the records searched, with every
-              source listed. The company is based in Seattle, Washington.
+              source listed. The company is based in Peoria, Arizona.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               It's built for the moment in a parking lot or a stranger's driveway when you're about to buy something and can't tell if
@@ -187,9 +187,9 @@ const AboutPage = () => {
               <h2 className="text-xl font-bold mb-3 text-foreground">What it costs</h2>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><strong className="text-foreground">Free account:</strong> 2 checks, no credit card.</li>
-                <li><strong className="text-foreground">Single check:</strong> $3.99.</li>
+                <li><strong className="text-foreground">Single check:</strong> $0.99.</li>
                 <li>
-                  <strong className="text-foreground">Monthly:</strong> $14.99 for unlimited checks (up to 20 phone blacklist checks a
+                  <strong className="text-foreground">Monthly:</strong> $10 for unlimited checks (up to 20 phone blacklist checks a
                   month). Cancel anytime, 30-day refund.
                 </li>
                 <li>

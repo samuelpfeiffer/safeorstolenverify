@@ -33,7 +33,7 @@ const FAQS = [
   {
     question: 'Can I check a whole consignment list at once?',
     answer:
-      'Up to 100 items per run. Put one number per line in a .csv or .txt file, with an optional type and a note such as the lot number: 1HGBH41JXMN109186, vehicle, lot 212. Upload it at /bulk-check. For a longer sale, split the list and run it in parts. Each item uses one check, so the $14.99 monthly plan is the one built for this.',
+      'Up to 100 items per run. Put one number per line in a .csv or .txt file, with an optional type and a note such as the lot number: 1HGBH41JXMN109186, vehicle, lot 212. Upload it at /bulk-check. For a longer sale, split the list and run it in parts. Each item uses one check, so the $10 monthly plan is the one built for this.',
   },
   {
     question: 'What happens if a consigned item comes back reported stolen?',
@@ -159,7 +159,7 @@ export default function ForAuctionHouses() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Check the next sale's lots</h2>
             <p className="text-muted-foreground mb-6">
-              2 free checks, then $3.99 per check or $14.99 a month unlimited. For more on checking at other businesses see{' '}
+              2 free checks, then $0.99 per check or $10 a month unlimited. For more on checking at other businesses see{' '}
               <Link to="/for-businesses" className="text-primary underline">SafeOrStolen for businesses</Link>. Questions:
               safeorstolenmail@gmail.com.
             </p>

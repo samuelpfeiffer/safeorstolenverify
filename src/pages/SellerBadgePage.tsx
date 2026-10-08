@@ -40,7 +40,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'How much does it cost?',
     answer:
-      'The check itself is one of your checks: 2 are free with a free account, then $3.99 for a single check or $14.99 a month for unlimited checks. The certificate is $1.99 on top, or included free with the monthly plan. You only need one certificate per item.',
+      'The check itself is one of your checks: 2 are free with a free account, then $0.99 for a single check or $10 a month for unlimited checks. The certificate is $1.99 on top, or included free with the monthly plan. You only need one certificate per item.',
   },
 ];
 

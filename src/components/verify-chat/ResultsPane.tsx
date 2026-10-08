@@ -33,7 +33,7 @@ const SOURCE_LABELS: Record<string, string> = {
   bikeindex: 'National stolen-bicycle registry',
   hotgunz: 'Stolen-firearm database',
   firearm_verification: 'Ohio law-enforcement stolen-gun records',
-  police_theft_records: 'Police theft records (34 states)',
+  police_theft_records: 'Police theft records (33 states and DC)',
   imei_verification: 'Lost & stolen phone blacklist',
   vehicle_verification: 'Law-enforcement & federal vehicle records',
   web_scraper: 'Public web search',

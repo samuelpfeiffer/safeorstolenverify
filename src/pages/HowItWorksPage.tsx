@@ -251,8 +251,8 @@ const HowItWorksPage = () => {
 
  <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">What it costs</h2>
  <p className="text-muted-foreground mb-4">
- A free account comes with 2 checks and no credit card. After that it's $3.99 for a single check
- or $14.99 a month for unlimited checks. Full details are on the{' '}
+ A free account comes with 2 checks and no credit card. After that it's $0.99 for a single check
+ or $10 a month for unlimited checks. Full details are on the{' '}
  <Link to="/pricing" className="text-primary underline">pricing page</Link>. Pawn shops and
  dealers checking many items at once can use <Link to="/bulk-check" className="text-primary underline">bulk check</Link>.
  </p>

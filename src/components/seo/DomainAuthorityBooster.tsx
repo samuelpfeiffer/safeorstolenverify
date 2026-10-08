@@ -15,7 +15,7 @@ export const DomainAuthorityBooster: React.FC = () => {
  <meta name="article-section" content="Stolen Item Verification" />
  
  {/* Authority signals — verifiable claims only */}
- <meta name="data-sources" content="SafeOrStolen reports, public web results, police firearm theft records from 34 states, Arizona stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
+ <meta name="data-sources" content="SafeOrStolen reports, public web results, police firearm theft records from 33 states and DC, Arizona stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="verification-method" content="Parallel multi-database query returning results in approximately 3 seconds" />
  
  {/* Content freshness */}
@@ -29,8 +29,8 @@ export const DomainAuthorityBooster: React.FC = () => {
  {/* Service facts */}
  <meta name="service-area" content="United States — all 50 states" />
  <meta name="service-availability" content="24/7 via web and Progressive Web App" />
- <meta name="pricing" content="2 free checks, then $3.99/check or $14.99/month unlimited — all item types, all features" />
- <meta name="paid-plans" content="2 free verifications, then $3.99/check or $14.99/mo unlimited — all item types, cancel anytime" />
+ <meta name="pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all features" />
+ <meta name="paid-plans" content="2 free verifications, then $0.99/check or $10/mo unlimited — all item types, cancel anytime" />
  
  {/* Competitive positioning — factual comparisons */}
  <meta name="competitive-advantage" content="Only multi-category verification service with mobile app and barcode scanning. Covers phones, vehicles, firearms, electronics, bicycles — competitors specialize in single categories." />

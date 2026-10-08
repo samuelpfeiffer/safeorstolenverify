@@ -274,7 +274,7 @@ export default function StateFirearmTransferLawsPage() {
               <h2 className="text-xl font-bold mb-2">Check the serial before you pay</h2>
               <p className="text-sm text-muted-foreground mb-4">
                 Searches 242,839 police theft and loss reports from 33 states and Washington, DC, live Ohio records and
-                owner reports, and flags altered serials. 2 free checks, then $3.99 a check or $14.99 a month unlimited.
+                owner reports, and flags altered serials. 2 free checks, then $0.99 a check or $10 a month unlimited.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Link to="/firearms-check" className="rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground hover:opacity-90 transition">

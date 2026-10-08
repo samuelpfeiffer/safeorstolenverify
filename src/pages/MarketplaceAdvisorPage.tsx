@@ -3,7 +3,7 @@
  * price estimate). No Search Console data for this page yet. The tool needs a signed-in account,
  * reads the listing text (not the photos) and returns a written report; the copy now says so.
  * Removed: "20+ scam indicators", "50%+ below market" as a fixed rule, "all major platforms",
- * and the $14.99 price in the schema (the tool is not sold separately).
+ * and the $10 price in the schema (the tool is not sold separately).
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';

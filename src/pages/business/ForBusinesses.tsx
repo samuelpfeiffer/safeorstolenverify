@@ -14,7 +14,7 @@ const UPDATED = 'October 7, 2026';
 
 const WHAT_YOU_GET: string[][] = [
   ['Single checks', 'Type or paste a serial number, IMEI, VIN or plate at /verify and get a result in a few seconds.', 'Every account, 2 free checks'],
-  ['Bulk check', 'Paste up to 100 numbers, or upload a .csv or .txt file, at /bulk-check. Download the results as a CSV.', 'Built for the $14.99/month plan'],
+  ['Bulk check', 'Paste up to 100 numbers, or upload a .csv or .txt file, at /bulk-check. Download the results as a CSV.', 'Built for the $10/month plan'],
   ['Dated check history', 'Every check is saved to your account with the date and time, the result and the sources searched.', 'Every account'],
   ['Verification certificate', 'A dated record with its own link that shows you checked an item. You can show it to a customer or keep it in the file.', '$1.99, free on the monthly plan'],
   ['Phone blacklist check', 'Checks an IMEI against the lost and stolen carrier blacklist.', 'Paid; up to 20 a month on the monthly plan'],
@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: 'How much does SafeOrStolen cost for a business?',
     answer:
-      'There is no separate business price. Every account gets 2 free checks with no credit card. After that it is $3.99 for a single check or $14.99 a month for unlimited checks, which is the plan bulk checking is built for. Phone blacklist checks are capped at 20 a month on that plan. You can cancel anytime, and there is a 30-day refund on the monthly plan.',
+      'There is no separate business price. Every account gets 2 free checks with no credit card. After that it is $0.99 for a single check or $10 a month for unlimited checks, which is the plan bulk checking is built for. Phone blacklist checks are capped at 20 a month on that plan. You can cancel anytime, and there is a 30-day refund on the monthly plan.',
   },
   {
     question: 'Does SafeOrStolen search police databases like NCIC?',
@@ -80,8 +80,8 @@ export default function ForBusinesses() {
       description:
         'Single and bulk checks of serial numbers, IMEIs and VINs against SafeOrStolen theft reports and public web results, with a dated record of every check.',
       offers: [
-        { '@type': 'Offer', price: '3.99', priceCurrency: 'USD', description: 'Single check' },
-        { '@type': 'Offer', price: '14.99', priceCurrency: 'USD', description: 'Unlimited checks per month' },
+        { '@type': 'Offer', price: '0.99', priceCurrency: 'USD', description: 'Single check' },
+        { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks per month' },
       ],
       dateModified: '2026-10-07',
     },
@@ -226,8 +226,8 @@ export default function ForBusinesses() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Try it on today's intake</h2>
             <p className="text-muted-foreground mb-6">
-              Create a free account and run 2 checks. If it fits your counter, the $14.99 monthly plan covers unlimited
-              checks. Questions about volume or setup: safeorstolenmail@gmail.com. SafeOrStolen is based in Seattle, WA.
+              Create a free account and run 2 checks. If it fits your counter, the $10 monthly plan covers unlimited
+              checks. Questions about volume or setup: safeorstolenmail@gmail.com. SafeOrStolen is based in Peoria, AZ.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" asChild><Link to="/bulk-check">Open the bulk check</Link></Button>

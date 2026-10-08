@@ -12,7 +12,7 @@ const StolenGunDatabasePage = () => {
  return (
  <ItemLandingPageTemplate
  title="Stolen Gun Database Search: Check a Gun Serial Number | SafeOrStolen"
- metaDescription="Check a gun serial number against police theft records from 34 states and live Ohio stolen-gun records, and spot altered serials. 2 free checks, no account needed."
+ metaDescription="Check a gun serial number against police theft records from 33 states and DC and live Ohio stolen-gun records, and spot altered serials. 2 free checks, no account needed."
  h1="Stolen gun database search: check a firearm serial number"
  itemType="Firearm"
  searchType="firearm"
@@ -28,16 +28,16 @@ const StolenGunDatabasePage = () => {
  'stolen gun check by serial number',
  ]}
  content={{
- intro: "Every firearm check on SafeOrStolen searches police stolen-gun records from 34 states, more than 220,000 theft and loss reports, plus live Ohio law-enforcement stolen-gun records and SafeOrStolen's own theft reports. It also checks the serial number for signs of alteration. Here's what that covers and what no public site can search.",
+ intro: "Every firearm check on SafeOrStolen searches police stolen-gun records from 33 states and Washington, DC, 242,839 theft and loss reports, plus live Ohio law-enforcement stolen-gun records and SafeOrStolen's own theft reports. It also checks the serial number for signs of alteration. Here's what that covers and what no public site can search.",
 
- whatIs: "Most stolen-gun records sit in the FBI's national system (NCIC), which only police and licensed dealers can search. SafeOrStolen built its own multi-state database from police department records obtained through public records laws, covering 34 states including California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, and Illinois. Most of those reports were filed between 2010 and 2017, so a match tells you which police department took the report, and you confirm with them before buying. Ohio's records are searched live and updated daily.",
+ whatIs: "Most stolen-gun records sit in the FBI's national system (NCIC), which only police and licensed dealers can search. SafeOrStolen built its own multi-state database from police department records obtained through public records laws, covering 33 states and DC including California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, and Illinois. Most of those reports were filed between 2010 and 2017, so a match tells you which police department took the report, and you confirm with them before buying. Ohio's records are searched live and updated daily.",
 
- howItWorks: "Enter the serial number from the frame or receiver. SafeOrStolen first checks for signs of an altered or missing serial, such as all zeros or words like 'obliterated.' Then it searches police theft records from 34 states, live Ohio records, and its own reports. A stolen warning only appears on an exact serial match, and it shows the make, model, year, city, and police department so you can tell whether the record is for the same gun.",
+ howItWorks: "Enter the serial number from the frame or receiver. SafeOrStolen first checks for signs of an altered or missing serial, such as all zeros or words like 'obliterated.' Then it searches police theft records from 33 states and DC, live Ohio records, and its own reports. A stolen warning only appears on an exact serial match, and it shows the make, model, year, city, and police department so you can tell whether the record is for the same gun.",
 
  whyCheck: "If a gun you bought turns out to be stolen, police can take it, and you lose what you paid. Federal law makes it a crime to possess a gun you know or have reason to believe is stolen, so checking before you buy and keeping a record of the sale protects you.",
 
  benefits: [
- "Searches police stolen-gun records from 34 states",
+ "Searches police stolen-gun records from 33 states and DC",
  "Searches live Ohio law-enforcement stolen-gun records",
  "Shows the make, model, and police department behind any match",
  "Flags guns that were stolen and later recovered",
@@ -56,11 +56,11 @@ const StolenGunDatabasePage = () => {
  faqs: [
  {
  question: "What stolen gun database does SafeOrStolen search?",
- answer: "SafeOrStolen searches police stolen-gun records from 34 states (more than 220,000 theft and loss reports gathered from police departments through public records), live Ohio law-enforcement stolen-gun records updated daily, and its own theft reports. It also checks the serial number itself for signs of alteration.",
+ answer: "SafeOrStolen searches police stolen-gun records from 33 states and Washington, DC (242,839 theft and loss reports gathered from police departments through public records), live Ohio law-enforcement stolen-gun records updated daily, and its own theft reports. It also checks the serial number itself for signs of alteration.",
  },
  {
  question: "Which states are covered?",
- answer: "The multi-state records include police reports from 34 states, with the most from California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, Illinois, Kansas, Indiana, Missouri, and Nevada. Ohio is searched live. SafeOrStolen keeps adding states and newer records.",
+ answer: "The multi-state records include police reports from 33 states and Washington, DC, with the most from California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, Illinois, Kansas, Indiana, Missouri, and Nevada. Ohio is searched live. SafeOrStolen keeps adding states and newer records.",
  },
  {
  question: "Can I search the FBI's stolen gun database?",

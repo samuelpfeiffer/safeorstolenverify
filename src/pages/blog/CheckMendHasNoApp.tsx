@@ -43,15 +43,15 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "Why doesnt CheckMEND have an app?",
-            answer: "CheckMEND has not developed a mobile app due to technical complexity and its business model focused on per-check pricing ($3.99). Building a modern app with barcode scanning would require a complete rebuild."
+            answer: "CheckMEND has not developed a mobile app due to technical complexity and its business model focused on per-check pricing ($0.99). Building a modern app with barcode scanning would require a complete rebuild."
           },
           {
             question: "What is the best CheckMEND alternative with an app?",
-            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $14.99/month unlimited (vs CheckMEND's $3.99/check), offline mode, and coverage for many item types."
+            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $10/month unlimited (vs CheckMEND's $0.99/check), offline mode, and coverage for many item types."
           },
           {
             question: "Is SafeOrStolen cheaper than CheckMEND?",
-            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. Plus you get a mobile app with barcode scanning that CheckMEND does not offer."
+            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $0.99 per check. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Plus you get a mobile app with barcode scanning that CheckMEND does not offer."
           },
           {
             question: "Can I scan barcodes with CheckMEND?",
@@ -113,7 +113,7 @@ const CheckMendHasNoApp = () => {
                 <strong>Slow Development Cycle</strong> - CheckMEND's core technology was built in the early 2000s. Modernizing to support mobile apps would require a complete rebuild.
               </li>
               <li>
-                <strong>High Per-Check Pricing</strong> - At $3.99 per check, CheckMEND profits from their manual verification process. A fast mobile app would reduce their per-check revenue.
+                <strong>High Per-Check Pricing</strong> - At $0.99 per check, CheckMEND profits from their manual verification process. A fast mobile app would reduce their per-check revenue.
               </li>
               <li>
                 <strong>UK/EU Focus</strong> - CheckMEND primarily serves UK and European markets, where mobile app adoption for verification is lower than in the US.
@@ -170,7 +170,7 @@ const CheckMendHasNoApp = () => {
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">Price Per Check</td>
-                      <td className="p-4 text-center text-red-600 font-bold">$3.99</td>
+                      <td className="p-4 text-center text-red-600 font-bold">$0.99</td>
                       <td className="p-4 text-center text-green-600 font-bold">2 FREE checks</td>
                     </tr>
                     <tr>
@@ -224,7 +224,7 @@ const CheckMendHasNoApp = () => {
 
               <Card className="p-6 border-l-4 border-red-500">
                 <p className="text-muted-foreground italic">
-                  "Our pawn shop tried CheckMEND for a month. $3.99 per check adds up FAST when you are checking 50+ items daily. Plus, typing serial numbers one by one took hours. Switched to SafeOrStolen's app - saved us $5,000/month." - Pawn shop owner, Dallas TX
+                  "Our pawn shop tried CheckMEND for a month. $0.99 per check adds up FAST when you are checking 50+ items daily. Plus, typing serial numbers one by one took hours. Switched to SafeOrStolen's app - saved us $5,000/month." - Pawn shop owner, Dallas TX
                 </p>
               </Card>
 
@@ -250,9 +250,9 @@ const CheckMendHasNoApp = () => {
               SafeOrStolen delivers verified results in <strong>3 seconds</strong>. CheckMEND takes 30+ seconds. When you are standing in a parking lot with cash in hand, every second counts.
             </p>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">3. $14.99/mo Unlimited vs $3.99 Per Check</h3>
+            <h3 className="text-2xl font-bold mt-8 mb-4">3. $10/mo Unlimited vs $0.99 Per Check</h3>
             <p>
-              SafeOrStolen offers <strong>2 free checks, then $3.99/check or $14.99/month unlimited</strong>. Review each service's current pricing before choosing a plan.
+              SafeOrStolen offers <strong>2 free checks, then $0.99/check or $10/month unlimited</strong>. Review each service's current pricing before choosing a plan.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">4. Offline Mode</h3>
@@ -284,7 +284,7 @@ const CheckMendHasNoApp = () => {
                 Tap "Install App" - no App Store/Google Play download required (it's a Progressive Web App)
               </li>
               <li>
-                Create an account and subscribe to the $14.99/month Unlimited Plan
+                Create an account and subscribe to the $10/month Unlimited Plan
               </li>
               <li>
                 Start scanning barcodes instantly - experience 3-second verification
@@ -306,7 +306,7 @@ const CheckMendHasNoApp = () => {
               <ul className="space-y-2 text-green-800 dark:text-green-200">
                 <li>✅ <strong>Compare CheckMEND and SafeOrStolen</strong> - SafeOrStolen does</li>
                 <li>✅ <strong>CheckMEND takes 30+ seconds</strong> - SafeOrStolen takes 3 seconds</li>
-                <li>✅ <strong>CheckMEND costs $3.99 per check</strong> - SafeOrStolen offers 2 FREE checks</li>
+                <li>✅ <strong>CheckMEND costs $0.99 per check</strong> - SafeOrStolen offers 2 FREE checks</li>
                 <li>✅ <strong>CheckMEND requires manual typing</strong> - SafeOrStolen has barcode scanning</li>
                 <li>✅ <strong>CheckMEND needs internet</strong> - SafeOrStolen works offline</li>
               </ul>

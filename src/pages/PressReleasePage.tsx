@@ -8,7 +8,7 @@ import { Newspaper, Mail } from 'lucide-react';
  * Oct 7 2026: rewritten by hand for "safeorstolen press release". The old page linked off-site
  * to four paid wire releases announcing a partnership we can't verify and a "mobile app" that is
  * actually a web app, and called SafeOrStolen "the leading" platform founded in 2017 in Peoria,
- * Arizona (the company is in Seattle, WA). With those gone there is little left to list, so the
+ * Arizona. With those gone there is little left to list, so the
  * page is short: what's current, where the facts live, and who to email.
  */
 
@@ -44,7 +44,7 @@ export default function PressReleasePage() {
             <h2 className="text-2xl font-bold mb-4">What's current</h2>
             <p className="text-muted-foreground mb-4">
               SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
-              number, based in Seattle, WA. As of October 2026:
+              number, based in Peoria, AZ. As of October 2026:
             </p>
             <ul className="space-y-2 text-muted-foreground list-disc pl-6">
               <li>Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records.</li>

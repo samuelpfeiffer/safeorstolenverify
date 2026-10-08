@@ -18,7 +18,7 @@ const verificationSteps = [
  title: "Multi-Database Query",
  description: "Simultaneous search across verified partner databases",
  icon: Database,
- details: "our own reports, public web results, a national stolen-bicycle registry for bikes, police gun theft records from 34 states for guns, and AI notes"
+ details: "our own reports, public web results, a national stolen-bicycle registry for bikes, police gun theft records from 33 states and DC for guns, and AI notes"
  },
  {
  step: 3,
@@ -150,7 +150,7 @@ export const MethodologyTransparency: React.FC = () => {
  </h4>
  <p className="text-sm text-muted-foreground">
  Every result lists the sources that were searched, including police gun theft
- records from 34 states for guns and a national stolen-bicycle registry for bikes.
+ records from 33 states and DC for guns and a national stolen-bicycle registry for bikes.
  </p>
  </div>
  <div>

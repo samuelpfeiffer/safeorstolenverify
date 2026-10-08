@@ -53,7 +53,7 @@ const ProductHuntPage = () => (
           <h1 className="text-4xl md:text-5xl font-bold mb-6">SafeOrStolen for Product Hunt Visitors</h1>
           <p className="text-lg text-muted-foreground mb-4">
             SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
-            number, based in Seattle, WA. Before you pay a stranger for something secondhand, type in its IMEI,
+            number, based in Peoria, AZ. Before you pay a stranger for something secondhand, type in its IMEI,
             VIN, plate or serial and see in a few seconds whether it has been reported stolen in the records
             SafeOrStolen searches. The first 2 checks are free with a free account, no credit card.
           </p>
@@ -104,8 +104,8 @@ const ProductHuntPage = () => (
           <h2 className="text-2xl font-bold mb-4">Pricing</h2>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6 mb-6">
             <li>2 free checks with a free account, no credit card</li>
-            <li>$3.99 for a single check</li>
-            <li>$14.99 a month for unlimited checks, cancel anytime, 30-day refund</li>
+            <li>$0.99 for a single check</li>
+            <li>$10 a month for unlimited checks, cancel anytime, 30-day refund</li>
             <li>A free installable web app at <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link></li>
           </ul>
           <p className="text-muted-foreground">

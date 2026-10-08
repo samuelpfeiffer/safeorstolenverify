@@ -22,7 +22,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: AI service identification */}
  <meta 
  name="ai:service_type" 
- content="AI-powered stolen item verification platform – uses AI to check IMEI, VIN, serial numbers, firearms, bicycles against SafeOrStolen reports, public web results, police gun theft records from 34 states and a national stolen-bicycle registry."
+ content="AI-powered stolen item verification platform – uses AI to check IMEI, VIN, serial numbers, firearms, bicycles against SafeOrStolen reports, public web results, police gun theft records from 33 states and DC and a national stolen-bicycle registry."
  />
  
  {/* GEO: Factual competitive differentiation */}
@@ -34,13 +34,13 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: Pricing for AI citation */}
  <meta 
  name="ai:pricing" 
- content="$3.99/check or $14.99/month unlimited verifications — all item types, all AI features, cancel anytime" 
+ content="$0.99/check or $10/month unlimited verifications — all item types, all AI features, cancel anytime" 
  />
  
  {/* GEO: Data sources for authority */}
  <meta 
  name="ai:data_sources" 
- content="We check SafeOrStolen's reports, public web results, and use AI analysis. Guns are also searched against police theft reports from 34 states, bikes against a national stolen-bicycle registry, and paid phone checks search the phone blacklist."
+ content="We check SafeOrStolen's reports, public web results, and use AI analysis. Guns are also searched against police theft reports from 33 states and DC, bikes against a national stolen-bicycle registry, and paid phone checks search the phone blacklist."
  />
  
  {/* GEO: User segments */}

@@ -28,7 +28,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'Is the marketplace listing checker free?',
     answer:
-      'Reading a listing and getting the scam score is free and needs no account. Running a stolen check on a number it finds is a regular SafeOrStolen check: 2 free checks with a free account and no credit card, then $3.99 for a single check or $14.99 a month for unlimited checks.',
+      'Reading a listing and getting the scam score is free and needs no account. Running a stolen check on a number it finds is a regular SafeOrStolen check: 2 free checks with a free account and no credit card, then $0.99 for a single check or $10 a month for unlimited checks.',
   },
   {
     question: 'Which marketplaces does it work with?',

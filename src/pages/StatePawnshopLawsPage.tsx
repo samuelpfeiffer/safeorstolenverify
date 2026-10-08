@@ -292,7 +292,7 @@ export default function StatePawnshopLawsPage() {
               <h2 className="text-xl font-bold mb-2">Check the item yourself before you pay</h2>
               <p className="text-sm text-muted-foreground mb-4">
                 SafeOrStolen searches its theft reports and public web results for any serial number, IMEI or VIN, plus
-                police gun theft reports for guns. 2 free checks, then $3.99 per check or $14.99 a month unlimited. Pawn
+                police gun theft reports for guns. 2 free checks, then $0.99 per check or $10 a month unlimited. Pawn
                 shops can run up to 100 numbers at once with the bulk check.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">

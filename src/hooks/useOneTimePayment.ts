@@ -25,7 +25,7 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
 
     setIsLoading(true);
     try {
-      const finalPriceId = priceId || 'price_1T8uToGxnZLw8J7O6GcOuV1w'; // $14.99/month Unlimited Plan
+      const finalPriceId = priceId || 'price_1T8uToGxnZLw8J7O6GcOuV1w'; // $10/month Unlimited Plan
       const finalPlanName = planName || 'Unlimited Plan';
       
       console.log("Creating one-time payment checkout with priceId:", finalPriceId);
