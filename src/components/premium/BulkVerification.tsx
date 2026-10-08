@@ -135,7 +135,7 @@ export const BulkVerification = () => {
         done.push(...out);
         setResults([...done]);
         if (limitHit) {
-          setStoppedReason('Your account has no checks left. Bulk checking is built for the $14.99/month plan, which includes unlimited serial, gun and vehicle checks.');
+          setStoppedReason('Your account has no checks left. Bulk checking is built for the $10/month plan, which includes unlimited serial, gun and vehicle checks.');
           break;
         }
       }

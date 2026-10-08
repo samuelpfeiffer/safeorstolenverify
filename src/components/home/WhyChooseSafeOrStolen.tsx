@@ -43,7 +43,7 @@ export const WhyChooseSafeOrStolen = () => {
     {
       icon: Award,
       title: 'Clear Pricing',
-      description: 'A free account includes two checks. Continue for $3.99 per check or $14.99 per month for unlimited supported checks.',
+      description: 'A free account includes two checks. Continue for $0.99 per check or $10 per month for unlimited supported checks.',
       badge: 'Published Pricing',
       color: 'from-indigo-500 to-purple-500'
     },

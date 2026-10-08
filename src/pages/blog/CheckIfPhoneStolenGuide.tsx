@@ -9,7 +9,7 @@ const FAQ_ITEMS = [
   { q: 'Can a stolen phone be used after a factory reset?', a: 'A factory reset does NOT clear a stolen phone\'s status. The IMEI remains blacklisted across all carriers regardless of resets. iPhones have Activation Lock tied to the Apple ID, and Android phones have Factory Reset Protection (FRP) — both prevent use without the original owner\'s credentials.' },
   { q: 'What does a blacklisted IMEI mean?', a: 'A blacklisted IMEI means the phone was reported as stolen, lost, or has an unpaid financial balance with a carrier. Blacklisted phones cannot be activated on major U.S. carriers (AT&T, Verizon, T-Mobile). Carrier blacklists maintain a global list shared across 200+ carriers in 50+ countries.' },
   { q: 'Is it illegal to buy a stolen phone?', a: 'Yes. In most U.S. states, receiving stolen property is a criminal offense even if you didn\'t know it was stolen. Under federal law (18 U.S.C. § 2315), knowingly receiving stolen goods worth $5,000+ carries up to 10 years in prison. Law enforcement will seize the phone with no compensation to you.' },
-  { q: 'How much does it cost to check if a phone is stolen?', a: 'SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. This is significantly cheaper than services like CheckMEND (£1.99+/check) and offers more detailed information than basic IMEI lookups.' },
+  { q: 'How much does it cost to check if a phone is stolen?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. This is significantly cheaper than services like CheckMEND (£1.99+/check) and offers more detailed information than basic IMEI lookups.' },
   { q: 'Can I check if an iPhone is stolen without the IMEI?', a: 'Yes, partially. Check for Activation Lock by going to Settings → [Name] → Find My → Find My iPhone. If it\'s locked to another Apple ID, the phone may be stolen. However, an IMEI check against SafeOrStolen\'s reports and public web results is the best way to verify theft status.' },
   { q: 'What should I do if I discover my phone was stolen?', a: 'Report it immediately to: (1) your carrier to blacklist the IMEI, (2) local police with the IMEI and serial number, (3) your insurance company if applicable, (4) SafeOrStolen\'s stolen database to alert future buyers. File a police report within 48 hours for best recovery chances.' },
 ];
@@ -219,7 +219,7 @@ const CheckIfPhoneStolenGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: The Best IMEI Checker</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            While there are several IMEI checkers available online, SafeOrStolen is a comprehensive option for buyers. Unlike IMEI.info (which only checks basic device info), SafeOrStolen queries multiple sources simultaneously — including SafeOrStolen\'s reports, public web results, and AI analysis. $3.99/check or $14.99/month unlimited, and the results include a downloadable PDF certificate for your records.
+            While there are several IMEI checkers available online, SafeOrStolen is a comprehensive option for buyers. Unlike IMEI.info (which only checks basic device info), SafeOrStolen queries multiple sources simultaneously — including SafeOrStolen\'s reports, public web results, and AI analysis. $0.99/check or $10/month unlimited, and the results include a downloadable PDF certificate for your records.
           </p>
 
           <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center mt-12">

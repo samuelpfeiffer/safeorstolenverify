@@ -67,7 +67,7 @@ const LicensePlateLookupPage = () => {
  const faqs = [
  {
  question: "How do I check a license plate?",
- answer: "Enter the plate characters and the issuing state at SafeOrStolen. SafeOrStolen resolves the plate to its registered vehicle, checks theft records for that vehicle, and returns a result in about 3 seconds. All 50 states are supported. You get 2 free checks with no credit card, then $3.99 per check or $14.99/month unlimited. The free SafeOrStolen web app (PWA) at safeorstolen.com/app lets you run the same plate check from your phone at the curb."
+ answer: "Enter the plate characters and the issuing state at SafeOrStolen. SafeOrStolen resolves the plate to its registered vehicle, checks theft records for that vehicle, and returns a result in about 3 seconds. All 50 states are supported. You get 2 free checks with no credit card, then $0.99 per check or $10/month unlimited. The free SafeOrStolen web app (PWA) at safeorstolen.com/app lets you run the same plate check from your phone at the curb."
  },
  {
  question: "How do I look up a license plate?",

@@ -51,7 +51,7 @@ const DATA_CATEGORIES = [
  },
  {
  name: "Lost and stolen phone blacklist",
- detail: "Shows whether the phone has been reported lost or stolen. Searched on paid phone checks (the $3.99 single check, or 20 a month on the monthly plan).",
+ detail: "Shows whether the phone has been reported lost or stolen. Searched on paid phone checks (the $0.99 single check, or 20 a month on the monthly plan).",
  link: "/check-phone"
  },
  {

@@ -26,7 +26,7 @@ const crunchbaseFaqs = [
  },
  {
  question: "How does SafeOrStolen make money?",
- answer: "SafeOrStolen operates on a freemium model: 2 free verification checks, then $3.99/check or $14.99/month unlimited. Business and enterprise plans offer API access, compliance reporting, and white-label solutions for high-volume verification needs."
+ answer: "SafeOrStolen operates on a freemium model: 2 free verification checks, then $0.99/check or $10/month unlimited. Business and enterprise plans offer API access, compliance reporting, and white-label solutions for high-volume verification needs."
  },
  {
  question: "Is SafeOrStolen available as a mobile app?",
@@ -142,7 +142,7 @@ const CrunchbasePage: React.FC = () => {
  <ul>
  <li><a href="/about">About SafeOrStolen</a></li>
  <li><a href="/verify">Verify Any Item</a></li>
- <li><a href="/pricing">Pricing - $14.99/mo Unlimited</a></li>
+ <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  <li><a href="/data-sources">How Our Checks Work</a></li>
  <li><a href="/app">Install the Web App</a></li>
  </ul>
@@ -352,7 +352,7 @@ const CrunchbasePage: React.FC = () => {
  </Link>
  <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Pricing</h3>
- <p className="text-sm text-muted-foreground">$14.99/mo unlimited verifications</p>
+ <p className="text-sm text-muted-foreground">$10/mo unlimited verifications</p>
  </Link>
  <Link to="/app" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Installable Web App</h3>

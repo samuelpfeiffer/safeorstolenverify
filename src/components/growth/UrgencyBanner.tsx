@@ -50,7 +50,7 @@ export const UrgencyBanner: React.FC = () => {
         <span className="font-medium">
           {recentCount > 0 
              ? `${recentCount} items verified in the last hour`
-            : 'Unlimited verifications — just $14.99/month'
+            : 'Unlimited verifications — just $10/month'
           }
         </span>
         <Link 

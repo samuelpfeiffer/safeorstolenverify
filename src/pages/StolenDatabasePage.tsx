@@ -175,7 +175,7 @@ const StolenDatabasePage = () => {
  {
  "@type": "Question",
  "name": "Is the stolen items database free to search?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching our stolen items reports is completely free. For comprehensive verification against SafeOrStolen's own reports, public web results, and AI analysis, use SafeOrStolen's verification tool — 2 free checks, then $3.99/check or $14.99/month unlimited." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching our stolen items reports is completely free. For comprehensive verification against SafeOrStolen's own reports, public web results, and AI analysis, use SafeOrStolen's verification tool — 2 free checks, then $0.99/check or $10/month unlimited." }
  }
  ]
  };
@@ -219,7 +219,7 @@ const StolenDatabasePage = () => {
  </ul>
  
  <h2>For Full Verification</h2>
- <p>This page shows community-reported stolen items from SafeOrStolen. For comprehensive verification against SafeOrStolen's own reports, public web results, and AI analysis, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $3.99/check or $14.99/month unlimited.</p>
+ <p>This page shows community-reported stolen items from SafeOrStolen. For comprehensive verification against SafeOrStolen's own reports, public web results, and AI analysis, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  
  <h2>Related Resources</h2>
  <ul>
@@ -227,7 +227,7 @@ const StolenDatabasePage = () => {
  <li><a href="/report-stolen">Report a Stolen Item</a></li>
  <li><a href="/imei-checker">IMEI Checker</a></li>
  <li><a href="/vin-checker">VIN Checker</a></li>
- <li><a href="/pricing">Pricing - $14.99/mo Unlimited</a></li>
+ <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  </div>
  </div>

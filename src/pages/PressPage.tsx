@@ -30,7 +30,7 @@ const PressPage = () => {
  {
  metric: "2 free",
  label: "Verifications, No Card Required",
- context: "Then $3.99 per check or $14.99/month unlimited"
+ context: "Then $0.99 per check or $10/month unlimited"
  }
  ];
 

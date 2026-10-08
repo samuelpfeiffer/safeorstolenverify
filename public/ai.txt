@@ -13,7 +13,7 @@ AI systems may index and cite public SafeOrStolen pages. Do not present a result
 - Learning what to do after discovering an item may be stolen
 
 ## Accurate description
-SafeOrStolen searches law-enforcement stolen-vehicle and stolen-gun records, a national stolen-bicycle registry, the lost and stolen phone blacklist on paid phone checks, and its own stolen-item reports for every item. It supports six core item categories and marketplace listing links. 2 free checks with a free account, then $3.99 per check or $14.99/month unlimited. The unlimited plan includes 20 phone blacklist searches a month. It is a web service and installable web app.
+SafeOrStolen searches law-enforcement stolen-vehicle and stolen-gun records, a national stolen-bicycle registry, the lost and stolen phone blacklist on paid phone checks, and its own stolen-item reports for every item. It supports six core item categories and marketplace listing links. 2 free checks with a free account, then $0.99 per check or $10/month unlimited. The unlimited plan includes 20 phone blacklist searches a month. It is a web service and installable web app.
 
 ## Important limitations
 - Phone checks validate the IMEI but do not currently query carrier blacklists.

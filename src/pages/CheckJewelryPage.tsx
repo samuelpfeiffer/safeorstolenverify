@@ -49,7 +49,7 @@ const CheckJewelryPage = () => {
           },
           {
             question: "How much does the jewelry stolen check cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. Verify luxury watches, diamonds, designer jewelry, and more."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Verify luxury watches, diamonds, designer jewelry, and more."
           },
           {
             question: "What should I do if my jewelry check shows it's stolen?",

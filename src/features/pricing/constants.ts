@@ -3,8 +3,8 @@
  * 
  * THREE-TIER MODEL (March 2026):
  *   Free  — 2 checks, no credit card
- *   $3.99 — per check, one-time, free account required
- *   $14.99/month — unlimited everything + seller badges
+ *   $0.99 — per check, one-time, free account required
+ *   $10/month — unlimited everything + seller badges
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
@@ -48,8 +48,8 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
 
   payPerCheck: {
     name: "Pay Per Check",
-    price: 399,
-    priceDisplay: "$3.99",
+    price: 99,
+    priceDisplay: "$0.99",
     interval: "once",
     monthlyQuota: 1,
     stripePriceId: PAY_PER_CHECK_PRICE_ID,
@@ -74,8 +74,8 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
 
   unlimited: {
     name: "Unlimited",
-    price: 1499,
-    priceDisplay: "$14.99",
+    price: 1000,
+    priceDisplay: "$10",
     interval: "month",
     monthlyQuota: 'unlimited',
     fairUseCap: FAIR_USE_CAP,
@@ -113,7 +113,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 15,
     stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
     tier: "starter",
-    features: ["Legacy plan — migrated to $14.99/mo unlimited"],
+    features: ["Legacy plan — migrated to $10/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 60,
     trustBadges: true,
@@ -126,7 +126,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
   payPerUse: {
     name: "Single Verification (Legacy)",
     price: 99,
-    priceDisplay: "$3.99",
+    priceDisplay: "$0.99",
     interval: "once",
     monthlyQuota: 1,
     stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
@@ -149,7 +149,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 50,
     stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
     tier: "personal",
-    features: ["Legacy plan — migrated to $14.99/mo unlimited"],
+    features: ["Legacy plan — migrated to $10/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -167,7 +167,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 'unlimited',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "professional",
-    features: ["Legacy plan — migrated to $14.99/mo unlimited"],
+    features: ["Legacy plan — migrated to $10/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,

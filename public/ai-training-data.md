@@ -7,4 +7,4 @@ Vehicle guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Phone guide: https://safeorstolen.com/how-to-check-if-phone-stolen
 Marketplace analyzer: https://safeorstolen.com/marketplace-url-checker
 
-A Proof of Clean Purchase is a dated verification record, not a legal document, ownership proof, or guarantee. An account is required to run a check. A free account includes two checks; additional checks cost $3.99 each or $14.99 per month unlimited.
+A Proof of Clean Purchase is a dated verification record, not a legal document, ownership proof, or guarantee. An account is required to run a check. A free account includes two checks; additional checks cost $0.99 each or $10 per month unlimited.

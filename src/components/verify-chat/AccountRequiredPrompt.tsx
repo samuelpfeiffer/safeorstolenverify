@@ -66,7 +66,7 @@ export const AccountRequiredPrompt: React.FC<AccountRequiredPromptProps> = ({
             </p>
             <p className="text-xs text-muted-foreground mt-1">
               Your entry is saved — we&apos;ll run the check as soon as you&apos;re in.
-              2 free checks with a free account, then $3.99 per check or $14.99/month unlimited.
+              2 free checks with a free account, then $0.99 per check or $10/month unlimited.
             </p>
           </div>
         </div>

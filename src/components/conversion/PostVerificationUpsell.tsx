@@ -1,6 +1,6 @@
 /**
  * Post Verification Upsell - Shows after free verification
- * Two options: $3.99/check or $14.99/mo unlimited
+ * Two options: $0.99/check or $10/mo unlimited
  */
 
 import React, { useState } from 'react';
@@ -103,7 +103,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               </div>
               <div>
                 <h3 className="font-bold text-lg">Free checks used!</h3>
-                <p className="text-muted-foreground">Continue for $3.99/check or go unlimited for $14.99/month.</p>
+                <p className="text-muted-foreground">Continue for $0.99/check or go unlimited for $10/month.</p>
               </div>
             </div>
 
@@ -111,7 +111,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="font-medium">Unlimited Plan</span>
-                <span className="text-2xl font-bold text-primary">$14.99/mo</span>
+                <span className="text-2xl font-bold text-primary">$10/mo</span>
               </div>
               <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
@@ -147,7 +147,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               ) : (
                 <>
                   <Zap className="w-5 h-5 mr-2" />
-                  Go Unlimited — $14.99/mo
+                  Go Unlimited — $10/mo
                 </>
               )}
             </Button>
@@ -167,7 +167,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               ) : (
                 <>
                   <CreditCard className="w-5 h-5 mr-2" />
-                  Buy This Check — $3.99
+                  Buy This Check — $0.99
                 </>
               )}
             </Button>
@@ -224,11 +224,11 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               className="bg-primary hover:bg-primary/90 gap-2"
             >
               <Crown className="w-4 h-4" />
-              Go Unlimited — $14.99/mo
+              Go Unlimited — $10/mo
             </Button>
             
             <div className="text-center">
-              <p className="text-xs text-muted-foreground">Or $3.99 per single check</p>
+              <p className="text-xs text-muted-foreground">Or $0.99 per single check</p>
               <p className="text-xs text-accent font-medium">30-day money-back guarantee</p>
             </div>
 

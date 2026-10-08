@@ -31,7 +31,7 @@ const CheckCarStolenByVinPage = () => {
  "Check SafeOrStolen's reports, public web results, and AI analysis simultaneously",
  "Detect VIN cloning and VIN tampering",
  "Instant 3-second verification from multiple sources",
- "Unlimited VIN checks — $3.99/check or $14.99/month",
+ "Unlimited VIN checks — $0.99/check or $10/month",
  "Works for vehicles from all manufacturers and years (1981+)"
  ],
  process: [
@@ -73,7 +73,7 @@ const CheckCarStolenByVinPage = () => {
  },
  {
  question: "How much does the VIN check cost?",
- answer: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited VIN checks. This covers individual buyers and dealers alike. Cancel anytime. 30-day money-back guarantee. Our plan covers the same comprehensive databases including theft reports."
+ answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited VIN checks. This covers individual buyers and dealers alike. Cancel anytime. 30-day money-back guarantee. Our plan covers the same comprehensive databases including theft reports."
  }
  ]
  }}

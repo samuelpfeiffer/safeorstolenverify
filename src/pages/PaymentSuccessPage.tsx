@@ -36,7 +36,7 @@ const PaymentSuccessPage = () => {
       origin: { y: 0.6 }
     });
 
-    // Oct 5 2026: the old copy always said "Unlimited Plan / $3.99", whatever was bought, and
+    // Oct 5 2026: the old copy always said "Unlimited Plan / $0.99", whatever was bought, and
     // the button sent guests to a dashboard they don't have. Give Stripe's webhook a few seconds
     // to record the purchase, then offer to run the check they paid for.
     setPending(takePendingCheck());

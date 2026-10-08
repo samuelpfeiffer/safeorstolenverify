@@ -21,7 +21,7 @@ export const GuestCheckBanner: React.FC = () => {
           <div className="hidden sm:flex items-center gap-4 text-sm">
             <div className="flex items-center gap-1">
               <Zap className="h-4 w-4 text-sos-orange" />
-              <span className="font-medium">Subscribe for $14.99/mo unlimited verifications</span>
+              <span className="font-medium">Subscribe for $10/mo unlimited verifications</span>
             </div>
             <div className="flex items-center gap-1">
               <Shield className="h-4 w-4 text-muted-foreground" />
@@ -35,13 +35,13 @@ export const GuestCheckBanner: React.FC = () => {
           onClick={() => navigate('/pricing')}
           className="border-sos-lime/50 hover:bg-sos-lime/10"
         >
-          Subscribe — $14.99/mo
+          Subscribe — $10/mo
         </Button>
       </div>
       <div className="sm:hidden mt-2 space-y-1 text-sm">
         <div className="flex items-center gap-1">
           <Zap className="h-4 w-4 text-sos-orange" />
-          <span className="font-medium">$14.99/mo unlimited verifications</span>
+          <span className="font-medium">$10/mo unlimited verifications</span>
         </div>
         <div className="flex items-center gap-1">
           <Shield className="h-4 w-4 text-muted-foreground" />

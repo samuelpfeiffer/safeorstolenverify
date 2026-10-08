@@ -42,7 +42,7 @@ const APP_FAQS: { q: string; a: string }[] = [
  { q: 'Is there an app to check if something is stolen?', a: "Yes. SafeOrStolen installs on your phone's home screen from safeorstolen.com/app, free, with no app store needed. Type or scan a serial number, IMEI, VIN or license plate and see whether it's reported stolen in a few seconds. The first 2 checks are free." },
  { q: 'Is there an app to check a gun serial number?', a: 'Yes. In the SafeOrStolen app, type or scan the serial number from the frame or receiver. It searches police firearm theft and loss reports from 34 states, live Ohio law-enforcement records and SafeOrStolen theft reports.' },
  { q: 'Is there an IMEI checker app?', a: "Yes. Dial *#06# on the phone you're buying to see its IMEI, then type it into the SafeOrStolen app. You get the device details, and the full lost-and-stolen blacklist check is included in paid checks." },
- { q: 'Is the SafeOrStolen app free?', a: 'The SafeOrStolen app is free to install, and every account gets 2 free checks with no credit card. After that it is $3.99 per check or $14.99 a month for unlimited checks.' },
+ { q: 'Is the SafeOrStolen app free?', a: 'The SafeOrStolen app is free to install, and every account gets 2 free checks with no credit card. After that it is $0.99 per check or $10 a month for unlimited checks.' },
  { q: 'Do I need the App Store or Google Play?', a: "No. SafeOrStolen is an installable web app. On iPhone, open safeorstolen.com in Safari, tap Share, then Add to Home Screen. On Android, open it in Chrome and tap Install app. It updates itself, so there is nothing to download again." },
  { q: 'Does the app work at a meetup or gun show?', a: "Yes, that's what it's built for. Open it, scan or type the number, and read the result before you hand over money. Checks need an internet connection." },
 ];
@@ -63,8 +63,8 @@ export default function AppDownloadPage() {
  "description": "Installable SafeOrStolen web app for verifying whether phones (IMEI), vehicles (VIN), license plates, serialized electronics, firearms, and bicycles are reported stolen. Includes barcode and serial scanning, with results in about 3 seconds.",
  "offers": [
  { "@type": "Offer", "name": "Free checks", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },
- { "@type": "Offer", "name": "Single check", "price": "3.99", "priceCurrency": "USD", "description": "One-time single verification" },
- { "@type": "Offer", "name": "Unlimited monthly", "price": "14.99", "priceCurrency": "USD", "description": "Unlimited verifications, $14.99 per month, cancel anytime" }
+ { "@type": "Offer", "name": "Single check", "price": "0.99", "priceCurrency": "USD", "description": "One-time single verification" },
+ { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, $10 per month, cancel anytime" }
  ]
  };
 
@@ -180,7 +180,7 @@ export default function AppDownloadPage() {
  'Bicycle serial check',
  'Marketplace listing URL analysis',
  '$1.99 verification certificate (free on the monthly plan)',
- '2 free checks, then $3.99/check or $14.99/mo unlimited',
+ '2 free checks, then $0.99/check or $10/mo unlimited',
  ].map((f, i) => (
  <li key={f} className={`flex items-center gap-3 py-3 px-4 text-sm text-gray-300 ${i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}`}>
  <span className="text-green-400 font-bold">✓</span>

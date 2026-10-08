@@ -69,7 +69,7 @@ const HowToSellVerifiedItems = () => {
           name: "How much does seller verification cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. All item types included. Cancel anytime.",
+            text: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.",
           },
         },
         {
@@ -330,7 +330,7 @@ const HowToSellVerifiedItems = () => {
               <li className="flex items-start gap-2 text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />{" "}
                 <span>
-                  <strong className="text-foreground">$3.99/check</strong> — Pay
+                  <strong className="text-foreground">$0.99/check</strong> — Pay
                   per verification with a free account.
                 </span>
               </li>
@@ -338,7 +338,7 @@ const HowToSellVerifiedItems = () => {
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />{" "}
                 <span>
                   <strong className="text-foreground">
-                    $14.99/month unlimited
+                    $10/month unlimited
                   </strong>{" "}
                   — Verify as many items as you need. Phones, cars, electronics,
                   and more.
@@ -370,7 +370,7 @@ const HowToSellVerifiedItems = () => {
               {[
                 {
                   q: "How much does seller verification cost?",
-                  a: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. All item types included. Cancel anytime.",
+                  a: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.",
                 },
                 {
                   q: "What can a verification record do for a seller?",
@@ -408,7 +408,7 @@ const HowToSellVerifiedItems = () => {
               Start Selling Smarter Today
             </h2>
             <p className="opacity-90 mb-6">
-              From $3.99 per check or $14.99 per month unlimited. Share a dated
+              From $0.99 per check or $10 per month unlimited. Share a dated
               result and let buyers review it themselves.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

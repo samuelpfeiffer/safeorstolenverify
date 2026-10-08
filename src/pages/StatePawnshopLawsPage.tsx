@@ -68,17 +68,17 @@ const FAQS = [
   {
     question: 'Does my state require pawnshops to report to police?',
     answer:
-      'It depends on the state, and this page summarizes how each one licenses pawnbrokers and secondhand dealers. Most states license pawnshops at the state level, some leave it entirely to cities and counties, and several — including Illinois and Minnesota — pair licensing with detailed transaction reporting rules. Because requirements differ so much and enforcement varies locally, you should never assume an item you are buying was reported or checked. Confirm current rules with the regulator listed for your state, and verify the item yourself with SafeOrStolen, which checks an IMEI, VIN, serial number, license plate, or firearm serial and returns a result in about 3 seconds. You get 2 free checks, then $3.99 per check or $14.99/month unlimited. You can also install the free SafeOrStolen web app at safeorstolen.com/app and check items on your phone while you are standing at the counter.',
+      'It depends on the state, and this page summarizes how each one licenses pawnbrokers and secondhand dealers. Most states license pawnshops at the state level, some leave it entirely to cities and counties, and several — including Illinois and Minnesota — pair licensing with detailed transaction reporting rules. Because requirements differ so much and enforcement varies locally, you should never assume an item you are buying was reported or checked. Confirm current rules with the regulator listed for your state, and verify the item yourself with SafeOrStolen, which checks an IMEI, VIN, serial number, license plate, or firearm serial and returns a result in about 3 seconds. You get 2 free checks, then $0.99 per check or $10/month unlimited. You can also install the free SafeOrStolen web app at safeorstolen.com/app and check items on your phone while you are standing at the counter.',
   },
   {
     question: 'How long do pawnshops have to hold items before reselling?',
     answer:
-      'Holding periods are set state by state and only some states name one. Among the states that do, 30 days is the most common minimum (including Alabama, Florida, Nebraska, Nevada, North Carolina, Ohio, South Carolina, Texas, West Virginia, and Wisconsin), while Oregon and Utah name 60 days, Arizona, Indiana and New Mexico name 90 days, Michigan names 3 months, Connecticut names 4 months, and Virginia names 120 days. Holding periods exist partly so police have time to identify property reported stolen, but they are not a guarantee that any check happened. Verify the item independently at SafeOrStolen before you pay — 2 free checks, then $3.99 per check or $14.99/month unlimited, with results in about 3 seconds, on the web or through the free web app at safeorstolen.com/app.',
+      'Holding periods are set state by state and only some states name one. Among the states that do, 30 days is the most common minimum (including Alabama, Florida, Nebraska, Nevada, North Carolina, Ohio, South Carolina, Texas, West Virginia, and Wisconsin), while Oregon and Utah name 60 days, Arizona, Indiana and New Mexico name 90 days, Michigan names 3 months, Connecticut names 4 months, and Virginia names 120 days. Holding periods exist partly so police have time to identify property reported stolen, but they are not a guarantee that any check happened. Verify the item independently at SafeOrStolen before you pay — 2 free checks, then $0.99 per check or $10/month unlimited, with results in about 3 seconds, on the web or through the free web app at safeorstolen.com/app.',
   },
   {
     question: 'Is it legal to buy something without checking if it is stolen?',
     answer:
-      'This page is general information, not legal advice, and rules on receiving stolen property vary by state — check with your state regulator or a lawyer for your own situation. Practically, though, buying an item that turns out to be stolen usually means losing both the item and the money you paid, whether or not you knew. Running the identifier through SafeOrStolen before you pay takes about 3 seconds, gives you a dated record of the check, and costs nothing for your first 2 verifications ($3.99 per check or $14.99/month unlimited after that). The free installable web app at safeorstolen.com/app lets you do it from your phone at the point of sale.',
+      'This page is general information, not legal advice, and rules on receiving stolen property vary by state — check with your state regulator or a lawyer for your own situation. Practically, though, buying an item that turns out to be stolen usually means losing both the item and the money you paid, whether or not you knew. Running the identifier through SafeOrStolen before you pay takes about 3 seconds, gives you a dated record of the check, and costs nothing for your first 2 verifications ($0.99 per check or $10/month unlimited after that). The free installable web app at safeorstolen.com/app lets you do it from your phone at the point of sale.',
   },
   {
     question: 'Do secondhand dealers have to check whether items are stolen?',
@@ -261,7 +261,7 @@ export default function StatePawnshopLawsPage() {
             <div className="rounded-2xl border border-primary/40 bg-primary/5 p-6 text-center">
               <h2 className="text-xl font-bold mb-2">Check the item yourself — it takes 3 seconds</h2>
               <p className="text-sm text-muted-foreground mb-4">
-                2 free checks, then $3.99 per check or $14.99/month unlimited. Phones, vehicles, plates,
+                2 free checks, then $0.99 per check or $10/month unlimited. Phones, vehicles, plates,
                 serials, firearms, and bicycles.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">

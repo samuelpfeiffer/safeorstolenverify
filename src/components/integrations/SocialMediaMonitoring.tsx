@@ -45,7 +45,7 @@ export const SocialMediaMonitoring = ({ onWebhookTrigger }: SocialMediaMonitorin
   const responseTemplate = `🛡️ I saw you're discussing verifying items. You should check out SafeOrStolen.com — a tool to check if an item is stolen before money changes hands. 
 
 ✅ Check IMEI, VIN, serial numbers instantly
-✅ $3.99/check or $14.99/month unlimited  
+✅ $0.99/check or $10/month unlimited  
 ✅ Checks our verification databases
 ✅ It's really helped me shop safely
 
