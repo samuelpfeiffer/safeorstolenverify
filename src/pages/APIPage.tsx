@@ -1,437 +1,211 @@
-import { SEOHead } from "@/components/seo/SEOHead";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code, Key, Shield, Zap, AlertTriangle, CheckCircle, Mail, BookOpen } from "lucide-react";
-import { Link } from "@/lib/router-compat";
-import { Button } from "@/components/ui/button";
+import { Link } from '@/lib/router-compat';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { Button } from '@/components/ui/button';
 
 /**
- * API Documentation Page
- * Target: 800+ words of readable content to fix SOFT_404 error
- * Word Count: ~1,200 words (verified)
+ * Oct 7 2026: rewritten by hand for "stolen item check API" (IMEI, VIN and serial number API).
+ * Served at /api and /api-docs. The old page documented an API that does not exist: a base URL on
+ * an api. subdomain, POST /verify/imei, /verify/vin and /verify/serial endpoints, API keys from an
+ * "API Keys" dashboard menu, rate limits of 1,000 calls a day, Enterprise plans, sample responses
+ * with salvage, odometer and "sources_checked: 47", SDK-style code samples, a docs subdomain, a
+ * Slack channel and four-hour support times. This version describes only the three ways to connect
+ * that work today: the check link, the bulk CSV, and certificate links.
  */
+
+const LINK_PARAMS: string[][] = [
+  ['q', 'The serial number, IMEI, VIN or plate to check', 'q=356789012345678'],
+  ['type', 'Optional hint: imei or phone, vin or vehicle, gun or firearm, bike or bicycle, plate, tablet, motorcycle', 'type=imei'],
+];
+
+const CSV_IN: string[][] = [
+  ['1. Identifier', 'Required. The serial number, IMEI, VIN or plate. Rows shorter than 3 characters are skipped.'],
+  ['2. Type', 'Optional. Words like gun, rifle, phone, iphone, vin, car, plate, bike, laptop, tool or camera. Blank rows use the type picked on the page.'],
+  ['3. Note', 'Optional. Your own reference, such as a ticket, lot or claim number. Comes back unchanged.'],
+];
+
+const CSV_OUT: string[][] = [
+  ['Identifier', 'The number as you sent it'],
+  ['Type', 'The item type used, or auto'],
+  ['Note', 'Your note'],
+  ['Result', 'REPORTED STOLEN, REPORTED LOST, NO REPORT FOUND, NOT CONFIRMED or ERROR'],
+  ['Message', 'The plain-language result text'],
+  ['Sources searched', 'Every source the check ran against, separated by semicolons'],
+  ['Checked at (UTC)', 'Date and time of the check'],
+  ['Check ID', 'The ID of the saved check in your account'],
+];
+
+const FAQS = [
+  {
+    question: 'Does SafeOrStolen have an API?',
+    answer:
+      'Not a public one. There are no API keys, endpoints or SDKs to sign up for today. What works now: a check link that starts a check from your site (safeorstolen.com/verify?q=NUMBER), the bulk check at safeorstolen.com/bulk-check that takes a CSV of up to 100 numbers and returns a results CSV, and certificate links for single checks. For programmatic access, email safeorstolenmail@gmail.com.',
+  },
+  {
+    question: 'Is there an IMEI check API?',
+    answer:
+      "Not from SafeOrStolen. To check IMEIs in volume, upload them to the bulk check as a .csv file and download the results. Each phone check shows the make and model and searches SafeOrStolen theft reports and web results. On the $10 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist.",
+  },
+  {
+    question: 'Is there a VIN stolen check API?',
+    answer:
+      'Not a public one. VINs can go through the bulk check in a CSV, up to 100 at a time. Each VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports, web results and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records. It does not return title, odometer or lien data.',
+  },
+  {
+    question: 'Can I link to a SafeOrStolen check from my website?',
+    answer:
+      'Yes. Link to safeorstolen.com/verify?q= followed by the number, and add &type=imei, vin, gun, bike or plate if you know the type. The visitor lands on SafeOrStolen and the check starts. Visitors get 2 free checks; after that they sign up or pay. Nothing on your side needs a key.',
+  },
+  {
+    question: 'How much would API access cost?',
+    answer:
+      "There is no API price list because there is no public API. Today's prices are 2 free checks, $0.99 per check, or $10 a month for unlimited checks with up to 20 blacklist checks a month. If you need checks to run from your own system, email safeorstolenmail@gmail.com with your item types and monthly volume.",
+  },
+];
+
 export default function APIPage() {
- const articleSchema = {
- "@context": "https://schema.org",
- "@type": "TechArticle",
- "headline": "SafeOrStolen API Documentation - Developer Integration Guide",
- "description": "Complete API documentation for integrating stolen item verification into your applications. REST API for IMEI, VIN, and serial number verification.",
- "author": { "@type": "Organization", "name": "SafeOrStolen" },
- "publisher": {
- "@type": "Organization",
- "name": "SafeOrStolen",
- "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" }
- },
- "datePublished": "2026-01-15",
- "dateModified": "2026-02-01",
- "mainEntityOfPage": "https://safeorstolen.com/api"
- };
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: 'SafeOrStolen API: what is available for stolen item checks',
+      description: 'The check link, bulk CSV format and certificate links that connect to SafeOrStolen today, and how to ask about programmatic access.',
+      author: { '@type': 'Organization', name: 'SafeOrStolen' },
+      publisher: { '@type': 'Organization', name: 'SafeOrStolen' },
+      datePublished: '2026-01-15',
+      dateModified: '2026-10-07',
+      mainEntityOfPage: 'https://safeorstolen.com/api',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
+  ];
 
- return (
- <>
- <SEOHead
- title="Verification API Docs - IMEI VIN Serial Developer"
- description="REST API for AI-powered stolen item verification. Integrate IMEI, VIN, and serial checks with code examples in Python, JavaScript, and cURL."
- canonical="/api"
- schemaJson={articleSchema}
- />
- <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-20">
- <div className="container mx-auto px-4 py-16">
- <div className="max-w-4xl mx-auto">
- 
- {/* Hero Section */}
- <div className="text-center mb-12">
- <Badge variant="outline" className="mb-4">Developer Documentation</Badge>
- <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
- SafeOrStolen API Documentation
- </h1>
- <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
- Integrate stolen item verification directly into your applications, websites, and business workflows with our comprehensive REST API.
- </p>
- </div>
+  const Table = ({ head, rows }: { head: string[]; rows: string[][] }) => (
+    <div className="overflow-x-auto rounded-lg border border-border">
+      <table className="w-full text-left text-sm">
+        <thead className="bg-muted/60">
+          <tr>{head.map((h) => <th key={h} className="px-4 py-3 font-semibold">{h}</th>)}</tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r[0]} className="border-t border-border">
+              {r.map((c, i) => <td key={i} className={`px-4 py-3 ${i === 0 ? 'font-medium font-mono' : 'text-muted-foreground'}`}>{c}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 
- {/* Overview Section - ~150 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <BookOpen className="h-5 w-5 text-primary" />
- Overview
- </CardTitle>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- The SafeOrStolen API allows developers, businesses, and enterprises to integrate stolen item verification directly into their applications, websites, and workflows. Our REST API provides programmatic access to the same sources that power our web and mobile applications, including community theft reports, public web results, AI analysis, police firearm theft and loss reports from 34 states, Arizona stolen-vehicle records, a national stolen-bicycle registry, and the lost and stolen phone blacklist on paid phone checks.
- </p>
- <p>
- Perfect for marketplace platforms, point-of-sale systems, pawn shops, dealerships, and any business that needs to verify items are not stolen before purchase or accepting them as trade-ins. The API supports verification of phones using IMEI numbers, vehicles using VIN numbers, electronics using serial numbers, bicycles, firearms, and more.
- </p>
- <p>
- API access is available for business customers. Contact us for API pricing and integration support.
- </p>
- </CardContent>
- </Card>
+  return (
+    <>
+      <PageSEO
+        title="SafeOrStolen API: Stolen Item Check by IMEI, VIN or Serial"
+        description="Is there a SafeOrStolen API? Not a public one yet. Here is what works today: a check link for your site, the bulk CSV format for 100 numbers, certificate links, and who to email."
+        keywords="stolen item check api, imei check api, vin stolen check api, serial number check api, stolen phone api, safeorstolen api, bulk imei check csv"
+        canonical="/api"
+        modifiedTime="2026-10-07"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background text-foreground pt-20">
+        <div className="max-w-3xl mx-auto px-4 py-14">
+          <p className="text-sm font-semibold text-primary mb-3">For developers and businesses</p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">SafeOrStolen API: What's Available</h1>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            SafeOrStolen does not offer a public API with keys today. There are three ways to connect that work now: a
+            check link that starts a check from your own site, the bulk check that takes a CSV of up to 100 serial numbers,
+            IMEIs or VINs and returns a results CSV, and certificate links that show a single dated check. For programmatic
+            access, email safeorstolenmail@gmail.com.
+          </p>
+          <p className="text-sm text-muted-foreground mb-12">Updated October 7, 2026</p>
 
- {/* Authentication Section - ~100 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Key className="h-5 w-5 text-primary" />
- Authentication
- </CardTitle>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- All API requests require authentication using an API key. Include your API key in the Authorization header using Bearer token authentication. API keys are generated from your account dashboard and should be kept secure at all times. Never commit API keys to public repositories or expose them in client-side code where users can access them.
- </p>
- <div className="bg-muted p-4 rounded-lg font-mono text-sm my-4">
- Authorization: Bearer YOUR_API_KEY_HERE
- </div>
- <p>
- Your API key provides access to all verification endpoints based on your subscription tier. Professional plans include one thousand API calls per day, while Enterprise plans have unlimited usage with no rate limiting whatsoever.
- </p>
- </CardContent>
- </Card>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">1. Check link</h2>
+            <p className="text-muted-foreground mb-4">
+              Send people from your listing, inventory page or app to a check that starts on its own. The format is:
+            </p>
+            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">https://safeorstolen.com/verify?q=356789012345678&amp;type=imei</pre>
+            <Table head={['Parameter', 'What it is', 'Example']} rows={LINK_PARAMS} />
+            <p className="text-muted-foreground mt-4">
+              The visitor sees the result on SafeOrStolen, not on your site. Visitors get 2 free checks without paying; after
+              that they create an account and pay $0.99 a check or $10 a month.
+            </p>
+          </section>
 
- {/* Base URL Section - ~50 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Zap className="h-5 w-5 text-primary" />
- Base URL
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-muted-foreground mb-4">
- All API requests should be made to our secure HTTPS endpoint. We do not support unencrypted HTTP connections for security reasons.
- </p>
- <div className="bg-muted p-4 rounded-lg font-mono text-sm">
- https://api.safeorstolen.com/v1
- </div>
- </CardContent>
- </Card>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">2. Bulk check: CSV in, CSV out</h2>
+            <p className="text-muted-foreground mb-4">
+              Signed-in users open <Link to="/bulk-check" className="text-primary underline">/bulk-check</Link>, paste
+              numbers or upload a .csv or .txt file, and download the results. Up to 100 rows per run. Fields can be
+              separated by commas or tabs and quoted. A first row starting with identifier, serial, imei, vin or id is
+              treated as a header and skipped.
+            </p>
+            <h3 className="font-semibold mb-2">Input columns</h3>
+            <Table head={['Column', 'Contents']} rows={CSV_IN} />
+            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm my-4">{`identifier,type,note
+356789012345678,phone,ticket 4412
+1HGBH41JXMN109186,vehicle,lot 212
+ABC123456,gun,ticket 4413`}</pre>
+            <h3 className="font-semibold mb-2">Output columns</h3>
+            <Table head={['Column', 'Contents']} rows={CSV_OUT} />
+            <p className="text-muted-foreground mt-4">
+              Each row uses one check on the account, so this is built for the $10 monthly plan. If the account runs out
+              of checks, the run stops and says so. Every check is also saved to the account with its date.
+            </p>
+          </section>
 
- {/* IMEI Endpoint Section - ~150 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Code className="h-5 w-5 text-primary" />
- POST /verify/imei
- </CardTitle>
- <Badge variant="secondary">Phone Verification</Badge>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- Verify if a phone IMEI number is stolen, blacklisted, or reported lost. This endpoint checks carrier blacklist databases and stolen-property registries. Returns device information, blacklist status, carrier lock status, and any theft reports associated with the device.
- </p>
- <h4>Request Example</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`POST /v1/verify/imei
-Content-Type: application/json
-Authorization: Bearer YOUR_API_KEY
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">3. Certificate links</h2>
+            <p className="text-muted-foreground">
+              After a single check, the user can add a $1.99 verification certificate (free on the monthly plan) within 30
+              days. It lives at its own link on safeorstolen.com/proof/ and shows the check date, category, result, the last
+              four characters of the number, the sources searched and a SHA-256 record hash. You can store or display that
+              link next to an item. See <Link to="/for-sellers" className="text-primary underline">how sellers use it</Link>.
+            </p>
+          </section>
 
-{
- "imei": "355366077259891",
- "check_blacklist": true,
- "check_stolen": true
-}`}
- </pre>
- <h4>Response Example</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`{
- "status": "clean",
- "confidence": 95,
- "imei": "355366077259891",
- "device": {
- "manufacturer": "Apple",
- "model": "iPhone 14 Pro",
- "color": "Space Black"
- },
- "blacklist_status": "not_blacklisted",
- "stolen_reports": 0,
- "sources_checked": 47,
- "timestamp": "2026-02-01T18:30:00Z"
-}`}
- </pre>
- </CardContent>
- </Card>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">What a check searches</h2>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>Every check: SafeOrStolen theft reports and public web results that mention the number.</li>
+              <li>Guns: also 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio records, and a flag for altered or obliterated serials.</li>
+              <li>Bikes: also a national stolen-bicycle registry.</li>
+              <li>Phones: make and model from the IMEI; the carrier blacklist on paid checks.</li>
+              <li>Vehicles: decoded year, make and model, open recalls, and Arizona law-enforcement records for Arizona VINs and plates.</li>
+            </ul>
+            <p className="text-muted-foreground mt-4">
+              Not searched: NCIC, ATF eTrace, DMV or MVD records, Apple and Google account status, manufacturer, pawn or
+              insurer databases.
+            </p>
+          </section>
 
- {/* VIN Endpoint Section - ~150 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Code className="h-5 w-5 text-primary" />
- POST /verify/vin
- </CardTitle>
- <Badge variant="secondary">Vehicle Verification</Badge>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- Check vehicle VIN for theft records, salvage titles, active recalls, and odometer fraud. This endpoint queries vehicle theft and title records. Returns vehicle history including theft status, title brands, accident history, and safety recalls.
- </p>
- <h4>Request Example</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`POST /v1/verify/vin
-Content-Type: application/json
-Authorization: Bearer YOUR_API_KEY
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Common questions</h2>
+            <div className="space-y-4">
+              {FAQS.map((f) => (
+                <div key={f.question} className="rounded-lg border border-border bg-card p-5">
+                  <h3 className="font-semibold mb-2">{f.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-{
- "vin": "1HGBH41JXMN109186",
- "check_nmvtis": true,
- "check_recalls": true
-}`}
- </pre>
- <h4>Response Example</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`{
- "status": "clean",
- "confidence": 98,
- "vin": "1HGBH41JXMN109186",
- "vehicle": {
- "year": 2021,
- "make": "Honda",
- "model": "Accord",
- "trim": "EX-L"
- },
- "stolen": false,
- "salvage": false,
- "odometer_fraud": false,
- "recalls": [],
- "sources_checked": 23,
- "timestamp": "2026-02-01T18:30:00Z"
-}`}
- </pre>
- </CardContent>
- </Card>
-
- {/* Serial Number Endpoint Section - ~150 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Code className="h-5 w-5 text-primary" />
- POST /verify/serial
- </CardTitle>
- <Badge variant="secondary">Electronics Verification</Badge>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- Verify electronics, tools, appliances, cameras, and other items using serial numbers. Searches SafeOrStolen's stolen-item reports, public web results, and AI analysis. Supports laptops, tablets, power tools, cameras, gaming consoles, musical instruments, and virtually any item with a unique serial number.
- </p>
- <h4>Request Example</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`POST /v1/verify/serial
-Content-Type: application/json
-Authorization: Bearer YOUR_API_KEY
-
-{
- "serial": "C02XG0FDH7JY",
- "device_type": "laptop",
- "manufacturer": "Apple"
-}`}
- </pre>
- <h4>Response Example</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`{
- "status": "clean",
- "confidence": 87,
- "serial": "C02XG0FDH7JY",
- "device_type": "laptop",
- "manufacturer": "Apple",
- "stolen_reports": 0,
- "sources_checked": 12,
- "timestamp": "2026-02-01T18:30:00Z"
-}`}
- </pre>
- </CardContent>
- </Card>
-
- {/* Rate Limits Section - ~100 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Shield className="h-5 w-5 text-primary" />
- Rate Limits
- </CardTitle>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- API rate limits are based on your subscription tier to ensure fair usage for all customers:
- </p>
- <ul>
- <li><strong>Consumer plan:</strong> $0.99/check or $10/month unlimited verifications via web interface</li>
- <li><strong>Business API:</strong> Contact us for API access and pricing</li>
- <li><strong>Enterprise plan:</strong> Unlimited API requests with dedicated support</li>
- </ul>
- <p>
- Rate limits reset at midnight UTC. If you exceed your limit, the API returns a 429 Too Many Requests status code. Upgrade to Enterprise for unlimited API access with no rate limiting.
- </p>
- </CardContent>
- </Card>
-
- {/* Error Codes Section - ~100 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <AlertTriangle className="h-5 w-5 text-primary" />
- Error Codes
- </CardTitle>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- The API uses standard HTTP status codes to indicate the success or failure of requests:
- </p>
- <ul>
- <li><strong>200 OK:</strong> Request successful, verification complete</li>
- <li><strong>400 Bad Request:</strong> Invalid parameters, check IMEI or VIN format</li>
- <li><strong>401 Unauthorized:</strong> Invalid or missing API key</li>
- <li><strong>429 Too Many Requests:</strong> Rate limit exceeded, upgrade plan or wait</li>
- <li><strong>500 Internal Server Error:</strong> Server error, contact support</li>
- </ul>
- <p>
- All error responses include a descriptive message in the response body explaining what went wrong and how to fix the issue.
- </p>
- </CardContent>
- </Card>
-
- {/* Code Examples Section - ~200 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Code className="h-5 w-5 text-primary" />
- Code Examples
- </CardTitle>
- </CardHeader>
- <CardContent className="space-y-6">
- <div>
- <h4 className="font-semibold mb-2">cURL</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`curl -X POST https://api.safeorstolen.com/v1/verify/imei \\
- -H "Authorization: Bearer YOUR_API_KEY" \\
- -H "Content-Type: application/json" \\
- -d '{"imei":"355366077259891"}'`}
- </pre>
- </div>
- 
- <div>
- <h4 className="font-semibold mb-2">Python</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`import requests
-
-headers = {
- 'Authorization': 'Bearer YOUR_API_KEY',
- 'Content-Type': 'application/json'
-}
-
-data = {'imei': '355366077259891'}
-
-response = requests.post(
- 'https://api.safeorstolen.com/v1/verify/imei',
- headers=headers,
- json=data
-)
-
-result = response.json()
-print(f"Status: {result['status']}")
-print(f"Confidence: {result['confidence']}%")`}
- </pre>
- </div>
-
- <div>
- <h4 className="font-semibold mb-2">JavaScript (Node.js)</h4>
- <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`const response = await fetch(
- 'https://api.safeorstolen.com/v1/verify/imei',
- {
- method: 'POST',
- headers: {
- 'Authorization': 'Bearer YOUR_API_KEY',
- 'Content-Type': 'application/json'
- },
- body: JSON.stringify({
- imei: '355366077259891'
- })
- }
-);
-
-const result = await response.json();
-console.log('Status:', result.status);
-console.log('Confidence:', result.confidence + '%');`}
- </pre>
- </div>
- </CardContent>
- </Card>
-
- {/* Getting Your API Key Section - ~100 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- Getting Your API Key
- </CardTitle>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- Follow these steps to get started with the SafeOrStolen API:
- </p>
- <ol>
- <li>Contact us for business API access and pricing</li>
- <li>Navigate to your Dashboard after logging in</li>
- <li>Click on "API Keys" in the sidebar menu</li>
- <li>Click "Generate New API Key"</li>
- <li>Copy your API key immediately as it is only shown once</li>
- <li>Store your API key securely and treat it like a password</li>
- </ol>
- <p>
- If you lose your API key, you can revoke it and generate a new one from the dashboard. For security best practices, we recommend rotating API keys every ninety days.
- </p>
- </CardContent>
- </Card>
-
- {/* Support Section - ~50 words */}
- <Card className="mb-8">
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <Mail className="h-5 w-5 text-primary" />
- API Support
- </CardTitle>
- </CardHeader>
- <CardContent className="prose prose-lg dark:prose-invert max-w-none">
- <p>
- Need help with API integration? Our dedicated developer support team is here to assist you with any questions or issues:
- </p>
- <ul>
- <li><strong>Email:</strong> <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a></li>
- <li><strong>Documentation:</strong> docs.safeorstolen.com</li>
- <li><strong>Enterprise Support:</strong> Dedicated Slack channel for Enterprise customers</li>
- </ul>
- <p>
- Enterprise customers receive priority support with guaranteed response times within four hours during business hours.
- </p>
- </CardContent>
- </Card>
-
- {/* CTA Section */}
- <div className="text-center mt-12">
- <h2 className="text-2xl font-bold mb-4">Ready to Integrate?</h2>
- <p className="text-muted-foreground mb-6">
- Start verifying stolen items programmatically with our comprehensive API.
- </p>
- <div className="flex gap-4 justify-center flex-wrap">
- <Link to="/pricing">
- <Button size="lg" className="bg-primary hover:bg-primary/90">
- Get API Access
- </Button>
- </Link>
- <Link to="/pricing">
- <Button size="lg" variant="outline">
- Subscribe — $10/mo
- </Button>
- </Link>
- </div>
- </div>
-
- </div>
- </div>
- </div>
- </>
- );
+          <section className="rounded-lg bg-primary/5 p-6 text-center">
+            <h2 className="text-2xl font-bold mb-3">Need checks to run from your system?</h2>
+            <p className="text-muted-foreground mb-6">
+              Email safeorstolenmail@gmail.com with what you check, roughly how many a month, and how you'd want results
+              back. Marketplaces can also read <Link to="/marketplace-integration" className="text-primary underline">marketplace integration</Link>.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" asChild><a href="mailto:safeorstolenmail@gmail.com">Email us</a></Button>
+              <Button size="lg" variant="outline" asChild><Link to="/bulk-check">Open the bulk check</Link></Button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </>
+  );
 }

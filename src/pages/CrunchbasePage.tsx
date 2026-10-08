@@ -1,398 +1,192 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Building2, ExternalLink, TrendingUp, Users, Globe, Shield, Brain, Recycle, DollarSign, ArrowRight } from 'lucide-react';
+import { Building2, ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 import {
- Accordion,
- AccordionContent,
- AccordionItem,
- AccordionTrigger,
-} from "@/components/ui/accordion";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
-const crunchbaseFaqs = [
- {
- question: "What is SafeOrStolen?",
- answer: "SafeOrStolen is an AI-powered stolen item verification platform. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Results usually come back in a few seconds."
- },
- {
- question: "Who founded SafeOrStolen?",
- answer: "SafeOrStolen was founded by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder) in 2017, incorporated in Arizona in 2025."
- },
- {
- question: "What market does SafeOrStolen serve?",
- answer: "SafeOrStolen serves the $367 billion global secondhand market (growing at 10.7% CAGR). The platform protects both individual consumers buying used items on marketplaces like Facebook Marketplace, OfferUp, and Craigslist, and businesses including pawn shops, used car dealers, auction houses, and electronics resellers."
- },
- {
- question: "How does SafeOrStolen make money?",
- answer: "SafeOrStolen operates on a freemium model: 2 free verification checks, then $0.99/check or $10/month unlimited. Business and enterprise plans offer API access, compliance reporting, and white-label solutions for high-volume verification needs."
- },
- {
- question: "Is SafeOrStolen available as a mobile app?",
- answer: "Yes. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The app includes barcode scanning for instant IMEI, VIN, and serial number verification on the go. Available at safeorstolen.com/app."
- }
+/**
+ * Oct 7 2026: rewritten by hand for "safeorstolen company profile". Removed: every link and
+ * button to the off-site Crunchbase profile, founder names, a 2017 founding date,
+ * a "$367 billion
+ * secondhand market / 10.7% CAGR" figure, "3 seconds", "34 states" for gun records (it's 33 plus
+ * DC), plate lookups in "all 50 US states", "Carfax for Everything", and business plans with API
+ * and white-label offers that don't exist on the site. The page now describes the company factually.
+ */
+
+const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
+
+const profileRows: [string, string][] = [
+  ['Company', 'SafeOrStolen'],
+  ['Location', 'Peoria, AZ'],
+  ['Website', 'safeorstolen.com'],
+  ['Category', 'Consumer protection; stolen-item checks for secondhand buyers'],
+  ['Product', 'A stolen-item check for IMEI, VIN, license plate and serial numbers, on the web and as a free installable web app'],
+  ['Customers', 'People buying or selling used items, plus pawn shops and dealers using bulk checks'],
+  ['Business model', '2 free checks; $0.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
+  ['Contact', PRESS_EMAIL],
 ];
 
-const CrunchbasePage: React.FC = () => {
- const crunchbaseUrl = 'https://www.crunchbase.com/organization/safe-or-stolen';
+const faqs = [
+  {
+    question: 'What is SafeOrStolen?',
+    answer:
+      "SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. You enter an IMEI, VIN, plate or serial at safeorstolen.com and it searches SafeOrStolen's own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and plates.",
+  },
+  {
+    question: 'Where is SafeOrStolen based?',
+    answer:
+      'SafeOrStolen is based in Peoria, Arizona. It runs as a website at safeorstolen.com with a free installable web app at safeorstolen.com/app. There is no App Store or Google Play app. Press and business questions go to safeorstolenmail@gmail.com.',
+  },
+  {
+    question: 'How does SafeOrStolen make money?',
+    answer:
+      'From the checks themselves. A free account gets 2 checks with no credit card. After that a single check is $0.99, or $10 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
+  },
+  {
+    question: 'What records does SafeOrStolen search?',
+    answer:
+      "Every check searches SafeOrStolen's theft reports and public web results. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio records. Bike checks add a national stolen-bicycle registry. It does not search NCIC, ATF eTrace, DMV records, or pawn and insurer databases.",
+  },
+  {
+    question: 'Does SafeOrStolen work for businesses?',
+    answer:
+      'Yes, in a limited way. Pawn shops and dealers can check many serial numbers at once with the bulk check at safeorstolen.com/bulk-check. Each result lists the sources searched and is saved to the account with the date, which gives a shop a record that it checked an item before buying it.',
+  },
+];
 
- const handleVisitProfile = () => {
- window.open(crunchbaseUrl, '_blank', 'noopener,noreferrer');
- };
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SafeOrStolen',
+    alternateName: 'Safe Or Stolen',
+    description:
+      'A stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ.',
+    url: 'https://safeorstolen.com',
+    logo: 'https://safeorstolen.com/sos-logo.png',
+    email: PRESS_EMAIL,
+    address: { '@type': 'PostalAddress', addressLocality: 'Peoria', addressRegion: 'AZ', addressCountry: 'US' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://safeorstolen.com' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://safeorstolen.com/about' },
+      { '@type': 'ListItem', position: 3, name: 'Company profile', item: 'https://safeorstolen.com/crunchbase' },
+    ],
+  },
+];
 
- const structuredData = [
- {
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "SafeOrStolen",
- "alternateName": ["Safe Or Stolen", "SafeOrStolen"],
- "description": "AI-powered stolen item verification platform checking IMEI, VIN, and serial numbers against our internal reports, public web results, and AI analysis in 3 seconds.",
- "url": "https://safeorstolen.com",
- "logo": "https://safeorstolen.com/sos-logo.png",
- "foundingDate": "2017-07-20",
- "founder": [
- { "@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "Founder & CEO" },
- { "@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder" }
- ],
- "funder": {
- "@type": "Organization",
- "name": "SafeOrStolen",
- "url": "https://safeorstolen.com"
- },
- "knowsAbout": [
- "Stolen item verification",
- "IMEI checking",
- "VIN lookup",
- "Serial number verification",
- "Marketplace fraud prevention"
- ],
- "sameAs": [
- "https://www.crunchbase.com/organization/safe-or-stolen",
- "https://twitter.com/safeorstolen",
- "https://www.youtube.com/@safeorstolen"
- ]
- },
- {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": crunchbaseFaqs.map(faq => ({
- "@type": "Question",
- "name": faq.question,
- "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
- }))
- },
- {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
- { "@type": "ListItem", "position": 2, "name": "About", "item": "https://safeorstolen.com/about" },
- { "@type": "ListItem", "position": 3, "name": "Crunchbase", "item": "https://safeorstolen.com/crunchbase" }
- ]
- }
- ];
+const CrunchbasePage: React.FC = () => (
+  <>
+    <PageSEO
+      title="SafeOrStolen Company Profile: What It Is and How It Works"
+      description="SafeOrStolen company profile: a Peoria, Arizona-based stolen-item check for used phones, cars, guns and bikes. What it searches, how it makes money, how to reach it."
+      keywords="safeorstolen company profile, safeorstolen crunchbase, what is safeorstolen, safeorstolen seattle"
+      canonical="/crunchbase"
+      structuredData={structuredData}
+      modifiedTime="2026-10-07"
+    />
+    <div className="min-h-screen bg-background pt-20">
+      <div className="container mx-auto px-4 py-12 max-w-3xl">
+        <nav aria-label="Breadcrumb" className="mb-8">
+          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+            <li><Link to="/" className="hover:text-foreground transition-colors">Home</Link></li>
+            <li>/</li>
+            <li><Link to="/about" className="hover:text-foreground transition-colors">About</Link></li>
+            <li>/</li>
+            <li className="text-foreground font-medium">Company profile</li>
+          </ol>
+        </nav>
 
- return (
- <>
- <PageSEO
- title="SafeOrStolen Company Profile | AI-Powered Verification | Crunchbase"
- description="View SafeOrStolen on Crunchbase. AI-powered stolen item verification for the $367B secondhand market. Founded by Samuel Pfeiffer. IMEI, VIN, serial number checking."
- keywords="SafeOrStolen Crunchbase, SafeOrStolen company profile, stolen item verification startup, Samuel Pfeiffer founder, secondhand market technology"
- canonical="/crunchbase"
- structuredData={structuredData}
- />
+        <div className="mb-10">
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-6">
+            <Building2 className="h-7 w-7 text-primary" aria-hidden="true" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">SafeOrStolen Company Profile</h1>
+          <p className="text-lg text-muted-foreground mb-4">
+            SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
+            number, based in Peoria, AZ. A buyer enters an IMEI, VIN, plate or serial number and sees whether it
+            has been reported stolen in the records SafeOrStolen searches, with every source listed. It makes money
+            from paid checks and a monthly plan, not ads.
+          </p>
+          <p className="text-sm text-muted-foreground">Updated October 7, 2026</p>
+        </div>
 
- {/* Comprehensive noscript for crawlers */}
- <noscript>
- <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
- <header>
- <nav><a href="/">SafeOrStolen</a> &gt; <a href="/about">About</a> &gt; Crunchbase</nav>
- </header>
- <div>
- <h1>SafeOrStolen Company Profile</h1>
- <p>SafeOrStolen is an AI-powered stolen item verification platform serving the $367 billion global secondhand market. We analyze your item's IMEI, VIN, serial number, or license plate using our internal stolen item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Results usually come back in a few seconds.</p>
- 
- <h2>Company Overview</h2>
- <ul>
- <li>Founded: 2017 by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder)</li>
- <li>Headquarters: Peoria, Arizona, USA</li>
- <li>Market: $367B global secondhand market (10.7% CAGR)</li>
- </ul>
- 
- <h2>What SafeOrStolen Does</h2>
- <p>SafeOrStolen is an AI-powered verification platform that helps buyers and sellers check secondhand items before transacting. It covers phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles.</p>
- <ul>
- <li>IMEI Verification — smartphones and mobile devices</li>
- <li>VIN Lookup — cars, trucks, motorcycles, boats</li>
- <li>Serial Number Verification — electronics, tools, equipment</li>
- <li>Firearm Serial Number Check — stolen firearms databases + serial integrity validation</li>
- <li>License Plate Lookup — all 50 US states</li>
- </ul>
- 
- <h2>Frequently Asked Questions</h2>
- {crunchbaseFaqs.map((faq, i) => (
- <div key={i}>
- <h3>{faq.question}</h3>
- <p>{faq.answer}</p>
- </div>
- ))}
- 
- <h2>Related Links</h2>
- <ul>
- <li><a href="/about">About SafeOrStolen</a></li>
- <li><a href="/verify">Verify Any Item</a></li>
- <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
- <li><a href="/data-sources">How Our Checks Work</a></li>
- <li><a href="/app">Install the Web App</a></li>
- </ul>
- 
- <p><a href="https://www.crunchbase.com/organization/safe-or-stolen">View full Crunchbase profile</a></p>
- </div>
- </div>
- </noscript>
- <div className="min-h-screen bg-background pt-20">
- <div className="container mx-auto px-4 py-16">
- {/* Breadcrumb */}
- <nav aria-label="Breadcrumb" className="mb-8">
- <ol className="flex items-center gap-2 text-sm text-muted-foreground">
- <li><Link to="/" className="hover:text-foreground transition-colors">Home</Link></li>
- <li>/</li>
- <li><Link to="/about" className="hover:text-foreground transition-colors">About</Link></li>
- <li>/</li>
- <li className="text-foreground font-medium">Crunchbase</li>
- </ol>
- </nav>
+        <h2 className="text-2xl font-bold mb-4">At a glance</h2>
+        <div className="overflow-x-auto mb-12">
+          <table className="w-full text-sm border border-border rounded-lg">
+            <tbody>
+              {profileRows.map(([label, value]) => (
+                <tr key={label} className="border-t border-border first:border-t-0 align-top">
+                  <th scope="row" className="text-left p-3 font-semibold whitespace-nowrap">{label}</th>
+                  <td className="p-3 text-muted-foreground">{value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
- {/* Hero Section */}
- <div className="text-center mb-12">
- <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
- <Building2 className="h-10 w-10 text-primary" aria-hidden="true" />
- </div>
- <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
- SafeOrStolen Company Profile
- </h1>
- <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
- AI-powered trust infrastructure for the $367 billion global secondhand market.
- </p>
- <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
- Founded by Samuel Pfeiffer and Kelly McEvoy. Checking multiple sources in 3 seconds.
- </p>
- <Button 
- size="lg" 
- onClick={handleVisitProfile}
- className="gap-2"
- aria-label="View SafeOrStolen profile on Crunchbase"
- >
- <Building2 className="h-5 w-5" aria-hidden="true" />
- View on Crunchbase
- <ExternalLink className="h-4 w-4" aria-hidden="true" />
- </Button>
- </div>
+        <h2 className="text-2xl font-bold mb-4">What the product does</h2>
+        <ul className="space-y-2 text-muted-foreground list-disc pl-6 mb-4">
+          <li><strong className="text-foreground">Phones:</strong> shows the make and model from the IMEI; a paid carrier blacklist check is available. <Link to="/imei-check" className="text-primary hover:underline">IMEI check</Link></li>
+          <li><strong className="text-foreground">Vehicles:</strong> decodes year, make and model, lists open safety recalls, and searches Arizona law-enforcement records for Arizona VINs. <Link to="/vin-checker" className="text-primary hover:underline">VIN check</Link></li>
+          <li><strong className="text-foreground">Plates:</strong> SafeOrStolen theft reports, plus Arizona records for Arizona plates. Owner names are never shown. <Link to="/license-plate-lookup" className="text-primary hover:underline">Plate lookup</Link></li>
+          <li><strong className="text-foreground">Guns:</strong> police firearm theft and loss reports from 33 states and Washington, DC, live Ohio records, and a flag for altered serials. <Link to="/firearms-check" className="text-primary hover:underline">Gun serial check</Link></li>
+          <li><strong className="text-foreground">Bikes:</strong> a national stolen-bicycle registry. <Link to="/check-bike" className="text-primary hover:underline">Bike check</Link></li>
+          <li><strong className="text-foreground">Everything else with a serial:</strong> SafeOrStolen theft reports and public web results. <Link to="/serial-number-checker" className="text-primary hover:underline">Serial number check</Link></li>
+        </ul>
+        <p className="text-muted-foreground mb-12">
+          Results read "reported stolen", "possible match", or "no report found in the records searched". AI
+          writes a plain-language note on each result, but it never decides whether an item is stolen.
+        </p>
 
- {/* Market Opportunity */}
- <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
- <Card className="border-2 border-primary/20 bg-primary/5">
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <DollarSign className="h-5 w-5 text-primary" />
- Market Opportunity
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-3xl font-bold text-primary mb-2">$367B</p>
- <p className="text-muted-foreground text-sm">
- Global secondhand market by 2029 with 10.7% annual growth. SafeOrStolen provides critical trust infrastructure.
- </p>
- </CardContent>
- </Card>
+        <h2 className="text-2xl font-bold mb-4">Questions about the company</h2>
+        <Accordion type="single" collapsible className="space-y-3 mb-12">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`faq-${index}`} className="bg-card px-6 rounded-lg">
+              <AccordionTrigger className="text-left font-semibold">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
 
- <Card className="border-2 border-primary/20 bg-primary/5">
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <Brain className="h-5 w-5 text-primary" />
- AI Technology
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-3xl font-bold text-primary mb-2">AI</p>
- <p className="text-muted-foreground text-sm">
- Plain-language analysis alongside SafeOrStolen reports and public web results, usually in about 3 seconds.
- </p>
- </CardContent>
- </Card>
-
- <Card className="border-2 border-primary/20 bg-primary/5">
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <Recycle className="h-5 w-5 text-primary" />
- Installable Web App
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-3xl font-bold text-primary mb-2">All Categories</p>
- <p className="text-muted-foreground text-sm">
- SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
- </p>
- </CardContent>
- </Card>
- </div>
-
- {/* Company Highlights */}
- <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <Shield className="h-5 w-5 text-primary" />
- Mission
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-muted-foreground text-sm">
- Protect buyers and sellers from stolen goods through instant verification. "Check before you buy or sell."
- </p>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <Globe className="h-5 w-5 text-primary" />
- Coverage
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-muted-foreground text-sm">
- All 50 US states. For phones, we provide IMEI device details and identify potential risks through our internal reports, public web results, and AI analysis. For vehicles, we check our internal reports, public web results, and apply AI analysis.
- </p>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <TrendingUp className="h-5 w-5 text-primary" />
- Categories Verified
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-muted-foreground text-sm">
- Six item types: phones (IMEI), vehicles (VIN), license plates, serial-numbered goods, firearms, and bicycles.
- </p>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2 text-lg">
- <Users className="h-5 w-5 text-primary" />
- Customers
- </CardTitle>
- </CardHeader>
- <CardContent>
- <p className="text-muted-foreground text-sm">
- Individual buyers, pawn shops, used car dealers, auction houses, electronics resellers, and FFL gun dealers.
- </p>
- </CardContent>
- </Card>
- </div>
-
- {/* About Section */}
- <div className="max-w-3xl mx-auto mb-12">
- <h2 className="text-2xl font-bold text-center mb-6">About SafeOrStolen</h2>
- <div className="prose prose-lg dark:prose-invert mx-auto text-muted-foreground">
- <p>
- SafeOrStolen is the "Carfax for Everything" — a universal verification platform for the secondhand market. The platform helps buyers avoid purchasing stolen goods and helps sellers prove their items are legitimate.
- </p>
- <ul className="list-disc pl-6 space-y-2 mt-4">
- <li><strong>IMEI Verification</strong> — Smartphones, by analyzing internal reports, public web results, and AI to identify risks</li>
- <li><strong>VIN Lookup</strong> — Cars, trucks, motorcycles, by analyzing internal reports, public web results, and AI to identify risks</li>
- <li><strong>Serial Number Verification</strong> — Electronics, tools, equipment</li>
- <li><strong>Firearm Check</strong> — stolen firearms databases + serial integrity analysis</li>
- <li><strong>License Plate Lookup</strong> — All 50 US states</li>
- </ul>
- <p className="mt-4">
- Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
- </p>
- </div>
- </div>
-
- {/* FAQ Section */}
- <div className="max-w-3xl mx-auto mb-12">
- <h2 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
- <Accordion type="single" collapsible className="space-y-4">
- {crunchbaseFaqs.map((faq, index) => (
- <AccordionItem key={index} value={`faq-${index}`} className="bg-card px-6 rounded-lg">
- <AccordionTrigger className="text-left font-semibold">
- {faq.question}
- </AccordionTrigger>
- <AccordionContent className="text-muted-foreground">
- {faq.answer}
- </AccordionContent>
- </AccordionItem>
- ))}
- </Accordion>
- </div>
-
- {/* Related Links */}
- <div className="max-w-4xl mx-auto mb-12">
- <h2 className="text-2xl font-bold text-center mb-6">Explore SafeOrStolen</h2>
- <div className="grid md:grid-cols-3 gap-4">
- <Link to="/about" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">About Us</h3>
- <p className="text-sm text-muted-foreground">Our team, mission, and story</p>
- </Link>
- <Link to="/verify" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">Verify Any Item</h3>
- <p className="text-sm text-muted-foreground">Free stolen item verification</p>
- </Link>
- <Link to="/data-sources" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">Our Data Sources</h3>
- <p className="text-sm text-muted-foreground">multiple sources we check</p>
- </Link>
- <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">Pricing</h3>
- <p className="text-sm text-muted-foreground">$10/mo unlimited verifications</p>
- </Link>
- <Link to="/app" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">Installable Web App</h3>
- <p className="text-sm text-muted-foreground">Install from a supported browser</p>
- </Link>
- <Link to="/for-businesses" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">For Businesses</h3>
- <p className="text-sm text-muted-foreground">Enterprise verification solutions</p>
- </Link>
- </div>
- </div>
-
- {/* CTA Section */}
- <div className="text-center bg-primary/5 rounded-2xl p-8">
- <h2 className="text-2xl font-bold mb-4">Try SafeOrStolen Free</h2>
- <p className="text-muted-foreground mb-6">
- 2 free verification checks. No credit card required. Check any IMEI, VIN, or serial number in 3 seconds.
- </p>
- <div className="flex gap-4 justify-center flex-wrap">
- <Button size="lg" asChild className="gap-2">
- <Link to="/verify">
- Verify Now — Free <ArrowRight className="w-4 h-4" />
- </Link>
- </Button>
- <Button 
- size="lg" 
- variant="outline"
- onClick={handleVisitProfile}
- className="gap-2"
- >
- <Building2 className="h-5 w-5" />
- Crunchbase Profile
- <ExternalLink className="h-4 w-4" />
- </Button>
- </div>
- </div>
- </div>
- </div>
- </>
- );
-};
+        <div className="bg-primary/5 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold mb-3">More about SafeOrStolen</h2>
+          <p className="text-muted-foreground mb-6">
+            Boilerplate and the logo are on the <Link to="/press-kit" className="text-primary hover:underline">press kit</Link>.
+            For anything else, email {PRESS_EMAIL}.
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <Button asChild className="gap-2">
+              <Link to="/verify">
+                Try 2 free checks <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link to="/about">About SafeOrStolen</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </>
+);
 
 export default CrunchbasePage;

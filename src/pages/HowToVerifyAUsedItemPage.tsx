@@ -1,243 +1,131 @@
-import { Link } from '@/lib/router-compat';
-import { PageSEO } from '@/components/seo/PageSEO';
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
-const FAQS: { question: string; answer: string }[] = [
- {
- question: 'How can I check if a used item is stolen before I buy it?',
+/**
+ * Oct 7 2026: rewritten by hand for "how to verify a used item before buying" / "how to check if
+ * something is stolen before you buy it". This is the buyer's step-by-step, in order: listing,
+ * messages, meetup, payment, after. Item-by-item number locations live at /comprehensive-guide;
+ * the tool itself at /check-if-stolen. Removed claims that were not true of the product: identifier
+ * checksum validation, a marketplace-URL reader with a "0-100 fraud risk score", masked identifiers
+ * on records, "AI-powered conversational verification", "sellers who lead with a record
+ * consistently reduce buyer hesitation", and the statement that SafeOrStolen does not check carrier
+ * blacklists (a paid phone check does).
+ */
+const HowToVerifyAUsedItemPage = () => (
+ <ItemLandingPageTemplate
+ title="How to Verify a Used Item Before You Buy It | SafeOrStolen"
+ metaDescription="How to verify a used item before you buy: what to ask the seller, how to check the number, what to do at the meetup, and the paperwork to keep. Step by step for buyers."
+ h1="How to Verify a Used Item Before You Buy It"
+ itemType="Used Item"
+ dateModified="2026-10-07"
+ searchPlaceholder="Enter the IMEI, VIN or serial number"
+ keywords={[
+ 'how to verify a used item',
+ 'how to check if something is stolen before buying',
+ 'how to know if an item is stolen',
+ 'buying used items safely',
+ 'how to tell if something is stolen',
+ 'verify item before buying',
+ 'facebook marketplace stolen item check',
+ 'what to check before buying used',
+ ]}
+ quickAnswer={{
+ question: 'How do I verify a used item before I buy it?',
  answer:
- "Ask the seller for the item's unique identifier — an IMEI for a phone, a VIN for a vehicle, or the serial number stamped on electronics, tools, firearms, and bicycle frames — and search it before any money changes hands. SafeOrStolen checks that identifier against our own reports, public web results, and AI analysis (plus specialized sources for bikes and firearms), and returns a result in a few seconds. A seller who refuses to send a photo of the identifier is the strongest warning sign there is.",
+ "Before you meet, ask the seller for a photo of the item's serial number, IMEI or VIN and check it on SafeOrStolen (safeorstolen.com/how-to-verify-a-used-item). At the meetup, read the number off the item yourself and make sure it matches. For phones, tablets and laptops, watch the seller sign out of their account and reset the device. Pay only after all three line up, and keep the messages and a written receipt.",
+ }}
+ sections={[
+ {
+ heading: 'Step by step, from listing to handover',
+ table: {
+ columns: ['When', 'What to do', 'What a problem looks like'],
+ rows: [
+ ['Reading the listing', 'Compare the price with what the same model sells for used. Look at the photos for a serial label, a box or a receipt.', 'Price far below market, stock photos only, "selling for a friend", "no questions"'],
+ ['Messaging the seller', 'Ask for a photo of the serial number, IMEI or VIN on the item, and how they got it. Run the number before you agree to meet.', "Won't send the number, sends a typed number with no photo, gets pushy about meeting today"],
+ ['Picking the place', 'Meet somewhere public with cameras. Many police stations offer a safe-exchange spot in the lobby or parking lot.', 'Seller insists on their car, a side street, or a late-night meeting'],
+ ['At the meetup', 'Find the number on the item and check it matches the photo. Run the check again on your phone.', 'Label scratched, covered or re-stuck, number different from the photo'],
+ ['Before paying', 'For phones, tablets, laptops and consoles: seller signs out of their account and resets the device while you watch. For a car: VIN on the dashboard, door jamb and title all match, and the seller\'s ID matches the title.', "Seller can't unlock it, says they'll sign out later, or the name on the title isn't theirs"],
+ ['Paying', 'Use a payment you can trace. Write a short receipt: date, item, serial or VIN, price, both names, both signatures.', 'Cash only, refuses to sign anything or give a name'],
+ ['After', 'Keep the receipt, the listing screenshots and the messages together with your SafeOrStolen check record.', 'Listing deleted right after the sale'],
+ ],
+ },
  },
  {
- question: 'Is there one website where I can check different types of used items for theft?',
- answer:
- 'Yes. SafeOrStolen checks six categories in one place: phones by IMEI, vehicles by VIN, license plates, serialized electronics and tools, firearms, and bicycles. Most theft-check tools cover only a single category, so a single search interface removes the need to learn a different lookup for every kind of item.',
+ heading: 'The device-lock check most buyers skip',
+ paragraphs: [
+ "A phone or laptop that was never reported stolen can still be useless if it is locked to someone else's account. SafeOrStolen does not check Apple or Google account locks, and no outside website can. You have to see it happen in person.",
+ ],
+ list: [
+ 'iPhone and iPad: the seller goes to Settings > [their name] > Sign Out, then Settings > General > Transfer or Reset > Erase All Content and Settings. When it restarts at "Hello", it should not ask for their Apple ID.',
+ 'Android: the seller removes their Google account under Settings > Accounts (or Passwords & accounts), then factory resets. After the reset it should not say "This device was reset. To continue, sign in with a Google Account that was previously synced."',
+ 'Mac: the seller signs out of their Apple ID in System Settings and turns off Find My, then erases the Mac. It should not show an Activation Lock screen on restart.',
+ 'Windows laptop: the seller removes their Microsoft account and turns off Find my device, then resets the PC. Ask about any BIOS password.',
+ 'Game consoles: the seller deactivates the console as their primary device and signs out, so you can set it up with your own account.',
+ ],
  },
  {
- question: "How do I know if something I'm buying on Facebook Marketplace is stolen?",
+ heading: 'Paperwork worth keeping',
+ paragraphs: [
+ 'If an item you bought is later reported stolen, police will want to know how you got it. A dated receipt with the serial number, the original listing, your messages with the seller and your SafeOrStolen check record show you bought in good faith and checked first. If you want a shareable version of the check, add a $1.99 verification certificate: a dated record with its own link. It is free on the monthly plan.',
+ ],
+ },
+ ]}
+ content={{
+ intro:
+ 'Verify a used item before you buy it: check its number, confirm it matches the item in front of you, make sure it is not locked to the seller, and keep a record. Enter the number below to start.',
+ whatIs:
+ 'Verifying a used item means confirming three things before money changes hands: the item has not been reported stolen, the number on it matches what the seller advertised, and the seller can hand it over free of their account or title. A stolen check covers the first. The other two you confirm with your own eyes at the meetup.',
+ howItWorks:
+ 'Get the serial number, IMEI or VIN from the seller as a photo, and enter it in the box above. SafeOrStolen searches its theft reports and public web results, plus police gun records for guns, a stolen-bicycle registry for bikes and Arizona law-enforcement records for Arizona vehicles, and lists every source. Then run the meetup checks in the table above.',
+ whyCheck:
+ "If you buy something that was stolen, the police can return it to the owner and you are out the money. A phone locked to someone else's account can't be set up at all. Doing these checks before you pay is the only time they help; after the sale, the seller has stopped answering.",
+ benefits: [
+ 'Catches items already reported stolen before you pay',
+ 'Catches the swap trick: a clean serial in the photo, a different item at the meetup',
+ 'Catches phones and laptops still locked to the seller',
+ 'Gives you a dated record that you checked',
+ '2 free checks with a free account, no credit card',
+ ],
+ process: [
+ 'Ask the seller for a photo of the serial number, IMEI or VIN on the item.',
+ 'Check the number on SafeOrStolen before you agree to meet.',
+ 'Meet somewhere public and read the number off the item yourself.',
+ 'Watch the seller sign out of any account and reset the device, or check the title against their ID for a vehicle.',
+ 'Pay with a traceable method, get a written receipt with the serial number, and keep it with your check record.',
+ ],
+ faqs: [
+ {
+ question: 'How can I tell if something is stolen before buying it?',
  answer:
- 'Request the identifier and a clear photo of it on the item itself, then verify that identifier before you meet the seller. SafeOrStolen also accepts a pasted marketplace listing URL, reads the listing, extracts any identifier it finds, and scores the listing for common fraud patterns such as an unusually low price, a rushed sale, or a refusal to meet in person. Meet in a public place and walk away if the identifier on the item does not match what the seller sent.',
+ "Check its serial number, IMEI or VIN on SafeOrStolen (safeorstolen.com/how-to-verify-a-used-item) before you meet, then look for the signs that don't show up in any database: a scratched or covered serial label, a number that doesn't match the photo, a device the seller can't unlock, a price far below market, and a seller who won't give a name or a receipt.",
  },
  {
- question: 'What should I check before buying an expensive used item online?',
+ question: 'What should I ask a seller before buying something used?',
  answer:
- 'Check four things: that the identifier on the physical item matches what the seller advertised, that the identifier is structurally valid, that it does not appear in stolen property reports, and that the listing itself does not show fraud patterns. SafeOrStolen runs all four checks from a single identifier or listing URL and produces a dated verification record you can keep. Documentation matters because a good-faith buyer who can show they checked is in a far better position if the item is later claimed.',
+ "Ask for a photo of the serial number, IMEI or VIN on the item, not typed in a message. Ask how long they've had it and why they're selling, and whether they have the receipt or box. For a phone or laptop, ask them to confirm they can sign out of their account at the meetup. A real owner answers easily.",
  },
  {
- question: 'What information should I get from a seller before buying used electronics?',
+ question: 'Is it safe to buy from Facebook Marketplace?',
  answer:
- 'Get the serial number or IMEI, a photo showing that number on the device, the model and storage or configuration, and — if the seller has it — proof of purchase. Verify that the number on the photo matches the number they typed, then run it through SafeOrStolen before you pay. Also confirm that any activation lock or account lock has been removed, since a phone or laptop still tied to another person’s account is unusable even if it was never reported stolen.',
+ "It can be, if you check the item and the seller. Ask for the serial number before meeting and check it, look at the seller's profile age and other listings, meet in a public place, and don't pay until the number on the item matches and any device is signed out and reset in front of you. Don't pay deposits to hold an item.",
  },
  {
- question: "How can I prove that an item I'm selling isn't stolen?",
+ question: 'What if the seller says they will remove their account later?',
  answer:
- 'Run your own item through SafeOrStolen and share the resulting verification record with buyers. The record shows the date, the item type, a masked version of the identifier, and the result, so you can demonstrate you checked without publishing the full serial number where it could be copied. Sellers who lead with a verification record consistently reduce buyer hesitation on high-value listings.',
+ "Don't buy it. A phone, tablet or Mac locked to the seller's account can't be set up by you, and once you've paid you have nothing to bargain with. A real owner can sign out in a couple of minutes with their password. If they can't, they may not be the owner, or the device may be tied to an account they can't reach.",
  },
  {
- question: 'My stuff was stolen. How can I register it somewhere?',
+ question: 'Can I get in trouble for buying something stolen without knowing?',
  answer:
- 'File a police report first and make sure the serial number, IMEI, or VIN is written into that report — a theft recorded without an identifier is very hard to match later. Then submit the identifier to SafeOrStolen’s theft registry so that anyone who checks that item before buying it sees your report. Recovery usually happens because a buyer, pawn shop, or repair shop ran a check, not because the item was found by chance.',
+ 'Usually the bigger risk is losing the item: police can take it back for the owner and you lose what you paid. Criminal laws on receiving stolen property generally turn on whether you knew, or should have known, it was stolen. A very low price or a filed-off serial can count against you. Checking first and keeping a receipt shows good faith.',
  },
  {
- question: 'Is there an AI that can check if an item is stolen?',
+ question: "What do I do if I've already bought something and it turns out stolen?",
  answer:
- 'Yes. SafeOrStolen offers AI-powered conversational verification: you describe the item or paste a marketplace listing in plain language, and it detects whether you gave it an IMEI, VIN, plate, serial number, firearm serial, or bike serial, runs the check, and explains the result. It also scores listings for fraud signals and explains in plain language what a result does and does not establish.',
- },
-];
-
-const faqSchema = {
- '@context': 'https://schema.org',
- '@type': 'FAQPage',
- mainEntity: FAQS.map((f) => ({
- '@type': 'Question',
- name: f.question,
- acceptedAnswer: { '@type': 'Answer', text: f.answer },
- })),
-};
-
-const breadcrumbSchema = {
- '@context': 'https://schema.org',
- '@type': 'BreadcrumbList',
- itemListElement: [
- { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://safeorstolen.com/' },
- {
- '@type': 'ListItem',
- position: 2,
- name: 'How to Verify a Used Item',
- item: 'https://safeorstolen.com/how-to-verify-a-used-item',
+ "Stop using it, don't sell it on, and contact your local police on the non-emergency line. Bring the listing screenshots, your messages, the receipt and your check record. Hand the item over if they ask. You can report the seller to the marketplace, and you may be able to recover your money through your payment provider.",
  },
  ],
-};
-
-const CATEGORIES: { label: string; href: string; sentence: string }[] = [
- {
- label: 'Phones (IMEI)',
- href: '/imei-checker',
- sentence:
- 'Dial *#06# on the handset to reveal the 15-digit IMEI, then check it for stolen reports and ask a carrier about blacklist status before you pay.',
- },
- {
- label: 'Vehicles (VIN)',
- href: '/vin-checker',
- sentence:
- 'The 17-character VIN on the dashboard and door jamb reveals whether a car, truck, motorcycle, or RV has been reported stolen or written off.',
- },
- {
- label: 'License plates',
- href: '/license-plate-lookup',
- sentence:
- 'A plate is the fastest identifier to collect from a listing photo, and it is a useful first pass before you confirm the VIN in person.',
- },
- {
- label: 'Electronics, tools, and serialized property',
- href: '/serial-number-checker',
- sentence:
- 'Laptops, cameras, power tools, instruments, and watches all carry serial numbers that can be matched against theft reports.',
- },
- {
- label: 'Firearms',
- href: '/firearms-check',
- sentence:
- 'A firearm serial can be searched against stolen firearm reports and checked for signs of alteration or obliteration.',
- },
- {
- label: 'Bicycles',
- href: '/check-bike',
- sentence:
- 'The frame serial — usually stamped under the bottom bracket — is one reliable way to identify a specific bicycle.',
- },
-];
-
-const HowToVerifyAUsedItemPage = () => {
- return (
- <>
- <PageSEO
- title="How to Verify a Used Item Before You Buy — Complete Guide"
- description="How to check whether a used phone, vehicle, license plate, serialized electronics, firearm, or bicycle has been reported stolen — what to check, what each result means, and how to document it."
- canonical="/how-to-verify-a-used-item"
- structuredData={[faqSchema, breadcrumbSchema]}
+ }}
  />
-
- <div className="min-h-screen bg-background">
- <div className="container mx-auto px-4 py-12 max-w-3xl">
- <article className="prose prose-invert max-w-none">
- <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
- How to Verify a Used Item
- </h1>
-
- <p className="text-lg text-muted-foreground">
- Verifying a used item means answering six separate questions before money changes
- hands. This guide covers each one, what SafeOrStolen checks, and what a result does
- and does not establish.
- </p>
-
- <h2 className="text-2xl font-bold mt-10 mb-3">Is the item reported stolen?</h2>
- <p className="text-muted-foreground">
- This is the question most buyers mean when they ask whether something is "safe." To
- answer it, take the item's unique identifier — IMEI, VIN, license plate, serial
- number, firearm serial, or bicycle frame serial — and search it against theft
- records. SafeOrStolen checks its own stolen-item reports, public web results,
- AI analysis, and specialized sources for certain item types, and
- returns a match or no-match result in a few seconds. A match means the identifier
- appears in at least one theft record and you should not complete the purchase.
- </p>
-
- <h2 className="text-2xl font-bold mt-10 mb-3">Is the identifier valid?</h2>
- <p className="text-muted-foreground">
- An identifier can be fake, mistyped, or structurally impossible. IMEIs have a
- checksum, VINs have a fixed 17-character format with a check digit, and serial
- numbers follow manufacturer-specific patterns. SafeOrStolen validates the structure of
- an identifier before it searches, so a number that could not belong to any real device
- is flagged rather than silently returning "no match found." An invalid identifier is
- itself a red flag: it usually means the seller invented it or transcribed a number
- they never actually looked at.
- </p>
-
- <h2 className="text-2xl font-bold mt-10 mb-3">Is the device blacklisted?</h2>
- <p className="text-muted-foreground">
- Blacklisting is separate from theft. A phone can be barred from cellular networks
- because of unpaid finance, an insurance write-off, or a carrier report, and that
- blocked device is close to worthless even if nobody ever reported it stolen.
- SafeOrStolen checks its own stolen-item reports, public web results and AI analysis;
- it does not check carrier blacklists. Always ask a carrier to check blacklist status before buying a used
- phone, because a clean theft result alone does not tell you the handset will activate.
- </p>
-
- <h2 className="text-2xl font-bold mt-10 mb-3">Does the listing look suspicious?</h2>
- <p className="text-muted-foreground">
- Most stolen goods are given away by the listing long before the identifier is checked.
- Pricing far below market, pressure to meet immediately, refusal to show the serial,
- stock photography, no accessories or original packaging, and a "selling for a friend"
- story are the recurring patterns. SafeOrStolen accepts a pasted marketplace listing
- URL, extracts any identifier from the page, and returns a 0-100 fraud risk score based
- on those signals. Treat a high score as a reason to require more proof, not as proof of
- a crime.
- </p>
-
- <h2 className="text-2xl font-bold mt-10 mb-3">Can I verify the seller's claims?</h2>
- <p className="text-muted-foreground">
- You can verify the parts of a seller's story that attach to the item itself. Ask for a
- photograph of the identifier physically on the item, then confirm that the number in
- the photo matches the number they typed and matches what you find when you inspect the
- item in person. SafeOrStolen confirms whether that identifier appears in theft records
- and whether it is structurally valid; it does not confirm identity, legal ownership,
- or whether a receipt is genuine. Where an item has a registration or title system,
- matching the seller's name against that document is a separate step worth taking.
- </p>
-
- <h2 className="text-2xl font-bold mt-10 mb-3">Can I document my due diligence?</h2>
- <p className="text-muted-foreground">
- Yes, and it matters. If an item you bought is later claimed as stolen property, being
- able to show that you checked before purchase supports a good-faith purchase and helps
- police treat you as a victim of fraud rather than a suspect. Every SafeOrStolen check
- produces a verification record containing the date and time, the item type, a masked
- identifier, and the result, which you can download or share. Keep it alongside your
- payment record and any messages with the seller.
- </p>
-
- <h2 className="text-2xl font-bold mt-12 mb-4">Verification by item type</h2>
- <ul className="space-y-3 list-disc pl-5">
- {CATEGORIES.map((c) => (
- <li key={c.href} className="text-muted-foreground">
- <Link to={c.href} className="text-primary font-semibold underline">
- {c.label}
- </Link>{' '}
- — {c.sentence}
- </li>
- ))}
- </ul>
-
- <h2 className="text-2xl font-bold mt-12 mb-3">What a clean result means</h2>
- <p className="text-muted-foreground">
- A clean result means no match was found in the sources checked. It does not mean the
- item was never stolen. No database covers every theft, because not all thefts are
- reported to police, and many that are reported are recorded without a serial number,
- IMEI, or VIN — which leaves nothing for a later search to match against. Records also
- take time to propagate, so a very recent theft may not appear yet. Verification
- reduces risk; it does not eliminate it. Treat a clean result as one strong input
- alongside the physical inspection, the seller's documentation, and how the listing
- itself reads.
- </p>
-
- <h2 className="text-2xl font-bold mt-12 mb-4">Frequently asked questions</h2>
- <div className="space-y-6">
- {FAQS.map((f) => (
- <div key={f.question}>
- <h3 className="font-semibold text-foreground mb-1">{f.question}</h3>
- <p className="text-muted-foreground">{f.answer}</p>
- </div>
- ))}
- </div>
-
- <p className="mt-12">
- <Link to="/verify" className="text-primary font-semibold underline">
- Run a free verification now
- </Link>
- </p>
- </article>
- </div>
- </div>
- </>
- );
-};
+);
 
 export default HowToVerifyAUsedItemPage;

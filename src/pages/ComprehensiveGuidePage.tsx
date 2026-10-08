@@ -1,308 +1,225 @@
+/**
+ * Oct 7 2026: rewritten by hand for "where to find the serial number on any item" / "serial number
+ * location". This page is an item-by-item reference: where the identifier is on each kind of item,
+ * where else to read it, and which SafeOrStolen check fits. The buyer's step-by-step is at
+ * /how-to-verify-a-used-item and is not repeated here. Removed: invented market figures ($200
+ * billion resale, $50 billion stolen goods), invented penalty ranges and fine amounts, claims that
+ * an IMEI check shows insurance claims and Activation Lock and that a VIN check shows title, lien,
+ * odometer and accident history, "30-second check", "legally required" wording on firearms, and the
+ * "creates a defense" legal claim.
+ */
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { BookOpen, Phone, Car, Laptop, Shield, CheckCircle, AlertTriangle, ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+type Row = { item: string; id: string; onItem: string; elsewhere: string; check: string; href: string };
+
+const GROUPS: { heading: string; anchor: string; note: string; rows: Row[] }[] = [
+ {
+ heading: 'Phones, tablets and watches with cellular',
+ anchor: 'phones',
+ note:
+ 'Check the IMEI, not the serial number, on anything with a cellular connection: it is what carriers and owners report. A free check shows the make and model the IMEI belongs to, so you can see if it matches the phone in your hand. A paid check adds the lost/stolen carrier blacklist.',
+ rows: [
+ { item: 'iPhone', id: 'IMEI (15 digits)', onItem: 'SIM tray on models that have one; recent US models have no SIM tray', elsewhere: 'Dial *#06#, or Settings > General > About', check: 'IMEI check', href: '/check-iphone-stolen' },
+ { item: 'Android phone', id: 'IMEI (15 digits)', onItem: 'SIM tray or a label under the back cover on older models', elsewhere: 'Dial *#06#, or Settings > About phone', check: 'IMEI check', href: '/check-android-phone-stolen' },
+ { item: 'iPad or Android tablet with cellular', id: 'IMEI', onItem: 'Engraved on the back of some older iPads', elsewhere: 'Settings > General > About (iPad) or Settings > About tablet', check: 'IMEI check', href: '/check-tablet-stolen' },
+ { item: 'Wi-Fi-only tablet', id: 'Serial number', onItem: 'Back of the case on some models', elsewhere: 'Settings > General > About, or the box', check: 'Serial check', href: '/serial-number-checker' },
+ ],
+ },
+ {
+ heading: 'Laptops, consoles, cameras and TVs',
+ anchor: 'electronics',
+ note:
+ 'These are checked by serial number. Read it from the settings screen and from the label, and make sure the two match: a mismatch means a replaced part or a swapped label.',
+ rows: [
+ { item: 'MacBook', id: 'Serial number', onItem: 'Printed on the underside, near the hinge', elsewhere: 'Apple menu > About This Mac', check: 'Laptop check', href: '/check-laptop-stolen' },
+ { item: 'Windows laptop', id: 'Serial number (sometimes "S/N")', onItem: 'Label on the bottom, or under the battery on older models', elsewhere: 'Type "wmic bios get serialnumber" in Command Prompt', check: 'Laptop check', href: '/check-laptop-stolen' },
+ { item: 'PlayStation 5', id: 'Serial number', onItem: 'Sticker on the back or base of the console', elsewhere: 'Settings > System > System Software > Console Information', check: 'PS5 check', href: '/check-ps5' },
+ { item: 'Xbox Series X or S', id: 'Serial number', onItem: 'Sticker on the back near the ports', elsewhere: 'Settings > System > Console info', check: 'Xbox check', href: '/check-xbox' },
+ { item: 'Nintendo Switch', id: 'Serial number', onItem: 'Bottom edge of the console, near the charging port', elsewhere: 'System Settings > System > Serial Information', check: 'Console check', href: '/check-gaming-console-stolen' },
+ { item: 'Camera or lens', id: 'Serial number', onItem: 'Bottom plate of the body, or inside the battery door; on a lens, near the mount or on the barrel', elsewhere: 'Original box or receipt', check: 'Camera check', href: '/check-camera-stolen' },
+ { item: 'TV', id: 'Serial number', onItem: 'Label on the back panel', elsewhere: 'The TV\'s Settings > Support or About screen', check: 'TV check', href: '/how-to-check-if-tv-stolen' },
+ ],
+ },
+ {
+ heading: 'Vehicles, trailers and boats',
+ anchor: 'vehicles',
+ note:
+ 'A VIN check decodes the year, make and model and lists open safety recalls, so you can see if the VIN belongs to the vehicle in front of you. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records. It does not show title, lien or accident history.',
+ rows: [
+ { item: 'Car or truck', id: 'VIN (17 characters)', onItem: 'Bottom of the windshield on the driver\'s side, and the sticker on the driver\'s door jamb', elsewhere: 'Title, registration and insurance card', check: 'VIN check', href: '/vin-checker' },
+ { item: 'Motorcycle', id: 'VIN (17 characters)', onItem: 'Stamped on the steering head (the neck of the frame), often with a sticker on the frame too', elsewhere: 'Title and registration', check: 'Motorcycle VIN check', href: '/check-motorcycle-stolen-vin' },
+ { item: 'Any vehicle you only see in photos', id: 'License plate', onItem: 'Front and rear plates in the listing photos', elsewhere: 'Ask the seller', check: 'Plate check', href: '/license-plate-lookup' },
+ { item: 'Trailer or ATV', id: 'VIN or frame serial', onItem: 'Trailer: plate or stamp on the tongue or frame. ATV: stamped on the frame, often near the front', elsewhere: 'Title or certificate of origin', check: 'Trailer and ATV guide', href: '/how-to-check-if-trailer-atv-stolen' },
+ { item: 'Boat', id: 'HIN (hull identification number, 12 characters)', onItem: 'Upper right of the transom, on the starboard side', elsewhere: 'Registration or title', check: 'Boat check', href: '/check-boat' },
+ ],
+ },
+ {
+ heading: 'Bikes, tools and guns',
+ anchor: 'bikes-tools-guns',
+ note:
+ 'Bike checks add a national stolen-bicycle registry. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records, and flag serials that look altered.',
+ rows: [
+ { item: 'Bike or e-bike', id: 'Frame serial number', onItem: 'Under the bottom bracket, where the pedal cranks meet the frame. Turn the bike over.', elsewhere: 'Receipt or the shop\'s sales record. E-bike batteries and motors carry their own numbers.', check: 'Bike check', href: '/check-bike' },
+ { item: 'Power tool', id: 'Serial number', onItem: 'Nameplate on the motor housing or handle, next to the model number', elsewhere: 'Batteries and chargers have their own labels', check: 'Tool check', href: '/check-tools' },
+ { item: 'Gun', id: 'Serial number', onItem: 'Stamped on the frame or receiver; on many handguns it is on the side of the frame', elsewhere: 'Box, receipt or transfer paperwork', check: 'Gun check', href: '/firearms-check' },
+ ],
+ },
+ {
+ heading: 'Watches, jewelry and instruments',
+ anchor: 'watches-jewelry',
+ note:
+ 'These are the hardest to check. Many pieces have no serial at all, and thefts are often reported by description only. A serial check still searches SafeOrStolen theft reports and public web results, so run any number you can find.',
+ rows: [
+ { item: 'Luxury watch', id: 'Serial or case number', onItem: 'Case back, between the lugs, or on the inner ring of the dial, depending on the brand', elsewhere: 'Warranty card or papers; the number should match exactly', check: 'Watch check', href: '/check-watch-stolen' },
+ { item: 'Diamond or graded stone', id: 'Report number', onItem: 'Some stones have the grading report number laser-inscribed on the girdle (needs a loupe)', elsewhere: 'The grading report', check: 'Jewelry check', href: '/check-jewelry' },
+ { item: 'Guitar or other instrument', id: 'Serial number', onItem: 'Back of the headstock, or on a label visible through the soundhole', elsewhere: 'Receipt or case paperwork', check: 'Serial check', href: '/serial-number-checker' },
+ ],
+ },
+];
+
+const FAQS: { question: string; answer: string }[] = [
+ {
+ question: 'Where is the serial number on most items?',
+ answer:
+ 'On electronics, look for a printed label on the bottom or back, and in the Settings or About screen. On tools, it is on the nameplate on the motor housing. On bikes, under the bottom bracket. On guns, stamped on the frame or receiver. Phones use the IMEI (dial *#06#) and vehicles use the VIN on the driver\'s side of the windshield. SafeOrStolen (safeorstolen.com/comprehensive-guide) lists each item.',
+ },
+ {
+ question: 'Should I check the IMEI or the serial number on a phone?',
+ answer:
+ 'The IMEI. It is the number carriers use to blacklist lost and stolen phones and the number most owners give the police. Dial *#06# to show it, or look in Settings > General > About on an iPhone or Settings > About phone on Android. Make sure the IMEI on screen matches the one on the SIM tray or box, if there is one.',
+ },
+ {
+ question: 'What if the item has no serial number?',
+ answer:
+ 'Then no database can tie it to a theft report, and you are relying on the seller and the item. Ask for the receipt or box, ask how they got it, look for engraved initials or marks that were scrubbed off, and compare the price with what it normally sells for. Be most careful when a label that should be there has been removed.',
+ },
+ {
+ question: 'Why does the serial on the label not match the one in Settings?',
+ answer:
+ 'Usually because a part was replaced (a new logic board, a refurbished housing) or because the label was swapped from another unit. Either way, check the number shown in Settings, since it comes from the hardware, and ask the seller to explain. A label that has been peeled, cut or re-stuck is a warning sign on its own.',
+ },
+ {
+ question: 'Can I check a stolen item by model number?',
+ answer:
+ 'No. A model number describes every unit of that product, so it can\'t identify one stolen item. You need the number unique to that unit: the serial number, IMEI, VIN or HIN. The model number is still useful to confirm the item is what the listing says it is.',
+ },
+];
+
+const faqSchema = {
+ '@context': 'https://schema.org',
+ '@type': 'FAQPage',
+ mainEntity: FAQS.map((f) => ({
+ '@type': 'Question',
+ name: f.question,
+ acceptedAnswer: { '@type': 'Answer', text: f.answer },
+ })),
+};
 
 export default function ComprehensiveGuidePage() {
-  return (
-    <>
-      <PageSEO
-        title="Comprehensive Guide to Stolen Item Verification | SafeOrStolen"
-        description="The complete guide to verifying phones, vehicles, electronics, and more before buying. Learn IMEI, VIN, and serial number verification methods. Protect yourself from fraud."
-        keywords="stolen item guide, verification guide, IMEI guide, VIN guide, how to check stolen, buy secondhand safely"
-        canonical="https://safeorstolen.com/comprehensive-guide"
-      />
-      <div className="min-h-screen bg-background pt-20">
-        {/* Hero */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <BookOpen className="h-16 w-16 text-primary mx-auto mb-6" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Comprehensive Verification Guide
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Everything you need to know about verifying secondhand items before buying. Protect yourself from stolen goods, fraud, and legal trouble.
-              </p>
-            </div>
-          </div>
-        </section>
+ return (
+ <>
+ <PageSEO
+ title="Where to Find the Serial Number, IMEI or VIN on Any Item"
+ description="Where the serial number, IMEI, VIN or HIN is on phones, laptops, consoles, cameras, cars, boats, bikes, tools, guns and watches, and which stolen check to run for each."
+ keywords="where to find serial number, serial number location, where is the serial number, where is the imei, where is the vin, find serial number on laptop, find serial number on ps5, serial number on bike"
+ canonical="/comprehensive-guide"
+ modifiedTime="2026-10-07"
+ structuredData={faqSchema}
+ />
+ <div className="min-h-screen bg-background pt-20">
+ <article className="container mx-auto px-4 py-16 max-w-5xl">
+ <h1 className="text-4xl md:text-5xl font-bold mb-4">Where to Find the Serial Number, IMEI or VIN on Any Item</h1>
+ <p className="text-sm text-muted-foreground mb-6">
+ Updated <time dateTime="2026-10-07">October 7, 2026</time>
+ </p>
+ <p className="text-lg mb-4">
+ Phones are checked by IMEI (dial *#06#), vehicles by the 17-character VIN on the driver's side
+ of the windshield, boats by the HIN on the transom, and everything else by its serial number:
+ on a label on the bottom or back, a stamped plate, or the Settings screen. The tables below show
+ exactly where to look on each kind of item and which check to run.
+ </p>
+ <p className="text-muted-foreground mb-6">
+ Read the number off the item yourself, and where there are two places to read it, check both
+ match. For the order of steps when buying, see{' '}
+ <Link to="/how-to-verify-a-used-item" className="text-primary underline">how to verify a used item</Link>.
+ </p>
 
-        {/* Table of Contents */}
-        <section className="py-16 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">In This Guide</h2>
-            <Card>
-              <CardContent className="p-6">
-                <ul className="space-y-3">
-                  <li><a href="#why-verify" className="text-primary hover:underline">1. Why Verification Matters</a></li>
-                  <li><a href="#phones" className="text-primary hover:underline">2. Verifying Phones (IMEI Check)</a></li>
-                  <li><a href="#vehicles" className="text-primary hover:underline">3. Verifying Vehicles (VIN Check)</a></li>
-                  <li><a href="#electronics" className="text-primary hover:underline">4. Verifying Electronics & Other Items</a></li>
-                  <li><a href="#red-flags" className="text-primary hover:underline">5. Red Flags to Watch For</a></li>
-                  <li><a href="#legal" className="text-primary hover:underline">6. Legal Consequences of Buying Stolen Goods</a></li>
-                  <li><a href="#resources" className="text-primary hover:underline">7. Additional Resources</a></li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+ <nav className="mb-10 rounded-xl border border-border p-4">
+ <p className="font-semibold mb-2">Jump to</p>
+ <ul className="grid sm:grid-cols-2 gap-1">
+ {GROUPS.map((g) => (
+ <li key={g.anchor}>
+ <a href={`#${g.anchor}`} className="text-primary underline">{g.heading}</a>
+ </li>
+ ))}
+ </ul>
+ </nav>
 
-        {/* Section 1 */}
-        <section id="why-verify" className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg">
-              <h2>1. Why Verification Matters</h2>
-              <p>
-                The secondhand market is booming—over $200 billion annually in the US alone. But so is theft. An estimated $50 billion in stolen goods enters the resale market each year through platforms like Facebook Marketplace, Craigslist, OfferUp, and pawn shops.
-              </p>
-              <p>
-                When you buy stolen property—even without knowing—you face:
-              </p>
-              <ul>
-                <li><strong>Loss of the item:</strong> Police can seize it with no refund</li>
-                <li><strong>Loss of money:</strong> Your payment goes to the thief, not recoverable</li>
-                <li><strong>Criminal charges:</strong> Possession of stolen property is illegal in all states</li>
-                <li><strong>Legal fees:</strong> Defending yourself costs thousands even if charges are dropped</li>
-              </ul>
-              <p>
-                A 30-second verification check can prevent all of this.
-              </p>
-            </div>
-          </div>
-        </section>
+ {GROUPS.map((g) => (
+ <section key={g.anchor} id={g.anchor} className="mb-12 scroll-mt-24">
+ <h2 className="text-2xl md:text-3xl font-bold mb-3">{g.heading}</h2>
+ <p className="text-muted-foreground mb-4">{g.note}</p>
+ <div className="overflow-x-auto">
+ <table className="w-full text-sm border border-border">
+ <thead className="bg-muted/50">
+ <tr>
+ <th className="text-left p-3 border-b border-border">Item</th>
+ <th className="text-left p-3 border-b border-border">Number to check</th>
+ <th className="text-left p-3 border-b border-border">Where it is on the item</th>
+ <th className="text-left p-3 border-b border-border">Where else to read it</th>
+ <th className="text-left p-3 border-b border-border">Check to run</th>
+ </tr>
+ </thead>
+ <tbody>
+ {g.rows.map((r) => (
+ <tr key={r.item} className="align-top">
+ <td className="p-3 border-b border-border font-semibold">{r.item}</td>
+ <td className="p-3 border-b border-border">{r.id}</td>
+ <td className="p-3 border-b border-border">{r.onItem}</td>
+ <td className="p-3 border-b border-border">{r.elsewhere}</td>
+ <td className="p-3 border-b border-border">
+ <Link to={r.href} className="text-primary underline">{r.check}</Link>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ </section>
+ ))}
 
-        {/* Section 2 */}
-        <section id="phones" className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg">
-              <div className="flex items-center gap-4 not-prose mb-6">
-                <Phone className="h-10 w-10 text-primary" />
-                <h2 className="text-3xl font-bold">2. Verifying Phones (IMEI Check)</h2>
-              </div>
-              <p>
-                Every phone has a unique 15-digit IMEI (International Mobile Equipment Identity). This number is registered with carriers worldwide and tracked in stolen property databases.
-              </p>
-              <h3>How to Find the IMEI</h3>
-              <ul>
-                <li>Dial <code>*#06#</code> on the phone's keypad</li>
-                <li>Go to Settings → About Phone → IMEI</li>
-                <li>Check the SIM tray or original box</li>
-                <li>For iPhones: Settings → General → About → IMEI</li>
-              </ul>
-              <h3>What an IMEI Check Reveals</h3>
-              <ul>
-                <li>Carrier blacklist status (reported stolen/unpaid balance)</li>
-                <li>Insurance claims (theft claim paid)</li>
-                <li>Law enforcement reports</li>
-                <li>Activation lock status</li>
-              </ul>
-              <div className="not-prose mt-6">
-                <Button asChild>
-                  <Link to="/imei-checker">Check Phone IMEI</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">When the number is missing or damaged</h2>
+ <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+ <li>A label peeled, cut, painted over or covered with a new sticker: ask why, and expect a good answer.</li>
+ <li>A number ground or filed off metal: walk away. On a gun, possessing a firearm with an obliterated serial number is a federal crime under 18 U.S.C. § 922(k).</li>
+ <li>The number on the label doesn't match the one in Settings: check the Settings number and ask about repairs.</li>
+ <li>The number doesn't match the photo the seller sent: you're looking at a different item.</li>
+ </ul>
 
-        {/* Section 3 */}
-        <section id="vehicles" className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg">
-              <div className="flex items-center gap-4 not-prose mb-6">
-                <Car className="h-10 w-10 text-primary" />
-                <h2 className="text-3xl font-bold">3. Verifying Vehicles (VIN Check)</h2>
-              </div>
-              <p>
-                The 17-character VIN (Vehicle Identification Number) is a vehicle's fingerprint. It reveals ownership history, title status, and theft records.
-              </p>
-              <h3>Where to Find the VIN</h3>
-              <ul>
-                <li>Dashboard (driver's side, visible through windshield)</li>
-                <li>Driver's door jamb sticker</li>
-                <li>Vehicle title and registration</li>
-                <li>Insurance documents</li>
-              </ul>
-              <h3>What a VIN Check Reveals</h3>
-              <ul>
-                <li>Theft history (SafeOrStolen reports, public web results, and AI analysis)</li>
-                <li>Title status (clean, salvage, rebuilt, flood)</li>
-                <li>Lien status (money owed on vehicle)</li>
-                <li>Odometer rollback</li>
-                <li>Accident history</li>
-              </ul>
-              <div className="not-prose mt-6">
-                <Button asChild>
-                  <Link to="/vin-checker">Check Vehicle VIN</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+ <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Questions people ask</h2>
+ <div className="space-y-6">
+ {FAQS.map((f) => (
+ <div key={f.question}>
+ <h3 className="font-semibold text-lg text-foreground mb-1">{f.question}</h3>
+ <p className="text-muted-foreground">{f.answer}</p>
+ </div>
+ ))}
+ </div>
 
-        {/* Section 4 */}
-        <section id="electronics" className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg">
-              <div className="flex items-center gap-4 not-prose mb-6">
-                <Laptop className="h-10 w-10 text-primary" />
-                <h2 className="text-3xl font-bold">4. Verifying Electronics & Other Items</h2>
-              </div>
-              <p>
-                Most electronics have serial numbers that can be checked against stolen property databases. While coverage isn't as comprehensive as phones/vehicles, verification still catches many stolen items.
-              </p>
-              <h3>Common Items with Checkable Serials</h3>
-              <ul>
-                <li><strong>Laptops:</strong> Bottom of device, BIOS/System Information</li>
-                <li><strong>Gaming Consoles:</strong> Back of console, Settings menu</li>
-                <li><strong>Cameras:</strong> Bottom plate, battery compartment</li>
-                <li><strong>Power Tools:</strong> Near motor housing, product label</li>
-                <li><strong>Bicycles:</strong> Under bottom bracket, head tube</li>
-                <li><strong>Watches:</strong> Case back, between lugs</li>
-                <li><strong>Firearms:</strong> Frame/receiver (legally required)</li>
-              </ul>
-              <div className="not-prose mt-6">
-                <Button asChild>
-                  <Link to="/serial-number-checker">Check Serial Number</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5 */}
-        <section id="red-flags" className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center gap-4 mb-6">
-                <AlertTriangle className="h-10 w-10 text-destructive" />
-                <h2 className="text-3xl font-bold">5. Red Flags to Watch For</h2>
-              </div>
-              <Card className="border-destructive/20">
-                <CardContent className="p-6">
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>Price significantly below market value</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>Seller refuses to provide serial/IMEI/VIN before meeting</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>Serial numbers scratched off or tampered with</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>No proof of purchase or original packaging</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>Seller insists on cash only, quick sale</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>Phone locked to account seller can't access</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5" />
-                      <span>Seller can't explain how they acquired item</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 6 */}
-        <section id="legal" className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg">
-              <div className="flex items-center gap-4 not-prose mb-6">
-                <Shield className="h-10 w-10 text-primary" />
-                <h2 className="text-3xl font-bold">6. Legal Consequences</h2>
-              </div>
-              <p>
-                Receiving stolen property is a crime in all 50 states. Penalties vary but can include:
-              </p>
-              <ul>
-                <li><strong>Misdemeanor:</strong> Up to 1 year in jail for lower-value items</li>
-                <li><strong>Felony:</strong> 1-10+ years for higher-value items (usually $500-$1000+)</li>
-                <li><strong>Fines:</strong> Up to $10,000+ depending on value and state</li>
-                <li><strong>Forfeiture:</strong> Item seized with no compensation</li>
-                <li><strong>Criminal record:</strong> Affects employment, housing, credit</li>
-              </ul>
-              <p>
-                <strong>Key legal concept:</strong> "Knowingly or should have known" — If a reasonable person would suspect the item is stolen (price too good, suspicious circumstances), you can be charged even if you didn't explicitly know.
-              </p>
-              <p>
-                Verification creates a defense: showing you took reasonable steps to verify legitimacy.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 7 */}
-        <section id="resources" className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <FileText className="h-10 w-10 text-primary" />
-                <h2 className="text-3xl font-bold">7. Additional Resources</h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <Card>
-                  <CardContent className="p-4">
-                    <Link to="/how-to-check-if-item-stolen" className="text-primary hover:underline font-medium">
-                      How to Check If Item Is Stolen
-                    </Link>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-4">
-                    <Link to="/blog/how-to-check-if-phone-stolen" className="text-primary hover:underline font-medium">
-                      Phone Verification Guide
-                    </Link>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-4">
-                    <Link to="/blog/complete-vin-guide" className="text-primary hover:underline font-medium">
-                      Complete VIN Guide
-                    </Link>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-4">
-                    <Link to="/faq" className="text-primary hover:underline font-medium">
-                      Frequently Asked Questions
-                    </Link>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Start Verifying Now</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Check phones, vehicles, and electronics in seconds. 2 free verifications, no credit card required.
-            </p>
-            <Button size="lg" asChild>
-              <Link to="/verify">
-                Verify an Item <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </section>
-      </div>
-    </>
-  );
+ <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center">
+ <h2 className="text-2xl font-bold mb-2">Found the number? Check it.</h2>
+ <p className="text-muted-foreground mb-4">2 free checks with a free account. No credit card.</p>
+ <Button size="lg" asChild>
+ <Link to="/check-if-stolen">
+ Check if it's stolen <ArrowRight className="ml-2 h-4 w-4" />
+ </Link>
+ </Button>
+ </div>
+ </article>
+ </div>
+ </>
+ );
 }

@@ -1,4 +1,4 @@
-Contact: mailto:support@safeorstolen.com
+Contact: mailto:safeorstolenmail@gmail.com
 Expires: 2027-03-25T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://safeorstolen.com/.well-known/security.txt

@@ -24,7 +24,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "What databases does SafeOrStolen check?",
- answer: "We combine SafeOrStolen's own reported items, public web results, and AI analysis for comprehensive checks. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 34 states plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. This multi-faceted approach helps identify potential stolen items."
+ answer: "We combine SafeOrStolen's own reported items, public web results, and AI analysis for comprehensive checks. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. This multi-faceted approach helps identify potential stolen items."
  },
  {
  question: "How do I check if a car is stolen using VIN?",
@@ -71,7 +71,7 @@ export const HomeContentSections = () => {
  <div className="max-w-5xl mx-auto">
  <h2 className="text-2xl md:text-3xl font-bold mb-6">What SafeOrStolen Checks — Complete Verification Coverage</h2>
  <p className="text-muted-foreground mb-8 text-lg">
-  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns.
+  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns.
  </p>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
  {[
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
  <h3 className="font-bold text-lg mb-2">We Search multiple sources</h3>
  <p className="text-sm text-muted-foreground">
- In parallel, we query SafeOrStolen's own reports, public web results, and use AI analysis. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 34 states plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. More sources means higher accuracy.
+ In parallel, we query SafeOrStolen's own reports, public web results, and use AI analysis. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. More sources means higher accuracy.
  </p>
  </div>
  <div className="text-center p-6 bg-card rounded-lg border border-border">

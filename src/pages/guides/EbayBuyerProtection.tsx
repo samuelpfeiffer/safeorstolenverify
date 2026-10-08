@@ -1,279 +1,129 @@
-import React from "react";
-import { Link } from "@/lib/router-compat";
-import { PageSEO } from "@/components/seo/PageSEO";
-import { Button } from "@/components/ui/button";
-import {
-  Shield,
-  AlertTriangle,
-  CheckCircle,
-  Search,
-  Smartphone,
-  ArrowRight,
-} from "lucide-react";
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
-const EbayBuyerProtection = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "How to Verify eBay Items Before Buying",
-    description:
-      "Step-by-step guide to protect yourself from stolen items on eBay using SafeOrStolen verification.",
-    step: [
-      {
-        "@type": "HowToStep",
-        name: "Ask for the serial number or IMEI",
-        text: "Before bidding or buying, message the seller and ask for the item's unique identifier (IMEI for phones, VIN for vehicles, serial number for electronics).",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Verify with SafeOrStolen",
-        text: "Enter the identifier into SafeOrStolen to check its own stolen-item reports, public web results, and AI analysis.",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Check seller history",
-        text: "Review the seller's feedback score, history, and any red flags in their listing.",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Use eBay's secure payment",
-        text: "Always pay through eBay's official checkout for buyer protection.",
-      },
-    ],
-  };
-
+/**
+ * Oct 7 2026: rewritten by hand for "ebay buyer protection" / "ebay money back guarantee".
+ * No Search Console data for this page yet. Removed: "3 seconds" result claims, the
+ * "34 states" gun line, "AI analysis" as a data source and "peace of mind" copy. The
+ * how-to-check-an-eBay-item-for-theft topic belongs to /ebay-stolen-item-check and is linked.
+ */
+export default function EbayBuyerProtection() {
   return (
-    <>
-      <PageSEO
-        title="eBay Buyer Protection Guide - Avoid Stolen Items | SafeOrStolen"
-        description="Complete guide to protecting yourself from stolen items on eBay. Learn how to verify electronics, phones, and vehicles before bidding. Free IMEI and serial number checks."
-        keywords="eBay buyer protection, eBay scam protection, verify eBay items, eBay stolen phone, eBay IMEI check, eBay serial number verification"
-        structuredData={structuredData}
-      />
-      <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-background via-background to-muted">
-          <div className="container mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
-              <Shield className="w-4 h-4" />
-              eBay Buyer Protection Guide
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              How to Verify eBay Items Before Buying
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Protect yourself from purchasing stolen goods on eBay. Use
-              SafeOrStolen's free verification tools to check any item's history
-              before you bid.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="gap-2">
-                <Link to="/verify">
-                  <Search className="w-5 h-5" />
-                  Verify an Item Now
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link to="/app">
-                  <Smartphone className="w-5 h-5" />
-                  Try the Web App
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Verify Section */}
-        <section className="py-16 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Why You Should Verify eBay Purchases
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 bg-card rounded-xl border">
-                <AlertTriangle className="w-10 h-10 text-destructive mb-4" />
-                <h3 className="text-lg font-semibold mb-2">
-                  Stolen Goods Risk
-                </h3>
-                <p className="text-muted-foreground">
-                  eBay's massive marketplace makes it a target for fencing
-                  stolen items, especially electronics and phones.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border">
-                <Shield className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Legal Protection</h3>
-                <p className="text-muted-foreground">
-                  Unknowingly buying stolen property can result in the item
-                  being seized with no refund.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border">
-                <CheckCircle className="w-10 h-10 text-green-500 mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Peace of Mind</h3>
-                <p className="text-muted-foreground">
-                  Verification takes 3 seconds and gives you confidence in your
-                  purchase.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Step by Step Guide */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Step-by-Step Verification Guide
-            </h2>
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                  1
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Ask the Seller for the Identifier
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Before bidding, message the seller and request:
-                  </p>
-                  <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                    <li>
-                      <strong>Phones:</strong> IMEI number (dial *#06# on the
-                      device)
-                    </li>
-                    <li>
-                      <strong>Vehicles:</strong> VIN (17-character code on
-                      dashboard or door)
-                    </li>
-                    <li>
-                      <strong>Electronics:</strong> Serial number (usually on
-                      bottom or in settings)
-                    </li>
-                    <li>
-                      <strong>Bikes:</strong> Serial number (under bottom
-                      bracket)
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                  2
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Verify with SafeOrStolen
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Enter the identifier into SafeOrStolen. We check:
-                  </p>
-                  <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                    <li>SafeOrStolen's own reported items</li>
-                    <li>publicly available web information</li>
-                    <li>AI analysis of the available information</li>
-                    <li>Police gun theft records from 34 states, and a national stolen-bicycle registry</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                  3
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Check for Red Flags
-                  </h3>
-                  <p className="text-muted-foreground mb-4">Be wary of:</p>
-                  <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                    <li>Prices significantly below market value</li>
-                    <li>Sellers who refuse to provide identifiers</li>
-                    <li>Stock photos instead of actual item photos</li>
-                    <li>New accounts with no feedback</li>
-                    <li>Pressure to complete sale quickly or outside eBay</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                  4
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Use eBay's Secure Payment
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Always pay through eBay's official checkout for buyer
-                    protection. Never pay via wire transfer, gift cards, or
-                    outside eBay.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 px-4 bg-primary/10">
-          <div className="container mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Ready to Verify Your eBay Purchase?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Get instant results in 3 seconds. Your first 2 checks are free.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="gap-2">
-                <Link to="/verify">
-                  Verify an Item Now
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Links */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              Related Guides
-            </h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <Link
-                to="/guides/verify-craigslist-items"
-                className="p-4 bg-card rounded-lg border hover:border-primary transition-colors"
-              >
-                <h3 className="font-semibold mb-2">Craigslist Verification</h3>
-                <p className="text-sm text-muted-foreground">
-                  How to verify items on Craigslist
-                </p>
-              </Link>
-              <Link
-                to="/guides/offerup-scam-protection"
-                className="p-4 bg-card rounded-lg border hover:border-primary transition-colors"
-              >
-                <h3 className="font-semibold mb-2">OfferUp Safety</h3>
-                <p className="text-sm text-muted-foreground">
-                  Avoid scams on OfferUp
-                </p>
-              </Link>
-              <Link
-                to="/imei-checker"
-                className="p-4 bg-card rounded-lg border hover:border-primary transition-colors"
-              >
-                <h3 className="font-semibold mb-2">IMEI Checker</h3>
-                <p className="text-sm text-muted-foreground">
-                  Check phone IMEI numbers
-                </p>
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
+    <ItemLandingPageTemplate
+      title="eBay Buyer Protection: What the Money Back Guarantee Covers | SafeOrStolen"
+      metaDescription="How eBay buyer protection works: what the Money Back Guarantee covers, the 30-day window, how to open a request, what is not covered, and how to check an item isn't stolen."
+      h1="eBay Buyer Protection: How the Money Back Guarantee Works"
+      itemType="eBay Purchase"
+      dateModified="2026-10-07"
+      searchPlaceholder="Enter the item's serial number, IMEI or VIN"
+      keywords={[
+        'ebay buyer protection',
+        'ebay money back guarantee',
+        'how does ebay buyer protection work',
+        'ebay item not received',
+        'ebay item not as described',
+        'what does ebay money back guarantee cover',
+        'ebay buyer protection stolen item',
+        'ebay open a request',
+      ]}
+      quickAnswer={{
+        question: 'How does eBay buyer protection work?',
+        answer:
+          "eBay's Money Back Guarantee covers most items bought and paid for through eBay checkout when the item doesn't arrive, arrives damaged or faulty, or doesn't match the listing. You open a request from your Purchase history within 30 days of the latest estimated delivery date; if the seller doesn't fix it within 3 business days, you can ask eBay to step in. It doesn't cover payments made outside eBay, and it won't tell you whether an item is stolen, so check the serial number on SafeOrStolen (safeorstolen.com/guides/ebay-buyer-protection) before you buy.",
+      }}
+      sections={[
+        {
+          heading: 'What the Money Back Guarantee covers, and what it doesn\'t',
+          table: {
+            columns: ['Situation', 'Covered?'],
+            rows: [
+              ['Item never arrived', 'Yes, if you paid through eBay checkout and open a request in time'],
+              ['Item arrived damaged, broken or not working', 'Yes, as "not as described"'],
+              ['Wrong item, wrong model, or a fake of a branded item', 'Yes, as "not as described"'],
+              ['You paid by bank transfer, Zelle, a payment app or cash outside eBay', 'No'],
+              ['You changed your mind', 'Only if the seller accepts returns'],
+              ['Cars, trucks and motorcycles', 'Not under the standard guarantee. eBay has a separate Vehicle Purchase Protection program with its own rules'],
+              ['The item later turns out to be stolen', "Not one of the listed problems. Report it to police and contact eBay; don't count on an automatic refund"],
+            ],
+          },
+        },
+        {
+          heading: 'How to open a request',
+          list: [
+            'Go to My eBay > Purchase history and find the order.',
+            'Choose "I didn\'t receive it" for an item that never came, or "Return this item" for one that is broken or not as described.',
+            'Explain what is wrong and add photos of the item, the label and any damage.',
+            'Wait for the seller. They have 3 business days to respond.',
+            'If it isn\'t fixed, open the request and choose to ask eBay to step in. Do this before the request window closes.',
+          ],
+        },
+        {
+          heading: 'Red flags in an eBay listing',
+          list: [
+            'Stock photos only, or photos with the serial number cropped out',
+            'A new account with little or no feedback selling expensive electronics well below sold prices',
+            'A seller who messages you to pay outside eBay "for a discount"',
+            'Several of the same new-in-box item, listed without a business name or returns',
+            '"Local pickup only, cash" on a small, easy-to-ship item like a phone',
+          ],
+        },
+      ]}
+      content={{
+        intro:
+          "eBay buyer protection is called the eBay Money Back Guarantee. Here is what it covers, how to use it, and the gap it leaves: whether the item was stolen. For the step-by-step theft check on an eBay listing, see <a href=\"/ebay-stolen-item-check\">how to check if an eBay item is stolen</a>.",
+        whatIs:
+          "The Money Back Guarantee is eBay's promise to refund you when an eligible purchase doesn't arrive or isn't what the listing described. It applies when you pay through eBay's own checkout. It is built around delivery and condition problems, not ownership, so a stolen item that arrives on time and works fine looks like a successful sale.",
+        howItWorks:
+          'Before you buy, message the seller through eBay and ask for the serial number, IMEI or VIN. Type it into the search box above. SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed.',
+        whyCheck:
+          "If police recover a stolen item from you, it goes back to its owner. Your only claim is against the seller, and an eBay seller who sold stolen goods may be gone by then. Checking the number before you pay is the protection the guarantee doesn't give you.",
+        benefits: [
+          'Check a serial number, IMEI or VIN before you bid or buy',
+          'Searches SafeOrStolen theft reports and public web results',
+          'Every source listed with the result',
+          'Dated record of the check saved to your account',
+          '2 free checks with no credit card',
+        ],
+        process: [
+          'Read the listing for red flags and check the seller\'s feedback.',
+          'Message the seller through eBay and ask for the serial number, IMEI or VIN.',
+          'Check the number on SafeOrStolen.',
+          'Pay only through eBay checkout, never outside it.',
+          'When it arrives, compare the number on the item with the one you checked.',
+          'If anything is wrong, open a request from Purchase history within 30 days of the latest estimated delivery date.',
+        ],
+        faqs: [
+          {
+            question: 'Does eBay protect buyers?',
+            answer:
+              "Yes. The eBay Money Back Guarantee refunds most purchases that don't arrive, arrive damaged or faulty, or don't match the listing, as long as you paid through eBay checkout and open a request in time. It doesn't cover payments made outside eBay, and vehicles fall under a separate program, Vehicle Purchase Protection.",
+          },
+          {
+            question: 'How long do I have to file an eBay Money Back Guarantee claim?',
+            answer:
+              "Open a request within 30 days of the latest estimated delivery date shown on the order. Start it from My eBay > Purchase history. If the seller doesn't resolve it within 3 business days, you can ask eBay to step in. Don't wait until the last day: you still need time to escalate.",
+          },
+          {
+            question: 'What if I bought a stolen item on eBay?',
+            answer:
+              "Stop using it, keep the listing, order page and messages, and report it to your local police with the order number. Contact eBay customer service too. The Money Back Guarantee is built for items that didn't arrive or aren't as described, so a refund isn't automatic. SafeOrStolen's guide to what to do if you bought something stolen covers the next steps.",
+          },
+          {
+            question: 'Can I check if an eBay item is stolen before I buy?',
+            answer:
+              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check), which searches its theft reports and public web results. The first 2 checks are free. When the item arrives, make sure the number on it matches what you checked.",
+          },
+          {
+            question: 'Is paying outside eBay covered by buyer protection?',
+            answer:
+              "No. If you pay a seller directly by bank transfer, a payment app, a gift card or cash, eBay's Money Back Guarantee doesn't apply. Sellers who ask you to pay outside eBay for a discount are a common scam. Report the message and pay only through eBay checkout.",
+          },
+          {
+            question: 'Does eBay buyer protection cover fake items?',
+            answer:
+              "Yes. A counterfeit of a branded item counts as \"not as described\", so you can open a return request from Purchase history and ask eBay to step in if the seller won't fix it. Keep the item, the packaging and photos of the labels, and don't send it anywhere except the return address eBay gives you.",
+          },
+        ],
+      }}
+    />
   );
-};
-
-export default EbayBuyerProtection;
+}

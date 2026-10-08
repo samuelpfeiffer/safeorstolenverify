@@ -84,7 +84,7 @@ export const TrustEngineSchemas: React.FC = () => {
  "name": "What databases does SafeOrStolen check?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen uses its own reported stolen items, public web results, and AI analysis to help identify potentially stolen items. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft and loss reports from 34 states plus live Ohio records."
+ "text": "SafeOrStolen uses its own reported stolen items, public web results, and AI analysis to help identify potentially stolen items. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft and loss reports from 33 states and DC plus live Ohio records."
  }
  }
  ]

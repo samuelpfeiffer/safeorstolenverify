@@ -2,118 +2,80 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Newspaper, Calendar, ExternalLink, ArrowRight, Download, Mail } from 'lucide-react';
-import { PRESS_RELEASES } from '@/data/pressCoverage';
+import { Newspaper, Mail } from 'lucide-react';
+
+/**
+ * Oct 7 2026: rewritten by hand for "safeorstolen press release". The old page linked off-site
+ * to four paid wire releases announcing a partnership we can't verify and a "mobile app" that is
+ * actually a web app, and called SafeOrStolen "the leading" platform founded in 2017 in Peoria,
+ * Arizona. With those gone there is little left to list, so the
+ * page is short: what's current, where the facts live, and who to email.
+ */
+
+const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 export default function PressReleasePage() {
- return (
- <>
- <PageSEO
- title="Press Releases - SafeOrStolen News & Announcements"
- description="Official press releases and news from SafeOrStolen. Stay updated on product launches, partnerships, and company announcements."
- keywords="press releases, news, announcements, SafeOrStolen news, company updates, media"
- canonical="https://safeorstolen.com/press-release"
- />
- <div className="min-h-screen bg-background pt-20">
- {/* Hero */}
- <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto text-center">
- <Newspaper className="h-16 w-16 text-primary mx-auto mb-6" />
- <h1 className="text-4xl md:text-5xl font-bold mb-6">
- Press Releases
- </h1>
- <p className="text-xl text-muted-foreground">
- Official news and announcements from SafeOrStolen.
- </p>
- </div>
- </div>
- </section>
+  return (
+    <>
+      <PageSEO
+        title="SafeOrStolen Press Releases and Announcements"
+        description="Looking for a SafeOrStolen press release? Current company facts, what a check searches and pricing, plus the press email: safeorstolenmail@gmail.com."
+        keywords="safeorstolen press release, safeorstolen announcement, safeorstolen news"
+        canonical="/press-release"
+        modifiedTime="2026-10-07"
+      />
+      <div className="min-h-screen bg-background pt-20">
+        <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <Newspaper className="h-12 w-12 text-primary mb-6" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">SafeOrStolen Press Releases</h1>
+            <p className="text-lg text-muted-foreground mb-4">
+              This page no longer lists SafeOrStolen's earlier wire releases, because they made claims we can't
+              confirm, and there is no new release to replace them. For accurate, current
+              facts about the company, use the <Link to="/press-kit" className="text-primary hover:underline">press kit</Link>,
+              and email {PRESS_EMAIL} with any question.
+            </p>
+            <p className="text-sm text-muted-foreground">Updated October 7, 2026</p>
+          </div>
+        </section>
 
- {/* Press Releases */}
- <section className="py-16 container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <div className="space-y-6">
- {PRESS_RELEASES.map((pr, index) => (
- <Card key={index} className="hover:shadow-lg transition-shadow">
- <CardContent className="p-6">
- <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
- <Calendar className="h-4 w-4" />
- {pr.date} · {pr.outlet}
- </div>
- <h2 className="text-xl font-bold mb-3">{pr.title}</h2>
- <a
- href={pr.url}
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex items-center text-primary hover:underline"
- >
- Read Full Release <ExternalLink className="ml-2 h-4 w-4" />
- </a>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </section>
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-bold mb-4">What's current</h2>
+            <p className="text-muted-foreground mb-4">
+              SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
+              number, based in Peoria, AZ. As of October 2026:
+            </p>
+            <ul className="space-y-2 text-muted-foreground list-disc pl-6">
+              <li>Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records.</li>
+              <li>Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.</li>
+              <li>Phone checks show the make and model from the IMEI, with a paid carrier blacklist check available.</li>
+              <li>An optional $1.99 verification certificate gives buyers a dated record, with its own link, showing they checked before the sale.</li>
+              <li>The app is a free installable web app at <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link>.</li>
+            </ul>
+          </div>
+        </section>
 
- {/* Media Kit */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-8">Media Resources</h2>
- <div className="grid md:grid-cols-2 gap-6">
- <Card>
- <CardContent className="p-6">
- <Download className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-2">Press Kit</h3>
- <p className="text-muted-foreground mb-4">
- Logos, brand guidelines, executive headshots, and company fact sheet.
- </p>
- <Button variant="outline" asChild>
- <Link to="/press-kit">Download Press Kit</Link>
- </Button>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="p-6">
- <Mail className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-2">Media Inquiries</h3>
- <p className="text-muted-foreground mb-4">
- For interviews, quotes, or additional information, contact our media team.
- </p>
- <Button variant="outline" asChild>
- <a href="mailto:press@safeorstolen.com">Contact Press Team</a>
- </Button>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
-
- {/* Company Info */}
- <section className="py-16 container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-8">About SafeOrStolen</h2>
- <div className="prose prose-lg max-w-none text-center">
- <p>
- SafeOrStolen is the leading stolen item verification platform, helping buyers protect themselves when purchasing secondhand phones, vehicles, electronics, and more. Covering all six item categories in the industry, SafeOrStolen provides instant verification against public records, reported stolen items, and its own AI analysis.
- </p>
- <p>
- Founded in 2017, incorporated in 2025, and headquartered in Peoria, Arizona, SafeOrStolen verifies phones, vehicles, license plates, firearms, bicycles, and serial-numbered goods against multiple sources.
- </p>
- </div>
- <div className="flex justify-center mt-8">
- <Button asChild>
- <Link to="/about">
- Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
- </Link>
- </Button>
- </div>
- </div>
- </section>
- </div>
- </>
- );
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-xl font-bold mb-2">Media questions</h2>
+                <p className="text-muted-foreground mb-4">
+                  Email {PRESS_EMAIL} with your outlet and deadline. Company boilerplate and the logo are on the{' '}
+                  <Link to="/press-kit" className="text-primary hover:underline">press kit</Link>.
+                </p>
+                <Button variant="outline" asChild className="gap-2">
+                  <a href={`mailto:${PRESS_EMAIL}?subject=Press inquiry`}>
+                    <Mail className="h-4 w-4" />
+                    {PRESS_EMAIL}
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 }

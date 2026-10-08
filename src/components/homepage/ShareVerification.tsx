@@ -37,7 +37,7 @@ export const ShareVerification = () => {
             </div>
             <h3 className="text-foreground font-bold text-base mb-2">Add to Your Listing</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Paste your verification link directly into your Facebook Marketplace, OfferUp, or Craigslist listing. Verified items sell 2x faster.
+              Paste your verification link directly into your Facebook Marketplace, OfferUp, or Craigslist listing. Buyers can open it and see the date you checked and what the check found.
             </p>
           </div>
 

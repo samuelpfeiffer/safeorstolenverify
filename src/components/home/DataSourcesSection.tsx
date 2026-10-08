@@ -45,7 +45,7 @@ const dataSources = [
  {
  icon: Lock,
  title: 'Industry Registries',
- description: 'Our own reported items, public web data, and AI analysis for theft indicators. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states plus live Ohio records.',
+ description: 'Our own reported items, public web data, and AI analysis for theft indicators. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC plus live Ohio records.',
  color: 'text-orange-500',
  link: '/data-sources#industry',
  stat: 'multiple sources',

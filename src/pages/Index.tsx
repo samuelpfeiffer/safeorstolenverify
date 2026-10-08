@@ -30,121 +30,114 @@ const cardListing = '/images/cards/paste-listing.jpg';
 const VERIFY_CARDS = [
  {
  title: 'Gun Serial Number Lookup',
-  subtitle: 'Police theft reports from 34 states, live Ohio records and SafeOrStolen reports',
+  subtitle: 'Police theft reports from 33 states and DC, plus live Ohio records',
  href: '/firearms-check',
  image: cardFirearms,
- badge: '🔥 Top Search',
+ badge: 'Most searched',
  },
  {
  title: 'Vehicle VIN Check',
- subtitle: 'SafeOrStolen community reports and public web results',
+ subtitle: 'Theft reports, year, make, model and open recalls',
  href: '/vin-checker',
  image: cardVehicle,
  badge: null,
  },
  {
  title: 'Phone IMEI Check',
- subtitle: 'SafeOrStolen community reports and public web results',
+ subtitle: 'Theft reports and the phone model, plus an optional blacklist check',
  href: '/imei-checker',
  image: cardPhone,
  badge: null,
  },
  {
  title: 'License Plate Lookup',
- subtitle: 'SafeOrStolen community reports and public web results',
+ subtitle: 'Stolen check by plate, with Arizona police records for AZ plates',
  href: '/license-plate-lookup',
  image: cardPlate,
  badge: null,
  },
  {
  title: 'Bicycle Serial Check',
- subtitle: 'SafeOrStolen community reports and BikeIndex checks',
+ subtitle: 'Frame serial checked against a national stolen-bike registry',
  href: '/check-bike',
  image: cardBicycle,
  badge: null,
  },
  {
  title: 'Electronics, Power Tools & Appliances',
-  subtitle: 'Serial checks using SafeOrStolen reports, public web results, and AI analysis',
- href: '/check-laptop',
+  subtitle: 'Laptops, consoles, cameras, tools and anything with a serial number',
+ href: '/serial-number-checker',
  image: cardLaptop,
  badge: null,
  },
  {
  title: 'Scan Barcode or QR',
- subtitle: 'Use your camera to scan any item instantly',
+ subtitle: 'Point your phone camera at a barcode instead of typing',
  href: '/verify?mode=scan',
  image: cardBarcode,
- badge: '📱 App Feature',
+ badge: 'On your phone',
  },
  {
  title: 'Paste Listing URL',
- subtitle: 'Facebook, OfferUp, Craigslist, eBay — we extract for you',
+ subtitle: 'Paste a Facebook Marketplace, OfferUp, Craigslist or eBay link',
  href: '/verify?mode=url',
  image: cardListing,
- badge: '✨ New',
+ badge: null,
  },
 ];
 
 const FOR_SELLERS_FEATURES = [
   { icon: '📄', title: 'Verification Record', desc: 'Generate a shareable Proof of Clean Purchase record showing what was checked and when' },
  { icon: '🔗', title: 'Shareable Link', desc: 'Send buyers a direct link to your verified result — no login required to view' },
- { icon: '⚡', title: '3-Second Results', desc: 'Check before you list, not after — protect your reputation as a seller' },
+ { icon: '⚡', title: 'Results in Seconds', desc: 'Check before you list, so a buyer never finds the problem first' },
   { icon: '🛡️', title: 'Clear Context', desc: 'Give buyers a dated record they can review alongside the identifier and your ownership documents' },
 ];
 
-const RECENT_VERIFICATIONS = [
- { type: 'IMEI', item: 'iPhone 15 Pro', result: 'CLEAN', location: 'Phoenix, AZ', time: '4 min ago', value: '$1,199' },
- { type: 'VIN', item: '2023 Toyota Camry', result: 'CLEAN', location: 'Dallas, TX', time: '11 min ago', value: '$28,000' },
- { type: 'SERIAL', item: 'MacBook Pro M3', result: 'FLAGGED', location: 'Los Angeles, CA', time: '18 min ago', value: '$2,499' },
- { type: 'GUN', item: 'Glock 19 Gen 5', result: 'CLEAN', location: 'Phoenix, AZ', time: '22 min ago', value: '$650' },
- { type: 'PLATE', item: '2021 F-150', result: 'CLEAN', location: 'Scottsdale, AZ', time: '31 min ago', value: '$42,000' },
-];
 
 const FAQ_ITEMS = [
  {
- q: 'How do I check if a phone is stolen before buying?',
- a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results. Learn more about the phone model and details. You can ask the seller or your carrier about its blacklist status.",
+ q: 'How do I check if something is stolen before I buy it?',
+ a: "Find its identifier: the IMEI on a phone (dial *#06#), the VIN on a car, the frame serial on a bike, or the serial number on anything else. Enter it on SafeOrStolen (safeorstolen.com). In a few seconds you'll see whether it's reported stolen, a possible match, or no report found, with every source listed. Your first 2 checks are free with no credit card.",
+ },
+ {
+ q: 'How do I check if a phone is stolen?',
+ a: "Dial *#06# or open the phone's settings to get the 15-digit IMEI, then check it at safeorstolen.com/imei-checker. SafeOrStolen searches its theft reports and public web results and shows the phone's model, and you can add a lost-and-stolen blacklist check. Before you pay, also make sure the phone isn't locked to the previous owner's account.",
  },
  {
  q: 'How do I check if a used car is stolen?',
-  a: "Use the VIN checker at safeorstolen.com/vin-checker for SafeOrStolen reports, public web results, and AI analysis. Then use the official NICB and NMVTIS resources linked in our vehicle guide, inspect the VIN in every location, and compare it with the title.",
- },
- {
- q: 'Can I check a Facebook Marketplace listing for stolen items?',
-  a: "Yes. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. The marketplace URL analyzer extracts available listing details and identifiers, then checks SafeOrStolen's own stolen-item reports, public web results, and AI analysis.",
- },
- {
- q: 'Is SafeOrStolen free?',
- a: 'SafeOrStolen includes 2 free checks with a free account, then $0.99 per check or $10/month unlimited, which includes access to the installable web app with barcode scanning.',
- },
- {
- q: 'What databases does SafeOrStolen check?',
- a: 'SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states plus live Ohio records, bikes against a national stolen-bicycle registry, and paid phone checks search the lost and stolen phone blacklist.',
+ a: "Get the 17-character VIN from the dashboard and the driver's door jamb and make sure they match. Check it at safeorstolen.com/vin-checker for theft reports, the year, make and model, and open safety recalls. Then compare the VIN and the name on the title with the seller's photo ID before you pay.",
  },
  {
  q: 'How do I check if a gun is stolen?',
-  a: "Private buyers cannot search NCIC. Run the serial on SafeOrStolen's gun checker, which searches police theft and loss reports from 34 states, live Ohio records and SafeOrStolen reports, then ask local police whether they will check the serial and follow every required transfer step.",
+ a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. The public can't search the FBI's NCIC file, so ask your local police whether they will run the serial too.",
+ },
+ {
+ q: 'Can I check a Facebook Marketplace listing?',
+ a: "Yes. Paste the listing link into SafeOrStolen and it pulls out any serial number, IMEI or VIN it can find, then checks it the same way as a typed number. Most listings don't show the serial, so ask the seller for a photo of it before you meet.",
+ },
+ {
+ q: 'What does SafeOrStolen search?',
+ a: "Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against police theft and loss reports from 33 states and Washington, DC and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen includes 2 free checks with a free account, then $0.99 per check or $10/month unlimited, covering verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
+ a: 'Your first 2 checks are free with a free account and no credit card. After that it is $0.99 for a single check, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
  },
  {
- q: 'How does the license plate lookup work?',
- a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen in SafeOrStolen community reports or public web results. Results include stolen status, registration state, and vehicle details when available.',
+ q: 'Can a license plate lookup tell me who owns a car?',
+ a: "No. Owner names and addresses are protected by the federal Driver's Privacy Protection Act, and SafeOrStolen never shows them. A plate check on SafeOrStolen tells you whether the plate is reported stolen. For a hit-and-run or an abandoned car, give the plate to the police, who can identify the owner.",
  },
  {
- q: 'Can I use SafeOrStolen as a seller to prove my item is legitimate?',
- a: 'Yes. SafeOrStolen generates a shareable verification certificate with a unique URL and QR code that proves your item passed all stolen property checks. Share it in your marketplace listing to build buyer trust and sell faster.',
+ q: 'Can I show a buyer that my item checked clean?',
+ a: "Yes. After a check you can get a $1.99 verification certificate: a dated record with its own link that shows what you checked, when, and what the check found. It isn't proof an item was never stolen, but it shows you checked before the sale. Monthly members get certificates free.",
  },
  {
- q: 'What should I do if an item comes back flagged as stolen?',
- a: 'Do not purchase the item. Report the listing to the marketplace platform (Facebook Marketplace, eBay, Craigslist, etc.) and contact your community theft with the verification details. SafeOrStolen provides a downloadable report you can share with police. Never confront the seller directly.',
+ q: 'What should I do if an item comes back stolen?',
+ a: "Don't buy it and don't confront the seller. Leave if you're meeting in person, report the listing to the marketplace, and give the listing and the check result to your local police on their non-emergency line.",
  },
  {
- q: 'Does the Unlimited plan work for pawn shops?',
- a: "Yes. SafeOrStolen's Unlimited plan ($10/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
+ q: 'Does SafeOrStolen work for pawn shops and dealers?',
+ a: "Yes. The $10 monthly plan includes unlimited checks, and the bulk check at safeorstolen.com/bulk-check lets you paste up to 100 serial numbers, IMEIs or VINs or upload a spreadsheet, then download a dated results file for your records.",
  },
 ];
 
@@ -158,18 +151,18 @@ const Index = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="SafeOrStolen — AI-Powered Stolen Item Verification"
- description="Stolen-item check hub for buyers and sellers: phones, vehicles (VIN and plate), electronics, power tools, firearms, and bikes. Get a Proof of Clean Purchase record."
- keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
+ title="SafeOrStolen: Free Stolen Item Checker for Phones, Cars, Guns and Serial Numbers"
+ description="Check if something is stolen before you buy it. Free IMEI, VIN, license plate, gun serial and serial number checks with every source listed. 2 free checks, no card."
+ keywords="stolen item checker, check if something is stolen, free serial number search, imei check free, vin check stolen, gun serial number lookup free, stolen bike check, license plate lookup"
  canonical="/"
  />
  <CompetitorTargetingSEO />
 
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <h1>AI Stolen Item Verification for Buyers, Sellers, and Businesses</h1>
- <p>SafeOrStolen is an AI-powered platform that checks whether a secondhand item is reported stolen. Buyers verify before they pay, sellers prove an item is clean, and businesses such as pawn shops, resellers, dealers, and repair shops document diligence at intake.</p>
- <p>We verify six categories: phones by IMEI, vehicles by VIN, license plates, serial-numbered goods including electronics, power tools, and appliances, firearms by serial number, and bicycles by frame number. Each check runs against SafeOrStolen's own reports, public web data, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Results are typically available in about 3 seconds. You can also paste a marketplace listing URL and our AI will extract the identifier for you.</p>
+ <h1>Check if something is stolen before you buy it</h1>
+ <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
@@ -182,9 +175,9 @@ const Index = () => {
  <div className="bg-card border-y border-border">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
  {[
-  { v: '3 sec', l: 'Average Result Time' },
-  { v: '6', l: 'Item Categories' },
-  { v: 'AI', l: 'Plain-Language Analysis' },
+  { v: 'Seconds', l: 'To get a result' },
+  { v: '6', l: 'Kinds of items' },
+  { v: 'Listed', l: 'Every source searched' },
  { v: '2', l: 'Free Checks to Start' },
  ].map((s) => (
  <div key={s.l} className="text-center py-5 px-4">
@@ -207,7 +200,7 @@ const Index = () => {
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
  Need just one verification? Pay <strong className="text-foreground">$0.99</strong> with a free account.
  Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
- installable web app, and PDF certificates included. Cancel anytime, 30-day refund.
+ installable web app, and verification certificates included. Cancel anytime, 30-day refund.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-3">
  <Link
@@ -230,11 +223,11 @@ const Index = () => {
  <section className="py-16 px-4">
  <div className="max-w-6xl mx-auto">
  <h2 className="text-3xl font-black text-foreground text-center mb-2">
- What Are You Verifying Today?
+ What do you want to check?
  </h2>
  <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
- Click any category — each runs parallel checks across all relevant databases simultaneously.
- Buyers AND sellers both protected.
+ Pick the kind of item. Each check searches every source that applies to it at the same time
+ and lists them in the result.
  </p>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -277,46 +270,6 @@ const Index = () => {
  </div>
  </section>
 
- {/* ── LIVE VERIFICATION FEED ──────────────────────── */}
- <section className="py-12 px-4 bg-muted/30">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-xl font-bold text-foreground text-center mb-6">
- Live Verification Activity
- </h2>
- <div className="space-y-2">
- {RECENT_VERIFICATIONS.map((v, i) => (
- <div
- key={i}
- className="flex items-center justify-between bg-card border border-border rounded-xl px-4 py-3"
- >
- <div className="flex items-center gap-3">
- <span className="text-xs font-mono bg-muted text-muted-foreground px-2 py-1 rounded-[0.25rem]">
- {v.type}
- </span>
- <div>
- <span className="text-sm text-foreground font-medium">{v.item}</span>
- <span className="text-xs text-muted-foreground ml-2">{v.location}</span>
- </div>
- </div>
- <div className="flex items-center gap-3">
- <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
- v.result === 'CLEAN'
- ? 'bg-secondary/20 text-secondary border border-secondary/30'
- : 'bg-destructive/20 text-destructive border border-destructive/30'
- }`}>
- {v.result}
- </span>
- <span className="text-xs text-muted-foreground hidden sm:block">{v.time}</span>
- </div>
- </div>
- ))}
- </div>
- <p className="text-center text-xs text-muted-foreground/60 mt-3">
- Activity shown is representative of platform usage patterns.
- </p>
- </div>
- </section>
-
  {/* ── SAMPLE RESULT PREVIEW (shows value before signup) ─── */}
  <SampleResultPreview />
 
@@ -324,7 +277,7 @@ const Index = () => {
  <section className="py-16 px-4" data-deploy-marker="deploy-probe-20260906">
  <div className="max-w-4xl mx-auto">
  <h2 className="text-3xl font-black text-foreground text-center mb-8">
- 3 Steps. 3 Seconds. Full Protection.
+ How a check works
  </h2>
  <figure className="mb-12">
  <div className="rounded-2xl overflow-hidden border border-border bg-card">
@@ -339,7 +292,7 @@ const Index = () => {
  />
  </div>
  <figcaption className="text-center text-xs text-muted-foreground mt-3">
- A completed verification result, viewable on desktop and mobile — share it with your buyer in seconds.
+ A finished check on a laptop and a phone. You can share the result with the other person in the sale.
  </figcaption>
  </figure>
  <div className="grid md:grid-cols-3 gap-8">
@@ -347,18 +300,18 @@ const Index = () => {
  {[
  {
  n: '1',
- title: 'Enter Any Identifier',
- desc: "Type or scan your IMEI, VIN, serial number, or license plate. Or paste a Facebook Marketplace / OfferUp / Craigslist listing URL and we'll extract the identifier automatically.",
+ title: 'Enter the number',
+ desc: "Type or scan the IMEI, VIN, serial number or license plate, or paste a Facebook Marketplace, OfferUp or Craigslist link and SafeOrStolen pulls out the number for you.",
  },
  {
  n: '2',
- title: 'Parallel Database Scan',
- desc: 'We simultaneously query SafeOrStolen community reports, public web results, police gun theft records from 34 states and a national stolen-bicycle registry. All at once.',
+ title: 'Every source searched at once',
+ desc: "SafeOrStolen theft reports and public web results on every check, plus police gun theft reports from 33 states and DC, live Ohio records, a national stolen-bike registry and Arizona stolen-vehicle records where they apply.",
  },
  {
  n: '3',
- title: 'Get Trust Score + Certificate',
- desc: 'Receive a 0–100 Trust Score with a source-level breakdown showing exactly which databases returned results. Download a PDF certificate or share a link directly with your buyer.',
+ title: 'Read the result',
+ desc: "Reported stolen, possible match, or no report found, with each source listed. The check is saved to your account with the date, and you can add a $1.99 certificate to share.",
  },
  ].map((step) => (
  <div key={step.n} className="text-center">
@@ -379,21 +332,21 @@ const Index = () => {
       <div className="text-center mb-10">
         <div className="text-primary text-sm font-bold uppercase tracking-widest mb-2">See It In Action</div>
         <h2 className="text-3xl font-black text-foreground mb-3">
-          Verify Before You Buy or Sell
+          Watch a check from start to finish
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          See how SafeOrStolen checks a used item before you buy or sell.
+          A short video of a real check on a used item.
         </p>
       </div>
 
-      <SafeOrStolenVideo caption="Verify any used item before you buy or sell." />
+      <SafeOrStolenVideo caption="Checking a used item on SafeOrStolen before the sale." />
 
       <div className="flex justify-center mt-8">
         <Link
           to="/verify"
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
         >
-          Try It Yourself — Free →
+          Run a free check →
         </Link>
       </div>
     </div>
@@ -405,12 +358,11 @@ const Index = () => {
  <div className="text-center mb-10">
  <div className="text-primary text-sm font-bold uppercase tracking-widest mb-2">For Sellers</div>
  <h2 className="text-3xl font-black text-foreground mb-3">
- Prove Your Items Are Legitimate.<br />Sell Faster. Get More Money.
+ Show buyers you checked<br />before you listed it
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- Buyers are increasingly savvy — they ask for verification before paying.
- A SafeOrStolen certificate attached to your listing removes doubt instantly,
- builds trust, and gets you full price.
+ More buyers ask whether an item is stolen before they pay. Check your item's serial number,
+ then add the dated certificate link to your listing so the buyer can see what you checked and when.
  </p>
  </div>
 
@@ -435,7 +387,7 @@ const Index = () => {
  to="/for-sellers"
  className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-primary text-foreground font-bold px-8 py-4 rounded-2xl transition-all hover:bg-primary/5"
  >
- Learn More for Sellers →
+ More for sellers →
  </Link>
  </div>
  </div>
@@ -449,22 +401,21 @@ const Index = () => {
  For Pawn Shops, Dealers & Resellers
  </div>
  <h2 className="text-3xl font-black text-foreground mb-4 leading-tight">
- Compliance Is Required.<br />We Make It Automatic.
+ Check every item at intake,<br />and keep the record
  </h2>
  <p className="text-muted-foreground mb-6 leading-relaxed">
- Most U.S. states legally require pawn shops to verify items against stolen property
- databases before accepting them. SafeOrStolen automates that compliance with
- unlimited checks, timestamped PDF certificates, and bulk CSV processing —
- all for one flat monthly fee.
+ Many states require pawn shops and secondhand dealers to record serial numbers and report
+ purchases to police. SafeOrStolen adds a stolen check at the counter: unlimited checks for one
+ monthly price, a bulk check for up to 100 items at a time, and a dated record of every check.
  </p>
  <ul className="space-y-3 mb-8">
  {[
- 'Unlimited verifications — no per-item cost',
- 'Timestamped PDF certificates for every transaction',
- 'Bulk CSV upload — verify 100 items at once',
- 'Full audit trail for the relevant authorities requests',
- 'API integration with your existing POS system',
- 'Multi-user seats for your entire staff',
+ 'Unlimited checks for $10 a month',
+ 'Bulk check: paste or upload up to 100 items at once',
+ 'Download a dated results file for your records',
+ 'Every check saved to your account with the date',
+ 'Gun serials checked against police theft reports',
+ 'Certificates you can show a customer',
  ].map((f) => (
  <li key={f} className="flex items-center gap-3 text-foreground/80 text-sm">
  <span className="text-primary text-base flex-shrink-0">✓</span>
@@ -484,7 +435,7 @@ const Index = () => {
  to="/for-pawn-shops"
  className="inline-flex items-center justify-center gap-2 bg-card hover:bg-muted text-foreground font-semibold px-7 py-3.5 rounded-xl transition-all border border-border"
  >
- Learn More About Pawn Shop Solutions →
+ More for pawn shops →
  </Link>
  </div>
  </div>
@@ -496,13 +447,11 @@ const Index = () => {
  </div>
  <ul className="space-y-2 mb-6">
  {[
- '♾️ Unlimited verifications',
- '📄 Proof of Clean Purchase records',
- '📊 Bulk CSV upload',
- '🔌 Full REST API access',
- '📋 Audit trail + export',
- '👥 5 staff user seats',
- '📞 Dedicated support line',
+ 'Unlimited checks',
+ 'Up to 20 phone blacklist checks a month',
+ 'Bulk check for up to 100 items',
+ 'Verification certificates included',
+ 'Every check saved with the date',
  ].map((f) => (
  <li key={f} className="text-muted-foreground text-sm">{f}</li>
  ))}
@@ -527,100 +476,28 @@ const Index = () => {
  {/* ── SHARE & REFERRAL SECTION ─────────────────── */}
  <ShareVerification />
 
- {/* ── PRESS, TRUST & CREDENTIALS ──────────────────── */}
- <section className="py-16 px-4 bg-muted/30 border-y border-border">
- <div className="max-w-5xl mx-auto">
- <h2 className="text-2xl font-black text-foreground text-center mb-2">
- Backed, Listed & Verified
- </h2>
- <p className="text-muted-foreground text-center text-sm mb-10">
- Independent third-party credentials you can verify yourself
- </p>
-
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
- {/* Trustpilot */}
- <a
- href="https://www.trustpilot.com/review/safeorstolen.com"
- target="_blank"
- rel="noopener noreferrer"
- className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
- >
- <div className="h-12 flex items-center mb-3">
- <svg viewBox="0 0 126 31" className="h-8 w-auto" aria-label="Trustpilot logo">
- <path d="M33.3 12.1h-8.5l-2.6-8.1L19.5 12l-8.5.1 6.9 5-2.6 8.1 6.9-5 6.9 5-2.7-8 6.9-5.1z" fill="#00B67A"/>
- <path d="M28.6 19.1l-.9-2.8-5.5 4 6.4-1.2z" fill="#005128"/>
- <text x="40" y="22" fill="currentColor" fontSize="14" fontWeight="700" fontFamily="system-ui">Trustpilot</text>
- </svg>
- </div>
- <h3 className="text-foreground font-bold text-sm mb-1">Reviews on Trustpilot</h3>
- <p className="text-muted-foreground text-xs leading-relaxed">
- Real reviews from real users — read what buyers and sellers say about us
- </p>
- <span className="mt-3 text-primary text-xs font-semibold">Read Reviews ↗</span>
- </a>
-
- {/* Crunchbase */}
- <a
- href="https://www.crunchbase.com/organization/safe-or-stolen"
- target="_blank"
- rel="noopener noreferrer"
- className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
- >
- <div className="h-12 flex items-center mb-3">
- <svg viewBox="0 0 20 20" className="h-8 w-8" aria-label="Crunchbase logo">
- <rect width="20" height="20" rx="4" fill="#0288D1"/>
- <text x="4" y="15" fill="#fff" fontSize="13" fontWeight="800" fontFamily="system-ui">cb</text>
- </svg>
- </div>
- <h3 className="text-foreground font-bold text-sm mb-1">Crunchbase Listed</h3>
- <p className="text-muted-foreground text-xs leading-relaxed">
- Verified company profile — funding, team, and product information publicly documented
- </p>
- <span className="mt-3 text-primary text-xs font-semibold">View Profile ↗</span>
- </a>
-
- {/* Press Releases */}
- <Link
- to="/press-release"
- className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
- >
- <div className="h-12 flex items-center mb-3">
- <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
- <span className="text-primary text-lg">📰</span>
- </div>
- </div>
- <h3 className="text-foreground font-bold text-sm mb-1">Press Releases</h3>
- <p className="text-muted-foreground text-xs leading-relaxed">
- Featured on PRLog & IssueWire — official product launches and partnership announcements
- </p>
- <span className="mt-3 text-primary text-xs font-semibold">Read Press →</span>
- </Link>
- </div>
- </div>
- </section>
-
  {/* ── DOWNLOAD APP STRIP ──────────────────────────── */}
  <section className="py-12 px-4 bg-card border-y border-border">
  <div className="max-w-3xl mx-auto text-center">
  <div className="text-4xl mb-4">📱</div>
  <h2 className="text-2xl font-black text-foreground mb-2">
- SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</h2>
+ Check from your phone at the meetup</h2>
  <p className="text-muted-foreground text-sm mb-6">
- Barcode scanning, QR codes, offline history — check items on the spot
- at garage sales, gun shows, pawn shops, and car lots.
+ Install the free web app from your browser. Scan a barcode or type the number,
+ at a garage sale, gun show, pawn shop or car lot.
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Link
  to="/app"
  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
  >
- 📲 Download Free App
+ Get the free web app
  </Link>
  <Link
  to="/app"
  className="inline-flex items-center justify-center gap-2 bg-card border border-border text-foreground font-semibold px-7 py-3.5 rounded-xl hover:bg-muted transition-all"
  >
- See App Features →
+ How to install it →
  </Link>
  </div>
  </div>
@@ -650,7 +527,7 @@ const Index = () => {
  </div>
  <div className="text-center mt-8">
  <Link to="/faq" className="text-primary hover:underline text-sm">
- View all 50+ frequently asked questions →
+ See all questions →
  </Link>
  </div>
  </div>
@@ -661,21 +538,21 @@ const Index = () => {
  <div className="max-w-2xl mx-auto">
  <Lock className="w-12 h-12 text-primary mx-auto mb-5" />
  <h2 className="text-4xl font-black text-foreground mb-4">
- Don't Get Burned.
+ Check it before you pay
  </h2>
  <p className="text-muted-foreground mb-8 text-lg">
- Law enforcement seizes stolen property with zero compensation to buyers.
- Free to try. No credit card. 3 seconds. Protect yourself now.
+ If you buy something that turns out to be stolen, police can return it to the owner and you usually lose what you paid.
+ It takes a few seconds, and your first 2 checks are free.
  </p>
  <Link
  to="/verify"
  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-black px-10 py-5 rounded-2xl text-xl transition-all button-glow hover:scale-[1.02]"
  >
  <Shield className="w-6 h-6" />
- Start Free Verification Now
+ Run a free check
  </Link>
  <p className="text-muted-foreground/50 text-sm mt-4">
- Free to try · Results in 3 seconds · No credit card
+ 2 free checks · No credit card · Every source listed
  </p>
  </div>
  </section>
@@ -687,9 +564,9 @@ const Index = () => {
  __html: JSON.stringify({
  "@context": "https://schema.org",
  "@type": "WebPage",
- "name": "Free Stolen Item Checker - IMEI VIN Serial Verification",
+ "name": "SafeOrStolen: Free Stolen Item Checker",
  "url": "https://safeorstolen.com",
- "description": "AI-powered stolen-item verification for buyers, sellers, and businesses. Check phones (IMEI), vehicles (VIN), license plates, serial-numbered goods including electronics, power tools, and appliances, firearms, and bicycles against SafeOrStolen's own reports, public web data, and AI analysis.",
+ "description": "Check whether a phone, car, license plate, gun, bike or any serial-numbered item is reported stolen before you buy it. Every result lists the sources searched.",
  "speakable": {
  "@type": "SpeakableSpecification",
  "cssSelector": ["h1", ".speakable-summary"]
@@ -700,7 +577,7 @@ const Index = () => {
  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com/" }
  ]
  },
- "dateModified": "2026-09-23"
+ "dateModified": "2026-10-07"
  })
  }}
  />
@@ -712,12 +589,12 @@ const Index = () => {
  "@type": "SoftwareApplication",
  "name": "SafeOrStolen",
  "applicationCategory": "SecurityApplication",
- "operatingSystem": ["Web", "iOS", "Android"],
+ "operatingSystem": "Web",
  "offers": [
  { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
  ],
- "dateModified": "2026-09-23"
+ "dateModified": "2026-10-07"
  })
  }}
  />

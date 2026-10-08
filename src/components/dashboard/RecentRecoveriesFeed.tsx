@@ -116,7 +116,7 @@ export const RecentRecoveriesFeed: React.FC = () => {
  <p className="text-xs text-muted-foreground leading-relaxed">
  <strong className="text-foreground">How SafeOrStolen recoveries work:</strong>{' '}
  When a buyer enters a serial number, IMEI, or VIN into SafeOrStolen, the platform checks its own stolen-item reports, public web results and AI analysis,
- plus a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns. If a match is found, the buyer is alerted
+ plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns. If a match is found, the buyer is alerted
  in under 3 seconds — before any money changes hands.{' '}
  <Link to="/how-it-works" className="text-primary hover:underline font-medium">
  Learn how the verification process works

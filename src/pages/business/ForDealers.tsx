@@ -1,464 +1,194 @@
-import { PageSEO } from "@/components/seo/PageSEO";
-import { AppStoreBadges } from "@/components/app/AppStoreBadges";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/lib/router-compat";
-import { Shield, Zap, Users, TrendingUp, FileCheck, Clock } from "lucide-react";
-import { BreadcrumbSchema } from "@/components/seo/schemas/BreadcrumbSchema";
+import { Link } from '@/lib/router-compat';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { Button } from '@/components/ui/button';
+
+/**
+ * Oct 7 2026: rewritten by hand for "VIN check for car dealers" / "stolen trade-in check". Removed:
+ * claims the check covers title brands, salvage, total-loss records, odometer, liens and "all 50
+ * states' title history" (it does none of these); DMS integrations (CDK, Reynolds, DealerTrack and
+ * others); two invented case studies with dollar figures; a $49/month plan with 500 checks and
+ * $0.05 overage; white-label reports; "admissible in court"; a (555) phone number and a
+ * dealers@ address; App Store badges; "3 seconds".
+ */
+
+const UPDATED = 'October 7, 2026';
+
+const COVERS: string[][] = [
+  ['Year, make and model decoded from the VIN', 'Yes'],
+  ['Open safety recalls', 'Yes'],
+  ['SafeOrStolen theft reports', 'Yes'],
+  ['Public web results that mention the VIN', 'Yes'],
+  ['Arizona law-enforcement stolen-vehicle records', 'Yes, for Arizona VINs and plates (updated twice a day)'],
+  ['NCIC stolen vehicle file', 'No. Only police can search it.'],
+  ['Title brands (salvage, flood, rebuilt), odometer, liens', 'No. Use an NMVTIS vehicle history report or your usual history provider.'],
+  ['State DMV or MVD registration records', 'No'],
+];
+
+const FAQS = [
+  {
+    question: 'How can a car dealer check if a trade-in is stolen?',
+    answer:
+      'Match the VIN on the dash plate, the driver-door sticker and the title, check the seller\'s ID against the name on the title, then run the VIN on SafeOrStolen (safeorstolen.com/for-dealers). It decodes the vehicle, lists open recalls and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. Ask your local police if anything looks off.',
+  },
+  {
+    question: 'Does a SafeOrStolen VIN check show salvage or flood titles?',
+    answer:
+      "No. SafeOrStolen doesn't search title, odometer, lien or insurance total-loss records. Get those from an NMVTIS vehicle history report or the history service you already use. Use SafeOrStolen for what it adds: the decoded year, make and model, open safety recalls, theft reports and web mentions of the VIN, and Arizona stolen-vehicle records.",
+  },
+  {
+    question: 'Can we check a list of VINs from an auction purchase?',
+    answer:
+      'Yes. Sign in, open /bulk-check, choose Vehicles (VIN) and paste up to 100 VINs, one per line, or upload them as a .csv file. A mistyped VIN is rejected without using a check. When it finishes, download the CSV: one row per VIN with the result, the sources searched and the time of the check.',
+  },
+  {
+    question: 'What does it cost a dealership?',
+    answer:
+      "The same as anyone else. 2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There are no per-rooftop plans or overage fees. If you need something different for several stores, email safeorstolenmail@gmail.com.",
+  },
+  {
+    question: 'Can we give a buyer proof that we checked the car?',
+    answer:
+      'Yes. After a check, add a $1.99 verification certificate (free on the monthly plan). It has its own link and shows the date, the last four characters of the VIN, the result and the sources searched. It shows the car was looked up on that date. It is not a title report or a guarantee.',
+  },
+  {
+    question: 'What if the VIN plates on a vehicle don\'t match?',
+    answer:
+      "Stop the deal. A dash VIN that doesn't match the door sticker or the title, a loose or re-riveted VIN plate, or a sticker that has been cut out are classic signs of a stolen or rebuilt vehicle with a swapped identity. Don't buy it, keep copies of the paperwork, and call your local police non-emergency line.",
+  },
+];
+
 export default function ForDealers() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: "Vehicle Verification for Car Dealers",
-    provider: {
-      "@type": "Organization",
-      name: "SafeOrStolen",
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'VIN check for car dealers',
+      serviceType: 'Stolen vehicle check',
+      url: 'https://safeorstolen.com/for-dealers',
+      provider: { '@type': 'Organization', name: 'SafeOrStolen', url: 'https://safeorstolen.com' },
+      areaServed: { '@type': 'Country', name: 'United States' },
+      description: 'VIN checks for dealers: decoded vehicle, open recalls, theft reports, web mentions, and Arizona stolen-vehicle records.',
+      dateModified: '2026-10-07',
     },
-    areaServed: "Worldwide",
-    description:
-      "Enterprise VIN verification and vehicle history service for car dealerships. Verify VINs instantly, check title status, eliminate wholesale risk, increase customer trust.",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "USD",
-      price: "Custom pricing for dealerships",
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
     },
-  };
+  ];
 
   return (
     <>
       <PageSEO
-        title="SafeOrStolen for Car Dealers - Instant VIN Verification"
-        description="Enterprise VIN verification for car dealerships. Check title status, stolen vehicles, and wholesale integrity in 3 seconds. Protect your inventory, build customer trust, reduce legal risk."
-        keywords="car dealer VIN check, dealership VIN verification, wholesale vehicle verification, dealer title check, automotive inventory verification"
+        title="VIN Check for Car Dealers: Stolen Trade-In Check | SafeOrStolen"
+        description="How car dealers check trade-ins and auction buys for theft reports by VIN: what a SafeOrStolen VIN check covers and doesn't, bulk VIN checks, and the record you keep."
+        keywords="vin check for car dealers, dealer stolen vehicle check, stolen trade-in check, dealership vin verification, bulk vin check, check if trade in is stolen"
+        canonical="/for-dealers"
+        modifiedTime="2026-10-07"
+        breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'For businesses', url: '/for-businesses' }, { name: 'Car dealers', url: '/for-dealers' }]}
         structuredData={structuredData}
       />
-      <div className="container mx-auto px-4 py-12 pt-24">
-        <section className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl font-bold mb-6">
-            SafeOrStolen for Car Dealers
-          </h1>
-          <p className="text-2xl text-muted-foreground mb-8">
-            Verify Every Vehicle in 3 Seconds. Eliminate Wholesale Risk. Build
-            Customer Trust.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/verify">Try Free VIN Check</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to="/pricing">View Dealer Pricing</Link>
-            </Button>
+      <div className="min-h-screen bg-background text-foreground pt-20">
+        <section className="px-4 py-14 bg-gradient-to-b from-primary/5 to-background">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-sm font-semibold text-primary mb-3">For used car dealers and lots</p>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">VIN Check for Car Dealers</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Run every trade-in and auction buy through a VIN check before you cut a check. SafeOrStolen decodes the year,
+              make and model, lists open safety recalls, and searches its theft reports and public web results for the VIN.
+              Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. It does not cover title
+              brands, odometer or liens, so keep your usual history report for those.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button size="lg" asChild><Link to="/vin-checker">Check a VIN</Link></Button>
+              <Button size="lg" variant="outline" asChild><Link to="/bulk-check">Check a list of VINs</Link></Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto mb-16">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-card p-6 rounded-lg border">
-              <Shield className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-bold mb-3">Protect Your Lot</h3>
-              <p className="text-muted-foreground">
-                Verify every trade-in and wholesale purchase before it hits your
-                lot. Avoid title washing, salvage fraud, and stolen vehicles.
-              </p>
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">What a SafeOrStolen VIN check covers</h2>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/60">
+                  <tr><th className="px-4 py-3 font-semibold">Record</th><th className="px-4 py-3 font-semibold">Included?</th></tr>
+                </thead>
+                <tbody>
+                  {COVERS.map((r) => (
+                    <tr key={r[0]} className="border-t border-border">
+                      <td className="px-4 py-3 font-medium">{r[0]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <div className="bg-card p-6 rounded-lg border">
-              <Users className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-bold mb-3">Build Customer Trust</h3>
-              <p className="text-muted-foreground">
-                Provide free VIN verification to every buyer. Show them the
-                vehicle is clean before they sign—instant credibility boost.
-              </p>
-            </div>
-            <div className="bg-card p-6 rounded-lg border">
-              <TrendingUp className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-bold mb-3">Increase Sales</h3>
-              <p className="text-muted-foreground">
-                Buyers trust verified vehicles. Reduce negotiation friction and
-                close deals faster with instant verification reports.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto mb-16 prose prose-lg">
-          <h2>Why Dealerships Choose SafeOrStolen</h2>
-          <p>
-            Car dealerships face increasing risk from wholesale fraud, title
-            washing, and salvage vehicles being misrepresented as clean. A
-            single problematic vehicle can cost $20,000+ in legal fees, customer
-            refunds, and reputation damage.
-          </p>
-          <p>
-            SafeOrStolen provides instant VIN verification checking multiple
-            sources including state motor vehicle agencies, insurance total loss
-            records, and international theft databases. Every check takes 3
-            seconds and creates a compliance record protecting your dealership.
-          </p>
-
-          <h3>What We Verify for Dealers</h3>
-          <ul>
-            <li>
-              <strong>Stolen Status:</strong> public web results and our
-              user-reported stolen item database
-            </li>
-            <li>
-              <strong>Title History:</strong> Clean, salvage, rebuilt, flood,
-              junk, lemon law buyback
-            </li>
-            <li>
-              <strong>Total Loss Records:</strong> Insurance company claims
-              across all 50 states
-            </li>
-            <li>
-              <strong>Odometer Readings:</strong> Historical mileage to detect
-              rollbacks
-            </li>
-            <li>
-              <strong>Lien Status:</strong> Outstanding loans and unpaid liens
-            </li>
-            <li>
-              <strong>Recall Information:</strong> Open manufacturer recalls and
-              safety defects
-            </li>
-          </ul>
-
-          <h3>Common Dealer Problems SafeOrStolen Solves</h3>
-
-          <h4>Problem 1: Title Washing at Wholesale</h4>
-          <p>
-            Salvage vehicles are moved to lax-title states, retitled as "clean,"
-            then sold to unsuspecting dealers at wholesale auctions. You pay
-            clean-title price for a salvage vehicle worth 40% less.
-          </p>
-          <p>
-            <strong>Solution:</strong> SafeOrStolen checks all 50 states' title
-            history instantly. Even if the current title shows "clean," we flag
-            previous salvage/flood brands from other states.
-          </p>
-
-          <h4>Problem 2: Stolen Vehicle Trade-Ins</h4>
-          <p>
-            Customer trades in a vehicle that's later discovered to be stolen.
-            Law enforcement seizes it from your lot. You lose the trade-in value
-            and the vehicle you sold them.
-          </p>
-          <p>
-            <strong>Solution:</strong> Verify every trade-in VIN before
-            accepting. 3-second check prevents $15,000+ losses.
-          </p>
-
-          <h4>Problem 3: Customer Complaints About Vehicle History</h4>
-          <p>
-            Buyer purchases a vehicle, runs a Carfax later, discovers previous
-            accident or title issue. They demand a refund or leave negative
-            reviews.
-          </p>
-          <p>
-            <strong>Solution:</strong> Provide SafeOrStolen verification report
-            at point of sale. Customer sees the full history before signing,
-            eliminating post-sale disputes.
-          </p>
-
-          <h4>Problem 4: Expensive Carfax Subscriptions</h4>
-          <p>
-            Dealerships pay $1,000+/year for Carfax unlimited access, but Carfax
-            doesn't check all public web results or user-reported stolen item
-            databases.
-          </p>
-          <p>
-            <strong>Solution:</strong> SafeOrStolen costs less and includes
-            public web results and our user-reported stolen item database, which
-            Carfax doesn't fully access.
-          </p>
-
-          <h3>Real Dealership Case Studies</h3>
-
-          <div className="bg-muted p-6 rounded-lg my-6">
-            <h4 className="font-bold mb-3">
-              Case Study: Texas Used Car Dealer
-            </h4>
-            <p>
-              A Houston dealer purchased 12 vehicles at a wholesale auction. One
-              vehicle showed a clean Texas title but had previously been
-              flood-damaged in Louisiana (Hurricane Ida, 2021). The dealer sold
-              it to a customer who discovered the flood history 2 weeks later
-              via an independent VIN check.
-            </p>
-            <p>
-              <strong>Cost to dealer:</strong>
-            </p>
-            <ul>
-              <li>$8,500 - Customer refund (full purchase price)</li>
-              <li>$3,200 - Legal fees</li>
-              <li>$2,000 - Lost profit on the sale</li>
-              <li>$5,000+ - Reputation damage (negative online reviews)</li>
-              <li>
-                <strong>Total: $18,700</strong>
-              </li>
-            </ul>
-            <p>
-              <strong>Cost to prevent:</strong> $49/month SafeOrStolen Business
-              plan = $588/year. The dealer now verifies every wholesale
-              purchase.
-            </p>
-          </div>
-
-          <div className="bg-muted p-6 rounded-lg my-6">
-            <h4 className="font-bold mb-3">
-              Case Study: California New Car Franchise
-            </h4>
-            <p>
-              A Nissan dealership in San Diego accepted a 2022 Toyota Camry
-              trade-in without VIN verification. The vehicle was reported stolen
-              3 days later. Law enforcement seized it from the lot, and the
-              dealership had already delivered the customer's new vehicle.
-            </p>
-            <p>
-              <strong>Cost to dealer:</strong>
-            </p>
-            <ul>
-              <li>$22,000 - Trade-in value (lost)</li>
-              <li>$4,500 - Legal fees and investigator costs</li>
-              <li>
-                $12,000 - New vehicle sold to the customer (couldn't be
-                recovered)
-              </li>
-              <li>
-                <strong>Total: $38,500</strong>
-              </li>
-            </ul>
-            <p>
-              <strong>Cost to prevent:</strong> One 3-second SafeOrStolen VIN
-              check. The dealership now verifies every trade-in before
-              appraisal.
-            </p>
-          </div>
-
-          <h3>How SafeOrStolen Works in Your Dealership</h3>
-
-          <h4>At Wholesale/Auctions:</h4>
-          <ol>
-            <li>
-              Salesperson photographs VIN barcode with SafeOrStolen mobile app
-            </li>
-            <li>
-              Instant result shows stolen status, title history, total loss
-              records
-            </li>
-            <li>
-              Bid only on verified clean vehicles, avoid problematic inventory
-            </li>
-          </ol>
-
-          <h4>At Trade-In Appraisal:</h4>
-          <ol>
-            <li>
-              Service advisor enters VIN into SafeOrStolen during walkaround
-            </li>
-            <li>
-              System flags stolen vehicles, title issues, outstanding liens
-            </li>
-            <li>Adjust appraisal value or decline trade-in if problematic</li>
-          </ol>
-
-          <h4>At Point of Sale:</h4>
-          <ol>
-            <li>
-              Salesperson runs SafeOrStolen verification in front of customer
-            </li>
-            <li>Customer sees vehicle is clean, no hidden history</li>
-            <li>
-              Print/email verification report as part of sale documentation
-            </li>
-            <li>Customer trusts the purchase, reduces buyer's remorse</li>
-          </ol>
-
-          <h3>Integration with DMS Systems</h3>
-          <p>SafeOrStolen integrates with leading dealer management systems:</p>
-          <ul>
-            <li>
-              <strong>CDK Global</strong>
-            </li>
-            <li>
-              <strong>Reynolds & Reynolds</strong>
-            </li>
-            <li>
-              <strong>DealerTrack</strong>
-            </li>
-            <li>
-              <strong>AutoManager</strong>
-            </li>
-            <li>
-              <strong>vAuto</strong>
-            </li>
-            <li>
-              <strong>Custom systems via API</strong>
-            </li>
-          </ul>
-          <p>
-            No integration needed? Use our standalone mobile app or web
-            dashboard.
-          </p>
-
-          <h3>Dealer Plan Features</h3>
-          <ul>
-            <li>✅ Unlimited VIN verifications</li>
-            <li>✅ Multi-location support with centralized dashboard</li>
-            <li>✅ Salesperson accounts with individual tracking</li>
-            <li>
-              ✅ White-label verification reports (your dealership branding)
-            </li>
-            <li>✅ API access for DMS integration</li>
-            <li>✅ Bulk VIN verification by CSV</li>
-            <li>✅ Priority phone/email support</li>
-            <li>✅ Custom verification workflows</li>
-            <li>✅ Compliance documentation for state regulators</li>
-          </ul>
-
-          <h3>Pricing for Dealerships</h3>
-          <div className="bg-primary/10 border border-primary/20 p-6 rounded-lg my-6">
-            <h4 className="font-bold mb-3">Business Plan: $49/month</h4>
-            <ul>
-              <li>Single location</li>
-              <li>Up to 10 user accounts</li>
-              <li>500 verifications/month included</li>
-              <li>$0.05 per verification after 500</li>
-            </ul>
-            <h4 className="font-bold mt-6 mb-3">
-              Enterprise Plan: Custom Pricing
-            </h4>
-            <ul>
-              <li>Multi-location dealerships (3+ rooftops)</li>
-              <li>Unlimited verifications</li>
-              <li>Dedicated account manager</li>
-              <li>Custom DMS integration</li>
-              <li>SLA guarantees and priority support</li>
-            </ul>
-            <p className="mt-4 text-sm">
-              Contact us at dealers@safeorstolen.com for enterprise quotes.
-            </p>
-          </div>
-
-          <h3>What SafeOrStolen Adds to a Dealer Workflow</h3>
-          <ul>
-            <li>
-              ✅ <strong>Separate purpose:</strong> checks SafeOrStolen reports,
-              public web results, and AI analysis
-            </li>
-            <li>
-              ✅ <strong>Web access:</strong> use the installable web app from a
-              supported browser
-            </li>
-            <li>
-              ✅ <strong>Reviewable records:</strong> keep dated results with
-              intake paperwork
-            </li>
-            <li>
-              ✅ <strong>Beyond vehicles:</strong> Also verify customer trade-in
-              items (phones, tools, electronics)
-            </li>
-          </ul>
-        </section>
-
-        <section className="max-w-4xl mx-auto mb-16">
-          <div className="bg-primary/10 border border-primary/20 p-8 rounded-lg text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Start Protecting Your Inventory Today
-            </h2>
-            <p className="text-lg mb-6">
-              Create a free account and use two VIN checks to evaluate the
-              workflow alongside your existing vehicle-history process.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link to="/verify">Verify First VIN Free</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/pricing">View Dealer Pricing</Link>
-              </Button>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Questions? Call us at (555) 123-4567 or email
-              dealers@safeorstolen.com
+            <p className="text-muted-foreground mt-4">
+              The result reads "reported stolen", "possible match" or "no report found in the records searched", and names
+              each source it checked. Plate checks never show owner names.
             </p>
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                Can we verify vehicles before bidding at auctions?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes. Use the mobile app to scan VIN barcodes instantly at
-                auction lanes. Results appear in 3 seconds—fast enough to check
-                before bidding.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                Do verification reports include our dealership branding?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes. Business and Enterprise plans include white-label reports
-                with your dealership name, logo, and contact information.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                Can we verify bulk VINs from wholesale purchases?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes. Upload a CSV file of VINs for batch review. Processing time
-                depends on the file size and available sources.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                What happens if a vehicle passes verification but is later
-                reported stolen?
-              </h3>
-              <p className="text-muted-foreground">
-                Your verification record proves due diligence, protecting you
-                legally. SafeOrStolen documentation is admissible in court and
-                accepted by law enforcement.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                Can we track which salesperson ran which verifications?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes. Every verification logs the user account, timestamp, and
-                vehicle details. Managers can review all verifications in the
-                dashboard.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                Do you offer training for our sales staff?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes. Business and Enterprise plans include onboarding training
-                and ongoing support. We provide training materials for new
-                hires.
-              </p>
+        <section className="px-4 py-12 bg-card/50">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">At the trade-in appraisal</h2>
+            <ol className="list-decimal pl-6 space-y-3 text-muted-foreground">
+              <li>Read the VIN from the plate at the base of the windshield and from the sticker on the driver-door jamb. They should match each other and the title.</li>
+              <li>Look at the dash plate rivets and the door sticker. Scratched, loose or replaced plates, or a sticker cut out, are a stop sign.</li>
+              <li>Check the seller's photo ID against the name on the title or registration.</li>
+              <li>Run the VIN at /vin-checker. A mistyped VIN is caught before it uses a check.</li>
+              <li>Pull your title and odometer history from your usual provider.</li>
+              <li>Save the check in the deal jacket: your account keeps the date, and a $1.99 certificate gives you a link to print or share.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section className="px-4 py-12">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">After an auction or a wholesale buy</h2>
+            <p className="text-muted-foreground mb-4">
+              Put the VINs from the run list into a .csv file, one per line. At /bulk-check, choose Vehicles (VIN), upload
+              the file and let it run. Up to 100 VINs go in each run. The results CSV gives you the result, the sources
+              searched and the time of the check for every VIN, which you can file with the bill of sale.
+            </p>
+            <p className="text-muted-foreground">
+              Selling a car and want the buyer to see you checked it? See{' '}
+              <Link to="/for-sellers" className="text-primary underline">how sellers share a check</Link>. Gun dealers
+              checking serials should start at the <Link to="/for-pawn-shops" className="text-primary underline">pawn shop page</Link>,
+              which covers firearm records.
+            </p>
+          </div>
+        </section>
+
+        <section className="px-4 py-12 bg-card/50">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Common questions from dealers</h2>
+            <div className="space-y-4">
+              {FAQS.map((f) => (
+                <div key={f.question} className="rounded-lg border border-border bg-background p-5">
+                  <h3 className="font-semibold mb-2">{f.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto mt-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Download the SafeOrStolen Mobile App
-          </h2>
-          <p className="text-lg text-muted-foreground mb-6">
-            Verify VINs at auctions, trade-ins, and wholesale lots instantly
-            from your phone.
-          </p>
-          <AppStoreBadges size="md" />
+        <section className="px-4 py-14 bg-primary/5">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">Check the next trade-in</h2>
+            <p className="text-muted-foreground mb-6">
+              2 free checks, then $0.99 per check or $10 a month unlimited. The free web app at safeorstolen.com/app
+              works from a phone on the lot. Questions: safeorstolenmail@gmail.com.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" asChild><Link to="/vin-checker">Check a VIN</Link></Button>
+              <Button size="lg" variant="outline" asChild><Link to="/pricing">See pricing</Link></Button>
+            </div>
+          </div>
         </section>
       </div>
     </>

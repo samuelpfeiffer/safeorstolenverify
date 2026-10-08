@@ -1,11 +1,11 @@
 /* SAFEORSTOLEN */
   What we do: check whether a used item is reported stolen or lost before you buy or sell it
   Items: phones (IMEI), vehicles (VIN and license plate), guns, bikes, laptops, tools, consoles and anything with a serial number
-  Records searched: SafeOrStolen theft reports, police firearm theft and loss reports from 34 states, live Ohio law-enforcement records, Arizona stolen-vehicle records, a national stolen-bicycle registry, the lost and stolen phone blacklist (paid checks) and public web results
+  Records searched: SafeOrStolen theft reports, police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement records, Arizona stolen-vehicle records, a national stolen-bicycle registry, the lost and stolen phone blacklist (paid checks) and public web results
   For: buyers, sellers, pawn shops, gun dealers and resellers
   Site: https://safeorstolen.com
   Contact: safeorstolenmail@gmail.com
-  Location: Seattle, WA, USA
+  Location: Peoria, AZ, USA
 
 /* SITE */
   Last update: 2026-10-05

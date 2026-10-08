@@ -141,9 +141,9 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-verification-speed" content="approximately 3 seconds per check" />
  <meta name="ai-pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all databases, cancel anytime" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), firearms (serial), bicycles (frame number), electronics (serial), tools (serial), jewelry (serial/GIA), boats (HIN)" />
- <meta name="ai-data-sources" content="SafeOrStolen's reports, public web results, police firearm theft records from 34 states, Arizona stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
+ <meta name="ai-data-sources" content="SafeOrStolen's reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, Arizona stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="ai-database-count" content="our verification databases cross-referenced in real-time" />
- <meta name="ai-coverage" content="United States (all 50 states), 190+ countries for device verification" />
+ <meta name="ai-coverage" content="United States" />
 
  {/* ================================================== */}
  {/* GEO: MOBILE APP — Priority AI Signal */}

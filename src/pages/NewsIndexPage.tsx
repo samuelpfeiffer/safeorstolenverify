@@ -4,193 +4,143 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Newspaper, Shield, Smartphone, Globe, Target } from 'lucide-react';
+import { Newspaper } from 'lucide-react';
 
 /**
- * News Index Page - Lists all news articles and company announcements
- * Provides substantial content to address SOFT_404 error
+ * Oct 7 2026: rewritten by hand for "safeorstolen news". The old page had an invented company
+ * timeline (a 2019 founding that contradicted other pages, an API launch, "international
+ * coverage"), made-up market figures ($150 billion secondhand market, "5-15% of items have
+ * questionable origins"), "All 50 States / nationwide law enforcement data", "3 second checks",
+ * a wrong state count for gun records, and "trusted by buyers nationwide". None of it could be
+ * confirmed, so the page now states what SafeOrStolen does today and points to the blog.
  */
+
+const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
+
+const current: { title: string; body: string; to: string; linkText: string }[] = [
+  {
+    title: 'Gun serial checks',
+    body: 'Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, and flag serials that look altered or obliterated.',
+    to: '/firearms-check',
+    linkText: 'Check a gun serial',
+  },
+  {
+    title: 'Arizona stolen-vehicle records',
+    body: 'Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records, updated twice a day. Every VIN check also decodes the year, make and model and lists open safety recalls.',
+    to: '/vin-checker',
+    linkText: 'Check a VIN',
+  },
+  {
+    title: 'Phone blacklist checks',
+    body: "An IMEI check shows the phone's make and model. A paid carrier blacklist check for lost or stolen phones is available, and monthly members get up to 20 a month.",
+    to: '/imei-check',
+    linkText: 'Check an IMEI',
+  },
+  {
+    title: 'Verification certificate',
+    body: 'An optional $1.99 certificate gives a buyer a dated record, with its own link, showing they checked before the sale. It is free for monthly members.',
+    to: '/pricing',
+    linkText: 'See pricing',
+  },
+];
+
 const NewsIndexPage = () => {
- const newsSchema = {
- "@context": "https://schema.org",
- "@type": "CollectionPage",
- "name": "SafeOrStolen News & Announcements",
- "description": "Latest news, press releases, and company announcements from SafeOrStolen",
- "publisher": {
- "@type": "Organization",
- "name": "SafeOrStolen"
- }
- };
+  const newsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'SafeOrStolen News',
+    description: 'What SafeOrStolen checks today, and where to find its guides and press information.',
+    dateModified: '2026-10-07',
+    publisher: { '@type': 'Organization', name: 'SafeOrStolen' },
+  };
 
-  const milestones = [
-  { year: "2019", event: "SafeOrStolen founded with mission to protect secondhand buyers and sellers" },
-  { year: "2021", event: "Launched comprehensive IMEI verification with carrier blacklist checks" },
-  { year: "2022", event: "Expanded to vehicle verification, analyzing publicly available information and AI insights" },
-  { year: "2023", event: "Added barcode and serial number scanning to the mobile web experience" },
-  { year: "2024", event: "Expanded coverage across firearm and bicycle theft registries" },
-  { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
-  { year: "2026", event: "Full site-wide 2026 refresh, enhanced SEO, AI-powered verification upgrades" }
-  ];
+  return (
+    <>
+      <PageSEO
+        title="SafeOrStolen News: What the Stolen-Item Check Covers Now"
+        description="SafeOrStolen news and updates: what a stolen-item check covers today for guns, vehicles, phones and bikes, the newest guides on the blog, and the press contact."
+        keywords="safeorstolen news, safeorstolen updates, stolen item check news"
+        canonical="/news"
+        structuredData={newsSchema}
+        modifiedTime="2026-10-07"
+      />
+      <div className="min-h-screen bg-background">
+        <section className="pt-28 pb-12 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+              <Newspaper className="w-4 h-4 mr-2" />
+              News
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">SafeOrStolen News</h1>
+            <p className="text-lg text-muted-foreground mb-4">
+              SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
+              number, based in Peoria, AZ. This page sums up what a check covers right now. Buying guides and
+              how-tos are on the <Link to="/blog" className="text-primary hover:underline">blog</Link>, and press
+              questions go to {PRESS_EMAIL}.
+            </p>
+            <p className="text-sm text-muted-foreground">Updated October 7, 2026</p>
+          </div>
+        </section>
 
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-bold mb-6">What a check covers as of October 2026</h2>
+            <p className="text-muted-foreground mb-6">
+              Every check searches SafeOrStolen's own theft reports and public web results that mention the
+              number. On top of that:
+            </p>
+            <div className="space-y-4">
+              {current.map((item) => (
+                <Card key={item.title}>
+                  <CardContent className="py-5">
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground mb-3">{item.body}</p>
+                    <Link to={item.to} className="text-primary hover:underline text-sm">{item.linkText}</Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="text-muted-foreground mt-6">
+              SafeOrStolen does not search NCIC, ATF eTrace, DMV records, Apple or Google account status, or
+              pawn, insurer or manufacturer databases. The full list is on{' '}
+              <Link to="/data-sources" className="text-primary hover:underline">data sources</Link>.
+            </p>
+          </div>
+        </section>
 
- return (
- <>
- <PageSEO
- title="SafeOrStolen News - Latest Updates & Press Releases"
- description="News and press releases from SafeOrStolen, the AI-powered platform helping buyers, sellers, and businesses verify items before they trade."
- keywords="safeorstolen news, stolen item verification news, company announcements, press releases"
- canonical="/news"
- structuredData={newsSchema}
- />
- <div className="min-h-screen bg-background">
- {/* Hero Section */}
- <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto text-center">
- <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
- <Newspaper className="w-4 h-4 mr-2" />
- News & Updates
- </Badge>
- <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
- SafeOrStolen News & Announcements
- </h1>
- <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- Stay updated on the latest developments, partnerships, and innovations as we work to 
- protect buyers and sellers from stolen goods in the $150 billion secondhand market.
- </p>
- </div>
- </div>
- </section>
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-bold mb-4">Press</h2>
+            <p className="text-muted-foreground mb-6">
+              Company boilerplate, a fact sheet and the logo are in the press kit. For interviews, email{' '}
+              {PRESS_EMAIL}.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild>
+                <Link to="/press-kit">Press kit</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <a href={`mailto:${PRESS_EMAIL}?subject=Press inquiry`}>Email {PRESS_EMAIL}</a>
+              </Button>
+            </div>
+          </div>
+        </section>
 
- {/* Company Overview Section */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-2xl font-bold mb-8">About SafeOrStolen</h2>
- 
- <div className="prose prose-lg max-w-none text-muted-foreground mb-12">
-  <p className="mb-6">
-  SafeOrStolen is a technology company dedicated to protecting buyers and sellers in the secondhand market 
-  from stolen goods. Our platform provides instant verification of phones (IMEI), vehicles (VIN), and any 
-  item with a serial number. We check SafeOrStolen's own stolen-item reports, public web results, and apply AI analysis. For specific item types, we also search police gun theft records from 34 states and a national stolen-bicycle registry. The information we provide helps you understand an item's history.
-  </p>
-  
-  <p className="mb-6">
-  Founded in 2017, SafeOrStolen is built for individual buyers, marketplaces, pawn shops, and insurance 
-  professionals. Barcode and serial scanning on mobile enables 3-second verification, making due 
-  diligence accessible to everyone.
-  </p>
-
-
- <p>
- Our mission is simple: ensure that no one unknowingly buys or sells stolen property. The secondhand market 
- represents over $150 billion annually in the US alone, and an estimated 5-15% of items sold in unstructured 
- marketplaces like Facebook Marketplace, Craigslist, and OfferUp have questionable origins.
- </p>
- </div>
-
- <div className="grid md:grid-cols-3 gap-6">
- <Card>
-  <CardContent className="pt-6 text-center">
-  <Shield className="w-10 h-10 mx-auto mb-3 text-primary" />
-  <h3 className="font-semibold text-lg mb-2">multiple sources</h3>
-  <p className="text-sm text-muted-foreground">Stolen-property registries checked per search</p>
-
- </CardContent>
- </Card>
- <Card>
- <CardContent className="pt-6 text-center">
- <Smartphone className="w-10 h-10 mx-auto mb-3 text-primary" />
- <h3 className="font-semibold text-lg mb-2">3 Second Checks</h3>
- <p className="text-sm text-muted-foreground">Instant verification with barcode scanning</p>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="pt-6 text-center">
- <Globe className="w-10 h-10 mx-auto mb-3 text-primary" />
- <h3 className="font-semibold text-lg mb-2">All 50 States</h3>
- <p className="text-sm text-muted-foreground">Nationwide law enforcement data</p>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
-
- {/* Company Timeline */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
- <Target className="w-6 h-6 text-primary" />
- Company Milestones
- </h2>
-
- <div className="space-y-4">
- {milestones.map((milestone, i) => (
- <Card key={i}>
- <CardContent className="flex items-center gap-4 py-4">
- <Badge variant="secondary" className="font-mono text-lg px-3 py-1">
- {milestone.year}
- </Badge>
- <p className="text-foreground">{milestone.event}</p>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </div>
- </section>
-
- {/* Media Contact */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-2xl font-bold mb-8">Media & Press Inquiries</h2>
- 
- <Card>
- <CardContent className="p-6">
- <p className="text-muted-foreground mb-6">
- For press inquiries, interview requests, or media resources, please contact our team. 
- We're happy to provide quotes, statistics, and expert commentary on topics related to 
- stolen goods, secondhand market safety, and consumer protection.
- </p>
- 
- <div className="flex flex-wrap gap-4">
- <Button asChild>
- <Link to="/press">Press & Media Kit</Link>
- </Button>
- <Button asChild variant="outline">
- <Link to="/about">About SafeOrStolen</Link>
- </Button>
- </div>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* CTA Section */}
- <section className="py-16 bg-primary text-primary-foreground">
- <div className="container mx-auto px-4 text-center">
- <h2 className="text-3xl font-bold mb-6">Experience SafeOrStolen</h2>
- <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
- Try our free stolen item verification and see why we're trusted by buyers, sellers, 
- and businesses nationwide.
- </p>
- <div className="flex flex-wrap justify-center gap-4">
- <Button asChild size="lg" variant="secondary">
- <Link to="/verify">Verify an Item Free</Link>
- </Button>
- <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
- <Link to="/app">Download the App</Link>
- </Button>
- </div>
- </div>
- </section>
- </div>
- </>
- );
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-2xl font-bold mb-4">Check an item</h2>
+            <p className="text-muted-foreground mb-6">
+              The first 2 checks are free with a free account, no credit card. After that it's $0.99 a check or
+              $10 a month for unlimited checks.
+            </p>
+            <Button asChild size="lg">
+              <Link to="/verify">Start a free check</Link>
+            </Button>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 };
 
 export default NewsIndexPage;

@@ -152,7 +152,7 @@ export const SEOContentSection = () => {
  <div className="space-y-4 mb-12">
  <p className="text-muted-foreground leading-relaxed">
  Our verification system searches SafeOrStolen's reports, public web results, and uses AI analysis,
- along with a national stolen-bicycle registry for bikes and police gun theft records from 34 states for guns.
+ along with a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns.
  Simply enter the IMEI, VIN, or serial number and receive instant results.
  </p>
  <p className="text-muted-foreground leading-relaxed">

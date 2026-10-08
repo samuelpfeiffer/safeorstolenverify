@@ -7,10 +7,10 @@ SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers
 - Bicycles: a national stolen-bicycle registry.
 - All items: SafeOrStolen's own stolen-item reports.
 - Phones: IMEI format and check-digit validation only. Carrier-blacklist checking is not currently active.
-- Firearms: police stolen-gun records from 34 states (more than 220,000 theft and loss reports gathered from police departments through public records, mostly filed 2010-2017; a match names the make, model, city, and reporting police department), live Ohio law-enforcement stolen-gun records, plus altered-serial checks.
+- Firearms: police stolen-gun records from 33 states and Washington, DC (242,839 theft and loss reports gathered from police departments through public records, filed through 2017; the years covered vary by state; a match names the make, model, city, and reporting police department), live Ohio law-enforcement stolen-gun records, plus altered-serial checks.
 - Public web mentions and AI notes may be added when available. AI never decides a result, and a web mention is shown as a possible match, never as a theft report.
 
-SafeOrStolen says plainly which records each result searched. Its law-enforcement sources cover Arizona vehicle thefts, gun thefts reported in 34 states, and live Ohio gun thefts, so a clean result elsewhere is not proof an item was never stolen.
+SafeOrStolen says plainly which records each result searched. Its law-enforcement sources cover Arizona vehicle thefts, gun thefts reported in 33 states and DC, and live Ohio gun thefts, so a clean result elsewhere is not proof an item was never stolen.
 
 ## Verdicts
 - STOLEN: strong evidence was returned.
@@ -52,4 +52,4 @@ An account is required for verification. A free account includes two checks. Add
 ## Company
 Founded: 2017-07-20
 Location: Peoria, Arizona, United States
-Contact: support@safeorstolen.com
+Contact: safeorstolenmail@gmail.com

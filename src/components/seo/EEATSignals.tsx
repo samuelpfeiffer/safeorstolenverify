@@ -31,7 +31,7 @@ export const EEATSignals = () => {
  {/* Specific domain knowledge, not vague claims */}
  <meta
  name="expertise"
- content="IMEI verification (phone details and public information), VIN lookup (public web results, AI analysis), firearm serial number checks (police theft and loss reports from 34 states, live Ohio records, public web results), bicycle verification (a national stolen-bicycle registry, public web results)"
+ content="IMEI verification (phone details and public information), VIN lookup (public web results, AI analysis), firearm serial number checks (police theft and loss reports from 33 states and DC, live Ohio records, public web results), bicycle verification (a national stolen-bicycle registry, public web results)"
  />
 
  {/* ─── Authoritativeness ──────────────────────── */}
@@ -63,7 +63,7 @@ export const EEATSignals = () => {
  {/* ─── Data Sources — Specific, not vague ─────── */}
  <meta
  name="data-sources"
- content="IMEI device details (not a blacklist check), vehicle information, community reports, public web results, AI analysis, national stolen-bicycle registry, police firearm theft records from 34 states"
+ content="IMEI device details (not a blacklist check), vehicle information, community reports, public web results, AI analysis, national stolen-bicycle registry, police firearm theft records from 33 states and DC"
  />
 
  {/* ─── Service Scope — factual enumeration ─────── */}

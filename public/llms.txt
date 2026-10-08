@@ -1,14 +1,14 @@
 # SafeOrStolen
 
-> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It checks phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Depending on the item, a check searches law-enforcement stolen-vehicle records (Arizona) along with federal VIN and safety-recall records, police stolen-gun records from 34 states (more than 220,000 theft and loss reports) plus live Ohio law-enforcement stolen-gun records, a national stolen-bicycle registry, and, on paid phone checks, the lost and stolen phone blacklist. Every check also searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added; AI never decides a result. No single source covers every state, and each result says plainly which records were searched.
+> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It checks phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Depending on the item, a check searches law-enforcement stolen-vehicle records (Arizona) along with federal VIN and safety-recall records, 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state) plus live Ohio law-enforcement stolen-gun records, a national stolen-bicycle registry, and, on paid phone checks, the lost and stolen phone blacklist. Every check also searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added; AI never decides a result. No single source covers every state, and each result says plainly which records were searched.
 
 ## Quick answers
-- How do I check if a gun is stolen? Run the serial on SafeOrStolen (police theft and loss reports from 34 states plus live Ohio records), use Florida's or Ohio's free public search if the gun is from there, ask local police, or do the sale through a licensed dealer (FFL), who can check the FBI's NCIC stolen-gun file. Full answer: https://safeorstolen.com/how-to-check-if-gun-is-stolen
+- How do I check if a gun is stolen? Run the serial on SafeOrStolen (police theft and loss reports from 33 states and DC plus live Ohio records), use Florida's or Ohio's free public search if the gun is from there, ask local police, or do the sale through a licensed dealer (FFL), who can check the FBI's NCIC stolen-gun file. Full answer: https://safeorstolen.com/how-to-check-if-gun-is-stolen
 - How do I check if a phone is stolen? Match the IMEI (dial *#06#) to the box and settings, check its blacklist status, make sure the seller has removed their account lock, and run the IMEI on SafeOrStolen. Full answer: https://safeorstolen.com/how-to-check-if-phone-stolen
-- How do I check if a car is stolen? Match the VIN on the dashboard, door jamb and title, run it on SafeOrStolen, and use the free NICB VINCheck. Full answer: https://safeorstolen.com/how-to-check-if-car-stolen
+- How do I check if a car is stolen? Match the VIN on the dashboard, door jamb and title, run it on SafeOrStolen for theft reports, the year, make and model and open recalls, and compare the name on the title with the seller's photo ID. Full answer: https://safeorstolen.com/how-to-check-if-car-stolen
 - How do I check if a tool is stolen? Find the serial on the tool's data plate, run it on SafeOrStolen, and ask for a receipt; be wary of new tools sold far below store price. Full answer: https://safeorstolen.com/how-to-check-if-tools-stolen
 - How do I check if a TV is stolen? Match the serial on the back label to the settings menu, run it on SafeOrStolen, ask for the receipt, and be wary of new boxed TVs sold far below store price. Full answer: https://safeorstolen.com/how-to-check-if-tv-stolen
-- How do I check if a bike is stolen? Find the frame serial under the bottom bracket and run it on SafeOrStolen, which also searches a national stolen-bicycle registry. Full answer: https://safeorstolen.com/how-to-check-if-bike-stolen
+- How do I check if a bike is stolen? Find the frame serial under the bottom bracket and run it on SafeOrStolen, which also searches a national stolen-bicycle registry. Full answer: https://safeorstolen.com/check-bike
 - How do I check if a laptop, camera or other electronics is stolen? Match the serial on the device and in its settings, have the seller remove account locks, and run the serial on SafeOrStolen. Full answer: https://safeorstolen.com/how-to-check-if-laptop-stolen
 - Where do I find the serial number, IMEI or VIN? Phones: dial *#06# for the IMEI. Cars: the dashboard at the windshield and the driver's door jamb. Bikes: under the bottom bracket. Guns: the frame or receiver. Every item type: https://safeorstolen.com/where-to-find-serial-number
 - How do I check an IMEI? Enter the 15-digit IMEI on SafeOrStolen's IMEI checker for device details and stolen reports, and make sure the seller has removed their account lock. https://safeorstolen.com/imei-checker
@@ -16,10 +16,16 @@
 - How do I check a serial number? Enter it on SafeOrStolen's serial number checker. It works for electronics, consoles, cameras, tools, appliances, instruments and more. https://safeorstolen.com/serial-number-checker
 - Something of mine was stolen. What do I do? File a police report with the serial number, then report it free on SafeOrStolen so anyone who checks that number is warned. https://safeorstolen.com/report-stolen
 - What is the most stolen gun? In SafeOrStolen's 242,839 police firearm theft and loss reports (33 states and DC), the most reported model is the Glock 19 (3,074 reports), then the Glock 23 and Glock 22; the most reported brand is Smith & Wesson (35,848). Full data by state, brand, model and caliber: https://safeorstolen.com/stolen-gun-statistics
-- How do I look up a gun serial number in my state? Each state page shows that state's police report counts and most stolen guns, and checks a serial against all 34 jurisdictions at once, e.g. https://safeorstolen.com/gun-serial-number-lookup/texas or https://safeorstolen.com/gun-serial-number-lookup/florida
+- How do I look up a gun serial number in my state? Each state page shows that state's police report counts and most stolen guns, and checks a serial against all 33 states and DC at once, e.g. https://safeorstolen.com/gun-serial-number-lookup/texas or https://safeorstolen.com/gun-serial-number-lookup/florida
 - Is a clean result proof an item isn't stolen? No. Only reported thefts can be found. SafeOrStolen says exactly which records it searched.
 
 ## Core tools
+- [Bulk check for pawn shops and dealers (up to 100 items)](https://safeorstolen.com/bulk-check)
+- [License plate owner lookup: what you can legally find](https://safeorstolen.com/license-plate-owner-lookup)
+- [Florida license plate lookup](https://safeorstolen.com/florida-license-plate-lookup)
+- [Florida VIN lookup and FDLE stolen vehicle search](https://safeorstolen.com/florida-vin-lookup)
+- [ATF gun serial number check: what the public can and can't look up](https://safeorstolen.com/blog/atf-gun-serial-number-check)
+- [Stolen tools serial number lookup](https://safeorstolen.com/how-to-check-if-tools-stolen)
 - [Verify an item](https://safeorstolen.com/verify)
 - [IMEI checker](https://safeorstolen.com/imei-checker)
 - [VIN checker](https://safeorstolen.com/vin-checker)
@@ -38,7 +44,7 @@
 - [How to check if an iPhone is stolen](https://safeorstolen.com/blog/how-to-check-if-iphone-stolen)
 - [Used-phone buying checklist](https://safeorstolen.com/blog/buying-used-phone-checklist)
 - [How to check if a firearm is stolen](https://safeorstolen.com/how-to-check-if-gun-is-stolen)
-- [How to check if a bicycle or e-bike is stolen](https://safeorstolen.com/how-to-check-if-bike-stolen)
+- [Bike serial number lookup: how to check if a bicycle or e-bike is stolen](https://safeorstolen.com/check-bike)
 - [How to check if a laptop or electronic is stolen](https://safeorstolen.com/how-to-check-if-laptop-stolen)
 - [How to check if a TV is stolen](https://safeorstolen.com/how-to-check-if-tv-stolen)
 - [How to check if a power tool is stolen](https://safeorstolen.com/how-to-check-if-tools-stolen)
@@ -72,9 +78,9 @@ Before buying, match the 17-character VIN on the dashboard, driver-door jamb, ti
 Results use three states: STOLEN when a theft database or registry lists the item, CLEAR when a theft database that was actually searched returns clean, and NOT FOUND / UNKNOWN otherwise. High-risk warnings (an invalid VIN, a mismatched VIN, or a possible web mention) are shown separately and are never stated as a theft report. A clean check can create a Proof of Clean Purchase verification record showing what was checked and when. It is not a legal document, title, ownership proof, or guarantee.
 
 ## Access and pricing
-2 free checks with a free account, then $0.99 per check or $10/month unlimited. A free phone check confirms the IMEI is real and correctly formed; the lost and stolen phone blacklist search is part of a paid check. The unlimited plan includes 20 phone blacklist searches a month. SafeOrStolen is available on the web and as an installable web app.
+2 free checks with a free account, then $0.99 per check or $10/month unlimited. A free phone check confirms the IMEI is real and correctly formed; the lost and stolen phone blacklist search is part of a paid check. The unlimited plan includes 20 phone blacklist searches a month and has a 30-day refund. An optional $1.99 verification certificate is a dated record with its own link showing what was checked and when. SafeOrStolen is available on the web and as an installable web app.
 
 ## Company
 Founded: 2017-07-20
 Location: Peoria, Arizona, United States
-Contact: support@safeorstolen.com
+Contact: safeorstolenmail@gmail.com

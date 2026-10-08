@@ -194,7 +194,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/database': {
   title: 'Sources Used in SafeOrStolen Checks',
- description: 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 34 states and a stolen-bike registry.',
+ description: 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 33 states and DC and a stolen-bike registry.',
  keywords: 'stolen item reports, public web results, global theft checks',
  canonical: '/database'
  },

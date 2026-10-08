@@ -1,113 +1,147 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/**
+ * Oct 7 2026: rewritten by hand for "free imei check" / "imei checker" / "stolen phone checker".
+ * This is the main IMEI tool page. Search Console shows "stolen phone checker", "imei checker",
+ * "check imei" and "blacklisted imei search" reaching it at positions 31-45. The old copy claimed
+ * "3 second" results, "AI analysis", "multiple databases", finance checks and a 2.4 million
+ * theft statistic; all removed. How-to questions live on their own pages and are linked here.
+ */
 const IMEICheckerPage = () => {
- return (
- <ItemLandingPageTemplate
- title="Free IMEI Check — Is This Phone Stolen or Blacklisted? | SafeOrStolen"
- metaDescription="Free IMEI checker. Verify any phone is not stolen or blacklisted. Checks our own reports, public web results, and uses AI analysis simultaneously. Results in 3 seconds."
- h1="Free IMEI Check — Stolen & Blacklist Verification"
- itemType="Phone"
- searchType="imei"
- searchPlaceholder="Enter the IMEI (dial *#06# to see it)"
- keywords={[
- 'IMEI checker app',
- 'IMEI checker free',
- 'check IMEI stolen',
- 'verify phone not stolen',
- 'IMEI lookup app',
- 'stolen phone checker app',
- 'Reliable IMEI checker app',
- 'IMEI.info alternative',
- 'pawn shop IMEI checker',
- 'reseller phone verification'
- ]}
- content={{
- intro: "Verify any phone's IMEI number in 3 seconds. Check if a smartphone is reported stolen, lost, or blacklisted before buying. Free IMEI verification from our own reports, public web results, and AI analysis.",
- whatIs: "An IMEI (International Mobile Equipment Identity) checker is a tool that verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number that can be used to track its status across global databases. SafeOrStolen's IMEI checker instantly searches multiple databases to determine if a phone is safe to buy or if it's been reported as stolen or lost. This protects buyers from purchasing phones that could be remotely locked, reported to authorities, or unusable on cellular networks.",
- howItWorks: "Our IMEI checker works by querying our own stolen item reports, public web results, and using AI analysis simultaneously. Within 3 seconds, you'll receive a comprehensive report showing whether the phone is clean or has potential red flags. We provide details like phone model, manufacturer, and other technical specifications. While we do not check blacklists, we explain how the industry handles blacklisted phones. We also check for user-reported theft history filed against it.",
- whyCheck: "Buying a stolen phone can lead to serious consequences. The phone can be remotely locked or wiped by the original owner, blacklisted by carriers making it unusable, confiscated by the relevant authorities as stolen property, and you could face criminal charges for possession of stolen goods. Additionally, you lose all your money with zero legal recourse. In 2024 alone, over 2.4 million smartphones were reported stolen in the United States, with many ending up on secondhand marketplaces like Facebook Marketplace, eBay, OfferUp, and Craigslist. Our free IMEI checker helps you avoid these risks.",
- benefits: [
- "Instant verification from multiple databases in 3 seconds",
- "Check our reports and public web results",
- "Verify phone isn't reported stolen or lost",
- "Check for outstanding finance or reported theft history",
- "Confirm phone works on your carrier network",
- "Free IMEI check before you buy",
- "Works for iPhone, Samsung, Google Pixel, and all smartphones",
- "Protects you from legal consequences of buying stolen property"
- ],
- process: [
- "Find the IMEI number: Dial *#06# on the phone, check Settings > About Phone, or look at the original box or SIM tray",
- "Enter the 15-digit IMEI number into our verification tool at SafeOrStolen.com/verify",
- "Get instant results showing whether the phone is clean, stolen, blacklisted, or has issues",
- "Review the detailed report including phone model, manufacturer, and user-reported theft status.",
- "Make an informed decision - only buy if the report shows 'CLEAN' status"
- ],
- faqs: [
- {
- question: "How do I check if a phone is stolen?",
- answer: "Dial *#06# on the phone to display its 15-digit IMEI, then enter that IMEI at SafeOrStolen. SafeOrStolen checks it against our own reports, public web results, and AI analysis, returning a Safe or Potential Red Flags result in about 3 seconds. Your first 2 checks are free with no credit card, then it is $0.99 per check or $10/month for unlimited checks. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app and check the IMEI from your own phone while you are standing with the seller. For carrier blacklist status, you should contact the phone's carrier."
- },
- {
- question: "How do I check if a phone is stolen?",
- answer: "Get the phone's 15-digit IMEI by dialling *#06# on the handset or opening Settings then About Phone, and enter it at SafeOrStolen before you pay. SafeOrStolen searches that IMEI against our own reported stolen items, public web results, and AI analysis, and returns a result in a few seconds. Always confirm the IMEI shown on the phone itself matches the one the seller sent you."
- },
- {
- question: "How do I check if a phone is blacklisted?",
- answer: "Enter the IMEI at SafeOrStolen and review the blacklist section of the result. Blacklisting is separate from theft \u2014 a handset can be barred from cellular networks over unpaid finance or an insurance write-off even though nobody reported it stolen \u2014 so a phone can be blacklisted and still show no theft record. A blacklisted phone generally cannot activate on a network, which makes it close to worthless as a used purchase."
- },
- {
- question: "Can I check an IMEI without going to a carrier?",
- answer: "Yes. SafeOrStolen checks an IMEI without any carrier account, store visit, or phone call, and it works for handsets from any network. You only need the 15-digit number, which you can ask the seller to photograph on the device or in its settings screen."
- },
- {
- question: "What's the best way to check an IMEI before buying a used phone?",
- answer: "Ask for a photo of the IMEI displayed on the phone itself rather than a typed number, then run it through SafeOrStolen before you travel to meet the seller. When you meet, dial *#06# on the handset in front of the seller and confirm it matches what you checked. A seller who will not show the IMEI on screen is the single clearest reason to walk away."
- },
- {
- question: "Can I check whether an iPhone IMEI is clean?",
- answer: "Yes. SafeOrStolen checks iPhone IMEIs the same way it checks any other handset, and the IMEI can be found by dialling *#06#, in Settings under General then About, or engraved on the SIM tray of older models. Also ask the seller to sign out of their account and disable the activation lock, because an iPhone still tied to another person's account is unusable regardless of its theft status."
- },
- {
- question: "What happens if I buy a stolen phone?",
- answer: "You can lose both the phone and the money: a reported handset can be blacklisted so it will not connect to any network, and if it is recovered by police it is returned to the registered owner rather than to you. Buyers rarely have any recourse against an anonymous marketplace seller. Checking the IMEI with SafeOrStolen before paying, and keeping the verification record, is what separates a documented good-faith purchase from an unexplained one."
- },
- {
- question: "What is an IMEI number and where do I find it?",
- answer: "An IMEI (International Mobile Equipment Identity) is a unique 15-digit number assigned to every mobile phone. You can find it by dialing *#06#, checking Settings > About Phone > IMEI, looking at the original box, or checking the SIM card tray on iPhones. Every smartphone has at least one IMEI number (dual-SIM phones have two)."
- },
- {
- question: "How much does the IMEI check cost?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Covers all item types — not just phones. Cancel anytime with a 30-day money-back guarantee."
- },
- {
- question: "What databases does SafeOrStolen check?",
- answer: "We check multiple sources simultaneously including: our own stolen item reports, public web results, and AI analysis. This comprehensive approach gives you accurate verification results."
- },
- {
- question: "Can I check an iPhone IMEI?",
- answer: "Yes, our IMEI checker works for all smartphones including iPhone, Samsung Galaxy, Google Pixel, OnePlus, Motorola, LG, and any other phone with an IMEI number. The verification process is identical regardless of phone brand or model."
- },
- {
- question: "What if the IMEI check shows the phone is stolen?",
- answer: "If our check shows the phone is reported stolen, do NOT buy it. Walk away immediately. Buying a stolen phone is illegal and you'll lose your money when the phone is blacklisted or confiscated. Report the listing to the marketplace (Facebook, eBay, Craigslist) and consider reporting the seller to local police."
- },
- {
- question: "How long does an IMEI check take?",
- answer: "Our IMEI verification takes only 3 seconds. Simply enter the 15-digit IMEI number and click verify - you'll get instant results showing whether the phone is clean, stolen, blacklisted, or has outstanding issues."
- },
- {
- question: "What's the difference between stolen and blacklisted?",
- answer: "Stolen means the phone has been reported to authorities or databases as stolen property. Blacklisted means carriers have blocked the phone from working on their networks (usually because it's stolen, lost, or has unpaid bills). A phone can be stolen without being blacklisted yet, or blacklisted for reasons other than theft. Always check both status types."
- },
- {
- question: "Can a seller fake or change an IMEI number?",
- answer: "Changing an IMEI number is illegal in most countries and extremely difficult. However, scammers might provide a fake IMEI number. Always verify the IMEI on the physical phone (dial *#06#) matches the number the seller gives you. Never trust just the box or a screenshot."
- }
- ]
- }}
- />
- );
+  return (
+    <ItemLandingPageTemplate
+      title="Free IMEI Check: Stolen Phone and Blacklist Checker | SafeOrStolen"
+      metaDescription="Free IMEI check for any phone. Enter the 15-digit IMEI to see the make and model and search theft reports and the web, with a paid lost/stolen blacklist check."
+      h1="Free IMEI Check: Is This Phone Stolen?"
+      itemType="Phone"
+      dateModified="2026-10-07"
+      searchType="imei"
+      searchPlaceholder="Enter the 15-digit IMEI (dial *#06# to see it)"
+      keywords={[
+        'free imei check',
+        'imei check',
+        'imei checker',
+        'free imei checker',
+        'check imei',
+        'stolen phone checker',
+        'check if phone is stolen',
+        'check imei for stolen phone',
+        'blacklisted imei search',
+        'check for blacklisted imei',
+        'imei blacklist check',
+      ]}
+      quickAnswer={{
+        question: 'How do I check an IMEI for free?',
+        answer:
+          "Dial *#06# on the phone to show its 15-digit IMEI, then enter it on SafeOrStolen (safeorstolen.com/imei-checker). The free check shows the phone's make and model and searches SafeOrStolen theft reports and public web results for that IMEI. A free account includes 2 checks with no credit card. If you also need to know whether carriers have blacklisted the phone as lost or stolen, run the paid blacklist check.",
+      }}
+      sections={[
+        {
+          heading: 'What this IMEI check covers, and what it does not',
+          table: {
+            columns: ['Question', 'Does SafeOrStolen answer it?', 'How'],
+            rows: [
+              ['What make and model is this IMEI?', 'Yes, free', 'Shown with every IMEI check, so you can compare it to the phone in the listing'],
+              ['Has an owner reported this phone stolen on SafeOrStolen?', 'Yes, free', "Searches SafeOrStolen's own theft reports"],
+              ['Does the IMEI show up in listings or posts online?', 'Yes, free', 'Searches public web results that mention the number'],
+              ['Is it on the carrier lost/stolen blacklist?', 'Yes, paid', 'The blacklist check. Monthly members get up to 20 a month'],
+              ['Is it still on someone\'s Apple Account or Google account?', 'No', 'Check on the phone: the seller erases it and you start setup'],
+              ['Is there money owed on it, or is it carrier-locked?', 'No', 'Ask the original carrier, and check the lock status in the phone\'s settings'],
+            ],
+          },
+        },
+        {
+          heading: 'What your result means',
+          table: {
+            columns: ['Result', 'What it means', 'What to do'],
+            rows: [
+              ['Reported stolen', 'The IMEI matches a theft report in the sources searched', "Don't buy it. Keep the listing and messages and pass them to local police"],
+              ['Possible match', 'Something close to this IMEI turned up, such as a listing or post that mentions it', 'Open each source listed and compare the details before you go further'],
+              ['No report found in the records searched', 'Nothing matched in the sources listed on the result', 'Good sign, not a guarantee. Still check the account lock and test the phone in person'],
+            ],
+          },
+          paragraphs: [
+            'Every result lists the sources it searched and is saved to your account with the date, so you have a record that you checked before you paid.',
+          ],
+        },
+        {
+          heading: 'Stolen vs blacklisted: why there are two checks',
+          paragraphs: [
+            "A theft report and a blacklist entry are different things. A theft report says someone lost this phone to a thief. A blacklist entry means a carrier blocked the IMEI, which can happen after a theft or loss report, and a blocked phone won't make calls or use mobile data on participating networks.",
+            "A phone can have a theft report and no blacklist entry if the owner never called their carrier, or a blacklist entry with no police report. That's why the free check searches theft reports and the web, and the paid check looks at the blacklist. Our guide to what a blacklisted IMEI means explains the blacklist in more detail.",
+          ],
+        },
+        {
+          heading: 'Free IMEI check vs the CTIA Stolen Phone Checker',
+          paragraphs: [
+            "In the US, the wireless industry group CTIA runs its own free Stolen Phone Checker for lost and stolen reports. It's a separate service and SafeOrStolen does not query it for you. Running both costs nothing, and SafeOrStolen adds the model lookup, owner theft reports, public web results and a dated record of your check.",
+          ],
+        },
+      ]}
+      content={{
+        intro:
+          'Enter any 15-digit IMEI to check a phone before you buy it. The free IMEI check shows the make and model and searches theft reports and public web results. It works for iPhone, Samsung, Pixel and every other phone with an IMEI. Need the number first? See <a href="/blog/how-to-find-imei-number">how to find the IMEI on any phone</a>.',
+        whatIs:
+          'An IMEI is the 15-digit number that identifies a phone on cellular networks. Owners give it to police and carriers when a phone is stolen, so it is the number that ties a phone to a theft report. For a full walkthrough of a used-phone purchase, read <a href="/how-to-check-if-phone-stolen">how to check if a phone is stolen</a>, or <a href="/blog/how-to-check-if-iphone-stolen">how to check if an iPhone is stolen</a> for Activation Lock.',
+        howItWorks:
+          "Type the IMEI into the search box. SafeOrStolen reads the make and model from the number, then searches its own theft reports and public web results. You get one of three results in a few seconds: reported stolen, possible match, or no report found in the records searched, with every source listed. The paid blacklist check adds the carrier lost/stolen blacklist.",
+        whyCheck:
+          "If you buy a stolen phone, police can return it to the owner and you lose what you paid. A blacklisted phone may stop working on your carrier days after you buy it. Checking the IMEI before you meet, and matching it on the phone when you do, catches the most common problems: a stolen phone, a blocked phone, or a seller who sent you the IMEI of a different phone.",
+        benefits: [
+          'Free check with a free account: 2 checks, no credit card',
+          "Shows the phone's make and model, so a mismatched IMEI stands out",
+          'Searches SafeOrStolen theft reports and public web results',
+          'Paid lost/stolen blacklist check when you need it',
+          'Every check saved to your account with the date',
+          'Works on your phone at the meetup through the free web app at safeorstolen.com/app',
+        ],
+        process: [
+          'Ask the seller to dial *#06# and send you a screenshot of the IMEI before you agree to meet.',
+          'Enter the IMEI here and check that the make and model match the listing.',
+          'If the phone is expensive or the price looks too good, run the paid blacklist check too.',
+          'At the meetup, dial *#06# yourself and make sure the number matches the one you checked.',
+          "Have the seller sign out of their Apple Account or Google account and erase the phone, then start setup yourself before you pay.",
+        ],
+        faqs: [
+          {
+            question: 'Is there a free IMEI check?',
+            answer:
+              "Yes. SafeOrStolen (safeorstolen.com/imei-checker) gives you 2 free checks with a free account and no credit card. The free check shows the phone's make and model and searches SafeOrStolen theft reports and public web results. After that it's $0.99 a check or $10 a month for unlimited checks.",
+          },
+          {
+            question: 'How do I check if a phone is stolen with the IMEI?',
+            answer:
+              "Get the IMEI by dialing *#06#, enter it in an IMEI checker such as SafeOrStolen, and read the result: reported stolen, possible match, or no report found. Then confirm the same number shows on the phone at the meetup, and make sure the seller can remove their account lock before you pay.",
+          },
+          {
+            question: 'How do I check if an IMEI is blacklisted?',
+            answer:
+              "Run a blacklist check. On SafeOrStolen it's a paid check that looks at the carrier lost/stolen blacklist, and monthly members get up to 20 a month. In the US, CTIA's free Stolen Phone Checker is another option. A blacklisted phone generally won't get service on participating carriers.",
+          },
+          {
+            question: 'Does an IMEI check show if a phone is iCloud locked?',
+            answer:
+              "No. Activation Lock (often called iCloud lock) is tied to an Apple Account, not the IMEI, and Apple doesn't offer a public lookup for it. To check it, have the seller turn off Find My and erase the iPhone, then start setup yourself. If it asks for someone else's Apple Account, don't buy it.",
+          },
+          {
+            question: 'Can I check an IMEI without the carrier?',
+            answer:
+              "Yes. You don't need a carrier account or a store visit to check an IMEI on SafeOrStolen, and it works for phones from any carrier. The one thing only the original carrier can tell you is whether there's an unpaid balance or a carrier lock on the phone.",
+          },
+          {
+            question: 'Does a clean IMEI check mean the phone is safe to buy?',
+            answer:
+              "It's a good sign, not a guarantee. 'No report found' means nothing matched in the sources listed. A phone can be stolen and not reported yet, or still locked to the owner's account. Match the IMEI in person, watch the seller remove their account and erase the phone, and test calls before you pay.",
+          },
+          {
+            question: 'What if the seller won\'t give me the IMEI?',
+            answer:
+              "Don't buy the phone. The IMEI doesn't reveal anything personal about the seller, and an honest seller can show it in a few seconds by dialing *#06#. Refusing to share it, or sending a screenshot that doesn't match the phone at the meetup, are two of the clearest warning signs of a stolen phone.",
+          },
+        ],
+      }}
+    />
+  );
 };
 
 export default IMEICheckerPage;

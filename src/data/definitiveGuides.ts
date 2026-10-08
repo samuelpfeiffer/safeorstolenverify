@@ -196,7 +196,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to check if gun stolen, firearm serial check, stolen gun lookup, NCIC gun serial",
   directAnswer:
-    "Private buyers cannot search the FBI's NCIC stolen-gun file themselves. Instead: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 34 states plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI's stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
+    "Private buyers cannot search the FBI's NCIC stolen-gun file themselves. Instead: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI's stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
   identifierTitle: "Where to find the firearm serial number",
   identifierIntro:
     "Use the serial marked on the firearm’s frame or receiver and record the manufacturer, model, caliber, and seller’s identification as permitted by law.",
@@ -221,7 +221,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen firearm check",
       cost: "2 free checks, no account needed",
       description:
-        "SafeOrStolen searches police firearm theft and loss reports from 34 states (more than 240,000 records, mostly from 2010 to 2017), live Ohio law-enforcement stolen-gun records, and theft reports filed on SafeOrStolen. It does not access NCIC, ATF eTrace, or other police-only systems.",
+        "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (242,839 reports, filed through 2017; years vary by state), live Ohio law-enforcement stolen-gun records, and theft reports filed on SafeOrStolen. It does not access NCIC, ATF eTrace, or other police-only systems.",
       tellsYou:
         "Whether a police report lists a gun with this serial number, and which make, model, state and year it names. Different manufacturers can use the same serial, so compare the make stamped on the gun.",
     },

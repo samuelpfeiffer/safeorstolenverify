@@ -24,7 +24,7 @@ const SerialNumberCheckerPage = () => {
  ]}
  quickAnswer={{
  question: "How do I check if an item is stolen by its serial number?",
- answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 34 states. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first 2 checks are free with no card. Do it before you pay, and save the result as proof you checked."
+ answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 33 states and DC. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first 2 checks are free with no card. Do it before you pay, and save the result as proof you checked."
  }}
  sections={[
  {
@@ -72,13 +72,13 @@ const SerialNumberCheckerPage = () => {
  ]}
  content={{
  intro: "Search any serial number for free and see whether the item is reported stolen before you buy it. It works for laptops, power tools, cameras, game consoles, guitars, bikes, guns, TVs and anything else with a serial number. Results in a few seconds, 2 free checks, no credit card.",
- whatIs: "A serial number lookup checks whether a specific item has been reported stolen or lost. Almost every valuable manufactured item carries a unique serial number, and that number is what owners give the police and their insurer when the item is stolen. SafeOrStolen searches its own theft reports and public web results for every serial number. Gun serial numbers are also checked against police firearm theft and loss reports from 34 states and live Ohio law-enforcement records. Bikes are checked against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records and federal VIN data.",
+ whatIs: "A serial number lookup checks whether a specific item has been reported stolen or lost. Almost every valuable manufactured item carries a unique serial number, and that number is what owners give the police and their insurer when the item is stolen. SafeOrStolen searches its own theft reports and public web results for every serial number. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records. Bikes are checked against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records and federal VIN data.",
  howItWorks: "Type the serial number into the search box. SafeOrStolen searches every source that applies to that kind of item at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched, and it is saved to your account with the date and time. After a check you can also get a $1.99 verification certificate, a dated record with its own link, showing you checked before the sale.",
  whyCheck: "In most states, buying stolen property means losing it. Police can return it to the owner without paying you back, and you can be questioned about how you got it. Checking the serial number before you pay, and keeping a record that you checked, protects you as a buyer. It also helps honest sellers show that the item checked clean.",
  benefits: [
  "Works on any serial number: electronics, tools, instruments, cameras, consoles, guns, bikes",
  "Searches SafeOrStolen theft reports and public web results on every check",
- "Gun serials: police theft and loss reports from 34 states plus live Ohio records",
+ "Gun serials: police theft and loss reports from 33 states and DC plus live Ohio records",
  "Results in a few seconds, with every source listed",
  "2 free checks with a free account, no credit card",
  "Dated record of every check saved to your account",
@@ -99,7 +99,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "Is there a national database of stolen serial numbers?",
- answer: "Not one the public can search. The FBI's national stolen-property file is only open to law enforcement, and other theft records are split across police departments, insurers and registries. SafeOrStolen brings together the sources the public can use, including its own theft reports and police firearm theft and loss reports from 34 states. A no-match result means nothing was found in those sources, not proof that the item was never stolen."
+ answer: "Not one the public can search. The FBI's national stolen-property file is only open to law enforcement, and other theft records are split across police departments, insurers and registries. SafeOrStolen brings together the sources the public can use, including its own theft reports and police firearm theft and loss reports from 33 states and DC. A no-match result means nothing was found in those sources, not proof that the item was never stolen."
  },
  {
  question: "Can I look up who owns an item by its serial number?",

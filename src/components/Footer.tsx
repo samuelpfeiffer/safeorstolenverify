@@ -7,7 +7,7 @@ const sosLogo = '/sos-logo.png';
 const DATA_PARTNERS = [
  { name: 'our own stolen item reports', verified: true },
  { name: 'public web results and AI analysis', verified: true },
- { name: 'National stolen-bicycle registry and police gun theft records from 34 states', verified: true },
+ { name: 'National stolen-bicycle registry and police gun theft records from 33 states and DC', verified: true },
  { name: 'IMEI device lookup for phones', verified: true },
  { name: 'Stolen Firearms Databases', verified: true },
 ];

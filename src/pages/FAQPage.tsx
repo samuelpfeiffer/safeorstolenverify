@@ -7,7 +7,7 @@ import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
 const categories = [
   {
     title: 'How It Works', icon: HelpCircle, faqs: [
-      { question: 'How do I check if something is stolen?', answer: "Create a free account, enter the item's IMEI, VIN, plate, or serial number, and review the result. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis; gun checks also search police theft reports from 34 states plus live Ohio records, and bike checks a national stolen-bicycle registry." },
+      { question: 'How do I check if something is stolen?', answer: "Create a free account, enter the item's IMEI, VIN, plate, or serial number, and review the result. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis; gun checks also search police theft reports from 33 states and DC plus live Ohio records, and bike checks a national stolen-bicycle registry." },
       { question: 'What items can I verify?', answer: 'SafeOrStolen supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles.' },
       { question: 'Does SafeOrStolen search police, NCIC, DMV, NICB, NMVTIS, insurance, or carrier-blacklist systems?', answer: 'No. Those are separate resources. Our item guides explain when and how a buyer can use official public resources or ask an authorized agency for help.' },
       { question: 'How long does a check take?', answer: 'Most results return in about 3 seconds, although network and source response times can vary.' },
@@ -27,7 +27,7 @@ const categories = [
     title: 'Sources and Item Checks', icon: Database, faqs: [
       { question: 'How should I check a used phone?', answer: 'Match the IMEI, ask the original carrier about network and finance status, remove Apple or Google account locks, and test the phone. SafeOrStolen does not currently query carrier blacklists.' },
       { question: 'How should I check a vehicle?', answer: 'Match the VIN in every location and on the title, then use the separate NICB and NMVTIS resources described in our vehicle guide. SafeOrStolen does not query those systems.' },
-      { question: 'How should I check a firearm?', answer: 'Private buyers cannot search NCIC. Run the serial on SafeOrStolen, which searches police theft and loss reports from 34 states and live Ohio records, ask local police whether they will check the serial, and follow every required transfer step.' },
+      { question: 'How should I check a firearm?', answer: 'Private buyers cannot search NCIC. Run the serial on SafeOrStolen, which searches police theft and loss reports from 33 states and DC and live Ohio records, ask local police whether they will check the serial, and follow every required transfer step.' },
       { question: 'Can SafeOrStolen identify a plate owner?', answer: 'No. SafeOrStolen does not access protected DMV owner records. Its plate check uses SafeOrStolen reports, public web results, and AI analysis.' },
       { question: 'Where are the detailed checking guides?', answer: 'Visit /how-to-check-if-item-stolen for the definitive guide and matching tool for each supported item type.' },
     ],

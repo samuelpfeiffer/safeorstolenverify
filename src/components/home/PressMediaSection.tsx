@@ -49,7 +49,7 @@ export const PressMediaSection = () => {
  ];
 
   const stats = [
-  { icon: Shield, label: 'Transparent Sources', description: 'Know what was checked', detail: 'SafeOrStolen reports and public web results on every check, a national stolen-bicycle registry for bikes, and police gun theft records from 34 states for guns.', link: '/data-sources' },
+  { icon: Shield, label: 'Transparent Sources', description: 'Know what was checked', detail: 'SafeOrStolen reports and public web results on every check, a national stolen-bicycle registry for bikes, and police gun theft records from 33 states and DC for guns.', link: '/data-sources' },
   { icon: Globe, label: 'Buyer and Seller Guides', description: 'Practical checking workflows', detail: 'Find identifiers, use official resources separately, inspect warning signs, and preserve transaction records.', link: '/how-to-check-if-item-stolen' },
   ];
 

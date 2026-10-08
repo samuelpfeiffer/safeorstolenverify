@@ -1,183 +1,217 @@
+/**
+ * Oct 7 2026: rewritten by hand for "stolen gun database by state" / "national stolen gun database"
+ * (Search Console: "national stolen gun database" 14 impressions and "stolen firearm database" 14,
+ * both landing on /firearms-check around position 37). Removed: an invented "top 10 states for gun
+ * theft" table and its figures, made-up trafficking-corridor claims and timings, a named supplier,
+ * an outbound URL, "all 50 states" and "federal databases" claims, and "34 states". The state list
+ * below comes from src/data/gunTheftStats.ts (read only) and links to each state's lookup page.
+ */
 import { Link } from '@/lib/router-compat';
-import { ArrowRight, Shield } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { GUN_STATES } from '@/data/gunTheftStats';
 
-const StateStolenGunDatabaseGuide = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does every state have a stolen gun database?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Police in every state record stolen guns, but only a few states let the public search those records, and most require you to ask local police. SafeOrStolen brings together the records the public can use: 242,839 police theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, so one search covers them all." }
-      },
-      {
-        "@type": "Question",
-        "name": "Which states have the most gun thefts?",
-        "acceptedAnswer": { "@type": "Answer", "text": "According to ATF data, the top 5 states for firearms theft are: (1) Texas — 46,000+ guns stolen annually, (2) Florida — 32,000+, (3) Georgia — 22,000+, (4) California — 18,000+, (5) North Carolina — 15,000+. Southern states dominate due to higher gun ownership rates and vehicle break-in rates." }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I check a gun serial number in my state?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The fastest first step is SafeOrStolen — enter the serial number and we search police theft and loss reports from 34 states, live Ohio records and our own theft reports, and check the serial for tampering. Each state's page at safeorstolen.com/gun-serial-number-lookup shows what we hold for that state. Alternatively, you can call your local police non-emergency line and ask them to run the serial number through federal law-enforcement systems, but this takes longer and isn't always available." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to check multiple state databases?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, ideally. A gun stolen in Georgia could be sold in Texas within hours. Checking only your state's database would miss it. SafeOrStolen solves this by searching all 50 state databases plus federal databases in one 3-second check." }
-      }
-    ]
-  };
+const DESCRIPTION =
+  "Stolen gun databases by state: what the public can search, why the national file is police-only, and how to check a serial across 33 states and DC at once.";
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "State-by-State Stolen Gun Database Guide (2026)",
-    "author": { "@type": "Organization", "name": "SafeOrStolen" },
-    "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
-    "datePublished": "2026-03-09",
-    "dateModified": "2026-03-09",
-    "mainEntityOfPage": "https://safeorstolen.com/blog/state-stolen-gun-database-guide"
-  };
+const faqs = [
+  {
+    question: 'Is there a national stolen gun database?',
+    answer:
+      "Yes, but the public can't search it. The FBI's National Crime Information Center (NCIC) holds guns reported stolen to police anywhere in the U.S. Only law enforcement can query it, and since August 2025 licensed firearm dealers can voluntarily check its stolen-gun file. A private buyer can ask local police to run a serial, or buy through a dealer.",
+  },
+  {
+    question: 'Does every state have a public stolen gun database?',
+    answer:
+      "No. Police in every state record stolen guns and send them to NCIC, but only a few states let the public search those records online, Florida and Ohio among them. In most states your options are a SafeOrStolen check, a call to the local police non-emergency line, or a sale through a licensed dealer.",
+  },
+  {
+    question: 'How do I check a gun serial number in my state?',
+    answer:
+      "Enter the serial on SafeOrStolen (safeorstolen.com/blog/state-stolen-gun-database-guide). One search covers 242,839 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, so you don't need to know where the gun was stolen. Then ask your local police whether they'll run it through NCIC.",
+  },
+  {
+    question: 'Do I need to check more than one state?',
+    answer:
+      "Yes. A gun is reported stolen where it was taken, not where it's sold, and guns move between states. A state-only search misses a gun stolen next door. NCIC covers every state, which is why a police or dealer check matters, and SafeOrStolen's search covers all the states in its records at once.",
+  },
+  {
+    question: 'How current are the police reports SafeOrStolen searches?',
+    answer:
+      "The 242,839 police theft and loss reports were filed through 2017, and the years covered vary by state; some states' records start decades earlier. Ohio law-enforcement records are searched live, and owner reports on SafeOrStolen are added as they come in. For a recent theft elsewhere, ask police or a dealer to check NCIC.",
+  },
+];
 
-  const topStates = [
-    { state: 'Texas', thefts: '46,000+', notes: 'Highest total gun thefts in the US. Vehicle break-ins are the #1 source.' },
-    { state: 'Florida', thefts: '32,000+', notes: 'Second highest. Port cities facilitate international trafficking.' },
-    { state: 'Georgia', thefts: '22,000+', notes: 'Atlanta metro area is a major hub for stolen firearm trafficking.' },
-    { state: 'California', thefts: '18,000+', notes: 'Despite strict gun laws, high population drives high theft numbers.' },
-    { state: 'North Carolina', thefts: '15,000+', notes: 'I-95 corridor facilitates movement between NC and northeast markets.' },
-    { state: 'Tennessee', thefts: '14,000+', notes: 'Nashville and Memphis are theft hotspots. Vehicle break-ins common.' },
-    { state: 'South Carolina', thefts: '12,000+', notes: 'Military bases and I-95 corridor contribute to theft numbers.' },
-    { state: 'Alabama', thefts: '11,000+', notes: 'Birmingham metro area accounts for majority of state thefts.' },
-    { state: 'Ohio', thefts: '10,000+', notes: 'Cleveland, Columbus, and Cincinnati are primary theft areas.' },
-    { state: 'Indiana', thefts: '9,500+', notes: 'Indianapolis area and Gary/Northwest Indiana are hotspots.' },
-  ];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+};
 
-  return (
-    <>
-      <PageSEO
-        title="State-by-State Stolen Gun Database Guide (2026) — All 50 States | SafeOrStolen"
- description="Complete guide to stolen gun databases in all 50 US states. Top 10 states for gun theft, how to check serial numbers in each state, and how SafeOrStolen searches all 50 simultaneously."
-        canonical="/blog/state-stolen-gun-database-guide"
-        keywords="stolen gun database by state, state firearms theft database, check stolen gun by state, gun theft statistics by state"
-        structuredData={[faqSchema, articleSchema]}
-      />
-      <div className="min-h-screen bg-background pt-20">
-        <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Database Guide</span>
-            <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">State-by-State Stolen Gun Database Guide (2026)</h1>
-            <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              Every US state has community theft reports tracking stolen firearms, but public access varies wildly. This guide covers the top 10 states for gun theft, how reporting differs by state, and how to check comprehensively.
-            </p>
-            <p className="text-muted-foreground text-sm mt-3">Updated March 2026 · 9 min read</p>
-          </div>
-        </header>
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Stolen Gun Database by State: What You Can Search',
+  description: DESCRIPTION,
+  author: { '@type': 'Organization', name: 'SafeOrStolen' },
+  publisher: { '@type': 'Organization', name: 'SafeOrStolen', url: 'https://safeorstolen.com' },
+  datePublished: '2026-03-09',
+  dateModified: '2026-10-07',
+  mainEntityOfPage: 'https://safeorstolen.com/blog/state-stolen-gun-database-guide',
+};
 
-        <section className="py-8 px-4">
-          <div className="max-w-xl mx-auto text-center">
-            <Link to="/firearms-check">
-              <Button size="lg" className="text-lg px-8 py-6 font-bold">
-                Search All 50 State Databases Now <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <p className="text-muted-foreground text-sm mt-3"> registry + serial integrity check · 2 free checks</p>
+const LEVELS: [string, string, string][] = [
+  ["National: the FBI's NCIC file", 'Guns reported stolen to any U.S. police agency, kept current', 'Police; licensed dealers voluntarily since August 2025'],
+  ['State crime information systems', 'Each state police network, which feeds NCIC', 'Police in that state'],
+  ['State public searches', 'Guns reported stolen in that one state', 'Anyone, in the few states that offer one (Florida and Ohio among them)'],
+  ['SafeOrStolen', '242,839 police theft and loss reports from 33 states and DC (filed through 2017, years vary by state), live Ohio records, owner reports, altered-serial flag', 'Anyone; 2 free checks'],
+  ['ATF', 'No stolen-gun lookup. eTrace traces recovered guns for police', 'Law enforcement only'],
+];
+
+const sortedStates = [...GUN_STATES].sort((a, b) => a.name.localeCompare(b.name));
+
+const StateStolenGunDatabaseGuide = () => (
+  <>
+    <PageSEO
+      title="Stolen Gun Database by State: What You Can Search (2026) | SafeOrStolen"
+      description={DESCRIPTION}
+      canonical="/blog/state-stolen-gun-database-guide"
+      keywords="stolen gun database by state, state stolen gun database, national stolen gun database, stolen firearm database, check stolen gun by state, public stolen gun search"
+      type="article"
+      publishedTime="2026-03-09"
+      modifiedTime="2026-10-07"
+      structuredData={[faqSchema, articleSchema]}
+    />
+    <div className="min-h-screen bg-background pt-20">
+      <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="text-primary text-sm font-bold tracking-wide">Firearms guide</span>
+          <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">Stolen Gun Database by State: What You Can Search</h1>
+          <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
+            Every state's police report stolen guns into the FBI's NCIC file, which only police and licensed dealers can
+            search. Only a few states, such as Florida and Ohio, let the public search their own records. SafeOrStolen
+            searches police theft and loss reports from 33 states and Washington, DC, plus live Ohio records, in one check.
+          </p>
+          <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 6 min read</p>
+        </div>
+      </header>
+
+      <section className="py-8 px-4">
+        <div className="max-w-xl mx-auto text-center">
+          <Link to="/firearms-check">
+            <Button size="lg" className="text-lg px-8 py-6 font-bold">
+              Check a gun serial number <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <p className="text-muted-foreground text-sm mt-3">2 free checks · no credit card · altered-serial flag included</p>
+        </div>
+      </section>
+
+      <article className="max-w-3xl mx-auto px-4 pb-16">
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Where stolen guns are recorded, and who can search each</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            When an owner reports a gun stolen, the local police department enters it in its state's crime information
+            system, which passes it to NCIC. That's the only list that covers every state, and the public can't see it.
+            Here's the full picture.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/50">
+                  <th className="text-left p-3 text-foreground font-bold">Record</th>
+                  <th className="text-left p-3 text-foreground font-bold">What's in it</th>
+                  <th className="text-left p-3 text-foreground font-bold">Who can search it</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                {LEVELS.map((r) => (
+                  <tr key={r[0]} className="border-t border-border">
+                    <td className="p-3 text-foreground font-medium">{r[0]}</td>
+                    <td className="p-3">{r[1]}</td>
+                    <td className="p-3">{r[2]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 
-        <article className="max-w-3xl mx-auto px-4 pb-16">
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Top 10 States for Firearms Theft</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              According to ATF data and state law enforcement reports, these states have the highest annual firearms theft rates. If you're buying a firearm in any of these states, serial number verification is absolutely critical:
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border border-border rounded-xl text-sm">
-                <thead>
-                  <tr className="bg-muted/50">
-                    <th className="text-left p-3 text-foreground font-bold">Rank</th>
-                    <th className="text-left p-3 text-foreground font-bold">State</th>
-                    <th className="text-left p-3 text-foreground font-bold">Annual Thefts</th>
-                    <th className="text-left p-3 text-foreground font-bold">Notes</th>
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Why a one-state search isn't enough</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            A gun is reported stolen in the state it was taken from. If it's sold across the state line, a search of the
+            buyer's state won't find it. State public searches also only cover what police in that state chose to publish.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            So use more than one check. Run the serial on SafeOrStolen, which covers every state in its records at once.
+            Then ask your local police to run it through NCIC, or do the sale through a licensed dealer who can check
+            the stolen-gun file. Your state's rules on private sales are on our{' '}
+            <Link to="/state-firearm-transfer-laws" className="text-primary hover:underline">state firearm transfer laws</Link> page.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-foreground mb-4">States in SafeOrStolen's police records</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            The 242,839 police theft and loss reports come from these 33 states and Washington, DC. They were filed
+            through 2017, and the years covered vary by state, as listed. Each state's page shows what the records hold
+            for that state. Totals and trends are on{' '}
+            <Link to="/stolen-gun-statistics" className="text-primary hover:underline">stolen gun statistics</Link>.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/50">
+                  <th className="text-left p-3 text-foreground font-bold">State</th>
+                  <th className="text-left p-3 text-foreground font-bold">Years covered</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                {sortedStates.map((s) => (
+                  <tr key={s.slug} className="border-t border-border">
+                    <td className="p-3">
+                      <Link to={`/gun-serial-number-lookup/${s.slug}`} className="text-primary hover:underline">
+                        {s.name}
+                      </Link>
+                    </td>
+                    <td className="p-3">{s.years || 'Not dated in the records'}</td>
                   </tr>
-                </thead>
-                <tbody className="text-muted-foreground">
-                  {topStates.map((s, i) => (
-                    <tr key={s.state} className="border-t border-border">
-                      <td className="p-3 text-foreground font-bold">{i + 1}</td>
-                      <td className="p-3 text-foreground">{s.state}</td>
-                      <td className="p-3">{s.thefts}</td>
-                      <td className="p-3 text-xs">{s.notes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-muted-foreground text-sm mt-3">
+            Not on the list? The check still searches owner reports and Ohio records, and flags altered serials. Ask your
+            local police to run the serial too.
+          </p>
+        </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Why State Databases Alone Aren't Enough</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Firearms cross state lines constantly. A gun stolen in a vehicle break-in in Atlanta could be in a pawn shop in Nashville within 4 hours. If you only check Georgia's database, you'd miss it. If you only check Tennessee's, the theft might not have been reported to Tennessee yet.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              The I-95 corridor (Florida to Maine), I-10 corridor (Florida to California), and I-75 corridor (Michigan to Florida) are the primary routes for stolen firearm trafficking. Guns move along these interstates between states where they're stolen and states where they're sold.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              This is why SafeOrStolen checks the  national stolen-firearms registry, which collects victim reports from every state, and validates serial number integrity. It is not a substitute for a police stolen firearm reports from all 50 states check, but it takes 3 seconds instead of hours of phone calls.
-            </p>
-          </section>
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Questions</h2>
+          <div className="space-y-3">
+            {faqs.map((f) => (
+              <details key={f.question} className="bg-card/50 border border-border rounded-xl p-4">
+                <summary className="font-semibold text-foreground cursor-pointer">{f.question}</summary>
+                <p className="text-muted-foreground mt-2">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">States With Public Stolen Property Databases</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">A few states offer public-facing stolen property search tools:</p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-2">
-              <li><strong className="text-foreground">Arizona — TheftAZ:</strong> theftaz.azag.gov — Arizona AG's stolen property database. Free but Arizona-only. <Link to="/theftaz-alternative" className="text-primary hover:underline">See our TheftAZ alternative</Link></li>
-              <li><strong className="text-foreground">Texas:</strong> Some police departments offer online stolen property searches, but no statewide public database.</li>
-              <li><strong className="text-foreground">Florida:</strong> FDLE offers limited online lookups through county sheriff's offices.</li>
-              <li><strong className="text-foreground">California:</strong> DOJ provides some stolen property lookup capabilities through local agencies.</li>
-            </ul>
-            <p className="text-muted-foreground mt-4">Most states require you to call the local police non-emergency line and ask them to run a serial number through federal law-enforcement systems — a process that can take 30+ minutes and isn't always available to civilians.</p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-3">
-              <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">Does every state have a stolen gun database?</summary>
-                <p className="text-muted-foreground mt-2">Every state has community theft reports tracking stolen firearms, but public access varies. SafeOrStolen checks its own stolen-item reports and public web data for a fast first-pass check.</p>
-              </details>
-              <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">Which states have the most gun thefts?</summary>
-                <p className="text-muted-foreground mt-2">Texas (46K+), Florida (32K+), Georgia (22K+), California (18K+), North Carolina (15K+). Southern states dominate due to higher gun ownership and vehicle break-in rates.</p>
-              </details>
-              <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">How do I check a gun serial number in my state?</summary>
-                <p className="text-muted-foreground mt-2">Use SafeOrStolen — enter any serial number and we check the  national stolen-firearms registry and validate serial integrity in 3 seconds. 2 free checks. For a definitive check, ask your local police to run it through stolen firearm reports from all 50 states.</p>
-              </details>
-              <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">Do I need to check multiple state databases?</summary>
- <p className="text-muted-foreground mt-2">Yes. Guns cross state lines constantly.  is a nationwide victim-reported registry, so SafeOrStolen's check is not limited to one state.</p>
-              </details>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Related Guides</h2>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/blog/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to Check if a Gun is Stolen</Link>
-              <Link to="/blog/atf-gun-serial-number-check" className="text-primary hover:underline font-medium">ATF Serial Number Check</Link>
-              <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to Check If a Gun Is Stolen</Link>
-              <Link to="/blog/gun-show-serial-number-check" className="text-primary hover:underline font-medium">Gun Show Verification</Link>
-              <Link to="/firearms-check" className="text-primary hover:underline font-medium">Free Gun Lookup Tool</Link>
-            </div>
-          </section>
-        </article>
-      </div>
-    </>
-  );
-};
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Related guides</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to check if a gun is stolen</Link>
+            <Link to="/blog/atf-gun-serial-number-check" className="text-primary hover:underline font-medium">ATF serial number check</Link>
+            <Link to="/blog/gun-show-serial-number-check" className="text-primary hover:underline font-medium">Checking a gun at a gun show</Link>
+            <Link to="/firearms-check" className="text-primary hover:underline font-medium">Gun serial number lookup</Link>
+          </div>
+        </section>
+      </article>
+    </div>
+  </>
+);
 
 export default StateStolenGunDatabaseGuide;

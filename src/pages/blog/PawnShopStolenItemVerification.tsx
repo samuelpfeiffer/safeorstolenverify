@@ -1,278 +1,214 @@
-import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, Store, AlertTriangle, CheckCircle, Scale, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
 
+/**
+ * Oct 7 2026: rewritten by hand for "do pawn shops check if items are stolen" (position 18), plus
+ * "do pawn shops check if guns are stolen" (15), "do pawn shops check serial numbers" and "do pawn
+ * shops require id". Removed: the claim that pawn shops search NCIC (only police can), "connected
+ * to 6,000+ law enforcement agencies", a flat "14-30 day" holding period for every state, "12 min
+ * read", "the same verification pawn shops use", a vendor database named as what pawn shops check,
+ * and "peace of mind".
+ */
+
+const WHO_DOES_WHAT: string[][] = [
+  ['Copies the seller\'s photo ID', 'Pawn shop', 'At the counter, before paying'],
+  ['Records the serial number, model and description', 'Pawn shop', 'At the counter, on the pawn ticket'],
+  ['Sends the transaction record to police', 'Pawn shop', 'Daily or as local rules require, often electronically'],
+  ['Compares the records with stolen reports, including NCIC', 'Local police', 'After they receive the report'],
+  ['Holds the item before selling it', 'Pawn shop', 'For the period state or local law sets'],
+  ['Places a hold on or seizes a matching item', 'Police', 'When a record matches a theft report'],
+];
+
+const FAQS = [
+  {
+    question: 'Do pawn shops check if items are stolen?',
+    answer:
+      "Mostly through the police, not a database at the counter. Pawn shops copy the seller's photo ID, record each item's serial number and description, and report the transaction to local police, who compare it with stolen reports. The shop then holds the item for a period set by state or local law. Many shops also run their own checks, such as SafeOrStolen (safeorstolen.com/blog/pawn-shop-stolen-item-verification).",
+  },
+  {
+    question: 'Do pawn shops check serial numbers?',
+    answer:
+      "They record them. Pawn laws generally require the shop to write down the serial number, make and model of each item and pass that record to police, who run the numbers against stolen reports. A shop can't search NCIC itself. Items without a serial, like most jewelry, are described and often photographed instead, which makes them harder to match.",
+  },
+  {
+    question: 'Do pawn shops check if guns are stolen?',
+    answer:
+      "A pawn shop that takes guns must be a federally licensed dealer and logs every gun's serial number in its acquisition and disposition records. Where pawn reporting applies, police can run those serials against stolen reports. When someone redeems a pawned gun, the shop must run a background check on that person. That check is on the person, not on whether the gun is stolen.",
+  },
+  {
+    question: 'Do pawn shops require ID?',
+    answer:
+      "Yes. State and local pawn laws generally require a government-issued photo ID from anyone pawning or selling, and the shop records the name, address and ID number with the transaction. Some places also require a thumbprint or a photo of the seller. Without ID, a legitimate pawn shop will turn you away.",
+  },
+  {
+    question: 'What happens if a pawn shop takes in a stolen item?',
+    answer:
+      "When police match an item to a theft report, they put a hold on it or take it, and it usually goes back to the owner. The shop is typically out what it paid unless it recovers the money from the person who pawned it. Whether the owner must repay the shop, and how holds work, depends on the state.",
+  },
+  {
+    question: 'Is it safe to buy from a pawn shop?',
+    answer:
+      "It's generally lower risk than a stranger online, because the seller's ID is on file, the item was reported to police and it sat through a holding period. It isn't zero risk: a theft reported after the hold ended, or never reported, won't have been caught. Ask for the serial number and check it yourself before paying.",
+  },
+  {
+    question: 'How long do pawn shops hold items before selling them?',
+    answer:
+      'It depends on the state and sometimes the city. Among states that name a holding period, 30 days is the most common, while some set 60, 90 or 120 days and others leave it to local ordinances. The state pawnshop laws page at safeorstolen.com/state-pawnshop-laws lists the period for each state that names one.',
+  },
+];
+
 const PawnShopStolenItemVerification = () => {
   const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "How Pawn Shops Check If Items Are Stolen - Complete Guide",
-    "description": "Learn how pawn shops verify items aren't stolen and how you can protect yourself as a buyer or seller using the same verification tools.",
-    "datePublished": "2025-01-15",
-    "dateModified": "2026-02-06",
-    "author": { "@type": "Organization", "name": "SafeOrStolen" },
-    "publisher": { "@type": "Organization", "name": "SafeOrStolen" }
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Do Pawn Shops Check if Items Are Stolen?',
+    description: 'How pawn shops check for stolen items: seller ID, serial number records, police reporting, holding periods, guns, and what a buyer should check.',
+    datePublished: '2025-01-15',
+    dateModified: '2026-10-07',
+    author: { '@type': 'Organization', name: 'SafeOrStolen' },
+    publisher: { '@type': 'Organization', name: 'SafeOrStolen' },
+    mainEntityOfPage: 'https://safeorstolen.com/blog/pawn-shop-stolen-item-verification',
   };
 
-  const faqs = [
-    {
-      question: "How do pawn shops check if items are stolen?",
-      answer: "Pawn shops often check serial numbers against various stolen item databases, including local police records. They're also required to hold items for a waiting period (14-30 days) and report transactions to police."
-    },
-    {
-      question: "Can I check items the same way pawn shops do?",
-      answer: "Yes! SafeOrStolen gives you access to similar verification capabilities. Enter IMEI, VIN, or serial numbers to check against stolen property databases."
-    },
-    {
-      question: "What happens if a pawn shop buys stolen property?",
-      answer: "Pawn shops must surrender stolen items to police without compensation. They also face potential criminal charges, fines, and license revocation for failing to verify items."
-    },
-    {
-      question: "Are pawn shop items safe to buy?",
-      answer: "Generally yes, as pawn shops have legal obligations to verify items. However, we recommend using SafeOrStolen to double-check any purchase, especially high-value items."
-    },
-    {
-      question: "How long do pawn shops hold items?",
-      answer: "Most states require 14-30 day holding periods before reselling items. This gives police time to match items against theft reports."
-    }
-  ];
-
   const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-    }))
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
   };
 
   return (
     <>
       <PageSEO
-        title="How Pawn Shops Check If Items Are Stolen - Complete Guide | SafeOrStolen"
-        description="Learn how pawn shops verify items aren't stolen and how you can use the same tools. Complete guide to pawn shop verification and stolen item checking."
-        keywords="how do pawn shops check if items are stolen, pawn shop verification, pawn shop stolen goods, check pawn shop items"
+        title="Do Pawn Shops Check if Items Are Stolen? How It Works | SafeOrStolen"
+        description="Do pawn shops check if items are stolen? How seller ID, serial number records, police reporting and holding periods work, what happens with guns, and what buyers should check."
+        keywords="do pawn shops check if items are stolen, how do pawn shops check if items are stolen, do pawn shops check serial numbers, do pawn shops check if guns are stolen, do pawn shops require id, pawn shop holding period"
         canonical="/blog/pawn-shop-stolen-item-verification"
+        modifiedTime="2026-10-07"
+        publishedTime="2025-01-15"
         structuredData={[articleSchema, faqSchema]}
       />
       <div className="min-h-screen bg-background">
-        {/* Article Header */}
-        <article className="max-w-4xl mx-auto px-4 py-16">
-          <header className="mb-12">
+        <article className="max-w-3xl mx-auto px-4 py-16 pt-24">
+          <header className="mb-10">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
               <Link to="/blog" className="hover:text-primary">Blog</Link>
               <span>/</span>
-              <span>Verification Guide</span>
+              <span>Pawn shops</span>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              How Pawn Shops Check If Items Are Stolen
-            </h1>
-            
-            <p className="text-xl text-muted-foreground mb-6">
-              A complete guide to pawn shop verification processes - and how you can use 
-              the same tools to protect yourself when buying used items.
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Do Pawn Shops Check if Items Are Stolen?</h1>
+            <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
+              Yes, but mostly through the police rather than a database at the counter. The shop copies the seller's photo
+              ID, writes down each item's serial number and description, and reports the transaction to local police, who
+              compare it with stolen reports. The shop then holds the item for a period set by state or local law before it
+              can sell it. If a record matches a theft, police put a hold on the item.
             </p>
-
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Updated: February 2026</span>
-              <span>•</span>
-              <span>12 min read</span>
-            </div>
+            <p className="text-sm text-muted-foreground">Updated October 7, 2026</p>
           </header>
-          <BlogHeroImage src={blogImages.pawnShop} alt="Pawn shop employee scanning electronics with barcode reader - pawn shop verification" />
 
-          {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <Store className="w-6 h-6 text-primary" />
-                The Pawn Shop Verification Process
-              </h2>
-              
-              <p className="text-muted-foreground mb-4">
-                Pawn shops are legally required to verify items aren't stolen before buying or accepting 
-                them as collateral. This process involves multiple steps and database checks that help 
-                protect both the shop and law enforcement in recovering stolen property.
-              </p>
+          <BlogHeroImage src={blogImages.pawnShop} alt="Pawn shop counter where items are logged by serial number" />
 
-              <Card className="mb-6">
-                <CardHeader>
-                  <CardTitle>Legal Requirements for Pawn Shops</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Record seller's government-issued ID and photo</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Document item serial numbers, IMEI, or VIN</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Check serial numbers against stolen property databases</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Report all transactions to local law enforcement</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Hold items for 14-30 days before resale (varies by state)</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-4">Databases Pawn Shops Use</h2>
-              
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">LeadsOnline</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      The most widely used pawn shop database, connected to 6,000+ law enforcement 
-                      agencies. Automatically cross-references items against police reports.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Reported Stolen Items</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      FBI's National Crime Information Center contains records of stolen vehicles, 
-                      firearms, and other property reported nationwide.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Business Watch International</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Another major pawn shop database system used by retailers and law enforcement 
-                      to track stolen merchandise.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">State Databases</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Many states maintain their own stolen property databases that pawn shops 
-                      are required to check before purchasing items.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <Scale className="w-6 h-6 text-primary" />
-                Consequences for Pawn Shops
-              </h2>
-
-              <Card className="border-destructive/20 mb-6">
-                <CardHeader>
-                  <CardTitle className="text-destructive">What Happens When Stolen Items Slip Through</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Must surrender stolen items to police without compensation</li>
-                    <li>• Face potential criminal charges for receiving stolen property</li>
-                    <li>• Risk losing their pawn license</li>
-                    <li>• May face civil lawsuits from theft victims</li>
-                    <li>• Suffer reputation damage affecting future business</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <p className="text-muted-foreground">
-                These serious consequences are why legitimate pawn shops take verification seriously. 
-                However, some stolen items still slip through, which is why we recommend always 
-                verifying items yourself with SafeOrStolen.
-              </p>
-            </section>
-
-            <section className="mb-12 bg-primary/5 p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">
-                You Can Verify Items Like a Pawn Shop
-              </h2>
-              
-              <p className="text-muted-foreground mb-6">
-                SafeOrStolen gives you access to the same type of verification pawn shops use. 
-                Whether you're buying from a private seller, marketplace, or even a pawn shop - 
-                verify items yourself for complete peace of mind.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg">
-                  <Link to="/verify">Verify an Item Free</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/app">
-                    <Download className="w-4 h-4 mr-2" />
-                    Get Mobile App
-                  </Link>
-                </Button>
-              </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-              
-              <div className="space-y-4">
-                {faqs.map((faq, i) => (
-                  <Card key={i}>
-                    <CardHeader>
-                      <CardTitle className="text-lg">{faq.question}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{faq.answer}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-          </div>
-
-          {/* CTA */}
-          <footer className="mt-12 pt-8 border-t">
-            <div className="bg-primary text-primary-foreground p-8 rounded-lg text-center">
-              <h3 className="text-2xl font-bold mb-4">
-                Verify Like a Pro - It's Free
-              </h3>
-              <p className="opacity-90 mb-6">
-                Whether you're a buyer, seller, or pawn shop owner - SafeOrStolen helps you verify items instantly.
-              </p>
-              <Button asChild size="lg" variant="secondary">
-                <Link to="/verify">Start Verifying Free</Link>
-              </Button>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Who checks what, and when</h2>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/60">
+                  <tr><th className="px-4 py-3 font-semibold">Step</th><th className="px-4 py-3 font-semibold">Who</th><th className="px-4 py-3 font-semibold">When</th></tr>
+                </thead>
+                <tbody>
+                  {WHO_DOES_WHAT.map((r) => (
+                    <tr key={r[0]} className="border-t border-border">
+                      <td className="px-4 py-3 font-medium">{r[0]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </footer>
+            <p className="text-muted-foreground mt-4 leading-relaxed">
+              The key detail: NCIC, the FBI's national crime records system, is open only to police and other criminal
+              justice agencies. A pawn shop can't type a serial number into it. The match happens on the police side, after
+              the shop's report arrives, which is why the holding period exists.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">What the clerk looks at before paying</h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              Reporting catches items that were already reported stolen. A careful clerk also watches for things a report
+              can't show yet:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>A serial plate that is scratched off, painted over or replaced with a sticker.</li>
+              <li>A phone still signed in to someone's Apple ID or Google account, or a seller who doesn't know the passcode.</li>
+              <li>Tools engraved with a company name, or rental store tags.</li>
+              <li>Several new-in-box items with no receipt, or the same person back every few days with more.</li>
+            </ul>
+            <p className="text-muted-foreground mt-4 leading-relaxed">
+              Many shops also run serial numbers through their own pre-purchase check. Shop owners can read how that works on
+              the <Link to="/for-pawn-shops" className="text-primary underline">stolen item check for pawn shops</Link> page.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Guns at pawn shops</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              A pawn shop that deals in guns needs a federal firearms license. Every gun it takes in goes into its
+              acquisition and disposition records by serial number, and where pawn reporting applies, police can run those
+              serials against stolen reports. When someone redeems a pawned gun, the shop has to run a background check on
+              that person before handing it back. That background check is about the person. It does not tell anyone
+              whether the gun was stolen.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Possessing a gun whose serial number has been obliterated is a federal crime under 18 U.S.C. § 922(k), so a
+              shop should refuse one outright. To check a gun serial yourself, use the{' '}
+              <Link to="/firearms-check" className="text-primary underline">gun serial number check</Link>.
+            </p>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Where the system has gaps</h2>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>A theft reported after the holding period ends won't stop the sale.</li>
+              <li>Owners who never wrote down a serial number can't give one to police, so there's nothing to match.</li>
+              <li>Rules differ by state and city. Some states license and set holding periods; others leave it to local ordinances. See the <Link to="/state-pawnshop-laws" className="text-primary underline">pawnshop laws by state</Link>.</li>
+              <li>Jewelry and other items without serial numbers are matched by description, which is much less reliable.</li>
+            </ul>
+          </section>
+
+          <section className="mb-12 bg-primary/5 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Buying from a pawn shop? Check it yourself</h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              Ask for the serial number, IMEI or VIN and run it on SafeOrStolen before you pay. It searches SafeOrStolen's
+              theft reports and public web results, plus police gun theft reports from 33 states and DC for guns, a national
+              stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. It does not
+              search NCIC or pawn reporting systems. Your first 2 checks are free.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button asChild size="lg"><Link to="/verify">Check a serial number</Link></Button>
+              <Button asChild variant="outline" size="lg"><Link to="/app">Get the free web app</Link></Button>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Common questions</h2>
+            <div className="space-y-4">
+              {FAQS.map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-border bg-card p-5">
+                  <h3 className="font-semibold text-lg mb-2">{faq.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </article>
       </div>
       <RelatedPagesSection currentPage="/blog/pawn-shop-stolen-item-verification" currentCategory="blog" maxLinks={5} />

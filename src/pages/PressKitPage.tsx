@@ -1,322 +1,159 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Download, FileText, Image, Video, Quote, ExternalLink,
-  Shield, Smartphone, Zap, Globe
-} from 'lucide-react';
+import { Download, FileText, Mail } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
-import { PRESS_RELEASES } from '@/data/pressCoverage';
 
-const PressKitPage = () => {
-  const companyFacts = [
-    { label: "Founded", value: "2017" },
-    { label: "Headquarters", value: "Peoria, Arizona" },
-    { label: "Industry", value: "SaaS / Consumer Protection" },
-    { label: "Categories", value: "6 item categories" },
-    { label: "Product", value: "AI-powered web app" }
-  ];
+/**
+ * Oct 7 2026: rewritten by hand for "safeorstolen press kit". Removed: a founding year,
+ * an
+ * invented "$500B in stolen goods" pitch, a "3 sec average" stat, two founder quotes nobody can
+ * attribute, "Carfax for everything" and "first universal platform" claims, downloadable assets
+ * (logo pack, demo video, fact sheet PDF) that don't exist, and off-site press release links.
+ * What's left is boilerplate, checkable facts, the logo file the site actually serves, and the contact.
+ */
 
-  const keyStats = [
-    { icon: Shield, stat: "6", label: "Item Categories" },
-    { icon: Smartphone, stat: "Web", label: "Installable App" },
-    { icon: Zap, stat: "3 sec", label: "Average Verification Time" },
-    { icon: Globe, stat: "2", label: "Free Checks" }
-  ];
+const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
-  const mediaAssets = [
-    {
-      title: "Logo Package",
-      description: "High-resolution logos in PNG, SVG, and vector formats",
-      icon: Image,
-      type: "ZIP"
-    },
-    {
-      title: "Product Screenshots",
-      description: "App screenshots, verification results, dashboard views",
-      icon: Image,
-      type: "ZIP"
-    },
-    {
-      title: "Demo Video",
-      description: "60-second product demonstration video",
-      icon: Video,
-      type: "MP4"
-    },
-    {
-      title: "Company Fact Sheet",
-      description: "One-page company overview and key metrics",
-      icon: FileText,
-      type: "PDF"
-    }
-  ];
+const SHORT_BOILERPLATE =
+  'SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ.';
 
-  const storyAngles = [
-    {
-      angle: "Consumer Protection Innovation",
-      pitch: "Local startup's app helps buyers avoid $500B in stolen goods annually",
-      bestFor: "Consumer tech, personal finance publications"
-    },
-    {
-      angle: "Carfax for Everything",
-      pitch: "The first universal verification platform that works for phones, cars, bikes, and even firearms",
-      bestFor: "Tech publications, lifestyle media"
-    },
-    {
-      angle: "Fighting Organized Crime",
-      pitch: "How a verification app is disrupting the stolen goods market",
-      bestFor: "Crime, security, investigative journalism"
-    },
-    {
-      angle: "Mobile-First Disruption",
-      pitch: "SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place",
-      bestFor: "Mobile tech, app review sites"
-    }
-  ];
+const LONG_BOILERPLATE =
+  "SafeOrStolen (safeorstolen.com) is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. A buyer enters an IMEI, VIN, license plate or serial number and sees whether it appears in SafeOrStolen's own theft reports and in public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Each result lists every source searched and is saved to the user's account with the date. The first 2 checks are free.";
 
-  const quotes = [
-    {
-      quote: "Every year, millions of people unknowingly buy stolen property, leading to financial loss and legal trouble. SafeOrStolen gives buyers and sellers the tools to verify legitimacy in seconds.",
-      attribution: "SafeOrStolen Founder"
-    },
-    {
-      quote: "We're building the Carfax for everything - a single platform where you can verify any secondhand item isn't stolen before you buy or sell.",
-      attribution: "SafeOrStolen Founder"
-    }
-  ];
+const facts: [string, string][] = [
+  ['Name', 'SafeOrStolen (one word, capital S, O and S)'],
+  ['Based in', 'Peoria, AZ'],
+  ['Website', 'safeorstolen.com'],
+  ['What it does', 'Checks whether an IMEI, VIN, plate or serial number has been reported stolen in the records it searches'],
+  ['Items covered', 'Phones, vehicles, license plates, guns, bikes and serial-numbered items such as laptops, tools and cameras'],
+  ['Price', '2 free checks; $0.99 a check; $10 a month unlimited'],
+  ['App', 'Free installable web app at safeorstolen.com/app (no App Store or Google Play app)'],
+  ['Press contact', PRESS_EMAIL],
+];
 
-  return (
-    <>
-      <PageSEO
-        title="Press Kit | SafeOrStolen Media Resources"
-        description="Download SafeOrStolen press materials including logos, screenshots, company facts, and story angles. Media resources for journalists and publications."
-        canonical="https://safeorstolen.com/press-kit"
-      />
-      <div className="min-h-screen bg-background pt-20">
-        {/* Hero */}
-        <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-          <div className="container mx-auto px-4 text-center">
-            <Badge variant="outline" className="mb-4">
-              <FileText className="h-4 w-4 mr-2" />
-              Press Kit
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              SafeOrStolen Media Resources
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Everything journalists, bloggers, and media professionals need to 
-               cover SafeOrStolen and its AI-powered verification tools.
-            </p>
-            <Button size="lg" className="gap-2" asChild>
-               <a href="mailto:support@safeorstolen.com">
-                <FileText className="h-5 w-5" />
-                Contact Press Team
+const accuracyNotes = [
+  'SafeOrStolen does not search NCIC, ATF eTrace, DMV or MVD records, Apple or Google account status, manufacturer, pawn or insurer databases. Please don\'t describe a check as a police database search.',
+  'A "no report found" result means the number wasn\'t found in the records searched. It doesn\'t prove an item was never stolen.',
+  'The gun records are 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed through 2017 (the years covered vary by state), plus live Ohio law-enforcement records.',
+  'AI writes a plain-language note on each result. It never decides whether an item is stolen; that comes only from the records searched.',
+  'Plate checks never show owner names.',
+];
+
+const PressKitPage = () => (
+  <>
+    <PageSEO
+      title="SafeOrStolen Press Kit: Boilerplate, Facts and Logo"
+      description="SafeOrStolen press kit: short and long company boilerplate, a fact sheet, accuracy notes on what a check searches, the logo file and the press contact email."
+      keywords="safeorstolen press kit, safeorstolen boilerplate, safeorstolen logo, safeorstolen fact sheet"
+      canonical="/press-kit"
+      modifiedTime="2026-10-07"
+    />
+    <div className="min-h-screen bg-background pt-20">
+      <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <Badge variant="outline" className="mb-4">
+            <FileText className="h-4 w-4 mr-2" />
+            Press kit
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">SafeOrStolen Press Kit</h1>
+          <p className="text-lg text-muted-foreground mb-4">
+            Everything on this page is free to copy into a story: the company boilerplate, a fact sheet, notes on
+            how to describe a check accurately, and the logo. {SHORT_BOILERPLATE} Questions go to {PRESS_EMAIL}.
+          </p>
+          <p className="text-sm text-muted-foreground">Updated October 7, 2026</p>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-3xl space-y-6">
+          <h2 className="text-2xl font-bold">Boilerplate</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <p className="text-sm font-semibold mb-2">One line</p>
+              <p className="text-muted-foreground">{SHORT_BOILERPLATE}</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <p className="text-sm font-semibold mb-2">One paragraph</p>
+              <p className="text-muted-foreground">{LONG_BOILERPLATE}</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold mb-6">Fact sheet</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-border rounded-lg bg-background">
+              <tbody>
+                {facts.map(([label, value]) => (
+                  <tr key={label} className="border-t border-border first:border-t-0 align-top">
+                    <th scope="row" className="text-left p-3 font-semibold whitespace-nowrap">{label}</th>
+                    <td className="p-3 text-muted-foreground">{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold mb-4">Getting the details right</h2>
+          <p className="text-muted-foreground mb-4">
+            These are the points most often described wrong. The full source list is on{' '}
+            <Link to="/data-sources" className="text-primary hover:underline">data sources</Link>.
+          </p>
+          <ul className="space-y-3 text-muted-foreground list-disc pl-6">
+            {accuracyNotes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold mb-4">Logo</h2>
+          <p className="text-muted-foreground mb-6">
+            The SafeOrStolen "SOS" logo (white letters with a phone and orange check mark in place of the O, on a
+            black background) as a PNG, 631 by 501 pixels. Please don't stretch or recolor it. For a different size
+            or format, email {PRESS_EMAIL}.
+          </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <img src="/sos-logo.png" alt="SafeOrStolen logo" className="w-32 h-auto rounded-lg border border-border" />
+            <Button asChild variant="outline" className="gap-2">
+              <a href="/sos-logo.png" download="safeorstolen-logo.png">
+                <Download className="h-4 w-4" />
+                Download logo (PNG)
               </a>
             </Button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Key Stats */}
-        <section className="py-12 border-b">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {keyStats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <stat.icon className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <p className="text-3xl font-bold text-primary">{stat.stat}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Company Facts */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Company Facts</h2>
-            <div className="max-w-3xl mx-auto">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {companyFacts.map((fact, index) => (
-                      <div key={index} className="flex justify-between p-3 bg-muted/50 rounded-lg">
-                        <span className="text-muted-foreground">{fact.label}</span>
-                        <span className="font-semibold">{fact.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* About SafeOrStolen */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-8">About SafeOrStolen</h2>
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <p className="text-lg">
-                    <strong>SafeOrStolen</strong> is a SaaS stolen-item verification platform that allows 
-                    users to instantly check if secondhand items are reported as lost, stolen, or safe to 
-                    purchase. The platform supports IMEI, VIN, and serial number verification across all 
-                     six item categories using SafeOrStolen reports, public web results, and AI analysis.
-                  </p>
-                  <p>
-                    Founded in 2017, SafeOrStolen offers an installable web app with barcode scanning on supported phone cameras. The platform serves individual buyers and sellers on marketplaces like 
-                    Facebook Marketplace, eBay, and OfferUp, as well as businesses including pawn shops, 
-                    auto dealers, and auction houses.
-                  </p>
-                  <p>
-                    <strong>Mission:</strong> To protect buyers, sellers, and businesses from financial 
-                    loss, legal trouble, and involvement with stolen goods - ultimately reducing stolen 
-                    goods crime globally.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Story Angles */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-4">Story Angles</h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Ready-to-use story angles for your coverage
-            </p>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {storyAngles.map((story, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{story.angle}</CardTitle>
-                    <CardDescription>{story.pitch}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      <strong>Best for:</strong> {story.bestFor}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Quotes */}
-        <section className="py-16 bg-primary/5">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              <Quote className="h-8 w-8 inline mr-2 text-primary" />
-              Quotable Quotes
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {quotes.map((quote, index) => (
-                <Card key={index} className="bg-background">
-                  <CardContent className="pt-6">
-                    <blockquote className="text-lg italic mb-4">
-                      "{quote.quote}"
-                    </blockquote>
-                    <p className="text-sm text-muted-foreground">
-                      — {quote.attribution}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Media Assets */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-4">Media Assets</h2>
-            <p className="text-center text-muted-foreground mb-12">
-              Download logos, screenshots, and other assets for your coverage
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              {mediaAssets.map((asset, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-6">
-                    <div className="text-center">
-                      <div className="p-3 bg-primary/10 rounded-lg inline-block mb-3">
-                        <asset.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="font-semibold mb-1">{asset.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        {asset.description}
-                      </p>
-                      <Button variant="outline" size="sm" className="gap-2" asChild>
-                         <a href={`mailto:support@safeorstolen.com?subject=Media Asset Request: ${asset.title}`}>
-                          <Download className="h-4 w-4" />
-                          Request
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Press Releases */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Recent Press Releases</h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {PRESS_RELEASES.map((release, index) => (
-                <Card key={index} className="hover:shadow-md transition-shadow">
-                  <CardContent className="py-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="font-semibold">{release.title}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {release.outlet} • {release.date}
-                        </p>
-                      </div>
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={release.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Contact Press Team</h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              For media inquiries, interview requests, or additional assets, 
-              please contact our press team.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
-               <a href="mailto:support@safeorstolen.com">
-                   support@safeorstolen.com
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/about">
-                  About SafeOrStolen
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold mb-4">Press contact</h2>
+          <p className="text-muted-foreground mb-6">
+            Email {PRESS_EMAIL} with your outlet and deadline. For a summary of the company and the media contact,
+            see the <Link to="/press" className="text-primary hover:underline">press page</Link>.
+          </p>
+          <Button size="lg" asChild className="gap-2">
+            <a href={`mailto:${PRESS_EMAIL}?subject=Press inquiry`}>
+              <Mail className="h-5 w-5" />
+              {PRESS_EMAIL}
+            </a>
+          </Button>
+        </div>
+      </section>
+    </div>
+  </>
+);
 
 export default PressKitPage;

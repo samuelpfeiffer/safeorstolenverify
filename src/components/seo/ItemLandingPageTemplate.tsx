@@ -163,7 +163,7 @@ export const ItemLandingPageTemplate = ({
  </div>
  ))}
  
- <h2>What is {itemType} Verification?</h2>
+ <h2>What a {itemType} check looks for</h2>
  <p>{content.whatIs}</p>
  
  <h2>How to Check if {itemType} is Stolen</h2>
@@ -174,7 +174,7 @@ export const ItemLandingPageTemplate = ({
  </ol>
  <p>{content.howItWorks}</p>
  
- <h2>Why Check Before Buying?</h2>
+ <h2>Why check before you buy</h2>
  <p>{content.whyCheck}</p>
  <ul>
  {content.benefits.map((b, i) => (
@@ -182,8 +182,8 @@ export const ItemLandingPageTemplate = ({
  ))}
  </ul>
  
- <h2>Databases We Search</h2>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 34 states and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records and federal VIN data. AI notes are advisory and never decide the result.</p>
+ <h2>What a check searches</h2>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry, and vehicles against Arizona law-enforcement records and federal VIN data. A lost-and-stolen phone blacklist check is available as a paid add-on. AI notes are advisory and never decide the result.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -193,18 +193,18 @@ export const ItemLandingPageTemplate = ({
  </div>
  ))}
  
- <h2>Related Verification Tools</h2>
+ <h2>Other checks</h2>
  <ul>
  <li><a href="/imei-checker">IMEI Checker</a> - Verify phones</li>
  <li><a href="/vin-checker">VIN Checker</a> - Verify vehicles</li>
- <li><a href="/serial-number-checker">Serial Number Checker</a> - Verify electronics</li>
+ <li><a href="/serial-number-checker">Serial Number Checker</a> - Check electronics, tools and more</li>
  <li><a href="/firearms-check">Firearm Check</a> - Verify firearms</li>
  <li><a href="/license-plate-lookup">License Plate Lookup</a> - Check by plate</li>
  <li><a href="/verify">Verify Any Item</a></li>
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, guns and bikes from one search box. <a href="/verify">Run a check</a>: 2 free checks, then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
  </div>
  </noscript>
@@ -234,15 +234,15 @@ export const ItemLandingPageTemplate = ({
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Clock className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">3 Seconds</span>
+ <span className="text-sm font-semibold">Results in seconds</span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <CheckCircle className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">multiple sources</span>
+ <span className="text-sm font-semibold">Sources listed</span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Award className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">Mobile App</span>
+ <span className="text-sm font-semibold">Free web app</span>
  </div>
  </div>
  </div>
@@ -300,7 +300,7 @@ export const ItemLandingPageTemplate = ({
  {/* What Is Section */}
  <section className="py-16 px-4 bg-card/50">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-6">What is {itemType} Verification?</h2>
+ <h2 className="text-3xl font-bold mb-6">What a {itemType} check looks for</h2>
  <p 
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.whatIs) }}
@@ -312,7 +312,7 @@ export const ItemLandingPageTemplate = ({
  {/* How It Works */}
  <section className="py-16 px-4">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-8 text-center">How It Works</h2>
+ <h2 className="text-3xl font-bold mb-8 text-center">Step by step</h2>
  <div className="space-y-6">
  {content.process.map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-card rounded-lg">
@@ -330,7 +330,7 @@ export const ItemLandingPageTemplate = ({
  {/* Why Check Section */}
  <section className="py-16 px-4 bg-card/50">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-6">Why Check Before Buying?</h2>
+ <h2 className="text-3xl font-bold mb-6">Why check before you buy</h2>
  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{content.whyCheck}</p>
  <div className="grid md:grid-cols-2 gap-4">
  {content.benefits.map((benefit, index) => (
@@ -346,7 +346,7 @@ export const ItemLandingPageTemplate = ({
  {/* FAQ Section */}
  <section className="py-16 px-4">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+ <h2 className="text-3xl font-bold mb-8 text-center">Common questions</h2>
  <Accordion type="single" collapsible className="space-y-4">
  {content.faqs.map((faq, index) => (
  <AccordionItem key={index} value={`item-${index}`} className="bg-card px-6 rounded-lg">
@@ -365,7 +365,7 @@ export const ItemLandingPageTemplate = ({
  {/* Related Verification Tools */}
  <section className="py-16 px-4 bg-card/50">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-6">Related Verification Tools</h2>
+ <h2 className="text-3xl font-bold mb-6">Other checks</h2>
  <div className="grid md:grid-cols-3 gap-4">
  <Link to="/imei-checker" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">IMEI Checker</h3>
@@ -373,7 +373,7 @@ export const ItemLandingPageTemplate = ({
  </Link>
  <Link to="/vin-checker" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">VIN Checker</h3>
- <p className="text-sm text-muted-foreground">Full vehicle history check</p>
+ <p className="text-sm text-muted-foreground">Check a car or truck by VIN</p>
  </Link>
  <Link to="/serial-number-checker" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Serial Number Checker</h3>

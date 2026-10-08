@@ -1,329 +1,136 @@
-import { Link, useLocation } from '@/lib/router-compat';
-import { Shield, Search, CheckCircle, Clock, Award, ArrowRight, HelpCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { PageSEO } from '@/components/seo/PageSEO';
-import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
-import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
-import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import { useState } from 'react';
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
-const PartialSerialNumberSearchPage = () => {
-  const location = useLocation();
-  const [serialInput, setSerialInput] = useState('');
-
-  const handleSearch = () => {
-    if (serialInput.trim()) {
-      window.location.href = `/verify?serial=${encodeURIComponent(serialInput.trim())}`;
-    }
-  };
-
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Partial Serial Number Search",
-      "url": "https://safeorstolen.com/partial-serial-number-search",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen",
-        "url": "https://safeorstolen.com"
+/**
+ * Oct 7 2026: rewritten by hand for "partial serial number search" (no Search Console data yet;
+ * plain phrase people type: "search partial serial number", "serial number worn off"). The old page
+ * promised wildcard "fuzzy matching across all databases", a bike-registry count and firearm partial
+ * matching. In the product, a fragment is matched against SafeOrStolen's own theft reports (any report
+ * whose number contains the characters); the other sources need the full number. Copy now says that.
+ */
+const PartialSerialNumberSearchPage = () => (
+  <ItemLandingPageTemplate
+    title="Partial Serial Number Search: Check a Worn or Incomplete Serial | SafeOrStolen"
+    metaDescription="Partial serial number search: what you can find with only part of a serial, how to read a worn or scratched number, and what a missing serial tells a buyer."
+    h1="Partial Serial Number Search: Checking a Worn or Incomplete Serial"
+    itemType="Partial Serial Number"
+    dateModified="2026-10-07"
+    searchPlaceholder="Enter the characters you can read"
+    keywords={[
+      'partial serial number search',
+      'partial serial number lookup',
+      'search with part of a serial number',
+      'incomplete serial number lookup',
+      'serial number worn off',
+      'serial number scratched off',
+      'how to read a faded serial number',
+      'missing serial number stolen',
+    ]}
+    quickAnswer={{
+      question: 'Can I search for a stolen item with only part of the serial number?',
+      answer:
+        "Yes, with limits. Enter the longest run of characters you can read for certain on SafeOrStolen (safeorstolen.com/partial-serial-number-search). Its own theft reports are matched on any report whose serial contains those characters, so a fragment can still surface a match. The other sources it searches need the full number. If the serial was deliberately scratched or ground off, treat that as a warning sign, not a reading problem.",
+    }}
+    sections={[
+      {
+        heading: 'What a fragment can and cannot find',
+        table: {
+          columns: ['Source', 'Partial serial works?', 'What to do'],
+          rows: [
+            ['SafeOrStolen theft reports', 'Yes. Any report whose serial contains your characters, in that order, is returned.', 'Enter 5 or more characters you are sure of, then compare the full serial on the report with the item.'],
+            ['Public web results', 'Rarely. Listings and posts mention full serials, so a fragment seldom matches.', 'Try again once you have recovered more of the number.'],
+            ['Stolen-bicycle registry and police firearm reports', 'No. These need the full serial.', 'Recover the full number from paperwork or the item before you rely on a no-match.'],
+            ['Police', 'Sometimes. Officers can search police records the public can\'t see.', 'Call the non-emergency line if the item matters, especially for a gun.'],
+          ],
+        },
       },
-      "serviceType": "Stolen Property Verification",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Worldwide"
+      {
+        heading: 'How to read a worn, faded or scratched serial',
+        list: [
+          'Shine a flashlight across the plate from a low angle instead of straight on. Stamped and engraved characters cast shadows that show up when the surface is worn flat.',
+          'Take a photo with the flash on at an angle, then zoom in on your phone. A camera often picks up characters your eye skips.',
+          'For a stamped metal number, lay thin paper over it and rub lightly with a soft pencil.',
+          'Clean the area with a damp cloth. Don\'t sand, file or use chemicals; that destroys what is left.',
+          'Look for the number somewhere else: the box label, receipt, warranty card, insurance list, the device\'s settings menu, or (for cameras) the photo file\'s data.',
+        ],
       },
-      "description": "Search for stolen items with partial or incomplete serial numbers using fuzzy matching across multiple sources."
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Search with Partial Serial Numbers",
-      "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Enter known characters", "text": "Enter the characters you can read" },
-        { "@type": "HowToStep", "position": 2, "name": "Mark unknowns", "text": "Use * or ? for unknown characters" },
-        { "@type": "HowToStep", "position": 3, "name": "Fuzzy search", "text": "We search using fuzzy matching algorithms" },
-        { "@type": "HowToStep", "position": 4, "name": "Review matches", "text": "Review potential matches from results" }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      {
+        heading: 'Characters people misread',
+        table: {
+          columns: ['Looks like', 'Could be', 'Tip'],
+          rows: [
+            ['0', 'O or D', 'VINs never use O; most serials mix letters and numbers, so check the brand\'s format.'],
+            ['1', 'I or L', 'VINs never use I. On worn stamps, a 1 often has a small flag at the top.'],
+            ['5', 'S', 'Search both if you are unsure, as two separate checks.'],
+            ['8', 'B or 3', 'A worn 8 can look like a 3 when the left side is rubbed away.'],
+            ['2', 'Z', 'A stamped Z has a straight top; a 2 is curved.'],
+          ],
+        },
+      },
+      {
+        heading: 'When a missing serial is the answer',
+        paragraphs: [
+          "A serial that has faded on an old sticker is normal. A serial that has been ground off, drilled out, painted over or covered with a new sticker is not. On a bike, tool, phone or laptop, that is one of the clearest signs the item is stolen, and you should walk away.",
+          "On a gun, it is more serious: possessing a firearm with an obliterated or altered serial number is a federal crime under 18 U.S.C. § 922(k). Don't buy it and don't try to restore the number yourself. Tell the police, who can send it to a lab that recovers stamped numbers.",
+        ],
+      },
+    ]}
+    content={{
+      intro:
+        'Have only part of a serial number? Enter the characters you can read and check them against SafeOrStolen theft reports. This page also shows how to recover more of a worn number and when a missing serial means you should walk away.',
+      whatIs:
+        'A partial serial number search looks for theft reports using only the characters you can still read. It helps when a label has faded, a plate is scratched, or you only wrote down part of the number. For a full serial, use the <a href="/serial-number-checker">serial number checker</a>; for a bike frame, use the <a href="/check-bike">bike serial lookup</a>.',
+      howItWorks:
+        "Type the characters you are sure of, with no spaces, dashes or wildcard symbols. SafeOrStolen returns any theft report in its own records whose serial contains that run of characters, and lists every source it searched. If something comes back, compare the full serial on the report, the item type and the brand with the item in front of you before you draw a conclusion.",
+      whyCheck:
+        "A partial match is a lead, not proof, and a partial no-match proves even less. The point of checking is to catch the obvious case before you pay, and to know when to stop and get the full number from the seller's paperwork or the police.",
+      benefits: [
+        'Matches a fragment against SafeOrStolen theft reports',
+        'Every source searched is listed, so you know what a no-match covers',
+        'Works for any item type: electronics, tools, bikes, cameras, guns',
+        'Each check is saved to your account with the date',
+        '2 free checks with a free account, no credit card',
+      ],
+      process: [
+        'Write down every character you can read, in order, and mark where the gaps are.',
+        'Try the low-angle flashlight and pencil-rubbing tricks to recover more characters.',
+        'Search the longest unbroken run you are sure of, 5 characters or more.',
+        'If a character could be two things (5 or S, 0 or O), run a second check with the other reading.',
+        'If a report comes back, compare its full serial, brand and item type with the item. If the serial was removed on purpose, walk away and tell the police.',
+      ],
+      faqs: [
         {
-          "@type": "Question",
-          "name": "Can I search with only part of a serial number?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, SafeOrStolen supports partial serial number searches. Enter the characters you can read and use * for unknown characters."
-          }
+          question: 'Can I look up a serial number if I only have part of it?',
+          answer:
+            "Yes. SafeOrStolen (safeorstolen.com/partial-serial-number-search) matches the characters you enter against its own theft reports and returns any report whose serial contains them. Enter at least 5 characters you are sure of. The bike registry, police firearm reports and web results need the full number, so a no-match on a fragment tells you little.",
         },
         {
-          "@type": "Question",
-          "name": "How accurate is partial serial number search?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Partial searches may return multiple potential matches. The more characters you provide, the more accurate the results."
-          }
+          question: 'Should I use * or ? for the characters I can\'t read?',
+          answer:
+            "No. Enter only the longest unbroken run of characters you are sure of, with no symbols, spaces or dashes. The search already finds reports whose serial contains that run anywhere, so you don't need to mark the missing characters at the start or end.",
         },
         {
-          "@type": "Question",
-          "name": "What should I use for unknown characters?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Use * (asterisk) or ? (question mark) for unknown characters. For example: ABC*789 or ??12345."
-          }
-        }
-      ]
-    }
-  ];
-
-  return (
-    <>
-      <PageSEO
-        title="Partial Serial Number Search - Find Stolen Items | SafeOrStolen"
-        description="Search for stolen items with partial or incomplete serial numbers. SafeOrStolen uses fuzzy matching across multiple sources."
-        keywords="partial serial number search, incomplete serial lookup, fuzzy serial search, find serial number, worn serial number check"
-        canonical={location.pathname}
-        structuredData={structuredData}
-      />
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
-        {/* Hero Section */}
-        <section className="pt-24 pb-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
-                Partial Serial Number Search
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Don't have the full serial? We can still help. Enter the characters you CAN read and use * for unknown characters. Our fuzzy matching searches across multiple sources for potential matches.
-              </p>
-              
-              {/* Search Input */}
-              <div className="max-w-xl mx-auto space-y-4">
-                <div className="relative">
-                  <Input 
-                    type="text"
-                    placeholder="Enter partial serial (e.g., ABC*789 or ??12345)"
-                    className="text-lg py-6 pr-32"
-                    value={serialInput}
-                    onChange={(e) => setSerialInput(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                  />
-                  <Button 
-                    size="lg" 
-                    className="absolute right-1 top-1 bottom-1"
-                    onClick={handleSearch}
-                  >
-                    <Search className="w-4 h-4 mr-2" />
-                    Search
-                  </Button>
-                </div>
-                <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-                  <HelpCircle className="w-4 h-4" />
-                  Example: ABC*789 or ??12345 or PARTIAL*
-                </p>
-              </div>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center p-4 bg-card rounded-lg">
-                <Shield className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">multiple sources</span>
-              </div>
-              <div className="flex flex-col items-center p-4 bg-card rounded-lg">
-                <Clock className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">Fuzzy Matching</span>
-              </div>
-              <div className="flex flex-col items-center p-4 bg-card rounded-lg">
-                <CheckCircle className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">Partial Support</span>
-              </div>
-              <div className="flex flex-col items-center p-4 bg-card rounded-lg">
-                <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">Free to Try</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <SitewideCredibilityBar />
-
-        {/* How It Works */}
-        <section className="py-16 px-4 bg-card/50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">How Partial Search Works</h2>
-            <div className="space-y-6">
-              {[
-                "Enter the characters you CAN read from the serial number",
-                "Use * or ? for unknown/unreadable characters",
-                "We search using fuzzy matching algorithms across all databases",
-                "Review potential matches and verify against the item"
-              ].map((step, index) => (
-                <div key={index} className="flex gap-4 p-6 bg-background rounded-lg">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg flex items-center">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* When Partial Search Helps */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">When Partial Search Helps</h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {[
-                "Worn or faded serial number labels",
-                "Damaged or scratched engravings",
-                "Inherited items with incomplete records",
-                "Photos where serial is partially visible",
-                "Items with missing plates or stickers",
-                "Old equipment with degraded markings"
-              ].map((item, index) => (
-                <div key={index} className="flex gap-3 p-4 bg-card rounded-lg">
-                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-base">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Tips for Better Results */}
-        <section className="py-16 px-4 bg-card/50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Tips for Better Results</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-6 bg-background rounded-lg">
-                <h3 className="font-bold text-lg mb-2">✓ Enter at least 4-5 characters</h3>
-                <p className="text-muted-foreground">More known characters = more accurate results</p>
-              </div>
-              <div className="p-6 bg-background rounded-lg">
-                <h3 className="font-bold text-lg mb-2">✓ Note where unknowns are</h3>
-                <p className="text-muted-foreground">Beginning, middle, or end affects matching</p>
-              </div>
-              <div className="p-6 bg-background rounded-lg">
-                <h3 className="font-bold text-lg mb-2">✓ Include both letters AND numbers</h3>
-                <p className="text-muted-foreground">Mixed characters help narrow results</p>
-              </div>
-              <div className="p-6 bg-background rounded-lg">
-                <h3 className="font-bold text-lg mb-2">✓ Try multiple variations</h3>
-                <p className="text-muted-foreground">O vs 0, I vs 1, S vs 5 if unsure</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Databases with Partial Support */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Databases with Partial Search Support</h2>
-            <div className="space-y-4 mb-8">
-              <div className="p-4 bg-card rounded-lg border-l-4 border-primary">
-                <h3 className="font-bold">Bicycle Registries</h3>
-                <p className="text-muted-foreground">Full fuzzy matching across 1M+ registered bikes</p>
-              </div>
-              <div className="p-4 bg-card rounded-lg border-l-4 border-primary">
-                <h3 className="font-bold">User-Reported Stolen Items</h3>
-                <p className="text-muted-foreground">Pattern matching on community-reported stolen items</p>
-              </div>
-              <div className="p-4 bg-card rounded-lg border-l-4 border-primary">
-                <h3 className="font-bold">Firearms Databases</h3>
-                <p className="text-muted-foreground">Partial matching on firearm serial numbers</p>
-              </div>
-            </div>
-            <p className="text-muted-foreground">
-              <strong>Note:</strong> Partial searches may return multiple potential matches. Full serial numbers always provide more accurate results. Some databases require complete serial numbers for verification.
-            </p>
-            <DataPartnerBadges variant="compact" className="mt-8" />
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 px-4 bg-card/50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-0" className="bg-background px-6 rounded-lg">
-                <AccordionTrigger className="text-left font-semibold">
-                  Can I search with only part of a serial number?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Yes, SafeOrStolen supports partial serial number searches. Enter the characters you can read and use * for unknown characters. We'll search using fuzzy matching algorithms across applicable databases.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-1" className="bg-background px-6 rounded-lg">
-                <AccordionTrigger className="text-left font-semibold">
-                  How accurate is partial serial number search?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Partial searches may return multiple potential matches. The more characters you provide, the more accurate the results. At least 4-5 known characters are recommended for useful results.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2" className="bg-background px-6 rounded-lg">
-                <AccordionTrigger className="text-left font-semibold">
-                  What if I get multiple matches?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Review each potential match carefully. Compare additional details like item type, brand, model, and location to determine which match is relevant to your item.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </section>
-
-        {/* Related Tools */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Related Tools</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <Link to="/serial-number-checker" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="font-bold mb-2">Serial Number Checker</h3>
-                <p className="text-sm text-muted-foreground">For complete serial numbers</p>
-              </Link>
-              <Link to="/check-if-stolen" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="font-bold mb-2">Universal Stolen Check</h3>
-                <p className="text-sm text-muted-foreground">Check any item type</p>
-              </Link>
-              <Link to="/check-bike" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="font-bold mb-2">Bike Serial Lookup</h3>
-                <p className="text-sm text-muted-foreground">National bicycle registry search</p>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <AuthoritySignals variant="banner" className="mb-0" />
-
-        {/* CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Search?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Enter your partial serial number above or use our full verification tool for complete serial numbers.
-            </p>
-            <Link to="/verify">
-              <Button size="lg" className="gap-2">
-                Start Full Verification <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
+          question: 'How do I read a serial number that has worn off?',
+          answer:
+            'Shine a flashlight across the surface from a low angle so the stamped characters cast shadows, and photograph it with the flash on at an angle. For stamped metal, rub a soft pencil over thin paper laid on top. Then check the box, receipt, warranty card or device settings for the full number.',
+        },
+        {
+          question: 'Is it illegal to buy something with the serial number scratched off?',
+          answer:
+            "For guns, yes: possessing a firearm with an obliterated or altered serial is a federal crime under 18 U.S.C. § 922(k). For other items it depends on the state and the item, but a deliberately removed serial is a strong sign of theft. Don't buy it.",
+        },
+        {
+          question: 'Can police find a stolen item with a partial serial number?',
+          answer:
+            "Sometimes. Police can search records the public can't, and an officer can tell you whether your fragment is enough to work with. If you have a partial serial from a gun or a high-value item you think is stolen, call your local police non-emergency line and give them the characters you have.",
+        },
+        {
+          question: 'Why might two different reports match my partial serial?',
+          answer:
+            "Short fragments appear inside many serial numbers. Four or five characters can match items from different brands. Compare the full serial on each report, the brand and the item type with what you are holding. Adding even one or two more characters usually narrows it to one report or none.",
+        },
+      ],
+    }}
+  />
+);
 
 export default PartialSerialNumberSearchPage;

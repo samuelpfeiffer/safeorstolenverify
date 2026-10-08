@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 // through /verify-api like any other, so the account's plan decides what runs.
 const FAQS: { q: string; a: string }[] = [
   { q: 'Can I check a list of serial numbers at once?', a: 'Yes. Paste up to 100 serial numbers, or upload a spreadsheet, and SafeOrStolen checks them all and gives you a downloadable results file with the date and time of every check.' },
-  { q: 'Does it work for guns?', a: 'Yes. Choose Guns, or put "gun" in a type column, and each serial is searched against police firearm theft and loss reports from 34 states, live Ohio law-enforcement records and SafeOrStolen theft reports.' },
+  { q: 'Does it work for guns?', a: 'Yes. Choose Guns, or put "gun" in a type column, and each serial is searched against police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement records and SafeOrStolen theft reports.' },
   { q: 'What plan do I need?', a: 'Bulk checking on SafeOrStolen is built for the $10/month plan, which includes unlimited serial, gun and vehicle checks and 20 phone blacklist checks a month. Every account gets 2 free checks to try it.' },
   { q: 'Is the results file a record of my due diligence?', a: 'It lists each item, the result, the sources searched and the exact time of the check, and every check is also saved to your account. For a shareable record of a single item, add a verification certificate, included free on the monthly plan.' },
 ];

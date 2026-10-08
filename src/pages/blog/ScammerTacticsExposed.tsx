@@ -1,265 +1,121 @@
-import { PageSEO } from '@/components/seo/PageSEO';
-import { Card } from '@/components/ui/card';
-import { Shield, AlertTriangle, Eye, Lock, Brain, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from '@/lib/router-compat';
-import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
-import { blogImages } from '@/assets/blog';
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/**
+ * Oct 7 2026: rewritten by hand for "scammer tactics" / "how scammers sell stolen goods online"
+ * (Search Console: "expose scammer", 3 impressions, position 26). Removed: a "40-60% below market"
+ * statistic, a "billions of dollars" claim, a "SAFE or STOLEN status with confidence score" result
+ * that doesn't exist, an app barcode claim, and the false line that using an item you didn't know
+ * was stolen is itself illegal. "What to do if you bought something stolen" now links to its own page.
+ */
 export default function ScammerTacticsExposed() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Scammer Tactics Exposed: How Criminals Sell Stolen Goods Online",
-    "description": "Learn the deceptive tactics scammers use to sell stolen goods on marketplaces. Protect yourself from fraud with our comprehensive guide.",
-    "author": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    },
-    "datePublished": "2026-01-15",
-    "dateModified": "2026-01-15"
-  };
-
   return (
-    <>
-      <PageSEO
-        title="Scammer Tactics Exposed: How Criminals Sell Stolen Goods | SafeOrStolen"
-        description="Learn the deceptive tactics scammers use to sell stolen goods on marketplaces. Protect yourself from fraud with our comprehensive guide to recognizing red flags."
-        keywords="scammer tactics, stolen goods scams, marketplace fraud, online scams, protect from scammers"
-        canonical="/blog/scammer-tactics-exposed"
-        structuredData={structuredData}
-      />
-      <div className="min-h-screen bg-background py-12">
-        <div className="container max-w-4xl mx-auto px-4">
-          <article className="prose prose-lg max-w-none">
-            <h1 className="text-4xl font-bold mb-6">Scammer Tactics Exposed: How Criminals Sell Stolen Goods Online</h1>
-            
-            <div className="flex items-center gap-4 text-muted-foreground mb-8">
-              <time dateTime="2026-01-15">January 15, 2026</time>
-              <span>•</span>
-              <span>12 min read</span>
-            </div>
-
-            <BlogHeroImage src={blogImages.scammer} alt="Hooded scammer with multiple monitors showing fake marketplace listings" />
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Understanding the Stolen Goods Marketplace</h2>
-              <p className="text-lg mb-4">
-                Online marketplaces have revolutionized how we buy and sell secondhand items, but they've also created new opportunities for criminals to offload stolen goods. Every year, billions of dollars worth of stolen property is sold through legitimate platforms like eBay, Facebook Marketplace, OfferUp, and Craigslist. Understanding scammer tactics is your first line of defense against becoming a victim.
-              </p>
-              <p className="text-lg mb-4">
-                Criminals have developed sophisticated methods to make stolen items appear legitimate, from creating fake documentation to manipulating serial numbers. This comprehensive guide exposes their tactics so you can protect yourself when shopping secondhand.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Top 10 Scammer Red Flags</h2>
-              
-              <div className="grid gap-6 mb-8">
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <AlertTriangle className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">1. Too-Good-To-Be-True Pricing</h3>
-                      <p>Stolen goods are often priced 40-60% below market value. Scammers want quick sales before items are reported stolen. If a brand new iPhone is listed at half price with no damage, it's likely stolen.</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Eye className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">2. No Original Packaging or Documentation</h3>
-                      <p>Legitimate sellers usually have boxes, receipts, and manuals. Scammers rarely have these because the items were stolen. Claims like "lost the box during a move" should raise suspicion.</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Lock className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">3. Refusal to Meet in Public</h3>
-                      <p>Scammers avoid police stations, bank parking lots, or busy public areas. They prefer quick cash exchanges in isolated locations or parking lots with no cameras.</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Shield className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">4. Won't Allow Serial Number Verification</h3>
-                      <p>A legitimate seller has no problem providing IMEI, VIN, or serial numbers for verification. Scammers refuse because verification will reveal the item is stolen.</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Brain className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">5. Vague Item History</h3>
-                      <p>Scammers can't provide detailed ownership history. Stories like "I got it as a gift" or "I'm selling it for a friend" are common excuses to avoid questions.</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Users className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">6. New Account with No History</h3>
-                      <p>Many scammers create fresh marketplace accounts to avoid detection. Check seller ratings, account age, and previous sales before buying.</p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Common Scammer Manipulation Tactics</h2>
-              
-              <h3 className="text-2xl font-bold mb-3">Urgency Pressure</h3>
-              <p className="mb-4">
-                Scammers create artificial urgency: "I have 3 other buyers waiting" or "First person with cash gets it." This prevents you from researching or thinking critically about the purchase.
-              </p>
-
-              <h3 className="text-2xl font-bold mb-3">Cash-Only Demands</h3>
-              <p className="mb-4">
-                Insisting on cash avoids paper trails. Legitimate sellers accept Venmo, PayPal, or other traceable payment methods. Cash-only is a major red flag.
-              </p>
-
-              <h3 className="text-2xl font-bold mb-3">Bulk Listings</h3>
-              <p className="mb-4">
-                Multiple identical items listed simultaneously (e.g., 5 iPhones, 10 laptops) suggest organized theft operations. Individual thieves rarely have large quantities.
-              </p>
-
-              <h3 className="text-2xl font-bold mb-3">Photo Manipulation</h3>
-              <p className="mb-4">
-                Stock photos, images with serial numbers blurred, or photos taken in car interiors all indicate stolen goods. Legitimate sellers provide clear photos in home settings.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">How SafeOrStolen Protects You</h2>
-              <p className="text-lg mb-6">
-                Our verification service instantly checks IMEI, VIN, and serial numbers against stolen item databases before you buy. With our mobile app's barcode scanner, you can verify items in seconds during the transaction.
-              </p>
-              
-              <div className="bg-muted p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-3">Real-Time Verification Process:</h3>
-                <ol className="list-decimal list-inside space-y-2">
-                  <li>Scan or enter the item's unique identifier (IMEI, VIN, serial number)</li>
-                  <li>Our AI instantly analyzes SafeOrStolen reports and public web data for suspicious activity</li>
-                  <li>Receive instant SAFE or STOLEN status with confidence score</li>
-                  <li>View detailed theft reports if item is flagged as stolen</li>
-                  <li>Get legal protection advice if you've already purchased</li>
-                </ol>
-              </div>
-
-              <div className="flex gap-4">
-                <Button asChild size="lg">
-                  <Link to="/verify">Verify an Item Now</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/app">Download Mobile App</Link>
-                </Button>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">What to Do If You Bought a Stolen Item</h2>
-              <p className="text-lg mb-4">
-                If SafeOrStolen identifies your purchased item as stolen, follow these immediate steps:
-              </p>
-              
-              <ol className="list-decimal list-inside space-y-3 text-lg mb-6">
-                <li><strong>Stop Using the Item Immediately</strong> - Using stolen property is illegal even if you didn't know it was stolen</li>
-                <li><strong>Document Everything</strong> - Save all messages, receipts, and seller information</li>
-                <li><strong>Contact Local Police</strong> - File a report and provide all documentation</li>
-                <li><strong>Contact the Marketplace</strong> - Report the seller to prevent future victims</li>
-                <li><strong>Contact the Original Owner</strong> - If police provide contact info, coordinate item return</li>
-                <li><strong>Seek Legal Advice</strong> - Consult an attorney about recovering your money</li>
-              </ol>
-
-              <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded-[0.25rem]">
-                <p className="font-bold mb-2">Important Legal Note:</p>
-                <p>You can be charged with possession of stolen property even if you purchased it unknowingly. Always verify items before completing transactions.</p>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Safe Buying Checklist</h2>
-              <div className="bg-muted p-6 rounded-lg">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Always verify IMEI/VIN/serial numbers using SafeOrStolen before buying</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Meet in public places with security cameras</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Request original packaging and documentation</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Research fair market value before negotiating</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Check seller ratings and account history</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Use traceable payment methods (never cash only)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Trust your instincts - walk away if something feels wrong</span>
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Conclusion: Knowledge Is Your Best Defense</h2>
-              <p className="text-lg mb-4">
-                Scammers rely on buyer naivety and the speed of online transactions. By understanding their tactics and using verification tools like SafeOrStolen, you can confidently shop secondhand marketplaces without fear of purchasing stolen goods.
-              </p>
-              <p className="text-lg mb-6">
-                Our mission is to make secondhand buying safe for everyone. With instant verification, you can protect yourself, avoid legal trouble, and help reduce crime in your community.
-              </p>
-
-              <div className="bg-primary/10 p-6 rounded-lg">
-                <p className="text-lg font-bold mb-3">Start verifying items today:</p>
-                <div className="flex gap-4">
-                  <Button asChild size="lg">
-                    <Link to="/verify">Verify Item Now</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/app">Download App</Link>
-                  </Button>
-                </div>
-              </div>
-            </section>
-          </article>
-        </div>
-      </div>
-      <RelatedPagesSection currentPage="/blog/scammer-tactics-exposed" currentCategory="blog" maxLinks={5} />
-    </>
+    <ItemLandingPageTemplate
+      title="Scammer Tactics: How Stolen Goods Are Sold Online | SafeOrStolen"
+      metaDescription="The tricks used to sell stolen phones, bikes, tools and electronics on Facebook Marketplace, OfferUp and Craigslist, what each one looks like in a listing, and how to call it out."
+      h1="Scammer Tactics: How Stolen Goods Are Sold Online"
+      itemType="Stolen Goods"
+      dateModified="2026-10-07"
+      searchPlaceholder="Enter the serial number, IMEI or VIN"
+      keywords={[
+        'scammer tactics',
+        'how scammers sell stolen goods',
+        'how to expose a scammer',
+        'how thieves sell stolen items online',
+        'stolen goods on facebook marketplace',
+        'marketplace scammer tricks',
+        'fencing stolen goods online',
+        'red flags stolen items for sale',
+      ]}
+      quickAnswer={{
+        question: 'How do scammers sell stolen goods online?',
+        answer:
+          "They list stolen items fast and cheap on Facebook Marketplace, OfferUp and Craigslist, hide or crop the serial numbers out of the photos, explain away missing receipts and locked accounts with a story (\"it was my late uncle's\", \"selling for a friend\"), and push for cash right now. The fastest way to call it out is to ask for the serial number before meeting and check it on SafeOrStolen (safeorstolen.com/blog/scammer-tactics-exposed).",
+      }}
+      sections={[
+        {
+          heading: 'The tactics, and what they look like',
+          table: {
+            columns: ['Tactic', 'What you see', 'How to call it out'],
+            rows: [
+              ['Hiding the serial number', 'Photos cropped above the label, a sticker over the nameplate, "I\'ll show you at pickup"', 'Ask for a photo of the label before meeting. No photo, no meetup.'],
+              ['Scratching or replacing the number', 'Ground-off metal, fresh paint, a new label that looks too clean', "Don't buy. A tampered number is one of the strongest signs of theft."],
+              ['The borrowed story', '"Selling for my brother", "my ex left it", "estate sale"', 'Ask questions only an owner would know: where it was bought, what\'s wrong with it, the passcode.'],
+              ['Locked to someone else', 'A phone still on a lock screen, a laptop with someone else\'s login, "you can just reset it"', 'Have the seller unlock it and sign out in front of you. Nobody else can remove Activation Lock.'],
+              ['Speed and pressure', '"Three people want it", "cash only, today", "I\'m moving tomorrow"', 'Slow down. Anyone honest can wait the few seconds a serial check takes.'],
+              ['Many of the same thing', 'Several new-in-box phones, tools or e-bikes from one new profile', 'Ask where they came from. A business with stock can show invoices.'],
+              ['Quiet meeting spots', 'A side street at night, a last-minute change of location', 'Insist on a police station lobby or a busy store.'],
+              ['Fresh accounts', 'Profile created this month, no friends or ratings, no other listings', 'Look at the profile before you reply.'],
+            ],
+          },
+        },
+        {
+          heading: 'Why stolen goods end up on marketplaces',
+          paragraphs: [
+            "Marketplaces are local, free to list on, and mostly paid in cash, so a thief can turn a stolen item into money the same day without a pawn shop asking for ID. That's also why the buyer carries the risk: if police find the item, it goes back to the owner, and the money you handed over is gone.",
+          ],
+        },
+        {
+          heading: 'Scams that are not about stolen goods',
+          list: [
+            'Fake listings using copied photos, asking for a deposit before you see anything',
+            'Overpayment: a "buyer" sends too much and asks you to refund the difference',
+            'Verification-code scams: someone asks you to read back a code sent to your phone',
+            'Fake payment emails that look like they come from a payment app',
+          ],
+        },
+      ]}
+      content={{
+        intro:
+          'People who sell stolen goods online use the same handful of tricks over and over. Once you know them, most stolen-item listings give themselves away before you ever meet. For payment scams that have nothing to do with stolen goods, paste the listing or message into the <a href="/scam-checker">scam checker</a>.',
+        whatIs:
+          "Every one of these tactics exists to stop you from doing two things: checking the serial number, and seeing whether the seller controls the item. Ask for the number early, and insist on watching them unlock and sign out of it. If you already bought something that turned out to be stolen, read <a href=\"/what-to-do-if-you-bought-something-stolen\">what to do if you bought something stolen</a>.",
+        howItWorks:
+          'Enter the serial number, IMEI or VIN in the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the number, plus extra sources for guns, bikes, phones and Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.',
+        whyCheck:
+          "Each tactic above is a story. The serial number check is a fact. A seller who has a good answer for everything but won't share the number has told you what you need to know.",
+        benefits: [
+          'Checks SafeOrStolen theft reports and public web results',
+          'Works for phones, cars, bikes, laptops, tools, consoles and guns',
+          'Every source listed with the result',
+          'Dated record of the check saved to your account',
+          '2 free checks with no credit card',
+        ],
+        process: [
+          'Look at the seller\'s profile before you reply.',
+          'Ask for a photo of the serial number, IMEI or VIN on the item.',
+          'Check the number on SafeOrStolen.',
+          'Meet in a public, watched place and match the number on the item.',
+          'Watch the seller unlock the item and sign out of their accounts.',
+          "If anything doesn't fit, leave and report the listing.",
+        ],
+        faqs: [
+          {
+            question: 'How can you tell if a seller is selling stolen goods?',
+            answer:
+              "Watch for a hidden or damaged serial number, a seller who can't unlock or sign out of the item, a story that explains why they don't know much about it, several of the same new item, and pressure to pay cash now. Any one can be innocent. Two or three together, especially a refused serial number, is the pattern.",
+          },
+          {
+            question: 'How do I expose a scammer on Facebook Marketplace?',
+            answer:
+              "Don't confront them. Save screenshots of the listing, the profile and the chat, then use the Report option on the listing and on the profile. If you think the goods are stolen, give the screenshots to your local police. If the serial number is reported stolen on SafeOrStolen (safeorstolen.com), include the result page in what you hand over.",
+          },
+          {
+            question: 'Why do sellers of stolen items want cash?',
+            answer:
+              "Cash leaves no record of who was paid. Payment apps and card payments tie the money to an account that police can trace. A seller who refuses anything but cash isn't proof of theft, as lots of people prefer cash, but combined with a hidden serial number it's a strong warning.",
+          },
+          {
+            question: 'Is "selling it for a friend" a red flag?',
+            answer:
+              "Often, yes. It lets the seller avoid questions they can't answer, like where it was bought or what the passcode is. Ask them to bring the friend, or to have the friend unlock the item on a video call. Someone legitimately helping a friend usually can.",
+          },
+          {
+            question: 'What should I do if I think a listing is stolen goods?',
+            answer:
+              "Don't buy it and don't warn the seller. Save the listing and chat, check the serial number if you have it, and pass everything to your local police on the non-emergency line. If you know the owner, for example from a stolen-bike post, tell them too, and let police handle the recovery.",
+          },
+        ],
+      }}
+    />
   );
 }

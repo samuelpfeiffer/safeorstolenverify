@@ -37,7 +37,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
  '/report-stolen': 'Report stolen phones, vehicles, electronics, or firearms to SafeOrStolen database. Help prevent resale of stolen goods on marketplaces and pawn shops.', // 158 chars
  '/app': 'Use SafeOrStolen on your phone — installs from your browser. Verify IMEI, VIN, serial numbers on-the-go. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.', // 155 chars
  '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers against our reports, web results and AI.', // 159 chars
- '/database': 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 34 states and a stolen-bike registry.',
+ '/database': 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 33 states and DC and a stolen-bike registry.',
  '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars
  '/firearms-check': 'Verify firearm serial numbers against stolen firearms databases. Instant check for gun buyers, sellers, and FFL dealers. From $0.99/check unlimited.',
  '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and appliances. Verify items are not stolen before buying, selling, or accepting them at intake.', // 156 chars

@@ -1,362 +1,227 @@
+/**
+ * Oct 7 2026: rewritten by hand for "how to check if something is stolen from your phone" /
+ * "stolen verification app". No Search Console data for this URL. Written as the meetup-day guide
+ * (what to check on the spot, item by item); install steps live on /app. Removed: invented
+ * testimonials (named people and businesses), competitor claims, "only app"/"first app" claims,
+ * "10x faster", "$200 billion" market figure, offline mode (checks need a connection), iOS/Android
+ * store app claims, "14-day trial", boats/ATVs coverage claims, emoji.
+ */
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from '@/lib/router-compat';
-import { Shield, Smartphone, Scan, Zap, Download, CheckCircle } from 'lucide-react';
+import { Smartphone, Shield } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+
+const FAQS = [
+  {
+    question: 'How can I check if something is stolen from my phone?',
+    answer:
+      'Get the identifying number off the item: the IMEI for a phone, the VIN for a car, the serial for a gun, bike, laptop or tool. Type it into SafeOrStolen (safeorstolen.com) in your phone browser or the installed app, and in a few seconds it shows whether the item is reported stolen in the records it searches. The first 2 checks are free.',
+  },
+  {
+    question: 'Is there a free app to check if an item is stolen?',
+    answer:
+      "SafeOrStolen is free to install from safeorstolen.com/app and comes with 2 free checks on a free account, no credit card. It's an installable web app, not an App Store or Google Play download. After the free checks, a single check is $0.99 or unlimited checks are $10 a month.",
+  },
+  {
+    question: 'What should I check at a meetup before buying a used phone?',
+    answer:
+      "Dial *#06# to see the IMEI and run it on SafeOrStolen. Then open Settings and confirm the seller's Apple ID or Google account is signed out, and watch them erase the phone. A phone that's still locked to someone else's account can be useless to you even if it isn't reported stolen.",
+  },
+  {
+    question: "What does 'no report found' mean on a stolen check?",
+    answer:
+      "It means the number didn't match anything in the records that check searched, which are listed on the result. It doesn't prove the item is clean, because many thefts are only reported to local police. Weigh it with the other signs: a matching title or receipt, an untouched serial, and a seller who can unlock the device.",
+  },
+  {
+    question: 'Can a stolen check app search police databases?',
+    answer:
+      "Not the FBI's NCIC system, which is only open to law enforcement. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft and loss reports from 33 states and DC for guns, live Ohio records, and Arizona stolen-vehicle records for Arizona VINs and plates. Each result lists what was searched.",
+  },
+  {
+    question: 'What if the check says the item is reported stolen?',
+    answer:
+      "Don't buy it and don't argue with the seller. Make an excuse, leave somewhere safe, and keep the listing, messages and the seller's profile. Call your local police's non-emergency line with the number you checked. Police can return the item to its owner, and you'd lose your money if you'd already paid.",
+  },
+];
 
 const StolenVerificationAppGuide = () => {
   const blogPostSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Verifying Stolen Items From Your Phone (2025 Complete Guide)",
-    "description": "Most item verification tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info, Swappa have NO apps. Complete guide to the first stolen item scanner app with barcode scanning.",
-    "author": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: 'How to Check if Something Is Stolen From Your Phone',
+    description:
+      'What to check on your phone at a meetup before you buy a used phone, car, gun, bike, laptop or tool, which number to look up for each, and what a stolen check can and cannot tell you.',
+    author: { '@type': 'Organization', name: 'SafeOrStolen' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SafeOrStolen',
+      logo: { '@type': 'ImageObject', url: 'https://safeorstolen.com/logo.png' },
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    },
-    "datePublished": "2025-01-17",
-    "dateModified": "2026-02-06"
+    datePublished: '2025-01-17',
+    dateModified: '2026-10-07',
   };
 
   return (
     <>
       <PageSEO
-        title="Verifying Stolen Items From Your Phone (2025 Guide) | SafeOrStolen"
-        description="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Complete guide to the first and only stolen item scanner app with instant barcode scanning, 3-second verification, offline mode."
-        keywords="stolen verification app, stolen item scanner app, CheckMEND app, IMEI checker app, barcode stolen checker, instant verification"
+        title="How to Check if Something Is Stolen From Your Phone"
+        description="At a meetup and want to know if the item is stolen? Which number to look up for phones, cars, guns, bikes and laptops, how to run the check on your phone, and what it shows."
+        keywords="how to check if something is stolen from your phone, stolen verification app, app to check if item is stolen, check if item is stolen at meetup, stolen item checker app"
         canonical="/blog/stolen-verification-app-guide"
+        modifiedTime="2026-10-07"
+        publishedTime="2025-01-17"
         structuredData={blogPostSchema}
       />
-
-      <BlogFAQSchema 
-        faqs={[
-          {
-            question: "Is SafeOrStolen really Verifying Stolen Items From Your Phone?",
-            answer: "Yes, Most item verification tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info, Swappa, IMEIPro, and all competitors only offer websites. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
-          },
-          {
-            question: "Does CheckMEND have a mobile app?",
-            answer: "No, despite being in business since 2004, they only offer a slow website. SafeOrStolen is the first mobile app with barcode scanning and instant verification for many item types."
-          },
-          {
-            question: "How does SafeOrStolen's barcode scanning work?",
-            answer: "Open the SafeOrStolen app, tap the barcode scanner, point at any barcode or serial number, and get instant verification results in 3 seconds. The app automatically reads IMEI, VINs, product codes, and serial numbers without manual typing."
-          },
-          {
-            question: "How much does the SafeOrStolen app cost?",
-            answer: "The SafeOrStolen app is free to download for iOS and Android. 2 free checks, then $0.99/check or $10/month unlimited — significantly more affordable than many single-item checks."
-          },
-          {
-            question: "Can I use the stolen verification app offline?",
-            answer: "Yes, SafeOrStolen's mobile app has offline mode. The app caches databases and verification results, allowing you to check items without internet connection. Perfect for meetups in areas with poor signal or rural locations."
-          }
-        ]}
-      />
+      <BlogFAQSchema faqs={FAQS} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
-          <BreadcrumbNavigation 
+          <BreadcrumbNavigation
             items={[
               { name: 'Blog', href: '/blog' },
-              { name: 'Verifying Stolen Items From Your Phone', href: '/blog/stolen-verification-app-guide' }
+              { name: 'Check if something is stolen from your phone', href: '/blog/stolen-verification-app-guide' },
             ]}
           />
         </div>
 
         <article className="container mx-auto px-4 py-12 max-w-4xl">
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Verifying Stolen Items From Your Phone (2025 Complete Guide)
-            </h1>
-            <p className="text-xl text-muted-foreground mb-4">
-              Most item verification tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. CheckMEND, IMEI.info, Swappa, and all competitors have NO mobile apps. Here's why we're revolutionizing item verification.
-            </p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>January 17, 2025</span>
-              <span>•</span>
-              <span>8 min read</span>
+          <header className="mb-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">How to Check if Something Is Stolen From Your Phone</h1>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+              <span>Updated October 7, 2026</span>
+              <span>·</span>
+              <span>6 min read</span>
             </div>
+            <p className="text-xl text-foreground">
+              Find the item's identifying number, the IMEI on a phone, the VIN on a car, the serial on a gun, bike, laptop or tool,
+              and enter it on SafeOrStolen in your phone's browser or the installed app. In a few seconds you'll see whether it's
+              reported stolen in the records searched, with each source named. Then do the in-person checks no database can do for
+              you: make sure the number hasn't been tampered with and the seller can unlock or title the item.
+            </p>
           </header>
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <h2 className="flex items-center gap-3 text-3xl font-bold mt-12 mb-6">
-              <Shield className="w-8 h-8 text-primary" />
-              Why Multi-Category Verification Matters</h2>
-            
+            <h2>Which number to look up, item by item</h2>
             <p>
-              In 2026, the secondhand market is worth over $200 billion globally. Yet despite this massive industry, <strong>SafeOrStolen remains SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place</strong> that verifies if items are stolen using barcode scanning and instant database checks.
+              The single most useful thing you can do is get the right number off the item itself, not off the listing. Sellers
+              sometimes post photos of a different item.
+            </p>
+            <div className="not-prose overflow-x-auto my-6">
+              <table className="w-full text-sm border rounded-lg">
+                <thead>
+                  <tr className="border-b bg-muted/50 text-left">
+                    <th className="p-3">Item</th>
+                    <th className="p-3">Number</th>
+                    <th className="p-3">Where to find it on the spot</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">Phone</td>
+                    <td className="p-3">IMEI</td>
+                    <td className="p-3">Dial *#06#. On iPhone also Settings &gt; General &gt; About. Compare it with the SIM tray if it has one.</td>
+                  </tr>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">Car, truck, motorcycle</td>
+                    <td className="p-3">VIN (17 characters)</td>
+                    <td className="p-3">Through the windshield on the driver's side dashboard, and on the driver's door jamb sticker. Both should match the title.</td>
+                  </tr>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">Gun</td>
+                    <td className="p-3">Serial number</td>
+                    <td className="p-3">Stamped on the frame or receiver, often above the trigger guard or on the side of the frame.</td>
+                  </tr>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">Bike</td>
+                    <td className="p-3">Frame serial</td>
+                    <td className="p-3">Turn the bike over; it's usually stamped under the bottom bracket where the pedal arms meet.</td>
+                  </tr>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">Laptop or tablet</td>
+                    <td className="p-3">Serial number</td>
+                    <td className="p-3">Label on the bottom case. On a Mac, Apple menu &gt; About This Mac. On Windows, the label or the system information screen.</td>
+                  </tr>
+                  <tr className="align-top">
+                    <td className="p-3 font-medium">Power tool</td>
+                    <td className="p-3">Serial number</td>
+                    <td className="p-3">Nameplate on the motor housing or handle. Batteries and chargers have their own.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>Running the check on your phone</h2>
+            <ol>
+              <li>Open safeorstolen.com in your phone's browser, or tap the SafeOrStolen icon if you've installed the web app from <Link to="/app">safeorstolen.com/app</Link>.</li>
+              <li>Sign in or create a free account. The first 2 checks are free and don't need a card.</li>
+              <li>Type the number in the search box. Signed in, you can also scan a barcode, like the IMEI label on a phone box, with your camera.</li>
+              <li>Read the result: reported stolen, possible match, or no report found in the records searched. The sources are listed underneath.</li>
+              <li>The check is saved to your account with the date, so you can show later that you checked before buying.</li>
+            </ol>
+            <p>
+              A check needs a phone signal. If the meetup spot has poor coverage, ask the seller to text the number ahead of time and
+              run it before you leave home. If they won't share it, that tells you something.
             </p>
 
-            <p>
-              Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen delivers verified results in <strong>3 seconds with instant barcode scanning</strong>.
-            </p>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">Competitor Comparison: Category Coverage</h2>
-            
-            <Card className="my-8 p-6">
-              <div className="space-y-6">
-                <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">Other Services</h3>
-                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                    <li>Website only, requires manual typing</li>
-                    <li>30+ seconds per verification</li>
-                    <li>$0.99 per check (expensive)</li>
-                    <li>No barcode scanning</li>
-                    <li>Requires constant internet connection</li>
+            <h2>What the check searches, and what it can't</h2>
+            <Card className="not-prose p-6 my-6">
+              <div className="grid md:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <h3 className="font-bold mb-2 flex items-center gap-2 text-foreground">
+                    <Shield className="w-4 h-4 text-primary" /> Searched
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                    <li>SafeOrStolen's own theft reports, for every item</li>
+                    <li>Public web results: listings and posts mentioning the number</li>
+                    <li>Guns: 242,839 police theft and loss reports from 33 states and DC, plus live Ohio records</li>
+                    <li>Bikes: a national stolen-bicycle registry</li>
+                    <li>Arizona VINs and plates: Arizona law-enforcement stolen-vehicle records</li>
+                    <li>Phones: make and model; carrier blacklist on a paid check</li>
                   </ul>
                 </div>
-
-                <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">IMEI.info</h3>
-                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                    <li>Basic web checker only</li>
-                    <li>Limited to phones (no vehicles, electronics)</li>
-                    <li>Slow verification process</li>
-                    <li>No offline mode</li>
+                <div>
+                  <h3 className="font-bold mb-2 flex items-center gap-2 text-foreground">
+                    <Smartphone className="w-4 h-4 text-primary" /> Not searched
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                    <li>NCIC or ATF eTrace</li>
+                    <li>Activation Lock or Google account lock</li>
+                    <li>DMV or MVD title records</li>
+                    <li>Pawn, insurer or manufacturer databases</li>
                   </ul>
-                </div>
-
-                <div className="border-b pb-4">
-                  <h3 className="font-bold text-xl mb-2 text-red-600">Swappa</h3>
-                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                    <li>Website only, marketplace focused</li>
-                    <li>Limited verification features</li>
-                    <li>Only checks phones</li>
-                    <li>No comprehensive database access</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg">
-                  <h3 className="font-bold text-xl mb-2 text-green-600">SafeOrStolen</h3>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>Full iOS and Android app</strong></li>
-                    <li><strong>Instant barcode scanning</strong> - no typing required</li>
-                    <li><strong>3-second verification</strong> - 10x faster than competitors</li>
-                    <li><strong>2 FREE checks</strong> compared to typical paid services</li>
-                    <li><strong>Offline mode</strong> - works without internet</li>
-                    <li><strong>All item types</strong> - phones, vehicles, electronics, firearms, boats</li>
-                  </ul>
+                  <p className="text-muted-foreground mt-3">
+                    That's why the in-person checks below still matter.
+                  </p>
                 </div>
               </div>
             </Card>
 
-            <h2 className="flex items-center gap-3 text-3xl font-bold mt-12 mb-6">
-              <Scan className="w-8 h-8 text-primary" />
-              How Barcode Scanning Works
-            </h2>
-
-            <p>
-              SafeOrStolen's <strong>barcode stolen checker</strong> is revolutionary for the verification industry. Here's how it works:
-            </p>
-
-            <ol className="list-decimal pl-6 space-y-4">
-              <li>
-                <strong>Open the SafeOrStolen app</strong> on your iOS or Android device (download FREE at safeorstolen.com/app)
-              </li>
-              <li>
-                <strong>Tap the barcode scanner icon</strong> - camera activates instantly
-              </li>
-              <li>
-                <strong>Point at any barcode, QR code, or serial number</strong> - the app automatically reads IMEI, serial numbers, VIN, product codes
-              </li>
-              <li>
-                <strong>Get results in 3 seconds</strong> - instant verification against SafeOrStolen reports, public web results and AI analysis
-              </li>
-            </ol>
-
-            <p>
-              This <strong>instant verification</strong> process is <strong>10x faster</strong> than manual website entry, and infinitely more convenient than typing 15-digit IMEI numbers by hand.
-            </p>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">What Items Can You Verify with the App?</h2>
-
-            <p>
-              Unlike competitors that only check phones (IMEI.info, Swappa) or vehicles (Carfax, Autocheck), SafeOrStolen verifies <strong>everything</strong>:
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-4 my-8">
-              <Card className="p-4">
-                <h3 className="font-bold mb-2 flex items-center gap-2">
-                  <Smartphone className="w-5 h-5 text-primary" />
-                  Electronics
-                </h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Phones (IMEI)</li>
-                  <li>• Laptops (Serial #)</li>
-                  <li>• Tablets</li>
-                  <li>• Cameras</li>
-                  <li>• Gaming Consoles</li>
-                </ul>
-              </Card>
-
-              <Card className="p-4">
-                <h3 className="font-bold mb-2 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-primary" />
-                  Vehicles & Property
-                </h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Cars/Trucks (VIN)</li>
-                  <li>• Motorcycles</li>
-                  <li>• Boats/ATVs</li>
-                  <li>• Bicycles</li>
-                  <li>• Firearms</li>
-                </ul>
-              </Card>
-            </div>
-
-            <h2 className="flex items-center gap-3 text-3xl font-bold mt-12 mb-6">
-              <Zap className="w-8 h-8 text-primary" />
-              Why Instant Verification Matters
-            </h2>
-
-            <p>
-              When you're standing in a parking lot at a Facebook Marketplace meetup with $800 cash in hand, <strong>speed matters</strong>. Here's why SafeOrStolen's <strong>3-second instant stolen verification</strong> is a game-changer:
-            </p>
-
-            <ul className="list-disc pl-6 space-y-3">
-              <li>
-                <strong>No awkward waiting</strong> - other services can take 30+ seconds, making sellers suspicious. SafeOrStolen returns results before the seller even notices you checked.
-              </li>
-              <li>
-                <strong>Verify at meetups</strong> - Scan barcodes instantly at gas stations, parking lots, OfferUp exchanges. No need to type on small keyboards.
-              </li>
-              <li>
-                <strong>Offline mode</strong> - Works even in areas with poor cell signal. Downloaded database checks work offline.
-              </li>
-              <li>
-                <strong>Batch workflows</strong> - Pawn shops and dealers can review multiple identifiers through supported business tools.
-              </li>
+            <h2>The in-person checks no app can do</h2>
+            <ul>
+              <li><strong>Phones:</strong> watch the seller sign out of their Apple ID (Settings &gt; their name &gt; Sign Out) or remove their Google account, then erase the phone. If they can't, walk away.</li>
+              <li><strong>Cars:</strong> the name on the title should match the seller's ID, and the VIN on the title should match the dashboard and door jamb.</li>
+              <li><strong>Guns:</strong> a ground, scratched or re-stamped serial is a hard stop. Possessing a gun with an obliterated serial is a federal crime under 18 U.S.C. § 922(k).</li>
+              <li><strong>Bikes and tools:</strong> look for a scratched-off serial, a fresh sticker over the nameplate, or engraved initials that don't match the seller.</li>
+              <li><strong>Any item:</strong> a price far under the going rate, a rush to close, cash only, and no receipt or box are the usual warning signs together.</li>
             </ul>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">How to Download Verifying Stolen Items From Your Phone</h2>
+            <h2>Questions people ask</h2>
+            {FAQS.map((f) => (
+              <div key={f.question}>
+                <h3>{f.question}</h3>
+                <p>{f.answer}</p>
+              </div>
+            ))}
 
-            <p>
-              Getting started with SafeOrStolen's stolen item scanner app takes 30 seconds:
-            </p>
-
-            <ol className="list-decimal pl-6 space-y-4">
-              <li>
-                Visit <strong>safeorstolen.com/app</strong> on your iOS or Android device
-              </li>
-              <li>
-                Tap "Install App" or "Add to Home Screen" when prompted by your browser
-              </li>
-              <li>
-                Open the app and get <strong>2 FREE verification checks</strong> (14-day trial)
-              </li>
-              <li>
-                Start scanning barcodes - no credit card required
-              </li>
-            </ol>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">Why Competitors Can't Build Apps</h2>
-
-            <p>
-              You might wonder: if mobile apps are so valuable, why don't CheckMEND, IMEI.info, or Swappa have them? The answer is <strong>technical complexity</strong>:
-            </p>
-
-            <ul className="list-disc pl-6 space-y-3">
-              <li>
-                <strong>Real-time barcode scanning requires computer vision AI</strong> - SafeOrStolen's proprietary technology instantly reads damaged, partially obscured, or low-quality barcodes
-              </li>
-              <li>
-                <strong>Offline database sync</strong> - Our app downloads encrypted database snapshots for offline verification, a massive engineering challenge
-              </li>
-              <li>
-                <strong>Multi-platform support</strong> - Building native iOS and Android apps costs 10x more than maintaining a website
-              </li>
-              <li>
-                <strong>3-second results</strong> - Requires edge computing and distributed databases, not simple API calls
-              </li>
-            </ul>
-
-            <p>
-              SafeOrStolen invested over 2 years building the world's first stolen verification app. Competitors simply haven't made the investment - which is why we remain the <strong>only option</strong> for mobile verification.
-            </p>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">Real-World Use Cases</h2>
-
-            <div className="space-y-6 my-8">
-              <Card className="p-6">
-                <h3 className="font-bold text-lg mb-2">📱 Facebook Marketplace Buyers</h3>
-                <p className="text-muted-foreground">
-                  "I was buying a used iPhone for $650. Scanned the IMEI with SafeOrStolen while the seller waited in his car. App showed it was reported stolen 3 days ago. Saved me from getting scammed." - Michael T., Phoenix AZ
-                </p>
-              </Card>
-
-              <Card className="p-6">
-                <h3 className="font-bold text-lg mb-2">🏪 Pawn Shop Verification</h3>
-                <p className="text-muted-foreground">
-                  "We process 50+ items daily. SafeOrStolen's barcode scanner lets us verify everything in minutes. Before this app, we spent hours typing serial numbers into slow websites." - Gold Rush Pawn, Las Vegas NV
-                </p>
-              </Card>
-
-              <Card className="p-6">
-                <h3 className="font-bold text-lg mb-2">🚗 Used Car Dealers</h3>
-                <p className="text-muted-foreground">
-                  "Scanning VINs with the app before auctions saves us from buying stolen vehicles. Instant results mean we can verify 20+ cars during preview day." - Elite Auto Sales, Miami FL
-                </p>
-              </Card>
-            </div>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">Conclusion: The Future is Mobile</h2>
-
-            <p>
-              The stolen verification industry is shifting from slow websites to instant mobile apps. SafeOrStolen leads this revolution as the <strong>only stolen verification app</strong> available globally.
-            </p>
-
-            <p>
-              While CheckMEND, IMEI.info, and Swappa continue offering outdated web-only experiences, SafeOrStolen provides:
-            </p>
-
-            <div className="bg-primary/10 border-l-4 border-primary p-6 my-8">
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Instant barcode scanning</strong> - no manual typing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>3-second verification</strong> - 10x faster than competitors</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>2 FREE checks</strong> compared to typical paid services</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Offline mode</strong> - works without internet</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>All item types</strong> - phones, vehicles, electronics, firearms, boats</span>
-                </li>
-              </ul>
-            </div>
-
-            <p>
-              Start verifying today:
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 my-8">
+            <div className="not-prose flex flex-col sm:flex-row gap-4 my-10">
               <Button asChild size="lg" className="flex-1">
-                <Link to="/app">
-                  <Download className="w-5 h-5 mr-2" />
-                  Download FREE App
-                </Link>
+                <Link to="/verify">Run a check</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="flex-1">
-                <Link to="/verify">Try Web Version</Link>
+                <Link to="/app">Install the free app</Link>
               </Button>
             </div>
           </div>

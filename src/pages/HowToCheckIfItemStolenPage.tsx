@@ -66,7 +66,7 @@ export default function HowToCheckIfItemStolenPage() {
       </section>
       <section className="mx-auto mt-12 max-w-3xl rounded-xl border border-primary/30 bg-card p-6 text-muted-foreground">
         <h2 className="text-2xl font-bold text-foreground">Where SafeOrStolen fits</h2>
-        <p className="mt-3">SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states and live Ohio records, and bikes against a national stolen-bicycle registry. Outside sources described in these guides are separate checks for the reader to perform.</p>
+        <p className="mt-3">SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 33 states and DC and live Ohio records, and bikes against a national stolen-bicycle registry. Outside sources described in these guides are separate checks for the reader to perform.</p>
         <p className="mt-3">A result is one part of due diligence, not proof of ownership or a guarantee. Sellers can share a timestamped Proof of Clean Purchase record after a clean check; it is not a legal document.</p>
       </section>
     </main>

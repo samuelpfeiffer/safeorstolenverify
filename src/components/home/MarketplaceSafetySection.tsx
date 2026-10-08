@@ -86,8 +86,8 @@ export const MarketplaceSafetySection = () => {
         {/* Key Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center">
           <div>
-            <div className="text-3xl font-bold text-primary">100K+</div>
-            <div className="text-sm text-muted-foreground">Marketplace verifications</div>
+            <div className="text-3xl font-bold text-primary">2</div>
+            <div className="text-sm text-muted-foreground">Free checks to start</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary">$0</div>
@@ -98,8 +98,8 @@ export const MarketplaceSafetySection = () => {
             <div className="text-sm text-muted-foreground">Major marketplaces</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary">30sec</div>
-            <div className="text-sm text-muted-foreground">Verification time</div>
+            <div className="text-3xl font-bold text-primary">Seconds</div>
+            <div className="text-sm text-muted-foreground">To get a result</div>
           </div>
         </div>
       </div>

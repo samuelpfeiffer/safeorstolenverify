@@ -1,80 +1,127 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
-const CheckJewelryPage = () => {
-  return (
-    <ItemLandingPageTemplate
-      title="Check if Jewelry is Stolen - Free Diamond, Watch, Ring Serial Number Verification"
-      metaDescription="Check if jewelry, diamonds, watches, rings, or luxury items are stolen. Free serial number verification for Rolex, Cartier, Tiffany jewelry from stolen-property registries and pawn shop databases before buying."
-      h1="Check if Jewelry is Stolen Before Buying"
-      itemType="Jewelry & Luxury Items"
-      keywords={[
-        'check if jewelry stolen',
-        'stolen jewelry check',
-        'diamond serial number lookup',
-        'verify jewelry not stolen',
-        'luxury watch stolen check',
-        'Rolex stolen check'
-      ]}
-      content={{
-        intro: "Verify if jewelry, diamonds, luxury watches, rings, or precious items are stolen in 3 seconds. Free serial number verification for Rolex, Cartier, Tiffany, GIA-certified diamonds, Patek Philippe watches. Check before buying from pawn shops, Facebook Marketplace, eBay, Craigslist, or estate sales. Jewelry is a top theft target due to high value and easy concealment.",
-        whatIs: "Checking if jewelry is stolen means verifying serial numbers, laser inscriptions, and certification numbers. High-value jewelry, watches, and GIA-certified diamonds have unique serial numbers or laser inscriptions. SafeOrStolen instantly searches its collected stolen-item reports, relevant web results, and applies AI analysis. This protects buyers from purchasing stolen jewelry that could be confiscated.",
-        howItWorks: "Enter the item's serial number, certification number, or other identifier. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, then returns a result in about 3 seconds. Verify certifications directly with the issuer and have high-value pieces inspected by a qualified professional.",
-        whyCheck: "Buying stolen jewelry has severe legal and financial consequences. (1) Jewelry can be confiscated by police with zero compensation - you lose $1,000-$100,000+, (2) You could face criminal charges for possession of stolen property - even if you didn't know it was stolen, (3) You can't resell stolen jewelry - any reputable jeweler will check serial numbers and report to police, (4) Jewelers and pawn shops refuse to service stolen items and must report you, (5) Insurance companies will not insure stolen jewelry, (6) GIA-certified diamonds with laser inscriptions can be tracked worldwide - you can never sell or reset the stone without being caught. In 2024, over $5 billion worth of jewelry was stolen in the United States. Jewelry theft includes home burglaries, car break-ins, purse snatchings, and jewelry store robberies. Stolen jewelry floods pawn shops, Facebook Marketplace, Craigslist, OfferUp, and eBay at 40-70% below retail value. Our free jewelry checker protects you from this massive theft market.",
-        benefits: [
-          "Check luxury watches - Rolex, Patek Philippe, Audemars Piguet, Cartier, Omega",
-          "Verify GIA-certified diamonds - laser inscriptions, certification numbers",
-          "Check designer jewelry - Tiffany, Cartier, Van Cleef & Arpels, Bvlgari, Chopard",
-          "Verify engagement rings - diamond rings, wedding bands, bridal sets",
-          "Check gold jewelry - chains, bracelets, necklaces, earrings",
-          "Verify estate jewelry - antique, vintage, heirloom pieces",
-          "Search stolen-property registries and pawn shop databases",
-          "Free jewelry serial number check - 2 free verifications"
+/**
+ * Oct 7 2026: rewritten by hand for "does jewelry have serial numbers" (the one query reaching this
+ * page, position 4) and "how to check if jewelry is stolen". Removed: "$5 billion stolen in 2024",
+ * "pawned within 72 hours in 80% of cases", "40-70% below retail", dollar-loss figures, the claim that
+ * we search pawn databases and validate GIA reports against manufacturer/GIA databases (we don't), and
+ * the false "3 seconds" timing tied to "AI analysis". Watches now point to /check-watch-stolen.
+ */
+const CheckJewelryPage = () => (
+  <ItemLandingPageTemplate
+    title="Does Jewelry Have Serial Numbers? Check if Jewelry Is Stolen | SafeOrStolen"
+    metaDescription="Most jewelry has no serial number. Here's what to check instead before buying used jewelry: GIA laser inscriptions, engravings, maker's marks, papers and the seller."
+    h1="Does Jewelry Have Serial Numbers? How to Check if Jewelry Is Stolen"
+    itemType="Jewelry"
+    dateModified="2026-10-07"
+    searchPlaceholder="Enter a serial, GIA report or inscription number"
+    keywords={[
+      'does jewelry have serial numbers',
+      'how to check if jewelry is stolen',
+      'check if jewelry is stolen',
+      'stolen jewelry check',
+      'diamond laser inscription lookup',
+      'gia number stolen diamond',
+      'is this ring stolen',
+      'buying used jewelry stolen',
+    ]}
+    quickAnswer={{
+      question: 'Does jewelry have serial numbers?',
+      answer:
+        "Most jewelry doesn't. Rings and chains usually carry only a metal stamp (14K, 750, 925) and maybe a maker's mark, which aren't unique. The pieces that can be traced are diamonds with a grading-lab laser inscription on the girdle, some designer pieces with an engraved serial, and anything with a personal engraving. Check any number you find on SafeOrStolen (safeorstolen.com/check-jewelry), and judge the rest by the papers and the seller.",
+    }}
+    sections={[
+      {
+        heading: 'What identifies a piece of jewelry',
+        table: {
+          columns: ['Mark', 'Where to look', 'Unique to this piece?'],
+          rows: [
+            ['Diamond laser inscription', 'The girdle, the thin outer edge of the stone. Needs a 10x loupe and good light.', 'Yes. It is the grading report number, so it ties the stone to one lab report.'],
+            ['Designer serial number', 'Some high-end brands engrave one near the clasp, inside a band, or on the back of a pendant.', 'Yes, where the brand uses them.'],
+            ['Personal engraving', 'Inside a ring band or on the back of a pendant or watch: names, initials, dates.', 'Effectively yes. It belongs to someone.'],
+            ['Metal stamp', 'Inside the band or on the clasp: 10K, 14K, 18K, 750, 925, PT950.', 'No. It only states the metal.'],
+            ['Maker\'s mark', 'Next to the metal stamp.', 'No. It names the maker, not the piece.'],
+            ['Appraisal or grading report', 'Paperwork the seller should have, often with photos and measurements.', 'Yes, if the measurements and photos match the piece.'],
+          ],
+        },
+      },
+      {
+        heading: 'How to check a diamond\'s laser inscription',
+        paragraphs: [
+          "Many diamonds graded by a lab like GIA carry the report number laser-inscribed on the girdle. Ask the seller for the report, then read the inscription with a 10x loupe (a jeweler will do it in a minute). The number on the stone should match the report, and the report's carat weight, measurements and clarity plot should match the stone. GIA's own Report Check service confirms a report number is real. Then run the number on SafeOrStolen to see if it appears in a theft report or online.",
+          "A missing inscription isn't proof of anything; many stones were never inscribed. A report whose number doesn't match the stone, or an inscription that looks polished away, is a reason to walk away.",
         ],
-        process: [
-          "Locate all identifying numbers: (1) Watch serial number - usually engraved between lugs (where band attaches), on case back, or inside case back. (2) Diamond laser inscription - GIA report number lasered on diamond girdle, visible only under 10x magnification. (3) Jewelry hallmarks - stamps indicating metal purity (14K, 18K, 925, PT950) and maker's marks. Use a jeweler's loupe to read inscriptions clearly.",
-          "Record ALL serial numbers, certification numbers, and hallmarks completely. For GIA diamonds: get the full GIA report number (format: 1234567890). For Rolex: serial number between lugs at 6 o'clock position. Take macro photos of all inscriptions and numbers.",
-          "Take detailed photos of the entire piece from multiple angles including any unique characteristics, engravings, damage, or modifications that could aid identification",
-          "Enter all serial numbers, certification numbers, and identifiers into our verification tool at SafeOrStolen.com/verify",
-          "Review the comprehensive report showing whether the jewelry, watch, or diamond has been reported stolen, pawned, or has been reported stolen",
-          "If CLEAN with valid certifications and provenance, proceed with purchase. If STOLEN, recently pawned by someone other than seller, or certifications are fraudulent, walk away immediately and report to authorities"
+      },
+      {
+        heading: 'Signs used jewelry may be stolen',
+        list: [
+          'A personal engraving (someone else\'s name, initials or wedding date) and a seller who can\'t explain it',
+          'A patch inside a band that has been freshly polished, where an engraving used to be',
+          'A grading report that doesn\'t match the stone, or a seller who "lost" the papers for an expensive piece',
+          'Several unrelated pieces for sale at once: a man\'s ring, a woman\'s ring, a child\'s bracelet, loose stones',
+          'A seller who wants to sell by weight, quickly, for cash, and doesn\'t care about the design',
+          'Pressure to meet in a car or a parking lot instead of at a jeweler where the piece can be looked at',
         ],
-        faqs: [
-          {
-            question: "What types of jewelry can I check?",
-            answer: "You can check virtually any jewelry or luxury item with serial numbers or certifications including: (1) Luxury watches - Rolex, Patek Philippe, Audemars Piguet, Cartier, Omega, Breitling, TAG Heuer, Panerai, (2) GIA-certified diamonds - any diamond with a GIA report number and laser inscription on the girdle, (3) Designer jewelry - Tiffany, Cartier, Van Cleef & Arpels, Bvlgari, Chopard, David Yurman, (4) Engagement rings and wedding bands - any brand with certification numbers, (5) Gold jewelry - chains, bracelets, necklaces, earrings with maker's marks or hallmarks, (6) Estate jewelry - antique, vintage, and heirloom pieces with identifiable characteristics, (7) Luxury items - designer handbags (Hermès, Chanel, Louis Vuitton), pens (Montblanc), lighters (S.T. Dupont). If it has a serial number, certification, or unique identifier, we can check it."
-          },
-          {
-            question: "Where do I find serial numbers on jewelry and watches?",
-            answer: "Serial number locations vary by item type: (1) Rolex watches - serial number engraved between lugs at 6 o'clock position (remove bracelet to see). Model number at 12 o'clock position between lugs, (2) Other luxury watches - inside case back, engraved on case back, or between lugs, (3) GIA diamonds - laser inscription of GIA report number on diamond girdle (requires 10x magnification and proper lighting), (4) Designer jewelry - inside ring band, on clasp, on back of pendant/charm, or on jewelry tag, (5) Tiffany jewelry - 'Tiffany & Co.' stamp plus metal purity (925, 750), sometimes with serial numbers on modern pieces. If you can't find serial numbers, ask the seller for: original box, papers, certificates (GIA report), purchase receipt, or appraisal. Missing all documentation = major red flag."
-          },
-          {
-            question: "How much does the jewelry stolen check cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Verify luxury watches, diamonds, designer jewelry, and more."
-          },
-          {
-            question: "What should I do if my jewelry check shows it's stolen?",
-            answer: "If our check shows the jewelry is reported stolen: (1) Do NOT buy it under any circumstances - you'll lose $1,000-$100,000+ when police confiscate it, (2) Walk away immediately without confronting the seller (jewelry theft can involve dangerous criminals or organized crime), (3) Screenshot the listing and record ALL seller information including name, phone, address, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, eBay) with serial numbers and proof of theft, (5) File an anonymous tip with local police including listing URL, all serial numbers, certification numbers, photos, and seller details. Jewelry theft is taken very seriously, (6) If you already purchased it, contact police IMMEDIATELY. Do NOT wear, hide, or sell the jewelry. You're a fraud victim. File a police report including all transaction details. Stolen jewelry is almost impossible to recover money on, but filing a report helps you avoid criminal charges and potentially recover through insurance or small claims court."
-          },
-          {
-            question: "Why is jewelry stolen so frequently?",
-            answer: "Jewelry is a top theft target because: (1) Extremely high value in small size - a Rolex watch worth $10,000-$50,000 fits in your pocket, a diamond ring worth $20,000 weighs grams, (2) Easy to conceal and transport - thieves can carry $100,000+ worth of jewelry in a backpack, (3) Fast cash at pawn shops - pawn shops pay immediate cash for gold and diamonds, no questions asked before reporting to LeadsOnline, (4) Difficult to track - many people don't register serial numbers or keep diamond certifications, (5) High resale value - even melted down, gold retains intrinsic value. Diamonds can be recut or reset to hide identities, (6) Home burglaries - jewelry is the primary target, often taken from nightstands, dressers, and jewelry boxes within minutes. In 2024, over $5 billion worth of jewelry was stolen. Theft rate peaks during holidays (gifts) and summer (vacation season when homes are empty). Stolen jewelry is pawned within 72 hours in 80% of cases. Checking serial numbers and GIA reports is critical protection."
-          },
-          {
-            question: "Can jewelry serial numbers or GIA inscriptions be removed or faked?",
-            answer: "Yes, sophisticated thieves and counterfeiters attempt to remove or fake jewelry identifiers, but it's difficult and risky: (1) Watch serial numbers - can be ground off, polished, or re-engraved. Signs of tampering: smooth/polished areas where serial should be, wrong engraving style/depth, or obvious re-stamping, (2) GIA laser inscriptions - extremely difficult to remove without destroying the diamond. Requires recutting the girdle which reduces diamond weight and value. Thieves usually don't bother removing inscriptions, (3) Fake GIA reports - counterfeiters create fake GIA certificates with real GIA report numbers from different diamonds. Always verify the GIA report number online at GIA.edu and confirm the diamond's specifications (carat, color, clarity, cut) match the certificate exactly, (4) Hallmarks - can be filed off, stamped with fake marks, or acid-etched. If you see ANY signs of tampering - ground areas, polished surfaces, mismatched engravings, or the seller refuses to let you verify serial numbers and certifications, walk away immediately and report to police. Our tool validates all serial numbers and GIA reports against official manufacturer and GIA databases to detect fakes."
-          },
-          {
-            question: "How long does a jewelry serial number check take?",
-            answer: "Jewelry checks usually take about 3 seconds. Enter the watch serial number, certification number, or jewelry identifier to check SafeOrStolen reports, public web results, and AI analysis. Verify any certification directly with its issuer."
-          },
-          {
-            question: "What are red flags when buying used jewelry or luxury watches?",
-            answer: "Major red flags for stolen jewelry: (1) Price is 40-70% below market value (a $15,000 Rolex for $5,000, a $10,000 GIA diamond for $3,000), (2) Seller won't provide serial numbers, GIA reports, original box/papers, or purchase receipt, (3) Serial number areas look polished, ground, or tampered with, (4) GIA report looks fake (wrong paper texture, formatting, hologram), or report number doesn't match diamond specs when verified on GIA.edu, (5) Seller has multiple luxury pieces for sale (jewelry, watches, designer handbags) - indicates professional theft, (6) No provenance - seller can't explain where/when they got the piece or why they're selling, (7) Meeting in parking lot, storage unit, or public place (not seller's home or jewelry store), (8) Seller is in a rush and won't allow you time to verify certifications or inspect closely, (9) Asking for cash only with no electronic payment trail, (10) Recent engravings or modifications that could hide original identifying marks. If multiple red flags exist, it's almost certainly stolen - walk away immediately and report to authorities. Professional jewelers, pawn shops, and watch dealers ALWAYS check serial numbers and certifications before purchasing."
-          }
-        ]
-      }}
-    />
-  );
-};
+      },
+    ]}
+    content={{
+      intro:
+        "Buying a used ring, necklace or diamond? Most jewelry has no serial number, so checking it takes a different approach than a phone or a bike. Here is what can be traced, what can't, and what to look at before you pay.",
+      whatIs:
+        'Checking if jewelry is stolen means finding anything that ties the piece to one owner (a laser inscription, a designer serial, an engraving, a grading report) and checking it, then judging the seller. For a watch, use the <a href="/check-watch-stolen">watch check guide</a>, since watches carry their own serial and case numbers.',
+      howItWorks:
+        "Enter a designer serial, a grading report number or an engraved number into the search box. SafeOrStolen searches its own theft reports, where owners list stolen items with their numbers and descriptions, and public web results that mention the number. You see reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search pawn databases, insurer records or the grading labs.",
+      whyCheck:
+        "Stolen jewelry is easy to carry and easy to sell, and when police recover it they return it to the owner. A buyer who paid for it loses the money. Most pieces can't be checked by number at all, so the checks you can do, on the stone, the paperwork and the seller, matter more.",
+      benefits: [
+        'Checks GIA and other lab report numbers, designer serials and engraved numbers',
+        'Searches SafeOrStolen theft reports and public web results',
+        'Every source searched is listed with the result',
+        'A dated record of the check is saved to your account',
+        'Optional $1.99 verification certificate showing you checked before the sale',
+        '2 free checks with no credit card',
+      ],
+      process: [
+        'Ask the seller for the grading report, appraisal, receipt or box before you meet.',
+        'Look for any number on the piece with a 10x loupe: girdle inscription, designer serial, engraving.',
+        'Check each number on SafeOrStolen, and confirm a grading report number with the lab that issued it.',
+        'Meet at a jeweler and have them confirm the stone and metal match the paperwork.',
+        "If a number comes back reported stolen or the engraving has been polished off, don't buy, and give the details to your local police.",
+      ],
+      faqs: [
+        {
+          question: 'Does jewelry have serial numbers?',
+          answer:
+            "Most jewelry doesn't. The stamps inside a ring (14K, 925, PT950) show the metal, not the piece. What can be traced is a lab laser inscription on a diamond's girdle, a serial number some designer brands engrave, a personal engraving, or a grading report with matching measurements.",
+        },
+        {
+          question: 'How do I check if a diamond is stolen?',
+          answer:
+            "Read the laser inscription on the girdle with a 10x loupe and match it to the grading report. Confirm the report number with the lab that issued it, then check the number on SafeOrStolen (safeorstolen.com/check-jewelry), which searches its theft reports and public web results. If the stone isn't inscribed, rely on the report's measurements and a jeweler's opinion.",
+        },
+        {
+          question: 'Can stolen jewelry be traced?',
+          answer:
+            "Only some of it. An inscribed diamond, a designer piece with a serial, or a ring with an engraving can be tied back to an owner's theft report. Plain gold chains and rings without engravings usually can't, which is why stolen jewelry is often sold by weight or melted.",
+        },
+        {
+          question: 'Is there a stolen jewelry database?',
+          answer:
+            "There is no single public database. Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports and public web results for free for their first 2 checks.",
+        },
+        {
+          question: 'What does a polished area inside a ring mean?',
+          answer:
+            "It can mean an engraving has been removed. Owners do resize and polish rings, so it isn't proof, but combined with a seller who has no papers and wants cash quickly, it is a strong reason to walk away.",
+        },
+        {
+          question: 'What should I do if I think jewelry I bought is stolen?',
+          answer:
+            "Stop wearing or reselling it, keep the listing, messages and payment record, and call your local police non-emergency line. If it is returned to the owner, the record of what you paid and to whom helps any claim against the seller.",
+        },
+      ],
+    }}
+  />
+);
 
 export default CheckJewelryPage;

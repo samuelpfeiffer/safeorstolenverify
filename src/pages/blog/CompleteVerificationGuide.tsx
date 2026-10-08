@@ -1,384 +1,250 @@
+/**
+ * Oct 7 2026: rewritten by hand for "stolen vs blacklisted vs activation locked" / "what checks to
+ * do before buying used". Distinct angle from /how-to-verify-a-used-item (buyer's steps) and
+ * /comprehensive-guide (where the number is): this post compares the different kinds of check
+ * (theft report, police records, carrier blacklist, account lock, title, recalls, tampering), what
+ * each one catches, who can run it, and which ones each kind of item needs. Removed: "$15 billion
+ * in stolen goods", "50+ stolen goods databases", "confidence scores", "legal protection", a
+ * barcode-scanner mobile app download, Bike Index and Art Loss Register named as sources, NICB
+ * named as a SafeOrStolen source, "$3,000+ e-bikes", "20 min read", the "34 states" gun figure, and
+ * emoji.
+ */
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Card } from '@/components/ui/card';
-import { Shield, Smartphone, Car, Laptop, Bike, Wrench, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { SafeOrStolenVideo } from '@/components/video/SafeOrStolenVideo';
 
+const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
+ {
+ name: 'Theft report check',
+ catches: 'An item whose owner reported it stolen with the serial number, IMEI or VIN.',
+ who: 'Anyone, online, before or at the meetup.',
+ sos: 'Yes. Every check searches SafeOrStolen theft reports and public web results; guns add police theft and loss reports from 33 states and Washington, DC plus live Ohio records; bikes add a national stolen-bicycle registry.',
+ },
+ {
+ name: 'Police records (NCIC and state systems)',
+ catches: 'Thefts reported to police, including ones that never made it online.',
+ who: 'Only law enforcement. Call your local police non-emergency line and ask if they will run a serial or VIN.',
+ sos: 'No, except Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates and live Ohio records for guns.',
+ },
+ {
+ name: 'Carrier blacklist',
+ catches: 'Phones reported lost or stolen to a carrier. A blacklisted phone may not connect to networks that honor the list.',
+ who: 'Anyone with the IMEI, through a blacklist check.',
+ sos: 'Yes, on a paid phone check ($0.99, or up to 20 a month on the $10 plan).',
+ },
+ {
+ name: 'Account lock (Activation Lock, Google FRP)',
+ catches: 'Phones, tablets and Macs still tied to the previous owner\'s Apple or Google account. A locked device cannot be set up by you.',
+ who: 'Only you, in person, by watching the seller sign out and reset it.',
+ sos: 'No. No outside website can see this.',
+ },
+ {
+ name: 'Title and history (vehicles)',
+ catches: 'Salvage or rebuilt titles, liens, odometer problems, the seller not being the owner.',
+ who: 'You, by reading the paper title against the seller\'s ID, plus a vehicle history report. NMVTIS is the federal title-history program.',
+ sos: 'No.',
+ },
+ {
+ name: 'Open safety recalls (vehicles)',
+ catches: 'Recalls the manufacturer has issued that have not been repaired.',
+ who: 'Anyone with the VIN.',
+ sos: 'Yes. A VIN check decodes the year, make and model and lists open safety recalls.',
+ },
+ {
+ name: 'Tampering check',
+ catches: 'Serial numbers ground off, re-stamped, covered or swapped.',
+ who: 'You, by looking at the item.',
+ sos: 'Partly. Gun checks flag serials that look altered or obliterated. For everything else, look at the label yourself.',
+ },
+];
+
+const MATRIX: { item: string; need: string }[] = [
+ { item: 'iPhone, Android phone, cellular tablet', need: 'Theft report check, carrier blacklist, account lock. All three: a phone can be clean on one and dead on another.' },
+ { item: 'Laptop', need: 'Theft report check and account lock (Find My on a Mac, Microsoft account and BIOS password on Windows).' },
+ { item: 'Game console', need: 'Theft report check, then the seller deactivates and signs out of their account so you can set it up.' },
+ { item: 'Car, truck, motorcycle', need: 'Theft report check, recalls, and title against the seller\'s ID. Add a vehicle history report for the title and odometer record.' },
+ { item: 'Gun', need: 'Theft report check including police records, a tampering check on the serial, and your state\'s transfer rules.' },
+ { item: 'Bike or e-bike', need: 'Theft report check including the stolen-bicycle registry, a tampering check under the bottom bracket, and app or tracker removal for e-bikes.' },
+ { item: 'Power tools, cameras, instruments', need: 'Theft report check and a tampering check. Look for engraved company names or initials that were scrubbed.' },
+ { item: 'Watches and jewelry', need: 'Theft report check on any serial or report number, and papers that match. Many pieces have no number, so the seller\'s story matters more.' },
+];
+
+const FAQS: { question: string; answer: string }[] = [
+ {
+ question: 'What is the difference between stolen and blacklisted?',
+ answer:
+ 'Stolen means an owner reported the item stolen, to police or a registry. Blacklisted applies to phones: the IMEI was reported lost or stolen to a carrier, which can stop it working on networks that honor the list. A phone can be on one list and not the other. SafeOrStolen (safeorstolen.com/blog/complete-verification-guide) searches theft reports on every check and the carrier blacklist on paid phone checks.',
+ },
+ {
+ question: 'Can a phone be clean but still unusable?',
+ answer:
+ 'Yes. A phone that was never reported stolen and is not blacklisted can still be locked to the previous owner\'s Apple ID or Google account. After a reset it asks for their password and you cannot get past it. No online check can see this, so watch the seller sign out and erase the phone before you pay.',
+ },
+ {
+ question: 'Can I run an NCIC check myself?',
+ answer:
+ 'No. The FBI\'s NCIC is open only to law enforcement and authorized agencies. Some local police departments will run a serial number or VIN for you if you call the non-emergency line or bring the item to the station, but policies vary. Public tools like SafeOrStolen search the records that are open to them and list them on each result.',
+ },
+ {
+ question: 'Does a stolen VIN check show if a car has a lien or salvage title?',
+ answer:
+ 'Not on SafeOrStolen. Its VIN check searches theft reports and public web results, decodes the year, make and model, and lists open recalls, plus Arizona law-enforcement records for Arizona vehicles. For liens and title brands, read the paper title (a lienholder is listed on it) and get a vehicle history report before you pay.',
+ },
+ {
+ question: 'Which check matters most for a used item?',
+ answer:
+ 'It depends on the item. For a phone, the account lock is the one that most often leaves buyers with a brick, followed by the blacklist. For a car, the title against the seller\'s ID. For bikes, tools and guns, the theft report check and the condition of the serial number. The table on this page lists what each item needs.',
+ },
+];
+
 export default function CompleteVerificationGuide() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Complete Verification Guide: How to Check If Any Item Is Stolen",
-    "description": "Master guide to verifying phones, vehicles, electronics, bikes, tools, and more. Learn how to protect yourself from buying stolen goods with SafeOrStolen.",
-    "author": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    },
-    "datePublished": "2026-01-15",
-    "dateModified": "2026-01-15"
-  };
+ const structuredData = [
+ {
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Stolen, Blacklisted or Locked? The Checks a Used Item Needs",
+ "description": "The different checks for a used item compared: theft reports, police records, carrier blacklist, account locks, title, recalls and tampering, and which ones each item needs.",
+ "author": { "@type": "Organization", "name": "SafeOrStolen" },
+ "publisher": {
+ "@type": "Organization",
+ "name": "SafeOrStolen",
+ "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/logo.png" }
+ },
+ "datePublished": "2026-01-15",
+ "dateModified": "2026-10-07"
+ },
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": FAQS.map((f) => ({
+ "@type": "Question",
+ "name": f.question,
+ "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+ }))
+ }
+ ];
 
-  return (
-    <>
-      <PageSEO
-        title="Complete Verification Guide: How to Check If Anything Is Stolen | SafeOrStolen"
-        description="Master guide to verifying phones, vehicles, electronics, bikes, tools, and more. Comprehensive tutorial for protecting yourself from buying stolen goods."
-        keywords="verification guide, check stolen items, how to verify, IMEI check, VIN check, serial number verification"
-        canonical="/blog/complete-verification-guide"
-        structuredData={structuredData}
-      />
-      <div className="min-h-screen bg-background py-12">
-        <div className="container max-w-4xl mx-auto px-4">
-          <article className="prose prose-lg max-w-none">
-            <h1 className="text-4xl font-bold mb-6">Complete Verification Guide: How to Check If Any Item Is Stolen</h1>
-            
-            <div className="flex items-center gap-4 text-muted-foreground mb-8">
-              <time dateTime="2026-01-15">January 15, 2026</time>
-              <span>•</span>
-              <span>20 min read</span>
-            </div>
+ return (
+ <>
+ <PageSEO
+ title="Stolen, Blacklisted or Locked? The Checks a Used Item Needs"
+ description="Stolen, blacklisted and activation-locked are different problems with different checks. What each check catches, who can run it, and which ones a phone, car or bike needs."
+ keywords="stolen vs blacklisted, blacklisted vs activation lock, what checks before buying used, used phone checks, stolen check vs vin history, ncic check public"
+ canonical="/blog/complete-verification-guide"
+ type="article"
+ publishedTime="2026-01-15"
+ modifiedTime="2026-10-07"
+ structuredData={structuredData}
+ />
+ <div className="min-h-screen bg-background py-12 pt-24">
+ <div className="container max-w-4xl mx-auto px-4">
+ <article className="max-w-none">
+ <h1 className="text-4xl font-bold mb-4">Stolen, Blacklisted or Locked? The Checks a Used Item Needs</h1>
 
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Your Ultimate Stolen Goods Protection Manual</h2>
-              <p className="text-lg mb-4">
-                With over $15 billion in stolen goods sold annually on secondhand marketplaces, every buyer needs to know how to verify items before purchase. This comprehensive guide covers verification methods for every category of item you might buy used—from smartphones to vehicles, electronics to tools.
-              </p>
-              <p className="text-lg mb-4">
-                Whether you're shopping on eBay, Facebook Marketplace, Craigslist, or OfferUp, this guide will teach you how to protect yourself from buying stolen property and potentially facing criminal charges.
-              </p>
-              <SafeOrStolenVideo withSchema={false} className="mx-auto mt-8 max-w-xs" caption="Verify any used item before you buy or sell." />
-            </section>
+ <div className="flex items-center gap-3 text-sm text-muted-foreground mb-8">
+ <span>Published <time dateTime="2026-01-15">January 15, 2026</time></span>
+ <span>·</span>
+ <span>Updated <time dateTime="2026-10-07">October 7, 2026</time></span>
+ </div>
 
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Universal Verification Principles</h2>
-              
-              <div className="bg-muted p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-4">3-Step Verification Process (Works for Any Item):</h3>
-                <ol className="list-decimal list-inside space-y-3 text-lg">
-                  <li><strong>Find the Unique Identifier:</strong> IMEI for phones, VIN for vehicles, serial number for electronics/tools</li>
-                  <li><strong>Run Verification BEFORE Meeting Seller:</strong> Use SafeOrStolen to check against 50+ stolen goods databases</li>
-                  <li><strong>Verify In-Person with Mobile App:</strong> Re-scan identifier during transaction using SafeOrStolen's barcode scanner</li>
-                </ol>
-              </div>
+ <p className="text-lg mb-4">
+ "Is it stolen?" is really several questions. A used item can be reported stolen, blacklisted
+ by a carrier, locked to the previous owner's account, carrying a bad title, or have its serial
+ tampered with, and each one has its own check. A phone needs three of them; a car needs the
+ title checked as well as the VIN. No single tool covers all of them.
+ </p>
+ <p className="text-muted-foreground mb-8">
+ This post lays out each check, what it catches, who can run it, and whether a SafeOrStolen
+ check covers it. If you want the buying steps in order, read{' '}
+ <Link to="/how-to-verify-a-used-item" className="text-primary underline">how to verify a used item</Link>; if
+ you can't find the number, see{' '}
+ <Link to="/comprehensive-guide" className="text-primary underline">where to find the serial number on any item</Link>.
+ </p>
 
-              <p className="text-lg mb-6">
-                <strong>Golden Rule:</strong> If a seller refuses to provide identifiers or creates urgency to skip verification, walk away immediately. Legitimate sellers have nothing to hide.
-              </p>
+ <h2 className="text-3xl font-bold mt-10 mb-4">The seven checks, compared</h2>
+ <div className="overflow-x-auto mb-8">
+ <table className="w-full text-sm border border-border">
+ <thead className="bg-muted/50">
+ <tr>
+ <th className="text-left p-3 border-b border-border">Check</th>
+ <th className="text-left p-3 border-b border-border">What it catches</th>
+ <th className="text-left p-3 border-b border-border">Who can run it</th>
+ <th className="text-left p-3 border-b border-border">In a SafeOrStolen check?</th>
+ </tr>
+ </thead>
+ <tbody>
+ {CHECKS.map((c) => (
+ <tr key={c.name} className="align-top">
+ <td className="p-3 border-b border-border font-semibold">{c.name}</td>
+ <td className="p-3 border-b border-border">{c.catches}</td>
+ <td className="p-3 border-b border-border">{c.who}</td>
+ <td className="p-3 border-b border-border">{c.sos}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
 
-              <Button asChild size="lg" className="w-full mb-8">
-                <Link to="/verify">Verify Any Item Now - Free Trial</Link>
-              </Button>
-            </section>
+ <h2 className="text-3xl font-bold mt-10 mb-4">Which checks each item needs</h2>
+ <div className="overflow-x-auto mb-8">
+ <table className="w-full text-sm border border-border">
+ <thead className="bg-muted/50">
+ <tr>
+ <th className="text-left p-3 border-b border-border">Item</th>
+ <th className="text-left p-3 border-b border-border">Checks to do</th>
+ </tr>
+ </thead>
+ <tbody>
+ {MATRIX.map((m) => (
+ <tr key={m.item} className="align-top">
+ <td className="p-3 border-b border-border font-semibold">{m.item}</td>
+ <td className="p-3 border-b border-border">{m.need}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
 
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Item-By-Item Verification Guide</h2>
-              
-              <div className="space-y-8">
-                <Card className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <Smartphone className="w-12 h-12 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">Smartphones & Tablets</h3>
-                      <p className="text-muted-foreground">IMEI/Serial Number Verification</p>
-                    </div>
-                  </div>
+ <h2 className="text-3xl font-bold mt-10 mb-3">Why a clean result on one check isn't the whole answer</h2>
+ <p className="mb-4 text-muted-foreground">
+ Each check looks at a different record. A phone stolen from a car and never reported has no
+ theft record and no blacklist entry, but it will still be locked to the owner's Apple ID. A car
+ with a clean theft check can still have a lender listed on the title, and the lender has a
+ claim on it until the loan is paid. A tool with a ground-off nameplate has nothing for any
+ database to match. That's why the table pairs an online check with something you do in person
+ for almost every item.
+ </p>
+ <p className="mb-4 text-muted-foreground">
+ On SafeOrStolen, every result says which sources were searched and ends in "reported stolen",
+ "possible match" or "no report found in the records searched". The last one means exactly that:
+ nothing in those records, not a guarantee.
+ </p>
 
-                  <h4 className="text-xl font-bold mb-3">How to Find IMEI Number:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li><strong>Dial Code Method:</strong> Dial *#06# on any phone to display IMEI instantly</li>
-                    <li><strong>Settings Method (iPhone):</strong> Settings → General → About → IMEI</li>
-                    <li><strong>Settings Method (Android):</strong> Settings → About Phone → Status → IMEI</li>
-                    <li><strong>Physical Label:</strong> Check SIM tray or under battery (older models)</li>
-                  </ul>
+ <SafeOrStolenVideo withSchema={false} className="mx-auto my-8 max-w-xs" caption="Checking a used item before you buy." />
 
-                  <h4 className="text-xl font-bold mb-3">What to Verify:</h4>
-                  <div className="bg-muted p-4 rounded-lg mb-6">
-                    <ul className="space-y-2">
-                      <li>✓ Check if IMEI is reported stolen in theft reports</li>
-                      <li>✓ Verify carrier blacklist status (AT&T, Verizon, T-Mobile, Sprint)</li>
-                      <li>✓ Confirm Find My iPhone/Android is disabled by seller</li>
-                      <li>✓ Ensure activation lock is removed</li>
-                      <li>✓ Check for outstanding finance balance</li>
-                    </ul>
-                  </div>
+ <h2 className="text-3xl font-bold mt-12 mb-4">Questions people ask</h2>
+ <div className="space-y-6 mb-10">
+ {FAQS.map((f) => (
+ <div key={f.question}>
+ <h3 className="font-semibold text-lg text-foreground mb-1">{f.question}</h3>
+ <p className="text-muted-foreground">{f.answer}</p>
+ </div>
+ ))}
+ </div>
 
-                  <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded-[0.25rem]">
-                    <p className="font-bold mb-2">⚠️ Critical Warning:</p>
-                    <p>If Find My iPhone or Android Device Protection is still enabled, the previous owner can remotely lock or erase the phone at any time—even after you've paid.</p>
-                  </div>
-                </Card>
-
-                <Card className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <Car className="w-12 h-12 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">Vehicles (Cars, Trucks, Motorcycles)</h3>
-                      <p className="text-muted-foreground">VIN Verification & Title History</p>
-                    </div>
-                  </div>
-
-                  <h4 className="text-xl font-bold mb-3">How to Find VIN Number:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li><strong>Driver's Side Dashboard:</strong> Visible through windshield (17 characters)</li>
-                    <li><strong>Driver's Door Jamb:</strong> White sticker with VIN and vehicle info</li>
-                    <li><strong>Vehicle Title/Registration:</strong> Listed on all official documents</li>
-                    <li><strong>Insurance Documents:</strong> VIN appears on all insurance cards</li>
-                  </ul>
-
-                  <h4 className="text-xl font-bold mb-3">What to Verify:</h4>
-                  <div className="bg-muted p-4 rounded-lg mb-6">
-                    <ul className="space-y-2">
-                      <li>✓ Check if VIN is reported stolen (NICB, NMVTIS, state databases)</li>
-                      <li>✓ Verify title is clean (not salvage, rebuilt, or branded)</li>
-                      <li>✓ Confirm mileage matches odometer (detect rollback fraud)</li>
-                      <li>✓ Check for outstanding liens or finance balance</li>
-                      <li>✓ Verify accident history and flood damage</li>
-                      <li>✓ Ensure VIN matches title and registration</li>
-                    </ul>
-                  </div>
-
-                  <Button asChild className="w-full">
-                    <Link to="/vin-checker">Verify VIN Number Now</Link>
-                  </Button>
-                </Card>
-
-                <Card className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <Laptop className="w-12 h-12 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">Laptops & Computers</h3>
-                      <p className="text-muted-foreground">Serial Number & Hardware ID Verification</p>
-                    </div>
-                  </div>
-
-                  <h4 className="text-xl font-bold mb-3">How to Find Serial Number:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li><strong>MacBook:</strong> Apple Menu → About This Mac → Serial Number</li>
-                    <li><strong>Windows PC:</strong> Command Prompt → "wmic bios get serialnumber"</li>
-                    <li><strong>Physical Label:</strong> Check bottom of laptop or inside battery compartment</li>
-                    <li><strong>Original Box:</strong> Serial number printed on packaging barcode</li>
-                  </ul>
-
-                  <h4 className="text-xl font-bold mb-3">What to Verify:</h4>
-                  <div className="bg-muted p-4 rounded-lg mb-6">
-                    <ul className="space-y-2">
-                      <li>✓ Check if serial number is reported stolen</li>
-                      <li>✓ Verify Find My Mac/Windows is disabled</li>
-                      <li>✓ Confirm seller can provide admin password</li>
-                      <li>✓ Ensure no firmware/BIOS password lock</li>
-                      <li>✓ Check manufacturer warranty status</li>
-                    </ul>
-                  </div>
-                </Card>
-
-                <Card className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <Bike className="w-12 h-12 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">Bicycles & E-Bikes</h3>
-                      <p className="text-muted-foreground">Frame Serial Number Verification</p>
-                    </div>
-                  </div>
-
-                  <h4 className="text-xl font-bold mb-3">How to Find Bike Serial Number:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li><strong>Bottom Bracket:</strong> Most common location (underside of frame where pedals attach)</li>
-                    <li><strong>Head Tube:</strong> Front of frame near handlebars</li>
-                    <li><strong>Seat Tube:</strong> Where seat post inserts into frame</li>
-                    <li><strong>Dropout:</strong> Rear wheel attachment points</li>
-                  </ul>
-
-                  <h4 className="text-xl font-bold mb-3">What to Verify:</h4>
-                  <div className="bg-muted p-4 rounded-lg mb-6">
-                    <ul className="space-y-2">
-                      <li>✓ Check Bike Index (largest stolen bike database)</li>
-                      <li>✓ Verify local police stolen bike registries</li>
-                      <li>✓ Confirm seller has original purchase receipt</li>
-                      <li>✓ Request photos of serial number matching actual bike</li>
-                      <li>✓ Ensure frame serial hasn't been filed off (major red flag)</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-primary/10 p-4 rounded-[0.25rem]">
-                    <p className="font-bold mb-2">E-Bike Specific Tip:</p>
-                    <p>High-end e-bikes ($3,000+) are prime theft targets. Always verify battery and motor serial numbers separately—thieves sometimes swap components.</p>
-                  </div>
-                </Card>
-
-                <Card className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <Wrench className="w-12 h-12 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">Power Tools & Equipment</h3>
-                      <p className="text-muted-foreground">Serial Number & Model Verification</p>
-                    </div>
-                  </div>
-
-                  <h4 className="text-xl font-bold mb-3">How to Find Tool Serial Numbers:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li><strong>Tool Body:</strong> Usually near battery compartment or motor housing</li>
-                    <li><strong>Battery Pack:</strong> Separate serial number (often stolen with tool)</li>
-                    <li><strong>Carrying Case:</strong> Some manufacturers print serial on case</li>
-                    <li><strong>Original Box:</strong> Barcode label with serial and model info</li>
-                  </ul>
-
-                  <h4 className="text-xl font-bold mb-3">What to Verify:</h4>
-                  <div className="bg-muted p-4 rounded-lg mb-6">
-                    <ul className="space-y-2">
-                      <li>✓ Check if serial reported stolen (construction site thefts common)</li>
-                      <li>✓ Verify seller has original case and all accessories</li>
-                      <li>✓ Confirm purchase receipt available (especially for new tools)</li>
-                      <li>✓ Ensure warranty is transferable and not voided</li>
-                      <li>✓ Check seller isn't listing multiple identical tools (major red flag)</li>
-                    </ul>
-                  </div>
-                </Card>
-
-                <Card className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <Heart className="w-12 h-12 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">Jewelry & Watches</h3>
-                      <p className="text-muted-foreground">Model Number & Certificate Verification</p>
-                    </div>
-                  </div>
-
-                  <h4 className="text-xl font-bold mb-3">How to Find Watch Serial Numbers:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li><strong>Case Back:</strong> Engraved serial number (usually 6-8 digits)</li>
-                    <li><strong>Between Lugs:</strong> Some brands hide serial where strap attaches</li>
-                    <li><strong>Certificate of Authenticity:</strong> Should match watch serial exactly</li>
-                    <li><strong>Warranty Card:</strong> Lists serial and purchase date</li>
-                  </ul>
-
-                  <h4 className="text-xl font-bold mb-3">What to Verify:</h4>
-                  <div className="bg-muted p-4 rounded-lg mb-6">
-                    <ul className="space-y-2">
-                      <li>✓ Check Art Loss Register for luxury watch theft reports</li>
-                      <li>✓ Verify serial matches manufacturer database (Rolex, Patek Philippe)</li>
-                      <li>✓ Confirm certificate of authenticity is genuine</li>
-                      <li>✓ Ensure seller can provide original purchase receipt</li>
-                      <li>✓ Verify watch hasn't been reported to insurance as lost/stolen</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded-[0.25rem]">
-                    <p className="font-bold mb-2">⚠️ Luxury Watch Warning:</p>
-                    <p>Organized theft rings target luxury watches in violent robberies. Always meet in police station parking lots for high-value watch transactions and verify thoroughly.</p>
-                  </div>
-                </Card>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">How SafeOrStolen Makes Verification Easy</h2>
-              
-              <div className="bg-primary/10 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-4">Universal Verification Platform:</h3>
-                <ul className="space-y-3 text-lg">
-                  <li><strong>One Search, multiple sources:</strong> Instantly cross-references SafeOrStolen reports and public web results. Guns are also checked against police theft reports from 34 states, bikes against a national stolen-bicycle registry, and paid phone checks search the phone blacklist.</li>
-                  <li><strong>Mobile App with Barcode Scanner:</strong> Scan any identifier in 3 seconds during transactions</li>
-                  <li><strong>Real-Time Results:</strong> Immediate SAFE or STOLEN status with confidence scores</li>
-                  <li><strong>Detailed Reports:</strong> See relevant SafeOrStolen reports, public listings, and AI-identified patterns.</li>
-                  <li><strong>Legal Protection:</strong> Get documentation if you unknowingly purchase stolen goods</li>
-                </ul>
-              </div>
-
-              <div className="flex gap-4">
-                <Button asChild size="lg">
-                  <Link to="/verify">Start Free Verification</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/app">Download Mobile App</Link>
-                </Button>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Safe Buying Checklist (Print & Save)</h2>
-              
-              <div className="bg-muted p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Before Every Purchase:</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Request identifier BEFORE meeting:</strong> IMEI, VIN, or serial number</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Run SafeOrStolen verification:</strong> Check against stolen databases</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Meet in public with cameras:</strong> Police stations, banks, busy parking lots</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Bring SafeOrStolen mobile app:</strong> Re-scan identifier in person</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Request original packaging:</strong> Box, receipt, warranty, accessories</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Test functionality completely:</strong> Turn on, factory reset, reactivate</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Check seller profile:</strong> Account age, ratings, previous sales</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Use traceable payments:</strong> Venmo, PayPal, Zelle (avoid cash for high-value)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Get written receipt:</strong> Include identifier, date, seller name, price</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">☐</span>
-                    <span><strong>Trust your instincts:</strong> Walk away if anything feels wrong</span>
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Conclusion: Knowledge + Verification = Protection</h2>
-              <p className="text-lg mb-4">
-                Buying secondhand doesn't have to be risky. By following this comprehensive verification guide and using SafeOrStolen's instant verification tools, you can confidently shop marketplaces knowing you're protected from stolen goods fraud.
-              </p>
-              <p className="text-lg mb-6">
-                Our mission is to make secondhand buying safe for everyone. With 3-second verification across multiple sources, SafeOrStolen gives you the power to protect yourself from financial loss and legal trouble.
-              </p>
-
-              <div className="bg-primary/10 p-6 rounded-lg">
-                <p className="text-lg font-bold mb-4">Start protecting yourself today:</p>
-                <div className="flex gap-4">
-                  <Button asChild size="lg">
-                    <Link to="/verify">Verify Any Item Now</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/app">Get Mobile App</Link>
-                  </Button>
-                </div>
-              </div>
-            </section>
-          </article>
-        </div>
-      </div>
-      <RelatedPagesSection currentPage="/blog/complete-verification-guide" currentCategory="blog" maxLinks={5} />
-    </>
-  );
+ <div className="rounded-xl border border-border bg-muted/30 p-6 text-center">
+ <p className="text-lg font-bold mb-2">Start with the theft report check</p>
+ <p className="text-muted-foreground mb-4">2 free checks with a free account. No credit card.</p>
+ <Button asChild size="lg">
+ <Link to="/check-if-stolen">Check an item</Link>
+ </Button>
+ </div>
+ </article>
+ </div>
+ </div>
+ <RelatedPagesSection currentPage="/blog/complete-verification-guide" currentCategory="blog" maxLinks={5} />
+ </>
+ );
 }
