@@ -7,13 +7,15 @@ interface DataPartnerBadgesProps {
  className?: string;
 }
 
+// Oct 7 2026: only sources a check actually searches. The old list claimed a "national gun
+// registry" (none exists), title history, insurer data, "1.4M+ bikes" and "50+ sources".
 const DATA_PARTNERS = [
- { name: 'Stolen Property Registry', description: 'Verified Theft Reports', icon: Shield, verified: true },
- { name: 'Insurance Bureau', description: 'National Theft Reports', icon: Lock, verified: true },
- { name: 'our theft reports and public web data', description: 'SafeOrStolen Data Checks', icon: Globe, verified: true },
- { name: 'Bicycle Registry', description: '1.4M+ Bikes Cataloged', icon: Database, verified: true },
- { name: 'Firearms Database', description: 'National Gun Registry', icon: Server, verified: true },
- { name: 'Vehicle Records', description: 'VIN & Title History', icon: CheckCircle, verified: true },
+ { name: 'SafeOrStolen theft reports', description: 'Items owners reported stolen here', icon: Shield, verified: true },
+ { name: 'Public web results', description: 'Listings and posts that mention the number', icon: Globe, verified: true },
+ { name: 'Police gun theft reports', description: '33 states and Washington, DC, plus live Ohio records', icon: Server, verified: true },
+ { name: 'Stolen-bicycle registry', description: 'National registry, searched by frame serial', icon: Database, verified: true },
+ { name: 'Vehicle records', description: 'VIN decode, safety recalls, Arizona stolen-vehicle records', icon: CheckCircle, verified: true },
+ { name: 'Phone blacklist', description: 'Lost and stolen phone blacklist (paid check)', icon: Lock, verified: true },
 ];
 
 export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({ 
@@ -23,7 +25,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  if (variant === 'minimal') {
  return (
  <div className={cn("flex flex-wrap items-center justify-center gap-3", className)}>
- <span className="text-xs text-muted-foreground font-medium">Data from:</span>
+ <span className="text-xs text-muted-foreground font-medium">Searches:</span>
  {DATA_PARTNERS.slice(0, 4).map((partner, index) => (
  <span 
  key={index}
@@ -32,8 +34,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  {partner.name}
  </span>
  ))}
- <span className="text-xs text-muted-foreground">+50 more</span>
- </div>
+  </div>
  );
  }
 
@@ -42,8 +43,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  <div className={cn("bg-muted/30 border border-border rounded-lg p-4", className)}>
  <div className="flex items-center gap-2 mb-3">
  <Database className="h-4 w-4 text-primary" />
- <span className="text-sm font-semibold">Verified Data Sources</span>
- <span className="text-xs bg-secondary/20 text-secondary px-2 py-0.5 rounded-full">multiple sources</span>
+ <span className="text-sm font-semibold">What a check searches</span>
  </div>
  <div className="flex flex-wrap gap-2">
  {DATA_PARTNERS.map((partner, index) => (
@@ -66,14 +66,11 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  <div className="flex items-center justify-between mb-4">
  <div className="flex items-center gap-2">
  <Database className="h-5 w-5 text-primary" />
- <h3 className="text-lg font-bold">Our Data Partners</h3>
+ <h3 className="text-lg font-bold">What a check searches</h3>
  </div>
- <span className="text-xs bg-secondary text-secondary-foreground px-3 py-1 rounded-full font-medium">
- 50+ Verified Sources
- </span>
  </div>
  <p className="text-sm text-muted-foreground mb-4">
- We aggregate data from our community reports, public web results, and AI analysis to help you identify stolen items.
+ Every check searches SafeOrStolen theft reports and public web results. Guns, bikes, phones and vehicles add the sources below. Each result lists exactly which sources were searched.
  </p>
  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
  {DATA_PARTNERS.map((partner, index) => (

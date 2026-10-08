@@ -69,7 +69,7 @@ const ATFGunSerialNumberCheckGuide = () => (
       whatIs:
         "A gun serial number check looks for reports that a specific gun was stolen or lost. Owners report thefts to local police, who enter them in the FBI's NCIC stolen-gun file. The ATF's role is different: it traces guns recovered in crimes through their sales records, and it does not hold a list of stolen guns that the public can search.",
       howItWorks:
-        "Type the serial number into the search box. SafeOrStolen searches 242,839 police theft and loss reports from 33 states and Washington, DC, mostly from 2006 to 2017, live Ohio law-enforcement records, and its own theft reports. It also flags serials that look altered or obliterated. It does not query ATF eTrace or NCIC, which are closed to the public.",
+        "Type the serial number into the search box. SafeOrStolen searches 242,839 police theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, and its own theft reports. It also flags serials that look altered or obliterated. It does not query ATF eTrace or NCIC, which are closed to the public.",
       whyCheck:
         "A stolen gun can be taken back by police, and the buyer loses what they paid. Possessing a gun with an altered or removed serial number is a federal crime under 18 U.S.C. § 922(k). Checking the serial before you pay, and keeping a record that you did, protects you.",
       benefits: [

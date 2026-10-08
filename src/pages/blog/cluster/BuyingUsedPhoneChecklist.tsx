@@ -1,147 +1,173 @@
 import { ClusterArticleTemplate } from "@/components/blog/ClusterArticleTemplate";
 
+/**
+ * Oct 7 2026: rewritten by hand for "buying used phone checklist" / "what to check when buying a
+ * used phone". No Search Console rows for this URL yet. Removed "AI analysis", the statement that
+ * SafeOrStolen doesn't check carrier blacklists (it now has a paid blacklist check), and the
+ * "Proof of Clean Purchase" name in favour of the $1.99 verification certificate.
+ */
 export default function BuyingUsedPhoneChecklist() {
   return (
     <ClusterArticleTemplate
       slug="buying-used-phone-checklist"
-      metaDescription="A practical used-phone checklist: match the IMEI, check carrier status, remove account locks, test the hardware, review seller records, and pay safely."
-      keywords="buying used phone checklist, used phone safety, how to buy used iPhone, avoid stolen phone"
-      lastReviewed="September 24, 2026"
+      metaDescription="A used phone checklist for before you pay: get and check the IMEI, match it in person, watch the seller remove their account, test everything, and pay safely."
+      keywords="buying used phone checklist, what to check when buying a used phone, used phone checklist, things to check before buying a used iphone, buying a second hand phone"
+      lastReviewed="October 7, 2026"
       intro={
         <>
           <p>
-            A used phone needs more than one lookup. Before paying, match the
-            device identifier, check carrier status separately, remove account
-            locks, test the hardware, and preserve the seller and payment
-            records.
-          </p>
-          <p>
-            Use this checklist before the meeting and again with the phone in
-            your hand.
+            Before you buy a used phone: get the IMEI and check it, match it on the phone in
+            person, watch the seller remove their Apple Account or Google account and erase the
+            phone, set it up yourself, test calls and the hardware, and pay with something you
+            can dispute. The checklist below takes about fifteen minutes at the meetup and covers
+            the problems that cost buyers the most: stolen, locked, blocked or broken.
           </p>
         </>
       }
       body={
         <>
           <h2>Before you meet</h2>
-          <h3>1. Ask for the IMEI</h3>
+          <h3>1. Get the IMEI</h3>
           <p>
-            Ask the seller to dial <code>*#06#</code> or open Settings and send
-            the 15-digit IMEI. Dual-SIM phones may have two IMEIs, so record
-            both.
+            Ask the seller to dial <code>*#06#</code> and send a screenshot. Phones with two SIMs
+            or an eSIM show two IMEIs; ask for both. If they won't send it, stop here.
           </p>
-          <h3>2. Research the IMEI in more than one place</h3>
+          <h3>2. Check it</h3>
           <p>
-            Start with CTIA’s free{" "}
-            <span className="inline-flex items-center">Stolen Phone Checker</span>{" "}
-            (for US consumers), which uses GSMA Device Check
-            data to show whether the IMEI has been reported lost or stolen.
-            Then use the original carrier’s eligibility tool or support team for
-            network and finance restrictions. Run the IMEI through the{" "}
-            <a href="/imei-checker">SafeOrStolen IMEI checker</a> for
-            SafeOrStolen reports, public web results, AI analysis, and device
-            details. SafeOrStolen does not currently query carrier blacklists.
+            Run the IMEI on the <a href="/imei-checker">free IMEI check</a>. It shows the make and
+            model, so you can confirm it matches the listing, and searches SafeOrStolen theft
+            reports and public web results. For an expensive phone, add the paid lost/stolen
+            blacklist check.
           </p>
-          <h3>3. Review the listing and seller</h3>
+          <h3>3. Ask the questions that matter</h3>
+          <ul>
+            <li>Which carrier is it from, and is it paid off and unlocked?</li>
+            <li>Has the screen, battery or camera ever been replaced?</li>
+            <li>Do you have the box or the receipt?</li>
+            <li>Can you sign out of your account and reset it with me there?</li>
+          </ul>
           <p>
-            Reverse-image search the listing photos, compare the seller’s other
-            listings, and save screenshots. Ask for the original receipt or
-            order record; it is useful context but does not by itself prove
-            ownership.
+            The last question is the big one. An honest seller says yes. Someone who says it's
+            "already reset" or that they'll "remove the account later" is telling you something.
           </p>
-          <h3>4. Confirm the exact model</h3>
+          <h3>4. Ask the seller to turn off Find My at home (iPhone)</h3>
           <p>
-            Ask for storage, model number, carrier, color, battery condition,
-            repair history, and included accessories. Compare those details with
-            the IMEI device information and the physical phone.
+            Newer iPhones with Stolen Device Protection can make the owner wait an hour to turn
+            off Find My when they're away from home. Asking them to do it before they leave saves
+            a stalled meetup.
           </p>
-          <h2>At the meeting</h2>
-          <h3>5. Choose a public location</h3>
+
+          <h2>At the meetup</h2>
+          <h3>5. Meet somewhere public and bring your SIM</h3>
           <p>
-            Meet in a well-lit public place. Some police departments offer
-            exchange areas, but availability varies; confirm through the
-            department’s official website or phone number.
+            A busy, well-lit place with Wi-Fi or good signal. Bring your SIM card (or your eSIM
+            details), a charging cable and earbuds.
           </p>
-          <h3>6. Match the IMEI yourself</h3>
+          <h3>6. Match the IMEI</h3>
           <p>
-            Dial <code>*#06#</code> and compare the result with Settings, the
-            box, and the SIM tray where applicable. Stop if any identifier
-            conflicts.
+            Dial <code>*#06#</code> yourself and compare it with what you checked. Compare it with
+            the box too if there is one. Any mismatch, walk away.
           </p>
-          <h3>7. Remove account locks and begin setup</h3>
+          <h3>7. Watch the account come off and the phone get erased</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Phone</th>
+                <th>What the seller does</th>
+                <th>What you should see after</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>iPhone</td>
+                <td>Turns off Find My, signs out of their Apple Account, then Settings &gt; General &gt; Transfer or Reset iPhone &gt; Erase All Content and Settings</td>
+                <td>Setup reaches your own Apple Account sign-in, not "iPhone Locked to Owner" or Remote Management</td>
+              </tr>
+              <tr>
+                <td>Samsung Galaxy</td>
+                <td>Removes Google and Samsung accounts in Settings &gt; Accounts and backup &gt; Manage accounts, then Factory data reset</td>
+                <td>Setup doesn't ask for a previously synced Google account</td>
+              </tr>
+              <tr>
+                <td>Pixel and other Android</td>
+                <td>Removes their Google account in Settings, then Settings &gt; System &gt; Reset options &gt; Erase all data</td>
+                <td>Setup doesn't ask for a previously synced account or show an organization screen</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>8. Check the carrier lock</h3>
           <p>
-            For iPhone, the seller should turn off Find My, sign out, erase the
-            phone, and let you begin setup. Do not buy if setup requests the
-            previous owner’s Apple Account. On Android, have the seller remove
-            their Google account before reset and confirm setup does not request
-            the prior credentials.
+            On iPhone, Settings &gt; General &gt; About &gt; Carrier Lock should say "No SIM
+            restrictions", or name the carrier you use. On any phone, put your SIM in and make a
+            call and send a text.
           </p>
-          <h3>8. Test cellular service and hardware</h3>
+          <h3>9. Test the hardware</h3>
+          <ul>
+            <li>Screen: open a white image and look for dead spots, lines or burn-in.</li>
+            <li>Touch: drag an app icon across every part of the screen.</li>
+            <li>Cameras: front and back, photo and video, and the flash.</li>
+            <li>Speakers and microphones: record a voice memo and play it back, then make a call.</li>
+            <li>Face ID, Touch ID or fingerprint: set one up.</li>
+            <li>Charging: plug in your cable and check it starts charging.</li>
+            <li>Buttons, the vibration switch or Action button, and Wi-Fi and Bluetooth.</li>
+          </ul>
+          <h3>10. Check battery and parts</h3>
           <p>
-            With the seller’s permission, test your SIM or eSIM, make a call,
-            send a message, connect to Wi-Fi, and test cameras, microphones,
-            speakers, biometrics, charging, buttons, display, and battery
-            information. A successful call is useful, but it does not guarantee
-            the device will never be restricted later.
+            On iPhone, look at Settings &gt; Battery &gt; Battery Health and Settings &gt; General &gt;
+            About &gt; Parts and Service History. On Android, battery and repair details vary by
+            brand. Replaced parts aren't proof of theft, but they should match what the seller told
+            you.
           </p>
-          <h3>9. Review repair and parts information</h3>
+
+          <h2>Paying and afterward</h2>
+          <h3>11. Pay with something you can dispute</h3>
           <p>
-            Check available battery-health, parts, and service-history screens.
-            Warnings do not necessarily mean theft, but they should match what
-            the seller disclosed.
+            A marketplace's own checkout, PayPal Goods &amp; Services or a credit card give you a way
+            to dispute the payment if the phone turns out to be stolen or blocked. Cash, gift cards,
+            crypto and "friends and family" payments usually don't.
           </p>
-          <h2>Payment and records</h2>
-          <h3>10. Use a protected payment method</h3>
+          <h3>12. Keep a record</h3>
           <p>
-            Use the marketplace’s official checkout or another method whose
-            current terms cover the transaction. Read the provider’s rules and
-            avoid gift cards, wires, cryptocurrency, or friends-and-family
-            payments to strangers.
+            Save the listing, messages, the IMEI and the payment confirmation. Your SafeOrStolen
+            check is saved to your account with the date. For $1.99 (free for monthly members) you
+            can add a verification certificate: a dated record with its own link showing you
+            checked before the sale.
           </p>
-          <h3>11. Write down the transaction</h3>
+
+          <h2>If something goes wrong</h2>
           <p>
-            Keep the listing, message thread, seller details, IMEI, receipt, and
-            payment confirmation. A simple bill of sale can record the item,
-            identifier, price, date, and parties, but legal requirements vary.
-          </p>
-          <h3>12. Let the seller show a verification record</h3>
-          <p>
-            A seller can share a SafeOrStolen Proof of Clean Purchase after a
-            clean check. Verify the shared link and match the identifier
-            yourself. The record is timestamped verification context—not a
-            title, guarantee, or legal document.
-          </p>
-          <h2>If you already bought a problem phone</h2>
-          <p>
-            Do not resell, erase, or try to bypass a lock. Preserve the phone
-            and evidence, then follow{" "}
-            <a href="/what-to-do-if-you-bought-something-stolen">
-              the stolen-purchase response guide
-            </a>
-            .
+            Don't resell the phone or try to bypass a lock. Follow{' '}
+            <a href="/blog/bought-stolen-phone-what-to-do">what to do if you bought a stolen phone</a>.
+            For iPhone-specific checks, see{' '}
+            <a href="/blog/how-to-check-if-iphone-stolen">how to check if an iPhone is stolen</a>.
           </p>
         </>
       }
       faqs={[
         {
-          question: "What is the most important used-phone check?",
+          question: "What should I check before buying a used phone?",
           answer:
-            "There is no single decisive check. Match the IMEI, verify carrier and finance status, remove account locks, test the device, and review seller records before paying.",
+            "Check the IMEI for theft reports and blacklisting, match it on the phone with *#06#, watch the seller remove their Apple Account or Google account and erase the phone, set it up yourself, test a call with your SIM, and test the screen, cameras, speakers and charging. Pay with a method you can dispute.",
         },
         {
-          question: "Does a clean IMEI guarantee the phone is safe?",
+          question: "How do I know a used phone isn't stolen?",
           answer:
-            "No. A phone may be unreported, financed, later restricted, or still tied to an owner account.",
+            "Check the IMEI on SafeOrStolen (safeorstolen.com/imei-checker) for theft reports, and add the paid blacklist check for an expensive phone. Then make sure the seller can remove their account and erase the phone in front of you. A thief can't do that without the owner's password.",
         },
         {
-          question: "What should I bring?",
+          question: "Does a clean IMEI mean the phone is safe to buy?",
           answer:
-            "Bring your SIM or eSIM details, a charging cable, headphones if needed, and a payment method whose buyer-protection terms cover the transaction.",
+            "No. It means nothing matched in the sources searched. A phone can be stolen and not reported yet, still locked to an owner's account, financed, or carrier-locked. The account and carrier checks at the meetup cover what an IMEI lookup can't see.",
         },
         {
-          question: "What if the seller refuses these checks?",
+          question: "What should I bring when buying a used phone?",
           answer:
-            "Do not buy the phone. A legitimate transaction should allow you to identify, reset, activate, and test the exact device before paying.",
+            "Bring your SIM card or eSIM details so you can test a call, a charging cable to test the port, and earbuds if you want to test audio. Have the IMEI the seller sent you on your own phone so you can compare it with *#06# on theirs.",
+        },
+        {
+          question: "What if the seller won't let me check the phone?",
+          answer:
+            "Don't buy it. A seller who owns the phone has no reason to refuse an IMEI check, a reset in front of you, or a quick test call. Refusing any of them is the most common sign that the phone is stolen, locked or broken.",
         },
       ]}
     />

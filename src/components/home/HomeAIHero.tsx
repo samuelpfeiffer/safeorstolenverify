@@ -198,19 +198,18 @@ export const HomeAIHero: React.FC = () => {
  <div className="flex justify-center mb-5">
  <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm">
  <Shield className="w-4 h-4" />
- SafeOrStolen AI · multiple sources · 3-second results
+ Phones · cars · guns · bikes · anything with a serial number
  </div>
  </div>
 
  {/* H1 (SEO-critical, stays) */}
  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-center leading-tight mb-4 tracking-tight">
- Free Stolen Item Checker.{' '}
- <span className="sos-gradient-text">Ask the AI Anything.</span>
+ Check if something is stolen{' '}
+ <span className="sos-gradient-text">before you buy it.</span>
  </h1>
 
  <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
- Paste any IMEI, VIN, serial number, license plate, or marketplace URL — or just ask a question.
- We search police stolen-vehicle records (Arizona's TheftAZ) and police stolen-gun records (Ohio Attorney General), plus the BikeIndex stolen bike registry and SafeOrStolen's own theft reports.
+ Type an IMEI, VIN, serial number or license plate, or paste a marketplace link. In a few seconds you'll see whether it's reported stolen and which records were searched, including police gun and vehicle theft records and a national stolen-bike registry. Your first 2 checks are free.
  </p>
 
  {/* Chat panel */}

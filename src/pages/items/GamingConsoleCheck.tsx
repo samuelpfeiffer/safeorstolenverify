@@ -1,112 +1,127 @@
-import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTemplate';
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
-const GamingConsoleCheck = () => {
-  return (
-    <SEOLandingPageTemplate
-      title="Check if Gaming Console is Stolen - PS5, Xbox, Nintendo | SafeOrStolen"
-      metaDescription="Check a PlayStation, Xbox, or Nintendo serial using SafeOrStolen reports, public web results, and AI analysis before buying."
-      h1="Check if Gaming Console is Stolen - Free Verification"
-      keywords={[
-        'check if ps5 is stolen',
-        'xbox stolen check',
-        'nintendo switch stolen',
-        'gaming console serial number check',
-        'stolen playstation database',
-        'verify console not stolen',
-        'used ps5 verification',
-        'xbox series x stolen check',
-        'gaming console verification',
-        'console serial number lookup'
-      ]}
-      canonical="/check-gaming-console-stolen"
-      itemType="Gaming Console"
-      identifierType="Serial Number"
-      heroBadge="Gaming Console Verification"
-      heroSubtitle="PlayStation 5, Xbox Series X, and Nintendo Switch consoles are hot targets for thieves. Before buying used, verify the serial number isn't linked to a stolen device. Free instant check."
-      stats={[
-        { value: "500K+", label: "Consoles Stolen Annually" },
-        { value: "3 sec", label: "Verification Time" },
-        { value: "Instant", label: "Results" },
-        { value: "Free", label: "First 2 Checks" }
-      ]}
-      whatIsTitle="What is Gaming Console Serial Number Verification?"
-      whatIsContent="Every gaming console - PlayStation, Xbox, and Nintendo Switch - has a unique serial number assigned by the manufacturer. When a console is reported stolen to police, insurance companies, or through services like PlayStation Network or Xbox Live, the serial number is logged. Stolen consoles can be banned from online services, making them worthless for online gaming. Our verification checks these databases to ensure you're not buying stolen property."
-      howItWorksSteps={[
-        "Find the serial number: Check the back/bottom of the console, original box, or in System Settings",
-        "Enter the serial number into our free verification tool",
-        "Our system reviews SafeOrStolen's reports, public web results, and AI analysis.",
-        "Get results in 3 seconds - know if the console is SAFE or REPORTED STOLEN"
-      ]}
-      howItWorksDescription="We check multiple sources including Sony PlayStation Network bans, Microsoft Xbox Live bans, Nintendo records, and user-reported theft databases."
-      whyVerifyTitle="Why Check Before Buying a Used Gaming Console?"
-      whyVerifyContent="Gaming consoles are highly targeted by thieves due to their high resale value and strong demand. With PS5s still selling for $400+ and Xbox Series X at $500+, the financial risk is significant. Here's why verification is essential:"
-      whyVerifyBenefits={[
-        "Stolen PS5s can be banned from PlayStation Network - no online gaming or digital purchases",
-        "Xbox consoles tied to stolen accounts may be remotely locked",
-        "Nintendo Switch consoles can be banned from online services and eShop",
-        "Police actively track console serial numbers and recover stolen units",
-        "No warranty coverage for stolen gaming consoles",
-        "Possession of stolen property is a crime - you could face charges",
-        "Private sellers don't offer refunds if the console gets banned later",
-        "Stolen consoles may have limited functionality or be completely useless"
-      ]}
-      useCases={[
+/**
+ * Oct 7 2026: rewritten by hand for "check if a gaming console is stolen" / "console serial number
+ * lookup" (no Search Console data yet). This is the hub: Nintendo Switch and handhelds are covered
+ * here, PS5 and Xbox get one-line pointers to /check-ps5 and /check-xbox. Removed "500K+ consoles
+ * stolen annually", "3 sec" timing, and false claims that we check PlayStation Network, Xbox and
+ * Nintendo ban records and "stolen device databases".
+ */
+const GamingConsoleCheck = () => (
+  <ItemLandingPageTemplate
+    title="Check if a Gaming Console Is Stolen: Console Serial Lookup | SafeOrStolen"
+    metaDescription="Check if a used Nintendo Switch, PlayStation, Xbox or handheld is stolen. Where each console's serial number is, what to have the seller reset, and a free serial check."
+    h1="Check if a Gaming Console Is Stolen"
+    itemType="Gaming Console"
+    dateModified="2026-10-07"
+    searchPlaceholder="Enter the console's serial number"
+    keywords={[
+      'check if gaming console is stolen',
+      'console serial number lookup',
+      'gaming console serial number check',
+      'check if nintendo switch is stolen',
+      'nintendo switch serial number check',
+      'where is the serial number on a nintendo switch',
+      'stolen console check',
+      'buying used console',
+    ]}
+    quickAnswer={{
+      question: 'How do I check if a gaming console is stolen?',
+      answer:
+        "Read the serial number on screen in the console's system settings and make sure it matches the sticker on the console. Enter it on SafeOrStolen (safeorstolen.com/check-gaming-console-stolen), which searches theft reports and public web results in a few seconds; the first 2 checks are free. Then watch the seller sign out of their account and reset the console before you pay. A seller who can't do that may not own it.",
+    }}
+    sections={[
+      {
+        heading: 'Where to find the serial number on each console',
+        table: {
+          columns: ['Console', 'On screen', 'On the hardware'],
+          rows: [
+            ['Nintendo Switch, Switch OLED, Switch Lite', 'System Settings > System > Serial Information', 'A sticker on the bottom edge of the console, next to the USB-C port'],
+            ['Nintendo Switch 2', 'In System Settings, under System', 'A label on the console and on the box'],
+            ['PlayStation 5', 'Settings > System > System Software > Console Information', 'A sticker on the back or base. Full guide: safeorstolen.com/check-ps5'],
+            ['Xbox Series X|S, Xbox One', 'Settings > System > Console info', 'A barcode sticker on the back or bottom. Full guide: safeorstolen.com/check-xbox'],
+            ['Handheld gaming PCs (Steam Deck and others)', 'In the system or settings menu, where the device has one', 'A label on the back of the device and on the box'],
+          ],
+        },
+      },
+      {
+        heading: 'Nintendo Switch: what to have the seller do',
+        list: [
+          'Open System Settings > System > Serial Information and compare the number with the sticker by the USB-C port.',
+          'Open the eShop or a game that needs their account, to show the Nintendo Account belongs to them.',
+          'Remove their user and Nintendo Account from the console.',
+          'Reset it: System Settings > System > Formatting Options > Initialize Console. The console restarts to the language-selection screen.',
+          'Test both Joy-Con, the dock and a game cartridge before you pay.',
+        ],
+      },
+      {
+        heading: 'Signs a used console may be stolen',
+        list: [
+          'The serial sticker is missing or scratched, or doesn\'t match the number in settings',
+          'The seller won\'t power it on, sign in, or reset it in front of you',
+          'A "sealed" console from a private seller well below the store price',
+          'Several consoles for sale from one person, with no receipts',
+          'Personal items left on it (someone else\'s user profile, a name on the case) that the seller can\'t explain',
+        ],
+      },
+    ]}
+    content={{
+      intro:
+        'Check a used Nintendo Switch, PlayStation, Xbox or handheld gaming PC before you buy it. Find the serial number, match it on screen, and check it for theft reports in a few seconds.',
+      whatIs:
+        'A console stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen. Buying a PlayStation? The <a href="/check-ps5">PS5 serial number check</a> covers it step by step. Buying an Xbox? Use the <a href="/check-xbox">Xbox serial number check</a>.',
+      howItWorks:
+        "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search Sony, Microsoft or Nintendo records; none of them offer a public stolen-console lookup.",
+      whyCheck:
+        "Consoles are small, valuable and quick to resell, and a stolen one can be taken back by the police and returned to the owner. The serial check covers theft reports. The on-screen match and the account reset show you whether the seller actually controls the console.",
+      benefits: [
+        'Works for Nintendo, PlayStation, Xbox and handheld gaming PCs',
+        'Searches SafeOrStolen theft reports and public web results',
+        'Results in a few seconds with every source listed',
+        'A dated record of the check is saved to your account',
+        '2 free checks with no credit card',
+      ],
+      process: [
+        'Ask the seller for a photo of the serial sticker or the settings screen showing it.',
+        'Check the serial on SafeOrStolen.',
+        'At the meetup, power the console on and match the serial in settings to the sticker.',
+        'Watch the seller remove their account and reset the console.',
+        "If the serial is reported stolen or doesn't match, don't buy it, and give the listing to your local police.",
+      ],
+      faqs: [
         {
-          title: "PlayStation 5 Buyers",
-          description: "PS5 consoles remain in high demand and are frequently stolen. Always verify before paying premium prices."
+          question: 'Where is the serial number on a Nintendo Switch?',
+          answer:
+            'On the Switch, Switch OLED and Switch Lite, go to System Settings > System > Serial Information. It is also on a sticker on the bottom edge of the console next to the USB-C port, and on the box. The dock has its own separate serial, so use the one from the console.',
         },
         {
-          title: "Xbox Series X|S Purchases",
-          description: "Xbox consoles can be banned from Xbox Live. Verify the serial number to ensure online functionality."
+          question: 'Can I check a console serial number for free?',
+          answer:
+            'Yes. SafeOrStolen (safeorstolen.com/check-gaming-console-stolen) checks a console serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $3.99 or unlimited checks are $14.99 a month.',
         },
         {
-          title: "Nintendo Switch Verification",
-          description: "Switch consoles are portable and easy to steal. Check the serial before buying from unknown sellers."
-        }
-      ]}
-      faqs={[
-        {
-          question: "Where do I find the serial number on a PlayStation 5?",
-          answer: "PS5 serial number is on a white sticker on the back of the console near the bottom. It starts with letters and is followed by numbers. You can also find it in Settings > System > Console Information."
+          question: 'Can Nintendo, Sony or Microsoft tell me if a console is stolen?',
+          answer:
+            "None of them offer a public stolen-console lookup, and they won't tell a buyer who owns a console. Theft reports go to the police. What you can check is whether the seller can sign in, remove their account and reset the console while you watch.",
         },
         {
-          question: "Where is the Xbox Series X serial number?",
-          answer: "Xbox Series X serial number is on the back of the console on a white sticker. For Series S, it's on the bottom. You can also find it in Settings > System > Console Info."
+          question: 'How do I reset a Nintendo Switch before buying it?',
+          answer:
+            'Have the seller go to System Settings > System > Formatting Options > Initialize Console and confirm. That deletes their users, saves and settings, and the Switch restarts to the first-time setup screen. Do it after they have shown you their Nintendo Account works on it.',
         },
         {
-          question: "Can stolen gaming consoles be banned from online services?",
-          answer: "Yes! Sony, Microsoft, and Nintendo can ban consoles from their online services. A banned PS5 can't access PlayStation Network, a banned Xbox can't use Xbox Live, and a banned Switch can't access Nintendo Online or the eShop."
+          question: 'Is a sealed console from a private seller safe to buy?',
+          answer:
+            "Not automatically. Boxed consoles are a common target of package and store theft, and a box can be resealed. Ask for the receipt, check the serial on the box label, and be wary of a price well below what stores charge.",
         },
         {
-          question: "What if the console shows as stolen?",
-          answer: "Do NOT purchase the console. Walk away immediately. Report the listing to the marketplace and consider notifying local police. Never confront the seller."
+          question: 'What should I do if a console comes back reported stolen?',
+          answer:
+            "Don't buy it and don't confront the seller. Leave, keep the listing and messages, and give the serial number and listing to your local police on their non-emergency line.",
         },
-        {
-          question: "Can I check Nintendo Switch serial numbers?",
-          answer: "Yes! Nintendo Switch serial numbers are on the bottom of the console. We check against stolen device databases and can indicate if a console has been reported stolen."
-        },
-        {
-          question: "Do stolen consoles still work offline?",
-          answer: "Possibly, but with major limitations. Stolen consoles may still play physical games offline, but they'll be banned from online features, digital purchases, cloud saves, and multiplayer. This significantly reduces their value."
-        },
-        {
-          question: "How do I verify a console in person?",
-          answer: "Download the SafeOrStolen app and scan the serial number on the spot. Also, ask the seller to log into their PSN/Xbox/Nintendo account to verify the console isn't linked to a stolen account."
-        },
-        {
-          question: "Should I check older consoles like PS4 or Xbox One?",
-          answer: "Yes! While newer consoles are more commonly stolen, PS4 and Xbox One consoles are still stolen and sold regularly. Our verification works for all console generations."
-        }
-      ]}
-      ctaTitle="Don't Risk Buying a Stolen Gaming Console"
-      ctaDescription="A free serial number check takes 3 seconds and ensures your next console purchase is safe."
-      relatedLinks={[
-        { title: "Electronics Check", href: "/check-electronics" },
-        { title: "Facebook Marketplace Safety", href: "/facebook-marketplace-stolen-check" },
-        { title: "eBay Stolen Check", href: "/ebay-stolen-item-check" }
-      ]}
-    />
-  );
-};
+      ],
+    }}
+  />
+);
 
 export default GamingConsoleCheck;

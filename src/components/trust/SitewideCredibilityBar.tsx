@@ -12,10 +12,10 @@ interface SitewideCredibilityBarProps {
  */
 export const SitewideCredibilityBar: React.FC<SitewideCredibilityBarProps> = ({ className }) => {
   const signals = [
-    { icon: Database, text: 'multiple sources', highlight: true },
-    { icon: Zap, text: '3-Second Checks' },
-    { icon: Lock, text: '256-bit SSL' },
-    { icon: CheckCircle, text: '6 Item Categories' },
+    { icon: Database, text: 'Every source listed', highlight: true },
+    { icon: Zap, text: 'Results in seconds' },
+    { icon: Lock, text: 'Owner details never shown' },
+    { icon: CheckCircle, text: '2 free checks, no card' },
   ];
 
   return (
@@ -26,7 +26,7 @@ export const SitewideCredibilityBar: React.FC<SitewideCredibilityBarProps> = ({ 
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
           <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-            Trusted Verification
+            Before you buy
           </span>
           <div className="h-4 w-px bg-border hidden md:block" />
           {signals.map((signal, index) => (

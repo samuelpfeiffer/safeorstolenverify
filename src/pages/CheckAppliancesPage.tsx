@@ -1,80 +1,129 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
-const CheckAppliancesPage = () => {
-  return (
-    <ItemLandingPageTemplate
-      title="Check if Appliances Are Stolen - Free Washer, Dryer, Refrigerator Serial Number Verification"
-      metaDescription="Check if washers, dryers, refrigerators, stoves, or appliances are stolen. Free serial number verification for home appliances from publicly reported stolen items. Verify Samsung, LG, Whirlpool, GE appliances before buying."
-      h1="Check if Appliances Are Stolen Before Buying"
-      itemType="Home Appliances"
-      keywords={[
-        'check if appliance stolen',
-        'stolen appliance check',
-        'washer dryer serial number lookup',
-        'refrigerator stolen check',
-        'verify appliance not stolen'
-      ]}
-      content={{
-        intro: "Verify if washers, dryers, refrigerators, stoves, or any home appliance is stolen in 3 seconds. Free serial number verification for all appliance brands: Samsung, LG, Whirlpool, GE, Maytag, Bosch, KitchenAid. Check before buying from Facebook Marketplace, eBay, Craigslist, or scratch-and-dent stores. Major appliances are frequent theft targets due to high value and easy resale.",
-        whatIs: "Checking if appliances are stolen means verifying model and serial numbers against publicly reported stolen items. Modern appliances (especially smart/connected models) have unique serial numbers. SafeOrStolen's appliance checker instantly searches reported stolen-item information and uses AI analysis to find relevant online data. This helps protect buyers from purchasing stolen appliances, which could be confiscated.",
-        howItWorks: "Enter the appliance's complete model and serial number. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, then returns a result in about 3 seconds. Compare the numbers with the rating plate, receipt, and seller's documentation before buying.",
-        whyCheck: "Buying stolen appliances has serious consequences. (1) Appliances can be confiscated by police with zero compensation - you lose $500-$5,000, (2) You could face criminal charges for possession of stolen property, (3) Manufacturers void warranties on stolen appliances - no repairs or replacements, (4) Installation companies may refuse to install or report you if serial numbers flag as stolen, (5) Smart appliances can be remotely tracked and disabled by original owners, (6) You can't claim insurance or register the appliance. In 2024, over $1 billion worth of home appliances were reported stolen in the United States. Washers, dryers, refrigerators, and stoves are prime targets during home burglaries, construction site thefts, and moving truck hijackings. Stolen appliances frequently appear on Facebook Marketplace, Craigslist, OfferUp at 40-60% below retail price. Our free appliance checker protects you from this massive theft market.",
-        benefits: [
-          "Check Samsung appliances - washers, dryers, refrigerators, stoves, dishwashers",
-          "Verify LG appliances - front-load washers, French door refrigerators, ranges",
-          "Check Whirlpool appliances - top-load washers, side-by-side refrigerators",
-          "Verify GE appliances - Profile, Café, Monogram series appliances",
-          "Check Maytag, Bosch, KitchenAid, Frigidaire, Electrolux appliances",
-          "Verify smart appliances - Wi-Fi connected models with tracking capabilities",
-          "Check construction site stolen appliances",
-          "Search stolen-property registries and pawn shop databases",
-          "Free appliance serial number check - 2 free verifications"
+/**
+ * Oct 7 2026: rewritten by hand for "how to check if an appliance is stolen" / "appliance serial
+ * number lookup" (no meaningful Search Console data for this page yet). Removed: "$1 billion stolen
+ * in 2024", dollar-loss ranges, "40-60% below retail", the claim that we search pawn databases and
+ * validate serials against manufacturer formats, a wrong statute (18 U.S.C. § 2320 is trademark
+ * counterfeiting, not serial plates), and claims about warranties and remote disabling we can't back.
+ */
+const CheckAppliancesPage = () => (
+  <ItemLandingPageTemplate
+    title="Check if an Appliance Is Stolen: Washer, Fridge & Range Serial Check | SafeOrStolen"
+    metaDescription="How to check if a used washer, dryer, fridge or range is stolen: where the serial plate is on each appliance, the signs of a jobsite theft, and a free serial check."
+    h1="How to Check if an Appliance Is Stolen"
+    itemType="Appliance"
+    dateModified="2026-10-07"
+    searchPlaceholder="Enter the appliance serial number"
+    keywords={[
+      'check if appliance is stolen',
+      'appliance serial number lookup',
+      'stolen appliance check',
+      'washer serial number lookup',
+      'refrigerator serial number stolen',
+      'where is the serial number on a refrigerator',
+      'where is the serial number on a washer',
+      'stolen appliances new construction',
+    ]}
+    quickAnswer={{
+      question: 'How do I check if an appliance is stolen?',
+      answer:
+        "Find the rating plate, the sticker with the model and serial number (inside a fridge on the side wall, around a washer's door opening, behind a range's bottom drawer), and enter the serial on SafeOrStolen (safeorstolen.com/check-appliances). It searches theft reports and public web results in a few seconds. Then look at the appliance itself: a new unit with no receipt, still on its shipping pallet, or with cut supply lines is a warning sign.",
+    }}
+    sections={[
+      {
+        heading: 'Where the serial number is on each appliance',
+        paragraphs: [
+          'The serial is on the rating plate, a sticker or metal tag that also lists the model number and electrical ratings. Photograph the whole plate.',
         ],
-        process: [
-          "Locate the serial number and model number: Usually on a sticker or metal plate. Washers/dryers: inside door rim or on back panel. Refrigerators: inside fresh food compartment on side wall or ceiling. Stoves/ovens: inside door frame or on back panel. Dishwashers: inside door edge or on top front edge. Check owner's manual for exact location.",
-          "Record BOTH the model number and serial number completely. Take a photo of the rating plate with all information visible. One wrong character can cause false results.",
-          "Take photos of the entire appliance including any damage, modifications, or missing parts that could indicate theft",
-          "Enter the serial number and model number into our verification tool at SafeOrStolen.com/verify",
-          "Review the comprehensive report showing whether the appliance has been reported stolen, pawned, or has been reported stolen",
-          "If CLEAN and warranty is valid, proceed with purchase. If STOLEN, pawned by someone other than the seller, or warranty is void, walk away and report to authorities"
+        table: {
+          columns: ['Appliance', 'Where to look first', 'If it isn\'t there'],
+          rows: [
+            ['Refrigerator', 'Inside the fresh-food section, on the upper side wall or the ceiling', 'Behind the crisper drawers, or on the back'],
+            ['Front-load washer', 'Around the door opening or on the inside of the door', 'On the back panel'],
+            ['Top-load washer', 'Under the lid, on the rim of the cabinet', 'On the back of the control panel'],
+            ['Dryer', 'Inside the door opening', 'On the back panel'],
+            ['Range or oven', 'Behind the storage or warming drawer at the bottom', 'Inside the oven door frame'],
+            ['Dishwasher', 'On the edge of the door or the tub frame, seen when the door is open', 'On the side of the tub (visible only when uninstalled)'],
+            ['Microwave (over-the-range)', 'Inside the door frame', 'On the back'],
+          ],
+        },
+      },
+      {
+        heading: 'Signs an appliance may be stolen',
+        list: [
+          'A brand-new unit with no receipt, often still on its shipping pallet or with the protective film on',
+          'A builder or distributor label, a jobsite address written on the box, or a lot number sticker',
+          'A matching set (fridge, range, dishwasher, microwave) of brand-new appliances sold by someone who isn\'t a dealer',
+          'Water lines, gas lines or power cords that were cut instead of disconnected',
+          'A rating plate that is peeled, scraped or missing',
+          'A smart appliance that is still connected to someone else\'s app account and the seller can\'t remove it',
         ],
-        faqs: [
-          {
-            question: "What types of appliances can I check?",
-            answer: "You can check virtually any home appliance with a serial number including: (1) Washers - front-load, top-load, washer-dryer combos from Samsung, LG, Whirlpool, GE, Maytag, (2) Dryers - electric, gas dryers from all major brands, (3) Refrigerators - French door, side-by-side, top freezer, bottom freezer models from Samsung, LG, GE, Whirlpool, Frigidaire, (4) Stoves and ranges - electric, gas, induction cooktops from GE, Bosch, Samsung, LG, (5) Dishwashers - built-in, portable models from Bosch, KitchenAid, GE, Samsung, (6) Ovens - wall ovens, microwave ovens from all brands, (7) Other appliances - water heaters, HVAC units, garbage disposals, trash compactors. If it has a model and serial number, we can check it."
-          },
-          {
-            question: "Where do I find the serial number on appliances?",
-            answer: "Serial number locations vary by appliance type: (1) Washers and dryers - inside door rim (open door and look along edge), on back panel, or inside control panel, (2) Refrigerators - inside fresh food compartment on side wall or ceiling, or behind vegetable crisper drawers, (3) Stoves and ranges - inside oven door frame, on back panel, or under cooktop (lift up), (4) Dishwashers - inside door edge when opened, or on top front edge of door frame, (5) Ovens - inside door frame or on back/side wall when opened. Look for a metal plate or sticker with model number, serial number, and electrical specifications. If you can't find it, check the owner's manual or manufacturer's website. Missing or removed serial number plate = major red flag indicating possible theft."
-          },
-          {
-            question: "How much does the appliance stolen check cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $3.99/check or $14.99/month unlimited. Verify washers, dryers, refrigerators, stoves, and any major appliance before buying. Cancel anytime."
-          },
-          {
-            question: "What should I do if my appliance check shows it's stolen?",
-            answer: "If our check shows the appliance is reported stolen: (1) Do NOT buy it under any circumstances - you'll lose $500-$5,000 when confiscated, (2) Walk away immediately without confronting the seller (they may be dangerous), (3) Screenshot the listing and record seller information including name, phone, address, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, OfferUp), (5) File an anonymous tip with local police including the listing URL, serial number, model number, and seller details. Include any photos showing the serial number plate, (6) If you already purchased it, contact police immediately. Do NOT install or use the appliance. You're likely a fraud victim. File a police report and attempt to recover your money through small claims court or credit card chargeback."
-          },
-          {
-            question: "Why are appliances stolen so frequently?",
-            answer: "Appliances are prime theft targets because: (1) High value - washers/dryers cost $500-$2,000 each, refrigerators $800-$5,000, making them extremely profitable to steal, (2) Easy to resell - huge demand on Facebook Marketplace, Craigslist, OfferUp, especially for matching sets, (3) Construction site thefts - new homes under construction often have appliances stolen before homeowners move in, (4) Home burglaries - thieves target homes during moves or renovations when appliances are visible and accessible, (5) Moving truck hijackings - entire truckloads of household goods including all appliances are stolen, (6) Difficult to track - unlike phones or cars, most people don't register appliance serial numbers. In 2024, over $1 billion worth of appliances were stolen. Theft rate peaks during summer (moving season) and around holidays. Checking serial numbers is one of the best ways to avoid purchasing stolen appliances."
-          },
-          {
-            question: "Can appliance serial numbers be removed or faked?",
-            answer: "Yes, some thieves remove, replace, or fake serial number plates on stolen appliances. This is a federal crime (18 U.S. Code § 2320) and a MAJOR red flag. Signs of tampering: (1) Serial number plate looks scratched, peeled, or has adhesive residue indicating replacement, (2) Plate doesn't match appliance age, quality, or brand (obvious counterfeit), (3) Serial numbers are partially illegible, smudged, or incomplete, (4) Plate is loose or appears recently attached, (5) Seller can't or won't show you the serial number plate. If you suspect tampering, walk away immediately and report to police. Most stolen appliances have intact serial numbers because removing them significantly reduces resale value. Our tool validates serial number formats against manufacturer specifications to detect fakes."
-          },
-          {
-            question: "How long does an appliance serial number check take?",
-            answer: "Appliance checks usually take about 3 seconds. Enter the complete model and serial number to check SafeOrStolen reports, public web results, and AI analysis. Check warranty status directly with the manufacturer."
-          },
-          {
-            question: "What are red flags when buying used appliances?",
-            answer: "Major red flags for stolen appliances: (1) Price is 40-60% below market value (a $2,000 washer/dryer set for $800), (2) Seller won't provide serial numbers or won't let you inspect the rating plate closely, (3) Serial number plate looks tampered with, peeled, or replaced, (4) Appliances are still wrapped in plastic or have construction/delivery tags (stolen from construction sites or trucks), (5) No owner's manual, warranty card, or purchase receipt, (6) Seller has multiple appliances for sale (entire washer/dryer sets, multiple refrigerators), (7) Meeting in storage unit, parking lot, or asking you to pick up from non-residential location, (8) Seller is in a rush and won't answer questions about why they're selling or appliance history, (9) Appliances show signs of hasty removal (torn vents, broken connections, scratches from forced removal), (10) Asking for cash only with no electronic payment. If multiple red flags exist, it's almost certainly stolen - walk away and report to authorities."
-          }
-        ]
-      }}
-    />
-  );
-};
+      },
+      {
+        heading: 'Why new appliances get stolen from homes being built',
+        paragraphs: [
+          "Builders often install appliances before a new home is finished and locked up. Those units are new, unregistered and have no receipt in anyone's hand, which makes them easy to resell. If someone is selling several new, matching appliances, ask where they came from and ask for the dealer's invoice. A real builder or installer with leftovers will have one.",
+        ],
+      },
+    ]}
+    content={{
+      intro:
+        'Check a used washer, dryer, refrigerator, range or dishwasher before you buy it. Find the serial on the rating plate, check it here, and look for the signs of a jobsite or delivery theft.',
+      whatIs:
+        "An appliance check looks for a theft report tied to the appliance's serial number. Owners, landlords and builders give the serial to the police when appliances are stolen. The serial number is unique to the unit; the model number is shared by every unit of that model, so make sure you check the serial.",
+      howItWorks:
+        "Type the serial number from the rating plate into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't search manufacturer, retailer or warranty records.",
+      whyCheck:
+        "Appliances are expensive, and a stolen one can be taken back by the police and returned to the owner, leaving you without the money or the appliance. A serial check takes a few seconds, and the questions about receipts and installation tell you a lot about who you are buying from.",
+      benefits: [
+        'Works for any brand: Samsung, LG, Whirlpool, GE, Maytag, Bosch, Frigidaire and others',
+        'Searches SafeOrStolen theft reports and public web results',
+        'Results in a few seconds with every source listed',
+        'A dated record of the check is saved to your account',
+        '2 free checks with no credit card',
+      ],
+      process: [
+        'Ask the seller for a photo of the rating plate before you go to see it.',
+        'Check the serial number on SafeOrStolen.',
+        'When you see it, match the plate to the photo and look at how it was disconnected.',
+        'For a new unit, ask for the receipt or dealer invoice. For a smart appliance, have the seller remove it from their app.',
+        "If it comes back reported stolen or the plate is missing, don't buy it and give the listing to your local police.",
+      ],
+      faqs: [
+        {
+          question: 'Where is the serial number on a refrigerator?',
+          answer:
+            'On most refrigerators, the rating plate with the serial number is inside the fresh-food section, on the upper side wall or the ceiling. On some models it is behind the crisper drawers or on the back. The serial is the one labeled "S/N" or "Serial", not the model number.',
+        },
+        {
+          question: 'Where is the serial number on a washer or dryer?',
+          answer:
+            "On a front-load washer, look around the door opening or inside the door. On a top-load washer, lift the lid and check the rim, or the back of the control panel. On a dryer, look inside the door opening. If it isn't there, check the back panel.",
+        },
+        {
+          question: 'Can I look up an appliance serial number for free?',
+          answer:
+            'Yes. SafeOrStolen (safeorstolen.com/check-appliances) checks an appliance serial against its theft reports and public web results for free for your first 2 checks, with no credit card. After that, a single check is $3.99.',
+        },
+        {
+          question: 'Is it a red flag if a used appliance is brand new?',
+          answer:
+            "Not on its own; people sell gifts and duplicates. It is a red flag when there is no receipt, it is still on a shipping pallet, it has a builder or jobsite label, or the seller has several new matching units. New appliances are a common target in homes under construction.",
+        },
+        {
+          question: "Can the manufacturer tell me if an appliance is stolen?",
+          answer:
+            "Manufacturers don't offer a public stolen-appliance lookup. They can tell an owner about warranty and registration for a serial number. Theft reports go to the police, and owners can also report a stolen appliance on SafeOrStolen so buyers who check the serial see it.",
+        },
+        {
+          question: 'What should I do if an appliance I bought is stolen?',
+          answer:
+            "Stop using it if you can, keep the listing, messages and payment record, and call your local police non-emergency line with the serial number. If the appliance goes back to the owner, your records help any claim against the seller.",
+        },
+      ],
+    }}
+  />
+);
 
 export default CheckAppliancesPage;

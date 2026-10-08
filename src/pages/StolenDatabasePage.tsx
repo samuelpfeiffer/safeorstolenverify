@@ -1,6 +1,10 @@
 /**
- * Stolen Database Page - Searchable database of reported stolen items
- * SEO-optimized with filters, search, and individual item cards
+ * Oct 7 2026: rewritten by hand for "stolen items database" / "stolen property database". No useful
+ * Search Console data for this URL. Copy now says plainly that this list is SafeOrStolen's own
+ * owner theft reports, not a national database. Removed: "largest publicly searchable collection",
+ * "verified through our network of law enforcement partnerships", "all submissions are verified",
+ * "police report number" requirement, the live item count in the intro, "AI analysis" wording, and
+ * the noscript block that repeated those claims. Search, filters and paging logic unchanged.
  */
 
 import { useState, useEffect } from 'react';
@@ -60,6 +64,25 @@ const ITEM_TYPES = [
  { value: 'tablet', label: 'Tablets' },
  { value: 'jewelry', label: 'Jewelry' },
  { value: 'other', label: 'Other' },
+];
+
+const STOLEN_DB_FAQS: { q: string; a: string }[] = [
+ {
+ q: 'Is there a database of stolen items I can search?',
+ a: "There's no single public national database; the FBI's NCIC is open only to police. The SafeOrStolen stolen items database (safeorstolen.com/stolen-database) lists items owners have reported stolen on SafeOrStolen, searchable free by serial, brand, model or city. A full SafeOrStolen check of one number also searches public web results and, for guns, bikes and Arizona vehicles, police and registry records.",
+ },
+ {
+ q: 'How do I search for a stolen item by serial number?',
+ a: "Type the serial number, IMEI or VIN into the search box above and press Search. If an owner reported it on SafeOrStolen, it appears with the details the owner gave, such as where it was stolen. No result here only means it isn't in these owner reports, so run a full check to search the other sources too.",
+ },
+ {
+ q: 'How do I add my stolen item to the database?',
+ a: "Sign in to a free account, go to safeorstolen.com/report-stolen, and enter the item type and its serial number, IMEI or VIN (required), plus the brand, model, where it was stolen, a description and your police report number if you have one. The report then shows up in every check of that number. Report the theft to your local police too; SafeOrStolen doesn't send reports to them.",
+ },
+ {
+ q: 'Is the stolen items database free?',
+ a: 'Yes, browsing and searching this list is free and needs no account. A full check of a single number, which adds web results and the police and registry records that apply, comes with 2 free checks on a free account. After that it is $3.99 a check or $14.99 a month for unlimited checks.',
+ },
 ];
 
 const generateSlug = (item: StolenItem): string => {
@@ -144,7 +167,7 @@ const StolenDatabasePage = () => {
  "@context": "https://schema.org",
  "@type": "ItemList",
  "name": "Stolen Items Database",
- "description": "Searchable database of reported stolen items including phones, vehicles, bikes, and electronics",
+ "description": "Items reported stolen by their owners on SafeOrStolen, including phones, laptops, vehicles, bikes and guns",
  "numberOfItems": totalCount,
  "itemListElement": items.map((item, index) => ({
  "@type": "ListItem",
@@ -161,90 +184,39 @@ const StolenDatabasePage = () => {
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": [
- {
+ "mainEntity": STOLEN_DB_FAQS.map((f) => ({
  "@type": "Question",
- "name": "How do I search the stolen items database?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter a brand name, model, serial number, IMEI, or VIN in the search box. Filter by category (smartphones, laptops, vehicles, etc.) and location. Results show all matching reported stolen items with details including date stolen and location." }
- },
- {
- "@type": "Question",
- "name": "How do I report a stolen item?",
- "acceptedAnswer": { "@type": "Answer", "text": "Visit safeorstolen.com/report-stolen to submit a stolen item report. You'll need the item type, brand/model, serial number or IMEI, date stolen, location, and police report number. All submissions are verified before inclusion in the database." }
- },
- {
- "@type": "Question",
- "name": "Is the stolen items database free to search?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching our stolen items reports is completely free. For comprehensive verification against SafeOrStolen's own reports, public web results, and AI analysis, use SafeOrStolen's verification tool — 2 free checks, then $3.99/check or $14.99/month unlimited." }
- }
- ]
+ "name": f.q,
+ "acceptedAnswer": { "@type": "Answer", "text": f.a }
+ }))
  };
 
  return (
  <>
  <PageSEO
- title="Stolen Items Database - Search Reported Thefts | SafeOrStolen"
- description="Search our database of reported stolen items. Find phones, laptops, vehicles, bikes, firearms, jewelry. Help recover stolen property. Free to search."
- keywords="stolen items database, search stolen goods, reported thefts, stolen bikes, stolen phones, stolen vehicles, stolen property search, recovered stolen items"
+ title="Stolen Items Database: Search Reported Thefts by Serial"
+ description="Search stolen items reported to SafeOrStolen by owners: phones, laptops, cars, bikes, guns and more, by serial, brand or city. Not a national police database."
+ keywords="stolen items database, stolen property database, search stolen items by serial number, reported stolen items list, stolen goods database"
  canonical="/stolen-database"
+ modifiedTime="2026-10-07"
  structuredData={[itemListSchema, faqSchema]}
  />
-
- {/* Comprehensive noscript for crawlers */}
- <noscript>
- <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
- <header>
- <nav><a href="/">SafeOrStolen</a> &gt; Stolen Items Database</nav>
- </header>
- <div>
- <h1>Stolen Items Database</h1>
- <p>Search our database of reported stolen items including phones, laptops, vehicles, bicycles, firearms, jewelry, and more. Help protect buyers and recover stolen property.</p>
- 
- <h2>Search by Category</h2>
- <ul>
- <li>Smartphones — IMEI-based stolen phone reports</li>
- <li>Laptops — Serial number based theft reports</li>
- <li>Vehicles — VIN-based stolen vehicle reports</li>
- <li>Bicycles — Frame serial number theft reports</li>
- <li>Firearms — Serial number theft reports</li>
- <li>Watches, Cameras, Tablets, Jewelry</li>
- </ul>
- 
- <h2>How to Use the Database</h2>
- <ul>
- <li>Search by identifier: Enter a serial number, IMEI, or VIN to find exact matches</li>
- <li>Browse by category: Filter by item type to find specific categories</li>
- <li>Search by location: Narrow results to your city or state</li>
- <li>Report a stolen item: Add your stolen property at <a href="/report-stolen">safeorstolen.com/report-stolen</a></li>
- </ul>
- 
- <h2>For Full Verification</h2>
- <p>This page shows community-reported stolen items from SafeOrStolen. For comprehensive verification against SafeOrStolen's own reports, public web results, and AI analysis, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $3.99/check or $14.99/month unlimited.</p>
- 
- <h2>Related Resources</h2>
- <ul>
- <li><a href="/verify">Verify Any Item</a></li>
- <li><a href="/report-stolen">Report a Stolen Item</a></li>
- <li><a href="/imei-checker">IMEI Checker</a></li>
- <li><a href="/vin-checker">VIN Checker</a></li>
- <li><a href="/pricing">Pricing - $14.99/mo Unlimited</a></li>
- </ul>
- </div>
- </div>
- </noscript>
  <div className="container mx-auto px-4 py-8 max-w-7xl pt-24">
  <BreadcrumbNavigation 
  items={[{ name: 'Stolen Database', href: '/stolen-database' }]}
  />
 
  {/* Header */}
- <div className="text-center mb-8">
- <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+ <div className="max-w-3xl mx-auto mb-8">
+ <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-center">
  Stolen Items Database
  </h1>
- <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
- Search our database of {totalCount.toLocaleString()} reported stolen items. 
- Help protect buyers and recover stolen property.
+ <p className="text-xs text-muted-foreground mb-4 text-center">Updated October 7, 2026</p>
+ <p className="text-base md:text-lg text-muted-foreground">
+ This is the list of items owners have reported stolen on SafeOrStolen: phones, laptops, vehicles, bikes, guns,
+ watches, cameras and more. Search it by serial number, brand, model or city. It is not a national police database.
+ To check one number against these reports and the other sources SafeOrStolen searches, such as police gun theft
+ records and a stolen-bicycle registry, run a <Link to="/verify" className="text-primary underline">full check</Link>.
  </p>
  </div>
 
@@ -417,28 +389,48 @@ const StolenDatabasePage = () => {
  </div>
  )}
 
- {/* SEO Content */}
- <section className="mt-16 prose prose-sm dark:prose-invert max-w-none">
- <h2>About Our Stolen Items Database</h2>
- <p>
- The SafeOrStolen database is the largest publicly searchable collection of reported stolen items. 
- Our database includes phones, laptops, vehicles, bicycles, firearms, jewelry, and more. 
- Every item is verified through our network of law enforcement partnerships and user reports.
+ {/* About this list */}
+ <section className="mt-16 max-w-3xl mx-auto">
+ <h2 className="text-2xl font-bold text-foreground mb-3">What this database is, and isn't</h2>
+ <p className="text-muted-foreground mb-4">
+ Every item here was reported stolen by its owner on SafeOrStolen, with the serial number, IMEI or VIN where they had
+ it. Owners can <Link to="/report-stolen" className="text-primary underline">report a stolen item</Link> and it shows up
+ in every check of that number.
  </p>
- 
- <h3>How to Use the Database</h3>
- <ul>
- <li><strong>Search by identifier:</strong> Enter a serial number, IMEI, or VIN to find exact matches</li>
- <li><strong>Browse by category:</strong> Filter by item type to find specific categories</li>
- <li><strong>Search by location:</strong> Narrow results to your city or state</li>
- <li><strong>Report a stolen item:</strong> Add your stolen property to help others avoid purchasing it</li>
- </ul>
+ <div className="overflow-x-auto mb-6">
+ <table className="w-full text-sm border rounded-lg">
+ <thead>
+ <tr className="border-b bg-muted/50 text-left">
+ <th className="p-3">Source</th>
+ <th className="p-3">In this list</th>
+ <th className="p-3">In a full check</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr className="border-b"><td className="p-3">SafeOrStolen owner theft reports</td><td className="p-3">Yes</td><td className="p-3">Yes</td></tr>
+ <tr className="border-b"><td className="p-3">Public web results mentioning the number</td><td className="p-3">No</td><td className="p-3">Yes</td></tr>
+ <tr className="border-b"><td className="p-3">Police gun theft and loss reports (33 states and DC) and live Ohio records</td><td className="p-3">No</td><td className="p-3">Guns</td></tr>
+ <tr className="border-b"><td className="p-3">National stolen-bicycle registry</td><td className="p-3">No</td><td className="p-3">Bikes</td></tr>
+ <tr className="border-b"><td className="p-3">Arizona law-enforcement stolen-vehicle records</td><td className="p-3">No</td><td className="p-3">Arizona VINs and plates</td></tr>
+ <tr className="border-b"><td className="p-3">Carrier lost/stolen phone blacklist</td><td className="p-3">No</td><td className="p-3">Paid phone checks</td></tr>
+ <tr><td className="p-3">NCIC, DMV records, pawn or insurer databases</td><td className="p-3">No</td><td className="p-3">No</td></tr>
+ </tbody>
+ </table>
+ </div>
 
- <h3>Help Recover Stolen Property</h3>
- <p>
- If you recognize an item in our database or have information about a theft, 
- please contact local law enforcement. Every search helps reduce the market for stolen goods 
- and increases the chances of recovery for theft victims.
+ <h2 className="text-2xl font-bold text-foreground mb-3">Questions about the database</h2>
+ <div className="space-y-5 mb-6">
+ {STOLEN_DB_FAQS.map((f) => (
+ <div key={f.q}>
+ <h3 className="font-semibold text-foreground mb-1">{f.q}</h3>
+ <p className="text-muted-foreground">{f.a}</p>
+ </div>
+ ))}
+ </div>
+
+ <p className="text-muted-foreground">
+ If you recognize an item here, don't approach the seller. Note where you saw it and call your local police
+ non-emergency line.
  </p>
  </section>
  </div>

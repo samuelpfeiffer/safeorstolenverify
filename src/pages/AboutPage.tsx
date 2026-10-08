@@ -1,299 +1,246 @@
+/**
+ * Oct 7 2026: rewritten by hand for "about safeorstolen" / "what is safeorstolen" (brand searches:
+ * "safeorstolen", "safe or stolen"). Describes the service and what a check searches, nothing about
+ * how the site is built. Removed unverifiable security/GDPR badges, outbound profile links,
+ * unverified accelerator and press items, and shared sections that carried invented case studies.
+ */
 import React from 'react';
-import { Shield, Users, Award, Lock, CheckCircle, Building } from 'lucide-react';
+import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { FounderStory } from '@/components/story/FounderStory';
-import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
-import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
-import { PRESS_RELEASES } from '@/data/pressCoverage';
+
+const sourcesByItem = [
+  {
+    item: 'Every item',
+    searched: "SafeOrStolen's own theft reports (owners report thefts on the site) and public web results: listings and posts that mention the number.",
+  },
+  {
+    item: 'Phones (IMEI)',
+    searched: "The make and model from the IMEI. A paid lost/stolen carrier blacklist check is available.",
+  },
+  {
+    item: 'Vehicles (VIN)',
+    searched: 'Year, make and model decoded from the VIN, plus open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.',
+  },
+  {
+    item: 'License plates',
+    searched: 'SafeOrStolen theft reports. Arizona plates are also searched against Arizona law-enforcement records. Owner names are never shown.',
+  },
+  {
+    item: 'Guns',
+    searched: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), and live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
+  },
+  {
+    item: 'Bikes',
+    searched: 'A national stolen-bicycle registry, on top of the checks every item gets.',
+  },
+];
+
+const notSearched = [
+  'NCIC, the FBI system police use',
+  'ATF eTrace',
+  'Carrier records, apart from the paid phone blacklist check',
+  "Apple or Google account status (Activation Lock, Find My, Google's lock)",
+  'DMV or MVD records',
+  'Manufacturer, pawn shop or insurance company databases',
+];
+
+const faqs = [
+  {
+    q: 'What is SafeOrStolen?',
+    a: "SafeOrStolen (safeorstolen.com) is a Seattle-based website that checks whether a used item has been reported stolen before you buy or sell it. You type in an IMEI, VIN, plate, or serial number, and it searches its own theft reports, public web results, and extra records for guns, bikes, phones and Arizona vehicles. The result lists every source it searched.",
+  },
+  {
+    q: 'Is SafeOrStolen free?',
+    a: 'A free account comes with 2 checks and needs no credit card. After that, a single check costs $3.99, or $14.99 a month gets unlimited checks with up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime, and it has a 30-day refund.',
+  },
+  {
+    q: 'Is SafeOrStolen a police database?',
+    a: "No. SafeOrStolen is a private company, not a police agency, and it does not search NCIC, the FBI's stolen property file. It searches its own theft reports, public web results, and specific police records named on each result: police firearm theft reports from 33 states and DC, live Ohio records, and Arizona stolen-vehicle records.",
+  },
+  {
+    q: "Does 'no report found' mean an item is safe to buy?",
+    a: "It means nothing turned up in the records SafeOrStolen searched. Many thefts are reported only to local police, so a clean result is one piece of evidence. Also check that the seller can unlock and reset the device, has the title or receipt, and that the number on the item hasn't been tampered with.",
+  },
+  {
+    q: 'Can I report something stolen on SafeOrStolen?',
+    a: "Yes. Owners can report a stolen item on the site with its serial number, IMEI, VIN or plate. That report then shows up when someone checks the same number, which helps buyers spot it. File a police report too, since SafeOrStolen doesn't send reports to the police.",
+  },
+  {
+    q: 'How do I contact SafeOrStolen?',
+    a: 'Email safeorstolenmail@gmail.com. SafeOrStolen is based in Seattle, Washington. For questions about a specific check, include the date of the check and the number you searched so the result can be found in your account history.',
+  },
+];
 
 const AboutPage = () => {
- const dataPartners = [
- {
-  name: "SafeOrStolen Reports",
-  type: "All Categories",
-  description: "Stolen-item reports submitted to SafeOrStolen"
- },
- {
-  name: "Public Web Results",
-  type: "All Categories",
-  description: "Publicly available pages related to the submitted identifier"
- },
- {
-  name: "AI Analysis",
-  type: "All Categories",
-  description: "Plain-language analysis of the information returned"
- },
- {
-  name: "National stolen-bicycle registry",
-  type: "Bicycle Source",
-  description: "Bike frame serial numbers are also searched in a national stolen-bicycle registry"
- },
- {
-  name: "Police firearm theft records",
-  type: "Firearm Source",
-  description: "Gun serials are searched against 242,839 police theft and loss reports from 34 states, plus live Ohio law-enforcement records"
- }
- ];
+  return (
+    <>
+      <PageSEO
+        title="About SafeOrStolen: Stolen Item Checks Before You Buy"
+        description="What SafeOrStolen is, what each check searches for phones, cars, plates, guns, bikes and serial numbers, what it doesn't search, and what it costs."
+        keywords="about SafeOrStolen, what is SafeOrStolen, safe or stolen, safeorstolen, is SafeOrStolen legit"
+        canonical="/about"
+        modifiedTime="2026-10-07"
+        structuredData={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: 'About SafeOrStolen',
+            dateModified: '2026-10-07',
+            mainEntity: {
+              '@type': 'Organization',
+              name: 'SafeOrStolen',
+              alternateName: ['Safe Or Stolen'],
+              url: 'https://safeorstolen.com',
+              email: 'safeorstolenmail@gmail.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Seattle',
+                addressRegion: 'WA',
+                addressCountry: 'US',
+              },
+              description:
+                'SafeOrStolen checks IMEI, VIN, plate and serial numbers against its own theft reports, public web results and, for some item types, police records, before a used item changes hands.',
+            },
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]}
+      />
+      <div className="min-h-screen bg-background pt-20">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'About Us', href: '/about' }]} />
+        </div>
 
- const verificationProcess = [
- {
- step: 1,
- title: "Data Collection",
- description: "We gather information from SafeOrStolen's own reports and publicly available web data."
- },
- {
- step: 2,
- title: "Cross-Reference Verification",
- description: "Serial numbers are checked against SafeOrStolen's reports, public web results, and AI analysis."
- },
- {
- step: 3,
- title: "AI-Powered Analysis",
-  description: "Our system analyzes the available information and explains relevant signals in plain language"
- },
- {
- step: 4,
- title: "Human Review",
-  description: "Results show the sources checked and any relevant matches"
- },
- {
- step: 5,
- title: "Instant Results",
- description: "You receive comprehensive results within seconds of your query"
- }
- ];
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">About SafeOrStolen</h1>
+            <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              SafeOrStolen is a website that tells you whether a used item has been reported stolen before you hand over money for it.
+              You enter the phone's IMEI, the car's VIN or plate, or the serial number on a gun, bike, laptop or tool. In a few seconds
+              you get one of three answers: reported stolen, possible match, or no report found in the records searched, with every
+              source listed. The company is based in Seattle, Washington.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              It's built for the moment in a parking lot or a stranger's driveway when you're about to buy something and can't tell if
+              it's legit. Sellers use it too: a dated record that you checked an item before selling it is easy to show a buyer.
+            </p>
+          </div>
+        </section>
 
- return (
- <>
- <PageSEO
- title="About SafeOrStolen - Protecting Buyers and Sellers"
-  description="SafeOrStolen helps buyers and sellers check phones, vehicles, plates, serial-numbered goods, firearms, and bicycles before a secondhand transaction."
- keywords="about SafeOrStolen, stolen item verification company, protect buyers sellers"
- canonical="/about"
- structuredData={[
- {
- "@context": "https://schema.org",
- "@type": "AboutPage",
- "name": "About SafeOrStolen - Protect Buyers & Sellers",
- "description": "SafeOrStolen protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally.",
- "mainEntity": {
- "@type": "Organization",
- "name": "SafeOrStolen",
- "alternateName": ["Safe Or Stolen", "SOS"],
-  "description": "AI-powered stolen-item verification for buyers and sellers, available as an installable web app.",
- "url": "https://safeorstolen.com",
- "slogan": "Protect Buyers & Sellers - Stop Stolen Goods at the Source"
- }
- },
- {
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "SafeOrStolen",
- "url": "https://safeorstolen.com",
- "logo": "https://safeorstolen.com/logo.png",
- "slogan": "Every Search Makes Stolen Items Harder to Sell",
- "contactPoint": {
- "@type": "ContactPoint",
- "email": "support@safeorstolen.com",
- "contactType": "Customer Support"
- }
- }
- ]}
- />
- {/* Minimal noscript fallback */}
- <noscript>
- <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <p><strong>About SafeOrStolen</strong></p>
-  <p>Stolen-item verification for six categories using SafeOrStolen reports, public web results, and AI analysis.</p>
- </div>
- </noscript>
- <div className="min-h-screen bg-background pt-20">
- <div className="container mx-auto px-4 pt-24 pb-4">
- <BreadcrumbNavigation items={[{ name: 'About Us', href: '/about' }]} />
- </div>
- 
- {/* Simplified Hero Section */}
- <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
- <div className="container mx-auto px-4">
- <div className="max-w-3xl mx-auto text-center">
- <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
- Protect Buyers & Sellers - Stop Stolen Goods at the Source
- </h1>
-  <p className="text-lg text-muted-foreground mb-6">
-  SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - 
-  reducing crime globally.
-  </p>
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">What a check searches</h2>
+            <p className="text-muted-foreground mb-6">
+              Every source below is named on the result page, so you can see exactly what was and wasn't covered.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border rounded-lg bg-background">
+                <thead>
+                  <tr className="border-b bg-muted/50">
+                    <th className="text-left p-3 font-semibold text-foreground">Item</th>
+                    <th className="text-left p-3 font-semibold text-foreground">What gets searched</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sourcesByItem.map((row) => (
+                    <tr key={row.item} className="border-b last:border-0 align-top">
+                      <td className="p-3 font-medium text-foreground whitespace-nowrap">{row.item}</td>
+                      <td className="p-3 text-muted-foreground">{row.searched}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              The full breakdown is on the <Link to="/data-sources" className="text-primary underline">data sources page</Link>.
+            </p>
+          </div>
+        </section>
 
- <div className="flex flex-wrap justify-center gap-3">
- <Badge variant="secondary" className="px-3 py-1">
- <Shield className="h-4 w-4 mr-2" />
- 6 Item Categories
-              </Badge>
- <Badge variant="secondary" className="px-3 py-1">
- <Users className="h-4 w-4 mr-2" />
-  Results in About 3 Seconds
- </Badge>
- </div>
- </div>
- </div>
- </section>
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-4xl grid md:grid-cols-2 gap-6">
+            <Card className="p-6">
+              <h2 className="text-xl font-bold mb-3 text-foreground">What SafeOrStolen doesn't search</h2>
+              <p className="text-muted-foreground text-sm mb-3">
+                No private website can search these, and SafeOrStolen doesn't claim to:
+              </p>
+              <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                {notSearched.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+              <p className="text-muted-foreground text-sm mt-3">
+                For those, ask the seller to unlock and reset the device in front of you, look at the title, or ask your local police.
+              </p>
+            </Card>
+            <Card className="p-6">
+              <h2 className="text-xl font-bold mb-3 text-foreground">What it costs</h2>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong className="text-foreground">Free account:</strong> 2 checks, no credit card.</li>
+                <li><strong className="text-foreground">Single check:</strong> $3.99.</li>
+                <li>
+                  <strong className="text-foreground">Monthly:</strong> $14.99 for unlimited checks (up to 20 phone blacklist checks a
+                  month). Cancel anytime, 30-day refund.
+                </li>
+                <li>
+                  <strong className="text-foreground">Verification certificate:</strong> $1.99, free for monthly members. A dated record
+                  with its own link showing you checked before the sale.
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-3">
+                Pawn shops and dealers can check many items at once on <Link to="/bulk-check" className="text-primary underline">bulk check</Link>.
+              </p>
+            </Card>
+          </div>
+        </section>
 
- {/* Why Check Before Buying - From Homepage */}
- <WhyCheckBeforeBuying />
- 
- {/* Mission (Simplified) */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <Card className="p-6">
- <h2 className="text-2xl font-bold mb-4 text-foreground">Our Mission: Stop Stolen Goods at the Source</h2>
- <p className="text-muted-foreground leading-relaxed mb-4">
- We protect BOTH buyers AND sellers from stolen goods. By giving honest people a simple way to verify items, 
- we make it dramatically harder for thieves to fence stolen goods. Every search makes stolen items harder to sell.
- </p>
-  <p className="text-muted-foreground leading-relaxed mb-4">
-  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, 
-  electronics, power tools, firearms, and bicycles in one place.
-  </p>
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">How a check works, step by step</h2>
+            <ol className="list-decimal pl-5 space-y-3 text-muted-foreground">
+              <li>Find the number on the item: the IMEI in Settings or by dialing *#06#, the VIN on the dashboard or door jamb, or the serial on the frame, nameplate or underside.</li>
+              <li>Type it into the search box on the homepage or the page for that item.</li>
+              <li>SafeOrStolen searches its theft reports, public web results, and the extra records for that item type at the same time.</li>
+              <li>The result shows reported stolen, possible match, or no report found, and lists each source.</li>
+              <li>If you're signed in, the check is saved to your account with the date, so you can show it later.</li>
+            </ol>
+            <p className="text-muted-foreground mt-4">
+              If a result says reported stolen, don't buy the item and don't confront the seller. Keep the listing and messages and call
+              your local police's non-emergency line.
+            </p>
+          </div>
+        </section>
 
- <p className="text-muted-foreground leading-relaxed mb-4">
- FasterCapital is SafeOrStolen's accelerator/incubator. SafeOrStolen joined the FasterCapital Acceleration Program in 2025.
- </p>
- <div className="border-t pt-4 mt-4">
- <p className="text-muted-foreground text-sm">
-  Six item categories · SafeOrStolen reports, public web results, and AI analysis · Results in about 3 seconds
- </p>
- </div>
- </Card>
- </div>
- </div>
- </section>
-
-
-
-
- {/* Trust Indicators (Simplified to 3) */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
- <Card className="p-6 text-center">
- <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2 text-foreground">Bank-Level Security</h3>
- <p className="text-muted-foreground text-sm">256-bit SSL encryption</p>
- </Card>
- <Card className="p-6 text-center">
- <CheckCircle className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2 text-foreground">6 Item Categories</h3>
- <p className="text-muted-foreground text-sm">Phones, vehicles, plates, serials, firearms, bikes</p>
- </Card>
- <Card className="p-6 text-center">
- <Lock className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2 text-foreground">Zero Data Retention</h3>
- <p className="text-muted-foreground text-sm">GDPR compliant</p>
- </Card>
- </div>
- </div>
- </section>
-
- {/* Press & Media Section */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <div className="text-center mb-8">
- <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Press & Media</h2>
-  <p className="text-muted-foreground max-w-2xl mx-auto">Published company announcements and verified public profiles</p>
- </div>
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
- <a
- href="https://www.trustpilot.com/review/safeorstolen.com"
- target="_blank"
- rel="noopener noreferrer"
- className="group"
- >
- <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
-  <Award className="h-8 w-8 text-primary mx-auto mb-2" />
- <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">Trustpilot</h3>
- <p className="text-sm text-muted-foreground">Read customer reviews</p>
- </Card>
- </a>
- <a
- href="https://www.crunchbase.com/organization/safe-or-stolen"
- target="_blank"
- rel="noopener noreferrer"
- className="group"
- >
- <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
- <div className="text-3xl mb-2">📊</div>
- <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">Crunchbase</h3>
- <p className="text-sm text-muted-foreground">Company Profile</p>
- </Card>
- </a>
- <a
- href="https://biz.prlog.org/SafeOrStolen/"
- target="_blank"
- rel="noopener noreferrer"
- className="group"
- >
- <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
- <div className="text-3xl mb-2">📰</div>
- <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">PRLog</h3>
- <p className="text-sm text-muted-foreground">Press Releases</p>
- </Card>
- </a>
- </div>
-  <div className="max-w-5xl mx-auto space-y-3">
-  {PRESS_RELEASES.map((release) => (
-  <a key={release.url} href={release.url} target="_blank" rel="noopener noreferrer" className="block">
-  <Card className="p-4 hover:border-primary/50 transition-colors">
-  <p className="text-xs text-muted-foreground mb-1">{release.date} · {release.outlet}</p>
-  <h3 className="font-semibold text-foreground">{release.title}</h3>
-  </Card>
-  </a>
-  ))}
-  </div>
- </div>
- </section>
-
- {/* Data Partners - We crawl and aggregate these sources */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="text-center mb-8">
-  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Sources Used in Our Checks</h2>
- <p className="text-muted-foreground max-w-2xl mx-auto">
-  Each category uses only the sources shown below.
- </p>
- </div>
- <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
- {dataPartners.map((partner, index) => (
- <Card key={index} className="p-4">
- <div className="flex items-center gap-2 mb-2">
- <Building className="h-5 w-5 text-primary" />
- <Badge variant="secondary" className="text-xs">{partner.type}</Badge>
- </div>
- <h3 className="font-bold mb-1 text-foreground text-sm">{partner.name}</h3>
- <p className="text-muted-foreground text-xs">
- {partner.description}
- </p>
- </Card>
- ))}
- </div>
- <div className="text-center mt-6">
- <p className="text-sm text-muted-foreground">
- <strong>How it works:</strong> Each check runs our own stolen-item reports, public web results and AI analysis in parallel 
- (plus police theft records from 34 states for guns and a national stolen-bicycle registry for bikes) and returns a result in about 3 seconds.
- </p>
- </div>
- </div>
- </section>
-
- {/* Why Choose SafeOrStolen */}
- <WhyChooseSafeOrStolen />
-
- </div>
- </>
- );
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">Questions people ask about SafeOrStolen</h2>
+            <div className="space-y-6">
+              {faqs.map((f) => (
+                <div key={f.q}>
+                  <h3 className="font-semibold text-foreground mb-2">{f.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground mt-8">
+              Read <Link to="/our-story" className="text-primary underline">why SafeOrStolen started</Link>, or run a check from the{' '}
+              <Link to="/" className="text-primary underline">homepage</Link>.
+            </p>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 };
 
 export default AboutPage;

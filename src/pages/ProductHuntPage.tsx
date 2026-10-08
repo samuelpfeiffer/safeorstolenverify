@@ -1,192 +1,120 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Rocket, Trophy, Users, Star, ArrowRight, CheckCircle, 
-  Smartphone, Shield, Zap, Clock, Target, Heart
-} from 'lucide-react';
+import { Rocket, ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 
-const ProductHuntPage = () => {
-  const features = [
-    {
-      icon: Smartphone,
-      title: "Installable Web App",
-      description: "SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place"
-    },
-    {
-      icon: Shield,
-      title: "Universal Verification",
-      description: "Phones, cars, bikes, firearms, electronics - we verify everything"
-    },
-    {
-      icon: Zap,
-      title: "3-Second Results",
-      description: "Results are usually available in about 3 seconds"
-    },
-    {
-      icon: Clock,
-      title: "2 Free Searches",
-      description: "No credit card required - try before you buy"
-    }
-  ];
+/**
+ * Oct 7 2026: rewritten by hand for "safeorstolen product hunt". Removed: three buttons that
+ * opened the off-site Product Hunt listing, a "3 sec" verification-speed stat, "we verify
+ * everything", and a mission line built on an unsourced "millions of people buy stolen property
+ * every year". No upvote counts, rankings or badges were claimed and none are added. The page now
+ * describes the product the way a Product Hunt visitor would want it described.
+ */
 
-  return (
-    <>
-      <PageSEO
-        title="SafeOrStolen on Product Hunt"
-        description="View SafeOrStolen's Product Hunt listing and learn about its AI-powered checks for six categories of secondhand items."
-        canonical="https://safeorstolen.com/product-hunt"
-      />
-      <div className="min-h-screen bg-background pt-20">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-orange-500/10">
-          <div className="container mx-auto px-4 text-center">
-            <Badge className="mb-6 bg-orange-500 text-white text-lg px-4 py-2">
-              <Rocket className="h-5 w-5 mr-2 inline" />
-              Product Hunt Listing
-            </Badge>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              SafeOrStolen on <span className="text-primary">Product Hunt</span>
-            </h1>
-            
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              SafeOrStolen covers phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles in one place.
-            </p>
+const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <Button 
-                size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white gap-2 text-lg px-8"
-                onClick={() => window.open('https://www.producthunt.com/posts/safeorstolen', '_blank')}
-              >
-                <Trophy className="h-5 w-5" />
-                View Product Hunt Listing
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/verify" className="gap-2 text-lg">
-                  Try Free Now <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
+const whatYouGet = [
+  {
+    title: 'One search box for any number',
+    body: 'Paste an IMEI, VIN, license plate or serial number. The check works for phones, cars, guns, bikes, laptops, tools, cameras and anything else with a serial.',
+  },
+  {
+    title: 'Every source listed',
+    body: 'Results read "reported stolen", "possible match", or "no report found in the records searched", and show each source that was checked.',
+  },
+  {
+    title: 'A plain-language note',
+    body: 'AI writes a short note explaining the result. It never decides whether an item is stolen; that comes only from the records searched.',
+  },
+  {
+    title: 'Saved and shareable',
+    body: 'Each check is saved to your account with the date. An optional $1.99 certificate gives you a dated record with its own link to show you checked before buying.',
+  },
+];
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              <div className="text-center p-4 bg-card rounded-xl border">
-                <p className="text-3xl font-bold text-primary">6</p>
-                <p className="text-sm text-muted-foreground">Item Categories</p>
-              </div>
-              <div className="text-center p-4 bg-card rounded-xl border">
-                <p className="text-3xl font-bold text-primary">3 sec</p>
-                <p className="text-sm text-muted-foreground">Verification Speed</p>
-              </div>
-              <div className="text-center p-4 bg-card rounded-xl border">
-                <p className="text-3xl font-bold text-primary">2</p>
-                <p className="text-sm text-muted-foreground">Free Checks</p>
-              </div>
-              <div className="text-center p-4 bg-card rounded-xl border">
-                <p className="text-3xl font-bold text-primary">AI</p>
-                <p className="text-sm text-muted-foreground">Plain-Language Analysis</p>
-              </div>
-            </div>
-          </div>
-        </section>
+const ProductHuntPage = () => (
+  <>
+    <PageSEO
+      title="SafeOrStolen for Product Hunt Visitors: What It Does"
+      description="What SafeOrStolen's stolen-item check does for used phones, cars, guns and bikes, what it searches, what it costs, and how to try it. For Product Hunt visitors."
+      keywords="safeorstolen product hunt, safeorstolen app, stolen item checker, check if item is stolen"
+      canonical="/product-hunt"
+      modifiedTime="2026-10-07"
+    />
+    <div className="min-h-screen bg-background pt-20">
+      <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-orange-500/10">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <Badge className="mb-6 bg-orange-500 text-white px-3 py-1">
+            <Rocket className="h-4 w-4 mr-2 inline" />
+            For Product Hunt visitors
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">SafeOrStolen for Product Hunt Visitors</h1>
+          <p className="text-lg text-muted-foreground mb-4">
+            SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
+            number, based in Seattle, WA. Before you pay a stranger for something secondhand, type in its IMEI,
+            VIN, plate or serial and see in a few seconds whether it has been reported stolen in the records
+            SafeOrStolen searches. The first 2 checks are free with a free account, no credit card.
+          </p>
+          <p className="text-sm text-muted-foreground mb-8">Updated October 7, 2026</p>
+          <Button size="lg" asChild>
+            <Link to="/verify" className="gap-2">
+              Try a free check <ArrowRight className="h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
 
-        {/* Why We're Different */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              What SafeOrStolen Offers
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-6">
-                    <feature.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-                    <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Product Hunt link */}
-        <section className="py-16 bg-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <Card className="border-primary/30">
-                <CardHeader className="text-center">
-                  <CardTitle className="flex items-center justify-center gap-2 text-2xl">
-                    <Heart className="h-6 w-6 text-primary" />
-                    View the Listing
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-center text-muted-foreground">Open the public Product Hunt page for SafeOrStolen.</p>
-
-                  <div className="mt-8 text-center">
-                    <Button 
-                      size="lg" 
-                      className="bg-orange-500 hover:bg-orange-600 text-white gap-2"
-                      onClick={() => window.open('https://www.producthunt.com/posts/safeorstolen', '_blank')}
-                    >
-                      <Rocket className="h-5 w-5" />
-                      View Product Hunt Listing
-                    </Button>
-                  </div>
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl font-bold mb-6">What you get</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {whatYouGet.map((item) => (
+              <Card key={item.title}>
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.body}</p>
                 </CardContent>
               </Card>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Mission Statement */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 text-center">
-            <Target className="h-16 w-16 mx-auto mb-6 text-primary" />
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Every year, millions of people unknowingly buy stolen property. 
-              This leads to financial loss, legal trouble, and supports organized crime. 
-              <strong className="text-foreground"> We're building the infrastructure to end this.</strong>
-            </p>
-            <p className="text-lg">
-               The Product Hunt listing provides another place to discover SafeOrStolen.
-            </p>
-          </div>
-        </section>
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold mb-4">What it searches, and what it doesn't</h2>
+          <p className="text-muted-foreground mb-4">
+            Every check searches SafeOrStolen's own theft reports and public web results that mention the number.
+            Guns add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed
+            through 2017; the years covered vary by state) and live Ohio records. Bikes add a national
+            stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.
+          </p>
+          <p className="text-muted-foreground">
+            It does not search NCIC, DMV records, or Apple or Google account status. A no-match result means the
+            number wasn't found in those records, not that the item is guaranteed clean. More on{' '}
+            <Link to="/how-it-works" className="text-primary hover:underline">how it works</Link>.
+          </p>
+        </div>
+      </section>
 
-        {/* Final CTA */}
-        <section className="py-16 bg-gradient-to-br from-primary/20 via-background to-orange-500/20">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Explore SafeOrStolen
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white gap-2 text-lg px-8"
-                onClick={() => window.open('https://www.producthunt.com/posts/safeorstolen', '_blank')}
-              >
-                <Trophy className="h-5 w-5" />
-                View Product Hunt Listing
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/press-kit" className="gap-2">
-                  View Press Kit
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold mb-4">Pricing</h2>
+          <ul className="space-y-2 text-muted-foreground list-disc pl-6 mb-6">
+            <li>2 free checks with a free account, no credit card</li>
+            <li>$3.99 for a single check</li>
+            <li>$14.99 a month for unlimited checks, cancel anytime, 30-day refund</li>
+            <li>A free installable web app at <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link></li>
+          </ul>
+          <p className="text-muted-foreground">
+            Feedback from makers and early users is welcome at {PRESS_EMAIL}.
+          </p>
+        </div>
+      </section>
+    </div>
+  </>
+);
 
 export default ProductHuntPage;

@@ -1,296 +1,177 @@
+import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Link } from '@/lib/router-compat';
-import { Shield, CheckCircle, AlertTriangle, Database, FileText, Users, Gavel, Scale, Search } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
+/**
+ * Oct 7 2026: rewritten by hand for "how auction houses check consignments for stolen items".
+ * Removed: "$4.7 billion recovered in 2026" and an FBI statistic, CSV uploads of "1,000+" items
+ * "in minutes" (it's up to 100 per run), enterprise plans and pricing, white-label catalog badges,
+ * PDF compliance reports, flagged-item reports with "theft dates, reporting agencies and case
+ * numbers", checks "against law enforcement", jewelry and art verification, and the claim that
+ * failing to check brings "criminal liability for negligence".
+ */
+
+const UPDATED = 'October 7, 2026';
+
+const CATEGORIES: string[][] = [
+  ['Vehicles, motorcycles, trailers', 'VIN', 'Year, make, model, open recalls, theft reports, web results; Arizona records for Arizona VINs'],
+  ['Phones and tablets', 'IMEI', 'Make and model, theft reports, web results; carrier blacklist on paid checks'],
+  ['Laptops, cameras, consoles, audio gear', 'Serial number', 'Theft reports and web results'],
+  ['Power tools, generators, equipment', 'Serial number on the nameplate', 'Theft reports and web results'],
+  ['Guns', 'Frame or receiver serial', 'Also police theft and loss reports from 33 states and DC, live Ohio records, altered-serial flag'],
+  ['Bikes and e-bikes', 'Frame serial under the bottom bracket', 'Also a national stolen-bicycle registry'],
+  ['Jewelry, art, antiques, coins', 'Usually none', 'A serial check can\'t help. Ask for provenance, receipts and photos.'],
+];
+
+const FAQS = [
+  {
+    question: 'How do auction houses check consignments for stolen items?',
+    answer:
+      "Record each consignor's ID, collect the serial number, IMEI or VIN of every lot that has one, and run the list through a stolen check before the catalog goes out. On SafeOrStolen (safeorstolen.com/for-auction-houses), paste up to 100 numbers at /bulk-check and download a CSV with each result, the sources searched and the time of the check.",
+  },
+  {
+    question: 'Can I check a whole consignment list at once?',
+    answer:
+      'Up to 100 items per run. Put one number per line in a .csv or .txt file, with an optional type and a note such as the lot number: 1HGBH41JXMN109186, vehicle, lot 212. Upload it at /bulk-check. For a longer sale, split the list and run it in parts. Each item uses one check, so the $14.99 monthly plan is the one built for this.',
+  },
+  {
+    question: 'What happens if a consigned item comes back reported stolen?',
+    answer:
+      "Pull the lot from the sale and don't hand it back to the consignor yet. Keep the consignment paperwork and the check result, and call your local police non-emergency line. A \"possible match\" is weaker: a source mentions a similar number, so open the result and compare before you act.",
+  },
+  {
+    question: 'Can we show bidders that lots were checked?',
+    answer:
+      "Yes, lot by lot. A $1.99 verification certificate, free on the monthly plan, gives a dated record with its own link showing the result and the sources searched, with only the last four characters of the number visible. You can add that link to the lot description. There are no catalog badges or branded reports.",
+  },
+  {
+    question: 'Does a clean result mean a lot is not stolen?',
+    answer:
+      'No. "No report found in the records searched" means no theft report turned up in those sources on that date. Many thefts are never reported anywhere public, and SafeOrStolen does not search NCIC, pawn reporting systems or DMV records. It is one check alongside the consignor\'s ID, paperwork and your own judgment.',
+  },
+];
+
 export default function ForAuctionHouses() {
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "How do auction houses verify consignment items?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against publicly available stolen item reports and our own records before listing items for sale."
- }
- },
- {
- "@type": "Question",
- "name": "What happens if an auction house sells a stolen item?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Selling stolen property exposes auction houses to asset seizure, civil lawsuits from rightful owners, criminal liability for negligence, loss of auctioneer licenses, and irreparable reputation damage."
- }
- },
- {
- "@type": "Question",
- "name": "Can SafeOrStolen check items in bulk for auctions?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. SafeOrStolen's enterprise plans support CSV uploads of 1,000+ VINs, serial numbers, or IMEI numbers with results returned in minutes. Flagged items include detailed reports for compliance documentation."
- }
- },
- {
- "@type": "Question",
- "name": "What types of auction items can SafeOrStolen verify?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "SafeOrStolen verifies vehicles (cars, trucks, motorcycles, boats), electronics (phones, laptops, cameras), heavy equipment, firearms, jewelry, art, musical instruments, power tools, and any item with a serial number or VIN."
- }
- },
- {
- "@type": "Question",
- "name": "Does SafeOrStolen provide compliance documentation for auctions?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. Every verification generates a timestamped compliance report showing the item was checked against law enforcement before auction. These reports serve as due diligence documentation."
- }
- }
- ]
- };
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Stolen item checks for auction consignments',
+      serviceType: 'Stolen item check',
+      url: 'https://safeorstolen.com/for-auction-houses',
+      provider: { '@type': 'Organization', name: 'SafeOrStolen', url: 'https://safeorstolen.com' },
+      areaServed: { '@type': 'Country', name: 'United States' },
+      description: 'Bulk serial number, IMEI and VIN checks of consignment lists, up to 100 items per run.',
+      dateModified: '2026-10-07',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
+  ];
 
- return (
- <>
- <PageSEO
- title="SafeOrStolen for Auction Houses - Verify Consignments"
- description="Bulk verification for auction consignments. Check VINs, serials, and IMEI numbers against stolen databases before auction day."
- keywords="auction house verification, consignment verification, auction fraud prevention, bulk VIN check, auction compliance"
- canonical="/for-auction-houses"
- structuredData={faqSchema}
- />
- <div className="min-h-screen bg-background">
- {/* Hero Section */}
- <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto text-center">
- <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
- SafeOrStolen for Auction Houses
- </h1>
- <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- Verify every consignment item before auction day. Protect your bidders, reduce legal exposure, and maintain the reputation your auction house has spent years building.
- </p>
- <div className="flex flex-wrap gap-4 justify-center">
- <Button size="lg" asChild>
- <Link to="/verify">Try Bulk Verification</Link>
- </Button>
- <Button size="lg" variant="outline" asChild>
- <Link to="/pricing">View Enterprise Pricing</Link>
- </Button>
- </div>
- </div>
- </div>
- </section>
+  return (
+    <>
+      <PageSEO
+        title="Check Auction Consignments for Stolen Items | SafeOrStolen"
+        description="How auction houses check consigned vehicles, electronics, tools, guns and bikes for theft reports before the sale: what to collect, bulk checks of 100 items, and what results mean."
+        keywords="auction consignment stolen check, auction house stolen item check, check consignment for stolen goods, bulk vin check auction, estate sale stolen item check"
+        canonical="/for-auction-houses"
+        modifiedTime="2026-10-07"
+        breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'For businesses', url: '/for-businesses' }, { name: 'Auction houses', url: '/for-auction-houses' }]}
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background text-foreground pt-20">
+        <section className="px-4 py-14 bg-gradient-to-b from-primary/5 to-background">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-sm font-semibold text-primary mb-3">For auction houses, estate sales and liquidators</p>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Check Auction Consignments for Stolen Items</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Before a lot goes in the catalog, run its serial number, IMEI or VIN through SafeOrStolen. Paste up to 100
+              numbers from the consignment list into the bulk check and download a CSV with each result, the sources
+              searched and the time of the check. Guns are also searched against police theft reports from 33 states and
+              DC. Items without a serial, like most jewelry and art, need paperwork instead.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button size="lg" asChild><Link to="/bulk-check">Check a consignment list</Link></Button>
+              <Button size="lg" variant="outline" asChild><Link to="/verify">Check one lot</Link></Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+          </div>
+        </section>
 
- {/* Why Verification Matters */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-8">Why Auction Houses Need Consignment Verification</h2>
- <div className="prose prose-lg max-w-none text-muted-foreground">
- <p>
- Auction houses occupy a unique position in the secondhand market. Unlike casual sellers on Facebook Marketplace or Craigslist, auction houses are trusted intermediaries. Bidders expect that items have been vetted, authenticated, and legally cleared before they hit the auction block. When a stolen vehicle, piece of equipment, or electronic device slips through consignment intake, the consequences extend far beyond a single transaction.
- </p>
- <p>
- In 2026 alone, law enforcement agencies across the United States recovered over $4.7 billion in stolen property, and a significant portion of that property had been resold through seemingly legitimate channels including auction houses, consignment shops, and online liquidation platforms. The FBI's National Stolen Property Database shows that stolen vehicles, construction equipment, electronics, and firearms are the most commonly laundered items through auction channels.
- </p>
- <p>
- SafeOrStolen provides auction houses with enterprise-grade bulk verification tools that check every consignment item against public stolen property reports and SafeOrStolen's own database. Whether you run a weekly vehicle auction, estate sale operation, government surplus liquidation, or specialty auction house, SafeOrStolen helps ensure that every item crossing your auction block has been reviewed for potential theft flags.
- </p>
- </div>
- </div>
- </div>
- </section>
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">What you can check, lot by lot</h2>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/60">
+                  <tr><th className="px-4 py-3 font-semibold">Lot type</th><th className="px-4 py-3 font-semibold">Number to collect</th><th className="px-4 py-3 font-semibold">What the check searches</th></tr>
+                </thead>
+                <tbody>
+                  {CATEGORIES.map((r) => (
+                    <tr key={r[0]} className="border-t border-border">
+                      <td className="px-4 py-3 font-medium">{r[0]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
- {/* Legal Risks */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-5xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Legal Risks of Selling Unverified Consignments</h2>
- <div className="grid md:grid-cols-2 gap-6">
- <Card>
- <CardContent className="pt-6">
- <div className="flex items-start gap-4">
- <Scale className="w-10 h-10 text-destructive flex-shrink-0" />
- <div>
- <h3 className="font-semibold mb-2">Asset Seizure and Forfeiture</h3>
- <p className="text-muted-foreground text-sm">Law enforcement can seize stolen items from winning bidders, who then pursue legal action against the auction house for selling them stolen property. The auction house may also forfeit the sale proceeds.</p>
- </div>
- </div>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="pt-6">
- <div className="flex items-start gap-4">
- <AlertTriangle className="w-10 h-10 text-destructive flex-shrink-0" />
- <div>
- <h3 className="font-semibold mb-2">Criminal Liability</h3>
- <p className="text-muted-foreground text-sm">Auction houses that fail to perform due diligence on consignment items can face criminal charges for trafficking in stolen property, especially for regulated items like vehicles and firearms.</p>
- </div>
- </div>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="pt-6">
- <div className="flex items-start gap-4">
- <FileText className="w-10 h-10 text-destructive flex-shrink-0" />
- <div>
- <h3 className="font-semibold mb-2">License Revocation</h3>
- <p className="text-muted-foreground text-sm">State licensing boards can suspend or revoke auctioneer licenses if stolen property is repeatedly sold. This applies to vehicle auctions, firearms auctions, and general merchandise operations.</p>
- </div>
- </div>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="pt-6">
- <div className="flex items-start gap-4">
- <Users className="w-10 h-10 text-destructive flex-shrink-0" />
- <div>
- <h3 className="font-semibold mb-2">Reputation Damage</h3>
- <p className="text-muted-foreground text-sm">A single stolen item scandal can destroy decades of reputation. Bidders lose trust, consignors move to competing auction houses, and media coverage amplifies the damage far beyond the original incident.</p>
- </div>
- </div>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
+        <section className="px-4 py-12 bg-card/50">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">At intake</h2>
+            <ol className="list-decimal pl-6 space-y-3 text-muted-foreground">
+              <li>Copy the consignor's photo ID and get a signed statement that they own what they're consigning.</li>
+              <li>Read each number off the item, not the box, and write it on the intake sheet next to the lot number.</li>
+              <li>Look for scratched-off nameplates, tool engravings with another company's name, rental tags, or a phone still signed in to someone's account.</li>
+              <li>Run the list at /bulk-check before photography and cataloging, so a flagged lot never gets listed.</li>
+              <li>Keep the results CSV with the consignment agreement.</li>
+            </ol>
+            <p className="text-muted-foreground mt-4">
+              Federal law (18 U.S.C. § 922(k)) makes it a crime to possess a gun whose serial number has been obliterated.
+              Don't accept one, and call your local police.
+            </p>
+          </div>
+        </section>
 
- {/* Bulk Verification Features */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <div className="max-w-5xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Bulk Verification for Auction Professionals</h2>
- <div className="grid md:grid-cols-3 gap-6">
- <Card className="text-center">
- <CardContent className="pt-6">
- <Database className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">CSV Upload</h3>
- <p className="text-sm text-muted-foreground">Upload spreadsheets with 1,000+ VINs, serial numbers, or IMEI numbers. Results returned in minutes, not days.</p>
- </CardContent>
- </Card>
- <Card className="text-center">
- <CardContent className="pt-6">
- <Search className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Multiple Sources</h3>
- <p className="text-sm text-muted-foreground">Every item checked against public theft reports and SafeOrStolen's own stolen item database.</p>
- </CardContent>
- </Card>
- <Card className="text-center">
- <CardContent className="pt-6">
- <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Compliance Reports</h3>
- <p className="text-sm text-muted-foreground">Timestamped verification reports for every item. Downloadable PDF documentation for your compliance files.</p>
- </CardContent>
- </Card>
- <Card className="text-center">
- <CardContent className="pt-6">
- <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Flagged Item Alerts</h3>
- <p className="text-sm text-muted-foreground">Items matching stolen property records are instantly flagged with detailed reports including theft dates, reporting agencies, and case numbers.</p>
- </CardContent>
- </Card>
- <Card className="text-center">
- <CardContent className="pt-6">
- <Gavel className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Catalog Integration</h3>
- <p className="text-sm text-muted-foreground">White-label verification badges for your auction catalogs. Show bidders that every item has been independently verified clean.</p>
- </CardContent>
- </Card>
- <Card className="text-center">
- <CardContent className="pt-6">
- <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Pre-Auction Clearance</h3>
- <p className="text-sm text-muted-foreground">Run verification before items reach the auction floor. Remove flagged items before they create liability for your business and bidders.</p>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
+        <section className="px-4 py-12">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Common questions from auction houses</h2>
+            <div className="space-y-4">
+              {FAQS.map((f) => (
+                <div key={f.question} className="rounded-lg border border-border bg-card p-5">
+                  <h3 className="font-semibold mb-2">{f.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
- {/* What We Verify */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-8">Auction Item Categories We Verify</h2>
- <div className="prose prose-lg max-w-none text-muted-foreground">
- <p>
- SafeOrStolen supports verification for virtually every category of auction merchandise. For <strong>vehicle auctions</strong>, we review VINs against publicly available theft reports and SafeOrStolen's own records. For <strong>electronics and phone auctions</strong>, we review IMEI numbers against publicly reported stolen device records. For <strong>equipment auctions</strong>, serial numbers are checked against publicly available theft reports and SafeOrStolen's own records.
- </p>
- <p>
- We also support <strong>firearms auctions</strong> with serial numbers searched against police theft and loss reports from 34 states, <strong>jewelry and luxury goods</strong> with public theft report cross-referencing, <strong>musical instruments</strong> and <strong>bicycles</strong> (bikes are also searched in a national stolen-bicycle registry), and <strong>power tools and construction equipment</strong> with public theft report checks. If it has a serial number, VIN, or IMEI, SafeOrStolen can help identify potential theft flags before it reaches your auction block.
- </p>
- </div>
- </div>
- </div>
- </section>
+        <section className="px-4 py-14 bg-primary/5">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">Check the next sale's lots</h2>
+            <p className="text-muted-foreground mb-6">
+              2 free checks, then $3.99 per check or $14.99 a month unlimited. For more on checking at other businesses see{' '}
+              <Link to="/for-businesses" className="text-primary underline">SafeOrStolen for businesses</Link>. Questions:
+              safeorstolenmail@gmail.com.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" asChild><Link to="/bulk-check">Open the bulk check</Link></Button>
+              <Button size="lg" variant="outline" asChild><Link to="/pricing">See pricing</Link></Button>
+            </div>
+          </div>
+        </section>
 
- {/* FAQ Section */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <div className="max-w-3xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
- <div className="space-y-6">
- <Card>
- <CardContent className="p-6">
- <h3 className="font-semibold mb-2">How do auction houses verify consignment items?</h3>
- <p className="text-muted-foreground">Auction houses use SafeOrStolen's bulk verification to check VINs, serial numbers, and IMEI numbers against publicly available stolen item reports and our own records before listing items for sale.</p>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="p-6">
- <h3 className="font-semibold mb-2">What happens if an auction house sells a stolen item?</h3>
- <p className="text-muted-foreground">Selling stolen property exposes auction houses to asset seizure, civil lawsuits from rightful owners, criminal liability for negligence, loss of auctioneer licenses, and irreparable reputation damage with bidders and consignors.</p>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="p-6">
- <h3 className="font-semibold mb-2">Can SafeOrStolen check items in bulk for auctions?</h3>
- <p className="text-muted-foreground">Yes. Enterprise plans support CSV uploads of 1,000+ VINs, serial numbers, or IMEI numbers with results returned in minutes. Flagged items include detailed reports for compliance documentation.</p>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="p-6">
- <h3 className="font-semibold mb-2">What types of auction items can SafeOrStolen verify?</h3>
- <p className="text-muted-foreground">SafeOrStolen verifies vehicles, electronics, heavy equipment, firearms, jewelry, art, musical instruments, power tools, and any item with a serial number or VIN. One platform covers every auction category.</p>
- </CardContent>
- </Card>
- <Card>
- <CardContent className="p-6">
- <h3 className="font-semibold mb-2">Does SafeOrStolen provide compliance documentation?</h3>
- <p className="text-muted-foreground">Every verification generates a timestamped compliance report showing the item was checked against law enforcement. These reports serve as due diligence documentation for regulatory compliance and insurance purposes.</p>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
-
- {/* CTA */}
- <section className="py-16 bg-primary text-primary-foreground">
- <div className="container mx-auto px-4 text-center">
- <h2 className="text-3xl font-bold mb-6">Protect Your Auction House Today</h2>
- <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
- Start verifying consignment items in minutes. Enterprise pricing available for high-volume auction operations.
- </p>
- <div className="flex flex-wrap justify-center gap-4">
- <Button asChild size="lg" variant="secondary" className="font-semibold">
- <Link to="/verify">Try Bulk Verification</Link>
- </Button>
- <Button asChild size="lg" variant="outline" className="font-semibold border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
- <Link to="/pricing">View Enterprise Pricing</Link>
- </Button>
- </div>
- </div>
- </section>
-
- <RelatedPagesSection currentPage="/for-auction-houses" currentCategory="business" maxLinks={6} />
- </div>
- </>
- );
+        <RelatedPagesSection currentPage="/for-auction-houses" currentCategory="business" maxLinks={6} />
+      </div>
+    </>
+  );
 }

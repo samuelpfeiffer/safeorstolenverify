@@ -1,6 +1,14 @@
+/**
+ * Oct 7 2026: rewritten by hand for "free license plate lookup" (Search Console: "free license plate
+ * lookup", "free license plate look up", "free license plate search", "stolen car plate lookup",
+ * positions 37 to 53). This is the national hub; the state pages hang off it. The old copy said
+ * SafeOrStolen "resolves the plate to its registered vehicle" and would "alert you if the registered
+ * vehicle doesn't match": it has no DMV registration data, so both claims and the cross-reference
+ * fields were removed. Named data supplier removed. Owner-name questions go to /license-plate-owner-lookup.
+ */
 import { useState } from 'react';
-import { useNavigate } from '@/lib/router-compat';
-import { Shield, MapPin, Search, CheckCircle2, Car, AlertTriangle, Clock, ArrowRight } from 'lucide-react';
+import { useNavigate, Link } from '@/lib/router-compat';
+import { Shield, MapPin, Search, Car, AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,404 +16,344 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { US_STATES } from '@/data/stateVerificationData';
 import { toast } from 'sonner';
-import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 
+const QUICK_ANSWER =
+  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports and public web results for that plate, and Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. Your first 2 checks are free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
+
+const CAN_CANT_ROWS: [string, string, string][] = [
+  ['Is the plate reported stolen?', 'Yes, in the records searched', 'SafeOrStolen theft reports and public web results; Arizona plates also against Arizona law-enforcement records'],
+  ['Has the plate shown up in listings or posts online?', 'Yes', 'SafeOrStolen lists any public web results that mention the plate'],
+  ['Is the car itself reported stolen?', 'Use the VIN, not the plate', 'A VIN check on /vin-checker, because a plate can be moved to another car'],
+  ["Who owns the car (name, address, phone)?", 'No', "DMV owner records are closed to the public under the Driver's Privacy Protection Act. See /license-plate-owner-lookup"],
+  ['Title brands, liens, odometer', 'Not from a plate', "Your state DMV's title check by VIN, or a vehicle history report"],
+  ['Is the registration current?', 'Look at the car', 'The registration sticker and paper registration, which should match the plate and VIN'],
+];
+
+const faqs = [
+  {
+    question: 'Is there a free license plate lookup?',
+    answer:
+      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 2 free plate checks with a free account and no credit card. Each check searches SafeOrStolen's theft reports and public web results for the plate, plus Arizona law-enforcement stolen-vehicle records for Arizona plates. After that a single check is $3.99, or $14.99 a month for unlimited checks.",
+  },
+  {
+    question: 'Can I find out who owns a car from the license plate?',
+    answer:
+      "No, not as a member of the public. The federal Driver's Privacy Protection Act stops state DMVs from releasing an owner's name and address except for permitted purposes such as law enforcement, insurance claims and court cases. If you need the owner after a hit-and-run or for an abandoned car, give the plate to the police. Our page on license plate owner lookups explains the rest.",
+  },
+  {
+    question: 'Can I do a free DMV license plate lookup?',
+    answer:
+      "Not for owner details. State DMVs don't run public plate searches that return a name or address. They release those records only to requesters with a permitted purpose under the Driver's Privacy Protection Act, usually on a signed records-request form. Many DMVs do offer a free title or brand check by VIN, which is more useful when you're buying a car.",
+  },
+  {
+    question: 'How do I check if a car is stolen by license plate?',
+    answer:
+      "Enter the plate and state on SafeOrStolen to see whether the plate is reported stolen in the records searched. Then check the VIN, because thieves often put a clean plate on a stolen car. The VIN on the dashboard, the driver's door jamb and the title should all match, and the decoded year, make and model should match the car in front of you.",
+  },
+  {
+    question: 'What does "no report found" mean on a plate check?',
+    answer:
+      "It means the plate does not appear in the records SafeOrStolen searched at the time of the check: its own theft reports, public web results and, for Arizona plates, Arizona law-enforcement records. It is not proof the car is clean. A recent theft may not be reported yet, and a swapped plate says nothing about the car it's bolted to.",
+  },
+  {
+    question: 'Do paid license plate lookup sites show the owner?',
+    answer:
+      "Sites that charge for an owner lookup can't pull registered-owner records from the DMV for the public. What they return is usually general vehicle details or people-search data stitched together from other sources, which may be wrong or out of date. If you're buying a car, ask the seller for the title and compare the name with their photo ID.",
+  },
+  {
+    question: 'What should I do if a plate comes back reported stolen?',
+    answer:
+      "Don't buy the car and don't confront the driver or seller. Note the plate, the car's make, model and color, and where you saw it. Call the police non-emergency line, or 911 if the car is moving or someone is in danger, and give them the details. Keep any listing or messages if it was for sale.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How do I look up a license plate for free?', acceptedAnswer: { '@type': 'Answer', text: QUICK_ANSWER } },
+    ...faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  ],
+};
+
 const LicensePlateLookupPage = () => {
- const navigate = useNavigate();
- const [selectedState, setSelectedState] = useState('');
- const [plateNumber, setPlateNumber] = useState('');
- const [isLoading, setIsLoading] = useState(false);
- 
- // Optional cross-reference fields to detect plate swapping
- const [vehicleMake, setVehicleMake] = useState('');
- const [vehicleModel, setVehicleModel] = useState('');
- const [vehicleColor, setVehicleColor] = useState('');
- const [showCrossRef, setShowCrossRef] = useState(false);
+  const navigate = useNavigate();
+  const [selectedState, setSelectedState] = useState('');
+  const [plateNumber, setPlateNumber] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
- const handleVerify = () => {
- if (!plateNumber.trim()) {
- toast.error('Please enter a license plate number');
- return;
- }
- if (!selectedState) {
- toast.error('Please select a state');
- return;
- }
- 
- setIsLoading(true);
- const stateName = US_STATES.find(s => s.code === selectedState)?.name || selectedState;
- 
- // Build query with optional cross-reference data
- const params = new URLSearchParams({
- q: plateNumber,
- type: 'plate',
- state: selectedState,
- });
- if (vehicleMake) params.set('make', vehicleMake);
- if (vehicleModel) params.set('model', vehicleModel);
- if (vehicleColor) params.set('color', vehicleColor);
- 
- navigate(`/verify?${params.toString()}`);
- toast.success(`Searching ${stateName} vehicle databases...`);
- };
+  const handleVerify = () => {
+    if (!plateNumber.trim()) {
+      toast.error('Enter the license plate number');
+      return;
+    }
+    if (!selectedState) {
+      toast.error('Choose the state on the plate');
+      return;
+    }
+    setIsLoading(true);
+    const stateName = US_STATES.find((s) => s.code === selectedState)?.name || selectedState;
+    const params = new URLSearchParams({ q: plateNumber, type: 'plate', state: selectedState });
+    navigate(`/verify?${params.toString()}`);
+    toast.success(`Checking ${stateName} plate ${plateNumber}`);
+  };
 
- const topStates = [
- { code: 'CA', name: 'California', note: 'High theft area' },
- { code: 'TX', name: 'Texas', note: 'Major market' },
- { code: 'FL', name: 'Florida', note: 'High theft area' },
- { code: 'NY', name: 'New York', note: 'Major market' },
- { code: 'IL', name: 'Illinois', note: 'Chicago metro' },
- { code: 'GA', name: 'Georgia', note: 'High theft area' },
- { code: 'PA', name: 'Pennsylvania', note: 'Major market' },
- { code: 'OH', name: 'Ohio', note: 'Midwest hub' },
- { code: 'NC', name: 'North Carolina', note: 'Growing market' },
- { code: 'WA', name: 'Washington', note: 'Pacific Northwest' },
- ];
+  return (
+    <>
+      <PageSEO
+        title="Free License Plate Lookup: Check If a Plate Is Stolen | SafeOrStolen"
+        description="Free license plate lookup for any U.S. state: check if a plate is reported stolen, see what a plate search can and can't show, and why owner names stay private."
+        keywords="free license plate lookup, license plate lookup, free license plate search, stolen car plate lookup, license plate check, car tag lookup, dmv license plate lookup"
+        canonical="/license-plate-lookup"
+        modifiedTime="2026-10-07"
+        structuredData={faqSchema}
+      />
 
- const faqs = [
- {
- question: "How do I check a license plate?",
- answer: "Enter the plate characters and the issuing state at SafeOrStolen. SafeOrStolen resolves the plate to its registered vehicle, checks theft records for that vehicle, and returns a result in about 3 seconds. All 50 states are supported. You get 2 free checks with no credit card, then $3.99 per check or $14.99/month unlimited. The free SafeOrStolen web app (PWA) at safeorstolen.com/app lets you run the same plate check from your phone at the curb."
- },
- {
- question: "How do I look up a license plate?",
- answer: "Enter the plate characters and the issuing state at SafeOrStolen and run the lookup. SafeOrStolen resolves the plate to the vehicle it is registered against and checks it for theft records, and returns a result in a few seconds. Plates from all 50 states are supported."
- },
- {
- question: "Can I check if a license plate is linked to a stolen vehicle?",
- answer: "Yes. SafeOrStolen checks its own theft reports, public web results, and applies AI analysis to identify if a vehicle has been reported stolen. Because plates can be removed and swapped onto a different car, confirm the VIN in person before you buy — a clean plate result on a swapped plate tells you nothing about the vehicle in front of you."
- },
- {
- question: "What can a license plate lookup tell me?",
- answer: "SafeOrStolen tells you whether the plate appears in its own theft reports or public web results, and gives you a dated record of the check. Arizona plates are also searched in TheftAZ, Arizona's law-enforcement stolen vehicle records. A plate lookup can't tell you who owns the car: owner details are protected by the federal Driver's Privacy Protection Act. Ask the seller for the title and a matching photo ID instead."
- },
- {
- question: "Can I check if a car is stolen using just the license plate?",
- answer: "Yes, but it's a first step. License plates can be swapped between cars, so also check the VIN and make sure it matches the dashboard, door jamb and title before you buy."
- },
- {
- question: "What information do I get from a license plate lookup?",
- answer: "Whether the plate appears in SafeOrStolen's theft reports or public web results (plus Arizona's TheftAZ records for Arizona plates), with a dated record of the check."
- },
- {
- question: "Is license plate lookup free?",
-  answer: "Yes. SafeOrStolen offers 2 free license plate lookups. We check SafeOrStolen's stolen-item reports, public web results, and AI analysis. We do not access DMV registration records."
- },
- {
- question: "What if the name on the title doesn't match the seller?",
- answer: "If the name on the title doesn't match the seller's photo ID, treat it as a major red flag. The vehicle could be stolen, or the seller may not have the right to sell it. Ask for documentation and check the VIN before going any further."
- }
- ];
+      <div className="min-h-screen bg-background">
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Free License Plate Lookup</h1>
+              <p className="text-lg md:text-xl text-muted-foreground">
+                Check whether a license plate is reported stolen. Pick the state, type the plate, and you get a result in a
+                few seconds, with every source listed. A plate lookup never shows the owner's name; that stays private by
+                federal law.
+              </p>
+            </div>
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": faqs.map(faq => ({
- "@type": "Question",
- "name": faq.question,
- "acceptedAnswer": {
- "@type": "Answer",
- "text": faq.answer
- }
- }))
- };
+            <Card className="max-w-2xl mx-auto shadow-xl border-primary/20">
+              <CardHeader className="text-center pb-4">
+                <div className="mx-auto p-3 rounded-full bg-primary/10 w-fit mb-3">
+                  <Car className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl">Check a plate</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="state" className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                    State on the plate <span className="text-destructive">*</span>
+                  </Label>
+                  <Select value={selectedState} onValueChange={setSelectedState}>
+                    <SelectTrigger id="state" className="bg-background h-12 text-base">
+                      <SelectValue placeholder="Choose a state" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-popover border-border max-h-[300px]">
+                      {US_STATES.map((state) => (
+                        <SelectItem key={state.code} value={state.code}>
+                          {state.name} ({state.code})
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
 
- return (
- <>
- <PageSEO
- title="Free License Plate Lookup — Check Any Vehicle by Plate Number | SafeOrStolen"
- description="Free license plate lookup for all 50 states. Check if any vehicle is stolen using our extensive search, public web results, and AI analysis. Instant results in 3 seconds."
- keywords="license plate lookup, plate number search, stolen vehicle check, DMV lookup"
- canonical="/license-plate-lookup"
- structuredData={faqSchema}
- />
+                <div className="space-y-2">
+                  <Label htmlFor="plate" className="flex items-center gap-2">
+                    <Search className="h-4 w-4 text-muted-foreground" />
+                    License plate number <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="plate"
+                    placeholder="Letters and numbers only, e.g. ABC1234"
+                    value={plateNumber}
+                    onChange={(e) => setPlateNumber(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))}
+                    className="h-12 text-lg font-mono bg-background"
+                    maxLength={8}
+                  />
+                </div>
 
- <div className="min-h-screen bg-background">
- {/* Hero Section */}
- <section className="py-12 md:py-20 bg-gradient-to-b from-primary/5 to-background">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto text-center mb-10">
- <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
- License Plate Lookup
- </h1>
- <p className="text-lg md:text-xl text-muted-foreground">
- Check if a vehicle is stolen using the license plate number. Select your state and verify instantly against our theft reports and public data.
- </p>
- </div>
+                <Button
+                  onClick={handleVerify}
+                  className="w-full h-14 text-lg"
+                  size="lg"
+                  disabled={isLoading || !plateNumber.trim() || !selectedState}
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground mr-2" />
+                      Checking...
+                    </>
+                  ) : (
+                    <>
+                      <Shield className="mr-2 h-5 w-5" />
+                      Check plate free
+                    </>
+                  )}
+                </Button>
 
- {/* Main Search Card */}
- <Card className="max-w-2xl mx-auto shadow-xl border-primary/20">
- <CardHeader className="text-center pb-4">
- <div className="mx-auto p-3 rounded-full bg-primary/10 w-fit mb-3">
- <Car className="h-8 w-8 text-primary" />
- </div>
- <CardTitle className="text-2xl">Verify Vehicle by Plate</CardTitle>
- </CardHeader>
- <CardContent className="space-y-6">
- {/* State Selector */}
- <div className="space-y-2">
- <Label htmlFor="state" className="flex items-center gap-2">
- <MapPin className="h-4 w-4 text-muted-foreground" />
- Select State <span className="text-destructive">*</span>
- </Label>
- <Select value={selectedState} onValueChange={setSelectedState}>
- <SelectTrigger id="state" className="bg-background h-12 text-base">
- <SelectValue placeholder="Choose the vehicle's state..." />
- </SelectTrigger>
- <SelectContent className="bg-popover border-border max-h-[300px]">
- {US_STATES.map(state => (
- <SelectItem key={state.code} value={state.code}>
- {state.name} ({state.code})
- </SelectItem>
- ))}
- </SelectContent>
- </Select>
- </div>
+                <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-2">
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    2 free checks, no credit card
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    Saved to your account with the date
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    Updated October 7, 2026
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
- {/* Plate Number Input */}
- <div className="space-y-2">
- <Label htmlFor="plate" className="flex items-center gap-2">
- <Search className="h-4 w-4 text-muted-foreground" />
- License Plate Number <span className="text-destructive">*</span>
- </Label>
- <Input
- id="plate"
- placeholder="Enter plate number (e.g., ABC1234)"
- value={plateNumber}
- onChange={(e) => setPlateNumber(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))}
- className="h-12 text-lg font-mono bg-background"
- maxLength={8}
- />
- </div>
+        {/* Quick answer */}
+        <section className="py-10 px-4">
+          <div className="max-w-3xl mx-auto rounded-2xl border border-primary/30 bg-primary/5 p-6">
+            <p className="text-xs font-bold tracking-wide text-primary mb-2">Quick answer</p>
+            <h2 className="text-xl md:text-2xl font-bold mb-3">How do I look up a license plate for free?</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">{QUICK_ANSWER}</p>
+          </div>
+        </section>
 
- {/* Cross-Reference Toggle */}
- <div className="border-t border-border pt-4">
- <button
- type="button"
- onClick={() => setShowCrossRef(!showCrossRef)}
- className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full justify-between"
- >
- <span className="flex items-center gap-2">
- <Shield className="h-4 w-4" />
- Cross-Reference Vehicle Details (Detect Plate Swapping)
- </span>
- <span className="text-xs bg-muted px-2 py-0.5 rounded-[0.25rem]">{showCrossRef ? 'Hide' : 'Optional'}</span>
- </button>
- 
- {showCrossRef && (
- <div className="mt-4 p-4 rounded-lg bg-muted/50 border border-border space-y-4">
- <p className="text-xs text-muted-foreground">
- <strong>Why cross-reference?</strong> Criminals steal plates and put them on different vehicles. 
- If the plate is registered to a Honda Civic but you're looking at a Ford F-150, it's likely stolen plates.
- </p>
- 
- <div className="grid grid-cols-2 gap-3">
- <div className="space-y-1">
- <Label htmlFor="make" className="text-xs">Vehicle Make</Label>
- <Input
- id="make"
- placeholder="e.g., Honda, Ford"
- value={vehicleMake}
- onChange={(e) => setVehicleMake(e.target.value)}
- className="h-10 bg-background"
- />
- </div>
- <div className="space-y-1">
- <Label htmlFor="model" className="text-xs">Model</Label>
- <Input
- id="model"
- placeholder="e.g., Civic, F-150"
- value={vehicleModel}
- onChange={(e) => setVehicleModel(e.target.value)}
- className="h-10 bg-background"
- />
- </div>
- </div>
- 
- <div className="space-y-1">
- <Label htmlFor="color" className="text-xs">Color</Label>
- <Input
- id="color"
- placeholder="e.g., Black, Silver, Red"
- value={vehicleColor}
- onChange={(e) => setVehicleColor(e.target.value)}
- className="h-10 bg-background"
- />
- </div>
- 
- <p className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1">
- <CheckCircle2 className="h-3 w-3" />
- We'll alert you if the registered vehicle doesn't match what you entered
- </p>
- </div>
- )}
- </div>
- {/* Verify Button */}
- <Button 
- onClick={handleVerify}
- className="w-full h-14 text-lg"
- size="lg"
- disabled={isLoading || !plateNumber.trim() || !selectedState}
- >
- {isLoading ? (
- <>
- <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground mr-2" />
- Searching...
- </>
- ) : (
- <>
- <Shield className="mr-2 h-5 w-5" />
- Verify Plate - Free
- </>
- )}
- </Button>
+        {/* What you can and can't find */}
+        <section className="py-12 px-4 bg-muted/30">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">What a license plate lookup can and can't tell you</h2>
+            <p className="text-muted-foreground mb-6">
+              Most people searching a plate want one of two things: to know if a car is stolen, or to know who owns it. The
+              first you can check yourself. The second only the police and a few permitted requesters can get.
+            </p>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/60">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold">Question</th>
+                    <th className="px-4 py-3 font-semibold">Can a plate lookup answer it?</th>
+                    <th className="px-4 py-3 font-semibold">Where the answer comes from</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {CAN_CANT_ROWS.map((r) => (
+                    <tr key={r[0]} className="border-t border-border">
+                      <td className="px-4 py-3 font-medium">{r[0]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Want the owner? Read{' '}
+              <Link to="/license-plate-owner-lookup" className="underline font-medium text-primary">
+                license plate owner lookup: what you can and can't find
+              </Link>
+              . Checking a plate you think is stolen? See{' '}
+              <Link to="/how-to-check-if-license-plate-stolen" className="underline font-medium text-primary">
+                how to check if a license plate is stolen
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
- {/* Trust Badges */}
- <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-2">
- <span className="flex items-center gap-1">
- <CheckCircle2 className="h-3 w-3 text-green-500" />
- 2 Free Checks
- </span>
- <span className="flex items-center gap-1">
- <CheckCircle2 className="h-3 w-3 text-green-500" />
- Dated Check Record
- </span>
- <span className="flex items-center gap-1">
- <CheckCircle2 className="h-3 w-3 text-green-500" />
- Fast Results
- </span>
- </div>
- </CardContent>
- </Card>
- </div>
- </section>
+        {/* Steps */}
+        <section className="py-12 px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">How to check a plate before you buy a used car</h2>
+            <ol className="space-y-4">
+              {[
+                "Photograph the plate and the registration sticker in the seller's driveway or the listing photos. Note the state.",
+                'Check the plate above. You see "reported stolen", "possible match" or "no report found in the records searched", and every source that was searched.',
+                "Read the VIN from the dashboard (driver's side, through the windshield) and the driver's door jamb. They must match each other.",
+                'Run the VIN on the VIN checker. The decoded year, make and model must match the car and the paperwork.',
+                "Ask for the title and the registration. The plate, VIN and owner name on them should match the car and the seller's photo ID.",
+                'If anything doesn\'t line up, walk away. Your check stays saved in your account with the date.',
+              ].map((step, i) => (
+                <li key={i} className="flex gap-4 p-4 bg-card rounded-lg border border-border">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                    {i + 1}
+                  </span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
 
- {/* Quick State Links */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-2xl font-bold text-center mb-8">Popular State Lookups</h2>
- <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
- {topStates.map((state) => (
- <Link
- key={state.code}
- to={`/${state.name.toLowerCase().replace(' ', '-')}-license-plate-lookup`}
- className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all text-center group"
- >
- <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
- {state.name}
- </p>
- <p className="text-xs text-muted-foreground mt-1">
- {state.note}
- </p>
- </Link>
- ))}
- </div>
- </div>
- </section>
+        {/* Plate swap warning */}
+        <section className="py-10 px-4 bg-yellow-50 dark:bg-yellow-900/10 border-y border-yellow-200 dark:border-yellow-800">
+          <div className="max-w-3xl mx-auto flex items-start gap-4">
+            <AlertTriangle className="h-6 w-6 text-yellow-600 flex-shrink-0 mt-1" />
+            <div>
+              <h2 className="font-semibold text-lg text-yellow-800 dark:text-yellow-200 mb-2">
+                A clean plate can sit on a stolen car
+              </h2>
+              <p className="text-sm text-yellow-800 dark:text-yellow-300 mb-3">
+                Thieves swap plates so a stolen car doesn't come up when police run it. The plate may be stolen from a
+                parked car of the same model, or taken off a junked one. Signs to look for:
+              </p>
+              <ul className="text-sm text-yellow-800 dark:text-yellow-300 list-disc pl-5 space-y-1">
+                <li>New, shiny bolts on an old plate, or a plate held on with one screw or zip ties</li>
+                <li>A registration sticker for a different year, or none at all</li>
+                <li>A plate from one state and a title from another, with no clear reason</li>
+                <li>A paper temporary tag with a handwritten date or no dealer name</li>
+                <li>
+                  A seller who won't let you see the VIN or the title. Check the{' '}
+                  <Link to="/vin-checker" className="underline font-medium">
+                    VIN
+                  </Link>{' '}
+                  every time.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
- <StateLinksGrid kind="plate" />
+        <StateLinksGrid kind="plate" />
 
- {/* How It Works */}
- <section className="py-12">
- <div className="container mx-auto px-4 max-w-4xl">
- <h2 className="text-2xl font-bold text-center mb-8">How License Plate Lookup Works</h2>
- <div className="grid md:grid-cols-3 gap-6">
- <div className="text-center p-6 rounded-lg border border-border bg-card">
- <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
- <span className="text-xl font-bold text-primary">1</span>
- </div>
- <h3 className="font-semibold mb-2">Enter Plate & State</h3>
- <p className="text-sm text-muted-foreground">
- Select the state and enter the license plate number from the vehicle.
- </p>
- </div>
- <div className="text-center p-6 rounded-lg border border-border bg-card">
- <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
- <span className="text-xl font-bold text-primary">2</span>
- </div>
- <h3 className="font-semibold mb-2">We Search Databases</h3>
- <p className="text-sm text-muted-foreground">
- We process public web results and our own theft reports quickly.
- </p>
- </div>
- <div className="text-center p-6 rounded-lg border border-border bg-card">
- <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
- <span className="text-xl font-bold text-primary">3</span>
- </div>
- <h3 className="font-semibold mb-2">Get Instant Results</h3>
- <p className="text-sm text-muted-foreground">
- See whether the plate appears in theft reports, plus a dated record of your check.
- </p>
- </div>
- </div>
- </div>
- </section>
+        {/* FAQs */}
+        <section className="py-12 px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">License plate lookup questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <Card key={faq.question}>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
+                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
- {/* Warning Section */}
- <section className="py-8 bg-yellow-50 dark:bg-yellow-900/10 border-y border-yellow-200 dark:border-yellow-800">
- <div className="container mx-auto px-4 max-w-3xl">
- <div className="flex items-start gap-4">
- <AlertTriangle className="h-6 w-6 text-yellow-600 flex-shrink-0 mt-1" />
- <div>
- <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
- Important: License Plates Can Be Swapped
- </h3>
- <p className="text-sm text-yellow-700 dark:text-yellow-300">
- While license plate lookup is a great first step, plates can be stolen or swapped. 
- Always verify the VIN before purchasing. Use license plate lookup as Step 1, then{' '}
- <Link to="/vin-checker" className="underline font-medium hover:text-yellow-900">
- verify the VIN as Step 2
- </Link>.
- </p>
- </div>
- </div>
- </div>
- </section>
-
- {/* FAQs */}
- <section className="py-12">
- <div className="container mx-auto px-4 max-w-3xl">
- <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
- <div className="space-y-4">
- {faqs.map((faq, index) => (
- <Card key={index}>
- <CardContent className="p-6">
- <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
- <p className="text-sm text-muted-foreground">{faq.answer}</p>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </section>
-
- {/* CTA Section */}
- <section className="py-12 bg-primary/5">
- <div className="container mx-auto px-4 text-center">
- <h2 className="text-2xl font-bold mb-4">Ready to Verify?</h2>
- <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
- Don't risk buying a stolen vehicle. Check the license plate and VIN before you buy or sell.
- </p>
- <div className="flex flex-wrap justify-center gap-4">
- <Button size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
- <Search className="mr-2 h-5 w-5" />
- Check License Plate
- </Button>
- <Button size="lg" variant="outline" asChild>
- <Link to="/vin-checker">
- <Car className="mr-2 h-5 w-5" />
- VIN Lookup
- <ArrowRight className="ml-2 h-4 w-4" />
- </Link>
- </Button>
- </div>
- </div>
- </section>
- </div>
- </>
- );
+        <section className="py-12 px-4 bg-primary/5">
+          <div className="container mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-4">Check the plate, then the VIN</h2>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+              The plate tells you about the plate. The VIN tells you about the car. Do both before you hand over money.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <Search className="mr-2 h-5 w-5" />
+                Check a plate
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/vin-checker">
+                  <Car className="mr-2 h-5 w-5" />
+                  Check a VIN
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 };
 
 export default LicensePlateLookupPage;

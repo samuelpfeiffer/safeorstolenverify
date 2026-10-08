@@ -1,472 +1,275 @@
+/**
+ * Oct 7 2026: rewritten by hand for "facebook marketplace scam checker" (paste a listing link).
+ * No Search Console data for this page yet. The copy now describes what the tool really does:
+ * it reads the public listing, pulls out any IMEI/VIN/serial written in it (each with a Verify
+ * button that runs a normal check), lists AI-written risk notes and adds the rule-based scam
+ * score. Removed: a competitor comparison table with made-up figures, a named scraping vendor,
+ * unsourced user and fraud-loss statistics, "only we can do this" claims and the "34 states" line.
+ */
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { ArrowRight, Shield, AlertTriangle, CheckCircle2, Link2, Sparkles, ExternalLink, Smartphone } from 'lucide-react';
+import { ArrowRight, AlertTriangle, Link2, ListChecks, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
-import { useNavigate } from '@/lib/router-compat';
-import { Link } from '@/lib/router-compat';
+import { useNavigate, Link } from '@/lib/router-compat';
 
-const howToSchema = {
- "@context": "https://schema.org",
- "@type": "HowTo",
- "name": "How to Check if a Marketplace Listing is Stolen",
-  "description": "Paste a Facebook Marketplace, eBay, Craigslist, or OfferUp URL. SafeOrStolen's AI-powered Marketplace URL Analyzer extracts available identifiers and checks SafeOrStolen reports, public web results, and AI analysis.",
- "totalTime": "PT30S",
- "step": [
- {
- "@type": "HowToStep",
- "name": "Copy the listing URL",
- "text": "Copy the full URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. The URL is in your browser's address bar."
- },
- {
- "@type": "HowToStep",
- "name": "Paste the URL into SafeOrStolen",
- "text": "Go to safeorstolen.com/marketplace-url-checker and paste the listing URL. The AI-powered analyzer will scrape the listing content."
- },
- {
- "@type": "HowToStep",
- "name": "AI extracts identifiers automatically",
- "text": "SafeOrStolen's AI reads the listing and extracts IMEI numbers, VIN numbers, serial numbers, model numbers, and other identifiers — no manual entry required."
- },
- {
- "@type": "HowToStep",
- "name": "Get instant stolen status results",
- "text": "Extracted identifiers are checked against SafeOrStolen's stolen item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states, and bikes against a national stolen-bicycle registry. Risk factors like suspicious pricing and seller red flags are also analyzed. Results appear in seconds."
- }
- ],
- "tool": {
- "@type": "SoftwareApplication",
- "name": "SafeOrStolen Marketplace URL Analyzer",
- "operatingSystem": "Web, iOS, Android",
- "applicationCategory": "UtilitiesApplication",
- "url": "https://safeorstolen.com/marketplace-url-checker"
- }
-};
+const FAQS: { question: string; answer: string }[] = [
+  {
+    question: 'How do I check if a Facebook Marketplace listing is a scam?',
+    answer:
+      "Open the listing, copy the link from the address bar or the Share button, and paste it into SafeOrStolen's listing checker (safeorstolen.com/marketplace-url-checker). It reads the listing, lists the warning signs it finds and gives a scam risk score from 0 to 100. Then do the human part: look at the seller's profile age, ask for the serial number or IMEI, and never pay a deposit before you've seen the item.",
+  },
+  {
+    question: 'Can a listing link tell me if the item is stolen?',
+    answer:
+      "Only if the seller wrote the serial number, IMEI or VIN in the listing. When the checker finds one, it shows a Verify button that runs a normal SafeOrStolen stolen check on that number. Most listings don't include it, so ask the seller for the number and enter it on the verify page yourself. A listing link with no number can't be matched to a theft report.",
+  },
+  {
+    question: 'Is the marketplace listing checker free?',
+    answer:
+      'Reading a listing and getting the scam score is free and needs no account. Running a stolen check on a number it finds is a regular SafeOrStolen check: 2 free checks with a free account and no credit card, then $3.99 for a single check or $14.99 a month for unlimited checks.',
+  },
+  {
+    question: 'Which marketplaces does it work with?',
+    answer:
+      "Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari and Poshmark. Paste the listing's own link, not a search results page. Some listings, especially on Facebook, only show full details to people who are logged in. If the checker can't read the page or comes back with empty details, copy the title, price and description into the scam checker instead.",
+  },
+  {
+    question: 'What is the difference between this and the SafeOrStolen scam checker?',
+    answer:
+      "This page starts from a link and reads the listing for you, then looks for serial numbers you can check for theft. The scam checker at safeorstolen.com/scam-checker starts from text you paste in, works on any site or a screenshot you've retyped, and runs entirely in your browser. Use the scam checker when a listing is behind a login.",
+  },
+  {
+    question: 'Does a low scam score mean the listing is safe?',
+    answer:
+      "No. A low score means the listing text didn't trip the warning rules. Careful scammers write clean listings, and a stolen item can be listed honestly by someone who doesn't care where it came from. Treat the score as a reason to look harder, not a green light, and still match the serial number on the item in person.",
+  },
+  {
+    question: 'What should I do if the score is high?',
+    answer:
+      "Don't send money, and don't move the conversation to text, WhatsApp or email. Report the listing to the marketplace from the listing page. If a number in the listing comes back reported stolen, keep the link and screenshots and give them to your local police on their non-emergency line rather than confronting the seller.",
+  },
+];
 
 const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "How do I check if a marketplace listing is a scam or a stolen item?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Paste the listing URL into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. SafeOrStolen reads the listing, extracts any identifier it contains (IMEI, VIN, serial number, or plate), checks it against stolen property databases, and scores the listing for scam risk — results in about 3 seconds. It works with Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, and Poshmark. Your first 2 checks are free with no card, then $3.99 per check or $14.99/month unlimited. You can also install the free SafeOrStolen web app (PWA) at safeorstolen.com/app to check listings from your phone."
- }
- },
- {
- "@type": "Question",
- "name": "How do I check if a Facebook Marketplace item is stolen?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Copy the listing URL from Facebook Marketplace and paste it into SafeOrStolen's Marketplace URL Analyzer at safeorstolen.com/marketplace-url-checker. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), and checks them against SafeOrStolen's stolen item reports, public web results, and AI analysis. Results appear in seconds."
- }
- },
- {
- "@type": "Question",
- "name": "What marketplaces does SafeOrStolen's URL Analyzer support?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "SafeOrStolen's Marketplace URL Analyzer supports Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, and Poshmark. More platforms are added regularly. The AI can analyze listings from any marketplace that provides public listing URLs."
- }
- },
- {
- "@type": "Question",
- "name": "Is the Marketplace URL Analyzer free?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, $3.99/check or $14.99/month unlimited — a competitive rate."
- }
- },
- {
- "@type": "Question",
- "name": "Can any other service analyze marketplace listing URLs for stolen items?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "No. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Other services often require manual entry of serial numbers or identifiers. SafeOrStolen's AI-powered URL Analyzer eliminates this friction."
- }
- },
- {
- "@type": "Question",
- "name": "What risk factors does the URL Analyzer detect?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Beyond checking stolen databases, SafeOrStolen's AI analyzes listing content for red flags: suspiciously low pricing compared to market value, missing or hidden serial numbers/IMEI, new seller accounts with no history, urgency language ('must sell today'), unusual payment requests (crypto, wire transfer), and inconsistencies between listing details and item type."
- }
- },
- {
- "@type": "Question",
- "name": "How does the Marketplace URL Analyzer work technically?",
- "acceptedAnswer": {
- "@type": "Answer",
-  "text": "SafeOrStolen reads accessible listing content, extracts identifiers such as IMEI, VIN, and serial numbers, and analyzes listing risk factors. Extracted identifiers are checked against SafeOrStolen reports, public web results, and AI analysis."
- }
- }
- ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to check a Facebook Marketplace listing for scams and stolen items',
+  dateModified: '2026-10-07',
+  step: [
+    { '@type': 'HowToStep', name: 'Copy the listing link', text: 'Open the listing and copy its link from the address bar or the Share button.' },
+    { '@type': 'HowToStep', name: 'Paste it into the checker', text: 'Paste the link into the box on safeorstolen.com/marketplace-url-checker and press Analyze.' },
+    { '@type': 'HowToStep', name: 'Read the warnings and score', text: 'Read the risk factors and the 0 to 100 scam risk score.' },
+    { '@type': 'HowToStep', name: 'Check any serial number', text: 'If the checker found an IMEI, VIN or serial number, press Verify to run a stolen check on it. If not, ask the seller for the number.' },
+  ],
 };
 
 const serviceSchema = {
- "@context": "https://schema.org",
- "@type": "Service",
- "name": "SafeOrStolen Marketplace URL Analyzer",
-  "description": "AI-powered tool that analyzes marketplace listing URLs, extracts available identifiers, and checks SafeOrStolen reports, public web results, and AI analysis.",
- "provider": {
- "@type": "Organization",
- "name": "SafeOrStolen",
- "url": "https://safeorstolen.com"
- },
- "serviceType": "Marketplace Listing Verification",
- "areaServed": { "@type": "Country", "name": "United States" },
- "url": "https://safeorstolen.com/marketplace-url-checker"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'SafeOrStolen marketplace listing checker',
+  url: 'https://safeorstolen.com/marketplace-url-checker',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  description:
+    'Paste a Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari or Poshmark listing link to get scam warning signs, a 0 to 100 scam risk score, and any serial number in the listing to check for theft.',
+  dateModified: '2026-10-07',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
-const SUPPORTED_MARKETPLACES = [
- { name: 'Facebook Marketplace', description: 'Check any FB Marketplace listing for stolen items', color: 'bg-blue-500/20 text-blue-400' },
- { name: 'eBay', description: 'Verify eBay auctions & Buy It Now listings', color: 'bg-yellow-500/20 text-yellow-400' },
- { name: 'Craigslist', description: 'Analyze Craigslist for-sale posts', color: 'bg-purple-500/20 text-purple-400' },
- { name: 'OfferUp', description: 'Check OfferUp items before meeting up', color: 'bg-green-500/20 text-green-400' },
- { name: 'Mercari', description: 'Verify Mercari listings before purchase', color: 'bg-pink-500/20 text-pink-400' },
- { name: 'Poshmark', description: 'Check Poshmark items for authenticity', color: 'bg-red-500/20 text-red-400' },
+const RESULT_ROWS: [string, string][] = [
+  ['Listing details', 'The title, price and seller name as they appear on the listing.'],
+  ['Identifiers found', 'Any IMEI, VIN or serial number written in the listing. Each has a Verify button that runs a SafeOrStolen stolen check on it.'],
+  ['No identifiers found', "The listing doesn't show a number. Ask the seller for it before you agree to meet."],
+  ['Risk factors', 'Short notes from an AI model that read the listing, such as a price well below similar items or a story that does not add up.'],
+  ['Scam risk score', 'A number from 0 to 100 with a level of Low, Medium, High or Critical, built from fixed rules about payment, urgency and seller wording.'],
 ];
 
-const RISK_FACTORS = [
- { icon: AlertTriangle, title: 'Suspiciously Low Price', description: 'AI detects prices significantly below market value — the #1 indicator of stolen goods listed for quick sale' },
- { icon: Shield, title: 'Missing Serial/IMEI', description: 'Listings that hide, obscure, or refuse to provide device identifiers are flagged as high-risk' },
- { icon: CheckCircle2, title: 'Seller Red Flags', description: 'New accounts, urgency language, unusual payment methods (crypto, wire), and inconsistent item details' },
+const SCORE_SIGNALS = [
+  'Gift cards, wire transfers, crypto, or Zelle and Venmo "friends and family" in the text',
+  '"Cash only", "no returns", "sold as is" or "no test"',
+  '"Must sell today", "moving" or "need gone ASAP"',
+  '"Selling for a friend", "my ex\'s" or "not the original owner"',
+  '"Call only", "WhatsApp only" or an email address in the listing',
+  '"No receipt" or "no box"',
+  'A very short description, lots of capital letters or exclamation marks',
+  'A price far below what that kind of item usually sells for',
 ];
 
 const MarketplaceURLChecker: React.FC = () => {
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
- return (
- <>
- <PageSEO
- title="Facebook Marketplace Scam Checker — Paste Any Listing URL | SafeOrStolen"
- description="Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp listing URL. SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks if the item is stolen. The only tool that does this."
- keywords="paste marketplace URL stolen check, Facebook Marketplace stolen item checker, eBay listing verification, Craigslist stolen check, OfferUp verify not stolen, marketplace scam detection, stolen goods checker URL, marketplace URL analyzer"
- canonical="/marketplace-url-checker"
- />
+  return (
+    <>
+      <PageSEO
+        title="Facebook Marketplace Scam Checker: Paste a Listing Link | SafeOrStolen"
+        description="Paste a Facebook Marketplace, eBay, Craigslist or OfferUp link to see scam warning signs, a 0–100 risk score, and any serial number you can check for theft."
+        keywords="facebook marketplace scam checker, marketplace listing checker, check facebook marketplace listing, is this facebook marketplace listing a scam, check marketplace listing stolen, paste listing link scam check, ebay listing checker, craigslist scam checker, offerup scam checker"
+        canonical="/marketplace-url-checker"
+        structuredData={[serviceSchema, howToSchema, faqSchema]}
+      />
 
- {/* Schema blocks */}
- <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
- <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
- <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
- <div className="min-h-screen bg-background pt-16">
- {/* Hero Section */}
- <section className="relative py-16 md:py-24 overflow-hidden">
- <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
- 
- <div className="container mx-auto px-4 relative z-10">
- <div className="max-w-4xl mx-auto text-center mb-12">
- <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 border border-secondary/40 rounded-full mb-6">
- <Sparkles className="w-4 h-4 text-secondary" />
- <span className="text-sm font-medium text-secondary">Only SafeOrStolen Can Do This</span>
- </div>
- 
- <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
- Marketplace URL Analyzer
- <span className="block text-primary mt-2">Paste a Listing. Check if It's Stolen.</span>
- </h1>
- 
- <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4 speakable-summary">
- SafeOrStolen's Marketplace URL Analyzer is a tool that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark — and our AI automatically extracts identifiers (IMEI, VIN, serial numbers) and checks them against our verification stolen property databases. No manual entry required. Results in seconds.
- </p>
- <p className="text-muted-foreground max-w-xl mx-auto">
- No competitor offers URL-based listing verification. This is a SafeOrStolen exclusive.
- </p>
- </div>
+      <div className="min-h-screen bg-background pt-16">
+        <section className="relative py-16 md:py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Facebook Marketplace Scam Checker
+                <span className="block text-primary mt-2 text-2xl md:text-3xl">Paste a listing link</span>
+              </h1>
+              <p className="text-lg text-muted-foreground speakable-summary">
+                Copy the link to a Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari or Poshmark listing and paste it
+                below. SafeOrStolen reads the listing, lists the warning signs it finds, gives it a scam risk score from 0 to
+                100, and pulls out any IMEI, VIN or serial number the seller wrote in it so you can check whether the item is
+                reported stolen. Reading a listing is free and needs no account.
+              </p>
+              <p className="text-xs text-muted-foreground mt-3">Updated October 7, 2026</p>
+            </div>
 
- <div className="max-w-3xl mx-auto">
- <Card className="bg-card/80 backdrop-blur border-2 border-border">
- <CardContent className="p-6 md:p-8">
- <MarketplaceUrlAnalyzer 
- onIdentifierFound={(id) => navigate(`/verify?q=${encodeURIComponent(id)}`)}
- />
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
+            <div className="max-w-3xl mx-auto">
+              <Card className="bg-card/80 backdrop-blur border-2 border-border">
+                <CardContent className="p-6 md:p-8">
+                  <MarketplaceUrlAnalyzer onIdentifierFound={(id) => navigate(`/verify?q=${encodeURIComponent(id)}`)} />
+                </CardContent>
+              </Card>
+              <p className="text-sm text-muted-foreground mt-3 text-center">
+                Listing behind a login, or a seller who sent the details by message? Paste the text into the{' '}
+                <Link to="/scam-checker" className="text-primary hover:underline">scam checker</Link> instead.
+              </p>
+            </div>
+          </div>
+        </section>
 
- {/* Why This Matters — Context Section */}
- <section className="py-16 border-t border-border/50">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-6">Why Marketplace Buyers Need URL-Based Verification</h2>
- <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
- <p>
- Online marketplaces like <Link to="/facebook-marketplace-safety" className="text-primary hover:underline">Facebook Marketplace</Link>, eBay, <Link to="/craigslist-safety-verification" className="text-primary hover:underline">Craigslist</Link>, and <Link to="/offerup-safety" className="text-primary hover:underline">OfferUp</Link> have become the primary way Americans buy and sell used goods. In 2025, Facebook Marketplace alone had over 1.1 billion monthly users globally. But this explosive growth has attracted criminals who use these platforms to sell stolen property.
- </p>
- <p>
- The public theft-report registries's Internet Crime Complaint Center (IC3) received over 880,000 complaints in 2023 with losses exceeding $12.5 billion. A significant portion of marketplace fraud involves stolen goods — phones with blacklisted IMEI numbers, vehicles with altered VINs, and electronics stripped of serial numbers. Buyers who unknowingly purchase stolen property face legal consequences: the item can be seized by police with no refund, and in some jurisdictions, the buyer can face criminal charges.
- </p>
- <p>
- Traditional verification services require you to manually enter an IMEI, VIN, or serial number. But most marketplace listings don't prominently display these identifiers, and many buyers don't know where to find them. SafeOrStolen's Marketplace URL Analyzer solves this by extracting identifiers directly from the listing page — the buyer simply pastes the URL. The AI handles everything else.
- </p>
- </div>
- </div>
- </div>
- </section>
+        <section className="py-14 border-t border-border/50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold mb-6">What you see after you paste a link</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="p-3 font-semibold">On the screen</th>
+                    <th className="p-3 font-semibold">What it tells you</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {RESULT_ROWS.map(([a, b]) => (
+                    <tr key={a} className="border-b border-border/50 align-top">
+                      <td className="p-3 font-medium whitespace-nowrap">{a}</td>
+                      <td className="p-3 text-muted-foreground">{b}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
- {/* Supported Marketplaces */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-4">Supported Marketplaces</h2>
- <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
- Our AI analyzes listings from all major online marketplaces. Copy the URL, paste it above, and get results in seconds.
- </p>
- 
- <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
- {SUPPORTED_MARKETPLACES.map((mp) => (
- <Card key={mp.name} className="bg-card border-border hover:border-primary/50 transition-colors">
- <CardContent className="p-4 text-center">
- <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full ${mp.color} mb-3`}>
- <Link2 className="w-5 h-5" />
- </div>
- <h3 className="font-semibold text-sm mb-1">{mp.name}</h3>
- <p className="text-xs text-muted-foreground">{mp.description}</p>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </section>
+        <section className="py-14 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-4xl grid md:grid-cols-2 gap-6">
+            <Card className="bg-card border-border">
+              <CardContent className="p-6">
+                <ListChecks className="w-7 h-7 text-primary mb-3" />
+                <h2 className="text-xl font-bold mb-3">What raises the scam score</h2>
+                <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+                  {SCORE_SIGNALS.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border">
+              <CardContent className="p-6">
+                <AlertTriangle className="w-7 h-7 text-amber-500 mb-3" />
+                <h2 className="text-xl font-bold mb-3">What it can't do</h2>
+                <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+                  <li>It reads the listing's text, not its photos. The score adds a missing-photos warning to every pasted link for that reason, so judge the pictures yourself.</li>
+                  <li>It can only check for theft when the listing shows a serial number, IMEI or VIN. Most don't.</li>
+                  <li>It can't see the seller's profile age, ratings or other listings. Open the profile and look.</li>
+                  <li>Some Facebook listings only load for logged-in users, so the checker may get little or nothing back.</li>
+                  <li>A low score is not proof the listing is honest or the item is clean.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
- {/* How It Works — Detailed */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-4">How the Marketplace URL Analyzer Works</h2>
- <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
- Four steps. Fully automated. No technical knowledge required.
- </p>
- 
- <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
- {[
- { step: '1', title: 'Copy the Listing URL', desc: 'Find a listing on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. Copy the full URL from your browser\'s address bar.' },
- { step: '2', title: 'Paste into SafeOrStolen', desc: 'Paste the URL into the analyzer above. Our AI uses the Jina Reader API to scrape and read the entire listing page, including photos and descriptions.' },
- { step: '3', title: 'AI Extracts Identifiers', desc: 'The AI identifies IMEI numbers, VIN numbers, serial numbers, model information, and pricing. It also flags risk factors like below-market pricing.' },
- { step: '4', title: 'Instant Database Check', desc: 'Extracted identifiers are checked against our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 34 states and a national stolen-bicycle registry.' },
- ].map((item) => (
- <div key={item.step} className="text-center">
- <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
- <span className="text-2xl font-bold text-primary">{item.step}</span>
- </div>
- <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
- <p className="text-sm text-muted-foreground">{item.desc}</p>
- </div>
- ))}
- </div>
- </div>
- </section>
+        <section className="py-14">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold mb-6">Before you meet the seller</h2>
+            <ol className="space-y-4 text-muted-foreground">
+              <li><strong className="text-foreground">1. Ask for the number in the marketplace chat.</strong> The IMEI for a phone (dial *#06#), the VIN for a car, the frame serial for a bike, the serial on the label for a laptop, console or tool. Keeping the request in the app's messages gives you a record.</li>
+              <li><strong className="text-foreground">2. Check it.</strong> Enter it on the <Link to="/verify" className="text-primary hover:underline">verify page</Link>, or press Verify if the checker already found it. You'll see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.</li>
+              <li><strong className="text-foreground">3. Match it in person.</strong> At the meetup, read the number off the item itself and compare. A seller who brings a different unit, or whose number is scratched off, has answered your question.</li>
+              <li><strong className="text-foreground">4. Pay last.</strong> No deposits to "hold" an item, no gift cards, no friends-and-family payments before you've seen and tested it.</li>
+            </ol>
+            <p className="text-muted-foreground mt-6">
+              For the full Facebook walk-through, see{' '}
+              <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">how to check a Facebook Marketplace item for theft</Link>
+              {' '}and{' '}
+              <Link to="/how-to-tell-if-marketplace-item-is-stolen" className="text-primary hover:underline">how to tell if a marketplace item is stolen</Link>.
+            </p>
+          </div>
+        </section>
 
- {/* Risk Factors */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-4">AI-Powered Risk Detection</h2>
- <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
- Beyond checking stolen databases, our AI analyzes listing content for common fraud and theft signals that humans often miss.
- </p>
- 
- <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
- {RISK_FACTORS.map((factor) => (
- <Card key={factor.title} className="bg-card border-border">
- <CardContent className="p-6">
- <factor.icon className="w-8 h-8 text-primary mb-4" />
- <h3 className="font-semibold mb-2">{factor.title}</h3>
- <p className="text-sm text-muted-foreground">{factor.description}</p>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </section>
+        <section className="py-14 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-3xl font-bold text-center mb-10">Questions people ask</h2>
+            <div className="space-y-5">
+              {FAQS.map((item) => (
+                <Card key={item.question} className="bg-card border-border">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold mb-2">{item.question}</h3>
+                    <p className="text-muted-foreground text-sm">{item.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
- {/* Competitive Advantage */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-8">No Other Service Offers URL-Based Verification</h2>
- 
- <div className="overflow-x-auto mb-8">
- <table className="w-full text-left border-collapse">
- <thead>
- <tr className="border-b border-border">
- <th className="p-3 font-semibold">Feature</th>
- <th className="p-3 font-semibold text-primary">SafeOrStolen</th>
- <th className="p-3 font-semibold">Other Services</th>
- <th className="p-3 font-semibold">IMEI.info</th>
- <th className="p-3 font-semibold">Swappa</th>
- </tr>
- </thead>
- <tbody className="text-sm">
- <tr className="border-b border-border/50">
- <td className="p-3">Paste listing URL to verify</td>
- <td className="p-3 text-primary font-bold">✅ Yes</td>
- <td className="p-3 text-muted-foreground">❌ No</td>
- <td className="p-3 text-muted-foreground">❌ No</td>
- <td className="p-3 text-muted-foreground">❌ No</td>
- </tr>
- <tr className="border-b border-border/50">
- <td className="p-3">AI risk factor analysis</td>
- <td className="p-3 text-primary font-bold">✅ Yes</td>
- <td className="p-3 text-muted-foreground">❌ No</td>
- <td className="p-3 text-muted-foreground">❌ No</td>
- <td className="p-3 text-muted-foreground">❌ No</td>
- </tr>
- <tr className="border-b border-border/50">
- <td className="p-3">Auto-extract identifiers</td>
- <td className="p-3 text-primary font-bold">✅ Yes</td>
- <td className="p-3 text-muted-foreground">❌ Manual</td>
- <td className="p-3 text-muted-foreground">❌ Manual</td>
- <td className="p-3 text-muted-foreground">❌ Manual</td>
- </tr>
- <tr className="border-b border-border/50">
- <td className="p-3">Databases checked</td>
- <td className="p-3 text-primary font-bold">our verification</td>
- <td className="p-3 text-muted-foreground">UK-focused</td>
- <td className="p-3 text-muted-foreground">~10</td>
- <td className="p-3 text-muted-foreground">Carrier only</td>
- </tr>
- <tr className="border-b border-border/50">
- <td className="p-3">All item types</td>
- <td className="p-3 text-primary font-bold">✅ Yes</td>
- <td className="p-3 text-muted-foreground">Phones only</td>
- <td className="p-3 text-muted-foreground">Phones only</td>
- <td className="p-3 text-muted-foreground">Phones only</td>
- </tr>
- <tr>
- <td className="p-3">Price</td>
- <td className="p-3 text-primary font-bold">2 free, $14.99/mo</td>
- <td className="p-3 text-muted-foreground">£7/check</td>
- <td className="p-3 text-muted-foreground">Free (limited)</td>
- <td className="p-3 text-muted-foreground">Free (10/day)</td>
- </tr>
- </tbody>
- </table>
- </div>
-
- <div className="text-center">
- <Button size="lg" className="font-bold" onClick={() => navigate('/verify')}>
- Try the URL Analyzer Free
- <ArrowRight className="ml-2 w-5 h-5" />
- </Button>
- </div>
- </div>
- </div>
- </section>
-
- {/* Use Cases */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-8">Who Uses the Marketplace URL Analyzer?</h2>
- 
- <div className="grid md:grid-cols-2 gap-6">
- <Card className="bg-card border-border">
- <CardContent className="p-6">
- <h3 className="font-bold text-lg mb-2">🛒 Marketplace Buyers</h3>
- <p className="text-muted-foreground text-sm">Before meeting a seller from <Link to="/facebook-marketplace-safety" className="text-primary hover:underline">Facebook Marketplace</Link> or <Link to="/offerup-safety" className="text-primary hover:underline">OfferUp</Link>, paste the listing URL to verify the item isn't stolen. Takes 3 seconds and could save you from losing hundreds of dollars — or facing criminal charges for possessing stolen property.</p>
- </CardContent>
- </Card>
- <Card className="bg-card border-border">
- <CardContent className="p-6">
- <h3 className="font-bold text-lg mb-2">🏪 Pawn Shop Operators</h3>
- <p className="text-muted-foreground text-sm">When customers show you listings as price references, paste the URL to verify the item's legitimacy. Most states <Link to="/for-pawn-shops" className="text-primary hover:underline">legally require pawn shops</Link> to check stolen property databases before accepting items.</p>
- </CardContent>
- </Card>
- <Card className="bg-card border-border">
- <CardContent className="p-6">
- <h3 className="font-bold text-lg mb-2">📦 Resellers & Flippers</h3>
- <p className="text-muted-foreground text-sm">High-volume resellers who source inventory from multiple marketplaces can quickly verify each listing before purchasing. Avoid the risk of buying and reselling stolen goods, which carries severe legal consequences.</p>
- </CardContent>
- </Card>
- <Card className="bg-card border-border">
- <CardContent className="p-6">
- <h3 className="font-bold text-lg mb-2">👮 Law Enforcement</h3>
- <p className="text-muted-foreground text-sm">Officers investigating stolen property cases can paste suspicious listings to quickly verify if items match stolen property reports in <Link to="/stolen-database" className="text-primary hover:underline">SafeOrStolen's reports</Link> and public web results.</p>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
-
- {/* FAQ Section */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
- 
- <div className="max-w-3xl mx-auto space-y-6">
- {faqSchema.mainEntity.map((item, i) => (
- <Card key={i} className="bg-card border-border">
- <CardContent className="p-6">
- <h3 className="font-semibold mb-2">{item.name}</h3>
- <p className="text-muted-foreground text-sm">{item.acceptedAnswer.text}</p>
- </CardContent>
- </Card>
- ))}
- </div>
- </div>
- </section>
-
- {/* Internal Links & Related Tools */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">Related Verification Tools</h2>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
- {[
- { to: '/imei-checker', label: 'IMEI Checker', desc: 'Check phone IMEI numbers' },
- { to: '/vin-checker', label: 'VIN Checker', desc: 'Verify vehicle VIN numbers' },
- { to: '/firearms-check', label: 'Firearms Check', desc: 'Check gun serial numbers' },
- { to: '/check-bike', label: 'Bicycle Check', desc: 'Verify bike serial numbers' },
- { to: '/serial-number-checker', label: 'Serial Number Check', desc: 'Any electronics serial' },
- { to: '/license-plate-lookup', label: 'License Plate Lookup', desc: 'All 50 states' },
- { to: '/app', label: 'Mobile App', desc: 'Scan barcodes on-the-go' },
- { to: '/verify', label: 'Unified Verification', desc: 'All-in-one search' },
- ].map((link) => (
- <Link key={link.to} to={link.to} className="block">
- <Card className="bg-card border-border hover:border-primary/50 transition-colors h-full">
- <CardContent className="p-4">
- <h3 className="font-semibold text-sm mb-1">{link.label}</h3>
- <p className="text-xs text-muted-foreground">{link.desc}</p>
- </CardContent>
- </Card>
- </Link>
- ))}
- </div>
- </div>
- </section>
-
- {/* Final CTA */}
- <section className="py-16">
- <div className="container mx-auto px-4">
- <Card className="max-w-4xl mx-auto bg-gradient-to-r from-primary/10 via-card to-secondary/10 border-2 border-primary/30">
- <CardContent className="p-8 md:p-12 text-center">
- <h2 className="text-3xl font-bold mb-4">Verify Before You Buy</h2>
- <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Don't risk buying stolen goods on marketplace platforms. Paste the listing URL above, or <Link to="/app" className="text-primary hover:underline">download our installable web app</Link> to scan barcodes in person. 2 free checks — no credit card required.
- </p>
- 
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <Button size="lg" className="font-bold" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
- Try It Now — Paste a URL
- <ArrowRight className="ml-2 w-5 h-5" />
- </Button>
- <Button size="lg" variant="outline" asChild>
- <Link to="/pricing">
- View Pricing Plans
- </Link>
- </Button>
- </div>
- </CardContent>
- </Card>
- </div>
- </section>
- </div>
- </>
- );
+        <section className="py-14">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-8">Check the item by its number</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {[
+                { to: '/imei-checker', label: 'Phone IMEI check', desc: 'Phones and tablets' },
+                { to: '/vin-checker', label: 'VIN check', desc: 'Cars, trucks and motorcycles' },
+                { to: '/check-bike', label: 'Bike serial check', desc: 'Bicycles and e-bikes' },
+                { to: '/serial-number-checker', label: 'Serial number check', desc: 'Laptops, consoles, tools' },
+              ].map((l) => (
+                <Link key={l.to} to={l.to} className="block">
+                  <Card className="bg-card border-border hover:border-primary/50 transition-colors h-full">
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold text-sm mb-1 flex items-center gap-1"><Search className="w-3.5 h-3.5" /> {l.label}</h3>
+                      <p className="text-xs text-muted-foreground">{l.desc}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Button size="lg" className="font-bold" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <Link2 className="mr-2 w-5 h-5" /> Paste a listing link
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 };
 
 export default MarketplaceURLChecker;

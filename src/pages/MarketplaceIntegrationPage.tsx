@@ -1,262 +1,174 @@
+import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Link } from '@/lib/router-compat';
-import { Shield, Zap, CheckCircle, Code, Globe, Lock, Store, ArrowRight, ShoppingCart, Users, TrendingUp } from 'lucide-react';
+
+/**
+ * Oct 7 2026: rewritten by hand for "add a stolen item check to a marketplace listing" (marketplace
+ * integration). Removed: a REST API, webhooks ("Most Popular"), Shopify/WooCommerce/Magento plugins,
+ * sandbox, "under 500ms", TLS 1.3 / IP whitelisting / key rotation, SDKs and a Postman collection,
+ * batches of "1,000 items per request", "24/7", seller reputation scoring, "eBay/Amazon seller
+ * requirements", an absolute canonical URL, and a support@ address that isn't ours. What's left is
+ * what a marketplace can build today without anything from us, plus "email us" for the rest.
+ */
+
+const BUILD: string[][] = [
+  ['Serial number field on the listing form', 'You', 'Ask for the IMEI, VIN or serial on phones, laptops, consoles, bikes, tools, guns and vehicles.'],
+  ['"Check this item" button on the listing', 'You, using our check link', 'Points to safeorstolen.com/verify?q=NUMBER&type=TYPE. The check runs on SafeOrStolen.'],
+  ['Certificate link field', 'You; sellers get the link from us', 'Sellers paste a SafeOrStolen certificate link (safeorstolen.com/proof/...) that shows a dated check.'],
+  ['Staff review of reported listings', 'Your team, using /bulk-check', 'Paste up to 100 numbers, download a CSV with results and check times.'],
+  ['Automatic checks at listing time', 'Not available', 'Needs an API, which doesn\'t exist publicly. Email safeorstolenmail@gmail.com.'],
+];
+
+const FAQS = [
+  {
+    question: 'How do I add a stolen item check to my marketplace?',
+    answer:
+      'Add a serial number, IMEI or VIN field to listings in high-theft categories, then show a "Check this item" button that links to safeorstolen.com/verify?q= plus the number. The buyer lands on SafeOrStolen (safeorstolen.com/marketplace-integration explains the options) and the check starts. No key or contract is needed. Automatic checks inside your own system aren\'t available yet.',
+  },
+  {
+    question: 'Are there plugins for Shopify, WooCommerce or other platforms?',
+    answer:
+      'No. SafeOrStolen has no plugins, apps or embeddable widgets for e-commerce platforms. Any platform that lets you add a link to a product or listing page can use the check link, which is a plain URL with the number in it. If you want a plugin for a specific platform, tell us which one at safeorstolenmail@gmail.com.',
+  },
+  {
+    question: 'Can SafeOrStolen send us a webhook when a listed item is reported stolen?',
+    answer:
+      "No. There are no webhooks or monitoring. A check reflects the sources on the day it runs. If your team wants to recheck listings, put their numbers in a CSV and run them through /bulk-check, up to 100 per run; each run is a new dated check with its own time in the results file.",
+  },
+  {
+    question: 'Should we show a "verified" badge on listings that pass?',
+    answer:
+      'We advise against it. A clean result means "no report found in the records searched" on that date, not that the item is not stolen, and many thefts are never reported. Showing the seller\'s certificate link is more honest: it gives the date, the result and the sources searched, and buyers can read it themselves.',
+  },
+  {
+    question: 'What does a buyer pay when they click the check link?',
+    answer:
+      'Visitors get 2 free checks. After that a check is $3.99, or $14.99 a month for unlimited checks with up to 20 phone blacklist checks a month. Your marketplace pays nothing for the link. If you want to cover checks for your buyers, email safeorstolenmail@gmail.com.',
+  },
+];
 
 export default function MarketplaceIntegrationPage() {
- return (
- <>
- <PageSEO
- title="Marketplace Integration - SafeOrStolen API for E-Commerce Platforms"
- description="Integrate SafeOrStolen's stolen item verification into your marketplace. API documentation, webhooks, and enterprise solutions for eBay, Amazon, Facebook Marketplace integrations."
- keywords="marketplace integration, stolen item API, e-commerce verification, marketplace safety API, seller verification, buyer protection integration"
- canonical="https://safeorstolen.com/marketplace-integration"
- />
- <div className="min-h-screen bg-background pt-20">
- {/* Hero Section */}
- <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
- <div className="container mx-auto px-4">
- <div className="max-w-4xl mx-auto text-center">
- <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
- <Code className="h-4 w-4 mr-2" />
- <span className="text-sm font-medium">API & Integration Solutions</span>
- </div>
- <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
- Marketplace Integration
- </h1>
- <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- Add stolen item verification to your marketplace, e-commerce platform, or application. Protect buyers, build trust, and reduce fraud with SafeOrStolen's enterprise API.
- </p>
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <Button size="lg" asChild>
- <Link to="/pricing">View API Pricing</Link>
- </Button>
- <Button size="lg" variant="outline" asChild>
- <a href="mailto:support@safeorstolen.com">Contact Sales</a>
- </Button>
- </div>
- </div>
- </div>
- </section>
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: 'How to add a stolen item check to a marketplace',
+      description: 'Check links, certificate links and bulk checks a marketplace can use today, and what is not available.',
+      author: { '@type': 'Organization', name: 'SafeOrStolen' },
+      publisher: { '@type': 'Organization', name: 'SafeOrStolen' },
+      dateModified: '2026-10-07',
+      mainEntityOfPage: 'https://safeorstolen.com/marketplace-integration',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
+  ];
 
- {/* Integration Options */}
- <section className="py-16 container mx-auto px-4">
- <div className="max-w-6xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Integration Options</h2>
- <div className="grid md:grid-cols-3 gap-8">
- <Card className="bg-card hover:shadow-lg transition-shadow">
- <CardContent className="p-6">
- <Code className="h-12 w-12 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">REST API</h3>
- <p className="text-muted-foreground mb-4">
- Full-featured RESTful API for custom integrations. Verify IMEI, VIN, and serial numbers programmatically with instant results.
- </p>
- <ul className="space-y-2 text-sm">
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- JSON responses
- </li>
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- 24/7 always-available API
- </li>
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- Sandbox testing
- </li>
- </ul>
- </CardContent>
- </Card>
+  return (
+    <>
+      <PageSEO
+        title="Add a Stolen Item Check to Your Marketplace | SafeOrStolen"
+        description="How a marketplace or online store can add a stolen item check today: a serial number field, a check link per listing, seller certificate links and bulk review. No plugins or API yet."
+        keywords="marketplace integration stolen item check, add stolen check to marketplace, marketplace stolen item verification, listing serial number check link, e-commerce stolen goods check"
+        canonical="/marketplace-integration"
+        modifiedTime="2026-10-07"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background text-foreground pt-20">
+        <div className="max-w-3xl mx-auto px-4 py-14">
+          <p className="text-sm font-semibold text-primary mb-3">For marketplace and e-commerce developers</p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Add a Stolen Item Check to Your Marketplace</h1>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            You can add a stolen item check to listings today with a plain link. Collect the serial number, IMEI or VIN on
+            the listing, then add a "Check this item" button that points to safeorstolen.com/verify with the number in the
+            URL. The buyer lands on SafeOrStolen and the check starts. There is no API, plugin or webhook yet; for those,
+            email safeorstolenmail@gmail.com.
+          </p>
+          <p className="text-sm text-muted-foreground mb-12">Updated October 7, 2026</p>
 
- <Card className="bg-card hover:shadow-lg transition-shadow border-primary">
- <CardContent className="p-6">
- <div className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full w-fit mb-4">Most Popular</div>
- <Globe className="h-12 w-12 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">Webhooks</h3>
- <p className="text-muted-foreground mb-4">
- Real-time notifications when stolen items are listed on your platform. Automatic flagging and seller alerts.
- </p>
- <ul className="space-y-2 text-sm">
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- Real-time alerts
- </li>
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- Auto-moderation
- </li>
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- Retry logic
- </li>
- </ul>
- </CardContent>
- </Card>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">What you can build, and who does each part</h2>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/60">
+                  <tr><th className="px-4 py-3 font-semibold">Piece</th><th className="px-4 py-3 font-semibold">Who builds it</th><th className="px-4 py-3 font-semibold">How</th></tr>
+                </thead>
+                <tbody>
+                  {BUILD.map((r) => (
+                    <tr key={r[0]} className="border-t border-border">
+                      <td className="px-4 py-3 font-medium">{r[0]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
 
- <Card className="bg-card hover:shadow-lg transition-shadow">
- <CardContent className="p-6">
- <Store className="h-12 w-12 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">Pre-Built Plugins</h3>
- <p className="text-muted-foreground mb-4">
- Ready-to-install plugins for popular e-commerce platforms. No coding required for standard integrations.
- </p>
- <ul className="space-y-2 text-sm">
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- Shopify
- </li>
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- WooCommerce
- </li>
- <li className="flex items-center gap-2">
- <CheckCircle className="h-4 w-4 text-green-500" />
- Magento
- </li>
- </ul>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">The check button</h2>
+            <p className="text-muted-foreground mb-4">
+              Build the link from the number the seller entered. URL-encode it, and add the type when you know it: imei,
+              vin, gun, bike or plate.
+            </p>
+            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm mb-4">{`<a href="https://safeorstolen.com/verify?q=356789012345678&type=imei"
+   rel="nofollow">Check if this phone is reported stolen</a>`}</pre>
+            <p className="text-muted-foreground">
+              Show the button only when the listing has a number, and label it plainly. The result appears on SafeOrStolen
+              as "reported stolen", "possible match" or "no report found in the records searched", with the sources listed.
+              The same link format is described on the <Link to="/api" className="text-primary underline">API page</Link>.
+            </p>
+          </section>
 
- {/* Use Cases */}
- <section className="py-16 bg-muted/30">
- <div className="container mx-auto px-4">
- <div className="max-w-6xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Marketplace Use Cases</h2>
- <div className="grid md:grid-cols-2 gap-8">
- <div className="bg-card p-8 rounded-lg border">
- <ShoppingCart className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">Buyer Protection</h3>
- <p className="text-muted-foreground mb-4">
- Give buyers confidence with verified listings. Display trust badges on items that have been checked against stolen property databases.
- </p>
- <ul className="space-y-2 text-sm text-muted-foreground">
- <li>• Reduce buyer disputes and chargebacks</li>
- <li>• Increase conversion rates on high-value items</li>
- <li>• Build marketplace reputation for safety</li>
- </ul>
- </div>
- <div className="bg-card p-8 rounded-lg border">
- <Users className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">Seller Verification</h3>
- <p className="text-muted-foreground mb-4">
- Require sellers to verify high-value electronics, vehicles, and firearms before listing. Weed out bad actors automatically.
- </p>
- <ul className="space-y-2 text-sm text-muted-foreground">
- <li>• Automated listing moderation</li>
- <li>• Flag suspicious serial numbers</li>
- <li>• Seller reputation scoring</li>
- </ul>
- </div>
- <div className="bg-card p-8 rounded-lg border">
- <Shield className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">Legal Compliance</h3>
- <p className="text-muted-foreground mb-4">
- Meet regulatory requirements for stolen goods prevention. Document verification for law enforcement cooperation.
- </p>
- <ul className="space-y-2 text-sm text-muted-foreground">
- <li>• State pawn shop compliance</li>
- <li>• eBay/Amazon seller requirements</li>
- <li>• Law enforcement data sharing</li>
- </ul>
- </div>
- <div className="bg-card p-8 rounded-lg border">
- <TrendingUp className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-3">Fraud Prevention</h3>
- <p className="text-muted-foreground mb-4">
- Detect and prevent stolen goods from being sold through your platform. Protect your marketplace from becoming a fencing operation.
- </p>
- <ul className="space-y-2 text-sm text-muted-foreground">
- <li>• Real-time fraud detection</li>
- <li>• Pattern analysis for repeat offenders</li>
- <li>• Integration with trust & safety teams</li>
- </ul>
- </div>
- </div>
- </div>
- </div>
- </section>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Seller certificate links</h2>
+            <p className="text-muted-foreground">
+              Add an optional field where a seller can paste a SafeOrStolen certificate link. A seller gets one by checking
+              the item and adding a $1.99 verification certificate. The page at that link shows the check date, the result,
+              the sources searched and only the last four characters of the number, so the full IMEI or serial isn't
+              published. Only accept links that start with safeorstolen.com/proof/. Sellers can read{' '}
+              <Link to="/for-sellers" className="text-primary underline">how it works for them</Link>.
+            </p>
+          </section>
 
- {/* API Features */}
- <section className="py-16 container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">API Features</h2>
- <div className="prose prose-lg max-w-none">
- <div className="grid md:grid-cols-2 gap-8 not-prose">
- <div className="space-y-4">
- <div className="flex items-start gap-3">
- <Zap className="h-6 w-6 text-primary mt-1" />
- <div>
- <h4 className="font-bold">Sub-Second Response</h4>
- <p className="text-sm text-muted-foreground">Average response time under 500ms for real-time verification during checkout.</p>
- </div>
- </div>
- <div className="flex items-start gap-3">
- <Lock className="h-6 w-6 text-primary mt-1" />
- <div>
- <h4 className="font-bold">Enterprise Security</h4>
- <p className="text-sm text-muted-foreground">TLS 1.3 encryption, API key rotation, IP whitelisting, audit logs.</p>
- </div>
- </div>
- <div className="flex items-start gap-3">
- <Globe className="h-6 w-6 text-primary mt-1" />
- <div>
- <h4 className="font-bold">Global Coverage</h4>
- <p className="text-sm text-muted-foreground">SafeOrStolen leverages its own reports, public web results, and AI analysis to help verify items. Specialized checks are available for bicycles, firearms, and phones.</p>
- </div>
- </div>
- </div>
- <div className="space-y-4">
- <div className="flex items-start gap-3">
- <Code className="h-6 w-6 text-primary mt-1" />
- <div>
- <h4 className="font-bold">Developer-Friendly</h4>
- <p className="text-sm text-muted-foreground">Comprehensive docs, SDKs for Python/Node/PHP, Postman collection, sandbox environment.</p>
- </div>
- </div>
- <div className="flex items-start gap-3">
- <Shield className="h-6 w-6 text-primary mt-1" />
- <div>
- <h4 className="font-bold">Batch Verification</h4>
- <p className="text-sm text-muted-foreground">Bulk check up to 1,000 items per request for inventory management.</p>
- </div>
- </div>
- <div className="flex items-start gap-3">
- <CheckCircle className="h-6 w-6 text-primary mt-1" />
- <div>
- <h4 className="font-bold">24/7 Always Available</h4>
- <p className="text-sm text-muted-foreground">Enterprise-grade infrastructure with redundant systems and 24/7 monitoring.</p>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">For your trust and safety team</h2>
+            <p className="text-muted-foreground">
+              When listings are reported, export their numbers to a .csv file (number, type, note such as the listing ID) and
+              run it through the <Link to="/bulk-check" className="text-primary underline">bulk check</Link>. Up to 100 rows
+              per run; the results CSV has the result, sources searched and check time for each row. Policy questions, like
+              which categories to require numbers for, are covered on the{' '}
+              <Link to="/for-marketplaces" className="text-primary underline">marketplaces page</Link>.
+            </p>
+          </section>
 
- {/* CTA */}
- <section className="py-16 bg-primary/5">
- <div className="container mx-auto px-4 text-center">
- <h2 className="text-3xl font-bold mb-4">Ready to Integrate?</h2>
- <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Contact our sales team for API access, custom pricing, and integration support.
- </p>
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <Button size="lg" asChild>
- <a href="mailto:support@safeorstolen.com">
- Contact Sales <ArrowRight className="ml-2 h-4 w-4" />
- </a>
- </Button>
- <Button size="lg" variant="outline" asChild>
- <Link to="/pricing">View Pricing</Link>
- </Button>
- </div>
- </div>
- </section>
- </div>
- </>
- );
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Common questions</h2>
+            <div className="space-y-4">
+              {FAQS.map((f) => (
+                <div key={f.question} className="rounded-lg border border-border bg-card p-5">
+                  <h3 className="font-semibold mb-2">{f.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="rounded-lg bg-primary/5 p-6 text-center">
+            <h2 className="text-2xl font-bold mb-3">Want a deeper integration?</h2>
+            <p className="text-muted-foreground mb-6">
+              Tell us your platform, your item categories and roughly how many listings a month at safeorstolenmail@gmail.com.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" asChild><a href="mailto:safeorstolenmail@gmail.com">Email us</a></Button>
+              <Button size="lg" variant="outline" asChild><Link to="/for-marketplaces">Marketplace guide</Link></Button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </>
+  );
 }

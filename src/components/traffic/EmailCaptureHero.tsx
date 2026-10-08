@@ -66,7 +66,7 @@ export const EmailCaptureHero = () => {
       </h3>
       
       <p className="text-muted-foreground mb-6">
-        Join 5,000+ smart buyers who verify before purchasing. Enter your email for instant access.
+        Get a reminder of the checks to run before you buy a used phone, car or bike. Enter your email.
       </p>
       
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">

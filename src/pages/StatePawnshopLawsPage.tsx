@@ -1,3 +1,8 @@
+/**
+ * Oct 7 2026: rewritten by hand for "pawn shop laws by state" / "pawn shop holding period by state".
+ * The STATES data is unchanged; only the copy around it was rewritten. Removed: "takes about 3 seconds",
+ * a bare external domain in the source note, and the duplicate app CTAs.
+ */
 import { Link } from '@/lib/router-compat';
 import { Shield, Scale, Clock, MapPin, Smartphone, AlertTriangle } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
@@ -66,28 +71,37 @@ const STATES: StateEntry[] = [
 
 const FAQS = [
   {
-    question: 'Does my state require pawnshops to report to police?',
+    question: 'What are the pawn shop laws in my state?',
     answer:
-      'It depends on the state, and this page summarizes how each one licenses pawnbrokers and secondhand dealers. Most states license pawnshops at the state level, some leave it entirely to cities and counties, and several — including Illinois and Minnesota — pair licensing with detailed transaction reporting rules. Because requirements differ so much and enforcement varies locally, you should never assume an item you are buying was reported or checked. Confirm current rules with the regulator listed for your state, and verify the item yourself with SafeOrStolen, which checks an IMEI, VIN, serial number, license plate, or firearm serial and returns a result in about 3 seconds. You get 2 free checks, then $3.99 per check or $14.99/month unlimited. You can also install the free SafeOrStolen web app at safeorstolen.com/app and check items on your phone while you are standing at the counter.',
+      'Most states license pawnbrokers through a state banking, financial or consumer agency, some pair state licensing with city or county permits, and a few, including Alaska, Idaho, Maine, Montana, North Dakota, South Dakota and Wyoming, have no state pawnshop statute, so cities and counties set the rules. SafeOrStolen (safeorstolen.com/state-pawnshop-laws) lists the licensing agency, statute and holding period for each state.',
   },
   {
-    question: 'How long do pawnshops have to hold items before reselling?',
+    question: 'How long do pawn shops have to hold items before selling them?',
     answer:
-      'Holding periods are set state by state and only some states name one. Among the states that do, 30 days is the most common minimum (including Alabama, Florida, Nebraska, Nevada, North Carolina, Ohio, South Carolina, Texas, West Virginia, and Wisconsin), while Oregon and Utah name 60 days, Arizona, Indiana and New Mexico name 90 days, Michigan names 3 months, Connecticut names 4 months, and Virginia names 120 days. Holding periods exist partly so police have time to identify property reported stolen, but they are not a guarantee that any check happened. Verify the item independently at SafeOrStolen before you pay — 2 free checks, then $3.99 per check or $14.99/month unlimited, with results in about 3 seconds, on the web or through the free web app at safeorstolen.com/app.',
+      'Only some states name a holding period. Among those that do, 30 days is the most common minimum (Alabama, Arkansas, Florida, Nebraska, Nevada, North Carolina, Ohio, South Carolina, Texas, West Virginia and Wisconsin). Oregon and Utah name 60 days; Arizona, Indiana and New Mexico 90 days; Michigan 3 months; Connecticut 4 months; and Virginia 120 days. A blank state on this page may still have a local rule.',
   },
   {
-    question: 'Is it legal to buy something without checking if it is stolen?',
+    question: 'Do pawn shops have to report to police?',
     answer:
-      'This page is general information, not legal advice, and rules on receiving stolen property vary by state — check with your state regulator or a lawyer for your own situation. Practically, though, buying an item that turns out to be stolen usually means losing both the item and the money you paid, whether or not you knew. Running the identifier through SafeOrStolen before you pay takes about 3 seconds, gives you a dated record of the check, and costs nothing for your first 2 verifications ($3.99 per check or $14.99/month unlimited after that). The free installable web app at safeorstolen.com/app lets you do it from your phone at the point of sale.',
+      "In many places, yes, but the rule usually comes from the state pawn statute or a city or county ordinance, so it differs from one town to the next. Where reporting applies, the shop sends police the seller's ID details and each item's description and serial number, and police compare those records with stolen reports. Your state's licensing agency, listed above, can tell you what applies.",
   },
   {
-    question: 'Do secondhand dealers have to check whether items are stolen?',
+    question: 'Do pawn shops check if items are stolen?',
     answer:
-      'Licensing and recordkeeping obligations for secondhand dealers are set by state statute or by local ordinance, and in states such as Alaska, Idaho, Maine, Montana, North Dakota, South Dakota, and Wyoming there is no state pawnshop statute at all — the rules come from the city or county. Some jurisdictions require transaction reporting that lets police compare records against theft reports; others require far less. Because coverage is uneven, buyers and sellers should treat an independent verification as their own responsibility. SafeOrStolen checks phones, vehicles, license plates, serialized electronics, firearms, and bicycles in one place and returns a result in about 3 seconds.',
+      "Mostly through police reporting and the holding period, not by searching a stolen database themselves. Pawn shops can't search NCIC; police do that with the records the shop reports. The full answer, including how guns are handled, is in our guide at safeorstolen.com/blog/pawn-shop-stolen-item-verification.",
+  },
+  {
+    question: 'Is it illegal to buy something that turns out to be stolen?',
+    answer:
+      "Laws on receiving stolen property vary by state and usually turn on what the buyer knew or should have known. Either way, a stolen item is normally returned to its owner, so the buyer loses the item and the money. Checking the serial number before you pay, and keeping a dated record that you did, is the part you control. This is general information, not legal advice.",
   },
 ];
 
 const PUBLISHED = 'September 8, 2026';
+const UPDATED = 'October 7, 2026';
+
+/** Holding periods as listed in STATES, for the summary table. */
+const HOLDING_ROWS = STATES.filter((s) => s.holding).map((s) => [s.state, s.holding as string, s.authority]);
 
 export default function StatePawnshopLawsPage() {
   const faqSchema = {
@@ -103,9 +117,11 @@ export default function StatePawnshopLawsPage() {
   return (
     <>
       <PageSEO
-        title="State-by-State Pawnshop & Secondhand Dealer Laws (All 50 States)"
-        description="Pawnshop and secondhand dealer licensing by state: which agency licenses pawnbrokers, whether licensing is state or local, the governing statute, and named holding periods for all 50 states."
+        title="Pawn Shop Laws by State: Licensing & Holding Periods | SafeOrStolen"
+        description="Pawn shop laws by state for all 50 states: which agency licenses pawnbrokers, state or local licensing, the governing statute, and each holding period a state names."
+        keywords="pawn shop laws by state, pawnshop laws by state, pawn shop holding period by state, how long do pawn shops hold items, pawnbroker license by state, secondhand dealer laws by state"
         canonical="/state-pawnshop-laws"
+        modifiedTime="2026-10-07"
         structuredData={faqSchema}
       />
 
@@ -114,44 +130,36 @@ export default function StatePawnshopLawsPage() {
         <section className="px-4 py-14 border-b border-border/60">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
-              <Scale className="w-4 h-4" /> Compliance Guide
+              <Scale className="w-4 h-4" /> State law guide
             </div>
             <h1 className="text-3xl md:text-5xl font-black mb-5">
-              State-by-State Pawnshop &amp; Secondhand Dealer Law Guide
+              Pawn Shop Laws by State: Licensing and Holding Periods
             </h1>
             <p className="text-lg text-muted-foreground mb-4">
-              Do pawnshops and secondhand dealers have to report to police, or check whether an item is
-              stolen? In plain language: it depends entirely on where you are. Most states license
-              pawnbrokers through a state financial or consumer agency, and many set a minimum holding
-              period before a pawned item can be resold — time that can give police a window to identify
-              property reported stolen. Other states leave the whole thing to cities and counties, and a
-              few have no dedicated state statute at all.
+              Pawn shop rules are set state by state, and often city by city. Most states license pawnbrokers through a
+              state financial or consumer agency, and many set a minimum holding period before a pawned item can be sold,
+              most often 30 days. A handful of states, including Alaska, Idaho, Maine and Wyoming, have no state pawnshop
+              statute and leave the rules to cities and counties. Below is the licensing agency, statute and holding period for every state.
             </p>
             <p className="text-lg text-muted-foreground mb-4">
-              What that means for you as a buyer or seller: never assume the item in front of you was
-              checked. Licensing does not automatically mean a theft check happened, holding periods are
-              not searches, and rules differ from one county to the next. Whichever state you are in, an
-              independent check is the only part of the process you control — and it takes seconds.
+              If you're buying, a license and a holding period don't mean anyone checked the item you're looking at. Ask for
+              the serial number and check it yourself before you pay.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/verify"
                 className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground hover:opacity-90 transition"
               >
-                <Shield className="w-4 h-4" /> Verify an item now
+                <Shield className="w-4 h-4" /> Check a serial number
               </Link>
               <Link
-                to="/app"
+                to="/for-pawn-shops"
                 className="inline-flex items-center gap-2 rounded-xl border border-border px-5 py-3 font-semibold hover:bg-muted/50 transition"
               >
-                <Smartphone className="w-4 h-4" /> Get the app
+                <Smartphone className="w-4 h-4" /> For pawn shop owners
               </Link>
             </div>
-            <p className="text-sm text-muted-foreground mt-3">
-              Checking at the counter? Install the free SafeOrStolen web app from{' '}
-              <Link to="/app" className="text-primary underline underline-offset-4">safeorstolen.com/app</Link>{' '}
-              and scan or type an identifier from your phone.
-            </p>
+            <p className="text-sm text-muted-foreground mt-3">Updated {UPDATED}</p>
           </div>
         </section>
 
@@ -160,18 +168,45 @@ export default function StatePawnshopLawsPage() {
           <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-4">
             <div className="rounded-xl border border-border bg-card p-4">
               <MapPin className="w-5 h-5 text-primary mb-2" />
-              <h2 className="font-semibold mb-1 text-base">State vs local</h2>
-              <p className="text-sm text-muted-foreground">Whether the license comes from a state agency, a city or county, or both.</p>
+              <h2 className="font-semibold mb-1 text-base">Licensing level</h2>
+              <p className="text-sm text-muted-foreground">Whether a state agency, a city or county, or both issue the license.</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-4">
               <Scale className="w-5 h-5 text-primary mb-2" />
               <h2 className="font-semibold mb-1 text-base">Governing statute</h2>
-              <p className="text-sm text-muted-foreground">Listed where the source names a specific act or code section.</p>
+              <p className="text-sm text-muted-foreground">Shown where the source names a specific act or code section.</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-4">
               <Clock className="w-5 h-5 text-primary mb-2" />
               <h2 className="font-semibold mb-1 text-base">Holding period</h2>
-              <p className="text-sm text-muted-foreground">Shown only for states where the source names one. Blank does not mean none exists.</p>
+              <p className="text-sm text-muted-foreground">Shown only where the source names one. A blank doesn't mean there is no rule.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Holding period summary */}
+        <section className="px-4 pb-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Pawn shop holding periods by state</h2>
+            <p className="text-muted-foreground mb-4">
+              These are the states where our source names a holding period. Other states may set one in regulation or leave
+              it to local ordinances.
+            </p>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/60">
+                  <tr><th className="px-4 py-3 font-semibold">State</th><th className="px-4 py-3 font-semibold">Holding period</th><th className="px-4 py-3 font-semibold">Licensing authority</th></tr>
+                </thead>
+                <tbody>
+                  {HOLDING_ROWS.map((r) => (
+                    <tr key={r[0]} className="border-t border-border">
+                      <td className="px-4 py-3 font-medium">{r[0]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -179,7 +214,7 @@ export default function StatePawnshopLawsPage() {
         {/* State cards */}
         <section className="px-4 pb-12">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Pawnshop Licensing by State</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Pawnshop licensing in all 50 states</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {STATES.map((s) => (
                 <article
@@ -220,7 +255,7 @@ export default function StatePawnshopLawsPage() {
         {/* FAQ */}
         <section className="px-4 pb-12 border-t border-border/60 pt-12">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Common questions</h2>
             <div className="space-y-5">
               {FAQS.map((f) => (
                 <div key={f.question} className="rounded-2xl border border-border bg-card p-5">
@@ -237,39 +272,35 @@ export default function StatePawnshopLawsPage() {
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="rounded-2xl border border-amber-500/40 bg-amber-500/5 p-5">
               <div className="flex items-center gap-2 mb-2 font-semibold">
-                <AlertTriangle className="w-4 h-4 text-amber-500" /> Disclaimer
+                <AlertTriangle className="w-4 h-4 text-amber-500" /> Not legal advice
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This page is general informational content, not legal advice. It is current as of its
-                publish date, {PUBLISHED}, and licensing rules, statutes, and holding periods change.
-                Blank fields mean the source did not name a value, not that no requirement exists.
-                Confirm current requirements with your state's regulatory agency — the licensing
-                authority named for each state above — or with a licensed attorney before relying on any
-                of it.
+                This is a general summary, current as of {PUBLISHED}. Statutes, licensing rules and holding periods change,
+                and cities and counties often add their own. A blank field means the source didn't name a value, not that no
+                rule exists. Before relying on any of it, confirm with the licensing authority named for your state or with
+                a licensed attorney.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-5">
               <h2 className="font-semibold mb-2 text-base">Source</h2>
               <p className="text-sm text-muted-foreground">
-                State licensing summary adapted from{' '}
-                
-                  pawn-software.com — Pawn Licensing in the US
-                
-                .
+                The state licensing summary is adapted from "Pawn Licensing in the US", a guide published by a pawn
+                software company, and has not been checked against each state's current code.
               </p>
             </div>
             <div className="rounded-2xl border border-primary/40 bg-primary/5 p-6 text-center">
-              <h2 className="text-xl font-bold mb-2">Check the item yourself — it takes 3 seconds</h2>
+              <h2 className="text-xl font-bold mb-2">Check the item yourself before you pay</h2>
               <p className="text-sm text-muted-foreground mb-4">
-                2 free checks, then $3.99 per check or $14.99/month unlimited. Phones, vehicles, plates,
-                serials, firearms, and bicycles.
+                SafeOrStolen searches its theft reports and public web results for any serial number, IMEI or VIN, plus
+                police gun theft reports for guns. 2 free checks, then $3.99 per check or $14.99 a month unlimited. Pawn
+                shops can run up to 100 numbers at once with the bulk check.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Link to="/verify" className="rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground hover:opacity-90 transition">
-                  Verify Now — Free
+                  Check a serial number
                 </Link>
-                <Link to="/app" className="rounded-xl border border-border px-5 py-3 font-semibold hover:bg-muted/50 transition">
-                  Get the app
+                <Link to="/bulk-check" className="rounded-xl border border-border px-5 py-3 font-semibold hover:bg-muted/50 transition">
+                  Bulk check for shops
                 </Link>
               </div>
             </div>

@@ -1,9 +1,39 @@
+/**
+ * Oct 7 2026: rewritten by hand for "download SafeOrStolen app" / "SafeOrStolen app download".
+ * No search data for /download; this page answers "where do I download it" and sends people to /app
+ * for full install steps, so the two pages don't compete. Removed: "works offline" (checks need a
+ * connection), "all 50 states" coverage claim, "join thousands", "3-second" claims, the competitor
+ * table naming another IMEI site, "iOS, Android" store wording, emoji/ALL CAPS.
+ */
 import React from 'react';
 import { Link } from '@/lib/router-compat';
-import { Download, Shield, Smartphone, Wifi, WifiOff, Camera, Clock, CheckCircle, Star, Users, Zap, Globe, ArrowRight } from 'lucide-react';
+import { Download, Smartphone, Monitor, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
+
+const FAQS = [
+  {
+    q: 'Where do I download the SafeOrStolen app?',
+    a: "You don't download it from a store. SafeOrStolen is an installable web app: open safeorstolen.com/app in Safari on an iPhone or Chrome on Android, then choose Add to Home Screen or Install app. It takes under a minute, it's free, and the icon then sits on your home screen like any other app.",
+  },
+  {
+    q: 'Is SafeOrStolen on the App Store or Google Play?',
+    a: "No. SafeOrStolen isn't listed in the Apple App Store or Google Play. It installs from the browser instead. If you find a store app using the SafeOrStolen name, it isn't from SafeOrStolen. The only place to get it is safeorstolen.com.",
+  },
+  {
+    q: 'How much space does the SafeOrStolen app take?',
+    a: "Very little. An installed web app stores a small amount of site data instead of a full app package, and it updates itself when the site changes, so there's nothing to re-download. You can remove it like any app: press and hold the icon and choose Remove or Uninstall.",
+  },
+  {
+    q: 'Do I need an account to use the app?',
+    a: 'You need a free account to run checks. It comes with 2 free checks and needs no credit card. After that a single check is $3.99, or $14.99 a month for unlimited checks, canceled anytime, with a 30-day refund on the monthly plan.',
+  },
+  {
+    q: 'Is the app different from the website?',
+    a: "No. The app and the website run the same checks against the same sources and share your account and check history. The app just opens full screen from your home screen, which is handier when you're standing next to the item at a meetup.",
+  },
+];
 
 const DownloadApp = () => {
   const handleInstallClick = () => {
@@ -11,510 +41,146 @@ const DownloadApp = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'app_download_click', {
         event_category: 'engagement',
-        event_label: 'download_page'
+        event_label: 'download_page',
       });
     }
   };
 
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "SafeOrStolen - Stolen Item Checker",
-    "operatingSystem": "iOS, Android, Web",
-    "applicationCategory": "UtilitiesApplication",
-    "description": "Free app to check if items are stolen before buying or selling. Verify IMEI, VIN, serial numbers instantly. Protects both buyers AND sellers from stolen goods.",
-    "offers": {
-      "@type": "Offer",
-      "price": "14.99",
-      "priceCurrency": "USD",
-      "description": "$14.99/month unlimited verifications"
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'SafeOrStolen',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Any (installable web app)',
+      url: 'https://safeorstolen.com/app',
+      dateModified: '2026-10-07',
+      description:
+        'Installable web app for checking whether a phone, vehicle, plate, gun, bike or other serial-numbered item has been reported stolen.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free to install; 2 free checks with a free account' },
     },
-    "featureList": [
-      "Instant IMEI verification",
-      "VIN stolen check",
-      "Serial number lookup",
-      "Barcode scanning",
-      "Works offline",
-      "Protects buyers AND sellers",
-      "3-second verification",
-      "Free to download"
-    ],
-    "potentialAction": {
-      "@type": "DownloadAction",
-      "target": "https://safeorstolen.com/download"
-    }
-  };
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ];
 
   return (
     <>
       <PageSEO
-        title="Download FREE Stolen Item Checker App | SafeOrStolen - Verify Before You Buy or Sell"
-        description="Install the SafeOrStolen AI app to check items before buying or selling. AI verifies IMEI, VIN, and serial numbers in about 3 seconds. Free to start."
-        keywords="download stolen checker app, free IMEI app download, stolen verification app, VIN checker app free, serial number checker app, marketplace safety app, stolen item scanner, barcode stolen checker, offline stolen checker, buyer seller protection app"
+        title="Download the SafeOrStolen App (Free, No App Store)"
+        description="How to download SafeOrStolen on iPhone, Android or a computer. It installs free from Safari or Chrome, not an app store, and runs the same stolen-item checks."
+        keywords="download SafeOrStolen app, SafeOrStolen app download, stolen item checker app download, install SafeOrStolen"
         canonical="/download"
-        structuredData={softwareAppSchema}
+        modifiedTime="2026-10-07"
+        structuredData={structuredData}
       />
       <div className="min-h-screen bg-background pt-16">
-        
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10 overflow-hidden">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                  <Download className="w-4 h-4" />
-                  FREE Download - No Credit Card Required
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Download the <span className="text-primary">FREE</span> Stolen Item Checker App
-                </h1>
-                
-                <p className="text-xl text-muted-foreground mb-4">
-                  Instantly verify if items are stolen before you <strong>buy OR sell</strong>. 
-                  Check phones, cars, electronics, firearms in just 3 seconds.
-                </p>
-                
-                <div className="flex items-center gap-2 text-lg font-semibold text-primary mb-8">
-                  <Shield className="w-6 h-6" />
-                  <span>Protects Buyers AND Sellers</span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Button 
-                    size="lg" 
-                    className="text-lg px-8 py-6"
-                    onClick={handleInstallClick}
-                    asChild
-                  >
-                    <Link to="/app">
-                      <Download className="w-5 h-5 mr-2" />
-                      Install App Now - FREE
-                    </Link>
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="text-lg px-8 py-6"
-                    asChild
-                  >
-                    <Link to="/app/features">
-                      View All Features
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Link>
-                  </Button>
-                </div>
-
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                    <span>2 free checks</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>Install from your browser</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Globe className="w-4 h-4" />
-                    <span>All 50 US States</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8 backdrop-blur-sm">
-                  <div className="bg-background rounded-2xl p-6 shadow-2xl">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                        <Shield className="w-6 h-6 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold">SafeOrStolen</h3>
-                        <p className="text-sm text-muted-foreground">Stolen Item Checker</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 p-3 bg-green-500/10 rounded-lg">
-                        <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-sm">Instant IMEI/VIN/Serial Check</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-blue-500/10 rounded-lg">
-                        <Camera className="w-5 h-5 text-blue-500" />
-                        <span className="text-sm">Barcode Scanner Built-In</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-purple-500/10 rounded-lg">
-                        <WifiOff className="w-5 h-5 text-purple-500" />
-                        <span className="text-sm">Works Offline</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-orange-500/10 rounded-lg">
-                        <Users className="w-5 h-5 text-orange-500" />
-                        <span className="text-sm">Protects Buyers & Sellers</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Download Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Why Download the SafeOrStolen App?
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Whether you're <strong>buying</strong> secondhand items or <strong>selling</strong> them, 
-                our app protects you from unknowingly dealing with stolen property.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Zap className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">3-Second Verification</h3>
-                  <p className="text-muted-foreground">
-                    Get instant results when meeting sellers on Facebook Marketplace, OfferUp, or Craigslist. 
-                    Verify before you hand over cash.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Camera className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Barcode Scanner</h3>
-                  <p className="text-muted-foreground">
-                    Just point your camera at any barcode, serial number, or VIN plate. 
-                    No typing required - instant scan and verify.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <WifiOff className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Works Offline</h3>
-                  <p className="text-muted-foreground">
-                    No internet? No problem. Verify items in parking lots, garages, 
-                    or anywhere without WiFi. Perfect for meetup locations.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Buyer Protection</h3>
-                  <p className="text-muted-foreground">
-                    Avoid buying stolen goods unknowingly. Protect yourself from legal trouble 
-                    and financial loss when purchasing secondhand items.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Seller Protection</h3>
-                  <p className="text-muted-foreground">
-                    Prove your items are legitimate to buyers. Build trust instantly 
-                    with verification certificates. Sell faster at better prices.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Globe className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">All 50 US States</h3>
-                  <p className="text-muted-foreground">
-                    Comprehensive coverage across the entire United States. 
-                    Works for phones, cars, bikes, firearms, electronics, and more.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* How to Install */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                How to Download & Install SafeOrStolen
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Install in under 30 seconds - no app store required
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* iOS Instructions */}
-              <Card>
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Smartphone className="w-8 h-8" />
-                    <h3 className="text-2xl font-bold">iPhone / iPad</h3>
-                  </div>
-                  
-                  <ol className="space-y-4">
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
-                      <div>
-                        <p className="font-medium">Open Safari</p>
-                        <p className="text-sm text-muted-foreground">Visit safeorstolen.com/app</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
-                      <div>
-                        <p className="font-medium">Tap the Share button</p>
-                        <p className="text-sm text-muted-foreground">The square with arrow at bottom</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
-                      <div>
-                        <p className="font-medium">Tap "Add to Home Screen"</p>
-                        <p className="text-sm text-muted-foreground">Scroll down to find it</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
-                      <div>
-                        <p className="font-medium">Tap "Add"</p>
-                        <p className="text-sm text-muted-foreground">App appears on home screen!</p>
-                      </div>
-                    </li>
-                  </ol>
-                </CardContent>
-              </Card>
-
-              {/* Android Instructions */}
-              <Card>
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Smartphone className="w-8 h-8" />
-                    <h3 className="text-2xl font-bold">Android</h3>
-                  </div>
-                  
-                  <ol className="space-y-4">
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
-                      <div>
-                        <p className="font-medium">Open Chrome</p>
-                        <p className="text-sm text-muted-foreground">Visit safeorstolen.com/app</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
-                      <div>
-                        <p className="font-medium">Tap the menu (⋮)</p>
-                        <p className="text-sm text-muted-foreground">Three dots in top right</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
-                      <div>
-                        <p className="font-medium">Tap "Install App"</p>
-                        <p className="text-sm text-muted-foreground">Or "Add to Home Screen"</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
-                      <div>
-                        <p className="font-medium">Tap "Install"</p>
-                        <p className="text-sm text-muted-foreground">App installs automatically!</p>
-                      </div>
-                    </li>
-                  </ol>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="text-center mt-12">
-              <Button size="lg" className="text-lg px-12 py-6" asChild>
-                <Link to="/app">
-                  <Download className="w-5 h-5 mr-2" />
-                  Go to App & Install Now
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Competitor Comparison */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose SafeOrStolen Over Competitors?
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
-              </p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left p-4">Feature</th>
-                    <th className="text-center p-4 bg-primary/10">SafeOrStolen</th>
-                    <th className="text-center p-4">Public Databases</th>
-                    <th className="text-center p-4">IMEI.info</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Mobile App</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Barcode Scanner</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Works Offline</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">$14.99/mo Unlimited</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗ Paid Only</td>
-                    <td className="text-center p-4 text-red-500">✗ Paid Only</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Protects Sellers Too</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">All Item Types</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4">Limited</td>
-                    <td className="text-center p-4">Phones Only</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Frequently Asked Questions
-            </h2>
-
-            <div className="space-y-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">Is the SafeOrStolen app really free to download?</h3>
-                  <p className="text-muted-foreground">
-                    Yes! The app is completely free to download and install. Unlimited verifications are available 
-                    for $3.99/check or $14.99/month unlimited. Cancel anytime with a 30-day money-back guarantee.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">Does the app protect both buyers AND sellers?</h3>
-                  <p className="text-muted-foreground">
-                    Absolutely! Buyers can verify items before purchasing to avoid stolen goods. Sellers can 
-                    provide verification certificates to prove their items are legitimate, building trust and 
-                    often getting better prices.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">Why is there no app store version?</h3>
-                  <p className="text-muted-foreground">
-                    Our Progressive Web App (PWA) technology is actually better than traditional app stores. 
-                    It installs instantly, takes up less space, updates automatically, and works across all 
-                    devices. No waiting for app store approval or large downloads.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">What items can I verify with the app?</h3>
-                  <p className="text-muted-foreground">
-                    Check phones (IMEI), vehicles (VIN), laptops, TVs, power tools, bicycles, firearms, 
-                    musical instruments, cameras, gaming consoles, and virtually any item with a serial number. 
-                    We're truly the "Carfax for Everything."
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">Does it work on Facebook Marketplace, OfferUp, and Craigslist?</h3>
-                  <p className="text-muted-foreground">
-                    Yes! Our app is perfect for verifying items before meetups on any marketplace - Facebook 
-                    Marketplace, OfferUp, Craigslist, eBay, pawn shops, yard sales, and private sales. 
-                    The offline mode ensures you can verify even without WiFi at meetup locations.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-20 px-4 bg-primary text-primary-foreground">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Protect Yourself Today - Download FREE
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Join thousands of smart buyers and sellers who verify before they trade. 
-              Don't risk your money or legal trouble - verify in 3 seconds.
+        <section className="py-16 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+          <div className="container mx-auto max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">Download the SafeOrStolen App</h1>
+            <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
+            <p className="text-lg text-foreground mb-4">
+              SafeOrStolen isn't in the App Store or Google Play. You install it straight from your browser: open
+              safeorstolen.com/app in Safari (iPhone) or Chrome (Android) and tap Add to Home Screen or Install app. It's free,
+              takes under a minute, and gives you the same stolen-item checks as the website, opening full screen from your home
+              screen.
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary"
-              className="text-lg px-12 py-6"
-              asChild
-            >
+            <Button size="lg" className="mt-4" onClick={handleInstallClick} asChild>
               <Link to="/app">
                 <Download className="w-5 h-5 mr-2" />
-                Download SafeOrStolen App - FREE
+                Go to the install page
               </Link>
             </Button>
           </div>
         </section>
 
+        <section className="py-14 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Which device are you on?</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border rounded-lg">
+                <thead>
+                  <tr className="border-b bg-muted/50 text-left">
+                    <th className="p-3">Device</th>
+                    <th className="p-3">Browser to use</th>
+                    <th className="p-3">What to tap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">iPhone or iPad</td>
+                    <td className="p-3">Safari</td>
+                    <td className="p-3">Share button, then Add to Home Screen, then Add</td>
+                  </tr>
+                  <tr className="border-b align-top">
+                    <td className="p-3 font-medium">Android phone</td>
+                    <td className="p-3">Chrome</td>
+                    <td className="p-3">Three-dot menu, then Install app (or Add to Home screen)</td>
+                  </tr>
+                  <tr className="align-top">
+                    <td className="p-3 font-medium">Windows or Mac</td>
+                    <td className="p-3">Chrome or Edge</td>
+                    <td className="p-3">Install icon at the right end of the address bar, then Install</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Step-by-step instructions, and what the app can check, are on the{' '}
+              <Link to="/app" className="text-primary underline">SafeOrStolen app page</Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-14 px-4 bg-muted/30">
+          <div className="container mx-auto max-w-4xl grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardContent className="p-6">
+                <Smartphone className="w-6 h-6 text-primary mb-3" />
+                <h2 className="text-xl font-bold mb-2">Why there's no store download</h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  SafeOrStolen runs on the web, so the installed app is the website with its own icon and window. That means one
+                  version for every phone, updates that arrive on their own, and nothing big to download over cell data while
+                  you're waiting on a seller.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6">
+                <Monitor className="w-6 h-6 text-primary mb-3" />
+                <h2 className="text-xl font-bold mb-2">You don't have to install anything</h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Installing is optional. Every check works in a normal browser tab on safeorstolen.com. Pawn shops and dealers who
+                  check many items usually work from a computer with <Link to="/bulk-check" className="text-primary underline">bulk check</Link>.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section className="py-14 px-4">
+          <div className="container mx-auto max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Download questions</h2>
+            <div className="space-y-6">
+              {FAQS.map((f) => (
+                <div key={f.q}>
+                  <h3 className="font-semibold text-lg mb-2">{f.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10">
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/verify">
+                  Skip the install and run a check
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

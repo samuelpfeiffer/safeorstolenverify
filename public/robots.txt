@@ -1,11 +1,9 @@
 # SafeOrStolen robots.txt
-# AI-Powered Platform — SafeOrStolen AI conversational assistant at /ai-chat and /verify
-# AI-powered conversational verification at /ai-chat and /verify
+# SafeOrStolen: check whether a used item is reported stolen before you buy it.
 # Allow all search engines and AI crawlers
-# Last updated: 2026-08-08
+# Last updated: 2026-10-07
 #
 # AI training: ALLOWED with attribution (see /ai.txt and /llms.txt)
-# Conversational AI entry point: https://safeorstolen.com/ai-chat
 
 User-agent: *
 Allow: /
@@ -110,4 +108,3 @@ Sitemap: https://safeorstolen.com/sitemap.xml
 # AI Plugin: https://safeorstolen.com/.well-known/ai-plugin.json
 # Identity: https://safeorstolen.com/identity.json
 # AI Context: https://safeorstolen.com/ai-context.json
-# SafeOrStolen AI Chat: https://safeorstolen.com/ai-chat

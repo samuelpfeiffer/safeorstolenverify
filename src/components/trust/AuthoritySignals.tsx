@@ -9,9 +9,9 @@ interface AuthoritySignalsProps {
 
 const AUTHORITY_SIGNALS = [
   { icon: Lock, label: '256-bit SSL', description: 'Bank-grade encryption' },
-  { icon: Award, label: 'multiple sources', description: 'Law enforcement and insurance sources' },
-  { icon: Building, label: 'US-Based', description: 'Peoria, Arizona headquarters' },
-  { icon: Users, label: '10,000+ Users', description: 'Trusted by buyers & sellers' },
+  { icon: Award, label: 'Sources listed', description: 'Every result shows what was searched' },
+  { icon: Building, label: 'US-Based', description: 'Built for U.S. buyers and sellers' },
+  { icon: Users, label: '2 Free Checks', description: 'No credit card needed' },
   { icon: Globe, label: 'All 50 States', description: 'Nationwide coverage' },
 ];
 

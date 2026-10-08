@@ -1,706 +1,296 @@
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+/**
+ * Oct 7 2026: rewritten by hand for "how does SafeOrStolen work" / "how a stolen item check works".
+ * This page explains exactly what happens when you run a check: what you enter, which sources are
+ * searched for each kind of item, what the three results mean, and what gets saved. The tool itself
+ * lives at /check-if-stolen and prices at /pricing. Removed: named data suppliers (BikeIndex,
+ * IMEI.info, StolenRegister, Stolen911), invented "data partners" (insurers, carriers, federal
+ * database), the "34 states" gun figure (it is 33 states plus DC), "AI analysis" listed as a source,
+ * claims about title/accident history and legal-protection certificates, "valid for 14 days",
+ * "priority support", "API access", and the duplicated plans and identifier sections.
+ */
+import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
-import { Link } from '@/lib/router-compat';
-import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
-import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWorksSection';
-import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
-import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import { VerificationStats } from '@/components/trust/VerificationStats';
+
+const SOURCES: { item: string; enter: string; searched: string; extra: string }[] = [
+ {
+ item: 'Phone or tablet',
+ enter: '15-digit IMEI',
+ searched: 'SafeOrStolen theft reports and public web results',
+ extra: 'Shows the make and model the IMEI belongs to. A paid check can also search the lost/stolen carrier blacklist.',
+ },
+ {
+ item: 'Car, truck or motorcycle',
+ enter: '17-character VIN',
+ searched: 'SafeOrStolen theft reports and public web results',
+ extra: 'Decodes the year, make and model and lists open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.',
+ },
+ {
+ item: 'License plate',
+ enter: 'Plate number and state',
+ searched: 'SafeOrStolen theft reports',
+ extra: 'Arizona plates are also searched against Arizona law-enforcement records. Owner names are never shown.',
+ },
+ {
+ item: 'Gun',
+ enter: 'Serial number from the frame or receiver',
+ searched: 'SafeOrStolen theft reports and public web results',
+ extra: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), plus live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
+ },
+ {
+ item: 'Bicycle or e-bike',
+ enter: 'Frame serial number',
+ searched: 'SafeOrStolen theft reports and public web results',
+ extra: 'A national stolen-bicycle registry.',
+ },
+ {
+ item: 'Laptop, console, camera, tool and anything else with a serial',
+ enter: 'Serial number',
+ searched: 'SafeOrStolen theft reports and public web results',
+ extra: 'None. These checks rely on owner reports and public listings.',
+ },
+];
+
+const RESULTS: { label: string; meaning: string; next: string }[] = [
+ {
+ label: 'Reported stolen',
+ meaning: 'The number matches a theft report in one of the sources searched. The result shows which source.',
+ next: "Don't buy. Don't confront the seller. Keep the listing and messages and give them to local police.",
+ },
+ {
+ label: 'Possible match',
+ meaning: 'Something close turned up: a similar number, a public post that mentions it, or a partial record.',
+ next: 'Read the details. Ask the seller to explain, compare the number on the item itself, and walk away if it doesn\'t add up.',
+ },
+ {
+ label: 'No report found in the records searched',
+ meaning: 'Nothing matched in any listed source. It is not proof the item was never stolen, because many thefts are never reported with a serial number.',
+ next: 'Go ahead with the normal checks: number on the item matches the listing, seller can unlock or sign out of it, story makes sense.',
+ },
+];
+
+const FAQS: { question: string; answer: string }[] = [
+ {
+ question: 'How does SafeOrStolen work?',
+ answer:
+ 'You type in the item\'s identifier: an IMEI for a phone, a VIN for a vehicle, a plate, or a serial number for anything else. SafeOrStolen (safeorstolen.com/how-it-works) searches its own theft reports and public web results, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks. In a few seconds you get one of three results with every source listed, and the check is saved to your account with the date.',
+ },
+ {
+ question: 'Does SafeOrStolen search police databases?',
+ answer:
+ 'For some items. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed through 2017 with years that vary by state, and live Ohio law-enforcement records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records. SafeOrStolen does not search the FBI\'s NCIC, ATF eTrace or any DMV, which the public cannot query.',
+ },
+ {
+ question: 'What does "no report found" mean?',
+ answer:
+ 'It means the number did not match anything in the sources listed on your result. It does not prove the item is clean. Plenty of owners never record their serial numbers, and a theft from last night may not be reported anywhere yet. Treat it as one good sign, then check that the number on the item matches the listing and that the seller can unlock or sign out of it.',
+ },
+ {
+ question: 'Can SafeOrStolen tell me if a phone is blacklisted?',
+ answer:
+ 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports and public web results. The lost/stolen carrier blacklist search is part of a paid check, and monthly members get up to 20 blacklist checks a month. SafeOrStolen does not check Apple or Google account locks, so have the seller sign out in front of you.',
+ },
+ {
+ question: 'Does a VIN check show accident or title history?',
+ answer:
+ 'No. A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona vehicles. It does not show title brands, accidents, liens or odometer readings. Get those from a vehicle history report and the state title before you buy a car.',
+ },
+ {
+ question: 'Is my check saved, and can I prove I checked?',
+ answer:
+ 'Every check is saved to your SafeOrStolen account with the date and the sources searched. If you want something to show a seller, buyer or the police later, you can add a verification certificate for $1.99: a dated record with its own link showing you checked before the sale. Monthly members get certificates free.',
+ },
+ {
+ question: 'Can I see who owns an item or who reported it stolen?',
+ answer:
+ 'No. SafeOrStolen never shows owner names, addresses or who filed a report, and plate searches never return the registered owner. If an item comes back reported stolen, contact your local police on their non-emergency line. They can reach the owner and decide what happens next.',
+ },
+];
+
+const faqSchema = {
+ '@context': 'https://schema.org',
+ '@type': 'FAQPage',
+ mainEntity: FAQS.map((f) => ({
+ '@type': 'Question',
+ name: f.question,
+ acceptedAnswer: { '@type': 'Answer', text: f.answer },
+ })),
+};
+
+const howToSchema = {
+ '@context': 'https://schema.org',
+ '@type': 'HowTo',
+ name: 'How a SafeOrStolen stolen item check works',
+ dateModified: '2026-10-07',
+ step: [
+ { '@type': 'HowToStep', position: 1, name: 'Enter the number', text: 'Type the IMEI, VIN, plate or serial number into the search box.' },
+ { '@type': 'HowToStep', position: 2, name: 'Sources are searched', text: 'SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks.' },
+ { '@type': 'HowToStep', position: 3, name: 'Read the result', text: 'You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.' },
+ { '@type': 'HowToStep', position: 4, name: 'Keep the record', text: 'The check is saved to your account with the date. A $1.99 verification certificate is optional.' },
+ ],
+};
 
 const HowItWorksPage = () => {
  return (
  <>
  <PageSEO
- title="How It Works - Verify Items in Seconds"
-  description="Enter an IMEI, VIN, plate, or serial number. SafeOrStolen checks its reports, public web results, and AI analysis, usually in about 3 seconds."
- keywords="how SafeOrStolen works, verification process, stolen item check explained"
+ title="How It Works: What a SafeOrStolen Check Searches"
+ description="What happens when you run a SafeOrStolen check: what to enter, which sources are searched for phones, cars, guns and bikes, what each result means, and what's saved."
+ keywords="how does safeorstolen work, how stolen item check works, what does safeorstolen search, stolen item check sources, safeorstolen results explained"
  canonical="/how-it-works"
- structuredData={[
- {
- "@context": "https://schema.org",
- "@type": "HowTo",
- "name": "How to Verify if an Item is Stolen",
- "description": "Step-by-step guide to verify if phones, vehicles, electronics, and other items are stolen using SafeOrStolen",
- "step": [
- {
- "@type": "HowToStep",
- "name": "Enter Item Identifier",
- "text": "Enter the IMEI number (phones), VIN (vehicles), serial number (electronics), or license plate into the verification tool."
- },
- {
- "@type": "HowToStep",
- "name": "Automatic Database Search",
-  "text": "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Gun checks also search police theft reports from 34 states plus live Ohio records, and bike checks a national stolen-bicycle registry."
- },
- {
- "@type": "HowToStep",
- "name": "Instant Results",
- "text": "Receive verification results in 3 seconds showing if the item is safe, stolen, or flagged."
- },
- {
- "@type": "HowToStep",
- "name": "View Detailed Report",
-  "text": "Review the sources checked, any matches found, and the recommended next steps."
- }
- ]
- },
- {
- "@context": "https://schema.org",
- "@type": "Service",
- "name": "Stolen Item Verification Methodology",
- "description": "Comprehensive verification service checking multiple databases",
- "provider": {
- "@type": "Organization",
- "name": "SafeOrStolen"
- },
- "serviceType": "Verification Methodology Service"
- }
- ]}
+ modifiedTime="2026-10-07"
+ structuredData={[howToSchema, faqSchema]}
  />
- 
- {/* Minimal noscript fallback */}
- <noscript>
- <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <p><strong>How SafeOrStolen Works</strong></p>
-  <p>SafeOrStolen checks its stolen-item reports, public web results, and AI analysis, usually in about 3 seconds. Enter an IMEI, VIN, plate, or serial number.</p>
- </div>
- </noscript>
- <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
- <div className="container mx-auto px-4 pt-24 pb-4">
+
+ <div className="min-h-screen bg-background pt-20">
+ <div className="container mx-auto px-4 pt-24 pb-4 max-w-4xl">
  <BreadcrumbNavigation items={[{ name: 'How It Works', href: '/how-it-works' }]} />
  </div>
- 
- {/* Hero Section */}
- <section className="py-16">
- <div className="container mx-auto px-4 text-center">
- <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
- How SafeOrStolen Works
- </h1>
- <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
- Verify items before you buy with our comprehensive multi-source verification system
+
+ <article className="container mx-auto px-4 pb-16 max-w-4xl">
+ <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">How SafeOrStolen Works</h1>
+ <p className="text-sm text-muted-foreground mb-6">
+ Updated <time dateTime="2026-10-07">October 7, 2026</time>
  </p>
- <VerificationStats variant="horizontal" className="mt-8 max-w-3xl mx-auto" />
- </div>
- </section>
 
- {/* Credibility Bar */}
- <SitewideCredibilityBar />
-
- {/* Main Process */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">The Verification Process</h2>
- <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
- <ProcessStep
- icon={<Search className="h-8 w-8" />}
- number="1"
- title="Enter Identifier"
- description="Input the IMEI, VIN, or serial number of the item you want to verify"
- />
- <ProcessStep
- icon={<Database className="h-8 w-8" />}
- number="2"
- title="Multi-Source Check"
- description="We check SafeOrStolen reports, public web results, AI analysis, and BikeIndex for bicycles"
- />
- <ProcessStep
- icon={<Zap className="h-8 w-8" />}
- number="3"
- title="Instant Results"
- description="Get comprehensive results in seconds from all sources"
- />
- <ProcessStep
- icon={<Shield className="h-8 w-8" />}
- number="4"
- title="Make Informed Decision"
- description="See clear status and details before completing your purchase"
- />
- </div>
- </div>
- </section>
-
- {/* What We Check */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">What We Check</h2>
- <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
- <ItemTypeCard
- icon="📱"
- title="Phones & Tablets"
- description="Check IMEI numbers against stolen phone databases"
- examples={['iPhone', 'Samsung Galaxy', 'iPad', 'Android tablets']}
- />
- <ItemTypeCard
- icon="🚗"
- title="Vehicles"
- description="Verify VIN numbers for cars, trucks, motorcycles"
- examples={['Cars', 'Trucks', 'Motorcycles', 'RVs']}
- />
- <ItemTypeCard
- icon="🚲"
- title="Bicycles"
- description="Search bicycle serial numbers using BikeIndex and our reported items"
- examples={['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX']}
- />
- <ItemTypeCard
- icon="💻"
- title="Electronics"
- description="Check serial numbers for laptops, cameras, tools, and more"
- examples={['Laptops', 'Cameras', 'Gaming consoles', 'Power tools']}
- />
- </div>
- </div>
- </section>
-
- {/* Data Partners - Crawl & Scrape Sources */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-4">Our Data Partners</h2>
- <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
- Every check covers our own reports, public web results and AI analysis, plus police gun theft records and a stolen-bike registry where relevant
+ <p className="text-lg text-foreground mb-4">
+ You enter an item's IMEI, VIN, plate or serial number. SafeOrStolen searches its own theft
+ reports and public web results, adds police records for guns and Arizona vehicles, a
+ stolen-bicycle registry for bikes and a carrier blacklist on paid phone checks, and shows one of
+ three results in a few seconds, with every source it searched. The check is saved to your
+ account with the date.
  </p>
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
- <DataSourceCard
- title="SafeOrStolen reports and public web results"
- description="Federal stolen property database - the relevant authorities partnership"
- icon="🏛️"
- />
- <DataSourceCard
- title="vehicle history checks"
- description="Look up VINs through public web searches and our internal reports"
- icon="🛡️"
- />
- <DataSourceCard
- title="the national stolen firearm registry"
- description="Stolen firearms registry - firearms verification partner"
- icon="🔫"
- />
- <DataSourceCard
- title="IMEI.info"
- description="Global IMEI database - phone blacklist verification"
- icon="📲"
- />
- <DataSourceCard
- title="bicycle history checks"
- description="1.4M bikes cataloged - direct API integration"
- icon="🚴"
- />
- <DataSourceCard
- title="StolenRegister.com"
- description="Global stolen property - we scrape their listings"
- icon="🔍"
- />
- <DataSourceCard
- title="Stolen911"
- description="Police detective-founded - data sharing partner"
- icon="🚨"
- />
- <DataSourceCard
- title="vehicle history information"
- description="Official VIN records - government data partner"
- icon="🚗"
- />
- <DataSourceCard
- title="Carrier Blacklists"
- description="AT&T, Verizon, T-Mobile IMEI databases"
- icon="📱"
- />
- <DataSourceCard
- title="Insurance Networks"
- description="Aggregated theft claims from major insurers"
- icon="📋"
- />
- </div>
- <div className="text-center mt-6 p-4 bg-muted/30 rounded-lg max-w-3xl mx-auto">
- <p className="text-sm text-muted-foreground">
- <strong>Real-time aggregation:</strong> When you search, we run every relevant source at the same time 
- and return one result in about 3 seconds.
+ <p className="text-muted-foreground mb-8">
+ Below is exactly what goes in, what gets searched, what comes back, and what a check can't tell
+ you. To run one now, use the <Link to="/check-if-stolen" className="text-primary underline">stolen item checker</Link>.
  </p>
- </div>
- </div>
- </section>
 
- {/* How to Find Identifiers */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">How to Find Identifiers</h2>
- <div className="space-y-6 max-w-4xl mx-auto">
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <span>📱</span> IMEI (Phone/Tablet)
- </CardTitle>
- </CardHeader>
- <CardContent>
- <div className="space-y-2">
- <p><strong>Method 1:</strong> Dial *#06# on your phone</p>
- <p><strong>Method 2:</strong> Settings → About Phone → IMEI</p>
- <p><strong>Method 3:</strong> Check the original box or SIM tray</p>
- <p className="text-sm text-muted-foreground">IMEI is 15 digits long</p>
- </div>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <span>🚗</span> VIN (Vehicle)
- </CardTitle>
- </CardHeader>
- <CardContent>
- <div className="space-y-2">
- <p><strong>Method 1:</strong> Dashboard near windshield (driver's side)</p>
- <p><strong>Method 2:</strong> Driver's side door jamb sticker</p>
- <p><strong>Method 3:</strong> Vehicle registration or insurance card</p>
- <p className="text-sm text-muted-foreground">VIN is 17 characters long</p>
- </div>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <span>🔢</span> Serial Number (Electronics/Other)
- </CardTitle>
- </CardHeader>
- <CardContent>
- <div className="space-y-2">
- <p><strong>Method 1:</strong> Check device label or sticker</p>
- <p><strong>Method 2:</strong> Settings → About → Serial Number</p>
- <p><strong>Method 3:</strong> Original packaging or receipt</p>
- <p className="text-sm text-muted-foreground">Serial numbers vary in length</p>
- </div>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* Free and Premium */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">Free and Premium Plans</h2>
- <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
- <Card className="border-2 border-border">
- <CardHeader className="bg-muted/30">
- <CardTitle>Free Plan</CardTitle>
- <CardDescription>Great for occasional buyers</CardDescription>
- </CardHeader>
- <CardContent className="pt-6">
- <div className="space-y-3">
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>2 free searches</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>Valid for 14 days</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>Multi-source verification</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>Basic search history</span>
- </div>
- </div>
- <Button variant="outline" className="w-full mt-6" asChild>
- <Link to="/auth">Get Started Free</Link>
- </Button>
- </CardContent>
- </Card>
-
- <Card className="border-2 border-primary shadow-lg">
- <CardHeader className="bg-primary/5">
- <CardTitle className="flex items-center gap-2">
- Premium Plan
- <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded-[0.25rem]">Popular</span>
- </CardTitle>
- <CardDescription>For serious buyers & sellers</CardDescription>
- </CardHeader>
- <CardContent className="pt-6">
- <div className="space-y-3">
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span><strong>Unlimited searches</strong></span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>Multi-source verification</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>Full search history</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>Priority support</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>API access (coming soon)</span>
- </div>
- </div>
- <Button className="w-full mt-6" asChild>
- <Link to="/pricing">View Pricing</Link>
- </Button>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* Why It Matters */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">Why Verification Matters</h2>
- <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
- <Card className="border-2 border-red-200 bg-red-50/50 dark:bg-red-950/20">
- <CardContent className="pt-6">
- <AlertTriangle className="h-12 w-12 text-red-500 mb-4" />
- <h3 className="text-xl font-bold mb-2">Avoid Legal Issues</h3>
- <p className="text-muted-foreground">
- Buying stolen property is illegal and you could lose both the item and your money
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Step 1: You enter the number</h2>
+ <p className="text-muted-foreground mb-4">
+ One box takes any identifier. A 15-digit number is read as a phone IMEI, 17 characters as a
+ VIN, and anything else as a serial number or plate. You can also pick the item type yourself.
+ Get the number from the item, not from the listing text: ask the seller for a photo of the
+ label, the engraving or the Settings screen, and check that same number again when you meet.
  </p>
- </CardContent>
- </Card>
 
- <Card className="border-2 border-yellow-200 bg-yellow-50/50 dark:bg-yellow-950/20">
- <CardContent className="pt-6">
- <AlertTriangle className="h-12 w-12 text-yellow-500 mb-4" />
- <h3 className="text-xl font-bold mb-2">Protect Your Investment</h3>
- <p className="text-muted-foreground">
- Stolen items can be remotely disabled, blacklisted, or confiscated by police
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Step 2: The sources are searched</h2>
+ <p className="text-muted-foreground mb-4">
+ Every check searches two things: theft reports owners have filed on SafeOrStolen, and public web
+ results such as listings and posts that mention the number. Some item types get more.
  </p>
- </CardContent>
- </Card>
+ <div className="overflow-x-auto mb-6">
+ <table className="w-full text-sm border border-border">
+ <thead className="bg-muted/50">
+ <tr>
+ <th className="text-left p-3 border-b border-border">Item</th>
+ <th className="text-left p-3 border-b border-border">What you enter</th>
+ <th className="text-left p-3 border-b border-border">Always searched</th>
+ <th className="text-left p-3 border-b border-border">Added for this item</th>
+ </tr>
+ </thead>
+ <tbody>
+ {SOURCES.map((s) => (
+ <tr key={s.item} className="align-top">
+ <td className="p-3 border-b border-border font-semibold">{s.item}</td>
+ <td className="p-3 border-b border-border">{s.enter}</td>
+ <td className="p-3 border-b border-border">{s.searched}</td>
+ <td className="p-3 border-b border-border">{s.extra}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
 
- <Card className="border-2 border-green-200 bg-green-50/50 dark:bg-green-950/20">
- <CardContent className="pt-6">
- <Shield className="h-12 w-12 text-green-500 mb-4" />
- <h3 className="text-xl font-bold mb-2">Peace of Mind</h3>
- <p className="text-muted-foreground">
-  Make a more informed decision using the sources shown in your result
+ <h3 className="text-xl font-bold mt-6 mb-3">What a check does not search</h3>
+ <p className="text-muted-foreground mb-3">
+ Some records aren't open to the public, and SafeOrStolen doesn't pretend otherwise. A check does
+ not search:
  </p>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* How SafeOrStolen Works - Detailed Section */}
- <HowSafeOrStolenWorksSection />
- 
- {/* Marketplace Safety Section */}
- <MarketplaceSafetySection />
- 
- {/* Statistics */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-12 max-w-5xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-8">Our Impact</h2>
- <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
- <div>
-  <div className="text-5xl font-bold mb-2">6</div>
-  <div className="text-xl opacity-90">Item Categories</div>
- </div>
- <div>
-  <div className="text-5xl font-bold mb-2">3 sec</div>
-  <div className="text-xl opacity-90">Average Result Time</div>
- </div>
- <div>
-  <div className="text-5xl font-bold mb-2">2</div>
-  <div className="text-xl opacity-90">Free Checks to Start</div>
- </div>
- </div>
- </div>
- </div>
- </section>
-
- {/* FAQ Section */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
- <div className="space-y-4 max-w-3xl mx-auto">
- <FAQItem
- question="How accurate are the results?"
- answer="We search multiple databases and provide results from each source. While we strive for accuracy, we recommend verifying with the seller and local authorities for high-value items."
- />
- <FAQItem
- question="What if an item isn't in your database?"
- answer="A 'not found' result means the item doesn't appear in our databases at the time of search. This is generally a good sign, but always exercise caution and verify seller authenticity."
- />
- <FAQItem
- question="Can I report a stolen item?"
- answer="Yes! You can report stolen items through your dashboard, and we'll add them to our database to help others avoid buying stolen property."
- />
- <FAQItem
- question="Do you store my search history?"
- answer="For registered users, we store search history to help you track items you've verified. Free users have limited history access."
- />
- <FAQItem
- question="What if I find my stolen item on SafeOrStolen?"
- answer="Contact community theft immediately with the verification report. We can provide supporting documentation to help with recovery."
- />
- </div>
- </div>
- </section>
-
- {/* What We Check - Item Types */}
- <section className="py-12">
- <div className="container mx-auto px-4">
-  <h2 className="text-3xl font-bold text-center mb-8">Sources Used in Our Checks</h2>
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
- <DataSourceCard
- title="SafeOrStolen Database"
- description="Our proprietary database of user-reported stolen items"
- icon="🏠"
- />
- <DataSourceCard
-  title="BikeIndex"
-  description="Additional source used for bicycle checks"
- icon="🚴"
- />
- <DataSourceCard
-  title="Public Web Results"
-  description="Publicly available pages related to the submitted identifier"
- icon="🔍"
- />
- <DataSourceCard
-  title="AI Analysis"
-  description="Plain-language analysis of the information returned"
- icon="🚗"
- />
- <DataSourceCard
-  title="Police gun theft records"
-  description="242,839 police theft and loss reports from 34 states, plus live Ohio records"
- icon="🚨"
- />
- <DataSourceCard
- title="More Coming Soon"
- description="We're constantly adding new data sources"
- icon="➕"
- />
- </div>
- </div>
- </section>
-
- {/* How to Find Identifiers */}
- <section className="py-12 bg-muted/30">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">How to Find Identifiers</h2>
- <div className="space-y-6 max-w-4xl mx-auto">
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <span>📱</span> IMEI (Phone/Tablet)
- </CardTitle>
- </CardHeader>
- <CardContent>
- <div className="space-y-2">
- <p><strong>Method 1:</strong> Dial *#06# on your phone</p>
- <p><strong>Method 2:</strong> Settings → About Phone → IMEI</p>
- <p><strong>Method 3:</strong> Check the original box or SIM tray</p>
- <p className="text-sm text-muted-foreground">IMEI is 15 digits long</p>
- </div>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <span>🚗</span> VIN (Vehicle)
- </CardTitle>
- </CardHeader>
- <CardContent>
- <div className="space-y-2">
- <p><strong>Method 1:</strong> Dashboard near windshield (driver's side)</p>
- <p><strong>Method 2:</strong> Driver's side door jamb sticker</p>
- <p><strong>Method 3:</strong> Vehicle registration or insurance card</p>
- <p className="text-sm text-muted-foreground">VIN is 17 characters long</p>
- </div>
- </CardContent>
- </Card>
-
- <Card>
- <CardHeader>
- <CardTitle className="flex items-center gap-2">
- <span>🔢</span> Serial Number (Electronics/Other)
- </CardTitle>
- </CardHeader>
- <CardContent>
- <div className="space-y-2">
- <p><strong>Method 1:</strong> Check device label or sticker</p>
- <p><strong>Method 2:</strong> Settings → About → Serial Number</p>
- <p><strong>Method 3:</strong> Original packaging or receipt</p>
- <p className="text-sm text-muted-foreground">Serial numbers vary in length</p>
- </div>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* Free and Premium */}
- <section className="py-12">
- <div className="container mx-auto px-4">
- <h2 className="text-3xl font-bold text-center mb-8">Free and Premium Plans</h2>
- <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
- <Card className="border-2 border-border">
- <CardHeader className="bg-muted/30">
- <CardTitle>Free Plan</CardTitle>
- <CardDescription>Great for occasional buyers</CardDescription>
- </CardHeader>
- <CardContent className="pt-6">
- <div className="space-y-3">
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>2 free searches</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>Valid for 1 week</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>Multi-source verification</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-green-500" />
- <span>Basic search history</span>
- </div>
- </div>
- <Button variant="outline" className="w-full mt-6" asChild>
- <Link to="/auth">Get Started Free</Link>
- </Button>
- </CardContent>
- </Card>
-
- <Card className="border-2 border-primary shadow-lg">
- <CardHeader className="bg-primary/5">
- <CardTitle className="flex items-center gap-2">
- Premium Plan
- <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded-[0.25rem]">Popular</span>
- </CardTitle>
- <CardDescription>For serious buyers & sellers</CardDescription>
- </CardHeader>
- <CardContent className="pt-6">
- <div className="space-y-3">
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span><strong>Unlimited searches</strong></span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>Multi-source verification</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>Full search history</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>Priority support</span>
- </div>
- <div className="flex items-center gap-2">
- <CheckCircle className="h-5 w-5 text-primary" />
- <span>API access (coming soon)</span>
- </div>
- </div>
- <Button className="w-full mt-6" asChild>
- <Link to="/pricing">View Pricing</Link>
- </Button>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* CTA */}
- <section className="py-12">
- <div className="container mx-auto px-4 text-center">
- <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
- <p className="text-xl text-muted-foreground mb-6">
- Start with 2 free searches today
+ <ul className="list-disc pl-6 space-y-1 text-muted-foreground mb-4">
+ <li>The FBI's NCIC or ATF eTrace (police-only systems)</li>
+ <li>State DMV or MVD title and registration records</li>
+ <li>Carrier records, other than the blacklist search on a paid phone check</li>
+ <li>Apple Activation Lock, Find My, or Google account status</li>
+ <li>Manufacturer, pawn shop or insurance company databases</li>
+ </ul>
+ <p className="text-muted-foreground mb-4">
+ That's why the result always lists its sources. You can see what was covered and decide what
+ else to check yourself, like having the seller sign out of their Apple ID in front of you.
  </p>
+
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Step 3: You get one of three results</h2>
+ <div className="overflow-x-auto mb-6">
+ <table className="w-full text-sm border border-border">
+ <thead className="bg-muted/50">
+ <tr>
+ <th className="text-left p-3 border-b border-border">Result</th>
+ <th className="text-left p-3 border-b border-border">What it means</th>
+ <th className="text-left p-3 border-b border-border">What to do</th>
+ </tr>
+ </thead>
+ <tbody>
+ {RESULTS.map((r) => (
+ <tr key={r.label} className="align-top">
+ <td className="p-3 border-b border-border font-semibold">{r.label}</td>
+ <td className="p-3 border-b border-border">{r.meaning}</td>
+ <td className="p-3 border-b border-border">{r.next}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Step 4: The check is saved</h2>
+ <p className="text-muted-foreground mb-4">
+ Each check goes into your account history with the number, the date, the result and the sources
+ searched. You can come back to it if a question comes up after the sale. If you want a record
+ you can send to someone, add a verification certificate for $1.99. It's a dated record with its
+ own link that shows you checked before you bought. Monthly members get certificates free.
+ </p>
+
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">What it costs</h2>
+ <p className="text-muted-foreground mb-4">
+ A free account comes with 2 checks and no credit card. After that it's $3.99 for a single check
+ or $14.99 a month for unlimited checks. Full details are on the{' '}
+ <Link to="/pricing" className="text-primary underline">pricing page</Link>. Pawn shops and
+ dealers checking many items at once can use <Link to="/bulk-check" className="text-primary underline">bulk check</Link>.
+ </p>
+
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Not sure where the number is?</h2>
+ <p className="text-muted-foreground mb-4">
+ Each item has its own page with photos of where to look:{' '}
+ <Link to="/imei-checker" className="text-primary underline">phones</Link>,{' '}
+ <Link to="/vin-checker" className="text-primary underline">cars</Link>,{' '}
+ <Link to="/license-plate-lookup" className="text-primary underline">plates</Link>,{' '}
+ <Link to="/firearms-check" className="text-primary underline">guns</Link>,{' '}
+ <Link to="/check-bike" className="text-primary underline">bikes</Link> and{' '}
+ <Link to="/serial-number-checker" className="text-primary underline">everything else with a serial number</Link>.
+ For a buyer's checklist from listing to handover, read{' '}
+ <Link to="/how-to-verify-a-used-item" className="text-primary underline">how to verify a used item</Link>.
+ </p>
+
+ <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Questions people ask</h2>
+ <div className="space-y-6">
+ {FAQS.map((f) => (
+ <div key={f.question}>
+ <h3 className="font-semibold text-lg text-foreground mb-1">{f.question}</h3>
+ <p className="text-muted-foreground">{f.answer}</p>
+ </div>
+ ))}
+ </div>
+
+ <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center">
+ <h2 className="text-2xl font-bold mb-2">Run a check</h2>
+ <p className="text-muted-foreground mb-4">2 free checks with a free account. No credit card.</p>
  <Button size="lg" asChild>
- <Link to="/dashboard">Start Verification</Link>
+ <Link to="/verify">Check an item</Link>
  </Button>
  </div>
- </section>
+ </article>
  </div>
  </>
  );
 };
 
-// Component Helpers
-function ProcessStep({ icon, number, title, description }: { icon: React.ReactNode; number: string; title: string; description: string }) {
- return (
- <div className="text-center">
- <div className="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
- {icon}
- </div>
- <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2 text-sm font-bold">
- {number}
- </div>
- <h3 className="font-bold mb-2">{title}</h3>
- <p className="text-sm text-muted-foreground">{description}</p>
- </div>
- );
-}
-
-function ItemTypeCard({ icon, title, description, examples }: { icon: string; title: string; description: string; examples: string[] }) {
- return (
- <Card>
- <CardContent className="pt-6">
- <div className="text-4xl mb-3">{icon}</div>
- <h3 className="text-xl font-bold mb-2">{title}</h3>
- <p className="text-muted-foreground mb-3">{description}</p>
- <div className="flex flex-wrap gap-2">
- {examples.map((example, idx) => (
- <span key={idx} className="text-xs bg-muted px-2 py-1 rounded-[0.25rem]">
- {example}
- </span>
- ))}
- </div>
- </CardContent>
- </Card>
- );
-}
-
-function DataSourceCard({ title, description, icon }: { title: string; description: string; icon: string }) {
- return (
- <Card>
- <CardContent className="pt-6 text-center">
- <div className="text-4xl mb-3">{icon}</div>
- <h3 className="font-bold mb-2">{title}</h3>
- <p className="text-sm text-muted-foreground">{description}</p>
- </CardContent>
- </Card>
- );
-}
-
-function FAQItem({ question, answer }: { question: string; answer: string }) {
- const [isOpen, setIsOpen] = useState(false);
- 
- return (
- <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setIsOpen(!isOpen)}>
- <CardContent className="pt-6">
- <div className="flex items-center justify-between">
- <h3 className="font-bold">{question}</h3>
- <span className="text-2xl text-primary">{isOpen ? '−' : '+'}</span>
- </div>
- {isOpen && (
- <p className="text-muted-foreground mt-3">{answer}</p>
- )}
- </CardContent>
- </Card>
- );
-}
-
 export default HowItWorksPage;
-

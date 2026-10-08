@@ -1,139 +1,159 @@
 import { ClusterArticleTemplate } from '@/components/blog/ClusterArticleTemplate';
 
+/**
+ * Oct 7 2026: rewritten by hand for "bought a stolen phone what to do" / "i bought a stolen phone".
+ * No Search Console rows for this URL yet. Removed the "$600" loss figure, the "twenty seconds"
+ * claim, the claim that Apple uses the carrier blacklist, and links to /check-phone (now
+ * /imei-checker). Legal points are kept general.
+ */
 export default function BoughtStolenPhoneWhatToDo() {
   return (
     <ClusterArticleTemplate
       slug="bought-stolen-phone-what-to-do"
-      metaDescription="You think the used phone you just bought is stolen. Here is exactly what to do — in the right order — to protect yourself legally and try to get your money back."
-      keywords="bought stolen phone, what to do if I bought a stolen phone, stolen phone legal, IMEI blacklisted"
-      lastReviewed="February 8, 2026"
+      metaDescription="Bought a phone that turned out to be stolen? What to do, in order: stop using it, keep the evidence, report it to police, and try to get your money back."
+      keywords="bought a stolen phone, i bought a stolen phone what do i do, what to do if you bought a stolen phone, accidentally bought stolen phone, bought stolen iphone"
+      lastReviewed="October 7, 2026"
       intro={
         <>
           <p>
-            You paid cash for a used iPhone on Facebook Marketplace. A week later it stops
-            working on your carrier, or an activation screen you can't get past appears.
-            The seller has vanished. You are pretty sure the phone was stolen.
+            If you bought a phone that turns out to be stolen, stop using it, don't reset it,
+            save the listing, messages and payment record, and report it to your local police.
+            Then ask your payment provider or the marketplace for your money back. Buying a
+            stolen phone without knowing is generally not a crime, but you usually can't keep
+            the phone, and acting quickly is what shows you bought it in good faith.
           </p>
-          <p>
-            The order you do things in now matters — a lot. Handled right, you keep
-            yourself out of legal trouble and give yourself a real chance to get your
-            money back. Handled wrong, you can accidentally look like the thief.
-          </p>
+          <p>Here's each step, in the order that protects you.</p>
         </>
       }
       body={
         <>
-          <h2>Step 1: Stop using the phone</h2>
+          <h2>How you usually find out</h2>
+          <ul>
+            <li>The phone shows "No service" or "SIM not supported" with a working SIM a few days after you bought it. That's often a blacklist.</li>
+            <li>After a reset, it asks for someone else's Apple Account ("iPhone Locked to Owner") or a Google account previously synced on the device.</li>
+            <li>The lock screen suddenly shows a message and phone number from the owner. They've marked it lost.</li>
+            <li>An IMEI check comes back "reported stolen".</li>
+            <li>Police or the owner contact you.</li>
+          </ul>
+
+          <h2>Step 1: Stop using it and don't reset it</h2>
           <p>
-            The moment you suspect the device is stolen, take your SIM out and stop signing
-            into personal accounts on it. Every login, iCloud sync, or backup you push through
-            a stolen device makes the situation messier — for the original owner and for you.
-            Set the phone aside somewhere safe and don't factory-reset it. The current state
-            of the device (Activation Lock screen, blacklist message, previous owner's Apple ID
-            hint) is your evidence.
+            Take your SIM out, sign out of your own accounts, and put the phone somewhere safe.
+            Don't erase it, don't try to bypass a lock, and don't sell it on. The lock screen, the
+            owner's message and the IMEI are your evidence. Trying to resell a phone once you
+            know it's stolen can turn an innocent mistake into a crime.
           </p>
 
-          <h2>Step 2: Confirm it is actually stolen</h2>
+          <h2>Step 2: Confirm what's wrong</h2>
           <p>
-            Not every dead phone is a stolen phone. Before you accuse a seller, rule out the
-            boring explanations:
+            Not every dead phone is stolen. Dial <code>*#06#</code> for the IMEI and run it on the{' '}
+            <a href="/imei-checker">IMEI check</a>. The free check searches SafeOrStolen theft
+            reports and public web results; the paid check looks at the carrier lost/stolen
+            blacklist. A phone can also be blocked because the previous owner stopped paying for
+            it, or simply locked to another carrier. Those are still the seller's problem, but
+            the steps below differ a little.
           </p>
+
+          <h2>Step 3: Save everything</h2>
           <ul>
-            <li><strong>Unpaid financing.</strong> Phones on carrier payment plans get blocked when the previous owner stops paying. That is a lost-or-stolen–style block that is not always a police report.</li>
-            <li><strong>Insurance claim.</strong> The previous owner reported it lost, got a replacement, then sold the original. Same blacklist result.</li>
-            <li><strong>Region lock or carrier lock.</strong> A phone that's fine on one carrier but bricked on yours may just be locked, not stolen.</li>
+            <li>Screenshots of the listing and the seller's profile</li>
+            <li>Every message with the seller, including their phone number or username</li>
+            <li>The payment record: card statement, payment app receipt, or bank transfer</li>
+            <li>A photo of the phone showing the IMEI and any lock or owner message</li>
+            <li>Where and when you met, and anything the seller said about the phone</li>
           </ul>
           <p>
-            The fastest way to separate a real stolen report from these is to run the IMEI
-            through a stolen check. Dial <code>*#06#</code> to see the IMEI, then run it on
-            our free <a href="/check-phone">stolen-phone check</a>. If it comes back reported
-            stolen, you have a real problem — not just a blacklist.
+            If you ran a SafeOrStolen check before buying, it's saved to your account with the
+            date. That record helps show you checked before you paid.
           </p>
 
-          <h2>Step 3: Document everything</h2>
+          <h2>Step 4: Report it to the police</h2>
           <p>
-            Screenshot the listing. Screenshot every message with the seller. Save the payment
-            record (Zelle, Venmo, Cash App, bank transfer, cash-in-hand receipt if you were
-            smart enough to get one). Photograph the phone showing the IMEI and any lock
-            screen. This is what you will need in step 5 to get your money back and in step 4
-            to keep yourself out of trouble.
-          </p>
-
-          <h2>Step 4: Report it to the police — yes, really</h2>
-          <p>
-            This is the step people skip because they are scared they'll be treated like a
-            criminal. In practice, walking a stolen phone into a police station voluntarily
-            with a printout of the messages is the single strongest thing you can do to prove
-            you were a buyer, not a fence. Ask for the report number in writing. You may also
-            be able to file online in your city.
+            Call your local police non-emergency line or use their online report if they have
+            one. Tell them you bought a phone you now believe is stolen, and give them the IMEI,
+            the seller's details and your evidence. Ask for a report number. Reporting it
+            yourself is the clearest way to show you were the buyer, not part of the theft.
           </p>
           <p>
-            Bring the phone, your ID, the seller's contact info, the listing screenshot, and
-            the payment record. Ask the officer whether they can return the device to the
-            registered owner. In most cases the phone goes back to that owner, which is the
-            outcome the law expects — you don't get to keep stolen property even if you paid
-            for it in good faith.
+            Expect the phone to go back to its owner. The law generally doesn't let a thief pass
+            ownership to anyone, so even a buyer who paid in good faith usually has to give it up.
           </p>
 
           <h2>Step 5: Try to get your money back</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>How you paid</th>
+                <th>What to do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Credit card</td>
+                <td>Call the card issuer and dispute the charge. Give them the police report number.</td>
+              </tr>
+              <tr>
+                <td>PayPal Goods &amp; Services, or a marketplace's own checkout</td>
+                <td>Open a dispute or claim through that service as soon as you can. Their time limits are strict.</td>
+              </tr>
+              <tr>
+                <td>Cash, Zelle, Venmo friends payments, Cash App</td>
+                <td>These usually can't be reversed. Your options are asking the seller, the police report, and small claims court if you can identify them.</td>
+              </tr>
+            </tbody>
+          </table>
           <p>
-            Your recovery odds depend almost entirely on how you paid:
-          </p>
-          <ul>
-            <li><strong>Credit card:</strong> best case. File a chargeback for "item not as described" with the police report attached.</li>
-            <li><strong>PayPal Goods &amp; Services:</strong> open a dispute the same day. Include the police report number and IMEI.</li>
-            <li><strong>Zelle / Venmo Friends &amp; Family / Cash App / cash:</strong> these are designed to be non-reversible. Filing a police report on the seller is your realistic path, and it's a long one.</li>
-          </ul>
-          <p>
-            If the seller's platform account is still live, report the account with the police
-            report number. Facebook Marketplace, OfferUp, eBay, and Craigslist all have flows
-            for this — buried, but there.
+            Also report the seller's account to the marketplace (Facebook Marketplace, OfferUp,
+            eBay, Craigslist) with the report number, so they can't keep selling.
           </p>
 
-          <h2>Are you in legal trouble?</h2>
+          <h2>Should you contact the seller?</h2>
           <p>
-            In most US states, unknowingly buying stolen property is not itself a crime.
-            "Receiving stolen property" charges usually require the prosecutor to prove you
-            knew, or should have known, it was stolen. The steps above — running an IMEI check
-            before you bought, filing a report as soon as you found out, cooperating with
-            police — are exactly the actions that show good faith.
-          </p>
-          <p>
-            The one thing that flips the script fast is trying to resell the phone once you
-            suspect it's stolen. Don't do that. That is a decision that can turn a bad Sunday
-            into a criminal record.
+            A calm message asking for a refund is fine. Don't threaten them or meet them again.
+            Many sellers of stolen phones delete their account once they're questioned, so save
+            your screenshots before you send anything.
           </p>
 
-          <h2>Next time, check first</h2>
+          <h2>Next time</h2>
           <p>
-            The playbook that stops this from happening again is simple: ask for the IMEI
-            before you meet, run it on our <a href="/check-phone">phone check</a>, and only
-            buy in person with a payment method that has buyer protection. It takes about
-            twenty seconds and it is the single biggest thing that separates people who lose
-            $600 on Marketplace from people who don't.
+            Get the IMEI before you meet, check it, and watch the seller erase the phone and remove
+            their account before you pay. Our{' '}
+            <a href="/blog/buying-used-phone-checklist">used phone checklist</a> covers the whole
+            meetup, and <a href="/blog/how-to-check-if-iphone-stolen">how to check if an iPhone is
+            stolen</a> covers Activation Lock.
           </p>
         </>
       }
       faqs={[
         {
-          question: 'Will I be arrested for buying a stolen phone?',
+          question: 'What happens if you accidentally buy a stolen phone?',
           answer:
-            'In most US states you have to have known — or reasonably should have known — that the item was stolen for a receiving-stolen-property charge to stick. Filing a police report yourself the moment you found out is the single strongest way to show you were a buyer, not a fence.',
+            "You generally aren't charged with a crime if you didn't know it was stolen, but you usually lose the phone, because police return stolen property to its owner. Stop using it, keep your evidence, report it to police, and ask your payment provider about a dispute.",
         },
         {
-          question: 'Can I unbrick a phone that shows up as stolen?',
+          question: 'Can I get in trouble for buying a stolen phone?',
           answer:
-            'No. The blacklist that carriers and Apple use is tied to the IMEI or serial, not the software. Factory resets, jailbreaks, and IMEI "cleaning" services do not remove a real stolen report — anyone offering to do that is usually running a second scam.',
+            'Receiving stolen property laws generally require that you knew, or in some states should have known, the phone was stolen. A very low price or a seller who hid the IMEI can count against you. Reporting it to police yourself and keeping your pre-purchase checks helps show good faith. Laws vary by state.',
         },
         {
-          question: 'Do I get my money back if the phone is returned to the owner?',
+          question: 'Can I keep a stolen phone if I paid for it?',
           answer:
-            'The original owner is not required to pay you. Your only realistic paths to recovery are (a) a chargeback if you paid by credit card or PayPal Goods & Services, or (b) a civil claim or criminal restitution against the seller — which is why the police report matters.',
+            "Usually not. A thief generally can't pass ownership to anyone, so the original owner still owns the phone even if you paid a fair price in good faith. Police can return it to them. Your claim for the money is against the seller, not the owner.",
         },
         {
-          question: 'Should I contact the seller and confront them?',
+          question: 'Can a stolen phone be unlocked or unblacklisted?',
           answer:
-            'No. Tipping off the seller almost always ends with them ghosting you and deleting the account. File the report and the chargeback first, quietly. Let the platform and the police make contact.',
+            "No. Activation Lock, Google's Factory Reset Protection and a carrier blacklist can only be removed by the owner or the carrier. Paid unlock or IMEI 'cleaning' services don't fix it, and changing an IMEI is illegal in many countries. Don't spend more money on the phone.",
+        },
+        {
+          question: 'How do I get my money back after buying a stolen phone?',
+          answer:
+            "Dispute the payment if you used a credit card, PayPal Goods & Services or a marketplace checkout, and give them your police report number. Cash and most payment-app transfers can't be reversed, so your options are the seller, the police case, or small claims court.",
+        },
+        {
+          question: 'How do I check if a phone is reported stolen?',
+          answer:
+            "Dial *#06# for the IMEI and enter it on SafeOrStolen (safeorstolen.com/imei-checker). It searches SafeOrStolen theft reports and public web results and shows the phone's model, and a paid check covers the carrier lost/stolen blacklist. A free account includes 2 checks.",
         },
       ]}
     />

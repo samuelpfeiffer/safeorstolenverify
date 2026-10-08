@@ -1,383 +1,210 @@
+/**
+ * Oct 7 2026: rewritten by hand for "most stolen items" / "what items are commonly stolen and
+ * resold". No Search Console data for this URL. The old "2024 theft trends report" had no named
+ * source for any figure, so every statistic was removed: dollar totals, recovery rates, theft counts
+ * per category, the city theft-rate ranking, "record levels", "62% of gun thefts", "$15 billion",
+ * "resold within 24 hours". Also removed: "API connections with eBay/Facebook", "law enforcement
+ * coordination", "legal protection", "34 states", AI-processing claims. What's left is a short,
+ * number-free guide to items commonly stolen and resold and how to check each one.
+ */
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Card } from '@/components/ui/card';
-import { TrendingUp, AlertTriangle, Shield, BarChart3, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { blogImages } from '@/assets/blog';
+
+const ITEMS: { item: string; why: string; number: string; check: string; link: string }[] = [
+  {
+    item: 'Phones and tablets',
+    why: 'Small, valuable, easy to grab',
+    number: 'IMEI: dial *#06#',
+    check: 'Run the IMEI, then watch the seller sign out of their Apple ID or Google account and erase it',
+    link: '/imei-checker',
+  },
+  {
+    item: 'Cars, trucks and motorcycles',
+    why: 'High value; parts sell too',
+    number: 'VIN on dashboard and door jamb',
+    check: 'Run the VIN, match it to the title, match the title name to the seller’s ID',
+    link: '/vin-checker',
+  },
+  {
+    item: 'Laptops',
+    why: 'Taken from cars, bags and offices',
+    number: 'Serial on the bottom case',
+    check: 'Run the serial; make sure it boots to a fresh setup screen with no company or school login',
+    link: '/serial-number-checker',
+  },
+  {
+    item: 'Bikes and e-bikes',
+    why: 'Quick to take, hard to trace without a serial',
+    number: 'Frame serial under the bottom bracket',
+    check: 'Run the serial (it’s also searched against a national stolen-bicycle registry)',
+    link: '/check-bike',
+  },
+  {
+    item: 'Power tools',
+    why: 'Taken from job sites and trucks, sold in bulk',
+    number: 'Nameplate on the motor housing',
+    check: 'Run each tool, battery and charger; walk away from scratched nameplates',
+    link: '/how-to-check-if-tools-stolen',
+  },
+  {
+    item: 'Guns',
+    why: 'Taken from cars and homes',
+    number: 'Serial on the frame or receiver',
+    check: 'Run the serial (searched against police firearm theft and loss reports from 33 states and DC, plus live Ohio records)',
+    link: '/gun-serial-number-lookup',
+  },
+  {
+    item: 'Game consoles, cameras and lenses',
+    why: 'Popular, easy to resell online',
+    number: 'Serial on the label or base',
+    check: 'Run the serial; ask for the box, which usually carries the same serial',
+    link: '/serial-number-checker',
+  },
+];
+
+const FAQS = [
+  {
+    question: 'What are the most commonly stolen items that get resold?',
+    answer:
+      "Phones, tablets, laptops, cars and their parts, bikes and e-bikes, power tools, guns, game consoles, cameras and jewelry are the items that come up again and again in theft reports and resale listings. They share three traits: they're valuable, easy to carry, and easy to sell online or at a meetup without paperwork.",
+  },
+  {
+    question: 'How can I tell if something for sale is stolen?',
+    answer:
+      "Get the serial number, IMEI or VIN off the item itself and check it on SafeOrStolen (safeorstolen.com), which searches theft reports and shows every source. Then look for the usual signs: a price far below the going rate, a scratched or covered serial, no receipt or box, a seller in a hurry, and a phone or laptop still locked to someone else's account.",
+  },
+  {
+    question: 'Why are stolen items often sold without serial numbers?',
+    answer:
+      "Because the serial is what ties an item to a theft report. Thieves scratch, grind or cover the serial, or sell items like jewelry that don't have one. A missing or tampered serial on an item that should have one is one of the strongest warning signs. For guns, possessing one with an obliterated serial is a federal crime under 18 U.S.C. § 922(k).",
+  },
+  {
+    question: 'Are there reliable statistics on the most stolen items?',
+    answer:
+      "Some exist for specific categories, such as the FBI's annual crime data for motor vehicle theft, but there's no single trustworthy count across all items, because many thefts are never reported. Be cautious with articles quoting exact national totals for things like phones or tools without naming where the number came from.",
+  },
+];
 
 export default function TheftTrendsReport2024() {
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "2024 Theft Trends Report: What Items Are Most Stolen & How to Protect Yourself",
-    "description": "Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies.",
-    "author": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Most Stolen Items and How to Check Them Before You Buy',
+    description:
+      'The kinds of items most often stolen and resold, the number to look up on each, and how to check whether one is reported stolen before you buy it.',
+    author: { '@type': 'Organization', name: 'SafeOrStolen' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SafeOrStolen',
+      logo: { '@type': 'ImageObject', url: 'https://safeorstolen.com/logo.png' },
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    },
-    "datePublished": "2026-01-15",
-    "dateModified": "2026-01-15"
+    datePublished: '2026-01-15',
+    dateModified: '2026-10-07',
   };
 
   return (
     <>
       <PageSEO
-        title="2024 Theft Trends Report: Most Stolen Items & Protection Guide | SafeOrStolen"
-        description="Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies."
-        keywords="theft trends 2024, most stolen items, theft statistics, crime report, theft prevention, stolen goods data"
+        title="Most Stolen Items and How to Check Them Before You Buy"
+        description="Phones, cars, laptops, bikes, tools and guns are stolen and resold most. The number to look up on each and how to check if one is reported stolen before you pay."
+        keywords="most stolen items, commonly stolen items resold, what items are stolen most, how to tell if an item is stolen, theft trends"
         canonical="/blog/theft-trends-report-2024"
+        modifiedTime="2026-10-07"
+        publishedTime="2026-01-15"
         structuredData={structuredData}
       />
+      <BlogFAQSchema faqs={FAQS} />
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
-          <article className="prose prose-lg max-w-none">
-            <h1 className="text-4xl font-bold mb-6">2024 Theft Trends Report: What Items Are Most Stolen & How to Protect Yourself</h1>
-            
-            <div className="flex items-center gap-4 text-muted-foreground mb-8">
-              <time dateTime="2026-01-15">January 15, 2026</time>
-              <span>•</span>
-              <span>18 min read</span>
+          <article className="prose prose-lg max-w-none dark:prose-invert">
+            <h1 className="text-4xl font-bold mb-4">Most Stolen Items and How to Check Them Before You Buy</h1>
+            <div className="flex items-center gap-4 text-muted-foreground mb-8 text-sm">
+              <time dateTime="2026-10-07">Updated October 7, 2026</time>
+              <span>·</span>
+              <span>5 min read</span>
             </div>
 
-            <BlogHeroImage src={blogImages.theftTrends} alt="Police evidence room with tagged stolen items on shelves - theft trends report" />
+            <BlogHeroImage src={blogImages.theftTrends} alt="Tagged items on shelves in a property room" />
 
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Executive Summary</h2>
-              <p className="text-lg mb-4">
-                In 2024, property theft in the United States reached record levels with billions in stolen goods reported. This comprehensive report analyzes various theft patterns to identify the most targeted items, hot spots, and emerging criminal tactics.
-              </p>
-              <p className="text-lg mb-4">
-                Our analysis reveals that smartphones, vehicles, and electronics remain the top targets, but thieves are increasingly focusing on high-value items that can be quickly resold online through platforms like eBay, Facebook Marketplace, and OfferUp.
-              </p>
-            </section>
+            <p className="text-xl">
+              The items stolen and resold most often are the ones that are valuable, easy to carry and easy to sell without
+              paperwork: phones, tablets, laptops, cars and car parts, bikes and e-bikes, power tools, guns, game consoles, cameras
+              and jewelry. Almost all of them carry a serial number, IMEI or VIN, and that number is how you check one before you buy.
+            </p>
+            <p>
+              This page used to be a "2024 theft trends report" full of national totals. We couldn't trace those numbers to a source
+              we could name, so we took them out. What's here is what holds up: which items to be careful with, and how to check each.
+            </p>
 
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Top 10 Most Stolen Items in 2024</h2>
-              
-              <div className="space-y-6">
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">1. Smartphones & Tablets</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">High resale risk</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $4.2 billion | <strong>Recovery Rate:</strong> 15%
-                  </p>
-                  <p>
-                    iPhones remain the #1 theft target globally. The iPhone 15 Pro Max, Samsung Galaxy S24 Ultra, and iPad Pro are the most frequently stolen devices. Organized theft rings target Apple Stores, electronics retailers, and package deliveries.
-                  </p>
-                  <div className="mt-4 bg-muted p-4 rounded-[0.25rem]">
-                    <p className="font-bold mb-2">Protection Tip:</p>
-                    <p>Always enable Find My iPhone/Android Device Protection, use strong passcodes, and verify IMEI numbers before buying secondhand phones using SafeOrStolen.</p>
-                  </div>
-                </Card>
+            <h2>Items commonly stolen and resold, and how to check each</h2>
+            <div className="not-prose overflow-x-auto my-6">
+              <table className="w-full text-sm border rounded-lg">
+                <thead>
+                  <tr className="border-b bg-muted/50 text-left">
+                    <th className="p-3">Item</th>
+                    <th className="p-3">Why it's targeted</th>
+                    <th className="p-3">Number to look up</th>
+                    <th className="p-3">How to check</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ITEMS.map((r) => (
+                    <tr key={r.item} className="border-b last:border-0 align-top">
+                      <td className="p-3 font-medium text-foreground">
+                        <Link to={r.link} className="text-primary hover:underline">{r.item}</Link>
+                      </td>
+                      <td className="p-3 text-muted-foreground">{r.why}</td>
+                      <td className="p-3 text-muted-foreground">{r.number}</td>
+                      <td className="p-3 text-muted-foreground">{r.check}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Jewelry and watches are the hard case. Most jewelry has no serial, so there's nothing to look up. Luxury watches do
+              have serials, usually between the lugs or on the caseback; ask for the original papers and make sure the serial on
+              them matches the watch.
+            </p>
 
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">2. Motor Vehicles</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">1.1M stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $8.4 billion | <strong>Recovery Rate:</strong> 42%
-                  </p>
-                  <p>
-                    Full-size pickup trucks (Ford F-150, Chevrolet Silverado, Ram 1500) are the most stolen vehicles in 2024. Thieves target specific models using relay attacks to bypass keyless entry systems. California, Texas, and Florida report the highest vehicle theft rates.
-                  </p>
-                  <div className="mt-4 bg-muted p-4 rounded-[0.25rem]">
-                    <p className="font-bold mb-2">Protection Tip:</p>
-                    <p>Verify VIN numbers using SafeOrStolen before purchasing used vehicles. Check for title washing, salvage history, and theft reports across all 50 states.</p>
-                  </div>
-                </Card>
+            <h2>Signs a listing may be stolen goods</h2>
+            <ul>
+              <li>The price is far under what the same item sells for used.</li>
+              <li>The seller won't share the serial, IMEI or VIN before you meet.</li>
+              <li>The serial is scratched, ground off, painted over or covered with a new sticker.</li>
+              <li>Several new-in-box items, or a whole tool set, from one private seller with no receipts.</li>
+              <li>A phone or laptop that's still signed in to someone else's account, or a seller who "forgot the passcode".</li>
+              <li>Pressure to pay cash right now, or a meetup spot that keeps changing.</li>
+            </ul>
 
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">3. Laptops & Computers</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">890K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $1.8 billion | <strong>Recovery Rate:</strong> 8%
-                  </p>
-                  <p>
-                    MacBook Pros, Dell XPS, and gaming laptops are primary targets. Coffee shop thefts, car break-ins, and porch piracy account for most incidents. Serial number verification is critical when buying used laptops.
-                  </p>
-                </Card>
+            <h2>What a check covers</h2>
+            <p>
+              A SafeOrStolen check searches its own theft reports and public web results for any item, plus police firearm theft
+              records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and
+              plates. It can't see NCIC, DMV records or Activation Lock, which is why the in-person signs above still matter. More
+              on that: <Link to="/data-sources">what SafeOrStolen searches</Link>.
+            </p>
 
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">4. Bicycles & E-Bikes</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">750K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $420 million | <strong>Recovery Rate:</strong> 3%
-                  </p>
-                  <p>
-                    High-end e-bikes ($3,000-$8,000) are the fastest-growing theft category. Portland, San Francisco, and Seattle report epidemic levels of bike theft. Most stolen bikes are resold on Craigslist and OfferUp within 24 hours.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">5. Jewelry & Watches</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">680K incidents</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $1.2 billion | <strong>Recovery Rate:</strong> 12%
-                  </p>
-                  <p>
-                    Luxury watches (Rolex, Patek Philippe, Audemars Piguet) are targeted in organized robberies. Thieves follow victims from high-end restaurants and jewelry stores. Many stolen pieces are resold internationally or melted down for gold.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">6. Power Tools & Equipment</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">540K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $680 million | <strong>Recovery Rate:</strong> 5%
-                  </p>
-                  <p>
-                    Construction sites, home garages, and work trucks are primary targets. Milwaukee, DeWalt, and Makita tool sets are most frequently stolen. Serial number verification prevents buying stolen equipment.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">7. Firearms & Ammunition</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">380K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $340 million | <strong>Recovery Rate:</strong> 18%
-                  </p>
-                  <p>
- Handguns are the most stolen firearm type, with 237,000 incidents reported. Vehicle thefts account for 62% of gun thefts. SafeOrStolen's firearms verification service helps prevent illegal firearm sales and trafficking.
-                  </p>
-                  <div className="mt-4 bg-destructive/10 border-l-4 border-destructive p-4 rounded-[0.25rem]">
-                    <p className="font-bold mb-2">⚠️ Legal Requirement:</p>
-                    <p>Purchasing or possessing a stolen firearm is a federal crime. Always verify serial numbers before firearm transactions.</p>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">8. Gaming Consoles & Accessories</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">340K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $280 million | <strong>Recovery Rate:</strong> 6%
-                  </p>
-                  <p>
-                    PlayStation 5, Xbox Series X, and Nintendo Switch OLED are hot targets. Porch piracy during holiday shipping and retail store thefts account for most incidents.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">9. Catalytic Converters</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">320K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $1.1 billion | <strong>Recovery Rate:</strong> 2%
-                  </p>
-                  <p>
-                    Toyota Prius and Honda Element catalytic converters are most targeted due to high precious metal content. Thefts occur in parking lots and driveways, taking less than 2 minutes.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold">10. Musical Instruments</h3>
-                    <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">180K stolen</span>
-                  </div>
-                  <p className="mb-3">
-                    <strong>Total Value:</strong> $240 million | <strong>Recovery Rate:</strong> 4%
-                  </p>
-                  <p>
-                    Professional guitars (Gibson, Fender, Martin), violins, and brass instruments are targeted at rehearsal spaces, cars, and performance venues. Serial number documentation is critical for recovery.
-                  </p>
-                </Card>
+            <h2>Questions people ask</h2>
+            {FAQS.map((f) => (
+              <div key={f.question}>
+                <h3>{f.question}</h3>
+                <p>{f.answer}</p>
               </div>
-            </section>
+            ))}
 
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Theft Hot Spots: Cities with Highest Rates</h2>
-              
-              <div className="bg-muted p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-4">Top 10 Cities by Theft Rate (per 100,000 residents)</h3>
-                <ol className="list-decimal list-inside space-y-2">
-                  <li><strong>San Francisco, CA</strong> - 7,043 thefts per 100K | Car break-ins and bike theft epidemic</li>
-                  <li><strong>Seattle, WA</strong> - 5,892 thefts per 100K | Package theft and vehicle prowling</li>
-                  <li><strong>Oakland, CA</strong> - 5,634 thefts per 100K | Organized retail crime and vehicle theft</li>
-                  <li><strong>Portland, OR</strong> - 5,401 thefts per 100K | Bike theft capital of America</li>
-                  <li><strong>Denver, CO</strong> - 4,987 thefts per 100K | Vehicle and catalytic converter theft</li>
-                  <li><strong>Los Angeles, CA</strong> - 4,756 thefts per 100K | Organized smash-and-grab operations</li>
-                  <li><strong>Austin, TX</strong> - 4,523 thefts per 100K | Package theft and property crime</li>
-                  <li><strong>Memphis, TN</strong> - 4,389 thefts per 100K | Vehicle and firearm theft</li>
-                  <li><strong>Albuquerque, NM</strong> - 4,201 thefts per 100K | Property crime and burglary</li>
-                  <li><strong>Phoenix, AZ</strong> - 3,987 thefts per 100K | Vehicle theft and copper wire theft</li>
-                </ol>
-              </div>
-
-              <p className="text-lg">
-                <strong>Geographic Pattern:</strong> West Coast cities dominate the top 10 due to high property values, large homeless populations, and lenient prosecution policies for property crimes.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Emerging Theft Tactics in 2024</h2>
-              
-              <div className="space-y-6">
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-3">1. Relay Attacks on Keyless Entry Vehicles</h3>
-                  <p>
-                    Thieves use signal amplifiers to extend the range of your key fob, allowing them to unlock and start your car even when your keys are inside your home. This technique works on most vehicles manufactured after 2018 with keyless entry systems.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-3">2. AI-Powered Marketplace Listings</h3>
-                  <p>
-                    Criminals use AI to generate convincing fake listings, professional product photos, and realistic seller profiles. These sophisticated scams make it harder to identify stolen goods on secondhand platforms.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-3">3. Package Tracking Scams</h3>
-                  <p>
-                    Thieves monitor delivery tracking systems and follow delivery trucks, stealing packages within minutes of delivery. High-value electronics and phones are primary targets.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-3">4. Organized Retail Crime (ORC)</h3>
-                  <p>
-                    Professional theft rings conduct coordinated "flash mob" store raids, stealing tens of thousands of dollars in merchandise in under 60 seconds. Stolen goods are fenced through online marketplaces and international shipping.
-                  </p>
-                </Card>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">How SafeOrStolen Combats Theft</h2>
-              
-              <div className="bg-primary/10 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-4">Real-Time Theft Database Integration</h3>
-                <p className="mb-4">
-                  SafeOrStolen aggregates data from its own user reports, public web results, and sophisticated AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 34 states.
-                </p>
-                <p className="mb-4">
-                  Our AI verification system processes millions of data points to provide instant SAFE or STOLEN status for any item you're considering purchasing.
-                </p>
-                <Button asChild size="lg" className="w-full">
-                  <Link to="/verify">Verify Item Now - Prevent Buying Stolen Goods</Link>
-                </Button>
-              </div>
-
-              <h3 className="text-2xl font-bold mb-4">How We Protect Buyers & Sellers:</h3>
-              <ul className="list-disc list-inside space-y-2 text-lg mb-6">
-                <li><strong>Instant Verification:</strong> 3-second checks prevent purchases of stolen property</li>
-                <li><strong>Mobile App Scanner:</strong> Barcode scanning during transactions for real-time verification</li>
-                <li><strong>Legal Protection:</strong> Documentation if you unknowingly purchase stolen goods</li>
-                <li><strong>Marketplace Integration:</strong> API connections with eBay, Facebook Marketplace (coming soon)</li>
-                <li><strong>Law Enforcement Coordination:</strong> Help recover stolen property and identify theft rings</li>
-              </ul>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">2025 Theft Predictions</h2>
-              
-              <div className="bg-muted p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">What to Expect in 2026:</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <strong>Electric Vehicle Battery Theft:</strong> As EV adoption increases, thieves will target expensive battery packs worth $10,000-$20,000 each
-                  </li>
-                  <li>
-                    <strong>Smart Home Device Theft:</strong> Ring doorbells, Nest cameras, and smart locks will become prime targets as resale value increases
-                  </li>
-                  <li>
-                    <strong>Cryptocurrency Hardware Wallet Theft:</strong> Ledger and Trezor devices storing crypto will be targeted in home burglaries
-                  </li>
-                  <li>
-                    <strong>AI-Generated Counterfeit Documentation:</strong> Thieves will use AI to create fake receipts, ownership papers, and authenticity certificates
-                  </li>
-                  <li>
-                    <strong>International Shipping Scams:</strong> More stolen goods will be shipped internationally to avoid US law enforcement detection
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Protect Yourself: Action Plan</h2>
-              
-              <div className="space-y-4">
-                <Card className="p-6 bg-primary/5">
-                  <h3 className="text-xl font-bold mb-3">For Buyers:</h3>
-                  <ul className="space-y-2">
-                    <li>✓ Verify IMEI, VIN, and serial numbers using SafeOrStolen before every purchase</li>
-                    <li>✓ Meet sellers in public places with security cameras</li>
-                    <li>✓ Request original packaging, receipts, and documentation</li>
-                    <li>✓ Use the SafeOrStolen mobile app's barcode scanner during transactions</li>
-                    <li>✓ Walk away if seller refuses verification or creates urgency pressure</li>
-                  </ul>
-                </Card>
-
-                <Card className="p-6 bg-primary/5">
-                  <h3 className="text-xl font-bold mb-3">For Sellers:</h3>
-                  <ul className="space-y-2">
-                    <li>✓ Provide SafeOrStolen verification proof to build buyer trust</li>
-                    <li>✓ Document serial numbers and take photos of all valuable items</li>
-                    <li>✓ Use secure payment methods (avoid cash for high-value items)</li>
-                    <li>✓ Meet in police station parking lots for expensive transactions</li>
-                    <li>✓ Keep original packaging and receipts to prove ownership</li>
-                  </ul>
-                </Card>
-
-                <Card className="p-6 bg-primary/5">
-                  <h3 className="text-xl font-bold mb-3">For Property Owners:</h3>
-                  <ul className="space-y-2">
-                    <li>✓ Register valuable items with SafeOrStolen's theft prevention database</li>
-                    <li>✓ Install security cameras and motion-activated lights</li>
-                    <li>✓ Store serial numbers and photos of all valuables</li>
-                    <li>✓ Use GPS trackers for vehicles, bikes, and equipment</li>
-                    <li>✓ Enable Find My iPhone/Android for all mobile devices</li>
-                  </ul>
-                </Card>
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">Conclusion</h2>
-              <p className="text-lg mb-4">
-                The 2024 theft landscape reveals that organized crime is increasingly targeting secondhand marketplaces to fence stolen goods. With over $15 billion in reported thefts, every buyer and seller must take proactive steps to protect themselves.
-              </p>
-              <p className="text-lg mb-6">
-                SafeOrStolen provides the most comprehensive theft prevention and verification platform available. Our mission is to make secondhand buying safe, reduce crime globally, and protect innocent buyers and sellers from financial and legal consequences.
-              </p>
-
-              <div className="bg-primary/10 p-6 rounded-lg">
-                <p className="text-lg font-bold mb-4">Protect yourself today:</p>
-                <div className="flex gap-4">
-                  <Button asChild size="lg">
-                    <Link to="/verify">Verify Item Now</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/app">Download SafeOrStolen App</Link>
-                  </Button>
-                </div>
-              </div>
-            </section>
+            <div className="not-prose bg-primary/10 p-6 rounded-lg mt-10">
+              <p className="text-lg font-bold mb-2">Check an item before you pay</p>
+              <p className="text-muted-foreground mb-4">The first 2 checks are free with an account. No credit card.</p>
+              <Button asChild size="lg">
+                <Link to="/verify">Run a check</Link>
+              </Button>
+            </div>
           </article>
         </div>
       </div>

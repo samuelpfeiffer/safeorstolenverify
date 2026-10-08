@@ -1,233 +1,197 @@
+/**
+ * Oct 7 2026: rewritten by hand for "how to check if something is stolen" guides hub / "SafeOrStolen
+ * resource center". No Search Console data for this URL. Kept as a hub that sends each question to
+ * the page that answers it. Removed: "Trust Score above 85", "~750,000 vehicles stolen annually",
+ * "check up to 100 items via CSV", "cryptographic hash" certificates as legal evidence, legal claims
+ * presented as settled (UCC/state pawn statutes), "high accuracy" composite score, "34 states",
+ * "AI analysis" as a source, "expert"/"citation-ready" self-description.
+ */
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Helmet } from 'react-helmet-async';
-import { BookOpen, FileText, HelpCircle, Shield, Phone, Car, ArrowRight, Download, Scale, Building2, Gavel } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const educationalFAQs = [
- {
- question: "What is a Pawn Broker's liability for stolen goods?",
- answer: "Under most state statutes, pawn brokers who knowingly or negligently accept stolen property face felony receiving charges, civil forfeiture, and license revocation. Federal law (18 U.S.C. § 2315) makes it a crime to transport stolen goods across state lines. SafeOrStolen provides timestamped compliance certificates that serve as documented proof of due diligence, protecting businesses from negligence claims."
- },
- {
- question: "How do I check if a used phone is stolen before buying it?",
- answer: "Request the device's 15-digit IMEI number (dial *#06# or check Settings > About Phone). Enter it into SafeOrStolen's verification engine, which checks our community reports, public web data, and AI analysis. A clean result with a Trust Score above 85 indicates the device has no theft reports from these sources. Always verify before exchanging money."
- },
- {
- question: "What happens if I accidentally buy stolen goods?",
- answer: "In most U.S. states, a good-faith purchaser who unknowingly buys stolen property must return it to the rightful owner without compensation. You may have legal recourse against the seller. Document everything: keep receipts, communication records, and run a SafeOrStolen verification immediately to establish a timestamped record of your due diligence attempt."
- },
- {
- question: "How does VIN verification prevent car fraud?",
- answer: "A Vehicle Identification Number (VIN) check uses the 17-character code to search SafeOrStolen's reports, public web results, and AI analysis for stolen vehicle reports. We do not check other external vehicle databases. The industry reports approximately 750,000 vehicles stolen annually in the U.S."
- },
- {
- question: "What databases does SafeOrStolen check for verification?",
- answer: "SafeOrStolen aggregates data from multiple sources including: our own stolen-item reports, public web results, and AI analysis. Guns are also checked against police theft reports from 34 states plus live Ohio records, and bikes against a national stolen-bicycle registry. The result lists every source searched."
- },
- {
- question: "Are auction houses required to verify items before selling?",
- answer: "While requirements vary by jurisdiction, auction houses face significant liability under UCC Article 2 (implied warranty of title) and state consumer protection laws. Many states require due diligence for high-value items. SafeOrStolen's batch verification allows auction houses to check up to 100 items via CSV upload, generating compliance certificates for each item in the lot."
- },
- {
- question: "How accurate is IMEI blacklist checking in 2026?",
- answer: "SafeOrStolen's verification engine checks against our internal reports, public web data, and AI analysis. For phones, we perform an IMEI lookup to provide model and device details. Our composite Trust Score achieves high accuracy by weighting multiple independent sources. However, no system is 100% — items stolen very recently may not yet appear in these sources."
- },
- {
- question: "What is a compliance certificate and why do businesses need one?",
- answer: "A compliance certificate is a timestamped verification document with a cryptographic hash that proves a business performed due diligence before purchasing or accepting an item. It includes the identifier checked, databases queried, verification result, and timestamp. For pawn shops and dealers, this document serves as legal evidence of good faith in the event stolen property is later identified."
- },
+const BY_ITEM: { item: string; number: string; links: { to: string; label: string }[] }[] = [
+  {
+    item: 'Phones',
+    number: 'IMEI (dial *#06#)',
+    links: [
+      { to: '/imei-checker', label: 'IMEI checker' },
+      { to: '/how-to-check-if-phone-stolen', label: 'How to check if a phone is stolen' },
+      { to: '/blog/how-to-check-if-iphone-stolen', label: 'Checking a used iPhone' },
+      { to: '/check-android', label: 'Checking an Android phone' },
+    ],
+  },
+  {
+    item: 'Cars and motorcycles',
+    number: 'VIN (dashboard, door jamb, title)',
+    links: [
+      { to: '/vin-checker', label: 'VIN checker' },
+      { to: '/blog/complete-vin-guide', label: 'VIN guide' },
+      { to: '/license-plate-lookup', label: 'License plate lookup' },
+    ],
+  },
+  {
+    item: 'Guns',
+    number: 'Serial on the frame or receiver',
+    links: [
+      { to: '/gun-serial-number-lookup', label: 'Gun serial number lookup' },
+      { to: '/how-to-check-if-gun-is-stolen', label: 'How to check if a gun is stolen' },
+      { to: '/stolen-gun-database', label: 'Stolen gun database' },
+    ],
+  },
+  {
+    item: 'Bikes, laptops, tools and electronics',
+    number: 'Serial on the frame, case or nameplate',
+    links: [
+      { to: '/check-bike', label: 'Bike check' },
+      { to: '/check-laptop', label: 'Laptop check' },
+      { to: '/how-to-check-if-tools-stolen', label: 'Power tool check' },
+      { to: '/serial-number-checker', label: 'Any serial number' },
+    ],
+  },
+];
+
+const FAQS = [
+  {
+    q: 'How do I check if something is stolen before I buy it?',
+    a: "Get the item's own number: the IMEI on a phone, the VIN on a car, or the serial on a gun, bike, laptop or tool. Enter it on SafeOrStolen (safeorstolen.com), which searches theft reports and shows every source checked. Then do the in-person checks: the serial isn't tampered with, the paperwork matches, and the seller can unlock and reset the device.",
+  },
+  {
+    q: 'What happens if I buy something that turns out to be stolen?',
+    a: "In general, the original owner keeps their right to stolen property, so police can take it back and return it, and you lose what you paid. Your claim is against the seller. If you find out an item is stolen, contact the police yourself. A dated record that you checked before buying shows you acted in good faith. Laws vary by state, so ask a local lawyer about your situation.",
+  },
+  {
+    q: 'What should a pawn shop or dealer do to avoid taking in stolen goods?',
+    a: "Follow your state's pawn and secondhand dealer rules, which often require recording the seller's ID and the item's serial and reporting purchases to local police. On top of that, check each serial before you pay and keep the dated result with the intake paperwork. SafeOrStolen's bulk check lets you check many serials at once from a computer.",
+  },
+  {
+    q: 'What should I do if my item was stolen?',
+    a: "Report it to your local police with the serial number, IMEI or VIN, and get the case number. Then report it on SafeOrStolen so anyone who checks that number sees it's stolen. For a phone, also call your carrier to have the IMEI blocked and mark it lost in Find My or Find My Device.",
+  },
 ];
 
 export default function ResourceCenterPage() {
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": educationalFAQs.map(faq => ({
- "@type": "Question",
- "name": faq.question,
- "acceptedAnswer": {
- "@type": "Answer",
- "text": faq.answer
- }
- }))
- };
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  };
 
- return (
- <>
- <PageSEO
- title="Resource Center - Verification Guides & Compliance | SafeOrStolen"
- description="Free verification guides for pawn brokers, auction houses, buyers, and sellers. Learn liability rules, IMEI checking, VIN verification, and compliance requirements."
- keywords="resource center, verification guides, pawn broker liability, stolen goods compliance, IMEI guide, VIN guide, due diligence"
- canonical="https://safeorstolen.com/resource-center"
- />
- <Helmet>
- <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
- </Helmet>
- <div className="min-h-screen bg-background pt-20">
- {/* Hero */}
- <section className="py-16 md:py-20 relative overflow-hidden">
- <div className="absolute inset-0 pointer-events-none">
- <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
- </div>
- <div className="container mx-auto px-4 relative z-10">
- <div className="max-w-4xl mx-auto text-center">
- <BookOpen className="h-14 w-14 text-primary mx-auto mb-6" />
- <h1 className="text-4xl md:text-5xl font-bold mb-6">
- Verification Resource Center
- </h1>
- <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
- Expert guides, compliance tools, and educational resources for buyers, sellers, pawn brokers, and auction houses. Protect yourself and your business.
- </p>
- </div>
- </div>
- </section>
+  return (
+    <>
+      <PageSEO
+        title="Stolen Item Guides: Check Phones, Cars, Guns and Bikes"
+        description="Every SafeOrStolen guide in one place: how to check a phone, car, gun, bike, laptop or tool for theft, what to do if you bought or lost something stolen, and business guides."
+        keywords="how to check if something is stolen, stolen item guides, SafeOrStolen resource center, check if item is stolen before buying, what to do if you bought stolen goods"
+        canonical="/resource-center"
+        modifiedTime="2026-10-07"
+        structuredData={faqSchema}
+      />
+      <div className="min-h-screen bg-background pt-20">
+        <section className="py-14">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">Stolen Item Guides</h1>
+            <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
+            <p className="text-lg text-foreground leading-relaxed">
+              To check if a used item is stolen, find its unique number, the IMEI, VIN or serial, and run it through a theft-record
+              search like SafeOrStolen before you pay. Then check in person that the number hasn't been tampered with and the
+              seller can prove it's theirs. The guides below walk through each item type, plus what to do if you've bought or lost
+              something stolen.
+            </p>
+          </div>
+        </section>
 
- {/* Educational Hub — Question-Based H2 Headers */}
- <section className="py-16 container mx-auto px-4">
- <div className="max-w-4xl mx-auto">
- <div className="text-center mb-12">
- <h2 className="text-3xl font-bold mb-4">Expert Answers for Buyers & Businesses</h2>
- <p className="text-muted-foreground">Citation-ready answers from our verification experts</p>
- </div>
+        <section className="py-10 container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Guides by item</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {BY_ITEM.map((g) => (
+                <Card key={g.item}>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-1">{g.item}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Number to check: {g.number}</p>
+                    <ul className="space-y-2">
+                      {g.links.map((l) => (
+                        <li key={l.to + l.label}>
+                          <Link to={l.to} className="text-primary hover:underline text-sm">{l.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
- <div className="space-y-8">
- {educationalFAQs.map((faq, i) => (
- <article key={i} className="modern-card p-6 md:p-8">
- <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">
- {faq.question}
- </h2>
- <p className="text-muted-foreground leading-relaxed">
- {faq.answer}
- </p>
- </article>
- ))}
- </div>
- </div>
- </section>
+        <section className="py-10 bg-muted/20">
+          <div className="container mx-auto px-4 max-w-5xl grid md:grid-cols-3 gap-6">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-lg font-bold mb-3">Buying used</h2>
+                <ul className="space-y-2 text-sm">
+                  <li><Link to="/how-to-check-if-item-stolen" className="text-primary hover:underline">How to check if an item is stolen</Link></li>
+                  <li><Link to="/how-to-verify-a-used-item" className="text-primary hover:underline">Checking a used item before you buy</Link></li>
+                  <li><Link to="/blog/stolen-verification-app-guide" className="text-primary hover:underline">Checking from your phone at a meetup</Link></li>
+                  <li><Link to="/blog/verification-methodology" className="text-primary hover:underline">How to read a stolen check result</Link></li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-lg font-bold mb-3">If something was stolen</h2>
+                <ul className="space-y-2 text-sm">
+                  <li><Link to="/how-to-report-a-stolen-item" className="text-primary hover:underline">How to report a stolen item</Link></li>
+                  <li><Link to="/report-stolen" className="text-primary hover:underline">Report it on SafeOrStolen</Link></li>
+                  <li><Link to="/stolen-database" className="text-primary hover:underline">Browse reported stolen items</Link></li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-lg font-bold mb-3">For businesses</h2>
+                <ul className="space-y-2 text-sm">
+                  <li><Link to="/for-pawn-shops" className="text-primary hover:underline">Pawn shops</Link></li>
+                  <li><Link to="/for-dealers" className="text-primary hover:underline">Dealers</Link></li>
+                  <li><Link to="/for-auction-houses" className="text-primary hover:underline">Auction houses</Link></li>
+                  <li><Link to="/bulk-check" className="text-primary hover:underline">Bulk check</Link></li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
- {/* Quick Links Grid */}
- <section className="py-16 bg-muted/20">
- <div className="container mx-auto px-4">
- <div className="max-w-6xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Verification Tools & Guides</h2>
- <div className="grid md:grid-cols-3 gap-8">
- <Card className="modern-card">
- <CardContent className="p-6">
- <FileText className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-4">How-To Guides</h3>
- <ul className="space-y-3">
- <li><Link to="/comprehensive-guide" className="text-primary hover:underline text-sm">Comprehensive Verification Guide</Link></li>
- <li><Link to="/how-to-check-if-item-stolen" className="text-primary hover:underline text-sm">How to Check If an Item Is Stolen</Link></li>
- <li><Link to="/blog/how-to-check-if-phone-stolen" className="text-primary hover:underline text-sm">Phone Verification Step-by-Step</Link></li>
- <li><Link to="/blog/complete-vin-guide" className="text-primary hover:underline text-sm">Complete VIN Verification Guide</Link></li>
- <li><Link to="/blog/complete-imei-guide-protect-yourself" className="text-primary hover:underline text-sm">Complete IMEI Protection Guide</Link></li>
- </ul>
- </CardContent>
- </Card>
+        <section className="py-10 container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Common questions</h2>
+            <div className="space-y-6">
+              {FAQS.map((f) => (
+                <div key={f.q}>
+                  <h3 className="font-semibold text-foreground mb-2">{f.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground mt-8">
+              What SafeOrStolen does and doesn't search is on the <Link to="/data-sources" className="text-primary underline">data sources page</Link>.
+            </p>
+          </div>
+        </section>
 
- <Card className="modern-card">
- <CardContent className="p-6">
- <Shield className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-4">Verification Tools</h3>
- <ul className="space-y-3">
- <li><Link to="/imei-checker" className="text-primary hover:underline text-sm">IMEI Checker for Phones</Link></li>
- <li><Link to="/vin-checker" className="text-primary hover:underline text-sm">VIN Checker for Vehicles</Link></li>
- <li><Link to="/serial-number-checker" className="text-primary hover:underline text-sm">Serial Number Checker</Link></li>
- <li><Link to="/license-plate-lookup" className="text-primary hover:underline text-sm">License Plate Lookup</Link></li>
- </ul>
- </CardContent>
- </Card>
-
- <Card className="modern-card">
- <CardContent className="p-6">
- <Building2 className="h-10 w-10 text-primary mb-4" />
- <h3 className="text-xl font-bold mb-4">For Businesses</h3>
- <ul className="space-y-3">
- <li><Link to="/for-pawn-shops" className="text-primary hover:underline text-sm">Pawn Shop Compliance</Link></li>
- <li><Link to="/for-auction-houses" className="text-primary hover:underline text-sm">Auction House Verification</Link></li>
- <li><Link to="/for-dealers" className="text-primary hover:underline text-sm">Dealer Due Diligence</Link></li>
- <li><Link to="/blog/pawn-shop-stolen-item-verification" className="text-primary hover:underline text-sm">Pawn Shop Verification Guide</Link></li>
- <li><Link to="/pricing" className="text-primary hover:underline text-sm">Business Plans & Pricing</Link></li>
- </ul>
- </CardContent>
- </Card>
- </div>
- </div>
- </div>
- </section>
-
- {/* Item-Specific Resources */}
- <section className="py-16 container mx-auto px-4">
- <div className="max-w-6xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-12">Verify by Item Type</h2>
- <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
- <Card className="modern-card">
- <CardContent className="p-6 text-center">
- <Phone className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2">Phones</h3>
- <ul className="text-sm space-y-1.5">
- <li><Link to="/check-phone" className="text-muted-foreground hover:text-primary transition-colors">Check Phone</Link></li>
- <li><Link to="/check-iphone-stolen" className="text-muted-foreground hover:text-primary transition-colors">iPhone Verification</Link></li>
- <li><Link to="/check-android" className="text-muted-foreground hover:text-primary transition-colors">Android Verification</Link></li>
- </ul>
- </CardContent>
- </Card>
- <Card className="modern-card">
- <CardContent className="p-6 text-center">
- <Car className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2">Vehicles</h3>
- <ul className="text-sm space-y-1.5">
- <li><Link to="/vin-checker" className="text-muted-foreground hover:text-primary transition-colors">Check Vehicle</Link></li>
- <li><Link to="/vin-checker" className="text-muted-foreground hover:text-primary transition-colors">VIN Checker</Link></li>
- <li><Link to="/license-plate-lookup" className="text-muted-foreground hover:text-primary transition-colors">License Plate</Link></li>
- </ul>
- </CardContent>
- </Card>
- <Card className="modern-card">
- <CardContent className="p-6 text-center">
- <Gavel className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2">Firearms</h3>
- <ul className="text-sm space-y-1.5">
- <li><Link to="/check-firearm" className="text-muted-foreground hover:text-primary transition-colors">Check Firearm</Link></li>
- <li><Link to="/gun-serial-number-lookup" className="text-muted-foreground hover:text-primary transition-colors">Serial Lookup</Link></li>
- <li><Link to="/stolen-gun-database" className="text-muted-foreground hover:text-primary transition-colors">Stolen Database</Link></li>
- </ul>
- </CardContent>
- </Card>
- <Card className="modern-card">
- <CardContent className="p-6 text-center">
- <Download className="h-10 w-10 text-primary mx-auto mb-3" />
- <h3 className="font-bold mb-2">Electronics</h3>
- <ul className="text-sm space-y-1.5">
- <li><Link to="/check-laptop" className="text-muted-foreground hover:text-primary transition-colors">Laptops</Link></li>
- <li><Link to="/check-electronics" className="text-muted-foreground hover:text-primary transition-colors">Electronics</Link></li>
- <li><Link to="/check-ps5" className="text-muted-foreground hover:text-primary transition-colors">Gaming Consoles</Link></li>
- </ul>
- </CardContent>
- </Card>
- </div>
- </div>
- </section>
-
- {/* CTA */}
- <section className="py-16 bg-primary/5">
- <div className="container mx-auto px-4 text-center">
- <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
- <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
- Check phones, vehicles, firearms, bikes and electronics in seconds.
- </p>
- <div className="flex flex-wrap gap-4 justify-center">
- <Button size="lg" asChild>
- <Link to="/verify">
- Start a Check <ArrowRight className="ml-2 h-4 w-4" />
- </Link>
- </Button>
- </div>
- </div>
- </section>
- </div>
- </>
- );
+        <section className="py-14 bg-primary/5">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-4">Check an item</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Your first 2 checks are free with an account. No credit card.</p>
+            <Button size="lg" asChild>
+              <Link to="/verify">
+                Run a check <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 }
