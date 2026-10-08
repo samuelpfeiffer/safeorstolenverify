@@ -196,11 +196,13 @@ const HowToSellVerifiedItems = () => {
             <p className="text-muted-foreground leading-relaxed mb-6">
               A Proof of Clean Purchase records that an item's IMEI, VIN, or
               serial number received a clean result from the sources available
-              at the time. Those sources include SafeOrStolen reports, public
-              web results, and AI analysis; bicycle checks also query Bike Index
-              and firearm checks also search the Ohio Attorney General's
-              stolen gun records. Phone checks provide device
-              details but do not currently query carrier blacklists. The record
+              at the time. Every check searches SafeOrStolen's own theft reports and public
+              web results. Bicycle checks add a national stolen-bicycle registry,
+              firearm checks add police theft and loss reports from 33 states and
+              Washington, DC, plus live Ohio law-enforcement records, and Arizona
+              VINs add Arizona law-enforcement stolen-vehicle records. Phone checks
+              show the make and model, and a paid carrier blacklist check is
+              available. The record
               is not a legal document, ownership proof, or guarantee.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
