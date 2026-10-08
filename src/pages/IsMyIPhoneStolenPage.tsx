@@ -1,12 +1,16 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/** Oct 8 2026 audit: copy rewritten by hand. Removed "AI analysis" as a source, the invented
+ * "800,000 iPhones stolen" figure, "3 seconds", claims that the check shows iCloud lock status,
+ * and the link to an Apple website. */
 const IsMyIPhoneStolenPage = () => {
  return (
  <ItemLandingPageTemplate
- title="Is My iPhone Stolen? Free iPhone Theft Check Tool | SafeOrStolen"
- metaDescription="Check if an iPhone is stolen before buying. Free IMEI verification for all models. Instant results show theft status, iCloud lock, and blacklist."
- h1="Is My iPhone Stolen? Check Any iPhone Instantly"
+ title="Is This iPhone Stolen? Free iPhone IMEI Theft Check | SafeOrStolen"
+ metaDescription="Check if a used iPhone is stolen before you buy: run the IMEI free, confirm Activation Lock is off in person, and spot the warning signs sellers try to hide."
+ h1="Is This iPhone Stolen? Check the IMEI Before You Pay"
  itemType="iPhone"
+ dateModified="2026-10-07"
  searchType="imei"
  searchPlaceholder="Enter the iPhone's IMEI (dial *#06#)"
  keywords={[
@@ -20,60 +24,58 @@ const IsMyIPhoneStolenPage = () => {
  'iphone imei check stolen'
  ]}
  content={{
- intro: "Worried you might be buying a stolen iPhone? Check any iPhone's theft status in 3 seconds using the IMEI or serial number. Our free verification tool analyzes SafeOrStolen's reports, public web results, and uses AI analysis to tell you if an iPhone is safe to buy.",
- whatIs: "Checking if an iPhone is stolen means verifying the device has not been reported to SafeOrStolen or publicly flagged as lost or stolen property. Every iPhone has two unique identifiers: an IMEI number (15 digits) and a serial number (alphanumeric). When an iPhone is reported stolen, it may be added to industry blacklists, such as those maintained by carriers. A stolen iPhone can be remotely locked, tracked, or completely bricked by the original owner. SafeOrStolen's iPhone checker uses its own data, public web results, and AI analysis to help you determine its status: Is this iPhone safe to buy, or is it potentially stolen?",
- howItWorks: "Our iPhone verification system performs comprehensive checks. We analyze SafeOrStolen's stolen-item reports, public web results, and use AI analysis to provide insights. You can also check Apple's Activation Lock status (whether Find My iPhone is enabled) and inquire with carriers about their blacklist status. The check takes just 3 seconds. You'll receive a detailed report showing: (1) Our stolen/lost status assessment, (2) iCloud Activation Lock status (if provided), and (3) Other relevant findings.",
- whyCheck: "Buying a stolen iPhone is a guaranteed disaster. Here's what happens: The original owner can remotely lock or erase the iPhone at any time using Find My iPhone. Apple will refuse all service, including repairs and battery replacements. Carriers will blacklist the IMEI, making it unusable on any US network. Police can seize the iPhone as evidence with no compensation to you. You could face criminal charges for possession of stolen property. In 2024, over 800,000 iPhones were reported stolen in the United States alone. Many end up on Facebook Marketplace, Craigslist, OfferUp, and eBay. Scammers specifically target buyers who don't verify before purchasing. A 3-second check could save you hundreds or thousands of dollars.",
+ intro: "To check if an iPhone is stolen, get its IMEI by dialing *#06# or opening Settings > General > About, and enter it on SafeOrStolen. In a few seconds you see the phone's make and model and whether that IMEI appears in SafeOrStolen theft reports or public web results. Then, in person, make sure the seller signs out of their Apple ID so Activation Lock is off.",
+ whatIs: "Every iPhone has a 15-digit IMEI (two on dual-SIM models) and a serial number. When an owner reports a theft on SafeOrStolen, the IMEI goes into SafeOrStolen's theft reports. Owners also post stolen phones online, and those posts can show up in the public web results a check searches. Separately, the owner's carrier can put the IMEI on a lost/stolen blacklist, and Apple's Activation Lock ties the phone to the owner's Apple ID. A SafeOrStolen check covers the first two; a paid blacklist check covers the carrier blacklist; only the seller can prove Activation Lock is off.",
+ howItWorks: "Type the IMEI into the box above. SafeOrStolen reads the make and model from the IMEI, so you can confirm it really is the iPhone model being sold. It then searches SafeOrStolen's own theft reports and public web results for that IMEI. The result says \"reported stolen\", \"possible match\" or \"no report found in the records searched\" and lists every source it checked. If you want the carrier lost/stolen blacklist too, run the paid blacklist check. SafeOrStolen does not see Apple ID or Activation Lock status, so check that on the phone itself.",
+ whyCheck: "A stolen iPhone can stop working after you pay for it. The owner can put it in Lost Mode or erase it from Find My, a carrier blacklist can cut off service, and police can take it back for the owner without refunding you. Stolen iPhones turn up on Facebook Marketplace, Craigslist, OfferUp and eBay, usually with a story about an upgrade or a gift. Checking the IMEI and watching the seller sign out of iCloud before you hand over money is the cheapest protection you have.",
  benefits: [
- "Check any iPhone model - iPhone 16, 15, 14, 13, 12, 11, X, 8, 7, SE, and older",
- "Verify iCloud Activation Lock status before buying",
- "Check SafeOrStolen's internal reports and public web results for known theft.",
- "Leverage artificial intelligence to identify suspicious activity.",
- "Instant 3-second results from multiple databases",
- "Free iPhone check - 2 free verifications included",
- "Works for iPhones from any country or carrier",
- "Verify both IMEI and serial number"
+ "Works for any iPhone with an IMEI, from older models to the newest",
+ "Shows the make and model the IMEI belongs to, so you can spot a swapped or fake listing",
+ "Searches SafeOrStolen theft reports and public web results for that IMEI",
+ "Optional paid check against the carrier lost/stolen blacklist",
+ "2 free checks with a free account, no credit card",
+ "Every check is saved to your account with the date"
  ],
  process: [
- "Get the iPhone's IMEI: Dial *#06# on the phone, OR check Settings > General > About > IMEI, OR look at the SIM tray, OR check the original box",
- "Physically verify the IMEI on the device - don't trust screenshots or what the seller claims",
- "Enter the 15-digit IMEI into SafeOrStolen's verification tool",
- "Review the instant report showing theft status, iCloud lock, and blacklist status",
- "For extra safety, also check Activation Lock at checkcoverage.apple.com",
- "Only purchase if the report shows CLEAN with no activation lock"
+ "Get the IMEI on the phone itself: dial *#06#, or open Settings > General > About and scroll to IMEI",
+ "Compare it with the IMEI on the SIM tray or box if the seller has them; they should match",
+ "Enter the 15-digit IMEI into SafeOrStolen and read the result and its sources",
+ "If the price is worth it, run the paid blacklist check for the carrier lost/stolen list",
+ "Ask the seller to go to Settings > [their name] > Sign Out, then erase the phone in front of you",
+ "Only pay once the phone restarts to the Hello screen and lets you set it up without asking for someone else's Apple ID"
  ],
  faqs: [
  {
  question: "How do I check if an iPhone is stolen using the IMEI?",
- answer: "To check if an iPhone is stolen: (1) Get the IMEI by dialing *#06# or going to Settings > General > About, (2) Enter the 15-digit IMEI at SafeOrStolen.com/verify, (3) Review the instant report showing our stolen status assessment and other findings. The check takes 3 seconds and analyzes SafeOrStolen's reports, public web results, and uses AI analysis."
+ answer: "Dial *#06# on the iPhone or open Settings > General > About to see the IMEI. Enter the 15 digits on SafeOrStolen (safeorstolen.com). In a few seconds it shows the make and model and whether the IMEI appears in SafeOrStolen theft reports or public web results, with each source listed. A paid blacklist check adds the carrier lost/stolen list."
  },
  {
  question: "What is iCloud Activation Lock and why does it matter?",
- answer: "iCloud Activation Lock is Apple's theft deterrent that locks an iPhone to the original owner's Apple ID. If you buy an iPhone with Activation Lock enabled, you cannot set it up without the original owner's password. The phone is essentially a brick. Apple will not help you bypass Activation Lock, even with proof of purchase. Always verify Activation Lock is OFF before buying any used iPhone."
+ answer: "Activation Lock ties an iPhone to the owner's Apple ID through Find My. After a reset, the phone asks for that Apple ID and password before it can be set up, so a locked phone is useless to a buyer. Apple will not remove it for you without the original owner's proof of purchase. Have the seller sign out of iCloud and erase the phone while you watch."
  },
  {
  question: "Can I check if an iPhone is stolen without the IMEI?",
- answer: "You can also check using the iPhone's serial number, which you can find in Settings > General > About, on the original box, or on the SIM tray (some models). However, the IMEI is often used by carriers for device identification. If a seller won't provide the IMEI, that's a major red flag."
+ answer: "You can search the serial number on SafeOrStolen instead; find it in Settings > General > About. The IMEI is still the better number because owners and carriers report phones by IMEI. A seller who won't let you see the IMEI on the phone itself is a warning sign, and you should walk away."
  },
  {
  question: "What happens if I buy a stolen iPhone?",
- answer: "If you buy a stolen iPhone: (1) The original owner can remotely lock or erase it at any time, (2) Carriers will blacklist the IMEI making cellular data unusable, (3) Apple will refuse any service including repairs, (4) Police can seize it as stolen property without compensating you, (5) You could face criminal charges for possession of stolen property. You have no legal recourse to get your money back."
+ answer: "The owner can lock or erase it remotely, the carrier can blacklist the IMEI so it can't connect to that network, and police can return it to the owner if they find it. You usually lose the money you paid and have to pursue the seller yourself. That's why you check before paying, not after."
  },
  {
  question: "Is it illegal to buy a stolen iPhone if I didn't know it was stolen?",
- answer: "While intent matters legally, you can still face serious consequences. At minimum, police will confiscate the iPhone as evidence and you'll lose your money. In some jurisdictions, you could face charges for 'receiving stolen property' even without knowledge. The burden may be on you to prove you didn't know. Always verify before buying to protect yourself legally and financially."
+ answer: "Laws differ by state, but receiving stolen property usually requires that you knew or should have known it was stolen. A very low price, no proof of purchase, or a seller who won't sign out of iCloud can count against you. Even when you aren't charged, the phone can still be taken back for its owner."
  },
  {
  question: "How can I tell if an iPhone is stolen just by looking at it?",
- answer: "Physical signs of a stolen iPhone include: (1) Activation Lock screen asking for Apple ID, (2) 'iPhone Unavailable' or 'iPhone Disabled' screen, (3) Seller unwilling to let you verify IMEI or sign out of iCloud, (4) Missing original box, charger, and documentation, (5) Price significantly below market value, (6) Seller rushing the transaction or insisting on cash only. However, many stolen iPhones look completely normal - that's why database verification is essential."
+ answer: "Warning signs: an Activation Lock or \"iPhone Unavailable\" screen, a Lost Mode message with someone's phone number, a seller who won't unlock it or sign out of iCloud, a price far below what that model sells for, and pressure to meet fast and pay cash. Many stolen iPhones look normal, so check the IMEI as well."
  },
  {
  question: "Can a stolen iPhone be unlocked or unblacklisted?",
- answer: "No legitimate service can unlock or unblacklist a stolen iPhone. Apple will not remove Activation Lock without proof of original ownership. Carriers will not remove an IMEI from their blacklist if it's stolen. Anyone claiming they can 'unlock' a stolen iPhone is either scamming you or involved in illegal activity. The IMEI blacklist is permanent and shared globally between carriers."
+ answer: "Not legitimately. Apple removes Activation Lock only for the original owner with proof of purchase, and a carrier removes a lost/stolen block only when the account holder asks. Services that promise to bypass either are scams or worse. If a phone is locked or blacklisted, don't buy it."
  },
  {
  question: "How long does the iPhone stolen check take?",
- answer: "Our iPhone verification takes only 3 seconds. Enter the IMEI or serial number, click verify, and receive instant results showing whether the iPhone is clean, stolen, blacklisted, or has iCloud Activation Lock enabled. Much faster than checking multiple sites individually or calling Apple support."
+ answer: "A SafeOrStolen check (safeorstolen.com) takes a few seconds. Enter the IMEI and you see the make and model, the result, and the list of sources searched. The check is saved to your account with the date, which is useful if you need to show you checked before buying."
  }
  ]
  }}

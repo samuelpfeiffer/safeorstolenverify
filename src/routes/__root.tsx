@@ -51,7 +51,7 @@ const webApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   description:
-    "Check secondhand-item identifiers using SafeOrStolen reports, public web results, and AI analysis. A free account includes two checks.",
+    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. A free account includes two checks.",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Web",
   offers: {
@@ -65,23 +65,15 @@ const webApplicationJsonLd = JSON.stringify({
     name: "SafeOrStolen",
     url: "https://safeorstolen.com",
     logo: "https://safeorstolen.com/sos-logo.png",
-    foundingDate: "2017-07-20",
+    email: "safeorstolenmail@gmail.com",
     address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
-    sameAs: [
-      "https://www.crunchbase.com/organization/safe-or-stolen",
-      "https://www.trustpilot.com/review/safeorstolen.com",
-      "https://biz.prlog.org/SafeOrStolen/",
-      "https://www.facebook.com/safeorstolen/",
-      "https://www.youtube.com/@safeorstolen",
-      "https://x.com/safeorstolen",
-    ],
   },
 });
 
 const speakableJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "SafeOrStolen — Instant Stolen Item Verification",
+  name: "SafeOrStolen: Check If an Item Is Reported Stolen",
   speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2", ".speakable-summary"] },
   url: "https://safeorstolen.com",
 });
@@ -92,18 +84,10 @@ const organizationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   logo: "https://safeorstolen.com/sos-logo.png",
-  foundingDate: "2017-07-20",
+  email: "safeorstolenmail@gmail.com",
   description:
-    "SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items, firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app.",
+    "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
   address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
-  sameAs: [
-    "https://www.crunchbase.com/organization/safe-or-stolen",
-    "https://www.trustpilot.com/review/safeorstolen.com",
-    "https://biz.prlog.org/SafeOrStolen/",
-    "https://www.facebook.com/safeorstolen/",
-    "https://www.youtube.com/@safeorstolen",
-    "https://x.com/safeorstolen",
-  ],
   knowsAbout: [
     "IMEI verification",
     "VIN lookup",
@@ -130,26 +114,18 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       logo: { "@type": "ImageObject", url: "https://safeorstolen.com/sos-logo.png", width: "512", height: "512" },
       description:
-        "SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items, firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app.",
-      foundingDate: "2017-07-20",
+        "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
       slogan: "Verify Before You Buy",
+      address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
       knowsAbout: [
         "stolen goods verification",
         "IMEI checking",
         "VIN lookup",
         "serial number verification",
-        "pawn shop compliance",
+        "bulk checks for pawn shops and dealers",
         "consumer protection",
       ],
-      contactPoint: { "@type": "ContactPoint", email: "support@safeorstolen.com", contactType: "Customer Support" },
-      sameAs: [
-        "https://www.crunchbase.com/organization/safe-or-stolen",
-        "https://www.trustpilot.com/review/safeorstolen.com",
-        "https://biz.prlog.org/SafeOrStolen/",
-        "https://www.facebook.com/safeorstolen/",
-        "https://www.youtube.com/@safeorstolen",
-        "https://x.com/safeorstolen",
-      ],
+      contactPoint: { "@type": "ContactPoint", email: "safeorstolenmail@gmail.com", contactType: "Customer Support" },
       founder: [
         { "@type": "Person", name: "Samuel Pfeiffer", jobTitle: "CEO" },
         { "@type": "Person", name: "Kelly McEvoy", jobTitle: "Co-Founder" },
@@ -162,7 +138,7 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       name: "SafeOrStolen — Stolen Item Verification",
       description:
-        "A stolen-item verification hub using SafeOrStolen reports, public web results, and AI analysis for secondhand buyers and sellers.",
+        "Check used items for theft reports before you buy: SafeOrStolen's own theft reports and public web results on every check, plus item-specific records for guns, bikes and Arizona vehicles.",
       publisher: { "@id": "https://safeorstolen.com/#organization" },
       potentialAction: {
         "@type": "SearchAction",
@@ -191,6 +167,7 @@ const coreGraphJsonLd = JSON.stringify({
         name: "Verification Plans",
         itemListElement: [
           { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "2 free verifications, no credit card required" },
+          { "@type": "Offer", name: "Single check", price: "0.99", priceCurrency: "USD", description: "One check" },
           { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types" },
         ],
       },

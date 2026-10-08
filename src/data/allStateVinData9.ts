@@ -1,26 +1,26 @@
 // Type for legacy format - converted to new format in completeStateVinData.ts
+// Oct 2026: copy rewritten by hand. Theft counts, recovery rates, statute numbers and
+// off-site DMV links were removed because they could not be confirmed.
 export const STATE_VIN_DATA_PART9: Record<string, any> = {
  northdakota: {
  state: "North Dakota",
  stateCode: "ND",
  slug: "north-dakota-vin-lookup",
  title: "North Dakota VIN Lookup - Free ND Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free North Dakota VIN lookup and stolen vehicle verification. Check ND car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "North Dakota VIN lookup: decode the year, make and model, see open safety recalls, and search theft reports and public web results before you buy a used car.",
  theftStats: {
- vehiclesStolen: "1,200+",
- recoveryRate: "67%",
  topCities: ["Fargo", "Bismarck", "Grand Forks"]
  },
- dmvLink: "https://www.dot.nd.gov/",
+ dmvLink: "",
  content: {
- intro: "Verify any North Dakota vehicle's history instantly with our free VIN lookup. Check if an ND car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "North Dakota reports over 1,200 vehicle thefts annually. While ND has one of the lowest theft rates nationally, rural areas have lower recovery rates. North Dakota vehicles also frequently have undisclosed rust damage from harsh winters and road salt. A VIN check protects you from both issues.",
- localLaws: "North Dakota Century Code §12.1-23-05 makes receiving stolen property valued over $1,000 a felony with penalties up to 5 years in prison. North Dakota requires title transfers within 30 days. The ND DOT maintains all VIN and title records for verification."
+ intro: "Type the 17-character VIN from the dashboard or driver's door jamb. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches theft reports filed on SafeOrStolen plus public web results that mention that VIN.",
+ whyCheck: "Most used cars in North Dakota change hands in private sales around Fargo, Bismarck and Grand Forks, where nobody checks the paperwork for you. Make sure the VIN on the dash, the door sticker and the title all match, and that the decoded model matches the car in front of you. Long winters and road salt are hard on frames, so look underneath for rust while you're at it.",
+ localLaws: "Knowingly buying or keeping a stolen vehicle is a crime in North Dakota. If police later find the car was stolen, they can take it back for the owner, and you lose what you paid. Keep a signed bill of sale with the seller's name, the VIN and the date. The North Dakota DOT Motor Vehicle Division handles titles and registration."
  },
  faqs: [
- { question: "How do I check a North Dakota VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check SafeOrStolen's reports, public web results, and AI analysis for stolen status. Our mobile app provides instant barcode scanning for faster verification." },
- { question: "Is a VIN check required in North Dakota?", answer: "North Dakota law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase to protect themselves legally." },
- { question: "What is North Dakota's title transfer process?", answer: "In North Dakota, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the ND DOT with bill of sale. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I check a North Dakota VIN for free?", answer: "Create a free SafeOrStolen account for 2 free checks, no credit card. Enter the 17-character VIN. The check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results. Ask local police if you want the VIN run through law-enforcement records." },
+ { question: "Is a VIN check required in North Dakota?", answer: "Not for a private sale. It's still worth doing, because if the car turns out to be stolen, police can return it to its owner and you lose your money. Match the VIN on the dash, door jamb and title before you pay." },
+ { question: "How do I transfer a title in North Dakota?", answer: "The seller signs the title over to you, and you take it to the North Dakota DOT Motor Vehicle Division with a bill of sale to register the car. Before anyone signs, check that the VIN printed on the title matches the VIN on the car." }
  ]
  },
  ohio: {
@@ -28,22 +28,20 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  stateCode: "OH",
  slug: "ohio-vin-lookup",
  title: "Ohio VIN Lookup - Free OH Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Ohio VIN lookup and stolen vehicle verification. Check OH car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Ohio VIN lookup: decode the year, make and model, see open safety recalls, and search theft reports and public web results before you buy a used car in Ohio.",
  theftStats: {
- vehiclesStolen: "21,400+",
- recoveryRate: "56%",
  topCities: ["Columbus", "Cleveland", "Cincinnati"]
  },
- dmvLink: "https://www.bmv.ohio.gov/",
+ dmvLink: "",
  content: {
- intro: "Verify any Ohio vehicle's history instantly with our free VIN lookup. Check if an OH car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Ohio reports over 21,400 vehicle thefts annually, with Cleveland and Columbus ranking among the top 25 cities nationally for auto theft. Ohio's central location and interstate access make it a hotspot for stolen vehicle trafficking. A VIN check protects you from buying stolen cars and salvage titles.",
- localLaws: "Under Ohio Revised Code §2913.51, receiving stolen property valued over $1,000 is a felony with penalties up to 18 months in prison. Ohio requires title transfers within 30 days. The Ohio BMV maintains all VIN and title records for verification."
+ intro: "Enter the 17-character VIN from the dashboard or driver's door jamb. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches theft reports filed on SafeOrStolen plus public web results that mention that VIN.",
+ whyCheck: "Private sales around Columbus, Cleveland and Cincinnati move a lot of used cars, and a stolen car can carry a swapped plate or a VIN sticker that doesn't match. Compare the VIN on the dash, the door sticker and the title, and make sure the decoded model matches the car. If anything is off, walk away.",
+ localLaws: "Receiving stolen property is a crime under Ohio law, and police can take back a stolen car from whoever has it, even a buyer who didn't know. Keep a bill of sale with the seller's name, the VIN and the date. The Ohio BMV handles titles, and Ohio titles are issued through county clerk of courts title offices."
  },
  faqs: [
- { question: "How do I verify an Ohio vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Ohio title status. Enter the VIN to check OH BMV records, theft databases, and title brands. Ohio has electronic titles for newer vehicles, so always verify the VIN matches the physical vehicle before purchase." },
- { question: "Does Ohio require VIN inspections?", answer: "Ohio requires VIN inspections for out-of-state vehicles and vehicles without existing OH titles. The inspection must be performed by law enforcement or BMV staff. However, buyers should independently verify VIN history to detect stolen vehicles and title fraud." },
- { question: "What is Ohio's title transfer process?", answer: "In Ohio, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the OH BMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I verify an Ohio vehicle title?", answer: "Compare the VIN on the title with the VIN on the dash and door jamb, and make sure the name on the title matches the seller's ID. Then run the VIN on SafeOrStolen to decode the model, see open recalls, and search theft reports and public web results. SafeOrStolen does not search Ohio BMV records." },
+ { question: "Does Ohio require VIN inspections?", answer: "Ohio requires a VIN inspection before titling a vehicle brought in from another state. That inspection confirms the VIN, but it isn't a theft history check for a private buyer, so run your own checks before you pay." },
+ { question: "How do I transfer a title in Ohio?", answer: "The seller signs the title in front of a notary and you take it to a county clerk of courts title office to put it in your name. Check that the VIN on the title matches the car before anyone signs." }
  ]
  },
  oklahoma: {
@@ -51,22 +49,20 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  stateCode: "OK",
  slug: "oklahoma-vin-lookup",
  title: "Oklahoma VIN Lookup - Free OK Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Oklahoma VIN lookup and stolen vehicle verification. Check OK car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Oklahoma VIN lookup: decode the year, make and model, see open safety recalls, and search theft reports and public web results before you buy a used car.",
  theftStats: {
- vehiclesStolen: "8,600+",
- recoveryRate: "54%",
  topCities: ["Oklahoma City", "Tulsa", "Norman"]
  },
- dmvLink: "https://www.ok.gov/tax/Individuals/Motor_Vehicle/",
+ dmvLink: "",
  content: {
- intro: "Verify any Oklahoma vehicle's history instantly with our free VIN lookup. Check if an OK car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Oklahoma reports over 8,600 vehicle thefts annually, with Oklahoma City and Tulsa accounting for most cases. Oklahoma's central location makes it a corridor for stolen vehicle trafficking. Running a VIN check protects you from buying stolen vehicles, salvage titles, or cars with hidden damage.",
- localLaws: "Oklahoma Statutes Title 21 §1713 makes receiving stolen property valued over $1,000 a felony with penalties up to 5 years in prison. Oklahoma requires title transfers within 30 days. The Oklahoma Tax Commission maintains all VIN and title records for verification."
+ intro: "Enter the 17-character VIN from the dashboard or driver's door jamb. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches theft reports filed on SafeOrStolen plus public web results that mention that VIN.",
+ whyCheck: "Most private car sales in Oklahoma happen around Oklahoma City, Tulsa and Norman, often from online listings. A stolen car can wear a plate from another vehicle, so the plate alone tells you little. Match the VIN on the dash, door sticker and title, and confirm the decoded model is the car you're looking at.",
+ localLaws: "Knowingly receiving stolen property is a crime in Oklahoma, and a stolen car can be taken back for its owner even after you've paid for it. Keep a bill of sale with the seller's name, the VIN and the date. Oklahoma titles and registration are handled by Service Oklahoma and its licensed tag agencies."
  },
  faqs: [
- { question: "How do I check an Oklahoma VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search SafeOrStolen's reports, public web results, and AI analysis for stolen status. Our mobile app offers instant barcode scanning for faster verification at OK dealerships." },
- { question: "Is a VIN check required in Oklahoma?", answer: "Oklahoma law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any purchase to avoid legal and financial consequences." },
- { question: "What is Oklahoma's title transfer process?", answer: "In Oklahoma, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the OK Tax Commission with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I check an Oklahoma VIN for free?", answer: "Sign up for a free SafeOrStolen account to get 2 free checks, no credit card. Enter the VIN to decode the year, make and model, list open safety recalls, and search SafeOrStolen theft reports and public web results. For law-enforcement records, ask local police to run the VIN." },
+ { question: "Is a VIN check required in Oklahoma?", answer: "Not for a private sale. It's still smart, because if the car was stolen, police can return it to the owner and you lose what you paid. Match the VIN in at least two places on the car with the title before handing over money." },
+ { question: "How do I transfer a title in Oklahoma?", answer: "The seller signs the title over to you, and you take it with a bill of sale to a tag agency to register the car in your name. Check that the VIN on the title matches the car before anyone signs." }
  ]
  },
  oregon: {
@@ -74,22 +70,20 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  stateCode: "OR",
  slug: "oregon-vin-lookup",
  title: "Oregon VIN Lookup - Free OR Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Oregon VIN lookup and stolen vehicle verification. Check OR car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Oregon VIN lookup: decode the year, make and model, see open safety recalls, and search theft reports and public web results before you buy a used car.",
  theftStats: {
- vehiclesStolen: "11,600+",
- recoveryRate: "60%",
  topCities: ["Portland", "Eugene", "Salem"]
  },
- dmvLink: "https://www.oregon.gov/odot/dmv/",
+ dmvLink: "",
  content: {
- intro: "Verify any Oregon vehicle's history instantly with our free VIN lookup. Check if an OR car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Oregon reports over 11,600 vehicle thefts annually, with Portland consistently ranking in the top 20 cities nationally for auto theft. Oregon's proximity to California and Washington makes it a target for organized theft rings. A VIN check protects you from buying stolen vehicles and salvage titles.",
- localLaws: "Under Oregon Revised Statutes §164.095, receiving stolen property valued over $1,000 is a felony with penalties up to 5 years in prison. Oregon requires title transfers within 30 days. The Oregon DMV maintains all VIN and title records for verification."
+ intro: "Enter the 17-character VIN from the dashboard or driver's door jamb. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches theft reports filed on SafeOrStolen plus public web results that mention that VIN.",
+ whyCheck: "Used cars sold privately around Portland, Eugene and Salem don't come with anyone checking the paperwork. Watch for a VIN plate that looks loose or scratched, a door sticker that's missing, or a title in someone else's name. If the VINs don't match each other and the title, don't buy.",
+ localLaws: "Possessing a vehicle you know is stolen is a crime in Oregon, and police can return a stolen car to its owner even after a sale. Keep a bill of sale with the seller's name, the VIN and the date. The Oregon DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I verify an Oregon vehicle title?", answer: "Use SafeOrStolen's VIN lookup to check for stolen status. Enter the VIN to search SafeOrStolen's reports, public web results, and AI analysis. Oregon has electronic titles, so always verify the VIN matches the physical vehicle before purchase." },
- { question: "Does Oregon require VIN inspections?", answer: "Oregon requires VIN inspections for out-of-state vehicles and vehicles without existing OR titles. The inspection verifies the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
- { question: "What is Oregon's title transfer process?", answer: "In Oregon, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the OR DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I verify an Oregon vehicle title?", answer: "Make sure the VIN on the title matches the dash and door jamb, and the name on the title matches the seller's ID. Run the VIN on SafeOrStolen to decode the model, see open recalls, and search theft reports and public web results. SafeOrStolen does not search Oregon DMV records." },
+ { question: "Does Oregon require VIN inspections?", answer: "Oregon requires a VIN inspection for many vehicles coming from out of state before they can be titled. It confirms the VIN matches the paperwork, but it is not a theft history check for a buyer, so do your own checks first." },
+ { question: "How do I transfer a title in Oregon?", answer: "The seller signs the title over to you, and you apply for a new title with the Oregon DMV. Before anyone signs, check that the VIN printed on the title matches the car." }
  ]
  },
  rhodeisland: {
@@ -97,22 +91,20 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  stateCode: "RI",
  slug: "rhode-island-vin-lookup",
  title: "Rhode Island VIN Lookup - Free RI Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Rhode Island VIN lookup and stolen vehicle verification. Check RI car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Rhode Island VIN lookup: decode the year, make and model, see open safety recalls, and search theft reports and public web results before you buy a used car.",
  theftStats: {
- vehiclesStolen: "1,900+",
- recoveryRate: "63%",
  topCities: ["Providence", "Warwick", "Cranston"]
  },
- dmvLink: "https://www.dmv.ri.gov/",
+ dmvLink: "",
  content: {
- intro: "Verify any Rhode Island vehicle's history instantly with our free VIN lookup. Check if an RI car is stolen, has title issues, or rust damage before you buy.",
- whyCheck: "Rhode Island reports over 1,900 vehicle thefts annually. While RI is the smallest state, Providence has a high per-capita theft rate. Rhode Island vehicles also frequently have undisclosed rust damage from coastal salt air and harsh winters. A VIN check protects you from both issues.",
- localLaws: "Rhode Island General Laws §11-41-3 makes receiving stolen property valued over $1,500 a felony with penalties up to 10 years in prison. Rhode Island requires title transfers within 30 days. The RI DMV maintains all VIN and title records for verification."
+ intro: "Enter the 17-character VIN from the dashboard or driver's door jamb. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches theft reports filed on SafeOrStolen plus public web results that mention that VIN.",
+ whyCheck: "Rhode Island is small, so cars sold in Providence, Warwick or Cranston often come from Massachusetts or Connecticut too. Check that the VIN on the dash, the door sticker and the title all match, and that the title state makes sense. Salt air and winter roads are hard on frames, so look underneath for rust.",
+ localLaws: "Receiving stolen property is a crime in Rhode Island, and police can return a stolen car to its owner even after you've bought it. Keep a bill of sale with the seller's name, the VIN and the date. The Rhode Island DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I check a Rhode Island VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check SafeOrStolen's reports, public web results, and AI analysis for stolen status. Our mobile app provides instant barcode scanning for faster verification at RI dealerships." },
- { question: "Is a VIN check required in Rhode Island?", answer: "Rhode Island law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase to protect themselves legally." },
- { question: "How do I detect rust damage on a Rhode Island vehicle?", answer: "While VIN checks reveal accident and flood history, rust damage from coastal salt air often isn't documented. Combine SafeOrStolen's VIN verification with a physical inspection focusing on frame, rocker panels, and wheel wells where RI salt causes hidden corrosion." }
+ { question: "How do I check a Rhode Island VIN for free?", answer: "A free SafeOrStolen account comes with 2 free checks, no credit card. Enter the VIN to decode the year, make and model, list open safety recalls, and search SafeOrStolen theft reports and public web results. For law-enforcement records, ask local police to run the VIN." },
+ { question: "Is a VIN check required in Rhode Island?", answer: "Not for a private sale. It's still worth it, because a stolen car can be taken back for its owner and you lose what you paid. Match the VIN on the car with the title before you hand over money." },
+ { question: "How do I spot rust damage on a Rhode Island car?", answer: "A VIN check won't show rust. Look under the car at the frame rails, rocker panels and wheel wells, press on any bubbled paint, and ask a mechanic to put it on a lift before you buy." }
  ]
  }
 };

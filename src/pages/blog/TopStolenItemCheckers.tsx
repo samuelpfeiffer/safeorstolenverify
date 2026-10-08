@@ -71,7 +71,7 @@ const TopStolenItemCheckers = () => {
 
   const faqs = [
     {
-      question: "What is the most comprehensive stolen item checker?",
+      question: "Which stolen item checker covers the most item types?",
       answer: "SafeOrStolen covers the most item types in one place: phones, vehicles, license plates, electronics, power tools, firearms, and bicycles. Every check searches SafeOrStolen's own theft reports and public web results, and gun and bike checks add police and registry records. Most other tools cover one category: IMEI.info is phones only, Carfax is vehicles only, and HotGunz is firearms only."
     },
     {
@@ -88,7 +88,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
-      answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It's available as a Progressive Web App (PWA) that works on iPhone, Android, and any mobile browser. The app includes barcode scanning for instant serial number entry at gun shows, pawn shops, marketplace meetups, and yard sales. No other competitor offers a mobile app."
+      answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It has a free installable web app at safeorstolen.com/app that works in the browser on iPhone and Android; it is not in the App Store or Google Play. You can scan a barcode to fill in the serial number at a gun show, pawn shop or marketplace meetup, and the result comes back in a few seconds."
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
@@ -96,11 +96,11 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "Is it illegal to buy stolen items?",
-      answer: "Yes. Receiving stolen property is a crime in all 50 US states. Penalties vary by state and item value but can include felony charges, imprisonment, and fines. Even if you didn't know the item was stolen, you can still face legal consequences — especially if the price was suspiciously low or circumstances were questionable. Checking serial numbers before purchase demonstrates due diligence and provides legal protection."
+      answer: "Yes. Receiving stolen property is a crime in all 50 US states. Penalties vary by state and item value but can include felony charges, imprisonment, and fines. Even if you didn't know the item was stolen, you can still face legal consequences — especially if the price was suspiciously low or circumstances were questionable. Checking the serial number before you buy, and keeping a dated record of that check, shows you made an honest effort to find out. It does not make a purchase legal if the item turns out to be stolen."
     },
     {
       question: "What databases does the NCIC (National Crime Information Center) check?",
-      answer: "The National Crime Information Center (NCIC) is the largest stolen property database in the United States with over 7 million stolen firearm records and millions of other stolen property records. It includes stolen vehicles, firearms, boats, securities, and other property reported by law enforcement agencies nationwide. Federal law-enforcement systems are restricted to law enforcement — civilians cannot access it directly. You can ask your local police department to check NCIC for you."
+      answer: "The National Crime Information Center (NCIC) is the FBI's national database of stolen property reported by police. It includes stolen vehicles, firearms, boats, securities and other serialized property. Only law enforcement can search it; civilians cannot access it directly, and SafeOrStolen does not search it. You can ask your local police department to check NCIC for you."
     }
   ];
 
@@ -109,11 +109,11 @@ const TopStolenItemCheckers = () => {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Top 10 Ways to Check if an Item is Stolen Before Buying (2026)",
-      "description": "Comprehensive comparison of stolen item verification services for phones, vehicles, firearms, and electronics. Compare SafeOrStolen, IMEI.info, Carfax, CheckMEND, and more.",
+      "description": "Side-by-side comparison of stolen item verification services for phones, vehicles, firearms, and electronics. Compare SafeOrStolen, IMEI.info, Carfax, CheckMEND, and more.",
       "author": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
       "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-02-06",
-      "dateModified": "2026-02-10",
+      "dateModified": "2026-10-07",
       "mainEntityOfPage": "https://safeorstolen.com/blog/top-10-stolen-item-checkers",
       "url": "https://safeorstolen.com/blog/top-10-stolen-item-checkers"
     },
@@ -163,10 +163,10 @@ const TopStolenItemCheckers = () => {
               Top 10 Ways to Check if an Item is Stolen Before Buying (2026)
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
-              Comprehensive comparison of stolen item verification services for phones, vehicles, firearms, and electronics. We tested every major service and ranked them by database coverage, cost, speed, and ease of use.
+              How the common stolen-item checks for phones, vehicles, firearms, bikes and electronics compare: what each one searches, what it costs, and where it falls short.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: February 10, 2026 · 12 min read
+              Last updated: October 7, 2026 · 12 min read
             </p>
           </div>
         </section>
@@ -212,7 +212,6 @@ const TopStolenItemCheckers = () => {
                       <th className="text-left p-3 font-bold">Categories</th>
                       <th className="text-left p-3 font-bold">Databases</th>
                       <th className="text-left p-3 font-bold">Cost</th>
-                      <th className="text-center p-3 font-bold">App</th>
                       <th className="text-left p-3 font-bold">Best For</th>
                     </tr>
                   </thead>
@@ -222,7 +221,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">All (phones, cars, guns, electronics, bikes)</td>
                       <td className="p-3">Multi-source</td>
                       <td className="p-3">$10/mo unlimited</td>
-                      <td className="p-3 text-center"><Yes /></td>
                       <td className="p-3">Everything</td>
                     </tr>
                     <tr>
@@ -230,7 +228,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Phones only</td>
                       <td className="p-3">Device details</td>
                       <td className="p-3">Free</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Phone-only checks</td>
                     </tr>
                     <tr>
@@ -238,7 +235,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Vehicles only</td>
                       <td className="p-3">1 (vehicle history)</td>
                       <td className="p-3">Paid per report</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Full vehicle history</td>
                     </tr>
                     <tr>
@@ -246,7 +242,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Phones, electronics</td>
                       <td className="p-3">UK-focused</td>
                       <td className="p-3">Paid per check</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">UK buyers</td>
                     </tr>
                     <tr>
@@ -254,7 +249,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Phones only</td>
                       <td className="p-3">Carrier blacklists</td>
                       <td className="p-3">Free</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Swappa marketplace</td>
                     </tr>
                     <tr>
@@ -262,7 +256,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Vehicles only</td>
                       <td className="p-3">Insurance claims</td>
                       <td className="p-3">Free</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Quick VIN check</td>
                     </tr>
                     <tr>
@@ -270,7 +263,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Firearms only</td>
                       <td className="p-3">Owner-reported</td>
                       <td className="p-3">Free</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Gun serial lookup</td>
                     </tr>
                     <tr>
@@ -278,7 +270,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Any item</td>
                       <td className="p-3">NCIC (via police)</td>
                       <td className="p-3">Free</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">High-value items</td>
                     </tr>
                     <tr>
@@ -286,7 +277,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">Bicycles only</td>
                       <td className="p-3">Community + police</td>
                       <td className="p-3">Free</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">Bike theft</td>
                     </tr>
                     <tr>
@@ -294,7 +284,6 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3">eBay listings</td>
                       <td className="p-3">eBay internal</td>
                       <td className="p-3">Built-in</td>
-                      <td className="p-3 text-center"><No /></td>
                       <td className="p-3">eBay purchases</td>
                     </tr>
                   </tbody>
@@ -330,16 +319,16 @@ const TopStolenItemCheckers = () => {
                     <li><Yes /> Every source searched is listed in the result</li>
                     <li><Yes /> $10/mo unlimited</li>
                     <li><Yes /> Results in a few seconds</li>
-                    <li><Yes /> Downloadable verification certificates</li>
-                    <li><Yes /> Business API for pawn shops and dealers</li>
+                    <li><Yes /> Optional $1.99 verification certificate with its own link</li>
+                    <li><Yes /> Bulk checking for pawn shops and dealers</li>
                   </ul>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4">
-                <strong>Best for:</strong> Anyone buying used items from <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>, OfferUp, Craigslist, eBay, pawn shops, gun shows, or private sellers. The mobile app makes it ideal for in-person meetups where you need to verify on the spot.
+                <strong>Best for:</strong> Anyone buying used items from <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>, OfferUp, Craigslist, eBay, pawn shops, gun shows, or private sellers. The free installable web app makes it easy to run a check on your phone at an in-person meetup.
               </p>
               <p className="text-muted-foreground text-sm">
-                <strong>Pricing:</strong> 2 free checks, then $0.99/check or $10/month unlimited across all item types. Cancel anytime. Business API also available.
+                <strong>Pricing:</strong> 2 free checks, then $0.99/check or $10/month unlimited across all item types. Cancel anytime. Bulk checking for businesses is at /bulk-check.
               </p>
               <div className="mt-4">
                 <Link to="/verify">
@@ -374,7 +363,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick phone blacklist checks when you only need a basic status. For comprehensive stolen property verification including theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> searches its own reports, public web results, and AI analysis.
+                <strong>Best for:</strong> Quick phone blacklist checks when you only need a basic status. To also search theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> shows the make and model and searches its own theft reports and public web results, with a paid carrier blacklist check available.
               </p>
             </section>
 
@@ -383,15 +372,15 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">3. Carfax — Best Detailed Vehicle History</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Paid reports · Vehicles only</p>
               <p className="text-muted-foreground mb-4">
-                Carfax is the industry standard for detailed vehicle history reports including accident history, ownership chain, mileage verification, service records, and theft status. It's the most comprehensive option for vehicles — but it's expensive and vehicles-only.
+                Carfax sells detailed vehicle history reports: accident history, ownership chain, mileage records, service records and theft status. It goes much deeper on a car's past than a theft check does, but you pay per report and it only covers vehicles.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
                   <p className="text-xs font-bold mb-1">Strengths</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
-                    <li><Yes /> Most detailed vehicle history</li>
+                    <li><Yes /> Detailed vehicle history</li>
                     <li><Yes /> Accident and service records</li>
-                    <li><Yes /> Industry-trusted brand</li>
+                    <li><Yes /> Well-known name with dealers</li>
                   </ul>
                 </div>
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -434,7 +423,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> UK-based buyers and pawn shops. For US buyers, <Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> provides better coverage of American databases at lower cost.
+                <strong>Best for:</strong> UK-based buyers and pawn shops. For US buyers, <Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> covers more item types, including guns, vehicles and bikes, for $0.99 a check.
               </p>
             </section>
 
@@ -464,7 +453,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers already shopping on Swappa. For items from other marketplaces (Facebook, OfferUp, Craigslist), use <Link to="/check-phone" className="text-primary hover:underline">SafeOrStolen's phone check</Link> for more comprehensive results.
+                <strong>Best for:</strong> Buyers already shopping on Swappa. For items from other marketplaces (Facebook, OfferUp, Craigslist), use <Link to="/check-phone" className="text-primary hover:underline">SafeOrStolen's phone check</Link>, which also searches theft reports and public web results.
               </p>
             </section>
 
@@ -532,7 +521,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">8. Local Police Department — Most Authoritative</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Your local PD · Free · Any item type</p>
               <p className="text-muted-foreground mb-4">
-                Your local police department can check any serial number against the National Crime Information Center (NCIC) — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: it requires an in-person visit, and results can take 3-7 business days.
+                Your local police department can check any serial number against the National Crime Information Center (NCIC) — the most authoritative stolen property database in the country. This is free and works for any item type. The downside: you usually have to go in or call, and departments differ on whether they will run a check for a buyer and how long it takes.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -548,13 +537,13 @@ const TopStolenItemCheckers = () => {
                   <p className="text-xs font-bold mb-1">Limitations</p>
                   <ul className="text-xs text-muted-foreground space-y-0.5">
                     <li><No /> In-person visit required</li>
-                    <li><No /> 3-7 day wait time</li>
+                    <li><No /> Not every department will do it</li>
                     <li><No /> Not practical for marketplace meetups</li>
                   </ul>
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> High-value purchases where you can wait days for results. For instant verification at gun shows, marketplace meetups, and pawn shops, use <Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> for 3-second results.
+                <strong>Best for:</strong> High-value purchases where you can wait for an answer. For a check on the spot at a gun show, marketplace meetup or pawn shop, <Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> returns results in a few seconds.
               </p>
             </section>
 
@@ -636,7 +625,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need multiple item types?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> is the only option that covers all categories (phones, cars, guns, electronics, bikes, consoles) in one platform.</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> covers phones, cars, guns, electronics, bikes and consoles in one place, so you don't need a separate tool for each.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need a mobile app?</h3>
@@ -670,7 +659,7 @@ const TopStolenItemCheckers = () => {
             <section className="py-8 text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-lg p-8">
               <h2 className="text-2xl font-bold mb-4">Ready to Verify? Start With 2 Free Checks</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
- SafeOrStolen searches multiple sources for phones, vehicles, firearms, electronics, and more. Instant results in 3 seconds. No credit card required.
+ SafeOrStolen searches its own theft reports, public web results and item-specific records for phones, vehicles, firearms, bikes and electronics. Results come back in a few seconds. No credit card required.
               </p>
               <Link to="/verify">
                 <Button size="lg" className="gap-2 text-lg px-8 py-6">
@@ -691,7 +680,7 @@ const TopStolenItemCheckers = () => {
                   { title: "Facebook Marketplace", href: "/facebook-marketplace-stolen-check" },
                   { title: "eBay Stolen Check", href: "/ebay-stolen-item-check" },
                   { title: "For Pawn Shops", href: "/for-pawn-shops" },
-                  { title: "Download App", href: "/app" },
+                  { title: "Web App", href: "/app" },
                   { title: "Xbox Check", href: "/check-xbox" },
                   { title: "Bike Check", href: "/check-bike" },
                   { title: "How It Works", href: "/how-it-works" },
@@ -706,7 +695,7 @@ const TopStolenItemCheckers = () => {
 
             {/* Disclaimer */}
             <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-6">
-              <strong>Disclaimer:</strong> This comparison is based on publicly available information as of February 2026. Pricing, features, and database coverage may change. SafeOrStolen is one of the services reviewed. We strive for accuracy and fairness in all comparisons. Individual results may vary based on item type and database coverage. A clean result from any service means the item was not found in that service's databases — it does not guarantee the item was never stolen. Always exercise caution when buying used items.
+              <strong>Disclaimer:</strong> This comparison is based on publicly available information as of October 2026. Pricing, features, and database coverage may change. SafeOrStolen is one of the services reviewed. We strive for accuracy and fairness in all comparisons. Individual results may vary based on item type and database coverage. A clean result from any service means the item was not found in that service's databases — it does not guarantee the item was never stolen. Always exercise caution when buying used items.
             </p>
           </div>
         </div>

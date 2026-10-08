@@ -1,26 +1,27 @@
 // Type for legacy format - converted to new format in completeStateVinData.ts
+// Oct 8 2026: copy rewritten by hand. Removed invented theft counts and recovery rates,
+// off-site DMV links, "AI analysis" source claims, mobile-app claims, and claims about
+// records SafeOrStolen does not search.
 export const STATE_VIN_DATA_PART7: Record<string, any> = {
  minnesota: {
  state: "Minnesota",
  stateCode: "MN",
  slug: "minnesota-vin-lookup",
  title: "Minnesota VIN Lookup - Free MN Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Minnesota VIN lookup and stolen vehicle verification. Check MN car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Minnesota VIN lookup: decode the year, make and model, see open recalls, and check SafeOrStolen theft reports and web listings for the VIN before you buy.",
  theftStats: {
- vehiclesStolen: "9,200+",
- recoveryRate: "63%",
  topCities: ["Minneapolis", "St. Paul", "Rochester"]
  },
- dmvLink: "https://dps.mn.gov/divisions/dvs/",
+ dmvLink: "",
  content: {
- intro: "Verify any Minnesota vehicle's history instantly with our free VIN lookup. Check if an MN car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Minnesota reports over 9,200 vehicle thefts annually, with the Twin Cities metro accounting for 60% of cases. Minnesota's proximity to Canada and harsh winters that cause rust damage make VIN checks essential. Protect yourself from buying stolen vehicles or rust-damaged cars.",
- localLaws: "Under Minnesota Statutes §609.53, receiving stolen property valued over $500 is a felony with penalties up to 5 years in prison. Minnesota requires title transfers within 10 days. The Minnesota DVS maintains all VIN and title records for verification."
+ intro: "Enter the VIN from a Minnesota car or truck and SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for that VIN in a few seconds.",
+ whyCheck: "Car thefts in Minneapolis and St. Paul get steady local news coverage, and stolen cars often get relisted online quickly. Checking the VIN and matching it to the title catches a car that's already been reported, or a VIN that belongs to a different model. Look underneath while you're at it: Minnesota road salt is hard on frames and brake lines.",
+ localLaws: "Receiving or keeping property you know or have reason to know is stolen is a crime in Minnesota, and a stolen vehicle can be returned to its owner even after you paid for it. Driver and Vehicle Services (DVS) handles titles; a buyer generally has 10 days to transfer the title before a late fee applies."
  },
  faqs: [
- { question: "How do I check a Minnesota VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check SafeOrStolen's stolen-item reports, public web results, and AI analysis. Our mobile app offers instant barcode scanning for faster verification.", hasAIAnswer: true },
- { question: "Does Minnesota require VIN inspections?", answer: "Minnesota requires VIN inspections for out-of-state vehicles and vehicles without existing MN titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden damage." },
- { question: "What is Minnesota's title transfer process?", answer: "In Minnesota, buyers must complete title transfer within 10 days or face late fees. Both parties sign the title, and buyer submits it to the MN DVS with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing." }
+ { question: "How do I check a Minnesota VIN for free?", answer: "Create a free account at SafeOrStolen (safeorstolen.com) for 2 free checks, no credit card. Enter the 17-character VIN to decode the vehicle, see open recalls, and search SafeOrStolen theft reports and public web listings. The free web app at safeorstolen.com/app runs in your phone's browser." },
+ { question: "Does Minnesota require VIN inspections?", answer: "Some vehicles, such as rebuilt salvage vehicles, need an inspection before Minnesota will title them. Ask Driver and Vehicle Services what your vehicle needs. Before buying, compare the VIN on the dash, the driver's door sticker and the title yourself." },
+ { question: "What is Minnesota's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading. You take the title to a deputy registrar office to put it in your name, generally within 10 days to avoid a late fee. Check that the VIN on the title matches the car before you pay." }
  ]
  },
  mississippi: {
@@ -28,22 +29,20 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  stateCode: "MS",
  slug: "mississippi-vin-lookup",
  title: "Mississippi VIN Lookup - Free MS Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Mississippi VIN lookup and stolen vehicle verification. Check MS car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Mississippi VIN lookup: decode the year, make and model, see open recalls, and check SafeOrStolen theft reports and web listings for the VIN before you buy.",
  theftStats: {
- vehiclesStolen: "5,800+",
- recoveryRate: "52%",
  topCities: ["Jackson", "Gulfport", "Hattiesburg"]
  },
- dmvLink: "https://www.dor.ms.gov/motor-vehicle",
+ dmvLink: "",
  content: {
- intro: "Verify any Mississippi vehicle's history instantly with our free VIN lookup. Check if an MS car is stolen, has flood damage, or title issues before you buy.",
- whyCheck: "Mississippi reports over 5,800 vehicle thefts annually. Jackson has one of the highest per-capita auto theft rates in the South. Mississippi is also a major source of flood-damaged vehicles from Gulf Coast hurricanes. A VIN check protects you from both stolen and flood-damaged cars.",
- localLaws: "Mississippi Code §97-17-65 makes receiving stolen property a felony if vehicle value exceeds $500, with penalties up to 10 years in prison. Mississippi requires title transfers within 30 days. The MS Department of Revenue maintains all title and VIN records."
+ intro: "Enter the VIN from a Mississippi car or truck and SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for that VIN in a few seconds.",
+ whyCheck: "The Gulf Coast gets hit by hurricanes, and water-damaged cars sometimes turn up for sale far from where they flooded. A VIN check tells you if the car has been reported stolen or listed online with a different story. For flood damage, check the car itself: silt under the carpet, rust on seat bolts, and a musty smell.",
+ localLaws: "Receiving or keeping property you know is stolen is a crime in Mississippi, and a stolen vehicle can be returned to its owner even after a sale. Titles are handled by the Mississippi Department of Revenue through county tax collectors."
  },
  faqs: [
- { question: "How do I check for flood damage on a Mississippi vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to help reveal flood damage history. Mississippi Gulf Coast vehicles can have hidden flood damage from hurricanes. We analyze SafeOrStolen's stolen-item reports, public web results, and AI analysis to uncover potential issues before you buy.", hasAIAnswer: true },
- { question: "Is a VIN check required in Mississippi?", answer: "Mississippi law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Always verify VIN history before completing any purchase to protect yourself legally and financially." },
- { question: "What is Mississippi's title transfer process?", answer: "In Mississippi, both buyer and seller must complete the title transfer within 30 days. The seller signs the title, buyer submits it to the MS DOR with bill of sale. Always verify the VIN matches the physical title before signing to prevent fraud." }
+ { question: "How do I check for flood damage on a Mississippi vehicle?", answer: "SafeOrStolen does not search flood or title-brand records. Ask the Department of Revenue about the title's brand, and inspect the car: look for a waterline or silt under the carpet and in the trunk, rust on seat rails, and fogged lights. Use SafeOrStolen (safeorstolen.com) to see if the VIN has been reported stolen or posted online." },
+ { question: "Is a VIN check required in Mississippi?", answer: "No law makes a private buyer run a VIN check. If the vehicle turns out to be stolen, it can be taken back and you're left trying to recover your money from the seller. Check the VIN, match it to the title and the seller's ID, and keep a dated record of the check." },
+ { question: "What is Mississippi's title transfer process?", answer: "The seller signs the title over to you, and you take it with a bill of sale to your county tax collector to title and register the vehicle. Before signing anything, make sure the VIN on the title matches the VIN on the dash and the door sticker." }
  ]
  },
  missouri: {
@@ -51,22 +50,20 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  stateCode: "MO",
  slug: "missouri-vin-lookup",
  title: "Missouri VIN Lookup - Free MO Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Missouri VIN lookup and stolen vehicle verification. Check MO car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Missouri VIN lookup: decode the year, make and model, see open recalls, and check SafeOrStolen theft reports and web listings for the VIN before you buy.",
  theftStats: {
- vehiclesStolen: "14,200+",
- recoveryRate: "58%",
  topCities: ["St. Louis", "Kansas City", "Springfield"]
  },
- dmvLink: "https://dor.mo.gov/motor-vehicle/",
+ dmvLink: "",
  content: {
- intro: "Verify any Missouri vehicle's history instantly with our free VIN lookup. Check if an MO car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Missouri reports over 14,200 vehicle thefts annually. St. Louis ranks among the top 10 cities nationally for auto theft. Missouri's central location and multiple interstate highways make it a hotspot for stolen vehicle trafficking. A VIN check protects you from title fraud.",
- localLaws: "Under Missouri Revised Statutes §570.080, receiving stolen property valued over $750 is a felony with penalties up to 7 years in prison. Missouri requires title transfers within 30 days. The Missouri Department of Revenue maintains all VIN and title records."
+ intro: "Enter the VIN from a Missouri car or truck and SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for that VIN in a few seconds.",
+ whyCheck: "Car theft is a regular story in St. Louis and Kansas City, and stolen cars often get resold through online listings. A VIN check plus a careful look at the paperwork catches the common problems: a VIN someone already reported stolen, a VIN that decodes to a different model, or a seller whose name isn't on the title.",
+ localLaws: "Receiving or keeping property you know or believe is stolen is a crime in Missouri, and a stolen vehicle can be returned to its owner even after you paid for it. The Missouri Department of Revenue handles titles; a buyer generally has 30 days to title the vehicle before a penalty applies."
  },
  faqs: [
- { question: "How do I verify a Missouri vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify Missouri title status. Enter the VIN to check MO Department of Revenue records, theft databases, and title brands. Missouri has electronic titles for newer vehicles, so always verify the VIN matches the physical vehicle." },
- { question: "Does Missouri require VIN inspections?", answer: "Missouri requires VIN inspections for out-of-state vehicles and vehicles without existing MO titles. The inspection must be performed by law enforcement or authorized DMV agents. However, buyers should independently verify VIN history to detect title fraud." },
- { question: "What is title washing in Missouri?", answer: "Title washing is when vehicles with salvage or flood titles are registered in states with weaker disclosure laws, then brought to Missouri with clean titles. Always run a comprehensive nationwide VIN check to catch title washing schemes." }
+ { question: "How do I verify a Missouri vehicle title?", answer: "Check that the VIN on the title matches the dashboard plate and the door sticker, and that the seller's name matches their ID. The Department of Revenue can answer questions about a title's status. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web listings for the VIN; it does not search state title records." },
+ { question: "Does Missouri require VIN inspections?", answer: "Missouri requires an inspection for some vehicles, such as ones last titled in another state or rebuilt from salvage. Ask a license office what your vehicle needs. Before buying, compare the VIN in all three places on the vehicle with the title." },
+ { question: "What is title washing in Missouri?", answer: "Title washing means moving a salvage or flood-branded vehicle through another state to get a title without the brand. A SafeOrStolen check won't show title brands, so ask the seller for the vehicle's history, look for repair signs, and have a mechanic inspect it before you buy." }
  ]
  },
  montana: {
@@ -74,22 +71,20 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  stateCode: "MT",
  slug: "montana-vin-lookup",
  title: "Montana VIN Lookup - Free MT Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Montana VIN lookup and stolen vehicle verification. Check MT car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Montana VIN lookup: decode the year, make and model, see open recalls, and check SafeOrStolen theft reports and web listings for the VIN before you buy.",
  theftStats: {
- vehiclesStolen: "1,600+",
- recoveryRate: "64%",
  topCities: ["Billings", "Missoula", "Great Falls"]
  },
- dmvLink: "https://dojmt.gov/driving/",
+ dmvLink: "",
  content: {
- intro: "Verify any Montana vehicle's history instantly with our free VIN lookup. Check if an MT car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Montana reports over 1,600 vehicle thefts annually. While Montana has lower overall theft rates, rural areas have lower recovery rates. Montana is also known for vehicle registration schemes where people register out-of-state vehicles in MT to avoid sales tax. A VIN check protects you from both issues.",
- localLaws: "Montana Code §45-6-301 makes theft of property valued over $1,500 a felony with penalties up to 10 years in prison, including unknowingly buying stolen vehicles. Montana requires title transfers within 40 days. The Montana MVD maintains all title records."
+ intro: "Enter the VIN from a Montana car, truck or trailer and SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for that VIN in a few seconds.",
+ whyCheck: "Montana is known for out-of-state owners registering vehicles through Montana LLCs, so the name on the paperwork may be a company, not the person selling. That's not proof of a problem, but it means you need to ask who actually owns the vehicle and whether the seller can sign for the LLC. Check the VIN against the title too.",
+ localLaws: "Knowingly obtaining or keeping stolen property is theft under Montana law, and a stolen vehicle can be returned to its owner even after a sale. The Motor Vehicle Division handles titles, through your county treasurer's office."
  },
  faqs: [
- { question: "How do I check a Montana VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to search SafeOrStolen's stolen-item reports, public web results, and AI analysis. Our mobile app provides instant barcode scanning for faster verification at dealerships.", hasAIAnswer: true },
- { question: "What is the Montana vehicle registration loophole?", answer: "Some people register expensive vehicles in Montana (where they don't live) to avoid sales tax in their home state. This is tax evasion and can result in vehicle seizure. Always verify the title is legitimate and matches the seller's actual residence before purchase." },
- { question: "Is a VIN check required in Montana?", answer: "Montana law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal prosecution and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase." }
+ { question: "How do I check a Montana VIN for free?", answer: "Create a free account at SafeOrStolen (safeorstolen.com) for 2 free checks. Enter the 17-character VIN to decode the vehicle, see open recalls, and search SafeOrStolen theft reports and public web listings. On a phone, install the free web app from safeorstolen.com/app." },
+ { question: "What is the Montana LLC registration loophole?", answer: "People from other states form a Montana LLC and register expensive vehicles and RVs in its name to avoid their home state's sales tax. Their home state may treat that as tax evasion. If you're buying one, the LLC owns the vehicle, so make sure the seller can legally sign for the LLC and that the VIN matches the title." },
+ { question: "Is a VIN check required in Montana?", answer: "No law makes a private buyer run a VIN check. If the vehicle turns out to be stolen, it can be taken back and you're left trying to recover your money from the seller. Check the VIN, match it to the title and the seller's ID, and keep a dated record of the check." }
  ]
  },
  nebraska: {
@@ -97,22 +92,20 @@ export const STATE_VIN_DATA_PART7: Record<string, any> = {
  stateCode: "NE",
  slug: "nebraska-vin-lookup",
  title: "Nebraska VIN Lookup - Free NE Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Nebraska VIN lookup and stolen vehicle verification. Check NE car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Nebraska VIN lookup: decode the year, make and model, see open recalls, and check SafeOrStolen theft reports and web listings for the VIN before you buy.",
  theftStats: {
- vehiclesStolen: "3,800+",
- recoveryRate: "61%",
  topCities: ["Omaha", "Lincoln", "Bellevue"]
  },
- dmvLink: "https://dmv.nebraska.gov/",
+ dmvLink: "",
  content: {
- intro: "Verify any Nebraska vehicle's history instantly with our free VIN lookup. Check if an NE car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Nebraska reports over 3,800 vehicle thefts annually, with Omaha accounting for 50% of cases. Nebraska's location on I-80 makes it a corridor for stolen vehicle trafficking between major cities. Running a VIN check protects you from buying stolen vehicles or cars with salvage titles.",
- localLaws: "Under Nebraska Revised Statutes §28-516, receiving stolen property valued over $1,500 is a felony with penalties up to 5 years in prison. Nebraska requires title transfers within 30 days. The Nebraska DMV maintains all VIN and title records for verification."
+ intro: "Enter the VIN from a Nebraska car or truck and SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for that VIN in a few seconds.",
+ whyCheck: "Most Nebraska used-car sales happen around Omaha and Lincoln, and many are private deals arranged through online listings. When you meet a stranger to look at a car, the VIN is the one thing you can check on the spot. If it decodes to a different model, or turns up in a theft report or an older listing with a different seller, stop there.",
+ localLaws: "Receiving or keeping property you know or believe is stolen is theft under Nebraska law, and a stolen vehicle can be returned to its owner even after a sale. Titles are handled by your county treasurer; a buyer generally has 30 days to title and register the vehicle."
  },
  faqs: [
- { question: "How do I verify a Nebraska vehicle title?", answer: "Use SafeOrStolen's VIN lookup to help verify Nebraska title status. Enter the VIN to check SafeOrStolen's stolen-item reports, public web results, and AI analysis. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase.", hasAIAnswer: true },
- { question: "Does Nebraska require VIN inspections?", answer: "Nebraska requires VIN inspections for out-of-state vehicles and vehicles without existing NE titles. However, all buyers should independently verify VIN history to detect stolen vehicles, salvage titles, and hidden damage before purchase." },
- { question: "What is Nebraska's title transfer process?", answer: "In Nebraska, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the NE DMV with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I verify a Nebraska vehicle title?", answer: "Check that the VIN on the title matches the dashboard plate and the driver's door sticker, and that the seller's name matches their ID. Your county treasurer can answer questions about a title's status. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web listings for the VIN; it does not search state title records." },
+ { question: "Does Nebraska require VIN inspections?", answer: "Nebraska requires a VIN inspection, done by the county sheriff, for vehicles last titled in another state and some others. Ask your county treasurer what your vehicle needs. Before buying, compare the VIN in all three places on the vehicle with the title." },
+ { question: "What is Nebraska's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading. You take the title, a bill of sale and proof of insurance to your county treasurer to title and register the vehicle, generally within 30 days. Check the VIN against the vehicle before you pay." }
  ]
  }
 };

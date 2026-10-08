@@ -1,26 +1,26 @@
 // Type for legacy format - converted to new format in completeStateVinData.ts
+// Oct 8 2026: copy rewritten by hand. Invented theft counts, recovery rates, rankings, statute penalties
+// and outbound DMV links removed. dmvLink is left empty on purpose (no outbound links).
 export const STATE_VIN_DATA_PART8: Record<string, any> = {
  nevada: {
  state: "Nevada",
  stateCode: "NV",
  slug: "nevada-vin-lookup",
  title: "Nevada VIN Lookup - Free NV Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Nevada VIN lookup and stolen vehicle verification. Check NV car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Free Nevada VIN lookup: decode the year, make and model, see open safety recalls and search stolen reports before you buy a used car in Las Vegas or Reno.",
  theftStats: {
- vehiclesStolen: "8,900+",
- recoveryRate: "53%",
  topCities: ["Las Vegas", "Henderson", "Reno"]
  },
- dmvLink: "https://dmv.nv.gov/",
+ dmvLink: "",
  content: {
- intro: "Verify any Nevada vehicle's history instantly with our free VIN lookup. Check if an NV car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "Nevada reports over 8,900 vehicle thefts annually, with Las Vegas ranking among the top 20 cities nationally for auto theft. Nevada's proximity to California and Arizona makes it a hotspot for stolen vehicle trafficking. A VIN check protects you from title fraud and stolen cars.",
- localLaws: "Under Nevada Revised Statutes §205.275, receiving stolen property valued over $1,200 is a felony with penalties up to 10 years in prison. Nevada requires title transfers within 30 days. The Nevada DMV maintains all VIN and title records for verification."
+ intro: "Enter a Nevada vehicle's 17-character VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen's theft reports and public web results. You'll have an answer in a few seconds, with every source listed.",
+ whyCheck: "Las Vegas gets a steady flow of cars driven in from California and Arizona, so a Nevada sale often comes with an out-of-state title. Ask to see the title first, check that the seller's name matches their ID, and compare the VIN on it to the dashboard and the driver's door sticker.",
+ localLaws: "In Nevada, a car that turns out to be stolen goes back to its owner even if you paid for it in good faith, and you'd have to pursue the seller for your money. Titles and registration go through the Nevada DMV, which also inspects the VIN on vehicles coming from out of state."
  },
  faqs: [
- { question: "How do I check a Nevada VIN for free?", answer: "Use SafeOrStolen's free VIN lookup tool. Enter the 17-digit VIN to check for reported theft, public web results, and our advanced AI analysis. Our mobile app provides instant barcode scanning for faster verification at Las Vegas dealerships." },
- { question: "Does Nevada require VIN inspections?", answer: "Nevada requires VIN inspections for out-of-state vehicles and vehicles without existing NV titles. The inspection verifies the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
- { question: "What is Nevada's title transfer process?", answer: "In Nevada, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the NV DMV with bill of sale and smog certification (if applicable). Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I check a Nevada VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/nevada-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to see the year, make and model, open recalls, and whether it appears in SafeOrStolen's theft reports or public listings. On your phone, use the free installable web app at safeorstolen.com/app." },
+ { question: "Does Nevada require VIN inspections?", answer: "Nevada requires a VIN inspection for vehicles coming from out of state before they're registered. The inspection confirms that the number on the car matches the paperwork. It doesn't tell a private buyer whether the car was reported stolen, so search the VIN yourself before paying." },
+ { question: "What is Nevada's title transfer process?", answer: "The seller signs the title over to you, you both complete a bill of sale, and you take it to the Nevada DMV to register the car, with an emissions test if the county requires one. Before you sign, make sure the VIN on the title matches the dashboard and door sticker." }
  ]
  },
  newhampshire: {
@@ -28,22 +28,20 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  stateCode: "NH",
  slug: "new-hampshire-vin-lookup",
  title: "New Hampshire VIN Lookup - Free NH Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New Hampshire VIN lookup and stolen vehicle verification. Check NH car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Free New Hampshire VIN lookup: decode the year, make and model, check open safety recalls and search stolen reports before you buy a used car in NH.",
  theftStats: {
- vehiclesStolen: "2,100+",
- recoveryRate: "66%",
  topCities: ["Manchester", "Nashua", "Concord"]
  },
- dmvLink: "https://www.nh.gov/safety/divisions/dmv/",
+ dmvLink: "",
  content: {
- intro: "Verify any New Hampshire vehicle's history instantly with our free VIN lookup. Check if an NH car is stolen, has title issues, or rust damage before you buy.",
- whyCheck: "New Hampshire reports over 2,100 vehicle thefts annually. While NH has lower theft rates than national averages, the state's location near major cities like Boston makes it a target for organized theft rings. NH vehicles also frequently have undisclosed rust damage from harsh winters. A VIN check protects you from both issues.",
- localLaws: "New Hampshire RSA 637:7 makes receiving stolen property valued over $1,500 a felony with penalties up to 7 years in prison. New Hampshire requires title transfers within 10 days. The NH DMV maintains all VIN and title records for verification."
+ intro: "SafeOrStolen decodes a New Hampshire VIN's year, make and model, lists any open safety recalls, and searches SafeOrStolen's theft reports and public web results. It takes a few seconds and every source searched is listed.",
+ whyCheck: "Southern New Hampshire is close enough to Boston that plenty of cars sold there came up from Massachusetts. Look at the title before the car, make sure the seller's name is on it, and check underneath for rust while you're comparing the VIN on the dash to the title.",
+ localLaws: "In New Hampshire, a stolen vehicle is returned to its owner even if the buyer didn't know. Titles are handled by the NH Division of Motor Vehicles, and older vehicles in New Hampshire may not have a title at all, so ask what paperwork the seller has before you go look."
  },
  faqs: [
- { question: "How do I verify a New Hampshire vehicle title?", answer: "Use SafeOrStolen's VIN lookup to check for reported theft, public web results, and our advanced AI analysis. Always ensure the VIN on the title matches the vehicle's dashboard and door jamb VIN plates before purchase." },
- { question: "Is a VIN check required in New Hampshire?", answer: "New Hampshire law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any vehicle purchase to protect themselves legally and financially." },
- { question: "Does New Hampshire have vehicle inspections?", answer: "New Hampshire requires annual safety inspections but not emissions testing (no inspection sticker needed). However, the safety inspection doesn't verify if a vehicle is stolen. Always run an independent VIN check before purchase to detect theft records and title fraud." }
+ { question: "How do I verify a New Hampshire vehicle title?", answer: "Check that the seller's name on the title matches their ID and that the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-hampshire-vin-lookup) to search its theft reports and public web results. SafeOrStolen does not search NH DMV title records." },
+ { question: "Is a VIN check required in New Hampshire?", answer: "No law requires a private buyer in New Hampshire to run a VIN check. It's still worth the few seconds: if the car was stolen, police can return it to the owner and you lose what you paid. Your first 2 checks on SafeOrStolen are free." },
+ { question: "Does New Hampshire have vehicle inspections?", answer: "Yes. New Hampshire requires a yearly safety inspection at a licensed station. The inspection looks at brakes, lights, tires and similar items. It doesn't check whether the car was reported stolen, so search the VIN before you buy rather than counting on the inspection." }
  ]
  },
  newjersey: {
@@ -51,22 +49,20 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  stateCode: "NJ",
  slug: "new-jersey-vin-lookup",
  title: "New Jersey VIN Lookup - Free NJ Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New Jersey VIN lookup and stolen vehicle verification. Check NJ car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Free New Jersey VIN lookup: decode the year, make and model, see open safety recalls and search stolen reports before buying a used car in New Jersey.",
  theftStats: {
- vehiclesStolen: "13,400+",
- recoveryRate: "57%",
  topCities: ["Newark", "Jersey City", "Paterson"]
  },
- dmvLink: "https://www.nj.gov/mvc/",
+ dmvLink: "",
  content: {
- intro: "Verify any New Jersey vehicle's history instantly with our free VIN lookup. Check if an NJ car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "New Jersey reports over 13,400 vehicle thefts annually, with Newark ranking among the top 10 cities nationally for auto theft. NJ's proximity to major ports makes it a hub for stolen vehicle export. Running a VIN check protects you from buying stolen vehicles, salvage titles, or cars with hidden damage.",
- localLaws: "Under New Jersey Statutes §2C:20-7, receiving stolen property valued over $500 is a felony with penalties up to 5 years in prison. New Jersey requires title transfers within 10 business days. The NJ MVC maintains all VIN and title records for verification."
+ intro: "Run a New Jersey VIN through SafeOrStolen to see the decoded year, make and model, any open safety recalls, and whether the VIN shows up in SafeOrStolen's theft reports or in listings and posts online. It takes a few seconds and every source is listed.",
+ whyCheck: "North Jersey private sales move quickly, and a seller who'll only meet in a parking lot and wants cash now is worth slowing down. Ask for the title up front, match the VIN on it to the dashboard and door sticker, and look for scratches or loose rivets around the dashboard VIN plate.",
+ localLaws: "In New Jersey, a stolen car goes back to its owner even if you bought it without knowing, and you're left to recover your money from the seller. Title transfers go through the NJ Motor Vehicle Commission."
  },
  faqs: [
- { question: "How do I check a New Jersey VIN for free?", answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to check for reported theft, public web results, and our advanced AI analysis. Our mobile app offers instant barcode scanning for faster verification at NJ dealerships." },
- { question: "Does New Jersey require VIN inspections?", answer: "New Jersey requires VIN inspections for out-of-state vehicles and vehicles without existing NJ titles. The inspection must be performed at an MVC facility or authorized location. However, buyers should independently verify VIN history to detect stolen vehicles and title fraud." },
- { question: "What is New Jersey's title transfer process?", answer: "In New Jersey, buyers must complete title transfer within 10 business days or face penalties. Both parties sign the title, and buyer submits it to the NJ MVC with bill of sale and insurance proof. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public web results. After that, it's $0.99 a check or $10 a month for unlimited checks." },
+ { question: "Does New Jersey require VIN inspections?", answer: "New Jersey can require a VIN inspection at a Motor Vehicle Commission facility for some vehicles coming from out of state. That inspection confirms the number matches the paperwork. It isn't a stolen check for a private buyer, so search the VIN yourself before handing over money." },
+ { question: "What is New Jersey's title transfer process?", answer: "The seller signs the back of the title and fills in the sale price and odometer reading, and you take it to the NJ Motor Vehicle Commission with proof of insurance to title and register the car. Before signing, confirm the VIN on the title matches the vehicle." }
  ]
  },
  newmexico: {
@@ -74,22 +70,20 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  stateCode: "NM",
  slug: "new-mexico-vin-lookup",
  title: "New Mexico VIN Lookup - Free NM Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New Mexico VIN lookup and stolen vehicle verification. Check NM car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Free New Mexico VIN lookup: decode the year, make and model, check open safety recalls and search stolen reports before you buy a used car in NM.",
  theftStats: {
- vehiclesStolen: "6,700+",
- recoveryRate: "51%",
  topCities: ["Albuquerque", "Las Cruces", "Rio Rancho"]
  },
- dmvLink: "https://www.mvd.newmexico.gov/",
+ dmvLink: "",
  content: {
- intro: "Verify any New Mexico vehicle's history instantly with our free VIN lookup. Check if an NM car is stolen, has title issues, or accident history before you buy.",
- whyCheck: "New Mexico reports over 6,700 vehicle thefts annually, with Albuquerque having one of the highest per-capita theft rates in the nation. New Mexico's border location makes it a corridor for stolen vehicle trafficking to Mexico. A VIN check protects you from buying stolen cars and salvage titles.",
- localLaws: "New Mexico Statutes §30-16-11 makes receiving stolen property a felony if vehicle value exceeds $500, with penalties up to 18 months in prison. New Mexico requires title transfers within 30 days. The NM MVD maintains all VIN and title records for verification."
+ intro: "Enter a New Mexico VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen's theft reports and public web results. You'll get the answer in a few seconds, with every source listed.",
+ whyCheck: "Albuquerque buyers often see pickups and SUVs listed with a story about a quick move or a family emergency. Ask to see the title before you drive over, make sure the seller's name is on it, and compare the VIN on the title to the dashboard and door sticker.",
+ localLaws: "In New Mexico, a stolen vehicle is returned to its owner even if the buyer paid in good faith. Titles and registration go through the New Mexico Motor Vehicle Division, which also inspects the VIN on vehicles coming in from another state."
  },
  faqs: [
- { question: "How do I verify a New Mexico vehicle title?", answer: "Use SafeOrStolen's VIN lookup to verify New Mexico title status. Enter the VIN to check NM MVD records, theft databases, and title brands. New Mexico has electronic titles, so always verify the VIN matches the physical vehicle before purchase." },
- { question: "Is a VIN check required in New Mexico?", answer: "New Mexico law doesn't mandate VIN checks for private sales, but buyers who purchase stolen vehicles face criminal charges and vehicle seizure. Smart buyers always verify VIN history before completing any purchase to avoid legal and financial consequences." },
- { question: "What is New Mexico's title transfer process?", answer: "In New Mexico, buyers must complete title transfer within 30 days. Both parties sign the title, and buyer submits it to the NM MVD with bill of sale and odometer disclosure. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I verify a New Mexico vehicle title?", answer: "Make sure the seller's name on the title matches their ID and the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-mexico-vin-lookup) to search its theft reports and public web results. SafeOrStolen does not search MVD title records or title brands." },
+ { question: "Is a VIN check required in New Mexico?", answer: "No law requires a private buyer in New Mexico to run a VIN check. If the car turns out to be stolen, though, police can return it to the owner and you lose your money. Checking first takes a few seconds, and your first 2 checks are free." },
+ { question: "What is New Mexico's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading, and you take it to the New Mexico MVD with a bill of sale to title and register the car. Out-of-state vehicles also get a VIN inspection. Confirm the VIN on the title matches the car before you sign." }
  ]
  },
  northcarolina: {
@@ -97,22 +91,20 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  stateCode: "NC",
  slug: "north-carolina-vin-lookup",
  title: "North Carolina VIN Lookup - Free NC Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free North Carolina VIN lookup and stolen vehicle verification. Check NC car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
+ metaDescription: "Free North Carolina VIN lookup: decode the year, make and model, see open safety recalls and search stolen reports before buying a used car in NC.",
  theftStats: {
- vehiclesStolen: "16,800+",
- recoveryRate: "59%",
  topCities: ["Charlotte", "Raleigh", "Greensboro"]
  },
- dmvLink: "https://www.ncdot.gov/dmv/",
+ dmvLink: "",
  content: {
- intro: "Verify any North Carolina vehicle's history instantly with our free VIN lookup. Check if an NC car is stolen, has title issues, or flood damage before you buy.",
- whyCheck: "North Carolina reports over 16,800 vehicle thefts annually, with Charlotte and Raleigh accounting for most cases. NC is also a major source of flood-damaged vehicles from hurricanes. Running a VIN check protects you from buying stolen vehicles, salvage titles, or cars with hidden flood damage.",
- localLaws: "Under North Carolina General Statutes §14-71.1, receiving stolen property valued over $1,000 is a felony with penalties up to 20 months in prison. North Carolina requires title transfers within 28 days. The NC DMV maintains all VIN and title records for verification."
+ intro: "SafeOrStolen decodes a North Carolina VIN's year, make and model, lists any open safety recalls, and searches SafeOrStolen's theft reports and public web results. The answer comes back in a few seconds with every source listed.",
+ whyCheck: "After a hurricane season, coastal North Carolina cars can turn up for sale inland and in other states. Look for damp carpet, a musty smell, and rust on seat rails while you check the title. Make sure the seller's name is on the title and the VIN matches the dashboard and door sticker.",
+ localLaws: "In North Carolina, a stolen vehicle goes back to its owner even if you bought it in good faith. Titles transfer through the NCDMV, and the seller's signature on a North Carolina title has to be notarized."
  },
  faqs: [
- { question: "How do I check for flood damage on a North Carolina vehicle?", answer: "Use SafeOrStolen's comprehensive VIN check to reveal potential flood damage history. North Carolina vehicles can sometimes have hidden damage. We check for reported theft, public web results, and use AI analysis to help uncover issues sellers might not disclose." },
- { question: "Does North Carolina require VIN inspections?", answer: "North Carolina requires VIN inspections for out-of-state vehicles and vehicles without existing NC titles. The inspection must verify the VIN matches the title. However, buyers should independently verify VIN history to detect stolen vehicles and salvage titles." },
- { question: "What is North Carolina's title transfer process?", answer: "In North Carolina, buyers must complete title transfer within 28 days. Both parties sign the title, and buyer submits it to the NC DMV with damage disclosure and odometer statement. Always verify the VIN matches the title before signing to prevent fraud." }
+ { question: "How do I check for flood damage on a North Carolina vehicle?", answer: "SafeOrStolen does not show flood or salvage title brands, so use a vehicle history report for that. In person, look for damp or new carpet, a musty smell, rust on seat rails and silt in the spare-tire well. Use SafeOrStolen (safeorstolen.com/north-carolina-vin-lookup) to search theft reports and online listings for the VIN." },
+ { question: "Does North Carolina require VIN inspections?", answer: "North Carolina requires an inspection for some vehicles coming from out of state and for rebuilt salvage vehicles. That inspection confirms the VIN and the car's condition. It isn't a stolen check for a private buyer, so search the VIN yourself before you pay." },
+ { question: "What is North Carolina's title transfer process?", answer: "The seller signs the title in front of a notary and fills in the odometer reading, and you take it to an NCDMV license plate agency to title and register the car. Before anyone signs, confirm the VIN on the title matches the dashboard and door sticker." }
  ]
  }
 };

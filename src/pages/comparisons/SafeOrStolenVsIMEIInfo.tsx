@@ -12,7 +12,7 @@ const SafeOrStolenVsIMEIInfo = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "SafeOrStolen and IMEI.info Comparison",
-    "description": "Detailed comparison between SafeOrStolen and IMEI.info stolen phone checker services",
+    "description": "Side-by-side look at SafeOrStolen and IMEI.info for checking a used phone before you buy it",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
@@ -22,7 +22,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "item": {
             "@type": "Product",
             "name": "SafeOrStolen",
-            "description": "Free stolen item verification platform",
+            "description": "Stolen item check for phones, vehicles, bikes, guns and other serial-numbered items. 2 free checks, then $0.99 a check or $10 a month.",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
           }
         },
@@ -32,8 +32,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "item": {
             "@type": "Product",
             "name": "IMEI.info",
-            "description": "IMEI lookup and phone information service",
-            "offers": { "@type": "Offer", "price": "10.00", "priceCurrency": "USD" }
+            "description": "IMEI lookup and phone information service"
           }
         }
       ]
@@ -56,7 +55,7 @@ const SafeOrStolenVsIMEIInfo = () => {
     <>
       <PageSEO
         title="Best IMEI.info Alternative - IMEI Checker Comparison"
-        description="Compare SafeOrStolen and IMEI.info for stolen phone verification. See features, pricing, and database differences."
+        description="Looking for an IMEI.info alternative? Compare SafeOrStolen and IMEI.info side by side: what each one checks, what it costs, and which fits a used-phone purchase."
         keywords="imei.info alternative, best imei.info alternative, free imei checker, stolen phone checker comparison, best imei lookup"
         canonical="/comparisons/safeorstolen-vs-imei-info"
         structuredData={comparisonSchema}
@@ -73,8 +72,8 @@ const SafeOrStolenVsIMEIInfo = () => {
                 Best IMEI.info Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Which stolen phone checker should you use? We compare features, pricing, and reliability 
-                to help you make the right choice.
+                IMEI.info tells you about the phone. SafeOrStolen tells you whether anyone has reported it stolen,
+                and it works for cars, bikes, guns and tools too. Here's how they differ.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
@@ -99,10 +98,10 @@ const SafeOrStolenVsIMEIInfo = () => {
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-6">
                   <p className="text-lg text-center">
-                    <strong className="text-primary">SafeOrStolen wins</strong> for most users. It offers 
-                    <strong> free stolen checks</strong>, supports <strong>multiple item types</strong> (not just phones), 
-                    and has a <strong>larger verified database</strong>. IMEI.info is better if you only need 
-                    basic device specifications.
+                    If you're buying a used phone and want to know if it was reported stolen, use{' '}
+                    <strong className="text-primary">SafeOrStolen</strong>: 2 free checks, it searches SafeOrStolen
+                    theft reports and public web results, and it also handles VINs and serial numbers. IMEI.info is
+                    fine if you only want to look up a phone's model and specs.
                   </p>
                 </CardContent>
               </Card>
@@ -182,7 +181,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          SafeOrStolen reports, public web results, and AI analysis
+                          Searches SafeOrStolen theft reports and public web results
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -190,11 +189,11 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          Mobile apps for iOS and Android
+                          Free installable web app at safeorstolen.com/app
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          AI-powered risk analysis and fraud detection
+                          Optional paid phone blacklist check (up to 20 a month on the $10 plan)
                         </li>
                       </ul>
                     </div>
@@ -209,7 +208,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          Premium features require subscription
+                          After the free checks, $0.99 a check or $10 a month
                         </li>
                       </ul>
                     </div>
@@ -251,22 +250,11 @@ const SafeOrStolenVsIMEIInfo = () => {
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          Blacklist check costs $10+ per search
+                          Blacklist checks are a paid extra
                         </li>
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
                           Phones only - no cars, bikes, or other items
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          Database size not disclosed
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          No law enforcement partnerships
                         </li>
                       </ul>
                     </div>
@@ -300,15 +288,15 @@ const SafeOrStolenVsIMEIInfo = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary mt-0.5" />
-                        You want verified law enforcement data
+                        You want a dated record that you checked before buying
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary mt-0.5" />
-                        You prefer using a mobile app
+                        You want to check from your phone with the free web app
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary mt-0.5" />
-                        You need comprehensive risk analysis
+                        You want every source listed with the result
                       </li>
                     </ul>
                   </CardContent>
@@ -353,7 +341,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                 <Link to="/verify">Check Item Now - Free</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="font-semibold border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link to="/app">Download Mobile App</Link>
+                <Link to="/app">Get the Free Web App</Link>
               </Button>
             </div>
           </div>
@@ -370,8 +358,9 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. 
-                      IMEI.info charges $10+ for blacklist checks.
+                      You get 2 free checks with a free account and no credit card. After that it's $0.99 a check
+                      or $10 a month for unlimited checks, cancel anytime. The phone blacklist check is a paid extra;
+                      monthly members get up to 20 a month.
                     </p>
                   </CardContent>
                 </Card>
@@ -380,7 +369,9 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Which service has more accurate data?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen uses its own stolen-item reports, public web results, and AI analysis. IMEI.info provides phone device details. SafeOrStolen does not currently check carrier blacklists.
+                      They answer different questions. IMEI.info gives phone device details. A SafeOrStolen check searches
+                      SafeOrStolen theft reports and public web results, shows the phone's make and model, and lists every
+                      source with the result. Carrier blacklist status comes only from the paid blacklist check.
                     </p>
                   </CardContent>
                 </Card>
@@ -399,8 +390,8 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is there a mobile app?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen offers mobile apps for both iOS and Android. IMEI.info is web-only 
-                      with.
+                      SafeOrStolen has no App Store or Google Play app. It has a free installable web app at
+                      safeorstolen.com/app that you add to your home screen from the browser.
                     </p>
                   </CardContent>
                 </Card>

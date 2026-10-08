@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check, X, Crown, Shield, Star, Car, Database, DollarSign, FileText } from 'lucide-react';
+import { Check, X, Crown, Shield, DollarSign, FileText } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
@@ -12,7 +12,7 @@ const TopVINCheckServices2025 = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Top VIN Check Services 2026",
-    "description": "Comprehensive comparison of the best VIN check and vehicle history services",
+    "description": "Side-by-side comparison of VIN check and vehicle history services: what each one searches and what it costs",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -20,7 +20,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best for stolen vehicle verification — $10/month unlimited"
+          "description": "Best for checking whether a vehicle is reported stolen: 2 free checks, then $0.99 a check or $10 a month unlimited"
         }
       },
       {
@@ -29,152 +29,152 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "Carfax",
-          "description": "Best for comprehensive vehicle history reports"
+          "description": "Best for full vehicle history reports"
         }
       }
     ]
   };
 
-  const vinServices = [
+  // Oct 7 2026: removed invented star ratings, competitor prices and search limits we
+  // couldn't confirm, the "mobile app" column, and the false "title history" tick for SafeOrStolen.
+  const vinServices: Array<{
+    rank: number;
+    name: string;
+    badge: string | null;
+    badgeColor?: string;
+    bestFor: string;
+    price: string;
+    fullReportPrice: string;
+    stolenCheck: boolean;
+    titleCheck: boolean;
+    accidentHistory: boolean;
+    serviceRecords: boolean;
+    multipleItems: boolean;
+    pros: string[];
+    cons: string[];
+    cta?: string;
+    ctaText?: string;
+  }> = [
     {
       rank: 1,
       name: 'SafeOrStolen',
-      rating: 4.8,
       badge: 'Best for Stolen Checks',
       badgeColor: 'bg-green-500',
-      bestFor: 'Verifying if a vehicle is stolen before purchase',
-      price: '$10/month unlimited',
-      fullReportPrice: '$10/month (all features)',
+      bestFor: 'Checking whether a car is reported stolen before you meet the seller',
+      price: '2 free, then $0.99 a check',
+      fullReportPrice: '$10 a month for unlimited checks',
       stolenCheck: true,
-      titleCheck: true,
+      titleCheck: false,
       accidentHistory: false,
       serviceRecords: false,
-      ownerHistory: false,
-      mobileApp: true,
       multipleItems: true,
       pros: [
-        '$10/month unlimited VIN checks',
-        'SafeOrStolen reports, web results & AI analysis',
-        'Checks more than cars (phones, bikes, tools)',
-        'Mobile app for instant verification',
-        'AI-powered risk analysis'
+        'Decodes year, make and model and lists open safety recalls',
+        'Searches SafeOrStolen theft reports and public web results',
+        'Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records',
+        'Also checks phones, bikes, guns and tools',
+        'Free installable web app for checks at the meetup'
       ],
       cons: [
-        'No detailed service history',
-        'No accident damage estimates',
-        'Requires $10/month subscription'
+        'No title, accident or service history',
+        'Outside Arizona, no state police records',
+        'Does not search NCIC, DMV or insurer databases'
       ],
-      cta: '/pricing',
-      ctaText: 'Subscribe — $10/mo'
+      cta: '/verify',
+      ctaText: 'Run a VIN check'
     },
     {
       rank: 2,
       name: 'Carfax',
-      rating: 4.6,
-      badge: 'Multi-Category',
+      badge: 'Full History',
       badgeColor: 'bg-blue-500',
       bestFor: 'Complete vehicle history with service records',
-      price: '$39.99/report',
-      fullReportPrice: '$99.99 (6 reports)',
+      price: 'Paid per report',
+      fullReportPrice: 'Multi-report packages; see its site',
       stolenCheck: true,
       titleCheck: true,
       accidentHistory: true,
       serviceRecords: true,
-      ownerHistory: true,
-      mobileApp: true,
       multipleItems: false,
       pros: [
-        'Most detailed vehicle history',
+        'Detailed vehicle history',
         'Service record tracking',
         'Accident and damage history',
-        'Previous owner information',
-        'Trusted brand name'
+        'Previous owner count',
+        'Well-known name with dealers'
       ],
       cons: [
-        'Expensive per report',
-        'No free option',
-        'Vehicles only',
-        'Dealer data focused'
+        'You pay for each report',
+        'No free report',
+        'Vehicles only'
       ]
     },
     {
       rank: 3,
       name: 'AutoCheck (Experian)',
-      rating: 4.4,
       badge: null,
       bestFor: 'Score-based vehicle assessment',
-      price: '$24.99/report',
-      fullReportPrice: '$49.99 (25 reports)',
+      price: 'Paid per report',
+      fullReportPrice: 'Multi-report packages; see its site',
       stolenCheck: true,
       titleCheck: true,
       accidentHistory: true,
       serviceRecords: false,
-      ownerHistory: true,
-      mobileApp: true,
       multipleItems: false,
       pros: [
-        'AutoCheck Score for easy comparison',
-        'Cheaper than Carfax',
-        'Good auction data',
-        'Experian backing'
+        'AutoCheck Score for comparing similar cars',
+        'Strong auction records',
+        'Run by Experian'
       ],
       cons: [
-        'Less service record data',
-        'Fewer data sources than Carfax',
-        'Still no free option'
+        'Less service record detail than Carfax',
+        'No free report',
+        'Vehicles only'
       ]
     },
     {
       rank: 4,
       name: 'NICB VINCheck',
-      rating: 4.0,
-      badge: 'Best Free Basic',
+      badge: 'Free Basic',
       badgeColor: 'bg-amber-500',
       bestFor: 'Free basic theft and salvage check',
       price: 'Free',
       fullReportPrice: 'N/A',
       stolenCheck: true,
-      titleCheck: true,
+      titleCheck: false,
       accidentHistory: false,
       serviceRecords: false,
-      ownerHistory: false,
-      mobileApp: false,
       multipleItems: false,
       pros: [
-        'Completely free',
-        'Theft and salvage data',
-        'Insurance company source'
+        'Free',
+        'Theft and salvage records from insurers'
       ],
       cons: [
-        'Limited to 5 searches/day',
-        'No detailed history',
-        'Vehicles only'
+        'Daily search limit',
+        'Only thefts reported through insurance claims',
+        'No history beyond theft and salvage'
       ]
     },
     {
       rank: 5,
       name: 'VehicleHistory.com',
-      rating: 3.8,
       badge: null,
       bestFor: 'Budget vehicle history reports',
-      price: '$10/report',
-      fullReportPrice: '$24.99 (3 reports)',
+      price: 'Low-cost reports',
+      fullReportPrice: 'See its site',
       stolenCheck: true,
       titleCheck: true,
       accidentHistory: true,
       serviceRecords: false,
-      ownerHistory: true,
-      mobileApp: false,
       multipleItems: false,
       pros: [
-        'Affordable pricing',
+        'Cheaper than the big names',
         'Basic history included',
         'Recall information'
       ],
       cons: [
-        'Less comprehensive data',
-        'No service records',
-        'Limited data sources'
+        'Thinner records than Carfax or AutoCheck',
+        'No service records'
       ]
     }
   ];
@@ -194,14 +194,14 @@ const TopVINCheckServices2025 = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                Updated February 2026
+                Updated October 2026
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 Top 5 VIN Check Services Compared
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Not all VIN check services are created equal. We compared pricing, features, and 
-                data sources to help you choose the right one for your needs.
+                A stolen-vehicle check and a vehicle history report answer different questions. 
+                Here's what each service searches, what it costs, and when to use it.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
@@ -229,7 +229,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">$10/mo unlimited</p>
+                    <p className="text-xs text-muted-foreground mt-2">2 free, then $0.99 a check</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -240,7 +240,7 @@ const TopVINCheckServices2025 = () => {
                       Want service records, accidents, and ownership history
                     </p>
                     <Badge className="bg-blue-500 text-white">Carfax</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">$39.99/report</p>
+                    <p className="text-xs text-muted-foreground mt-2">Paid per report</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -251,7 +251,7 @@ const TopVINCheckServices2025 = () => {
                       Just need basic theft/salvage info, no budget
                     </p>
                     <Badge className="bg-amber-500 text-white">NICB VINCheck</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">Free (5/day limit)</p>
+                    <p className="text-xs text-muted-foreground mt-2">Free</p>
                   </CardContent>
                 </Card>
               </div>
@@ -273,7 +273,6 @@ const TopVINCheckServices2025 = () => {
                     <th className="p-3 text-center font-semibold border-b border-border text-sm">Title History</th>
                     <th className="p-3 text-center font-semibold border-b border-border text-sm">Accidents</th>
                     <th className="p-3 text-center font-semibold border-b border-border text-sm">Service Records</th>
-                    <th className="p-3 text-center font-semibold border-b border-border text-sm">Mobile App</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -299,9 +298,6 @@ const TopVINCheckServices2025 = () => {
                       </td>
                       <td className="p-3 text-center border-b border-border">
                         {service.serviceRecords ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />}
-                      </td>
-                      <td className="p-3 text-center border-b border-border">
-                        {service.mobileApp ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />}
                       </td>
                     </tr>
                   ))}
@@ -336,15 +332,6 @@ const TopVINCheckServices2025 = () => {
                             </CardTitle>
                             <p className="text-sm text-muted-foreground">Best for: {service.bestFor}</p>
                           </div>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star 
-                              key={i} 
-                              className={`w-5 h-5 ${i < Math.floor(service.rating) ? 'text-yellow-500 fill-yellow-500' : 'text-muted-foreground'}`} 
-                            />
-                          ))}
-                          <span className="ml-2 font-semibold">{service.rating}</span>
                         </div>
                       </div>
                     </CardHeader>
@@ -386,10 +373,6 @@ const TopVINCheckServices2025 = () => {
                               {service.multipleItems ? <Check className="w-3 h-3 text-green-500" /> : <X className="w-3 h-3 text-red-500" />}
                               Multi-item support
                             </div>
-                            <div className="flex items-center gap-1">
-                              {service.mobileApp ? <Check className="w-3 h-3 text-green-500" /> : <X className="w-3 h-3 text-red-500" />}
-                              Mobile app
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -429,8 +412,8 @@ const TopVINCheckServices2025 = () => {
                         Before Meeting the Seller
                       </h3>
                       <p className="text-muted-foreground">
-                        Use <strong>SafeOrStolen</strong> (free) to verify the vehicle isn't stolen. 
-                        This protects you from wasting time on potentially fraudulent listings.
+                        Run the VIN through <strong>SafeOrStolen</strong> (your first 2 checks are free) to see 
+                        whether it's reported stolen and has open recalls. If it's flagged, you skip the trip.
                       </p>
                     </div>
                     <div className="space-y-3">
@@ -471,7 +454,7 @@ const TopVINCheckServices2025 = () => {
                 <Link to="/verify">Check VIN Now</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="font-semibold border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link to="/app">Get Mobile App</Link>
+                <Link to="/app">Get the Free Web App</Link>
               </Button>
             </div>
           </div>
@@ -488,8 +471,9 @@ const TopVINCheckServices2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is a free VIN check reliable?</h3>
                     <p className="text-muted-foreground">
-                      Free VIN checks from reputable sources like SafeOrStolen and NICB VINCheck are reliable 
-                      for stolen vehicle verification. For complete history, paid reports are more comprehensive.
+                      A free check is fine for one question: is this car reported stolen in the records that 
+                      service searches? Each one searches different records, so read what's covered. For accidents, 
+                      title brands and service records, you need a paid history report.
                     </p>
                   </CardContent>
                 </Card>
@@ -498,8 +482,8 @@ const TopVINCheckServices2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Do I need both a stolen check and Carfax?</h3>
                     <p className="text-muted-foreground">
-                      We recommend both. SafeOrStolen's free check verifies the car isn't stolen before you 
-                      invest in a full Carfax report. It saves money and time on potentially fraudulent listings.
+                      On a car you're serious about, yes. Run the stolen check first, since it's cheap and takes a 
+                      few seconds. If it's clean and you still want the car, then pay for the full history report.
                     </p>
                   </CardContent>
                 </Card>
@@ -508,7 +492,7 @@ const TopVINCheckServices2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">What can SafeOrStolen check that Carfax can't?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It also supports phones, plates, serial-numbered electronics and power tools, firearms, and bicycles.
+                      SafeOrStolen searches its own theft reports and public web results that mention the VIN, and for Arizona VINs, Arizona law-enforcement stolen-vehicle records. It also checks phones, plates, serial-numbered electronics and power tools, firearms and bicycles, which Carfax doesn't.
                     </p>
                   </CardContent>
                 </Card>
