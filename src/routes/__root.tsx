@@ -115,7 +115,7 @@ const organizationJsonLd = JSON.stringify({
     "secondhand vehicle checks",
     "secondhand phone checks",
     "firearm serial checks",
-    "BikeIndex records",
+    "stolen bicycle registry checks",
     "secondhand-item verification workflows",
   ],
 });
@@ -176,7 +176,7 @@ const coreGraphJsonLd = JSON.stringify({
       "@id": "https://safeorstolen.com/#service",
       name: "Stolen Item Verification Service",
       description:
-        "SafeOrStolen helps users check secondhand items using its own reports, public web results, and AI analysis. Phone checks provide IMEI device details, bicycle checks also query Bike Index, and firearm checks also search the Ohio Attorney General's stolen gun records.",
+        "SafeOrStolen checks whether a used item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Phone checks show the make and model from the IMEI, bike checks also search a national stolen-bicycle registry, gun checks also search 242,839 police theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.",
       provider: { "@id": "https://safeorstolen.com/#organization" },
       serviceType: "Stolen Item Verification",
       areaServed: { "@type": "Country", name: "United States" },

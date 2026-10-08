@@ -31,7 +31,7 @@ const BicycleStolenSerialNumberCheck = () => {
     },
     {
       question: "What databases track stolen bikes?",
-      answer: "Major databases include BikeIndex (largest with 1M+ bikes), and police department databases. SafeOrStolen checks multiple sources."
+      answer: "The main places are national stolen-bicycle registries, where owners list their bikes, and your local police department's theft reports. A SafeOrStolen check searches a national stolen-bicycle registry, its own theft reports and public web results in one go."
     },
     {
       question: "Can I verify an e-bike serial number?",

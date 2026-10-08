@@ -19,7 +19,7 @@ const WHAT: Record<WatchButtonProps['itemType'], string> = {
   vehicle: 'Arizona police stolen-vehicle records',
   plate: 'Arizona police stolen-vehicle records',
   firearm: 'Ohio police stolen-gun records',
-  bicycle: 'the BikeIndex stolen bike registry',
+  bicycle: 'a national stolen-bicycle registry',
 };
 
 export const WatchButton: React.FC<WatchButtonProps> = ({ identifier, itemType }) => {

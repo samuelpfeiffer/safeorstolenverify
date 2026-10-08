@@ -32,7 +32,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'How accurate is the stolen phone database?',
- a: 'We check against SafeOrStolen reports, publicly available web results, and AI analysis. For bicycles, we integrate with BikeIndex, and for firearms, HotGunz.'
+ a: "A phone check searches SafeOrStolen's own theft reports and public web results, and shows the make and model the IMEI belongs to. For the carrier side, a paid lost/stolen blacklist check is available. A clean result means no report was found in the records searched, not a guarantee."
  }
  ]}
  />
@@ -168,7 +168,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'What databases do you check?',
- a: 'We check SafeOrStolen reports, publicly available web results, and apply AI analysis. For specific item types like bicycles and firearms, we also integrate with specialized sources like BikeIndex and HotGunz.'
+ a: "A gun check searches SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. It also flags serials that look altered or obliterated. It does not search NCIC or ATF eTrace."
  },
  {
  q: 'Should I use an FFL dealer?',

@@ -4,12 +4,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 const FAQ_ITEMS = [
   { q: 'What is the most common Facebook Marketplace scam in 2026?', a: 'The most common scam is selling stolen electronics — particularly iPhones, laptops, and gaming consoles — at below-market prices. Scammers list items they don\'t own or that are blacklisted, pocket the cash, and disappear. In 2025, the FBI IC3 reported over $1.2 billion in losses from online marketplace fraud.' },
   { q: 'How can I tell if a Facebook Marketplace listing is a scam?', a: 'Red flags include: price 30%+ below market value, new seller account with no history, refusal to meet in a public place, pressure to pay via Zelle/Venmo/Cash App (no buyer protection), blurry or stock photos, and unwillingness to let you inspect or verify the item before purchase.' },
-  { q: 'Can I check if a phone listed on Facebook Marketplace is stolen?', a: 'Yes. Ask the seller for the IMEI number (dial *#06# on the phone). Then use SafeOrStolen to check it against public web results, AI analysis, and our own stolen item reports. A phone with a reported stolen IMEI is often added to a carrier blacklist, making it unusable on major carriers. You can also ask the seller which carrier the phone was originally activated with, and contact that carrier to verify its status.' },
+  { q: 'Can I check if a phone listed on Facebook Marketplace is stolen?', a: 'Yes. Ask the seller for the IMEI number (dial *#06# on the phone). Then check it on SafeOrStolen, which shows the make and model from the IMEI and searches its own theft reports and public web results. A carrier blacklist check is available as a paid check. A phone with a reported stolen IMEI is often added to a carrier blacklist, making it unusable on major carriers. You can also ask the seller which carrier the phone was originally activated with, and contact that carrier to verify its status.' },
   { q: 'What happens if I accidentally buy a stolen item on Facebook Marketplace?', a: 'If law enforcement identifies the item as stolen, they will seize it — and you receive zero compensation. In most U.S. states, possessing stolen property (even unknowingly) can result in misdemeanor charges. Under 18 U.S.C. § 2315, knowingly receiving stolen goods worth $5,000+ is a federal offense carrying up to 10 years in prison.' },
   { q: 'Does Facebook Marketplace have buyer protection?', a: 'Facebook offers limited Purchase Protection only for items bought with checkout on Facebook (not local pickup cash deals). Most person-to-person transactions have zero protection. If you pay with Zelle, Venmo, or cash, there is no recourse if the item is stolen or defective.' },
-  { q: 'How do I verify a car listed on Facebook Marketplace?', a: 'Ask for the VIN (Vehicle Identification Number) — visible on the dashboard through the windshield or on the driver\'s door jamb. Run it through SafeOrStolen to check against NICB theft records, NHTSA recalls, and NHTSA vehicle records. Never buy a car without a VIN check.' },
+  { q: 'How do I verify a car listed on Facebook Marketplace?', a: 'Ask for the VIN (Vehicle Identification Number) — visible on the dashboard through the windshield or on the driver\'s door jamb. Run it through SafeOrStolen to decode the year, make and model, see open safety recalls, and check SafeOrStolen\'s theft reports and public web results (Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records). Never buy a car without a VIN check.' },
   { q: 'What should I do if I suspect a Facebook Marketplace listing is selling stolen goods?', a: 'Do not confront the seller. Report the listing to Facebook using the "Report" button. If you have evidence (like a flagged IMEI or VIN), file a report with your local police department and include the SafeOrStolen verification result as documentation.' },
-  { q: 'Are Facebook Marketplace scams increasing in 2026?', a: 'Yes. According to the FTC, online marketplace fraud increased 180% between 2022 and 2025, with Facebook Marketplace being the #1 platform for stolen goods resale due to its massive user base (over 1 billion monthly users) and minimal seller verification requirements.' },
+  { q: 'Are Facebook Marketplace scams increasing in 2026?', a: 'Marketplace scams remain common because anyone with a Facebook account can list an item, with no identity check and no serial number required. That makes it easy to resell stolen goods, so check the serial, IMEI or VIN before you pay.' },
 ];
 
 const FacebookMarketplaceScamsGuide = () => {
@@ -103,7 +103,7 @@ const FacebookMarketplaceScamsGuide = () => {
         {/* CTA */}
         <div className="bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10 text-center">
           <p className="text-foreground font-bold text-lg mb-3">Found something on Facebook Marketplace?</p>
-          <p className="text-muted-foreground mb-4">Verify it's not stolen in 3 seconds — free with a free account.</p>
+          <p className="text-muted-foreground mb-4">Check it in a few seconds — 2 free checks with a free account.</p>
           <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-3 rounded-xl hover:bg-primary/90 transition-all">
             Verify Now — Free →
           </Link>
@@ -115,7 +115,7 @@ const FacebookMarketplaceScamsGuide = () => {
             Facebook Marketplace has become the largest peer-to-peer selling platform in the United States, surpassing Craigslist, OfferUp, and Letgo combined. With over 1 billion monthly active users and minimal seller verification requirements, it's also become the preferred channel for offloading stolen property. Unlike eBay (which requires seller ID verification and offers robust buyer protection) or StockX (which authenticates items), Facebook Marketplace allows anyone to list anything with just a Facebook account — no identity verification, no item authentication, and no mandatory serial number disclosure.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            According to the Federal Trade Commission (FTC), reports of online marketplace fraud increased 180% between 2022 and 2025. The National Insurance Crime Bureau (NICB) estimates that approximately 15% of used electronics sold on Facebook Marketplace have some form of theft history — whether outright stolen, obtained through insurance fraud, or purchased with stolen credit cards.
+            Stolen goods on Marketplace come in a few forms: items taken outright, items reported stolen in an insurance claim and then sold, and items bought with a stolen credit card and flipped for cash.
           </p>
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">The 12 Red Flags: How to Spot a Facebook Marketplace Scam</h2>
@@ -144,7 +144,7 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">How to Verify Any Item Before Buying on Facebook Marketplace</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            The single most effective protection against buying stolen goods is running the item's identifier through a verification system before you pay. SafeOrStolen checks IMEI numbers, VINs, serial numbers, and license plates against SafeOrStolen's stolen-item reports, public web results, and AI analysis simultaneously. For bicycles, it checks BikeIndex, and for firearms, HotGunz.
+            The single most effective protection against buying stolen goods is running the item's identifier through a verification system before you pay. SafeOrStolen checks IMEI numbers, VINs, serial numbers, and license plates against its own theft reports and public web results. Bike checks also search a national stolen-bicycle registry, and gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records.
           </p>
 
           <div className="bg-card border border-border rounded-2xl p-6 mb-8">
@@ -152,7 +152,7 @@ const FacebookMarketplaceScamsGuide = () => {
             <ol className="space-y-3 text-muted-foreground">
               <li><strong className="text-foreground">1.</strong> Ask the seller for the IMEI number (they can find it by dialing *#06# or in Settings → About Phone)</li>
               <li><strong className="text-foreground">2.</strong> Go to <Link to="/verify" className="text-primary hover:underline">safeorstolen.com/verify</Link> and enter the IMEI</li>
-              <li><strong className="text-foreground">3.</strong> Wait 3 seconds for results from SafeOrStolen's stolen item reports, public web data, and AI analysis</li>
+              <li><strong className="text-foreground">3.</strong> Wait a few seconds for results from SafeOrStolen's own theft reports and public web results</li>
               <li><strong className="text-foreground">4.</strong> If CLEAN → safe to proceed with the purchase (download the certificate for your records)</li>
               <li><strong className="text-foreground">5.</strong> If FLAGGED → do not buy. Report the listing to Facebook and local police.</li>
             </ol>
@@ -191,13 +191,13 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: Your Defense Against Marketplace Fraud</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMEND (which charges £1.99+ per check and is UK-focused) or IMEI.info (which only provides device details), SafeOrStolen offers 2 free verifications with no credit card, results in 3 seconds, and works across every item category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place — so you can scan barcodes and verify items on the spot at meetups.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMEND (which is UK-focused) or IMEI.info (which shows device details, not theft reports), SafeOrStolen gives you 2 free checks with no credit card, returns results in a few seconds, and works across every item category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place — so you can scan barcodes and verify items on the spot at meetups.
           </p>
 
           {/* Final CTA */}
           <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center mt-12">
             <h2 className="text-2xl font-black text-foreground mb-3">Don't Buy Stolen Goods. Verify First.</h2>
-            <p className="text-muted-foreground mb-6">2 free checks. No credit card. Results in 3 seconds.</p>
+            <p className="text-muted-foreground mb-6">2 free checks. No credit card. Results in a few seconds.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-all">
                 Verify Now — Free →

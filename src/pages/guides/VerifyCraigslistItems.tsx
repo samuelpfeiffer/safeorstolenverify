@@ -174,10 +174,12 @@ const VerifyCraigslistItems = () => {
                     Verify with SafeOrStolen
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Enter the identifier into our free tool. We check multiple
-                    sources including SafeOrStolen's own reports, public web
-                    results, and AI analysis. For bicycles, we also check
-                    BikeIndex.
+                    Enter the identifier on SafeOrStolen (your first 2 checks are
+                    free). Every check searches our own theft reports and public
+                    web results. Bike serials also go against a national
+                    stolen-bicycle registry, and gun serials against police theft
+                    and loss reports from 33 states and Washington, DC, plus live
+                    Ohio law-enforcement records.
                   </p>
                   <Button asChild className="gap-2">
                     <Link to="/verify">

@@ -103,7 +103,7 @@ function sourceLabel(s: SourceResult): string {
     return "the Ohio Attorney General's stolen gun database (Ohio law enforcement records)";
   }
   if (s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.found === true) {
-    return "TheftAZ, the Arizona Attorney General's database of law enforcement stolen-vehicle records,";
+    return "the Arizona Attorney General's database of law enforcement stolen-vehicle records";
   }
   const names: Record<string, string> = {
     'SafeOrStolen Database': 'the SafeOrStolen registry',
@@ -201,7 +201,7 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
   const azChecked = data.some(
     (s) => s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.checked === true,
   );
-  if (azChecked) answeredOutside.push('Arizona law enforcement records (TheftAZ)');
+  if (azChecked) answeredOutside.push('Arizona law enforcement stolen-vehicle records');
   const ohioChecked = data.some(
     (s) => s.provider === 'Firearm_Verification' && (s.details as any)?.ohio?.checked === true,
   );

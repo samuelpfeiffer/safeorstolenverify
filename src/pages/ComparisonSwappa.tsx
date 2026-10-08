@@ -62,7 +62,7 @@ const ComparisonSwappa = () => {
  {
  "@type": "Question",
  "name": "How many databases does SafeOrStolen check vs Swappa?",
- "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Every SafeOrStolen check searches its own theft reports and public web results. Phone checks also show the make and model from the IMEI, with a paid carrier blacklist check available. Bike checks add a national stolen-bicycle registry, gun checks add police theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records." }
  },
  {
  "@type": "Question",
@@ -110,9 +110,9 @@ const ComparisonSwappa = () => {
  <p>SafeOrStolen is a dedicated stolen item verification service with a mobile app. Swappa is a used phone marketplace. Here's how they compare:</p>
  <h2>Key Differences</h2>
  <ul>
- <li><strong>Mobile App:</strong> SafeOrStolen has a dedicated iOS/Android app with barcode scanning. Swappa has no verification app.</li>
+ <li><strong>Mobile App:</strong> SafeOrStolen has a free installable web app at safeorstolen.com/app (not an app store download). Swappa has no verification app.</li>
  <li><strong>Item Types:</strong> SafeOrStolen verifies phones, cars, guns, bikes, laptops, watches, and more. Swappa only handles phones and tech.</li>
- <li><strong>Databases:</strong> SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis.</li>
+ <li><strong>Sources:</strong> SafeOrStolen searches its own theft reports and public web results, plus a stolen-bicycle registry for bikes, police theft records for guns, and Arizona law-enforcement records for Arizona vehicles.</li>
  <li><strong>Works Anywhere:</strong> SafeOrStolen works for items from any source. Swappa only verifies items on their marketplace.</li>
  <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $0.99/check or $10/month unlimited. Swappa: free basic check on their listings only.</li>
  </ul>
@@ -124,7 +124,7 @@ const ComparisonSwappa = () => {
  <h3>Is SafeOrStolen free to use?</h3>
  <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $10/month unlimited.</p>
  <h3>How many databases does SafeOrStolen check?</h3>
- <p>SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis.</p>
+ <p>Every SafeOrStolen check searches its own theft reports and public web results. Phone checks also show the make and model from the IMEI, with a paid carrier blacklist check available. Bike checks add a national stolen-bicycle registry, gun checks add police theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.</p>
  <nav>
  <a href="/verify">Verify Now — Free</a> | <a href="/app">Download App</a> | <a href="/pricing">See Pricing</a>
  </nav>
@@ -181,7 +181,7 @@ const ComparisonSwappa = () => {
  {[
  ['Dedicated Mobile App', 'iOS & Android with barcode scanner'],
  ['All Item Types', 'Phones, cars, guns, bikes, laptops, watches, electronics'],
- ['Sources', "SafeOrStolen reports, web results, AI analysis"],
+ ['Sources', "SafeOrStolen theft reports, public web results, plus item-specific records for bikes, guns, and Arizona vehicles"],
  ['Works Offline', 'Verify at garage sales, flea markets, anywhere'],
  ['3-Second Results', 'Instant verification with trust score'],
  ['2 Free Checks', 'Then $0.99/check or $10/month unlimited'],
@@ -362,8 +362,8 @@ const ComparisonSwappa = () => {
  <ul className="text-sm space-y-2">
  <li>✅ SafeOrStolen's own stolen-item reports</li>
  <li>✅ Public web results</li>
- <li>✅ AI analysis</li>
- <li>✅ BikeIndex (bicycles) and HotGunz (firearms)</li>
+ <li>✅ A national stolen-bicycle registry (bike checks)</li>
+ <li>✅ Police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records (gun checks)</li>
  </ul>
  </CardContent>
  </Card>
@@ -423,7 +423,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="car">
  <AccordionTrigger>Can Swappa check if a car or bike is stolen?</AccordionTrigger>
  <AccordionContent>
- No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen verifies all item types including vehicles (using public web results and our reports), motorcycles, firearms (using HotGunz), bicycles (using BikeIndex), laptops, gaming consoles, watches, and more.
+ No. Swappa only handles phones and tech devices sold on their marketplace. SafeOrStolen checks vehicles (VIN decode, open recalls, our theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs), motorcycles, firearms (adding police theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records), bicycles (adding a national stolen-bicycle registry), laptops, gaming consoles, watches, and more.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="free">
@@ -435,7 +435,7 @@ const ComparisonSwappa = () => {
  <AccordionItem value="databases">
  <AccordionTrigger>How many databases does SafeOrStolen check compared to Swappa?</AccordionTrigger>
  <AccordionContent>
- SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis.
+ Every SafeOrStolen check searches its own theft reports and public web results. Phone checks also show the make and model from the IMEI, with a paid carrier blacklist check available. Bike checks add a national stolen-bicycle registry, gun checks add police theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="any-source">
