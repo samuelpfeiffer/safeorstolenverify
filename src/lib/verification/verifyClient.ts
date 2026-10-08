@@ -55,6 +55,8 @@ export interface VerifyRequest {
   identifier: string;
   itemType?: string | null;
   fingerprint?: string | null;
+  /** Two-letter state that issued a license plate. */
+  plateState?: string | null;
 }
 
 /**
@@ -88,6 +90,7 @@ export async function requestVerification(request: VerifyRequest): Promise<Verif
         identifier: request.identifier,
         itemType: request.itemType ?? null,
         fingerprint,
+        plateState: request.plateState ?? null,
       }),
     });
 

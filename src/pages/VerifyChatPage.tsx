@@ -91,6 +91,7 @@ const VerifyChatPage: React.FC = () => {
  const consumedParamRef = useRef(false);
  // Type hint from tool pages (e.g. ?type=firearm). Gun serials look like any serial, so the hint matters.
  const typeHintRef = useRef<string | null>(null);
+ const plateStateRef = useRef<string | null>(null);
 
  const voice = useVoiceSearch({
  onResult: (text) => setInput((prev) => (prev ? `${prev} ${text}` : text)),
@@ -294,6 +295,8 @@ const VerifyChatPage: React.FC = () => {
  const detected = detect?.type || 'serial';
  const hint = typeHintRef.current;
  typeHintRef.current = null;
+ const plateState = plateStateRef.current;
+ plateStateRef.current = null;
  // Firearm hint always wins (a gun serial can't be told apart from other serials).
  // Other hints only fill in when detection could not tell what it is.
  const itemType = hint && (hint === 'firearm' || detected === 'serial' || detected === 'unknown') ? hint : detected;
@@ -314,6 +317,7 @@ const VerifyChatPage: React.FC = () => {
            identifier: cleanedIdentifier,
            itemType,
            fingerprint: getOrCreateFingerprint(),
+           plateState: toCanonicalItemType(itemType) === 'plate' ? plateState : null,
          });
          if (verifyErr && !user && (verifyErr.code === 'LIMIT_REACHED' || verifyErr.code === 'AUTH_REQUIRED')) {
            requireAccount(assistantId, identifier);
@@ -550,6 +554,8 @@ const VerifyChatPage: React.FC = () => {
  const HINTS: Record<string, string> = { firearm: 'firearm', gun: 'firearm', imei: 'phone', phone: 'phone', tablet: 'electronics',
  vin: 'vehicle', vehicle: 'vehicle', motorcycle: 'vehicle', plate: 'plate', bike: 'bicycle', bicycle: 'bicycle' };
  typeHintRef.current = HINTS[(searchParams.get('type') || '').toLowerCase()] || null;
+ const st = (searchParams.get('state') || '').trim().toUpperCase();
+ plateStateRef.current = /^[A-Z]{2}$/.test(st) ? st : null;
  if (!incoming) return;
  consumedParamRef.current = true;
  const next = new URLSearchParams(searchParams);

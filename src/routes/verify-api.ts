@@ -52,7 +52,7 @@ export const Route = createFileRoute('/verify-api')({
 
           // 2. Validate input.
           const body = (await request.json().catch(() => null)) as
-            | { identifier?: unknown; itemType?: unknown; fingerprint?: unknown }
+            | { identifier?: unknown; itemType?: unknown; fingerprint?: unknown; plateState?: unknown }
             | null;
           const identifier = typeof body?.identifier === 'string' ? body.identifier.trim() : '';
           if (!identifier) {
@@ -61,6 +61,10 @@ export const Route = createFileRoute('/verify-api')({
 
           const itemType = typeof body?.itemType === 'string' ? body.itemType : null;
           const fingerprint = typeof body?.fingerprint === 'string' ? body.fingerprint.slice(0, 100) : null;
+          const plateState =
+            typeof body?.plateState === 'string' && /^[A-Za-z]{2}$/.test(body.plateState)
+              ? body.plateState.toUpperCase()
+              : null;
           if (!userId && !fingerprint) {
             return json(
               { error: 'Account required', code: 'AUTH_REQUIRED', message: 'Create a free account or sign in to run a verification.' },
@@ -109,6 +113,7 @@ export const Route = createFileRoute('/verify-api')({
               identifier,
               itemType,
               fingerprint,
+              plateState,
               area:
                 [request.headers.get('cf-ipcity'), request.headers.get('cf-region')]
                   .filter(Boolean)
