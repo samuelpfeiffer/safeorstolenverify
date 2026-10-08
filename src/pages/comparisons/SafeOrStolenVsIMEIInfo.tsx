@@ -41,18 +41,15 @@ const SafeOrStolenVsIMEIInfo = () => {
   };
 
   const comparisonData = [
-    { feature: 'Pricing', safeOrStolen: '$10/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
-    { feature: 'Verification Sources', safeOrStolen: 'Reports, web results, AI', imeiInfo: 'Device information', winner: 'tie' },
-    { feature: 'Item Types Supported', safeOrStolen: 'Phones, cars, bikes, tools, etc.', imeiInfo: 'Phones only', winner: 'sos' },
-    { feature: 'Blacklist Check', safeOrStolen: 'Included in $10/mo', imeiInfo: '$10 per check', winner: 'sos' },
-    { feature: 'VIN Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
-    { feature: 'Serial Number Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
-    { feature: 'Carrier Info', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
-    { feature: 'Device Specs', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
-    { feature: 'Mobile App', safeOrStolen: 'iOS & Android', imeiInfo: 'No', winner: 'sos' },
-    { feature: 'Law Enforcement Backed', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
-    { feature: 'Insurance Partner', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
-    { feature: 'AI-Powered Analysis', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
+    { feature: 'Pricing', safeOrStolen: '2 free checks, then $0.99 a check or $10 a month unlimited', imeiInfo: 'Free basic lookup; paid extra checks', winner: 'tie' },
+    { feature: 'What it searches', safeOrStolen: 'SafeOrStolen theft reports and public web results', imeiInfo: 'Device information', winner: 'tie' },
+    { feature: 'Item types', safeOrStolen: 'Phones, vehicles, bikes, guns, tools, electronics', imeiInfo: 'Phones only', winner: 'sos' },
+    { feature: 'Phone blacklist check', safeOrStolen: 'Paid add-on; up to 20 a month on the $10 plan', imeiInfo: 'Paid', winner: 'tie' },
+    { feature: 'VIN check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
+    { feature: 'Serial number check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
+    { feature: 'Make and model from IMEI', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
+    { feature: 'App', safeOrStolen: 'Free installable web app at safeorstolen.com/app', imeiInfo: 'Website', winner: 'tie' },
+    { feature: 'Dated proof of your check', safeOrStolen: 'Optional $1.99 certificate', imeiInfo: 'No', winner: 'sos' },
   ];
 
   return (

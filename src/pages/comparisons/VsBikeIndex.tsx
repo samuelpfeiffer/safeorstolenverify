@@ -18,7 +18,6 @@ const VsBikeIndex = () => {
     { feature: 'Police Partnerships', sos: false, bikeindex: true },
     { feature: 'Free Searches', sos: '2 free', bikeindex: 'Free' },
     { feature: 'Sources Searched', sos: 'Bike registry, own reports, web', bikeindex: 'User reports' },
-    { feature: 'API Access', sos: true, bikeindex: true },
   ];
 
   const structuredData = {
@@ -91,8 +90,8 @@ const VsBikeIndex = () => {
                 Best Bike Index Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Both platforms help verify stolen bicycles - but SafeOrStolen does much more. 
-                Compare features to choose the right tool for your needs.
+                Both let you check a bike serial number before you buy. Bike Index covers bicycles only;
+                SafeOrStolen also checks phones, cars, guns and other serial-numbered items. Here's how they differ.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -288,8 +287,8 @@ const VsBikeIndex = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      One platform for bikes, phones, cars, electronics, firearms, and more. 
-                      Stop using 5 different websites. Bike Index only covers bicycles.
+                      One account for bikes, phones, cars, electronics, firearms and more, so you
+                      don't need a separate site for each item. Bike Index only covers bicycles.
                     </p>
                   </CardContent>
                 </Card>
