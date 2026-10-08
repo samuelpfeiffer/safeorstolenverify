@@ -152,7 +152,7 @@ const Index = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Check if a Gun, Phone, Car, or Tool Was Reported Stolen | SafeOrStolen"
- description="Check if a used phone, car, gun, tool or bike was reported stolen. Enter the IMEI, VIN, license plate or serial number. Every source searched is listed. 2 free checks."
+ description="Check if a used phone, car, gun, tool or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source searched is listed. 2 free checks."
  keywords="stolen item checker, check if something is stolen, free serial number search, imei check free, vin check stolen, gun serial number lookup free, stolen bike check, license plate lookup"
  canonical="/"
  />
