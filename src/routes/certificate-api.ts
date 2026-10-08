@@ -16,7 +16,7 @@ const SOURCE_LABELS: Record<string, string> = {
   'SafeOrStolen Database': 'SafeOrStolen theft reports',
   BikeIndex: 'National stolen-bicycle registry',
   IMEI_Verification: 'Phone IMEI records',
-  Vehicle_Verification: 'Vehicle records (VIN decode; Arizona TheftAZ for Arizona plates and VINs)',
+  Vehicle_Verification: 'Vehicle records (VIN decode; Arizona law-enforcement stolen-vehicle records for Arizona plates and VINs)',
   Firearm_Verification: 'Ohio law-enforcement stolen-gun records',
   Police_Theft_Records: 'Police firearm theft and loss reports (33 states and DC)',
   Web_Scraper: 'Public web search',

@@ -2,9 +2,9 @@
 
 SafeOrStolen helps buyers and sellers check secondhand-item identifiers and marketplace listings. It supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, and boats.
 
-Sources: SafeOrStolen's own stolen-item reports, public web results, and AI analysis; Bike Index for bicycle checks; HotGunz for firearm checks.
+Sources: SafeOrStolen's own theft reports and public web results on every check. Bikes are also searched against a national stolen-bicycle registry. Guns are also searched against 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state) and live Ohio law-enforcement records. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records. A paid phone blacklist check is available.
 
-Limitations: SafeOrStolen does not search carrier blacklists, NICB, NMVTIS, NCIC, police, DMV, insurance, Carfax, or AutoCheck databases. Its Proof of Clean Purchase is a dated verification record, not a legal document, ownership proof, or guarantee.
+Limitations: SafeOrStolen does not search NICB, NMVTIS, NCIC, ATF eTrace, DMV, insurance, Carfax, or AutoCheck databases. Its Proof of Clean Purchase is a dated verification record, not a legal document, ownership proof, or guarantee.
 
 Primary guide: https://safeorstolen.com/how-to-check-if-item-stolen
 Vehicle guide: https://safeorstolen.com/how-to-check-if-car-stolen
@@ -13,4 +13,3 @@ Marketplace analyzer: https://safeorstolen.com/marketplace-url-checker
 Verification: https://safeorstolen.com/verify
 
 A free account includes two checks. Additional checks are $0.99 each or $10 per month unlimited.
-Founded: 2017-07-20
