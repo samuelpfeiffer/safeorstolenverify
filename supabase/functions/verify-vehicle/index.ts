@@ -102,7 +102,7 @@ serve(async (req) => {
       if (taz.found) {
         return json({ success: true, status: 'stolen', confidence: 95, source: 'Vehicle_Verification', message: `🚨 REPORTED STOLEN in Arizona law-enforcement records for ${st} plate ${cleanPlate}. Do not buy or approach the vehicle. Contact local police.`, details, responseTime: Date.now() - startTime });
       }
-      return json({ success: true, status: 'unknown', confidence: 0, source: 'Vehicle_Verification', message: taz.checked ? `${st} plate ${cleanPlate} is not reported stolen in Arizona law-enforcement records as of today.` : 'Arizona law-enforcement records could not be searched right now.', details, responseTime: Date.now() - startTime });
+      return json({ success: true, status: 'unknown', confidence: 0, source: 'Vehicle_Verification', message: taz.checked ? `${st} plate ${cleanPlate} is not reported stolen in Arizona law-enforcement records as of today.${st !== 'AZ' ? ' Those records cover thefts reported to Arizona agencies, so a vehicle stolen in another state may not be listed.' : ''}` : 'Arizona law-enforcement records could not be searched right now.', details, responseTime: Date.now() - startTime });
     }
 
     if (!identifier || String(identifier).trim().length === 0) {

@@ -28,6 +28,8 @@ export interface VerifyInput {
   fingerprint?: string | null;
   /** General area of the checker (city/region), used only in owner alerts. */
   area?: string | null;
+  /** Two-letter state that issued a license plate. Defaults to AZ. */
+  plateState?: string | null;
 }
 
 export interface VerifyResponse {
@@ -799,10 +801,13 @@ export async function runVerification(
     );
   }
   if (sources.includes('vehicle')) {
-    // Plates search TheftAZ (Arizona law enforcement records) by plate; VINs get the full vehicle check.
+    // Plates are searched against Arizona law-enforcement stolen-vehicle records with the state that
+    // issued the plate (a Texas-plated car stolen in Arizona is listed under TX). VINs get the full
+    // vehicle check. Records come from Arizona agencies only, whatever the plate state.
+    const plateState = /^[A-Z]{2}$/.test(input.plateState ?? '') ? input.plateState! : 'AZ';
     const body =
       itemType === 'plate'
-        ? { plate: normalizedIdentifier, state: 'AZ' }
+        ? { plate: normalizedIdentifier, state: plateState }
         : { identifier: cleanIdentifier };
     tasks.push(runSource('Vehicle_Verification', 'verify-vehicle', body));
   }
