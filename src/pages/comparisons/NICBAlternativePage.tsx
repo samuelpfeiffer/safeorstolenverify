@@ -23,7 +23,7 @@ const NICBAlternativePage = () => {
           "name": "What does SafeOrStolen check beyond vehicles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen verifies phones, vehicles, license plates, electronics, firearms, and bicycles in one platform, with results in about 3 seconds."
+            "text": "SafeOrStolen (safeorstolen.com) checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and serial-numbered electronics from one account, with results in a few seconds. Every check searches its own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles."
           }
         },
         {
@@ -85,7 +85,7 @@ const NICBAlternativePage = () => {
                   <li>• Installable web app with barcode scanning</li>
                   <li>• Six item categories in one platform</li>
                   <li>• Cars, phones, bikes, guns, electronics</li>
-                  <li>• Results in about 3 seconds</li>
+                  <li>• Results in a few seconds, with every source listed</li>
                   <li>• License plate lookup included</li>
                 </ul>
               </div>
@@ -136,7 +136,7 @@ const NICBAlternativePage = () => {
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
                     <td className="p-4">Results Speed</td>
-                    <td className="p-4 text-center">~3 seconds</td>
+                    <td className="p-4 text-center">A few seconds</td>
                   </tr>
                 </tbody>
               </table>
@@ -147,7 +147,7 @@ const NICBAlternativePage = () => {
         {/* Key Advantages */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why Choose SafeOrStolen</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">What You Get With SafeOrStolen</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-background rounded-lg text-center">
                 <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -161,8 +161,8 @@ const NICBAlternativePage = () => {
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Multi-Source Analysis</h3>
-                <p className="text-muted-foreground">We check SafeOrStolen's own stolen-item reports, public web results and AI analysis across phones, vehicles, serial-numbered items, firearms and bicycles. NICB VINCheck remains a separate free resource worth using.</p>
+                <h3 className="font-bold text-lg mb-2">What It Searches</h3>
+                <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports and public web results. VIN checks also decode the year, make and model and list open recalls, and Arizona VINs are checked against Arizona law-enforcement stolen-vehicle records. SafeOrStolen does not search NICB VINCheck, which remains a separate free resource worth using.</p>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ const NICBAlternativePage = () => {
                 <Check className="w-6 h-6 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="font-bold">Auto Auctions</h3>
-                  <p className="text-sm text-muted-foreground">Bulk VIN verification for auction inventory</p>
+                  <p className="text-sm text-muted-foreground">Check auction inventory with bulk checking</p>
                 </div>
               </div>
               <div className="p-4 bg-card rounded-lg flex gap-3">
@@ -210,7 +210,7 @@ const NICBAlternativePage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Get Unlimited VIN Checks</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Start with 2 free checks, then unlock unlimited checks across all six supported item categories.
+              Start with 2 free checks. After that, $10 a month covers unlimited checks on every item type, and dealers can use bulk checking at /bulk-check.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">

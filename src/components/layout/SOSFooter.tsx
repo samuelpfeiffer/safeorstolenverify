@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from '@/lib/router-compat';
-import { Youtube, Twitter, ChevronDown, ChevronUp } from 'lucide-react';
-import { handleExternalNavigation } from '@/utils/navigationUtils';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Logo } from '@/components/common/Logo';
 
 export const SOSFooter: React.FC = () => {
@@ -23,7 +22,7 @@ export const SOSFooter: React.FC = () => {
  { label: 'URL Checker', to: '/marketplace-url-checker' },
  { label: 'Scam Checker', to: '/scam-checker' },
  { label: 'Seller Badge', to: '/seller-badge' },
- { label: 'Mobile App', to: '/app' },
+ { label: 'Web App', to: '/app' },
  ]
  },
  {
@@ -142,7 +141,7 @@ export const SOSFooter: React.FC = () => {
  { label: 'Phone Blacklist Check', to: '/phone-blacklist-check' },
  { label: 'Is My Phone Stolen?', to: '/is-my-phone-stolen' },
  { label: 'Is This Car Stolen?', to: '/vin-checker' },
- { label: 'TheftAZ', to: '/theftaz' },
+ { label: 'Arizona Stolen Property', to: '/theftaz' },
  ]
  },
  {
@@ -153,7 +152,7 @@ export const SOSFooter: React.FC = () => {
  { label: 'OfferUp Scam Protection', to: '/guides/offerup-scam-protection' },
  { label: 'FB Marketplace Safety', to: '/facebook-marketplace-safety' },
  { label: 'OfferUp Safety', to: '/offerup-safety' },
- { label: 'Comprehensive Guide', to: '/comprehensive-guide' },
+ { label: 'Complete Buyer Guide', to: '/comprehensive-guide' },
  { label: 'How to Check Phone', to: '/how-to-check-if-phone-stolen' },
  { label: 'How to Check Car', to: '/how-to-check-if-car-stolen' },
  ]
@@ -170,25 +169,9 @@ export const SOSFooter: React.FC = () => {
  <div className="col-span-2 md:col-span-4 lg:col-span-1">
  <Logo size="md" linkTo="/" />
  <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
- The verification platform for secondhand buyers, sellers, and businesses. Results in 3 seconds.
+ Check a serial number, IMEI, VIN or plate before you buy used. Results in a few seconds. SafeOrStolen, Peoria, AZ · safeorstolenmail@gmail.com
  </p>
- 
- {/* Social */}
- <div className="mt-6 flex items-center gap-3">
- {[
- { icon: Youtube, url: 'https://www.youtube.com/@safeorstolen', label: 'YouTube' },
- { icon: Twitter, url: 'https://x.com/SafeOrStolen123', label: 'X' },
- ].map((social) => (
- <button
- key={social.label}
- onClick={() => handleExternalNavigation(social.url, true)}
- className="w-9 h-9 flex items-center justify-center rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
- aria-label={social.label}
- >
- <social.icon className="w-4 h-4 text-muted-foreground" />
- </button>
- ))}
- </div>
+
  </div>
 
  {/* Link Columns */}

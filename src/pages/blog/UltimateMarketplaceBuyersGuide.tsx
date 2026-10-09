@@ -18,7 +18,7 @@ export default function UltimateMarketplaceBuyersGuide() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'Ultimate Marketplace Buyers Guide: Avoid Stolen Goods on Facebook, eBay & Craigslist',
-    description: 'Complete 2026 guide to safely buying on Facebook Marketplace, eBay, Craigslist, and OfferUp. Learn how to avoid stolen goods, scams, and fraud when shopping secondhand.',
+    description: 'How to buy on Facebook Marketplace, eBay, Craigslist and OfferUp without ending up with stolen goods: seller red flags, payment rules, meetup tips and checking the serial number first.',
     author: {
       '@type': 'Organization',
       name: 'SafeOrStolen'
@@ -39,7 +39,7 @@ export default function UltimateMarketplaceBuyersGuide() {
     <>
       <PageSEO
         title="Ultimate Marketplace Buyers Guide 2026 | SafeOrStolen"
-        description="Complete guide to safely buying on Facebook Marketplace, eBay, Craigslist, and OfferUp. Learn how to avoid stolen goods, scams, and fraud when shopping secondhand in 2026."
+        description="How to buy on Facebook Marketplace, eBay, Craigslist and OfferUp without getting stolen goods or scammed: seller red flags, safe payment, meetups and serial checks."
         keywords="Facebook Marketplace safety, eBay buyer protection, Craigslist safety tips, avoid marketplace scams, secondhand buying guide"
         canonical="/blog/ultimate-marketplace-buyers-guide"
         structuredData={structuredData}
@@ -72,8 +72,8 @@ export default function UltimateMarketplaceBuyersGuide() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Why This Guide Matters</h3>
                   <p className="text-muted-foreground">
-                    In 2026, over $15 billion worth of stolen goods were sold on online marketplaces. This comprehensive 
-                    guide teaches you how to shop safely and avoid becoming a victim.
+                    Stolen phones, bikes and tools get resold on the same apps you shop on. If you buy one, police can
+                    take it back and you're out the money. This guide covers what to look for on each platform.
                   </p>
                 </div>
               </div>
@@ -81,39 +81,29 @@ export default function UltimateMarketplaceBuyersGuide() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">The Current Marketplace Landscape</h2>
             <p className="text-muted-foreground mb-4">
-              Online marketplaces have revolutionized secondhand shopping, creating a $200+ billion annual industry. 
-              However, this growth has also created massive opportunities for criminals to quickly sell stolen goods 
-              to unsuspecting buyers.
+              Marketplace apps make it easy to sell something the same day you list it. That speed is useful to
+              honest sellers and to thieves alike.
             </p>
             <p className="text-muted-foreground mb-6">
-              Understanding the strengths and weaknesses of each platform is critical for safe shopping in 2026.
+              Each platform protects buyers differently, so the right precautions change depending on where you're shopping.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Facebook Marketplace: Biggest Platform, Biggest Risks</h2>
-            <div className="bg-card border rounded-lg p-6 mb-6">
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Platform Stats (2026)</h3>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>2.5 billion monthly users worldwide</li>
-                <li>800 million active buyers in U.S.</li>
-                <li>50+ million items listed daily</li>
-                <li>Estimated 12-15% of listings involve stolen goods or scams</li>
-              </ul>
-            </div>
 
             <h3 className="text-2xl font-bold mt-8 mb-3 text-foreground">Facebook Marketplace Safety Tips</h3>
             <div className="space-y-4 mb-6">
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Check Seller Profile</h4>
                 <p className="text-muted-foreground">
-                  New account (under 6 months), few friends, no mutual friends, no profile picture = high risk. 
-                  Legitimate sellers have established profiles with history.
+                  A brand-new account with no profile picture, few friends and no marketplace history is a warning sign.
+                  Most honest sellers have a profile that's been around a while.
                 </p>
               </div>
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Review Other Listings</h4>
                 <p className="text-muted-foreground">
-                  If seller has 20+ high-value electronics listed simultaneously, all at below-market prices, they're 
-                  likely selling stolen goods. Legitimate sellers have varied, reasonably-priced items.
+                  A seller with a stack of the same high-value electronics, all priced low and all "new," deserves
+                  questions. Ask where they came from and for the serial numbers.
                 </p>
               </div>
               <div className="border-l-4 border-primary pl-4">
@@ -126,8 +116,8 @@ export default function UltimateMarketplaceBuyersGuide() {
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Enable Facebook Checkout</h4>
                 <p className="text-muted-foreground">
-                  When available, use Facebook's Checkout feature with Purchase Protection (up to $1,000 for eligible 
-                  items). Cash transactions have zero protection.
+                  When it's offered, paying through Facebook's checkout gives you access to its purchase protection.
+                  Cash handed over in a parking lot can't be disputed.
                 </p>
               </div>
             </div>
@@ -158,15 +148,6 @@ export default function UltimateMarketplaceBuyersGuide() {
             </div>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">eBay: Better Protection, Still Vulnerable</h2>
-            <div className="bg-card border rounded-lg p-6 mb-6">
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Platform Stats (2026)</h3>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>132 million active buyers worldwide</li>
-                <li>1.7 billion live listings</li>
-                <li>Strong buyer protection (eBay Money Back Guarantee)</li>
-                <li>Estimated 5-8% of listings involve stolen or counterfeit goods</li>
-              </ul>
-            </div>
 
             <h3 className="text-2xl font-bold mt-8 mb-3 text-foreground">eBay Safety Tips</h3>
             <div className="space-y-4 mb-6">
@@ -194,73 +175,55 @@ export default function UltimateMarketplaceBuyersGuide() {
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Open Disputes Immediately</h4>
                 <p className="text-muted-foreground">
-                  If item arrives and is counterfeit, damaged, or not as described, open eBay dispute within 3 days. 
-                  You have 30 days total, but faster action improves resolution chances.
+                  If the item arrives counterfeit, damaged or not as described, open a return or dispute through eBay
+                  right away. eBay's guarantee has a time limit, so don't wait.
                 </p>
               </div>
             </div>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Craigslist: Maximum Freedom, Maximum Risk</h2>
-            <div className="bg-card border rounded-lg p-6 mb-6">
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Platform Stats (2026)</h3>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>50 million monthly U.S. users</li>
-                <li>80+ million classified ads monthly</li>
-                <li>ZERO buyer protection or verification</li>
-                <li>Estimated 20-25% of listings involve scams, stolen goods, or fraud</li>
-              </ul>
-            </div>
 
             <h3 className="text-2xl font-bold mt-8 mb-3 text-foreground">Craigslist Safety Tips</h3>
             <div className="space-y-4 mb-6">
               <div className="border-l-4 border-destructive pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">⚠ Never Pay Before Seeing Item</h4>
                 <p className="text-muted-foreground">
-                  No deposits, no wire transfers, no prepayment. If seller demands payment before meetup, walk away. 
-                  This is the #1 Craigslist scam.
+                  No deposits, no wire transfers, no prepayment. If the seller wants money before you've seen the item,
+                  walk away.
                 </p>
               </div>
               <div className="border-l-4 border-destructive pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">⚠ Meet at Police Station</h4>
                 <p className="text-muted-foreground">
-                  Most police departments have designated "safe exchange zones" in their parking lots with 24/7 
-                  surveillance. Scammers and thieves avoid these locations.
+                  Many police departments have a marked "safe exchange zone" in their lot, often on camera. A seller
+                  who won't meet there is telling you something.
                 </p>
               </div>
               <div className="border-l-4 border-destructive pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">⚠ Bring Someone With You</h4>
                 <p className="text-muted-foreground">
-                  Never meet alone, especially for high-value items. Criminals specifically target solo buyers. 
-                  Bring a friend and tell others your exact location.
+                  Don't meet alone for anything expensive, especially if you're carrying cash. Bring a friend and tell
+                  someone where you're going.
                 </p>
               </div>
               <div className="border-l-4 border-destructive pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">⚠ Verify Serial Numbers On-Site</h4>
                 <p className="text-muted-foreground">
-                  Use SafeOrStolen mobile app to scan barcode or type serial number before handing over cash. 
-                  Takes 3 seconds. If seller refuses, end transaction immediately.
+                  Open the free SafeOrStolen web app on your phone, scan the barcode or type the serial number before
+                  you hand over cash. It takes a few seconds. If the seller won't let you, end the deal.
                 </p>
               </div>
             </div>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">OfferUp: Growing Platform, Mixed Security</h2>
-            <div className="bg-card border rounded-lg p-6 mb-6">
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Platform Stats (2026)</h3>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>44 million monthly users in U.S.</li>
-                <li>Mobile-first marketplace</li>
-                <li>TruYou verification system (limited effectiveness)</li>
-                <li>Estimated 10-12% of listings involve stolen goods or scams</li>
-              </ul>
-            </div>
 
             <h3 className="text-2xl font-bold mt-8 mb-3 text-foreground">OfferUp Safety Tips</h3>
             <div className="space-y-4 mb-8">
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Prioritize TruYou Verified Sellers</h4>
                 <p className="text-muted-foreground">
-                  TruYou badge means seller verified phone number and email. NOT a guarantee of legitimacy, but 
-                  reduces risk compared to unverified sellers.
+                  The TruYou badge means OfferUp verified the seller's identity. It isn't a guarantee the item is
+                  theirs, but it's better than an anonymous account.
                 </p>
               </div>
               <div className="border-l-4 border-primary pl-4">
@@ -273,28 +236,28 @@ export default function UltimateMarketplaceBuyersGuide() {
               <div className="border-l-4 border-primary pl-4">
                 <h4 className="text-lg font-semibold mb-2 text-foreground">✓ Check Seller Reviews</h4>
                 <p className="text-muted-foreground">
-                  Look for sellers with 10+ positive reviews and no recent negatives. New sellers with 0-2 reviews 
-                  selling expensive items are high risk.
+                  Look for a history of positive reviews and no recent complaints. A brand-new seller with no reviews
+                  offering something expensive deserves extra caution.
                 </p>
               </div>
             </div>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Universal Marketplace Safety Checklist</h2>
             <p className="text-muted-foreground mb-4">
-              Regardless of platform, follow this checklist for EVERY secondhand purchase:
+              Whatever app you're on, run through this before every secondhand purchase:
             </p>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  <strong>Request serial number or IMEI BEFORE meeting/buying</strong> - Verify through SafeOrStolen
+                  <strong>Ask for the serial number or IMEI before meeting</strong> - check it on SafeOrStolen
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  <strong>Research fair market value</strong> - If price is 30%+ below market, it's likely stolen
+                  <strong>Know the going price</strong> - a price far below similar listings is a reason to ask more questions
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -327,8 +290,8 @@ export default function UltimateMarketplaceBuyersGuide() {
               <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify Before You Buy</h3>
               <p className="text-muted-foreground mb-6">
-                SafeOrStolen checks multiple sources instantly. Verify phones, electronics, vehicles, and more in 3 seconds. 
-                Free mobile app with barcode scanning.
+                SafeOrStolen searches its theft reports and public web results for phones, electronics, vehicles, bikes
+                and tools in a few seconds. 2 free checks, and a free web app with barcode scanning at safeorstolen.com/app.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
@@ -336,7 +299,7 @@ export default function UltimateMarketplaceBuyersGuide() {
                   Verify Item Now
                 </Button>
                 <Button onClick={() => navigate('/app')} size="lg" variant="outline" className="gap-2">
-                  Download Mobile App
+                  Get the Free Web App
                 </Button>
               </div>
             </div>
