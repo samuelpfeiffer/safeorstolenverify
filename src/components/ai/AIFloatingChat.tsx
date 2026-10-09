@@ -15,10 +15,10 @@ type Msg = { role: 'user' | 'assistant'; content: string };
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat-stream`;
 
 const QUICK_ACTIONS = [
-  { label: '📱 How to find IMEI', query: 'How do I find my phone IMEI number?' },
-  { label: '🚗 Where is VIN?', query: 'Where can I find the VIN number on my car?' },
-  { label: '💰 Pricing', query: 'What are your pricing plans?' },
-  { label: '🔍 Verify item', query: 'How do I verify if an item is stolen?' },
+  { label: 'How to find IMEI', query: 'How do I find my phone IMEI number?' },
+  { label: 'Where is the VIN?', query: 'Where can I find the VIN number on my car?' },
+  { label: 'Pricing', query: 'What are your pricing plans?' },
+  { label: 'Check an item', query: 'How do I verify if an item is stolen?' },
 ];
 
 // Hide the floating bubble on routes where the chat experience IS the page —
@@ -139,12 +139,12 @@ export const AIFloatingChat: React.FC = () => {
       if (!resp.ok || !resp.body) {
         // Handle specific errors
         if (resp.status === 429) {
-          upsertAssistant("I'm getting a lot of questions right now! Please try again in a moment. 😊");
+          upsertAssistant("I'm getting a lot of questions right now. Please try again in a moment.");
           setIsStreaming(false);
           return;
         }
         if (resp.status === 402) {
-          upsertAssistant("Our AI service is temporarily limited. Please try again later or contact support.");
+          upsertAssistant("The chat assistant is busy right now. Please try again later or email safeorstolenmail@gmail.com.");
           setIsStreaming(false);
           return;
         }
@@ -203,7 +203,7 @@ export const AIFloatingChat: React.FC = () => {
     } catch (err) {
       console.error('Chat stream error:', err);
       if (!assistantSoFar) {
-        upsertAssistant("Sorry, I'm having trouble connecting right now. Try refreshing the page or check back in a moment!");
+        upsertAssistant("Sorry, I'm having trouble connecting right now. Try refreshing the page or check back in a moment.");
       }
     } finally {
       setIsStreaming(false);
@@ -225,7 +225,7 @@ export const AIFloatingChat: React.FC = () => {
   });
 
   const runVerification = useCallback(async (identifier: string) => {
-    setMessages(prev => [...prev, { role: 'assistant', content: '🔎 Detecting identifier and verifying across multiple sources…' }]);
+    setMessages(prev => [...prev, { role: 'assistant', content: 'Checking that number against SafeOrStolen theft reports and public web results…' }]);
     try {
       const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
       const itemType = detect?.type || 'serial';
@@ -238,24 +238,24 @@ export const AIFloatingChat: React.FC = () => {
       const status = verify?.finalStatus || 'unknown';
       const conf = verify?.confidence ? ` (${verify.confidence}% confidence)` : '';
       let result = '';
-      if (status === 'stolen') result = `⚠️ **MATCH FOUND** — this ${itemType.toUpperCase()} appears in stolen-item databases${conf}. Do not purchase.`;
-      else if (status === 'safe') result = `✅ **No theft reports found** for this ${itemType.toUpperCase()}${conf}.`;
-      else if (status === 'lost') result = `⚠️ This ${itemType.toUpperCase()} was reported **lost**${conf}.`;
-      else result = `ℹ️ Inconclusive. ${verify?.message || 'Try a clearer identifier.'}`;
-      replaceLastAssistant(result + '\n\n💡 Open the [Verify workspace](/verify) for the full report with sources.');
+      if (status === 'stolen') result = `**Match found:** this ${itemType.toUpperCase()} appears in the theft records searched${conf}. Don't buy it.`;
+      else if (status === 'safe') result = `**No report found** for this ${itemType.toUpperCase()} in the records searched${conf}.`;
+      else if (status === 'lost') result = `This ${itemType.toUpperCase()} was reported **lost**${conf}.`;
+      else result = `Inconclusive. ${verify?.message || 'Try a clearer identifier.'}`;
+      replaceLastAssistant(result + '\n\nOpen the [Verify workspace](/verify) for the full report with every source listed.');
     } catch (err: any) {
       replaceLastAssistant(`Couldn't verify that: ${err?.message || 'unknown error'}. Try the [Verify workspace](/verify).`);
     }
   }, [user?.id]);
 
   const runUrlAnalysis = useCallback(async (url: string) => {
-    setMessages(prev => [...prev, { role: 'assistant', content: '🔗 Analyzing that marketplace listing for fraud signals…' }]);
+    setMessages(prev => [...prev, { role: 'assistant', content: 'Looking over that marketplace listing for warning signs…' }]);
     try {
       const { data, error } = await supabase.functions.invoke('marketplace-url-analyzer', { body: { url } });
       if (error) throw error;
       const summary = data?.summary || data?.analysis || data?.message || 'Analysis complete.';
       const risk = data?.riskLevel || data?.scamRisk;
-      replaceLastAssistant(`🔗 **Listing analyzed.** ${risk ? `Risk: **${risk}**\n\n` : ''}${summary}`);
+      replaceLastAssistant(`**Listing reviewed.** ${risk ? `Risk: **${risk}**\n\n` : ''}${summary}`);
     } catch (err: any) {
       replaceLastAssistant(`Couldn't analyze that URL: ${err?.message || 'unknown error'}. Paste the IMEI, VIN, or serial directly and I'll verify it.`);
     }
@@ -292,7 +292,7 @@ export const AIFloatingChat: React.FC = () => {
     if (messages.length === 0) {
       setMessages([{
         role: 'assistant',
-        content: "👋 Hi! I'm your SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll verify it instantly across multiple sources. Or ask me anything about buying safely.",
+        content: "Hi, I'm the SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll check it against SafeOrStolen theft reports and public web results in a few seconds. Or ask me anything about buying used safely.",
       }]);
     }
   };
@@ -444,7 +444,7 @@ export const AIFloatingChat: React.FC = () => {
                     </Button>
                   </div>
                   <p className="text-[10px] text-muted-foreground text-center mt-2">
-                    Powered by SafeOrStolen AI · <a href="/pricing" className="text-primary hover:underline">Upgrade for unlimited</a>
+                    SafeOrStolen AI assistant · <a href="/pricing" className="text-primary hover:underline">Upgrade for unlimited</a>
                   </p>
                 </div>
               </>

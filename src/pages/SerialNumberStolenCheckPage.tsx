@@ -1,6 +1,8 @@
 /**
  * Serial Number Stolen Check Hub Page
- * SEO-optimized comprehensive landing page for serial number verification
+ * Landing page for serial number stolen checks
+ * Oct 8 2026 audit: removed "AI analysis", insurance/salvage claims, "3 seconds" and the
+ * made-up Safe/Caution/Alert labels; certificate described as the optional $1.99 add-on.
  * URL: /serial-number-stolen-check
  */
 
@@ -52,11 +54,11 @@ const SerialNumberStolenCheckPage = () => {
  const faqs = [
  {
  question: "Can I check if something is stolen with just a serial number?",
- answer: "Yes. SafeOrStolen searches multiple sources for theft indicators associated with serial numbers. We check insurance theft claims, salvage records, and available public theft reports. Enter any serial number to see if there are theft flags associated with it. Note that not all stolen items are reported, so a clean result means no records found—not a guarantee the item was never stolen."
+ answer: "Yes. Enter the serial on SafeOrStolen (safeorstolen.com/serial-number-stolen-check) and it searches SafeOrStolen theft reports and public web results for it; bikes also go against a national stolen-bicycle registry and guns against police firearm theft records. Not every theft is reported, so \"no report found in the records searched\" is not a guarantee the item was never stolen."
  },
  {
  question: "What if I only have a partial serial?",
- answer: "Partial serial numbers can still return results, but accuracy decreases. Try to get the complete serial—ask the seller for clear photos of the serial number plate before meeting. If you can only read part of the serial due to wear, enter what you can see. Some results may be returned, but we recommend verifying items with complete serials whenever possible."
+ answer: "A partial serial is much less reliable, because a check looks for that exact number. Ask the seller for a clear photo of the serial plate before you meet. If wear makes part of it unreadable, enter what you can see, but treat the item with extra caution and ask why the number is hard to read."
  },
  {
  question: "Can I find the owner of an item from the serial number?",
@@ -68,7 +70,7 @@ const SerialNumberStolenCheckPage = () => {
  },
  {
  question: "Is there a national stolen property database?",
- answer: "SafeOrStolen cross-references its own stolen item reports, public web results, and AI analysis to provide a comprehensive theft check for consumers and businesses."
+ answer: "There is no single public database of every stolen item in the US. Police records such as NCIC are not open to the public. SafeOrStolen searches its own theft reports, where owners report stolen items, plus public web results, and adds item-specific sources for bikes, guns and Arizona vehicles. Each result lists every source searched."
  }
  ];
 
@@ -108,7 +110,7 @@ const SerialNumberStolenCheckPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Save or share results as proof",
- "text": "Download your verification certificate as proof of due diligence. Share with sellers to demonstrate you're a serious buyer, or keep for your records in case issues arise later."
+ "text": "Every check is saved to your account with the date. For a shareable record, add the optional $1.99 verification certificate, a dated page with its own link showing you checked before the sale (free for monthly members)."
  }
  ]
  },
@@ -130,7 +132,7 @@ const SerialNumberStolenCheckPage = () => {
  <>
  <SEOHead
  title="Check If an Item Is Stolen by Serial Number | SafeOrStolen"
- description="Use SafeOrStolen to check any item's serial number for theft risk. Protect yourself when buying used phones, tools, bikes, laptops, firearms and more in seconds."
+ description="Check any item's serial number against SafeOrStolen theft reports and public web results before you buy a used phone, tool, bike, laptop or gun. 2 free checks."
  canonical="/serial-number-stolen-check"
  keywords="serial number stolen check, check if item is stolen, stolen property lookup, serial number database, is my item stolen, stolen goods check, serial number verification"
  schemaJson={schema}
@@ -174,7 +176,7 @@ const SerialNumberStolenCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free searches • Works for any item type • Results in 3 seconds
+ 2 free checks • Works for any item type • Results in a few seconds
  </p>
  </div>
 
@@ -234,7 +236,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- We don't rely on a single source. Our verification engine searches SafeOrStolen's own reports, public web results, and applies AI analysis. For phones, we also check device details via IMEI lookup. For specific item types like bicycles and firearms, we also search police gun theft records from 33 states and DC and a national stolen-bicycle registry. Results are aggregated into a clear risk assessment: Safe (no flags), Caution (some concerns), or Alert (theft indicators detected).
+ Every check searches SafeOrStolen's own theft reports and public web results. A phone IMEI also shows the make and model. Bike serials are searched against a national stolen-bicycle registry, and gun serials against police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. The result says "reported stolen", "possible match" or "no report found in the records searched", and lists every source.
  </p>
  </div>
  </div>
@@ -262,7 +264,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter the serial into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Go to our verification tool and enter the complete serial number exactly as it appears. Include all letters, numbers, hyphens, and spaces. Our system automatically detects the item type based on serial format and routes to the appropriate databases.
+ Go to our verification tool and enter the complete serial number exactly as it appears. Include all letters, numbers, hyphens, and spaces. For a bike or a gun, use the bike or firearm check so the extra sources for that item are searched too.
  </p>
  </div>
  </div>
@@ -272,7 +274,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 3 – Save or share results as proof</h3>
  <p className="text-muted-foreground">
- Download your verification certificate. This serves as proof of due diligence—documentation that you checked before buying. Share with sellers to show you're serious, or keep for your records. If issues arise later, this certificate shows you acted in good faith.
+ Every check is saved to your account with the date. If you want something to show others, add the optional $1.99 verification certificate: a dated record with its own link showing you checked before the sale. It's free for monthly members.
  </p>
  </div>
  </div>
@@ -310,7 +312,7 @@ const SerialNumberStolenCheckPage = () => {
  <div className="p-6 bg-card rounded-lg">
  <h3 className="text-xl font-semibold mb-3">How to handle partial serials</h3>
  <p className="text-muted-foreground">
- Sometimes serial numbers are worn, partially covered, or hard to read. Enter what you can see—partial matches may still return useful results. However, treat partial serial items with extra caution. Ask yourself: why is the serial hard to read? Natural wear is different from intentional damage.
+ Sometimes serial numbers are worn, partially covered, or hard to read. Enter what you can see, but a check looks for the exact number, so a partial serial is much less reliable. Treat these items with extra caution. Ask yourself: why is the serial hard to read? Natural wear is different from intentional damage.
  </p>
  </div>
  
@@ -329,7 +331,7 @@ const SerialNumberStolenCheckPage = () => {
  <li>• Price is significantly below market value</li>
  <li>• Seller wants to meet in unusual locations</li>
  <li>• Seller can't explain where they got the item</li>
- <li>• Your SafeOrStolen check returns any theft indicators</li>
+ <li>• Your SafeOrStolen check comes back "reported stolen" or "possible match"</li>
  </ul>
  </div>
  </div>
@@ -390,7 +392,7 @@ const SerialNumberStolenCheckPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any Serial Number Free</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Phones, laptops, tools, bikes, firearms, and more. 2 free searches. Results in seconds.
+ Phones, laptops, tools, bikes, firearms, and more. 2 free checks. Results in a few seconds.
  </p>
  <Link to="/verify">
  <Button size="lg" className="gap-2">

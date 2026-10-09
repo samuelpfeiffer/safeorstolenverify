@@ -122,7 +122,7 @@ const UnifiedSearchFormComponent = ({
  value={input}
  onChange={handleInputChange}
  onKeyPress={handleKeyPress}
- placeholder="👉 Enter your IMEI, VIN, or Serial Number here..."
+ placeholder="Enter your IMEI, VIN, or Serial Number here..."
  isLoading={isLoading}
  variant="hero"
  error={error}
@@ -235,7 +235,7 @@ const UnifiedSearchFormComponent = ({
  </div>
 
  <p className="text-xs text-gray-400 text-center">
- Real-time verification • Results in under 3 seconds
+ Results in a few seconds • Every source listed
  </p>
  </div>
 
@@ -262,7 +262,7 @@ const UnifiedSearchFormComponent = ({
  Stolen-Item Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Checks our own stolen-item reports, public web results and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
+ Searches SafeOrStolen theft reports and public web results, plus a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records for guns, and Arizona law-enforcement records for Arizona vehicles
  </p>
  </div>
 
@@ -285,7 +285,7 @@ const UnifiedSearchFormComponent = ({
  value={input}
  onChange={handleInputChange}
  onKeyPress={handleKeyPress}
- placeholder="👉 Type VIN, IMEI, License Plate, or Serial Number..."
+ placeholder="Type VIN, IMEI, License Plate, or Serial Number..."
  isLoading={isLoading}
  variant="default"
  error={error}
@@ -319,11 +319,11 @@ const UnifiedSearchFormComponent = ({
  </div>
 
  <div className="flex flex-wrap gap-2 text-xs">
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚗 Vehicles (VIN)</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">📱 Phones (IMEI)</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚲 Bikes</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">💻 Electronics</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🔑 Any Serial #</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Vehicles (VIN)</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Phones (IMEI)</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Bikes</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Electronics</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Any Serial #</span>
  </div>
  </TabsContent>
 

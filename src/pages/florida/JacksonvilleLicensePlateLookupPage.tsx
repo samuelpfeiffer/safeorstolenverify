@@ -3,39 +3,41 @@ import { CheckCircle, ArrowRight, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 
+const FAQS = [
+ {
+ q: "How do I check if a car is stolen in Jacksonville, FL?",
+ a: "Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/jacksonville-license-plate-lookup). A plate check searches SafeOrStolen theft reports and public web results. A VIN check also decodes the year, make and model and lists open recalls. Results take a few seconds, and the first 2 checks are free with no credit card."
+ },
+ {
+ q: "Why check a used car before buying in Jacksonville?",
+ a: "Jacksonville is the largest city by land area in the contiguous U.S. and sits on I-95, so cars for sale here come from all over Florida and up the East Coast. A car that turns out to be stolen is usually seized and returned to its owner, and the buyer is left chasing the seller for the money."
+ },
+ {
+ q: "Does SafeOrStolen check Jacksonville Sheriff's Office or FLHSMV records?",
+ a: "No. SafeOrStolen does not search Jacksonville Sheriff's Office, FLHSMV or NCIC records. It searches its own theft reports and public web results, and for VINs it adds the decoded year, make, model and open recalls. To confirm a report, call JSO's non-emergency line. For title and lien status, contact FLHSMV or the Duval County Tax Collector."
+ },
+ {
+ q: "Is a license plate lookup enough or should I also check the VIN?",
+ a: "Check both. Plates come off easily, and a stolen car can wear plates from a different vehicle. Run the plate and the VIN on SafeOrStolen, then make sure the VIN on the dashboard and driver's door jamb matches the title and registration the seller shows you."
+ }
+];
+
 const JacksonvilleLicensePlateLookupPage = () => {
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": [
- {
+ "mainEntity": FAQS.map(f => ({
  "@type": "Question",
- "name": "How do I check if a car is stolen in Jacksonville, FL?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We analyze public web results, our own stolen-item reports, and official FLHSMV records. Results in 3 seconds. 2 free checks, no credit card." }
- },
- {
- "@type": "Question",
- "name": "What makes Jacksonville a high-risk area for vehicle theft?",
- "acceptedAnswer": { "@type": "Answer", "text": "Jacksonville is the largest city by area in the contiguous US, giving thieves more space to operate. Its position on I-95 — the main north-south highway on the East Coast — makes it a corridor for stolen vehicle trafficking between Florida and the northeast. The sprawling suburbs create opportunities for theft in residential areas." }
- },
- {
- "@type": "Question",
- "name": "Does SafeOrStolen check Jacksonville Sheriff's Office records?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen's verification engine analyzes public web results, our own stolen-item reports, and official FLHSMV records for vehicle theft information." }
- },
- {
- "@type": "Question",
- "name": "Is a license plate lookup enough or should I also check the VIN?",
- "acceptedAnswer": { "@type": "Answer", "text": "Always do both. License plates can be swapped — thieves put clean plates on stolen vehicles. Our tool resolves the plate to a VIN through FLHSMV and checks both, but we recommend physically verifying the VIN on the vehicle dashboard and door jamb matches the registration." }
- }
- ]
+ "name": f.q,
+ "acceptedAnswer": { "@type": "Answer", "text": f.a }
+ }))
  };
 
  return (
  <>
  <PageSEO
  title="Free Jacksonville FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Jacksonville, Florida license plate lookup. Check if vehicles in Duval County are stolen by analyzing public web results, our own stolen-item reports, and official FLHSMV records. Instant results in 3 seconds."
+ description="Free Jacksonville, FL license plate lookup. Check a Duval County plate or VIN against SafeOrStolen theft reports and public web results in a few seconds."
  canonical="/florida/jacksonville-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +49,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Jacksonville License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Jacksonville, Florida by analyzing public web results, our own stolen-item reports, and official FLHSMV records. Free instant results in 3 seconds.
+ Buying a used car in Jacksonville? Check the plate and the VIN against SafeOrStolen theft reports and public web results. Results take a few seconds, and the first 2 checks are free.
  </p>
  </div>
  </header>
@@ -67,25 +69,24 @@ const JacksonvilleLicensePlateLookupPage = () => {
  <section className="mb-10">
  <h2 className="text-2xl font-bold text-foreground mb-4">Why Check Vehicles in Jacksonville?</h2>
  <p className="text-muted-foreground leading-relaxed mb-4">
- Jacksonville is the largest city by land area in the contiguous United States — spanning over 874 square miles across Duval County. This sprawling geography creates unique challenges for law enforcement and unique opportunities for vehicle theft rings. With numerous suburban neighborhoods, shopping centers, and commercial districts spread across the metro area, stolen vehicles can be moved and hidden more easily than in compact cities.
+ Jacksonville covers more land than any other city in the contiguous United States, so a private sale might mean a drive from Arlington out to the Westside or down to Mandarin. Ask for the plate and VIN before you make that trip and check them first.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
- Jacksonville sits directly on I-95, the primary north-south interstate corridor on the East Coast. This makes it a key transit point for stolen vehicle trafficking — cars stolen in South Florida (Miami, Fort Lauderdale) often pass through Jacksonville en route to Georgia, the Carolinas, and northeast markets. Conversely, vehicles stolen in the northeast frequently appear for sale in Jacksonville's used car market.
+ The city sits on I-95 and I-10, and cars for sale here can come from South Florida, Georgia or further up the coast. Out-of-state titles are common, which is one more reason to match the VIN on the car to the paperwork.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- The Jacksonville Sheriff's Office (JSO) — one of the largest consolidated police forces in the country — handles vehicle theft across all of Duval County. Despite strong enforcement, Jacksonville sees thousands of vehicle thefts annually, with Hyundai, Kia, Honda, and Chevrolet models being the most targeted. The Port of Jacksonville (JAXPORT) also handles vehicle shipping, adding another avenue for stolen vehicle export.
+ After a hurricane season, flood-damaged cars also turn up for sale. SafeOrStolen won't show flood or salvage brands, so for title history get a vehicle history report and ask FLHSMV or the Duval County Tax Collector about the title.
  </p>
  </section>
 
  <section className="mb-10">
- <h2 className="text-2xl font-bold text-foreground mb-4">What Our Jacksonville Lookup Checks</h2>
+ <h2 className="text-2xl font-bold text-foreground mb-4">What the Jacksonville Lookup Checks</h2>
  <ul className="space-y-3">
  {[
- { name: 'FLHSMV Records', desc: 'Florida registration database for Duval County vehicles' },
- { name: 'JSO Records', desc: 'Jacksonville Sheriff\'s Office stolen vehicle reports' },
- { name: 'public web results', desc: 'public web search results and SafeOrStolen user reports' },
- { name: 'I-95 Corridor Data', desc: 'Cross-state stolen vehicle alerts from the I-95 trafficking corridor' },
- { name: 'Insurance & Salvage', desc: 'Theft claims and flood/salvage titles from Florida hurricanes' },
+ { name: 'SafeOrStolen theft reports', desc: 'thefts owners have reported on SafeOrStolen' },
+ { name: 'Public web results', desc: 'listings and posts that mention the plate or VIN' },
+ { name: 'VIN decode and recalls', desc: 'year, make, model and open safety recalls when you check the VIN' },
+ { name: 'Not searched', desc: 'Jacksonville Sheriff\'s Office, FLHSMV, NCIC, insurer or salvage records, and owner names' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -98,22 +99,12 @@ const JacksonvilleLicensePlateLookupPage = () => {
  <section className="mb-10">
  <h2 className="text-2xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
  <div className="space-y-3">
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Jacksonville, FL?</summary>
- <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate or VIN on SafeOrStolen. We analyze public web results, our own stolen-item reports, and official FLHSMV records. Results in 3 seconds. 2 free checks, no credit card.</p>
+ {FAQS.map(f => (
+ <details key={f.q} className="bg-card/50 border border-border rounded-xl p-4">
+ <summary className="font-semibold text-foreground cursor-pointer">{f.q}</summary>
+ <p className="text-muted-foreground mt-2">{f.a}</p>
  </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">What makes Jacksonville a high-risk area for vehicle theft?</summary>
- <p className="text-muted-foreground mt-2">Jacksonville is the largest city by area in the contiguous US, giving thieves more space to operate. Its position on I-95 makes it a corridor for stolen vehicle trafficking between Florida and the northeast. The sprawling suburbs create opportunities for theft in residential areas.</p>
- </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Does SafeOrStolen check Jacksonville Sheriff's Office records?</summary>
- <p className="text-muted-foreground mt-2">Yes. SafeOrStolen's verification engine analyzes public web results, our own stolen-item reports, and official FLHSMV records for vehicle theft information.</p>
- </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup enough or should I also check the VIN?</summary>
- <p className="text-muted-foreground mt-2">Always do both. License plates can be swapped — thieves put clean plates on stolen vehicles. Our tool resolves the plate to a VIN through FLHSMV and checks both, but we recommend physically verifying the VIN on the vehicle dashboard and door jamb matches the registration.</p>
- </details>
+ ))}
  </div>
  </section>
 

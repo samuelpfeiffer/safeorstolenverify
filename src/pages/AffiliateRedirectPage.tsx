@@ -6,11 +6,11 @@ const AFFILIATE_TARGETS: Record<string, string> = {
   'device-insurance': 'https://safeorstolen.com/pricing',
   'phone-report': 'https://safeorstolen.com/pricing',
   'phone-accessories': 'https://safeorstolen.com/pricing',
-  'vehicle-report': 'https://safeorstolen.com/pricing', // Replace with Bumper.com affiliate link when approved
-  'identity-check': 'https://safeorstolen.com/pricing', // Replace with BeenVerified affiliate link when approved
+  'vehicle-report': 'https://safeorstolen.com/pricing',
+  'identity-check': 'https://safeorstolen.com/pricing',
   'auto-insurance': 'https://safeorstolen.com/pricing',
   'vehicle-warranty': 'https://safeorstolen.com/pricing',
-  'bike-register': 'https://bikeindex.org/bikes/new',
+  'bike-register': 'https://safeorstolen.com/check-bike',
   'bike-insurance': 'https://safeorstolen.com/pricing',
   'firearm-insurance': 'https://safeorstolen.com/pricing',
   'gun-safe': 'https://safeorstolen.com/pricing',
@@ -48,14 +48,10 @@ const AffiliateRedirectPage: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="text-center space-y-4">
         <img src="/sos-logo.png" alt="SafeOrStolen" className="w-16 h-16 mx-auto" />
-        <p className="text-lg font-semibold text-foreground">Taking you to our trusted partner...</p>
+        <p className="text-lg font-semibold text-foreground">Taking you to the right SafeOrStolen page...</p>
         <Loader2 className="w-8 h-8 animate-spin mx-auto text-primary" />
         <p className="text-xs text-muted-foreground">
           <a href={target} className="text-primary hover:underline">Click here if not redirected</a>
-        </p>
-        <p className="text-[10px] text-muted-foreground mt-4 max-w-xs mx-auto">
-          SafeOrStolen may earn a commission at no extra cost to you. US traffic only. 
-          Not for employment screening, tenant screening, credit, insurance underwriting, or educational qualification purposes.
         </p>
       </div>
     </div>

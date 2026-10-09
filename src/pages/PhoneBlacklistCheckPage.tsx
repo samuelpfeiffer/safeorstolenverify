@@ -22,50 +22,42 @@ const PhoneBlacklistCheckPage = () => {
  }
  };
 
+ // Oct 7 2026: fixed by hand. The blacklist check is a paid add-on, so "free blacklist check",
+ // "instantly", "3 seconds", the unverified carrier list and "40+ carriers" were removed.
+ const faqs = [
+ {
+ q: "What is a phone blacklist?",
+ a: "A phone blacklist is a shared list of IMEI numbers that carriers have flagged as lost or stolen. A phone on it usually can't be activated on participating carrier networks, even with a new SIM. Phones can also be blocked by a carrier over an unpaid balance, which is a separate issue from theft."
+ },
+ {
+ q: "How do I check if a phone is blacklisted?",
+ a: "Get the IMEI by dialing *#06#, then enter it at SafeOrStolen (safeorstolen.com/phone-blacklist-check). The basic check shows the make and model and searches SafeOrStolen theft reports and public web results. The lost/stolen carrier blacklist check is a paid add-on; monthly members get up to 20 a month. Results come back in a few seconds."
+ },
+ {
+ q: "Can a blacklisted phone be fixed?",
+ a: "Only by the person or carrier who flagged it. If the block is over an unpaid balance, the account holder can pay it off and ask the carrier to clear it. If the phone was reported lost or stolen, only the original owner can ask their carrier to remove it. A buyer can't clear it."
+ },
+ {
+ q: "What happens if I buy a blacklisted phone?",
+ a: "It usually won't activate on participating carrier networks, so you can't use it for calls or data even with your own SIM, and the seller is rarely reachable afterward. Check the IMEI before you pay, and make sure the IMEI on the box, the SIM tray and the *#06# screen all match."
+ }
+ ];
+
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": [
- {
+ "mainEntity": faqs.map(f => ({
  "@type": "Question",
- "name": "What is a phone blacklist?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "A phone blacklist is a database of IMEI numbers reported as stolen, lost, or with unpaid bills. Carriers share this data to prevent blacklisted phones from being activated on their networks. SafeOrStolen checks these blacklists instantly."
- }
- },
- {
- "@type": "Question",
- "name": "How do I check if a phone is blacklisted?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Enter the 15-digit IMEI number into SafeOrStolen's free lookup. We analyze public web results and our own reports, plus we tell you about the phone model and details. Results in 3 seconds."
- }
- },
- {
- "@type": "Question",
- "name": "Can a blacklisted phone be fixed?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "If the phone was blacklisted due to unpaid bills, paying the balance may remove it. If stolen, the original owner must file a police report to clear it. Some carriers allow appeals, but stolen devices rarely get unblacklisted."
- }
- },
- {
- "@type": "Question",
- "name": "What happens if I buy a blacklisted phone?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "A blacklisted phone cannot be activated on most carrier networks. You may be stuck with an expensive paperweight. Always verify the IMEI with SafeOrStolen before buying to avoid this."
- }
- }
- ]
+ "name": f.q,
+ "acceptedAnswer": { "@type": "Answer", "text": f.a }
+ }))
  };
 
  return (
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
  <PageSEO
- title="Free Phone Blacklist Check - IMEI Verification"
- description="Look up a phone's IMEI before buying. Free IMEI lookup provides phone details and checks against SafeOrStolen's reports and public web results. Instant."
+ title="Phone Blacklist Check - IMEI Lookup Before You Buy"
+ description="Phone blacklist check by IMEI: see make and model, search theft reports, and run a paid lost/stolen carrier blacklist check in a few seconds before you buy."
  keywords="phone blacklist check, IMEI blacklist checker, check if phone blacklisted, carrier blacklist check, phone blacklist status, blacklisted phone checker"
  canonical="/phone-blacklist-check"
  structuredData={faqSchema}
@@ -76,15 +68,15 @@ const PhoneBlacklistCheckPage = () => {
  <section className="text-center mb-16">
  <Badge variant="secondary" className="mb-4">
  <Ban className="w-4 h-4 mr-2 inline" />
- Check Carrier Blacklists Instantly
+ IMEI Blacklist Check
  </Badge>
  
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
- Free Phone Blacklist Check
+ Phone Blacklist Check
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify a phone's IMEI before buying. We check SafeOrStolen's reports and public web results, and provide phone details. If a phone is blacklisted by carriers, it cannot be activated!
+ Enter the IMEI before you pay. You'll see the make and model and any match in SafeOrStolen theft reports and public web results, and you can add a paid lost/stolen carrier blacklist check. A blacklisted phone usually won't activate on participating networks.
  </p>
 
  {/* Blacklist Checker Tool */}
@@ -111,7 +103,7 @@ const PhoneBlacklistCheckPage = () => {
  </div>
  <Button type="submit" size="lg" className="w-full" disabled={imei.length !== 15}>
  <Search className="w-5 h-5 mr-2" />
- Check Blacklist Status - Free
+ Check This IMEI
  </Button>
  </form>
  </CardContent>
@@ -150,26 +142,30 @@ const PhoneBlacklistCheckPage = () => {
  <AlertTriangle className="w-12 h-12 text-destructive mb-4" />
  <h3 className="font-semibold text-lg mb-2">Why Blacklist Check Matters</h3>
  <p className="text-muted-foreground">
- If you buy a blacklisted phone, it <strong>cannot be activated</strong> on most carrier networks. You'll be stuck with an expensive paperweight. Some carriers share blacklist data globally, meaning the phone may be unusable anywhere.
+ If you buy a blacklisted phone, it <strong>cannot be activated</strong> on most carrier networks. Your SIM won't connect it, and the seller is usually gone by the time you find out.
  </p>
  </CardContent>
  </Card>
  </div>
  </section>
 
- {/* Carriers We Check */}
+ {/* What each check covers */}
  <section className="mb-16">
- <h2 className="text-3xl font-bold text-center mb-8">Carrier Blacklists We Verify</h2>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
- {['AT&T', 'Verizon', 'T-Mobile', 'Sprint', 'Cricket', 'Metro', 'Boost', 'US Cellular', 'Vodafone', 'O2', 'EE', 'Three', 'Rogers', 'Bell', 'Telus', 'Telstra'].map((carrier) => (
- <Card key={carrier} className="text-center">
- <CardContent className="py-4">
- <p className="font-medium">{carrier}</p>
+ <h2 className="text-3xl font-bold text-center mb-8">What You Get</h2>
+ <div className="grid md:grid-cols-2 gap-6">
+ <Card>
+ <CardContent className="pt-6">
+ <h3 className="font-semibold text-lg mb-2">Basic IMEI check</h3>
+ <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports and public web results. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
  </CardContent>
  </Card>
- ))}
+ <Card>
+ <CardContent className="pt-6">
+ <h3 className="font-semibold text-lg mb-2">Carrier blacklist check (paid)</h3>
+ <p className="text-muted-foreground">Searches the lost/stolen carrier blacklist for the IMEI. Monthly members get up to 20 blacklist checks a month. It doesn't show Activation Lock or Google account lock, so have the seller sign out in front of you.</p>
+ </CardContent>
+ </Card>
  </div>
- <p className="text-center text-muted-foreground mt-4">Plus 40+ additional international carriers</p>
  </section>
 
  {/* Blacklist Status Results */}
@@ -179,22 +175,22 @@ const PhoneBlacklistCheckPage = () => {
  <Card className="border-green-200 bg-green-50 dark:bg-green-950/20">
  <CardContent className="pt-6 text-center">
  <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
- <h3 className="font-semibold text-lg mb-2">Clean / Not Blacklisted</h3>
- <p className="text-sm text-muted-foreground">We found no stolen reports in our system or public web results for this phone. A carrier blacklist check would need to be done with the carrier.</p>
+ <h3 className="font-semibold text-lg mb-2">No report found</h3>
+ <p className="text-sm text-muted-foreground">Nothing turned up in the records searched, which are listed on the result. It's not a guarantee, so still check the account lock in person.</p>
  </CardContent>
  </Card>
  <Card className="border-red-200 bg-red-50 dark:bg-red-950/20">
  <CardContent className="pt-6 text-center">
  <XCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
- <h3 className="font-semibold text-lg mb-2">Blacklisted</h3>
- <p className="text-sm text-muted-foreground">Phone is blocked. Cannot activate on carrier networks. DO NOT BUY.</p>
+ <h3 className="font-semibold text-lg mb-2">Reported stolen or blacklisted</h3>
+ <p className="text-sm text-muted-foreground">The IMEI matches a theft report or is on the lost/stolen blacklist. Don't buy it.</p>
  </CardContent>
  </Card>
  <Card className="border-yellow-200 bg-yellow-50 dark:bg-yellow-950/20">
  <CardContent className="pt-6 text-center">
  <AlertTriangle className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
- <h3 className="font-semibold text-lg mb-2">Financed / Pending</h3>
- <p className="text-sm text-muted-foreground">Phone has outstanding balance. May be blacklisted if payments stop. Proceed with caution.</p>
+ <h3 className="font-semibold text-lg mb-2">Possible match</h3>
+ <p className="text-sm text-muted-foreground">Something close turned up, such as a web post mentioning the IMEI. Read the listed source and ask the seller for a receipt.</p>
  </CardContent>
  </Card>
  </div>
@@ -204,24 +200,7 @@ const PhoneBlacklistCheckPage = () => {
  <section className="mb-16">
  <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
  <div className="space-y-4 max-w-3xl mx-auto">
- {[
- {
- q: "What is a phone blacklist?",
- a: "A phone blacklist is a database of IMEI numbers reported as stolen, lost, or with unpaid bills. Carriers share this data to prevent blacklisted phones from being activated on their networks."
- },
- {
- q: "How do I check if a phone is blacklisted?",
- a: "Enter the 15-digit IMEI number into SafeOrStolen's free lookup above. We analyze public web results and our own reports, plus we tell you about the phone model and details. Results in 3 seconds."
- },
- {
- q: "Can a blacklisted phone be fixed?",
- a: "If blacklisted due to unpaid bills, paying the balance may remove it. If stolen, the original owner must file a police report. Some carriers allow appeals, but stolen devices rarely get unblacklisted."
- },
- {
- q: "What happens if I buy a blacklisted phone?",
- a: "A blacklisted phone cannot be activated on most carrier networks. You may be stuck with an expensive paperweight. Always verify the IMEI before buying."
- }
- ].map((faq, i) => (
+ {faqs.map((faq, i) => (
  <Card key={i}>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">{faq.q}</h3>
@@ -235,9 +214,9 @@ const PhoneBlacklistCheckPage = () => {
  {/* CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Check Blacklist Status Now</h2>
- <p className="text-muted-foreground mb-6">Don't buy a phone that can't be activated. Verify the blacklist status first.</p>
+ <p className="text-muted-foreground mb-6">Check the IMEI before money changes hands. Your first 2 checks are free.</p>
  <Button asChild size="lg">
- <a href="#top">Check Phone Blacklist - Free</a>
+ <a href="#top">Check a Phone</a>
  </Button>
  </section>
 
@@ -251,7 +230,7 @@ const PhoneBlacklistCheckPage = () => {
  <span>•</span>
  <Link to="/check-iphone-stolen" className="text-primary hover:underline">iPhone IMEI Check</Link>
  <span>•</span>
- <Link to="/app" className="text-primary hover:underline">Download App</Link>
+ <Link to="/app" className="text-primary hover:underline">Web App</Link>
  </div>
  </section>
  </div>

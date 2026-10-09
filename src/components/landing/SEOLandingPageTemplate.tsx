@@ -128,13 +128,12 @@ export const SEOLandingPageTemplate = ({
       "name": "Worldwide"
     },
     "description": metaDescription,
-    "dateModified": "2026-03-02",
-    "offers": {
-      "@type": "Offer",
-      "price": "10.00",
-      "priceCurrency": "USD",
-      "description": "$10/month unlimited verifications"
-    }
+    "dateModified": "2026-10-07",
+    "offers": [
+      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks with a free account" },
+      { "@type": "Offer", "price": "0.99", "priceCurrency": "USD", "description": "Single check" },
+      { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited checks per month" }
+    ]
   };
 
   const howToSchema = {
@@ -142,14 +141,14 @@ export const SEOLandingPageTemplate = ({
     "@type": "HowTo",
     "name": `How to Check if ${itemType} is Stolen`,
     "description": `Step by step guide to verify if a ${itemType.toLowerCase()} has been reported stolen`,
-    "dateModified": "2026-03-02",
+    "dateModified": "2026-10-07",
     "step": howItWorksSteps.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "name": `Step ${index + 1}`,
       "text": step
     })),
-    "totalTime": "PT30S"
+    "totalTime": "PT1M"
   };
 
   const faqSchema = faqs && faqs.length > 0 ? {
@@ -214,7 +213,7 @@ export const SEOLandingPageTemplate = ({
                 </Link>
                 <Link to="/app">
                   <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
-                    <Download className="w-4 h-4" /> Download Mobile App
+                    <Download className="w-4 h-4" /> Get the Free Web App
                   </Button>
                 </Link>
               </div>
@@ -224,11 +223,11 @@ export const SEOLandingPageTemplate = ({
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Shield className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">Law Enforcement Backed</span>
+                <span className="text-sm font-semibold text-center">Every Source Listed</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Clock className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">3-Second Results</span>
+                <span className="text-sm font-semibold text-center">Results in a Few Seconds</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <CheckCircle className="w-8 h-8 text-primary mb-2" />
@@ -236,18 +235,18 @@ export const SEOLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">From $0.99/check</span>
+                <span className="text-sm font-semibold text-center">2 Free Checks</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        {stats && stats.length > 0 && (
+        {/* Stats Section: Oct 8 2026, no longer rendered (page-supplied numbers were unverified). */}
+        {false && stats && stats.length > 0 && (
           <section className="py-12 px-4 bg-primary/5">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {stats.map((stat, index) => (
+                {(stats ?? []).map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -276,7 +275,7 @@ export const SEOLandingPageTemplate = ({
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">How to Check if {itemType} is Stolen</h2>
-            <p className="text-center text-muted-foreground mb-8">Verify any {itemType.toLowerCase()} in under 30 seconds</p>
+            <p className="text-center text-muted-foreground mb-8">Type the number, read the result in a few seconds</p>
             
             <div className="space-y-6">
               {howItWorksSteps.map((step, index) => (
@@ -383,12 +382,12 @@ export const SEOLandingPageTemplate = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">
                 <Button size="lg" className="gap-2 w-full sm:w-auto">
-                  Verify Now — From $0.99 <Search className="w-4 h-4" />
+                  Run a Free Check <Search className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/app">
                 <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
-                  <Download className="w-4 h-4" /> Get the App
+                  <Download className="w-4 h-4" /> Get the Free Web App
                 </Button>
               </Link>
             </div>

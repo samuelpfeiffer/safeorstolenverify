@@ -1,3 +1,4 @@
+/** Oct 8 2026: blog index copy fixed by hand (Carfax price, AI-hype excerpt, "comprehensive", mobile-app keyword, featured article now the phone guide). */
 import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,7 +11,7 @@ const staticArticles = [
   {
     title: 'Carfax and Free VIN Alternatives: Complete 2026 Guide',
     slug: 'carfax-vs-free-vin-alternatives',
-    excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives in 2026. Learn which vehicle history service is best for checking if a car is stolen.',
+    excerpt: 'What a paid Carfax report tells you that a free VIN check doesn\'t, and which free checks to run first when you want to know if a car is stolen.',
     category: 'Vehicle Safety',
     readTime: '10 min',
     keywords: ['carfax alternative', 'free vin check 2026', 'carfax safeorstolen comparison']
@@ -18,7 +19,7 @@ const staticArticles = [
   {
     title: 'How to Check if a Phone is Stolen Before Buying in 2026',
     slug: 'how-to-check-if-phone-stolen',
-    excerpt: 'Complete 2026 guide to verifying smartphone legitimacy with IMEI checks, carrier blacklist verification, and red flags when buying used phones.',
+    excerpt: 'How to find the IMEI, run a stolen and blacklist check, and spot the red flags at the meetup before you pay for a used phone.',
     category: 'Buying Guides',
     readTime: '8 min',
     keywords: ['phone verification 2026', 'IMEI check', 'stolen phone checker']
@@ -26,7 +27,7 @@ const staticArticles = [
   {
     title: 'How AI is Transforming Stolen Item Detection in 2026',
     slug: 'ai-stolen-item-detection-2026',
-    excerpt: 'How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification. Learn how AI-powered verification catches what humans miss.',
+    excerpt: 'What AI chat assistants like ChatGPT and Claude can and can\'t tell you about whether an item is stolen, and why a check against real theft reports still matters.',
     category: 'AI & Technology',
     readTime: '9 min',
     keywords: ['AI verification', 'ChatGPT stolen items', 'machine learning detection']
@@ -34,7 +35,7 @@ const staticArticles = [
   {
     title: 'Complete VIN Guide: Everything You Need to Know',
     slug: 'complete-vin-guide',
-    excerpt: 'Comprehensive guide to Vehicle Identification Numbers - what they reveal, how to decode them, and why they\'re critical for avoiding stolen vehicles.',
+    excerpt: 'Where to find a Vehicle Identification Number, what each part of it means, and how to use it to check a car before you buy.',
     category: 'Vehicle Safety',
     readTime: '12 min',
     keywords: ['VIN decoder', 'vehicle history', 'car verification']
@@ -50,7 +51,7 @@ const staticArticles = [
   {
     title: 'Ultimate Marketplace Buyer\'s Guide',
     slug: 'ultimate-marketplace-buyers-guide',
-    excerpt: 'Protect yourself on eBay, Facebook Marketplace, OfferUp, and Craigslist with this comprehensive safety guide for secondhand purchases.',
+    excerpt: 'Protect yourself on eBay, Facebook Marketplace, OfferUp, and Craigslist with this safety guide for secondhand purchases.',
     category: 'Marketplace Safety',
     readTime: '15 min',
     keywords: ['marketplace safety', 'buying guide', 'secondhand items']
@@ -82,7 +83,7 @@ const staticArticles = [
   {
     title: 'Pawn Shop Stolen Item Verification',
     slug: 'pawn-shop-stolen-item-verification',
-    excerpt: 'How pawn shops use SafeOrStolen to verify items aren\'t stolen. Compliance guide for resale businesses and secondhand stores.',
+    excerpt: 'How pawn shops and resale stores can check serial numbers for theft reports before taking items in, including bulk checks.',
     category: 'Business',
     readTime: '9 min',
     keywords: ['pawn shop compliance', 'resale verification', 'business tools']
@@ -106,7 +107,7 @@ const staticArticles = [
   {
     title: 'Theft Trends Report 2024',
     slug: 'theft-trends-report-2024',
-    excerpt: 'Comprehensive analysis of stolen goods trends, most targeted items, theft statistics, and what it means for secondhand buyers.',
+    excerpt: 'Which items thieves target, how stolen goods get resold, and what that means for secondhand buyers.',
     category: 'Industry Insights',
     readTime: '9 min',
     keywords: ['theft statistics', 'stolen goods trends', 'crime data']
@@ -178,21 +179,21 @@ export default function BlogIndexPage() {
 
   // Show static articles first, then dynamic ones
   const allArticles = [...staticArticles, ...dynamicArticles];
-  const featuredArticle = staticArticles[2]; // "How to check if phone stolen"
+  const featuredArticle = staticArticles[1]; // "How to check if phone stolen"
 
   return (
     <>
       <PageSEO
         title="Blog - Stolen Item Guides & Safety Tips"
-        description="Expert guides on verifying secondhand items before buying. Avoid stolen goods on marketplaces. IMEI, VIN, serial number tips from SafeOrStolen."
-        keywords="stolen item checker, verification guides, marketplace safety, IMEI lookup, VIN checks, buying guides, SafeOrStolen alternative, vehicle history alternative, mobile app verification"
+        description="Guides to checking secondhand items before you buy: finding the IMEI, VIN or serial number, spotting stolen goods on marketplaces, and what to do next."
+        keywords="stolen item checker, verification guides, marketplace safety, IMEI lookup, VIN checks, buying guides, vehicle history alternative, free web app"
         canonical="/blog"
         type="website"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
           name: 'SafeOrStolen Blog - Stolen Item Verification Guides 2026',
-          description: 'Expert 2026 guides on verifying secondhand items and avoiding stolen goods. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
+          description: 'Guides on checking secondhand items and avoiding stolen goods. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.',
           url: 'https://safeorstolen.com/blog',
           publisher: {
             '@type': 'Organization',
@@ -216,7 +217,7 @@ export default function BlogIndexPage() {
               SafeOrStolen Blog
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Expert guides, safety tips, and industry insights to help you verify secondhand items and avoid stolen goods
+              Plain guides to checking secondhand items before you buy, and what to do if something looks stolen
             </p>
             {dbArticles && dbArticles.length > 0 && (
               <p className="text-sm text-muted-foreground mt-4">
@@ -336,7 +337,7 @@ export default function BlogIndexPage() {
               <CardContent className="p-12">
                 <h2 className="text-3xl font-bold mb-4">Start Verifying Items Today</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Use SafeOrStolen's powerful verification tools to check any secondhand item in seconds
+                  Enter an IMEI, VIN or serial number and see in a few seconds whether it's been reported stolen. Your first 2 checks are free.
                 </p>
                 <Link to="/verify">
                   <button className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold rounded-lg hover:opacity-90 transition-opacity text-lg">

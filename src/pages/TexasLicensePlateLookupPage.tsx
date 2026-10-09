@@ -1,14 +1,19 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
+/** Oct 8 2026 audit: copy rewritten by hand. Removed "AI analysis" as a source, "instantly",
+ * ranking claims, and false claims that the lookup shows the registered owner, registration
+ * status, resolves the plate to a VIN or reads Texas DMV records. Fixed the wrong claim that
+ * Texas plates are rear-only (Texas requires front and rear plates on most passenger vehicles). */
 const TexasLicensePlateLookupPage = () => {
  return (
  <>
  <ItemLandingPageTemplate
  title="Texas License Plate Lookup - Check TX Stolen Vehicle by Plate"
- metaDescription="Free Texas license plate lookup. Check if a TX vehicle is stolen before buying. Verify against public records and community reports instantly."
+ metaDescription="Free Texas license plate lookup. Search a TX plate against SafeOrStolen theft reports and public web results in a few seconds, then check the VIN before you buy."
  h1="Texas License Plate Lookup - Check TX Vehicles"
  itemType="Vehicle"
+ dateModified="2026-10-07"
  searchType="plate"
  searchPlaceholder="Enter the license plate number"
  keywords={[
@@ -23,61 +28,54 @@ const TexasLicensePlateLookupPage = () => {
  'san antonio plate lookup'
  ]}
  content={{
- intro: "Verify Texas vehicles using license plate number. Free Texas license plate lookup from public records and community reports. Check if cars, trucks, or motorcycles with TX plates are stolen before buying from private sellers or used car lots in Houston, Dallas, San Antonio, Austin, Fort Worth, and anywhere in Texas. Texas is among the top states for vehicle theft nationally.",
- whatIs: "Texas license plate lookup is a service that verifies whether a vehicle registered in Texas is reported stolen by checking the TX license plate number against public records and reported incidents. Texas uses unique plate formats managed by the Texas DMV. SafeOrStolen's Texas license plate checker checks its own stolen-item reports, public web results and AI analysis to determine if a vehicle with that TX plate has been reported stolen. Key Texas-specific concerns include: Mexico border export operations, Houston organized theft rings, and VIN cloning operations that make Texas a higher-risk state for vehicle fraud.",
- howItWorks: "Enter a Texas plate and SafeOrStolen checks it. You receive a report showing whether the vehicle is reported stolen through SafeOrStolen's system or public web results. SafeOrStolen does not access Texas DMV records.",
- whyCheck: "Texas is among the top states for vehicle theft. Texas license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the massive Texas market. Verify the seller is the registered owner with Texas DMV, detect stolen plates, check Texas registration status, and identify Texas-specific concerns. Watch for: Mexico border export risk (stolen vehicles may cross into Mexico); Houston organized theft rings targeting high-end vehicles; VIN cloning operations in Dallas-Fort Worth. Texas's massive size and border location make it a target for organized vehicle theft. Always verify VIN before final purchase - plates can be swapped but VINs cannot.",
+ intro: "Type a Texas plate into SafeOrStolen and in a few seconds it searches SafeOrStolen theft reports and public web results for that plate. It's a quick first screen for a car, truck or motorcycle you found on Marketplace or a lot in Houston, Dallas, San Antonio or Austin. Plates can be swapped, so ask for the VIN and check that too before you pay.",
+ whatIs: "A Texas license plate lookup on SafeOrStolen looks for a TX plate number in two places: thefts that owners have reported on SafeOrStolen, and public web results such as stolen-car posts and listings that mention that plate. It never shows the owner's name, and it does not read Texas DMV registration or title records. For official registration or title questions, contact the Texas DMV or your county tax assessor-collector.",
+ howItWorks: "Enter the plate, pick Texas, and run the check. The result says \"reported stolen\", \"possible match\" or \"no report found in the records searched\", and lists every source searched. The check is saved to your account with the date. Then run the VIN: a VIN check also decodes the year, make and model and lists open safety recalls, so you can confirm the car matches the listing.",
+ whyCheck: "A plate check lets you screen a listing from your couch before you drive across town. Warning signs in Texas private sales: plates that look newer than the car, a paper tag on a vehicle the seller says they've owned for years, a title in someone else's name, a damaged ignition or steering column, and a seller who only wants to meet in a parking lot. Plates can move between cars, but the VIN stays with the vehicle, so always check the VIN before the final handshake.",
  benefits: [
- "Quick Texas vehicle screening using TX license plate number",
- "Verify seller is the Texas DMV registered owner before viewing",
- "Check Texas registration status (valid, expired, suspended)",
- "Resolve TX plate number to VIN for full verification",
- "Coverage for Houston, Dallas, San Antonio, Austin, Fort Worth and all Texas cities",
- "Detect Mexico border export risk and organized theft ring activity",
- "Check cars, trucks, motorcycles from Texas sellers",
- "Free Texas license plate lookup - 2 free searches"
+ "Screen a Texas listing by plate before you go see it",
+ "Searches SafeOrStolen theft reports and public web results for the plate",
+ "Never shows owner names or personal details",
+ "Works the same for cars, trucks and motorcycles with TX plates",
+ "Each check is saved to your account with the date",
+ "2 free checks with a free account, no credit card"
  ],
  process: [
- "Record the Texas license plate number including all letters and numbers - TX plates are rear-only (no front plate required)",
- "Note the vehicle's make, model, color, and year for comparison with public vehicle records.",
- "Enter the TX plate number into our verification tool (select Texas as state)",
- "Review the report showing Texas registered owner, vehicle information, and theft status",
- "Verify the Texas DMV registered owner name matches the seller's Texas ID",
- "Check for Texas-specific red flags: recent border county registration, dealer flip history, out-of-state title",
- "After initial screening, ALWAYS verify the vehicle's VIN before final purchase"
+ "Write down the plate exactly as shown, letters and numbers, from the front and rear plates; both should match",
+ "Note the make, model, color and year so you can compare them with what the VIN check returns",
+ "Enter the plate on SafeOrStolen and select Texas",
+ "Read the result and the list of sources searched",
+ "Ask the seller for the VIN and run a VIN check before you meet",
+ "At the meetup, match the VIN on the dash, driver's door and title, and the seller's ID to the name on the title"
  ],
  faqs: [
  {
  question: "Can I check if a car is stolen in Texas using just the license plate?",
- answer: "Yes, you can do an initial Texas vehicle check using the TX license plate number, but it's NOT sufficient for final verification. Texas license plates can be swapped - a tactic used by organized theft rings in Houston and Dallas. Use Texas license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase. Texas's high ranking in national vehicle theft makes VIN verification important."
+ answer: "You can screen it by plate, but don't stop there. SafeOrStolen (safeorstolen.com/texas-license-plate-lookup) searches its theft reports and public web results for the plate in a few seconds. Plates can be swapped between vehicles, so run the VIN as well and match it to the dash, door sticker and title before you buy."
  },
  {
- question: "How do I find a vehicle's Texas license plate number?",
- answer: "Texas license plates are located on the rear of the vehicle only - Texas does not require front plates. Simply record all letters and numbers on the TX plate. Texas plates follow specific formats. If the seller won't provide the Texas plate number or it's obscured in photos, that's a major red flag, especially in high-theft areas like Houston, Dallas, and San Antonio."
+ question: "Does Texas require front license plates?",
+ answer: "Yes. Most passenger cars and trucks in Texas must display a plate on the front and the rear. Motorcycles and trailers use only a rear plate. A car with only one plate, or front and rear plates that don't match, is worth asking about before you go further."
  },
  {
  question: "What information can I get from a Texas license plate lookup?",
- answer: "A Texas license plate lookup tells you whether the plate appears in SafeOrStolen reports or public web results, with an AI explanation. This helps you screen Texas vehicles quickly before scheduling a viewing in Houston, Dallas, San Antonio, Austin, or anywhere in Texas."
+ answer: "SafeOrStolen tells you whether the plate appears in SafeOrStolen theft reports or public web results, with each source listed. It does not show the registered owner, registration status or Texas DMV records. Use it to screen a listing, then check the VIN for the decoded vehicle details and open recalls."
  },
  {
  question: "Is Texas license plate lookup really free?",
- answer: "Yes. SafeOrStolen offers 2 free Texas license plate lookups using its stolen-item reports, public web results, and AI analysis. It does not access Texas DMV registration records. Additional checks are $0.99 each or included with the $10 monthly plan."
+ answer: "Your first 2 checks are free with a free SafeOrStolen account, no credit card needed. After that a check costs $0.99, or $10 a month covers unlimited checks, cancel anytime. Plate and VIN checks count the same way."
  },
  {
- question: "What if the Texas registered owner doesn't match the seller?",
- answer: "SafeOrStolen does not provide registered-owner names. Ask the seller to show identification and title documents, compare the VIN across the vehicle and paperwork, and use the Texas DMV directly for official title guidance. Walk away if the seller cannot document authority to sell the vehicle."
+ question: "What if the seller's name doesn't match the title?",
+ answer: "SafeOrStolen doesn't show owner names, so compare the seller's driver's license with the name on the Texas title yourself. If they don't match and the seller can't show a signed title or other proof they're allowed to sell it, walk away. The Texas DMV can answer official title questions."
  },
  {
- question: "What are Texas-specific concerns when buying used vehicles?",
- answer: "Texas has unique vehicle risks that buyers must understand: (1) Mexico border export - stolen vehicles can be moved into Mexico after theft, (2) Houston is a hub for organized vehicle theft rings targeting luxury brands, (3) VIN cloning operations are present in Dallas-Fort Worth where criminals copy VINs from clean vehicles onto stolen ones, (4) Texas's large used vehicle market attracts fraud from neighboring states, (5) Hurricane Harvey flood-damaged vehicles may still circulate with clean titles from other states. Always verify the vehicle's title is clean, check public records for theft or salvage, and verify the VIN matches the title."
- },
- {
- question: "How does the Texas license plate lookup work?",
- answer: "Our Texas license plate lookup queries publicly available vehicle information and cross-references reported stolen vehicle incidents. Enter the TX plate number, select Texas as the state, click verify, and receive results showing vehicle information and theft status from statewide reports."
+ question: "What should I watch for when buying a used car in Texas?",
+ answer: "Check that the VIN on the dash, driver's door jamb and title all match. Look for scratched or replaced VIN stickers, a damaged ignition, mismatched keys, and a title in another person's name. After Gulf Coast storms, also look for flood signs such as silt under the carpet and a musty smell, and get a separate history report."
  },
  {
  question: "Does SafeOrStolen cover all cities in Texas?",
- answer: "Yes, our Texas license plate lookup covers all cities statewide including Houston, Dallas, San Antonio, Austin, Fort Worth, El Paso, Arlington, Corpus Christi, Plano, Laredo, and every other city, town, and county in Texas. We access statewide public vehicle records and theft reports from community sources across all 254 Texas counties."
+ answer: "Yes. The plate check works the same for a Texas plate from Houston, Dallas, San Antonio, Austin, Fort Worth, El Paso or anywhere else in the state, because it searches SafeOrStolen theft reports and public web results rather than local records."
  }
  ]
  }}

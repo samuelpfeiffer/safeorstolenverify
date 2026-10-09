@@ -15,7 +15,7 @@ const PS5StolenCheckGuide = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How to Check if a Used PlayStation 5 is Stolen Before Buying",
-    "description": "Complete guide to verifying a PS5 isn't stolen before purchasing. Learn how to check serial numbers, spot red flags, and protect yourself from buying stolen gaming consoles.",
+    "description": "How to check a used PS5 before you buy it: where the serial number is, how to match it on screen, how to check it for theft reports, and the red flags to watch for at the meetup.",
     "image": "https://safeorstolen.com/og-image-ps5.png",
     "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
     "publisher": {
@@ -44,7 +44,7 @@ const PS5StolenCheckGuide = () => {
         "name": "How do I find the serial number on a PlayStation 5?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The PS5 serial number is located on the back of the console, near the bottom. It's a 17-character code starting with letters. You can also find it in Settings > System > Console Information. Always verify the physical serial matches what's shown on screen."
+          "text": "The PS5 serial number is printed on the label on the back of the console, near the bottom, next to the model number (which starts with CFI-). You can also see it on screen in Settings > System > System Software > Console Information. Make sure the label and the on-screen serial match before you pay."
         }
       },
       {
@@ -52,7 +52,7 @@ const PS5StolenCheckGuide = () => {
         "name": "Can I check if a PS5 is stolen before buying?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can enter a PS5 serial number at SafeOrStolen to check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Also compare the serial on the console with its settings and any original receipt or box."
+          "text": "Yes. Enter the serial at SafeOrStolen (safeorstolen.com/verify) and in a few seconds it searches SafeOrStolen theft reports and public web results, with every source listed. Then compare the serial on the console label with the on-screen serial and with the box or receipt if the seller has them."
         }
       },
       {
@@ -70,7 +70,7 @@ const PS5StolenCheckGuide = () => {
     <>
       <SEOHead
         title="How to Check if a Used PlayStation 5 is Stolen Before Buying"
-        description="Complete guide to verifying a PS5 isn't stolen before purchasing. Learn how to check serial numbers, spot red flags, and protect yourself from buying stolen gaming consoles."
+        description="How to check if a used PS5 is stolen: find the serial on the back label and in Settings, check it for theft reports in seconds, and spot red flags at the meetup."
         keywords="playstation 5 console checker, ps5 stolen check, check if ps5 is stolen, ps5 serial number check, verify ps5 not stolen, used ps5 verification"
         canonical="/blog/ps5-stolen-check-guide"
         ogType="article"
@@ -120,9 +120,9 @@ const PS5StolenCheckGuide = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <Gamepad2 className="w-16 h-16 text-primary" />
                   <div className="flex-1 text-center md:text-left">
-                    <h2 className="text-xl font-bold mb-2">Check PS5 Serial Number Instantly</h2>
+                    <h2 className="text-xl font-bold mb-2">Check a PS5 Serial Number</h2>
                     <p className="text-muted-foreground">
-                      Enter the serial number to check SafeOrStolen's own reports, public web results, and AI analysis in about 3 seconds.
+                      Enter the serial number to search SafeOrStolen theft reports and public web results. Results take a few seconds.
                     </p>
                   </div>
                   <Link to="/verify">
@@ -142,7 +142,7 @@ const PS5StolenCheckGuide = () => {
             
             <h2 className="flex items-center gap-2 text-2xl font-bold mt-12 mb-6">
               <AlertTriangle className="w-6 h-6 text-destructive" />
-              Why PS5 Theft is a Growing Problem
+              Why Check a Used PS5
             </h2>
             
             <p>
@@ -169,8 +169,8 @@ const PS5StolenCheckGuide = () => {
                   <ol className="space-y-2 text-muted-foreground">
                     <li>1. Look at the back of the PS5 console</li>
                     <li>2. Find the label near the bottom</li>
-                    <li>3. The serial number is a 17-character code</li>
-                    <li>4. It typically starts with letters (e.g., "CFI-")</li>
+                    <li>3. Read the serial number printed on the label</li>
+                    <li>4. Don't confuse it with the model number, which starts with "CFI-"</li>
                   </ol>
                 </CardContent>
               </Card>
@@ -181,7 +181,7 @@ const PS5StolenCheckGuide = () => {
                   <ol className="space-y-2 text-muted-foreground">
                     <li>1. Power on the PS5</li>
                     <li>2. Go to Settings</li>
-                    <li>3. Select System</li>
+                    <li>3. Select System, then System Software</li>
                     <li>4. Choose Console Information</li>
                     <li>5. Serial number is displayed</li>
                   </ol>
@@ -191,8 +191,8 @@ const PS5StolenCheckGuide = () => {
 
             <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 my-8">
               <p className="font-semibold text-primary">
-                ⚠️ Important: Always verify that the physical serial number on the console matches what's shown 
-                on screen. Discrepancies indicate tampering or the console may be stolen with a modified label.
+                Make sure the serial on the label matches the one on screen. If they don't match, the label may
+                have been swapped, and you should walk away.
               </p>
             </div>
 
@@ -210,7 +210,7 @@ const PS5StolenCheckGuide = () => {
                   <h3 className="font-bold mb-2">Request the Serial Number Before Meeting</h3>
                   <p className="text-muted-foreground">
                     Ask the seller for the serial number via message before meeting in person. 
-                    Legitimate sellers have no reason to refuse. Check it immediately at SafeOrStolen.com.
+                    Honest sellers have no reason to refuse. Check it at safeorstolen.com/verify before you drive out.
                   </p>
                 </div>
               </div>
@@ -223,7 +223,7 @@ const PS5StolenCheckGuide = () => {
                   <h3 className="font-bold mb-2">Verify Serial in Person</h3>
                   <p className="text-muted-foreground">
                     When meeting, physically check the serial number on the console. 
-                    Power it on and verify it matches the on-screen display in Settings &gt; System &gt; Console Information.
+                    Power it on and make sure it matches Settings &gt; System &gt; System Software &gt; Console Information.
                   </p>
                 </div>
               </div>
@@ -261,8 +261,9 @@ const PS5StolenCheckGuide = () => {
                 <div>
                   <h3 className="font-bold mb-2">Run Final Verification</h3>
                   <p className="text-muted-foreground">
-                    Enter the serial number at SafeOrStolen.com to check SafeOrStolen's own stolen-item reports,
-                    public web results, and AI analysis. Treat a clean result as one part of your due diligence, not a guarantee.
+                    Run the serial you read off the console at safeorstolen.com/verify. It searches SafeOrStolen theft
+                    reports and public web results. "No report found in the records searched" is one part of your
+                    check, not a guarantee.
                   </p>
                 </div>
               </div>
@@ -323,9 +324,9 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">How do I find the serial number on a PlayStation 5?</h3>
                   <p className="text-muted-foreground">
-                    The PS5 serial number is located on the back of the console, near the bottom. It's a 17-character 
-                    code starting with letters. You can also find it in Settings &gt; System &gt; Console Information. 
-                    Always verify the physical serial matches what's shown on screen.
+                    The PS5 serial number is printed on the label on the back of the console, near the bottom, next to
+                    the model number (which starts with CFI-). You can also see it in Settings &gt; System &gt; System
+                    Software &gt; Console Information. Make sure the label and the on-screen serial match before you pay.
                   </p>
                 </CardContent>
               </Card>
@@ -334,9 +335,9 @@ const PS5StolenCheckGuide = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold mb-2">Can I check if a PS5 is stolen before buying?</h3>
                   <p className="text-muted-foreground">
-                    Enter the serial number at SafeOrStolen to check SafeOrStolen reports, public web results,
-                    and AI analysis. Also compare the serial on the console with Settings, the box, receipt,
-                    and seller records; SafeOrStolen does not search police or retail-theft databases.
+                    Yes. Enter the serial at safeorstolen.com/verify to search SafeOrStolen theft reports and public
+                    web results in a few seconds. Also compare the serial on the console with Settings, the box and
+                    the receipt. SafeOrStolen does not search police or retailer records.
                   </p>
                 </CardContent>
               </Card>
@@ -370,7 +371,7 @@ const PS5StolenCheckGuide = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Check a PS5?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Check the console serial against SafeOrStolen reports, public web results, and AI analysis.
+              Search the console serial against SafeOrStolen theft reports and public web results. 2 free checks.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

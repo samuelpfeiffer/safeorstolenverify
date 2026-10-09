@@ -89,7 +89,7 @@ const OfferupScamProtection = () => {
         <section className="py-16 px-4 bg-destructive/5">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              🚩 OfferUp Scam Red Flags
+              OfferUp Scam Red Flags
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-card rounded-xl border border-destructive/20">
@@ -98,8 +98,8 @@ const OfferupScamProtection = () => {
                   Price Too Good to Be True
                 </h3>
                 <p className="text-muted-foreground">
-                  iPhone 15 Pro for $200? Brand new laptop for $100? Stolen
-                  goods are often priced low to sell fast.
+                  A current iPhone Pro or a sealed laptop at a fraction of what
+                  it sells for used? Stolen goods are often priced low to sell fast.
                 </p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-destructive/20">

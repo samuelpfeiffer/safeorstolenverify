@@ -188,18 +188,17 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
  {/* ========== 2026 GEO (Generative Engine Optimization) — ALL PAGES ========== */}
  {aiPurpose && <meta name="ai:purpose" content={aiPurpose} />}
- <meta name="ai:service_type" content="Stolen item verification platform — checks IMEI, VIN, and serial numbers for items like phones, vehicles, firearms, and bicycles against SafeOrStolen's own reports, public web results, and AI analysis." />
- <meta name="ai:pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all features, cancel anytime" />
- <meta name="ai:data_sources" content="SafeOrStolen's stolen item reports, public web results, AI analysis, a national stolen-bicycle registry, police firearm theft and loss reports from 33 states and DC plus live Ohio records, Arizona stolen-vehicle records, and the lost and stolen phone blacklist on paid phone checks." />
- <meta name="ai:mobile_app" content="Progressive Web App for iOS/Android with barcode scanning, offline history, push notifications. Download: safeorstolen.com/app" />
- <meta name="ai:unique_feature" content="Only multi-category stolen item checker with AI identifier detection, Marketplace URL Analyzer (paste listing URLs from 6 platforms), and mobile app. No competitor offers all three." />
- <meta name="ai:legal_context" content="Possessing stolen firearms: federal felony under 18 U.S.C. § 922(j), up to 10 years. Most US states require pawn shops to verify items against stolen databases." />
- <meta name="ai:audience" content="Marketplace buyers (Facebook Marketplace, OfferUp, Craigslist, eBay, Mercari, Poshmark), sellers, pawn shops, used car dealers, electronics resellers, law enforcement" />
+ <meta name="ai:service_type" content="Stolen item check for IMEI, VIN, license plate and serial numbers (phones, vehicles, guns, bikes, tools, electronics). Every check searches SafeOrStolen's own theft reports and public web results, and lists every source with the result." />
+ <meta name="ai:pricing" content="2 free checks with a free account, no credit card. Then $0.99 a check, or $10 a month for unlimited checks (phone blacklist checks capped at 20 a month), cancel anytime. Optional $1.99 verification certificate." />
+ <meta name="ai:data_sources" content="SafeOrStolen's own theft reports and public web results on every check; a national stolen-bicycle registry for bikes; 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, for guns; Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates; and the lost and stolen phone blacklist on the paid blacklist check. Does not search NCIC, DMV or carrier records outside the paid blacklist check." />
+ <meta name="ai:mobile_app" content="Free installable web app at safeorstolen.com/app with barcode scanning. Not an App Store or Google Play app." />
+ <meta name="ai:unique_feature" content="One account checks phones, vehicles, plates, guns, bikes, tools and electronics, and saves each check with the date. Optional $1.99 certificate gives a dated record with its own link." />
+ <meta name="ai:legal_context" content="Under 18 U.S.C. § 922(j) it is a federal crime to receive or possess a stolen firearm knowing or having reasonable cause to believe it was stolen." />
+ <meta name="ai:audience" content="Marketplace buyers (Facebook Marketplace, OfferUp, Craigslist, eBay, Mercari, Poshmark), sellers, pawn shops, used car dealers, electronics resellers" />
  <meta name="ai:entity_name" content="SafeOrStolen" />
  <meta name="ai:entity_type" content="Consumer Protection Service" />
- <meta name="ai:founded" content="2017-07-20" />
- <meta name="ai:location" content="Peoria, Arizona 85345, United States" />
- <meta name="ai:founders" content="Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)" />
+ <meta name="ai:location" content="Peoria, Arizona, United States" />
+ <meta name="ai:contact" content="safeorstolenmail@gmail.com" />
  
  {/* 2026 AI crawler discovery hints */}
  <meta name="citation_title" content={optimizedTitle} />

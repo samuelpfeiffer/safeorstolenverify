@@ -352,7 +352,7 @@ export function DefinitiveItemGuide({
               ? "This page is general information, not legal advice. Laws differ by state and by the facts of each case. Speak with a licensed attorney in your state about your situation."
               : variant === "victim"
                 ? "Do not try to recover an item yourself or confront anyone who has it. Give the information to police. Call emergency services only if someone is in immediate danger."
-                : "No service can guarantee 100% accuracy, and not every theft is reported. Do not confront a seller. For a high-value purchase or a strong warning sign, contact local law enforcement."}
+                : "No check catches everything, and not every theft is reported. Do not confront a seller. For a high-value purchase or a strong warning sign, contact local law enforcement."}
           </p>
         </div>
         {variant === "victim" && (
@@ -379,20 +379,23 @@ export function DefinitiveItemGuide({
         </h2>
         <p>{safeOrStolenText}</p>
         <p className="mt-4">
-          SafeOrStolen checks its own stolen-item reports, public web results,
-          and AI notes. Guns are also checked against police theft and loss
-          reports from 33 states and DC plus live Ohio records, bikes against a
-          national stolen-bicycle registry, and paid phone checks search the
-          lost and stolen phone blacklist. It does not search NCIC, DMV or
+          Every SafeOrStolen check searches its own theft reports and public
+          web results. Guns are also checked against police theft and loss
+          reports from 33 states and Washington, DC, plus live Ohio
+          law-enforcement records; bikes against a national stolen-bicycle
+          registry; Arizona VINs and plates against Arizona law-enforcement
+          stolen-vehicle records; and paid phone checks search the lost and
+          stolen phone blacklist. It does not search NCIC, DMV or
           insurance records; those are separate checks described in this guide.
         </p>
         <p className="mt-4">
           Buyers can save the result with their other due-diligence records.
-          After a clean check, sellers can share a{" "}
+          You can also add an optional $1.99{" "}
           <Link className="text-primary underline" to="/proof-of-purchase">
-            Proof of Clean Purchase
+            verification certificate
           </Link>
-          : a permanent, timestamped verification record. It is not a title,
+          : a dated record with its own link showing the check was done before
+          the sale. It is not a title,
           guarantee of ownership, or legal document.
         </p>
 

@@ -1,11 +1,12 @@
 import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTemplate';
 
+/** Oct 8 2026: audited by hand for "check if gun is stolen". Removed invented stats, "instant", a misstated 922(j) claim and "protect yourself legally". */
 const FirearmSerialCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Firearm is Stolen - Gun Serial Number Lookup | SafeOrStolen"
- metaDescription="Verify any firearm isn't stolen before buying. Free gun serial number check against stolen firearms database. Protect yourself legally. Instant results."
- h1="Check if Firearm is Stolen - Free Serial Number Lookup"
+ metaDescription="Check a gun's serial number for theft reports before buying: police theft and loss reports from 33 states and DC, live Ohio records, and SafeOrStolen reports."
+ h1="Check if a Gun Is Stolen - Free Serial Number Lookup"
  keywords={[
  'check if gun is stolen',
  'firearm serial number lookup',
@@ -22,52 +23,44 @@ const FirearmSerialCheck = () => {
  itemType="Firearm"
  identifierType="Serial Number"
  heroBadge="Firearm Verification"
- heroSubtitle="Buying a stolen firearm has serious legal consequences. Before any private sale, verify the serial number isn't in stolen firearms databases. Free instant check."
- stats={[
- { value: "380K+", label: "Guns Stolen Yearly" },
- { value: "3 sec", label: "Verification Time" },
- { value: "Instant", label: "Results" },
- { value: "Free", label: "First 2 Checks" }
- ]}
- whatIsTitle="What is Firearm Serial Number Verification?"
- whatIsContent="Every firearm manufactured after 1968 has a unique serial number. Buying a stolen firearm, even unknowingly, can result in federal charges. Our check queries stolen firearms databases and analyzes the serial number for signs of alteration or obliteration."
+ heroSubtitle="Before a private gun sale, enter the serial number. In a few seconds SafeOrStolen searches police firearm theft and loss reports, live Ohio law-enforcement records, its own theft reports and public web listings. Your first 2 checks are free."
+ whatIsTitle="What does a gun serial number check search?"
+ whatIsContent="A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, theft reports owners file on SafeOrStolen, and public web listings that mention the serial. It also flags serials that look altered or obliterated. It does not search NCIC or ATF eTrace, which are open only to law enforcement."
  howItWorksSteps={[
- "Find the serial number: Usually on the frame/receiver, often on the right side or under the barrel",
- "Enter the serial number into our free verification tool",
- "Our system searches available stolen firearm databases and ",
- "Get instant results - know if the firearm has been reported stolen"
+ "Find the serial number: usually stamped on the frame or receiver, often on the right side or under the barrel on pistols",
+ "Enter the serial number into SafeOrStolen, along with the make if you know it",
+ "SafeOrStolen searches police theft and loss reports, live Ohio records, its own theft reports and public web listings",
+ "Read the result: reported stolen, possible match, or no report found in the records searched, with every source listed"
  ]}
- whyVerifyTitle="Why Verify Firearms Before Buying?"
- whyVerifyContent="Over 380,000 firearms are stolen annually in the US. Possessing a stolen firearm is a federal crime, even if you didn't know it was stolen. The legal consequences are severe."
+ whyVerifyTitle="Why check a gun before buying?"
+ whyVerifyContent="Police can seize a stolen gun from whoever has it, and the buyer loses what they paid. Federal law makes it a crime to possess a gun you know or have reasonable cause to believe is stolen, so a deal that looks off is a reason to check and walk away."
  whyVerifyBenefits={[
- "Federal crime to possess a stolen firearm - up to 10 years in prison",
- "Recovered firearms are traced by serial number",
- "Stolen firearms are NEVER returned to buyers - confiscated permanently",
- "Criminal charges even if you didn't know it was stolen",
- "No legal recourse to recover your money",
- "Firearms used in crimes are traced back to current possessor",
-  "Private sales carry the highest risk of stolen firearms"
+ "Possessing a gun you know or have reason to believe is stolen is a federal crime under 18 U.S.C. § 922(j)",
+ "Possessing a gun with an obliterated serial number is a federal crime under 18 U.S.C. § 922(k)",
+ "Recovered guns are returned to their owners, not the buyer",
+ "Private sellers rarely give refunds",
+ "A dated record that you checked shows you did your homework before the sale"
  ]}
  faqs={[
  {
- question: "Where is the serial number on a firearm?",
- answer: "Serial numbers are typically on the frame/receiver. For pistols, check the frame near the trigger guard. For rifles/shotguns, check the receiver. Some have it on the barrel as well."
+ question: "Where is the serial number on a gun?",
+ answer: "On most guns it's stamped on the frame or receiver. On pistols look on the frame near the trigger guard or under the slide; on rifles and shotguns check the receiver. Some guns also have numbers on the barrel or slide, which may differ from the frame serial. Use the frame or receiver number."
  },
  {
  question: "Is it illegal to buy a stolen gun?",
- answer: "Yes! Under federal law (18 U.S.C. § 922(j)), possessing a stolen firearm is a crime punishable by up to 10 years in prison, even if you didn't know it was stolen."
+ answer: "Under federal law, 18 U.S.C. § 922(j), it's a crime to receive or possess a stolen firearm if you know or have reasonable cause to believe it was stolen. Even if you aren't charged, police can seize the gun and return it to the owner. Checking the serial at SafeOrStolen (safeorstolen.com/check-firearm-stolen) before you pay is a simple precaution."
  },
  {
- question: "What happens if I'm caught with a stolen gun?",
- answer: "The firearm will be confiscated. You may face federal charges. You'll lose your money with no legal recourse. It can affect your ability to legally own firearms."
+ question: "What happens if the gun I bought turns out to be stolen?",
+ answer: "Police can take the gun and return it to its owner, and you lose what you paid unless you can recover it from the seller. Don't try to resell it. Call your local police non-emergency line, explain how you bought it, and give them the seller's details and any messages."
  },
  {
- question: "Should I verify at gun shows?",
- answer: "Absolutely. Private sales at gun shows carry risk. Always verify the serial number before completing any firearm purchase outside a licensed dealer."
+ question: "Should I check a gun at a gun show?",
+ answer: "Yes, for private sales. A licensed dealer runs a background check on you, but that doesn't check whether the gun was stolen. At a private table, ask for the serial, check it on your phone before paying, and look closely for scratched, ground or re-stamped numbers."
  }
  ]}
- ctaTitle="Protect Yourself Legally - Verify Before Buying"
- ctaDescription="A free serial number check takes 3 seconds and could save you from federal charges."
+ ctaTitle="Check the Serial Before You Buy"
+ ctaDescription="A serial number check takes a few seconds, and your first 2 are free."
  relatedLinks={[
  { title: "Firearms Check Main", href: "/firearms-check" },
  { title: "Serial Number Checker", href: "/serial-number-checker" },

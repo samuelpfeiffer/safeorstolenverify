@@ -1,6 +1,6 @@
 /**
  * Firearm Serial Number Check Hub Page
- * SEO-optimized comprehensive landing page for firearm verification
+ * Landing page for firearm serial number checks
  * URL: /firearms-serial-number-check
  */
 
@@ -25,23 +25,23 @@ const FirearmsSerialNumberCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to check if a gun is stolen?",
- answer: "Yes, SafeOrStolen offers free firearm serial number checks. While We offer 2 free searches to get started."
+ answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 2 free checks with a free account and no credit card. A gun check searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. After the free checks it's $0.99 a check or $10 a month."
  },
  {
  question: "Can I check a gun serial number online from my phone?",
- answer: "Absolutely. SafeOrStolen works on any mobile device with a web browser. Simply visit safeorstolen.com/verify, enter the firearm's serial number, and get instant results. Our installable web app also offers barcode scanning for faster entry."
+ answer: "Yes. Open safeorstolen.com/verify in your phone's browser, type the serial exactly as it's stamped, and you'll have a result in a few seconds. You can also add the free SafeOrStolen web app to your home screen from safeorstolen.com/app. There's no App Store or Google Play app."
  },
  {
  question: "What if my gun's serial number was removed or altered?",
- answer: "A removed, obliterated, or altered serial number is a federal crime under 18 U.S.C. § 922(k). If you encounter a firearm with a defaced serial number, do not purchase it and contact community theft immediately. This is a major red flag indicating the weapon may be stolen."
+ answer: "A removed, obliterated, or altered serial number is a federal crime under 18 U.S.C. § 922(k). If you encounter a firearm with a defaced serial number, don't buy it and call your local police non-emergency line. SafeOrStolen also flags serials that look altered or obliterated, but a missing serial can't be checked at all."
  },
  {
  question: "Will this tell me the registered owner of a gun?",
- answer: "No. SafeOrStolen does not provide ownership information, registered owner names, or personal details. We only provide theft risk indicators based on available databases. For ownership verification, contact community theft or a licensed firearms dealer."
+ answer: "No. SafeOrStolen never shows owner names or personal details. It tells you whether the serial appears in the theft records it searches. There's no public gun registry to look up an owner; for a private sale, many buyers run the transfer through a licensed dealer (FFL), who does a background check on the buyer."
  },
  {
  question: "Do I still need to contact police if a gun comes back suspicious?",
- answer: "Yes. If our check returns any theft indicators or risk flags, you should not proceed with the purchase and should contact community theft. SafeOrStolen is a due diligence tool, not a replacement for proper legal verification through official channels."
+ answer: "Yes. If the result says reported stolen or possible match, don't buy the gun and call your local police non-emergency line with the serial and make. Police can check NCIC, which SafeOrStolen does not search. Your saved SafeOrStolen check shows what you looked up and when."
  }
  ];
 
@@ -57,7 +57,7 @@ const FirearmsSerialNumberCheckPage = () => {
  },
  "serviceType": "Stolen Firearm Verification",
  "areaServed": "US",
- "description": "Free firearm serial number verification service. Check if a gun is reported stolen before buying or selling."
+ "description": "Check a gun serial number for theft reports before buying or selling. Searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), and live Ohio law-enforcement records."
  },
  {
  "@context": "https://schema.org",
@@ -81,7 +81,7 @@ const FirearmsSerialNumberCheckPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Review risk signals before you buy or sell",
- "text": "Review the verification results for any theft indicators, reported theft history, or risk flags. If any concerns arise, do not proceed with the transaction."
+ "text": "The result says reported stolen, possible match, or no report found in the records searched, and lists every source. If it's anything but no report found, don't go ahead and call local police."
  }
  ]
  },
@@ -103,7 +103,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <>
  <SEOHead
  title="Free Stolen Gun Serial Number Check | SafeOrStolen"
- description="Enter a firearm serial number and instantly check if a gun is reported stolen. SafeOrStolen searches multiple theft signals so buyers and sellers avoid legal trouble before a transfer."
+ description="Check if a gun is stolen by serial number. SafeOrStolen searches police theft reports from 33 states and DC, live Ohio records and its own reports in seconds."
  canonical="/firearms-serial-number-check"
  keywords="stolen gun check, firearm serial number lookup, check if gun is stolen, gun serial number database, stolen firearm verification, stolen firearms databases gun check alternative"
  schemaJson={schema}
@@ -122,8 +122,9 @@ const FirearmsSerialNumberCheckPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify any firearm's theft status before buying or selling. Search available theft databases, 
- reported theft history, and public records in seconds. Protect yourself from legal trouble.
+ Enter a gun's serial number and see in a few seconds whether it appears in police theft and loss
+ reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft
+ reports or public web results.
  </p>
 
  {/* Search Input */}
@@ -147,7 +148,7 @@ const FirearmsSerialNumberCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free searches with a free account • Results in 3 seconds
+ 2 free checks with a free account • Results in a few seconds
  </p>
  </div>
 
@@ -155,15 +156,15 @@ const FirearmsSerialNumberCheckPage = () => {
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
  <div className="flex items-center gap-2">
  <CheckCircle className="h-5 w-5 text-primary" />
-  <span>HotGunz + Multi-Source Analysis</span>
+ <span>Police reports from 33 states + DC</span>
  </div>
  <div className="flex items-center gap-2">
  <Shield className="h-5 w-5 text-primary" />
- <span>Legal Protection</span>
+ <span>Flags altered serials</span>
  </div>
  <div className="flex items-center gap-2">
  <FileText className="h-5 w-5 text-primary" />
- <span>Verification Certificate</span>
+ <span>Optional $1.99 certificate</span>
  </div>
  </div>
  </div>
@@ -180,7 +181,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 1 – Find the serial number on the firearm</h3>
  <p className="text-muted-foreground">
- The serial number is typically engraved on the frame or receiver of the firearm. For handguns, check the frame near the trigger guard or on the slide. For rifles and shotguns, look on the receiver. The serial number usually contains 6-17 alphanumeric characters. If you're buying, ask the seller for clear photos of the serial number before meeting.
+ The serial number is typically engraved on the frame or receiver of the firearm. For handguns, check the frame near the trigger guard or on the slide. For rifles and shotguns, look on the receiver. Some guns repeat the serial on the barrel or slide. If you're buying, ask the seller for clear photos of the serial number before meeting.
  </p>
  </div>
  </div>
@@ -190,7 +191,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter the serial number into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Enter the complete serial number exactly as it appears on the firearm. Include all letters, numbers, and hyphens. Our system searches available databases including reported theft history, salvage records, and public theft reports. Results are returned within 3 seconds.
+ Enter the complete serial number exactly as it appears on the firearm. Include all letters, numbers, and hyphens. SafeOrStolen searches its own theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. Results take a few seconds.
  </p>
  </div>
  </div>
@@ -200,7 +201,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 3 – Review risk signals before you buy or sell</h3>
  <p className="text-muted-foreground">
- Review the verification results carefully. If any theft indicators, reported theft history, or risk flags appear, do not proceed with the transaction. You can download a verification certificate as proof of due diligence for your records. If the firearm shows as potentially stolen, contact community theft.
+ You'll see one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date, and you can add a $1.99 verification certificate with its own link. If the gun comes back reported stolen or a possible match, don't buy it and call your local police non-emergency line.
  </p>
  </div>
  </div>
@@ -217,20 +218,20 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
  <FileText className="h-5 w-5 text-primary" />
- Insurance theft claims and salvage records
+ SafeOrStolen theft reports and public web results
  </h3>
  <p className="text-muted-foreground">
- When a firearm is reported stolen, its serial number may appear in public reports or discussions. SafeOrStolen analyzes public web results and its own user reports to identify firearms that may have been reported as stolen.
+ Owners report stolen guns on SafeOrStolen, and some post serial numbers online after a theft. Every SafeOrStolen check searches both.
  </p>
  </div>
 
  <div>
  <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
  <Shield className="h-5 w-5 text-primary" />
- Law-enforcement and public theft reports where available
+ Police firearm theft and loss reports
  </h3>
  <p className="text-muted-foreground">
- Some jurisdictions make theft reports publicly accessible. We aggregate these public records to provide additional theft indicators.
+ Gun checks also search 242,839 police firearm theft and loss reports from 33 states and Washington, DC. These were filed through 2017, and the years covered vary by state. Ohio serials are also checked against live Ohio law-enforcement records.
  </p>
  </div>
 
@@ -240,27 +241,27 @@ const FirearmsSerialNumberCheckPage = () => {
  What a serial number check can and cannot show
  </h3>
  <p className="text-muted-foreground">
- Not all thefts are reported. Some agencies don't enter data promptly. International databases aren't connected. Private sales often aren't tracked. This is why SafeOrStolen provides "risk indicators" rather than absolute guarantees—we show you what's available in searchable databases, but a clean result doesn't guarantee a firearm was never stolen.
+ Not every theft is reported, and the multi-state police reports stop at 2017. A result of "no report found in the records searched" means exactly that: nothing matched in the sources listed. It doesn't prove the gun was never stolen. SafeOrStolen does not search NCIC or ATF eTrace.
  </p>
  </div>
  </div>
  </div>
  </section>
 
- {/* stolen firearms databases Explanation */}
+ {/* NCIC explanation */}
  <section className="py-16 px-4 bg-card/50">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-6">Can Civilians Use stolen firearms databases or "National Stolen Gun Databases"?</h2>
+ <h2 className="text-3xl font-bold mb-6">Can a Civilian Search the National Stolen Gun File?</h2>
  
  <p className="text-lg text-muted-foreground mb-6">
- The stolen-firearm registries is s nationwide database used by agencies to track stolen property, including firearms. <strong>Stolen firearm reports from all 50 states is not fully accessible to the general public.</strong> Only authorized parties can query certain stolen firearm registries.
+ The FBI's NCIC system holds the stolen-gun file that police use. <strong>It is not open to the public.</strong> Only law enforcement and other authorized agencies can search it.
  </p>
  
  <p className="text-lg text-muted-foreground mb-6">
- When you see websites claiming "Stolen firearm reports from all 50 states" or "national stolen gun database lookup," they're either:
+ When a website promises a "national stolen gun database lookup," it's usually doing one of these instead:
  </p>
  <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-  <li>Aggregating other available databases (like SafeOrStolen does honestly)</li>
+ <li>Searching records it can legally reach, such as owner theft reports and published police reports (this is what SafeOrStolen does, and it lists every source)</li>
  <li>Offering to connect you with an FFL dealer who can run the check</li>
  </ul>
  
@@ -268,10 +269,10 @@ const FirearmsSerialNumberCheckPage = () => {
  <CardContent className="p-6">
  <h3 className="font-semibold mb-2">What SafeOrStolen Can and Cannot Show</h3>
  <p className="text-muted-foreground">
- <strong>We can show:</strong> Publicly available theft reports, SafeOrStolen user reports, and risk indicators from our AI analysis.
+ <strong>It can show:</strong> matches in SafeOrStolen theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records, plus a flag if the serial looks altered or obliterated. <strong>It can't show:</strong> NCIC or ATF eTrace results, or who owns the gun.
  </p>
  <p className="text-muted-foreground mt-2">
-For official verification, visit your local police department or licensed firearms dealer.
+ For an NCIC check, ask your local police department.
  </p>
  </CardContent>
  </Card>
@@ -300,7 +301,7 @@ For official verification, visit your local police department or licensed firear
  <CardContent className="p-6">
  <h3 className="font-bold mb-3 text-destructive">Price far below market value</h3>
  <p className="text-sm text-muted-foreground">
- If a $600 pistol is being offered for $200, ask why. Thieves often sell stolen firearms quickly at steep discounts. Research market prices before meeting any seller.
+ If a pistol is priced far below what the same model sells for at local shops, ask why. Thieves often sell stolen firearms quickly at steep discounts. Research market prices before meeting any seller.
  </p>
  </CardContent>
  </Card>
@@ -326,7 +327,7 @@ For official verification, visit your local police department or licensed firear
  </h2>
  
  <p className="text-lg text-muted-foreground mb-8">
- If you're selling a firearm, running a verification check protects you legally. Here's why:
+ If you're selling a gun, a saved check and a bill of sale give you a record of what you sold and when:
  </p>
  
  <div className="space-y-6">
@@ -335,7 +336,7 @@ For official verification, visit your local police department or licensed firear
  <div>
  <h3 className="font-semibold mb-1">Run and save a pre-sale check</h3>
  <p className="text-muted-foreground">
- Before selling, verify your own firearm isn't falsely flagged in any database. Download the verification certificate as proof the firearm was verified clean at time of sale.
+ Before selling, run your own serial so you know what a buyer will see. The check is saved to your account with the date, and the optional $1.99 certificate gives you a dated record with its own link to share.
  </p>
  </div>
  </div>
@@ -345,7 +346,7 @@ For official verification, visit your local police department or licensed firear
  <div>
  <h3 className="font-semibold mb-1">Include serial, date, and buyer details in your records</h3>
  <p className="text-muted-foreground">
- Keep a bill of sale with the serial number, sale date, sale price, and buyer information. Many states recommend or require this documentation for private sales.
+ Keep a bill of sale with the serial number, sale date, price and buyer information. Private-sale rules differ by state, and some require the transfer to go through a licensed dealer.
  </p>
  </div>
  </div>
@@ -355,7 +356,7 @@ For official verification, visit your local police department or licensed firear
  <div>
  <h3 className="font-semibold mb-1">Why this helps if a gun is later traced</h3>
  <p className="text-muted-foreground">
- If a firearm you sold is ever used in a crime, your documentation proves you conducted due diligence, sold it legally, and transferred it to a specific person on a specific date. This paper trail can protect you from legal liability.
+ If police ever trace a gun you sold, your bill of sale and dated check show who you transferred it to and when. That record is far better than trying to remember a parking-lot sale years later.
  </p>
  </div>
  </div>
@@ -390,7 +391,7 @@ For official verification, visit your local police department or licensed firear
  <div className="grid md:grid-cols-3 gap-4">
  <Link to="/gun-serial-number-lookup" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
  <h3 className="font-semibold mb-2">Gun Serial Number Lookup</h3>
- <p className="text-sm text-muted-foreground">Detailed gun verification with manufacturer info</p>
+ <p className="text-sm text-muted-foreground">Where to find the serial and how to check it</p>
  </Link>
  <Link to="/stolen-gun-database" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
  <h3 className="font-semibold mb-2">Stolen Gun Database</h3>
@@ -409,7 +410,7 @@ For official verification, visit your local police department or licensed firear
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any Firearm Serial Number Free</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Don't risk legal trouble. Verify before you buy or sell. 2 free searches, instant results.
+ Check before you buy or sell. 2 free checks, results in a few seconds.
  </p>
  <Link to="/verify">
  <Button size="lg" className="gap-2">

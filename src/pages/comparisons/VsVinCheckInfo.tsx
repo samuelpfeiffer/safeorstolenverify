@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Check, X, Shield, Smartphone, Car, ArrowRight, Zap, Globe, Download, Star, Bike } from 'lucide-react';
+import { Check, X, Shield, Smartphone, ArrowRight, Zap, Globe, Download, Star, Bike } from 'lucide-react';
 
 const VsVinCheckInfo = () => {
   const faqSchema = {
@@ -15,7 +15,7 @@ const VsVinCheckInfo = () => {
         "name": "What is VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VinCheck.info is a free VIN lookup service that provides vehicle history reports including stolen vehicle checks, title information, and specifications. It's known for offering free basic VIN decoding and NICB theft checks."
+          "text": "VinCheck.info is a free VIN lookup website. You enter a 17-character VIN and it decodes the vehicle's specifications and shows the history information it has, with more detailed reports available for a fee. It only looks up vehicles."
         }
       },
       {
@@ -23,7 +23,7 @@ const VsVinCheckInfo = () => {
         "name": "How does SafeOrStolen compare with VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen checks vehicles AND phones, bikes, laptops, electronics, and firearms. VinCheck.info only checks vehicles. SafeOrStolen also has a mobile app for marketplace meetups."
+          "text": "VinCheck.info focuses on vehicle history. SafeOrStolen (safeorstolen.com) checks VINs and also phones, plates, bikes, laptops, tools and firearms. For a VIN it decodes the year, make and model, lists open safety recalls, and searches its theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs."
         }
       },
       {
@@ -31,33 +31,30 @@ const VsVinCheckInfo = () => {
         "name": "Can I check phone IMEI on VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, VinCheck.info only checks vehicle VINs. For phone IMEI checks, you need SafeOrStolen which verifies both phones and vehicles in one platform."
+          "text": "No, VinCheck.info only looks up vehicle VINs. SafeOrStolen checks phone IMEIs: it shows the make and model, searches its theft reports and public web results, and offers a paid lost and stolen blacklist check."
         }
       }
     ]
   };
 
   const comparisonData = [
-    { feature: 'Vehicle VIN Check', safeorstolen: true, competitor: true },
-    { feature: 'Stolen Vehicle Lookup', safeorstolen: true, competitor: true },
-    { feature: 'Phone IMEI Check', safeorstolen: true, competitor: false },
-    { feature: 'Bicycle Serial Check', safeorstolen: true, competitor: false },
-    { feature: 'Laptop/Electronics', safeorstolen: true, competitor: false },
-    { feature: 'Firearm Verification', safeorstolen: true, competitor: false },
-    { feature: 'Mobile App', safeorstolen: true, competitor: false },
-    { feature: 'Barcode Scanner', safeorstolen: true, competitor: false },
-    { feature: 'License Plate Lookup', safeorstolen: true, competitor: true },
-    { feature: 'Free Searches', safeorstolen: true, competitor: true },
-    { feature: 'Marketplace URL Check', safeorstolen: true, competitor: false },
-    { feature: 'Report Stolen Items', safeorstolen: true, competitor: false },
+    { feature: 'Vehicle VIN lookup', safeorstolen: true, competitor: true },
+    { feature: 'Open safety recalls for a VIN', safeorstolen: true, competitor: false },
+    { feature: 'Phone IMEI check', safeorstolen: true, competitor: false },
+    { feature: 'Bicycle serial check', safeorstolen: true, competitor: false },
+    { feature: 'Laptop and electronics serials', safeorstolen: true, competitor: false },
+    { feature: 'Firearm serial check', safeorstolen: true, competitor: false },
+    { feature: 'Installable web app with camera scanner', safeorstolen: true, competitor: false },
+    { feature: 'Marketplace listing URL check', safeorstolen: true, competitor: false },
+    { feature: 'Report your own stolen item', safeorstolen: true, competitor: false },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Best VinCheck.info Alternative 2026 | SafeOrStolen"
-        description="Compare SafeOrStolen and VinCheck.info. Multi-category verification for cars, phones, bikes, and more. Free mobile app included."
-        keywords="VinCheck.info alternative, free VIN check, stolen vehicle lookup, best VinCheck alternative, VIN checker comparison 2026"
+        title="VinCheck.info Alternative: SafeOrStolen Compared | SafeOrStolen"
+        description="VinCheck.info vs SafeOrStolen: what each VIN check covers, what's free, and how to check a car, phone, bike or laptop from a marketplace listing before you buy."
+        keywords="VinCheck.info alternative, free VIN check, stolen vehicle lookup, VinCheck alternative, VIN checker comparison"
         canonical="/vs-vincheck-info"
         structuredData={faqSchema}
       />
@@ -66,26 +63,26 @@ const VsVinCheckInfo = () => {
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Star className="h-4 w-4" />
-            Universal Platform & VIN Verification
+            VIN Checks Compared
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Best VinCheck.info Alternative: SafeOrStolen
+            VinCheck.info Alternative: SafeOrStolen
           </h1>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- VinCheck.info only checks vehicles. SafeOrStolen verifies cars, phones, bikes, laptops, and firearms — with a mobile app for marketplace verification.
+            VinCheck.info looks up vehicles. SafeOrStolen checks cars, plates, phones, bikes, laptops and firearms from one account, in a free web app you can use at the meetup.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg">
               <Link to="/verify">
-                Try Free Verification
+                Try a Free Check
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/vin-checker">Check VIN</Link>
+              <Link to="/vin-checker">Check a VIN</Link>
             </Button>
           </div>
         </section>
@@ -96,10 +93,10 @@ const VsVinCheckInfo = () => {
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">What is VinCheck.info?</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                VinCheck.info is a popular free VIN lookup service that provides vehicle history reports. It includes NICB stolen vehicle checks, title information, specifications, and market value estimates.
+                VinCheck.info is a free VIN lookup website. It decodes a VIN into the vehicle's specifications and shows the history information it has, with more detailed reports for a fee.
               </p>
               <p className="text-lg text-muted-foreground">
-                <strong>Key Limitation:</strong> VinCheck.info only checks vehicles. If you're buying a phone, laptop, bike, or any other item on Facebook Marketplace, you need a different tool — or you could use SafeOrStolen for everything.
+                <strong>Limitation:</strong> it only looks up vehicles. If you're also buying a phone, laptop or bike on Facebook Marketplace, you need another tool.
               </p>
             </CardContent>
           </Card>
@@ -107,8 +104,8 @@ const VsVinCheckInfo = () => {
 
         {/* Comparison Table */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Side-by-Side Comparison</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-8">Side-by-side comparison</h2>
+
           <Card className="overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -147,17 +144,17 @@ const VsVinCheckInfo = () => {
 
         {/* Advantages */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Why SafeOrStolen Wins</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-8">Where SafeOrStolen helps</h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="border-primary/20">
               <CardHeader>
                 <Globe className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>All Item Types</CardTitle>
+                <CardTitle>More than cars</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  One platform for everything. Check vehicles, phones, bikes, laptops, gaming consoles, cameras, and firearms.
+                  One account checks vehicles, plates, phones, bikes, laptops, game consoles, tools and firearms.
                 </p>
               </CardContent>
             </Card>
@@ -165,11 +162,11 @@ const VsVinCheckInfo = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Download className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Mobile App</CardTitle>
+                <CardTitle>Web app for meetups</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Scan VINs and serial numbers at meetups with our free app. VinCheck.info is web-only.
+                  Install it free from safeorstolen.com/app (no app store needed) and scan a VIN or serial label with your camera.
                 </p>
               </CardContent>
             </Card>
@@ -177,11 +174,11 @@ const VsVinCheckInfo = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Zap className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Marketplace URL Check</CardTitle>
+                <CardTitle>Marketplace listing check</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Paste any Facebook Marketplace or Craigslist listing URL and we'll extract and verify the VIN automatically.
+                  Paste a Facebook Marketplace or Craigslist listing link. SafeOrStolen pulls out a VIN if the listing shows one and checks it.
                 </p>
               </CardContent>
             </Card>
@@ -189,11 +186,11 @@ const VsVinCheckInfo = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Smartphone className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Phone Verification</CardTitle>
+                <CardTitle>Phone checks</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Check IMEI numbers for stolen phones — essential for marketplace purchases. VinCheck.info can't do this.
+                  Check a phone's IMEI for the model, theft reports and public web results, with a paid blacklist check if you want the carrier status.
                 </p>
               </CardContent>
             </Card>
@@ -201,11 +198,11 @@ const VsVinCheckInfo = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Bike className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Bicycle Check</CardTitle>
+                <CardTitle>Bike checks</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Verify bike serial numbers against stolen databases. Bikes are a top stolen item on marketplaces.
+                  Bike serials are searched against a national stolen-bicycle registry as well as SafeOrStolen theft reports.
                 </p>
               </CardContent>
             </Card>
@@ -213,11 +210,11 @@ const VsVinCheckInfo = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Shield className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Report Stolen</CardTitle>
+                <CardTitle>Report a theft</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Report your stolen items to our database. Help warn future buyers and increase recovery chances.
+                  Report your own stolen item so anyone who checks that number on SafeOrStolen sees it.
                 </p>
               </CardContent>
             </Card>
@@ -228,17 +225,17 @@ const VsVinCheckInfo = () => {
         <section className="mb-16">
           <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4 text-center">Real-World Example</h2>
+              <h2 className="text-2xl font-bold mb-4 text-center">Example</h2>
               <div className="max-w-3xl mx-auto">
                 <p className="text-lg text-muted-foreground mb-4">
-                  <strong>Scenario:</strong> You're browsing Facebook Marketplace and find a great deal on a used car AND an iPhone. With VinCheck.info, you can only verify the car. The phone? You're on your own.
+                  <strong>Scenario:</strong> you find a used car and an iPhone on Facebook Marketplace. A VIN-only site covers the car but not the phone.
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">
-                  <strong>With SafeOrStolen:</strong> Open our mobile app, scan the car's VIN barcode, then check the iPhone's IMEI — all in one place, in under 10 seconds each.
+                  <strong>With SafeOrStolen:</strong> open the web app, scan the VIN from the windshield or door sticker, then type in the iPhone's IMEI from *#06#. Each result comes back in a few seconds and is saved to your account.
                 </p>
                 <div className="text-center mt-6">
                   <Button asChild size="lg">
-                    <Link to="/verify">Try It Now — Free</Link>
+                    <Link to="/verify">Try a Free Check</Link>
                   </Button>
                 </div>
               </div>
@@ -249,7 +246,7 @@ const VsVinCheckInfo = () => {
         {/* FAQ */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6 max-w-3xl mx-auto">
             <Card>
               <CardHeader>
@@ -257,7 +254,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  VinCheck.info offers free basic VIN decoding and NICB theft checks. Detailed reports may require payment. SafeOrStolen also offers free verification searches.
+                  Its basic VIN lookup is free; fuller reports cost extra. SafeOrStolen gives you 2 free checks with a free account, then $0.99 a check or $10 a month for unlimited checks.
                 </p>
               </CardContent>
             </Card>
@@ -268,7 +265,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  SafeOrStolen is better for marketplace purchases because people sell all types of items — not just cars. You can verify phones, bikes, laptops, and vehicles all in one app.
+                  If you only buy cars, a VIN site may be all you need. If you also buy phones, bikes or laptops, SafeOrStolen checks all of them from one account and keeps a dated record of each check.
                 </p>
               </CardContent>
             </Card>
@@ -279,7 +276,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks SafeOrStolen's own stolen-item reports, public web results and AI analysis. It does not search NICB; use NICB VINCheck separately.
+                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs. NICB's free VINCheck is a separate tool you can also run.
                 </p>
               </CardContent>
             </Card>
@@ -288,16 +285,16 @@ const VsVinCheckInfo = () => {
 
         {/* CTA */}
         <section className="text-center bg-primary/5 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold mb-4">The Universal Verification Platform</h2>
+          <h2 className="text-3xl font-bold mb-4">Check cars and everything else</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Cars, phones, bikes, laptops — verify everything in one place with SafeOrStolen.
+            Cars, phones, bikes, laptops: check them all from one SafeOrStolen account.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <Link to="/verify">Start Free Verification</Link>
+              <Link to="/verify">Start a Free Check</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/app">Get the App</Link>
+              <Link to="/app">Get the Web App</Link>
             </Button>
           </div>
         </section>

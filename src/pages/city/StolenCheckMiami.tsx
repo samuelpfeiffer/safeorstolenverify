@@ -1,44 +1,37 @@
+/**
+ * Oct 8 2026: rewritten by hand for "miami stolen item check". Removed invented theft counts,
+ * city rankings, unverified scam claims, named police safe-exchange locations, app-store and
+ * offline claims, and "3 seconds".
+ */
 import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, MapPin, AlertTriangle, Phone, Car, Download } from 'lucide-react';
+import { Shield, MapPin, Phone, Car, Download, Bike } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-const StolenCheckMiami = () => {
-  const cityStats = {
-    name: "Miami",
-    state: "Florida",
-    population: "6.1 million (metro)",
-    vehicleThefts: "32,000+ annually in Miami-Dade",
-    phoneThefts: "Very High - tourist areas especially targeted",
-    hotspots: ["South Beach", "Downtown Miami", "Wynwood", "Brickell", "Miami Airport area"]
-  };
 
+const StolenCheckMiami = () => {
   const faqs = [
     {
       question: "How do I check if a used car in Miami is stolen?",
-      answer: "Use SafeOrStolen's free VIN checker. Enter the 17-digit VIN to verify it through our stolen-item reports and public web results. This can help you identify if a vehicle has been reported stolen."
+      answer: "Get the 17-character VIN from the dashboard and the driver's door sticker and make sure they match. Enter it at SafeOrStolen (safeorstolen.com/stolen-check-miami) to decode the year, make and model, see open recalls, and search SafeOrStolen theft reports and public web listings. Then compare the Florida title with the seller's ID before you pay."
     },
     {
-      question: "Where should I meet sellers in Miami to buy used items?",
-      answer: "Miami-Dade Police offers Safe Exchange Zones at police stations. Popular locations include Miami Beach Police Station, Coral Gables Police, and Doral Station. Always verify items with SafeOrStolen before meeting."
+      question: "Where should I meet a seller in Miami?",
+      answer: "Many South Florida police departments set aside parking spaces or lobbies as safe exchange spots. Call your local department's non-emergency line to ask where theirs is. Meet in daylight, bring someone with you, and check the item's number before any money changes hands."
     },
     {
-      question: "Is phone theft common in Miami?",
-      answer: "Yes. Miami ranks among the top US cities for smartphone theft, especially in tourist areas like South Beach, Wynwood, and Brickell. Always check IMEI before buying a used phone."
-    },
-    {
-      question: "What vehicles are most stolen in Miami?",
-      answer: "Honda Accord, Toyota Camry, Ford pickups, and Kia/Hyundai vehicles are top targets. Luxury vehicles like BMWs and Mercedes are also frequently stolen for parts export to Latin America."
+      question: "How do I check a used phone before buying it in Miami?",
+      answer: "Ask the seller to dial *#06# and send you the IMEI. Check it on SafeOrStolen to see the make and model and any theft reports or web listings. At the meetup, make sure the IMEI on the phone matches, and watch the seller sign out of their Apple ID or Google account and reset the phone."
     },
     {
       question: "Can I use SafeOrStolen at Miami flea markets?",
-      answer: "Yes! Download the SafeOrStolen app to verify items at Opa-Locka Hialeah Flea Market, The Flea Market, or any Miami-area market. The app works offline with barcode scanning."
+      answer: "Yes. Install the free SafeOrStolen web app from your phone's browser at safeorstolen.com/app. At the stall, scan the barcode on the box or type the serial number. Checks need a data connection, and your first 2 checks are free."
     },
     {
-      question: "Why is vehicle theft high in Miami?",
-      answer: "Miami's port proximity makes it a hub for stolen vehicle export to Caribbean and Latin American countries. Vehicles can be on a ship within hours of theft. Always VIN check before buying."
-    }
+      question: "Does SafeOrStolen search Florida police records?",
+      answer: "No. SafeOrStolen searches its own theft reports, filed by owners on the site, and public web listings on every check, plus a national stolen-bicycle registry for bikes and police firearm theft and loss reports from 33 states and DC for guns. It does not search FDLE, FCIC or Florida DMV records."
+    },
   ];
 
   const faqSchema = {
@@ -54,8 +47,8 @@ const StolenCheckMiami = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "SafeOrStolen Miami Stolen Item Verification",
-    "description": "Free stolen item verification service for Miami buyers and sellers",
+    "name": "SafeOrStolen Miami Stolen Item Check",
+    "description": "Stolen item checks by IMEI, VIN, plate or serial number for buyers in Miami",
     "areaServed": {
       "@type": "City",
       "name": "Miami",
@@ -67,82 +60,86 @@ const StolenCheckMiami = () => {
   return (
     <>
       <PageSEO
-        title="Miami Stolen Item Check - Verify Before Buying in Miami FL | SafeOrStolen"
-        description="Check if items are stolen in Miami, Florida. Free IMEI, VIN, and serial number verification for Miami buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist."
+        title="Miami Stolen Item Check - Check Before You Buy | SafeOrStolen"
+        description="Buying used in Miami? Check a phone's IMEI, a car's VIN or a serial number for theft reports and web listings before you meet the seller. 2 free checks."
         keywords="miami stolen item check, miami stolen car check, verify stolen miami, check IMEI miami, VIN check miami fl, stolen phone miami florida"
         canonical="/stolen-check-miami"
         structuredData={[faqSchema, localBusinessSchema]}
       />
 
       <div className="min-h-screen bg-background">
-        {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
           <div className="max-w-6xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full mb-6">
               <MapPin className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium">Miami, Florida</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Miami Stolen Item Check
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Miami-Dade County has over {cityStats.vehicleThefts} vehicle thefts annually. 
-              Verify any used item before buying on Facebook Marketplace, OfferUp, Craigslist, or at local flea markets.
+              Buying a phone, car, bike or tools from Facebook Marketplace, OfferUp, Craigslist or a flea market in
+              Miami? Get the IMEI, VIN or serial number from the seller and check it before you meet.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">
                 <Link to="/verify">
                   <Shield className="w-5 h-5" />
-                  Verify Item in Miami - Free
+                  Check an item (2 free checks)
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link to="/app">
                   <Download className="w-5 h-5" />
-                  Get Mobile App
+                  Install the free web app
                 </Link>
               </Button>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
         <section className="py-12 px-4">
           <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">What to check for each item</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card>
                 <CardHeader>
-                  <Car className="w-10 h-10 text-destructive mb-2" />
-                  <CardTitle className="text-lg">Vehicle Theft</CardTitle>
+                  <Car className="w-10 h-10 text-primary mb-2" />
+                  <CardTitle className="text-lg">Cars and trucks</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-2xl font-bold text-destructive">{cityStats.vehicleThefts}</p>
-                  <p className="text-muted-foreground">in Miami-Dade County yearly. Port proximity enables rapid export.</p>
+                  <p className="text-muted-foreground">
+                    Match the VIN on the dash, the door sticker and the Florida title. A VIN check decodes the model and
+                    lists open recalls. After a hurricane, look for silt under the carpet and rust on seat bolts too.
+                  </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <Phone className="w-10 h-10 text-destructive mb-2" />
-                  <CardTitle className="text-lg">Phone Theft</CardTitle>
+                  <Phone className="w-10 h-10 text-primary mb-2" />
+                  <CardTitle className="text-lg">Phones</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-2xl font-bold text-destructive">{cityStats.phoneThefts}</p>
-                  <p className="text-muted-foreground">South Beach, Wynwood, and Brickell are hotspots.</p>
+                  <p className="text-muted-foreground">
+                    Check the IMEI from *#06#. Watch the seller remove their Apple ID or Google account and reset the
+                    phone in front of you. A carrier blacklist check is available as a paid add-on.
+                  </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <AlertTriangle className="w-10 h-10 text-warning mb-2" />
-                  <CardTitle className="text-lg">Theft Hotspots</CardTitle>
+                  <Bike className="w-10 h-10 text-primary mb-2" />
+                  <CardTitle className="text-lg">Bikes and tools</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {cityStats.hotspots.join(", ")}
+                  <p className="text-muted-foreground">
+                    Bike serials are usually under the bottom bracket and are also checked against a national
+                    stolen-bicycle registry. On tools, look for a serial plate and for engraved names that were ground off.
                   </p>
                 </CardContent>
               </Card>
@@ -150,42 +147,23 @@ const StolenCheckMiami = () => {
           </div>
         </section>
 
-        {/* Why Verify in Miami */}
         <section className="py-12 px-4 bg-muted/30">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Why Verify Items in Miami?</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Miami's Unique Theft Risks</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>• <strong>Port of Miami:</strong> Stolen vehicles shipped to Caribbean/Latin America within hours</li>
-                  <li>• <strong>International Tourists:</strong> High-value targets for phone and electronics theft</li>
-                  <li>• <strong>Luxury Market:</strong> High-end vehicles targeted for parts or export</li>
-                  <li>• <strong>Year-Round Tourism:</strong> Constant influx of sellers with potentially stolen goods</li>
-                  <li>• <strong>Flea Market Culture:</strong> Large secondhand market attracts stolen merchandise</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Most Common Scams in Miami</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>• Stolen rental cars sold with fake paperwork</li>
-                  <li>• Phones stolen from tourists sold same-day on marketplace</li>
-                  <li>• VIN-swapped vehicles with tampered odometers</li>
-                  <li>• Electronics stolen from port shipments</li>
-                  <li>• Boat and jet ski theft (Miami has very high rates)</li>
-                </ul>
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold text-center mb-8">Warning signs at a Miami meetup</h2>
+            <ul className="space-y-3 text-muted-foreground max-w-3xl mx-auto">
+              <li>• The price is far below what the same item usually sells for</li>
+              <li>• The seller won't share the serial number, IMEI or VIN before meeting</li>
+              <li>• A car's title is in someone else's name, or the seller only has a registration</li>
+              <li>• The phone is still signed in to someone else's account, or the seller says it "just needs a reset"</li>
+              <li>• The seller wants to meet somewhere other than their home or a police safe exchange spot</li>
+              <li>• Several of the same item are listed at once by one profile</li>
+            </ul>
           </div>
         </section>
 
-        {/* FAQs */}
         <section className="py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Miami Stolen Item FAQs</h2>
-            
+            <h2 className="text-3xl font-bold text-center mb-8">Miami stolen item FAQs</h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <Card key={index}>
@@ -201,18 +179,16 @@ const StolenCheckMiami = () => {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-16 px-4 bg-primary/5">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Buying in Miami? Verify First</h2>
+            <h2 className="text-3xl font-bold mb-4">Buying in Miami? Check first</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Don't become another victim of Miami's stolen goods market. 
-              Check any item's status in 3 seconds before meeting any seller.
+              Check the number before you meet the seller. It takes a few seconds, and your first 2 checks are free.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/verify">
                 <Shield className="w-5 h-5" />
-                Verify Now - Free
+                Check an item
               </Link>
             </Button>
           </div>

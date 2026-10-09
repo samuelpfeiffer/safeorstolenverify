@@ -12,16 +12,16 @@ type Msg = { role: 'user' | 'assistant'; content: string };
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat-stream`;
 
 const SUGGESTIONS = [
- { label: '📱 Check an IMEI', query: 'How do I check if a phone is stolen by its IMEI?' },
- { label: '🚗 Check a VIN', query: 'How do I check if a car is stolen with the VIN?' },
- { label: '🔗 Analyze a Facebook listing', query: 'Can you analyze a Facebook Marketplace listing for scam risk?' },
- { label: '⚠️ Is this deal a scam?', query: 'How do I tell if a secondhand deal is a scam?' },
+ { label: 'Check an IMEI', query: 'How do I check if a phone is stolen by its IMEI?' },
+ { label: 'Check a VIN', query: 'How do I check if a car is stolen with the VIN?' },
+ { label: 'Ask about a Facebook listing', query: 'Can you analyze a Facebook Marketplace listing for scam risk?' },
+ { label: 'Is this deal a scam?', query: 'How do I tell if a secondhand deal is a scam?' },
 ];
 
 const WELCOME: Msg = {
  role: 'assistant',
  content:
- "👋 Hi, I'm the SafeOrStolen AI. Paste an IMEI, VIN, serial number, license plate, or marketplace URL — or just ask me anything about buying safely.",
+ "Hi, I'm the SafeOrStolen AI assistant. Paste an IMEI, VIN, serial number, license plate, or marketplace URL, or ask me anything about buying used items safely.",
 };
 
 export const HomeAIHero: React.FC = () => {
@@ -114,7 +114,7 @@ export const HomeAIHero: React.FC = () => {
  }, []);
 
  const runVerification = useCallback(async (identifier: string) => {
- setMessages((p) => [...p, { role: 'assistant', content: '🔎 Detecting identifier and verifying across multiple sources…' }]);
+ setMessages((p) => [...p, { role: 'assistant', content: 'Recognizing the number and running the check…' }]);
  try {
  const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
  const itemType = detect?.type || 'serial';
@@ -127,25 +127,25 @@ export const HomeAIHero: React.FC = () => {
  const status = verify?.finalStatus || 'unknown';
  const conf = verify?.confidence ? ` (${verify.confidence}% confidence)` : '';
  let result = '';
- if (status === 'stolen') result = `⚠️ MATCH FOUND — this ${itemType.toUpperCase()} appears in stolen-item databases${conf}. Do not purchase.`;
- else if (status === 'safe') result = `✅ No theft reports found for this ${itemType.toUpperCase()}${conf}.`;
- else if (status === 'lost') result = `⚠️ This ${itemType.toUpperCase()} was reported lost${conf}.`;
- else if (verify?.riskLevel === 'high' || verify?.riskLevel === 'critical') result = `⚠️ Warning. ${verify?.message || ''}`;
- else result = `ℹ️ No theft report found. ${verify?.message || ''}`;
- replaceLastAssistant(result + '\n\nOpen the full Verify workspace for sources → /verify');
+ if (status === 'stolen') result = `Reported stolen: this ${itemType.toUpperCase()} matches a theft report${conf}. Don't buy it.`;
+ else if (status === 'safe') result = `No report found in the records searched for this ${itemType.toUpperCase()}${conf}.`;
+ else if (status === 'lost') result = `This ${itemType.toUpperCase()} was reported lost${conf}.`;
+ else if (verify?.riskLevel === 'high' || verify?.riskLevel === 'critical') result = `Possible match. ${verify?.message || ''}`;
+ else result = `No report found in the records searched. ${verify?.message || ''}`;
+ replaceLastAssistant(result + '\n\nOpen the full check to see every source searched: /verify');
  } catch (err: any) {
  replaceLastAssistant(`Couldn't verify that: ${err?.message || 'unknown error'}.`);
  }
  }, [user?.id]);
 
  const runUrlAnalysis = useCallback(async (url: string) => {
- setMessages((p) => [...p, { role: 'assistant', content: '🔗 Analyzing that marketplace listing for fraud signals…' }]);
+ setMessages((p) => [...p, { role: 'assistant', content: 'Reading that listing for warning signs…' }]);
  try {
  const { data, error } = await supabase.functions.invoke('marketplace-url-analyzer', { body: { url } });
  if (error) throw error;
  const summary = data?.summary || data?.analysis || data?.message || 'Analysis complete.';
  const risk = data?.riskLevel || data?.scamRisk;
- replaceLastAssistant(`🔗 Listing analyzed. ${risk ? `Risk: ${risk}\n\n` : ''}${summary}`);
+ replaceLastAssistant(`Listing reviewed. ${risk ? `Risk: ${risk}\n\n` : ''}${summary}`);
  } catch (err: any) {
  replaceLastAssistant(`Couldn't analyze that URL: ${err?.message || 'unknown error'}.`);
  }

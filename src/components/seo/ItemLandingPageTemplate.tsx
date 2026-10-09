@@ -141,7 +141,7 @@ export const ItemLandingPageTemplate = ({
  structuredData={structuredData}
  />
 
- {/* Comprehensive noscript for crawlers */}
+ {/* noscript fallback for crawlers */}
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
  <header>
@@ -183,7 +183,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>What a check searches</h2>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry, and vehicles against Arizona law-enforcement records and federal VIN data. A lost-and-stolen phone blacklist check is available as a paid add-on. AI notes are advisory and never decide the result.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry. VIN checks decode the year, make and model and list open safety recalls, and Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records. A lost-and-stolen phone blacklist check is available as a paid add-on.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -392,8 +392,8 @@ export const ItemLandingPageTemplate = ({
  <p className="text-sm text-muted-foreground">What you can legally find from a plate</p>
  </Link>
  <Link to="/app" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">Mobile App</h3>
- <p className="text-sm text-muted-foreground">Scan barcodes on the go</p>
+ <h3 className="font-bold mb-2">Free Web App</h3>
+ <p className="text-sm text-muted-foreground">Install from your browser and scan barcodes</p>
  </Link>
  </div>
  </div>
@@ -406,7 +406,7 @@ export const ItemLandingPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Ready to Verify Your {itemType}?</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Get instant verification results in 3 seconds. Protect yourself from stolen goods.
+ Results in a few seconds, with every source listed. 2 free checks, no credit card.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

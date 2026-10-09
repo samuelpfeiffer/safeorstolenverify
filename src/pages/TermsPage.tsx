@@ -90,8 +90,8 @@ const TermsPage: React.FC = () => {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">5. Verification Accuracy</h2>
               <p className="text-gray-300 leading-relaxed">
-                While we strive to provide accurate verification results, we cannot guarantee 100% accuracy. 
-                Verification results should be used as guidance only and not as the sole basis for purchasing decisions. 
+                Results reflect only the records searched at the time of the check, and not every theft is reported, so we cannot
+                guarantee that a result is complete or correct. Use results as guidance, not as the sole basis for a purchase decision. 
                 Users should exercise their own judgment and conduct additional verification if necessary.
               </p>
             </section>
@@ -122,7 +122,7 @@ const TermsPage: React.FC = () => {
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
                 <li>Subscriptions automatically renew unless cancelled</li>
-                <li>Refunds are subject to our refund policy</li>
+                <li>The $10 monthly plan can be refunded within 30 days; other refunds are subject to our refund policy</li>
                 <li>Pricing may change with 30 days notice</li>
                 <li>You may cancel your subscription at any time</li>
               </ul>
@@ -151,7 +151,9 @@ const TermsPage: React.FC = () => {
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about these Terms of Service, please contact us at:
                 <br />
-                Email: <a href="mailto:support@safeorstolen.com" className="text-sos-orange hover:underline">support@safeorstolen.com</a>
+                Email: <a href="mailto:safeorstolenmail@gmail.com" className="text-sos-orange hover:underline">safeorstolenmail@gmail.com</a>
+                <br />
+                SafeOrStolen, Peoria, Arizona
               </p>
             </section>
           </CardContent>

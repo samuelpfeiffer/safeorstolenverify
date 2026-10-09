@@ -14,6 +14,7 @@ interface StolenCheckLandingProps {
   faqs: { q: string; a: string }[];
 }
 
+/** Oct 8 2026: audited by hand. Removed mobile-app, "3 seconds", "legal protection" and "peace of mind" wording. */
 export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
   itemType,
   title,
@@ -69,13 +70,13 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                 <Button asChild size="lg" className="text-lg h-14 px-8">
                   <Link to="/verify">
                     <Search className="mr-2 h-5 w-5" />
-                    Check {itemType} Now - FREE
+                    Check a {itemType} (2 free checks)
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-lg h-14 px-8">
                   <Link to="/app">
                     <Smartphone className="mr-2 h-5 w-5" />
-                    Get Mobile App
+                    Install the free web app
                   </Link>
                 </Button>
               </div>
@@ -88,11 +89,11 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="h-5 w-5 text-yellow-500" />
-                  <span>Results in 3 Seconds</span>
+                  <span>Results in a few seconds</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
-                  <span>100% Free Trial</span>
+                  <span>Every source listed</span>
                 </div>
               </div>
             </div>
@@ -111,9 +112,9 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                 <Card className="border-red-200 bg-red-50 dark:bg-red-950/20">
                   <CardContent className="p-6 text-center">
                     <AlertTriangle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-                    <h3 className="font-bold mb-2">Legal Protection</h3>
+                    <h3 className="font-bold mb-2">Avoid Legal Trouble</h3>
                     <p className="text-sm text-muted-foreground">
-                      Buying stolen goods is illegal. You could face criminal charges and lose your money.
+                      Knowingly buying stolen goods is a crime, and a price far below value can be used as evidence you should have known.
                     </p>
                   </CardContent>
                 </Card>
@@ -121,9 +122,9 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                 <Card className="border-yellow-200 bg-yellow-50 dark:bg-yellow-950/20">
                   <CardContent className="p-6 text-center">
                     <Shield className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                    <h3 className="font-bold mb-2">Financial Safety</h3>
+                    <h3 className="font-bold mb-2">Keep Your Money</h3>
                     <p className="text-sm text-muted-foreground">
-                      Stolen items can be seized by police. Protect your investment with a quick check.
+                      Police can take a stolen item back and return it to the owner, and you lose what you paid.
                     </p>
                   </CardContent>
                 </Card>
@@ -131,9 +132,9 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                 <Card className="border-green-200 bg-green-50 dark:bg-green-950/20">
                   <CardContent className="p-6 text-center">
                     <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
-                    <h3 className="font-bold mb-2">Peace of Mind</h3>
+                    <h3 className="font-bold mb-2">A Dated Record</h3>
                     <p className="text-sm text-muted-foreground">
-                      Know your purchase is legitimate. Get a verification badge to prove it.
+                      Each check is saved to your account with the date. A $1.99 verification certificate gives you a link showing you checked before the sale.
                     </p>
                   </CardContent>
                 </Card>
@@ -180,11 +181,11 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
               Don't Risk Buying Stolen {itemType}
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Check any {itemType.toLowerCase()} in seconds. It's free, fast, and could save you thousands.
+              Check the {itemType.toLowerCase()} before you pay. Your first 2 checks are free and each takes a few seconds.
             </p>
             <Button asChild size="lg" variant="secondary" className="text-lg h-14 px-10">
               <Link to="/verify">
-                Verify {itemType} Now - FREE
+                Check a {itemType} now
               </Link>
             </Button>
           </div>

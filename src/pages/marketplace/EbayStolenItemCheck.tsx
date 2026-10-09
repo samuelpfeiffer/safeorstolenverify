@@ -5,15 +5,17 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, CreditCard, Package } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 
+/** Oct 8 2026 audit: removed "instant"/"3-second" claims, "Download App" (it's a free web app),
+ * unsupported "most stolen"/"highest rates" rankings and the "bid knowing it's legitimate" promise. */
 const EbayStolenItemCheck = () => {
   const faqs = [
     {
       question: "How do I check if an eBay item is stolen before bidding?",
-      answer: "Ask the seller for the IMEI, VIN, or serial number through eBay messages. Verify it with SafeOrStolen before placing your bid. Most legitimate sellers will provide this information."
+      answer: "Use \"Contact seller\" on the listing to ask for the IMEI, VIN or serial number, and a photo of it on the item. Enter it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check) before you bid. In a few seconds you see whether it appears in SafeOrStolen theft reports or public web results."
     },
     {
       question: "Does eBay Buyer Protection cover stolen items?",
-      answer: "No. eBay's Money Back Guarantee does not specifically cover stolen items. If police confiscate a stolen item you purchased, you may struggle to get a refund through eBay's standard process."
+      answer: "eBay's Money Back Guarantee is built around items that don't arrive or aren't as described. It doesn't name stolen goods specifically, so if police later take an item back for its owner, getting a refund can be hard. Check eBay's current policy, and check the serial before you bid."
     },
     {
       question: "Can I return a stolen item bought on eBay?",
@@ -21,15 +23,15 @@ const EbayStolenItemCheck = () => {
     },
     {
       question: "Are stolen items common on eBay?",
-      answer: "While eBay has fraud prevention measures, stolen items still appear, especially in categories like phones, laptops, cameras, and jewelry. Professional thieves use sophisticated methods to avoid detection."
+      answer: "Most eBay listings are legitimate, but stolen goods do get sold there, often phones, laptops, cameras, tools and jewelry. Warning signs include a new seller account, a price well below other listings, stock photos instead of the real item, and a seller who won't share the serial."
     },
     {
       question: "What if the eBay seller won't provide a serial number?",
-      answer: "A seller refusing to provide an identifier is a major red flag. Consider it a warning sign and look for another listing. Legitimate sellers have nothing to hide."
+      answer: "Skip the listing. An honest seller can read a serial number off the item in a minute, and on a phone or laptop there's no good reason to hide it. If the serial in a listing photo is blurred or cropped out, treat that the same way."
     },
     {
       question: "How do I verify an eBay item after it arrives?",
-      answer: "Check the serial number, IMEI, or VIN immediately upon delivery. Use SafeOrStolen to verify before removing any packaging. Report any discrepancies to eBay immediately."
+      answer: "Film the unboxing, then find the serial or IMEI on the item and make sure it matches what the seller gave you. Run it on SafeOrStolen. If it doesn't match or comes back \"reported stolen\", open a request in eBay's Resolution Center and keep all your photos and messages."
     }
   ];
 
@@ -50,7 +52,7 @@ const EbayStolenItemCheck = () => {
     <>
       <PageSEO
         title="eBay Stolen Check - Verify Items Before Bidding Free"
-        description="Check if eBay items are stolen before bidding. Verify IMEI, VIN, serial numbers free. Protect yourself from stolen goods."
+        description="Check if an eBay item is stolen before you bid: get the IMEI, VIN or serial from the seller and search it against SafeOrStolen theft reports. 2 free checks."
         keywords="eBay safety, eBay stolen check, verify eBay items, eBay buyer protection"
         canonical="/ebay-stolen-item-check"
         structuredData={faqSchema}
@@ -83,7 +85,7 @@ const EbayStolenItemCheck = () => {
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link to="/app">
                   <Download className="w-5 h-5" />
-                  Download App
+                  Install the Free Web App
                 </Link>
               </Button>
             </div>
@@ -123,9 +125,9 @@ const EbayStolenItemCheck = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    A stolen item might work perfectly when it arrives. Weeks or months later, 
-                    it could be flagged in a database and seized by authorities. By then, the 
-                    eBay return window has closed.
+                    A stolen item can work fine when it arrives. A phone can be blacklisted later, 
+                    or police can trace the item to you weeks after the sale, when the 
+                    return window has long closed.
                   </p>
                 </CardContent>
               </Card>
@@ -133,7 +135,7 @@ const EbayStolenItemCheck = () => {
           </div>
         </section>
 
-        {/* Comprehensive eBay Safety Content */}
+        {/* eBay Safety Content */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
@@ -141,23 +143,23 @@ const EbayStolenItemCheck = () => {
             </h2>
             <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
               <p>
-                eBay's Money Back Guarantee is one of the strongest buyer protection programs in e-commerce. However, many buyers mistakenly believe this protection extends to all situations—including purchasing stolen property. Understanding the nuances of eBay's policies can save you from significant financial loss.
+                eBay's Money Back Guarantee protects you when an item doesn't arrive or isn't as described. Many buyers assume it also covers buying stolen property. It's not that simple, and knowing where the gaps are helps you avoid losing the money.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">How Stolen Items Appear on eBay</h3>
               <p>
-                Despite eBay's fraud prevention measures, stolen items still appear on the platform regularly. Professional thieves create sophisticated seller accounts that appear legitimate, sometimes using stolen identities or hacked accounts with positive feedback. Items may be listed as "new in box" when they're actually stolen retail merchandise, or as "used" when they're personal property taken from homes or vehicles. The most commonly stolen items on eBay include smartphones (particularly iPhones), laptops (especially MacBooks), cameras and photography equipment, jewelry and watches, gaming consoles, and power tools.
+                Stolen goods reach eBay in a few common ways: shoplifted merchandise listed as "new in box", personal property taken from homes and cars listed as "used", and items sold through hacked accounts that still show good feedback. Watch phones, laptops, cameras, game consoles, jewelry and power tools most closely, since they're easy to resell.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">Why eBay's Protection May Not Cover Stolen Goods</h3>
               <p>
-                eBay's Money Back Guarantee focuses on items that are "not as described" or never arrive. While a stolen item could technically fall under "not as described," the reality is more complicated. If police confiscate a stolen item from you, proving to eBay that you're entitled to a refund becomes difficult—the item didn't arrive damaged or different from the listing, it arrived exactly as described but happened to be someone else's property. Additionally, eBay's return window is typically 30 days, but stolen items might not be flagged in databases for weeks or months after the theft is reported.
+                eBay's Money Back Guarantee focuses on items that are "not as described" or never arrive. A stolen item usually arrives exactly as described; it just belongs to someone else. If police take it from you later, proving you're owed a refund is difficult, and by then the return window set on the listing has often passed.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">The Delayed Discovery Problem</h3>
               <p>
-                One of the most insidious risks with stolen items on eBay is delayed discovery. A stolen phone might work perfectly for months before the IMEI gets blacklisted. A stolen laptop might function fine until the serial number enters theft databases. By the time this happens, eBay's standard return period has expired, and you're left holding stolen property with no recourse.
+                The hardest part is that problems show up late. A stolen phone can work for weeks before its carrier blacklists the IMEI. A laptop can run fine until police trace it. By then the return period is over and you're dealing with the seller, or the police, on your own.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk eBay Categories</h3>
               <p>
-                Cell phones and smartphones represent the highest risk category—particularly unlocked phones and devices from sellers with limited feedback. Laptops and computers, especially high-value MacBooks and gaming laptops, are frequently stolen and resold on eBay. Camera equipment, from professional DSLRs to lenses, represents significant theft targets. Jewelry and luxury watches are easy to steal and hard to trace without serial numbers. Power tools from brands like DeWalt, Milwaukee, and Makita are commonly stolen from job sites. Even bicycles, particularly high-end road and mountain bikes, appear on eBay after theft.
+                Phones are the item to be most careful with, especially unlocked phones from sellers with little feedback; always get the IMEI. For laptops, ask for a photo of the serial on the bottom label and in the system settings. Cameras and lenses have serials on the body and mount. Watches and jewelry often have no serial, so ask for receipts and papers. Power tools and bikes have serials too, so ask for them before you bid.
               </p>
             </div>
           </div>
@@ -197,7 +199,7 @@ const EbayStolenItemCheck = () => {
                 </div>
                 <h3 className="font-semibold mb-2">Verify with SafeOrStolen</h3>
                 <p className="text-sm text-muted-foreground">
-                  Enter the identifier and get instant results
+                  Enter the number and read the result in a few seconds
                 </p>
               </div>
 
@@ -205,9 +207,9 @@ const EbayStolenItemCheck = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary">4</span>
                 </div>
-                <h3 className="font-semibold mb-2">Bid Confidently</h3>
+                <h3 className="font-semibold mb-2">Then Decide</h3>
                 <p className="text-sm text-muted-foreground">
-                  If clear, place your bid knowing the item is legitimate
+                  No report found is a good sign, not a guarantee; check the seller's feedback too
                 </p>
               </div>
             </div>
@@ -221,7 +223,7 @@ const EbayStolenItemCheck = () => {
               High-Risk eBay Categories
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              These categories have the highest rates of stolen items on eBay
+              Items that are easy to resell and worth checking every time
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -229,7 +231,7 @@ const EbayStolenItemCheck = () => {
                 { 
                   title: "Cell Phones & Smartphones", 
                   risk: "Very High",
-                  desc: "iPhones and Samsung devices are the most commonly stolen items sold on eBay",
+                  desc: "Phones are small, valuable and easy to resell, and a blacklisted IMEI can stop one working after the sale",
                   check: "Always verify IMEI"
                 },
                 { 
@@ -297,8 +299,8 @@ const EbayStolenItemCheck = () => {
               {[
                 { step: 1, title: "Document Everything", desc: "Take photos/video of the package and unboxing before opening" },
                 { step: 2, title: "Find the Identifier", desc: "Locate IMEI, VIN, or serial number on the item or in settings" },
-                { step: 3, title: "Verify Immediately", desc: "Use SafeOrStolen to check before removing any packaging or tags" },
-                { step: 4, title: "Compare to Listing", desc: "Ensure the serial number matches what the seller provided" },
+                { step: 3, title: "Check It", desc: "Run the number on SafeOrStolen before you leave feedback or the return window closes" },
+                { step: 4, title: "Compare to Listing", desc: "Make sure the serial number matches what the seller gave you" },
                 { step: 5, title: "Report Any Issues", desc: "If there's a discrepancy or the item is flagged, contact eBay and keep all evidence" }
               ].map((item) => (
                 <Card key={item.step}>
@@ -346,7 +348,7 @@ const EbayStolenItemCheck = () => {
               Verify Before You Bid
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              A 3-second verification could save you from losing hundreds or thousands on stolen goods.
+              A check takes a few seconds, and your first 2 are free.
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify an Item Free</Link>

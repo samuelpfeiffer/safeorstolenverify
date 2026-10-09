@@ -109,7 +109,7 @@ export const MarketplaceLandingTemplate = ({
           <div className="max-w-6xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full mb-6">
               <Shield className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium">{marketplaceName} Buyer Protection</span>
+              <span className="text-sm font-medium">{marketplaceName} Stolen Item Check</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{h1}</h1>
@@ -122,7 +122,7 @@ export const MarketplaceLandingTemplate = ({
               <Button asChild size="lg" className="gap-2">
                 <Link to="/verify">
                   <Shield className="w-5 h-5" />
-                  Verify Item Now - Free
+                  Check an Item - 2 Free Checks
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
@@ -142,8 +142,8 @@ export const MarketplaceLandingTemplate = ({
               <AlertTriangle className="w-12 h-12 text-destructive mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">The Hidden Danger of {marketplaceName}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Every day, thousands of stolen items are listed on {marketplaceName}. 
-                Without verification, you could unknowingly become a victim.
+                Stolen items get resold on {marketplaceName} alongside honest listings, and they look the same in the photos.
+                If you buy one, police can return it to its owner and you lose what you paid.
               </p>
             </div>
 
@@ -197,11 +197,11 @@ export const MarketplaceLandingTemplate = ({
               Verify Items at the Meetup Location
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Download the SafeOrStolen app to verify items on-the-spot. Scan barcodes in 3 seconds, 
-              works offline, and gives you instant peace of mind before handing over cash.
+              Install the free SafeOrStolen web app from safeorstolen.com/app (no app store needed) and check the item where you meet.
+              Scan a barcode or serial label with your camera and see the result in a few seconds, before you hand over cash.
             </p>
             <Button asChild size="lg">
-              <Link to="/app">Download Free App</Link>
+              <Link to="/app">Get the Free Web App</Link>
             </Button>
           </div>
         </section>
@@ -257,7 +257,7 @@ export const MarketplaceLandingTemplate = ({
             <h2 className="text-3xl font-bold mb-4">{ctaTitle}</h2>
             <p className="text-lg opacity-90 mb-8">{ctaDescription}</p>
             <Button asChild size="lg" variant="secondary">
-              <Link to="/verify">Verify an Item Now - It's Free</Link>
+              <Link to="/verify">Check an Item - First 2 Checks Free</Link>
             </Button>
           </div>
         </section>

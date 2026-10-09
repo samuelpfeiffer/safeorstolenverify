@@ -34,7 +34,7 @@ const TopNavigation = () => {
     { to: '/faq', label: 'Help & FAQ', icon: HelpCircle },
     { to: '/how-it-works', label: 'How It Works', icon: FileText },
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
-    { to: '/theftaz', label: 'TheftAZ Search', icon: Search },
+    { to: '/theftaz', label: 'Arizona Stolen Property', icon: Search },
     { to: '/partial-serial-number-search', label: 'Partial Serial Search', icon: Search },
     { to: '/state-pawnshop-laws', label: 'State Pawnshop Laws', icon: FileText },
   ];

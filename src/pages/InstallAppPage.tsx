@@ -10,20 +10,21 @@ import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 
+/** Oct 8 2026: audited by hand for "install safeorstolen app". Removed offline, storage-size, AI-analysis and "3-second" claims. */
 const InstallAppPage = () => {
  const navigate = useNavigate();
 
  const faqs = [
- { question: "How does SafeOrStolen install on my phone?", answer: "SafeOrStolen is a Progressive Web App (PWA) that installs directly from your browser. This means instant updates and support for all devices including iPhone, Android, tablets, and computers." },
- { question: "Is installing SafeOrStolen safe?", answer: "Yes! PWAs are sandboxed by your browser with the same security as regular websites. SafeOrStolen doesn't require any special permissions and can't access your personal data without consent." },
- { question: "Will SafeOrStolen work offline?", answer: "Yes. Once installed, SafeOrStolen caches recent verifications so you can access them without internet—perfect for marketplace meetups in areas with poor signal." },
- { question: "How much storage does SafeOrStolen use?", answer: "Less than 5MB. SafeOrStolen is lightweight and won't slow down your device or consume significant storage space." },
+ { question: "How does SafeOrStolen install on my phone?", answer: "SafeOrStolen is a web app (a PWA) that installs from your browser at safeorstolen.com/app. It isn't in the App Store or Google Play. Once added to your home screen it opens full screen like an app and updates itself each time you open it. It works on iPhone, Android, tablets and computers." },
+ { question: "Is installing SafeOrStolen safe?", answer: "Yes. An installed web app runs inside your browser with the same protections as a regular website. SafeOrStolen only asks for your camera if you tap Scan to read a barcode, and you can say no and type the number instead." },
+ { question: "Will SafeOrStolen work offline?", answer: "No. Each check searches SafeOrStolen's records and the public web, so you need a data connection. If the meetup spot has weak signal, ask the seller for the IMEI, VIN or serial number ahead of time and run the check before you go." },
+ { question: "How much storage does SafeOrStolen use?", answer: "Very little. An installed web app is mostly a home-screen shortcut plus some cached pages, so it takes far less room than a typical app store app. You can clear it any time by removing the icon." },
  { question: "Can I uninstall SafeOrStolen?", answer: "Yes, just like any app. iPhone: Long-press the icon → Remove App. Android: Long-press → Uninstall. Desktop: Right-click → Uninstall." },
- { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 2 free checks, saves your verification history, and unlimited checks are $10/month." },
+ { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 2 free checks with no credit card and saves each check with the date. After that it's $0.99 a check or $10 a month for unlimited checks." },
  ];
 
  const iosSteps = [
- { name: "Open Safari", text: "Open Safari browser on your iPhone or iPad. The install feature only works in Safari, not Chrome or Firefox on iOS." },
+ { name: "Open Safari", text: "Open Safari on your iPhone or iPad. Safari is the most reliable browser for this; on recent iOS versions some other browsers also offer Add to Home Screen in their share menu." },
  { name: "Visit SafeOrStolen", text: "Go to safeorstolen.com in Safari's address bar. Wait for the page to fully load." },
  { name: "Tap Share Button", text: "Tap the Share icon (square with arrow pointing up) at the bottom of Safari." },
  { name: "Add to Home Screen", text: "Scroll down and tap 'Add to Home Screen'. You may need to scroll down in the share menu." },
@@ -40,7 +41,7 @@ const InstallAppPage = () => {
 
  const breadcrumbs = [
  { name: "Home", url: "/" },
- { name: "Mobile App", url: "/mobile-app" },
+ { name: "Web App", url: "/app" },
  { name: "Install Guide", url: "/install-app" },
  ];
 
@@ -61,14 +62,14 @@ const InstallAppPage = () => {
  return (
  <>
  <Helmet>
- <title>Install SafeOrStolen App - Free Download Guide (iPhone & Android)</title>
- <meta name="description" content="Install SafeOrStolen in 30 seconds. Step-by-step guide for iPhone (Safari) and Android (Chrome). Free stolen item verification app with barcode scanner." />
+ <title>How to Install the SafeOrStolen Web App on iPhone and Android</title>
+ <meta name="description" content="Add SafeOrStolen to your home screen from Safari on iPhone or Chrome on Android. No app store needed. Step-by-step install guide for the free web app." />
  <meta name="keywords" content="install SafeOrStolen, download SafeOrStolen app, SafeOrStolen iPhone, SafeOrStolen Android, PWA install guide" />
  <link rel="canonical" href="https://safeorstolen.com/install-app" />
  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
  
- <meta property="og:title" content="Install SafeOrStolen App - Free Download" />
- <meta property="og:description" content="30-second install guide for iPhone & Android. Free stolen item checker." />
+ <meta property="og:title" content="Install the SafeOrStolen Web App" />
+ <meta property="og:description" content="Add SafeOrStolen to your home screen on iPhone or Android. No app store needed." />
  <meta property="og:url" content="https://safeorstolen.com/install-app" />
  
  <meta name="ai:purpose" content="Installation guide for SafeOrStolen PWA on mobile devices" />
@@ -83,7 +84,7 @@ const InstallAppPage = () => {
  <noscript>
  <article>
  <h1>How to Install SafeOrStolen App</h1>
- <p>Install the SafeOrStolen stolen item verification app on your iPhone or Android in 30 seconds.</p>
+ <p>SafeOrStolen is a free web app. Add it to your iPhone or Android home screen from your browser; it is not in the App Store or Google Play.</p>
  <h2>iPhone Installation (Safari)</h2>
  <ol>
  <li>Open Safari and go to safeorstolen.com</li>
@@ -107,20 +108,20 @@ const InstallAppPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
  <Download className="h-4 w-4" />
- <span>30-Second Installation</span>
+ <span>No app store needed</span>
  </div>
  
  <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
- Install SafeOrStolen App
+ Install the SafeOrStolen Web App
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
- Put SafeOrStolen on your phone. No app store needed—install directly from your browser in 30 seconds.
+ Put SafeOrStolen on your phone's home screen. It installs from your browser, not from an app store, and takes under a minute.
  </p>
 
  <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Free to install</span>
- <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Works offline</span>
+ <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Updates itself</span>
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> 2 free checks</span>
  </div>
  </div>
@@ -154,7 +155,7 @@ const InstallAppPage = () => {
  
  <div className="mt-8 p-4 bg-muted/50 rounded-lg">
  <p className="text-sm text-muted-foreground">
- <strong>Note:</strong> On iOS, you must use Safari. The "Add to Home Screen" option is not available in Chrome or Firefox on iPhone.
+ <strong>Note:</strong> If you don't see "Add to Home Screen" in another browser, open safeorstolen.com in Safari and try again.
  </p>
  </div>
  </CardContent>
@@ -190,7 +191,7 @@ const InstallAppPage = () => {
 
  <div className="mt-8 p-4 bg-muted/50 rounded-lg">
  <p className="text-sm text-muted-foreground">
- <strong>Tip:</strong> Some Android phones show an "Install" banner at the bottom of the screen automatically. Tap it for instant installation!
+ <strong>Tip:</strong> Some Android phones show an "Install" banner at the bottom of the screen automatically. Tap it to install.
  </p>
  </div>
  </CardContent>
@@ -206,17 +207,17 @@ const InstallAppPage = () => {
  <div className="text-center p-6">
  <QrCode className="h-10 w-10 mx-auto text-primary mb-4" />
  <h3 className="font-semibold mb-2">Barcode Scanner</h3>
- <p className="text-sm text-muted-foreground">Scan IMEI, VIN, or serial numbers—no typing needed</p>
+ <p className="text-sm text-muted-foreground">Point your camera at the barcode on an IMEI label, VIN door sticker or serial tag instead of typing it</p>
  </div>
  <div className="text-center p-6">
  <Shield className="h-10 w-10 mx-auto text-primary mb-4" />
- <h3 className="font-semibold mb-2">Multi-Source Analysis</h3>
- <p className="text-sm text-muted-foreground">SafeOrStolen's own theft reports, public web results, and AI analysis to find potential matches</p>
+ <h3 className="font-semibold mb-2">Every Source Listed</h3>
+ <p className="text-sm text-muted-foreground">Each check searches SafeOrStolen's own theft reports and public web results, plus extra records for guns, bikes and Arizona vehicles</p>
  </div>
  <div className="text-center p-6">
  <Zap className="h-10 w-10 mx-auto text-primary mb-4" />
- <h3 className="font-semibold mb-2">3-Second Results</h3>
- <p className="text-sm text-muted-foreground">Instant verification at marketplace meetups</p>
+ <h3 className="font-semibold mb-2">Results in a Few Seconds</h3>
+ <p className="text-sm text-muted-foreground">Fast enough to run while you're standing with the seller</p>
  </div>
  </div>
  </div>
@@ -242,7 +243,7 @@ const InstallAppPage = () => {
  <div className="max-w-2xl mx-auto text-center">
  <h2 className="text-2xl font-bold mb-4">Ready to Install?</h2>
  <p className="text-muted-foreground mb-8">
- Open this page on your phone and follow the steps above. Takes 30 seconds.
+ Open this page on your phone and follow the steps above. It takes under a minute.
  </p>
  <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/')}>
  Go to SafeOrStolen

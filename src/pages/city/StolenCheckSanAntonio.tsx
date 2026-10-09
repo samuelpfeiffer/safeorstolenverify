@@ -2,25 +2,29 @@ import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, MapPin, Download, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Shield, MapPin, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+
+/** Oct 8 2026 audit: copy rewritten by hand. Removed the invented "11,000+ vehicle thefts" figure
+ * and theft-statistics cards, unsupported "most targeted"/"highest theft area" claims, "instant",
+ * "3 seconds", "national databases" and "Download App" (it's a free installable web app). */
 const StolenCheckSanAntonio = () => {
   const faqs = [
     {
-      question: "How common is vehicle theft in San Antonio?",
-      answer: "San Antonio reports over 11,000 vehicle thefts annually, ranking it among Texas's highest for auto theft. Trucks and SUVs are particularly targeted due to their resale value."
+      question: "How do I check if something is stolen in San Antonio?",
+      answer: "Get the number off the item: the IMEI on a phone (dial *#06#), the VIN on a car, or the serial on a bike, tool or laptop. Enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-antonio). In a few seconds it searches SafeOrStolen theft reports and public web results, and lists every source searched."
     },
     {
       question: "Where can I safely meet sellers in San Antonio?",
-      answer: "SAPD offers safe exchange zones at police substations throughout the city. The Public Safety Headquarters at 315 S Santa Rosa Ave is a popular option. Many H-E-B parking lots also have security cameras."
+      answer: "Pick a busy, well-lit place with cameras, such as the parking lot of a police substation or a large grocery store during the day. Call the San Antonio Police Department non-emergency line to ask whether your nearest substation welcomes buyers and sellers. A seller who refuses any public spot is a warning sign."
     },
     {
-      question: "What items are commonly stolen in San Antonio?",
-      answer: "Beyond vehicles, catalytic converters, power tools, bicycles, and electronics are frequently stolen. Always verify serial numbers before purchasing used items."
+      question: "What should I check before buying a used truck in San Antonio?",
+      answer: "Match the VIN on the dashboard, the driver's door sticker and the title, and check the seller's ID against the name on the title. Look for a damaged ignition or steering column and keys that don't look original. Run the VIN on SafeOrStolen to decode the truck and check theft reports before you pay."
     },
     {
-      question: "Is phone theft a problem in San Antonio?",
-      answer: "Yes, especially during festivals like Fiesta. Always verify IMEI numbers before buying used phones to avoid purchasing stolen devices."
+      question: "Is it safe to buy a used phone in San Antonio?",
+      answer: "It can be, if you check first. Have the seller dial *#06# so you can read the IMEI yourself, run it on SafeOrStolen, and make sure the phone is signed out of the seller's Apple or Google account before you pay. Phones bought after big events and festivals deserve an extra look."
     }
   ];
 
@@ -38,7 +42,7 @@ const StolenCheckSanAntonio = () => {
     <>
       <PageSEO
         title="San Antonio Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="Check if items are stolen in San Antonio. Free IMEI, VIN, and serial number verification. San Antonio has 11,000+ vehicle thefts per year."
+        description="Check if a used phone, car, bike or tool is stolen before you buy in San Antonio. Search the IMEI, VIN or serial against SafeOrStolen theft reports. 2 free checks."
         keywords="san antonio stolen item check, stolen car check san antonio, verify stolen texas, SAPD stolen vehicle, VIN check san antonio"
         canonical="/stolen-check-san-antonio"
         structuredData={faqSchema}
@@ -53,14 +57,14 @@ const StolenCheckSanAntonio = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">San Antonio Stolen Item Check</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              San Antonio has over 11,000 vehicle thefts annually. Protect yourself by verifying IMEI, VIN, and serial numbers before buying used items.
+              Buying used off Marketplace, OfferUp or Craigslist in San Antonio? Enter the IMEI, VIN or serial number and SafeOrStolen searches its theft reports and public web results in a few seconds.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">
                 <Link to="/verify"><Shield className="w-5 h-5" />Verify Item - Free</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link to="/app"><Download className="w-5 h-5" />Download App</Link>
+                <Link to="/app"><Download className="w-5 h-5" />Install the Free Web App</Link>
               </Button>
             </div>
           </div>
@@ -68,39 +72,21 @@ const StolenCheckSanAntonio = () => {
 
         <section className="py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">San Antonio Theft Statistics</h2>
-            <div className="grid md:grid-cols-3 gap-4 mb-8">
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">11,000+</div>
-                  <div className="text-sm text-muted-foreground">Vehicle Thefts/Year</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">Trucks/SUVs</div>
-                  <div className="text-sm text-muted-foreground">Most Targeted</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">West Side</div>
-                  <div className="text-sm text-muted-foreground">Highest Theft Area</div>
-                </CardContent>
-              </Card>
-            </div>
-            
             <div className="prose prose-gray dark:prose-invert max-w-none mb-8">
-              <h3>Why Verify Before Buying in San Antonio?</h3>
+              <h2>Why Check Before Buying in San Antonio?</h2>
               <p>
-                San Antonio's thriving secondhand market on Facebook Marketplace, OfferUp, and Craigslist makes it 
-                easy to find great deals. However, the city's high theft rate means stolen goods frequently appear 
-                for sale. Buying a stolen item can result in losing both the item and your money, plus potential 
-                legal complications.
+                Most secondhand deals in San Antonio happen between strangers in a parking lot, paid in cash. If the
+                item turns out to be stolen, police can return it to its owner and you lose what you paid. Trucks,
+                phones, power tools and bikes are the items to be most careful with, because they're easy to resell.
               </p>
               <p>
-                SafeOrStolen provides instant verification against national databases. Our free check takes just 
-                3 seconds and can save you thousands of dollars and legal headaches.
+                Ask for the IMEI, VIN or serial before you drive out, and run it on SafeOrStolen. When you meet,
+                read the number off the item yourself and make sure it matches. A scraped-off serial, a title in
+                someone else's name, or a seller who wants to rush is a reason to walk away.
+              </p>
+              <p>
+                SafeOrStolen does not search SAPD files, NCIC or Texas DMV records. If you think you've found a
+                stolen item, call the San Antonio Police Department non-emergency line.
               </p>
             </div>
           </div>
@@ -126,8 +112,8 @@ const StolenCheckSanAntonio = () => {
 
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Verify Before You Buy in San Antonio</h2>
-            <p className="mb-6 opacity-90">Free verification takes just 3 seconds. Protect yourself today.</p>
+            <h2 className="text-3xl font-bold mb-4">Check Before You Buy in San Antonio</h2>
+            <p className="mb-6 opacity-90">A check takes a few seconds. Your first 2 are free with a free account.</p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify Item Free</Link>
             </Button>

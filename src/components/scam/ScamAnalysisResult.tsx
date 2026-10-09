@@ -35,12 +35,12 @@ export const ScamAnalysisResultCard: React.FC<Props> = ({ result }) => {
   const sortedFlags = [...result.flags].sort((a, b) => SEVERITY_ORDER[a.severity] - SEVERITY_ORDER[b.severity]);
 
   return (
-    <section aria-label="AI Scam Analysis" className="bg-muted/30 border border-border rounded-xl overflow-hidden">
+    <section aria-label="Scam Risk Check" className="bg-muted/30 border border-border rounded-xl overflow-hidden">
       <header className="px-6 py-4 border-b border-border flex items-center gap-3">
         <ShieldAlert className="w-5 h-5 text-primary" />
         <div>
-          <h2 className="font-semibold text-foreground text-base">AI Scam Risk Analysis</h2>
-          <p className="text-xs text-muted-foreground">Powered by SafeOrStolen AI</p>
+          <h2 className="font-semibold text-foreground text-base">Scam Risk Check</h2>
+          <p className="text-xs text-muted-foreground">An automated read of the listing for common scam signs. It does not search theft records.</p>
         </div>
       </header>
 
@@ -80,7 +80,7 @@ export const ScamAnalysisResultCard: React.FC<Props> = ({ result }) => {
           {sortedFlags.length === 0 ? (
             <div className="flex items-center gap-2 p-3 rounded-lg bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800">
               <CheckCircle className="w-5 h-5 text-green-600" />
-              <p className="text-sm text-green-700 dark:text-green-400">No scam signals detected. This appears to be a legitimate listing.</p>
+              <p className="text-sm text-green-700 dark:text-green-400">No common scam signs found in this listing. That doesn't prove the seller is honest, so still check the serial number.</p>
             </div>
           ) : (
             <div className="space-y-2">

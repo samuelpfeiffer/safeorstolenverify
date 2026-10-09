@@ -8,19 +8,19 @@ const StolenCheckHouston = () => {
   const faqs = [
     {
       question: "How do I check if a car in Houston is stolen?",
-      answer: "Use SafeOrStolen's free VIN checker. Houston is one of the top 10 US cities for vehicle theft with over 35,000 annually. Full-size trucks are especially targeted."
+      answer: "Get the VIN from the seller and run it on SafeOrStolen (safeorstolen.com/stolen-check-houston). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results in a few seconds. It does not search Texas DMV or HPD records, so if anything looks wrong, call the HPD non-emergency line with the VIN and plate."
     },
     {
-      question: "Where are Houston's safe exchange zones?",
-      answer: "HPD offers safe exchange locations at many police substations. Popular options include the Central Station downtown and substations in Clear Lake and Memorial."
+      question: "Where can I meet a seller safely in Houston?",
+      answer: "Many Houston-area police stations let buyers and sellers meet in their parking lots or lobbies. Call the Houston Police Department non-emergency line or check with your nearest station to confirm which locations allow it and when. Check the item before you get there, then confirm the serial, IMEI or VIN matches at the meetup."
     },
     {
-      question: "What vehicles are most stolen in Houston?",
-      answer: "Full-size pickup trucks (F-150, Silverado, Ram), Kia/Hyundai sedans, and Nissan Altimas are the most stolen vehicles in Houston."
+      question: "What should I check when buying a used truck in Houston?",
+      answer: "Full-size pickups are popular with thieves everywhere, so take extra care. Match the VIN on the dash, the driver door jamb and the Texas title, make sure the title name matches the seller's ID, look for a damaged steering column or ignition, and run the VIN on SafeOrStolen before you pay."
     },
     {
-      question: "Is tool theft common in Houston?",
-      answer: "Yes. Houston's construction industry makes it a target for power tool theft. Always verify serial numbers when buying tools from individuals."
+      question: "How do I check if power tools are stolen in Houston?",
+      answer: "Find the serial number on the tool's nameplate, usually on the motor housing or battery mount, and run it on SafeOrStolen. Ask why the seller is selling, and be wary of several new tools from the same brand sold together for cash. A missing or scratched-off serial is a reason to walk away."
     }
   ];
 
@@ -37,8 +37,8 @@ const StolenCheckHouston = () => {
   return (
     <>
       <PageSEO
-        title="Houston Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="Check if items are stolen in Houston. Free IMEI, VIN, and serial number verification. Houston has 35,000+ vehicle thefts annually."
+        title="Houston Stolen Item Check - Check Before You Buy | SafeOrStolen"
+        description="Buying used in Houston? Check a phone IMEI, car VIN, plate or tool serial against SafeOrStolen theft reports in a few seconds. 2 free checks, no credit card."
         keywords="houston stolen item check, stolen car check houston, verify stolen houston, VIN check houston, HPD stolen vehicle"
         canonical="/stolen-check-houston"
         structuredData={faqSchema}
@@ -51,19 +51,19 @@ const StolenCheckHouston = () => {
               <MapPin className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium">Houston, Texas</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Houston Stolen Item Check</h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Houston ranks in the top 10 US cities for vehicle theft with over 35,000 thefts annually. Verify used items before buying.
+              Buying a used car, phone or tools in Houston? Run the VIN, IMEI or serial number on SafeOrStolen before you meet. You get a result in a few seconds, and your first 2 checks are free.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">
-                <Link to="/verify"><Shield className="w-5 h-5" />Verify Item - Free</Link>
+                <Link to="/verify"><Shield className="w-5 h-5" />Check an Item</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link to="/app"><Download className="w-5 h-5" />Download App</Link>
+                <Link to="/app"><Download className="w-5 h-5" />Open the Free Web App</Link>
               </Button>
             </div>
           </div>
@@ -71,50 +71,49 @@ const StolenCheckHouston = () => {
 
         <section className="py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Houston Theft Statistics</h2>
+            <h2 className="text-2xl font-bold mb-6">What to Check in Houston</h2>
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Card>
                 <CardContent className="pt-6 text-center">
                   <Car className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-primary">35,000+</div>
-                  <div className="text-sm text-muted-foreground">Vehicle Thefts/Year</div>
+                  <div className="text-xl font-bold text-primary">Cars and trucks</div>
+                  <div className="text-sm text-muted-foreground">Check the VIN, then match it on the dash, door jamb and title</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6 text-center">
                   <Wrench className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-primary">High</div>
-                  <div className="text-sm text-muted-foreground">Tool Theft Rate</div>
+                  <div className="text-xl font-bold text-primary">Power tools</div>
+                  <div className="text-sm text-muted-foreground">Check the serial on the nameplate before paying cash</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6 text-center">
                   <Phone className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-primary">F-150</div>
-                  <div className="text-sm text-muted-foreground">Most Stolen Vehicle</div>
+                  <div className="text-xl font-bold text-primary">Phones</div>
+                  <div className="text-sm text-muted-foreground">Check the IMEI and make sure the phone isn't locked to an account</div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div className="prose prose-gray dark:prose-invert max-w-none mb-8">
-              <h3>Why Verify Before Buying in Houston?</h3>
+              <h3>Why Check Before Buying in Houston?</h3>
               <p>
-                Houston's sprawling metro area and thriving economy create one of the largest secondhand 
-                markets in Texas. Unfortunately, this also means stolen goods frequently appear for sale 
-                on Facebook Marketplace, OfferUp, and Craigslist.
+                Houston is big and spread out, and a lot of used goods change hands on Facebook Marketplace,
+                OfferUp and Craigslist. Most sellers are honest, but a stolen item looks the same in a listing
+                photo as any other. The serial number, IMEI or VIN is how you tell the difference.
               </p>
               <p>
-                The city's massive construction industry makes power tools especially vulnerable. 
-                Catalytic converter theft has also surged, making it crucial to verify any used 
-                vehicle purchase. SafeOrStolen's free verification takes just 3 seconds and checks 
-                against national databases.
+                A SafeOrStolen check searches theft reports owners have filed on the site and public web results
+                that mention the number. VIN checks also decode the vehicle and list open recalls. The result says
+                reported stolen, possible match, or no report found in the records searched, with every source listed.
+                It does not search Texas DMV, HPD or NCIC records.
               </p>
-              <h3>HPD Safe Exchange Zones</h3>
+              <h3>Meeting a Seller</h3>
               <p>
-                The Houston Police Department offers safe exchange zones at police substations 
-                throughout the city. Popular locations include the Central Station downtown, 
-                Clear Lake Station, and Memorial Station. Even at safe zones, always verify 
-                items before completing the transaction.
+                Many Houston-area police stations let people complete sales in their parking lots or lobbies. Call
+                ahead to confirm. Run your check before you go, then confirm at the meetup that the number on the
+                item matches the one you checked.
               </p>
             </div>
           </div>
@@ -140,10 +139,10 @@ const StolenCheckHouston = () => {
 
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Verify Before You Buy in Houston</h2>
-            <p className="mb-6 opacity-90">Free verification takes just 3 seconds. Protect yourself today.</p>
+            <h2 className="text-3xl font-bold mb-4">Check Before You Buy in Houston</h2>
+            <p className="mb-6 opacity-90">A check takes a few seconds. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
             <Button asChild size="lg" variant="secondary">
-              <Link to="/verify">Verify Item Free</Link>
+              <Link to="/verify">Check an Item</Link>
             </Button>
           </div>
         </section>

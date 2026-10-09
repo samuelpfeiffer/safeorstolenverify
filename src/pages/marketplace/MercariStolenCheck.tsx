@@ -4,7 +4,7 @@ const MercariStolenCheck = () => {
   return (
     <MarketplaceLandingTemplate
       title="Mercari Stolen Item Check - Verify Before Buying | SafeOrStolen"
-      metaDescription="Check if items on Mercari are stolen before buying. Free IMEI, VIN, and serial number verification. Protect yourself from stolen goods on Mercari."
+      metaDescription="Check if a Mercari item is stolen before you buy. Ask the seller for the IMEI or serial, enter it on SafeOrStolen and see theft reports in seconds. 2 free checks."
       h1="Check if Mercari Items Are Stolen"
       keywords={[
         'mercari stolen check',
@@ -18,24 +18,24 @@ const MercariStolenCheck = () => {
       ]}
       canonical="/mercari-stolen-check"
       marketplaceName="Mercari"
-      heroSubtitle="Before you buy that electronics, phone, or luxury item on Mercari, verify it isn't stolen. Our free tool checks against SafeOrStolen reports, public web results, and AI analysis."
+      heroSubtitle="Before you buy a phone, console, camera or watch on Mercari, ask the seller for the IMEI or serial number and check it. SafeOrStolen searches its theft reports and public web results in a few seconds."
       problemStats={[
         {
           title: "Stolen Phones",
-          description: "iPhones and Android devices are frequently listed on Mercari after being stolen. A blacklisted phone is worthless."
+          description: "A stolen phone can be blacklisted by the carrier and stop working on networks after you've paid for it."
         },
         {
           title: "Electronics & Gaming",
-          description: "PS5s, laptops, and cameras stolen from homes and stores often end up on Mercari for quick cash."
+          description: "Consoles, laptops and cameras are easy to ship and resell, which makes them easy to move after a theft."
         },
         {
           title: "Designer Items",
-          description: "Stolen luxury watches, jewelry, and designer goods are sold on Mercari to unsuspecting buyers."
+          description: "Watches and other high-value items with serial numbers can be checked the same way before you pay."
         }
       ]}
       redFlags={[
-        { title: "Price Too Good to Be True", description: "Stolen items are often priced 30-50% below market for quick sales" },
-        { title: "New Account, No Reviews", description: "Thieves create fresh accounts to avoid detection" },
+        { title: "Price Too Good to Be True", description: "A price far below similar listings is a reason to ask where the item came from" },
+        { title: "New Account, No Reviews", description: "A brand-new account selling something expensive deserves extra caution" },
         { title: "Stock Photos Only", description: "No real photos of the actual item suggests something to hide" },
         { title: "Won't Provide Serial Numbers", description: "Legitimate sellers can easily provide identifiers" },
         { title: "Rushed Shipping", description: "Pressure to complete sale quickly before item is reported stolen" },
@@ -44,21 +44,21 @@ const MercariStolenCheck = () => {
       howItWorksSteps={[
         "Ask seller for IMEI/serial number before purchasing",
         "Enter the identifier into SafeOrStolen",
-        "Get instant results from multiple sources",
-        "Buy with confidence or walk away if stolen"
+        "Read the result in a few seconds, with every source listed",
+        "Buy only if the result and the seller's answers add up; walk away if it's reported stolen"
       ]}
       faqs={[
         {
           question: "How do I verify Mercari electronics?",
-          answer: "Message the seller requesting the IMEI (for phones) or serial number (for electronics). Enter it into SafeOrStolen's free verification tool before purchasing."
+          answer: "Message the seller through Mercari and ask for the IMEI (phones) or serial number (electronics), plus a photo of it on the device. Enter it at safeorstolen.com/verify before you buy. The first 2 checks are free, and each one is saved to your account with the date."
         },
         {
           question: "Does Mercari check for stolen items?",
-          answer: "Mercari has some protections, but they don't verify serial numbers against stolen databases. You need to verify yourself using SafeOrStolen."
+          answer: "Mercari has buyer protections for problems like items not as described, but checking a serial number for theft reports is up to you. SafeOrStolen does that in a few seconds from the IMEI or serial."
         },
         {
           question: "What if I already bought a stolen item on Mercari?",
-          answer: "Contact Mercari support immediately. Do not confront the seller. File a police report. You may be able to get a refund through Mercari's protection program."
+          answer: "Contact Mercari support right away and don't confront the seller. File a police report with the serial number, the listing and your messages. Ask Mercari whether the purchase qualifies for a refund under its policies."
         },
         {
           question: "Can I return stolen items on Mercari?",
@@ -66,7 +66,7 @@ const MercariStolenCheck = () => {
         }
       ]}
       ctaTitle="Shop Mercari Safely"
-      ctaDescription="Protect yourself with a free verification before your next Mercari purchase."
+      ctaDescription="Check the IMEI or serial before your next Mercari purchase. 2 free checks, no credit card."
     />
   );
 };

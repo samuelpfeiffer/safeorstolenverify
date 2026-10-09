@@ -10,8 +10,8 @@ const VerifiedResultPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Verified ✓ — Item Passed a SafeOrStolen Check"
-        description="This item was verified by SafeOrStolen by analyzing SafeOrStolen reports, public web data, and AI insights."
+        title="SafeOrStolen Check Result — No Report Found"
+        description="This item was checked on SafeOrStolen. No report was found in the records searched: SafeOrStolen theft reports and public web results, plus item-specific records."
         canonical={`/verified/${id}`}
       />
       <div className="max-w-lg mx-auto px-4 py-16 pt-24 text-center space-y-8">
@@ -19,8 +19,8 @@ const VerifiedResultPage: React.FC = () => {
           <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-950/30 flex items-center justify-center mx-auto">
             <CheckCircle className="w-10 h-10 text-green-600" />
           </div>
-          <h1 className="text-2xl font-bold text-foreground">✓ VERIFIED CLEAN</h1>
-          <p className="text-muted-foreground">This item was verified by SafeOrStolen by analyzing SafeOrStolen reports, public web data, and AI insights.</p>
+          <h1 className="text-2xl font-bold text-foreground">No Report Found</h1>
+          <p className="text-muted-foreground">This item was checked on SafeOrStolen on the date below. Nothing turned up in the records searched: SafeOrStolen theft reports and public web results, plus item-specific records such as police gun theft reports or a stolen-bicycle registry. That is not a guarantee the item was never stolen.</p>
         </header>
 
         <section className="bg-card border border-border rounded-xl p-6 text-left space-y-4">
@@ -39,21 +39,21 @@ const VerifiedResultPage: React.FC = () => {
             </div>
             <div>
               <span className="text-muted-foreground text-xs uppercase tracking-wider block mb-1">Status</span>
-              <span className="text-green-600 font-semibold flex items-center gap-1"><Shield className="w-3 h-3" /> CLEAN</span>
+              <span className="text-green-600 font-semibold flex items-center gap-1"><Shield className="w-3 h-3" /> No report found</span>
             </div>
           </div>
         </section>
 
         <section className="bg-muted/50 border border-border rounded-xl p-6 space-y-3">
           <h2 className="text-lg font-semibold text-foreground">Want to verify your own items?</h2>
-          <p className="text-sm text-muted-foreground">SafeOrStolen checks IMEI, VIN, and serial numbers against multiple sources in 3 seconds. 2 free checks, then $0.99/check or $10/month unlimited.</p>
+          <p className="text-sm text-muted-foreground">SafeOrStolen checks IMEI, VIN, plate and serial numbers in a few seconds and lists every source it searched. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
           <Button asChild size="lg" className="button-glow">
             <Link to="/verify">Try SafeOrStolen Free → <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </section>
 
         <p className="text-xs text-muted-foreground">
-          Verified by <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
+          Checked on <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> — SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
         </p>
       </div>
     </>
