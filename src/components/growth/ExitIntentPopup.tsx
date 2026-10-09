@@ -124,7 +124,7 @@ export const ExitIntentPopup: React.FC = () => {
             </div>
             <div className="flex items-center gap-1">
               <Smartphone className="h-4 w-4" />
-              <span>Mobile app included</span>
+              <span>Free web app included</span>
             </div>
           </div>
         </div>

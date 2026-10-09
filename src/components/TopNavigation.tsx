@@ -26,7 +26,7 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
-    { to: '/mobile-app', label: 'App' },
+    { to: '/app', label: 'App' },
   ];
 
   const resourceLinks = [

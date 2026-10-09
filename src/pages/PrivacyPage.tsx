@@ -151,8 +151,8 @@ const PrivacyPage: React.FC = () => {
               <h2 className="text-2xl font-semibold text-white mb-4">10. International Data Transfers</h2>
               <p className="text-gray-300 leading-relaxed">
                 Your information may be transferred to and processed in countries other than your own. 
-                We ensure that such transfers are conducted in accordance with applicable data protection 
-                laws and implement appropriate safeguards to protect your information.
+                We handle those transfers in line with applicable data protection laws and use appropriate
+                safeguards to protect your information.
               </p>
             </section>
 
@@ -170,7 +170,9 @@ const PrivacyPage: React.FC = () => {
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
                 <br />
-                Email: <a href="mailto:support@safeorstolen.com" className="text-sos-orange hover:underline">support@safeorstolen.com</a>
+                Email: <a href="mailto:safeorstolenmail@gmail.com" className="text-sos-orange hover:underline">safeorstolenmail@gmail.com</a>
+                <br />
+                SafeOrStolen, Peoria, Arizona
               </p>
             </section>
           </CardContent>

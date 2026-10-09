@@ -356,7 +356,7 @@ const VerifyChatPage: React.FC = () => {
 
  const headline =
  result.status === 'stolen'
- ? `⚠️ **Match found.** This ${itemType.toUpperCase()} appears in stolen-item databases. **Do not purchase.** Full report on the right →${uncertaintyNote}`
+ ? `⚠️ **Match found.** This ${itemType.toUpperCase()} appears in the theft records searched. **Don't buy it.** Full report on the right →${uncertaintyNote}`
  : result.status === 'safe'
  ? `✅ **No theft reports found** for this ${itemType.toUpperCase()}. Full report with sources is on the right →${uncertaintyNote}`
  : result.status === 'lost'
@@ -572,19 +572,19 @@ const VerifyChatPage: React.FC = () => {
  return (
  <>
  <Helmet>
- <title>AI Stolen Item Verification Chat | SafeOrStolen</title>
+ <title>Check if an Item Is Stolen | SafeOrStolen</title>
  <meta
  name="description"
- content="Chat with SafeOrStolen's AI to verify IMEI, VIN, serial numbers, license plates, and marketplace listings. Paste, scan, or upload — get downloadable reports in seconds."
+ content="Paste an IMEI, VIN, serial number or license plate to search SafeOrStolen theft reports and public web results in a few seconds. Every source is listed. 2 free checks."
  />
  <link rel="canonical" href="https://safeorstolen.com/verify" />
- <meta property="og:title" content="AI Verification Chat | SafeOrStolen" />
+ <meta property="og:title" content="Check if an Item Is Stolen | SafeOrStolen" />
  <meta
  property="og:description"
- content="ChatGPT-style stolen-item verification powered by AI. IMEI, VIN, serial, plate, URL — all in one chat with downloadable PDF reports."
+ content="Check an IMEI, VIN, serial or plate against SafeOrStolen theft reports and public web results, with every source listed and each check saved with the date."
  />
  <meta property="og:url" content="https://safeorstolen.com/verify" />
- <meta name="ai:purpose" content="Conversational AI verification of items against multiple sources" />
+ <meta name="ai:purpose" content="Stolen-item check against SafeOrStolen theft reports and public web results" />
  </Helmet>
 
  {/* AppRoot renders TopNavigation + <div className="pt-20"/>. We negate that
@@ -612,7 +612,7 @@ const VerifyChatPage: React.FC = () => {
 
  <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 font-mono">
  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- MULTI-SOURCE · AI-POWERED
+ THEFT REPORTS · PUBLIC WEB RESULTS
  </p>
  </div>
  </div>
@@ -982,10 +982,10 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  Verify before you buy.
  </h1>
  <p className="text-base text-muted-foreground mt-3 max-w-lg">
- AI-powered stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll cross-check multiple sources in seconds and explain the result in plain English.
+ Stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll search SafeOrStolen theft reports and public web results in a few seconds and explain the result in plain English.
  </p>
  <p className="text-sm text-muted-foreground mt-3">
- Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Get the app</a> — install SafeOrStolen on your phone and scan on the spot.
+ Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Install the free web app</a> — add SafeOrStolen to your phone's home screen and run a check on the spot.
  </p>
 
  {/* 4-card horizontal grid that fits left-to-right at all sizes */}

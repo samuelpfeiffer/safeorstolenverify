@@ -2,25 +2,29 @@ import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, MapPin, Download } from 'lucide-react';
+import { MapPin, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+
+/** Oct 8 2026 audit: copy rewritten by hand. Removed the invented "20,000+ thefts" and "Top 10"
+ * statistics, neighborhood theft-rate claims, unconfirmed district-station names, and
+ * "Get Mobile App" (it's a free installable web app). */
 const StolenCheckChicago = () => {
   const faqs = [
     {
       question: "How do I check if a car in Chicago is stolen?",
-      answer: "Use SafeOrStolen's free VIN checker. Chicago has over 20,000 vehicle thefts annually. Kia and Hyundai vehicles are especially targeted."
+      answer: "Ask the seller for the 17-character VIN and enter it on SafeOrStolen (safeorstolen.com/stolen-check-chicago). In a few seconds it decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results. Then match the VIN on the dash, door sticker and title before you pay."
     },
     {
       question: "Where can I safely meet sellers in Chicago?",
-      answer: "CPD offers safe exchange zones at district stations. Popular options include the 1st District (Central), 19th District (Town Hall), and 25th District (Grand Central)."
+      answer: "Meet in daylight somewhere busy with cameras, such as the lobby or parking lot of a Chicago Police district station. Call the non-emergency line, 311, to ask about your nearest station. A seller who won't meet anywhere public, or keeps changing the spot, is a warning sign."
     },
     {
-      question: "Is catalytic converter theft affecting Chicago?",
-      answer: "Yes. Chicago is a hotspot for catalytic converter theft. If buying a used car, verify it hasn't been reported stolen and check for converter damage."
+      question: "What should I check on a used Kia or Hyundai in Chicago?",
+      answer: "Many older Kia and Hyundai models without push-button start were easy to steal, so look at the steering column for cracked plastic, a punched ignition or a screwdriver-turned lock. Ask whether the free anti-theft software update was installed, and run the VIN on SafeOrStolen before you buy."
     },
     {
-      question: "What neighborhoods have the highest theft rates?",
-      answer: "Englewood, Austin, North Lawndale, and South Shore have higher theft rates. However, stolen items are sold throughout the city, so always verify regardless of location."
+      question: "How do I check a used phone or bike in Chicago?",
+      answer: "For a phone, have the seller dial *#06# and run the IMEI on SafeOrStolen. For a bike, turn it over and read the serial under the bottom bracket; bike checks also search a national stolen-bicycle registry. Do it before you hand over cash, and walk away from a scratched-off serial."
     }
   ];
 
@@ -38,7 +42,7 @@ const StolenCheckChicago = () => {
     <>
       <PageSEO
         title="Chicago Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="Check if items are stolen in Chicago. Free IMEI, VIN, and serial number verification for Chicago buyers. Verify before buying on Facebook Marketplace or Craigslist."
+        description="Check if a used car, phone or bike is stolen before you buy in Chicago. Search the VIN, IMEI or serial against SafeOrStolen theft reports in a few seconds."
         keywords="chicago stolen item check, stolen car check chicago, verify stolen chicago, check IMEI chicago, VIN check chicago"
         canonical="/stolen-check-chicago"
         structuredData={faqSchema}
@@ -55,14 +59,14 @@ const StolenCheckChicago = () => {
               Chicago Stolen Item Verification
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Protect yourself from buying stolen goods in Chicago. Free verification for IMEI, VIN, and serial numbers.
+              Buying used on Facebook Marketplace or Craigslist in Chicago? Enter the VIN, IMEI or serial number and SafeOrStolen searches its theft reports and public web results in a few seconds. 2 checks free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link to="/verify">Check Item Now - Free</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/app"><Download className="mr-2 h-4 w-4" /> Get Mobile App</Link>
+                <Link to="/app"><Download className="mr-2 h-4 w-4" /> Install the Free Web App</Link>
               </Button>
             </div>
           </div>
@@ -70,24 +74,24 @@ const StolenCheckChicago = () => {
 
         <section className="py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Chicago Theft Statistics</h2>
+            <h2 className="text-2xl font-bold mb-6">Before You Pay in Chicago</h2>
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">20,000+</div>
-                  <div className="text-sm text-muted-foreground">Vehicle Thefts/Year</div>
+                <CardContent className="pt-6">
+                  <div className="font-bold text-primary mb-1">Get the number first</div>
+                  <div className="text-sm text-muted-foreground">Ask for the VIN, IMEI or serial in the chat, and check it before you travel.</div>
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">Top 10</div>
-                  <div className="text-sm text-muted-foreground">US City for Theft</div>
+                <CardContent className="pt-6">
+                  <div className="font-bold text-primary mb-1">Match it in person</div>
+                  <div className="text-sm text-muted-foreground">Read the number off the item yourself. It should match what the seller sent.</div>
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">Kia/Hyundai</div>
-                  <div className="text-sm text-muted-foreground">Most Targeted</div>
+                <CardContent className="pt-6">
+                  <div className="font-bold text-primary mb-1">Check the paperwork</div>
+                  <div className="text-sm text-muted-foreground">For a car, the name on the title should match the seller's ID.</div>
                 </CardContent>
               </Card>
             </div>

@@ -9,7 +9,7 @@ export default function VerifyPawnshopsPage() {
     <>
       <PageSEO
         title="Pawn Shop Verification - SafeOrStolen for Pawn Shops"
-        description="Enterprise stolen goods verification for pawn shops. Verify IMEI, VIN, serial numbers instantly. Reduce legal risk, ensure compliance, protect your business."
+        description="Stolen item checks for pawn shops: look up IMEIs, VINs and serial numbers in a few seconds, or run a whole list at once with bulk check."
         keywords="pawn shop verification, stolen goods checker pawn, IMEI verification pawn shop, pawn compliance"
         canonical="https://safeorstolen.com/verify/pawnshops"
       />
@@ -17,11 +17,11 @@ export default function VerifyPawnshopsPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-6">Pawn Shop Verification</h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Looking for pawn shop verification solutions? Visit our dedicated page for enterprise features, compliance tools, and business pricing.
+            Pawn shops can check IMEIs, VINs and serial numbers one at a time or run a list with bulk check. See the pawn shop page for how it works and what it costs.
           </p>
           <Button size="lg" asChild>
             <Link to="/for-pawn-shops">
-              View Pawn Shop Solutions <ArrowRight className="ml-2 h-4 w-4" />
+              Go to the pawn shop page <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

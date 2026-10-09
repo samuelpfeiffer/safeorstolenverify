@@ -91,7 +91,7 @@ export const SEOLandingPageTemplate = ({
   identifierType,
   heroSubtitle,
   heroBadge,
-  stats,
+  stats: _stats,
   whatIsTitle,
   whatIsContent,
   howItWorksSteps,
@@ -241,21 +241,7 @@ export const SEOLandingPageTemplate = ({
           </div>
         </section>
 
-        {/* Stats Section: Oct 8 2026, no longer rendered (page-supplied numbers were unverified). */}
-        {false && stats && stats.length > 0 && (
-          <section className="py-12 px-4 bg-primary/5">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {(stats ?? []).map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        {/* Stats Section removed Oct 8 2026: page-supplied numbers were unverified. The `stats` prop is ignored. */}
 
         {/* Credibility Bar */}
         <SitewideCredibilityBar />

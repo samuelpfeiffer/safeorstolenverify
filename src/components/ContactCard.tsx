@@ -27,7 +27,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
           <Button
             variant="outline"
             className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
-            onClick={() => window.location.href = 'mailto:support@safeorstolen.com?subject=Manual Verification Request'}
+            onClick={() => window.location.href = 'mailto:safeorstolenmail@gmail.com?subject=Manual Verification Request'}
           >
             <Mail className="h-4 w-4 mr-2" />
             Email Support
