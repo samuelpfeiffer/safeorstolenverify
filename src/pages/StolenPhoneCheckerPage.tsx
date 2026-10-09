@@ -9,7 +9,9 @@ import { useState } from 'react';
 import { useNavigate } from '@/lib/router-compat';
 
 /**
- * Stolen Phone Checker Page - Target: "stolen phone checker" (18,100 monthly searches)
+ * Stolen Phone Checker Page - Target: "stolen phone checker"
+ * Oct 8 2026 audit: removed "3 seconds"/"instant" claims, the false "50+ international carriers"
+ * blacklist claim and the "Download App" wording (the app is a free installable web app).
  * This page targets users searching specifically for stolen phone verification
  */
 const StolenPhoneCheckerPage = () => {
@@ -48,7 +50,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "Is SafeOrStolen's phone checker free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime."
+ "text": "You get 2 free checks with a free account, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
  }
  },
  {
@@ -56,7 +58,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "Can I check if an iPhone is stolen using IMEI?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Yes, you can check any iPhone using its IMEI number. Find the IMEI by dialing *#06# or checking Settings > General > About. Enter the 15-digit number in SafeOrStolen for instant verification."
+ "text": "Yes, you can check any iPhone using its IMEI number. Find the IMEI by dialing *#06# or checking Settings > General > About. Enter the 15-digit number in SafeOrStolen and you get the result in a few seconds."
  }
  },
  {
@@ -92,8 +94,8 @@ const StolenPhoneCheckerPage = () => {
  {
  "@type": "HowToStep",
  "position": 3,
- "name": "Get Instant Results",
- "text": "Receive verification results in 3 seconds showing if the phone is safe, stolen, or blacklisted"
+ "name": "Read the Result",
+ "text": "In a few seconds you see the make and model and whether the IMEI is reported stolen, a possible match, or has no report found in the records searched"
  }
  ]
  };
@@ -113,7 +115,7 @@ const StolenPhoneCheckerPage = () => {
  <section className="text-center mb-16">
  <Badge variant="secondary" className="mb-4 text-sm px-4 py-2">
  <Shield className="w-4 h-4 mr-2 inline" />
- Verification Databases • Instant Results • $10/mo Unlimited
+ 2 Free Checks • Results in a Few Seconds • $10/mo Unlimited
  </Badge>
  
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -165,7 +167,7 @@ const StolenPhoneCheckerPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>Results delivered in 3 seconds - verify before you meet the seller</span>
+ <span>Results take a few seconds, so you can check from the listing before you meet the seller</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -185,8 +187,8 @@ const StolenPhoneCheckerPage = () => {
  <Card className="text-center">
  <CardContent className="pt-6">
  <Database className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Carrier Blacklists</h3>
- <p className="text-sm text-muted-foreground">AT&T, Verizon, T-Mobile, Sprint, and 50+ international carriers</p>
+ <h3 className="font-semibold mb-2">Carrier Blacklist (Paid)</h3>
+ <p className="text-sm text-muted-foreground">An optional paid check of the lost/stolen carrier blacklist. Monthly members get up to 20 a month.</p>
  </CardContent>
  </Card>
  <Card className="text-center">
@@ -199,8 +201,8 @@ const StolenPhoneCheckerPage = () => {
  <Card className="text-center">
  <CardContent className="pt-6">
  <AlertTriangle className="w-12 h-12 text-primary mx-auto mb-4" />
- <h3 className="font-semibold mb-2">Theft Registries</h3>
- <p className="text-sm text-muted-foreground">Our stolen-item reports and public web results.</p>
+ <h3 className="font-semibold mb-2">Make and Model</h3>
+ <p className="text-sm text-muted-foreground">The IMEI tells you which phone it belongs to, so you can spot a listing that doesn't match the phone in hand.</p>
  </CardContent>
  </Card>
  </div>
@@ -223,7 +225,7 @@ const StolenPhoneCheckerPage = () => {
  <div className="text-center">
  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
  <h3 className="font-semibold mb-2">Get Results</h3>
- <p className="text-muted-foreground">See if the phone is safe, stolen, or blacklisted in 3 seconds</p>
+ <p className="text-muted-foreground">In a few seconds, see the make and model and whether the IMEI turns up in any theft report</p>
  </div>
  </div>
  </section>
@@ -260,8 +262,8 @@ const StolenPhoneCheckerPage = () => {
  <div className="flex items-start gap-4">
  <Clock className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
- <h3 className="font-semibold mb-2">3-Second Results</h3>
- <p className="text-muted-foreground">Get instant verification before you hand over cash. No waiting, no delays.</p>
+ <h3 className="font-semibold mb-2">Results in a Few Seconds</h3>
+ <p className="text-muted-foreground">Run the check from the parking lot before you hand over cash. Each check is saved to your account with the date.</p>
  </div>
  </div>
  </CardContent>
@@ -272,7 +274,7 @@ const StolenPhoneCheckerPage = () => {
  <Star className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
  <h3 className="font-semibold mb-2">$10/Month Unlimited</h3>
- <p className="text-muted-foreground">Unlimited checks for all item types. Cancel anytime.</p>
+ <p className="text-muted-foreground">Unlimited checks for all item types, with up to 20 carrier blacklist checks a month. Cancel anytime.</p>
  </div>
  </div>
  </CardContent>
@@ -299,13 +301,13 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">Is SafeOrStolen's phone checker free?</h3>
- <p className="text-muted-foreground">SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime.</p>
+ <p className="text-muted-foreground">You get 2 free checks with a free account, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">Can I check if an iPhone is stolen using IMEI?</h3>
- <p className="text-muted-foreground">Yes, you can check any iPhone using its IMEI number. Find the IMEI by dialing *#06# or checking Settings &gt; General &gt; About. Enter the 15-digit number in SafeOrStolen for instant verification.</p>
+ <p className="text-muted-foreground">Yes, you can check any iPhone using its IMEI number. Find the IMEI by dialing *#06# or checking Settings &gt; General &gt; About. Enter the 15-digit number in SafeOrStolen and you get the result in a few seconds.</p>
  </CardContent>
  </Card>
  <Card>
@@ -320,7 +322,7 @@ const StolenPhoneCheckerPage = () => {
  {/* Final CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Ready to Check a Phone?</h2>
- <p className="text-muted-foreground mb-6">Protect yourself from buying stolen phones. Free verification in 3 seconds.</p>
+ <p className="text-muted-foreground mb-6">Check the IMEI before you pay. Your first 2 checks are free and each one takes a few seconds.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg">
  <a href="#top">Check Phone Now - Free</a>
@@ -328,7 +330,7 @@ const StolenPhoneCheckerPage = () => {
  <Button asChild variant="outline" size="lg">
  <Link to="/app">
  <Download className="w-5 h-5 mr-2" />
- Download App
+ Install the Free Web App
  </Link>
  </Button>
  </div>

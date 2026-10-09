@@ -46,7 +46,7 @@ const NICBVINCheckAlternative = () => {
         'Checks more than just vehicles — six item types in one platform',
         'Item-specific sources: a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records for guns',
         'Installable web app — works on mobile, no app store download required',
-        'Results in about 3 seconds'
+        'Results in a few seconds, with every source listed'
       ],
       cons: [
         'Limited free searches',
@@ -59,7 +59,7 @@ const NICBVINCheckAlternative = () => {
     <>
       <PageSEO
         title="NICB VINCheck Alternatives 2026 - Free Multi-Item Check"
-        description="Compare NICB VINCheck alternatives. SafeOrStolen checks phones, bikes, tools - not just cars. Free stolen vehicle verification."
+        description="Looking for an NICB VINCheck alternative? SafeOrStolen decodes the VIN, lists recalls and checks theft reports, and also checks phones, bikes and tools."
         keywords="nicb vincheck alternative, nicb alternative, free vin check, stolen vehicle check, vin lookup alternative"
         canonical="/comparisons/nicb-vincheck-alternative"
         structuredData={comparisonSchema}
@@ -76,15 +76,16 @@ const NICBVINCheckAlternative = () => {
                 Best NICB VINCheck Alternatives
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                NICB VINCheck is great for basic vehicle theft checks, but it has limitations. 
-                Discover alternatives that check more items, work faster, and provide better data.
+                NICB VINCheck is a free tool from the National Insurance Crime Bureau that shows whether
+                participating insurers recorded a VIN as an unrecovered theft or total loss. It only covers
+                vehicles. Here's how SafeOrStolen differs, and why you may want to run both.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/verify">Try Best Alternative Free</Link>
+                  <Link to="/verify">Try 2 Free Checks</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <a href="#alternatives">Compare All Options</a>
+                  <a href="#alternatives">See the Features</a>
                 </Button>
               </div>
             </div>
@@ -110,8 +111,8 @@ const NICBVINCheckAlternative = () => {
                 <Card>
                   <CardContent className="p-4 text-center">
                     <Clock className="w-8 h-8 mx-auto mb-2 text-amber-500" />
-                    <h3 className="font-semibold mb-1">5/Day Limit</h3>
-                    <p className="text-sm text-muted-foreground">Some tools restrict how many checks you can run</p>
+                    <h3 className="font-semibold mb-1">Daily Limits</h3>
+                    <p className="text-sm text-muted-foreground">Some free tools cap how many checks you can run in a day</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -142,7 +143,7 @@ const NICBVINCheckAlternative = () => {
                       <Shield className="w-8 h-8 text-primary" />
                       SafeOrStolen
                     </CardTitle>
-                    <Badge className="bg-green-500 text-white">Best Choice</Badge>
+                    <Badge className="bg-green-500 text-white">Vehicles and more</Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -153,7 +154,7 @@ const NICBVINCheckAlternative = () => {
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold text-green-600 mb-3">Why It's Better</h4>
+                      <h4 className="font-semibold text-green-600 mb-3">What It Adds</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
@@ -169,7 +170,7 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>Results in about 3 seconds</span>
+                          <span>Results in a few seconds</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
@@ -255,7 +256,7 @@ const NICBVINCheckAlternative = () => {
                     </tr>
                     <tr className="bg-muted/50">
                       <td className="p-4 border-b border-border font-medium">Results Speed</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">~3 seconds</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">A few seconds</td>
                     </tr>
                     <tr>
                       <td className="p-4 border-b border-border font-medium">Price</td>
@@ -309,7 +310,7 @@ const NICBVINCheckAlternative = () => {
                     <h3 className="font-semibold mb-2">What can SafeOrStolen check besides vehicles?</h3>
                     <p className="text-muted-foreground">
                       SafeOrStolen verifies phones, vehicles, license plates, electronics, firearms,
-                      and bicycles — six item types in one platform, with results in about 3 seconds.
+                      and bicycles, all from one account, with results in a few seconds.
                     </p>
                   </CardContent>
                 </Card>
@@ -325,9 +326,14 @@ const NICBVINCheckAlternative = () => {
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Does SafeOrStolen include integrated data sources?</h3>
+                    <h3 className="font-semibold mb-2">Does SafeOrStolen search NICB VINCheck?</h3>
+                    <p className="text-muted-foreground mb-3">
+                      No. NICB VINCheck is a separate free tool, and SafeOrStolen does not search it, NCIC or DMV
+                      records. Running both gives you two different sets of records.
+                    </p>
+                    <h3 className="font-semibold mb-2">What does a SafeOrStolen VIN check search?</h3>
                     <p className="text-muted-foreground">
-                      Yes. Every check searches SafeOrStolen's own theft reports and public web results. Arizona VINs and plates
+                      Every check searches SafeOrStolen's own theft reports and public web results. Arizona VINs and plates
                       are also searched against Arizona law-enforcement stolen-vehicle records, bike checks add a national
                       stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and
                       Washington, DC, plus live Ohio law-enforcement records.

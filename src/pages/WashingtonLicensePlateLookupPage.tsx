@@ -1,84 +1,107 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
+/**
+ * Oct 8 2026: rewritten by hand for "washington license plate lookup". Removed false claims: "AI
+ * analysis" as a source, searching Washington DOL registration records, showing the registered owner
+ * or registration status, resolving a plate to a VIN, access to Seattle Police and Washington State
+ * Patrol theft reports, and the all-caps warnings.
+ */
 const WashingtonLicensePlateLookupPage = () => {
  return (
  <>
  <ItemLandingPageTemplate
- title="Washington License Plate Lookup - Check WA Stolen Vehicle by Plate"
- metaDescription="Washington license plate lookup to verify if a vehicle is stolen. Free WA license plate search using SafeOrStolen's reports, public web results, and AI analysis. Check vehicles in Seattle, Spokane, Tacoma."
- h1="Washington License Plate Lookup - Check WA Vehicles"
+ title="Washington License Plate Lookup: Free WA Stolen Car Check | SafeOrStolen"
+ metaDescription="Free Washington license plate lookup: check if a WA plate has been reported stolen, what a plate search can't show you, and what to check before you buy."
+ h1="Washington License Plate Lookup: Is This Car Stolen?"
  itemType="Vehicle"
  searchType="plate"
  searchPlaceholder="Enter the license plate number"
+ dateModified="2026-10-07"
+ quickAnswer={{
+ question: "How do I look up a Washington license plate?",
+ answer: "Enter the plate on SafeOrStolen (safeorstolen.com/washington-license-plate-lookup) and choose Washington. It searches SafeOrStolen's own theft reports and public web results for that plate and tells you in a few seconds whether it's been reported stolen, with every source listed. It never shows the owner's name. Your first 2 checks are free; then check the VIN too.",
+ }}
+ sections={[
+ {
+ heading: "What you can and can't get from a Washington plate",
+ table: {
+ columns: ["What you want to know", "Can a member of the public get it?", "How"],
+ rows: [
+ ["Has the plate been reported stolen on SafeOrStolen or mentioned online?", "Yes", "Run the plate on SafeOrStolen"],
+ ["Year, make, model and open recalls", "Yes, from the VIN", "Run the 17-character VIN on SafeOrStolen"],
+ ["Who owns the car", "No", "Protected by the federal Driver's Privacy Protection Act. Police, insurers and courts can request it from the Washington Department of Licensing for a permitted purpose."],
+ ["Whether the seller's name is on the title", "Yes, in person", "Ask to see the title and compare it to the seller's photo ID"],
+ ],
+ },
+ },
+ {
+ heading: "Before you buy a used car in Washington",
+ list: [
+ "Look at both plates. Washington issues front and rear plates, and they should match each other and the tabs.",
+ "Run the plate, then the VIN, on SafeOrStolen.",
+ "Match the VIN at the base of the windshield, on the driver's door sticker and on the title.",
+ "Make sure the seller's name on the title matches their ID.",
+ "Look underneath: a missing catalytic converter or fresh cut marks on the exhaust are worth asking about.",
+ "Walk away from a price well below similar cars, cash-only pressure, or a seller who won't meet where they live.",
+ ],
+ },
+ ]}
  keywords={[
  'washington license plate lookup',
  'WA license plate search',
  'check washington license plate stolen',
  'washington stolen vehicle plate lookup',
  'verify WA plate number',
- 'washington dol plate lookup',
  'seattle vehicle check',
  'tacoma stolen car check',
  'spokane plate lookup'
  ]}
  content={{
- intro: "Verify Washington vehicles using license plate number. Free Washington license plate lookup using SafeOrStolen's reports, public web results, and AI analysis. Check if cars, trucks, or motorcycles with WA plates are stolen before buying from private sellers or used car lots in Seattle, Spokane, Tacoma, Vancouver, and anywhere in Washington State. Seattle has notable vehicle theft and catalytic converter theft concerns.",
- whatIs: "A Washington license plate lookup is a service that helps verify whether a vehicle registered in Washington has been reported stolen by checking the WA license plate number against SafeOrStolen's theft reports, public web results, and AI analysis. Washington requires both front and rear plates with unique formats managed by the DOL. SafeOrStolen's Washington license plate checker uses its own collected data, public web results, and AI analysis to determine if a vehicle with that WA plate has been reported stolen. Key Washington-specific concerns include: Seattle theft activity, catalytic converter targeting, and Canada border export.",
- howItWorks: "Our Washington license plate lookup system attempts to identify the vehicle's VIN and registration information using public web data. This can help determine the vehicle make/model/year, and Washington registration status. You receive a report showing whether the vehicle is reported stolen based on SafeOrStolen's own reports, public web results, and AI analysis. We cross-reference our own theft reports, public web results, and AI analysis for comprehensive results.",
- whyCheck: "Washington, particularly the Seattle metropolitan area, has notable vehicle theft activity. Washington license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the WA market. Verify the seller is the registered owner with Washington DOL, detect stolen plates, check Washington registration status, and identify WA-specific concerns. Watch for: Seattle theft activity; catalytic converter targeting (Prius, trucks, SUVs); Canada border export operations. Always verify VIN before final purchase.",
+ intro: "Enter a Washington plate and SafeOrStolen searches its own theft reports and public web results, such as listings and posts that mention that plate. You'll know in a few seconds whether it's been reported stolen. It's a quick first check for a car you found in Seattle, Spokane, Tacoma, Vancouver or anywhere else in the state.",
+ whatIs: "A Washington plate lookup on SafeOrStolen answers one question: has this plate been reported stolen in the records SafeOrStolen searches? It does not show the owner's name or the car's registration status, and it doesn't search Washington Department of Licensing records. Because plates can be moved from one car to another, follow it with a VIN check.",
+ howItWorks: "Type the plate and pick Washington. SafeOrStolen searches its own theft reports and public web results and shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source searched is listed, and the check is saved to your account with the date. For the VIN, the check also decodes the year, make and model and lists open safety recalls.",
+ whyCheck: "A stolen car can be taken back by police and returned to its owner, even if you paid a fair price, and you're left trying to get your money from the seller. A plate check before you drive across town costs nothing with your free checks, and a VIN check before you pay closes the gap a swapped plate would leave.",
  benefits: [
- "Quick Washington vehicle screening using WA license plate number",
- "Verify seller is the Washington DOL registered owner before viewing",
- "Check Washington registration status (valid, expired, suspended)",
- "Resolve WA plate number to VIN for full verification",
- "Coverage for Seattle, Spokane, Tacoma, Vancouver, and all Washington cities",
- "Detect catalytic converter theft victims and vehicle stripping",
- "Check cars, trucks, motorcycles from Washington sellers",
- "Free Washington license plate lookup - 2 free searches"
+ "Searches SafeOrStolen theft reports and public web results by plate",
+ "Works for plates from anywhere in Washington",
+ "Follow up with a VIN check: year, make, model and open recalls",
+ "Every source searched is listed in the result",
+ "Each check saved to your account with the date",
+ "2 free checks with a free account, then $0.99 a check or $10 a month"
  ],
  process: [
- "Record the Washington license plate number - WA requires both front and rear plates",
- "Note the vehicle's make, model, color, and year for comparison with Washington DOL records",
- "Enter the WA plate number into our verification tool (select Washington as state)",
- "Review the report showing Washington registered owner, vehicle information, and theft status",
- "Verify the Washington DOL registered owner name matches the seller's Washington ID",
- "Inspect vehicle carefully for signs of theft/stripping - catalytic converter present, interior intact",
- "After initial screening, ALWAYS verify the vehicle's VIN before final purchase"
+ "Write down the plate from both the front and the rear of the car",
+ "Enter it on SafeOrStolen and choose Washington",
+ "Read the result and the list of sources searched",
+ "Get the VIN from the base of the windshield and run it too",
+ "Check that the title's VIN and name match the car and the seller before you pay"
  ],
  faqs: [
  {
  question: "Can I check if a car is stolen in Washington using just the license plate?",
- answer: "Yes, you can do an initial Washington vehicle check using the WA license plate number, but it's NOT sufficient for final verification. Washington license plates can be swapped - a concern given Seattle's vehicle theft activity. Use Washington license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase."
+ answer: "You can start with the plate, but don't stop there. SafeOrStolen (safeorstolen.com/washington-license-plate-lookup) searches its theft reports and public web results for a Washington plate in a few seconds. Plates can be swapped between cars, though, so run the VIN as well before you pay. The VIN stays with the car."
  },
  {
- question: "How do I find a vehicle's Washington license plate number?",
- answer: "Washington requires both front and rear license plates on all vehicles. Simply record all letters and numbers on the WA plate - check both front and rear to ensure they match. Washington plates follow specific formats. If the seller won't provide the Washington plate number or plates don't match front to rear, that's a major red flag, especially for vehicles from the Seattle metro area."
+ question: "Will a Washington plate lookup show the owner's name?",
+ answer: "No. SafeOrStolen never shows owner names or addresses. Under the federal Driver's Privacy Protection Act, the Washington Department of Licensing releases owner details only for permitted purposes such as police work, insurance claims and court cases. If you need the owner after a crash or for a safety concern, give the plate to the police."
  },
  {
  question: "What information can I get from a Washington license plate lookup?",
- answer: "A Washington license plate lookup provides: vehicle make/model/year, VIN, and theft status from SafeOrStolen's own reports, public web results, and AI analysis. This helps you screen Washington vehicles quickly before scheduling a viewing."
+ answer: "From the plate, SafeOrStolen tells you whether it appears in SafeOrStolen's theft reports or in public listings and posts online, and lists every source it searched. From the VIN, it also decodes the year, make and model and lists open safety recalls. It does not show registration status or the owner."
  },
  {
- question: "Is Washington license plate lookup really free?",
- answer: "Yes, SafeOrStolen offers 2 free Washington license plate lookups. Our tool searches both Washington DOL registration AND stolen vehicle databases simultaneously. Additional Washington lookups require a paid plan, but our free tier protects casual buyers in the Seattle metro and greater Washington markets."
+ question: "Is a Washington license plate lookup free?",
+ answer: "Your first 2 checks are free with a free SafeOrStolen account, no credit card. After that, a single check costs $0.99, or you can pay $10 a month for unlimited checks and cancel anytime. A plate check and a VIN check each count as one check."
  },
  {
- question: "Why is Seattle a concern for vehicle theft?",
- answer: "Seattle has notable vehicle theft activity. Contributing factors include: (1) Catalytic converter theft targeting Toyota Prius, trucks, and SUVs, (2) Vehicle theft and stripping activity, (3) Proximity to Canada border for vehicle movement. If buying a used vehicle in the Seattle area, conduct thorough verification including VIN checks and physical inspection for signs of theft or stripping."
+ question: "What if the name on the title doesn't match the seller?",
+ answer: "Ask why before you go any further. Sometimes there's a simple reason, like a spouse or parent's car, and the seller can show paperwork or bring the owner. If they can't explain it, or the title looks altered, walk away. Never buy a car from someone who can't show you a title in their name."
  },
  {
- question: "What if the Washington registered owner doesn't match the seller?",
- answer: "If the Washington DOL registered owner name doesn't match the seller's name, this is a MAJOR red flag in Washington transactions. Given Seattle's vehicle theft concerns, mismatched names may indicate stolen vehicles. ALWAYS ask why names don't match, request documentation, and walk away if explanations seem suspicious."
+ question: "How do I check for catalytic converter theft on a used car?",
+ answer: "Look under the car between the engine and the muffler. A converter that's missing, a section of pipe that's been cut and clamped, or fresh weld marks are signs it was stolen and replaced. A car with a missing converter is often very loud on startup. Ask the seller for the repair receipt."
  },
- {
- question: "What are Washington-specific concerns when buying used vehicles?",
- answer: "Washington has unique vehicle risks: (1) Seattle has notable vehicle theft activity with stolen vehicles entering the used market, (2) Catalytic converter theft is prevalent - check underneath the vehicle, (3) Vehicle stripping means some vehicles are recovered but damaged/incomplete, (4) Canada border can enable movement of stolen vehicles. Always verify the Washington title is clean, check for theft status using SafeOrStolen's reports, public web results, and AI analysis, and physically inspect the vehicle for signs of theft or parts stripping."
- },
- {
- question: "Does SafeOrStolen cover all cities in Washington?",
- answer: "Yes, our Washington license plate lookup covers all cities statewide including Seattle, Spokane, Tacoma, Vancouver, Bellevue, Kent, Everett, Renton, Federal Way, and every other city, town, and county in Washington State. We access statewide Washington DOL databases and theft reports from Seattle Police, Washington State Patrol, and local departments."
- }
  ]
  }}
  />

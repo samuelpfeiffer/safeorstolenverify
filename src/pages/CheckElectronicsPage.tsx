@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Electronics Are Stolen - Verification"
-      metaDescription="Check if cameras, tablets, or game consoles are stolen. Serial number verification using our stolen item reports, public web results, and AI analysis. $0.99/check or $10/month unlimited."
+      title="Check if Electronics Are Stolen - Serial Number Check"
+      metaDescription="Check if a camera, tablet, console or drone is stolen by serial number. SafeOrStolen searches theft reports and public web results. 2 free checks."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[
@@ -14,60 +14,60 @@ const CheckElectronicsPage = () => {
         'verify electronics not stolen'
       ]}
       content={{
-        intro: "Verify if any electronic device is stolen in 3 seconds. Free serial number verification for cameras, tablets, game consoles, smartwatches, drones, TVs, and appliances. Check before buying from Facebook Marketplace, eBay, Craigslist, or pawn shops.",
-        whatIs: "Checking if electronics are stolen means verifying serial numbers against stolen item reports, public web results, and AI analysis. Most valuable electronic devices have unique serial numbers that can be tracked. SafeOrStolen's electronics checker instantly searches our stolen item reports and publicly available information for cameras, tablets, gaming consoles, smartwatches, drones, TVs, appliances, and more. This protects buyers from purchasing reported stolen goods that could be confiscated or lead to complications.",
-        howItWorks: "Enter the device's complete serial number. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, then returns a clear result in about 3 seconds. Compare the identifier with the device, receipt, and seller's documentation before buying.",
-        whyCheck: "Buying stolen electronics has serious legal and financial consequences. (1) Devices can be confiscated by police with zero compensation, (2) You could face criminal charges for possession of stolen property, (3) You lose your entire purchase price with no legal recourse, (4) Pawn shops and repair shops may report you to authorities when you bring in stolen goods, (5) Manufacturers may refuse warranty service on stolen devices, (6) Some devices (tablets, smartwatches) can be remotely locked by original owners. In 2024, over $8 billion worth of electronics were reported stolen in the United States. Cameras, tablets, gaming consoles, drones, and high-end appliances are prime targets. Stolen electronics frequently appear on Facebook Marketplace, Craigslist, OfferUp, pawn shops, and eBay, often sold at 40-70% below market value. Our free electronics checker protects you from this massive underground market.",
+        intro: "Enter the device's serial number on SafeOrStolen and in a few seconds you'll see whether it matches a theft report filed on the site or shows up in public web results such as listings and posts. It works for cameras, tablets, game consoles, smartwatches, drones, TVs and anything else with a serial number. Check before you buy from Facebook Marketplace, eBay, Craigslist or a pawn shop.",
+        whatIs: "Checking if electronics are stolen means looking up the device's serial number in records of reported thefts. SafeOrStolen searches theft reports that owners file on the site and public web results that mention the serial. The result says reported stolen, possible match, or no report found in the records searched, and lists every source. SafeOrStolen does not search pawn databases, manufacturer records or police systems like NCIC.",
+        howItWorks: "Find the full serial number on the device, type or scan it into SafeOrStolen, and read the result a few seconds later. Then compare the serial on the device with the one on the box, receipt or the seller's documents. Your check is saved to your account with the date.",
+        whyCheck: "If you buy a stolen device, police can take it back and return it to its owner, and you're usually left chasing the seller for your money. Some devices, like tablets and smartwatches, can also be locked remotely by the original owner's account. Cameras, tablets, game consoles and drones are easy to resell, so they turn up on marketplaces and at pawn shops. A quick serial check, plus a look at the warning signs below, catches many bad deals before money changes hands.",
         benefits: [
-          "Check cameras - Canon, Nikon, Sony, Fujifilm, Panasonic DSLRs and mirrorless",
-          "Verify tablets - iPad, Samsung Galaxy Tab, Microsoft Surface",
-          "Check game consoles - PlayStation 5, Xbox Series X, Nintendo Switch",
-          "Verify smartwatches - Apple Watch, Samsung Galaxy Watch, Garmin",
-          "Check drones - DJI, Parrot, Autel, Skydio",
-          "Verify appliances - washers, dryers, refrigerators, TVs",
-          "Search stolen-property registries and pawn shop databases",
-          "Instant electronics serial number check — $0.99/check or $10/month unlimited"
+          "Check cameras: Canon, Nikon, Sony, Fujifilm, Panasonic DSLRs and mirrorless bodies",
+          "Check tablets: iPad, Samsung Galaxy Tab, Microsoft Surface",
+          "Check game consoles: PlayStation 5, Xbox Series X, Nintendo Switch",
+          "Check smartwatches: Apple Watch, Samsung Galaxy Watch, Garmin",
+          "Check drones: DJI, Autel, Skydio",
+          "Check TVs and appliances by the serial on the back label",
+          "Every check lists the sources searched and is saved to your account with the date",
+          "2 free checks, then $0.99 a check or $10 a month unlimited"
         ],
         process: [
-          "Locate the serial number: Usually on the back, bottom, or inside battery compartment. Check product manual for exact location. For cameras: bottom plate. For tablets: back panel or Settings. For game consoles: back or bottom label.",
-          "Record the complete serial number including all letters, numbers, and symbols - even one wrong character can cause false results",
-          "Take photos of the serial number label and the device for your records",
-          "Enter the serial number into our verification tool at SafeOrStolen.com/verify",
-          "Review the report showing whether the device has been reported stolen, pawned, or has been reported stolen",
-          "If CLEAN, proceed with purchase. If STOLEN or PAWNED (without seller being the original pawner), walk away and report to authorities"
+          "Find the serial number. Cameras: on the bottom plate near the tripod mount. Tablets: on the back panel or in Settings > About. Game consoles: on the back or bottom label, or in the system settings. Drones: in the battery bay or on the body label.",
+          "Write down every character exactly. One wrong letter or number will search for a different device.",
+          "Take a photo of the serial label and the device for your records.",
+          "Enter the serial at safeorstolen.com/verify, or scan its barcode with the SafeOrStolen web app.",
+          "Read the result: reported stolen, possible match, or no report found in the records searched.",
+          "If it's reported stolen, don't buy it. If it's clean, still check that the serial matches the box or receipt before you pay."
         ],
         faqs: [
           {
             question: "What types of electronics can I check?",
-            answer: "You can check virtually any electronic device with a serial number including: (1) Cameras - DSLR, mirrorless, point-and-shoot (Canon, Nikon, Sony, Fujifilm), (2) Tablets - iPad, Samsung Galaxy Tab, Microsoft Surface, (3) Game consoles - PlayStation 5/4, Xbox Series X/One, Nintendo Switch, (4) Smartwatches - Apple Watch, Samsung Galaxy Watch, Garmin, Fitbit, (5) Drones - DJI, Parrot, Autel, (6) TVs - Samsung, LG, Sony, (7) Appliances - refrigerators, washers, dryers, (8) Audio equipment - headphones, speakers, turntables, (9) Smart home devices - Ring, Nest, Alexa. If it has a serial number, we can check it."
+            answer: "Any device with a serial number: cameras, lenses, tablets, game consoles, smartwatches, drones, TVs, audio gear, smart home devices and appliances. SafeOrStolen (safeorstolen.com/check-electronics) searches its own theft reports and public web results for that serial. Phones are best checked by IMEI, and laptops by serial on their own pages."
           },
           {
             question: "How do I find the serial number on electronics?",
-            answer: "Serial number locations vary by device type: (1) Cameras - bottom of camera body near tripod mount, (2) Tablets - back panel, or Settings > About > Serial Number, (3) Game consoles - back/bottom sticker, or Settings menu, (4) Smartwatches - Settings > About, or case back, (5) Drones - battery compartment or under propeller guards, (6) Appliances - back panel, inside door, or under lid, (7) TVs - back panel near power cord. If you can't find it, check: original box, receipt, warranty card, or manufacturer's website for location guide. No serial number or removed serial number = major red flag."
+            answer: "Cameras have it on the bottom near the tripod mount. Tablets show it on the back or in Settings > About. Game consoles have a label on the back or bottom and list it in the system settings. Drones usually have it in the battery bay. TVs and appliances have it on a label on the back or inside the door. A missing or scratched-off serial is a warning sign."
           },
           {
-            question: "Is the electronics serial number check really free?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $10/month unlimited. All item types are included. Cancel anytime."
+            question: "Is the electronics serial number check free?",
+            answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that it's $0.99 for a single check or $10 a month for unlimited checks, which you can cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
           },
           {
-            question: "What should I do if the electronics check shows the device is stolen?",
-            answer: "If our check shows the device is reported stolen: (1) Do NOT buy it under any circumstances, (2) Walk away immediately without confronting the seller (they may not know it's stolen or could be dangerous), (3) Screenshot the listing and record seller information, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, eBay), (5) File an anonymous tip with local police including the listing URL, serial number, and seller details, (6) If you already purchased it, contact police immediately - you're likely a fraud victim rather than a criminal. Turn over the device to police. You'll probably lose your money but avoid criminal charges."
+            question: "What should I do if the check shows the device is reported stolen?",
+            answer: "Don't buy it, and don't confront the seller. Take screenshots of the listing and note the seller's details. Report the listing to the platform, then call your local police non-emergency line with the serial number and listing. If you already bought it, contact police and keep your payment records; your bank or payment app may also be able to help."
           },
           {
-            question: "Why should I check pawn shop databases?",
-            answer: "Checking pawn shop databases (LeadsOnline) is crucial because: (1) Thieves frequently pawn stolen electronics for immediate cash, (2) If a device appears in pawn shop records with a different person's name/ID, it's likely stolen, (3) Pawn shops are required by law to hold items for 30+ days before reselling to allow police to check for stolen goods, (4) Items bypassing this hold period and sold on marketplaces are suspicious. Our checker searches LeadsOnline to see if the device has been pawned, when, and by whom. If pawned recently and seller isn't the original pawner, it's a major red flag."
+            question: "Does SafeOrStolen search pawn shop databases?",
+            answer: "No. SafeOrStolen searches its own theft reports and public web results for electronics. It does not search pawn shop reporting systems, insurer records, manufacturer databases or NCIC. Those are only open to police or the businesses that use them. If you're worried an item was pawned, ask local police."
           },
           {
             question: "Can serial numbers on electronics be removed or faked?",
-            answer: "Yes, sophisticated thieves sometimes remove, file off, or replace serial numbers on stolen electronics. This is a federal crime (18 U.S. Code § 2320) and a MAJOR red flag. Signs of tampering: (1) Serial number area looks scratched, ground, polished, or re-engraved, (2) Serial number sticker is obviously replaced, peeling, or doesn't match device quality, (3) Serial number is partially illegible or incomplete, (4) Seller can't provide serial number or won't let you examine it closely. If you suspect tampering, walk away immediately and report to police. Our tool also validates serial number formats against manufacturer specifications to detect fakes."
+            answer: "Yes. Thieves sometimes scratch off, grind down or replace serial labels. Look for a serial area that's scuffed or polished, a sticker that's peeling or looks newer than the device, or a number that doesn't match the one in the device's settings menu. If anything looks tampered with, walk away."
           },
           {
             question: "How long does an electronics serial number check take?",
-            answer: "Electronics checks usually take about 3 seconds. Enter the complete serial number to check SafeOrStolen reports, public web results, and AI analysis. The result reflects only the sources available at that time."
+            answer: "A few seconds. SafeOrStolen searches its theft reports and public web results, then shows reported stolen, possible match, or no report found in the records searched, with every source listed. The result reflects the records available at that moment, so check again close to the sale if time passes."
           },
           {
             question: "What are red flags when buying used electronics?",
-            answer: "Major red flags for stolen electronics: (1) Price is 50-70% below market value (a $2,000 camera for $600), (2) Seller won't provide serial number or won't let you check it, (3) Serial number area looks tampered with or sticker is replaced, (4) Seller has multiple high-value items for sale (cameras, tablets, game consoles), (5) No original box, receipt, manuals, or accessories, (6) Meeting in public parking lot late at night (not their home), (7) Seller is in a rush and won't answer basic questions about the device's history, (8) Device has recent damage suggesting forced entry or theft (scratches, cracks), (9) Asking for cash only and no electronic payment. If multiple red flags exist, walk away - it's almost certainly stolen."
+            answer: "A price far below similar listings, a seller who won't share the serial, a serial label that looks tampered with, several of the same high-value item for sale at once, no box or receipt, a seller in a hurry who dodges questions about where the device came from, and cash only. Two or three of these together is reason to walk away."
           }
         ]
       }}

@@ -47,11 +47,11 @@ export const ALL_STATES: StateData[] = [
     capital: 'Phoenix',
     majorCities: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Scottsdale'],
     hasTheftDatabase: true,
-    theftDatabaseName: 'TheftAZ',
-    theftDatabaseUrl: 'https://theftaz.azag.gov',
+    theftDatabaseName: 'Arizona law-enforcement stolen-vehicle records',
+    theftDatabaseUrl: null,
     slug: 'arizona-license-plate-lookup',
     neighboringStates: ['california', 'nevada', 'utah', 'colorado', 'new-mexico'],
-    theftNote: 'Arizona has one of the highest vehicle theft rates due to proximity to California and the Mexico border. TheftAZ tracks stolen property statewide.'
+    theftNote: 'Phoenix-area private sales move fast, and cars cross in from California and New Mexico. SafeOrStolen checks Arizona plates and VINs against Arizona law-enforcement stolen-vehicle records, updated twice a day, as well as its own theft reports.'
   },
   {
     name: 'Arkansas',
@@ -75,7 +75,7 @@ export const ALL_STATES: StateData[] = [
     theftDatabaseUrl: null,
     slug: 'california-license-plate-lookup',
     neighboringStates: ['oregon', 'nevada', 'arizona'],
-    theftNote: 'California has the highest vehicle theft count in the US. Los Angeles, San Francisco Bay Area, and Central Valley are hotspots.'
+    theftNote: 'California has a huge private used-car market, and Los Angeles, the Bay Area and the Central Valley see a lot of vehicle theft.'
   },
   {
     name: 'Colorado',
@@ -171,7 +171,7 @@ export const ALL_STATES: StateData[] = [
     theftDatabaseUrl: null,
     slug: 'illinois-license-plate-lookup',
     neighboringStates: ['wisconsin', 'iowa', 'missouri', 'kentucky', 'indiana'],
-    theftNote: 'Chicago has one of the highest vehicle theft rates in the Midwest. Cook County and surrounding areas are hotspots.'
+    theftNote: 'Chicago and the rest of Cook County see the most vehicle theft in Illinois, and many private sales happen there.'
   },
   {
     name: 'Indiana',
@@ -243,7 +243,7 @@ export const ALL_STATES: StateData[] = [
     theftDatabaseUrl: null,
     slug: 'maine-license-plate-lookup',
     neighboringStates: ['new-hampshire'],
-    theftNote: 'Maine has low vehicle theft rates but verification is still recommended for peace of mind.'
+    theftNote: 'Maine sees less vehicle theft than most states, but a stolen car can still be taken back from the buyer, so a quick check before paying is worth it.'
   },
   {
     name: 'Maryland',
@@ -279,7 +279,7 @@ export const ALL_STATES: StateData[] = [
     theftDatabaseUrl: null,
     slug: 'michigan-license-plate-lookup',
     neighboringStates: ['ohio', 'indiana', 'wisconsin'],
-    theftNote: 'Detroit has one of the highest vehicle theft rates in the country. Wayne County is a major hotspot.'
+    theftNote: 'Detroit and the rest of Wayne County see the most vehicle theft in Michigan.'
   },
   {
     name: 'Minnesota',
@@ -555,7 +555,7 @@ export const ALL_STATES: StateData[] = [
     theftDatabaseUrl: null,
     slug: 'vermont-license-plate-lookup',
     neighboringStates: ['new-hampshire', 'massachusetts', 'new-york'],
-    theftNote: 'Vermont has very low vehicle theft rates but verification is still recommended for peace of mind.'
+    theftNote: 'Vermont sees little vehicle theft, but cars bought from out-of-state sellers or online listings are still worth a quick check before you pay.'
   },
   {
     name: 'Virginia',
@@ -579,7 +579,7 @@ export const ALL_STATES: StateData[] = [
     theftDatabaseUrl: null,
     slug: 'washington-license-plate-lookup',
     neighboringStates: ['oregon', 'idaho'],
-    theftNote: 'Seattle and Tacoma have very high vehicle theft rates. Washington consistently ranks among top states for auto theft.'
+    theftNote: 'Seattle and Tacoma see the most vehicle theft in Washington, and most private used-car sales in the state happen around Puget Sound.'
   },
   {
     name: 'West Virginia',

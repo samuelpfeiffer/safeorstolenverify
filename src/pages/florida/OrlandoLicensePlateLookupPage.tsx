@@ -1,41 +1,53 @@
+/**
+ * Oct 8 2026: copy rewritten by hand for "orlando license plate lookup". Removed: "AI analysis" as a
+ * source, "3 seconds"/"instant", the tourist count, "thousands of vehicle thefts", claims that the check
+ * searches title, total-loss, rental and fleet databases or "databases across all I-4 cities", and the
+ * unsupported claim that cars stolen in Orlando show up in Tampa "within hours".
+ */
 import { Link } from '@/lib/router-compat';
 import { CheckCircle, ArrowRight, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 
+const faqs = [
+ {
+ question: "How do I check if a car is stolen in Orlando?",
+ answer: "Enter the Florida plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/orlando-license-plate-lookup). It searches SafeOrStolen's own theft reports and public web results, such as listings and posts that mention that plate or VIN, and shows the answer in a few seconds with every source listed. Your first 2 checks are free.",
+ },
+ {
+ question: "Will an Orlando plate lookup show who owns the car?",
+ answer: "No. SafeOrStolen never shows owner names or addresses. In Florida, owner details from a plate are protected by the federal Driver's Privacy Protection Act and go to police, insurers and courts for permitted purposes. If a car hit yours or you have a safety concern, give the plate to the Orlando Police Department or the Orange County Sheriff's Office.",
+ },
+ {
+ question: "How can I tell if a used car in Orlando is a former rental?",
+ answer: "Ask the seller directly and look at the paperwork: a former rental often shows a rental or fleet company as a previous owner on a vehicle history report. SafeOrStolen doesn't search rental or fleet records. Use it to check for theft reports, and use a paid history report if rental use matters to you.",
+ },
+ {
+ question: "Is a license plate lookup free in Orlando?",
+ answer: "Yes, for your first 2 checks. Create a free SafeOrStolen account, no credit card, and you can check 2 plates or VINs. After that, a single check is $0.99, or $10 a month gets you unlimited checks. You can cancel the monthly plan anytime.",
+ },
+ {
+ question: "Should I check the plate or the VIN?",
+ answer: "Both. A plate can be taken off one car and put on another, but the VIN stays with the vehicle. Check the plate first, then find the VIN at the bottom of the windshield on the driver's side and on the driver's door sticker. A VIN check also decodes the year, make and model and lists open safety recalls.",
+ },
+];
+
 const OrlandoLicensePlateLookupPage = () => {
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": [
- {
+ "mainEntity": faqs.map((f) => ({
  "@type": "Question",
- "name": "How do I check if a car is stolen in Orlando?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the Florida license plate number or VIN on SafeOrStolen. We check our reported stolen items, public web results, and apply AI analysis. Free results in 3 seconds." }
- },
- {
- "@type": "Question",
- "name": "Why are rental car scams common in Orlando?",
- "acceptedAnswer": { "@type": "Answer", "text": "Orlando is the most-visited city in the US with 74+ million tourists annually. The massive rental car market creates opportunities for scammers who sell returned/damaged rental vehicles, use rental VINs for cloning, or sell vehicles with undisclosed rental histories. Always verify before buying a used car in Central Florida." }
- },
- {
- "@type": "Question",
- "name": "What is the I-4 corridor and why does it matter for vehicle theft?",
- "acceptedAnswer": { "@type": "Answer", "text": "Interstate 4 connects Orlando to Tampa and Daytona Beach, creating a major theft corridor. Vehicles stolen in Orlando often appear for sale in Tampa (and vice versa) within hours. SafeOrStolen checks databases across all I-4 corridor cities simultaneously." }
- },
- {
- "@type": "Question",
- "name": "Is a license plate lookup free in Orlando?",
-  "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen offers 2 free license plate lookups using its stolen-item reports, public web results, and AI analysis. After 2 free checks, each check is $0.99 or unlimited checks are $10 per month." }
- }
- ]
+ "name": f.question,
+ "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+ })),
  };
 
  return (
  <>
  <PageSEO
- title="Free Orlando FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Orlando, Florida license plate lookup. Check if vehicles in Orange County are reported stolen. We search public web results and our reported stolen items. Instant results."
+ title="Orlando License Plate Lookup: Free Stolen Car Check | SafeOrStolen"
+ description="Free Orlando license plate lookup: check if a car in Orange County has been reported stolen before you buy. 2 free checks, results in a few seconds, no owner data."
  canonical="/florida/orlando-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -47,7 +59,7 @@ const OrlandoLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Orlando License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Verify any vehicle in Orlando, Florida against our reported stolen items, public web results, and AI analysis. Free instant results in 3 seconds.
+ Enter a Florida plate or VIN and SafeOrStolen searches its own theft reports and public web results for it. You'll know in a few seconds whether it's been reported stolen.
  </p>
  </div>
  </header>
@@ -56,7 +68,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <div className="max-w-xl mx-auto text-center">
  <Link to="/verify?type=plate&state=FL">
  <Button size="lg" className="text-lg px-8 py-6 font-bold">
- Check Orlando Vehicle Now <ArrowRight className="ml-2 h-5 w-5" />
+ Check an Orlando plate <ArrowRight className="ml-2 h-5 w-5" />
  </Button>
  </Link>
  <p className="text-muted-foreground text-sm mt-3">2 free checks · No credit card</p>
@@ -65,25 +77,25 @@ const OrlandoLicensePlateLookupPage = () => {
 
  <article className="max-w-3xl mx-auto px-4 pb-16">
  <section className="mb-10">
- <h2 className="text-2xl font-bold text-foreground mb-4">Why Check Vehicles in Orlando?</h2>
+ <h2 className="text-2xl font-bold text-foreground mb-4">Why check a car before you buy in Orlando</h2>
  <p className="text-muted-foreground leading-relaxed mb-4">
- Orlando is the most-visited city in the United States, welcoming over 74 million tourists annually. This massive influx creates one of the country's largest rental car markets — and with it comes unique vehicle fraud risks. Scammers frequently sell former rental vehicles with undisclosed damage histories, use rental VINs for cloning operations, or list vehicles that are still technically owned by rental companies.
+ Orlando has a huge rental fleet, and a lot of those cars end up on the used market. That's not a problem by itself, but it means you should ask how the car was used and look at the paperwork, not just the paint.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
- The I-4 corridor connecting Orlando to Tampa and Daytona Beach is a well-known vehicle theft route. Cars stolen in theme park parking lots, hotel valet areas, and apartment complexes along International Drive frequently appear for sale in Tampa or Daytona within hours. The Orange County Sheriff's Office and Orlando Police Department report thousands of vehicle thefts each year, with catalytic converter theft and Hyundai/Kia theft adding to the problem.
+ I-4 runs from Tampa through Orlando to Daytona Beach, so a car listed in Kissimmee or Winter Park may have come from anywhere along it. Meet at the seller's home or a police station parking lot, ask for the title before you look at the car, and make sure the name on it matches the seller's ID.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- Central Florida's used car market is enormous — fueled by the region's rapid population growth and tourist traffic. Whether you're buying from a private seller in Kissimmee, a dealership on Colonial Drive, or a Facebook Marketplace listing in Winter Park, verifying the vehicle's license plate against stolen databases is the minimum due diligence before handing over cash.
+ Then check the plate and the VIN. Look at the VIN plate at the base of the windshield: scratches, loose rivets or a sticker over it are reasons to walk away.
  </p>
  </section>
 
  <section className="mb-10">
- <h2 className="text-2xl font-bold text-foreground mb-4">What Our Orlando Lookup Checks</h2>
+ <h2 className="text-2xl font-bold text-foreground mb-4">What the Orlando lookup searches</h2>
  <ul className="space-y-3">
  {[
- { name: 'Vehicle Theft & Title Databases', desc: 'Theft and total loss records for vehicles nationwide' },
- { name: 'Stolen Property Reports', desc: 'reported stolen items' },
- { name: 'Rental & Fleet Records', desc: 'Former rental vehicle indicators and fleet disposal data' },
+ { name: 'SafeOrStolen theft reports', desc: 'Thefts that owners have reported on SafeOrStolen' },
+ { name: 'Public web results', desc: 'Listings and posts online that mention the plate or VIN' },
+ { name: 'VIN decode and recalls', desc: 'When you enter a VIN: year, make, model and open safety recalls' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -91,27 +103,20 @@ const OrlandoLicensePlateLookupPage = () => {
  </li>
  ))}
  </ul>
+ <p className="text-muted-foreground text-sm mt-4">
+ It does not search FHSMV registration records, NCIC, or insurer databases, and it never shows owner names.
+ </p>
  </section>
 
  <section className="mb-10">
  <h2 className="text-2xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
  <div className="space-y-3">
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Orlando?</summary>
- <p className="text-muted-foreground mt-2">Enter the Florida license plate number or VIN on SafeOrStolen. We check our reported stolen items, public web results, and apply AI analysis. Free results in 3 seconds.</p>
+ {faqs.map((f) => (
+ <details key={f.question} className="bg-card/50 border border-border rounded-xl p-4">
+ <summary className="font-semibold text-foreground cursor-pointer">{f.question}</summary>
+ <p className="text-muted-foreground mt-2">{f.answer}</p>
  </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Why are rental car scams common in Orlando?</summary>
- <p className="text-muted-foreground mt-2">Orlando is the most-visited city in the US with 74+ million tourists annually. The massive rental car market creates opportunities for scammers who sell returned/damaged rental vehicles, use rental VINs for cloning, or sell vehicles with undisclosed rental histories.</p>
- </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">What is the I-4 corridor and why does it matter for vehicle theft?</summary>
- <p className="text-muted-foreground mt-2">Interstate 4 connects Orlando to Tampa and Daytona Beach, creating a major theft corridor. Vehicles stolen in Orlando often appear for sale in Tampa within hours. SafeOrStolen checks databases across all I-4 corridor cities simultaneously.</p>
- </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Is a license plate lookup free in Orlando?</summary>
-  <p className="text-muted-foreground mt-2">Yes. SafeOrStolen offers 2 free license plate lookups using its stolen-item reports, public web results, and AI analysis. After 2 free checks, each check is $0.99 or unlimited checks are $10 per month.</p>
- </details>
+ ))}
  </div>
  </section>
 

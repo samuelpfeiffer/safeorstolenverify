@@ -20,7 +20,7 @@ const BestStolenItemCheckers2026 = () => {
       "url": "https://safeorstolen.com"
     },
     "datePublished": "2026-01-01",
-    "dateModified": "2026-01-31"
+    "dateModified": "2026-10-07"
   };
 
   const tools = [
@@ -53,7 +53,7 @@ const BestStolenItemCheckers2026 = () => {
       rank: 4,
       name: 'NICB VINCheck',
       url: '',
-      pros: ['Official insurance data', 'Free unlimited', 'Trusted source'],
+      pros: ['Run by an insurance industry group', 'Free to use', 'Good second opinion on US vehicles'],
       cons: ['Vehicles only', 'US theft claims only', 'No other item types'],
       categories: ['vehicles']
     },
@@ -118,7 +118,7 @@ const BestStolenItemCheckers2026 = () => {
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Award className="h-4 w-4" />
-            Updated January 2026
+            Updated October 2026
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -243,7 +243,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Checks IMEI against global databases plus offers other item types in one app.
+                  <strong>Winner: SafeOrStolen</strong> — Shows the make and model from the IMEI, searches SafeOrStolen theft reports and public web results, and offers a paid carrier blacklist check. The same account also checks cars, bikes and guns.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: IMEI.info, Swappa IMEI Check
@@ -258,7 +258,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — VIN check plus the ability to verify the phone the seller is using.
+                  <strong>Winner: SafeOrStolen</strong> — Decodes the VIN, lists open recalls, and searches SafeOrStolen theft reports and public web results. Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: NICB VINCheck, VinCheck.info
@@ -273,7 +273,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: Bike Index</strong> — A dedicated bike registry you can search yourself for free. SafeOrStolen is a close second for multi-category needs, and its bike check searches a national stolen-bicycle registry along with its own theft reports.
+                  <strong>Winner: Bike Index</strong> — A dedicated bike registry you can search yourself for free. SafeOrStolen is a good pick if you also check other kinds of items: its bike check covers a national stolen-bicycle registry, SafeOrStolen theft reports and public web results in one search.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: SafeOrStolen, BikeRegister
@@ -288,7 +288,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Only platform that checks laptops, gaming consoles, cameras in addition to phones.
+                  <strong>Winner: SafeOrStolen</strong> — Takes serial numbers for laptops, game consoles, cameras and tools as well as phone IMEIs, and searches SafeOrStolen theft reports and public web results for them.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runner-up: Ask Your Carrier (free)
@@ -303,10 +303,10 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Consumer-friendly firearm check plus all other item types.
+                  <strong>Winner: SafeOrStolen</strong> — Searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Runners-up:  (firearms only)
+                  Runner-up: HotGunz (firearms only, user-submitted)
                 </p>
               </CardContent>
             </Card>
@@ -332,14 +332,14 @@ const BestStolenItemCheckers2026 = () => {
         <section className="text-center bg-primary/5 rounded-2xl p-12">
           <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of smart buyers who verify before purchasing. 2 free searches — no credit card required.
+            Check the serial, IMEI or VIN before you pay. Your first 2 checks are free with a free account, no credit card.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
               <Link to="/verify">Start Free Verification</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/app">Get Mobile App</Link>
+              <Link to="/app">Install the Free Web App</Link>
             </Button>
           </div>
         </section>

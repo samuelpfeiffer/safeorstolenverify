@@ -3,9 +3,9 @@ import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
 /**
  * Arizona plate lookup — rewritten Sept 28 2026; Oct 7 2026 it also absorbs /arizona-vin-lookup
- * (now a 301 here), since Google sent Arizona VIN searches to this page anyway. Arizona plate checks search TheftAZ
- * (Arizona AG, law enforcement stolen-vehicle records) by plate. No MVD/registration,
- * owner lookup, NICB, or native-app claims: we do not query those.
+ * (now a 301 here), since Google sent Arizona VIN searches to this page anyway. Arizona plate checks search
+ * Arizona law-enforcement stolen-vehicle records by plate. Oct 8 2026: supplier names removed from the copy.
+ * No MVD/registration, owner lookup, nationwide-database, or native-app claims: we do not query those.
  */
 const ArizonaLicensePlateLookupPage = () => {
  return (
@@ -20,7 +20,7 @@ const ArizonaLicensePlateLookupPage = () => {
  dateModified="2026-10-07"
  quickAnswer={{
  question: "How do I check if a car is stolen in Arizona?",
- answer: "Enter the plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup). SafeOrStolen searches TheftAZ, the Arizona Attorney General's database of vehicles reported stolen to Arizona law enforcement, which is updated twice a day, and shows the result in seconds. The first 2 checks are free. Run both the plate and the VIN, because plates can be moved between cars, and never buy a car whose VIN doesn't match the title.",
+ answer: "Enter the plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup). SafeOrStolen searches Arizona law-enforcement stolen-vehicle records, updated twice a day, along with its own theft reports and public web results, and shows the result in a few seconds. The first 2 checks are free. Run both the plate and the VIN, because plates can be moved between cars, and never buy a car whose VIN doesn't match the title.",
  }}
  sections={[
  {
@@ -32,7 +32,7 @@ const ArizonaLicensePlateLookupPage = () => {
  ["Year, make, model and safety recalls", "Yes, from the VIN", "Run the VIN on SafeOrStolen"],
  ["Who owns the car", "No", "Protected by the federal Driver's Privacy Protection Act. Police, insurers and courts can request it from Arizona MVD for a permitted purpose."],
  ["Your own registration status", "Yes, for your own vehicle", "Through AZ MVD Now, Arizona MVD's online service"],
- ["Cars stolen in other states", "Partly", "TheftAZ covers Arizona reports. Ask the seller for the title and match the VIN on the dashboard, door jamb and title."],
+ ["Cars stolen in other states", "Partly", "The Arizona records cover thefts reported in Arizona. SafeOrStolen's own theft reports and web results aren't limited to Arizona. Ask the seller for the title and match the VIN on the dashboard, door jamb and title."],
  ],
  },
  },
@@ -64,24 +64,24 @@ const ArizonaLicensePlateLookupPage = () => {
  'az license plate search',
  'arizona stolen vehicle check',
  'check arizona license plate stolen',
- 'theftaz plate search',
+ 'arizona stolen plate search',
  'phoenix stolen car check',
  ]}
  content={{
- intro: "Type an Arizona plate and SafeOrStolen searches TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by Arizona law enforcement agencies. It's a fast first check when you're looking at a car in Phoenix, Tucson, Mesa, or anywhere in the state.",
+ intro: "Type an Arizona plate and SafeOrStolen searches Arizona law-enforcement stolen-vehicle records, plus its own theft reports and public web results. It's a fast first check when you're looking at a car in Phoenix, Tucson, Mesa, or anywhere in the state.",
 
  whatIs: "An Arizona plate lookup on SafeOrStolen answers one question: has this plate been reported stolen to participating Arizona law enforcement agencies? It does not show the owner's name or registration details. Plates can be swapped between cars, so once you're serious about a vehicle, check its VIN too.",
 
- howItWorks: "Enter the plate. We search TheftAZ, which is updated twice a day, and show you whether a stolen-vehicle record exists for that Arizona plate. For the full picture, run the car's 17-character VIN: we search TheftAZ again by VIN, check that the VIN is real, decode the year, make, and model through the U.S. government, list safety recalls, and walk you through the Buyer's Check.",
+ howItWorks: "Enter the plate. We search the Arizona law-enforcement stolen-vehicle records, which are updated twice a day, and show you whether a stolen-vehicle record exists for that Arizona plate. For the full picture, run the car's 17-character VIN: we search the same Arizona records by VIN, decode the year, make and model, list open safety recalls, and walk you through the Buyer's Check.",
 
- whyCheck: "Stolen cars are often sold fast and cheap, and a buyer who unknowingly buys one can lose both the car and the money. A plate check takes seconds and can stop a bad deal before you drive across town. Because a plate can be moved from one car to another, a clean plate result should always be followed by a VIN check.",
+ whyCheck: "Stolen cars are often sold fast and cheap, and a buyer who unknowingly buys one can lose both the car and the money. A plate check takes a few seconds and can stop a bad deal before you drive across town. Because a plate can be moved from one car to another, a clean plate result should always be followed by a VIN check.",
 
  benefits: [
- "Searches Arizona police stolen-vehicle records (TheftAZ) by plate",
+ "Searches Arizona law-enforcement stolen-vehicle records by plate",
  "Works for plates anywhere in Arizona",
  "Follow up with a full VIN check in the same place",
- "VIN decode and safety recalls from the U.S. government",
- "Guided Buyer's Check, including the free nationwide NICB check",
+ "VIN decode: year, make, model and open safety recalls",
+ "Guided Buyer's Check: title, VIN plates and seller ID",
  "Save a Proof of Clean Purchase when every step checks out",
  "For buyers and for sellers proving a car is clean",
  "2 free checks with a free account",
@@ -90,7 +90,7 @@ const ArizonaLicensePlateLookupPage = () => {
  process: [
  "Write down the Arizona plate number",
  "Enter it into SafeOrStolen's verification tool",
- "See whether TheftAZ has a stolen-vehicle record for it",
+ "See whether the Arizona records have a stolen-vehicle report for it",
  "Get the VIN from the dashboard and run a VIN check",
  "Finish the Buyer's Check before you pay",
  ],
@@ -98,19 +98,19 @@ const ArizonaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "Can I check if a car is stolen in Arizona by its plate?",
- answer: "Yes. SafeOrStolen searches Arizona plates against TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by Arizona law enforcement agencies.",
+ answer: "Yes. SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup) searches Arizona plates against Arizona law-enforcement stolen-vehicle records, which are updated twice a day, plus SafeOrStolen's own theft reports. You get one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. The first 2 checks are free.",
  },
  {
  question: "Will a plate lookup show the owner's name or address?",
- answer: "No. SafeOrStolen doesn't provide owner or registration information. It only checks whether the plate has been reported stolen.",
+ answer: "No. SafeOrStolen never shows owner names, addresses or registration details. Arizona follows the federal Driver's Privacy Protection Act, so that information goes only to police, insurers and courts for permitted purposes. A SafeOrStolen plate check only tells you whether the plate has been reported stolen.",
  },
  {
  question: "Why should I run the VIN too?",
- answer: "Plates can be swapped between vehicles, and the VIN stays with the car. A VIN check also searches TheftAZ, confirms the VIN is real, shows the year, make, and model, and lists safety recalls.",
+ answer: "Plates can be swapped between vehicles, but the VIN stays with the car. A SafeOrStolen VIN check searches the same Arizona law-enforcement records by VIN, decodes the year, make and model, and lists open safety recalls. If the decoded model doesn't match the car in front of you, that's a reason to walk away.",
  },
  {
  question: "Does this cover cars stolen outside Arizona?",
- answer: "TheftAZ covers thefts reported to participating Arizona agencies. For a nationwide check, run the free NICB VINCheck. SafeOrStolen's Buyer's Check links you straight to it.",
+ answer: "Partly. The Arizona law-enforcement records cover thefts reported to Arizona agencies. SafeOrStolen also searches its own theft reports and public web results, which aren't limited to Arizona. It does not search NCIC or other states' police records, so for a car with an out-of-state title, match the VIN on the dashboard, door jamb and title, and ask the seller for ID.",
  },
  ],
  }}

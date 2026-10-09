@@ -1,78 +1,116 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/**
+ * Oct 8 2026: audited by hand for "stolen laptop check". Removed claims that SafeOrStolen checks
+ * iCloud/Microsoft lock status, manufacturer or pawn databases, the "AI analysis" source, invented
+ * theft figures and prices, and the outdated advice that Apple's coverage page shows Activation Lock.
+ */
 const CheckLaptopPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Stolen Laptop Check — Verify Serial Number in 3 Sec (2026) | SafeOrStolen"
-      metaDescription="Check a laptop serial number before buying. SafeOrStolen reviews its reports, public web results, and AI analysis for MacBook, Dell, HP, Lenovo, and ASUS."
-      h1="Stolen Laptop Check — Verify Any Serial Number Before Buying"
+      title="Stolen Laptop Check: Look Up a Laptop Serial Number | SafeOrStolen"
+      metaDescription="Check a laptop serial number before you buy. Where to find it on a MacBook, Dell, HP or Lenovo, what the check searches, and how to spot a locked or stolen laptop."
+      h1="Stolen Laptop Check: Look Up a Serial Number Before You Buy"
       itemType="Laptop"
+      dateModified="2026-10-07"
+      searchPlaceholder="Enter the laptop serial number"
       keywords={[
         'check if laptop stolen',
         'stolen laptop check',
         'MacBook stolen check',
         'laptop serial number lookup',
         'verify laptop not stolen',
-        'laptop serial number check 2026',
         'is my laptop stolen',
         'Dell serial number lookup'
       ]}
+      quickAnswer={{
+        question: 'How do I check if a laptop is stolen?',
+        answer:
+          "Get the serial number from the sticker or engraving on the bottom and from the system settings, and make sure they match. Enter it on SafeOrStolen (safeorstolen.com/check-laptop), which searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then have the seller sign out of their Apple or Microsoft account and erase the laptop in front of you. If it asks for someone else's login or a firmware password, don't buy it.",
+      }}
+      sections={[
+        {
+          heading: 'Where to find a laptop serial number',
+          table: {
+            columns: ['Laptop', 'Where to look'],
+            rows: [
+              ['MacBook', 'Apple menu > About This Mac, and printed on the bottom case near the hinge'],
+              ['Windows laptop', 'Settings > System > About, or the sticker on the bottom. Dell calls it the Service Tag.'],
+              ['Lenovo ThinkPad', 'The label on the bottom, or in the BIOS setup screen'],
+              ['Any laptop', 'The original box label and the receipt should show the same serial'],
+            ],
+          },
+        },
+        {
+          heading: 'What a SafeOrStolen laptop check searches, and what it doesn\'t',
+          table: {
+            columns: ['Searched', 'Not searched'],
+            rows: [
+              ['Theft reports owners filed on SafeOrStolen', 'Apple Activation Lock or Microsoft account status'],
+              ['Public web results that mention the serial (listings, posts)', 'Manufacturer warranty or registration records'],
+              ['Every source listed on the result, saved with the date', 'Police, pawn shop or insurance records'],
+            ],
+          },
+        },
+        {
+          heading: 'Signs a used laptop is stolen',
+          list: [
+            'It asks for an Apple ID, Microsoft account or school/company login after a reset',
+            'A firmware or BIOS password the seller says they "forgot"',
+            'A "Remote Management" screen during Mac setup, or a company asset tag with no release paperwork',
+            'The serial sticker is peeled off or the serial in settings doesn\'t match the case',
+            'The seller won\'t reset it in front of you or has several laptops for sale with no receipts',
+          ],
+        },
+      ]}
       content={{
-        intro: "Check a laptop serial number before buying from Facebook Marketplace, Craigslist, eBay, or a pawn shop. SafeOrStolen reviews its reports, public web results, and AI analysis in about 3 seconds.",
-        whatIs: "Checking if a laptop is stolen means verifying the device's serial number against manufacturer databases, stolen-property registries, and activation lock systems. Every laptop has a unique serial number that can be traced across multiple databases. SafeOrStolen's laptop checker instantly searches Apple iCloud lock status (for MacBooks), Microsoft account lock status (for Windows PCs), manufacturer warranty databases (Dell, HP, Lenovo, ASUS), stolen-property registries, and user-reported theft registries. This protects buyers from purchasing stolen laptops, which can be remotely locked, blacklisted, or confiscated by authorities.",
-        howItWorks: "Our laptop verification system searches multiple data sources simultaneously. We check: (1) Apple iCloud Activation Lock — shows if a MacBook is locked to an Apple ID and cannot be erased or reactivated, (2) Microsoft account lock status — shows if a Windows laptop is locked to a Microsoft account, (3) Manufacturer databases — Dell, HP, Lenovo, ASUS, Acer warranty and registration records, (4) Stolen-property registries — including (5) LeadsOnline — national pawn shop database tracking purchased and pawned electronics, (6) User-reported theft registries. Within 3 seconds, you receive a comprehensive report showing whether the laptop has been reported stolen, has activation locks enabled, and whether the serial number matches the model specifications.",
-        whyCheck: "Buying a stolen laptop will cost you far more than just your purchase price. The laptop can be remotely locked by the original owner at any time via iCloud (MacBook) or Microsoft Account (Windows), rendering it completely unusable. Police can confiscate the laptop with zero compensation to you. You could face criminal charges for possession of stolen property — a felony in many states carrying up to 5 years in prison. Manufacturers may refuse warranty service or repairs on stolen devices. In 2025, over 600,000 laptops were reported stolen in the United States, with an average value of $1,200. MacBook Pros, gaming laptops, and business-grade Dell/Lenovo ThinkPads are prime targets. Stolen laptops frequently appear on Facebook Marketplace, Craigslist, OfferUp, and pawn shops, often sold at 40–60% below market value. SafeOrStolen's laptop checker prevents you from becoming a victim.",
+        intro: "Check a laptop serial number before you buy from Facebook Marketplace, Craigslist, eBay or a pawn shop. SafeOrStolen searches theft reports and public web results in a few seconds; a reset in front of you shows whether the laptop is still locked to someone else.",
+        whatIs: "A stolen laptop check looks up the laptop's serial number to see whether anyone has reported it stolen. Every laptop has a serial printed on the case and stored in its firmware. Owners give that number to police and to sites like SafeOrStolen when a laptop is stolen, so matching it is the most direct way to connect a laptop to a theft report.",
+        howItWorks: "Type the serial into the search box. SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the serial, and shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source is listed and the check is saved to your account with the date. Account locks have to be checked on the laptop itself.",
+        whyCheck: "A stolen laptop can be locked by its owner through Find My Mac or a Microsoft account, which can leave it unusable. If police identify it, they can return it to the owner and you lose what you paid. Laptops are easy to carry off and resell quickly online, so a few minutes of checking at the meetup is worth it.",
         benefits: [
-          "Check MacBook, MacBook Air, MacBook Pro (all models including M3/M4)",
-          "Verify Windows laptops — Dell, HP, Lenovo, ASUS, Acer, MSI, Razer",
-          "Check Apple iCloud Activation Lock status instantly",
-          "Verify Microsoft account lock on Windows PCs",
-          "Search stolen-property registries reported across all 50 states",
-          "Check gaming laptops — Razer Blade, Alienware, ASUS ROG, MSI Stealth",
-          "2 checks on us — then $10/month unlimited",
-          "Results in about 3 seconds from SafeOrStolen reports, public web results, and AI analysis"
+          "Works for MacBook, Dell, HP, Lenovo, ASUS, Acer, MSI and Razer laptops",
+          "Searches SafeOrStolen theft reports and public web results",
+          "Results in a few seconds, with every source listed",
+          "Each check saved to your account with the date",
+          "2 free checks with a free account, then $0.99 a check or $10 a month unlimited",
         ],
         process: [
-          "Locate the serial number: MacBook — Settings > About This Mac > Serial Number, or on the bottom case. Windows PC — Settings > System > About > Device Specifications, or sticker on the bottom.",
-          "Turn on the laptop and verify it boots without asking for passwords or activation locks.",
-          "For MacBooks, check Apple ID lock status at checkcoverage.apple.com — enter the serial number.",
-          "For Windows PCs, check Microsoft account lock status during startup or by signing in.",
-          "Enter the serial number into SafeOrStolen's verification tool at safeorstolen.com/verify.",
-          "Review the result and compare the serial number with the device and seller's records.",
-          "Only buy if the report shows CLEAN and the laptop has NO activation locks."
+          "Find the serial number: on a MacBook, Apple menu > About This Mac or the bottom case; on Windows, Settings > System > About or the bottom sticker.",
+          "Check that the serial in settings matches the one on the case and on any receipt or box.",
+          "Enter the serial on SafeOrStolen and read the result.",
+          "Ask the seller to sign out of iCloud or their Microsoft account and erase the laptop while you watch.",
+          "Start setup. If it asks for someone else's account, a firmware password or a company login, walk away.",
+          "Pay with a method that leaves a record and keep the listing and messages.",
         ],
         faqs: [
           {
-            question: "How do I check if a MacBook is stolen in 2026?",
-            answer: "To check if a MacBook is stolen: (1) Get the serial number from Settings > About This Mac, or the bottom case, (2) Check Apple iCloud Activation Lock at checkcoverage.apple.com — if 'Activation Lock' shows as ON, the MacBook is locked to someone's Apple ID and likely stolen, (3) Use SafeOrStolen's checker to search stolen-property registries reported across all 50 states, (4) Ask the seller to sign out of iCloud in front of you (Settings > Apple ID > Sign Out) — if they can't or won't, walk away, (5) Turn on the MacBook and verify it doesn't ask for a firmware password."
+            question: "How do I check if a MacBook is stolen?",
+            answer: "Match the serial in Apple menu > About This Mac with the one on the bottom case, then check it on SafeOrStolen (safeorstolen.com/check-laptop) for theft reports and public web results. Apple doesn't offer a public Activation Lock lookup, so have the seller sign out of their Apple ID, turn off Find My and erase the Mac in front of you. If setup asks for their Apple ID, don't buy it."
           },
           {
             question: "How do I check if a Windows laptop is stolen?",
-            answer: "To check if a Windows laptop is stolen: (1) Get the serial number from Settings > System > About, or the sticker on the bottom, (2) Use SafeOrStolen's serial number checker to search stolen-property registries reported across all 50 states and LeadsOnline pawn records, (3) Turn on the laptop and verify it's not locked to a Microsoft account — if it requires a password you don't have during initial setup, it may be stolen, (4) Check the BIOS for a supervisor password — restart and press F2/F12/Del during boot. If BIOS is password protected, it's a red flag, (5) Ask the seller for the original receipt. No receipt + BIOS locked + low price = likely stolen."
+            answer: "Get the serial from Settings > System > About or the bottom sticker and search it on SafeOrStolen for theft reports and public web results. Then have the seller reset the laptop while you watch. If setup asks for a Microsoft account you don't have, or the BIOS has a password the seller can't give you, walk away. Ask for the receipt too."
           },
           {
-            question: "What is iCloud Activation Lock and why does it matter when buying a used MacBook?",
-            answer: "iCloud Activation Lock is Apple's anti-theft feature that locks a Mac to the original owner's Apple ID. When enabled, the Mac cannot be erased, reactivated, or used by anyone else without the original owner's password. If a MacBook has Activation Lock ON, it's effectively worthless — you cannot use it. There is NO legitimate way to bypass Activation Lock. Always check at checkcoverage.apple.com BEFORE buying any used MacBook."
+            question: "What is Activation Lock on a MacBook?",
+            answer: "Activation Lock ties a Mac with Apple silicon or a T2 chip to the owner's Apple ID while Find My is on. After an erase, the Mac asks for that Apple ID before it can be set up. Without the owner's password you can't use it. The only fix is for the owner to remove it, so watch the seller sign out before you pay."
           },
           {
             question: "Can activation locks on laptops be removed or bypassed?",
-            answer: "NO. Legitimate activation locks (Apple iCloud, Microsoft account) CANNOT be removed or bypassed without the original owner's credentials. Anyone claiming they can 'remove' or 'bypass' activation locks is either lying or involved in illegal activity. If a laptop has activation lock enabled, it's almost certainly stolen and the seller cannot provide legitimate credentials. Walk away from any locked laptop."
-          },
-          {
-            question: "Why are laptops the #3 most stolen electronics in the US?",
-            answer: "Laptops are the #3 most stolen electronics because of high resale value (MacBook Pros worth $1,500–$3,000, gaming laptops $2,000+), extreme portability making them easy to grab from cars, coffee shops, and airports, huge marketplace demand, and the fact that many buyers don't check serial numbers or activation locks. Professional thieves target college campuses, coffee shops, airports, and cars, selling on Facebook Marketplace and Craigslist within hours at 40–60% below market value."
+            answer: "Not legitimately without the owner's credentials or proof of purchase sent to Apple or the manufacturer. Services that promise to bypass a lock are a red flag. If a laptop is locked to someone else's account and the seller can't sign out in front of you, don't buy it."
           },
           {
             question: "What are red flags when buying a used laptop?",
-            answer: "Major red flags for stolen laptops: (1) Price is 50%+ below market value, (2) Seller won't provide serial number or show Activation Lock status, (3) Laptop has password/firmware lock that seller claims they 'forgot', (4) No original receipt, box, or documentation, (5) Seller has multiple laptops for sale, (6) Meeting in public parking lot (not their home), (7) Seller is in a rush and won't answer questions, (8) Physical damage suggesting forced entry (pry marks, broken hinges), (9) Serial number sticker is removed or damaged. If ANY of these exist, walk away."
+            answer: "A price far below what the model sells for used, a seller who won't share the serial, a firmware password they \"forgot\", a Remote Management or company login screen, a removed serial sticker, or several laptops for sale with no receipts. Any one of these is a reason to slow down; two or more is a reason to walk away."
           },
           {
-            question: "How long does SafeOrStolen's laptop serial number check take?",
-            answer: "Laptop checks usually take about 3 seconds. Enter the serial number to check SafeOrStolen reports, public web results, and AI analysis. Confirm activation-lock status directly on the device before buying."
+            question: "How long does SafeOrStolen's laptop serial check take?",
+            answer: "A few seconds. SafeOrStolen searches its own theft reports and public web results for the serial and lists every source it searched. Account locks aren't part of the check, so confirm them on the laptop before you buy."
           },
           {
             question: "What should I do if the laptop check shows it's stolen?",
-            answer: "If the check shows the laptop is reported stolen: (1) Do NOT buy it, (2) Walk away without confronting the seller, (3) Screenshot the listing and record seller information, (4) Report the listing to the marketplace platform, (5) File an anonymous tip with local police including the listing URL, serial number, and seller details. If you already bought it, contact police immediately — you're a victim of fraud."
+            answer: "Don't buy it and don't confront the seller. Screenshot the listing, save the messages and note the serial, then report the listing to the marketplace and call your local police non-emergency line. If you already paid, keep the laptop as it is and contact police and your payment provider."
           }
         ]
       }}

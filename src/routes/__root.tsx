@@ -179,8 +179,8 @@ const coreGraphJsonLd = JSON.stringify({
       description: "Steps to use SafeOrStolen to check whether a secondhand item has been reported stolen.",
       step: [
         { "@type": "HowToStep", position: 1, name: "Find the identifier", text: "Locate the IMEI number (phones — dial *#06#), VIN (vehicles — dashboard or door jamb), or serial number on the item." },
-        { "@type": "HowToStep", position: 2, name: "Enter the number", text: "Open SafeOrStolen on the web or as an installed web app, then enter or scan the identifier." },
-        { "@type": "HowToStep", position: 3, name: "Review results", text: "Review the SafeOrStolen reports, public web results, and AI analysis, then complete the separate official checks in the relevant guide." },
+        { "@type": "HowToStep", position: 2, name: "Enter the number", text: "Open SafeOrStolen on the web or as the free installable web app, then type the identifier." },
+        { "@type": "HowToStep", position: 3, name: "Review results", text: "Read the result (\"reported stolen\", \"possible match\", or \"no report found in the records searched\") and the list of sources searched, then complete the other checks in the relevant guide." },
       ],
       totalTime: "PT30S",
       dateModified: "2026-09-24",
@@ -195,7 +195,7 @@ const softwareApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen AI",
   alternateName: ["SafeOrStolen AI Chat", "SOS AI"],
   description:
-    "Conversational assistant for checking supported identifiers and marketplace listing URLs using SafeOrStolen reports, public web results, and AI analysis.",
+    "Chat assistant that runs SafeOrStolen checks on IMEIs, VINs, plates and serial numbers and explains the results. Checks search SafeOrStolen's own theft reports and public web results, plus item-specific records for guns, bikes and Arizona vehicles.",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Conversational AI Verification Assistant",
   operatingSystem: "Web",
@@ -206,18 +206,12 @@ const softwareApplicationJsonLd = JSON.stringify({
   creator: { "@id": "https://safeorstolen.com/#organization" },
   publisher: { "@id": "https://safeorstolen.com/#organization" },
   featureList: [
-    "Conversational AI verification (multi-turn chat)",
-    "AI smart identifier detection (IMEI, VIN, serial, plate, firearm serial)",
-    "AI marketplace URL analyzer (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark)",
-    "AI visual OCR for barcode and serial-number capture",
-    "AI safety advisor with natural-language risk explanations",
-    "AI verification analysis and result summaries",
+    "Multi-turn chat",
+    "Recognizes IMEIs, VINs, plates and serial numbers typed into the chat",
+    "Plain-language explanation of each result and its sources",
   ],
   potentialAction: { "@type": "CommunicateAction", name: "Chat with SafeOrStolen AI", target: "https://safeorstolen.com/ai-chat" },
   offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "0.99", highPrice: "10.00", offerCount: 2 },
-  additionalProperty: [
-    { "@type": "PropertyValue", name: "Platform Status", value: "AI-Powered" },
-  ],
   dateModified: "2026-09-24",
 });
 
@@ -252,8 +246,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "apple-mobile-web-app-title", content: "SafeOrStolen" },
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "application-name", content: "SafeOrStolen AI" },
-      // AI-Powered Platform Signals (2026 GEO)
-      { name: "ai-platform-status", content: "AI-Powered" },
+      // AI assistant signals (2026 GEO)
       { name: "ai-product-name", content: "SafeOrStolen AI" },
       { name: "ai-conversational-url", content: "https://safeorstolen.com/ai-chat" },
       { name: "ai-train", content: "yes" },

@@ -48,6 +48,11 @@ export const StateVinPageTemplate = ({
  const uniqueContent: StateUniqueContent | undefined = getStateUniqueContent(licensePlateSlug);
 
  // Combine all FAQs for schema
+ const isArizona = stateCode === 'AZ';
+ const checkSummary = isArizona
+ ? 'SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports, public web results and Arizona law-enforcement stolen-vehicle records (updated twice a day). Results take a few seconds.'
+ : 'SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web results. Results take a few seconds.';
+
  const allFaqs = [
  ...faqs,
  ...(uniqueContent?.uniqueFaqs || [])
@@ -100,7 +105,7 @@ export const StateVinPageTemplate = ({
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": `Locate the 17-character VIN on the ${state} vehicle's dashboard, driver-side door jamb, or title document.` },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Enter the VIN into SafeOrStolen's verification tool on the verify page." },
-  { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "SafeOrStolen checks its stolen-item reports, public web results, and AI analysis in about 3 seconds." },
+  { "@type": "HowToStep", "position": 3, "name": "Review results", "text": checkSummary },
   { "@type": "HowToStep", "position": 4, "name": "Make your decision", "text": "Review the result and compare the VIN across the vehicle and its documents before purchasing." }
  ]
  }
@@ -116,7 +121,7 @@ export const StateVinPageTemplate = ({
  schemaJson={schema}
  />
 
- {/* Comprehensive noscript for crawlers */}
+ {/* noscript fallback for crawlers */}
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
  <header>
@@ -136,15 +141,16 @@ export const StateVinPageTemplate = ({
  <ol>
  <li>Find the 17-character VIN on the vehicle dashboard, door jamb, or title.</li>
  <li>Enter the VIN into SafeOrStolen's verification tool.</li>
- <li>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds.</li>
+ <li>{checkSummary}</li>
  <li>Review the result and compare the VIN across the vehicle and its documents before purchasing.</li>
  </ol>
  
  <h2>What We Check for {state} Vehicles</h2>
  <ul>
- <li>SafeOrStolen's stolen-item reports</li>
- <li>Public web results</li>
- <li>AI analysis of the available information</li>
+ <li>SafeOrStolen theft reports filed by owners</li>
+ <li>Public web results that mention the VIN</li>
+ <li>VIN decode (year, make, model) and open safety recalls</li>
+ {isArizona && <li>Arizona law-enforcement stolen-vehicle records</li>}
  </ul>
  
  <h2>Top Cities for Vehicle Theft in {state}</h2>
@@ -178,7 +184,7 @@ export const StateVinPageTemplate = ({
  <li><a href="/pricing">Pricing - From $0.99/check</a></li>
  </ul>
  
- <p>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>Check a {state} VIN before you buy. <a href="/verify">Run a check</a>: 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -217,8 +223,8 @@ export const StateVinPageTemplate = ({
  </div>
  <div className="p-6 bg-background rounded-lg text-center">
  <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
- <h3 className="text-xl font-bold mb-2">Legal Protection</h3>
- <p className="text-muted-foreground">Avoid legal issues from unknowingly purchasing stolen property.</p>
+ <h3 className="text-xl font-bold mb-2">A Dated Record</h3>
+ <p className="text-muted-foreground">Each check is saved to your account with the date, so you can show you checked before buying.</p>
  </div>
  <div className="p-6 bg-background rounded-lg text-center">
  <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -244,14 +250,14 @@ export const StateVinPageTemplate = ({
  <Shield className="w-10 h-10 text-primary mb-4" />
  <h3 className="text-xl font-semibold mb-3">Protect Your Investment</h3>
  <p className="text-muted-foreground">
- Avoid buying stolen vehicles that can be repossessed at any time, leaving you with zero recourse.
+ A stolen car is usually seized by police and returned to its owner, and the buyer is often left chasing the seller for the money.
  </p>
  </div>
  <div className="p-6 bg-card rounded-lg">
  <AlertTriangle className="w-10 h-10 text-destructive mb-4" />
- <h3 className="text-xl font-semibold mb-3">Legal Consequences</h3>
+ <h3 className="text-xl font-semibold mb-3">Police Questions</h3>
  <p className="text-muted-foreground">
- In {state}, possessing stolen property can result in criminal charges, even if you didn't know it was stolen.
+ If you end up with a stolen car, you'll have to explain how you got it. A record that you checked the VIN before paying helps show you bought in good faith.
  </p>
  </div>
  </div>
@@ -266,7 +272,7 @@ export const StateVinPageTemplate = ({
  {[
  `Find the 17-character VIN on the ${state} vehicle's dashboard, door jamb, or title document`,
  "Enter the VIN into SafeOrStolen's free verification tool",
-  "We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds",
+  checkSummary,
   "Review the result and compare the VIN across the vehicle and its documents before purchasing"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-background rounded-lg">
@@ -286,10 +292,10 @@ export const StateVinPageTemplate = ({
  <h2 className="text-3xl font-bold mb-6">{state} Laws on Stolen Vehicles</h2>
  <p className="text-lg text-muted-foreground leading-relaxed mb-6">{content.localLaws}</p>
  <div className="p-6 bg-card rounded-lg border-l-4 border-primary">
- <p className="font-semibold mb-2">Official {state} DMV Resources:</p>
- <a href={dmvLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
- {state} Department of Motor Vehicles
- </a>
+ <p className="font-semibold mb-2">Title and registration questions</p>
+ <p className="text-muted-foreground">
+ SafeOrStolen doesn't search {state} motor vehicle records. For title status, liens or registration, contact the {state} motor vehicle agency directly.
+ </p>
  </div>
  </div>
  </section>
@@ -335,7 +341,7 @@ export const StateVinPageTemplate = ({
  </div>
 
  <div className="p-6 bg-card border-l-4 border-primary rounded-lg">
- <h4 className="font-semibold mb-2">Expert VIN Verification Advice</h4>
+ <h4 className="font-semibold mb-2">VIN Verification Advice</h4>
  <p className="text-muted-foreground">{uniqueContent.verificationAdvice}</p>
  </div>
  </div>
@@ -348,9 +354,10 @@ export const StateVinPageTemplate = ({
   <h2 className="text-3xl font-bold mb-8">What We Check for {state} Vehicles</h2>
  <div className="grid md:grid-cols-2 gap-4">
  {[
-  { name: "SafeOrStolen's stolen-item reports", desc: 'Reports submitted to SafeOrStolen' },
-  { name: 'Public web results', desc: 'Publicly available pages related to the VIN' },
-  { name: 'AI analysis', desc: 'Plain-language analysis of the information found' },
+  { name: 'SafeOrStolen theft reports', desc: 'Thefts owners have reported on SafeOrStolen' },
+  { name: 'Public web results', desc: 'Listings and posts that mention the VIN' },
+  { name: 'VIN decode and recalls', desc: 'Year, make and model, plus any open safety recalls' },
+  ...(isArizona ? [{ name: 'Arizona law-enforcement records', desc: 'Stolen-vehicle records, updated twice a day' }] : []),
  ].map((db, idx) => (
  <div key={idx} className="flex gap-3 p-4 bg-card rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
@@ -404,7 +411,7 @@ export const StateVinPageTemplate = ({
  </Link>
  <Link to="/vin-checker" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Free VIN Checker</h3>
- <p className="text-sm text-muted-foreground">Check any vehicle nationwide</p>
+ <p className="text-sm text-muted-foreground">Check a VIN from any state</p>
  </Link>
  <Link to="/imei-checker" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">IMEI Checker</h3>
@@ -433,7 +440,7 @@ export const StateVinPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
  <p className="text-lg text-muted-foreground mb-8">
-  $10/month unlimited VIN verification for {state} vehicles. Results from SafeOrStolen reports, public web results, and AI analysis.
+  2 free checks, then $0.99 a check or $10 a month unlimited. Every result lists the sources searched.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

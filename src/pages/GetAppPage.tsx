@@ -3,33 +3,33 @@ import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Download, Smartphone, Shield, Camera, Wifi, Star, Check, Zap } from 'lucide-react';
+import { Download, Smartphone, Shield, Camera, Wifi, Star, Check, Clock } from 'lucide-react';
 
 /**
- * Get App Page - Real page for /get-app URL
- * Focused on driving app downloads
+ * Get App Page - /get-app
+ * SafeOrStolen is a free installable web app at safeorstolen.com/app (not an App Store or Google Play app).
  */
 const GetAppPage = () => {
   const appFeatures = [
     {
       icon: Camera,
       title: "Barcode Scanner",
-      description: "Scan serial numbers, IMEI barcodes, and VINs instantly with your camera"
+      description: "Point your camera at a serial, IMEI or VIN barcode instead of typing it"
     },
     {
-      icon: Zap,
-      title: "Instant Results",
-      description: "Get verification results in under 3 seconds from multiple sources"
+      icon: Clock,
+      title: "Results in a Few Seconds",
+      description: "Reported stolen, possible match, or no report found, with every source listed"
     },
     {
       icon: Wifi,
-      title: "Works Offline",
-      description: "Download database for offline verification at flea markets and swap meets"
+      title: "Needs a Data Connection",
+      description: "Checks run online against current records, so make sure you have signal at the meetup"
     },
     {
       icon: Shield,
-      title: "Safe Buying",
-      description: "Never buy stolen goods again. Verify before you pay."
+      title: "Saved History",
+      description: "Each check is saved to your account with the date, so you can show you checked before you paid"
     }
   ];
 
@@ -40,17 +40,17 @@ const GetAppPage = () => {
       {
         "@type": "Question",
         "name": "Is the SafeOrStolen app free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! The app is free to download and includes 2 free verification checks. Additional checks require a subscription or credits." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The SafeOrStolen web app is free to install from safeorstolen.com/app, and a free account includes 2 checks with no credit card. After that it costs $0.99 a check or $10 a month for unlimited checks." }
       },
       {
         "@type": "Question",
         "name": "What platforms is the app available on?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen is available as a Progressive Web App (PWA) that works on both iOS and Android devices. Simply visit safeorstolen.com on your phone and tap 'Add to Home Screen'." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen is not in the App Store or Google Play. It is a free installable web app that runs in Safari on iPhone and Chrome on Android. Open safeorstolen.com/app on your phone and tap Add to Home Screen (iPhone: Share button; Android: three-dot menu)." }
       },
       {
         "@type": "Question",
         "name": "Can I scan barcodes with the app?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! The app includes a barcode scanner that reads IMEI barcodes, serial number barcodes, and VIN barcodes. Just point your camera at the barcode for instant scanning." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The web app has a camera scanner that reads IMEI, serial number and VIN barcodes. Point your camera at the barcode and the number fills in, then run the check." }
       }
     ]
   };
@@ -60,20 +60,20 @@ const GetAppPage = () => {
     "@type": "SoftwareApplication",
     "name": "SafeOrStolen",
     "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "iOS, Android, Web",
+    "operatingSystem": "Web browser (installable on iPhone and Android home screens)",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Stolen item verification from your phone browser. Check if phones, cars, bikes are stolen before buying."
+    "description": "Free installable web app for checking whether phones, cars, bikes and other items are reported stolen before you buy them."
   };
 
   return (
     <>
       <PageSEO
-        title="Get SafeOrStolen App - Free Stolen Item Checker for iPhone & Android"
-        description="Use SafeOrStolen on your phone to verify phones, cars, and electronics aren't stolen. Free IMEI checker, VIN scanner, and barcode reader. Works offline."
+        title="Get the SafeOrStolen App - Free Web App for iPhone & Android"
+        description="Add SafeOrStolen to your iPhone or Android home screen from safeorstolen.com/app. Free web app with a barcode scanner for IMEI, VIN and serial checks."
         keywords="safeorstolen app, stolen item checker app, IMEI checker app, VIN scanner app, barcode scanner, stolen phone app"
         canonical="/get-app"
         structuredData={[faqSchema, appSchema]}
@@ -94,15 +94,15 @@ const GetAppPage = () => {
                 </h1>
                 
                 <p className="text-xl text-muted-foreground mb-8">
-                  Verify stolen items from your phone. Check IMEI, VIN, and serial numbers 
-                  on the go. Scan barcodes, get instant results, and never buy stolen goods again.
+                  SafeOrStolen is a free web app you add to your home screen from safeorstolen.com/app.
+                  Scan or type an IMEI, VIN or serial number at the meetup and get a result in a few seconds.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="gap-2">
                     <Link to="/app">
                       <Download className="w-5 h-5" />
-                      Install App - Free
+                      Open the Free Web App
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="gap-2">
@@ -114,7 +114,7 @@ const GetAppPage = () => {
                 </div>
 
                 <p className="text-sm text-muted-foreground mt-4">
-                  Works on iPhone, Android, and all mobile browsers. No app store download needed.
+                  Runs in Safari on iPhone and Chrome on Android. It isn't in the App Store or Google Play.
                 </p>
               </div>
 
@@ -166,7 +166,7 @@ const GetAppPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Every Category in One Place</h3>
-                  <p className="text-muted-foreground">Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
+                  <p className="text-muted-foreground">One account checks phones by IMEI, vehicles by VIN, license plates, guns, bikes, tools and electronics by serial number.</p>
                 </div>
               </div>
 
@@ -186,7 +186,7 @@ const GetAppPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">No App Store Required</h3>
-                  <p className="text-muted-foreground">Our Progressive Web App installs directly from your browser. No app store account needed, no downloads, no storage issues.</p>
+                  <p className="text-muted-foreground">The web app installs from your browser in a few taps. No app store account, nothing to download.</p>
                 </div>
               </div>
 
@@ -195,8 +195,8 @@ const GetAppPage = () => {
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Works Offline</h3>
-                  <p className="text-muted-foreground">No cell service at the swap meet? Download our database for offline verification. Perfect for rural areas and large venues.</p>
+                  <h3 className="font-semibold text-lg">Plan for Weak Signal</h3>
+                  <p className="text-muted-foreground">Checks need a data connection. If the swap meet has poor service, ask the seller for the number ahead of time and run the check before you go.</p>
                 </div>
               </div>
             </div>
@@ -206,14 +206,14 @@ const GetAppPage = () => {
         {/* CTA */}
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Stay Safe?</h2>
+            <h2 className="text-3xl font-bold mb-4">Check Before You Pay</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Join thousands of buyers who verify before they buy. Get the app free today.
+              Add the web app to your home screen and use your 2 free checks. No credit card.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/app">
                 <Download className="w-5 h-5" />
-                Get the App - Free
+                Open the Free Web App
               </Link>
             </Button>
           </div>

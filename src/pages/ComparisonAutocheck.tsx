@@ -1,24 +1,25 @@
+/** Oct 8 2026: audited by hand. Removed iOS/Android app, offline, barcode, "3 seconds", invented AutoCheck price and speed claims. */
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Check, X, Smartphone, Shield } from 'lucide-react';
+import { Check, X, Smartphone, Shield, Car } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
 
 const ComparisonAutocheck = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen: Best Autocheck Alternative - Universal Verification",
-    "description": "SafeOrStolen verifies ALL items (phones, cars, bikes, firearms). Autocheck only checks vehicles. Compare verification services.",
+    "name": "SafeOrStolen vs AutoCheck: theft check or history report",
+    "description": "AutoCheck sells vehicle history reports. SafeOrStolen checks vehicles, phones, guns, bikes and serial-numbered items for theft reports. Here's which one answers your question.",
     "specialty": "comparison",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
         {
           "@type": "Service",
-          "name": "SafeOrStolen Verification Service",
+          "name": "SafeOrStolen",
           "url": "https://safeorstolen.com",
-          "description": "Universal stolen item verification with mobile app - phones, vehicles, bikes, firearms, electronics, all items",
+          "description": "Stolen-item check for vehicles (VIN and plate), phones (IMEI), guns, bikes and serial numbers, with a free installable web app",
           "provider": {
             "@type": "Organization",
             "name": "SafeOrStolen"
@@ -26,11 +27,11 @@ const ComparisonAutocheck = () => {
         },
         {
           "@type": "Service",
-          "name": "Autocheck Vehicle History Service",
-          "description": "Vehicle history reports only - no phones, firearms, bikes, or other items",
+          "name": "AutoCheck",
+          "description": "Vehicle history reports",
           "provider": {
             "@type": "Organization",
-            "name": "Autocheck"
+            "name": "AutoCheck"
           }
         }
       ]
@@ -40,20 +41,18 @@ const ComparisonAutocheck = () => {
   return (
     <>
       <PageSEO
-        title="Best Autocheck Alternative 2026 | SafeOrStolen"
-        description="SafeOrStolen verifies EVERYTHING (phones, vehicles, bikes, firearms). Autocheck only checks vehicles. Free mobile app with 2 free searches."
-        keywords="Autocheck alternative, cheaper than Autocheck, Autocheck for phones, Autocheck for firearms, best Autocheck alternative, free Autocheck alternative, universal verification"
+        title="AutoCheck Alternative: Stolen Check for Cars and More | SafeOrStolen"
+        description="AutoCheck sells vehicle history reports. SafeOrStolen checks a VIN or plate for theft reports, decodes it, lists recalls, and also checks phones, guns and bikes."
+        keywords="Autocheck alternative, free Autocheck alternative, Autocheck stolen check, stolen VIN check, SafeOrStolen vs Autocheck"
         canonical="/vs-autocheck"
         structuredData={comparisonSchema}
       />
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>Best Autocheck Alternative: SafeOrStolen Universal Verification</h1>
+          <h1>SafeOrStolen vs AutoCheck</h1>
           <p>
-            SafeOrStolen verifies ALL items, not just vehicles like Autocheck. While Autocheck only checks vehicle history ($24.99 per report),
-            SafeOrStolen verifies phones (IMEI), vehicles (VIN), bicycles, firearms, electronics in 3 seconds. Starting at $0 while Autocheck charges $24.99.
-            Mobile app with barcode scanning. The universal Autocheck alternative.
+            AutoCheck sells vehicle history reports. SafeOrStolen is a stolen-item check: a VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. It also checks phones, guns, bikes and serial numbers. 2 free checks, then $0.99 a check or $10 a month unlimited.
           </p>
         </div>
       </noscript>
@@ -62,20 +61,16 @@ const ComparisonAutocheck = () => {
           <div className="max-w-6xl mx-auto">
             {/* Hero */}
             <div className="text-center mb-12">
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                Autocheck for Everything
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Best Autocheck Alternative: SafeOrStolen
+                SafeOrStolen vs AutoCheck: which one do you need?
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Autocheck only checks vehicles. SafeOrStolen checks EVERYTHING - phones, vehicles, bikes, firearms, electronics.
-                Cheaper, faster, mobile app with barcode scanning. The universal Autocheck alternative.
+                AutoCheck sells vehicle history reports. SafeOrStolen answers a narrower question, "has this been reported stolen?", and it works on phones, guns, bikes and serial-numbered gear as well as cars. Many car buyers use both.
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">
                   <Shield className="w-5 h-5 mr-2" />
-                  Verify Any Item Now (Autocheck Alternative)
+                  Run a free check
                 </Link>
               </Button>
             </div>
@@ -88,70 +83,60 @@ const ComparisonAutocheck = () => {
                     <Smartphone className="w-8 h-8 text-green-600" />
                     SafeOrStolen
                   </CardTitle>
-                  <p className="text-sm text-muted-foreground">Universal Verification</p>
+                  <p className="text-sm text-muted-foreground">Stolen-item check</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>ALL Items</strong> - Phones, vehicles, bikes, firearms, electronics</span>
+                      <span><strong>Many item types</strong>: vehicles, plates, phones, guns, bikes, tools</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Mobile App</strong> - iOS & Android with barcode scanning</span>
+                      <span><strong>VIN check</strong>: year, make and model, open recalls, theft reports</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>3 Seconds</strong> - Instant verification</span>
+                      <span><strong>Arizona records</strong>: Arizona VINs and plates searched against Arizona law-enforcement stolen-vehicle records</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>$0-2</strong> - 2 free searches included</span>
+                      <span><strong>Free web app</strong>: add safeorstolen.com/app to your home screen</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Works Offline</strong> - No internet required</span>
+                      <span><strong>2 free checks</strong>, then $0.99 a check or $10 a month unlimited</span>
                     </li>
                   </ul>
                   <Button className="w-full mt-6" size="lg" asChild>
-                    <Link to="/verify">Verify Any Item</Link>
+                    <Link to="/verify">Run a check</Link>
                   </Button>
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-red-200 bg-red-50/50 dark:bg-red-950/20">
+              <Card className="border-2 border-muted bg-muted/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-2xl">
-                    <X className="w-8 h-8 text-red-600" />
-                    Autocheck
+                    <Car className="w-8 h-8 text-muted-foreground" />
+                    AutoCheck
                   </CardTitle>
-                  <p className="text-sm text-muted-foreground">Vehicles only</p>
+                  <p className="text-sm text-muted-foreground">Vehicle history reports</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Vehicles Only</strong> - No phones, bikes, firearms</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Vehicle history</strong>: the kind of report you read for title, accident and ownership history</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Minutes</strong> - Slow report generation</span>
+                      <span><strong>Vehicles only</strong>: not for phones, guns or bikes</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>$24.99</strong> - Per vehicle report</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Online Only</strong> - Requires internet</span>
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Pricing</strong>: see AutoCheck's own site for current report prices</span>
                     </li>
                   </ul>
-                  <Button className="w-full mt-6" variant="outline" size="lg" disabled>
-                    Autocheck - Vehicles Only
-                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -159,7 +144,7 @@ const ComparisonAutocheck = () => {
             {/* Feature Comparison Table */}
             <Card className="mb-12">
               <CardHeader>
-                <CardTitle className="text-2xl">Feature Comparison</CardTitle>
+                <CardTitle className="text-2xl">What each one covers</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="overflow-x-auto">
@@ -168,39 +153,39 @@ const ComparisonAutocheck = () => {
                       <tr className="border-b">
                         <th className="text-left py-3 px-4">Feature</th>
                         <th className="text-center py-3 px-4">SafeOrStolen</th>
-                        <th className="text-center py-3 px-4">Autocheck</th>
+                        <th className="text-center py-3 px-4">AutoCheck</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b">
-                        <td className="py-3 px-4 font-medium">Vehicle Verification</td>
+                        <td className="py-3 px-4 font-medium">Vehicle checks by VIN</td>
                         <td className="text-center py-3 px-4"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                         <td className="text-center py-3 px-4"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3 px-4 font-medium">Phone Verification</td>
+                        <td className="py-3 px-4 font-medium">Full vehicle history report</td>
+                        <td className="text-center py-3 px-4"><X className="w-5 h-5 text-red-600 mx-auto" /></td>
+                        <td className="text-center py-3 px-4"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-3 px-4 font-medium">Phone (IMEI) checks</td>
                         <td className="text-center py-3 px-4"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                         <td className="text-center py-3 px-4"><X className="w-5 h-5 text-red-600 mx-auto" /></td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3 px-4 font-medium">Firearms Verification</td>
+                        <td className="py-3 px-4 font-medium">Firearm serial checks</td>
                         <td className="text-center py-3 px-4"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                         <td className="text-center py-3 px-4"><X className="w-5 h-5 text-red-600 mx-auto" /></td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3 px-4 font-medium">Mobile App</td>
+                        <td className="py-3 px-4 font-medium">Bike checks</td>
                         <td className="text-center py-3 px-4"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                         <td className="text-center py-3 px-4"><X className="w-5 h-5 text-red-600 mx-auto" /></td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="py-3 px-4 font-medium">Verification Speed</td>
-                        <td className="text-center py-3 px-4 text-green-600 font-bold">3 seconds</td>
-                        <td className="text-center py-3 px-4 text-red-600">Minutes</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>
-                        <td className="text-center py-3 px-4 text-green-600 font-bold">$0-2</td>
-                        <td className="text-center py-3 px-4 text-red-600">$24.99</td>
+                        <td className="text-center py-3 px-4">2 free, then $0.99 or $10/month</td>
+                        <td className="text-center py-3 px-4">See AutoCheck</td>
                       </tr>
                     </tbody>
                   </table>
@@ -212,14 +197,14 @@ const ComparisonAutocheck = () => {
             <Card className="bg-gradient-to-br from-primary/10 to-secondary/10">
               <CardContent className="pt-6 text-center">
                 <Smartphone className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h2 className="text-3xl font-bold mb-4">Choose the Better Autocheck Alternative</h2>
+                <h2 className="text-3xl font-bold mb-4">Check for theft reports first</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  SafeOrStolen verifies ALL items in 3 seconds with a mobile app. Cheaper, faster, and covers more item categories than Autocheck.
+                  Type a VIN, plate, IMEI or serial number and see the result in a few seconds, with every source listed. If you're buying a car, pair it with a history report and a look at the title.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/verify">
                     <Shield className="w-5 h-5 mr-2" />
-                    Verify Any Item FREE
+                    Run a free check
                   </Link>
                 </Button>
               </CardContent>
