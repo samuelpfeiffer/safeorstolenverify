@@ -2040,6 +2040,7 @@ export type Database = {
       get_current_user_role: { Args: never; Returns: string }
       get_my_plan_summary: { Args: never; Returns: Json }
       get_newsletter_subscriber_count: { Args: never; Returns: number }
+      get_proof_record_paid: { Args: { p_id: string }; Returns: string }
       get_proof_record_public: {
         Args: { p_id: string }
         Returns: {
