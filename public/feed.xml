@@ -21,7 +21,7 @@
       <link>https://safeorstolen.com</link>
       <description>SafeOrStolen.com is now live! Verify IMEI numbers, VIN numbers, and serial numbers to ensure your second-hand purchases are safe and not stolen.</description>
       <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/news/launch</guid>
+      <guid isPermaLink="false">safeorstolen-news-launch</guid>
       <category>Announcements</category>
     </item>
 
@@ -30,7 +30,7 @@
       <link>https://safeorstolen.com/how-it-works</link>
       <description>Learn how to protect yourself when buying used phones, laptops, tablets, and other electronics. Complete guide to verification and safe transactions.</description>
       <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/news/safe-buying-guide</guid>
+      <guid isPermaLink="false">safeorstolen-news-safe-buying-guide</guid>
       <category>Guides</category>
     </item>
 
@@ -39,7 +39,7 @@
       <link>https://safeorstolen.com/for-businesses</link>
       <description>If you are selling used items online, providing verification builds buyer confidence. Learn how SafeOrStolen helps sellers close more deals.</description>
       <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/news/sellers-guide</guid>
+      <guid isPermaLink="false">safeorstolen-news-sellers-guide</guid>
       <category>Guides</category>
     </item>
 
@@ -48,7 +48,7 @@
       <link>https://safeorstolen.com/for-businesses</link>
       <description>SafeOrStolen now offers API integration for online marketplaces, pawn shops, and retailers. Protect your platform and users from stolen goods.</description>
       <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/news/enterprise</guid>
+      <guid isPermaLink="false">safeorstolen-news-enterprise</guid>
       <category>Business</category>
     </item>
 
@@ -57,16 +57,16 @@
       <link>https://safeorstolen.com/blog</link>
       <description>Essential safety tips for buying and selling on Facebook Marketplace. How to verify items and avoid scams.</description>
       <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/news/facebook-marketplace</guid>
+      <guid isPermaLink="false">safeorstolen-news-facebook-marketplace</guid>
       <category>Safety Tips</category>
     </item>
 
     <item>
       <title>Mobile App Now Available</title>
-      <link>https://safeorstolen.com/mobile-app</link>
+      <link>https://safeorstolen.com/app</link>
       <description>The SafeOrStolen mobile app is now available as a PWA. Scan barcodes, verify items instantly, and shop with confidence on the go.</description>
       <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/news/mobile-app</guid>
+      <guid isPermaLink="false">safeorstolen-news-mobile-app</guid>
       <category>Announcements</category>
     </item>
 

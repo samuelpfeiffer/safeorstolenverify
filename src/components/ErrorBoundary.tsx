@@ -65,7 +65,10 @@ export class ErrorBoundary extends Component<Props, State> {
                 </Button>
               </div>
 
-              {this.state.error?.stack && (
+              {/* Dev only: in production a rendered stack trace put text like
+                  "https://safeorstolen.com/assets/vendor.CaXQ2Zzs.js:40:44737" into the HTML Google
+                  rendered, and Google crawled those strings as URLs (Search Console 404s). */}
+              {import.meta.env.DEV && this.state.error?.stack && (
                 <details className="text-xs">
                   <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
                     Technical Details

@@ -16,7 +16,7 @@ VERIFIED HTTPS PAGES (No redirects):
 ✓ https://safeorstolen.com/about
 ✓ https://safeorstolen.com/pricing
 ✓ https://safeorstolen.com/blog
-✓ https://safeorstolen.com/contact
+✓ https://safeorstolen.com/about
 ✓ https://safeorstolen.com/faq
 
 STATUS: All pages serve directly on HTTPS without redirects
