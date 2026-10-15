@@ -1,12 +1,19 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import DynamicBlogPost from "@/pages/blog/DynamicBlogPost";
 import { blogPostQueryOptions, getCanonicalBlogSlug } from "@/lib/blogPostQuery";
 import { resolveRetiredBlogSlug } from "@/utils/legacyRedirectMap";
+import { APP_INSTALL_PATH, isPlaceholderLink } from "@/lib/blogContent";
 
 export const Route = createFileRoute("/blog/$slug")({
   // Resolve the post during server rendering so the page's own title,
   // description and canonical are present in the crawler-facing HTML.
   loader: async ({ params, context }) => {
+    // Unfilled template links in old posts ("[SAFEORSTOLEN_APP_IOS_LINK]", "[Your iOS App Store
+    // Link]") resolved to /blog/[...]; Search Console still lists them. They meant "get the app".
+    if (isPlaceholderLink(params.slug)) {
+      throw redirect({ href: APP_INSTALL_PATH, statusCode: 301, replace: true });
+    }
+
     let post = null;
     let lookupFailed = false;
     try {
@@ -19,6 +26,9 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post && !lookupFailed) {
       const retiredTo = resolveRetiredBlogSlug(params.slug);
       if (retiredTo) throw redirect({ href: retiredTo, statusCode: 301, replace: true });
+      // No such post: answer a real 404. Rendering "Article Not Found" with a 200 and a noindex
+      // tag is what Search Console reported as "Excluded by 'noindex'" / soft 404.
+      throw notFound();
     }
 
     if (post) {

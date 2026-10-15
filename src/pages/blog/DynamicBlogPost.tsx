@@ -14,6 +14,7 @@ import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
 import { blogPostQueryOptions } from '@/lib/blogPostQuery';
+import { normalizeBlogHtml } from '@/lib/blogContent';
 
 export default function DynamicBlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -70,13 +71,16 @@ export default function DynamicBlogPost() {
   // DOMPurify needs a DOM, which does not exist during server rendering.
   // On the server strip active markup with a conservative pass; the browser
   // re-sanitizes with the full allow-list on hydration.
+  // Some stored posts are whole HTML documents with their own <title>, <meta> and a canonical
+  // pointing at a www URL that never existed; keep only the article body (see blogContent.ts).
+  const articleHtml = normalizeBlogHtml(post.content);
   const sanitizedContent =
     typeof window !== 'undefined'
-      ? DOMPurify.sanitize(post.content, {
+      ? DOMPurify.sanitize(articleHtml, {
           ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre', 'blockquote', 'img', 'br', 'hr'],
           ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'target', 'rel'],
         })
-      : (post.content || '')
+      : articleHtml
           .replace(/<\s*(script|style|iframe|object|embed|form)[\s\S]*?<\s*\/\s*\1\s*>/gi, '')
           .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
           .replace(/javascript:/gi, '');
