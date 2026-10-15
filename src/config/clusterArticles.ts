@@ -15,8 +15,8 @@ export interface ClusterMeta {
 
 export const PILLARS: Record<PillarKey, { name: string; path: string; ctaLine: string }> = {
  phone: {
- name: 'Check Phone',
- path: '/check-phone',
+ name: 'IMEI Checker',
+ path: '/imei-checker',
  ctaLine: 'Run a free stolen-phone check by IMEI — takes about 20 seconds.',
  },
  bike: {
@@ -25,8 +25,8 @@ export const PILLARS: Record<PillarKey, { name: string; path: string; ctaLine: s
  ctaLine: 'Check a bike serial against our theft reports and a national stolen-bicycle registry — free.',
  },
  gun: {
- name: 'Check Gun',
- path: '/check-gun',
+ name: 'Firearms Check',
+ path: '/firearms-check',
  ctaLine: 'Search a firearm serial in community-reported stolen-gun records — free.',
  },
  vin: {

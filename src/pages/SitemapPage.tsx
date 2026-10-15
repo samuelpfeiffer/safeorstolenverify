@@ -250,7 +250,7 @@ const SitemapPage = () => {
  { to: "/report-stolen", label: "Report Stolen Item" },
  { to: "/data-sources", label: "Data Sources" },
  { to: "/resource-center", label: "Resource Center" },
- { to: "/comprehensive-guide", label: "Comprehensive Guide" },
+ { to: "/where-to-find-serial-number", label: "Where to Find Serial Numbers" },
  { to: "/stolen-database", label: "Stolen Database" },
  { to: "/community", label: "Community" },
  { to: "/transparency", label: "Transparency" },

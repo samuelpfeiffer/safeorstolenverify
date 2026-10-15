@@ -68,7 +68,7 @@ const TabletCheck = () => (
       intro:
         'Check a used iPad, Samsung Galaxy Tab or other tablet before you buy it. Look up the serial number for theft reports, then make sure it is free of the owner\'s account locks.',
       whatIs:
-        'A tablet stolen check has two parts: a serial or IMEI check for theft reports, and a check that the tablet is not still locked to someone\'s Apple or Google account. For a cellular iPad you can also check the IMEI with the <a href="/imei-check">IMEI check</a>, which includes an optional paid carrier blacklist check.',
+        'A tablet stolen check has two parts: a serial or IMEI check for theft reports, and a check that the tablet is not still locked to someone\'s Apple or Google account. For a cellular iPad you can also check the IMEI with the <a href="/imei-checker">IMEI check</a>, which includes an optional paid carrier blacklist check.',
       howItWorks:
         "Type the serial number or IMEI into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the number, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't see Apple or Google account status, so do the account steps above with the seller.",
       whyCheck:

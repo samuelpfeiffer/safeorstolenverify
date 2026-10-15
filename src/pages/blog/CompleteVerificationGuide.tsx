@@ -160,7 +160,7 @@ export default function CompleteVerificationGuide() {
  check covers it. If you want the buying steps in order, read{' '}
  <Link to="/how-to-verify-a-used-item" className="text-primary underline">how to verify a used item</Link>; if
  you can't find the number, see{' '}
- <Link to="/comprehensive-guide" className="text-primary underline">where to find the serial number on any item</Link>.
+ <Link to="/where-to-find-serial-number" className="text-primary underline">where to find the serial number on any item</Link>.
  </p>
 
  <h2 className="text-3xl font-bold mt-10 mb-4">The seven checks, compared</h2>

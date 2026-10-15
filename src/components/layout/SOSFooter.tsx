@@ -55,6 +55,16 @@ export const SOSFooter: React.FC = () => {
   { label: 'Bike Stolen? What to Do', to: '/what-to-do-if-your-bike-is-stolen' },
   { label: 'Gun Stolen? What to Do', to: '/what-to-do-if-your-gun-is-stolen' },
   { label: 'Find Your Stolen Item Online', to: '/how-to-find-stolen-item-for-sale-online' },
+  // Oct 15 2026: these guides had 2-3 internal links each (the expandable site map below is not
+  // in the server HTML), which Search Console showed as "Discovered/Crawled - not indexed".
+  { label: 'Where to Find the Serial Number', to: '/where-to-find-serial-number' },
+  { label: 'Bought Something Stolen?', to: '/what-to-do-if-you-bought-something-stolen' },
+  { label: 'Prove an Item Is Not Stolen', to: '/how-to-prove-item-is-not-stolen' },
+  { label: 'Check an Apple Device', to: '/how-to-check-if-apple-device-stolen' },
+  { label: 'Check a License Plate', to: '/how-to-check-if-license-plate-stolen' },
+  { label: 'Check a Boat', to: '/how-to-check-if-boat-stolen' },
+  { label: 'Check a Trailer or ATV', to: '/how-to-check-if-trailer-atv-stolen' },
+  { label: 'Check a TV', to: '/how-to-check-if-tv-stolen' },
  { label: 'Data Sources', to: '/data-sources' },
  { label: 'Resource Center', to: '/resource-center' },
  { label: 'News', to: '/news' },
@@ -153,7 +163,7 @@ export const SOSFooter: React.FC = () => {
  { label: 'OfferUp Scam Protection', to: '/guides/offerup-scam-protection' },
  { label: 'FB Marketplace Safety', to: '/facebook-marketplace-safety' },
  { label: 'OfferUp Safety', to: '/offerup-safety' },
- { label: 'Comprehensive Guide', to: '/comprehensive-guide' },
+ { label: 'Where to Find Serial Numbers', to: '/where-to-find-serial-number' },
  { label: 'How to Check Phone', to: '/how-to-check-if-phone-stolen' },
  { label: 'How to Check Car', to: '/how-to-check-if-car-stolen' },
  ]

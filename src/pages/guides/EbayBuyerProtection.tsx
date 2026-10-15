@@ -69,7 +69,7 @@ export default function EbayBuyerProtection() {
       ]}
       content={{
         intro:
-          "eBay buyer protection is called the eBay Money Back Guarantee. Here is what it covers, how to use it, and the gap it leaves: whether the item was stolen. For the step-by-step theft check on an eBay listing, see <a href=\"/ebay-stolen-item-check\">how to check if an eBay item is stolen</a>.",
+          "eBay buyer protection is called the eBay Money Back Guarantee. Here is what it covers, how to use it, and the gap it leaves: whether the item was stolen. For the step-by-step theft check on an eBay listing, use the <a href=\"/marketplace-url-checker\">marketplace listing checker</a>.",
         whatIs:
           "The Money Back Guarantee is eBay's promise to refund you when an eligible purchase doesn't arrive or isn't what the listing described. It applies when you pay through eBay's own checkout. It is built around delivery and condition problems, not ownership, so a stolen item that arrives on time and works fine looks like a successful sale.",
         howItWorks:
@@ -110,7 +110,7 @@ export default function EbayBuyerProtection() {
           {
             question: 'Can I check if an eBay item is stolen before I buy?',
             answer:
-              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check), which searches its theft reports and public web results. The first 2 checks are free. When the item arrives, make sure the number on it matches what you checked.",
+              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/marketplace-url-checker), which searches its theft reports and public web results. The first 2 checks are free. When the item arrives, make sure the number on it matches what you checked.",
           },
           {
             question: 'Is paying outside eBay covered by buyer protection?',

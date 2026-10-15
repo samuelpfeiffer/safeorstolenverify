@@ -68,7 +68,7 @@ function GuidePage() {
         intro:
           'Check a used camera body, lens or drone before you buy it. Find each serial, check it for theft reports, and use a test photo to confirm the body is what the seller says.',
         whatIs:
-          'A camera stolen check looks for theft reports tied to the serial numbers of the body and each lens. Owners give these serials to the police and their insurer after a theft, and can report them on SafeOrStolen. For laptops, phones and other gear, see the <a href="/check-electronics">electronics check</a>.',
+          'A camera stolen check looks for theft reports tied to the serial numbers of the body and each lens. Owners give these serials to the police and their insurer after a theft, and can report them on SafeOrStolen. For laptops, phones and other gear, see the <a href="/serial-number-checker">electronics check</a>.',
         howItWorks:
           "Type the body or lens serial into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search the camera makers' or insurers' records. Check each serial separately.",
         whyCheck:

@@ -65,7 +65,7 @@ export default function HowToCheckIfTvStolenPage() {
         intro:
           'Check a used or new-in-box TV before you buy it. Find the serial number on the back and in the menu, check it for theft reports, and know the signs of a TV taken from a store or a delivery.',
         whatIs:
-          'A TV stolen check looks for theft reports tied to the TV\'s serial number. Owners give the serial to the police when a TV is stolen, and can report it on SafeOrStolen. The model number is the same for every TV of that model, so make sure you check the serial. For other electronics, see the <a href="/check-electronics">electronics check</a>.',
+          'A TV stolen check looks for theft reports tied to the TV\'s serial number. Owners give the serial to the police when a TV is stolen, and can report it on SafeOrStolen. The model number is the same for every TV of that model, so make sure you check the serial. For other electronics, see the <a href="/serial-number-checker">electronics check</a>.',
         howItWorks:
           "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't search manufacturer, retailer or insurer records.",
         whyCheck:

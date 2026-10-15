@@ -13,12 +13,18 @@ import {
   Outlet as TSOutlet,
 } from "@tanstack/react-router";
 import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode } from "react";
+import { resolveLegacyRedirect } from "@/utils/legacyRedirectMap";
 
 // ---------- shared URL parsing ----------
 
 function parseTo(to: string): { pathname: string; search?: Record<string, string>; hash?: string } {
   const [beforeHash, hashStr] = (to ?? "").split("#");
-  const [pathname, searchStr] = beforeHash.split("?");
+  const [rawPathname, searchStr] = beforeHash.split("?");
+  // Oct 15 2026: internal links to retired URLs rendered as hrefs that 301 (about 150 distinct
+  // ones across the sitemap pages), which Search Console counts against the site. Link straight
+  // to the final URL from the same map the server uses for its 301s.
+  const pathname =
+    rawPathname && rawPathname.startsWith("/") ? resolveLegacyRedirect(rawPathname) ?? rawPathname : rawPathname;
   return {
     // react-router keeps the current path for search-only ("?a=1") and
     // hash-only ("#section") targets; TanStack's "." means current route.

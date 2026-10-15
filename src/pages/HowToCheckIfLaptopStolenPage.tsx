@@ -69,7 +69,7 @@ export default function HowToCheckIfLaptopStolenPage() {
         intro:
           'Six checks to run before you pay for a used laptop: read the serial from the system, check it for theft reports, and make sure no Apple, Microsoft or company account still controls it.',
         whatIs:
-          'Checking if a laptop is stolen means two things: looking for a theft report on its serial number, and making sure the laptop is free of the owner\'s locks. For the serial lookup and brand-by-brand serial formats, go straight to the <a href="/check-laptop-stolen">laptop serial number check</a>. This page walks through the in-person checks.',
+          'Checking if a laptop is stolen means two things: looking for a theft report on its serial number, and making sure the laptop is free of the owner\'s locks. For the serial lookup itself, use the <a href="/serial-number-checker">serial number check</a>. This page walks through the in-person checks.',
       howItWorks:
         "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't see Apple Activation Lock or company device management, so do those checks on the laptop itself.",
       whyCheck:
