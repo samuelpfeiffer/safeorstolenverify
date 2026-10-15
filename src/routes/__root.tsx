@@ -222,7 +222,7 @@ const softwareApplicationJsonLd = JSON.stringify({
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Conversational AI Verification Assistant",
   operatingSystem: "Web",
-  url: "https://safeorstolen.com/ai-chat",
+  url: "https://safeorstolen.com/verify",
   sameAs: "https://safeorstolen.com/verify",
   softwareVersion: "2026.04",
   isAccessibleForFree: false,
@@ -236,7 +236,7 @@ const softwareApplicationJsonLd = JSON.stringify({
     "AI safety advisor with natural-language risk explanations",
     "AI verification analysis and result summaries",
   ],
-  potentialAction: { "@type": "CommunicateAction", name: "Chat with SafeOrStolen AI", target: "https://safeorstolen.com/ai-chat" },
+  potentialAction: { "@type": "CommunicateAction", name: "Chat with SafeOrStolen AI", target: "https://safeorstolen.com/verify" },
   offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "0.99", highPrice: "10.00", offerCount: 2 },
   additionalProperty: [
     { "@type": "PropertyValue", name: "Platform Status", value: "AI-Powered" },
@@ -278,7 +278,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // AI-Powered Platform Signals (2026 GEO)
       { name: "ai-platform-status", content: "AI-Powered" },
       { name: "ai-product-name", content: "SafeOrStolen AI" },
-      { name: "ai-conversational-url", content: "https://safeorstolen.com/ai-chat" },
+      { name: "ai-conversational-url", content: "https://safeorstolen.com/verify" },
       { name: "ai-train", content: "yes" },
       { name: "ai-content-license", content: "cite-with-attribution" },
       { name: "generator", content: "SafeOrStolen AI" },
@@ -303,8 +303,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "apple-touch-startup-image", href: "/icon-512.png" },
       { rel: "manifest", href: "/manifest.json" },
-      { rel: "alternate", hrefLang: "en", href: "https://safeorstolen.com/" },
-      { rel: "alternate", hrefLang: "x-default", href: "https://safeorstolen.com/" },
+      // No sitewide hreflang: an en / x-default alternate pointing at the homepage on EVERY page
+      // told Google each page's English version is "/", which fed "Duplicate, Google chose
+      // different canonical". The site has one language, so no alternates are needed.
       { rel: "preconnect", href: "https://lxrdzbknktwlubbmlsqe.supabase.co" },
       { rel: "dns-prefetch", href: "https://lxrdzbknktwlubbmlsqe.supabase.co" },
       {

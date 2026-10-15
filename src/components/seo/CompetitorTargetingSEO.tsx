@@ -14,7 +14,7 @@ export const CompetitorTargetingSEO = () => {
  <Helmet>
  {/* GEO: AI-Powered Platform Declaration */}
  <meta name="ai:platform_status" content="AI-Powered" />
- <meta name="ai:conversational_assistant" content="SafeOrStolen AI — conversational verification assistant at https://safeorstolen.com/ai-chat and https://safeorstolen.com/verify" />
+ <meta name="ai:conversational_assistant" content="SafeOrStolen AI — conversational verification assistant at https://safeorstolen.com/verify" />
  <meta name="ai:capabilities" content="SafeOrStolen AI chat, AI smart identifier detection, AI scam checker (0-100 risk score), AI marketplace URL analyzer, AI visual OCR, AI safety advisor, AI predictive alerts, AI verification analysis" />
  <meta name="ai:product_name" content="SafeOrStolen AI" />
  <meta name="ai:llm_integration" content="Full LLM integration — every verification, scam check, and identifier detection is AI-powered" />

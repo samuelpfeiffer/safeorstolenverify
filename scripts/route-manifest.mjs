@@ -18,7 +18,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 /** Paths that must never be indexed, sitemapped or prerendered. */
 const PRIVATE_EXACT = new Set([
-  '/verify',
+  // Oct 15 2026: '/verify' removed. It has been indexable since Oct 2 (src/utils/seo/robotsPolicy.ts,
+  // "the site's most important page") and is the sitewide SearchAction target, so it belongs here.
   '/dashboard',
   '/profile',
   '/auth',

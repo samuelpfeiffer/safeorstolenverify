@@ -4,6 +4,21 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // ===== 2026-10-15 Search Console: pages that only redirected in the browser, and duplicates =====
+  // /ai-verify rendered a client-side <Navigate> to /verify (200, canonical /verify) and sat in
+  // the sitemap; serve the real 301 instead.
+  "/ai-verify": "/verify",
+  // Same title and topic as /where-to-find-serial-number, which now renders this guide.
+  "/comprehensive-guide": "/where-to-find-serial-number",
+  // Search Console 10/4 report: these answered 404 or a noindexed page.
+  "/app/features": "/app", // noindexed /app/* screen, linked sitewide; /app is the app page
+  "/business": "/for-businesses",
+  "/comparisons": "/how-to-check-if-item-stolen", // same destination as /compare
+  "/comparisons/safeorstolen-vs-imeiinfo": "/imei-checker", // same as /safeorstolen-vs-imeiinfo
+  "/chicago-stolen-item-check": "/how-to-check-if-item-stolen", // same as /stolen-check-chicago
+  "/detroit-stolen-item-check": "/how-to-check-if-item-stolen",
+  "/blog/imei-checker-guide": "/imei-checker",
+
   // ===== 2026-10-07 Search Console indexing cleanup: every URL Google has shown or the sitemap lists was
   // fetched live. These answered 404, a 'not found' page with a 200 (soft 404), or duplicated another page. =====
   "/albuquerque-stolen-item-check": "/verify",
@@ -818,6 +833,9 @@ export function resolveLegacyRedirect(pathname: string): string | null {
       return to;
     }
   }
+  // Retired auto-generated "<city or state>-stolen-item-check" landing pages. 78 are listed above;
+  // Search Console keeps surfacing more of them, and none has a page any more.
+  if (/^\/[a-z]+(?:-[a-z]+)*-stolen-item-check$/.test(p)) return "/verify";
   return null;
 }
 

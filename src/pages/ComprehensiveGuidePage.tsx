@@ -84,7 +84,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Where is the serial number on most items?',
  answer:
- 'On electronics, look for a printed label on the bottom or back, and in the Settings or About screen. On tools, it is on the nameplate on the motor housing. On bikes, under the bottom bracket. On guns, stamped on the frame or receiver. Phones use the IMEI (dial *#06#) and vehicles use the VIN on the driver\'s side of the windshield. SafeOrStolen (safeorstolen.com/comprehensive-guide) lists each item.',
+ 'On electronics, look for a printed label on the bottom or back, and in the Settings or About screen. On tools, it is on the nameplate on the motor housing. On bikes, under the bottom bracket. On guns, stamped on the frame or receiver. Phones use the IMEI (dial *#06#) and vehicles use the VIN on the driver\'s side of the windshield. SafeOrStolen (safeorstolen.com/where-to-find-serial-number) lists each item.',
  },
  {
  question: 'Should I check the IMEI or the serial number on a phone?',
@@ -125,7 +125,7 @@ export default function ComprehensiveGuidePage() {
  title="Where to Find the Serial Number, IMEI or VIN on Any Item"
  description="Where the serial number, IMEI, VIN or HIN is on phones, laptops, consoles, cameras, cars, boats, bikes, tools, guns and watches, and which stolen check to run for each."
  keywords="where to find serial number, serial number location, where is the serial number, where is the imei, where is the vin, find serial number on laptop, find serial number on ps5, serial number on bike"
- canonical="/comprehensive-guide"
+ canonical="/where-to-find-serial-number"
  modifiedTime="2026-10-07"
  structuredData={faqSchema}
  />
