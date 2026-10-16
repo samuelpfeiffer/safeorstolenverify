@@ -1,6 +1,7 @@
 import { Link, useLocation } from '@/lib/router-compat';
 import DOMPurify from 'dompurify';
 import { Shield, Search, CheckCircle, Clock, Award } from 'lucide-react';
+import { FounderNote, FOUNDER_PERSON_SCHEMA } from '@/components/seo/FounderNote';
 
 // DOMPurify requires a browser DOM (window/document). Under SSR (TanStack Start
 // server render, no DOM) its sanitize() throws, which kills the entire page
@@ -55,6 +56,8 @@ interface ItemLandingPageProps {
  /** Short direct answer shown near the top (and first in the FAQ schema). */
  quickAnswer?: { question: string; answer: string };
  sections?: LandingSection[];
+ /** First-person note from the founder, written by hand for this page. */
+ founderNote?: string[];
 }
 
 export const ItemLandingPageTemplate = ({
@@ -68,7 +71,8 @@ export const ItemLandingPageTemplate = ({
  searchType,
  searchPlaceholder,
  quickAnswer,
- sections = []
+ sections = [],
+ founderNote
 }: ItemLandingPageProps) => {
  const location = useLocation();
  
@@ -129,7 +133,17 @@ export const ItemLandingPageTemplate = ({
  }))
  } : null;
 
- const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+ const webPageSchema = founderNote ? {
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": h1,
+ "url": fullUrl,
+ "dateModified": dateModified,
+ "author": FOUNDER_PERSON_SCHEMA,
+ "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" }
+ } : null;
+
+ const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(webPageSchema ? [webPageSchema] : [])];
 
  return (
  <>
@@ -151,6 +165,7 @@ export const ItemLandingPageTemplate = ({
  <h1>{h1}</h1>
  <p>{content.intro}</p>
  {quickAnswer && (<><h2>{quickAnswer.question}</h2><p>{quickAnswer.answer}</p></>)}
+ {founderNote && (<><h2>Why this check exists</h2>{founderNote.map((t, i) => <p key={i}>{t}</p>)}<p>Sam Pfeiffer, founder of SafeOrStolen, Peoria, Arizona. <a href="/our-story">Read the full story</a></p></>)}
  {sections.map((sec, i) => (
  <div key={i}>
  <h2>{sec.heading}</h2>
@@ -259,6 +274,8 @@ export const ItemLandingPageTemplate = ({
  </div>
  </section>
  )}
+
+ {founderNote && <FounderNote paragraphs={founderNote} />}
 
  {sections.map((sec, i) => (
  <section key={i} className={`py-12 px-4 ${i % 2 === 0 ? '' : 'bg-card/50'}`}>
