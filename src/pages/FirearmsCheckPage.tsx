@@ -276,7 +276,7 @@ const FirearmsCheckPage = () => {
  </p>
  <div className="grid sm:grid-cols-2 gap-4">
  {[
- { who: 'Private Buyers', desc: 'Anyone purchasing a used firearm through a private sale on Armslist, Facebook, at a gun show, or from an individual. Many states do not require a background check for private sales, so checking the serial and the seller's paperwork is up to you.' },
+ { who: 'Private Buyers', desc: 'Anyone purchasing a used firearm through a private sale on Armslist, Facebook, at a gun show, or from an individual. Many states do not require a background check for private sales, so checking the serial and the paperwork the seller shows you is up to you.' },
  { who: 'Gun Show Vendors & Attendees', desc: 'High volume + cash transactions = elevated risk. Many stolen guns circulate through gun shows precisely because of lighter scrutiny. Run a check on every private transaction.' },
  { who: 'FFL Dealers Buying Used Inventory', desc: 'When buying used firearms from individuals for resale, a serial check provides documented due diligence before you take ownership.' },
  { who: 'Estate Sale Participants', desc: 'Firearms in estates can have complex ownership histories. Verify before purchasing — you have no way to know the history of an inherited firearm.' },
