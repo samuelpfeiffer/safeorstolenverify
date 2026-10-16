@@ -251,7 +251,7 @@ const FirearmsCheckPage = () => {
  <ul className="space-y-3 mb-6">
  {[
  { title: 'Federal criminal exposure', desc: 'Under 18 U.S.C. § 922(j), knowingly purchasing, possessing, or transferring a stolen firearm is a federal felony carrying up to 10 years in prison. "Knowingly" is broadly interpreted — if you had reason to know the gun was stolen (low price, seller unwilling to provide paperwork), that can be sufficient.' },
- { title: 'State criminal exposure', desc: 'All 50 states have additional receiving stolen property statutes. Penalties vary but typically include felony charges for firearms.' },
+ { title: 'State criminal exposure', desc: 'Every state also has its own law against receiving stolen property. Penalties vary by state and by the value of the property.' },
  { title: 'Asset seizure with no compensation', desc: 'Law enforcement can seize a firearm linked to theft records at any time. You have no legal claim to compensation — your money is gone.' },
  { title: 'Background check complications', desc: 'A stolen firearm discovered during a transfer at a licensed dealer (FFL) will result in the transfer being denied and possible investigation of all parties involved.' },
  ].map((item) => (
@@ -276,7 +276,7 @@ const FirearmsCheckPage = () => {
  </p>
  <div className="grid sm:grid-cols-2 gap-4">
  {[
- { who: 'Private Buyers', desc: 'Anyone purchasing a used firearm through a private sale on Armslist, Facebook, at a gun show, or from an individual. Private sales in most states have no background check — the serial check is your only protection.' },
+ { who: 'Private Buyers', desc: 'Anyone purchasing a used firearm through a private sale on Armslist, Facebook, at a gun show, or from an individual. Many states do not require a background check for private sales, so checking the serial and the paperwork the seller shows you is up to you.' },
  { who: 'Gun Show Vendors & Attendees', desc: 'High volume + cash transactions = elevated risk. Many stolen guns circulate through gun shows precisely because of lighter scrutiny. Run a check on every private transaction.' },
  { who: 'FFL Dealers Buying Used Inventory', desc: 'When buying used firearms from individuals for resale, a serial check provides documented due diligence before you take ownership.' },
  { who: 'Estate Sale Participants', desc: 'Firearms in estates can have complex ownership histories. Verify before purchasing — you have no way to know the history of an inherited firearm.' },
