@@ -12,7 +12,7 @@ export default function HowToCheckIfToolsStolenPage() {
       metaDescription="Free stolen tool serial number lookup. Check if a DeWalt, Milwaukee, Makita or other power tool is stolen before you buy, find the serial number, and spot job-site theft red flags."
       h1="Stolen Tools Serial Number Lookup: Check if a Tool Is Stolen"
       itemType="Power Tool"
-      dateModified="2026-10-07"
+      dateModified="2026-10-16"
       searchPlaceholder="Enter the tool's serial number"
       keywords={[
         'free stolen tools serial number lookup',
@@ -24,6 +24,10 @@ export default function HowToCheckIfToolsStolenPage() {
         'do power tools have serial numbers',
         'check if dewalt tool is stolen',
         'check if milwaukee tool is stolen',
+      ]}
+      founderNote={[
+        "I've lived on both sides of stolen property, and I can tell you tools are about the easiest thing to sell with no questions asked. They come off job sites and out of truck boxes, and they're sold for cash the same day. The person who buys them is often the one left holding the problem, which is exactly what happened to my friend Glen Thomure over a stolen tablet. He's the reason SafeOrStolen exists.",
+        "Before you buy used tools, ask for the serial numbers and check them here. Look for engravings, initials or a scratched-off label, and be wary of a full set of one brand at a fraction of the price. If the seller won't let you see the serial plate, don't buy."
       ]}
       quickAnswer={{
         question: 'How do I check if a tool is stolen?',

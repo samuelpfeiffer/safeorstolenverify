@@ -2,6 +2,7 @@ import { Link } from '@/lib/router-compat';
 import { useState } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
+import { FounderNote, FOUNDER_PERSON_SCHEMA } from '@/components/seo/FounderNote';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 // Oct 5 2026: police firearm theft and loss reports we hold, by state (counted from theft_records).
@@ -104,6 +105,13 @@ const FirearmsCheckPage = () => {
  </p>
  </div>
  </section>
+
+ <FounderNote
+ paragraphs={[
+ "SafeOrStolen exists because of my friend Glen Thomure. Someone he trusted gave him a tablet, and Glen took it in good faith. It was stolen. When police ran the serial number, Glen was the one arrested, and he lost his home, his car and his savings. That was over a tablet. With a gun, the person holding it when police run the serial is in far deeper trouble.",
+ "If you're buying a gun from a private seller, check the serial here first, then look closely at the serial itself for grinding, fresh stamping or numbers that don't line up. If anything seems wrong, do the sale through a licensed dealer or ask your local police to run it. Our records are historical and don't cover every state, so a no-match result here is a start, not a clearance."
+ ]}
+ />
 
  {/* MAIN CONTENT */}
  <article className="max-w-3xl mx-auto px-4 pb-16">
@@ -441,7 +449,8 @@ const FirearmsCheckPage = () => {
  "@type": "WebPage",
  "name": "Free Gun Serial Number Lookup — Is This Gun Stolen?",
  "description": "Search a gun serial number against police firearm theft and loss reports from 33 states and DC and live Ohio records, and spot altered serials before you buy.",
- "dateModified": "2026-10-05",
+ "dateModified": "2026-10-16",
+ "author": FOUNDER_PERSON_SCHEMA,
  "url": "https://safeorstolen.com/firearms-check",
  "breadcrumb": {
  "@type": "BreadcrumbList",

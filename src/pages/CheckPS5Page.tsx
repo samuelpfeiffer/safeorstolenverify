@@ -10,7 +10,7 @@ const CheckPS5Page = () => {
       metaDescription="Free PS5 serial number checker. Find the serial on any PS5, original, Slim or Pro, check it against stolen reports in seconds, and test for a PSN ban before you pay."
       h1="Free PS5 Serial Number Checker"
       itemType="PlayStation 5"
-      dateModified="2026-10-05"
+      dateModified="2026-10-16"
       searchPlaceholder="Enter the PS5 serial number"
       keywords={[
         'ps5 serial number check',
@@ -22,6 +22,10 @@ const CheckPS5Page = () => {
         'how to check if ps5 is banned before buying',
         'ps5 pro serial number check',
         'ps5 slim serial number check'
+      ]}
+      founderNote={[
+        "Consoles change hands in parking lots for cash, with no paperwork and no way back if it goes wrong. My friend Glen Thomure took a tablet that way from someone he trusted. It turned out to be stolen, police ran the serial number, and Glen was the one arrested. That's why I built SafeOrStolen.",
+        "So here's what I'd tell a friend buying a used PS5: get the serial number before you drive anywhere, check it here, and match it to the one on the console's screen when you meet. If the seller gets strange about any of that, you already have your answer."
       ]}
       quickAnswer={{
         question: "How do I check a PS5 serial number?",

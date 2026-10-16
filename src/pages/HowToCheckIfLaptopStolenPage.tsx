@@ -14,7 +14,7 @@ export default function HowToCheckIfLaptopStolenPage() {
       metaDescription="How to check if a laptop is stolen before you buy: find the serial on a Mac or Windows PC, spot Activation Lock and company management, and watch the seller reset it."
       h1="How to Check if a Laptop Is Stolen"
       itemType="Laptop"
-      dateModified="2026-10-07"
+      dateModified="2026-10-16"
       searchPlaceholder="Enter the laptop's serial number"
       keywords={[
         'how to check if laptop is stolen',
@@ -25,6 +25,10 @@ export default function HowToCheckIfLaptopStolenPage() {
         'check if macbook is stolen',
         'laptop activation lock',
         'buying used laptop stolen',
+      ]}
+      founderNote={[
+        "A tablet is what wrecked my friend Glen Thomure's life. He took one as collateral from someone he trusted, and he had no way to know it was stolen. When police ran the serial number, he was arrested, and he lost nearly everything he had. I built SafeOrStolen so the next person in Glen's position can find out first.",
+        "With a used laptop, do three things before you pay: check the serial number here, make sure it matches the one in the laptop's own settings, and watch the seller sign out of their Apple ID or Microsoft account. A seller who can't unlock the laptop they're selling usually isn't its owner."
       ]}
       quickAnswer={{
         question: 'How do I check if a laptop is stolen?',

@@ -10,7 +10,7 @@ const SerialNumberCheckerPage = () => {
  metaDescription="Search any serial number free. See if a laptop, tool, camera, console, gun or other item is reported stolen before you buy. Results in seconds, 2 free checks, no card."
  h1="Free Serial Number Search & Lookup"
  itemType="Item"
- dateModified="2026-10-05"
+ dateModified="2026-10-16"
  searchPlaceholder="Type or paste any serial number"
  keywords={[
  'free serial number search',
@@ -21,6 +21,10 @@ const SerialNumberCheckerPage = () => {
  'check if item is stolen by serial number',
  'stolen serial number lookup',
  'serial number lookup database'
+ ]}
+ founderNote={[
+   "I started SafeOrStolen because of my friend Glen Thomure. Someone he trusted handed him a tablet as collateral, and Glen took it in good faith. He had no idea it was stolen. When police ran the serial number, Glen was the one arrested. He lost his home, his car and his savings fighting it, and he died in a nursing home without ever getting back on his feet.",
+   "One serial number check would have told him. That's all this page is: the check Glen never had. Type in the number, read what comes back, and if anything about the deal feels off, walk away. No bargain is worth what it cost him."
  ]}
  quickAnswer={{
  question: "How do I check if an item is stolen by its serial number?",
