@@ -267,6 +267,16 @@ const Index = () => {
  </Link>
  ))}
  </div>
+
+ {/* Oct 16 2026: text links to pages Google already shows for big searches, so the homepage passes them weight. */}
+ <nav aria-label="Popular checks and guides" className="mt-8 text-center text-sm text-muted-foreground">
+ <span className="font-semibold text-foreground">Popular: </span>
+ <Link to="/check-ps5" className="text-primary hover:underline">PS5 serial number check</Link>{' · '}
+ <Link to="/how-to-check-if-tools-stolen" className="text-primary hover:underline">Stolen tools serial lookup</Link>{' · '}
+ <Link to="/how-to-check-if-item-stolen" className="text-primary hover:underline">How to check if something is stolen</Link>{' · '}
+ <Link to="/stolen-gun-statistics" className="text-primary hover:underline">Stolen gun statistics by state</Link>{' · '}
+ <Link to="/where-to-find-serial-number" className="text-primary hover:underline">Where to find the serial number</Link>
+ </nav>
  </div>
  </section>
 
