@@ -64,7 +64,13 @@ const webApplicationJsonLd = JSON.stringify({
     "@type": "Organization",
     name: "SafeOrStolen",
     url: "https://safeorstolen.com",
-    logo: "https://safeorstolen.com/sos-logo.png",
+    logo: "https://safeorstolen.com/sos-logo-square.png",
+    sameAs: [
+      "https://www.crunchbase.com/organization/safe-or-stolen",
+      "https://biz.prlog.org/SafeOrStolen/",
+      "https://www.youtube.com/@safeorstolen",
+      "https://x.com/safeorstolen",
+    ],
     email: "safeorstolenmail@gmail.com",
     address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
   },
@@ -83,7 +89,13 @@ const organizationJsonLd = JSON.stringify({
   "@type": "Organization",
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
-  logo: "https://safeorstolen.com/sos-logo.png",
+  logo: "https://safeorstolen.com/sos-logo-square.png",
+  sameAs: [
+    "https://www.crunchbase.com/organization/safe-or-stolen",
+    "https://biz.prlog.org/SafeOrStolen/",
+    "https://www.youtube.com/@safeorstolen",
+    "https://x.com/safeorstolen",
+  ],
   email: "safeorstolenmail@gmail.com",
   description:
     "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
@@ -112,7 +124,7 @@ const coreGraphJsonLd = JSON.stringify({
       "@id": "https://safeorstolen.com/#organization",
       name: "SafeOrStolen",
       url: "https://safeorstolen.com",
-      logo: { "@type": "ImageObject", url: "https://safeorstolen.com/sos-logo.png", width: "512", height: "512" },
+      logo: { "@type": "ImageObject", url: "https://safeorstolen.com/sos-logo-square.png", width: "600", height: "600" },
       description:
         "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
       slogan: "Verify Before You Buy",
@@ -263,7 +275,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "64x64" },
+      // Google shows a site icon only if it is square and a multiple of 48px (Oct 9 2026).
+      { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+      { rel: "icon", href: "/favicon-48.png", type: "image/png", sizes: "48x48" },
+      { rel: "icon", href: "/favicon-96.png", type: "image/png", sizes: "96x96" },
+      { rel: "icon", href: "/favicon-144.png", type: "image/png", sizes: "144x144" },
       { rel: "icon", href: "/icon-192.png", type: "image/png", sizes: "192x192" },
       { rel: "icon", href: "/icon-512.png", type: "image/png", sizes: "512x512" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },

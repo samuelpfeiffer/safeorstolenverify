@@ -1,7 +1,7 @@
 {
-  "name": "SafeOrStolen - Stolen Item Verification App",
+  "name": "SafeOrStolen",
   "short_name": "SafeOrStolen",
-  "description": "Check supported secondhand-item identifiers using SafeOrStolen reports, public web results, and AI analysis. Installable web app with barcode scanning; checks require internet access.",
+  "description": "Check if a used phone, car, gun, tool or bike was reported stolen. Enter the IMEI, VIN, plate or serial number, or scan its barcode. Checks need an internet connection.",
   "start_url": "/app?source=pwa",
   "id": "com.safeorstolen.app",
   "display": "standalone",
@@ -58,7 +58,7 @@
       "url": "/verify?type=imei&source=shortcut",
       "icons": [
         {
-          "src": "/android-chrome-192x192.png",
+          "src": "/icon-192.png",
           "sizes": "192x192"
         }
       ]
@@ -70,7 +70,7 @@
       "url": "/verify?type=vin&source=shortcut",
       "icons": [
         {
-          "src": "/android-chrome-192x192.png",
+          "src": "/icon-192.png",
           "sizes": "192x192"
         }
       ]
@@ -82,7 +82,7 @@
       "url": "/verify?scan=true&source=shortcut",
       "icons": [
         {
-          "src": "/android-chrome-192x192.png",
+          "src": "/icon-192.png",
           "sizes": "192x192"
         }
       ]
@@ -94,7 +94,7 @@
       "url": "/dashboard?source=shortcut",
       "icons": [
         {
-          "src": "/android-chrome-192x192.png",
+          "src": "/icon-192.png",
           "sizes": "192x192"
         }
       ]

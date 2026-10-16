@@ -49,7 +49,7 @@ export const GlobalAISEO: React.FC = () => {
  "@type": "Organization",
  "name": "SafeOrStolen",
  "url": "https://safeorstolen.com/",
- "logo": "https://safeorstolen.com/sos-logo.png"
+ "logo": "https://safeorstolen.com/sos-logo-square.png"
  }
  }
  }
