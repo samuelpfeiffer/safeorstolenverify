@@ -40,6 +40,7 @@ import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
@@ -307,8 +308,8 @@ const VerifyChatPage: React.FC = () => {
          if (!allowed) {
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your free checks for this period. **Upgrade to Unlimited at $10/mo** or grab a [single check for $0.99](/pricing) to continue.`,
-             suggestions: ['Why upgrade?', 'Compare plans'],
+             content: `You've used your 2 free checks. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
+             payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
          }
@@ -319,19 +320,21 @@ const VerifyChatPage: React.FC = () => {
            fingerprint: getOrCreateFingerprint(),
            plateState: toCanonicalItemType(itemType) === 'plate' ? plateState : null,
          });
-         if (verifyErr && !user && (verifyErr.code === 'LIMIT_REACHED' || verifyErr.code === 'AUTH_REQUIRED')) {
-           requireAccount(assistantId, identifier);
-           return;
-         }
-         // Oct 4 2026: signed-in people who used their free checks get the paid options, not an error.
-         if (verifyErr && user && verifyErr.code === 'LIMIT_REACHED') {
+         // Oct 16 2026: anyone who used their free checks, signed in or not, gets the paid check
+         // for this item one tap away. Signed-out visitors used to get only a sign-up prompt here,
+         // with no way to pay, and sales stopped (none from Oct 4 to Oct 16).
+         if (verifyErr && verifyErr.code === 'LIMIT_REACHED') {
            // Remember this item so it runs automatically after they buy (see /payment-success).
            savePendingCheck(cleanedIdentifier, itemType);
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your free checks. **Get unlimited checks for $10/month** or run a [single full check for $0.99](/pricing).`,
-             suggestions: ['Why upgrade?', 'Compare plans'],
+             content: `You've used your 2 free checks. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
+             payOffer: { identifier: cleanedIdentifier, itemType },
            });
+           return;
+         }
+         if (verifyErr && !user && verifyErr.code === 'AUTH_REQUIRED') {
+           requireAccount(assistantId, identifier);
            return;
          }
          if (verifyErr) throw new Error(verifyErr.message);
@@ -1210,6 +1213,10 @@ const ChatBubble: React.FC<{
  </button>
  )}
  </div>
+ )}
+
+ {!isUser && !msg.loading && msg.payOffer && (
+ <LimitPayOffer identifier={msg.payOffer.identifier} itemType={msg.payOffer.itemType} />
  )}
 
  {!isUser && isLast && !msg.loading && msg.suggestions && msg.suggestions.length > 0 && (
