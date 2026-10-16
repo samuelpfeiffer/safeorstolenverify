@@ -14,6 +14,8 @@ export type ChatMessage = {
  loading?: boolean;
  // suggested follow-up prompts the user can tap
  suggestions?: string[];
+ // free checks used up: offer the paid check for this item right in the chat
+ payOffer?: { identifier: string; itemType?: string };
 };
 
 export type ChatThread = {
