@@ -1,351 +1,355 @@
 /**
  * Unique Content for States Part 3 - Final 16 States
  * Continues from stateUniqueContentPart2.ts
+ * Oct 2026: rewritten by hand. Removed statute penalty figures, dollar thresholds,
+ * tax percentages, city rankings and "worst in America" claims we can't source, the false
+ * claim that a recovered stolen car is "forfeited" (it goes back to its owner), and claims
+ * that SafeOrStolen or public web results show a vehicle's full title or salvage history.
  */
 
 import { StateUniqueContent } from './stateUniqueContent';
 
 export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  'montana-license-plate-lookup': {
- vehicleMarketParagraph: `Montana's vehicle market serves a vast, sparsely populated state where rugged vehicles are essential. Billings, the largest city, anchors the market, with Missoula and Great Falls serving their regions. Montana's outdoor culture and ranching economy drive strong demand for trucks, SUVs, and 4x4 vehicles. The state's harsh winters require winter-capable vehicles. Montana has no sales tax, attracting out-of-state buyers and creating a significant market for expensive vehicles and RVs. The state's famous "Montana LLC" vehicle registration scheme brings in high-end vehicles from across the country, complicating title histories.`,
- theftPatternsParagraph: `Montana has low vehicle theft rates due to its small population and rural character. Billings sees the most theft activity, though at modest rates. Great Falls and Missoula have occasional incidents. The state's isolation limits organized theft—stolen vehicles would have to travel long distances to reach major markets. Most theft is opportunistic rather than organized. The Montana LLC scheme, while legal, creates verification complexity—vehicles may be registered in Montana while physically located in California or New York. Catalytic converter theft has increased in larger towns.`,
- legalConsequencesParagraph: `Under Montana Code Annotated § 45-6-301, theft of property worth over $10,000 is a felony carrying up to 10 years imprisonment. Receiving stolen property carries similar penalties. Montana courts prosecute vehicle crimes. The vehicle is forfeited when recovered. While Montana theft is low, the Montana LLC phenomenon requires careful title verification for high-value vehicles.`,
+ vehicleMarketParagraph: `Montana is a big state with few people, and most of what sells here is built for distance and weather: pickups, 4x4 SUVs, trailers and RVs. Billings is the largest market, with Missoula, Great Falls and Bozeman serving their regions. Montana has no general sales tax, and out-of-state owners often register expensive vehicles, RVs and exotic cars through Montana LLCs. That's legal, but it means the name on the registration is often a company, and the vehicle may never have been in Montana at all.`,
+ theftPatternsParagraph: `Most vehicle theft in Montana happens in and around Billings, Missoula and Great Falls, and much of it is opportunistic: trucks left running to warm up, keys left inside, trailers unhitched in a driveway. Long distances between towns mean a stolen truck can be far away before anyone notices. Catalytic converter theft has also been reported in larger towns. The bigger risk for buyers is paperwork: an LLC-registered vehicle can make it hard to tell who actually owns it.`,
+ legalConsequencesParagraph: `Montana's theft law covers buying or keeping property you know is stolen, and for something worth as much as a truck it is charged as a felony. Even if you're never charged, a stolen vehicle is returned to its owner or their insurer when police find it, and you're left trying to get your money back from the seller. With LLC registrations common, confirm the person selling can actually sign for the owner.`,
  buyingTips: [
- 'Verify Montana DOJ title has proper security features',
- 'For LLC-registered vehicles, verify physical location history',
- 'Check for prior out-of-state registration on expensive vehicles',
- 'Inspect for winter/mountain driving wear',
- 'Confirm vehicle wasn\'t used for tax avoidance schemes'
+ 'Match the VIN on the dash, driver door jamb and title or registration',
+ 'For an LLC-registered vehicle, ask for proof the seller can sign for the company',
+ 'Ask where the vehicle has been kept and why it is registered in Montana',
+ 'Check trailers and RVs for a serial plate that matches the paperwork',
+ 'Look for a damaged ignition or mismatched keys on pickups'
  ],
- commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Subaru Outback', 'Toyota Tacoma', 'Jeep Wrangler', 'Dodge Ram'],
- verificationAdvice: 'Montana\'s low theft rates don\'t eliminate verification needs. For high-value vehicles, check if it\'s an LLC registration and verify where the vehicle has actually been located and used.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Toyota Tacoma', 'Jeep Wrangler', 'Subaru Outback'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen for theft reports and public web results, then deal with the paperwork. For an LLC-registered vehicle, get proof the seller can sign for the LLC before you pay.',
  uniqueFaqs: [
- { question: 'What is the Montana LLC vehicle scheme?', answer: 'Montana\'s lack of sales tax allows out-of-state owners to register vehicles through Montana LLCs, avoiding their home state\'s sales tax. This is legal but creates title complexity. Verify where high-value vehicles have actually been located.' },
- { question: 'Is Montana vehicle theft common?', answer: 'No, Montana has some of the lowest theft rates due to its rural character. However, verify title history for out-of-state vehicles registered through LLCs.' }
+ { question: 'What is Montana LLC vehicle registration?', answer: 'Montana has no general sales tax, so some out-of-state owners form a Montana LLC and register vehicles in its name. The registration then shows the company, not a person. If you buy one, ask for proof the seller can sign for the LLC and check that the VIN on the paperwork matches the vehicle.' },
+ { question: 'How do I check a Montana plate before buying?', answer: 'Enter the plate on SafeOrStolen (safeorstolen.com) to search its theft reports and public web results. Then get the VIN, run that too, and match it on the dash, door jamb and title. SafeOrStolen never shows owner names and does not search Montana MVD records.' }
  ]
  },
  'nebraska-license-plate-lookup': {
- vehicleMarketParagraph: `Nebraska's vehicle market centers on Omaha, the state's largest city and commercial hub, with Lincoln (the capital) and smaller cities serving their regions. The state's agricultural economy drives demand for trucks and work vehicles. Omaha's position on I-80, the main transcontinental route, creates transit traffic. The Council Bluffs, Iowa border essentially makes Omaha one metro market. Nebraska's climate includes harsh winters with road salt and severe summer storms with hail. The state's stable population creates predictable demand.`,
- theftPatternsParagraph: `Nebraska vehicle theft concentrates in Omaha, with Douglas County seeing the most activity. Omaha has experienced increases in recent years, though rates remain lower than major metros. The Kia/Hyundai epidemic has affected Omaha to some degree. Lincoln sees lower rates. I-80 provides an east-west transit corridor. Council Bluffs, Iowa is essentially the same metro area. Some theft activity is connected to Kansas City or Denver operations. Rural Nebraska sees minimal theft.`,
- legalConsequencesParagraph: `Under Nebraska Revised Statutes § 28-518, theft of property worth $5,000+ is a Class IIA felony carrying up to 20 years imprisonment. Receiving stolen property carries similar penalties. Nebraska courts prosecute vehicle theft. The vehicle is forfeited when recovered. Given Omaha's increasing theft and I-80 corridor traffic, verification is important.`,
+ vehicleMarketParagraph: `Nebraska's used-vehicle market centers on Omaha, with Lincoln, Bellevue and Grand Island behind it. Omaha and Council Bluffs, Iowa, work as one market, so a car for sale in Omaha may carry an Iowa title. I-80 runs the length of the state and brings cars in from both coasts. Farm work keeps pickups in steady demand, and the weather leaves its mark: road salt in winter and hail in summer.`,
+ theftPatternsParagraph: `Most Nebraska vehicle theft is in the Omaha area, with Lincoln well behind. Like many Midwest cities, Omaha saw thefts of certain Kia and Hyundai models that lack engine immobilizers. Outside the cities, theft is mostly opportunistic: running trucks, unlocked cars and trailers. Because Omaha sits on the Iowa line and I-80, a car stolen in one state can be listed for sale in the other within a day.`,
+ legalConsequencesParagraph: `Nebraska treats receiving or keeping property you know is stolen as theft, graded by value, so a car usually means a felony charge. If the car turns out to be stolen, police can take it back for its owner even if you paid in good faith. Because Omaha sales cross the Iowa line so often, check whose name is on the title and which state issued it.`,
  buyingTips: [
- 'Inspect for rust from road salt',
- 'Check for hail damage from summer storms',
- 'Verify Nebraska DMV title has proper security features',
- 'Check for prior Iowa registration (Omaha metro)',
- 'Be cautious of Hyundai/Kia models in Omaha'
+ 'Ask whether the title is from Nebraska or Iowa and match the name to the seller',
+ 'Look for hail repairs: wavy roof panels, paint overspray, new glass',
+ 'Check underneath for rust from road salt',
+ 'On Kia and Hyundai models, look for a cracked steering column cover or damaged ignition',
+ 'Match the VIN on the dash, door jamb and title'
  ],
- commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Hyundai Elantra', 'Honda Accord', 'Kia Optima', 'Dodge Ram'],
- verificationAdvice: 'Omaha theft has increased, making verification important. Check for both Iowa and Nebraska prior registration in the Omaha metro. Verify hail damage history.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Hyundai Elantra', 'Kia Optima', 'Honda Accord'],
+ verificationAdvice: 'In the Omaha area, expect Iowa titles as well as Nebraska ones. Run the plate and VIN on SafeOrStolen, then confirm the name on the title matches the seller.',
  uniqueFaqs: [
- { question: 'Is Omaha vehicle theft increasing?', answer: 'Yes, Omaha has seen theft increases in recent years, though rates remain lower than major coastal metros. The Kia/Hyundai trend has affected the city. Verification is increasingly important.' },
- { question: 'Is hail damage common in Nebraska?', answer: 'Yes, Nebraska experiences severe summer hail storms. Look up the item on SafeOrStolen to see if it has been reported stolen, review public web results for salvage history, and inspect carefully for repaired hail damage.' }
+ { question: 'How do I check a car in Omaha before buying?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller\'s ID against the title, which may be from Iowa. Ask the county treasurer about liens.' },
+ { question: 'How do I spot hail damage on a used car in Nebraska?', answer: 'Look along the roof, hood and trunk lid in low light for small dents or a wavy surface. Check for paint overspray on rubber trim and new windshields. SafeOrStolen does not search insurance or salvage records, so buy a history report if you want title-brand information.' }
  ]
  },
  'new-hampshire-license-plate-lookup': {
- vehicleMarketParagraph: `New Hampshire's vehicle market benefits from the state's lack of sales tax, drawing buyers from Massachusetts, Maine, and Vermont. Manchester and Nashua, near the Massachusetts border, have the largest markets. The state's "Live Free or Die" ethos extends to vehicle regulations—no mandatory insurance, no seat belt laws for adults, no vehicle inspection for older vehicles in some circumstances. New Hampshire's harsh winters with heavy road salt create severe rust concerns. The state's proximity to Boston creates commuter dynamics.`,
- theftPatternsParagraph: `New Hampshire has relatively low vehicle theft rates. Manchester and Nashua, the largest cities near Massachusetts, see the most activity. Some theft is connected to Massachusetts operations given the proximity. The state's rural northern areas see minimal theft. New Hampshire's lack of sales tax brings in buyers but also creates title complexity—some vehicles are registered in NH by Massachusetts residents to avoid tax. Most theft is opportunistic. Catalytic converter theft has increased.`,
- legalConsequencesParagraph: `Under New Hampshire RSA 637:11, receiving stolen property is a felony if the value exceeds $1,500. Theft of a motor vehicle under RSA 637:9 carries enhanced penalties. New Hampshire courts prosecute vehicle crimes. The vehicle is forfeited when recovered. Given cross-border tax dynamics, title verification is important.`,
+ vehicleMarketParagraph: `New Hampshire has no sales tax, which draws buyers up from Massachusetts and makes Manchester and Nashua busy used-car markets. Subarus, Tacomas and pickups are everywhere, because winters are long and roads get heavy salt. New Hampshire doesn't require drivers to carry auto insurance, and you register a vehicle first at your town or city clerk. Older vehicles may not have a title at all, so some sales happen with only a registration and a bill of sale.`,
+ theftPatternsParagraph: `Vehicle theft in New Hampshire is concentrated in Manchester and Nashua, the cities closest to Massachusetts. Much of it is opportunistic: cars left running on cold mornings, keys left inside. Being so close to the Boston area means a car stolen in Massachusetts can turn up for sale in southern New Hampshire. Catalytic converter theft has also been reported.`,
+ legalConsequencesParagraph: `In New Hampshire, receiving stolen property is a crime, and the grade depends on value, so a car usually means a felony. Even if you aren't charged, police can return a stolen car to its owner and you lose what you paid. Because some older vehicles sell without a title, the VIN on the car is your best check.`,
  buyingTips: [
- 'Carefully inspect for rust—NH winters are brutal',
- 'Verify NH DMV title has proper security features',
- 'Check if buyer is actually a NH resident (tax avoidance scheme)',
- 'Confirm complete ownership history',
- 'Be aware NH doesn\'t require insurance or inspections for all vehicles'
+ 'Check underneath for rust from road salt: frame, brake lines and rocker panels',
+ 'If there is no title, get the registration and a bill of sale and match the VIN on both',
+ 'Ask whether the car was registered in Massachusetts before',
+ 'Check that the inspection sticker is current',
+ 'Match the seller\'s ID to the name on the paperwork'
  ],
  commonTargets: ['Subaru Outback', 'Toyota Tacoma', 'Honda Accord', 'Ford F-150', 'Jeep Wrangler', 'Chevrolet Silverado'],
- verificationAdvice: 'New Hampshire\'s no-sales-tax policy creates title complexity. Verify where vehicles have actually been used versus where they\'re registered. Rust inspection is critical.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. Where a car has no title, the VIN on the car and the registration is your main record, so match it carefully.',
  uniqueFaqs: [
- { question: 'Why do people register cars in New Hampshire?', answer: 'New Hampshire has no sales tax, saving buyers 6-7% compared to neighboring states. Some Massachusetts residents register vehicles in NH to avoid tax (which may be illegal for them). Verify actual ownership.' },
- { question: 'Does New Hampshire require vehicle inspections?', answer: 'Yes, most vehicles require annual safety inspection. However, requirements are less stringent than some states. Don\'t assume inspection means thorough mechanical checking.' }
+ { question: 'Do Massachusetts residents buy cars in New Hampshire?', answer: 'Many shop there because New Hampshire has no sales tax, but Massachusetts generally charges its own tax when the car is registered there. For a buyer, the practical point is to check whose name is on the title or registration and run the plate and VIN on SafeOrStolen (safeorstolen.com) before paying.' },
+ { question: 'Does New Hampshire require vehicle inspections?', answer: 'Yes, New Hampshire requires an annual safety inspection for most registered vehicles. A sticker means the car passed a basic check, not that it\'s mechanically sound or not stolen. Get your own mechanic\'s inspection and run the VIN on SafeOrStolen.' }
  ]
  },
  'new-jersey-license-plate-lookup': {
- vehicleMarketParagraph: `New Jersey's vehicle market is one of America's densest, serving nearly 9 million people in a small state. The northern portion is essentially part of the New York metro, while southern New Jersey connects to Philadelphia. Newark, Jersey City, and Paterson are major urban centers. The state's high population density and limited parking influence vehicle preferences. New Jersey's winters with road salt create rust, while the Shore communities have coastal salt exposure. The Port Newark-Elizabeth complex is a major vehicle import/export hub.`,
- theftPatternsParagraph: `New Jersey has significant vehicle theft concentrated in urban areas. Newark has some of the highest rates, followed by Camden, Trenton, and Paterson. The Port Newark-Elizabeth facility makes export of stolen vehicles feasible. Luxury vehicle theft is significant in the New York suburbs for overseas shipping. The Kia/Hyundai epidemic has hit Newark, Camden, and other cities. I-95 enables quick transport to New York or Philadelphia. Some theft is connected to NYC or Philadelphia operations.`,
- legalConsequencesParagraph: `Under New Jersey Statutes 2C:20-2, theft of property worth over $75,000 is a second-degree crime carrying 5-10 years imprisonment. For $500-$75,000 (most vehicles), it's a third-degree crime with 3-5 years. New Jersey prosecutors aggressively pursue vehicle theft. The vehicle is forfeited when recovered. Given Newark's port and high theft rates, verification is essential.`,
+ vehicleMarketParagraph: `New Jersey is densely packed, and its used-car market splits in two: North Jersey is part of the New York market and South Jersey is part of Philadelphia's. Newark, Jersey City, Paterson and Elizabeth are busy markets, and the Port Newark-Elizabeth terminals handle vehicle shipping in and out. Winter salt and Shore salt air both cause rust, so look underneath.`,
+ theftPatternsParagraph: `New Jersey vehicle theft is heaviest in urban areas like Newark, Camden, Trenton and Paterson. Luxury SUVs taken from suburban driveways have drawn news coverage, often with key-fob relay or stolen keys, and some stolen cars are shipped overseas. Thefts of Kia and Hyundai models without immobilizers also hit New Jersey cities. A car stolen in New York or Pennsylvania can be listed in New Jersey the next day.`,
+ legalConsequencesParagraph: `New Jersey grades theft and receiving stolen property by value, and most cars are worth enough for a serious criminal charge. Police can take a stolen car back for its owner even if you paid in good faith. With the New York and Philadelphia markets right next door, check the title's state and name every time.`,
  buyingTips: [
- 'Inspect for rust from road salt and coastal salt exposure',
- 'Verify NJ MVC title has proper security features',
- 'Check for prior New York or Pennsylvania registration',
- 'Be cautious of Hyundai/Kia models in urban areas',
- 'For luxury vehicles, verify complete chain of ownership'
+ 'Check underneath for rust from road salt and Shore salt air',
+ 'Ask if the car was registered in New York or Pennsylvania before',
+ 'On luxury SUVs, ask for both keys and the purchase paperwork',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Match the VIN on the dash, door jamb and title'
  ],
- commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Kia Optima', 'BMW 3 Series', 'Mercedes C-Class'],
- verificationAdvice: 'Newark\'s port creates export risk for stolen luxury vehicles. Verify complete title history, especially for high-value vehicles. Urban area purchases require careful Hyundai/Kia verification.',
+ commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Kia Optima', 'BMW X5', 'Range Rover'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For a high-value SUV, also ask for both keys, the original purchase or lease-payoff paperwork, and meet at a bank or MVC agency.',
  uniqueFaqs: [
- { question: 'Does Port Newark affect stolen vehicle risk?', answer: 'Yes, Port Newark-Elizabeth is a major shipping hub where stolen vehicles can be exported. Luxury vehicles are particularly targeted. Complete verification is essential for high-value purchases.' },
- { question: 'Is New Jersey connected to NYC and Philly theft?', answer: 'Yes, New Jersey\'s position between NYC and Philadelphia means theft operations span all three areas. Vehicles stolen in one jurisdiction often appear in another.' }
+ { question: 'How do I check a luxury SUV for sale in New Jersey?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Ask for both keys and the purchase or payoff paperwork, match the VIN on the dash, door jamb and title, and be wary of a price well under market.' },
+ { question: 'Can a car stolen in New York be sold in New Jersey?', answer: 'Yes. Cars cross between New York, New Jersey and Philadelphia easily. Check that the title is real and in the seller\'s name, match the VIN on the car, and run it on SafeOrStolen. SafeOrStolen does not search MVC or other state records.' }
  ]
  },
  'new-mexico-license-plate-lookup': {
- vehicleMarketParagraph: `New Mexico's vehicle market serves a spread-out state with Albuquerque as the dominant commercial center. Santa Fe, the capital, and Las Cruces (near El Paso) serve smaller markets. The state's diverse economy—federal research labs, tourism, energy—creates varied vehicle demand. New Mexico's dry climate preserves vehicles well, with no rust from road salt. The state's proximity to Mexico creates border dynamics. Many Native American reservations have their own vehicle regulations. The state's vast distances require reliable transportation.`,
- theftPatternsParagraph: `Albuquerque has significant vehicle theft, consistently ranking among the worst Western cities. The city's position on I-40 and I-25 enables transport east-west or north-south. The Kia/Hyundai epidemic has hit Albuquerque very hard. Some stolen vehicles are transported to Mexico via the border near El Paso or less-patrolled crossings. Santa Fe sees lower rates. Las Cruces, near the border, has some activity. Catalytic converter theft has surged across the state.`,
- legalConsequencesParagraph: `Under New Mexico Statutes § 30-16-1, larceny of property worth $20,000+ is a third-degree felony carrying up to 3 years imprisonment. Receiving stolen property under § 30-16-11 carries similar penalties. New Mexico courts prosecute vehicle theft given Albuquerque's high rates. The vehicle is forfeited when recovered. Verification is essential for any New Mexico purchase.`,
+ vehicleMarketParagraph: `New Mexico's used-car market centers on Albuquerque, with Las Cruces, Santa Fe and Rio Rancho behind it. Cars come in from Texas, Arizona and Colorado along I-40 and I-25. The dry climate means little rust, but sun damage to paint, dashboards and seats is common. Distances are long, so reliable trucks and SUVs are in steady demand.`,
+ theftPatternsParagraph: `Albuquerque has the bulk of New Mexico's vehicle theft, and car theft there gets steady local news coverage. Thefts of Kia and Hyundai models without immobilizers hit the city too. Pickups and older Hondas are frequent targets. Interstates running in four directions mean a stolen car can leave the state quickly. Catalytic converter theft has also been widely reported.`,
+ legalConsequencesParagraph: `New Mexico law makes it a crime to receive or keep a vehicle you know is stolen. Even without a charge, police can take a stolen car back for its owner and you lose what you paid. With cars arriving from neighboring states, compare the title state and name to the seller every time.`,
  buyingTips: [
- 'Verify New Mexico MVD title has proper security features',
- 'Be extremely cautious of Hyundai/Kia models in Albuquerque',
- 'Check for prior Texas, Arizona, or Colorado registration',
- 'Inspect for sun damage to interior and paint',
- 'Confirm vehicle hasn\'t been transported from Mexico'
+ 'Match the VIN on the dash, door jamb and title',
+ 'Ask if the car was titled in Texas, Arizona or Colorado before',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Check for sun damage to the dashboard, seats and paint',
+ 'Be wary of a temporary tag with no title or bill of sale'
  ],
- commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Chevrolet Silverado', 'Ford F-150', 'Honda Accord', 'Honda Civic'],
- verificationAdvice: 'Albuquerque\'s high theft rates require mandatory verification. Pay particular attention to Hyundai/Kia models, which face extreme theft rates. Check for border-related title issues.',
+ commonTargets: ['Chevrolet Silverado', 'Ford F-150', 'Hyundai Elantra', 'Kia Soul', 'Honda Accord', 'Honda Civic'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Albuquerque, check Kia and Hyundai steering columns and ignitions closely, and match the title to the seller\'s ID.',
  uniqueFaqs: [
- { question: 'Is Albuquerque vehicle theft really that high?', answer: 'Yes, Albuquerque consistently ranks among America\'s worst cities for vehicle theft. The Kia/Hyundai epidemic has made things significantly worse. Verification is absolutely essential.' },
- { question: 'Does the Mexico border affect New Mexico theft?', answer: 'Yes, some stolen vehicles are transported to Mexico. The border creates additional complexity for title verification. Check complete history for any vehicle purchased near the border.' }
+ { question: 'How do I check if a car is stolen in Albuquerque?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID against the title, and look for a damaged ignition or steering column.' },
+ { question: 'What paperwork should I get when buying a car in New Mexico?', answer: 'Get the signed title in the seller\'s name and a bill of sale with the VIN, price and date. If the car is from another state, MVD will generally want a VIN inspection before titling it. SafeOrStolen does not search MVD records.' }
  ]
  },
  'north-carolina-license-plate-lookup': {
- vehicleMarketParagraph: `North Carolina's vehicle market is anchored by the Research Triangle (Raleigh-Durham-Chapel Hill) and Charlotte, two of America's fastest-growing metros. Greensboro, Winston-Salem, and Fayetteville serve other regions. The state's diverse economy—banking in Charlotte, tech in the Triangle, manufacturing statewide—creates varied vehicle demand. North Carolina's climate is relatively mild, reducing rust concerns. The state's growth has brought vehicles from across the country, complicating title histories. NASCAR heritage influences automotive culture.`,
- theftPatternsParagraph: `Charlotte has the highest vehicle theft in North Carolina, with Mecklenburg County seeing significant activity. The city's I-77 and I-85 intersection enables transport to South Carolina, Virginia, or Tennessee. Raleigh-Durham has lower rates but increasing activity with population growth. Fayetteville, near Fort Bragg, sees some theft. The Kia/Hyundai epidemic has affected Charlotte significantly. Greensboro and Winston-Salem have moderate activity. Rural areas see opportunistic theft.`,
- legalConsequencesParagraph: `Under North Carolina General Statutes § 14-72, larceny of property worth over $100,000 is a Class C felony carrying up to 231 months imprisonment. For motor vehicles generally, it's a Class H felony. Receiving stolen goods under § 14-71 carries similar penalties. NC courts prosecute vehicle theft. The vehicle is forfeited when recovered. Charlotte's theft rates require verification.`,
+ vehicleMarketParagraph: `North Carolina's used-car market is driven by Charlotte and the Research Triangle, with Greensboro, Winston-Salem and Fayetteville behind them. Both big metros have grown quickly, so many cars for sale were titled in another state first. North Carolina requires the seller's signature on a title to be notarized, which gives buyers a built-in identity check. The milder climate means less rust than in northern states.`,
+ theftPatternsParagraph: `Charlotte has the most vehicle theft in North Carolina, with Raleigh, Durham and Greensboro also seeing activity. Thefts of Kia and Hyundai models without immobilizers hit Charlotte and other cities. I-77, I-85, I-40 and I-95 carry cars in and out of the state quickly. Fayetteville, next to Fort Bragg, has a large population that moves often, so cars change hands fast.`,
+ legalConsequencesParagraph: `Receiving or possessing stolen goods is a crime in North Carolina, and a stolen car is usually charged as a felony. Police can take a stolen car back for its owner even if you bought it in good faith. The notarized-title rule helps, but only if you're at the notary to see the seller's ID.`,
  buyingTips: [
- 'Verify NC DMV title has proper security features',
- 'Be cautious of Hyundai/Kia models in Charlotte',
- 'Check for prior out-of-state registration (rapid population growth)',
- 'Verify complete ownership chain on recently relocated vehicles',
- 'Confirm no prior salvage history from other states'
+ 'Meet the seller at a notary so the title signature is done in front of you',
+ 'Check the seller\'s ID against the name on the title',
+ 'Ask if the car was titled in another state before',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Honda Civic', 'Chevrolet Silverado', 'Dodge Charger'],
- verificationAdvice: 'North Carolina\'s growth means many vehicles have out-of-state title history. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history. Charlotte purchases require careful Hyundai/Kia verification.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then do the title at a notary with the seller. SafeOrStolen does not search NCDMV or other state title records; ask NCDMV about liens.',
  uniqueFaqs: [
- { question: 'Is Charlotte vehicle theft high?', answer: 'Yes, Charlotte has significant vehicle theft rates, ranking among the worst in the Southeast. The Kia/Hyundai epidemic has increased theft substantially. Verification is important.' },
- { question: 'Do relocating residents affect the market?', answer: 'Yes, North Carolina\'s rapid growth brings vehicles from across the country. Verify complete title history to catch issues from prior states.' }
+ { question: 'Does a North Carolina title need to be notarized?', answer: 'Yes. The seller signs the title in front of a notary, who checks their ID. Go with the seller, confirm the name matches, and run the plate and VIN on SafeOrStolen (safeorstolen.com) before you pay.' },
+ { question: 'How do I check a car that moved to North Carolina from another state?', answer: 'Ask which state issued the title and whether it\'s in the seller\'s name. Match the VIN on the car and title, run it on SafeOrStolen for theft reports and public web results, and buy a history report if you want past title brands.' }
  ]
  },
  'north-dakota-license-plate-lookup': {
- vehicleMarketParagraph: `North Dakota's vehicle market is small but has seen significant changes from the oil boom. Fargo, the largest city, anchors the market, with Bismarck (the capital), Grand Forks, and oil country cities like Williston and Minot serving other areas. The state's extreme winters—among the coldest in the US—require winter-capable vehicles. Road salt causes rust concerns. The oil industry brought an influx of workers and vehicles from across the country, complicating title histories in western ND. Truck demand is strong for both agricultural and oil industry use.`,
- theftPatternsParagraph: `North Dakota has very low vehicle theft rates—among the lowest in the nation. Fargo sees the most activity, though at modest rates. The oil boom cities saw some increase during peak activity. The state's small population, rural character, and extreme climate limit organized theft. Stolen vehicles would have to travel long distances to reach major markets. Most theft is opportunistic. Cold weather "running vehicle" theft (cars left running to warm up) is the most common type.`,
- legalConsequencesParagraph: `Under North Dakota Century Code § 12.1-23-04, theft of property worth $10,000+ is a Class B felony carrying up to 10 years imprisonment. Receiving stolen property carries similar penalties. North Dakota courts prosecute vehicle crimes. The vehicle is forfeited when recovered. While theft is rare, verification protects against vehicles from other states.`,
+ vehicleMarketParagraph: `North Dakota's used-vehicle market centers on Fargo, Bismarck and Grand Forks, with Williston and Minot in oil country. Oil-field work brought trucks in from across the country, and many have been resold since, often with high miles. Winters are long and cold, road salt is heavy, and buyers want 4x4 pickups and remote starters. Fargo buyers also shop across the river in Moorhead, Minnesota.`,
+ theftPatternsParagraph: `Vehicle theft in North Dakota is mostly opportunistic. The most common pattern is a car or truck left running to warm up on a cold morning. Fargo sees the most activity. Oil-field towns have seen thefts of work trucks and equipment. Long distances make recovery slow when a truck leaves the area.`,
+ legalConsequencesParagraph: `North Dakota's theft law covers receiving or keeping stolen property, graded by value, so a truck usually means a felony. If a vehicle you bought turns out to be stolen, police can return it to its owner and you're out the money. Work trucks that have moved between states are worth a careful paperwork check.`,
  buyingTips: [
- 'Inspect very carefully for rust from road salt',
- 'Verify ND DOT title has proper security features',
- 'Check for prior out-of-state registration (oil boom relocations)',
- 'Confirm vehicle has appropriate cold-weather equipment',
- 'Be aware of high-mileage oil industry work vehicles'
+ 'Check underneath for rust from road salt',
+ 'Ask where an oil-field truck has been registered before',
+ 'Look for a damaged ignition or mismatched keys',
+ 'Check that the remote starter and block heater work',
+ 'Get a mechanic to look at a high-mileage work truck'
  ],
- commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Dodge Ram', 'Toyota Tacoma', 'Subaru Outback', 'GMC Sierra'],
- verificationAdvice: 'North Dakota theft is rare, but verify vehicles from oil country that may have been brought from other states. Rust inspection is critical given extreme winters.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'GMC Sierra', 'Toyota Tacoma', 'Subaru Outback'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For work trucks from oil country, ask where the truck has been registered and match the VIN on the dash, door jamb and title.',
  uniqueFaqs: [
- { question: 'Is vehicle theft common in North Dakota?', answer: 'No, North Dakota has some of the lowest theft rates in the nation. However, verify title history for vehicles from other states, particularly those that arrived during the oil boom.' },
- { question: 'Why is rust such a concern in North Dakota?', answer: 'North Dakota has some of the harshest winters in the continental US with heavy road salt use. Rust is a major depreciation factor. Inspect any vehicle very carefully.' }
+ { question: 'How do I check a used work truck in North Dakota?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and have a mechanic look at a high-mileage truck before you pay.' },
+ { question: 'Why check for rust on a North Dakota vehicle?', answer: 'Long winters and heavy road salt are hard on frames, brake lines and rocker panels. Look underneath with a flashlight, press on suspicious spots, and check the bed and cab corners on pickups. Rust repair can cost more than the discount.' }
  ]
  },
  'oklahoma-license-plate-lookup': {
- vehicleMarketParagraph: `Oklahoma's vehicle market is dominated by Oklahoma City and Tulsa, with smaller markets serving other areas. The state's energy economy drives truck demand, while the diverse metro populations create varied vehicle preferences. Oklahoma's climate includes harsh weather—tornadoes, hail, ice storms—that damages vehicles. The state's position on I-44 and I-40 creates transit traffic. Oklahoma's relatively low cost of living supports an affordable used vehicle market. Cross-border dynamics with Texas, Kansas, and Arkansas exist.`,
- theftPatternsParagraph: `Oklahoma City and Tulsa both have significant vehicle theft rates. Oklahoma City (Oklahoma County) leads the state. I-44 and I-35 provide transport routes to Texas, Kansas City, or St. Louis. The Kia/Hyundai epidemic has affected both major cities significantly. Catalytic converter theft has surged. Rural areas see opportunistic theft. Tulsa's position near the Osage reservation creates some jurisdictional complexity. Lawton and Norman have lower rates.`,
- legalConsequencesParagraph: `Under Oklahoma Statutes Title 21 § 1720, larceny of an automobile is a felony carrying 3-20 years imprisonment. Receiving stolen property under § 1713 carries similar penalties. Oklahoma courts prosecute vehicle theft. The vehicle is forfeited when recovered. Given OKC and Tulsa's theft rates, verification is important.`,
+ vehicleMarketParagraph: `Oklahoma City and Tulsa are the state's two big used-car markets, with Norman, Lawton and Broken Arrow behind them. The energy business keeps pickups in demand. Weather is the big wild card: hail, tornadoes, ice storms and flash floods all damage cars, and repaired storm cars get resold. I-35, I-40 and I-44 bring cars in from Texas, Kansas and Missouri.`,
+ theftPatternsParagraph: `Vehicle theft in Oklahoma is concentrated in Oklahoma City and Tulsa. Thefts of Kia and Hyundai models without immobilizers hit both cities, and catalytic converter theft has been widely reported. Pickups are frequent targets. Interstates in every direction mean a stolen truck can be out of state in a few hours.`,
+ legalConsequencesParagraph: `Oklahoma law makes it a crime to receive or keep property you know is stolen, and taking a car is a felony. Police can return a stolen vehicle to its owner even if you paid for it. With storm-damaged and out-of-state trucks common, check both the VIN and the vehicle itself.`,
  buyingTips: [
- 'Check for hail, tornado, and flood damage',
- 'Verify Oklahoma DPS title has proper security features',
- 'Be cautious of Hyundai/Kia models in both metros',
- 'Check for prior Texas or Kansas registration',
- 'Inspect for ice storm damage (electrical, body)'
+ 'Look for hail repairs and water damage from storms and flooding',
+ 'Ask if the vehicle was titled in Texas or Kansas before',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Look for a damaged ignition or mismatched keys on pickups',
+ 'Match the VIN on the dash, door jamb and title'
  ],
- commonTargets: ['Hyundai Elantra', 'Kia Sportage', 'Ford F-150', 'Chevrolet Silverado', 'Honda Accord', 'Dodge Charger'],
- verificationAdvice: 'Oklahoma\'s severe weather requires checking for storm damage history. The Kia/Hyundai epidemic has hit both major cities. Verify carefully for any metro-area purchase.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Hyundai Elantra', 'Kia Sportage', 'Dodge Charger'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then inspect for storm damage. Ask a tag agency about liens; SafeOrStolen does not search Oklahoma title records.',
  uniqueFaqs: [
- { question: 'Is weather damage common in Oklahoma vehicles?', answer: 'Yes, Oklahoma experiences tornadoes, hail storms, ice storms, and flooding. Always use SafeOrStolen to check if it has been reported stolen, review public web results for salvage history, and inspect carefully for repaired damage.' },
- { question: 'How bad is Oklahoma City theft?', answer: 'Oklahoma City has significant theft rates, and the Kia/Hyundai epidemic has made things worse. Verification is important for OKC-area purchases.' }
+ { question: 'How do I spot storm damage on a used car in Oklahoma?', answer: 'Look for small dents along the roof and hood, paint overspray, new glass, silt under the carpets, and rust on seat bolts. SafeOrStolen does not search insurance or salvage records, so buy a history report for title brands and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports.' },
+ { question: 'How do I check a used pickup in Oklahoma City?', answer: 'Run the plate and VIN on SafeOrStolen for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a punched ignition or mismatched keys.' }
  ]
  },
  'oregon-license-plate-lookup': {
- vehicleMarketParagraph: `Oregon's vehicle market is concentrated in the Portland metro area, with Eugene, Salem, and Bend serving other regions. Oregon's lack of sales tax attracts buyers from Washington. The state's environmental culture drives strong EV and hybrid demand, while outdoor recreation supports SUV and truck sales. Oregon's wet climate creates different concerns than dry states—less sun damage but potential for mold and electrical issues. The state's proximity to California creates migration dynamics.`,
- theftPatternsParagraph: `Portland has high vehicle theft rates, ranking among the worst West Coast cities. The city has struggled with property crime enforcement. Multnomah County sees the most activity. The Kia/Hyundai epidemic has hit Portland hard. I-5 enables transport to Washington or California. Eugene and Salem see lower rates but notable activity. Portland's homeless crisis has contributed to increased vehicle crime. Catalytic converter theft is endemic, particularly targeting Prius models.`,
- legalConsequencesParagraph: `Under Oregon Revised Statutes § 164.055, theft in the first degree (over $10,000) is a Class C felony carrying up to 5 years imprisonment. Unauthorized use of a vehicle under § 164.135 carries similar penalties. Oregon prosecutors face high caseloads. The vehicle is forfeited when recovered. Given Portland's high theft rates, verification is essential.`,
+ vehicleMarketParagraph: `Oregon's used-car market centers on Portland, with Eugene, Salem and Bend behind it. Oregon has no sales tax, so Washington buyers cross the Columbia to shop. Subarus, hybrids and EVs are popular, along with trucks and SUVs for the outdoors. West of the Cascades, the wet climate means you should check for leaks, mold and electrical problems.`,
+ theftPatternsParagraph: `Most vehicle theft in Oregon is in the Portland area, and car theft there gets steady local news coverage. Thefts of Kia and Hyundai models without immobilizers hit Portland, and catalytic converter theft has been widely reported, especially from hybrids like the Prius. I-5 runs to Washington and California, so stolen cars can move between states quickly.`,
+ legalConsequencesParagraph: `Oregon law covers both unauthorized use of a vehicle and possessing a stolen vehicle. Even if you aren't charged, police can return a stolen car to its owner and you lose what you paid. With Washington buyers and sellers common, check which state issued the title.`,
  buyingTips: [
- 'Verify Oregon DMV title has proper security features',
- 'Be extremely cautious of Hyundai/Kia models in Portland',
- 'Check for prior Washington or California registration',
- 'Inspect for moisture damage—mold, electrical issues',
- 'Verify catalytic converter is original/not recently replaced'
+ 'Ask whether the title is from Oregon, Washington or California',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'On hybrids, check that the catalytic converter is there and not freshly welded',
+ 'Check for leaks, mold and electrical problems',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Honda Accord', 'Honda Civic', 'Subaru Outback', 'Toyota Prius'],
- verificationAdvice: 'Portland\'s high theft rates require mandatory verification. Pay close attention to Hyundai/Kia models. Check Washington title history for vehicles crossing the border.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Portland, look closely at Kia and Hyundai ignitions, and check the catalytic converter on hybrids.',
  uniqueFaqs: [
- { question: 'Is Portland vehicle theft really that high?', answer: 'Yes, Portland has some of the highest vehicle theft rates on the West Coast. Property crime enforcement challenges have contributed. Verification is essential for any Portland-area purchase.' },
- { question: 'Why do people buy cars in Oregon?', answer: 'Oregon has no sales tax, saving buyers 6-10% compared to neighboring Washington and California. This creates cross-border shopping. Verify where vehicles have actually been used.' }
+ { question: 'How do I check if a car is stolen in Portland?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a damaged ignition or steering column.' },
+ { question: 'Why do Washington residents buy cars in Oregon?', answer: 'Oregon has no sales tax, though Washington generally charges use tax when the car is registered there. For a buyer, the point is to check which state issued the title and whose name is on it, then run the VIN on SafeOrStolen.' }
  ]
  },
  'rhode-island-license-plate-lookup': {
- vehicleMarketParagraph: `Rhode Island's vehicle market serves America's smallest state, with Providence as the commercial center. The state's small size means most residents can easily shop in Massachusetts or Connecticut. Warwick and Cranston have notable dealership presence. Rhode Island's coastal character creates salt air exposure concerns. The state's harsh winters with road salt cause rust. Providence's position on I-95 creates transit traffic between Boston and New York.`,
- theftPatternsParagraph: `Rhode Island has moderate vehicle theft concentrated in Providence. The city's position on I-95 enables quick transport to Boston or Connecticut. Some theft is connected to Massachusetts operations. The Kia/Hyundai epidemic has affected Providence. The state's small size means theft rings rarely operate exclusively in Rhode Island. Warwick and Central Falls see some activity. Most theft is opportunistic.`,
- legalConsequencesParagraph: `Under Rhode Island General Laws § 11-41-11, receiving stolen goods is a felony carrying up to 10 years imprisonment. Motor vehicle theft under § 11-41-6 carries up to 15 years. Rhode Island courts prosecute vehicle crimes. The vehicle is forfeited when recovered. Verification is important given Providence's theft activity and I-95 corridor traffic.`,
+ vehicleMarketParagraph: `Rhode Island is small enough that most buyers can shop in Massachusetts or Connecticut too, so many cars for sale in Providence, Warwick and Cranston were registered elsewhere. Some older vehicles in Rhode Island don't have a title, so sales may come with a registration and bill of sale instead. Winter road salt and coastal salt air both cause rust.`,
+ theftPatternsParagraph: `Vehicle theft in Rhode Island is concentrated in Providence and nearby cities. I-95 connects it to Boston and New York within hours, and stolen cars cross state lines in both directions. Thefts of Kia and Hyundai models without immobilizers have been reported. Most theft is opportunistic.`,
+ legalConsequencesParagraph: `Receiving stolen goods is a crime in Rhode Island, and police can return a stolen car to its owner even if you paid in good faith. Because some older cars sell without a title, the VIN on the car is your main check.`,
  buyingTips: [
- 'Inspect for rust from road salt and coastal salt air',
- 'Verify RI DMV title has proper security features',
- 'Check for prior Massachusetts or Connecticut registration',
- 'Be cautious of Hyundai/Kia models in Providence area',
- 'Confirm complete ownership chain'
+ 'Check underneath for rust from road salt and salt air',
+ 'Ask whether the car was registered in Massachusetts or Connecticut',
+ 'If there is no title, match the VIN on the registration and bill of sale',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Match the seller\'s ID to the name on the paperwork'
  ],
  commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Toyota Camry', 'Kia Optima', 'Nissan Altima'],
- verificationAdvice: 'Rhode Island\'s small size means vehicles easily cross state lines. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history, especially for Massachusetts and Connecticut registrations. Rust inspection is important.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For a car that crossed state lines or has no title, match the VIN on the car to every piece of paperwork.',
  uniqueFaqs: [
- { question: 'Is vehicle theft high in Rhode Island?', answer: 'Providence has moderate theft rates. The city\'s I-95 position creates transit opportunities. Verification is important, especially for vehicles that may have crossed state lines.' },
- { question: 'Do Massachusetts theft operations affect Rhode Island?', answer: 'Yes, the states are close and theft rings operate across borders. Vehicles stolen in Massachusetts may appear in Rhode Island and vice versa.' }
+ { question: 'How do I check a used car in Providence?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title or registration, and check the seller\'s ID against the paperwork.' },
+ { question: 'Can a car stolen in Massachusetts be sold in Rhode Island?', answer: 'Yes. The states are close and cars move between them easily. Check which state issued the title, confirm it\'s in the seller\'s name, and run the VIN on SafeOrStolen. SafeOrStolen does not search RI DMV or other state records.' }
  ]
  },
  'south-carolina-license-plate-lookup': {
- vehicleMarketParagraph: `South Carolina's vehicle market is distributed across several metros: Charleston on the coast, Columbia (the capital), and Greenville-Spartanburg in the Upstate. The state's growing automotive manufacturing sector—BMW, Volvo, Mercedes—creates a knowledgeable buyer base and influences preferences. South Carolina's mild climate reduces rust concerns compared to northern states. The state's population growth brings vehicles from across the country. The Port of Charleston is a major vehicle import/export hub.`,
- theftPatternsParagraph: `South Carolina vehicle theft is spread across its metros. Columbia (Richland County) has the highest rates. Charleston sees significant activity, with port access creating export concerns for stolen vehicles. Greenville-Spartanburg has moderate rates. I-95 through the state enables transport north to North Carolina or south to Georgia and Florida. The Kia/Hyundai epidemic has affected South Carolina cities. North Charleston has elevated rates.`,
- legalConsequencesParagraph: `Under South Carolina Code § 16-11-312, grand larceny of a motor vehicle worth over $10,000 is punishable by up to 10 years imprisonment. Receiving stolen goods under § 16-13-180 carries up to 10 years. South Carolina courts prosecute vehicle theft. The vehicle is forfeited when recovered. Given the Port of Charleston and I-95 corridor, verification is important.`,
+ vehicleMarketParagraph: `South Carolina's used-car market is spread across Columbia, Charleston and Greenville-Spartanburg. BMW and Volvo build cars in the state, and the Port of Charleston ships vehicles in and out. Population growth brings cars from all over, and I-95 and I-26 bring more from Georgia, Florida and North Carolina. Coastal storms leave flood-damaged cars behind.`,
+ theftPatternsParagraph: `Vehicle theft in South Carolina is concentrated in Columbia, Charleston and North Charleston, with Greenville-Spartanburg also seeing activity. Thefts of Kia and Hyundai models without immobilizers have been reported in the state's cities. I-95 makes it easy to move a stolen car north or south.`,
+ legalConsequencesParagraph: `Receiving stolen goods is a crime in South Carolina, graded by value. Police can return a stolen car to its owner even if you paid for it. With cars arriving from neighboring states and after storms, check both the title and the car itself.`,
  buyingTips: [
- 'Verify SC DMV title has proper security features',
- 'Check for prior Georgia, North Carolina, or Florida registration',
- 'Be cautious of Hyundai/Kia models in metro areas',
- 'For luxury vehicles, verify complete chain due to port access',
- 'Check for flood damage in coastal areas after hurricanes'
+ 'Check for flood damage near the coast: silt, rusty seat bolts, musty smell',
+ 'Ask if the car was titled in Georgia, North Carolina or Florida before',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'On luxury cars, ask for both keys and the purchase paperwork',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Chevrolet Silverado', 'Ford F-150', 'Dodge Charger'],
- verificationAdvice: 'South Carolina\'s I-95 corridor and Port of Charleston create theft/export risks. Verify complete title history for all purchases, especially high-value vehicles.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then inspect for flood damage. Ask SCDMV about liens; SafeOrStolen does not search state title or salvage records.',
  uniqueFaqs: [
- { question: 'Does the Port of Charleston affect stolen vehicle risk?', answer: 'Yes, Charleston\'s port enables export of stolen vehicles. Luxury vehicles are particularly targeted. Complete verification is essential for high-value purchases.' },
- { question: 'Is South Carolina connected to Florida/Georgia theft?', answer: 'Yes, I-95 connects all three states, and theft operations span the corridor. Vehicles stolen in one state often appear in another.' }
+ { question: 'How do I check for flood damage on a used car in South Carolina?', answer: 'Look for silt or water lines under the carpet and in the trunk, rust on seat bolts and under the dash, fogged lights, and a musty smell. SafeOrStolen does not search salvage records, so buy a history report for title brands and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports.' },
+ { question: 'Can a car stolen in Georgia or Florida be sold in South Carolina?', answer: 'Yes. I-95 connects all three states and cars move along it quickly. Check which state issued the title, confirm it\'s in the seller\'s name, and run the plate and VIN on SafeOrStolen before you pay.' }
  ]
  },
  'south-dakota-license-plate-lookup': {
- vehicleMarketParagraph: `South Dakota's vehicle market serves a small, spread-out population. Sioux Falls, the largest city, dominates the market, with Rapid City serving the western region near Mount Rushmore. The state's agricultural economy drives truck demand. South Dakota's harsh winters require capable vehicles. Road salt causes rust concerns. The state has no vehicle inspections and no state income tax, attracting some out-of-state registrations similar to Montana. The Sturgis Motorcycle Rally brings in enthusiasts from across the country.`,
- theftPatternsParagraph: `South Dakota has very low vehicle theft rates. Sioux Falls sees the most activity, though at modest rates. Rapid City has occasional incidents. The state's small population, rural character, and isolation limit organized theft. Stolen vehicles would have to travel long distances to reach major markets. Most theft is opportunistic. The Sturgis Rally creates some temporary concerns during the event.`,
- legalConsequencesParagraph: `Under South Dakota Codified Laws § 22-30A-17, grand theft (over $5,000) is a Class 4 felony carrying up to 10 years imprisonment. Receiving stolen property carries similar penalties. South Dakota courts prosecute vehicle crimes. The vehicle is forfeited when recovered. While theft is rare, verify vehicles for out-of-state issues.`,
+ vehicleMarketParagraph: `South Dakota's used-vehicle market centers on Sioux Falls, with Rapid City in the west. Farm and ranch work keeps pickups in demand. South Dakota has no state income tax and no routine safety inspection, and many vehicles, RVs in particular, are registered here by people who live elsewhere. The Sturgis Motorcycle Rally brings a wave of motorcycles each August.`,
+ theftPatternsParagraph: `Vehicle theft in South Dakota is mostly opportunistic and concentrated in Sioux Falls and Rapid City: trucks left running, keys left inside, trailers taken from yards. Motorcycle theft gets attention around the Sturgis rally. Long distances make recovery slow once a vehicle leaves the area.`,
+ legalConsequencesParagraph: `South Dakota's theft law covers receiving stolen property, graded by value, so a vehicle usually means a felony. Police can return a stolen vehicle to its owner even if you paid for it. Because there is no routine inspection, the condition check is up to you.`,
  buyingTips: [
- 'Inspect very carefully for rust from road salt',
- 'Verify SD DMV title has proper security features',
- 'Check for prior Minnesota, Iowa, or Nebraska registration',
- 'Confirm vehicle has appropriate cold-weather equipment',
- 'Be aware SD has no vehicle inspections'
+ 'Check underneath for rust from road salt',
+ 'Ask where an RV or out-of-state-registered vehicle is actually kept',
+ 'Match the VIN on motorcycles at the steering neck and on the title',
+ 'Get a mechanic\'s inspection, since the state doesn\'t require one',
+ 'Match the VIN on the dash, door jamb and title'
  ],
- commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Dodge Ram', 'Subaru Outback', 'Toyota Tacoma', 'Jeep Wrangler'],
- verificationAdvice: 'South Dakota theft is rare, but verify vehicles for out-of-state history. Rust inspection is critical given harsh winters. No vehicle inspections mean you must check mechanical condition yourself.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Harley-Davidson motorcycles', 'Toyota Tacoma', 'Jeep Wrangler'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For motorcycles bought around Sturgis, match the frame VIN to the title, and get a mechanic to look the vehicle over.',
  uniqueFaqs: [
- { question: 'Is vehicle theft common in South Dakota?', answer: 'No, South Dakota has very low theft rates. However, verify title history for vehicles from other states, particularly those registered to avoid taxes.' },
- { question: 'Does the lack of vehicle inspections matter?', answer: 'Yes, South Dakota doesn\'t require vehicle inspections. This means you must thoroughly check mechanical condition yourself or hire an independent inspector.' }
+ { question: 'How do I check a used motorcycle in South Dakota?', answer: 'Find the VIN stamped on the steering neck and compare it to the title and any frame sticker. Look for grinding or re-stamping. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results before you pay.' },
+ { question: 'Does South Dakota require vehicle inspections?', answer: 'No, South Dakota doesn\'t require routine safety inspections. That means nobody has checked the vehicle for you. Have a mechanic look it over and run the VIN on SafeOrStolen before buying.' }
  ]
  },
  'tennessee-license-plate-lookup': {
- vehicleMarketParagraph: `Tennessee's vehicle market is split between Nashville in the middle and Memphis in the west, with Knoxville serving the east. Nashville's rapid growth has transformed the market, bringing vehicles and buyers from across the country. Memphis has a distinct market with different dynamics. Tennessee's automotive manufacturing presence—Nissan in Smyrna, Volkswagen in Chattanooga—influences preferences. The state has no income tax, attracting residents. Tennessee's climate is relatively mild, reducing rust concerns compared to northern states.`,
- theftPatternsParagraph: `Memphis has extremely high vehicle theft rates, consistently ranking among America's worst cities. Shelby County accounts for the vast majority of Tennessee thefts. Nashville has seen increases with population growth but remains far below Memphis rates. The Kia/Hyundai epidemic has devastated Memphis. I-40 provides east-west transport to Arkansas or Nashville. I-55 goes south to Mississippi. Knoxville and Chattanooga have lower rates. Memphis theft is so severe it skews statewide statistics.`,
- legalConsequencesParagraph: `Under Tennessee Code § 39-14-103, theft of property worth $60,000+ is a Class B felony carrying 8-30 years imprisonment. For $10,000-$60,000, it's a Class C felony. Receiving stolen property carries similar penalties. Tennessee prosecutors pursue vehicle theft. The vehicle is forfeited when recovered. Memphis's extreme theft rates require mandatory verification.`,
+ vehicleMarketParagraph: `Tennessee's used-car market splits between Nashville in the middle, Memphis in the west and Knoxville and Chattanooga in the east. Nashville's growth has brought buyers and cars from all over the country. Nissan builds cars in Smyrna and Volkswagen in Chattanooga. The climate is mild, so rust is less of a problem than up north.`,
+ theftPatternsParagraph: `Car theft in Memphis gets heavy local news coverage, and the Memphis area accounts for much of Tennessee's vehicle theft. Thefts of Kia and Hyundai models without immobilizers hit Memphis hard, and Dodge Chargers and Challengers are also frequent targets. Nashville has seen thefts rise as it has grown. I-40 and I-55 carry cars to Arkansas and Mississippi within minutes of Memphis.`,
+ legalConsequencesParagraph: `Tennessee's theft law covers knowingly obtaining or keeping stolen property, graded by value, so most cars mean a felony charge. Police can return a stolen car to its owner even if you paid for it. In the Memphis area especially, check the VIN and the car's ignition before handing over money.`,
  buyingTips: [
- 'Verify Tennessee DOR title has proper security features',
- 'Be extremely cautious of any Memphis-area purchase',
- 'Pay special attention to Hyundai/Kia models',
- 'Check for prior out-of-state registration (Nashville growth)',
- 'Confirm vehicle wasn\'t transited through Memphis'
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'On Chargers and Challengers, ask for both key fobs',
+ 'Ask if the car was titled in another state before',
+ 'Meet at a police station or bank, not a parking lot',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Dodge Charger', 'Dodge Challenger', 'Honda Accord', 'Nissan Altima'],
- verificationAdvice: 'Memphis has extreme theft rates requiring mandatory verification. Even Nashville buyers should verify carefully. The Kia/Hyundai epidemic has hit Tennessee hard.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Memphis, check ignitions and keys closely. Ask the county clerk about liens; SafeOrStolen does not search Tennessee title records.',
  uniqueFaqs: [
- { question: 'How bad is Memphis vehicle theft?', answer: 'Memphis consistently ranks among America\'s worst cities for vehicle theft. Rates are dramatically higher than Nashville or other Tennessee cities. Verification is absolutely essential for any Memphis-area purchase.' },
- { question: 'Is Nashville theft increasing with population growth?', answer: 'Nashville has seen some theft increases with rapid population growth, but rates remain far below Memphis. Still, verification is important, especially for vehicles relocated from other states.' }
+ { question: 'How do I check if a car is stolen in Memphis?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a cracked steering column or punched ignition. Meet somewhere public with cameras.' },
+ { question: 'How do I check a used car in Nashville?', answer: 'Many Nashville cars came from other states, so ask which state issued the title and whether it\'s in the seller\'s name. Match the VIN on the car and title and run it on SafeOrStolen. Buy a history report if you want past title brands.' }
  ]
  },
  'utah-license-plate-lookup': {
- vehicleMarketParagraph: `Utah's vehicle market is concentrated along the Wasatch Front—Salt Lake City, Provo, and Ogden—where most of the state's population lives. The state's outdoor recreation culture drives strong SUV and truck demand. Utah's dry climate preserves vehicles well. The state's rapid population growth has brought vehicles from across the country, particularly California. Mormon culture influences buyer preferences toward practical family vehicles. Utah's position on I-15 and I-80 creates transit traffic.`,
- theftPatternsParagraph: `Salt Lake City has the highest vehicle theft in Utah, with Salt Lake County seeing most activity. Utah theft has increased significantly in recent years. The Kia/Hyundai epidemic has affected the Wasatch Front. I-15 provides transport routes to Nevada or Idaho. Some stolen vehicles end up in Las Vegas. West Valley City and Ogden have elevated rates. The growing population has brought increased crime. Provo and Utah County have lower rates.`,
- legalConsequencesParagraph: `Under Utah Code § 76-6-404, theft of property worth $5,000+ is a second-degree felony carrying 1-15 years imprisonment. Receiving stolen property under § 76-6-408 carries similar penalties. Utah courts prosecute vehicle theft given increasing rates. The vehicle is forfeited when recovered. Verification is increasingly important for Utah purchases.`,
+ vehicleMarketParagraph: `Most of Utah lives along the Wasatch Front, so Salt Lake City, West Valley City, Provo and Ogden are the main used-car markets. Families and outdoor trips drive demand for SUVs, minivans and trucks. Utah has grown fast, and many cars were titled in California or Nevada first. The dry climate is easy on bodies, but mountain driving wears brakes and transmissions.`,
+ theftPatternsParagraph: `Vehicle theft in Utah is concentrated in Salt Lake County, with West Valley City and Ogden also seeing activity. Thefts of Kia and Hyundai models without immobilizers were reported along the Wasatch Front. I-15 runs to Nevada and Idaho, and I-80 to Wyoming, so stolen cars can leave the state quickly.`,
+ legalConsequencesParagraph: `Receiving stolen property is a crime in Utah, graded by value, so most cars mean a felony. Police can return a stolen vehicle to its owner even if you paid for it. With so many cars arriving from other states, check the title's state and name.`,
  buyingTips: [
- 'Verify Utah DMV title has proper security features',
- 'Be cautious of Hyundai/Kia models in Salt Lake area',
- 'Check for prior California registration (population growth)',
- 'Confirm complete ownership chain on relocated vehicles',
- 'Inspect for mountain driving wear on brakes/transmission'
+ 'Ask if the vehicle was titled in California or Nevada before',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Check brakes and transmission for mountain-driving wear',
+ 'Check the seller\'s ID against the name on the title',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Sportage', 'Subaru Outback', 'Honda Accord', 'Ford F-150', 'Toyota 4Runner'],
- verificationAdvice: 'Utah theft has increased with population growth. Verify vehicles carefully, especially those from California. Salt Lake area Hyundai/Kia purchases require extra attention.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For cars from out of state, ask which state issued the title and match it to the seller\'s ID.',
  uniqueFaqs: [
- { question: 'Is Utah vehicle theft increasing?', answer: 'Yes, Salt Lake City has seen significant theft increases in recent years. The Kia/Hyundai epidemic has contributed. Verification is increasingly important.' },
- { question: 'Do California relocations affect the market?', answer: 'Yes, many Utah residents have moved from California, bringing vehicles. Verify complete title history for any vehicle with prior California registration.' }
+ { question: 'How do I check if a car is stolen in Salt Lake City?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a damaged ignition or steering column.' },
+ { question: 'What should I check on a car that came from California?', answer: 'Ask for the title and confirm it\'s in the seller\'s name, match the VIN on the car, and run it on SafeOrStolen. Utah will generally want a VIN inspection before titling an out-of-state car. Buy a history report if you want past title brands.' }
  ]
  },
  'vermont-license-plate-lookup': {
- vehicleMarketParagraph: `Vermont's vehicle market serves America's second-least-populous state. Burlington, the largest city, anchors the market, with smaller markets in Rutland and the state capital Montpelier. Vermont's outdoor culture and rural character drive demand for all-wheel-drive vehicles, trucks, and Subarus. The state's harsh winters with heavy road salt create severe rust concerns. Vermont's environmental values support EV adoption. Cross-border dynamics with New Hampshire (no sales tax) and Massachusetts exist.`,
- theftPatternsParagraph: `Vermont has some of the lowest vehicle theft rates in the nation. Burlington sees the most activity, though at very modest rates. The state's small population, rural character, and isolation limit organized theft. Stolen vehicles would have to travel through New Hampshire or Massachusetts to reach major markets. Most theft is opportunistic—running vehicles left unattended in cold weather. Drug-related theft has increased in some areas.`,
- legalConsequencesParagraph: `Under Vermont Statutes Title 13 § 2501, grand larceny (over $900) is punishable by up to 10 years imprisonment. Receiving stolen property under § 2561 carries up to 10 years. Vermont courts prosecute vehicle crimes. The vehicle is forfeited when recovered. While theft is rare, verify vehicles for out-of-state history.`,
+ vehicleMarketParagraph: `Vermont's used-car market is small, centered on Burlington with Rutland and Barre-Montpelier behind it. Long winters, dirt roads and heavy road salt make all-wheel drive the norm, and Subarus, Tacomas and pickups are everywhere. Vermont doesn't issue titles for older vehicles, so many sales come with a registration and bill of sale. Buyers also shop in New Hampshire for the lack of sales tax.`,
+ theftPatternsParagraph: `Vehicle theft in Vermont is mostly opportunistic: cars left running on cold mornings and keys left inside. Burlington sees the most activity. A stolen car usually has to pass through New Hampshire, Massachusetts or New York to reach a bigger market. The bigger issue for buyers is paperwork, since a car without a title has fewer records to check.`,
+ legalConsequencesParagraph: `Receiving stolen property is a crime in Vermont, and police can return a stolen car to its owner even if you paid for it. Because older Vermont vehicles often sell without a title, the VIN on the car and the registration is your main record.`,
  buyingTips: [
- 'Inspect very carefully for rust from road salt',
- 'Verify Vermont DMV title has proper security features',
- 'Check for prior Massachusetts or New Hampshire registration',
- 'Confirm vehicle has appropriate cold-weather equipment',
- 'Subarus are popular—verify carefully due to high local demand'
+ 'Check underneath for rust from road salt',
+ 'If there is no title, match the VIN on the registration and bill of sale',
+ 'Ask if the car was registered in New Hampshire or Massachusetts before',
+ 'Check that the inspection sticker is current',
+ 'Match the seller\'s ID to the name on the paperwork'
  ],
  commonTargets: ['Subaru Outback', 'Subaru Forester', 'Toyota Tacoma', 'Ford F-150', 'Jeep Wrangler', 'Honda CR-V'],
- verificationAdvice: 'Vermont theft is rare, but verify vehicles for out-of-state history. Rust is a major concern—inspect very carefully regardless of vehicle age.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For an older car with no title, the VIN on the car and registration is what you have, so match it carefully.',
  uniqueFaqs: [
- { question: 'Is vehicle theft common in Vermont?', answer: 'No, Vermont has some of the lowest theft rates in the nation. However, verify title history for vehicles from other states and inspect carefully for rust.' },
- { question: 'Why are Subarus so popular in Vermont?', answer: 'Vermont\'s rural roads, harsh winters, and outdoor culture make all-wheel-drive essential. Subaru dominates the market. High local demand means careful verification is worthwhile.' }
+ { question: 'Why do some Vermont cars have no title?', answer: 'Vermont doesn\'t issue titles for older vehicles, so they sell with a registration and bill of sale. Match the VIN on the car to both, run it on SafeOrStolen (safeorstolen.com), and ask your own state\'s DMV what you\'ll need to register it.' },
+ { question: 'How do I check for rust on a Vermont car?', answer: 'Look underneath with a flashlight at the frame, brake lines, rocker panels and rear wheel wells. Press on bubbled paint. Subaru rear quarter panels and Tacoma frames are worth a close look.' }
  ]
  },
  'virginia-license-plate-lookup': {
- vehicleMarketParagraph: `Virginia's vehicle market is split between Northern Virginia (the DC suburbs), the Hampton Roads area (Norfolk, Virginia Beach), and Richmond. Northern Virginia is essentially part of the DC metro with strong demand for commuter and luxury vehicles. Hampton Roads serves a large military population with diverse needs. Richmond, the capital, has its own dynamics. Virginia's varied geography—from DC suburbs to Appalachian mountains to coastal areas—creates different vehicle preferences. The state's climate is moderate with less rust than northern states.`,
- theftPatternsParagraph: `Virginia vehicle theft is spread across its metros. Norfolk and Newport News in Hampton Roads have the highest rates. Richmond sees significant activity. Northern Virginia has lower rates but occasional luxury vehicle theft connected to DC operations. The Kia/Hyundai epidemic has affected Norfolk and Richmond. I-95 provides a north-south corridor. I-64 connects Hampton Roads to Richmond. The military presence creates some unique dynamics with frequent relocations bringing vehicles from across the country.`,
- legalConsequencesParagraph: `Under Virginia Code § 18.2-95, grand larceny (over $1,000) is punishable by 1-20 years imprisonment. For motor vehicles, it's a Class 5 felony. Receiving stolen property under § 18.2-108 carries similar penalties. Virginia prosecutors actively pursue vehicle theft. The vehicle is forfeited when recovered. Verification is important across Virginia's metros.`,
+ vehicleMarketParagraph: `Virginia's used-car market has three centers: Northern Virginia in the DC suburbs, Hampton Roads (Norfolk, Virginia Beach, Newport News) and Richmond. Northern Virginia cars may be titled in Maryland or DC. Hampton Roads has a large military population, and service members sell cars quickly when they get orders. The climate is moderate, with less rust than farther north.`,
+ theftPatternsParagraph: `Vehicle theft in Virginia is spread across Hampton Roads, Richmond and Northern Virginia. Thefts of Kia and Hyundai models without immobilizers were reported in Norfolk and Richmond. I-95 and I-64 carry cars quickly between the metros and into North Carolina, Maryland and DC.`,
+ legalConsequencesParagraph: `In Virginia, receiving stolen goods is treated as larceny and graded by value, so most cars mean a felony. Police can return a stolen car to its owner even if you paid in good faith. With military moves and DC-area titles common, confirm who owns the car and who is selling it.`,
  buyingTips: [
- 'Verify Virginia DMV title has proper security features',
- 'Check for prior DC or Maryland registration (NoVA area)',
- 'Be cautious of Hyundai/Kia models in Norfolk and Richmond',
- 'For military sellers, verify complete ownership chain',
- 'Confirm vehicle history given frequent military relocations'
+ 'If a spouse or relative is selling for a service member, ask for a power of attorney',
+ 'Ask if the car was titled in Maryland or DC before',
+ 'On Kia and Hyundai models, look for a damaged steering column or ignition',
+ 'Ask the lender about any lien on a recently financed car',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Honda Civic', 'Dodge Charger', 'Nissan Altima'],
- verificationAdvice: 'Virginia\'s multiple metros and military presence create verification complexity. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history, especially for vehicles with out-of-state prior registration.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then confirm the seller can sign the title. SafeOrStolen does not search Virginia DMV or other state title records.',
  uniqueFaqs: [
- { question: 'Does military presence affect Virginia vehicle verification?', answer: 'Yes, frequent military relocations mean many Virginia vehicles have been registered in multiple states. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full title history.' },
- { question: 'Is Hampton Roads theft connected to other areas?', answer: 'Norfolk and Newport News have significant theft rates. I-64 connects to Richmond, and vehicles may cross into North Carolina. Verify any Hampton Roads purchase carefully.' }
+ { question: 'How do I buy a car from a service member in Virginia?', answer: 'Check that the name on the title matches the seller\'s ID. If someone is selling for a deployed owner, ask for a power of attorney. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results, and ask the lender about any lien.' },
+ { question: 'Can a car stolen in Maryland or DC be sold in Virginia?', answer: 'Yes. Cars move between Northern Virginia, Maryland and DC every day. Check which state issued the title, confirm it\'s in the seller\'s name, match the VIN on the car, and run it on SafeOrStolen.' }
  ]
  },
  'west-virginia-license-plate-lookup': {
- vehicleMarketParagraph: `West Virginia's vehicle market serves a mountainous, rural state with Charleston as the largest city and capital. Huntington, Morgantown, and Wheeling have smaller markets. The state's challenging terrain—narrow mountain roads—creates demand for capable vehicles. Pickup trucks dominate. West Virginia's economy, historically tied to coal, has faced challenges affecting vehicle affordability. The state's winters with road salt create rust concerns. Proximity to Ohio, Kentucky, and Virginia creates cross-border dynamics.`,
- theftPatternsParagraph: `West Virginia has relatively low vehicle theft rates. Charleston sees the most activity, though at modest rates. Huntington has some activity connected to Ohio. The state's rural character and challenging terrain limit organized theft—narrow mountain roads aren't conducive to quick getaways. Most theft is opportunistic. Cross-border activity with Ohio and Kentucky exists. Catalytic converter theft has increased.`,
- legalConsequencesParagraph: `Under West Virginia Code § 61-3-13, grand larceny (over $1,000) is punishable by 1-10 years imprisonment. Receiving stolen property under § 61-3-18 carries similar penalties. West Virginia courts prosecute vehicle crimes. The vehicle is forfeited when recovered. While theft is lower than major metros, verify vehicles for cross-border history.`,
+ vehicleMarketParagraph: `West Virginia's used-vehicle market centers on Charleston, with Huntington, Morgantown and Wheeling serving their regions. Narrow mountain roads and bad winters make pickups and 4x4s the norm. Huntington, Wheeling and Morgantown sit close to Ohio, Kentucky and Pennsylvania, so many vehicles for sale there are titled in another state. Road salt and rough roads are hard on undercarriages.`,
+ theftPatternsParagraph: `Vehicle theft in West Virginia is mostly opportunistic and concentrated around Charleston and Huntington. Trucks left running, keys left inside, and trucks taken for parts are common patterns. Catalytic converter theft has been reported. Border cities see cars cross in from Ohio and Kentucky.`,
+ legalConsequencesParagraph: `Receiving stolen property is a crime in West Virginia, graded by value, so a vehicle usually means a felony. Police can return a stolen vehicle to its owner even if you paid for it. With so many border-state titles, check the title's state and name.`,
  buyingTips: [
- 'Inspect very carefully for rust from road salt and mountain road debris',
- 'Verify WV DMV title has proper security features',
- 'Check for prior Ohio, Kentucky, or Pennsylvania registration',
- 'Inspect suspension and undercarriage for mountain road damage',
- 'Confirm vehicle has appropriate capability for WV terrain'
+ 'Check underneath for rust from road salt',
+ 'Check suspension and undercarriage for damage from rough roads',
+ 'Ask if the vehicle was titled in Ohio, Kentucky or Pennsylvania before',
+ 'Look for a damaged ignition or mismatched keys on pickups',
+ 'Match the VIN on the dash, door jamb and title'
  ],
- commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Dodge Ram', 'Jeep Wrangler', 'Honda Accord', 'Toyota Camry'],
- verificationAdvice: 'West Virginia theft is relatively low, but verify vehicles for cross-border history with Ohio, Kentucky, and Pennsylvania. Condition inspection is especially important given mountain road wear.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Jeep Wrangler', 'Honda Accord', 'Toyota Camry'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For vehicles from neighboring states, ask which state issued the title and match the VIN on the truck to it.',
  uniqueFaqs: [
- { question: 'Is vehicle theft common in West Virginia?', answer: 'West Virginia has lower theft rates than most states. The mountainous terrain limits organized theft operations. However, verify cross-border vehicles and inspect carefully for road damage.' },
- { question: 'How does mountain driving affect vehicle condition?', answer: 'West Virginia\'s narrow mountain roads cause unusual wear on suspension, brakes, and undercarriage. Inspect carefully regardless of mileage. Rust is also a significant concern.' }
+ { question: 'How do I check a used truck in West Virginia?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look underneath for rust and damage from rough roads.' },
+ { question: 'How does mountain driving affect a used vehicle?', answer: 'Steep grades and rough roads wear brakes, suspension and transmissions faster than highway miles. Look at brake rotors, listen for clunks over bumps, and have a mechanic check the undercarriage, whatever the mileage.' }
  ]
  },
  'wisconsin-license-plate-lookup': {
- vehicleMarketParagraph: `Wisconsin's vehicle market is anchored by Milwaukee, the state's largest city, with Madison (the capital), Green Bay, and smaller cities serving other regions. Milwaukee's position on Lake Michigan creates cross-border dynamics with Chicago. The state's manufacturing heritage influences vehicle preferences. Wisconsin's harsh winters with heavy road salt create significant rust concerns. The state's outdoor culture drives truck and SUV demand. Cross-border shopping with Illinois (for lower taxes) creates some complexity.`,
- theftPatternsParagraph: `Milwaukee has the highest vehicle theft in Wisconsin, ranking among the worst Midwest cities. The city has seen dramatic increases in recent years. The Kia/Hyundai epidemic has devastated Milwaukee—some estimates suggest these models account for the majority of thefts. I-94 provides quick access to Chicago. Madison has lower rates but increasing activity. Green Bay has modest theft. Milwaukee's theft crisis has become a major public safety and political issue.`,
- legalConsequencesParagraph: `Under Wisconsin Statutes § 943.23, operating a vehicle without owner's consent is a Class H felony carrying up to 6 years imprisonment. Receiving stolen property under § 943.34 carries similar penalties. Wisconsin prosecutors pursue vehicle theft given Milwaukee's crisis. The vehicle is forfeited when recovered. Given Milwaukee's extreme theft rates, verification is absolutely essential.`,
+ vehicleMarketParagraph: `Wisconsin's used-car market centers on Milwaukee, with Madison and Green Bay behind it. Milwaukee is close enough to Chicago that cars cross the state line often. Winters are long and road salt is heavy, so rust is the first thing to check. Pickups and SUVs are popular for hunting, fishing and snow.`,
+ theftPatternsParagraph: `Milwaukee was one of the first cities where thefts of Kia and Hyundai models without engine immobilizers drew national news coverage, and those models are still worth a careful look there. Madison and Green Bay see less theft. I-94 makes Chicago a short drive from Milwaukee, so stolen cars can cross the state line quickly.`,
+ legalConsequencesParagraph: `Wisconsin law covers both taking a vehicle without the owner's consent and receiving stolen property. Police can return a stolen car to its owner even if you paid for it. In Milwaukee, check the ignition and steering column on any Kia or Hyundai before you pay.`,
  buyingTips: [
- 'Inspect very carefully for rust from road salt',
- 'Verify Wisconsin DOT title has proper security features',
- 'Be extremely cautious of Hyundai/Kia models in Milwaukee',
- 'Check for prior Illinois registration (cross-border shopping)',
- 'Confirm vehicle wasn\'t previously a Chicago-area vehicle'
+ 'Check underneath for rust from road salt',
+ 'On Kia and Hyundai models, look for a cracked steering column cover or damaged ignition',
+ 'Ask whether the anti-theft software update was done on a Kia or Hyundai',
+ 'Ask if the car was titled in Illinois before',
+ 'Match the VIN on the dash, door jamb and title'
  ],
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Kia Sportage', 'Hyundai Sonata', 'Honda Accord', 'Dodge Charger'],
- verificationAdvice: 'Milwaukee\'s theft crisis requires mandatory verification. The Kia/Hyundai epidemic has hit Milwaukee extremely hard—verify any such purchase very carefully.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Milwaukee, inspect Kia and Hyundai steering columns and ignitions before you pay.',
  uniqueFaqs: [
- { question: 'How bad is Milwaukee vehicle theft?', answer: 'Milwaukee has seen dramatic increases in vehicle theft, ranking among America\'s worst cities. Hyundai and Kia models are disproportionately targeted. Verification is absolutely essential.' },
- { question: 'Are Kia/Hyundai thefts really that common in Milwaukee?', answer: 'Yes, some estimates suggest Hyundai and Kia models account for the majority of Milwaukee thefts. The lack of immobilizers in certain models makes them easy targets. Verify any such purchase extremely carefully.' }
+ { question: 'How do I check a used Kia or Hyundai in Milwaukee?', answer: 'Look at the steering column and ignition for cracks, loose trim or a punched lock, and ask whether the anti-theft software update was done. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results, and match the VIN to the title.' },
+ { question: 'Why were certain Kia and Hyundai models stolen so often?', answer: 'Some base models sold in the US for several years lacked an engine immobilizer, so thieves could start them without the key. Kia and Hyundai later offered software updates and steering-wheel locks. Ask the seller whether the update was done.' }
  ]
  },
  'wyoming-license-plate-lookup': {
- vehicleMarketParagraph: `Wyoming's vehicle market serves America's least-populous state. Cheyenne, the capital and largest city, anchors the market, with Casper serving central Wyoming. The state's vast distances, rural character, and harsh conditions require capable vehicles—trucks and SUVs dominate. Wyoming's energy economy (oil, gas, coal) influences vehicle preferences. The state's extreme winters with road salt create rust concerns. Low population means limited inventory. Wyoming has no state income tax, attracting some out-of-state registrations.`,
- theftPatternsParagraph: `Wyoming has very low vehicle theft rates—among the lowest in the nation. Cheyenne and Casper see the most activity, though at modest rates. The state's tiny population, vast distances, and rural character limit organized theft. Stolen vehicles would have to travel long distances to reach major markets. Most theft is opportunistic. The energy industry brings workers and vehicles from other states, creating some title complexity.`,
- legalConsequencesParagraph: `Under Wyoming Statutes § 6-3-402, theft of property worth $1,000+ is a felony carrying up to 10 years imprisonment. Receiving stolen property under § 6-3-403 carries similar penalties. Wyoming courts prosecute vehicle crimes. The vehicle is forfeited when recovered. While theft is rare, verify vehicles for out-of-state history.`,
+ vehicleMarketParagraph: `Wyoming has the fewest people of any state, and its used-vehicle market centers on Cheyenne and Casper. Distances are long and weather is harsh, so pickups and SUVs dominate. Oil, gas and coal jobs bring workers and their trucks in from other states, and those trucks get resold when the work moves on. Cheyenne is close to the Colorado line, so buyers shop both sides.`,
+ theftPatternsParagraph: `Vehicle theft in Wyoming is mostly opportunistic: trucks left running, keys left inside, trailers taken from job sites. Cheyenne and Casper see the most activity. Long distances mean a stolen truck can be far away before it's reported. Work trucks and equipment in energy country are occasional targets.`,
+ legalConsequencesParagraph: `Wyoming law makes it a crime to buy, receive or keep property you know or believe is stolen, graded by value. Police can return a stolen vehicle to its owner even if you paid for it. With many trucks coming from out of state, check the title's state and name.`,
  buyingTips: [
- 'Inspect very carefully for rust from road salt',
- 'Verify Wyoming DOT title has proper security features',
- 'Check for prior out-of-state registration (energy worker relocations)',
- 'Confirm vehicle has appropriate capability for Wyoming conditions',
- 'Be aware of high-mileage energy industry work vehicles'
+ 'Check underneath for rust from road salt',
+ 'Ask where a work truck has been registered before',
+ 'Look for a damaged ignition or mismatched keys',
+ 'Get a mechanic to look at a high-mileage work truck',
+ 'Match the VIN on the dash, door jamb and title'
  ],
- commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Dodge Ram', 'GMC Sierra', 'Jeep Wrangler', 'Toyota Tundra'],
- verificationAdvice: 'Wyoming theft is rare, but verify vehicles for out-of-state history, particularly from energy workers relocating. Rust inspection is critical given harsh winters.',
+ commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'GMC Sierra', 'Jeep Wrangler', 'Toyota Tundra'],
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For work trucks from out of state, ask which state issued the title and match it to the seller\'s ID.',
  uniqueFaqs: [
- { question: 'Is vehicle theft common in Wyoming?', answer: 'No, Wyoming has some of the lowest theft rates in the nation due to its small population and rural character. However, verify title history for vehicles from other states.' },
- { question: 'Do energy workers affect the Wyoming market?', answer: 'Yes, the oil and gas industry brings workers from across the country. These vehicles may have complex title histories. Use SafeOrStolen to check if it has been reported stolen and review public web results for its full history.' }
+ { question: 'How do I check a used truck in Wyoming?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and have a mechanic look at a high-mileage truck.' },
+ { question: 'What should I check on a work truck from the oil field?', answer: 'Ask where it was registered and who owned it. Fleet trucks may be titled to a company, so get proof the seller can sign for it. Match the VIN on the truck and title, run it on SafeOrStolen, and expect heavy wear.' }
  ]
  }
 };

@@ -71,6 +71,7 @@ const webApplicationJsonLd = JSON.stringify({
       "https://www.youtube.com/@safeorstolen",
       "https://x.com/safeorstolen",
     ],
+    foundingDate: "2017-07",
     email: "safeorstolenmail@gmail.com",
     address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
   },
@@ -96,6 +97,7 @@ const organizationJsonLd = JSON.stringify({
     "https://www.youtube.com/@safeorstolen",
     "https://x.com/safeorstolen",
   ],
+  foundingDate: "2017-07",
   email: "safeorstolenmail@gmail.com",
   description:
     "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
