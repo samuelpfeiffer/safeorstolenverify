@@ -32,8 +32,10 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  }
  };
 
+ // Only Arizona plates are also searched against state law-enforcement records.
+ const isArizona = stateData.abbrev === 'AZ';
  const title = `Free ${stateData.name} License Plate Lookup | SafeOrStolen`;
- const metaDescription = `Free ${stateData.name} license plate lookup. Check if any ${stateData.abbrev} vehicle is stolen. ${stateData.hasTheftDatabase ? `Search ${stateData.theftDatabaseName} and ` : ''}SafeOrStolen reports and public web results instantly.`;
+ const metaDescription = `${stateData.name} license plate lookup: check if a ${stateData.abbrev} car is reported stolen. Searches SafeOrStolen theft reports and public web results${isArizona ? ', plus Arizona law-enforcement records' : ''}. 2 free checks.`;
  
  const keywords = [
  `${stateData.name.toLowerCase()} license plate lookup`,
@@ -41,7 +43,6 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  `${stateData.name.toLowerCase()} stolen vehicle check`,
  `check ${stateData.abbrev.toLowerCase()} license plate stolen`,
  `free ${stateData.name.toLowerCase()} plate search`,
- ...(stateData.hasTheftDatabase ? [`${stateData.theftDatabaseName?.toLowerCase()} lookup`] : [])
  ];
 
  const structuredData = [
@@ -86,7 +87,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `How much does the ${stateData.name} license plate lookup cost?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $10/month. Or pay $0.99 per check. Check any ${stateData.abbrev} vehicle against multiple sources.`
+ "text": `You get 2 free checks with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports and public web results${isArizona ? ', and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records' : ''}. Owner names are never shown.`
  }
  },
  {
@@ -94,7 +95,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `Can I check if a car is stolen in ${stateData.majorCities[0]} using the license plate?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `Yes, our ${stateData.name} license plate lookup works statewide including ${stateData.majorCities.slice(0, 3).join(', ')} and all ${stateData.name} cities.`
+ "text": `Yes. The ${stateData.name} plate lookup works the same in ${stateData.majorCities.slice(0, 3).join(', ')} and anywhere else in the state: enter the plate and pick ${stateData.abbrev}, and you'll see whether it shows up in SafeOrStolen theft reports or public web results in a few seconds.`
  }
  }
  ]
@@ -111,7 +112,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  structuredData={structuredData}
  />
 
- {/* Comprehensive noscript for crawlers */}
+ {/* noscript fallback for crawlers */}
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
  <header>
@@ -119,13 +120,13 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </header>
  <div>
  <h1>Free {stateData.name} License Plate Lookup</h1>
- <p>Check SafeOrStolen's stolen-item reports, public web results, and AI analysis before buying a {stateData.abbrev} vehicle.</p>
+ <p>Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records,' : ''} before buying a {stateData.abbrev} vehicle.</p>
  
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
  <li>SafeOrStolen's stolen-item reports</li>
  <li>Public web results</li>
- <li>AI analysis of the available information</li>
+ {isArizona && <li>Arizona law-enforcement stolen-vehicle records (updated twice a day)</li>}
  </ul>
  
  <h2>Why Verify Vehicles in {stateData.name}?</h2>
@@ -145,15 +146,15 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2>How It Works</h2>
  <ol>
  <li>Enter {stateData.name} license plate number</li>
- <li>We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds</li>
- <li>Get instant results — Safe or Stolen</li>
+ <li>We search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement records' : ''}</li>
+ <li>In a few seconds you see "reported stolen", "possible match" or "no report found in the records searched", with every source listed</li>
  </ol>
  
  <h2>Frequently Asked Questions</h2>
  <h3>How much does the {stateData.name} license plate lookup cost?</h3>
- <p>SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $10/month, or $0.99 per check.</p>
+ <p>2 free checks with a free account, then $0.99 a check or $10 a month for unlimited checks.</p>
  <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
- <p>Yes, our {stateData.name} license plate lookup works statewide including {stateData.majorCities.join(', ')} and all {stateData.name} cities.</p>
+ <p>Yes. The plate lookup works the same in {stateData.majorCities.join(', ')} and anywhere else in {stateData.name}.</p>
  {uniqueContent?.uniqueFaqs.map((faq, i) => (
  <div key={i}>
  <h3>{faq.question}</h3>
@@ -170,7 +171,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>SafeOrStolen checks multiple sources in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>Results come back in a few seconds and are saved to your account with the date. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -183,8 +184,8 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Free {stateData.name} License Plate Lookup
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Check SafeOrStolen's stolen-item reports, public web results, and AI analysis. 
- Verify any {stateData.abbrev} vehicle isn't stolen before buying. Free license plate lookup for 
+ Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records' : ''}. 
+ Check a {stateData.abbrev} plate before you buy the car. Works for 
  {stateData.majorCities.slice(0, 3).join(', ')} and all of {stateData.name}.
  </p>
 
@@ -215,20 +216,20 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Shield className="w-8 h-8 text-primary mb-2" />
  <span className="text-sm font-semibold">
- {stateData.hasTheftDatabase ? stateData.theftDatabaseName : 'SafeOrStolen reports and public web results'}
+ {isArizona ? 'Arizona law-enforcement records' : 'SafeOrStolen reports and public web results'}
  </span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Clock className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">3 Seconds</span>
+ <span className="text-sm font-semibold">Results in a few seconds</span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <CheckCircle className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">multiple sources</span>
+ <span className="text-sm font-semibold">Every source listed</span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Award className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">Free App</span>
+ <span className="text-sm font-semibold">Free web app</span>
  </div>
  </div>
  </div>
@@ -251,7 +252,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">AI analysis of the available information</span>
+ <span className="text-base">{isArizona ? 'Arizona law-enforcement stolen-vehicle records, updated twice a day' : 'Owner names are never shown'}</span>
  </div>
  </div>
  <DataPartnerBadges variant="compact" />
@@ -264,7 +265,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2 className="text-3xl font-bold mb-6">Why Verify Vehicles in {stateData.name}?</h2>
  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
  {stateData.theftNote} Always verify any used vehicle before purchasing in {stateData.majorCities[0]}, {stateData.majorCities[1]}, 
- or anywhere in {stateData.name}. A quick license plate lookup protects you from unknowingly buying stolen property.
+ or anywhere in {stateData.name}. A plate lookup takes a few seconds and tells you whether that plate shows up in the records searched.
  </p>
  <div className="grid md:grid-cols-2 gap-4">
  <div className="flex gap-3 p-4 bg-card rounded-lg">
@@ -361,18 +362,18 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2 className="text-2xl font-bold mb-4">For Buyers</h2>
  <ul className="space-y-3">
  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Verify vehicle isn't stolen before purchase</li>
- <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Avoid legal trouble and financial loss</li>
+ <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Avoid paying for a car that police can take back</li>
  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Check before meeting any seller</li>
- <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Get instant peace of mind</li>
+ <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Keep a dated record of the check in your account</li>
  </ul>
  </div>
  <div>
  <h2 className="text-2xl font-bold mb-4">For Sellers</h2>
  <ul className="space-y-3">
  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Prove your vehicle is legitimate</li>
- <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Build buyer trust instantly</li>
- <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Sell faster with verification</li>
- <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Share certificate with buyers</li>
+ <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Show buyers you checked first</li>
+ <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Answer the "is it stolen?" question up front</li>
+ <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Share a $1.99 verification certificate link</li>
  </ul>
  </div>
  </div>
@@ -386,8 +387,10 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="space-y-6">
  {[
  `Enter ${stateData.name} license plate above`,
-  "We check SafeOrStolen's stolen-item reports, public web results, and AI analysis in about 3 seconds",
- "Get instant results - Safe or Stolen"
+ isArizona
+ ? "We search SafeOrStolen's theft reports, public web results and Arizona law-enforcement stolen-vehicle records"
+ : "We search SafeOrStolen's theft reports and public web results",
+ "In a few seconds you see the result, with every source listed"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-card rounded-lg">
  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
@@ -410,8 +413,8 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  How much does the {stateData.name} license plate lookup cost?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $10/month unlimited. 
- Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}SafeOrStolen reports, public web results, and AI analysis.
+ You get 2 free checks with a free account. After that it's $0.99 a check or $10 a month for unlimited checks. 
+ Each {stateData.abbrev} plate check searches SafeOrStolen theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records' : ''}.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="item-1" className="bg-background px-6 rounded-lg">
@@ -419,7 +422,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- Yes, our {stateData.name} license plate lookup works statewide including {stateData.majorCities.join(', ')} and all {stateData.name} cities. Enter the {stateData.abbrev} plate and we'll search instantly.
+ Yes, our {stateData.name} license plate lookup works statewide including {stateData.majorCities.join(', ')} and all {stateData.name} cities. Enter the {stateData.abbrev} plate and the result comes back in a few seconds.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="item-2" className="bg-background px-6 rounded-lg">
@@ -427,19 +430,18 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Should I also run a VIN check for {stateData.name} vehicles?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- Yes, we recommend running both a license plate lookup AND a VIN check before purchasing. 
- License plate lookup provides quick screening, while VIN check gives complete history. 
- <Link to="/vin-checker" className="text-primary hover:underline ml-1">Use our free VIN checker →</Link>
+ Yes. Plates can be swapped between cars, so check the VIN too. A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls and searches theft reports. Make sure the VIN on the dash matches the title. 
+ <Link to="/vin-checker" className="text-primary hover:underline ml-1">Run a VIN check →</Link>
  </AccordionContent>
  </AccordionItem>
- {stateData.hasTheftDatabase && (
+ {isArizona && (
  <AccordionItem value="item-3" className="bg-background px-6 rounded-lg">
  <AccordionTrigger className="text-left font-semibold">
- What is {stateData.theftDatabaseName}?
+ Does the Arizona plate lookup search police records?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- {stateData.theftDatabaseName} is {stateData.name}'s official stolen property database. 
- SafeOrStolen searches {stateData.theftDatabaseName} along with multiple sources in one search.
+ Yes. Arizona plates and VINs are also searched against Arizona law-enforcement stolen-vehicle records, which are updated twice a day. 
+ It does not search DMV/MVD records and never shows owner names.
  </AccordionContent>
  </AccordionItem>
  )}
@@ -465,16 +467,16 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="grid md:grid-cols-3 gap-4 mb-8">
  <Link to="/vin-checker" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">VIN Lookup</h3>
- <p className="text-sm text-muted-foreground">Full vehicle history by VIN</p>
+ <p className="text-sm text-muted-foreground">Decode a VIN, see recalls and theft reports</p>
  </Link>
  <Link to="/firearms-check" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Firearm Check</h3>
  <p className="text-sm text-muted-foreground">Verify firearm serial numbers</p>
  </Link>
- {stateData.hasTheftDatabase && stateData.slug.includes('arizona') && (
+ {isArizona && (
  <Link to="/theftaz" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
- <h3 className="font-bold mb-2">TheftAZ Search</h3>
- <p className="text-sm text-muted-foreground">Arizona stolen property database</p>
+ <h3 className="font-bold mb-2">Arizona Stolen Property</h3>
+ <p className="text-sm text-muted-foreground">How Arizona stolen property searches work</p>
  </Link>
  )}
  <Link to="/check-if-stolen" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
@@ -509,7 +511,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Ready to Check a {stateData.name} Vehicle?</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Get instant verification results in 3 seconds. Protect yourself from stolen vehicles.
+ Enter the plate and get a result in a few seconds. Your first 2 checks are free.
  </p>
  <Link to="/verify">
  <Button size="lg" className="gap-2">

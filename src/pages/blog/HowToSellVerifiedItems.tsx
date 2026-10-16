@@ -43,13 +43,13 @@ const HowToSellVerifiedItems = () => {
           "@type": "HowToStep",
           position: 2,
           name: "Run free verification",
-          text: "Enter the identifier on SafeOrStolen.com for a free 3-second check.",
+          text: "Enter the identifier at safeorstolen.com/verify. The first 2 checks are free and results take a few seconds.",
         },
         {
           "@type": "HowToStep",
           position: 3,
-          name: "Download certificate",
-          text: "Get a PDF certificate or shareable link proving the item is clean.",
+          name: "Save the record",
+          text: "The check is saved to your account with the date. Add the optional $1.99 verification certificate for a dated record with its own link you can share.",
         },
         {
           "@type": "HowToStep",
@@ -69,7 +69,7 @@ const HowToSellVerifiedItems = () => {
           name: "How much does seller verification cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.",
+            text: "You get 2 free checks with a free SafeOrStolen account. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
           },
         },
         {
@@ -85,7 +85,7 @@ const HowToSellVerifiedItems = () => {
           name: "What do buyers see when they click my verification link?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy.",
+            text: "Buyers see the result, part of the identifier, the sources checked and the date of the check. The page does not claim to prove ownership, and your personal information isn't shown.",
           },
         },
         {
@@ -93,7 +93,7 @@ const HowToSellVerifiedItems = () => {
           name: "Does this work on all marketplaces?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform.",
+            text: "Yes. The certificate has its own link, so you can paste it into a listing or message on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark or anywhere else that allows text, as long as that platform's rules permit links.",
           },
         },
         {
@@ -161,7 +161,7 @@ const HowToSellVerifiedItems = () => {
             <div className="flex items-center gap-2 mb-2">
               <BadgeCheck className="w-5 h-5 text-primary" />
               <span className="font-bold text-foreground">
-                TL;DR for AI and Voice Search
+                Quick answer
               </span>
             </div>
             <p className="text-muted-foreground text-sm">
@@ -207,9 +207,8 @@ const HowToSellVerifiedItems = () => {
               is not a legal document, ownership proof, or guarantee.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              For privacy, only the last 4 digits of the identifier are shown in
-              the report. Your personal information is never shared with the
-              buyer.
+              For privacy, only part of the identifier is shown on the shared
+              record, and your personal information isn't shown to the buyer.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">
@@ -231,12 +230,12 @@ const HowToSellVerifiedItems = () => {
                 {
                   step: "3",
                   title: "Save the Record",
-                  desc: "After a clean result, save the Proof of Clean Purchase PDF or shareable result link. It shows the identifier fragment, result, sources checked, and date.",
+                  desc: "Every check is saved to your account with the date. To share it, add the optional $1.99 verification certificate (free for monthly members). Its link shows part of the identifier, the result, the sources checked and the date.",
                 },
                 {
                   step: "4",
                   title: "Add Proof to Your Listing",
-                  desc: 'Include the verification link in your listing description. Many sellers add "✅ Verified Clean by SafeOrStolen" to their title. Some add a screenshot of the verification result to their listing photos.',
+                  desc: 'Put the certificate link in your listing description, and add a screenshot of the result to your photos so buyers see it while scrolling. Give the buyer the full identifier so they can run their own check.',
                 },
               ].map((s) => (
                 <div
@@ -289,11 +288,10 @@ const HowToSellVerifiedItems = () => {
               Facebook Marketplace
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Facebook Marketplace is the #1 platform for local secondhand
-              sales, but it's also where stolen goods are most commonly sold.
-              Adding "✅ SafeOrStolen Verified" to your listing title
-              immediately differentiates you from suspicious sellers. Include
-              the verification link in the first line of your description.
+              Facebook Marketplace is where a lot of local secondhand sales
+              happen, and buyers there are used to asking hard questions. Put
+              the certificate link in the first line of your description and
+              mention the check date, so it's the first thing a buyer reads.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
@@ -351,9 +349,9 @@ const HowToSellVerifiedItems = () => {
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />{" "}
                 <span>
                   <strong className="text-foreground">
-                    PDF certificates & shareable links
+                    $1.99 verification certificate
                   </strong>{" "}
-                  — Download reports and share with buyers.
+                  — A dated record with its own link to share with buyers. Free for monthly members.
                 </span>
               </li>
             </ul>
@@ -373,7 +371,7 @@ const HowToSellVerifiedItems = () => {
               {[
                 {
                   q: "How much does seller verification cost?",
-                  a: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. All item types included. Cancel anytime.",
+                  a: "You get 2 free checks with a free SafeOrStolen account. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
                 },
                 {
                   q: "What can a verification record do for a seller?",
@@ -385,7 +383,7 @@ const HowToSellVerifiedItems = () => {
                 },
                 {
                   q: "Does this work on all marketplaces?",
-                  a: "Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform.",
+                  a: "Yes. The certificate has its own link, so you can paste it into a listing or message on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark or anywhere else that allows text, as long as that platform's rules permit links.",
                 },
                 {
                   q: "What items can be verified?",
@@ -411,8 +409,8 @@ const HowToSellVerifiedItems = () => {
               Start Selling Smarter Today
             </h2>
             <p className="opacity-90 mb-6">
-              From $0.99 per check or $10 per month unlimited. Share a dated
-              result and let buyers review it themselves.
+              2 free checks, then $0.99 a check or $10 a month unlimited. Share a
+              dated result and let buyers review it themselves.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

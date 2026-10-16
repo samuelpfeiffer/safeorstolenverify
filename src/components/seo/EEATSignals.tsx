@@ -1,17 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 
 /**
- * E-E-A-T Signals — Experience, Expertise, Authoritativeness, Trustworthiness
+ * E-E-A-T meta tags.
  *
- * 2026 Full Implementation:
- * ──────────────────────────────────────────────────────────────────
- * ✅ All claims are specific, verifiable, and citation-ready
- * ✅ Factual data for RAG extraction by ChatGPT, Claude, Perplexity
- * ✅ Organization identity aligned with index.html JSON-LD
- * ✅ Federal statute references for legal authority signals
- * ✅ Real team members (Samuel Pfeiffer, Kelly McEvoy)
- * ✅ Verified data source attribution
- * ──────────────────────────────────────────────────────────────────
+ * Oct 7 2026: fixed by hand. Removed "AI analysis" as a data source, "3 seconds", outbound
+ * profile URLs, the old support@ address, the zip code and founding date, the "no personal
+ * data stored" claim (checks are saved to the account), and compliance claims.
  * NOTE: Organization/WebSite JSON-LD schemas are in index.html to avoid
  * duplication. This file handles meta tags only.
  */
@@ -23,7 +17,7 @@ export const EEATSignals = () => {
  {/* What the platform actually does, operationally */}
  <meta
  name="experience"
- content="Stolen item verification platform that processes IMEI, VIN, and serial number checks against our verification databases in approximately 3 seconds."
+ content="Stolen item check for IMEI, VIN, plate and serial numbers. Each check returns reported stolen, possible match, or no report found in the records searched, with every source listed, in a few seconds."
  />
 
 
@@ -31,14 +25,14 @@ export const EEATSignals = () => {
  {/* Specific domain knowledge, not vague claims */}
  <meta
  name="expertise"
- content="IMEI verification (phone details and public information), VIN lookup (public web results, AI analysis), firearm serial number checks (police theft and loss reports from 33 states and DC, live Ohio records, public web results), bicycle verification (a national stolen-bicycle registry, public web results)"
+ content="IMEI checks (make and model from the IMEI, SafeOrStolen theft reports, public web results, paid carrier blacklist check), VIN checks (decode, open recalls, theft reports, public web results; Arizona law-enforcement stolen-vehicle records for Arizona VINs), firearm serial checks (police theft and loss reports from 33 states and DC, live Ohio law-enforcement records, altered-serial flag), bicycle checks (a national stolen-bicycle registry)"
  />
 
  {/* ─── Authoritativeness ──────────────────────── */}
  {/* Verifiable credentials and external recognition */}
  <meta
  name="authoritativeness"
- content="Trustpilot business profile, Crunchbase listed organization, firearm serial verification supporting compliance with 18 U.S.C. § 922"
+ content="Every result lists the sources searched. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC."
  />
 
 
@@ -46,24 +40,18 @@ export const EEATSignals = () => {
  {/* Concrete, verifiable trust indicators */}
  <meta
  name="trustworthiness"
- content="HTTPS encrypted platform, privacy-first architecture (no personal data stored beyond verification window), transparent pricing published at safeorstolen.com/pricing, full Terms of Service and Privacy Policy published, company registered as SafeOrStolen in Arizona"
- />
-
- {/* ─── Verifiable External Profiles ───────────── */}
- <meta
- name="external-profiles"
- content="https://www.trustpilot.com/review/safeorstolen.com, https://www.crunchbase.com/organization/safe-or-stolen, https://www.youtube.com/@safeorstolen, https://www.youtube.com/@safeorstolenoffically"
+ content="HTTPS site, plate checks never show owner names, pricing published at safeorstolen.com/pricing (2 free checks, $0.99 a check, $10 a month unlimited, 30-day refund on the monthly plan), Terms of Service and Privacy Policy published, based in Peoria, Arizona"
  />
 
  {/* ─── Real Team ──────────────────────────────── */}
  <meta name="team" content="Samuel Pfeiffer (CEO & Founder), Kelly McEvoy (Co-Founder & YouTube Educator)" />
- <meta name="organization-contact" content="support@safeorstolen.com" />
- <meta name="organization-address" content="Peoria, Arizona 85345, United States" />
+ <meta name="organization-contact" content="safeorstolenmail@gmail.com" />
+ <meta name="organization-address" content="Peoria, Arizona, United States" />
 
  {/* ─── Data Sources — Specific, not vague ─────── */}
  <meta
  name="data-sources"
- content="IMEI device details (not a blacklist check), vehicle information, community reports, public web results, AI analysis, national stolen-bicycle registry, police firearm theft records from 33 states and DC"
+ content="SafeOrStolen theft reports and public web results (every check); police firearm theft and loss reports from 33 states and DC plus live Ohio law-enforcement records (guns); a national stolen-bicycle registry (bikes); IMEI make and model plus a paid carrier blacklist check (phones); VIN decode, open recalls and Arizona law-enforcement stolen-vehicle records (vehicles)"
  />
 
  {/* ─── Service Scope — factual enumeration ─────── */}
@@ -75,19 +63,17 @@ export const EEATSignals = () => {
  {/* ─── Legal & Compliance Authority ────────────── */}
  <meta
  name="legal-authority"
- content="SafeOrStolen verification supports compliance with: 18 U.S.C. § 922 (firearms commerce), 18 U.S.C. § 2315 (interstate transport of stolen goods), state pawn broker compliance requirements, marketplace due diligence obligations"
+ content="Relevant federal law: 18 U.S.C. § 922(j) (receiving or possessing a stolen firearm) and § 922(k) (firearm with an obliterated serial number). A SafeOrStolen check is a dated record that you looked; it is not legal advice or a legal defense."
  />
 
  {/* ─── Unique Features ─────────────────────────── */}
  <meta
  name="unique-features"
- content="Multi-category stolen item verification platform covering 10+ item types. Progressive Web App with camera barcode scanning, works on mobile. Batch verification for pawn shops and auction houses. Compliance certificates with cryptographic timestamps."
+ content="One place to check phones, vehicles, plates, electronics, power tools, firearms and bicycles. Free installable web app at safeorstolen.com/app with camera barcode scanning (not an App Store or Google Play app). Bulk checking for pawn shops and dealers at /bulk-check. Optional $1.99 verification certificate with its own link."
  />
 
  {/* ─── Business Identity ───────────────────────── */}
- <meta name="founded" content="2017-07-20" />
-
- <meta name="headquarters" content="Peoria, Arizona 85345, United States" />
+ <meta name="headquarters" content="Peoria, Arizona, United States" />
  <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
  <meta name="terms-of-service" content="https://safeorstolen.com/terms" />
  </Helmet>

@@ -8,7 +8,7 @@ const CaliforniaVinLookup = () => {
  title="California VIN Lookup - Free CA Stolen Vehicle Check | SafeOrStolen"
  metaDescription="Free California VIN lookup. Check if a CA vehicle is reported stolen. Instant verification for cars, trucks, and motorcycles."
  topCities={["Los Angeles", "Oakland", "San Francisco"]}
- dmvLink="https://www.dmv.ca.gov"
+ dmvLink=""
  content={{
  intro: "California has a significant vehicle theft problem. Verify any CA vehicle's VIN against available databases before buying.",
  whyCheck: "California is known for high vehicle theft rates, particularly in major metropolitan areas like Los Angeles, Oakland, and San Francisco. Stolen vehicles are sometimes title washed through other states and resold. Always verify VIN records before purchase.",

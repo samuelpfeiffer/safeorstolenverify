@@ -21,15 +21,15 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
   const nextSteps = [
     {
       icon: Shield,
-      title: "Start Verifying Items",
-      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $10/month.",
-      action: "Subscribe Now",
+      title: "Run Your 2 Free Checks",
+      description: "Your free account includes 2 checks. Enter any serial number, IMEI or VIN to use them, no credit card needed.",
+      action: "See Plans",
       onClick: () => navigate('/pricing')
     },
     {
       icon: Zap,
-      title: "Instant Results",
-      description: "Get verification results in seconds from multiple databases including police reports.",
+      title: "Results in a Few Seconds",
+      description: "Every check searches SafeOrStolen theft reports and public web results. Gun checks add police theft reports from 33 states and DC, and bike checks add a national stolen-bicycle registry.",
       action: "Learn How It Works",
       onClick: () => window.open('/how-it-works', '_blank')
     },
@@ -54,10 +54,10 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
               </div>
             </div>
             <CardTitle className="text-3xl text-card-foreground mb-2">
-              🎉 Thank You for Signing Up!
+              Thanks for signing up
             </CardTitle>
             <p className="text-lg text-muted-foreground">
-              Welcome to SafeOrStolen — Your protection against stolen goods starts now!
+              Welcome to SafeOrStolen. You can check your first item now.
             </p>
           </CardHeader>
           
@@ -107,19 +107,19 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Access to multiple sources
+                  Up to 20 phone blacklist checks a month
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  IMEI, VIN, and serial number checking
+                  IMEI, VIN, plate and serial number checks
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Firearms database search (all 50 states)
+                  Gun checks against police theft reports from 33 states and DC
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Instant verification results in 3 seconds
+                  Free verification certificates; cancel anytime, 30-day refund
                 </li>
               </ul>
             </div>

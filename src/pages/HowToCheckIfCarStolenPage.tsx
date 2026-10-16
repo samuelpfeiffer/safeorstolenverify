@@ -35,11 +35,11 @@ const STEPS = [
   },
   {
     name: 'Run the VIN through NICB VINCheck',
-    text: 'NICB VINCheck (nicb.org) is free. It shows whether the VIN appears in participating insurers\u2019 records as an unrecovered theft or a total loss.',
+    text: 'NICB VINCheck, run by the National Insurance Crime Bureau, is free. It shows whether the VIN appears in participating insurers\u2019 records as an unrecovered theft or a total loss.',
   },
   {
     name: 'Get an NMVTIS title report',
-    text: 'NMVTIS is the U.S. Department of Justice\u2019s National Motor Vehicle Title Information System (vehiclehistory.gov). Reports cost a few dollars through approved providers and show title brands such as salvage, junk or flood, and the latest title state and odometer reading.',
+    text: 'NMVTIS is the U.S. Department of Justice\u2019s National Motor Vehicle Title Information System. Reports cost a few dollars through providers the Justice Department approves and show title brands such as salvage, junk or flood, and the latest title state and odometer reading.',
   },
   {
     name: 'Consider a paid history report (Carfax or AutoCheck)',
@@ -59,14 +59,14 @@ const STEPS = [
   },
   {
     name: 'Run a SafeOrStolen check and save the result',
-    text: 'Enter the VIN, plate or listing link at SafeOrStolen to check it against SafeOrStolen\u2019s own stolen-item reports, public web results and AI analysis in seconds, save the result to your account, and keep a Proof of Clean Purchase record of your due diligence.',
+    text: 'Enter the VIN or plate at SafeOrStolen. In a few seconds it decodes the year, make and model, lists open safety recalls, and checks SafeOrStolen\u2019s own theft reports and public web results (Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records). The result is saved to your account with the date, and you can add a $1.99 verification certificate.',
   },
 ];
 
 const FAQS = [
   {
     q: 'How do I check if a car is stolen for free?',
-    a: 'Use NICB VINCheck, which is free, and call your local police non-emergency line with the VIN and plate. You can also try SafeOrStolen free, which checks SafeOrStolen\u2019s own stolen-item reports, public web results and AI analysis.',
+    a: 'Use NICB VINCheck, which is free, and call your local police non-emergency line with the VIN and plate. SafeOrStolen (safeorstolen.com) gives you 2 free checks with a free account: it decodes the VIN, lists open recalls, and checks its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars.',
   },
   {
     q: 'Where is the VIN on a car?',
@@ -74,7 +74,7 @@ const FAQS = [
   },
   {
     q: 'Does SafeOrStolen search NICB, NMVTIS or police databases?',
-    a: 'No. SafeOrStolen checks its own stolen-item reports, public web results and AI analysis. NICB VINCheck, NMVTIS and your local police are separate official resources you should check yourself.',
+    a: 'No. SafeOrStolen checks its own theft reports and public web results, and for Arizona VINs and plates it also checks Arizona law-enforcement stolen-vehicle records, updated twice a day. It does not search NICB, NMVTIS, NCIC or DMV records. Those are separate resources you check yourself.',
   },
   {
     q: 'What is the difference between NICB VINCheck and NMVTIS?',
@@ -90,7 +90,7 @@ const FAQS = [
   },
   {
     q: 'Is a SafeOrStolen result a guarantee?',
-    a: 'No. No service can guarantee 100% accuracy, and not every theft is reported. A Proof of Clean Purchase record shows you did your due diligence; it is not a title or proof of ownership.',
+    a: 'No. Not every theft is reported, and no record set is complete, so a clean result means no report was found in the records searched. A Proof of Clean Purchase record shows you did your due diligence; it is not a title or proof of ownership.',
   },
 ];
 
@@ -188,7 +188,7 @@ const HowToCheckIfCarStolenPage = () => {
           <li><strong className="text-foreground">Title and registration:</strong> printed on both documents.</li>
           <li><strong className="text-foreground">Insurance card:</strong> the seller’s current insurance card lists the VIN.</li>
         </ul>
-        <p>Photograph each one and compare them character by character. Every copy must match. If any location is missing, covered, damaged or different, stop. That is the single most common sign of a stolen or “cloned” car, where thieves copy a legitimate VIN onto a stolen vehicle. Also check that the name on the title matches the seller’s ID.</p>
+        <p>Photograph each one and compare them character by character. Every copy must match. If any location is missing, covered, damaged or different, stop. That is a classic sign of a stolen or “cloned” car, where thieves copy a legitimate VIN onto a stolen vehicle. Also check that the name on the title matches the seller’s ID.</p>
 
         <H2 id="methods">8 ways to check if a car is stolen</H2>
         <p>No single source catches everything. Theft records, title records and history reports each cover different things, so use several. These are listed roughly in the order most buyers use them.</p>
@@ -197,7 +197,7 @@ const HowToCheckIfCarStolenPage = () => {
         <p>The National Insurance Crime Bureau runs a free VINCheck tool. <strong className="text-foreground">What it tells you:</strong> whether participating insurance companies have recorded the VIN as an unrecovered theft or a total loss. <strong className="text-foreground">What it doesn’t:</strong> thefts that were never reported to a participating insurer, or title brands.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">2. NMVTIS title report — low cost</h3>
-        <p>The National Motor Vehicle Title Information System is run by the U.S. Department of Justice. You buy reports through approved providers listed at vehiclehistory.bja.ojp.gov, usually for a few dollars. <strong className="text-foreground">What it tells you:</strong> title brands such as salvage, junk, rebuilt or flood, the latest title state and date, and the last reported odometer reading. A title that recently moved between states or carries a brand the seller didn’t mention deserves a closer look.</p>
+        <p>The National Motor Vehicle Title Information System is run by the U.S. Department of Justice. You buy reports through providers approved by the Justice Department, usually for a few dollars. <strong className="text-foreground">What it tells you:</strong> title brands such as salvage, junk, rebuilt or flood, the latest title state and date, and the last reported odometer reading. A title that recently moved between states or carries a brand the seller didn’t mention deserves a closer look.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">3. Carfax or AutoCheck — paid</h3>
         <p>Carfax and AutoCheck sell vehicle history reports. <strong className="text-foreground">What they tell you:</strong> reported accidents, number of owners, service records, registration locations and title events. They add useful context to a stolen-vehicle check, especially mismatched mileage or a sudden change of state, but they are paid, and they are not a substitute for the steps above.</p>
@@ -215,7 +215,7 @@ const HowToCheckIfCarStolenPage = () => {
         <p>Many stolen cars are sold through online marketplaces. See the <a href="#listing" className="text-primary underline">listing red flags</a> below, or paste the link into SafeOrStolen’s <Link to="/marketplace-url-checker" className="text-primary underline">marketplace listing checker</Link>.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">8. SafeOrStolen check — free to try</h3>
-        <p>Enter the VIN, plate or listing link to check it against SafeOrStolen’s own stolen-item reports, public web results and AI analysis in about 3 seconds, then save the result to your account. After a clean check you can keep a Proof of Clean Purchase record. SafeOrStolen does not search NICB, NMVTIS or police databases, so use it alongside the official resources above, not instead of them.</p>
+        <p>Enter the VIN or plate. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results. Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records, updated twice a day. The result is saved to your account with the date. SafeOrStolen does not search NICB, NMVTIS or NCIC, so use it alongside the official resources above, not instead of them.</p>
 
         <H2 id="tampering">Physical signs of VIN tampering</H2>
         <ul className="list-disc pl-6 space-y-2 my-4">
@@ -248,7 +248,7 @@ const HowToCheckIfCarStolenPage = () => {
 
         <div className="rounded-lg border border-border bg-card p-4 my-6 flex gap-3">
           <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-          <p className="text-sm">No service can guarantee 100% accuracy, and not every theft is reported. For high-value purchases, also check with local law enforcement.</p>
+          <p className="text-sm">Not every theft is reported, so a clean result from any source is not a guarantee. For a car, also check with local law enforcement before you pay.</p>
         </div>
 
         <H2 id="safeorstolen">Where SafeOrStolen fits</H2>
@@ -260,7 +260,7 @@ const HowToCheckIfCarStolenPage = () => {
           <li>Firearms, by serial number</li>
           <li>Bicycles, by serial number</li>
         </ul>
-        <p>Each check covers SafeOrStolen’s own stolen-item reports, public web results and AI analysis, and returns a result in seconds. You can also start from a marketplace listing link. Results save to your account. After a clean check, you can keep a Proof of Clean Purchase record, a timestamped record showing you did your due diligence. <strong className="text-foreground">Sellers</strong> can share that record with buyers to show an item checked clean. It works on the web or as an <Link to="/app" className="text-primary underline">installable web app</Link>. Pricing: 2 free checks with a free account (no card), $0.99 for a single check, or $10/month for unlimited checks.</p>
+        <p>Every check covers SafeOrStolen’s own theft reports and public web results, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched, with every source listed. Vehicle checks also decode the VIN and list open recalls. Results save to your account. After a clean check, you can keep a Proof of Clean Purchase record, a timestamped record showing you did your due diligence. <strong className="text-foreground">Sellers</strong> can share that record with buyers to show an item checked clean. It works on the web or as an <Link to="/app" className="text-primary underline">installable web app</Link>. Pricing: 2 free checks with a free account (no card), $0.99 for a single check, or $10/month for unlimited checks.</p>
         <div className="flex flex-wrap gap-3 my-6">
           <Button asChild size="lg"><Link to="/vin-checker">Check a VIN now</Link></Button>
           <Button asChild size="lg" variant="outline"><Link to="/proof-of-purchase">About Proof of Clean Purchase</Link></Button>

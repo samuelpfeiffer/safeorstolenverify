@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
+/** Oct 8 2026: audited by hand for "report stolen item". Removed AI-analysis source claims and a review claim that contradicted how reports go live. */
 const ReportStolenPageContent = () => {
  const faqSchema = {
  "@context": "https://schema.org",
@@ -39,7 +40,7 @@ const ReportStolenPageContent = () => {
  {
  "@type": "Question",
  "name": "Can I report a stolen car or vehicle?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone checks a VIN on SafeOrStolen, they'll see your stolen report. We also use public web results and AI analysis for additional information." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone checks that VIN on SafeOrStolen, they'll see it was reported stolen. Also report the theft to police and your insurer, and keep the police report number to add to your SafeOrStolen report." }
  }
  ]
  };
@@ -67,8 +68,8 @@ const ReportStolenPageContent = () => {
  <h2>How It Works</h2>
  <ol>
  <li>Fill out the report form with your item's details</li>
- <li>Our team reviews the report</li>
- <li>Item is added to the searchable stolen database</li>
+ <li>Most reports go live right away; some are reviewed first</li>
+ <li>Item shows as reported stolen when anyone checks its number</li>
  <li>Buyers checking the item will see the stolen alert</li>
  <li>You get notified if someone searches your item</li>
  </ol>
@@ -102,7 +103,7 @@ const ReportStolenPageContent = () => {
  <div className="grid sm:grid-cols-4 gap-4 mb-10">
  {[
  { icon: FileText, title: 'Submit Report', desc: 'Fill out item details below' },
- { icon: Shield, title: 'Team Reviews', desc: 'We verify and approve' },
+ { icon: Shield, title: 'Goes Live', desc: 'Most right away; some reviewed first' },
  { icon: Users, title: 'Buyers Alerted', desc: 'Searches show stolen flag' },
  { icon: Bell, title: 'You\'re Notified', desc: 'If someone searches your item' },
  ].map(({ icon: Icon, title, desc }) => (
@@ -126,7 +127,7 @@ const ReportStolenPageContent = () => {
  'Laptops & Computers (serial number)',
  'Gaming Consoles — PS5, Xbox, Switch',
  'Bicycles (serial number)',
- 'Firearms (serial number — checked against stolen firearms databases)',
+ 'Firearms (serial number)',
  'Watches — Rolex, Omega, Tag Heuer',
  'Cameras & Photography Equipment',
  'Power Tools & Construction Equipment',
@@ -196,7 +197,7 @@ const ReportStolenPageContent = () => {
  <AccordionItem value="vehicle">
  <AccordionTrigger>Can I report a stolen car or vehicle?</AccordionTrigger>
  <AccordionContent>
- Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone checks a VIN on SafeOrStolen, they'll see your stolen report. We also use public web results and AI analysis for comprehensive coverage.
+ Yes. You can report stolen vehicles by providing the VIN (Vehicle Identification Number). When anyone checks that VIN on SafeOrStolen, they'll see it was reported stolen. Also report the theft to police and your insurer, and keep the police report number to add to your SafeOrStolen report.
  </AccordionContent>
  </AccordionItem>
  </Accordion>

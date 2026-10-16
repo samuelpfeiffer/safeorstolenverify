@@ -51,7 +51,7 @@ const webApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   description:
-    "Check secondhand-item identifiers using SafeOrStolen reports, public web results, and AI analysis. A free account includes two checks.",
+    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. A free account includes two checks.",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Web",
   offers: {
@@ -65,23 +65,21 @@ const webApplicationJsonLd = JSON.stringify({
     name: "SafeOrStolen",
     url: "https://safeorstolen.com",
     logo: "https://safeorstolen.com/sos-logo-square.png",
-    foundingDate: "2017-07-20",
-    address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
     sameAs: [
       "https://www.crunchbase.com/organization/safe-or-stolen",
-      "https://www.trustpilot.com/review/safeorstolen.com",
       "https://biz.prlog.org/SafeOrStolen/",
-      "https://www.facebook.com/safeorstolen/",
       "https://www.youtube.com/@safeorstolen",
       "https://x.com/safeorstolen",
     ],
+    email: "safeorstolenmail@gmail.com",
+    address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
   },
 });
 
 const speakableJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "SafeOrStolen — Instant Stolen Item Verification",
+  name: "SafeOrStolen: Check If an Item Is Reported Stolen",
   speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2", ".speakable-summary"] },
   url: "https://safeorstolen.com",
 });
@@ -92,18 +90,16 @@ const organizationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   logo: "https://safeorstolen.com/sos-logo-square.png",
-  foundingDate: "2017-07-20",
-  description:
-    "SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items, firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app.",
-  address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
   sameAs: [
     "https://www.crunchbase.com/organization/safe-or-stolen",
-    "https://www.trustpilot.com/review/safeorstolen.com",
     "https://biz.prlog.org/SafeOrStolen/",
-    "https://www.facebook.com/safeorstolen/",
     "https://www.youtube.com/@safeorstolen",
     "https://x.com/safeorstolen",
   ],
+  email: "safeorstolenmail@gmail.com",
+  description:
+    "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
+  address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
   knowsAbout: [
     "IMEI verification",
     "VIN lookup",
@@ -130,26 +126,18 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       logo: { "@type": "ImageObject", url: "https://safeorstolen.com/sos-logo-square.png", width: "600", height: "600" },
       description:
-        "SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods — check phones (IMEI), vehicles (VIN and license plate), electronics, power tools and other serial-numbered items, firearms, and bicycles in one place, get a Proof of Clean Purchase record, and use it on the web or as an installable web app.",
-      foundingDate: "2017-07-20",
+        "SafeOrStolen, based in Peoria, Arizona, lets buyers and sellers of used goods check phones (IMEI), vehicles (VIN and license plate), firearms, bicycles and other serial-numbered items for theft reports in one place, save a dated record of each check, and use it on the web or as a free installable web app.",
       slogan: "Verify Before You Buy",
+      address: { "@type": "PostalAddress", addressLocality: "Peoria", addressRegion: "AZ", addressCountry: "US" },
       knowsAbout: [
         "stolen goods verification",
         "IMEI checking",
         "VIN lookup",
         "serial number verification",
-        "pawn shop compliance",
+        "bulk checks for pawn shops and dealers",
         "consumer protection",
       ],
-      contactPoint: { "@type": "ContactPoint", email: "support@safeorstolen.com", contactType: "Customer Support" },
-      sameAs: [
-        "https://www.crunchbase.com/organization/safe-or-stolen",
-        "https://www.trustpilot.com/review/safeorstolen.com",
-        "https://biz.prlog.org/SafeOrStolen/",
-        "https://www.facebook.com/safeorstolen/",
-        "https://www.youtube.com/@safeorstolen",
-        "https://x.com/safeorstolen",
-      ],
+      contactPoint: { "@type": "ContactPoint", email: "safeorstolenmail@gmail.com", contactType: "Customer Support" },
       founder: [
         { "@type": "Person", name: "Samuel Pfeiffer", jobTitle: "CEO" },
         { "@type": "Person", name: "Kelly McEvoy", jobTitle: "Co-Founder" },
@@ -162,7 +150,7 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       name: "SafeOrStolen — Stolen Item Verification",
       description:
-        "A stolen-item verification hub using SafeOrStolen reports, public web results, and AI analysis for secondhand buyers and sellers.",
+        "Check used items for theft reports before you buy: SafeOrStolen's own theft reports and public web results on every check, plus item-specific records for guns, bikes and Arizona vehicles.",
       publisher: { "@id": "https://safeorstolen.com/#organization" },
       potentialAction: {
         "@type": "SearchAction",
@@ -191,6 +179,7 @@ const coreGraphJsonLd = JSON.stringify({
         name: "Verification Plans",
         itemListElement: [
           { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "2 free verifications, no credit card required" },
+          { "@type": "Offer", name: "Single check", price: "0.99", priceCurrency: "USD", description: "One check" },
           { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types" },
         ],
       },
@@ -202,8 +191,8 @@ const coreGraphJsonLd = JSON.stringify({
       description: "Steps to use SafeOrStolen to check whether a secondhand item has been reported stolen.",
       step: [
         { "@type": "HowToStep", position: 1, name: "Find the identifier", text: "Locate the IMEI number (phones — dial *#06#), VIN (vehicles — dashboard or door jamb), or serial number on the item." },
-        { "@type": "HowToStep", position: 2, name: "Enter the number", text: "Open SafeOrStolen on the web or as an installed web app, then enter or scan the identifier." },
-        { "@type": "HowToStep", position: 3, name: "Review results", text: "Review the SafeOrStolen reports, public web results, and AI analysis, then complete the separate official checks in the relevant guide." },
+        { "@type": "HowToStep", position: 2, name: "Enter the number", text: "Open SafeOrStolen on the web or as the free installable web app, then type the identifier." },
+        { "@type": "HowToStep", position: 3, name: "Review results", text: "Read the result (\"reported stolen\", \"possible match\", or \"no report found in the records searched\") and the list of sources searched, then complete the other checks in the relevant guide." },
       ],
       totalTime: "PT30S",
       dateModified: "2026-09-24",
@@ -218,7 +207,7 @@ const softwareApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen AI",
   alternateName: ["SafeOrStolen AI Chat", "SOS AI"],
   description:
-    "Conversational assistant for checking supported identifiers and marketplace listing URLs using SafeOrStolen reports, public web results, and AI analysis.",
+    "Chat assistant that runs SafeOrStolen checks on IMEIs, VINs, plates and serial numbers and explains the results. Checks search SafeOrStolen's own theft reports and public web results, plus item-specific records for guns, bikes and Arizona vehicles.",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Conversational AI Verification Assistant",
   operatingSystem: "Web",
@@ -229,18 +218,12 @@ const softwareApplicationJsonLd = JSON.stringify({
   creator: { "@id": "https://safeorstolen.com/#organization" },
   publisher: { "@id": "https://safeorstolen.com/#organization" },
   featureList: [
-    "Conversational AI verification (multi-turn chat)",
-    "AI smart identifier detection (IMEI, VIN, serial, plate, firearm serial)",
-    "AI marketplace URL analyzer (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark)",
-    "AI visual OCR for barcode and serial-number capture",
-    "AI safety advisor with natural-language risk explanations",
-    "AI verification analysis and result summaries",
+    "Multi-turn chat",
+    "Recognizes IMEIs, VINs, plates and serial numbers typed into the chat",
+    "Plain-language explanation of each result and its sources",
   ],
   potentialAction: { "@type": "CommunicateAction", name: "Chat with SafeOrStolen AI", target: "https://safeorstolen.com/ai-chat" },
   offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "0.99", highPrice: "10.00", offerCount: 2 },
-  additionalProperty: [
-    { "@type": "PropertyValue", name: "Platform Status", value: "AI-Powered" },
-  ],
   dateModified: "2026-09-24",
 });
 
@@ -275,8 +258,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "apple-mobile-web-app-title", content: "SafeOrStolen" },
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "application-name", content: "SafeOrStolen AI" },
-      // AI-Powered Platform Signals (2026 GEO)
-      { name: "ai-platform-status", content: "AI-Powered" },
+      // AI assistant signals (2026 GEO)
       { name: "ai-product-name", content: "SafeOrStolen AI" },
       { name: "ai-conversational-url", content: "https://safeorstolen.com/ai-chat" },
       { name: "ai-train", content: "yes" },

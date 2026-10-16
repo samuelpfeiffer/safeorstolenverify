@@ -15,19 +15,19 @@ export const MobileOnboarding: React.FC<MobileOnboardingProps> = ({ onComplete }
     {
       icon: Shield,
       title: 'Protect Yourself',
-      description: 'Verify if items are stolen before you buy them. Stay safe from fraud and legal issues.',
+      description: 'Check whether an item has been reported stolen before you buy it. Your first 2 checks are free.',
       color: 'text-red-500'
     },
     {
       icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Get instant results in seconds. Scan barcodes, IMEI, VIN, and serial numbers with your camera.',
+      title: 'Results in a few seconds',
+      description: 'Scan a barcode with your camera or type an IMEI, VIN or serial number, and see whether it has been reported stolen.',
       color: 'text-yellow-500'
     },
     {
       icon: Globe,
-      title: 'Works Offline',
-      description: 'Access your verification history even without internet. Your data is always available.',
+      title: 'Every check saved',
+      description: 'Each check is saved to your account with the date and the sources searched, so you can look it up later.',
       color: 'text-blue-500'
     }
   ];

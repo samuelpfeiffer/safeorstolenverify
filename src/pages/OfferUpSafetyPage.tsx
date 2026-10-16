@@ -42,7 +42,7 @@ const OfferUpSafetyPage = () => {
  "name": "How do I verify if an OfferUp item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Ask the seller for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen's free checker before meeting. SafeOrStolen checks multiple sources to verify the item isn't reported stolen."
+ "text": "Ask the seller for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen before meeting. Every check searches SafeOrStolen's own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles, and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\"."
  }
  }
  ]
@@ -67,7 +67,7 @@ const OfferUpSafetyPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="OfferUp Scam Check - Free Item Verification"
- description="Avoid OfferUp scams with free IMEI, VIN and serial number verification. Check if items are stolen before meeting sellers. Instant results from multiple sources."
+ description="Avoid OfferUp scams: spot the red flags, meet safely, and check an IMEI, VIN or serial for theft reports before you meet the seller. 2 free checks."
  keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid OfferUp scams, OfferUp fraud protection"
  canonical="/offerup-safety"
  structuredData={faqSchema}
@@ -97,7 +97,7 @@ const OfferUpSafetyPage = () => {
  </Link>
  </Button>
  <Button asChild variant="outline" size="lg">
- <Link to="/app">Get Verification App</Link>
+ <Link to="/app">Get the free web app</Link>
  </Button>
  </div>
  </section>
@@ -147,30 +147,30 @@ const OfferUpSafetyPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-3">TruYou Verification</h3>
- <p className="text-muted-foreground">Look for the TruYou badge. These sellers have verified their identity through OfferUp's background check process, which includes phone number verification and optional Facebook/Google connection.</p>
+ <p className="text-muted-foreground">Look for the TruYou badge. It means the seller completed OfferUp's identity verification. It tells you who they are, not whether the item is theirs, so still check the number.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-3">Community MeetUp Spots</h3>
- <p className="text-muted-foreground">OfferUp partners with police stations for safe exchange zones. Always suggest meeting at these locations during daylight hours with another person.</p>
+ <p className="text-muted-foreground">OfferUp lists public meetup locations, some at police stations. Suggest meeting at one in daylight and bring another person.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-3">In-App Payments</h3>
- <p className="text-muted-foreground">Buyer protection covers shipped items paid through OfferUp. Local cash transactions have no protection—this is critical to understand.</p>
+ <p className="text-muted-foreground">Buyer protection covers shipped items paid through OfferUp. Local cash deals aren't covered, so check the item before you pay.</p>
  </CardContent>
  </Card>
  </div>
  </section>
 
- {/* Comprehensive OfferUp Safety Guide */}
+ {/* OfferUp Safety Guide */}
  <section className="mb-16 bg-card border rounded-xl p-8">
  <h2 className="text-3xl font-bold text-center mb-6">Complete OfferUp Buyer Protection Guide</h2>
  <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
  <p>
- OfferUp has become one of America's largest mobile marketplaces, with millions of users buying and selling everything from smartphones to vehicles. However, the platform's convenience also attracts scammers and individuals selling stolen goods. Understanding how to protect yourself is essential for any OfferUp transaction.
+ OfferUp is a big local marketplace where people sell everything from phones to cars. The same quick, local cash deals that make it handy also make it easy for scammers and people selling stolen goods. A few habits protect you on every deal.
  </p>
  <h3 className="text-xl font-semibold text-foreground mt-6">Understanding OfferUp's Buyer Protection Limitations</h3>
  <p>
@@ -178,15 +178,15 @@ const OfferUpSafetyPage = () => {
  </p>
  <h3 className="text-xl font-semibold text-foreground mt-6">Why Stolen Goods Appear on OfferUp</h3>
  <p>
- OfferUp's local marketplace model is attractive to those selling stolen property for several reasons. First, cash transactions leave no paper trail. Second, the quick meetup format means items can be sold within hours of being stolen. Third, the anonymous nature of the platform—despite TruYou verification—allows sellers to create new accounts easily. Fourth, the lack of systematic verification means stolen phones, laptops, bikes, and even vehicles can change hands without detection.
+ OfferUp's local marketplace model is attractive to those selling stolen property for several reasons. First, cash transactions leave no paper trail. Second, the quick meetup format means items can be sold within hours of being stolen. Third, the anonymous nature of the platform—despite TruYou verification—allows sellers to create new accounts easily. Fourth, nobody checks serial numbers for you, so stolen phones, laptops, bikes and even vehicles can change hands unless the buyer checks.
  </p>
  <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk Item Categories on OfferUp</h3>
  <p>
- Certain categories carry higher stolen item risk. Smartphones are the most common stolen items sold on OfferUp—particularly iPhones, which retain high resale value. Gaming consoles (PlayStation 5, Xbox Series X) are frequently stolen from retail shipments or homes. Laptops, especially MacBooks, are easy to steal and resell. Bicycles, particularly high-end road bikes and e-bikes, are stolen at alarming rates. Power tools from construction sites often appear on OfferUp within days of theft. Even vehicles—cars, motorcycles, ATVs—are listed on the platform.
+ Certain categories carry higher stolen item risk. Small, valuable items that hold their resale price are the usual targets: smartphones (especially iPhones), gaming consoles, laptops such as MacBooks, high-end bikes and e-bikes, and power tools taken from job sites and trucks. Cars, motorcycles and ATVs get listed too, so check the VIN before you go see one.
  </p>
  <h3 className="text-xl font-semibold text-foreground mt-6">The Legal Consequences of Buying Stolen Items</h3>
  <p>
- Many buyers don't realize that purchasing stolen property—even unknowingly—can result in serious consequences. First, the item will be confiscated when discovered, with no compensation to you. Second, you may face criminal charges for "receiving stolen property" in many states, even if you didn't know it was stolen. Third, you could face civil liability to the original owner or their insurance company. Fourth, you'll have lost whatever money you paid with no way to recover it from the seller.
+ Buying stolen property, even without knowing, can cost you. Police can take the item back and return it to the owner, and you usually lose what you paid. Knowingly buying stolen property is a crime in every state, and ignoring obvious warning signs can be used against you. Checking the number and keeping a dated record of that check shows you tried to buy honestly.
  </p>
  </div>
  </section>
@@ -198,7 +198,7 @@ const OfferUpSafetyPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-3 text-destructive">IMEI Blacklisted Phones</h3>
- <p className="text-muted-foreground">Phones reported lost or stolen are typically added to a global blacklist by carriers, rendering them unusable on cellular networks. They may still work on WiFi. Always check IMEI details with SafeOrStolen and confirm with the carrier before buying any phone on OfferUp.</p>
+ <p className="text-muted-foreground">When an owner reports a phone lost or stolen, their carrier can blacklist its IMEI, and carriers that honor the list won't activate it. The phone may still work on Wi-Fi. Run the IMEI through SafeOrStolen before you buy; add the paid blacklist check if you want carrier lost/stolen status.</p>
  </CardContent>
  </Card>
  <Card>
@@ -216,7 +216,7 @@ const OfferUpSafetyPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-3 text-destructive">Payment Scams</h3>
- <p className="text-muted-foreground">Sellers asking for Venmo, CashApp, Zelle, or gift cards before meetup are almost always scammers. Never send money to someone you haven't met or verified.</p>
+ <p className="text-muted-foreground">A seller who wants Venmo, Cash App, Zelle or gift cards before you've met is a classic scam sign. Never send money to someone you haven't met or verified.</p>
  </CardContent>
  </Card>
  </div>
@@ -234,7 +234,7 @@ const OfferUpSafetyPage = () => {
  <div className="text-center">
  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
  <h3 className="font-semibold mb-2">Check SafeOrStolen</h3>
- <p className="text-sm text-muted-foreground">Enter the number in our free verification tool</p>
+ <p className="text-sm text-muted-foreground">Enter the number at safeorstolen.com/verify (2 free checks)</p>
  </div>
  <div className="text-center">
  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
@@ -276,7 +276,7 @@ const OfferUpSafetyPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">How do I verify if an OfferUp item is stolen?</h3>
- <p className="text-muted-foreground">Ask for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen's free checker before meeting.</p>
+ <p className="text-muted-foreground">Ask for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen before meeting and read the result and the sources searched.</p>
  </CardContent>
  </Card>
  </div>
@@ -285,13 +285,13 @@ const OfferUpSafetyPage = () => {
  {/* CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Stay Safe on OfferUp</h2>
- <p className="text-muted-foreground mb-6">Verify any phone, car, or electronics before your meetup. Free checks available.</p>
+ <p className="text-muted-foreground mb-6">Check any phone, car or electronics before your meetup. 2 free checks with a free account.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg">
  <Link to="/verify">Verify Item Now</Link>
  </Button>
  <Button asChild variant="outline" size="lg">
- <Link to="/app">Get Verification App</Link>
+ <Link to="/app">Get the free web app</Link>
  </Button>
  </div>
  </section>

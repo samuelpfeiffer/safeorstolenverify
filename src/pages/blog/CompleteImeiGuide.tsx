@@ -10,6 +10,9 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
 
+/** Oct 8 2026: copy fixed by hand. Removed the stolen-phone count, GSMA carrier/country counts and 24-hour claim,
+ * "SafeOrStolen checks all carriers globally", carrier website addresses, unverified claims about named IMEI sites,
+ * price-percentage figures, all-caps warnings and emoji. */
 export default function CompleteImeiGuide() {
   const navigate = useNavigate();
 
@@ -17,7 +20,7 @@ export default function CompleteImeiGuide() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'Complete IMEI Guide 2026: How to Check if Your Phone is Stolen',
-    description: 'Ultimate guide to IMEI numbers, how to find your IMEI, check if a phone is stolen or blacklisted, and protect yourself when buying used smartphones in 2026.',
+    description: 'How to find a phone\'s IMEI, what blacklisting means, how to check if a phone is stolen or blacklisted, and the red flags to watch for when buying a used phone.',
     author: {
       '@type': 'Organization',
       name: 'SafeOrStolen'
@@ -38,7 +41,7 @@ export default function CompleteImeiGuide() {
     <>
       <PageSEO
         title="Complete IMEI Guide 2026: Check if Phone is Stolen | SafeOrStolen"
-        description="Ultimate guide to IMEI numbers, how to find your IMEI, check if a phone is stolen or blacklisted, and protect yourself when buying used smartphones in 2026."
+        description="How to find a phone's IMEI, what blacklisting means, how to check if a used phone is stolen or blacklisted, and the red flags to watch for before you pay."
         keywords="IMEI check, IMEI number lookup, check if phone stolen, IMEI blacklist check, phone verification guide"
         canonical="/blog/complete-imei-guide-protect-yourself"
         structuredData={structuredData}
@@ -67,8 +70,8 @@ export default function CompleteImeiGuide() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Why IMEI Verification Matters</h3>
                   <p className="text-muted-foreground">
-                    Over 2.1 million smartphones were reported stolen in the U.S. in 2026. IMEI verification is your 
-                    first line of defense against buying stolen or blacklisted phones.
+                    A stolen or blacklisted phone can stop working on a network after you've paid for it, and police can return
+                    it to its owner. Checking the IMEI before you buy is the first thing to do.
                   </p>
                 </div>
               </div>
@@ -81,9 +84,8 @@ export default function CompleteImeiGuide() {
               two devices share the same IMEI.
             </p>
             <p className="text-muted-foreground mb-6">
-              IMEI numbers were created to track devices and are used by carrier blacklists (such as the GSMA blacklist) to block stolen phones from accessing networks.
-              devices across cellular networks, prevent phone cloning, and enable law enforcement to identify stolen 
-              phones. In 2026, IMEI tracking is the global standard used by all major carriers.
+              Carriers use the IMEI to identify a device on their network, and carrier blacklists use it to block phones
+              reported lost or stolen. Police also use it to identify a stolen phone when they recover one.
             </p>
 
             <div className="bg-card border rounded-lg p-6 mb-8">
@@ -108,7 +110,7 @@ export default function CompleteImeiGuide() {
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Method 1: Dial *#06#</h3>
                 <p className="text-muted-foreground mb-3">
                   Universal method that works on all smartphones (iPhone, Android, any carrier). Open your phone dialer 
-                  and type <code className="bg-muted px-2 py-1 rounded-[0.25rem]">*#06#</code>. Your IMEI will instantly display 
+                  and type <code className="bg-muted px-2 py-1 rounded-[0.25rem]">*#06#</code>. Your IMEI will appear 
                   on screen. No call is made.
                 </p>
                 <p className="text-muted-foreground text-sm">
@@ -152,25 +154,24 @@ export default function CompleteImeiGuide() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">What Does IMEI Blacklisting Mean?</h2>
             <p className="text-muted-foreground mb-4">
-              When a phone is reported stolen to a carrier or law enforcement, its IMEI is added to a global blacklist 
-              database shared across carriers worldwide. Blacklisted phones cannot activate on cellular networks, 
-              rendering them worthless for normal use.
+              When an owner reports a phone lost or stolen to their carrier, the carrier adds its IMEI to a blacklist.
+              US carriers share these lists, so a blacklisted phone usually can't be activated on another US network,
+              which leaves it close to worthless for normal use.
             </p>
             <p className="text-muted-foreground mb-6">
-              For example, the GSMA Device Check database connects over 800 carriers across more than 100 countries. When an IMEI is
-              blacklisted in the U.S., it's automatically blacklisted globally within 24 hours. Thieves cannot simply 
-              sell stolen phones overseas to bypass blacklists.
+              Many carriers outside the US also share blacklist data through the GSMA, the mobile industry association,
+              though coverage varies by country and carrier.
             </p>
 
             <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 mb-8">
               <div className="flex items-start gap-3">
                 <AlertTriangle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Critical Buyer Warning</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">A phone can be blacklisted after you buy it</h3>
                   <p className="text-muted-foreground">
-                    A phone can be blacklisted AFTER you buy it. If the seller fraudulently reports the phone stolen 
-                    to their carrier after receiving your payment, your phone will be blacklisted and unusable. 
-                    Always verify IMEI through SafeOrStolen BEFORE buying.
+                    A seller can take your money and then report the phone lost to their carrier, and it gets blacklisted.
+                    A check before you pay won't stop that, so also get a written receipt with the seller's name and the IMEI,
+                    and pay in a way you can trace.
                   </p>
                 </div>
               </div>
@@ -178,8 +179,8 @@ export default function CompleteImeiGuide() {
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">How to Check if an IMEI is Blacklisted</h2>
             <p className="text-muted-foreground mb-6">
-              Before buying any used phone, ALWAYS verify its IMEI status. This takes a few seconds and can save you 
-              hundreds of dollars and legal trouble.
+              Before buying any used phone, check its IMEI. It takes a few seconds and can save you the price of the phone
+              and a visit from the police.
             </p>
 
             <div className="space-y-6 mb-8">
@@ -189,7 +190,7 @@ export default function CompleteImeiGuide() {
                   <h3 className="text-xl font-semibold text-foreground">Recommended: SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  SafeOrStolen checks its own theft reports and public web results. For phones it also shows the make and model from the IMEI. Bike checks also search a national stolen-bicycle registry, and gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Results come back in a few seconds.
+                  SafeOrStolen checks its own theft reports and public web results, and for phones it also shows the make and model from the IMEI.
                   To see whether a phone is on the lost/stolen carrier blacklist, you can buy a blacklist check on SafeOrStolen (monthly members get up to 20 a month) or ask the carrier. Results come back in a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
@@ -201,28 +202,24 @@ export default function CompleteImeiGuide() {
               <div className="bg-card border rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Alternative: Carrier Direct Check</h3>
                 <p className="text-muted-foreground mb-3">
-                  Major carriers offer free IMEI checks on their websites:
+                  AT&T, Verizon and T-Mobile each have a bring-your-own-device or IMEI check page on their websites
+                  where you can enter an IMEI and see whether it can be activated on that network.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li><strong>AT&T:</strong> att.com/deviceunlock</li>
-                  <li><strong>Verizon:</strong> verizon.com/bring-your-own-device</li>
-                  <li><strong>T-Mobile:</strong> t-mobile.com/verifyIMEI</li>
-                </ul>
                 <p className="text-muted-foreground mt-3 text-sm">
-                  <strong>Limitation:</strong> Carrier checks only show blacklist status for THEIR network. 
-                  Phone may be blacklisted on other carriers or internationally. SafeOrStolen checks all carriers globally.
+                  <strong>Limitation:</strong> a carrier's check tells you about its own network. It won't tell you whether the
+                  phone was reported stolen to police or listed as stolen online.
                 </p>
               </div>
 
               <div className="bg-card border rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-3 text-foreground">What to Avoid</h3>
                 <p className="text-muted-foreground mb-3">
-                  <strong>❌ Free IMEI check websites (IMEI24, IMEIpro, etc.):</strong> These sites scrape limited 
-                  data, show inaccurate results, and harvest IMEIs for fraud. Many sell your IMEI to criminals.
+                  <strong>Sites that don't say where their results come from:</strong> if a free IMEI checker doesn't list
+                  its sources, you can't tell what a clean result means. Prefer a check that names every source it searched.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong>❌ Trusting seller's word:</strong> Sellers have zero incentive to reveal blacklist status. 
-                  Always verify independently.
+                  <strong>Taking the seller's word for it:</strong> a seller with a blacklisted phone has every reason not to
+                  mention it. Check it yourself.
                 </p>
               </div>
             </div>
@@ -232,8 +229,8 @@ export default function CompleteImeiGuide() {
               <div className="border-l-4 border-destructive pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">Seller Refuses to Provide IMEI</h3>
                 <p className="text-muted-foreground">
-                  Legitimate sellers have nothing to hide. If seller won't provide IMEI before meetup, phone is likely 
-                  stolen or blacklisted. Walk away immediately.
+                  An honest seller can send the IMEI in a minute. If a seller won't give it to you before the meetup,
+                  treat that as a no and move on.
                 </p>
               </div>
               <div className="border-l-4 border-destructive pl-4">
@@ -244,10 +241,10 @@ export default function CompleteImeiGuide() {
                 </p>
               </div>
               <div className="border-l-4 border-destructive pl-4">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Price 40%+ Below Market Value</h3>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">Price Far Below Market Value</h3>
                 <p className="text-muted-foreground">
-                  Thieves want quick cash and price stolen phones well below market. If a 3-month-old iPhone 15 Pro 
-                  is $500 when market value is $900, it's almost certainly stolen.
+                  Thieves want quick cash and price stolen phones well below what similar phones sell for. Compare a few
+                  listings for the same model and storage. If this one is far cheaper and the seller wants to meet today, be careful.
                 </p>
               </div>
               <div className="border-l-4 border-destructive pl-4">
@@ -279,7 +276,7 @@ export default function CompleteImeiGuide() {
               </li>
             </ol>
             <p className="text-muted-foreground mb-8">
-              This is why pre-purchase IMEI verification is absolutely critical. It's the ONLY way to protect yourself.
+              That's why it's worth checking the IMEI, and seeing the seller sign out of their account, before you pay.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">Check at the Meetup with the SafeOrStolen Web App</h2>

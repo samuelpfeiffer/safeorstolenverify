@@ -28,10 +28,10 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
           </div>
         </div>
         <CardTitle className="text-2xl md:text-3xl text-sos-lime">
-          🎉 Welcome to SafeOrStolen!
+          Welcome to SafeOrStolen
         </CardTitle>
         <p className="text-muted-foreground">
-          {userEmail ? `Account created successfully for ${userEmail}` : 'Your account has been created successfully!'}
+          {userEmail ? `Account created successfully for ${userEmail}` : 'Your account has been created.'}
         </p>
       </CardHeader>
       
@@ -41,14 +41,14 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
           <div className="flex items-center gap-3 mb-3">
             <Gift className="h-6 w-6 text-sos-orange" />
             <div>
-              <h3 className="font-semibold text-lg">Welcome!</h3>
+              <h3 className="font-semibold text-lg">You have 2 free checks</h3>
               <Badge variant="secondary" className="bg-sos-lime/20 text-sos-lime border-sos-lime/30">
                 $0.99/check or $10/mo Unlimited
               </Badge>
             </div>
           </div>
           <p className="text-sm text-muted-foreground">
-            Get a single check for $0.99 or subscribe for $10/month for unlimited verifications across all item types. Cancel anytime.
+            Your first 2 checks are free. After that, a single check is $0.99, or $10 a month gets you unlimited checks across all item types. Cancel anytime.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
               <div>
                 <h4 className="font-medium">Explore Our Guides</h4>
                 <p className="text-sm text-muted-foreground">
-                  Learn how to safely buy and sell secondhand items with our comprehensive guides.
+                  Step-by-step guides to finding serial numbers and buying secondhand items safely.
                 </p>
                 <Button variant="outline" size="sm" className="mt-2" asChild>
                   <Link to="/blog" onClick={onClose}>
@@ -120,7 +120,7 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
         <div className="bg-muted/30 p-4 rounded-lg">
           <h4 className="font-medium mb-3 flex items-center gap-2">
             <Shield className="h-5 w-5 text-sos-orange" />
-            Quick Tips for Success:
+            Quick tips:
           </h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2">

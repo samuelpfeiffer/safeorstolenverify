@@ -1,3 +1,4 @@
+/** Oct 7 2026: copy fixed by hand for "craigslist scam check". Removed "police reports and registries nationwide", "instant"/"3 seconds", "mobile app" and overclaims. */
 import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
@@ -9,27 +10,27 @@ const CraigslistSafetyVerification = () => {
   const faqs = [
     {
       question: "How can I tell if a Craigslist item is stolen?",
-      answer: "Use SafeOrStolen to verify the IMEI, VIN, or serial number before meeting the seller. Our database cross-references police reports and stolen property registries nationwide."
+      answer: "Ask the seller for the IMEI, VIN or serial number and enter it at SafeOrStolen (safeorstolen.com/craigslist-safety-verification) before you meet. Every check searches SafeOrStolen theft reports and public web results; gun checks add police theft reports from 33 states and DC, and bike checks add a national stolen-bicycle registry. A seller who won't share the number is a warning sign."
     },
     {
       question: "Is Craigslist safe for buying used items?",
-      answer: "Craigslist can be safe with proper precautions: always verify items using SafeOrStolen, meet in public places (many police stations offer 'safe exchange zones'), and trust your instincts if something feels wrong."
+      answer: "It can be, if you do the checking yourself, since Craigslist has no buyer protection. Get the serial, IMEI or VIN and check it before meeting, meet in a public place (many police stations have a safe exchange spot), inspect the item before paying, and walk away if the price or story doesn't add up."
     },
     {
       question: "What should I check before buying a car on Craigslist?",
-      answer: "Always run a VIN check through SafeOrStolen to verify the vehicle isn't stolen. Also verify the VIN matches the title, check for signs of VIN tampering, and consider getting a pre-purchase inspection."
+      answer: "Run the VIN through SafeOrStolen to decode it, see open recalls and search theft reports. At the car, make sure the VIN on the dash, the driver's door jamb and the title all match, the name on the title matches the seller's ID, and the VIN plate shows no scratches or loose rivets. Get a pre-purchase inspection on anything expensive."
     },
     {
       question: "Can I get in trouble for buying stolen items on Craigslist?",
-      answer: "Yes. Receiving stolen property is a crime in all 50 states. Even if you didn't know the item was stolen, you can face criminal charges, and the item will be confiscated."
+      answer: "Yes. Receiving stolen property is a crime in every state. Prosecution usually turns on whether you knew or should have known, and a very low price or a seller with no paperwork can count against you. Even if you aren't charged, police can take the item back for its owner and you lose what you paid."
     },
     {
       question: "How do I verify a phone isn't stolen before buying on Craigslist?",
-      answer: "Ask the seller for the IMEI number (dial *#06# on any phone). Enter the IMEI into SafeOrStolen's free checker to verify it isn't blacklisted or reported stolen."
+      answer: "Ask the seller for the IMEI (they can dial *#06#). Enter it at SafeOrStolen to see the make and model and any theft report or web mention; a lost/stolen carrier blacklist check is a paid add-on. At the meetup, have the seller sign out of their Apple ID or Google account and erase the phone in front of you."
     },
     {
       question: "What's the safest way to buy on Craigslist?",
-      answer: "1) Verify the item with SafeOrStolen before meeting, 2) Meet at a police station safe exchange zone, 3) Bring someone with you, 4) Pay only after physically inspecting and verifying the item."
+      answer: "Check the serial, IMEI or VIN before you agree to meet. Meet at a police station safe exchange spot or a busy public place, in daylight, and bring someone. Make sure the number on the item matches what you checked, and pay only after you've inspected it."
     }
   ];
 
@@ -50,7 +51,7 @@ const CraigslistSafetyVerification = () => {
     <>
       <PageSEO
         title="Craigslist Scam Check - Verify Items Before Meetup"
-        description="Check if Craigslist items are stolen before meeting seller. Free IMEI and VIN verification for phones, cars, electronics."
+        description="Check if a Craigslist item is stolen before you meet the seller: run the IMEI, VIN or serial in a few seconds. Safe meetup steps and warning signs. 2 free checks."
         keywords="craigslist safety, craigslist scam check, verify craigslist item"
         canonical="/craigslist-safety-verification"
         structuredData={faqSchema}
@@ -69,8 +70,8 @@ const CraigslistSafetyVerification = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Don't become a victim of stolen goods. Verify any item's IMEI, VIN, or serial number 
-              before meeting a Craigslist seller. Free, instant results.
+              Get the IMEI, VIN or serial number from the seller and check it before you drive out. 
+              The result comes back in a few seconds, and your first 2 checks are free.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -83,7 +84,7 @@ const CraigslistSafetyVerification = () => {
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link to="/app">
                   <Download className="w-5 h-5" />
-                  Get Mobile App
+                  Get the Free Web App
                 </Link>
               </Button>
             </div>
@@ -107,8 +108,8 @@ const CraigslistSafetyVerification = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Unlike Facebook or eBay, Craigslist doesn't require identity verification. 
-                    Sellers can post anonymously, making it easy for thieves to sell stolen goods.
+                    Craigslist sellers don't need a profile, and replies go through relay email. 
+                    You often know nothing about who you're meeting.
                   </p>
                 </CardContent>
               </Card>
@@ -122,8 +123,8 @@ const CraigslistSafetyVerification = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Craigslist offers no buyer protection. Once you pay cash for a stolen item, 
-                    you have no recourse. The item will be confiscated, and your money is gone.
+                    Craigslist offers no buyer protection. If you pay cash for a stolen item and 
+                    police take it back, there's no one to refund you.
                   </p>
                 </CardContent>
               </Card>
@@ -137,8 +138,8 @@ const CraigslistSafetyVerification = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Craigslist's cash-based transactions and local meetups make it a prime target 
-                    for selling stolen electronics, vehicles, and tools quickly.
+                    Cash and quick local meetups make Craigslist an easy place to unload stolen 
+                    electronics, tools and bikes fast.
                   </p>
                 </CardContent>
               </Card>
@@ -146,7 +147,7 @@ const CraigslistSafetyVerification = () => {
           </div>
         </section>
 
-        {/* Comprehensive Craigslist Safety Content */}
+        {/* Craigslist safety content */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
@@ -154,23 +155,23 @@ const CraigslistSafetyVerification = () => {
             </h2>
             <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
               <p>
-                Craigslist remains one of the internet's largest classified advertising platforms, facilitating millions of transactions between strangers every year. From used cars to electronics, furniture to tools, Craigslist offers incredible deals—but also carries significant risks that every buyer should understand.
+                Craigslist is still where a lot of people buy used cars, tools, electronics and furniture from strangers. The deals can be good. The risks are real, and on Craigslist they're all on you.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">Why Craigslist is a Target for Stolen Goods</h3>
               <p>
-                Unlike eBay, Facebook Marketplace, or OfferUp, Craigslist requires no identity verification whatsoever. Sellers can post anonymously using temporary email addresses. Cash transactions leave no digital trail. The platform's simplicity—which made it popular—is precisely what makes it attractive to those selling stolen property. Thieves can post an item within hours of stealing it and sell it the same day, pocketing cash and disappearing.
+                Craigslist doesn't need a profile to post. Replies run through relay email, and cash leaves no record. That same simplicity makes it easy for someone to post an item the day it was stolen and be gone with the cash by evening.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">Understanding Your Legal Risk</h3>
               <p>
-                Many Craigslist buyers don't realize the legal jeopardy they face when purchasing stolen items. In all 50 states, "receiving stolen property" is a crime. While prosecution typically requires proving you knew or should have known an item was stolen, the burden is lower than many expect. Courts have held that unusually low prices, meeting in strange locations, sellers unable to provide documentation, and other red flags can establish "constructive knowledge." Even if you're not prosecuted, the item will be confiscated when discovered—and you have no recourse.
+                Many Craigslist buyers don't realize the legal jeopardy they face when purchasing stolen items. In every state, receiving stolen property is a crime. Prosecution usually depends on whether you knew or should have known the item was stolen, and a price far below market, an odd meeting place or a seller with no paperwork can all count against you. Even if you aren't charged, police can take the item back for its owner, and you're out the money.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk Categories on Craigslist</h3>
               <p>
-                Certain item categories carry elevated risk for stolen goods. Smartphones and tablets—especially iPhones—are the most commonly stolen items sold on Craigslist. Laptops, particularly MacBooks, are frequently stolen from homes, cars, and coffee shops. Power tools are often stolen from construction sites, with organized rings targeting specific job sites. Bicycles, including expensive road bikes and mountain bikes, are easy to steal and resell. Vehicles—cars, trucks, motorcycles—require more sophisticated theft but appear on Craigslist regularly. Even firearms, despite legal requirements for transfer, are sometimes sold illegally on Craigslist.
+                Phones and tablets, laptops (MacBooks especially), power tools taken from job sites and trucks, and bikes are easy to steal and quick to resell, so be most careful with those. Cars and motorcycles show up too; check the VIN on the dash and door jamb against the title. Craigslist doesn't allow gun listings, so a gun offered through it is a red flag on its own.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-6">Why Verification Matters More on Craigslist</h3>
               <p>
-                Because Craigslist offers zero buyer protection—no dispute resolution, no refunds, no transaction records—you must protect yourself before any purchase. Once you hand over cash, you have no recourse through the platform if the item turns out to be stolen, broken, or not as described. This makes pre-purchase verification essential rather than optional. SafeOrStolen's free IMEI, VIN, and serial number checker allows you to verify items before you ever meet the seller, eliminating most risk.
+                Craigslist has no dispute process and no refunds, so once you hand over cash there's nothing to fall back on. That's why the checking has to happen before you pay. With SafeOrStolen you can run the IMEI, VIN or serial before you meet and get a dated record of the check in your account. A clean result means no report turned up in the records searched, so still inspect the item and the paperwork.
               </p>
             </div>
           </div>
@@ -230,7 +231,7 @@ const CraigslistSafetyVerification = () => {
                   </div>
                   <h3 className="font-semibold mb-2">4. Verify On-Site</h3>
                   <p className="text-sm text-muted-foreground">
-                    Use the SafeOrStolen app to re-verify the item at the meetup before paying
+                    Read the number off the item and run it again in the SafeOrStolen web app before paying
                   </p>
                 </CardContent>
               </Card>
@@ -242,7 +243,7 @@ const CraigslistSafetyVerification = () => {
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Craigslist Items You Should ALWAYS Verify
+              Craigslist Items Worth Checking Every Time
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -304,7 +305,7 @@ const CraigslistSafetyVerification = () => {
               Stay Safe on Craigslist
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              Verify before you buy. It only takes 3 seconds and could save you thousands.
+              Check the number before you pay. It takes a few seconds, and your first 2 checks are free.
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify an Item Free</Link>

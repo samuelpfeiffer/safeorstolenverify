@@ -1,12 +1,19 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
+/**
+ * Oct 8 2026: audited by hand for "check if tools stolen". Removed claims that SafeOrStolen searches
+ * pawn (LeadsOnline), manufacturer or contractor databases, invented theft/dollar figures and
+ * percentages, "AI-powered"/"3 seconds" wording, and a wrong statute citation.
+ */
 const CheckToolsPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Tools Are Stolen - Free Power Tool Serial Number Verification"
-      metaDescription="AI-powered tool checks. Verify DeWalt, Milwaukee, Makita, and Bosch serial numbers against our stolen-item reports and public web results in seconds."
+      title="Check if Tools Are Stolen: Power Tool Serial Number Check | SafeOrStolen"
+      metaDescription="Check a DeWalt, Milwaukee, Makita or Bosch serial number before you buy used tools. Where to find the serial, what the check searches, and red flags to watch for."
       h1="Check if Power Tools Are Stolen Before Buying"
       itemType="Tools & Equipment"
+      dateModified="2026-10-07"
+      searchPlaceholder="Enter the tool serial number"
       keywords={[
         'check if tools stolen',
         'stolen power tools check',
@@ -14,61 +21,84 @@ const CheckToolsPage = () => {
         'verify tools not stolen',
         'construction equipment stolen check'
       ]}
+      quickAnswer={{
+        question: 'How do I check if a power tool is stolen?',
+        answer:
+          "Find the serial number on the tool's label, usually on the motor housing or near the battery mount, and enter it on SafeOrStolen (safeorstolen.com/check-tools). It searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then compare the serial with the receipt and look for scraped-off labels, engraved company names or spray-painted markings. If the seller won't show you the serial, walk away.",
+      }}
+      sections={[
+        {
+          heading: 'Where to find the serial number on a power tool',
+          table: {
+            columns: ['Brand', 'Where to look'],
+            rows: [
+              ['DeWalt', 'Label on the motor housing or the side of the handle'],
+              ['Milwaukee', 'Label near the battery mount or on the side of the tool body'],
+              ['Makita', 'Label on the tool body near the model number, or on the base'],
+              ['Bosch, Ryobi, Ridgid', 'Label on the motor housing or near the battery connection'],
+              ['Batteries and chargers', 'Their own labels with separate serials; record each one'],
+            ],
+          },
+        },
+        {
+          heading: 'What a SafeOrStolen tool check searches',
+          table: {
+            columns: ['Searched', 'Not searched'],
+            rows: [
+              ['Theft reports tool owners filed on SafeOrStolen', 'Manufacturer registration or tracking accounts'],
+              ['Public web results that mention the serial', 'Pawn shop, police or insurance records'],
+            ],
+          },
+        },
+      ]}
       content={{
-        intro: "Verify if power tools, hand tools, or construction equipment are stolen in 3 seconds. Serial number verification for all tool brands: DeWalt, Milwaukee, Makita, Bosch, Ryobi, Craftsman, Hilti. Buyers can check before paying on Facebook Marketplace, Craigslist, or a job site; sellers can prove a tool is clean before listing it; and pawn shops, tool resellers, and repair shops can document diligence at intake. Power tools are among the most stolen items from construction sites and vehicles.",
-        whatIs: "Checking if tools are stolen means verifying serial numbers against SafeOrStolen's stolen-item reports and public web results. Professional-grade power tools have unique serial numbers for warranty tracking. SafeOrStolen's tool checker instantly searches our stolen-item reports and analyzes public web results. This protects buyers from purchasing stolen tools that could be confiscated or have warranty issues.",
-        howItWorks: "Our tool verification system queries multiple databases simultaneously. We check: (1) Stolen-property registries - tools are among the most commonly reported stolen items across all 50 states, (2) LeadsOnline - the largest national pawn shop database. Over 60% of stolen tools are pawned within 48 hours of theft, (3) Manufacturer databases - DeWalt, Milwaukee, Makita, Bosch, Hilti warranty and registration records, (4) Contractor theft reports - many tools are stolen from construction sites, work trucks, or job trailers, (5) Serial number format validation - verifies the serial matches manufacturer specifications. Within 3 seconds, you receive a comprehensive report.",
-        whyCheck: "Buying stolen tools has serious legal and financial consequences. (1) Tools can be confiscated by police with zero compensation - you lose $100-$5,000 per item, (2) You could face criminal charges for possession of stolen property, (3) Manufacturers void warranties on stolen tools - no repairs or replacements, (4) Pawn shops and repair shops may report you if serial numbers flag as stolen, (5) Professional contractors can lose their license for possessing stolen tools, (6) You can't claim insurance or register tools for warranty. In 2024, over $3 billion worth of tools were stolen in the United States. Power tools are among the most stolen items from construction sites, work vehicles, garages, and sheds. Stolen tools flood Facebook Marketplace, Craigslist, OfferUp, and pawn shops at 50-70% below retail price. Our free tool checker protects you from this massive theft market.",
+        intro: "Check a power tool's serial number before you buy it on Facebook Marketplace, Craigslist or at a job site. SafeOrStolen searches theft reports and public web results in a few seconds. Sellers can check first to show a tool is clean, and pawn shops and tool resellers can check at intake.",
+        whatIs: "Checking if a tool is stolen means looking up its serial number to see whether an owner has reported it stolen. Professional-grade tools from DeWalt, Milwaukee, Makita, Bosch and Hilti carry a serial on a label or plate. Owners give that number to police and to SafeOrStolen when tools are stolen, so it's the one thing that ties a tool to a theft report.",
+        howItWorks: "Type the serial into the search box. SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the serial, then shows reported stolen, possible match, or no report found in the records searched. Every source is listed, and the check is saved to your account with the date.",
+        whyCheck: "Tools get taken from work trucks, job trailers, garages and sheds, and resold quickly online or at swap meets. If police identify a stolen tool, it goes back to its owner and you lose what you paid. Many tools carry the owner's name or company markings, which makes them easy for police to trace back.",
         benefits: [
-          "Check DeWalt tools - drills, impact drivers, circular saws, combo kits",
-          "Verify Milwaukee tools - M18, M12, Packout systems, power tools",
-          "Check Makita tools - cordless, corded, combo kits, LXT system",
-          "Verify Bosch tools - rotary hammers, sanders, jigsaws, impact wrenches",
-          "Check Ryobi, Craftsman, Ridgid, Hilti, Festool tools",
-          "Verify construction equipment - generators, compressors, welders, saws",
-          "Search stolen-property registries and pawn shop databases",
-          "Free tool serial number check - 2 free verifications"
+          "Works for DeWalt, Milwaukee, Makita, Bosch, Ryobi, Craftsman, Ridgid, Hilti and Festool",
+          "Covers generators, compressors, welders and saws with a serial plate",
+          "Searches SafeOrStolen theft reports and public web results",
+          "Results in a few seconds, saved to your account with the date",
+          "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
         ],
         process: [
-          "Locate the serial number: Usually on tool body near motor housing, on battery compartment, or on base plate. Check product manual or manufacturer's website for exact location. DeWalt: usually on motor housing. Milwaukee: near battery connection. Makita: on tool body or bottom plate.",
-          "Record the complete serial number including all letters, numbers, and dashes. Take a photo of the serial number label. One wrong character can cause false results.",
-          "Take photos of the tool including any damage, wear patterns, or modifications. Check if the tool has been recently repainted or has tape covering markings (theft indicator).",
-          "Enter the serial number into our verification tool at SafeOrStolen.com/verify",
-          "Review the report showing whether the tool has been reported stolen or pawned",
-          "If CLEAN and warranty is valid, proceed. If STOLEN, pawned recently, or warranty void, walk away and report to authorities"
+          "Find the serial number on the tool's label: usually on the motor housing, near the battery mount or on the base plate.",
+          "Write down the full serial, including letters and dashes, and photograph the label. One wrong character changes the result.",
+          "Look the tool over for scraped labels, fresh paint or tape over areas where an owner might have engraved a name.",
+          "Enter the serial on SafeOrStolen and read the result.",
+          "Compare the serial with the seller's receipt or box. Check batteries and chargers too.",
+          "If the result shows reported stolen, or the serial is missing, don't buy. Leave and call your local police non-emergency line."
         ],
         faqs: [
           {
             question: "What types of tools can I check?",
-            answer: "You can check virtually any tool or equipment with a serial number including: (1) Power tools - cordless drills, impact drivers, circular saws, reciprocating saws, angle grinders, sanders, jigsaws, rotary hammers from DeWalt, Milwaukee, Makita, Bosch, Ryobi, (2) Heavy equipment - table saws, miter saws, band saws, planers, jointers, routers, (3) Outdoor power equipment - chainsaws, leaf blowers, trimmers, pressure washers, lawn mowers, (4) Construction equipment - generators, air compressors, welders, jackhammers, nail guns, (5) Specialty tools - Hilti, Festool, Fein professional-grade equipment, (6) Tool combo kits - 2-tool, 4-tool, 6-tool combo sets with multiple serial numbers. If it has a serial number, we can check it."
+            answer: "Anything with a serial number: cordless drills, impact drivers, saws, grinders and rotary hammers; table, miter and band saws; chainsaws, blowers and pressure washers; generators, compressors and welders; and professional tools from Hilti, Festool and Fein. For combo kits, check each tool and battery separately."
           },
           {
             question: "Where do I find the serial number on power tools?",
-            answer: "Serial number locations vary by tool type and manufacturer: (1) DeWalt - usually on motor housing near fan vents, or on battery compartment, (2) Milwaukee - near battery connection point, on tool body, or inside battery compartment, (3) Makita - on tool body near model number, on bottom plate, or battery compartment, (4) Bosch - motor housing, handle area, or base plate, (5) Ryobi/Ridgid - near battery connection or on motor housing, (6) Hilti - on tool body with barcode label. Look for a sticker or stamped plate with serial number, model number, and voltage information. If you can't find it, check: original box, warranty card, or manufacturer's website for location guide. Missing or removed serial number = major red flag indicating theft."
+            answer: "Most brands put it on a label on the motor housing or near the battery mount. DeWalt usually uses the motor housing, Milwaukee the area near the battery connection, and Makita the tool body near the model number. The box and receipt should show the same number. A missing or scraped-off label is a red flag."
           },
           {
             question: "How much does the tool stolen check cost?",
-            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $10/month unlimited. Verify power tools, hand tools, and equipment before buying. Cancel anytime."
+            answer: "A free SafeOrStolen account comes with 2 free checks, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime."
           },
           {
             question: "What should I do if my tool check shows it's stolen?",
-            answer: "If our check shows the tool is reported stolen: (1) Do NOT buy it under any circumstances - you'll lose $100-$5,000 when police confiscate it, (2) Walk away immediately without confronting the seller (could be dangerous, especially at job sites), (3) Screenshot the listing and record seller information, (4) Report the listing to the platform (Facebook Marketplace, Craigslist, OfferUp), (5) File an anonymous tip with local police including listing URL, tool brand, model, serial number, and seller details. Many police departments have dedicated construction theft units, (6) If you already purchased it, contact police immediately. You're a fraud victim. File a police report and attempt to recover money through small claims court or credit card chargeback."
-          },
-          {
-            question: "Why are tools stolen so frequently?",
-            answer: "Tools are among the most stolen items because: (1) Extremely high value - professional tool kits worth $2,000-$10,000, (2) Easy to sell - massive demand on Facebook Marketplace, Craigslist, OfferUp, and pawn shops, (3) Construction site thefts - job trailers and work trucks are prime targets, often losing $5,000-$20,000 worth of tools in one theft, (4) Vehicle break-ins - contractor trucks parked overnight are systematically targeted, (5) Difficult to track - most contractors don't register serial numbers or keep receipts, (6) Quick pawn value - pawn shops pay cash immediately for name-brand tools. In 2024, over $3 billion worth of tools were stolen in the US. Theft rate is highest on Fridays (end of work week) and during summer (construction season). Professional thieves target DeWalt, Milwaukee, and Makita specifically because they have the highest resale value. Checking serial numbers helps protect against purchasing stolen tools."
+            answer: "Don't buy it and don't confront the seller. Screenshot the listing, save the messages, write down the serial, and report the listing to the marketplace. Then call your local police non-emergency line. If you already paid, keep the tool as it is and contact police and your payment provider."
           },
           {
             question: "Can tool serial numbers be removed or faked?",
-            answer: "Yes, sophisticated thieves sometimes remove, grind off, or replace serial numbers on stolen tools. This is a federal crime (18 U.S. Code § 2320) and a MAJOR red flag. Signs of tampering: (1) Serial number area looks scratched, ground, filed, or polished, (2) Serial number sticker is obviously replaced, peeling, or doesn't match tool age/wear, (3) Serial numbers are partially illegible or incomplete, (4) Tool has been recently repainted (covering original markings), (5) Tape or stickers covering areas where serial numbers should be, (6) Seller can't or won't show you the serial number. If you suspect tampering, walk away immediately and report to police. Most stolen tools have intact serial numbers because thieves want fast resale to pawn shops (who check serials). Our tool validates serial number formats against manufacturer specifications to detect fakes."
+            answer: "Yes. Thieves sometimes peel off labels, sand down plates or paint over engraved names. Watch for a label that's missing, replaced or doesn't match the tool's wear, fresh paint, or tape over spots where a name could be. If the serial has been tampered with, don't buy the tool."
           },
           {
             question: "How long does a tool serial number check take?",
-            answer: "Our tool verification takes only 3 seconds. Enter the complete serial number, click verify, and receive instant results showing whether the tool has been reported stolen or pawned across stolen-property, pawn shop, and manufacturer databases."
+            answer: "A few seconds. SafeOrStolen searches its own theft reports and public web results for the serial, lists every source it searched, and saves the check to your account with the date."
           },
           {
             question: "What are red flags when buying used power tools?",
-            answer: "Major red flags for stolen tools: (1) Price is 50-70% below retail value (a $400 Milwaukee drill for $150), (2) Seller won't provide serial numbers or won't let you inspect the tool closely, (3) Serial number area looks tampered with, ground off, or covered with tape/stickers, (4) Tool has been recently repainted or has fresh paint covering original markings, (5) No original case, battery, charger, manual, or receipt, (6) Seller has multiple professional-grade tools for sale (entire Milwaukee or DeWalt kits), (7) Meeting in parking lot, storage unit, or at job site (not seller's home), (8) Seller can't answer basic questions about tool performance, age, or why they're selling, (9) Tool shows signs of hasty theft (broken locks on cases, damaged serial plates), (10) Asking for cash only with no electronic payment trail, (11) Tools still have construction company markings, engraving, or paint marks from job sites. If multiple red flags exist, it's almost certainly stolen - walk away immediately and report to authorities."
+            answer: "A price far below what the tool sells for used, a seller who won't show the serial, scraped labels or fresh paint, no batteries, charger, case or receipt, a pile of professional tools with no story, company names engraved on the tool, or a meetup in a parking lot with cash only. Two or more of these together is a reason to walk away."
           }
         ]
       }}

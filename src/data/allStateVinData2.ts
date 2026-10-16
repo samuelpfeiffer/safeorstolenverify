@@ -1,164 +1,157 @@
-// CONTINUED: States Illinois through North Carolina
+// CONTINUED: States Illinois through Michigan
 // Note: theftStats will be converted to topCities in completeStateVinData.ts
+// Oct 2026 audit: removed invented theft counts/recovery rates, "AI analysis" claims,
+// off-site DMV links and penalty figures we could not confirm. Louisiana through
+// Michigan are overridden by allStateVinData6.ts but are kept accurate here too.
 export const ALL_STATE_VIN_DATA_PART2 = {
  illinois: {
  state: "Illinois", stateCode: "IL", slug: "illinois-vin-lookup",
  title: "Illinois VIN Lookup - Free IL Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Illinois VIN lookup. Check if an IL vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Chicago and statewide verification.",
- theftStats: { vehiclesStolen: "25,000+", recoveryRate: "44%", topCities: ["Chicago", "Aurora", "Rockford"] },
- dmvLink: "https://www.ilsos.gov/",
+ metaDescription: "Free Illinois VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ theftStats: { topCities: ["Chicago", "Aurora", "Rockford"] },
  content: {
- intro: "Illinois experiences over 25,000 vehicle thefts annually, with Chicago metro accounting for vast majority. Verify IL vehicle VINs against Secretary of State databases.",
- whyCheck: "Chicago consistently ranks in top 5 US cities for vehicle theft. Organized theft rings export stolen vehicles or strip them for parts. Always verify VIN before purchase.",
- localLaws: "Under Illinois Compiled Statutes 720 ILCS 5/16-1, theft of vehicles is a Class 2 felony punishable by 3-7 years imprisonment. Possessing stolen vehicles results in confiscation and prosecution."
+ intro: "Enter an Illinois car's 17-character VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results for that VIN.",
+ whyCheck: "In Chicago-area private sales, the red flags are a seller who wants to meet in a parking lot, a title in someone else's name, or VIN stickers that look peeled or replaced. Checking the VIN takes a few seconds and can stop you from paying for a car that police will later take back.",
+ localLaws: "Theft in Illinois falls under 720 ILCS 5/16-1, and the Illinois Vehicle Code has separate offenses for possessing a stolen vehicle. A stolen car can be returned to its owner even if you paid for it. The Illinois Secretary of State handles titles."
  },
  faqs: [
- { question: "Why is vehicle theft so high in Chicago?", answer: "Chicago's large population, port access, and organized crime make it a vehicle theft hotspot. Always verify VIN with SafeOrStolen before buying any vehicle in Chicago area." },
- { question: "How does Illinois verify titles?", answer: "Illinois Secretary of State requires VIN inspection for out-of-state vehicles and cross-references national theft databases. Use SafeOrStolen to pre-verify before registration." }
+ { question: "How do I check if a car is stolen in Chicago?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Then match the VIN on the dash, door jamb and title, and check the seller's ID against the name on the title." },
+ { question: "How does Illinois verify titles?", answer: "The Illinois Secretary of State checks the paperwork when you apply to transfer the title, which happens after you have paid. Do your own checks first: VIN match on car and title, seller ID, and a stolen check on SafeOrStolen. SafeOrStolen does not search Secretary of State records." }
  ]
  },
  indiana: {
  state: "Indiana", stateCode: "IN", slug: "indiana-vin-lookup",
  title: "Indiana VIN Lookup - Free IN Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Indiana VIN lookup. Check if an IN vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Indianapolis and statewide verification.",
- theftStats: { vehiclesStolen: "11,000+", recoveryRate: "51%", topCities: ["Indianapolis", "Fort Wayne", "Evansville"] },
- dmvLink: "https://www.in.gov/bmv/",
+ metaDescription: "Free Indiana VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ theftStats: { topCities: ["Indianapolis", "Fort Wayne", "Evansville"] },
  content: {
- intro: "Indiana reports over 11,000 vehicle thefts annually, with Indianapolis metro leading in theft rates. Verify IN vehicle VINs before buying.",
- whyCheck: "Indiana's central location and major interstate highways make it a transit point for stolen vehicles. Indianapolis has elevated theft rates for trucks and SUVs.",
- localLaws: "Under Indiana Code § 35-43-4-2, auto theft is a Level 6 felony with up to 2.5 years imprisonment. Possessing stolen vehicles results in confiscation regardless of buyer knowledge."
+ intro: "Type an Indiana vehicle's VIN into SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen theft reports and public web results.",
+ whyCheck: "Indianapolis sits where several interstates meet, so cars bought there can come from anywhere. If the seller has no title, a fresh registration or a story about a relative's car, slow down and check the VIN first.",
+ localLaws: "Indiana Code 35-43-4-2 covers theft, including receiving stolen property. A stolen car can be returned to its owner even after you paid for it. The Indiana BMV handles titles."
  },
  faqs: [
- { question: "What should I check when buying a used car in Indiana?", answer: "Verify VIN with SafeOrStolen, check for liens with Indiana BMV, inspect title authenticity, request a vehicle history report, and verify emissions compliance if applicable." },
- { question: "How strict is Indiana BMV on title verification?", answer: "Indiana requires thorough documentation and VIN inspection for out-of-state vehicles. Use SafeOrStolen to pre-verify clean history before attempting title transfer." }
+ { question: "What should I check when buying a used car in Indiana?", answer: "Match the VIN on the dash, door jamb and title. Check the seller's ID against the name on the title. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask the Indiana BMV about liens, and buy a history report if you want accident and title-brand records." },
+ { question: "How strict is Indiana BMV on title verification?", answer: "The Indiana BMV requires a VIN inspection for vehicles coming in from out of state, but that happens after the sale. Do your own check before you pay: compare the VIN on the car to the title and run a stolen check." }
  ]
  },
  iowa: {
  state: "Iowa", stateCode: "IA", slug: "iowa-vin-lookup",
  title: "Iowa VIN Lookup - Free IA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Iowa VIN lookup. Check if an IA vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Des Moines and statewide verification.",
- theftStats: { vehiclesStolen: "3,400+", recoveryRate: "56%", topCities: ["Des Moines", "Cedar Rapids", "Davenport"] },
- dmvLink: "https://iowadot.gov/mvd/",
+ metaDescription: "Free Iowa VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ theftStats: { topCities: ["Des Moines", "Cedar Rapids", "Davenport"] },
  content: {
- intro: "Iowa experiences over 3,400 vehicle thefts annually, concentrated in Des Moines, Cedar Rapids, and Davenport areas. Verify IA vehicle VINs before purchase.",
- whyCheck: "Iowa's location at crossroads of interstate highways makes it vulnerable to stolen vehicles in transit. Agricultural equipment and trucks are frequently targeted.",
- localLaws: "Under Iowa Code § 714.1, theft of vehicles is punishable by up to 10 years imprisonment. Possession of stolen vehicles results in confiscation and potential prosecution."
+ intro: "Enter an Iowa vehicle's VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its theft reports and public web results for that VIN.",
+ whyCheck: "Many Iowa sales are farm-to-farm or off a classified ad, often for pickups and trailers paid in cash. Before you pay, check the VIN and make sure the title is in the seller's name.",
+ localLaws: "Iowa Code 714.1 defines theft, including possessing property you know or should know is stolen. A stolen vehicle can be returned to its owner even if you paid for it. Iowa county treasurers handle title transfers."
  },
  faqs: [
- { question: "Are agricultural vehicles frequently stolen in Iowa?", answer: "Yes, tractors and farm equipment are often targeted. Always verify serial numbers and VINs using SafeOrStolen before purchasing any agricultural or commercial vehicle." },
- { question: "How do I verify an Iowa title?", answer: "Contact Iowa DOT Motor Vehicle Division, use SafeOrStolen's VIN checker, verify title security features, and check for liens or salvage status with Iowa DOT." }
+ { question: "Can I check farm equipment for theft in Iowa?", answer: "Yes. Tractors and equipment have serial numbers rather than 17-character VINs. Enter the serial on SafeOrStolen (safeorstolen.com) to search its theft reports and public web results. Also look at the serial plate: fresh paint, missing rivets or a ground-off area are warning signs." },
+ { question: "How do I verify an Iowa title?", answer: "Check that the VIN on the title matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen for theft reports. Ask your county treasurer's office about liens or salvage brands, since SafeOrStolen does not search state title records." }
  ]
  },
  kansas: {
  state: "Kansas", stateCode: "KS", slug: "kansas-vin-lookup",
  title: "Kansas VIN Lookup - Free KS Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Kansas VIN lookup. Check if a KS vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Wichita and statewide verification.",
- theftStats: { vehiclesStolen: "4,100+", recoveryRate: "54%", topCities: ["Wichita", "Overland Park", "Kansas City"] },
- dmvLink: "https://www.ksrevenue.gov/",
+ metaDescription: "Free Kansas VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ theftStats: { topCities: ["Wichita", "Overland Park", "Kansas City"] },
  content: {
- intro: "Kansas reports over 4,100 vehicle thefts annually, with Wichita and Kansas City metro areas most affected. Verify KS vehicle VINs before buying.",
- whyCheck: "Kansas sits at center of interstate highway system, making it a common transit point for stolen vehicles moving across the country. Always verify VIN history.",
- localLaws: "Under Kansas Statutes § 21-5811, theft of vehicles is a severity level 9 nonperson felony. Possession of stolen vehicles results in confiscation and prosecution."
+ intro: "Run a Kansas vehicle's VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen theft reports and public web results.",
+ whyCheck: "Kansas sits on I-70 and I-35, and cars bought around Wichita or Kansas City may have come from out of state. A seller with no title, an out-of-state title in another name, or a rushed cash deal is the time to check.",
+ localLaws: "Kansas Statutes 21-5801 covers theft, including obtaining control of property known to be stolen. A stolen car can be returned to its owner even if you paid for it. Kansas county treasurers handle titles."
  },
  faqs: [
- { question: "How strict is Kansas on title verification?", answer: "Kansas DMV requires VIN inspection and thorough documentation for out-of-state vehicles. Use SafeOrStolen to pre-verify before attempting title transfer to avoid rejection." },
- { question: "What vehicles are most stolen in Kansas?", answer: "Pickup trucks (Ford F-150, Chevrolet Silverado) and older model sedans are most frequently stolen. Always verify VIN using SafeOrStolen before purchasing." }
+ { question: "How strict is Kansas on title verification?", answer: "Kansas requires a VIN inspection by the Kansas Highway Patrol for vehicles coming from out of state. That inspection happens after the sale, so check the VIN yourself first on SafeOrStolen (safeorstolen.com) and match it to the title." },
+ { question: "What should I look for when buying a used pickup in Kansas?", answer: "Compare the VIN on the dash, driver's door and title. Look for a damaged steering column or ignition, mismatched keys, and new paint over VIN stickers. Run the VIN on SafeOrStolen for theft reports and open recalls before you pay." }
  ]
  },
  kentucky: {
  state: "Kentucky", stateCode: "KY", slug: "kentucky-vin-lookup",
  title: "Kentucky VIN Lookup - Free KY Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Kentucky VIN lookup. Check if a KY vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Louisville and statewide verification.",
- theftStats: { vehiclesStolen: "5,900+", recoveryRate: "52%", topCities: ["Louisville", "Lexington", "Bowling Green"] },
- dmvLink: "https://drive.ky.gov/",
+ metaDescription: "Free Kentucky VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ theftStats: { topCities: ["Louisville", "Lexington", "Bowling Green"] },
  content: {
- intro: "Kentucky experiences over 5,900 vehicle thefts annually, with Louisville metro leading in theft rates. Verify KY vehicle VINs before purchase.",
- whyCheck: "Kentucky's location along major interstate highways connecting North and South makes it vulnerable to stolen vehicles in transit. Louisville has elevated theft rates.",
- localLaws: "Under Kentucky Revised Statutes § 514.030, theft by unlawful taking (vehicles) is a Class D felony punishable by 1-5 years imprisonment. Possessing stolen vehicles results in confiscation."
+ intro: "Type a Kentucky car's VIN and SafeOrStolen decodes the year, make and model, shows open safety recalls, and checks its theft reports and public web results for that VIN.",
+ whyCheck: "Louisville and Lexington sit on I-64, I-65 and I-75, so cars change hands across state lines often. A missing title, a seller who can't show ID, or a price well under market is a reason to check the VIN before you pay.",
+ localLaws: "Kentucky Revised Statutes 514.110 covers receiving stolen property. A stolen car can be returned to its owner even if you paid for it. Titles are handled through the county clerk's office."
  },
  faqs: [
- { question: "How do I verify a Kentucky title?", answer: "Contact Kentucky Transportation Cabinet, use SafeOrStolen's VIN checker for theft verification, and physically inspect the title certificate for proper signatures and security features." },
- { question: "What should I check when buying a used car in Kentucky?", answer: "Verify VIN with SafeOrStolen, check for liens with Kentucky Transportation Cabinet, inspect title authenticity, request complete vehicle history including data." }
+ { question: "How do I verify a Kentucky title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Your county clerk can tell you about liens; SafeOrStolen does not search state title records." },
+ { question: "What should I check when buying a used car in Kentucky?", answer: "VIN match on car and title, seller ID, a stolen check on SafeOrStolen, and a lien check with the county clerk. If you want accident or title-brand history, buy a separate vehicle history report as well." }
  ]
  },
  louisiana: {
  state: "Louisiana", stateCode: "LA", slug: "louisiana-vin-lookup",
  title: "Louisiana VIN Lookup - Free LA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Louisiana VIN lookup. Check if a LA vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant New Orleans and statewide verification.",
- theftStats: { vehiclesStolen: "9,200+", recoveryRate: "43%", topCities: ["New Orleans", "Baton Rouge", "Shreveport"] },
- dmvLink: "https://www.expresslane.org/",
+ metaDescription: "Free Louisiana VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ theftStats: { topCities: ["New Orleans", "Baton Rouge", "Shreveport"] },
  content: {
- intro: "Louisiana experiences over 9,200 vehicle thefts annually, with New Orleans metro having elevated theft rates. Verify LA vehicle VINs against OMV databases.",
- whyCheck: "New Orleans has one of highest vehicle theft rates in the US. Port access enables export of stolen vehicles overseas. Always verify VIN before purchasing any vehicle in Louisiana.",
- localLaws: "Under Louisiana Revised Statutes § 14:67, theft of vehicles worth over $25,000 is punishable by up to 20 years imprisonment. Possessing stolen vehicles results in confiscation and prosecution."
+ intro: "Enter a Louisiana vehicle's VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its theft reports and public web results.",
+ whyCheck: "In New Orleans-area private sales, watch for a seller with no title, a temporary tag, or a story about a relative's car. Check the VIN before you pay.",
+ localLaws: "Louisiana Revised Statutes 14:69 covers illegal possession of stolen things. A stolen car can be returned to its owner even if you paid for it. The Office of Motor Vehicles handles titles."
  },
  faqs: [
- { question: "Why is vehicle theft so high in New Orleans?", answer: "High crime rates, port access for export, and organized theft rings contribute. Always verify VIN with SafeOrStolen before buying any vehicle in New Orleans area." },
- { question: "How does Louisiana verify titles?", answer: "Louisiana OMV requires VIN inspection for out-of-state vehicles and cross-references national databases. Use SafeOrStolen to pre-verify before attempting registration." }
+ { question: "How do I check if a car is stolen in New Orleans?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) to see theft reports, public web results, the decoded vehicle and open recalls. Then match the VIN on the dash, door and title, and compare the seller's ID to the name on the title." },
+ { question: "How does Louisiana verify titles?", answer: "The Office of Motor Vehicles inspects the VIN on out-of-state vehicles when you apply for a Louisiana title. That happens after the sale, so do your own checks first." }
  ]
  },
  maine: {
  state: "Maine", stateCode: "ME", slug: "maine-vin-lookup",
  title: "Maine VIN Lookup - Free ME Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Maine VIN lookup. Check if a ME vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Portland and statewide verification.",
- theftStats: { vehiclesStolen: "800+", recoveryRate: "64%", topCities: ["Portland", "Lewiston", "Bangor"] },
- dmvLink: "https://www.maine.gov/sos/bmv/",
+ metaDescription: "Free Maine VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ theftStats: { topCities: ["Portland", "Lewiston", "Bangor"] },
  content: {
- intro: "Maine reports over 800 vehicle thefts annually, with Portland metro accounting for majority of cases. Verify ME vehicle VINs before buying.",
- whyCheck: "While Maine has lower theft rates than national average, stolen vehicles do occur and recovery can be challenging in rural areas. Always verify VIN history before purchase.",
- localLaws: "Under Maine Revised Statutes Title 17-A § 353, theft of vehicles is a Class B crime punishable by up to 10 years imprisonment. Possession of stolen vehicles results in confiscation."
+ intro: "Run a Maine vehicle's VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and check SafeOrStolen theft reports and public web results.",
+ whyCheck: "Most Maine used-car sales are private and paid in cash. Matching the VIN to the title and running a stolen check takes a few minutes and protects your money.",
+ localLaws: "Title 17-A of the Maine Revised Statutes covers theft and receiving stolen property. A stolen car can be returned to its owner even if you paid for it. The Bureau of Motor Vehicles handles titles."
  },
  faqs: [
- { question: "Is vehicle theft common in Maine?", answer: "Maine has lower rates than national average, but theft still occurs particularly in Portland area. Always verify VIN using SafeOrStolen before purchasing any used vehicle." },
- { question: "How do I verify a Maine title?", answer: "Contact Maine Bureau of Motor Vehicles, use SafeOrStolen's VIN checker, verify title security features, and check for liens or salvage status with Maine BMV." }
+ { question: "Is it worth running a VIN check in Maine?", answer: "Yes. Even where theft is less common, a stolen car can be taken back for its owner and the buyer loses the money. A check on SafeOrStolen (safeorstolen.com) takes a few seconds; 2 checks are free with a free account." },
+ { question: "How do I verify a Maine title?", answer: "Compare the VIN on the title with the dash and door, and the seller's ID with the name on the title. Ask the Bureau of Motor Vehicles about liens, and run the VIN on SafeOrStolen for theft reports." }
  ]
  },
  maryland: {
  state: "Maryland", stateCode: "MD", slug: "maryland-vin-lookup",
  title: "Maryland VIN Lookup - Free MD Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Maryland VIN lookup. Check if a MD vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Baltimore and statewide verification.",
- theftStats: { vehiclesStolen: "12,500+", recoveryRate: "48%", topCities: ["Baltimore", "Silver Spring", "Waldorf"] },
- dmvLink: "https://mva.maryland.gov/",
+ metaDescription: "Free Maryland VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ theftStats: { topCities: ["Baltimore", "Silver Spring", "Waldorf"] },
  content: {
- intro: "Maryland experiences over 12,500 vehicle thefts annually, with Baltimore metro leading in theft rates. Verify MD vehicle VINs against MVA databases.",
- whyCheck: "Baltimore consistently ranks in top 20 US cities for vehicle theft. Proximity to Washington DC and major highways makes Maryland vulnerable to organized theft rings.",
- localLaws: "Under Maryland Code § 7-104, motor vehicle theft is punishable by up to 5 years imprisonment and $5,000 fine. Possession of stolen vehicles results in confiscation and prosecution."
+ intro: "Type a Maryland car's VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its theft reports and public web results for that VIN.",
+ whyCheck: "Around Baltimore and the DC suburbs, a seller who won't meet at home, can't produce the title, or has a fresh temporary tag deserves a closer look. Check the VIN before you pay.",
+ localLaws: "Maryland Criminal Law section 7-104 covers theft, including possessing stolen property. A stolen car can be returned to its owner even if you paid for it. The MVA handles titles."
  },
  faqs: [
- { question: "Why is vehicle theft high in Baltimore?", answer: "Urban density, port access, and organized crime contribute to elevated theft rates. Always verify VIN with SafeOrStolen before buying any vehicle in Baltimore area." },
- { question: "How strict is Maryland MVA on title verification?", answer: "Maryland requires thorough documentation and VIN inspection. MVA cross-references national databases. Use SafeOrStolen to pre-verify before attempting title transfer." }
+ { question: "How do I check if a car is stolen in Baltimore?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports, public web results and open recalls. Then match the VIN on the dash, door and title, and compare the seller's ID with the title." },
+ { question: "How strict is Maryland MVA on title verification?", answer: "Maryland requires a safety inspection, which includes a VIN check, before most used cars can be titled. That comes after the sale, so run your own checks first." }
  ]
  },
  massachusetts: {
  state: "Massachusetts", stateCode: "MA", slug: "massachusetts-vin-lookup",
  title: "Massachusetts VIN Lookup - Free MA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Massachusetts VIN lookup. Check if a MA vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Boston and statewide verification.",
- theftStats: { vehiclesStolen: "6,800+", recoveryRate: "61%", topCities: ["Boston", "Worcester", "Springfield"] },
- dmvLink: "https://www.mass.gov/rmv",
+ metaDescription: "Free Massachusetts VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results before buying.",
+ theftStats: { topCities: ["Boston", "Worcester", "Springfield"] },
  content: {
- intro: "Massachusetts reports over 6,800 vehicle thefts annually, with Boston metro accounting for majority. Verify MA vehicle VINs before purchase.",
- whyCheck: "Massachusetts has elevated theft rates particularly in Boston area. Luxury vehicles and SUVs are frequently targeted by organized theft rings. Always verify VIN.",
- localLaws: "Under Massachusetts General Laws Chapter 266 § 28, larceny of motor vehicles is punishable by up to 15 years imprisonment. Possession of stolen vehicles results in confiscation and prosecution."
+ intro: "Enter a Massachusetts vehicle's VIN and SafeOrStolen decodes the year, make and model, shows open safety recalls, and searches its theft reports and public web results.",
+ whyCheck: "In private sales around Boston, a title in someone else's name or VIN stickers that look tampered with are warning signs. A VIN check takes a few seconds.",
+ localLaws: "Massachusetts General Laws chapter 266 covers larceny and receiving stolen property. A stolen car can be returned to its owner even if you paid for it. The RMV handles titles."
  },
  faqs: [
- { question: "What vehicles are most stolen in Massachusetts?", answer: "Luxury sedans (BMW, Mercedes, Lexus) and SUVs are frequently targeted in Boston area. Always verify VIN using SafeOrStolen before purchasing any high-end vehicle." },
- { question: "How does Massachusetts RMV verify titles?", answer: "Massachusetts requires VIN inspection and thorough documentation. Use SafeOrStolen to pre-verify before registration attempts." }
+ { question: "How do I check if a used car is stolen in Massachusetts?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports, public web results and open recalls. Match the VIN on the dash, door and title, and check the seller's ID against the title before you pay." },
+ { question: "How does Massachusetts RMV verify titles?", answer: "The RMV reviews the title and paperwork when you register the car, after you've paid. Do your own checks first." }
  ]
  },
  michigan: {
  state: "Michigan", stateCode: "MI", slug: "michigan-vin-lookup",
  title: "Michigan VIN Lookup - Free MI Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Michigan VIN lookup. Check if a MI vehicle is stolen using SafeOrStolen\'s reports, public web results, and AI analysis. Instant Detroit and statewide verification.",
- theftStats: { vehiclesStolen: "19,500+", recoveryRate: "46%", topCities: ["Detroit", "Grand Rapids", "Warren"] },
- dmvLink: "https://www.michigan.gov/sos",
+ metaDescription: "Free Michigan VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ theftStats: { topCities: ["Detroit", "Grand Rapids", "Warren"] },
  content: {
- intro: "Michigan experiences over 19,500 vehicle thefts annually, with Detroit metro leading in theft rates. Verify MI vehicle VINs against Secretary of State databases.",
- whyCheck: "Detroit consistently ranks in top 5 US cities for vehicle theft. Proximity to Canada border enables export of stolen vehicles. Always verify VIN before purchase.",
- localLaws: "Under Michigan Compiled Laws § 750.356, motor vehicle theft is a felony punishable by up to 5 years imprisonment. Possessing stolen vehicles results in confiscation regardless of buyer knowledge."
+ intro: "Run a Michigan vehicle's VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and check SafeOrStolen theft reports and public web results.",
+ whyCheck: "In Detroit-area private sales, watch for a damaged steering column, a key that doesn't look original, or a seller with no title. Check the VIN before you pay.",
+ localLaws: "Michigan Compiled Laws 750.535 covers receiving and concealing stolen property. A stolen car can be returned to its owner even if you paid for it. The Secretary of State handles titles."
  },
  faqs: [
- { question: "Why is vehicle theft so high in Detroit?", answer: "Economic factors, organized crime, and proximity to Canada contribute to high theft rates. Always verify VIN with SafeOrStolen before buying any vehicle in Detroit area." },
- { question: "How strict is Michigan SOS on title verification?", answer: "Michigan requires thorough documentation and VIN inspection. SOS cross-references national databases. Use SafeOrStolen to pre-verify before attempting title transfer." }
+ { question: "How do I check if a car is stolen in Detroit?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports, public web results and open recalls. Then match the VIN on the dash, door and title, and compare the seller's ID with the title." },
+ { question: "How strict is Michigan SOS on title verification?", answer: "The Secretary of State checks paperwork at title transfer, after the sale. Do your own checks before you pay." }
  ]
  }
 };

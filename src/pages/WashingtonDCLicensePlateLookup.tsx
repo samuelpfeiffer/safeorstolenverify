@@ -28,8 +28,8 @@ const WashingtonDCLicensePlateLookup = () => {
  const structuredData = {
  "@context": "https://schema.org",
  "@type": "WebPage",
- "name": "Washington DC License Plate Lookup - Free DC DMV Plate Search",
- "description": "Free Washington DC license plate lookup. Check vehicle status and history for DC plates. Instant results from SafeOrStolen's analysis and public data.",
+ "name": "Washington DC License Plate Lookup - Free DC Stolen Plate Check",
+ "description": "Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports and public web results in a few seconds. No owner names are shown.",
  "url": "https://safeorstolen.com/washington-dc-license-plate-lookup",
  "mainEntity": {
  "@type": "Service",
@@ -55,7 +55,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "How do I look up a DC license plate for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the DC license plate number into SafeOrStolen's verification tool. We instantly analyze publicly available information and SafeOrStolen's own reports to provide comprehensive vehicle information, including registration status and potential red flags."
+ "text": "Enter the DC plate at SafeOrStolen (safeorstolen.com/washington-dc-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results for that plate and lists every source. It doesn't show the owner or registration details; those stay with the DC DMV. The first 2 checks are free."
  }
  },
  {
@@ -63,7 +63,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "What can I find with a Washington DC plate lookup?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "A DC license plate lookup can help reveal vehicle make/model/year, registration status, and other publicly available details, assisting in verifying a used vehicle before purchase."
+ "text": "On SafeOrStolen, a DC plate check tells you whether the plate appears in SafeOrStolen theft reports or public web results. It doesn't show the owner's name or registration. To get the year, make, model and open recalls, run the car's VIN instead, which you'll find on the dashboard and driver's door jamb."
  }
  },
  {
@@ -71,7 +71,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "Are Washington DC license plates different from state plates?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Yes, Washington DC has its own DMV (Department of Motor Vehicles) and issues plates with 'DC' designation. DC plates follow different registration rules than state plates and are issued through the DC DMV at locations in the District."
+ "text": "Yes. The District isn't a state, but it has its own DMV that registers vehicles and issues DC plates. Registration questions go to the DC DMV. For a stolen check, a DC plate works the same way as any state plate on SafeOrStolen."
  }
  }
  ]
@@ -80,8 +80,8 @@ const WashingtonDCLicensePlateLookup = () => {
  return (
  <>
  <PageSEO
- title="Washington DC License Plate Lookup Free - DC DMV Plate Search | SafeOrStolen"
- description="Free Washington DC license plate lookup. Get VIN, check for reported issues, and view vehicle history for any DC plate. Instant results from SafeOrStolen's analysis and public data."
+ title="Washington DC License Plate Lookup Free - DC Stolen Plate Check | SafeOrStolen"
+ description="Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports and public web results in a few seconds. 2 free checks, no owner names shown."
  keywords="DC license plate lookup, Washington DC plate search, DC DMV plate check, District of Columbia vehicle search, DC stolen car check, DC plate to VIN, Washington DC DMV lookup free"
  canonical="/washington-dc-license-plate-lookup"
  structuredData={[structuredData, faqSchema]}
@@ -100,8 +100,8 @@ const WashingtonDCLicensePlateLookup = () => {
  Washington DC License Plate Lookup
  </h1>
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
- Free instant DC license plate search. Get vehicle information, check theft status, 
- and verify vehicle details through SafeOrStolen's analysis.
+ Enter a DC plate to see in a few seconds whether it shows up in SafeOrStolen theft reports
+ or public web results. 2 free checks with a free account.
  </p>
 
  {/* Search Form */}
@@ -134,7 +134,7 @@ const WashingtonDCLicensePlateLookup = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- Works with all DC plate types: standard, personalized, government, and diplomatic plates
+ Enter the plate exactly as shown, letters and numbers only
  </p>
  </div>
  </CardContent>
@@ -163,23 +163,15 @@ const WashingtonDCLicensePlateLookup = () => {
  <ul className="space-y-3">
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-  <span>SafeOrStolen's stolen-item reports</span>
+ <span>SafeOrStolen theft reports filed by owners</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-  <span>Public web results</span>
+ <span>Public web results that mention the plate</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-  <span>AI analysis of the available information</span>
- </li>
- <li className="flex items-start gap-2">
- <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>Vehicle make, model, year verification</span>
- </li>
- <li className="flex items-start gap-2">
- <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>Title branding (salvage, rebuilt, flood)</span>
+ <span>Every source listed with the result, saved to your account with the date</span>
  </li>
  </ul>
  </CardContent>
@@ -189,23 +181,19 @@ const WashingtonDCLicensePlateLookup = () => {
  <CardHeader>
  <CardTitle className="flex items-center gap-2">
  <AlertTriangle className="h-5 w-5 text-amber-500" />
- DC Vehicle Theft Statistics
+ What a Plate Check Can't Show
  </CardTitle>
  </CardHeader>
  <CardContent>
  <div className="space-y-4">
- <p className="text-muted-foreground">
- Washington DC has one of the highest vehicle theft rates per capita in the United States.
- In 2024, the Metropolitan Police Department reported:
- </p>
- <ul className="space-y-2 text-sm">
- <li>• <strong>10,000+</strong> vehicle thefts annually</li>
- <li>• <strong>Hyundai/Kia</strong> models most targeted</li>
- <li>• Many stolen vehicles sold in Maryland/Virginia</li>
- <li>• Only <strong>25%</strong> of stolen vehicles recovered</li>
+ <ul className="space-y-2 text-sm text-muted-foreground">
+ <li>• The owner's name or address (SafeOrStolen never shows these)</li>
+ <li>• DC DMV registration or title records</li>
+ <li>• Metropolitan Police Department or NCIC records</li>
+ <li>• Year, make and model (run the VIN for those)</li>
  </ul>
  <p className="text-sm font-medium text-primary">
- Always verify before buying any used vehicle in the DC metro area.
+ Plates come off cars easily, so check the VIN too before buying.
  </p>
  </div>
  </CardContent>
@@ -223,13 +211,13 @@ const WashingtonDCLicensePlateLookup = () => {
  Washington DC License Plate Types
  </h2>
  <p className="text-center text-muted-foreground mb-12">
- Our lookup tool works with all DC plate types including:
+ The District issues several kinds of plates. You can enter any of them:
  </p>
  
  <div className="grid md:grid-cols-3 gap-6">
  {[
  { name: 'Standard Plates', desc: 'Regular passenger vehicle plates with "TAXATION WITHOUT REPRESENTATION" motto' },
- { name: 'Personalized Plates', desc: 'Custom vanity plates with up to 7 characters' },
+ { name: 'Personalized Plates', desc: 'Custom vanity plates' },
  { name: 'Government Plates', desc: 'Federal and DC government vehicle plates' },
  { name: 'Diplomatic Plates', desc: 'Embassy and diplomatic mission vehicles' },
  { name: 'Motorcycle Plates', desc: 'Two-wheeled vehicle registrations' },
@@ -292,9 +280,9 @@ const WashingtonDCLicensePlateLookup = () => {
  <CardContent>
  <p className="text-muted-foreground">
  Enter the DC license plate number into SafeOrStolen's verification tool above. 
- We check SafeOrStolen&apos;s stolen-item reports, public web results 
- and AI analysis for that plate. For official registration 
- records, contact the DC DMV. Get 2 free searches to start.
+ SafeOrStolen searches its theft reports and public web results for that plate
+ and lists every source. For registration records, contact the DC DMV. Your first 2
+ checks are free.
  </p>
  </CardContent>
  </Card>
@@ -305,10 +293,10 @@ const WashingtonDCLicensePlateLookup = () => {
  </CardHeader>
  <CardContent>
  <p className="text-muted-foreground">
- A DC license plate lookup reveals: vehicle make, model, and year; registration 
- status; theft reports from Metropolitan Police; salvage title history; 
- and whether the vehicle has been in major accidents. This helps you verify any 
- used vehicle before making a purchase in the DC area.
+ A SafeOrStolen DC plate check shows whether the plate appears in SafeOrStolen theft
+ reports or public web results. It doesn't show the owner, registration, police records or
+ accident history. For year, make, model and open recalls, run the VIN from the dashboard
+ or driver&apos;s door jamb.
  </p>
  </CardContent>
  </Card>
@@ -321,8 +309,8 @@ const WashingtonDCLicensePlateLookup = () => {
  <p className="text-muted-foreground">
  Washington DC residents pay federal taxes but have no voting representation in 
  Congress. The "Taxation Without Representation" slogan on DC license plates 
- (since 2000) is a protest statement. This doesn't affect our plate lookup - 
- all DC plates with this slogan are fully searchable in our system.
+ (since 2000) is a protest statement. It doesn&apos;t affect a plate check: just
+ enter the letters and numbers.
  </p>
  </CardContent>
  </Card>
@@ -336,8 +324,8 @@ const WashingtonDCLicensePlateLookup = () => {
  <div className="container mx-auto px-4 text-center">
  <h2 className="text-2xl font-bold mb-4">Ready to Check a DC Vehicle?</h2>
  <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
- Don't risk buying a stolen vehicle. Get instant verification from 
- SafeOrStolen's analysis and publicly available vehicle data.
+ Check the plate and the VIN before you pay. Results take a few seconds,
+ and the first 2 checks are free.
  </p>
  <div className="flex flex-wrap justify-center gap-4">
  <Button asChild size="lg">

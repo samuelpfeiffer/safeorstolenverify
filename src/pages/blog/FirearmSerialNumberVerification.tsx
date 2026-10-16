@@ -13,9 +13,9 @@ const FirearmSerialNumberVerification = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How to Check If a Gun Is Stolen - Firearm Serial Number Verification",
-    "description": "Complete guide to verifying firearms aren't stolen before purchase. Learn how to check gun serial numbers and protect yourself legally.",
+    "description": "How to check a gun serial number before you buy: where to find it, what a SafeOrStolen firearm check searches, and the red flags in a private sale.",
     "datePublished": "2025-01-15",
-    "dateModified": "2026-02-06",
+    "dateModified": "2026-10-07",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen" }
   };
@@ -23,23 +23,23 @@ const FirearmSerialNumberVerification = () => {
   const faqs = [
     {
       question: "How do I check if a gun is stolen by serial number?",
-      answer: "Use SafeOrStolen's firearm verification tool to check the serial number against stolen property databases. This helps identify firearms reported stolen to law enforcement."
+      answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state), live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. It does not search NCIC or ATF eTrace."
     },
     {
       question: "Is it illegal to buy a stolen firearm?",
-      answer: "Yes. Knowingly or unknowingly possessing a stolen firearm is a federal crime punishable by up to 10 years in prison. You'll also lose the firearm and any money paid."
+      answer: "Under 18 U.S.C. § 922(j) it is a federal crime to receive or possess a stolen firearm when you know or have reasonable cause to believe it was stolen. Even if you didn't know, police can take the gun back for its owner and you usually lose what you paid. Possessing a gun with an obliterated serial is a separate federal crime under § 922(k)."
     },
     {
       question: "What should I do if I discover I bought a stolen gun?",
-      answer: "Contact local law enforcement immediately. Do not attempt to sell or dispose of the firearm. Cooperating with police is the best way to protect yourself legally."
+      answer: "Stop using it and contact your local police non-emergency line. Don't sell it, trade it or get rid of it. Keep the listing, messages, receipt and any SafeOrStolen check you ran, and consider talking to a lawyer in your state before you give a statement."
     },
     {
       question: "Can I check a gun serial number before a private sale?",
-      answer: "Yes. Before any private firearm purchase, ask for the serial number and verify it with SafeOrStolen. If the seller refuses to provide the serial number, walk away."
+      answer: "Yes. Ask for the serial number before you meet and run it on SafeOrStolen. At the meetup, make sure the serial on the frame or receiver matches what the seller sent and isn't scratched or ground down. If the seller won't share the serial, walk away. Follow your state's rules on private transfers."
     },
     {
       question: "Do gun shows sell stolen firearms?",
-      answer: "While most gun show vendors are legitimate, stolen firearms do occasionally appear at gun shows. Always verify serial numbers regardless of where you're buying."
+      answer: "Stolen guns can turn up anywhere guns are resold, including private sales at gun shows. Licensed dealers run a background check on the buyer, not a theft check on the gun, so check the serial yourself no matter where you buy."
     }
   ];
 
@@ -56,8 +56,8 @@ const FirearmSerialNumberVerification = () => {
   return (
     <>
       <PageSEO
-        title="How to Check If a Gun Is Stolen - Firearm Serial Number Verification | SafeOrStolen"
-        description="Learn how to verify firearms aren't stolen before buying. Check gun serial numbers against stolen property databases. Protect yourself from federal crimes."
+        title="How to Check If a Gun Is Stolen by Serial Number | SafeOrStolen"
+        description="How to check if a gun is stolen before you buy: find the serial, check it against police theft and loss reports from 33 states and DC, and spot private-sale red flags."
         keywords="check if gun is stolen, firearm serial number lookup, stolen gun check, verify gun not stolen, gun serial number verification"
         canonical="/blog/firearm-serial-number-verification"
         structuredData={[articleSchema, faqSchema]}
@@ -76,14 +76,11 @@ const FirearmSerialNumberVerification = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-6">
-              Complete guide to firearm serial number verification. Protect yourself from federal 
-              crimes by verifying any firearm before purchase.
+              Find the serial on the frame or receiver, run it through SafeOrStolen against police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio records, and walk away from any gun whose serial looks altered.
             </p>
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Updated: February 2026</span>
-              <span>•</span>
-              <span>10 min read</span>
+              <span>Updated: October 2026</span>
             </div>
           </header>
           <BlogHeroImage src={blogImages.firearm} alt="Firearm serial number close-up with forensic lighting - gun stolen verification guide" />
@@ -99,12 +96,10 @@ const FirearmSerialNumberVerification = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Possessing a stolen firearm is a <strong>federal crime</strong> under 18 U.S.C. § 922(j), 
-                  punishable by up to 10 years in prison. This applies even if you didn't know the 
-                  firearm was stolen.
+                  Receiving or possessing a stolen firearm when you know or have reasonable cause to believe it was stolen is a <strong>federal crime</strong> under 18 U.S.C. § 922(j). Possessing a gun with an obliterated or altered serial is a federal crime under § 922(k).
                 </p>
                 <p className="text-muted-foreground">
-                  Always verify firearms before purchase to protect yourself legally.
+                  Checking the serial and keeping a dated record of that check shows you tried to buy honestly. This is general information, not legal advice.
                 </p>
               </CardContent>
             </Card>
@@ -114,7 +109,7 @@ const FirearmSerialNumberVerification = () => {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <Scale className="w-6 h-6 text-primary" />
-              Why Firearm Verification Is Critical
+              Why check the serial before you buy
             </h2>
 
             <div className="space-y-4">
@@ -122,10 +117,9 @@ const FirearmSerialNumberVerification = () => {
                 <CardContent className="flex items-start gap-4 pt-6">
                   <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold">300,000+ Firearms Stolen Annually</h3>
+                    <h3 className="font-semibold">Stolen guns get resold</h3>
                     <p className="text-sm text-muted-foreground">
-                      According to the DOJ, over 300,000 firearms are stolen each year in the US. 
-                      Many end up resold through private sales and gun shows.
+                      Stolen firearms often change hands through private sales, where nobody checks the serial unless the buyer does.
                     </p>
                   </div>
                 </CardContent>
@@ -135,10 +129,9 @@ const FirearmSerialNumberVerification = () => {
                 <CardContent className="flex items-start gap-4 pt-6">
                   <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold">Federal Crime - Up to 10 Years</h3>
+                    <h3 className="font-semibold">Federal and state law</h3>
                     <p className="text-sm text-muted-foreground">
-                      Possessing a stolen firearm, even unknowingly, violates federal law. 
-                      Convictions result in prison time, loss of gun rights, and felony record.
+                      Federal law covers knowingly possessing a stolen gun and any gun with an obliterated serial. Many states add their own rules for private sales.
                     </p>
                   </div>
                 </CardContent>
@@ -150,8 +143,7 @@ const FirearmSerialNumberVerification = () => {
                   <div>
                     <h3 className="font-semibold">No Compensation</h3>
                     <p className="text-sm text-muted-foreground">
-                      When police recover a stolen firearm, you lose both the gun and your money. 
-                      There's no legal recourse to recover your purchase price.
+                      When police recover a stolen firearm, it goes back to the owner and you usually lose what you paid. Getting money back from a private seller is often impossible.
                     </p>
                   </div>
                 </CardContent>
@@ -187,9 +179,9 @@ const FirearmSerialNumberVerification = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• Enter the full serial number</li>
-                    <li>• Include make and model if possible</li>
+                    <li>• Read the result: "reported stolen", "possible match", or "no report found in the records searched"</li>
                     <li>• Check before agreeing to purchase</li>
-                    <li>• Save verification results for your records</li>
+                    <li>• Each check is saved to your account with the date</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -200,7 +192,7 @@ const FirearmSerialNumberVerification = () => {
                 Ready to verify a firearm serial number?
               </p>
               <Button asChild>
-                <Link to="/firearms-check">Verify Firearm Now - Free</Link>
+                <Link to="/firearms-check">Check a serial (2 free checks)</Link>
               </Button>
             </div>
           </section>
@@ -256,10 +248,10 @@ const FirearmSerialNumberVerification = () => {
           <section className="bg-primary text-primary-foreground p-8 rounded-lg text-center">
             <Shield className="w-12 h-12 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-4">
-              Protect Yourself - Verify Before You Buy
+              Check the serial before you buy
             </h2>
             <p className="opacity-90 mb-6">
-              A 3-second verification could save you from 10 years in federal prison.
+              It takes a few seconds and your first 2 checks are free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary">
@@ -268,7 +260,7 @@ const FirearmSerialNumberVerification = () => {
               <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
                 <Link to="/app">
                   <Download className="w-4 h-4 mr-2" />
-                  Download App
+                  Get the free web app
                 </Link>
               </Button>
             </div>

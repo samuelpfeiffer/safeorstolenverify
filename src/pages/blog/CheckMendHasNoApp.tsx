@@ -1,18 +1,19 @@
+/** Oct 8 2026: audited by hand. Removed false app-store/offline/barcode claims, invented speeds, fake quotes and user counts. */
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from '@/lib/router-compat';
-import { X, Check, AlertTriangle, Download } from 'lucide-react';
+import { AlertTriangle, Download } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const CheckMendHasNoApp = () => {
   const blogPostSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": " - Here's the Mobile Alternative",
-    "description": " Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Here's why.",
+    "headline": "Is There a CheckMEND App? A Phone-Friendly Alternative",
+    "description": "Looking for a CheckMEND app? Here's how CheckMEND is used, and how SafeOrStolen's free installable web app checks phones, VINs, guns and bikes from your phone.",
     "author": {
       "@type": "Organization",
       "name": "SafeOrStolen"
@@ -22,67 +23,62 @@ const CheckMendHasNoApp = () => {
       "name": "SafeOrStolen"
     },
     "datePublished": "2025-01-17",
-    "dateModified": "2026-02-06"
+    "dateModified": "2026-10-08"
   };
 
   return (
     <>
       <PageSEO
-        title=" - Mobile Alternative | SafeOrStolen"
-        description="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.99."
-        keywords="CheckMEND app, CheckMEND alternative, better than CheckMEND, CheckMEND mobile, free CheckMEND alternative"
+        title="Is There a CheckMEND App? Phone-Friendly Alternative | SafeOrStolen"
+        description="Looking for a CheckMEND app? Here's how CheckMEND is used and how SafeOrStolen's free web app checks phones, VINs, guns and bikes from your phone."
+        keywords="CheckMEND app, CheckMEND alternative, CheckMEND mobile, free CheckMEND alternative"
         canonical="/blog/checkmend-has-no-app"
         structuredData={blogPostSchema}
       />
 
-      <BlogFAQSchema 
+      <BlogFAQSchema
         faqs={[
           {
             question: "Does CheckMEND have a mobile app?",
-            answer: "No. CheckMEND offers only a website. There is no CheckMEND app for iOS or Android. Most services check one item category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
+            answer: "CheckMEND is used through its website in a phone or computer browser. Check CheckMEND's own site for its current options. If you want something you can add to your phone's home screen, SafeOrStolen has a free installable web app at safeorstolen.com/app that works in any modern phone browser."
           },
           {
-            question: "Why doesnt CheckMEND have an app?",
-            answer: "CheckMEND has not developed a mobile app due to technical complexity and its business model focused on per-check pricing ($0.99). Building a modern app with barcode scanning would require a complete rebuild."
+            question: "Is SafeOrStolen an App Store or Google Play app?",
+            answer: "No. SafeOrStolen is a free installable web app. Open safeorstolen.com/app in your phone's browser and add it to your home screen. There is nothing to download from the App Store or Google Play, and checks need an internet connection."
           },
           {
-            question: "What is the best CheckMEND alternative with an app?",
-            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $10/month unlimited (vs CheckMEND's $0.99/check), offline mode, and coverage for many item types."
+            question: "What does a SafeOrStolen check search?",
+            answer: "Every check searches SafeOrStolen's own theft reports and public web results that mention the number. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records."
           },
           {
-            question: "Is SafeOrStolen cheaper than CheckMEND?",
-            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $0.99 per check. SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Plus you get a mobile app with barcode scanning that CheckMEND does not offer."
-          },
-          {
-            question: "Can I scan barcodes with CheckMEND?",
-            answer: "No, CheckMEND does not support barcode scanning because they do not have a mobile app. You must manually type serial numbers, IMEI, or VIN on their website. SafeOrStolen's app has instant barcode scanning - just point and scan."
+            question: "How much does SafeOrStolen cost?",
+            answer: "You get 2 free checks with a free account, no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
           }
         ]}
       />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
-          <BreadcrumbNavigation 
+          <BreadcrumbNavigation
             items={[
               { name: 'Blog', href: '/blog' },
-              { name: '', href: '/blog/checkmend-has-no-app' }
+              { name: 'Is there a CheckMEND app?', href: '/blog/checkmend-has-no-app' }
             ]}
           />
         </div>
 
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <header className="mb-12">
-            <div className="inline-block bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Compare CheckMEND and SafeOrStolen
+            <div className="inline-block bg-muted text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              CheckMEND and SafeOrStolen compared
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground"> - Here's the Mobile Alternative
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Is there a CheckMEND app? Here's a phone-friendly alternative
             </h1>
             <p className="text-xl text-muted-foreground mb-4">
-              Despite being a major player in stolen item verification, <strong></strong>. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
+              CheckMEND is used through its website. If you want to check an item from your phone at a meetup, SafeOrStolen has a free web app at safeorstolen.com/app that you add to your home screen. It checks phones by IMEI, vehicles by VIN, plates, guns, bikes and anything with a serial number.
             </p>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Updated: February 2026</span>
-              <span>•</span>
-              <span>7 min read</span>
+              <span>Updated: October 2026</span>
             </div>
           </header>
 
@@ -91,248 +87,97 @@ const CheckMendHasNoApp = () => {
               <div className="flex items-start gap-3">
                 <AlertTriangle className="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-yellow-900 dark:text-yellow-100">The Truth About CheckMEND</h3>
+                  <h3 className="font-bold text-lg mb-2 text-yellow-900 dark:text-yellow-100">Watch out for look-alike apps</h3>
                   <p className="text-yellow-800 dark:text-yellow-200">
-                    CheckMEND has been in business since 2004, yet they still have <strong>NO mobile app</strong>. They only offer a website that requires manual typing and takes 30+ seconds per verification. In 2026, this is unacceptable for buyers, sellers, and businesses who need instant results.
+                    If you search an app store for "CheckMEND" and find something, look at who published it before you pay. Apps that borrow a well-known name are common. The safe route is to go straight to the service's own website.
                   </p>
                 </div>
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Why CheckMEND Does Not Have an App</h2>
-            
-            <p>
-              Many users search for "CheckMEND app" expecting to find an iOS or Android application. The reality? <strong>It does not exist</strong>. Here is why CheckMEND has failed to deliver a mobile app after 20+ years:
-            </p>
-
-            <ol className="list-decimal pl-6 space-y-4">
-              <li>
-                <strong>Technical Complexity</strong> - Building a real mobile app with barcode scanning, offline mode, and instant sync requires significant engineering investment. CheckMEND chose to stick with their website instead.
-              </li>
-              <li>
-                <strong>Slow Development Cycle</strong> - CheckMEND's core technology was built in the early 2000s. Modernizing to support mobile apps would require a complete rebuild.
-              </li>
-              <li>
-                <strong>High Per-Check Pricing</strong> - At $0.99 per check, CheckMEND profits from their manual verification process. A fast mobile app would reduce their per-check revenue.
-              </li>
-              <li>
-                <strong>UK/EU Focus</strong> - CheckMEND primarily serves UK and European markets, where mobile app adoption for verification is lower than in the US.
-              </li>
-            </ol>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">CheckMEND vs SafeOrStolen: Side-by-Side Comparison</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6">How each service works on a phone</h2>
 
             <Card className="my-8 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-muted">
                     <tr>
-                      <th className="p-4 text-left font-bold">Feature</th>
-                      <th className="p-4 text-center font-bold text-red-600">❌ CheckMEND</th>
-                      <th className="p-4 text-center font-bold text-green-600">✅ SafeOrStolen</th>
+                      <th className="p-4 text-left font-bold">Question</th>
+                      <th className="p-4 text-left font-bold">SafeOrStolen</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y">
                     <tr>
-                      <td className="p-4 font-semibold">Mobile App</td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <X className="w-6 h-6 text-red-600" />
-                          <span className="text-sm text-muted-foreground">No app</span>
-                        </div>
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <Check className="w-6 h-6 text-green-600" />
-                          <span className="text-sm text-muted-foreground">iOS + Android</span>
-                        </div>
-                      </td>
+                      <td className="p-4 font-semibold">How do I get it on my phone?</td>
+                      <td className="p-4 text-sm">Open safeorstolen.com/app and add it to your home screen. No App Store or Google Play download.</td>
                     </tr>
                     <tr>
-                      <td className="p-4 font-semibold">Barcode Scanning</td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <X className="w-6 h-6 text-red-600" />
-                          <span className="text-sm text-muted-foreground">Manual typing only</span>
-                        </div>
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <Check className="w-6 h-6 text-green-600" />
-                          <span className="text-sm text-muted-foreground">Instant scanning</span>
-                        </div>
-                      </td>
+                      <td className="p-4 font-semibold">Does it need internet?</td>
+                      <td className="p-4 text-sm">Yes. Each check runs online and takes a few seconds.</td>
                     </tr>
                     <tr>
-                      <td className="p-4 font-semibold">Verification Speed</td>
-                      <td className="p-4 text-center text-red-600 font-bold">30+ seconds</td>
-                      <td className="p-4 text-center text-green-600 font-bold">3 seconds</td>
+                      <td className="p-4 font-semibold">What can I check?</td>
+                      <td className="p-4 text-sm">Phones (IMEI), vehicles (VIN), plates, guns, bikes, and serial numbers on tools, laptops and other gear.</td>
                     </tr>
                     <tr>
-                      <td className="p-4 font-semibold">Price Per Check</td>
-                      <td className="p-4 text-center text-red-600 font-bold">$0.99</td>
-                      <td className="p-4 text-center text-green-600 font-bold">2 FREE checks</td>
+                      <td className="p-4 font-semibold">What does it cost?</td>
+                      <td className="p-4 text-sm">2 free checks, then $0.99 a check or $10 a month unlimited.</td>
                     </tr>
                     <tr>
-                      <td className="p-4 font-semibold">Offline Mode</td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <X className="w-6 h-6 text-red-600" />
-                          <span className="text-sm text-muted-foreground">Requires internet</span>
-                        </div>
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <Check className="w-6 h-6 text-green-600" />
-                          <span className="text-sm text-muted-foreground">Works offline</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-semibold">Item Coverage</td>
-                      <td className="p-4 text-center text-sm">Electronics only</td>
-                      <td className="p-4 text-center text-sm">All items (phones, cars, boats, firearms)</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-semibold">US Coverage</td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <X className="w-6 h-6 text-red-600" />
-                          <span className="text-sm text-muted-foreground">Limited US data</span>
-                        </div>
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="flex flex-col items-center gap-1">
-                          <Check className="w-6 h-6 text-green-600" />
-                          <span className="text-sm text-muted-foreground">All 50 states</span>
-                        </div>
-                      </td>
+                      <td className="p-4 font-semibold">What do results look like?</td>
+                      <td className="p-4 text-sm">"Reported stolen", "possible match", or "no report found in the records searched", with every source listed.</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </Card>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">What Users Say About CheckMEND's Lack of Mobile App</h2>
-
-            <div className="space-y-4 my-8">
-              <Card className="p-6 border-l-4 border-red-500">
-                <p className="text-muted-foreground italic">
-                  "I was at a Facebook Marketplace meetup trying to check a phone. CheckMEND's website took forever to load on my phone, then I had to manually type a 15-digit IMEI. The seller got suspicious and left. Total waste of time." - Reddit user, r/phoneswap
-                </p>
-              </Card>
-
-              <Card className="p-6 border-l-4 border-red-500">
-                <p className="text-muted-foreground italic">
-                  "Our pawn shop tried CheckMEND for a month. $0.99 per check adds up FAST when you are checking 50+ items daily. Plus, typing serial numbers one by one took hours. Switched to SafeOrStolen's app - saved us $5,000/month." - Pawn shop owner, Dallas TX
-                </p>
-              </Card>
-
-              <Card className="p-6 border-l-4 border-red-500">
-                <p className="text-muted-foreground italic">"I'm not typing 17-character VINs on a tiny phone keyboard." - Twitter complaint
-                </p>
-              </Card>
-            </div>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">SafeOrStolen: A Multi-Category CheckMEND Alternative</h2>
-
             <p>
-              SafeOrStolen was built from the ground up as a <strong>mobile-first</strong> verification platform. Here is what makes us the superior CheckMEND alternative:
+              For CheckMEND's current coverage and pricing, look at CheckMEND's own website. It's best known in the UK.
             </p>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">1. Instant Barcode Scanning</h3>
+            <h2 className="text-3xl font-bold mt-12 mb-6">What a SafeOrStolen check searches</h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Every check:</strong> SafeOrStolen's own theft reports, filed by owners, plus public web results such as listings and posts that mention the number.</li>
+              <li><strong>Guns:</strong> 242,839 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. It also flags serials that look altered.</li>
+              <li><strong>Bikes:</strong> a national stolen-bicycle registry.</li>
+              <li><strong>Phones:</strong> the make and model from the IMEI. A paid lost/stolen blacklist check is available.</li>
+              <li><strong>Vehicles:</strong> year, make and model from the VIN, open safety recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates.</li>
+            </ul>
             <p>
-              No more manual typing. Point your phone at any barcode, serial number, IMEI, or VIN - the app reads it instantly using advanced AI. <strong>10x faster than CheckMEND's manual entry</strong>.
+              It does not search NCIC, DMV records, pawn databases or insurer databases. A "no report found" result means nothing turned up in the records listed, not that the item is guaranteed clean.
             </p>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">2. 3-Second Verification</h3>
-            <p>
-              SafeOrStolen delivers verified results in <strong>3 seconds</strong>. CheckMEND takes 30+ seconds. When you are standing in a parking lot with cash in hand, every second counts.
-            </p>
-
-            <h3 className="text-2xl font-bold mt-8 mb-4">3. $10/mo Unlimited vs $0.99 Per Check</h3>
-            <p>
-              SafeOrStolen offers <strong>2 free checks, then $0.99/check or $10/month unlimited</strong>. Review each service's current pricing before choosing a plan.
-            </p>
-
-            <h3 className="text-2xl font-bold mt-8 mb-4">4. Offline Mode</h3>
-            <p>
-              CheckMEND requires constant internet connection. SafeOrStolen's app works <strong>offline</strong> using downloaded data snapshots. Perfect for pawn shops, remote locations, or areas with poor cell signal.
-            </p>
-
-            <h3 className="text-2xl font-bold mt-8 mb-4">5. All Item Types</h3>
-            <p>
- CheckMEND only covers electronics. SafeOrStolen verifies <strong>phones, vehicles, boats, firearms, bicycles, tools, jewelry</strong> - everything with a serial number or identifier.
-            </p>
-
-            <h3 className="text-2xl font-bold mt-8 mb-4">6. All 50 US States + International</h3>
-            <p>
-              CheckMEND focuses on UK/EU markets with limited US data. SafeOrStolen provides <strong>comprehensive coverage across all 50 US states</strong> plus international sources in 45+ countries.
-            </p>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">How to Switch from CheckMEND to SafeOrStolen</h2>
-
-            <p>
-              Making the switch from CheckMEND's website to SafeOrStolen's instant mobile app takes 2 minutes:
-            </p>
+            <h2 className="text-3xl font-bold mt-12 mb-6">How to put SafeOrStolen on your phone</h2>
 
             <ol className="list-decimal pl-6 space-y-4">
-              <li>
-                Visit <strong>safeorstolen.com/app</strong> on your iOS or Android device
-              </li>
-              <li>
-                Tap "Install App" - no App Store/Google Play download required (it's a Progressive Web App)
-              </li>
-              <li>
-                Create an account and subscribe to the $10/month Unlimited Plan
-              </li>
-              <li>
-                Start scanning barcodes instantly - experience 3-second verification
-              </li>
+              <li>Open <strong>safeorstolen.com/app</strong> in Safari on iPhone or Chrome on Android.</li>
+              <li>On iPhone, tap the Share button, then "Add to Home Screen". On Android, tap the menu, then "Install app" or "Add to Home screen".</li>
+              <li>Create a free account. Your first 2 checks are free and no card is needed.</li>
+              <li>Type the IMEI, VIN or serial number and read the result in a few seconds. Each check is saved to your account with the date.</li>
             </ol>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Why SafeOrStolen Will Always Be Better Than CheckMEND</h2>
-
-            <p>
-              CheckMEND's business model relies on <strong>expensive per-check pricing</strong>. They have no incentive to build a fast mobile app that reduces friction and verification time.
-            </p>
-
-            <p>
-              SafeOrStolen's mission is to <strong>make stolen goods verification accessible to everyone</strong>. Our mobile-first approach, instant barcode scanning, and affordable pricing reflect our commitment to protecting buyers and sellers worldwide.
-            </p>
-
             <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 my-8">
-              <h3 className="font-bold text-lg mb-3 text-green-900 dark:text-green-100">Bottom Line: CheckMEND Alternative</h3>
+              <h3 className="font-bold text-lg mb-3 text-green-900 dark:text-green-100">Bottom line</h3>
               <ul className="space-y-2 text-green-800 dark:text-green-200">
-                <li>✅ <strong>Compare CheckMEND and SafeOrStolen</strong> - SafeOrStolen does</li>
-                <li>✅ <strong>CheckMEND takes 30+ seconds</strong> - SafeOrStolen takes 3 seconds</li>
-                <li>✅ <strong>CheckMEND costs $0.99 per check</strong> - SafeOrStolen offers 2 FREE checks</li>
-                <li>✅ <strong>CheckMEND requires manual typing</strong> - SafeOrStolen has barcode scanning</li>
-                <li>✅ <strong>CheckMEND needs internet</strong> - SafeOrStolen works offline</li>
+                <li>CheckMEND is used through its website.</li>
+                <li>SafeOrStolen is a free installable web app, not an app-store download.</li>
+                <li>SafeOrStolen covers phones, vehicles, plates, guns, bikes and serial-numbered gear.</li>
+                <li>2 free checks, then $0.99 a check or $10 a month unlimited.</li>
               </ul>
             </div>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">Try the CheckMEND Alternative Today</h2>
-
-            <p>
-              Stop wasting time and money on CheckMEND's outdated website. Download SafeOrStolen - the <strong>only verification app</strong> with instant barcode scanning and 3-second results.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 my-8">
               <Button asChild size="lg" className="flex-1">
                 <Link to="/app">
                   <Download className="w-5 h-5 mr-2" />
-                  Download FREE App
+                  Get the free web app
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="flex-1">
-                <Link to="/verify">Try Web Version</Link>
+                <Link to="/verify">Run a check now</Link>
               </Button>
             </div>
-
-            <p className="text-sm text-muted-foreground text-center mt-8">
-              Join 50,000+ users who switched from CheckMEND to SafeOrStolen's mobile app
-            </p>
           </div>
         </article>
       </div>

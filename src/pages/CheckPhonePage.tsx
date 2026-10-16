@@ -5,6 +5,7 @@ import { PillarPageTemplate } from '@/components/seo/PillarPageTemplate';
  * PILLAR 1 — /check-phone
  * "Check If a Phone Is Stolen Before You Buy"
  * Rewritten (2026) as part of the topical-authority build.
+ * Oct 8 2026: removed "100 databases", "AI analysis" and "instant"; result types now match the real result screen.
  */
 const CheckPhonePage = () => {
  return (
@@ -12,7 +13,7 @@ const CheckPhonePage = () => {
  route="/check-phone"
  pillarName="Check Phone"
  title="Check If a Phone Is Stolen — Free IMEI Check | SafeOrStolen"
- description="Enter any IMEI to check if a phone is reported lost or stolen before you buy. Free instant results from multiple sources."
+ description="Enter a phone's IMEI to see its make and model and check for theft reports before you buy. 2 free checks, results in a few seconds, every source listed."
  keywords="check if phone stolen, free IMEI check, stolen phone check, blacklist IMEI check, buy used phone safely"
  h1="Check If a Phone Is Stolen Before You Buy"
  intro={
@@ -32,7 +33,7 @@ const CheckPhonePage = () => {
  <>
  <h2>How to find the IMEI</h2>
  <ul>
- <li>Dial <strong>*#06#</strong> on the phone — the IMEI appears instantly</li>
+ <li>Dial <strong>*#06#</strong> on the phone — the IMEI appears on screen</li>
  <li>Settings → About Phone (Android) or Settings → General → About (iPhone)</li>
  <li>Printed on the SIM tray, original box, or purchase receipt</li>
  </ul>
@@ -44,22 +45,24 @@ const CheckPhonePage = () => {
 
  <h2>What we check</h2>
  <p>
- SafeOrStolen queries stolen-device and blacklist records across more than 100 databases,
- including public web results, AI analysis, and our own user-submitted
- theft registry. A result comes back in seconds:
+ A SafeOrStolen phone check shows the make and model from the IMEI and searches SafeOrStolen's
+ own theft reports, where owners report stolen phones, and public web results such as listings and
+ posts that mention the IMEI. A paid lost/stolen carrier blacklist check is also available (monthly
+ members get up to 20 a month). The result comes back in a few seconds, with every source listed:
  </p>
  <ul>
- <li><strong>Clean</strong> — no loss, theft, or blacklist records found for this identifier</li>
- <li><strong>Flagged</strong> — the device has been reported lost, stolen, or blacklisted. Walk away.</li>
+ <li><strong>Reported stolen</strong> — a theft report matches this IMEI. Walk away.</li>
+ <li><strong>Possible match</strong> — something close turned up. Read the source before you go further.</li>
+ <li><strong>No report found in the records searched</strong> — nothing matched in the sources listed.</li>
  </ul>
 
  <h2>What a "clean" result means — honestly</h2>
  <p>
  No single database catches everything. A clean result means no report exists in the
- sources we check at this moment — it is strong evidence, not a legal guarantee. That's
+ sources we check at this moment — it is useful evidence, not a guarantee. SafeOrStolen doesn't see Apple or Google account status, so also have the seller sign out of their account in front of you. That's
  why we also recommend meeting in a police-station safe-exchange zone and getting a
  written receipt with the seller's name and the IMEI on it. Those two habits, plus a
- clean check, remove nearly all of the risk.
+ clean check, cut the risk a lot.
  </p>
 
  <h2>Already bought a phone and worried?</h2>

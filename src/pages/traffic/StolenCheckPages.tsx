@@ -1,3 +1,4 @@
+/** Oct 8 2026: copy fixed by hand. Removed "instant"/"3 seconds", vague "stolen databases", all caps, exclamation marks and the FFL "legal protection" claim. */
 import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { StolenCheckLanding } from '@/components/traffic/StolenCheckLanding';
@@ -6,7 +7,7 @@ export const CheckStolenPhone = () => (
  <StolenCheckLanding
  itemType="Phone"
  title="Is My Phone Stolen? Free IMEI Check"
- description="Check if a phone is stolen before you buy. Enter the IMEI number and get instant verification. Protect yourself from buying stolen iPhones, Samsung, and other devices."
+ description="Check if a phone is stolen before you buy. Enter the IMEI to see the make and model and search for theft reports in a few seconds. 2 free checks."
  keywords={[
  'is my phone stolen',
  'check if phone is stolen',
@@ -24,11 +25,11 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'What happens if the phone is stolen?',
- a: 'If the phone is reported stolen, DO NOT buy it. The seller may be a thief, and you could face legal issues. Report it to local police.'
+ a: 'If the phone comes back as reported stolen, don\'t buy it. Leave the meetup and tell local police where and when it was being sold. Buying it anyway can mean losing the phone and your money when police return it to its owner.'
  },
  {
  q: 'Is this check really free?',
- a: 'Yes! You get 2 free checks when you sign up. No credit card required.'
+ a: 'Yes. You get 2 free checks when you sign up, no credit card required. After that it\'s $0.99 a check or $10 a month for unlimited checks.'
  },
  {
  q: 'How accurate is the stolen phone database?',
@@ -42,7 +43,7 @@ export const CheckStolenCar = () => (
  <StolenCheckLanding
  itemType="Car"
  title="Is This Car Stolen? Free VIN Check"
- description="Check if a vehicle is stolen before you buy. Enter the VIN and get instant verification. Protect yourself from buying stolen cars, trucks, and motorcycles."
+ description="Check if a car is stolen before you buy. Enter the VIN to decode the year, make and model, see open recalls and search for theft reports. 2 free checks."
  keywords={[
  'is this car stolen',
  'check if car is stolen',
@@ -68,7 +69,7 @@ export const CheckStolenCar = () => (
  },
  {
  q: 'How quickly do I get results?',
- a: 'Results are instant - typically within 3 seconds of entering the VIN.'
+ a: 'Results come back in a few seconds after you enter the VIN, with every source searched listed.'
  }
  ]}
  />
@@ -78,7 +79,7 @@ export const CheckStolenLaptop = () => (
  <StolenCheckLanding
  itemType="Laptop"
  title="Is This Laptop Stolen? Free Serial Number Check"
- description="Check if a laptop or computer is stolen before you buy. Enter the serial number and get instant verification. Protect yourself from stolen MacBooks, Dell, HP, and more."
+ description="Check if a laptop is stolen before you buy. Enter the serial number and search for theft reports in a few seconds. Works for MacBooks, Dell, HP and more."
  keywords={[
  'is this laptop stolen',
  'check if laptop is stolen',
@@ -113,7 +114,7 @@ export const CheckStolenBike = () => (
  <StolenCheckLanding
  itemType="Bicycle"
  title="Is This Bike Stolen? Free Serial Number Check"
- description="Check if a bicycle is stolen before you buy. Enter the serial number and get instant verification against stolen bike databases."
+ description="Check if a bike is stolen before you buy. Enter the serial number to search a national stolen-bicycle registry and SafeOrStolen theft reports. 2 free checks."
  keywords={[
  'is this bike stolen',
  'check if bike is stolen',
@@ -137,7 +138,7 @@ export const CheckStolenBike = () => (
  },
  {
  q: 'How do I report a stolen bike?',
- a: 'Report to local police first, then register it on stolen bike databases. We can help with verification after recovery.'
+ a: 'Report it to local police first and give them the serial number. Then report it free on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial before buying sees your report.'
  }
  ]}
  />
@@ -148,7 +149,7 @@ export const CheckStolenFirearm = () => (
  <StolenCheckLanding
  itemType="Firearm"
  title="Is This Gun Stolen? Free Serial Number Check"
- description="Check if a firearm is stolen before you buy. Enter the serial number and verify against stolen gun databases. Stay legal and protected."
+ description="Check if a gun is stolen before you buy. Search the serial against police theft reports from 33 states and DC, live Ohio records and SafeOrStolen reports."
  keywords={[
  'is this gun stolen',
  'check if firearm is stolen',
@@ -164,7 +165,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'Is it legal to buy a stolen firearm?',
- a: 'No. Possessing a stolen firearm is a federal crime. Always verify before any private sale.'
+ a: 'No. Under federal law (18 U.S.C. § 922(j)) it is a crime to receive or possess a firearm you know or have reason to believe is stolen. Check the serial before any private sale, and walk away from a gun with a scratched or ground-off serial.'
  },
  {
  q: 'What databases do you check?',
@@ -172,7 +173,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'Should I use an FFL dealer?',
- a: 'Using a licensed dealer for transfers adds legal protection and they can verify the firearm status.'
+ a: 'Doing the transfer through a licensed dealer means the buyer goes through a background check and the sale is recorded. A dealer generally can\'t tell you whether the gun was reported stolen, so check the serial yourself as well.'
  }
  ]}
  />

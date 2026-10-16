@@ -1,14 +1,20 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
 
+/**
+ * Oct 8 2026: audited by hand for "georgia license plate lookup". Removed the "AI analysis" source,
+ * claims that the lookup shows registration validity or owner information, "detect cloned plates",
+ * and claims of a database covering every Georgia county.
+ */
 const GeorgiaLicensePlateLookupPage = () => {
   return (
     <>
     <ItemLandingPageTemplate
       title="Georgia License Plate Lookup - Free GA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is reported stolen. Verify against our stolen item reports and public web data."
-      h1="Georgia License Plate Lookup - Verify GA Vehicles Aren't Stolen"
+      metaDescription="Georgia license plate lookup: check a GA plate against SafeOrStolen theft reports and public web results, then match the plate, VIN and title before you buy."
+      h1="Georgia License Plate Lookup - Check GA Vehicles Before You Buy"
       itemType="Vehicle"
+      dateModified="2026-10-07"
       searchType="plate"
       searchPlaceholder="Enter the license plate number"
       keywords={[
@@ -22,65 +28,59 @@ const GeorgiaLicensePlateLookupPage = () => {
         'GA vehicle stolen database'
       ]}
       content={{
-        intro: "Georgia experiences notable vehicle theft, with Atlanta accounting for a significant portion of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our stolen item reports and public web results.",
-        
-        whatIs: "A Georgia license plate lookup helps you review information connected to a plate before buying. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not access Georgia DDS registration records, title records, or owner information.",
-        
-        howItWorks: "Our Georgia license plate lookup works by checking SafeOrStolen's own reported stolen items, analyzing public web results, and using AI analysis. You receive a report showing potential red flags related to theft.",
-        
-        whyCheck: "Georgia has notable vehicle theft activity, with Atlanta being a hotspot. The I-85 and I-75 corridors are used by theft rings to transport stolen vehicles between states. Georgia's proximity to ports in Savannah makes it a potential target for vehicle export schemes. Additionally, flood-damaged vehicles from coastal storms are sometimes resold with clean titles. Always verify before purchasing any vehicle in Georgia.",
-        
+        intro: "Before you buy a used car in Georgia, look up the plate on SafeOrStolen. It searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then check the VIN, because a plate can be moved from one car to another.",
+
+        whatIs: "A Georgia license plate lookup on SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the plate. It does not access Georgia DOR motor vehicle records, title records or owner information, and it never shows owner names.",
+
+        howItWorks: "Enter the plate and choose Georgia. SafeOrStolen searches its own theft reports and public web results and shows reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date.",
+
+        whyCheck: "Cars sold privately around Atlanta, Savannah and Augusta change hands with nobody checking the paperwork. Stolen cars sometimes wear a plate taken from another vehicle, and cars damaged in coastal storms sometimes turn up for sale far from where they flooded. A plate check plus a VIN check and a look at the title catches mismatches before you pay.",
+
         benefits: [
-          "SafeOrStolen reports and public web results",
-          "Atlanta, Savannah, Augusta, and Columbus verification",
-          "Guidance for checking title history separately",
-          "Prompts to compare the plate, VIN, and seller documents",
-          "Review SafeOrStolen's own reported stolen items and public web data",
-          "Detect cloned plates and VIN switching",
-          "Free Georgia license plate lookup"
+          "Searches SafeOrStolen theft reports and public web results",
+          "Results in a few seconds, saved to your account with the date",
+          "Never shows owner names or other private DMV information",
+          "Reminds you to match the plate, VIN and title",
+          "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
         ],
-        
+
         process: [
-          "Locate the Georgia license plate number on the vehicle (format: ABC 1234 or county-based plates)",
-          "Enter the GA license plate number into SafeOrStolen's verification tool at safeorstolen.com/verify",
-          "Select 'License Plate' as the verification type and choose Georgia as the state",
-          "Review the comprehensive report showing theft status, registration validity, and owner information",
-          "Verify the registered owner matches the seller's information",
-          "If clear, proceed to VIN verification for complete vehicle history"
+          "Write down the Georgia plate exactly as shown on the car",
+          "Enter it on SafeOrStolen and choose Georgia as the state",
+          "Read the result and the list of sources searched",
+          "Check the VIN on the dashboard and driver's door jamb with the SafeOrStolen VIN checker",
+          "Make sure the VIN and plate match the registration, and the name on the title matches the seller's ID",
+          "If anything doesn't match, don't buy"
         ],
-        
+
         faqs: [
           {
             question: "Can I check if a car is stolen in Atlanta using the license plate?",
-            answer: "Yes, SafeOrStolen's Georgia license plate lookup checks vehicles registered in Atlanta and all of Fulton County against our reported stolen items and public web results. This is ideal for initial screening when meeting sellers on Facebook Marketplace or Craigslist in the Atlanta metro area."
+            answer: "You can run a first check. SafeOrStolen (safeorstolen.com/georgia-license-plate-lookup) searches theft reports filed on SafeOrStolen and public web results for the plate. Because plates can be swapped, also check the VIN and compare it with the title before you pay."
           },
           {
             question: "How accurate is the Georgia license plate stolen vehicle check?",
-            answer: "Our Georgia license plate lookup is accurate for identifying potential theft. We check SafeOrStolen's own reported stolen items and public web results. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+            answer: "It tells you what SafeOrStolen's theft reports and public web results show for that plate, and lists each source. It does not search Georgia police or DOR records. No report found doesn't prove a car isn't stolen, so follow up with a VIN check and ask police if something seems off."
           },
           {
             question: "Does the lookup work for vehicles in Savannah and coastal Georgia?",
-            answer: "Yes, our database covers all Georgia counties including Chatham County (Savannah), Glynn County (Brunswick), and other coastal areas. This is especially important in coastal Georgia where flood-damaged vehicles may be resold with cleaned titles after hurricanes."
+            answer: "Yes, you can check any Georgia plate. On the coast, also look for flood damage: a musty smell, damp carpet, rust under the seats or water lines in the trunk."
           },
           {
             question: "What if the Georgia plate comes back as stolen?",
-            answer: "Do NOT purchase the vehicle. Walk away immediately and report the listing to the platform (Facebook Marketplace, Craigslist, OfferUp) and consider notifying community theft or the Georgia Bureau of Investigation. Never confront the seller directly."
+            answer: "Don't buy the car and don't confront the seller. Leave, report the listing to the marketplace, and call your local police non-emergency line with the plate, the VIN if you have it, and the listing details."
           },
           {
             question: "Can I check temporary Georgia tags or dealer plates?",
-            answer: "Temporary tags and dealer plates have limited information in public databases. We recommend getting the VIN number directly from the vehicle's dashboard or door jamb and running a VIN check instead of relying on temporary plates."
+            answer: "Temporary tags and dealer plates say little about the car. Get the VIN from the dashboard or door jamb and run a VIN check instead."
           },
           {
             question: "How do I verify a private seller in Georgia is legitimate?",
-            answer: "Use SafeOrStolen to verify the license plate, then confirm the seller's name matches the registered owner on the Georgia title. Ask to see their Georgia driver's license and compare the name and address. If anything doesn't match, investigate further before purchasing."
-          },
-          {
-            question: "What cities does the Georgia license plate lookup cover?",
-            answer: "Our Georgia license plate lookup covers all cities statewide including Atlanta, Savannah, Augusta, Columbus, Macon, Athens, Sandy Springs, Roswell, and every other city, town, and county in Georgia."
+            answer: "Ask to see the Georgia title and the seller's driver's license, and make sure the names match. Check that the VIN on the title matches the car. If the seller can't show a title in their name, walk away."
           },
           {
             question: "Is the Georgia license plate lookup free?",
-            answer: "SafeOrStolen offers 2 free verification checks including license plate lookups. This allows you to check vehicles before buying without any cost. Additional checks require a paid plan, but our free tier protects casual buyers in Georgia."
+            answer: "A free SafeOrStolen account comes with 2 free checks, no credit card, and plate lookups count as checks. After that it's $0.99 a check or $10 a month for unlimited checks."
           }
         ]
       }}

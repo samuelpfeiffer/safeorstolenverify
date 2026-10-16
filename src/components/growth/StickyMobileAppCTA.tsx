@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Smartphone, Star } from 'lucide-react';
+import { X, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 
@@ -50,13 +50,8 @@ export const StickyMobileAppCTA: React.FC = () => {
           </div>
           
           <div className="flex-1">
-            <div className="flex items-center gap-1 mb-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <p className="text-sm font-medium">Get the free app</p>
-            <p className="text-xs opacity-80">Scan barcodes in 3 seconds</p>
+            <p className="text-sm font-medium">Install the free web app</p>
+            <p className="text-xs opacity-80">Scan a barcode instead of typing it</p>
           </div>
           
           <Button 

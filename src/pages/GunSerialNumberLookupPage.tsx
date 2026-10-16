@@ -6,7 +6,7 @@ const GunSerialNumberLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="Free Gun Serial Number Lookup - Check Firearms | SafeOrStolen"
- metaDescription="Free gun serial number lookup. Check if any firearm is stolen before buying. Searches stolen firearms databases and validates serial integrity."
+ metaDescription="Free gun serial number lookup. Check a gun against police theft reports from 33 states and DC, live Ohio records and SafeOrStolen reports, and flag altered serials."
  h1="Free Gun Serial Number Lookup"
  itemType="Firearm"
  searchType="firearm"
@@ -22,62 +22,62 @@ const GunSerialNumberLookupPage = () => {
  'gun registration lookup'
  ]}
  content={{
- intro: "Free gun serial number lookup in 3 seconds. Enter any firearm serial number to check if it's been reported stolen. We search stolen firearms databases and validate serial number integrity. Protect yourself before buying at gun shows, private sales, or online.",
+ intro: "Enter a gun's serial number and SafeOrStolen tells you in a few seconds whether it shows up in 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft reports or public web results. It also flags serials that look altered or obliterated. Run it before a private sale, a gun show deal or an online purchase.",
 
- whatIs: "A gun serial number lookup verifies whether a firearm's unique identifier has been reported as stolen, lost, or associated with criminal activity. Every firearm manufactured since 1968 is required to have a serial number, and this number is recorded when a gun is reported stolen. Our gun serial number lookup checks stolen firearms databases and analyzes the serial number for signs of alteration or obliteration.",
+ whatIs: "A gun serial number lookup checks whether a firearm's serial appears in theft records. Guns made or imported for sale in the U.S. since the Gun Control Act of 1968 carry a serial number, and that number goes into the police report when a gun is stolen. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state), live Ohio law-enforcement records, its own theft reports and public web results. It does not search NCIC or ATF eTrace and never shows owner names.",
 
- howItWorks: "Our gun serial number lookup process is simple: (1) Find the serial number on the firearm - typically on the frame, receiver, barrel, or slide, (2) Enter the complete serial number including all letters and numbers, (3) We query stolen firearms databases and validate serial number integrity, (4) Receive instant results in 3 seconds showing if the gun is reported stolen or clean. For maximum protection, we recommend looking up the serial number BEFORE meeting with a seller.",
+ howItWorks: "(1) Find the serial on the gun, usually on the frame or receiver, sometimes repeated on the slide or barrel. (2) Type every letter and number exactly as stamped. (3) SafeOrStolen searches the sources above and checks whether the serial looks altered. (4) In a few seconds you see reported stolen, possible match, or no report found in the records searched, with every source listed. Ask the seller for the serial before you meet so you can check it ahead of time.",
 
- whyCheck: "Buying or possessing a stolen firearm is a federal crime under 18 U.S. Code § 922(j), punishable by up to 10 years imprisonment. There is no 'I didn't know' defense - if the gun is stolen, you face criminal prosecution. Private sales, gun shows, and online transactions are where most stolen guns circulate because no background check is required in many states. A free gun serial number lookup takes 3 seconds and could save you from: federal felony charges, confiscation of all your firearms, permanent loss of gun rights, and financial loss with no recourse.",
+ whyCheck: "Under 18 U.S.C. § 922(j) it's a federal crime to receive or possess a stolen gun when you know or have reasonable cause to believe it's stolen, and a stolen gun found in your hands will be taken back. Private sales often don't involve a dealer, so nobody else is checking for you. A serial lookup takes a few seconds, gives you a dated record that you checked, and catches guns that have already been reported.",
 
  benefits: [
- "Free gun serial number lookup - 2 free searches",
- "Search stolen firearms databases",
- "Verify any handgun, rifle, or shotgun",
- "3-second instant results",
- "Works for all manufacturers (Glock, S&W, Ruger, etc.)",
- "Mobile app for lookups at gun shows",
- "Protect from federal criminal charges",
- "More databases than any competitor"
+ "2 free checks with a free account, no credit card",
+ "242,839 police firearm theft and loss reports from 33 states and Washington, DC",
+ "Live Ohio law-enforcement records",
+ "Flags serials that look altered or obliterated",
+ "Works for handguns, rifles and shotguns from any maker",
+ "Results in a few seconds, with every source listed",
+ "Free installable web app at safeorstolen.com/app for checks at a gun show",
+ "Never shows owner names"
  ],
 
  process: [
  "Locate the serial number on the firearm",
- "For handguns: Check frame near trigger guard, under slide, on barrel",
- "For rifles: Check receiver (AR-15: lower receiver)",
- "For shotguns: Check receiver or barrel",
- "Enter the complete serial number into our lookup tool",
- "Review results - if stolen, walk away from the transaction"
+ "For pistols: check the frame near the trigger guard; some repeat it on the slide or barrel",
+ "For AR-15s: check the lower receiver",
+ "For other rifles and shotguns: check the receiver",
+ "Enter the complete serial number into the lookup",
+ "Read the result and the sources searched; if it's reported stolen, walk away and call police"
  ],
 
  faqs: [
  {
  question: "How do I find a gun's serial number for lookup?",
- answer: "Serial number locations vary by firearm type: Handguns/Pistols: On the frame near the trigger guard, under the slide, or on the barrel. Revolvers: On the frame, typically visible when cylinder is open. AR-15s: On the lower receiver. Bolt-action rifles: On the receiver. Shotguns: On the receiver or barrel. If you can't find it, ask the seller to show you - a legitimate seller has nothing to hide."
+ answer: "On pistols it's usually on the frame near the trigger guard, and some makers repeat it on the slide or barrel. Revolvers have it on the frame, often visible with the cylinder open. AR-15s have it on the lower receiver. Bolt-action rifles and shotguns have it on the receiver. If a seller won't show you the serial, don't buy the gun."
  },
  {
  question: "Is gun serial number lookup really free?",
- answer: "Yes, SafeOrStolen offers 2 free gun serial number lookups. This covers most individual buyers making one or two purchases. Gun dealers and high-volume buyers can upgrade to unlimited lookups. Given that possessing a stolen gun carries up to 10 years federal prison time, free verification is essential protection."
+ answer: "Your first 2 checks on SafeOrStolen (safeorstolen.com/gun-serial-number-lookup) are free with a free account and no credit card. After that it's $0.99 a check or $10 a month for unlimited checks. Dealers and pawn shops checking many guns can use bulk checking at safeorstolen.com/bulk-check."
  },
  {
  question: "What databases are searched in a gun serial lookup?",
- answer: "We search stolen firearms databases and validate the serial number for signs of obliteration or alteration."
+ answer: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years covered vary by state), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. It also flags serials that look altered or obliterated. It does not search NCIC or ATF eTrace."
  },
  {
  question: "Can I look up a gun serial number before a gun show?",
- answer: "Yes! This is exactly what we recommend. Have the seller provide the serial number before you meet. Run our free gun serial number lookup and only proceed if it's clean. Use our mobile app at the gun show for on-the-spot verification. Private sales at gun shows are where many stolen guns are sold."
+ answer: "Yes, and that's the best time. Ask the seller for the serial before you meet and run it on SafeOrStolen. At the show, add the free web app at safeorstolen.com/app to your home screen so you can check a serial on the spot in a few seconds."
  },
  {
  question: "What if the gun serial number lookup shows stolen?",
- answer: " You may help recover stolen property and prevent others from being victimized."
+ answer: "Don't buy the gun and don't confront the seller. Leave, then call your local police non-emergency line with the serial, make, model and where you saw it. Police can confirm the report in NCIC, which the public can't search. Your saved SafeOrStolen check shows what you found and when."
  },
  {
  question: "Do gun stores do serial number lookups?",
- answer: "Licensed FFLs (Federal Firearms Licensees) run background checks and have access to stolen gun databases. However, private sales, gun shows, and online transactions often don't involve FFLs. This is why you need to do your own gun serial number lookup for any private purchase."
+ answer: "A licensed dealer runs a background check on the buyer through NICS. That check is about the person, not whether the gun is stolen. For a private sale, running the serial yourself is the practical way to see if it's been reported."
  },
  {
  question: "Can I look up who a gun is registered to?",
- answer: "No. There is no national gun registry in the United States. Gun serial number lookup only shows whether a firearm has been reported stolen, not ownership information."
+ answer: "No. There's no national gun registry in the United States, and SafeOrStolen never shows owner names. A serial lookup only tells you whether the gun appears in the theft records searched."
  }
  ]
  }}

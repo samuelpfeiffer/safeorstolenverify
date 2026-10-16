@@ -45,7 +45,7 @@ const FreeTools = () => {
           </ul>
           
           <h2>Need Full Stolen Check?</h2>
-          <p>For complete stolen, lost, and blacklist verification, use SafeOrStolen's full verification service. 2 free checks included.</p>
+          <p>A full SafeOrStolen check searches theft reports and public web results, with a paid blacklist check for phones. A free account includes 2 checks.</p>
         </div>
       </noscript>
       <div className="min-h-screen bg-background pt-20">
@@ -97,8 +97,9 @@ const FreeTools = () => {
                   <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h2 className="text-2xl font-bold mb-2">Need Full Stolen Check?</h2>
                   <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                    Format validation only checks structure. For complete stolen, lost, and 
-                    blacklist verification across multiple databases, use our full service.
+                    Format validation only checks that the number is built correctly. A full
+                    check searches SafeOrStolen theft reports and public web results, and a
+                    paid blacklist check is available for phones.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
                     <Button asChild size="lg">
@@ -108,7 +109,7 @@ const FreeTools = () => {
                     </Button>
                     <Button asChild variant="outline" size="lg">
                       <Link to="/app">
-                        Download Mobile App
+                        Get the Free Web App
                       </Link>
                     </Button>
                   </div>

@@ -35,7 +35,7 @@ const STATES: StateEntry[] = [
   { state: 'Kansas', level: 'State + local', authority: 'Office of the State Bank Commissioner — Consumer Credit Commissioner, plus city licenses' },
   { state: 'Kentucky', level: 'State + local', authority: 'Department of Financial Institutions plus local business licenses' },
   { state: 'Louisiana', level: 'State + local', authority: 'Office of Financial Institutions, plus parish/municipal licenses', statute: 'Pawnshop Act (RS 37:1781 et seq.)' },
-  { state: 'Maine', level: 'Local only', authority: 'Local authorities', note: 'No comprehensive state statute.' },
+  { state: 'Maine', level: 'Local only', authority: 'Local authorities', note: 'No full state pawnshop statute; local rules apply.' },
   { state: 'Maryland', level: 'State + local', authority: 'Commissioner of Financial Regulation', note: 'Baltimore City and counties add local licenses.' },
   { state: 'Massachusetts', level: 'Local (under state statute)', authority: 'Municipal licensing authorities', statute: 'MGL Chapter 140, §§70–89' },
   { state: 'Michigan', level: 'State', authority: 'Department of Insurance and Financial Services', holding: '3 months minimum' },

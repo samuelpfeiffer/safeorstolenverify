@@ -13,13 +13,14 @@ import {
   Camera,
 } from "lucide-react";
 
+/** Oct 8 2026: audited by hand for "craigslist stolen items". Removed mobile-app and "3 seconds" claims. */
 const VerifyCraigslistItems = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     name: "How to Verify Craigslist Items Before Meeting",
     description:
-      "Complete guide to verifying items on Craigslist to avoid stolen goods and scams.",
+      "Step-by-step guide to checking Craigslist items for theft reports before you meet the seller.",
     step: [
       {
         "@type": "HowToStep",
@@ -29,7 +30,7 @@ const VerifyCraigslistItems = () => {
       {
         "@type": "HowToStep",
         name: "Verify with SafeOrStolen",
-        text: "Use SafeOrStolen's free verification tool to check if the item is reported stolen.",
+        text: "Enter the number at SafeOrStolen (2 free checks) to search theft reports and public web listings for it.",
       },
       {
         "@type": "HowToStep",
@@ -39,7 +40,7 @@ const VerifyCraigslistItems = () => {
       {
         "@type": "HowToStep",
         name: "Verify the number matches in person",
-        text: "Before paying, confirm the serial number matches what was provided and re-verify on your phone.",
+        text: "Before paying, confirm the number on the item matches the one the seller sent you.",
       },
     ],
   };
@@ -48,7 +49,7 @@ const VerifyCraigslistItems = () => {
     <>
       <PageSEO
         title="Craigslist Item Verification Guide - Avoid Stolen Goods | SafeOrStolen"
-        description="Learn how to verify Craigslist items before meeting sellers. Protect yourself from stolen electronics, phones, and vehicles. Free IMEI and VIN checks."
+        description="How to check a Craigslist item for theft reports before meeting the seller: get the IMEI, VIN or serial, check it, and match it in person. 2 free checks."
         keywords="Craigslist verification, Craigslist stolen items, verify Craigslist phones, Craigslist scam protection, Craigslist IMEI check"
         structuredData={structuredData}
       />
@@ -64,8 +65,7 @@ const VerifyCraigslistItems = () => {
               How to Verify Craigslist Items Before Meeting
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Craigslist is full of great deals—but also stolen goods. Learn how
-              to protect yourself with free verification before every meetup.
+              Craigslist has good deals and some stolen goods. Get the serial number first, check it, and match it at the meetup.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">
@@ -77,7 +77,7 @@ const VerifyCraigslistItems = () => {
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link to="/app">
                   <Smartphone className="w-5 h-5" />
-                  Get the Mobile App
+                  Install the free web app
                 </Link>
               </Button>
             </div>
@@ -117,8 +117,7 @@ const VerifyCraigslistItems = () => {
                   Free Verification
                 </h3>
                 <p className="text-muted-foreground">
-                  SafeOrStolen lets you verify items for free before you
-                  meet—takes 3 seconds.
+                  Your first 2 SafeOrStolen checks are free, and each one takes a few seconds.
                 </p>
               </div>
             </div>
@@ -224,12 +223,10 @@ const VerifyCraigslistItems = () => {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Verify in Person with the App
+                        Match the Number in Person
                       </h3>
                       <p className="text-muted-foreground mb-4">
-                        At the meetup, use SafeOrStolen's mobile app to scan the
-                        item and confirm the serial number matches what was
-                        provided.
+                        At the meetup, find the number on the item itself and make sure it matches the one the seller sent. The free SafeOrStolen web app can scan a barcode with your phone camera.
                       </p>
                     </div>
                     <Camera className="w-8 h-8 text-primary flex-shrink-0" />
@@ -237,7 +234,7 @@ const VerifyCraigslistItems = () => {
                   <Button asChild variant="outline" className="gap-2">
                     <Link to="/app">
                       <Smartphone className="w-4 h-4" />
-                      Download Free App
+                      Install the free web app
                     </Link>
                   </Button>
                 </div>
@@ -253,8 +250,7 @@ const VerifyCraigslistItems = () => {
               Don't Risk It—Verify Before You Meet
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Your first 2 checks are free. Takes 3 seconds. Could save you
-              thousands.
+              Your first 2 checks are free and each takes a few seconds. It's a lot cheaper than losing what you paid.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/verify">

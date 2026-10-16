@@ -2,25 +2,27 @@ import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, MapPin, Download, Car, AlertTriangle } from 'lucide-react';
+import { Shield, MapPin, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 const StolenCheckPhiladelphia = () => {
+  // Oct 7 2026: fixed by hand. Removed theft counts and percentages we can't source, specific
+  // safe-exchange district claims, "national databases", "3 seconds" and "Download App".
   const faqs = [
     {
       question: "How do I check if a car in Philadelphia is stolen?",
-      answer: "Use SafeOrStolen's free VIN checker. Philly sees over 9,000 vehicle thefts annually, with Kia and Hyundai models being primary targets due to the 'Kia Boys' trend."
+      answer: "Enter the VIN or the Pennsylvania plate at SafeOrStolen (safeorstolen.com/stolen-check-philadelphia). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the car and lists open recalls. It doesn't search Philadelphia police records, so on a car you're serious about, also call the PPD non-emergency line with the VIN."
     },
     {
       question: "Where can I safely meet sellers in Philly?",
-      answer: "Philadelphia Police offer safe exchange zones at district headquarters. The 6th District in Center City and 35th District in Northeast are popular options."
+      answer: "Meet in a busy, well-lit public place in daylight, ideally with cameras around. Some buyers meet outside a police district headquarters; call your district first to ask whether that's welcome. Bring someone with you, and don't hand over cash until you've matched the serial, IMEI or VIN on the item to the number you checked."
     },
     {
       question: "Is the Kia Boys trend affecting Philadelphia?",
-      answer: "Yes. Philadelphia has seen a significant increase in Kia and Hyundai thefts due to the viral TikTok theft method. Always verify VIN when buying these makes."
+      answer: "Yes. Philadelphia saw a rise in thefts of older Kia and Hyundai models with a key ignition after the theft method spread on social media. If you're buying one, look for a cracked steering column cover or a damaged ignition, ask whether the anti-theft software update was installed, and run the VIN."
     },
     {
       question: "What other items are commonly stolen in Philly?",
-      answer: "Besides vehicles, catalytic converters, e-bikes, and electronics are frequently stolen. ATVs and dirt bikes are also commonly theft items in Philadelphia."
+      answer: "Besides cars, catalytic converters, e-bikes, phones, laptops, ATVs and dirt bikes get stolen and resold in Philadelphia. For a phone, check the IMEI; for a bike or laptop, the serial; for an ATV or dirt bike, the VIN. A price far below market and a seller with no receipt are the usual warning signs."
     }
   ];
 
@@ -38,7 +40,7 @@ const StolenCheckPhiladelphia = () => {
     <>
       <PageSEO
         title="Philadelphia Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="Check if items are stolen in Philadelphia. Free IMEI, VIN, and serial number verification. Philly has 9,000+ vehicle thefts annually."
+        description="Philadelphia stolen item check: run a VIN, plate, IMEI or serial in a few seconds before you buy on Marketplace, OfferUp or Craigslist. 2 free checks."
         keywords="philadelphia stolen item check, stolen car check philly, verify stolen philadelphia, VIN check philadelphia, Kia theft philly"
         canonical="/stolen-check-philadelphia"
         structuredData={faqSchema}
@@ -53,14 +55,14 @@ const StolenCheckPhiladelphia = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Philadelphia Stolen Item Check</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Philadelphia sees 9,000+ vehicle thefts annually. Verify before buying used items on Facebook Marketplace, OfferUp, or Craigslist.
+              Buying a used car, bike or phone in Philly? Check the VIN, IMEI or serial before you meet the seller. Your first 2 checks are free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">
                 <Link to="/verify"><Shield className="w-5 h-5" />Verify Item - Free</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link to="/app"><Download className="w-5 h-5" />Download App</Link>
+                <Link to="/app"><Download className="w-5 h-5" />Get the Free Web App</Link>
               </Button>
             </div>
           </div>
@@ -68,48 +70,22 @@ const StolenCheckPhiladelphia = () => {
 
         <section className="py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Philadelphia Theft Statistics</h2>
-            <div className="grid md:grid-cols-3 gap-4 mb-8">
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <Car className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-primary">9,000+</div>
-                  <div className="text-sm text-muted-foreground">Vehicle Thefts/Year</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <AlertTriangle className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-primary">Kia/Hyundai</div>
-                  <div className="text-sm text-muted-foreground">Most Targeted</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary">↑ 80%</div>
-                  <div className="text-sm text-muted-foreground">Theft Increase</div>
-                </CardContent>
-              </Card>
-            </div>
-            
             <div className="prose prose-gray dark:prose-invert max-w-none mb-8">
-              <h3>Why Verify Before Buying in Philadelphia?</h3>
+              <h2>Why Check Before Buying in Philadelphia?</h2>
               <p>
-                Philadelphia has experienced a dramatic surge in vehicle theft, largely driven by 
-                the "Kia Boys" trend that went viral on TikTok. This has made Kia and Hyundai 
-                vehicles from 2011-2021 especially vulnerable, as they lack engine immobilizers.
+                Philadelphia saw a surge in car thefts tied to the "Kia Boys" trend, which targets older Kia and Hyundai
+                models that use a key ignition and lack an engine immobilizer. Those cars, along with e-bikes, phones and
+                catalytic converters, turn up for sale on Facebook Marketplace, OfferUp and Craigslist.
               </p>
               <p>
-                The city's active secondhand market means stolen goods frequently appear for sale. 
-                SafeOrStolen's free verification helps you avoid purchasing stolen vehicles or 
-                devices. Our check takes just 3 seconds and searches against national databases.
+                A SafeOrStolen check searches SafeOrStolen theft reports and public web results for the VIN, plate, IMEI or
+                serial, and the result comes back in a few seconds with every source listed. Bike checks also search a
+                national stolen-bicycle registry. It doesn't search PPD, PennDOT or NCIC records.
               </p>
-              <h3>PPD Safe Exchange Zones</h3>
+              <h3>At the meetup</h3>
               <p>
-                The Philadelphia Police Department offers safe exchange zones at district 
-                headquarters throughout the city. The 6th District in Center City and 35th 
-                District in Northeast Philly are popular options. Always verify items with 
-                SafeOrStolen before completing any transaction, even at safe zones.
+                Meet somewhere busy and public, in daylight. Read the number off the item yourself and make sure it matches
+                what you checked. On a Kia or Hyundai, look at the steering column and ignition before anything else.
               </p>
             </div>
           </div>
@@ -136,7 +112,7 @@ const StolenCheckPhiladelphia = () => {
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Verify Before You Buy in Philly</h2>
-            <p className="mb-6 opacity-90">Free verification takes just 3 seconds. Protect yourself today.</p>
+            <p className="mb-6 opacity-90">A check takes a few seconds, and your first 2 are free.</p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify Item Free</Link>
             </Button>

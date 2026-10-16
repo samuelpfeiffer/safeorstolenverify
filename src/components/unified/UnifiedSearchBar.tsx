@@ -96,7 +96,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
  value={input}
  onChange={(e) => setInput(e.target.value)}
  onKeyPress={handleKeyPress}
- placeholder="👉 Enter your IMEI, VIN, or Serial Number here..."
+ placeholder="Enter your IMEI, VIN or serial number"
  className="h-16 text-lg px-6 bg-card border-4 border-primary focus:border-primary focus:ring-4 focus:ring-primary/30 transition-all placeholder:text-muted-foreground font-medium shadow-xl hover:shadow-2xl animate-in min-h-[64px]"
  disabled={isLoading}
  autoComplete="off"
@@ -158,7 +158,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
  Stolen-Item Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Checks our own stolen-item reports, public web results and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
+ Searches SafeOrStolen theft reports and public web results, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
  </p>
  </div>
 
@@ -169,7 +169,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
  value={input}
  onChange={(e) => setInput(e.target.value)}
  onKeyPress={handleKeyPress}
- placeholder="👉 Type VIN, IMEI, License Plate, or Serial Number here..."
+ placeholder="Type a VIN, IMEI, license plate or serial number"
  className="pl-12 h-14 text-base bg-card border-3 border-primary/60 focus:border-primary focus:ring-4 focus:ring-primary/20 hover:border-primary/80 transition-all shadow-lg hover:shadow-xl placeholder:font-medium min-h-[56px]"
  disabled={isLoading}
  autoComplete="off"
@@ -223,11 +223,11 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
  />
 
  <div className="flex flex-wrap gap-2 text-xs">
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚗 Vehicles (VIN)</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">📱 Phones (IMEI)</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚲 Bikes</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">💻 Electronics</span>
- <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🔑 Any Serial #</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Vehicles (VIN)</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Phones (IMEI)</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Bikes</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Electronics</span>
+ <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">Any Serial #</span>
  </div>
  </div>
  </Card>

@@ -4,7 +4,7 @@ const BicycleSerialCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen"
- metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. $0.99/check or $10/month unlimited. Instant results."
+ metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. 2 free checks, then $0.99 a check. Results in a few seconds."
  h1="Check if Bicycle is Stolen - Serial Number Verification"
  keywords={[
  'check if bike is stolen',
@@ -25,7 +25,7 @@ const BicycleSerialCheck = () => {
  heroSubtitle="Before buying a used bicycle or e-bike, search the serial number against our theft reports, public web results, and a national stolen-bicycle registry. 2 free checks, then $0.99 a check or $10 a month unlimited."
  stats={[
  { value: "2", label: "Free Checks" },
- { value: "3 sec", label: "Verification Time" },
+ { value: "Seconds", label: "To a Result" },
  { value: "$0.99", label: "Single Check" },
  { value: "$10/mo", label: "Unlimited Checks" }
  ]}
@@ -35,19 +35,19 @@ const BicycleSerialCheck = () => {
  "Find the serial number: Usually stamped under the bottom bracket (where the pedals connect), on the head tube, or rear dropout",
  "Enter the serial number into our verification tool",
  "We search SafeOrStolen theft reports, public web results, and a national stolen-bicycle registry in a few seconds",
- "Get results in 3 seconds - see if the bicycle is CLEAR or REPORTED STOLEN"
+ "Read the result: reported stolen, possible match, or no report found in the records searched"
  ]}
- howItWorksDescription="Besides our own reports and public web results, we search a national stolen-bicycle registry. We don't search manufacturer registries. For e-bikes, we also check motor and battery serial numbers where applicable."
+ howItWorksDescription="Besides our own reports and public web results, we search a national stolen-bicycle registry. We don't search manufacturer registries or police systems. For e-bikes, run the frame serial; you can also run the motor or battery serial as a separate check."
  whyVerifyTitle="Why Check Before Buying a Used Bike?"
  whyVerifyContent="Stolen bikes often end up for sale on the used market. Here's why a check is worth it:"
  whyVerifyBenefits={[
  "High-end bikes (Trek, Specialized, Giant, Cannondale) are prime targets",
  "E-bikes are expensive, which makes them frequent targets",
- "Police regularly check serial numbers and will confiscate stolen bikes",
- "Possession of stolen property is a criminal offense",
- "No warranty or insurance coverage for stolen bicycles",
+ "Police can take a stolen bike back and return it to its owner, even if you paid for it",
+ "Knowingly buying stolen property is a crime, and ignoring obvious warning signs can count against you",
+ "A dated check saved to your account shows you looked before you paid",
  "Owners often register stolen bikes with a national stolen-bicycle registry, so a serial can come back as reported",
- "You have zero legal recourse if you unknowingly buy stolen property"
+ "Getting your money back from a private seller after the fact is often hard"
  ]}
  useCases={[
  {
@@ -70,7 +70,7 @@ const BicycleSerialCheck = () => {
  },
  {
  question: "Can I check e-bike serial numbers?",
- answer: "Yes! E-bikes often have multiple serial numbers - one on the frame, one on the motor, and one on the battery. We recommend checking the frame serial number first, as this is what's typically registered in theft databases."
+ answer: "Yes. E-bikes often have multiple serial numbers - one on the frame, one on the motor, and one on the battery. We recommend checking the frame serial number first, as this is what's typically registered in theft databases."
  },
  {
  question: "What brands of bikes can I verify?",
@@ -90,7 +90,7 @@ const BicycleSerialCheck = () => {
  },
  {
  question: "What if the bike is reported stolen?",
- answer: "Do NOT purchase the bicycle. Walk away immediately. You can report the listing to the marketplace. Consider notifying local police. The original owner may be actively looking for their bike."
+ answer: "Don't buy the bicycle. Walk away immediately. You can report the listing to the marketplace. Consider notifying local police. The original owner may be actively looking for their bike."
  },
  {
  question: "Should I register my own bike?",
@@ -98,7 +98,7 @@ const BicycleSerialCheck = () => {
  }
  ]}
  ctaTitle="Don't Buy a Stolen Bicycle"
- ctaDescription="A free serial number check takes 3 seconds and protects you from buying stolen property."
+ ctaDescription="A serial number check takes a few seconds, and your first 2 checks are free."
  relatedLinks={[
  { title: "E-Bike Verification", href: "/check-ebike" },
  { title: "Craigslist Safety", href: "/craigslist-safety-verification" },

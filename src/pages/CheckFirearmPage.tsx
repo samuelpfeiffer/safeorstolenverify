@@ -2,15 +2,19 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Shield, CheckCircle, AlertTriangle, Search, ArrowRight, Scale, FileText } from 'lucide-react';
+import { Shield, CheckCircle, AlertTriangle, ArrowRight, Scale, XCircle } from 'lucide-react';
 
+/** Oct 8 2026 audit: copy rewritten by hand. Removed the supplier name and "AI analysis" from the
+ * meta description, the invented "32,000 firearms" registry and insurer-claims source, the "$1,500"
+ * figure, "under 3 seconds", "legal protection" claims, and the wrong statement that 18 U.S.C. 922
+ * applies even if you didn't know the gun was stolen. */
 export default function CheckFirearmPage() {
   return (
     <>
       <PageSEO
-        title="Check If Firearm Is Stolen - Free Gun Serial Number Lookup | SafeOrStolen"
- description="Verify if a gun is stolen before buying. Free firearm serial number check using SafeOrStolen reports, public web data, AI analysis, and HotGunz to help determine if a firearm has been reported stolen. Protect yourself when purchasing firearms."
-        keywords="check if gun stolen, firearm serial number lookup, stolen gun check, 50-State Firearm Reports search, verify firearm, gun serial lookup"
+        title="Check If a Gun Is Stolen - Free Gun Serial Number Lookup | SafeOrStolen"
+        description="Check a gun's serial number before you buy: SafeOrStolen searches police firearm theft and loss reports from 33 states and DC, live Ohio records and its own theft reports."
+        keywords="check if gun stolen, firearm serial number lookup, stolen gun check, verify firearm, gun serial lookup"
         canonical="https://safeorstolen.com/check-firearm"
       />
       <div className="min-h-screen bg-background pt-20">
@@ -20,10 +24,10 @@ export default function CheckFirearmPage() {
             <div className="max-w-4xl mx-auto text-center">
               <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Check If Firearm Is Stolen
+                Check If a Gun Is Stolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Verify any gun's serial number against stolen firearms databases before purchasing. Protect yourself from legal consequences.
+                Type the serial number from the frame or receiver. In a few seconds SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results, and flags serials that look altered.
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">Check Firearm Serial Now</Link>
@@ -35,14 +39,14 @@ export default function CheckFirearmPage() {
         {/* Why Check */}
         <section className="py-16 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Verify Firearm Serial Numbers</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Why Check a Gun's Serial Number</h2>
             <div className="bg-destructive/10 border border-destructive/20 p-6 rounded-lg mb-8">
               <div className="flex items-start gap-4">
                 <AlertTriangle className="h-8 w-8 text-destructive flex-shrink-0" />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Federal Crime: 18 U.S.C. § 922</h3>
+                  <h3 className="font-bold text-lg mb-2">Federal law: 18 U.S.C. § 922(j)</h3>
                   <p className="text-muted-foreground">
-                    Possessing a stolen firearm is a federal felony punishable by up to 10 years in prison—even if you didn't know it was stolen. Private party purchases don't require background checks in many states, making verification essential.
+                    It is a federal crime to receive or possess a stolen firearm when you know, or have reasonable cause to believe, that it was stolen. A rock-bottom price, a seller with no story, or a scratched serial can be that reasonable cause. Many states don't require a background check on private sales, so the buyer is often the only one checking.
                   </p>
                 </div>
               </div>
@@ -51,18 +55,18 @@ export default function CheckFirearmPage() {
               <Card>
                 <CardContent className="p-6">
                   <Scale className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-3">Legal Protection</h3>
+                  <h3 className="text-xl font-bold mb-3">A Dated Record of Your Check</h3>
                   <p className="text-muted-foreground">
-                    A verification record proves you took reasonable steps to ensure the firearm wasn't stolen—critical if law enforcement later traces the gun.
+                    Every check is saved to your account with the date. It shows what you checked and what came back. It is not a legal defense and not a police clearance.
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6">
                   <Shield className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-3">Avoid Seizure</h3>
+                  <h3 className="text-xl font-bold mb-3">Don't Lose the Gun and the Money</h3>
                   <p className="text-muted-foreground">
-                    Stolen firearms are confiscated with no compensation. Lose a $1,500 handgun because you didn't spend 30 seconds checking.
+                    If a gun you bought turns out to be stolen, police can take it back for the owner and you are left chasing the seller for your money.
                   </p>
                 </CardContent>
               </Card>
@@ -74,20 +78,20 @@ export default function CheckFirearmPage() {
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Where to Find Firearm Serial Number</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">Where to Find a Gun's Serial Number</h2>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  Federal law (18 U.S.C. § 923) requires all firearms manufactured after 1968 to have serial numbers engraved on the frame/receiver.
+                  Federal law requires licensed manufacturers and importers to put a serial number on the frame or receiver of every firearm they make or import.
                 </p>
                 <h3>Common Locations by Firearm Type</h3>
                 <ul>
-                  <li><strong>Handguns:</strong> Frame (usually near trigger guard), barrel, slide</li>
-                  <li><strong>Rifles:</strong> Receiver (lower part where trigger mechanism is housed)</li>
-                  <li><strong>Shotguns:</strong> Receiver, sometimes barrel</li>
-                  <li><strong>AR-15 style:</strong> Lower receiver</li>
+                  <li><strong>Handguns:</strong> on the frame, often near the trigger guard or under the slide; some makers repeat it on the slide and barrel</li>
+                  <li><strong>Rifles:</strong> on the receiver, usually on the side or underneath</li>
+                  <li><strong>Shotguns:</strong> on the receiver, sometimes on the barrel as well</li>
+                  <li><strong>AR-15 style:</strong> on the lower receiver, near the magazine well</li>
                 </ul>
                 <div className="bg-muted p-4 rounded-lg my-4">
-                  <p className="mb-0"><strong>Warning:</strong> If the serial number appears scratched off, filed down, or altered, the firearm may have been used in a crime. Do not purchase—possession of a firearm with obliterated serial is a federal crime.</p>
+                  <p className="mb-0"><strong>Warning:</strong> If the serial looks scratched, ground off, or re-stamped, don't buy the gun. Possessing a firearm with an obliterated serial number is a federal crime under 18 U.S.C. § 922(k).</p>
                 </div>
               </div>
             </div>
@@ -97,34 +101,28 @@ export default function CheckFirearmPage() {
         {/* What We Check */}
         <section className="py-16 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Databases We Check</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">What a Gun Check Searches</h2>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
-                <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold">Nationwide Stolen Firearms Database</h3>
-                  <p className="text-sm text-muted-foreground">Community-maintained registry of roughly 32,000 stolen firearms reported by theft victims</p>
+              {[
+                { name: 'Police firearm theft and loss reports', desc: '242,839 reports from 33 states and Washington, DC, filed through 2017; the years covered vary by state' },
+                { name: 'Live Ohio law-enforcement records', desc: 'current stolen-gun records from Ohio' },
+                { name: 'SafeOrStolen theft reports', desc: 'guns that owners have reported stolen on SafeOrStolen' },
+                { name: 'Public web results', desc: 'listings and posts online that mention the serial' },
+                { name: 'Serial number check', desc: 'flags serials that look altered, obliterated or like placeholders' },
+              ].map(src => (
+                <div key={src.name} className="flex items-start gap-4 bg-card p-4 rounded-lg border">
+                  <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold">{src.name}</h3>
+                    <p className="text-sm text-muted-foreground">{src.desc}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
-                <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+                <XCircle className="h-6 w-6 text-muted-foreground flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold">Serial Number Integrity Check</h3>
-                  <p className="text-sm text-muted-foreground">Detects obliterated, altered, or placeholder serial numbers — a federal felony indicator</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
-                <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold">theft reports</h3>
-                  <p className="text-sm text-muted-foreground">Firearms with theft claims paid by insurers</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
-                <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold">Community Reports</h3>
-                  <p className="text-sm text-muted-foreground">User-submitted stolen firearm reports (verified before inclusion)</p>
+                  <h3 className="font-bold">Not searched</h3>
+                  <p className="text-sm text-muted-foreground">NCIC, ATF eTrace and pawn or insurer databases. For an official answer, ask a local police department or an FFL.</p>
                 </div>
               </div>
             </div>
@@ -135,27 +133,27 @@ export default function CheckFirearmPage() {
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Verification Process</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">How to Check</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 bg-card p-6 rounded-lg border">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
                   <div>
                     <h3 className="font-bold text-lg">Get the Serial Number</h3>
-                    <p className="text-muted-foreground">Ask the seller for the serial before meeting. Photograph it when inspecting the firearm.</p>
+                    <p className="text-muted-foreground">Ask the seller for a clear photo of the serial before you meet, then compare it to the gun in person.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 bg-card p-6 rounded-lg border">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
                   <div>
                     <h3 className="font-bold text-lg">Run the Check</h3>
-                    <p className="text-muted-foreground">Enter the serial number in SafeOrStolen. Results in under 3 seconds.</p>
+                    <p className="text-muted-foreground">Enter the serial on SafeOrStolen. The result comes back in a few seconds as "reported stolen", "possible match" or "no report found in the records searched", with every source listed.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 bg-card p-6 rounded-lg border">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
                   <div>
-                    <h3 className="font-bold text-lg">Save Your Receipt</h3>
-                    <p className="text-muted-foreground">Keep the verification receipt as proof of due diligence. This is your legal protection.</p>
+                    <h3 className="font-bold text-lg">Keep the Record</h3>
+                    <p className="text-muted-foreground">The check is saved to your account with the date. If you want a link to share, add the optional $1.99 verification certificate, free for monthly members.</p>
                   </div>
                 </div>
               </div>
@@ -170,15 +168,15 @@ export default function CheckFirearmPage() {
             <div className="space-y-6">
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-bold text-lg mb-2">Can I check any firearm type?</h3>
-                <p className="text-muted-foreground">Yes—handguns, rifles, shotguns, and any firearm with a serial number can be verified.</p>
+                <p className="text-muted-foreground">Yes. Handguns, rifles and shotguns can all be checked by serial number on SafeOrStolen (safeorstolen.com/check-firearm). Enter the serial exactly as stamped, including letters and dashes.</p>
               </div>
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-bold text-lg mb-2">Is this a background check?</h3>
- <p className="text-muted-foreground">No. We check if the firearm is stolen, not the buyer's eligibility. For eligibility checks, contact an FFL dealer.</p>
+                <p className="text-muted-foreground">No. It checks whether the gun turns up in theft records, not whether the buyer can legally own it. For a background check, do the transfer through an FFL dealer.</p>
               </div>
               <div className="bg-card p-6 rounded-lg border">
-                <h3 className="font-bold text-lg mb-2">What if the serial isn't in any database?</h3>
-                <p className="text-muted-foreground">A "not found" result means it hasn't been reported stolen to databases we check. It's a good sign, but verify the seller's story and paperwork too.</p>
+                <h3 className="font-bold text-lg mb-2">What if the serial isn't found?</h3>
+                <p className="text-muted-foreground">"No report found in the records searched" means the serial didn't appear in the sources listed with your result. Not every theft is reported, and the police reports cover 33 states and DC, so still check the seller's story and paperwork.</p>
               </div>
             </div>
           </div>
@@ -187,9 +185,9 @@ export default function CheckFirearmPage() {
         {/* CTA */}
         <section className="py-16 bg-primary/5">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Check Before You Buy or Sell</h2>
+            <h2 className="text-3xl font-bold mb-4">Check Before You Buy</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Verify firearm serial numbers in seconds. Protect yourself from federal charges.
+              A gun serial check takes a few seconds. Your first 2 checks are free with a free account.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

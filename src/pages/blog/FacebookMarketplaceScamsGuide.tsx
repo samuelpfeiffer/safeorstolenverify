@@ -2,10 +2,10 @@ import { Link } from '@/lib/router-compat';
 import { SEOHead } from '@/components/seo/SEOHead';
 
 const FAQ_ITEMS = [
-  { q: 'What is the most common Facebook Marketplace scam in 2026?', a: 'The most common scam is selling stolen electronics — particularly iPhones, laptops, and gaming consoles — at below-market prices. Scammers list items they don\'t own or that are blacklisted, pocket the cash, and disappear. In 2025, the FBI IC3 reported over $1.2 billion in losses from online marketplace fraud.' },
-  { q: 'How can I tell if a Facebook Marketplace listing is a scam?', a: 'Red flags include: price 30%+ below market value, new seller account with no history, refusal to meet in a public place, pressure to pay via Zelle/Venmo/Cash App (no buyer protection), blurry or stock photos, and unwillingness to let you inspect or verify the item before purchase.' },
+  { q: 'What is the most common Facebook Marketplace scam in 2026?', a: 'The most common scam is selling stolen electronics — particularly iPhones, laptops, and gaming consoles — at below-market prices. Scammers list items they don\'t own or that are blacklisted, pocket the cash, and disappear. The other big one is the deposit scam: the seller asks you to send money to "hold" an item that never shows up.' },
+  { q: 'How can I tell if a Facebook Marketplace listing is a scam?', a: 'Red flags include: a price far below what the same item sells for used, new seller account with no history, refusal to meet in a public place, pressure to pay via Zelle/Venmo/Cash App (no buyer protection), blurry or stock photos, and unwillingness to let you inspect or verify the item before purchase.' },
   { q: 'Can I check if a phone listed on Facebook Marketplace is stolen?', a: 'Yes. Ask the seller for the IMEI number (dial *#06# on the phone). Then check it on SafeOrStolen, which shows the make and model from the IMEI and searches its own theft reports and public web results. A carrier blacklist check is available as a paid check. A phone with a reported stolen IMEI is often added to a carrier blacklist, making it unusable on major carriers. You can also ask the seller which carrier the phone was originally activated with, and contact that carrier to verify its status.' },
-  { q: 'What happens if I accidentally buy a stolen item on Facebook Marketplace?', a: 'If law enforcement identifies the item as stolen, they will seize it — and you receive zero compensation. In most U.S. states, possessing stolen property (even unknowingly) can result in misdemeanor charges. Under 18 U.S.C. § 2315, knowingly receiving stolen goods worth $5,000+ is a federal offense carrying up to 10 years in prison.' },
+  { q: 'What happens if I accidentally buy a stolen item on Facebook Marketplace?', a: 'If law enforcement identifies the item as stolen, they can take it back for its owner, and the money you paid is usually gone unless you can recover it from the seller. Buying something you had no reason to think was stolen is generally not a crime, but a deal that looks too good to be true can be used as evidence that you should have known. Keep the listing, messages and payment record.' },
   { q: 'Does Facebook Marketplace have buyer protection?', a: 'Facebook offers limited Purchase Protection only for items bought with checkout on Facebook (not local pickup cash deals). Most person-to-person transactions have zero protection. If you pay with Zelle, Venmo, or cash, there is no recourse if the item is stolen or defective.' },
   { q: 'How do I verify a car listed on Facebook Marketplace?', a: 'Ask for the VIN (Vehicle Identification Number) — visible on the dashboard through the windshield or on the driver\'s door jamb. Run it through SafeOrStolen to decode the year, make and model, see open safety recalls, and check SafeOrStolen\'s theft reports and public web results (Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records). Never buy a car without a VIN check.' },
   { q: 'What should I do if I suspect a Facebook Marketplace listing is selling stolen goods?', a: 'Do not confront the seller. Report the listing to Facebook using the "Report" button. If you have evidence (like a flagged IMEI or VIN), file a report with your local police department and include the SafeOrStolen verification result as documentation.' },
@@ -22,7 +22,7 @@ const FacebookMarketplaceScamsGuide = () => {
       "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
       "publisher": { "@type": "Organization", "name": "SafeOrStolen", "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" } },
       "datePublished": "2026-03-02",
-      "dateModified": "2026-03-02",
+      "dateModified": "2026-10-07",
       "mainEntityOfPage": "https://safeorstolen.com/blog/facebook-marketplace-scams-guide"
     },
     {
@@ -67,7 +67,7 @@ const FacebookMarketplaceScamsGuide = () => {
         keywords="facebook marketplace scams, facebook marketplace stolen goods, how to avoid scams on facebook marketplace, facebook marketplace red flags, buying stolen phone facebook"
         ogType="article"
         publishedTime="2026-03-02"
-        modifiedTime="2026-03-02"
+        modifiedTime="2026-10-07"
         schemaJson={schemaJson}
       />
 
@@ -96,7 +96,7 @@ const FacebookMarketplaceScamsGuide = () => {
         {/* Speakable summary */}
         <div className="speakable-summary bg-destructive/10 border border-destructive/30 rounded-2xl p-6 mb-10">
           <p className="text-foreground font-semibold text-lg leading-relaxed">
-            Over $1.2 billion was lost to online marketplace fraud in 2025 (FBI IC3). Facebook Marketplace — with 1 billion monthly users — is the #1 platform for reselling stolen goods. This guide shows you exactly how to spot scams, verify items before buying, and protect yourself from purchasing stolen property.
+            Anyone with a Facebook account can list something on Marketplace, with no ID check and no serial number required. That makes it an easy place to sell stolen goods. This guide shows you the 12 red flags to watch for, how to check a phone, car or serial number before you pay, and what to do if something looks wrong.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ const FacebookMarketplaceScamsGuide = () => {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Why Facebook Marketplace Is a Hotbed for Stolen Goods</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Facebook Marketplace has become the largest peer-to-peer selling platform in the United States, surpassing Craigslist, OfferUp, and Letgo combined. With over 1 billion monthly active users and minimal seller verification requirements, it's also become the preferred channel for offloading stolen property. Unlike eBay (which requires seller ID verification and offers robust buyer protection) or StockX (which authenticates items), Facebook Marketplace allows anyone to list anything with just a Facebook account — no identity verification, no item authentication, and no mandatory serial number disclosure.
+            Facebook Marketplace is one of the most popular places in the US to buy and sell used things locally, and that makes it attractive to people moving stolen property. Most deals are cash, in person, with a stranger. Unlike sites that authenticate items or hold payment until delivery, Marketplace lets anyone list anything with just a Facebook account: no identity check, no item check, and no serial number required.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
             Stolen goods on Marketplace come in a few forms: items taken outright, items reported stolen in an insurance claim and then sold, and items bought with a stolen credit card and flipped for cash.
@@ -121,14 +121,14 @@ const FacebookMarketplaceScamsGuide = () => {
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">The 12 Red Flags: How to Spot a Facebook Marketplace Scam</h2>
 
           {[
-            { n: 1, title: 'Price 30%+ Below Market Value', desc: 'If a $1,200 iPhone 16 Pro Max is listed for $500, that\'s not a "great deal" — it\'s likely stolen. Thieves need to move merchandise fast and price accordingly. Check current retail prices on Apple.com, Amazon, or Swappa before assuming any deal is legitimate.' },
+            { n: 1, title: 'Price Far Below Market Value', desc: 'If a current iPhone Pro is listed for well under half what the same model sells for used, that\'s not a "great deal" — it\'s a warning. Thieves need to move things fast and price them to sell. Look up what the same model sells for used on other listings before you get excited.' },
             { n: 2, title: 'Brand New Seller Account', desc: 'An account created days or weeks ago with zero ratings, no profile photo, and no transaction history is a major red flag. Legitimate sellers have months or years of marketplace activity. Check the "Joined" date on their profile.' },
             { n: 3, title: 'Refuses to Meet in a Public Place', desc: 'A seller who insists you come to their house, a dark parking lot, or an unfamiliar location may be setting up a robbery or avoiding surveillance cameras. Always insist on a police station lobby, bank lobby, or well-lit public space.' },
             { n: 4, title: 'Payment via Zelle, Venmo, or Wire Transfer Only', desc: 'These payment methods offer zero buyer protection. Once sent, the money is gone. Scammers prefer them because transactions cannot be reversed. Legitimate sellers accept Facebook checkout, PayPal Goods & Services, or cash at meetup.' },
             { n: 5, title: 'Won\'t Let You Inspect the Item', desc: 'If a seller refuses to let you power on a phone, start a car, or physically inspect an item before paying, walk away immediately. Stolen items often have activation locks, blacklisted IMEIs, or hidden damage that inspection would reveal.' },
             { n: 6, title: 'Stock Photos or Blurry Images', desc: 'Real sellers photograph their actual items. If the listing uses manufacturer stock photos, images clearly copied from other listings, or deliberately blurry photos that hide details, the seller may not possess the item at all.' },
             { n: 7, title: 'No Original Packaging or Receipt', desc: 'While not always suspicious on its own, the absence of original packaging, receipts, or proof of purchase combined with other red flags significantly increases the likelihood of stolen goods.' },
-            { n: 8, title: 'Pressure to Buy Immediately', desc: '"I have 10 other people interested" or "This will be gone in an hour" are classic pressure tactics designed to prevent you from doing due diligence. Take your time. No legitimate deal requires instant decisions.' },
+            { n: 8, title: 'Pressure to Buy Immediately', desc: '"I have 10 other people interested" or "This will be gone in an hour" are classic pressure tactics designed to prevent you from doing due diligence. Take your time. No honest seller needs you to decide on the spot.' },
             { n: 9, title: 'Refuses to Share IMEI/VIN/Serial Number', desc: 'This is the single biggest red flag. If a seller won\'t provide the IMEI (phones), VIN (vehicles), or serial number (electronics), they almost certainly know the item will come back flagged. Any honest seller will happily share this information.' },
             { n: 10, title: 'Multiple Identical Listings', desc: 'A seller listing 5 "brand new" iPhone 16s simultaneously is not a regular person clearing out old tech. This pattern suggests organized theft rings or receipt fraud operations.' },
             { n: 11, title: 'Ships From a Different Location', desc: 'If the seller\'s profile says Phoenix but they want to ship from Miami, the item may not exist, or it may be shipping from a fencing operation in another state.' },
@@ -153,36 +153,36 @@ const FacebookMarketplaceScamsGuide = () => {
               <li><strong className="text-foreground">1.</strong> Ask the seller for the IMEI number (they can find it by dialing *#06# or in Settings → About Phone)</li>
               <li><strong className="text-foreground">2.</strong> Go to <Link to="/verify" className="text-primary hover:underline">safeorstolen.com/verify</Link> and enter the IMEI</li>
               <li><strong className="text-foreground">3.</strong> Wait a few seconds for results from SafeOrStolen's own theft reports and public web results</li>
-              <li><strong className="text-foreground">4.</strong> If CLEAN → safe to proceed with the purchase (download the certificate for your records)</li>
-              <li><strong className="text-foreground">5.</strong> If FLAGGED → do not buy. Report the listing to Facebook and local police.</li>
+              <li><strong className="text-foreground">4.</strong> If it says no report found in the records searched, keep going: dial *#06# at the meetup to confirm it's the same phone, and watch the seller sign out of their Apple or Google account. The check is saved to your account with the date.</li>
+              <li><strong className="text-foreground">5.</strong> If it says reported stolen or possible match, don't buy. Report the listing to Facebook and call your local police non-emergency line.</li>
             </ol>
           </div>
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">The Legal Consequences of Buying Stolen Goods</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Many buyers assume that if they didn't know an item was stolen, they're legally in the clear. This is a dangerous misconception. Under most state laws, "receiving stolen property" can be charged even without proof of knowledge — prosecutors only need to show that a "reasonable person" would have known the deal was suspicious (e.g., buying a $1,200 phone for $300 from a stranger in a parking lot).
+            Receiving stolen property is a crime in every state, and many state laws cover not just buyers who knew but buyers who should have known. A brand-new phone sold for a fraction of its price by a stranger in a parking lot is the kind of detail that can be used to argue you should have known.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            At the federal level, knowingly receiving stolen goods valued at $5,000 or more is a felony under <strong>18 U.S.C. § 2315</strong>, carrying up to 10 years in prison. For firearms specifically, <strong>18 U.S.C. § 922(j)</strong> makes possession of a stolen firearm a federal felony regardless of value — and ignorance is not a defense if the serial number was removed or altered.
+            Guns carry extra federal rules. Under <strong>18 U.S.C. § 922(j)</strong> it's a federal crime to possess a firearm you know or have reason to believe is stolen, and under <strong>18 U.S.C. § 922(k)</strong> it's a federal crime to possess one with an altered or obliterated serial number.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Perhaps most importantly: if law enforcement identifies an item in your possession as stolen, <strong>they will seize it immediately</strong> — and you receive zero compensation. The item goes back to the original owner or into evidence. The money you paid is gone.
+            Even when you did nothing wrong: if police identify an item you bought as stolen, <strong>they can take it</strong> and return it to its owner. The money you paid is usually gone unless you can get it back from the seller.
           </p>
 
-          <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What Categories Are Most Commonly Stolen on Facebook Marketplace?</h2>
+          <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What to Check for the Most Common Stolen Items</h2>
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {[
-              { cat: 'Smartphones', pct: '34%', detail: 'iPhones account for 72% of stolen phones resold online' },
-              { cat: 'Laptops & Tablets', pct: '22%', detail: 'MacBooks, iPads, and Surface devices are primary targets' },
-              { cat: 'Vehicles', pct: '18%', detail: 'VIN cloning makes stolen cars harder to detect without a check' },
-              { cat: 'Gaming Consoles', pct: '11%', detail: 'PS5, Xbox Series X, and Nintendo Switch top the list' },
-              { cat: 'Power Tools', pct: '8%', detail: 'DeWalt, Milwaukee, Makita — high resale value, easy to steal' },
-              { cat: 'Bicycles', pct: '7%', detail: 'E-bikes and high-end road bikes are increasingly targeted' },
+              { cat: 'Smartphones', check: 'IMEI (dial *#06#)', detail: 'Watch for a phone that asks for someone else\'s Apple or Google account after a reset' },
+              { cat: 'Laptops & Tablets', check: 'Serial number', detail: 'Look out for Remote Management or a company login screen during setup' },
+              { cat: 'Vehicles', check: 'VIN', detail: 'Match the VIN on the dash, door jamb and title; a cloned VIN won\'t match all three' },
+              { cat: 'Gaming Consoles', check: 'Serial number', detail: 'PS5, Xbox and Switch serials are on the box and in the system settings' },
+              { cat: 'Power Tools', check: 'Serial number', detail: 'Scraped labels or engraved company names are warning signs' },
+              { cat: 'Bicycles', check: 'Frame serial', detail: 'Usually under the bottom bracket; a ground-off serial means walk away' },
             ].map(item => (
               <div key={item.cat} className="bg-card border border-border rounded-xl p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-foreground font-bold">{item.cat}</span>
-                  <span className="text-primary font-black">{item.pct}</span>
+                  <span className="text-primary font-semibold text-sm">{item.check}</span>
                 </div>
                 <p className="text-muted-foreground text-sm">{item.detail}</p>
               </div>
@@ -191,7 +191,7 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: Your Defense Against Marketplace Fraud</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Unlike CheckMEND (which is UK-focused) or IMEI.info (which shows device details, not theft reports), SafeOrStolen gives you 2 free checks with no credit card, returns results in a few seconds, and works across every item category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place — so you can scan barcodes and verify items on the spot at meetups.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. A free account comes with 2 free checks, no credit card; after that it's $0.99 a check or $10 a month for unlimited checks. Results come back in a few seconds, and the free web app at safeorstolen.com/app lets you scan a barcode or serial label with your camera at the meetup.
           </p>
 
           {/* Final CTA */}
@@ -203,7 +203,7 @@ const FacebookMarketplaceScamsGuide = () => {
                 Verify Now — Free →
               </Link>
               <Link to="/app" className="inline-flex items-center gap-2 border border-border text-foreground font-semibold px-8 py-4 rounded-xl hover:bg-muted transition-all">
-                📱 Download Mobile App
+                Get the Free Web App
               </Link>
             </div>
           </div>

@@ -11,17 +11,17 @@ const FAQS = [
  {
  question: 'Is there a free way to check if a phone is stolen?',
  answer:
- 'Yes. SafeOrStolen gives you 2 free checks with a free account — no credit card. Find the IMEI by dialing *#06#, enter it, and read the verdict in about 3 seconds.',
+ 'Yes. SafeOrStolen (safeorstolen.com/check-imei-stolen) gives you 2 free checks with a free account and no credit card. Dial *#06# on the phone to show the IMEI, enter it, and in a few seconds you see the make and model and whether the IMEI turns up in SafeOrStolen theft reports or public web results.',
  },
  {
  question: "How do I check a phone's IMEI blacklist status?",
  answer:
- 'Enter the 15-digit IMEI into SafeOrStolen. It gathers public information and our own reports to indicate if a phone has been flagged as stolen, alongside its reported-stolen status. (Blacklists are maintained by carriers, who can tell you a device\'s blacklist status.)',
+ 'Carriers keep the lost and stolen blacklist. On SafeOrStolen, the blacklist check is a paid add-on to the regular IMEI check: it returns whether the phone is listed as lost or stolen. Monthly members get up to 20 blacklist checks a month. The regular check covers SafeOrStolen theft reports and public web results only.',
  },
  {
  question: 'How can I check if a used phone is stolen before buying it?',
  answer:
- 'Read the IMEI off the actual device with *#06# (never off a box or a photo) or scan its barcode in the SafeOrStolen app, run the check, and only buy if it comes back clean. Also confirm the seller can factory-reset the phone and that it isn\u2019t locked to an account.',
+ 'Read the IMEI off the phone itself with *#06#, not off a box or a photo the seller sends. Run it on SafeOrStolen and read which sources were searched. Then watch the seller sign out of their Apple or Google account and factory-reset the phone in front of you before you pay.',
  },
  {
  question: 'Can a stolen phone still be used?',
@@ -36,7 +36,7 @@ const FAQS = [
  {
  question: 'Do I get proof that I checked the phone?',
  answer:
- 'Yes. Every SafeOrStolen check produces a downloadable PDF certificate and a shareable verification link, timestamped to the moment you ran it.',
+ 'Every SafeOrStolen check is saved to your account with the date. If you want something you can show someone else, add the optional $1.99 verification certificate: a dated record with its own link showing you checked before the sale. It\'s free for monthly members.',
  },
 ];
 
@@ -55,7 +55,7 @@ const articleSchema = {
  '@type': 'Article',
  headline: 'How to Check if a Phone Is Stolen by IMEI (Free)',
  description:
- "Check if a phone is reported stolen by its IMEI, free. SafeOrStolen checks public web results, AI analysis, and its own reports for stolen phone data in a few seconds.",
+ "Check if a phone is reported stolen by its IMEI, free. SafeOrStolen searches its own theft reports and public web results and shows the make and model in a few seconds.",
  mainEntityOfPage: 'https://safeorstolen.com/check-imei-stolen',
  author: { '@type': 'Organization', name: 'SafeOrStolen' },
  publisher: {
@@ -70,7 +70,7 @@ const CheckImeiStolenPage = () => {
  <>
  <SEOHead
  title="Free Stolen Phone IMEI Check — Verify a Phone Isn't Stolen"
- description="Check if a phone is reported stolen by its IMEI, free. SafeOrStolen checks public web results, AI analysis, and its own reports for stolen phone data in a few seconds and issues a PDF certificate."
+ description="Check if a phone is reported stolen by its IMEI, free. Dial *#06#, enter the number, and SafeOrStolen searches its theft reports and public web results in a few seconds."
  canonical="/check-imei-stolen"
  ogType="article"
  keywords="check imei stolen, free imei check, stolen phone imei check, imei blacklist check, gsma imei lookup"
@@ -86,7 +86,7 @@ const CheckImeiStolenPage = () => {
  </h1>
  <p className="mt-3 text-lg text-muted-foreground">
  Before you buy a used phone — or if you already did — you can check its IMEI against
- SafeOrStolen&apos;s stolen-item reports, public web results and AI analysis in about three seconds. Here&apos;s exactly how
+ SafeOrStolen&apos;s theft reports and public web results in a few seconds. Here&apos;s exactly how
  it works and what the result means.
  </p>
 
@@ -96,10 +96,10 @@ const CheckImeiStolenPage = () => {
  <strong className="text-primary">Quick answer:</strong> Every phone has a unique 15-digit
  IMEI number. Find it by dialing <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code>,
  then check that number against stolen-device records. <strong>SafeOrStolen</strong> checks
- the IMEI against its own stolen-item reports, public web results and AI analysis
- and returns a clear result in about 3 seconds —
- with a downloadable PDF certificate as proof. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. SafeOrStolen does not check carrier blacklists, so also ask the seller&apos;s carrier. If a phone comes back stolen, don&apos;t buy it — a blacklisted phone
- can be blocked from every network even after you&apos;ve paid.
+ the IMEI against its own theft reports and public web results, shows the phone&apos;s make
+ and model, and returns a result in a few seconds with every source listed. Carrier blacklist
+ status comes from a separate paid blacklist check. If a phone comes back stolen, don&apos;t buy it: a
+ blacklisted phone can be blocked from networks even after you&apos;ve paid.
  </p>
  </div>
 
@@ -108,14 +108,13 @@ const CheckImeiStolenPage = () => {
  <p>
  An IMEI — International Mobile Equipment Identity — is a permanent 15-digit serial number
  unique to a specific handset. Unlike a SIM or phone number, it stays with the physical
- device for life, which is exactly why industry blacklists like the GSMA blacklist are
- built around it.
+ device, which is why carrier lost and stolen blacklists are built around it.
  </p>
  <p>Three ways to find a phone&apos;s IMEI:</p>
  <ul>
  <li>
  <strong>Dial <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code></strong>{' '}
- on the phone&apos;s keypad — the IMEI appears instantly.
+ on the phone&apos;s keypad and the IMEI appears on screen.
  </li>
  <li>
  <strong>Settings → About phone</strong> (Android) or{' '}
@@ -124,9 +123,9 @@ const CheckImeiStolenPage = () => {
  <li>
  <strong>Scan the barcode</strong> on the box or SIM tray with the{' '}
  <Link to="/app" className="text-primary underline-offset-4 hover:underline">
- SafeOrStolen app
+ free SafeOrStolen web app
  </Link>{' '}
- — no typing.
+ so you don&apos;t have to type it.
  </li>
  </ul>
  <p>
@@ -152,12 +151,11 @@ const CheckImeiStolenPage = () => {
  </li>
  </ol>
  <p>
- SafeOrStolen checks <strong>its own stolen-item reports, public web results, and AI analysis</strong>,
- then returns a plain-language verdict in about 3 seconds. Phone checks also provide device details,
- but do not currently check the carrier blacklist. Every completed check can produce a
- timestamped <strong>PDF certificate</strong> and a <strong>shareable verification link</strong>,
- so you can prove the phone was checked. It also runs a scam-risk analysis on the listing
- alongside the IMEI result.
+ The regular SafeOrStolen check answers the first question from <strong>its own theft reports and
+ public web results</strong>, and shows the phone&apos;s make and model so you can match it to the
+ device. The second question is answered by the paid <strong>blacklist check</strong>. Every check is
+ saved to your account with the date, and an optional $1.99 <strong>verification certificate</strong>
+ gives you a dated record with its own link.
  </p>
 
  <h2>Check an IMEI on SafeOrStolen — step by step</h2>
@@ -165,7 +163,7 @@ const CheckImeiStolenPage = () => {
  <li>
  <strong>Get the IMEI.</strong> Dial{' '}
  <code className="rounded-[0.25rem] bg-muted px-1.5 py-0.5 text-sm">*#06#</code> on the phone, read
- it from Settings → About, or scan the barcode in the app.
+ it from Settings → About, or scan the barcode in the web app.
  </li>
  <li>
  <strong>Enter it on SafeOrStolen.</strong> Paste the 15-digit number into the{' '}
@@ -175,12 +173,12 @@ const CheckImeiStolenPage = () => {
  .
  </li>
  <li>
- <strong>Run the check.</strong> SafeOrStolen queries publicly available information and reported-stolen records
- across its multiple sources.
+ <strong>Run the check.</strong> SafeOrStolen searches its theft reports and public web results.
+ Add the paid blacklist check if you want carrier status too.
  </li>
  <li>
- <strong>Read the verdict</strong> — clean, reported stolen, or blacklisted — and save the
- PDF certificate and shareable link.
+ <strong>Read the result</strong>: reported stolen, possible match, or no report found in the
+ records searched. The check is saved to your account.
  </li>
  </ol>
 
@@ -194,19 +192,19 @@ const CheckImeiStolenPage = () => {
  </p>
  <p className="text-sm text-muted-foreground">
  Start with 2 free checks with a free account — no credit card. After that it&apos;s $0.99 per
- single check or $10/month for unlimited checks, PDF certificates, and shareable links.
- Cancel anytime.
+ single check or $10 a month for unlimited checks, up to 20 blacklist checks and free
+ certificates. Cancel anytime.
  </p>
 
  <h2>What your result means</h2>
 
  <div className="my-3 rounded-lg border border-border bg-card p-4">
  <span className="rounded-[0.25rem] px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary bg-primary/10">
- Clean
+ No report found
  </span>
  <p className="mt-2.5">
- No reported-stolen or blacklist flags found. The phone isn&apos;t in the records checked.
- Still confirm the seller can factory-reset it and that it isn&apos;t locked to an account
+ Nothing matched in the records searched. That isn&apos;t a guarantee, since not every theft gets
+ reported. Still confirm the seller can factory-reset it and that it isn&apos;t locked to an account
  (iCloud Activation Lock / Google account).
  </p>
  </div>
@@ -224,10 +222,10 @@ const CheckImeiStolenPage = () => {
 
  <div className="my-3 rounded-lg border border-border bg-card p-4">
  <span className="rounded-[0.25rem] bg-amber-500/10 px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-500">
- Blacklisted
+ Blacklisted (paid check)
  </span>
  <p className="mt-2.5">
- A carrier may have flagged the IMEI in their blacklist. The phone may work today but can be
+ The blacklist check found the IMEI listed as lost or stolen. The phone may work today but can be
  blocked from networks at any time. Treat a blacklisted result as a hard stop on any
  purchase.
  </p>
@@ -238,11 +236,11 @@ const CheckImeiStolenPage = () => {
  <strong>Reported stolen</strong> means an owner or the police flagged the device as taken.{' '}
  <strong>Blacklisted</strong> means a carrier will deny it service. A phone can be
  blacklisted for a stolen report, for unpaid bills, or for fraud — so a blacklist check
-  catches problems a stolen-only lookup misses. SafeOrStolen does not currently check carrier blacklists, so use a carrier or authorized blacklist service separately.
+ catches problems a stolen-only lookup misses. On SafeOrStolen it&apos;s a separate paid check.
  </p>
 
-  <h2>Use SafeOrStolen with a separate carrier check</h2>
-  <p>SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis and provides IMEI device details. Ask the original carrier about blacklist, network-eligibility, and finance status before paying.</p>
+ <h2>What the check can&apos;t tell you</h2>
+ <p>SafeOrStolen doesn&apos;t see unpaid balances or financing. If the phone came from a carrier, ask the seller to call that carrier, or ask for the final bill, to confirm it&apos;s paid off before you hand over money.</p>
  <p>
  SafeOrStolen also verifies{' '}
  <Link to="/vin-checker" className="text-primary underline-offset-4 hover:underline">
@@ -267,10 +265,9 @@ const CheckImeiStolenPage = () => {
  for a device you now know is flagged.
  </li>
  <li>
- <strong>If you already bought it:</strong> stop using it as your own, keep your PDF
- certificate and purchase records, and report it to local police. That timestamped
- certificate helps show you bought in good faith — the difference between an honest buyer
- and a suspect.
+ <strong>If you already bought it:</strong> stop using it as your own, keep the receipt, the
+ listing and your saved SafeOrStolen check, and report it to local police. A dated
+ record that you checked before buying helps show you acted in good faith.
  </li>
  </ul>
 
@@ -290,14 +287,13 @@ const CheckImeiStolenPage = () => {
 
  <p className="mt-12 border-t border-border pt-5 text-[13px] text-muted-foreground">
  Published by SafeOrStolen — verification for phones, vehicles, bikes, firearms, and other
- serial-numbered goods. Results reflect the records available at the time of the check; no
- service can guarantee 100% accuracy, and not all stolen items are reported. For high-value
- purchases, also verify with local law enforcement. Questions:{' '}
+ serial-numbered goods. Results reflect the records searched at the time of the check, and
+ not every stolen item is reported. For high-value purchases, also ask local police. Questions:{' '}
  <a
- href="mailto:support@safeorstolen.com"
+ href="mailto:safeorstolenmail@gmail.com"
  className="text-primary underline-offset-4 hover:underline"
  >
- support@safeorstolen.com
+ safeorstolenmail@gmail.com
  </a>
  .
  </p>

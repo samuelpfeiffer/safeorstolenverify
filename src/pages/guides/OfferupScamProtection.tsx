@@ -89,7 +89,7 @@ const OfferupScamProtection = () => {
         <section className="py-16 px-4 bg-destructive/5">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              🚩 OfferUp Scam Red Flags
+              OfferUp Scam Red Flags
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-card rounded-xl border border-destructive/20">
@@ -98,8 +98,8 @@ const OfferupScamProtection = () => {
                   Price Too Good to Be True
                 </h3>
                 <p className="text-muted-foreground">
-                  iPhone 15 Pro for $200? Brand new laptop for $100? Stolen
-                  goods are often priced low to sell fast.
+                  A current iPhone Pro or a sealed laptop at a fraction of what
+                  it sells for used? Stolen goods are often priced low to sell fast.
                 </p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-destructive/20">
@@ -182,10 +182,12 @@ const OfferupScamProtection = () => {
                     Verify with SafeOrStolen
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Enter the identifier into SafeOrStolen. Results usually
-                    arrive in about 3 seconds, and the first 2 checks are
-                    included. We check SafeOrStolen reports, public web results,
-                    and AI analysis.
+                    Enter the identifier into SafeOrStolen. Results come back
+                    in a few seconds, and the first 2 checks are free with a
+                    free account. Every check searches SafeOrStolen theft
+                    reports and public web results; phone checks also show the
+                    make and model, and bike checks add a national
+                    stolen-bicycle registry.
                   </p>
                   <Button asChild className="gap-2">
                     <Link to="/verify">
@@ -204,9 +206,9 @@ const OfferupScamProtection = () => {
                     Use Community MeetUp Spots
                   </h3>
                   <p className="text-muted-foreground">
-                    OfferUp partners with police stations for safe meetup
-                    locations. Use them! Or any well-lit public place during
-                    daytime.
+                    OfferUp marks Community MeetUp Spots in the app, and many
+                    are at police stations. Use one, or any busy, well-lit
+                    public place during the day.
                   </p>
                 </div>
               </div>
@@ -220,8 +222,8 @@ const OfferupScamProtection = () => {
                   </h3>
                   <p className="text-muted-foreground">
                     Bring up SafeOrStolen on your phone browser. Before paying,
-                    confirm the serial number on the actual item matches what
-                    was provided, and run one more check.
+                    confirm the serial number on the actual item matches the
+                    one you checked. For a phone, dial *#06# yourself.
                   </p>
                 </div>
               </div>
@@ -233,21 +235,21 @@ const OfferupScamProtection = () => {
         <section className="py-16 px-4 bg-muted/30">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold text-foreground mb-8">
-              The Numbers Don't Lie
+              What a Check Costs
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">$500</div>
+                <div className="text-4xl font-bold text-primary mb-2">$0.99</div>
                 <p className="text-muted-foreground">
-                  Average loss when buying stolen phones
+                  A single check after your free ones
                 </p>
               </div>
               <div className="p-6">
                 <div className="text-4xl font-bold text-primary mb-2">
-                  3 sec
+                  $10/mo
                 </div>
                 <p className="text-muted-foreground">
-                  Time to verify with SafeOrStolen
+                  Unlimited checks, cancel anytime
                 </p>
               </div>
               <div className="p-6">
@@ -267,8 +269,8 @@ const OfferupScamProtection = () => {
               Buying on OfferUp? Verify First.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Don't become another scam statistic. Free verification in 3
-              seconds.
+              Check the serial, IMEI or VIN before you pay. Results come back
+              in a few seconds, and your first 2 checks are free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">

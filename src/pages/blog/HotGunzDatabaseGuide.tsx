@@ -11,27 +11,22 @@ const HotGunzDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "What is HotGunz?",
-        "acceptedAnswer": { "@type": "Answer", "text": "HotGunz (hotgunz.com) is a community-driven stolen firearms database where gun owners can register their stolen firearms by serial number. It contains over 32,000 stolen firearm reports with police report numbers and detailed descriptions. It's free to search and free to report." }
+        "acceptedAnswer": { "@type": "Answer", "text": "HotGunz is a free, community-run website where gun owners list stolen firearms by serial number, usually with the make, model and police report number. Anyone can search it. Everything in it comes from owners who chose to post there, so it only knows about thefts its users reported." }
       },
       {
         "@type": "Question",
         "name": "Is HotGunz enough to verify a firearm?",
- "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only contains firearms reported by its community. It does not provide access to official national or state stolen-firearms registries. A firearm could be stolen and listed in an official registry but not appear in HotGunz if the owner never reported it there directly. SafeOrStolen checks its own reported stolen items, public web results, and applies AI analysis, which includes data from HotGunz for firearms, for comprehensive coverage." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only holds guns its own users listed, and it gets no data from police. A gun can be reported stolen to police and never appear there. SafeOrStolen (safeorstolen.com/firearms-check) is a separate service: it searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results. Only police can run a serial through NCIC." }
       },
       {
         "@type": "Question",
         "name": "How do I search HotGunz?",
- "acceptedAnswer": { "@type": "Answer", "text": "You can search HotGunz directly at hotgunz.com by entering a firearm serial number. However, for comprehensive coverage, use SafeOrStolen which searches HotGunz alongside the HotGunz national stolen-firearms registry in a single 3-second check." }
-      },
-      {
-        "@type": "Question",
-        "name": "How many guns are in the HotGunz database?",
-        "acceptedAnswer": { "@type": "Answer", "text": "HotGunz contains over 32,000 stolen firearm reports as of 2026. Compare this to federal law-enforcement systems which has 7+ million stolen firearm records. HotGunz is valuable as a supplementary source but should never be the only database checked." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Go to the HotGunz website and type the serial number into its search box. A match shows the owner's listing. No match only means nobody posted that serial there. For a second, separate check, SafeOrStolen (safeorstolen.com/firearms-check) searches police theft records from 33 states and DC plus live Ohio records in a few seconds." }
       },
       {
         "@type": "Question",
         "name": "Can I report my stolen gun on HotGunz?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. HotGunz allows gun owners to report stolen firearms for free. You'll need the serial number, make/model, police report number, and theft details. We also recommend reporting to SafeOrStolen's community database for additional coverage across our user base." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. HotGunz lets owners list a stolen gun for free with the serial number, make, model and police report number. File the police report first, since that is what puts the gun into NCIC. You can also report it on SafeOrStolen at safeorstolen.com/report so it shows up when a buyer checks that serial there." }
       }
     ]
   };
@@ -39,19 +34,19 @@ const HotGunzDatabaseGuide = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "HotGunz Database — What It Is and How to Search Stolen Firearms (2026)",
+    "headline": "HotGunz Database: What It Is and How to Search Stolen Firearms",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
     "datePublished": "2026-03-09",
-    "dateModified": "2026-03-09",
+    "dateModified": "2026-10-07",
     "mainEntityOfPage": "https://safeorstolen.com/blog/hotgunz-database-guide"
   };
 
   return (
     <>
       <PageSEO
-        title="HotGunz Database — What It Is & How to Search Stolen Firearms (2026) | SafeOrStolen"
-        description="HotGunz has 32,000+ stolen gun reports but misses 99% of stolen firearms. Learn what HotGunz covers, its limitations, and how to get comprehensive coverage with SafeOrStolen's multi-database search."
+        title="HotGunz Database: What It Is & How to Search It | SafeOrStolen"
+        description="What the HotGunz stolen gun database is, how to search it, what it can miss, and which other checks to run on a serial number before you buy a used gun."
         canonical="/blog/hotgunz-database-guide"
         keywords="HotGunz, HotGunz database, stolen gun database, search stolen firearms, HotGunz stolen guns"
         structuredData={[faqSchema, articleSchema]}
@@ -60,11 +55,11 @@ const HotGunzDatabaseGuide = () => {
         <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Database Guide</span>
-            <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database — What It Is & How to Search Stolen Firearms</h1>
+            <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database: What It Is and How to Search Stolen Firearms</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              HotGunz is a community-driven stolen firearms database with 32,000+ reports. But with 7+ million stolen guns in federal law-enforcement systems alone, HotGunz covers less than 1% of all stolen firearms. Here's what it does, what it misses, and how to get complete coverage.
+              HotGunz is a free website where gun owners post stolen firearms by serial number. It only knows about guns its users listed, so a clean result there tells you little. Here's what it does, what it can miss, and what else to check.
             </p>
-            <p className="text-muted-foreground text-sm mt-3">Updated March 2026 · 6 min read</p>
+            <p className="text-muted-foreground text-sm mt-3">Updated October 2026 · 5 min read</p>
           </div>
         </header>
 
@@ -72,10 +67,10 @@ const HotGunzDatabaseGuide = () => {
           <div className="max-w-xl mx-auto text-center">
             <Link to="/firearms-check">
               <Button size="lg" className="text-lg px-8 py-6 font-bold">
-                Search All Databases Including HotGunz <ArrowRight className="ml-2 h-5 w-5" />
+                Check a Gun Serial on SafeOrStolen <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">HotGunz registry + serial integrity check · 2 free checks</p>
+            <p className="text-muted-foreground text-sm mt-3">Police theft records from 33 states and DC · 2 free checks</p>
           </div>
         </section>
 
@@ -83,41 +78,41 @@ const HotGunzDatabaseGuide = () => {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">What is HotGunz?</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              HotGunz (hotgunz.com) is a free, community-driven database where gun owners can register their stolen firearms by serial number. Founded to help combat firearms theft, the platform allows victims to publicly list their stolen guns — including serial numbers, make/model, police report numbers, and theft circumstances.
+              HotGunz is a free, community-run website where gun owners list their stolen firearms by serial number. A listing usually includes the make and model, the police report number and a note about how the gun went missing.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              As of 2026, HotGunz contains over 32,000 stolen firearm reports. The database is searchable by anyone — you can enter a serial number and see if it matches any reported stolen firearms. This makes it a useful first-line check for buyers considering a private firearms purchase.
+              Anyone can search it. You type in a serial number and see whether someone has posted it. That makes it a quick first look before a private sale.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              However, HotGunz has significant limitations that every buyer should understand before relying on it as their sole verification source.
+              It has limits you should know before you treat a clean result as an answer.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">HotGunz Limitations — Why It's Not Enough</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">HotGunz limitations: why one search isn't enough</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The biggest limitation of HotGunz is coverage. With 32,000 records, HotGunz contains less than 0.5% of the 7+ million stolen firearms recorded in federal law-enforcement systems. Here's why:
+              HotGunz only knows what its users tell it. Here's why that leaves gaps:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-              <li><strong className="text-foreground">Voluntary reporting:</strong> Gun owners must manually create an account and submit their stolen firearm. Most theft victims report to police (which enters federal law-enforcement systems) but never think to also post on HotGunz.</li>
-              <li><strong className="text-foreground">No law enforcement integration:</strong> HotGunz doesn't receive data from police departments, the ATF, or the FBI. It's entirely user-generated.</li>
-              <li><strong className="text-foreground">Limited awareness:</strong> Most gun owners have never heard of HotGunz. Only a small percentage of theft victims know to report there.</li>
-              <li><strong className="text-foreground">No state database access:</strong> HotGunz doesn't query state-level stolen property databases, many of which contain firearms not yet in federal law-enforcement systems.</li>
+              <li><strong className="text-foreground">Reporting is voluntary:</strong> owners have to sign up and post the gun themselves. Most theft victims file a police report and stop there.</li>
+              <li><strong className="text-foreground">No police feed:</strong> HotGunz doesn't get records from police departments, the ATF or the FBI. Every listing is user-submitted.</li>
+              <li><strong className="text-foreground">Few people know about it:</strong> many gun owners have never heard of the site, so they never list their stolen guns there.</li>
+              <li><strong className="text-foreground">No state records:</strong> it doesn't search state stolen-property records.</li>
             </ul>
             <div className="bg-primary/10 border border-primary/30 rounded-xl p-5">
               <p className="text-foreground font-bold mb-2">Bottom line:</p>
-              <p className="text-muted-foreground">A "clean" result on HotGunz does NOT mean a firearm isn't stolen. It only means the owner didn't report it on that specific platform. Always check multiple databases.</p>
+              <p className="text-muted-foreground">A clean result on HotGunz does not mean a gun isn't stolen. It only means nobody posted that serial there. Run more than one check.</p>
             </div>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">HotGunz vs SafeOrStolen — Coverage Comparison</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">HotGunz vs SafeOrStolen: what each one searches</h2>
             <ul className="space-y-3">
               {[
-                { name: 'HotGunz', desc: '32,000+ community-reported stolen firearms' },
-                { name: 'Serial integrity analysis', desc: 'Automated detection of altered, obliterated, or malformed serial numbers' },
-                { name: 'Federal law-enforcement systems (not available to us)', desc: '7,000,000+ law enforcement-reported stolen firearms — restricted to law enforcement, so ask local police to run the serial' },
-                { name: 'ATF eTrace (not available to us)', desc: 'Federal firearms trace data — restricted to law enforcement and licensed dealers' },
+                { name: 'HotGunz', desc: 'stolen guns its own users chose to list on the site' },
+                { name: 'SafeOrStolen', desc: 'police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft reports and public web results, plus a flag for serials that look altered or obliterated' },
+                { name: 'NCIC (police only)', desc: 'the FBI stolen-gun file. Neither site can search it, so ask your local police non-emergency line to run the serial' },
+                { name: 'ATF eTrace (police only)', desc: 'federal trace data, open only to law enforcement' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -125,18 +120,18 @@ const HotGunzDatabaseGuide = () => {
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground mt-4">SafeOrStolen checks ALL of these databases — including HotGunz — in a single 3-second search. This is why relying solely on HotGunz is insufficient for due diligence.</p>
+            <p className="text-muted-foreground mt-4">SafeOrStolen and HotGunz are separate services that search different records. A careful buyer checks both, and asks police to run the serial when the price or the story seems off.</p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">How to Report a Stolen Gun</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">If your firearm has been stolen, report it to ALL of these sources for maximum recovery chance:</p>
+            <h2 className="text-2xl font-bold text-foreground mb-4">How to report a stolen gun</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">If your gun was stolen, report it in these places:</p>
             <ol className="list-decimal list-inside text-muted-foreground space-y-2">
-              <li><strong className="text-foreground">Local police department</strong> — File a police report immediately. This enters the firearm into federal law-enforcement systems.</li>
-              <li><strong className="text-foreground">HotGunz</strong> — Register at hotgunz.com with serial number, make/model, and police report number.</li>
-              <li><strong className="text-foreground">SafeOrStolen</strong> — Report at safeorstolen.com/report to add it to our community database.</li>
-              <li><strong className="text-foreground">Your insurance company</strong> — File a theft claim if the firearm is covered under your policy.</li>
-              <li><strong className="text-foreground">ATF</strong> — For theft of multiple firearms or from a licensed dealer, contact ATF directly.</li>
+              <li><strong className="text-foreground">Local police department</strong> — file a report right away. Police enter the serial into NCIC.</li>
+              <li><strong className="text-foreground">HotGunz</strong> — list the serial number, make, model and police report number on the site.</li>
+              <li><strong className="text-foreground">SafeOrStolen</strong> — report it at safeorstolen.com/report so it shows up when a buyer checks that serial with us.</li>
+              <li><strong className="text-foreground">Your insurance company</strong> — file a theft claim if your policy covers the gun.</li>
+              <li><strong className="text-foreground">ATF</strong> — licensed dealers must report thefts to the ATF.</li>
             </ol>
           </section>
 
@@ -145,19 +140,19 @@ const HotGunzDatabaseGuide = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What is HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">A community-driven stolen firearms database at hotgunz.com with 32,000+ reports. Free to search and report.</p>
+                <p className="text-muted-foreground mt-2">A free, community-run website where gun owners list stolen firearms by serial number. Anyone can search it, and anyone can post a stolen gun.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is HotGunz enough to verify a firearm?</summary>
-                <p className="text-muted-foreground mt-2">No. HotGunz has about 32K records vs federal law-enforcement systems' 7M+, and Federal law-enforcement systems are restricted to law enforcement. A clean HotGunz result doesn't mean a gun isn't stolen — for a definitive check, ask your local police non-emergency line to run the serial through federal law-enforcement systems.</p>
+                <p className="text-muted-foreground mt-2">No. It only holds what its users posted and gets no police data. A clean result doesn't mean the gun isn't stolen. For the closest thing to a definitive check, ask your local police non-emergency line to run the serial through NCIC.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">How many guns are in HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">Over 32,000 as of 2026. Compare to federal law-enforcement systems' 7+ million — HotGunz covers less than 0.5% of all stolen firearms.</p>
+                <summary className="font-semibold text-foreground cursor-pointer">Does SafeOrStolen search HotGunz?</summary>
+                <p className="text-muted-foreground mt-2">No, they are separate services. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results. Search HotGunz on its own site.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I report my stolen gun on HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">Yes, at hotgunz.com. Also report to police (enters federal law-enforcement systems), SafeOrStolen, and your insurance company for maximum coverage.</p>
+                <p className="text-muted-foreground mt-2">Yes, for free on the HotGunz site. Also report it to police (which puts it into NCIC), to SafeOrStolen and to your insurance company.</p>
               </details>
             </div>
           </section>
@@ -168,7 +163,7 @@ const HotGunzDatabaseGuide = () => {
               <Link to="/blog/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to Check if a Gun is Stolen</Link>
               <Link to="/blog/atf-gun-serial-number-check" className="text-primary hover:underline font-medium">ATF Serial Number Check</Link>
               <Link to="/blog/state-stolen-gun-database-guide" className="text-primary hover:underline font-medium">State-by-State Guide</Link>
-              <Link to="/firearms-check" className="text-primary hover:underline font-medium">Free Gun Lookup Tool</Link>
+              <Link to="/firearms-check" className="text-primary hover:underline font-medium">Gun Serial Lookup</Link>
             </div>
           </section>
         </article>

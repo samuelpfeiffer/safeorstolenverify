@@ -3,12 +3,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Scan, Shield, Smartphone, Zap, Download, CheckCircle, Camera } from 'lucide-react';
 import { Link } from '@/lib/router-compat';
+
+/** Oct 8 2026: audited by hand for "barcode scanner stolen checker". Removed offline, OCR, "3-second" and "100% accuracy" claims. */
 const BarcodeScanner = () => {
   return (
     <>
       <PageSEO
         title="Barcode Scanner Stolen Checker App | SafeOrStolen"
-        description="Free barcode scanner app to check if items are stolen. Scan any IMEI, VIN, or serial number barcode for instant verification."
+        description="Scan an IMEI, VIN or serial-number barcode with your phone camera in SafeOrStolen's free web app and check it for theft reports in a few seconds."
         keywords="barcode scanner stolen checker, scan serial number stolen, barcode stolen checker app, scan IMEI app, scan VIN app, item scanner stolen check"
         canonical="/app/barcode-scanner"
         structuredData={{
@@ -22,14 +24,12 @@ const BarcodeScanner = () => {
             "price": "0",
             "priceCurrency": "USD"
           },
-          "description": "Free barcode scanner app to check if items are stolen. Point camera at any barcode for instant verification.",
+          "description": "Scan an IMEI, VIN or serial-number barcode with your phone camera and check it for theft reports.",
           "featureList": [
-            "Instant barcode scanning",
+            "Camera barcode and QR code scanning",
             "IMEI barcode recognition",
-            "VIN plate scanning",
-            "Serial number OCR",
-            "Works offline",
-            "3-second results"
+            "VIN door-sticker barcode scanning",
+            "Serial number barcode scanning"
           ]
         }}
       />
@@ -44,19 +44,19 @@ const BarcodeScanner = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Scan Any Barcode - Instantly Check if Stolen
+              Scan a Barcode and Check if It's Stolen
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Point your camera at any IMEI barcode, VIN plate, or serial number. 
-              Get instant stolen verification in 3 seconds. No typing required.
+              Point your phone camera at the IMEI barcode on a phone box, the VIN barcode on a door sticker, or a
+              serial-number label. SafeOrStolen reads the code and checks it in a few seconds, so you don't have to type it.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button size="lg" className="text-lg px-8" asChild>
                 <Link to="/app">
                   <Download className="w-5 h-5 mr-2" />
-                  Download Scanner App
+                  Install the free web app
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -86,8 +86,8 @@ const BarcodeScanner = () => {
                   </div>
                   <h3 className="font-bold mb-2">1. Point Camera</h3>
                   <p className="text-muted-foreground text-sm">
-                    Open the app and point your camera at any barcode, 
-                    IMEI label, VIN plate, or serial number.
+                    Tap Scan next to the search box and point your camera at the
+                    barcode on the IMEI label, VIN sticker, or serial-number tag.
                   </p>
                 </CardContent>
               </Card>
@@ -99,8 +99,8 @@ const BarcodeScanner = () => {
                   </div>
                   <h3 className="font-bold mb-2">2. Auto-Scan</h3>
                   <p className="text-muted-foreground text-sm">
-                    The app automatically recognizes and reads the code. 
-                    Works with 1D barcodes, QR codes, and OCR for text.
+                    The scanner reads standard barcodes and QR codes and fills in the
+                    number. Check it against the number on the item before you search.
                   </p>
                 </CardContent>
               </Card>
@@ -110,10 +110,10 @@ const BarcodeScanner = () => {
                   <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-8 h-8 text-green-500" />
                   </div>
-                  <h3 className="font-bold mb-2">3. Instant Results</h3>
+                  <h3 className="font-bold mb-2">3. Read the Result</h3>
                   <p className="text-muted-foreground text-sm">
-                    See immediately if the item is clean, stolen, or flagged. 
-                    Results in 3 seconds or less.
+                    In a few seconds you'll see reported stolen, possible match, or
+                    no report found in the records searched, with every source listed.
                   </p>
                 </CardContent>
               </Card>
@@ -130,14 +130,13 @@ const BarcodeScanner = () => {
             
             <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
               {[
-                "Phone IMEI barcodes (all smartphones)",
-                "Vehicle VIN plates and stickers",
+                "Phone IMEI barcodes on the box or SIM tray label",
+                "VIN barcodes on the driver's door sticker",
                 "Electronics serial number labels",
                 "Laptop/computer asset tags",
                 "Power tool barcodes",
-                "Bicycle serial number plates",
-                "Camera serial numbers",
-                "Any item with a barcode or serial"
+                "Camera serial number labels",
+                "Other items with a printed barcode"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 p-3 bg-background rounded-lg">
                   <Scan className="w-5 h-5 text-primary flex-shrink-0" />
@@ -163,8 +162,8 @@ const BarcodeScanner = () => {
                     <div>
                       <h3 className="font-bold mb-2">Faster Than Typing</h3>
                       <p className="text-muted-foreground text-sm">
-                        IMEI numbers are 15 digits. VINs are 17 characters. 
-                        Scanning takes 1 second vs 30+ seconds of typing.
+                        IMEI numbers are 15 digits and VINs are 17 characters.
+                        Scanning saves you typing them on a small screen.
                       </p>
                     </div>
                   </div>
@@ -176,10 +175,10 @@ const BarcodeScanner = () => {
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
                     <div>
-                      <h3 className="font-bold mb-2">No Typing Errors</h3>
+                      <h3 className="font-bold mb-2">Fewer Typing Errors</h3>
                       <p className="text-muted-foreground text-sm">
-                        Manual entry leads to mistakes. Scanning ensures 
-                        100% accuracy every time.
+                        One wrong digit means you checked the wrong item. Scanning
+                        avoids most typos; still compare the number on screen to the label.
                       </p>
                     </div>
                   </div>
@@ -206,10 +205,10 @@ const BarcodeScanner = () => {
                   <div className="flex items-start gap-4">
                     <Smartphone className="w-6 h-6 text-primary flex-shrink-0" />
                     <div>
-                      <h3 className="font-bold mb-2">Works Offline</h3>
+                      <h3 className="font-bold mb-2">Installs From Your Browser</h3>
                       <p className="text-muted-foreground text-sm">
-                        No WiFi needed. Scan and verify items even without 
-                        internet connection.
+                        No app store needed. Add it to your home screen from
+                        safeorstolen.com/app. Checks need a data connection.
                       </p>
                     </div>
                   </div>
@@ -231,7 +230,7 @@ const BarcodeScanner = () => {
             <Button size="lg" className="text-lg px-8" asChild>
               <Link to="/app">
                 <Download className="w-5 h-5 mr-2" />
-                Download FREE App
+                Install the free web app
               </Link>
             </Button>
           </div>

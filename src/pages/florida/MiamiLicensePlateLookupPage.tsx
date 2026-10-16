@@ -1,41 +1,47 @@
 import { Link } from '@/lib/router-compat';
-import { Shield, Search, CheckCircle, ArrowRight, AlertTriangle, MapPin } from 'lucide-react';
+import { CheckCircle, ArrowRight, MapPin, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+
+/** Oct 8 2026 audit: copy rewritten by hand. Removed "AI analysis" as a source, invented Miami
+ * theft counts, false claims that plates are run through FLHSMV, NMVTIS, insurer and salvage
+ * records, the wrong "$1 per month" price, "3 seconds", and an off-site government URL. */
+
+const FAQS = [
+ {
+ q: 'How do I check if a car is stolen in Miami?',
+ a: "Enter the Florida plate or, better, the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/miami-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks with a free account, no credit card.",
+ },
+ {
+ q: 'Does SafeOrStolen search Florida DHSMV or Miami-Dade police records?',
+ a: "No. SafeOrStolen does not search FLHSMV registration or title records, NCIC, or Miami-Dade police files. A Florida plate is checked against SafeOrStolen theft reports and public web results. If you need official title or theft confirmation, contact FLHSMV or the Miami-Dade Police Department directly.",
+ },
+ {
+ q: 'Can I check a vehicle by license plate or do I need a VIN?',
+ a: "You can search either one. A plate search looks for that plate in SafeOrStolen theft reports and public web results, and it never shows the owner's name. Plates can be swapped between cars, so ask for the VIN as well; the VIN check also confirms the year, make and model match the car you're looking at.",
+ },
+ {
+ q: "Is SafeOrStolen's Florida license plate lookup free?",
+ a: "Your first 2 checks are free with a free account and no credit card. After that a single check is $0.99, or $10 a month gets you unlimited checks, cancel anytime. Every check is saved to your account with the date.",
+ },
+];
 
 const MiamiLicensePlateLookupPage = () => {
  const faqSchema = {
  "@context": "https://schema.org",
  "@type": "FAQPage",
- "mainEntity": [
- {
+ "mainEntity": FAQS.map(f => ({
  "@type": "Question",
- "name": "How do I check if a car is stolen in Miami?",
- "acceptedAnswer": { "@type": "Answer", "text": "Enter the vehicle's Florida license plate number or VIN on SafeOrStolen. We check our own stolen-item reports, public web results, and AI analysis simultaneously. Results are returned in about 3 seconds. You get 2 free checks with no credit card required." }
- },
- {
- "@type": "Question",
- "name": "Why is vehicle theft so high in Miami?",
- "acceptedAnswer": { "@type": "Answer", "text": "Miami-Dade County's proximity to the Port of Miami makes it a hotspot for vehicle theft rings that export stolen cars internationally. The high population density, tourism traffic, and warm climate all contribute. Hyundai and Kia models have been especially targeted due to a viral theft method." }
- },
- {
- "@type": "Question",
- "name": "Can I check a vehicle by license plate or do I need a VIN?",
- "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen accepts both. Enter a Florida license plate number and we resolve it to the vehicle's VIN through FLHSMV databases, then run a full theft check. You can also enter the VIN directly if you have it." }
- },
- {
- "@type": "Question",
- "name": "Is SafeOrStolen's Florida license plate lookup free?",
- "acceptedAnswer": { "@type": "Answer", "text": "You get 2 free lookups with no credit card required. After that, unlimited lookups are $1 per month." }
- }
- ]
+ "name": f.q,
+ "acceptedAnswer": { "@type": "Answer", "text": f.a },
+ })),
  };
 
  const webPageSchema = {
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Free Miami FL License Plate Lookup",
- "description": "Check if any vehicle in Miami-Dade County is stolen using license plate or VIN.",
+ "description": "Check a Miami-Dade vehicle's plate or VIN against SafeOrStolen theft reports and public web results before you buy.",
  "url": "https://safeorstolen.com/florida/miami-license-plate-lookup",
  "speakable": {
  "@type": "SpeakableSpecification",
@@ -47,7 +53,7 @@ const MiamiLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Miami FL License Plate Lookup — Check Stolen Vehicles in Miami | SafeOrStolen"
- description="Free Miami, Florida license plate lookup. Check if any vehicle in Miami-Dade County is reported stolen. SafeOrStolen checks its own reports, public web results, and AI analysis. Instant results."
+ description="Free Miami license plate lookup. Search a Florida plate or VIN against SafeOrStolen theft reports and public web results in a few seconds before you buy a used car."
  canonical="/florida/miami-license-plate-lookup"
  structuredData={[faqSchema, webPageSchema]}
  />
@@ -59,7 +65,7 @@ const MiamiLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Miami License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Check if any vehicle in Miami, Florida is reported stolen by searching the license plate number against SafeOrStolen's reports, public web results, and AI analysis. Free instant results in 3 seconds.
+ Type a Florida plate or VIN and SafeOrStolen searches its own theft reports and public web results for it in a few seconds. A VIN check also confirms the year, make and model and lists open recalls. It never shows the owner's name.
  </p>
  </div>
  </header>
@@ -77,30 +83,44 @@ const MiamiLicensePlateLookupPage = () => {
 
  <article className="max-w-3xl mx-auto px-4 pb-16">
  <section className="mb-10">
- <h2 className="text-2xl font-bold text-foreground mb-4">Why Check Vehicles in Miami?</h2>
+ <h2 className="text-2xl font-bold text-foreground mb-4">Why Check a Car Before Buying in Miami</h2>
  <p className="text-muted-foreground leading-relaxed mb-4">
- Miami-Dade County consistently ranks among the top metro areas for vehicle theft in the United States. In 2024, Miami-Dade reported over 14,000 vehicle thefts — approximately 38 cars stolen per day. Popular targets include Honda Civics, Honda Accords, Toyota Camrys, and Hyundai/Kia models affected by the viral "Kia Boys" theft method.
+ Most private used-car sales in Miami-Dade start on Facebook Marketplace, Craigslist or OfferUp and end in a parking lot in Hialeah, Kendall or Doral. If the car turns out to be stolen, police can return it to the owner and you are left chasing the seller for your money.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
- The high volume of international shipping from the Port of Miami means stolen vehicles are often exported to the Caribbean and Central America within hours of being taken. This creates a unique risk for Miami-area buyers: a car listed for sale today could be stolen property that hasn't yet been reported. Pre-purchase verification is not optional in this market — it's essential.
+ Warning signs to watch for: a seller who wants to meet somewhere other than their home, a title that isn't in the seller's name, a paper tag on a car that's supposedly been owned for years, a cracked steering column or a key that looks like a cheap copy, and a price that's well under what the same model sells for elsewhere.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- South Florida's vibrant used car market on Facebook Marketplace, Craigslist, and OfferUp attracts legitimate sellers and criminals alike. From Hialeah to Homestead, Coral Gables to Kendall, every neighborhood sees vehicle theft. Running a license plate lookup before meeting a seller protects you from unknowingly purchasing stolen property — which can result in seizure with zero compensation and potential criminal charges.
+ Run the plate when you first see the listing, then ask for the VIN and check that too. At the meetup, match the VIN on the dashboard, the driver's door sticker and the title before any money changes hands.
  </p>
  </section>
 
  <section className="mb-10">
- <h2 className="text-2xl font-bold text-foreground mb-4">What Our Miami License Plate Lookup Checks</h2>
- <ul className="space-y-3">
+ <h2 className="text-2xl font-bold text-foreground mb-4">What a Miami Plate or VIN Check Searches</h2>
+ <ul className="space-y-3 mb-6">
  {[
- { name: 'FLHSMV Records', desc: 'Florida Highway Safety and Motor Vehicles registration database for Miami-Dade County' },
- { name: 'NMVTIS', desc: 'Federal title history, checked separately at vehiclehistory.bja.ojp.gov' },
- { name: 'Miami-Dade Police', desc: 'Contact directly for official theft reports' },
- { name: 'Insurance Claims', desc: 'Theft claims from major insurers operating in Florida' },
- { name: 'Salvage Records', desc: 'Vehicles with salvage, rebuilt, or flood titles — critical in Florida due to hurricanes' },
+ { name: 'SafeOrStolen theft reports', desc: 'thefts that owners have reported on SafeOrStolen' },
+ { name: 'Public web results', desc: 'listings and posts online that mention the plate or VIN' },
+ { name: 'VIN decode and recalls (VIN checks)', desc: 'the year, make and model, plus any open safety recalls' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+ <div>
+ <strong className="text-foreground">{db.name}</strong>
+ <span className="text-muted-foreground"> — {db.desc}</span>
+ </div>
+ </li>
+ ))}
+ </ul>
+ <h3 className="text-lg font-bold text-foreground mb-3">What it does not search</h3>
+ <ul className="space-y-3">
+ {[
+ { name: 'FLHSMV records', desc: 'registration, title and owner records stay with the state; ask FLHSMV' },
+ { name: 'Police and NCIC files', desc: 'call the Miami-Dade Police Department non-emergency line for an official answer' },
+ { name: 'Title and salvage history', desc: 'buy a separate vehicle history report if you need flood or salvage brands' },
+ ].map(db => (
+ <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
+ <XCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
  <div>
  <strong className="text-foreground">{db.name}</strong>
  <span className="text-muted-foreground"> — {db.desc}</span>
@@ -113,31 +133,22 @@ const MiamiLicensePlateLookupPage = () => {
  <section className="mb-10">
  <h2 className="text-2xl font-bold text-foreground mb-4">How to Check a Miami Vehicle</h2>
  <ol className="space-y-3 list-decimal list-inside text-muted-foreground">
- <li>Enter the Florida license plate number from any vehicle in Miami-Dade County</li>
- <li>SafeOrStolen resolves the plate to a VIN through FLHSMV and checks all databases simultaneously</li>
- <li>Get results in approximately 3 seconds showing theft status, registration info, and any red flags</li>
+ <li>Enter the Florida plate number from the listing or the car itself</li>
+ <li>Ask the seller for the VIN and run that too; it's on the dashboard near the windshield and on the driver's door jamb</li>
+ <li>Read the result: "reported stolen", "possible match" or "no report found in the records searched", with each source listed</li>
+ <li>At the meetup, match the VIN on the car to the title and check the seller's ID against the name on the title</li>
  </ol>
  </section>
 
  <section className="mb-10">
  <h2 className="text-2xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
  <div className="space-y-3">
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">How do I check if a car is stolen in Miami?</summary>
- <p className="text-muted-foreground mt-2">Enter the vehicle's Florida license plate number or VIN on SafeOrStolen. We check our own stolen-item reports, public web results, and AI analysis simultaneously. Results are returned in about 3 seconds. You get 2 free checks with no credit card required.</p>
+ {FAQS.map(f => (
+ <details key={f.q} className="bg-card/50 border border-border rounded-xl p-4">
+ <summary className="font-semibold text-foreground cursor-pointer">{f.q}</summary>
+ <p className="text-muted-foreground mt-2">{f.a}</p>
  </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Why is vehicle theft so high in Miami?</summary>
- <p className="text-muted-foreground mt-2">Miami-Dade County's proximity to the Port of Miami makes it a hotspot for vehicle theft rings that export stolen cars internationally. The high population density, tourism traffic, and warm climate (cars left unlocked more often) all contribute. Hyundai and Kia models have been especially targeted due to a viral theft method.</p>
- </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Can I check a vehicle by license plate or do I need a VIN?</summary>
- <p className="text-muted-foreground mt-2">SafeOrStolen accepts both. Enter a Florida license plate number and we resolve it to the vehicle's VIN through FLHSMV databases, then run a full theft check. You can also enter the VIN directly if you have it.</p>
- </details>
- <details className="bg-card/50 border border-border rounded-xl p-4">
- <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen's Florida license plate lookup free?</summary>
- <p className="text-muted-foreground mt-2">You get 2 free lookups with no credit card required. After that, unlimited lookups are $1 per month.</p>
- </details>
+ ))}
  </div>
  </section>
 
@@ -159,7 +170,7 @@ const MiamiLicensePlateLookupPage = () => {
  <Link to="/vin-checker" className="text-primary hover:underline">VIN Lookup</Link>
  <Link to="/imei-checker" className="text-primary hover:underline">Phone IMEI Check</Link>
  <Link to="/firearms-check" className="text-primary hover:underline">Gun Serial Number Lookup</Link>
- <Link to="/scam-checker" className="text-primary hover:underline">AI Scam Checker</Link>
+ <Link to="/scam-checker" className="text-primary hover:underline">Listing Scam Checker</Link>
  </div>
  </section>
  </article>

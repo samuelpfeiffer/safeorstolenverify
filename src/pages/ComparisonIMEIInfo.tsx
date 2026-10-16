@@ -8,32 +8,26 @@ const ComparisonIMEIInfo = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen: Best IMEI.info Alternative - Mobile App Comparison",
-    "description": "SafeOrStolen has a mobile app. IMEI.info does not. Compare IMEI checkers.",
+    "name": "IMEI.info Alternative: SafeOrStolen",
+    "description": "How SafeOrStolen and IMEI.info differ for checking a used phone, and what SafeOrStolen's free web app does.",
     "specialty": "comparison",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
         {
           "@type": "Service",
-          "name": "SafeOrStolen IMEI Verification",
+          "name": "SafeOrStolen IMEI Check",
           "url": "https://safeorstolen.com",
-          "description": "IMEI checker with mobile app (iOS/Android), barcode scanning, offline mode, comprehensive database",
+          "description": "Stolen phone check by IMEI that searches SafeOrStolen theft reports and public web results and shows the phone's make and model. Also checks VINs and serial numbers. Free installable web app at safeorstolen.com/app.",
           "provider": {
             "@type": "Organization",
             "name": "SafeOrStolen"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Mobile App Features",
-            "itemListElement": [
-            ]
           }
         },
         {
           "@type": "Service",
           "name": "IMEI.info",
-          "description": "IMEI checker",
+          "description": "IMEI lookup for phone device details",
           "provider": {
             "@type": "Organization",
             "name": "IMEI.info"
@@ -46,8 +40,8 @@ const ComparisonIMEIInfo = () => {
   return (
     <>
       <PageSEO
-        title="Best IMEI.info Alternative | SafeOrStolen App"
-        description="SafeOrStolen offers iOS/Android app with barcode scanning. Compare IMEI checkers."
+        title="IMEI.info Alternative | SafeOrStolen Web App"
+        description="An IMEI.info alternative that checks theft reports, not just specs. SafeOrStolen checks phones, VINs and serials, with a free web app at safeorstolen.com/app."
         keywords="IMEI.info alternative, IMEI.info app, best IMEI.info alternative, IMEI checker app, IMEI checker comparison"
         canonical="/vs-imeiinfo"
         structuredData={comparisonSchema}
@@ -55,11 +49,13 @@ const ComparisonIMEIInfo = () => {
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>Best IMEI.info Alternative: SafeOrStolen Has the Mobile App</h1>
-          <p> Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. 
-            Download the SafeOrStolen IMEI checker app at safeorstolen.com/app for instant barcode scanning, offline IMEI verification, 
-            and 3-second stolen checks. IMEI.info is web-only, basic interface, limited data, phones only. SafeOrStolen app is FREE to 
-            download with comprehensive IMEI checking plus VIN, firearms, and all other items.
+          <h1>IMEI.info Alternative: SafeOrStolen</h1>
+          <p>
+            IMEI.info looks up a phone's details. SafeOrStolen checks whether the phone has been reported stolen: it
+            searches SafeOrStolen theft reports and public web results and shows the make and model from the IMEI.
+            The same account checks VINs, license plates, gun serials, bikes and tools. You get 2 free checks, then
+            $0.99 a check or $10 a month. There's no App Store or Google Play app; install the free web app from your
+            phone's browser at safeorstolen.com/app.
           </p>
         </div>
       </noscript>
@@ -71,14 +67,16 @@ const ComparisonIMEIInfo = () => {
                 Compare IMEI.info and SafeOrStolen
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Best IMEI.info Alternative: SafeOrStolen
+                IMEI.info Alternative: SafeOrStolen
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"> Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                IMEI.info tells you what a phone is. SafeOrStolen tells you whether someone has reported it stolen, and it
+                checks cars, plates, guns, bikes and tools from the same account.
               </p>
               <Button size="lg" asChild>
                 <Link to="/app">
                   <Download className="w-5 h-5 mr-2" />
-                  Download SafeOrStolen IMEI Checker App
+                  Get the Free SafeOrStolen Web App
                 </Link>
               </Button>
             </div>
@@ -95,27 +93,27 @@ const ComparisonIMEIInfo = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Mobile App with Barcode Scanner</strong> - Scan IMEI instantly</span>
+                      <span><strong>Barcode scanner</strong> - scan the IMEI off the box or SIM tray label instead of typing it</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Comprehensive IMEI Database</strong> - Global coverage</span>
+                      <span><strong>Theft check</strong> - searches SafeOrStolen theft reports and public web results, with every source listed</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>All Item Types</strong> - Phones, cars, guns, electronics</span>
+                      <span><strong>More than phones</strong> - VINs, plates, gun serials, bikes, tools, electronics</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Works Offline</strong> - No internet needed</span>
+                      <span><strong>Blacklist check</strong> - paid add-on; monthly members get up to 20 a month</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>FREE 2 Searches</strong> - Try before you buy</span>
+                      <span><strong>2 free checks</strong> - then $0.99 a check or $10 a month</span>
                     </li>
                   </ul>
                   <Button className="w-full mt-6" size="lg" asChild>
-                    <Link to="/app">Download App</Link>
+                    <Link to="/app">Install the Web App</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -130,42 +128,29 @@ const ComparisonIMEIInfo = () => {
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" /><span>Single-category coverage</span>
+                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Phones only</strong> - no VIN, plate, gun or bike checks</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Basic Interface</strong> - Limited user experience</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Phones Only</strong> - No VIN, firearms, or other items</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Requires Internet</strong> - Cannot work offline</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Limited Data</strong> - Basic verification only</span>
+                      <span><strong>Device details</strong> - built around looking up what the phone is</span>
                     </li>
                   </ul>
-                  <Button className="w-full mt-6" variant="outline" size="lg" disabled>
-                  </Button>
                 </CardContent>
               </Card>
             </div>
 
             <Card className="bg-gradient-to-br from-primary/10 to-secondary/10">
               <CardContent className="pt-6 text-center">
-                <h2 className="text-3xl font-bold mb-4">Choose the Better IMEI.info Alternative</h2>
+                <h2 className="text-3xl font-bold mb-4">Install SafeOrStolen on Your Phone</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. Install from your mobile browser with barcode scanning, 
-                  offline mode, and verification for all item types.
+                  Open safeorstolen.com/app in your phone's browser and add it to your home screen. It's free, there's
+                  nothing to download from an app store, and it needs an internet connection to run a check.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/app">
                     <Download className="w-5 h-5 mr-2" />
-                    Download SafeOrStolen IMEI Checker App
+                    Get the Free Web App
                   </Link>
                 </Button>
               </CardContent>

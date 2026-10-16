@@ -87,7 +87,7 @@ const SitemapPage = () => {
  { to: "/is-this-laptop-stolen", label: "Is This Laptop Stolen?" },
  { to: "/is-this-bike-stolen", label: "Is This Bike Stolen?" },
  { to: "/is-this-gun-stolen", label: "Is This Gun Stolen?" },
- { to: "/theftaz", label: "TheftAZ" },
+ { to: "/theftaz", label: "Arizona Stolen Property Search" },
  ]
  },
  {
@@ -243,14 +243,13 @@ const SitemapPage = () => {
  { to: "/how-it-works", label: "How It Works" },
  { to: "/pricing", label: "Pricing" },
  { to: "/features", label: "Features" },
- { to: "/testimonials", label: "Testimonials" },
- { to: "/app", label: "Download App" },
- { to: "/download", label: "Download" },
+ { to: "/app", label: "Free Web App" },
+ { to: "/download", label: "Install the Web App" },
  { to: "/faq", label: "FAQ" },
  { to: "/report-stolen", label: "Report Stolen Item" },
  { to: "/data-sources", label: "Data Sources" },
  { to: "/resource-center", label: "Resource Center" },
- { to: "/comprehensive-guide", label: "Comprehensive Guide" },
+ { to: "/comprehensive-guide", label: "Complete Buyer Guide" },
  { to: "/stolen-database", label: "Stolen Database" },
  { to: "/community", label: "Community" },
  { to: "/transparency", label: "Transparency" },
@@ -280,7 +279,7 @@ const SitemapPage = () => {
  <>
  <PageSEO
  title="Sitemap - All Pages | SafeOrStolen"
- description="Complete sitemap of SafeOrStolen with 200+ pages. Find all verification tools, state lookups, city pages, marketplace safety guides, blog posts, and more."
+ description="Every page on SafeOrStolen in one list: stolen-item checks, state plate and VIN lookups, marketplace safety guides, blog posts and company pages."
  keywords="sitemap, safeorstolen pages, verification tools, VIN lookup, IMEI checker, license plate lookup"
  canonical="/sitemap"
  />
@@ -289,8 +288,8 @@ const SitemapPage = () => {
  <div className="max-w-7xl mx-auto">
  <h1 className="text-4xl font-bold text-center mb-4">Sitemap</h1>
  <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
- Browse all 200+ pages on SafeOrStolen. Find verification tools, state-specific lookups, 
- marketplace safety guides, blog posts, comparison pages, and helpful resources.
+ Every page on SafeOrStolen, grouped by topic: item checks, state plate and VIN lookups, 
+ marketplace safety guides, blog posts and company pages.
  </p>
 
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -4,44 +4,43 @@ import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 /**
- * TheftAZ "alternative" page — rewritten Sept 28 2026 to list only real capabilities.
- * SafeOrStolen SEARCHES TheftAZ (Arizona AG, law enforcement stolen-vehicle records)
- * on every VIN and Arizona plate check. TheftAZ is a government source, not a competitor.
+ * Oct 8 2026: audited by hand for "theftaz alternative". TheftAZ is the topic of this page
+ * (the Arizona Attorney General's free stolen-vehicle search). Do not claim SafeOrStolen
+ * uses it; describe SafeOrStolen's source as "Arizona law-enforcement stolen-vehicle records".
  * Do not add NICB, NCIC, insurance, "50 state", or native-app claims.
  */
 
 const FAQS: { q: string; a: string }[] = [
   {
     q: 'What is TheftAZ?',
-    a: "TheftAZ (theftaz.azag.gov) is the Arizona Attorney General's stolen-vehicle search. It holds records from participating Arizona law enforcement agencies, is updated twice a day, and can be searched by license plate or VIN.",
+    a: "TheftAZ is the Arizona Attorney General's free stolen-vehicle search. It holds vehicles reported stolen to participating Arizona law enforcement agencies, is updated twice a day, and can be searched by license plate or VIN. It doesn't decode the VIN or keep a record of your search.",
   },
   {
     q: 'Is SafeOrStolen a replacement for TheftAZ?',
-    a: "No, it builds on it. Every VIN and Arizona plate check on SafeOrStolen searches TheftAZ for you, then adds a VIN check-digit test, the U.S. government VIN decode, safety recalls, and a guided buyer's check you can save as a record.",
+    a: "It covers the same ground and more. A SafeOrStolen check (safeorstolen.com/theftaz-alternative) searches Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates, plus SafeOrStolen's own theft reports and public web listings. VIN checks also decode the year, make and model and list open recalls, and every check is saved to your account with the date.",
   },
   {
     q: 'Can I still use TheftAZ directly?',
-    a: "Yes. TheftAZ is free at theftaz.azag.gov. Use it directly any time. SafeOrStolen is useful when you want the extra vehicle checks and a saved record of everything you checked.",
+    a: "Yes. TheftAZ is free and you can search it any time. SafeOrStolen is useful when you also want the VIN decoded, open recalls listed, a search of online listings and owner theft reports, and a dated record of the check saved to your account.",
   },
   {
     q: 'Does a clean TheftAZ result mean the car was never stolen?',
-    a: "No. TheftAZ covers thefts reported to participating Arizona agencies. A car stolen in another state may not appear. Run the free NICB VINCheck for a nationwide theft and salvage check and compare the title to the seller's ID before you pay.",
+    a: "No. TheftAZ covers thefts reported to participating Arizona agencies, so a car stolen in another state may not appear. Match the VIN on the dash and the driver's door sticker to the title, and compare the name on the title to the seller's photo ID before you pay.",
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'A free account includes 2 checks. After that, checks are $0.99 each, or $10 per month for unlimited checks.',
+    a: 'A free account includes 2 checks with no credit card. After that, a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
   },
 ];
 
 const ROWS: [string, boolean | string, boolean | string][] = [
-  ['Arizona police stolen-vehicle records', true, true],
+  ['Arizona law-enforcement stolen-vehicle records', true, true],
   ['Search by VIN or Arizona plate', true, true],
-  ['VIN check-digit test (catches typos and altered VINs)', false, true],
-  ['Year, make, and model from the U.S. government VIN decoder', false, true],
-  ['Safety recalls for the model', false, true],
-  ["Guided Buyer's Check (NICB, door-sticker VIN, title vs. seller ID)", false, true],
-  ['Saved Proof of Clean Purchase record', false, true],
-  ['Stolen bike search (BikeIndex registry)', false, true],
+  ['Theft reports filed by owners on SafeOrStolen', false, true],
+  ['Public web listings and posts that mention the VIN', false, true],
+  ['Year, make, and model decoded from the VIN', false, true],
+  ['Open safety recalls for the vehicle', false, true],
+  ['Check saved to your account with the date', false, true],
   ['Cost', 'Free', '2 free checks, then $0.99 or $10/mo'],
 ];
 
@@ -70,19 +69,19 @@ const TheftAZAlternativePage = () => {
   return (
     <>
       <PageSEO
-        title="TheftAZ Plus More: Arizona Stolen Car Check | SafeOrStolen"
-        description="SafeOrStolen searches TheftAZ, Arizona's police stolen-vehicle records, on every VIN and plate check, then adds a VIN decode, recalls, and a guided buyer's check."
+        title="TheftAZ Alternative: Arizona Stolen Car Check | SafeOrStolen"
+        description="How TheftAZ compares with SafeOrStolen: Arizona law-enforcement stolen-vehicle records, plus a VIN decode, open recalls, web listings and a saved record."
         canonical="/theftaz-alternative"
         structuredData={[faqSchema]}
       />
       <div className="min-h-screen bg-background pt-20">
         <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-black mb-4">TheftAZ, plus the rest of the car check</h1>
+            <h1 className="text-4xl md:text-5xl font-black mb-4">A TheftAZ alternative that does the rest of the car check</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              SafeOrStolen searches TheftAZ, the Arizona Attorney General's database of stolen vehicles reported by Arizona
-              law enforcement, on every VIN and Arizona plate check. Then it adds the checks TheftAZ doesn't do, in the
-              same search.
+              TheftAZ is the Arizona Attorney General's free search of vehicles reported stolen to Arizona police.
+              SafeOrStolen also searches Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates, and in
+              the same search decodes the VIN, lists open recalls, and checks owner theft reports and online listings.
             </p>
           </div>
         </header>
@@ -102,8 +101,9 @@ const TheftAZAlternativePage = () => {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">What TheftAZ does, and what SafeOrStolen adds</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              TheftAZ is a free government search, and SafeOrStolen uses it directly. The difference is everything else a
-              used-car buyer needs to check before paying.
+              TheftAZ is a free government search that answers one question: has this Arizona vehicle been reported
+              stolen to police? SafeOrStolen answers that too, then covers more of what a used-car buyer should check
+              before paying.
             </p>
 
             <div className="overflow-x-auto mb-6">
@@ -131,13 +131,15 @@ const TheftAZAlternativePage = () => {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-foreground mb-4">Why one database isn't enough</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              TheftAZ includes thefts reported to participating Arizona agencies. A car stolen in another state and driven
-              into Arizona may not be in it yet. So a clean TheftAZ result is a good sign, not a guarantee.
+              Arizona police records only include thefts reported to participating Arizona agencies. A car stolen in
+              another state and driven into Arizona may not be in them. So a clean result is a good sign, not a
+              guarantee, whichever tool you use.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              That's why SafeOrStolen's Buyer's Check sends you to the free nationwide NICB VINCheck, has you match the VIN
-              on the driver's door sticker to the dashboard, and has you compare the name on the title to the seller's
-              photo ID. If every step checks out, you can save a Proof of Clean Purchase showing what was checked and when.
+              Before you pay, match the VIN on the driver's door sticker to the one on the dashboard and the title, and
+              compare the name on the title to the seller's photo ID. SafeOrStolen saves each check to your account with
+              the date, and an optional $1.99 verification certificate gives you a dated record with its own link
+              showing you checked before the sale.
             </p>
           </section>
 

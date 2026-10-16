@@ -1,10 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
- Smartphone, Download, Shield, Zap, Wifi, WifiOff, 
- QrCode, Car, Phone, Package, Check, Star, Globe,
- Clock, Database, Users, Award, ArrowRight
+import {
+ Smartphone, Download, Shield, Wifi,
+ QrCode, Check, Clock, Database, Users, ArrowRight, FileText
 } from 'lucide-react';
 import { useNavigate } from '@/lib/router-compat';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
@@ -15,18 +14,18 @@ const MobileAppPage = () => {
  const navigate = useNavigate();
 
  const faqs = [
- { question: "Is the SafeOrStolen mobile app free to download?", answer: "Yes, the SafeOrStolen app is 100% free to download and install. You get 2 free verification checks, then $0.99 per check or $10/month for unlimited verifications across all item types." },
- { question: "Does SafeOrStolen work on iPhone and Android?", answer: "Yes! SafeOrStolen is a Progressive Web App (PWA) that works on all devices: iPhone, Android, tablets, and desktop computers. Install directly from your browser—no app store required." },
- { question: "Can I use SafeOrStolen without internet?", answer: "Yes. SafeOrStolen features offline mode that caches your recent verifications for access anywhere. Perfect for marketplace meetups in areas with poor signal." },
- { question: "How do I install SafeOrStolen on my phone?", answer: "iPhone: Open Safari, visit safeorstolen.com, tap Share → Add to Home Screen. Android: Open Chrome, tap Menu → Install App. Takes 10 seconds." },
- { question: "What can I verify with the SafeOrStolen app?", answer: "Verify phones (IMEI), vehicles (VIN), license plates, electronics, firearms, bikes, boats, and any item with a serial number against multiple sources." },
- { question: "How does SafeOrStolen compare to single-category checkers?", answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place." },
+ { question: "Is there a SafeOrStolen app in the App Store or Google Play?", answer: "No. SafeOrStolen is a free installable web app at safeorstolen.com/app, not an App Store or Google Play app. You add it to your home screen from your phone's browser, and it opens full screen like any other app. Installing it is free; you get 2 free checks with a free account, then $0.99 a check or $10 a month for unlimited checks." },
+ { question: "Does SafeOrStolen work on iPhone and Android?", answer: "Yes. The SafeOrStolen web app runs in Safari on iPhone and iPad and in Chrome on Android, and it also works in any desktop browser. Install it from safeorstolen.com/app. There's nothing to download from an app store." },
+ { question: "Can I use SafeOrStolen without internet?", answer: "No. Every check searches SafeOrStolen's theft reports and other records online, so you need a data connection to run one. If signal is weak at the meetup spot, run the check before you leave, using the serial, IMEI or VIN the seller sends you." },
+ { question: "How do I install SafeOrStolen on my phone?", answer: "On iPhone, open safeorstolen.com/app in Safari, tap the Share button, then tap Add to Home Screen. On Android, open the same address in Chrome, tap the three-dot menu, then tap Install app or Add to Home screen. The SafeOrStolen icon then sits on your home screen." },
+ { question: "What can I check with the SafeOrStolen web app?", answer: "Phones by IMEI, vehicles by VIN, license plates, guns, bikes and anything else with a serial number, such as laptops, tools and cameras. Each result says reported stolen, possible match, or no report found in the records searched, and lists every source." },
+ { question: "Does the web app search police databases?", answer: "It searches SafeOrStolen's own theft reports and public web results on every check, plus police firearm theft and loss reports for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. It does not search NCIC, DMV records or carrier records other than the paid blacklist check." },
  ];
 
  const howToSteps = [
- { name: "Open Your Browser", text: "Visit safeorstolen.com in Safari (iPhone) or Chrome (Android). The app works in any modern browser." },
- { name: "Install to Home Screen", text: "iPhone: Tap Share icon → Add to Home Screen. Android: Tap menu (⋮) → Install App or Add to Home Screen." },
- { name: "Start Verifying", text: "Open SafeOrStolen from your home screen. Use the barcode scanner or type any serial number to verify instantly." },
+ { name: "Open your browser", text: "Go to safeorstolen.com/app in Safari on iPhone or Chrome on Android." },
+ { name: "Add it to your home screen", text: "iPhone: tap the Share icon, then Add to Home Screen. Android: tap the three-dot menu, then Install app or Add to Home screen." },
+ { name: "Run a check", text: "Open SafeOrStolen from your home screen, sign in, and scan or type a serial number, IMEI, VIN or plate. Results come back in a few seconds." },
  ];
 
  const breadcrumbs = [
@@ -36,69 +35,69 @@ const MobileAppPage = () => {
 
 
  const features = [
- { icon: QrCode, title: "Barcode Scanner", desc: "Scan IMEI, VIN, or serial numbers instantly—no typing required" },
- { icon: WifiOff, title: "Offline Mode", desc: "Access recent verifications without internet at marketplace meetups" },
- { icon: Zap, title: "3-Second Results", desc: "Instant verification against multiple sources" },
- { icon: Shield, title: "All Item Types", desc: "Phones, vehicles, electronics, firearms, bikes, boats & more" },
- { icon: Globe, title: "US-Optimized", desc: "Our own reports, public web results, and AI analysis for comprehensive checks across the US." },
- { icon: Clock, title: "24/7 Access", desc: "Verify anytime, anywhere—works like a native app" },
+ { icon: QrCode, title: "Camera scanner", desc: "Point your camera at a barcode on the box or sticker instead of typing a long number" },
+ { icon: Wifi, title: "Needs a data connection", desc: "Checks run online against current records, so make sure you have signal at the meetup" },
+ { icon: Clock, title: "Results in a few seconds", desc: "Reported stolen, possible match, or no report found, with every source listed" },
+ { icon: Shield, title: "All item types", desc: "Phones, vehicles, plates, guns, bikes and anything with a serial number" },
+ { icon: Database, title: "What it searches", desc: "SafeOrStolen theft reports and public web results on every check, plus extra records for guns, bikes and Arizona vehicles" },
+ { icon: FileText, title: "Saved history", desc: "Each check is saved to your account with the date, so you can show it later" },
  ];
 
  const useCases = [
- { title: "Marketplace Meetups", desc: "Verify items before exchanging cash at Facebook Marketplace, Craigslist, or OfferUp meetups" },
- { title: "Car Lot Browsing", desc: "Scan VINs through windshields to check vehicle history instantly" },
- { title: "Pawn Shop Visits", desc: "Protect yourself from unknowingly purchasing stolen goods" },
- { title: "Gun Show Transactions", desc: "Verify firearm serial numbers comply with 18 U.S.C. § 922" },
- { title: "Estate Sales", desc: "Check electronics and valuables before bidding at estate sales" },
- { title: "Online Purchases", desc: "Request serial numbers from sellers and verify before payment" },
+ { title: "Marketplace meetups", desc: "Check the item before you hand over cash at a Facebook Marketplace, Craigslist or OfferUp meetup" },
+ { title: "Private car sales", desc: "Read the VIN through the windshield or on the door jamb and check it before you talk price" },
+ { title: "Pawn shop visits", desc: "Ask to see the serial number and check it before you pay" },
+ { title: "Gun shows", desc: "Check a gun serial against police firearm theft and loss reports before a private sale" },
+ { title: "Estate sales", desc: "Check electronics and tools before you bid" },
+ { title: "Online purchases", desc: "Ask the seller for the serial number or IMEI and check it before you pay" },
  ];
 
  return (
  <>
  <Helmet>
- <title>SafeOrStolen on Mobile | Stolen Item Checker</title>
- <meta name="description" content="Use SafeOrStolen on your phone to verify stolen phones, vehicles & electronics. Free install from your browser, barcode scanner, offline mode. multiple sources in 3 seconds." />
+ <title>SafeOrStolen Mobile App | Free Web App for Your Phone</title>
+ <meta name="description" content="SafeOrStolen is a free installable web app, not an App Store app. Add it to your home screen from safeorstolen.com/app and check items at the meetup." />
  <meta name="keywords" content="SafeOrStolen app, stolen item checker app, IMEI checker app, VIN lookup app, stolen phone app, download SafeOrStolen" />
  <link rel="canonical" href="https://safeorstolen.com/mobile-app" />
  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
- 
- <meta property="og:title" content="SafeOrStolen Mobile App - Free Download" />
- <meta property="og:description" content="SafeOrStolen on mobile: barcode scanner, offline mode, multiple sources." />
+
+ <meta property="og:title" content="SafeOrStolen on Your Phone - Free Web App" />
+ <meta property="og:description" content="Add SafeOrStolen to your home screen from safeorstolen.com/app. Free to install, 2 free checks." />
  <meta property="og:url" content="https://safeorstolen.com/mobile-app" />
  <meta property="og:type" content="website" />
- 
- <meta name="ai:purpose" content="Mobile application for instant stolen goods verification at marketplace meetups" />
- <meta name="ai:service_type" content="PWA stolen item checker with barcode scanner and offline mode" />
- <meta name="ai:pricing" content="Free download, 2 free checks, $0.99/check or $10/month unlimited" />
- 
+
+ <meta name="ai:purpose" content="Free installable web app for checking whether an item is reported stolen before buying it" />
+ <meta name="ai:service_type" content="Installable web app (not in the App Store or Google Play) with a camera barcode scanner" />
+ <meta name="ai:pricing" content="Free to install, 2 free checks, $0.99/check or $10/month unlimited" />
+
  </Helmet>
- 
+
  <FAQSchema faqs={faqs} />
- <HowToSchema 
- name="How to Install SafeOrStolen Mobile App"
- description="Install the SafeOrStolen stolen item verification app on your phone in under 30 seconds"
- totalTime="PT30S"
+ <HowToSchema
+ name="How to install the SafeOrStolen web app"
+ description="Add the SafeOrStolen web app to your phone's home screen from your browser"
+ totalTime="PT1M"
  steps={howToSteps}
  />
  <BreadcrumbSchema items={breadcrumbs} />
 
  <noscript>
  <article>
- <h1>SafeOrStolen Mobile App - Free Download</h1>
- <p>Use SafeOrStolen on your phone to verify stolen phones, vehicles, electronics, and firearms. SafeOrStolen features instant barcode scanning, offline mode, and checks multiple sources in 3 seconds. Free to install from any mobile browser.</p>
- <h2>App Features</h2>
+ <h1>SafeOrStolen on Your Phone - Free Web App</h1>
+ <p>SafeOrStolen is a free installable web app at safeorstolen.com/app. It is not in the App Store or Google Play. Add it to your home screen from Safari or Chrome, then check phones, vehicles, plates, guns, bikes and serial numbers in a few seconds. It needs a data connection to run a check.</p>
+ <h2>Features</h2>
  <ul>
- <li>Barcode Scanner - Scan IMEI, VIN, or serial numbers instantly</li>
- <li>Offline Mode - Access verifications without internet</li>
- <li>3-Second Results - multiple sources checked instantly</li>
- <li>All Item Types - Phones, vehicles, electronics, firearms</li>
+ <li>Camera barcode scanner for serial numbers, IMEIs and VINs</li>
+ <li>Results in a few seconds, with every source listed</li>
+ <li>Each check saved to your account with the date</li>
+ <li>All item types: phones, vehicles, plates, guns, bikes, electronics</li>
  </ul>
- <h2>How to Install</h2>
+ <h2>How to install</h2>
  <ol>
- <li>iPhone: Safari → Share → Add to Home Screen</li>
- <li>Android: Chrome → Menu → Install App</li>
+ <li>iPhone: Safari, Share, Add to Home Screen</li>
+ <li>Android: Chrome, menu, Install app</li>
  </ol>
- <p>Pricing: Free download, 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>Pricing: free to install, 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
  </article>
  </noscript>
 
@@ -108,21 +107,21 @@ const MobileAppPage = () => {
  <div className="max-w-6xl mx-auto text-center">
  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
  <Smartphone className="h-4 w-4" />
- <span>Stolen Item Verification On Your Phone</span>
+ <span>Stolen item checks on your phone</span>
  </div>
- 
+
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
- SafeOrStolen Mobile App
+ SafeOrStolen on Your Phone
  </h1>
- 
+
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify phones, vehicles, electronics, and firearms in 3 seconds, with barcode scanning and offline mode for marketplace meetups.
+ SafeOrStolen is a free web app you add to your home screen from safeorstolen.com/app. It isn't in the App Store or Google Play. Scan or type a serial, IMEI, VIN or plate at the meetup and get a result in a few seconds.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
- <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/')}>
+ <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/app')}>
  <Download className="h-5 w-5" />
- Install Free App
+ Open the Free Web App
  </Button>
  <Button size="lg" variant="outline" className="px-8 gap-2" onClick={() => navigate('/install-app')}>
  Installation Guide
@@ -131,7 +130,7 @@ const MobileAppPage = () => {
  </div>
 
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
- <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Works on iOS & Android</span>
+ <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Runs in Safari and Chrome</span>
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> No app store needed</span>
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> 2 free checks included</span>
  </div>
@@ -159,9 +158,9 @@ const MobileAppPage = () => {
  {/* Use Cases */}
  <section className="container mx-auto px-4 py-16 bg-muted/30">
  <div className="max-w-6xl mx-auto">
- <h2 className="text-3xl font-bold text-center mb-4">Perfect For Every Situation</h2>
+ <h2 className="text-3xl font-bold text-center mb-4">Where People Use It</h2>
  <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
- SafeOrStolen's mobile app is designed for real-world verification scenarios where you need instant answers.
+ The web app is built for checking an item while you're standing next to it, before money changes hands.
  </p>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
  {useCases.map((useCase, idx) => (
@@ -174,29 +173,29 @@ const MobileAppPage = () => {
  </div>
  </section>
 
- {/* Stats */}
+ {/* Key facts */}
  <section className="container mx-auto px-4 py-16">
  <div className="max-w-4xl mx-auto">
  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
  <div>
- <Database className="h-8 w-8 mx-auto text-primary mb-2" />
-  <div className="text-3xl font-bold">AI</div>
-  <div className="text-sm text-muted-foreground">Plain-Language Analysis</div>
+ <Download className="h-8 w-8 mx-auto text-primary mb-2" />
+ <div className="text-3xl font-bold">Free</div>
+ <div className="text-sm text-muted-foreground">To install</div>
  </div>
  <div>
  <Clock className="h-8 w-8 mx-auto text-primary mb-2" />
- <div className="text-3xl font-bold">3 sec</div>
- <div className="text-sm text-muted-foreground">Verification Time</div>
+ <div className="text-3xl font-bold">$0.99</div>
+ <div className="text-sm text-muted-foreground">Per check</div>
  </div>
  <div>
  <Users className="h-8 w-8 mx-auto text-primary mb-2" />
- <div className="text-3xl font-bold">6</div>
- <div className="text-sm text-muted-foreground">Item Categories</div>
+ <div className="text-3xl font-bold">$10</div>
+ <div className="text-sm text-muted-foreground">A month, unlimited</div>
  </div>
  <div>
- <Star className="h-8 w-8 mx-auto text-primary mb-2" />
+ <Check className="h-8 w-8 mx-auto text-primary mb-2" />
  <div className="text-3xl font-bold">2</div>
- <div className="text-sm text-muted-foreground">Free Checks</div>
+ <div className="text-sm text-muted-foreground">Free checks</div>
  </div>
  </div>
  </div>
@@ -220,13 +219,13 @@ const MobileAppPage = () => {
  {/* Final CTA */}
  <section className="container mx-auto px-4 py-16">
  <div className="max-w-3xl mx-auto text-center">
- <h2 className="text-3xl font-bold mb-4">Start Verifying in 30 Seconds</h2>
+ <h2 className="text-3xl font-bold mb-4">Add SafeOrStolen to Your Home Screen</h2>
  <p className="text-muted-foreground mb-8">
- Install SafeOrStolen now. No app store needed. Create a free account, then scan and verify.
+ Open safeorstolen.com/app, add it to your home screen, and create a free account. No app store, no credit card.
  </p>
- <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/')}>
+ <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/app')}>
  <Download className="h-5 w-5" />
- Install SafeOrStolen Free
+ Open the Free Web App
  </Button>
  </div>
  </section>

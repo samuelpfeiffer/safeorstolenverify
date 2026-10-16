@@ -124,7 +124,7 @@ export const AIMarketplaceAdvisor: React.FC = () => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="modern-card p-6 text-center">
             <div className="w-12 h-12 mx-auto border-4 border-primary/20 border-t-primary rounded-full animate-spin mb-3" />
             <p className="text-sm font-medium text-foreground">AI is analyzing the listing...</p>
-            <p className="text-xs text-muted-foreground mt-1">Checking price, photos, seller reputation, and scam indicators</p>
+            <p className="text-xs text-muted-foreground mt-1">Looking at the price, photos, description and common scam signs</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -239,7 +239,7 @@ export const AIMarketplaceAdvisor: React.FC = () => {
               {/* Identifiers found */}
               {analysis.identifiersFound && analysis.identifiersFound.length > 0 && (
                 <div className="p-3 rounded-xl bg-primary/5 border border-primary/20">
-                  <span className="text-xs text-primary uppercase tracking-wider font-semibold">🔍 Identifiers Found — Verify Now!</span>
+                  <span className="text-xs text-primary uppercase tracking-wider font-semibold">Numbers found in the listing: check them</span>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {analysis.identifiersFound.map((id, i) => (
                       <a
@@ -279,7 +279,7 @@ export const AIMarketplaceAdvisor: React.FC = () => {
               </div>
 
               <p className="text-[10px] text-muted-foreground text-center">
-                Powered by SafeOrStolen AI · <a href="/pricing" className="text-primary hover:underline">Powered by SafeOrStolen AI · <a href="/pricing" className="text-primary hover:underline">Included in Unlimited plan ($10/mo)</a></a>
+                A listing review looks for warning signs; it is not a theft check. · <a href="/pricing" className="text-primary hover:underline">Included in the $10/month unlimited plan</a>
               </p>
             </div>
           </motion.div>

@@ -35,9 +35,9 @@ const SOURCE_LABELS: Record<string, string> = {
   firearm_verification: 'Ohio law-enforcement stolen-gun records',
   police_theft_records: 'Police theft records (33 states and DC)',
   imei_verification: 'Lost & stolen phone blacklist',
-  vehicle_verification: 'Law-enforcement & federal vehicle records',
+  vehicle_verification: 'VIN decode, recalls and Arizona law-enforcement records',
   web_scraper: 'Public web search',
-  ai_analysis: 'AI risk review',
+  ai_analysis: 'Automated risk review',
 };
 const sourceLabel = (s: string) => SOURCE_LABELS[String(s).toLowerCase()] ?? String(s).replace(/_/g, ' ');
 
@@ -206,16 +206,16 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <div className="mt-5 grid grid-cols-2 gap-3">
  <div className="rounded-xl border border-border bg-card/40 p-3">
  <Database className="w-4 h-4 text-primary mb-1.5" />
- <div className="text-[11px] font-semibold">multiple sources</div>
+ <div className="text-[11px] font-semibold">Every source listed</div>
  <div className="text-[10px] text-muted-foreground">
- Our registry, law-enforcement records, phone blacklist, bike and firearm theft databases
+ Our theft reports and web results, plus bike, gun and Arizona vehicle records where they apply
  </div>
  </div>
  <div className="rounded-xl border border-border bg-card/40 p-3">
  <Clock className="w-4 h-4 text-primary mb-1.5" />
- <div className="text-[11px] font-semibold">~3 second results</div>
+ <div className="text-[11px] font-semibold">Results in a few seconds</div>
  <div className="text-[10px] text-muted-foreground">
- Real-time aggregated checks
+ Saved to your account with the date
  </div>
  </div>
  <div className="rounded-xl border border-border bg-card/40 p-3">

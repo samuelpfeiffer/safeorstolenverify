@@ -69,7 +69,7 @@ const MobileVerifyPage: React.FC = () => {
     <>
       <PageSEO
         title="Mobile Verify - Quick Item Verification"
-        description="Verify items instantly on your mobile device"
+        description="Check an IMEI, VIN or serial number for theft reports from your phone in a few seconds"
         canonical="/mobile-verify"
       />
 
@@ -95,7 +95,7 @@ const MobileVerifyPage: React.FC = () => {
                 Scan with Camera
               </Button>
               <p className="text-center text-xs text-muted-foreground mt-3">
-                Point at QR code, barcode, or serial number
+                Point at the barcode or QR code on the label
               </p>
             </CardContent>
           </Card>

@@ -1,11 +1,12 @@
 import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTemplate';
 
+/** Oct 8 2026: audited by hand for "android phone stolen check". Removed invented stats, AI-analysis source claims and "instant" wording. */
 const AndroidPhoneCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Android Phone is Stolen - Free IMEI Verification | SafeOrStolen"
- metaDescription="Check an Android phone IMEI before buying. SafeOrStolen reviews its reports, public web results, and AI analysis and provides device details."
- h1="Check if Android Phone is Stolen - Free IMEI Check"
+ metaDescription="Check an Android phone's IMEI before buying. SafeOrStolen shows the make and model and searches theft reports and web listings for that IMEI in a few seconds."
+ h1="Check if an Android Phone Is Stolen - Free IMEI Check"
  keywords={[
  'android phone stolen check',
  'check if phone is stolen',
@@ -22,53 +23,46 @@ const AndroidPhoneCheck = () => {
  itemType="Android Phone"
  identifierType="IMEI"
  heroBadge="Android Device Verification"
- heroSubtitle="Google Pixel, OnePlus, Motorola, and all Android phones can be verified instantly. Check the IMEI before buying to ensure it's not stolen or blacklisted. Free verification."
- stats={[
- { value: "2M+", label: "Phones Stolen Yearly" },
- { value: "3 sec", label: "Verification Time" },
- { value: "Instant", label: "Results" },
- { value: "Free", label: "First 2 Checks" }
- ]}
- whatIsTitle="What is Android IMEI Verification?"
- whatIsContent="Every Android phone has a unique 15-digit IMEI number. When reported stolen, this IMEI is typically added to carrier blacklists, rendering the phone unusable on major networks. Our verification uses SafeOrStolen's reports, public web results, and AI analysis to determine if an Android phone is safe to purchase."
+ heroSubtitle="Pixel, OnePlus, Motorola or any other Android phone: dial *#06#, enter the IMEI, and see the model and any theft reports in a few seconds. Your first 2 checks are free."
+ whatIsTitle="What is an Android IMEI check?"
+ whatIsContent="Every Android phone has a 15-digit IMEI (dual-SIM phones have two). A SafeOrStolen check shows the make and model that IMEI belongs to, so you can confirm it matches the phone in your hand, and searches SafeOrStolen theft reports and public web listings for it. A carrier blacklist check, which shows whether carriers have blocked the IMEI as lost or stolen, is available as a paid add-on."
  howItWorksSteps={[
- "Find the IMEI: Dial *#06# on the phone, or go to Settings > About Phone > IMEI",
- "Enter the 15-digit IMEI number into our free verification tool",
- "Our system searches SafeOrStolen's reports, public web results, and community theft reports",
- "Get instant results - know if the Android phone is SAFE or STOLEN"
+ "Find the IMEI: dial *#06# on the phone, or go to Settings > About phone",
+ "Enter the 15-digit IMEI into SafeOrStolen",
+ "SafeOrStolen shows the make and model and searches its theft reports and public web listings",
+ "Read the result: reported stolen, possible match, or no report found in the records searched, with every source listed"
  ]}
- whyVerifyTitle="Why Check Android Phones Before Buying?"
- whyVerifyContent="Android phones are frequently stolen due to their widespread use and resale value. Google Pixel and OnePlus devices are particularly targeted. Protect yourself from buying stolen property."
+ whyVerifyTitle="Why check an Android phone before buying?"
+ whyVerifyContent="A stolen Android phone can be blacklisted by carriers or locked to the owner's Google account, and you can lose it to police if it's recovered. Checking the IMEI, then watching the seller remove their Google account and reset the phone, covers the most common problems."
  whyVerifyBenefits={[
- "Blacklisted Android phones won't work on any major carrier network",
- "Google's Find My Device can remotely lock and wipe stolen phones",
- "Factory Reset Protection (FRP) can lock you out permanently",
- "Police recover stolen phones using IMEI numbers",
- "Possession of stolen property is a criminal offense",
- "No warranty coverage for stolen devices",
- "Private sellers offer no refunds",
- "Carrier financing may still be owed on stolen phones"
+ "A blacklisted phone may not connect on carriers that honor the blacklist",
+ "Google's Find My Device lets an owner lock and erase a stolen phone",
+ "Factory Reset Protection (FRP) asks for the previous Google account after a reset",
+ "Police can return a recovered phone to its owner, and you lose what you paid",
+ "Knowingly buying stolen property is a crime",
+ "Private sellers rarely offer refunds",
+ "A phone with an unpaid carrier balance can be blacklisted later"
  ]}
  faqs={[
  {
- question: "How do I find IMEI on an Android phone?",
- answer: "Dial *#06# from the phone dialer, go to Settings > About Phone > Status > IMEI, check the SIM tray, or look at the original box."
+ question: "How do I find the IMEI on an Android phone?",
+ answer: "Dial *#06# from the phone app and the IMEI appears on screen. You can also find it in Settings > About phone (on some phones under Status). It's printed on the original box and sometimes on the SIM tray. Make sure the number on screen matches the box."
  },
  {
- question: "What Android brands can I verify?",
- answer: "All brands: Google Pixel, OnePlus, Motorola, LG, Sony, HTC, Xiaomi, Oppo, Vivo, and any Android device with an IMEI."
+ question: "What Android brands can I check?",
+ answer: "Any Android phone with an IMEI: Google Pixel, Samsung, OnePlus, Motorola, Xiaomi and others. SafeOrStolen (safeorstolen.com/check-android-stolen) shows the make and model from the IMEI, so you can confirm the number belongs to the phone the seller is showing you."
  },
  {
  question: "What is Android FRP (Factory Reset Protection)?",
- answer: "FRP is Google's anti-theft feature. If a stolen phone is reset without the owner signing out, you'll be locked out requiring the original Google account."
+ answer: "FRP is Google's anti-theft lock. If a phone is reset without the owner removing their Google account first, it asks for that account's password during setup. Ask the seller to remove their account in Settings > Accounts in front of you, then reset the phone and make sure it reaches the welcome screen."
  },
  {
  question: "Can I check dual-SIM Android phones?",
- answer: "Yes! Dual-SIM phones have two IMEI numbers. Check both to ensure the device is completely clean."
+ answer: "Yes. Dual-SIM phones have two IMEIs, and *#06# shows both. Check each one, since a theft report or blacklist entry may be tied to either."
  }
  ]}
  ctaTitle="Verify Any Android Phone for Free"
- ctaDescription="A 3-second IMEI check protects you from buying stolen Android devices."
+ ctaDescription="Check the IMEI before you pay. It takes a few seconds."
  relatedLinks={[
  { title: "iPhone IMEI Check", href: "/check-iphone-stolen" },
  { title: "Samsung Check", href: "/check-samsung-stolen" },

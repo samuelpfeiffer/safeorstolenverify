@@ -15,11 +15,11 @@ export interface StateData {
  };
  lawEnforcement: {
  statePolice: string;
- reportingUrl: string;
+ reportingUrl?: string;
  };
  dmv: {
  name: string;
- url: string;
+ url?: string;
  };
 }
 
@@ -32,8 +32,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Phoenix', 'Tucson'],
  theftStatistics: { vehicleThefts: 24000, propertyThefts: 180000, theftRate: 2470 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Arizona Department of Public Safety', reportingUrl: 'https://www.azdps.gov' },
- dmv: { name: 'Arizona MVD', url: 'https://azdot.gov/motor-vehicles' }
+ lawEnforcement: { statePolice: 'Arizona Department of Public Safety' },
+ dmv: { name: 'Arizona MVD' }
  },
  {
  code: 'FL',
@@ -43,8 +43,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Miami', 'Tampa'],
  theftStatistics: { vehicleThefts: 42000, propertyThefts: 320000, theftRate: 1980 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Florida Highway Patrol', reportingUrl: 'https://www.flhsmv.gov/fhp' },
- dmv: { name: 'Florida DHSMV', url: 'https://www.flhsmv.gov' }
+ lawEnforcement: { statePolice: 'Florida Highway Patrol' },
+ dmv: { name: 'Florida DHSMV' }
  },
  {
  code: 'TX',
@@ -54,8 +54,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Houston', 'Dallas'],
  theftStatistics: { vehicleThefts: 78000, propertyThefts: 580000, theftRate: 2680 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Texas Department of Public Safety', reportingUrl: 'https://www.dps.texas.gov' },
- dmv: { name: 'Texas DMV', url: 'https://www.txdmv.gov' }
+ lawEnforcement: { statePolice: 'Texas Department of Public Safety' },
+ dmv: { name: 'Texas DMV' }
  },
  {
  code: 'CA',
@@ -65,8 +65,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Los Angeles', 'San Francisco'],
  theftStatistics: { vehicleThefts: 187000, propertyThefts: 890000, theftRate: 2250 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'California Highway Patrol', reportingUrl: 'https://www.chp.ca.gov' },
- dmv: { name: 'California DMV', url: 'https://www.dmv.ca.gov' }
+ lawEnforcement: { statePolice: 'California Highway Patrol' },
+ dmv: { name: 'California DMV' }
  },
  {
  code: 'NY',
@@ -76,8 +76,8 @@ export const US_STATES: StateData[] = [
  topCities: ['New York City', 'Buffalo'],
  theftStatistics: { vehicleThefts: 15000, propertyThefts: 210000, theftRate: 1080 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'New York State Police', reportingUrl: 'https://www.troopers.ny.gov' },
- dmv: { name: 'New York DMV', url: 'https://dmv.ny.gov' }
+ lawEnforcement: { statePolice: 'New York State Police' },
+ dmv: { name: 'New York DMV' }
  },
  {
  code: 'AL',
@@ -87,8 +87,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Birmingham', 'Montgomery'],
  theftStatistics: { vehicleThefts: 8500, propertyThefts: 95000, theftRate: 2520 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Alabama Law Enforcement Agency', reportingUrl: 'https://www.alea.gov' },
- dmv: { name: 'Alabama Law Enforcement Agency', url: 'https://www.alea.gov/dps/driver-license' }
+ lawEnforcement: { statePolice: 'Alabama Law Enforcement Agency' },
+ dmv: { name: 'Alabama Law Enforcement Agency' }
  },
  {
  code: 'AK',
@@ -98,8 +98,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Anchorage', 'Fairbanks'],
  theftStatistics: { vehicleThefts: 1200, propertyThefts: 12000, theftRate: 3180 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Alaska State Troopers', reportingUrl: 'https://dps.alaska.gov/AST' },
- dmv: { name: 'Alaska DMV', url: 'https://doa.alaska.gov/dmv' }
+ lawEnforcement: { statePolice: 'Alaska State Troopers' },
+ dmv: { name: 'Alaska DMV' }
  },
  {
  code: 'AR',
@@ -109,8 +109,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Little Rock', 'Fort Smith'],
  theftStatistics: { vehicleThefts: 5800, propertyThefts: 72000, theftRate: 2780 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Arkansas State Police', reportingUrl: 'https://www.asp.arkansas.gov' },
- dmv: { name: 'Arkansas DMV', url: 'https://www.dfa.arkansas.gov/driver-services' }
+ lawEnforcement: { statePolice: 'Arkansas State Police' },
+ dmv: { name: 'Arkansas DMV' }
  },
  {
  code: 'CO',
@@ -120,8 +120,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Denver', 'Colorado Springs'],
  theftStatistics: { vehicleThefts: 32000, propertyThefts: 145000, theftRate: 2520 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Colorado State Patrol', reportingUrl: 'https://www.colorado.gov/csp' },
- dmv: { name: 'Colorado DMV', url: 'https://dmv.colorado.gov' }
+ lawEnforcement: { statePolice: 'Colorado State Patrol' },
+ dmv: { name: 'Colorado DMV' }
  },
  {
  code: 'CT',
@@ -131,8 +131,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Hartford', 'New Haven'],
  theftStatistics: { vehicleThefts: 4200, propertyThefts: 45000, theftRate: 1260 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Connecticut State Police', reportingUrl: 'https://portal.ct.gov/despp' },
- dmv: { name: 'Connecticut DMV', url: 'https://portal.ct.gov/dmv' }
+ lawEnforcement: { statePolice: 'Connecticut State Police' },
+ dmv: { name: 'Connecticut DMV' }
  },
  {
  code: 'DE',
@@ -142,8 +142,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Wilmington', 'Dover'],
  theftStatistics: { vehicleThefts: 1100, propertyThefts: 18000, theftRate: 1820 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Delaware State Police', reportingUrl: 'https://dsp.delaware.gov' },
- dmv: { name: 'Delaware DMV', url: 'https://www.dmv.de.gov' }
+ lawEnforcement: { statePolice: 'Delaware State Police' },
+ dmv: { name: 'Delaware DMV' }
  },
  {
  code: 'GA',
@@ -153,8 +153,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Atlanta', 'Augusta'],
  theftStatistics: { vehicleThefts: 32000, propertyThefts: 240000, theftRate: 2260 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Georgia State Patrol', reportingUrl: 'https://dps.georgia.gov/georgia-state-patrol' },
- dmv: { name: 'Georgia DDS', url: 'https://dds.georgia.gov' }
+ lawEnforcement: { statePolice: 'Georgia State Patrol' },
+ dmv: { name: 'Georgia DDS' }
  },
  {
  code: 'HI',
@@ -164,8 +164,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Honolulu', 'Hilo'],
  theftStatistics: { vehicleThefts: 3200, propertyThefts: 28000, theftRate: 1970 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Hawaii Department of Public Safety', reportingUrl: 'https://dps.hawaii.gov' },
- dmv: { name: 'Hawaii DMV', url: 'https://www.honolulu.gov/cms-csd-menu/site-csd-sitearticles/644-categories/customer-services/19899-motor-vehicles.html' }
+ lawEnforcement: { statePolice: 'Hawaii Department of Public Safety' },
+ dmv: { name: 'Hawaii DMV' }
  },
  {
  code: 'ID',
@@ -175,8 +175,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Boise', 'Meridian'],
  theftStatistics: { vehicleThefts: 2100, propertyThefts: 22000, theftRate: 1200 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Idaho State Police', reportingUrl: 'https://isp.idaho.gov' },
- dmv: { name: 'Idaho DMV', url: 'https://itd.idaho.gov/dmv' }
+ lawEnforcement: { statePolice: 'Idaho State Police' },
+ dmv: { name: 'Idaho DMV' }
  },
  {
  code: 'IL',
@@ -186,8 +186,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Chicago', 'Aurora'],
  theftStatistics: { vehicleThefts: 28000, propertyThefts: 210000, theftRate: 1660 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Illinois State Police', reportingUrl: 'https://isp.illinois.gov' },
- dmv: { name: 'Illinois DMV', url: 'https://www.ilsos.gov/departments/drivers/home.html' }
+ lawEnforcement: { statePolice: 'Illinois State Police' },
+ dmv: { name: 'Illinois DMV' }
  },
  {
  code: 'IN',
@@ -197,8 +197,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Indianapolis', 'Fort Wayne'],
  theftStatistics: { vehicleThefts: 12000, propertyThefts: 135000, theftRate: 2010 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Indiana State Police', reportingUrl: 'https://www.in.gov/isp' },
- dmv: { name: 'Indiana BMV', url: 'https://www.in.gov/bmv' }
+ lawEnforcement: { statePolice: 'Indiana State Police' },
+ dmv: { name: 'Indiana BMV' }
  },
  {
  code: 'IA',
@@ -208,8 +208,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Des Moines', 'Cedar Rapids'],
  theftStatistics: { vehicleThefts: 4200, propertyThefts: 48000, theftRate: 1520 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Iowa State Patrol', reportingUrl: 'https://iowadot.gov/mvd/driverslicense/Iowa-State-Patrol' },
- dmv: { name: 'Iowa DOT', url: 'https://iowadot.gov/mvd' }
+ lawEnforcement: { statePolice: 'Iowa State Patrol' },
+ dmv: { name: 'Iowa DOT' }
  },
  {
  code: 'KS',
@@ -219,8 +219,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Wichita', 'Overland Park'],
  theftStatistics: { vehicleThefts: 6800, propertyThefts: 62000, theftRate: 2130 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Kansas Highway Patrol', reportingUrl: 'https://www.kansashighwaypatrol.org' },
- dmv: { name: 'Kansas DMV', url: 'https://www.ksrevenue.gov/dmv.html' }
+ lawEnforcement: { statePolice: 'Kansas Highway Patrol' },
+ dmv: { name: 'Kansas DMV' }
  },
  {
  code: 'KY',
@@ -230,8 +230,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Louisville', 'Lexington'],
  theftStatistics: { vehicleThefts: 7200, propertyThefts: 88000, theftRate: 1970 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Kentucky State Police', reportingUrl: 'https://kentuckystatepolice.org' },
- dmv: { name: 'Kentucky Transportation Cabinet', url: 'https://drive.ky.gov' }
+ lawEnforcement: { statePolice: 'Kentucky State Police' },
+ dmv: { name: 'Kentucky Transportation Cabinet' }
  },
  {
  code: 'LA',
@@ -241,8 +241,8 @@ export const US_STATES: StateData[] = [
  topCities: ['New Orleans', 'Baton Rouge'],
  theftStatistics: { vehicleThefts: 12000, propertyThefts: 125000, theftRate: 2690 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Louisiana State Police', reportingUrl: 'https://lsp.org' },
- dmv: { name: 'Louisiana OMV', url: 'https://omv.dps.louisiana.gov' }
+ lawEnforcement: { statePolice: 'Louisiana State Police' },
+ dmv: { name: 'Louisiana OMV' }
  },
  {
  code: 'ME',
@@ -252,8 +252,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Portland', 'Lewiston'],
  theftStatistics: { vehicleThefts: 850, propertyThefts: 16000, theftRate: 1180 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Maine State Police', reportingUrl: 'https://www.maine.gov/dps/msp' },
- dmv: { name: 'Maine BMV', url: 'https://www.maine.gov/sos/bmv' }
+ lawEnforcement: { statePolice: 'Maine State Police' },
+ dmv: { name: 'Maine BMV' }
  },
  {
  code: 'MD',
@@ -263,8 +263,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Baltimore', 'Columbia'],
  theftStatistics: { vehicleThefts: 16000, propertyThefts: 110000, theftRate: 1820 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Maryland State Police', reportingUrl: 'https://mdsp.maryland.gov' },
- dmv: { name: 'Maryland MVA', url: 'https://mva.maryland.gov' }
+ lawEnforcement: { statePolice: 'Maryland State Police' },
+ dmv: { name: 'Maryland MVA' }
  },
  {
  code: 'MA',
@@ -274,8 +274,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Boston', 'Worcester'],
  theftStatistics: { vehicleThefts: 7800, propertyThefts: 82000, theftRate: 1190 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Massachusetts State Police', reportingUrl: 'https://www.mass.gov/orgs/massachusetts-state-police' },
- dmv: { name: 'Massachusetts RMV', url: 'https://www.mass.gov/rmv' }
+ lawEnforcement: { statePolice: 'Massachusetts State Police' },
+ dmv: { name: 'Massachusetts RMV' }
  },
  {
  code: 'MI',
@@ -285,8 +285,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Detroit', 'Grand Rapids'],
  theftStatistics: { vehicleThefts: 22000, propertyThefts: 165000, theftRate: 1650 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Michigan State Police', reportingUrl: 'https://www.michigan.gov/msp' },
- dmv: { name: 'Michigan SOS', url: 'https://www.michigan.gov/sos' }
+ lawEnforcement: { statePolice: 'Michigan State Police' },
+ dmv: { name: 'Michigan SOS' }
  },
  {
  code: 'MN',
@@ -296,8 +296,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Minneapolis', 'Saint Paul'],
  theftStatistics: { vehicleThefts: 13000, propertyThefts: 98000, theftRate: 1740 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Minnesota State Patrol', reportingUrl: 'https://dps.mn.gov/divisions/msp/Pages/default.aspx' },
- dmv: { name: 'Minnesota DVS', url: 'https://dps.mn.gov/divisions/dvs/Pages/default.aspx' }
+ lawEnforcement: { statePolice: 'Minnesota State Patrol' },
+ dmv: { name: 'Minnesota DVS' }
  },
  {
  code: 'MS',
@@ -307,8 +307,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Jackson', 'Gulfport'],
  theftStatistics: { vehicleThefts: 5200, propertyThefts: 68000, theftRate: 2280 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Mississippi Highway Patrol', reportingUrl: 'https://www.dps.ms.gov/highway-patrol' },
- dmv: { name: 'Mississippi DPS', url: 'https://www.dps.ms.gov' }
+ lawEnforcement: { statePolice: 'Mississippi Highway Patrol' },
+ dmv: { name: 'Mississippi DPS' }
  },
  {
  code: 'MO',
@@ -318,8 +318,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Kansas City', 'St. Louis'],
  theftStatistics: { vehicleThefts: 16000, propertyThefts: 145000, theftRate: 2360 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Missouri State Highway Patrol', reportingUrl: 'https://www.mshp.dps.missouri.gov' },
- dmv: { name: 'Missouri DOR', url: 'https://dor.mo.gov/motor-vehicle' }
+ lawEnforcement: { statePolice: 'Missouri State Highway Patrol' },
+ dmv: { name: 'Missouri DOR' }
  },
  {
  code: 'MT',
@@ -329,8 +329,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Billings', 'Missoula'],
  theftStatistics: { vehicleThefts: 1600, propertyThefts: 18000, theftRate: 1670 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Montana Highway Patrol', reportingUrl: 'https://dojmt.gov/highway-patrol' },
- dmv: { name: 'Montana MVD', url: 'https://dojmt.gov/driving' }
+ lawEnforcement: { statePolice: 'Montana Highway Patrol' },
+ dmv: { name: 'Montana MVD' }
  },
  {
  code: 'NE',
@@ -340,8 +340,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Omaha', 'Lincoln'],
  theftStatistics: { vehicleThefts: 4200, propertyThefts: 38000, theftRate: 1970 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Nebraska State Patrol', reportingUrl: 'https://statepatrol.nebraska.gov' },
- dmv: { name: 'Nebraska DMV', url: 'https://dmv.nebraska.gov' }
+ lawEnforcement: { statePolice: 'Nebraska State Patrol' },
+ dmv: { name: 'Nebraska DMV' }
  },
  {
  code: 'NV',
@@ -351,8 +351,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Las Vegas', 'Reno'],
  theftStatistics: { vehicleThefts: 11000, propertyThefts: 72000, theftRate: 2340 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Nevada Highway Patrol', reportingUrl: 'https://dmvnv.com/nhp.htm' },
- dmv: { name: 'Nevada DMV', url: 'https://dmvnv.com' }
+ lawEnforcement: { statePolice: 'Nevada Highway Patrol' },
+ dmv: { name: 'Nevada DMV' }
  },
  {
  code: 'NH',
@@ -362,8 +362,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Manchester', 'Nashua'],
  theftStatistics: { vehicleThefts: 900, propertyThefts: 14000, theftRate: 1030 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'New Hampshire State Police', reportingUrl: 'https://www.nh.gov/safety/divisions/nhsp' },
- dmv: { name: 'New Hampshire DMV', url: 'https://www.nh.gov/safety/divisions/dmv' }
+ lawEnforcement: { statePolice: 'New Hampshire State Police' },
+ dmv: { name: 'New Hampshire DMV' }
  },
  {
  code: 'NJ',
@@ -373,8 +373,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Newark', 'Jersey City'],
  theftStatistics: { vehicleThefts: 13000, propertyThefts: 115000, theftRate: 1300 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'New Jersey State Police', reportingUrl: 'https://www.nj.gov/njsp' },
- dmv: { name: 'New Jersey MVC', url: 'https://www.nj.gov/mvc' }
+ lawEnforcement: { statePolice: 'New Jersey State Police' },
+ dmv: { name: 'New Jersey MVC' }
  },
  {
  code: 'NM',
@@ -384,8 +384,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Albuquerque', 'Las Cruces'],
  theftStatistics: { vehicleThefts: 9500, propertyThefts: 58000, theftRate: 2760 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'New Mexico State Police', reportingUrl: 'https://www.dps.nm.gov/state-police' },
- dmv: { name: 'New Mexico MVD', url: 'https://www.mvd.newmexico.gov' }
+ lawEnforcement: { statePolice: 'New Mexico State Police' },
+ dmv: { name: 'New Mexico MVD' }
  },
  {
  code: 'NC',
@@ -395,8 +395,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Charlotte', 'Raleigh'],
  theftStatistics: { vehicleThefts: 18000, propertyThefts: 220000, theftRate: 2100 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'North Carolina State Highway Patrol', reportingUrl: 'https://www.ncdps.gov/our-organization/state-highway-patrol' },
- dmv: { name: 'North Carolina DMV', url: 'https://www.ncdot.gov/dmv' }
+ lawEnforcement: { statePolice: 'North Carolina State Highway Patrol' },
+ dmv: { name: 'North Carolina DMV' }
  },
  {
  code: 'ND',
@@ -406,8 +406,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Fargo', 'Bismarck'],
  theftStatistics: { vehicleThefts: 850, propertyThefts: 9800, theftRate: 1290 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'North Dakota Highway Patrol', reportingUrl: 'https://www.nd.gov/ndhp' },
- dmv: { name: 'North Dakota DOT', url: 'https://www.dot.nd.gov/divisions/mv' }
+ lawEnforcement: { statePolice: 'North Dakota Highway Patrol' },
+ dmv: { name: 'North Dakota DOT' }
  },
  {
  code: 'OH',
@@ -417,8 +417,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Columbus', 'Cleveland'],
  theftStatistics: { vehicleThefts: 24000, propertyThefts: 210000, theftRate: 1800 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Ohio State Highway Patrol', reportingUrl: 'https://www.statepatrol.ohio.gov' },
- dmv: { name: 'Ohio BMV', url: 'https://bmv.ohio.gov' }
+ lawEnforcement: { statePolice: 'Ohio State Highway Patrol' },
+ dmv: { name: 'Ohio BMV' }
  },
  {
  code: 'OK',
@@ -428,8 +428,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Oklahoma City', 'Tulsa'],
  theftStatistics: { vehicleThefts: 11000, propertyThefts: 96000, theftRate: 2420 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Oklahoma Highway Patrol', reportingUrl: 'https://dps.ok.gov/ohp' },
- dmv: { name: 'Oklahoma DPS', url: 'https://oklahoma.gov/dps.html' }
+ lawEnforcement: { statePolice: 'Oklahoma Highway Patrol' },
+ dmv: { name: 'Oklahoma DPS' }
  },
  {
  code: 'OR',
@@ -439,8 +439,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Portland', 'Salem'],
  theftStatistics: { vehicleThefts: 14000, propertyThefts: 98000, theftRate: 2320 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Oregon State Police', reportingUrl: 'https://www.oregon.gov/osp' },
- dmv: { name: 'Oregon DMV', url: 'https://www.oregon.gov/odot/dmv' }
+ lawEnforcement: { statePolice: 'Oregon State Police' },
+ dmv: { name: 'Oregon DMV' }
  },
  {
  code: 'PA',
@@ -450,8 +450,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Philadelphia', 'Pittsburgh'],
  theftStatistics: { vehicleThefts: 16000, propertyThefts: 165000, theftRate: 1290 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Pennsylvania State Police', reportingUrl: 'https://www.psp.pa.gov' },
- dmv: { name: 'PennDOT', url: 'https://www.dmv.pa.gov' }
+ lawEnforcement: { statePolice: 'Pennsylvania State Police' },
+ dmv: { name: 'PennDOT' }
  },
  {
  code: 'RI',
@@ -461,8 +461,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Providence', 'Warwick'],
  theftStatistics: { vehicleThefts: 1400, propertyThefts: 16000, theftRate: 1510 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Rhode Island State Police', reportingUrl: 'https://risp.ri.gov' },
- dmv: { name: 'Rhode Island DMV', url: 'https://dmv.ri.gov' }
+ lawEnforcement: { statePolice: 'Rhode Island State Police' },
+ dmv: { name: 'Rhode Island DMV' }
  },
  {
  code: 'SC',
@@ -472,8 +472,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Charleston', 'Columbia'],
  theftStatistics: { vehicleThefts: 10000, propertyThefts: 120000, theftRate: 2330 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'South Carolina Highway Patrol', reportingUrl: 'https://scdps.sc.gov/schp' },
- dmv: { name: 'South Carolina DMV', url: 'https://scdmvonline.com' }
+ lawEnforcement: { statePolice: 'South Carolina Highway Patrol' },
+ dmv: { name: 'South Carolina DMV' }
  },
  {
  code: 'SD',
@@ -483,8 +483,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Sioux Falls', 'Rapid City'],
  theftStatistics: { vehicleThefts: 1100, propertyThefts: 11000, theftRate: 1240 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'South Dakota Highway Patrol', reportingUrl: 'https://dps.sd.gov/highway-patrol' },
- dmv: { name: 'South Dakota DPS', url: 'https://dps.sd.gov/driver-licensing' }
+ lawEnforcement: { statePolice: 'South Dakota Highway Patrol' },
+ dmv: { name: 'South Dakota DPS' }
  },
  {
  code: 'TN',
@@ -494,8 +494,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Nashville', 'Memphis'],
  theftStatistics: { vehicleThefts: 16000, propertyThefts: 155000, theftRate: 2270 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Tennessee Highway Patrol', reportingUrl: 'https://www.tn.gov/safety/driver-services/thp.html' },
- dmv: { name: 'Tennessee DOS', url: 'https://www.tn.gov/safety/driver-services.html' }
+ lawEnforcement: { statePolice: 'Tennessee Highway Patrol' },
+ dmv: { name: 'Tennessee DOS' }
  },
  {
  code: 'UT',
@@ -505,8 +505,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Salt Lake City', 'Provo'],
  theftStatistics: { vehicleThefts: 7800, propertyThefts: 58000, theftRate: 1770 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Utah Highway Patrol', reportingUrl: 'https://highwaypatrol.utah.gov' },
- dmv: { name: 'Utah DMV', url: 'https://dmv.utah.gov' }
+ lawEnforcement: { statePolice: 'Utah Highway Patrol' },
+ dmv: { name: 'Utah DMV' }
  },
  {
  code: 'VT',
@@ -516,8 +516,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Burlington', 'South Burlington'],
  theftStatistics: { vehicleThefts: 450, propertyThefts: 8500, theftRate: 1360 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Vermont State Police', reportingUrl: 'https://vsp.vermont.gov' },
- dmv: { name: 'Vermont DMV', url: 'https://dmv.vermont.gov' }
+ lawEnforcement: { statePolice: 'Vermont State Police' },
+ dmv: { name: 'Vermont DMV' }
  },
  {
  code: 'VA',
@@ -527,8 +527,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Virginia Beach', 'Norfolk'],
  theftStatistics: { vehicleThefts: 9500, propertyThefts: 125000, theftRate: 1460 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Virginia State Police', reportingUrl: 'https://www.vsp.virginia.gov' },
- dmv: { name: 'Virginia DMV', url: 'https://www.dmv.virginia.gov' }
+ lawEnforcement: { statePolice: 'Virginia State Police' },
+ dmv: { name: 'Virginia DMV' }
  },
  {
  code: 'WA',
@@ -538,8 +538,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Seattle', 'Spokane'],
  theftStatistics: { vehicleThefts: 32000, propertyThefts: 185000, theftRate: 2410 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Washington State Patrol', reportingUrl: 'https://www.wsp.wa.gov' },
- dmv: { name: 'Washington DOL', url: 'https://www.dol.wa.gov' }
+ lawEnforcement: { statePolice: 'Washington State Patrol' },
+ dmv: { name: 'Washington DOL' }
  },
  {
  code: 'WV',
@@ -549,8 +549,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Charleston', 'Huntington'],
  theftStatistics: { vehicleThefts: 1900, propertyThefts: 28000, theftRate: 1560 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'West Virginia State Police', reportingUrl: 'https://www.wvsp.gov' },
- dmv: { name: 'West Virginia DMV', url: 'https://transportation.wv.gov/DMV' }
+ lawEnforcement: { statePolice: 'West Virginia State Police' },
+ dmv: { name: 'West Virginia DMV' }
  },
  {
  code: 'WI',
@@ -560,8 +560,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Milwaukee', 'Madison'],
  theftStatistics: { vehicleThefts: 11000, propertyThefts: 92000, theftRate: 1580 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Wisconsin State Patrol', reportingUrl: 'https://wisconsindot.gov/Pages/about-wisdot/who-we-are/dtsd/dsp/default.aspx' },
- dmv: { name: 'Wisconsin DMV', url: 'https://wisconsindmv.gov' }
+ lawEnforcement: { statePolice: 'Wisconsin State Patrol' },
+ dmv: { name: 'Wisconsin DMV' }
  },
  {
  code: 'WY',
@@ -571,8 +571,8 @@ export const US_STATES: StateData[] = [
  topCities: ['Cheyenne', 'Casper'],
  theftStatistics: { vehicleThefts: 750, propertyThefts: 7800, theftRate: 1340 },
  databaseAccess: { hasDirectAccess: false, databases: [] },
- lawEnforcement: { statePolice: 'Wyoming Highway Patrol', reportingUrl: 'https://www.whp.dot.state.wy.us' },
- dmv: { name: 'Wyoming DOT', url: 'https://www.dot.state.wy.us' }
+ lawEnforcement: { statePolice: 'Wyoming Highway Patrol' },
+ dmv: { name: 'Wyoming DOT' }
  }
 ];
 

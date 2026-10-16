@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Check, X, Shield, Smartphone, Car, Bike, ArrowRight, Globe, Download, Zap, Star } from 'lucide-react';
+import { Check, X, Shield, Smartphone, Car, Bike, ArrowRight, Globe, Download, FileText, Star } from 'lucide-react';
 
 const VsStolenPhoneChecker = () => {
   const faqSchema = {
@@ -15,7 +15,7 @@ const VsStolenPhoneChecker = () => {
         "name": "What is CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The CTIA Stolen Phone Checker (stolenphonechecker.org) is a service powered by carrier blacklists that allows consumers to verify if a mobile device has been reported lost or stolen. It's sponsored by US wireless carriers."
+          "text": "The Stolen Phone Checker is a free lookup run by CTIA, the US wireless industry association. You enter a phone's IMEI and it tells you whether participating carriers have reported that phone lost or stolen. It only covers phones."
         }
       },
       {
@@ -23,7 +23,7 @@ const VsStolenPhoneChecker = () => {
         "name": "How does SafeOrStolen compare with CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen checks phones AND vehicles, bikes, laptops, electronics, and firearms. It also provides a mobile app for on-the-go verification and marketplace URL analysis."
+          "text": "CTIA's checker is free and only checks phones against carrier reports. SafeOrStolen (safeorstolen.com) shows a phone's make and model from the IMEI, searches its own theft reports and public web results, and offers a paid blacklist check. It also checks vehicles, plates, bikes, guns, laptops and tools, and saves every check to your account with the date."
         }
       },
       {
@@ -31,33 +31,31 @@ const VsStolenPhoneChecker = () => {
         "name": "Can I check vehicles on CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, CTIA Stolen Phone Checker only verifies mobile phones. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place."
+          "text": "No. CTIA's checker only takes phone IMEIs. SafeOrStolen checks VINs too: it decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs."
         }
       }
     ]
   };
 
   const comparisonData = [
-    { feature: 'Phone IMEI Check', safeorstolen: true, competitor: true },
-    { feature: 'Vehicle VIN Check', safeorstolen: true, competitor: false },
-    { feature: 'Bicycle Serial Check', safeorstolen: true, competitor: false },
-    { feature: 'Laptop/Electronics', safeorstolen: true, competitor: false },
-    { feature: 'Firearm Verification', safeorstolen: true, competitor: false },
-    { feature: 'Mobile App', safeorstolen: true, competitor: false },
-    { feature: 'Barcode/QR Scanner', safeorstolen: true, competitor: false },
-    { feature: 'Marketplace URL Check', safeorstolen: true, competitor: false },
-    { feature: 'Global Databases', safeorstolen: true, competitor: true },
-    { feature: 'Free to Use', safeorstolen: true, competitor: true },
-    { feature: 'Instant Results', safeorstolen: true, competitor: true },
-    { feature: 'Report Stolen Items', safeorstolen: true, competitor: false },
+    { feature: 'Phone IMEI check', safeorstolen: true, competitor: true },
+    { feature: 'Free lost/stolen carrier check', safeorstolen: false, competitor: true },
+    { feature: 'Vehicle VIN check', safeorstolen: true, competitor: false },
+    { feature: 'Bicycle serial check', safeorstolen: true, competitor: false },
+    { feature: 'Laptop and electronics serials', safeorstolen: true, competitor: false },
+    { feature: 'Firearm serial check', safeorstolen: true, competitor: false },
+    { feature: 'Installable web app with camera scanner', safeorstolen: true, competitor: false },
+    { feature: 'Marketplace listing URL check', safeorstolen: true, competitor: false },
+    { feature: 'Report your own stolen item', safeorstolen: true, competitor: false },
+    { feature: 'Saved, dated check history', safeorstolen: true, competitor: false },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Best CTIA Stolen Phone Checker Alternative 2026"
-        description="Compare SafeOrStolen and CTIA Stolen Phone Checker. Multi-category verification, mobile app, and marketplace analysis. Free to try."
-        keywords="CTIA stolen phone checker alternative, stolenphonechecker.org, carrier blacklists device check, stolen phone verification, IMEI check comparison"
+        title="CTIA Stolen Phone Checker Alternative: SafeOrStolen Compared"
+        description="CTIA's Stolen Phone Checker vs SafeOrStolen: what each one checks, what's free, and when to use both before buying a used phone, car, bike or laptop."
+        keywords="CTIA stolen phone checker alternative, stolen phone checker, carrier blacklist check, stolen phone verification, IMEI check comparison"
         canonical="/vs-stolenphonechecker"
         structuredData={faqSchema}
       />
@@ -66,26 +64,26 @@ const VsStolenPhoneChecker = () => {
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Star className="h-4 w-4" />
-            Universal & Phone Verification
+            Phone and Item Checks Compared
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Best CTIA Stolen Phone Checker Alternative: SafeOrStolen
+            CTIA Stolen Phone Checker Alternative: SafeOrStolen
           </h1>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- CTIA only checks phones. SafeOrStolen verifies phones, cars, bikes, laptops, firearms, and more — with a mobile app and marketplace URL analysis.
+            CTIA's checker is a free carrier lookup for phones only. SafeOrStolen checks phones, cars, plates, bikes, laptops, firearms and tools from one account, in a free web app you can use at the meetup.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg">
               <Link to="/verify">
-                Try Free Verification
+                Try a Free Check
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/app">Download App</Link>
+              <Link to="/app">Install the Web App</Link>
             </Button>
           </div>
         </section>
@@ -96,10 +94,10 @@ const VsStolenPhoneChecker = () => {
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">What is CTIA Stolen Phone Checker?</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                The CTIA Stolen Phone Checker (stolenphonechecker.org) is a free service sponsored by US wireless carriers and powered by carrier blacklists. It allows consumers to verify if a mobile phone has been reported lost or stolen by checking its IMEI number.
+                The Stolen Phone Checker is a free lookup run by CTIA, the US wireless industry association. You type in a phone's IMEI and it tells you whether participating carriers have reported that phone lost or stolen.
               </p>
               <p className="text-lg text-muted-foreground">
-                <strong>Limitation:</strong> CTIA only checks mobile phones. It cannot verify vehicles, bicycles, laptops, gaming consoles, or other commonly stolen items.
+                <strong>Limitation:</strong> it only checks phones. It can't look up a car, a bike, a laptop, a game console or anything else with a serial number.
               </p>
             </CardContent>
           </Card>
@@ -107,8 +105,8 @@ const VsStolenPhoneChecker = () => {
 
         {/* Comparison Table */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Feature Comparison</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-8">Feature comparison</h2>
+
           <Card className="overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -143,34 +141,37 @@ const VsStolenPhoneChecker = () => {
               </table>
             </div>
           </Card>
+          <p className="text-sm text-muted-foreground text-center mt-4">
+            SafeOrStolen's lost and stolen blacklist check is paid. Monthly members ($10 a month) get up to 20 a month. Use CTIA's free checker too.
+          </p>
         </section>
 
         {/* Key Differences */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Why SafeOrStolen is the Better Choice</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-8">Where SafeOrStolen helps</h2>
+
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-primary/20">
               <CardHeader>
                 <Shield className="h-10 w-10 text-primary mb-2" />
-                <CardTitle className="text-xl">All-in-One Verification</CardTitle>
+                <CardTitle className="text-xl">More than phones</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Why use multiple tools when one does it all? SafeOrStolen verifies:
+                  One account checks:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <Smartphone className="h-4 w-4 text-primary" /> Phones (IMEI)
                   </li>
                   <li className="flex items-center gap-2">
-                    <Car className="h-4 w-4 text-primary" /> Vehicles (VIN)
+                    <Car className="h-4 w-4 text-primary" /> Vehicles (VIN) and plates
                   </li>
                   <li className="flex items-center gap-2">
-                    <Bike className="h-4 w-4 text-primary" /> Bicycles (Serial)
+                    <Bike className="h-4 w-4 text-primary" /> Bicycles (frame serial)
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" /> Laptops, consoles, cameras, firearms...
+                    <Check className="h-4 w-4 text-primary" /> Laptops, consoles, tools and firearms
                   </li>
                 </ul>
               </CardContent>
@@ -179,24 +180,24 @@ const VsStolenPhoneChecker = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Download className="h-10 w-10 text-primary mb-2" />
-                <CardTitle className="text-xl">Mobile App for Meetups</CardTitle>
+                <CardTitle className="text-xl">A web app for meetups</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  CTIA is web-only. SafeOrStolen has a mobile app that lets you:
+                  Install it from safeorstolen.com/app (no app store needed) and:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" /> Scan barcodes and IMEI labels instantly
+                    <Check className="h-4 w-4 text-primary" /> Scan a barcode or IMEI label with your camera
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" /> Verify items at marketplace meetups
+                    <Check className="h-4 w-4 text-primary" /> Check the phone in front of you at the meetup
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" /> Check listings before you leave home
+                    <Check className="h-4 w-4 text-primary" /> Check a listing before you leave home
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" /> Get instant 3-second results
+                    <Check className="h-4 w-4 text-primary" /> See the result in a few seconds
                   </li>
                 </ul>
               </CardContent>
@@ -205,23 +206,23 @@ const VsStolenPhoneChecker = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Globe className="h-10 w-10 text-primary mb-2" />
-                <CardTitle className="text-xl">Marketplace URL Analysis</CardTitle>
+                <CardTitle className="text-xl">Marketplace listing check</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Paste any Facebook Marketplace, Craigslist, OfferUp, or eBay listing URL and we'll extract the serial number and check it automatically. CTIA doesn't offer this feature.
+                  Paste a Facebook Marketplace, Craigslist, OfferUp or eBay listing link. SafeOrStolen pulls out any serial or IMEI it can find in the listing and checks it. CTIA's checker doesn't do this.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-primary/20">
               <CardHeader>
-                <Zap className="h-10 w-10 text-primary mb-2" />
-                <CardTitle className="text-xl">Report Stolen Items</CardTitle>
+                <FileText className="h-10 w-10 text-primary mb-2" />
+                <CardTitle className="text-xl">Report a stolen item</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  SafeOrStolen allows you to report your stolen items to our database, increasing the chances of recovery and warning future buyers. CTIA only checks — it doesn't accept reports from consumers.
+                  If something of yours is stolen, you can report it on SafeOrStolen so anyone who checks that number sees it. CTIA's checker is lookup-only; to blacklist a stolen phone, call your carrier.
                 </p>
               </CardContent>
             </Card>
@@ -231,7 +232,7 @@ const VsStolenPhoneChecker = () => {
         {/* FAQ */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-          
+
           <div className="space-y-6 max-w-3xl mx-auto">
             <Card>
               <CardHeader>
@@ -239,7 +240,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Yes, CTIA (stolenphonechecker.org) is a legitimate service backed by US wireless carriers and carrier blacklists. However, it only checks mobile phones and doesn't offer verification for other item types or a mobile app.
+                  Yes. It's run by CTIA, the US wireless industry association, and uses lost and stolen reports from participating carriers. It's free. It only checks phones, so use a different tool for cars, bikes, laptops or anything else.
                 </p>
               </CardContent>
             </Card>
@@ -250,7 +251,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No, CTIA only checks mobile phone IMEI numbers. For vehicle VIN checks, you need SafeOrStolen or NICB VINCheck. Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.
+                  No, it only takes phone IMEIs. SafeOrStolen checks VINs: it decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results. NICB's free VINCheck is another separate option for vehicles.
                 </p>
               </CardContent>
             </Card>
@@ -261,7 +262,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  SafeOrStolen is better for marketplace purchases because it: (1) checks all item types, not just phones, (2) has a mobile app for on-the-spot verification at meetups, and (3) can analyze listing URLs to extract and verify serial numbers automatically.
+                  Use both for a phone: CTIA's free carrier lookup, and SafeOrStolen for its theft reports, public web results and saved record of your check. For anything that isn't a phone, CTIA can't help, and SafeOrStolen can check the serial, VIN or listing link.
                 </p>
               </CardContent>
             </Card>
@@ -270,16 +271,16 @@ const VsStolenPhoneChecker = () => {
 
         {/* CTA */}
         <section className="text-center bg-primary/5 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold mb-4">One Tool for All Your Verification Needs</h2>
+          <h2 className="text-3xl font-bold mb-4">Check more than phones</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Stop using multiple tools. SafeOrStolen verifies phones, cars, bikes, and more — with a free mobile app.
+            Start with 2 free checks on a free account. After that it's $0.99 a check or $10 a month for unlimited checks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <Link to="/verify">Start Free Verification</Link>
+              <Link to="/verify">Start a Free Check</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/app">Get the App</Link>
+              <Link to="/app">Get the Web App</Link>
             </Button>
           </div>
         </section>

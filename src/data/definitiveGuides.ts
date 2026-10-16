@@ -21,7 +21,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to check if phone stolen, IMEI stolen check, used phone checklist, phone blacklist",
   directAnswer:
-    "Get the 15-digit IMEI before meeting, confirm it on the phone in person, ask the original carrier to check its network and finance status, and make the seller remove Apple Activation Lock or Android Factory Reset Protection. Run the IMEI through SafeOrStolen for its own reports, public web results, and AI analysis, but check carrier blacklist status separately.",
+    "Get the 15-digit IMEI before meeting, confirm it on the phone in person, ask the original carrier to check its network and finance status, and make the seller remove Apple Activation Lock or Android Factory Reset Protection. Run the IMEI through SafeOrStolen to see the make and model and search its theft reports and public web results; its paid blacklist check also tells you whether the phone is on the lost and stolen carrier blacklist.",
   identifierTitle: "Where to find and match the IMEI",
   identifierIntro:
     "Most phones display the IMEI by dialing *#06#. Match that number with the device settings and, when present, the box or SIM tray.",
@@ -48,14 +48,12 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
         "Have the seller remove their Apple or Google account, erase the phone in front of you, and begin setup while connected to Wi-Fi.",
       tellsYou:
         "Whether the phone can be activated without the previous owner’s credentials.",
-      url: "https://support.apple.com/en-us/108794",
-      linkLabel: "Apple Activation Lock guidance",
     },
     {
       name: "Run a SafeOrStolen IMEI check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, and provides IMEI device details. It does not check carrier blacklist status.",
+        "SafeOrStolen shows the phone’s make and model from the IMEI and searches theft reports filed on SafeOrStolen plus public web results. A paid blacklist check adds the lost and stolen carrier blacklist.",
       tellsYou:
         "Whether the identifier appears in the sources SafeOrStolen actually checked and whether public listing signals deserve review.",
     },
@@ -76,12 +74,12 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Is there an official free stolen phone database?",
       answer:
-        "Phone carriers share a lost and stolen phone blacklist. SafeOrStolen's full phone check searches it for you, right here. The free check confirms the IMEI is real and correctly formed, so you can catch a fake or mistyped number before you go any further.",
+        "Phone carriers share a lost and stolen phone blacklist, but there is no free public search of it. You can ask the original carrier about a specific IMEI, or use SafeOrStolen’s paid blacklist check, which searches it for you and lists the result next to SafeOrStolen theft reports and public web results.",
     },
     {
       question: "Can I check an IMEI for free?",
       answer:
-        "Yes. The free check confirms the IMEI is real and correctly formed. The full check, which searches the lost and stolen phone blacklist, is $0.99.",
+        "Yes. A free SafeOrStolen account comes with 2 free checks, no credit card. An IMEI check shows the make and model and searches SafeOrStolen theft reports and public web results. The lost and stolen blacklist check is paid; monthly members ($10 a month) get up to 20 of them a month.",
     },
     {
       question: "Does a clean IMEI mean the phone is safe to buy?",
@@ -91,7 +89,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Does SafeOrStolen check the lost and stolen phone blacklist?",
       answer:
-        "Yes. The full phone check searches the lost and stolen phone blacklist and tells you whether the phone has been reported lost or stolen. It also checks SafeOrStolen reports and public web results. A clean result is strong evidence, but still test the phone and make sure it is signed out of any account lock before you pay.",
+        "Yes, with the paid blacklist check. It searches the lost and stolen phone blacklist and tells you whether the phone has been reported lost or stolen, alongside SafeOrStolen theft reports and public web results. A clean result is a good sign, but still test the phone and make sure it is signed out of any account lock before you pay.",
     },
     {
       question: "What if I already bought a stolen phone?",
@@ -141,8 +139,6 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
         "Compare Settings → General → About with the box and any identifier printed on the SIM tray. Check Apple’s coverage page to confirm the serial resolves to the expected model.",
       tellsYou:
         "Whether the physical phone, software identity, and packaging are consistent.",
-      url: "https://checkcoverage.apple.com/",
-      linkLabel: "Apple Check Coverage",
     },
     {
       name: "Remove Find My and Activation Lock",
@@ -151,8 +147,6 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
         "The seller must turn off Find My, sign out, erase the iPhone, and let you start setup. Apple has no public serial-number page that tells a buyer whether Activation Lock is enabled.",
       tellsYou:
         "A setup screen asking for the previous owner’s Apple Account means Activation Lock remains.",
-      url: "https://support.apple.com/en-us/108794",
-      linkLabel: "Apple Activation Lock guidance",
     },
     {
       name: "Check carrier and finance status",
@@ -166,7 +160,7 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen IMEI check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis, and provides IMEI device details. Carrier blacklist and Activation Lock checks remain separate.",
+        "SafeOrStolen shows the iPhone’s model from the IMEI and searches its own theft reports and public web results. The lost and stolen carrier blacklist is a separate paid check, and Activation Lock can only be confirmed on the phone itself.",
       tellsYou:
         "Whether the IMEI appears in SafeOrStolen’s checked sources and whether public-web signals need review.",
     },
@@ -214,12 +208,10 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
         "Call the non-emergency line before the transaction and ask whether the agency will check a firearm serial. Private buyers cannot search NCIC directly.",
       tellsYou:
         "Police can use authorized systems when agency policy permits. A buyer has no self-service NCIC access.",
-      url: "https://www.justice.gov/tribal/national-crime-information-systems",
-      linkLabel: "Department of Justice NCIC overview",
     },
     {
       name: "Run a SafeOrStolen firearm check",
-      cost: "2 free checks, no account needed",
+      cost: "2 free checks with a free account",
       description:
         "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (242,839 reports, filed through 2017; years vary by state), live Ohio law-enforcement stolen-gun records, and theft reports filed on SafeOrStolen. It does not access NCIC, ATF eTrace, or other police-only systems.",
       tellsYou:
@@ -227,13 +219,11 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Buy through a licensed dealer (FFL)",
-      cost: "Dealer transfer fee, often $25 to $75",
+      cost: "The dealer's transfer fee; ask the shop before you go",
       description:
         "Since 2024, federal firearms licensees can voluntarily check a serial number against the FBI's NCIC stolen-gun file, including through the FBI's NICS E-Check system. Doing a private sale as a dealer transfer also completes the background check and creates a paper trail.",
       tellsYou:
         "Whether the serial matches a gun reported stolen anywhere in the US NCIC file. This is the most complete check available to a private buyer.",
-      url: "https://www.fbi.gov/news/press-releases/new-rule-provides-federal-firearms-licensees-access-to-fbi-records-of-stolen-firearms",
-      linkLabel: "FBI: dealer access to stolen-gun records",
     },
     {
       name: "Search Florida or Ohio's public stolen-gun records",
@@ -330,7 +320,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
   methods: [
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "2 free checks, no account needed",
+      cost: "2 free checks with a free account",
       description:
         "SafeOrStolen searches theft reports filed by owners on SafeOrStolen and public web results for the serial number.",
       tellsYou:
@@ -438,7 +428,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen bicycle check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks a national stolen-bicycle registry, its own stolen-item reports, public web results, and AI analysis.",
+        "SafeOrStolen searches a national stolen-bicycle registry, theft reports filed on SafeOrStolen, and public web results that mention the serial.",
       tellsYou:
         "Whether the serial appears in those sources and whether matching public context needs review.",
     },
@@ -473,7 +463,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Does SafeOrStolen really search a stolen-bicycle registry?",
       answer:
-        "Yes. A national stolen-bicycle registry is a live source for bicycle checks, alongside SafeOrStolen reports, public web results, and AI analysis.",
+        "Yes. Every bike check searches a national stolen-bicycle registry, along with theft reports filed on SafeOrStolen and public web results. The result lists each source it searched.",
     },
   ],
   related: [
@@ -534,7 +524,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen serial check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not query Apple, Microsoft, manufacturer, police, or insurance databases.",
+        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results that mention the serial. It does not query Apple, Microsoft, manufacturer, police, or insurance databases.",
       tellsYou:
         "Whether the serial appears in SafeOrStolen’s checked sources and public-web context.",
     },
@@ -564,7 +554,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
     {
       question: "Does SafeOrStolen search manufacturer databases?",
       answer:
-        "No. It checks SafeOrStolen reports, public web results, and AI analysis. Manufacturer support and ownership checks are separate.",
+        "No. A laptop check searches theft reports filed on SafeOrStolen and public web results. Manufacturer support and ownership checks are separate.",
     },
     {
       question: "Should I trust a clean serial result?",
@@ -626,7 +616,7 @@ export const TOOLS_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen serial check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not query manufacturer, contractor, police, or insurance databases.",
+        "SafeOrStolen searches theft reports that tool owners filed on SafeOrStolen and public web results that mention the serial. It does not query manufacturer, contractor, police, or insurance databases.",
       tellsYou:
         "Whether the identifier appears in SafeOrStolen’s checked sources and public-web context.",
     },
@@ -662,7 +652,7 @@ export const TOOLS_GUIDE: DefinitiveGuideProps = {
     {
       question: "Does SafeOrStolen search manufacturer systems?",
       answer:
-        "No. It checks SafeOrStolen reports, public web results, and AI analysis. Manufacturer registration and tracking checks are separate.",
+        "No. A tool check searches theft reports filed on SafeOrStolen and public web results. Manufacturer registration and tracking checks are separate.",
     },
   ],
   related: [
@@ -718,7 +708,7 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
       name: "Run the HIN through SafeOrStolen",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen treats the HIN as a general serial number and checks its own reports, public web results, and AI analysis. It has no marine-specific source.",
+        "SafeOrStolen treats the HIN as a general serial number and searches its own theft reports and public web results. It has no marine-specific source.",
       tellsYou:
         "Whether the HIN appears in the sources SafeOrStolen checked; official boat records remain separate.",
     },
@@ -743,7 +733,7 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
     {
       question: "Does SafeOrStolen have a marine database?",
       answer:
-        "No. It checks a HIN only through its general serial workflow: SafeOrStolen reports, public web results, and AI analysis.",
+        "No. It checks a HIN like any other serial number: against theft reports filed on SafeOrStolen and public web results.",
     },
     {
       question: "Do I need to check the trailer and motor too?",
@@ -798,8 +788,6 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
         "The federal Driver’s Privacy Protection Act restricts disclosure and misuse of personal information from motor-vehicle records. State record-request procedures and permitted uses vary.",
       tellsYou:
         "Why a legitimate public lookup should not promise a stranger’s name, address, or other protected DMV information.",
-      url: "https://www.law.cornell.edu/uscode/text/18/2721",
-      linkLabel: "18 U.S.C. § 2721",
     },
     {
       name: "Ask police to check a suspicious plate",
@@ -813,7 +801,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen plate check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. It does not access DMV registration records or reveal an owner’s private information.",
+        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results; Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. It does not access DMV registration records or reveal an owner’s private information.",
       tellsYou:
         "Whether the plate appears in SafeOrStolen’s checked sources and public-web context.",
     },
@@ -843,7 +831,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Does SafeOrStolen access DMV records?",
       answer:
-        "No. It checks SafeOrStolen reports, public web results, and AI analysis. It does not provide protected owner information.",
+        "No. A plate check searches theft reports filed on SafeOrStolen and public web results, plus Arizona law-enforcement records for Arizona plates. It never shows owner names or other protected information.",
     },
     {
       question: "What should I do with a suspicious plate?",
@@ -913,7 +901,7 @@ export const MARKETPLACE_GUIDE: DefinitiveGuideProps = {
       name: "Use the SafeOrStolen marketplace URL analyzer",
       cost: "Free to try with a free account",
       description:
-        "Paste a Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark URL. The tool extracts available listing details and identifiers, then uses SafeOrStolen reports, public web results, and AI analysis.",
+        "Paste a Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark URL. The tool pulls out the listing details and any identifier it can find, then searches theft reports filed on SafeOrStolen and public web results.",
       tellsYou:
         "Listing-level risk signals and any available identifier result; missing identifiers and inaccessible listing content limit the analysis.",
     },
@@ -1102,7 +1090,7 @@ export const SELLER_PROOF_GUIDE: DefinitiveGuideProps = {
       description:
         "Check the identifier and save the result to your account. If the checked sources return clean, create a Proof of Clean Purchase record.",
       tellsYou:
-        "What SafeOrStolen’s own reports, public web results, AI analysis, and applicable live sources returned at that time.",
+        "What SafeOrStolen’s own theft reports, public web results, and any item-specific records it searched returned on that date.",
     },
     {
       name: "Let the buyer verify independently",
@@ -1134,7 +1122,7 @@ export const SELLER_PROOF_GUIDE: DefinitiveGuideProps = {
     {
       question: "Is Proof of Clean Purchase proof that I own the item?",
       answer:
-        "No. It is a permanent, timestamped verification record showing what a SafeOrStolen check returned. It is not a title, ownership proof, guarantee, or legal document.",
+        "No. It is a dated verification record with its own link, showing what a SafeOrStolen check returned. It is not a title, ownership proof, guarantee, or legal document.",
     },
     {
       question: "Should I publish the full identifier?",
