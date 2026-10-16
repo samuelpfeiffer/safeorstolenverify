@@ -9,7 +9,7 @@ Goal: earn links and mentions from real sites that already cover stolen guns or 
 - Every URL below came from live web searches run on October 16, 2026. The page-fetch tool could not reach most sites from this environment, so search snippets were the only check on many pages. **Open each page yourself before pitching**: check the date, the byline, and whether it already links to tools.
 - "Byline: not shown" means the search result had no reporter name. Find it on the page or on the station's staff page. Don't guess.
 - Never imply the data is current or complete. The safe wording: "242,839 police reports of stolen and lost guns from 33 states and DC, filed between 1973 and 2017 (years vary by state), plus live Ohio law-enforcement records." Always add: "A no-match result doesn't mean a gun is clean. Have police run the serial or use an FFL."
-- **Check the data source before pitching journalists.** A historical set of 33 states plus DC that ends in 2017 looks a lot like the public-records data that The Trace and NBC stations gathered for *Missing Pieces* (2017), and The Trace now hosts lost-and-stolen datasets on its Gun Violence Data Hub. If SafeOrStolen's data comes from there, say so on the site and in every pitch ("built on public-records data originally compiled by The Trace"). Reporters will check, and a missing credit can kill the pitch and the trust behind it. Getting the credit right also gives you a natural reason to contact The Trace (see target B9).
+- **Data source (settled Oct 16 2026):** the owner confirms the gun data is police records. Describe it the same way everywhere: "police theft and loss reports gathered through public records, filed 1973–2017." If a reporter asks whether it overlaps with The Trace/NBC *Missing Pieces* (2017) data, answer plainly with where it came from and its date range.
 
 ---
 
@@ -47,7 +47,7 @@ Skip: HotGunz (https://www.hotgunz.com/) is a competitor, and most other "how to
 | b6 | TX | **San Antonio Report**: *Holiday parking lots: SAPD says thieves are hunting for guns, not gifts*, https://sanantonioreport.org/holiday-parking-lots-sapd-says-thieves-are-hunting-for-guns-not-gifts/ | Not shown | Covers the 2025 UTHealth study: 2,465 guns stolen from vehicles in San Antonio in 2024. | A |
 | b7 | TX | **UTHealth Houston** news release on the same study, https://sph.uth.edu/news/story/san-antonio-saw-average-of-7-guns-per-day-stolen-out-of-cars-in-2024-uthealth-houston-research-finds | Researcher: **Alexander Testa, PhD** | Not a reporter, but researchers cite data sources and university pages link to them. Offer the Texas breakdown as context for his work. | B |
 | b8 | TX | **KENS 5**: *Hundreds of guns stolen from vehicles in San Antonio this year, police say*, https://kens5.com/article/news/local/hundreds-of-guns-stolen-from-vehicles-in-san-antonio-this-year-police-say/273-11c17ac6-38cb-437d-8d9e-04d7b655af5d | Not shown; date not confirmed | Check the date first. Pitch only if it's within 2 years. | C |
-| b9 | CA | **The Trace, Gun Violence Data Hub**: *California Ghost Guns, Stolen Guns, and More* (released Feb 19, 2025), https://datahub.thetrace.org/dataset/california-ghost-guns-stolen-guns-and-more/ | Data team (find a contact on the page) | No 2024–26 California local-TV story on stolen guns turned up in search. The Trace is the strongest CA-related target, and possibly the original source of the historical data. Pitch as "here's a free lookup built on public records, credited to you," and only if that's true. CA = 80,176 reports. | A |
+| b9 | CA | **The Trace, Gun Violence Data Hub**: *California Ghost Guns, Stolen Guns, and More* (released Feb 19, 2025), https://datahub.thetrace.org/dataset/california-ghost-guns-stolen-guns-and-more/ | Data team (find a contact on the page) | No 2024–26 California local-TV story on stolen guns turned up in search. The Trace is the strongest CA-related target, and possibly the original source of the historical data. Pitch as a free public lookup built on police public records; be ready to say plainly how the data was gathered. CA = 80,176 reports. | A |
 | b10 | CA | **NBC Bay Area investigative unit**: *Investigation: 70,000 Guns Lost or Stolen in California*, https://www.nbcbayarea.com/investigations/Investigation-70000-Guns-Lost-or-Stolen-in-California-Many-Used-in-Later-Crimes-389327671.html | Not shown | **Older (about 2016), so outside the 2-year window.** Keep it for later: the unit owns this topic, so pitch it when it next covers stolen guns. | C |
 | b11 | WA / NC | **Stateline** (States Newsroom): *Parked cars are now a leading source of stolen guns, new report finds*, Jul 7, 2025, https://stateline.org/2025/07/07/parked-cars-are-now-a-leading-source-of-stolen-guns-new-report-finds/, republished by **Washington State Standard**, https://washingtonstatestandard.com/2025/07/07/parked-cars-are-now-a-leading-source-of-stolen-guns-new-report-finds/, and **NC Newsline**, https://ncnewsline.com/2025/07/09/parked-cars-are-now-a-leading-source-of-stolen-guns-new-report-finds/ | Byline blank in results; editor contact Scott S. Greenberger | One pitch to Stateline, offering per-state numbers to its member outlets. WA = 10,951; NC = 8,455. | A |
 | b12 | NC | **CBS17**: *About 25% of Durham gun thefts are from unlocked cars, police say*, https://digital-release.cbs17.com/news/local-news/durham-county-news/about-25-of-durham-gun-thefts-are-from-unlocked-cars-police-say | Not shown | Cites Durham numbers through Sept 2024. NC = 8,455. | B |
@@ -113,7 +113,7 @@ Rules for every email: send it from safeorstolenmail@gmail.com, one at a time, t
 >
 > I saw your {date} story on {one-line summary, e.g., "the 388 guns stolen from Jacksonville cars this year"}. One question it raises: what happens when those guns get resold?
 >
-> I run SafeOrStolen, a small company in Peoria, Arizona. We hold historical police reports of stolen and lost guns, filed 1973–2017. {State hook below}
+> I run SafeOrStolen, a small company in Peoria, Arizona. We hold historical police reports of stolen and lost guns, gathered through public records and filed 1973–2017. {State hook below}
 >
 > It isn't current or complete, and I'll say that on the record. It's a starting point, not a clearance. Buyers should still have police run the serial.
 >
@@ -178,7 +178,7 @@ Before sending, open the state page and confirm the most-reported models it show
 2. Pitch Justin Gray at WSB-TV (b4), News4JAX (b1), and AZFamily (b13). These are the freshest and best-matched stories.
 3. Pitch U.S. LawShield (a2), Tampa Carry (a7), Concealed Carry Coalition (a6), Bravo (a5), and FastBound (a3).
 4. Pitch Stateline (b11) and the NPA (c1).
-5. Settle the data-credit question before contacting The Trace (b9).
+5. Contact The Trace (b9) last, after the other pitches, with a plain description of how the data was gathered.
 6. Start answering forum questions (d) at an easy pace throughout.
 
 Log each pitch (date, person, URL, reply) in a spreadsheet so nobody gets a second cold email.
