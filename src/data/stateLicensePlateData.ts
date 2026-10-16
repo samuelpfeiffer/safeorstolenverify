@@ -1,5 +1,9 @@
-// COMPLETE 50-STATE LICENSE PLATE DATA - REAL CONTENT FOR ALL US STATES
-// NOTE: theftStats contain historical reference data - specific numbers should be treated as general indicators, not exact current figures
+// 50-STATE LICENSE PLATE DATA
+// Oct 2026 audit: rewritten by hand. Removed invented theft counts, recovery rates and
+// national rankings, "theft capital" style claims, "AI analysis" and "3 seconds" claims,
+// and every claim that SafeOrStolen searches DMV registration records or shows the
+// registered owner. dmvLink is left empty on purpose (no outbound links); the field is
+// kept so the type stays the same. Front-plate flags corrected for AK, NV, NH, SD, TX, OH.
 
 export interface StateLicensePlateData {
  state: string;
@@ -8,11 +12,6 @@ export interface StateLicensePlateData {
  dmvName: string;
  dmvLink: string;
  topCities: string[];
- theftStats?: {
- annualThefts?: string;
- recoveryRate?: string;
- ranking?: string;
- };
  uniqueConcerns: string[];
  requiresFrontPlate: boolean;
 }
@@ -22,11 +21,10 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  state: "Alabama",
  stateCode: "AL",
  slug: "alabama-license-plate-lookup",
- dmvName: "ALDOR (Alabama Law Enforcement Agency)",
- dmvLink: "https://www.alea.gov",
+ dmvName: "Alabama Department of Revenue Motor Vehicle Division",
+ dmvLink: "",
  topCities: ["Birmingham", "Mobile", "Montgomery", "Huntsville"],
- theftStats: { annualThefts: "8,500+", recoveryRate: "52%", ranking: "#25" },
- uniqueConcerns: ["Cross-state trafficking from Georgia/Florida", "Rural area vehicle fraud"],
+ uniqueConcerns: ["Cars crossing in from Georgia and Florida on I-65 and I-10", "Private rural sales with missing titles"],
  requiresFrontPlate: false
  },
  alaska: {
@@ -34,21 +32,19 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "AK",
  slug: "alaska-license-plate-lookup",
  dmvName: "Alaska DMV",
- dmvLink: "https://doa.alaska.gov/dmv",
+ dmvLink: "",
  topCities: ["Anchorage", "Fairbanks", "Juneau"],
- theftStats: { annualThefts: "2,800+", recoveryRate: "48%", ranking: "#47" },
- uniqueConcerns: ["Remote area verification challenges", "Seasonal theft patterns"],
- requiresFrontPlate: false
+ uniqueConcerns: ["Long distances between buyer and seller in remote areas", "Trucks left running to warm up in winter"],
+ requiresFrontPlate: true
  },
  arizona: {
  state: "Arizona",
  stateCode: "AZ",
  slug: "arizona-license-plate-lookup",
  dmvName: "Arizona MVD",
- dmvLink: "https://azmvdnow.gov",
+ dmvLink: "",
  topCities: ["Phoenix", "Tucson", "Mesa", "Chandler"],
- theftStats: { annualThefts: "22,000+", recoveryRate: "45%", ranking: "#8" },
- uniqueConcerns: ["Mexico border export risk", "Title washing from CA", "Desert vehicle dumping"],
+ uniqueConcerns: ["Busy Marketplace and OfferUp private-sale market in Phoenix", "Many cars titled in California first", "Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records"],
  requiresFrontPlate: false
  },
  arkansas: {
@@ -56,10 +52,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "AR",
  slug: "arkansas-license-plate-lookup",
  dmvName: "Arkansas DFA",
- dmvLink: "https://www.dfa.arkansas.gov",
+ dmvLink: "",
  topCities: ["Little Rock", "Fort Smith", "Fayetteville"],
- theftStats: { annualThefts: "6,200+", recoveryRate: "55%", ranking: "#30" },
- uniqueConcerns: ["Cross-state trafficking hub", "Rural fraud patterns"],
+ uniqueConcerns: ["Cars crossing state lines on I-40 and I-30", "Cash pickup sales with missing titles"],
  requiresFrontPlate: false
  },
  california: {
@@ -67,10 +62,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "CA",
  slug: "california-license-plate-lookup",
  dmvName: "California DMV",
- dmvLink: "https://www.dmv.ca.gov",
+ dmvLink: "",
  topCities: ["Los Angeles", "San Francisco", "San Diego", "Oakland", "Sacramento"],
- theftStats: { annualThefts: "173,000+", recoveryRate: "55%", ranking: "a top" },
- uniqueConcerns: ["Highest theft state nationally", "Title washing operations", "Port export to Asia", "VIN cloning rings"],
+ uniqueConcerns: ["Very large private-sale market", "VIN cloning, where a stolen car wears another car's VIN", "Out-of-state cars need a VIN verification before registration"],
  requiresFrontPlate: true
  },
  colorado: {
@@ -78,10 +72,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "CO",
  slug: "colorado-license-plate-lookup",
  dmvName: "Colorado DMV",
- dmvLink: "https://dmv.colorado.gov",
+ dmvLink: "",
  topCities: ["Denver", "Colorado Springs", "Aurora", "Boulder"],
- theftStats: { annualThefts: "32,000+", recoveryRate: "42%", ranking: "#5" },
- uniqueConcerns: ["Catalytic converter theft epidemic", "Mountain resort area targeting", "Denver metro hotspot"],
+ uniqueConcerns: ["Catalytic converter theft", "Trucks and SUVs that sell fast", "Denver-area private sales"],
  requiresFrontPlate: false
  },
  connecticut: {
@@ -89,10 +82,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "CT",
  slug: "connecticut-license-plate-lookup",
  dmvName: "Connecticut DMV",
- dmvLink: "https://portal.ct.gov/dmv",
+ dmvLink: "",
  topCities: ["Hartford", "New Haven", "Bridgeport", "Stamford"],
- theftStats: { annualThefts: "7,500+", recoveryRate: "60%", ranking: "#28" },
- uniqueConcerns: ["NY/NJ trafficking corridor", "Luxury vehicle targeting"],
+ uniqueConcerns: ["Cars moving between New York and Boston on I-95", "Luxury SUVs stolen with key-fob relay"],
  requiresFrontPlate: true
  },
  delaware: {
@@ -100,10 +92,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "DE",
  slug: "delaware-license-plate-lookup",
  dmvName: "Delaware DMV",
- dmvLink: "https://dmv.de.gov",
+ dmvLink: "",
  topCities: ["Wilmington", "Dover", "Newark"],
- theftStats: { annualThefts: "2,100+", recoveryRate: "58%", ranking: "#45" },
- uniqueConcerns: ["Port access for export", "Corporate vehicle fraud"],
+ uniqueConcerns: ["Out-of-state buyers drawn by no sales tax", "Cars from Philadelphia and Baltimore"],
  requiresFrontPlate: false
  },
  florida: {
@@ -111,10 +102,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "FL",
  slug: "florida-license-plate-lookup",
  dmvName: "FLHSMV (Florida Highway Safety and Motor Vehicles)",
- dmvLink: "https://www.flhsmv.gov",
+ dmvLink: "",
  topCities: ["Miami", "Tampa", "Jacksonville", "Orlando"],
- theftStats: { annualThefts: "42,000+", recoveryRate: "52%", ranking: "#3" },
- uniqueConcerns: ["Hurricane flood damage titles", "Caribbean/Latin America export", "Insurance fraud capital", "Curbstoners in South FL"],
+ uniqueConcerns: ["Flood-damaged cars resold after hurricanes", "Curbstoners: unlicensed dealers posing as private sellers"],
  requiresFrontPlate: false
  },
  georgia: {
@@ -122,10 +112,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "GA",
  slug: "georgia-license-plate-lookup",
  dmvName: "Georgia DDS",
- dmvLink: "https://dds.georgia.gov",
+ dmvLink: "",
  topCities: ["Atlanta", "Savannah", "Augusta", "Columbus"],
- theftStats: { annualThefts: "28,000+", recoveryRate: "48%", ranking: "#7" },
- uniqueConcerns: ["Atlanta metro theft hotspot", "Port of Savannah export", "Title washing from FL"],
+ uniqueConcerns: ["Huge metro Atlanta private-sale market", "Cars arriving from Florida on I-75"],
  requiresFrontPlate: false
  },
  hawaii: {
@@ -133,10 +122,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "HI",
  slug: "hawaii-license-plate-lookup",
  dmvName: "Hawaii DMV",
- dmvLink: "https://hidot.hawaii.gov/highways/motor-vehicle",
+ dmvLink: "",
  topCities: ["Honolulu", "Pearl City", "Hilo"],
- theftStats: { annualThefts: "6,800+", recoveryRate: "62%", ranking: "#29" },
- uniqueConcerns: ["Island containment aids recovery", "Rental car fraud", "Military base targeting"],
+ uniqueConcerns: ["Cars shipped from the mainland", "Frequent military moves and quick sales"],
  requiresFrontPlate: true
  },
  idaho: {
@@ -144,10 +132,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "ID",
  slug: "idaho-license-plate-lookup",
  dmvName: "Idaho Transportation Department",
- dmvLink: "https://itd.idaho.gov/dmv",
+ dmvLink: "",
  topCities: ["Boise", "Nampa", "Meridian"],
- theftStats: { annualThefts: "3,200+", recoveryRate: "55%", ranking: "#42" },
- uniqueConcerns: ["Cross-state from WA/OR", "Rural verification challenges"],
+ uniqueConcerns: ["Cars arriving from Washington, Oregon and Utah", "Fast-growing Treasure Valley market"],
  requiresFrontPlate: true
  },
  illinois: {
@@ -155,10 +142,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "IL",
  slug: "illinois-license-plate-lookup",
  dmvName: "Illinois Secretary of State",
- dmvLink: "https://www.ilsos.gov",
+ dmvLink: "",
  topCities: ["Chicago", "Aurora", "Rockford", "Naperville"],
- theftStats: { annualThefts: "31,000+", recoveryRate: "50%", ranking: "#6" },
- uniqueConcerns: ["Chicago carjacking epidemic", "Organized theft rings", "Indiana border trafficking"],
+ uniqueConcerns: ["Fast private-sale market in Chicago", "Cars crossing the Indiana and Wisconsin lines"],
  requiresFrontPlate: true
  },
  indiana: {
@@ -166,10 +152,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "IN",
  slug: "indiana-license-plate-lookup",
  dmvName: "Indiana BMV",
- dmvLink: "https://www.in.gov/bmv",
+ dmvLink: "",
  topCities: ["Indianapolis", "Fort Wayne", "Evansville"],
- theftStats: { annualThefts: "12,500+", recoveryRate: "52%", ranking: "#18" },
- uniqueConcerns: ["Chicago theft spillover", "Indianapolis metro targeting", "Cross-state title issues"],
+ uniqueConcerns: ["Cars from the Chicago area in northwest Indiana", "Out-of-state titles in Indianapolis sales"],
  requiresFrontPlate: false
  },
  iowa: {
@@ -177,10 +162,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "IA",
  slug: "iowa-license-plate-lookup",
  dmvName: "Iowa DOT",
- dmvLink: "https://iowadot.gov/mvd",
+ dmvLink: "",
  topCities: ["Des Moines", "Cedar Rapids", "Davenport"],
- theftStats: { annualThefts: "4,800+", recoveryRate: "58%", ranking: "#35" },
- uniqueConcerns: ["Midwest trafficking corridor", "Farm equipment theft"],
+ uniqueConcerns: ["Cash pickup and trailer sales", "Farm equipment with serial numbers instead of VINs"],
  requiresFrontPlate: true
  },
  kansas: {
@@ -188,10 +172,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "KS",
  slug: "kansas-license-plate-lookup",
  dmvName: "Kansas DOR",
- dmvLink: "https://www.ksrevenue.gov/dovehicles.html",
+ dmvLink: "",
  topCities: ["Wichita", "Kansas City", "Topeka"],
- theftStats: { annualThefts: "6,500+", recoveryRate: "54%", ranking: "#31" },
- uniqueConcerns: ["KC metro cross-state issues", "Rural vehicle fraud"],
+ uniqueConcerns: ["Kansas City sales that cross the Missouri line", "Cash pickup sales with missing titles"],
  requiresFrontPlate: false
  },
  kentucky: {
@@ -199,10 +182,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "KY",
  slug: "kentucky-license-plate-lookup",
  dmvName: "Kentucky Transportation Cabinet",
- dmvLink: "https://drive.ky.gov",
+ dmvLink: "",
  topCities: ["Louisville", "Lexington", "Bowling Green"],
- theftStats: { annualThefts: "7,200+", recoveryRate: "56%", ranking: "#27" },
- uniqueConcerns: ["Louisville metro targeting", "Cross-state from IN/OH"],
+ uniqueConcerns: ["Cars crossing from Indiana and Ohio", "Louisville-area private sales"],
  requiresFrontPlate: false
  },
  louisiana: {
@@ -210,10 +192,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "LA",
  slug: "louisiana-license-plate-lookup",
  dmvName: "Louisiana OMV",
- dmvLink: "https://expresslane.org",
+ dmvLink: "",
  topCities: ["New Orleans", "Baton Rouge", "Shreveport"],
- theftStats: { annualThefts: "14,500+", recoveryRate: "45%", ranking: "#14" },
- uniqueConcerns: ["New Orleans carjacking hotspot", "Hurricane flood titles", "Port export"],
+ uniqueConcerns: ["Flood-damaged cars resold after hurricanes", "New Orleans-area private sales"],
  requiresFrontPlate: false
  },
  maine: {
@@ -221,10 +202,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "ME",
  slug: "maine-license-plate-lookup",
  dmvName: "Maine BMV",
- dmvLink: "https://www.maine.gov/sos/bmv",
+ dmvLink: "",
  topCities: ["Portland", "Lewiston", "Bangor"],
- theftStats: { annualThefts: "1,800+", recoveryRate: "65%", ranking: "#48" },
- uniqueConcerns: ["Lower theft rates", "Seasonal tourism fraud"],
+ uniqueConcerns: ["Rust from road salt", "Older cars that may sell without a title"],
  requiresFrontPlate: true
  },
  maryland: {
@@ -232,10 +212,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MD",
  slug: "maryland-license-plate-lookup",
  dmvName: "Maryland MVA",
- dmvLink: "https://mva.maryland.gov",
+ dmvLink: "",
  topCities: ["Baltimore", "Silver Spring", "Columbia"],
- theftStats: { annualThefts: "14,000+", recoveryRate: "48%", ranking: "#15" },
- uniqueConcerns: ["Baltimore theft hotspot", "DC metro organized rings", "Port of Baltimore export"],
+ uniqueConcerns: ["Cars moving between Baltimore, DC and Virginia", "Kia and Hyundai models without immobilizers"],
  requiresFrontPlate: true
  },
  massachusetts: {
@@ -243,10 +222,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MA",
  slug: "massachusetts-license-plate-lookup",
  dmvName: "Massachusetts RMV",
- dmvLink: "https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles",
+ dmvLink: "",
  topCities: ["Boston", "Worcester", "Springfield"],
- theftStats: { annualThefts: "9,500+", recoveryRate: "58%", ranking: "#22" },
- uniqueConcerns: ["Boston metro targeting", "Strict title requirements", "Luxury vehicle theft"],
+ uniqueConcerns: ["Cars bought in New Hampshire for no sales tax", "Luxury SUVs stolen with key-fob relay"],
  requiresFrontPlate: true
  },
  michigan: {
@@ -254,10 +232,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MI",
  slug: "michigan-license-plate-lookup",
  dmvName: "Michigan SOS",
- dmvLink: "https://www.michigan.gov/sos",
+ dmvLink: "",
  topCities: ["Detroit", "Grand Rapids", "Warren", "Flint"],
- theftStats: { annualThefts: "18,500+", recoveryRate: "45%", ranking: "#10" },
- uniqueConcerns: ["Detroit theft capital", "Canada border export", "Catalytic converter targeting"],
+ uniqueConcerns: ["Detroit-area private sales", "Catalytic converter theft", "Rust from road salt"],
  requiresFrontPlate: false
  },
  minnesota: {
@@ -265,10 +242,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MN",
  slug: "minnesota-license-plate-lookup",
  dmvName: "Minnesota DVS",
- dmvLink: "https://dps.mn.gov/dvs",
+ dmvLink: "",
  topCities: ["Minneapolis", "St. Paul", "Rochester"],
- theftStats: { annualThefts: "16,000+", recoveryRate: "48%", ranking: "#12" },
- uniqueConcerns: ["Twin Cities carjacking surge", "Organized rings", "Kia/Hyundai targeting"],
+ uniqueConcerns: ["Kia and Hyundai models without immobilizers", "Cars left running in winter"],
  requiresFrontPlate: true
  },
  mississippi: {
@@ -276,10 +252,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MS",
  slug: "mississippi-license-plate-lookup",
  dmvName: "Mississippi DOR",
- dmvLink: "https://www.dor.ms.gov/motor-vehicle",
+ dmvLink: "",
  topCities: ["Jackson", "Gulfport", "Hattiesburg"],
- theftStats: { annualThefts: "5,200+", recoveryRate: "50%", ranking: "#33" },
- uniqueConcerns: ["Rural fraud patterns", "Title washing from LA/AL"],
+ uniqueConcerns: ["Flood-damaged cars from the Gulf Coast", "Cars crossing from Louisiana, Alabama and Tennessee"],
  requiresFrontPlate: false
  },
  missouri: {
@@ -287,10 +262,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MO",
  slug: "missouri-license-plate-lookup",
  dmvName: "Missouri DOR",
- dmvLink: "https://dor.mo.gov/motor-vehicle",
+ dmvLink: "",
  topCities: ["Kansas City", "St. Louis", "Springfield"],
- theftStats: { annualThefts: "22,500+", recoveryRate: "42%", ranking: "#9" },
- uniqueConcerns: ["KC and STL theft hotspots", "Cross-state trafficking hub", "Carjacking surge"],
+ uniqueConcerns: ["Kansas City and St. Louis sales that cross state lines", "Kia and Hyundai models without immobilizers"],
  requiresFrontPlate: true
  },
  montana: {
@@ -298,10 +272,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "MT",
  slug: "montana-license-plate-lookup",
  dmvName: "Montana MVD",
- dmvLink: "https://doj.mt.gov/driving",
+ dmvLink: "",
  topCities: ["Billings", "Missoula", "Great Falls"],
- theftStats: { annualThefts: "2,400+", recoveryRate: "52%", ranking: "#44" },
- uniqueConcerns: ["LLC title loopholes", "Rural verification challenges", "RV/trailer targeting"],
+ uniqueConcerns: ["Vehicles registered to Montana LLCs", "RVs and trailers sold privately"],
  requiresFrontPlate: true
  },
  nebraska: {
@@ -309,10 +282,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "NE",
  slug: "nebraska-license-plate-lookup",
  dmvName: "Nebraska DMV",
- dmvLink: "https://dmv.nebraska.gov",
+ dmvLink: "",
  topCities: ["Omaha", "Lincoln", "Bellevue"],
- theftStats: { annualThefts: "4,500+", recoveryRate: "55%", ranking: "#36" },
- uniqueConcerns: ["Omaha metro targeting", "Midwest corridor trafficking"],
+ uniqueConcerns: ["Omaha sales with Iowa titles", "Hail-repaired cars"],
  requiresFrontPlate: true
  },
  nevada: {
@@ -320,32 +292,29 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "NV",
  slug: "nevada-license-plate-lookup",
  dmvName: "Nevada DMV",
- dmvLink: "https://dmv.nv.gov",
+ dmvLink: "",
  topCities: ["Las Vegas", "Henderson", "Reno"],
- theftStats: { annualThefts: "15,500+", recoveryRate: "40%", ranking: "#11" },
- uniqueConcerns: ["Las Vegas tourism targeting", "Casino area theft", "CA title washing", "Rental fraud"],
- requiresFrontPlate: false
+ uniqueConcerns: ["Many cars titled in California first", "Sellers who just moved and have no title yet"],
+ requiresFrontPlate: true
  },
  newhampshire: {
  state: "New Hampshire",
  stateCode: "NH",
  slug: "new-hampshire-license-plate-lookup",
  dmvName: "New Hampshire DMV",
- dmvLink: "https://www.dmv.nh.gov",
+ dmvLink: "",
  topCities: ["Manchester", "Nashua", "Concord"],
- theftStats: { annualThefts: "1,500+", recoveryRate: "68%", ranking: "#49" },
- uniqueConcerns: ["Low theft rates", "MA border spillover"],
- requiresFrontPlate: false
+ uniqueConcerns: ["Buyers from Massachusetts", "Older cars that may sell without a title"],
+ requiresFrontPlate: true
  },
  newjersey: {
  state: "New Jersey",
  stateCode: "NJ",
  slug: "new-jersey-license-plate-lookup",
  dmvName: "New Jersey MVC",
- dmvLink: "https://www.nj.gov/mvc",
+ dmvLink: "",
  topCities: ["Newark", "Jersey City", "Paterson"],
- theftStats: { annualThefts: "14,800+", recoveryRate: "52%", ranking: "#13" },
- uniqueConcerns: ["Port Newark export", "NYC metro organized rings", "Carjacking hotspots"],
+ uniqueConcerns: ["Cars moving between New York, New Jersey and Philadelphia", "Luxury SUVs stolen with key-fob relay"],
  requiresFrontPlate: true
  },
  newmexico: {
@@ -353,10 +322,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "NM",
  slug: "new-mexico-license-plate-lookup",
  dmvName: "New Mexico MVD",
- dmvLink: "https://www.mvd.newmexico.gov",
+ dmvLink: "",
  topCities: ["Albuquerque", "Las Cruces", "Santa Fe"],
- theftStats: { annualThefts: "12,000+", recoveryRate: "38%", ranking: "#17" },
- uniqueConcerns: ["Mexico border export", "Albuquerque theft capital", "Lowest recovery rate"],
+ uniqueConcerns: ["Cars arriving on I-40 and I-25", "Kia and Hyundai models without immobilizers"],
  requiresFrontPlate: false
  },
  newyork: {
@@ -364,10 +332,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "NY",
  slug: "new-york-license-plate-lookup",
  dmvName: "New York DMV",
- dmvLink: "https://dmv.ny.gov",
+ dmvLink: "",
  topCities: ["New York City", "Buffalo", "Rochester", "Yonkers"],
- theftStats: { annualThefts: "35,000+", recoveryRate: "62%", ranking: "#4" },
- uniqueConcerns: ["NYC organized theft rings", "Port export operations", "Luxury vehicle targeting", "Insurance fraud schemes"],
+ uniqueConcerns: ["Cars from New Jersey, Connecticut and Pennsylvania", "Luxury SUVs stolen with key-fob relay"],
  requiresFrontPlate: true
  },
  northcarolina: {
@@ -375,10 +342,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "NC",
  slug: "north-carolina-license-plate-lookup",
  dmvName: "NCDMV",
- dmvLink: "https://www.ncdot.gov/dmv",
+ dmvLink: "",
  topCities: ["Charlotte", "Raleigh", "Durham", "Greensboro"],
- theftStats: { annualThefts: "18,000+", recoveryRate: "50%", ranking: "#11" },
- uniqueConcerns: ["Charlotte metro hotspot", "I-95 trafficking corridor", "Port of Wilmington export"],
+ uniqueConcerns: ["Many cars titled in other states", "Seller signature on the title must be notarized"],
  requiresFrontPlate: false
  },
  northdakota: {
@@ -386,10 +352,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "ND",
  slug: "north-dakota-license-plate-lookup",
  dmvName: "North Dakota DOT",
- dmvLink: "https://www.dot.nd.gov/divisions/mv",
+ dmvLink: "",
  topCities: ["Fargo", "Bismarck", "Grand Forks"],
- theftStats: { annualThefts: "1,200+", recoveryRate: "65%", ranking: "#50" },
- uniqueConcerns: ["Lowest theft in nation", "Oil field equipment targeting"],
+ uniqueConcerns: ["High-mileage oil-field trucks", "Cars left running in winter"],
  requiresFrontPlate: true
  },
  ohio: {
@@ -397,21 +362,19 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "OH",
  slug: "ohio-license-plate-lookup",
  dmvName: "Ohio BMV",
- dmvLink: "https://bmv.ohio.gov",
+ dmvLink: "",
  topCities: ["Columbus", "Cleveland", "Cincinnati", "Toledo"],
- theftStats: { annualThefts: "21,000+", recoveryRate: "48%", ranking: "#8" },
- uniqueConcerns: ["Cleveland/Columbus hotspots", "Cross-state trafficking", "Kia/Hyundai surge"],
- requiresFrontPlate: true
+ uniqueConcerns: ["Seller signature on the title must be notarized", "Kia and Hyundai models without immobilizers"],
+ requiresFrontPlate: false
  },
  oklahoma: {
  state: "Oklahoma",
  stateCode: "OK",
  slug: "oklahoma-license-plate-lookup",
- dmvName: "Oklahoma Tax Commission",
- dmvLink: "https://oklahoma.gov/tax/motor-vehicle.html",
+ dmvName: "Service Oklahoma",
+ dmvLink: "",
  topCities: ["Oklahoma City", "Tulsa", "Norman"],
- theftStats: { annualThefts: "14,200+", recoveryRate: "45%", ranking: "#16" },
- uniqueConcerns: ["OKC/Tulsa metro targeting", "Texas border trafficking", "Oil field equipment"],
+ uniqueConcerns: ["Hail and storm-damaged cars", "Pickups sold across the Texas line"],
  requiresFrontPlate: false
  },
  oregon: {
@@ -419,10 +382,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "OR",
  slug: "oregon-license-plate-lookup",
  dmvName: "Oregon DMV",
- dmvLink: "https://www.oregon.gov/odot/dmv",
+ dmvLink: "",
  topCities: ["Portland", "Eugene", "Salem"],
- theftStats: { annualThefts: "19,500+", recoveryRate: "42%", ranking: "#10" },
- uniqueConcerns: ["Portland theft epidemic", "Catalytic converter capital", "Homeless encampment stripping"],
+ uniqueConcerns: ["Kia and Hyundai models without immobilizers", "Catalytic converter theft from hybrids"],
  requiresFrontPlate: true
  },
  pennsylvania: {
@@ -430,10 +392,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "PA",
  slug: "pennsylvania-license-plate-lookup",
  dmvName: "PennDOT",
- dmvLink: "https://www.dmv.pa.gov",
+ dmvLink: "",
  topCities: ["Philadelphia", "Pittsburgh", "Allentown"],
- theftStats: { annualThefts: "11,500+", recoveryRate: "58%", ranking: "#19" },
- uniqueConcerns: ["Philadelphia carjacking surge", "NYC/NJ trafficking corridor", "Port of Philadelphia export"],
+ uniqueConcerns: ["Cars from New Jersey and Delaware", "Title transfers done at a notary or tag service"],
  requiresFrontPlate: true
  },
  rhodeisland: {
@@ -441,10 +402,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "RI",
  slug: "rhode-island-license-plate-lookup",
  dmvName: "Rhode Island DMV",
- dmvLink: "https://dmv.ri.gov",
+ dmvLink: "",
  topCities: ["Providence", "Warwick", "Cranston"],
- theftStats: { annualThefts: "2,200+", recoveryRate: "55%", ranking: "#43" },
- uniqueConcerns: ["Providence targeting", "MA/CT spillover"],
+ uniqueConcerns: ["Cars registered in Massachusetts or Connecticut", "Older cars that may sell without a title"],
  requiresFrontPlate: true
  },
  southcarolina: {
@@ -452,32 +412,29 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "SC",
  slug: "south-carolina-license-plate-lookup",
  dmvName: "SCDMV",
- dmvLink: "https://scdmvonline.com",
+ dmvLink: "",
  topCities: ["Charleston", "Columbia", "Greenville"],
- theftStats: { annualThefts: "10,500+", recoveryRate: "50%", ranking: "#20" },
- uniqueConcerns: ["Charleston port export", "I-95 corridor", "NC/GA title washing"],
+ uniqueConcerns: ["Flood-damaged cars after coastal storms", "Cars arriving on I-95 from Georgia and Florida"],
  requiresFrontPlate: false
  },
  southdakota: {
  state: "South Dakota",
  stateCode: "SD",
  slug: "south-dakota-license-plate-lookup",
- dmvName: "South Dakota DPS",
- dmvLink: "https://dps.sd.gov/driver-licensing",
+ dmvName: "South Dakota Motor Vehicle Division",
+ dmvLink: "",
  topCities: ["Sioux Falls", "Rapid City", "Aberdeen"],
- theftStats: { annualThefts: "1,600+", recoveryRate: "60%", ranking: "#46" },
- uniqueConcerns: ["Low theft rates", "Tribal land jurisdiction issues"],
- requiresFrontPlate: false
+ uniqueConcerns: ["No routine safety inspection", "Vehicles registered by people living elsewhere"],
+ requiresFrontPlate: true
  },
  tennessee: {
  state: "Tennessee",
  stateCode: "TN",
  slug: "tennessee-license-plate-lookup",
  dmvName: "Tennessee DOR",
- dmvLink: "https://www.tn.gov/revenue/title-and-registration.html",
+ dmvLink: "",
  topCities: ["Nashville", "Memphis", "Knoxville"],
- theftStats: { annualThefts: "19,000+", recoveryRate: "45%", ranking: "#10" },
- uniqueConcerns: ["Memphis theft capital", "Nashville surge", "Cross-state trafficking hub"],
+ uniqueConcerns: ["Kia and Hyundai models without immobilizers in Memphis", "Many Nashville cars titled in other states"],
  requiresFrontPlate: false
  },
  texas: {
@@ -485,21 +442,19 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "TX",
  slug: "texas-license-plate-lookup",
  dmvName: "Texas DMV",
- dmvLink: "https://www.txdmv.gov",
+ dmvLink: "",
  topCities: ["Houston", "Dallas", "San Antonio", "Austin", "Fort Worth"],
- theftStats: { annualThefts: "85,000+", recoveryRate: "48%", ranking: "#2" },
- uniqueConcerns: ["Second highest theft nationally", "Mexico border export", "Houston organized rings", "VIN cloning operations"],
- requiresFrontPlate: false
+ uniqueConcerns: ["Cash pickup sales", "Flood-damaged cars after Gulf storms", "VIN cloning, where a stolen car wears another car's VIN"],
+ requiresFrontPlate: true
  },
  utah: {
  state: "Utah",
  stateCode: "UT",
  slug: "utah-license-plate-lookup",
  dmvName: "Utah DMV",
- dmvLink: "https://dmv.utah.gov",
+ dmvLink: "",
  topCities: ["Salt Lake City", "West Valley City", "Provo"],
- theftStats: { annualThefts: "8,200+", recoveryRate: "52%", ranking: "#24" },
- uniqueConcerns: ["SLC metro targeting", "Nevada border trafficking"],
+ uniqueConcerns: ["Many cars titled in California or Nevada first", "Kia and Hyundai models without immobilizers"],
  requiresFrontPlate: true
  },
  vermont: {
@@ -507,10 +462,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "VT",
  slug: "vermont-license-plate-lookup",
  dmvName: "Vermont DMV",
- dmvLink: "https://dmv.vermont.gov",
+ dmvLink: "",
  topCities: ["Burlington", "Rutland", "South Burlington"],
- theftStats: { annualThefts: "800+", recoveryRate: "70%", ranking: "#51" },
- uniqueConcerns: ["Lowest theft rate", "Title loophole exploitation", "Out-of-state registration fraud"],
+ uniqueConcerns: ["Older cars sell without a title", "Out-of-state owners registering vehicles in Vermont"],
  requiresFrontPlate: true
  },
  virginia: {
@@ -518,10 +472,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "VA",
  slug: "virginia-license-plate-lookup",
  dmvName: "Virginia DMV",
- dmvLink: "https://www.dmv.virginia.gov",
+ dmvLink: "",
  topCities: ["Virginia Beach", "Norfolk", "Richmond", "Arlington"],
- theftStats: { annualThefts: "9,800+", recoveryRate: "55%", ranking: "#21" },
- uniqueConcerns: ["DC metro organized rings", "Hampton Roads port export", "Military base targeting"],
+ uniqueConcerns: ["Quick sales by service members with orders", "Northern Virginia cars titled in Maryland or DC"],
  requiresFrontPlate: true
  },
  washington: {
@@ -529,10 +482,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "WA",
  slug: "washington-license-plate-lookup",
  dmvName: "Washington DOL",
- dmvLink: "https://www.dol.wa.gov",
+ dmvLink: "",
  topCities: ["Seattle", "Spokane", "Tacoma", "Vancouver"],
- theftStats: { annualThefts: "38,000+", recoveryRate: "40%", ranking: "#4" },
- uniqueConcerns: ["Seattle theft epidemic", "Catalytic converter targeting", "Homeless encampment stripping", "Canada border export"],
+ uniqueConcerns: ["Stolen cars relisted quickly on Marketplace", "Catalytic converter theft", "Buyers shopping in Oregon for no sales tax"],
  requiresFrontPlate: true
  },
  westvirginia: {
@@ -540,10 +492,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "WV",
  slug: "west-virginia-license-plate-lookup",
  dmvName: "West Virginia DMV",
- dmvLink: "https://transportation.wv.gov/dmv",
+ dmvLink: "",
  topCities: ["Charleston", "Huntington", "Morgantown"],
- theftStats: { annualThefts: "2,500+", recoveryRate: "58%", ranking: "#41" },
- uniqueConcerns: ["Lower theft rates", "OH/PA/KY spillover"],
+ uniqueConcerns: ["Cars titled in Ohio, Kentucky or Pennsylvania", "Rust and rough-road wear"],
  requiresFrontPlate: false
  },
  wisconsin: {
@@ -551,10 +502,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "WI",
  slug: "wisconsin-license-plate-lookup",
  dmvName: "Wisconsin DMV",
- dmvLink: "https://wisconsindot.gov/dmv",
+ dmvLink: "",
  topCities: ["Milwaukee", "Madison", "Green Bay"],
- theftStats: { annualThefts: "12,800+", recoveryRate: "48%", ranking: "#18" },
- uniqueConcerns: ["Milwaukee theft hotspot", "Kia/Hyundai Boys", "Chicago spillover"],
+ uniqueConcerns: ["Kia and Hyundai models without immobilizers", "Cars from the Chicago area"],
  requiresFrontPlate: true
  },
  wyoming: {
@@ -562,10 +512,9 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  stateCode: "WY",
  slug: "wyoming-license-plate-lookup",
  dmvName: "Wyoming DOT",
- dmvLink: "https://www.dot.state.wy.us",
+ dmvLink: "",
  topCities: ["Cheyenne", "Casper", "Laramie"],
- theftStats: { annualThefts: "900+", recoveryRate: "62%", ranking: "#49" },
- uniqueConcerns: ["Low theft rates", "Rural verification challenges", "LLC registration loopholes"],
+ uniqueConcerns: ["Work trucks from other states", "Long distances between buyer and seller"],
  requiresFrontPlate: true
  }
 };
@@ -575,85 +524,78 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  const data = STATE_LICENSE_PLATE_DATA[stateKey];
  if (!data) return null;
 
- const { state, stateCode, dmvName, dmvLink, topCities, theftStats = { annualThefts: 'N/A', recoveryRate: 'N/A', ranking: '' }, uniqueConcerns, requiresFrontPlate } = data;
+ const { state, stateCode, dmvName, topCities, uniqueConcerns, requiresFrontPlate } = data;
+ const isArizona = stateCode === 'AZ';
+ const sources = isArizona
+ ? 'SafeOrStolen theft reports and Arizona law-enforcement stolen-vehicle records (updated twice a day)'
+ : 'SafeOrStolen theft reports';
 
  return {
- title: `${state} License Plate Lookup - Check ${stateCode} Stolen Vehicle by Plate`,
- metaDescription: `${state} license plate lookup to verify if a vehicle is stolen. Free ${stateCode} plate check against SafeOrStolen reports, web results and AI. Instant results in 3 seconds. Check vehicles in ${topCities.slice(0, 3).join(', ')}.`,
- h1: `${state} License Plate Lookup - Check ${stateCode} Vehicles`,
+ title: `${state} License Plate Lookup - Check a ${stateCode} Plate for Theft`,
+ metaDescription: `${state} license plate lookup: check a ${stateCode} plate against ${isArizona ? 'Arizona law-enforcement records and ' : ''}SafeOrStolen theft reports in a few seconds. 2 free checks. Never shows owner names.`,
+ h1: `${state} License Plate Lookup - Check ${stateCode} Plates`,
  itemType: "Vehicle",
  keywords: [
  `${state.toLowerCase()} license plate lookup`,
  `${stateCode} license plate search`,
  `check ${state.toLowerCase()} license plate stolen`,
  `${state.toLowerCase()} stolen vehicle plate lookup`,
- `verify ${stateCode} plate number`,
- `${state.toLowerCase()} dmv plate lookup`,
- ...topCities.map(city => `${city.toLowerCase()} vehicle check`)
+ ...topCities.map(city => `${city.toLowerCase()} license plate check`)
  ],
  content: {
- intro: `Verify ${state} vehicles using license plate number in 3 seconds. SafeOrStolen checks its own stolen-item reports, public web results and AI analysis. Check if cars, trucks, or motorcycles with ${stateCode} plates are stolen before buying from private sellers or used car lots in ${topCities.join(', ')}, and anywhere in ${state}. ${state} reports ${theftStats.annualThefts} vehicle thefts annually with a ${theftStats.recoveryRate} recovery rate${theftStats.ranking ? `, ranking ${theftStats.ranking} nationally` : ''}.`,
- 
- whatIs: `${state} license plate lookup is a service that verifies whether a vehicle registered in ${state} is reported stolen by checking the ${stateCode} license plate number against available stolen-vehicle reports. ${state} uses unique plate formats managed by ${dmvName}. SafeOrStolen's ${state} license plate checker checks our own stolen-item reports, public web results and AI analysis to determine if a vehicle with that ${stateCode} plate has been reported stolen. ${uniqueConcerns.length > 0 ? `Key ${state}-specific concerns include: ${uniqueConcerns.join(', ')}.` : ''}`,
- 
- howItWorks: `Enter a ${state} plate and SafeOrStolen checks it against our own stolen-item reports, public web results and AI analysis. Within about 3 seconds you get a clear result: reported stolen, clear, or not found. SafeOrStolen does not access ${dmvName} records or owner information; for official registration records, contact ${dmvName} or local police.`,
- 
- whyCheck: `${state} license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the ${state} market. Verify the seller is the registered owner with ${dmvName}, detect stolen plates, check ${state} registration status, and identify ${state}-specific concerns.${uniqueConcerns.length > 0 ? ` Watch for: ${uniqueConcerns.join('; ')}.` : ''} Always verify VIN before final purchase - plates can be swapped but VINs cannot.`,
- 
+ intro: `Enter a ${state} plate and SafeOrStolen checks it against ${sources} in a few seconds. You get one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. It never shows owner names. After the plate, run the VIN: plates can be swapped, the VIN on the dash can't easily be.`,
+
+ whatIs: `A ${state} license plate lookup on SafeOrStolen tells you whether a ${stateCode} plate appears in ${sources}. It's a quick first screen before you meet a seller in ${topCities.slice(0, 3).join(', ')} or anywhere else in ${state}. It is not a registration lookup: ${dmvName} records, owner names and title status are not part of the check.`,
+
+ howItWorks: `Type the plate exactly as shown, choose ${state}, and run the check. SafeOrStolen searches ${sources} and returns reported stolen, possible match, or no report found, with each source named. The check is saved to your account with the date. SafeOrStolen does not search ${dmvName} records; for registration or title questions, contact ${dmvName}.`,
+
+ whyCheck: `A plate check before you drive out to see a car can save you a wasted trip. A "no report found" result means the plate wasn't in the records searched, not that the car is clean, so also run the VIN, match it on the dash, door jamb and title, and check the seller's ID against the title.${uniqueConcerns.length > 0 ? ` Things to watch for in ${state}: ${uniqueConcerns.join('; ')}.` : ''}`,
+
  benefits: [
- `Quick ${state} vehicle screening using ${stateCode} license plate number`,
- `Verify seller is the ${dmvName} registered owner before viewing`,
- `Check ${state} registration status (valid, expired, suspended)`,
- `Resolve ${stateCode} plate number to VIN for full verification`,
- `Coverage for ${topCities.join(', ')} and all ${state} cities`,
- `Check cars, trucks, motorcycles from ${state} sellers`,
- `Free ${state} license plate lookup - 2 free searches`,
- `Instant 3-second results from ${dmvName} databases`
+ `Screen a ${stateCode} plate before you meet the seller`,
+ `Searches ${sources}`,
+ `Clear result with every source listed`,
+ `Never shows owner names or personal information`,
+ `Each check saved to your account with the date`,
+ `2 free checks with a free account, no credit card`
  ],
- 
+
  process: [
- `Record the ${state} license plate number including all letters and numbers`,
- `Note the vehicle's make, model, color, and year for comparison with ${dmvName} records`,
- `Enter the ${stateCode} plate number into our verification tool (select ${state} as state)`,
- `Review the report showing ${state} registered owner, vehicle information, and theft status`,
- `Verify the ${dmvName} registered owner name matches the seller's ${state} ID`,
- `After initial screening, ALWAYS verify the vehicle's VIN before final purchase`
+ `Write down the ${state} plate exactly, letters and numbers`,
+ `Enter it on SafeOrStolen and choose ${state}`,
+ `Read the result and the list of sources searched`,
+ `Ask the seller for the VIN and run it too`,
+ `At the meetup, match the VIN on the dash, door jamb and title, and check the seller's ID against the title`
  ],
- 
+
  faqs: [
  {
- question: `Can I check if a car is stolen in ${state} using just the license plate?`,
- answer: `Yes, you can do an initial ${state} vehicle check using the ${stateCode} license plate number, but it's NOT sufficient for final verification. ${state} license plates can be easily swapped. Use ${state} license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase.`
+ question: `Can I check if a car is stolen in ${state} by license plate?`,
+ answer: `Yes. Enter the ${stateCode} plate on SafeOrStolen (safeorstolen.com) and it searches ${sources} in a few seconds. Plates can be swapped between cars, so treat it as a first screen and also run the VIN and match it on the car and title before you pay.`
  },
  {
- question: `How do I find a vehicle's ${state} license plate number?`,
- answer: `${state} license plates are located ${requiresFrontPlate ? 'on both the front and rear of the vehicle' : 'on the rear of the vehicle only (${state} does not require front plates)'}. Simply record all letters and numbers on the ${stateCode} plate. If the seller won't provide the ${state} plate number or it's obscured, that's a red flag.`
+ question: `Where is the plate on a ${state} vehicle?`,
+ answer: requiresFrontPlate
+ ? `${state} issues plates for both the front and rear of most passenger vehicles. Check that the front and rear plates match each other and the registration. A missing or mismatched plate is worth asking about.`
+ : `${state} requires only a rear plate on most passenger vehicles. Check that the plate matches the registration the seller shows you. A temporary tag with no paperwork behind it is worth asking about.`
  },
  {
- question: `What information can I get from a ${state} license plate lookup?`,
- answer: `A SafeOrStolen ${state} plate check tells you whether the plate appears in our stolen-item reports or public web results, with an AI explanation. It does not show owner names or ${dmvName} registration records. This helps you screen ${state} vehicles quickly.`
+ question: `Does a ${state} plate lookup show the owner's name?`,
+ answer: `No. SafeOrStolen never shows owner names or addresses and does not search ${dmvName} records. Federal privacy law limits who can get that information. To confirm ownership, ask to see the seller's ID and the title and check that the names match.`
  },
  {
- question: `Is ${state} license plate lookup really free?`,
- answer: `Yes, SafeOrStolen offers 2 free ${state} license plate lookups. Our tool searches both ${dmvName} registration AND stolen vehicle databases simultaneously in 3 seconds. Additional ${state} lookups require a paid plan.`
+ question: `Is a ${state} license plate lookup free?`,
+ answer: `Your first 2 checks are free with a SafeOrStolen account, no credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks, and you can cancel anytime.`
  },
  {
- question: `What if the ${state} registered owner doesn't match the seller?`,
- answer: `If the ${dmvName} registered owner name doesn't match the seller's name, this is a MAJOR red flag. The vehicle may be stolen, or the seller doesn't have legal authority to sell. ALWAYS ask why names don't match and request documentation.`
+ question: `What does "no report found" mean?`,
+ answer: `It means the ${stateCode} plate wasn't found in ${sources}. It doesn't prove the car isn't stolen, because a theft may not have been reported there. Run the VIN, match it on the car and title, and check the seller's ID.`
  },
  {
- question: `What are ${state}-specific concerns when buying used vehicles?`,
- answer: uniqueConcerns.length > 0 
- ? `${state} has unique vehicle risks: ${uniqueConcerns.join('; ')}. Always verify ${state} title is clean, run an NMVTIS title history report for salvage records, and verify VIN matches ${state} title and ${dmvName} records.`
- : `While ${state} has relatively lower theft concerns compared to other states, always verify seller ownership, check title status, and run VIN verification before purchase.`
- },
- {
- question: `How long does a ${state} license plate lookup take?`,
- answer: `Our ${state} license plate lookup takes only 3 seconds. Enter the ${stateCode} plate number, select ${state} as the state, click verify, and receive instant results showing ${dmvName} registered owner, vehicle information, and theft status.`
- },
- {
- question: `Does SafeOrStolen cover all cities in ${state}?`,
- answer: `Yes, our ${state} license plate lookup covers all cities statewide including ${topCities.join(', ')}, and every other city, town, and county in ${state}. We access statewide ${dmvName} databases and theft reports.`
+ question: `What should I watch for when buying a used car in ${state}?`,
+ answer: uniqueConcerns.length > 0
+ ? `In ${state}, watch for: ${uniqueConcerns.join('; ')}. On any car, match the VIN on the dash, door jamb and title, check the seller's ID against the title, and run the plate and VIN on SafeOrStolen.`
+ : `Match the VIN on the dash, door jamb and title, check the seller's ID against the title, and run the plate and VIN on SafeOrStolen before you pay.`
  }
  ]
  }
