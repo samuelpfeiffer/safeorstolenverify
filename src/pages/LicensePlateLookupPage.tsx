@@ -55,7 +55,7 @@ const faqs = [
   {
     question: 'What does "no report found" mean on a plate check?',
     answer:
-      "It means the plate does not appear in the records SafeOrStolen searched at the time of the check: its own theft reports, public web results and, for Arizona plates, Arizona law-enforcement records. It is not proof the car is clean. A recent theft may not be reported yet, and a swapped plate says nothing about the car it's bolted to.",
+      "It means the plate does not appear in the records SafeOrStolen searched at the time of the check: its own theft reports, public web results and state criminal justice stolen-vehicle records. Before you buy, also check the VIN on the dashboard and door jamb, because a plate can be moved from one car to another.",
   },
   {
     question: 'Do paid license plate lookup sites show the owner?',

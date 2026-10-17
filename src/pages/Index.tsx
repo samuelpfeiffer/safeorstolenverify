@@ -30,7 +30,7 @@ const cardListing = '/images/cards/paste-listing.jpg';
 const VERIFY_CARDS = [
  {
  title: 'Gun Serial Number Lookup',
-  subtitle: 'Police theft reports from 33 states and DC, plus live Ohio records',
+  subtitle: 'Police theft reports from 33 states and DC, plus live state criminal justice records',
  href: '/firearms-check',
  image: cardFirearms,
  badge: 'Most searched',
@@ -316,7 +316,7 @@ const Index = () => {
  {
  n: '2',
  title: 'Every source searched at once',
- desc: "SafeOrStolen theft reports and public web results on every check, plus police gun theft reports from 33 states and DC, live Ohio records, a national stolen-bike registry and Arizona stolen-vehicle records where they apply.",
+ desc: "SafeOrStolen theft reports and public web results on every check, plus police gun theft reports from 33 states and DC, live state criminal justice records, and a national stolen-bike registry where they apply.",
  },
  {
  n: '3',

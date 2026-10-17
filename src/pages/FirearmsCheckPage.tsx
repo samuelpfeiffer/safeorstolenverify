@@ -78,7 +78,7 @@ const FirearmsCheckPage = () => {
  <span className="text-primary">Any State. Is This Gun Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Check a gun from any state. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records, before you buy.
+ Check a gun from any state. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus state criminal justice stolen-gun records searched live, before you buy.
  </p>
 
 
@@ -157,7 +157,7 @@ const FirearmsCheckPage = () => {
  Which Databases Does SafeOrStolen Check for Firearms?
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: every gun check searches police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and checks the serial for tampering.
+ Quick answer: every gun check searches police theft and loss reports from 33 states and Washington, DC, state criminal justice stolen-gun records searched live, SafeOrStolen's own theft reports and public web results, and checks the serial for tampering.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
  All of these are searched at the same time, and the result lists each one, so
