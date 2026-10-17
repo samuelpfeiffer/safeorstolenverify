@@ -151,7 +151,6 @@ serve(async (req) => {
         databases, // ONLY sources that actually answered
         notChecked: [
           ...(ohio.checked ? [] : ['Ohio stolen gun database (did not respond)']),
-          'FBI NCIC (law enforcement and licensed dealers only)',
         ],
       },
       responseTime: Date.now() - startTime
