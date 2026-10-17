@@ -75,7 +75,7 @@ export default function HowToCheckIfToolsStolenPage() {
         whatIs:
           "A stolen tool serial number lookup checks whether a specific tool has been reported stolen. When tools are stolen from a job site, truck or garage, the owner gives the serial numbers to the police and their insurer. Matching the serial is the only reliable way to tie a tool to a theft report.",
         howItWorks:
-          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched. It does not search brand apps or police systems, so do the app check with the seller too.",
+          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched. If the tool is registered in a brand app, ask the seller to show it to you too.",
         whyCheck:
           "Tools are easy to steal and quick to resell, and stolen tools often turn up online and at flea markets within days. If you buy a stolen tool, police can return it to the owner and you lose what you paid. Checking the serial numbers first, and keeping a record that you did, protects you.",
         benefits: [

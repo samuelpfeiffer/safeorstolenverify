@@ -109,7 +109,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How do I check if a gun is stolen?',
- a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. The public can't search the FBI's NCIC file, so ask your local police whether they will run the serial too.",
+ a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. For a private sale, you can also ask your local police to run the serial.",
  },
  {
  q: 'Can I check a Facebook Marketplace listing?',

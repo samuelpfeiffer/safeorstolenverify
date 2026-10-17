@@ -59,7 +59,7 @@ const IMEICheckPage = () => {
  },
  {
  question: "What does the IMEI check search?",
- answer: "A SafeOrStolen IMEI check (safeorstolen.com/imei-check) shows the make and model from the IMEI, searches theft reports filed by owners on SafeOrStolen, and searches public web results that mention the number. It does not search police databases such as NCIC or Apple and Google account status. The paid blacklist check adds carrier lost/stolen status."
+ answer: "A SafeOrStolen IMEI check (safeorstolen.com/imei-check) shows the make and model from the IMEI, searches theft reports filed by owners on SafeOrStolen, and searches public web results that mention the number. The paid blacklist check adds carrier lost/stolen status."
  },
  {
  question: "What if the IMEI shows reported stolen or blacklisted?",

@@ -134,7 +134,7 @@ serve(async (req) => {
     } else if (ohio.possible) {
       message = `⚠️ POSSIBLE MATCH: Ohio's stolen gun database returned a similar serial number, but not an exact match. Compare the serial carefully and ask local police to run it before you buy.`;
     } else if (ohio.checked) {
-      message = 'Not reported stolen in Ohio law-enforcement stolen-gun records as of today. That search covers Ohio reports only. Private buyers cannot search the national FBI database, so buy through a licensed dealer (FFL) or ask local police to run the serial.';
+      message = 'Not reported stolen in Ohio law-enforcement stolen-gun records as of today. For a private sale, buy through a licensed dealer (FFL) or ask local police to run the serial.';
     } else {
       message = "Ohio's stolen gun database could not be searched right now, so this firearm's theft status is not confirmed. Buy through a licensed dealer (FFL) or ask local police to run the serial.";
     }

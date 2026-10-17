@@ -294,7 +294,7 @@ export const StateVinPageTemplate = ({
  <div className="p-6 bg-card rounded-lg border-l-4 border-primary">
  <p className="font-semibold mb-2">Title and registration questions</p>
  <p className="text-muted-foreground">
- SafeOrStolen doesn't search {state} motor vehicle records. For title status, liens or registration, contact the {state} motor vehicle agency directly.
+ For title status, liens or registration, contact the {state} motor vehicle agency directly.
  </p>
  </div>
  </div>
