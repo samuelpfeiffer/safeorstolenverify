@@ -60,7 +60,7 @@ function GuidePage() {
         {
           heading: 'For an expensive watch, meet at a watchmaker',
           paragraphs: [
-            "A watchmaker or an authorized dealer can open the case back, check that the movement is genuine and read a serial you can't see without removing the bracelet. Dealers also have access to trade registries of lost and stolen watches that the public can't search. Offer to meet the seller there. A real owner usually agrees; a seller with a stolen watch usually finds a reason not to.",
+            "A watchmaker or an authorized dealer can open the case back, check that the movement is genuine and read a serial you can't see without removing the bracelet. Dealers can also run a trade check against registries of lost and stolen watches. Offer to meet the seller there. A real owner usually agrees; a seller with a stolen watch usually finds a reason not to.",
           ],
         },
       ]}
@@ -70,9 +70,9 @@ function GuidePage() {
         whatIs:
           'A stolen watch check looks for theft reports tied to the watch\'s serial number. Owners give the serial to the police and their insurer when a watch is stolen, and can report it on SafeOrStolen. For rings, diamonds and other jewelry without serial numbers, see the <a href="/check-jewelry">jewelry check guide</a>.',
         howItWorks:
-          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search the brands' records, insurer databases or dealer trade registries.",
+          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. For an expensive watch, you can also ask a dealer to run a trade check.",
         whyCheck:
-          "A watch is small, valuable and easy to sell, and when police recover a stolen one it goes back to the owner. A buyer who paid for it loses the money. A serial check plus a papers match catches most of the cases a private buyer can catch.",
+          "A watch is small, valuable and easy to sell, and when police recover a stolen one it goes back to the owner. A buyer who paid for it loses the money. A serial check plus a papers match gives a private buyer a solid basis to decide.",
         benefits: [
           'Works for Rolex, Omega, TAG Heuer, Cartier, Apple Watch and any watch with a serial',
           'Searches SafeOrStolen theft reports and public web results',

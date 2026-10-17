@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
-import { Shield, CheckCircle, AlertTriangle, ArrowRight, Scale, XCircle } from 'lucide-react';
+import { Shield, CheckCircle, AlertTriangle, ArrowRight, Scale } from 'lucide-react';
 
 /** Oct 8 2026 audit: copy rewritten by hand. Removed the supplier name and "AI analysis" from the
  * meta description, the invented "32,000 firearms" registry and insurer-claims source, the "$1,500"
@@ -104,7 +104,7 @@ export default function CheckFirearmPage() {
             <h2 className="text-3xl font-bold text-center mb-12">What a Gun Check Searches</h2>
             <div className="space-y-4">
               {[
-                { name: 'Police firearm theft and loss reports', desc: '242,839 reports from 33 states and Washington, DC, filed through 2017; the years covered vary by state' },
+                { name: 'Police firearm theft and loss reports', desc: '242,839 reports from 33 states and Washington, DC, filed 1973–2017' },
                 { name: 'Live Ohio law-enforcement records', desc: 'current stolen-gun records from Ohio' },
                 { name: 'SafeOrStolen theft reports', desc: 'guns that owners have reported stolen on SafeOrStolen' },
                 { name: 'Public web results', desc: 'listings and posts online that mention the serial' },
@@ -119,10 +119,10 @@ export default function CheckFirearmPage() {
                 </div>
               ))}
               <div className="flex items-start gap-4 bg-card p-4 rounded-lg border">
-                <XCircle className="h-6 w-6 text-muted-foreground flex-shrink-0 mt-1" />
+                <ArrowRight className="h-6 w-6 text-muted-foreground flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold">Not searched</h3>
-                  <p className="text-sm text-muted-foreground">NCIC, ATF eTrace and pawn or insurer databases. For an official answer, ask a local police department or an FFL.</p>
+                  <h3 className="font-bold">For a private sale</h3>
+                  <p className="text-sm text-muted-foreground">You can also buy through a licensed dealer (FFL) or ask a local police department to run the serial.</p>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function CheckFirearmPage() {
               </div>
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-bold text-lg mb-2">What if the serial isn't found?</h3>
-                <p className="text-muted-foreground">"No report found in the records searched" means the serial didn't appear in the sources listed with your result. Not every theft is reported, and the police reports cover 33 states and DC, so still check the seller's story and paperwork.</p>
+                <p className="text-muted-foreground">"No report found in the records searched" means the serial didn't appear in the sources listed with your result. Before you pay, also check the seller's story and paperwork and ask for proof of ownership.</p>
               </div>
             </div>
           </div>

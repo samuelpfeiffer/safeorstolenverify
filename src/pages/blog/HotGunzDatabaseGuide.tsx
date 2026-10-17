@@ -16,7 +16,7 @@ const HotGunzDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "Is HotGunz enough to verify a firearm?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only holds guns its own users listed, and it gets no data from police. A gun can be reported stolen to police and never appear there. SafeOrStolen (safeorstolen.com/firearms-check) is a separate service: it searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results. Only police can run a serial through NCIC." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only holds guns its own users listed, and it gets no data from police. A gun can be reported stolen to police and never appear there. SafeOrStolen (safeorstolen.com/firearms-check) is a separate service: it searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results. You can also ask your local police non-emergency line to run the serial." }
       },
       {
         "@type": "Question",
@@ -111,8 +111,7 @@ const HotGunzDatabaseGuide = () => {
               {[
                 { name: 'HotGunz', desc: 'stolen guns its own users chose to list on the site' },
                 { name: 'SafeOrStolen', desc: 'police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft reports and public web results, plus a flag for serials that look altered or obliterated' },
-                { name: 'NCIC (police only)', desc: 'the FBI stolen-gun file. Neither site can search it, so ask your local police non-emergency line to run the serial' },
-                { name: 'ATF eTrace (police only)', desc: 'federal trace data, open only to law enforcement' },
+                { name: 'Local police', desc: 'ask the non-emergency line to run the serial when the price or the story seems off' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -144,11 +143,11 @@ const HotGunzDatabaseGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is HotGunz enough to verify a firearm?</summary>
-                <p className="text-muted-foreground mt-2">No. It only holds what its users posted and gets no police data. A clean result doesn't mean the gun isn't stolen. For the closest thing to a definitive check, ask your local police non-emergency line to run the serial through NCIC.</p>
+                <p className="text-muted-foreground mt-2">No. It only holds what its users posted and gets no police data. Also run the serial on SafeOrStolen, which searches police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and you can ask your local police non-emergency line to run it too.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
-                <summary className="font-semibold text-foreground cursor-pointer">Does SafeOrStolen search HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">No, they are separate services. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results. Search HotGunz on its own site.</p>
+                <summary className="font-semibold text-foreground cursor-pointer">How is SafeOrStolen different from HotGunz?</summary>
+                <p className="text-muted-foreground mt-2">They are separate services. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results in one check. HotGunz can be searched on its own site.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I report my stolen gun on HotGunz?</summary>

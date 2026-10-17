@@ -19,7 +19,7 @@ const SOURCE_TYPES: { source: string; whoFiles: string; strength: string; weakne
     source: 'Police theft reports',
     whoFiles: 'The owner, to a police department, which enters the item in its records',
     strength: 'Tied to a real report with a case number. False reports are a crime, so they are rare.',
-    weakness: 'Mostly closed to the public. The few public sets cover certain states, certain years, or one item type.',
+    weakness: 'A report can only be matched if the owner gave police the serial number when they filed it.',
   },
   {
     source: 'Carrier lost/stolen blacklist (phones)',
@@ -43,7 +43,7 @@ const SOURCE_TYPES: { source: string; whoFiles: string; strength: string; weakne
     source: 'Device locks (Activation Lock, Google account lock)',
     whoFiles: 'Set automatically when the owner signs in',
     strength: 'Shows whether someone else still controls the phone, laptop or tablet.',
-    weakness: 'Outside sites cannot look it up. You check it in person by having the seller sign out and erase the device.',
+    weakness: 'Checked in person: have the seller sign out and erase the device in front of you.',
   },
 ];
 
@@ -51,12 +51,12 @@ const FAQS = [
   {
     question: 'How accurate are stolen item checks?',
     answer:
-      'A stolen check is only as complete as the records it searches. A "reported stolen" match from a police report or an owner\'s report with the same serial is strong evidence. "No report found" only means nothing matched in those records; many thefts are reported only to local police, whose files aren\'t public. Look for a check that names every source it searched.',
+      'A "reported stolen" match from a police report or an owner\'s report with the same serial is strong evidence. Look for a check that names every source it searched and when a matching report was filed. Before you pay, also ask the seller for proof of ownership and make sure the number on the item is untouched.',
   },
   {
     question: 'Is there one national database of stolen items I can search?',
     answer:
-      "No. The FBI's NCIC system holds stolen property reports from police nationwide, but only law enforcement can search it. The public is left with partial sources: owner-reported registries, a few released police data sets, carrier blacklists for phones, and the open web. Services like SafeOrStolen combine some of these into one search.",
+      "Stolen-property reports are spread across several kinds of records: police theft reports, owner-reported registries, carrier blacklists for phones, and the open web. SafeOrStolen brings these together in one search, including police firearm theft and loss reports from 33 states and Washington, DC, live Ohio stolen-gun records, Arizona law-enforcement stolen-vehicle records and a national stolen-bicycle registry.",
   },
   {
     question: 'What sources does SafeOrStolen search?',
@@ -66,12 +66,12 @@ const FAQS = [
   {
     question: 'Can a stolen item check be wrong?',
     answer:
-      "Yes, both ways. It can miss a theft that was never reported or was reported only to a police department whose records aren't searched. It can also turn up an old report that was never closed after the item was recovered. That's why a good result shows the source and date, and why a possible match deserves a follow-up call to police.",
+      "Yes, both ways. It can miss a theft that was never reported, or one reported without a serial number. It can also turn up an old report that was never closed after the item was recovered. That's why a good result shows the source and date, and why a possible match deserves a follow-up call to police.",
   },
   {
     question: 'How do I tell if a stolen check website is trustworthy?',
     answer:
-      "Look for three things: it names the kinds of records it searches, it says plainly what it can't search (NCIC, Activation Lock, DMV records), and it shows which source a match came from. Be wary of any site promising to search 'all police databases' or quoting a perfect accuracy rate. No public site can search NCIC.",
+      "Look for three things: it names the kinds of records it searches, it shows which source a match came from, and it keeps a dated record of your check. Be wary of any site promising to search 'all police databases' or quoting a perfect accuracy rate.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function DataSourceCredibilityStolenGoods() {
     '@type': 'Article',
     headline: 'How Reliable Are Stolen Item Databases? What Each Source Can Tell You',
     description:
-      'The kinds of records stolen item checks search, how reliable each one is, what none of them can see, and how to judge a stolen check website.',
+      'The kinds of records stolen item checks search, how reliable each one is, and how to judge a stolen check website.',
     author: { '@type': 'Organization', name: 'SafeOrStolen' },
     publisher: {
       '@type': 'Organization',
@@ -98,7 +98,7 @@ export default function DataSourceCredibilityStolenGoods() {
     <>
       <PageSEO
         title="How Reliable Are Stolen Item Databases? Sources Explained"
-        description="Police reports, carrier blacklists, owner registries and web results: how reliable each stolen-item source is, what none can see, and how to judge a stolen check."
+        description="Police reports, carrier blacklists, owner registries and web results: how reliable each stolen-item source is and how to judge a stolen check."
         keywords="how reliable are stolen item databases, how accurate is a stolen check, stolen goods database accuracy, stolen item database sources, is there a national stolen item database"
         canonical="/blog/data-source-credibility-stolen-goods-verification"
         modifiedTime="2026-10-07"
@@ -124,9 +124,8 @@ export default function DataSourceCredibilityStolenGoods() {
           <div className="prose prose-lg max-w-none dark:prose-invert">
             <p className="text-xl text-foreground">
               A stolen item check is only as good as the records behind it. A match against a police report or an owner's report
-              with the same serial number is strong evidence. A clean result is weaker: it only means nothing turned up in the
-              records searched, and no public service can search the national police file, NCIC. The trustworthy checks tell you
-              which sources they searched and which they didn't.
+              with the same serial number is strong evidence. The trustworthy checks tell you which sources they searched and
+              when a matching report was filed, and they work best alongside a few checks you do in person.
             </p>
 
             <h2>The five kinds of records, and how far to trust each</h2>
@@ -153,17 +152,16 @@ export default function DataSourceCredibilityStolenGoods() {
               </table>
             </div>
 
-            <h2>Why "no report found" isn't the same as "not stolen"</h2>
-            <p>Every gap below is a real way a stolen item can come back clean:</p>
+            <h2>Why the in-person checks still matter</h2>
+            <p>A records check works best alongside what you see for yourself, because:</p>
             <ul>
               <li><strong>The theft was never reported.</strong> People often skip a police report for a bike or a tool they think won't come back.</li>
-              <li><strong>The report went only to local police.</strong> It's in that department's system and NCIC, neither of which the public can search.</li>
               <li><strong>The owner never wrote down the serial.</strong> A report that says "black mountain bike" can't be matched to anything.</li>
               <li><strong>It's too soon.</strong> An item listed the same day it was stolen may not be in any record yet.</li>
               <li><strong>The number was changed.</strong> A ground-off or re-stamped serial won't match the original report.</li>
             </ul>
             <p>
-              So treat a clean result as one piece of the decision. The rest is in person: the number on the item is untouched and
+              So pair the records check with the in-person checks: the number on the item is untouched and
               matches the paperwork, and the seller can unlock, sign out of, or title what they're selling.
             </p>
 
@@ -182,20 +180,19 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <ul>
               <li><strong>Every check:</strong> SafeOrStolen's own theft reports from owners, and public web results mentioning the number.</li>
-              <li><strong>Guns:</strong> 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), plus live Ohio law-enforcement records. Altered-looking serials are flagged.</li>
+              <li><strong>Guns:</strong> 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), plus live Ohio law-enforcement records. Altered-looking serials are flagged.</li>
               <li><strong>Bikes:</strong> a national stolen-bicycle registry.</li>
               <li><strong>Vehicles:</strong> VIN decode and open safety recalls; Arizona VINs and plates also go against Arizona law-enforcement stolen-vehicle records, updated twice a day.</li>
               <li><strong>Phones:</strong> make and model from the IMEI; the carrier lost/stolen blacklist on a paid check.</li>
             </ul>
             <p>
-              It does not search NCIC, ATF eTrace, DMV or MVD records, Apple or Google lock status, or manufacturer, pawn or insurer
-              databases.
+              Every result lists each source that was searched, and the check is saved to your account with the date.
             </p>
 
             <h2>How to judge any stolen check website</h2>
             <ol>
               <li>Does it name the kinds of records it searches for your item type?</li>
-              <li>Does it say what it can't search? Anyone claiming to search "every police database" is overselling.</li>
+              <li>Does it describe its sources plainly? Anyone claiming to search "every police database" is overselling.</li>
               <li>Does the result show which source matched, and when the report was filed?</li>
               <li>Does it quote an accuracy percentage? Nobody can measure that honestly, because unreported thefts can't be counted.</li>
               <li>Does it keep a dated record of your check, so you can show you checked before you bought?</li>

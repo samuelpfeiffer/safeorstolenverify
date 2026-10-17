@@ -441,7 +441,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  Yes. Arizona plates and VINs are also searched against Arizona law-enforcement stolen-vehicle records, which are updated twice a day. 
- It does not search DMV/MVD records and never shows owner names.
+ It also searches SafeOrStolen theft reports and public web results, and it never shows owner names.
  </AccordionContent>
  </AccordionItem>
  )}

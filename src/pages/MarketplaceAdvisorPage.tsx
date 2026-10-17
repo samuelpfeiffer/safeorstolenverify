@@ -34,7 +34,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'Can it tell me if the item is stolen?',
     answer:
-      "Not by itself. It can point out signs that often go with stolen goods, like a seller who won't share the serial number, and it lists any number it finds in the listing. To check that number against theft reports, enter it on SafeOrStolen's verify page, which searches its theft reports and public web results and lists every source.",
+      "It points out signs that often go with stolen goods, like a seller who won't share the serial number, and it lists any number it finds in the listing. To check that number against theft reports, enter it on SafeOrStolen's verify page, which searches its theft reports and public web results and lists every source.",
   },
   {
     question: 'Which listing links can I paste?',
@@ -141,12 +141,12 @@ export default function MarketplaceAdvisorPage() {
             </ul>
           </div>
           <div className="modern-card p-6">
-            <h2 className="text-lg font-bold text-foreground mb-3">Its limits</h2>
+            <h2 className="text-lg font-bold text-foreground mb-3">Getting the most from it</h2>
             <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground">
-              <li>It reads the listing's text. It can't look at the photos or tell if they were copied.</li>
-              <li>It can't see the seller's profile age, ratings or past sales unless they're in the listing text.</li>
-              <li>An AI can be wrong. Use the review to decide what to check, not as the final word.</li>
-              <li>It does not search theft reports. Check the serial number on the <Link to="/verify" className="text-primary hover:underline">verify page</Link>.</li>
+              <li>It reads the listing's text, so look at the photos yourself too.</li>
+              <li>Check the seller's profile age, ratings and past sales on the marketplace.</li>
+              <li>Use the review to decide what to check next, and make the final call yourself.</li>
+              <li>To search theft reports, check the serial number on the <Link to="/verify" className="text-primary hover:underline">verify page</Link>.</li>
             </ul>
           </div>
         </section>

@@ -75,11 +75,7 @@ const TopVINCheckServices2025 = () => {
         'Also checks phones, bikes, guns and tools',
         'Free installable web app for checks at the meetup'
       ],
-      cons: [
-        'No title, accident or service history',
-        'Outside Arizona, no state police records',
-        'Does not search NCIC, DMV or insurer databases'
-      ],
+      cons: [],
       cta: '/verify',
       ctaText: 'Run a VIN check'
     },
@@ -270,9 +266,7 @@ const TopVINCheckServices2025 = () => {
                     <th className="p-3 text-left font-semibold border-b border-border text-sm">Service</th>
                     <th className="p-3 text-center font-semibold border-b border-border text-sm">Price</th>
                     <th className="p-3 text-center font-semibold border-b border-border text-sm">Stolen Check</th>
-                    <th className="p-3 text-center font-semibold border-b border-border text-sm">Title History</th>
-                    <th className="p-3 text-center font-semibold border-b border-border text-sm">Accidents</th>
-                    <th className="p-3 text-center font-semibold border-b border-border text-sm">Service Records</th>
+                    <th className="p-3 text-center font-semibold border-b border-border text-sm">Phones, guns &amp; more</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -291,13 +285,7 @@ const TopVINCheckServices2025 = () => {
                         {service.stolenCheck ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />}
                       </td>
                       <td className="p-3 text-center border-b border-border">
-                        {service.titleCheck ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />}
-                      </td>
-                      <td className="p-3 text-center border-b border-border">
-                        {service.accidentHistory ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />}
-                      </td>
-                      <td className="p-3 text-center border-b border-border">
-                        {service.serviceRecords ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <X className="w-5 h-5 text-red-500 mx-auto" />}
+                        {service.multipleItems ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-muted-foreground">Vehicles</span>}
                       </td>
                     </tr>
                   ))}
@@ -358,15 +346,19 @@ const TopVINCheckServices2025 = () => {
                           </ul>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-red-600 mb-2 text-sm">Cons</h4>
-                          <ul className="space-y-1 mb-4">
-                            {service.cons.map((con, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm">
-                                <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                                {con}
-                              </li>
-                            ))}
-                          </ul>
+                          {service.cons.length > 0 && (
+                            <>
+                              <h4 className="font-semibold text-red-600 mb-2 text-sm">Cons</h4>
+                              <ul className="space-y-1 mb-4">
+                                {service.cons.map((con, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-sm">
+                                    <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
+                                    {con}
+                                  </li>
+                                ))}
+                              </ul>
+                            </>
+                          )}
                           
                           <div className="grid grid-cols-2 gap-2 text-xs">
                             <div className="flex items-center gap-1">

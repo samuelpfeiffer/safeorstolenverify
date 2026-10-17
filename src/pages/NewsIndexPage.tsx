@@ -20,7 +20,7 @@ const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 const current: { title: string; body: string; to: string; linkText: string }[] = [
   {
     title: 'Gun serial checks',
-    body: 'Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, and flag serials that look altered or obliterated.',
+    body: 'Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and flag serials that look altered or obliterated.',
     to: '/firearms-check',
     linkText: 'Check a gun serial',
   },
@@ -101,8 +101,7 @@ const NewsIndexPage = () => {
               ))}
             </div>
             <p className="text-muted-foreground mt-6">
-              SafeOrStolen does not search NCIC, ATF eTrace, DMV records, Apple or Google account status, or
-              pawn, insurer or manufacturer databases. The full list is on{' '}
+              Every source SafeOrStolen searches, item by item, is listed on{' '}
               <Link to="/data-sources" className="text-primary hover:underline">data sources</Link>.
             </p>
           </div>

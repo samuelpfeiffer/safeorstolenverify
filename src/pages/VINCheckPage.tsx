@@ -8,7 +8,7 @@ const VINCheckPage = () => {
  return (
  <ItemLandingPageTemplate
  title="VIN Check - Free Stolen Vehicle Verification | SafeOrStolen"
- metaDescription="Free VIN check to verify if any car, truck, or motorcycle is stolen. Check VIN number instantly against police, DMV. Verify before buying."
+ metaDescription="Free VIN check to verify if any car, truck, or motorcycle is stolen. Decode the VIN, see open recalls and search theft reports. Verify before buying."
  h1="Free VIN Check - Verify Vehicle Not Stolen"
  itemType="Car"
  searchType="vin"
@@ -34,8 +34,8 @@ const VINCheckPage = () => {
  "Free VIN check with a free account",
  "Results in under 3 seconds",
  "Analyzes SafeOrStolen reports, public web results, and AI analysis for stolen vehicles",
- "Verifies DMV and title status",
- "Shows insurance total loss history",
+ "Decodes year, make and model and lists open safety recalls",
+ "Checks Arizona VINs against Arizona law-enforcement stolen-vehicle records",
  "Works for cars, trucks, motorcycles, RVs, and trailers",
  "Available 24/7 on web and mobile app",
  "Protects against buying stolen vehicles"
@@ -43,9 +43,9 @@ const VINCheckPage = () => {
  process: [
  "Find the VIN: Check the dashboard (driver's side), door jamb, or vehicle registration",
  "Enter the 17-character VIN in our verification tool",
- "Wait 3 seconds while we check national databases",
- "Review your comprehensive theft and title report",
- "Only proceed with purchase if status shows CLEAN"
+ "Wait a few seconds while SafeOrStolen searches theft reports and public web results",
+ "Review the result and the list of sources searched",
+ "Before you pay, match the VIN to the title and ask the seller for proof of ownership"
  ],
  faqs: [
  {
@@ -54,11 +54,11 @@ const VINCheckPage = () => {
  },
  {
  question: "Is this VIN check really free?",
- answer: "Yes, SafeOrStolen offers a free VIN check that verifies stolen status against major databases. This tells you if the vehicle has been reported stolen, giving you the critical information needed to avoid buying stolen property."
+ answer: "Yes, SafeOrStolen gives you 2 free checks with a free account. Each VIN check searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs, and lists every source it searched."
  },
  {
  question: "What databases does the VIN check search?",
- answer: "We check SafeOrStolen's own stolen-item reports, public web results and AI analysis. SafeOrStolen does not search NICB, NMVTIS, NCIC or police databases; check those yourself."
+ answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners and public web results. Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
  },
  {
  question: "Is this the same as Carfax?",

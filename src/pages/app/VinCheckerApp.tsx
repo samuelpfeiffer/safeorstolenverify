@@ -172,7 +172,7 @@ const VinCheckerApp = () => {
  ))}
  </div>
  <p className="text-sm text-muted-foreground text-center mt-6 max-w-2xl mx-auto">
- It does not search DMV records, insurer databases or NCIC, and it does not report title brands, odometer readings or liens.
+ For title brands, odometer readings or liens, also get a vehicle history report, or contact the state motor vehicle agency for title or registration.
  </p>
  </div>
  </section>

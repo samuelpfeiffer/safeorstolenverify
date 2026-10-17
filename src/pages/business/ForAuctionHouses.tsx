@@ -46,9 +46,9 @@ const FAQS = [
       "Yes, lot by lot. A $1.99 verification certificate, free on the monthly plan, gives a dated record with its own link showing the result and the sources searched, with only the last four characters of the number visible. You can add that link to the lot description. There are no catalog badges or branded reports.",
   },
   {
-    question: 'Does a clean result mean a lot is not stolen?',
+    question: 'What should we do when a lot comes back with no report found?',
     answer:
-      'No. "No report found in the records searched" means no theft report turned up in those sources on that date. Many thefts are never reported anywhere public, and SafeOrStolen does not search NCIC, pawn reporting systems or DMV records. It is one check alongside the consignor\'s ID, paperwork and your own judgment.',
+      '"No report found in the records searched" means no theft report turned up in the sources listed on the result on that date. Before you accept the lot, also take the consignor\'s ID and ask for proof of ownership, such as a receipt, invoice or provenance paperwork.',
   },
 ];
 

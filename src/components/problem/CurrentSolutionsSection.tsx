@@ -12,7 +12,7 @@ export const CurrentSolutionsSection = () => {
  <CardContent className="p-6 text-center">
  <h3 className="text-lg font-semibold text-gray-200 mb-3">Police Databases</h3>
  <p className="text-gray-300 text-sm">
- Not accessible to consumers. Designed for law enforcement only.
+ Hard for buyers to search one agency at a time. SafeOrStolen searches police gun theft reports and Arizona stolen-vehicle records for you.
  </p>
  </CardContent>
  </Card>

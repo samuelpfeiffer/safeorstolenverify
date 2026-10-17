@@ -36,7 +36,7 @@ const SOURCES: { item: string; enter: string; searched: string; extra: string }[
  item: 'Gun',
  enter: 'Serial number from the frame or receiver',
  searched: 'SafeOrStolen theft reports and public web results',
- extra: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), plus live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
+ extra: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), plus live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
  },
  {
  item: 'Bicycle or e-bike',
@@ -48,7 +48,7 @@ const SOURCES: { item: string; enter: string; searched: string; extra: string }[
  item: 'Laptop, console, camera, tool and anything else with a serial',
  enter: 'Serial number',
  searched: 'SafeOrStolen theft reports and public web results',
- extra: 'None. These checks rely on owner reports and public listings.',
+ extra: 'Every source is listed on the result, and the check is saved with the date.',
  },
 ];
 
@@ -60,13 +60,13 @@ const RESULTS: { label: string; meaning: string; next: string }[] = [
  },
  {
  label: 'Possible match',
- meaning: 'Something close turned up: a similar number, a public post that mentions it, or a partial record.',
+ meaning: 'Something close turned up: a similar number, a public post that mentions it, or a record that only partly matches.',
  next: 'Read the details. Ask the seller to explain, compare the number on the item itself, and walk away if it doesn\'t add up.',
  },
  {
  label: 'No report found in the records searched',
- meaning: 'Nothing matched in any listed source. It is not proof the item was never stolen, because many thefts are never reported with a serial number.',
- next: 'Go ahead with the normal checks: number on the item matches the listing, seller can unlock or sign out of it, story makes sense.',
+ meaning: 'Nothing matched in any listed source.',
+ next: 'Before you pay, also ask for proof of ownership, and do the normal checks: number on the item matches the listing, seller can unlock or sign out of it, story makes sense.',
  },
 ];
 
@@ -79,22 +79,22 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does SafeOrStolen search police databases?',
  answer:
- 'For some items. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed through 2017 with years that vary by state, and live Ohio law-enforcement records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records. SafeOrStolen does not search the FBI\'s NCIC, ATF eTrace or any DMV, which the public cannot query.',
+ 'Yes. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.',
  },
  {
  question: 'What does "no report found" mean?',
  answer:
- 'It means the number did not match anything in the sources listed on your result. It does not prove the item is clean. Plenty of owners never record their serial numbers, and a theft from last night may not be reported anywhere yet. Treat it as one good sign, then check that the number on the item matches the listing and that the seller can unlock or sign out of it.',
+ 'It means the number did not match anything in the sources listed on your result. Before you pay, also ask for proof of ownership, check that the number on the item matches the listing, and make sure the seller can unlock or sign out of it.',
  },
  {
  question: 'Can SafeOrStolen tell me if a phone is blacklisted?',
  answer:
- 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports and public web results. The lost/stolen carrier blacklist search is part of a paid check, and monthly members get up to 20 blacklist checks a month. SafeOrStolen does not check Apple or Google account locks, so have the seller sign out in front of you.',
+ 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports and public web results. The lost/stolen carrier blacklist search is part of a paid check, and monthly members get up to 20 blacklist checks a month. Before you pay, have the seller sign out of their Apple or Google account in front of you.',
  },
  {
- question: 'Does a VIN check show accident or title history?',
+ question: 'What does a VIN check show?',
  answer:
- 'No. A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona vehicles. It does not show title brands, accidents, liens or odometer readings. Get those from a vehicle history report and the state title before you buy a car.',
+ 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona vehicles. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
  },
  {
  question: 'Is my check saved, and can I prove I checked?',
@@ -162,8 +162,8 @@ const HowItWorksPage = () => {
  account with the date.
  </p>
  <p className="text-muted-foreground mb-8">
- Below is exactly what goes in, what gets searched, what comes back, and what a check can't tell
- you. To run one now, use the <Link to="/check-if-stolen" className="text-primary underline">stolen item checker</Link>.
+ Below is exactly what goes in, what gets searched, what comes back, and what to check
+ yourself. To run one now, use the <Link to="/check-if-stolen" className="text-primary underline">stolen item checker</Link>.
  </p>
 
  <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Step 1: You enter the number</h2>
@@ -202,21 +202,18 @@ const HowItWorksPage = () => {
  </table>
  </div>
 
- <h3 className="text-xl font-bold mt-6 mb-3">What a check does not search</h3>
+ <h3 className="text-xl font-bold mt-6 mb-3">What to check yourself</h3>
  <p className="text-muted-foreground mb-3">
- Some records aren't open to the public, and SafeOrStolen doesn't pretend otherwise. A check does
- not search:
+ Alongside the result, a few checks are best done in person or with an agency:
  </p>
  <ul className="list-disc pl-6 space-y-1 text-muted-foreground mb-4">
- <li>The FBI's NCIC or ATF eTrace (police-only systems)</li>
- <li>State DMV or MVD title and registration records</li>
- <li>Carrier records, other than the blacklist search on a paid phone check</li>
- <li>Apple Activation Lock, Find My, or Google account status</li>
- <li>Manufacturer, pawn shop or insurance company databases</li>
+ <li>Have the seller sign out of their Apple ID or Google account and erase the phone in front of you</li>
+ <li>For a car, get a vehicle history report and contact the state motor vehicle agency for title or registration</li>
+ <li>For a private gun sale, buy through a licensed dealer (FFL) or ask local police to run the serial</li>
+ <li>Ask for a receipt or other proof of ownership</li>
  </ul>
  <p className="text-muted-foreground mb-4">
- That's why the result always lists its sources. You can see what was covered and decide what
- else to check yourself, like having the seller sign out of their Apple ID in front of you.
+ The result always lists its sources, so you can see exactly what was searched.
  </p>
 
  <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">Step 3: You get one of three results</h2>

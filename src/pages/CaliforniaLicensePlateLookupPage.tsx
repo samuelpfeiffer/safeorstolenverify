@@ -21,7 +21,7 @@ const CaliforniaLicensePlateLookupPage = () => {
  ]}
  content={{
  intro: "Type a California plate into SafeOrStolen and in a few seconds you see whether it matches a theft report filed on SafeOrStolen or turns up in public web results, such as a stolen-car post. The lookup never shows owner names. Use it as a first screen, then check the VIN on the car itself before you pay.",
- whatIs: "A California plate lookup on SafeOrStolen searches the plate against SafeOrStolen's own theft reports and public web results. It does not search California DMV records or police databases, and it does not show who owns the car. Owner and registration details in California are confidential and only released by the DMV to people with a legal reason.",
+ whatIs: "A California plate lookup on SafeOrStolen searches the plate against SafeOrStolen's own theft reports and public web results. It never shows who owns the car. Owner and registration details in California are confidential and only released by the DMV to people with a legal reason.",
  howItWorks: "Enter the plate exactly as it appears. SafeOrStolen searches its theft reports and public web results and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
  whyCheck: "Plates can be swapped between cars, so a plate check is a quick first screen, not the final word. If the plate looks fine, run the VIN from the dashboard and driver's door sticker, and make sure the name on the title matches the seller's ID.",
  benefits: [
@@ -48,8 +48,8 @@ const CaliforniaLicensePlateLookupPage = () => {
  answer: "No. SafeOrStolen never shows owner names. California DMV owner records are confidential, and the DMV only releases them to people with a permitted legal reason. To confirm you're dealing with the owner, compare the name on the title to the seller's photo ID."
  },
  {
- question: "Does this lookup search California DMV or police records?",
- answer: "No. A SafeOrStolen plate check searches SafeOrStolen theft reports and public web results. It does not search DMV records or police databases such as NCIC. If you think a car is stolen, give the plate and location to your local police non-emergency line."
+ question: "What does a California plate lookup search?",
+ answer: "A SafeOrStolen plate check searches SafeOrStolen theft reports and public web results. For registration or title questions, contact the California DMV. If you think a car is stolen, give the plate and location to your local police non-emergency line."
  }
  ]
  }}

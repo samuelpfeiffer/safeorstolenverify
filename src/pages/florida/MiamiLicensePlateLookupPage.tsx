@@ -1,5 +1,5 @@
 import { Link } from '@/lib/router-compat';
-import { CheckCircle, ArrowRight, MapPin, XCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 
@@ -13,8 +13,8 @@ const FAQS = [
  a: "Enter the Florida plate or, better, the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/miami-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks with a free account, no credit card.",
  },
  {
- q: 'Does SafeOrStolen search Florida DHSMV or Miami-Dade police records?',
- a: "No. SafeOrStolen does not search FLHSMV registration or title records, NCIC, or Miami-Dade police files. A Florida plate is checked against SafeOrStolen theft reports and public web results. If you need official title or theft confirmation, contact FLHSMV or the Miami-Dade Police Department directly.",
+ q: 'What does a Miami plate check search, and where else can I check?',
+ a: "A Florida plate is checked against SafeOrStolen theft reports and public web results, and a VIN check adds the decoded year, make and model and open recalls. For title or registration questions, contact FLHSMV, and you can ask the Miami-Dade Police Department non-emergency line to run the VIN.",
  },
  {
  q: 'Can I check a vehicle by license plate or do I need a VIN?',
@@ -112,15 +112,15 @@ const MiamiLicensePlateLookupPage = () => {
  </li>
  ))}
  </ul>
- <h3 className="text-lg font-bold text-foreground mb-3">What it does not search</h3>
+ <h3 className="text-lg font-bold text-foreground mb-3">Next steps on a car you're serious about</h3>
  <ul className="space-y-3">
  {[
- { name: 'FLHSMV records', desc: 'registration, title and owner records stay with the state; ask FLHSMV' },
- { name: 'Police and NCIC files', desc: 'call the Miami-Dade Police Department non-emergency line for an official answer' },
- { name: 'Title and salvage history', desc: 'buy a separate vehicle history report if you need flood or salvage brands' },
+ { name: 'Title and registration', desc: 'contact FLHSMV, the state motor vehicle agency, for title or registration questions' },
+ { name: 'Local police', desc: 'call the Miami-Dade Police Department non-emergency line and ask them to run the VIN' },
+ { name: 'Vehicle history report', desc: 'get one for flood or salvage brands and past accidents' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
- <XCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+ <ArrowRight className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
  <div>
  <strong className="text-foreground">{db.name}</strong>
  <span className="text-muted-foreground"> — {db.desc}</span>

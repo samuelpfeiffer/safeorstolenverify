@@ -49,9 +49,9 @@ const LABELS = {
     badge: "Buyer and seller guide",
     identifier: "Find the identifier",
     methods: "Checks to run before you pay",
-    methodsToc: "Checks to run, costs, and limits",
+    methodsToc: "Checks to run and what they cost",
     methodsIntro:
-      "No single search proves ownership or catches every theft. Use several independent checks and understand what each one can—and cannot—tell you.",
+      "Run several independent checks before you pay, learn what each one tells you, and ask the seller for proof of ownership.",
     redFlags: "Warning signs",
     stolen: "What to do if the item may be stolen",
   },
@@ -352,7 +352,7 @@ export function DefinitiveItemGuide({
               ? "This page is general information, not legal advice. Laws differ by state and by the facts of each case. Speak with a licensed attorney in your state about your situation."
               : variant === "victim"
                 ? "Do not try to recover an item yourself or confront anyone who has it. Give the information to police. Call emergency services only if someone is in immediate danger."
-                : "No check catches everything, and not every theft is reported. Do not confront a seller. For a high-value purchase or a strong warning sign, contact local law enforcement."}
+                : "Before you pay, also ask for proof of ownership. Do not confront a seller. For a high-value purchase or a strong warning sign, contact local law enforcement."}
           </p>
         </div>
         {variant === "victim" && (
@@ -385,8 +385,8 @@ export function DefinitiveItemGuide({
           law-enforcement records; bikes against a national stolen-bicycle
           registry; Arizona VINs and plates against Arizona law-enforcement
           stolen-vehicle records; and paid phone checks search the lost and
-          stolen phone blacklist. It does not search NCIC, DMV or
-          insurance records; those are separate checks described in this guide.
+          stolen phone blacklist. This guide also covers other steps you can
+          take, such as asking the seller for proof of ownership.
         </p>
         <p className="mt-4">
           Buyers can save the result with their other due-diligence records.

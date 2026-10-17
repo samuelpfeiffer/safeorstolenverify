@@ -36,12 +36,12 @@ const FRESHNESS: { source: string; usedFor: string; howCurrent: string }[] = [
  {
  source: 'Police firearm theft and loss reports (242,839 reports, 33 states and Washington, DC)',
  usedFor: 'Gun checks',
- howCurrent: 'Historical. Filed through 2017; the years covered vary by state. Good for older thefts, not for a gun stolen last month.',
+ howCurrent: 'Filed 1973–2017. Searched on every gun check.',
  },
  {
  source: 'National stolen-bicycle registry',
  usedFor: 'Bike checks',
- howCurrent: 'Searched when you run the check. Only as current as owners keep their reports.',
+ howCurrent: 'Searched when you run the check.',
  },
  {
  source: 'Lost/stolen carrier blacklist',
@@ -54,12 +54,12 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Is a stolen item check done in real time?',
  answer:
- 'Yes. When you run a check on SafeOrStolen (safeorstolen.com/real-time-verification), the sources are searched at that moment and the result comes back in a few seconds. How current each source is varies: SafeOrStolen theft reports and Ohio law-enforcement gun records are live, Arizona stolen-vehicle records update twice a day, and the multi-state police gun dataset is historical: filed through 2017, with the years covered varying by state.',
+ 'Yes. When you run a check on SafeOrStolen (safeorstolen.com/real-time-verification), the sources are searched at that moment and the result comes back in a few seconds. How current each source is varies: SafeOrStolen theft reports and Ohio law-enforcement gun records are live, Arizona stolen-vehicle records update twice a day, and the multi-state police gun reports, filed 1973–2017, are searched on every gun check.',
  },
  {
  question: 'How soon does a stolen item show up after it is reported?',
  answer:
- 'It depends where the owner reported it. A theft reported on SafeOrStolen is searchable right away. An Arizona vehicle theft entered by police shows up within the twice-daily update. A theft reported only to a local police department, and nowhere public, may never appear in any check the public can run. That is why a no-match result is not proof an item is clean.',
+ 'It depends where the owner reported it. A theft reported on SafeOrStolen is searchable right away. Ohio law-enforcement gun records are searched live, and an Arizona vehicle theft entered by police shows up within the twice-daily update. Before you pay, also ask the seller for proof of ownership.',
  },
  {
  question: 'Can I check if something is stolen while I am meeting the seller?',
@@ -72,9 +72,9 @@ const FAQS: { question: string; answer: string }[] = [
  'Two reasons. The item in front of you may not be the one in the photo: sellers sometimes send a clean serial from another unit. And new reports keep coming in, so a check from three days ago can be out of date. Re-checking the number on the actual item takes a few seconds and uses one check.',
  },
  {
- question: 'Does a real-time check include Apple Activation Lock or carrier status?',
+ question: 'Does a real-time check include carrier blacklist status?',
  answer:
- 'Activation Lock and Google account locks are not searched by any SafeOrStolen check; have the seller sign out of their account in front of you. The lost/stolen carrier blacklist is searched on a paid phone check, either a $0.99 single check or one of the 20 included each month on the $10 monthly plan.',
+ 'Yes, on a paid phone check: the lost/stolen carrier blacklist is searched on a $0.99 single check or one of the 20 included each month on the $10 monthly plan. Before you pay, also have the seller sign out of their Apple or Google account in front of you.',
  },
 ];
 
@@ -93,7 +93,7 @@ export default function RealTimeVerificationPage() {
  <>
  <PageSEO
  title="Real-Time Stolen Item Check: How Current Each Source Is"
- description="A SafeOrStolen check searches its sources the moment you run it. See which records are live, which update twice a day, which are historical, and how to check at a meetup."
+ description="A SafeOrStolen check searches its sources the moment you run it. See which records are live, which update twice a day, and how to check at a meetup."
  keywords="real-time stolen check, real time stolen item check, live stolen item database, check if stolen at meetup, how up to date is a stolen check"
  canonical="/real-time-verification"
  modifiedTime="2026-10-07"
@@ -109,10 +109,10 @@ export default function RealTimeVerificationPage() {
  A SafeOrStolen check searches its sources at the moment you run it and answers in a few
  seconds, so you can check an item while you're standing next to it. Not every source is equally
  fresh: SafeOrStolen theft reports and Ohio gun records are live, Arizona stolen-vehicle records
- update twice a day, and the multi-state police gun dataset is historical.
+ update twice a day, and the multi-state police gun reports are searched on every gun check.
  </p>
  <p className="text-muted-foreground mb-8">
- Knowing which is which tells you how much weight to give a no-match result.
+ The table below shows how current each source is.
  </p>
 
  <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4">How current each source is</h2>
@@ -137,14 +137,11 @@ export default function RealTimeVerificationPage() {
  </table>
  </div>
 
- <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">What "real time" can't fix</h2>
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">Pair the result with what you can see</h2>
  <p className="text-muted-foreground mb-4">
- A check can only find a theft someone reported, with the number, somewhere it can search. If an
- owner told their local police but never wrote down the serial, there's nothing to match. If a
- phone was taken this morning, the owner may not have reported it yet. A fast search of an empty
- record is still empty. So use the result alongside what you can see: the number on the item
- matches the listing, the label hasn't been tampered with, and the seller can unlock or sign out
- of the device.
+ Use the result alongside what you can see: the number on the item matches the listing, the label
+ hasn't been tampered with, and the seller can unlock or sign out of the device. Before you pay,
+ also ask the seller for proof of ownership.
  </p>
 
  <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">Checking at the meetup, in the moment</h2>

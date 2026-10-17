@@ -71,7 +71,7 @@ const GamingConsoleCheck = () => (
       whatIs:
         'A console stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen. Buying a PlayStation? The <a href="/check-ps5">PS5 serial number check</a> covers it step by step. Buying an Xbox? Use the <a href="/check-xbox">Xbox serial number check</a>.',
       howItWorks:
-        "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search Sony, Microsoft or Nintendo records; none of them offer a public stolen-console lookup.",
+        "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller sign out of their account and reset the console.",
       whyCheck:
         "Consoles are small, valuable and quick to resell, and a stolen one can be taken back by the police and returned to the owner. The serial check covers theft reports. The on-screen match and the account reset show you whether the seller actually controls the console.",
       benefits: [

@@ -36,23 +36,23 @@ const FreeStolenVehicleCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to see if a car is stolen by VIN?",
- answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search our verification databases including reported theft history, salvage records, and available public theft reports. Results are returned in about 3 seconds."
+ answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search SafeOrStolen's own theft reports and public web results, decode the year, make and model, and see open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records. Results come back in a few seconds."
  },
  {
  question: "Can I check a stolen vehicle by license plate only?",
- answer: "Yes, but with limitations. License plate lookups can reveal registration status and some theft indicators, but VIN checks are more reliable because plates can be swapped while VINs are permanently attached to the vehicle. For best results, verify both the VIN and license plate."
+ answer: "Yes. A plate check searches SafeOrStolen theft reports and public web results, and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
  },
  {
  question: "Will this tell me the owner's name and address?",
- answer: "No. SafeOrStolen does not provide personal information about vehicle owners. We only show theft risk indicators, salvage status, and reported theft history history. For ownership verification, contact your state DMV or use their official lookup services."
+ answer: "No. SafeOrStolen never shows owner names or personal information. For title or registration questions, contact the state motor vehicle agency, and ask the seller for the title and a photo ID with the same name."
  },
  {
  question: "What should I do if a report suggests the car is stolen?",
- answer: "Do not complete the purchase. Leave the situation safely and contact community theft with the VIN, seller information, and meeting location. Do not confront the seller directly. Keep copies of any communications as evidence."
+ answer: "Do not complete the purchase. Leave the situation safely and contact local police with the VIN, seller information, and meeting location. Do not confront the seller directly. Keep copies of any communications as evidence."
  },
  {
- question: "Does a clean check mean the car is 100% safe?",
- answer: "No database is 100% complete. A clean result means no theft indicators were found in the databases we search, but it doesn't guarantee the vehicle was never stolen. Some thefts aren't reported, or reports may be delayed. Always verify VIN plates match door stickers, get the title in hand before paying, and consider an independent inspection."
+ question: "What should I do after a clean check?",
+ answer: "A clean result means no report was found in the records searched. Before you pay, also ask for proof of ownership, make sure the VIN plate matches the door sticker, get the title in hand, and consider a vehicle history report and an independent inspection."
  }
  ];
 
@@ -92,7 +92,7 @@ const FreeStolenVehicleCheckPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Understand stolen-status and risk indicators",
- "text": "Review the results for theft flags, salvage history, reported theft history, and other risk indicators. Download your verification certificate as proof of due diligence."
+ "text": "Review the results for theft reports, possible matches and open safety recalls. Download your verification certificate as proof of due diligence."
  }
  ]
  },
@@ -133,8 +133,8 @@ const FreeStolenVehicleCheckPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Don't buy a stolen car, truck, or motorcycle. Enter a VIN or license plate to search our verification databases 
- including for theft indicators, salvage status, and reported theft history—free.
+ Don't buy a stolen car, truck, or motorcycle. Enter a VIN or license plate to search SafeOrStolen theft reports 
+ and public web results, and see open safety recalls—free.
  </p>
 
  {/* Search Input */}
@@ -158,7 +158,7 @@ const FreeStolenVehicleCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free searches • our stolen item reports + public web results • Results in 3 seconds
+ 2 free searches • our stolen item reports + public web results • Results in a few seconds
  </p>
  </div>
 
@@ -201,7 +201,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter details into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. Our system checks SafeOrStolen's existing reports, public web results, and applies AI analysis to identify potential theft.
+ Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. SafeOrStolen searches its own theft reports and public web results, decodes the VIN and lists open safety recalls. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records.
  </p>
  </div>
  </div>
@@ -222,30 +222,30 @@ const FreeStolenVehicleCheckPage = () => {
  {/* What Check Can Tell You */}
  <section className="py-16 px-4">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-8">What a Stolen Vehicle Check Can and Can't Tell You</h2>
+ <h2 className="text-3xl font-bold mb-8">What a Stolen Vehicle Check Shows, and What to Do Next</h2>
  
  <div className="grid md:grid-cols-2 gap-8 mb-8">
  <div>
  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
  <CheckCircle className="h-5 w-5" />
- What We CAN Tell You
+ What the Check Shows
  </h3>
  <ul className="space-y-3">
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Theft indicators from our verification databases
+ Matches in SafeOrStolen theft reports and public web results
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Salvage, junk, or rebuilt title status
+ Year, make and model decoded from the VIN
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Insurance theft claims history
+ Open safety recalls
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Unrecovered theft risk flags
+ Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates
  </li>
  </ul>
  </div>
@@ -253,24 +253,24 @@ const FreeStolenVehicleCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-destructive">
  <AlertTriangle className="h-5 w-5" />
- What We CAN'T Tell You
+ Next Steps Before You Buy
  </h3>
  <ul className="space-y-3">
  <li className="flex gap-3 text-muted-foreground">
  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
- Full accident history or damage details
+ Get a vehicle history report for accident and title history
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
- Owner names or personal information
+ Ask for the title and a photo ID with the same name
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
- Mechanical condition or service history
+ Have a mechanic inspect the car
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
- Thefts not yet reported to databases
+ Ask the seller for proof of ownership before you pay
  </li>
  </ul>
  </div>
@@ -278,9 +278,9 @@ const FreeStolenVehicleCheckPage = () => {
 
  <Card className="border-l-4 border-primary">
  <CardContent className="p-6">
- <h4 className="font-semibold mb-2">Why you shouldn't rely on VIN alone without inspection</h4>
+ <h4 className="font-semibold mb-2">Check the VIN on the car itself</h4>
  <p className="text-muted-foreground">
- A clean VIN check is essential but not sufficient. Thieves can swap VIN plates from legitimate vehicles onto stolen ones ("VIN cloning"). Always verify the VIN matches the door jamb sticker, check that VINs aren't tampered with, get the title in hand, and consider an independent mechanical inspection before purchasing.
+ Thieves can swap VIN plates from legitimate vehicles onto stolen ones ("VIN cloning"). Always verify the VIN matches the door jamb sticker, check that VINs aren't tampered with, get the title in hand, and consider an independent mechanical inspection before purchasing.
  </p>
  </CardContent>
  </Card>
@@ -310,7 +310,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div className="p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
  <h3 className="text-lg font-semibold mb-2">Our Recommendation</h3>
  <p className="text-muted-foreground">
- <strong>Start with a free stolen vehicle check</strong> to rule out theft and salvage issues. If the vehicle passes, consider a paid history report for detailed condition information. Don't skip the theft check—it's the foundation of safe vehicle buying.
+ <strong>Start with a free stolen vehicle check</strong> to screen for theft reports. If the vehicle passes, consider a paid history report for detailed condition information. Don't skip the theft check—it's the foundation of safe vehicle buying.
  </p>
  </div>
  </div>

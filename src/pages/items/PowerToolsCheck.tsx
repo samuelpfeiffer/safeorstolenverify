@@ -33,7 +33,7 @@ const PowerToolsCheck = () => {
         { value: "Dated", label: "Record Saved to Your Account" }
       ]}
       whatIsTitle="What Is Power Tool Serial Number Verification?"
-      whatIsContent="Most professional power tools carry a serial number on a label or plate on the body. When a contractor loses tools from a truck or job site, the serial numbers are what they give police and post online. A SafeOrStolen check searches SafeOrStolen's own theft reports, where owners report stolen items, and public web results such as stolen-tool posts and listings that mention that serial. It does not search manufacturer, insurer, pawn or police databases."
+      whatIsContent="Most professional power tools carry a serial number on a label or plate on the body. When a contractor loses tools from a truck or job site, the serial numbers are what they give police and post online. A SafeOrStolen check searches SafeOrStolen's own theft reports, where owners report stolen items, and public web results such as stolen-tool posts and listings that mention that serial. Each result lists every source searched."
       howItWorksSteps={[
         "Find the serial number: it's usually on a sticker or plate on the tool body, near the battery slot, or on the motor housing",
         "Type the serial number into the search box",
@@ -76,7 +76,7 @@ const PowerToolsCheck = () => {
         },
         {
           question: "What is Milwaukee ONE-KEY?",
-          answer: "ONE-KEY is Milwaukee's app and tracking system for certain tools. Owners register tools in the app and can mark them as lost, and some tools can be locked from the app. SafeOrStolen does not search ONE-KEY; if a tool has a ONE-KEY badge, ask the seller to show it removed from their account."
+          answer: "ONE-KEY is Milwaukee's app and tracking system for certain tools. Owners register tools in the app and can mark them as lost, and some tools can be locked from the app. If a tool has a ONE-KEY badge, ask the seller to show it removed from their account."
         },
         {
           question: "What are the warning signs of stolen power tools?",

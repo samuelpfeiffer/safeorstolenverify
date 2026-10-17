@@ -20,7 +20,7 @@ const faqs = [
  },
  {
  question: "How can I tell if a used car in Orlando is a former rental?",
- answer: "Ask the seller directly and look at the paperwork: a former rental often shows a rental or fleet company as a previous owner on a vehicle history report. SafeOrStolen doesn't search rental or fleet records. Use it to check for theft reports, and use a paid history report if rental use matters to you.",
+ answer: "Ask the seller directly and look at the paperwork: a former rental often shows a rental or fleet company as a previous owner on a vehicle history report. Use SafeOrStolen to check for theft reports, and get a paid history report if rental use matters to you.",
  },
  {
  question: "Is a license plate lookup free in Orlando?",
@@ -104,7 +104,7 @@ const OrlandoLicensePlateLookupPage = () => {
  ))}
  </ul>
  <p className="text-muted-foreground text-sm mt-4">
- It does not search FHSMV registration records, NCIC, or insurer databases, and it never shows owner names.
+ It never shows owner names. For title or registration questions, contact FLHSMV, the state motor vehicle agency.
  </p>
  </section>
 

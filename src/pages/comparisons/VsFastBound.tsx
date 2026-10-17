@@ -246,7 +246,7 @@ const VsFastBound = () => {
               </h2>
               <div className="max-w-3xl mx-auto text-lg text-muted-foreground">
                 <p className="mb-4">
-                  The FBI's NCIC stolen-gun file is open to law enforcement, not to the public. In a private sale, the buyer usually has nothing to check against. SafeOrStolen does not search NCIC, but it gives buyers records they can search.
+                  In a private sale, the buyer usually has no easy way to look up a gun's serial. SafeOrStolen gives buyers police records they can search themselves, from their phone, before they pay.
                 </p>
                 <p className="mb-4">
                   A gun check searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, theft reports owners file on SafeOrStolen, and public web listings. The result lists every source searched.
@@ -281,7 +281,7 @@ const VsFastBound = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings. It also flags serials that look altered or obliterated. It does not search NCIC or ATF eTrace.
+                  242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.
                 </p>
               </CardContent>
             </Card>

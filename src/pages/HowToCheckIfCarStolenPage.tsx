@@ -73,8 +73,8 @@ const FAQS = [
     a: 'On the dashboard at the base of the windshield on the driver side, on the driver door jamb sticker, and on the title, registration and insurance card. All locations must show the same 17 characters.',
   },
   {
-    q: 'Does SafeOrStolen search NICB, NMVTIS or police databases?',
-    a: 'No. SafeOrStolen checks its own theft reports and public web results, and for Arizona VINs and plates it also checks Arizona law-enforcement stolen-vehicle records, updated twice a day. It does not search NICB, NMVTIS, NCIC or DMV records. Those are separate resources you check yourself.',
+    q: 'What does SafeOrStolen search for a car?',
+    a: 'SafeOrStolen checks its own theft reports and public web results, decodes the VIN and lists open safety recalls. For Arizona VINs and plates it also checks Arizona law-enforcement stolen-vehicle records, updated twice a day. Use NICB VINCheck and an NMVTIS title report as well.',
   },
   {
     q: 'What is the difference between NICB VINCheck and NMVTIS?',
@@ -191,7 +191,7 @@ const HowToCheckIfCarStolenPage = () => {
         <p>Photograph each one and compare them character by character. Every copy must match. If any location is missing, covered, damaged or different, stop. That is a classic sign of a stolen or “cloned” car, where thieves copy a legitimate VIN onto a stolen vehicle. Also check that the name on the title matches the seller’s ID.</p>
 
         <H2 id="methods">8 ways to check if a car is stolen</H2>
-        <p>No single source catches everything. Theft records, title records and history reports each cover different things, so use several. These are listed roughly in the order most buyers use them.</p>
+        <p>Theft records, title records and history reports each show different things, so use several. These are listed roughly in the order most buyers use them.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">1. NICB VINCheck — free</h3>
         <p>The National Insurance Crime Bureau runs a free VINCheck tool. <strong className="text-foreground">What it tells you:</strong> whether participating insurance companies have recorded the VIN as an unrecovered theft or a total loss. <strong className="text-foreground">What it doesn’t:</strong> thefts that were never reported to a participating insurer, or title brands.</p>
@@ -215,7 +215,7 @@ const HowToCheckIfCarStolenPage = () => {
         <p>Many stolen cars are sold through online marketplaces. See the <a href="#listing" className="text-primary underline">listing red flags</a> below, or paste the link into SafeOrStolen’s <Link to="/marketplace-url-checker" className="text-primary underline">marketplace listing checker</Link>.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">8. SafeOrStolen check — free to try</h3>
-        <p>Enter the VIN or plate. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results. Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records, updated twice a day. The result is saved to your account with the date. SafeOrStolen does not search NICB, NMVTIS or NCIC, so use it alongside the official resources above, not instead of them.</p>
+        <p>Enter the VIN or plate. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results. Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records, updated twice a day. The result is saved to your account with the date. Use it alongside the official resources above.</p>
 
         <H2 id="tampering">Physical signs of VIN tampering</H2>
         <ul className="list-disc pl-6 space-y-2 my-4">
@@ -248,7 +248,7 @@ const HowToCheckIfCarStolenPage = () => {
 
         <div className="rounded-lg border border-border bg-card p-4 my-6 flex gap-3">
           <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-          <p className="text-sm">Not every theft is reported, so a clean result from any source is not a guarantee. For a car, also check with local law enforcement before you pay.</p>
+          <p className="text-sm">Before you pay, also ask the seller for proof of ownership, and check the VIN and plate with local law enforcement.</p>
         </div>
 
         <H2 id="safeorstolen">Where SafeOrStolen fits</H2>

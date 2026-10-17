@@ -33,7 +33,7 @@ const FirearmsSerialNumberCheckPage = () => {
  },
  {
  question: "What if my gun's serial number was removed or altered?",
- answer: "A removed, obliterated, or altered serial number is a federal crime under 18 U.S.C. § 922(k). If you encounter a firearm with a defaced serial number, don't buy it and call your local police non-emergency line. SafeOrStolen also flags serials that look altered or obliterated, but a missing serial can't be checked at all."
+ answer: "A removed, obliterated, or altered serial number is a federal crime under 18 U.S.C. § 922(k). If you encounter a firearm with a defaced serial number, don't buy it and call your local police non-emergency line. SafeOrStolen also flags serials that look altered or obliterated. Never buy a gun with no readable serial."
  },
  {
  question: "Will this tell me the registered owner of a gun?",
@@ -41,7 +41,7 @@ const FirearmsSerialNumberCheckPage = () => {
  },
  {
  question: "Do I still need to contact police if a gun comes back suspicious?",
- answer: "Yes. If the result says reported stolen or possible match, don't buy the gun and call your local police non-emergency line with the serial and make. Police can check NCIC, which SafeOrStolen does not search. Your saved SafeOrStolen check shows what you looked up and when."
+ answer: "Yes. If the result says reported stolen or possible match, don't buy the gun and call your local police non-emergency line with the serial and make. Police can run the serial themselves. Your saved SafeOrStolen check shows what you looked up and when."
  }
  ];
 
@@ -57,7 +57,7 @@ const FirearmsSerialNumberCheckPage = () => {
  },
  "serviceType": "Stolen Firearm Verification",
  "areaServed": "US",
- "description": "Check a gun serial number for theft reports before buying or selling. Searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), and live Ohio law-enforcement records."
+ "description": "Check a gun serial number for theft reports before buying or selling. Searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), and live Ohio law-enforcement records."
  },
  {
  "@context": "https://schema.org",
@@ -231,48 +231,45 @@ const FirearmsSerialNumberCheckPage = () => {
  Police firearm theft and loss reports
  </h3>
  <p className="text-muted-foreground">
- Gun checks also search 242,839 police firearm theft and loss reports from 33 states and Washington, DC. These were filed through 2017, and the years covered vary by state. Ohio serials are also checked against live Ohio law-enforcement records.
+ Gun checks also search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017. Ohio serials are also checked against live Ohio law-enforcement records.
  </p>
  </div>
 
  <div>
  <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
  <AlertTriangle className="h-5 w-5 text-destructive" />
- What a serial number check can and cannot show
+ Reading a "no report found" result
  </h3>
  <p className="text-muted-foreground">
- Not every theft is reported, and the multi-state police reports stop at 2017. A result of "no report found in the records searched" means exactly that: nothing matched in the sources listed. It doesn't prove the gun was never stolen. SafeOrStolen does not search NCIC or ATF eTrace.
+ A result of "no report found in the records searched" means nothing matched in the sources listed on the result. Before you pay, also ask for the original receipt or transfer paperwork, and consider running the sale through a licensed dealer (FFL).
  </p>
  </div>
  </div>
  </div>
  </section>
 
- {/* NCIC explanation */}
+ {/* Ways to check */}
  <section className="py-16 px-4 bg-card/50">
  <div className="max-w-4xl mx-auto">
- <h2 className="text-3xl font-bold mb-6">Can a Civilian Search the National Stolen Gun File?</h2>
+ <h2 className="text-3xl font-bold mb-6">Ways to Check a Gun Serial Number</h2>
  
  <p className="text-lg text-muted-foreground mb-6">
- The FBI's NCIC system holds the stolen-gun file that police use. <strong>It is not open to the public.</strong> Only law enforcement and other authorized agencies can search it.
+ SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results in one check, and lists every source on the result.
  </p>
  
  <p className="text-lg text-muted-foreground mb-6">
- When a website promises a "national stolen gun database lookup," it's usually doing one of these instead:
+ For a private sale, you can also:
  </p>
  <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
- <li>Searching records it can legally reach, such as owner theft reports and published police reports (this is what SafeOrStolen does, and it lists every source)</li>
- <li>Offering to connect you with an FFL dealer who can run the check</li>
+ <li>Buy through a licensed dealer (FFL), who runs a background check on the buyer</li>
+ <li>Ask your local police, on their non-emergency line, to run the serial</li>
  </ul>
  
  <Card className="border-l-4 border-primary">
  <CardContent className="p-6">
- <h3 className="font-semibold mb-2">What SafeOrStolen Can and Cannot Show</h3>
+ <h3 className="font-semibold mb-2">What a SafeOrStolen Gun Check Shows</h3>
  <p className="text-muted-foreground">
- <strong>It can show:</strong> matches in SafeOrStolen theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records, plus a flag if the serial looks altered or obliterated. <strong>It can't show:</strong> NCIC or ATF eTrace results, or who owns the gun.
- </p>
- <p className="text-muted-foreground mt-2">
- For an NCIC check, ask your local police department.
+ Matches in SafeOrStolen theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records, plus a flag if the serial looks altered or obliterated. It never shows who owns the gun.
  </p>
  </CardContent>
  </Card>

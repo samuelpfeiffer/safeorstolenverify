@@ -16,7 +16,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Chicago?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Then match the VIN on the dash, door jamb and title, and check the seller's ID against the name on the title." },
- { question: "How does Illinois verify titles?", answer: "The Illinois Secretary of State checks the paperwork when you apply to transfer the title, which happens after you have paid. Do your own checks first: VIN match on car and title, seller ID, and a stolen check on SafeOrStolen. SafeOrStolen does not search Secretary of State records." }
+ { question: "How does Illinois verify titles?", answer: "The Illinois Secretary of State checks the paperwork when you apply to transfer the title, which happens after you have paid. Do your own checks first: VIN match on car and title, seller ID, and a stolen check on SafeOrStolen. For title questions, contact the Secretary of State." }
  ]
  },
  indiana: {
@@ -46,7 +46,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  },
  faqs: [
  { question: "Can I check farm equipment for theft in Iowa?", answer: "Yes. Tractors and equipment have serial numbers rather than 17-character VINs. Enter the serial on SafeOrStolen (safeorstolen.com) to search its theft reports and public web results. Also look at the serial plate: fresh paint, missing rivets or a ground-off area are warning signs." },
- { question: "How do I verify an Iowa title?", answer: "Check that the VIN on the title matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen for theft reports. Ask your county treasurer's office about liens or salvage brands, since SafeOrStolen does not search state title records." }
+ { question: "How do I verify an Iowa title?", answer: "Check that the VIN on the title matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen for theft reports. Ask your county treasurer's office about liens or salvage brands." }
  ]
  },
  kansas: {
@@ -75,7 +75,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  localLaws: "Kentucky Revised Statutes 514.110 covers receiving stolen property. A stolen car can be returned to its owner even if you paid for it. Titles are handled through the county clerk's office."
  },
  faqs: [
- { question: "How do I verify a Kentucky title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Your county clerk can tell you about liens; SafeOrStolen does not search state title records." },
+ { question: "How do I verify a Kentucky title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Your county clerk can tell you about liens and title status." },
  { question: "What should I check when buying a used car in Kentucky?", answer: "VIN match on car and title, seller ID, a stolen check on SafeOrStolen, and a lien check with the county clerk. If you want accident or title-brand history, buy a separate vehicle history report as well." }
  ]
  },

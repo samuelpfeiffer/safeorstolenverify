@@ -20,7 +20,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  },
  {
  name: 'Gun serial check',
- what: 'Adds 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records. Flags serials that look altered or obliterated.',
+ what: 'Adds 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement records. Flags serials that look altered or obliterated.',
  cost: 'Same as any check',
  href: '/firearms-check',
  linkText: 'Gun check',
@@ -112,9 +112,9 @@ const FAQS: { question: string; answer: string }[] = [
  'Yes. Every check is saved to your account with the date. For something you can share, add a verification certificate for $1.99: a dated record with its own link showing you checked before the sale. Monthly members get certificates free. It shows you did your homework; it doesn\'t replace a receipt or bill of sale.',
  },
  {
- question: 'What does SafeOrStolen not check?',
+ question: 'Which records does SafeOrStolen search?',
  answer:
- 'It does not search the FBI\'s NCIC, ATF eTrace, DMV or MVD records, Apple Activation Lock or Google account status, manufacturer records, pawn databases or insurer databases. Carrier records are searched only through the paid phone blacklist check. Every result lists exactly which sources were searched, so you know what was and wasn\'t covered.',
+ 'Every check searches SafeOrStolen\'s own theft reports and public web results. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
  },
 ];
 
@@ -181,18 +181,16 @@ export default function FeaturesPage() {
  <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">Results you can read in one look</h2>
  <p className="text-muted-foreground mb-4">
  Every check ends in one of three results: "reported stolen", "possible match", or "no report
- found in the records searched". Under it you see each source that was searched. A no-match is
- not a guarantee, and the page says so, because plenty of stolen items were never reported with
- a serial number. The step-by-step of what happens behind the search box is on{' '}
+ found in the records searched". Under it you see each source that was searched. Before you pay,
+ also ask the seller for proof of ownership. The step-by-step of what happens behind the search box is on{' '}
  <Link to="/how-it-works" className="text-primary underline">how it works</Link>.
  </p>
 
- <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">What's not included</h2>
+ <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-3">Privacy and next steps</h2>
  <p className="text-muted-foreground mb-4">
- SafeOrStolen does not show who owns an item or who reported it, and it does not provide title,
- accident or odometer history for vehicles. It does not search police-only systems like NCIC,
- DMV records, or Apple and Google account locks. When you buy a used phone or laptop, have the
- seller sign out of their account in front of you; no outside check can confirm that.
+ SafeOrStolen never shows who owns an item or who reported it. For a used car, also get a vehicle
+ history report and compare the title with the seller's ID. When you buy a used phone or laptop,
+ have the seller sign out of their account and erase it in front of you.
  </p>
 
  <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Questions about features</h2>

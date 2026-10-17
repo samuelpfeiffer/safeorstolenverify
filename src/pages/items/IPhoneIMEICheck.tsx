@@ -40,7 +40,7 @@ const IPhoneIMEICheck = () => {
  "SafeOrStolen shows the model and searches its theft reports and public web results; add the paid blacklist check if you want the carrier status",
  "Read the result in a few seconds: reported stolen, possible match, or no report found in the records searched"
  ]}
- howItWorksDescription="Every source searched is listed on the result, and the check is saved to your account with the date. SafeOrStolen does not check Apple account status or unpaid financing, so do those checks with the seller and the carrier."
+ howItWorksDescription="Every source searched is listed on the result, and the check is saved to your account with the date. Before you pay, also watch the seller sign out of their Apple ID, and ask the carrier about any unpaid financing."
  whyVerifyTitle="Why check before buying an iPhone?"
  whyVerifyContent="iPhones are easy to resell, so stolen ones turn up on Facebook Marketplace, OfferUp and Craigslist. Here's what can go wrong if you buy one:"
  whyVerifyBenefits={[
@@ -79,7 +79,7 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "How accurate is the iPhone stolen check?",
- answer: "SafeOrStolen searches its own theft reports and public web results, and the paid blacklist check searches the lost and stolen carrier blacklist. No source has every theft. A result of no report found means nothing turned up in the records searched, so still test the phone and watch the seller remove their Apple ID."
+ answer: "SafeOrStolen searches its own theft reports and public web results, and the paid blacklist check searches the lost and stolen carrier blacklist. Every source searched is listed on the result. Before you pay, also test the phone and watch the seller remove their Apple ID."
  },
  {
  question: "Can someone change an iPhone's IMEI?",

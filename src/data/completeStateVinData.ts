@@ -59,7 +59,7 @@ export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
  localLaws: "Texas Penal Code 31.03 covers theft, including keeping property you know is stolen. A stolen vehicle can be returned to its owner even if you paid for it. Titles go through your county tax assessor-collector for the Texas DMV."
  },
  faqs: [
- { question: "How do I verify a Texas title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask your county tax office about liens; SafeOrStolen does not search Texas DMV records." },
+ { question: "How do I verify a Texas title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask your county tax office about liens and title status." },
  { question: "What should I check when buying a used truck in Texas?", answer: "Match the VIN on the truck and title, look for a punched ignition, mismatched keys or fresh paint over VIN stickers, and run the VIN on SafeOrStolen before you pay. Near the Gulf Coast, also check for flood damage under the carpets." }
  ]
  },
@@ -75,7 +75,7 @@ export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
  localLaws: "Florida Statutes 812.014 covers theft, and dealing in stolen property is a separate crime. A stolen car can be returned to its owner even after you paid. FLHSMV handles titles through county tax collector offices."
  },
  faqs: [
- { question: "How do I check a Florida car for flood damage?", answer: "SafeOrStolen does not search flood or salvage records. Look at the car: silt or water lines under the carpet and in the trunk, rusty seat bolts, fogged lights and a musty smell. Buy a vehicle history report for title brands, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports." },
+ { question: "How do I check a Florida car for flood damage?", answer: "Look at the car: silt or water lines under the carpet and in the trunk, rusty seat bolts, fogged lights and a musty smell. Buy a vehicle history report for title brands, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports." },
  { question: "How do I check if a car is stolen in Miami?", answer: "Run the VIN on SafeOrStolen to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller's ID against the title before you pay." }
  ]
  },
@@ -107,7 +107,7 @@ export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
  localLaws: "Pennsylvania law (18 Pa. C.S. 3925) makes receiving stolen property a crime. A stolen car can be returned to its owner even if you paid for it. PennDOT handles titles, usually through an authorized tag and title service."
  },
  faqs: [
- { question: "How do I verify a Pennsylvania title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Complete the transfer at a notary or tag service. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports; SafeOrStolen does not search PennDOT records." },
+ { question: "How do I verify a Pennsylvania title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Complete the transfer at a notary or tag service. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports. For title questions, contact PennDOT." },
  { question: "What should I check when buying a used car in Philadelphia?", answer: "Run the VIN on SafeOrStolen for theft reports and recalls, match it on the dash and door jamb, and look underneath for rust from road salt. Ask PennDOT about liens, and buy a history report if you want accident or title-brand records." }
  ]
  },

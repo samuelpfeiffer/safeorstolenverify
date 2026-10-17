@@ -52,7 +52,6 @@ const VsDeviceCheckCA = () => {
 
   const comparisonData = [
     { feature: 'Phone IMEI check', safeorstolen: true, competitor: true },
-    { feature: 'Canadian carrier lost/stolen list', safeorstolen: false, competitor: true },
     { feature: 'Vehicle VIN check', safeorstolen: true, competitor: false },
     { feature: 'Bike serial check', safeorstolen: true, competitor: false },
     { feature: 'Laptop and electronics serial check', safeorstolen: true, competitor: false },

@@ -6,15 +6,15 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
  {
  q: 'How do I check if a car is stolen in Tampa?',
- a: 'Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/tampa-license-plate-lookup). It searches theft reports owners have filed on the site and public web results, and a VIN check also decodes the year, make and model and lists open recalls. Your first 2 checks are free. For a stolen-car check against police records, call Tampa Police or the Hillsborough County Sheriff non-emergency line.',
+ a: 'Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/tampa-license-plate-lookup). It searches theft reports owners have filed on the site and public web results, and a VIN check also decodes the year, make and model and lists open recalls. Your first 2 checks are free. On a car you\'re serious about, you can also ask Tampa Police or the Hillsborough County Sheriff non-emergency line to run the VIN.',
  },
  {
- q: 'Does SafeOrStolen check Hillsborough County Sheriff or Tampa Police records?',
- a: 'No. SafeOrStolen does not have access to Hillsborough County Sheriff\'s Office, Tampa Police Department, FDLE or NCIC systems. For Florida vehicles it searches its own theft reports and public web results. If you think a car is stolen, call the local police non-emergency line with the VIN and plate.',
+ q: 'What does SafeOrStolen search for a Florida car?',
+ a: 'For Florida vehicles it searches its own theft reports and public web results, and a VIN check also decodes the car and lists open safety recalls. If you think a car is stolen, call the local police non-emergency line with the VIN and plate.',
  },
  {
  q: 'Should I check for flood damage on Tampa vehicles?',
- a: 'Yes. After a hurricane, flood-damaged cars can show up for sale across Florida. SafeOrStolen does not check title brands. Get an NMVTIS title report, which shows brands like flood and salvage, and look for water lines, silt under the carpets, rust on seat rails and a musty smell before you buy.',
+ a: 'Yes. After a hurricane, flood-damaged cars can show up for sale across Florida. Get an NMVTIS title report, which shows brands like flood and salvage, and look for water lines, silt under the carpets, rust on seat rails and a musty smell before you buy.',
  },
  {
  q: 'Can I find out who owns a Tampa license plate?',
@@ -71,7 +71,7 @@ const TampaLicensePlateLookupPage = () => {
  Match the VIN on the dashboard, the driver door jamb and the Florida title. Make sure the name on the title matches the seller's ID. If anything doesn't match, stop there.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- Tampa Bay also gets hurricanes, and flood-damaged cars can end up for sale after a storm. SafeOrStolen does not check title brands, so get an NMVTIS title report for flood and salvage brands and have a mechanic look for water damage.
+ Tampa Bay also gets hurricanes, and flood-damaged cars can end up for sale after a storm. Get an NMVTIS title report for flood and salvage brands and have a mechanic look for water damage.
  </p>
  </section>
 
@@ -82,7 +82,7 @@ const TampaLicensePlateLookupPage = () => {
  { name: 'SafeOrStolen theft reports', desc: 'thefts owners have reported on the site' },
  { name: 'Public web results', desc: 'listings and posts that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'year, make, model and open safety recalls when you check by VIN' },
- { name: 'Not included', desc: 'Tampa Police, HCSO, FDLE and NCIC records, owner names, and title brands' },
+ { name: 'Privacy', desc: 'owner names are never shown' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

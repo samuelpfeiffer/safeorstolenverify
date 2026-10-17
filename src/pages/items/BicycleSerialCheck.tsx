@@ -37,7 +37,7 @@ const BicycleSerialCheck = () => {
  "We search SafeOrStolen theft reports, public web results, and a national stolen-bicycle registry in a few seconds",
  "Read the result: reported stolen, possible match, or no report found in the records searched"
  ]}
- howItWorksDescription="Besides our own reports and public web results, we search a national stolen-bicycle registry. We don't search manufacturer registries or police systems. For e-bikes, run the frame serial; you can also run the motor or battery serial as a separate check."
+ howItWorksDescription="Besides our own reports and public web results, we search a national stolen-bicycle registry. For e-bikes, run the frame serial; you can also run the motor or battery serial as a separate check."
  whyVerifyTitle="Why Check Before Buying a Used Bike?"
  whyVerifyContent="Stolen bikes often end up for sale on the used market. Here's why a check is worth it:"
  whyVerifyBenefits={[

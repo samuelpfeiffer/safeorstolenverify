@@ -28,14 +28,14 @@ const FAQS = [
       "Collect the serial numbers, IMEIs or VINs of the claimed items and run them on SafeOrStolen (safeorstolen.com/for-insurance-companies). Each check searches owner-filed theft reports and public web results, so you can see an earlier theft report on the same item or a listing that mentions it after the loss date. Up to 100 numbers go through /bulk-check at once.",
   },
   {
-    question: 'Does SafeOrStolen search insurance claim databases?',
+    question: 'What records does SafeOrStolen search?',
     answer:
-      "No. SafeOrStolen does not search insurer or industry claim databases, NCIC, DMV records or carrier records other than a paid phone blacklist check. It searches its own theft reports and public web results, plus police firearm theft reports from 33 states and DC and live Ohio records for guns, a national bike registry, and Arizona law-enforcement records for Arizona vehicles.",
+      "Every check searches SafeOrStolen's own theft reports and public web results. Guns also go against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona law-enforcement stolen-vehicle records. Phones can add a paid lost and stolen blacklist check.",
   },
   {
     question: 'Can SafeOrStolen tell me if a claimed phone was blacklisted?',
     answer:
-      "Yes, with the paid phone blacklist check, which searches the lost and stolen carrier blacklist by IMEI. A standard IMEI check shows the make and model, which helps confirm the claimed device matches the IMEI given. Monthly members get up to 20 blacklist checks a month. It does not show Apple or Google account lock status.",
+      "Yes, with the paid phone blacklist check, which searches the lost and stolen carrier blacklist by IMEI. A standard IMEI check shows the make and model, which helps confirm the claimed device matches the IMEI given. Monthly members get up to 20 blacklist checks a month.",
   },
   {
     question: 'What record do we get of each check?',

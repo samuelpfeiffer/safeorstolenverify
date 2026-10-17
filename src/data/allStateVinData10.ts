@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
  localLaws: "Buying or keeping a car you know or have reason to believe is stolen is a crime in South Carolina, and police can seize a stolen vehicle from a buyer who paid for it in good faith. The SC DMV handles titles and registration; a new owner generally has 45 days to title and register the vehicle."
  },
  faqs: [
- { question: "How do I check for flood damage on a South Carolina vehicle?", answer: "SafeOrStolen does not search flood or title-brand records. Ask the SC DMV about the title's brand, and inspect the car yourself: look for silt or a waterline under the carpet and in the spare-tire well, rust on seat rails and bolts, and a musty smell. Use SafeOrStolen (safeorstolen.com) to check whether the VIN has been reported stolen or posted online." },
+ { question: "How do I check for flood damage on a South Carolina vehicle?", answer: "Ask the SC DMV about the title's brand, and inspect the car yourself: look for silt or a waterline under the carpet and in the spare-tire well, rust on seat rails and bolts, and a musty smell. Use SafeOrStolen (safeorstolen.com) to check whether the VIN has been reported stolen or posted online." },
  { question: "Does South Carolina require VIN inspections?", answer: "Rules for out-of-state vehicles and reconstructed vehicles change, so ask the SC DMV what your car needs before you register it. Either way, compare the VIN on the dashboard, the driver's door sticker and the title yourself before you pay. A mismatch on any of the three is a reason to stop the sale." },
  { question: "What is South Carolina's title transfer process?", answer: "The seller signs the title over to you and fills in the odometer reading, and you take the title, a bill of sale and proof of insurance to the SC DMV to title and register the car, generally within 45 days. Before signing anything, check that the VIN on the title matches the VIN on the car." }
  ]
@@ -60,7 +60,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
  localLaws: "Knowingly receiving or keeping stolen property is theft under Tennessee law, and a stolen vehicle can be seized from a buyer who didn't know. Titles are handled by your county clerk's office under the Tennessee Department of Revenue."
  },
  faqs: [
- { question: "How do I verify a Tennessee vehicle title?", answer: "Look at the paper title: the VIN must match the dashboard plate and the door sticker, and the seller's name must match their ID. Your county clerk can tell you about the title's status and any lien. SafeOrStolen (safeorstolen.com) does not search Tennessee title records; it checks its own theft reports and public web listings for the VIN." },
+ { question: "How do I verify a Tennessee vehicle title?", answer: "Look at the paper title: the VIN must match the dashboard plate and the door sticker, and the seller's name must match their ID. Your county clerk can tell you about the title's status and any lien. SafeOrStolen (safeorstolen.com) checks its own theft reports and public web listings for the VIN." },
  { question: "Does Tennessee require VIN inspections?", answer: "Some vehicles coming from another state, and rebuilt or salvage vehicles, need a VIN verification before they can be titled in Tennessee. Ask your county clerk what your vehicle needs. Before you buy, compare the VIN in all three places yourself." },
  { question: "What is Tennessee's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading. You take the signed title, a bill of sale and your ID to the county clerk to title and register the car. Check that the VIN on the title matches the car before any money changes hands." }
  ]
@@ -123,7 +123,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
  localLaws: "Receiving or keeping stolen property is treated as larceny under Virginia law, and stolen vehicles can be seized from buyers who paid for them. The Virginia DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I verify a Virginia vehicle title?", answer: "Make sure the VIN on the title matches the dashboard plate and the door sticker, and that the seller's name matches their ID. The Virginia DMV can answer questions about a title's status. SafeOrStolen (safeorstolen.com) checks its own theft reports and public web listings for the VIN; it does not search DMV title records." },
+ { question: "How do I verify a Virginia vehicle title?", answer: "Make sure the VIN on the title matches the dashboard plate and the door sticker, and that the seller's name matches their ID. The Virginia DMV can answer questions about a title's status. SafeOrStolen (safeorstolen.com) checks its own theft reports and public web listings for the VIN." },
  { question: "Does Virginia require VIN inspections?", answer: "Some vehicles, such as rebuilt salvage vehicles, need an inspection before Virginia will title them. Ask the Virginia DMV what your vehicle needs. Whatever the rule, compare the VIN in all three places on the car with the title before you buy." },
  { question: "What is Virginia's title transfer process?", answer: "The seller signs the title over to you and fills in the odometer reading. You take the title and your paperwork to the Virginia DMV to title and register the car in your name. Check the VIN against the car before you sign or pay." }
  ]
@@ -186,7 +186,7 @@ export const STATE_VIN_DATA_PART10: Record<string, any> = {
  localLaws: "Receiving or concealing stolen property is a crime in Wisconsin, and a stolen vehicle can be returned to its owner even if you paid for it. The Wisconsin DMV, part of WisDOT, handles titles and registration."
  },
  faqs: [
- { question: "How do I verify a Wisconsin vehicle title?", answer: "Check that the VIN on the title matches the dashboard plate and the door sticker, and that the seller's name matches their ID. The Wisconsin DMV can answer questions about a title's status. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web listings for the VIN; it does not search DMV records." },
+ { question: "How do I verify a Wisconsin vehicle title?", answer: "Check that the VIN on the title matches the dashboard plate and the door sticker, and that the seller's name matches their ID. The Wisconsin DMV can answer questions about a title's status. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web listings for the VIN." },
  { question: "Does Wisconsin require VIN inspections?", answer: "Some vehicles, such as rebuilt salvage vehicles, need an inspection before Wisconsin will title them. Ask the Wisconsin DMV what your vehicle needs. Before buying, compare the VIN in all three places on the vehicle with the title." },
  { question: "What is Wisconsin's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading. You apply for a new title in your name with the Wisconsin DMV, online or at a service center. Check the VIN against the vehicle before you sign or pay." }
  ]

@@ -70,7 +70,7 @@ const HowToCheckIfBoatStolenPage = () => (
       whatIs:
         'A boat stolen check looks up the Hull Identification Number in records of reported thefts. The HIN works like a car\'s VIN: it is unique to the hull, it goes on the title, and police use it to identify recovered boats. For a single-item check on a boat you\'re about to see, our <a href="/check-boat">boat check page</a> has the search box and the short version.',
       howItWorks:
-        "Enter the HIN in the box. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the HIN, such as old listings or stolen-boat posts. You see reported stolen, possible match, or no report found in the records searched, with each source listed. SafeOrStolen has no marine-specific database and does not search state titling records, the Coast Guard or NCIC, so also ask your state boat agency and local marine patrol.",
+        "Enter the HIN in the box. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the HIN, such as old listings or stolen-boat posts. You see reported stolen, possible match, or no report found in the records searched, with each source listed. For title and registration, also ask your state boat agency, and call local marine patrol if anything doesn't add up.",
       whyCheck:
         'Boats are often stored out of sight on trailers, which makes them easy to hook up and tow away, and they are commonly sold for cash. If a boat turns out to be stolen, police return it to the owner and the buyer usually loses the money. Checking three numbers before you pay takes less time than the sea trial.',
       benefits: [

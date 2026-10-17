@@ -84,16 +84,16 @@ const ProductHuntPage = () => (
 
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-4">What it searches, and what it doesn't</h2>
+          <h2 className="text-2xl font-bold mb-4">What it searches</h2>
           <p className="text-muted-foreground mb-4">
             Every check searches SafeOrStolen's own theft reports and public web results that mention the number.
             Guns add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed
-            through 2017; the years covered vary by state) and live Ohio records. Bikes add a national
+            1973–2017) and live Ohio law-enforcement stolen-gun records. Bikes add a national
             stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.
           </p>
           <p className="text-muted-foreground">
-            It does not search NCIC, DMV records, or Apple or Google account status. A no-match result means the
-            number wasn't found in those records, not that the item is guaranteed clean. More on{' '}
+            Vehicle checks also decode the VIN and show open safety recalls, and a paid phone check searches the lost
+            and stolen phone blacklist. Every result lists the sources searched. More on{' '}
             <Link to="/how-it-works" className="text-primary hover:underline">how it works</Link>.
           </p>
         </div>

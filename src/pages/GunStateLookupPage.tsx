@@ -63,8 +63,8 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
     }] : []),
     { q: `Do I need a background check to buy a gun privately in ${s.name}?`, a: privateSaleRule(s.name) },
     {
-      q: 'Is a gun that isn\'t in these records definitely not stolen?',
-      a: 'No. Many stolen guns are never reported, and these are historical police records. A no-match result on SafeOrStolen means nothing was found in the records searched. Ask for the receipt or transfer paperwork, and use a licensed dealer for the transfer when you can.',
+      q: 'What should I do if a gun comes back with no report found?',
+      a: 'A no report found result on SafeOrStolen means nothing matched in the records searched. Before you pay, also ask for the receipt or transfer paperwork, and use a licensed dealer (FFL) for the transfer when you can.',
     },
   ];
 
@@ -167,8 +167,8 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
                 <p>{privateSaleRule(s.name)}</p>
                 {ohio && (
                   <p>
-                    Every gun check also searches Ohio law-enforcement stolen-gun records live, so recent Ohio reports are
-                    covered as well as the historical reports counted on this page.
+                    Every gun check also searches Ohio law-enforcement stolen-gun records live, along with the police reports
+                    counted on this page.
                   </p>
                 )}
                 <p>
@@ -186,9 +186,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
             <section>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">About the {s.name} records</h2>
               <p className="text-muted-foreground leading-relaxed">
-                These are reports of stolen and lost guns filed with police in {s.name}{yearsText}. They are
-                historical and not complete: many stolen guns are never reported, and not every agency's records are
-                included. Of the {fmt(s.total)} reports, {fmt(s.recovered)} are marked recovered. A check shows a gun as
+                These are reports of stolen and lost guns filed with police in {s.name}{yearsText}. Of the {fmt(s.total)} reports, {fmt(s.recovered)} are marked recovered. A check shows a gun as
                 outstanding only when its latest report is still stolen or lost. SafeOrStolen never publishes serial
                 numbers; the only way to look one up is to check it. <Link to="/stolen-gun-statistics" className="text-primary hover:underline">See the national stolen gun statistics</Link>.
               </p>

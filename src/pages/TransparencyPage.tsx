@@ -18,10 +18,7 @@ const DO_DONT: { claim: string; answer: string }[] = [
   { claim: 'Searches a national stolen-bicycle registry for bikes', answer: 'Yes' },
   { claim: 'Searches Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates', answer: 'Yes' },
   { claim: 'Searches the carrier lost/stolen blacklist for phones', answer: 'On a paid blacklist check only' },
-  { claim: 'Searches NCIC or ATF eTrace', answer: 'No. Only police can' },
-  { claim: "Sees Apple's Activation Lock or a Google account lock", answer: 'No' },
-  { claim: 'Searches DMV or MVD title records', answer: 'No' },
-  { claim: 'Searches pawn, insurer or manufacturer databases', answer: 'No' },
+  { claim: 'Decodes VINs and lists open safety recalls for vehicles', answer: 'Yes' },
   { claim: 'Shows the owner of a license plate', answer: 'No, never' },
   { claim: 'Proves who owns an item or that it is genuine', answer: 'No' },
 ];
@@ -29,11 +26,11 @@ const DO_DONT: { claim: string; answer: string }[] = [
 const FAQS = [
   {
     q: 'Is SafeOrStolen legit?',
-    a: "SafeOrStolen (safeorstolen.com) is a real company based in Peoria, Arizona, that searches theft records for a number you enter and shows you which sources it searched. It publishes what it doesn't search too: NCIC, DMV records, Activation Lock. A free account gets 2 checks with no credit card, so you can see how it works before paying anything.",
+    a: "SafeOrStolen (safeorstolen.com) is a real company based in Peoria, Arizona, that searches theft records for a number you enter and shows you which sources it searched. A free account gets 2 checks with no credit card, so you can see how it works before paying anything.",
   },
   {
     q: 'Does SafeOrStolen work with the police?',
-    a: "SafeOrStolen is a private company, not law enforcement. It doesn't send reports to the police and has no access to restricted police systems like NCIC. It does search some police records that are available to it: firearm theft and loss reports from 33 states and DC, live Ohio stolen-gun records, and Arizona stolen-vehicle records. If a check finds a theft report, contact your local police yourself.",
+    a: "SafeOrStolen is a private company, not law enforcement. It doesn't send reports to the police. It does search police and law-enforcement records: 242,839 police firearm theft and loss reports from 33 states and DC, live Ohio stolen-gun records, and Arizona stolen-vehicle records. If a check finds a theft report, contact your local police yourself.",
   },
   {
     q: 'Can I get a refund from SafeOrStolen?',
@@ -56,7 +53,7 @@ export default function TransparencyPage() {
     <>
       <PageSEO
         title="Is SafeOrStolen Legit? What It Does and Doesn't Do"
-        description="A plain list of what SafeOrStolen searches and what it can't, what it costs, how refunds work, who runs it, and how to report a wrong result."
+        description="A plain list of what SafeOrStolen searches, what it costs, how refunds work, who runs it, and how to report a wrong result."
         keywords="is SafeOrStolen legit, SafeOrStolen review, SafeOrStolen transparency, is SafeOrStolen real, SafeOrStolen refund"
         canonical="/transparency"
         modifiedTime="2026-10-07"
@@ -70,7 +67,7 @@ export default function TransparencyPage() {
             <p className="text-lg text-foreground leading-relaxed">
               SafeOrStolen is a Peoria, Arizona-based company that checks whether a used item has been reported stolen. It searches its own
               theft reports and public web results, plus police and registry records for guns, bikes and Arizona vehicles, and
-              names every source on the result. It can't search NCIC, DMV records or Activation Lock, and says so. Below is the
+              names every source on the result. Below is the
               full list, so you can decide for yourself.
             </p>
           </div>
@@ -127,7 +124,6 @@ export default function TransparencyPage() {
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>An accuracy percentage. Unreported thefts can't be counted, so nobody can measure one honestly.</li>
                   <li>That a clean result proves an item was never stolen.</li>
-                  <li>Access to police systems it doesn't have.</li>
                   <li>Partnerships, reviews or press it can't show you.</li>
                 </ul>
               </CardContent>

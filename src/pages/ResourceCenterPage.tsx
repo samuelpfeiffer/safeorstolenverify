@@ -175,7 +175,7 @@ export default function ResourceCenterPage() {
               ))}
             </div>
             <p className="text-muted-foreground mt-8">
-              What SafeOrStolen does and doesn't search is on the <Link to="/data-sources" className="text-primary underline">data sources page</Link>.
+              Every source SafeOrStolen searches is listed on the <Link to="/data-sources" className="text-primary underline">data sources page</Link>.
             </p>
           </div>
         </section>

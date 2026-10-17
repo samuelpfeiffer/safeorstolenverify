@@ -109,7 +109,7 @@ const FloridaLicensePlateLookupPage = () => {
  },
  {
  question: "What does SafeOrStolen check for a Florida plate?",
- answer: "SafeOrStolen's own theft reports and public web results for that plate. It does not search Florida DMV (FLHSMV) records. For Florida police reports, use FDLE's Public Access System."
+ answer: "SafeOrStolen's own theft reports and public web results for that plate, with every source listed. You can also search the plate in FDLE's Public Access System for Florida police reports, and contact FLHSMV for title or registration."
  },
  {
  question: "Is there a free Florida license plate lookup?",

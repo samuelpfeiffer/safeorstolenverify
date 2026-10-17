@@ -547,9 +547,9 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
 
  whatIs: `A ${state} license plate lookup on SafeOrStolen tells you whether a ${stateCode} plate appears in ${sources}. It's a quick first screen before you meet a seller in ${topCities.slice(0, 3).join(', ')} or anywhere else in ${state}. It is not a registration lookup: ${dmvName} records, owner names and title status are not part of the check.`,
 
- howItWorks: `Type the plate exactly as shown, choose ${state}, and run the check. SafeOrStolen searches ${sources} and returns reported stolen, possible match, or no report found, with each source named. The check is saved to your account with the date. SafeOrStolen does not search ${dmvName} records; for registration or title questions, contact ${dmvName}.`,
+ howItWorks: `Type the plate exactly as shown, choose ${state}, and run the check. SafeOrStolen searches ${sources} and returns reported stolen, possible match, or no report found, with each source named. The check is saved to your account with the date. For registration or title questions, contact ${dmvName}.`,
 
- whyCheck: `A plate check before you drive out to see a car can save you a wasted trip. A "no report found" result means the plate wasn't in the records searched, not that the car is clean, so also run the VIN, match it on the dash, door jamb and title, and check the seller's ID against the title.${uniqueConcerns.length > 0 ? ` Things to watch for in ${state}: ${uniqueConcerns.join('; ')}.` : ''}`,
+ whyCheck: `A plate check before you drive out to see a car can save you a wasted trip. After a "no report found" result, also run the VIN, match it on the dash, door jamb and title, and check the seller's ID against the title.${uniqueConcerns.length > 0 ? ` Things to watch for in ${state}: ${uniqueConcerns.join('; ')}.` : ''}`,
 
  benefits: [
  `Screen a ${stateCode} plate before you meet the seller`,
@@ -581,7 +581,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  },
  {
  question: `Does a ${state} plate lookup show the owner's name?`,
- answer: `No. SafeOrStolen never shows owner names or addresses and does not search ${dmvName} records. Federal privacy law limits who can get that information. To confirm ownership, ask to see the seller's ID and the title and check that the names match.`
+ answer: `No. SafeOrStolen never shows owner names or addresses. Federal privacy law limits who can get that information. To confirm ownership, ask to see the seller's ID and the title and check that the names match.`
  },
  {
  question: `Is a ${state} license plate lookup free?`,
@@ -589,7 +589,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  },
  {
  question: `What does "no report found" mean?`,
- answer: `It means the ${stateCode} plate wasn't found in ${sources}. It doesn't prove the car isn't stolen, because a theft may not have been reported there. Run the VIN, match it on the car and title, and check the seller's ID.`
+ answer: `It means the ${stateCode} plate wasn't found in ${sources}. Before you pay, run the VIN, match it on the car and title, and check the seller's ID.`
  },
  {
  question: `What should I watch for when buying a used car in ${state}?`,

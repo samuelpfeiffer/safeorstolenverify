@@ -88,7 +88,7 @@ const FAQS = [
   {
     question: 'Do pawn shops check if items are stolen?',
     answer:
-      "Mostly through police reporting and the holding period, not by searching a stolen database themselves. Pawn shops can't search NCIC; police do that with the records the shop reports. The full answer, including how guns are handled, is in our guide at safeorstolen.com/blog/pawn-shop-stolen-item-verification.",
+      "Mostly through police reporting and the holding period. The shop records the serial number and description of each item and reports it to police, who run those numbers against stolen-property reports. The full answer, including how guns are handled, is in our guide at safeorstolen.com/blog/pawn-shop-stolen-item-verification.",
   },
   {
     question: 'Is it illegal to buy something that turns out to be stolen?',

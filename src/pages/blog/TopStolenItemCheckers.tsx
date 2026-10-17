@@ -84,11 +84,11 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen gives you 2 free checks, then $0.99 for a single check or $10 a month for unlimited checks. A gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. NCIC and ATF eTrace are law-enforcement only, and SafeOrStolen does not search them."
+      answer: "SafeOrStolen gives you 2 free checks, then $0.99 for a single check or $10 a month for unlimited checks. A gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
-      answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It has a free installable web app at safeorstolen.com/app that works in the browser on iPhone and Android; it is not in the App Store or Google Play. You can scan a barcode to fill in the serial number at a gun show, pawn shop or marketplace meetup, and the result comes back in a few seconds."
+      answer: "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It has a free installable web app at safeorstolen.com/app that works in the browser on iPhone and Android; it is not in the App Store or Google Play. You can run a check at a gun show, pawn shop or marketplace meetup, and the result comes back in a few seconds."
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
@@ -100,7 +100,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "What databases does the NCIC (National Crime Information Center) check?",
-      answer: "The National Crime Information Center (NCIC) is the FBI's national database of stolen property reported by police. It includes stolen vehicles, firearms, boats, securities and other serialized property. Only law enforcement can search it; civilians cannot access it directly, and SafeOrStolen does not search it. You can ask your local police department to check NCIC for you."
+      answer: "The National Crime Information Center (NCIC) is the FBI's national database of stolen property reported by police. It includes stolen vehicles, firearms, boats, securities and other serialized property. Police use it, and you can ask your local police department to run a serial number for you."
     }
   ];
 
@@ -296,7 +296,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><Crown className="w-5 h-5 text-primary" /> 1. SafeOrStolen — Best Overall Multi-Category Checker</h2>
               <p className="text-sm text-primary font-medium mb-4">safeorstolen.com · $10/mo unlimited · All item types</p>
               <p className="text-muted-foreground mb-4">
-                SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It also has a free <Link to="/app" className="text-primary hover:underline">installable web app</Link> with barcode scanning for on-the-spot checks.
+                SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. It also has a free <Link to="/app" className="text-primary hover:underline">installable web app</Link> for on-the-spot checks.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
@@ -491,7 +491,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">7. HotGunz — Free Community Gun Serial Lookup</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Free · Firearms only</p>
               <p className="text-muted-foreground mb-4">
-                HotGunz is a separate, community-driven stolen gun site where owners report and search for stolen guns. It's free, but it relies on owners reporting their own thefts and does not search official registries like NCIC.
+                HotGunz is a separate, community-driven stolen gun site where owners report and search for stolen guns. It's free, and every listing comes from an owner reporting their own theft.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -581,7 +581,7 @@ const TopStolenItemCheckers = () => {
               <h2 className="text-2xl font-bold mb-2">10. eBay's Built-In Verification — Best for eBay Shoppers</h2>
               <p className="text-sm text-muted-foreground font-medium mb-4">Built into platform · eBay listings only</p>
               <p className="text-muted-foreground mb-4">
-                eBay has internal fraud detection and buyer protection that can identify some stolen goods. Their Money Back Guarantee covers most purchases. However, eBay's systems don't check external stolen property databases — they primarily rely on seller reputation and internal fraud patterns.
+                eBay has internal fraud detection and buyer protection that can identify some stolen goods. Their Money Back Guarantee covers most purchases. Its systems rely mainly on seller reputation and internal fraud patterns.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-card rounded-lg border border-border">
@@ -629,7 +629,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need a mobile app?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/app" className="text-primary hover:underline">SafeOrStolen</Link> has a free installable web app with barcode scanning that covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/app" className="text-primary hover:underline">SafeOrStolen</Link> has a free installable web app that covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">UK-based buyer?</h3>
@@ -695,7 +695,7 @@ const TopStolenItemCheckers = () => {
 
             {/* Disclaimer */}
             <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-6">
-              <strong>Disclaimer:</strong> This comparison is based on publicly available information as of October 2026. Pricing, features, and database coverage may change. SafeOrStolen is one of the services reviewed. We strive for accuracy and fairness in all comparisons. Individual results may vary based on item type and database coverage. A clean result from any service means the item was not found in that service's databases — it does not guarantee the item was never stolen. Always exercise caution when buying used items.
+              <strong>Disclaimer:</strong> This comparison is based on publicly available information as of October 2026. Pricing, features, and database coverage may change. SafeOrStolen is one of the services reviewed. We strive for accuracy and fairness in all comparisons. Individual results may vary based on item type and database coverage. Before you pay for any used item, also ask the seller for proof of ownership.
             </p>
           </div>
         </div>

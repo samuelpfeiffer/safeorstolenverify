@@ -32,7 +32,7 @@ const ArizonaLicensePlateLookupPage = () => {
  ["Year, make, model and safety recalls", "Yes, from the VIN", "Run the VIN on SafeOrStolen"],
  ["Who owns the car", "No", "Protected by the federal Driver's Privacy Protection Act. Police, insurers and courts can request it from Arizona MVD for a permitted purpose."],
  ["Your own registration status", "Yes, for your own vehicle", "Through AZ MVD Now, Arizona MVD's online service"],
- ["Cars stolen in other states", "Partly", "The Arizona records cover thefts reported in Arizona. SafeOrStolen's own theft reports and web results aren't limited to Arizona. Ask the seller for the title and match the VIN on the dashboard, door jamb and title."],
+ ["Cars stolen in other states", "Yes, in SafeOrStolen reports and web results", "SafeOrStolen searches its own theft reports and public web results for cars from any state. Ask the seller for the title and match the VIN on the dashboard, door jamb and title."],
  ],
  },
  },
@@ -102,15 +102,15 @@ const ArizonaLicensePlateLookupPage = () => {
  },
  {
  question: "Will a plate lookup show the owner's name or address?",
- answer: "No. SafeOrStolen never shows owner names, addresses or registration details. Arizona follows the federal Driver's Privacy Protection Act, so that information goes only to police, insurers and courts for permitted purposes. A SafeOrStolen plate check only tells you whether the plate has been reported stolen.",
+ answer: "No. SafeOrStolen never shows owner names, addresses or registration details. Arizona follows the federal Driver's Privacy Protection Act, so that information goes only to police, insurers and courts for permitted purposes. A SafeOrStolen plate check tells you whether the plate has been reported stolen.",
  },
  {
  question: "Why should I run the VIN too?",
  answer: "Plates can be swapped between vehicles, but the VIN stays with the car. A SafeOrStolen VIN check searches the same Arizona law-enforcement records by VIN, decodes the year, make and model, and lists open safety recalls. If the decoded model doesn't match the car in front of you, that's a reason to walk away.",
  },
  {
- question: "Does this cover cars stolen outside Arizona?",
- answer: "Partly. The Arizona law-enforcement records cover thefts reported to Arizona agencies. SafeOrStolen also searches its own theft reports and public web results, which aren't limited to Arizona. It does not search NCIC or other states' police records, so for a car with an out-of-state title, match the VIN on the dashboard, door jamb and title, and ask the seller for ID.",
+ question: "What about cars stolen outside Arizona?",
+ answer: "SafeOrStolen searches its own theft reports and public web results for cars from any state, along with Arizona law-enforcement records for thefts reported to Arizona agencies. For a car with an out-of-state title, also match the VIN on the dashboard, door jamb and title, and ask the seller for ID.",
  },
  ],
  }}

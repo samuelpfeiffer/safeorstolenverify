@@ -33,7 +33,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'How accurate is the stolen phone database?',
- a: "A phone check searches SafeOrStolen's own theft reports and public web results, and shows the make and model the IMEI belongs to. For the carrier side, a paid lost/stolen blacklist check is available. A clean result means no report was found in the records searched, not a guarantee."
+ a: "A phone check searches SafeOrStolen's own theft reports and public web results, and shows the make and model the IMEI belongs to. For the carrier side, a paid lost/stolen blacklist check is available. Before you pay, also watch the seller sign out of their account and ask for proof of ownership."
  }
  ]}
  />
@@ -169,7 +169,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'What databases do you check?',
- a: "A gun check searches SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. It also flags serials that look altered or obliterated. It does not search NCIC or ATF eTrace."
+ a: "A gun check searches SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
  },
  {
  q: 'Should I use an FFL dealer?',

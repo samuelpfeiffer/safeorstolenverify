@@ -10,7 +10,7 @@ const StolenCheckPhiladelphia = () => {
   const faqs = [
     {
       question: "How do I check if a car in Philadelphia is stolen?",
-      answer: "Enter the VIN or the Pennsylvania plate at SafeOrStolen (safeorstolen.com/stolen-check-philadelphia). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the car and lists open recalls. It doesn't search Philadelphia police records, so on a car you're serious about, also call the PPD non-emergency line with the VIN."
+      answer: "Enter the VIN or the Pennsylvania plate at SafeOrStolen (safeorstolen.com/stolen-check-philadelphia). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the car and lists open recalls. On a car you're serious about, you can also call the PPD non-emergency line and ask them to run the VIN."
     },
     {
       question: "Where can I safely meet sellers in Philly?",
@@ -80,7 +80,7 @@ const StolenCheckPhiladelphia = () => {
               <p>
                 A SafeOrStolen check searches SafeOrStolen theft reports and public web results for the VIN, plate, IMEI or
                 serial, and the result comes back in a few seconds with every source listed. Bike checks also search a
-                national stolen-bicycle registry. It doesn't search PPD, PennDOT or NCIC records.
+                national stolen-bicycle registry, and VIN checks decode the car and list open safety recalls.
               </p>
               <h3>At the meetup</h3>
               <p>

@@ -65,7 +65,7 @@ const ComparisonCheckmend = () => {
                 SafeOrStolen vs CheckMEND
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                CheckMEND is a device history check best known for phones and electronics. SafeOrStolen checks phones too, plus vehicles, plates, guns, bikes and anything with a serial number, from one search box. Here's what SafeOrStolen does and doesn't search, so you can pick the right tool.
+                CheckMEND is a device history check best known for phones and electronics. SafeOrStolen checks phones too, plus vehicles, plates, guns, bikes and anything with a serial number, from one search box. Here's what a SafeOrStolen check searches, so you can pick the right tool.
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">
@@ -175,8 +175,8 @@ const ComparisonCheckmend = () => {
                         <td className="py-3 px-4">A national stolen-bicycle registry</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3 px-4 font-medium">Not searched</td>
-                        <td className="py-3 px-4">NCIC, DMV records, Apple or Google account status, pawn and insurer databases</td>
+                        <td className="py-3 px-4 font-medium">Plates</td>
+                        <td className="py-3 px-4">Arizona plates also against Arizona law-enforcement stolen-vehicle records</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>

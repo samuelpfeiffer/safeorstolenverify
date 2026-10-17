@@ -34,12 +34,12 @@ const FAQS = [
   {
     question: "What does 'no report found' mean on a stolen check?",
     answer:
-      "It means the number didn't match anything in the records that check searched, which are listed on the result. It doesn't prove the item is clean, because many thefts are only reported to local police. Weigh it with the other signs: a matching title or receipt, an untouched serial, and a seller who can unlock the device.",
+      "It means the number didn't match anything in the records that check searched, which are listed on the result. Before you pay, weigh it with the other signs: a matching title or receipt, an untouched serial, and a seller who can unlock the device.",
   },
   {
     question: 'Can a stolen check app search police databases?',
     answer:
-      "Not the FBI's NCIC system, which is only open to law enforcement. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft and loss reports from 33 states and DC for guns, live Ohio records, and Arizona stolen-vehicle records for Arizona VINs and plates. Each result lists what was searched.",
+      "Yes, some police records. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft and loss reports from 33 states and DC for guns, live Ohio records, and Arizona stolen-vehicle records for Arizona VINs and plates. Each result lists what was searched.",
   },
   {
     question: 'What if the check says the item is reported stolen?',
@@ -54,7 +54,7 @@ const StolenVerificationAppGuide = () => {
     '@type': 'BlogPosting',
     headline: 'How to Check if Something Is Stolen From Your Phone',
     description:
-      'What to check on your phone at a meetup before you buy a used phone, car, gun, bike, laptop or tool, which number to look up for each, and what a stolen check can and cannot tell you.',
+      'What to check on your phone at a meetup before you buy a used phone, car, gun, bike, laptop or tool, which number to look up for each, and what a stolen check tells you.',
     author: { '@type': 'Organization', name: 'SafeOrStolen' },
     publisher: {
       '@type': 'Organization',
@@ -166,7 +166,7 @@ const StolenVerificationAppGuide = () => {
               run it before you leave home. If they won't share it, that tells you something.
             </p>
 
-            <h2>What the check searches, and what it can't</h2>
+            <h2>What the check searches, and what you get back</h2>
             <Card className="not-prose p-6 my-6">
               <div className="grid md:grid-cols-2 gap-6 text-sm">
                 <div>
@@ -184,16 +184,16 @@ const StolenVerificationAppGuide = () => {
                 </div>
                 <div>
                   <h3 className="font-bold mb-2 flex items-center gap-2 text-foreground">
-                    <Smartphone className="w-4 h-4 text-primary" /> Not searched
+                    <Smartphone className="w-4 h-4 text-primary" /> On every result
                   </h3>
                   <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                    <li>NCIC or ATF eTrace</li>
-                    <li>Activation Lock or Google account lock</li>
-                    <li>DMV or MVD title records</li>
-                    <li>Pawn, insurer or manufacturer databases</li>
+                    <li>Reported stolen, possible match, or no report found in the records searched</li>
+                    <li>Each source that was searched</li>
+                    <li>Vehicles: year, make and model from the VIN, and open safety recalls</li>
+                    <li>Guns: a flag for serials that look altered or obliterated</li>
                   </ul>
                   <p className="text-muted-foreground mt-3">
-                    That's why the in-person checks below still matter.
+                    Pair it with the in-person checks below before you pay.
                   </p>
                 </div>
               </div>

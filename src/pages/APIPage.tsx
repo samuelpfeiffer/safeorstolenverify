@@ -48,7 +48,7 @@ const FAQS = [
   {
     question: 'Is there a VIN stolen check API?',
     answer:
-      'Not a public one. VINs can go through the bulk check in a CSV, up to 100 at a time. Each VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports, web results and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records. It does not return title, odometer or lien data.',
+      'Not a public one. VINs can go through the bulk check in a CSV, up to 100 at a time. Each VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports, web results and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records. For title, odometer or lien data, get a vehicle history report.',
   },
   {
     question: 'Can I link to a SafeOrStolen check from my website?',
@@ -170,14 +170,13 @@ ABC123456,gun,ticket 4413`}</pre>
             <h2 className="text-2xl font-bold mb-4">What a check searches</h2>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>Every check: SafeOrStolen theft reports and public web results that mention the number.</li>
-              <li>Guns: also 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio records, and a flag for altered or obliterated serials.</li>
+              <li>Guns: also 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio records, and a flag for altered or obliterated serials.</li>
               <li>Bikes: also a national stolen-bicycle registry.</li>
-              <li>Phones: make and model from the IMEI; the carrier blacklist on paid checks.</li>
+              <li>Phones: make and model from the IMEI; the lost and stolen phone blacklist on paid checks.</li>
               <li>Vehicles: decoded year, make and model, open recalls, and Arizona law-enforcement records for Arizona VINs and plates.</li>
             </ul>
             <p className="text-muted-foreground mt-4">
-              Not searched: NCIC, ATF eTrace, DMV or MVD records, Apple and Google account status, manufacturer, pawn or
-              insurer databases.
+              Each result names every source it searched, with the date of the check.
             </p>
           </section>
 

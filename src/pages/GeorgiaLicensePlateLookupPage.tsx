@@ -30,7 +30,7 @@ const GeorgiaLicensePlateLookupPage = () => {
       content={{
         intro: "Before you buy a used car in Georgia, look up the plate on SafeOrStolen. It searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then check the VIN, because a plate can be moved from one car to another.",
 
-        whatIs: "A Georgia license plate lookup on SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the plate. It does not access Georgia DOR motor vehicle records, title records or owner information, and it never shows owner names.",
+        whatIs: "A Georgia license plate lookup on SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the plate, and lists every source with the result. It never shows owner names. For title or registration questions, contact the Georgia Department of Revenue's motor vehicle division.",
 
         howItWorks: "Enter the plate and choose Georgia. SafeOrStolen searches its own theft reports and public web results and shows reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date.",
 
@@ -60,7 +60,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           },
           {
             question: "How accurate is the Georgia license plate stolen vehicle check?",
-            answer: "It tells you what SafeOrStolen's theft reports and public web results show for that plate, and lists each source. It does not search Georgia police or DOR records. No report found doesn't prove a car isn't stolen, so follow up with a VIN check and ask police if something seems off."
+            answer: "It tells you what SafeOrStolen's theft reports and public web results show for that plate, and lists each source. Before you pay, also run the VIN, ask the seller for proof of ownership, and call local police if something seems off."
           },
           {
             question: "Does the lookup work for vehicles in Savannah and coastal Georgia?",

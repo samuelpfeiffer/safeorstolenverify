@@ -60,9 +60,9 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  localLaws: "In Iowa, a stolen vehicle goes back to its owner even if you bought it in good faith. Titles are handled by the county treasurer's office, and the Iowa DOT oversees vehicle registration statewide."
  },
  faqs: [
- { question: "How do I verify an Iowa vehicle title?", answer: "Look at the paper title first: the seller's name should match their ID, and the VIN on it should match the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/iowa-vin-lookup) to search its theft reports and public web results. SafeOrStolen does not search Iowa DOT title records, so ask the county treasurer about title brands." },
+ { question: "How do I verify an Iowa vehicle title?", answer: "Look at the paper title first: the seller's name should match their ID, and the VIN on it should match the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/iowa-vin-lookup) to search its theft reports and public web results. Ask the county treasurer about title brands." },
  { question: "Is a VIN check required in Iowa?", answer: "Iowa doesn't require a private buyer to run a VIN check. It's still the cheapest protection you have: a stolen car can be taken back by police and returned to its owner, and you lose what you paid. A check costs nothing with your 2 free checks." },
- { question: "What is Iowa's flood vehicle disclosure law?", answer: "Iowa requires flood damage to be disclosed when a vehicle is sold, but a car can be retitled in another state first. SafeOrStolen does not show title brands, so for flood history use a vehicle history report, and look for damp carpet, rust under the seats and silt in the trunk." }
+ { question: "What is Iowa's flood vehicle disclosure law?", answer: "Iowa requires flood damage to be disclosed when a vehicle is sold, but a car can be retitled in another state first. For flood history, get a vehicle history report, and look for damp carpet, rust under the seats and silt in the trunk." }
  ]
  },
  kansas: {
@@ -83,7 +83,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  faqs: [
  { question: "How do I check a Kansas VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/kansas-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to see the year, make and model, any open recalls, and whether it appears in SafeOrStolen's theft reports or public listings. Each check is saved to your account with the date." },
  { question: "Does Kansas require VIN inspections?", answer: "Kansas requires a VIN inspection, usually done by the Kansas Highway Patrol, for vehicles coming from out of state and for rebuilt or salvage vehicles. The inspection confirms the VIN; it doesn't tell a private buyer whether the car was reported stolen, so check it yourself first." },
- { question: "What is title washing in Kansas?", answer: "Title washing is moving a car with a salvage or flood brand to a state where the brand gets dropped, then selling it with a clean-looking title. SafeOrStolen doesn't show title brands. Use a vehicle history report for that, and use SafeOrStolen to search theft reports and online listings." }
+ { question: "What is title washing in Kansas?", answer: "Title washing is moving a car with a salvage or flood brand to a state where the brand gets dropped, then selling it with a clean-looking title. Get a vehicle history report for title brands, and use SafeOrStolen to search theft reports and online listings." }
  ]
  },
  kentucky: {
@@ -102,7 +102,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  localLaws: "In Kentucky, a stolen car is returned to its owner even if the buyer paid in good faith. Titles are transferred at the county clerk's office, and the Kentucky Transportation Cabinet keeps the state's title records."
  },
  faqs: [
- { question: "How do I verify a Kentucky vehicle title?", answer: "Compare the title to the car: the VIN on the title should match the dashboard and door sticker, and the seller's name should match their ID. Then run the VIN on SafeOrStolen (safeorstolen.com/kentucky-vin-lookup) to search its theft reports and public web results. The county clerk can confirm title details SafeOrStolen doesn't search." },
+ { question: "How do I verify a Kentucky vehicle title?", answer: "Compare the title to the car: the VIN on the title should match the dashboard and door sticker, and the seller's name should match their ID. Then run the VIN on SafeOrStolen (safeorstolen.com/kentucky-vin-lookup) to search its theft reports and public web results. The county clerk can confirm title details." },
  { question: "Is a VIN check required in Kentucky?", answer: "No law requires a private buyer in Kentucky to check a VIN. But if the car is stolen, police can take it back for the owner and you lose the money. Running the VIN before you pay takes a few seconds and your first 2 checks are free." },
  { question: "What is Kentucky's lemon law?", answer: "Kentucky's lemon law covers new vehicles, not used private sales. For a used car you're on your own, so get a mechanic's inspection, a vehicle history report for accidents and title brands, and a SafeOrStolen check for theft reports and online listings mentioning the VIN." }
  ]

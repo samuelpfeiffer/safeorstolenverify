@@ -9,7 +9,7 @@ const commonStolenSteps = [
 ];
 
 const commonSafeOrStolen =
-  "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. A check is an additional due-diligence step, not a substitute for inspecting the item, matching documents, checking official resources, or confirming the seller has authority to sell.";
+  "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. Use a check alongside inspecting the item, matching documents, checking official resources, and confirming the seller has authority to sell.";
 
 
 export const PHONE_GUIDE: DefinitiveGuideProps = {
@@ -17,7 +17,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Phone Is Stolen",
   metaTitle: "How to Check if a Phone Is Stolen (IMEI Guide)",
   description:
-    "Find and match a phone IMEI, check carrier blacklist status separately, inspect account locks, spot warning signs, and verify before buying.",
+    "Find and match a phone IMEI, check the lost and stolen phone blacklist, inspect account locks, spot warning signs, and verify before buying.",
   keywords:
     "how to check if phone stolen, IMEI stolen check, used phone checklist, phone blacklist",
   directAnswer:
@@ -82,14 +82,14 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
         "Yes. A free SafeOrStolen account comes with 2 free checks, no credit card. An IMEI check shows the make and model and searches SafeOrStolen theft reports and public web results. The lost and stolen blacklist check is paid; monthly members ($10 a month) get up to 20 of them a month.",
     },
     {
-      question: "Does a clean IMEI mean the phone is safe to buy?",
+      question: "What else should I check after a clean IMEI result?",
       answer:
-        "No. A phone can be unreported, financed, later blacklisted, or locked to an owner account. Match the IMEI, test the phone, verify carrier status, remove account locks, and keep the payment record.",
+        "Match the IMEI, test the phone, verify carrier status, remove account locks, and keep the payment record.",
     },
     {
       question: "Does SafeOrStolen check the lost and stolen phone blacklist?",
       answer:
-        "Yes, with the paid blacklist check. It searches the lost and stolen phone blacklist and tells you whether the phone has been reported lost or stolen, alongside SafeOrStolen theft reports and public web results. A clean result is a good sign, but still test the phone and make sure it is signed out of any account lock before you pay.",
+        "Yes, with the paid blacklist check. It searches the lost and stolen phone blacklist and tells you whether the phone has been reported lost or stolen, alongside SafeOrStolen theft reports and public web results. A clean result is a good sign. Also test the phone and make sure it is signed out of any account lock before you pay.",
     },
     {
       question: "What if I already bought a stolen phone?",
@@ -127,7 +127,7 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to check if iPhone stolen, Activation Lock check, Find My iPhone, used iPhone IMEI",
   directAnswer:
-    "Match the iPhone’s IMEI and serial number in Settings with the physical device and box, then have the seller turn off Find My, sign out of their Apple Account, erase the iPhone, and let you begin setup. Check carrier status separately and never buy an iPhone that asks for the previous owner’s credentials.",
+    "Match the iPhone’s IMEI and serial number in Settings with the physical device and box, then have the seller turn off Find My, sign out of their Apple Account, erase the iPhone, and let you begin setup. Run the IMEI on SafeOrStolen, ask the carrier about its status, and never buy an iPhone that asks for the previous owner’s credentials.",
   identifierTitle: "Where to find the iPhone IMEI and serial number",
   identifierIntro:
     "Open Settings → General → About, or dial *#06# for the IMEI. Apple also explains where identifiers appear on supported models and packaging.",
@@ -160,7 +160,7 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen IMEI check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen shows the iPhone’s model from the IMEI and searches its own theft reports and public web results. The lost and stolen carrier blacklist is a separate paid check, and Activation Lock can only be confirmed on the phone itself.",
+        "SafeOrStolen shows the iPhone’s model from the IMEI and searches its own theft reports and public web results. A paid check also searches the lost and stolen phone blacklist. Confirm Activation Lock is off on the phone itself.",
       tellsYou:
         "Whether the IMEI appears in SafeOrStolen’s checked sources and whether public-web signals need review.",
     },
@@ -190,7 +190,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to check if gun stolen, firearm serial check, stolen gun lookup, NCIC gun serial",
   directAnswer:
-    "Private buyers cannot search the FBI's NCIC stolen-gun file themselves. Instead: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI's stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
+    "To check a used gun: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI's stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
   identifierTitle: "Where to find the firearm serial number",
   identifierIntro:
     "Use the serial marked on the firearm’s frame or receiver and record the manufacturer, model, caliber, and seller’s identification as permitted by law.",
@@ -205,15 +205,15 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       name: "Ask local law enforcement",
       cost: "Usually free; agency policy varies",
       description:
-        "Call the non-emergency line before the transaction and ask whether the agency will check a firearm serial. Private buyers cannot search NCIC directly.",
+        "Call the non-emergency line before the transaction and ask whether the agency will check a firearm serial.",
       tellsYou:
-        "Police can use authorized systems when agency policy permits. A buyer has no self-service NCIC access.",
+        "Whether police find a report for the serial in the systems they use, when agency policy permits a check.",
     },
     {
       name: "Run a SafeOrStolen firearm check",
       cost: "2 free checks with a free account",
       description:
-        "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (242,839 reports, filed through 2017; years vary by state), live Ohio law-enforcement stolen-gun records, and theft reports filed on SafeOrStolen. It does not access NCIC, ATF eTrace, or other police-only systems.",
+        "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (242,839 reports, filed 1973–2017), live Ohio law-enforcement stolen-gun records, theft reports filed on SafeOrStolen, and public web results.",
       tellsYou:
         "Whether a police report lists a gun with this serial number, and which make, model, state and year it names. Different manufacturers can use the same serial, so compare the make stamped on the gun.",
     },
@@ -223,7 +223,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       description:
         "Since 2024, federal firearms licensees can voluntarily check a serial number against the FBI's NCIC stolen-gun file, including through the FBI's NICS E-Check system. Doing a private sale as a dealer transfer also completes the background check and creates a paper trail.",
       tellsYou:
-        "Whether the serial matches a gun reported stolen anywhere in the US NCIC file. This is the most complete check available to a private buyer.",
+        "Whether the serial matches a gun reported stolen in the FBI's NCIC file.",
     },
     {
       name: "Search Florida or Ohio's public stolen-gun records",
@@ -231,7 +231,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       description:
         "Florida's FDLE Public Access System and the Ohio Attorney General's stolen-gun search let anyone look up a serial reported stolen to police in that state. SafeOrStolen already searches Ohio's records for you.",
       tellsYou:
-        "Whether police in that state have reported a gun with this serial number stolen. They do not cover other states.",
+        "Whether police in that state have reported a gun with this serial number stolen.",
     },
   ],
   redFlags: [
@@ -247,9 +247,9 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   toolLabel: "Open the firearm checker",
   faqs: [
     {
-      question: "Can a private buyer search NCIC?",
+      question: "How can a private buyer get a gun serial checked by police?",
       answer:
-        "No. NCIC is restricted to authorized criminal-justice users. Ask local police whether they will run a serial under their policy.",
+        "Run the serial on SafeOrStolen, then ask local police whether they will run it under their policy, or do the sale through a licensed dealer (FFL), who can check the FBI's stolen-gun file.",
     },
     {
       question: "Can ATF trace a gun for me?",
@@ -264,7 +264,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     {
       question: "Can a gun dealer check if a gun is stolen?",
       answer:
-        "Yes. Since 2024, federal firearms licensees (FFLs) can voluntarily check a serial number against the FBI's NCIC stolen-gun file, for example through NICS E-Check. Doing a private sale as a transfer through a dealer is the most thorough way to check a used gun.",
+        "Yes. Since 2024, federal firearms licensees (FFLs) can voluntarily check a serial number against the FBI's NCIC stolen-gun file, for example through NICS E-Check. Doing a private sale as a transfer through a dealer adds that check to your purchase.",
     },
     {
       question: "What happens if I buy a stolen gun without knowing?",
@@ -277,9 +277,9 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
         "Don't buy it. Possessing a firearm with an altered or removed serial number is a federal crime under 18 U.S.C. 922(k).",
     },
     {
-      question: "Does a clean result prove a firearm is not stolen?",
+      question: "What should I do after a clean firearm result?",
       answer:
-        "No. Stolen-firearm databases only include thefts that were reported, so no check can include every theft. Use our result alongside police guidance and all legally required transfer procedures.",
+        "Use the result alongside police guidance and all legally required transfer procedures.",
     },
   ],
   related: [
@@ -307,7 +307,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
   keywords:
     "how to check if tv is stolen, tv serial number lookup stolen, stolen tv check, is this tv stolen, buying tv marketplace stolen",
   directAnswer:
-    "There is no public national database of stolen TVs. To check one: (1) find the serial number on the label on the back and in the TV's settings menu, and make sure they match; (2) search the serial on SafeOrStolen; (3) ask for the original receipt and check the model and date match; (4) be very careful with new, boxed TVs sold far below store price, which is a common sign of retail theft; and (5) if you are unsure, ask local police to check the serial, since police can search stolen-property records the public cannot.",
+    "To check if a TV is stolen: (1) find the serial number on the label on the back and in the TV's settings menu, and make sure they match; (2) search the serial on SafeOrStolen; (3) ask for the original receipt and check the model and date match; (4) be very careful with new, boxed TVs sold far below store price, which is a common sign of retail theft; and (5) if you are unsure, ask local police to check the serial.",
   identifierTitle: "Where to find a TV's serial number",
   identifierIntro:
     "Use the number on the TV itself, not just the box. The label on the back and the number in the settings menu should match.",
@@ -324,7 +324,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
       description:
         "SafeOrStolen searches theft reports filed by owners on SafeOrStolen and public web results for the serial number.",
       tellsYou:
-        "Whether the TV's serial appears in a theft report or in a public post about a theft. A clean result does not prove the TV is not stolen.",
+        "Whether the TV's serial appears in a theft report or in a public post about a theft. Before you pay, also ask for proof of ownership.",
     },
     {
       name: "Match the receipt and the seller's story",
@@ -338,7 +338,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
       name: "Ask local police to check the serial",
       cost: "Usually free; policy varies",
       description:
-        "Call the non-emergency line and ask whether they will check a serial number. Police can search stolen-property records, including pawn and theft reports, that the public cannot.",
+        "Call the non-emergency line and ask whether they will check a serial number. Police can search their own stolen-property and theft reports.",
       tellsYou:
         "Whether the serial has been reported stolen to police, when the agency is able to check it.",
     },
@@ -358,7 +358,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
     {
       question: "Can I look up a TV serial number to see if it is stolen?",
       answer:
-        "Yes, in part. Search the serial on SafeOrStolen, which checks owner theft reports and public web results. There is no single public national database of stolen TVs, so also match the receipt and, if in doubt, ask local police to check the serial.",
+        "Yes. Search the serial on SafeOrStolen, which checks owner theft reports and public web results. Also match the receipt and, if in doubt, ask local police to check the serial.",
     },
     {
       question: "Can Samsung, LG, Sony or another manufacturer tell me if a TV is stolen?",
@@ -420,7 +420,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
       name: "Ask local police about the serial",
       cost: "Usually free; policy varies",
       description:
-        "Provide the complete serial and description. Police may check authorized systems; the public cannot search NCIC.",
+        "Provide the complete serial and description. Police may check the systems they use.",
       tellsYou:
         "Whether the agency can identify a report in systems available to it.",
     },
@@ -453,7 +453,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
     {
       question: "What if the serial has no match?",
       answer:
-        "No match means only that a matching report was not found there. Many bikes are never registered or reported, so continue checking the seller, receipt, physical bike, and local police guidance.",
+        "Keep going with the other checks: the seller, the receipt, the physical bike, and local police guidance. Before you pay, also ask for proof of ownership.",
     },
     {
       question: "How do I check an e-bike?",
@@ -502,7 +502,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
       description:
         "Use the manufacturer’s official warranty or support page when one is available. Confirm the model returned matches the item.",
       tellsYou:
-        "Whether the serial has a plausible format and belongs to the expected model; it does not prove ownership or theft status.",
+        "Whether the serial has a plausible format and belongs to the expected model. Ask the seller for proof of ownership too.",
     },
     {
       name: "Remove account and organization controls",
@@ -524,7 +524,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen serial check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results that mention the serial. It does not query Apple, Microsoft, manufacturer, police, or insurance databases.",
+        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results that mention the serial.",
       tellsYou:
         "Whether the serial appears in SafeOrStolen’s checked sources and public-web context.",
     },
@@ -552,9 +552,9 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
         "It can mean a school or business still controls the device. Do not buy unless the organization has properly released it and the setup screen no longer requires its credentials.",
     },
     {
-      question: "Does SafeOrStolen search manufacturer databases?",
+      question: "What does a SafeOrStolen laptop check search?",
       answer:
-        "No. A laptop check searches theft reports filed on SafeOrStolen and public web results. Manufacturer support and ownership checks are separate.",
+        "A laptop check searches theft reports filed on SafeOrStolen and public web results. For warranty and support details, contact the manufacturer.",
     },
     {
       question: "Should I trust a clean serial result?",
@@ -616,7 +616,7 @@ export const TOOLS_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen serial check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen searches theft reports that tool owners filed on SafeOrStolen and public web results that mention the serial. It does not query manufacturer, contractor, police, or insurance databases.",
+        "SafeOrStolen searches theft reports that tool owners filed on SafeOrStolen and public web results that mention the serial.",
       tellsYou:
         "Whether the identifier appears in SafeOrStolen’s checked sources and public-web context.",
     },
@@ -650,9 +650,9 @@ export const TOOLS_GUIDE: DefinitiveGuideProps = {
         "Yes. Record each tool, battery, charger, case, and tracking-module identifier because mixed kits can have different histories.",
     },
     {
-      question: "Does SafeOrStolen search manufacturer systems?",
+      question: "What does a SafeOrStolen tool check search?",
       answer:
-        "No. A tool check searches theft reports filed on SafeOrStolen and public web results. Manufacturer registration and tracking checks are separate.",
+        "A tool check searches theft reports filed on SafeOrStolen and public web results. For registration and tracking, contact the manufacturer.",
     },
   ],
   related: [
@@ -708,9 +708,9 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
       name: "Run the HIN through SafeOrStolen",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen treats the HIN as a general serial number and searches its own theft reports and public web results. It has no marine-specific source.",
+        "SafeOrStolen treats the HIN as a general serial number and searches its own theft reports and public web results for it.",
       tellsYou:
-        "Whether the HIN appears in the sources SafeOrStolen checked; official boat records remain separate.",
+        "Whether the HIN appears in the sources SafeOrStolen checked. For title and registration records, contact the state boat agency.",
     },
   ],
   redFlags: [
@@ -731,9 +731,9 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
         "No. Federal documentation generally applies to qualifying vessels, while many recreational boats are titled or numbered by states.",
     },
     {
-      question: "Does SafeOrStolen have a marine database?",
+      question: "How does SafeOrStolen check a boat?",
       answer:
-        "No. It checks a HIN like any other serial number: against theft reports filed on SafeOrStolen and public web results.",
+        "It checks a HIN like any other serial number: against theft reports filed on SafeOrStolen and public web results.",
     },
     {
       question: "Do I need to check the trailer and motor too?",
@@ -762,7 +762,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
   keywords:
     "license plate lookup, check stolen plate, plate owner lookup, DPPA plate records",
   directAnswer:
-    "The public generally cannot use a plate to obtain an owner’s private DMV information. You can compare the plate with the registration and vehicle, search public web results, and report a suspicious or found vehicle to police, who can access authorized records. Always match the VIN because a clean plate can be moved to a stolen car.",
+    "Owner information on a plate is private. You can compare the plate with the registration and vehicle, run it on SafeOrStolen to search theft reports and public web results, and report a suspicious or found vehicle to police. Always match the VIN because a clean plate can be moved to a stolen car.",
   identifierTitle: "What to record from the plate and vehicle",
   identifierIntro:
     "Record the plate exactly as displayed, its issuing state, and the vehicle details. Then compare them with the registration and VIN.",
@@ -801,7 +801,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen plate check",
       cost: "Free to try with a free account",
       description:
-        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results; Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. It does not access DMV registration records or reveal an owner’s private information.",
+        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results; Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. It never reveals an owner’s private information.",
       tellsYou:
         "Whether the plate appears in SafeOrStolen’s checked sources and public-web context.",
     },
@@ -829,9 +829,9 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
         "A plate is only a starting point because plates can be stolen or swapped. Match the registration and always check the VIN in every location.",
     },
     {
-      question: "Does SafeOrStolen access DMV records?",
+      question: "What does a SafeOrStolen plate check search?",
       answer:
-        "No. A plate check searches theft reports filed on SafeOrStolen and public web results, plus Arizona law-enforcement records for Arizona plates. It never shows owner names or other protected information.",
+        "A plate check searches theft reports filed on SafeOrStolen and public web results, plus Arizona law-enforcement records for Arizona plates. It never shows owner names or other protected information.",
     },
     {
       question: "What should I do with a suspicious plate?",
@@ -1130,9 +1130,9 @@ export const SELLER_PROOF_GUIDE: DefinitiveGuideProps = {
         "No. Share a privacy-conscious record and let a serious buyer compare the full identifier in person or through a secure channel.",
     },
     {
-      question: "Does a clean result guarantee the item was never stolen?",
+      question: "How should I describe a clean result to a buyer?",
       answer:
-        "No. Not every theft is reported and sources can change. State exactly what was checked and when.",
+        "State exactly what was checked and when, and offer the buyer proof of ownership.",
     },
     {
       question: "What should buyers verify themselves?",

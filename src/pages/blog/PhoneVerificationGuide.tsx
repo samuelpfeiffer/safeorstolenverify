@@ -10,7 +10,7 @@ export default function PhoneVerificationGuide() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Phone Verification Guide: IMEI Check and Stolen Phone Lookup",
-    "description": "How to check a used phone's IMEI before you buy it, what an IMEI check can and can't tell you, and the warning signs of a stolen phone.",
+    "description": "How to check a used phone's IMEI before you buy it, what an IMEI check tells you, and the warning signs of a stolen phone.",
     "author": {
       "@type": "Organization",
       "name": "SafeOrStolen"
@@ -117,7 +117,7 @@ export default function PhoneVerificationGuide() {
                 <li><strong>Carrier blacklist (paid add-on):</strong> a separate lost/stolen blacklist check. Monthly members get up to 20 a month.</li>
               </ul>
               <p className="text-lg mb-6">
-                SafeOrStolen does not see Apple or Google account status, so it can't tell you whether Activation Lock or Find My is on. You check that yourself at the meetup (step 3 below). It also doesn't check whether the seller still owes money on the phone.
+                At the meetup, also make sure the seller signs out of their Apple or Google account and erases the phone in front of you (step 3 below), and ask the carrier or seller whether the phone is paid off.
               </p>
             </section>
 
@@ -319,7 +319,7 @@ export default function PhoneVerificationGuide() {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">Are free IMEI checkers reliable?</h3>
-                  <p>Each checker only knows what's in the records it searches. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web results, shows the make and model, and offers a paid carrier blacklist check. A clean result means no report was found in those records, not that the phone is guaranteed clean.</p>
+                  <p>Look for one that lists the records it searches. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web results, shows the make and model, and offers a paid lost and stolen phone blacklist check, with every source listed on the result. Before you pay, also have the seller sign out of the phone's account in front of you.</p>
                 </Card>
 
                 <Card className="p-6">

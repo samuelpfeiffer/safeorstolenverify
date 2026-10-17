@@ -56,8 +56,8 @@ const CheckIfStolenPage = () => {
  {
  heading: 'What the stolen item checker searches',
  paragraphs: [
- 'Every check searches SafeOrStolen theft reports, which owners file on the site, and public web results such as listings and posts that mention the number. Some items get more: gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records; bike checks add a national stolen-bicycle registry; VIN checks decode the vehicle and list open recalls, and Arizona VINs and plates are searched against Arizona law-enforcement records; phone checks show the make and model, with a carrier blacklist search on paid checks.',
- 'It does not search NCIC, any DMV, Apple or Google account locks, or pawn and insurance databases. The full breakdown is on how it works.',
+ 'Every check searches SafeOrStolen theft reports, which owners file on the site, and public web results such as listings and posts that mention the number. Some items get more: gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records; bike checks add a national stolen-bicycle registry; VIN checks decode the vehicle and list open recalls, and Arizona VINs and plates are searched against Arizona law-enforcement records; phone checks show the make and model, with a search of the lost and stolen phone blacklist on paid checks.',
+ 'Each result names every source it searched. The full breakdown is on how it works.',
  ],
  },
  {
@@ -74,7 +74,7 @@ const CheckIfStolenPage = () => {
  {
  heading: 'What a no-match result means',
  paragraphs: [
- '"No report found in the records searched" means the number did not match anything in the sources listed. It isn\'t proof the item is clean: many owners never write their serial numbers down, and a theft from yesterday may not be reported yet. Use it alongside the warning signs above, not instead of them.',
+ '"No report found in the records searched" means the number did not match anything in the sources listed. Use it alongside the warning signs above, and ask the seller for proof of ownership before you pay.',
  ],
  },
  ]}
@@ -114,9 +114,9 @@ const CheckIfStolenPage = () => {
  'Yes. Any item with a serial number can be checked: laptops, game consoles, cameras, power tools, bikes, guns and more. The serial is usually on a label on the bottom or back, on a stamped nameplate, or in the Settings or About screen. Enter it exactly as printed, including letters, and check the photo the seller sent against the item when you meet.',
  },
  {
- question: 'Is there a national database of stolen property I can search?',
+ question: 'Where can I search stolen property records?',
  answer:
- 'No single public one exists. The FBI\'s NCIC holds police stolen-property records, but only law enforcement can search it. Thefts end up spread across local police reports, state systems and private registries. A stolen item checker like SafeOrStolen searches the sources open to it, lists them on the result, and tells you plainly what it did not search.',
+ 'Thefts are reported to local police, state systems and private registries. SafeOrStolen brings several of those sources into one search: its own theft reports, public web results, police firearm theft and loss reports, live Ohio stolen-gun records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry and, on paid phone checks, the lost and stolen phone blacklist. Each result lists the sources it searched.',
  },
  {
  question: 'What should I do if an item comes back reported stolen?',
@@ -129,9 +129,9 @@ const CheckIfStolenPage = () => {
  'Many police departments will run a serial number or VIN if you call the non-emergency line or stop by the station, and some will meet you for a sale in their lobby or parking lot. Policies vary by department. A quick online check first tells you whether it is worth involving them at all.',
  },
  {
- question: 'Does a clean result mean the item is definitely not stolen?',
+ question: 'What does a clean result mean?',
  answer:
- 'No. It means the number did not match anything in the records searched. Many stolen items were never reported with a serial number, so no database can catch them. Combine the result with the basics: the number on the item matches the listing, the seller can unlock or sign out of it, and the price and story make sense.',
+ 'It means the number did not match anything in the records searched. Before you pay, combine the result with the basics: the number on the item matches the listing, the seller can unlock or sign out of it, and the price and story make sense.',
  },
  ],
  }}

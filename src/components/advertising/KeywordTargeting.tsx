@@ -38,7 +38,7 @@ export const KeywordTargeting = () => {
  <li>Firearm serial number verification - avoid federal charges</li>
  <li>Electronics verification - laptops, MacBooks, cameras, gaming consoles</li>
  <li>Power tools and equipment serial number check</li>
- <li>Bicycle verification using SafeOrStolen reports and BikeIndex checks</li>
+ <li>Bicycle verification using SafeOrStolen reports and a national stolen-bicycle registry</li>
  </ul>
  </section>
 

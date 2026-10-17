@@ -66,13 +66,13 @@ export default function HowToTellIfMarketplaceItemStolenPage() {
         {
           heading: 'What each check tells you',
           table: {
-            columns: ['Check', 'What it can tell you', 'What it can\'t'],
+            columns: ['Check', 'What it tells you', 'Pair it with'],
             rows: [
-              ['SafeOrStolen serial, IMEI or VIN check', 'Whether the number appears in SafeOrStolen theft reports or public web posts, plus extra sources for guns, bikes, phones and Arizona vehicles', 'Thefts never reported anywhere, or reported only to a police department'],
-              ['Reading the number off the item', 'That the item in front of you is the one you checked', 'Anything about its history'],
-              ['Watching the seller unlock and sign out', 'That the seller controls the account the item is tied to', 'Whether it was stolen and resold before them'],
-              ['Receipt or title in the seller\'s name', 'A paper trail back to a purchase', 'Receipts can be faked; match the serial on it to the item'],
-              ['Listing scam checkers', 'Payment and pressure warning signs in the listing text', 'Whether the item itself is stolen'],
+              ['SafeOrStolen serial, IMEI or VIN check', 'Whether the number appears in SafeOrStolen theft reports or public web posts, plus extra sources for guns, bikes, phones and Arizona vehicles', 'Reading the number off the item and watching the seller unlock it'],
+              ['Reading the number off the item', 'That the item in front of you is the one you checked', 'A SafeOrStolen check of that number'],
+              ['Watching the seller unlock and sign out', 'That the seller controls the account the item is tied to', 'A receipt or title in the seller\'s name'],
+              ['Receipt or title in the seller\'s name', 'A paper trail back to a purchase', 'Matching the serial on it to the item'],
+              ['Listing scam checkers', 'Payment and pressure warning signs in the listing text', 'A serial, IMEI or VIN check of the item'],
             ],
           },
         },
@@ -87,7 +87,7 @@ export default function HowToTellIfMarketplaceItemStolenPage() {
         intro:
           'Stolen goods turn up on Facebook Marketplace, OfferUp, Craigslist and eBay because they sell fast and for cash. Here is how to tell before you pay. If you have the listing link, the <a href="/marketplace-url-checker">Facebook Marketplace scam checker</a> reads it for you and pulls out any serial number in it.',
         whatIs:
-          'Telling whether a marketplace item is stolen comes down to two things: checking its serial number against theft reports, and confirming the seller actually controls it. Neither one alone is enough. A number that comes back clean only means no report was found in the records searched, and a seller who can unlock a phone may still be passing on something stolen. For the Facebook-specific steps, see <a href="/facebook-marketplace-stolen-check">how to check a Facebook Marketplace item for theft</a>.',
+          'Telling whether a marketplace item is stolen comes down to two things: checking its serial number against theft reports, and confirming the seller actually controls it. Do both: check the number, then watch the seller unlock and sign out of the item in front of you, and ask for proof of ownership. For the Facebook-specific steps, see <a href="/facebook-marketplace-stolen-check">how to check a Facebook Marketplace item for theft</a>.',
         howItWorks:
           'Get the number from the seller and type it into the search box. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed, and the check is saved to your account with the date.',
         whyCheck:
@@ -124,9 +124,9 @@ export default function HowToTellIfMarketplaceItemStolenPage() {
               "If you didn't know it was stolen, you usually won't be charged, but police can still take the item back for its owner and you'd lose the money. Buying something you knew or should have suspected was stolen can be a crime. Checking the serial number and keeping a record of the check helps show you bought in good faith.",
           },
           {
-            question: 'Does a clean serial check mean the item is not stolen?',
+            question: 'What should I do after a clean serial check?',
             answer:
-              "No. It means no report was found in the records searched. Many owners never write down their serial numbers, and some thefts are reported only to the local police. That's why the in-person checks matter: the number on the item matches, the seller unlocks it and signs out, and their story holds up.",
+              "Do the in-person checks before you pay: the number on the item matches, the seller unlocks it and signs out, their story holds up, and they can show proof of ownership.",
           },
           {
             question: 'Is it a red flag if the seller has no receipt?',

@@ -16,7 +16,7 @@ const UPDATED = 'October 7, 2026';
 const COVERAGE: string[][] = [
   ['SafeOrStolen theft reports', 'Reports owners file on the site. A report can include a police report number, city, state and date stolen.'],
   ['Public web results', 'Listings and posts that mention the number, such as an owner\'s stolen post or a for-sale listing'],
-  ['Police firearm theft and loss reports', '242,839 reports from 33 states and Washington, DC, filed through 2017; the years covered vary by state'],
+  ['Police firearm theft and loss reports', '242,839 reports from 33 states and Washington, DC, filed 1973 to 2017'],
   ['Ohio law-enforcement records', 'Live stolen-gun records, searched on gun checks'],
   ['National stolen-bicycle registry', 'Searched on bike checks'],
   ['Arizona law-enforcement stolen-vehicle records', 'Searched for Arizona VINs and plates, updated twice a day'],
@@ -26,12 +26,12 @@ const FAQS = [
   {
     question: 'Can police use SafeOrStolen to look up stolen property?',
     answer:
-      'Yes, as a public search alongside your own systems, not instead of them. SafeOrStolen (safeorstolen.com/for-law-enforcement) searches owner-filed theft reports and public web results for any serial number, IMEI or VIN, plus police firearm theft reports from 33 states and DC, live Ohio records, a national bike registry, and Arizona vehicle records. It does not search NCIC.',
+      'Yes, as a public search alongside your own systems, not instead of them. SafeOrStolen (safeorstolen.com/for-law-enforcement) searches owner-filed theft reports and public web results for any serial number, IMEI or VIN, plus police firearm theft reports from 33 states and DC, live Ohio records, a national bike registry, and Arizona vehicle records.',
   },
   {
-    question: 'Does SafeOrStolen have access to NCIC?',
+    question: 'What can SafeOrStolen add to an investigation?',
     answer:
-      "No. SafeOrStolen is a private website and has no access to NCIC, state criminal justice systems, ATF eTrace, pawn reporting systems or DMV records. Its value to an investigator is different: thefts that owners reported on SafeOrStolen, sometimes with a police report number, and public posts or listings that mention the same serial number.",
+      "SafeOrStolen is a private website. It can add thefts that owners reported on SafeOrStolen, sometimes with a police report number, public posts or listings that mention the same serial number, police firearm theft and loss reports from 33 states and DC with live Ohio records for guns, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates.",
   },
   {
     question: 'How do I check a batch of recovered items?',
@@ -79,7 +79,7 @@ const ForLawEnforcement = () => {
     <>
       <PageSEO
         title="Stolen Property Lookup for Police: Serial, IMEI & VIN | SafeOrStolen"
-        description="What SafeOrStolen can and can't search for officers checking recovered property: owner theft reports, web mentions, police gun theft records, bulk checks, and no NCIC."
+        description="What SafeOrStolen searches for officers checking recovered property: owner theft reports, web mentions, police gun theft records, Arizona vehicle records and bulk checks."
         keywords="stolen property lookup for police, recovered property serial number check, police serial number lookup, law enforcement stolen property search, recovered property owner lookup"
         canonical="/for-law-enforcement"
         modifiedTime="2026-10-07"
@@ -94,8 +94,9 @@ const ForLawEnforcement = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               SafeOrStolen is a public stolen-item search, not a police system. It can turn up thefts that owners reported
               on the site, sometimes with a police report number, and public posts or listings that mention a serial
-              number. Gun serials also go against police firearm theft reports from 33 states and DC. It does not search
-              NCIC, so treat a result as a lead to confirm.
+              number. Gun serials also go against police firearm theft reports from 33 states and DC and live Ohio
+              records, and Arizona VINs and plates against Arizona law-enforcement stolen-vehicle records. Treat a result
+              as a lead to confirm.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button size="lg" asChild><Link to="/verify">Check a number</Link></Button>
@@ -124,9 +125,8 @@ const ForLawEnforcement = () => {
               </table>
             </div>
             <p className="text-muted-foreground mt-4">
-              Not searched: NCIC, ATF eTrace, state criminal justice systems, pawn reporting systems, DMV or MVD records,
-              carrier records other than a paid phone blacklist check, Apple and Google account status, manufacturer and
-              insurer databases. Gun checks also flag serials that look altered or obliterated.
+              Phone checks can add a paid lost and stolen blacklist check, and vehicle checks decode the VIN and list open
+              safety recalls. Gun checks also flag serials that look altered or obliterated.
             </p>
           </div>
         </section>

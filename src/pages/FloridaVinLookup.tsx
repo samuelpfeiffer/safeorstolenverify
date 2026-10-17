@@ -80,7 +80,7 @@ const FloridaVinLookup = () => (
         whatIs:
           "A VIN lookup uses the vehicle's 17-character identification number to find what is on record about it. For a buyer, the useful records are theft reports, which say whether the car is stolen, and title records, which say whether it has been branded salvage, rebuilt or flood, and who owns it. In Florida, stolen reports are searchable through FDLE and title records through FLHSMV.",
         howItWorks:
-          "Enter the VIN on this page. SafeOrStolen decodes the year, make and model, searches its own theft reports and public web results for that VIN, and shows open safety recalls. It does not search FDLE or FLHSMV, so run those two Florida searches as well. If any of them shows a problem, don't buy the car.",
+          "Enter the VIN on this page. SafeOrStolen decodes the year, make and model, searches its own theft reports and public web results for that VIN, and shows open safety recalls. Then run the FDLE stolen-vehicle search and the FLHSMV title check as well. If any of them shows a problem, don't buy the car.",
         whyCheck:
           "In Florida, a stolen car goes back to its owner, and the buyer usually loses what they paid. Florida also sees flood-damaged cars resold after hurricanes and titles moved through other states to hide a salvage or flood brand. A few minutes of checking before you pay protects you from both.",
         benefits: [

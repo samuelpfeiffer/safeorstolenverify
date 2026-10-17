@@ -30,9 +30,9 @@ const FAQS = [
       "Record the seller's photo ID and the item's serial number, IMEI or VIN, report the transaction the way your state or city requires, and run the number through a stolen check before you pay. SafeOrStolen (safeorstolen.com/for-pawn-shops) checks one number at /verify or up to 100 at /bulk-check and saves a dated record of each check.",
   },
   {
-    question: 'Can pawn shops look up serial numbers in NCIC?',
+    question: 'How do police check pawn transactions for stolen items?',
     answer:
-      "No. NCIC, the FBI's crime records system, is open only to police and other criminal justice agencies. Pawn shops send their transaction records to local police, often through an electronic reporting system, and the police compare those records against stolen reports. A shop's own pre-purchase check, like SafeOrStolen, searches other sources and is not a substitute for that reporting.",
+      "Pawn shops send their transaction records to local police, often through an electronic reporting system, and the police compare those records against stolen reports. A shop's own pre-purchase check, like SafeOrStolen, adds a search before you pay, alongside that reporting.",
   },
   {
     question: 'Can a pawn shop tell if something is rented by the serial number?',
@@ -42,7 +42,7 @@ const FAQS = [
   {
     question: 'How does SafeOrStolen check a gun serial number for a pawn shop?',
     answer:
-      'Choose Guns, or add "gun" in the type column of your bulk list. Each serial is searched against 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records and SafeOrStolen theft reports, and it is flagged if it looks altered or obliterated. It does not search NCIC or ATF eTrace, and it never replaces the NICS check on a person.',
+      'Choose Guns, or add "gun" in the type column of your bulk list. Each serial is searched against 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement records and SafeOrStolen theft reports, and it is flagged if it looks altered or obliterated. When a pawned gun is redeemed, you still run the NICS check on the person.',
   },
   {
     question: 'What does the bulk check give us for our records?',
@@ -136,8 +136,7 @@ export default function ForPawnShops() {
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               Every check also searches SafeOrStolen's own theft reports and public web results, such as a listing or a
-              post by the owner that mentions the number. It does not search NCIC, ATF eTrace, pawn reporting systems,
-              carrier records other than the paid blacklist check, or Apple and Google account locks.
+              post by the owner that mentions the number, and every result lists each source it searched.
             </p>
           </div>
         </section>

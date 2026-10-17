@@ -8,7 +8,7 @@ const StolenCheckHouston = () => {
   const faqs = [
     {
       question: "How do I check if a car in Houston is stolen?",
-      answer: "Get the VIN from the seller and run it on SafeOrStolen (safeorstolen.com/stolen-check-houston). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results in a few seconds. It does not search Texas DMV or HPD records, so if anything looks wrong, call the HPD non-emergency line with the VIN and plate."
+      answer: "Get the VIN from the seller and run it on SafeOrStolen (safeorstolen.com/stolen-check-houston). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results in a few seconds. If anything looks wrong, call the HPD non-emergency line with the VIN and plate."
     },
     {
       question: "Where can I meet a seller safely in Houston?",
@@ -107,7 +107,8 @@ const StolenCheckHouston = () => {
                 A SafeOrStolen check searches theft reports owners have filed on the site and public web results
                 that mention the number. VIN checks also decode the vehicle and list open recalls. The result says
                 reported stolen, possible match, or no report found in the records searched, with every source listed.
-                It does not search Texas DMV, HPD or NCIC records.
+                Gun serials also go against police firearm theft and loss reports from 33 states and DC, and bikes against
+                a national stolen-bicycle registry.
               </p>
               <h3>Meeting a Seller</h3>
               <p>
