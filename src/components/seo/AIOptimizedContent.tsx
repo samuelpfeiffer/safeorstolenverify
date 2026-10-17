@@ -16,14 +16,14 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  case 'check-phone':
  return {
  title: 'What is an IMEI Checker?',
- description: 'An IMEI checker (International Mobile Equipment Identity verifier) is a tool that helps identify a phones original model and details. While SafeOrStolen does not check carrier blacklists, phones reported stolen to carriers are typically added to a global blacklist. You can ask your carrier if a phone is on their blacklist. SafeOrStolen checks our own reports, public web results, and uses AI analysis to help determine if a phone may be stolen.',
+ description: 'An IMEI checker confirms a phone\'s make and model from its IMEI and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports and public web results for the IMEI, and the paid blacklist check searches the lost and stolen phone blacklist used by carriers.',
  databases: 'our verification databases',
  stepTitle: 'How to Check if a Phone is Stolen (Step-by-Step)'
  };
  case 'vin-lookup':
  return {
  title: 'What is a VIN Checker?',
- description: 'A VIN checker (Vehicle Identification Number lookup) helps determine if a vehicle has been reported stolen or has other issues. SafeOrStolen checks our own reports, public web results, and uses AI analysis to help determine if a vehicle may be stolen. We do not check official theft databases, insurance databases, or title registries.',
+ description: 'A VIN checker decodes a vehicle\'s year, make and model and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports and public web results for the VIN, lists open safety recalls, and searches Arizona law-enforcement stolen-vehicle records for Arizona vehicles.',
  databases: 'our verification databases',
  stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
  };

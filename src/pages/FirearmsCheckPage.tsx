@@ -109,7 +109,7 @@ const FirearmsCheckPage = () => {
  <FounderNote
  paragraphs={[
  "SafeOrStolen exists because of my friend Glen Thomure. Someone he trusted gave him a tablet, and Glen took it in good faith. It was stolen. When police ran the serial number, Glen was the one arrested, and he lost his home, his car and his savings. That was over a tablet. With a gun, the person holding it when police run the serial is in far deeper trouble.",
- "If you're buying a gun from a private seller, check the serial here first, then look closely at the serial itself for grinding, fresh stamping or numbers that don't line up. If anything seems wrong, do the sale through a licensed dealer or ask your local police to run it. Our records are historical and don't cover every state, so a no-match result here is a start, not a clearance."
+ "If you're buying a gun from a private seller, check the serial here first, then look closely at the serial itself for grinding, fresh stamping or numbers that don't line up. If anything seems wrong, do the sale through a licensed dealer or ask your local police to run it. Checking here first takes a few seconds and could save you from buying a stolen gun."
  ]}
  />
 
