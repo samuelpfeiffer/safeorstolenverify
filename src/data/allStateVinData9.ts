@@ -39,7 +39,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  localLaws: "Receiving stolen property is a crime under Ohio law, and police can take back a stolen car from whoever has it, even a buyer who didn't know. Keep a bill of sale with the seller's name, the VIN and the date. The Ohio BMV handles titles, and Ohio titles are issued through county clerk of courts title offices."
  },
  faqs: [
- { question: "How do I verify an Ohio vehicle title?", answer: "Compare the VIN on the title with the VIN on the dash and door jamb, and make sure the name on the title matches the seller's ID. Then run the VIN on SafeOrStolen to decode the model, see open recalls, and search theft reports and public web results. SafeOrStolen does not search Ohio BMV records." },
+ { question: "How do I verify an Ohio vehicle title?", answer: "Compare the VIN on the title with the VIN on the dash and door jamb, and make sure the name on the title matches the seller's ID. Then run the VIN on SafeOrStolen to decode the model, see open recalls, and search theft reports and public web results. For title questions, contact the Ohio BMV." },
  { question: "Does Ohio require VIN inspections?", answer: "Ohio requires a VIN inspection before titling a vehicle brought in from another state. That inspection confirms the VIN, but it isn't a theft history check for a private buyer, so run your own checks before you pay." },
  { question: "How do I transfer a title in Ohio?", answer: "The seller signs the title in front of a notary and you take it to a county clerk of courts title office to put it in your name. Check that the VIN on the title matches the car before anyone signs." }
  ]
@@ -81,7 +81,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  localLaws: "Possessing a vehicle you know is stolen is a crime in Oregon, and police can return a stolen car to its owner even after a sale. Keep a bill of sale with the seller's name, the VIN and the date. The Oregon DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I verify an Oregon vehicle title?", answer: "Make sure the VIN on the title matches the dash and door jamb, and the name on the title matches the seller's ID. Run the VIN on SafeOrStolen to decode the model, see open recalls, and search theft reports and public web results. SafeOrStolen does not search Oregon DMV records." },
+ { question: "How do I verify an Oregon vehicle title?", answer: "Make sure the VIN on the title matches the dash and door jamb, and the name on the title matches the seller's ID. Run the VIN on SafeOrStolen to decode the model, see open recalls, and search theft reports and public web results. For title questions, contact Oregon DMV." },
  { question: "Does Oregon require VIN inspections?", answer: "Oregon requires a VIN inspection for many vehicles coming from out of state before they can be titled. It confirms the VIN matches the paperwork, but it is not a theft history check for a buyer, so do your own checks first." },
  { question: "How do I transfer a title in Oregon?", answer: "The seller signs the title over to you, and you apply for a new title with the Oregon DMV. Before anyone signs, check that the VIN printed on the title matches the car." }
  ]

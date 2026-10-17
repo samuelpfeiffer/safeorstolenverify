@@ -42,13 +42,13 @@ const CheckLaptopPage = () => {
           },
         },
         {
-          heading: 'What a SafeOrStolen laptop check searches, and what it doesn\'t',
+          heading: 'What a SafeOrStolen laptop check searches',
           table: {
-            columns: ['Searched', 'Not searched'],
+            columns: ['Searched', 'What you see'],
             rows: [
-              ['Theft reports owners filed on SafeOrStolen', 'Apple Activation Lock or Microsoft account status'],
-              ['Public web results that mention the serial (listings, posts)', 'Manufacturer warranty or registration records'],
-              ['Every source listed on the result, saved with the date', 'Police, pawn shop or insurance records'],
+              ['Theft reports owners filed on SafeOrStolen', 'Reported stolen, possible match, or no report found in the records searched'],
+              ['Public web results that mention the serial (listings, posts)', 'Links to the listings and posts that mention it'],
+              ['Every source listed on the result', 'The check saved to your account with the date'],
             ],
           },
         },

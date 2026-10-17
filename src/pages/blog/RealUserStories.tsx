@@ -63,7 +63,7 @@ export default function RealUserStories() {
                 <li>Vehicles: the year, make and model from the VIN and any open safety recalls. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records.</li>
               </ul>
               <p className="text-lg">
-                SafeOrStolen does not search NCIC, DMV records, pawn databases or insurer databases. If you need those, ask your local police department.
+                Every result lists each source that was searched. For a car or a gun, you can also ask your local police department to run the number.
               </p>
             </section>
 
@@ -80,7 +80,7 @@ export default function RealUserStories() {
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">No report found in the records searched</h3>
-                  <p className="text-lg">Nothing turned up in the sources listed on the result. That isn't a guarantee: a theft may not have been reported yet. Still meet in a public place and check the item in person.</p>
+                  <p className="text-lg">Nothing turned up in the sources listed on the result. Before you pay, meet in a public place, check the item in person and ask for proof of ownership.</p>
                 </Card>
               </div>
               <p className="text-lg mt-4">

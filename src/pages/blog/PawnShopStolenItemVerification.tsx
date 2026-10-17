@@ -32,7 +32,7 @@ const FAQS = [
   {
     question: 'Do pawn shops check serial numbers?',
     answer:
-      "They record them. Pawn laws generally require the shop to write down the serial number, make and model of each item and pass that record to police, who run the numbers against stolen reports. A shop can't search NCIC itself. Items without a serial, like most jewelry, are described and often photographed instead, which makes them harder to match.",
+      "They record them. Pawn laws generally require the shop to write down the serial number, make and model of each item and pass that record to police, who run the numbers against stolen reports. Items without a serial, like most jewelry, are described and often photographed instead, which makes them harder to match.",
   },
   {
     question: 'Do pawn shops check if guns are stolen?',
@@ -134,9 +134,8 @@ const PawnShopStolenItemVerification = () => {
               </table>
             </div>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              The key detail: NCIC, the FBI's national crime records system, is open only to police and other criminal
-              justice agencies. A pawn shop can't type a serial number into it. The match happens on the police side, after
-              the shop's report arrives, which is why the holding period exists.
+              The key detail: police run the shop's records against stolen reports, including the FBI's national crime
+              records system, NCIC. That match happens after the shop's report arrives, which is why the holding period exists.
             </p>
           </section>
 
@@ -189,8 +188,8 @@ const PawnShopStolenItemVerification = () => {
             <p className="text-muted-foreground mb-4 leading-relaxed">
               Ask for the serial number, IMEI or VIN and run it on SafeOrStolen before you pay. It searches SafeOrStolen's
               theft reports and public web results, plus police gun theft reports from 33 states and DC for guns, a national
-              stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. It does not
-              search NCIC or pawn reporting systems. Your first 2 checks are free.
+              stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Every result
+              lists each source it searched. Your first 2 checks are free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg"><Link to="/verify">Check a serial number</Link></Button>

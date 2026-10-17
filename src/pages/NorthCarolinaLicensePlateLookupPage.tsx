@@ -26,11 +26,11 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  content={{
  intro: "Enter a North Carolina plate and SafeOrStolen searches its own theft reports, filed by owners on the site, and public web listings and posts that mention that plate. Results come back in a few seconds and list every source searched. It never shows the owner's name or address. For the fullest check on a car you're buying, run the VIN too.",
 
- whatIs: "A North Carolina license plate lookup on SafeOrStolen tells you whether anyone has reported that plate stolen on SafeOrStolen, and whether it shows up in listings or posts online. It does not search NCDMV records, title brands, or police databases in North Carolina, and it won't tell you who owns the car. Owner and registration records are only released by NCDMV under the federal Driver's Privacy Protection Act.",
+ whatIs: "A North Carolina license plate lookup on SafeOrStolen tells you whether anyone has reported that plate stolen on SafeOrStolen, and whether it shows up in listings or posts online. It never shows who owns the car; owner and registration records are released by NCDMV under the federal Driver's Privacy Protection Act.",
 
  howItWorks: "Type the plate and pick North Carolina. SafeOrStolen searches its theft reports and the public web for that plate and shows one of three results: reported stolen, possible match, or no report found in the records searched, with each source listed. The check is saved to your account with the date. Then get the VIN from the dashboard and run it; a VIN check decodes the year, make and model and lists open recalls.",
 
- whyCheck: "Plates are easy to swap, so a plate check works best as a first look before you drive to meet a seller. If the plate is tied to a theft report or an old listing for a different car, you've saved yourself a trip. Interstate 85 and Interstate 95 both run through North Carolina, and cars bought on Marketplace in Charlotte or Raleigh may have come from anywhere along them. Hurricane flooding on the coast also means some cars sold inland have hidden water damage, which no plate check will show.",
+ whyCheck: "Plates are easy to swap, so a plate check works best as a first look before you drive to meet a seller. If the plate is tied to a theft report or an old listing for a different car, you've saved yourself a trip. Interstate 85 and Interstate 95 both run through North Carolina, and cars bought on Marketplace in Charlotte or Raleigh may have come from anywhere along them. Hurricane flooding on the coast also means some cars sold inland have hidden water damage, so inspect the car and get a vehicle history report too.",
 
  benefits: [
  "Searches SafeOrStolen theft reports and public web listings for the plate",
@@ -53,11 +53,11 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "Can I check if a car is stolen in Charlotte using the license plate?",
- answer: "Yes. Enter the plate at SafeOrStolen (safeorstolen.com/north-carolina-license-plate-lookup) and choose North Carolina. It searches SafeOrStolen theft reports and public web listings for that plate in a few seconds. It does not search NCDMV or police records, so also run the VIN from the dashboard and compare the title with the seller's ID before paying."
+ answer: "Yes. Enter the plate at SafeOrStolen (safeorstolen.com/north-carolina-license-plate-lookup) and choose North Carolina. It searches SafeOrStolen theft reports and public web listings for that plate in a few seconds. Then run the VIN from the dashboard and compare the title with the seller's ID before paying."
  },
  {
  question: "How accurate is a North Carolina license plate stolen check?",
- answer: "A plate check can only find what's in the records it searches. SafeOrStolen searches its own theft reports and public web listings and lists them with the result. A clean result means no report was found there, not that the car was never stolen. Plates can be swapped, so always run the VIN and match the title too."
+ answer: "SafeOrStolen searches its own theft reports and public web listings and lists every source with the result. Plates can be swapped, so always run the VIN, match the title, and ask the seller for proof of ownership too."
  },
  {
  question: "Can I find out who owns a car from its North Carolina plate?",
@@ -73,7 +73,7 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  },
  {
  question: "What about flood-damaged vehicles from coastal North Carolina?",
- answer: "SafeOrStolen doesn't search flood or title-brand records. Ask NCDMV about the title, and inspect the car: look for silt or a waterline under the carpet and in the trunk, rust on seat bolts, fogged lights and a musty smell, especially on cars from Wilmington, New Bern or the Outer Banks."
+ answer: "Get a vehicle history report, ask NCDMV about the title, and inspect the car: look for silt or a waterline under the carpet and in the trunk, rust on seat bolts, fogged lights and a musty smell, especially on cars from Wilmington, New Bern or the Outer Banks."
  },
  {
  question: "Is the North Carolina license plate lookup free?",

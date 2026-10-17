@@ -23,7 +23,7 @@ const FirearmSerialNumberVerification = () => {
   const faqs = [
     {
       question: "How do I check if a gun is stolen by serial number?",
-      answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state), live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. It does not search NCIC or ATF eTrace."
+      answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
     },
     {
       question: "Is it illegal to buy a stolen firearm?",

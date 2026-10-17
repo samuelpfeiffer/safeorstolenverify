@@ -45,16 +45,17 @@ const TestimonialsPage = () => (
           <h2 className="text-2xl font-bold mb-4">How to judge it yourself</h2>
           <ul className="space-y-3 text-muted-foreground list-disc pl-6 mb-10">
             <li>
-              Every result lists each source that was searched, so you can see exactly what was and wasn't
+              Every result lists each source that was searched, so you can see exactly what was
               checked. The list is also on <Link to="/data-sources" className="text-primary hover:underline">data sources</Link>.
             </li>
             <li>
-              A result reads "reported stolen", "possible match", or "no report found in the records searched". A
-              no-match result isn't a guarantee, and the site says so.
+              A result reads "reported stolen", "possible match", or "no report found in the records searched". Before
+              you pay for anything, also ask the seller for proof of ownership, like a receipt or the original box.
             </li>
             <li>
-              SafeOrStolen does not search NCIC, DMV records, or Apple or Google account status. If a site claims
-              to search those for a few dollars, be skeptical.
+              Gun serials are searched against police firearm theft and loss reports from 33 states and Washington, DC,
+              bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona
+              law-enforcement stolen-vehicle records.
             </li>
             <li>
               The monthly plan ($10) can be cancelled anytime and has a 30-day refund. Details are on{' '}

@@ -22,7 +22,7 @@ const WHAT_YOU_GET: string[][] = [
 
 const SOURCES: string[][] = [
   ['Any serial number', 'SafeOrStolen theft reports and public web results (listings and posts that mention the number)'],
-  ['Guns', 'Also 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
+  ['Guns', 'Also 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'Also a national stolen-bicycle registry'],
   ['Phones (IMEI)', 'Also the make and model from the IMEI; the carrier blacklist is a separate paid check'],
   ['Vehicles (VIN)', 'Also the decoded year, make and model, open safety recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs'],
@@ -41,9 +41,9 @@ const FAQS = [
       'There is no separate business price. Every account gets 2 free checks with no credit card. After that it is $0.99 for a single check or $10 a month for unlimited checks, which is the plan bulk checking is built for. Phone blacklist checks are capped at 20 a month on that plan. You can cancel anytime, and there is a 30-day refund on the monthly plan.',
   },
   {
-    question: 'Does SafeOrStolen search police databases like NCIC?',
+    question: 'Does SafeOrStolen search police records?',
     answer:
-      "No. SafeOrStolen does not search NCIC, ATF eTrace, pawn reporting systems, DMV records or insurer databases. It searches its own theft reports and public web results, plus police firearm theft reports from 33 states and DC and live Ohio records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Treat it as one check alongside the reporting your state requires.",
+      "Yes, for several item types. It searches its own theft reports and public web results, plus police firearm theft reports from 33 states and DC and live Ohio records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Treat it as one check alongside the reporting your state requires.",
   },
   {
     question: 'Does a SafeOrStolen check satisfy state pawn or secondhand dealer laws?',
@@ -167,9 +167,8 @@ export default function ForBusinesses() {
             </div>
             <p className="text-muted-foreground">
               Each result reads "reported stolen", "possible match" or "no report found in the records searched", and lists
-              every source it checked. SafeOrStolen does not search NCIC, ATF eTrace, pawn reporting systems, DMV records,
-              manufacturer databases or insurer databases. A clean result means no report turned up in those sources, not
-              that the item is guaranteed clean.
+              every source it checked. Before you buy, also take the seller's ID and ask for proof of ownership, as your
+              state's reporting rules require.
             </p>
           </div>
         </section>
@@ -193,7 +192,7 @@ export default function ForBusinesses() {
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 ['/for-pawn-shops', 'Pawn shops', 'Counter checks, gun serials, and what the bulk CSV gives you for your files.'],
-                ['/for-dealers', 'Car dealers', 'Checking trade-ins and auction buys by VIN, and what a VIN check here does not cover.'],
+                ['/for-dealers', 'Car dealers', 'Checking trade-ins and auction buys by VIN, with decode, open recalls and theft reports.'],
                 ['/for-electronics-resellers', 'Electronics resellers', 'Bulk IMEI and serial checks for phone and laptop buys.'],
                 ['/for-auction-houses', 'Auction houses', 'Checking a consignment list before it goes in the catalog.'],
                 ['/for-marketplaces', 'Online marketplaces', 'What a marketplace can link to and ask sellers for today.'],

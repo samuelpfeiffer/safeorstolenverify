@@ -13,8 +13,8 @@ const FAQS = [
  a: "Jacksonville is the largest city by land area in the contiguous U.S. and sits on I-95, so cars for sale here come from all over Florida and up the East Coast. A car that turns out to be stolen is usually seized and returned to its owner, and the buyer is left chasing the seller for the money."
  },
  {
- q: "Does SafeOrStolen check Jacksonville Sheriff's Office or FLHSMV records?",
- a: "No. SafeOrStolen does not search Jacksonville Sheriff's Office, FLHSMV or NCIC records. It searches its own theft reports and public web results, and for VINs it adds the decoded year, make, model and open recalls. To confirm a report, call JSO's non-emergency line. For title and lien status, contact FLHSMV or the Duval County Tax Collector."
+ q: "What does SafeOrStolen check, and where else can I look?",
+ a: "SafeOrStolen searches its own theft reports and public web results, and for VINs it adds the decoded year, make, model and open recalls. You can also ask JSO's non-emergency line to run the VIN. For title and lien status, contact FLHSMV or the Duval County Tax Collector."
  },
  {
  q: "Is a license plate lookup enough or should I also check the VIN?",
@@ -75,7 +75,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  The city sits on I-95 and I-10, and cars for sale here can come from South Florida, Georgia or further up the coast. Out-of-state titles are common, which is one more reason to match the VIN on the car to the paperwork.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- After a hurricane season, flood-damaged cars also turn up for sale. SafeOrStolen won't show flood or salvage brands, so for title history get a vehicle history report and ask FLHSMV or the Duval County Tax Collector about the title.
+ After a hurricane season, flood-damaged cars also turn up for sale. For flood or salvage brands, get a vehicle history report and ask FLHSMV or the Duval County Tax Collector about the title.
  </p>
  </section>
 
@@ -86,7 +86,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  { name: 'SafeOrStolen theft reports', desc: 'thefts owners have reported on SafeOrStolen' },
  { name: 'Public web results', desc: 'listings and posts that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'year, make, model and open safety recalls when you check the VIN' },
- { name: 'Not searched', desc: 'Jacksonville Sheriff\'s Office, FLHSMV, NCIC, insurer or salvage records, and owner names' },
+ { name: 'Privacy', desc: 'owner names are never shown' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

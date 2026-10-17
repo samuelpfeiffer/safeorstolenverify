@@ -50,7 +50,7 @@ const STEPS: string[] = [
 
 const SOURCES: { item: string; sources: string }[] = [
   { item: 'Every item', sources: "SafeOrStolen's own theft reports (filed by owners on the site) and public web results that mention the number" },
-  { item: 'Guns', sources: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, and a check for serials that look altered or obliterated' },
+  { item: 'Guns', sources: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a check for serials that look altered or obliterated' },
   { item: 'Bikes', sources: 'A national stolen-bicycle registry' },
   { item: 'Phones', sources: 'Make and model decoded from the IMEI. The carrier lost/stolen blacklist is searched on a paid blacklist check' },
   { item: 'Vehicles (VIN)', sources: 'Year, make and model decoded, open safety recalls listed. Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day' },
@@ -68,16 +68,16 @@ const RULES: { label: string; rule: string }[] = [
   },
   {
     label: 'No report found in the records searched',
-    rule: 'Shown when none of the sources matched. It means exactly that, and is not a guarantee the item was never stolen. The result names the sources that actually answered, so a source that could not be reached is never counted as clean.',
+    rule: 'Shown when none of the sources matched. The result names the sources that actually answered, so a source that could not be reached is never counted as clean.',
   },
 ];
 
-const LIMITS: string[] = [
-  'It does not search NCIC, ATF eTrace, DMV or MVD records, or manufacturer, pawn or insurer databases. Only police can search NCIC.',
-  "It cannot see Apple's Activation Lock or a Google account lock. You check those in person by having the seller sign out and erase the device.",
-  'It does not establish ownership or title, and it does not check whether an item is genuine or counterfeit.',
-  'It cannot find a theft that was never reported, or reported only to a police department whose records it does not search.',
-  'Records change. A result reflects the sources on the date of the check, which is why the date is saved with it.',
+const NEXT_STEPS: string[] = [
+  'Before you pay, ask the seller for a receipt, title or other proof of ownership, and make sure the item looks genuine.',
+  'For a phone, tablet or laptop, have the seller sign out and erase the device in front of you.',
+  'For a car, get a vehicle history report, and contact the state motor vehicle agency for title or registration.',
+  'For a private gun sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.',
+  'A result reflects the sources on the date of the check, which is why the date is saved with it.',
 ];
 
 const FAQS = [
@@ -110,7 +110,7 @@ const MethodologyPage = () => {
     <>
       <PageSEO
         title="How SafeOrStolen Works: How a Check Reaches Its Result"
-        description="How SafeOrStolen decides between reported stolen, possible match and no report found, which records each item is searched against, and what a check can't tell you."
+        description="How SafeOrStolen decides between reported stolen, possible match and no report found, which records each item is searched against, and what to do alongside a check."
         keywords="how does SafeOrStolen work, SafeOrStolen methodology, how stolen checks work, what does possible match mean, stolen check result"
         canonical="/methodology"
         type="article"
@@ -178,9 +178,9 @@ const MethodologyPage = () => {
               the result. If a source reports the item as lost rather than stolen, the result says that.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">What a check can't tell you</h2>
+            <h2 className="text-2xl font-bold mt-12 mb-4">What to do alongside a check</h2>
             <ul className="list-disc pl-6 space-y-3 text-muted-foreground">
-              {LIMITS.map((l) => (
+              {NEXT_STEPS.map((l) => (
                 <li key={l}>{l}</li>
               ))}
             </ul>

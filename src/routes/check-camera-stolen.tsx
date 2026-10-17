@@ -70,7 +70,7 @@ function GuidePage() {
         whatIs:
           'A camera stolen check looks for theft reports tied to the serial numbers of the body and each lens. Owners give these serials to the police and their insurer after a theft, and can report them on SafeOrStolen. For laptops, phones and other gear, see the <a href="/check-electronics">electronics check</a>.',
         howItWorks:
-          "Type the body or lens serial into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search the camera makers' or insurers' records. Check each serial separately.",
+          "Type the body or lens serial into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Check each serial separately.",
         whyCheck:
           "Camera kits are valuable, light and easy to resell piece by piece, and stolen gear recovered by police goes back to the owner. Checking every serial, and confirming the body serial in a test photo, takes a few minutes and catches the cases a buyer can catch.",
         benefits: [

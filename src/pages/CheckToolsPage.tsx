@@ -43,10 +43,10 @@ const CheckToolsPage = () => {
         {
           heading: 'What a SafeOrStolen tool check searches',
           table: {
-            columns: ['Searched', 'Not searched'],
+            columns: ['Searched', 'What you see'],
             rows: [
-              ['Theft reports tool owners filed on SafeOrStolen', 'Manufacturer registration or tracking accounts'],
-              ['Public web results that mention the serial', 'Pawn shop, police or insurance records'],
+              ['Theft reports tool owners filed on SafeOrStolen', 'Reported stolen, possible match, or no report found in the records searched'],
+              ['Public web results that mention the serial', 'Links to the listings and posts that mention it'],
             ],
           },
         },

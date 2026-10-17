@@ -85,8 +85,9 @@ const StolenCheckSanAntonio = () => {
                 someone else's name, or a seller who wants to rush is a reason to walk away.
               </p>
               <p>
-                SafeOrStolen does not search SAPD files, NCIC or Texas DMV records. If you think you've found a
-                stolen item, call the San Antonio Police Department non-emergency line.
+                For a car or truck, you can also contact the Texas motor vehicle agency for title or registration
+                questions. If you think you've found a stolen item, call the San Antonio Police Department
+                non-emergency line.
               </p>
             </div>
           </div>

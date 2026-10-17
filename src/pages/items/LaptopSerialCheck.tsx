@@ -32,7 +32,7 @@ const LaptopSerialCheck = () => {
         { value: "Every", label: "Source Listed" }
       ]}
       whatIsTitle="What is Laptop Serial Number Verification?"
-      whatIsContent="Every laptop has a serial number from the manufacturer. When an owner reports a theft on SafeOrStolen, that serial is logged, and stolen laptops often get mentioned in posts and listings online. A SafeOrStolen laptop check searches SafeOrStolen's own theft reports and public web results for the serial. It does not search Apple, Dell, HP or Lenovo records, police databases, or iCloud lock status, so you still need to check the lock in person."
+      whatIsContent="Every laptop has a serial number from the manufacturer. When an owner reports a theft on SafeOrStolen, that serial is logged, and stolen laptops often get mentioned in posts and listings online. A SafeOrStolen laptop check searches SafeOrStolen's own theft reports and public web results for the serial. At the meetup, also watch the seller sign out and erase the laptop so you can see it isn't locked."
       howItWorksSteps={[
         "Find the serial number: on a Mac, Apple menu > About This Mac; on Windows, Settings > System > About, or the sticker on the bottom",
         "Enter the serial number at safeorstolen.com/verify",
@@ -71,7 +71,7 @@ const LaptopSerialCheck = () => {
         },
         {
           question: "Can I check a MacBook serial number?",
-          answer: "Yes. Enter the MacBook's serial at SafeOrStolen (safeorstolen.com/check-laptop-stolen) and it searches SafeOrStolen theft reports and public web results. It doesn't check Apple's records or Activation Lock, so also have the seller sign out of their Apple ID and erase the Mac in front of you."
+          answer: "Yes. Enter the MacBook's serial at SafeOrStolen (safeorstolen.com/check-laptop-stolen) and it searches SafeOrStolen theft reports and public web results. Before you pay, also have the seller sign out of their Apple ID and erase the Mac in front of you."
         },
         {
           question: "What is MacBook Activation Lock?",

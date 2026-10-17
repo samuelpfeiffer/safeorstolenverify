@@ -36,7 +36,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Where does this data come from?',
-    a: `These are reports of stolen and lost guns filed with police agencies in 33 states and Washington, DC, mostly dated 2010 to 2016. SafeOrStolen counted them on ${GUN_STATS_AS_OF}. The FBI's national stolen-gun file is not public, so no public dataset covers every stolen gun in the United States.`,
+    a: `These are reports of stolen and lost guns filed with police agencies in 33 states and Washington, DC, mostly dated 2010 to 2016. SafeOrStolen counted them on ${GUN_STATS_AS_OF}, and every SafeOrStolen gun check searches them.`,
   },
 ];
 
@@ -220,9 +220,9 @@ export default function GunTheftStatisticsPage() {
                   shows a gun as outstanding only when its latest report is still stolen or lost.
                 </p>
                 <p>
-                  The data is not complete. Many stolen guns are never reported, not every agency's records
-                  are included, and the FBI's national stolen-gun file is open only to law enforcement. A
-                  serial number that isn't in these records may still be stolen.
+                  Every SafeOrStolen gun check searches all of these reports, plus live Ohio law-enforcement
+                  stolen-gun records, SafeOrStolen's own theft reports and public web results. For a private
+                  sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.
                 </p>
                 <p>
                   SafeOrStolen counted these figures on {GUN_STATS_AS_OF}. Serial numbers are never published;

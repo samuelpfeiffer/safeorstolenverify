@@ -40,7 +40,7 @@ export const ScamAnalysisResultCard: React.FC<Props> = ({ result }) => {
         <ShieldAlert className="w-5 h-5 text-primary" />
         <div>
           <h2 className="font-semibold text-foreground text-base">Scam Risk Check</h2>
-          <p className="text-xs text-muted-foreground">An automated read of the listing for common scam signs. It does not search theft records.</p>
+          <p className="text-xs text-muted-foreground">An automated read of the listing for common scam signs. To search theft reports, run the item&apos;s serial number, IMEI or VIN.</p>
         </div>
       </header>
 

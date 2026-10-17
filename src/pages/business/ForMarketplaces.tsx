@@ -40,12 +40,12 @@ const FAQS = [
   {
     question: 'What does a SafeOrStolen check search?',
     answer:
-      "Every check searches SafeOrStolen's own theft reports and public web results that mention the number. Guns also go against police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona law-enforcement records. It does not search NCIC, carrier records other than a paid blacklist check, or Apple and Google account locks.",
+      "Every check searches SafeOrStolen's own theft reports and public web results that mention the number. Guns also go against police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona law-enforcement records. Phones can add a paid lost and stolen blacklist check.",
   },
   {
-    question: 'Does a clean check mean a listing is safe?',
+    question: 'How should we use a "no report found" result?',
     answer:
-      'No. "No report found in the records searched" means no theft report turned up in those sources on that date. Many thefts are never reported anywhere public. Treat it as one signal next to account age, price, photos that show the number, and how the seller handles questions, not as a reason to label a listing verified.',
+      '"No report found in the records searched" means no theft report turned up in the sources listed on that date. Use it as one signal next to account age, price, photos that show the number, and how the seller handles questions, not as a reason to label a listing verified.',
   },
   {
     question: 'What should a marketplace do with a listing that comes back reported stolen?',

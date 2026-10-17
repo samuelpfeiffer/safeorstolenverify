@@ -24,11 +24,11 @@ const PennsylvaniaLicensePlateLookupPage = () => {
       content={{
         intro: "Enter the Pennsylvania plate and in a few seconds SafeOrStolen tells you whether it shows up in SafeOrStolen theft reports or in public web results, such as listings and posts that mention it. It never shows the owner's name. Run the VIN too, since plates are easy to swap.",
 
-        whatIs: "A Pennsylvania license plate lookup on SafeOrStolen searches two things: theft reports that owners have filed on SafeOrStolen, and public web results that mention the plate. It does not search PennDOT, Pennsylvania State Police or NCIC records, and it never shows owner names. Use it to screen a car from Philadelphia, Pittsburgh, Allentown or Erie before you drive out to see it.",
+        whatIs: "A Pennsylvania license plate lookup on SafeOrStolen searches two things: theft reports that owners have filed on SafeOrStolen, and public web results that mention the plate. It never shows owner names. Use it to screen a car from Philadelphia, Pittsburgh, Allentown or Erie before you drive out to see it.",
 
         howItWorks: "Type the plate, pick Pennsylvania and tap check. You get one of three results: \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
 
-        whyCheck: "A plate is the first thing you can see in a listing photo, so it's the quickest way to screen a car before you meet anyone. Pennsylvania sits on I-76, I-80, I-95 and the Turnpike, and cars sold here may have come from New Jersey, New York, Ohio or Maryland. A clean plate doesn't clear the car, though. Match the VIN on the dash and door jamb to the PA title, and run that VIN as well.",
+        whyCheck: "A plate is the first thing you can see in a listing photo, so it's the quickest way to screen a car before you meet anyone. Pennsylvania sits on I-76, I-80, I-95 and the Turnpike, and cars sold here may have come from New Jersey, New York, Ohio or Maryland. Check the car as well as the plate: match the VIN on the dash and door jamb to the PA title, and run that VIN as well.",
 
         benefits: [
           "Searches SafeOrStolen theft reports and public web results",
@@ -51,15 +51,15 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "Can I check if a car is stolen in Philadelphia using the license plate?",
-            answer: "Yes. Enter the Pennsylvania plate at SafeOrStolen (safeorstolen.com/pennsylvania-license-plate-lookup) and in a few seconds you'll see whether it appears in SafeOrStolen theft reports or public web results. It doesn't search Philadelphia police or PennDOT records. For a police answer, call the Philadelphia Police non-emergency line with the VIN."
+            answer: "Yes. Enter the Pennsylvania plate at SafeOrStolen (safeorstolen.com/pennsylvania-license-plate-lookup) and in a few seconds you'll see whether it appears in SafeOrStolen theft reports or public web results. You can also call the Philadelphia Police non-emergency line and ask them to run the VIN."
           },
           {
             question: "How accurate is the Pennsylvania license plate stolen vehicle check?",
-            answer: "It's accurate for the records it searches: SafeOrStolen theft reports and public web results. It isn't a police database check, so a result of \"no report found in the records searched\" means nothing turned up there, not that the car is cleared. Follow up by matching the VIN to the title and running a VIN check."
+            answer: "It searches SafeOrStolen theft reports and public web results and lists every source with the result. Before you pay, also match the VIN to the title, run a VIN check, and ask the seller for proof of ownership."
           },
           {
             question: "Does the lookup work for vehicles in Pittsburgh and western Pennsylvania?",
-            answer: "Yes. The plate lookup works the same anywhere in Pennsylvania, including Allegheny, Westmoreland, Washington and Butler counties. The plate is searched against SafeOrStolen theft reports and public web results, not county or state police records, so on a car you're serious about, also run the VIN."
+            answer: "Yes. The plate lookup works the same anywhere in Pennsylvania, including Allegheny, Westmoreland, Washington and Butler counties. The plate is searched against SafeOrStolen theft reports and public web results. On a car you're serious about, also run the VIN."
           },
           {
             question: "What if the Pennsylvania plate comes back as stolen?",

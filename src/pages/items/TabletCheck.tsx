@@ -45,7 +45,7 @@ const TabletCheck = () => (
       {
         heading: 'Account locks: the check that matters most on a tablet',
         paragraphs: [
-          "An iPad with Find My turned on is protected by Apple's Activation Lock. After it is erased, the setup screen says \"iPad Locked to Owner\" and asks for the owner's Apple Account password. Without it, the iPad can't be set up. Apple doesn't offer a public lookup for Activation Lock, and SafeOrStolen doesn't check it either, so you have to see it on the device.",
+          "An iPad with Find My turned on is protected by Apple's Activation Lock. After it is erased, the setup screen says \"iPad Locked to Owner\" and asks for the owner's Apple Account password. Without it, the iPad can't be set up. You check Activation Lock on the device itself, by watching the seller sign out and erase it.",
           "Android tablets have a similar lock. If a tablet is reset without removing the Google account, setup asks you to sign in with a Google account that was previously synced on the device. Samsung tablets can also be tied to the owner's Samsung account.",
         ],
         list: [
@@ -70,9 +70,9 @@ const TabletCheck = () => (
       whatIs:
         'A tablet stolen check has two parts: a serial or IMEI check for theft reports, and a check that the tablet is not still locked to someone\'s Apple or Google account. For a cellular iPad you can also check the IMEI with the <a href="/imei-check">IMEI check</a>, which includes an optional paid carrier blacklist check.',
       howItWorks:
-        "Type the serial number or IMEI into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the number, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't see Apple or Google account status, so do the account steps above with the seller.",
+        "Type the serial number or IMEI into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the number, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Then do the account steps above with the seller.",
       whyCheck:
-        "A tablet that is still locked to the owner's account can't be set up, and a stolen one can be taken back by the police. The serial check catches reported thefts; watching the seller sign out and erase it catches the locked tablets that a serial check can't.",
+        "A tablet that is still locked to the owner's account can't be set up, and a stolen one can be taken back by the police. The serial check finds reported thefts, and watching the seller sign out and erase it shows you the tablet is free of account locks.",
       benefits: [
         'Works for iPad, Samsung Galaxy Tab, Amazon Fire and other tablets',
         'Checks serial numbers and IMEIs against SafeOrStolen theft reports and public web results',
@@ -96,7 +96,7 @@ const TabletCheck = () => (
         {
           question: 'Can I check an iPad serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-tablet-stolen) checks an iPad or tablet serial against its theft reports and public web results for free for your first 2 checks, with no credit card. It does not show Activation Lock status, which you check by having the seller erase the iPad in front of you.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-tablet-stolen) checks an iPad or tablet serial against its theft reports and public web results for free for your first 2 checks, with no credit card. Then check Activation Lock by having the seller erase the iPad in front of you.',
         },
         {
           question: 'How do I know if an iPad has Activation Lock?',

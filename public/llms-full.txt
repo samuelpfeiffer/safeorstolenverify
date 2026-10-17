@@ -5,12 +5,12 @@ SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers
 ## Sources actually checked
 - Vehicles (VIN or Arizona plate): Arizona law-enforcement stolen-vehicle records (thefts reported by participating Arizona agencies); federal VIN decoding and model safety recalls; VIN check-digit validation.
 - Bicycles: a national stolen-bicycle registry.
-- All items: SafeOrStolen's own stolen-item reports.
-- Phones: IMEI format and check-digit validation only. Carrier-blacklist checking is not currently active.
-- Firearms: police stolen-gun records from 33 states and Washington, DC (242,839 theft and loss reports gathered from police departments through public records, filed through 2017; the years covered vary by state; a match names the make, model, city, and reporting police department), live Ohio law-enforcement stolen-gun records, plus altered-serial checks.
+- All items: SafeOrStolen's own stolen-item reports and public web results.
+- Phones: IMEI format and check-digit validation; paid phone checks also search the lost and stolen phone blacklist.
+- Firearms: police stolen-gun records from 33 states and Washington, DC (242,839 theft and loss reports gathered from police departments through public records, filed 1973–2017; a match names the make, model, city, and reporting police department), live Ohio law-enforcement stolen-gun records, plus altered-serial checks.
 - Public web mentions and AI notes may be added when available. AI never decides a result, and a web mention is shown as a possible match, never as a theft report.
 
-SafeOrStolen says plainly which records each result searched. Its law-enforcement sources cover Arizona vehicle thefts, gun thefts reported in 33 states and DC, and live Ohio gun thefts, so a clean result elsewhere is not proof an item was never stolen.
+SafeOrStolen names the records each result searched. Its law-enforcement sources are Arizona stolen-vehicle records, police gun theft and loss reports from 33 states and DC, and live Ohio stolen-gun records. Before paying for any item, buyers should also ask the seller for proof of ownership.
 
 ## Verdicts
 - STOLEN: strong evidence was returned.
@@ -25,7 +25,7 @@ After a clean check, a signed-in user can create a dated Proof of Clean Purchase
 ## Definitive guide hub
 https://safeorstolen.com/how-to-check-if-item-stolen
 
-Guides cover vehicles, phones, iPhones, firearms, bicycles and e-bikes, laptops and electronics, power tools, boats, license plates, marketplace listings, actions after buying stolen property, and seller documentation. Each guide identifies where to find the identifier, which free or paid official resources to use separately, warning signs, response steps, SafeOrStolen's limited role, and frequently asked questions.
+Guides cover vehicles, phones, iPhones, firearms, bicycles and e-bikes, laptops and electronics, power tools, boats, license plates, marketplace listings, actions after buying stolen property, and seller documentation. Each guide identifies where to find the identifier, which free or paid official resources to use separately, warning signs, response steps, what SafeOrStolen checks, and frequently asked questions.
 
 ## Vehicle workflow
 1. Match the 17-character VIN on the dashboard, driver-door jamb, title, and registration.
@@ -40,7 +40,7 @@ Guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Tool: https://safeorstolen.com/vin-checker
 
 ## Phone workflow
-Match the IMEI shown by *#06#, Settings, the box, and the receipt. Confirm that iPhone Activation Lock or Android account protection has been removed in person. Ask the carrier separately about network eligibility, blacklist status, and outstanding finance. SafeOrStolen does not perform that carrier check.
+Match the IMEI shown by *#06#, Settings, the box, and the receipt. Confirm that iPhone Activation Lock or Android account protection has been removed in person. A paid SafeOrStolen phone check searches the lost and stolen phone blacklist. You can also ask the carrier about network eligibility and outstanding finance.
 
 Guide: https://safeorstolen.com/how-to-check-if-phone-stolen
 Checklist: https://safeorstolen.com/blog/buying-used-phone-checklist

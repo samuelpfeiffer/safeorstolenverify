@@ -52,7 +52,7 @@ const HowToVerifyAUsedItemPage = () => (
  {
  heading: 'The device-lock check most buyers skip',
  paragraphs: [
- "A phone or laptop that was never reported stolen can still be useless if it is locked to someone else's account. SafeOrStolen does not check Apple or Google account locks, and no outside website can. You have to see it happen in person.",
+ "A phone or laptop is only usable if it's free of the seller's account. Watch the seller sign out and reset it in person, before you pay.",
  ],
  list: [
  'iPhone and iPad: the seller goes to Settings > [their name] > Sign Out, then Settings > General > Transfer or Reset > Erase All Content and Settings. When it restarts at "Hello", it should not ask for their Apple ID.',
@@ -96,7 +96,7 @@ const HowToVerifyAUsedItemPage = () => (
  {
  question: 'How can I tell if something is stolen before buying it?',
  answer:
- "Check its serial number, IMEI or VIN on SafeOrStolen (safeorstolen.com/how-to-verify-a-used-item) before you meet, then look for the signs that don't show up in any database: a scratched or covered serial label, a number that doesn't match the photo, a device the seller can't unlock, a price far below market, and a seller who won't give a name or a receipt.",
+ "Check its serial number, IMEI or VIN on SafeOrStolen (safeorstolen.com/how-to-verify-a-used-item) before you meet, then look for warning signs in person: a scratched or covered serial label, a number that doesn't match the photo, a device the seller can't unlock, a price far below market, and a seller who won't give a name or a receipt.",
  },
  {
  question: 'What should I ask a seller before buying something used?',

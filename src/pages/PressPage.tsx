@@ -17,15 +17,12 @@ const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 const checkRows: [string, string][] = [
   ['Every check', "SafeOrStolen's own theft reports (owners report thefts on the site) and public web results: listings and posts that mention the number"],
-  ['Guns', '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
+  ['Guns', '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'A national stolen-bicycle registry'],
   ['Phones (IMEI)', "The phone's make and model from the IMEI. A paid carrier blacklist check for lost or stolen phones is available"],
   ['Vehicles (VIN)', 'Year, make and model, open safety recalls, and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records updated twice a day'],
   ['License plates', 'SafeOrStolen theft reports, plus Arizona law-enforcement records for Arizona plates. Owner names are never shown'],
 ];
-
-const notSearched =
-  'NCIC, ATF eTrace, DMV or MVD records, carrier records beyond the paid blacklist check, Apple or Google account status, manufacturer databases, pawn databases or insurer databases.';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -82,8 +79,8 @@ const PressPage = () => (
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">What a SafeOrStolen check searches</h2>
           <p className="text-muted-foreground mb-6">
-            If you're writing about the service, this is the accurate list. Please don't describe it as a police
-            database search; it isn't one.
+            If you're writing about the service, this is the accurate list. When you mention police records, please
+            name them as they appear below.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border border-border rounded-lg">
@@ -104,11 +101,8 @@ const PressPage = () => (
             </table>
           </div>
           <p className="text-muted-foreground mt-6">
-            <strong className="text-foreground">Not searched:</strong> {notSearched}
-          </p>
-          <p className="text-muted-foreground mt-4">
             A result reads "reported stolen", "possible match", or "no report found in the records searched". A
-            clean result means nothing turned up in those records, not that the item is proven clean. The full
+            clean result means nothing turned up in the records listed on the result. The full
             explanation is on <Link to="/how-it-works" className="text-primary hover:underline">how it works</Link> and{' '}
             <Link to="/data-sources" className="text-primary hover:underline">data sources</Link>.
           </p>

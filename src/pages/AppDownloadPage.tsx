@@ -15,7 +15,7 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
     item: 'Gun',
     number: 'Serial on the frame or receiver',
     searched:
-      '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. Serials that look altered are flagged.',
+      '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. Serials that look altered are flagged.',
   },
   {
     item: 'Phone',
@@ -65,7 +65,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is there an app to check a gun serial number?',
-    a: 'Yes. In the SafeOrStolen app, enter the serial number from the frame or receiver. It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered. It does not search NCIC or ATF eTrace, which only police can use.',
+    a: 'Yes. In the SafeOrStolen app, enter the serial number from the frame or receiver. It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.',
   },
   {
     q: 'Is the SafeOrStolen app on the App Store or Google Play?',
@@ -81,7 +81,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Can I check an IMEI with the app?',
-    a: "Yes. Dial *#06# on the phone you're buying, or look in Settings > General > About on an iPhone, then enter the IMEI. You get the make and model and any SafeOrStolen theft reports. The carrier lost/stolen blacklist check is a paid add-on. The app can't see Activation Lock, so have the seller sign out of their Apple or Google account in front of you.",
+    a: "Yes. Dial *#06# on the phone you're buying, or look in Settings > General > About on an iPhone, then enter the IMEI. You get the make and model and any SafeOrStolen theft reports. A paid check also searches the lost and stolen phone blacklist. Have the seller sign out of their Apple or Google account in front of you.",
   },
 ];
 
@@ -215,7 +215,6 @@ export default function AppDownloadPage() {
               </table>
             </div>
             <p className="text-gray-400 text-sm mt-4">
-              Not searched: NCIC, ATF eTrace, DMV records, Activation Lock or Google account status, pawn or insurance databases.
               Every result says which sources were checked.
             </p>
           </div>
@@ -260,7 +259,7 @@ export default function AppDownloadPage() {
               <li>Run the check at home on a good connection. If it comes back reported stolen, don't go.</li>
               <li>At the meetup, read the number off the item yourself and make sure it matches the photo. A scratched or ground-down serial is a reason to walk away.</li>
               <li>For a phone, have the seller sign out of their Apple ID or Google account and reset it while you watch.</li>
-              <li>Keep the result in your account. If you're buying a gun privately, follow your state's transfer rules too; a clean check doesn't replace them.</li>
+              <li>Keep the result in your account. If you're buying a gun privately, follow your state's transfer rules as well.</li>
             </ol>
           </div>
         </section>

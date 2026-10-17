@@ -28,12 +28,12 @@ const OhioLicensePlateLookupPage = () => {
  ]}
  content={{
  intro: "Enter an Ohio plate on SafeOrStolen and in a few seconds you'll see whether it matches a theft report filed on the site. Use it to screen a car before you meet the seller in Columbus, Cleveland, Cincinnati, Toledo or anywhere in Ohio. Then check the VIN, because plates can be swapped between cars. SafeOrStolen is a private service, not the Ohio BMV, and it never shows owner names.",
- whatIs: "An Ohio plate lookup on SafeOrStolen checks an OH license plate number against theft reports that owners have filed on SafeOrStolen. The result says reported stolen, possible match, or no report found in the records searched, and lists every source. It does not search Ohio BMV registration records, Ohio police systems or NCIC, and it cannot tell you who owns the car.",
- howItWorks: "Type the plate, pick Ohio, and run the check. SafeOrStolen searches its theft reports and shows the result in a few seconds. For a fuller check, run the car's VIN too: a VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results.",
- whyCheck: "A plate is the quickest thing to read off a listing photo, so it's a good first screen before you drive across town. But plates can be taken off one car and put on another, so a plate check is only step one. Match the VIN on the dashboard, the driver door jamb and the Ohio title, and make sure the name on the title matches the seller's ID.",
+ whatIs: "An Ohio plate lookup on SafeOrStolen checks an OH license plate number against theft reports that owners have filed on SafeOrStolen. The result says reported stolen, possible match, or no report found in the records searched, and lists every source. It never shows owner names.",
+ howItWorks: "Type the plate, pick Ohio, and run the check. SafeOrStolen searches its theft reports and shows the result in a few seconds. Then run the car's VIN too: a VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results.",
+ whyCheck: "A plate is the quickest thing to read off a listing photo, so it's a good first screen before you drive across town. But plates can be taken off one car and put on another, so check the VIN as well. Match the VIN on the dashboard, the driver door jamb and the Ohio title, and make sure the name on the title matches the seller's ID.",
  benefits: [
  "Checks the plate against SafeOrStolen theft reports in a few seconds",
- "Lists every source searched, so you know what was and wasn't checked",
+ "Lists every source searched with the result",
  "Never shows owner names or addresses",
  "Works for plates from Columbus, Cleveland, Cincinnati, Toledo and the rest of Ohio",
  "Each check is saved to your account with the date",
@@ -50,11 +50,11 @@ const OhioLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "Is SafeOrStolen an official Ohio BMV plate lookup?",
- answer: "No. SafeOrStolen (safeorstolen.com/ohio-license-plate-lookup) is a private stolen-item check, not a government site. It searches theft reports owners have filed on SafeOrStolen. It does not connect to Ohio BMV, OHID or police systems, and it never shows owner names. Ohio BMV records requests are handled by the BMV itself under state and federal privacy rules."
+ answer: "No. SafeOrStolen (safeorstolen.com/ohio-license-plate-lookup) is a private stolen-item check, not a government site. It searches theft reports owners have filed on SafeOrStolen, and it never shows owner names. Ohio BMV records requests are handled by the BMV itself under state and federal privacy rules."
  },
  {
  question: "Can I check if a car is stolen in Ohio using just the license plate?",
- answer: "You can screen it. A SafeOrStolen plate check tells you whether the plate matches a theft report on the site. But plates can be swapped, so it isn't enough by itself. Check the VIN too, match it on the dash, door jamb and title, and if anything looks wrong, call the local police non-emergency line with the plate and VIN."
+ answer: "You can screen it. A SafeOrStolen plate check tells you whether the plate matches a theft report on the site. Plates can be swapped, so check the VIN too, match it on the dash, door jamb and title, and if anything looks wrong, call the local police non-emergency line with the plate and VIN."
  },
  {
  question: "Can I find out who owns an Ohio license plate?",
@@ -62,7 +62,7 @@ const OhioLicensePlateLookupPage = () => {
  },
  {
  question: "What information can I get from an Ohio plate lookup?",
- answer: "A SafeOrStolen plate check shows whether the plate matches a theft report filed on SafeOrStolen: reported stolen, possible match, or no report found in the records searched, with every source listed. It does not show owner details, registration status or title history. A VIN check adds the year, make, model and open recalls."
+ answer: "A SafeOrStolen plate check shows whether the plate matches a theft report filed on SafeOrStolen: reported stolen, possible match, or no report found in the records searched, with every source listed. Owner details are never shown. For title history, get a vehicle history report. A VIN check adds the year, make, model and open recalls."
  },
  {
  question: "Is an Ohio plate lookup free?",

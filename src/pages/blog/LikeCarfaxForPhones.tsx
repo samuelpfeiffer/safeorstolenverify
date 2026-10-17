@@ -12,7 +12,7 @@ const LikeCarfaxForPhones = () => {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Like Carfax for Phones: How to Check an IMEI Before Buying",
-    "description": "There's no Carfax for phones, but you can check a used phone's IMEI for theft reports before you pay. Here's where to find the IMEI, what a SafeOrStolen check shows, and what it doesn't cover.",
+    "description": "There's no Carfax for phones, but you can check a used phone's IMEI for theft reports before you pay. Here's where to find the IMEI, what a SafeOrStolen check shows, and what to check in person.",
     "author": {
       "@type": "Organization",
       "name": "SafeOrStolen"
@@ -43,7 +43,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "How is SafeOrStolen like Carfax?",
-            answer: "Both start from a unique number. Carfax takes a VIN and returns a vehicle history. SafeOrStolen takes an IMEI, VIN or serial number and tells you whether it appears in SafeOrStolen theft reports or public web results, with every source listed. It doesn't show accidents, repairs or previous owners."
+            answer: "Both start from a unique number. Carfax takes a VIN and returns a vehicle history. SafeOrStolen takes an IMEI, VIN or serial number and tells you whether it appears in SafeOrStolen theft reports or public web results, with every source listed. For a phone, it also shows the make and model from the IMEI, and a paid check adds carrier blacklist status."
           },
           {
             question: "Can I check a phone like Carfax checks a car?",
@@ -229,7 +229,7 @@ const LikeCarfaxForPhones = () => {
               <ul className="space-y-3">
                 <li>
                   <h4 className="font-bold text-lg mb-1 text-green-700 dark:text-green-400">No report found in the records searched</h4>
-                  <p className="text-sm text-muted-foreground">Nothing matched in the sources listed. It doesn't prove the phone is clean, so still have the seller sign out of the account in front of you.</p>
+                  <p className="text-sm text-muted-foreground">Nothing matched in the sources listed. Before you pay, have the seller sign out of the account in front of you.</p>
                 </li>
                 <li>
                   <h4 className="font-bold text-lg mb-1 text-yellow-700 dark:text-yellow-400">Possible match</h4>

@@ -67,7 +67,7 @@ export default function HowToCheckIfTvStolenPage() {
         whatIs:
           'A TV stolen check looks for theft reports tied to the TV\'s serial number. Owners give the serial to the police when a TV is stolen, and can report it on SafeOrStolen. The model number is the same for every TV of that model, so make sure you check the serial. For other electronics, see the <a href="/check-electronics">electronics check</a>.',
         howItWorks:
-          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't search manufacturer, retailer or insurer records.",
+          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also ask the seller for the receipt.",
         whyCheck:
           "TVs are taken in burglaries, from stores and from delivery trucks and porches, then resold online. A stolen TV recovered by police goes back to the owner, and the buyer loses what they paid. Checking the serial and asking for the receipt takes a few minutes.",
         benefits: [

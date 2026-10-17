@@ -255,7 +255,7 @@ const CarfaxVsFreeVinAlternatives = () => {
               <li>Arizona law-enforcement stolen-vehicle records, for Arizona VINs (updated twice a day)</li>
               <li>the year, make and model, and any open safety recalls</li>
             </ul>
-            <p>It does not search NCIC, DMV records or insurer databases.</p>
+            <p>Every result lists each source it searched, and the check is saved to your account with the date.</p>
 
             <h2>Frequently Asked Questions</h2>
             

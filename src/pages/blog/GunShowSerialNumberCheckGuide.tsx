@@ -145,7 +145,7 @@ const GunShowSerialNumberCheckGuide = () => (
           <p className="text-muted-foreground leading-relaxed">
             The strongest option is to do the deal through a licensed dealer at the show. The dealer runs your background
             check and keeps a record of the transfer, and since August 2025 dealers can choose to check the serial against
-            the FBI's NCIC stolen-gun file, which the public can't search. Ask the dealer up front whether they'll do that.
+            the FBI's NCIC stolen-gun file. Ask the dealer up front whether they'll do that.
           </p>
         </section>
 

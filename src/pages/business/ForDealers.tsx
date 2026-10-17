@@ -19,9 +19,7 @@ const COVERS: string[][] = [
   ['SafeOrStolen theft reports', 'Yes'],
   ['Public web results that mention the VIN', 'Yes'],
   ['Arizona law-enforcement stolen-vehicle records', 'Yes, for Arizona VINs and plates (updated twice a day)'],
-  ['NCIC stolen vehicle file', 'No. Only police can search it.'],
-  ['Title brands (salvage, flood, rebuilt), odometer, liens', 'No. Use an NMVTIS vehicle history report or your usual history provider.'],
-  ['State DMV or MVD registration records', 'No'],
+  ['A dated record of every check, with the sources searched', 'Yes'],
 ];
 
 const FAQS = [
@@ -31,9 +29,9 @@ const FAQS = [
       'Match the VIN on the dash plate, the driver-door sticker and the title, check the seller\'s ID against the name on the title, then run the VIN on SafeOrStolen (safeorstolen.com/for-dealers). It decodes the vehicle, lists open recalls and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. Ask your local police if anything looks off.',
   },
   {
-    question: 'Does a SafeOrStolen VIN check show salvage or flood titles?',
+    question: 'Where do we get salvage or flood title history?',
     answer:
-      "No. SafeOrStolen doesn't search title, odometer, lien or insurance total-loss records. Get those from an NMVTIS vehicle history report or the history service you already use. Use SafeOrStolen for what it adds: the decoded year, make and model, open safety recalls, theft reports and web mentions of the VIN, and Arizona stolen-vehicle records.",
+      "Get title brands, odometer and lien history from an NMVTIS vehicle history report or the history service you already use. A SafeOrStolen VIN check adds the decoded year, make and model, open safety recalls, theft reports and web mentions of the VIN, and Arizona stolen-vehicle records.",
   },
   {
     question: 'Can we check a list of VINs from an auction purchase?',
@@ -81,7 +79,7 @@ export default function ForDealers() {
     <>
       <PageSEO
         title="VIN Check for Car Dealers: Stolen Trade-In Check | SafeOrStolen"
-        description="How car dealers check trade-ins and auction buys for theft reports by VIN: what a SafeOrStolen VIN check covers and doesn't, bulk VIN checks, and the record you keep."
+        description="How car dealers check trade-ins and auction buys for theft reports by VIN: what a SafeOrStolen VIN check covers, bulk VIN checks, and the record you keep."
         keywords="vin check for car dealers, dealer stolen vehicle check, stolen trade-in check, dealership vin verification, bulk vin check, check if trade in is stolen"
         canonical="/for-dealers"
         modifiedTime="2026-10-07"
@@ -96,8 +94,8 @@ export default function ForDealers() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Run every trade-in and auction buy through a VIN check before you cut a check. SafeOrStolen decodes the year,
               make and model, lists open safety recalls, and searches its theft reports and public web results for the VIN.
-              Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. It does not cover title
-              brands, odometer or liens, so keep your usual history report for those.
+              Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. Pair it with your usual
+              history report for title brands, odometer and liens.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button size="lg" asChild><Link to="/vin-checker">Check a VIN</Link></Button>

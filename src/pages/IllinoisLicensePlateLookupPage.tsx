@@ -24,9 +24,9 @@ const IllinoisLicensePlateLookupPage = () => {
  ]}
  content={{
  intro: "Enter an Illinois plate and SafeOrStolen searches its own theft reports and public web results for it in a few seconds. Use it to screen a car from a Chicago, Aurora, Rockford or Naperville seller before you go see it, then run the VIN too. It never shows the owner's name.",
- whatIs: "An Illinois license plate lookup on SafeOrStolen tells you whether an IL plate appears in SafeOrStolen theft reports, filed by owners, or in public web results such as listings and posts. Every source is listed with the result. It does not search Illinois Secretary of State registration records, Chicago Police or NCIC, and it doesn't show owner names, addresses or registration status.",
+ whatIs: "An Illinois license plate lookup on SafeOrStolen tells you whether an IL plate appears in SafeOrStolen theft reports, filed by owners, or in public web results such as listings and posts. Every source is listed with the result, and owner names and addresses are never shown.",
  howItWorks: "Type the plate exactly as shown, letters and numbers only, and pick Illinois. SafeOrStolen searches its theft reports and public web results and returns reported stolen, possible match, or no report found in the records searched. The check is saved to your account with the date. For year, make, model and open recalls, run the VIN from the dashboard or driver's door jamb.",
- whyCheck: "Plates are easy to move from one car to another, so a plate check is a first screen, not the final word. Chicago's used-car market moves fast, and cars cross into Indiana and Wisconsin easily. Check the plate before you drive out, check the VIN when you see the car, and make sure the name on the Illinois title matches the seller's ID.",
+ whyCheck: "Plates are easy to move from one car to another, so check the VIN as well as the plate. Chicago's used-car market moves fast, and cars cross into Indiana and Wisconsin easily. Check the plate before you drive out, check the VIN when you see the car, and make sure the name on the Illinois title matches the seller's ID.",
  benefits: [
  "2 free checks with a free account, no credit card",
  "Searches SafeOrStolen theft reports and public web results",
@@ -55,15 +55,15 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "What information can I get from an Illinois license plate lookup?",
- answer: "On SafeOrStolen, you see whether the plate appears in SafeOrStolen theft reports or public web results, with each source listed. You won't see the owner's name, address or registration status; the Illinois Secretary of State keeps those, and access is restricted under the federal Driver's Privacy Protection Act."
+ answer: "On SafeOrStolen, you see whether the plate appears in SafeOrStolen theft reports or public web results, with each source listed. Owner names, addresses and registration details are never shown; the Illinois Secretary of State keeps those, and access is restricted under the federal Driver's Privacy Protection Act."
  },
  {
  question: "How much does an Illinois license plate lookup cost?",
  answer: "Your first 2 SafeOrStolen checks are free with a free account and no credit card. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The same account checks VINs, so you can run the plate and the VIN on the same car."
  },
  {
- question: "Does SafeOrStolen search Illinois Secretary of State records?",
- answer: "No. SafeOrStolen doesn't search Illinois Secretary of State registration or title records, Chicago Police records or NCIC. It searches its own theft reports and public web results. For title or lien questions, contact the Illinois Secretary of State. To confirm a theft report, call local police."
+ question: "What does SafeOrStolen search for an Illinois plate?",
+ answer: "SafeOrStolen searches its own theft reports and public web results, and lists every source with the result. For title or lien questions, contact the Illinois Secretary of State. To confirm a theft report, call local police."
  },
  {
  question: "What if the name on the title doesn't match the seller?",

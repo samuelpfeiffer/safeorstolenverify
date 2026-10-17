@@ -70,7 +70,7 @@ function GuidePage() {
               ["SafeOrStolen VIN check", "Whether the VIN is in SafeOrStolen theft reports or public web results; the decoded year, make and model; open safety recalls", "2 free checks"],
               ["Frame vs. title", "Whether the paperwork belongs to this bike", "Free"],
               ["Seller ID vs. title", "Whether the seller is the owner", "Free"],
-              ["Police VIN check", "Some departments will run the VIN through systems the public can't search. Call the non-emergency line and ask.", "Usually free"],
+              ["Police VIN check", "Many departments will run the VIN for you. Call the non-emergency line and ask.", "Usually free"],
               ["State title check by VIN", "Title brands such as salvage or rebuilt, where your state's DMV offers one", "Varies by state"],
             ],
           },
@@ -82,7 +82,7 @@ function GuidePage() {
         whatIs:
           "A motorcycle VIN check uses the 17-character number stamped on the frame to look for theft reports and confirm what the bike is. If the decoded year, make and model don't match the bike in front of you, the VIN or the paperwork has been swapped. Owners who report a theft to SafeOrStolen add the VIN to the records every check searches.",
         howItWorks:
-          "Enter the VIN in the box. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web results for that VIN. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day. The result reads reported stolen, possible match, or no report found in the records searched, with each source listed. It does not search NCIC or DMV records.",
+          "Enter the VIN in the box. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web results for that VIN. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day. The result reads reported stolen, possible match, or no report found in the records searched, with each source listed. For title or registration questions, contact your state motor vehicle agency.",
         whyCheck:
           "Motorcycles are easy to steal, quick to strip and often sold for cash with no paperwork. If police recover a stolen bike from you, it goes back to the owner and you usually lose what you paid. A few minutes with the VIN and the paperwork protects you.",
         benefits: [

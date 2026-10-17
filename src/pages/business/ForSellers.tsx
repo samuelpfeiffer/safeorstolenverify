@@ -41,9 +41,9 @@ const FAQS = [
       'The check comes first: 2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks. The certificate is $1.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
   },
   {
-    question: 'Does a clean check guarantee my item isn\'t stolen?',
+    question: 'What else should I show buyers besides the certificate?',
     answer:
-      'No. "No report found in the records searched" means nothing turned up in those sources on that date. Many thefts are never reported anywhere public, and SafeOrStolen does not search NCIC, DMV records or carrier records other than a paid blacklist check. The certificate shows you looked. Your receipt and the item\'s history show you own it.',
+      'The certificate shows you ran the check on that date and lists every source searched. Your receipt and the item\'s history show you own it, so keep them ready to show buyers too.',
   },
   {
     question: 'What if my own item comes back reported stolen?',
@@ -85,7 +85,7 @@ export default function ForSellers() {
     <>
       <PageSEO
         title="How to Prove an Item Isn't Stolen When Selling It | SafeOrStolen"
-        description="Show buyers you checked an item before listing it: run the serial, IMEI or VIN, add a $1.99 dated verification certificate, and post its link. What buyers see and what it can't prove."
+        description="Show buyers you checked an item before listing it: run the serial, IMEI or VIN, add a $1.99 dated verification certificate, and post its link. What buyers see and what to keep with it."
         keywords="how to prove an item is not stolen, prove item not stolen when selling, verification certificate for sellers, show buyer item is not stolen, seller stolen check"
         canonical="/for-sellers"
         modifiedTime="2026-10-07"

@@ -73,7 +73,7 @@ const CheckAppliancesPage = () => (
       whatIs:
         "An appliance check looks for a theft report tied to the appliance's serial number. Owners, landlords and builders give the serial to the police when appliances are stolen. The serial number is unique to the unit; the model number is shared by every unit of that model, so make sure you check the serial.",
       howItWorks:
-        "Type the serial number from the rating plate into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't search manufacturer, retailer or warranty records.",
+        "Type the serial number from the rating plate into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. For warranty details, contact the manufacturer.",
       whyCheck:
         "Appliances are expensive, and a stolen one can be taken back by the police and returned to the owner, leaving you without the money or the appliance. A serial check takes a few seconds, and the questions about receipts and installation tell you a lot about who you are buying from.",
       benefits: [

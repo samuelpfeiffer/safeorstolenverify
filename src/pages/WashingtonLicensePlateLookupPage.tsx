@@ -12,7 +12,7 @@ const WashingtonLicensePlateLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="Washington License Plate Lookup: Free WA Stolen Car Check | SafeOrStolen"
- metaDescription="Free Washington license plate lookup: check if a WA plate has been reported stolen, what a plate search can't show you, and what to check before you buy."
+ metaDescription="Free Washington license plate lookup: check if a WA plate has been reported stolen, what a plate search shows you, and what to check before you buy."
  h1="Washington License Plate Lookup: Is This Car Stolen?"
  itemType="Vehicle"
  searchType="plate"
@@ -59,7 +59,7 @@ const WashingtonLicensePlateLookupPage = () => {
  ]}
  content={{
  intro: "Enter a Washington plate and SafeOrStolen searches its own theft reports and public web results, such as listings and posts that mention that plate. You'll know in a few seconds whether it's been reported stolen. It's a quick first check for a car you found in Seattle, Spokane, Tacoma, Vancouver or anywhere else in the state.",
- whatIs: "A Washington plate lookup on SafeOrStolen answers one question: has this plate been reported stolen in the records SafeOrStolen searches? It does not show the owner's name or the car's registration status, and it doesn't search Washington Department of Licensing records. Because plates can be moved from one car to another, follow it with a VIN check.",
+ whatIs: "A Washington plate lookup on SafeOrStolen answers one question: has this plate been reported stolen in SafeOrStolen's theft reports or mentioned in public web results? It never shows the owner's name. For title or registration questions, contact the Washington Department of Licensing. Because plates can be moved from one car to another, follow it with a VIN check.",
  howItWorks: "Type the plate and pick Washington. SafeOrStolen searches its own theft reports and public web results and shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source searched is listed, and the check is saved to your account with the date. For the VIN, the check also decodes the year, make and model and lists open safety recalls.",
  whyCheck: "A stolen car can be taken back by police and returned to its owner, even if you paid a fair price, and you're left trying to get your money from the seller. A plate check before you drive across town costs nothing with your free checks, and a VIN check before you pay closes the gap a swapped plate would leave.",
  benefits: [
@@ -88,7 +88,7 @@ const WashingtonLicensePlateLookupPage = () => {
  },
  {
  question: "What information can I get from a Washington license plate lookup?",
- answer: "From the plate, SafeOrStolen tells you whether it appears in SafeOrStolen's theft reports or in public listings and posts online, and lists every source it searched. From the VIN, it also decodes the year, make and model and lists open safety recalls. It does not show registration status or the owner."
+ answer: "From the plate, SafeOrStolen tells you whether it appears in SafeOrStolen's theft reports or in public listings and posts online, and lists every source it searched. From the VIN, it also decodes the year, make and model and lists open safety recalls. It never shows the owner's name."
  },
  {
  question: "Is a Washington license plate lookup free?",

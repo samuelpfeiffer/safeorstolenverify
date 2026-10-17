@@ -32,7 +32,7 @@ const JewelryCheck = () => {
         { value: "Every", label: "Source Listed" }
       ]}
       whatIsTitle="What is Jewelry Verification?"
-      whatIsContent="Some jewelry carries a unique number: a laser inscription on a diamond's girdle (often a GIA or AGS report number), or a serial engraved by the maker. A SafeOrStolen check searches SafeOrStolen's own theft reports and public web results for that number. It doesn't search police, insurer or pawn databases, and plain gold pieces without a unique number can't be matched by number at all."
+      whatIsContent="Some jewelry carries a unique number: a laser inscription on a diamond's girdle (often a GIA or AGS report number), or a serial engraved by the maker. A SafeOrStolen check searches SafeOrStolen's own theft reports and public web results for that number. For plain gold pieces without a unique number, ask the seller for a receipt or appraisal."
       howItWorksSteps={[
         "Find a unique number: a laser inscription on the diamond's girdle (use a 10x loupe) or an engraved serial",
         "Enter the number at safeorstolen.com/verify",

@@ -13,8 +13,8 @@ const DestinLicensePlateLookupPage = () => {
  a: "Enter the Florida plate or the VIN at SafeOrStolen (safeorstolen.com/verify). In a few seconds it searches SafeOrStolen theft reports and public web results that mention the number, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks with a free account, no credit card. Owner names are never shown."
  },
  {
- q: "Does SafeOrStolen search Florida police or FLHSMV records?",
- a: "No. A Florida plate or VIN check searches SafeOrStolen's own theft reports and public web results only; it does not search FLHSMV, FDLE, NCIC or sheriff's office records. FDLE runs its own public stolen-vehicle search you can use for free, and the Okaloosa County Sheriff's Office non-emergency line can tell you whether a VIN is reported stolen."
+ q: "What else can I do to check a car in Destin?",
+ a: "A Florida plate or VIN check on SafeOrStolen searches its own theft reports and public web results, and decodes the VIN with open recalls. You can also use FDLE's free public stolen-vehicle search, ask the Okaloosa County Sheriff's Office non-emergency line to run the VIN, and contact the state motor vehicle agency for title or registration questions."
  },
  {
  q: "What should I watch for when buying a car from someone leaving Eglin or Hurlburt Field?",
@@ -78,7 +78,7 @@ const DestinLicensePlateLookupPage = () => {
  So check the paperwork, not the story. The name on the Florida title should match the seller's ID. The VIN on the title should match the VIN on the dash and the sticker in the driver's door jamb. Then run the plate and the VIN.
  </p>
  <p className="text-muted-foreground leading-relaxed">
- Cars move fast along I-10 between Pensacola, Mobile and the Georgia line, so a car stolen out of state can turn up here. SafeOrStolen's theft reports and web results aren't limited to Florida, but it does not search other states' police records. For that, call the Okaloosa County Sheriff's Office non-emergency line.
+ Cars move fast along I-10 between Pensacola, Mobile and the Georgia line, so a car stolen out of state can turn up here. SafeOrStolen's theft reports and web results aren't limited to Florida. You can also call the Okaloosa County Sheriff's Office non-emergency line and ask them to run the VIN.
  </p>
  </section>
 
@@ -89,7 +89,7 @@ const DestinLicensePlateLookupPage = () => {
  { name: 'SafeOrStolen theft reports', desc: 'Thefts that owners have reported on SafeOrStolen' },
  { name: 'Public web results', desc: 'Listings and posts online that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'Year, make and model from the VIN, plus open safety recalls' },
- { name: 'What it does not search', desc: 'FLHSMV, FDLE, NCIC or sheriff records. Owner names are never shown' },
+ { name: 'Privacy', desc: 'Owner names are never shown' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />

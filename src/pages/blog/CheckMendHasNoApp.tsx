@@ -145,7 +145,7 @@ const CheckMendHasNoApp = () => {
               <li><strong>Vehicles:</strong> year, make and model from the VIN, open safety recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates.</li>
             </ul>
             <p>
-              It does not search NCIC, DMV records, pawn databases or insurer databases. A "no report found" result means nothing turned up in the records listed, not that the item is guaranteed clean.
+              Every result lists each source it searched. Before you pay, also ask the seller for proof of ownership, like a receipt or the original box.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-6">How to put SafeOrStolen on your phone</h2>

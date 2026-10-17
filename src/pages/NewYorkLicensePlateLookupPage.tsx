@@ -23,9 +23,9 @@ const NewYorkLicensePlateLookupPage = () => {
  ]}
  content={{
  intro: "Type a New York plate into SafeOrStolen and in a few seconds you see whether it matches a theft report filed on SafeOrStolen or shows up in public web results, such as a stolen-car post. The lookup never shows owner names. Treat it as a first screen for a car you found in New York City, Buffalo, Rochester or anywhere in the state, then check the VIN on the car before you pay.",
- whatIs: "A New York plate lookup on SafeOrStolen searches the plate against SafeOrStolen's own theft reports and public web results. It does not search New York DMV records or police databases, it does not show the registered owner, and it does not report registration status.",
+ whatIs: "A New York plate lookup on SafeOrStolen searches the plate against SafeOrStolen's own theft reports and public web results, and lists every source with the result. It never shows the registered owner. For title or registration questions, contact the New York DMV.",
  howItWorks: "Enter the plate exactly as it appears. SafeOrStolen searches its theft reports and public web results and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. Each check is saved to your account with the date.",
- whyCheck: "Plates come off one car and go on another easily, so a plate check is only the first step. New York requires plates on the front and the back; if a car has only one, or the two don't match, ask why. Then match the VIN on the dashboard, the driver's door sticker and the title, and compare the name on the title to the seller's ID.",
+ whyCheck: "Plates come off one car and go on another easily, so check the VIN as well as the plate. New York requires plates on the front and the back; if a car has only one, or the two don't match, ask why. Then match the VIN on the dashboard, the driver's door sticker and the title, and compare the name on the title to the seller's ID.",
  benefits: [
  "Check a New York plate for SafeOrStolen theft reports",
  "Public web results that mention the plate",
@@ -51,11 +51,11 @@ const NewYorkLicensePlateLookupPage = () => {
  },
  {
  question: "What does a New York plate lookup on SafeOrStolen show?",
- answer: "It shows whether the plate matches a theft report filed on SafeOrStolen or appears in public web results, with each source listed. The result reads \"reported stolen\", \"possible match\", or \"no report found in the records searched\". It does not show the owner's name, the VIN or registration status."
+ answer: "It shows whether the plate matches a theft report filed on SafeOrStolen or appears in public web results, with each source listed. The result reads \"reported stolen\", \"possible match\", or \"no report found in the records searched\". Owner names are never shown."
  },
  {
  question: "Is the New York license plate lookup free?",
- answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. SafeOrStolen does not access New York DMV registration records."
+ answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime."
  },
  {
  question: "What if the name on the title doesn't match the seller?",

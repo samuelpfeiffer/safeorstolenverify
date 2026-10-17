@@ -19,7 +19,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Minnesota?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Then match the VIN on the dash, door jamb and title, and check the seller's ID against the title." },
- { question: "How does Minnesota DVS handle title transfers?", answer: "The seller signs the title over to you and you apply to transfer it through a deputy registrar office. That happens after you've paid, so do your own checks first. SafeOrStolen does not search DVS records; ask DVS directly about liens or title brands." }
+ { question: "How does Minnesota DVS handle title transfers?", answer: "The seller signs the title over to you and you apply to transfer it through a deputy registrar office. That happens after you've paid, so do your own checks first. Ask DVS directly about liens or title brands." }
  ]
  },
  mississippi: {
@@ -34,7 +34,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  localLaws: "Receiving or keeping property you know is stolen is a crime in Mississippi. A stolen vehicle can be returned to its owner even after you bought it. Titles go through the Mississippi Department of Revenue via your county tax collector."
  },
  faqs: [
- { question: "How do I verify a Mississippi title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask your county tax collector about liens; SafeOrStolen does not search state title records." },
+ { question: "How do I verify a Mississippi title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask your county tax collector about liens and title status." },
  { question: "What should I check when buying a used truck in Mississippi?", answer: "Match the VIN on the truck and title, check the seller's ID, and run the VIN on SafeOrStolen. For flood damage after a Gulf storm, look at the truck itself: silt under the carpet, rust on seat bolts, fogged lights and a musty smell. Buy a history report for title brands." }
  ]
  },
@@ -67,7 +67,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I check a used truck in Montana?", answer: "Match the VIN on the dash, door jamb and title, look for a damaged ignition or mismatched keys, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and open recalls. Ask the seller how long they've owned it and why it's for sale." },
- { question: "How do I verify a Montana title held by an LLC?", answer: "Ask for proof the seller can sign for the LLC, such as the company's records naming them. Check that the VIN on the title matches the vehicle. Ask the Montana MVD about liens, since SafeOrStolen does not search state title records." }
+ { question: "How do I verify a Montana title held by an LLC?", answer: "Ask for proof the seller can sign for the LLC, such as the company's records naming them. Check that the VIN on the title matches the vehicle. Ask the Montana MVD about liens and title status." }
  ]
  },
  nebraska: {
@@ -82,7 +82,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  localLaws: "Nebraska's theft law covers receiving stolen property. A stolen car can be returned to its owner even if you paid for it. County treasurers handle titles for the Nebraska DMV."
  },
  faqs: [
- { question: "How do I verify a Nebraska title?", answer: "Check that the VIN on the title matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask your county treasurer about liens; SafeOrStolen does not search state title records." },
+ { question: "How do I verify a Nebraska title?", answer: "Check that the VIN on the title matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Ask your county treasurer about liens and title status." },
  { question: "What should I check when buying a used car in Omaha?", answer: "Match the VIN on dash, door jamb and title, check the seller's ID, and run a stolen check on SafeOrStolen. Look for hail repairs and rust from road salt. If you want accident or title-brand history, buy a separate vehicle history report." }
  ]
  },
@@ -99,7 +99,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Las Vegas?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Match the VIN on the dash, door jamb and title, and make sure the seller's ID matches the title." },
- { question: "Does Nevada inspect out-of-state cars?", answer: "Cars coming from another state generally need a VIN inspection before Nevada DMV will title them. That inspection happens after you buy, so check the VIN yourself first. SafeOrStolen does not search Nevada DMV records." }
+ { question: "Does Nevada inspect out-of-state cars?", answer: "Cars coming from another state generally need a VIN inspection before Nevada DMV will title them. That inspection happens after you buy, so run the VIN on SafeOrStolen first." }
  ]
  },
  newhampshire: {
@@ -131,7 +131,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in New Jersey?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN shows up in SafeOrStolen theft reports or public web results. Then match the VIN on the car and title and check the seller's ID." },
- { question: "How does a title transfer work at the NJ MVC?", answer: "The seller signs the back of the title over to you, and you take it to an MVC agency to put it in your name. That happens after the sale, so do your checks first. SafeOrStolen does not search MVC records." }
+ { question: "How does a title transfer work at the NJ MVC?", answer: "The seller signs the back of the title over to you, and you take it to an MVC agency to put it in your name. That happens after the sale, so do your checks first, including a VIN check on SafeOrStolen." }
  ]
  },
  newmexico: {
@@ -147,7 +147,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Albuquerque?", answer: "Enter the VIN on SafeOrStolen (safeorstolen.com) to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller's ID against the title." },
- { question: "Does New Mexico MVD inspect out-of-state cars?", answer: "Vehicles coming from another state generally need a VIN inspection before New Mexico will title them. It happens after the sale, so check the VIN yourself first. SafeOrStolen does not search MVD records." }
+ { question: "Does New Mexico MVD inspect out-of-state cars?", answer: "Vehicles coming from another state generally need a VIN inspection before New Mexico will title them. It happens after the sale, so run the VIN on SafeOrStolen first." }
  ]
  },
  northcarolina: {
@@ -163,7 +163,7 @@ export const ALL_STATE_VIN_DATA_PART3 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Charlotte?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Then match the VIN on the car and title, and meet the seller at a notary so the title signature is done properly." },
- { question: "Why does North Carolina require a notarized title?", answer: "The notary confirms the identity of the person signing the title over to you. Bring your ID, have the seller sign in front of the notary, and check that their ID matches the name on the title. SafeOrStolen does not search NCDMV records." }
+ { question: "Why does North Carolina require a notarized title?", answer: "The notary confirms the identity of the person signing the title over to you. Bring your ID, have the seller sign in front of the notary, and check that their ID matches the name on the title. Run the VIN on SafeOrStolen before you meet." }
  ]
  }
 };

@@ -70,7 +70,7 @@ const CheckJewelryPage = () => (
       whatIs:
         'Checking if jewelry is stolen means finding anything that ties the piece to one owner (a laser inscription, a designer serial, an engraving, a grading report) and checking it, then judging the seller. For a watch, use the <a href="/check-watch-stolen">watch check guide</a>, since watches carry their own serial and case numbers.',
       howItWorks:
-        "Enter a designer serial, a grading report number or an engraved number into the search box. SafeOrStolen searches its own theft reports, where owners list stolen items with their numbers and descriptions, and public web results that mention the number. You see reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search pawn databases, insurer records or the grading labs.",
+        "Enter a designer serial, a grading report number or an engraved number into the search box. SafeOrStolen searches its own theft reports, where owners list stolen items with their numbers and descriptions, and public web results that mention the number. You see reported stolen, possible match, or no report found in the records searched, with every source listed. To confirm a grading report, contact the lab that issued it.",
       whyCheck:
         "Stolen jewelry is easy to carry and easy to sell, and when police recover it they return it to the owner. A buyer who paid for it loses the money. Most pieces can't be checked by number at all, so the checks you can do, on the stone, the paperwork and the seller, matter more.",
       benefits: [
@@ -107,7 +107,7 @@ const CheckJewelryPage = () => (
         {
           question: 'Is there a stolen jewelry database?',
           answer:
-            "There is no single public database. Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports and public web results for free for their first 2 checks.",
+            "Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports and public web results for free for their first 2 checks.",
         },
         {
           question: 'What does a polished area inside a ring mean?',

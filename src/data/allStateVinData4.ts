@@ -19,7 +19,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used work truck in North Dakota?", answer: "Match the VIN on the dash, door jamb and title, look for a damaged ignition or mismatched keys, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and open recalls. High-mileage oil-field trucks are common, so get a mechanic's inspection too." },
- { question: "How do I verify a North Dakota title?", answer: "Check that the VIN on the title matches the vehicle and that the seller's name matches their ID. Run the VIN on SafeOrStolen for theft reports. Ask the NDDOT Motor Vehicle Division about liens, since SafeOrStolen does not search state title records." }
+ { question: "How do I verify a North Dakota title?", answer: "Check that the VIN on the title matches the vehicle and that the seller's name matches their ID. Run the VIN on SafeOrStolen for theft reports. Ask the NDDOT Motor Vehicle Division about liens and title status." }
  ]
  },
  ohio: {
@@ -35,7 +35,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Ohio?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Then match the VIN on the car and title and meet at a notary for the signature." },
- { question: "Do Ohio out-of-state vehicles need an inspection?", answer: "Yes, a vehicle titled in another state generally needs a VIN inspection before Ohio will title it. That happens after you've paid, so check the VIN yourself first. SafeOrStolen does not search BMV or clerk of courts records." }
+ { question: "Do Ohio out-of-state vehicles need an inspection?", answer: "Yes, a vehicle titled in another state generally needs a VIN inspection before Ohio will title it. That happens after you've paid, so run the VIN on SafeOrStolen first." }
  ]
  },
  oklahoma: {
@@ -51,7 +51,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used pickup in Oklahoma?", answer: "Compare the VIN on the dash, driver's door and title. Look for a damaged steering column, mismatched keys and fresh paint over VIN stickers. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls before you pay." },
- { question: "How do I verify an Oklahoma title?", answer: "Check that the VIN on the title matches the truck and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask a tag agency about liens, since SafeOrStolen does not search state title records." }
+ { question: "How do I verify an Oklahoma title?", answer: "Check that the VIN on the title matches the truck and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask a tag agency about liens and title status." }
  ]
  },
  oregon: {
@@ -67,7 +67,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Portland?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com) to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller's ID against the title." },
- { question: "Does Oregon inspect out-of-state cars?", answer: "Vehicles coming from another state generally need a VIN inspection before Oregon DMV will title them. That happens after the sale, so check the VIN yourself first. SafeOrStolen does not search Oregon DMV records." }
+ { question: "Does Oregon inspect out-of-state cars?", answer: "Vehicles coming from another state generally need a VIN inspection before Oregon DMV will title them. That happens after the sale, so run the VIN on SafeOrStolen first." }
  ]
  },
  rhodeisland: {
@@ -83,7 +83,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used car in Providence?", answer: "Enter the VIN on SafeOrStolen (safeorstolen.com) for theft reports, public web results and open recalls. Match the VIN on the dash, door jamb and title or registration, and check the seller's ID. Inspect underneath for rust from road salt." },
- { question: "How do I verify a Rhode Island title?", answer: "Check that the VIN on the title or registration matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask the RI DMV about liens; SafeOrStolen does not search state title records." }
+ { question: "How do I verify a Rhode Island title?", answer: "Check that the VIN on the title or registration matches the car and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask the RI DMV about liens and title status." }
  ]
  },
  southcarolina: {
@@ -99,7 +99,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "What should I check when buying a used car in South Carolina?", answer: "Match the VIN on dash, door jamb and title, check the seller's ID, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Near the coast, look for silt under carpets, rusty seat bolts and a musty smell." },
- { question: "How does a title transfer work at SCDMV?", answer: "The seller signs the title over to you and you apply for a new title at SCDMV. That happens after the sale, so check the VIN and seller first. SafeOrStolen does not search SCDMV records; ask SCDMV directly about liens." }
+ { question: "How does a title transfer work at SCDMV?", answer: "The seller signs the title over to you and you apply for a new title at SCDMV. That happens after the sale, so check the VIN and seller first. Ask SCDMV directly about liens." }
  ]
  },
  southdakota: {
@@ -115,7 +115,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used truck in South Dakota?", answer: "Compare the VIN on the dash, door jamb and title, and check the seller's ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. South Dakota has no routine safety inspection, so have a mechanic look it over." },
- { question: "How do I verify a South Dakota title?", answer: "Check that the VIN on the title matches the vehicle and the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask your county treasurer about liens; SafeOrStolen does not search state title records." }
+ { question: "How do I verify a South Dakota title?", answer: "Check that the VIN on the title matches the vehicle and the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask your county treasurer about liens and title status." }
  ]
  },
  tennessee: {
@@ -131,7 +131,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Memphis or Nashville?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN shows up in SafeOrStolen theft reports or public web results. Then match the VIN on the car and title and check the seller's ID." },
- { question: "How do I verify a Tennessee title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask your county clerk about liens; SafeOrStolen does not search state title records." }
+ { question: "How do I verify a Tennessee title?", answer: "Check that the VIN on the title matches the dash plate and door sticker, and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask your county clerk about liens and title status." }
  ]
  },
  utah: {
@@ -147,7 +147,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Salt Lake City?", answer: "Enter the VIN on SafeOrStolen (safeorstolen.com) to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller's ID." },
- { question: "Does Utah inspect out-of-state vehicles?", answer: "Vehicles coming from another state generally need a VIN inspection before Utah will title them. That happens after you buy, so run your own check first. SafeOrStolen does not search Utah DMV records." }
+ { question: "Does Utah inspect out-of-state vehicles?", answer: "Vehicles coming from another state generally need a VIN inspection before Utah will title them. That happens after you buy, so run the VIN on SafeOrStolen first." }
  ]
  },
  vermont: {
@@ -179,7 +179,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a car bought from a service member in Virginia?", answer: "Make sure the name on the title matches the seller's ID, and if a spouse or relative is selling, ask for a power of attorney. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls, and ask the lender about any lien." },
- { question: "How does a Virginia title transfer work?", answer: "The seller signs the title over to you and you apply for a new title at the Virginia DMV. That happens after the sale, so check the VIN and seller first. SafeOrStolen does not search Virginia DMV records." }
+ { question: "How does a Virginia title transfer work?", answer: "The seller signs the title over to you and you apply for a new title at the Virginia DMV. That happens after the sale, so check the VIN on SafeOrStolen and the seller first." }
  ]
  },
  washington: {
@@ -195,7 +195,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check if a car is stolen in Seattle?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Then match the VIN on the car and title and check the seller's ID." },
- { question: "How does a Washington title transfer work?", answer: "The seller signs the title over to you and files a report of sale; you apply for a new title through a vehicle licensing office. That happens after you've paid, so check first. SafeOrStolen does not search Department of Licensing records." }
+ { question: "How does a Washington title transfer work?", answer: "The seller signs the title over to you and files a report of sale; you apply for a new title through a vehicle licensing office. That happens after you've paid, so run the VIN on SafeOrStolen first." }
  ]
  },
  westvirginia: {
@@ -211,7 +211,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used truck in West Virginia?", answer: "Compare the VIN on the dash, door jamb and title, look for a damaged ignition or mismatched keys, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. Check underneath for rust and damage from rough roads." },
- { question: "How do I verify a West Virginia title?", answer: "Check that the VIN on the title matches the vehicle and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask the WV DMV about liens; SafeOrStolen does not search state title records." }
+ { question: "How do I verify a West Virginia title?", answer: "Check that the VIN on the title matches the vehicle and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask the WV DMV about liens and title status." }
  ]
  },
  wisconsin: {
@@ -227,7 +227,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used Kia or Hyundai in Milwaukee?", answer: "Look at the steering column and ignition for cracks, loose trim or a punched lock. Ask whether the anti-theft software update was done. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and open recalls, and match it to the title." },
- { question: "How does a Wisconsin title transfer work?", answer: "The seller signs the title over to you and you apply for a new title with the Wisconsin DMV. That happens after the sale, so check the VIN and seller first. SafeOrStolen does not search Wisconsin DMV records." }
+ { question: "How does a Wisconsin title transfer work?", answer: "The seller signs the title over to you and you apply for a new title with the Wisconsin DMV. That happens after the sale, so check the VIN on SafeOrStolen and the seller first." }
  ]
  },
  wyoming: {
@@ -243,7 +243,7 @@ export const ALL_STATE_VIN_DATA_PART4 = {
  },
  faqs: [
  { question: "How do I check a used truck in Wyoming?", answer: "Compare the VIN on the dash, door jamb and title, and check the seller's ID. Run the VIN on SafeOrStolen (safeorstolen.com) for theft reports and recalls. High-mileage work trucks are common, so get a mechanic's inspection too." },
- { question: "How do I verify a Wyoming title?", answer: "Check that the VIN on the title matches the vehicle and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask your county clerk about liens; SafeOrStolen does not search state title records." }
+ { question: "How do I verify a Wyoming title?", answer: "Check that the VIN on the title matches the vehicle and that the seller's name matches their ID. Run the VIN on SafeOrStolen. Ask your county clerk about liens and title status." }
  ]
  }
 };

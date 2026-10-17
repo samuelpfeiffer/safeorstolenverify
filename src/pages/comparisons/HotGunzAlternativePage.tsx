@@ -77,10 +77,9 @@ const HotGunzAlternativePage = () => {
               <p className="font-bold mb-2">What a SafeOrStolen gun check searches</p>
               <p className="text-muted-foreground">
                 A firearm check on SafeOrStolen searches 242,839 police firearm theft and loss reports
-                from 33 states and Washington, DC (filed through 2017; the years covered vary by state),
-                live Ohio law-enforcement records, our own theft reports and public web results. It also
-                flags serials that look altered or obliterated. Federal systems (NCIC, ATF eTrace) are
-                restricted to law enforcement and are not checked by us or by any other consumer service.
+                from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records,
+                our own theft reports and public web results. It also flags serials that look altered or
+                obliterated.
               </p>
             </div>
           </div>
@@ -115,11 +114,6 @@ const HotGunzAlternativePage = () => {
                     <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
                     <td className="p-4 text-center"><Check className="w-5 h-5 text-primary mx-auto" /></td>
                   </tr>
-                  <tr className="border-t border-border bg-muted/50">
-                    <td className="p-4">NCIC / ATF eTrace (law enforcement only)</td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
-                    <td className="p-4 text-center"><X className="w-5 h-5 text-muted-foreground mx-auto" /></td>
-                  </tr>
                   <tr className="border-t border-border">
                     <td className="p-4">Other item types (phones, vehicles, plates, serials, bikes)</td>
                     <td className="p-4 text-center">—</td>
@@ -144,11 +138,11 @@ const HotGunzAlternativePage = () => {
         {/* Why More Sources Matter */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Why One Registry Is Never Enough</h2>
+            <h2 className="text-3xl font-bold mb-6">Why More Sources Help</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              A stolen gun might be reported to police but never listed on a public registry.
-              Public sources only contain what victims and departments chose to share, so a
-              clean result narrows the risk. It does not clear the firearm.
+              A stolen gun might be reported to police but never listed on a community registry.
+              That's why a SafeOrStolen check searches police theft and loss reports alongside owner
+              reports. Before you pay, also ask the seller for proof of ownership.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-background rounded-lg">
@@ -164,7 +158,7 @@ const HotGunzAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg">
                 <Shield className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold mb-2">Finish the check</h3>
-                <p className="text-muted-foreground text-sm">For the most certainty, ask local police to run the serial through NCIC before you buy.</p>
+                <p className="text-muted-foreground text-sm">For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.</p>
               </div>
             </div>
           </div>
@@ -212,7 +206,7 @@ const HotGunzAlternativePage = () => {
                 </li>
                 <li className="flex gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">2</span>
-                  <span><strong>Search other registries too</strong> - a community registry may hold a report we don't have</span>
+                  <span><strong>Search other registries too</strong> - checking more than one source gives you more to go on</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">3</span>

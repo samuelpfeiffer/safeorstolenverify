@@ -6,7 +6,7 @@ const reportStep = {
   description:
     "Add the item, its identifier, and your police report number at /report-stolen. SafeOrStolen checks its own stolen-item reports whenever someone runs that identifier.",
   tellsYou:
-    "Anyone who checks that identifier on SafeOrStolen sees that it was reported stolen. It does not notify police, carriers, insurers, or other registries.",
+    "Anyone who checks that identifier on SafeOrStolen sees that it was reported stolen. File a police report too, so police have the theft on record.",
 };
 
 const victimRecordSteps = [
@@ -20,7 +20,7 @@ const victimSafeOrStolen =
   "SafeOrStolen is a stolen-item verification hub for buyers and sellers covering phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. For theft victims, the useful part is the report: once your item is logged, a buyer who checks its identifier on SafeOrStolen sees it was reported stolen. SafeOrStolen does not file police reports or contact carriers or insurers for you.";
 
 const buyerSafeOrStolen =
-  "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. A check is an additional due-diligence step, not a substitute for inspecting the item, matching documents, checking official resources, or confirming the seller has authority to sell.";
+  "SafeOrStolen gives buyers and sellers one account for phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles. Use a check alongside inspecting the item, matching documents, checking official resources, and confirming the seller has authority to sell.";
 
 const buyerStolenSteps = [
   "Do not pay, take possession, or confront the seller.",
@@ -36,7 +36,7 @@ const sosCheck = (what: string) => ({
   description:
     "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
   tellsYou:
-    "Whether the identifier appears in the sources SafeOrStolen actually checked and whether public listing signals deserve review. No match does not prove an item is not stolen.",
+    "Whether the identifier appears in the sources SafeOrStolen actually checked and whether public listing signals deserve review. Before you pay, also ask for proof of ownership.",
 });
 
 // ---------------------------------------------------------------- VICTIM
@@ -490,9 +490,9 @@ export const FIND_STOLEN_ONLINE_GUIDE: DefinitiveGuideProps = {
         "It isn't recommended. It can be unsafe, and it may complicate a police investigation or insurance claim. Let police advise you.",
     },
     {
-      question: "Will SafeOrStolen search marketplaces for my item?",
+      question: "How does SafeOrStolen help if my item is listed for sale?",
       answer:
-        "No. SafeOrStolen does not monitor marketplaces for you. When you log your item, buyers who check its identifier on SafeOrStolen see it was reported stolen, and buyers can paste listing links into the marketplace URL analyzer.",
+        "When you log your item, buyers who check its identifier on SafeOrStolen see it was reported stolen, and buyers can paste listing links into the marketplace URL analyzer.",
     },
   ],
   related: [
@@ -627,7 +627,7 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
       name: "Ask police to check the VIN",
       cost: "Usually free; policy varies",
       description:
-        "Some agencies will run a VIN for a buyer. The public cannot search NCIC.",
+        "Some agencies will run a VIN for a buyer.",
       tellsYou: "Whether the agency finds a report in systems available to it.",
     },
     sosCheck("VIN"),
@@ -656,7 +656,7 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen's motorcycle check search?",
       answer:
-        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. No single database covers every state, so also match the VIN to the title and ask police to check it if anything seems off.",
+        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -732,7 +732,7 @@ export const TRAILER_ATV_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen's check search for trailers and off-road vehicles?",
       answer:
-        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. No single database covers every state, so also match the VIN to the title and ask police to check it if anything seems off.",
+        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -947,9 +947,9 @@ export const APPLE_DEVICE_GUIDE: DefinitiveGuideProps = {
         "Match the serial, pair them with your own iPhone in person, and ask the seller to remove them from their Apple Account.",
     },
     {
-      question: "Does SafeOrStolen check Apple's systems?",
+      question: "How do I check an Apple device's lock status?",
       answer:
-        "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis. Apple checks are done on the device and on Apple's site.",
+        "Apple checks are done on the device and on Apple's site. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis for the serial.",
     },
   ],
   related: [

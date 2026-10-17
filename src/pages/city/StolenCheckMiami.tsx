@@ -30,7 +30,7 @@ const StolenCheckMiami = () => {
     },
     {
       question: "Does SafeOrStolen search Florida police records?",
-      answer: "No. SafeOrStolen searches its own theft reports, filed by owners on the site, and public web listings on every check, plus a national stolen-bicycle registry for bikes and police firearm theft and loss reports from 33 states and DC for guns. It does not search FDLE, FCIC or Florida DMV records."
+      answer: "Yes, for guns. Gun serials are searched against police firearm theft and loss reports from 33 states and DC, Florida among them. Every check also searches SafeOrStolen's own theft reports, filed by owners on the site, and public web listings, and bikes go against a national stolen-bicycle registry."
     },
   ];
 

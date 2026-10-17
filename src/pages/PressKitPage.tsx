@@ -34,9 +34,9 @@ const facts: [string, string][] = [
 ];
 
 const accuracyNotes = [
-  'SafeOrStolen does not search NCIC, ATF eTrace, DMV or MVD records, Apple or Google account status, manufacturer, pawn or insurer databases. Please don\'t describe a check as a police database search.',
-  'A "no report found" result means the number wasn\'t found in the records searched. It doesn\'t prove an item was never stolen.',
-  'The gun records are 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed through 2017 (the years covered vary by state), plus live Ohio law-enforcement records.',
+  'When you mention police records, please name them: police firearm theft and loss reports and live Ohio law-enforcement stolen-gun records for guns, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Every check also searches SafeOrStolen theft reports and public web results; bike checks add a national stolen-bicycle registry, and a paid phone check searches the lost and stolen phone blacklist.',
+  'A "no report found" result means the number wasn\'t found in the records searched, which are listed on every result.',
+  'The gun records are 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, plus live Ohio law-enforcement records.',
   'AI writes a plain-language note on each result. It never decides whether an item is stolen; that comes only from the records searched.',
   'Plate checks never show owner names.',
 ];

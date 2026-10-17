@@ -326,10 +326,10 @@ const NICBVINCheckAlternative = () => {
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Does SafeOrStolen search NICB VINCheck?</h3>
+                    <h3 className="font-semibold mb-2">Can I use SafeOrStolen and NICB VINCheck together?</h3>
                     <p className="text-muted-foreground mb-3">
-                      No. NICB VINCheck is a separate free tool, and SafeOrStolen does not search it, NCIC or DMV
-                      records. Running both gives you two different sets of records.
+                      Yes. NICB VINCheck is a separate free tool, and running both gives you two different sets of
+                      records. For title or registration questions, contact the state motor vehicle agency.
                     </p>
                     <h3 className="font-semibold mb-2">What does a SafeOrStolen VIN check search?</h3>
                     <p className="text-muted-foreground">

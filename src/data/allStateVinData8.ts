@@ -39,7 +39,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In New Hampshire, a stolen vehicle is returned to its owner even if the buyer didn't know. Titles are handled by the NH Division of Motor Vehicles, and older vehicles in New Hampshire may not have a title at all, so ask what paperwork the seller has before you go look."
  },
  faqs: [
- { question: "How do I verify a New Hampshire vehicle title?", answer: "Check that the seller's name on the title matches their ID and that the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-hampshire-vin-lookup) to search its theft reports and public web results. SafeOrStolen does not search NH DMV title records." },
+ { question: "How do I verify a New Hampshire vehicle title?", answer: "Check that the seller's name on the title matches their ID and that the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-hampshire-vin-lookup) to search its theft reports and public web results. For title questions, contact the NH DMV." },
  { question: "Is a VIN check required in New Hampshire?", answer: "No law requires a private buyer in New Hampshire to run a VIN check. It's still worth the few seconds: if the car was stolen, police can return it to the owner and you lose what you paid. Your first 2 checks on SafeOrStolen are free." },
  { question: "Does New Hampshire have vehicle inspections?", answer: "Yes. New Hampshire requires a yearly safety inspection at a licensed station. The inspection looks at brakes, lights, tires and similar items. It doesn't check whether the car was reported stolen, so search the VIN before you buy rather than counting on the inspection." }
  ]
@@ -81,7 +81,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In New Mexico, a stolen vehicle is returned to its owner even if the buyer paid in good faith. Titles and registration go through the New Mexico Motor Vehicle Division, which also inspects the VIN on vehicles coming in from another state."
  },
  faqs: [
- { question: "How do I verify a New Mexico vehicle title?", answer: "Make sure the seller's name on the title matches their ID and the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-mexico-vin-lookup) to search its theft reports and public web results. SafeOrStolen does not search MVD title records or title brands." },
+ { question: "How do I verify a New Mexico vehicle title?", answer: "Make sure the seller's name on the title matches their ID and the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-mexico-vin-lookup) to search its theft reports and public web results. For title records and title brands, contact the MVD." },
  { question: "Is a VIN check required in New Mexico?", answer: "No law requires a private buyer in New Mexico to run a VIN check. If the car turns out to be stolen, though, police can return it to the owner and you lose your money. Checking first takes a few seconds, and your first 2 checks are free." },
  { question: "What is New Mexico's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading, and you take it to the New Mexico MVD with a bill of sale to title and register the car. Out-of-state vehicles also get a VIN inspection. Confirm the VIN on the title matches the car before you sign." }
  ]
@@ -102,7 +102,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In North Carolina, a stolen vehicle goes back to its owner even if you bought it in good faith. Titles transfer through the NCDMV, and the seller's signature on a North Carolina title has to be notarized."
  },
  faqs: [
- { question: "How do I check for flood damage on a North Carolina vehicle?", answer: "SafeOrStolen does not show flood or salvage title brands, so use a vehicle history report for that. In person, look for damp or new carpet, a musty smell, rust on seat rails and silt in the spare-tire well. Use SafeOrStolen (safeorstolen.com/north-carolina-vin-lookup) to search theft reports and online listings for the VIN." },
+ { question: "How do I check for flood damage on a North Carolina vehicle?", answer: "Get a vehicle history report for flood or salvage title brands. In person, look for damp or new carpet, a musty smell, rust on seat rails and silt in the spare-tire well. Use SafeOrStolen (safeorstolen.com/north-carolina-vin-lookup) to search theft reports and online listings for the VIN." },
  { question: "Does North Carolina require VIN inspections?", answer: "North Carolina requires an inspection for some vehicles coming from out of state and for rebuilt salvage vehicles. That inspection confirms the VIN and the car's condition. It isn't a stolen check for a private buyer, so search the VIN yourself before you pay." },
  { question: "What is North Carolina's title transfer process?", answer: "The seller signs the title in front of a notary and fills in the odometer reading, and you take it to an NCDMV license plate agency to title and register the car. Before anyone signs, confirm the VIN on the title matches the dashboard and door sticker." }
  ]

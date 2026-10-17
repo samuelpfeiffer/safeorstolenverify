@@ -262,8 +262,8 @@ const PS5StolenCheckGuide = () => {
                   <h3 className="font-bold mb-2">Run Final Verification</h3>
                   <p className="text-muted-foreground">
                     Run the serial you read off the console at safeorstolen.com/verify. It searches SafeOrStolen theft
-                    reports and public web results. "No report found in the records searched" is one part of your
-                    check, not a guarantee.
+                    reports and public web results. Before you pay, also ask the seller for the receipt or other proof
+                    of ownership.
                   </p>
                 </div>
               </div>
@@ -337,7 +337,7 @@ const PS5StolenCheckGuide = () => {
                   <p className="text-muted-foreground">
                     Yes. Enter the serial at safeorstolen.com/verify to search SafeOrStolen theft reports and public
                     web results in a few seconds. Also compare the serial on the console with Settings, the box and
-                    the receipt. SafeOrStolen does not search police or retailer records.
+                    the receipt, and ask the seller for proof of purchase.
                   </p>
                 </CardContent>
               </Card>

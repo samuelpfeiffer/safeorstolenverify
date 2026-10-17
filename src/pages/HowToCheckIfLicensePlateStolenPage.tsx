@@ -71,7 +71,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
       whatIs:
         "A stolen plate check looks up the plate number in records of reported thefts. It tells you about the plate, not the car: a stolen car often wears a plate that is clean, or one stolen from a different car. That's why a plate check is the first step and the VIN check is the second. Looking for the owner's name instead? That question is covered on <a href=\"/license-plate-owner-lookup\">license plate owner lookup</a>.",
       howItWorks:
-        "Enter the plate and state. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the plate. Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day. You see reported stolen, possible match, or no report found in the records searched, with every source listed. It does not search NCIC or DMV records and never shows owner names.",
+        "Enter the plate and state. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the plate. Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day. You see reported stolen, possible match, or no report found in the records searched, with every source listed. It never shows owner names.",
       whyCheck:
         "A stolen plate on a car for sale usually means the car is stolen too. A stolen plate on a car parked on your street might be tied to a theft or a crime. Checking takes seconds, and if something's wrong the police can act on the plate number you give them.",
       benefits: [
@@ -97,7 +97,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         {
           question: 'Can police tell if a license plate is stolen?',
           answer:
-            "Yes. When an officer runs a plate, the search covers the state's records and the FBI's NCIC file, which holds plates reported stolen anywhere in the United States. Many patrol cars also have plate readers that flag stolen plates automatically. The public can't search NCIC, so call the non-emergency line if you see a plate you think is stolen.",
+            "Yes. When an officer runs a plate, the search covers the state's records and the FBI's NCIC file, which holds plates reported stolen anywhere in the United States. Many patrol cars also have plate readers that flag stolen plates automatically. If you see a plate you think is stolen, call the non-emergency line.",
         },
         {
           question: 'How do I know if someone is using my license plate?',
@@ -110,14 +110,14 @@ const HowToCheckIfLicensePlateStolenPage = () => (
             "Report it to your local police and get a report number, then contact your state DMV for replacement plates. Most DMVs want the police report and issue a new plate number. If only one plate was taken, ask the DMV what to do with the other one. Keep the report to fight tickets or tolls dated after the theft.",
         },
         {
-          question: 'Does a clean plate mean the car is not stolen?',
+          question: 'What should I check after a clean plate result?',
           answer:
-            "No. A clean plate only tells you nothing is on record for that plate in the sources searched. Thieves often put a clean plate on a stolen car. Before you buy, read the VIN on the dashboard and the driver's door jamb, check it, and make sure it matches the title and registration in the seller's name.",
+            "Check the car as well, because thieves often put a clean plate on a stolen car. Before you buy, read the VIN on the dashboard and the driver's door jamb, check it, and make sure it matches the title and registration in the seller's name.",
         },
         {
           question: 'Can a stolen license plate check tell me who owns the car?',
           answer:
-            "No. Owner names and addresses come from DMV records, which the federal Driver's Privacy Protection Act keeps away from the public except for permitted uses such as law enforcement and insurance. A stolen plate check shows only whether the plate is reported stolen. If you need the owner after an accident, give the plate to the police.",
+            "No. Owner names and addresses come from DMV records, which the federal Driver's Privacy Protection Act keeps away from the public except for permitted uses such as law enforcement and insurance. A stolen plate check shows whether the plate is reported stolen and never shows owner names. If you need the owner after an accident, give the plate to the police.",
         },
       ],
     }}

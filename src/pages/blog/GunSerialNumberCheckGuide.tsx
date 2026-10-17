@@ -14,7 +14,7 @@ const GunSerialNumberCheckGuide = () => {
  },
  {
  q: "Is there a national stolen gun database the public can search?",
- a: "No. The FBI's NCIC holds stolen gun reports nationwide, but only law enforcement can search it, and ATF eTrace is for police too. SafeOrStolen does not search either. What a buyer can search are records like the police theft and loss reports SafeOrStolen uses from 33 states and DC. For an NCIC answer, ask your local police department to run the serial."
+ a: "Yes, a large set of police records: SafeOrStolen (safeorstolen.com/firearms-check) searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973 to 2017, plus live Ohio law-enforcement stolen-gun records. For a private sale, you can also buy through a licensed dealer (FFL) or ask your local police department to run the serial."
  },
  {
  q: "Is it illegal to buy a stolen gun?",
@@ -30,7 +30,7 @@ const GunSerialNumberCheckGuide = () => {
  },
  {
  q: "What does SafeOrStolen check for firearms?",
- a: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state), live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. It does not search NCIC or ATF eTrace."
+ a: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated."
  },
  {
  q: "What should I do if a gun comes back as stolen?",
@@ -113,7 +113,7 @@ const GunSerialNumberCheckGuide = () => {
  <li><strong className="text-foreground">Go to SafeOrStolen's firearms checker</strong> — Visit <Link to="/firearms-check" className="text-primary hover:underline">safeorstolen.com/firearms-check</Link> on any device (it works on your phone at a gun show).</li>
  <li><strong className="text-foreground">Enter the serial number</strong> — Type or paste the complete serial number exactly as engraved on the firearm.</li>
  <li><strong className="text-foreground">Read the result</strong> — In a few seconds you'll see "reported stolen", "possible match" or "no report found in the records searched", with each source listed and a flag if the serial looks altered.</li>
- <li><strong className="text-foreground">Act on the results</strong> — If nothing turns up, the gun isn't in those records, which isn't a guarantee. If it's reported stolen, don't buy it and call the police non-emergency line.</li>
+ <li><strong className="text-foreground">Act on the results</strong> — If nothing turns up, also ask the seller for a bill of sale with the serial and both names, or complete the sale through a licensed dealer (FFL). If it's reported stolen, don't buy it and call the police non-emergency line.</li>
  </ol>
  </section>
 
@@ -121,7 +121,7 @@ const GunSerialNumberCheckGuide = () => {
  <h2 className="text-2xl font-bold text-foreground mb-4">What a SafeOrStolen Gun Check Searches</h2>
  <ul className="space-y-3">
  {[
- { name: 'Police firearm theft and loss reports', desc: '242,839 reports from 33 states and Washington, DC, filed through 2017 (years covered vary by state)' },
+ { name: 'Police firearm theft and loss reports', desc: '242,839 reports from 33 states and Washington, DC, filed 1973 to 2017' },
  { name: 'Live Ohio law-enforcement records', desc: 'Current stolen-gun records from Ohio' },
  { name: 'SafeOrStolen theft reports and public web results', desc: 'Thefts owners reported on the site, plus listings and posts that mention the serial' },
  { name: 'Altered-serial flag', desc: 'Flags serials that look altered, obliterated or like placeholders' },

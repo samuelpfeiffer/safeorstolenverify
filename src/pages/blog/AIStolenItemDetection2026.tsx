@@ -32,7 +32,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Why do AI chatbots sometimes give wrong answers about stolen items?',
-    a: "A chatbot writes a likely-sounding answer from what it learned in training. Asked about a specific IMEI, it may guess or describe a lookup it can't actually perform, and it may name databases that the public can't search, like the FBI's NCIC. Treat any chatbot claim that an item is 'clean' or 'stolen' as unverified until you've seen the source record.",
+    a: "A chatbot writes a likely-sounding answer from what it learned in training. Asked about a specific IMEI, it may guess or describe a lookup it can't actually perform, and it may name databases it has no way to search. Treat any chatbot claim that an item is 'clean' or 'stolen' as unverified until you've seen the source record.",
   },
 ];
 
@@ -144,8 +144,8 @@ const AIStolenItemDetection2026 = () => {
               records searched, and lists every source.
             </p>
             <p>
-              No public service can search the FBI's NCIC file, Apple's Activation Lock or DMV records. For those, have the seller
-              sign out of their account and erase the device in front of you, and compare the title to their ID.
+              Then finish the checks in person: have the seller sign out of their account and erase the device in front of you,
+              and for a vehicle, compare the title to their ID.
             </p>
 
             <h2>Using a chatbot well when you're buying used</h2>
