@@ -62,7 +62,7 @@ const TheftAZPage = () => {
  },
  {
  question: "Can I check guns, phones or bikes in Arizona the same way?",
- answer: "Arizona's public stolen-vehicle search covers vehicles only. SafeOrStolen checks other items with different sources: gun checks search police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio records; bike checks search a national stolen-bicycle registry; phone checks read the make and model from the IMEI.",
+ answer: "Arizona's public stolen-vehicle search covers vehicles only. SafeOrStolen checks other items with different sources: gun checks search police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio records; bike checks search a national stolen-bicycle registry; phone checks read the make and model from the IMEI.",
  },
  {
  question: "If no Arizona record shows up, is the car safe to buy?",

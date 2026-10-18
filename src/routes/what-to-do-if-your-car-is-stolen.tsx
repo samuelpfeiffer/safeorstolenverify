@@ -48,7 +48,7 @@ function GuidePage() {
           table: {
             columns: ["Who", "Why", "Have ready"],
             rows: [
-              ["Police", "A stolen report puts the VIN and plate into the systems every officer checks, including the FBI's NCIC file", "VIN, plate and state, year, make, model, color, dents or stickers, where and when you last saw it"],
+              ["Police", "A stolen report puts the VIN and plate into the systems every officer checks, including the FBI’s NCIC file", "VIN, plate and state, year, make, model, color, dents or stickers, where and when you last saw it"],
               ["Your insurer", "Theft is usually covered by comprehensive coverage, not liability-only", "Police report number, policy number, keys (insurers often ask how many you have), what was inside"],
               ["Lender or leasing company", "They own part of the car and are part of the claim", "Account number and the police report number"],
               ["Toll account and parking apps", "Stop charges and get a record of where the car has been", "Plate and transponder number"],

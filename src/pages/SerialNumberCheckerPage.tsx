@@ -103,7 +103,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "Is there a national database of stolen serial numbers?",
- answer: "Not one the public can search. The FBI's national stolen-property file is only open to law enforcement, and other theft records are split across police departments, insurers and registries. SafeOrStolen brings together the sources the public can use, including its own theft reports and police firearm theft and loss reports from 33 states and DC. A no-match result means nothing was found in those sources, not proof that the item was never stolen."
+ answer: "Not one the public can search. The FBI’s national stolen-property file is only open to law enforcement, and other theft records are split across police departments, insurers and registries. SafeOrStolen brings together the sources the public can use, including its own theft reports and police firearm theft and loss reports from 33 states and DC. A no-match result means nothing was found in those sources, not proof that the item was never stolen."
  },
  {
  question: "Can I look up who owns an item by its serial number?",

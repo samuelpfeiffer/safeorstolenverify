@@ -56,7 +56,7 @@ const CheckIfStolenPage = () => {
  {
  heading: 'What the stolen item checker searches',
  paragraphs: [
- 'Every check searches SafeOrStolen theft reports, which owners file on the site, and public web results such as listings and posts that mention the number. Some items get more: gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file and live Ohio records; bike checks add a national stolen-bicycle registry; VIN checks decode the vehicle and list open recalls, and Arizona VINs and plates are searched against Arizona law-enforcement records; phone checks show the make and model, with a search of the lost and stolen phone blacklist on paid checks.',
+ 'Every check searches SafeOrStolen theft reports, which owners file on the site, and public web results such as listings and posts that mention the number. Some items get more: gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio records; bike checks add a national stolen-bicycle registry; VIN checks decode the vehicle and list open recalls, and Arizona VINs and plates are searched against Arizona law-enforcement records; phone checks show the make and model, with a search of the lost and stolen phone blacklist on paid checks.',
  'Each result names every source it searched. The full breakdown is on how it works.',
  ],
  },
@@ -89,7 +89,7 @@ const CheckIfStolenPage = () => {
  'If you buy something that turns out to be stolen, police can take it back for the owner and you lose what you paid. Stolen phones can be blacklisted so they won\'t work on a network. A check takes a few seconds, costs nothing for your first 2, and gives you a dated record that you looked before you paid.',
  benefits: [
  'One search box for phones, vehicles, plates, guns, bikes and anything with a serial number',
- 'Gun checks include police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file',
+ 'Gun checks include police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file',
  'Bike checks include a national stolen-bicycle registry',
  'Every source searched is listed on the result',
  'Each check saved to your account with the date',

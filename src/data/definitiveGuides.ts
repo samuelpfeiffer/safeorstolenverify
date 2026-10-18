@@ -186,11 +186,11 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Gun Is Stolen",
   metaTitle: "How to Check if a Gun Is Stolen Safely",
   description:
-    "How to check if a gun is stolen: search police theft records by serial number, ask police, use Florida and Ohio's public searches, or buy through a licensed dealer who can check the FBI's stolen-gun file.",
+    "How to check if a gun is stolen: search police theft records by serial number, ask police, use Florida and Ohio's public searches, or buy through a licensed dealer who can check the FBI’s stolen-gun file.",
   keywords:
     "how to check if gun stolen, firearm serial check, stolen gun lookup, NCIC gun serial",
   directAnswer:
-    "To check a used gun: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI's stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
+    "To check a used gun: (1) run the serial on SafeOrStolen, which searches police theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; (2) in Florida or Ohio, also use the state's free public stolen-gun search; (3) ask local police to run the serial; and (4) best of all, do the sale through a licensed dealer (FFL), who can check the serial against the FBI’s stolen-gun file through NICS E-Check. Never buy a gun whose serial number is missing or altered.",
   identifierTitle: "Where to find the firearm serial number",
   identifierIntro:
     "Use the serial marked on the firearm’s frame or receiver and record the manufacturer, model, caliber, and seller’s identification as permitted by law.",
@@ -221,9 +221,9 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       name: "Buy through a licensed dealer (FFL)",
       cost: "The dealer's transfer fee; ask the shop before you go",
       description:
-        "Since 2024, federal firearms licensees can voluntarily check a serial number against the FBI's NCIC stolen-gun file, including through the FBI's NICS E-Check system. Doing a private sale as a dealer transfer also completes the background check and creates a paper trail.",
+        "Since 2024, federal firearms licensees can voluntarily check a serial number against the FBI’s NCIC stolen-gun file, including through the FBI’s NICS E-Check system. Doing a private sale as a dealer transfer also completes the background check and creates a paper trail.",
       tellsYou:
-        "Whether the serial matches a gun reported stolen in the FBI's NCIC file.",
+        "Whether the serial matches a gun reported stolen in the FBI’s NCIC file.",
     },
     {
       name: "Search Florida or Ohio's public stolen-gun records",
@@ -249,7 +249,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     {
       question: "How can a private buyer get a gun serial checked by police?",
       answer:
-        "Run the serial on SafeOrStolen, then ask local police whether they will run it under their policy, or do the sale through a licensed dealer (FFL), who can check the FBI's stolen-gun file.",
+        "Run the serial on SafeOrStolen, then ask local police whether they will run it under their policy, or do the sale through a licensed dealer (FFL), who can check the FBI’s stolen-gun file.",
     },
     {
       question: "Can ATF trace a gun for me?",
@@ -264,7 +264,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     {
       question: "Can a gun dealer check if a gun is stolen?",
       answer:
-        "Yes. Since 2024, federal firearms licensees (FFLs) can voluntarily check a serial number against the FBI's NCIC stolen-gun file, for example through NICS E-Check. Doing a private sale as a transfer through a dealer adds that check to your purchase.",
+        "Yes. Since 2024, federal firearms licensees (FFLs) can voluntarily check a serial number against the FBI’s NCIC stolen-gun file, for example through NICS E-Check. Doing a private sale as a transfer through a dealer adds that check to your purchase.",
     },
     {
       question: "What happens if I buy a stolen gun without knowing?",

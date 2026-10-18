@@ -3,7 +3,8 @@ import { Link } from '@/lib/router-compat';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { FileText, Mail } from 'lucide-react';
+import { FileText, Mail, ExternalLink } from 'lucide-react';
+import { PRESS_RELEASES } from '@/data/pressCoverage';
 
 /**
  * Oct 7 2026: rewritten by hand for "safeorstolen press". The old page listed paid press
@@ -17,7 +18,7 @@ const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 const checkRows: [string, string][] = [
   ['Every check', "SafeOrStolen's own theft reports (owners report thefts on the site) and public web results: listings and posts that mention the number"],
-  ['Guns', '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
+  ['Guns', '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'A national stolen-bicycle registry'],
   ['Phones (IMEI)', "The phone's make and model from the IMEI. A paid carrier blacklist check for lost or stolen phones is available"],
   ['Vehicles (VIN)', 'Year, make and model, open safety recalls, and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records updated twice a day'],
@@ -44,7 +45,7 @@ const PressPage = () => (
       keywords="safeorstolen press, safeorstolen media contact, safeorstolen company information, stolen item check company"
       canonical="/press"
       structuredData={[organizationSchema]}
-      modifiedTime="2026-10-07"
+      modifiedTime="2026-10-18"
     />
     <div className="min-h-screen bg-background pt-20">
       <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
@@ -60,7 +61,7 @@ const PressPage = () => (
             been reported stolen in the records SafeOrStolen searches, with every source listed. For interviews or
             questions, email {PRESS_EMAIL}.
           </p>
-          <p className="text-sm text-muted-foreground mb-8">Updated October 7, 2026</p>
+          <p className="text-sm text-muted-foreground mb-8">Updated October 18, 2026</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="gap-2">
               <a href={`mailto:${PRESS_EMAIL}?subject=Press inquiry`}>
@@ -72,6 +73,32 @@ const PressPage = () => (
               <Link to="/press-kit">Press kit and boilerplate</Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4">Published press releases</h2>
+          <ul className="space-y-4">
+            {PRESS_RELEASES.map((r) => (
+              <li key={r.title} className="border border-border rounded-lg p-4">
+                <p className="text-sm text-muted-foreground mb-1">
+                  {r.outlet} · {r.date}
+                </p>
+                <p className="font-semibold">{r.title}</p>
+                {r.url && (
+                  <a
+                    href={r.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-1 text-primary hover:underline text-sm mt-2"
+                  >
+                    Read the release <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -30,6 +30,7 @@ const AUTHOR_SCHEMA = {
   sameAs: [
     "https://twitter.com/safeorstolen",
     "https://www.youtube.com/@safeorstolen",
+    "https://www.linkedin.com/in/samuel-pfeiffer-innovator",
     "https://www.crunchbase.com/organization/safe-or-stolen"
   ]
 };
@@ -220,11 +221,12 @@ const OurStoryPage: React.FC = () => {
       description:
         'SafeOrStolen founder Samuel Edward Joseph Pfeiffer on his record, his friend Glen Thomure, and why he built a way to check if an item is stolen before you buy it.',
       url: 'https://safeorstolen.com/our-story',
-      dateModified: '2026-10-07',
+      dateModified: '2026-10-18',
       mainEntity: {
         '@type': 'Person',
         name: 'Samuel Edward Joseph Pfeiffer',
         jobTitle: 'Founder & CEO',
+        sameAs: ['https://www.linkedin.com/in/samuel-pfeiffer-innovator'],
         worksFor: {
           '@type': 'Organization',
           name: 'SafeOrStolen',
@@ -337,7 +339,8 @@ const OurStoryPage: React.FC = () => {
                   Samuel Edward Joseph Pfeiffer is the founder and CEO of SafeOrStolen, which checks whether phones, vehicles, guns,
                   bikes and serial-numbered items have been reported stolen. Read{' '}
                   <Link to="/about" className="text-primary hover:underline">what SafeOrStolen searches and what it costs</Link>, or
-                  run a check from the <Link to="/" className="text-primary hover:underline">homepage</Link>.
+                  run a check from the <Link to="/" className="text-primary hover:underline">homepage</Link>. Connect with Samuel on{' '}
+                  <a href="https://www.linkedin.com/in/samuel-pfeiffer-innovator" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn</a>.
                 </p>
               </div>
             </Card>

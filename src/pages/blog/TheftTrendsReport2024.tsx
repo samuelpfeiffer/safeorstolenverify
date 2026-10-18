@@ -87,7 +87,7 @@ const FAQS = [
   {
     question: 'Are there reliable statistics on the most stolen items?',
     answer:
-      "Some exist for specific categories, such as the FBI's annual crime data for motor vehicle theft, but there's no single trustworthy count across all items, because many thefts are never reported. Be cautious with articles quoting exact national totals for things like phones or tools without naming where the number came from.",
+      "Some exist for specific categories, such as the FBI’s annual crime data for motor vehicle theft, but there's no single trustworthy count across all items, because many thefts are never reported. Be cautious with articles quoting exact national totals for things like phones or tools without naming where the number came from.",
   },
 ];
 

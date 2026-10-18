@@ -25,7 +25,7 @@ const FirearmsSerialNumberCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to check if a gun is stolen?",
- answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 2 free checks with a free account and no credit card. A gun check searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio law-enforcement records. After the free checks it's $0.99 a check or $10 a month."
+ answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 2 free checks with a free account and no credit card. A gun check searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records. After the free checks it's $0.99 a check or $10 a month."
  },
  {
  question: "Can I check a gun serial number online from my phone?",
@@ -57,7 +57,7 @@ const FirearmsSerialNumberCheckPage = () => {
  },
  "serviceType": "Stolen Firearm Verification",
  "areaServed": "US",
- "description": "Check a gun serial number for theft reports before buying or selling. Searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017), and live Ohio law-enforcement records."
+ "description": "Check a gun serial number for theft reports before buying or selling. Searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017), and live Ohio law-enforcement records."
  },
  {
  "@context": "https://schema.org",
@@ -191,7 +191,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter the serial number into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Enter the complete serial number exactly as it appears on the firearm. Include all letters, numbers, and hyphens. SafeOrStolen searches its own theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio law-enforcement records. Results take a few seconds.
+ Enter the complete serial number exactly as it appears on the firearm. Include all letters, numbers, and hyphens. SafeOrStolen searches its own theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records. Results take a few seconds.
  </p>
  </div>
  </div>
@@ -231,7 +231,7 @@ const FirearmsSerialNumberCheckPage = () => {
  Police firearm theft and loss reports
  </h3>
  <p className="text-muted-foreground">
- Gun checks also search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, filed 1973–2017. Ohio serials are also checked against live Ohio law-enforcement records.
+ Gun checks also search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, filed 1973–2017. Ohio serials are also checked against live Ohio law-enforcement records.
  </p>
  </div>
 
@@ -254,7 +254,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <h2 className="text-3xl font-bold mb-6">Ways to Check a Gun Serial Number</h2>
  
  <p className="text-lg text-muted-foreground mb-6">
- SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results in one check, and lists every source on the result.
+ SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results in one check, and lists every source on the result.
  </p>
  
  <p className="text-lg text-muted-foreground mb-6">
@@ -269,7 +269,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <CardContent className="p-6">
  <h3 className="font-semibold mb-2">What a SafeOrStolen Gun Check Shows</h3>
  <p className="text-muted-foreground">
- Matches in SafeOrStolen theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio law-enforcement records, plus a flag if the serial looks altered or obliterated. It never shows who owns the gun.
+ Matches in SafeOrStolen theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records, plus a flag if the serial looks altered or obliterated. It never shows who owns the gun.
  </p>
  </CardContent>
  </Card>

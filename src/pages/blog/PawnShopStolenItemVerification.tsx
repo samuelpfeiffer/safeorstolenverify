@@ -136,7 +136,7 @@ const PawnShopStolenItemVerification = () => {
               </table>
             </div>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              The key detail: police run the shop's records against stolen reports, including the FBI's national crime
+              The key detail: police run the shop's records against stolen reports, including the FBI’s national crime
               records system, NCIC. That match happens after the shop's report arrives, which is why the holding period exists.
             </p>
           </section>

@@ -51,7 +51,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
           columns: ['Record', 'Who can search it', 'What it tells you'],
           rows: [
             ['SafeOrStolen check', 'Anyone, 2 free checks', 'Whether the plate is in SafeOrStolen theft reports or public web results; Arizona plates also against Arizona law-enforcement records'],
-            ["FBI's NCIC license plate file", 'Police only', 'Plates reported stolen to any U.S. police agency. Officers check it when they run a plate.'],
+            ["FBI’s NCIC license plate file", 'Police only', 'Plates reported stolen to any U.S. police agency. Officers check it when they run a plate.'],
             ['State DMV record', 'The owner, police and permitted requesters', 'Whether the plate was reported lost or stolen and replaced. Owner details are private.'],
             ['Your own paperwork', 'You', 'Registration card, renewal notice and title, which list the plate and VIN'],
           ],
@@ -97,7 +97,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         {
           question: 'Can police tell if a license plate is stolen?',
           answer:
-            "Yes. When an officer runs a plate, the search covers the state's records and the FBI's NCIC file, which holds plates reported stolen anywhere in the United States. Many patrol cars also have plate readers that flag stolen plates automatically. If you see a plate you think is stolen, call the non-emergency line.",
+            "Yes. When an officer runs a plate, the search covers the state's records and the FBI’s NCIC file, which holds plates reported stolen anywhere in the United States. Many patrol cars also have plate readers that flag stolen plates automatically. If you see a plate you think is stolen, call the non-emergency line.",
         },
         {
           question: 'How do I know if someone is using my license plate?',

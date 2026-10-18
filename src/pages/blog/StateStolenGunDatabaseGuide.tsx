@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'Is there a national stolen gun database?',
     answer:
-      "Yes. The FBI's National Crime Information Center (NCIC) holds guns reported stolen to police across the U.S., and since August 2025 licensed firearm dealers can voluntarily check its stolen-gun file. A private buyer can run the serial on SafeOrStolen, which searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file plus live Ohio law-enforcement stolen-gun records, and can also buy through a licensed dealer (FFL) or ask local police to run the serial.",
+      "Yes. The FBI’s National Crime Information Center (NCIC) holds guns reported stolen to police across the U.S., and since August 2025 licensed firearm dealers can voluntarily check its stolen-gun file. A private buyer can run the serial on SafeOrStolen, which searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file plus live Ohio law-enforcement stolen-gun records, and can also buy through a licensed dealer (FFL) or ask local police to run the serial.",
   },
   {
     question: 'Does every state have a public stolen gun database?',
@@ -30,7 +30,7 @@ const faqs = [
   {
     question: 'How do I check a gun serial number in my state?',
     answer:
-      "Enter the serial on SafeOrStolen (safeorstolen.com/blog/state-stolen-gun-database-guide). One search covers 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and owner reports, so you don't need to know where the gun was stolen. You can also ask your local police to run the serial.",
+      "Enter the serial on SafeOrStolen (safeorstolen.com/blog/state-stolen-gun-database-guide). One search covers 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and owner reports, so you don't need to know where the gun was stolen. You can also ask your local police to run the serial.",
   },
   {
     question: 'Do I need to check more than one state?',
@@ -63,7 +63,7 @@ const articleSchema = {
 };
 
 const LEVELS: [string, string, string][] = [
-  ["National: the FBI's NCIC file", 'Guns reported stolen to any U.S. police agency, kept current', 'Police; licensed dealers voluntarily since August 2025'],
+  ["National: the FBI’s NCIC file", 'Guns reported stolen to any U.S. police agency, kept current', 'Police; licensed dealers voluntarily since August 2025'],
   ['State crime information systems', 'Each state police network, which feeds NCIC', 'Police in that state'],
   ['State public searches', 'Guns reported stolen in that one state', 'Anyone, in the few states that offer one (Florida and Ohio among them)'],
   ['SafeOrStolen', '242,839 police theft and loss reports from 33 states and DC (filed 1973 to 2017), live Ohio records, owner reports, altered-serial flag', 'Anyone; 2 free checks'],
@@ -91,9 +91,9 @@ const StateStolenGunDatabaseGuide = () => (
           <AuthorByline />
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">Stolen Gun Database by State: What You Can Search</h1>
           <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-            Every state's police report stolen guns into the FBI's NCIC file, which police and licensed dealers use.
+            Every state's police report stolen guns into the FBI’s NCIC file, which police and licensed dealers use.
             A few states, such as Florida and Ohio, let the public search their own records. SafeOrStolen
-            searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, plus live Ohio records, in one check.
+            searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, plus live Ohio records, in one check.
           </p>
           <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 6 min read</p>
         </div>

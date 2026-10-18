@@ -46,9 +46,9 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 
 // One list for the visible FAQ and the FAQPage schema, so they always match.
 const FIREARM_FAQS: { q: string; a: string }[] = [
- { q: 'How do I check if a gun is stolen by serial number?', a: "Enter the serial number from the frame or receiver at SafeOrStolen (safeorstolen.com/firearms-check). SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results, and checks the serial for signs of tampering. You get a result in a few seconds. The first 2 checks are free." },
+ { q: 'How do I check if a gun is stolen by serial number?', a: "Enter the serial number from the frame or receiver at SafeOrStolen (safeorstolen.com/firearms-check). SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results, and checks the serial for signs of tampering. You get a result in a few seconds. The first 2 checks are free." },
  { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $0.99 per check or $10 a month for unlimited checks.' },
- { q: 'Is there a national stolen gun database I can search?', a: "SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017) and live Ohio law-enforcement stolen-gun records in one check, along with its own theft reports and public web results. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial." },
+ { q: 'Is there a national stolen gun database I can search?', a: "SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017) and live Ohio law-enforcement stolen-gun records in one check, along with its own theft reports and public web results. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial." },
  { q: 'My state is not on the list. Can I still check a gun?', a: "Yes. Every check still searches SafeOrStolen's own theft reports and public web results, and a gun reported stolen in one of those 33 states or DC can turn up for sale anywhere. For an extra check, call your local police non-emergency line and ask whether they will run the serial for a private buyer. Some departments will and some won't." },
  { q: 'Is it legal to check a gun serial number?', a: 'Yes. Looking up whether a serial number has been reported stolen is legal for anyone. SafeOrStolen is a private service and is not a government agency. It never shows who owns a gun or who reported it.' },
  { q: 'What should I do if the result comes back clean?', a: 'A clean SafeOrStolen result means no report was found in the records searched at the time of the check. Before you pay, also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
@@ -78,7 +78,7 @@ const FirearmsCheckPage = () => {
  <span className="text-primary">Any State. Is This Gun Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Check a gun from any state. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, plus state criminal justice stolen-gun records searched live, before you buy.
+ Check a gun from any state. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, plus state criminal justice stolen-gun records searched live, before you buy.
  </p>
 
 
@@ -157,7 +157,7 @@ const FirearmsCheckPage = () => {
  Which Databases Does SafeOrStolen Check for Firearms?
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: every gun check searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, state criminal justice stolen-gun records searched live, SafeOrStolen's own theft reports and public web results, and checks the serial for tampering.
+ Quick answer: every gun check searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, state criminal justice stolen-gun records searched live, SafeOrStolen's own theft reports and public web results, and checks the serial for tampering.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
  All of these are searched at the same time, and the result lists each one, so
@@ -211,7 +211,7 @@ const FirearmsCheckPage = () => {
  Gun Serial Number Lookup by State
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
+ Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
  These are reports filed with police from 1973 to 2017; the table shows the years for each state. Open a state for its most reported brands and models, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">national stolen gun statistics</Link>. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.

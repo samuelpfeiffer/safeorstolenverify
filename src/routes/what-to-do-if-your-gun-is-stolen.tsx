@@ -28,7 +28,7 @@ function GuidePage() {
       quickAnswer={{
         question: "What should I do if my gun is stolen?",
         answer:
-          "Report it to your local police right away, by phone or in person, with the make, model, caliber and serial number, and get the report number. Police enter it in the FBI's NCIC stolen-gun file so it's flagged if recovered or checked. Then find out whether your state sets a reporting deadline, call your insurer, and add it on SafeOrStolen (safeorstolen.com/report-stolen) so private buyers who check the serial see it.",
+          "Report it to your local police right away, by phone or in person, with the make, model, caliber and serial number, and get the report number. Police enter it in the FBI’s NCIC stolen-gun file so it's flagged if recovered or checked. Then find out whether your state sets a reporting deadline, call your insurer, and add it on SafeOrStolen (safeorstolen.com/report-stolen) so private buyers who check the serial see it.",
       }}
       sections={[
         {
@@ -75,9 +75,9 @@ function GuidePage() {
         intro:
           "Your gun is missing. Report it to local police with the serial number, find the serial if you never wrote it down, and then deal with your insurer and your state's reporting rules. Here's each step.",
         whatIs:
-          "A stolen gun report is the police record that flags your gun's serial number as stolen. Police enter it in the FBI's NCIC file, which officers check when they recover a gun, and licensed dealers can check when they take one in. Reporting it on SafeOrStolen adds the serial to the theft reports that private buyers search before they buy.",
+          "A stolen gun report is the police record that flags your gun's serial number as stolen. Police enter it in the FBI’s NCIC file, which officers check when they recover a gun, and licensed dealers can check when they take one in. Reporting it on SafeOrStolen adds the serial to the theft reports that private buyers search before they buy.",
         howItWorks:
-          "After the police report, add the theft on SafeOrStolen's <a href=\"/report-stolen\">report a stolen item</a> page with the serial number, make and model. Every SafeOrStolen gun serial check searches those owner reports along with police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio law-enforcement records. Reporting on SafeOrStolen does not notify the police; file with them first.",
+          "After the police report, add the theft on SafeOrStolen's <a href=\"/report-stolen\">report a stolen item</a> page with the serial number, make and model. Every SafeOrStolen gun serial check searches those owner reports along with police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records. Reporting on SafeOrStolen does not notify the police; file with them first.",
         whyCheck:
           "A stolen gun can be sold privately within days, used in another crime, or turn up at a pawn shop. A prompt police report means it can come back to you when it's recovered, and puts on record that it left your hands when it did.",
         benefits: [
@@ -98,7 +98,7 @@ function GuidePage() {
           {
             question: "How do I report a stolen gun?",
             answer:
-              "Call your local police department or sheriff's office, using 911 if the theft is happening or the burglar may still be there and the non-emergency line otherwise. Give the make, model, caliber and serial number, and when and where it was taken. Ask for the report number and confirm the gun will be entered as stolen in the FBI's NCIC file.",
+              "Call your local police department or sheriff's office, using 911 if the theft is happening or the burglar may still be there and the non-emergency line otherwise. Give the make, model, caliber and serial number, and when and where it was taken. Ask for the report number and confirm the gun will be entered as stolen in the FBI’s NCIC file.",
           },
           {
             question: "Do I have to report a stolen gun?",

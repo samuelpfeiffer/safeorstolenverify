@@ -331,6 +331,7 @@ import { Route as BlogBicycleStolenSerialNumberCheckRouteImport } from './routes
 import { Route as BlogBoughtStolenPhoneWhatToDoRouteImport } from './routes/blog/bought-stolen-phone-what-to-do'
 import { Route as BlogBuyingUsedPhoneChecklistRouteImport } from './routes/blog/buying-used-phone-checklist'
 import { Route as BlogCarfaxVsFreeVinAlternativesRouteImport } from './routes/blog/carfax-vs-free-vin-alternatives'
+import { Route as BlogCheckIfGuitarStolenRouteImport } from './routes/blog/check-if-guitar-stolen'
 import { Route as BlogCheckIfPhoneStolenGuideRouteImport } from './routes/blog/check-if-phone-stolen-guide'
 import { Route as BlogCheckmendHasNoAppRouteImport } from './routes/blog/checkmend-has-no-app'
 import { Route as BlogCompleteImeiGuideProtectYourselfRouteImport } from './routes/blog/complete-imei-guide-protect-yourself'
@@ -383,6 +384,7 @@ import { Route as GuidesEbayBuyerProtectionRouteImport } from './routes/guides/e
 import { Route as GuidesOfferupScamProtectionRouteImport } from './routes/guides/offerup-scam-protection'
 import { Route as GuidesVerifyCraigslistItemsRouteImport } from './routes/guides/verify-craigslist-items'
 import { Route as GunSerialNumberLookupStateRouteImport } from './routes/gun-serial-number-lookup_.$state'
+import { Route as GunSerialNumberLookupTennesseeRouteImport } from './routes/gun-serial-number-lookup_.tennessee'
 import { Route as ItemSlugRouteImport } from './routes/item/$slug'
 import { Route as ProofIdRouteImport } from './routes/proof/$id'
 import { Route as SharedShareCodeRouteImport } from './routes/shared/$shareCode'
@@ -2077,6 +2079,11 @@ const BlogCarfaxVsFreeVinAlternativesRoute =
     path: '/carfax-vs-free-vin-alternatives',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogCheckIfGuitarStolenRoute = BlogCheckIfGuitarStolenRouteImport.update({
+  id: '/check-if-guitar-stolen',
+  path: '/check-if-guitar-stolen',
+  getParentRoute: () => BlogRoute,
+} as any)
 const BlogCheckIfPhoneStolenGuideRoute =
   BlogCheckIfPhoneStolenGuideRouteImport.update({
     id: '/check-if-phone-stolen-guide',
@@ -2379,6 +2386,12 @@ const GunSerialNumberLookupStateRoute =
   GunSerialNumberLookupStateRouteImport.update({
     id: '/gun-serial-number-lookup_/$state',
     path: '/gun-serial-number-lookup/$state',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GunSerialNumberLookupTennesseeRoute =
+  GunSerialNumberLookupTennesseeRouteImport.update({
+    id: '/gun-serial-number-lookup_/tennessee',
+    path: '/gun-serial-number-lookup/tennessee',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ItemSlugRoute = ItemSlugRouteImport.update({
@@ -2748,6 +2761,7 @@ export interface FileRoutesByFullPath {
   '/blog/bought-stolen-phone-what-to-do': typeof BlogBoughtStolenPhoneWhatToDoRoute
   '/blog/buying-used-phone-checklist': typeof BlogBuyingUsedPhoneChecklistRoute
   '/blog/carfax-vs-free-vin-alternatives': typeof BlogCarfaxVsFreeVinAlternativesRoute
+  '/blog/check-if-guitar-stolen': typeof BlogCheckIfGuitarStolenRoute
   '/blog/check-if-phone-stolen-guide': typeof BlogCheckIfPhoneStolenGuideRoute
   '/blog/checkmend-has-no-app': typeof BlogCheckmendHasNoAppRoute
   '/blog/complete-imei-guide-protect-yourself': typeof BlogCompleteImeiGuideProtectYourselfRoute
@@ -2800,6 +2814,7 @@ export interface FileRoutesByFullPath {
   '/guides/offerup-scam-protection': typeof GuidesOfferupScamProtectionRoute
   '/guides/verify-craigslist-items': typeof GuidesVerifyCraigslistItemsRoute
   '/gun-serial-number-lookup/$state': typeof GunSerialNumberLookupStateRoute
+  '/gun-serial-number-lookup/tennessee': typeof GunSerialNumberLookupTennesseeRoute
   '/item/$slug': typeof ItemSlugRoute
   '/proof/$id': typeof ProofIdRoute
   '/shared/$shareCode': typeof SharedShareCodeRoute
@@ -3130,6 +3145,7 @@ export interface FileRoutesByTo {
   '/blog/bought-stolen-phone-what-to-do': typeof BlogBoughtStolenPhoneWhatToDoRoute
   '/blog/buying-used-phone-checklist': typeof BlogBuyingUsedPhoneChecklistRoute
   '/blog/carfax-vs-free-vin-alternatives': typeof BlogCarfaxVsFreeVinAlternativesRoute
+  '/blog/check-if-guitar-stolen': typeof BlogCheckIfGuitarStolenRoute
   '/blog/check-if-phone-stolen-guide': typeof BlogCheckIfPhoneStolenGuideRoute
   '/blog/checkmend-has-no-app': typeof BlogCheckmendHasNoAppRoute
   '/blog/complete-imei-guide-protect-yourself': typeof BlogCompleteImeiGuideProtectYourselfRoute
@@ -3182,6 +3198,7 @@ export interface FileRoutesByTo {
   '/guides/offerup-scam-protection': typeof GuidesOfferupScamProtectionRoute
   '/guides/verify-craigslist-items': typeof GuidesVerifyCraigslistItemsRoute
   '/gun-serial-number-lookup/$state': typeof GunSerialNumberLookupStateRoute
+  '/gun-serial-number-lookup/tennessee': typeof GunSerialNumberLookupTennesseeRoute
   '/item/$slug': typeof ItemSlugRoute
   '/proof/$id': typeof ProofIdRoute
   '/shared/$shareCode': typeof SharedShareCodeRoute
@@ -3516,6 +3533,7 @@ export interface FileRoutesById {
   '/blog/bought-stolen-phone-what-to-do': typeof BlogBoughtStolenPhoneWhatToDoRoute
   '/blog/buying-used-phone-checklist': typeof BlogBuyingUsedPhoneChecklistRoute
   '/blog/carfax-vs-free-vin-alternatives': typeof BlogCarfaxVsFreeVinAlternativesRoute
+  '/blog/check-if-guitar-stolen': typeof BlogCheckIfGuitarStolenRoute
   '/blog/check-if-phone-stolen-guide': typeof BlogCheckIfPhoneStolenGuideRoute
   '/blog/checkmend-has-no-app': typeof BlogCheckmendHasNoAppRoute
   '/blog/complete-imei-guide-protect-yourself': typeof BlogCompleteImeiGuideProtectYourselfRoute
@@ -3568,6 +3586,7 @@ export interface FileRoutesById {
   '/guides/offerup-scam-protection': typeof GuidesOfferupScamProtectionRoute
   '/guides/verify-craigslist-items': typeof GuidesVerifyCraigslistItemsRoute
   '/gun-serial-number-lookup_/$state': typeof GunSerialNumberLookupStateRoute
+  '/gun-serial-number-lookup_/tennessee': typeof GunSerialNumberLookupTennesseeRoute
   '/item/$slug': typeof ItemSlugRoute
   '/proof/$id': typeof ProofIdRoute
   '/shared/$shareCode': typeof SharedShareCodeRoute
@@ -3903,6 +3922,7 @@ export interface FileRouteTypes {
     | '/blog/bought-stolen-phone-what-to-do'
     | '/blog/buying-used-phone-checklist'
     | '/blog/carfax-vs-free-vin-alternatives'
+    | '/blog/check-if-guitar-stolen'
     | '/blog/check-if-phone-stolen-guide'
     | '/blog/checkmend-has-no-app'
     | '/blog/complete-imei-guide-protect-yourself'
@@ -3955,6 +3975,7 @@ export interface FileRouteTypes {
     | '/guides/offerup-scam-protection'
     | '/guides/verify-craigslist-items'
     | '/gun-serial-number-lookup/$state'
+    | '/gun-serial-number-lookup/tennessee'
     | '/item/$slug'
     | '/proof/$id'
     | '/shared/$shareCode'
@@ -4285,6 +4306,7 @@ export interface FileRouteTypes {
     | '/blog/bought-stolen-phone-what-to-do'
     | '/blog/buying-used-phone-checklist'
     | '/blog/carfax-vs-free-vin-alternatives'
+    | '/blog/check-if-guitar-stolen'
     | '/blog/check-if-phone-stolen-guide'
     | '/blog/checkmend-has-no-app'
     | '/blog/complete-imei-guide-protect-yourself'
@@ -4337,6 +4359,7 @@ export interface FileRouteTypes {
     | '/guides/offerup-scam-protection'
     | '/guides/verify-craigslist-items'
     | '/gun-serial-number-lookup/$state'
+    | '/gun-serial-number-lookup/tennessee'
     | '/item/$slug'
     | '/proof/$id'
     | '/shared/$shareCode'
@@ -4670,6 +4693,7 @@ export interface FileRouteTypes {
     | '/blog/bought-stolen-phone-what-to-do'
     | '/blog/buying-used-phone-checklist'
     | '/blog/carfax-vs-free-vin-alternatives'
+    | '/blog/check-if-guitar-stolen'
     | '/blog/check-if-phone-stolen-guide'
     | '/blog/checkmend-has-no-app'
     | '/blog/complete-imei-guide-protect-yourself'
@@ -4722,6 +4746,7 @@ export interface FileRouteTypes {
     | '/guides/offerup-scam-protection'
     | '/guides/verify-craigslist-items'
     | '/gun-serial-number-lookup_/$state'
+    | '/gun-serial-number-lookup_/tennessee'
     | '/item/$slug'
     | '/proof/$id'
     | '/shared/$shareCode'
@@ -5061,6 +5086,7 @@ export interface RootRouteChildren {
   GuidesOfferupScamProtectionRoute: typeof GuidesOfferupScamProtectionRoute
   GuidesVerifyCraigslistItemsRoute: typeof GuidesVerifyCraigslistItemsRoute
   GunSerialNumberLookupStateRoute: typeof GunSerialNumberLookupStateRoute
+  GunSerialNumberLookupTennesseeRoute: typeof GunSerialNumberLookupTennesseeRoute
   ItemSlugRoute: typeof ItemSlugRoute
   ProofIdRoute: typeof ProofIdRoute
   SharedShareCodeRoute: typeof SharedShareCodeRoute
@@ -7325,6 +7351,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogCarfaxVsFreeVinAlternativesRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/check-if-guitar-stolen': {
+      id: '/blog/check-if-guitar-stolen'
+      path: '/check-if-guitar-stolen'
+      fullPath: '/blog/check-if-guitar-stolen'
+      preLoaderRoute: typeof BlogCheckIfGuitarStolenRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/check-if-phone-stolen-guide': {
       id: '/blog/check-if-phone-stolen-guide'
       path: '/check-if-phone-stolen-guide'
@@ -7689,6 +7722,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GunSerialNumberLookupStateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gun-serial-number-lookup_/tennessee': {
+      id: '/gun-serial-number-lookup_/tennessee'
+      path: '/gun-serial-number-lookup/tennessee'
+      fullPath: '/gun-serial-number-lookup/tennessee'
+      preLoaderRoute: typeof GunSerialNumberLookupTennesseeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/item/$slug': {
       id: '/item/$slug'
       path: '/item/$slug'
@@ -7783,6 +7823,7 @@ interface BlogRouteChildren {
   BlogBoughtStolenPhoneWhatToDoRoute: typeof BlogBoughtStolenPhoneWhatToDoRoute
   BlogBuyingUsedPhoneChecklistRoute: typeof BlogBuyingUsedPhoneChecklistRoute
   BlogCarfaxVsFreeVinAlternativesRoute: typeof BlogCarfaxVsFreeVinAlternativesRoute
+  BlogCheckIfGuitarStolenRoute: typeof BlogCheckIfGuitarStolenRoute
   BlogCheckIfPhoneStolenGuideRoute: typeof BlogCheckIfPhoneStolenGuideRoute
   BlogCheckmendHasNoAppRoute: typeof BlogCheckmendHasNoAppRoute
   BlogCompleteImeiGuideProtectYourselfRoute: typeof BlogCompleteImeiGuideProtectYourselfRoute
@@ -7831,6 +7872,7 @@ const BlogRouteChildren: BlogRouteChildren = {
   BlogBoughtStolenPhoneWhatToDoRoute: BlogBoughtStolenPhoneWhatToDoRoute,
   BlogBuyingUsedPhoneChecklistRoute: BlogBuyingUsedPhoneChecklistRoute,
   BlogCarfaxVsFreeVinAlternativesRoute: BlogCarfaxVsFreeVinAlternativesRoute,
+  BlogCheckIfGuitarStolenRoute: BlogCheckIfGuitarStolenRoute,
   BlogCheckIfPhoneStolenGuideRoute: BlogCheckIfPhoneStolenGuideRoute,
   BlogCheckmendHasNoAppRoute: BlogCheckmendHasNoAppRoute,
   BlogCompleteImeiGuideProtectYourselfRoute:
@@ -8227,6 +8269,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesOfferupScamProtectionRoute: GuidesOfferupScamProtectionRoute,
   GuidesVerifyCraigslistItemsRoute: GuidesVerifyCraigslistItemsRoute,
   GunSerialNumberLookupStateRoute: GunSerialNumberLookupStateRoute,
+  GunSerialNumberLookupTennesseeRoute: GunSerialNumberLookupTennesseeRoute,
   ItemSlugRoute: ItemSlugRoute,
   ProofIdRoute: ProofIdRoute,
   SharedShareCodeRoute: SharedShareCodeRoute,

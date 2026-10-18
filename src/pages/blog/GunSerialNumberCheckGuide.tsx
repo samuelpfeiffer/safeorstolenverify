@@ -11,11 +11,11 @@ const GunSerialNumberCheckGuide = () => {
  const faqs = [
  {
  q: "How do I check if a gun is stolen for free?",
- a: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. A free account gets 2 checks with no credit card; results come back in a few seconds."
+ a: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. A free account gets 2 checks with no credit card; results come back in a few seconds."
  },
  {
  q: "Is there a national stolen gun database the public can search?",
- a: "Yes, a large set of police records: SafeOrStolen (safeorstolen.com/firearms-check) searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, filed 1973 to 2017, plus live Ohio law-enforcement stolen-gun records. For a private sale, you can also buy through a licensed dealer (FFL) or ask your local police department to run the serial."
+ a: "Yes, a large set of police records: SafeOrStolen (safeorstolen.com/firearms-check) searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, filed 1973 to 2017, plus live Ohio law-enforcement stolen-gun records. For a private sale, you can also buy through a licensed dealer (FFL) or ask your local police department to run the serial."
  },
  {
  q: "Is it illegal to buy a stolen gun?",
@@ -31,7 +31,7 @@ const GunSerialNumberCheckGuide = () => {
  },
  {
  q: "What does SafeOrStolen check for firearms?",
- a: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated."
+ a: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated."
  },
  {
  q: "What should I do if a gun comes back as stolen?",
@@ -77,7 +77,7 @@ const GunSerialNumberCheckGuide = () => {
  <AuthorByline />
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free Serial Number Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- To check if a gun is stolen, read the serial from the frame and enter it at safeorstolen.com/firearms-check. The check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio records, and SafeOrStolen theft reports, and lists every source. The first 2 checks are free.
+ To check if a gun is stolen, read the serial from the frame and enter it at safeorstolen.com/firearms-check. The check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio records, and SafeOrStolen theft reports, and lists every source. The first 2 checks are free.
  </p>
  <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 8 min read</p>
  </div>

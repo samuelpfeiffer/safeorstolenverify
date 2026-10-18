@@ -24,7 +24,7 @@ const FirearmSerialNumberVerification = () => {
   const faqs = [
     {
       question: "How do I check if a gun is stolen by serial number?",
-      answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
+      answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
     },
     {
       question: "Is it illegal to buy a stolen firearm?",
@@ -78,7 +78,7 @@ const FirearmSerialNumberVerification = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-6">
-              Find the serial on the frame or receiver, run it through SafeOrStolen against police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio records, and walk away from any gun whose serial looks altered.
+              Find the serial on the frame or receiver, run it through SafeOrStolen against police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio records, and walk away from any gun whose serial looks altered.
             </p>
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground">

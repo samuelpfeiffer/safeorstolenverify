@@ -7,7 +7,8 @@ import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { ProductTour } from '@/components/onboarding/ProductTour';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 
 
@@ -107,7 +108,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How do I check if a gun is stolen?',
- a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. For a private sale, you can also ask your local police to run the serial.",
+ a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. For a private sale, you can also ask your local police to run the serial.",
  },
  {
  q: 'Can I check a Facebook Marketplace listing?',
@@ -115,7 +116,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'What does SafeOrStolen search?',
- a: "Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
+ a: "Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
@@ -144,6 +145,16 @@ const FAQ_ITEMS = [
 // ============================================================
 
 const Index = () => {
+ // Real number of checks run (admin test checks excluded). Hidden if it can't be read.
+ const [checksRun, setChecksRun] = useState<number | null>(null);
+ useEffect(() => {
+  let active = true;
+  (supabase.rpc as any)('public_checks_run_count').then(({ data, error }: { data: unknown; error: unknown }) => {
+   if (active && !error && typeof data === 'number' && data > 0) setChecksRun(data);
+  });
+  return () => { active = false; };
+ }, []);
+
  const [showScanner, setShowScanner] = useState(false);
 
  return (
@@ -160,7 +171,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Check if something is stolen before you buy it</h1>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── AI CHAT HERO ──────────────────────────── */}
@@ -168,8 +179,9 @@ const Index = () => {
 
  {/* ── STATS BAR ───────────────────────────────────── */}
  <div className="bg-card border-y border-border">
- <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+ <div className={`max-w-5xl mx-auto grid grid-cols-2 ${checksRun ? 'md:grid-cols-5' : 'md:grid-cols-4'} divide-x divide-border`}>
  {[
+  ...(checksRun ? [{ v: checksRun.toLocaleString('en-US'), l: 'Checks run so far' }] : []),
   { v: '242,839', l: 'Police gun theft reports' },
   { v: '6', l: 'Kinds of items' },
   { v: 'Listed', l: 'Every source searched' },
@@ -201,12 +213,6 @@ const Index = () => {
  installable web app, and verification certificates included. Cancel anytime, 30-day refund.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-3">
- <Link
- to="/verify"
- className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all button-glow"
- >
- Start Free — 2 Checks
- </Link>
  <Link
  to="/pricing"
  className="inline-flex items-center gap-2 border border-border hover:border-primary text-foreground font-semibold px-6 py-3 rounded-xl transition-all hover:bg-primary/5"
@@ -365,10 +371,10 @@ const Index = () => {
 
       <div className="flex justify-center mt-8">
         <Link
-          to="/verify"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
+          to="/how-it-works"
+          className="text-sm font-semibold text-primary hover:underline"
         >
-          Run a free check →
+          How a check works →
         </Link>
       </div>
     </div>
@@ -405,12 +411,6 @@ const Index = () => {
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Link
- to="/verify"
- className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
- >
- Check for Free →
- </Link>
- <Link
  to="/for-sellers"
  className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-primary text-foreground font-bold px-8 py-4 rounded-2xl transition-all hover:bg-primary/5"
  >
@@ -434,6 +434,7 @@ const Index = () => {
  <Link to="/our-story" className="font-semibold text-primary hover:underline">Why we built this →</Link>
  <a href="https://twitter.com/safeorstolen" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">X</a>
  <a href="https://www.youtube.com/@safeorstolen" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">YouTube</a>
+ <a href="https://www.linkedin.com/in/samuel-pfeiffer-innovator" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">LinkedIn</a>
  </div>
  </div>
  </section>

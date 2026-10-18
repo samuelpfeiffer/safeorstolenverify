@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@/lib/router-compat';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Shield, Heart, ExternalLink, Twitter, Youtube, Lock, Star } from 'lucide-react';
+import { Shield, Heart, ExternalLink, Twitter, Youtube, Linkedin, Lock, Star } from 'lucide-react';
 import { Logo } from '@/components/common/Logo';
 
 /**
@@ -70,6 +70,7 @@ export const Footer: React.FC = () => {
   const socialLinks = [
     { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/safeorstolen' },
     { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@safeorstolen' },
+    { name: 'Founder on LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/samuel-pfeiffer-innovator' },
   ];
 
   const externalLinks = [

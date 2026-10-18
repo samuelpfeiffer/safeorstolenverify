@@ -18,12 +18,12 @@ const faqs = [
   {
     question: 'How do I check a gun serial number at a gun show?',
     answer:
-      "Ask to hold the gun, read the serial off the frame or receiver, and enter it on SafeOrStolen (safeorstolen.com/blog/gun-show-serial-number-check) on your phone. It searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered. The first 2 checks are free and no app download is needed.",
+      "Ask to hold the gun, read the serial off the frame or receiver, and enter it on SafeOrStolen (safeorstolen.com/blog/gun-show-serial-number-check) on your phone. It searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered. The first 2 checks are free and no app download is needed.",
   },
   {
     question: 'Can a dealer at a gun show check if a gun is stolen?',
     answer:
-      "Yes, if they choose to. Since August 2025, licensed dealers can voluntarily check a serial against the FBI's NCIC stolen-gun file. Many shows have dealers who will handle a private-party transfer at their table, which also runs your background check. Ask the dealer whether they check the serial as part of the transfer.",
+      "Yes, if they choose to. Since August 2025, licensed dealers can voluntarily check a serial against the FBI’s NCIC stolen-gun file. Many shows have dealers who will handle a private-party transfer at their table, which also runs your background check. Ask the dealer whether they check the serial as part of the transfer.",
   },
   {
     question: 'Do private sellers at gun shows have to run a background check?',
@@ -89,8 +89,8 @@ const GunShowSerialNumberCheckGuide = () => (
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check a Gun Serial Number at a Gun Show</h1>
           <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
             Hold the gun, read the serial off the frame, and check it on your phone before you pay. SafeOrStolen searches
-            police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio records and owner reports, and flags
-            altered serials. For a check of the FBI's stolen-gun file, buy through a dealer at the show who will run it.
+            police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio records and owner reports, and flags
+            altered serials. For a check of the FBI’s stolen-gun file, buy through a dealer at the show who will run it.
           </p>
           <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 6 min read</p>
         </div>
@@ -147,7 +147,7 @@ const GunShowSerialNumberCheckGuide = () => (
           <p className="text-muted-foreground leading-relaxed">
             The strongest option is to do the deal through a licensed dealer at the show. The dealer runs your background
             check and keeps a record of the transfer, and since August 2025 dealers can choose to check the serial against
-            the FBI's NCIC stolen-gun file. Ask the dealer up front whether they'll do that.
+            the FBI’s NCIC stolen-gun file. Ask the dealer up front whether they'll do that.
           </p>
         </section>
 

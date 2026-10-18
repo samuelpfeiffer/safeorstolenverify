@@ -2,8 +2,8 @@ import { Link } from '@/lib/router-compat';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import {
 import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
+import {
   Accordion,
   AccordionContent,
   AccordionItem,

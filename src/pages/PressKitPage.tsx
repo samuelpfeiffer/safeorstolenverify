@@ -36,7 +36,7 @@ const facts: [string, string][] = [
 const accuracyNotes = [
   'When you mention police records, please name them: police firearm theft and loss reports and live Ohio law-enforcement stolen-gun records for guns, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Every check also searches SafeOrStolen theft reports and public web results; bike checks add a national stolen-bicycle registry, and a paid phone check searches the lost and stolen phone blacklist.',
   'A "no report found" result means the number wasn\'t found in the records searched, which are listed on every result.',
-  'The gun records are 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, filed 1973–2017, plus live Ohio law-enforcement records.',
+  'The gun records are 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, filed 1973–2017, plus live Ohio law-enforcement records.',
   'AI writes a plain-language note on each result. It never decides whether an item is stolen; that comes only from the records searched.',
   'Plate checks never show owner names.',
 ];
@@ -119,20 +119,29 @@ const PressKitPage = () => (
 
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-4">Logo</h2>
+          <h2 className="text-2xl font-bold mb-4">Logos and brand assets</h2>
           <p className="text-muted-foreground mb-6">
-            The SafeOrStolen "SOS" logo (white letters with a phone and orange check mark in place of the O, on a
-            black background) as a PNG, 631 by 501 pixels. Please don't stretch or recolor it. For a different size
-            or format, email {PRESS_EMAIL}.
+            The SafeOrStolen "SOS" logo: white letters with a phone and orange check mark in place of the O, on a
+            black background. Please don't stretch, recolor or change it, and write the name as "SafeOrStolen". For a
+            different size or format, email {PRESS_EMAIL}.
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <img src="/sos-logo.png" alt="SafeOrStolen logo" className="w-32 h-auto rounded-lg border border-border" />
-            <Button asChild variant="outline" className="gap-2">
-              <a href="/sos-logo.png" download="safeorstolen-logo.png">
-                <Download className="h-4 w-4" />
-                Download logo (PNG)
-              </a>
-            </Button>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {[
+              { src: '/sos-logo.png', file: 'safeorstolen-logo.png', label: 'Full logo (PNG, 631×501)' },
+              { src: '/sos-logo-square.png', file: 'safeorstolen-logo-square.png', label: 'Square logo (PNG, 600×600)' },
+              { src: '/icon-512.png', file: 'safeorstolen-app-icon-512.png', label: 'App icon (PNG, 512×512)' },
+            ].map((a) => (
+              <div key={a.src} className="flex flex-col items-start gap-3">
+                <img src={a.src} alt={`SafeOrStolen ${a.label}`} className="w-32 h-auto rounded-lg border border-border" loading="lazy" />
+                <p className="text-sm text-muted-foreground">{a.label}</p>
+                <Button asChild variant="outline" size="sm" className="gap-2">
+                  <a href={a.src} download={a.file}>
+                    <Download className="h-4 w-4" />
+                    Download
+                  </a>
+                </Button>
+              </div>
+            ))}
           </div>
         </div>
       </section>

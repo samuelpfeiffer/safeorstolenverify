@@ -20,7 +20,7 @@ const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 const current: { title: string; body: string; to: string; linkText: string }[] = [
   {
     title: 'Gun serial checks',
-    body: 'Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, and flag serials that look altered or obliterated.',
+    body: 'Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, and flag serials that look altered or obliterated.',
     to: '/firearms-check',
     linkText: 'Check a gun serial',
   },

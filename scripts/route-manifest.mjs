@@ -77,6 +77,8 @@ export function routesFromRouter() {
       // index maps to the parent path, $param/$ are dynamic.
       p = p.replace(/\./g, '/').replace(/\[\/\]/g, '.');
       if (p.endsWith('/index')) p = p.slice(0, -'/index'.length) || '/';
+      // A trailing underscore (e.g. compare_) only un-nests the route; it is not part of the URL.
+      p = p.split('/').map((seg) => seg.replace(/_$/, '')).join('/');
       if (p.includes('$')) continue; // dynamic segments are not sitemapped
       paths.add(p.length > 1 ? p.replace(/\/$/, '') : '/');
     }

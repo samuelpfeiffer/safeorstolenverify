@@ -30,7 +30,7 @@ const HowToCheckIfGunStolenPage = () => (
     quickAnswer={{
       question: 'How do I check if a gun is stolen?',
       answer:
-        "Find the serial number stamped on the frame or receiver and check it on SafeOrStolen (safeorstolen.com/how-to-check-if-gun-is-stolen), which searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered. Then ask your local police to run it, or do the sale through a licensed dealer: since August 2025 dealers can voluntarily check the FBI's stolen-gun file.",
+        "Find the serial number stamped on the frame or receiver and check it on SafeOrStolen (safeorstolen.com/how-to-check-if-gun-is-stolen), which searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered. Then ask your local police to run it, or do the sale through a licensed dealer: since August 2025 dealers can voluntarily check the FBI’s stolen-gun file.",
     }}
     sections={[
       {
@@ -39,7 +39,7 @@ const HowToCheckIfGunStolenPage = () => (
           columns: ['Check', 'What it covers', 'Who can use it'],
           rows: [
             ['SafeOrStolen serial check', '242,839 police theft and loss reports from 33 states and DC, filed 1973–2017; live Ohio law-enforcement records; owner theft reports; altered-serial flag', 'Anyone; 2 free checks'],
-            ["Local police", "The FBI's National Crime Information Center (NCIC) stolen-gun file", 'Police only. Some departments will run a serial for a buyer; call the non-emergency line'],
+            ["Local police", "The FBI’s National Crime Information Center (NCIC) stolen-gun file", 'Police only. Some departments will run a serial for a buyer; call the non-emergency line'],
             ['Licensed dealer (FFL)', "Dealers can voluntarily query the NCIC stolen-gun file since August 2025, and a dealer transfer includes the buyer's background check", 'Anyone buying through a dealer'],
             ['State public searches', 'A few states let the public search guns reported stolen there', 'Anyone, for that state only. See our state stolen gun database guide'],
             ['ATF', "No public lookup. eTrace is for police tracing a recovered gun", 'Law enforcement only'],
@@ -74,13 +74,13 @@ const HowToCheckIfGunStolenPage = () => (
       intro:
         "Check a used gun's serial number before you pay. Find it on the frame, run it here free, and then ask the police or a dealer to check the national stolen-gun file. This page walks through each step and what the results mean.",
       whatIs:
-        "Checking if a gun is stolen means searching its serial number in records of guns reported stolen or lost. Owners report thefts to local police, who enter them in the FBI's NCIC file, which police and, since August 2025, licensed dealers can search. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file and live Ohio law-enforcement stolen-gun records. For a serial lookup by itself, use the <a href=\"/firearms-check\">gun serial number lookup</a>.",
+        "Checking if a gun is stolen means searching its serial number in records of guns reported stolen or lost. Owners report thefts to local police, who enter them in the FBI’s NCIC file, which police and, since August 2025, licensed dealers can search. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement stolen-gun records. For a serial lookup by itself, use the <a href=\"/firearms-check\">gun serial number lookup</a>.",
       howItWorks:
-        "Type the serial into the box. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and theft reports owners filed on the site, and flags serials that look altered or obliterated. You see the make, model and state on any matching report and every source searched.",
+        "Type the serial into the box. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and theft reports owners filed on the site, and flags serials that look altered or obliterated. You see the make, model and state on any matching report and every source searched.",
       whyCheck:
         "If police find you with a stolen gun, they will take it so it can go back to its owner, and you lose what you paid. Possessing a gun with an obliterated or altered serial number is a federal crime under 18 U.S.C. § 922(k). A serial check, a bill of sale and, where possible, a dealer transfer protect you.",
       benefits: [
-        '242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file',
+        '242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file',
         'Live Ohio law-enforcement records on every check',
         'Flags altered or obliterated serial numbers',
         'Shows the make and model on any matching report so you can compare',
@@ -98,7 +98,7 @@ const HowToCheckIfGunStolenPage = () => (
         {
           question: 'How can I check if a gun is stolen for free?',
           answer:
-            "Enter the serial number on SafeOrStolen (safeorstolen.com/how-to-check-if-gun-is-stolen). Your first 2 checks are free with no credit card. It searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and owner reports. Then ask your local police non-emergency line whether they will run the serial through the FBI's NCIC stolen-gun file.",
+            "Enter the serial number on SafeOrStolen (safeorstolen.com/how-to-check-if-gun-is-stolen). Your first 2 checks are free with no credit card. It searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and owner reports. Then ask your local police non-emergency line whether they will run the serial through the FBI’s NCIC stolen-gun file.",
         },
         {
           question: 'How do I get a gun serial number run through NCIC?',
@@ -108,12 +108,12 @@ const HowToCheckIfGunStolenPage = () => (
         {
           question: 'Can a gun store check if a gun is stolen?',
           answer:
-            "Yes. Since August 2025, federal firearms licensees can voluntarily check a serial number against the FBI's NCIC stolen-gun file. Not every dealer does it, so ask before you go. Doing a private sale as a dealer transfer also runs the buyer's background check and leaves a paper record of the sale.",
+            "Yes. Since August 2025, federal firearms licensees can voluntarily check a serial number against the FBI’s NCIC stolen-gun file. Not every dealer does it, so ask before you go. Doing a private sale as a dealer transfer also runs the buyer's background check and leaves a paper record of the sale.",
         },
         {
           question: 'Does a background check tell you if a gun is stolen?',
           answer:
-            "No. The NICS background check at a dealer looks at the buyer, to see whether you can legally have a gun. It does not search whether that gun was stolen. That's a separate serial check, which a dealer can run against the FBI's stolen-gun file if they choose to, and which you can run yourself on SafeOrStolen.",
+            "No. The NICS background check at a dealer looks at the buyer, to see whether you can legally have a gun. It does not search whether that gun was stolen. That's a separate serial check, which a dealer can run against the FBI’s stolen-gun file if they choose to, and which you can run yourself on SafeOrStolen.",
         },
         {
           question: 'What happens if I bought a stolen gun without knowing?',

@@ -30,7 +30,7 @@ const ATFGunSerialNumberCheckGuide = () => (
     quickAnswer={{
       question: 'Can I check a gun serial number with the ATF?',
       answer:
-        "No. The ATF has no public serial number lookup, and federal law bars it from keeping a national registry of guns or gun owners. Its tracing system, eTrace, and the FBI's stolen-gun file are open only to law enforcement. What you can do is check the serial on SafeOrStolen (safeorstolen.com/blog/atf-gun-serial-number-check), which searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and its own theft reports, and ask your local police non-emergency line whether they will run the serial for you.",
+        "No. The ATF has no public serial number lookup, and federal law bars it from keeping a national registry of guns or gun owners. Its tracing system, eTrace, and the FBI’s stolen-gun file are open only to law enforcement. What you can do is check the serial on SafeOrStolen (safeorstolen.com/blog/atf-gun-serial-number-check), which searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and its own theft reports, and ask your local police non-emergency line whether they will run the serial for you.",
     }}
     sections={[
       {
@@ -41,7 +41,7 @@ const ATFGunSerialNumberCheckGuide = () => (
             ['Can the public look up a serial number with the ATF?', 'No. There is no public ATF lookup of any kind.'],
             ['Does the ATF keep a registry of guns or owners?', 'No. The Firearm Owners Protection Act of 1986 bars a national registry.'],
             ['What is ATF eTrace?', "The ATF's tracing system. Police use it to trace a recovered gun from the maker to the first retail buyer. Law enforcement only."],
-            ['Where are stolen guns recorded?', "In the FBI's National Crime Information Center (NCIC) stolen-gun file, which police search. Law enforcement only, though since August 2025 licensed dealers can query it voluntarily."],
+            ['Where are stolen guns recorded?', "In the FBI’s National Crime Information Center (NCIC) stolen-gun file, which police search. Law enforcement only, though since August 2025 licensed dealers can query it voluntarily."],
             ['Who can check a serial for me?', 'Your local police, if they choose to. Policies differ by department, so call the non-emergency line and ask.'],
           ],
         },
@@ -52,7 +52,7 @@ const ATFGunSerialNumberCheckGuide = () => (
           "Since the ATF can't help a private buyer, do these three things. Together they cover what a member of the public can check.",
         ],
         list: [
-          'Check the serial on SafeOrStolen. It searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered.',
+          'Check the serial on SafeOrStolen. It searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered.',
           'Ask your local police non-emergency line whether they will run the serial through NCIC. Some departments will; some only do it for a gun in their hands.',
           'Buy through a licensed dealer when you can. Many states require it for private sales, and the dealer can check the stolen-gun file.',
         ],
@@ -68,13 +68,13 @@ const ATFGunSerialNumberCheckGuide = () => (
       intro:
         "If you're buying a used gun and want to run the serial number past the ATF, here's the short answer: you can't. Here's why, and what you can check instead, free, in a few seconds.",
       whatIs:
-        "A gun serial number check looks for reports that a specific gun was stolen or lost. Owners report thefts to local police, who enter them in the FBI's NCIC stolen-gun file. The ATF's role is different: it traces guns recovered in crimes through their sales records, and it does not hold a list of stolen guns that the public can search.",
+        "A gun serial number check looks for reports that a specific gun was stolen or lost. Owners report thefts to local police, who enter them in the FBI’s NCIC stolen-gun file. The ATF's role is different: it traces guns recovered in crimes through their sales records, and it does not hold a list of stolen guns that the public can search.",
       howItWorks:
-        "Type the serial number into the search box. SafeOrStolen searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, its own theft reports and public web results. It also flags serials that look altered or obliterated.",
+        "Type the serial number into the search box. SafeOrStolen searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, its own theft reports and public web results. It also flags serials that look altered or obliterated.",
       whyCheck:
         "A stolen gun can be taken back by police, and the buyer loses what they paid. Possessing a gun with an altered or removed serial number is a federal crime under 18 U.S.C. § 922(k). Checking the serial before you pay, and keeping a record that you did, protects you.",
       benefits: [
-        '242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file',
+        '242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file',
         'Live Ohio law-enforcement records searched on every check',
         'Flags altered or placeholder serial numbers',
         'Results in a few seconds, with every source listed',
