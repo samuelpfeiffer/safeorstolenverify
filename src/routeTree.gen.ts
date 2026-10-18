@@ -365,6 +365,9 @@ import { Route as BlogUltimateMarketplaceBuyersGuideRouteImport } from './routes
 import { Route as BlogVerificationMethodologyRouteImport } from './routes/blog/verification-methodology'
 import { Route as BlogVerifyItemBeforeMeetupRouteImport } from './routes/blog/verify-item-before-meetup'
 import { Route as BlogWhatIsABlacklistedImeiRouteImport } from './routes/blog/what-is-a-blacklisted-imei'
+import { Route as CompareSafeorstolenVsAskingPoliceRouteImport } from './routes/compare_.safeorstolen-vs-asking-police'
+import { Route as CompareSafeorstolenVsBikeindexRouteImport } from './routes/compare_.safeorstolen-vs-bikeindex'
+import { Route as CompareSafeorstolenVsNicbVincheckRouteImport } from './routes/compare_.safeorstolen-vs-nicb-vincheck'
 import { Route as ComparisonsBestFreeImeiCheckers2025RouteImport } from './routes/comparisons/best-free-imei-checkers-2025'
 import { Route as ComparisonsNicbVincheckAlternativeRouteImport } from './routes/comparisons/nicb-vincheck-alternative'
 import { Route as ComparisonsSafeorstolenVsImeiInfoRouteImport } from './routes/comparisons/safeorstolen-vs-imei-info'
@@ -2271,6 +2274,24 @@ const BlogWhatIsABlacklistedImeiRoute =
     path: '/what-is-a-blacklisted-imei',
     getParentRoute: () => BlogRoute,
   } as any)
+const CompareSafeorstolenVsAskingPoliceRoute =
+  CompareSafeorstolenVsAskingPoliceRouteImport.update({
+    id: '/compare_/safeorstolen-vs-asking-police',
+    path: '/compare/safeorstolen-vs-asking-police',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CompareSafeorstolenVsBikeindexRoute =
+  CompareSafeorstolenVsBikeindexRouteImport.update({
+    id: '/compare_/safeorstolen-vs-bikeindex',
+    path: '/compare/safeorstolen-vs-bikeindex',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CompareSafeorstolenVsNicbVincheckRoute =
+  CompareSafeorstolenVsNicbVincheckRouteImport.update({
+    id: '/compare_/safeorstolen-vs-nicb-vincheck',
+    path: '/compare/safeorstolen-vs-nicb-vincheck',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ComparisonsBestFreeImeiCheckers2025Route =
   ComparisonsBestFreeImeiCheckers2025RouteImport.update({
     id: '/comparisons/best-free-imei-checkers-2025',
@@ -2761,6 +2782,9 @@ export interface FileRoutesByFullPath {
   '/blog/verification-methodology': typeof BlogVerificationMethodologyRoute
   '/blog/verify-item-before-meetup': typeof BlogVerifyItemBeforeMeetupRoute
   '/blog/what-is-a-blacklisted-imei': typeof BlogWhatIsABlacklistedImeiRoute
+  '/compare/safeorstolen-vs-asking-police': typeof CompareSafeorstolenVsAskingPoliceRoute
+  '/compare/safeorstolen-vs-bikeindex': typeof CompareSafeorstolenVsBikeindexRoute
+  '/compare/safeorstolen-vs-nicb-vincheck': typeof CompareSafeorstolenVsNicbVincheckRoute
   '/comparisons/best-free-imei-checkers-2025': typeof ComparisonsBestFreeImeiCheckers2025Route
   '/comparisons/nicb-vincheck-alternative': typeof ComparisonsNicbVincheckAlternativeRoute
   '/comparisons/safeorstolen-vs-imei-info': typeof ComparisonsSafeorstolenVsImeiInfoRoute
@@ -3140,6 +3164,9 @@ export interface FileRoutesByTo {
   '/blog/verification-methodology': typeof BlogVerificationMethodologyRoute
   '/blog/verify-item-before-meetup': typeof BlogVerifyItemBeforeMeetupRoute
   '/blog/what-is-a-blacklisted-imei': typeof BlogWhatIsABlacklistedImeiRoute
+  '/compare/safeorstolen-vs-asking-police': typeof CompareSafeorstolenVsAskingPoliceRoute
+  '/compare/safeorstolen-vs-bikeindex': typeof CompareSafeorstolenVsBikeindexRoute
+  '/compare/safeorstolen-vs-nicb-vincheck': typeof CompareSafeorstolenVsNicbVincheckRoute
   '/comparisons/best-free-imei-checkers-2025': typeof ComparisonsBestFreeImeiCheckers2025Route
   '/comparisons/nicb-vincheck-alternative': typeof ComparisonsNicbVincheckAlternativeRoute
   '/comparisons/safeorstolen-vs-imei-info': typeof ComparisonsSafeorstolenVsImeiInfoRoute
@@ -3523,6 +3550,9 @@ export interface FileRoutesById {
   '/blog/verification-methodology': typeof BlogVerificationMethodologyRoute
   '/blog/verify-item-before-meetup': typeof BlogVerifyItemBeforeMeetupRoute
   '/blog/what-is-a-blacklisted-imei': typeof BlogWhatIsABlacklistedImeiRoute
+  '/compare_/safeorstolen-vs-asking-police': typeof CompareSafeorstolenVsAskingPoliceRoute
+  '/compare_/safeorstolen-vs-bikeindex': typeof CompareSafeorstolenVsBikeindexRoute
+  '/compare_/safeorstolen-vs-nicb-vincheck': typeof CompareSafeorstolenVsNicbVincheckRoute
   '/comparisons/best-free-imei-checkers-2025': typeof ComparisonsBestFreeImeiCheckers2025Route
   '/comparisons/nicb-vincheck-alternative': typeof ComparisonsNicbVincheckAlternativeRoute
   '/comparisons/safeorstolen-vs-imei-info': typeof ComparisonsSafeorstolenVsImeiInfoRoute
@@ -3907,6 +3937,9 @@ export interface FileRouteTypes {
     | '/blog/verification-methodology'
     | '/blog/verify-item-before-meetup'
     | '/blog/what-is-a-blacklisted-imei'
+    | '/compare/safeorstolen-vs-asking-police'
+    | '/compare/safeorstolen-vs-bikeindex'
+    | '/compare/safeorstolen-vs-nicb-vincheck'
     | '/comparisons/best-free-imei-checkers-2025'
     | '/comparisons/nicb-vincheck-alternative'
     | '/comparisons/safeorstolen-vs-imei-info'
@@ -4286,6 +4319,9 @@ export interface FileRouteTypes {
     | '/blog/verification-methodology'
     | '/blog/verify-item-before-meetup'
     | '/blog/what-is-a-blacklisted-imei'
+    | '/compare/safeorstolen-vs-asking-police'
+    | '/compare/safeorstolen-vs-bikeindex'
+    | '/compare/safeorstolen-vs-nicb-vincheck'
     | '/comparisons/best-free-imei-checkers-2025'
     | '/comparisons/nicb-vincheck-alternative'
     | '/comparisons/safeorstolen-vs-imei-info'
@@ -4668,6 +4704,9 @@ export interface FileRouteTypes {
     | '/blog/verification-methodology'
     | '/blog/verify-item-before-meetup'
     | '/blog/what-is-a-blacklisted-imei'
+    | '/compare_/safeorstolen-vs-asking-police'
+    | '/compare_/safeorstolen-vs-bikeindex'
+    | '/compare_/safeorstolen-vs-nicb-vincheck'
     | '/comparisons/best-free-imei-checkers-2025'
     | '/comparisons/nicb-vincheck-alternative'
     | '/comparisons/safeorstolen-vs-imei-info'
@@ -5004,6 +5043,9 @@ export interface RootRouteChildren {
   AdminMarketingRoute: typeof AdminMarketingRoute
   AdminReportsRoute: typeof AdminReportsRoute
   AdminStripeRoute: typeof AdminStripeRoute
+  CompareSafeorstolenVsAskingPoliceRoute: typeof CompareSafeorstolenVsAskingPoliceRoute
+  CompareSafeorstolenVsBikeindexRoute: typeof CompareSafeorstolenVsBikeindexRoute
+  CompareSafeorstolenVsNicbVincheckRoute: typeof CompareSafeorstolenVsNicbVincheckRoute
   ComparisonsBestFreeImeiCheckers2025Route: typeof ComparisonsBestFreeImeiCheckers2025Route
   ComparisonsNicbVincheckAlternativeRoute: typeof ComparisonsNicbVincheckAlternativeRoute
   ComparisonsSafeorstolenVsImeiInfoRoute: typeof ComparisonsSafeorstolenVsImeiInfoRoute
@@ -7521,6 +7563,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogWhatIsABlacklistedImeiRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/compare_/safeorstolen-vs-asking-police': {
+      id: '/compare_/safeorstolen-vs-asking-police'
+      path: '/compare/safeorstolen-vs-asking-police'
+      fullPath: '/compare/safeorstolen-vs-asking-police'
+      preLoaderRoute: typeof CompareSafeorstolenVsAskingPoliceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare_/safeorstolen-vs-bikeindex': {
+      id: '/compare_/safeorstolen-vs-bikeindex'
+      path: '/compare/safeorstolen-vs-bikeindex'
+      fullPath: '/compare/safeorstolen-vs-bikeindex'
+      preLoaderRoute: typeof CompareSafeorstolenVsBikeindexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare_/safeorstolen-vs-nicb-vincheck': {
+      id: '/compare_/safeorstolen-vs-nicb-vincheck'
+      path: '/compare/safeorstolen-vs-nicb-vincheck'
+      fullPath: '/compare/safeorstolen-vs-nicb-vincheck'
+      preLoaderRoute: typeof CompareSafeorstolenVsNicbVincheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comparisons/best-free-imei-checkers-2025': {
       id: '/comparisons/best-free-imei-checkers-2025'
       path: '/comparisons/best-free-imei-checkers-2025'
@@ -8139,6 +8202,11 @@ const rootRouteChildren: RootRouteChildren = {
   AdminMarketingRoute: AdminMarketingRoute,
   AdminReportsRoute: AdminReportsRoute,
   AdminStripeRoute: AdminStripeRoute,
+  CompareSafeorstolenVsAskingPoliceRoute:
+    CompareSafeorstolenVsAskingPoliceRoute,
+  CompareSafeorstolenVsBikeindexRoute: CompareSafeorstolenVsBikeindexRoute,
+  CompareSafeorstolenVsNicbVincheckRoute:
+    CompareSafeorstolenVsNicbVincheckRoute,
   ComparisonsBestFreeImeiCheckers2025Route:
     ComparisonsBestFreeImeiCheckers2025Route,
   ComparisonsNicbVincheckAlternativeRoute:
