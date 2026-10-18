@@ -127,8 +127,8 @@ const TopNavigation = () => {
                 <Button variant="ghost" size="sm" onClick={() => navigate('/auth')} className="text-muted-foreground hover:text-foreground rounded-lg">
                   Sign In
                 </Button>
-                <Button size="sm" onClick={() => navigate('/auth?mode=signup')} className="rounded-lg button-glow font-semibold">
-                  Get Started
+                <Button size="sm" onClick={() => navigate('/verify')} className="rounded-lg button-glow font-semibold">
+                  Start Free — 2 Checks
                 </Button>
               </>
             )}
@@ -192,8 +192,8 @@ const TopNavigation = () => {
                   <Button variant="outline" className="w-full rounded-lg" onClick={() => { navigate('/auth'); setIsMobileMenuOpen(false); }}>
                     Sign In
                   </Button>
-                  <Button className="w-full rounded-lg font-semibold" onClick={() => { navigate('/auth?mode=signup'); setIsMobileMenuOpen(false); }}>
-                    Get Started
+                  <Button className="w-full rounded-lg font-semibold" onClick={() => { navigate('/verify'); setIsMobileMenuOpen(false); }}>
+                    Start Free — 2 Checks
                   </Button>
                 </>
               )}

@@ -233,6 +233,7 @@ const PricingPage = () => {
  </div>
  </div>
  </div>
+ </div>
 
  {/* Comparison table */}
  <div className="max-w-3xl mx-auto px-4 mb-16">
