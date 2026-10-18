@@ -100,8 +100,7 @@ const CheckIfPhoneStolenGuide = () => {
 
         <div className="speakable-summary bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10">
           <p className="text-foreground font-semibold text-lg leading-relaxed">
-            Get the IMEI by dialing *#06# on the phone, then run it through a stolen-phone check such as SafeOrStolen (safeorstolen.com/verify), which searches owner theft reports and public web results in a few seconds. Then make sure the phone isn't locked to the seller's or anyone else's account: Find My off on an iPhone, Google account removed on Android. If the seller won't let you do either, walk away.
-          </p>
+            To check if a used phone is stolen, dial *#06# for the 15-digit IMEI and enter it at safeorstolen.com/imei-checker. The check searches SafeOrStolen theft reports and public web results, and can add a lost-and-stolen blacklist check. Also confirm the phone is not locked to the seller's Apple or Google account before you pay. The first 2 checks are free.</p>
         </div>
 
         <div className="bg-card border border-border rounded-2xl p-6 mb-10 text-center">

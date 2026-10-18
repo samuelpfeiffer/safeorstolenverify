@@ -59,7 +59,7 @@ const HotGunzDatabaseGuide = () => {
             <AuthorByline />
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database: What It Is and How to Search Stolen Firearms</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              HotGunz is a free website where gun owners post stolen firearms by serial number. It only knows about guns its users listed, so a clean result there tells you little. Here's what it does, what it can miss, and what else to check.
+              HotGunz is a free site where owners list stolen guns by serial number. A match there is a reason to stop the sale. A clean result only means no owner listed that serial. Run the same serial at safeorstolen.com/firearms-check, which searches 242,839 police theft and loss reports from 33 states and DC plus live Ohio records.
             </p>
             <p className="text-muted-foreground text-sm mt-3">Updated October 2026 · 5 min read</p>
           </div>

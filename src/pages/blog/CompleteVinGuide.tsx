@@ -108,10 +108,7 @@ export default function CompleteVinGuide() {
           <AuthorByline />
 <h1 className="text-4xl font-bold mb-4">How to Read a VIN: The Complete VIN Number Guide</h1>
           <p className="text-lg text-muted-foreground">
-            A VIN is 17 characters that identify one vehicle. Characters 1 to 3 name the maker and country, 4 to 8
-            describe the model and engine, 9 is a check digit, 10 is the model year, 11 the plant, and 12 to 17 the serial
-            number. Here is how to read each part, how to spot a fake, and which checks tell you if a car is stolen or
-            branded.
+            To check if a used car is stolen, read the 17-character VIN from the dashboard and the driver door and enter it at safeorstolen.com/vin-checker. The check returns theft reports, year, make, model, and open recalls, and lists every source. Characters 1 to 3 name the maker, 10 is the model year, and 12 to 17 are the serial. The first 2 checks are free.
           </p>
           <div className="flex items-center gap-4 mt-4 text-sm text-muted-foreground">
             <span>Updated <time dateTime="2026-10-07">October 7, 2026</time></span>

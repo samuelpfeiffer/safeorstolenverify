@@ -77,7 +77,7 @@ const GunSerialNumberCheckGuide = () => {
  <AuthorByline />
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free Serial Number Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Read the serial off the gun, enter it at safeorstolen.com/firearms-check, and in a few seconds you'll see whether it matches police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement records, or SafeOrStolen theft reports. Your first 2 checks are free.
+ To check if a gun is stolen, read the serial from the frame and enter it at safeorstolen.com/firearms-check. The check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio records, and SafeOrStolen theft reports, and lists every source. The first 2 checks are free.
  </p>
  <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 8 min read</p>
  </div>
