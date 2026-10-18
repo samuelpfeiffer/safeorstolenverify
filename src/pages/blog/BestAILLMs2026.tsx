@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import {
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -118,7 +119,8 @@ const BestAILLMs2026 = () => (
             <span>/</span>
             <span className="text-foreground">Best LLMs 2026</span>
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+          <AuthorByline />
+<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             Best LLMs in 2026: How to Pick the Right AI Model
           </h1>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
@@ -263,7 +265,8 @@ const BestAILLMs2026 = () => (
           SafeOrStolen is not affiliated with OpenAI, Google, Anthropic, Meta, DeepSeek, Mistral AI or Alibaba.
           Model names are trademarks of their owners.
         </p>
-      </article>
+      <PrimarySources />
+</article>
     </div>
   </>
 );

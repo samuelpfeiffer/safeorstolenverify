@@ -7,6 +7,7 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
 import { SafeOrStolenVideo } from '@/components/video/SafeOrStolenVideo';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 /** Oct 8 2026: audited by hand for "facebook marketplace scams". Removed unsourced statistics, emoji, app and "3 seconds" claims. */
 const FacebookMarketplaceScams = () => {
@@ -41,7 +42,8 @@ const FacebookMarketplaceScams = () => {
               <span>Safety</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6">
               Facebook Marketplace Scams to Avoid in 2026
             </h1>
             
@@ -183,7 +185,8 @@ const FacebookMarketplaceScams = () => {
             </div>
 
           </div>
-        </article>
+        <PrimarySources />
+</article>
         
         <RelatedPagesSection 
           currentPage="/blog/facebook-marketplace-scams" 

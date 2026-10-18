@@ -14,6 +14,7 @@ import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from '@/lib/router-compat';
 import { Smartphone, Shield } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FAQS = [
   {
@@ -89,7 +90,8 @@ const StolenVerificationAppGuide = () => {
 
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <header className="mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">How to Check if Something Is Stolen From Your Phone</h1>
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">How to Check if Something Is Stolen From Your Phone</h1>
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
               <span>Updated October 7, 2026</span>
               <span>·</span>
@@ -225,7 +227,8 @@ const StolenVerificationAppGuide = () => {
               </Button>
             </div>
           </div>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/stolen-verification-app-guide" currentCategory="blog" maxLinks={5} />
     </>

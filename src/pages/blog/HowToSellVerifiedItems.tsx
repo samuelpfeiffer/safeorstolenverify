@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { RelatedPagesSection } from "@/components/seo/RelatedPagesSection";
 import { BlogHeroImage } from "@/components/blog/BlogHeroImage";
 import { blogImages } from "@/assets/blog";
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const HowToSellVerifiedItems = () => {
   const structuredData = [
@@ -141,7 +142,8 @@ const HowToSellVerifiedItems = () => {
             <span>8 min read</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
+          <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
             How to Sell Verified Items on Any Marketplace in 2026
           </h1>
 
@@ -438,7 +440,8 @@ const HowToSellVerifiedItems = () => {
             maxLinks={5}
           />
         </div>
-      </article>
+      <PrimarySources />
+</article>
     </>
   );
 };

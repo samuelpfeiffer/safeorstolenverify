@@ -13,6 +13,7 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const SOURCE_TYPES: { source: string; whoFiles: string; strength: string; weakness: string }[] = [
   {
@@ -113,7 +114,8 @@ export default function DataSourceCredibilityStolenGoods() {
             <Button variant="ghost" onClick={() => navigate('/blog')} className="mb-4">
               ← Back to Blog
             </Button>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               How Reliable Are Stolen Item Databases?
             </h1>
             <p className="text-sm text-muted-foreground">Updated October 7, 2026 · 7 min read</p>
@@ -217,7 +219,8 @@ export default function DataSourceCredibilityStolenGoods() {
               </Button>
             </div>
           </div>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection
         currentPage="/blog/data-source-credibility-stolen-goods-verification"

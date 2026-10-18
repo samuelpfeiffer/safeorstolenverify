@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const CarfaxVsFreeVinAlternatives = () => {
   const faqSchema = {
@@ -116,7 +117,8 @@ const CarfaxVsFreeVinAlternatives = () => {
 
           {/* Hero */}
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6">
               Carfax and Free VIN Alternatives: 2026 Guide
             </h1>
             <p className="text-xl text-muted-foreground mb-6">
@@ -175,7 +177,8 @@ const CarfaxVsFreeVinAlternatives = () => {
             </div>
 
             <h2>Comparison: Carfax and Free Alternatives</h2>
-          </article>
+          <PrimarySources />
+</article>
 
           {/* Comparison Cards */}
           <div className="grid gap-6 my-8">

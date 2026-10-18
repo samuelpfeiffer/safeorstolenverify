@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FAQS = [
   {
@@ -97,7 +98,8 @@ export default function VerificationMethodology() {
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none dark:prose-invert">
-            <h1 className="text-4xl font-bold mb-4">How to Read a Stolen Check Result</h1>
+            <AuthorByline />
+<h1 className="text-4xl font-bold mb-4">How to Read a Stolen Check Result</h1>
             <div className="flex items-center gap-4 text-muted-foreground mb-8 text-sm">
               <time dateTime="2026-10-07">Updated October 7, 2026</time>
               <span>·</span>
@@ -204,7 +206,8 @@ export default function VerificationMethodology() {
                 <Link to="/verify">Check an item</Link>
               </Button>
             </div>
-          </article>
+          <PrimarySources />
+</article>
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/verification-methodology" currentCategory="blog" maxLinks={5} />

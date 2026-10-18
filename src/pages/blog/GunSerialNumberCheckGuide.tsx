@@ -2,6 +2,7 @@ import { Link } from '@/lib/router-compat';
 import { CheckCircle, ArrowRight, Shield, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const GunSerialNumberCheckGuide = () => {
  // Oct 7 2026: fixed by hand. Removed the false "national stolen-firearms registry" claim, the
@@ -73,7 +74,8 @@ const GunSerialNumberCheckGuide = () => {
  <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
  <div className="max-w-3xl mx-auto text-center">
  <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Verification Guide</span>
- <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free Serial Number Lookup</h1>
+ <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free Serial Number Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
  Read the serial off the gun, enter it at safeorstolen.com/firearms-check, and in a few seconds you'll see whether it matches police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement records, or SafeOrStolen theft reports. Your first 2 checks are free.
  </p>
@@ -205,7 +207,8 @@ const GunSerialNumberCheckGuide = () => {
  <Link to="/firearms-check" className="text-primary hover:underline font-medium">Free Gun Serial Number Lookup Tool</Link>
  </div>
  </section>
- </article>
+ <PrimarySources />
+</article>
  </div>
  </>
  );

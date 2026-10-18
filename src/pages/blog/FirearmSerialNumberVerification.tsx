@@ -7,6 +7,7 @@ import { Shield, AlertTriangle, Scale, CheckCircle, Download } from 'lucide-reac
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FirearmSerialNumberVerification = () => {
   const articleSchema = {
@@ -71,7 +72,8 @@ const FirearmSerialNumberVerification = () => {
               <span>Firearms Verification</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6">
               How to Check If a Gun Is Stolen
             </h1>
             
@@ -265,7 +267,8 @@ const FirearmSerialNumberVerification = () => {
               </Button>
             </div>
           </section>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/firearm-serial-number-verification" currentCategory="blog" maxLinks={5} />
     </>

@@ -1,5 +1,6 @@
 import { Link } from '@/lib/router-compat';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FAQ_ITEMS = [
   { q: 'What is the most common Facebook Marketplace scam in 2026?', a: 'The most common scam is selling stolen electronics — particularly iPhones, laptops, and gaming consoles — at below-market prices. Scammers list items they don\'t own or that are blacklisted, pocket the cash, and disappear. The other big one is the deposit scam: the seller asks you to send money to "hold" an item that never shows up.' },
@@ -81,7 +82,8 @@ const FacebookMarketplaceScamsGuide = () => {
           <span className="text-foreground">Facebook Marketplace Scams Guide</span>
         </nav>
 
-        <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
+        <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
           Facebook Marketplace Scams: 12 Red Flags & How to Protect Yourself in 2026
         </h1>
 
@@ -247,7 +249,8 @@ const FacebookMarketplaceScamsGuide = () => {
             </Link>
           </div>
         </section>
-      </article>
+      <PrimarySources />
+</article>
     </div>
     </>
   );

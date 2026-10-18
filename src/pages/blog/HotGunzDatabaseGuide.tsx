@@ -2,6 +2,7 @@ import { Link } from '@/lib/router-compat';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const HotGunzDatabaseGuide = () => {
   const faqSchema = {
@@ -55,7 +56,8 @@ const HotGunzDatabaseGuide = () => {
         <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Firearms Database Guide</span>
-            <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database: What It Is and How to Search Stolen Firearms</h1>
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database: What It Is and How to Search Stolen Firearms</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
               HotGunz is a free website where gun owners post stolen firearms by serial number. It only knows about guns its users listed, so a clean result there tells you little. Here's what it does, what it can miss, and what else to check.
             </p>
@@ -165,7 +167,8 @@ const HotGunzDatabaseGuide = () => {
               <Link to="/firearms-check" className="text-primary hover:underline font-medium">Gun Serial Lookup</Link>
             </div>
           </section>
-        </article>
+        <PrimarySources />
+</article>
       </div>
     </>
   );

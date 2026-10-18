@@ -6,6 +6,7 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const PS5StolenCheckGuide = () => {
   const publishDate = "2024-12-23";
@@ -88,7 +89,8 @@ const PS5StolenCheckGuide = () => {
               <span>Gaming Consoles</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent">
               How to Check if a Used PlayStation 5 is Stolen Before Buying
             </h1>
             
@@ -427,7 +429,8 @@ const PS5StolenCheckGuide = () => {
             </div>
           </div>
         </section>
-      </article>
+      <PrimarySources />
+</article>
       <RelatedPagesSection currentPage="/blog/ps5-stolen-check-guide" currentCategory="blog" maxLinks={5} />
     </>
   );

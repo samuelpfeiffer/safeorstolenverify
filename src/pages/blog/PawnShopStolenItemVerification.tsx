@@ -4,6 +4,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 /**
  * Oct 7 2026: rewritten by hand for "do pawn shops check if items are stolen" (position 18), plus
@@ -103,7 +104,8 @@ const PawnShopStolenItemVerification = () => {
               <span>/</span>
               <span>Pawn shops</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Do Pawn Shops Check if Items Are Stolen?</h1>
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6">Do Pawn Shops Check if Items Are Stolen?</h1>
             <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
               Yes, but mostly through the police rather than a database at the counter. The shop copies the seller's photo
               ID, writes down each item's serial number and description, and reports the transaction to local police, who
@@ -208,7 +210,8 @@ const PawnShopStolenItemVerification = () => {
               ))}
             </div>
           </section>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/pawn-shop-stolen-item-verification" currentCategory="blog" maxLinks={5} />
     </>

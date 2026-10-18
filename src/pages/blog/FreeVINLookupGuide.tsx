@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FreeVINLookupGuide = () => {
  const structuredData = [
@@ -73,7 +74,8 @@ const FreeVINLookupGuide = () => {
  <span>10 min read</span>
  </div>
 
- <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
+ <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
  Free VIN Lookup 2026: Check If Any Vehicle Is Stolen Before Buying
  </h1>
 
@@ -248,7 +250,8 @@ const FreeVINLookupGuide = () => {
 
  <RelatedPagesSection currentPage="/blog/free-vin-lookup-guide" currentCategory="blog" maxLinks={5} />
  </div>
- </article>
+ <PrimarySources />
+</article>
  </>
  );
 };

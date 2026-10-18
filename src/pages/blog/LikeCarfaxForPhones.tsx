@@ -6,6 +6,7 @@ import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from '@/lib/router-compat';
 import { Smartphone, Car, Shield, CheckCircle, Download } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const LikeCarfaxForPhones = () => {
   const blogPostSchema = {
@@ -74,7 +75,8 @@ const LikeCarfaxForPhones = () => {
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Carfax for Everything
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Like Carfax for Phones: How to Check an IMEI Before Buying
             </h1>
             <p className="text-xl text-muted-foreground mb-4">
@@ -343,7 +345,8 @@ const LikeCarfaxForPhones = () => {
               </div>
             </div>
           </div>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/like-carfax-for-phones" currentCategory="blog" maxLinks={5} />
     </>

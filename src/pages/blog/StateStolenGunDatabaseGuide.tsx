@@ -11,6 +11,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { GUN_STATES } from '@/data/gunTheftStats';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const DESCRIPTION =
   "Stolen gun databases by state: where stolen guns are recorded, which states offer a public search, and how to check a serial across 33 states and DC at once.";
@@ -87,7 +88,8 @@ const StateStolenGunDatabaseGuide = () => (
       <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-primary text-sm font-bold tracking-wide">Firearms guide</span>
-          <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">Stolen Gun Database by State: What You Can Search</h1>
+          <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">Stolen Gun Database by State: What You Can Search</h1>
           <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
             Every state's police report stolen guns into the FBI's NCIC file, which police and licensed dealers use.
             A few states, such as Florida and Ohio, let the public search their own records. SafeOrStolen
@@ -208,7 +210,8 @@ const StateStolenGunDatabaseGuide = () => (
             <Link to="/firearms-check" className="text-primary hover:underline font-medium">Gun serial number lookup</Link>
           </div>
         </section>
-      </article>
+      <PrimarySources />
+</article>
     </div>
   </>
 );

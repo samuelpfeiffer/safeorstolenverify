@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { SafeOrStolenVideo } from '@/components/video/SafeOrStolenVideo';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
  {
@@ -141,7 +142,8 @@ export default function CompleteVerificationGuide() {
  <div className="min-h-screen bg-background py-12 pt-24">
  <div className="container max-w-4xl mx-auto px-4">
  <article className="max-w-none">
- <h1 className="text-4xl font-bold mb-4">Stolen, Blacklisted or Locked? The Checks a Used Item Needs</h1>
+ <AuthorByline />
+<h1 className="text-4xl font-bold mb-4">Stolen, Blacklisted or Locked? The Checks a Used Item Needs</h1>
 
  <div className="flex items-center gap-3 text-sm text-muted-foreground mb-8">
  <span>Published <time dateTime="2026-01-15">January 15, 2026</time></span>
@@ -241,7 +243,8 @@ export default function CompleteVerificationGuide() {
  <Link to="/check-if-stolen">Check an item</Link>
  </Button>
  </div>
- </article>
+ <PrimarySources />
+</article>
  </div>
  </div>
  <RelatedPagesSection currentPage="/blog/complete-verification-guide" currentCategory="blog" maxLinks={5} />

@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 export default function RealUserStories() {
   const structuredData = {
@@ -39,7 +40,8 @@ export default function RealUserStories() {
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none">
-            <h1 className="text-4xl font-bold mb-6">What Happens When You Run a SafeOrStolen Check</h1>
+            <AuthorByline />
+<h1 className="text-4xl font-bold mb-6">What Happens When You Run a SafeOrStolen Check</h1>
 
             <div className="flex items-center gap-4 text-muted-foreground mb-8">
               <time dateTime="2026-10-07">Updated October 7, 2026</time>
@@ -102,7 +104,8 @@ export default function RealUserStories() {
                 </Button>
               </div>
             </section>
-          </article>
+          <PrimarySources />
+</article>
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/real-user-stories" currentCategory="blog" maxLinks={5} />

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import {
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -159,7 +160,8 @@ const TopStolenItemCheckers = () => {
               <Shield className="w-4 h-4" />
               2026 Comparison Guide
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            <AuthorByline />
+<h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               Top 10 Ways to Check if an Item is Stolen Before Buying (2026)
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">

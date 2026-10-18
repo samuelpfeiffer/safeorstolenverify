@@ -3,6 +3,7 @@ import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 export default function HowToCheckPhoneStolen() {
   const structuredData = {
@@ -38,7 +39,8 @@ export default function HowToCheckPhoneStolen() {
 
       <article className="container mx-auto px-4 py-12 max-w-4xl">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">How to Check if a Phone Is Stolen Before Buying (2026 Guide)</h1>
+          <AuthorByline />
+<h1 className="text-4xl font-bold mb-4">How to Check if a Phone Is Stolen Before Buying (2026 Guide)</h1>
           <p className="text-lg text-muted-foreground">Get the IMEI, check it for theft reports and the carrier blacklist, and make sure the phone isn't locked to someone else's account before you pay.</p>
           <div className="flex items-center gap-4 mt-4 text-sm text-muted-foreground">
             <time dateTime="2026-10-07">Updated October 7, 2026</time>
@@ -210,7 +212,8 @@ export default function HowToCheckPhoneStolen() {
         <footer className="mt-12 pt-8 border-t">
           <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
         </footer>
-      </article>
+      <PrimarySources />
+</article>
       <RelatedPagesSection currentPage="/blog/how-to-check-if-phone-stolen" currentCategory="blog" maxLinks={5} />
     </>
   );

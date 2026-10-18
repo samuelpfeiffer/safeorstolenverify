@@ -10,6 +10,7 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
 import { SafeOrStolenVideo } from '@/components/video/SafeOrStolenVideo';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 export default function UltimateMarketplaceBuyersGuide() {
   const navigate = useNavigate();
@@ -50,7 +51,8 @@ export default function UltimateMarketplaceBuyersGuide() {
             <Button variant="ghost" onClick={() => navigate('/blog')} className="mb-4">
               ← Back to Blog
             </Button>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               Ultimate Marketplace Buyers Guide: Avoid Stolen Goods
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -304,7 +306,8 @@ export default function UltimateMarketplaceBuyersGuide() {
               </div>
             </div>
           </div>
-        </article>
+        <PrimarySources />
+</article>
 
         <div className="container mx-auto px-4 py-12">
           <AppDownloadCTA variant="default" showBenefits={true} />

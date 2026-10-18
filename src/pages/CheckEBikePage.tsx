@@ -3,7 +3,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckEBikePage = () => {
  return (
  <ItemLandingPageTemplate
- title="Check if an eBike Is Stolen - Electric Bike Serial Number Check"
+ title="Check if an eBike Is Stolen by Serial"
  metaDescription="Check if an eBike or e-scooter is reported stolen before you buy. Search the frame, motor or battery serial for Rad Power, Trek, Specialized or Aventon. 2 free checks."
  h1="Check if Your eBike is Stolen Before Buying"
  itemType="eBikes & E-Scooters"

@@ -12,6 +12,7 @@ import { Link } from '@/lib/router-compat';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const DESCRIPTION =
   'How to read a VIN: what each of the 17 characters means, the check digit, where the VIN is on a car, and which free checks show if it is stolen or branded.';
@@ -104,7 +105,8 @@ export default function CompleteVinGuide() {
 
       <article className="container mx-auto px-4 py-12 max-w-4xl">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">How to Read a VIN: The Complete VIN Number Guide</h1>
+          <AuthorByline />
+<h1 className="text-4xl font-bold mb-4">How to Read a VIN: The Complete VIN Number Guide</h1>
           <p className="text-lg text-muted-foreground">
             A VIN is 17 characters that identify one vehicle. Characters 1 to 3 name the maker and country, 4 to 8
             describe the model and engine, 9 is a check digit, 10 is the model year, 11 the plant, and 12 to 17 the serial
@@ -307,7 +309,8 @@ export default function CompleteVinGuide() {
         <footer className="mt-12 pt-8 border-t">
           <Link to="/blog" className="text-primary hover:underline">Back to the blog</Link>
         </footer>
-      </article>
+      <PrimarySources />
+</article>
 
       <RelatedPagesSection currentPage="/blog/complete-vin-guide" currentCategory="blog" maxLinks={5} />
     </>

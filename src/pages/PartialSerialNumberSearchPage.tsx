@@ -9,7 +9,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
  */
 const PartialSerialNumberSearchPage = () => (
   <ItemLandingPageTemplate
-    title="Partial Serial Number Search: Check a Worn or Incomplete Serial | SafeOrStolen"
+    title="Partial Serial Number Search Guide"
     metaDescription="Partial serial number search: what you can find with only part of a serial, how to read a worn or scratched number, and what a missing serial tells a buyer."
     h1="Partial Serial Number Search: Checking a Worn or Incomplete Serial"
     itemType="Partial Serial Number"

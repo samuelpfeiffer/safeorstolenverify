@@ -7,6 +7,7 @@ import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from '@/lib/router-compat';
 import { AlertTriangle, Download } from 'lucide-react';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const CheckMendHasNoApp = () => {
   const blogPostSchema = {
@@ -71,7 +72,8 @@ const CheckMendHasNoApp = () => {
             <div className="inline-block bg-muted text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-6">
               CheckMEND and SafeOrStolen compared
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Is there a CheckMEND app? Here's a phone-friendly alternative
             </h1>
             <p className="text-xl text-muted-foreground mb-4">
@@ -179,7 +181,8 @@ const CheckMendHasNoApp = () => {
               </Button>
             </div>
           </div>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/checkmend-has-no-app" currentCategory="blog" maxLinks={5} />
     </>

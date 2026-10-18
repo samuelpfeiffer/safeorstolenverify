@@ -1,4 +1,5 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 /**
  * Oct 7 2026: rewritten by hand as an iPhone-only page. It used to reuse most of the general

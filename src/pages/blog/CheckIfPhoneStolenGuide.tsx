@@ -3,6 +3,7 @@ import { Link } from '@/lib/router-compat';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FAQ_ITEMS = [
   { q: 'How do I check if a phone is stolen before buying it?', a: 'Ask the seller to dial *#06# so the IMEI shows on screen, then type that 15-digit number into SafeOrStolen (safeorstolen.com/verify). It searches SafeOrStolen\'s own theft reports and public web results and shows the make and model from the IMEI. Results come back in a few seconds. A paid lost/stolen carrier blacklist check is available too.' },
@@ -84,7 +85,8 @@ const CheckIfPhoneStolenGuide = () => {
           <span className="text-foreground">Check If Phone Stolen Guide</span>
         </nav>
 
-        <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
+        <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">
           How to check if a phone is stolen before buying
         </h1>
 
@@ -244,7 +246,8 @@ const CheckIfPhoneStolenGuide = () => {
             </Link>
           </div>
         </section>
-      </article>
+      <PrimarySources />
+</article>
     </div>
     </>
   );

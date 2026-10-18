@@ -94,7 +94,7 @@ export default function StateFirearmTransferLawsPage() {
   return (
     <>
       <PageSEO
-        title="State Firearm Transfer Laws: Private Gun Sale Background Checks | SafeOrStolen"
+        title="State Firearm Transfer Laws by State"
         description="Which states require a background check on a private gun sale and which don't, with each state's scope and family exemptions, plus the federal rules for all."
         keywords="state firearm transfer laws, private gun sale laws by state, background check private gun sale by state, universal background check states, do i need a background check to sell a gun privately, private firearm transfer"
         canonical="/state-firearm-transfer-laws"

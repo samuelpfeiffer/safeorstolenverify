@@ -61,7 +61,7 @@ const FirearmsCheckPage = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Free Gun Serial Number Lookup, Any State: Is This Gun Stolen? | SafeOrStolen"
+ title="Gun Serial Number Lookup: Is This Gun Stolen?"
  description="Free gun serial number lookup for any state. Search 242,839 police firearm theft and loss reports from 33 states and DC plus live Ohio records, and spot altered serials before you buy."
  canonical="/firearms-check"
  />

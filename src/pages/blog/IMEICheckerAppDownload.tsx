@@ -12,6 +12,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const IMEICheckerAppDownload = () => {
   const articleSchema = {
@@ -90,7 +91,8 @@ const IMEICheckerAppDownload = () => {
               <span className="text-sm font-medium">Free to install</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6">
               IMEI Checker App
             </h1>
 
@@ -244,7 +246,8 @@ const IMEICheckerAppDownload = () => {
               <Link to="/app">Install the free web app</Link>
             </Button>
           </section>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/imei-checker-app-download" currentCategory="blog" maxLinks={5} />
     </>

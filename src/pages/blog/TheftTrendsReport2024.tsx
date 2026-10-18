@@ -14,6 +14,7 @@ import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const ITEMS: { item: string; why: string; number: string; check: string; link: string }[] = [
   {
@@ -122,7 +123,8 @@ export default function TheftTrendsReport2024() {
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none dark:prose-invert">
-            <h1 className="text-4xl font-bold mb-4">Most Stolen Items and How to Check Them Before You Buy</h1>
+            <AuthorByline />
+<h1 className="text-4xl font-bold mb-4">Most Stolen Items and How to Check Them Before You Buy</h1>
             <div className="flex items-center gap-4 text-muted-foreground mb-8 text-sm">
               <time dateTime="2026-10-07">Updated October 7, 2026</time>
               <span>·</span>
@@ -205,7 +207,8 @@ export default function TheftTrendsReport2024() {
                 <Link to="/verify">Run a check</Link>
               </Button>
             </div>
-          </article>
+          <PrimarySources />
+</article>
         </div>
       </div>
       <RelatedPagesSection currentPage="/blog/theft-trends-report-2024" currentCategory="blog" maxLinks={5} />

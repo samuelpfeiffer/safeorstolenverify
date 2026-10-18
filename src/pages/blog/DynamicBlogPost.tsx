@@ -14,6 +14,7 @@ import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
 import { blogPostQueryOptions } from '@/lib/blogPostQuery';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 export default function DynamicBlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -48,7 +49,8 @@ export default function DynamicBlogPost() {
         <div className="min-h-screen bg-background flex items-center justify-center">
           <Card className="max-w-md">
             <CardContent className="p-8 text-center">
-              <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
+              <AuthorByline />
+<h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
               <p className="text-muted-foreground mb-6">
                 The blog post you're looking for doesn't exist or has been removed.
               </p>

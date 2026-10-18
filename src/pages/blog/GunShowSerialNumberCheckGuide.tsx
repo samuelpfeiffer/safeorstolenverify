@@ -9,6 +9,7 @@ import { Link } from '@/lib/router-compat';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const DESCRIPTION =
   'How to check a gun serial number at a gun show from your phone: before you go, at the table, with walk-around sellers, and what to do if it comes back stolen.';
@@ -84,7 +85,8 @@ const GunShowSerialNumberCheckGuide = () => (
       <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-primary text-sm font-bold tracking-wide">Gun show guide</span>
-          <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check a Gun Serial Number at a Gun Show</h1>
+          <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check a Gun Serial Number at a Gun Show</h1>
           <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
             Hold the gun, read the serial off the frame, and check it on your phone before you pay. SafeOrStolen searches
             police theft and loss reports from 33 states and Washington, DC, live Ohio records and owner reports, and flags
@@ -196,7 +198,8 @@ const GunShowSerialNumberCheckGuide = () => (
             <Link to="/firearms-check" className="text-primary hover:underline font-medium">Gun serial number lookup</Link>
           </div>
         </section>
-      </article>
+      <PrimarySources />
+</article>
     </div>
   </>
 );

@@ -7,6 +7,7 @@ import { Bike, Shield, AlertTriangle, CheckCircle, Download, Search } from 'luci
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const BicycleStolenSerialNumberCheck = () => {
   const articleSchema = {
@@ -71,7 +72,8 @@ const BicycleStolenSerialNumberCheck = () => {
               <span>Bicycle Verification</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6">
               How to Check If a Bike Is Stolen
             </h1>
             
@@ -294,7 +296,8 @@ const BicycleStolenSerialNumberCheck = () => {
               </Button>
             </div>
           </section>
-        </article>
+        <PrimarySources />
+</article>
       </div>
       <RelatedPagesSection currentPage="/blog/bicycle-stolen-serial-number-check" currentCategory="blog" maxLinks={5} />
     </>

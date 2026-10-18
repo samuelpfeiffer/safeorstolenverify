@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FAQS: { q: string; a: string }[] = [
   {
@@ -76,7 +77,8 @@ const AIStolenItemDetection2026 = () => {
         <article className="container mx-auto px-4 max-w-4xl py-12">
           <header className="mb-10">
             <p className="text-sm text-muted-foreground mb-3">Updated October 7, 2026 · 6 min read</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Can AI Tell if Something Is Stolen?</h1>
+            <AuthorByline />
+<h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Can AI Tell if Something Is Stolen?</h1>
             <p className="text-xl text-foreground">
               No. ChatGPT, Claude, Gemini and other AI assistants can't look up police theft reports, carrier blacklists or
               stolen-item registries, so they can't tell you whether a particular phone, car, gun or bike is stolen. Whether an item
@@ -205,7 +207,8 @@ const AIStolenItemDetection2026 = () => {
               </Link>
             </div>
           </section>
-        </article>
+        <PrimarySources />
+</article>
       </div>
     </>
   );

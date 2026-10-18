@@ -1,4 +1,5 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 /**
  * Oct 7 2026: rewritten by hand for "scammer tactics" / "how scammers sell stolen goods online"
