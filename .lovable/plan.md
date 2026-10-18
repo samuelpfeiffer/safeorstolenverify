@@ -1,22 +1,41 @@
-# Agency-published stolen items: monitor, records upload, city stats
+# Agency-published stolen items: monitor, records upload, city stats (national)
 
-Queued after the report-stolen work, which is still unfinished. Nothing here gets built until you approve, and Phase 1 ends with a report to you before any monitoring code is written.
+This is queued after the report-stolen work, which isn't finished yet. Nothing here gets built until you approve. Phase 1 ends with a research report to you, before any monitoring code is written.
+
+Scope: any US agency, and it can expand beyond the US. Adding an agency means adding a row to a list, not writing new code.
 
 ## Phase 1 — Research report (no code)
 
-For each agency (Phoenix, Mesa, Tempe, Glendale, Peoria, Scottsdale, Chandler, Gilbert PD, Maricopa County Sheriff's Office, Arizona DPS), I check its official website, newsroom, RSS feeds and open-data portal (for example the Phoenix, Mesa, Tempe, Scottsdale and Chandler open-data sites) and report:
-- Does it publish stolen vehicle or stolen property details? Where, in what format (web page, RSS, CSV/API), and how often?
+Research starts with the areas you listed:
+- **Metro areas:** Los Angeles, New York, Chicago, Houston, San Francisco/Oakland, Dallas-Fort Worth, Philadelphia, Washington DC, Riverside/San Bernardino, Seattle.
+- **Phoenix area:** Phoenix, Mesa, Tempe, Glendale, Peoria, Scottsdale, Chandler, Gilbert PD, Maricopa County Sheriff's Office.
+- **Every state police or highway patrol agency,** including Arizona DPS.
+
+For each metro area, I check the main city police department, the sheriff, and the city or county open-data portal. For each source, I report:
+- Does it publish stolen vehicle or stolen property details? If so, where and in what format (web page, RSS, CSV or API), and how often?
 - Which identifiers it actually includes (plate, VIN, serial, make/model).
 - What its robots.txt says for that path, and what its terms or data license say about reuse.
 - My verdict: OK to ingest, OK with limits, or skip.
 
-Skipped no matter what: Facebook, X, Instagram, Nextdoor, scanner and radio archives, and any page whose robots.txt or terms forbid automated access. You approve the source list before Phase 2.
+The report comes to you as a spreadsheet, with one row per source in the same columns as the source list below. Skipped no matter what: Facebook, X, Instagram, Nextdoor, scanner and radio archives, and any page whose robots.txt or terms forbid automated access. You approve the sources before Phase 2.
 
-Expectation: many agencies only post stolen items on social media, or post crime stats without identifiers. The research may find only a few usable sources. If so, the records upload (Part B) becomes the main way data comes in.
+Expectation: many agencies post stolen items only on social media, or publish crime totals without identifiers. Some open-data portals publish incident records, and those may not include VINs or plates. The research may find only a few usable sources. If so, the records upload (Part B) becomes the main way data comes in.
+
+## Source list (admin-only)
+
+One row per source, covering both monitored feeds and records-request uploads:
+- Agency name, city, county, state, country.
+- Source URL.
+- Type: newsroom page, RSS, open-data API/CSV, or public-records upload.
+- Allowed yes/no, plus a note on robots.txt and terms, with the date it was checked.
+- Last checked, last success, last error, and a paused flag.
+- Which fixed reading rule it uses (for example "RSS item", "Socrata dataset", "ArcGIS feature layer", or "HTML list"), plus that rule's column or field mapping.
+
+Common formats each get one reusable reader. Many city open-data portals run on the same few platforms, so one reader can handle many cities. Adding a source on a format we already handle is just a new row. Only a brand-new format needs a new reader.
 
 ## Phase 2 — One shared review queue (needed for A and B)
 
-- A new private list, "agency stolen records", holds: item type, plate + state, VIN, serial, year/make/model/color, agency, report or case number, date posted or reported, link to the original, source type (agency post or public records), status, and expiry date.
+- A new private list, "agency stolen records", holds: item type, plate + state, VIN, serial, year/make/model/color, agency name, agency city, agency state, the source-list row it came from, report or case number, date posted or reported, link to the original, source type (agency post or public records), status, and expiry date.
 - No name, address, phone, email or free-text victim fields exist anywhere in it. Text from posts is also scanned for phone numbers and street addresses, and those are removed before saving.
 - Statuses: pending review → approved (live) / rejected. Approved records can be marked recovered, or they expire.
 - Expiry: 90 days after approval unless an admin re-confirms it (re-confirming adds another 90 days). Expired and recovered records never match a check.
@@ -34,8 +53,8 @@ It counts as a real theft database match under the existing verdict rules, so th
 ## Phase 4 — Records upload (Part B)
 
 Admin page at /admin/agency-records/upload:
-1. Upload a CSV or Excel file and pick the agency.
-2. Match the file's columns to our fields (report number, date, plate/state, VIN, serial, make/model, status, agency). The site guesses the matches and you confirm them.
+1. Upload a CSV or Excel file from any agency. Pick the agency from the source list, or add it on the spot (name, city, state).
+2. Match the file's columns to our fields (report number, date, plate/state, VIN, serial, make/model, status, agency, city, state). The site guesses the matches and you confirm them. Each agency's column mapping is saved, so its next file maps itself.
 3. Any column not matched to one of our fields is dropped, never saved. Columns that look like personal info (name, address, phone, DOB, email, owner, victim) are flagged and can't be matched to anything.
 4. Preview: row count, invalid VINs, duplicates, and rows already marked recovered in the file.
 5. Import puts everything into the review queue as one batch, under the same labelling, expiry and approval rules.
@@ -65,8 +84,12 @@ This happens only where a city's open-data license allows reuse. It adds a small
 
 ## Technical details
 
-- New table `agency_stolen_records`, admin-only through `has_role`, with the server writing to it. Each table gets its own grants and RLS. The existing `theft_records` table gets checked first: if it fits, I extend it instead.
-- Matching runs in `engine.server.ts` as a new source, `Agency_Records`, checked in parallel with the SafeOrStolen reports.
-- The scheduler is a TanStack server route under `/api/public/agency-monitor`, protected by a shared secret and called by pg_cron. No new Edge Functions, since we're at the limit. It uses a database lock and a cap on how much work each run does.
+- New tables `agency_sources` (the source list, plus saved column mappings) and `agency_stolen_records` (with a link to the source row). Both are admin-only through `has_role`, and only the server writes to them. Each table gets its own grants and RLS. The existing `theft_records` table gets checked first: if it fits, I extend it instead.
+- Records are indexed by normalized VIN, plate + state, and serial, so matching stays fast as volume grows nationally.
+- Matching runs in `engine.server.ts` as a new source, `Agency_Records`, checked in parallel with the SafeOrStolen reports. Each result is labelled with that record's own agency, city and state.
+- The scheduler is a TanStack server route under `/api/public/agency-monitor`, protected by a shared secret and called by pg_cron. No new Edge Functions, since we're at the limit.
+- Each run picks the sources that are due from the list, works through a capped batch, and holds a database lock so only one run happens at a time.
+- Each source has its own pause: one source failing doesn't stop the rest.
+- Readers live in one place, one per format: RSS, Socrata, ArcGIS, CSV URL, and HTML list with saved selectors.
 - The upload is parsed in the browser (CSV, and the xlsx library for Excel files — a new dependency), then sent to `reports-api` with new admin actions.
 - City stats are stored in a small `city_theft_stats` table with source URL, license and date, and rendered on the server.
