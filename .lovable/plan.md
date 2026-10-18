@@ -1,18 +1,37 @@
-# Agency-published stolen items: monitor, records upload, city stats
+# Agency-published stolen items: monitor, records upload, city stats (national)
 
-Queued after the report-stolen work, which is still unfinished. Nothing here gets built until you approve, and Phase 1 ends with a report to you before any monitoring code is written.
+This is queued after the report-stolen work, which isn't finished yet. Nothing here gets built until you approve. Phase 1 ends with a research report to you, before any monitoring code is written.
+
+Scope: any US agency, and it can expand beyond the US. Adding an agency means adding a row to a list, not writing new code.
 
 ## Phase 1 — Research report (no code)
 
-For each agency (Phoenix, Mesa, Tempe, Glendale, Peoria, Scottsdale, Chandler, Gilbert PD, Maricopa County Sheriff's Office, Arizona DPS), I check its official website, newsroom, RSS feeds and open-data portal (for example the Phoenix, Mesa, Tempe, Scottsdale and Chandler open-data sites) and report:
-- Does it publish stolen vehicle or stolen property details? Where, in what format (web page, RSS, CSV/API), and how often?
+Research starts with the areas you listed:
+- **Metro areas:** Los Angeles, New York, Chicago, Houston, San Francisco/Oakland, Dallas-Fort Worth, Philadelphia, Washington DC, Riverside/San Bernardino, Seattle.
+- **Phoenix area:** Phoenix, Mesa, Tempe, Glendale, Peoria, Scottsdale, Chandler, Gilbert PD, Maricopa County Sheriff's Office.
+- **Every state police or highway patrol agency,** including Arizona DPS.
+
+For each metro area, I check the main city police department, the sheriff, and the city or county open-data portal. For each source, I report:
+- Does it publish stolen vehicle or stolen property details? If so, where and in what format (web page, RSS, CSV or API), and how often?
 - Which identifiers it actually includes (plate, VIN, serial, make/model).
 - What its robots.txt says for that path, and what its terms or data license say about reuse.
 - My verdict: OK to ingest, OK with limits, or skip.
 
-Skipped no matter what: Facebook, X, Instagram, Nextdoor, scanner and radio archives, and any page whose robots.txt or terms forbid automated access. You approve the source list before Phase 2.
+The report comes to you as a spreadsheet, with one row per source in the same columns as the source list below. Skipped no matter what: Facebook, X, Instagram, Nextdoor, scanner and radio archives, and any page whose robots.txt or terms forbid automated access. You approve the sources before Phase 2.
 
-Expectation: many agencies only post stolen items on social media, or post crime stats without identifiers. The research may find only a few usable sources. If so, the records upload (Part B) becomes the main way data comes in.
+Expectation: many agencies post stolen items only on social media, or publish crime totals without identifiers. Some open-data portals publish incident records, and those may not include VINs or plates. The research may find only a few usable sources. If so, the records upload (Part B) becomes the main way data comes in.
+
+## Source list (admin-only)
+
+One row per source, covering both monitored feeds and records-request uploads:
+- Agency name, city, county, state, country.
+- Source URL.
+- Type: newsroom page, RSS, open-data API/CSV, or public-records upload.
+- Allowed yes/no, plus a note on robots.txt and terms, with the date it was checked.
+- Last checked, last success, last error, and a paused flag.
+- Which fixed reading rule it uses (for example "RSS item", "Socrata dataset", "ArcGIS feature layer", or "HTML list"), plus that rule's column or field mapping.
+
+Common formats each get one reusable reader. Many city open-data portals run on the same few platforms, so one reader can handle many cities. Adding a source on a format we already handle is just a new row. Only a brand-new format needs a new reader.
 
 ## Phase 2 — One shared review queue (needed for A and B)
 
