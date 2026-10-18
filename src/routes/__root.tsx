@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
+import '@/lib/heycatch';
 import {
   createRootRouteWithContext,
   HeadContent,

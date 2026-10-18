@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
+import { analytics } from '@/lib/heycatch';
 import { markAuthListenerActive } from '@/utils/monitoring/authHealthCheck';
 
 export interface AuthUser {
@@ -54,13 +55,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Setup auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
+      (event, session) => {
+        const user = transformUser(session?.user || null);
         setState({
-          user: transformUser(session?.user || null),
+          user,
           session: session ?? null,
           loading: false,
           initialized: true,
         });
+        if (user) {
+          analytics.setIdentity(
+            user.id,
+            { email: user.email, name: user.fullName },
+            { signup_date: user.createdAt },
+          );
+        } else if (event === 'SIGNED_OUT') {
+          analytics.resetIdentity();
+        }
       }
     );
 
@@ -158,6 +169,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       // Welcome email removed - handled via database trigger
 
+      if (data.session && data.user) {
+        analytics.setIdentity(
+          data.user.id,
+          { email: data.user.email ?? email, name: fullName.trim() },
+          { signup_date: data.user.created_at },
+        );
+        analytics.trackEvent('signup_completed');
+      }
+
       return { success: true };
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
@@ -175,6 +195,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.removeItem('offline-queue');
       sessionStorage.clear();
       
+      analytics.resetIdentity();
       await supabase.auth.signOut();
       
       // Always clear local state

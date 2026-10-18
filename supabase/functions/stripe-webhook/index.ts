@@ -1,3 +1,5 @@
+import { analytics } from 'npm:@heycatch/sdk@0.8.3';
+analytics.init({ projectKey: 'hck_pk_xZyapiclJn2KkAqLo77uOsGXrhcBmE3j' });
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 import Stripe from "https://esm.sh/stripe@16.0.0";
@@ -342,6 +344,10 @@ serve(async (req) => {
               const { error: gateErr } = await supabaseClient.from('subscriptions').upsert(row, { onConflict: 'stripe_subscription_id' });
               if (gateErr) console.error(`[WEBHOOK] CRITICAL: access grant failed: ${gateErr.message}`);
               else console.log(`[WEBHOOK] Access granted plan=${gatePlan} user=${profileOk ? profileId : 'guest'} fingerprint=${guestFingerprint ? 'yes' : 'no'}`);
+    if (profileOk && profileId && session.mode === 'subscription') {
+      await analytics.setIdentity(profileId, { plan: gatePlan });
+      await analytics.trackEvent('subscription_started', { plan: gatePlan }, { userId: profileId });
+    }
             } else {
               console.error(`CRITICAL: Could not find profile or fingerprint. Email: ${customerEmail}, UserId: ${userId}`);
               await supabaseClient.from('audit_logs').insert({
