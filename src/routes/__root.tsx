@@ -20,7 +20,6 @@ import { AuthProvider } from "@/lib/auth";
 import { PWAProvider } from "@/core/providers/PWAProvider";
 import TopNavigation from "@/components/TopNavigation";
 import { SOSFooter } from "@/components/layout/SOSFooter";
-import { PWAInstallManager } from "@/mobile/components/PWAInstallManager";
 import { MobileNavigation } from "@/mobile/components/MobileNavigation";
 import { CriticalResourceLoader } from "@/components/optimized/CriticalResourceLoader";
 import { GA4Provider } from "@/components/seo/GA4Provider";
@@ -418,9 +417,7 @@ function AppShell() {
           </main>
           {!hideFooter && <SOSFooter />}
         </div>
-        <PWAInstallManager />
-        {/* Oct 2 2026: removed duplicate install pop-up; PWAInstallManager shows the single slim bar */}
-        <MobileNavigation />
+                       <MobileNavigation />
         <AIFloatingChat />
 
         {showGrowthComponents && (

@@ -6,7 +6,6 @@ import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { ProductTour } from '@/components/onboarding/ProductTour';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
-import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
 import { useState } from 'react';
 
@@ -164,9 +163,6 @@ const Index = () => {
  <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
- {/* ── STICKY TOP DOWNLOAD APP BANNER ─────────────────────── */}
- <DownloadAppBanner />
-
  {/* ── AI CHAT HERO ──────────────────────────── */}
  <HomeAIHero />
 
