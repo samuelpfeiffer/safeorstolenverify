@@ -174,7 +174,7 @@ const Index = () => {
  <div className="bg-card border-y border-border">
  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
  {[
-  { v: 'Seconds', l: 'To get a result' },
+  { v: '242,839', l: 'Police gun theft reports' },
   { v: '6', l: 'Kinds of items' },
   { v: 'Listed', l: 'Every source searched' },
  { v: '2', l: 'Free Checks to Start' },
@@ -342,16 +342,14 @@ const Index = () => {
   <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/20 border-y border-border">
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-10">
-        <div className="text-primary text-sm font-bold uppercase tracking-widest mb-2">See It In Action</div>
+        <div className="text-primary text-sm font-bold uppercase tracking-widest mb-2">See a result</div>
         <h2 className="text-3xl font-black text-foreground mb-3">
-          Watch a check from start to finish
+          See what a finished check looks like
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          A short video of a real check on a used item.
+          The sample result below shows what a check returns before you pay.
         </p>
       </div>
-
-      <SafeOrStolenVideo caption="Checking a used item on SafeOrStolen before the sale." />
 
       <div className="flex justify-center mt-8">
         <Link

@@ -228,7 +228,7 @@ const PricingPage = () => {
  {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go unlimited: $10/month'}
  </button>
  <p className="text-center text-xs text-muted-foreground mt-2">
- Costs less than single checks once you run 4 in a month.
+ Costs less than single checks once you run 11 in a month.
  </p>
  </div>
  </div>
