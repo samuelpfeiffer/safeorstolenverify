@@ -255,7 +255,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     if (target && target !== location.pathname) {
       throw redirect({ href: target, statusCode: 301, replace: true });
     }
-  },
+  }) as never,
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -329,7 +329,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFound,
-  errorComponent: RootErrorComponent,
+  errorComponent: RootErrorComponent as never,
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
