@@ -236,7 +236,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- Every check searches SafeOrStolen's own theft reports and public web results. A phone IMEI also shows the make and model. Bike serials are searched against a national stolen-bicycle registry, and gun serials against police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. The result says "reported stolen", "possible match" or "no report found in the records searched", and lists every source.
+ Every check searches SafeOrStolen's own theft reports and public web results. A phone IMEI also shows the make and model. Bike serials are searched against a national stolen-bicycle registry, and gun serials against police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, plus live Ohio law-enforcement records. The result says "reported stolen", "possible match" or "no report found in the records searched", and lists every source.
  </p>
  </div>
  </div>

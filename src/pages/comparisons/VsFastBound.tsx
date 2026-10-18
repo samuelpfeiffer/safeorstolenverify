@@ -24,7 +24,7 @@ const VsFastBound = () => {
         "name": "Can consumers use FastBound to check stolen guns?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. FastBound is built for licensed firearms businesses keeping ATF records, not for individual buyers. Anyone can check a gun's serial number on SafeOrStolen (safeorstolen.com/vs-fastbound), which searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings."
+          "text": "No. FastBound is built for licensed firearms businesses keeping ATF records, not for individual buyers. Anyone can check a gun's serial number on SafeOrStolen (safeorstolen.com/vs-fastbound), which searches police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings."
         }
       },
       {
@@ -125,7 +125,7 @@ const VsFastBound = () => {
                   <strong>Who it's for:</strong> Anyone — consumers buying used firearms from private sellers, pawn shops, or online marketplaces.
                 </p>
                 <p className="text-muted-foreground mb-4">
- <strong>What it does:</strong> Searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings, and flags serials that look altered. Also checks phones, cars and bikes.
+ <strong>What it does:</strong> Searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed through 2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings, and flags serials that look altered. Also checks phones, cars and bikes.
                 </p>
                 <p className="text-muted-foreground">
                   <strong>Advantage:</strong> No license required. 2 free checks, then $0.99 a check or $10 a month. Works in any phone browser.
@@ -249,7 +249,7 @@ const VsFastBound = () => {
                   In a private sale, the buyer usually has no easy way to look up a gun's serial. SafeOrStolen gives buyers police records they can search themselves, from their phone, before they pay.
                 </p>
                 <p className="mb-4">
-                  A gun check searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, theft reports owners file on SafeOrStolen, and public web listings. The result lists every source searched.
+                  A gun check searches police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records, theft reports owners file on SafeOrStolen, and public web listings. The result lists every source searched.
                 </p>
                 <p>
                   <strong>Remember:</strong> If you buy a stolen gun, police can take it back and you lose your money. Possessing a gun with an obliterated serial number is a federal crime under 18 U.S.C. § 922(k).
@@ -281,7 +281,7 @@ const VsFastBound = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.
+                  242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.
                 </p>
               </CardContent>
             </Card>

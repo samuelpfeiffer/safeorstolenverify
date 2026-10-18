@@ -60,7 +60,7 @@ const GROUPS: { heading: string; anchor: string; note: string; rows: Row[] }[] =
  heading: 'Bikes, tools and guns',
  anchor: 'bikes-tools-guns',
  note:
- 'Bike checks add a national stolen-bicycle registry. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records, and flag serials that look altered.',
+ 'Bike checks add a national stolen-bicycle registry. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records, and flag serials that look altered.',
  rows: [
  { item: 'Bike or e-bike', id: 'Frame serial number', onItem: 'Under the bottom bracket, where the pedal cranks meet the frame. Turn the bike over.', elsewhere: 'Receipt or the shop\'s sales record. E-bike batteries and motors carry their own numbers.', check: 'Bike check', href: '/check-bike' },
  { item: 'Power tool', id: 'Serial number', onItem: 'Nameplate on the motor housing or handle, next to the model number', elsewhere: 'Batteries and chargers have their own labels', check: 'Tool check', href: '/check-tools' },

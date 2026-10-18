@@ -11,7 +11,7 @@ const HotGunzAlternativePage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "HotGunz Alternative",
-      "description": "SafeOrStolen checks a gun serial against police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, and also checks phones, vehicles, plates and bikes.",
+      "description": "SafeOrStolen checks a gun serial against police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records and its own theft reports, and also checks phones, vehicles, plates and bikes.",
       "url": "https://safeorstolen.com/hotgunz-alternative"
     },
     {
@@ -23,7 +23,7 @@ const HotGunzAlternativePage = () => {
           "name": "What is a good alternative to HotGunz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen (safeorstolen.com) checks a gun serial against 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), live Ohio law-enforcement records, its own owner theft reports and public web results. It also flags serials that look altered or obliterated, and it checks phones, vehicles, plates and bikes too."
+            "text": "SafeOrStolen (safeorstolen.com) checks a gun serial against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed through 2017), live Ohio law-enforcement records, its own owner theft reports and public web results. It also flags serials that look altered or obliterated, and it checks phones, vehicles, plates and bikes too."
           }
         },
         {
@@ -31,7 +31,7 @@ const HotGunzAlternativePage = () => {
           "name": "Is SafeOrStolen the same as HotGunz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. HotGunz is a separate, community-reported stolen gun registry. SafeOrStolen is an independent service with its own sources: police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, theft reports filed by owners on SafeOrStolen, and public web results."
+            "text": "No. HotGunz is a separate, community-reported stolen gun registry. SafeOrStolen is an independent service with its own sources: police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records, theft reports filed by owners on SafeOrStolen, and public web results."
           }
         }
       ]
@@ -55,7 +55,7 @@ const HotGunzAlternativePage = () => {
               HotGunz Alternative
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              SafeOrStolen checks a gun serial against <strong>police firearm theft and loss reports from 33 states and Washington, DC</strong>, live Ohio law-enforcement records, theft reports filed by owners on our site and public web results. You get an answer in a few seconds, with every source listed.
+              SafeOrStolen checks a gun serial against <strong>police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes</strong>, live Ohio law-enforcement records, theft reports filed by owners on our site and public web results. You get an answer in a few seconds, with every source listed.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

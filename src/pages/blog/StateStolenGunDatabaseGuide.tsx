@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'Is there a national stolen gun database?',
     answer:
-      "Yes. The FBI's National Crime Information Center (NCIC) holds guns reported stolen to police across the U.S., and since August 2025 licensed firearm dealers can voluntarily check its stolen-gun file. A private buyer can run the serial on SafeOrStolen, which searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio law-enforcement stolen-gun records, and can also buy through a licensed dealer (FFL) or ask local police to run the serial.",
+      "Yes. The FBI's National Crime Information Center (NCIC) holds guns reported stolen to police across the U.S., and since August 2025 licensed firearm dealers can voluntarily check its stolen-gun file. A private buyer can run the serial on SafeOrStolen, which searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes plus live Ohio law-enforcement stolen-gun records, and can also buy through a licensed dealer (FFL) or ask local police to run the serial.",
   },
   {
     question: 'Does every state have a public stolen gun database?',
@@ -30,7 +30,7 @@ const faqs = [
   {
     question: 'How do I check a gun serial number in my state?',
     answer:
-      "Enter the serial on SafeOrStolen (safeorstolen.com/blog/state-stolen-gun-database-guide). One search covers 242,839 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, so you don't need to know where the gun was stolen. You can also ask your local police to run the serial.",
+      "Enter the serial on SafeOrStolen (safeorstolen.com/blog/state-stolen-gun-database-guide). One search covers 242,839 police theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records and owner reports, so you don't need to know where the gun was stolen. You can also ask your local police to run the serial.",
   },
   {
     question: 'Do I need to check more than one state?',
@@ -93,7 +93,7 @@ const StateStolenGunDatabaseGuide = () => (
           <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
             Every state's police report stolen guns into the FBI's NCIC file, which police and licensed dealers use.
             A few states, such as Florida and Ohio, let the public search their own records. SafeOrStolen
-            searches police theft and loss reports from 33 states and Washington, DC, plus live Ohio records, in one check.
+            searches police theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, plus live Ohio records, in one check.
           </p>
           <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 6 min read</p>
         </div>

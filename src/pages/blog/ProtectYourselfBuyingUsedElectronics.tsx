@@ -54,7 +54,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       question: 'How accurate is SafeOrStolen verification?',
-      answer: 'SafeOrStolen checks its own theft reports and public web results. Bike checks also search a national stolen-bicycle registry, gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and phone checks show the make and model from the IMEI. No check covers every record, so the results list every source searched.'
+      answer: 'SafeOrStolen checks its own theft reports and public web results. Bike checks also search a national stolen-bicycle registry, gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, plus live Ohio law-enforcement records, and phone checks show the make and model from the IMEI. No check covers every record, so the results list every source searched.'
     }
   ];
 

@@ -27,7 +27,7 @@ export default function CheckFirearmPage() {
                 Check If a Gun Is Stolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Type the serial number from the frame or receiver. In a few seconds SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results, and flags serials that look altered.
+                Type the serial number from the frame or receiver. In a few seconds SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records, its own theft reports and public web results, and flags serials that look altered.
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">Check Firearm Serial Now</Link>

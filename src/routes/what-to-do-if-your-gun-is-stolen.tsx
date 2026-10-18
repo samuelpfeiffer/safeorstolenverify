@@ -77,7 +77,7 @@ function GuidePage() {
         whatIs:
           "A stolen gun report is the police record that flags your gun's serial number as stolen. Police enter it in the FBI's NCIC file, which officers check when they recover a gun, and licensed dealers can check when they take one in. Reporting it on SafeOrStolen adds the serial to the theft reports that private buyers search before they buy.",
         howItWorks:
-          "After the police report, add the theft on SafeOrStolen's <a href=\"/report-stolen\">report a stolen item</a> page with the serial number, make and model. Every SafeOrStolen gun serial check searches those owner reports along with police theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. Reporting on SafeOrStolen does not notify the police; file with them first.",
+          "After the police report, add the theft on SafeOrStolen's <a href=\"/report-stolen\">report a stolen item</a> page with the serial number, make and model. Every SafeOrStolen gun serial check searches those owner reports along with police theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, and live Ohio law-enforcement records. Reporting on SafeOrStolen does not notify the police; file with them first.",
         whyCheck:
           "A stolen gun can be sold privately within days, used in another crime, or turn up at a pawn shop. A prompt police report means it can come back to you when it's recovered, and puts on record that it left your hands when it did.",
         benefits: [

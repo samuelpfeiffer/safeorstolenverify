@@ -42,7 +42,7 @@ const FAQS = [
   {
     question: 'How does SafeOrStolen check a gun serial number for a pawn shop?',
     answer:
-      'Choose Guns, or add "gun" in the type column of your bulk list. Each serial is searched against 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement records and SafeOrStolen theft reports, and it is flagged if it looks altered or obliterated. When a pawned gun is redeemed, you still run the NICS check on the person.',
+      'Choose Guns, or add "gun" in the type column of your bulk list. Each serial is searched against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973 to 2017), live Ohio law-enforcement records and SafeOrStolen theft reports, and it is flagged if it looks altered or obliterated. When a pawned gun is redeemed, you still run the NICS check on the person.',
   },
   {
     question: 'What does the bulk check give us for our records?',

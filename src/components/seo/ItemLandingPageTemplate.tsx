@@ -198,7 +198,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>What a check searches</h2>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry. VIN checks decode the year, make and model and list open safety recalls, and Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records. A lost-and-stolen phone blacklist check is available as a paid add-on.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry. VIN checks decode the year, make and model and list open safety recalls, and Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records. A lost-and-stolen phone blacklist check is available as a paid add-on.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (

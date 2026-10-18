@@ -36,7 +36,7 @@ const SOURCES: { item: string; enter: string; searched: string; extra: string }[
  item: 'Gun',
  enter: 'Serial number from the frame or receiver',
  searched: 'SafeOrStolen theft reports and public web results',
- extra: '242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), plus live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
+ extra: '242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017), plus live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
  },
  {
  item: 'Bicycle or e-bike',
@@ -79,7 +79,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does SafeOrStolen search police databases?',
  answer:
- 'Yes. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.',
+ 'Yes. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, filed 1973–2017, and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.',
  },
  {
  question: 'What does "no report found" mean?',

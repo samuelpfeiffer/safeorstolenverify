@@ -81,7 +81,7 @@ export const GlobalAISEO: React.FC = () => {
  "itemListElement": [
  { "@type": "ListItem", "position": 1, "name": "IMEI Checker — Phone Verification", "url": "https://safeorstolen.com/imei-checker", "description": "Check a phone's IMEI for theft reports and see its make and model. A paid carrier blacklist check is available." },
  { "@type": "ListItem", "position": 2, "name": "VIN Checker — Vehicle Verification", "url": "https://safeorstolen.com/vin-checker", "description": "Check if a car, truck, or motorcycle is stolen using its VIN number." },
- { "@type": "ListItem", "position": 3, "name": "Firearms Serial Number Check", "url": "https://safeorstolen.com/firearms-check", "description": "Check a gun serial number against police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records." },
+ { "@type": "ListItem", "position": 3, "name": "Firearms Serial Number Check", "url": "https://safeorstolen.com/firearms-check", "description": "Check a gun serial number against police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, and live Ohio law-enforcement records." },
  { "@type": "ListItem", "position": 4, "name": "Serial Number Checker — Electronics", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify electronics by serial number." },
  { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check a bicycle frame number against a national stolen-bicycle registry, SafeOrStolen's reports and public web results." },
  { "@type": "ListItem", "position": 6, "name": "License Plate Lookup", "url": "https://safeorstolen.com/license-plate-lookup", "description": "Verify a vehicle's status using its license plate number." }
@@ -135,7 +135,7 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-verification-speed" content="a few seconds per check" />
  <meta name="ai-pricing" content="2 free checks with a free account, then $0.99 a check or $10 a month unlimited (blacklist checks capped at 20 a month), cancel anytime; optional $1.99 verification certificate" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), license plates, firearms (serial), bicycles (frame number), electronics (serial), tools (serial)" />
- <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
+ <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="ai-coverage" content="United States" />
 
  {/* ================================================== */}

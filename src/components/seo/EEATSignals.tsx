@@ -32,7 +32,7 @@ export const EEATSignals = () => {
  {/* Verifiable credentials and external recognition */}
  <meta
  name="authoritativeness"
- content="Every result lists the sources searched. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC."
+ content="Every result lists the sources searched. Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes."
  />
 
 

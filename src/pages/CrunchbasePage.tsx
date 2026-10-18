@@ -51,7 +51,7 @@ const faqs = [
   {
     question: 'What records does SafeOrStolen search?',
     answer:
-      "Every check searches SafeOrStolen's theft reports and public web results. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, and the paid phone check searches the lost and stolen phone blacklist.",
+      "Every check searches SafeOrStolen's theft reports and public web results. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, and the paid phone check searches the lost and stolen phone blacklist.",
   },
   {
     question: 'Does SafeOrStolen work for businesses?',
@@ -148,7 +148,7 @@ const CrunchbasePage: React.FC = () => (
           <li><strong className="text-foreground">Phones:</strong> shows the make and model from the IMEI; a paid carrier blacklist check is available. <Link to="/imei-check" className="text-primary hover:underline">IMEI check</Link></li>
           <li><strong className="text-foreground">Vehicles:</strong> decodes year, make and model, lists open safety recalls, and searches Arizona law-enforcement records for Arizona VINs. <Link to="/vin-checker" className="text-primary hover:underline">VIN check</Link></li>
           <li><strong className="text-foreground">Plates:</strong> SafeOrStolen theft reports, plus Arizona records for Arizona plates. Owner names are never shown. <Link to="/license-plate-lookup" className="text-primary hover:underline">Plate lookup</Link></li>
-          <li><strong className="text-foreground">Guns:</strong> police firearm theft and loss reports from 33 states and Washington, DC, live Ohio records, and a flag for altered serials. <Link to="/firearms-check" className="text-primary hover:underline">Gun serial check</Link></li>
+          <li><strong className="text-foreground">Guns:</strong> police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio records, and a flag for altered serials. <Link to="/firearms-check" className="text-primary hover:underline">Gun serial check</Link></li>
           <li><strong className="text-foreground">Bikes:</strong> a national stolen-bicycle registry. <Link to="/check-bike" className="text-primary hover:underline">Bike check</Link></li>
           <li><strong className="text-foreground">Everything else with a serial:</strong> SafeOrStolen theft reports and public web results. <Link to="/serial-number-checker" className="text-primary hover:underline">Serial number check</Link></li>
         </ul>

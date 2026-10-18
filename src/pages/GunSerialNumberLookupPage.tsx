@@ -22,9 +22,9 @@ const GunSerialNumberLookupPage = () => {
  'gun registration lookup'
  ]}
  content={{
- intro: "Enter a gun's serial number and SafeOrStolen tells you in a few seconds whether it shows up in 242,839 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft reports or public web results. It also flags serials that look altered or obliterated. Run it before a private sale, a gun show deal or an online purchase.",
+ intro: "Enter a gun's serial number and SafeOrStolen tells you in a few seconds whether it shows up in 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio law-enforcement records, SafeOrStolen theft reports or public web results. It also flags serials that look altered or obliterated. Run it before a private sale, a gun show deal or an online purchase.",
 
- whatIs: "A gun serial number lookup checks whether a firearm's serial appears in theft records. Guns made or imported for sale in the U.S. since the Gun Control Act of 1968 carry a serial number, and that number goes into the police report when a gun is stolen. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), state criminal justice stolen-gun records searched live, its own theft reports and public web results. It never shows owner names.",
+ whatIs: "A gun serial number lookup checks whether a firearm's serial appears in theft records. Guns made or imported for sale in the U.S. since the Gun Control Act of 1968 carry a serial number, and that number goes into the police report when a gun is stolen. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017), state criminal justice stolen-gun records searched live, its own theft reports and public web results. It never shows owner names.",
 
  howItWorks: "(1) Find the serial on the gun, usually on the frame or receiver, sometimes repeated on the slide or barrel. (2) Type every letter and number exactly as stamped. (3) SafeOrStolen searches the sources above and checks whether the serial looks altered. (4) In a few seconds you see reported stolen, possible match, or no report found in the records searched, with every source listed. Ask the seller for the serial before you meet so you can check it ahead of time.",
 
@@ -32,7 +32,7 @@ const GunSerialNumberLookupPage = () => {
 
  benefits: [
  "2 free checks with a free account, no credit card",
- "242,839 police firearm theft and loss reports from 33 states and Washington, DC",
+ "242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes",
  "Live Ohio law-enforcement records",
  "Flags serials that look altered or obliterated",
  "Works for handguns, rifles and shotguns from any maker",
@@ -61,7 +61,7 @@ const GunSerialNumberLookupPage = () => {
  },
  {
  question: "What databases are searched in a gun serial lookup?",
- answer: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years covered vary by state), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. It also flags serials that look altered or obliterated."
+ answer: "A SafeOrStolen gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed through 2017; years covered vary by state), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. It also flags serials that look altered or obliterated."
  },
  {
  question: "Can I look up a gun serial number before a gun show?",

@@ -136,7 +136,7 @@ export default function VsStolenRegisterPage() {
                     <Globe className="h-10 w-10 text-primary mb-4" />
                     <h3 className="text-xl font-bold mb-3">What a check searches</h3>
                     <p className="text-muted-foreground">
-                      Every check searches our own community theft reports and public web results. Bike checks add a national stolen-bicycle registry, gun checks add police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.
+                      Every check searches our own community theft reports and public web results. Bike checks add a national stolen-bicycle registry, gun checks add police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, plus live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.
                     </p>
                   </CardContent>
                 </Card>

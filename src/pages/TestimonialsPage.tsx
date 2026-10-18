@@ -53,7 +53,7 @@ const TestimonialsPage = () => (
               you pay for anything, also ask the seller for proof of ownership, like a receipt or the original box.
             </li>
             <li>
-              Gun serials are searched against police firearm theft and loss reports from 33 states and Washington, DC,
+              Gun serials are searched against police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes,
               bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona
               law-enforcement stolen-vehicle records.
             </li>

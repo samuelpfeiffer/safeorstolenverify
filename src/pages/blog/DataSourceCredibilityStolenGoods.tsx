@@ -57,7 +57,7 @@ const FAQS = [
   {
     question: 'Is there one national database of stolen items I can search?',
     answer:
-      "Stolen-property reports are spread across several kinds of records: police theft reports, owner-reported registries, carrier blacklists for phones, and the open web. SafeOrStolen brings these together in one search, including police firearm theft and loss reports from 33 states and Washington, DC, live Ohio stolen-gun records, Arizona law-enforcement stolen-vehicle records and a national stolen-bicycle registry.",
+      "Stolen-property reports are spread across several kinds of records: police theft reports, owner-reported registries, carrier blacklists for phones, and the open web. SafeOrStolen brings these together in one search, including police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio stolen-gun records, Arizona law-enforcement stolen-vehicle records and a national stolen-bicycle registry.",
   },
   {
     question: 'What sources does SafeOrStolen search?',
@@ -182,7 +182,7 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
             <ul>
               <li><strong>Every check:</strong> SafeOrStolen's own theft reports from owners, and public web results mentioning the number.</li>
-              <li><strong>Guns:</strong> 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), plus live Ohio law-enforcement records. Altered-looking serials are flagged.</li>
+              <li><strong>Guns:</strong> 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973 to 2017), plus live Ohio law-enforcement records. Altered-looking serials are flagged.</li>
               <li><strong>Bikes:</strong> a national stolen-bicycle registry.</li>
               <li><strong>Vehicles:</strong> VIN decode and open safety recalls; Arizona VINs and plates also go against Arizona law-enforcement stolen-vehicle records, updated twice a day.</li>
               <li><strong>Phones:</strong> make and model from the IMEI; the carrier lost/stolen blacklist on a paid check.</li>
