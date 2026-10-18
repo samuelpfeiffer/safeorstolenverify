@@ -87,7 +87,7 @@ const ProductHuntPage = () => (
           <h2 className="text-2xl font-bold mb-4">What it searches</h2>
           <p className="text-muted-foreground mb-4">
             Every check searches SafeOrStolen's own theft reports and public web results that mention the number.
-            Guns add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed
+            Guns add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed
             1973–2017) and live Ohio law-enforcement stolen-gun records. Bikes add a national
             stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.
           </p>

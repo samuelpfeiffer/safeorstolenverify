@@ -23,7 +23,7 @@ const SOURCE_TABLE: { item: string; searched: string; nextStep: string; link: { 
   {
     item: 'Guns',
     searched:
-      '242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017), and live Ohio law-enforcement stolen-gun records. Serials that look altered or obliterated are flagged.',
+      '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017), and live Ohio law-enforcement stolen-gun records. Serials that look altered or obliterated are flagged.',
     nextStep: 'For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.',
     link: { to: '/gun-serial-number-lookup', label: 'Gun serial number lookup' },
   },
@@ -116,7 +116,7 @@ export default function DataSourcesPage() {
             <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
             <p className="text-lg text-foreground leading-relaxed">
               Every SafeOrStolen check searches its own theft reports and public web results that mention the number. On top of
-              that, gun serials are searched against 242,839 police theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes plus
+              that, gun serials are searched against 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file plus
               live Ohio records, bikes against a national stolen-bicycle registry, Arizona VINs and plates against Arizona
               law-enforcement records, and phones against the lost and stolen phone blacklist on a paid check. Vehicle checks also
               decode the VIN and list open safety recalls.

@@ -169,7 +169,7 @@ export const CheckStolenFirearm = () => (
  },
  {
  q: 'What databases do you check?',
- a: "A gun check searches SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, and live Ohio law-enforcement records. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
+ a: "A gun check searches SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, and live Ohio law-enforcement records. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
  },
  {
  q: 'Should I use an FFL dealer?',

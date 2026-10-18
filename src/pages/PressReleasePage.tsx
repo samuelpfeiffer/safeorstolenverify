@@ -47,7 +47,7 @@ export default function PressReleasePage() {
               number, based in Peoria, AZ. As of October 2026:
             </p>
             <ul className="space-y-2 text-muted-foreground list-disc pl-6">
-              <li>Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records.</li>
+              <li>Gun checks search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records.</li>
               <li>Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.</li>
               <li>Phone checks show the make and model from the IMEI, with a paid carrier blacklist check available.</li>
               <li>An optional $1.99 verification certificate gives buyers a dated record, with its own link, showing they checked before the sale.</li>

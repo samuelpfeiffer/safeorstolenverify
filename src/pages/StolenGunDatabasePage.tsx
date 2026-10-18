@@ -29,7 +29,7 @@ const StolenGunDatabasePage = () => {
  content={{
  intro: "Every firearm check on SafeOrStolen searches police stolen-gun records from 33 states and Washington, DC, 242,839 theft and loss reports, plus live Ohio law-enforcement stolen-gun records and SafeOrStolen's own theft reports. It also checks the serial number for signs of alteration. Here's what that covers and what no public site can search.",
 
- whatIs: "SafeOrStolen searches a multi-state database of police department records obtained through public records laws, covering 33 states and DC including California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, and Illinois. Most of those reports were filed between 2010 and 2017, so a match tells you which police department took the report, and you confirm with them before buying. Ohio's records are searched live and updated daily.",
+ whatIs: "SafeOrStolen searches police department theft and loss reports from 33 states and DC, including California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, and Illinois. Those records are standardized to the same gun codes used in the FBI's NCIC gun file, so a serial is checked the way law enforcement identifies a gun. Most reports were filed between 2010 and 2017. A match names the police department. Ohio records are searched live.",
 
  howItWorks: "Enter the serial number from the frame or receiver. SafeOrStolen first checks for signs of an altered or missing serial, such as all zeros or words like 'obliterated.' Then it searches police theft records from 33 states and DC, live Ohio records, and its own reports. A stolen warning only appears on an exact serial match, and it shows the make, model, year, city, and police department so you can tell whether the record is for the same gun.",
 
@@ -62,7 +62,11 @@ const StolenGunDatabasePage = () => {
  answer: "The multi-state records include police reports from 33 states and Washington, DC, with the most from California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, Illinois, Kansas, Indiana, Missouri, and Nevada. Ohio is searched live. SafeOrStolen keeps adding states and newer records.",
  },
  {
- question: "Does a clean result mean the gun isn't stolen?",
+ question: "How does a SafeOrStolen gun check relate to NCIC?",
+  answer: "The police theft reports SafeOrStolen searches use the same gun codes as the FBI's NCIC gun file. A check searches those police reports from 33 states and DC plus live Ohio records. Police and licensed dealers can also run a serial through NCIC.",
+  },
+  {
+  question: "Does a clean result mean the gun isn't stolen?",
  answer: "No. No public search covers every police report in the country. A clean result means no match was found in the records searched. Keep a record of who you bought from and when.",
  },
  {

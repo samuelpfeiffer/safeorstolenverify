@@ -22,7 +22,7 @@ const WHAT_YOU_GET: string[][] = [
 
 const SOURCES: string[][] = [
   ['Any serial number', 'SafeOrStolen theft reports and public web results (listings and posts that mention the number)'],
-  ['Guns', 'Also 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973 to 2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
+  ['Guns', 'Also 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973 to 2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'Also a national stolen-bicycle registry'],
   ['Phones (IMEI)', 'Also the make and model from the IMEI; the carrier blacklist is a separate paid check'],
   ['Vehicles (VIN)', 'Also the decoded year, make and model, open safety recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs'],

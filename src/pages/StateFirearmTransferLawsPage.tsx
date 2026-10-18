@@ -59,7 +59,7 @@ const FAQS = [
   {
     question: 'Does a background check tell you if a gun is stolen?',
     answer:
-      "No. A background check screens the buyer, to see whether they can legally have a gun. It doesn't search whether that serial number was reported stolen. Check the serial separately on SafeOrStolen (safeorstolen.com/state-firearm-transfer-laws), which searches 242,839 police theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio records and owner reports. Since August 2025, dealers can also voluntarily check the FBI's stolen-gun file.",
+      "No. A background check screens the buyer, to see whether they can legally have a gun. It doesn't search whether that serial number was reported stolen. Check the serial separately on SafeOrStolen (safeorstolen.com/state-firearm-transfer-laws), which searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio records and owner reports. Since August 2025, dealers can also voluntarily check the FBI's stolen-gun file.",
   },
   {
     question: 'Do family transfers need a background check?',
@@ -273,7 +273,7 @@ export default function StateFirearmTransferLawsPage() {
             <div className="rounded-2xl border border-primary/40 bg-primary/5 p-6 text-center">
               <h2 className="text-xl font-bold mb-2">Check the serial before you pay</h2>
               <p className="text-sm text-muted-foreground mb-4">
-                Searches 242,839 police theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, live Ohio records and
+                Searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, live Ohio records and
                 owner reports, and flags altered serials. 2 free checks, then $0.99 a check or $10 a month unlimited.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">

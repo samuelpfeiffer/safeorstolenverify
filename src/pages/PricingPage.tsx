@@ -23,7 +23,7 @@ const FAQS = [
  },
  {
  q: 'What do the 2 free checks include?',
- a: 'Each free check searches SafeOrStolen theft reports and public web results for the number you enter. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, bike checks search a national stolen-bicycle registry, and VIN checks decode the vehicle and list open recalls. A free phone check shows the make and model from the IMEI. The carrier blacklist search needs a paid check.',
+ a: 'Each free check searches SafeOrStolen theft reports and public web results for the number you enter. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, bike checks search a national stolen-bicycle registry, and VIN checks decode the vehicle and list open recalls. A free phone check shows the make and model from the IMEI. The carrier blacklist search needs a paid check.',
  },
  {
  q: 'Is anything limited on the $10 unlimited plan?',

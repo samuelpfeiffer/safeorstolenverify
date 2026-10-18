@@ -50,7 +50,7 @@ const STEPS: string[] = [
 
 const SOURCES: { item: string; sources: string }[] = [
   { item: 'Every item', sources: "SafeOrStolen's own theft reports (filed by owners on the site) and public web results that mention the number" },
-  { item: 'Guns', sources: '242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017), live Ohio law-enforcement records, and a check for serials that look altered or obliterated' },
+  { item: 'Guns', sources: '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, and a check for serials that look altered or obliterated' },
   { item: 'Bikes', sources: 'A national stolen-bicycle registry' },
   { item: 'Phones', sources: 'Make and model decoded from the IMEI. The carrier lost/stolen blacklist is searched on a paid blacklist check' },
   { item: 'Vehicles (VIN)', sources: 'Year, make and model decoded, open safety recalls listed. Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day' },

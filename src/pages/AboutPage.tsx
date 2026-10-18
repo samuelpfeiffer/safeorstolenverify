@@ -29,7 +29,7 @@ const sourcesByItem = [
   },
   {
     item: 'Guns',
-    searched: '242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017), and live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
+    searched: '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017), and live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
   },
   {
     item: 'Bikes',

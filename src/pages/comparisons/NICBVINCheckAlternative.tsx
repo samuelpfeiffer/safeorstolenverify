@@ -44,7 +44,7 @@ const NICBVINCheckAlternative = () => {
       },
       pros: [
         'Checks more than just vehicles — six item types in one platform',
-        'Item-specific sources: a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes, plus live Ohio law-enforcement records for guns',
+        'Item-specific sources: a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file, plus live Ohio law-enforcement records for guns',
         'Installable web app — works on mobile, no app store download required',
         'Results in a few seconds, with every source listed'
       ],

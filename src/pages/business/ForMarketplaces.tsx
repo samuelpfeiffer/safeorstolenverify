@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'What does a SafeOrStolen check search?',
     answer:
-      "Every check searches SafeOrStolen's own theft reports and public web results that mention the number. Guns also go against police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes and live Ohio records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona law-enforcement records. Phones can add a paid lost and stolen blacklist check.",
+      "Every check searches SafeOrStolen's own theft reports and public web results that mention the number. Guns also go against police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file and live Ohio records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona law-enforcement records. Phones can add a paid lost and stolen blacklist check.",
   },
   {
     question: 'How should we use a "no report found" result?',

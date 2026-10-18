@@ -20,7 +20,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  },
  {
  name: 'Gun serial check',
- what: 'Adds 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017) and live Ohio law-enforcement records. Flags serials that look altered or obliterated.',
+ what: 'Adds 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017) and live Ohio law-enforcement records. Flags serials that look altered or obliterated.',
  cost: 'Same as any check',
  href: '/firearms-check',
  linkText: 'Gun check',
@@ -114,7 +114,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Which records does SafeOrStolen search?',
  answer:
- 'Every check searches SafeOrStolen\'s own theft reports and public web results. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, standardized to NCIC gun codes (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
+ 'Every check searches SafeOrStolen\'s own theft reports and public web results. Gun checks add 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI's NCIC gun file (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
  },
 ];
 
