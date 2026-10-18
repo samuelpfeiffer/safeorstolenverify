@@ -35,7 +35,7 @@ Common formats each get one reusable reader. Many city open-data portals run on 
 
 ## Phase 2 — One shared review queue (needed for A and B)
 
-- A new private list, "agency stolen records", holds: item type, plate + state, VIN, serial, year/make/model/color, agency, report or case number, date posted or reported, link to the original, source type (agency post or public records), status, and expiry date.
+- A new private list, "agency stolen records", holds: item type, plate + state, VIN, serial, year/make/model/color, agency name, agency city, agency state, the source-list row it came from, report or case number, date posted or reported, link to the original, source type (agency post or public records), status, and expiry date.
 - No name, address, phone, email or free-text victim fields exist anywhere in it. Text from posts is also scanned for phone numbers and street addresses, and those are removed before saving.
 - Statuses: pending review → approved (live) / rejected. Approved records can be marked recovered, or they expire.
 - Expiry: 90 days after approval unless an admin re-confirms it (re-confirming adds another 90 days). Expired and recovered records never match a check.
@@ -53,8 +53,8 @@ It counts as a real theft database match under the existing verdict rules, so th
 ## Phase 4 — Records upload (Part B)
 
 Admin page at /admin/agency-records/upload:
-1. Upload a CSV or Excel file and pick the agency.
-2. Match the file's columns to our fields (report number, date, plate/state, VIN, serial, make/model, status, agency). The site guesses the matches and you confirm them.
+1. Upload a CSV or Excel file from any agency. Pick the agency from the source list, or add it on the spot (name, city, state).
+2. Match the file's columns to our fields (report number, date, plate/state, VIN, serial, make/model, status, agency, city, state). The site guesses the matches and you confirm them. Each agency's column mapping is saved, so its next file maps itself.
 3. Any column not matched to one of our fields is dropped, never saved. Columns that look like personal info (name, address, phone, DOB, email, owner, victim) are flagged and can't be matched to anything.
 4. Preview: row count, invalid VINs, duplicates, and rows already marked recovered in the file.
 5. Import puts everything into the review queue as one batch, under the same labelling, expiry and approval rules.
@@ -84,8 +84,12 @@ This happens only where a city's open-data license allows reuse. It adds a small
 
 ## Technical details
 
-- New table `agency_stolen_records`, admin-only through `has_role`, with the server writing to it. Each table gets its own grants and RLS. The existing `theft_records` table gets checked first: if it fits, I extend it instead.
-- Matching runs in `engine.server.ts` as a new source, `Agency_Records`, checked in parallel with the SafeOrStolen reports.
-- The scheduler is a TanStack server route under `/api/public/agency-monitor`, protected by a shared secret and called by pg_cron. No new Edge Functions, since we're at the limit. It uses a database lock and a cap on how much work each run does.
+- New tables `agency_sources` (the source list, plus saved column mappings) and `agency_stolen_records` (with a link to the source row). Both are admin-only through `has_role`, and only the server writes to them. Each table gets its own grants and RLS. The existing `theft_records` table gets checked first: if it fits, I extend it instead.
+- Records are indexed by normalized VIN, plate + state, and serial, so matching stays fast as volume grows nationally.
+- Matching runs in `engine.server.ts` as a new source, `Agency_Records`, checked in parallel with the SafeOrStolen reports. Each result is labelled with that record's own agency, city and state.
+- The scheduler is a TanStack server route under `/api/public/agency-monitor`, protected by a shared secret and called by pg_cron. No new Edge Functions, since we're at the limit.
+- Each run picks the sources that are due from the list, works through a capped batch, and holds a database lock so only one run happens at a time.
+- Each source has its own pause: one source failing doesn't stop the rest.
+- Readers live in one place, one per format: RSS, Socrata, ArcGIS, CSV URL, and HTML list with saved selectors.
 - The upload is parsed in the browser (CSV, and the xlsx library for Excel files — a new dependency), then sent to `reports-api` with new admin actions.
 - City stats are stored in a small `city_theft_stats` table with source URL, license and date, and rendered on the server.
