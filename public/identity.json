@@ -6,5 +6,17 @@
   "foundingDate": "2017-07-20",
   "description": "SafeOrStolen is a stolen-item verification hub for buyers and sellers. It searches its own theft reports and public web results, 242,839 police gun theft reports from 33 states and DC plus live Ohio records, Arizona stolen-vehicle records, a national stolen-bicycle registry, and the phone blacklist on paid phone checks.",
   "email": "safeorstolenmail@gmail.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Peoria", "addressRegion": "AZ", "addressCountry": "US" }
+  "address": { "@type": "PostalAddress", "addressLocality": "Peoria", "addressRegion": "AZ", "addressCountry": "US" },
+  "founder": {
+    "@type": "Person",
+    "name": "Samuel Pfeiffer",
+    "jobTitle": "Founder",
+    "url": "https://safeorstolen.com/our-story",
+    "image": "https://safeorstolen.com/images/samuel-pfeiffer.jpg",
+    "sameAs": [
+      "https://twitter.com/safeorstolen",
+      "https://www.youtube.com/@safeorstolen",
+      "https://www.crunchbase.com/organization/safe-or-stolen"
+    ]
+  }
 }

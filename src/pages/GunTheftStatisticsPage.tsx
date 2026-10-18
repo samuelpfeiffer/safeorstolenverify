@@ -56,6 +56,15 @@ function Bars({ rows, max, label }: { rows: [string | number, number][]; max: nu
   );
 }
 
+
+<section className="mt-10 border-t border-border pt-6">
+  <h2 className="text-xl font-bold mb-3">Primary sources</h2>
+  <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
+    <li><a className="text-primary hover:underline" href="https://www.atf.gov/resource-center/data-statistics" target="_blank" rel="noopener noreferrer">ATF Data and Statistics</a> — federal firearm trace and theft data.</li>
+    <li><a className="text-primary hover:underline" href="https://ucr.fbi.gov/" target="_blank" rel="noopener noreferrer">FBI Uniform Crime Reporting</a> — national crime statistics used as context for theft rates.</li>
+  </ul>
+</section>
+
 export default function GunTheftStatisticsPage() {
   const title = `Stolen Gun Statistics: ${fmt(N.total)} Police Reports by State, Brand & Model`;
   const description = `Stolen gun statistics from ${fmt(N.total)} police firearm theft and loss reports in 33 states and DC: the most stolen guns, brands, calibers and states. Check any gun's serial number free.`;

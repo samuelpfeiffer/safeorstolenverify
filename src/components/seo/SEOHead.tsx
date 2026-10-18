@@ -72,9 +72,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
  // Append the brand only when it fits. Never cut the page's own words: the old 70-character
  // trim dropped the end of 66 titles ("...Phones, Cars" lost "Guns and Bikes"). Google indexes
  // the whole <title> and shortens the displayed snippet itself (Oct 16 2026).
- const optimizedTitle = title.includes('SafeOrStolen') || title.length + 15 > 70
+ const pagePart = title.replace(/ \| SafeOrStolen$/, '');
+ const fits = pagePart.length >= 30 && pagePart.length <= 60;
+ const optimizedTitle = title.includes('SafeOrStolen')
  ? title
- : `${title} | SafeOrStolen`;
+ : fits || pagePart.length + 15 <= 70
+ ? `${title} | SafeOrStolen`
+ : title;
 
 
  // Optimize description length (max 160 chars)

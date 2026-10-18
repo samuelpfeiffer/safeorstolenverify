@@ -19,6 +19,21 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Shield, Heart, BookOpen } from 'lucide-react';
 
+const AUTHOR_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Samuel Pfeiffer",
+  jobTitle: "Founder",
+  url: "https://safeorstolen.com/our-story",
+  image: "https://safeorstolen.com/images/samuel-pfeiffer.jpg",
+  worksFor: { "@type": "Organization", name: "SafeOrStolen", url: "https://safeorstolen.com" },
+  sameAs: [
+    "https://twitter.com/safeorstolen",
+    "https://www.youtube.com/@safeorstolen",
+    "https://www.crunchbase.com/organization/safe-or-stolen"
+  ]
+};
+
 type Section = {
   id: string;
   title: string;
@@ -231,10 +246,11 @@ const OurStoryPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Our Story: Why SafeOrStolen Exists"
-        description="Founder Samuel Pfeiffer on his criminal record, his friend Glen Thomure, arrested over a stolen tablet he didn't know was stolen, and why he built SafeOrStolen."
-        keywords="SafeOrStolen story, SafeOrStolen founder, Samuel Pfeiffer, Glen Thomure, who owns SafeOrStolen"
+        title="Samuel Pfeiffer, SafeOrStolen Founder"
+        description="Samuel Pfeiffer, founder of SafeOrStolen in Peoria, Arizona, on why he built a check for used phones, cars, guns, tools and bikes."
+        keywords="SafeOrStolen story, SafeOrStolen founder, Samuel Pfeiffer, who owns SafeOrStolen"
         canonical="/our-story"
+        structuredData={AUTHOR_SCHEMA}
         modifiedTime="2026-10-07"
         structuredData={structuredData}
       />
