@@ -233,14 +233,14 @@ const hyrosScript =
   '(function(){var script = document.createElement(\'script\');script.type = \'text/javascript\';script.src = "https://217110.t.hyros.com/v1/lst/universal-script?ph=c0dbc2a4eac8930e76fefcabc0007c70b8ec7233b91944be8d161efd9421c38c&tag=!clicked&ref_url=" + encodeURI(document.URL);document.head.appendChild(script);})();';
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  beforeLoad: ({ location }) => {
+  beforeLoad: (({ location }: { location: { pathname: string } }) => {
     // Legacy URL preservation: serve real 301 redirects (SSR-aware) for every
     // path in the pre-migration redirect map.
     const target = resolveLegacyRedirect(location.pathname);
     if (target && target !== location.pathname) {
       throw redirect({ href: target, statusCode: 301, replace: true });
     }
-  },
+  }) as never,
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -313,7 +313,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFound,
-  errorComponent: RootErrorComponent,
+  errorComponent: RootErrorComponent as never,
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
