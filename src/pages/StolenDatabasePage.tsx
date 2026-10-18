@@ -69,7 +69,7 @@ const ITEM_TYPES = [
 const STOLEN_DB_FAQS: { q: string; a: string }[] = [
  {
  q: 'Is there a database of stolen items I can search?',
- a: "There's no single public national database; the FBI's NCIC is open only to police. The SafeOrStolen stolen items database (safeorstolen.com/stolen-database) lists items owners have reported stolen on SafeOrStolen, searchable free by serial, brand, model or city. A full SafeOrStolen check of one number also searches public web results and, for guns, bikes and Arizona vehicles, police and registry records.",
+ a: "The SafeOrStolen stolen items database (safeorstolen.com/stolen-database) lists items owners have reported stolen on SafeOrStolen, searchable free by serial, brand, model or city. A full SafeOrStolen check of one number also searches public web results and, for guns, bikes and Arizona vehicles, police and registry records.",
  },
  {
  q: 'How do I search for a stolen item by serial number?',
@@ -413,7 +413,6 @@ const StolenDatabasePage = () => {
  <tr className="border-b"><td className="p-3">National stolen-bicycle registry</td><td className="p-3">No</td><td className="p-3">Bikes</td></tr>
  <tr className="border-b"><td className="p-3">Arizona law-enforcement stolen-vehicle records</td><td className="p-3">No</td><td className="p-3">Arizona VINs and plates</td></tr>
  <tr className="border-b"><td className="p-3">Carrier lost/stolen phone blacklist</td><td className="p-3">No</td><td className="p-3">Paid phone checks</td></tr>
- <tr><td className="p-3">NCIC, DMV records, pawn or insurer databases</td><td className="p-3">No</td><td className="p-3">No</td></tr>
  </tbody>
  </table>
  </div>
