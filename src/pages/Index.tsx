@@ -413,9 +413,12 @@ const Index = () => {
  {/* ── FOUNDER BLOCK ───────────────────────────────── */}
  <section className="py-10 px-4 border-t border-border">
  <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-card p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+ <div className="flex items-center gap-4">
+ <img src="/images/samuel-pfeiffer.jpg" alt="Samuel Pfeiffer" className="w-16 h-16 rounded-full object-cover border border-border" width="64" height="64" />
  <div>
  <div className="text-lg font-bold text-foreground">Samuel Pfeiffer</div>
  <div className="text-sm text-muted-foreground">Founder · Peoria, Arizona</div>
+ </div>
  </div>
  <div className="flex flex-wrap items-center gap-4 text-sm">
  <Link to="/our-story" className="font-semibold text-primary hover:underline">Why we built this →</Link>
@@ -424,12 +427,6 @@ const Index = () => {
  </div>
  </div>
  </section>
-
- <p className="max-w-3xl mx-auto px-4 pb-10 text-center text-sm text-muted-foreground">
- No named customer stories yet. If you checked an item, email{' '}
- <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>{' '}
- and we will ask to quote you.
- </p>
 
  {/* ── B2B PAWN SHOP / DEALER SECTION ──────────────── */}
  <section className="py-16 px-4 border-y border-primary/10" style={{ background: 'linear-gradient(135deg, hsl(25 92% 53% / 0.05) 0%, hsl(var(--background)) 40%, hsl(var(--background)) 100%)' }}>
