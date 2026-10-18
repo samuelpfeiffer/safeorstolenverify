@@ -285,6 +285,22 @@ const Index = () => {
  {/* ── SAMPLE RESULT PREVIEW (shows value before signup) ─── */}
  <SampleResultPreview />
 
+ <section className="py-12 px-4 border-b border-border">
+  <div className="max-w-3xl mx-auto">
+   <h2 className="text-2xl font-black text-foreground text-center mb-2">What buyers say before they find a check</h2>
+   <p className="text-sm text-muted-foreground text-center mb-6">From a public guitar forum. These are not SafeOrStolen customers.</p>
+   <blockquote className="border-l-4 border-primary pl-4 mb-6 text-sm text-foreground/90">
+    <p>"I have a guitar that I am interested in on Craigslist... Is it stolen. I have no idea how to check this?"</p>
+    <footer className="mt-2 text-xs text-muted-foreground">Guy, <a className="text-primary hover:underline" href="https://www.tdpri.com/threads/how-to-verify-gear-not-stolen-when-craigslist-purchase.523493/" target="_blank" rel="noopener noreferrer">Telecaster Guitar Forum</a></footer>
+   </blockquote>
+   <blockquote className="border-l-4 border-primary pl-4 text-sm text-foreground/90">
+    <p>"There really isn't a way before you buy it. If you know a cop you could get it run thru their computer."</p>
+    <footer className="mt-2 text-xs text-muted-foreground">Same thread, <a className="text-primary hover:underline" href="https://www.tdpri.com/threads/how-to-verify-gear-not-stolen-when-craigslist-purchase.523493/" target="_blank" rel="noopener noreferrer">Telecaster Guitar Forum</a></footer>
+   </blockquote>
+  </div>
+ </section>
+
+
  {/* ── HOW IT WORKS ────────────────────────────────── */}
  <section className="py-16 px-4" data-deploy-marker="deploy-probe-20260906">
  <div className="max-w-4xl mx-auto">
