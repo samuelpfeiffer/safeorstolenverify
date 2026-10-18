@@ -37,6 +37,7 @@ export default function Compare() {
               </Card>
             ))}
           </div>
+          <div className="mt-12 flex flex-wrap justify-center gap-4 text-sm"><Link to="/compare/safeorstolen-vs-nicb-vincheck" className="text-primary hover:underline">SafeOrStolen vs NICB VINCheck</Link><Link to="/compare/safeorstolen-vs-bikeindex" className="text-primary hover:underline">SafeOrStolen vs Bike Index</Link><Link to="/compare/safeorstolen-vs-asking-police" className="text-primary hover:underline">SafeOrStolen vs asking the police</Link></div>
           <div className="mt-12 text-center"><Button asChild size="lg"><Link to="/verify">Check an item</Link></Button></div>
         </section>
       </main>

@@ -6,7 +6,6 @@ import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { ProductTour } from '@/components/onboarding/ProductTour';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
-import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { DownloadAppBanner } from '@/components/home/DownloadAppBanner';
 import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
 import { useState } from 'react';
@@ -186,6 +185,9 @@ const Index = () => {
  </div>
  ))}
  </div>
+ <p className="text-center text-xs text-muted-foreground pb-3 px-4">
+ Web app launched January 2026 (<a href="https://www.prlog.org/13119488-safeorstolen-launches-free-mobile-app-for-instant-stolen-item-verification.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">PRLog, Jan 2, 2026</a>) · <a href="https://www.crunchbase.com/organization/safe-or-stolen" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">SafeOrStolen on Crunchbase</a>
+ </p>
  </div>
 
  {/* ── SOFT VALUE STRIP — trust-led pricing reminder ── */}
@@ -386,6 +388,11 @@ const Index = () => {
  ))}
  </div>
 
+ <p className="text-center text-muted-foreground text-sm max-w-2xl mx-auto mb-8">
+ Share it anywhere: paste the result link into your Facebook Marketplace, OfferUp or Craigslist listing,
+ or text it to a buyer. They see the date you checked and what the check found.
+ </p>
+
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Link
  to="/verify"
@@ -417,6 +424,12 @@ const Index = () => {
  </div>
  </div>
  </section>
+
+ <p className="max-w-3xl mx-auto px-4 pb-10 text-center text-sm text-muted-foreground">
+ No named customer stories yet. If you checked an item, email{' '}
+ <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>{' '}
+ and we will ask to quote you.
+ </p>
 
  {/* ── B2B PAWN SHOP / DEALER SECTION ──────────────── */}
  <section className="py-16 px-4 border-y border-primary/10" style={{ background: 'linear-gradient(135deg, hsl(25 92% 53% / 0.05) 0%, hsl(var(--background)) 40%, hsl(var(--background)) 100%)' }}>
@@ -498,35 +511,10 @@ const Index = () => {
  </div>
  </section>
 
- {/* ── SHARE & REFERRAL SECTION ─────────────────── */}
- <ShareVerification />
-
- {/* ── DOWNLOAD APP STRIP ──────────────────────────── */}
- <section className="py-12 px-4 bg-card border-y border-border">
- <div className="max-w-3xl mx-auto text-center">
- <div className="text-4xl mb-4">📱</div>
- <h2 className="text-2xl font-black text-foreground mb-2">
- Check from your phone at the meetup</h2>
- <p className="text-muted-foreground text-sm mb-6">
- Install the free web app from your browser. Scan a barcode or type the number,
- at a garage sale, gun show, pawn shop or car lot.
- </p>
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <Link
- to="/app"
- className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
- >
- Get the free web app
- </Link>
- <Link
- to="/app"
- className="inline-flex items-center justify-center gap-2 bg-card border border-border text-foreground font-semibold px-7 py-3.5 rounded-xl hover:bg-muted transition-all"
- >
- How to install it →
- </Link>
+ {/* ── APP BANNER LINK ── */}
+ <div className="py-6 px-4 bg-card border-y border-border text-center text-sm">
+ 📱 Checking at a meetup? <Link to="/app" className="font-semibold text-primary hover:underline">Install the free web app from your browser →</Link>
  </div>
- </div>
- </section>
 
  {/* ── FAQ ─────────────────────────────────────────── */}
  <section className="py-16 px-4">
