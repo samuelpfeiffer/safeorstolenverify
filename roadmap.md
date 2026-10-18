@@ -58,3 +58,10 @@
 - [ ] /my-items page and /admin/reports page
 - [ ] Privacy and terms wording — waiting on owner approval
 - [ ] Seller share/badge (queued earlier) still not started
+
+# Audit fixes 5-9 (Oct 18)
+- [ ] Honest customer-stories line on homepage
+- [ ] Usage stat / as-seen line
+- [ ] /api page truth + remove 2025 API launch claims
+- [ ] Homepage middle consolidation
+- [ ] Three honest comparison pages
