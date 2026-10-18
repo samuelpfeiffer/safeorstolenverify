@@ -393,6 +393,21 @@ const Index = () => {
  </div>
  </section>
 
+ {/* ── FOUNDER BLOCK ───────────────────────────────── */}
+ <section className="py-10 px-4 border-t border-border">
+ <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-card p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+ <div>
+ <div className="text-lg font-bold text-foreground">Samuel Pfeiffer</div>
+ <div className="text-sm text-muted-foreground">Founder · Peoria, Arizona</div>
+ </div>
+ <div className="flex flex-wrap items-center gap-4 text-sm">
+ <Link to="/our-story" className="font-semibold text-primary hover:underline">Why we built this →</Link>
+ <a href="https://twitter.com/safeorstolen" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">X</a>
+ <a href="https://www.youtube.com/@safeorstolen" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">YouTube</a>
+ </div>
+ </div>
+ </section>
+
  {/* ── B2B PAWN SHOP / DEALER SECTION ──────────────── */}
  <section className="py-16 px-4 border-y border-primary/10" style={{ background: 'linear-gradient(135deg, hsl(25 92% 53% / 0.05) 0%, hsl(var(--background)) 40%, hsl(var(--background)) 100%)' }}>
  <div className="max-w-5xl mx-auto md:flex items-center gap-12">

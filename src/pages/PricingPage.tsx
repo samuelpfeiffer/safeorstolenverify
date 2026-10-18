@@ -189,7 +189,9 @@ const PricingPage = () => {
  </div>
 
  {/* Card 3 — Unlimited (highlighted) */}
- <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-6">
+ <div className="flex flex-col">
+ <div className="self-center mb-5 text-xs font-black uppercase tracking-widest text-primary border border-primary/50 bg-primary/10 px-3 py-1 rounded-full">Most popular</div>
+ <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-6 flex-1">
  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-black px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1">
  <Star className="w-3 h-3 fill-current" /> 11+ checks a month
  </div>
