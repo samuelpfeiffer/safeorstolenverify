@@ -113,7 +113,7 @@ serve(async (req) => {
         user_id: user?.id || '',
         guest: isGuest ? 'true' : 'false',
       };
-      const certConfig: any = {
+      const certConfig /* card first */: any = {
         mode: 'payment',
         line_items: [{
           quantity: 1,
@@ -131,6 +131,7 @@ serve(async (req) => {
         success_url: `${PRODUCTION_BASE_URL}/proof/${proofId}?paid=1`,
         cancel_url: `${PRODUCTION_BASE_URL}/proof/${proofId}`,
         allow_promotion_codes: true,
+        payment_method_types: ["card", "link", "cashapp"],
       };
       if (user?.email) certConfig.customer_email = user.email;
 
@@ -195,6 +196,8 @@ serve(async (req) => {
       line_items: [{ price: resolvedPriceId, quantity: 1 }],
       metadata,
       allow_promotion_codes: true,
+      // Card first. Radar stays on (account default).
+      payment_method_types: ["card", "link", "cashapp"],
     };
     if (customerId) sessionConfig.customer = customerId;
     else if (user?.email) sessionConfig.customer_email = user.email;
