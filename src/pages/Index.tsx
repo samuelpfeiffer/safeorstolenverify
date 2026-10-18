@@ -7,6 +7,7 @@ import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { ProductTour } from '@/components/onboarding/ProductTour';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { StoryWall } from '@/components/stories/StoryWall';
+import { TrustpilotReviews } from '@/components/stories/TrustpilotReviews';
 import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
@@ -289,6 +290,7 @@ const Index = () => {
 
  {/* ── SAMPLE RESULT PREVIEW (shows value before signup) ─── */}
  <SampleResultPreview />
+ <TrustpilotReviews />
  <StoryWall limit={4} />
 
  <section className="py-12 px-4 border-b border-border">

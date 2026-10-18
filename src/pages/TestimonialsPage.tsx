@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
 import { StoryForm } from '@/components/stories/StoryForm';
 import { StoryWall } from '@/components/stories/StoryWall';
+import { TrustpilotReviews } from '@/components/stories/TrustpilotReviews';
 
 /**
  * Oct 7 2026: rewritten by hand for "safeorstolen reviews". The page was titled "Press &
@@ -19,17 +20,17 @@ const TestimonialsPage = () => (
   <>
     <PageSEO
       title="SafeOrStolen Reviews and Feedback"
-      description="SafeOrStolen doesn't post testimonials it can't verify. How to judge the stolen-item check yourself with 2 free checks, and how to send feedback or a complaint."
+      description="SafeOrStolen reviews: rated 4.0 out of 5 on Trustpilot. Read what users say, judge the stolen-item check yourself with 2 free checks, and send feedback."
       keywords="safeorstolen reviews, safeorstolen feedback, is safeorstolen legit, safeorstolen testimonials"
       canonical="/testimonials"
-      modifiedTime="2026-10-07"
+      modifiedTime="2026-10-18"
       structuredData={[
         {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'SafeOrStolen Reviews and Feedback',
           description: 'How to judge SafeOrStolen yourself and how to send feedback.',
-          dateModified: '2026-10-07',
+          dateModified: '2026-10-18',
         },
       ]}
     />
@@ -38,11 +39,12 @@ const TestimonialsPage = () => (
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">SafeOrStolen Reviews and Feedback</h1>
           <p className="text-lg text-muted-foreground mb-4">
-            You won't find customer quotes or star ratings on this page. SafeOrStolen only posts testimonials it
-            can verify, and right now there are none to show. The fairest way to judge the service is to run the
-            2 free checks yourself, with a free account and no credit card, and see what a result tells you.
+            SafeOrStolen only shows reviews you can check for yourself. Below are the reviews from our Trustpilot
+            page, word for word, with a link so you can see them there. The best way to judge the service is still to
+            run the 2 free checks yourself, with a free account and no credit card, and see what a result tells you.
           </p>
-          <p className="text-sm text-muted-foreground mb-10">Updated October 7, 2026</p>
+          <p className="text-sm text-muted-foreground mb-6">Updated October 18, 2026</p>
+          <div className="-mx-4 mb-6"><TrustpilotReviews heading="Reviews on Trustpilot" /></div>
 
           <h2 className="text-2xl font-bold mb-4">How to judge it yourself</h2>
           <ul className="space-y-3 text-muted-foreground list-disc pl-6 mb-10">
