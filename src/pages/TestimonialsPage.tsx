@@ -3,6 +3,8 @@ import { MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/router-compat';
+import { StoryForm } from '@/components/stories/StoryForm';
+import { StoryWall } from '@/components/stories/StoryWall';
 
 /**
  * Oct 7 2026: rewritten by hand for "safeorstolen reviews". The page was titled "Press &
@@ -77,6 +79,11 @@ const TestimonialsPage = () => (
               </Button>
             </div>
           </Card>
+
+          <div className="mt-10">
+            <StoryWall limit={20} title="Stories from real users" />
+            <StoryForm />
+          </div>
 
           <div className="mt-10 text-center">
             <Button asChild variant="outline">

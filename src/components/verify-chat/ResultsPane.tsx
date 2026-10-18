@@ -14,6 +14,7 @@ import {
  Sparkles,
  SearchX,
 } from 'lucide-react';
+import { StoryForm } from '@/components/stories/StoryForm';
 import { Button } from '@/components/ui/button';
 import { generateVerificationPDF } from '@/services/pdfReportService';
 import { toast } from 'sonner';
@@ -406,6 +407,9 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </p>
  )}
  </div>
+
+ {/* Real customer stories (saved unapproved; Samuel approves before anything shows) */}
+ <StoryForm compact />
 
  {/* Session history */}
  {history.length > 1 && (

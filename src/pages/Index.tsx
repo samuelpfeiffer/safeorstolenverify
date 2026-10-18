@@ -6,6 +6,7 @@ import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { HomeAIHero } from '@/components/home/HomeAIHero';
 import { ProductTour } from '@/components/onboarding/ProductTour';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
+import { StoryWall } from '@/components/stories/StoryWall';
 import { SafeOrStolenVideo, safeOrStolenVideos } from '@/components/video/SafeOrStolenVideo';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
@@ -244,6 +245,8 @@ const Index = () => {
  <div className="h-44 relative overflow-hidden">
  <img
  src={card.image}
+ srcSet={`${card.image.replace('.jpg', '-300.jpg')} 300w, ${card.image.replace('.jpg', '-768.jpg')} 768w, ${card.image} 1024w`}
+ sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
  alt={card.title}
  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
  loading="lazy"
@@ -286,6 +289,7 @@ const Index = () => {
 
  {/* ── SAMPLE RESULT PREVIEW (shows value before signup) ─── */}
  <SampleResultPreview />
+ <StoryWall limit={4} />
 
  <section className="py-12 px-4 border-b border-border">
   <div className="max-w-3xl mx-auto">
@@ -313,6 +317,8 @@ const Index = () => {
  <div className="rounded-2xl overflow-hidden border border-border bg-card">
  <img
  src="/images/item-verified-result.jpg"
+ srcSet="/images/item-verified-result-480.jpg 480w, /images/item-verified-result.jpg 960w"
+ sizes="(max-width: 640px) 100vw, 960px"
  alt="A person reviewing a SafeOrStolen 'Item Verified' result on a laptop and a phone at the same time, showing the item's serial number, brand, and product details with a View Details button"
  width={960}
  height={640}
