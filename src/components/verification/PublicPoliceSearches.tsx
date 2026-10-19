@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import { Copy, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const PUBLIC_SEARCHES = [
-  { name: 'Florida FDLE — stolen gun', url: 'https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenGun.jsf' },
-  { name: 'Florida FDLE — stolen vehicle', url: 'https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenVehicles.jsf' },
-  { name: 'Florida FDLE — stolen article', url: 'https://pas.fdle.state.fl.us/pas/restricted/PAS/StolenArticle.jsf' },
-  { name: 'Ohio Attorney General — stolen gun', url: 'https://www.ohioattorneygeneral.gov/stolengun' },
-  { name: 'Utah — serial search', url: 'https://serialandcfp.ps.utah.gov/' },
-];
+import { PUBLIC_POLICE_SEARCHES } from '@/lib/publicPoliceSearches';
 
 export function PublicPoliceSearches({ serial }: { serial: string }) {
   const [copied, setCopied] = useState(false);
@@ -33,7 +26,7 @@ export function PublicPoliceSearches({ serial }: { serial: string }) {
       </Button>
       <p role="status" className="text-sm text-muted-foreground">{error || (copied ? 'Serial copied.' : '')}</p>
       <ul className="mt-3 space-y-3">
-        {PUBLIC_SEARCHES.map((source) => (
+        {PUBLIC_POLICE_SEARCHES.map((source) => (
           <li key={source.url}>
             <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4">
               {source.name}<ExternalLink aria-hidden="true" className="h-4 w-4 shrink-0" />
