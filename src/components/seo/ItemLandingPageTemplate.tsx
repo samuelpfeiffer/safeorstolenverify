@@ -322,7 +322,7 @@ export const ItemLandingPageTemplate = ({
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.whatIs) }}
   />
- <DataPartnerBadges variant="compact" />
+ {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Read the sources actually checked on your result. Historical reports are not connected state databases. Arizona vehicle checks cover Arizona reports only. A miss means not found, not safe.</p> : <DataPartnerBadges variant="compact" />}
  </div>
  </section>
 
