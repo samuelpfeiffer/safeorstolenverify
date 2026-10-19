@@ -198,7 +198,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>What a check searches</h2>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement records, bicycles against a national stolen-bicycle registry. VIN checks decode the year, make and model and list open safety recalls, and Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records. A lost-and-stolen phone blacklist check is available as a paid add-on.</p>
+ <p>SafeOrStolen searches its own stolen-item reports. Firearm checks include Ohio Attorney General stolen-gun records, and bicycle checks include Bike Index. VIN checks decode vehicle details and list recalls. Arizona vehicle checks cover Arizona reports only. The result names what was actually checked. A miss means not found, not safe. Public search links are separate checks you open yourself; they do not connect additional state databases.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -235,7 +235,7 @@ export const ItemLandingPageTemplate = ({
  className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.intro) }}
   />
- <InlineSerialCheck type={searchType} placeholder={searchPlaceholder} />
+ <InlineSerialCheck type={searchType} placeholder={searchPlaceholder} publicPoliceSearches={searchType === 'firearm'} />
  <p className="text-sm text-muted-foreground mt-3">
  2 free checks · No credit card · Updated {new Date(dateModified + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
  </p>

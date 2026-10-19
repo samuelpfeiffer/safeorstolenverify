@@ -252,7 +252,6 @@ const OurStoryPage: React.FC = () => {
         description="Samuel Pfeiffer, founder of SafeOrStolen in Peoria, Arizona, on why he built a check for used phones, cars, guns, tools and bikes."
         keywords="SafeOrStolen story, SafeOrStolen founder, Samuel Pfeiffer, who owns SafeOrStolen"
         canonical="/our-story"
-        structuredData={AUTHOR_SCHEMA}
         modifiedTime="2026-10-07"
         structuredData={structuredData}
       />

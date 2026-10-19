@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PublicPoliceSearches } from '@/components/verification/PublicPoliceSearches';
 
 // Plate state from a state page's path (/texas-license-plate-lookup → TX), so the plate is searched
 // with the state that issued it.
@@ -20,10 +21,12 @@ export function InlineSerialCheck({
   type,
   placeholder = 'Enter the serial number',
   buttonLabel = 'Check it free',
+  publicPoliceSearches = false,
 }: {
   type?: string;
   placeholder?: string;
   buttonLabel?: string;
+  publicPoliceSearches?: boolean;
 }) {
   const [value, setValue] = useState('');
   const go = (e: { preventDefault: () => void }) => {
@@ -34,6 +37,7 @@ export function InlineSerialCheck({
     window.location.href = `/verify?q=${encodeURIComponent(v)}${type ? `&type=${type}` : ''}${st ? `&state=${st}` : ''}`;
   };
   return (
+    <>
     <form onSubmit={go} className="mx-auto flex w-full max-w-2xl flex-col gap-3 sm:flex-row" role="search">
       <input
         type="text"
@@ -50,6 +54,8 @@ export function InlineSerialCheck({
         <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </form>
+    {publicPoliceSearches && <PublicPoliceSearches serial={value} />}
+    </>
   );
 }
 

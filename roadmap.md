@@ -1,4 +1,9 @@
 - [x] Repair damaged shared copy, publish, and report live sitemap phrase counts.
+
+# Coverage honesty pass (Oct 19)
+- [ ] Add manual public police searches and serial copying to firearm checker and gun guide
+- [ ] Clarify limited coverage and not-found outcomes without changing checks
+- [ ] Verify both pages and unchanged identifier handoff
 # Account required before verification
 
 - [x] Gate /verify and /ai-chat behind a signed-in account
