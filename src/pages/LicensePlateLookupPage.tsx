@@ -7,6 +7,8 @@
  * fields were removed. Named data supplier removed. Owner-name questions go to /license-plate-owner-lookup.
  */
 import { useState } from 'react';
+import { useParallelVerification } from '@/hooks/useParallelVerification';
+import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useNavigate, Link } from '@/lib/router-compat';
 import { Shield, MapPin, Search, Car, AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -88,7 +90,9 @@ const LicensePlateLookupPage = () => {
   const [plateNumber, setPlateNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleVerify = () => {
+  const { verify, isLoading: checking, result } = useParallelVerification();
+
+  const handleVerify = async () => {
     if (!plateNumber.trim()) {
       toast.error('Enter the license plate number');
       return;
@@ -97,11 +101,9 @@ const LicensePlateLookupPage = () => {
       toast.error('Choose the state on the plate');
       return;
     }
-    setIsLoading(true);
     const stateName = US_STATES.find((s) => s.code === selectedState)?.name || selectedState;
-    const params = new URLSearchParams({ q: plateNumber, type: 'plate', state: selectedState });
-    navigate(`/verify?${params.toString()}`);
     toast.success(`Checking ${stateName} plate ${plateNumber}`);
+    await verify(plateNumber.trim(), 'plate');
   };
 
   return (

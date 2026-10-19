@@ -1,5 +1,7 @@
 import { Link } from '@/lib/router-compat';
-import { useState } from 'react';
+import { useState } from 'react'
+import { useParallelVerification } from '@/hooks/useParallelVerification'
+import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { FounderNote, FOUNDER_PERSON_SCHEMA } from '@/components/seo/FounderNote';
@@ -488,18 +490,12 @@ const FirearmsCheckPage = () => {
 // Inline verify tool for gun page
 function GunVerifyTool() {
  const [identifier, setIdentifier] = useState('')
- const [loading, setLoading] = useState(false)
-
- const { checkGate, isBlocked, blockReason, resetGate } = useVerifyGate()
+ const { verify, isLoading: loading, result } = useParallelVerification()
 
  async function handleSubmit(e: React.FormEvent) {
  e.preventDefault()
  if (!identifier.trim()) return
-
- // Oct 1 2026: the check page counts the free check itself, so don't spend one here too.
- // Send it as a FIREARM check so the stolen-firearm database is searched.
- setLoading(true)
- window.location.href = `/verify?q=${encodeURIComponent(identifier.trim())}&type=firearm`
+ await verify(identifier.trim(), 'firearm')
  }
 
  return (

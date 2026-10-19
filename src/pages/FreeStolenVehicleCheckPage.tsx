@@ -12,13 +12,16 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { useState } from 'react';
+import { useParallelVerification } from '@/hooks/useParallelVerification';
+import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 
 const FreeStolenVehicleCheckPage = () => {
  const [vinInput, setVinInput] = useState('');
+ const { verify, isLoading, result } = useParallelVerification();
 
- const handleSearch = () => {
+ const handleSearch = async () => {
  if (vinInput.trim()) {
- window.location.href = `/verify?q=${encodeURIComponent(vinInput.trim())}&type=vehicle`;
+ await verify(vinInput.trim(), 'vehicle');
  }
  };
 
@@ -86,7 +89,7 @@ const FreeStolenVehicleCheckPage = () => {
  "@type": "HowToStep",
  "position": 2,
  "name": "Enter details into SafeOrStolen",
- "text": "Visit safeorstolen.com/verify and enter the VIN or license plate. For best results, enter the complete VIN including all letters and numbers."
+ "text": "Enter the VIN or license plate on this page. For best results, enter the complete VIN including all letters and numbers."
  },
  {
  "@type": "HowToStep",
@@ -160,6 +163,8 @@ const FreeStolenVehicleCheckPage = () => {
  <p className="text-sm text-muted-foreground">
  2 free searches • our stolen item reports + public web results • Results in a few seconds
  </p>
+ {isLoading && <p className="text-sm text-muted-foreground">Checking the records now.</p>}
+ {result && <div className="text-left"><ParallelVerificationDisplay result={result} /></div>}
  </div>
 
  {/* Trust Indicators */}

@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { useTypingAnimation } from '@/hooks/useTypingAnimation';
+import { useParallelVerification } from '@/hooks/useParallelVerification';
+import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
+import { Loader2 } from 'lucide-react';
 
 // Lazy load QR Scanner for performance
 const QRScanner = React.lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
@@ -35,6 +38,7 @@ const isURL = (input: string): boolean => {
 
 export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ className }) => {
   const navigate = useNavigate();
+  const { verify, isLoading, result } = useParallelVerification();
   const [inputValue, setInputValue] = useState('');
   const [isScannerOpen, setIsScannerOpen] = useState(false);
 
@@ -45,22 +49,21 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
     pauseTime: 1500,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = inputValue.trim();
-    if (trimmed) {
-      if (isURL(trimmed)) {
-        navigate(`/verify?url=${encodeURIComponent(trimmed)}`);
-      } else {
-        navigate(`/verify?q=${encodeURIComponent(trimmed)}`);
-      }
+    if (!trimmed) return;
+    if (isURL(trimmed)) {
+      navigate(`/verify?url=${encodeURIComponent(trimmed)}`);
+      return;
     }
+    await verify(trimmed);
   };
 
-  const handleScanResult = (result: string) => {
+  const handleScanResult = async (result: string) => {
     setIsScannerOpen(false);
     setInputValue(result);
-    navigate(`/verify?q=${encodeURIComponent(result)}`);
+    await verify(result);
   };
 
   return (
@@ -107,6 +110,15 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
         <span className="px-3 py-1 bg-muted/30 rounded-full border border-border/50">Serial #</span>
         <span className="px-3 py-1 bg-muted/30 rounded-full border border-border/50">Listing URL</span>
       </div>
+
+      {isLoading && (
+        <p className="mt-4 text-center text-sm text-muted-foreground">Checking the records now.</p>
+      )}
+      {result && (
+        <div className="mt-6 text-left">
+          <ParallelVerificationDisplay result={result} />
+        </div>
+      )}
 
       {/* QR Scanner Modal */}
       <Suspense fallback={null}>
