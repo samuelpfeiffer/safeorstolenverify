@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isPublicPoliceSearch } from '@/lib/publicPoliceSearches';
 
 /**
  * OWNER RULE (Sept 30 2026): never send users to another website.
@@ -28,7 +29,7 @@ function neutralize(root: ParentNode | null) {
     const raw = a.getAttribute("href") || "";
     if (!/^https?:\/\//i.test(raw)) continue;
     try {
-      if (isAllowed(new URL(raw).host)) continue;
+      if (isAllowed(new URL(raw).host) || isPublicPoliceSearch(raw)) continue;
     } catch {
       continue;
     }
@@ -60,7 +61,7 @@ export function OffsiteLinkGuard() {
       try {
         if (url && !window.location.pathname.startsWith("/admin")) {
           const u = new URL(String(url), window.location.href);
-          if (/^https?:$/.test(u.protocol) && !isAllowed(u.host)) return null;
+          if (/^https?:$/.test(u.protocol) && !isAllowed(u.host) && !isPublicPoliceSearch(u.href)) return null;
         }
       } catch { /* fall through */ }
       return origOpen.call(window, url as any, ...rest);

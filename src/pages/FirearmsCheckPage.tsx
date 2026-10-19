@@ -4,6 +4,8 @@ import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import { FounderNote, FOUNDER_PERSON_SCHEMA } from '@/components/seo/FounderNote';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { PublicPoliceSearches } from '@/components/verification/PublicPoliceSearches';
+import { Button } from '@/components/ui/button';
 
 // Oct 5 2026: police firearm theft and loss reports we hold, by state (counted from theft_records).
 // Ohio is also searched live against Ohio law-enforcement records on every gun check.
@@ -46,12 +48,12 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 
 // One list for the visible FAQ and the FAQPage schema, so they always match.
 const FIREARM_FAQS: { q: string; a: string }[] = [
- { q: 'How do I check if a gun is stolen by serial number?', a: "Enter the serial number from the frame or receiver at SafeOrStolen (safeorstolen.com/firearms-check). SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement stolen-gun records, its own theft reports and public web results, and checks the serial for signs of tampering. You get a result in a few seconds. The first 2 checks are free." },
+ { q: 'How do I check if a gun is stolen by serial number?', a: "Enter the serial from the frame or receiver. Read the sources actually checked on your result, then copy the serial for the official public searches linked below. These links are manual checks, not additional connected databases. A miss means not found, not safe." },
  { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $0.99 per check or $10 a month for unlimited checks.' },
- { q: 'Is there a national stolen gun database I can search?', a: "SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017) and live Ohio law-enforcement stolen-gun records in one check, along with its own theft reports and public web results. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial." },
- { q: 'My state is not on the list. Can I still check a gun?', a: "Yes. Every check still searches SafeOrStolen's own theft reports and public web results, and a gun reported stolen in one of those 33 states or DC can turn up for sale anywhere. For an extra check, call your local police non-emergency line and ask whether they will run the serial for a private buyer. Some departments will and some won't." },
+ { q: 'Does this check cover every state database?', a: "No. The historical reports listed below are not live connections to those states. Ohio stolen-gun records are an existing source. Florida and Utah public links are separate searches you open yourself. Coverage is limited to the records each check actually searches." },
+ { q: 'My state is not on the list. Can I still check a gun?', a: "Yes, you can enter the serial, but that does not mean your state's database is connected. Read the sources on the result and ask local police whether their policy permits an additional check." },
  { q: 'Is it legal to check a gun serial number?', a: 'Yes. Looking up whether a serial number has been reported stolen is legal for anyone. SafeOrStolen is a private service and is not a government agency. It never shows who owns a gun or who reported it.' },
- { q: 'What should I do if the result comes back clean?', a: 'A clean SafeOrStolen result means no report was found in the records searched at the time of the check. Before you pay, also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
+ { q: 'What should I do if the result is not found?', a: 'Not found means no matching report was found in the records checked at that time. It does not mean safe or prove ownership. Before you pay, also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
  { q: 'What should I do if the gun comes back as stolen?', a: "Don't buy it and don't confront the seller. Leave, and give the serial number and the seller's details to your local police on their non-emergency line." },
  { q: 'Will the seller know I checked the serial number?', a: 'No. Searches on SafeOrStolen are private and the seller is never told.' },
  { q: 'How do I report my own stolen gun?', a: 'File a report with your local police first and give them the serial number. Then report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial number before buying will see it.' },
@@ -62,7 +64,7 @@ const FirearmsCheckPage = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Free Gun Serial Number Lookup: Is This Gun Stolen?"
- description="Free gun serial number lookup for any state. Search 242,839 police firearm theft and loss reports from 33 states and DC plus live Ohio records, and spot altered serials before you buy."
+ description="Check a gun serial number and open official Florida, Ohio and Utah searches yourself. Coverage is limited; a miss means not found, not safe."
  canonical="/firearms-check"
  />
 
@@ -75,15 +77,16 @@ const FirearmsCheckPage = () => {
  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
  Free Gun Serial Number Lookup
  <br />
- <span className="text-primary">Any State. Is This Gun Stolen?</span>
+ <span className="text-primary">Was This Gun Reported Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Check a gun from any state. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, plus state criminal justice stolen-gun records searched live, before you buy.
+ Enter a gun serial number. Coverage is limited to the records available to the check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus Ohio Attorney General stolen-gun records, before you buy.
  </p>
 
 
  {/* VERIFY TOOL — inline if no shared component */}
  <GunVerifyTool />
+ <p className="mt-4 text-sm text-muted-foreground">A miss means not found in the records checked, not safe. Arizona vehicle checks cover Arizona reports only. The public links below are separate searches you open yourself, not connected state databases.</p>
 
  <p className="text-muted-foreground/60 text-sm mt-4">
  2 free checks · No credit card · Works for handguns, rifles, shotguns, and more
@@ -157,7 +160,7 @@ const FirearmsCheckPage = () => {
  Which Databases Does SafeOrStolen Check for Firearms?
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: every gun check searches police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, state criminal justice stolen-gun records searched live, SafeOrStolen's own theft reports and public web results, and checks the serial for tampering.
+ The result names the sources actually checked. Historical police reports are not live connections to state databases. Existing Ohio stolen-gun checks and SafeOrStolen owner reports are separate from the manual public links above.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
  All of these are searched at the same time, and the result lists each one, so
@@ -184,8 +187,8 @@ const FirearmsCheckPage = () => {
  badgeColor: 'bg-primary/20 text-primary',
  },
  {
- db: 'SafeOrStolen theft reports and public web results',
- desc: 'Guns reported stolen by owners on SafeOrStolen, and public listings or posts that mention the serial number.',
+ db: 'SafeOrStolen theft reports ',
+ desc: 'Guns reported stolen by owners on SafeOrStolen. These are user reports, not proof of police verification.',
  badge: 'Search',
  badgeColor: 'bg-primary/20 text-primary',
  },
@@ -211,10 +214,10 @@ const FirearmsCheckPage = () => {
  Gun Serial Number Lookup by State
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
+ Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
- These are reports filed with police from 1973 to 2017; the table shows the years for each state. Open a state for its most reported brands and models, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">national stolen gun statistics</Link>. A gun stolen in one state is often sold in another, so a check searches every state, not only yours. Ohio is also searched live on every check.
+ These are historical reports filed with police from 1973 to 2017, not connected state databases. The table shows the years for each state. Open a state for its historical reports, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">stolen gun statistics</Link>. Existing Ohio checks are separate; other states are not connected by the public links above.
  </p>
  <div className="overflow-x-auto rounded-xl border border-border mb-4">
  <table className="w-full text-left text-sm">
@@ -238,7 +241,7 @@ const FirearmsCheckPage = () => {
  </div>
  <p className="text-muted-foreground leading-relaxed">
  <strong className="text-foreground">Tennessee, Kentucky, Alabama and other states not listed:</strong> you can still
- check any gun here. The search covers SafeOrStolen's own reports and public web results, plus all 34 jurisdictions above,
+ check any gun here. The search covers SafeOrStolen's own reports, plus the historical reports above,
  where guns stolen elsewhere often turn up. For an extra check, ask your local police on their non-emergency line
  whether they will run the serial for a private buyer.
  </p>
@@ -250,7 +253,7 @@ const FirearmsCheckPage = () => {
  Legal Risks of Buying a Stolen Firearm
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: Possession of a stolen firearm is a federal felony even if you unknowingly purchased it. Law enforcement can seize the firearm with no compensation to you.
+ Quick answer: Under 18 U.S.C. § 922(j), receiving or possessing a firearm you know or have reason to believe is stolen is a crime. A check is not legal advice or a guarantee.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
  This is not a minor civil matter. Buying a stolen gun — even unknowingly — 
@@ -420,9 +423,9 @@ const FirearmsCheckPage = () => {
  <h3 className="text-foreground font-bold mb-4">Related Verification Tools</h3>
  <div className="grid sm:grid-cols-2 gap-3">
  {[
- { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
- { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'Carrier blacklists + theft reports' },
- { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'Stolen-vehicle records by plate' },
+ { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Arizona theft reports; VIN details and recalls' },
+ { title: 'IMEI Check — Phones & Tablets', href: '/imei-checker', desc: 'IMEI details and our theft reports' },
+ { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'Arizona reports for Arizona plates' },
  { title: 'Bike Serial Check', href: '/check-bike', desc: 'Stolen-bike registry and our reports' },
  { title: 'State Firearm Transfer Laws', href: '/state-firearm-transfer-laws', desc: 'Which states require a private-sale background check' },
  ].map((link) => (
@@ -449,7 +452,7 @@ const FirearmsCheckPage = () => {
  "@type": "WebPage",
  "name": "Free Gun Serial Number Lookup — Is This Gun Stolen?",
  "description": "Search a gun serial number against police firearm theft and loss reports from 33 states and DC and live Ohio records, and spot altered serials before you buy.",
- "dateModified": "2026-10-16",
+ "dateModified": "2026-10-19",
  "author": FOUNDER_PERSON_SCHEMA,
  "url": "https://safeorstolen.com/firearms-check",
  "breadcrumb": {
@@ -501,22 +504,24 @@ function GunVerifyTool() {
 
  return (
  <>
- <form onSubmit={handleSubmit} className="flex gap-3 max-w-xl mx-auto">
+ <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
  <input
  type="text"
  value={identifier}
  onChange={(e) => setIdentifier(e.target.value)}
  placeholder="Enter firearm serial number..."
+ aria-label="Firearm serial number"
  className="flex-1 bg-input border border-border rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-hidden focus:border-primary text-sm"
  />
- <button
+ <Button
  type="submit"
  disabled={loading || !identifier.trim()}
  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all disabled:opacity-60 whitespace-nowrap text-sm"
  >
  {loading ? 'Checking...' : 'Check Serial →'}
- </button>
+ </Button>
  </form>
+ <PublicPoliceSearches serial={identifier} />
  {isBlocked && (
  <UpgradeModal isOpen={isBlocked} reason={blockReason} onClose={resetGate} />
  )}

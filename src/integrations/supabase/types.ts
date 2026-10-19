@@ -2096,6 +2096,7 @@ export type Database = {
       is_authenticated_user: { Args: never; Returns: boolean }
       is_service_role: { Args: never; Returns: boolean }
       is_service_role_or_admin: { Args: never; Returns: boolean }
+      public_checks_run_count: { Args: never; Returns: number }
       reset_monthly_verifications: { Args: never; Returns: undefined }
       retrieve_pending_verification: {
         Args: { p_session_id: string }
