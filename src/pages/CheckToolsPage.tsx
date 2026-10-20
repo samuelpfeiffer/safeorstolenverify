@@ -61,7 +61,7 @@ const CheckToolsPage = () => {
           "Covers generators, compressors, welders and saws with a serial plate",
           "Searches SafeOrStolen theft reports and public web results",
           "Results in a few seconds, saved to your account with the date",
-          "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
+          "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
         ],
         process: [
           "Find the serial number on the tool's label: usually on the motor housing, near the battery mount or on the base plate.",

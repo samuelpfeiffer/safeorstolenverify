@@ -30,7 +30,7 @@ const CheckEBikePage = () => {
  "Verify e-scooters - Segway, Xiaomi, Bird, Lime, unagi scooters",
  "Check frame, motor, and battery serial numbers",
  "Searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results",
- "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
+ "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
  ],
  process: [
  "Locate all serial numbers: Frame serial (bottom bracket, head tube, or rear dropout), motor serial (on motor casing), battery serial (on battery pack). Check owner's manual for exact locations. Most eBikes have 2-3 separate serial numbers.",
@@ -51,7 +51,7 @@ const CheckEBikePage = () => {
  },
  {
  question: "Is the eBike stolen check really free?",
- answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. Each serial is one check, so with a frame, motor and battery serial you may want a third. After the free checks it's $0.99 a check or $10 a month for unlimited checks."
+ answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. Each serial is one check, so with a frame, motor and battery serial you may want a third. After the free checks it's $0.99 a check or $10 a month for unlimited checks."
  },
  {
  question: "What should I do if my eBike check shows it's stolen?",

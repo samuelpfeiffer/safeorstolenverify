@@ -101,7 +101,7 @@ const WashingtonDCLicensePlateLookup = () => {
  </h1>
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
  Enter a DC plate to see in a few seconds whether it shows up in SafeOrStolen theft reports
- or public web results. 2 free checks with a free account.
+ or public web results. 2 free checks, no account needed.
  </p>
 
  {/* Search Form */}

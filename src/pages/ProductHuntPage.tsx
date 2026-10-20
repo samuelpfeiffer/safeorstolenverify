@@ -55,7 +55,7 @@ const ProductHuntPage = () => (
             SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial
             number, based in Peoria, AZ. Before you pay a stranger for something secondhand, type in its IMEI,
             VIN, plate or serial and see in a few seconds whether it has been reported stolen in the records
-            SafeOrStolen searches. The first 2 checks are free with a free account, no credit card.
+            SafeOrStolen searches. The first 2 checks are free, with no account or credit card needed.
           </p>
           <p className="text-sm text-muted-foreground mb-8">Updated October 7, 2026</p>
           <Button size="lg" asChild>
@@ -103,7 +103,7 @@ const ProductHuntPage = () => (
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-2xl font-bold mb-4">Pricing</h2>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6 mb-6">
-            <li>2 free checks with a free account, no credit card</li>
+            <li>2 free checks, no account or credit card needed</li>
             <li>$0.99 for a single check</li>
             <li>$10 a month for unlimited checks, cancel anytime, 30-day refund</li>
             <li>A free installable web app at <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link></li>

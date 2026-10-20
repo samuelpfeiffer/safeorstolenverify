@@ -32,7 +32,7 @@ const buyerStolenSteps = [
 
 const sosCheck = (what: string) => ({
   name: `Run a SafeOrStolen ${what} check`,
-  cost: "Free to try with a free account",
+  cost: "Free to try, no account needed",
   description:
     "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
   tellsYou:

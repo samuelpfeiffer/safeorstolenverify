@@ -73,7 +73,7 @@ const CheckLaptopPage = () => {
           "Searches SafeOrStolen theft reports and public web results",
           "Results in a few seconds, with every source listed",
           "Each check saved to your account with the date",
-          "2 free checks with a free account, then $0.99 a check or $10 a month unlimited",
+          "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited",
         ],
         process: [
           "Find the serial number: on a MacBook, Apple menu > About This Mac or the bottom case; on Windows, Settings > System > About or the bottom sticker.",

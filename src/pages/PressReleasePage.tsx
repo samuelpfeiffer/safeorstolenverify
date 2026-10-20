@@ -21,7 +21,7 @@ export default function PressReleasePage() {
         title="SafeOrStolen Press Releases and Announcements"
         description="Looking for a SafeOrStolen press release? Current company facts, what a check searches and pricing, plus the press email: safeorstolenmail@gmail.com."
         keywords="safeorstolen press release, safeorstolen announcement, safeorstolen news"
-        canonical="/press-release"
+        canonical="/press"
         modifiedTime="2026-10-07"
       />
       <div className="min-h-screen bg-background pt-20">

@@ -104,7 +104,7 @@ export function dynamicRoutes() {
 }
 
 /** Public pages that point Google at another page (canonical), so they stay out of the sitemap (Oct 20 2026). */
-const CANONICAL_ELSEWHERE = new Set(['/ai-verify', '/comprehensive-guide']);
+const CANONICAL_ELSEWHERE = new Set(['/ai-verify', '/comprehensive-guide', '/press-release']);
 
 /** Final public URL list: router routes minus redirects minus private routes. */
 export function publicRoutes() {

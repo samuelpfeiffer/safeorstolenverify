@@ -92,7 +92,7 @@ const HowToCheckIfBoatStolenPage = () => (
         {
           question: 'How do I check a boat HIN for free?',
           answer:
-            "Enter the 12-character HIN on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). The first 2 checks are free with a free account and no credit card. It searches SafeOrStolen theft reports and public web results. For state title and lien information, contact the agency that titles boats in your state; depending on the state that may be the DMV or the wildlife department.",
+            "Enter the 12-character HIN on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). The first 2 checks are free, with no account or credit card needed. It searches SafeOrStolen theft reports and public web results. For state title and lien information, contact the agency that titles boats in your state; depending on the state that may be the DMV or the wildlife department.",
         },
         {
           question: 'Where is the HIN on a boat?',

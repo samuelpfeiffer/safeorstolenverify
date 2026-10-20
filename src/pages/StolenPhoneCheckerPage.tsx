@@ -50,7 +50,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "Is SafeOrStolen's phone checker free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "You get 2 free checks with a free account, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
+ "text": "You get 2 free checks, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
  }
  },
  {
@@ -301,7 +301,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">Is SafeOrStolen's phone checker free?</h3>
- <p className="text-muted-foreground">You get 2 free checks with a free account, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
+ <p className="text-muted-foreground">You get 2 free checks, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
  </CardContent>
  </Card>
  <Card>

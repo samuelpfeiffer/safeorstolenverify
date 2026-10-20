@@ -88,7 +88,7 @@ const PartialSerialNumberSearchPage = () => (
         'Every source searched is listed, so you know what a no-match covers',
         'Works for any item type: electronics, tools, bikes, cameras, guns',
         'Each check is saved to your account with the date',
-        '2 free checks with a free account, no credit card',
+        '2 free checks, no account or credit card needed',
       ],
       process: [
         'Write down every character you can read, in order, and mark where the gaps are.',

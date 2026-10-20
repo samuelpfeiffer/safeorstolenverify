@@ -278,7 +278,7 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
   },
   'stolen-check-free': {
     title: 'Stolen Check Free - No Credit Card Required',
-    description: 'Free stolen checks for all items. 2 free checks with a free account, no credit card. Verify items instantly.',
+    description: 'Free stolen checks for all items. 2 free checks, no account or credit card needed. Verify items instantly.',
     keywords: 'stolen check free, free theft check, no cost verification, free stolen lookup',
     type: 'website'
   },

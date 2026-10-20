@@ -92,7 +92,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         {
           question: 'Can I check if a license plate is stolen for free?',
           answer:
-            "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-license-plate-stolen) lets you check a plate free twice with a free account and no credit card. It searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona plates. Police can also tell you whether a plate is listed in the national stolen-plate file if you call the non-emergency line.",
+            "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-license-plate-stolen) lets you check a plate free twice, no account or credit card needed. It searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona plates. Police can also tell you whether a plate is listed in the national stolen-plate file if you call the non-emergency line.",
         },
         {
           question: 'Can police tell if a license plate is stolen?',

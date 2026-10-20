@@ -31,7 +31,7 @@ const NewYorkLicensePlateLookupPage = () => {
  "Public web results that mention the plate",
  "No owner names or personal details shown",
  "Results in a few seconds, saved to your account with the date",
- "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
+ "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
  ],
  process: [
  "Write down the plate from the front and back of the car and make sure they match",
@@ -55,7 +55,7 @@ const NewYorkLicensePlateLookupPage = () => {
  },
  {
  question: "Is the New York license plate lookup free?",
- answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime."
+ answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime."
  },
  {
  question: "What if the name on the title doesn't match the seller?",

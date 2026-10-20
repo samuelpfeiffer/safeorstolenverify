@@ -205,7 +205,7 @@ export default function FeaturesPage() {
 
  <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center">
  <h2 className="text-2xl font-bold mb-2">Try it on your next purchase</h2>
- <p className="text-muted-foreground mb-4">2 free checks with a free account. No credit card.</p>
+ <p className="text-muted-foreground mb-4">2 free checks, no account needed. No credit card.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button size="lg" asChild>
  <Link to="/verify">

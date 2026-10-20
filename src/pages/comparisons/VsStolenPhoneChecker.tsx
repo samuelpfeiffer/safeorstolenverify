@@ -273,7 +273,7 @@ const VsStolenPhoneChecker = () => {
         <section className="text-center bg-primary/5 rounded-2xl p-12">
           <h2 className="text-3xl font-bold mb-4">Check more than phones</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Start with 2 free checks on a free account. After that it's $0.99 a check or $10 a month for unlimited checks.
+            Start with 2 free checks, no account needed. After that it's $0.99 a check or $10 a month for unlimited checks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">

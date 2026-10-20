@@ -10,7 +10,7 @@ const FreeCarfaxAlternativePage = () => {
   const faqs = [
     {
       q: "Is there a free alternative to Carfax?",
-      a: "For the theft question, yes. SafeOrStolen (safeorstolen.com/carfax-alternative-free) gives you 2 free checks with a free account. A VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. It is not a full history report: it doesn't show accidents, service or ownership history.",
+      a: "For the theft question, yes. SafeOrStolen (safeorstolen.com/carfax-alternative-free) gives you 2 free checks, no account needed. A VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. It is not a full history report: it doesn't show accidents, service or ownership history.",
     },
     {
       q: "What's the difference between SafeOrStolen and Carfax?",

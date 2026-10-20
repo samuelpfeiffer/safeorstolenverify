@@ -68,7 +68,7 @@ const WashingtonLicensePlateLookupPage = () => {
  "Follow up with a VIN check: year, make, model and open recalls",
  "Every source searched is listed in the result",
  "Each check saved to your account with the date",
- "2 free checks with a free account, then $0.99 a check or $10 a month"
+ "2 free checks, no account needed, then $0.99 a check or $10 a month"
  ],
  process: [
  "Write down the plate from both the front and the rear of the car",

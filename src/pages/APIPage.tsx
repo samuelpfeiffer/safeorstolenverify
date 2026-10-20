@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     question: "What does it cost?",
-    answer: "2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks.",
+    answer: "2 free checks, no account needed, then $0.99 per check or $10 a month for unlimited checks.",
   },
   {
     question: "What does a miss mean?",
@@ -55,7 +55,7 @@ export default function APIPage() {
         <section className="space-y-3">
           <h2 className="text-2xl font-bold">Limits</h2>
           <ul className="list-disc pl-5 text-muted-foreground space-y-1">
-            <li>2 free checks with a free account</li>
+            <li>2 free checks, no account needed</li>
             <li>Then $0.99 per check, or $10 a month unlimited</li>
             <li>60 requests a minute per account</li>
           </ul>

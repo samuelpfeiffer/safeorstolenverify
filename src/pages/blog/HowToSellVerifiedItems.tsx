@@ -227,7 +227,7 @@ const HowToSellVerifiedItems = () => {
                 {
                   step: "2",
                   title: "Run a Verification",
-                  desc: "Sign in at safeorstolen.com/verify and enter the identifier. A free account includes two checks.",
+                  desc: "Sign in at safeorstolen.com/verify and enter the identifier. Your first 2 checks are free, no account needed.",
                 },
                 {
                   step: "3",

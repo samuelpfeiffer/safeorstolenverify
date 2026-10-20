@@ -211,7 +211,7 @@ export default function ComprehensiveGuidePage() {
 
  <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center">
  <h2 className="text-2xl font-bold mb-2">Found the number? Check it.</h2>
- <p className="text-muted-foreground mb-4">2 free checks with a free account. No credit card.</p>
+ <p className="text-muted-foreground mb-4">2 free checks, no account needed. No credit card.</p>
  <Button size="lg" asChild>
  <Link to="/check-if-stolen">
  Check if it's stolen <ArrowRight className="ml-2 h-4 w-4" />

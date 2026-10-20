@@ -37,7 +37,7 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  "Results in a few seconds, with every source listed",
  "Never shows owner names or addresses",
  "Each check saved to your account with the date",
- "2 free checks with a free account, then $0.99 a check or $10 a month",
+ "2 free checks, no account needed, then $0.99 a check or $10 a month",
  "Pairs with a VIN check that decodes the vehicle and lists open recalls"
  ],
 

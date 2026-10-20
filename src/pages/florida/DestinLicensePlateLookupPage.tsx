@@ -10,7 +10,7 @@ const DestinLicensePlateLookupPage = () => {
  const faqs = [
  {
  q: "How do I check if a car is stolen in Destin, FL?",
- a: "Enter the Florida plate or the VIN at SafeOrStolen (safeorstolen.com/verify). In a few seconds it searches SafeOrStolen theft reports and public web results that mention the number, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks with a free account, no credit card. Owner names are never shown."
+ a: "Enter the Florida plate or the VIN at SafeOrStolen (safeorstolen.com/verify). In a few seconds it searches SafeOrStolen theft reports and public web results that mention the number, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks, no account or credit card needed. Owner names are never shown."
  },
  {
  q: "What else can I do to check a car in Destin?",

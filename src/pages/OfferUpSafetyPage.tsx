@@ -285,7 +285,7 @@ const OfferUpSafetyPage = () => {
  {/* CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Stay Safe on OfferUp</h2>
- <p className="text-muted-foreground mb-6">Check any phone, car or electronics before your meetup. 2 free checks with a free account.</p>
+ <p className="text-muted-foreground mb-6">Check any phone, car or electronics before your meetup. 2 free checks, no account needed.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg">
  <Link to="/verify">Verify Item Now</Link>

@@ -33,7 +33,7 @@ const IsMyIPhoneStolenPage = () => {
  "Shows the make and model the IMEI belongs to, so you can spot a swapped or fake listing",
  "Searches SafeOrStolen theft reports and public web results for that IMEI",
  "Optional paid check against the carrier lost/stolen blacklist",
- "2 free checks with a free account, no credit card",
+ "2 free checks, no account or credit card needed",
  "Every check is saved to your account with the date"
  ],
  process: [

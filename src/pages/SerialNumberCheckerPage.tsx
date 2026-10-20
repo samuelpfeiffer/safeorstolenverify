@@ -84,7 +84,7 @@ const SerialNumberCheckerPage = () => {
  "Searches SafeOrStolen theft reports and public web results on every check",
  "Gun serials: police theft and loss reports from 33 states and DC plus live Ohio records",
  "Results in a few seconds, with every source listed",
- "2 free checks with a free account, no credit card",
+ "2 free checks, no account or credit card needed",
  "Dated record of every check saved to your account",
  "Optional $1.99 verification certificate to share with the buyer or seller",
  "Install the free web app and check from your phone at the meetup"
@@ -99,7 +99,7 @@ const SerialNumberCheckerPage = () => {
  faqs: [
  {
  question: "Is the serial number search really free?",
- answer: "Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $0.99 for a single check, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
+ answer: "Yes. SafeOrStolen gives you 2 free checks, no account or credit card needed. After that it is $0.99 for a single check, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
  },
  {
  question: "Is there a national database of stolen serial numbers?",

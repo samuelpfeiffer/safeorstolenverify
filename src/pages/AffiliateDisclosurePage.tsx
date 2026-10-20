@@ -59,7 +59,7 @@ const AffiliateDisclosurePage: React.FC = () => {
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground leading-relaxed">
               <ul className="list-disc pl-6 space-y-2">
-                <li>2 free checks with a free account, no credit card.</li>
+                <li>2 free checks, no account or credit card needed.</li>
                 <li>$0.99 for a single check.</li>
                 <li>$10 a month for unlimited checks (phone blacklist checks capped at 20 a month), cancel anytime, 30-day refund on the monthly plan.</li>
                 <li>An optional $1.99 verification certificate, free for monthly members.</li>

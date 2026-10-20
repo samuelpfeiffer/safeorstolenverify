@@ -84,7 +84,7 @@ const ArizonaLicensePlateLookupPage = () => {
  "Guided Buyer's Check: title, VIN plates and seller ID",
  "Save a Proof of Clean Purchase when every step checks out",
  "For buyers and for sellers proving a car is clean",
- "2 free checks with a free account",
+ "2 free checks, no account needed",
  ],
 
  process: [

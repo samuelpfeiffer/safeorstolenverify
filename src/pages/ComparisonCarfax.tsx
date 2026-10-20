@@ -69,7 +69,7 @@ const ComparisonCarfax = () => {
             Carfax sells vehicle history reports: accidents, title brands, service records and past owners. SafeOrStolen answers a
             narrower question for more kinds of items: has this VIN, IMEI or serial number been reported stolen? It searches
             SafeOrStolen's own theft reports and public web results, and for Arizona vehicles also Arizona law-enforcement
-            stolen-vehicle records. You get 2 free checks with a free account, then $0.99 a check or $10 a month for unlimited checks.
+            stolen-vehicle records. You get 2 free checks, no account needed, then $0.99 a check or $10 a month for unlimited checks.
             On your phone, use the free installable web app at safeorstolen.com/app.
           </p>
           <h2>How SafeOrStolen compares with Carfax</h2>

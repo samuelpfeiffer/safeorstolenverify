@@ -3,7 +3,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 /**
  * Oct 7 2026: rewritten by hand for "how to check if a tv is stolen" / "tv serial number lookup"
  * (no Search Console data yet). Now self-contained instead of reading TV_GUIDE from the shared data
- * file. The old guide said "no account needed" for free checks; the 2 free checks need a free account.
+ * file. The old guide said "no account needed" for free checks; the 2 free checks need no account.
  */
 export default function HowToCheckIfTvStolenPage() {
   return (
@@ -75,7 +75,7 @@ export default function HowToCheckIfTvStolenPage() {
           'Searches SafeOrStolen theft reports and public web results',
           'Results in a few seconds with every source listed',
           'A dated record of the check is saved to your account',
-          '2 free checks with a free account, no credit card',
+          '2 free checks, no account or credit card needed',
         ],
         process: [
           'Ask the seller for a photo of the label on the back before you go.',
@@ -93,7 +93,7 @@ export default function HowToCheckIfTvStolenPage() {
           {
             question: 'Can I look up a TV serial number to see if it is stolen?',
             answer:
-              'Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen) checks a TV serial against its theft reports and public web results for free for your first 2 checks, with a free account and no credit card. There is no public national database of stolen TVs; police can also check a serial against their own records.',
+              'Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen) checks a TV serial against its theft reports and public web results for free for your first 2 checks, with no account or credit card needed. There is no public national database of stolen TVs; police can also check a serial against their own records.',
           },
           {
             question: 'Is a new TV in a sealed box on Marketplace stolen?',

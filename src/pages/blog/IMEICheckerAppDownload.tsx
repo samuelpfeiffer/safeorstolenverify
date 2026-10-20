@@ -44,7 +44,7 @@ const IMEICheckerAppDownload = () => {
   const faqs = [
     {
       question: "Is there an app to check if a phone is stolen?",
-      answer: "Yes. SafeOrStolen is a free web app you install from your phone's browser at safeorstolen.com/app, not from the App Store or Google Play. Enter or scan a phone's IMEI and it shows the make and model, then searches SafeOrStolen theft reports and public web listings for that IMEI. You get 2 free checks with a free account."
+      answer: "Yes. SafeOrStolen is a free web app you install from your phone's browser at safeorstolen.com/app, not from the App Store or Google Play. Enter or scan a phone's IMEI and it shows the make and model, then searches SafeOrStolen theft reports and public web listings for that IMEI. You get 2 free checks, no account needed."
     },
     {
       question: "How do I install the SafeOrStolen IMEI checker app?",
@@ -60,7 +60,7 @@ const IMEICheckerAppDownload = () => {
     },
     {
       question: "Is the SafeOrStolen IMEI checker free?",
-      answer: "The app is free to install, and a free account includes 2 checks with no credit card. After that a single check is $0.99, or $10 a month for unlimited checks. A carrier blacklist check is a paid add-on; monthly members get up to 20 blacklist checks a month."
+      answer: "The app is free to install, and your first 2 checks are free, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks. A carrier blacklist check is a paid add-on; monthly members get up to 20 blacklist checks a month."
     }
   ];
 

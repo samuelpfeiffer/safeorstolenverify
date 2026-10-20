@@ -358,7 +358,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      You get 2 free checks with a free account and no credit card. After that it's $0.99 a check
+                      You get 2 free checks, no account or credit card needed. After that it's $0.99 a check
                       or $10 a month for unlimited checks, cancel anytime. The phone blacklist check is a paid extra;
                       monthly members get up to 20 a month.
                     </p>

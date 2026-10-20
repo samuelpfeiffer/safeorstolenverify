@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'Is there a free serial number scanner online?',
     answer:
-      "Yes. SafeOrStolen (safeorstolen.com/barcode-scanner) reads a serial number, IMEI or VIN from your phone's camera, either by scanning the barcode on the label or by reading the printed number from a photo, and checks it against SafeOrStolen theft reports and public web results. It runs in the browser, and the first 2 checks are free with a free account.",
+      "Yes. SafeOrStolen (safeorstolen.com/barcode-scanner) reads a serial number, IMEI or VIN from your phone's camera, either by scanning the barcode on the label or by reading the printed number from a photo, and checks it against SafeOrStolen theft reports and public web results. It runs in the browser, and the first 2 checks are free, no account needed.",
   },
   {
     question: 'How do I scan an IMEI barcode?',
@@ -80,7 +80,7 @@ const appSchema = {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: '2 free checks with a free account, then $0.99 a check or $10 a month',
+    description: '2 free checks, no account needed, then $0.99 a check or $10 a month',
   },
   featureList: 'Live barcode and QR code scanning, reading an IMEI, VIN or serial number from a photo, stolen item check',
   description:

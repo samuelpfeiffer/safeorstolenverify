@@ -40,7 +40,7 @@ const GetAppPage = () => {
       {
         "@type": "Question",
         "name": "Is the SafeOrStolen app free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The SafeOrStolen web app is free to install from safeorstolen.com/app, and a free account includes 2 checks with no credit card. After that it costs $0.99 a check or $10 a month for unlimited checks." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The SafeOrStolen web app is free to install from safeorstolen.com/app, and your first 2 checks are free, no account or credit card needed. After that it costs $0.99 a check or $10 a month for unlimited checks." }
       },
       {
         "@type": "Question",

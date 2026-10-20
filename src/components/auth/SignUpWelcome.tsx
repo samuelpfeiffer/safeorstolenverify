@@ -22,7 +22,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Shield,
       title: "Run Your 2 Free Checks",
-      description: "Your free account includes 2 checks. Enter any serial number, IMEI or VIN to use them, no credit card needed.",
+      description: "Your first 2 checks are free, no account needed. Enter any serial number, IMEI or VIN to use them, no credit card needed.",
       action: "See Plans",
       onClick: () => navigate('/pricing')
     },

@@ -109,7 +109,7 @@ const SamsungIMEICheck = () => {
           {
             question: 'How do I check a Samsung IMEI for free?',
             answer:
-              "Dial *#06# to show the IMEI, then enter it on SafeOrStolen (safeorstolen.com/check-samsung-stolen). The free check shows the Galaxy model and searches SafeOrStolen theft reports and public web results. A free account includes 2 checks with no credit card. The carrier blacklist check is a paid check.",
+              "Dial *#06# to show the IMEI, then enter it on SafeOrStolen (safeorstolen.com/check-samsung-stolen). The free check shows the Galaxy model and searches SafeOrStolen theft reports and public web results. Your first 2 checks are free, with no account or credit card needed. The carrier blacklist check is a paid check.",
           },
           {
             question: 'What is FRP lock on a Samsung?',

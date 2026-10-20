@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'How much does it cost an insurance company?',
     answer:
-      'The same as everyone: 2 free checks with a free account and no credit card, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There is no separate enterprise price list. Ask at safeorstolenmail@gmail.com if you need something else.',
+      'The same as everyone: 2 free checks, no account or credit card needed, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There is no separate enterprise price list. Ask at safeorstolenmail@gmail.com if you need something else.',
   },
 ];
 

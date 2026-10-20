@@ -91,7 +91,7 @@ export default function HowToTellIfMarketplaceItemStolenPage() {
         howItWorks:
           'Get the number from the seller and type it into the search box. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed, and the check is saved to your account with the date.',
         whyCheck:
-          'If you buy something stolen, police can take it back and return it to the owner, and you usually lose what you paid. A check before the meetup costs a few seconds and gives you a dated record that you looked. The first 2 checks are free with a free account.',
+          'If you buy something stolen, police can take it back and return it to the owner, and you usually lose what you paid. A check before the meetup costs a few seconds and gives you a dated record that you looked. The first 2 checks are free, no account needed.',
         benefits: [
           'One search box for serial numbers, IMEIs and VINs',
           'Checks SafeOrStolen theft reports and public web results, with every source listed',

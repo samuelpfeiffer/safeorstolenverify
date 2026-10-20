@@ -37,7 +37,7 @@ const OhioLicensePlateLookupPage = () => {
  "Never shows owner names or addresses",
  "Works for plates from Columbus, Cleveland, Cincinnati, Toledo and the rest of Ohio",
  "Each check is saved to your account with the date",
- "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
+ "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
  ],
  process: [
  "Write down the plate exactly. Ohio has required only a rear plate on most passenger vehicles since 2020, so a missing front plate on its own isn't a warning sign.",
@@ -66,7 +66,7 @@ const OhioLicensePlateLookupPage = () => {
  },
  {
  question: "Is an Ohio plate lookup free?",
- answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan."
+ answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan."
  },
  {
  question: "Why are some Kia and Hyundai models a concern in Ohio?",

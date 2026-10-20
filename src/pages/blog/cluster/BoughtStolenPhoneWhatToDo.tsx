@@ -153,7 +153,7 @@ export default function BoughtStolenPhoneWhatToDo() {
         {
           question: 'How do I check if a phone is reported stolen?',
           answer:
-            "Dial *#06# for the IMEI and enter it on SafeOrStolen (safeorstolen.com/imei-checker). It searches SafeOrStolen theft reports and public web results and shows the phone's model, and a paid check covers the carrier lost/stolen blacklist. A free account includes 2 checks.",
+            "Dial *#06# for the IMEI and enter it on SafeOrStolen (safeorstolen.com/imei-checker). It searches SafeOrStolen theft reports and public web results and shows the phone's model, and a paid check covers the carrier lost/stolen blacklist. Your first 2 checks are free, no account needed.",
         },
       ]}
     />

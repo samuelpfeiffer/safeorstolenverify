@@ -93,7 +93,7 @@ const CheckIfStolenPage = () => {
  'Bike checks include a national stolen-bicycle registry',
  'Every source searched is listed on the result',
  'Each check saved to your account with the date',
- '2 free checks with a free account, no credit card',
+ '2 free checks, no account or credit card needed',
  ],
  process: [
  'Ask the seller for a photo of the IMEI, VIN or serial number on the item before you agree to meet.',
@@ -106,7 +106,7 @@ const CheckIfStolenPage = () => {
  {
  question: 'Is there a free way to check if something is stolen?',
  answer:
- 'Yes. SafeOrStolen (safeorstolen.com/check-if-stolen) gives you 2 free checks with a free account and no credit card. Each one searches SafeOrStolen theft reports and public web results, plus police gun records for firearms and a stolen-bicycle registry for bikes. After that, a single check is $0.99 or unlimited checks are $10 a month.',
+ 'Yes. SafeOrStolen (safeorstolen.com/check-if-stolen) gives you 2 free checks, no account or credit card needed. Each one searches SafeOrStolen theft reports and public web results, plus police gun records for firearms and a stolen-bicycle registry for bikes. After that, a single check is $0.99 or unlimited checks are $10 a month.',
  },
  {
  question: 'Can I check if something is stolen by serial number?',

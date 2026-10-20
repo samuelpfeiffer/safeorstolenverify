@@ -16,7 +16,7 @@ export type HonestCompare = {
   faqs: CompareFaq[];
 };
 
-const SOS_PRICE = '2 free checks with a free account, then $0.99 per check or $10/month unlimited.';
+const SOS_PRICE = '2 free checks, no account needed, then $0.99 per check or $10/month unlimited.';
 
 export const COMPARES: Record<string, HonestCompare> = {
   'safeorstolen-vs-nicb-vincheck': {

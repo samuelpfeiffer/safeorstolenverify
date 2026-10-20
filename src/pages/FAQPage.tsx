@@ -34,7 +34,7 @@ const categories = [
   },
   {
     title: 'Account, Privacy, and Pricing', icon: Shield, faqs: [
-      { question: 'How much does verification cost?', answer: 'A free account includes 2 checks with no credit card. Additional checks cost $0.99 each, or the unlimited plan costs $10 per month (blacklist checks capped at 20 a month) with a 30-day refund.' },
+      { question: 'How much does verification cost?', answer: 'Your first 2 checks are free, with no account or credit card needed. Additional checks cost $0.99 each, or the unlimited plan costs $10 per month (blacklist checks capped at 20 a month) with a 30-day refund.' },
       { question: 'Can I cancel the unlimited plan?', answer: 'Yes. You can cancel from your account, and access continues through the end of the current billing period.' },
       { question: 'Is there an app?', answer: 'SafeOrStolen is a free web app you can install from your browser at safeorstolen.com/app. It is not an App Store or Google Play download, and it needs a data connection to run checks.' },
       { question: 'Who can view my result?', answer: 'Your history is tied to your account. A result is public only when you deliberately create and share a public result link.' },

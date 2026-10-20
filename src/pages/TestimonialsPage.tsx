@@ -41,7 +41,7 @@ const TestimonialsPage = () => (
           <p className="text-lg text-muted-foreground mb-4">
             SafeOrStolen only shows reviews you can check for yourself. Below are the reviews from our Trustpilot
             page, word for word, with a link so you can see them there. The best way to judge the service is still to
-            run the 2 free checks yourself, with a free account and no credit card, and see what a result tells you.
+            run the 2 free checks yourself, with no account or credit card, and see what a result tells you.
           </p>
           <p className="text-sm text-muted-foreground mb-6">Updated October 18, 2026</p>
           <div className="-mx-4 mb-6"><TrustpilotReviews heading="Reviews on Trustpilot" /></div>

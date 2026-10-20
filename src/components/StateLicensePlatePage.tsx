@@ -152,7 +152,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  
  <h2>Frequently Asked Questions</h2>
  <h3>How much does the {stateData.name} license plate lookup cost?</h3>
- <p>2 free checks with a free account, then $0.99 a check or $10 a month for unlimited checks.</p>
+ <p>2 free checks, no account needed, then $0.99 a check or $10 a month for unlimited checks.</p>
  <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
  <p>Yes. The plate lookup works the same in {stateData.majorCities.join(', ')} and anywhere else in {stateData.name}.</p>
  {uniqueContent?.uniqueFaqs.map((faq, i) => (
@@ -413,7 +413,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  How much does the {stateData.name} license plate lookup cost?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- You get 2 free checks with a free account. After that it's $0.99 a check or $10 a month for unlimited checks. 
+ You get 2 free checks, no account needed. After that it's $0.99 a check or $10 a month for unlimited checks. 
  Each {stateData.abbrev} plate check searches SafeOrStolen theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records' : ''}.
  </AccordionContent>
  </AccordionItem>

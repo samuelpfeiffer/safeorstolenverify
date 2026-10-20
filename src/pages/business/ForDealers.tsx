@@ -41,7 +41,7 @@ const FAQS = [
   {
     question: 'What does it cost a dealership?',
     answer:
-      "The same as anyone else. 2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There are no per-rooftop plans or overage fees. If you need something different for several stores, email safeorstolenmail@gmail.com.",
+      "The same as anyone else. 2 free checks, no account needed, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There are no per-rooftop plans or overage fees. If you need something different for several stores, email safeorstolenmail@gmail.com.",
   },
   {
     question: 'Can we give a buyer proof that we checked the car?',

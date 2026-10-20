@@ -276,7 +276,7 @@ const VerifyChatPage: React.FC = () => {
       updateMessage(assistantId, {
         loading: false,
         content:
-          "**Create a free account to run this check.** It takes a few seconds — sign up with Google or email below and I'll pick up right where we left off. You get 2 free checks with a free account.",
+          "**Create a free account to run this check.** It takes a few seconds — sign up with Google or email below and I'll pick up right where we left off. You get 2 free checks, no account needed.",
       });
     },
     [savePendingVerification, updateMessage],

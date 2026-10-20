@@ -57,7 +57,7 @@ const DownloadApp = () => {
       dateModified: '2026-10-07',
       description:
         'Installable web app for checking whether a phone, vehicle, plate, gun, bike or other serial-numbered item has been reported stolen.',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free to install; 2 free checks with a free account' },
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free to install; 2 free checks, no account needed' },
     },
     {
       '@context': 'https://schema.org',

@@ -11,7 +11,7 @@ const FAQS = [
  {
  question: 'Is there a free way to check if a phone is stolen?',
  answer:
- 'Yes. SafeOrStolen (safeorstolen.com/check-imei-stolen) gives you 2 free checks with a free account and no credit card. Dial *#06# on the phone to show the IMEI, enter it, and in a few seconds you see the make and model and whether the IMEI turns up in SafeOrStolen theft reports or public web results.',
+ 'Yes. SafeOrStolen (safeorstolen.com/check-imei-stolen) gives you 2 free checks, no account or credit card needed. Dial *#06# on the phone to show the IMEI, enter it, and in a few seconds you see the make and model and whether the IMEI turns up in SafeOrStolen theft reports or public web results.',
  },
  {
  question: "How do I check a phone's IMEI blacklist status?",
@@ -191,7 +191,7 @@ const CheckImeiStolenPage = () => {
  </Link>
  </p>
  <p className="text-sm text-muted-foreground">
- Start with 2 free checks with a free account — no credit card. After that it&apos;s $0.99 per
+ Start with 2 free checks, no account needed — no credit card. After that it&apos;s $0.99 per
  single check or $10 a month for unlimited checks, up to 20 blacklist checks and free
  certificates. Cancel anytime.
  </p>

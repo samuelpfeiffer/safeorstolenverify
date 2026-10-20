@@ -38,7 +38,7 @@ const TexasLicensePlateLookupPage = () => {
  "Never shows owner names or personal details",
  "Works the same for cars, trucks and motorcycles with TX plates",
  "Each check is saved to your account with the date",
- "2 free checks with a free account, no credit card"
+ "2 free checks, no account or credit card needed"
  ],
  process: [
  "Write down the plate exactly as shown, letters and numbers, from the front and rear plates; both should match",

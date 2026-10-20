@@ -30,7 +30,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'Is the scam checker free?',
     answer:
-      "Yes. It's free, has no limit, and you don't need an account. It runs in your browser, so the text you paste isn't sent to SafeOrStolen. Checking whether the item itself is reported stolen is separate: that uses the serial number, IMEI or VIN, and comes with 2 free checks on a free account.",
+      "Yes. It's free, has no limit, and you don't need an account. It runs in your browser, so the text you paste isn't sent to SafeOrStolen. Checking whether the item itself is reported stolen is separate: that uses the serial number, IMEI or VIN, and comes with 2 free checks, no account needed.",
   },
   {
     question: 'What do the scam risk levels mean?',

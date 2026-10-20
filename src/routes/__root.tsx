@@ -51,7 +51,7 @@ const webApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   description:
-    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. A free account includes two checks.",
+    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Your first 2 checks are free, no account needed.",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Web",
   offers: {

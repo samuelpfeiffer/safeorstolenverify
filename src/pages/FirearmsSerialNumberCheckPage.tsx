@@ -25,7 +25,7 @@ const FirearmsSerialNumberCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to check if a gun is stolen?",
- answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 2 free checks with a free account and no credit card. A gun check searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records. After the free checks it's $0.99 a check or $10 a month."
+ answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 2 free checks, no account or credit card needed. A gun check searches SafeOrStolen theft reports, public web results, 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records. After the free checks it's $0.99 a check or $10 a month."
  },
  {
  question: "Can I check a gun serial number online from my phone?",
@@ -148,7 +148,7 @@ const FirearmsSerialNumberCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free checks with a free account • Results in a few seconds
+ 2 free checks, no account needed • Results in a few seconds
  </p>
  </div>
 

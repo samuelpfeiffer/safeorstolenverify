@@ -168,7 +168,7 @@ export default function VsStolenRegisterPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Try SafeOrStolen Free</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              2 free checks with a free account, no credit card required. Then $0.99 a check or $10 a month for unlimited checks.
+              2 free checks, no account or credit card needed required. Then $0.99 a check or $10 a month for unlimited checks.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

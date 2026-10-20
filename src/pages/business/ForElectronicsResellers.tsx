@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'How much does it cost a reseller?',
     answer:
-      '2 free checks with a free account, no credit card. Then $0.99 per check, or $10 a month for unlimited checks with up to 20 blacklist searches a month. Cancel anytime; the monthly plan has a 30-day refund. If you need more blacklist searches than that, email safeorstolenmail@gmail.com.',
+      '2 free checks, no account or credit card needed. Then $0.99 per check, or $10 a month for unlimited checks with up to 20 blacklist searches a month. Cancel anytime; the monthly plan has a 30-day refund. If you need more blacklist searches than that, email safeorstolenmail@gmail.com.',
   },
 ];
 

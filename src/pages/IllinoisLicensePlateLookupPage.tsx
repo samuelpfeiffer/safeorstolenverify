@@ -28,7 +28,7 @@ const IllinoisLicensePlateLookupPage = () => {
  howItWorks: "Type the plate exactly as shown, letters and numbers only, and pick Illinois. SafeOrStolen searches its theft reports and public web results and returns reported stolen, possible match, or no report found in the records searched. The check is saved to your account with the date. For year, make, model and open recalls, run the VIN from the dashboard or driver's door jamb.",
  whyCheck: "Plates are easy to move from one car to another, so check the VIN as well as the plate. Chicago's used-car market moves fast, and cars cross into Indiana and Wisconsin easily. Check the plate before you drive out, check the VIN when you see the car, and make sure the name on the Illinois title matches the seller's ID.",
  benefits: [
- "2 free checks with a free account, no credit card",
+ "2 free checks, no account or credit card needed",
  "Searches SafeOrStolen theft reports and public web results",
  "Results in a few seconds, with every source listed",
  "Never shows owner names or addresses",
@@ -59,7 +59,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "How much does an Illinois license plate lookup cost?",
- answer: "Your first 2 SafeOrStolen checks are free with a free account and no credit card. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The same account checks VINs, so you can run the plate and the VIN on the same car."
+ answer: "Your first 2 SafeOrStolen checks are free with no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The same account checks VINs, so you can run the plate and the VIN on the same car."
  },
  {
  question: "What does SafeOrStolen search for an Illinois plate?",

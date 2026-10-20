@@ -108,7 +108,7 @@ const CheckPS5Page = () => {
           },
           {
             question: "Is the PS5 serial number check free?",
-            answer: "Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $0.99 per check or $10 a month for unlimited checks."
+            answer: "Yes. SafeOrStolen gives you 2 free checks, no account or credit card needed. After that it is $0.99 per check or $10 a month for unlimited checks."
           },
           {
             question: "How do I know if a PS5 is stolen?",

@@ -332,7 +332,7 @@ const BestStolenItemCheckers2026 = () => {
         <section className="text-center bg-primary/5 rounded-2xl p-12">
           <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Check the serial, IMEI or VIN before you pay. Your first 2 checks are free with a free account, no credit card.
+            Check the serial, IMEI or VIN before you pay. Your first 2 checks are free, with no account or credit card needed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">

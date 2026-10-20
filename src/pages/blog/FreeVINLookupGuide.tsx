@@ -224,7 +224,7 @@ const FreeVINLookupGuide = () => {
  <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
  <div className="space-y-6 my-8">
  {[
- { q: 'Is VIN lookup really free?', a: 'Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that it\'s $0.99 for a single check or $10 a month for unlimited checks, cancel anytime. The same VIN check covers cars, trucks, motorcycles and RVs.' },
+ { q: 'Is VIN lookup really free?', a: 'Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that it\'s $0.99 for a single check or $10 a month for unlimited checks, cancel anytime. The same VIN check covers cars, trucks, motorcycles and RVs.' },
  { q: 'What databases does a VIN check search?', a: "A SafeOrStolen VIN check searches SafeOrStolen theft reports and public web results, decodes the year, make and model, and lists open safety recalls. Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. For title and total-loss history, also run NICB VINCheck and get an NMVTIS vehicle history report." },
  { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
  { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN before you drive out. If they won\'t, treat that as a red flag. Paste it into safeorstolen.com/verify for a result in a few seconds, then make sure it matches the dashboard and door jamb when you see the car.' },

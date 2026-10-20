@@ -19,7 +19,7 @@ import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/c
 const FAQS = [
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 2 free checks when you create a free account, with no credit card. After that, a single check costs $0.99 with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
+ a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 2 free checks with no account or credit card needed. After that, a single check costs $0.99 with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
  },
  {
  q: 'What do the 2 free checks include?',
@@ -97,7 +97,7 @@ const PricingPage = () => {
  SafeOrStolen Pricing
  </h1>
  <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
- Your first 2 checks are free with a free account, no credit card. After that, a single check is
+ Your first 2 checks are free, with no account or credit card needed. After that, a single check is
  $0.99, or unlimited checks are $10 a month, cancel anytime, with a 30-day refund.
  </p>
  <p className="text-muted-foreground text-sm mt-3">
@@ -144,7 +144,7 @@ const PricingPage = () => {
  Use my 2 free checks
  </Link>
  <p className="text-center text-xs text-muted-foreground mt-2">
- Free account required. No card.
+ No account or card needed.
  </p>
  </div>
 
@@ -350,7 +350,7 @@ const PricingPage = () => {
  "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 2 free checks, then $0.99 per check or $10 a month for unlimited checks.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
- { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free checks with a free account, no credit card" },
+ { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free checks, no account or credit card needed" },
  { "@type": "Offer", "name": "Single check", "price": "0.99", "priceCurrency": "USD", "description": "One check, no subscription" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "Unlimited checks a month, up to 20 phone blacklist checks, free verification certificates, cancel anytime, 30-day refund" },
  { "@type": "Offer", "name": "Verification certificate", "price": "1.99", "priceCurrency": "USD", "description": "Dated record with its own link showing you checked before the sale" },

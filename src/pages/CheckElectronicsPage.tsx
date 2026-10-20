@@ -47,7 +47,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "Is the electronics serial number check free?",
-            answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that it's $0.99 for a single check or $10 a month for unlimited checks, which you can cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
+            answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that it's $0.99 for a single check or $10 a month for unlimited checks, which you can cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
           },
           {
             question: "What should I do if the check shows the device is reported stolen?",

@@ -341,7 +341,7 @@ export const HomeAIHero: React.FC = () => {
 
  {/* Trust line */}
  <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground mt-5">
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 2 free checks with a free account</span>
+ <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 2 free checks, no account needed</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99/check or $10/mo unlimited</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>

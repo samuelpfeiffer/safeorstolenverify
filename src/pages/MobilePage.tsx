@@ -132,7 +132,7 @@ export default function MobilePage() {
             <Smartphone className="h-16 w-16 text-primary mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-4">Put it on your home screen</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              The app is free. A free account includes 2 checks, then $0.99 a check or $10 a month for unlimited checks.
+              The app is free. Your first 2 checks are free, no account needed, then $0.99 a check or $10 a month for unlimited checks.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/app">

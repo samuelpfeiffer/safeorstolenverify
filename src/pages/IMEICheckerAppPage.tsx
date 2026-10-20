@@ -60,7 +60,7 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is the IMEI checker app free?",
- "acceptedAnswer": { "@type": "Answer", "text": "Installing the SafeOrStolen web app is free, and a free account comes with 2 checks, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Installing the SafeOrStolen web app is free, and your first 2 checks are free, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month." }
  }
  ]
  };

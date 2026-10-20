@@ -51,7 +51,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen IMEI check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen shows the phone’s make and model from the IMEI and searches theft reports filed on SafeOrStolen plus public web results. A paid blacklist check adds the lost and stolen carrier blacklist.",
       tellsYou:
@@ -158,7 +158,7 @@ export const IPHONE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen IMEI check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen shows the iPhone’s model from the IMEI and searches its own theft reports and public web results. A paid check also searches the lost and stolen phone blacklist. Confirm Activation Lock is off on the phone itself.",
       tellsYou:
@@ -211,7 +211,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen firearm check",
-      cost: "2 free checks with a free account",
+      cost: "2 free checks, no account needed",
       description:
         "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (242,839 reports, filed 1973–2017), live Ohio law-enforcement stolen-gun records, theft reports filed on SafeOrStolen, and public web results.",
       tellsYou:
@@ -320,7 +320,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
   methods: [
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "2 free checks with a free account",
+      cost: "2 free checks, no account needed",
       description:
         "SafeOrStolen searches theft reports filed by owners on SafeOrStolen and public web results for the serial number.",
       tellsYou:
@@ -426,7 +426,7 @@ export const BIKE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen bicycle check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen searches a national stolen-bicycle registry, theft reports filed on SafeOrStolen, and public web results that mention the serial.",
       tellsYou:
@@ -522,7 +522,7 @@ export const LAPTOP_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results that mention the serial.",
       tellsYou:
@@ -614,7 +614,7 @@ export const TOOLS_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen searches theft reports that tool owners filed on SafeOrStolen and public web results that mention the serial.",
       tellsYou:
@@ -706,7 +706,7 @@ export const BOAT_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run the HIN through SafeOrStolen",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen treats the HIN as a general serial number and searches its own theft reports and public web results for it.",
       tellsYou:
@@ -799,7 +799,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen plate check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results; Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. It never reveals an owner’s private information.",
       tellsYou:
@@ -899,7 +899,7 @@ export const MARKETPLACE_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Use the SafeOrStolen marketplace URL analyzer",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "Paste a Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark URL. The tool pulls out the listing details and any identifier it can find, then searches theft reports filed on SafeOrStolen and public web results.",
       tellsYou:
@@ -1086,7 +1086,7 @@ export const SELLER_PROOF_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a current SafeOrStolen check",
-      cost: "Free to try with a free account",
+      cost: "Free to try, no account needed",
       description:
         "Check the identifier and save the result to your account. If the checked sources return clean, create a Proof of Clean Purchase record.",
       tellsYou:

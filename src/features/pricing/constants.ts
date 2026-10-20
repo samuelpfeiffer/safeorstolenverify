@@ -57,7 +57,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     tier: "payPerCheck",
     features: [
       "One-time verification",
-      "Free account required",
+      "No account needed",
       "Instant results",
       "PDF verification receipt",
     ],

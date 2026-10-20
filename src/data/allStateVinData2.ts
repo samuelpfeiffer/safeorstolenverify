@@ -105,7 +105,7 @@ export const ALL_STATE_VIN_DATA_PART2 = {
  localLaws: "Title 17-A of the Maine Revised Statutes covers theft and receiving stolen property. A stolen car can be returned to its owner even if you paid for it. The Bureau of Motor Vehicles handles titles."
  },
  faqs: [
- { question: "Is it worth running a VIN check in Maine?", answer: "Yes. Even where theft is less common, a stolen car can be taken back for its owner and the buyer loses the money. A check on SafeOrStolen (safeorstolen.com) takes a few seconds; 2 checks are free with a free account." },
+ { question: "Is it worth running a VIN check in Maine?", answer: "Yes. Even where theft is less common, a stolen car can be taken back for its owner and the buyer loses the money. A check on SafeOrStolen (safeorstolen.com) takes a few seconds; 2 checks are free, no account needed." },
  { question: "How do I verify a Maine title?", answer: "Compare the VIN on the title with the dash and door, and the seller's ID with the name on the title. Ask the Bureau of Motor Vehicles about liens, and run the VIN on SafeOrStolen for theft reports." }
  ]
  },

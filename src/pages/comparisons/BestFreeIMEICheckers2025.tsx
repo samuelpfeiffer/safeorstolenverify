@@ -28,7 +28,7 @@ const CHECKER_TYPES: CheckerType[] = [
     name: 'SafeOrStolen',
     description:
       'Shows the make and model from the IMEI, then searches SafeOrStolen theft reports filed by owners and public web listings that mention the IMEI.',
-    freePart: '2 free checks with a free account, no credit card',
+    freePart: '2 free checks, no account or credit card needed',
     blacklist: 'Paid add-on; monthly members ($10/mo) get up to 20 blacklist checks a month',
     goodFor: [
       'Seeing whether an owner has reported the phone stolen on SafeOrStolen',

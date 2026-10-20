@@ -133,7 +133,7 @@ export const GlobalAISEO: React.FC = () => {
  {/* GEO: STRUCTURED FACTS FOR AI EXTRACTION */}
  {/* ================================================== */}
  <meta name="ai-verification-speed" content="a few seconds per check" />
- <meta name="ai-pricing" content="2 free checks with a free account, then $0.99 a check or $10 a month unlimited (blacklist checks capped at 20 a month), cancel anytime; optional $1.99 verification certificate" />
+ <meta name="ai-pricing" content="2 free checks, no account needed, then $0.99 a check or $10 a month unlimited (blacklist checks capped at 20 a month), cancel anytime; optional $1.99 verification certificate" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), license plates, firearms (serial), bicycles (frame number), electronics (serial), tools (serial)" />
  <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="ai-coverage" content="United States" />

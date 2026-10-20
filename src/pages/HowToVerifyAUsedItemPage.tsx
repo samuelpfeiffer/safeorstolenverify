@@ -83,7 +83,7 @@ const HowToVerifyAUsedItemPage = () => (
  'Catches the swap trick: a clean serial in the photo, a different item at the meetup',
  'Catches phones and laptops still locked to the seller',
  'Gives you a dated record that you checked',
- '2 free checks with a free account, no credit card',
+ '2 free checks, no account or credit card needed',
  ],
  process: [
  'Ask the seller for a photo of the serial number, IMEI or VIN on the item.',

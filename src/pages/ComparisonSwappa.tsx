@@ -56,7 +56,7 @@ const ComparisonSwappa = () => {
  {
  value: 'free',
  q: "Is SafeOrStolen free to use?",
- a: "You get 2 free checks with a free account, no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
+ a: "You get 2 free checks, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
  },
  {
  value: 'databases',
@@ -373,7 +373,7 @@ const ComparisonSwappa = () => {
  <CardContent className="pt-8 text-center">
  <h2 className="text-3xl font-bold mb-4">Check a phone from any seller</h2>
  <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
- 2 free checks with a free account, then $0.99 a check or $10 a month unlimited. Results come back in a few seconds.
+ 2 free checks, no account needed, then $0.99 a check or $10 a month unlimited. Results come back in a few seconds.
  </p>
  <div className="flex flex-wrap justify-center gap-4">
  <Button size="lg" asChild>

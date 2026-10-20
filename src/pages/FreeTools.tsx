@@ -45,7 +45,7 @@ const FreeTools = () => {
           </ul>
           
           <h2>Need Full Stolen Check?</h2>
-          <p>A full SafeOrStolen check searches theft reports and public web results, with a paid blacklist check for phones. A free account includes 2 checks.</p>
+          <p>A full SafeOrStolen check searches theft reports and public web results, with a paid blacklist check for phones. Your first 2 checks are free, no account needed.</p>
         </div>
       </noscript>
       <div className="min-h-screen bg-background pt-20">

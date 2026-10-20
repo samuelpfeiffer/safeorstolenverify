@@ -33,7 +33,7 @@ const IMEICheckPage = () => {
  howItWorks: "Type the IMEI into the search box. SafeOrStolen reads the make and model from the number, searches theft reports filed by owners on SafeOrStolen, and searches public web results such as listings and stolen-phone posts. You see \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The paid blacklist check adds lost/stolen carrier blacklist status.",
  whyCheck: "A stolen phone can be blacklisted by the owner's carrier, locked to the owner's Apple or Google account, or taken back by police, and the buyer usually loses what they paid. Checking the IMEI and keeping a dated record of it takes a minute at the meetup.",
  benefits: [
- "2 free checks with a free account, no credit card",
+ "2 free checks, no account or credit card needed",
  "Make and model read from the IMEI",
  "SafeOrStolen theft reports and public web results",
  "Paid lost/stolen carrier blacklist check available (up to 20 a month for monthly members)",
@@ -55,7 +55,7 @@ const IMEICheckPage = () => {
  },
  {
  question: "Is this IMEI check free?",
- answer: "Your first 2 checks on SafeOrStolen are free with a free account, and no credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month."
+ answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month."
  },
  {
  question: "What does the IMEI check search?",

@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: 'How much does a verification certificate cost?',
     answer:
-      'The check comes first: 2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks. The certificate is $1.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
+      'The check comes first: 2 free checks, no account needed, then $0.99 per check or $10 a month for unlimited checks. The certificate is $1.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
   },
   {
     question: 'What else should I show buyers besides the certificate?',

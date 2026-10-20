@@ -156,7 +156,7 @@ export default function HowToFindImeiNumber() {
         {
           question: 'How do I check an IMEI once I have it?',
           answer:
-            "Enter it on SafeOrStolen (safeorstolen.com/imei-checker). The free check shows the phone's make and model and searches SafeOrStolen theft reports and public web results, and a paid check covers the carrier lost/stolen blacklist. A free account includes 2 checks with no credit card, and each check is saved to your account with the date.",
+            "Enter it on SafeOrStolen (safeorstolen.com/imei-checker). The free check shows the phone's make and model and searches SafeOrStolen theft reports and public web results, and a paid check covers the carrier lost/stolen blacklist. Your first 2 checks are free, with no account or credit card needed, and each check is saved to your account with the date.",
         },
       ]}
     />

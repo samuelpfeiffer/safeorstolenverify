@@ -330,7 +330,7 @@ const LikeCarfaxForPhones = () => {
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-8 rounded-lg my-8">
               <h3 className="text-2xl font-bold mb-4 text-center">Check a Phone Now</h3>
               <p className="text-center text-muted-foreground mb-6">
-                2 free checks with a free account. No credit card.
+                2 free checks, no account needed. No credit card.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">

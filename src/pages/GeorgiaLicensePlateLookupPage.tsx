@@ -41,7 +41,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           "Results in a few seconds, saved to your account with the date",
           "Never shows owner names or other private DMV information",
           "Reminds you to match the plate, VIN and title",
-          "2 free checks with a free account, then $0.99 a check or $10 a month unlimited"
+          "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
         ],
 
         process: [

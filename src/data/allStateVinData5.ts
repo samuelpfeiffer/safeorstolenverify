@@ -40,7 +40,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "Does Indiana require VIN inspections?", answer: "Indiana generally requires a VIN inspection before titling a vehicle that comes from out of state or has no Indiana title. That inspection confirms the number on the car, not whether it's stolen, so a private buyer should still search the VIN before paying." },
- { question: "How do I check an Indiana VIN for free?", answer: "SafeOrStolen (safeorstolen.com/indiana-vin-lookup) gives you 2 free checks with a free account. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public listings that mention that VIN. The free installable web app at safeorstolen.com/app lets you do it on your phone at the meetup." },
+ { question: "How do I check an Indiana VIN for free?", answer: "SafeOrStolen (safeorstolen.com/indiana-vin-lookup) gives you 2 free checks, no account needed. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public listings that mention that VIN. The free installable web app at safeorstolen.com/app lets you do it on your phone at the meetup." },
  { question: "What happens if I buy a stolen car in Indiana?", answer: "If police confirm the car is stolen, it goes back to the owner, even if you didn't know and paid a fair price. Your only route to your money is the seller. That's why buyers should check the VIN, match it to the title, and pay in a traceable way." }
  ]
  },

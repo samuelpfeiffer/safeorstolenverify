@@ -342,7 +342,7 @@ export default function PhoneVerificationGuide() {
                 Most bad phone purchases happen when the buyer skips the check because the seller seemed nice or the deal was moving fast. Getting the IMEI, checking it and confirming it at the meetup takes a few minutes.
               </p>
               <p className="text-lg mb-6">
-                SafeOrStolen gives you 2 free checks with a free account. After that it's $0.99 a check or $10 a month for unlimited checks.
+                SafeOrStolen gives you 2 free checks, no account needed. After that it's $0.99 a check or $10 a month for unlimited checks.
               </p>
 
               <div className="bg-primary/10 p-6 rounded-lg">

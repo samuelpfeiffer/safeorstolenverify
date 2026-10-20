@@ -130,7 +130,7 @@ export const SEOLandingPageTemplate = ({
     "description": metaDescription,
     "dateModified": "2026-10-07",
     "offers": [
-      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks with a free account" },
+      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks, no account needed" },
       { "@type": "Offer", "price": "0.99", "priceCurrency": "USD", "description": "Single check" },
       { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited checks per month" }
     ]

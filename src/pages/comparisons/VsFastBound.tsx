@@ -41,7 +41,7 @@ const VsFastBound = () => {
   const comparisonData = [
     { feature: 'Stolen-gun serial number check', safeorstolen: true, competitor: false },
     { feature: 'Open to anyone, no license needed', safeorstolen: true, competitor: false },
-    { feature: '2 free checks with a free account', safeorstolen: true, competitor: false },
+    { feature: '2 free checks, no account needed', safeorstolen: true, competitor: false },
     { feature: 'Phone IMEI Check', safeorstolen: true, competitor: false },
     { feature: 'Vehicle VIN Check', safeorstolen: true, competitor: false },
     { feature: 'Bicycle Check', safeorstolen: true, competitor: false },

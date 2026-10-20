@@ -73,7 +73,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is the SafeOrStolen app free?',
-    a: 'Installing it is free, and a free account includes 2 checks with no credit card. After that, a single check is $0.99, or $10 a month gets unlimited checks (with up to 20 phone blacklist checks a month). The monthly plan can be canceled anytime and has a 30-day refund.',
+    a: 'Installing it is free, and your first 2 checks are free, no account or credit card needed. After that, a single check is $0.99, or $10 a month gets unlimited checks (with up to 20 phone blacklist checks a month). The monthly plan can be canceled anytime and has a 30-day refund.',
   },
   {
     q: 'Does the SafeOrStolen app work offline?',

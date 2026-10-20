@@ -194,7 +194,7 @@ export default function HowToCheckPhoneStolen() {
             <li>An optional paid carrier blacklist check</li>
             <li>A free installable web app with a camera barcode scanner</li>
             <li>Checks for other items too: laptops, bikes, cars, plates and guns</li>
-            <li>2 free checks with a free account, no credit card; then $0.99 a check or $10 a month unlimited</li>
+            <li>2 free checks, no account or credit card needed; then $0.99 a check or $10 a month unlimited</li>
             <li>Each check saved to your account with the date, plus an optional $1.99 verification certificate</li>
           </ul>
 

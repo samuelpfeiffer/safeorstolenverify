@@ -557,7 +557,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  `Clear result with every source listed`,
  `Never shows owner names or personal information`,
  `Each check saved to your account with the date`,
- `2 free checks with a free account, no credit card`
+ `2 free checks, no account or credit card needed`
  ],
 
  process: [

@@ -98,7 +98,7 @@ function GuidePage() {
           {
             question: "Is there a free ATV VIN check for stolen ATVs?",
             answer:
-              "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-trailer-atv-stolen) checks an ATV VIN free twice with a free account and no credit card. It searches SafeOrStolen theft reports and public web results, and Arizona law-enforcement records for Arizona VINs. Your local police can also run the VIN for you; call the non-emergency line and ask.",
+              "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-trailer-atv-stolen) checks an ATV VIN free twice, no account or credit card needed. It searches SafeOrStolen theft reports and public web results, and Arizona law-enforcement records for Arizona VINs. Your local police can also run the VIN for you; call the non-emergency line and ask.",
           },
           {
             question: "Where is the VIN on an ATV?",
