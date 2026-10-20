@@ -162,8 +162,8 @@ const Index = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Check if a Gun, Phone, Car, or Tool Was Reported Stolen | SafeOrStolen"
- description="Check if a used phone, car, gun, tool or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source searched is listed. 2 free checks."
+ title="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen | SafeOrStolen"
+ description="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source is listed. 2 free checks."
  keywords="stolen item checker, check if something is stolen, free serial number search, imei check free, vin check stolen, gun serial number lookup free, stolen bike check, license plate lookup"
  canonical="/"
  />
@@ -171,7 +171,7 @@ const Index = () => {
 
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <h1>Check if something is stolen before you buy it</h1>
+ <h1>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</h1>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
  <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>

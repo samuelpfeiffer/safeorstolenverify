@@ -103,11 +103,15 @@ export function dynamicRoutes() {
   return [...src.matchAll(/slug: '([a-z-]+)'/g)].map((m) => `/gun-serial-number-lookup/${m[1]}`);
 }
 
+/** Public pages that point Google at another page (canonical), so they stay out of the sitemap (Oct 20 2026). */
+const CANONICAL_ELSEWHERE = new Set(['/ai-verify', '/comprehensive-guide']);
+
 /** Final public URL list: router routes minus redirects minus private routes. */
 export function publicRoutes() {
   const redirects = redirectPaths();
   return [...routesFromRouter(), ...dynamicRoutes()]
     .filter((p) => !redirects.has(p))
     .filter((p) => !isPrivateRoute(p))
+    .filter((p) => !CANONICAL_ELSEWHERE.has(p))
     .sort();
 }

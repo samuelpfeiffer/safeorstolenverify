@@ -125,7 +125,7 @@ export default function ComprehensiveGuidePage() {
  title="Where to Find the Serial Number, IMEI or VIN on Any Item"
  description="Where the serial number, IMEI, VIN or HIN is on phones, laptops, consoles, cameras, cars, boats, bikes, tools, guns and watches, and which stolen check to run for each."
  keywords="where to find serial number, serial number location, where is the serial number, where is the imei, where is the vin, find serial number on laptop, find serial number on ps5, serial number on bike"
- canonical="/comprehensive-guide"
+ canonical="/where-to-find-serial-number"
  modifiedTime="2026-10-07"
  structuredData={faqSchema}
  />
