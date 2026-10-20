@@ -85,7 +85,6 @@ const faqSchema = {
 };
 
 const LicensePlateLookupPage = () => {
-  const navigate = useNavigate();
   const [selectedState, setSelectedState] = useState('');
   const [plateNumber, setPlateNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -175,9 +174,9 @@ const LicensePlateLookupPage = () => {
                   onClick={handleVerify}
                   className="w-full h-14 text-lg"
                   size="lg"
-                  disabled={isLoading || !plateNumber.trim() || !selectedState}
+                  disabled={checking || !plateNumber.trim() || !selectedState}
                 >
-                  {isLoading ? (
+                  {checking ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground mr-2" />
                       Checking...

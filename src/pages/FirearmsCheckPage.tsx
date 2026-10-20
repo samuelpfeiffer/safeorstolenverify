@@ -518,9 +518,7 @@ function GunVerifyTool() {
  </Button>
  </form>
  <PublicPoliceSearches serial={identifier} />
- {isBlocked && (
- <UpgradeModal isOpen={isBlocked} reason={blockReason} onClose={resetGate} />
- )}
+ {result && <div className="mt-6 text-left"><ParallelVerificationDisplay result={result} /></div>}
  </>
  )
 }
