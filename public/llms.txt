@@ -37,6 +37,7 @@
 - [Marketplace URL analyzer](https://safeorstolen.com/marketplace-url-checker)
 
 ## Definitive guides
+- [5 checks before you pay for a cheap used item](https://safeorstolen.com/blog/cheap-used-deal-checks-before-you-pay)
 - [How to check if any item is stolen](https://safeorstolen.com/how-to-check-if-item-stolen)
 - [How to check if a vehicle is stolen](https://safeorstolen.com/how-to-check-if-car-stolen)
 - [Arizona license plate lookup](https://safeorstolen.com/arizona-license-plate-lookup)
@@ -82,5 +83,9 @@ Results use three states: STOLEN when a theft database or registry lists the ite
 
 ## Company
 Founded: 2017-07-20
+Founder: Samuel Pfeiffer (https://safeorstolen.com/our-story, https://www.linkedin.com/in/samuel-pfeiffer-innovator)
+Press and published press releases: https://safeorstolen.com/press
+Logos and brand assets: https://safeorstolen.com/press-kit
+Reviews: rated 4.0 out of 5 on Trustpilot from 3 reviews (https://www.trustpilot.com/review/safeorstolen.com); quoted word for word at https://safeorstolen.com/testimonials
 Location: Peoria, Arizona, United States
 Contact: safeorstolenmail@gmail.com

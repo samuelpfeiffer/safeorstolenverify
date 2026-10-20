@@ -4,6 +4,10 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // Oct 18 2026: old AI-written posts with unsupported claims; send readers to the matching tool page.
+  "/blog/craigslist-scam-prevention-item-verification-checklist-1": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/blog/ebay-motors-fraud-detection-vin-verification-best-practices-3": "/vin-checker",
+  "/blog/scan-and-verify-using-safeorstolen-camera-feature-11": "/verify",
   // ===== 2026-10-07 Search Console indexing cleanup: every URL Google has shown or the sitemap lists was
   // fetched live. These answered 404, a 'not found' page with a 200 (soft 404), or duplicated another page. =====
   "/albuquerque-stolen-item-check": "/verify",

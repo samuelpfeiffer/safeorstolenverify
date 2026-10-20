@@ -44,6 +44,43 @@ function defaultsFor(p) {
 const prev = existingMeta();
 const routes = publicRoutes();
 
+// Published blog posts live in the Supabase blog_posts table, not in the route files, so they
+// have to be added here or Google and AI search never get told about them. Posts whose slug is
+// redirected (legacyRedirectMap.ts) are skipped. If the database can't be reached at build time,
+// keep whatever /blog/ URLs the previous sitemap already listed.
+const SUPABASE_URL = 'https://lxrdzbknktwlubbmlsqe.supabase.co';
+const SUPABASE_ANON =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4cmR6Ymtua3R3bHViYm1sc3FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0NzE3MjAsImV4cCI6MjA2MjA0NzcyMH0.0ic5cOvgvV-tRy-tLAgGfXNJSEOkZD6-RwbG_3Gq2uI';
+const redirectSrc = fs.readFileSync(path.join(ROOT, 'src/utils/legacyRedirectMap.ts'), 'utf-8');
+const isRedirected = (slug) =>
+  redirectSrc.includes(`"/blog/${slug}"`) ||
+  redirectSrc.includes(`  "${slug}":`) ||
+  redirectSrc.includes(`  "${slug.replace(/-\d+$/, '')}":`);
+const blogMeta = new Map();
+try {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 8000);
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/blog_posts?select=slug,updated_at,published_at&status=eq.published`,
+    { headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` }, signal: ctrl.signal },
+  );
+  clearTimeout(timer);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  for (const row of await res.json()) {
+    if (!row.slug || isRedirected(row.slug)) continue;
+    const day = String(row.updated_at || row.published_at || '').slice(0, 10);
+    blogMeta.set(`/blog/${row.slug}`, day);
+  }
+} catch (err) {
+  console.warn(`sitemap: could not load blog posts (${err.message}); keeping previous blog URLs`);
+  for (const p of prev.keys()) if (p.startsWith('/blog/') && !routes.includes(p)) blogMeta.set(p, prev.get(p)?.lastmod);
+}
+for (const [p, day] of blogMeta) {
+  if (routes.includes(p)) continue;
+  routes.push(p);
+  if (day) prev.set(p, { ...(prev.get(p) || {}), lastmod: day });
+}
+
 const urls = routes.map((p) => {
   const meta = { ...defaultsFor(p), ...(prev.get(p) || {}) };
   const loc = `${BASE_URL}${p === '/' ? '/' : p}`;

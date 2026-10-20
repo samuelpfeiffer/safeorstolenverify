@@ -70,6 +70,7 @@ const webApplicationJsonLd = JSON.stringify({
       "https://biz.prlog.org/SafeOrStolen/",
       "https://www.youtube.com/@safeorstolen",
       "https://x.com/safeorstolen",
+      "https://www.trustpilot.com/review/safeorstolen.com",
     ],
     foundingDate: "2017-07",
     email: "safeorstolenmail@gmail.com",
@@ -96,7 +97,15 @@ const organizationJsonLd = JSON.stringify({
     "https://biz.prlog.org/SafeOrStolen/",
     "https://www.youtube.com/@safeorstolen",
     "https://x.com/safeorstolen",
+    "https://www.trustpilot.com/review/safeorstolen.com",
   ],
+  founder: {
+    "@type": "Person",
+    name: "Samuel Pfeiffer",
+    jobTitle: "Founder",
+    url: "https://safeorstolen.com/our-story",
+    sameAs: ["https://www.linkedin.com/in/samuel-pfeiffer-innovator"],
+  },
   foundingDate: "2017-07",
   email: "safeorstolenmail@gmail.com",
   description:
