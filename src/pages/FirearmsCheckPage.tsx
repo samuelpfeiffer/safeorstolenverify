@@ -66,7 +66,7 @@ const FirearmsCheckPage = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Free Gun Serial Number Lookup: Is This Gun Stolen?"
- description="Check a gun serial number and open official Florida, Ohio and Utah searches yourself. Coverage is limited; a miss means not found, not safe."
+ description="Free gun serial number lookup. Search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records. 2 free checks."
  canonical="/firearms-check"
  />
 
@@ -82,13 +82,13 @@ const FirearmsCheckPage = () => {
  <span className="text-primary">Was This Gun Reported Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Enter a gun serial number. Coverage is limited to the records available to the check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus Ohio Attorney General stolen-gun records, before you buy.
+ Free gun serial number lookup. Enter the serial from the frame or receiver. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI NCIC gun file, plus live Ohio records.
  </p>
 
 
  {/* VERIFY TOOL — inline if no shared component */}
  <GunVerifyTool />
- <p className="mt-4 text-sm text-muted-foreground">A miss means not found in the records checked, not safe. Arizona vehicle checks cover Arizona reports only. The public links below are separate searches you open yourself, not connected state databases.</p>
+ <p className="mt-4 text-sm text-muted-foreground">Result lists every source searched. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
 
  <p className="text-muted-foreground/60 text-sm mt-4">
  2 free checks · No credit card · Works for handguns, rifles, shotguns, and more

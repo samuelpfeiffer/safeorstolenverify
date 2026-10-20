@@ -209,7 +209,7 @@ export const HomeAIHero: React.FC = () => {
  </h1>
 
  <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
- Paste the phone's IMEI, the car's VIN or license plate, or the serial number on the item.
+ Free gun serial number lookup, plus phone IMEI, car VIN, license plate, tool and bike checks. Type the number.
  </p>
 
  {/* Chat panel */}

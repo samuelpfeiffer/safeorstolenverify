@@ -162,8 +162,8 @@ const Index = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Check if a Gun, Phone, Car, or Tool Was Reported Stolen | SafeOrStolen"
- description="Check if a used phone, car, gun, tool or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source searched is listed. 2 free checks."
+ title="Gun Serial Number Lookup Free | Check if Stolen | SafeOrStolen"
+ description="Free gun serial number lookup, plus phone IMEI, car VIN, plate, tool and bike checks. 242,839 police gun reports from 33 states and DC. 2 free checks."
  keywords="stolen item checker, check if something is stolen, free serial number search, imei check free, vin check stolen, gun serial number lookup free, stolen bike check, license plate lookup"
  canonical="/"
  />
@@ -171,7 +171,7 @@ const Index = () => {
 
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <h1>Check if something is stolen before you buy it</h1>
+ <h1>Gun serial number lookup free. Check if a phone, car, gun, tool, or bike was reported stolen.</h1>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
  <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
@@ -284,6 +284,17 @@ const Index = () => {
  <Link to="/how-to-check-if-item-stolen" className="text-primary hover:underline">How to check if something is stolen</Link>{' · '}
  <Link to="/stolen-gun-statistics" className="text-primary hover:underline">Stolen gun statistics by state</Link>{' · '}
  <Link to="/where-to-find-serial-number" className="text-primary hover:underline">Where to find the serial number</Link>
+ </nav>
+ <nav aria-label="Gun serial number lookup by state" className="mt-3 text-center text-sm text-muted-foreground">
+ <span className="font-semibold text-foreground">Gun serial number lookup free: </span>
+ <Link to="/gun-serial-number-lookup/tennessee" className="text-primary hover:underline">Tennessee</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/arizona" className="text-primary hover:underline">Arizona</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/georgia" className="text-primary hover:underline">Georgia</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/indiana" className="text-primary hover:underline">Indiana</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/texas" className="text-primary hover:underline">Texas</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/florida" className="text-primary hover:underline">Florida</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/ohio" className="text-primary hover:underline">Ohio</Link>{' · '}
+ <Link to="/firearms-check" className="text-primary hover:underline">Any state</Link>
  </nav>
  </div>
  </section>
