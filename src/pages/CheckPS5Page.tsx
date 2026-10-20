@@ -6,8 +6,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPS5Page = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free PS5 Serial Number Check — Is This PS5 Stolen? | SafeOrStolen"
-      metaDescription="Free PS5 serial number checker. Find the serial on any PS5, original, Slim or Pro, check it against stolen reports in seconds, and test for a PSN ban before you pay."
+      title="PS5 Serial Number Check (Free): How to Know if a PS5 Is Stolen"
+      metaDescription="Free PS5 serial number checker. How to know if a PS5 is stolen: find the serial on any original, Slim or Pro, check it against stolen reports in seconds, and test for a PSN ban before you pay."
       h1="Free PS5 Serial Number Checker"
       itemType="PlayStation 5"
       dateModified="2026-10-16"
@@ -111,7 +111,7 @@ const CheckPS5Page = () => {
             answer: "Yes. SafeOrStolen gives you 2 free checks with a free account and no credit card. After that it is $0.99 per check or $10 a month for unlimited checks."
           },
           {
-            question: "How can I tell if a PS5 is stolen?",
+            question: "How do I know if a PS5 is stolen?",
             answer: "Check the serial number on SafeOrStolen, then look for the usual signs: a price far below other used PS5s, no box or a box with a different serial, a seller who won't share the serial before meeting, several consoles for sale at once, or a console still signed in to someone else's account."
           },
           {
