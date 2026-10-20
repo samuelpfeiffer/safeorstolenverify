@@ -4,6 +4,7 @@
  * URL: /free-stolen-vehicle-check
  */
 
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { Link } from '@/lib/router-compat';
 import { Shield, Search, Car, AlertTriangle, CheckCircle, FileText, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,7 +18,7 @@ import { ParallelVerificationDisplay } from '@/components/verification/ParallelV
 
 const FreeStolenVehicleCheckPage = () => {
  const [vinInput, setVinInput] = useState('');
- const { verify, isLoading, result } = useParallelVerification();
+ const { verify, isLoading, result, limitHit } = useParallelVerification();
 
  const handleSearch = async () => {
  if (vinInput.trim()) {
@@ -165,6 +166,7 @@ const FreeStolenVehicleCheckPage = () => {
  </p>
  {isLoading && <p className="text-sm text-muted-foreground">Checking the records now.</p>}
  {result && <div className="text-left"><ParallelVerificationDisplay result={result} /></div>}
+ {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
  </div>
 
  {/* Trust Indicators */}

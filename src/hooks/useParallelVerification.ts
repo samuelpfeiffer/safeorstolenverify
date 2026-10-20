@@ -8,7 +8,7 @@ import { useNavigate } from '@/lib/router-compat';
 import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from './useUnifiedAuth';
 import { useVerifyGate } from './useVerifyGate';
-import { verificationService, type AggregatedResult } from '@/services/VerificationService';
+import { verificationService, LimitReachedError, type AggregatedResult } from '@/services/VerificationService';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -16,6 +16,8 @@ export const useParallelVerification = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<AggregatedResult | null>(null);
   const [progress, setProgress] = useState<string>('');
+  // Oct 20 2026: set when the 2 free checks are used, so pages show the pay offer in place.
+  const [limitHit, setLimitHit] = useState<{ identifier: string; itemType?: string } | null>(null);
   const { user } = useUnifiedAuth();
   const { checkGate } = useVerifyGate();
   const { toast } = useToast();
@@ -51,6 +53,7 @@ export const useParallelVerification = () => {
 
     setIsLoading(true);
     setResult(null);
+    setLimitHit(null);
     setProgress('Detecting item type...');
 
     try {
@@ -82,6 +85,11 @@ export const useParallelVerification = () => {
       return verificationResult;
 
     } catch (error: any) {
+      if (error instanceof LimitReachedError) {
+        setProgress('');
+        setLimitHit({ identifier: identifier.trim(), itemType: itemType || detectItemType(identifier) });
+        return null;
+      }
       console.error('[useParallelVerification] Error:', error);
       
       setProgress('');
@@ -99,6 +107,7 @@ export const useParallelVerification = () => {
 
   const reset = () => {
     setResult(null);
+    setLimitHit(null);
     setProgress('');
   };
 
@@ -108,5 +117,6 @@ export const useParallelVerification = () => {
     isLoading,
     result,
     progress,
+    limitHit,
   };
 };

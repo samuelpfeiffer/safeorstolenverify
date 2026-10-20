@@ -1,3 +1,4 @@
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import React, { useState, Suspense } from 'react';
 import { useNavigate } from '@/lib/router-compat';
 import { Search, ScanLine, ArrowRight } from 'lucide-react';
@@ -38,7 +39,7 @@ const isURL = (input: string): boolean => {
 
 export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ className }) => {
   const navigate = useNavigate();
-  const { verify, isLoading, result } = useParallelVerification();
+  const { verify, isLoading, result, limitHit } = useParallelVerification();
   const [inputValue, setInputValue] = useState('');
   const [isScannerOpen, setIsScannerOpen] = useState(false);
 
@@ -119,6 +120,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
           <ParallelVerificationDisplay result={result} />
         </div>
       )}
+      {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
 
       {/* QR Scanner Modal */}
       <Suspense fallback={null}>

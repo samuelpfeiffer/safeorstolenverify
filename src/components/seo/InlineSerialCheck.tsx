@@ -1,3 +1,4 @@
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { useState } from 'react';
 import { ArrowRight, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,7 +29,7 @@ export function InlineSerialCheck({
   publicPoliceSearches?: boolean;
 }) {
   const [value, setValue] = useState('');
-  const { verify, isLoading, result } = useParallelVerification();
+  const { verify, isLoading, result, limitHit } = useParallelVerification();
 
   const go = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -68,6 +69,7 @@ export function InlineSerialCheck({
           <ParallelVerificationDisplay result={result} />
         </div>
       )}
+      {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
       {publicPoliceSearches && <PublicPoliceSearches serial={value} />}
     </div>
   );

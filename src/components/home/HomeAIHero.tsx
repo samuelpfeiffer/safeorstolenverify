@@ -5,6 +5,7 @@ import { Shield, Send, Sparkles, Brain, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { requestVerification } from '@/lib/verification/verifyClient';
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { useAuth } from '@/lib/auth';
 
 type Msg = { role: 'user' | 'assistant'; content: string };
@@ -27,6 +28,7 @@ const WELCOME: Msg = {
 export const HomeAIHero: React.FC = () => {
  const { user } = useAuth();
  const [messages, setMessages] = useState<Msg[]>([]);
+ const [limitHit, setLimitHit] = useState<{ identifier: string; itemType?: string } | null>(null);
  const [input, setInput] = useState('');
  const [isStreaming, setIsStreaming] = useState(false);
  const [started, setStarted] = useState(false);
@@ -123,6 +125,11 @@ export const HomeAIHero: React.FC = () => {
  identifier: cleaned,
  itemType,
  });
+ if (error?.code === 'LIMIT_REACHED') {
+ replaceLastAssistant("You've used your 2 free checks. You can run this one for $0.99 below, no account needed.");
+ setLimitHit({ identifier: cleaned, itemType });
+ return;
+ }
  if (error) throw new Error(error.message);
  const status = verify?.finalStatus || 'unknown';
  const conf = verify?.confidence ? ` (${verify.confidence}% confidence)` : '';
@@ -209,7 +216,7 @@ export const HomeAIHero: React.FC = () => {
  </h1>
 
  <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
- Free gun serial number lookup, plus phone IMEI, car VIN, license plate, tool and bike checks. Type the number.
+ Paste the phone's IMEI, the car's VIN or license plate, or the serial number on the item.
  </p>
 
  {/* Chat panel */}
@@ -272,6 +279,7 @@ export const HomeAIHero: React.FC = () => {
  </div>
  </motion.div>
  ))}
+ {limitHit && <LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} />}
  {isStreaming && messages[messages.length - 1]?.role !== 'assistant' && (
  <div className="flex justify-start">
  <div className="bg-muted rounded-2xl rounded-bl-md px-4 py-2.5 flex gap-1">

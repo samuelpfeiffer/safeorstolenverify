@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> Free gun serial number lookup and stolen-item check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI NCIC gun file, plus live Ohio records. Also checks phone IMEI, car VIN, license plates, tools, and bike serials. 2 free checks. https://safeorstolen.com/firearms-check
+> SafeOrStolen is a stolen-item verification hub for buyers and sellers of used goods. It checks phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, bicycles, boats, and marketplace listings. Depending on the item, a check searches live state criminal justice records for stolen vehicles, plates and guns, federal VIN and safety-recall records, 242,839 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), a national stolen-bicycle registry, and, on paid phone checks, the lost and stolen phone blacklist. Every check also searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added; AI never decides a result. Each result lists the records searched.
 
 ## Quick answers
 - How do I check if a gun is stolen? Run the serial on SafeOrStolen (police theft and loss reports from 33 states and DC plus live Ohio records), use Florida's or Ohio's free public search if the gun is from there, ask local police, or do the sale through a licensed dealer (FFL), who can check the FBI's NCIC stolen-gun file. Full answer: https://safeorstolen.com/how-to-check-if-gun-is-stolen

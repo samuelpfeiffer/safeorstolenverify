@@ -40,7 +40,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       <div className="flex items-start gap-3">
         <ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" />
         <div>
-          <p className="font-semibold text-sm">Run this check for $0.99</p>
+          <p className="font-semibold text-sm">You've used your 2 free checks. Run this one for $0.99</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             No account needed. Pay once and the check runs as soon as you're back. Or get unlimited checks for $10 a month.
           </p>

@@ -1,3 +1,4 @@
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { Link } from '@/lib/router-compat';
 import { useState } from 'react'
 import { useParallelVerification } from '@/hooks/useParallelVerification'
@@ -490,7 +491,7 @@ const FirearmsCheckPage = () => {
 // Inline verify tool for gun page
 function GunVerifyTool() {
  const [identifier, setIdentifier] = useState('')
- const { verify, isLoading: loading, result } = useParallelVerification()
+ const { verify, isLoading: loading, result, limitHit } = useParallelVerification()
 
  async function handleSubmit(e: React.FormEvent) {
  e.preventDefault()
@@ -519,6 +520,7 @@ function GunVerifyTool() {
  </form>
  <PublicPoliceSearches serial={identifier} />
  {result && <div className="mt-6 text-left"><ParallelVerificationDisplay result={result} /></div>}
+ {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
  </>
  )
 }

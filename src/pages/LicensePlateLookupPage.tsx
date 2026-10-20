@@ -6,6 +6,7 @@
  * vehicle doesn't match": it has no DMV registration data, so both claims and the cross-reference
  * fields were removed. Named data supplier removed. Owner-name questions go to /license-plate-owner-lookup.
  */
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { useState } from 'react';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
@@ -89,7 +90,7 @@ const LicensePlateLookupPage = () => {
   const [plateNumber, setPlateNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const { verify, isLoading: checking, result } = useParallelVerification();
+  const { verify, isLoading: checking, result, limitHit } = useParallelVerification();
 
   const handleVerify = async () => {
     if (!plateNumber.trim()) {
@@ -188,6 +189,9 @@ const LicensePlateLookupPage = () => {
                     </>
                   )}
                 </Button>
+
+                {result && <div className="text-left"><ParallelVerificationDisplay result={result} /></div>}
+                {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
 
                 <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-2">
                   <span className="flex items-center gap-1">

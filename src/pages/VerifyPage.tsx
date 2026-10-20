@@ -3,6 +3,7 @@
  * All verification happens here with item type cards, scanner, and voice search
  */
 
+import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { useVerifyGate } from '@/hooks/useVerifyGate';
 import { UpgradeModal } from '@/components/UpgradeModal';
@@ -61,7 +62,7 @@ const VerifyPage = () => {
  const { detection, isDetecting, detectionError, detect, reset: resetDetection } = useSmartDetection(500);
  const [urlFromParams, setUrlFromParams] = useState<string | null>(null);
  const [activeTab, setActiveTab] = useState<'manual' | 'url'>('manual');
- const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
+ const { verify, isLoading, result: hookResult, progress, limitHit } = useParallelVerification();
  const { isAuthenticated } = useUnifiedAuth();
  const { remainingSearches, isSubscribed } = useSearchLimits();
  const { pendingVerification, savePendingVerification } = usePendingVerification();
@@ -547,6 +548,7 @@ const VerifyPage = () => {
  </Tabs>
 
  {/* Results */}
+ {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
  {result && (
  <>
  <ParallelVerificationDisplay result={result} />

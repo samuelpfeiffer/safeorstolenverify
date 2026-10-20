@@ -6,6 +6,12 @@
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { requestVerification } from '@/lib/verification/verifyClient';
 
+/** Thrown when the visitor has used their free checks, so the page can offer a way to pay. */
+export class LimitReachedError extends Error {
+  code = 'LIMIT_REACHED';
+  constructor(message = 'Free checks used') { super(message); this.name = 'LimitReachedError'; }
+}
+
 export interface VerificationRequest {
   identifier: string;
   itemType: string;
@@ -61,6 +67,7 @@ class VerificationService {
       });
 
       if (error) {
+        if (error.code === 'LIMIT_REACHED') throw new LimitReachedError();
         throw new Error(error.message || 'Verification failed');
       }
 
@@ -71,6 +78,7 @@ class VerificationService {
       return data as unknown as AggregatedResult;
 
     } catch (error: any) {
+      if (error instanceof LimitReachedError) throw error;
       console.error('[VerificationService] Error:', error);
       
       // Return error result instead of throwing
