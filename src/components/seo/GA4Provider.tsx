@@ -31,8 +31,12 @@ export const GA4Provider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     // Initialize dataLayer and gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer!.push(args);
+    // gtag.js only reads the special `arguments` object. Pushing a normal array (...args)
+    // is silently ignored, which is why Google Analytics recorded almost nothing from Dec 2025.
+    // eslint-disable-next-line prefer-rest-params
+    function gtag(..._args: any[]) {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer!.push(arguments);
     }
     window.gtag = gtag;
 
