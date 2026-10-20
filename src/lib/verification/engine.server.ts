@@ -21,6 +21,11 @@ export const VERIFY_BUILD_ID = 'app-server-verify-2026-09-19-1';
 
 const SOURCE_TIMEOUT_MS = 20_000;
 const FREE_LIMIT = 2;
+// Product Hunt launch: checks are free through the end of Oct 22, 2026 (America/Phoenix).
+const LAUNCH_FREE_UNTIL = Date.UTC(2026, 9, 23, 6, 59, 59); // 2026-10-22 23:59 MST
+export function isLaunchFree(): boolean {
+  return Date.now() <= LAUNCH_FREE_UNTIL;
+}
 
 export interface VerifyInput {
   identifier: string;
@@ -504,6 +509,7 @@ async function anonymousGate(
   fingerprint: string,
   clientIp: string | null,
 ): Promise<GateResult> {
+  if (isLaunchFree()) return { allowed: true, plan: 'free', checksRemaining: 99 };
   if (clientIp) {
     const ipKey = `ip:${(await sha256Hex(clientIp)).slice(0, 32)}`;
     const { data: ipRow } = await admin.from('usage_tracking').select('*').eq('fingerprint', ipKey).maybeSingle();
@@ -537,7 +543,7 @@ async function phoneBlacklistAllowed(
   userId: string | null,
   gate: GateAllowed,
 ): Promise<boolean> {
-  if (gate.plan === 'free') return false;
+  if (gate.plan === 'free' && !isLaunchFree()) return false;
   if (gate.plan === 'single' || !userId) return true;
   const monthStart = new Date();
   monthStart.setUTCDate(1);
@@ -741,6 +747,7 @@ export async function checkUsageGate(
     return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - 1 };
   }
 
+  if (isLaunchFree()) return { allowed: true, plan: 'free', checksRemaining: 99 };
   // Lifetime allowance: 2 free checks total per account, never reset.
   // Sum every usage row tied to this account so extra rows can't add checks.
   const { data: allRows } = await admin

@@ -209,6 +209,9 @@ export const HomeAIHero: React.FC = () => {
  </div>
  </div>
 
+ <div className="mx-auto mb-4 max-w-xl rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-center text-sm font-semibold text-primary">
+ Free during the Product Hunt launch through October 22. No account needed.
+ </div>
  {/* H1 (SEO-critical, stays) */}
  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-center leading-tight mb-4 tracking-tight">
  Check if a phone, car, gun, tool, console, appliance, or bike was{' '}
