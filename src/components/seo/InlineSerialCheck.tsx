@@ -1,8 +1,6 @@
-import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { useState } from 'react';
-import { ArrowRight, Loader2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { PublicPoliceSearches } from '@/components/verification/PublicPoliceSearches';
 
 const STATE_BY_SLUG: Record<string, string> = { 'alabama': 'AL', 'alaska': 'AK', 'arizona': 'AZ', 'arkansas': 'AR', 'california': 'CA', 'colorado': 'CO', 'connecticut': 'CT', 'delaware': 'DE', 'florida': 'FL', 'georgia': 'GA', 'hawaii': 'HI', 'idaho': 'ID', 'illinois': 'IL', 'indiana': 'IN', 'iowa': 'IA', 'kansas': 'KS', 'kentucky': 'KY', 'louisiana': 'LA', 'maine': 'ME', 'maryland': 'MD', 'massachusetts': 'MA', 'michigan': 'MI', 'minnesota': 'MN', 'mississippi': 'MS', 'missouri': 'MO', 'montana': 'MT', 'nebraska': 'NE', 'nevada': 'NV', 'new-hampshire': 'NH', 'new-jersey': 'NJ', 'new-mexico': 'NM', 'new-york': 'NY', 'north-carolina': 'NC', 'north-dakota': 'ND', 'ohio': 'OH', 'oklahoma': 'OK', 'oregon': 'OR', 'pennsylvania': 'PA', 'rhode-island': 'RI', 'south-carolina': 'SC', 'south-dakota': 'SD', 'tennessee': 'TN', 'texas': 'TX', 'utah': 'UT', 'vermont': 'VT', 'virginia': 'VA', 'washington': 'WA', 'west-virginia': 'WV', 'wisconsin': 'WI', 'wyoming': 'WY', 'washington-dc': 'DC' };
 function plateStateFromPath(): string | null {
@@ -19,21 +17,21 @@ export function InlineSerialCheck({
   type,
   placeholder = 'Enter the serial number',
   buttonLabel = 'Check it free',
-  publicPoliceSearches = false,
 }: {
   type?: string;
   placeholder?: string;
   buttonLabel?: string;
-  publicPoliceSearches?: boolean;
 }) {
   const [value, setValue] = useState('');
-  const { verify, isLoading, result, limitHit } = useParallelVerification();
 
   const go = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const v = value.trim();
     if (!v) return;
-    window.location.href = `/?q=${encodeURIComponent(v)}`;
+    // Oct 21 2026: keep the item type so the homepage check searches the right records
+    // (a gun serial sent without type=firearm skipped the firearm theft reports).
+    const t = type ? `&type=${encodeURIComponent(type)}` : '';
+    window.location.href = `/?q=${encodeURIComponent(v)}${t}`;
   };
 
   return (
@@ -54,8 +52,6 @@ export function InlineSerialCheck({
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </form>
-      {limitHit && <div className="mx-auto mt-6 max-w-2xl text-left"><LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} /></div>}
-      {publicPoliceSearches && <PublicPoliceSearches serial={value} />}
     </div>
   );
 }

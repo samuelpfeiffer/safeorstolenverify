@@ -30,6 +30,7 @@ export const HomeAIHero: React.FC = () => {
  const { user } = useAuth();
  const [messages, setMessages] = useState<Msg[]>([]);
  const [limitHit, setLimitHit] = useState<{ identifier: string; itemType?: string } | null>(null);
+ const forcedTypeRef = useRef<string | null>(null);
  const [input, setInput] = useState('');
  const [isStreaming, setIsStreaming] = useState(false);
  const [started, setStarted] = useState(false);
@@ -122,7 +123,10 @@ export const HomeAIHero: React.FC = () => {
  setMessages((p) => [...p, { role: 'assistant', content: 'Recognizing the number and running the check…' }]);
  try {
  const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
- const itemType = detect?.type || 'serial';
+ // A check page (gun, bike, phone...) passes its item type in the link; trust it over the guess.
+ const forced = forcedTypeRef.current;
+ forcedTypeRef.current = null;
+ const itemType = forced || detect?.type || 'serial';
  const cleaned = detect?.extractedValue || identifier;
  const { data: verify, error } = await requestVerification({
  identifier: cleaned,
@@ -190,7 +194,10 @@ export const HomeAIHero: React.FC = () => {
  }, [isStreaming, started, messages, streamChat, runVerification, runUrlAnalysis]);
 
  useEffect(() => {
- const q = new URLSearchParams(window.location.search).get('q');
+ const params = new URLSearchParams(window.location.search);
+ const q = params.get('q');
+ const t = params.get('type');
+ if (t && /^[a-z_-]{2,20}$/i.test(t)) forcedTypeRef.current = t.toLowerCase();
  if (q && q.trim()) send(q.trim());
  // eslint-disable-next-line react-hooks/exhaustive-deps
  }, []);

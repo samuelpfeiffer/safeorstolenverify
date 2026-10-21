@@ -99,8 +99,8 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
   return (
     <>
       <PageSEO
-        title={`Gun Serial Number Lookup Free ${s.name}`}
-        description={`Free gun serial number lookup for ${s.name}. Search ${fmt(s.total)} ${s.name} police reports of stolen and lost guns, plus ${fmt(GUN_NATIONAL.total - s.total)} more from 33 other jurisdictions, before you buy.`}
+        title={`Gun Serial Number Lookup Free ${s.name} (${s.code})`}
+        description={`Free gun serial number lookup for ${s.name} (${s.code}). Search ${fmt(s.total)} ${s.name} police reports of stolen and lost guns, plus ${fmt(GUN_NATIONAL.total - s.total)} more from 33 other jurisdictions, before you buy.`}
         canonical={path}
         structuredData={schema}
         modifiedTime={GUN_STATS_AS_OF}
@@ -109,7 +109,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
         <section className="px-4 pt-24 pb-12 bg-gradient-to-b from-muted to-background">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">{s.name} · Stolen gun check</p>
-            <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight">Gun Serial Number Lookup Free {s.name}</h1>
+            <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight">Gun Serial Number Lookup Free {s.name} ({s.code})</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               Check a gun's serial number free before you buy it in {s.name}. One search covers {fmt(s.total)} {s.name} police
               reports of stolen and lost guns and {fmt(GUN_NATIONAL.total - s.total)} more from 33 other jurisdictions.

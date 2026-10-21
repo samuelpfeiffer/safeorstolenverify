@@ -128,7 +128,7 @@ const TopNavigation = () => {
                   Sign In
                 </Button>
                 <Button size="sm" onClick={() => navigate('/verify')} className="rounded-lg button-glow font-semibold">
-                  Start Free — 2 Checks
+                  Start Free Check
                 </Button>
               </>
             )}
@@ -193,7 +193,7 @@ const TopNavigation = () => {
                     Sign In
                   </Button>
                   <Button className="w-full rounded-lg font-semibold" onClick={() => { navigate('/verify'); setIsMobileMenuOpen(false); }}>
-                    Start Free — 2 Checks
+                    Start Free Check
                   </Button>
                 </>
               )}

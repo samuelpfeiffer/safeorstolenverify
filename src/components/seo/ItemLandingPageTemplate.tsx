@@ -235,7 +235,7 @@ export const ItemLandingPageTemplate = ({
  className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.intro) }}
   />
- <InlineSerialCheck type={searchType} placeholder={searchPlaceholder} publicPoliceSearches={searchType === 'firearm'} />
+ <InlineSerialCheck type={searchType} placeholder={searchPlaceholder} />
  <p className="text-sm text-muted-foreground mt-3">
  1 free check · No credit card · Updated {new Date(dateModified + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
  </p>

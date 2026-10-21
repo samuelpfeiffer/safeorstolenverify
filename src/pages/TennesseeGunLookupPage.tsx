@@ -51,7 +51,7 @@ export default function TennesseeGunLookupPage() {
   return (
     <main className="min-h-screen bg-background pt-24 pb-20">
       <PageSEO
-        title="Gun Serial Number Lookup Free Tennessee"
+        title="Gun Serial Number Lookup Free Tennessee (TN)"
         description={`Free gun serial number lookup in Tennessee. Check a serial against ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns before you buy. 1 free check, no credit card.`}
         canonical="/gun-serial-number-lookup/tennessee"
         structuredData={schema}
@@ -60,7 +60,7 @@ export default function TennesseeGunLookupPage() {
       <article className="container mx-auto max-w-3xl px-4 space-y-8">
         <header className="space-y-4 text-center">
           <p className="text-primary font-bold text-sm uppercase tracking-widest">Tennessee · Stolen gun check</p>
-          <h1 className="text-3xl md:text-5xl font-black leading-tight">Gun Serial Number Lookup Free Tennessee</h1>
+          <h1 className="text-3xl md:text-5xl font-black leading-tight">Gun Serial Number Lookup Free Tennessee (TN)</h1>
           <p className="text-lg text-muted-foreground">
             Check a gun's serial number free before you buy it in Tennessee. One search covers {fmt(GUN_NATIONAL.total)} police
             reports of stolen and lost guns from 33 states and Washington, DC, plus live Ohio records and SafeOrStolen's own theft reports.
