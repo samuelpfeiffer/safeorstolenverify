@@ -72,9 +72,9 @@ const IMEICheckerPage = () => {
           ],
         },
         {
-          heading: 'Free IMEI check vs the CTIA Stolen Phone Checker',
+          heading: 'Why check a phone with SafeOrStolen',
           paragraphs: [
-            "In the US, the wireless industry group CTIA runs its own free Stolen Phone Checker for lost and stolen reports. It's a separate service and SafeOrStolen does not query it for you. Running both costs nothing, and SafeOrStolen adds the model lookup, owner theft reports, public web results and a dated record of your check.",
+            "SafeOrStolen puts everything in one check: it confirms the IMEI is real, looks up the make and model, searches SafeOrStolen's own theft reports and public web results, and the full check searches the lost and stolen phone blacklist. You also get a dated record of your check to keep with your receipt.",
           ],
         },
       ]}
@@ -116,7 +116,7 @@ const IMEICheckerPage = () => {
           {
             question: 'How do I check if an IMEI is blacklisted?',
             answer:
-              "Run a blacklist check. On SafeOrStolen it's a paid check that looks at the carrier lost/stolen blacklist, and monthly members get up to 20 a month. In the US, CTIA's free Stolen Phone Checker is another option. A blacklisted phone generally won't get service on participating carriers.",
+              "Run a blacklist check. On SafeOrStolen it's a paid check that looks at the carrier lost/stolen blacklist, and monthly members get up to 20 a month. A blacklisted phone generally won't get service on participating carriers.",
           },
           {
             question: 'Does an IMEI check show if a phone is iCloud locked?',
