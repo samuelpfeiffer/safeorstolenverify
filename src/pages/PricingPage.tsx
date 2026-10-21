@@ -47,7 +47,7 @@ const FAQS = [
  },
  {
  q: 'Do I need an account to buy a single check?',
- a: 'Yes. A free account is required for every check, free or paid, so the result can be saved to your history with the date. Sign up, then pay $0.99 for the check by card through Stripe. There is no recurring charge on a single check.',
+ a: 'No. You can pay $0.99 as a guest, and Stripe just asks for your email for the receipt. A free account is optional; it saves your results to your history with the date. There is no recurring charge on a single check.',
  },
 ];
 
@@ -57,11 +57,7 @@ const PricingPage = () => {
  async function handleCheckout(priceId: string, planName: string, isSubscription: boolean) {
  setLoading(priceId);
  try {
- const { data: { user } } = await supabase.auth.getUser();
- if (!user) {
- window.location.href = `/auth?redirect=/pricing`;
- return;
- }
+ // Oct 21 2026: guests can pay right away (Stripe asks for their email). Forcing sign-up here lost buyers.
  const { data, error } = await supabase.functions.invoke('create-checkout', {
  body: {
  priceId,

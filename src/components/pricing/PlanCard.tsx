@@ -34,19 +34,12 @@ export const PlanCard = ({
 
   const handleCheckout = () => {
     // Free tier doesn't need checkout
+    // Oct 21 2026: free plan goes straight to a free check; paid plans go straight to payment (guests allowed).
     if (priceId === 'free') {
-      if (!user) {
-        navigate('/auth?tab=signup');
-      } else {
-        navigate('/dashboard');
-      }
+      navigate('/verify');
       return;
     }
-    
-    if (!user) {
-      navigate('/auth?tab=signup');
-      return;
-    }
+    void user;
     onCheckout(priceId);
   };
 
