@@ -173,7 +173,7 @@ const StolenDatabasePage = () => {
  "@type": "ListItem",
  "position": index + 1,
  "item": {
- "@type": "Product",
+ "@type": "Service",
  "name": `${item.brand || ''} ${item.model || item.item_type}`.trim(),
  "description": item.description,
  "identifier": item.serial_number || item.imei || item.vin,

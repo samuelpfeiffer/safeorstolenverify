@@ -25,7 +25,7 @@ const SafeOrStolenVsSwappa = () => {
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@type": "Product",
+            "@type": "Service",
             "name": "SafeOrStolen",
             "description": "Free stolen item verification platform"
           }
@@ -34,7 +34,7 @@ const SafeOrStolenVsSwappa = () => {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@type": "Product",
+            "@type": "Service",
             "name": "Swappa",
             "description": "Used device marketplace with ESN checks"
           }

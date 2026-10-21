@@ -18,7 +18,7 @@ const TopVINCheckServices2025 = () => {
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@type": "Product",
+          "@type": "Service",
           "name": "SafeOrStolen",
           "description": "Best for checking whether a vehicle is reported stolen: 1 free check, then $0.99 for 2 checks or $10 a month unlimited"
         }
@@ -27,7 +27,7 @@ const TopVINCheckServices2025 = () => {
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@type": "Product",
+          "@type": "Service",
           "name": "Carfax",
           "description": "Best for full vehicle history reports"
         }

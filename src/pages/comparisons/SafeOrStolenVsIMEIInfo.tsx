@@ -20,7 +20,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@type": "Product",
+            "@type": "Service",
             "name": "SafeOrStolen",
             "description": "Stolen item check for phones, vehicles, bikes, guns and other serial-numbered items. 1 free check, then $0.99 for 2 checks or $10 a month.",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -30,7 +30,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@type": "Product",
+            "@type": "Service",
             "name": "IMEI.info",
             "description": "IMEI lookup and phone information service"
           }

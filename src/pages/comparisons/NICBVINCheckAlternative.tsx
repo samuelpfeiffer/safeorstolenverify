@@ -20,7 +20,7 @@ const NICBVINCheckAlternative = () => {
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@type": "Product",
+            "@type": "Service",
             "name": "SafeOrStolen",
             "description": "Stolen vehicle and multi-item verification"
           }

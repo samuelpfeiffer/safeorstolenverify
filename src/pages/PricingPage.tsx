@@ -341,13 +341,13 @@ const PricingPage = () => {
  dangerouslySetInnerHTML={{
  __html: JSON.stringify({
  "@context": "https://schema.org",
- "@type": "Product",
+ "@type": "Service",
  "name": "SafeOrStolen stolen item check",
  "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no account or credit card needed" },
- { "@type": "Offer", "name": "Single check", "price": "0.99", "priceCurrency": "USD", "description": "One check, no subscription" },
+ { "@type": "Offer", "name": "2 checks", "price": "0.99", "priceCurrency": "USD", "description": "2 checks, no subscription" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "Unlimited checks a month, up to 20 phone blacklist checks, free verification certificates, cancel anytime, 30-day refund" },
  { "@type": "Offer", "name": "Verification certificate", "price": "1.99", "priceCurrency": "USD", "description": "Dated record with its own link showing you checked before the sale" },
  ]
