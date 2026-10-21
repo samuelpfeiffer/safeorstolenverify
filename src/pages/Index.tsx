@@ -110,7 +110,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How do I check if a gun is stolen?',
- a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. For a private sale, you can also ask your local police to run the serial.",
+ a: "Enter the serial number at safeorstolen.com/firearms-check. SafeOrStolen searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, and flags serials that look altered. For a private sale, you can also ask your local police to run the serial.",
  },
  {
  q: 'Can I check a Facebook Marketplace listing?',
@@ -118,7 +118,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'What does SafeOrStolen search?',
- a: "Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
+ a: "Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against police theft and loss reports from 33 states and Washington, DC and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
@@ -173,7 +173,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</h1>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── AI CHAT HERO ──────────────────────────── */}
@@ -184,7 +184,7 @@ const Index = () => {
  <div className={`max-w-5xl mx-auto grid grid-cols-2 ${checksRun ? 'md:grid-cols-5' : 'md:grid-cols-4'} divide-x divide-border`}>
  {[
   ...(checksRun ? [{ v: checksRun.toLocaleString('en-US'), l: 'Checks run so far' }] : []),
-  { v: '242,839', l: 'Police gun theft reports' },
+  { v: '220,000+', l: 'Police gun theft reports' },
   { v: '6', l: 'Kinds of items' },
   { v: 'Listed', l: 'Every source searched' },
  { v: '2', l: 'Free Checks to Start' },

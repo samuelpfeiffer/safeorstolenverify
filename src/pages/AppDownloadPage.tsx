@@ -15,7 +15,7 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
     item: 'Gun',
     number: 'Serial on the frame or receiver',
     searched:
-      '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. Serials that look altered are flagged.',
+      'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. Serials that look altered are flagged.',
   },
   {
     item: 'Phone',
@@ -65,7 +65,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is there an app to check a gun serial number?',
-    a: 'Yes. In the SafeOrStolen app, enter the serial number from the frame or receiver. It searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.',
+    a: 'Yes. In the SafeOrStolen app, enter the serial number from the frame or receiver. It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.',
   },
   {
     q: 'Is the SafeOrStolen app on the App Store or Google Play?',

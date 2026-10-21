@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'Does SafeOrStolen work with the police?',
-    a: "SafeOrStolen is a private company, not law enforcement. It doesn't send reports to the police. It does search police and law-enforcement records: 242,839 police firearm theft and loss reports from 33 states and DC, live Ohio stolen-gun records, and Arizona stolen-vehicle records. If a check finds a theft report, contact your local police yourself.",
+    a: "SafeOrStolen is a private company, not law enforcement. It doesn't send reports to the police. It does search police and law-enforcement records: more than 220,000 police firearm theft and loss reports from 33 states and DC, live Ohio stolen-gun records, and Arizona stolen-vehicle records. If a check finds a theft report, contact your local police yourself.",
   },
   {
     q: 'Can I get a refund from SafeOrStolen?',

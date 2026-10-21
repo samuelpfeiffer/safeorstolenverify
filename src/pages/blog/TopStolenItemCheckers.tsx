@@ -85,7 +85,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen gives you 2 free checks, then $0.99 for a single check or $10 a month for unlimited checks. A gun check searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
+      answer: "SafeOrStolen gives you 2 free checks, then $0.99 for a single check or $10 a month for unlimited checks. A gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -306,7 +306,7 @@ const TopStolenItemCheckers = () => {
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• SafeOrStolen's own theft reports (every check)</li>
                     <li>• Public web results: listings and posts that mention the number (every check)</li>
-                    <li>• Guns: police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, and live Ohio law-enforcement records</li>
+                    <li>• Guns: police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records</li>
                     <li>• Guns: flags serials that look altered or obliterated</li>
                     <li>• Bikes: a national stolen-bicycle registry</li>
                     <li>• Phones: make and model from the IMEI, plus a paid carrier blacklist check</li>
@@ -623,7 +623,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>
-                  <p className="text-sm text-muted-foreground"><Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen</Link> (police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, and an altered-serial check) or HotGunz (free, owner-reported thefts only).</p>
+                  <p className="text-sm text-muted-foreground"><Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen</Link> (police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and an altered-serial check) or HotGunz (free, owner-reported thefts only).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need multiple item types?</h3>

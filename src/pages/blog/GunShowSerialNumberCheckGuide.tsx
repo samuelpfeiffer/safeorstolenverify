@@ -18,7 +18,7 @@ const faqs = [
   {
     question: 'How do I check a gun serial number at a gun show?',
     answer:
-      "Ask to hold the gun, read the serial off the frame or receiver, and enter it on SafeOrStolen (safeorstolen.com/blog/gun-show-serial-number-check) on your phone. It searches 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records and owner reports, and flags serials that look altered. The first 2 checks are free and no app download is needed.",
+      "Ask to hold the gun, read the serial off the frame or receiver, and enter it on SafeOrStolen (safeorstolen.com/blog/gun-show-serial-number-check) on your phone. It searches more than 220,000 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. The first 2 checks are free and no app download is needed.",
   },
   {
     question: 'Can a dealer at a gun show check if a gun is stolen?',
@@ -89,7 +89,7 @@ const GunShowSerialNumberCheckGuide = () => (
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check a Gun Serial Number at a Gun Show</h1>
           <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
             Hold the gun, read the serial off the frame, and check it on your phone before you pay. SafeOrStolen searches
-            police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio records and owner reports, and flags
+            police theft and loss reports from 33 states and Washington, DC, live Ohio records and owner reports, and flags
             altered serials. For a check of the FBI’s stolen-gun file, buy through a dealer at the show who will run it.
           </p>
           <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 6 min read</p>

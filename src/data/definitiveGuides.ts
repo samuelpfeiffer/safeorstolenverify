@@ -213,7 +213,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen firearm check",
       cost: "2 free checks, no account needed",
       description:
-        "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (242,839 reports, filed 1973–2017), live Ohio law-enforcement stolen-gun records, theft reports filed on SafeOrStolen, and public web results.",
+        "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (more than 220,000 reports, filed 1973–2017), live Ohio law-enforcement stolen-gun records, theft reports filed on SafeOrStolen, and public web results.",
       tellsYou:
         "Whether a police report lists a gun with this serial number, and which make, model, state and year it names. Different manufacturers can use the same serial, so compare the make stamped on the gun.",
     },

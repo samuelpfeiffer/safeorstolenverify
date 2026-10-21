@@ -21,7 +21,7 @@ const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
  name: 'Theft report check',
  catches: 'An item whose owner reported it stolen with the serial number, IMEI or VIN.',
  who: 'Anyone, online, before or at the meetup.',
- sos: 'Yes. Every check searches SafeOrStolen theft reports and public web results; guns add police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file plus live Ohio records; bikes add a national stolen-bicycle registry.',
+ sos: 'Yes. Every check searches SafeOrStolen theft reports and public web results; guns add police theft and loss reports from 33 states and Washington, DC plus live Ohio records; bikes add a national stolen-bicycle registry.',
  },
  {
  name: 'Police records (NCIC and state systems)',

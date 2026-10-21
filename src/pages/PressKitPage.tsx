@@ -36,7 +36,7 @@ const facts: [string, string][] = [
 const accuracyNotes = [
   'When you mention police records, please name them: police firearm theft and loss reports and live Ohio law-enforcement stolen-gun records for guns, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Every check also searches SafeOrStolen theft reports and public web results; bike checks add a national stolen-bicycle registry, and a paid phone check searches the lost and stolen phone blacklist.',
   'A "no report found" result means the number wasn\'t found in the records searched, which are listed on every result.',
-  'The gun records are 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, filed 1973–2017, plus live Ohio law-enforcement records.',
+  'The gun records are more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, plus live Ohio law-enforcement records.',
   'AI writes a plain-language note on each result. It never decides whether an item is stolen; that comes only from the records searched.',
   'Plate checks never show owner names.',
 ];

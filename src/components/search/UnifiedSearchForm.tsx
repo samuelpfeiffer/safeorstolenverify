@@ -262,7 +262,7 @@ const UnifiedSearchFormComponent = ({
  Stolen-Item Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Searches SafeOrStolen theft reports and public web results, plus a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio records for guns, and Arizona law-enforcement records for Arizona vehicles
+ Searches SafeOrStolen theft reports and public web results, plus a national stolen-bicycle registry for bikes, police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records for guns, and Arizona law-enforcement records for Arizona vehicles
  </p>
  </div>
 

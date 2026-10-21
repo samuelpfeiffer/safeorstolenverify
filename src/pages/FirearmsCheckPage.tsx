@@ -67,7 +67,7 @@ const FirearmsCheckPage = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Free Gun Serial Number Lookup: Is This Gun Stolen?"
- description="Free gun serial number lookup. Search 242,839 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records. 2 free checks."
+ description="Free gun serial number lookup. Search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records. 2 free checks."
  canonical="/firearms-check"
  />
 
@@ -83,7 +83,7 @@ const FirearmsCheckPage = () => {
  <span className="text-primary">Was This Gun Reported Stolen?</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Free gun serial number lookup. Enter the serial from the frame or receiver. SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI NCIC gun file, plus live Ohio records.
+ Free gun serial number lookup. Enter the serial from the frame or receiver. SafeOrStolen searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records.
  </p>
 
 
@@ -173,7 +173,7 @@ const FirearmsCheckPage = () => {
  {[
  {
  db: 'Police firearm theft and loss reports (33 states and DC)',
- desc: '242,839 reports of stolen and lost guns filed with police in 33 states and Washington, DC. Matches show the make, model, state and year of the report.',
+ desc: 'More than 220,000 reports of stolen and lost guns filed with police in 33 states and Washington, DC. Matches show the make, model, state and year of the report.',
  badge: 'Search',
  badgeColor: 'bg-primary/20 text-primary',
  },
@@ -217,7 +217,7 @@ const FirearmsCheckPage = () => {
  Gun Serial Number Lookup by State
  </h2>
  <p className="text-muted-foreground text-sm italic mb-4">
- Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, 242,839 in all. Every gun check searches all of them at once, whichever state you are in.
+ Quick answer: SafeOrStolen holds police firearm theft and loss reports from 33 states and Washington, DC, more than 220,000 in all. Every gun check searches all of them at once, whichever state you are in.
  </p>
  <p className="text-muted-foreground leading-relaxed mb-4">
  These are historical reports filed with police from 1973 to 2017, not connected state databases. The table shows the years for each state. Open a state for its historical reports, or see the <Link to="/stolen-gun-statistics" className="text-primary hover:underline">stolen gun statistics</Link>. Existing Ohio checks are separate; other states are not connected by the public links above.

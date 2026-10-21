@@ -17,7 +17,7 @@ const HotGunzDatabaseGuide = () => {
       {
         "@type": "Question",
         "name": "Is HotGunz enough to verify a firearm?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only holds guns its own users listed, and it gets no data from police. A gun can be reported stolen to police and never appear there. SafeOrStolen (safeorstolen.com/firearms-check) is a separate service: it searches police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, its own theft reports and public web results. You can also ask your local police non-emergency line to run the serial." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. HotGunz only holds guns its own users listed, and it gets no data from police. A gun can be reported stolen to police and never appear there. SafeOrStolen (safeorstolen.com/firearms-check) is a separate service: it searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results. You can also ask your local police non-emergency line to run the serial." }
       },
       {
         "@type": "Question",
@@ -59,7 +59,7 @@ const HotGunzDatabaseGuide = () => {
             <AuthorByline />
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">HotGunz Database: What It Is and How to Search Stolen Firearms</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
-              HotGunz is a free site where owners list stolen guns by serial number. A match there is a reason to stop the sale. A clean result only means no owner listed that serial. Run the same serial at safeorstolen.com/firearms-check, which searches 242,839 police theft and loss reports from 33 states and DC plus live Ohio records.
+              HotGunz is a free site where owners list stolen guns by serial number. A match there is a reason to stop the sale. A clean result only means no owner listed that serial. Run the same serial at safeorstolen.com/firearms-check, which searches more than 220,000 police theft and loss reports from 33 states and DC plus live Ohio records.
             </p>
             <p className="text-muted-foreground text-sm mt-3">Updated October 2026 · 5 min read</p>
           </div>
@@ -112,7 +112,7 @@ const HotGunzDatabaseGuide = () => {
             <ul className="space-y-3">
               {[
                 { name: 'HotGunz', desc: 'stolen guns its own users chose to list on the site' },
-                { name: 'SafeOrStolen', desc: 'police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, SafeOrStolen theft reports and public web results, plus a flag for serials that look altered or obliterated' },
+                { name: 'SafeOrStolen', desc: 'police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft reports and public web results, plus a flag for serials that look altered or obliterated' },
                 { name: 'Local police', desc: 'ask the non-emergency line to run the serial when the price or the story seems off' },
               ].map(db => (
                 <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">
@@ -145,11 +145,11 @@ const HotGunzDatabaseGuide = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is HotGunz enough to verify a firearm?</summary>
-                <p className="text-muted-foreground mt-2">No. It only holds what its users posted and gets no police data. Also run the serial on SafeOrStolen, which searches police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file and live Ohio law-enforcement records, and you can ask your local police non-emergency line to run it too.</p>
+                <p className="text-muted-foreground mt-2">No. It only holds what its users posted and gets no police data. Also run the serial on SafeOrStolen, which searches police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and you can ask your local police non-emergency line to run it too.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">How is SafeOrStolen different from HotGunz?</summary>
-                <p className="text-muted-foreground mt-2">They are separate services. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, its own theft reports and public web results in one check. HotGunz can be searched on its own site.</p>
+                <p className="text-muted-foreground mt-2">They are separate services. SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results in one check. HotGunz can be searched on its own site.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Can I report my stolen gun on HotGunz?</summary>

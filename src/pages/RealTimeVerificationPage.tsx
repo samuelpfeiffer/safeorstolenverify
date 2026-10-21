@@ -34,7 +34,7 @@ const FRESHNESS: { source: string; usedFor: string; howCurrent: string }[] = [
  howCurrent: 'Updated twice a day.',
  },
  {
- source: 'Police firearm theft and loss reports (242,839 reports, 33 states and Washington, DC)',
+ source: 'Police firearm theft and loss reports (more than 220,000 reports, 33 states and Washington, DC)',
  usedFor: 'Gun checks',
  howCurrent: 'Filed 1973–2017. Searched on every gun check.',
  },

@@ -18,7 +18,7 @@ const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 const checkRows: [string, string][] = [
   ['Every check', "SafeOrStolen's own theft reports (owners report thefts on the site) and public web results: listings and posts that mention the number"],
-  ['Guns', '242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
+  ['Guns', 'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'A national stolen-bicycle registry'],
   ['Phones (IMEI)', "The phone's make and model from the IMEI. A paid carrier blacklist check for lost or stolen phones is available"],
   ['Vehicles (VIN)', 'Year, make and model, open safety recalls, and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records updated twice a day'],

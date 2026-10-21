@@ -303,7 +303,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered.
+                  <strong>Winner: SafeOrStolen</strong> — Searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and SafeOrStolen theft reports, and flags serials that look altered.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runner-up: HotGunz (firearms only, user-submitted)

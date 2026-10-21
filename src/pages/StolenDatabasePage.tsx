@@ -69,7 +69,7 @@ const ITEM_TYPES = [
 const STOLEN_DB_FAQS: { q: string; a: string }[] = [
  {
  q: 'Is there a database of stolen items I can search?',
- a: "SafeOrStolen (safeorstolen.com/stolen-database) searches items owners have reported stolen, plus public web results. Gun checks add police theft reports from 33 states and DC, standardized to the same gun codes used in the FBI’s NCIC gun file, and live Ohio records. Bike checks add a national stolen-bicycle registry. Arizona plate and VIN checks add Arizona police records.",
+ a: "SafeOrStolen (safeorstolen.com/stolen-database) searches items owners have reported stolen, plus public web results. Gun checks add police theft reports from 33 states and DC, and live Ohio records. Bike checks add a national stolen-bicycle registry. Arizona plate and VIN checks add Arizona police records.",
  },
  {
  q: 'How do I search for a stolen item by serial number?',

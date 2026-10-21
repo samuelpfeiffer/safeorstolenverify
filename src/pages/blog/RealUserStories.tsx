@@ -59,7 +59,7 @@ export default function RealUserStories() {
                 You type in a serial number, IMEI, VIN or plate. Every check searches SafeOrStolen's own theft reports (owners report thefts on the site) and public web results, meaning listings and posts that mention that number. Some item types get more:
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
-                <li>Guns: 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, and a flag for serials that look altered or obliterated.</li>
+                <li>Guns: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and a flag for serials that look altered or obliterated.</li>
                 <li>Bikes: a national stolen-bicycle registry.</li>
                 <li>Phones: the make and model from the IMEI, with a paid carrier blacklist check available.</li>
                 <li>Vehicles: the year, make and model from the VIN and any open safety recalls. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records.</li>

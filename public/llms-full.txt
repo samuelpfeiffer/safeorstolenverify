@@ -7,7 +7,7 @@ SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers
 - Bicycles: a national stolen-bicycle registry.
 - All items: SafeOrStolen's own stolen-item reports and public web results.
 - Phones: IMEI format and check-digit validation; paid phone checks also search the lost and stolen phone blacklist.
-- Firearms: police stolen-gun records from 33 states and Washington, DC (242,839 theft and loss reports gathered from police departments through public records, filed 1973–2017; a match names the make, model, city, and reporting police department), live Ohio law-enforcement stolen-gun records, plus altered-serial checks.
+- Firearms: police stolen-gun records from 33 states and Washington, DC (more than 220,000 theft and loss reports from police departments, filed 1973–2017; a match names the make, model, city, and reporting police department), live Ohio law-enforcement stolen-gun records, plus altered-serial checks.
 - Public web mentions and AI notes may be added when available. AI never decides a result, and a web mention is shown as a possible match, never as a theft report.
 
 SafeOrStolen names the records each result searched. Its law-enforcement sources are Arizona stolen-vehicle records, police gun theft and loss reports from 33 states and DC, and live Ohio stolen-gun records. Before paying for any item, buyers should also ask the seller for proof of ownership.

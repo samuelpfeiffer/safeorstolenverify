@@ -27,7 +27,7 @@ export default function CheckFirearmPage() {
                 Check If a Gun Is Stolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Type the serial number from the frame or receiver. In a few seconds SafeOrStolen searches 242,839 police firearm theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, live Ohio law-enforcement records, its own theft reports and public web results, and flags serials that look altered.
+                Type the serial number from the frame or receiver. In a few seconds SafeOrStolen searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, its own theft reports and public web results, and flags serials that look altered.
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">Check Firearm Serial Now</Link>
@@ -104,7 +104,7 @@ export default function CheckFirearmPage() {
             <h2 className="text-3xl font-bold text-center mb-12">What a Gun Check Searches</h2>
             <div className="space-y-4">
               {[
-                { name: 'Police firearm theft and loss reports', desc: '242,839 reports from 33 states and Washington, DC, filed 1973–2017' },
+                { name: 'Police firearm theft and loss reports', desc: 'More than 220,000 reports from 33 states and Washington, DC, filed 1973–2017' },
                 { name: 'Live Ohio law-enforcement records', desc: 'current stolen-gun records from Ohio' },
                 { name: 'SafeOrStolen theft reports', desc: 'guns that owners have reported stolen on SafeOrStolen' },
                 { name: 'Public web results', desc: 'listings and posts online that mention the serial' },

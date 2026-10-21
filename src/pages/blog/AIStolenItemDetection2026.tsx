@@ -140,7 +140,7 @@ const AIStolenItemDetection2026 = () => {
             <p>
               A match between the item's number and a theft record, plus what you see in person. That's how SafeOrStolen works: you
               enter the number, it searches its own theft reports and public web results, and for some items it adds police
-              records. Guns are searched against 242,839 police theft and loss reports from 33 states and Washington, DC, using the same gun codes as the FBI’s NCIC gun file, plus live
+              records. Guns are searched against more than 220,000 police theft and loss reports from 33 states and Washington, DC, plus live
               Ohio records. Bikes go against a national stolen-bicycle registry. Arizona VINs and plates go against Arizona
               law-enforcement stolen-vehicle records. The result says reported stolen, possible match, or no report found in the
               records searched, and lists every source.
