@@ -97,7 +97,7 @@ export default function CheckAndroidPage() {
           'Searches SafeOrStolen theft reports and public web results',
           'Paid carrier blacklist check available',
           'Works for Pixel, Motorola, OnePlus, Xiaomi, Sony, Nokia and other Android phones',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for a screenshot of *#06# and check the IMEI here before you meet.',

@@ -38,7 +38,7 @@ const HowToCheckIfGunStolenPage = () => (
         table: {
           columns: ['Check', 'What it covers', 'Who can use it'],
           rows: [
-            ['SafeOrStolen serial check', 'Owner theft reports, Ohio stolen-gun records and serial-integrity checks; the result names the sources actually checked', '2 free checks, no account needed, then $0.99 per check or $10/month unlimited'],
+            ['SafeOrStolen serial check', 'Owner theft reports, Ohio stolen-gun records and serial-integrity checks; the result names the sources actually checked', '1 free check, no account needed, then $0.99 for 2 checks or $10/month unlimited'],
             ['Florida FDLE stolen gun', 'Florida public stolen-gun search', 'You open the link and enter the serial yourself'],
             ['Florida FDLE stolen vehicle', 'Florida public stolen-vehicle search, not a firearm check', 'You open the link and use the vehicle identifier'],
             ['Florida FDLE stolen article', 'Florida public stolen-article search', 'You open the link and enter the item details yourself'],
@@ -86,7 +86,7 @@ const HowToCheckIfGunStolenPage = () => (
         'Separate official public searches you open yourself',
         'Flags altered or obliterated serial numbers',
         'Shows the make and model on any matching report so you can compare',
-        'Each check saved to your account with the date; 2 free checks, no credit card',
+        'Each check saved to your account with the date; 1 free check, no credit card',
       ],
       process: [
         'Ask the seller for the make, model and serial number before you meet, and check the serial here.',
@@ -100,7 +100,7 @@ const HowToCheckIfGunStolenPage = () => (
         {
           question: 'How can I check if a gun is stolen for free?',
           answer:
-            "Use the official public searches linked above yourself. SafeOrStolen offers 2 free checks, no account needed, then $0.99 per check or $10/month unlimited. The external links do not add connected state databases to our check.",
+            "Use the official public searches linked above yourself. SafeOrStolen offers 1 free check, no account needed, then $0.99 for 2 checks or $10/month unlimited. The external links do not add connected state databases to our check.",
         },
         {
           question: 'How do I use the public state searches?',

@@ -18,7 +18,7 @@ const faqs = [
   {
     question: 'How do I check a gun serial number at a gun show?',
     answer:
-      "Ask to hold the gun, read the serial off the frame or receiver, and enter it on SafeOrStolen (safeorstolen.com/blog/gun-show-serial-number-check) on your phone. It searches more than 220,000 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. The first 2 checks are free and no app download is needed.",
+      "Ask to hold the gun, read the serial off the frame or receiver, and enter it on SafeOrStolen (safeorstolen.com/blog/gun-show-serial-number-check) on your phone. It searches more than 220,000 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. the first check is free and no app download is needed.",
   },
   {
     question: 'Can a dealer at a gun show check if a gun is stolen?',
@@ -103,7 +103,7 @@ const GunShowSerialNumberCheckGuide = () => (
               Check a serial number free <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <p className="text-muted-foreground text-sm mt-3">Works in your phone's browser · 2 free checks · no credit card</p>
+          <p className="text-muted-foreground text-sm mt-3">Works in your phone's browser · 1 free check · no credit card</p>
         </div>
       </section>
 

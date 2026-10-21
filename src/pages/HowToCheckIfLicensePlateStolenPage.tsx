@@ -50,7 +50,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         table: {
           columns: ['Record', 'Who can search it', 'What it tells you'],
           rows: [
-            ['SafeOrStolen check', 'Anyone, 2 free checks', 'Whether the plate is in SafeOrStolen theft reports or public web results; Arizona plates also against Arizona law-enforcement records'],
+            ['SafeOrStolen check', 'Anyone, 1 free check', 'Whether the plate is in SafeOrStolen theft reports or public web results; Arizona plates also against Arizona law-enforcement records'],
             ["FBI’s NCIC license plate file", 'Police only', 'Plates reported stolen to any U.S. police agency. Officers check it when they run a plate.'],
             ['State DMV record', 'The owner, police and permitted requesters', 'Whether the plate was reported lost or stolen and replaced. Owner details are private.'],
             ['Your own paperwork', 'You', 'Registration card, renewal notice and title, which list the plate and VIN'],
@@ -79,7 +79,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         'Arizona plates also checked against Arizona law-enforcement records',
         'Never shows owner names or addresses',
         'Each check is saved to your account with the date',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Write down the plate exactly, plus the state, and the car\'s make, model and color.',

@@ -41,7 +41,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
 
   if (!isOpen) return null
 
-  const headline = "You've Used Your 2 Free Checks"
+  const headline = "You've Used Your Free Check"
 
   async function handleCheckout(plan: typeof PLANS[0]) {
     setLoading(plan.id)
@@ -115,7 +115,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
           <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Continue for $0.99/check or go unlimited for $10/month.<br />
+            Continue for $0.99 for 2 checks or go unlimited for $10/month.<br />
             Cancel anytime · 30-day money-back guarantee.
           </p>
         </div>

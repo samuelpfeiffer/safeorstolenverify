@@ -1,6 +1,6 @@
 /**
  * Oct 8 2026: copy fixed by hand. Removed "AI analysis" as a source, the AI-powered fraud analysis claim,
- * law-enforcement and insurance data claims for phones, the iOS/Android app claim, "2 free checks without an
+ * law-enforcement and insurance data claims for phones, the iOS/Android app claim, "1 free check without an
  * account" (an account is required), "comprehensive", and exclamation marks.
  */
 import React from 'react';
@@ -210,7 +210,7 @@ const SafeOrStolenVsSwappa = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          2 free checks, no account or credit card needed
+                          1 free check, no account or credit card needed
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -376,7 +376,7 @@ const SafeOrStolenVsSwappa = () => {
             <h2 className="text-3xl font-bold mb-6">Verify Any Item, Anywhere</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               SafeOrStolen works wherever you found the item: Facebook Marketplace, Craigslist,
-              OfferUp or an in-person sale. Your first 2 checks are free.
+              OfferUp or an in-person sale. Your first check is free.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" variant="secondary" className="font-semibold">

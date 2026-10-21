@@ -122,7 +122,7 @@ export const MarketplaceLandingTemplate = ({
               <Button asChild size="lg" className="gap-2">
                 <Link to="/verify">
                   <Shield className="w-5 h-5" />
-                  Check an Item - 2 Free Checks
+                  Check an Item - 1 Free Check
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">

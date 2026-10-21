@@ -39,7 +39,7 @@ const StolenCheckSanJose = () => {
     <>
       <PageSEO
         title="San Jose Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="San Jose stolen item check: look up a laptop serial number, phone IMEI or car VIN for theft reports before you buy. 2 free checks, results in a few seconds."
+        description="San Jose stolen item check: look up a laptop serial number, phone IMEI or car VIN for theft reports before you buy. 1 free check, results in a few seconds."
         keywords="san jose stolen item check, stolen laptop san jose, verify stolen silicon valley, serial number check san jose, SJPD stolen"
         canonical="/stolen-check-san-jose"
         structuredData={faqSchema}

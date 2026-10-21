@@ -93,7 +93,7 @@ export default function RealUserStories() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Cost and contact</h2>
               <p className="text-lg mb-4">
-                You get 2 free checks, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks. There's a free installable web app at safeorstolen.com/app. SafeOrStolen is based in Peoria, AZ. Questions go to safeorstolenmail@gmail.com.
+                You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. There's a free installable web app at safeorstolen.com/app. SafeOrStolen is based in Peoria, AZ. Questions go to safeorstolenmail@gmail.com.
               </p>
               <div className="flex gap-4">
                 <Button asChild size="lg">

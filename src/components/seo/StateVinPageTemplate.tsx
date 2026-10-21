@@ -181,10 +181,10 @@ export const StateVinPageTemplate = ({
  <li><a href="/license-plate-lookup">{state} License Plate Lookup</a></li>
  <li><a href="/imei-checker">IMEI Checker</a></li>
  <li><a href="/verify">Verify Any Item</a></li>
- <li><a href="/pricing">Pricing - From $0.99/check</a></li>
+ <li><a href="/pricing">Pricing - From $0.99 for 2 checks</a></li>
  </ul>
  
- <p>Check a {state} VIN before you buy. <a href="/verify">Run a check</a>: 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
+ <p>Check a {state} VIN before you buy. <a href="/verify">Run a check</a>: 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -427,7 +427,7 @@ export const StateVinPageTemplate = ({
  </Link>
  <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Pricing</h3>
- <p className="text-sm text-muted-foreground">From $0.99/check or $10/mo unlimited</p>
+ <p className="text-sm text-muted-foreground">From $0.99 for 2 checks or $10/mo unlimited</p>
  </Link>
  </div>
  </div>
@@ -440,7 +440,7 @@ export const StateVinPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
  <p className="text-lg text-muted-foreground mb-8">
-  2 free checks, then $0.99 a check or $10 a month unlimited. Every result lists the sources searched.
+  1 free check, then $0.99 for 2 checks or $10 a month unlimited. Every result lists the sources searched.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

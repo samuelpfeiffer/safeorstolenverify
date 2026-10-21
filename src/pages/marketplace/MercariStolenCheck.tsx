@@ -4,7 +4,7 @@ const MercariStolenCheck = () => {
   return (
     <MarketplaceLandingTemplate
       title="Mercari Stolen Item Check - Verify Before Buying | SafeOrStolen"
-      metaDescription="Check if a Mercari item is stolen before you buy. Ask the seller for the IMEI or serial, enter it on SafeOrStolen and see theft reports in seconds. 2 free checks."
+      metaDescription="Check if a Mercari item is stolen before you buy. Ask the seller for the IMEI or serial, enter it on SafeOrStolen and see theft reports in seconds. 1 free check."
       h1="Check if Mercari Items Are Stolen"
       keywords={[
         'mercari stolen check',
@@ -50,7 +50,7 @@ const MercariStolenCheck = () => {
       faqs={[
         {
           question: "How do I verify Mercari electronics?",
-          answer: "Message the seller through Mercari and ask for the IMEI (phones) or serial number (electronics), plus a photo of it on the device. Enter it at safeorstolen.com/verify before you buy. The first 2 checks are free, and each one is saved to your account with the date."
+          answer: "Message the seller through Mercari and ask for the IMEI (phones) or serial number (electronics), plus a photo of it on the device. Enter it at safeorstolen.com/verify before you buy. the first check is free, and each one is saved to your account with the date."
         },
         {
           question: "Does Mercari check for stolen items?",
@@ -66,7 +66,7 @@ const MercariStolenCheck = () => {
         }
       ]}
       ctaTitle="Shop Mercari Safely"
-      ctaDescription="Check the IMEI or serial before your next Mercari purchase. 2 free checks, no credit card."
+      ctaDescription="Check the IMEI or serial before your next Mercari purchase. 1 free check, no credit card."
     />
   );
 };

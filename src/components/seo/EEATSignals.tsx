@@ -40,7 +40,7 @@ export const EEATSignals = () => {
  {/* Concrete, verifiable trust indicators */}
  <meta
  name="trustworthiness"
- content="HTTPS site, plate checks never show owner names, pricing published at safeorstolen.com/pricing (2 free checks, $0.99 a check, $10 a month unlimited, 30-day refund on the monthly plan), Terms of Service and Privacy Policy published, based in Peoria, Arizona"
+ content="HTTPS site, plate checks never show owner names, pricing published at safeorstolen.com/pricing (1 free check, $0.99 for 2 checks, $10 a month unlimited, 30-day refund on the monthly plan), Terms of Service and Privacy Policy published, based in Peoria, Arizona"
  />
 
  {/* ─── Real Team ──────────────────────────────── */}

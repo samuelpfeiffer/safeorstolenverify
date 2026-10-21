@@ -40,7 +40,7 @@ const GetAppPage = () => {
       {
         "@type": "Question",
         "name": "Is the SafeOrStolen app free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The SafeOrStolen web app is free to install from safeorstolen.com/app, and your first 2 checks are free, no account or credit card needed. After that it costs $0.99 a check or $10 a month for unlimited checks." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The SafeOrStolen web app is free to install from safeorstolen.com/app, and your first check is free, no account or credit card needed. After that it costs $0.99 for 2 checks or $10 a month for unlimited checks." }
       },
       {
         "@type": "Question",
@@ -208,7 +208,7 @@ const GetAppPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Check Before You Pay</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Add the web app to your home screen and use your 2 free checks. No credit card.
+              Add the web app to your home screen and use your 1 free check. No credit card.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/app">

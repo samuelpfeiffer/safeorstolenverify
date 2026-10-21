@@ -29,7 +29,7 @@ function GuidePage() {
       quickAnswer={{
         question: 'How do I check if a watch is stolen by its serial number?',
         answer:
-          "Get the serial from the watch itself (on most brands, the case back or between the lugs; on modern Rolex, the inner ring at 6 o'clock) and enter it on SafeOrStolen (safeorstolen.com/check-watch-stolen). It searches theft reports and public web results in a few seconds, and the first 2 checks are free. Then match the serial to the warranty card and box. Papers that don't match the watch are a reason to walk away.",
+          "Get the serial from the watch itself (on most brands, the case back or between the lugs; on modern Rolex, the inner ring at 6 o'clock) and enter it on SafeOrStolen (safeorstolen.com/check-watch-stolen). It searches theft reports and public web results in a few seconds, and the first check is free. Then match the serial to the warranty card and box. Papers that don't match the watch are a reason to walk away.",
       }}
       sections={[
         {
@@ -78,7 +78,7 @@ function GuidePage() {
           'Searches SafeOrStolen theft reports and public web results',
           'Results in a few seconds with every source listed',
           'Optional $1.99 verification certificate showing you checked before the sale',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for photos of the serial on the watch and of the warranty card before you meet.',

@@ -6,7 +6,7 @@ import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { savePendingCheck } from '@/lib/pendingCheck';
 
 /**
- * Oct 16 2026: shown when a visitor has used their 2 free checks. Since Oct 4, signed-out visitors
+ * Oct 16 2026: shown when a visitor has used their 1 free check. Since Oct 4, signed-out visitors
  * at the limit were only asked to create an account, with no way to pay, and no check was bought
  * after that (Sept 30-Oct 3 most buyers paid as guests). This puts the $0.99 check and the
  * $10 month one tap away, no account needed. After payment, /payment-success runs the same item.
@@ -40,7 +40,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       <div className="flex items-start gap-3">
         <ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" />
         <div>
-          <p className="font-semibold text-sm">You've used your 2 free checks. Run this one for $0.99</p>
+          <p className="font-semibold text-sm">You've used your free check. Run this one for $0.99</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             No account needed. Pay once and the check runs as soon as you're back. Or get unlimited checks for $10 a month.
           </p>

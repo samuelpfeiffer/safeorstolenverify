@@ -14,7 +14,7 @@ const MobileAppPage = () => {
  const navigate = useNavigate();
 
  const faqs = [
- { question: "Is there a SafeOrStolen app in the App Store or Google Play?", answer: "No. SafeOrStolen is a free installable web app at safeorstolen.com/app, not an App Store or Google Play app. You add it to your home screen from your phone's browser, and it opens full screen like any other app. Installing it is free; you get 2 free checks, no account needed, then $0.99 a check or $10 a month for unlimited checks." },
+ { question: "Is there a SafeOrStolen app in the App Store or Google Play?", answer: "No. SafeOrStolen is a free installable web app at safeorstolen.com/app, not an App Store or Google Play app. You add it to your home screen from your phone's browser, and it opens full screen like any other app. Installing it is free; you get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks." },
  { question: "Does SafeOrStolen work on iPhone and Android?", answer: "Yes. The SafeOrStolen web app runs in Safari on iPhone and iPad and in Chrome on Android, and it also works in any desktop browser. Install it from safeorstolen.com/app. There's nothing to download from an app store." },
  { question: "Can I use SafeOrStolen without internet?", answer: "No. Every check searches SafeOrStolen's theft reports and other records online, so you need a data connection to run one. If signal is weak at the meetup spot, run the check before you leave, using the serial, IMEI or VIN the seller sends you." },
  { question: "How do I install SafeOrStolen on my phone?", answer: "On iPhone, open safeorstolen.com/app in Safari, tap the Share button, then tap Add to Home Screen. On Android, open the same address in Chrome, tap the three-dot menu, then tap Install app or Add to Home screen. The SafeOrStolen icon then sits on your home screen." },
@@ -62,13 +62,13 @@ const MobileAppPage = () => {
  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 
  <meta property="og:title" content="SafeOrStolen on Your Phone - Free Web App" />
- <meta property="og:description" content="Add SafeOrStolen to your home screen from safeorstolen.com/app. Free to install, 2 free checks." />
+ <meta property="og:description" content="Add SafeOrStolen to your home screen from safeorstolen.com/app. Free to install, 1 free check." />
  <meta property="og:url" content="https://safeorstolen.com/mobile-app" />
  <meta property="og:type" content="website" />
 
  <meta name="ai:purpose" content="Free installable web app for checking whether an item is reported stolen before buying it" />
  <meta name="ai:service_type" content="Installable web app (not in the App Store or Google Play) with a camera barcode scanner" />
- <meta name="ai:pricing" content="Free to install, 2 free checks, $0.99/check or $10/month unlimited" />
+ <meta name="ai:pricing" content="Free to install, 1 free check, $0.99 for 2 checks or $10/month unlimited" />
 
  </Helmet>
 
@@ -97,7 +97,7 @@ const MobileAppPage = () => {
  <li>iPhone: Safari, Share, Add to Home Screen</li>
  <li>Android: Chrome, menu, Install app</li>
  </ol>
- <p>Pricing: free to install, 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
+ <p>Pricing: free to install, 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
  </article>
  </noscript>
 
@@ -132,7 +132,7 @@ const MobileAppPage = () => {
  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Runs in Safari and Chrome</span>
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> No app store needed</span>
- <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> 2 free checks included</span>
+ <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> 1 free check included</span>
  </div>
  </div>
  </section>

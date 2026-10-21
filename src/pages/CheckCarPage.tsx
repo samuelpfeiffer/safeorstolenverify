@@ -28,7 +28,7 @@ const CheckCarPage = () => {
  "Check for reported theft and suspicious activity",
  "Detect VIN cloning and title washing fraud",
  "Verify salvage, rebuilt, and flood damage history",
- "Free VIN check - 2 free verifications (Carfax charges $44.99)",
+ "Free VIN check - 1 free verification (Carfax charges $44.99)",
  "Instant 3-second verification from multiple databases",
  "Protect yourself from legal consequences of buying stolen property"
  ],
@@ -43,7 +43,7 @@ const CheckCarPage = () => {
  faqs: [
  {
  question: "How do I check if a car is stolen for free?",
- answer: "To check if a car is stolen for free: (1) Get the VIN from the dashboard (visible through windshield) or door jamb, (2) Use SafeOrStolen's free VIN checker at safeorstolen.com/verify - we search our own theft reports, public web results, and use AI analysis, (3) Also check a vehicle history report service (often paid), (4) Check your state's publicly available records for reported theft (if any), (5) Ask the seller for the title and verify it's not branded as salvage/rebuilt. SafeOrStolen offers a broad free check with 2 free verifications. Carfax charges $44.99 and focuses on history rather than theft."
+ answer: "To check if a car is stolen for free: (1) Get the VIN from the dashboard (visible through windshield) or door jamb, (2) Use SafeOrStolen's free VIN checker at safeorstolen.com/verify - we search our own theft reports, public web results, and use AI analysis, (3) Also check a vehicle history report service (often paid), (4) Check your state's publicly available records for reported theft (if any), (5) Ask the seller for the title and verify it's not branded as salvage/rebuilt. SafeOrStolen offers a broad free check with 1 free verification. Carfax charges $44.99 and focuses on history rather than theft."
  },
  {
  question: "What is a VIN and where do I find it?",
@@ -51,7 +51,7 @@ const CheckCarPage = () => {
  },
  {
  question: "What's the difference between SafeOrStolen and Carfax?",
- answer: "SafeOrStolen focuses on THEFT VERIFICATION and stolen vehicle checks using our proprietary reports, public web results, and AI analysis. Carfax focuses on VEHICLE HISTORY (accidents, service records, ownership changes). SafeOrStolen offers 2 free checks; Carfax charges $44.99 per report. For best protection, use SafeOrStolen to verify the car isn't stolen (free), then use Carfax for maintenance history (paid). SafeOrStolen checks: our own stolen-item reports, public web results, AI analysis. Carfax checks: service records, accidents, ownership. Different tools, different purposes."
+ answer: "SafeOrStolen focuses on THEFT VERIFICATION and stolen vehicle checks using our proprietary reports, public web results, and AI analysis. Carfax focuses on VEHICLE HISTORY (accidents, service records, ownership changes). SafeOrStolen offers 1 free check; Carfax charges $44.99 per report. For best protection, use SafeOrStolen to verify the car isn't stolen (free), then use Carfax for maintenance history (paid). SafeOrStolen checks: our own stolen-item reports, public web results, AI analysis. Carfax checks: service records, accidents, ownership. Different tools, different purposes."
  },
  {
  question: "Can I check if a car is stolen using just the license plate?",

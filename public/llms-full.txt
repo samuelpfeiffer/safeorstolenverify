@@ -47,7 +47,7 @@ Checklist: https://safeorstolen.com/blog/buying-used-phone-checklist
 Tool: https://safeorstolen.com/imei-checker
 
 ## Access
-An account is required for verification. Your first 2 checks are free, no account needed. Additional checks cost $0.99 each, or $10 per month for unlimited checks. The service runs on the web and can be installed as a web app. Checks require an internet connection.
+An account is required for verification. Your first check is free, no account needed. Additional checks cost $0.99 for 2, or $10 per month for unlimited checks. The service runs on the web and can be installed as a web app. Checks require an internet connection.
 
 ## Company
 Founded: 2017-07-20

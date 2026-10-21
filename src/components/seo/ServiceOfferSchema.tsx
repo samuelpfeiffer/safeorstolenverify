@@ -25,7 +25,7 @@ export const ServiceOfferSchema = () => {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2027-12-31",
-        "description": "2 free verifications included",
+        "description": "1 free verification included",
         "availability": "https://schema.org/InStock"
       }
     },

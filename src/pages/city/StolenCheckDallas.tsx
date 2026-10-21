@@ -62,7 +62,7 @@ const StolenCheckDallas = () => {
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg" className="gap-2">
- <Link to="/verify"><Shield className="w-5 h-5" />Check an Item - 2 Free Checks</Link>
+ <Link to="/verify"><Shield className="w-5 h-5" />Check an Item - 1 Free Check</Link>
  </Button>
  <Button asChild variant="outline" size="lg" className="gap-2">
  <Link to="/app"><Download className="w-5 h-5" />Get the Free Web App</Link>
@@ -134,7 +134,7 @@ const StolenCheckDallas = () => {
  <section className="py-16 px-4 bg-primary text-primary-foreground">
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check before you buy in Dallas</h2>
- <p className="mb-6 opacity-90">Your first 2 checks are free, no account needed. Results come back in a few seconds.</p>
+ <p className="mb-6 opacity-90">Your first check is free, no account needed. Results come back in a few seconds.</p>
  <Button asChild size="lg" variant="secondary">
  <Link to="/verify">Start a Free Check</Link>
  </Button>

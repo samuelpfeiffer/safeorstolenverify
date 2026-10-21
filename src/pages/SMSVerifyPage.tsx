@@ -14,7 +14,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
   {
     q: 'Can I text a serial number or IMEI to check if it is stolen?',
-    a: "Not yet. SafeOrStolen's text-message check is coming soon but isn't available today, and there is no number to text. For now, open safeorstolen.com/verify in your phone's browser, or install the free web app from safeorstolen.com/app, and type the serial, IMEI or VIN there. The first 2 checks are free with an account.",
+    a: "Not yet. SafeOrStolen's text-message check is coming soon but isn't available today, and there is no number to text. For now, open safeorstolen.com/verify in your phone's browser, or install the free web app from safeorstolen.com/app, and type the serial, IMEI or VIN there. the first check is free with an account.",
   },
   {
     q: 'When will SMS checks be available?',
@@ -73,7 +73,7 @@ const SMSVerifyPage = () => {
             <p className="text-lg text-foreground leading-relaxed">
               You can't check an item by text message yet. SafeOrStolen plans to let you text a serial number, IMEI or VIN and get
               the result back by SMS, but it isn't working today and there's no number to text. To check something now, use
-              safeorstolen.com on your phone's browser or the free installable app. Your first 2 checks are free.
+              safeorstolen.com on your phone's browser or the free installable app. Your first check is free.
             </p>
           </div>
         </section>

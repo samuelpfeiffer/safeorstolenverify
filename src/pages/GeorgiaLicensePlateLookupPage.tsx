@@ -41,7 +41,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           "Results in a few seconds, saved to your account with the date",
           "Never shows owner names or other private DMV information",
           "Reminds you to match the plate, VIN and title",
-          "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
+          "1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited"
         ],
 
         process: [
@@ -80,7 +80,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           },
           {
             question: "Is the Georgia license plate lookup free?",
-            answer: "A free SafeOrStolen account comes with 2 free checks, no credit card, and plate lookups count as checks. After that it's $0.99 a check or $10 a month for unlimited checks."
+            answer: "A free SafeOrStolen account comes with 1 free check, no credit card, and plate lookups count as checks. After that it's $0.99 for 2 checks or $10 a month for unlimited checks."
           }
         ]
       }}

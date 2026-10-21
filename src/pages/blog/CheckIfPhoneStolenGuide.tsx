@@ -11,7 +11,7 @@ const FAQ_ITEMS = [
   { q: 'Can a stolen phone be used after a factory reset?', a: 'A factory reset does not change the IMEI, so a blacklisted phone stays blacklisted. iPhones also have Activation Lock tied to the owner\'s Apple Account, and most Android phones have Factory Reset Protection tied to the owner\'s Google account. Either one stops a reset phone from being set up without the owner\'s login.' },
   { q: 'What does a blacklisted IMEI mean?', a: 'A blacklisted IMEI has been reported lost or stolen to a carrier, or flagged for an unpaid balance. Carriers that honor the list will refuse to activate the phone, so it may not make calls or use mobile data. SafeOrStolen offers a paid blacklist check, and monthly members get up to 20 blacklist checks a month.' },
   { q: 'Is it illegal to buy a stolen phone?', a: 'Knowingly buying or keeping stolen property is a crime in every U.S. state. Even if you didn\'t know, police can take the phone back as evidence and return it to the owner, and you usually lose what you paid. Checking the IMEI and keeping a dated record of that check shows you tried to buy honestly.' },
-  { q: 'How much does it cost to check if a phone is stolen?', a: 'SafeOrStolen gives you 2 free checks, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks. The paid carrier blacklist check is separate; monthly members get up to 20 a month. An optional $1.99 certificate gives you a dated record of the check.' },
+  { q: 'How much does it cost to check if a phone is stolen?', a: 'SafeOrStolen gives you 1 free check, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks. The paid carrier blacklist check is separate; monthly members get up to 20 a month. An optional $1.99 certificate gives you a dated record of the check.' },
   { q: 'Can I check if an iPhone is locked to someone else without the IMEI?', a: 'Yes. Ask the seller to open Settings, tap their name at the top, then Find My > Find My iPhone. It should be off, and the seller should sign out of their Apple Account in front of you. If the phone shows "iPhone Locked to Owner" after a reset, it is still tied to someone else. Run the IMEI check as well.' },
   { q: 'What should I do if my phone was stolen?', a: 'Call your carrier and ask them to blacklist the IMEI. File a police report with the IMEI and serial number. Mark the phone as lost in Find My or Find My Device. Tell your insurer if it\'s covered. Then report it on SafeOrStolen so anyone who checks that IMEI sees the theft report.' },
 ];
@@ -100,12 +100,12 @@ const CheckIfPhoneStolenGuide = () => {
 
         <div className="speakable-summary bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10">
           <p className="text-foreground font-semibold text-lg leading-relaxed">
-            To check if a used phone is stolen, dial *#06# for the 15-digit IMEI and enter it at safeorstolen.com/imei-checker. The check searches SafeOrStolen theft reports and public web results, and can add a lost-and-stolen blacklist check. Also confirm the phone is not locked to the seller's Apple or Google account before you pay. The first 2 checks are free.</p>
+            To check if a used phone is stolen, dial *#06# for the 15-digit IMEI and enter it at safeorstolen.com/imei-checker. The check searches SafeOrStolen theft reports and public web results, and can add a lost-and-stolen blacklist check. Also confirm the phone is not locked to the seller's Apple or Google account before you pay. the first check is free.</p>
         </div>
 
         <div className="bg-card border border-border rounded-2xl p-6 mb-10 text-center">
           <p className="text-foreground font-bold text-lg mb-3">Got an IMEI number? Check it now.</p>
-          <p className="text-muted-foreground mb-4">2 free checks, no account needed. Results in a few seconds.</p>
+          <p className="text-muted-foreground mb-4">1 free check, no account needed. Results in a few seconds.</p>
           <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-3 rounded-xl hover:bg-primary/90 transition-all">
             Check an IMEI →
           </Link>
@@ -197,7 +197,7 @@ const CheckIfPhoneStolenGuide = () => {
 
           <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center mt-12">
             <h2 className="text-2xl font-black text-foreground mb-3">Check a phone in a few seconds</h2>
-            <p className="text-muted-foreground mb-6">2 free checks, no account needed, then $0.99 a check or $10 a month unlimited.</p>
+            <p className="text-muted-foreground mb-6">1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-all">
                 Check an IMEI →

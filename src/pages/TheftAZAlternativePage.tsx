@@ -29,7 +29,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'Your first 2 checks are free, with no account or credit card needed. After that, a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
+    a: 'Your first check is free, with no account or credit card needed. After that, a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
   },
 ];
 
@@ -41,7 +41,7 @@ const ROWS: [string, boolean | string, boolean | string][] = [
   ['Year, make, and model decoded from the VIN', false, true],
   ['Open safety recalls for the vehicle', false, true],
   ['Check saved to your account with the date', false, true],
-  ['Cost', 'Free', '2 free checks, then $0.99 or $10/mo'],
+  ['Cost', 'Free', '1 free check, then $0.99 or $10/mo'],
 ];
 
 const TheftAZAlternativePage = () => {
@@ -93,7 +93,7 @@ const TheftAZAlternativePage = () => {
                 Check a VIN or Arizona plate <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">2 free checks, no account needed</p>
+            <p className="text-muted-foreground text-sm mt-3">1 free check, no account needed</p>
           </div>
         </section>
 

@@ -22,7 +22,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "item": {
             "@type": "Product",
             "name": "SafeOrStolen",
-            "description": "Stolen item check for phones, vehicles, bikes, guns and other serial-numbered items. 2 free checks, then $0.99 a check or $10 a month.",
+            "description": "Stolen item check for phones, vehicles, bikes, guns and other serial-numbered items. 1 free check, then $0.99 for 2 checks or $10 a month.",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
           }
         },
@@ -40,7 +40,7 @@ const SafeOrStolenVsIMEIInfo = () => {
   };
 
   const comparisonData = [
-    { feature: 'Pricing', safeOrStolen: '2 free checks, then $0.99 a check or $10 a month unlimited', imeiInfo: 'Free basic lookup; paid extra checks', winner: 'tie' },
+    { feature: 'Pricing', safeOrStolen: '1 free check, then $0.99 for 2 checks or $10 a month unlimited', imeiInfo: 'Free basic lookup; paid extra checks', winner: 'tie' },
     { feature: 'What it searches', safeOrStolen: 'SafeOrStolen theft reports and public web results', imeiInfo: 'Device information', winner: 'tie' },
     { feature: 'Item types', safeOrStolen: 'Phones, vehicles, bikes, guns, tools, electronics', imeiInfo: 'Phones only', winner: 'sos' },
     { feature: 'Phone blacklist check', safeOrStolen: 'Paid add-on; up to 20 a month on the $10 plan', imeiInfo: 'Paid', winner: 'tie' },
@@ -99,7 +99,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                 <CardContent className="p-6">
                   <p className="text-lg text-center">
                     If you're buying a used phone and want to know if it was reported stolen, use{' '}
-                    <strong className="text-primary">SafeOrStolen</strong>: 2 free checks, it searches SafeOrStolen
+                    <strong className="text-primary">SafeOrStolen</strong>: 1 free check, it searches SafeOrStolen
                     theft reports and public web results, and it also handles VINs and serial numbers. IMEI.info is
                     fine if you only want to look up a phone's model and specs.
                   </p>
@@ -204,11 +204,11 @@ const SafeOrStolenVsIMEIInfo = () => {
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          Limited to 2 free searches per account
+                          Limited to 1 free search per account
                         </li>
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          After the free checks, $0.99 a check or $10 a month
+                          After the free checks, $0.99 for 2 checks or $10 a month
                         </li>
                       </ul>
                     </div>
@@ -358,7 +358,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      You get 2 free checks, no account or credit card needed. After that it's $0.99 a check
+                      You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks
                       or $10 a month for unlimited checks, cancel anytime. The phone blacklist check is a paid extra;
                       monthly members get up to 20 a month.
                     </p>

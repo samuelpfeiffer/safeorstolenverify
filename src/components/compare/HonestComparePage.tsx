@@ -16,15 +16,15 @@ export type HonestCompare = {
   faqs: CompareFaq[];
 };
 
-const SOS_PRICE = '2 free checks, no account needed, then $0.99 per check or $10/month unlimited.';
+const SOS_PRICE = '1 free check, no account needed, then $0.99 for 2 checks or $10/month unlimited.';
 
 export const COMPARES: Record<string, HonestCompare> = {
   'safeorstolen-vs-nicb-vincheck': {
     slug: 'safeorstolen-vs-nicb-vincheck',
     title: 'SafeOrStolen vs NICB VINCheck | SafeOrStolen',
-    description: 'NICB VINCheck is free for vehicles. SafeOrStolen also checks phones, guns, bikes and serials, with 2 free checks then $0.99.',
+    description: 'NICB VINCheck is free for vehicles. SafeOrStolen also checks phones, guns, bikes and serials, with 1 free check then $0.99.',
     h1: 'SafeOrStolen vs NICB VINCheck',
-    intro: 'NICB VINCheck is a free vehicle lookup from the National Insurance Crime Bureau. It covers vehicles only. SafeOrStolen checks vehicles and also phones, guns, bikes, plates and other serial numbers, and charges after 2 free checks.',
+    intro: 'NICB VINCheck is a free vehicle lookup from the National Insurance Crime Bureau. It covers vehicles only. SafeOrStolen checks vehicles and also phones, guns, bikes, plates and other serial numbers, and charges after 1 free check.',
     themName: 'NICB VINCheck',
     themUrl: 'https://www.nicb.org/vincheck',
     rows: [

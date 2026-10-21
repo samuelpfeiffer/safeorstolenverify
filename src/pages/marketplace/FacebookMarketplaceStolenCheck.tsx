@@ -87,7 +87,7 @@ const FacebookMarketplaceStolenCheck = () => {
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Before you meet the seller, ask for the IMEI, VIN or serial number and check it. SafeOrStolen searches its
-              own theft reports and public web listings for that number in a few seconds. Your first 2 checks are free.
+              own theft reports and public web listings for that number in a few seconds. Your first check is free.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -302,7 +302,7 @@ const FacebookMarketplaceStolenCheck = () => {
               Don't Risk Buying Stolen Goods
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              Check the number before your next Facebook Marketplace purchase. Your first 2 checks are free.
+              Check the number before your next Facebook Marketplace purchase. Your first check is free.
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify an Item Now - It's Free</Link>

@@ -48,7 +48,7 @@ export const ShareVerification = () => {
             </div>
             <h3 className="text-foreground font-bold text-base mb-2">Send to a Friend</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Know someone buying a used phone or car? Send them SafeOrStolen. Two free checks — no excuses.
+              Know someone buying a used phone or car? Send them SafeOrStolen. one free check — no excuses.
             </p>
           </div>
 

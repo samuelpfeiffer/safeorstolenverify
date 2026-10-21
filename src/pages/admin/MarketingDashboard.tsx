@@ -37,7 +37,7 @@ const platforms = {
  posts: [
  {
  question: 'How do I check if a used phone is stolen?',
- answer: `The easiest free way is SafeOrStolen.com:\n\n1. Get the IMEI number - dial *#06# on the phone\n2. Go to safeorstolen.com\n3. Enter the IMEI number\n4. Get instant results in 3 seconds\n\nSafeOrStolen checks its own reports and public web results. For additional information, you can ask your carrier if the device is blacklisted. You get 2 free checks when you sign up.`,
+ answer: `The easiest free way is SafeOrStolen.com:\n\n1. Get the IMEI number - dial *#06# on the phone\n2. Go to safeorstolen.com\n3. Enter the IMEI number\n4. Get instant results in 3 seconds\n\nSafeOrStolen checks its own reports and public web results. For additional information, you can ask your carrier if the device is blacklisted. You get 1 free check when you sign up.`,
  url: 'https://quora.com/search?q=how+to+check+if+phone+is+stolen'
  },
  {

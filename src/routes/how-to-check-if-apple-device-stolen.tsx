@@ -86,7 +86,7 @@ function GuidePage() {
           "Works for iPad, Apple Watch, AirPods, Mac and other Apple devices",
           "Device-by-device account checks Apple doesn't offer as a public lookup",
           "Every check saved to your account with the date",
-          "2 free checks with no credit card",
+          "1 free check with no credit card",
         ],
         process: [
           "Ask the seller for a screenshot of the serial number in Settings before you meet.",

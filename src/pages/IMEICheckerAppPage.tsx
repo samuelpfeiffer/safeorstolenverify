@@ -60,7 +60,7 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is the IMEI checker app free?",
- "acceptedAnswer": { "@type": "Answer", "text": "Installing the SafeOrStolen web app is free, and your first 2 checks are free, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Installing the SafeOrStolen web app is free, and your first check is free, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month." }
  }
  ]
  };
@@ -78,7 +78,7 @@ const IMEICheckerAppPage = () => {
  <>
  <PageSEO
  title="IMEI Checker App - Scan and Check a Phone | SafeOrStolen"
- description="Free installable IMEI checker web app: scan the IMEI barcode, see make and model and any theft report in a few seconds. 2 free checks, no app store needed."
+ description="Free installable IMEI checker web app: scan the IMEI barcode, see make and model and any theft report in a few seconds. 1 free check, no app store needed."
  keywords="IMEI checker app, IMEI scanner app, stolen phone app, check IMEI app, phone verification app, barcode IMEI scanner"
  canonical="/imei-checker-app"
  structuredData={[faqSchema, appSchema]}

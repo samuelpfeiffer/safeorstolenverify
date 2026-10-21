@@ -44,7 +44,7 @@ const HowToSellVerifiedItems = () => {
           "@type": "HowToStep",
           position: 2,
           name: "Run free verification",
-          text: "Enter the identifier at safeorstolen.com/verify. The first 2 checks are free and results take a few seconds.",
+          text: "Enter the identifier at safeorstolen.com/verify. the first check is free and results take a few seconds.",
         },
         {
           "@type": "HowToStep",
@@ -70,7 +70,7 @@ const HowToSellVerifiedItems = () => {
           name: "How much does seller verification cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You get 2 free checks with a free SafeOrStolen account. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
+            text: "You get 1 free check with a free SafeOrStolen account. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
           },
         },
         {
@@ -227,7 +227,7 @@ const HowToSellVerifiedItems = () => {
                 {
                   step: "2",
                   title: "Run a Verification",
-                  desc: "Sign in at safeorstolen.com/verify and enter the identifier. Your first 2 checks are free, no account needed.",
+                  desc: "Sign in at safeorstolen.com/verify and enter the identifier. Your first check is free, no account needed.",
                 },
                 {
                   step: "3",
@@ -327,13 +327,13 @@ const HowToSellVerifiedItems = () => {
               Seller Pricing: What Does It Cost?
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              SafeOrStolen offers 2 free checks, then flexible pricing:
+              SafeOrStolen offers 1 free check, then flexible pricing:
             </p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />{" "}
                 <span>
-                  <strong className="text-foreground">$0.99/check</strong> — Pay
+                  <strong className="text-foreground">$0.99 for 2 checks</strong> — Pay
                   per verification with a free account.
                 </span>
               </li>
@@ -373,7 +373,7 @@ const HowToSellVerifiedItems = () => {
               {[
                 {
                   q: "How much does seller verification cost?",
-                  a: "You get 2 free checks with a free SafeOrStolen account. After that it's $0.99 a check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
+                  a: "You get 1 free check with a free SafeOrStolen account. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
                 },
                 {
                   q: "What can a verification record do for a seller?",
@@ -411,7 +411,7 @@ const HowToSellVerifiedItems = () => {
               Start Selling Smarter Today
             </h2>
             <p className="opacity-90 mb-6">
-              2 free checks, then $0.99 a check or $10 a month unlimited. Share a
+              1 free check, then $0.99 for 2 checks or $10 a month unlimited. Share a
               dated result and let buyers review it themselves.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

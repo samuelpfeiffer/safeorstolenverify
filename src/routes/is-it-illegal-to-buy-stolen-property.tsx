@@ -74,13 +74,13 @@ function GuidePage() {
         howItWorks:
           'Before you buy, enter the serial number, IMEI or VIN above. SafeOrStolen searches its own theft reports and public web results, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date, which is a record that you looked.',
         whyCheck:
-          'A thief generally can\'t pass ownership to anyone, so even a careful, honest buyer can lose the item. Checking first is the only way to avoid that loss, and a dated check is evidence of good faith if questions come up later. The first 2 checks are free.',
+          'A thief generally can\'t pass ownership to anyone, so even a careful, honest buyer can lose the item. Checking first is the only way to avoid that loss, and a dated check is evidence of good faith if questions come up later. the first check is free.',
         benefits: [
           "Find out if the number is reported in SafeOrStolen theft reports or public web results",
           "Every source listed with the result",
           "Dated record of the check saved to your account",
           "Optional $1.99 verification certificate with its own link",
-          "2 free checks with no credit card",
+          "1 free check with no credit card",
         ],
         process: [
           "Ask the seller for the serial number, IMEI or VIN before you meet.",

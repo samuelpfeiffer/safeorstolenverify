@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  localLaws: "Knowingly buying or keeping a stolen vehicle is a crime in North Dakota. If police later find the car was stolen, they can take it back for the owner, and you lose what you paid. Keep a signed bill of sale with the seller's name, the VIN and the date. The North Dakota DOT Motor Vehicle Division handles titles and registration."
  },
  faqs: [
- { question: "How do I check a North Dakota VIN for free?", answer: "Create a free SafeOrStolen account for 2 free checks, no credit card. Enter the 17-character VIN. The check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results. Ask local police if you want the VIN run through law-enforcement records." },
+ { question: "How do I check a North Dakota VIN for free?", answer: "Create a free SafeOrStolen account for 1 free check, no credit card. Enter the 17-character VIN. The check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results. Ask local police if you want the VIN run through law-enforcement records." },
  { question: "Is a VIN check required in North Dakota?", answer: "Not for a private sale. It's still worth doing, because if the car turns out to be stolen, police can return it to its owner and you lose your money. Match the VIN on the dash, door jamb and title before you pay." },
  { question: "How do I transfer a title in North Dakota?", answer: "The seller signs the title over to you, and you take it to the North Dakota DOT Motor Vehicle Division with a bill of sale to register the car. Before anyone signs, check that the VIN printed on the title matches the VIN on the car." }
  ]
@@ -60,7 +60,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  localLaws: "Knowingly receiving stolen property is a crime in Oklahoma, and a stolen car can be taken back for its owner even after you've paid for it. Keep a bill of sale with the seller's name, the VIN and the date. Oklahoma titles and registration are handled by Service Oklahoma and its licensed tag agencies."
  },
  faqs: [
- { question: "How do I check an Oklahoma VIN for free?", answer: "Sign up for a free SafeOrStolen account to get 2 free checks, no credit card. Enter the VIN to decode the year, make and model, list open safety recalls, and search SafeOrStolen theft reports and public web results. For law-enforcement records, ask local police to run the VIN." },
+ { question: "How do I check an Oklahoma VIN for free?", answer: "Sign up for a free SafeOrStolen account to get 1 free check, no credit card. Enter the VIN to decode the year, make and model, list open safety recalls, and search SafeOrStolen theft reports and public web results. For law-enforcement records, ask local police to run the VIN." },
  { question: "Is a VIN check required in Oklahoma?", answer: "Not for a private sale. It's still smart, because if the car was stolen, police can return it to the owner and you lose what you paid. Match the VIN in at least two places on the car with the title before handing over money." },
  { question: "How do I transfer a title in Oklahoma?", answer: "The seller signs the title over to you, and you take it with a bill of sale to a tag agency to register the car in your name. Check that the VIN on the title matches the car before anyone signs." }
  ]
@@ -102,7 +102,7 @@ export const STATE_VIN_DATA_PART9: Record<string, any> = {
  localLaws: "Receiving stolen property is a crime in Rhode Island, and police can return a stolen car to its owner even after you've bought it. Keep a bill of sale with the seller's name, the VIN and the date. The Rhode Island DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I check a Rhode Island VIN for free?", answer: "A free SafeOrStolen account comes with 2 free checks, no credit card. Enter the VIN to decode the year, make and model, list open safety recalls, and search SafeOrStolen theft reports and public web results. For law-enforcement records, ask local police to run the VIN." },
+ { question: "How do I check a Rhode Island VIN for free?", answer: "A free SafeOrStolen account comes with 1 free check, no credit card. Enter the VIN to decode the year, make and model, list open safety recalls, and search SafeOrStolen theft reports and public web results. For law-enforcement records, ask local police to run the VIN." },
  { question: "Is a VIN check required in Rhode Island?", answer: "Not for a private sale. It's still worth it, because a stolen car can be taken back for its owner and you lose what you paid. Match the VIN on the car with the title before you hand over money." },
  { question: "How do I spot rust damage on a Rhode Island car?", answer: "A VIN check won't show rust. Look under the car at the frame rails, rocker panels and wheel wells, press on any bubbled paint, and ask a mechanic to put it on a lift before you buy." }
  ]

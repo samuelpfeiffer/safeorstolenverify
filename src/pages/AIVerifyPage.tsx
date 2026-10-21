@@ -147,7 +147,7 @@ const AIVerifyPage: React.FC = () => {
         if (!user) {
           updateMessage(assistantId, {
             loading: false,
-            content: `I detected this looks like a **${itemType.toUpperCase()}** (${confidence}% confidence). To run a full verification across multiple sources, please [sign in](/auth?redirect=/ai-verify) — it's free and takes 10 seconds. You'll get **2 free checks**.`,
+            content: `I detected this looks like a **${itemType.toUpperCase()}** (${confidence}% confidence). To run a full verification across multiple sources, please [sign in](/auth?redirect=/ai-verify) — it's free and takes 10 seconds. You'll get **1 free check**.`,
           });
           return;
         }
@@ -531,7 +531,7 @@ const AIVerifyPage: React.FC = () => {
                 <>
                   {' · '}
                   <a href="/auth?redirect=/ai-verify" className="text-primary hover:underline">
-                    Sign in for 2 free checks
+                    Sign in for 1 free check
                   </a>
                 </>
               )}

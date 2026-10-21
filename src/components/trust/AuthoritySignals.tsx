@@ -11,7 +11,7 @@ const AUTHORITY_SIGNALS = [
   { icon: Lock, label: 'HTTPS', description: 'Encrypted connection' },
   { icon: Award, label: 'Sources listed', description: 'Every result shows what was searched' },
   { icon: Building, label: 'US-Based', description: 'Built for U.S. buyers and sellers' },
-  { icon: Users, label: '2 Free Checks', description: 'No credit card needed' },
+  { icon: Users, label: '1 Free Check', description: 'No credit card needed' },
   { icon: Globe, label: 'Any US item', description: 'Phones, cars, guns, bikes, tools' },
 ];
 

@@ -20,7 +20,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best for checking whether a vehicle is reported stolen: 2 free checks, then $0.99 a check or $10 a month unlimited"
+          "description": "Best for checking whether a vehicle is reported stolen: 1 free check, then $0.99 for 2 checks or $10 a month unlimited"
         }
       },
       {
@@ -61,7 +61,7 @@ const TopVINCheckServices2025 = () => {
       badge: 'Best for Stolen Checks',
       badgeColor: 'bg-green-500',
       bestFor: 'Checking whether a car is reported stolen before you meet the seller',
-      price: '2 free, then $0.99 a check',
+      price: '2 free, then $0.99 for 2 checks',
       fullReportPrice: '$10 a month for unlimited checks',
       stolenCheck: true,
       titleCheck: false,
@@ -225,7 +225,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">2 free, then $0.99 a check</p>
+                    <p className="text-xs text-muted-foreground mt-2">2 free, then $0.99 for 2 checks</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -404,7 +404,7 @@ const TopVINCheckServices2025 = () => {
                         Before Meeting the Seller
                       </h3>
                       <p className="text-muted-foreground">
-                        Run the VIN through <strong>SafeOrStolen</strong> (your first 2 checks are free) to see 
+                        Run the VIN through <strong>SafeOrStolen</strong> (your first check is free) to see 
                         whether it's reported stolen and has open recalls. If it's flagged, you skip the trip.
                       </p>
                     </div>

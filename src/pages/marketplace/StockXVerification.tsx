@@ -82,7 +82,7 @@ export default function StockXVerification() {
           'Checks SafeOrStolen theft reports and public web results',
           'Every source listed with the result',
           'Dated record of the check saved to your account',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for a photo of the serial label on the box and on the item.',

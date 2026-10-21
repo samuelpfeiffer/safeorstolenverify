@@ -70,7 +70,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                 <Button asChild size="lg" className="text-lg h-14 px-8">
                   <Link to="/verify">
                     <Search className="mr-2 h-5 w-5" />
-                    Check a {itemType} (2 free checks)
+                    Check a {itemType} (1 free check)
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-lg h-14 px-8">
@@ -85,7 +85,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>2 free checks, no card</span>
+                  <span>1 free check, no card</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="h-5 w-5 text-yellow-500" />
@@ -181,7 +181,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
               Don't Risk Buying Stolen {itemType}
             </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Check the {itemType.toLowerCase()} before you pay. Your first 2 checks are free and each takes a few seconds.
+              Check the {itemType.toLowerCase()} before you pay. Your first check is free and each takes a few seconds.
             </p>
             <Button asChild size="lg" variant="secondary" className="text-lg h-14 px-10">
               <Link to="/verify">

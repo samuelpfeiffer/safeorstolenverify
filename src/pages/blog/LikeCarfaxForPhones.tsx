@@ -30,7 +30,7 @@ const LikeCarfaxForPhones = () => {
     <>
       <PageSEO
         title="Like Carfax for Phones - How to Check an IMEI | SafeOrStolen"
-        description="Want a Carfax for phones? Dial *#06# for the IMEI, then check it on SafeOrStolen for theft reports and the phone's make and model in a few seconds. 2 free checks."
+        description="Want a Carfax for phones? Dial *#06# for the IMEI, then check it on SafeOrStolen for theft reports and the phone's make and model in a few seconds. 1 free check."
         keywords="like carfax for phones, carfax for everything, carfax for electronics, like carfax but for IMEI, carfax alternative for serial numbers, carfax style verification app"
         canonical="/blog/like-carfax-for-phones"
         structuredData={blogPostSchema}
@@ -40,7 +40,7 @@ const LikeCarfaxForPhones = () => {
         faqs={[
           {
             question: "Is there a Carfax for phones?",
-            answer: "Not in the sense of a full ownership and repair history. What you can do is check the phone's IMEI for theft reports. SafeOrStolen (safeorstolen.com/verify) searches its own theft reports and public web results, shows the make and model from the IMEI, and offers a paid carrier blacklist check. The first 2 checks are free."
+            answer: "Not in the sense of a full ownership and repair history. What you can do is check the phone's IMEI for theft reports. SafeOrStolen (safeorstolen.com/verify) searches its own theft reports and public web results, shows the make and model from the IMEI, and offers a paid carrier blacklist check. the first check is free."
           },
           {
             question: "How is SafeOrStolen like Carfax?",
@@ -52,7 +52,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Is SafeOrStolen better than Carfax?",
-            answer: "They answer different questions. Carfax is a vehicle history report. SafeOrStolen is a stolen check that works on phones, vehicles, bikes, guns, tools and electronics. For a used car, run both. For a phone, laptop or bike, Carfax has nothing to offer and SafeOrStolen does. The first 2 checks are free."
+            answer: "They answer different questions. Carfax is a vehicle history report. SafeOrStolen is a stolen check that works on phones, vehicles, bikes, guns, tools and electronics. For a used car, run both. For a phone, laptop or bike, Carfax has nothing to offer and SafeOrStolen does. the first check is free."
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",
@@ -188,7 +188,7 @@ const LikeCarfaxForPhones = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>2 free checks</strong>, then $0.99 a check or $10 a month unlimited</span>
+                    <span><strong>1 free check</strong>, then $0.99 for 2 checks or $10 a month unlimited</span>
                   </li>
                 </ul>
               </Card>
@@ -318,7 +318,7 @@ const LikeCarfaxForPhones = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Pricing</strong>: 2 free checks, then $0.99 a check or $10 a month unlimited</span>
+                  <span><strong>Pricing</strong>: 1 free check, then $0.99 for 2 checks or $10 a month unlimited</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -330,7 +330,7 @@ const LikeCarfaxForPhones = () => {
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-8 rounded-lg my-8">
               <h3 className="text-2xl font-bold mb-4 text-center">Check a Phone Now</h3>
               <p className="text-center text-muted-foreground mb-6">
-                2 free checks, no account needed. No credit card.
+                1 free check, no account needed. No credit card.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">

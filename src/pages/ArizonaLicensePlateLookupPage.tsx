@@ -20,7 +20,7 @@ const ArizonaLicensePlateLookupPage = () => {
  dateModified="2026-10-07"
  quickAnswer={{
  question: "How do I check if a car is stolen in Arizona?",
- answer: "Enter the plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup). SafeOrStolen searches Arizona law-enforcement stolen-vehicle records, updated twice a day, along with its own theft reports and public web results, and shows the result in a few seconds. The first 2 checks are free. Run both the plate and the VIN, because plates can be moved between cars, and never buy a car whose VIN doesn't match the title.",
+ answer: "Enter the plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup). SafeOrStolen searches Arizona law-enforcement stolen-vehicle records, updated twice a day, along with its own theft reports and public web results, and shows the result in a few seconds. the first check is free. Run both the plate and the VIN, because plates can be moved between cars, and never buy a car whose VIN doesn't match the title.",
  }}
  sections={[
  {
@@ -84,7 +84,7 @@ const ArizonaLicensePlateLookupPage = () => {
  "Guided Buyer's Check: title, VIN plates and seller ID",
  "Save a Proof of Clean Purchase when every step checks out",
  "For buyers and for sellers proving a car is clean",
- "2 free checks, no account needed",
+ "1 free check, no account needed",
  ],
 
  process: [
@@ -98,7 +98,7 @@ const ArizonaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "Can I check if a car is stolen in Arizona by its plate?",
- answer: "Yes. SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup) searches Arizona plates against Arizona law-enforcement stolen-vehicle records, which are updated twice a day, plus SafeOrStolen's own theft reports. You get one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. The first 2 checks are free.",
+ answer: "Yes. SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup) searches Arizona plates against Arizona law-enforcement stolen-vehicle records, which are updated twice a day, plus SafeOrStolen's own theft reports. You get one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. the first check is free.",
  },
  {
  question: "Will a plate lookup show the owner's name or address?",

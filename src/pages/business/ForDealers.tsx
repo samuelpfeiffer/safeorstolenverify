@@ -41,7 +41,7 @@ const FAQS = [
   {
     question: 'What does it cost a dealership?',
     answer:
-      "The same as anyone else. 2 free checks, no account needed, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There are no per-rooftop plans or overage fees. If you need something different for several stores, email safeorstolenmail@gmail.com.",
+      "The same as anyone else. 1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There are no per-rooftop plans or overage fees. If you need something different for several stores, email safeorstolenmail@gmail.com.",
   },
   {
     question: 'Can we give a buyer proof that we checked the car?',
@@ -101,7 +101,7 @@ export default function ForDealers() {
               <Button size="lg" asChild><Link to="/vin-checker">Check a VIN</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/bulk-check">Check a list of VINs</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 
@@ -179,7 +179,7 @@ export default function ForDealers() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Check the next trade-in</h2>
             <p className="text-muted-foreground mb-6">
-              2 free checks, then $0.99 per check or $10 a month unlimited. The free web app at safeorstolen.com/app
+              1 free check, then $0.99 for 2 checks or $10 a month unlimited. The free web app at safeorstolen.com/app
               works from a phone on the lot. Questions: safeorstolenmail@gmail.com.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -4,7 +4,7 @@ const BicycleSerialCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen"
- metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. 2 free checks, then $0.99 a check. Results in a few seconds."
+ metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. 1 free check, then $0.99 for 2 checks. Results in a few seconds."
  h1="Check if Bicycle is Stolen - Serial Number Verification"
  keywords={[
  'check if bike is stolen',
@@ -22,7 +22,7 @@ const BicycleSerialCheck = () => {
  itemType="Bicycle"
  identifierType="Serial Number"
  heroBadge="Bicycle Theft Verification"
- heroSubtitle="Before buying a used bicycle or e-bike, search the serial number against our theft reports, public web results, and a national stolen-bicycle registry. 2 free checks, then $0.99 a check or $10 a month unlimited."
+ heroSubtitle="Before buying a used bicycle or e-bike, search the serial number against our theft reports, public web results, and a national stolen-bicycle registry. 1 free check, then $0.99 for 2 checks or $10 a month unlimited."
  stats={[
  { value: "2", label: "Free Checks" },
  { value: "Seconds", label: "To a Result" },
@@ -98,7 +98,7 @@ const BicycleSerialCheck = () => {
  }
  ]}
  ctaTitle="Don't Buy a Stolen Bicycle"
- ctaDescription="A serial number check takes a few seconds, and your first 2 checks are free."
+ ctaDescription="A serial number check takes a few seconds, and your first check is free."
  relatedLinks={[
  { title: "E-Bike Verification", href: "/check-ebike" },
  { title: "Craigslist Safety", href: "/craigslist-safety-verification" },

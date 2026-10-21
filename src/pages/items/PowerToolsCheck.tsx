@@ -92,7 +92,7 @@ const PowerToolsCheck = () => {
         },
         {
           question: "How much does a power tool check cost?",
-          answer: "Your first 2 checks are free with a free SafeOrStolen account, no credit card. After that a check is $0.99, or $10 a month for unlimited checks, which helps when you're checking a whole kit. Cancel anytime."
+          answer: "Your first check is free with a free SafeOrStolen account, no credit card. After that a check is $0.99, or $10 a month for unlimited checks, which helps when you're checking a whole kit. Cancel anytime."
         }
       ]}
       ctaTitle="Check Power Tools Before You Buy"

@@ -114,7 +114,7 @@ export const RelatedPagesSection: React.FC<RelatedPagesSectionProps> = ({
  {/* Additional contextual links for SEO */}
  <div className="mt-6 flex flex-wrap gap-2 text-sm">
  <span className="text-muted-foreground">Quick links:</span>
- <Link to="/verify" className="text-primary hover:underline">2 Free Checks</Link>
+ <Link to="/verify" className="text-primary hover:underline">1 Free Check</Link>
  <span className="text-muted-foreground">•</span>
  <Link to="/app" className="text-primary hover:underline">Free Web App</Link>
  <span className="text-muted-foreground">•</span>

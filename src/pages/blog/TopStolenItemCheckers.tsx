@@ -81,11 +81,11 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How does Carfax compare to SafeOrStolen?",
-      answer: "Carfax sells paid vehicle history reports covering accidents, ownership and service records; check its site for current prices. SafeOrStolen costs $0.99 a check or $10 a month for unlimited checks across all item types. A SafeOrStolen VIN check decodes the vehicle, lists open recalls and searches its own theft reports and the web, plus Arizona law-enforcement records for Arizona VINs. It is not a full vehicle history report."
+      answer: "Carfax sells paid vehicle history reports covering accidents, ownership and service records; check its site for current prices. SafeOrStolen costs $0.99 for 2 checks or $10 a month for unlimited checks across all item types. A SafeOrStolen VIN check decodes the vehicle, lists open recalls and searches its own theft reports and the web, plus Arizona law-enforcement records for Arizona VINs. It is not a full vehicle history report."
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen gives you 2 free checks, then $0.99 for a single check or $10 a month for unlimited checks. A gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
+      answer: "SafeOrStolen gives you 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks. A gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -330,7 +330,7 @@ const TopStolenItemCheckers = () => {
                 <strong>Best for:</strong> Anyone buying used items from <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>, OfferUp, Craigslist, eBay, pawn shops, gun shows, or private sellers. The free installable web app makes it easy to run a check on your phone at an in-person meetup.
               </p>
               <p className="text-muted-foreground text-sm">
-                <strong>Pricing:</strong> 2 free checks, then $0.99/check or $10/month unlimited across all item types. Cancel anytime. Bulk checking for businesses is at /bulk-check.
+                <strong>Pricing:</strong> 1 free check, then $0.99 for 2 checks or $10/month unlimited across all item types. Cancel anytime. Bulk checking for businesses is at /bulk-check.
               </p>
               <div className="mt-4">
                 <Link to="/verify">
@@ -395,7 +395,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> decodes the VIN, lists open recalls and searches SafeOrStolen's theft reports and the web for $0.99 a check or $10 a month.
+                <strong>Best for:</strong> Buyers who need full vehicle history (accidents, service, ownership). If you only need theft verification, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> decodes the VIN, lists open recalls and searches SafeOrStolen's theft reports and the web for $0.99 for 2 checks or $10 a month.
               </p>
             </section>
 
@@ -425,7 +425,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> UK-based buyers and pawn shops. For US buyers, <Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> covers more item types, including guns, vehicles and bikes, for $0.99 a check.
+                <strong>Best for:</strong> UK-based buyers and pawn shops. For US buyers, <Link to="/verify" className="text-primary hover:underline">SafeOrStolen</Link> covers more item types, including guns, vehicles and bikes, for $0.99 for 2 checks.
               </p>
             </section>
 
@@ -514,7 +514,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick free gun serial checks as a first step. For firearm checks alongside every other item category, use <Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen's gun serial number lookup</Link> (2 free checks).
+                <strong>Best for:</strong> Quick free gun serial checks as a first step. For firearm checks alongside every other item category, use <Link to="/firearms-check" className="text-primary hover:underline">SafeOrStolen's gun serial number lookup</Link> (1 free check).
               </p>
             </section>
 
@@ -619,7 +619,7 @@ const TopStolenItemCheckers = () => {
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
-                  <p className="text-sm text-muted-foreground">Use Carfax for detailed accident, service and ownership history. For a quick VIN decode, recall list and theft-report search, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> costs $0.99 a check or $10 a month.</p>
+                  <p className="text-sm text-muted-foreground">Use Carfax for detailed accident, service and ownership history. For a quick VIN decode, recall list and theft-report search, <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link> costs $0.99 for 2 checks or $10 a month.</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking firearms?</h3>
@@ -659,7 +659,7 @@ const TopStolenItemCheckers = () => {
 
             {/* CTA */}
             <section className="py-8 text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-lg p-8">
-              <h2 className="text-2xl font-bold mb-4">Ready to Verify? Start With 2 Free Checks</h2>
+              <h2 className="text-2xl font-bold mb-4">Ready to Verify? Start With 1 Free Check</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
  SafeOrStolen searches its own theft reports, public web results and item-specific records for phones, vehicles, firearms, bikes and electronics. Results come back in a few seconds. No credit card required.
               </p>

@@ -51,7 +51,7 @@ const CraigslistSafetyVerification = () => {
     <>
       <PageSEO
         title="Craigslist Scam Check - Verify Items Before Meetup"
-        description="Check if a Craigslist item is stolen before you meet the seller: run the IMEI, VIN or serial in a few seconds. Safe meetup steps and warning signs. 2 free checks."
+        description="Check if a Craigslist item is stolen before you meet the seller: run the IMEI, VIN or serial in a few seconds. Safe meetup steps and warning signs. 1 free check."
         keywords="craigslist safety, craigslist scam check, verify craigslist item"
         canonical="/craigslist-safety-verification"
         structuredData={faqSchema}
@@ -71,7 +71,7 @@ const CraigslistSafetyVerification = () => {
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Get the IMEI, VIN or serial number from the seller and check it before you drive out. 
-              The result comes back in a few seconds, and your first 2 checks are free.
+              The result comes back in a few seconds, and your first check is free.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -305,7 +305,7 @@ const CraigslistSafetyVerification = () => {
               Stay Safe on Craigslist
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              Check the number before you pay. It takes a few seconds, and your first 2 checks are free.
+              Check the number before you pay. It takes a few seconds, and your first check is free.
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify an Item Free</Link>

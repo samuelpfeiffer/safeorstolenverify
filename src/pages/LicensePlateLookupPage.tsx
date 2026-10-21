@@ -23,7 +23,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 
 const QUICK_ANSWER =
-  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports and public web results for that plate, and Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. Your first 2 checks are free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
+  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports and public web results for that plate, and Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. Your first check is free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
 
 const CAN_CANT_ROWS: [string, string, string][] = [
   ['Is the plate reported stolen?', 'Yes, in the records searched', 'SafeOrStolen theft reports and public web results; Arizona plates also against Arizona law-enforcement records'],
@@ -196,7 +196,7 @@ const LicensePlateLookupPage = () => {
                 <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-2">
                   <span className="flex items-center gap-1">
                     <CheckCircle2 className="h-3 w-3 text-green-500" />
-                    2 free checks, no credit card
+                    1 free check, no credit card
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle2 className="h-3 w-3 text-green-500" />

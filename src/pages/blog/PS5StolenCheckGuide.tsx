@@ -373,7 +373,7 @@ const PS5StolenCheckGuide = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Check a PS5?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Search the console serial against SafeOrStolen theft reports and public web results. 2 free checks.
+              Search the console serial against SafeOrStolen theft reports and public web results. 1 free check.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">

@@ -81,7 +81,7 @@ export default function EbayBuyerProtection() {
           'Searches SafeOrStolen theft reports and public web results',
           'Every source listed with the result',
           'Dated record of the check saved to your account',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Read the listing for red flags and check the seller\'s feedback.',
@@ -110,7 +110,7 @@ export default function EbayBuyerProtection() {
           {
             question: 'Can I check if an eBay item is stolen before I buy?',
             answer:
-              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check), which searches its theft reports and public web results. The first 2 checks are free. When the item arrives, make sure the number on it matches what you checked.",
+              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check), which searches its theft reports and public web results. the first check is free. When the item arrives, make sure the number on it matches what you checked.",
           },
           {
             question: 'Is paying outside eBay covered by buyer protection?',

@@ -2,7 +2,7 @@
  * Stripe Configuration
  * 
  * Publishable keys are safe to expose in client-side code.
- * March 2026: Three-tier model — Free / $0.99 per check / $10/mo unlimited
+ * March 2026: Three-tier model — Free / $0.99 for 2 checks / $10/mo unlimited
  */
 
 export const STRIPE_CONFIG = {
@@ -15,7 +15,7 @@ export const STRIPE_CONFIG = {
     unlimited:   'price_1T8uToGxnZLw8J7O6GcOuV1w',   // $10/mo recurring
 
     // Legacy price IDs kept for existing subscribers
-    singleVerification: 'price_1T3nfCGxnZLw8J7OwqSRSPel', // $0.99 per verification (legacy)
+    singleVerification: 'price_1T3nfCGxnZLw8J7OwqSRSPel', // $0.99 for 2 checks (legacy)
     basic: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',               // $4.99/mo (legacy)
     pro: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',                 // $9.99/mo (legacy)
     business: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',            // $49.99/mo (legacy)

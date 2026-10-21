@@ -337,7 +337,7 @@ export default function BlogIndexPage() {
               <CardContent className="p-12">
                 <h2 className="text-3xl font-bold mb-4">Start Verifying Items Today</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Enter an IMEI, VIN or serial number and see in a few seconds whether it's been reported stolen. Your first 2 checks are free.
+                  Enter an IMEI, VIN or serial number and see in a few seconds whether it's been reported stolen. Your first check is free.
                 </p>
                 <Link to="/verify">
                   <button className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold rounded-lg hover:opacity-90 transition-opacity text-lg">

@@ -238,7 +238,7 @@ export default function CompleteVerificationGuide() {
 
  <div className="rounded-xl border border-border bg-muted/30 p-6 text-center">
  <p className="text-lg font-bold mb-2">Start with the theft report check</p>
- <p className="text-muted-foreground mb-4">2 free checks, no account needed. No credit card.</p>
+ <p className="text-muted-foreground mb-4">1 free check, no account needed. No credit card.</p>
  <Button asChild size="lg">
  <Link to="/check-if-stolen">Check an item</Link>
  </Button>

@@ -122,7 +122,7 @@ function generateRecommendations(
  id: 'upgrade',
  icon: '⚡',
  title: 'Unlock Unlimited Verifications',
- description: 'Get unlimited verifications for just $10/month — or pay $0.99 per check.',
+ description: 'Get unlimited verifications for just $10/month — or pay $0.99 for 2 checks.',
  cta: 'See Plans',
  action: 'navigate',
  target: '/pricing',

@@ -1,7 +1,7 @@
 /**
  * Verification endpoint served by the app's own backend.
  *
- * Visitors get 2 free checks without an account (Sept 30 2026: the Sep 19
+ * Visitors get 1 free check without an account (Sept 30 2026: the Sep 19
  * account wall stopped all sales). Limits: 2 per browser fingerprint and
  * a lifetime cap per connection (bot protection); nothing resets. After that: sign up or pay.
  */
@@ -43,7 +43,7 @@ export const Route = createFileRoute('/verify-api')({
             const { data: userData } = await authClient.auth.getUser(token);
             userId = userData?.user?.id ?? null;
           }
-          // No account: allowed for the 2 free checks (per browser + per connection limits in the gate).
+          // No account: allowed for the 1 free check (per browser + per connection limits in the gate).
           const clientIp =
             request.headers.get('cf-connecting-ip') ||
             request.headers.get('x-real-ip') ||

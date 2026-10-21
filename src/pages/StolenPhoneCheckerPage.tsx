@@ -42,7 +42,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks multiple sources, and costs $0.99/check or $10/month unlimited."
+ "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks multiple sources, and costs $0.99 for 2 checks or $10/month unlimited."
  }
  },
  {
@@ -50,7 +50,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "Is SafeOrStolen's phone checker free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "You get 2 free checks, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
+ "text": "You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
  }
  },
  {
@@ -115,7 +115,7 @@ const StolenPhoneCheckerPage = () => {
  <section className="text-center mb-16">
  <Badge variant="secondary" className="mb-4 text-sm px-4 py-2">
  <Shield className="w-4 h-4 mr-2 inline" />
- 2 Free Checks • Results in a Few Seconds • $10/mo Unlimited
+ 1 Free Check • Results in a Few Seconds • $10/mo Unlimited
  </Badge>
  
  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -175,7 +175,7 @@ const StolenPhoneCheckerPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>$0.99/check or $10/month unlimited — all item types included</span>
+ <span>$0.99 for 2 checks or $10/month unlimited — all item types included</span>
  </li>
  </ul>
  </section>
@@ -295,13 +295,13 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
- <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own theft reports and public web results, plus item-specific sources for bikes, guns, and Arizona vehicles. After 2 free checks, it's $0.99 a check or $10 a month unlimited.</p>
+ <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own theft reports and public web results, plus item-specific sources for bikes, guns, and Arizona vehicles. After 1 free check, it's $0.99 for 2 checks or $10 a month unlimited.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">Is SafeOrStolen's phone checker free?</h3>
- <p className="text-muted-foreground">You get 2 free checks, no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
+ <p className="text-muted-foreground">You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
  </CardContent>
  </Card>
  <Card>
@@ -322,7 +322,7 @@ const StolenPhoneCheckerPage = () => {
  {/* Final CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Ready to Check a Phone?</h2>
- <p className="text-muted-foreground mb-6">Check the IMEI before you pay. Your first 2 checks are free and each one takes a few seconds.</p>
+ <p className="text-muted-foreground mb-6">Check the IMEI before you pay. Your first check is free and each one takes a few seconds.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg">
  <a href="#top">Check Phone Now - Free</a>

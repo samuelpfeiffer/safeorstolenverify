@@ -87,7 +87,7 @@ export default function HowToCheckIfIphoneStolen() {
           'Shows the model so you can spot a mismatched IMEI',
           'Works for every iPhone model with an IMEI',
           'Explains the Activation Lock, Carrier Lock and Remote Management checks Apple does not offer as a public lookup',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for the IMEI before you agree to meet, and check it here.',

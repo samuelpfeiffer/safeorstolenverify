@@ -32,7 +32,7 @@ export default function HowToCheckIfToolsStolenPage() {
       quickAnswer={{
         question: 'How do I check if a tool is stolen?',
         answer:
-          "Find the serial number on the tool's nameplate, usually on the motor housing near the model number, and enter it on SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen), which searches its theft reports and public web results in a few seconds. The first 2 checks are free. Then check the batteries and charger too, ask the seller to remove the tool from any brand app such as Milwaukee ONE-KEY or DeWalt Tool Connect, and walk away if the nameplate is scratched off or covered.",
+          "Find the serial number on the tool's nameplate, usually on the motor housing near the model number, and enter it on SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen), which searches its theft reports and public web results in a few seconds. the first check is free. Then check the batteries and charger too, ask the seller to remove the tool from any brand app such as Milwaukee ONE-KEY or DeWalt Tool Connect, and walk away if the nameplate is scratched off or covered.",
       }}
       sections={[
         {
@@ -83,7 +83,7 @@ export default function HowToCheckIfToolsStolenPage() {
           'Works for every brand: DeWalt, Milwaukee, Makita, Ryobi, Bosch, Hilti and more',
           'Check tools, batteries and chargers one by one',
           'Results in a few seconds, with every source listed',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for photos of every nameplate before you meet.',

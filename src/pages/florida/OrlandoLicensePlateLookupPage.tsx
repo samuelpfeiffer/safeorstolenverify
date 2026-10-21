@@ -12,7 +12,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const faqs = [
  {
  question: "How do I check if a car is stolen in Orlando?",
- answer: "Enter the Florida plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/orlando-license-plate-lookup). It searches SafeOrStolen's own theft reports and public web results, such as listings and posts that mention that plate or VIN, and shows the answer in a few seconds with every source listed. Your first 2 checks are free.",
+ answer: "Enter the Florida plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/orlando-license-plate-lookup). It searches SafeOrStolen's own theft reports and public web results, such as listings and posts that mention that plate or VIN, and shows the answer in a few seconds with every source listed. Your first check is free.",
  },
  {
  question: "Will an Orlando plate lookup show who owns the car?",
@@ -47,7 +47,7 @@ const OrlandoLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Orlando License Plate Lookup: Free Stolen Car Check | SafeOrStolen"
- description="Free Orlando license plate lookup: check if a car in Orange County has been reported stolen before you buy. 2 free checks, results in a few seconds, no owner data."
+ description="Free Orlando license plate lookup: check if a car in Orange County has been reported stolen before you buy. 1 free check, results in a few seconds, no owner data."
  canonical="/florida/orlando-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -71,7 +71,7 @@ const OrlandoLicensePlateLookupPage = () => {
  Check an Orlando plate <ArrowRight className="ml-2 h-5 w-5" />
  </Button>
  </Link>
- <p className="text-muted-foreground text-sm mt-3">2 free checks · No credit card</p>
+ <p className="text-muted-foreground text-sm mt-3">1 free check · No credit card</p>
  </div>
  </section>
 

@@ -35,7 +35,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  // Only Arizona plates are also searched against state law-enforcement records.
  const isArizona = stateData.abbrev === 'AZ';
  const title = `Free ${stateData.name} License Plate Lookup | SafeOrStolen`;
- const metaDescription = `${stateData.name} license plate lookup: check if a ${stateData.abbrev} car is reported stolen. Searches SafeOrStolen theft reports and public web results${isArizona ? ', plus Arizona law-enforcement records' : ''}. 2 free checks.`;
+ const metaDescription = `${stateData.name} license plate lookup: check if a ${stateData.abbrev} car is reported stolen. Searches SafeOrStolen theft reports and public web results${isArizona ? ', plus Arizona law-enforcement records' : ''}. 1 free check.`;
  
  const keywords = [
  `${stateData.name.toLowerCase()} license plate lookup`,
@@ -87,7 +87,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `How much does the ${stateData.name} license plate lookup cost?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `You get 2 free checks with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports and public web results${isArizona ? ', and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records' : ''}. Owner names are never shown.`
+ "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports and public web results${isArizona ? ', and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records' : ''}. Owner names are never shown.`
  }
  },
  {
@@ -152,7 +152,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  
  <h2>Frequently Asked Questions</h2>
  <h3>How much does the {stateData.name} license plate lookup cost?</h3>
- <p>2 free checks, no account needed, then $0.99 a check or $10 a month for unlimited checks.</p>
+ <p>1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
  <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
  <p>Yes. The plate lookup works the same in {stateData.majorCities.join(', ')} and anywhere else in {stateData.name}.</p>
  {uniqueContent?.uniqueFaqs.map((faq, i) => (
@@ -171,7 +171,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>Results come back in a few seconds and are saved to your account with the date. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $10/month unlimited.</p>
+ <p>Results come back in a few seconds and are saved to your account with the date. <a href="/verify">Verify now</a> — 1 free check, then $0.99 for 2 checks or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -413,7 +413,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  How much does the {stateData.name} license plate lookup cost?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- You get 2 free checks, no account needed. After that it's $0.99 a check or $10 a month for unlimited checks. 
+ You get 1 free check, no account needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. 
  Each {stateData.abbrev} plate check searches SafeOrStolen theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records' : ''}.
  </AccordionContent>
  </AccordionItem>
@@ -511,7 +511,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Ready to Check a {stateData.name} Vehicle?</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Enter the plate and get a result in a few seconds. Your first 2 checks are free.
+ Enter the plate and get a result in a few seconds. Your first check is free.
  </p>
  <Link to="/verify">
  <Button size="lg" className="gap-2">

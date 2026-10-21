@@ -11,7 +11,7 @@ const StolenGunDatabasePage = () => {
  return (
  <ItemLandingPageTemplate
  title="Stolen Gun Database Search: Check a Gun Serial Number | SafeOrStolen"
- metaDescription="Check a gun serial number against police theft records from 33 states and DC and live Ohio stolen-gun records, and spot altered serials. 2 free checks, no account needed."
+ metaDescription="Check a gun serial number against police theft records from 33 states and DC and live Ohio stolen-gun records, and spot altered serials. 1 free check, no account needed."
  h1="Stolen gun database search: check a firearm serial number"
  itemType="Firearm"
  searchType="firearm"
@@ -41,7 +41,7 @@ const StolenGunDatabasePage = () => {
  "Shows the make, model, and police department behind any match",
  "Flags guns that were stolen and later recovered",
  "Flags altered, obliterated, or missing serial numbers",
- "2 free checks, no account needed",
+ "1 free check, no account needed",
  ],
 
  process: [

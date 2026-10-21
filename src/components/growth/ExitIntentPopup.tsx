@@ -92,7 +92,7 @@ export const ExitIntentPopup: React.FC = () => {
           </div>
 
           <h2 className="mb-2 text-2xl font-bold text-foreground">
-            Wait! Get 2 Free Checks
+            Wait! Get 1 Free Check
           </h2>
           
           <p className="mb-6 text-muted-foreground">

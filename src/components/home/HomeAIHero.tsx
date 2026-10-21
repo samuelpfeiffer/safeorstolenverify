@@ -126,7 +126,7 @@ export const HomeAIHero: React.FC = () => {
  itemType,
  });
  if (error?.code === 'LIMIT_REACHED') {
- replaceLastAssistant("You've used your 2 free checks. You can run this one for $0.99 below, no account needed.");
+ replaceLastAssistant("You've used your free check. You can run this one for $0.99 below, no account needed.");
  setLimitHit({ identifier: cleaned, itemType });
  return;
  }
@@ -210,7 +210,7 @@ export const HomeAIHero: React.FC = () => {
  </div>
 
  <div className="mx-auto mb-4 max-w-xl rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-center text-sm font-semibold text-primary">
- 2 free checks. No account needed.
+ 1 free check. No account needed.
  </div>
  {/* H1 (SEO-critical, stays) */}
  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-center leading-tight mb-4 tracking-tight">
@@ -344,9 +344,9 @@ export const HomeAIHero: React.FC = () => {
 
  {/* Trust line */}
  <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground mt-5">
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 2 free checks, no account needed</span>
+ <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 1 free check, no account needed</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99/check or $10/mo unlimited</span>
+ <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99 for 2 checks or $10/mo unlimited</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>
  </div>
  </div>

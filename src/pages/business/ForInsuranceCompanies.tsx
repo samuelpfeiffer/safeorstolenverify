@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'How much does it cost an insurance company?',
     answer:
-      'The same as everyone: 2 free checks, no account or credit card needed, then $0.99 per check or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There is no separate enterprise price list. Ask at safeorstolenmail@gmail.com if you need something else.',
+      'The same as everyone: 1 free check, no account or credit card needed, then $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. There is no separate enterprise price list. Ask at safeorstolenmail@gmail.com if you need something else.',
   },
 ];
 
@@ -100,7 +100,7 @@ const ForInsuranceCompanies = () => {
               <Button size="lg" asChild><Link to="/bulk-check">Check a claim's items</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/verify">Check one number</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 
@@ -165,7 +165,7 @@ const ForInsuranceCompanies = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Try it on an open claim</h2>
             <p className="text-muted-foreground mb-6">
-              2 free checks, then $0.99 per check or $10 a month unlimited. Questions: safeorstolenmail@gmail.com.
+              1 free check, then $0.99 for 2 checks or $10 a month unlimited. Questions: safeorstolenmail@gmail.com.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" asChild><Link to="/bulk-check">Open the bulk check</Link></Button>

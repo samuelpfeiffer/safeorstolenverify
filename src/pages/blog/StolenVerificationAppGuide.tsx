@@ -20,12 +20,12 @@ const FAQS = [
   {
     question: 'How can I check if something is stolen from my phone?',
     answer:
-      'Get the identifying number off the item: the IMEI for a phone, the VIN for a car, the serial for a gun, bike, laptop or tool. Type it into SafeOrStolen (safeorstolen.com) in your phone browser or the installed app, and in a few seconds it shows whether the item is reported stolen in the records it searches. The first 2 checks are free.',
+      'Get the identifying number off the item: the IMEI for a phone, the VIN for a car, the serial for a gun, bike, laptop or tool. Type it into SafeOrStolen (safeorstolen.com) in your phone browser or the installed app, and in a few seconds it shows whether the item is reported stolen in the records it searches. the first check is free.',
   },
   {
     question: 'Is there a free app to check if an item is stolen?',
     answer:
-      "SafeOrStolen is free to install from safeorstolen.com/app and comes with 2 free checks, no account or credit card needed. It's an installable web app, not an App Store or Google Play download. After the free checks, a single check is $0.99 or unlimited checks are $10 a month.",
+      "SafeOrStolen is free to install from safeorstolen.com/app and comes with 1 free check, no account or credit card needed. It's an installable web app, not an App Store or Google Play download. After the free checks, a single check is $0.99 or unlimited checks are $10 a month.",
   },
   {
     question: 'What should I check at a meetup before buying a used phone?',
@@ -158,7 +158,7 @@ const StolenVerificationAppGuide = () => {
             <h2>Running the check on your phone</h2>
             <ol>
               <li>Open safeorstolen.com in your phone's browser, or tap the SafeOrStolen icon if you've installed the web app from <Link to="/app">safeorstolen.com/app</Link>.</li>
-              <li>Sign in or create a free account. The first 2 checks are free and don't need a card.</li>
+              <li>Sign in or create a free account. the first check is free and don't need a card.</li>
               <li>Type the number in the search box. Signed in, you can also scan a barcode, like the IMEI label on a phone box, with your camera.</li>
               <li>Read the result: reported stolen, possible match, or no report found in the records searched. The sources are listed underneath.</li>
               <li>The check is saved to your account with the date, so you can show later that you checked before buying.</li>

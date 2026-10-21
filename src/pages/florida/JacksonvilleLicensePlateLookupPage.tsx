@@ -6,7 +6,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
  {
  q: "How do I check if a car is stolen in Jacksonville, FL?",
- a: "Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/jacksonville-license-plate-lookup). A plate check searches SafeOrStolen theft reports and public web results. A VIN check also decodes the year, make and model and lists open recalls. Results take a few seconds, and the first 2 checks are free with no credit card."
+ a: "Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/jacksonville-license-plate-lookup). A plate check searches SafeOrStolen theft reports and public web results. A VIN check also decodes the year, make and model and lists open recalls. Results take a few seconds, and the first check is free with no credit card."
  },
  {
  q: "Why check a used car before buying in Jacksonville?",
@@ -49,7 +49,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Jacksonville License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Buying a used car in Jacksonville? Check the plate and the VIN against SafeOrStolen theft reports and public web results. Results take a few seconds, and the first 2 checks are free.
+ Buying a used car in Jacksonville? Check the plate and the VIN against SafeOrStolen theft reports and public web results. Results take a few seconds, and the first check is free.
  </p>
  </div>
  </header>
@@ -61,7 +61,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  Check Jacksonville Vehicle Now <ArrowRight className="ml-2 h-5 w-5" />
  </Button>
  </Link>
- <p className="text-muted-foreground text-sm mt-3">2 free checks · No credit card · Pre-set to Florida</p>
+ <p className="text-muted-foreground text-sm mt-3">1 free check · No credit card · Pre-set to Florida</p>
  </div>
  </section>
 

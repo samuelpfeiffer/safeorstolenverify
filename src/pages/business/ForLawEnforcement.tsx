@@ -46,7 +46,7 @@ const FAQS = [
   {
     question: 'Is there special pricing for police departments?',
     answer:
-      'There is no department plan. Every account gets 2 free checks with no credit card, then $0.99 per check or $10 a month for unlimited checks, which covers the bulk check. If your agency has a purchasing requirement, email safeorstolenmail@gmail.com.',
+      'There is no department plan. Every account gets 1 free check with no credit card, then $0.99 for 2 checks or $10 a month for unlimited checks, which covers the bulk check. If your agency has a purchasing requirement, email safeorstolenmail@gmail.com.',
   },
   {
     question: 'Can a SafeOrStolen result be used as evidence?',
@@ -102,7 +102,7 @@ const ForLawEnforcement = () => {
               <Button size="lg" asChild><Link to="/verify">Check a number</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/bulk-check">Check a list</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 

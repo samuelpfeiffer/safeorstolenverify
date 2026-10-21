@@ -54,7 +54,7 @@ const VINCheckPage = () => {
  },
  {
  question: "Is this VIN check really free?",
- answer: "Yes, SafeOrStolen gives you 2 free checks, no account needed. Each VIN check searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs, and lists every source it searched."
+ answer: "Yes, SafeOrStolen gives you 1 free check, no account needed. Each VIN check searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs, and lists every source it searched."
  },
  {
  question: "What databases does the VIN check search?",

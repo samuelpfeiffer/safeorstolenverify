@@ -30,7 +30,7 @@ const VerifyCraigslistItems = () => {
       {
         "@type": "HowToStep",
         name: "Verify with SafeOrStolen",
-        text: "Enter the number at SafeOrStolen (2 free checks) to search theft reports and public web listings for it.",
+        text: "Enter the number at SafeOrStolen (1 free check) to search theft reports and public web listings for it.",
       },
       {
         "@type": "HowToStep",
@@ -49,7 +49,7 @@ const VerifyCraigslistItems = () => {
     <>
       <PageSEO
         title="Craigslist Item Verification Guide - Avoid Stolen Goods | SafeOrStolen"
-        description="How to check a Craigslist item for theft reports before meeting the seller: get the IMEI, VIN or serial, check it, and match it in person. 2 free checks."
+        description="How to check a Craigslist item for theft reports before meeting the seller: get the IMEI, VIN or serial, check it, and match it in person. 1 free check."
         keywords="Craigslist verification, Craigslist stolen items, verify Craigslist phones, Craigslist scam protection, Craigslist IMEI check"
         structuredData={structuredData}
       />
@@ -250,7 +250,7 @@ const VerifyCraigslistItems = () => {
               Don't Risk It—Verify Before You Meet
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Your first 2 checks are free and each takes a few seconds. It's a lot cheaper than losing what you paid.
+              Your first check is free and each takes a few seconds. It's a lot cheaper than losing what you paid.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/verify">

@@ -202,7 +202,7 @@ export default function TheftTrendsReport2024() {
 
             <div className="not-prose bg-primary/10 p-6 rounded-lg mt-10">
               <p className="text-lg font-bold mb-2">Check an item before you pay</p>
-              <p className="text-muted-foreground mb-4">The first 2 checks are free with an account. No credit card.</p>
+              <p className="text-muted-foreground mb-4">the first check is free with an account. No credit card.</p>
               <Button asChild size="lg">
                 <Link to="/verify">Run a check</Link>
               </Button>

@@ -141,7 +141,7 @@ export const DetailedFAQSection: React.FC = () => {
  questions: [
  {
  question: "How much does stolen item verification cost?",
- answer: "We offer 2 free searches when you sign up, then affordable per-search pricing or unlimited monthly plans. Consider the cost of verification versus the potential loss from buying stolen goods - our service pays for itself with just one prevented fraud.",
+ answer: "We offer 1 free search when you sign up, then affordable per-search pricing or unlimited monthly plans. Consider the cost of verification versus the potential loss from buying stolen goods - our service pays for itself with just one prevented fraud.",
  searches: ["stolen item checker cost", "verification pricing", "free stolen check"],
  popular: true
  },
@@ -157,7 +157,7 @@ export const DetailedFAQSection: React.FC = () => {
  const quickAnswers = [
  {
  question: "Can I check if something is stolen for free?",
- answer: "Yes, 2 free searches with signup",
+ answer: "Yes, 1 free search with signup",
  icon: DollarSign
  },
  {

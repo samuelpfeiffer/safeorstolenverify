@@ -25,7 +25,7 @@ const StolenCheckLosAngeles = () => {
  },
  {
  question: "What does a SafeOrStolen check cost?",
- answer: "You get 2 free checks, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 certificate gives you a dated record with its own link showing you checked before the sale."
+ answer: "You get 1 free check, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 certificate gives you a dated record with its own link showing you checked before the sale."
  }
  ];
 
@@ -76,7 +76,7 @@ const StolenCheckLosAngeles = () => {
  </h1>
 
  <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
- Before you meet a seller from Facebook Marketplace, OfferUp, Craigslist or a swap meet, get the item's IMEI, VIN or serial number and check it for theft reports. It takes a few seconds and you get 2 free checks.
+ Before you meet a seller from Facebook Marketplace, OfferUp, Craigslist or a swap meet, get the item's IMEI, VIN or serial number and check it for theft reports. It takes a few seconds and you get 1 free check.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -186,7 +186,7 @@ const StolenCheckLosAngeles = () => {
  Check before you buy in LA
  </h2>
  <p className="text-lg opacity-90 mb-8">
- 2 free checks, no account needed. Results in a few seconds, with every source listed.
+ 1 free check, no account needed. Results in a few seconds, with every source listed.
  </p>
  <Button asChild size="lg" variant="secondary">
  <Link to="/verify">Run a free check</Link>

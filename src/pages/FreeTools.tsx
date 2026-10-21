@@ -45,7 +45,7 @@ const FreeTools = () => {
           </ul>
           
           <h2>Need Full Stolen Check?</h2>
-          <p>A full SafeOrStolen check searches theft reports and public web results, with a paid blacklist check for phones. Your first 2 checks are free, no account needed.</p>
+          <p>A full SafeOrStolen check searches theft reports and public web results, with a paid blacklist check for phones. Your first check is free, no account needed.</p>
         </div>
       </noscript>
       <div className="min-h-screen bg-background pt-20">
@@ -104,7 +104,7 @@ const FreeTools = () => {
                   <div className="flex flex-wrap justify-center gap-4">
                     <Button asChild size="lg">
                       <Link to="/verify">
-                        Full Verification - 2 Free Checks
+                        Full Verification - 1 Free Check
                       </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg">

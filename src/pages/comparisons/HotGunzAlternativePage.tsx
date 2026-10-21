@@ -102,7 +102,7 @@ const HotGunzAlternativePage = () => {
                   <tr className="border-t border-border">
                     <td className="p-4">Price</td>
                     <td className="p-4 text-center">Free</td>
-                    <td className="p-4 text-center">2 free checks, then $0.99 a check or $10 a month</td>
+                    <td className="p-4 text-center">1 free check, then $0.99 for 2 checks or $10 a month</td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">
                     <td className="p-4">Police theft and loss reports (33 states and DC) plus live Ohio records</td>
@@ -222,7 +222,7 @@ const HotGunzAlternativePage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Check a Gun Serial Before You Buy</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Two free checks, no account needed. No credit card.
+              one free check, no account needed. No credit card.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">

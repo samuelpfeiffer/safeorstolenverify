@@ -21,8 +21,8 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
   const nextSteps = [
     {
       icon: Shield,
-      title: "Run Your 2 Free Checks",
-      description: "Your first 2 checks are free, no account needed. Enter any serial number, IMEI or VIN to use them, no credit card needed.",
+      title: "Run Your Free Check",
+      description: "Your first check is free, no account needed. Enter any serial number, IMEI or VIN to use them, no credit card needed.",
       action: "See Plans",
       onClick: () => navigate('/pricing')
     },
@@ -36,7 +36,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: CreditCard,
       title: "Unlimited Access",
-      description: "Get unlimited verifications for $10/month, or pay $0.99 per check. All item types included. Cancel anytime.",
+      description: "Get unlimited verifications for $10/month, or pay $0.99 for 2 checks. All item types included. Cancel anytime.",
       action: "View Plan",
       onClick: () => navigate('/pricing')
     }

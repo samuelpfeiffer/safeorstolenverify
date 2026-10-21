@@ -132,7 +132,7 @@ const SerialNumberStolenCheckPage = () => {
  <>
  <SEOHead
  title="Check If an Item Is Stolen by Serial Number | SafeOrStolen"
- description="Check any item's serial number against SafeOrStolen theft reports and public web results before you buy a used phone, tool, bike, laptop or gun. 2 free checks."
+ description="Check any item's serial number against SafeOrStolen theft reports and public web results before you buy a used phone, tool, bike, laptop or gun. 1 free check."
  canonical="/serial-number-stolen-check"
  keywords="serial number stolen check, check if item is stolen, stolen property lookup, serial number database, is my item stolen, stolen goods check, serial number verification"
  schemaJson={schema}
@@ -176,7 +176,7 @@ const SerialNumberStolenCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free checks • Works for any item type • Results in a few seconds
+ 1 free check • Works for any item type • Results in a few seconds
  </p>
  </div>
 
@@ -392,7 +392,7 @@ const SerialNumberStolenCheckPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any Serial Number Free</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Phones, laptops, tools, bikes, firearms, and more. 2 free checks. Results in a few seconds.
+ Phones, laptops, tools, bikes, firearms, and more. 1 free check. Results in a few seconds.
  </p>
  <Link to="/verify">
  <Button size="lg" className="gap-2">

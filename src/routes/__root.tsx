@@ -51,14 +51,14 @@ const webApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   description:
-    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Your first 2 checks are free, no account needed.",
+    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Your first check is free, no account needed.",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Web",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "2 free verifications, then $0.99/check or $10/month unlimited",
+    description: "1 free verification, then $0.99 for 2 checks or $10/month unlimited",
   },
   creator: {
     "@type": "Organization",
@@ -189,7 +189,7 @@ const coreGraphJsonLd = JSON.stringify({
         "@type": "OfferCatalog",
         name: "Verification Plans",
         itemListElement: [
-          { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "2 free verifications, no credit card required" },
+          { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "1 free verification, no credit card required" },
           { "@type": "Offer", name: "Single check", price: "0.99", priceCurrency: "USD", description: "One check" },
           { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types" },
         ],

@@ -13,7 +13,7 @@ const CheckPhonePage = () => {
  route="/check-phone"
  pillarName="Check Phone"
  title="Check If a Phone Is Stolen — Free IMEI Check | SafeOrStolen"
- description="Enter a phone's IMEI to see its make and model and check for theft reports before you buy. 2 free checks, results in a few seconds, every source listed."
+ description="Enter a phone's IMEI to see its make and model and check for theft reports before you buy. 1 free check, results in a few seconds, every source listed."
  keywords="check if phone stolen, free IMEI check, stolen phone check, blacklist IMEI check, buy used phone safely"
  h1="Check If a Phone Is Stolen Before You Buy"
  intro={

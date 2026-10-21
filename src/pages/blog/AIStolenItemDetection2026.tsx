@@ -176,7 +176,7 @@ const AIStolenItemDetection2026 = () => {
           <Card className="mt-12 bg-primary/5 border-primary/30">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold mb-3">Check the number, not the photo</h2>
-              <p className="text-muted-foreground mb-6">Your first 2 checks are free with an account. No credit card.</p>
+              <p className="text-muted-foreground mb-6">Your first check is free with an account. No credit card.</p>
               <Button asChild size="lg">
                 <Link to="/verify">
                   Run a check

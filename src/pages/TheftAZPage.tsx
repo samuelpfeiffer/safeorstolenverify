@@ -40,7 +40,7 @@ const TheftAZPage = () => {
  "Open safety recalls for the vehicle",
  "SafeOrStolen theft reports and public web results in the same check",
  "Optional $1.99 verification certificate: a dated record showing you checked before the sale",
- "2 free checks, no account or credit card needed",
+ "1 free check, no account or credit card needed",
  ],
 
  process: [
@@ -58,7 +58,7 @@ const TheftAZPage = () => {
  },
  {
  question: "How does SafeOrStolen check Arizona cars?",
- answer: "SafeOrStolen (safeorstolen.com/theftaz) searches Arizona VINs and plates against Arizona law-enforcement stolen-vehicle records, updated twice a day, plus its own theft reports and public web results. A VIN check also decodes the year, make and model and lists open safety recalls. You get 2 free checks, no account needed.",
+ answer: "SafeOrStolen (safeorstolen.com/theftaz) searches Arizona VINs and plates against Arizona law-enforcement stolen-vehicle records, updated twice a day, plus its own theft reports and public web results. A VIN check also decodes the year, make and model and lists open safety recalls. You get 1 free check, no account needed.",
  },
  {
  question: "Can I check guns, phones or bikes in Arizona the same way?",

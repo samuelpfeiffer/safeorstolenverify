@@ -210,7 +210,7 @@ export default function DataSourcesPage() {
           <div className="container mx-auto px-4 text-center max-w-2xl">
             <h2 className="text-3xl font-bold mb-4">Run a check</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Enter an IMEI, VIN, plate or serial number. The first 2 checks are free with an account, no credit card.
+              Enter an IMEI, VIN, plate or serial number. the first check is free with an account, no credit card.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

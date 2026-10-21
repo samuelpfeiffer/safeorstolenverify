@@ -10,7 +10,7 @@ const FreeCarfaxAlternativePage = () => {
   const faqs = [
     {
       q: "Is there a free alternative to Carfax?",
-      a: "For the theft question, yes. SafeOrStolen (safeorstolen.com/carfax-alternative-free) gives you 2 free checks, no account needed. A VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. It is not a full history report: it doesn't show accidents, service or ownership history.",
+      a: "For the theft question, yes. SafeOrStolen (safeorstolen.com/carfax-alternative-free) gives you 1 free check, no account needed. A VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. It is not a full history report: it doesn't show accidents, service or ownership history.",
     },
     {
       q: "What's the difference between SafeOrStolen and Carfax?",
@@ -55,7 +55,7 @@ const FreeCarfaxAlternativePage = () => {
               Free Carfax alternative for stolen car checks
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              If your question is "has this car been reported stolen?", you don't need a paid history report to start. SafeOrStolen gives you <strong>2 free checks</strong> with a free account: type the VIN and see theft reports, the decoded year, make and model, and open recalls in a few seconds.
+              If your question is "has this car been reported stolen?", you don't need a paid history report to start. SafeOrStolen gives you <strong>1 free check</strong> with a free account: type the VIN and see theft reports, the decoded year, make and model, and open recalls in a few seconds.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">
@@ -103,7 +103,7 @@ const FreeCarfaxAlternativePage = () => {
                 <tbody>
                   <tr className="border-t border-border">
                     <td className="p-4">Price</td>
-                    <td className="p-4 text-center font-bold text-primary">2 free checks, then $0.99 or $10/month</td>
+                    <td className="p-4 text-center font-bold text-primary">1 free check, then $0.99 or $10/month</td>
                     <td className="p-4 text-center">Paid reports</td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">

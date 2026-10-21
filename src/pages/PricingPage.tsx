@@ -19,10 +19,10 @@ import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/c
 const FAQS = [
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 2 free checks with no account or credit card needed. After that, a single check costs $0.99 with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
+ a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, a single check costs $0.99 with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
  },
  {
- q: 'What do the 2 free checks include?',
+ q: 'What do the 1 free check include?',
  a: 'Each free check searches SafeOrStolen theft reports and public web results for the number you enter. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, bike checks search a national stolen-bicycle registry, and VIN checks decode the vehicle and list open recalls. A free phone check shows the make and model from the IMEI. The carrier blacklist search needs a paid check.',
  },
  {
@@ -31,7 +31,7 @@ const FAQS = [
  },
  {
  q: 'When is the monthly plan cheaper than single checks?',
- a: 'At 11 checks a month. Eleven single checks cost $10.89, more than the $10 monthly plan, and ten cost $9.90, which is less. If you are checking one phone or one bike before a purchase, use your free checks or a $0.99 single check. If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
+ a: 'At 11 checks a month. Eleven single checks cost $10.89, more than the $10 monthly plan, and ten cost $9.90, which is less. If you are checking one phone or one bike before a purchase, use your free checks or a $0.99 for 2 checks. If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
  },
  {
  q: 'Can I cancel the monthly plan, and is there a refund?',
@@ -80,8 +80,8 @@ const PricingPage = () => {
  <>
  <div className="min-h-screen bg-background text-foreground pt-20">
  <PageSEO
- title="SafeOrStolen Pricing: 2 Free Checks, $0.99 or $10/Month"
- description="SafeOrStolen pricing: 2 free checks with no credit card, $0.99 for a single check, or $10 a month for unlimited checks with a 30-day refund. Cancel anytime."
+ title="SafeOrStolen Pricing: 1 Free Check, $0.99 or $10/Month"
+ description="SafeOrStolen pricing: 1 free check with no credit card, $0.99 for 2 checks, or $10 a month for unlimited checks with a 30-day refund. Cancel anytime."
  keywords="safeorstolen pricing, how much does safeorstolen cost, stolen item check cost, imei check price, vin check price, free stolen check"
  canonical="/pricing"
  modifiedTime="2026-10-07"
@@ -93,7 +93,7 @@ const PricingPage = () => {
  SafeOrStolen Pricing
  </h1>
  <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
- Your first 2 checks are free, with no account or credit card needed. After that, a single check is
+ Your first check is free, with no account or credit card needed. After that, a single check is
  $0.99, or unlimited checks are $10 a month, cancel anytime, with a 30-day refund.
  </p>
  <p className="text-muted-foreground text-sm mt-3">
@@ -137,7 +137,7 @@ const PricingPage = () => {
  to="/verify"
  className="w-full py-3 rounded-xl font-bold text-center bg-muted hover:bg-muted/80 text-foreground transition-all block"
  >
- Use my 2 free checks
+ Use my 1 free check
  </Link>
  <p className="text-center text-xs text-muted-foreground mt-2">
  No account or card needed.
@@ -246,7 +246,7 @@ const PricingPage = () => {
  </thead>
  <tbody>
  {[
- ['Price', '$0', '$0.99 each', '$10 a month'],
+ ['Price', '$0', '$0.99 for 2', '$10 a month'],
  ['Checks', '2', '1 per purchase', 'Unlimited'],
  ['Theft reports and public web results', 'Yes', 'Yes', 'Yes'],
  ['Police gun records, bike registry, VIN decode and recalls', 'Yes', 'Yes', 'Yes'],
@@ -315,7 +315,7 @@ const PricingPage = () => {
 
  {/* Bottom CTA */}
  <div className="text-center pb-20 px-4">
- <p className="text-muted-foreground mb-4">2 free checks. Then $0.99 a check or $10 a month for unlimited.</p>
+ <p className="text-muted-foreground mb-4">1 free check. Then $0.99 for 2 checks or $10 a month for unlimited.</p>
  <div className="flex flex-col sm:flex-row gap-3 justify-center">
  <Link
  to="/verify"
@@ -343,10 +343,10 @@ const PricingPage = () => {
  "@context": "https://schema.org",
  "@type": "Product",
  "name": "SafeOrStolen stolen item check",
- "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 2 free checks, then $0.99 per check or $10 a month for unlimited checks.",
+ "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
- { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 free checks, no account or credit card needed" },
+ { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no account or credit card needed" },
  { "@type": "Offer", "name": "Single check", "price": "0.99", "priceCurrency": "USD", "description": "One check, no subscription" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "Unlimited checks a month, up to 20 phone blacklist checks, free verification certificates, cancel anytime, 30-day refund" },
  { "@type": "Offer", "name": "Verification certificate", "price": "1.99", "priceCurrency": "USD", "description": "Dated record with its own link showing you checked before the sale" },

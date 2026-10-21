@@ -25,7 +25,7 @@ const FirearmsSerialNumberCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to check if a gun is stolen?",
- answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 2 free checks, no account or credit card needed. A gun check searches SafeOrStolen theft reports, public web results, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. After the free checks it's $0.99 a check or $10 a month."
+ answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 1 free check, no account or credit card needed. A gun check searches SafeOrStolen theft reports, public web results, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. After the free checks it's $0.99 for 2 checks or $10 a month."
  },
  {
  question: "Can I check a gun serial number online from my phone?",
@@ -148,7 +148,7 @@ const FirearmsSerialNumberCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free checks, no account needed • Results in a few seconds
+ 1 free check, no account needed • Results in a few seconds
  </p>
  </div>
 
@@ -407,7 +407,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any Firearm Serial Number Free</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Check before you buy or sell. 2 free checks, results in a few seconds.
+ Check before you buy or sell. 1 free check, results in a few seconds.
  </p>
  <Link to="/verify">
  <Button size="lg" className="gap-2">

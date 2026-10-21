@@ -78,7 +78,7 @@ const ATFGunSerialNumberCheckGuide = () => (
         'Live Ohio law-enforcement records searched on every check',
         'Flags altered or placeholder serial numbers',
         'Results in a few seconds, with every source listed',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Find the serial number stamped on the frame or receiver. It may also appear on the slide or barrel.',
@@ -106,7 +106,7 @@ const ATFGunSerialNumberCheckGuide = () => (
         {
           question: 'How do I check if a gun is stolen for free?',
           answer:
-            "Enter the serial on SafeOrStolen (safeorstolen.com/blog/atf-gun-serial-number-check). The first 2 checks are free. Then ask your local police non-emergency line whether they will run the serial through NCIC.",
+            "Enter the serial on SafeOrStolen (safeorstolen.com/blog/atf-gun-serial-number-check). the first check is free. Then ask your local police non-emergency line whether they will run the serial through NCIC.",
         },
         {
           question: 'Will the police check a gun serial number for me?',

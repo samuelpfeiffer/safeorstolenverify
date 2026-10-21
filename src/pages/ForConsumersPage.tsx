@@ -40,7 +40,7 @@ const consumerFaqs: { question: string; answer: string }[] = [
  {
  question: 'How much does SafeOrStolen cost?',
  answer:
- 'Your first 2 checks are free, with no account or credit card needed. After that, a single check is $0.99, or unlimited checks are $10 a month with up to 20 phone blacklist checks, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
+ 'Your first check is free, with no account or credit card needed. After that, a single check is $0.99, or unlimited checks are $10 a month with up to 20 phone blacklist checks, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
  },
  {
  question: 'I am selling something. How can I show the buyer it is not stolen?',
@@ -83,7 +83,7 @@ const ForConsumersPage = () => {
  <>
  <PageSEO
  title="How to Avoid Buying Stolen Goods: A Guide for Consumers"
- description="How to avoid buying stolen goods on Marketplace, OfferUp or Craigslist, how to show buyers your item isn't stolen, and what to do if yours was stolen. 2 free checks."
+ description="How to avoid buying stolen goods on Marketplace, OfferUp or Craigslist, how to show buyers your item isn't stolen, and what to do if yours was stolen. 1 free check."
  keywords="how to avoid buying stolen goods, buying used items safely, stolen item check for consumers, avoid stolen goods marketplace, prove item is not stolen, report stolen item"
  canonical="/for-consumers"
  modifiedTime="2026-10-07"
@@ -99,7 +99,7 @@ const ForConsumersPage = () => {
  <p className="text-lg mb-4">
  Before you pay for anything used, get its serial number, IMEI or VIN and check it on
  SafeOrStolen, make sure the number on the item matches the listing, and have the seller sign out
- of any account on it. Those three steps catch most stolen items. Your first 2 checks are free.
+ of any account on it. Those three steps catch most stolen items. Your first check is free.
  </p>
  <p className="text-muted-foreground mb-6">
  This page covers the three times it matters to you: buying used, selling your own things, and
@@ -163,7 +163,7 @@ const ForConsumersPage = () => {
 
  <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">What it costs</h2>
  <p className="text-muted-foreground mb-8">
- 2 free checks, no account or credit card needed. Then $0.99 for a single check, or $10 a
+ 1 free check, no account or credit card needed. Then $0.99 for 2 checks, or $10 a
  month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. See{' '}
  <Link to="/pricing" className="text-primary underline">pricing</Link>.
  </p>

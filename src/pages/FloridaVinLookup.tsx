@@ -88,7 +88,7 @@ const FloridaVinLookup = () => (
           'Decodes the year, make and model so you can spot a swapped VIN',
           'Shows open safety recalls for the vehicle',
           'Explains where to run the free FDLE and FLHSMV searches',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           "Find the VIN on the dashboard, through the windshield on the driver's side, and on the driver's door jamb. They must match.",

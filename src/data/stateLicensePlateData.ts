@@ -532,7 +532,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
 
  return {
  title: `${state} License Plate Lookup - Check a ${stateCode} Plate for Theft`,
- metaDescription: `${state} license plate lookup: check a ${stateCode} plate against ${isArizona ? 'Arizona law-enforcement records and ' : ''}SafeOrStolen theft reports in a few seconds. 2 free checks. Never shows owner names.`,
+ metaDescription: `${state} license plate lookup: check a ${stateCode} plate against ${isArizona ? 'Arizona law-enforcement records and ' : ''}SafeOrStolen theft reports in a few seconds. 1 free check. Never shows owner names.`,
  h1: `${state} License Plate Lookup - Check ${stateCode} Plates`,
  itemType: "Vehicle",
  keywords: [
@@ -557,7 +557,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  `Clear result with every source listed`,
  `Never shows owner names or personal information`,
  `Each check saved to your account with the date`,
- `2 free checks, no account or credit card needed`
+ `1 free check, no account or credit card needed`
  ],
 
  process: [
@@ -585,7 +585,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  },
  {
  question: `Is a ${state} license plate lookup free?`,
- answer: `Your first 2 checks are free with a SafeOrStolen account, no credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks, and you can cancel anytime.`
+ answer: `Your first check is free with a SafeOrStolen account, no credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, and you can cancel anytime.`
  },
  {
  question: `What does "no report found" mean?`,

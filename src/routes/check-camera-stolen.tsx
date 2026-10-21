@@ -78,7 +78,7 @@ function GuidePage() {
           'Searches SafeOrStolen theft reports and public web results',
           'Results in a few seconds with every source listed',
           'A dated record of each check is saved to your account',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for photos of the bottom plate and each lens serial before you meet.',

@@ -83,7 +83,7 @@ export default function HowToCheckIfLaptopStolenPage() {
         'Searches SafeOrStolen theft reports and public web results',
         'Results in a few seconds with every source listed',
         'Optional $1.99 verification certificate showing you checked before the sale',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Ask the seller for a screenshot of About This Mac, or of the PowerShell serial command, before you meet.',

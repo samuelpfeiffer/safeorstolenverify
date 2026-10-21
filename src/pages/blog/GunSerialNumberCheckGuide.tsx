@@ -65,7 +65,7 @@ const GunSerialNumberCheckGuide = () => {
  <>
  <PageSEO
  title="How to Check if a Gun is Stolen — Free Serial Number Lookup (2026) | SafeOrStolen"
- description="How to check if a gun is stolen: find the serial, search police theft reports from 33 states and DC in a few seconds, and know what to do next. 2 free checks."
+ description="How to check if a gun is stolen: find the serial, search police theft reports from 33 states and DC in a few seconds, and know what to do next. 1 free check."
  canonical="/blog/how-to-check-if-gun-is-stolen"
  keywords="gun serial number lookup, check if gun is stolen, stolen gun check, stolen firearm database, free gun serial number check"
  structuredData={[faqSchema, articleSchema]}
@@ -77,7 +77,7 @@ const GunSerialNumberCheckGuide = () => {
  <AuthorByline />
 <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">How to Check if a Gun is Stolen — Free Serial Number Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- To check if a gun is stolen, read the serial from the frame and enter it at safeorstolen.com/firearms-check. The check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio records, and SafeOrStolen theft reports, and lists every source. The first 2 checks are free.
+ To check if a gun is stolen, read the serial from the frame and enter it at safeorstolen.com/firearms-check. The check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio records, and SafeOrStolen theft reports, and lists every source. the first check is free.
  </p>
  <p className="text-muted-foreground text-sm mt-3">Updated October 7, 2026 · 8 min read</p>
  </div>
@@ -90,7 +90,7 @@ const GunSerialNumberCheckGuide = () => {
  Check Gun Serial Number Free <ArrowRight className="ml-2 h-5 w-5" />
  </Button>
  </Link>
- <p className="text-muted-foreground text-sm mt-3">2 free checks · police theft reports + altered-serial check</p>
+ <p className="text-muted-foreground text-sm mt-3">1 free check · police theft reports + altered-serial check</p>
  </div>
  </section>
 

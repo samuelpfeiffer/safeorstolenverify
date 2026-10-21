@@ -38,7 +38,7 @@ const NICBVINCheckAlternative = () => {
         multipleItems: true,
         mobileApp: true,
         instantResults: true,
-        freeTier: '2 free checks',
+        freeTier: '1 free check',
         database: 'SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
@@ -82,7 +82,7 @@ const NICBVINCheckAlternative = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/verify">Try 2 Free Checks</Link>
+                  <Link to="/verify">Try 1 Free Check</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#alternatives">See the Features</a>
@@ -183,7 +183,7 @@ const NICBVINCheckAlternative = () => {
                       <ul className="space-y-2 text-muted-foreground">
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          2 free searches, no credit card
+                          1 free search, no credit card
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
@@ -195,7 +195,7 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          $0.99/check or $10/month unlimited
+                          $0.99 for 2 checks or $10/month unlimited
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
@@ -240,7 +240,7 @@ const NICBVINCheckAlternative = () => {
                     </tr>
                     <tr className="bg-muted/50">
                       <td className="p-4 border-b border-border font-medium">Free Tier</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">2 free checks</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">1 free check</td>
                     </tr>
                     <tr>
                       <td className="p-4 border-b border-border font-medium">Phone/IMEI Check</td>
@@ -260,7 +260,7 @@ const NICBVINCheckAlternative = () => {
                     </tr>
                     <tr>
                       <td className="p-4 border-b border-border font-medium">Price</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">2 free, then $0.99/check or $10/mo unlimited</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">2 free, then $0.99 for 2 checks or $10/mo unlimited</td>
                     </tr>
                   </tbody>
                 </table>
@@ -299,7 +299,7 @@ const NICBVINCheckAlternative = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen free?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen includes 2 free checks, then $0.99 per check or $10/month for
+                      SafeOrStolen includes 1 free check, then $0.99 for 2 checks or $10/month for
                       unlimited checks.
                     </p>
                   </CardContent>

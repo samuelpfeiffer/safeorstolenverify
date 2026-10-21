@@ -191,7 +191,7 @@ const PawnShopStolenItemVerification = () => {
               Ask for the serial number, IMEI or VIN and run it on SafeOrStolen before you pay. It searches SafeOrStolen's
               theft reports and public web results, plus police gun theft reports from 33 states and DC for guns, a national
               stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Every result
-              lists each source it searched. Your first 2 checks are free.
+              lists each source it searched. Your first check is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg"><Link to="/verify">Check a serial number</Link></Button>

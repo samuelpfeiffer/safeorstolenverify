@@ -84,7 +84,7 @@ export default function VsStolenRegisterPage() {
                       <tr className="border-b">
                         <td className="p-4 font-medium">Free Tier</td>
                         <td className="text-center p-4 bg-primary/5">
-                          <span className="text-green-600 font-medium">2 Free Checks</span>
+                          <span className="text-green-600 font-medium">1 Free Check</span>
                         </td>
                         <td className="text-center p-4">
                           <span className="text-muted-foreground">See their site</span>
@@ -102,7 +102,7 @@ export default function VsStolenRegisterPage() {
                       <tr>
                         <td className="p-4 font-medium">Paid plan</td>
                         <td className="text-center p-4 bg-primary/5">
-                          <span className="font-bold text-primary">$0.99 a check or $10/mo unlimited</span>
+                          <span className="font-bold text-primary">$0.99 for 2 checks or $10/mo unlimited</span>
                         </td>
                         <td className="text-center p-4">
                           <span className="text-muted-foreground">See their site</span>
@@ -168,7 +168,7 @@ export default function VsStolenRegisterPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Try SafeOrStolen Free</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              2 free checks, no account or credit card needed required. Then $0.99 a check or $10 a month for unlimited checks.
+              1 free check, no account or credit card needed required. Then $0.99 for 2 checks or $10 a month for unlimited checks.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

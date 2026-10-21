@@ -20,7 +20,7 @@ const ACTIONS: { title: string; body: string; to: string; cta: string }[] = [
   },
   {
     title: 'Check before you buy',
-    body: "When buyers check serials, stolen goods get harder to sell. Ask the seller for the number before you meet, check it, and walk away from anything reported stolen or with a scratched-off serial. Your first 2 checks are free.",
+    body: "When buyers check serials, stolen goods get harder to sell. Ask the seller for the number before you meet, check it, and walk away from anything reported stolen or with a scratched-off serial. Your first check is free.",
     to: '/verify',
     cta: 'Run a check',
   },
@@ -127,7 +127,7 @@ export default function CommunityPage() {
         <section className="py-14 bg-muted/30">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Check something now</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Two free checks, no account needed. No credit card.</p>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">one free check, no account needed. No credit card.</p>
             <Button size="lg" asChild>
               <Link to="/verify">
                 Run a check <ArrowRight className="ml-2 h-4 w-4" />

@@ -67,7 +67,7 @@ function GuidePage() {
           table: {
             columns: ["Check", "What it tells you", "Cost"],
             rows: [
-              ["SafeOrStolen VIN check", "Whether the VIN is in SafeOrStolen theft reports or public web results; the decoded year, make and model; open safety recalls", "2 free checks"],
+              ["SafeOrStolen VIN check", "Whether the VIN is in SafeOrStolen theft reports or public web results; the decoded year, make and model; open safety recalls", "1 free check"],
               ["Frame vs. title", "Whether the paperwork belongs to this bike", "Free"],
               ["Seller ID vs. title", "Whether the seller is the owner", "Free"],
               ["Police VIN check", "Many departments will run the VIN for you. Call the non-emergency line and ask.", "Usually free"],
@@ -90,7 +90,7 @@ function GuidePage() {
           "Decodes year, make and model so you can spot a swapped frame or title",
           "Lists open safety recalls on the bike",
           "Each check is saved to your account with the date",
-          "2 free checks with no credit card",
+          "1 free check with no credit card",
         ],
         process: [
           "Ask the seller for the VIN before you go, and check it here first.",

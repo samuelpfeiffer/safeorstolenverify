@@ -98,7 +98,7 @@ export default function ForAuctionHouses() {
               <Button size="lg" asChild><Link to="/bulk-check">Check a consignment list</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/verify">Check one lot</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 
@@ -159,7 +159,7 @@ export default function ForAuctionHouses() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Check the next sale's lots</h2>
             <p className="text-muted-foreground mb-6">
-              2 free checks, then $0.99 per check or $10 a month unlimited. For more on checking at other businesses see{' '}
+              1 free check, then $0.99 for 2 checks or $10 a month unlimited. For more on checking at other businesses see{' '}
               <Link to="/for-businesses" className="text-primary underline">SafeOrStolen for businesses</Link>. Questions:
               safeorstolenmail@gmail.com.
             </p>

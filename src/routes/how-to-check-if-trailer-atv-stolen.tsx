@@ -84,7 +84,7 @@ function GuidePage() {
           "Searches SafeOrStolen theft reports and public web results",
           "Decodes standard 17-character VINs so you can spot a mismatch",
           "Each check saved to your account with the date",
-          "2 free checks with no credit card",
+          "1 free check with no credit card",
         ],
         process: [
           "Ask the seller for the VIN before you drive out, and check it here.",

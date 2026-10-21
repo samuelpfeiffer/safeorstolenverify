@@ -96,7 +96,7 @@ const SamsungIMEICheck = () => {
           'Searches SafeOrStolen theft reports and public web results',
           'Paid carrier blacklist check available',
           'Step-by-step account removal check for Samsung phones',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for a screenshot of *#06# and check the IMEI here before you meet.',
@@ -109,7 +109,7 @@ const SamsungIMEICheck = () => {
           {
             question: 'How do I check a Samsung IMEI for free?',
             answer:
-              "Dial *#06# to show the IMEI, then enter it on SafeOrStolen (safeorstolen.com/check-samsung-stolen). The free check shows the Galaxy model and searches SafeOrStolen theft reports and public web results. Your first 2 checks are free, with no account or credit card needed. The carrier blacklist check is a paid check.",
+              "Dial *#06# to show the IMEI, then enter it on SafeOrStolen (safeorstolen.com/check-samsung-stolen). The free check shows the Galaxy model and searches SafeOrStolen theft reports and public web results. Your first check is free, with no account or credit card needed. The carrier blacklist check is a paid check.",
           },
           {
             question: 'What is FRP lock on a Samsung?',

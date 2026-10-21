@@ -92,8 +92,8 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
         <div className="space-y-2">
           <p className="text-base font-medium">
             {isOverLimit 
-              ? "Get a single check for $0.99 or subscribe for $10/month unlimited. Protect yourself from scams and legal trouble."
-              : "Get unlimited verifications for $10/month, or pay $0.99 per check. Phones, cars, electronics, firearms & more."
+              ? "Get a 2 checks for $0.99 or subscribe for $10/month unlimited. Protect yourself from scams and legal trouble."
+              : "Get unlimited verifications for $10/month, or pay $0.99 for 2 checks. Phones, cars, electronics, firearms & more."
             }
           </p>
           {/* Usage indicator */}

@@ -10,7 +10,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
  {
  q: 'How do I check if a car is stolen in Miami?',
- a: "Enter the Florida plate or, better, the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/miami-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks, no account or credit card needed.",
+ a: "Enter the Florida plate or, better, the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/miami-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the year, make and model and lists open recalls. You get 1 free check, no account or credit card needed.",
  },
  {
  q: 'What does a Miami plate check search, and where else can I check?',
@@ -22,7 +22,7 @@ const FAQS = [
  },
  {
  q: "Is SafeOrStolen's Florida license plate lookup free?",
- a: "Your first 2 checks are free, with no account or credit card needed. After that a single check is $0.99, or $10 a month gets you unlimited checks, cancel anytime. Every check is saved to your account with the date.",
+ a: "Your first check is free, with no account or credit card needed. After that a single check is $0.99, or $10 a month gets you unlimited checks, cancel anytime. Every check is saved to your account with the date.",
  },
 ];
 
@@ -77,7 +77,7 @@ const MiamiLicensePlateLookupPage = () => {
  Check Miami Vehicle Now <ArrowRight className="ml-2 h-5 w-5" />
  </Button>
  </Link>
- <p className="text-muted-foreground text-sm mt-3">2 free checks · No credit card · Pre-set to Florida</p>
+ <p className="text-muted-foreground text-sm mt-3">1 free check · No credit card · Pre-set to Florida</p>
  </div>
  </section>
 

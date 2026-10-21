@@ -60,7 +60,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In New Jersey, a stolen car goes back to its owner even if you bought it without knowing, and you're left to recover your money from the seller. Title transfers go through the NJ Motor Vehicle Commission."
  },
  faqs: [
- { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public web results. After that, it's $0.99 a check or $10 a month for unlimited checks." },
+ { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public web results. After that, it's $0.99 for 2 checks or $10 a month for unlimited checks." },
  { question: "Does New Jersey require VIN inspections?", answer: "New Jersey can require a VIN inspection at a Motor Vehicle Commission facility for some vehicles coming from out of state. That inspection confirms the number matches the paperwork. It isn't a stolen check for a private buyer, so search the VIN yourself before handing over money." },
  { question: "What is New Jersey's title transfer process?", answer: "The seller signs the back of the title and fills in the sale price and odometer reading, and you take it to the NJ Motor Vehicle Commission with proof of insurance to title and register the car. Before signing, confirm the VIN on the title matches the vehicle." }
  ]
@@ -82,7 +82,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  },
  faqs: [
  { question: "How do I verify a New Mexico vehicle title?", answer: "Make sure the seller's name on the title matches their ID and the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-mexico-vin-lookup) to search its theft reports and public web results. For title records and title brands, contact the MVD." },
- { question: "Is a VIN check required in New Mexico?", answer: "No law requires a private buyer in New Mexico to run a VIN check. If the car turns out to be stolen, though, police can return it to the owner and you lose your money. Checking first takes a few seconds, and your first 2 checks are free." },
+ { question: "Is a VIN check required in New Mexico?", answer: "No law requires a private buyer in New Mexico to run a VIN check. If the car turns out to be stolen, though, police can return it to the owner and you lose your money. Checking first takes a few seconds, and your first check is free." },
  { question: "What is New Mexico's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading, and you take it to the New Mexico MVD with a bill of sale to title and register the car. Out-of-state vehicles also get a VIN inspection. Confirm the VIN on the title matches the car before you sign." }
  ]
  },

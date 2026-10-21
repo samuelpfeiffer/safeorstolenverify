@@ -194,7 +194,7 @@ const FirearmSerialNumberVerification = () => {
                 Ready to verify a firearm serial number?
               </p>
               <Button asChild>
-                <Link to="/firearms-check">Check a serial (2 free checks)</Link>
+                <Link to="/firearms-check">Check a serial (1 free check)</Link>
               </Button>
             </div>
           </section>
@@ -253,7 +253,7 @@ const FirearmSerialNumberVerification = () => {
               Check the serial before you buy
             </h2>
             <p className="opacity-90 mb-6">
-              It takes a few seconds and your first 2 checks are free.
+              It takes a few seconds and your first check is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary">

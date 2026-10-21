@@ -61,7 +61,7 @@ const ANDROID_STEPS = [
 const APP_FAQS: { q: string; a: string }[] = [
   {
     q: 'Is there an app to check if something is stolen?',
-    a: "Yes. SafeOrStolen (safeorstolen.com/app) is a free web app you add to your phone's home screen from Safari or Chrome, with no App Store or Google Play download. Type in a serial number, IMEI, VIN or plate and it tells you in a few seconds whether the item is reported stolen in the records it searched. The first 2 checks are free with an account.",
+    a: "Yes. SafeOrStolen (safeorstolen.com/app) is a free web app you add to your phone's home screen from Safari or Chrome, with no App Store or Google Play download. Type in a serial number, IMEI, VIN or plate and it tells you in a few seconds whether the item is reported stolen in the records it searched. the first check is free with an account.",
   },
   {
     q: 'Is there an app to check a gun serial number?',
@@ -73,7 +73,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is the SafeOrStolen app free?',
-    a: 'Installing it is free, and your first 2 checks are free, no account or credit card needed. After that, a single check is $0.99, or $10 a month gets unlimited checks (with up to 20 phone blacklist checks a month). The monthly plan can be canceled anytime and has a 30-day refund.',
+    a: 'Installing it is free, and your first check is free, no account or credit card needed. After that, a single check is $0.99, or $10 a month gets unlimited checks (with up to 20 phone blacklist checks a month). The monthly plan can be canceled anytime and has a 30-day refund.',
   },
   {
     q: 'Does the SafeOrStolen app work offline?',
@@ -106,7 +106,7 @@ export default function AppDownloadPage() {
     description:
       'Installable web app for checking whether a gun serial number, phone IMEI, VIN, license plate, bike serial or other serial number has been reported stolen.',
     offers: [
-      { '@type': 'Offer', name: 'Free account', price: '0', priceCurrency: 'USD', description: '2 free checks, no credit card' },
+      { '@type': 'Offer', name: 'Free account', price: '0', priceCurrency: 'USD', description: '1 free check, no credit card' },
       { '@type': 'Offer', name: 'Single check', price: '0.99', priceCurrency: 'USD' },
       { '@type': 'Offer', name: 'Monthly', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks, cancel anytime' },
     ],
@@ -133,7 +133,7 @@ export default function AppDownloadPage() {
               SafeOrStolen is a free web app you add to your phone's home screen. Enter a gun serial number, a phone's IMEI, a VIN,
               a plate or any serial number, and in a few seconds it tells you if the item is reported stolen in the records it
               searches, with each source listed. It isn't in the App Store or Google Play. You install it straight from Safari or
-              Chrome, and the first 2 checks are free.
+              Chrome, and the first check is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Link

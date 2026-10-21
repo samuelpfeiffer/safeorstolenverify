@@ -57,7 +57,7 @@ export const BusinessPageTemplate = ({
  },
  {
  question: `What does SafeOrStolen cost for ${businessType.toLowerCase()}?`,
- answer: `SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. No hidden costs. Contact us for enterprise API access and compliance reporting for high-volume businesses.`
+ answer: `SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. No hidden costs. Contact us for enterprise API access and compliance reporting for high-volume businesses.`
  },
  {
  question: `Is SafeOrStolen compliant with ${businessType.toLowerCase()} regulations?`,
@@ -170,7 +170,7 @@ export const BusinessPageTemplate = ({
  
  <h2>Related Resources</h2>
  <ul>
- <li><a href="/pricing">Pricing - From $0.99/check</a></li>
+ <li><a href="/pricing">Pricing - From $0.99 for 2 checks</a></li>
  <li><a href="/for-businesses">All Business Solutions</a></li>
  <li><a href="/for-pawn-shops">For Pawn Shops</a></li>
  <li><a href="/for-dealers">For Used Car Dealers</a></li>
@@ -178,7 +178,7 @@ export const BusinessPageTemplate = ({
  <li><a href="/data-sources">Our Data Sources</a></li>
  </ul>
  
- <p>SafeOrStolen checks multiple sources in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $0.99/check or $10/month unlimited.</p>
+ <p>SafeOrStolen checks multiple sources in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $0.99 for 2 checks or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -314,11 +314,11 @@ export const BusinessPageTemplate = ({
  </Link>
  <Link to="/verify" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Try It Free</h3>
- <p className="text-sm text-muted-foreground">2 free checks, no credit card</p>
+ <p className="text-sm text-muted-foreground">1 free check, no credit card</p>
  </Link>
  <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
  <h3 className="font-bold mb-2">Pricing</h3>
- <p className="text-sm text-muted-foreground">From $0.99/check or $10/mo unlimited</p>
+ <p className="text-sm text-muted-foreground">From $0.99 for 2 checks or $10/mo unlimited</p>
  </Link>
  </div>
  </div>

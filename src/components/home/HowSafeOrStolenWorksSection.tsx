@@ -10,7 +10,7 @@ export const HowSafeOrStolenWorksSection = () => {
  title: 'Enter IMEI, VIN, or Serial Number',
  description: 'Simply type or paste the identification number from any phone, vehicle, laptop, bike, or equipment. Our system accepts all formats - IMEI, VIN, serial numbers, frame numbers, ESN, MEID.',
  details: [
- 'Free account, 2 free checks',
+ 'Free account, 1 free check',
  'Works on any device',
  'Paste from photos/text',
  'Supports all formats'
@@ -109,7 +109,7 @@ export const HowSafeOrStolenWorksSection = () => {
  Check before you pay, in a few seconds
  </h3>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- Type the IMEI, VIN, plate or serial number at the meetup and see the result before money changes hands. Your first 2 checks are free, and every result lists the sources searched. Install the free web app to check from your phone.
+ Type the IMEI, VIN, plate or serial number at the meetup and see the result before money changes hands. Your first check is free, and every result lists the sources searched. Install the free web app to check from your phone.
  </p>
  </div>
  </div>

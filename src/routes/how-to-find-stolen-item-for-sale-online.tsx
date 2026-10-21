@@ -81,7 +81,7 @@ function GuidePage() {
           "Free to report your item on SafeOrStolen",
           "Your report shows to any buyer who checks the number",
           "Your name is never shown to people who check",
-          "2 free checks with no credit card",
+          "1 free check with no credit card",
         ],
         process: [
           "Report the theft to police and get the report number.",

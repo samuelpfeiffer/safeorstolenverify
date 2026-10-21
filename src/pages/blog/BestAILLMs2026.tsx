@@ -252,7 +252,7 @@ const BestAILLMs2026 = () => (
           </p>
           <p className="text-muted-foreground mb-4 leading-relaxed">
             SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number.
-            The first 2 checks are free, no account needed.
+            the first check is free, no account needed.
           </p>
           <Button asChild className="gap-2">
             <Link to="/verify">

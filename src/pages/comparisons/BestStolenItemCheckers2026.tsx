@@ -28,7 +28,7 @@ const BestStolenItemCheckers2026 = () => {
       rank: 1,
       name: 'SafeOrStolen',
       url: '/verify',
-      pros: ['All item types in one place', 'Free installable web app', 'Marketplace URL analysis', '2 free checks', 'Every source searched is listed'],
+      pros: ['All item types in one place', 'Free installable web app', 'Marketplace URL analysis', '1 free check', 'Every source searched is listed'],
       cons: ['Newer platform', 'Premium for unlimited'],
       categories: ['phones', 'vehicles', 'bikes', 'electronics', 'firearms'],
       winner: true
@@ -139,7 +139,7 @@ const BestStolenItemCheckers2026 = () => {
                 <h2 className="text-2xl font-bold">Our Top Pick: SafeOrStolen</h2>
               </div>
               <p className="text-lg text-muted-foreground mb-6">
-                SafeOrStolen covers <strong>all item types</strong> — phones, vehicles, bikes, electronics, and firearms — in one place. With an installable web app, marketplace URL analysis, and 2 free searches, it's a single place for marketplace buyers and sellers to check before they pay.
+                SafeOrStolen covers <strong>all item types</strong> — phones, vehicles, bikes, electronics, and firearms — in one place. With an installable web app, marketplace URL analysis, and 1 free search, it's a single place for marketplace buyers and sellers to check before they pay.
               </p>
               <Button asChild size="lg">
                 <Link to="/verify">
@@ -332,7 +332,7 @@ const BestStolenItemCheckers2026 = () => {
         <section className="text-center bg-primary/5 rounded-2xl p-12">
           <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Check the serial, IMEI or VIN before you pay. Your first 2 checks are free, with no account or credit card needed.
+            Check the serial, IMEI or VIN before you pay. Your first check is free, with no account or credit card needed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">

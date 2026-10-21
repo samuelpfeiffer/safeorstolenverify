@@ -18,7 +18,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "Is there a free alternative to Carfax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For a theft check, yes. SafeOrStolen (safeorstolen.com) gives you 2 free checks, no account needed: it decodes the VIN, lists open recalls, and searches its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs. It is not a full vehicle-history report with accidents and service records."
+          "text": "For a theft check, yes. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and searches its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs. It is not a full vehicle-history report with accidents and service records."
         }
       },
       {
@@ -34,7 +34,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "How can I check if a car is stolen for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run the VIN through NICB VINCheck, which is free, and through SafeOrStolen, where your first 2 checks are free. SafeOrStolen searches its own theft reports and public web results, and Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
+          "text": "Run the VIN through NICB VINCheck, which is free, and through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports and public web results, and Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
         }
       }
     ]
@@ -66,7 +66,7 @@ const CarfaxVsFreeVinAlternatives = () => {
       name: "SafeOrStolen",
       price: "Free (2 checks) / $10/mo",
       focus: "Theft Verification",
-      pros: ["2 free checks", "VIN decode and open recalls", "Results in a few seconds", "Free installable web app"],
+      pros: ["1 free check", "VIN decode and open recalls", "Results in a few seconds", "Free installable web app"],
       cons: ["No accident history", "No service records"],
       best: "Checking if a car is stolen before purchase"
     },
@@ -143,7 +143,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg">
-                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen</Link> (2 free checks) - it searches our theft reports and public web results, and Arizona law-enforcement records for Arizona VINs.
+                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen</Link> (1 free check) - it searches our theft reports and public web results, and Arizona law-enforcement records for Arizona VINs.
               </p>
               <p className="text-lg mt-2">
                 <strong>For accident and service history:</strong> Buy a Carfax or AutoCheck report on the car you're serious about.
@@ -238,7 +238,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             <p>Here's the order that makes sense when buying a used car:</p>
             <ol>
               <li>
-                <strong>First: a theft check with SafeOrStolen</strong> - See whether the VIN matches a theft report or public web result. Takes a few seconds, and your first 2 checks are free.
+                <strong>First: a theft check with SafeOrStolen</strong> - See whether the VIN matches a theft report or public web result. Takes a few seconds, and your first check is free.
               </li>
               <li>
                 <strong>If clean: a history report</strong> - Once the theft check is clean, buy a history report for accident, service and ownership records.
@@ -264,7 +264,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             
             <h3>Is there a completely free Carfax alternative?</h3>
             <p>
-              For a theft check, NICB VINCheck is free and SafeOrStolen gives you 2 free checks. For accident and service history, you'll generally need a paid report.
+              For a theft check, NICB VINCheck is free and SafeOrStolen gives you 1 free check. For accident and service history, you'll generally need a paid report.
             </p>
 
             <h3>Can I get a free Carfax report?</h3>

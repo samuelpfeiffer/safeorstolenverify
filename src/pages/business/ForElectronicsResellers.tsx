@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'How much does it cost a reseller?',
     answer:
-      '2 free checks, no account or credit card needed. Then $0.99 per check, or $10 a month for unlimited checks with up to 20 blacklist searches a month. Cancel anytime; the monthly plan has a 30-day refund. If you need more blacklist searches than that, email safeorstolenmail@gmail.com.',
+      '1 free check, no account or credit card needed. Then $0.99 for 2 checks, or $10 a month for unlimited checks with up to 20 blacklist searches a month. Cancel anytime; the monthly plan has a 30-day refund. If you need more blacklist searches than that, email safeorstolenmail@gmail.com.',
   },
 ];
 
@@ -100,7 +100,7 @@ const ForElectronicsResellers = () => {
               <Button size="lg" asChild><Link to="/bulk-check">Check a list of IMEIs</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/imei-checker">Check one IMEI</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 

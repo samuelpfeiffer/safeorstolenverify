@@ -15,7 +15,7 @@ export const SitewideCredibilityBar: React.FC<SitewideCredibilityBarProps> = ({ 
     { icon: Database, text: 'Every source listed', highlight: true },
     { icon: Zap, text: 'Results in seconds' },
     { icon: Lock, text: 'Owner details never shown' },
-    { icon: CheckCircle, text: '2 free checks, no card' },
+    { icon: CheckCircle, text: '1 free check, no card' },
   ];
 
   return (

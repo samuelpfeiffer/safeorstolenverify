@@ -38,7 +38,7 @@ const StolenCheckHouston = () => {
     <>
       <PageSEO
         title="Houston Stolen Item Check - Check Before You Buy | SafeOrStolen"
-        description="Buying used in Houston? Check a phone IMEI, car VIN, plate or tool serial against SafeOrStolen theft reports in a few seconds. 2 free checks, no credit card."
+        description="Buying used in Houston? Check a phone IMEI, car VIN, plate or tool serial against SafeOrStolen theft reports in a few seconds. 1 free check, no credit card."
         keywords="houston stolen item check, stolen car check houston, verify stolen houston, VIN check houston, HPD stolen vehicle"
         canonical="/stolen-check-houston"
         structuredData={faqSchema}
@@ -55,7 +55,7 @@ const StolenCheckHouston = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Houston Stolen Item Check</h1>
 
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Buying a used car, phone or tools in Houston? Run the VIN, IMEI or serial number on SafeOrStolen before you meet. You get a result in a few seconds, and your first 2 checks are free.
+              Buying a used car, phone or tools in Houston? Run the VIN, IMEI or serial number on SafeOrStolen before you meet. You get a result in a few seconds, and your first check is free.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -141,7 +141,7 @@ const StolenCheckHouston = () => {
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Check Before You Buy in Houston</h2>
-            <p className="mb-6 opacity-90">A check takes a few seconds. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
+            <p className="mb-6 opacity-90">A check takes a few seconds. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Check an Item</Link>
             </Button>

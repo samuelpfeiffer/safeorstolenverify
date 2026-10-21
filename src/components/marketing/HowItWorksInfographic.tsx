@@ -64,7 +64,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  'Protect yourself from legal consequences',
  'Avoid financial loss from blacklisted items',
  'Perfect for Facebook Marketplace, Craigslist, eBay',
- '2 free verifications included - no credit card required',
+ '1 free verification included - no credit card required',
  ];
 
  return (
@@ -161,7 +161,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  Start Verifying Today
  </h2>
  <p className="text-muted-foreground mb-6">
- Get 2 free verifications - no credit card required
+ Get 1 free verification - no credit card required
  </p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg" className="gap-2">

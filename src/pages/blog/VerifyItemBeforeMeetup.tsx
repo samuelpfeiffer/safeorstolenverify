@@ -80,7 +80,7 @@ export default function VerifyItemBeforeMeetup() {
           'Run it again on your phone at the meetup',
           'Every source listed with the result',
           'Dated record saved to your account',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask for the serial number, IMEI or VIN and a photo of it on the item.',
@@ -99,7 +99,7 @@ export default function VerifyItemBeforeMeetup() {
           {
             question: 'Can I check if an item is stolen before I meet the seller?',
             answer:
-              'Yes, as long as the seller gives you its serial number, IMEI or VIN. Enter it on SafeOrStolen (safeorstolen.com/verify), which searches its theft reports and public web results and lists every source. The first 2 checks are free. Then match the same number on the item at the meetup, so you know you checked the right one.',
+              'Yes, as long as the seller gives you its serial number, IMEI or VIN. Enter it on SafeOrStolen (safeorstolen.com/verify), which searches its theft reports and public web results and lists every source. the first check is free. Then match the same number on the item at the meetup, so you know you checked the right one.',
           },
           {
             question: 'What if the seller says they will show the serial number at the meetup?',

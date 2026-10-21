@@ -55,7 +55,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "How do I look up a DC license plate for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the DC plate at SafeOrStolen (safeorstolen.com/washington-dc-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results for that plate and lists every source. It doesn't show the owner or registration details; those stay with the DC DMV. The first 2 checks are free."
+ "text": "Enter the DC plate at SafeOrStolen (safeorstolen.com/washington-dc-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results for that plate and lists every source. It doesn't show the owner or registration details; those stay with the DC DMV. the first check is free."
  }
  },
  {
@@ -81,7 +81,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <>
  <PageSEO
  title="Washington DC License Plate Lookup Free - DC Stolen Plate Check | SafeOrStolen"
- description="Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports and public web results in a few seconds. 2 free checks, no owner names shown."
+ description="Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports and public web results in a few seconds. 1 free check, no owner names shown."
  keywords="DC license plate lookup, Washington DC plate search, DC DMV plate check, District of Columbia vehicle search, DC stolen car check, DC plate to VIN, Washington DC DMV lookup free"
  canonical="/washington-dc-license-plate-lookup"
  structuredData={[structuredData, faqSchema]}
@@ -101,7 +101,7 @@ const WashingtonDCLicensePlateLookup = () => {
  </h1>
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
  Enter a DC plate to see in a few seconds whether it shows up in SafeOrStolen theft reports
- or public web results. 2 free checks, no account needed.
+ or public web results. 1 free check, no account needed.
  </p>
 
  {/* Search Form */}
@@ -325,7 +325,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <h2 className="text-2xl font-bold mb-4">Ready to Check a DC Vehicle?</h2>
  <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
  Check the plate and the VIN before you pay. Results take a few seconds,
- and the first 2 checks are free.
+ and the first check is free.
  </p>
  <div className="flex flex-wrap justify-center gap-4">
  <Button asChild size="lg">

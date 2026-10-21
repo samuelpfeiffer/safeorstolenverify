@@ -19,7 +19,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "Is a VIN check required in Illinois?", answer: "No law requires a buyer to run a VIN check on a private sale in Illinois. It's still worth doing: if the car turns out to be stolen, police can return it to the owner and you lose what you paid. A check before you hand over money takes a few seconds." },
- { question: "How do I check an Illinois VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/illinois-vin-lookup) and you get 2 free checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public web results. After that it's $0.99 a check or $10 a month for unlimited checks." },
+ { question: "How do I check an Illinois VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/illinois-vin-lookup) and you get 1 free check, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public web results. After that it's $0.99 for 2 checks or $10 a month for unlimited checks." },
  { question: "What is the Illinois title transfer process?", answer: "The seller signs the title over to you and fills in the odometer reading, and you take it to the Illinois Secretary of State to title and register the car. Before you sign anything, compare the VIN on the title with the VIN on the dashboard and the door sticker. They should match exactly." }
  ]
  },
@@ -40,7 +40,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "Does Indiana require VIN inspections?", answer: "Indiana generally requires a VIN inspection before titling a vehicle that comes from out of state or has no Indiana title. That inspection confirms the number on the car, not whether it's stolen, so a private buyer should still search the VIN before paying." },
- { question: "How do I check an Indiana VIN for free?", answer: "SafeOrStolen (safeorstolen.com/indiana-vin-lookup) gives you 2 free checks, no account needed. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public listings that mention that VIN. The free installable web app at safeorstolen.com/app lets you do it on your phone at the meetup." },
+ { question: "How do I check an Indiana VIN for free?", answer: "SafeOrStolen (safeorstolen.com/indiana-vin-lookup) gives you 1 free check, no account needed. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public listings that mention that VIN. The free installable web app at safeorstolen.com/app lets you do it on your phone at the meetup." },
  { question: "What happens if I buy a stolen car in Indiana?", answer: "If police confirm the car is stolen, it goes back to the owner, even if you didn't know and paid a fair price. Your only route to your money is the seller. That's why buyers should check the VIN, match it to the title, and pay in a traceable way." }
  ]
  },
@@ -61,7 +61,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "How do I verify an Iowa vehicle title?", answer: "Look at the paper title first: the seller's name should match their ID, and the VIN on it should match the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/iowa-vin-lookup) to search its theft reports and public web results. Ask the county treasurer about title brands." },
- { question: "Is a VIN check required in Iowa?", answer: "Iowa doesn't require a private buyer to run a VIN check. It's still the cheapest protection you have: a stolen car can be taken back by police and returned to its owner, and you lose what you paid. A check costs nothing with your 2 free checks." },
+ { question: "Is a VIN check required in Iowa?", answer: "Iowa doesn't require a private buyer to run a VIN check. It's still the cheapest protection you have: a stolen car can be taken back by police and returned to its owner, and you lose what you paid. A check costs nothing with your free check." },
  { question: "What is Iowa's flood vehicle disclosure law?", answer: "Iowa requires flood damage to be disclosed when a vehicle is sold, but a car can be retitled in another state first. For flood history, get a vehicle history report, and look for damp carpet, rust under the seats and silt in the trunk." }
  ]
  },
@@ -103,7 +103,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "How do I verify a Kentucky vehicle title?", answer: "Compare the title to the car: the VIN on the title should match the dashboard and door sticker, and the seller's name should match their ID. Then run the VIN on SafeOrStolen (safeorstolen.com/kentucky-vin-lookup) to search its theft reports and public web results. The county clerk can confirm title details." },
- { question: "Is a VIN check required in Kentucky?", answer: "No law requires a private buyer in Kentucky to check a VIN. But if the car is stolen, police can take it back for the owner and you lose the money. Running the VIN before you pay takes a few seconds and your first 2 checks are free." },
+ { question: "Is a VIN check required in Kentucky?", answer: "No law requires a private buyer in Kentucky to check a VIN. But if the car is stolen, police can take it back for the owner and you lose the money. Running the VIN before you pay takes a few seconds and your first check is free." },
  { question: "What is Kentucky's lemon law?", answer: "Kentucky's lemon law covers new vehicles, not used private sales. For a used car you're on your own, so get a mechanic's inspection, a vehicle history report for accidents and title brands, and a SafeOrStolen check for theft reports and online listings mentioning the VIN." }
  ]
  }

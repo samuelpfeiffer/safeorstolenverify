@@ -40,7 +40,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'How much does it cost?',
     answer:
-      'The check itself is one of your checks: 2 are free with no account needed, then $0.99 for a single check or $10 a month for unlimited checks. The certificate is $1.99 on top, or included free with the monthly plan. You only need one certificate per item.',
+      'The check itself is one of your checks: 2 are free with no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks. The certificate is $1.99 on top, or included free with the monthly plan. You only need one certificate per item.',
   },
 ];
 
@@ -131,7 +131,7 @@ const SellerBadgePage: React.FC = () => {
 
         <section aria-label="Call to action" className="text-center bg-primary/5 border border-primary/20 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-foreground mb-3">Check your item first</h2>
-          <p className="text-muted-foreground mb-4">The certificate offer appears under every check result. Your first 2 checks are free.</p>
+          <p className="text-muted-foreground mb-4">The certificate offer appears under every check result. Your first check is free.</p>
           <Button asChild size="lg" className="button-glow">
             <Link to="/verify">Check a serial number, IMEI or VIN <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>

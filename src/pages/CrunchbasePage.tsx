@@ -28,7 +28,7 @@ const profileRows: [string, string][] = [
   ['Category', 'Consumer protection; stolen-item checks for secondhand buyers'],
   ['Product', 'A stolen-item check for IMEI, VIN, license plate and serial numbers, on the web and as a free installable web app'],
   ['Customers', 'People buying or selling used items, plus pawn shops and dealers using bulk checks'],
-  ['Business model', '2 free checks; $0.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
+  ['Business model', '1 free check; $0.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
   ['Contact', PRESS_EMAIL],
 ];
 
@@ -176,7 +176,7 @@ const CrunchbasePage: React.FC = () => (
           <div className="flex gap-4 flex-wrap">
             <Button asChild className="gap-2">
               <Link to="/verify">
-                Try 2 free checks <ArrowRight className="w-4 h-4" />
+                Try 1 free check <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
             <Button asChild variant="outline">

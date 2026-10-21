@@ -29,7 +29,7 @@ const CaliforniaLicensePlateLookupPage = () => {
  "Public web results that mention the plate",
  "No owner names or personal details shown",
  "Results in a few seconds, saved to your account",
- "2 free checks, no account needed, then $0.99 a check or $10 a month unlimited"
+ "1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited"
  ],
  process: [
  "Write down the California plate exactly as shown",

@@ -20,7 +20,7 @@ const InstallAppPage = () => {
  { question: "Will SafeOrStolen work offline?", answer: "No. Each check searches SafeOrStolen's records and the public web, so you need a data connection. If the meetup spot has weak signal, ask the seller for the IMEI, VIN or serial number ahead of time and run the check before you go." },
  { question: "How much storage does SafeOrStolen use?", answer: "Very little. An installed web app is mostly a home-screen shortcut plus some cached pages, so it takes far less room than a typical app store app. You can clear it any time by removing the icon." },
  { question: "Can I uninstall SafeOrStolen?", answer: "Yes, just like any app. iPhone: Long-press the icon → Remove App. Android: Long-press → Uninstall. Desktop: Right-click → Uninstall." },
- { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 2 free checks with no credit card and saves each check with the date. After that it's $0.99 a check or $10 a month for unlimited checks." },
+ { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 1 free check with no credit card and saves each check with the date. After that it's $0.99 for 2 checks or $10 a month for unlimited checks." },
  ];
 
  const iosSteps = [
@@ -122,7 +122,7 @@ const InstallAppPage = () => {
  <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Free to install</span>
  <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Updates itself</span>
- <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> 2 free checks</span>
+ <span className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> 1 free check</span>
  </div>
  </div>
  </section>

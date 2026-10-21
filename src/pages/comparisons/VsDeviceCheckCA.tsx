@@ -44,7 +44,7 @@ const VsDeviceCheckCA = () => {
         "name": "Is SafeOrStolen free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You get 2 free checks with a free SafeOrStolen account, no credit card. After that, a single check is $0.99 or you can pay $10 a month for unlimited checks, which includes up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime."
+          "text": "You get 1 free check with a free SafeOrStolen account, no credit card. After that, a single check is $0.99 or you can pay $10 a month for unlimited checks, which includes up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime."
         }
       }
     ]
@@ -173,11 +173,11 @@ const VsDeviceCheckCA = () => {
             <Card className="border-primary/20">
               <CardHeader>
                 <Zap className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>2 free checks</CardTitle>
+                <CardTitle>1 free check</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Sign up free, no credit card. After that, $0.99 a check or $10 a month for unlimited checks.
+                  Sign up free, no credit card. After that, $0.99 for 2 checks or $10 a month for unlimited checks.
                 </p>
               </CardContent>
             </Card>

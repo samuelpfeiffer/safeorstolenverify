@@ -8,7 +8,7 @@ const StolenCheckSanDiego = () => {
  const faqs = [
  {
  question: "How do I check if something is stolen in San Diego?",
- answer: "Get the serial number, IMEI or VIN from the item itself and enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-diego). In a few seconds it searches SafeOrStolen theft reports and public web results and lists every source. Bikes are also checked against a national stolen-bicycle registry. The first 2 checks are free."
+ answer: "Get the serial number, IMEI or VIN from the item itself and enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-diego). In a few seconds it searches SafeOrStolen theft reports and public web results and lists every source. Bikes are also checked against a national stolen-bicycle registry. the first check is free."
  },
  {
  question: "Where can I safely meet sellers in San Diego?",
@@ -38,7 +38,7 @@ const StolenCheckSanDiego = () => {
  <>
  <PageSEO
  title="San Diego Stolen Item Check - Verify Before Buying | SafeOrStolen"
- description="Check if a used car, phone, bike or tool is stolen before buying in San Diego. Enter the VIN, IMEI or serial and see theft reports in a few seconds. 2 free checks."
+ description="Check if a used car, phone, bike or tool is stolen before buying in San Diego. Enter the VIN, IMEI or serial and see theft reports in a few seconds. 1 free check."
  keywords="san diego stolen item check, stolen car check san diego, verify stolen san diego, SDPD stolen vehicle, VIN check san diego"
  canonical="/stolen-check-san-diego"
  structuredData={faqSchema}
@@ -135,7 +135,7 @@ const StolenCheckSanDiego = () => {
  <section className="py-16 px-4 bg-primary text-primary-foreground">
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Verify Before You Buy in San Diego</h2>
- <p className="mb-6 opacity-90">2 free checks, results in a few seconds.</p>
+ <p className="mb-6 opacity-90">1 free check, results in a few seconds.</p>
  <Button asChild size="lg" variant="secondary">
  <Link to="/verify">Verify Item Free</Link>
  </Button>

@@ -23,7 +23,7 @@ const AndroidPhoneCheck = () => {
  itemType="Android Phone"
  identifierType="IMEI"
  heroBadge="Android Device Verification"
- heroSubtitle="Pixel, OnePlus, Motorola or any other Android phone: dial *#06#, enter the IMEI, and see the model and any theft reports in a few seconds. Your first 2 checks are free."
+ heroSubtitle="Pixel, OnePlus, Motorola or any other Android phone: dial *#06#, enter the IMEI, and see the model and any theft reports in a few seconds. Your first check is free."
  whatIsTitle="What is an Android IMEI check?"
  whatIsContent="Every Android phone has a 15-digit IMEI (dual-SIM phones have two). A SafeOrStolen check shows the make and model that IMEI belongs to, so you can confirm it matches the phone in your hand, and searches SafeOrStolen theft reports and public web listings for it. A carrier blacklist check, which shows whether carriers have blocked the IMEI as lost or stolen, is available as a paid add-on."
  howItWorksSteps={[

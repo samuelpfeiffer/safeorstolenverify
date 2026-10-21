@@ -6,7 +6,7 @@ const JewelryCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Jewelry is Stolen - Diamond, Gold Verification | SafeOrStolen"
-      metaDescription="Check pre-owned jewelry before you buy: search a diamond inscription or engraved number against SafeOrStolen theft reports and public web results. 2 free checks."
+      metaDescription="Check pre-owned jewelry before you buy: search a diamond inscription or engraved number against SafeOrStolen theft reports and public web results. 1 free check."
       h1="Check if Jewelry is Stolen"
       keywords={[
         'check if jewelry is stolen',
@@ -24,7 +24,7 @@ const JewelryCheck = () => {
       itemType="Jewelry"
       identifierType="Serial Number"
       heroBadge="Jewelry Verification"
-      heroSubtitle="If a diamond has a laser inscription or a piece has an engraved number, you can search it against SafeOrStolen theft reports and public web results before you buy. Your first 2 checks are free."
+      heroSubtitle="If a diamond has a laser inscription or a piece has an engraved number, you can search it against SafeOrStolen theft reports and public web results before you buy. Your first check is free."
       stats={[
         { value: "2", label: "Free Checks" },
         { value: "$0.99", label: "Per Check After That" },

@@ -41,7 +41,7 @@ const ComparisonCheckmend = () => {
     <>
       <PageSEO
         title="SafeOrStolen vs CheckMEND: CheckMEND Alternative | SafeOrStolen"
-        description="Comparing CheckMEND and SafeOrStolen: what each covers, what SafeOrStolen searches, its prices ($0.99 a check, 2 free) and its free web app."
+        description="Comparing CheckMEND and SafeOrStolen: what each covers, what SafeOrStolen searches, its prices ($0.99 for 2 checks, 2 free) and its free web app."
         keywords="CheckMEND alternative, CheckMEND app, compare CheckMEND, CheckMEND mobile app, item checker app, SafeOrStolen app download, CheckMEND review"
         canonical="/vs-checkmend"
         structuredData={comparisonSchema}
@@ -50,7 +50,7 @@ const ComparisonCheckmend = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>SafeOrStolen vs CheckMEND</h1>
-          <p>CheckMEND is a device history check best known for phones and other electronics. SafeOrStolen checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and any serial-numbered item. Every SafeOrStolen check searches its own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles. It runs as a free installable web app at safeorstolen.com/app (not an App Store or Google Play app) and needs a data connection. You get 2 free checks, no account needed, then $0.99 a check or $10 a month unlimited.</p>
+          <p>CheckMEND is a device history check best known for phones and other electronics. SafeOrStolen checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and any serial-numbered item. Every SafeOrStolen check searches its own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles. It runs as a free installable web app at safeorstolen.com/app (not an App Store or Google Play app) and needs a data connection. You get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited.</p>
         </div>
       </noscript>
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
@@ -69,7 +69,7 @@ const ComparisonCheckmend = () => {
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">
-                  Try 2 Free Checks
+                  Try 1 Free Check
                 </Link>
               </Button>
             </div>
@@ -100,7 +100,7 @@ const ComparisonCheckmend = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span><strong>2 free checks</strong> - with a free account, no credit card</span>
+                      <span><strong>1 free check</strong> - with a free account, no credit card</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -180,7 +180,7 @@ const ComparisonCheckmend = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>
-                        <td className="py-3 px-4">2 free checks, then $0.99 a check or $10 a month unlimited; optional $1.99 verification certificate</td>
+                        <td className="py-3 px-4">1 free check, then $0.99 for 2 checks or $10 a month unlimited; optional $1.99 verification certificate</td>
                       </tr>
                     </tbody>
                   </table>
@@ -194,7 +194,7 @@ const ComparisonCheckmend = () => {
                 <Smartphone className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Pick the Checker That Fits What You're Buying</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  If you buy more than phones, one account that checks phones, cars, plates, guns, bikes and serial numbers saves you juggling several services. Add SafeOrStolen to your home screen from safeorstolen.com/app and use your 2 free checks.
+                  If you buy more than phones, one account that checks phones, cars, plates, guns, bikes and serial numbers saves you juggling several services. Add SafeOrStolen to your home screen from safeorstolen.com/app and use your 1 free check.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/app">

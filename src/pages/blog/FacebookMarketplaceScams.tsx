@@ -70,7 +70,7 @@ const FacebookMarketplaceScams = () => {
                     <p className="font-semibold">The Scam:</p>
                     <p>Thieves sell stolen phones, laptops and electronics below the usual price. You buy it, then the owner locks it remotely through Find My or Google's Find My Device, or police take it back.</p>
                     <p className="font-semibold mt-4">How to Avoid:</p>
-                    <p>Ask for the IMEI, serial number or VIN before you meet and check it on SafeOrStolen. Your first 2 checks are free.</p>
+                    <p>Ask for the IMEI, serial number or VIN before you meet and check it on SafeOrStolen. Your first check is free.</p>
                   </div>
                 </div>
               </CardContent>

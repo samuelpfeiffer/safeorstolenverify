@@ -89,7 +89,7 @@ export const KeywordTargeting = () => {
  <h3>Common Questions About Verification</h3>
  <dl>
  <dt>How much does it cost to check if an item is stolen?</dt>
- <dd>SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Enter any IMEI, VIN, or serial number.</dd>
+ <dd>SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. Enter any IMEI, VIN, or serial number.</dd>
  
  <dt>How do I know if a phone is blacklisted?</dt>
  <dd>Use our IMEI checker - we provide device details and check SafeOrStolen reports.</dd>

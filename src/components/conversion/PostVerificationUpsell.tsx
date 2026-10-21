@@ -1,6 +1,6 @@
 /**
  * Post Verification Upsell - Shows after free verification
- * Two options: $0.99/check or $10/mo unlimited
+ * Two options: $0.99 for 2 checks or $10/mo unlimited
  */
 
 import React, { useState } from 'react';
@@ -103,7 +103,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               </div>
               <div>
                 <h3 className="font-bold text-lg">Free checks used!</h3>
-                <p className="text-muted-foreground">Continue for $0.99/check or go unlimited for $10/month.</p>
+                <p className="text-muted-foreground">Continue for $0.99 for 2 checks or go unlimited for $10/month.</p>
               </div>
             </div>
 

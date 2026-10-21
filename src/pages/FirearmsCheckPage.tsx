@@ -52,7 +52,7 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 // One list for the visible FAQ and the FAQPage schema, so they always match.
 const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'How do I check if a gun is stolen by serial number?', a: "Enter the serial from the frame or receiver. Read the sources actually checked on your result, then copy the serial for the official public searches linked below. These links are manual checks, not additional connected databases. A miss means not found, not safe." },
- { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 2 free checks, no account or credit card needed. After that it is $0.99 per check or $10 a month for unlimited checks.' },
+ { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $0.99 for 2 checks or $10 a month for unlimited checks.' },
  { q: 'Does this check cover every state database?', a: "No. The historical reports listed below are not live connections to those states. Ohio stolen-gun records are an existing source. Florida and Utah public links are separate searches you open yourself. Coverage is limited to the records each check actually searches." },
  { q: 'My state is not on the list. Can I still check a gun?', a: "Yes, you can enter the serial, but that does not mean your state's database is connected. Read the sources on the result and ask local police whether their policy permits an additional check." },
  { q: 'Is it legal to check a gun serial number?', a: 'Yes. Looking up whether a serial number has been reported stolen is legal for anyone. SafeOrStolen is a private service and is not a government agency. It never shows who owns a gun or who reported it.' },
@@ -67,7 +67,7 @@ const FirearmsCheckPage = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Free Gun Serial Number Lookup: Is This Gun Stolen?"
- description="Free gun serial number lookup. Search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records. 2 free checks."
+ description="Free gun serial number lookup. Search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records. 1 free check."
  canonical="/firearms-check"
  />
 
@@ -89,10 +89,10 @@ const FirearmsCheckPage = () => {
 
  {/* VERIFY TOOL — inline if no shared component */}
  <GunVerifyTool />
- <p className="mt-4 text-sm text-muted-foreground">Result lists every source searched. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
+ <p className="mt-4 text-sm text-muted-foreground">Result lists every source searched. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
 
  <p className="text-muted-foreground/60 text-sm mt-4">
- 2 free checks · No credit card · Works for handguns, rifles, shotguns, and more
+ 1 free check · No credit card · Works for handguns, rifles, shotguns, and more
  </p>
  </div>
  </section>

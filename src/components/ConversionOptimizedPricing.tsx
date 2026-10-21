@@ -35,7 +35,7 @@ export const ConversionOptimizedPricing = ({
           Simple, Honest Pricing
         </h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-6">
-          Start with 2 free checks. Then pay <span className="font-bold text-sos-lime">$0.99/check</span> or go unlimited for <span className="font-bold text-sos-lime">$10/month</span>.
+          Start with 1 free check. Then pay <span className="font-bold text-sos-lime">$0.99 for 2 checks</span> or go unlimited for <span className="font-bold text-sos-lime">$10/month</span>.
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span className="flex items-center gap-1 text-sos-lime font-semibold">
@@ -149,7 +149,7 @@ export const ConversionOptimizedPricing = ({
       <div className="max-w-2xl mx-auto text-center mb-12 p-6 bg-card rounded-xl border border-border">
         <h3 className="text-xl font-bold mb-3">Start Free</h3>
         <p className="text-muted-foreground">
-          Every new user gets <span className="font-bold text-sos-lime">2 free verifications</span> — no credit card required. 
+          Every new user gets <span className="font-bold text-sos-lime">1 free verification</span> — no credit card required. 
           All databases, all item types, 3-second results. Try before you buy.
         </p>
       </div>

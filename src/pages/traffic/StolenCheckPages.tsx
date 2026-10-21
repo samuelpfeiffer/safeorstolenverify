@@ -7,7 +7,7 @@ export const CheckStolenPhone = () => (
  <StolenCheckLanding
  itemType="Phone"
  title="Is My Phone Stolen? Free IMEI Check"
- description="Check if a phone is stolen before you buy. Enter the IMEI to see the make and model and search for theft reports in a few seconds. 2 free checks."
+ description="Check if a phone is stolen before you buy. Enter the IMEI to see the make and model and search for theft reports in a few seconds. 1 free check."
  keywords={[
  'is my phone stolen',
  'check if phone is stolen',
@@ -29,7 +29,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'Is this check really free?',
- a: 'Yes. You get 2 free checks when you sign up, no credit card required. After that it\'s $0.99 a check or $10 a month for unlimited checks.'
+ a: 'Yes. You get 1 free check when you sign up, no credit card required. After that it\'s $0.99 for 2 checks or $10 a month for unlimited checks.'
  },
  {
  q: 'How accurate is the stolen phone database?',
@@ -43,7 +43,7 @@ export const CheckStolenCar = () => (
  <StolenCheckLanding
  itemType="Car"
  title="Is This Car Stolen? Free VIN Check"
- description="Check if a car is stolen before you buy. Enter the VIN to decode the year, make and model, see open recalls and search for theft reports. 2 free checks."
+ description="Check if a car is stolen before you buy. Enter the VIN to decode the year, make and model, see open recalls and search for theft reports. 1 free check."
  keywords={[
  'is this car stolen',
  'check if car is stolen',
@@ -114,7 +114,7 @@ export const CheckStolenBike = () => (
  <StolenCheckLanding
  itemType="Bicycle"
  title="Is This Bike Stolen? Free Serial Number Check"
- description="Check if a bike is stolen before you buy. Enter the serial number to search a national stolen-bicycle registry and SafeOrStolen theft reports. 2 free checks."
+ description="Check if a bike is stolen before you buy. Enter the serial number to search a national stolen-bicycle registry and SafeOrStolen theft reports. 1 free check."
  keywords={[
  'is this bike stolen',
  'check if bike is stolen',

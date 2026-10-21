@@ -16,7 +16,7 @@ export const EnhancedFAQSection = () => {
  faqs: [
  {
  question: "How much does SafeOrStolen cost?",
-  answer: "Your first 2 checks are free, no account needed. Additional checks cost $0.99 each, or $10 per month for unlimited supported checks."
+  answer: "Your first check is free, no account needed. Additional checks cost $0.99 for 2, or $10 per month for unlimited supported checks."
  },
  {
  question: "What items can I verify with SafeOrStolen?",

@@ -293,7 +293,7 @@ export default function UltimateMarketplaceBuyersGuide() {
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify Before You Buy</h3>
               <p className="text-muted-foreground mb-6">
                 SafeOrStolen searches its theft reports and public web results for phones, electronics, vehicles, bikes
-                and tools in a few seconds. 2 free checks, and a free web app with barcode scanning at safeorstolen.com/app.
+                and tools in a few seconds. 1 free check, and a free web app with barcode scanning at safeorstolen.com/app.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">

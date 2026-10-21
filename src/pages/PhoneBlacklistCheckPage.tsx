@@ -156,7 +156,7 @@ const PhoneBlacklistCheckPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold text-lg mb-2">Basic IMEI check</h3>
- <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports and public web results. 2 free checks, then $0.99 a check or $10 a month unlimited.</p>
+ <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports and public web results. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
  </CardContent>
  </Card>
  <Card>
@@ -214,7 +214,7 @@ const PhoneBlacklistCheckPage = () => {
  {/* CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Check Blacklist Status Now</h2>
- <p className="text-muted-foreground mb-6">Check the IMEI before money changes hands. Your first 2 checks are free.</p>
+ <p className="text-muted-foreground mb-6">Check the IMEI before money changes hands. Your first check is free.</p>
  <Button asChild size="lg">
  <a href="#top">Check a Phone</a>
  </Button>

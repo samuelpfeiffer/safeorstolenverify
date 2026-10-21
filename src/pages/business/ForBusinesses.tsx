@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 const UPDATED = 'October 7, 2026';
 
 const WHAT_YOU_GET: string[][] = [
-  ['Single checks', 'Type or paste a serial number, IMEI, VIN or plate at /verify and get a result in a few seconds.', 'Every account, 2 free checks'],
+  ['Single checks', 'Type or paste a serial number, IMEI, VIN or plate at /verify and get a result in a few seconds.', 'Every account, 1 free check'],
   ['Bulk check', 'Paste up to 100 numbers, or upload a .csv or .txt file, at /bulk-check. Download the results as a CSV.', 'Built for the $10/month plan'],
   ['Dated check history', 'Every check is saved to your account with the date and time, the result and the sources searched.', 'Every account'],
   ['Verification certificate', 'A dated record with its own link that shows you checked an item. You can show it to a customer or keep it in the file.', '$1.99, free on the monthly plan'],
@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: 'How much does SafeOrStolen cost for a business?',
     answer:
-      'There is no separate business price. Every account gets 2 free checks with no credit card. After that it is $0.99 for a single check or $10 a month for unlimited checks, which is the plan bulk checking is built for. Phone blacklist checks are capped at 20 a month on that plan. You can cancel anytime, and there is a 30-day refund on the monthly plan.',
+      'There is no separate business price. Every account gets 1 free check with no credit card. After that it is $0.99 for 2 checks or $10 a month for unlimited checks, which is the plan bulk checking is built for. Phone blacklist checks are capped at 20 a month on that plan. You can cancel anytime, and there is a 30-day refund on the monthly plan.',
   },
   {
     question: 'Does SafeOrStolen search police records?',
@@ -118,7 +118,7 @@ export default function ForBusinesses() {
               <Button size="lg" asChild><Link to="/bulk-check">Check a list of serials</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/verify">Check one item</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 

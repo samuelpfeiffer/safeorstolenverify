@@ -162,7 +162,7 @@ const FreeStolenVehicleCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 2 free searches • our stolen item reports + public web results • Results in a few seconds
+ 1 free search • our stolen item reports + public web results • Results in a few seconds
  </p>
  {isLoading && <p className="text-sm text-muted-foreground">Checking the records now.</p>}
  {result && <div className="text-left"><ParallelVerificationDisplay result={result} /></div>}

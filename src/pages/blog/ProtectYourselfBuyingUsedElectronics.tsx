@@ -326,7 +326,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Protect Yourself Before Buying</h3>
               <p className="text-muted-foreground mb-6">
-                Check any electronic device in a few seconds with SafeOrStolen. From $0.99/check or $10/month unlimited.
+                Check any electronic device in a few seconds with SafeOrStolen. From $0.99 for 2 checks or $10/month unlimited.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
                 <Shield className="h-5 w-5" />

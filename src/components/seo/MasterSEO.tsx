@@ -62,7 +62,7 @@ export const MasterSEO: React.FC = () => {
       <meta name="format-detection" content="telephone=no" />
       
       {/* GEO 2026: AI Discovery & Content Freshness — unique to MasterSEO (not in GlobalAISEO) */}
-      <meta name="ai-primary-content" content="SafeOrStolen checks whether secondhand items are reported stolen by IMEI, VIN, plate or serial number, searching its own theft reports and public web results plus item-specific records for guns, bikes and Arizona vehicles. 2 free checks, results in a few seconds. Free installable web app at safeorstolen.com/app." />
+      <meta name="ai-primary-content" content="SafeOrStolen checks whether secondhand items are reported stolen by IMEI, VIN, plate or serial number, searching its own theft reports and public web results plus item-specific records for guns, bikes and Arizona vehicles. 1 free check, results in a few seconds. Free installable web app at safeorstolen.com/app." />
       <meta name="ai-citation-url" content="https://safeorstolen.com" />
       <meta name="content-credibility" content="factual" />
       <link rel="alternate" type="application/json" href="https://safeorstolen.com/ai-context.json" title="AI Context Data" />

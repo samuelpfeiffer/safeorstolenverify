@@ -74,7 +74,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does a real-time check include carrier blacklist status?',
  answer:
- 'Yes, on a paid phone check: the lost/stolen carrier blacklist is searched on a $0.99 single check or one of the 20 included each month on the $10 monthly plan. Before you pay, also have the seller sign out of their Apple or Google account in front of you.',
+ 'Yes, on a paid phone check: the lost/stolen carrier blacklist is searched on a $0.99 for 2 checks or one of the 20 included each month on the $10 monthly plan. Before you pay, also have the seller sign out of their Apple or Google account in front of you.',
  },
 ];
 
@@ -170,7 +170,7 @@ export default function RealTimeVerificationPage() {
 
  <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center">
  <h2 className="text-2xl font-bold mb-2">Check a number now</h2>
- <p className="text-muted-foreground mb-4">2 free checks, no account needed. No credit card.</p>
+ <p className="text-muted-foreground mb-4">1 free check, no account needed. No credit card.</p>
  <Button size="lg" asChild>
  <Link to="/verify">
  Check an item <ArrowRight className="ml-2 h-4 w-4" />

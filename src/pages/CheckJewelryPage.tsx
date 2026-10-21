@@ -79,7 +79,7 @@ const CheckJewelryPage = () => (
         'Every source searched is listed with the result',
         'A dated record of the check is saved to your account',
         'Optional $1.99 verification certificate showing you checked before the sale',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Ask the seller for the grading report, appraisal, receipt or box before you meet.',

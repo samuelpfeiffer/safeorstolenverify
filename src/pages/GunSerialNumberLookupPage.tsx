@@ -31,7 +31,7 @@ const GunSerialNumberLookupPage = () => {
  whyCheck: "Under 18 U.S.C. § 922(j) it's a federal crime to receive or possess a stolen gun when you know or have reasonable cause to believe it's stolen, and a stolen gun found in your hands will be taken back. Private sales often don't involve a dealer, so nobody else is checking for you. A serial lookup takes a few seconds, gives you a dated record that you checked, and catches guns that have already been reported.",
 
  benefits: [
- "2 free checks, no account or credit card needed",
+ "1 free check, no account or credit card needed",
  "more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC",
  "Live Ohio law-enforcement records",
  "Flags serials that look altered or obliterated",
@@ -57,7 +57,7 @@ const GunSerialNumberLookupPage = () => {
  },
  {
  question: "Is gun serial number lookup really free?",
- answer: "Your first 2 checks on SafeOrStolen (safeorstolen.com/gun-serial-number-lookup) are free with no account or credit card needed. After that it's $0.99 a check or $10 a month for unlimited checks. Dealers and pawn shops checking many guns can use bulk checking at safeorstolen.com/bulk-check."
+ answer: "Your first 2 checks on SafeOrStolen (safeorstolen.com/gun-serial-number-lookup) are free with no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. Dealers and pawn shops checking many guns can use bulk checking at safeorstolen.com/bulk-check."
  },
  {
  question: "What databases are searched in a gun serial lookup?",

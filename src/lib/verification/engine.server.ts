@@ -20,8 +20,10 @@ import {
 export const VERIFY_BUILD_ID = 'app-server-verify-2026-09-19-1';
 
 const SOURCE_TIMEOUT_MS = 20_000;
-const FREE_LIMIT = 2;
-// Oct 21 2026 (owner decision): NO free week. The normal rules always apply: 2 free checks, then pay.
+// Oct 21 2026 (owner decision): 1 free check, then $0.99 buys 2 checks (at most 1 phone blacklist search).
+const FREE_LIMIT = 1;
+const SINGLE_CHECKS = 2;
+// Oct 21 2026 (owner decision): NO free week. The normal rules always apply: 1 free check, then pay.
 // Kept as a function so existing callers still compile; it always returns false.
 export function isLaunchFree(): boolean {
   return false;
@@ -65,6 +67,8 @@ export interface GateAllowed {
   allowed: true;
   plan: string;
   checksRemaining: number | null;
+  /** subscriptions row id of the $0.99 purchase being used (for its 1 phone blacklist search). */
+  singleSubId?: string;
 }
 
 export type GateResult = GateAllowed | GateDenied;
@@ -544,7 +548,18 @@ async function phoneBlacklistAllowed(
   gate: GateAllowed,
 ): Promise<boolean> {
   if (gate.plan === 'free' && !isLaunchFree()) return false;
-  if (gate.plan === 'single' || !userId) return true;
+  if (gate.plan === 'single') {
+    if (!gate.singleSubId) return false;
+    // Claim this purchase's one phone blacklist search (only if not used yet).
+    const { data: claimed } = await admin
+      .from('subscriptions')
+      .update({ phone_lookups_used: 1, updated_at: new Date().toISOString() })
+      .eq('id', gate.singleSubId)
+      .eq('phone_lookups_used', 0)
+      .select('id');
+    return !!claimed && claimed.length > 0;
+  }
+  if (!userId) return true;
   const monthStart = new Date();
   monthStart.setUTCDate(1);
   monthStart.setUTCHours(0, 0, 0, 0);
@@ -573,19 +588,19 @@ async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<G
   const list: any[] = rows ?? [];
   const monthly = list.find((r) => r.plan !== 'single' && (!r.period_end || new Date(r.period_end) > now));
   if (monthly) return { allowed: true, plan: monthly.plan, checksRemaining: null };
-  const single = list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < 1);
+  const single = list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < SINGLE_CHECKS);
   if (!single) return null;
   // Claim it only if still unused, so two tabs can't spend one purchase twice.
   let claim = admin
     .from('subscriptions')
-    .update({ checks_used_this_month: 1, updated_at: now.toISOString() })
+    .update({ checks_used_this_month: (single.checks_used_this_month ?? 0) + 1, updated_at: now.toISOString() })
     .eq('id', single.id);
   claim = single.checks_used_this_month == null
     ? claim.is('checks_used_this_month', null)
     : claim.eq('checks_used_this_month', single.checks_used_this_month);
   const { data: claimed } = await claim.select('id');
   if (!claimed || claimed.length === 0) return null;
-  return { allowed: true, plan: 'single', checksRemaining: 0 };
+  return { allowed: true, plan: 'single', checksRemaining: SINGLE_CHECKS - ((single.checks_used_this_month ?? 0) + 1), singleSubId: single.id };
 }
 
 async function claimGuestPurchasesByEmail(admin: AdminClient, userId: string): Promise<boolean> {
@@ -658,7 +673,7 @@ export async function checkUsageGate(
   const now = new Date();
   const usable = (r: any) =>
     r.plan === 'single'
-      ? (r.checks_used_this_month ?? 0) < 1
+      ? (r.checks_used_this_month ?? 0) < SINGLE_CHECKS
       : !r.period_end || new Date(r.period_end) > now;
   const sub: any =
     subRows.find((r) => r.plan !== 'single' && usable(r)) ??
@@ -668,7 +683,7 @@ export async function checkUsageGate(
 
   if (sub) {
     const used = sub.checks_used_this_month ?? 0;
-    if (sub.plan === 'single' && used >= 1) {
+    if (sub.plan === 'single' && used >= SINGLE_CHECKS) {
       return { allowed: false, reason: 'single_used', plan: 'single' };
     }
     if (sub.plan === 'basic' && used >= 50) {
@@ -683,7 +698,8 @@ export async function checkUsageGate(
     return {
       allowed: true,
       plan: sub.plan,
-      checksRemaining: sub.plan === 'basic' ? 50 - (used + 1) : null,
+      checksRemaining: sub.plan === 'basic' ? 50 - (used + 1) : sub.plan === 'single' ? SINGLE_CHECKS - (used + 1) : null,
+      ...(sub.plan === 'single' ? { singleSubId: sub.id } : {}),
     };
   }
 
@@ -748,7 +764,7 @@ export async function checkUsageGate(
   }
 
   if (isLaunchFree()) return { allowed: true, plan: 'free', checksRemaining: 99 };
-  // Lifetime allowance: 2 free checks total per account, never reset.
+  // Lifetime allowance: 1 free check total per account, never reset.
   // Sum every usage row tied to this account so extra rows can't add checks.
   const { data: allRows } = await admin
     .from('usage_tracking')

@@ -184,7 +184,7 @@ export const SubscriptionStatusCard = () => {
             <CardDescription className="text-sm">
               {subscription.remainingFreeSearches > 0
                 ? `You have ${subscription.remainingFreeSearches} free verification${subscription.remainingFreeSearches > 1 ? 's' : ''} remaining.`
-                : "You've used your 2 free checks. Upgrade for unlimited verifications."}
+                : "You've used your free check. Upgrade for unlimited verifications."}
             </CardDescription>
             <Button
               onClick={() => navigate('/pricing')}

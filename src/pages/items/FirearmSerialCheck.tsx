@@ -23,7 +23,7 @@ const FirearmSerialCheck = () => {
  itemType="Firearm"
  identifierType="Serial Number"
  heroBadge="Firearm Verification"
- heroSubtitle="Before a private gun sale, enter the serial number. In a few seconds SafeOrStolen searches police firearm theft and loss reports, live Ohio law-enforcement records, its own theft reports and public web listings. Your first 2 checks are free."
+ heroSubtitle="Before a private gun sale, enter the serial number. In a few seconds SafeOrStolen searches police firearm theft and loss reports, live Ohio law-enforcement records, its own theft reports and public web listings. Your first check is free."
  whatIsTitle="What does a gun serial number check search?"
  whatIsContent="A SafeOrStolen gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, theft reports owners file on SafeOrStolen, and public web listings that mention the serial. It also flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
  howItWorksSteps={[

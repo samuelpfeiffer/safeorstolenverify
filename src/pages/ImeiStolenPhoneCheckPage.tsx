@@ -31,7 +31,7 @@ const ImeiStolenPhoneCheckPage = () => {
  "Check iCloud Activation Lock (iPhone) and Google FRP (Android)",
  "Detect phones with outstanding finance/lease agreements",
  "Instant 3-second verification from multiple databases",
- "Free IMEI check - 2 free verifications included",
+ "Free IMEI check - 1 free verification included",
  "Works for phones from any country or carrier"
  ],
  process: [
@@ -69,7 +69,7 @@ const ImeiStolenPhoneCheckPage = () => {
  },
  {
  question: "How much does the IMEI check cost?",
- answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99/check or $10/month unlimited. This covers SafeOrStolen reports, public web results, and AI analysis. Many other IMEI checkers may charge more per check or provide different data sources."
+ answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99 for 2 checks or $10/month unlimited. This covers SafeOrStolen reports, public web results, and AI analysis. Many other IMEI checkers may charge more per check or provide different data sources."
  },
  {
  question: "What's the difference between IMEI and serial number?",

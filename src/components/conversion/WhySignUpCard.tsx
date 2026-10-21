@@ -12,7 +12,7 @@ interface WhySignUpCardProps {
  */
 export const WhySignUpCard = ({ onSignUp }: WhySignUpCardProps) => {
   const benefits = [
-    { icon: Zap, text: '2 free verifications', highlight: true },
+    { icon: Zap, text: '1 free verification', highlight: true },
     { icon: Shield, text: 'Access multiple sources' },
     { icon: Bell, text: 'Watchlist alerts when items are searched' },
     { icon: FileText, text: 'PDF verification reports' },
@@ -51,7 +51,7 @@ export const WhySignUpCard = ({ onSignUp }: WhySignUpCardProps) => {
         <div className="flex flex-col sm:flex-row gap-2">
           <Button asChild size="lg" className="flex-1">
             <Link to="/auth?tab=signup&redirect=/verify">
-              Get 2 Free Checks
+              Get 1 Free Check
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="flex-1">

@@ -52,7 +52,7 @@ const ComparisonAutocheck = () => {
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>SafeOrStolen vs AutoCheck</h1>
           <p>
-            AutoCheck sells vehicle history reports. SafeOrStolen is a stolen-item check: a VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. It also checks phones, guns, bikes and serial numbers. 2 free checks, then $0.99 a check or $10 a month unlimited.
+            AutoCheck sells vehicle history reports. SafeOrStolen is a stolen-item check: a VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. It also checks phones, guns, bikes and serial numbers. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.
           </p>
         </div>
       </noscript>
@@ -105,7 +105,7 @@ const ComparisonAutocheck = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>2 free checks</strong>, then $0.99 a check or $10 a month unlimited</span>
+                      <span><strong>1 free check</strong>, then $0.99 for 2 checks or $10 a month unlimited</span>
                     </li>
                   </ul>
                   <Button className="w-full mt-6" size="lg" asChild>

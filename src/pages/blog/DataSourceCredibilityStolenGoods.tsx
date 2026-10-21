@@ -211,7 +211,7 @@ export default function DataSourceCredibilityStolenGoods() {
             <div className="not-prose bg-card border-2 border-primary rounded-lg p-8 text-center mt-12">
               <h2 className="text-2xl font-bold mb-3 text-foreground">Check an item</h2>
               <p className="text-muted-foreground mb-6">
-                Enter a serial, IMEI, VIN or plate. Your first 2 checks are free, and every result lists its sources.
+                Enter a serial, IMEI, VIN or plate. Your first check is free, and every result lists its sources.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
                 <Shield className="h-5 w-5" />

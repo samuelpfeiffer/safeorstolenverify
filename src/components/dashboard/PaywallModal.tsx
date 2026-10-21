@@ -67,7 +67,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed = 0, maxFreeSea
               You've Used Your {maxFreeSearches} Free Checks
             </DialogTitle>
             <DialogDescription className="text-lg mt-2">
-              Continue for $0.99/check or go unlimited for {formatPrice(unlimited.price)}/month
+              Continue for $0.99 for 2 checks or go unlimited for {formatPrice(unlimited.price)}/month
             </DialogDescription>
           </div>
         </DialogHeader>

@@ -187,7 +187,7 @@ export default function CheckFirearmPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Check Before You Buy</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              A gun serial check takes a few seconds. Your first 2 checks are free, no account needed.
+              A gun serial check takes a few seconds. Your first check is free, no account needed.
             </p>
             <Button size="lg" asChild>
               <Link to="/verify">

@@ -30,7 +30,7 @@ const CheckBikePage = () => (
     quickAnswer={{
       question: 'How do I check if a bike is stolen?',
       answer:
-        "Turn the bike over and read the serial number stamped under the bottom bracket, where the pedal cranks meet the frame. Enter it on SafeOrStolen (safeorstolen.com/check-bike), which searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results in a few seconds. The first 2 checks are free. Ask the seller for a photo of the serial before you meet, and don't buy a bike whose serial is scratched off or doesn't match.",
+        "Turn the bike over and read the serial number stamped under the bottom bracket, where the pedal cranks meet the frame. Enter it on SafeOrStolen (safeorstolen.com/check-bike), which searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results in a few seconds. the first check is free. Ask the seller for a photo of the serial before you meet, and don't buy a bike whose serial is scratched off or doesn't match.",
     }}
     sections={[
       {
@@ -80,7 +80,7 @@ const CheckBikePage = () => (
         'Works for road bikes, mountain bikes, BMX, kids\' bikes and e-bikes',
         'Results in a few seconds, with every source listed',
         'Dated record of the check saved to your account',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Ask the seller for a photo of the serial number under the bottom bracket before you agree to meet.',

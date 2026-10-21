@@ -7,7 +7,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
     <>
     <ItemLandingPageTemplate
       title="Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Pennsylvania license plate lookup: check if a PA plate or VIN shows up in SafeOrStolen theft reports or public web results in a few seconds. 2 free checks."
+      metaDescription="Pennsylvania license plate lookup: check if a PA plate or VIN shows up in SafeOrStolen theft reports or public web results in a few seconds. 1 free check."
       h1="Pennsylvania License Plate Lookup - Check a PA Car Before You Buy"
       itemType="Vehicle"
       searchType="plate"
@@ -36,7 +36,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           "Result in a few seconds, with every source listed",
           "Never shows owner names",
           "Each check saved to your account with the date",
-          "2 free checks, then $0.99 a check or $10 a month unlimited"
+          "1 free check, then $0.99 for 2 checks or $10 a month unlimited"
         ],
 
         process: [
@@ -79,7 +79,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           },
           {
             question: "Is the Pennsylvania license plate lookup free?",
-            answer: "Your first 2 checks are free with a free SafeOrStolen account, no credit card. After that a check is $0.99, or $10 a month for unlimited checks, cancel anytime."
+            answer: "Your first check is free with a free SafeOrStolen account, no credit card. After that a check is $0.99, or $10 a month for unlimited checks, cancel anytime."
           }
         ]
       }}

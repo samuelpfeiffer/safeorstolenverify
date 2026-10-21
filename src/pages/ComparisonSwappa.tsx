@@ -26,7 +26,7 @@ const ComparisonSwappa = () => {
  "@type": "OfferCatalog",
  "name": "Plans",
  "itemListElement": [
- { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks" },
+ { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "1 free check" },
  { "@type": "Offer", "price": "0.99", "priceCurrency": "USD", "description": "Single check" },
  { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited checks per month" }
  ]
@@ -56,7 +56,7 @@ const ComparisonSwappa = () => {
  {
  value: 'free',
  q: "Is SafeOrStolen free to use?",
- a: "You get 2 free checks, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
+ a: "You get 1 free check, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
  },
  {
  value: 'databases',
@@ -118,7 +118,7 @@ const ComparisonSwappa = () => {
  <li><strong>Item types:</strong> SafeOrStolen checks phones, vehicles, plates, guns, bikes and serial-numbered gear. Swappa deals in phones and tech.</li>
  <li><strong>Sources:</strong> SafeOrStolen searches its own theft reports and public web results, plus a stolen-bicycle registry for bikes, police theft records for guns, and Arizona law-enforcement records for Arizona vehicles.</li>
  <li><strong>Where it works:</strong> SafeOrStolen works on items from any seller. Swappa checks devices listed on Swappa.</li>
- <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $0.99 a check or $10 a month unlimited.</li>
+ <li><strong>Pricing:</strong> SafeOrStolen: 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</li>
  </ul>
  <h2>Frequently asked questions</h2>
  {faqs.map((f) => (
@@ -180,7 +180,7 @@ const ComparisonSwappa = () => {
  ['Many item types', 'Phones, vehicles, plates, guns, bikes, laptops, tools'],
  ['Sources', "SafeOrStolen theft reports, public web results, plus item-specific records for bikes, guns and Arizona vehicles"],
  ['Clear results', '"Reported stolen", "possible match", or "no report found in the records searched", with sources listed'],
- ['2 free checks', 'Then $0.99 a check or $10 a month unlimited'],
+ ['1 free check', 'Then $0.99 for 2 checks or $10 a month unlimited'],
  ['Verification certificate', 'Optional $1.99 dated record with its own link'],
  ].map(([title, desc]) => (
  <li key={title} className="flex items-start gap-2">
@@ -373,7 +373,7 @@ const ComparisonSwappa = () => {
  <CardContent className="pt-8 text-center">
  <h2 className="text-3xl font-bold mb-4">Check a phone from any seller</h2>
  <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
- 2 free checks, no account needed, then $0.99 a check or $10 a month unlimited. Results come back in a few seconds.
+ 1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited. Results come back in a few seconds.
  </p>
  <div className="flex flex-wrap justify-center gap-4">
  <Button size="lg" asChild>

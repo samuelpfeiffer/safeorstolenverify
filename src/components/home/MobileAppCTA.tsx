@@ -55,7 +55,7 @@ export const MobileAppCTA = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Free to Install</p>
-                    <p className="text-sm text-muted-foreground">2 free searches included</p>
+                    <p className="text-sm text-muted-foreground">1 free search included</p>
                   </div>
                 </div>
               </div>

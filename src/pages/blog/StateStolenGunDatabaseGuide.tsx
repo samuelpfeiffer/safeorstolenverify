@@ -66,7 +66,7 @@ const LEVELS: [string, string, string][] = [
   ["National: the FBI’s NCIC file", 'Guns reported stolen to any U.S. police agency, kept current', 'Police; licensed dealers voluntarily since August 2025'],
   ['State crime information systems', 'Each state police network, which feeds NCIC', 'Police in that state'],
   ['State public searches', 'Guns reported stolen in that one state', 'Anyone, in the few states that offer one (Florida and Ohio among them)'],
-  ['SafeOrStolen', 'more than 220,000 police theft and loss reports from 33 states and DC (filed 1973 to 2017), live Ohio records, owner reports, altered-serial flag', 'Anyone; 2 free checks'],
+  ['SafeOrStolen', 'more than 220,000 police theft and loss reports from 33 states and DC (filed 1973 to 2017), live Ohio records, owner reports, altered-serial flag', 'Anyone; 1 free check'],
   ['ATF', 'No stolen-gun lookup. eTrace traces recovered guns for police', 'Law enforcement only'],
 ];
 
@@ -106,7 +106,7 @@ const StateStolenGunDatabaseGuide = () => (
               Check a gun serial number <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <p className="text-muted-foreground text-sm mt-3">2 free checks · no credit card · altered-serial flag included</p>
+          <p className="text-muted-foreground text-sm mt-3">1 free check · no credit card · altered-serial flag included</p>
         </div>
       </section>
 

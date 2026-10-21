@@ -15,7 +15,7 @@ export const MobileOnboarding: React.FC<MobileOnboardingProps> = ({ onComplete }
     {
       icon: Shield,
       title: 'Protect Yourself',
-      description: 'Check whether an item has been reported stolen before you buy it. Your first 2 checks are free.',
+      description: 'Check whether an item has been reported stolen before you buy it. Your first check is free.',
       color: 'text-red-500'
     },
     {

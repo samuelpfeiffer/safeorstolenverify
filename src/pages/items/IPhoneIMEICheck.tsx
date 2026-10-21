@@ -95,11 +95,11 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "Is this service really free?",
- answer: "A free SafeOrStolen account comes with 2 free checks, no credit card. After that it's $0.99 a check or $10 a month for unlimited checks, which includes up to 20 blacklist checks a month."
+ answer: "A free SafeOrStolen account comes with 1 free check, no credit card. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, which includes up to 20 blacklist checks a month."
  }
  ]}
  ctaTitle="Check the iPhone before you pay"
- ctaDescription="Enter the IMEI and see the result in a few seconds. Your first 2 checks are free."
+ ctaDescription="Enter the IMEI and see the result in a few seconds. Your first check is free."
  relatedLinks={[
  { title: "Samsung IMEI Check", href: "/check-samsung-stolen" },
  { title: "All Phone IMEI Checker", href: "/imei-checker" },

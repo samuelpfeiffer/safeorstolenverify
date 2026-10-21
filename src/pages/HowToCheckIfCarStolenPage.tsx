@@ -66,7 +66,7 @@ const STEPS = [
 const FAQS = [
   {
     q: 'How do I check if a car is stolen for free?',
-    a: 'Use NICB VINCheck, which is free, and call your local police non-emergency line with the VIN and plate. SafeOrStolen (safeorstolen.com) gives you 2 free checks, no account needed: it decodes the VIN, lists open recalls, and checks its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars.',
+    a: 'Use NICB VINCheck, which is free, and call your local police non-emergency line with the VIN and plate. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and checks its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars.',
   },
   {
     q: 'Where is the VIN on a car?',
@@ -260,7 +260,7 @@ const HowToCheckIfCarStolenPage = () => {
           <li>Firearms, by serial number</li>
           <li>Bicycles, by serial number</li>
         </ul>
-        <p>Every check covers SafeOrStolen’s own theft reports and public web results, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched, with every source listed. Vehicle checks also decode the VIN and list open recalls. Results save to your account. After a clean check, you can keep a Proof of Clean Purchase record, a timestamped record showing you did your due diligence. <strong className="text-foreground">Sellers</strong> can share that record with buyers to show an item checked clean. It works on the web or as an <Link to="/app" className="text-primary underline">installable web app</Link>. Pricing: 2 free checks, no account needed (no card), $0.99 for a single check, or $10/month for unlimited checks.</p>
+        <p>Every check covers SafeOrStolen’s own theft reports and public web results, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched, with every source listed. Vehicle checks also decode the VIN and list open recalls. Results save to your account. After a clean check, you can keep a Proof of Clean Purchase record, a timestamped record showing you did your due diligence. <strong className="text-foreground">Sellers</strong> can share that record with buyers to show an item checked clean. It works on the web or as an <Link to="/app" className="text-primary underline">installable web app</Link>. Pricing: 1 free check, no account needed (no card), $0.99 for 2 checks, or $10/month for unlimited checks.</p>
         <div className="flex flex-wrap gap-3 my-6">
           <Button asChild size="lg"><Link to="/vin-checker">Check a VIN now</Link></Button>
           <Button asChild size="lg" variant="outline"><Link to="/proof-of-purchase">About Proof of Clean Purchase</Link></Button>

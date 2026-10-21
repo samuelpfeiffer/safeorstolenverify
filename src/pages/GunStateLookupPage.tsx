@@ -47,7 +47,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
   const topModel = s.topModels[0];
   const ohio = s.code === 'OH';
 
-  const quickAnswer = `Enter the gun's serial number at SafeOrStolen (safeorstolen.com/gun-serial-number-lookup/${s.slug}). SafeOrStolen searches ${fmt(s.total)} police reports of stolen and lost guns from ${s.name}${yearsText}, ${fmt(GUN_NATIONAL.total - s.total)} reports from 33 other jurisdictions, live Ohio law-enforcement records and SafeOrStolen's own theft reports. You get a result in a few seconds, and the first 2 checks are free.`;
+  const quickAnswer = `Enter the gun's serial number at SafeOrStolen (safeorstolen.com/gun-serial-number-lookup/${s.slug}). SafeOrStolen searches ${fmt(s.total)} police reports of stolen and lost guns from ${s.name}${yearsText}, ${fmt(GUN_NATIONAL.total - s.total)} reports from 33 other jurisdictions, live Ohio law-enforcement records and SafeOrStolen's own theft reports. You get a result in a few seconds, and the first check is free.`;
 
   const faqs: { q: string; a: string }[] = [
     { q: `How do I check if a gun is stolen in ${s.name}?`, a: quickAnswer },
@@ -115,7 +115,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
               reports of stolen and lost guns and {fmt(GUN_NATIONAL.total - s.total)} more from 33 other jurisdictions.
             </p>
             <InlineSerialCheck type="firearm" placeholder="Enter the gun's serial number" />
-            <p className="text-sm text-muted-foreground mt-3">2 free checks · No credit card · Private: the seller is never told</p>
+            <p className="text-sm text-muted-foreground mt-3">1 free check · No credit card · Private: the seller is never told</p>
           </div>
         </section>
 

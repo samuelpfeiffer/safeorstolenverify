@@ -85,7 +85,7 @@ export default function HowToCheckIfPhoneStolenPage() {
           'Searches SafeOrStolen theft reports and public web results',
           'Paid carrier blacklist check available',
           'Every check saved to your account with the date',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Ask the seller for a screenshot of *#06# before you agree to meet.',

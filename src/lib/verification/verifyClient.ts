@@ -68,7 +68,7 @@ export async function requestVerification(request: VerifyRequest): Promise<Verif
     const { data: sessionData } = await supabase.auth.getSession();
     const token = sessionData.session?.access_token;
 
-    // No account needed for the 2 free checks; the server enforces the limit
+    // No account needed for the 1 free check; the server enforces the limit
     // per browser and per connection (Sept 30 2026).
 
     let fingerprint = request.fingerprint ?? null;

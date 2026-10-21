@@ -219,7 +219,7 @@ export const ItemLandingPageTemplate = ({
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, guns and bikes from one search box. <a href="/verify">Run a check</a>: 2 free checks, then $0.99 a check or $10 a month for unlimited checks.</p>
+ <p>SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, guns and bikes from one search box. <a href="/verify">Run a check</a>: 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
  </div>
  </div>
  </noscript>
@@ -237,7 +237,7 @@ export const ItemLandingPageTemplate = ({
   />
  <InlineSerialCheck type={searchType} placeholder={searchPlaceholder} publicPoliceSearches={searchType === 'firearm'} />
  <p className="text-sm text-muted-foreground mt-3">
- 2 free checks · No credit card · Updated {new Date(dateModified + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+ 1 free check · No credit card · Updated {new Date(dateModified + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
  </p>
  </div>
 
@@ -423,7 +423,7 @@ export const ItemLandingPageTemplate = ({
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Ready to Verify Your {itemType}?</h2>
  <p className="text-lg text-muted-foreground mb-8">
- Results in a few seconds, with every source listed. 2 free checks, no credit card.
+ Results in a few seconds, with every source listed. 1 free check, no credit card.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

@@ -28,7 +28,7 @@ const CHECKER_TYPES: CheckerType[] = [
     name: 'SafeOrStolen',
     description:
       'Shows the make and model from the IMEI, then searches SafeOrStolen theft reports filed by owners and public web listings that mention the IMEI.',
-    freePart: '2 free checks, no account or credit card needed',
+    freePart: '1 free check, no account or credit card needed',
     blacklist: 'Paid add-on; monthly members ($10/mo) get up to 20 blacklist checks a month',
     goodFor: [
       'Seeing whether an owner has reported the phone stolen on SafeOrStolen',
@@ -38,7 +38,7 @@ const CHECKER_TYPES: CheckerType[] = [
       'A dated record of every check, saved to your account',
     ],
     limits: [
-      'Only 2 free checks; after that $0.99 a check or $10 a month',
+      'Only 1 free check; after that $0.99 for 2 checks or $10 a month',
       'Does not show Apple or Google account lock status',
     ],
     cta: '/verify',
@@ -82,7 +82,7 @@ const CHECKER_TYPES: CheckerType[] = [
 const FAQS = [
   {
     q: 'What is the best free IMEI checker?',
-    a: "It depends on what you need to know. A free spec lookup confirms the model. Your carrier can tell you if the phone is blocked on its network. SafeOrStolen (safeorstolen.com) gives you 2 free checks that show the make and model and search owner theft reports and public web listings for the IMEI, with a paid blacklist check if you want one.",
+    a: "It depends on what you need to know. A free spec lookup confirms the model. Your carrier can tell you if the phone is blocked on its network. SafeOrStolen (safeorstolen.com) gives you 1 free check that show the make and model and search owner theft reports and public web listings for the IMEI, with a paid blacklist check if you want one.",
   },
   {
     q: 'Are free IMEI checkers reliable?',
@@ -250,7 +250,7 @@ const BestFreeIMEICheckers2025 = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to check an IMEI?</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              SafeOrStolen gives you 2 free checks with no credit card. Enter the IMEI and you'll see the model, any
+              SafeOrStolen gives you 1 free check with no credit card. Enter the IMEI and you'll see the model, any
               theft reports, and web listings that mention it, with every source listed.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

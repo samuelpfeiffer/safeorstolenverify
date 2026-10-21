@@ -183,7 +183,7 @@ const OfferupScamProtection = () => {
                   </h3>
                   <p className="text-muted-foreground mb-4">
                     Enter the identifier into SafeOrStolen. Results come back
-                    in a few seconds, and the first 2 checks are free with a
+                    in a few seconds, and the first check is free with a
                     free account. Every check searches SafeOrStolen theft
                     reports and public web results; phone checks also show the
                     make and model, and bike checks add a national
@@ -270,7 +270,7 @@ const OfferupScamProtection = () => {
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Check the serial, IMEI or VIN before you pay. Results come back
-              in a few seconds, and your first 2 checks are free.
+              in a few seconds, and your first check is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">

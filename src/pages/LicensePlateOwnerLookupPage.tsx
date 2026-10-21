@@ -63,7 +63,7 @@ const LicensePlateOwnerLookupPage = () => (
         'Arizona plates searched against Arizona law-enforcement records',
         'No personal owner information shown, ever',
         'VIN check for used-car buyers: vehicle details, recalls and theft reports',
-        '2 free checks, no credit card',
+        '1 free check, no credit card',
         'Works from your phone with the free app',
       ],
       process: [

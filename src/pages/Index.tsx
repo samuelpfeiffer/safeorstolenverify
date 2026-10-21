@@ -98,7 +98,7 @@ const FOR_SELLERS_FEATURES = [
 const FAQ_ITEMS = [
  {
  q: 'How do I check if something is stolen before I buy it?',
- a: "Find its identifier: the IMEI on a phone (dial *#06#), the VIN on a car, the frame serial on a bike, or the serial number on anything else. Enter it on SafeOrStolen (safeorstolen.com). In a few seconds you'll see whether it's reported stolen, a possible match, or no report found, with every source listed. Your first 2 checks are free with no credit card.",
+ a: "Find its identifier: the IMEI on a phone (dial *#06#), the VIN on a car, the frame serial on a bike, or the serial number on anything else. Enter it on SafeOrStolen (safeorstolen.com). In a few seconds you'll see whether it's reported stolen, a possible match, or no report found, with every source listed. Your first check is free with no credit card.",
  },
  {
  q: 'How do I check if a phone is stolen?',
@@ -122,7 +122,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'Your first 2 checks are free, with no account or credit card needed. After that it is $0.99 for a single check, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
+ a: 'Your first check is free, with no account or credit card needed. After that it is $0.99 for 2 checks, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
  },
  {
  q: 'Can a license plate lookup tell me who owns a car?',
@@ -163,7 +163,7 @@ const Index = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen | SafeOrStolen"
- description="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source is listed. 2 free checks."
+ description="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source is listed. 1 free check."
  keywords="stolen item checker, check if something is stolen, free serial number search, imei check free, vin check stolen, gun serial number lookup free, stolen bike check, license plate lookup"
  canonical="/"
  />
@@ -173,7 +173,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <h1>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</h1>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first 2 checks are free; then $0.99 a check or $10 a month for unlimited checks.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first check is free; then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── AI CHAT HERO ──────────────────────────── */}
@@ -582,7 +582,7 @@ const Index = () => {
  </h2>
  <p className="text-muted-foreground mb-8 text-lg">
  If you buy something that turns out to be stolen, police can return it to the owner and you usually lose what you paid.
- It takes a few seconds, and your first 2 checks are free.
+ It takes a few seconds, and your first check is free.
  </p>
  <Link
  to="/verify"
@@ -592,7 +592,7 @@ const Index = () => {
  Run a free check
  </Link>
  <p className="text-muted-foreground/50 text-sm mt-4">
- 2 free checks · No credit card · Every source listed
+ 1 free check · No credit card · Every source listed
  </p>
  </div>
  </section>
@@ -631,7 +631,7 @@ const Index = () => {
  "applicationCategory": "SecurityApplication",
  "operatingSystem": "Web",
  "offers": [
- { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
+ { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "1 free verification" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
  ],
  "dateModified": "2026-10-07"

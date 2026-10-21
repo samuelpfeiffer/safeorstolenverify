@@ -7,7 +7,7 @@ import { savePendingCheck } from '@/lib/pendingCheck';
 
 /**
  * Oct 5 2026: free phone checks say the blacklist search is "part of the full check", but there
- * was no way to buy it from the result. This offers the $0.99 single check (blacklist included)
+ * was no way to buy it from the result. This offers the $0.99 for 2 checks (blacklist included)
  * and, after payment, /payment-success runs the same IMEI again as a paid check.
  */
 export function PhoneBlacklistOffer({ imei }: { imei: string }) {

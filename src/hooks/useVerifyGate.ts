@@ -36,7 +36,7 @@ export function useVerifyGate() {
     try {
       const { data: { session } } = await supabase.auth.getSession()
 
-      // Oct 4 2026 SALES FIX: visitors without an account get 2 free checks. The server (/verify-api)
+      // Oct 4 2026 SALES FIX: visitors without an account get 1 free check. The server (/verify-api)
       // counts them per browser + connection and answers LIMIT_REACHED when they're used up.
       // This used to block every signed-out visitor here, so most people could never run a check.
       void session

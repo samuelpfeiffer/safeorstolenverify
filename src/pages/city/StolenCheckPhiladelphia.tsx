@@ -40,7 +40,7 @@ const StolenCheckPhiladelphia = () => {
     <>
       <PageSEO
         title="Philadelphia Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="Philadelphia stolen item check: run a VIN, plate, IMEI or serial in a few seconds before you buy on Marketplace, OfferUp or Craigslist. 2 free checks."
+        description="Philadelphia stolen item check: run a VIN, plate, IMEI or serial in a few seconds before you buy on Marketplace, OfferUp or Craigslist. 1 free check."
         keywords="philadelphia stolen item check, stolen car check philly, verify stolen philadelphia, VIN check philadelphia, Kia theft philly"
         canonical="/stolen-check-philadelphia"
         structuredData={faqSchema}
@@ -55,7 +55,7 @@ const StolenCheckPhiladelphia = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Philadelphia Stolen Item Check</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Buying a used car, bike or phone in Philly? Check the VIN, IMEI or serial before you meet the seller. Your first 2 checks are free.
+              Buying a used car, bike or phone in Philly? Check the VIN, IMEI or serial before you meet the seller. Your first check is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">

@@ -205,7 +205,7 @@ const MethodologyPage = () => {
 
             <div className="mt-8 rounded-xl border border-border bg-card/50 p-6">
               <p className="text-foreground font-semibold mb-3">Run a check</p>
-              <p className="text-muted-foreground mb-4">Your first 2 checks are free with an account, no credit card.</p>
+              <p className="text-muted-foreground mb-4">Your first check is free with an account, no credit card.</p>
               <Link
                 to="/verify"
                 className="inline-flex items-center rounded-lg bg-primary px-5 py-3 font-semibold text-primary-foreground"

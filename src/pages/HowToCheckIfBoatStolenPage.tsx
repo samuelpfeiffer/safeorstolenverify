@@ -78,7 +78,7 @@ const HowToCheckIfBoatStolenPage = () => (
         'Shows public web results that mention the number',
         'Lists every source searched with the result',
         'Each check saved to your account with the date',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Ask the seller for the HIN, trailer VIN and motor serial before you go, and check each one here.',
@@ -92,7 +92,7 @@ const HowToCheckIfBoatStolenPage = () => (
         {
           question: 'How do I check a boat HIN for free?',
           answer:
-            "Enter the 12-character HIN on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). The first 2 checks are free, with no account or credit card needed. It searches SafeOrStolen theft reports and public web results. For state title and lien information, contact the agency that titles boats in your state; depending on the state that may be the DMV or the wildlife department.",
+            "Enter the 12-character HIN on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). the first check is free, with no account or credit card needed. It searches SafeOrStolen theft reports and public web results. For state title and lien information, contact the agency that titles boats in your state; depending on the state that may be the DMV or the wildlife department.",
         },
         {
           question: 'Where is the HIN on a boat?',

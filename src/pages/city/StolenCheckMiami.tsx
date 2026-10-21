@@ -26,7 +26,7 @@ const StolenCheckMiami = () => {
     },
     {
       question: "Can I use SafeOrStolen at Miami flea markets?",
-      answer: "Yes. Install the free SafeOrStolen web app from your phone's browser at safeorstolen.com/app. At the stall, scan the barcode on the box or type the serial number. Checks need a data connection, and your first 2 checks are free."
+      answer: "Yes. Install the free SafeOrStolen web app from your phone's browser at safeorstolen.com/app. At the stall, scan the barcode on the box or type the serial number. Checks need a data connection, and your first check is free."
     },
     {
       question: "Does SafeOrStolen search Florida police records?",
@@ -61,7 +61,7 @@ const StolenCheckMiami = () => {
     <>
       <PageSEO
         title="Miami Stolen Item Check - Check Before You Buy | SafeOrStolen"
-        description="Buying used in Miami? Check a phone's IMEI, a car's VIN or a serial number for theft reports and web listings before you meet the seller. 2 free checks."
+        description="Buying used in Miami? Check a phone's IMEI, a car's VIN or a serial number for theft reports and web listings before you meet the seller. 1 free check."
         keywords="miami stolen item check, miami stolen car check, verify stolen miami, check IMEI miami, VIN check miami fl, stolen phone miami florida"
         canonical="/stolen-check-miami"
         structuredData={[faqSchema, localBusinessSchema]}
@@ -88,7 +88,7 @@ const StolenCheckMiami = () => {
               <Button asChild size="lg" className="gap-2">
                 <Link to="/verify">
                   <Shield className="w-5 h-5" />
-                  Check an item (2 free checks)
+                  Check an item (1 free check)
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
@@ -183,7 +183,7 @@ const StolenCheckMiami = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Buying in Miami? Check first</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Check the number before you meet the seller. It takes a few seconds, and your first 2 checks are free.
+              Check the number before you meet the seller. It takes a few seconds, and your first check is free.
             </p>
             <Button asChild size="lg" className="gap-2">
               <Link to="/verify">

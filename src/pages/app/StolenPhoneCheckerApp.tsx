@@ -199,7 +199,7 @@ const StolenPhoneCheckerApp = () => {
  </h2>
  <p className="text-muted-foreground mb-8">
  The same account also checks vehicles, license plates, electronics, power tools, firearms and bicycles.
- Your first 2 checks are free, then $0.99 a check or $10 a month for unlimited checks.
+ Your first check is free, then $0.99 for 2 checks or $10 a month for unlimited checks.
  </p>
  <Button size="lg" className="text-lg px-8" asChild>
  <Link to="/app">

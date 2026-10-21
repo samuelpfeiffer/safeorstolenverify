@@ -28,7 +28,7 @@ const GamingConsoleCheck = () => (
     quickAnswer={{
       question: 'How do I check if a gaming console is stolen?',
       answer:
-        "Read the serial number on screen in the console's system settings and make sure it matches the sticker on the console. Enter it on SafeOrStolen (safeorstolen.com/check-gaming-console-stolen), which searches theft reports and public web results in a few seconds; the first 2 checks are free. Then watch the seller sign out of their account and reset the console before you pay. A seller who can't do that may not own it.",
+        "Read the serial number on screen in the console's system settings and make sure it matches the sticker on the console. Enter it on SafeOrStolen (safeorstolen.com/check-gaming-console-stolen), which searches theft reports and public web results in a few seconds; the first check is free. Then watch the seller sign out of their account and reset the console before you pay. A seller who can't do that may not own it.",
     }}
     sections={[
       {
@@ -79,7 +79,7 @@ const GamingConsoleCheck = () => (
         'Searches SafeOrStolen theft reports and public web results',
         'Results in a few seconds with every source listed',
         'A dated record of the check is saved to your account',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Ask the seller for a photo of the serial sticker or the settings screen showing it.',

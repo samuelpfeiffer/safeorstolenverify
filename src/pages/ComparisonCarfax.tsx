@@ -56,7 +56,7 @@ const ComparisonCarfax = () => {
     <>
       <PageSEO
         title="Carfax Alternative for Stolen Checks | SafeOrStolen"
-        description="Carfax sells vehicle history reports. SafeOrStolen checks if a car, phone, bike or gun is reported stolen, with 2 free checks. See what each one covers."
+        description="Carfax sells vehicle history reports. SafeOrStolen checks if a car, phone, bike or gun is reported stolen, with 1 free check. See what each one covers."
         keywords="Carfax alternative, cheaper than Carfax, free Carfax alternative, Carfax for phones, Carfax for bikes, stolen car check, VIN stolen check"
         canonical="/vs-carfax"
         structuredData={comparisonSchema}
@@ -69,14 +69,14 @@ const ComparisonCarfax = () => {
             Carfax sells vehicle history reports: accidents, title brands, service records and past owners. SafeOrStolen answers a
             narrower question for more kinds of items: has this VIN, IMEI or serial number been reported stolen? It searches
             SafeOrStolen's own theft reports and public web results, and for Arizona vehicles also Arizona law-enforcement
-            stolen-vehicle records. You get 2 free checks, no account needed, then $0.99 a check or $10 a month for unlimited checks.
+            stolen-vehicle records. You get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.
             On your phone, use the free installable web app at safeorstolen.com/app.
           </p>
           <h2>How SafeOrStolen compares with Carfax</h2>
           <ul>
             <li><strong>Items covered:</strong> SafeOrStolen checks cars, phones, bikes, guns and electronics. Carfax covers vehicles.</li>
             <li><strong>What it tells you:</strong> SafeOrStolen looks for theft reports. Carfax reports vehicle history such as accidents and title brands.</li>
-            <li><strong>Price:</strong> SafeOrStolen has 2 free checks, then $0.99 a check or $10 a month.</li>
+            <li><strong>Price:</strong> SafeOrStolen has 1 free check, then $0.99 for 2 checks or $10 a month.</li>
             <li><strong>On your phone:</strong> SafeOrStolen is a free installable web app at safeorstolen.com/app, with a barcode scanner in the browser.</li>
           </ul>
         </div>
@@ -94,7 +94,7 @@ const ComparisonCarfax = () => {
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                 Carfax tells you a car's history. SafeOrStolen tells you whether a car, phone, bike, gun or other
-                serial-numbered item has been reported stolen, in a few seconds, with every source listed. Your first 2 checks are free.
+                serial-numbered item has been reported stolen, in a few seconds, with every source listed. Your first check is free.
               </p>
               <Button size="lg" asChild>
                 <Link to="/verify">
@@ -130,7 +130,7 @@ const ComparisonCarfax = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>2 free checks</strong> - Then $0.99 a check or $10 a month unlimited</span>
+                      <span><strong>1 free check</strong> - Then $0.99 for 2 checks or $10 a month unlimited</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -232,7 +232,7 @@ const ComparisonCarfax = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>
-                        <td className="text-center py-3 px-4 text-green-600 font-bold">$0.99 a check or $10/month</td>
+                        <td className="text-center py-3 px-4 text-green-600 font-bold">$0.99 for 2 checks or $10/month</td>
                         <td className="text-center py-3 px-4 text-muted-foreground">Paid reports</td>
                       </tr>
                       <tr className="border-b">
@@ -270,7 +270,7 @@ const ComparisonCarfax = () => {
                 <h2 className="text-3xl font-bold mb-4">Check before you pay</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Enter a VIN, IMEI or serial number and SafeOrStolen tells you in a few seconds whether it's been reported stolen,
-                  with every source listed. Your first 2 checks are free, then $0.99 a check or $10 a month.
+                  with every source listed. Your first check is free, then $0.99 for 2 checks or $10 a month.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/verify">

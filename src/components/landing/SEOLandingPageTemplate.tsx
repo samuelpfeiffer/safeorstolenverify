@@ -130,7 +130,7 @@ export const SEOLandingPageTemplate = ({
     "description": metaDescription,
     "dateModified": "2026-10-07",
     "offers": [
-      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "2 free checks, no account needed" },
+      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "1 free check, no account needed" },
       { "@type": "Offer", "price": "0.99", "priceCurrency": "USD", "description": "Single check" },
       { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited checks per month" }
     ]
@@ -235,7 +235,7 @@ export const SEOLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">2 Free Checks</span>
+                <span className="text-sm font-semibold text-center">1 Free Check</span>
               </div>
             </div>
           </div>

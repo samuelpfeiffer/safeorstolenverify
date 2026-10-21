@@ -79,7 +79,7 @@ export default function WhatToDoIfBoughtStolenPage() {
           'Every source listed with the result',
           'Dated record of the check saved to your account',
           'Extra sources for guns, bikes, phones and Arizona vehicles',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Stop using the item and keep it as it is.',

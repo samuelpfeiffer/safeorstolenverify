@@ -3,7 +3,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 /**
  * Oct 7 2026: rewritten by hand for "how to check if a tv is stolen" / "tv serial number lookup"
  * (no Search Console data yet). Now self-contained instead of reading TV_GUIDE from the shared data
- * file. The old guide said "no account needed" for free checks; the 2 free checks need no account.
+ * file. The old guide said "no account needed" for free checks; the 1 free check need no account.
  */
 export default function HowToCheckIfTvStolenPage() {
   return (
@@ -27,7 +27,7 @@ export default function HowToCheckIfTvStolenPage() {
       quickAnswer={{
         question: 'How do I check if a TV is stolen?',
         answer:
-          "Find the serial number on the label on the back of the TV and in its settings menu (usually under Support or About), and make sure they match. Enter it on SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen), which searches theft reports and public web results in a few seconds; the first 2 checks are free. Be most careful with new, boxed TVs sold well below the store price, a common sign of retail or delivery theft.",
+          "Find the serial number on the label on the back of the TV and in its settings menu (usually under Support or About), and make sure they match. Enter it on SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen), which searches theft reports and public web results in a few seconds; the first check is free. Be most careful with new, boxed TVs sold well below the store price, a common sign of retail or delivery theft.",
       }}
       sections={[
         {
@@ -75,7 +75,7 @@ export default function HowToCheckIfTvStolenPage() {
           'Searches SafeOrStolen theft reports and public web results',
           'Results in a few seconds with every source listed',
           'A dated record of the check is saved to your account',
-          '2 free checks, no account or credit card needed',
+          '1 free check, no account or credit card needed',
         ],
         process: [
           'Ask the seller for a photo of the label on the back before you go.',

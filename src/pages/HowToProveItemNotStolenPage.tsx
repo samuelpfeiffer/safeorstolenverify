@@ -77,7 +77,7 @@ export default function HowToProveItemNotStolenPage() {
           'Every source listed with the result',
           'Optional $1.99 certificate with its own link to share (free for monthly members)',
           'Masked identifier on the certificate, so the full number stays private',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Gather your receipt, order confirmation, title or registration.',

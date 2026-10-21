@@ -10,7 +10,7 @@ const DestinLicensePlateLookupPage = () => {
  const faqs = [
  {
  q: "How do I check if a car is stolen in Destin, FL?",
- a: "Enter the Florida plate or the VIN at SafeOrStolen (safeorstolen.com/verify). In a few seconds it searches SafeOrStolen theft reports and public web results that mention the number, and a VIN check also decodes the year, make and model and lists open recalls. You get 2 free checks, no account or credit card needed. Owner names are never shown."
+ a: "Enter the Florida plate or the VIN at SafeOrStolen (safeorstolen.com/verify). In a few seconds it searches SafeOrStolen theft reports and public web results that mention the number, and a VIN check also decodes the year, make and model and lists open recalls. You get 1 free check, no account or credit card needed. Owner names are never shown."
  },
  {
  q: "What else can I do to check a car in Destin?",
@@ -40,7 +40,7 @@ const DestinLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Destin FL License Plate Lookup — Check a Car Before You Buy | SafeOrStolen"
- description="Destin, FL license plate lookup: see if a plate or VIN shows up in SafeOrStolen theft reports or public web results in a few seconds. 2 free checks, no card."
+ description="Destin, FL license plate lookup: see if a plate or VIN shows up in SafeOrStolen theft reports or public web results in a few seconds. 1 free check, no card."
  canonical="/florida/destin-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -52,7 +52,7 @@ const DestinLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Destin License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Buying a used car in Destin, Fort Walton Beach or Niceville? Enter the Florida plate or VIN and in a few seconds you'll see whether it shows up in SafeOrStolen theft reports or public web results. Your first 2 checks are free.
+ Buying a used car in Destin, Fort Walton Beach or Niceville? Enter the Florida plate or VIN and in a few seconds you'll see whether it shows up in SafeOrStolen theft reports or public web results. Your first check is free.
  </p>
  </div>
  </header>
@@ -64,7 +64,7 @@ const DestinLicensePlateLookupPage = () => {
  Check a Destin Vehicle <ArrowRight className="ml-2 h-5 w-5" />
  </Button>
  </Link>
- <p className="text-muted-foreground text-sm mt-3">2 free checks · No credit card</p>
+ <p className="text-muted-foreground text-sm mt-3">1 free check · No credit card</p>
  </div>
  </section>
 

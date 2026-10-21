@@ -81,7 +81,7 @@ const VIN_PARTS: [string, string, string][] = [
 ];
 
 const CHECKS: [string, string, string][] = [
-  ['SafeOrStolen VIN check', 'Theft reports owners filed on SafeOrStolen, public web results for the VIN, the decoded year, make and model, and open safety recalls. Arizona VINs also against Arizona law-enforcement stolen-vehicle records.', '2 free checks'],
+  ['SafeOrStolen VIN check', 'Theft reports owners filed on SafeOrStolen, public web results for the VIN, the decoded year, make and model, and open safety recalls. Arizona VINs also against Arizona law-enforcement stolen-vehicle records.', '1 free check'],
   ['Police VIN check', "Whether the VIN is in the FBI’s NCIC stolen-vehicle file. Some departments run it for a buyer; call the non-emergency line.", 'Usually free'],
   ['State DMV title check', 'Title status and brands (salvage, rebuilt, flood) for vehicles titled in that state, where the state offers it.', 'Free to a small fee'],
   ['NMVTIS-based history report', 'Title brands and odometer readings reported at title events across states, through federally approved providers.', 'Low cost'],
@@ -108,7 +108,7 @@ export default function CompleteVinGuide() {
           <AuthorByline />
 <h1 className="text-4xl font-bold mb-4">How to Read a VIN: The Complete VIN Number Guide</h1>
           <p className="text-lg text-muted-foreground">
-            To check if a used car is stolen, read the 17-character VIN from the dashboard and the driver door and enter it at safeorstolen.com/vin-checker. The check returns theft reports, year, make, model, and open recalls, and lists every source. Characters 1 to 3 name the maker, 10 is the model year, and 12 to 17 are the serial. The first 2 checks are free.
+            To check if a used car is stolen, read the 17-character VIN from the dashboard and the driver door and enter it at safeorstolen.com/vin-checker. The check returns theft reports, year, make, model, and open recalls, and lists every source. Characters 1 to 3 name the maker, 10 is the model year, and 12 to 17 are the serial. the first check is free.
           </p>
           <div className="flex items-center gap-4 mt-4 text-sm text-muted-foreground">
             <span>Updated <time dateTime="2026-10-07">October 7, 2026</time></span>

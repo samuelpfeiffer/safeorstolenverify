@@ -20,7 +20,7 @@ const TestimonialsPage = () => (
   <>
     <PageSEO
       title="SafeOrStolen Reviews and Feedback"
-      description="SafeOrStolen reviews: rated 4.0 out of 5 on Trustpilot. Read what users say, judge the stolen-item check yourself with 2 free checks, and send feedback."
+      description="SafeOrStolen reviews: rated 4.0 out of 5 on Trustpilot. Read what users say, judge the stolen-item check yourself with 1 free check, and send feedback."
       keywords="safeorstolen reviews, safeorstolen feedback, is safeorstolen legit, safeorstolen testimonials"
       canonical="/testimonials"
       modifiedTime="2026-10-18"
@@ -41,7 +41,7 @@ const TestimonialsPage = () => (
           <p className="text-lg text-muted-foreground mb-4">
             SafeOrStolen only shows reviews you can check for yourself. Below are the reviews from our Trustpilot
             page, word for word, with a link so you can see them there. The best way to judge the service is still to
-            run the 2 free checks yourself, with no account or credit card, and see what a result tells you.
+            run the 1 free check yourself, with no account or credit card, and see what a result tells you.
           </p>
           <p className="text-sm text-muted-foreground mb-6">Updated October 18, 2026</p>
           <div className="-mx-4 mb-6"><TrustpilotReviews heading="Reviews on Trustpilot" /></div>

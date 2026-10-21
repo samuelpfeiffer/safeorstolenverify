@@ -325,7 +325,7 @@ const AppFeatures = () => {
                 <tbody>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Free account</td>
-                    <td className="p-4">2 free checks, no credit card</td>
+                    <td className="p-4">1 free check, no credit card</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Single check</td>

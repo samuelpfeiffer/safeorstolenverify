@@ -14,7 +14,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  {
  name: 'Stolen item check',
  what: 'One box for an IMEI, VIN, plate or serial number. Searches SafeOrStolen theft reports and public web results, plus extra sources for some items (below). Results in a few seconds with every source listed.',
- cost: '2 free, then $0.99 each or unlimited at $10 a month',
+ cost: '2 free, then $0.99 for 2 or unlimited at $10 a month',
  href: '/check-if-stolen',
  linkText: 'Check an item',
  },
@@ -205,7 +205,7 @@ export default function FeaturesPage() {
 
  <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center">
  <h2 className="text-2xl font-bold mb-2">Try it on your next purchase</h2>
- <p className="text-muted-foreground mb-4">2 free checks, no account needed. No credit card.</p>
+ <p className="text-muted-foreground mb-4">1 free check, no account needed. No credit card.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button size="lg" asChild>
  <Link to="/verify">

@@ -16,7 +16,7 @@ export const useParallelVerification = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<AggregatedResult | null>(null);
   const [progress, setProgress] = useState<string>('');
-  // Oct 20 2026: set when the 2 free checks are used, so pages show the pay offer in place.
+  // Oct 20 2026: set when the 1 free check is used, so pages show the pay offer in place.
   const [limitHit, setLimitHit] = useState<{ identifier: string; itemType?: string } | null>(null);
   const { user } = useUnifiedAuth();
   const { checkGate } = useVerifyGate();
@@ -33,14 +33,14 @@ export const useParallelVerification = () => {
       return null;
     }
 
-    // Free-check gate (2 free checks for anonymous + free users, then upgrade).
+    // Free-check gate (1 free check for anonymous + free users, then upgrade).
     // Same server-side gate used by /verify — no hard block to /pricing.
     const allowed = await checkGate();
     if (!allowed) {
       toast({
         title: "Free checks used",
         description: user?.id
-          ? "Subscribe for $10/month for unlimited verifications, or pay $0.99 per check."
+          ? "Subscribe for $10/month for unlimited verifications, or pay $0.99 for 2 checks."
           : "Create a free account to keep verifying, or upgrade for unlimited checks.",
         variant: "destructive",
       });

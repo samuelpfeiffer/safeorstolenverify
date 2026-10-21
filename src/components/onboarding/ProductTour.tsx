@@ -12,7 +12,7 @@ const TARGET_GAP = 14;
 const STEPS = [
   { target: 'search', title: 'Search or ask', description: 'Paste an IMEI, VIN, serial number, or marketplace link here, or just ask a question.' },
   { target: 'quick-actions', title: 'Quick starts', description: 'Or tap one of these to get started.' },
-  { target: 'free-checks', title: 'Your first checks are free', description: 'Your first 2 checks are free once you create an account — no credit card needed.' },
+  { target: 'free-checks', title: 'Your first checks are free', description: 'Your first check is free once you create an account — no credit card needed.' },
   { target: 'history', title: 'Find every check again', description: 'Every check you run is saved in your Dashboard so you can find it again.' },
 ] as const;
 

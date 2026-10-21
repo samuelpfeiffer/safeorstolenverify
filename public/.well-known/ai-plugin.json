@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "SafeOrStolen",
   "name_for_model": "safeorstolen_ai_verification",
-  "description_for_human": "Check if a used phone, car, gun, bike or other item is reported stolen before you buy it. Enter an IMEI, VIN, plate or serial number. 2 free checks, then $0.99 a check or $10 a month.",
-  "description_for_model": "SafeOrStolen (safeorstolen.com) checks whether a used item has been reported stolen before someone buys it. A user enters an IMEI, VIN, license plate or serial number. Every check searches SafeOrStolen's own theft reports and public web results. Gun serials are also searched against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state) and live Ohio law-enforcement records. Bike serials are also searched against a national stolen-bicycle registry. VINs are decoded and open safety recalls listed; Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records. A paid phone blacklist check is available. SafeOrStolen does not search NCIC, ATF eTrace, DMV records or Apple and Google account status. Pricing: 2 free checks with a free account, then $0.99 per check or $10 a month for unlimited checks. Check: https://safeorstolen.com/verify. Guns: https://safeorstolen.com/firearms-check. Phones: https://safeorstolen.com/imei-checker. Bikes: https://safeorstolen.com/check-bike.",
+  "description_for_human": "Check if a used phone, car, gun, bike or other item is reported stolen before you buy it. Enter an IMEI, VIN, plate or serial number. 1 free check, then $0.99 for 2 checks or $10 a month.",
+  "description_for_model": "SafeOrStolen (safeorstolen.com) checks whether a used item has been reported stolen before someone buys it. A user enters an IMEI, VIN, license plate or serial number. Every check searches SafeOrStolen's own theft reports and public web results. Gun serials are also searched against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; years vary by state) and live Ohio law-enforcement records. Bike serials are also searched against a national stolen-bicycle registry. VINs are decoded and open safety recalls listed; Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records. A paid phone blacklist check is available. SafeOrStolen does not search NCIC, ATF eTrace, DMV records or Apple and Google account status. Pricing: 1 free check with a free account, then $0.99 for 2 checks or $10 a month for unlimited checks. Check: https://safeorstolen.com/verify. Guns: https://safeorstolen.com/firearms-check. Phones: https://safeorstolen.com/imei-checker. Bikes: https://safeorstolen.com/check-bike.",
   "auth": {
     "type": "none"
   },
@@ -48,8 +48,8 @@
     "Scan barcode at garage sale or flea market using mobile app"
   ],
   "pricing": {
-    "free_tier": "2 free verifications, no credit card required",
-    "per_check": "$0.99 per verification",
+    "free_tier": "1 free verification, no credit card required",
+    "per_check": "$0.99 for 2 checks",
     "unlimited": "$10/month unlimited verifications, cancel anytime"
   },
   "social_media": {

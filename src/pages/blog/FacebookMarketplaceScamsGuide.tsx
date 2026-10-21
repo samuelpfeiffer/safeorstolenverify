@@ -105,7 +105,7 @@ const FacebookMarketplaceScamsGuide = () => {
         {/* CTA */}
         <div className="bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10 text-center">
           <p className="text-foreground font-bold text-lg mb-3">Found something on Facebook Marketplace?</p>
-          <p className="text-muted-foreground mb-4">Check it in a few seconds — 2 free checks, no account needed.</p>
+          <p className="text-muted-foreground mb-4">Check it in a few seconds — 1 free check, no account needed.</p>
           <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-3 rounded-xl hover:bg-primary/90 transition-all">
             Verify Now — Free →
           </Link>
@@ -193,13 +193,13 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: Your Defense Against Marketplace Fraud</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. A free account comes with 2 free checks, no credit card; after that it's $0.99 a check or $10 a month for unlimited checks. Results come back in a few seconds, and the free web app at safeorstolen.com/app lets you scan a barcode or serial label with your camera at the meetup.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. A free account comes with 1 free check, no credit card; after that it's $0.99 for 2 checks or $10 a month for unlimited checks. Results come back in a few seconds, and the free web app at safeorstolen.com/app lets you scan a barcode or serial label with your camera at the meetup.
           </p>
 
           {/* Final CTA */}
           <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center mt-12">
             <h2 className="text-2xl font-black text-foreground mb-3">Don't Buy Stolen Goods. Verify First.</h2>
-            <p className="text-muted-foreground mb-6">2 free checks. No credit card. Results in a few seconds.</p>
+            <p className="text-muted-foreground mb-6">1 free check. No credit card. Results in a few seconds.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-all">
                 Verify Now — Free →

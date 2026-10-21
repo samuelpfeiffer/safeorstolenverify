@@ -158,7 +158,7 @@ const ProofOfPurchasePage: React.FC = () => {
               to="/verify"
               className="inline-flex items-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
             >
-              Check an item — 2 free checks
+              Check an item — 1 free check
             </Link>
 
             <ProofDisclaimer className="mt-12" />

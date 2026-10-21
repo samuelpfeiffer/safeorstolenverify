@@ -45,7 +45,7 @@ const VsBikeIndex = () => {
         "name": "Is Bike Index really free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Bike Index is free and open source, but it only covers bicycles. SafeOrStolen gives you 2 free checks across all item types (bikes, phones, cars, electronics, firearms), then $0.99 for a single check or $10 a month for unlimited checks."
+          "text": "Yes, Bike Index is free and open source, but it only covers bicycles. SafeOrStolen gives you 1 free check across all item types (bikes, phones, cars, electronics, firearms), then $0.99 for 2 checks or $10 a month for unlimited checks."
         }
       },
       {
@@ -141,7 +141,7 @@ const VsBikeIndex = () => {
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
-                        2 free searches included
+                        1 free search included
                       </li>
                     </ul>
                     <p className="mt-4 text-sm text-muted-foreground">
@@ -342,7 +342,7 @@ const VsBikeIndex = () => {
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                       <div>
                         <strong>Budget is critical:</strong> Bike Index is free.
-                        SafeOrStolen gives you 2 free checks, then $0.99 a check or $10 a month.
+                        SafeOrStolen gives you 1 free check, then $0.99 for 2 checks or $10 a month.
                       </div>
                     </li>
                   </ul>
@@ -408,7 +408,7 @@ const VsBikeIndex = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Verify Your Next Purchase?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Get 2 free searches to check bikes, phones, cars, and more. One platform for everything.
+              Get 1 free search to check bikes, phones, cars, and more. One platform for everything.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">

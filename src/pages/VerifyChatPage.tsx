@@ -276,7 +276,7 @@ const VerifyChatPage: React.FC = () => {
       updateMessage(assistantId, {
         loading: false,
         content:
-          "**Create a free account to run this check.** It takes a few seconds — sign up with Google or email below and I'll pick up right where we left off. You get 2 free checks, no account needed.",
+          "**Create a free account to run this check.** It takes a few seconds — sign up with Google or email below and I'll pick up right where we left off. You get 1 free check, no account needed.",
       });
     },
     [savePendingVerification, updateMessage],
@@ -285,7 +285,7 @@ const VerifyChatPage: React.FC = () => {
 
   const runVerification = useCallback(
  async (assistantId: string, identifier: string) => {
- // No account needed for the 2 free checks (Sept 30 2026). The server enforces
+ // No account needed for the 1 free check (Sept 30 2026). The server enforces
  // the limit; signed-out visitors are asked to sign up once it's used.
  try {
  const { data: detect, error: detectErr } = await supabase.functions.invoke(
@@ -308,7 +308,7 @@ const VerifyChatPage: React.FC = () => {
          if (!allowed) {
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your 2 free checks. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
+             content: `You've used your 1 free check. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
@@ -328,7 +328,7 @@ const VerifyChatPage: React.FC = () => {
            savePendingCheck(cleanedIdentifier, itemType);
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your 2 free checks. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
+             content: `You've used your 1 free check. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
@@ -578,7 +578,7 @@ const VerifyChatPage: React.FC = () => {
  <title>Check if an Item Is Stolen | SafeOrStolen</title>
  <meta
  name="description"
- content="Paste an IMEI, VIN, serial number or license plate to search SafeOrStolen theft reports and public web results in a few seconds. Every source is listed. 2 free checks."
+ content="Paste an IMEI, VIN, serial number or license plate to search SafeOrStolen theft reports and public web results in a few seconds. Every source is listed. 1 free check."
  />
  <link rel="canonical" href="https://safeorstolen.com/verify" />
  <meta property="og:title" content="Check if an Item Is Stolen | SafeOrStolen" />
@@ -925,7 +925,7 @@ const VerifyChatPage: React.FC = () => {
  <>
  <span>·</span>
  <a href="/auth?redirect=/verify" className="text-primary hover:underline">
- 2 FREE CHECKS — NO SIGN-UP NEEDED
+ 1 FREE CHECK — NO SIGN-UP NEEDED
  </a>
  </>
  )}

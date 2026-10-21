@@ -10,7 +10,7 @@ const OfferupVerifyNotStolen = () => {
   const faqs = [
     {
       question: "How do I check if an OfferUp item is stolen?",
-      answer: "Message the seller through OfferUp and ask for the IMEI (phones), VIN (vehicles) or serial number (electronics, bikes, tools). Enter it on SafeOrStolen (safeorstolen.com/offerup-verify-not-stolen). It searches SafeOrStolen's theft reports and public web results, plus police records for guns and a national stolen-bicycle registry for bikes. Your first 2 checks are free."
+      answer: "Message the seller through OfferUp and ask for the IMEI (phones), VIN (vehicles) or serial number (electronics, bikes, tools). Enter it on SafeOrStolen (safeorstolen.com/offerup-verify-not-stolen). It searches SafeOrStolen's theft reports and public web results, plus police records for guns and a national stolen-bicycle registry for bikes. Your first check is free."
     },
     {
       question: "Does OfferUp verify items aren't stolen?",
@@ -71,7 +71,7 @@ const OfferupVerifyNotStolen = () => {
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               OfferUp doesn't check whether items are stolen. Ask the seller for the serial number, IMEI or VIN
-              and check it on SafeOrStolen before you meet. Your first 2 checks are free.
+              and check it on SafeOrStolen before you meet. Your first check is free.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

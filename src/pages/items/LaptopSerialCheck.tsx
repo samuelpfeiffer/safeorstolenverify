@@ -99,7 +99,7 @@ const LaptopSerialCheck = () => {
         }
       ]}
       ctaTitle="Check the Laptop Before You Pay"
-      ctaDescription="A serial check takes a few seconds. Your first 2 checks are free."
+      ctaDescription="A serial check takes a few seconds. Your first check is free."
       relatedLinks={[
         { title: "MacBook Verification", href: "/check-electronics" },
         { title: "Gaming Console Check", href: "/check-electronics" },

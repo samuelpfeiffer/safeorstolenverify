@@ -4,7 +4,7 @@ const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Electronics Are Stolen - Serial Number Check"
-      metaDescription="Check if a camera, tablet, console or drone is stolen by serial number. SafeOrStolen searches theft reports and public web results. 2 free checks."
+      metaDescription="Check if a camera, tablet, console or drone is stolen by serial number. SafeOrStolen searches theft reports and public web results. 1 free check."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[
@@ -26,7 +26,7 @@ const CheckElectronicsPage = () => {
           "Check drones: DJI, Autel, Skydio",
           "Check TVs and appliances by the serial on the back label",
           "Every check lists the sources searched and is saved to your account with the date",
-          "2 free checks, then $0.99 a check or $10 a month unlimited"
+          "1 free check, then $0.99 for 2 checks or $10 a month unlimited"
         ],
         process: [
           "Find the serial number. Cameras: on the bottom plate near the tripod mount. Tablets: on the back panel or in Settings > About. Game consoles: on the back or bottom label, or in the system settings. Drones: in the battery bay or on the body label.",
@@ -47,7 +47,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "Is the electronics serial number check free?",
-            answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that it's $0.99 for a single check or $10 a month for unlimited checks, which you can cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
+            answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, which you can cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
           },
           {
             question: "What should I do if the check shows the device is reported stolen?",

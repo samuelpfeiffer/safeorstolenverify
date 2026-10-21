@@ -79,7 +79,7 @@ export default function ScammerTacticsExposed() {
           'Works for phones, cars, bikes, laptops, tools, consoles and guns',
           'Every source listed with the result',
           'Dated record of the check saved to your account',
-          '2 free checks with no credit card',
+          '1 free check with no credit card',
         ],
         process: [
           'Look at the seller\'s profile before you reply.',

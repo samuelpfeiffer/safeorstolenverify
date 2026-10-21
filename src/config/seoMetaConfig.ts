@@ -94,7 +94,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/pricing': {
  title: 'Pricing - $10/mo Unlimited Stolen Item Verification',
-  description: 'Stolen-item verification starts with 2 free checks, then costs $0.99 per check or $10 per month for unlimited checks across all six categories.',
+  description: 'Stolen-item verification starts with 1 free check, then costs $0.99 for 2 checks or $10 per month for unlimited checks across all six categories.',
  keywords: 'SafeOrStolen pricing, verification pricing, stolen item checker cost',
  canonical: '/pricing'
  },
@@ -214,7 +214,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/firearms-check': {
  title: 'Gun Serial Number Check — All 50 States',
- description: 'Free gun serial number check. Search stolen firearms databases and flag altered or obliterated serials — a federal violation. Instant results, 2 free checks.',
+ description: 'Free gun serial number check. Search stolen firearms databases and flag altered or obliterated serials — a federal violation. Instant results, 1 free check.',
 
  keywords: 'firearm serial check, stolen gun lookup, stolen gun registry, gun verification',
  canonical: '/firearms-check'

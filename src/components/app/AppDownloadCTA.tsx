@@ -14,7 +14,7 @@ export const AppDownloadCTA = ({ variant = 'default', showBenefits = false }: Ap
   const benefits = [
     "Runs in the browser on iPhone, Android and computers",
     "No app store needed: add it to your home screen from safeorstolen.com/app",
-    "Free to install; 2 free checks, no account needed",
+    "Free to install; 1 free check, no account needed",
     "Same account and check history as the website"
   ];
 

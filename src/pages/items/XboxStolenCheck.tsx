@@ -28,7 +28,7 @@ const XboxStolenCheck = () => (
     quickAnswer={{
       question: 'How do I check if an Xbox is stolen?',
       answer:
-        "Get the 12-digit serial number from the sticker on the console, then confirm it on screen in Settings > System > Console info. If the two don't match, walk away. Enter the serial on SafeOrStolen (safeorstolen.com/check-xbox), which searches theft reports and public web results in a few seconds; the first 2 checks are free. Before paying, watch the seller remove their account and reset the console.",
+        "Get the 12-digit serial number from the sticker on the console, then confirm it on screen in Settings > System > Console info. If the two don't match, walk away. Enter the serial on SafeOrStolen (safeorstolen.com/check-xbox), which searches theft reports and public web results in a few seconds; the first check is free. Before paying, watch the seller remove their account and reset the console.",
     }}
     sections={[
       {
@@ -78,7 +78,7 @@ const XboxStolenCheck = () => (
         'Searches SafeOrStolen theft reports and public web results',
         'Results in a few seconds with every source listed',
         'A dated record of the check is saved to your account',
-        '2 free checks with no credit card',
+        '1 free check with no credit card',
       ],
       process: [
         'Ask the seller for a photo of the serial sticker, or of the Console info screen, before you meet.',

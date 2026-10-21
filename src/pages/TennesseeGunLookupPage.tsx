@@ -14,7 +14,7 @@ const URL = "https://safeorstolen.com/gun-serial-number-lookup/tennessee";
 const FAQS = [
   {
     q: "Can I look up a gun serial number for free in Tennessee?",
-    a: `Yes. Enter the serial on this page. Your first 2 checks are free, with no credit card. The check searches ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns from 33 states and Washington, DC, live Ohio records, and SafeOrStolen's own theft reports.`,
+    a: `Yes. Enter the serial on this page. Your first check is free, with no credit card. The check searches ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns from 33 states and Washington, DC, live Ohio records, and SafeOrStolen's own theft reports.`,
   },
   {
     q: "Are Tennessee police reports included?",
@@ -52,7 +52,7 @@ export default function TennesseeGunLookupPage() {
     <main className="min-h-screen bg-background pt-24 pb-20">
       <PageSEO
         title="Gun Serial Number Lookup Free Tennessee"
-        description={`Free gun serial number lookup in Tennessee. Check a serial against ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns before you buy. 2 free checks, no credit card.`}
+        description={`Free gun serial number lookup in Tennessee. Check a serial against ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns before you buy. 1 free check, no credit card.`}
         canonical="/gun-serial-number-lookup/tennessee"
         structuredData={schema}
         modifiedTime="2026-10-20"
@@ -66,7 +66,7 @@ export default function TennesseeGunLookupPage() {
             reports of stolen and lost guns from 33 states and Washington, DC, plus live Ohio records and SafeOrStolen's own theft reports.
           </p>
           <InlineSerialCheck type="firearm" placeholder="Enter the gun's serial number" />
-          <p className="text-sm text-muted-foreground">2 free checks · No credit card · The seller is never told</p>
+          <p className="text-sm text-muted-foreground">1 free check · No credit card · The seller is never told</p>
         </header>
 
         <section className="rounded-2xl border border-primary/30 bg-primary/5 p-6">

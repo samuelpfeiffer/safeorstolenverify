@@ -30,7 +30,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'Is the scam checker free?',
     answer:
-      "Yes. It's free, has no limit, and you don't need an account. It runs in your browser, so the text you paste isn't sent to SafeOrStolen. Checking whether the item itself is reported stolen is separate: that uses the serial number, IMEI or VIN, and comes with 2 free checks, no account needed.",
+      "Yes. It's free, has no limit, and you don't need an account. It runs in your browser, so the text you paste isn't sent to SafeOrStolen. Checking whether the item itself is reported stolen is separate: that uses the serial number, IMEI or VIN, and comes with 1 free check, no account needed.",
   },
   {
     question: 'What do the scam risk levels mean?',
@@ -281,7 +281,7 @@ const ScamCheckerPage: React.FC = () => {
           <p className="text-muted-foreground mb-4">
             A clean-looking listing can still be selling a stolen phone or bike. Ask for the serial number, IMEI or VIN and
             check it. SafeOrStolen searches its theft reports and public web results and lists every source it searched.
-            The first 2 checks are free.
+            the first check is free.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">

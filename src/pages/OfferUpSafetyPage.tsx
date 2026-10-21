@@ -67,7 +67,7 @@ const OfferUpSafetyPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
  <PageSEO
  title="OfferUp Scam Check - Free Item Verification"
- description="Avoid OfferUp scams: spot the red flags, meet safely, and check an IMEI, VIN or serial for theft reports before you meet the seller. 2 free checks."
+ description="Avoid OfferUp scams: spot the red flags, meet safely, and check an IMEI, VIN or serial for theft reports before you meet the seller. 1 free check."
  keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid OfferUp scams, OfferUp fraud protection"
  canonical="/offerup-safety"
  structuredData={faqSchema}
@@ -234,7 +234,7 @@ const OfferUpSafetyPage = () => {
  <div className="text-center">
  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
  <h3 className="font-semibold mb-2">Check SafeOrStolen</h3>
- <p className="text-sm text-muted-foreground">Enter the number at safeorstolen.com/verify (2 free checks)</p>
+ <p className="text-sm text-muted-foreground">Enter the number at safeorstolen.com/verify (1 free check)</p>
  </div>
  <div className="text-center">
  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
@@ -285,7 +285,7 @@ const OfferUpSafetyPage = () => {
  {/* CTA */}
  <section className="text-center bg-primary/10 rounded-xl p-8">
  <h2 className="text-2xl font-bold mb-4">Stay Safe on OfferUp</h2>
- <p className="text-muted-foreground mb-6">Check any phone, car or electronics before your meetup. 2 free checks, no account needed.</p>
+ <p className="text-muted-foreground mb-6">Check any phone, car or electronics before your meetup. 1 free check, no account needed.</p>
  <div className="flex flex-col sm:flex-row gap-4 justify-center">
  <Button asChild size="lg">
  <Link to="/verify">Verify Item Now</Link>

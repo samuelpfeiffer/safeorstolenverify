@@ -52,7 +52,7 @@ const EbayStolenItemCheck = () => {
     <>
       <PageSEO
         title="eBay Stolen Check - Verify Items Before Bidding Free"
-        description="Check if an eBay item is stolen before you bid: get the IMEI, VIN or serial from the seller and search it against SafeOrStolen theft reports. 2 free checks."
+        description="Check if an eBay item is stolen before you bid: get the IMEI, VIN or serial from the seller and search it against SafeOrStolen theft reports. 1 free check."
         keywords="eBay safety, eBay stolen check, verify eBay items, eBay buyer protection"
         canonical="/ebay-stolen-item-check"
         structuredData={faqSchema}

@@ -32,7 +32,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Can I check if a specific gun is in these records?',
-    a: 'Yes. Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). Every gun check searches all of these reports at once, plus live Ohio law-enforcement records and SafeOrStolen\'s own theft reports. The first 2 checks are free.',
+    a: 'Yes. Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). Every gun check searches all of these reports at once, plus live Ohio law-enforcement records and SafeOrStolen\'s own theft reports. the first check is free.',
   },
   {
     q: 'Where does this data come from?',
@@ -121,7 +121,7 @@ export default function GunTheftStatisticsPage() {
               say about which guns are stolen. Check any gun against all of them in seconds.
             </p>
             <InlineSerialCheck type="firearm" placeholder="Enter a gun's serial number" />
-            <p className="text-sm text-muted-foreground mt-3">2 free checks · No credit card · Data counted {GUN_STATS_AS_OF}</p>
+            <p className="text-sm text-muted-foreground mt-3">1 free check · No credit card · Data counted {GUN_STATS_AS_OF}</p>
           </div>
         </section>
 

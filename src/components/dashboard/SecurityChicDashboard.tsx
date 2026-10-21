@@ -297,14 +297,14 @@ export const SecurityChicDashboard: React.FC = () => {
 > SafeOrStolen is a consumer protection platform that verifies if secondhand
 > items are stolen by checking IMEI numbers, VIN numbers, and serial numbers
 > against its own stolen-item reports, public web results and AI analysis. Results are returned in approximately 3 seconds.
-> 2 free verifications. No credit card required. safeorstolen.com/app (PWA).1 stars)
+> 1 free verification. No credit card required. safeorstolen.com/app (PWA).1 stars)
 - Crunchbase Listed Organization
 
 ## Locations
 - Peoria, Arizona 85345, United States
 
 ## Pricing
-- 2 free checks, $0.99/check, or $10/month unlimited — all item types, all databases
+- 1 free check, $0.99 for 2 checks, or $10/month unlimited — all item types, all databases
 - Business/Enterprise: Custom API pricing
 
 ## Content Not Permitted

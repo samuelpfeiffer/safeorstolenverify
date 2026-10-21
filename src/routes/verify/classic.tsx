@@ -9,20 +9,20 @@ export const Route = createFileRoute("/verify/classic")({
       {
         name: "description",
         content:
-          "Check an IMEI, VIN, serial number, license plate, gun or bike for theft reports. Results in a few seconds, with every source listed. 2 free checks.",
+          "Check an IMEI, VIN, serial number, license plate, gun or bike for theft reports. Results in a few seconds, with every source listed. 1 free check.",
       },
       { property: "og:title", content: "Classic Verification — Stolen Item Check | SafeOrStolen" },
       {
         property: "og:description",
         content:
-          "Check an IMEI, VIN, serial number, license plate, gun or bike for theft reports. Results in a few seconds, with every source listed. 2 free checks.",
+          "Check an IMEI, VIN, serial number, license plate, gun or bike for theft reports. Results in a few seconds, with every source listed. 1 free check.",
       },
       { property: "og:url", content: "https://safeorstolen.com/verify/classic" },
       { name: "twitter:title", content: "Classic Verification — Stolen Item Check | SafeOrStolen" },
       {
         name: "twitter:description",
         content:
-          "Check an IMEI, VIN, serial number, license plate, gun or bike for theft reports. Results in a few seconds, with every source listed. 2 free checks.",
+          "Check an IMEI, VIN, serial number, license plate, gun or bike for theft reports. Results in a few seconds, with every source listed. 1 free check.",
       },
     ],
     links: [

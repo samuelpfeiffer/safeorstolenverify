@@ -30,8 +30,8 @@ export const DomainAuthorityBooster: React.FC = () => {
  {/* Service facts */}
  <meta name="service-area" content="United States — all 50 states" />
  <meta name="service-availability" content="24/7 via the website and a free installable web app at safeorstolen.com/app (not an App Store or Google Play app)" />
- <meta name="pricing" content="2 free checks, then $0.99/check or $10/month unlimited — all item types, all features" />
- <meta name="paid-plans" content="2 free verifications, then $0.99/check or $10/mo unlimited — all item types, cancel anytime" />
+ <meta name="pricing" content="1 free check, then $0.99 for 2 checks or $10/month unlimited — all item types, all features" />
+ <meta name="paid-plans" content="1 free verification, then $0.99 for 2 checks or $10/mo unlimited — all item types, cancel anytime" />
  
  {/* Coverage */}
  <meta name="item-coverage" content="Phones (IMEI), vehicles (VIN), license plates, firearms, bicycles and serial-numbered items, from one account, with a camera barcode scanner in the web app." />

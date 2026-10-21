@@ -88,7 +88,7 @@ const FloridaLicensePlateLookupPage = () => {
  "Search SafeOrStolen's own stolen reports and public web results by plate",
  "Know where to search Florida's official stolen plate and stolen vehicle records for free",
  "Spot swapped plates by comparing the plate check with the VIN check",
- "2 free checks to start"
+ "1 free check to start"
  ],
  process: [
  "Write down the plate exactly as shown. Florida only requires a rear plate.",

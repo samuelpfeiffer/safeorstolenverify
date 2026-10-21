@@ -53,7 +53,7 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "How much does SafeOrStolen cost?",
-            answer: "You get 2 free checks, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
+            answer: "You get 1 free check, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
           }
         ]}
       />
@@ -123,7 +123,7 @@ const CheckMendHasNoApp = () => {
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">What does it cost?</td>
-                      <td className="p-4 text-sm">2 free checks, then $0.99 a check or $10 a month unlimited.</td>
+                      <td className="p-4 text-sm">1 free check, then $0.99 for 2 checks or $10 a month unlimited.</td>
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">What do results look like?</td>
@@ -155,7 +155,7 @@ const CheckMendHasNoApp = () => {
             <ol className="list-decimal pl-6 space-y-4">
               <li>Open <strong>safeorstolen.com/app</strong> in Safari on iPhone or Chrome on Android.</li>
               <li>On iPhone, tap the Share button, then "Add to Home Screen". On Android, tap the menu, then "Install app" or "Add to Home screen".</li>
-              <li>Create a free account. Your first 2 checks are free and no card is needed.</li>
+              <li>Create a free account. Your first check is free and no card is needed.</li>
               <li>Type the IMEI, VIN or serial number and read the result in a few seconds. Each check is saved to your account with the date.</li>
             </ol>
 
@@ -165,7 +165,7 @@ const CheckMendHasNoApp = () => {
                 <li>CheckMEND is used through its website.</li>
                 <li>SafeOrStolen is a free installable web app, not an app-store download.</li>
                 <li>SafeOrStolen covers phones, vehicles, plates, guns, bikes and serial-numbered gear.</li>
-                <li>2 free checks, then $0.99 a check or $10 a month unlimited.</li>
+                <li>1 free check, then $0.99 for 2 checks or $10 a month unlimited.</li>
               </ul>
             </div>
 

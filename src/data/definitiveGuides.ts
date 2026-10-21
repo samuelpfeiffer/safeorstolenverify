@@ -79,7 +79,7 @@ export const PHONE_GUIDE: DefinitiveGuideProps = {
     {
       question: "Can I check an IMEI for free?",
       answer:
-        "Yes. A free SafeOrStolen account comes with 2 free checks, no credit card. An IMEI check shows the make and model and searches SafeOrStolen theft reports and public web results. The lost and stolen blacklist check is paid; monthly members ($10 a month) get up to 20 of them a month.",
+        "Yes. A free SafeOrStolen account comes with 1 free check, no credit card. An IMEI check shows the make and model and searches SafeOrStolen theft reports and public web results. The lost and stolen blacklist check is paid; monthly members ($10 a month) get up to 20 of them a month.",
     },
     {
       question: "What else should I check after a clean IMEI result?",
@@ -211,7 +211,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
     },
     {
       name: "Run a SafeOrStolen firearm check",
-      cost: "2 free checks, no account needed",
+      cost: "1 free check, no account needed",
       description:
         "SafeOrStolen searches police firearm theft and loss reports from 33 states and Washington, DC (more than 220,000 reports, filed 1973–2017), live Ohio law-enforcement stolen-gun records, theft reports filed on SafeOrStolen, and public web results.",
       tellsYou:
@@ -320,7 +320,7 @@ export const TV_GUIDE: DefinitiveGuideProps = {
   methods: [
     {
       name: "Run a SafeOrStolen serial check",
-      cost: "2 free checks, no account needed",
+      cost: "1 free check, no account needed",
       description:
         "SafeOrStolen searches theft reports filed by owners on SafeOrStolen and public web results for the serial number.",
       tellsYou:

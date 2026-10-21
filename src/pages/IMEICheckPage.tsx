@@ -8,7 +8,7 @@ const IMEICheckPage = () => {
  return (
  <ItemLandingPageTemplate
  title="IMEI Check: See If a Used Phone Is Reported Stolen | SafeOrStolen"
- metaDescription="Run an IMEI check before you buy a used phone. See the make and model, theft reports and public web mentions in a few seconds. 2 free checks, no card needed."
+ metaDescription="Run an IMEI check before you buy a used phone. See the make and model, theft reports and public web mentions in a few seconds. 1 free check, no card needed."
  h1="IMEI check: see if a phone has been reported stolen"
  itemType="Phone"
  searchType="imei"
@@ -33,7 +33,7 @@ const IMEICheckPage = () => {
  howItWorks: "Type the IMEI into the search box. SafeOrStolen reads the make and model from the number, searches theft reports filed by owners on SafeOrStolen, and searches public web results such as listings and stolen-phone posts. You see \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The paid blacklist check adds lost/stolen carrier blacklist status.",
  whyCheck: "A stolen phone can be blacklisted by the owner's carrier, locked to the owner's Apple or Google account, or taken back by police, and the buyer usually loses what they paid. Checking the IMEI and keeping a dated record of it takes a minute at the meetup.",
  benefits: [
- "2 free checks, no account or credit card needed",
+ "1 free check, no account or credit card needed",
  "Make and model read from the IMEI",
  "SafeOrStolen theft reports and public web results",
  "Paid lost/stolen carrier blacklist check available (up to 20 a month for monthly members)",

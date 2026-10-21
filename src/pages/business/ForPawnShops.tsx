@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: 'How much does SafeOrStolen cost for a pawn shop?',
     answer:
-      'Every account gets 2 free checks with no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, which is the plan the bulk check is built for. Phone blacklist checks are capped at 20 a month on that plan. Cancel anytime; the monthly plan has a 30-day refund.',
+      'Every account gets 1 free check with no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, which is the plan the bulk check is built for. Phone blacklist checks are capped at 20 a month on that plan. Cancel anytime; the monthly plan has a 30-day refund.',
   },
   {
     question: 'Does SafeOrStolen work with our pawn software?',
@@ -108,7 +108,7 @@ export default function ForPawnShops() {
               <Button size="lg" asChild><Link to="/bulk-check">Check a list of serials</Link></Button>
               <Button size="lg" variant="outline" asChild><Link to="/verify">Check one item</Link></Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">2 free checks · No credit card · Updated {UPDATED}</p>
+            <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
           </div>
         </section>
 
@@ -211,7 +211,7 @@ export default function ForPawnShops() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Run today's intake through it</h2>
             <p className="text-muted-foreground mb-6">
-              Start with 2 free checks. Counter staff can also install the free web app from safeorstolen.com/app on a shop
+              Start with 1 free check. Counter staff can also install the free web app from safeorstolen.com/app on a shop
               phone. Questions: safeorstolenmail@gmail.com.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -7,11 +7,11 @@ import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
 const categories = [
   {
     title: 'How It Works', icon: HelpCircle, faqs: [
-      { question: 'How do I check if something is stolen?', answer: "Enter the item's IMEI, VIN, plate, or serial number and review the result. Your first 2 checks are free. Every check searches SafeOrStolen's own theft reports and public web results. Gun checks also search police theft and loss reports from 33 states and DC plus live Ohio records, bike checks a national stolen-bicycle registry, and Arizona VINs and plates Arizona law-enforcement stolen-vehicle records." },
+      { question: 'How do I check if something is stolen?', answer: "Enter the item's IMEI, VIN, plate, or serial number and review the result. Your first check is free. Every check searches SafeOrStolen's own theft reports and public web results. Gun checks also search police theft and loss reports from 33 states and DC plus live Ohio records, bike checks a national stolen-bicycle registry, and Arizona VINs and plates Arizona law-enforcement stolen-vehicle records." },
       { question: 'What items can I verify?', answer: 'SafeOrStolen supports phones, vehicles, license plates, serial-numbered electronics and power tools, firearms, and bicycles.' },
       { question: 'Which police records does SafeOrStolen search?', answer: 'Gun checks search more than 220,000 police firearm theft and loss reports from 33 states and DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records. Bike checks add a national stolen-bicycle registry, and a paid phone check searches the lost and stolen phone blacklist. Our item guides explain the next steps for each item.' },
       { question: 'How long does a check take?', answer: 'Most results come back in a few seconds, although network and source response times can vary.' },
-      { question: 'Do I need an account?', answer: 'No. Your first 2 checks are free with no account and no credit card. After that, a check is $0.99, or $10 a month for unlimited checks. A free account saves each check with the date so you can find it later.' },
+      { question: 'Do I need an account?', answer: 'No. Your first check is free with no account and no credit card. After that, a check is $0.99, or $10 a month for unlimited checks. A free account saves each check with the date so you can find it later.' },
     ],
   },
   {
@@ -34,7 +34,7 @@ const categories = [
   },
   {
     title: 'Account, Privacy, and Pricing', icon: Shield, faqs: [
-      { question: 'How much does verification cost?', answer: 'Your first 2 checks are free, with no account or credit card needed. Additional checks cost $0.99 each, or the unlimited plan costs $10 per month (blacklist checks capped at 20 a month) with a 30-day refund.' },
+      { question: 'How much does verification cost?', answer: 'Your first check is free, with no account or credit card needed. Additional checks cost $0.99 for 2, or the unlimited plan costs $10 per month (blacklist checks capped at 20 a month) with a 30-day refund.' },
       { question: 'Can I cancel the unlimited plan?', answer: 'Yes. You can cancel from your account, and access continues through the end of the current billing period.' },
       { question: 'Is there an app?', answer: 'SafeOrStolen is a free web app you can install from your browser at safeorstolen.com/app. It is not an App Store or Google Play download, and it needs a data connection to run checks.' },
       { question: 'Who can view my result?', answer: 'Your history is tied to your account. A result is public only when you deliberately create and share a public result link.' },

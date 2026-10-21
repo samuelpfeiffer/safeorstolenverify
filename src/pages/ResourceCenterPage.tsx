@@ -183,7 +183,7 @@ export default function ResourceCenterPage() {
         <section className="py-14 bg-primary/5">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Check an item</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Your first 2 checks are free with an account. No credit card.</p>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Your first check is free with an account. No credit card.</p>
             <Button size="lg" asChild>
               <Link to="/verify">
                 Run a check <ArrowRight className="ml-2 h-4 w-4" />

@@ -20,7 +20,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "Is SafeOrStolen really free?",
- answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $10/month unlimited. Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
+ answer: "SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
  },
  {
  question: "What databases does SafeOrStolen check?",
@@ -209,7 +209,7 @@ export const HomeContentSections = () => {
  <div className="p-5 bg-background rounded-lg border border-border">
  <h3 className="font-bold mb-2">Used Car Buyers</h3>
  <p className="text-sm text-muted-foreground">
- <Link to="/vin-checker" className="text-primary hover:underline">Vehicle buyers</Link> check VINs before purchasing from private sellers, dealerships, or auctions. SafeOrStolen costs $0.99/check or $10/month unlimited vs Carfax at $44.99 per report — and checks more databases.
+ <Link to="/vin-checker" className="text-primary hover:underline">Vehicle buyers</Link> check VINs before purchasing from private sellers, dealerships, or auctions. SafeOrStolen costs $0.99 for 2 checks or $10/month unlimited vs Carfax at $44.99 per report — and checks more databases.
  </p>
  </div>
  <div className="p-5 bg-background rounded-lg border border-border">

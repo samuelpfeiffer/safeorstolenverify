@@ -42,7 +42,7 @@ const StolenCheckSanAntonio = () => {
     <>
       <PageSEO
         title="San Antonio Stolen Item Check - Verify Before Buying | SafeOrStolen"
-        description="Check if a used phone, car, bike or tool is stolen before you buy in San Antonio. Search the IMEI, VIN or serial against SafeOrStolen theft reports. 2 free checks."
+        description="Check if a used phone, car, bike or tool is stolen before you buy in San Antonio. Search the IMEI, VIN or serial against SafeOrStolen theft reports. 1 free check."
         keywords="san antonio stolen item check, stolen car check san antonio, verify stolen texas, SAPD stolen vehicle, VIN check san antonio"
         canonical="/stolen-check-san-antonio"
         structuredData={faqSchema}

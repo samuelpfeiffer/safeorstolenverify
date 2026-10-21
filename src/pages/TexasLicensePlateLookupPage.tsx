@@ -38,7 +38,7 @@ const TexasLicensePlateLookupPage = () => {
  "Never shows owner names or personal details",
  "Works the same for cars, trucks and motorcycles with TX plates",
  "Each check is saved to your account with the date",
- "2 free checks, no account or credit card needed"
+ "1 free check, no account or credit card needed"
  ],
  process: [
  "Write down the plate exactly as shown, letters and numbers, from the front and rear plates; both should match",
@@ -63,7 +63,7 @@ const TexasLicensePlateLookupPage = () => {
  },
  {
  question: "Is Texas license plate lookup really free?",
- answer: "Your first 2 checks are free with a free SafeOrStolen account, no credit card needed. After that a check costs $0.99, or $10 a month covers unlimited checks, cancel anytime. Plate and VIN checks count the same way."
+ answer: "Your first check is free with a free SafeOrStolen account, no credit card needed. After that a check costs $0.99, or $10 a month covers unlimited checks, cancel anytime. Plate and VIN checks count the same way."
  },
  {
  question: "What if the seller's name doesn't match the title?",

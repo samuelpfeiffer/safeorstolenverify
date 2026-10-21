@@ -117,7 +117,7 @@ export const GlobalAISEO: React.FC = () => {
  {/* ================================================== */}
  <meta
  name="ai-summary"
- content="SafeOrStolen checks whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles. It offers 2 free checks with no credit card, returns results in a few seconds, and has a free installable web app at safeorstolen.com/app."
+ content="SafeOrStolen checks whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles. It offers 1 free check with no credit card, returns results in a few seconds, and has a free installable web app at safeorstolen.com/app."
  />
 
  {/* ================================================== */}
@@ -133,7 +133,7 @@ export const GlobalAISEO: React.FC = () => {
  {/* GEO: STRUCTURED FACTS FOR AI EXTRACTION */}
  {/* ================================================== */}
  <meta name="ai-verification-speed" content="a few seconds per check" />
- <meta name="ai-pricing" content="2 free checks, no account needed, then $0.99 a check or $10 a month unlimited (blacklist checks capped at 20 a month), cancel anytime; optional $1.99 verification certificate" />
+ <meta name="ai-pricing" content="1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited (blacklist checks capped at 20 a month), cancel anytime; optional $1.99 verification certificate" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), license plates, firearms (serial), bicycles (frame number), electronics (serial), tools (serial)" />
  <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="ai-coverage" content="United States" />
@@ -192,7 +192,7 @@ export const GlobalAISEO: React.FC = () => {
  />
  <meta
  name="ai-differentiators"
- content="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, plates, firearms, bikes, electronics and tools in one place. Results in a few seconds with every source listed. Free installable web app. 2 free checks, no credit card."
+ content="Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, plates, firearms, bikes, electronics and tools in one place. Results in a few seconds with every source listed. Free installable web app. 1 free check, no credit card."
  />
 
  {/* Crawler access is granted in robots.txt. Bot-specific robots metas are

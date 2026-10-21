@@ -72,7 +72,7 @@ const HotGunzDatabaseGuide = () => {
                 Check a Gun Serial on SafeOrStolen <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">Police theft records from 33 states and DC · 2 free checks</p>
+            <p className="text-muted-foreground text-sm mt-3">Police theft records from 33 states and DC · 1 free check</p>
           </div>
         </section>
 

@@ -7,7 +7,7 @@ const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
  title="Free Serial Number Search (USA): Check if Any Item Is Stolen | SafeOrStolen"
- metaDescription="Search any serial number free. See if a laptop, tool, camera, console, gun or other item is reported stolen before you buy. Results in seconds, 2 free checks, no card."
+ metaDescription="Search any serial number free. See if a laptop, tool, camera, console, gun or other item is reported stolen before you buy. Results in seconds, 1 free check, no card."
  h1="Free Serial Number Search & Lookup"
  itemType="Item"
  dateModified="2026-10-16"
@@ -28,7 +28,7 @@ const SerialNumberCheckerPage = () => {
  ]}
  quickAnswer={{
  question: "How do I check if an item is stolen by its serial number?",
- answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 33 states and DC. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first 2 checks are free with no card. Do it before you pay, and save the result as proof you checked."
+ answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports and public web results, and for guns it also searches police firearm theft and loss reports from 33 states and DC. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. the first check is free with no card. Do it before you pay, and save the result as proof you checked."
  }}
  sections={[
  {
@@ -75,7 +75,7 @@ const SerialNumberCheckerPage = () => {
  }
  ]}
  content={{
- intro: "Search any serial number for free and see whether the item is reported stolen before you buy it. It works for laptops, power tools, cameras, game consoles, guitars, bikes, guns, TVs and anything else with a serial number. Results in a few seconds, 2 free checks, no credit card.",
+ intro: "Search any serial number for free and see whether the item is reported stolen before you buy it. It works for laptops, power tools, cameras, game consoles, guitars, bikes, guns, TVs and anything else with a serial number. Results in a few seconds, 1 free check, no credit card.",
  whatIs: "A serial number lookup checks whether a specific item has been reported stolen or lost. Almost every valuable manufactured item carries a unique serial number, and that number is what owners give the police and their insurer when the item is stolen. SafeOrStolen searches its own theft reports and public web results for every serial number. Gun serial numbers are also checked against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records. Bikes are checked against a national stolen-bicycle registry, phones against the lost and stolen phone blacklist, and vehicles against Arizona law-enforcement records and federal VIN data.",
  howItWorks: "Type the serial number into the search box. SafeOrStolen searches every source that applies to that kind of item at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched, and it is saved to your account with the date and time. After a check you can also get a $1.99 verification certificate, a dated record with its own link, showing you checked before the sale.",
  whyCheck: "In most states, buying stolen property means losing it. Police can return it to the owner without paying you back, and you can be questioned about how you got it. Checking the serial number before you pay, and keeping a record that you checked, protects you as a buyer. It also helps honest sellers show that the item checked clean.",
@@ -84,7 +84,7 @@ const SerialNumberCheckerPage = () => {
  "Searches SafeOrStolen theft reports and public web results on every check",
  "Gun serials: police theft and loss reports from 33 states and DC plus live Ohio records",
  "Results in a few seconds, with every source listed",
- "2 free checks, no account or credit card needed",
+ "1 free check, no account or credit card needed",
  "Dated record of every check saved to your account",
  "Optional $1.99 verification certificate to share with the buyer or seller",
  "Install the free web app and check from your phone at the meetup"
@@ -99,7 +99,7 @@ const SerialNumberCheckerPage = () => {
  faqs: [
  {
  question: "Is the serial number search really free?",
- answer: "Yes. SafeOrStolen gives you 2 free checks, no account or credit card needed. After that it is $0.99 for a single check, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
+ answer: "Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $0.99 for 2 checks, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
  },
  {
  question: "Is there a national database of stolen serial numbers?",
