@@ -496,7 +496,7 @@ function GunVerifyTool() {
  async function handleSubmit(e: React.FormEvent) {
  e.preventDefault()
  if (!identifier.trim()) return
- await verify(identifier.trim(), 'firearm')
+ window.location.href = `/?q=${encodeURIComponent(identifier.trim())}`
  }
 
  return (

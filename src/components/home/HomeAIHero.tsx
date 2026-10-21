@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from '@/lib/router-compat';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Send, Sparkles, Brain, ArrowRight } from 'lucide-react';
+import { Shield, Send, Sparkles, Brain, ArrowRight, ScanLine } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { requestVerification } from '@/lib/verification/verifyClient';
 import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { useAuth } from '@/lib/auth';
+const QRScanner = React.lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
 
 type Msg = { role: 'user' | 'assistant'; content: string };
 
@@ -34,6 +35,7 @@ export const HomeAIHero: React.FC = () => {
  const [started, setStarted] = useState(false);
  const scrollRef = useRef<HTMLDivElement>(null);
  const inputRef = useRef<HTMLTextAreaElement>(null);
+ const [scannerOpen, setScannerOpen] = useState(false);
 
  useEffect(() => {
  if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -42,6 +44,7 @@ export const HomeAIHero: React.FC = () => {
  useEffect(() => {
  inputRef.current?.focus();
  }, []);
+
 
  const detectInput = (text: string): 'url' | 'identifier' | 'chat' => {
  const t = text.trim();
@@ -186,7 +189,13 @@ export const HomeAIHero: React.FC = () => {
  await streamChat(history);
  }, [isStreaming, started, messages, streamChat, runVerification, runUrlAnalysis]);
 
- const handleKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+ useEffect(() => {
+ const q = new URLSearchParams(window.location.search).get('q');
+ if (q && q.trim()) send(q.trim());
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, []);
+
+  const handleKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
  if (e.key === 'Enter' && !e.shiftKey) {
  e.preventDefault();
  send(input);
@@ -316,6 +325,15 @@ export const HomeAIHero: React.FC = () => {
  className="flex-1 resize-none bg-background border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:border-primary/60 focus:ring-2 focus:ring-primary/20 min-h-[48px] max-h-32"
  />
  <button
+ type="button"
+ onClick={() => setScannerOpen(true)}
+ disabled={isStreaming}
+ className="h-12 w-12 rounded-xl border border-border bg-background text-foreground flex items-center justify-center hover:border-primary/60 disabled:opacity-40"
+ aria-label="Scan barcode or QR"
+ >
+ <ScanLine className="w-5 h-5" />
+ </button>
+ <button
  onClick={() => send(input)}
  disabled={!input.trim() || isStreaming}
  className="h-12 w-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
@@ -344,12 +362,21 @@ export const HomeAIHero: React.FC = () => {
 
  {/* Trust line */}
  <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground mt-5">
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 1 free check, no account needed</span>
+ <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Free through October 22, no account needed</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99 for 2 checks or $10/mo unlimited</span>
  <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>
  </div>
  </div>
+ {scannerOpen && (
+ <Suspense fallback={null}>
+ <QRScanner
+ isOpen={scannerOpen}
+ onClose={() => setScannerOpen(false)}
+ onScan={(value) => { setScannerOpen(false); setInput(value); send(value); }}
+ />
+ </Suspense>
+ )}
  </section>
  );
 };

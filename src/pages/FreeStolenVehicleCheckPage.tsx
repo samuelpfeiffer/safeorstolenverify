@@ -20,9 +20,9 @@ const FreeStolenVehicleCheckPage = () => {
  const [vinInput, setVinInput] = useState('');
  const { verify, isLoading, result, limitHit } = useParallelVerification();
 
- const handleSearch = async () => {
+ const handleSearch = () => {
  if (vinInput.trim()) {
- await verify(vinInput.trim(), 'vehicle');
+ window.location.href = `/?q=${encodeURIComponent(vinInput.trim())}`;
  }
  };
 
