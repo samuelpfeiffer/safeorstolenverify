@@ -1,4 +1,4 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import DynamicBlogPost from "@/pages/blog/DynamicBlogPost";
 import { blogPostQueryOptions, getCanonicalBlogSlug } from "@/lib/blogPostQuery";
 import { resolveRetiredBlogSlug } from "@/utils/legacyRedirectMap";
@@ -19,6 +19,9 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post && !lookupFailed) {
       const retiredTo = resolveRetiredBlogSlug(params.slug);
       if (retiredTo) throw redirect({ href: retiredTo, statusCode: 301, replace: true });
+      // Oct 20 2026: a post that doesn't exist now returns a real 404 (was "200 + noindex",
+      // which Google reports as a soft 404 and counts against the site).
+      throw notFound();
     }
 
     if (post) {
