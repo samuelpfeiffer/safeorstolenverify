@@ -49,7 +49,7 @@ export function PhoneBlacklistOffer({ imei }: { imei: string }) {
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm" className="flex-1" onClick={() => buy('single')} disabled={busy !== null}>
-          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check the blacklist — $0.99'}
+          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check the blacklist: 2 checks for $0.99'}
         </Button>
         <Button size="sm" variant="outline" className="flex-1" onClick={() => buy('monthly')} disabled={busy !== null}>
           {busy === 'monthly' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : '$10/mo: 20 phone checks + unlimited everything else'}

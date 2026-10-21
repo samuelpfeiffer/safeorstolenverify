@@ -40,7 +40,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       <div className="flex items-start gap-3">
         <ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" />
         <div>
-          <p className="font-semibold text-sm">You've used your free check. Run this one for $0.99</p>
+          <p className="font-semibold text-sm">You've used your free check. Get 2 checks for $0.99: this one plus one more.</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             No account needed. Pay once and the check runs as soon as you're back. Or get unlimited checks for $10 a month.
           </p>
@@ -48,7 +48,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm" className="flex-1" onClick={() => buy('single')} disabled={busy !== null}>
-          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check it now: $0.99'}
+          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : '2 checks for $0.99'}
         </Button>
         <Button size="sm" variant="outline" className="flex-1" onClick={() => buy('monthly')} disabled={busy !== null}>
           {busy === 'monthly' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Unlimited: $10/month'}
