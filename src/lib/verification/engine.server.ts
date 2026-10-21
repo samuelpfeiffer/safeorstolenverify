@@ -21,10 +21,10 @@ export const VERIFY_BUILD_ID = 'app-server-verify-2026-09-19-1';
 
 const SOURCE_TIMEOUT_MS = 20_000;
 const FREE_LIMIT = 2;
-// Product Hunt launch: checks are free through the end of Oct 22, 2026 (America/Phoenix).
-const LAUNCH_FREE_UNTIL = Date.UTC(2026, 9, 23, 6, 59, 59); // 2026-10-22 23:59 MST
+// Oct 21 2026 (owner decision): NO free week. The normal rules always apply: 2 free checks, then pay.
+// Kept as a function so existing callers still compile; it always returns false.
 export function isLaunchFree(): boolean {
-  return Date.now() <= LAUNCH_FREE_UNTIL;
+  return false;
 }
 
 export interface VerifyInput {
