@@ -217,8 +217,8 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
     : 'No theft report found in the records searched. Ask the seller for proof of ownership and keep a record of the sale.';
   if (isFirearm) {
     message += policeChecked
-      ? " For a private sale, it's still smart to buy through a licensed dealer (FFL) or ask local police to run the serial. In Florida, you can also search FDLE's free stolen gun database."
-      : " Other states' police records can't be searched by the public, so buy through a licensed dealer (FFL) or ask local police to run the serial. In Florida, you can also search FDLE's free stolen gun database.";
+      ? " For a private sale, it's still smart to buy through a licensed dealer (FFL) or ask local police to run the serial."
+      : " Other states' police records can't be searched by the public, so buy through a licensed dealer (FFL) or ask local police to run the serial.";
   }
   if (isVehicle) {
     message += azChecked

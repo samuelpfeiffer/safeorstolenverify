@@ -947,6 +947,16 @@ const VerifyChatPage: React.FC = () => {
  {/* RESULTS PANE (mobile) */}
  {resultsOpenMobile && (
  <aside className="lg:hidden flex-1 bg-background">
+ {/* Oct 21 2026: on phones the results cover the chat. Give an obvious way back so people run a 2nd check. */}
+ <div className="sticky top-0 z-10 bg-background/95 backdrop-blur px-3 py-2 border-b border-border">
+ <button
+ type="button"
+ onClick={() => { setResultsOpenMobile(false); setTimeout(() => document.querySelector<HTMLTextAreaElement>('textarea')?.focus(), 50); }}
+ className="w-full h-11 rounded-xl bg-primary text-primary-foreground text-sm font-semibold"
+ >
+ + Check another item
+ </button>
+ </div>
  <ResultsPane
  current={currentResult}
  history={sessionResults}
