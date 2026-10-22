@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import {
-  Plus, MessageSquare, Trash2, Pencil, Check, X, ShieldCheck, Search,
-  FileCheck2, Award, LogOut, CreditCard, LogIn, Smartphone,
+  Plus, MessageSquare, Trash2, Pencil, Check, X, ShieldCheck, Search, FileCheck2, Award, LogOut, CreditCard, LogIn, Smartphone, LayoutDashboard, Package, AlertTriangle, Settings,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -305,6 +304,22 @@ export const ConversationSidebar: React.FC<Props> = ({
           )
         )}
       </div>
+
+      {/* Oct 22 2026: app menu, Claude-style. Everyone gets the chat; checks after the first are paid. */}
+      <nav aria-label="Account menu" className="border-t border-border p-2 space-y-0.5">
+        {[
+          { href: '/dashboard', label: 'Dashboard', Icon: LayoutDashboard },
+          { href: '/my-items', label: 'My items', Icon: Package },
+          { href: '/report-stolen', label: 'Report a theft', Icon: AlertTriangle },
+          { href: '/profile', label: 'Settings', Icon: Settings },
+          { href: '/pricing', label: 'Plans & billing', Icon: CreditCard },
+        ].map(({ href, label, Icon }) => (
+          <a key={href} href={href}
+            className="flex items-center gap-2 px-2.5 h-8 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50">
+            <Icon className="w-3.5 h-3.5" /> {label}
+          </a>
+        ))}
+      </nav>
 
       {/* Profile */}
       <div className="border-t border-border p-2">

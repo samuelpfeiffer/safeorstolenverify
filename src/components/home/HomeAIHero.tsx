@@ -30,6 +30,7 @@ export const HomeAIHero: React.FC = () => {
  const { user } = useAuth();
  const [messages, setMessages] = useState<Msg[]>([]);
  const [limitHit, setLimitHit] = useState<{ identifier: string; itemType?: string } | null>(null);
+ const [checkDone, setCheckDone] = useState(false);
  const forcedTypeRef = useRef<string | null>(null);
  const [input, setInput] = useState('');
  const [isStreaming, setIsStreaming] = useState(false);
@@ -146,7 +147,8 @@ export const HomeAIHero: React.FC = () => {
  else if (status === 'lost') result = `This ${itemType.toUpperCase()} was reported lost${conf}.`;
  else if (verify?.riskLevel === 'high' || verify?.riskLevel === 'critical') result = `Possible match. ${verify?.message || ''}`;
  else result = `No report found in the records searched. ${verify?.message || ''}`;
- replaceLastAssistant(result + '\n\nOpen the full check to see every source searched: /verify');
+ replaceLastAssistant(result);
+ setCheckDone(true);
  } catch (err: any) {
  replaceLastAssistant(`Couldn't verify that: ${err?.message || 'unknown error'}.`);
  }
@@ -256,9 +258,9 @@ export const HomeAIHero: React.FC = () => {
  </div>
  <Link
  to="/verify"
- className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+ className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
  >
- Open full assistant <ArrowRight className="w-3 h-3" />
+ Open the app <ArrowRight className="w-3 h-3" />
  </Link>
  </div>
 
@@ -299,6 +301,12 @@ export const HomeAIHero: React.FC = () => {
  </motion.div>
  ))}
  {limitHit && <LimitPayOffer identifier={limitHit.identifier} itemType={limitHit.itemType} />}
+ {checkDone && !limitHit && (
+ <Link to="/verify" className="mt-3 flex items-center justify-between gap-3 rounded-xl border border-primary/40 bg-primary/10 px-4 py-3 text-sm font-semibold text-foreground hover:bg-primary/15">
+ <span>See every source searched, save and share this result, or scan another item in your SafeOrStolen app</span>
+ <ArrowRight className="w-4 h-4 shrink-0 text-primary" />
+ </Link>
+ )}
  {isStreaming && messages[messages.length - 1]?.role !== 'assistant' && (
  <div className="flex justify-start">
  <div className="bg-muted rounded-2xl rounded-bl-md px-4 py-2.5 flex gap-1">
