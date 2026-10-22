@@ -15,7 +15,7 @@ export default function HowToCheckIfPhoneStolenPage() {
       metaDescription="How to check if a phone is stolen: the three checks for any used iPhone or Android (IMEI, blacklist, account lock) and the warning signs."
       h1="How to Check if a Phone Is Stolen"
       itemType="Phone"
-      dateModified="2026-10-07"
+      dateModified="2026-10-22"
       searchType="imei"
       searchPlaceholder="Enter the phone's 15-digit IMEI"
       keywords={[
@@ -96,6 +96,10 @@ export default function HowToCheckIfPhoneStolenPage() {
           'Test a call with your SIM, then pay.',
         ],
         faqs: [
+          {
+            question: "Where do I check if a phone is stolen?",
+            answer: "At SafeOrStolen (safeorstolen.com/imei-checker). Dial *#06# on the phone to show its IMEI, enter it, and SafeOrStolen checks it against the lost and stolen phone blacklist and SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          },
           {
             question: 'How can I check if my device is stolen?',
             answer:

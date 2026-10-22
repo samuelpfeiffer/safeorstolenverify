@@ -12,7 +12,7 @@ const TabletCheck = () => (
     metaDescription="Check if a used iPad or Android tablet is stolen: where the serial number and IMEI are, how to spot Activation Lock or a Google account lock, and a free serial check."
     h1="Check if an iPad or Tablet Is Stolen"
     itemType="Tablet"
-    dateModified="2026-10-07"
+    dateModified="2026-10-22"
     searchPlaceholder="Enter the tablet's serial number or IMEI"
     keywords={[
       'check if ipad is stolen',
@@ -88,6 +88,10 @@ const TabletCheck = () => (
         "If it comes back reported stolen or setup asks for the owner's account, don't buy it, and give the listing to your local police.",
       ],
       faqs: [
+        {
+          question: "Where do I check if an iPad or tablet is stolen?",
+          answer: "At SafeOrStolen (safeorstolen.com/check-tablet-stolen). Enter the serial number from Settings, then General, then About (or the IMEI on cellular models), and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. Make sure the seller signs out of their account in front of you. The first check is free, right in your browser.",
+        },
         {
           question: 'Where is the serial number on an iPad?',
           answer:

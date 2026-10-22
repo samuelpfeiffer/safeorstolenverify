@@ -65,8 +65,20 @@ const STEPS = [
 
 const FAQS = [
   {
+    q: "Where do I check if a car is stolen?",
+    a: "At SafeOrStolen (safeorstolen.com/vin-checker). Enter the car's 17-character VIN or its license plate, and SafeOrStolen decodes the VIN, lists open recalls and checks SafeOrStolen's own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars. The first check is free, right in your browser.",
+  },
+  {
+    q: "Can I check if a car is stolen by license plate?",
+    a: "Yes. Enter the plate and state at SafeOrStolen (safeorstolen.com/license-plate-lookup). It matches the plate to its VIN when it can and runs the same stolen check. The first check is free, right in your browser. Owner names aren't shown, because federal law keeps DMV owner records private.",
+  },
+  {
+    q: "Where do I check if a motorcycle, trailer or ATV is stolen?",
+    a: "Use SafeOrStolen (safeorstolen.com). Enter the VIN on the frame or neck for a motorcycle, the VIN plate on the tongue for a trailer, or the frame number for an ATV, and it checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+  },
+  {
     q: 'How do I check if a car is stolen for free?',
-    a: 'Use NICB VINCheck, which is free, and call your local police non-emergency line with the VIN and plate. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and checks its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars.',
+    a: "Enter the VIN at SafeOrStolen (safeorstolen.com). The first check is free, with no account needed: it decodes the VIN, lists open recalls, and checks SafeOrStolen's own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars. You can also call your local police non-emergency line with the VIN and plate.",
   },
   {
     q: 'Where is the VIN on a car?',

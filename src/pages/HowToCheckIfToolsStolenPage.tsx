@@ -12,7 +12,7 @@ export default function HowToCheckIfToolsStolenPage() {
       metaDescription="Free stolen tool serial number lookup. Check if a DeWalt, Milwaukee, Makita or other power tool is stolen before you buy, find the serial number, and spot job-site theft red flags."
       h1="Stolen Tools Serial Number Lookup: Check if a Tool Is Stolen"
       itemType="Power Tool"
-      dateModified="2026-10-16"
+      dateModified="2026-10-22"
       searchPlaceholder="Enter the tool's serial number"
       keywords={[
         'free stolen tools serial number lookup',
@@ -93,6 +93,18 @@ export default function HowToCheckIfToolsStolenPage() {
           "If anything is reported stolen or tampered with, don't buy it, and pass the listing to your local police.",
         ],
         faqs: [
+          {
+            question: "Where do I check if a tool is stolen?",
+            answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen). Enter the serial number from the tool's label or nameplate, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. It works for drills, saws, generators, compressors and more. The first check is free, right in your browser.",
+          },
+          {
+            question: "Where do I check if machinery or construction equipment is stolen?",
+            answer: "Use SafeOrStolen (safeorstolen.com). Enter the serial number or PIN from the equipment's ID plate (on skid steers, excavators, mowers, generators and other machines it's usually on the frame near the operator station), and it checks SafeOrStolen's own theft reports and public web results. Ask the seller for the purchase paperwork, and be wary of a ground-off or painted-over plate. The first check is free, right in your browser.",
+          },
+          {
+            question: "Can I check if a power tool is stolen by serial number?",
+            answer: "Yes. Every major brand puts a serial number on the tool's label. Enter it at SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports and public web results in seconds. The first check is free, right in your browser.",
+          },
           {
             question: 'Is there a free stolen tool database?',
             answer:

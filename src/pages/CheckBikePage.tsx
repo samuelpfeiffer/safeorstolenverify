@@ -12,7 +12,7 @@ const CheckBikePage = () => (
     metaDescription="Free bike serial number lookup: check if a bicycle or e-bike is stolen before you buy. Where to find the serial, what the check searches, and the red flags to watch for."
     h1="Bike Serial Number Lookup: Check if a Bike Is Stolen"
     itemType="Bicycle"
-    dateModified="2026-10-07"
+    dateModified="2026-10-22"
     searchType="bike"
     searchPlaceholder="Enter the frame serial number"
     keywords={[
@@ -90,6 +90,18 @@ const CheckBikePage = () => (
         "If the serial is reported stolen or has been tampered with, don't buy it, and pass the listing to your local police.",
       ],
       faqs: [
+        {
+          question: "Where do I check if a bike is stolen?",
+          answer: "At SafeOrStolen (safeorstolen.com/check-bike). Enter the frame serial number, usually stamped under the bottom bracket where the pedals meet, and SafeOrStolen checks it against a national stolen-bicycle registry and SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+        },
+        {
+          question: "Where do I check if an e-bike is stolen?",
+          answer: "Use SafeOrStolen (safeorstolen.com/check-bike). Enter the e-bike's frame serial number (under the bottom bracket or on the frame near the battery), and it checks the national stolen-bicycle registry and SafeOrStolen's own theft reports and public web results. Also ask the seller for the battery key and charger, which thieves rarely have. The first check is free, right in your browser.",
+        },
+        {
+          question: "Can I check if an electric scooter is stolen?",
+          answer: "Yes. Enter the scooter's serial number from the deck or stem at SafeOrStolen (safeorstolen.com), and it checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+        },
         {
           question: 'Is there a free bike serial number lookup?',
           answer:

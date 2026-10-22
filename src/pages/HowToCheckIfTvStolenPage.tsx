@@ -12,7 +12,7 @@ export default function HowToCheckIfTvStolenPage() {
       metaDescription="How to check if a used or new-in-box TV is stolen: where the serial number is on the back and in the menu, retail-theft red flags, and a free TV serial check."
       h1="How to Check if a TV Is Stolen"
       itemType="TV"
-      dateModified="2026-10-07"
+      dateModified="2026-10-22"
       searchPlaceholder="Enter the TV's serial number"
       keywords={[
         'how to check if tv is stolen',
@@ -85,6 +85,14 @@ export default function HowToCheckIfTvStolenPage() {
           "If it comes back reported stolen or the serial doesn't match, don't buy it, and give the listing to your local police.",
         ],
         faqs: [
+          {
+            question: "Where do I check if a TV is stolen?",
+            answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen). Enter the serial number from the label on the back of the TV or from the settings menu, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          },
+          {
+            question: "Can I look up a TV serial number to see if it's stolen?",
+            answer: "Yes. Enter the serial at SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports and public web results in seconds. A brand-new TV sold cheap with no receipt, or several of the same model for sale, is a common sign of retail theft. The first check is free, right in your browser.",
+          },
           {
             question: 'Where is the serial number on a TV?',
             answer:

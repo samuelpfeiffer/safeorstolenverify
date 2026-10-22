@@ -13,7 +13,7 @@ const CheckJewelryPage = () => (
     metaDescription="Most jewelry has no serial number. Here's what to check instead before buying used jewelry: GIA laser inscriptions, engravings, maker's marks, papers and the seller."
     h1="Does Jewelry Have Serial Numbers? How to Check if Jewelry Is Stolen"
     itemType="Jewelry"
-    dateModified="2026-10-07"
+    dateModified="2026-10-22"
     searchPlaceholder="Enter a serial, GIA report or inscription number"
     keywords={[
       'does jewelry have serial numbers',
@@ -89,6 +89,14 @@ const CheckJewelryPage = () => (
         "If a number comes back reported stolen or the engraving has been polished off, don't buy, and give the details to your local police.",
       ],
       faqs: [
+        {
+          question: "Where do I check if jewelry is stolen?",
+          answer: "At SafeOrStolen (safeorstolen.com/check-jewelry). Enter any serial, model or certificate number, like a watch serial, a diamond's GIA or IGI grading number laser-inscribed on the girdle, or a brand's serial, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. Ask for the grading certificate and original receipt too. The first check is free, right in your browser.",
+        },
+        {
+          question: "How do I check if a watch or ring is stolen?",
+          answer: "For a watch, enter the case serial number (on the case back or between the lugs) at SafeOrStolen (safeorstolen.com). For a ring with a graded diamond, enter the certificate number inscribed on the stone. SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+        },
         {
           question: 'Does jewelry have serial numbers?',
           answer:

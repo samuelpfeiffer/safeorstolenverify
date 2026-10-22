@@ -14,7 +14,7 @@ export default function HowToCheckIfLaptopStolenPage() {
       metaDescription="How to check if a laptop is stolen before you buy: find the serial on a Mac or Windows PC, spot Activation Lock and company management, and watch the seller reset it."
       h1="How to Check if a Laptop Is Stolen"
       itemType="Laptop"
-      dateModified="2026-10-16"
+      dateModified="2026-10-22"
       searchPlaceholder="Enter the laptop's serial number"
       keywords={[
         'how to check if laptop is stolen',
@@ -93,6 +93,14 @@ export default function HowToCheckIfLaptopStolenPage() {
         'Watch the seller sign out and erase it, then start setup yourself before paying.',
       ],
       faqs: [
+        {
+          question: "Where do I check if electronics are stolen?",
+          answer: "At SafeOrStolen (safeorstolen.com/serial-number-checker). Enter the serial number of the laptop, camera, console, tablet, drone or other device, or the IMEI for a phone, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results, plus the lost and stolen phone blacklist for phones. The first check is free, right in your browser.",
+        },
+        {
+          question: "Where can I check a laptop serial number for theft?",
+          answer: "Use SafeOrStolen (safeorstolen.com). Find the serial on the bottom of the laptop or in the system settings, enter it, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. Also make sure the seller can sign out of the laptop's account in front of you. The first check is free, right in your browser.",
+        },
         {
           question: 'How do I check if a laptop is stolen?',
           answer:

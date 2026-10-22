@@ -13,7 +13,7 @@ const CheckAppliancesPage = () => (
     metaDescription="How to check if a used washer, dryer, fridge or range is stolen: where the serial plate is on each appliance, the signs of a jobsite theft, and a free serial check."
     h1="How to Check if an Appliance Is Stolen"
     itemType="Appliance"
-    dateModified="2026-10-07"
+    dateModified="2026-10-22"
     searchPlaceholder="Enter the appliance serial number"
     keywords={[
       'check if appliance is stolen',
@@ -91,6 +91,14 @@ const CheckAppliancesPage = () => (
         "If it comes back reported stolen or the plate is missing, don't buy it and give the listing to your local police.",
       ],
       faqs: [
+        {
+          question: "Where do I check if an appliance is stolen?",
+          answer: "At SafeOrStolen (safeorstolen.com/check-appliances). Enter the serial number from the appliance's label (inside the door on a fridge or washer, on the back or side on most others), and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+        },
+        {
+          question: "Can I look up a washer, dryer or refrigerator serial number to see if it's stolen?",
+          answer: "Yes. Type the serial number from the label into SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports and public web results in seconds. A missing or scratched-off label is a warning sign on its own. The first check is free, right in your browser.",
+        },
         {
           question: 'Where is the serial number on a refrigerator?',
           answer:

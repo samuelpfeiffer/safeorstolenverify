@@ -12,7 +12,7 @@ const HowToCheckIfBoatStolenPage = () => (
     metaDescription="How to check if a boat is stolen: read the 12-character HIN, check it free, match the hidden HIN, trailer VIN and outboard serial, and spot a tampered transom."
     h1="How to Check if a Boat Is Stolen"
     itemType="Boat"
-    dateModified="2026-10-07"
+    dateModified="2026-10-22"
     searchPlaceholder="Enter the 12-character HIN"
     keywords={[
       'how to check if a boat is stolen',
@@ -89,6 +89,10 @@ const HowToCheckIfBoatStolenPage = () => (
         "If a number comes back reported stolen, don't buy. Leave and give the details to the police.",
       ],
       faqs: [
+        {
+          question: "Where do I check if a boat is stolen?",
+          answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). Enter the boat's 12-character HIN from the right side of the transom, or the outboard motor's serial number, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+        },
         {
           question: 'How do I check a boat HIN for free?',
           answer:
