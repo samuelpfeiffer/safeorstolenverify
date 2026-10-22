@@ -231,8 +231,10 @@ export const SOSFooter: React.FC = () => {
  {showAllLinks ? 'Hide Site Map' : 'View Full Site Map'}
  </button>
  
- {showAllLinks && (
- <div className="pb-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+ {/* Oct 22 2026: always in the page HTML so search engines can follow these links;
+ the button only shows or hides them. They were missing from the HTML until clicked. */}
+ {(
+ <div className={(showAllLinks ? 'grid' : 'hidden') + " pb-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8"}>
  {sitemapSections.map((section, idx) => (
  <div key={idx}>
  <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
