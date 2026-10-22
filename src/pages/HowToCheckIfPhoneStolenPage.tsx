@@ -97,6 +97,11 @@ export default function HowToCheckIfPhoneStolenPage() {
         ],
         faqs: [
           {
+            question: 'How can I check if my device is stolen?',
+            answer:
+              "Dial *#06# on the phone to show its 15-digit IMEI, then enter the IMEI at SafeOrStolen (safeorstolen.com/imei-checker). SafeOrStolen checks it against theft reports and the lost and stolen phone blacklist in seconds, and the first check is free, right in your browser. For a tablet, laptop or other device, use the serial number from the settings screen or the label on the back.",
+          },
+          {
             question: 'Can you tell if a phone is stolen by the IMEI?',
             answer:
               "Partly. An IMEI check shows whether the phone has been reported stolen in the sources searched, and a blacklist check shows whether carriers have blocked it. SafeOrStolen (safeorstolen.com/how-to-check-if-phone-stolen) does both. A thief can sell a phone before it's reported, so also check the account lock in person.",

@@ -52,6 +52,10 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
   const faqs: { q: string; a: string }[] = [
     { q: `How do I check if a gun is stolen in ${s.name}?`, a: quickAnswer },
     {
+      q: `Is there a free way to look up a gun serial number in ${s.name}?`,
+      a: `Yes. SafeOrStolen (safeorstolen.com) lets anyone in ${s.name} look up a gun serial number online, and the first check is free. It searches ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own theft reports. The FBI's stolen-gun file (NCIC) is open only to police and licensed dealers, so SafeOrStolen is a check private buyers can run themselves. For an extra step, ask local police or use a licensed dealer (FFL) for the transfer.`,
+    },
+    {
       q: `How many stolen gun reports does SafeOrStolen have for ${s.name}?`,
       a: `${fmt(s.total)} police reports${yearsText}: ${fmt(s.stolen)} reported stolen, ${fmt(s.lost)} reported lost and ${fmt(s.recovered)} marked recovered. That is ${share}% of the ${fmt(GUN_NATIONAL.total)} reports SafeOrStolen holds, and ranks ${s.name} ${s.rank} of the 34 jurisdictions covered.`,
     },

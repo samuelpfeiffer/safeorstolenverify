@@ -98,6 +98,27 @@ export const SOSFooter: React.FC = () => {
  { label: 'Check Watch', to: '/check-watch-stolen' },
  ]
  },
+ // Oct 22 2026: footer links on every page so Google crawls the gun pages (most were "discovered, not crawled").
+ {
+ title: 'Gun Serial Lookup',
+ links: [
+ { label: 'Gun Serial Number Lookup', to: '/firearms-check' },
+ { label: 'How to Check if a Gun Is Stolen', to: '/how-to-check-if-gun-is-stolen' },
+ { label: 'Stolen Gun Statistics', to: '/stolen-gun-statistics' },
+ { label: 'Arizona Gun Lookup', to: '/gun-serial-number-lookup/arizona' },
+ { label: 'California Gun Lookup', to: '/gun-serial-number-lookup/california' },
+ { label: 'Texas Gun Lookup', to: '/gun-serial-number-lookup/texas' },
+ { label: 'Florida Gun Lookup', to: '/gun-serial-number-lookup/florida' },
+ { label: 'Georgia Gun Lookup', to: '/gun-serial-number-lookup/georgia' },
+ { label: 'Tennessee Gun Lookup', to: '/gun-serial-number-lookup/tennessee' },
+ { label: 'Washington Gun Lookup', to: '/gun-serial-number-lookup/washington' },
+ { label: 'North Carolina Gun Lookup', to: '/gun-serial-number-lookup/north-carolina' },
+ { label: 'Illinois Gun Lookup', to: '/gun-serial-number-lookup/illinois' },
+ { label: 'Missouri Gun Lookup', to: '/gun-serial-number-lookup/missouri' },
+ { label: 'Indiana Gun Lookup', to: '/gun-serial-number-lookup/indiana' },
+ { label: 'Ohio Gun Lookup', to: '/gun-serial-number-lookup/ohio' },
+ ]
+ },
  {
  title: 'Vehicle Checks',
  links: [
