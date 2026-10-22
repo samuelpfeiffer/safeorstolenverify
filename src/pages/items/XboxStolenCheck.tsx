@@ -9,11 +9,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
  */
 const XboxStolenCheck = () => (
   <ItemLandingPageTemplate
-    title="Check if an Xbox Is Stolen: Xbox Serial Number Check | SafeOrStolen"
-    metaDescription="Check if a used Xbox Series X, Series S or Xbox One is stolen. Where the serial number is, how to match it in Console info, and what to have the seller do before you pay."
-    h1="Check if an Xbox Is Stolen: Xbox Serial Number Check"
+    title="Free Xbox Serial Number Checker: Is This Xbox Stolen? | SafeOrStolen"
+    metaDescription="Free Xbox serial number check for Xbox Series X, Series S and Xbox One. See if a used Xbox is reported stolen in seconds, find the serial, and what to check before you pay."
+    h1="Free Xbox Serial Number Checker: Is This Xbox Stolen?"
     itemType="Xbox"
-    dateModified="2026-10-07"
+    dateModified="2026-10-22"
     searchPlaceholder="Enter the 12-digit Xbox serial number"
     keywords={[
       'check if xbox is stolen',
