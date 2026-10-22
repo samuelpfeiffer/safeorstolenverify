@@ -6,11 +6,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPS5Page = () => {
   return (
     <ItemLandingPageTemplate
-      title="PS5 Serial Number Check (Free): How to Know if a PS5 Is Stolen"
-      metaDescription="Free PS5 serial number checker. How to know if a PS5 is stolen: find the serial on any original, Slim or Pro, check it against stolen reports in seconds, and test for a PSN ban before you pay."
+      title="Free PS5 Serial Number Checker: How to Know if a PS5 Is Stolen"
+      metaDescription="Free PS5 serial number check. See if a used PS5, PS5 Slim or PS5 Pro is reported stolen in seconds, learn the warning signs, and test for a PSN ban before you pay."
       h1="Free PS5 Serial Number Checker"
       itemType="PlayStation 5"
-      dateModified="2026-10-16"
+      dateModified="2026-10-22"
       searchPlaceholder="Enter the PS5 serial number"
       keywords={[
         'ps5 serial number check',
@@ -29,7 +29,7 @@ const CheckPS5Page = () => {
       ]}
       quickAnswer={{
         question: "How do I check a PS5 serial number?",
-        answer: "Find the serial number on the label on the back of the console, or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and public web results and gives you a result in a few seconds. the first check is free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
+        answer: "Find the serial number on the label on the back of the console, or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and public web results and gives you a result in a few seconds. The first check is free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
       }}
       sections={[
         {
@@ -46,6 +46,20 @@ const CheckPS5Page = () => {
               ["Any PS5, on screen", "All models", "Settings > System > System Software > Console Information"]
             ]
           }
+        },
+        {
+          heading: "How to know if a PS5 is stolen: 6 warning signs",
+          paragraphs: [
+            "Run the serial number check first. Then watch for these signs, because most stolen consoles are sold fast, for cash, by sellers who avoid questions."
+          ],
+          list: [
+            "The price is far below other used PS5s listed near you",
+            "The seller won't send a photo of the serial number before you meet",
+            "There's no box, or the box has a different serial number than the console",
+            "The console is still signed in to someone else's PlayStation account",
+            "The seller has several consoles or new electronics for sale at once",
+            "They push for a quick cash deal in a parking lot and won't meet somewhere public with cameras"
+          ]
         },
         {
           heading: "How to check if a PS5 is banned before buying",
