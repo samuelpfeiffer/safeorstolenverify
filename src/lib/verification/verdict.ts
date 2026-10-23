@@ -226,8 +226,8 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
   }
   if (isVehicle) {
     message += azChecked
-      ? ' Arizona records only cover Arizona reports, so for a nationwide check, enter the VIN in the free NICB VINCheck at nicb.org/vincheck. Before you pay, also ask the seller to show you the title.'
-      : ' For vehicles, enter the VIN in the free NICB VINCheck at nicb.org/vincheck. Before you pay, also ask the seller to show you the title.';
+      ? ' Police records searched cover reports in Arizona, Alaska and Chicago, so before you pay, match the VIN on the dashboard and door sticker to the title, and check that the name on the title matches the seller\'s ID.'
+      : ' Before you pay, match the VIN on the dashboard and door sticker to the title, and check that the name on the title matches the seller\'s ID.';
   }
 
   return {
