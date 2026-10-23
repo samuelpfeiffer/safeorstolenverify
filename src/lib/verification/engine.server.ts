@@ -375,6 +375,60 @@ async function runInternalRegistry(
 }
 
 /**
+ * Oct 23 2026: police stolen-vehicle and stolen-plate records (theft_records, item_type vehicle/plate).
+ * First source: Alaska's statewide stolen vehicle hot sheet (current reports).
+ * A VIN is unique, so a VIN match is a real theft report. Plate numbers repeat across states, so a
+ * plate match is a POSSIBLE match: we show the vehicle so the buyer can compare.
+ */
+async function runPoliceVehicleRecords(
+  admin: AdminClient,
+  normalizedIdentifier: string,
+  itemType: string,
+  plateState?: string | null,
+): Promise<SourceResult> {
+  const startedAt = Date.now();
+  const id = normalizedIdentifier.replace(/[^A-Z0-9]/g, '');
+  const isPlate = itemType === 'plate';
+  if (id.length < (isPlate ? 2 : 11)) {
+    return { provider: 'Police_Vehicle_Records', status: 'unknown', confidence: 0, message: 'Too short to search police stolen-vehicle records', responseTime: Date.now() - startedAt };
+  }
+  try {
+    const { data, error } = await admin
+      .from('theft_records')
+      .select('make, model, description, state, agency, reported_date, status')
+      .eq('item_type', isPlate ? 'plate' : 'vehicle')
+      .eq('identifier_norm', id)
+      .eq('status', 'stolen')
+      .limit(5);
+    if (error) throw error;
+    let rows = (data ?? []) as any[];
+    if (isPlate && plateState && /^[A-Z]{2}$/.test(plateState)) rows = rows.filter((r) => !r.state || r.state === plateState);
+    if (rows.length === 0) {
+      return { provider: 'Police_Vehicle_Records', status: 'unknown', confidence: 0, message: 'No match in Alaska police stolen-vehicle records', details: { checked: true }, responseTime: Date.now() - startedAt };
+    }
+    const r = rows[0];
+    const car = [r.model, r.make].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+    const extra = [r.description, r.state ? `${r.state} plates` : ''].filter(Boolean).join(', ');
+    const when = r.reported_date ? ` on ${r.reported_date}` : '';
+    if (!isPlate) {
+      return {
+        provider: 'Police_Vehicle_Records', status: 'stolen', confidence: 90,
+        message: `A police report lists this VIN as stolen: ${car}${extra ? ` (${extra})` : ''}, reported${when}${r.agency ? ` to ${r.agency}` : ''}. Do not buy it. Contact that police department with the VIN.`,
+        details: { checked: true, found: true, matches: rows.length }, responseTime: Date.now() - startedAt,
+      };
+    }
+    return {
+      provider: 'Police_Vehicle_Records', status: 'unknown', confidence: 0,
+      message: `⚠️ POSSIBLE MATCH: A police report lists a stolen vehicle with this plate: ${car}${extra ? ` (${extra})` : ''}, reported${when}${r.agency ? ` to ${r.agency}` : ''}. If the vehicle in front of you matches, do not buy it and contact that police department.`,
+      details: { checked: true, possibleMatch: true }, responseTime: Date.now() - startedAt,
+    };
+  } catch (error) {
+    console.error('[verify] police vehicle records lookup failed:', error);
+    return { provider: 'Police_Vehicle_Records', status: 'error', confidence: 0, message: 'Police stolen-vehicle records unavailable', responseTime: Date.now() - startedAt };
+  }
+}
+
+/**
  * Police firearm theft and loss reports from 34 states (theft_records).
  * Gun serial numbers repeat across manufacturers, so a serial match alone is a
  * POSSIBLE match: we show the reported make so the buyer can compare it to the
@@ -833,6 +887,7 @@ export async function runVerification(
         ? { plate: normalizedIdentifier, state: plateState }
         : { identifier: cleanIdentifier };
     tasks.push(runSource('Vehicle_Verification', 'verify-vehicle', body));
+    tasks.push(runPoliceVehicleRecords(admin, normalizedIdentifier, itemType, input.plateState ?? null));
   }
   if (sources.includes('hotgunz')) {
     // verify-hotgunz now searches the Ohio Attorney General stolen gun database (Sept 28 2026).

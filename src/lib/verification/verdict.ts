@@ -26,6 +26,7 @@ export const SOURCE_WEIGHTS: Record<string, number> = {
   BikeIndex: 0.95,
   IMEI_Verification: 0.92,
   Vehicle_Verification: 0.9,
+  Police_Vehicle_Records: 0.95,
   HotGunz: 0.88,
   Firearm_Verification: 0.95,
   Web_Scraper: 0.75,
@@ -100,15 +101,16 @@ function aggregateConfidence(results: SourceResult[]): number {
 /** Plain-English name for a source, used in verdict messages. */
 function sourceLabel(s: SourceResult): string {
   if (s.provider === 'Firearm_Verification' && (s.details as any)?.ohio?.found === true) {
-    return "the Ohio Attorney General's stolen gun database (Ohio law enforcement records)";
+    return 'Ohio law-enforcement stolen-gun records';
   }
   if (s.provider === 'Vehicle_Verification' && (s.details as any)?.theftaz?.found === true) {
-    return "the Arizona Attorney General's database of law enforcement stolen-vehicle records";
+    return 'Arizona law-enforcement stolen-vehicle records';
   }
   const names: Record<string, string> = {
     'SafeOrStolen Database': 'the SafeOrStolen registry',
     IMEI_Verification: 'phone blacklist records',
     Vehicle_Verification: 'vehicle records',
+    Police_Vehicle_Records: 'Alaska law-enforcement stolen-vehicle records',
   };
   return names[s.provider] ?? s.provider;
 }
