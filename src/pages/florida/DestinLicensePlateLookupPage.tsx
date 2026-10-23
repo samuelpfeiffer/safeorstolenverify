@@ -14,7 +14,7 @@ const DestinLicensePlateLookupPage = () => {
  },
  {
  q: "What else can I do to check a car in Destin?",
- a: "A Florida plate or VIN check on SafeOrStolen searches its own theft reports and public web results, and decodes the VIN with open recalls. You can also use FDLE's free public stolen-vehicle search, ask the Okaloosa County Sheriff's Office non-emergency line to run the VIN, and contact the state motor vehicle agency for title or registration questions."
+ a: "A Florida plate or VIN check on SafeOrStolen searches its own theft reports and public web results, and decodes the VIN with open recalls. If anything looks off, ask the Okaloosa County Sheriff's Office non-emergency line to run the VIN, and contact the state motor vehicle agency for title or registration questions."
  },
  {
  q: "What should I watch for when buying a car from someone leaving Eglin or Hurlburt Field?",
