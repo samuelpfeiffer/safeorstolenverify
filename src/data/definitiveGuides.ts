@@ -186,7 +186,7 @@ export const FIREARM_GUIDE: DefinitiveGuideProps = {
   title: "How to Check if a Gun Is Stolen",
   metaTitle: "How to Check if a Gun Is Stolen Safely",
   description:
-    "How to check if a gun is stolen: search police theft records by serial number, ask police, use Florida and Ohio's public searches, or buy through a licensed dealer who can check the FBI’s stolen-gun file.",
+    "How to check if a gun is stolen: search police theft records by serial number, ask police, or buy through a licensed dealer who can check the FBI’s stolen-gun file.",
   keywords:
     "how to check if gun stolen, firearm serial check, stolen gun lookup, NCIC gun serial",
   directAnswer:
