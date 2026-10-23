@@ -25,11 +25,11 @@ const TheftAZPage = () => {
  'check if car is stolen arizona',
  ]}
  content={{
- intro: "TheftAZ is the Arizona Attorney General's free public search for vehicles reported stolen to Arizona law enforcement. You search it by plate or VIN on the Attorney General's website. SafeOrStolen offers a separate check: Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, along with SafeOrStolen's own theft reports, public web results, a VIN decode and open safety recalls.",
+ intro: "TheftAZ is the Arizona Attorney General's free public search for vehicles reported stolen to Arizona law enforcement. On SafeOrStolen, every VIN and plate, from any state, is searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, along with SafeOrStolen's own theft reports, public web results, a VIN decode and open safety recalls.",
 
- whatIs: "TheftAZ is run by the Arizona Attorney General's Office. It lists stolen vehicles reported by participating Arizona law enforcement agencies, and anyone can search it by license plate or VIN. It covers vehicles only, and only thefts reported to those Arizona agencies. A car stolen in another state may not show up.",
+ whatIs: "TheftAZ is run by the Arizona Attorney General's Office. It lists stolen vehicles reported by participating Arizona law enforcement agencies. It covers vehicles only, and only thefts reported to those Arizona agencies. A car stolen in another state may not show up.",
 
- howItWorks: "On SafeOrStolen, type a VIN or an Arizona plate. The check searches Arizona, Alaska and Chicago police stolen-vehicle records, SafeOrStolen's own theft reports, and public web results that mention the number. For a VIN it also decodes the year, make and model and lists open safety recalls. In a few seconds you see one of three results: \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
+ howItWorks: "On SafeOrStolen, type a VIN or a plate from any state. The check searches Arizona, Alaska and Chicago police stolen-vehicle records, SafeOrStolen's own theft reports, and public web results that mention the number. For a VIN it also decodes the year, make and model and lists open safety recalls. In a few seconds you see one of three results: \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
 
  whyCheck: "Police can take back a stolen car, and the buyer usually loses what they paid. Arizona buyers also see plenty of cars driven in from other states, so an Arizona records search is a strong first step but not the only one. Before you pay, match the VIN on the dashboard to the one on the driver's door sticker and the title, and make sure the name on the title matches the seller's ID.",
 
@@ -69,8 +69,8 @@ const TheftAZPage = () => {
  answer: "Not by itself. Arizona records only include thefts reported to participating Arizona agencies, so a car stolen in another state may not appear. Match the VIN on the dashboard, door sticker and title, make sure the title name matches the seller's ID, and look for signs of a swapped VIN such as scratched rivets or a relabeled sticker.",
  },
  {
- question: "Can I still search TheftAZ directly?",
- answer: "Yes. TheftAZ is free on the Arizona Attorney General's website. SafeOrStolen is a separate service that adds a VIN decode, recalls, its own theft reports and public web results, and saves each check to your account with the date.",
+ question: "Do I need to search TheftAZ separately?",
+ answer: "No. SafeOrStolen searches Arizona police stolen-vehicle records, plus Alaska and Chicago police records, for a vehicle from any state, and adds a VIN decode, recalls, its own theft reports and public web results, and saves each check to your account with the date.",
  },
  {
  question: "What should I do if a car shows up as stolen?",

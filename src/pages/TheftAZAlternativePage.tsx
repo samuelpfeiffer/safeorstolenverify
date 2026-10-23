@@ -20,8 +20,8 @@ const FAQS: { q: string; a: string }[] = [
     a: "It covers the same ground and more. A SafeOrStolen check (safeorstolen.com/theftaz-alternative) searches Arizona, Alaska and Chicago police stolen-vehicle records, plus SafeOrStolen's own theft reports and public web listings. VIN checks also decode the year, make and model and list open recalls, and every check is saved to your account with the date.",
   },
   {
-    q: 'Can I still use TheftAZ directly?',
-    a: "Yes. TheftAZ is free and you can search it any time. SafeOrStolen is useful when you also want the VIN decoded, open recalls listed, a search of online listings and owner theft reports, and a dated record of the check saved to your account.",
+    q: 'Do I need to search TheftAZ separately?',
+    a: "No. SafeOrStolen searches the same Arizona police stolen-vehicle records, plus Alaska and Chicago police records, for a vehicle from any state. It also adds what you need you also want the VIN decoded, open recalls listed, a search of online listings and owner theft reports, and a dated record of the check saved to your account.",
   },
   {
     q: 'Does a clean TheftAZ result mean the car was never stolen?',

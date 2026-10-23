@@ -326,10 +326,9 @@ const NICBVINCheckAlternative = () => {
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Can I use SafeOrStolen and NICB VINCheck together?</h3>
+                    <h3 className="font-semibold mb-2">Do I need NICB VINCheck too?</h3>
                     <p className="text-muted-foreground mb-3">
-                      Yes. NICB VINCheck is a separate free tool, and running both gives you two different sets of
-                      records. For title or registration questions, contact the state motor vehicle agency.
+                      No. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports and public web results for a vehicle from any state, and decodes the VIN with open recalls, all in one search.
                     </p>
                     <h3 className="font-semibold mb-2">What does a SafeOrStolen VIN check search?</h3>
                     <p className="text-muted-foreground">

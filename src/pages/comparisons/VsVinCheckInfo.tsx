@@ -276,7 +276,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. NICB's free VINCheck is a separate tool you can also run.
+                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records.
                 </p>
               </CardContent>
             </Card>

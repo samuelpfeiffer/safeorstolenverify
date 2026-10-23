@@ -34,8 +34,8 @@ const STEPS = [
     text: 'Read the 17-character VIN on the dashboard through the windshield (driver side), on the driver door jamb sticker, on the title and registration, and on the insurance card. All of them must match exactly, character for character.',
   },
   {
-    name: 'Run the VIN through NICB VINCheck',
-    text: 'NICB VINCheck, run by the National Insurance Crime Bureau, is free. It shows whether the VIN appears in participating insurers\u2019 records as an unrecovered theft or a total loss.',
+    name: 'Run the VIN and plate on SafeOrStolen',
+    text: 'Enter the VIN and the plate at safeorstolen.com/verify. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports and public web results for a vehicle from any state, and decodes the VIN with open recalls, all in one search.',
   },
   {
     name: 'Get an NMVTIS title report',
@@ -86,7 +86,7 @@ const FAQS = [
   },
   {
     q: 'What does SafeOrStolen search for a car?',
-    a: 'SafeOrStolen checks its own theft reports and public web results, decodes the VIN and lists open safety recalls. For Arizona VINs and plates it also checks Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. Use NICB VINCheck and an NMVTIS title report as well.',
+    a: 'SafeOrStolen checks its own theft reports and public web results, decodes the VIN and lists open safety recalls. For every VIN and plate, from any state, it also checks Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.',
   },
   {
     q: 'What is the difference between NICB VINCheck and NMVTIS?',
@@ -94,7 +94,7 @@ const FAQS = [
   },
   {
     q: 'Do I need Carfax or AutoCheck?',
-    a: 'They are optional paid reports that add accident, ownership and service history. They do not replace checking the VIN locations, NICB, NMVTIS and the title yourself.',
+    a: 'They are optional paid reports that add accident, ownership and service history. They do not replace a stolen check on SafeOrStolen and matching the VIN and the title yourself.',
   },
   {
     q: 'What should I do if the car turns out to be stolen?',
@@ -110,7 +110,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to Check if a Car Is Stolen Before Buying',
-  description: 'Check the VIN and license plate against theft and title records before you pay: match the VIN in every location, use NICB VINCheck and NMVTIS, consider a history report, call police non-emergency, inspect for tampering, and save your result.',
+  description: 'Check the VIN and license plate against theft and title records before you pay: match the VIN in every location, run it on SafeOrStolen for any state, call police non-emergency, inspect for tampering, and save your result.',
   totalTime: 'PT30M',
   step: STEPS.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text })),
 };
@@ -167,7 +167,7 @@ const HowToCheckIfCarStolenPage = () => {
         <div className="rounded-lg border border-primary/40 bg-card p-5 mb-8">
           <p className="text-lg text-foreground">
             <strong>Short answer:</strong> before you pay, check the car’s VIN and license plate against theft and title records.
-            Confirm the VIN matches everywhere it appears, run it through NICB VINCheck (free) and an NMVTIS title report (low cost),
+            Confirm the VIN matches everywhere it appears, run it and the plate on SafeOrStolen (free first check, any vehicle from any state),
             and call your local police non-emergency line with the VIN and plate. The steps below show exactly how, what each costs, and what each tells you.
           </p>
         </div>

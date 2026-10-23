@@ -26,14 +26,14 @@ export const COMPARES: Record<string, HonestCompare> = {
     h1: 'SafeOrStolen vs NICB VINCheck',
     intro: 'NICB VINCheck is a free vehicle lookup from the National Insurance Crime Bureau. It covers vehicles only. SafeOrStolen checks vehicles and also phones, guns, bikes, plates and other serial numbers, and charges after 1 free check.',
     themName: 'NICB VINCheck',
-    themUrl: 'https://www.nicb.org/vincheck',
+    themUrl: '',
     rows: [
       { label: 'Price', us: SOS_PRICE, them: 'Free to use.' },
       { label: 'Item types', us: 'Vehicles (VIN and Arizona plates), phones, guns, bikes, and other serial-numbered items.', them: 'Vehicles only (by VIN). No phones, guns or serial numbers.' },
-      { label: 'What it searches', us: "SafeOrStolen's own stolen-item reports, Arizona, Alaska and Chicago police stolen-vehicle records (TheftAZ), and NHTSA VIN decode and recalls for vehicles.", them: "NICB's records of unrecovered vehicle thefts and total-loss vehicles reported by participating insurers." },
-      { label: 'Does SafeOrStolen query it?', us: 'No. We link to VINCheck so you can run it yourself.', them: '—' },
+      { label: 'What it searches', us: "SafeOrStolen's own stolen-item reports, Arizona, Alaska and Chicago police stolen-vehicle records, and NHTSA VIN decode and recalls for vehicles.", them: "NICB's records of unrecovered vehicle thefts and total-loss vehicles reported by participating insurers." },
+      { label: 'Does SafeOrStolen query it?', us: 'No. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago instead, for a vehicle from any state.', them: '—' },
     ],
-    useBoth: 'For a used car, run both: NICB VINCheck for its insurance-reported theft records, and SafeOrStolen for Arizona police records, our own reports, and recalls. If either shows a theft record, do not buy and contact local police.',
+    useBoth: 'For a used car from any state, SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports and public web results for a vehicle from any state, and decodes the VIN with open recalls, all in one search. If it shows a theft record, do not buy and contact local police.',
     faqs: [
       { q: 'Is NICB VINCheck free?', a: 'Yes. NICB VINCheck is free to use for vehicle VINs.' },
       { q: 'Does NICB VINCheck check phones or guns?', a: 'No. It covers vehicles only. It does not check phones, guns, bikes or other serial numbers.' },
@@ -74,7 +74,7 @@ export const COMPARES: Record<string, HonestCompare> = {
     themUrl: '',
     rows: [
       { label: 'Price', us: SOS_PRICE, them: 'Free, when a department agrees to run a check.' },
-      { label: 'What it searches', us: "A 2017 multi-state file of police gun theft and loss reports, live Ohio Attorney General stolen-gun records, Arizona, Alaska and Chicago police stolen-vehicle records (TheftAZ), the Bike Index registry for bikes, and SafeOrStolen's own reports.", them: 'State or local records, depending on the department.' },
+      { label: 'What it searches', us: "A 2017 multi-state file of police gun theft and loss reports, live Ohio Attorney General stolen-gun records, Arizona, Alaska and Chicago police stolen-vehicle records, the Bike Index registry for bikes, and SafeOrStolen's own reports.", them: 'State or local records, depending on the department.' },
       { label: 'Availability', us: 'Online, any time. Results in seconds.', them: 'Depends on the department. Many will not run checks for private buyers.' },
     ],
     useBoth: 'Run a SafeOrStolen check first. It is fast and shows exactly what was searched. If you still have doubts, or the item is a gun or a car, ask your local police on their non-emergency line whether they will run it. If anything shows as stolen, do not buy, do not confront the seller, and contact police.',

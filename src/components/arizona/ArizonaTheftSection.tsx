@@ -16,7 +16,7 @@ export const ArizonaTheftSection = () => {
             Arizona Stolen Vehicle Verification
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Free access to Arizona Attorney General's TheftAZ database. 
+            Free check of Arizona police stolen-vehicle records. 
             Verify vehicles by license plate or VIN before purchasing in Arizona.
           </p>
         </header>
@@ -30,7 +30,7 @@ export const ArizonaTheftSection = () => {
                 <CardTitle className="text-xl">Arizona License Plate Check</CardTitle>
               </div>
               <CardDescription>
-                Search TheftAZ database by license plate number. Updated twice daily with 
+                Search Arizona police stolen-vehicle records by license plate. Updated twice daily with 
                 reports from Phoenix PD, Maricopa County Sheriff, and all participating AZ agencies.
               </CardDescription>
             </CardHeader>
@@ -76,7 +76,7 @@ export const ArizonaTheftSection = () => {
                 <CardTitle className="text-xl">Arizona VIN Theft Check</CardTitle>
               </div>
               <CardDescription>
-                Verify vehicles using the 17-character VIN against Arizona's TheftAZ database. 
+                Verify vehicles by 17-character VIN against Arizona police stolen-vehicle records. 
                 More reliable than plate checks - VINs can't be easily changed.
               </CardDescription>
             </CardHeader>
@@ -120,8 +120,7 @@ export const ArizonaTheftSection = () => {
           <div className="inline-flex items-center gap-2 bg-sos-orange/10 border border-sos-orange/30 rounded-full px-6 py-3">
             <Shield className="h-5 w-5 text-sos-orange" />
             <p className="text-sm">
-              <strong className="text-sos-orange">Official Source:</strong> Powered by Arizona Attorney 
-              General's TheftAZ database (theftaz.azag.gov)
+              <strong className="text-sos-orange">Coverage:</strong> Arizona, Alaska and Chicago police stolen-vehicle records, searched for a vehicle from any state
             </p>
           </div>
         </div>

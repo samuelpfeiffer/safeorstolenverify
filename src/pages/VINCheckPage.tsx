@@ -58,7 +58,7 @@ const VINCheckPage = () => {
  },
  {
  question: "What databases does the VIN check search?",
- answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners and public web results. Arizona VINs are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
+ answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners and public web results. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
  },
  {
  question: "Is this the same as Carfax?",

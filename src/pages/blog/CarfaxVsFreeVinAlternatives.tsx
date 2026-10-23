@@ -34,7 +34,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "How can I check if a car is stolen for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run the VIN through NICB VINCheck, which is free, and through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports and public web results, and Arizona VINs are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
+          "text": "Run the VIN through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports and public web results, and every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
         }
       }
     ]
@@ -244,7 +244,7 @@ const CarfaxVsFreeVinAlternatives = () => {
                 <strong>If clean: a history report</strong> - Once the theft check is clean, buy a history report for accident, service and ownership records.
               </li>
               <li>
-                <strong>Also run NICB VINCheck</strong> - NICB VINCheck is free and shows whether participating insurers recorded the VIN as an unrecovered theft or total loss.
+                <strong>Run the plate too</strong> - plates can be swapped between cars, so check the plate on SafeOrStolen as well as the VIN.
               </li>
             </ol>
 
@@ -274,7 +274,7 @@ const CarfaxVsFreeVinAlternatives = () => {
 
             <h3>What's the best free VIN check for stolen cars?</h3>
             <p>
-              Use NICB VINCheck and SafeOrStolen together. They search different records, and SafeOrStolen also checks Arizona law-enforcement records for Arizona VINs.
+              Use SafeOrStolen for any vehicle from any state. It checks Arizona, Alaska and Chicago police stolen-vehicle records along with its own theft reports and web results.
             </p>
           </article>
 
