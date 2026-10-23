@@ -211,8 +211,6 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/theftaz-alternative": "/vin-checker",
   "/vs-fastbound": "/firearms-check",
   "/ai-verify": "/verify",
-  "/verify/classic": "/verify",
-  "/ai-chat": "/verify",
   "/vs-swappa": "/imei-checker",
   "/vs-devicecheck-ca": "/imei-checker",
 
