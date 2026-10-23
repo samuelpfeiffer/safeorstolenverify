@@ -66,8 +66,8 @@ const FirearmsCheckPage = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Free Gun Serial Number Lookup: Is This Gun Stolen?"
- description="Free gun serial number lookup. Check a handgun, rifle or shotgun serial against 220,000+ police theft and loss reports from 33 states and DC before you buy."
+ title="Free Gun Serial Number Lookup, Any State: Is It Stolen?"
+ description="Free gun serial number lookup for any state. Check a handgun, rifle or shotgun against 220,000+ police theft reports from 33 states and DC in seconds."
  canonical="/firearms-check"
  />
 
@@ -78,7 +78,7 @@ const FirearmsCheckPage = () => {
  🔫 Firearm Verification
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
- Free Gun Serial Number Lookup
+ Free Gun Serial Number Lookup{' '}
  <br />
  <span className="text-primary">Was This Gun Reported Stolen?</span>
  </h1>

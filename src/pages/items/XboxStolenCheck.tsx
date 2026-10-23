@@ -10,7 +10,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const XboxStolenCheck = () => (
   <ItemLandingPageTemplate
     title="Free Xbox Serial Number Checker: Is This Xbox Stolen? | SafeOrStolen"
-    metaDescription="Free Xbox serial number check for Xbox Series X, Series S and Xbox One. See if a used Xbox is reported stolen in seconds, find the serial, and what to check before you pay."
+    metaDescription="Free Xbox serial number checker for Series X, Series S and Xbox One. See if a used Xbox is reported stolen in seconds and what to check before you pay."
     h1="Free Xbox Serial Number Checker: Is This Xbox Stolen?"
     itemType="Xbox"
     dateModified="2026-10-22"

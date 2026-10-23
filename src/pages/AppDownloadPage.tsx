@@ -116,7 +116,7 @@ export default function AppDownloadPage() {
     <>
       <div className="min-h-screen bg-gray-950 text-white pt-20">
         <PageSEO
-          title="App to Check Gun Serial Numbers, IMEI & VIN for Theft"
+          title="Free App to Check Gun Serial Numbers, IMEI & VIN for Theft"
           description="Free app to check if a gun, phone, car or bike is stolen. Install SafeOrStolen from Safari or Chrome in under a minute and run a serial, IMEI or VIN check."
           keywords="app to check gun serial number, free app to check gun serial number, app to check if something is stolen, stolen item checker app, imei checker app, vin checker app, safe or stolen app"
           canonical="/app"

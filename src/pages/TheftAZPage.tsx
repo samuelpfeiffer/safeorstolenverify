@@ -9,9 +9,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const TheftAZPage = () => {
  return (
  <ItemLandingPageTemplate
- title="TheftAZ Search: Check Arizona Stolen-Vehicle Records | SafeOrStolen"
- metaDescription="What TheftAZ is, how to search it by VIN or plate, and how SafeOrStolen checks Arizona, Alaska and Chicago police stolen-vehicle records plus a VIN decode and recalls."
- h1="TheftAZ search: how to check Arizona stolen-vehicle records"
+ title="TheftAZ Search: Free Arizona Stolen Car & Plate Check"
+ metaDescription="Check an Arizona VIN or plate free: Arizona, Alaska and Chicago police stolen-vehicle records, VIN decode and recalls in one search. Any state, no account."
+ h1="TheftAZ Search: Check an Arizona VIN or Plate for Theft"
  itemType="Arizona Stolen Vehicle"
  searchType="plate"
  searchPlaceholder="Enter the plate number or VIN"

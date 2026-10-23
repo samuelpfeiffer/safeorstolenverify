@@ -6,9 +6,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
- title="Free Serial Number Search (USA): Check if Any Item Is Stolen | SafeOrStolen"
- metaDescription="Search any serial number free. See if a laptop, tool, camera, console, gun or other item is reported stolen before you buy. Results in seconds, 1 free check, no card."
- h1="Free Serial Number Search & Lookup"
+ title="Free Serial Number Lookup & Search Online (USA) | SafeOrStolen"
+ metaDescription="Check any product serial number online free: laptops, tools, cameras, consoles, guns and more. See if it is reported stolen in seconds. No account needed."
+ h1="Free Serial Number Lookup: Search Any Item Online"
  itemType="Item"
  dateModified="2026-10-16"
  searchPlaceholder="Type or paste any serial number"
@@ -97,6 +97,14 @@ const SerialNumberCheckerPage = () => {
  "If it is reported stolen, don't buy it, and pass the listing to your local police"
  ],
  faqs: [
+ {
+  question: "How do I search by serial number?",
+  answer: "Type or paste the serial number into the search box at safeorstolen.com/serial-number-checker and press search. SafeOrStolen checks it against its stolen-item reports, public web results and, for guns, bikes and phones, police and registry records, and shows the result in seconds. Your first check is free with no account.",
+ },
+ {
+  question: "Is there a serial number lookup database I can search online?",
+  answer: "Yes. SafeOrStolen is a free online serial number lookup database for stolen items. One search covers its own theft reports, public web results, more than 220,000 police stolen-gun reports from 33 states and DC, a national stolen-bicycle registry and the lost and stolen phone blacklist.",
+ },
  {
  question: "Is the serial number search really free?",
  answer: "Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $0.99 for 2 checks, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."

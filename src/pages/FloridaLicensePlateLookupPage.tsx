@@ -13,7 +13,7 @@ const FloridaLicensePlateLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="Florida License Plate Lookup: Owner & Stolen Tag Check | SafeOrStolen"
- metaDescription="Florida license plate lookup, free: check if a FL plate or car is stolen, what you can legally find about the owner, how to check tag and registration status, and who to call in Jacksonville, Miami, Tampa, Destin and more."
+ metaDescription="Free Florida license plate lookup for Miami, Orlando, Tampa and statewide: check if a FL plate or car is stolen and what you can legally learn about the owner."
  h1="Florida License Plate Lookup & Stolen Tag Check"
  itemType="Vehicle"
  searchType="plate"

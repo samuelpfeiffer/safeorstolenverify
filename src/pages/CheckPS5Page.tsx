@@ -6,8 +6,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPS5Page = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free PS5 Serial Number Checker: How to Know if a PS5 Is Stolen"
-      metaDescription="Free PS5 serial number check. See if a used PS5, PS5 Slim or PS5 Pro is reported stolen in seconds, learn the warning signs, and test for a PSN ban before you pay."
+      title="PS5 Serial Number Check (Free): How to Know if a PS5 Is Stolen"
+      metaDescription="Free PS5 serial number checker: see if a used PS5, Slim or Pro is reported stolen in seconds, spot the warning signs, and test for a PSN ban before you pay."
       h1="Free PS5 Serial Number Checker"
       itemType="PlayStation 5"
       dateModified="2026-10-22"
