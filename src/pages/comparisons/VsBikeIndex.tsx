@@ -53,7 +53,7 @@ const VsBikeIndex = () => {
         "name": "What does a SafeOrStolen bike check search?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports, and public web results such as listings and posts that mention the serial number. The result lists every source searched. You can also search Bike Index yourself for free."
+          "text": "A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports, and public web results such as listings and posts that mention the serial number. The result lists every source searched."
         }
       },
       {

@@ -262,7 +262,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Use both for a phone: CTIA's free carrier lookup, and SafeOrStolen for its theft reports, public web results and saved record of your check. For anything that isn't a phone, CTIA can't help, and SafeOrStolen can check the serial, VIN or listing link.
+                  For a phone, SafeOrStolen checks the lost and stolen phone blacklist along with its own theft reports and public web results, and saves a dated record of your check. For anything that isn't a phone, SafeOrStolen can also check the serial, VIN or listing link.
                 </p>
               </CardContent>
             </Card>
