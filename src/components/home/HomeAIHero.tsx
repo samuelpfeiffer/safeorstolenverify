@@ -170,6 +170,8 @@ export const HomeAIHero: React.FC = () => {
  const send = useCallback(async (textRaw: string) => {
  const text = textRaw.trim();
  if (!text || isStreaming) return;
+ // Oct 21 2026 (owner rule): one place to search everything. Hand every search to /verify.
+ if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(text)}`; return; }
  if (!started) {
  setStarted(true);
  setMessages([WELCOME, { role: 'user', content: text }]);

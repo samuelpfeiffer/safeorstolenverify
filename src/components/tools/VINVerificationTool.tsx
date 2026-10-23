@@ -36,6 +36,8 @@ const VINVerificationTool = () => {
 
  const handleCheck = async () => {
  const cleaned = vin.toUpperCase().replace(/[^A-HJ-NPR-Z0-9]/g, '');
+ // Oct 21 2026 (owner rule): one place to search everything. Send the search to /verify.
+ if (cleaned) { if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(cleaned)}&type=vin`; return; } }
  
  if (!validateVINFormat(cleaned)) {
  toast({

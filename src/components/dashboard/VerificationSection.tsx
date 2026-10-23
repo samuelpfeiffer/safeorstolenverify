@@ -68,6 +68,8 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
 
   const handleSearch = async () => {
     if (!searchQuery.trim()) return;
+    // Oct 21 2026 (owner rule): one place to search everything. Send the search to /verify.
+    if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(searchQuery.trim())}`; return; }
     
     if (hasReachedLimit && !isSubscribed) {
       toast({

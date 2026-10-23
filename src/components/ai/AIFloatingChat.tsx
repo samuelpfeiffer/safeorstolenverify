@@ -225,6 +225,8 @@ export const AIFloatingChat: React.FC = () => {
   });
 
   const runVerification = useCallback(async (identifier: string) => {
+    // Oct 21 2026 (owner rule): one place to search everything. Send the search to /verify.
+    if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(identifier)}`; return; }
     setMessages(prev => [...prev, { role: 'assistant', content: 'Checking that number against SafeOrStolen theft reports and public web results…' }]);
     try {
       const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
@@ -249,6 +251,7 @@ export const AIFloatingChat: React.FC = () => {
   }, [user?.id]);
 
   const runUrlAnalysis = useCallback(async (url: string) => {
+    if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(url)}`; return; }
     setMessages(prev => [...prev, { role: 'assistant', content: 'Looking over that marketplace listing for warning signs…' }]);
     try {
       const { data, error } = await supabase.functions.invoke('marketplace-url-analyzer', { body: { url } });

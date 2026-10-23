@@ -35,6 +35,8 @@ const IMEICheckerTool = () => {
 
   const handleCheck = async () => {
     const cleaned = imei.replace(/\D/g, '');
+    // Oct 21 2026 (owner rule): one place to search everything. Send the search to /verify.
+    if (cleaned) { if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(cleaned)}&type=imei`; return; } }
     
     if (!validateIMEIFormat(cleaned)) {
       toast({

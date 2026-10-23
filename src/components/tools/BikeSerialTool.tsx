@@ -32,6 +32,8 @@ const BikeSerialTool = () => {
  const { toast } = useToast();
 
  const handleCheck = async () => {
+ // Oct 21 2026 (owner rule): one place to search everything. Send the search to /verify.
+ if (serial.trim()) { if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(serial.trim())}&type=bike`; return; } }
  if (serial.trim().length < 4) {
  toast({
  title: 'Invalid Serial',
