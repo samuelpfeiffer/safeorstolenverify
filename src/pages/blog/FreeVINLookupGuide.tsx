@@ -27,7 +27,7 @@ const FreeVINLookupGuide = () => {
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": "Locate the 17-character VIN on the dashboard (driver's side), driver's door jamb, or vehicle registration." },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Go to safeorstolen.com/verify and paste the 17-character VIN. The search box recognizes it as a VIN, so there's nothing to pick from a menu." },
- { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "In a few seconds you see the decoded year, make and model, any open safety recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Run NICB VINCheck and an NMVTIS report yourself as well." },
+ { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "In a few seconds you see the decoded year, make and model, any open safety recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Run NICB VINCheck and an NMVTIS report yourself as well." },
  { "@type": "HowToStep", "position": 4, "name": "Save proof of the check", "text": "Every check is saved to your account with the date. For $1.99 you can add a verification certificate with its own link that shows you checked before the sale." }
  ],
  "totalTime": "PT30S"
@@ -169,7 +169,7 @@ const FreeVINLookupGuide = () => {
  </p>
  <div className="grid md:grid-cols-2 gap-4 my-8">
  {[
- { db: 'SafeOrStolen check', desc: "SafeOrStolen theft reports, public web results, VIN decode and open recalls (plus Arizona law-enforcement records for Arizona VINs), saved to your account" },
+ { db: 'SafeOrStolen check', desc: "SafeOrStolen theft reports, public web results, VIN decode and open recalls (plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state), saved to your account" },
  { db: 'NICB VINCheck (check yourself)', desc: 'Free official tool with limited daily lookups for unrecovered theft and total-loss records' },
  { db: 'NMVTIS (check yourself)', desc: 'U.S. Department of Justice title system; low-cost reports through approved providers' },
  { db: 'Local police (call yourself)', desc: 'Non-emergency line with the VIN and plate to ask whether the vehicle is reported stolen' },

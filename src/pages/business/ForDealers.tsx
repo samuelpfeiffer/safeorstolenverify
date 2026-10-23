@@ -18,7 +18,7 @@ const COVERS: string[][] = [
   ['Open safety recalls', 'Yes'],
   ['SafeOrStolen theft reports', 'Yes'],
   ['Public web results that mention the VIN', 'Yes'],
-  ['Arizona, Alaska and Chicago police stolen-vehicle records', 'Yes, for Arizona VINs and plates (updated twice a day)'],
+  ['Arizona, Alaska and Chicago police stolen-vehicle records', 'Yes, for any VIN or plate from any state (updated daily)'],
   ['A dated record of every check, with the sources searched', 'Yes'],
 ];
 
@@ -26,7 +26,7 @@ const FAQS = [
   {
     question: 'How can a car dealer check if a trade-in is stolen?',
     answer:
-      'Match the VIN on the dash plate, the driver-door sticker and the title, check the seller\'s ID against the name on the title, then run the VIN on SafeOrStolen (safeorstolen.com/for-dealers). It decodes the vehicle, lists open recalls and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs. Ask your local police if anything looks off.',
+      'Match the VIN on the dash plate, the driver-door sticker and the title, check the seller\'s ID against the name on the title, then run the VIN on SafeOrStolen (safeorstolen.com/for-dealers). It decodes the vehicle, lists open recalls and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. Ask your local police if anything looks off.',
   },
   {
     question: 'Where do we get salvage or flood title history?',

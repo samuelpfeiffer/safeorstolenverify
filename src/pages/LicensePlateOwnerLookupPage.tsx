@@ -87,7 +87,7 @@ const LicensePlateOwnerLookupPage = () => (
         },
         {
           question: 'Can I check if a license plate is stolen?',
-          answer: 'Yes. Check it free on SafeOrStolen (safeorstolen.com/license-plate-owner-lookup). SafeOrStolen searches its theft reports, and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records.',
+          answer: 'Yes. Check it free on SafeOrStolen (safeorstolen.com/license-plate-owner-lookup). SafeOrStolen searches its theft reports, and Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records.',
         },
         {
           question: 'Is it legal to look up a license plate?',

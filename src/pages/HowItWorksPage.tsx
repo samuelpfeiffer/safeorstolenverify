@@ -94,7 +94,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'What does a VIN check show?',
  answer:
- 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona vehicles. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
+ 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
  },
  {
  question: 'Is my check saved, and can I prove I checked?',

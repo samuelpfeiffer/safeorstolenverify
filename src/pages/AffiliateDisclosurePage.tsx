@@ -94,7 +94,7 @@ const AffiliateDisclosurePage: React.FC = () => {
                 A result ("reported stolen", "possible match", or "no report found in the records searched") comes
                 only from the records searched: SafeOrStolen's own theft reports and public web results, plus
                 police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona
-                law-enforcement stolen-vehicle records for Arizona VINs and plates. No payment from anyone changes a
+                law-enforcement stolen-vehicle records from Arizona, Alaska and Chicago, searched for vehicles from any state. No payment from anyone changes a
                 result. The AI note on a result explains it in plain language and never decides it.
               </p>
             </CardContent>

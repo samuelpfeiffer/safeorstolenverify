@@ -23,7 +23,7 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  case 'vin-lookup':
  return {
  title: 'What is a VIN Checker?',
- description: 'A VIN checker decodes a vehicle\'s year, make and model and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports and public web results for the VIN, lists open safety recalls, and searches Arizona, Alaska and Chicago police stolen-vehicle records for Arizona vehicles.',
+ description: 'A VIN checker decodes a vehicle\'s year, make and model and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports and public web results for the VIN, lists open safety recalls, and searches Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state.',
  databases: 'our verification databases',
  stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
  };

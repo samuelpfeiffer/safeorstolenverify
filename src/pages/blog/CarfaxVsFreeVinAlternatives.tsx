@@ -255,7 +255,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             <ul>
               <li>a search of theft reports owners have filed on SafeOrStolen</li>
               <li>public web results that mention the VIN</li>
-              <li>Arizona, Alaska and Chicago police stolen-vehicle records, for Arizona VINs (updated twice a day)</li>
+              <li>Arizona, Alaska and Chicago police stolen-vehicle records, searched for any VIN from any state (updated daily)</li>
               <li>the year, make and model, and any open safety recalls</li>
             </ul>
             <p>Every result lists each source it searched, and the check is saved to your account with the date.</p>

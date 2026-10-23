@@ -11,7 +11,7 @@ const VINCheckerPage = () => {
  <>
  <ItemLandingPageTemplate
  title="VIN Checker — Check if a Car Is Stolen | SafeOrStolen"
- metaDescription="Free VIN checker: decode the year, make and model, see open recalls, and check SafeOrStolen theft reports and web listings for the VIN in a few seconds."
+ metaDescription="Free VIN checker for any vehicle from any state: decode the year, make and model, see open recalls, and search theft reports and police stolen-vehicle records in seconds."
  h1="VIN Checker: Is This Car Stolen?"
  itemType="Vehicle"
  searchType="vin"
@@ -52,11 +52,11 @@ const VINCheckerPage = () => {
  faqs: [
  {
  question: "How do I check a VIN for theft?",
- answer: "Confirm the VIN matches on the dashboard, the driver door jamb sticker and the title, then enter it at SafeOrStolen (safeorstolen.com/vin-checker). It decodes the vehicle, lists open recalls, and searches SafeOrStolen theft reports and public web listings, plus Arizona law-enforcement records for Arizona VINs. On a big purchase, also call your local police non-emergency line with the VIN."
+ answer: "Confirm the VIN matches on the dashboard, the driver door jamb sticker and the title, then enter it at SafeOrStolen (safeorstolen.com/vin-checker). It decodes the vehicle, lists open recalls, and searches SafeOrStolen theft reports and public web listings, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. On a big purchase, also call your local police non-emergency line with the VIN."
  },
  {
  question: "What does SafeOrStolen check?",
- answer: "A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports and public web results for the VIN. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records."
+ answer: "A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports and public web results for the VIN. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records."
  },
  {
  question: "Is there a free stolen vehicle check?",

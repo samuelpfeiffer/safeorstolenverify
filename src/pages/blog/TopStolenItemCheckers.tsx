@@ -81,7 +81,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How does Carfax compare to SafeOrStolen?",
-      answer: "Carfax sells paid vehicle history reports covering accidents, ownership and service records; check its site for current prices. SafeOrStolen costs $0.99 for 2 checks or $10 a month for unlimited checks across all item types. A SafeOrStolen VIN check decodes the vehicle, lists open recalls and searches its own theft reports and the web, plus Arizona law-enforcement records for Arizona VINs. It is not a full vehicle history report."
+      answer: "Carfax sells paid vehicle history reports covering accidents, ownership and service records; check its site for current prices. SafeOrStolen costs $0.99 for 2 checks or $10 a month for unlimited checks across all item types. A SafeOrStolen VIN check decodes the vehicle, lists open recalls and searches its own theft reports and the web, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. It is not a full vehicle history report."
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",

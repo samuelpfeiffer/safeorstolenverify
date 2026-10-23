@@ -31,7 +31,7 @@ const VsStolenPhoneChecker = () => {
         "name": "Can I check vehicles on CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. CTIA's checker only takes phone IMEIs. SafeOrStolen checks VINs too: it decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona law-enforcement records for Arizona VINs."
+          "text": "No. CTIA's checker only takes phone IMEIs. SafeOrStolen checks VINs too: it decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state."
         }
       }
     ]

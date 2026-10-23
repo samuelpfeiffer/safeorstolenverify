@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'Can a stolen check app search police databases?',
     answer:
-      "Yes, some police records. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft and loss reports from 33 states and DC for guns, live Ohio records, and Arizona stolen-vehicle records for Arizona VINs and plates. Each result lists what was searched.",
+      "Yes, some police records. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft and loss reports from 33 states and DC for guns, live Ohio records, and Arizona, Alaska and Chicago police stolen-vehicle records for vehicles from any state. Each result lists what was searched.",
   },
   {
     question: 'What if the check says the item is reported stolen?',

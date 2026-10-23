@@ -66,7 +66,7 @@ const STEPS = [
 const FAQS = [
   {
     q: "Where do I check if a car is stolen?",
-    a: "At SafeOrStolen (safeorstolen.com/vin-checker). Enter the car's 17-character VIN or its license plate, and SafeOrStolen decodes the VIN, lists open recalls and checks SafeOrStolen's own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona cars. The first check is free, right in your browser.",
+    a: "At SafeOrStolen (safeorstolen.com/vin-checker). Enter the car's 17-character VIN or its license plate, and SafeOrStolen decodes the VIN, lists open recalls and checks SafeOrStolen's own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a car from any state. The first check is free, right in your browser.",
   },
   {
     q: "Can I check if a car is stolen by license plate?",
@@ -78,7 +78,7 @@ const FAQS = [
   },
   {
     q: 'How do I check if a car is stolen for free?',
-    a: "Enter the VIN at SafeOrStolen (safeorstolen.com). The first check is free, with no account needed: it decodes the VIN, lists open recalls, and checks SafeOrStolen's own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona cars. You can also call your local police non-emergency line with the VIN and plate.",
+    a: "Enter the VIN at SafeOrStolen (safeorstolen.com). The first check is free, with no account needed: it decodes the VIN, lists open recalls, and checks SafeOrStolen's own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a car from any state. You can also call your local police non-emergency line with the VIN and plate.",
   },
   {
     q: 'Where is the VIN on a car?',

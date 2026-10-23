@@ -40,11 +40,11 @@ const FreeStolenVehicleCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to see if a car is stolen by VIN?",
- answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search SafeOrStolen's own theft reports and public web results, decode the year, make and model, and see open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Results come back in a few seconds."
+ answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search SafeOrStolen's own theft reports and public web results, decode the year, make and model, and see open safety recalls. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Results come back in a few seconds."
  },
  {
  question: "Can I check a stolen vehicle by license plate only?",
- answer: "Yes. A plate check searches SafeOrStolen theft reports and public web results, and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
+ answer: "Yes. A plate check searches SafeOrStolen theft reports and public web results, and Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
  },
  {
  question: "Will this tell me the owner's name and address?",

@@ -136,7 +136,7 @@ const sections: Section[] = [
         <p>
           Today you can enter a phone's IMEI, a car's VIN or plate, or the serial number on a gun, bike, laptop or tool. SafeOrStolen
           searches its own theft reports and public web results, plus police firearm theft records for guns, a national
-          stolen-bicycle registry for bikes, and Arizona stolen-vehicle records for Arizona VINs and plates. The result tells you
+          stolen-bicycle registry for bikes, and Arizona, Alaska and Chicago police stolen-vehicle records for vehicles from any state. The result tells you
           reported stolen, possible match, or no report found in the records searched, and lists every source. You can see the
           full list on the <Link to="/data-sources" className="text-primary hover:underline">data sources page</Link>.
         </p>
