@@ -27,6 +27,7 @@ export const SOURCE_WEIGHTS: Record<string, number> = {
   IMEI_Verification: 0.92,
   Vehicle_Verification: 0.9,
   Police_Vehicle_Records: 0.95,
+  Chicago_Police_Records: 0.95,
   HotGunz: 0.88,
   Firearm_Verification: 0.95,
   Web_Scraper: 0.75,
@@ -111,6 +112,7 @@ function sourceLabel(s: SourceResult): string {
     IMEI_Verification: 'phone blacklist records',
     Vehicle_Verification: 'vehicle records',
     Police_Vehicle_Records: 'Alaska law-enforcement stolen-vehicle records',
+    Chicago_Police_Records: 'Chicago Police stolen-vehicle records',
   };
   return names[s.provider] ?? s.provider;
 }

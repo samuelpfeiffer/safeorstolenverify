@@ -375,6 +375,55 @@ async function runInternalRegistry(
 }
 
 /**
+ * Oct 23 2026: Chicago Police "Find My Car" public search, live (stolen vehicles + stolen plates).
+ * Only STLVEH (stolen vehicle) and STLPLT (stolen plates) records count; tows/repos/lost plates are ignored.
+ */
+async function runChicagoPolice(normalizedIdentifier: string, itemType: string, plateState?: string | null): Promise<SourceResult> {
+  const startedAt = Date.now();
+  const id = normalizedIdentifier.replace(/[^A-Z0-9]/g, '');
+  const isPlate = itemType === 'plate';
+  if (isPlate ? id.length < 2 : id.length !== 17) {
+    return { provider: 'Chicago_Police_Records', status: 'unknown', confidence: 0, message: 'Not searchable in Chicago police records', responseTime: Date.now() - startedAt };
+  }
+  const url = `https://publicsearch2.chicagopolice.org/FindMyCar/Vehicle/Results?${isPlate ? 'LCS_PLT' : 'VIN'}=${encodeURIComponent(id)}`;
+  try {
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 12_000);
+    const res = await fetch(url, { signal: ctl.signal, headers: { 'User-Agent': 'Mozilla/5.0 (compatible; SafeOrStolen/1.0; +https://safeorstolen.com)' } });
+    clearTimeout(timer);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const html = await res.text();
+    const clean = (x: string) => x.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+    const body = html.split(/<tbody[^>]*>/i)[1]?.split(/<\/tbody>/i)[0] ?? '';
+    const rows = [...body.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map((m) => [...m[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) => clean(c[1])));
+    const hits = rows.filter((c) => c.length >= 8 && (c[0] === 'STLVEH' || c[0] === 'STLPLT'))
+      .filter((c) => (isPlate ? c[4].replace(/[^A-Z0-9]/gi, '').toUpperCase() === id : c[3].replace(/[^A-Z0-9]/gi, '').toUpperCase() === id))
+      .filter((c) => !(isPlate && plateState && /^[A-Z]{2}$/.test(plateState) && c[5] && c[5].toUpperCase() !== plateState));
+    if (hits.length === 0) {
+      return { provider: 'Chicago_Police_Records', status: 'unknown', confidence: 0, message: 'No match in Chicago police stolen-vehicle records', details: { checked: true }, responseTime: Date.now() - startedAt };
+    }
+    const c = hits[0];
+    const car = [c[6], c[7], c[8]].filter(Boolean).join(' ');
+    const what = c[0] === 'STLPLT' ? 'stolen license plates' : 'a stolen vehicle';
+    if (!isPlate && c[0] === 'STLVEH') {
+      return {
+        provider: 'Chicago_Police_Records', status: 'stolen', confidence: 90,
+        message: `Chicago Police list this VIN as a stolen vehicle (${car}${c[4] ? `, plate ${c[4]} ${c[5] || ''}`.trimEnd() : ''}, report ${c[1]}). Do not buy it. Contact the Chicago Police Department with the VIN.`,
+        details: { checked: true, found: true }, responseTime: Date.now() - startedAt,
+      };
+    }
+    return {
+      provider: 'Chicago_Police_Records', status: 'unknown', confidence: 0,
+      message: `⚠️ POSSIBLE MATCH: Chicago Police list this plate as ${what}${car ? ` (${car}${c[5] ? `, ${c[5]} plates` : ''})` : ''}, report ${c[1]}. If the vehicle or plate in front of you matches, do not buy it and contact the Chicago Police Department.`,
+      details: { checked: true, possibleMatch: true }, responseTime: Date.now() - startedAt,
+    };
+  } catch (error) {
+    console.error('[verify] Chicago police lookup failed:', error);
+    return { provider: 'Chicago_Police_Records', status: 'error', confidence: 0, message: 'Chicago police records unavailable', responseTime: Date.now() - startedAt };
+  }
+}
+
+/**
  * Oct 23 2026: police stolen-vehicle and stolen-plate records (theft_records, item_type vehicle/plate).
  * First source: Alaska's statewide stolen vehicle hot sheet (current reports).
  * A VIN is unique, so a VIN match is a real theft report. Plate numbers repeat across states, so a
@@ -888,6 +937,7 @@ export async function runVerification(
         : { identifier: cleanIdentifier };
     tasks.push(runSource('Vehicle_Verification', 'verify-vehicle', body));
     tasks.push(runPoliceVehicleRecords(admin, normalizedIdentifier, itemType, input.plateState ?? null));
+    tasks.push(runChicagoPolice(normalizedIdentifier, itemType, input.plateState ?? null));
   }
   if (sources.includes('hotgunz')) {
     // verify-hotgunz now searches the Ohio Attorney General stolen gun database (Sept 28 2026).
