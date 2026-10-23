@@ -48,7 +48,7 @@ export default function PressReleasePage() {
             </p>
             <ul className="space-y-2 text-muted-foreground list-disc pl-6">
               <li>Gun checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017; the years covered vary by state) and live Ohio law-enforcement records.</li>
-              <li>Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.</li>
+              <li>Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.</li>
               <li>Phone checks show the make and model from the IMEI, with a paid carrier blacklist check available.</li>
               <li>An optional $1.99 verification certificate gives buyers a dated record, with its own link, showing they checked before the sale.</li>
               <li>The app is a free installable web app at <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link>.</li>

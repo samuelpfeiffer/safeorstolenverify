@@ -21,7 +21,7 @@ const checkRows: [string, string][] = [
   ['Guns', 'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'A national stolen-bicycle registry'],
   ['Phones (IMEI)', "The phone's make and model from the IMEI. A paid carrier blacklist check for lost or stolen phones is available"],
-  ['Vehicles (VIN)', 'Year, make and model, open safety recalls, and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records updated twice a day'],
+  ['Vehicles (VIN)', 'Year, make and model, open safety recalls, and, for Arizona VINs, Arizona, Alaska and Chicago police stolen-vehicle records updated twice a day'],
   ['License plates', 'SafeOrStolen theft reports, plus Arizona law-enforcement records for Arizona plates. Owner names are never shown'],
 ];
 

@@ -53,7 +53,7 @@ const SOURCES: { item: string; sources: string }[] = [
   { item: 'Guns', sources: 'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a check for serials that look altered or obliterated' },
   { item: 'Bikes', sources: 'A national stolen-bicycle registry' },
   { item: 'Phones', sources: 'Make and model decoded from the IMEI. The carrier lost/stolen blacklist is searched on a paid blacklist check' },
-  { item: 'Vehicles (VIN)', sources: 'Year, make and model decoded, open safety recalls listed. Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day' },
+  { item: 'Vehicles (VIN)', sources: 'Year, make and model decoded, open safety recalls listed. Arizona VINs also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily' },
   { item: 'License plates', sources: 'SafeOrStolen theft reports. Arizona plates also searched against Arizona law-enforcement records. Owner names are never shown' },
 ];
 

@@ -59,14 +59,14 @@ const STEPS = [
   },
   {
     name: 'Run a SafeOrStolen check and save the result',
-    text: 'Enter the VIN or plate at SafeOrStolen. In a few seconds it decodes the year, make and model, lists open safety recalls, and checks SafeOrStolen\u2019s own theft reports and public web results (Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records). The result is saved to your account with the date, and you can add a $1.99 verification certificate.',
+    text: 'Enter the VIN or plate at SafeOrStolen. In a few seconds it decodes the year, make and model, lists open safety recalls, and checks SafeOrStolen\u2019s own theft reports and public web results (Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records). The result is saved to your account with the date, and you can add a $1.99 verification certificate.',
   },
 ];
 
 const FAQS = [
   {
     q: "Where do I check if a car is stolen?",
-    a: "At SafeOrStolen (safeorstolen.com/vin-checker). Enter the car's 17-character VIN or its license plate, and SafeOrStolen decodes the VIN, lists open recalls and checks SafeOrStolen's own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars. The first check is free, right in your browser.",
+    a: "At SafeOrStolen (safeorstolen.com/vin-checker). Enter the car's 17-character VIN or its license plate, and SafeOrStolen decodes the VIN, lists open recalls and checks SafeOrStolen's own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona cars. The first check is free, right in your browser.",
   },
   {
     q: "Can I check if a car is stolen by license plate?",
@@ -78,7 +78,7 @@ const FAQS = [
   },
   {
     q: 'How do I check if a car is stolen for free?',
-    a: "Enter the VIN at SafeOrStolen (safeorstolen.com). The first check is free, with no account needed: it decodes the VIN, lists open recalls, and checks SafeOrStolen's own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona cars. You can also call your local police non-emergency line with the VIN and plate.",
+    a: "Enter the VIN at SafeOrStolen (safeorstolen.com). The first check is free, with no account needed: it decodes the VIN, lists open recalls, and checks SafeOrStolen's own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona cars. You can also call your local police non-emergency line with the VIN and plate.",
   },
   {
     q: 'Where is the VIN on a car?',
@@ -86,7 +86,7 @@ const FAQS = [
   },
   {
     q: 'What does SafeOrStolen search for a car?',
-    a: 'SafeOrStolen checks its own theft reports and public web results, decodes the VIN and lists open safety recalls. For Arizona VINs and plates it also checks Arizona law-enforcement stolen-vehicle records, updated twice a day. Use NICB VINCheck and an NMVTIS title report as well.',
+    a: 'SafeOrStolen checks its own theft reports and public web results, decodes the VIN and lists open safety recalls. For Arizona VINs and plates it also checks Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. Use NICB VINCheck and an NMVTIS title report as well.',
   },
   {
     q: 'What is the difference between NICB VINCheck and NMVTIS?',
@@ -227,7 +227,7 @@ const HowToCheckIfCarStolenPage = () => {
         <p>Many stolen cars are sold through online marketplaces. See the <a href="#listing" className="text-primary underline">listing red flags</a> below, or paste the link into SafeOrStolen’s <Link to="/marketplace-url-checker" className="text-primary underline">marketplace listing checker</Link>.</p>
 
         <h3 className="text-xl font-semibold text-foreground mt-8 mb-2">8. SafeOrStolen check — free to try</h3>
-        <p>Enter the VIN or plate. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results. Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records, updated twice a day. The result is saved to your account with the date. Use it alongside the official resources above.</p>
+        <p>Enter the VIN or plate. In a few seconds SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results. Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. The result is saved to your account with the date. Use it alongside the official resources above.</p>
 
         <H2 id="tampering">Physical signs of VIN tampering</H2>
         <ul className="list-disc pl-6 space-y-2 my-4">

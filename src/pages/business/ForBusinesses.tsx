@@ -25,7 +25,7 @@ const SOURCES: string[][] = [
   ['Guns', 'Also more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'Also a national stolen-bicycle registry'],
   ['Phones (IMEI)', 'Also the make and model from the IMEI; the carrier blacklist is a separate paid check'],
-  ['Vehicles (VIN)', 'Also the decoded year, make and model, open safety recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs'],
+  ['Vehicles (VIN)', 'Also the decoded year, make and model, open safety recalls, and Arizona, Alaska and Chicago police stolen-vehicle records'],
   ['Plates', 'SafeOrStolen theft reports, plus Arizona law-enforcement records for Arizona plates. No owner names.'],
 ];
 

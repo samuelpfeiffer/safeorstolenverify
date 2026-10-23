@@ -73,7 +73,7 @@ const FreeCarfaxAlternativePage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">SafeOrStolen: is it reported stolen?</h3>
-                  <p className="text-muted-foreground">Searches SafeOrStolen's own theft reports and public web results that mention the VIN, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Also decodes the VIN and lists open recalls.</p>
+                  <p className="text-muted-foreground">Searches SafeOrStolen's own theft reports and public web results that mention the VIN, plus Arizona, Alaska and Chicago police stolen-vehicle records. Also decodes the VIN and lists open recalls.</p>
                 </div>
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">Carfax: what's its history?</h3>

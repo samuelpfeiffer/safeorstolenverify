@@ -24,7 +24,7 @@ const SOURCES: { item: string; enter: string; searched: string; extra: string }[
  item: 'Car, truck or motorcycle',
  enter: '17-character VIN',
  searched: 'SafeOrStolen theft reports and public web results',
- extra: 'Decodes the year, make and model and lists open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.',
+ extra: 'Decodes the year, make and model and lists open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.',
  },
  {
  item: 'License plate',
@@ -79,7 +79,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does SafeOrStolen search police databases?',
  answer:
- 'Yes. Gun checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.',
+ 'Yes. Gun checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records.',
  },
  {
  question: 'What does "no report found" mean?',
@@ -94,7 +94,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'What does a VIN check show?',
  answer:
- 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona vehicles. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
+ 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona vehicles. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
  },
  {
  question: 'Is my check saved, and can I prove I checked?',

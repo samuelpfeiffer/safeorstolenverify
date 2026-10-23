@@ -31,7 +31,7 @@ const VinCheckerApp = () => {
  "Decodes year, make and model from the VIN",
  "Lists open safety recalls",
  "Searches SafeOrStolen theft reports and public web results",
- "Arizona VINs and plates also searched against Arizona law-enforcement stolen-vehicle records",
+ "Arizona VINs and plates also searched against Arizona, Alaska and Chicago police stolen-vehicle records",
  "Each check saved to your account with the date"
  ]
  }}
@@ -162,7 +162,7 @@ const VinCheckerApp = () => {
  "Open safety recalls",
  "SafeOrStolen theft reports filed by owners",
  "Public web results that mention the VIN",
- "Arizona law-enforcement stolen-vehicle records (Arizona VINs and plates)",
+ "Arizona, Alaska and Chicago police stolen-vehicle records (Arizona VINs and plates)",
  "A saved, dated record of every check"
  ].map((item, index) => (
  <div key={index} className="flex items-center gap-3 p-3 bg-background rounded-lg">

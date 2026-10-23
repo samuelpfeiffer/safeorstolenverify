@@ -34,7 +34,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  },
  {
  name: 'VIN check',
- what: 'Decodes the year, make and model and lists open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.',
+ what: 'Decodes the year, make and model and lists open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.',
  cost: 'Same as any check',
  href: '/vin-checker',
  linkText: 'VIN check',
@@ -114,7 +114,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Which records does SafeOrStolen search?',
  answer:
- 'Every check searches SafeOrStolen\'s own theft reports and public web results. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
+ 'Every check searches SafeOrStolen\'s own theft reports and public web results. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
  },
 ];
 

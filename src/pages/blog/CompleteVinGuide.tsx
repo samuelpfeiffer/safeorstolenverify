@@ -81,7 +81,7 @@ const VIN_PARTS: [string, string, string][] = [
 ];
 
 const CHECKS: [string, string, string][] = [
-  ['SafeOrStolen VIN check', 'Theft reports owners filed on SafeOrStolen, public web results for the VIN, the decoded year, make and model, and open safety recalls. Arizona VINs also against Arizona law-enforcement stolen-vehicle records.', '1 free check'],
+  ['SafeOrStolen VIN check', 'Theft reports owners filed on SafeOrStolen, public web results for the VIN, the decoded year, make and model, and open safety recalls. Arizona VINs also against Arizona, Alaska and Chicago police stolen-vehicle records.', '1 free check'],
   ['Police VIN check', "Whether the VIN is in the FBI’s NCIC stolen-vehicle file. Some departments run it for a buyer; call the non-emergency line.", 'Usually free'],
   ['State DMV title check', 'Title status and brands (salvage, rebuilt, flood) for vehicles titled in that state, where the state offers it.', 'Free to a small fee'],
   ['NMVTIS-based history report', 'Title brands and odometer readings reported at title events across states, through federally approved providers.', 'Low cost'],

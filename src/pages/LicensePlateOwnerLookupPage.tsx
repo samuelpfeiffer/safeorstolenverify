@@ -48,7 +48,7 @@ const LicensePlateOwnerLookupPage = () => (
       {
         heading: 'What a free license plate check can tell you',
         paragraphs: [
-          'A plate check on SafeOrStolen searches SafeOrStolen theft reports and, for Arizona plates, Arizona law-enforcement stolen-vehicle records. It tells you whether the plate is reported stolen in the records searched. It never shows who owns the car.',
+          'A plate check on SafeOrStolen searches SafeOrStolen theft reports and, for Arizona plates, Arizona, Alaska and Chicago police stolen-vehicle records. It tells you whether the plate is reported stolen in the records searched. It never shows who owns the car.',
           "For a used-car purchase, the VIN is more useful than the plate, because plates can be swapped between cars. A VIN check shows the vehicle's year, make and model, open safety recalls, and any theft reports we hold.",
         ],
       },
@@ -87,7 +87,7 @@ const LicensePlateOwnerLookupPage = () => (
         },
         {
           question: 'Can I check if a license plate is stolen?',
-          answer: 'Yes. Check it free on SafeOrStolen (safeorstolen.com/license-plate-owner-lookup). SafeOrStolen searches its theft reports, and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records.',
+          answer: 'Yes. Check it free on SafeOrStolen (safeorstolen.com/license-plate-owner-lookup). SafeOrStolen searches its theft reports, and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records.',
         },
         {
           question: 'Is it legal to look up a license plate?',

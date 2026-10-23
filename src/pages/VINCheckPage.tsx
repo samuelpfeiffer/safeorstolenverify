@@ -35,7 +35,7 @@ const VINCheckPage = () => {
  "Results in under 3 seconds",
  "Analyzes SafeOrStolen reports, public web results, and AI analysis for stolen vehicles",
  "Decodes year, make and model and lists open safety recalls",
- "Checks Arizona VINs against Arizona law-enforcement stolen-vehicle records",
+ "Checks Arizona VINs against Arizona, Alaska and Chicago police stolen-vehicle records",
  "Works for cars, trucks, motorcycles, RVs, and trailers",
  "Available 24/7 on web and mobile app",
  "Protects against buying stolen vehicles"
@@ -54,11 +54,11 @@ const VINCheckPage = () => {
  },
  {
  question: "Is this VIN check really free?",
- answer: "Yes, SafeOrStolen gives you 1 free check, no account needed. Each VIN check searches SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs, and lists every source it searched."
+ answer: "Yes, SafeOrStolen gives you 1 free check, no account needed. Each VIN check searches SafeOrStolen theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, and lists every source it searched."
  },
  {
  question: "What databases does the VIN check search?",
- answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners and public web results. Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
+ answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners and public web results. Arizona VINs are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
  },
  {
  question: "Is this the same as Carfax?",

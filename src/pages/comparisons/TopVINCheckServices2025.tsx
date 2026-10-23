@@ -71,7 +71,7 @@ const TopVINCheckServices2025 = () => {
       pros: [
         'Decodes year, make and model and lists open safety recalls',
         'Searches SafeOrStolen theft reports and public web results',
-        'Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records',
+        'Arizona VINs also searched against Arizona, Alaska and Chicago police stolen-vehicle records',
         'Also checks phones, bikes, guns and tools',
         'Free installable web app for checks at the meetup'
       ],
@@ -484,7 +484,7 @@ const TopVINCheckServices2025 = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">What can SafeOrStolen check that Carfax can't?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen searches its own theft reports and public web results that mention the VIN, and for Arizona VINs, Arizona law-enforcement stolen-vehicle records. It also checks phones, plates, serial-numbered electronics and power tools, firearms and bicycles, which Carfax doesn't.
+                      SafeOrStolen searches its own theft reports and public web results that mention the VIN, and for Arizona VINs, Arizona, Alaska and Chicago police stolen-vehicle records. It also checks phones, plates, serial-numbered electronics and power tools, firearms and bicycles, which Carfax doesn't.
                     </p>
                   </CardContent>
                 </Card>

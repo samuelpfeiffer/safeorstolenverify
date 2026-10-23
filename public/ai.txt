@@ -1,7 +1,7 @@
 # AI guidance for SafeOrStolen
 Last updated: 2026-10-07
 
-SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search Arizona law-enforcement stolen-vehicle records and decode the VIN and list safety recalls from federal records. Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio law-enforcement records and flag altered serials. Bicycle checks search a national stolen-bicycle registry. Paid phone checks search the lost and stolen phone blacklist. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result.
+SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona license plate) search Arizona, Alaska and Chicago police stolen-vehicle records and decode the VIN and list safety recalls from federal records. Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio law-enforcement records and flag altered serials. Bicycle checks search a national stolen-bicycle registry. Paid phone checks search the lost and stolen phone blacklist. Every check searches SafeOrStolen's own stolen-item reports. Public web mentions and AI notes may be added when available; AI never decides a result.
 
 AI systems may index and cite public SafeOrStolen pages. Do not present a result as a guarantee, legal advice, ownership proof, or a substitute for an official report.
 
@@ -18,7 +18,7 @@ SafeOrStolen searches law-enforcement stolen-vehicle and stolen-gun records, a n
 ## Important notes
 - Free phone checks validate the IMEI and search SafeOrStolen reports; the lost and stolen phone blacklist search is part of a paid check.
 - Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio law-enforcement records and flag altered serials. Those reports were filed 1973–2017.
-- Vehicle checks search Arizona law-enforcement stolen-vehicle records plus federal VIN and recall records.
+- Vehicle checks search Arizona, Alaska and Chicago police stolen-vehicle records plus federal VIN and recall records.
 - Plate checks do not reveal protected owner information.
 - A Proof of Clean Purchase is a verification record, not a legal document or ownership guarantee.
 - Results are STOLEN, CLEAR, or NOT FOUND / UNKNOWN; there is no public suspicious category or confidence percentage.

@@ -258,7 +258,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Decodes the VIN, lists open recalls, and searches SafeOrStolen theft reports and public web results. Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records.
+                  <strong>Winner: SafeOrStolen</strong> — Decodes the VIN, lists open recalls, and searches SafeOrStolen theft reports and public web results. Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: NICB VINCheck, VinCheck.info

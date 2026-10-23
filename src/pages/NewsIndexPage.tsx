@@ -26,7 +26,7 @@ const current: { title: string; body: string; to: string; linkText: string }[] =
   },
   {
     title: 'Arizona stolen-vehicle records',
-    body: 'Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records, updated twice a day. Every VIN check also decodes the year, make and model and lists open safety recalls.',
+    body: 'Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. Every VIN check also decodes the year, make and model and lists open safety recalls.',
     to: '/vin-checker',
     linkText: 'Check a VIN',
   },

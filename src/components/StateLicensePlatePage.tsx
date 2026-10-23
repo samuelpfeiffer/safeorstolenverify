@@ -87,7 +87,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `How much does the ${stateData.name} license plate lookup cost?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports and public web results${isArizona ? ', and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records' : ''}. Owner names are never shown.`
+ "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports and public web results${isArizona ? ', and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. Owner names are never shown.`
  }
  },
  {
@@ -120,13 +120,13 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </header>
  <div>
  <p><strong>Free {stateData.name} License Plate Lookup</strong></p>
- <p>Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records,' : ''} before buying a {stateData.abbrev} vehicle.</p>
+ <p>Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records,' : ''} before buying a {stateData.abbrev} vehicle.</p>
  
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
  <li>SafeOrStolen's stolen-item reports</li>
  <li>Public web results</li>
- {isArizona && <li>Arizona law-enforcement stolen-vehicle records (updated twice a day)</li>}
+ {isArizona && <li>Arizona, Alaska and Chicago police stolen-vehicle records (updated twice a day)</li>}
  </ul>
  
  <h2>Why Verify Vehicles in {stateData.name}?</h2>
@@ -184,7 +184,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Free {stateData.name} License Plate Lookup
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records' : ''}. 
+ Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. 
  Check a {stateData.abbrev} plate before you buy the car. Works for 
  {stateData.majorCities.slice(0, 3).join(', ')} and all of {stateData.name}.
  </p>
@@ -252,7 +252,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">{isArizona ? 'Arizona law-enforcement stolen-vehicle records, updated twice a day' : 'Owner names are never shown'}</span>
+ <span className="text-base">{isArizona ? 'Arizona, Alaska and Chicago police stolen-vehicle records, updated daily' : 'Owner names are never shown'}</span>
  </div>
  </div>
  <DataPartnerBadges variant="compact" />
@@ -388,7 +388,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  {[
  `Enter ${stateData.name} license plate above`,
  isArizona
- ? "We search SafeOrStolen's theft reports, public web results and Arizona law-enforcement stolen-vehicle records"
+ ? "We search SafeOrStolen's theft reports, public web results and Arizona, Alaska and Chicago police stolen-vehicle records"
  : "We search SafeOrStolen's theft reports and public web results",
  "In a few seconds you see the result, with every source listed"
  ].map((step, index) => (
@@ -414,7 +414,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  You get 1 free check, no account needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. 
- Each {stateData.abbrev} plate check searches SafeOrStolen theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records' : ''}.
+ Each {stateData.abbrev} plate check searches SafeOrStolen theft reports and public web results{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="item-1" className="bg-background px-6 rounded-lg">
@@ -440,7 +440,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Does the Arizona plate lookup search police records?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- Yes. Arizona plates and VINs are also searched against Arizona law-enforcement stolen-vehicle records, which are updated twice a day. 
+ Yes. Arizona plates and VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, which are updated daily. 
  It also searches SafeOrStolen theft reports and public web results, and it never shows owner names.
  </AccordionContent>
  </AccordionItem>

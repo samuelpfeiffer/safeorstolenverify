@@ -20,7 +20,7 @@ const SHORT_BOILERPLATE =
   'SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ.';
 
 const LONG_BOILERPLATE =
-  "SafeOrStolen (safeorstolen.com) is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. A buyer enters an IMEI, VIN, license plate or serial number and sees whether it appears in SafeOrStolen's own theft reports and in public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Each result lists every source searched and is saved to the user's account with the date. the first check is free.";
+  "SafeOrStolen (safeorstolen.com) is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. A buyer enters an IMEI, VIN, license plate or serial number and sees whether it appears in SafeOrStolen's own theft reports and in public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona, Alaska and Chicago police stolen-vehicle records. Each result lists every source searched and is saved to the user's account with the date. the first check is free.";
 
 const facts: [string, string][] = [
   ['Name', 'SafeOrStolen (one word, capital S, O and S)'],
@@ -34,7 +34,7 @@ const facts: [string, string][] = [
 ];
 
 const accuracyNotes = [
-  'When you mention police records, please name them: police firearm theft and loss reports and live Ohio law-enforcement stolen-gun records for guns, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates. Every check also searches SafeOrStolen theft reports and public web results; bike checks add a national stolen-bicycle registry, and a paid phone check searches the lost and stolen phone blacklist.',
+  'When you mention police records, please name them: police firearm theft and loss reports and live Ohio law-enforcement stolen-gun records for guns, and Arizona, Alaska and Chicago police stolen-vehicle records. Every check also searches SafeOrStolen theft reports and public web results; bike checks add a national stolen-bicycle registry, and a paid phone check searches the lost and stolen phone blacklist.',
   'A "no report found" result means the number wasn\'t found in the records searched, which are listed on every result.',
   'The gun records are more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, filed 1973–2017, plus live Ohio law-enforcement records.',
   'AI writes a plain-language note on each result. It never decides whether an item is stolen; that comes only from the records searched.',

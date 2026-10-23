@@ -162,7 +162,7 @@ const NICBAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">What It Searches</h3>
-                <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports and public web results. VIN checks also decode the year, make and model and list open recalls, and Arizona VINs are checked against Arizona law-enforcement stolen-vehicle records. NICB VINCheck is a separate free resource you can use alongside it.</p>
+                <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports and public web results. VIN checks also decode the year, make and model and list open recalls, and Arizona VINs are checked against Arizona, Alaska and Chicago police stolen-vehicle records. NICB VINCheck is a separate free resource you can use alongside it.</p>
               </div>
             </div>
           </div>

@@ -25,7 +25,7 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
   {
     item: 'Car, truck or motorcycle',
     number: 'VIN on the dashboard or door jamb',
-    searched: 'Year, make and model, open safety recalls, SafeOrStolen theft reports. Arizona VINs also go against Arizona law-enforcement stolen-vehicle records.',
+    searched: 'Year, make and model, open safety recalls, SafeOrStolen theft reports. Arizona VINs also go against Arizona, Alaska and Chicago police stolen-vehicle records.',
   },
   {
     item: 'License plate',

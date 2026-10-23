@@ -25,7 +25,7 @@ export const EEATSignals = () => {
  {/* Specific domain knowledge, not vague claims */}
  <meta
  name="expertise"
- content="IMEI checks (make and model from the IMEI, SafeOrStolen theft reports, public web results, paid carrier blacklist check), VIN checks (decode, open recalls, theft reports, public web results; Arizona law-enforcement stolen-vehicle records for Arizona VINs), firearm serial checks (police theft and loss reports from 33 states and DC, live Ohio law-enforcement records, altered-serial flag), bicycle checks (a national stolen-bicycle registry)"
+ content="IMEI checks (make and model from the IMEI, SafeOrStolen theft reports, public web results, paid carrier blacklist check), VIN checks (decode, open recalls, theft reports, public web results; Arizona, Alaska and Chicago police stolen-vehicle records), firearm serial checks (police theft and loss reports from 33 states and DC, live Ohio law-enforcement records, altered-serial flag), bicycle checks (a national stolen-bicycle registry)"
  />
 
  {/* ─── Authoritativeness ──────────────────────── */}
@@ -51,7 +51,7 @@ export const EEATSignals = () => {
  {/* ─── Data Sources — Specific, not vague ─────── */}
  <meta
  name="data-sources"
- content="SafeOrStolen theft reports and public web results (every check); police firearm theft and loss reports from 33 states and DC plus live Ohio law-enforcement records (guns); a national stolen-bicycle registry (bikes); IMEI make and model plus a paid carrier blacklist check (phones); VIN decode, open recalls and Arizona law-enforcement stolen-vehicle records (vehicles)"
+ content="SafeOrStolen theft reports and public web results (every check); police firearm theft and loss reports from 33 states and DC plus live Ohio law-enforcement records (guns); a national stolen-bicycle registry (bikes); IMEI make and model plus a paid carrier blacklist check (phones); VIN decode, open recalls and Arizona, Alaska and Chicago police stolen-vehicle records (vehicles)"
  />
 
  {/* ─── Service Scope — factual enumeration ─────── */}

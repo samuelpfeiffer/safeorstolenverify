@@ -30,7 +30,7 @@ const FAQS = [
   {
     question: 'What records does SafeOrStolen search?',
     answer:
-      "Every check searches SafeOrStolen's own theft reports and public web results. Guns also go against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona law-enforcement stolen-vehicle records. Phones can add a paid lost and stolen blacklist check.",
+      "Every check searches SafeOrStolen's own theft reports and public web results. Guns also go against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records. Phones can add a paid lost and stolen blacklist check.",
   },
   {
     question: 'Can SafeOrStolen tell me if a claimed phone was blacklisted?',

@@ -198,7 +198,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>What a check searches</h2>
- <p>SafeOrStolen searches its own stolen-item reports. Firearm checks include Ohio Attorney General stolen-gun records, and bicycle checks include Bike Index. VIN checks decode vehicle details and list recalls. Arizona vehicle checks cover Arizona reports only. The result names what was actually checked. A miss means not found, not safe. Public search links are separate checks you open yourself; they do not connect additional state databases.</p>
+ <p>SafeOrStolen searches its own stolen-item reports. Firearm checks include Ohio Attorney General stolen-gun records, and bicycle checks include Bike Index. VIN checks decode vehicle details and list recalls. Vehicle checks cover police reports in Arizona, Alaska and Chicago. The result names what was actually checked. A miss means not found, not safe. Public search links are separate checks you open yourself; they do not connect additional state databases.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -322,7 +322,7 @@ export const ItemLandingPageTemplate = ({
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.whatIs) }}
   />
- {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Read the sources actually checked on your result. Historical reports are not connected state databases. Arizona vehicle checks cover Arizona reports only. A miss means not found, not safe.</p> : <DataPartnerBadges variant="compact" />}
+ {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Read the sources actually checked on your result. Historical reports are not connected state databases. Vehicle checks cover police reports in Arizona, Alaska and Chicago. A miss means not found, not safe.</p> : <DataPartnerBadges variant="compact" />}
  </div>
  </section>
 

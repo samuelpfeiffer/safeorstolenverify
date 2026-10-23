@@ -4,7 +4,7 @@ import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 /**
  * Oct 8 2026: audited by hand for "vin checker". Companion guide: /how-to-check-if-car-stolen.
  * Honesty rule: SafeOrStolen does NOT search NICB, NMVTIS, NCIC, DMV records, or police
- * databases other than Arizona law-enforcement stolen-vehicle records.
+ * databases other than Arizona, Alaska and Chicago police stolen-vehicle records.
  */
 const VINCheckerPage = () => {
  return (
@@ -30,11 +30,11 @@ const VINCheckerPage = () => {
  content={{
  intro: "Enter a 17-character VIN to check a car, truck, motorcycle or RV. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for the VIN. It also searches state criminal justice stolen-vehicle records live. Results come back in a few seconds. You get 1 free check, no account needed (no card), then $0.99 for 2 checks or $10 a month unlimited. For the full walkthrough, read <a href='/how-to-check-if-car-stolen'>how to check if a car is stolen</a>.",
  whatIs: "A VIN (Vehicle Identification Number) is the 17-character code that identifies a vehicle built since 1981. SafeOrStolen's VIN checker decodes that code so you can confirm the car in front of you is the model the VIN belongs to, lists any open safety recalls, and searches SafeOrStolen's own theft reports (filed by owners on the site) and public web results such as listings and posts that mention the VIN. Use it as the first step in a used-car check, alongside a vehicle history report and a call to your local police non-emergency line.",
- howItWorks: "Type or paste the VIN. SafeOrStolen decodes it, pulls open recalls, searches its own theft reports and the public web for the VIN, and, for Arizona VINs, searches Arizona law-enforcement stolen-vehicle records, which are updated twice a day. The result reads \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date, and you can add a $1.99 verification certificate, a dated record with its own link showing you checked before the sale.",
+ howItWorks: "Type or paste the VIN. SafeOrStolen decodes it, pulls open recalls, searches its own theft reports and the public web for the VIN, and, for Arizona VINs, searches Arizona, Alaska and Chicago police stolen-vehicle records, which are updated daily. The result reads \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date, and you can add a $1.99 verification certificate, a dated record with its own link showing you checked before the sale.",
  whyCheck: "A stolen vehicle can be taken back by police and returned to its owner even after you pay for it, leaving you without the car or your money. Checking before you pay, and keeping a dated record that you checked, protects you as a buyer and lets an honest seller show the car checked clean. Not every theft is reported and no single check covers every database, so also follow the steps in our <a href='/how-to-check-if-car-stolen'>stolen car guide</a> on a big purchase.",
  benefits: [
  "Results in a few seconds: VIN decode, open recalls, SafeOrStolen theft reports and public web listings",
- "Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records",
+ "Arizona VINs also searched against Arizona, Alaska and Chicago police stolen-vehicle records",
  "1 free check, no account or credit card needed",
  "Check by VIN or license plate",
  "Every source searched is listed with the result",
@@ -56,7 +56,7 @@ const VINCheckerPage = () => {
  },
  {
  question: "What does SafeOrStolen check?",
- answer: "A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports and public web results for the VIN. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records."
+ answer: "A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports and public web results for the VIN. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records."
  },
  {
  question: "Is there a free stolen vehicle check?",

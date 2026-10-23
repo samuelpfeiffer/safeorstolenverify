@@ -47,11 +47,11 @@ export const ALL_STATES: StateData[] = [
     capital: 'Phoenix',
     majorCities: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Scottsdale'],
     hasTheftDatabase: true,
-    theftDatabaseName: 'Arizona law-enforcement stolen-vehicle records',
+    theftDatabaseName: 'Arizona, Alaska and Chicago police stolen-vehicle records',
     theftDatabaseUrl: null,
     slug: 'arizona-license-plate-lookup',
     neighboringStates: ['california', 'nevada', 'utah', 'colorado', 'new-mexico'],
-    theftNote: 'Phoenix-area private sales move fast, and cars cross in from California and New Mexico. SafeOrStolen checks Arizona plates and VINs against Arizona law-enforcement stolen-vehicle records, updated twice a day, as well as its own theft reports.'
+    theftNote: 'Phoenix-area private sales move fast, and cars cross in from California and New Mexico. SafeOrStolen checks Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, as well as its own theft reports.'
   },
   {
     name: 'Arkansas',

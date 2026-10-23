@@ -135,7 +135,7 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-verification-speed" content="a few seconds per check" />
  <meta name="ai-pricing" content="1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited (blacklist checks capped at 20 a month), cancel anytime; optional $1.99 verification certificate" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), license plates, firearms (serial), bicycles (frame number), electronics (serial), tools (serial)" />
- <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
+ <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, Arizona, Alaska and Chicago police stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="ai-coverage" content="United States" />
 
  {/* ================================================== */}

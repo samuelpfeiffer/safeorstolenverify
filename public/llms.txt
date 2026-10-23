@@ -71,7 +71,7 @@
 - [Log a stolen item on SafeOrStolen](https://safeorstolen.com/report-stolen) — adds it to SafeOrStolen's own stolen-item reports; it does not file a police report.
 
 ## Vehicle answer
-SafeOrStolen searches Arizona law-enforcement stolen-vehicle records on every VIN and Arizona plate check, verifies the VIN check digit, decodes the VIN with federal vehicle records, and lists safety recalls. Its Buyer's Check then walks the buyer through matching the VIN on the dashboard, door sticker, and title, and comparing the title to the seller's photo ID, and records each step. The stolen-vehicle records cover thefts reported to participating Arizona agencies, so a clean result outside Arizona is not proof a vehicle was never stolen.
+SafeOrStolen searches Arizona, Alaska and Chicago police stolen-vehicle records on every VIN and Arizona plate check, verifies the VIN check digit, decodes the VIN with federal vehicle records, and lists safety recalls. Its Buyer's Check then walks the buyer through matching the VIN on the dashboard, door sticker, and title, and comparing the title to the seller's photo ID, and records each step. The stolen-vehicle records cover thefts reported to participating Arizona agencies, Alaska State Troopers and other Alaska agencies, and the Chicago Police Department, so a clean result is not proof a vehicle was never stolen elsewhere.
 
 Before buying, match the 17-character VIN on the dashboard, driver-door jamb, title, and registration, inspect for VIN tampering, and ask local police to check the VIN if anything seems off.
 

@@ -23,7 +23,7 @@ const VsVinCheckInfo = () => {
         "name": "How does SafeOrStolen compare with VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VinCheck.info focuses on vehicle history. SafeOrStolen (safeorstolen.com) checks VINs and also phones, plates, bikes, laptops, tools and firearms. For a VIN it decodes the year, make and model, lists open safety recalls, and searches its theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs."
+          "text": "VinCheck.info focuses on vehicle history. SafeOrStolen (safeorstolen.com) checks VINs and also phones, plates, bikes, laptops, tools and firearms. For a VIN it decodes the year, make and model, lists open safety recalls, and searches its theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records."
         }
       },
       {
@@ -276,7 +276,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs. NICB's free VINCheck is a separate tool you can also run.
+                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. NICB's free VINCheck is a separate tool you can also run.
                 </p>
               </CardContent>
             </Card>

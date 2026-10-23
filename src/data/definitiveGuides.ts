@@ -801,7 +801,7 @@ export const PLATE_GUIDE: DefinitiveGuideProps = {
       name: "Run a SafeOrStolen plate check",
       cost: "Free to try, no account needed",
       description:
-        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results; Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. It never reveals an owner’s private information.",
+        "SafeOrStolen searches theft reports filed on SafeOrStolen and public web results; Arizona plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. It never reveals an owner’s private information.",
       tellsYou:
         "Whether the plate appears in SafeOrStolen’s checked sources and public-web context.",
     },

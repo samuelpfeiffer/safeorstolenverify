@@ -38,7 +38,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: Data sources for authority */}
  <meta
  name="ai:data_sources"
- content="SafeOrStolen's own theft reports and public web results on every check. Guns: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Bikes: a national stolen-bicycle registry. Phones: make and model from the IMEI, with a paid carrier blacklist check. Vehicles: VIN decode, open recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates."
+ content="SafeOrStolen's own theft reports and public web results on every check. Guns: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Bikes: a national stolen-bicycle registry. Phones: make and model from the IMEI, with a paid carrier blacklist check. Vehicles: VIN decode, open recalls, and Arizona, Alaska and Chicago police stolen-vehicle records."
  />
 
  {/* GEO: User segments */}

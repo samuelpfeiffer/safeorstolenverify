@@ -23,7 +23,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 
 const QUICK_ANSWER =
-  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports and public web results for that plate, and Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records. Your first check is free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
+  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports and public web results for that plate, and Arizona plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
 
 const CAN_CANT_ROWS: [string, string, string][] = [
   ['Is the plate reported stolen?', 'Yes, in the records searched', 'SafeOrStolen theft reports and public web results; Arizona plates also against Arizona law-enforcement records'],
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: 'Is there a free license plate lookup?',
     answer:
-      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 2 free plate checks with no account or credit card needed. Each check searches SafeOrStolen's theft reports and public web results for the plate, plus Arizona law-enforcement stolen-vehicle records for Arizona plates. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks.",
+      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 2 free plate checks with no account or credit card needed. Each check searches SafeOrStolen's theft reports and public web results for the plate, plus Arizona, Alaska and Chicago police stolen-vehicle records for Arizona plates. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks.",
   },
   {
     question: 'Can I find out who owns a car from the license plate?',

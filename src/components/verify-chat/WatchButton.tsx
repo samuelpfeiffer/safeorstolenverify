@@ -16,8 +16,8 @@ interface WatchButtonProps {
 }
 
 const WHAT: Record<WatchButtonProps['itemType'], string> = {
-  vehicle: 'Arizona police stolen-vehicle records',
-  plate: 'Arizona police stolen-vehicle records',
+  vehicle: 'Arizona, Alaska and Chicago police stolen-vehicle records',
+  plate: 'Arizona, Alaska and Chicago police stolen-vehicle records',
   firearm: 'Ohio police stolen-gun records',
   bicycle: 'a national stolen-bicycle registry',
 };

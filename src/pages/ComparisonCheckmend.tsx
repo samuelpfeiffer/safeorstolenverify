@@ -164,7 +164,7 @@ const ComparisonCheckmend = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Vehicles (VIN)</td>
-                        <td className="py-3 px-4">Year, make, model and open recalls; Arizona VINs also against Arizona law-enforcement stolen-vehicle records</td>
+                        <td className="py-3 px-4">Year, make, model and open recalls; Arizona VINs also against Arizona, Alaska and Chicago police stolen-vehicle records</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Guns</td>
@@ -176,7 +176,7 @@ const ComparisonCheckmend = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Plates</td>
-                        <td className="py-3 px-4">Arizona plates also against Arizona law-enforcement stolen-vehicle records</td>
+                        <td className="py-3 px-4">Arizona plates also against Arizona, Alaska and Chicago police stolen-vehicle records</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>

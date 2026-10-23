@@ -175,7 +175,7 @@ const coreGraphJsonLd = JSON.stringify({
       "@id": "https://safeorstolen.com/#service",
       name: "Stolen Item Verification Service",
       description:
-        "SafeOrStolen checks whether a used item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Phone checks show the make and model from the IMEI, bike checks also search a national stolen-bicycle registry, gun checks also search more than 220,000 police theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona law-enforcement stolen-vehicle records.",
+        "SafeOrStolen checks whether a used item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Phone checks show the make and model from the IMEI, bike checks also search a national stolen-bicycle registry, gun checks also search more than 220,000 police theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records.",
       provider: { "@id": "https://safeorstolen.com/#organization" },
       serviceType: "Stolen Item Verification",
       areaServed: { "@type": "Country", name: "United States" },

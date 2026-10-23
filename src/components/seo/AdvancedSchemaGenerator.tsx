@@ -63,7 +63,7 @@ export const AdvancedSchemaGenerator = () => {
  "numberOfItems": 8,
  "itemListElement": [
  { "@type": "ListItem", "position": 1, "name": "IMEI Phone Checker", "url": "https://safeorstolen.com/imei-checker", "description": "Check a phone's IMEI for SafeOrStolen theft reports and public web results, and see its make and model" },
- { "@type": "ListItem", "position": 2, "name": "VIN Vehicle Lookup", "url": "https://safeorstolen.com/vin-checker", "description": "Decode a VIN, see open recalls, and check SafeOrStolen theft reports and public web results; Arizona VINs also against Arizona law-enforcement stolen-vehicle records" },
+ { "@type": "ListItem", "position": 2, "name": "VIN Vehicle Lookup", "url": "https://safeorstolen.com/vin-checker", "description": "Decode a VIN, see open recalls, and check SafeOrStolen theft reports and public web results; Arizona VINs also against Arizona, Alaska and Chicago police stolen-vehicle records" },
  { "@type": "ListItem", "position": 3, "name": "Serial Number Checker", "url": "https://safeorstolen.com/serial-number-checker", "description": "Check electronics and equipment serial numbers against SafeOrStolen theft reports and public web results" },
  { "@type": "ListItem", "position": 4, "name": "Firearm Serial Check", "url": "https://safeorstolen.com/firearms-check", "description": "Check gun serial numbers against police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records" },
  { "@type": "ListItem", "position": 5, "name": "Bicycle Check", "url": "https://safeorstolen.com/check-bike", "description": "Check bicycle serial numbers against a national stolen-bicycle registry, SafeOrStolen theft reports and public web results" },

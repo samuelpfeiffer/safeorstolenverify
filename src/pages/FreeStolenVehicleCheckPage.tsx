@@ -40,11 +40,11 @@ const FreeStolenVehicleCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to see if a car is stolen by VIN?",
- answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search SafeOrStolen's own theft reports and public web results, decode the year, make and model, and see open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records. Results come back in a few seconds."
+ answer: "Yes. SafeOrStolen offers 2 free VIN checks. Enter any 17-character VIN to search SafeOrStolen's own theft reports and public web results, decode the year, make and model, and see open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Results come back in a few seconds."
  },
  {
  question: "Can I check a stolen vehicle by license plate only?",
- answer: "Yes. A plate check searches SafeOrStolen theft reports and public web results, and Arizona plates are also searched against Arizona law-enforcement stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
+ answer: "Yes. A plate check searches SafeOrStolen theft reports and public web results, and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
  },
  {
  question: "Will this tell me the owner's name and address?",
@@ -208,7 +208,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter details into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. SafeOrStolen searches its own theft reports and public web results, decodes the VIN and lists open safety recalls. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records.
+ Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. SafeOrStolen searches its own theft reports and public web results, decodes the VIN and lists open safety recalls. Arizona VINs and plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records.
  </p>
  </div>
  </div>
@@ -252,7 +252,7 @@ const FreeStolenVehicleCheckPage = () => {
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates
+ Arizona, Alaska and Chicago police stolen-vehicle records
  </li>
  </ul>
  </div>

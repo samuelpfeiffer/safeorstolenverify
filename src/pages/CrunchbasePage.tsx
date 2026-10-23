@@ -51,7 +51,7 @@ const faqs = [
   {
     question: 'What records does SafeOrStolen search?',
     answer:
-      "Every check searches SafeOrStolen's theft reports and public web results. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, and the paid phone check searches the lost and stolen phone blacklist.",
+      "Every check searches SafeOrStolen's theft reports and public web results. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, and the paid phone check searches the lost and stolen phone blacklist.",
   },
   {
     question: 'Does SafeOrStolen work for businesses?',

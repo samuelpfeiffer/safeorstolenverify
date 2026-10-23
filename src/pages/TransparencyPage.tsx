@@ -16,7 +16,7 @@ const DO_DONT: { claim: string; answer: string }[] = [
   { claim: 'Searches its own theft reports and public web results on every check', answer: 'Yes' },
   { claim: 'Searches police firearm theft and loss reports (33 states and DC) and live Ohio records for guns', answer: 'Yes' },
   { claim: 'Searches a national stolen-bicycle registry for bikes', answer: 'Yes' },
-  { claim: 'Searches Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates', answer: 'Yes' },
+  { claim: 'Searches Arizona, Alaska and Chicago police stolen-vehicle records', answer: 'Yes' },
   { claim: 'Searches the carrier lost/stolen blacklist for phones', answer: 'On a paid blacklist check only' },
   { claim: 'Decodes VINs and lists open safety recalls for vehicles', answer: 'Yes' },
   { claim: 'Shows the owner of a license plate', answer: 'No, never' },

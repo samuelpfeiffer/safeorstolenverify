@@ -656,7 +656,7 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen's motorcycle check search?",
       answer:
-        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
+        "SafeOrStolen's vehicle check searches Arizona, Alaska and Chicago police stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -732,7 +732,7 @@ export const TRAILER_ATV_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen's check search for trailers and off-road vehicles?",
       answer:
-        "SafeOrStolen's vehicle check searches Arizona law-enforcement stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
+        "SafeOrStolen's vehicle check searches Arizona, Alaska and Chicago police stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [

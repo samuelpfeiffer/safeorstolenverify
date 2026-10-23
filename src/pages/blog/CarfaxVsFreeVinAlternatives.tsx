@@ -18,7 +18,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "Is there a free alternative to Carfax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For a theft check, yes. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and searches its own theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs. It is not a full vehicle-history report with accidents and service records."
+          "text": "For a theft check, yes. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and searches its own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It is not a full vehicle-history report with accidents and service records."
         }
       },
       {
@@ -26,7 +26,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "What's the difference between Carfax and SafeOrStolen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Carfax sells vehicle history reports covering reported accidents, service records and ownership. SafeOrStolen checks whether a VIN shows up in theft reports: its own owner reports, public web results and, for Arizona VINs, Arizona law-enforcement stolen-vehicle records. Many buyers use both: a theft check first, then a paid history report on the car they are serious about."
+          "text": "Carfax sells vehicle history reports covering reported accidents, service records and ownership. SafeOrStolen checks whether a VIN shows up in theft reports: its own owner reports, public web results and, for Arizona VINs, Arizona, Alaska and Chicago police stolen-vehicle records. Many buyers use both: a theft check first, then a paid history report on the car they are serious about."
         }
       },
       {
@@ -34,7 +34,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "How can I check if a car is stolen for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run the VIN through NICB VINCheck, which is free, and through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports and public web results, and Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
+          "text": "Run the VIN through NICB VINCheck, which is free, and through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports and public web results, and Arizona VINs are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
         }
       }
     ]
@@ -255,7 +255,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             <ul>
               <li>a search of theft reports owners have filed on SafeOrStolen</li>
               <li>public web results that mention the VIN</li>
-              <li>Arizona law-enforcement stolen-vehicle records, for Arizona VINs (updated twice a day)</li>
+              <li>Arizona, Alaska and Chicago police stolen-vehicle records, for Arizona VINs (updated twice a day)</li>
               <li>the year, make and model, and any open safety recalls</li>
             </ul>
             <p>Every result lists each source it searched, and the check is saved to your account with the date.</p>

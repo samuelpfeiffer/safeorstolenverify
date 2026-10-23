@@ -18,7 +18,7 @@ const COVERS: string[][] = [
   ['Open safety recalls', 'Yes'],
   ['SafeOrStolen theft reports', 'Yes'],
   ['Public web results that mention the VIN', 'Yes'],
-  ['Arizona law-enforcement stolen-vehicle records', 'Yes, for Arizona VINs and plates (updated twice a day)'],
+  ['Arizona, Alaska and Chicago police stolen-vehicle records', 'Yes, for Arizona VINs and plates (updated twice a day)'],
   ['A dated record of every check, with the sources searched', 'Yes'],
 ];
 
@@ -94,7 +94,7 @@ export default function ForDealers() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Run every trade-in and auction buy through a VIN check before you cut a check. SafeOrStolen decodes the year,
               make and model, lists open safety recalls, and searches its theft reports and public web results for the VIN.
-              Arizona VINs are also checked against Arizona law-enforcement stolen-vehicle records. Pair it with your usual
+              Arizona VINs are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Pair it with your usual
               history report for title brands, odometer and liens.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">

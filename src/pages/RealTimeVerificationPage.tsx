@@ -29,7 +29,7 @@ const FRESHNESS: { source: string; usedFor: string; howCurrent: string }[] = [
  howCurrent: 'Live.',
  },
  {
- source: 'Arizona law-enforcement stolen-vehicle records',
+ source: 'Arizona, Alaska and Chicago police stolen-vehicle records',
  usedFor: 'Arizona VINs and plates',
  howCurrent: 'Updated twice a day.',
  },

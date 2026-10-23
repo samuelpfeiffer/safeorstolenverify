@@ -89,7 +89,7 @@ const ProductHuntPage = () => (
             Every check searches SafeOrStolen's own theft reports and public web results that mention the number.
             Guns add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed
             1973–2017) and live Ohio law-enforcement stolen-gun records. Bikes add a national
-            stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records.
+            stolen-bicycle registry. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records.
           </p>
           <p className="text-muted-foreground">
             Vehicle checks also decode the VIN and show open safety recalls, and a paid phone check searches the lost

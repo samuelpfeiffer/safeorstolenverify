@@ -21,7 +21,7 @@ const sourcesByItem = [
   },
   {
     item: 'Vehicles (VIN)',
-    searched: 'Year, make and model decoded from the VIN, plus open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.',
+    searched: 'Year, make and model decoded from the VIN, plus open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.',
   },
   {
     item: 'License plates',
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'Does SafeOrStolen search police records?',
-    a: "Yes. SafeOrStolen is a private company, and it searches specific police records named on each result: police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement stolen-gun records, and Arizona law-enforcement stolen-vehicle records. Every check also searches its own theft reports and public web results.",
+    a: "Yes. SafeOrStolen is a private company, and it searches specific police records named on each result: police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement stolen-gun records, and Arizona, Alaska and Chicago police stolen-vehicle records. Every check also searches its own theft reports and public web results.",
   },
   {
     q: "Does 'no report found' mean an item is safe to buy?",

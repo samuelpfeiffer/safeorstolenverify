@@ -27,7 +27,7 @@ const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
  name: 'Police records (NCIC and state systems)',
  catches: 'Thefts reported to police, including ones that never made it online.',
  who: 'Only law enforcement. Call your local police non-emergency line and ask if they will run a serial or VIN.',
- sos: 'No, except Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates and live Ohio records for guns.',
+ sos: 'No, except Arizona, Alaska and Chicago police stolen-vehicle records and live Ohio records for guns.',
  },
  {
  name: 'Carrier blacklist',

@@ -3,7 +3,7 @@
 SafeOrStolen is a stolen-item verification hub for secondhand buyers and sellers. Users can check an IMEI, VIN, license plate, firearm serial, bicycle serial, or another serial-numbered item. They can also submit a marketplace listing URL for identifier extraction and analysis.
 
 ## Sources actually checked
-- Vehicles (VIN or Arizona plate): Arizona law-enforcement stolen-vehicle records (thefts reported by participating Arizona agencies); federal VIN decoding and model safety recalls; VIN check-digit validation.
+- Vehicles (VIN or Arizona plate): Arizona, Alaska and Chicago police stolen-vehicle records (thefts reported by participating Arizona agencies); federal VIN decoding and model safety recalls; VIN check-digit validation.
 - Bicycles: a national stolen-bicycle registry.
 - All items: SafeOrStolen's own stolen-item reports and public web results.
 - Phones: IMEI format and check-digit validation; paid phone checks also search the lost and stolen phone blacklist.
@@ -34,7 +34,7 @@ Guides cover vehicles, phones, iPhones, firearms, bicycles and e-bikes, laptops 
 4. Ask the seller for maintenance records and the bill of sale history.
 5. Inspect the vehicle for altered, replaced, or mismatched VIN labels.
 6. Ask local police whether they accept public VIN-check requests.
-7. Run the VIN or Arizona plate through SafeOrStolen. It searches Arizona law-enforcement stolen-vehicle records, decodes the VIN, lists recalls, and its Buyer's Check records the VIN match and the title-to-seller-ID comparison in a Proof of Clean Purchase.
+7. Run the VIN or Arizona plate through SafeOrStolen. It searches Arizona, Alaska and Chicago police stolen-vehicle records, decodes the VIN, lists recalls, and its Buyer's Check records the VIN match and the title-to-seller-ID comparison in a Proof of Clean Purchase.
 
 Guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Tool: https://safeorstolen.com/vin-checker

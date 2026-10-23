@@ -180,7 +180,7 @@ const StolenVerificationAppGuide = () => {
                     <li>Public web results: listings and posts mentioning the number</li>
                     <li>Guns: more than 220,000 police theft and loss reports from 33 states and DC, plus live Ohio records</li>
                     <li>Bikes: a national stolen-bicycle registry</li>
-                    <li>Arizona VINs and plates: Arizona law-enforcement stolen-vehicle records</li>
+                    <li>Arizona VINs and plates: Arizona, Alaska and Chicago police stolen-vehicle records</li>
                     <li>Phones: make and model; carrier blacklist on a paid check</li>
                   </ul>
                 </div>

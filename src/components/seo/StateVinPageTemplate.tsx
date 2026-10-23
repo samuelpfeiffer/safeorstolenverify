@@ -50,7 +50,7 @@ export const StateVinPageTemplate = ({
  // Combine all FAQs for schema
  const isArizona = stateCode === 'AZ';
  const checkSummary = isArizona
- ? 'SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports, public web results and Arizona law-enforcement stolen-vehicle records (updated twice a day). Results take a few seconds.'
+ ? 'SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports, public web results and Arizona, Alaska and Chicago police stolen-vehicle records (updated twice a day). Results take a few seconds.'
  : 'SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web results. Results take a few seconds.';
 
  const allFaqs = [
@@ -150,7 +150,7 @@ export const StateVinPageTemplate = ({
  <li>SafeOrStolen theft reports filed by owners</li>
  <li>Public web results that mention the VIN</li>
  <li>VIN decode (year, make, model) and open safety recalls</li>
- {isArizona && <li>Arizona law-enforcement stolen-vehicle records</li>}
+ {isArizona && <li>Arizona, Alaska and Chicago police stolen-vehicle records</li>}
  </ul>
  
  <h2>Top Cities for Vehicle Theft in {state}</h2>

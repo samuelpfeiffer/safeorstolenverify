@@ -15,7 +15,7 @@ export const DomainAuthorityBooster: React.FC = () => {
  <meta name="article-section" content="Stolen Item Verification" />
  
  {/* Authority signals — verifiable claims only */}
- <meta name="data-sources" content="SafeOrStolen theft reports and public web results on every check; for guns, police firearm theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; for bikes, a national stolen-bicycle registry; for Arizona VINs and plates, Arizona law-enforcement stolen-vehicle records; for phones, an optional paid carrier blacklist check" />
+ <meta name="data-sources" content="SafeOrStolen theft reports and public web results on every check; for guns, police firearm theft and loss reports from 33 states and DC plus live Ohio law-enforcement records; for bikes, a national stolen-bicycle registry; for Arizona VINs and plates, Arizona, Alaska and Chicago police stolen-vehicle records; for phones, an optional paid carrier blacklist check" />
  <meta name="verification-method" content="Each check searches the listed sources and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched" />
  
  {/* Content freshness */}

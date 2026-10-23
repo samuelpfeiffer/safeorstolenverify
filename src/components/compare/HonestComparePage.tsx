@@ -30,7 +30,7 @@ export const COMPARES: Record<string, HonestCompare> = {
     rows: [
       { label: 'Price', us: SOS_PRICE, them: 'Free to use.' },
       { label: 'Item types', us: 'Vehicles (VIN and Arizona plates), phones, guns, bikes, and other serial-numbered items.', them: 'Vehicles only (by VIN). No phones, guns or serial numbers.' },
-      { label: 'What it searches', us: "SafeOrStolen's own stolen-item reports, Arizona law-enforcement stolen-vehicle records (TheftAZ), and NHTSA VIN decode and recalls for vehicles.", them: "NICB's records of unrecovered vehicle thefts and total-loss vehicles reported by participating insurers." },
+      { label: 'What it searches', us: "SafeOrStolen's own stolen-item reports, Arizona, Alaska and Chicago police stolen-vehicle records (TheftAZ), and NHTSA VIN decode and recalls for vehicles.", them: "NICB's records of unrecovered vehicle thefts and total-loss vehicles reported by participating insurers." },
       { label: 'Does SafeOrStolen query it?', us: 'No. We link to VINCheck so you can run it yourself.', them: '—' },
     ],
     useBoth: 'For a used car, run both: NICB VINCheck for its insurance-reported theft records, and SafeOrStolen for Arizona police records, our own reports, and recalls. If either shows a theft record, do not buy and contact local police.',
@@ -74,13 +74,13 @@ export const COMPARES: Record<string, HonestCompare> = {
     themUrl: '',
     rows: [
       { label: 'Price', us: SOS_PRICE, them: 'Free, when a department agrees to run a check.' },
-      { label: 'What it searches', us: "A 2017 multi-state file of police gun theft and loss reports, live Ohio Attorney General stolen-gun records, Arizona law-enforcement stolen-vehicle records (TheftAZ), the Bike Index registry for bikes, and SafeOrStolen's own reports.", them: 'State or local records, depending on the department.' },
+      { label: 'What it searches', us: "A 2017 multi-state file of police gun theft and loss reports, live Ohio Attorney General stolen-gun records, Arizona, Alaska and Chicago police stolen-vehicle records (TheftAZ), the Bike Index registry for bikes, and SafeOrStolen's own reports.", them: 'State or local records, depending on the department.' },
       { label: 'Availability', us: 'Online, any time. Results in seconds.', them: 'Depends on the department. Many will not run checks for private buyers.' },
     ],
     useBoth: 'Run a SafeOrStolen check first. It is fast and shows exactly what was searched. If you still have doubts, or the item is a gun or a car, ask your local police on their non-emergency line whether they will run it. If anything shows as stolen, do not buy, do not confront the seller, and contact police.',
     faqs: [
       { q: 'Will police check a serial number for me?', a: 'Some departments will, when their policy allows. Call the non-emergency line and ask.' },
-      { q: 'Which police records does SafeOrStolen search?', a: 'A 2017 multi-state file of police gun theft and loss reports, live Ohio Attorney General stolen-gun records, and Arizona law-enforcement stolen-vehicle records, plus our own reports.' },
+      { q: 'Which police records does SafeOrStolen search?', a: 'A 2017 multi-state file of police gun theft and loss reports, live Ohio Attorney General stolen-gun records, and Arizona, Alaska and Chicago police stolen-vehicle records, plus our own reports.' },
       { q: 'What does SafeOrStolen cost?', a: SOS_PRICE },
       { q: 'What does it mean if nothing is found?', a: 'No record found means the item was not found in the sources searched. It does not mean the item is safe or not stolen.' },
     ],

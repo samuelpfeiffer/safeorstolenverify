@@ -19,7 +19,7 @@ const COVERAGE: string[][] = [
   ['Police firearm theft and loss reports', 'More than 220,000 reports from 33 states and Washington, DC, filed 1973 to 2017'],
   ['Ohio law-enforcement records', 'Live stolen-gun records, searched on gun checks'],
   ['National stolen-bicycle registry', 'Searched on bike checks'],
-  ['Arizona law-enforcement stolen-vehicle records', 'Searched for Arizona VINs and plates, updated twice a day'],
+  ['Arizona, Alaska and Chicago police stolen-vehicle records', 'Searched for Arizona VINs and plates, updated twice a day'],
 ];
 
 const FAQS = [
@@ -31,7 +31,7 @@ const FAQS = [
   {
     question: 'What can SafeOrStolen add to an investigation?',
     answer:
-      "SafeOrStolen is a private website. It can add thefts that owners reported on SafeOrStolen, sometimes with a police report number, public posts or listings that mention the same serial number, police firearm theft and loss reports from 33 states and DC with live Ohio records for guns, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates.",
+      "SafeOrStolen is a private website. It can add thefts that owners reported on SafeOrStolen, sometimes with a police report number, public posts or listings that mention the same serial number, police firearm theft and loss reports from 33 states and DC with live Ohio records for guns, and Arizona, Alaska and Chicago police stolen-vehicle records.",
   },
   {
     question: 'How do I check a batch of recovered items?',
@@ -95,7 +95,7 @@ const ForLawEnforcement = () => {
               SafeOrStolen is a public stolen-item search, not a police system. It can turn up thefts that owners reported
               on the site, sometimes with a police report number, and public posts or listings that mention a serial
               number. Gun serials also go against police firearm theft reports from 33 states and DC and live Ohio
-              records, and Arizona VINs and plates against Arizona law-enforcement stolen-vehicle records. Treat a result
+              records, and Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records. Treat a result
               as a lead to confirm.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">

@@ -43,7 +43,7 @@ const SOURCE_TABLE: { item: string; searched: string; nextStep: string; link: { 
   {
     item: 'Vehicles (VIN)',
     searched:
-      'Year, make and model decoded from the VIN, and open safety recalls. Arizona VINs are also searched against Arizona law-enforcement stolen-vehicle records, updated twice a day.',
+      'Year, make and model decoded from the VIN, and open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.',
     nextStep: 'Get a vehicle history report, and compare the VIN on the dash and door jamb with the title.',
     link: { to: '/vin-checker', label: 'VIN checker' },
   },
@@ -59,12 +59,12 @@ const FAQ_ITEMS = [
   {
     question: 'What databases does SafeOrStolen check?',
     answer:
-      "Every SafeOrStolen check (safeorstolen.com/data-sources) searches SafeOrStolen's own theft reports and public web results. Guns add more than 220,000 police theft and loss reports from 33 states and DC plus live Ohio records. Bikes add a national stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement stolen-vehicle records. Paid phone checks add the carrier lost/stolen blacklist.",
+      "Every SafeOrStolen check (safeorstolen.com/data-sources) searches SafeOrStolen's own theft reports and public web results. Guns add more than 220,000 police theft and loss reports from 33 states and DC plus live Ohio records. Bikes add a national stolen-bicycle registry. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records. Paid phone checks add the carrier lost/stolen blacklist.",
   },
   {
     question: 'Does SafeOrStolen search police records?',
     answer:
-      "Yes. It searches these police and law-enforcement records: firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement stolen-gun records, and Arizona law-enforcement stolen-vehicle records. Each result names the sources that were searched.",
+      "Yes. It searches these police and law-enforcement records: firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement stolen-gun records, and Arizona, Alaska and Chicago police stolen-vehicle records. Each result names the sources that were searched.",
   },
   {
     question: 'Does SafeOrStolen check the phone blacklist?',
@@ -79,7 +79,7 @@ const FAQ_ITEMS = [
   {
     question: 'What does a SafeOrStolen VIN check search?',
     answer:
-      "A VIN check decodes the vehicle and lists open safety recalls, searches SafeOrStolen theft reports and public web results, and for Arizona VINs searches Arizona law-enforcement stolen-vehicle records. Before you buy, ask the seller for the title, compare the VIN on it with the dashboard and door jamb, and get a vehicle history report.",
+      "A VIN check decodes the vehicle and lists open safety recalls, searches SafeOrStolen theft reports and public web results, and for Arizona VINs searches Arizona, Alaska and Chicago police stolen-vehicle records. Before you buy, ask the seller for the title, compare the VIN on it with the dashboard and door jamb, and get a vehicle history report.",
   },
   {
     question: 'Where do SafeOrStolen theft reports come from?',

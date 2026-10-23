@@ -51,7 +51,7 @@ const ComparisonSwappa = () => {
  {
  value: 'car',
  q: "Can Swappa check if a car or bike is stolen?",
- a: "No. Swappa deals in phones and tech. SafeOrStolen checks vehicles by VIN (year, make and model, open recalls, and Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates), guns (police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records), and bikes (a national stolen-bicycle registry).",
+ a: "No. Swappa deals in phones and tech. SafeOrStolen checks vehicles by VIN (year, make and model, open recalls, and Arizona, Alaska and Chicago police stolen-vehicle records), guns (police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records), and bikes (a national stolen-bicycle registry).",
  },
  {
  value: 'free',
@@ -361,7 +361,7 @@ const ComparisonSwappa = () => {
  <li>Phones: make and model from the IMEI; paid carrier blacklist check available</li>
  <li>Bikes: a national stolen-bicycle registry</li>
  <li>Guns: police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records</li>
- <li>Arizona VINs and plates: Arizona law-enforcement stolen-vehicle records</li>
+ <li>Arizona VINs and plates: Arizona, Alaska and Chicago police stolen-vehicle records</li>
  </ul>
  </CardContent>
  </Card>

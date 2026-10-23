@@ -411,7 +411,7 @@ const StolenDatabasePage = () => {
  <tr className="border-b"><td className="p-3">Public web results mentioning the number</td><td className="p-3">No</td><td className="p-3">Yes</td></tr>
  <tr className="border-b"><td className="p-3">Police gun theft and loss reports (33 states and DC) and live Ohio records</td><td className="p-3">No</td><td className="p-3">Guns</td></tr>
  <tr className="border-b"><td className="p-3">National stolen-bicycle registry</td><td className="p-3">No</td><td className="p-3">Bikes</td></tr>
- <tr className="border-b"><td className="p-3">Arizona law-enforcement stolen-vehicle records</td><td className="p-3">No</td><td className="p-3">Arizona VINs and plates</td></tr>
+ <tr className="border-b"><td className="p-3">Arizona, Alaska and Chicago police stolen-vehicle records</td><td className="p-3">No</td><td className="p-3">Arizona VINs and plates</td></tr>
  <tr className="border-b"><td className="p-3">Carrier lost/stolen phone blacklist</td><td className="p-3">No</td><td className="p-3">Paid phone checks</td></tr>
  </tbody>
  </table>

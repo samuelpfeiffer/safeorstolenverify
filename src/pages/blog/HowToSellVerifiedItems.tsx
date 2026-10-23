@@ -203,7 +203,7 @@ const HowToSellVerifiedItems = () => {
               web results. Bicycle checks add a national stolen-bicycle registry,
               firearm checks add police theft and loss reports from 33 states and
               Washington, DC, plus live Ohio law-enforcement records, and Arizona
-              VINs add Arizona law-enforcement stolen-vehicle records. Phone checks
+              VINs add Arizona, Alaska and Chicago police stolen-vehicle records. Phone checks
               show the make and model, and a paid carrier blacklist check is
               available. The record
               is not a legal document, ownership proof, or guarantee.

@@ -310,7 +310,7 @@ const TopStolenItemCheckers = () => {
                     <li>• Guns: flags serials that look altered or obliterated</li>
                     <li>• Bikes: a national stolen-bicycle registry</li>
                     <li>• Phones: make and model from the IMEI, plus a paid carrier blacklist check</li>
-                    <li>• Vehicles: VIN decode and open safety recalls; Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates</li>
+                    <li>• Vehicles: VIN decode and open safety recalls; Arizona, Alaska and Chicago police stolen-vehicle records</li>
                   </ul>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">

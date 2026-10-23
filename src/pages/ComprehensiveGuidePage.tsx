@@ -47,7 +47,7 @@ const GROUPS: { heading: string; anchor: string; note: string; rows: Row[] }[] =
  heading: 'Vehicles, trailers and boats',
  anchor: 'vehicles',
  note:
- 'A VIN check decodes the year, make and model and lists open safety recalls, so you can see if the VIN belongs to the vehicle in front of you. Arizona VINs and plates are also searched against Arizona law-enforcement stolen-vehicle records. It does not show title, lien or accident history.',
+ 'A VIN check decodes the year, make and model and lists open safety recalls, so you can see if the VIN belongs to the vehicle in front of you. Arizona VINs and plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records. It does not show title, lien or accident history.',
  rows: [
  { item: 'Car or truck', id: 'VIN (17 characters)', onItem: 'Bottom of the windshield on the driver\'s side, and the sticker on the driver\'s door jamb', elsewhere: 'Title, registration and insurance card', check: 'VIN check', href: '/vin-checker' },
  { item: 'Motorcycle', id: 'VIN (17 characters)', onItem: 'Stamped on the steering head (the neck of the frame), often with a sticker on the frame too', elsewhere: 'Title and registration', check: 'Motorcycle VIN check', href: '/check-motorcycle-stolen-vin' },

@@ -76,7 +76,7 @@ function GuidePage() {
         whatIs:
           "An ATV or trailer VIN check looks up the frame number in records of reported thefts and confirms what the machine is. Off-road vehicles and trailers often change hands for cash with little or no paperwork, so the frame number is usually the only link back to the owner. For a road motorcycle, see the <a href=\"/check-motorcycle-stolen-vin\">motorcycle VIN check</a>.",
         howItWorks:
-          "Enter the VIN. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the VIN, such as old listings or stolen-equipment posts. For a standard 17-character VIN it also decodes the year, make and model where the VIN can be decoded. Arizona VINs are searched against Arizona law-enforcement stolen-vehicle records too. For title or registration questions, contact your state motor vehicle agency.",
+          "Enter the VIN. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the VIN, such as old listings or stolen-equipment posts. For a standard 17-character VIN it also decodes the year, make and model where the VIN can be decoded. Arizona VINs are searched against Arizona, Alaska and Chicago police stolen-vehicle records too. For title or registration questions, contact your state motor vehicle agency.",
         whyCheck:
           "ATVs, side-by-sides and trailers are easy to load or hitch up and drive away, and many sit outside on farms, job sites and driveways. If a stolen machine is recovered from you, it goes back to the owner and you usually lose your money. A frame-number check and a look at the paperwork take ten minutes.",
         benefits: [

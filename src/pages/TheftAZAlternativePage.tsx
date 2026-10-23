@@ -6,7 +6,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 /**
  * Oct 8 2026: audited by hand for "theftaz alternative". TheftAZ is the topic of this page
  * (the Arizona Attorney General's free stolen-vehicle search). Do not claim SafeOrStolen
- * uses it; describe SafeOrStolen's source as "Arizona law-enforcement stolen-vehicle records".
+ * uses it; describe SafeOrStolen's source as "Arizona, Alaska and Chicago police stolen-vehicle records".
  * Do not add NICB, NCIC, insurance, "50 state", or native-app claims.
  */
 
@@ -17,7 +17,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is SafeOrStolen a replacement for TheftAZ?',
-    a: "It covers the same ground and more. A SafeOrStolen check (safeorstolen.com/theftaz-alternative) searches Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates, plus SafeOrStolen's own theft reports and public web listings. VIN checks also decode the year, make and model and list open recalls, and every check is saved to your account with the date.",
+    a: "It covers the same ground and more. A SafeOrStolen check (safeorstolen.com/theftaz-alternative) searches Arizona, Alaska and Chicago police stolen-vehicle records, plus SafeOrStolen's own theft reports and public web listings. VIN checks also decode the year, make and model and list open recalls, and every check is saved to your account with the date.",
   },
   {
     q: 'Can I still use TheftAZ directly?',
@@ -34,7 +34,7 @@ const FAQS: { q: string; a: string }[] = [
 ];
 
 const ROWS: [string, boolean | string, boolean | string][] = [
-  ['Arizona law-enforcement stolen-vehicle records', true, true],
+  ['Arizona, Alaska and Chicago police stolen-vehicle records', true, true],
   ['Search by VIN or Arizona plate', true, true],
   ['Theft reports filed by owners on SafeOrStolen', false, true],
   ['Public web listings and posts that mention the VIN', false, true],
@@ -70,7 +70,7 @@ const TheftAZAlternativePage = () => {
     <>
       <PageSEO
         title="TheftAZ Alternative: Arizona Stolen Car Check | SafeOrStolen"
-        description="How TheftAZ compares with SafeOrStolen: Arizona law-enforcement stolen-vehicle records, plus a VIN decode, open recalls, web listings and a saved record."
+        description="How TheftAZ compares with SafeOrStolen: Arizona, Alaska and Chicago police stolen-vehicle records, plus a VIN decode, open recalls, web listings and a saved record."
         canonical="/theftaz-alternative"
         structuredData={[faqSchema]}
       />
@@ -80,7 +80,7 @@ const TheftAZAlternativePage = () => {
             <h1 className="text-4xl md:text-5xl font-black mb-4">A TheftAZ alternative that does the rest of the car check</h1>
             <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
               TheftAZ is the Arizona Attorney General's free search of vehicles reported stolen to Arizona police.
-              SafeOrStolen also searches Arizona law-enforcement stolen-vehicle records for Arizona VINs and plates, and in
+              SafeOrStolen also searches Arizona, Alaska and Chicago police stolen-vehicle records, and in
               the same search decodes the VIN, lists open recalls, and checks owner theft reports and online listings.
             </p>
           </div>

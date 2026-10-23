@@ -56,7 +56,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",
-            answer: "You can run a check from anywhere. Every check searches SafeOrStolen theft reports and public web results. Some extra sources are state-specific: Arizona VINs and plates are also checked against Arizona law-enforcement stolen-vehicle records, and gun checks include police reports from 33 states and Washington, DC."
+            answer: "You can run a check from anywhere. Every check searches SafeOrStolen theft reports and public web results. Some extra sources are state-specific: Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records, and gun checks include police reports from 33 states and Washington, DC."
           }
         ]}
       />

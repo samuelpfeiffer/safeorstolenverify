@@ -34,7 +34,7 @@ export function PublicPoliceSearches({ serial }: { serial: string }) {
           </li>
         ))}
       </ul>
-      <p className="mt-4 text-sm text-muted-foreground">Each search has limited coverage. A miss means not found in the records checked, not safe or proof of ownership. SafeOrStolen's Arizona vehicle checks cover Arizona reports only. Existing Ohio checks are unchanged.</p>
+      <p className="mt-4 text-sm text-muted-foreground">Each search has limited coverage. A miss means not found in the records checked, not safe or proof of ownership. SafeOrStolen's vehicle checks cover police reports in Arizona, Alaska and Chicago. Existing Ohio checks are unchanged.</p>
     </section>
   );
 }

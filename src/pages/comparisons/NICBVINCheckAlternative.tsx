@@ -39,7 +39,7 @@ const NICBVINCheckAlternative = () => {
         mobileApp: true,
         instantResults: true,
         freeTier: '1 free check',
-        database: 'SafeOrStolen theft reports and public web results, plus Arizona law-enforcement stolen-vehicle records for Arizona VINs',
+        database: 'SafeOrStolen theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
@@ -149,7 +149,7 @@ const NICBVINCheckAlternative = () => {
                 <CardContent className="space-y-6">
                   <p className="text-lg">
                     SafeOrStolen verifies vehicles plus phones, bikes, tools, and any item with a serial
-                    number — six item types in one platform, each searched against SafeOrStolen theft reports and public web results, with Arizona VINs also checked against Arizona law-enforcement stolen-vehicle records.
+                    number — six item types in one platform, each searched against SafeOrStolen theft reports and public web results, with Arizona VINs also checked against Arizona, Alaska and Chicago police stolen-vehicle records.
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">
@@ -191,7 +191,7 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          VIN decode with open recalls; Arizona VINs also searched against Arizona law-enforcement stolen-vehicle records
+                          VIN decode with open recalls; Arizona VINs also searched against Arizona, Alaska and Chicago police stolen-vehicle records
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
@@ -334,7 +334,7 @@ const NICBVINCheckAlternative = () => {
                     <h3 className="font-semibold mb-2">What does a SafeOrStolen VIN check search?</h3>
                     <p className="text-muted-foreground">
                       Every check searches SafeOrStolen's own theft reports and public web results. Arizona VINs and plates
-                      are also searched against Arizona law-enforcement stolen-vehicle records, bike checks add a national
+                      are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, bike checks add a national
                       stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and
                       Washington, DC, plus live Ohio law-enforcement records.
                     </p>

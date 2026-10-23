@@ -44,7 +44,7 @@ export const STATE_LICENSE_PLATE_DATA: Record<string, StateLicensePlateData> = {
  dmvName: "Arizona MVD",
  dmvLink: "",
  topCities: ["Phoenix", "Tucson", "Mesa", "Chandler"],
- uniqueConcerns: ["Busy Marketplace and OfferUp private-sale market in Phoenix", "Many cars titled in California first", "Arizona plates are also checked against Arizona law-enforcement stolen-vehicle records"],
+ uniqueConcerns: ["Busy Marketplace and OfferUp private-sale market in Phoenix", "Many cars titled in California first", "Arizona plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records"],
  requiresFrontPlate: false
  },
  arkansas: {
@@ -527,7 +527,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  const { state, stateCode, dmvName, topCities, uniqueConcerns, requiresFrontPlate } = data;
  const isArizona = stateCode === 'AZ';
  const sources = isArizona
- ? 'SafeOrStolen theft reports and Arizona law-enforcement stolen-vehicle records (updated twice a day)'
+ ? 'SafeOrStolen theft reports and Arizona, Alaska and Chicago police stolen-vehicle records (updated twice a day)'
  : 'SafeOrStolen theft reports';
 
  return {

@@ -116,7 +116,7 @@ const CheckIfStolenPage = () => {
  {
  question: 'Where can I search stolen property records?',
  answer:
- 'Thefts are reported to local police, state systems and private registries. SafeOrStolen brings several of those sources into one search: its own theft reports, public web results, police firearm theft and loss reports, live Ohio stolen-gun records, Arizona law-enforcement stolen-vehicle records, a national stolen-bicycle registry and, on paid phone checks, the lost and stolen phone blacklist. Each result lists the sources it searched.',
+ 'Thefts are reported to local police, state systems and private registries. SafeOrStolen brings several of those sources into one search: its own theft reports, public web results, police firearm theft and loss reports, live Ohio stolen-gun records, Arizona, Alaska and Chicago police stolen-vehicle records, a national stolen-bicycle registry and, on paid phone checks, the lost and stolen phone blacklist. Each result lists the sources it searched.',
  },
  {
  question: 'What should I do if an item comes back reported stolen?',
