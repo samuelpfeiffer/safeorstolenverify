@@ -129,6 +129,38 @@ function edgeCacheKey(request: Request): Request | null {
   return new Request(`${url.origin}${url.pathname}?__build=${encodeURIComponent(BUILD_ID)}`, { method: "GET" });
 }
 
+// Oct 23 2026: the Cloudflare Cache API above is a silent no-op on this hosting (every response
+// was x-sos-cache: MISS, ~1-2s server wait). Keep recent public pages in this server instance's
+// memory too. Keys include the build id, entries expire after 10 minutes, and only the most
+// recently used pages are kept.
+type MemEntry = { at: number; status: number; headers: [string, string][]; body: ArrayBuffer };
+const MEM_CACHE = new Map<string, MemEntry>();
+const MEM_TTL_MS = EDGE_TTL_SECONDS * 1000;
+const MEM_MAX_ENTRIES = 120;
+
+function memGet(key: string): Response | null {
+  const e = MEM_CACHE.get(key);
+  if (!e) return null;
+  if (Date.now() - e.at > MEM_TTL_MS) { MEM_CACHE.delete(key); return null; }
+  MEM_CACHE.delete(key); MEM_CACHE.set(key, e); // most recently used goes last
+  const res = new Response(e.body.slice(0), { status: e.status, headers: e.headers });
+  res.headers.set("x-sos-cache", "MEM");
+  return res;
+}
+
+async function memPut(key: string, res: Response) {
+  const body = await res.arrayBuffer();
+  if (body.byteLength > 1_500_000) return;
+  const headers: [string, string][] = [];
+  res.headers.forEach((v, k) => { if (k !== "x-sos-cache") headers.push([k, v]); });
+  MEM_CACHE.set(key, { at: Date.now(), status: res.status, headers, body });
+  while (MEM_CACHE.size > MEM_MAX_ENTRIES) {
+    const oldest = MEM_CACHE.keys().next().value;
+    if (oldest === undefined) break;
+    MEM_CACHE.delete(oldest);
+  }
+}
+
 function waitUntil(ctx: unknown, task: Promise<unknown>) {
   const w = (ctx as { waitUntil?: (p: Promise<unknown>) => void } | null)?.waitUntil;
   if (typeof w === "function") w.call(ctx, task.catch(() => {}));
@@ -139,7 +171,12 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const cache = edgeCache();
-      const key = cache ? edgeCacheKey(request) : null;
+      const pageKey = edgeCacheKey(request);
+      if (pageKey) {
+        const fromMem = memGet(pageKey.url);
+        if (fromMem) return fromMem;
+      }
+      const key = cache ? pageKey : null;
       if (cache && key) {
         const hit = await cache.match(key).catch(() => undefined);
         if (hit) {
@@ -164,7 +201,19 @@ export default {
         const stored = out.clone();
         const toStore = new Response(stored.body, stored);
         toStore.headers.set("cache-control", `public, max-age=${EDGE_TTL_SECONDS}`);
-        waitUntil(ctx, cache.put(key, toStore));
+        waitUntil(ctx, cache.put(key, toStore.clone()));
+        waitUntil(ctx, memPut(key.url, toStore));
+        out.headers.set("x-sos-cache", "MISS");
+        return out;
+      }
+      if (
+        !cache && pageKey &&
+        finalResponse.status === 200 &&
+        (finalResponse.headers.get("content-type") ?? "").includes("text/html") &&
+        !finalResponse.headers.has("set-cookie")
+      ) {
+        const out = new Response(finalResponse.body, finalResponse);
+        waitUntil(ctx, memPut(pageKey.url, out.clone()));
         out.headers.set("x-sos-cache", "MISS");
         return out;
       }
