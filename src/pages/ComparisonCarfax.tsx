@@ -64,7 +64,7 @@ const ComparisonCarfax = () => {
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>Carfax Alternative for Stolen Checks: SafeOrStolen vs Carfax</h1>
+          <p><strong>Carfax Alternative for Stolen Checks: SafeOrStolen vs Carfax</strong></p>
           <p>
             Carfax sells vehicle history reports: accidents, title brands, service records and past owners. SafeOrStolen answers a
             narrower question for more kinds of items: has this VIN, IMEI or serial number been reported stolen? It searches

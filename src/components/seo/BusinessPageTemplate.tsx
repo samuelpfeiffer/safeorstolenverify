@@ -130,7 +130,7 @@ export const BusinessPageTemplate = ({
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/for-businesses">For Businesses</a> &gt; For {businessType}</nav>
  </header>
  <div>
- <h1>{h1}</h1>
+ <p><strong>{h1}</strong></p>
  <p>{content.intro}</p>
  
  <h2>Common Challenges for {businessType}</h2>

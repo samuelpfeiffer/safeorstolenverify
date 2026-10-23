@@ -56,7 +56,7 @@ const ReportStolenPageContent = () => {
  />
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <h1>Report a Stolen Item — Free</h1>
+ <p><strong>Report a Stolen Item — Free</strong></p>
  <p>Submit your stolen item details to SafeOrStolen's database. When anyone checks the serial number, IMEI, or VIN, they'll be alerted it was reported stolen — helping prevent the sale of stolen goods and increasing your chance of recovery.</p>
  <h2>What You Can Report</h2>
  <ul>

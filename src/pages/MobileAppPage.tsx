@@ -83,7 +83,7 @@ const MobileAppPage = () => {
 
  <noscript>
  <article>
- <h1>SafeOrStolen on Your Phone - Free Web App</h1>
+ <p><strong>SafeOrStolen on Your Phone - Free Web App</strong></p>
  <p>SafeOrStolen is a free installable web app at safeorstolen.com/app. It is not in the App Store or Google Play. Add it to your home screen from Safari or Chrome, then check phones, vehicles, plates, guns, bikes and serial numbers in a few seconds. It needs a data connection to run a check.</p>
  <h2>Features</h2>
  <ul>

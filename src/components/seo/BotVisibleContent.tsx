@@ -11,7 +11,7 @@ import React from 'react';
  * 
  * Usage:
  * <BotVisibleContent>
- *   <h1>Your Page Title</h1>
+ *   <p><strong>Your Page Title</strong></p>
  *   <p>Your content here...</p>
  * </BotVisibleContent>
  */

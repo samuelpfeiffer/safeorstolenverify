@@ -128,7 +128,7 @@ export const StateVinPageTemplate = ({
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/vin-checker">VIN Checker</a> &gt; {state} VIN Lookup</nav>
  </header>
  <div>
- <h1>{state} VIN Lookup — {stateCode} Stolen Vehicle Check (2026)</h1>
+ <p><strong>{state} VIN Lookup — {stateCode} Stolen Vehicle Check (2026)</strong></p>
  <p>{content.intro}</p>
  
  <h2>Why Verify {state} Vehicles?</h2>

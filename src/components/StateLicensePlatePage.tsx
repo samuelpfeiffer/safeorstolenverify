@@ -119,7 +119,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <nav><a href="/">SafeOrStolen</a> &gt; <a href="/license-plate-lookup">License Plate Lookup</a> &gt; {stateData.name}</nav>
  </header>
  <div>
- <h1>Free {stateData.name} License Plate Lookup</h1>
+ <p><strong>Free {stateData.name} License Plate Lookup</strong></p>
  <p>Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement stolen-vehicle records,' : ''} before buying a {stateData.abbrev} vehicle.</p>
  
  <h2>What We Search for {stateData.name} Vehicles</h2>

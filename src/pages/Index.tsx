@@ -162,7 +162,7 @@ const Index = () => {
  return (
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
- title="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen | SafeOrStolen"
+ title="Free Stolen Item Check: Phone, Car, Gun, Bike | SafeOrStolen"
  description="Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen. Enter the IMEI, VIN, plate or serial number. Every source is listed. 1 free check."
  keywords="stolen item checker, check if something is stolen, free serial number search, imei check free, vin check stolen, gun serial number lookup free, stolen bike check, license plate lookup"
  canonical="/"
@@ -171,7 +171,7 @@ const Index = () => {
 
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <h1>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</h1>
+ <p><strong>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</strong></p>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
  <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona police stolen-vehicle records. Your first check is free; then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
  </div>
@@ -187,7 +187,7 @@ const Index = () => {
   { v: '220,000+', l: 'Police gun theft reports' },
   { v: '6', l: 'Kinds of items' },
   { v: 'Listed', l: 'Every source searched' },
- { v: '2', l: 'Free Checks to Start' },
+ { v: '1', l: 'Free Check to Start' },
  ].map((s) => (
  <div key={s.l} className="text-center py-5 px-4">
  <div className="text-2xl font-black text-primary">{s.v}</div>

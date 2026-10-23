@@ -108,7 +108,7 @@ export default function TransparencyPage() {
                 <h2 className="font-bold text-xl mb-3">What it costs, all of it</h2>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li>Free account: 2 checks, no credit card.</li>
-                  <li>Single check: $0.99.</li>
+                  <li>2 checks: $0.99.</li>
                   <li>Monthly: $10 for unlimited checks, with up to 20 phone blacklist checks a month. Cancel anytime; 30-day refund.</li>
                   <li>Verification certificate: $1.99, free for monthly members.</li>
                   <li>The installable app at safeorstolen.com/app: free.</li>

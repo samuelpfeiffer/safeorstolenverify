@@ -49,7 +49,7 @@ const ComparisonCheckmend = () => {
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen vs CheckMEND</h1>
+          <p><strong>SafeOrStolen vs CheckMEND</strong></p>
           <p>CheckMEND is a device history check best known for phones and other electronics. SafeOrStolen checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and any serial-numbered item. Every SafeOrStolen check searches its own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles. It runs as a free installable web app at safeorstolen.com/app (not an App Store or Google Play app) and needs a data connection. You get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited.</p>
         </div>
       </noscript>

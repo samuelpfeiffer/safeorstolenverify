@@ -183,7 +183,7 @@ const AboutPage = () => {
               <h2 className="text-xl font-bold mb-3 text-foreground">What it costs</h2>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><strong className="text-foreground">Free account:</strong> 2 checks, no credit card.</li>
-                <li><strong className="text-foreground">Single check:</strong> $0.99.</li>
+                <li><strong className="text-foreground">2 checks:</strong> $0.99.</li>
                 <li>
                   <strong className="text-foreground">Monthly:</strong> $10 for unlimited checks (up to 20 phone blacklist checks a
                   month). Cancel anytime, 30-day refund.

@@ -49,7 +49,7 @@ const ComparisonIMEIInfo = () => {
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>IMEI.info Alternative: SafeOrStolen</h1>
+          <p><strong>IMEI.info Alternative: SafeOrStolen</strong></p>
           <p>
             IMEI.info looks up a phone's details. SafeOrStolen checks whether the phone has been reported stolen: it
             searches SafeOrStolen theft reports and public web results and shows the make and model from the IMEI.

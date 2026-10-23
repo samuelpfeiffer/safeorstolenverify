@@ -147,19 +147,19 @@ const PricingPage = () => {
  {/* Card 2 — Pay Per Check */}
  <div className="rounded-2xl border border-border bg-card flex flex-col p-6">
  <div className="inline-flex self-start items-center gap-1 bg-secondary/20 text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
- One item
+ Two items
  </div>
- <h3 className="text-xl font-bold mb-1">Single check</h3>
+ <h3 className="text-xl font-bold mb-1">2 checks</h3>
  <div className="mb-1 flex items-baseline gap-1">
  <span className="text-4xl font-black">$0.99</span>
  </div>
- <p className="text-muted-foreground text-sm mb-6">per check</p>
+ <p className="text-muted-foreground text-sm mb-6">for 2 checks, paid once</p>
 
  <ul className="space-y-2 flex-1 mb-6">
  {[
- 'One check, paid once',
+ '2 checks, paid once (this one plus one more)',
  'Every source that applies to the item',
- 'Includes the carrier blacklist search on a phone',
+ 'Includes 1 phone blacklist search',
  'Saved to your account with the date',
  'Optional $1.99 verification certificate',
  'No subscription',

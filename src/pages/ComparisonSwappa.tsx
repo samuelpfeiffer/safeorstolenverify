@@ -110,7 +110,7 @@ const ComparisonSwappa = () => {
  />
  <noscript>
  <header style={{ padding: '20px', maxWidth: '900px', margin: '0 auto' }}>
- <h1>SafeOrStolen vs Swappa</h1>
+ <p><strong>SafeOrStolen vs Swappa</strong></p>
  <p>Swappa is a used phone marketplace. SafeOrStolen is a stolen-item check you can run on a phone, car, plate, gun or bike from any seller.</p>
  <h2>Key differences</h2>
  <ul>

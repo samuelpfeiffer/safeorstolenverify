@@ -162,7 +162,7 @@ export const ItemLandingPageTemplate = ({
  <nav><a href="/">SafeOrStolen</a> &gt; {itemType} Verification</nav>
  </header>
  <div>
- <h1>{h1}</h1>
+ <p><strong>{h1}</strong></p>
  <p>{content.intro}</p>
  {quickAnswer && (<><h2>{quickAnswer.question}</h2><p>{quickAnswer.answer}</p></>)}
  {founderNote && (<><h2>Why this check exists</h2>{founderNote.map((t, i) => <p key={i}>{t}</p>)}<p>Sam Pfeiffer, founder of SafeOrStolen, Peoria, Arizona. <a href="/our-story">Read the full story</a></p></>)}

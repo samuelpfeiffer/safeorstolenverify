@@ -590,6 +590,16 @@ const VerifyChatPage: React.FC = () => {
  <meta name="ai:purpose" content="Stolen-item check against SafeOrStolen theft reports and public web results" />
  </Helmet>
 
+ {/* Oct 22 2026: plain text for search engines and AI crawlers that don't run JavaScript. */}
+ <noscript>
+ <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+ <p><strong>Check if an item is stolen with SafeOrStolen</strong></p>
+ <p>Type or paste a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial, any other serial number, or a marketplace listing link. In a few seconds SafeOrStolen shows whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
+ <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against more than 220,000 police stolen-gun reports from 33 states and Washington, DC and live Ohio law-enforcement records; bikes against a national stolen-bicycle registry; phones against the lost and stolen phone blacklist; and Arizona plates and VINs against Arizona police stolen-vehicle records.</p>
+ <p>Your first check is free with no account needed. After that, $0.99 buys 2 checks, or $10 a month for unlimited checks.</p>
+ </div>
+ </noscript>
+
  {/* AppRoot renders TopNavigation + <div className="pt-20"/>. We negate that
  padding so the chat fills the viewport edge-to-edge (ChatGPT/Claude feel). */}
 

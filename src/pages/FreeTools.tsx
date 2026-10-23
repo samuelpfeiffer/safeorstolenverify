@@ -30,7 +30,7 @@ const FreeTools = () => {
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>Free IMEI Validator & VIN Checker Tools</h1>
+          <p><strong>Free IMEI Validator & VIN Checker Tools</strong></p>
           <p>Use our free tools to validate IMEI numbers and check VIN formats.</p>
           
           <h2>Free IMEI Validator</h2>

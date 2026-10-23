@@ -83,7 +83,7 @@ const InstallAppPage = () => {
 
  <noscript>
  <article>
- <h1>How to Install SafeOrStolen App</h1>
+ <p><strong>How to Install SafeOrStolen App</strong></p>
  <p>SafeOrStolen is a free web app. Add it to your iPhone or Android home screen from your browser; it is not in the App Store or Google Play.</p>
  <h2>iPhone Installation (Safari)</h2>
  <ol>

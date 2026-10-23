@@ -296,7 +296,7 @@ const VerifyPage = () => {
  {/* Minimal noscript fallback for crawlers */}
  <noscript>
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
- <h1>Free Stolen Item Verification</h1>
+ <p><strong>Free Stolen Item Verification</strong></p>
  <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against multiple sources with results in 3 seconds.</p>
  </div>
  </noscript>

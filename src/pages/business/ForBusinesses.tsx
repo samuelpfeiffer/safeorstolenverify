@@ -80,7 +80,7 @@ export default function ForBusinesses() {
       description:
         'Single and bulk checks of serial numbers, IMEIs and VINs against SafeOrStolen theft reports and public web results, with a dated record of every check.',
       offers: [
-        { '@type': 'Offer', price: '0.99', priceCurrency: 'USD', description: 'Single check' },
+        { '@type': 'Offer', price: '0.99', priceCurrency: 'USD', description: '2 checks' },
         { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks per month' },
       ],
       dateModified: '2026-10-07',
