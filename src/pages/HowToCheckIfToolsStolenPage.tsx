@@ -108,7 +108,7 @@ export default function HowToCheckIfToolsStolenPage() {
           {
             question: 'Is there a free stolen tool database?',
             answer:
-              "There is no single public database of stolen tools. Thefts are reported to local police and insurers. SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen) searches its own theft reports and public web results for free for your first 2 checks.",
+              "There is no single public database of stolen tools. Thefts are reported to local police and insurers. SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen) searches its own theft reports and public web results free for your first check.",
           },
           {
             question: 'Can I look up a DeWalt or Milwaukee serial number?',

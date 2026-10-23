@@ -48,7 +48,7 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
             </div>
           </div>
           <p className="text-sm text-muted-foreground">
-            Your first check is free. After that, a single check is $0.99, or $10 a month gets you unlimited checks across all item types. Cancel anytime.
+            Your first check is free. After that, $0.99 gets you 2 more checks, or $10 a month gets you unlimited checks across all item types. Cancel anytime.
           </p>
         </div>
 

@@ -55,7 +55,7 @@ const NewYorkLicensePlateLookupPage = () => {
  },
  {
  question: "Is the New York license plate lookup free?",
- answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime."
+ answer: "Your first check on SafeOrStolen is free, and no account or credit card is needed. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks, cancel anytime."
  },
  {
  question: "What if the name on the title doesn't match the seller?",

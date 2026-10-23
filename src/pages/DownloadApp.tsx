@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: 'Do I need an account to use the app?',
-    a: 'You need a free account to run checks. It comes with 1 free check and needs no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, canceled anytime, with a 30-day refund on the monthly plan.',
+    a: 'You need a free account to run checks. It comes with 1 free check and needs no credit card. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks, canceled anytime, with a 30-day refund on the monthly plan.',
   },
   {
     q: 'Is the app different from the website?',

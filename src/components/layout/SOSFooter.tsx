@@ -96,6 +96,8 @@ export const SOSFooter: React.FC = () => {
   { label: 'Electronics Guide', to: '/how-to-check-if-laptop-stolen' },
  { label: 'Check Camera', to: '/check-camera-stolen' },
  { label: 'Check Watch', to: '/check-watch-stolen' },
+ { label: 'Check Heavy Equipment', to: '/check-heavy-equipment-stolen' },
+ { label: 'Check Art', to: '/check-art-stolen' },
  ]
  },
  // Oct 22 2026: footer links on every page so Google crawls the gun pages (most were "discovered, not crawled").

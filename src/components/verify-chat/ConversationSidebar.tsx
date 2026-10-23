@@ -162,11 +162,13 @@ export const ConversationSidebar: React.FC<Props> = ({
     <div className="h-full flex flex-col bg-card/40 border-r border-border">
       {/* Header */}
       <div className="px-3 py-3 border-b border-border flex items-center gap-2">
+        <a href="/" aria-label="SafeOrStolen home" className="flex items-center gap-2 flex-1 min-w-0">
         <ShieldLogo size={28} className="shrink-0" />
         <div className="flex-1 min-w-0">
           <div className="text-xs font-bold text-foreground leading-tight">SafeOrStolen</div>
-          <div className="text-[10px] text-muted-foreground leading-tight">Your dashboard</div>
+          <div className="text-[10px] text-muted-foreground leading-tight">Back to home</div>
         </div>
+        </a>
         {onClose && (
           <button onClick={onClose} className="lg:hidden p-1.5 text-muted-foreground hover:text-foreground" aria-label="Close sidebar">
             <X className="w-4 h-4" />

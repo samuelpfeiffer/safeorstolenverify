@@ -51,7 +51,7 @@ const CheckEBikePage = () => {
  },
  {
  question: "Is the eBike stolen check really free?",
- answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. Each serial is one check, so with a frame, motor and battery serial you may want a third. After the free checks it's $0.99 for 2 checks or $10 a month for unlimited checks."
+ answer: "Your first check on SafeOrStolen is free, and no account or credit card is needed. Each serial is one check, so with a frame, motor and battery serial you may want a third. After the free checks it's $0.99 for 2 checks or $10 a month for unlimited checks."
  },
  {
  question: "What should I do if my eBike check shows it's stolen?",

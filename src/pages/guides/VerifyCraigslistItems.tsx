@@ -173,7 +173,7 @@ const VerifyCraigslistItems = () => {
                     Verify with SafeOrStolen
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Enter the identifier on SafeOrStolen (your first 2 checks are
+                    Enter the identifier on SafeOrStolen (your first check are
                     free). Every check searches our own theft reports and public
                     web results. Bike serials also go against a national
                     stolen-bicycle registry, and gun serials against police theft

@@ -56,7 +56,7 @@ const ComparisonSwappa = () => {
  {
  value: 'free',
  q: "Is SafeOrStolen free to use?",
- a: "You get 1 free check, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
+ a: "You get 1 free check, no account or credit card needed. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
  },
  {
  value: 'databases',

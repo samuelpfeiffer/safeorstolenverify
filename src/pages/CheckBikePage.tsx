@@ -105,7 +105,7 @@ const CheckBikePage = () => (
         {
           question: 'Is there a free bike serial number lookup?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-bike) checks a bike serial number for free for your first 2 checks, with no credit card.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-bike) checks a bike serial number free for your first check, with no credit card.',
         },
         {
           question: 'Is there a national stolen bike database?',

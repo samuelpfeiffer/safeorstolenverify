@@ -60,7 +60,7 @@ const IMEICheckerAppDownload = () => {
     },
     {
       question: "Is the SafeOrStolen IMEI checker free?",
-      answer: "The app is free to install, and your first check is free, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks. A carrier blacklist check is a paid add-on; monthly members get up to 20 blacklist checks a month."
+      answer: "The app is free to install, and your first check is free, no account or credit card needed. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks. A carrier blacklist check is a paid add-on; monthly members get up to 20 blacklist checks a month."
     }
   ];
 

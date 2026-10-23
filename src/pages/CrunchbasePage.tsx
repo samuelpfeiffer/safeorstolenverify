@@ -46,7 +46,7 @@ const faqs = [
   {
     question: 'How does SafeOrStolen make money?',
     answer:
-      'From the checks themselves. A free account gets 2 checks with no credit card. After that a single check is $0.99, or $10 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
+      'From the checks themselves. A free account gets 2 checks with no credit card. After that $0.99 gets you 2 more checks, or $10 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
   },
   {
     question: 'What records does SafeOrStolen search?',

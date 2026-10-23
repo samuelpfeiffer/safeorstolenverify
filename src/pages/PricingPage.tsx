@@ -19,7 +19,7 @@ import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/c
 const FAQS = [
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, a single check costs $0.99 with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
+ a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, $0.99 buys 2 checks with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
  },
  {
  q: 'What do the 1 free check include?',
@@ -31,7 +31,7 @@ const FAQS = [
  },
  {
  q: 'When is the monthly plan cheaper than single checks?',
- a: 'At 11 checks a month. Eleven single checks cost $10.89, more than the $10 monthly plan, and ten cost $9.90, which is less. If you are checking one phone or one bike before a purchase, use your free checks or a $0.99 for 2 checks. If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
+ a: 'At about 21 checks a month. At $0.99 for 2 checks, 20 checks cost $9.90 and 22 cost $10.89, so the $10 monthly plan wins once you pass about 20. If you are checking one phone or one bike before a purchase, use your free check or $0.99 for 2 checks. If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
  },
  {
  q: 'Can I cancel the monthly plan, and is there a refund?',
@@ -93,8 +93,8 @@ const PricingPage = () => {
  SafeOrStolen Pricing
  </h1>
  <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
- Your first check is free, with no account or credit card needed. After that, a single check is
- $0.99, or unlimited checks are $10 a month, cancel anytime, with a 30-day refund.
+ Your first check is free, with no account or credit card needed. After that, $0.99 buys 2
+ checks, or unlimited checks are $10 a month, cancel anytime, with a 30-day refund.
  </p>
  <p className="text-muted-foreground text-sm mt-3">
  Updated <time dateTime="2026-10-07">October 7, 2026</time>

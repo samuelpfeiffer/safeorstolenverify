@@ -39,6 +39,7 @@ import { Route as CertificateApiRouteImport } from './routes/certificate-api'
 import { Route as CheckAndroidRouteImport } from './routes/check-android'
 import { Route as CheckAndroidPhoneStolenRouteImport } from './routes/check-android-phone-stolen'
 import { Route as CheckAppliancesRouteImport } from './routes/check-appliances'
+import { Route as CheckArtStolenRouteImport } from './routes/check-art-stolen'
 import { Route as CheckBicycleStolenRouteImport } from './routes/check-bicycle-stolen'
 import { Route as CheckBikeRouteImport } from './routes/check-bike'
 import { Route as CheckBoatRouteImport } from './routes/check-boat'
@@ -49,6 +50,7 @@ import { Route as CheckFirearmRouteImport } from './routes/check-firearm'
 import { Route as CheckFirearmSerialRouteImport } from './routes/check-firearm-serial'
 import { Route as CheckGamingConsoleStolenRouteImport } from './routes/check-gaming-console-stolen'
 import { Route as CheckGunRouteImport } from './routes/check-gun'
+import { Route as CheckHeavyEquipmentStolenRouteImport } from './routes/check-heavy-equipment-stolen'
 import { Route as CheckIfStolenRouteImport } from './routes/check-if-stolen'
 import { Route as CheckImeiStolenRouteImport } from './routes/check-imei-stolen'
 import { Route as CheckIphoneStolenRouteImport } from './routes/check-iphone-stolen'
@@ -551,6 +553,11 @@ const CheckAppliancesRoute = CheckAppliancesRouteImport.update({
   path: '/check-appliances',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckArtStolenRoute = CheckArtStolenRouteImport.update({
+  id: '/check-art-stolen',
+  path: '/check-art-stolen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CheckBicycleStolenRoute = CheckBicycleStolenRouteImport.update({
   id: '/check-bicycle-stolen',
   path: '/check-bicycle-stolen',
@@ -602,6 +609,12 @@ const CheckGunRoute = CheckGunRouteImport.update({
   path: '/check-gun',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckHeavyEquipmentStolenRoute =
+  CheckHeavyEquipmentStolenRouteImport.update({
+    id: '/check-heavy-equipment-stolen',
+    path: '/check-heavy-equipment-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CheckIfStolenRoute = CheckIfStolenRouteImport.update({
   id: '/check-if-stolen',
   path: '/check-if-stolen',
@@ -2471,6 +2484,7 @@ export interface FileRoutesByFullPath {
   '/check-android': typeof CheckAndroidRoute
   '/check-android-phone-stolen': typeof CheckAndroidPhoneStolenRoute
   '/check-appliances': typeof CheckAppliancesRoute
+  '/check-art-stolen': typeof CheckArtStolenRoute
   '/check-bicycle-stolen': typeof CheckBicycleStolenRoute
   '/check-bike': typeof CheckBikeRoute
   '/check-boat': typeof CheckBoatRoute
@@ -2481,6 +2495,7 @@ export interface FileRoutesByFullPath {
   '/check-firearm-serial': typeof CheckFirearmSerialRoute
   '/check-gaming-console-stolen': typeof CheckGamingConsoleStolenRoute
   '/check-gun': typeof CheckGunRoute
+  '/check-heavy-equipment-stolen': typeof CheckHeavyEquipmentStolenRoute
   '/check-if-stolen': typeof CheckIfStolenRoute
   '/check-imei-stolen': typeof CheckImeiStolenRoute
   '/check-iphone-stolen': typeof CheckIphoneStolenRoute
@@ -2856,6 +2871,7 @@ export interface FileRoutesByTo {
   '/check-android': typeof CheckAndroidRoute
   '/check-android-phone-stolen': typeof CheckAndroidPhoneStolenRoute
   '/check-appliances': typeof CheckAppliancesRoute
+  '/check-art-stolen': typeof CheckArtStolenRoute
   '/check-bicycle-stolen': typeof CheckBicycleStolenRoute
   '/check-bike': typeof CheckBikeRoute
   '/check-boat': typeof CheckBoatRoute
@@ -2866,6 +2882,7 @@ export interface FileRoutesByTo {
   '/check-firearm-serial': typeof CheckFirearmSerialRoute
   '/check-gaming-console-stolen': typeof CheckGamingConsoleStolenRoute
   '/check-gun': typeof CheckGunRoute
+  '/check-heavy-equipment-stolen': typeof CheckHeavyEquipmentStolenRoute
   '/check-if-stolen': typeof CheckIfStolenRoute
   '/check-imei-stolen': typeof CheckImeiStolenRoute
   '/check-iphone-stolen': typeof CheckIphoneStolenRoute
@@ -3243,6 +3260,7 @@ export interface FileRoutesById {
   '/check-android': typeof CheckAndroidRoute
   '/check-android-phone-stolen': typeof CheckAndroidPhoneStolenRoute
   '/check-appliances': typeof CheckAppliancesRoute
+  '/check-art-stolen': typeof CheckArtStolenRoute
   '/check-bicycle-stolen': typeof CheckBicycleStolenRoute
   '/check-bike': typeof CheckBikeRoute
   '/check-boat': typeof CheckBoatRoute
@@ -3253,6 +3271,7 @@ export interface FileRoutesById {
   '/check-firearm-serial': typeof CheckFirearmSerialRoute
   '/check-gaming-console-stolen': typeof CheckGamingConsoleStolenRoute
   '/check-gun': typeof CheckGunRoute
+  '/check-heavy-equipment-stolen': typeof CheckHeavyEquipmentStolenRoute
   '/check-if-stolen': typeof CheckIfStolenRoute
   '/check-imei-stolen': typeof CheckImeiStolenRoute
   '/check-iphone-stolen': typeof CheckIphoneStolenRoute
@@ -3632,6 +3651,7 @@ export interface FileRouteTypes {
     | '/check-android'
     | '/check-android-phone-stolen'
     | '/check-appliances'
+    | '/check-art-stolen'
     | '/check-bicycle-stolen'
     | '/check-bike'
     | '/check-boat'
@@ -3642,6 +3662,7 @@ export interface FileRouteTypes {
     | '/check-firearm-serial'
     | '/check-gaming-console-stolen'
     | '/check-gun'
+    | '/check-heavy-equipment-stolen'
     | '/check-if-stolen'
     | '/check-imei-stolen'
     | '/check-iphone-stolen'
@@ -4017,6 +4038,7 @@ export interface FileRouteTypes {
     | '/check-android'
     | '/check-android-phone-stolen'
     | '/check-appliances'
+    | '/check-art-stolen'
     | '/check-bicycle-stolen'
     | '/check-bike'
     | '/check-boat'
@@ -4027,6 +4049,7 @@ export interface FileRouteTypes {
     | '/check-firearm-serial'
     | '/check-gaming-console-stolen'
     | '/check-gun'
+    | '/check-heavy-equipment-stolen'
     | '/check-if-stolen'
     | '/check-imei-stolen'
     | '/check-iphone-stolen'
@@ -4403,6 +4426,7 @@ export interface FileRouteTypes {
     | '/check-android'
     | '/check-android-phone-stolen'
     | '/check-appliances'
+    | '/check-art-stolen'
     | '/check-bicycle-stolen'
     | '/check-bike'
     | '/check-boat'
@@ -4413,6 +4437,7 @@ export interface FileRouteTypes {
     | '/check-firearm-serial'
     | '/check-gaming-console-stolen'
     | '/check-gun'
+    | '/check-heavy-equipment-stolen'
     | '/check-if-stolen'
     | '/check-imei-stolen'
     | '/check-iphone-stolen'
@@ -4791,6 +4816,7 @@ export interface RootRouteChildren {
   CheckAndroidRoute: typeof CheckAndroidRoute
   CheckAndroidPhoneStolenRoute: typeof CheckAndroidPhoneStolenRoute
   CheckAppliancesRoute: typeof CheckAppliancesRoute
+  CheckArtStolenRoute: typeof CheckArtStolenRoute
   CheckBicycleStolenRoute: typeof CheckBicycleStolenRoute
   CheckBikeRoute: typeof CheckBikeRoute
   CheckBoatRoute: typeof CheckBoatRoute
@@ -4801,6 +4827,7 @@ export interface RootRouteChildren {
   CheckFirearmSerialRoute: typeof CheckFirearmSerialRoute
   CheckGamingConsoleStolenRoute: typeof CheckGamingConsoleStolenRoute
   CheckGunRoute: typeof CheckGunRoute
+  CheckHeavyEquipmentStolenRoute: typeof CheckHeavyEquipmentStolenRoute
   CheckIfStolenRoute: typeof CheckIfStolenRoute
   CheckImeiStolenRoute: typeof CheckImeiStolenRoute
   CheckIphoneStolenRoute: typeof CheckIphoneStolenRoute
@@ -5307,6 +5334,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckAppliancesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/check-art-stolen': {
+      id: '/check-art-stolen'
+      path: '/check-art-stolen'
+      fullPath: '/check-art-stolen'
+      preLoaderRoute: typeof CheckArtStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/check-bicycle-stolen': {
       id: '/check-bicycle-stolen'
       path: '/check-bicycle-stolen'
@@ -5375,6 +5409,13 @@ declare module '@tanstack/react-router' {
       path: '/check-gun'
       fullPath: '/check-gun'
       preLoaderRoute: typeof CheckGunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/check-heavy-equipment-stolen': {
+      id: '/check-heavy-equipment-stolen'
+      path: '/check-heavy-equipment-stolen'
+      fullPath: '/check-heavy-equipment-stolen'
+      preLoaderRoute: typeof CheckHeavyEquipmentStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/check-if-stolen': {
@@ -7965,6 +8006,7 @@ const rootRouteChildren: RootRouteChildren = {
   CheckAndroidRoute: CheckAndroidRoute,
   CheckAndroidPhoneStolenRoute: CheckAndroidPhoneStolenRoute,
   CheckAppliancesRoute: CheckAppliancesRoute,
+  CheckArtStolenRoute: CheckArtStolenRoute,
   CheckBicycleStolenRoute: CheckBicycleStolenRoute,
   CheckBikeRoute: CheckBikeRoute,
   CheckBoatRoute: CheckBoatRoute,
@@ -7975,6 +8017,7 @@ const rootRouteChildren: RootRouteChildren = {
   CheckFirearmSerialRoute: CheckFirearmSerialRoute,
   CheckGamingConsoleStolenRoute: CheckGamingConsoleStolenRoute,
   CheckGunRoute: CheckGunRoute,
+  CheckHeavyEquipmentStolenRoute: CheckHeavyEquipmentStolenRoute,
   CheckIfStolenRoute: CheckIfStolenRoute,
   CheckImeiStolenRoute: CheckImeiStolenRoute,
   CheckIphoneStolenRoute: CheckIphoneStolenRoute,

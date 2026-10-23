@@ -4,7 +4,7 @@ import { PageSEO } from "@/components/seo/PageSEO";
 const FAQS = [
   {
     question: "Does SafeOrStolen have an API?",
-    answer: "Yes. POST https://safeorstolen.com/verify-api runs the same check as the website. Send an identifier and an optional item type. A signed-in account uses a Bearer token. The first 2 checks can run without an account when a browser fingerprint is included.",
+    answer: "Yes. POST https://safeorstolen.com/verify-api runs the same check as the website. Send an identifier and an optional item type. A signed-in account uses a Bearer token. The first check can run without an account when a browser fingerprint is included.",
   },
   {
     question: "What does a request look like?",

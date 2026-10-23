@@ -29,7 +29,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'Your first check is free, with no account or credit card needed. After that, a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
+    a: 'Your first check is free, with no account or credit card needed. After that, $0.99 gets you 2 more checks, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
   },
 ];
 

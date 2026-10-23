@@ -25,7 +25,7 @@ const StolenCheckLosAngeles = () => {
  },
  {
  question: "What does a SafeOrStolen check cost?",
- answer: "You get 1 free check, no account or credit card needed. After that a single check is $0.99, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 certificate gives you a dated record with its own link showing you checked before the sale."
+ answer: "You get 1 free check, no account or credit card needed. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 certificate gives you a dated record with its own link showing you checked before the sale."
  }
  ];
 

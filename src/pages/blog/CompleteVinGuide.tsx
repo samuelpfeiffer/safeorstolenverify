@@ -293,7 +293,7 @@ export default function CompleteVinGuide() {
           <div className="not-prose bg-primary/10 border border-primary/20 p-6 rounded-lg my-8">
             <h3 className="text-xl font-bold mb-2">Check a VIN now</h3>
             <p className="mb-4 text-muted-foreground">
-              Enter the VIN on SafeOrStolen to decode it, see open recalls and search theft reports. Your first 2 checks
+              Enter the VIN on SafeOrStolen to decode it, see open recalls and search theft reports. Your first check
               are free with no credit card, and each one is saved to your account with the date. On your phone, add the
               free web app from <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link>.
             </p>

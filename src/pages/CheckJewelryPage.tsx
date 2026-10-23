@@ -115,7 +115,7 @@ const CheckJewelryPage = () => (
         {
           question: 'Is there a stolen jewelry database?',
           answer:
-            "Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports and public web results for free for their first 2 checks.",
+            "Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports and public web results for free for their first check.",
         },
         {
           question: 'What does a polished area inside a ring mean?',

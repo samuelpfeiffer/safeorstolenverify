@@ -100,7 +100,7 @@ const TabletCheck = () => (
         {
           question: 'Can I check an iPad serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-tablet-stolen) checks an iPad or tablet serial against its theft reports and public web results for free for your first 2 checks, with no credit card. Then check Activation Lock by having the seller erase the iPad in front of you.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-tablet-stolen) checks an iPad or tablet serial against its theft reports and public web results free for your first check, with no credit card. Then check Activation Lock by having the seller erase the iPad in front of you.',
         },
         {
           question: 'How do I know if an iPad has Activation Lock?',

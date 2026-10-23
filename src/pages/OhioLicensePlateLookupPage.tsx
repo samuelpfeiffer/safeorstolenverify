@@ -66,7 +66,7 @@ const OhioLicensePlateLookupPage = () => {
  },
  {
  question: "Is an Ohio plate lookup free?",
- answer: "Your first 2 checks on SafeOrStolen are free, and no account or credit card is needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan."
+ answer: "Your first check on SafeOrStolen is free, and no account or credit card is needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan."
  },
  {
  question: "Why are some Kia and Hyundai models a concern in Ohio?",

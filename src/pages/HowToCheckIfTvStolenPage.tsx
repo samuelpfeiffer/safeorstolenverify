@@ -101,7 +101,7 @@ export default function HowToCheckIfTvStolenPage() {
           {
             question: 'Can I look up a TV serial number to see if it is stolen?',
             answer:
-              'Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen) checks a TV serial against its theft reports and public web results for free for your first 2 checks, with no account or credit card needed. There is no public national database of stolen TVs; police can also check a serial against their own records.',
+              'Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-tv-stolen) checks a TV serial against its theft reports and public web results free for your first check, with no account or credit card needed. There is no public national database of stolen TVs; police can also check a serial against their own records.',
           },
           {
             question: 'Is a new TV in a sealed box on Marketplace stolen?',

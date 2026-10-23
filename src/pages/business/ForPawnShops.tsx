@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: 'How much does SafeOrStolen cost for a pawn shop?',
     answer:
-      'Every account gets 1 free check with no credit card. After that a single check is $0.99, or $10 a month for unlimited checks, which is the plan the bulk check is built for. Phone blacklist checks are capped at 20 a month on that plan. Cancel anytime; the monthly plan has a 30-day refund.',
+      'Every account gets 1 free check with no credit card. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks, which is the plan the bulk check is built for. Phone blacklist checks are capped at 20 a month on that plan. Cancel anytime; the monthly plan has a 30-day refund.',
   },
   {
     question: 'Does SafeOrStolen work with our pawn software?',

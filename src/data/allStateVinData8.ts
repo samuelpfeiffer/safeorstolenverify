@@ -40,7 +40,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  },
  faqs: [
  { question: "How do I verify a New Hampshire vehicle title?", answer: "Check that the seller's name on the title matches their ID and that the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-hampshire-vin-lookup) to search its theft reports and public web results. For title questions, contact the NH DMV." },
- { question: "Is a VIN check required in New Hampshire?", answer: "No law requires a private buyer in New Hampshire to run a VIN check. It's still worth the few seconds: if the car was stolen, police can return it to the owner and you lose what you paid. Your first 2 checks on SafeOrStolen are free." },
+ { question: "Is a VIN check required in New Hampshire?", answer: "No law requires a private buyer in New Hampshire to run a VIN check. It's still worth the few seconds: if the car was stolen, police can return it to the owner and you lose what you paid. Your first check on SafeOrStolen is free." },
  { question: "Does New Hampshire have vehicle inspections?", answer: "Yes. New Hampshire requires a yearly safety inspection at a licensed station. The inspection looks at brakes, lights, tires and similar items. It doesn't check whether the car was reported stolen, so search the VIN before you buy rather than counting on the inspection." }
  ]
  },

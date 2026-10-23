@@ -58,7 +58,7 @@ const SMSVerifyPage = () => {
     <>
       <PageSEO
         title="Text to Check if Stolen: SMS Check Coming Soon"
-        description="SafeOrStolen's text-message stolen check isn't live yet. Here's how to check a serial, IMEI or VIN from your phone today, free for your first 2 checks."
+        description="SafeOrStolen's text-message stolen check isn't live yet. Here's how to check a serial, IMEI or VIN from your phone today, free for your first check."
         keywords="text to check if stolen, sms imei check, text serial number stolen check, sms vin check, SafeOrStolen sms"
         canonical="/sms-verify"
         modifiedTime="2026-10-07"

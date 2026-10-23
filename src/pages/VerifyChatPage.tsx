@@ -593,7 +593,7 @@ const VerifyChatPage: React.FC = () => {
  {/* AppRoot renders TopNavigation + <div className="pt-20"/>. We negate that
  padding so the chat fills the viewport edge-to-edge (ChatGPT/Claude feel). */}
 
- <div className="-mt-20 pt-20 h-screen bg-background text-foreground flex flex-col overflow-hidden">
+ <div className="h-[100dvh] bg-background text-foreground flex flex-col overflow-hidden">
  {/* Top status bar */}
  <div className="border-b border-border bg-card/30 backdrop-blur-xl shrink-0">
  <div className="px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
@@ -860,7 +860,6 @@ const VerifyChatPage: React.FC = () => {
  shortLabel="Scan"
  onClick={() => cameraInputRef.current?.click()}
  disabled={isThinking}
- hideOnMobile
  />
  {voice.isSupported && (
  <ToolButton
@@ -935,6 +934,8 @@ const VerifyChatPage: React.FC = () => {
  </div>
 
  {/* RESULTS PANE (desktop) — narrower for better balance */}
+ {/* Oct 22 2026: only shown once there is a result, so the empty app is just sidebar + chat, like Claude. */}
+ {(currentResult || sessionResults.length > 0) && (
  <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border">
  <ResultsPane
  current={currentResult}
@@ -943,6 +944,7 @@ const VerifyChatPage: React.FC = () => {
  isAuthenticated={isAuthenticated}
  />
  </aside>
+ )}
 
  {/* RESULTS PANE (mobile) */}
  {resultsOpenMobile && (

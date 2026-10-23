@@ -77,7 +77,7 @@ const NorthCarolinaLicensePlateLookupPage = () => {
  },
  {
  question: "Is the North Carolina license plate lookup free?",
- answer: "A free SafeOrStolen account includes 2 checks, plate or VIN, with no credit card. After that, a single check is $0.99 or you can pay $10 a month for unlimited checks and cancel anytime."
+ answer: "A free SafeOrStolen account includes 2 checks, plate or VIN, with no credit card. After that, $0.99 gets you 2 more checks or you can pay $10 a month for unlimited checks and cancel anytime."
  }
  ]
  }}

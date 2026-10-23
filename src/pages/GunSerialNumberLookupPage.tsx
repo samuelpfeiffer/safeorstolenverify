@@ -57,7 +57,7 @@ const GunSerialNumberLookupPage = () => {
  },
  {
  question: "Is gun serial number lookup really free?",
- answer: "Your first 2 checks on SafeOrStolen (safeorstolen.com/gun-serial-number-lookup) are free with no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. Dealers and pawn shops checking many guns can use bulk checking at safeorstolen.com/bulk-check."
+ answer: "Your first check on SafeOrStolen (safeorstolen.com/gun-serial-number-lookup) are free with no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. Dealers and pawn shops checking many guns can use bulk checking at safeorstolen.com/bulk-check."
  },
  {
  question: "What databases are searched in a gun serial lookup?",

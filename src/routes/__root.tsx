@@ -393,6 +393,8 @@ function AppShell() {
 
   // Hide footer on full-height chat experiences (the chat IS the page)
   const hideFooter = location.pathname === "/verify" || location.pathname === "/ai-verify";
+  // Oct 22 2026: the chat app is full-screen like Claude (its own sidebar), so no site menu bar, bottom bar or extra chat bubble.
+  const appShell = hideFooter;
 
   return (
     <GA4Provider>
@@ -420,14 +422,14 @@ function AppShell() {
         )}
 
         <div className="min-h-screen bg-background text-foreground flex flex-col">
-          <TopNavigation />
-          <main className="flex-1 pt-16">
+          {!appShell && <TopNavigation />}
+          <main className={appShell ? "flex-1" : "flex-1 pt-16"}>
             <Outlet />
           </main>
           {!hideFooter && <SOSFooter />}
         </div>
-                       <MobileNavigation />
-        <AIFloatingChat />
+                       {!appShell && <MobileNavigation />}
+        {!appShell && <AIFloatingChat />}
 
         {showGrowthComponents && (
           <Suspense fallback={null}>

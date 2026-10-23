@@ -102,7 +102,7 @@ const FloridaVinLookup = () => (
           {
             question: 'Is there a free Florida VIN check?',
             answer:
-              "Yes. SafeOrStolen's VIN check is free for your first 2 checks. FDLE's stolen vehicle search and FLHSMV's Motor Vehicle Information Check are free state services.",
+              "Yes. SafeOrStolen's VIN check is free for your first check. FDLE's stolen vehicle search and FLHSMV's Motor Vehicle Information Check are free state services.",
           },
           {
             question: 'What is an FDLE VIN check?',
