@@ -12,11 +12,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckIfStolenPage = () => {
  return (
  <ItemLandingPageTemplate
- title="Check If an Item Is Stolen: Stolen Item Checker | SafeOrStolen"
- metaDescription="Check if an item is stolen by IMEI, VIN, plate or serial number. One stolen item checker for phones, cars, guns, bikes, laptops and tools. 1 free check."
- h1="Check If an Item Is Stolen"
+ title="Stolen Checker: Check If Any Item Is Stolen, Free | SafeOrStolen"
+ metaDescription="All-in-one stolen checker: see if a phone, car, gun, bike, tool or any item with a serial number is stolen, by IMEI, VIN, plate or serial. 1 free check."
+ h1="Stolen Checker: Check If Any Item Is Stolen"
  itemType="Stolen Item"
- dateModified="2026-10-07"
+ dateModified="2026-10-22"
  searchPlaceholder="Enter an IMEI, VIN, plate or serial number"
  keywords={[
  'check if item is stolen',
