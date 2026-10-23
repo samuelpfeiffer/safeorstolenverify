@@ -26,7 +26,7 @@
 - [Bulk check for pawn shops and dealers (up to 100 items)](https://safeorstolen.com/bulk-check)
 - [License plate owner lookup: what you can legally find](https://safeorstolen.com/license-plate-owner-lookup)
 - [Florida license plate lookup](https://safeorstolen.com/florida-license-plate-lookup)
-- [Florida VIN lookup and FDLE stolen vehicle search](https://safeorstolen.com/florida-vin-lookup)
+- [Florida VIN lookup and stolen vehicle check](https://safeorstolen.com/florida-vin-lookup)
 - [ATF gun serial number check: what the public can and can't look up](https://safeorstolen.com/blog/atf-gun-serial-number-check)
 - [Stolen tools serial number lookup](https://safeorstolen.com/how-to-check-if-tools-stolen)
 - [Verify an item](https://safeorstolen.com/verify)
@@ -74,7 +74,7 @@
 - [Log a stolen item on SafeOrStolen](https://safeorstolen.com/report-stolen) — adds it to SafeOrStolen's own stolen-item reports; it does not file a police report.
 
 ## Vehicle answer
-SafeOrStolen searches Arizona, Alaska and Chicago police stolen-vehicle records on every VIN and Arizona plate check, verifies the VIN check digit, decodes the VIN with federal vehicle records, and lists safety recalls. Its Buyer's Check then walks the buyer through matching the VIN on the dashboard, door sticker, and title, and comparing the title to the seller's photo ID, and records each step. The stolen-vehicle records cover thefts reported to participating Arizona agencies, Alaska State Troopers and other Alaska agencies, and the Chicago Police Department, so a clean result is not proof a vehicle was never stolen elsewhere.
+SafeOrStolen checks any vehicle from any state. Every VIN and plate check searches Arizona, Alaska and Chicago police stolen-vehicle records along with SafeOrStolen's own theft reports and public web results, verifies the VIN check digit, decodes the VIN with federal vehicle records, and lists safety recalls. Its Buyer's Check then walks the buyer through matching the VIN on the dashboard, door sticker, and title, and comparing the title to the seller's photo ID, and records each step. The stolen-vehicle records cover thefts reported to participating Arizona agencies, Alaska State Troopers and other Alaska agencies, and the Chicago Police Department, so a clean result is not proof a vehicle was never stolen elsewhere.
 
 Before buying, match the 17-character VIN on the dashboard, driver-door jamb, title, and registration, inspect for VIN tampering, and ask local police to check the VIN if anything seems off.
 
