@@ -4,16 +4,17 @@ import { ArrowRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const SEEN_KEY = 'sos-product-tour-v1-seen';
+// v2 (Oct 22 2026): new steps, so everyone sees the updated tour once. Replay: window.dispatchEvent(new Event('sos-open-tour')).
+const SEEN_KEY = 'sos-product-tour-v2-seen';
 const CALLOUT_WIDTH = 336;
 const EDGE_GAP = 16;
 const TARGET_GAP = 14;
 
 const STEPS = [
-  { target: 'search', title: 'Search or ask', description: 'Paste an IMEI, VIN, serial number, or marketplace link here, or just ask a question.' },
-  { target: 'quick-actions', title: 'Quick starts', description: 'Or tap one of these to get started.' },
-  { target: 'free-checks', title: 'Your first checks are free', description: 'Your first check is free once you create an account — no credit card needed.' },
-  { target: 'history', title: 'Find every check again', description: 'Every check you run is saved in your Dashboard so you can find it again.' },
+  { target: 'search', title: 'Start here', description: 'Type or paste a phone IMEI, car VIN or plate, gun serial, or any serial number. You can also paste a Facebook Marketplace or Craigslist link, or scan the label with your camera.' },
+  { target: 'quick-actions', title: 'Not sure what to enter?', description: 'Tap the item you are checking and we will show you where to find its number.' },
+  { target: 'free-checks', title: 'Your first check is free', description: 'No account or credit card needed. After that, checks are $0.99 for 2 or $10 a month for unlimited.' },
+  { target: 'history', title: 'Save, share and keep going', description: 'Open the app to see every source searched, share a result with a buyer or seller, and find every past check again.' },
 ] as const;
 
 interface Position {
@@ -54,6 +55,12 @@ export function ProductTour() {
     setPosition(null);
     setStepIndex((index) => index + 1);
   };
+
+  useEffect(() => {
+    const replay = () => { setStepIndex(0); setTargetRect(null); setPosition(null); setIsOpen(true); };
+    window.addEventListener('sos-open-tour', replay);
+    return () => window.removeEventListener('sos-open-tour', replay);
+  }, []);
 
   useEffect(() => {
     try {

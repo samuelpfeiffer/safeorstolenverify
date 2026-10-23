@@ -256,6 +256,13 @@ export const HomeAIHero: React.FC = () => {
  </div>
  </div>
  </div>
+ <button
+ type="button"
+ onClick={() => window.dispatchEvent(new Event('sos-open-tour'))}
+ className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-foreground hover:underline mr-3"
+ >
+ How it works
+ </button>
  <Link
  to="/verify"
  className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
