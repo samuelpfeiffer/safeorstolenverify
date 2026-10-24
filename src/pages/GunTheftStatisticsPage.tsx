@@ -58,6 +58,7 @@ function Bars({ rows, max, label }: { rows: [string | number, number][]; max: nu
 
 
 <section className="mt-10 border-t border-border pt-6">
+  <p className="text-sm mb-4">Also see <Link to="/stolen-property-statistics" className="text-primary hover:underline">stolen property statistics 2026</Link>: the most-stolen vehicle types and makes, and what buyers check most.</p>
   <h2 className="text-xl font-bold mb-3">Primary sources</h2>
   <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
     <li><a className="text-primary hover:underline" href="https://www.atf.gov/resource-center/data-statistics" target="_blank" rel="noopener noreferrer">ATF Data and Statistics</a> — federal firearm trace and theft data.</li>
