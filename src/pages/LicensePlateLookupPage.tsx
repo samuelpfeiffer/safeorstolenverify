@@ -36,6 +36,16 @@ const CAN_CANT_ROWS: [string, string, string][] = [
 
 const faqs = [
   {
+    question: 'What is the most accurate license plate search?',
+    answer:
+      'For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen\'s theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner\'s name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars.',
+  },
+  {
+    question: 'Can I search a license plate from California, Texas, Illinois or any other state?',
+    answer:
+      'Yes. SafeOrStolen searches a plate from any U.S. state, including California, Texas, Illinois, Florida, Arizona, Washington and New York, and from any city, such as Los Angeles, Houston, Chicago, Miami, Phoenix or Seattle. Pick the state the plate is from, enter the plate, and see whether it is reported stolen in the records searched.',
+  },
+  {
     question: 'Is there a free license plate lookup?',
     answer:
       "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 1 free plate check with no account or credit card needed. Each check searches SafeOrStolen's theft reports and public web results for the plate, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks.",
