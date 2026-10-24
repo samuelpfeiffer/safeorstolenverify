@@ -62,6 +62,7 @@ const webApplicationJsonLd = JSON.stringify({
   },
   creator: {
     "@type": "Organization",
+    "@id": "https://safeorstolen.com/#organization",
     name: "SafeOrStolen",
     url: "https://safeorstolen.com",
     logo: "https://safeorstolen.com/sos-logo-square.png",
@@ -89,6 +90,7 @@ const speakableJsonLd = JSON.stringify({
 const organizationJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://safeorstolen.com/#organization",
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   logo: "https://safeorstolen.com/sos-logo-square.png",

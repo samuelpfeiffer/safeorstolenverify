@@ -282,7 +282,16 @@ const Index = () => {
  <Link to="/check-ps5" className="text-primary hover:underline">PS5 serial number check</Link>{' · '}
  <Link to="/how-to-check-if-tools-stolen" className="text-primary hover:underline">Stolen tools serial lookup</Link>{' · '}
  <Link to="/how-to-check-if-item-stolen" className="text-primary hover:underline">How to check if something is stolen</Link>{' · '}
+ <Link to="/stolen-property-statistics" className="text-primary hover:underline">Stolen property statistics 2026</Link>{' · '}
  <Link to="/stolen-gun-statistics" className="text-primary hover:underline">Stolen gun statistics by state</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/arizona" className="text-primary hover:underline">Gun serial lookup Arizona</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/georgia" className="text-primary hover:underline">Gun serial lookup Georgia</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/texas" className="text-primary hover:underline">Gun serial lookup Texas</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/florida" className="text-primary hover:underline">Gun serial lookup Florida</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/california" className="text-primary hover:underline">Gun serial lookup California</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/indiana" className="text-primary hover:underline">Gun serial lookup Indiana</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/tennessee" className="text-primary hover:underline">Gun serial lookup Tennessee</Link>{' · '}
+ <Link to="/gun-serial-number-lookup/ohio" className="text-primary hover:underline">Gun serial lookup Ohio</Link>{' · '}
  <Link to="/where-to-find-serial-number" className="text-primary hover:underline">Where to find the serial number</Link>
  </nav>
  <nav aria-label="Gun serial number lookup by state" className="mt-3 text-center text-sm text-muted-foreground">
