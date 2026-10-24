@@ -616,30 +616,12 @@ async function anonymousGate(
   fingerprint: string,
   clientIp: string | null,
 ): Promise<GateResult> {
-  if (isLaunchFree()) return { allowed: true, plan: 'free', checksRemaining: 99 };
-  if (clientIp) {
-    const ipKey = `ip:${(await sha256Hex(clientIp)).slice(0, 32)}`;
-    const { data: ipRow } = await admin.from('usage_tracking').select('*').eq('fingerprint', ipKey).maybeSingle();
-    if ((ipRow?.check_count ?? 0) >= ANON_LIFETIME_PER_IP) {
-      return { allowed: false, reason: 'free_limit', plan: 'free', checksUsed: FREE_LIMIT, checksLimit: FREE_LIMIT };
-    }
-    if (ipRow) {
-      await admin.from('usage_tracking').update({ check_count: (ipRow.check_count ?? 0) + 1, last_check_at: new Date().toISOString() }).eq('id', ipRow.id);
-    } else {
-      await admin.from('usage_tracking').insert({ fingerprint: ipKey, user_id: null, check_count: 1, last_check_at: new Date().toISOString() });
-    }
-  }
-  const { data: usage } = await admin.from('usage_tracking').select('*').eq('fingerprint', fingerprint).maybeSingle();
-  const used = usage?.check_count ?? 0;
-  if (used >= FREE_LIMIT) {
-    return { allowed: false, reason: 'free_limit', plan: 'free', checksUsed: used, checksLimit: FREE_LIMIT };
-  }
-  if (usage) {
-    await admin.from('usage_tracking').update({ check_count: used + 1, last_check_at: new Date().toISOString() }).eq('id', usage.id);
-  } else {
-    await admin.from('usage_tracking').insert({ fingerprint, user_id: null, check_count: 1, last_check_at: new Date().toISOString() });
-  }
-  return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - (used + 1) };
+  const ipKey = clientIp ? `ip:${(await sha256Hex(clientIp)).slice(0, 32)}` : null;
+  const { data, error } = await admin.rpc('claim_lifetime_free_check' as never, {
+    p_user_id: null, p_fingerprint: fingerprint, p_ip_key: ipKey,
+  } as never);
+  if (error || data !== true) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: FREE_LIMIT };
+  return { allowed: true, plan: 'free', checksRemaining: 0 };
 }
 
 /** Monthly plan includes 20 phone blacklist searches a month; a single check includes one. */
@@ -793,10 +775,14 @@ export async function checkUsageGate(
       return { allowed: false, reason: 'monthly_limit', plan: 'basic', checksLimit: 50 };
     }
 
-    await admin
-      .from('subscriptions')
+    let claim = admin.from('subscriptions')
       .update({ checks_used_this_month: used + 1, updated_at: new Date().toISOString() })
       .eq('id', sub.id);
+    claim = sub.checks_used_this_month == null
+      ? claim.is('checks_used_this_month', null)
+      : claim.eq('checks_used_this_month', used);
+    const { data: claimed, error: claimError } = await claim.select('id');
+    if (claimError || !claimed?.length) return { allowed: false, reason: 'single_used', plan: sub.plan };
 
     return {
       allowed: true,
@@ -835,66 +821,11 @@ export async function checkUsageGate(
     return { allowed: false, reason: 'single_used', plan: 'single' };
   }
 
-  // Free tier: account-scoped, adopting this browser's pre-signup row so
-  // earlier free checks still count.
-  const { data: byAccount } = await admin
-    .from('usage_tracking')
-    .select('*')
-    .eq('user_id', userId)
-    .order('last_check_at', { ascending: false })
-    .limit(1)
-    .maybeSingle();
-
-  let usage: any = byAccount ?? null;
-
-  if (!usage && fingerprint) {
-    const { data: byFingerprint } = await admin
-      .from('usage_tracking')
-      .select('*')
-      .eq('fingerprint', fingerprint)
-      .maybeSingle();
-    usage = byFingerprint ?? null;
-  }
-
-  if (!usage) {
-    await admin.from('usage_tracking').insert({
-      fingerprint: fingerprint ?? `user:${userId}`,
-      user_id: userId,
-      check_count: 1,
-      last_check_at: new Date().toISOString(),
-    });
-    return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - 1 };
-  }
-
-  if (isLaunchFree()) return { allowed: true, plan: 'free', checksRemaining: 99 };
-  // Lifetime allowance: 1 free check total per account, never reset.
-  // Sum every usage row tied to this account so extra rows can't add checks.
-  const { data: allRows } = await admin
-    .from('usage_tracking')
-    .select('check_count')
-    .eq('user_id', userId);
-  const lifetimeUsed = Math.max(
-    usage.check_count ?? 0,
-    (allRows ?? []).reduce((s: number, r: any) => s + (r.check_count ?? 0), 0),
-  );
-
-  if (lifetimeUsed >= FREE_LIMIT) {
-    return {
-      allowed: false,
-      reason: 'free_limit',
-      plan: 'free',
-      checksUsed: lifetimeUsed,
-      checksLimit: FREE_LIMIT,
-    };
-  }
-
-  const newCount = (usage.check_count ?? 0) + 1;
-  await admin
-    .from('usage_tracking')
-    .update({ check_count: newCount, last_check_at: new Date().toISOString(), user_id: userId })
-    .eq('id', usage.id);
-
-  return { allowed: true, plan: 'free', checksRemaining: FREE_LIMIT - newCount };
+  const { data, error } = await admin.rpc('claim_lifetime_free_check' as never, {
+    p_user_id: userId, p_fingerprint: fingerprint ?? `user:${userId}`, p_ip_key: null,
+  } as never);
+  if (error || data !== true) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: FREE_LIMIT };
+  return { allowed: true, plan: 'free', checksRemaining: 0 };
 }
 
 /**

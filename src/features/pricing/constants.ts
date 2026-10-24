@@ -2,8 +2,8 @@
  * Pricing Module - Constants & Configuration
  * 
  * THREE-TIER MODEL (March 2026):
- *   Free  — 2 checks, no credit card
- *   $0.99 — per check, one-time, free account required
+ *   Free  — 1 check, no credit card
+ *   $0.99 — 2 checks, one-time, no account required
  *   $10/month — unlimited everything + seller badges
  */
 
@@ -17,7 +17,7 @@ export const UNLIMITED_PRICE_ID     = 'price_1T8uToGxnZLw8J7O6GcOuV1w';
 export const UNLIMITED_PRODUCT_ID   = 'prod_U78lRFEHuOd01t';
 
 // ── Limits ──────────────────────────────────────────────────
-export const FREE_SEARCH_LIMIT = 2;   // lead-magnet free checks
+export const FREE_SEARCH_LIMIT = 1;   // lead-magnet free checks
 export const FAIR_USE_CAP      = 1000; // monthly soft cap for abuse prevention
 
 // ── Tier Definitions ────────────────────────────────────────
@@ -31,7 +31,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: FREE_SEARCH_LIMIT,
     tier: "free",
     features: [
-      "2 free verification checks",
+      "1 free verification check",
       "All item types supported",
       "No credit card required",
     ],
@@ -51,12 +51,12 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     price: 99,
     priceDisplay: "$0.99",
     interval: "once",
-    monthlyQuota: 1,
+    monthlyQuota: 2,
     stripePriceId: PAY_PER_CHECK_PRICE_ID,
     stripeProductId: PAY_PER_CHECK_PRODUCT_ID,
     tier: "payPerCheck",
     features: [
-      "One-time verification",
+      "2 verification checks",
       "No account needed",
       "Instant results",
       "PDF verification receipt",

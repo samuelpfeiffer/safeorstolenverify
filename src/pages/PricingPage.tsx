@@ -22,7 +22,7 @@ const FAQS = [
  a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, $0.99 buys 2 checks with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
  },
  {
- q: 'What do the 1 free check include?',
+ q: 'What does the 1 free check include?',
  a: 'Each free check searches SafeOrStolen theft reports and public web results for the number you enter. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, bike checks search a national stolen-bicycle registry, and VIN checks decode the vehicle and list open recalls. A free phone check shows the make and model from the IMEI. The carrier blacklist search needs a paid check.',
  },
  {
@@ -116,11 +116,11 @@ const PricingPage = () => {
  <div className="mb-1 flex items-baseline gap-1">
  <span className="text-4xl font-black">$0</span>
  </div>
- <p className="text-muted-foreground text-sm mb-6">2 checks</p>
+ <p className="text-muted-foreground text-sm mb-6">1 free check</p>
 
  <ul className="space-y-2 flex-1 mb-6">
  {[
- '2 checks, no credit card',
+ '1 free check, no account or credit card',
  'Phones, vehicles, plates, guns, bikes and serial numbers',
  'SafeOrStolen theft reports and public web results',
  'Police gun records for guns, stolen-bicycle registry for bikes',
@@ -247,7 +247,7 @@ const PricingPage = () => {
  <tbody>
  {[
  ['Price', '$0', '$0.99 for 2', '$10 a month'],
- ['Checks', '2', '1 per purchase', 'Unlimited'],
+ ['Checks', '1 total', '2 per purchase', 'Unlimited'],
  ['Theft reports and public web results', 'Yes', 'Yes', 'Yes'],
  ['Police gun records, bike registry, VIN decode and recalls', 'Yes', 'Yes', 'Yes'],
  ['Phone carrier blacklist search', 'No', 'Yes', 'Up to 20 a month'],

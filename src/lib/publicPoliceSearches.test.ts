@@ -1,4 +1,6 @@
-import { test, expect } from 'bun:test';
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+const expect = (value: boolean) => ({ toBe: (expected: boolean) => assert.equal(value, expected) });
 import { isPublicPoliceSearch } from './publicPoliceSearches';
 
 test('allow exactly the five owner-requested manual public searches', () => {
