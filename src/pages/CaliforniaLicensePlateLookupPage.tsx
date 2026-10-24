@@ -40,6 +40,10 @@ const CaliforniaLicensePlateLookupPage = () => {
  ],
  faqs: [
  {
+ question: "What is the most accurate license plate search in California?",
+ answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in Los Angeles, San Diego, San Jose, San Francisco and every other California city.",
+ },
+ {
  question: "Can I check if a car is stolen in California using the license plate?",
  answer: "You can use the plate as a first screen. SafeOrStolen (safeorstolen.com/california-license-plate-lookup) searches a California plate against its own theft reports and public web results. Plates can be moved between cars, so also check the VIN on the dashboard and door sticker, and make sure the title name matches the seller's ID."
  },

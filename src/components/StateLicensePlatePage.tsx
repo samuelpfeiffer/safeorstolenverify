@@ -97,6 +97,14 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "@type": "Answer",
  "text": `Yes. The ${stateData.name} plate lookup works the same in ${stateData.majorCities.slice(0, 3).join(', ')} and anywhere else in the state: enter the plate and pick ${stateData.abbrev}, and you'll see whether it shows up in SafeOrStolen theft reports or public web results in a few seconds.`
  }
+ },
+ {
+ "@type": "Question",
+ "name": `What is the most accurate license plate search in ${stateData.name}?`,
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": `For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in ${stateData.majorCities.slice(0, 4).join(', ')} and every other ${stateData.name} city.`
+ }
  }
  ]
  }
@@ -155,6 +163,8 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <p>1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
  <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
  <p>Yes. The plate lookup works the same in {stateData.majorCities.join(', ')} and anywhere else in {stateData.name}.</p>
+ <h3>What is the most accurate license plate search in {stateData.name}?</h3>
+ <p>For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in {stateData.majorCities.slice(0, 4).join(', ')} and every other {stateData.name} city.</p>
  {uniqueContent?.uniqueFaqs.map((faq, i) => (
  <div key={i}>
  <h3>{faq.question}</h3>

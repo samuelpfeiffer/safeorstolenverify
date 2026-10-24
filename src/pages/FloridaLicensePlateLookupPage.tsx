@@ -100,6 +100,18 @@ const FloridaLicensePlateLookupPage = () => {
  ],
  faqs: [
  {
+  question: "What is the most accurate license plate search in Florida?",
+  answer: "For a stolen check, SafeOrStolen: enter a Florida plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, with your first check free. No legitimate public site can show a Florida plate owner's name or address, because federal and Florida privacy law keep that private; sites that promise it are usually selling people-search data. Run the VIN too, since plates can be swapped between cars.",
+ },
+ {
+  question: "Can I do an accurate license plate search in Jacksonville or Miami, FL?",
+  answer: "Yes. A SafeOrStolen plate search works the same for any Florida city, including Jacksonville, Miami, Tampa, Orlando, St. Petersburg, Tallahassee and Fort Lauderdale, and for plates from any other state. It shows whether the plate or vehicle is reported stolen in the records searched. If anything looks off, the local police or sheriff's non-emergency line can run the plate for you.",
+ },
+ {
+  question: "How do I do a Florida tag lookup?",
+  answer: "Type the tag (plate) number into the search box on this page and press search. SafeOrStolen checks it against theft reports and police stolen-vehicle and stolen-plate records, and shows a possible match with the vehicle description if one is found. Florida calls license plates \"tags\", so a tag lookup and a license plate lookup are the same search.",
+ },
+ {
  question: "Can I check if a car is stolen in Florida by license plate?",
  answer: "Yes. Search the plate on SafeOrStolen; your first check is free with no account. Because plates can be swapped between cars, also check the VIN before you buy."
  },
