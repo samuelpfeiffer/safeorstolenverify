@@ -1996,6 +1996,10 @@ export type Database = {
         Args: { check_identifier: string; check_type?: string }
         Returns: Json
       }
+      claim_lifetime_free_check: {
+        Args: { p_fingerprint: string; p_ip_key?: string; p_user_id: string }
+        Returns: boolean
+      }
       claim_proof_record: { Args: { p_id: string }; Returns: boolean }
       clean_expired_pending_verifications: { Args: never; Returns: undefined }
       create_proof_record: {
