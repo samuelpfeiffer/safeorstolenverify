@@ -1,5 +1,12 @@
 - [x] Repair damaged shared copy, publish, and report live sitemap phrase counts.
 
+# One free check and strict payment gate (Oct 24)
+- [ ] Enforce one lifetime free check and atomic paid/free usage in /verify-api
+- [ ] Reuse existing Stripe checkout; verify payment before granting 2 single checks or Unlimited
+- [ ] Preserve pending searches through payment; update public free-check copy
+- [ ] Run entitlement tests and verify the checkout gate in the browser
+- [ ] Resolve preview errors and public-blog security findings
+
 # Coverage honesty pass (Oct 19)
 - [ ] Add manual public police searches and serial copying to firearm checker and gun guide
 - [ ] Clarify limited coverage and not-found outcomes without changing checks

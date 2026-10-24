@@ -2,8 +2,8 @@
  * Verification endpoint served by the app's own backend.
  *
  * Visitors get 1 free check without an account (Sept 30 2026: the Sep 19
- * account wall stopped all sales). Limits: 2 per browser fingerprint and
- * a lifetime cap per connection (bot protection); nothing resets. After that: sign up or pay.
+ * account wall stopped all sales). Limits: 1 per browser fingerprint and
+ * a lifetime cap per connection (bot protection); nothing resets. After that: completed payment is required.
  */
 
 import { createFileRoute } from '@tanstack/react-router';
@@ -27,7 +27,7 @@ export const Route = createFileRoute('/verify-api')({
             return json({ error: 'Server not configured', code: 'CONFIG_ERROR' }, 500);
           }
 
-          // 1. An account is required. The publishable key is not a session.
+          // 1. Validate an optional account session; the publishable key is not a session.
           const authHeader = request.headers.get('authorization') ?? '';
           const token = authHeader.replace(/^Bearer\s+/i, '').trim();
           const looksLikeUserToken =

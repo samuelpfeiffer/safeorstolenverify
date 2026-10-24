@@ -264,6 +264,7 @@ import { Route as StolenDatabaseRouteImport } from './routes/stolen-database'
 import { Route as StolenGunDatabaseRouteImport } from './routes/stolen-gun-database'
 import { Route as StolenGunStatisticsRouteImport } from './routes/stolen-gun-statistics'
 import { Route as StolenPhoneCheckerRouteImport } from './routes/stolen-phone-checker'
+import { Route as StolenPropertyStatisticsRouteImport } from './routes/stolen-property-statistics'
 import { Route as TennesseeLicensePlateLookupRouteImport } from './routes/tennessee-license-plate-lookup'
 import { Route as TennesseeVinLookupRouteImport } from './routes/tennessee-vin-lookup'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -1727,6 +1728,12 @@ const StolenPhoneCheckerRoute = StolenPhoneCheckerRouteImport.update({
   path: '/stolen-phone-checker',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StolenPropertyStatisticsRoute =
+  StolenPropertyStatisticsRouteImport.update({
+    id: '/stolen-property-statistics',
+    path: '/stolen-property-statistics',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TennesseeLicensePlateLookupRoute =
   TennesseeLicensePlateLookupRouteImport.update({
     id: '/tennessee-license-plate-lookup',
@@ -2709,6 +2716,7 @@ export interface FileRoutesByFullPath {
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
   '/stolen-gun-statistics': typeof StolenGunStatisticsRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
+  '/stolen-property-statistics': typeof StolenPropertyStatisticsRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
   '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
   '/terms': typeof TermsRoute
@@ -3096,6 +3104,7 @@ export interface FileRoutesByTo {
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
   '/stolen-gun-statistics': typeof StolenGunStatisticsRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
+  '/stolen-property-statistics': typeof StolenPropertyStatisticsRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
   '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
   '/terms': typeof TermsRoute
@@ -3485,6 +3494,7 @@ export interface FileRoutesById {
   '/stolen-gun-database': typeof StolenGunDatabaseRoute
   '/stolen-gun-statistics': typeof StolenGunStatisticsRoute
   '/stolen-phone-checker': typeof StolenPhoneCheckerRoute
+  '/stolen-property-statistics': typeof StolenPropertyStatisticsRoute
   '/tennessee-license-plate-lookup': typeof TennesseeLicensePlateLookupRoute
   '/tennessee-vin-lookup': typeof TennesseeVinLookupRoute
   '/terms': typeof TermsRoute
@@ -3876,6 +3886,7 @@ export interface FileRouteTypes {
     | '/stolen-gun-database'
     | '/stolen-gun-statistics'
     | '/stolen-phone-checker'
+    | '/stolen-property-statistics'
     | '/tennessee-license-plate-lookup'
     | '/tennessee-vin-lookup'
     | '/terms'
@@ -4263,6 +4274,7 @@ export interface FileRouteTypes {
     | '/stolen-gun-database'
     | '/stolen-gun-statistics'
     | '/stolen-phone-checker'
+    | '/stolen-property-statistics'
     | '/tennessee-license-plate-lookup'
     | '/tennessee-vin-lookup'
     | '/terms'
@@ -4651,6 +4663,7 @@ export interface FileRouteTypes {
     | '/stolen-gun-database'
     | '/stolen-gun-statistics'
     | '/stolen-phone-checker'
+    | '/stolen-property-statistics'
     | '/tennessee-license-plate-lookup'
     | '/tennessee-vin-lookup'
     | '/terms'
@@ -5041,6 +5054,7 @@ export interface RootRouteChildren {
   StolenGunDatabaseRoute: typeof StolenGunDatabaseRoute
   StolenGunStatisticsRoute: typeof StolenGunStatisticsRoute
   StolenPhoneCheckerRoute: typeof StolenPhoneCheckerRoute
+  StolenPropertyStatisticsRoute: typeof StolenPropertyStatisticsRoute
   TennesseeLicensePlateLookupRoute: typeof TennesseeLicensePlateLookupRoute
   TennesseeVinLookupRoute: typeof TennesseeVinLookupRoute
   TermsRoute: typeof TermsRoute
@@ -6909,6 +6923,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StolenPhoneCheckerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stolen-property-statistics': {
+      id: '/stolen-property-statistics'
+      path: '/stolen-property-statistics'
+      fullPath: '/stolen-property-statistics'
+      preLoaderRoute: typeof StolenPropertyStatisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tennessee-license-plate-lookup': {
       id: '/tennessee-license-plate-lookup'
       path: '/tennessee-license-plate-lookup'
@@ -8232,6 +8253,7 @@ const rootRouteChildren: RootRouteChildren = {
   StolenGunDatabaseRoute: StolenGunDatabaseRoute,
   StolenGunStatisticsRoute: StolenGunStatisticsRoute,
   StolenPhoneCheckerRoute: StolenPhoneCheckerRoute,
+  StolenPropertyStatisticsRoute: StolenPropertyStatisticsRoute,
   TennesseeLicensePlateLookupRoute: TennesseeLicensePlateLookupRoute,
   TennesseeVinLookupRoute: TennesseeVinLookupRoute,
   TermsRoute: TermsRoute,

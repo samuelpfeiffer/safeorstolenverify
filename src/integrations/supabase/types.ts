@@ -460,7 +460,7 @@ export type Database = {
       blog_posts_status_backup_20260930: {
         Row: {
           backed_up_at: string | null
-          id: string | null
+          id: string
           published_at: string | null
           slug: string | null
           status: string | null
@@ -468,7 +468,7 @@ export type Database = {
         }
         Insert: {
           backed_up_at?: string | null
-          id?: string | null
+          id: string
           published_at?: string | null
           slug?: string | null
           status?: string | null
@@ -476,7 +476,7 @@ export type Database = {
         }
         Update: {
           backed_up_at?: string | null
-          id?: string | null
+          id?: string
           published_at?: string | null
           slug?: string | null
           status?: string | null
@@ -1559,6 +1559,7 @@ export type Database = {
           fingerprint: string | null
           id: string
           period_end: string | null
+          phone_lookups_used: number
           plan: string | null
           status: string | null
           stripe_customer_id: string | null
@@ -1575,6 +1576,7 @@ export type Database = {
           fingerprint?: string | null
           id?: string
           period_end?: string | null
+          phone_lookups_used?: number
           plan?: string | null
           status?: string | null
           stripe_customer_id?: string | null
@@ -1591,6 +1593,7 @@ export type Database = {
           fingerprint?: string | null
           id?: string
           period_end?: string | null
+          phone_lookups_used?: number
           plan?: string | null
           status?: string | null
           stripe_customer_id?: string | null
@@ -1993,6 +1996,10 @@ export type Database = {
         Args: { check_identifier: string; check_type?: string }
         Returns: Json
       }
+      claim_lifetime_free_check: {
+        Args: { p_fingerprint: string; p_ip_key?: string; p_user_id: string }
+        Returns: boolean
+      }
       claim_proof_record: { Args: { p_id: string }; Returns: boolean }
       clean_expired_pending_verifications: { Args: never; Returns: undefined }
       create_proof_record: {
@@ -2097,6 +2104,8 @@ export type Database = {
       is_service_role: { Args: never; Returns: boolean }
       is_service_role_or_admin: { Args: never; Returns: boolean }
       public_checks_run_count: { Args: never; Returns: number }
+      public_stolen_property_stats: { Args: never; Returns: Json }
+      refresh_ak_stolen_vehicles: { Args: never; Returns: string }
       reset_monthly_verifications: { Args: never; Returns: undefined }
       retrieve_pending_verification: {
         Args: { p_session_id: string }

@@ -168,22 +168,6 @@ const VerifyPage = () => {
  const handleVerify = async (e: React.FormEvent) => {
  e.preventDefault();
 
- // CRITICAL: Require authentication for all verifications
- if (!isAuthenticated) {
- const trimmed = identifier.trim();
-
- // Best-effort: save the user's typed identifier so we can restore it post-auth
- if (trimmed) {
- savePendingVerification(trimmed, effectiveItemType || undefined, 'buyer').catch(() => {
- // Ignore errors here; URL redirect still preserves the value
- });
- }
-
- const redirect = `/verify?q=${encodeURIComponent(trimmed)}${effectiveItemType ? `&type=${encodeURIComponent(effectiveItemType)}` : ''}`;
- navigate(`/auth?tab=signup&redirect=${encodeURIComponent(redirect)}`);
- return;
- }
-
  // SERVER-SIDE GATE: Check if user has remaining checks
  const allowed = await checkGate();
  if (!allowed) return; // UpgradeModal will show automatically via isBlocked
