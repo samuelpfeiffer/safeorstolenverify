@@ -8,10 +8,11 @@ import { InlineSerialCheck } from '@/components/seo/InlineSerialCheck';
 //  - What buyers check: verification_searches, last 90 days, grouped by item type
 // Re-count and update AS_OF when refreshing these numbers.
 
-const AS_OF = '2026-10-23';
-const AS_OF_TEXT = 'October 23, 2026';
+const AS_OF0 = '2026-10-23';
+// Live numbers come from the public_stolen_property_stats() database function via the route loader;
+// the numbers below are the fallback if that call fails.
 
-const AK = {
+const AK0 = {
   total: 3486,
   reported2026: 1028,
   styleKnown: 1461,
@@ -36,7 +37,7 @@ const AK = {
   topModel: ['Chevrolet Silverado', 98] as [string, number],
 };
 
-const CHECKS = {
+const CHECKS0 = {
   total: 2272,
   groups: [
     ['Serial-numbered items (laptops, tools, cameras, consoles)', 625],
@@ -50,18 +51,22 @@ const CHECKS = {
 const fmt = (n: number) => n.toLocaleString('en-US');
 const pct = (n: number, d: number) => `${Math.round((n / d) * 100)}%`;
 
-const FAQS: { q: string; a: string }[] = [
+type AkStats = typeof AK0;
+type CheckStats = typeof CHECKS0;
+
+function buildFaqs(AK: AkStats, CHECKS: CheckStats, AS_OF_TEXT: string, YEAR: string): { q: string; a: string }[] {
+  return [
   {
     q: 'What type of vehicle is stolen most often?',
-    a: `SUVs. In Alaska's statewide stolen-vehicle list, as counted by SafeOrStolen on ${AS_OF_TEXT}, SUVs make up ${pct(AK.styles[0][1], AK.styleKnown)} of stolen vehicles with a known body type, followed by pickup trucks at ${pct(AK.styles[1][1], AK.styleKnown)} and cars at ${pct(AK.styles[2][1], AK.styleKnown)}.`,
+    a: `${AK.styles[0][0]}. In Alaska's statewide stolen-vehicle list, as counted by SafeOrStolen on ${AS_OF_TEXT}, ${AK.styles[0][0]} make up ${pct(AK.styles[0][1], AK.styleKnown)} of stolen vehicles with a known body type, followed by ${AK.styles[1][0].toLowerCase()} at ${pct(AK.styles[1][1], AK.styleKnown)} and ${AK.styles[2][0].toLowerCase()} at ${pct(AK.styles[2][1], AK.styleKnown)}.`,
   },
   {
     q: 'What car brand is stolen the most?',
-    a: `Chevrolet. It accounts for ${pct(AK.makes[0][1], AK.makeKnown)} of stolen vehicles with a known make on Alaska's current stolen-vehicle list, ahead of Ford at ${pct(AK.makes[1][1], AK.makeKnown)}. The single most-listed model is the ${AK.topModel[0]}. (SafeOrStolen count, ${AS_OF_TEXT}.)`,
+    a: `${AK.makes[0][0]}. It accounts for ${pct(AK.makes[0][1], AK.makeKnown)} of stolen vehicles with a known make on Alaska's current stolen-vehicle list, ahead of ${AK.makes[1][0]} at ${pct(AK.makes[1][1], AK.makeKnown)}. The single most-listed model is the ${AK.topModel[0]}. (SafeOrStolen count, ${AS_OF_TEXT}.)`,
   },
   {
     q: 'How many vehicles are reported stolen in Alaska?',
-    a: `As of ${AS_OF_TEXT}, Alaska's statewide stolen-vehicle list holds ${fmt(AK.total)} vehicles and plates, and ${fmt(AK.reported2026)} of them (${pct(AK.reported2026, AK.total)}) were reported stolen in 2026. SafeOrStolen searches this list, along with Arizona and Chicago police records, on every VIN and plate check.`,
+    a: `As of ${AS_OF_TEXT}, Alaska's statewide stolen-vehicle list holds ${fmt(AK.total)} vehicles and plates, and ${fmt(AK.reported2026)} of them (${pct(AK.reported2026, AK.total)}) were reported stolen in ${YEAR}. SafeOrStolen searches this list, along with Arizona and Chicago police records, on every VIN and plate check.`,
   },
   {
     q: 'What used items do people check most for theft?',
@@ -71,7 +76,8 @@ const FAQS: { q: string; a: string }[] = [
     q: 'How can I check if a car, gun, phone or other item is stolen?',
     a: 'Enter its VIN, plate, serial number or IMEI at safeorstolen.com/verify. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, more than 220,000 police stolen-gun reports, a national stolen-bicycle registry, the lost and stolen phone blacklist, and its own theft reports, for an item from any state. Your first check is free.',
   },
-];
+  ];
+}
 
 function Bar({ label, n, d }: { label: string; n: number; d: number }) {
   const w = Math.max(2, Math.round((n / d) * 100));
@@ -84,23 +90,32 @@ function Bar({ label, n, d }: { label: string; n: number; d: number }) {
   );
 }
 
-export default function StolenPropertyStatisticsPage() {
+export default function StolenPropertyStatisticsPage({ stats }: { stats?: any }) {
+  const live = stats && Number(stats.akTotal) > 0 && Array.isArray(stats.styles) && stats.styles.length >= 3 && Array.isArray(stats.makes) && stats.makes.length >= 2 ? stats : null;
+  const AK: AkStats = live
+    ? { total: live.akTotal, reported2026: live.akReportedThisYear, styleKnown: live.styleKnown, styles: live.styles, makeKnown: live.makeKnown, makes: live.makes, topModel: live.topModel ?? AK0.topModel }
+    : AK0;
+  const CHECKS: CheckStats = live && Array.isArray(live.checks) && live.checks.length >= 5 ? { total: live.checksTotal, groups: live.checks } : CHECKS0;
+  const AS_OF: string = live?.asOf ?? AS_OF0;
+  const YEAR = AS_OF.slice(0, 4);
+  const AS_OF_TEXT = new Date(`${AS_OF}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  const FAQS = buildFaqs(AK, CHECKS, AS_OF_TEXT, YEAR);
   const url = 'https://safeorstolen.com/stolen-property-statistics';
-  const title = 'Stolen Property Statistics 2026: Cars, Guns, Phones & More';
-  const description = `Original 2026 data: SUVs are ${pct(AK.styles[0][1], AK.styleKnown)} of stolen vehicles, Chevrolet the most-stolen make, and what used items buyers check most. Free to cite.`;
+  const title = `Stolen Property Statistics ${YEAR}: Cars, Guns, Phones & More`;
+  const description = `Original ${YEAR} data: ${AK.styles[0][0]} are ${pct(AK.styles[0][1], AK.styleKnown)} of stolen vehicles, ${AK.makes[0][0]} the most-stolen make, and what used items buyers check most. Free to cite.`;
 
   const schema = [
     {
       '@context': 'https://schema.org',
       '@type': 'Dataset',
-      name: 'SafeOrStolen stolen property statistics 2026',
+      name: `SafeOrStolen stolen property statistics ${YEAR}`,
       description: `Counts from Alaska's statewide stolen-vehicle list (${fmt(AK.total)} vehicles and plates) and ${fmt(CHECKS.total)} stolen-item checks run on SafeOrStolen, summarized by vehicle type, make, model and item type.`,
       url,
       creator: { '@type': 'Organization', name: 'SafeOrStolen', url: 'https://safeorstolen.com' },
-      datePublished: AS_OF,
+      datePublished: AS_OF0,
       dateModified: AS_OF,
       spatialCoverage: 'United States',
-      temporalCoverage: '2026',
+      temporalCoverage: YEAR,
       variableMeasured: ['Stolen vehicles by body type', 'Stolen vehicles by make', 'Stolen vehicles reported in 2026', 'Stolen-item checks by item type'],
       isAccessibleForFree: true,
       license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -133,7 +148,7 @@ export default function StolenPropertyStatisticsPage() {
         <section className="px-4 pt-24 pb-12 bg-gradient-to-b from-muted to-background">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">SafeOrStolen data · Updated {AS_OF_TEXT}</p>
-            <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight">Stolen Property Statistics 2026</h1>
+            <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight">Stolen Property Statistics {YEAR}</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               Original numbers from current police stolen-vehicle records and {fmt(CHECKS.total)} real stolen-item checks:
               which vehicles get stolen, which brands, and what buyers check before they pay.
@@ -147,9 +162,9 @@ export default function StolenPropertyStatisticsPage() {
           <div className="max-w-4xl mx-auto rounded-2xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold mb-3">Key findings</h2>
             <ul className="list-disc pl-5 space-y-2">
-              <li><strong>SUVs are the most-stolen vehicle type</strong>, at {pct(AK.styles[0][1], AK.styleKnown)} of stolen vehicles with a known body type, ahead of pickup trucks ({pct(AK.styles[1][1], AK.styleKnown)}).</li>
-              <li><strong>Chevrolet is the most-stolen make</strong> ({pct(AK.makes[0][1], AK.makeKnown)}), and the <strong>{AK.topModel[0]}</strong> is the most-listed model.</li>
-              <li><strong>{fmt(AK.reported2026)} vehicles</strong> on Alaska's current stolen list, {pct(AK.reported2026, AK.total)} of the total, were reported stolen in 2026.</li>
+              <li><strong>{AK.styles[0][0]} are the most-stolen vehicle type</strong>, at {pct(AK.styles[0][1], AK.styleKnown)} of stolen vehicles with a known body type, ahead of {AK.styles[1][0].toLowerCase()} ({pct(AK.styles[1][1], AK.styleKnown)}).</li>
+              <li><strong>{AK.makes[0][0]} is the most-stolen make</strong> ({pct(AK.makes[0][1], AK.makeKnown)}), and the <strong>{AK.topModel[0]}</strong> is the most-listed model.</li>
+              <li><strong>{fmt(AK.reported2026)} vehicles</strong> on Alaska's current stolen list, {pct(AK.reported2026, AK.total)} of the total, were reported stolen in {YEAR}.</li>
               <li><strong>Serial-numbered items are what buyers check most</strong> ({pct(CHECKS.groups[0][1], CHECKS.total)} of checks), followed by cars and plates ({pct(CHECKS.groups[1][1], CHECKS.total)}) and guns ({pct(CHECKS.groups[2][1], CHECKS.total)}).</li>
             </ul>
           </div>
@@ -200,7 +215,7 @@ export default function StolenPropertyStatisticsPage() {
             </p>
             <h2 className="text-lg font-bold mb-2">How to cite this page</h2>
             <p className="text-muted-foreground">
-              SafeOrStolen, "Stolen Property Statistics 2026," updated {AS_OF_TEXT}, https://safeorstolen.com/stolen-property-statistics.
+              SafeOrStolen, "Stolen Property Statistics {YEAR}," updated {AS_OF_TEXT}, https://safeorstolen.com/stolen-property-statistics.
               You may quote these figures with a link to this page.
             </p>
           </div>
