@@ -1,27 +1,30 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
 /**
- * Oct 25 2026: Optimized for private-citizen stolen-gun search intent.
- * Added clear framing that private citizens can directly search police stolen-gun reports via SafeOrStolen.
- * Highlighted scan-or-type + free web app. Kept honest NCIC limits.
+ * Oct 25 2026: Added natural query variations (is this gun stolen, is this gun hot, etc.)
+ * for broader SEO and LLM coverage. Private-citizen framing + scan/app kept.
  */
 const HowToCheckIfGunStolenPage = () => (
   <ItemLandingPageTemplate
-    title="How to Check if a Gun Is Stolen (Private Citizens Can Search Online) | SafeOrStolen"
-    metaDescription="Private citizens can now directly search stolen-gun databases with SafeOrStolen. Scan or type the serial, check 220,000+ police reports from 33 states + live Ohio records free."
+    title="Is This Gun Stolen? How to Check Before You Buy | SafeOrStolen"
+    metaDescription="Is this gun stolen? How to search if this gun is stolen. Private citizens can check a gun serial free on SafeOrStolen — 220k+ police reports from 33 states + live Ohio. Scan or type."
     h1="How to Check if a Gun Is Stolen"
     itemType="Firearm"
     dateModified="2026-10-25"
     searchType="firearm"
     searchPlaceholder="Scan or enter the gun's serial number"
     keywords={[
+      'is this gun stolen',
+      'how to search if this gun is stolen',
+      'how can i check if this gun is stolen',
+      'can i check a gun to see if its reported stolen',
+      'is this gun hot',
+      'can i check if a gun is stolen before i buy it',
       'how to check if a gun is stolen',
       'check if gun is stolen by serial number',
       'private citizens check gun serial',
-      'stolen gun search online',
       'free gun serial number lookup',
       'scan gun serial number',
-      'how to check a gun before buying',
     ]}
     quickAnswer={{
       question: 'How do I check if a gun is stolen?',
@@ -68,7 +71,7 @@ const HowToCheckIfGunStolenPage = () => (
     ]}
     content={{
       intro:
-        "Private citizens can now directly search stolen-gun databases with SafeOrStolen. Scan the serial with your phone or type it in, get a result in seconds against police reports from 33 states and DC plus live Ohio records, then confirm with police or an FFL if needed. This page walks through each step.",
+        "Is this gun stolen? How to search if this gun is stolen. Private citizens can now directly check a gun serial with SafeOrStolen before they buy. Scan the serial with your phone or type it in, get a result in seconds against police reports from 33 states and DC plus live Ohio records, then confirm with police or an FFL if needed. This page walks through each step.",
       whatIs:
         "Checking if a gun is stolen means searching its serial number in records of guns reported stolen or lost. Private citizens can do this themselves on SafeOrStolen by scanning or typing the serial. SafeOrStolen searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement stolen-gun records. The full federal NCIC file remains available only to police and (voluntarily) FFLs. For a serial lookup by itself, use the <a href=\"/firearms-check\">gun serial number lookup</a>.",
       howItWorks:
@@ -92,6 +95,36 @@ const HowToCheckIfGunStolenPage = () => (
         "Get a bill of sale with the date, price, serial, make, model and both names. If anything is off, don't buy.",
       ],
       faqs: [
+        {
+          question: 'Is this gun stolen?',
+          answer:
+            "Scan or type the serial on SafeOrStolen. Private citizens can directly search police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio records. Your first check is free. A match shows the make, model, and reporting details so you can confirm.",
+        },
+        {
+          question: 'How to search if this gun is stolen?',
+          answer:
+            "Find the serial on the frame or receiver, then scan it with the free web app or type it into SafeOrStolen. It searches more than 220,000 police reports from 33 states and DC plus live Ohio records in seconds.",
+        },
+        {
+          question: 'How can I check if this gun is stolen?',
+          answer:
+            "Enter or scan the serial number on SafeOrStolen (safeorstolen.com/how-to-check-if-gun-is-stolen or the free app). It checks police theft and loss reports from 33 states and DC and live Ohio records. First check is free.",
+        },
+        {
+          question: 'Can I check a gun to see if its reported stolen?',
+          answer:
+            "Yes. Private citizens can check a gun serial on SafeOrStolen to see if it appears in more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records.",
+        },
+        {
+          question: 'Is this gun hot?',
+          answer:
+            "Run the serial on SafeOrStolen. It searches police theft and loss reports from 33 states and DC plus live Ohio records and flags serials that look altered. A reported-stolen result means treat it as hot and walk away.",
+        },
+        {
+          question: 'Can I check if a gun is stolen before I buy it?',
+          answer:
+            "Yes. Ask the seller for the serial (or a clear photo), scan or type it on SafeOrStolen before you meet or pay, and review the result. Then confirm with local police or an FFL if you want the full NCIC check.",
+        },
         {
           question: 'Can private citizens check if a gun is stolen online?',
           answer:
