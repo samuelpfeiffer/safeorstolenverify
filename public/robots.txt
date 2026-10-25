@@ -1,7 +1,7 @@
 # SafeOrStolen robots.txt
 # SafeOrStolen: check whether a used item is reported stolen before you buy it.
 # Allow all search engines and AI crawlers
-# Last updated: 2026-10-07
+# Last updated: 2026-10-25
 #
 # AI training: ALLOWED with attribution (see /ai.txt and /llms.txt)
 
