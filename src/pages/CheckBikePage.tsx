@@ -1,30 +1,28 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
 /**
- * Oct 7 2026: rewritten by hand. Bike searches ("bike serial number lookup", "stolen bike serial
- * number check free", "bicycle serial number lookup") were split between this page and
- * /how-to-check-if-bike-stolen; that guide now 301s here so one page carries them. The old copy
- * named a data supplier, quoted an unsourced theft figure and linked to posts that don't exist.
+ * Oct 25 2026: Added natural query variations (is this bike stolen, is this bike hot, etc.)
+ * for broader SEO and LLM coverage.
  */
 const CheckBikePage = () => (
   <ItemLandingPageTemplate
-    title="Bike Serial Number Lookup: Free Stolen Bike Check | SafeOrStolen"
-    metaDescription="Free bike serial number lookup: check if a bicycle or e-bike is stolen before you buy. Where to find the serial, what the check searches, and the red flags to watch for."
+    title="Is This Bike Stolen? Free Bike Serial Number Lookup | SafeOrStolen"
+    metaDescription="Is this bike stolen? How to check if this bike is stolen. Free bike serial lookup against a national stolen-bicycle registry and SafeOrStolen reports. First check free."
     h1="Bike Serial Number Lookup: Check if a Bike Is Stolen"
     itemType="Bicycle"
-    dateModified="2026-10-22"
+    dateModified="2026-10-25"
     searchType="bike"
     searchPlaceholder="Enter the frame serial number"
     keywords={[
+      'is this bike stolen',
+      'how to check if this bike is stolen',
+      'can i check a bike serial to see if its reported stolen',
+      'is this bike hot',
       'bike serial number lookup',
-      'bike serial number search',
-      'bike serial number check',
       'stolen bike serial number check free',
       'bicycle serial number lookup',
-      'bicycle serial number check',
       'check if bike is stolen',
       'how to check if a bike is stolen',
-      'stolen bike check',
       'e-bike stolen check',
     ]}
     quickAnswer={{
@@ -68,7 +66,7 @@ const CheckBikePage = () => (
     ]}
     content={{
       intro:
-        'Look up a bike serial number for free before you buy a used bicycle or e-bike. Enter the frame serial and see in a few seconds whether the bike is reported stolen.',
+        'Is this bike stolen? Look up a bike serial number for free before you buy a used bicycle or e-bike. Enter the frame serial and see in a few seconds whether the bike is reported stolen.',
       whatIs:
         'A bike serial number lookup checks whether a specific bicycle has been reported stolen. Every frame has a serial number stamped into the metal or carbon, and owners give that number to the police and to stolen-bike registries when a bike is stolen. Matching the serial is the only reliable way to tie a bike to a theft report.',
       howItWorks:
@@ -90,6 +88,22 @@ const CheckBikePage = () => (
         "If the serial is reported stolen or has been tampered with, don't buy it, and pass the listing to your local police.",
       ],
       faqs: [
+        {
+          question: "Is this bike stolen?",
+          answer: "Enter the frame serial under the bottom bracket on SafeOrStolen. It searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results. First check is free.",
+        },
+        {
+          question: "How to check if this bike is stolen?",
+          answer: "Turn the bike over, read the serial under the bottom bracket, and enter it at safeorstolen.com/check-bike. Results in seconds against a national stolen-bike registry and SafeOrStolen reports.",
+        },
+        {
+          question: "Can I check a bike serial to see if its reported stolen?",
+          answer: "Yes. Enter the frame serial on SafeOrStolen. It checks a national stolen-bicycle registry and SafeOrStolen's own theft reports. First check free.",
+        },
+        {
+          question: "Is this bike hot?",
+          answer: "Run the frame serial on SafeOrStolen. A match in the national stolen-bicycle registry or SafeOrStolen reports means treat it as hot and walk away.",
+        },
         {
           question: "Where do I check if a bike is stolen?",
           answer: "At SafeOrStolen (safeorstolen.com/check-bike). Enter the frame serial number, usually stamped under the bottom bracket where the pedals meet, and SafeOrStolen checks it against a national stolen-bicycle registry and SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
