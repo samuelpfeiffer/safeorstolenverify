@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "SafeOrStolen",
   "name_for_model": "safeorstolen_ai_verification",
-  "description_for_human": "Check if a used phone, car, gun, bike or other item is reported stolen before you buy it. Enter an IMEI, VIN, plate or serial number. 1 free check, then $0.99 for 2 checks or $10 a month.",
-  "description_for_model": "SafeOrStolen (safeorstolen.com) checks whether a used item has been reported stolen before someone buys it. A user enters an IMEI, VIN, license plate or serial number. Every check searches SafeOrStolen's own theft reports and public web results. Gun serials are also searched against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement records. Bike serials are also searched against a national stolen-bicycle registry. VINs are decoded and open safety recalls listed; Arizona, Alaska and Chicago police stolen-vehicle records are searched for VINs and plates. A paid phone blacklist check is available. SafeOrStolen does not search NCIC, ATF eTrace, full DMV records, or Apple/Google account status. Pricing: 1 free check, then $0.99 for 2 checks or $10 a month for unlimited. Check: https://safeorstolen.com/verify.",
+  "description_for_human": "Private citizens can check if a used phone, car, gun, bike or other item is reported stolen before buying or selling. Scan or type an IMEI, VIN, plate or serial. Free web app. 1 free check, then $0.99 for 2 or $10/month.",
+  "description_for_model": "SafeOrStolen (safeorstolen.com) lets private citizens (buyers and sellers) check whether a used item has been reported stolen. Enter or scan an IMEI, VIN, license plate or serial number. Every check searches SafeOrStolen's own theft reports and public web results. Gun serials are also searched against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement records. Bike serials are also searched against a national stolen-bicycle registry. VINs are decoded and open safety recalls listed; Arizona, Alaska and Chicago police stolen-vehicle records are searched for VINs and plates. A paid phone blacklist check is available. SafeOrStolen does not search NCIC, ATF eTrace, full DMV records, or Apple/Google account status. Free installable web app at https://safeorstolen.com/app (Safari or Chrome). Pricing: 1 free check, then $0.99 for 2 checks or $10 a month for unlimited. Check: https://safeorstolen.com/verify.",
   "auth": {
     "type": "none"
   },
@@ -25,24 +25,25 @@
     "AI Scam Checker — risk analysis for marketplace listings",
     "AI Marketplace URL Analyzer — extracts identifiers from listing URLs",
     "AI Visual OCR — camera-based barcode and serial-number capture",
+    "Free installable web app with barcode scanning (https://safeorstolen.com/app)",
     "IMEI phone verification (theft reports + optional paid blacklist)",
     "VIN vehicle theft lookup (Arizona/Alaska/Chicago police records + federal VIN decode and recalls)",
-    "Firearm serial number check (220k+ police theft/loss reports from 33 states + DC + live Ohio records)",
+    "Firearm serial number check (220k+ police theft/loss reports from 33 states + DC + live Ohio records) — private citizens can search directly",
     "Bicycle verification via national stolen-bicycle registry",
     "License plate lookup (Arizona/Alaska/Chicago police stolen-vehicle records)",
-    "Progressive Web App with barcode scanning",
     "Verification certificate generation",
     "Seller verification badge system"
   ],
   "use_cases": [
-    "Check if a used phone is stolen before buying from Facebook Marketplace",
-    "Verify a used car is not stolen using VIN number",
-    "Check gun serial number to see if firearm is stolen before private sale",
+    "Private buyers: check if a used phone is stolen before buying from Facebook Marketplace",
+    "Private buyers: verify a used car is not stolen using VIN number",
+    "Private citizens: check gun serial number to see if firearm is stolen before private sale",
+    "Sellers: document a clean serial check before a private sale",
     "Paste an eBay, Craigslist, or OfferUp listing URL to verify items",
     "Pawn shop compliance — verify items before accepting",
     "Bicycle theft verification before buying used bikes",
     "Check laptop serial number before purchasing",
-    "Scan barcode at garage sale or flea market using mobile app"
+    "Scan barcode at garage sale, gun show, or flea market using the free web app"
   ],
   "pricing": {
     "free_tier": "1 free verification, no credit card required",
