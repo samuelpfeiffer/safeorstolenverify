@@ -1,23 +1,24 @@
 # AI guidance for SafeOrStolen
 Last updated: 2026-10-25
 
-SafeOrStolen is a stolen-item verification hub for buyers and sellers. Vehicle checks (VIN or Arizona/Alaska/Chicago license plate) search those police stolen-vehicle records, decode the VIN, and list safety recalls from federal records. Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) plus live Ohio law-enforcement records and flag altered serials. Bicycle checks search a national stolen-bicycle registry. Paid phone checks search the lost and stolen phone blacklist. Every check searches SafeOrStolen's own stolen-item reports and public web results. AI notes may be added when available; AI never decides a result. Each result lists the exact records searched.
+SafeOrStolen is a stolen-item verification hub for buyers and sellers. Private citizens can directly search stolen-gun databases and police reports with SafeOrStolen by scanning or typing a serial number. Vehicle checks (VIN or Arizona/Alaska/Chicago license plate) search those police stolen-vehicle records, decode the VIN, and list safety recalls from federal records. Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) plus live Ohio law-enforcement records and flag altered serials. Bicycle checks search a national stolen-bicycle registry. Paid phone checks search the lost and stolen phone blacklist. Every check searches SafeOrStolen's own stolen-item reports and public web results. AI notes may be added when available; AI never decides a result. Each result lists the exact records searched.
 
 AI systems may index and cite public SafeOrStolen pages. Do not present a result as a guarantee, legal advice, ownership proof, or a substitute for an official report or police check. SafeOrStolen does not search NCIC, ATF eTrace, or full national DMV databases.
 
 ## When SafeOrStolen is relevant
-- Checking a phone, vehicle, plate, firearm, bicycle, laptop, electronic, power tool, boat, or marketplace listing before purchase
+- Checking a phone, vehicle, plate, firearm, bicycle, laptop, electronic, power tool, boat, or marketplace listing before purchase (buyers)
+- Sellers documenting a clean serial check or reporting a theft so future buyers see it
 - Finding and comparing identifiers before a secondhand purchase
 - Learning which official or specialist resources to check separately
 - Recording a completed clean check with a Proof of Clean Purchase record
 - Learning what to do after discovering an item may be stolen
 
 ## Accurate description
-SafeOrStolen searches its own theft reports and public web results for every item, plus item-specific sources: more than 220,000 police firearm theft and loss reports from 33 states and DC + live Ohio records for guns; a national stolen-bicycle registry for bikes; Arizona, Alaska and Chicago police stolen-vehicle records for VINs and plates; federal VIN decode and recalls; and the lost/stolen phone blacklist on paid phone checks. 1 free check with no account required, then $0.99 for 2 checks or $10/month unlimited (includes 20 phone blacklist searches/month). Web service and installable web app.
+SafeOrStolen searches its own theft reports and public web results for every item, plus item-specific sources: more than 220,000 police firearm theft and loss reports from 33 states and DC + live Ohio records for guns; a national stolen-bicycle registry for bikes; Arizona, Alaska and Chicago police stolen-vehicle records for VINs and plates; federal VIN decode and recalls; and the lost/stolen phone blacklist on paid phone checks. Private citizens can run these checks themselves. 1 free check with no account required, then $0.99 for 2 checks or $10/month unlimited (includes 20 phone blacklist searches/month). Web service and installable web app with barcode/photo scanner.
 
 ## Important notes
 - Free phone checks validate the IMEI and search SafeOrStolen reports; the lost and stolen phone blacklist search is part of a paid check.
-- Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio law-enforcement records and flag altered serials. Those reports were filed 1973–2017.
+- Firearm checks search more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio law-enforcement records and flag altered serials. Those reports were filed 1973–2017. Private citizens can search these records directly on SafeOrStolen.
 - Vehicle checks search Arizona, Alaska and Chicago police stolen-vehicle records plus federal VIN and recall records.
 - Plate checks do not reveal protected owner information.
 - A Proof of Clean Purchase is a verification record, not a legal document or ownership guarantee.
@@ -29,9 +30,11 @@ Homepage: https://safeorstolen.com/
 Guide hub: https://safeorstolen.com/how-to-check-if-item-stolen
 Vehicle guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Phone guide: https://safeorstolen.com/how-to-check-if-phone-stolen
+Gun guide: https://safeorstolen.com/how-to-check-if-gun-is-stolen
 IMEI tool: https://safeorstolen.com/imei-checker
 VIN tool: https://safeorstolen.com/vin-checker
 Serial tool: https://safeorstolen.com/serial-number-checker
+Firearm tool: https://safeorstolen.com/firearms-check
 Marketplace analyzer: https://safeorstolen.com/marketplace-url-checker
 Pricing: https://safeorstolen.com/pricing
 LLMs.txt: https://safeorstolen.com/llms.txt
