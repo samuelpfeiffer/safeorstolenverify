@@ -1,7 +1,7 @@
 import React, { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from '@/lib/router-compat';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Send, Sparkles, Brain, ArrowRight, ScanLine } from 'lucide-react';
+import { Shield, Send, Sparkles, Brain, ArrowRight, ScanLine, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { requestVerification } from '@/lib/verification/verifyClient';
@@ -46,7 +46,6 @@ export const HomeAIHero: React.FC = () => {
  useEffect(() => {
  inputRef.current?.focus();
  }, []);
-
 
  const detectInput = (text: string): 'url' | 'identifier' | 'chat' => {
  const t = text.trim();
@@ -124,7 +123,6 @@ export const HomeAIHero: React.FC = () => {
  setMessages((p) => [...p, { role: 'assistant', content: 'Recognizing the number and running the check…' }]);
  try {
  const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
- // A check page (gun, bike, phone...) passes its item type in the link; trust it over the guess.
  const forced = forcedTypeRef.current;
  forcedTypeRef.current = null;
  const itemType = forced || detect?.type || 'serial';
@@ -170,7 +168,6 @@ export const HomeAIHero: React.FC = () => {
  const send = useCallback(async (textRaw: string) => {
  const text = textRaw.trim();
  if (!text || isStreaming) return;
- // Oct 21 2026 (owner rule): one place to search everything. Hand every search to /verify.
  if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(text)}`; return; }
  if (!started) {
  setStarted(true);
@@ -203,10 +200,9 @@ export const HomeAIHero: React.FC = () => {
  const t = params.get('type');
  if (t && /^[a-z_-]{2,20}$/i.test(t)) forcedTypeRef.current = t.toLowerCase();
  if (q && q.trim()) send(q.trim());
- // eslint-disable-next-line react-hooks/exhaustive-deps
  }, []);
 
-  const handleKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+ const handleKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
  if (e.key === 'Enter' && !e.shiftKey) {
  e.preventDefault();
  send(input);
@@ -215,36 +211,50 @@ export const HomeAIHero: React.FC = () => {
 
  return (
  <section
- className="relative pt-10 pb-16 px-4 overflow-hidden"
+ className="relative pt-8 pb-12 px-4 overflow-hidden"
  style={{ background: 'var(--gradient-hero)' }}
  >
  <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-glow)' }} />
 
- <div className="max-w-3xl mx-auto relative">
- {/* Trust pill */}
- <div className="flex justify-center mb-5">
- <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm">
- <Shield className="w-4 h-4" />
- Phones · cars · guns · bikes · anything with a serial number
+ <div className="max-w-4xl mx-auto relative">
+ {/* Compact trust + free badge */}
+ <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4">
+ <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-3 py-1 text-primary text-xs sm:text-sm">
+ <Shield className="w-3.5 h-3.5" />
+ Private citizens can check stolen reports now
+ </div>
+ <div className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs sm:text-sm font-semibold text-primary">
+ 1 free check · No account
  </div>
  </div>
 
- <div className="mx-auto mb-4 max-w-xl rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-center text-sm font-semibold text-primary">
- 1 free check. No account needed.
- </div>
- {/* H1 (SEO-critical, stays) */}
- <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-center leading-tight mb-4 tracking-tight">
- Check if a phone, car, gun, tool, console, appliance, or bike was{' '}
+ {/* Compact headline */}
+ <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-center leading-tight mb-3 tracking-tight">
+ Check if a phone, car, gun, or bike was{' '}
  <span className="sos-gradient-text">reported stolen.</span>
  </h1>
 
- <p className="text-center text-base sm:text-lg text-muted-foreground mb-7 max-w-2xl mx-auto">
- Paste the phone's IMEI, the car's VIN or license plate, or the serial number on the item.
+ <p className="text-center text-sm sm:text-base text-muted-foreground mb-5 max-w-xl mx-auto leading-relaxed">
+ Scan or type the serial. SafeOrStolen searches the public police theft reports that feed many NCIC entries — covering 33 states and DC plus live Ohio records. Free web app included.
  </p>
+
+ {/* Compact bullet grid — works on desktop and PWA */}
+ <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6 max-w-2xl mx-auto text-xs sm:text-sm">
+ {[
+ { icon: Check, text: '220k+ police gun reports' },
+ { icon: Check, text: 'Scan with free web app' },
+ { icon: Check, text: 'First check free' },
+ { icon: Check, text: 'Every source listed' },
+ ].map((item) => (
+ <div key={item.text} className="flex items-center gap-1.5 justify-center sm:justify-start bg-card/40 border border-border/60 rounded-lg px-2.5 py-2">
+ <item.icon className="w-3.5 h-3.5 text-primary shrink-0" />
+ <span className="text-foreground/90 leading-tight">{item.text}</span>
+ </div>
+ ))}
+ </div>
 
  {/* Chat panel */}
  <div data-tour="search" className="rounded-3xl border-2 border-primary/40 bg-card/60 backdrop-blur-md shadow-[0_0_60px_-15px_hsl(var(--primary)/0.5)] overflow-hidden">
- {/* Header */}
  <div className="flex items-center justify-between px-5 py-3 bg-primary/5 border-b border-border">
  <div className="flex items-center gap-2">
  <div className="relative w-8 h-8 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center">
@@ -273,7 +283,6 @@ export const HomeAIHero: React.FC = () => {
  </Link>
  </div>
 
- {/* Messages (only after first send) */}
  <AnimatePresence initial={false}>
  {started && (
  <motion.div
@@ -335,7 +344,6 @@ export const HomeAIHero: React.FC = () => {
  )}
  </AnimatePresence>
 
- {/* Composer */}
  <div className="p-4 border-t border-border bg-card/60">
  <div className="flex items-end gap-2">
  <textarea
@@ -367,7 +375,6 @@ export const HomeAIHero: React.FC = () => {
  </button>
  </div>
 
- {/* Suggestion chips */}
  {!started && (
  <div data-tour="quick-actions" className="mt-3 flex flex-wrap gap-2">
  {SUGGESTIONS.map((s) => (
@@ -384,12 +391,10 @@ export const HomeAIHero: React.FC = () => {
  </div>
  </div>
 
- {/* Trust line */}
- <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-muted-foreground mt-5">
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Free through October 22, no account needed</span>
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> No credit card</span>
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> Then $0.99 for 2 checks or $10/mo unlimited</span>
- <span className="flex items-center gap-1.5"><span className="text-accent">●</span> 30-day refund</span>
+ <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-foreground mt-4">
+ <span className="flex items-center gap-1"><span className="text-accent">●</span> No credit card</span>
+ <span className="flex items-center gap-1"><span className="text-accent">●</span> Then $0.99 for 2 or $10/mo unlimited</span>
+ <span className="flex items-center gap-1"><span className="text-accent">●</span> 30-day refund</span>
  </div>
  </div>
  {scannerOpen && (
