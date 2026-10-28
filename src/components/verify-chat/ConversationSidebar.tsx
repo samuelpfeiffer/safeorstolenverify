@@ -16,6 +16,8 @@ import { supabase } from '@/integrations/supabase/client';
  */
 
 interface Props {
+  /** Oct 28 2026: open account pages inside the /verify page instead of leaving it. */
+  onOpenView?: (href: string) => void;
   threads: ChatThread[];
   activeId: string;
   onSelect: (id: string) => void;
@@ -74,8 +76,14 @@ const shortDate = (iso: string) => {
 };
 
 export const ConversationSidebar: React.FC<Props> = ({
-  threads, activeId, onSelect, onNew, onDelete, onRename, onClose,
+  threads, activeId, onSelect, onNew, onDelete, onRename, onClose, onOpenView,
 }) => {
+  const openInPlace = (e: React.MouseEvent, href: string) => {
+    if (!onOpenView) return;
+    e.preventDefault();
+    onOpenView(href);
+    onClose?.();
+  };
   const { user, signOut } = useAuth();
   const [tab, setTab] = useState<Tab>('chats');
   const [query, setQuery] = useState('');
@@ -316,7 +324,7 @@ export const ConversationSidebar: React.FC<Props> = ({
           { href: '/profile', label: 'Settings', Icon: Settings },
           { href: '/pricing', label: 'Plans & billing', Icon: CreditCard },
         ].map(({ href, label, Icon }) => (
-          <a key={href} href={href}
+          <a key={href} href={href} onClick={(e) => openInPlace(e, href)}
             className="flex items-center gap-2 px-2.5 h-8 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50">
             <Icon className="w-3.5 h-3.5" /> {label}
           </a>
@@ -340,7 +348,7 @@ export const ConversationSidebar: React.FC<Props> = ({
               </div>
             )}
             <div className="flex gap-1 pt-1">
-              <a href="/dashboard" className="flex-1 inline-flex items-center justify-center gap-1 h-7 rounded-md text-[11px] text-muted-foreground hover:text-foreground hover:bg-muted/50">
+              <a href="/dashboard" onClick={(e) => openInPlace(e, '/dashboard')} className="flex-1 inline-flex items-center justify-center gap-1 h-7 rounded-md text-[11px] text-muted-foreground hover:text-foreground hover:bg-muted/50">
                 <CreditCard className="w-3 h-3" /> Account &amp; billing
               </a>
               <button onClick={() => signOut()} className="flex-1 inline-flex items-center justify-center gap-1 h-7 rounded-md text-[11px] text-muted-foreground hover:text-foreground hover:bg-muted/50">

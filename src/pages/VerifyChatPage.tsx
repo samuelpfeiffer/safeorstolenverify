@@ -56,6 +56,17 @@ const EXAMPLE_PROMPTS = [
  { tag: 'PLATE', label: 'Run a license plate', text: '7XYZ123' },
 ];
 
+
+// Oct 28 2026 (owner): everything happens on this one page. The left menu opens these pages on the
+// right side (like Claude), with a Back to chat button, instead of leaving /verify.
+const IN_PAGE_VIEWS: Record<string, { title: string; Comp: React.LazyExoticComponent<React.ComponentType<any>> }> = {
+  '/dashboard': { title: 'Dashboard', Comp: React.lazy(() => import('@/pages/DashboardPage')) },
+  '/my-items': { title: 'My items', Comp: React.lazy(() => import('@/pages/MyItemsPage')) },
+  '/report-stolen': { title: 'Report a theft', Comp: React.lazy(() => import('@/pages/ReportStolenPage')) },
+  '/profile': { title: 'Settings', Comp: React.lazy(() => import('@/pages/ProfilePage')) },
+  '/pricing': { title: 'Plans & billing', Comp: React.lazy(() => import('@/pages/PricingPage')) },
+};
+
 const VerifyChatPage: React.FC = () => {
  // ─── ALL HOOKS DECLARED UP-FRONT, IN A STABLE ORDER ─────────────────
  const navigate = useNavigate();
@@ -80,6 +91,7 @@ const VerifyChatPage: React.FC = () => {
  const [isThinking, setIsThinking] = useState(false);
  const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
  const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
+ const [mainView, setMainView] = useState<string | null>(null);
  const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
  const [pendingIdentifier, setPendingIdentifier] = useState<string | null>(null);
@@ -638,21 +650,6 @@ const VerifyChatPage: React.FC = () => {
  </span>
  )}
  {/* Classic view removed — modern AI experience only */}
- <Button
- variant="outline"
- size="sm"
- className="lg:hidden h-8"
- onClick={() => setResultsOpenMobile((v) => !v)}
- >
- {resultsOpenMobile ? (
- <PanelRightClose className="w-4 h-4" />
- ) : (
- <PanelRightOpen className="w-4 h-4" />
- )}
- <span className="ml-1.5 text-xs">
- {sessionResults.length > 0 ? `Results (${sessionResults.length})` : 'Results'}
- </span>
- </Button>
  </div>
  </div>
  </div>
@@ -676,10 +673,11 @@ const VerifyChatPage: React.FC = () => {
  <ConversationSidebar
  threads={threads}
  activeId={activeId}
- onSelect={setActiveId}
- onNew={createThread}
+ onSelect={(id) => { setActiveId(id); setMainView(null); }}
+ onNew={() => { createThread(); setMainView(null); }}
  onDelete={deleteThread}
  onRename={renameThread}
+ onOpenView={setMainView}
  />
  <button
  onClick={() => setSidebarCollapsed(true)}
@@ -716,12 +714,15 @@ const VerifyChatPage: React.FC = () => {
  activeId={activeId}
  onSelect={(id) => {
  setActiveId(id);
+ setMainView(null);
  setSidebarOpenMobile(false);
  }}
  onNew={() => {
  createThread();
+ setMainView(null);
  setSidebarOpenMobile(false);
  }}
+ onOpenView={setMainView}
  onDelete={deleteThread}
  onRename={renameThread}
  onClose={() => setSidebarOpenMobile(false)}
@@ -731,11 +732,35 @@ const VerifyChatPage: React.FC = () => {
  )}
  </AnimatePresence>
 
+ {/* IN-PAGE VIEW (My items, Settings, Billing...) */}
+ {mainView && IN_PAGE_VIEWS[mainView] && (() => {
+ const V = IN_PAGE_VIEWS[mainView];
+ return (
+ <section className="flex-1 flex flex-col min-w-0 overflow-hidden">
+ <div className="flex items-center gap-3 px-4 h-12 border-b border-border shrink-0">
+ <button
+ type="button"
+ onClick={() => setMainView(null)}
+ className="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg bg-primary text-primary-foreground text-xs font-semibold"
+ >
+ ← Back to chat
+ </button>
+ <span className="text-sm font-semibold">{V.title}</span>
+ </div>
+ <div className="flex-1 overflow-y-auto">
+ <React.Suspense fallback={<div className="p-8 text-sm text-muted-foreground">Loading…</div>}>
+ <V.Comp />
+ </React.Suspense>
+ </div>
+ </section>
+ );
+ })()}
+
  {/* CHAT PANE */}
  <div
  className={cn(
  'flex-1 flex flex-col min-w-0 relative',
- resultsOpenMobile && 'hidden lg:flex')}
+ mainView && IN_PAGE_VIEWS[mainView] && 'hidden')}
  >
  {/* Subtle ambient glow */}
  <div
@@ -765,6 +790,7 @@ const VerifyChatPage: React.FC = () => {
  <ChatBubble
  key={msg.id}
  msg={msg}
+ isAuthenticated={isAuthenticated}
  isLast={idx === messages.length - 1}
  onSuggestion={(text) => handleSend(text)}
  onRegenerate={
@@ -943,40 +969,6 @@ const VerifyChatPage: React.FC = () => {
  </div>
  </div>
 
- {/* RESULTS PANE (desktop) — narrower for better balance */}
- {/* Oct 22 2026: only shown once there is a result, so the empty app is just sidebar + chat, like Claude. */}
- {(currentResult || sessionResults.length > 0) && (
- <aside className="hidden lg:flex flex-col w-[320px] xl:w-[360px] shrink-0 bg-card/30 border-l border-border">
- <ResultsPane
- current={currentResult}
- history={sessionResults}
- onSelectHistory={(r) => setCurrentResult(r)}
- isAuthenticated={isAuthenticated}
- />
- </aside>
- )}
-
- {/* RESULTS PANE (mobile) */}
- {resultsOpenMobile && (
- <aside className="lg:hidden flex-1 bg-background">
- {/* Oct 21 2026: on phones the results cover the chat. Give an obvious way back so people run a 2nd check. */}
- <div className="sticky top-0 z-10 bg-background/95 backdrop-blur px-3 py-2 border-b border-border">
- <button
- type="button"
- onClick={() => { setResultsOpenMobile(false); setTimeout(() => document.querySelector<HTMLTextAreaElement>('textarea')?.focus(), 50); }}
- className="w-full h-11 rounded-xl bg-primary text-primary-foreground text-sm font-semibold"
- >
- + Check another item
- </button>
- </div>
- <ResultsPane
- current={currentResult}
- history={sessionResults}
- onSelectHistory={(r) => setCurrentResult(r)}
- isAuthenticated={isAuthenticated}
- />
- </aside>
- )}
  </div>
  </div>
  </>
@@ -1149,7 +1141,8 @@ const ChatBubble: React.FC<{
  isLast: boolean;
  onSuggestion: (text: string) => void;
  onRegenerate?: () => void;
-}> = ({ msg, isLast, onSuggestion, onRegenerate }) => {
+ isAuthenticated?: boolean;
+}> = ({ msg, isLast, onSuggestion, onRegenerate, isAuthenticated = false }) => {
  const [copied, setCopied] = useState(false);
  const isUser = msg.role === 'user';
 
@@ -1207,7 +1200,9 @@ const ChatBubble: React.FC<{
  />
  )}
 
- {msg.result && <InlineResultMini result={msg.result} />}
+ {msg.result && (
+ <ResultsPane inline current={msg.result} history={[]} onSelectHistory={() => {}} isAuthenticated={isAuthenticated} />
+ )}
  </div>
 
  {!isUser && !msg.loading && msg.content && (

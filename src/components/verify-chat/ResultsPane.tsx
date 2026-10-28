@@ -62,6 +62,8 @@ interface ResultsPaneProps {
  history: ChatVerifyResult[];
  onSelectHistory: (r: ChatVerifyResult) => void;
  isAuthenticated: boolean;
+ /** Oct 28 2026: render the full result inside the chat (no panel header, no history list). */
+ inline?: boolean;
 }
 
 // Oct 28 2026 (owner): clean result = green "SAFE" under "NO REPORT FOUND"; stolen = red "STOLEN".
@@ -138,6 +140,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  history,
  onSelectHistory,
  isAuthenticated,
+ inline = false,
 }) => {
  const handleDownload = () => {
  if (!current) return;
@@ -259,7 +262,8 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  const tone = toneFor(current.status, current.riskLevel, current.message);
 
  return (
- <div className="h-full flex flex-col">
+ <div className={inline ? 'mt-3 w-full' : 'h-full flex flex-col'}>
+ {!inline && (
  <div className="px-5 py-4 border-b border-border flex items-center justify-between">
  <div>
  <h2 className="text-sm font-semibold flex items-center gap-2">
@@ -271,8 +275,9 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </p>
  </div>
  </div>
+ )}
 
- <div className="flex-1 overflow-y-auto p-5 space-y-5">
+ <div className={inline ? 'space-y-4' : 'flex-1 overflow-y-auto p-5 space-y-5'}>
  {/* Verdict banner — largest, first element */}
  <div className={cn('rounded-2xl border-2 p-6 text-center', tone.bg, tone.border, 'ring-1', tone.ring)}>
  <tone.Icon className={cn('w-10 h-10 mx-auto mb-3', tone.color)} />
@@ -432,7 +437,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <StoryForm compact />
 
  {/* Session history */}
- {history.length > 1 && (
+ {!inline && history.length > 1 && (
  <div className="pt-2 border-t border-border">
  <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
  Session History
