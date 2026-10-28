@@ -122,7 +122,7 @@ const PricingPage = () => {
  {[
  '1 free check, no account or credit card',
  'Phones, vehicles, plates, guns, bikes and serial numbers',
- 'SafeOrStolen theft reports and public web results',
+ 'SafeOrStolen theft reports and police records',
  'Police gun records for guns, stolen-bicycle registry for bikes',
  'Each check saved to your account with the date',
  ].map((f) => (
@@ -158,7 +158,7 @@ const PricingPage = () => {
  <ul className="space-y-2 flex-1 mb-6">
  {[
  '2 checks, paid once (this one plus one more)',
- 'Every source that applies to the item',
+ 'Every source that applies, plus web listings and AI review',
  'Includes 1 phone blacklist search',
  'Saved to your account with the date',
  'Optional $1.99 verification certificate',

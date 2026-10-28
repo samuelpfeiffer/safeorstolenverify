@@ -403,7 +403,14 @@ const VerifyChatPage: React.FC = () => {
  console.error('[VerifyChat] verify error:', err);
  updateMessage(assistantId, {
  loading: false,
- content: `I hit an error verifying that: ${err?.message || 'unknown error'}. Please try again in a moment.`,
+ content: (() => {
+ const m = String(err?.message || '');
+ // Oct 28 2026: a bad VIN/IMEI is the buyer's red flag, not a site error. Say it plainly.
+ if (/fails the built-in math check|not a valid|invalid (vin|imei)|check digit/i.test(m)) {
+ return `⚠️ **This number isn't valid.** ${m.replace(/\.\.$/, '.')}`;
+ }
+ return `Something went wrong on our end and the check didn't finish. Please try again in a moment.${m ? ` (${m})` : ''}`;
+ })(),
  });
  }
  },

@@ -875,10 +875,13 @@ export async function runVerification(
     tasks.push(runSource('Firearm_Verification', 'verify-hotgunz', { identifier: cleanIdentifier }));
     tasks.push(runPoliceTheftRecords(admin, normalizedIdentifier));
   }
-  if (sources.includes('webscraper')) {
+  // Oct 28 2026 (owner): web search and AI review cost money per call (credits ran out before), so they run
+  // on paid checks only. Free checks still search every police, registry and SafeOrStolen record.
+  const paidCheck = gate.plan !== 'free';
+  if (sources.includes('webscraper') && paidCheck) {
     tasks.push(runWebScraper(cleanIdentifier, itemType));
   }
-  if (sources.includes('ai')) {
+  if (sources.includes('ai') && paidCheck) {
     tasks.push(runAIAnalysis(cleanIdentifier, itemType));
   }
 
