@@ -92,6 +92,8 @@ const VerifyChatPage: React.FC = () => {
  const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
  const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
  const [mainView, setMainView] = useState<string | null>(null);
+ // Oct 28 2026 (owner): Claude-style. The full report/certificate opens in a right panel; the chat keeps a small card.
+ const [reportOpen, setReportOpen] = useState(false);
  const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);
  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
  const [pendingIdentifier, setPendingIdentifier] = useState<string | null>(null);
@@ -194,6 +196,7 @@ const VerifyChatPage: React.FC = () => {
  const publishResult = useCallback(
  (r: ChatVerifyResult) => {
  setCurrentResult(r);
+ setReportOpen(true);
  addResult(r);
  setResultsOpenMobile(true);
  },
@@ -791,6 +794,7 @@ const VerifyChatPage: React.FC = () => {
  key={msg.id}
  msg={msg}
  isAuthenticated={isAuthenticated}
+ onOpenResult={(r) => { setCurrentResult(r); setReportOpen(true); setMainView(null); }}
  isLast={idx === messages.length - 1}
  onSuggestion={(text) => handleSend(text)}
  onRegenerate={
@@ -969,6 +973,49 @@ const VerifyChatPage: React.FC = () => {
  </div>
  </div>
 
+ {/* REPORT PANEL (right, like Claude's artifact panel) */}
+ {reportOpen && currentResult && !mainView && (
+ <aside className="hidden lg:flex flex-col w-[380px] xl:w-[420px] shrink-0 bg-card/30 border-l border-border relative">
+ <button
+ type="button"
+ onClick={() => setReportOpen(false)}
+ aria-label="Close report"
+ className="absolute top-3 right-3 z-10 p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/60"
+ >
+ <X className="w-4 h-4" />
+ </button>
+ <ResultsPane
+ current={currentResult}
+ history={sessionResults}
+ onSelectHistory={(r) => setCurrentResult(r)}
+ isAuthenticated={isAuthenticated}
+ />
+ </aside>
+ )}
+
+ {/* REPORT PANEL (phones): full screen with Back to chat */}
+ {reportOpen && currentResult && !mainView && (
+ <div className="lg:hidden fixed inset-0 z-50 bg-background flex flex-col">
+ <div className="flex items-center gap-3 px-3 h-12 border-b border-border shrink-0">
+ <button
+ type="button"
+ onClick={() => setReportOpen(false)}
+ className="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg bg-primary text-primary-foreground text-xs font-semibold"
+ >
+ ← Back to chat
+ </button>
+ <span className="text-sm font-semibold">Report</span>
+ </div>
+ <div className="flex-1 overflow-hidden">
+ <ResultsPane
+ current={currentResult}
+ history={sessionResults}
+ onSelectHistory={(r) => setCurrentResult(r)}
+ isAuthenticated={isAuthenticated}
+ />
+ </div>
+ </div>
+ )}
  </div>
  </div>
  </>
@@ -1142,7 +1189,8 @@ const ChatBubble: React.FC<{
  onSuggestion: (text: string) => void;
  onRegenerate?: () => void;
  isAuthenticated?: boolean;
-}> = ({ msg, isLast, onSuggestion, onRegenerate, isAuthenticated = false }) => {
+ onOpenResult?: (r: ChatVerifyResult) => void;
+}> = ({ msg, isLast, onSuggestion, onRegenerate, isAuthenticated = false, onOpenResult }) => {
  const [copied, setCopied] = useState(false);
  const isUser = msg.role === 'user';
 
@@ -1200,9 +1248,7 @@ const ChatBubble: React.FC<{
  />
  )}
 
- {msg.result && (
- <ResultsPane inline current={msg.result} history={[]} onSelectHistory={() => {}} isAuthenticated={isAuthenticated} />
- )}
+ {msg.result && <InlineResultMini result={msg.result} onOpen={onOpenResult ? () => onOpenResult(msg.result!) : undefined} />}
  </div>
 
  {!isUser && !msg.loading && msg.content && (
@@ -1281,15 +1327,18 @@ function renderInline(text: string): string {
  return html;
 }
 
-const InlineResultMini: React.FC<{ result: ChatVerifyResult }> = ({ result }) => {
+const InlineResultMini: React.FC<{ result: ChatVerifyResult; onOpen?: () => void }> = ({ result, onOpen }) => {
+ const possible = result.status !== 'stolen' && /POSSIBLE MATCH/i.test(result.message ?? '');
  const tone =
- result.status === 'stolen'
+ possible
+ ? { Icon: AlertTriangle, color: 'text-amber-500', bg: 'bg-amber-500/10', border: 'border-amber-500/30', label: 'POSSIBLE MATCH' }
+ : result.status === 'stolen'
  ? {
  Icon: AlertTriangle,
  color: 'text-red-500',
  bg: 'bg-red-500/10',
  border: 'border-red-500/30',
- label: 'STOLEN MATCH',
+ label: 'STOLEN · THEFT REPORT FOUND',
  }
  : result.status === 'lost'
  ? {
@@ -1305,18 +1354,24 @@ const InlineResultMini: React.FC<{ result: ChatVerifyResult }> = ({ result }) =>
  color: 'text-emerald-500',
  bg: 'bg-emerald-500/10',
  border: 'border-emerald-500/30',
- label: 'CLEAR',
+ label: 'SAFE · NO REPORT FOUND',
  }
  : {
- Icon: Sparkles,
- color: 'text-muted-foreground',
- bg: 'bg-muted',
- border: 'border-border',
- label: 'INCONCLUSIVE',
+ Icon: CheckCircle2,
+ color: 'text-emerald-500',
+ bg: 'bg-emerald-500/10',
+ border: 'border-emerald-500/30',
+ label: 'SAFE · NO REPORT FOUND',
  };
 
  return (
- <div className={cn('mt-3 rounded-lg border p-3', tone.bg, tone.border)}>
+ <div
+ role={onOpen ? 'button' : undefined}
+ tabIndex={onOpen ? 0 : undefined}
+ onClick={onOpen}
+ onKeyDown={(e) => { if (onOpen && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); onOpen(); } }}
+ className={cn('mt-3 rounded-lg border p-3', tone.bg, tone.border, onOpen && 'cursor-pointer hover:brightness-110 transition')}
+ >
  <div className="flex items-center gap-2">
  <tone.Icon className={cn('w-4 h-4', tone.color)} />
  <span className={cn('text-[10px] font-mono font-bold tracking-wider', tone.color)}>
@@ -1327,6 +1382,7 @@ const InlineResultMini: React.FC<{ result: ChatVerifyResult }> = ({ result }) =>
                     Checked {result.sources.length} source{result.sources.length === 1 ? '' : 's'}
                   </span>
                 )}
+                {onOpen && <span className="ml-2 text-[10px] font-semibold text-primary">Open report →</span>}
  </div>
  <div className="mt-1.5 text-xs text-foreground/80 font-mono truncate">
  {result.itemType.toUpperCase()} · {result.identifier}
