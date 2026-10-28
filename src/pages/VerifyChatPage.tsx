@@ -308,7 +308,7 @@ const VerifyChatPage: React.FC = () => {
          if (!allowed) {
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your 1 free check. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
+             content: `You've used your free check. Get **2 checks for $0.99** (this one plus one more), or **unlimited checks for $10 a month**. No account needed.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
@@ -328,7 +328,7 @@ const VerifyChatPage: React.FC = () => {
            savePendingCheck(cleanedIdentifier, itemType);
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your 1 free check. Run this one for **$0.99**, or get **unlimited checks for $10 a month**. No account needed.`,
+             content: `You've used your free check. Get **2 checks for $0.99** (this one plus one more), or **unlimited checks for $10 a month**. No account needed.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
