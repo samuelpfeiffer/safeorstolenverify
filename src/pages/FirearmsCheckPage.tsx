@@ -145,6 +145,9 @@ const FirearmsCheckPage = () => {
  <p className="text-muted-foreground">
  If a gun matches, don't buy it. Give the serial number to local police, who can confirm the report in NCIC.
  </p>
+ <p className="text-sm text-muted-foreground mt-3">
+ In the news: <Link to="/press-release" className="text-primary hover:underline">How to Check if a Gun Is Stolen: Free Gun Serial Number Lookup for Private Buyers</Link> (October 28, 2026)
+ </p>
  </section>
 
  {/* Section 1 */}

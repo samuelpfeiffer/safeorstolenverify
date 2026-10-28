@@ -50,7 +50,7 @@ const NewsIndexPage = () => {
     '@type': 'CollectionPage',
     name: 'SafeOrStolen News',
     description: 'What SafeOrStolen checks today, and where to find its guides and press information.',
-    dateModified: '2026-10-07',
+    dateModified: '2026-10-28',
     publisher: { '@type': 'Organization', name: 'SafeOrStolen' },
   };
 
@@ -78,7 +78,25 @@ const NewsIndexPage = () => {
               how-tos are on the <Link to="/blog" className="text-primary hover:underline">blog</Link>, and press
               questions go to {PRESS_EMAIL}.
             </p>
-            <p className="text-sm text-muted-foreground">Updated October 7, 2026</p>
+            <p className="text-sm text-muted-foreground">Updated October 28, 2026</p>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-bold mb-4">Latest news</h2>
+            <Card>
+              <CardContent className="py-5">
+                <p className="text-sm text-muted-foreground mb-1">October 28, 2026 · Press release</p>
+                <h3 className="font-semibold text-lg mb-2">How to Check if a Gun Is Stolen: Free Gun Serial Number Lookup for Private Buyers</h3>
+                <p className="text-muted-foreground mb-3">
+                  Police can run a gun through NCIC. Regular buyers can't. SafeOrStolen lets anyone check a gun serial
+                  against more than 220,000 police theft and loss reports from 33 states and DC, plus live Ohio
+                  law-enforcement records. The first check is free.
+                </p>
+                <Link to="/press-release" className="text-primary hover:underline text-sm">Read the press release</Link>
+              </CardContent>
+            </Card>
           </div>
         </section>
 

@@ -9,6 +9,12 @@ export type PressRelease = {
 /** Published press releases, newest first. */
 export const PRESS_RELEASES: PressRelease[] = [
   {
+    title: 'How to Check if a Gun Is Stolen: Free Gun Serial Number Lookup for Private Buyers',
+    outlet: 'PRLog',
+    date: 'October 28, 2026',
+    url: 'https://www.prlog.org/13179717-how-to-check-if-gun-is-stolen-free-gun-serial-number-lookup-for-private-buyers.html',
+  },
+  {
     title: 'SafeOrStolen Launches Free Mobile App for Instant Stolen Item Verification',
     outlet: 'PRLog',
     date: 'January 2, 2026',
