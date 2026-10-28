@@ -100,28 +100,8 @@ Disallow: /proof/
 
 # Thin or near-duplicate pages that Google has crawled but not indexed.
 # Blocking further crawls frees budget for the core guides and tools.
-Disallow: /competitor-alternatives
-Disallow: /free-tools
-Disallow: /llm.html
-Disallow: /ai-chat
-Disallow: /auth?
-Disallow: /youtube/
-Disallow: /app/stolen-phone-checker
-Disallow: /app/vin-checker
 
 # Numbered near-duplicate blog posts (same topic, multiple versions)
-Disallow: /blog/facebook-marketplace-safety-2025-complete-stolen-item-guide-
-Disallow: /blog/los-angeles-imei-verification-phone-fraud-protection-
-Disallow: /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-
-Disallow: /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification-
-Disallow: /blog/safeorstolen-offline-mode-verify-without-internet-
-Disallow: /blog/chicago-vin-check-how-to-verify-used-cars-in-illinois-
-Disallow: /blog/samsung-galaxy-s24-ultra-stolen-check-complete-imei-guide-
-Disallow: /blog/macbook-pro-m3-serial-number-check-avoid-stolen-laptops-
-Disallow: /blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-
-Disallow: /blog/playstation-5-serial-number-verification-guide-
-Disallow: /blog/stolen-item-checker-in-new-york-city-complete-2025-guide-
-Disallow: /blog/vin-verification-for-used-cars-what-you-need-to-know-
 
 # Sitemaps
 Sitemap: https://safeorstolen.com/sitemap.xml

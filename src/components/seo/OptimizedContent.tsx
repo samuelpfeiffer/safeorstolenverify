@@ -32,7 +32,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
           "description": "Global platform for verifying stolen goods and preventing marketplace fraud",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://safeorstolen.com/verify",
+            "target": "https://safeorstolen.com/verify?q={search_term_string}",
             "query-input": "required name=search_term_string"
           },
           "sameAs": [

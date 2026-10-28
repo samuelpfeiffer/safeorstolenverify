@@ -186,7 +186,7 @@ export const createWebsiteSchema = () => ({
  },
  "potentialAction": {
  "@type": "SearchAction",
- "target": `${SITE_CONFIG.url}/verify`,
+ "target": `${SITE_CONFIG.url}/verify?q={search_term_string}`,
  "query-input": "required name=search_term_string"
  }
 });
