@@ -302,6 +302,27 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </div>
 
 
+ {/* Oct 28 2026: one-tap share. The link opens SafeOrStolen with this number filled in. */}
+ <button
+ type="button"
+ onClick={async () => {
+ const link = `https://safeorstolen.com/verify?q=${encodeURIComponent(current.identifier)}`;
+ const verdict = current.status === 'stolen' ? 'STOLEN (theft report found)' : tone.label === 'SAFE' ? 'SAFE (no report found)' : tone.label;
+ const text = `I checked this ${current.itemType} on SafeOrStolen: ${verdict}. Check it yourself:`;
+ try {
+ if (typeof navigator !== 'undefined' && (navigator as any).share) {
+ await (navigator as any).share({ title: 'SafeOrStolen check', text, url: link });
+ } else {
+ await navigator.clipboard.writeText(`${text} ${link}`);
+ alert('Link copied. Paste it to the buyer or seller.');
+ }
+ } catch { /* user closed the share sheet */ }
+ }}
+ className="w-full inline-flex items-center justify-center gap-2 h-11 rounded-xl border border-border bg-card hover:bg-muted/50 text-sm font-semibold"
+ >
+ <Share2 className="w-4 h-4 text-primary" /> Share this check with the buyer or seller
+ </button>
+
  <RegistryReportNotice providers={current.providers as any} />
 
  {/* Watch this — daily re-check for items with a real outside source */}
