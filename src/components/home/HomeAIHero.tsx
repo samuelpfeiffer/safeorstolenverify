@@ -198,8 +198,11 @@ export const HomeAIHero: React.FC = () => {
  const params = new URLSearchParams(window.location.search);
  const q = params.get('q');
  const t = params.get('type');
- if (t && /^[a-z_-]{2,20}$/i.test(t)) forcedTypeRef.current = t.toLowerCase();
- if (q && q.trim()) send(q.trim());
+ // Oct 28 2026 (owner rule): searches always run in the dashboard. Forward old /?q= links to /verify.
+ if (q && q.trim()) {
+ window.location.replace(`/verify?q=${encodeURIComponent(q.trim())}${t && /^[a-z_-]{2,20}$/i.test(t) ? `&type=${t.toLowerCase()}` : ''}`);
+ return;
+ }
  }, []);
 
  const handleKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {

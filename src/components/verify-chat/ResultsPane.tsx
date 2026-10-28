@@ -64,7 +64,21 @@ interface ResultsPaneProps {
  isAuthenticated: boolean;
 }
 
-const toneFor = (status: ChatVerifyResult['status'], riskLevel?: string) => {
+// Oct 28 2026 (owner): clean result = green "SAFE" under "NO REPORT FOUND"; stolen = red "STOLEN".
+// Possible matches stay amber so a buyer is never told "safe" when a report might match.
+const toneFor = (status: ChatVerifyResult['status'], riskLevel?: string, message?: string): {
+  Icon: any; color: string; bg: string; border: string; label: string; ring: string; sub?: string;
+} => {
+ if (status !== 'stolen' && /POSSIBLE MATCH/i.test(message ?? '')) {
+ return {
+ Icon: AlertTriangle,
+ color: 'text-amber-500',
+ bg: 'bg-amber-500/10',
+ border: 'border-amber-500/40',
+ label: 'POSSIBLE MATCH',
+ ring: 'ring-amber-500/20',
+ };
+ }
  if (status === 'unknown' && (riskLevel === 'high' || riskLevel === 'critical')) {
  return {
  Icon: AlertTriangle,
@@ -91,7 +105,8 @@ const toneFor = (status: ChatVerifyResult['status'], riskLevel?: string) => {
  color: 'text-red-500',
  bg: 'bg-red-500/10',
  border: 'border-red-500/40',
- label: 'REPORTED STOLEN',
+ label: 'STOLEN',
+ sub: 'THEFT REPORT FOUND',
  ring: 'ring-red-500/20',
  };
  case 'safe':
@@ -101,17 +116,19 @@ const toneFor = (status: ChatVerifyResult['status'], riskLevel?: string) => {
  bg: 'bg-emerald-500/10',
  border: 'border-emerald-500/40',
  label: 'SAFE',
+ sub: 'NO REPORT FOUND',
  ring: 'ring-emerald-500/20',
  };
  default:
- // Neutral, not a warning: we simply have no data on this item.
+ // No report found in the records searched: shown as SAFE in green (owner decision, Oct 28 2026).
  return {
- Icon: SearchX,
- color: 'text-muted-foreground',
- bg: 'bg-muted/30',
- border: 'border-border',
- label: 'NOT FOUND',
- ring: 'ring-border/40',
+ Icon: CheckCircle2,
+ color: 'text-emerald-500',
+ bg: 'bg-emerald-500/10',
+ border: 'border-emerald-500/40',
+ label: 'SAFE',
+ sub: 'NO REPORT FOUND',
+ ring: 'ring-emerald-500/20',
  };
  }
 };
@@ -239,7 +256,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  );
  }
 
- const tone = toneFor(current.status, current.riskLevel);
+ const tone = toneFor(current.status, current.riskLevel, current.message);
 
  return (
  <div className="h-full flex flex-col">
@@ -259,6 +276,9 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  {/* Verdict banner — largest, first element */}
  <div className={cn('rounded-2xl border-2 p-6 text-center', tone.bg, tone.border, 'ring-1', tone.ring)}>
  <tone.Icon className={cn('w-10 h-10 mx-auto mb-3', tone.color)} />
+ {tone.sub && (
+ <div className={cn('text-xs sm:text-sm font-bold tracking-widest mb-1.5', tone.color)}>{tone.sub}</div>
+ )}
  <div className={cn('text-3xl sm:text-4xl font-extrabold tracking-tight leading-none', tone.color)}>
  {tone.label}
  </div>
@@ -422,7 +442,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  .filter((h) => h.identifier !== current.identifier)
  .slice(0, 8)
  .map((h, i) => {
- const t = toneFor(h.status, h.riskLevel);
+ const t = toneFor(h.status, h.riskLevel, h.message);
  return (
  <button
  key={`${h.identifier}-${i}`}

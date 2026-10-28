@@ -112,7 +112,7 @@ const LicensePlateLookupPage = () => {
       return;
     }
     const stateName = US_STATES.find((s) => s.code === selectedState)?.name || selectedState;
-    window.location.href = `/?q=${encodeURIComponent(plateNumber.trim())}&type=plate`;
+    window.location.href = `/verify?q=${encodeURIComponent(plateNumber.trim())}&type=plate`;
   };
 
   return (

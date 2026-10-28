@@ -11,7 +11,7 @@ function plateStateFromPath(): string | null {
 
 /**
  * Search box that runs the check and shows the result on the same page.
- * Does not send the user to /verify.
+ * Oct 28 2026 (owner rule): every search runs in the dashboard at /verify.
  */
 export function InlineSerialCheck({
   type,
@@ -31,7 +31,7 @@ export function InlineSerialCheck({
     // Oct 21 2026: keep the item type so the homepage check searches the right records
     // (a gun serial sent without type=firearm skipped the firearm theft reports).
     const t = type ? `&type=${encodeURIComponent(type)}` : '';
-    window.location.href = `/?q=${encodeURIComponent(v)}${t}`;
+    window.location.href = `/verify?q=${encodeURIComponent(v)}${t}`;
   };
 
   return (

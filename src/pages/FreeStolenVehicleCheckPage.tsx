@@ -22,7 +22,7 @@ const FreeStolenVehicleCheckPage = () => {
 
  const handleSearch = () => {
  if (vinInput.trim()) {
- window.location.href = `/?q=${encodeURIComponent(vinInput.trim())}&type=vin`;
+ window.location.href = `/verify?q=${encodeURIComponent(vinInput.trim())}&type=vin`;
  }
  };
 
