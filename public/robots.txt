@@ -1,7 +1,7 @@
 # SafeOrStolen robots.txt
 # SafeOrStolen: check whether a used item is reported stolen before you buy it.
 # Allow all search engines and AI crawlers
-# Last updated: 2026-10-25
+# Last updated: 2026-10-28
 #
 # AI training: ALLOWED with attribution (see /ai.txt and /llms.txt)
 
@@ -84,7 +84,7 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Disallow admin and internal paths.
+# Disallow admin, internal, and low-value paths.
 # NOTE: this block must declare its own User-agent, otherwise it is parsed as
 # part of the preceding LinkedInBot group and ignored by every other crawler.
 User-agent: *
@@ -97,6 +97,31 @@ Disallow: /dashboard/
 # is the SPA shell. Blocking the crawl is the only JS-independent directive
 # available on this host.
 Disallow: /proof/
+
+# Thin or near-duplicate pages that Google has crawled but not indexed.
+# Blocking further crawls frees budget for the core guides and tools.
+Disallow: /competitor-alternatives
+Disallow: /free-tools
+Disallow: /llm.html
+Disallow: /ai-chat
+Disallow: /auth?
+Disallow: /youtube/
+Disallow: /app/stolen-phone-checker
+Disallow: /app/vin-checker
+
+# Numbered near-duplicate blog posts (same topic, multiple versions)
+Disallow: /blog/facebook-marketplace-safety-2025-complete-stolen-item-guide-
+Disallow: /blog/los-angeles-imei-verification-phone-fraud-protection-
+Disallow: /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-
+Disallow: /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification-
+Disallow: /blog/safeorstolen-offline-mode-verify-without-internet-
+Disallow: /blog/chicago-vin-check-how-to-verify-used-cars-in-illinois-
+Disallow: /blog/samsung-galaxy-s24-ultra-stolen-check-complete-imei-guide-
+Disallow: /blog/macbook-pro-m3-serial-number-check-avoid-stolen-laptops-
+Disallow: /blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-
+Disallow: /blog/playstation-5-serial-number-verification-guide-
+Disallow: /blog/stolen-item-checker-in-new-york-city-complete-2025-guide-
+Disallow: /blog/vin-verification-for-used-cars-what-you-need-to-know-
 
 # Sitemaps
 Sitemap: https://safeorstolen.com/sitemap.xml
