@@ -23,6 +23,9 @@ const SOURCE_TIMEOUT_MS = 20_000;
 // Oct 21 2026 (owner decision): 1 free check, then $0.99 buys 2 checks (at most 1 phone blacklist search).
 const FREE_LIMIT = 1;
 const SINGLE_CHECKS = 2;
+// Oct 29 2026: one-time packs. 'single' = $0.99 Starter (records only); 'complete' = $2.99 Complete
+// (adds the phone blacklist search, web listings + AI review, and a free certificate).
+const isPack = (plan: string | null | undefined) => plan === 'single' || plan === 'complete';
 // Oct 21 2026 (owner decision): NO free week. The normal rules always apply: 1 free check, then pay.
 // Kept as a function so existing callers still compile; it always returns false.
 export function isLaunchFree(): boolean {
@@ -633,7 +636,8 @@ async function phoneBlacklistAllowed(
   gate: GateAllowed,
 ): Promise<boolean> {
   if (gate.plan === 'free' && !isLaunchFree()) return false;
-  if (gate.plan === 'single') {
+  if (gate.plan === 'single') return false; // $0.99 Starter: no paid blacklist search
+  if (gate.plan === 'complete') {
     if (!gate.singleSubId) return false;
     // Claim this purchase's one phone blacklist search (only if not used yet).
     const { data: claimed } = await admin
@@ -671,9 +675,11 @@ async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<G
     .is('user_id', null);
   const now = new Date();
   const list: any[] = rows ?? [];
-  const monthly = list.find((r) => r.plan !== 'single' && (!r.period_end || new Date(r.period_end) > now));
+  const monthly = list.find((r) => !isPack(r.plan) && (!r.period_end || new Date(r.period_end) > now));
   if (monthly) return { allowed: true, plan: monthly.plan, checksRemaining: null };
-  const single = list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < SINGLE_CHECKS);
+  const single =
+    list.find((r) => r.plan === 'complete' && (r.checks_used_this_month ?? 0) < SINGLE_CHECKS) ??
+    list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < SINGLE_CHECKS);
   if (!single) return null;
   // Claim it only if still unused, so two tabs can't spend one purchase twice.
   let claim = admin
@@ -685,7 +691,7 @@ async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<G
     : claim.eq('checks_used_this_month', single.checks_used_this_month);
   const { data: claimed } = await claim.select('id');
   if (!claimed || claimed.length === 0) return null;
-  return { allowed: true, plan: 'single', checksRemaining: SINGLE_CHECKS - ((single.checks_used_this_month ?? 0) + 1), singleSubId: single.id };
+  return { allowed: true, plan: single.plan, checksRemaining: SINGLE_CHECKS - ((single.checks_used_this_month ?? 0) + 1), singleSubId: single.id };
 }
 
 async function claimGuestPurchasesByEmail(admin: AdminClient, userId: string): Promise<boolean> {
@@ -757,18 +763,19 @@ export async function checkUsageGate(
   // A single-check purchase stays valid until it is used.
   const now = new Date();
   const usable = (r: any) =>
-    r.plan === 'single'
+    isPack(r.plan)
       ? (r.checks_used_this_month ?? 0) < SINGLE_CHECKS
       : !r.period_end || new Date(r.period_end) > now;
   const sub: any =
-    subRows.find((r) => r.plan !== 'single' && usable(r)) ??
+    subRows.find((r) => !isPack(r.plan) && usable(r)) ??
+    subRows.find((r) => r.plan === 'complete' && usable(r)) ??
     subRows.find((r) => r.plan === 'single' && usable(r)) ??
     null;
-  const hasUsedSingle = subRows.some((r) => r.plan === 'single' && !usable(r));
+  const hasUsedSingle = subRows.some((r) => isPack(r.plan) && !usable(r));
 
   if (sub) {
     const used = sub.checks_used_this_month ?? 0;
-    if (sub.plan === 'single' && used >= SINGLE_CHECKS) {
+    if (isPack(sub.plan) && used >= SINGLE_CHECKS) {
       return { allowed: false, reason: 'single_used', plan: 'single' };
     }
     if (sub.plan === 'basic' && used >= 50) {
@@ -787,8 +794,8 @@ export async function checkUsageGate(
     return {
       allowed: true,
       plan: sub.plan,
-      checksRemaining: sub.plan === 'basic' ? 50 - (used + 1) : sub.plan === 'single' ? SINGLE_CHECKS - (used + 1) : null,
-      ...(sub.plan === 'single' ? { singleSubId: sub.id } : {}),
+      checksRemaining: sub.plan === 'basic' ? 50 - (used + 1) : isPack(sub.plan) ? SINGLE_CHECKS - (used + 1) : null,
+      ...(isPack(sub.plan) ? { singleSubId: sub.id } : {}),
     };
   }
 
@@ -877,7 +884,7 @@ export async function runVerification(
   }
   // Oct 28 2026 (owner): web search and AI review cost money per call (credits ran out before), so they run
   // on paid checks only. Free checks still search every police, registry and SafeOrStolen record.
-  const paidCheck = gate.plan !== 'free';
+  const paidCheck = gate.plan !== 'free' && gate.plan !== 'single';
   if (sources.includes('webscraper') && paidCheck) {
     tasks.push(runWebScraper(cleanIdentifier, itemType));
   }

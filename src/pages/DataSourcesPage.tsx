@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: 'Does SafeOrStolen check the phone blacklist?',
     answer:
-      'Yes, on a paid blacklist check. A single check costs $0.99, and monthly members ($10 a month) get up to 20 blacklist checks a month. Free checks show the make and model from the IMEI plus SafeOrStolen theft reports and web results. Before you pay, have the seller sign out and erase the phone in front of you.',
+      'Yes, on a paid blacklist check. A Complete check costs $2.99 for 2, and monthly members ($10 a month) get up to 20 blacklist checks a month. Free checks show the make and model from the IMEI plus SafeOrStolen theft reports and web results. Before you pay, have the seller sign out and erase the phone in front of you.',
   },
   {
     question: 'How current are the gun theft records?',

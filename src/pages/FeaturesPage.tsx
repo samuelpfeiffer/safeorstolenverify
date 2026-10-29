@@ -49,7 +49,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  {
  name: 'IMEI check and phone blacklist check',
  what: 'Shows the make and model the IMEI belongs to and searches theft reports. A paid check adds the lost/stolen carrier blacklist search.',
- cost: 'Blacklist search on a $0.99 check, or up to 20 a month on the monthly plan',
+ cost: 'Blacklist search on a $2.99 Complete check, or up to 20 a month on the monthly plan',
  href: '/imei-checker',
  linkText: 'IMEI check',
  },

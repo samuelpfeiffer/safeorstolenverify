@@ -74,7 +74,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does a real-time check include carrier blacklist status?',
  answer:
- 'Yes, on a paid phone check: the lost/stolen carrier blacklist is searched on a $0.99 for 2 checks or one of the 20 included each month on the $10 monthly plan. Before you pay, also have the seller sign out of their Apple or Google account in front of you.',
+ 'Yes, on a paid phone check: the lost/stolen carrier blacklist is searched on a $2.99 Complete check or one of the 20 included each month on the $10 monthly plan. Before you pay, also have the seller sign out of their Apple or Google account in front of you.',
  },
 ];
 

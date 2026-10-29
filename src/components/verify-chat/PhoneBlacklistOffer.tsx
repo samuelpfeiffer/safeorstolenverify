@@ -7,7 +7,7 @@ import { savePendingCheck } from '@/lib/pendingCheck';
 
 /**
  * Oct 5 2026: free phone checks say the blacklist search is "part of the full check", but there
- * was no way to buy it from the result. This offers the $0.99 for 2 checks (blacklist included)
+ * was no way to buy it from the result. This offers the $2.99 Complete check (blacklist included; Oct 29 2026)
  * and, after payment, /payment-success runs the same IMEI again as a paid check.
  */
 export function PhoneBlacklistOffer({ imei }: { imei: string }) {
@@ -23,7 +23,7 @@ export function PhoneBlacklistOffer({ imei }: { imei: string }) {
       savePendingCheck(imei, 'imei');
       const { data, error: err } = await supabase.functions.invoke('create-checkout', {
         body: kind === 'single'
-          ? { planName: 'Single check', serialNumber: imei, itemType: 'phone', fingerprint }
+          ? { planName: 'Complete check', plan: 'complete', serialNumber: imei, itemType: 'phone', fingerprint }
           : { planName: 'Monthly', isSubscription: true, fingerprint },
       });
       if (err || !data?.url) throw new Error('Could not open checkout. Please try again.');
@@ -49,7 +49,7 @@ export function PhoneBlacklistOffer({ imei }: { imei: string }) {
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button size="sm" className="flex-1" onClick={() => buy('single')} disabled={busy !== null}>
-          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check the blacklist: 2 checks for $0.99'}
+          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Check the blacklist: Complete check, 2 for $2.99'}
         </Button>
         <Button size="sm" variant="outline" className="flex-1" onClick={() => buy('monthly')} disabled={busy !== null}>
           {busy === 'monthly' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : '$10/mo: 20 phone checks + unlimited everything else'}

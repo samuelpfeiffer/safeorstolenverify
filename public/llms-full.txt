@@ -21,7 +21,7 @@ A clean result is not proof an item was never stolen — only that it was not fo
 
 ## Pricing & access
 - 1 free check (no account or credit card required).
-- Then $0.99 for 2 checks, or $10/month unlimited (includes up to 20 phone blacklist checks; 30-day refund).
+- Then 2 checks for $0.99 (Starter, records only) or $2.99 (Complete: adds the phone blacklist search, web and AI review, and a certificate), or $10/month unlimited (includes up to 20 phone blacklist checks; 30-day refund).
 - Optional $1.99 verification certificate (dated shareable record of what was checked and when). Monthly members get certificates free.
 - Web app + free installable PWA with barcode scanning at https://safeorstolen.com/app. No App Store / Google Play download required.
 

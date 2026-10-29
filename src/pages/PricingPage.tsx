@@ -19,7 +19,7 @@ import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/c
 const FAQS = [
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, $0.99 buys 2 checks with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
+ a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, $0.99 buys 2 Starter checks (records only) or $2.99 buys 2 Complete checks (adds the phone blacklist, web and AI review, and a certificate), with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or free on the monthly plan.',
  },
  {
  q: 'What does the 1 free check include?',
@@ -27,11 +27,11 @@ const FAQS = [
  },
  {
  q: 'Is anything limited on the $10 unlimited plan?',
- a: 'Only phone blacklist searches. The monthly plan includes up to 20 lost/stolen carrier blacklist checks a month, because each one costs money to run. Every other check, for cars, plates, guns, bikes, laptops, tools and anything with a serial number, is unlimited. If you need another blacklist check after your 20, buy a single $0.99 check.',
+ a: 'Only phone blacklist searches. The monthly plan includes up to 20 lost/stolen carrier blacklist checks a month, because each one costs money to run. Every other check, for cars, plates, guns, bikes, laptops, tools and anything with a serial number, is unlimited. If you need another blacklist check after your 20, buy a $2.99 Complete check.',
  },
  {
  q: 'When is the monthly plan cheaper than single checks?',
- a: 'At about 21 checks a month. At $0.99 for 2 checks, 20 checks cost $9.90 and 22 cost $10.89, so the $10 monthly plan wins once you pass about 20. If you are checking one phone or one bike before a purchase, use your free check or $0.99 for 2 checks. If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
+ a: 'At about 21 checks a month. At $0.99 for 2 checks, 20 checks cost $9.90 and 22 cost $10.89, so the $10 monthly plan wins once you pass about 20. If you are checking one phone or one bike before a purchase, use your free check, the $0.99 Starter, or the $2.99 Complete check (best for phones). If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
  },
  {
  q: 'Can I cancel the monthly plan, and is there a refund?',
@@ -80,8 +80,8 @@ const PricingPage = () => {
  <>
  <div className="min-h-screen bg-background text-foreground pt-20">
  <PageSEO
- title="SafeOrStolen Pricing: 1 Free Check, $0.99 or $10/Month"
- description="SafeOrStolen pricing: 1 free check with no credit card, $0.99 for 2 checks, or $10 a month for unlimited checks with a 30-day refund. Cancel anytime."
+ title="SafeOrStolen Pricing: 1 Free Check, From $0.99, $10/Month"
+ description="SafeOrStolen pricing: 1 free check with no credit card, 2 checks from $0.99 ($2.99 Complete), or $10 a month for unlimited checks with a 30-day refund. Cancel anytime."
  keywords="safeorstolen pricing, how much does safeorstolen cost, stolen item check cost, imei check price, vin check price, free stolen check"
  canonical="/pricing"
  modifiedTime="2026-10-07"
@@ -93,8 +93,8 @@ const PricingPage = () => {
  SafeOrStolen Pricing
  </h1>
  <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
- Your first check is free, with no account or credit card needed. After that, $0.99 buys 2
- checks, or unlimited checks are $10 a month, cancel anytime, with a 30-day refund.
+ Your first check is free, with no account or credit card needed. After that, $0.99 buys 2 Starter checks, $2.99 buys 2 Complete checks,
+ or unlimited checks are $10 a month, cancel anytime, with a 30-day refund.
  </p>
  <p className="text-muted-foreground text-sm mt-3">
  Updated <time dateTime="2026-10-07">October 7, 2026</time>
@@ -106,7 +106,7 @@ const PricingPage = () => {
  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
  Pick how you want to pay
  </h2>
- <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+ <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
  {/* Card 1 — Free */}
  <div className="rounded-2xl border border-border bg-card flex flex-col p-6">
  <div className="inline-flex self-start items-center gap-1 bg-muted text-muted-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
@@ -147,9 +147,9 @@ const PricingPage = () => {
  {/* Card 2 — Pay Per Check */}
  <div className="rounded-2xl border border-border bg-card flex flex-col p-6">
  <div className="inline-flex self-start items-center gap-1 bg-secondary/20 text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
- Two items
+ Starter
  </div>
- <h3 className="text-xl font-bold mb-1">2 checks</h3>
+ <h3 className="text-xl font-bold mb-1">Starter: 2 checks</h3>
  <div className="mb-1 flex items-baseline gap-1">
  <span className="text-4xl font-black">$0.99</span>
  </div>
@@ -158,8 +158,8 @@ const PricingPage = () => {
  <ul className="space-y-2 flex-1 mb-6">
  {[
  '2 checks, paid once (this one plus one more)',
- 'Every source that applies, plus web listings and AI review',
- 'Includes 1 phone blacklist search',
+ 'SafeOrStolen theft reports and police records',
+ 'Phone IMEI validity check (blacklist search is in Complete)',
  'Saved to your account with the date',
  'Optional $1.99 verification certificate',
  'No subscription',
@@ -177,10 +177,48 @@ const PricingPage = () => {
  className="w-full py-3 rounded-xl font-bold bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-all disabled:opacity-60 flex items-center justify-center gap-2"
  >
  <CreditCard className="w-4 h-4" />
- {loading === PAY_PER_CHECK_PRICE_ID ? 'Loading...' : 'Buy a single check: $0.99'}
+ {loading === PAY_PER_CHECK_PRICE_ID ? 'Loading...' : 'Get the Starter: $0.99'}
  </button>
  <p className="text-center text-xs text-muted-foreground mt-2">
- Best when you're checking one item before you buy.
+ Records only, at the lowest price.
+ </p>
+ </div>
+
+ {/* Card 3 — Complete check ($2.99), Oct 29 2026 */}
+ <div className="rounded-2xl border-2 border-primary bg-card flex flex-col p-6 relative">
+ <div className="inline-flex self-start items-center gap-1 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
+ Best value
+ </div>
+ <h3 className="text-xl font-bold mb-1">Complete: 2 checks</h3>
+ <div className="mb-1 flex items-baseline gap-1">
+ <span className="text-4xl font-black">$2.99</span>
+ </div>
+ <p className="text-muted-foreground text-sm mb-6">for 2 complete checks, paid once</p>
+ <ul className="space-y-2 flex-1 mb-6">
+ {[
+ '2 checks, paid once (this one plus one more)',
+ 'SafeOrStolen theft reports and police records',
+ 'Lost and stolen phone blacklist search',
+ 'Web listings and AI review',
+ 'Free verification certificate (normally $1.99)',
+ 'No subscription',
+ ].map((f) => (
+ <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
+ <Check className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
+ {f}
+ </li>
+ ))}
+ </ul>
+ <button
+ onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID + '-complete', 'Complete check', false)}
+ disabled={loading === PAY_PER_CHECK_PRICE_ID + '-complete'}
+ className="w-full py-3 rounded-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60 inline-flex items-center justify-center gap-2"
+ >
+ <CreditCard className="w-4 h-4" />
+ {loading === PAY_PER_CHECK_PRICE_ID + '-complete' ? 'Loading...' : 'Get the Complete check: $2.99'}
+ </button>
+ <p className="text-center text-xs text-muted-foreground mt-2">
+ Best for phones and anything worth more than a few hundred dollars.
  </p>
  </div>
 
@@ -246,7 +284,7 @@ const PricingPage = () => {
  </thead>
  <tbody>
  {[
- ['Price', '$0', '$0.99 for 2', '$10 a month'],
+ ['Price', '$0', '$0.99 or $2.99 for 2', '$10 a month'],
  ['Checks', '1 total', '2 per purchase', 'Unlimited'],
  ['Theft reports and public web results', 'Yes', 'Yes', 'Yes'],
  ['Police gun records, bike registry, VIN decode and recalls', 'Yes', 'Yes', 'Yes'],
@@ -315,7 +353,7 @@ const PricingPage = () => {
 
  {/* Bottom CTA */}
  <div className="text-center pb-20 px-4">
- <p className="text-muted-foreground mb-4">1 free check. Then $0.99 for 2 checks or $10 a month for unlimited.</p>
+ <p className="text-muted-foreground mb-4">1 free check. Then 2 checks for $0.99 (Starter) or $2.99 (Complete), or $10 a month for unlimited.</p>
  <div className="flex flex-col sm:flex-row gap-3 justify-center">
  <Link
  to="/verify"
@@ -343,11 +381,12 @@ const PricingPage = () => {
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "SafeOrStolen stolen item check",
- "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks.",
+ "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then 2 checks for $0.99 (Starter) or $2.99 (Complete), or $10 a month for unlimited checks.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no account or credit card needed" },
- { "@type": "Offer", "name": "2 checks", "price": "0.99", "priceCurrency": "USD", "description": "2 checks, no subscription" },
+ { "@type": "Offer", "name": "Starter: 2 checks", "price": "0.99", "priceCurrency": "USD", "description": "2 checks of theft reports and police records, no subscription" },
+ { "@type": "Offer", "name": "Complete: 2 checks", "price": "2.99", "priceCurrency": "USD", "description": "2 complete checks with phone blacklist search, web and AI review, and a verification certificate, no subscription" },
  { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "Unlimited checks a month, up to 20 phone blacklist checks, free verification certificates, cancel anytime, 30-day refund" },
  { "@type": "Offer", "name": "Verification certificate", "price": "1.99", "priceCurrency": "USD", "description": "Dated record with its own link showing you checked before the sale" },
  ]
