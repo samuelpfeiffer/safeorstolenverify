@@ -91,7 +91,12 @@ const VerifyChatPage: React.FC = () => {
  const [isThinking, setIsThinking] = useState(false);
  const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
  const [resultsOpenMobile, setResultsOpenMobile] = useState(false);
- const [mainView, setMainView] = useState<string | null>(null);
+ // ?view=/dashboard (etc.) opens that left-menu page on the right when the chat loads.
+ const [mainView, setMainView] = useState<string | null>(() => {
+ if (typeof window === 'undefined') return null;
+ const v = new URLSearchParams(window.location.search).get('view');
+ return v && IN_PAGE_VIEWS[v] ? v : null;
+ });
  // Oct 28 2026 (owner): Claude-style. The full report/certificate opens in a right panel; the chat keeps a small card.
  const [reportOpen, setReportOpen] = useState(false);
  const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);

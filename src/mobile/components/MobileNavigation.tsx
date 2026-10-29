@@ -13,8 +13,8 @@ export const MobileNavigation: React.FC = () => {
 
   const navItems = [
     { icon: Home, label: 'Home', path: '/' },
-    { icon: Search, label: 'Verify', path: '/mobile-verify' },
-    { icon: History, label: 'History', path: '/mobile-dashboard' },
+    { icon: Search, label: 'Verify', path: '/verify' },
+    { icon: History, label: 'History', path: '/verify?view=/dashboard' },
     { icon: Settings, label: 'Settings', path: '/mobile-settings' },
     { icon: User, label: 'Account', path: '/auth' }
   ];

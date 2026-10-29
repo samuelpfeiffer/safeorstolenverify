@@ -266,6 +266,8 @@ export const AIFloatingChat: React.FC = () => {
 
   const send = useCallback(async (text: string) => {
     if (!text.trim() || isStreaming) return;
+    // Oct 28 2026 (owner rule): every search and question goes to the one AI chat at /verify.
+    if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(text.trim())}`; return; }
     const userMsg: Msg = { role: 'user', content: text.trim() };
     const newMessages = [...messages, userMsg];
     setMessages(newMessages);

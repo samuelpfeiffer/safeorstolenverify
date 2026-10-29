@@ -2,7 +2,7 @@
   "name": "SafeOrStolen",
   "short_name": "SafeOrStolen",
   "description": "Check if a used phone, car, gun, tool or bike was reported stolen. Enter the IMEI, VIN, plate or serial number, or scan its barcode. Checks need an internet connection.",
-  "start_url": "/app?source=pwa",
+  "start_url": "/verify?source=pwa",
   "id": "com.safeorstolen.app",
   "display": "standalone",
   "display_override": [
@@ -91,7 +91,7 @@
       "name": "Verification History",
       "short_name": "History",
       "description": "View your verification history",
-      "url": "/dashboard?source=shortcut",
+      "url": "/verify?view=/dashboard&source=shortcut",
       "icons": [
         {
           "src": "/icon-192.png",
