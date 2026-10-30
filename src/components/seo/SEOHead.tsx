@@ -82,7 +82,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
 
  // Optimize description length (max 160 chars)
- const optimizedDescription = description.length > 160 
+ const optimizedDescription = description.length > 400    
  ? description.substring(0, 157) + '...' 
  : description;
 
