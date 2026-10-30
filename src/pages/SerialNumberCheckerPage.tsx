@@ -6,7 +6,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
- title="Free Serial Number Lookup & Search Online (USA) | SafeOrStolen"
+ title="Free Serial Number Lookup : Product Serial Check Online | SafeOrStolen"
  metaDescription="Check any product serial number online free: laptops, tools, cameras, consoles, guns and more. See if it is reported stolen in seconds. No account needed."
  h1="Free Serial Number Lookup: Search Any Item Online"
  itemType="Item"
