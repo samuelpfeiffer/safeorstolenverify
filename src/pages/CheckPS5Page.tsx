@@ -10,7 +10,7 @@ const CheckPS5Page = () => {
       metaDescription="Free PS5 serial number checker: see if a used PS5, Slim or Pro is reported stolen in seconds, spot the warning signs, and test for a PSN ban before you pay."
       h1="Free PS5 Serial Number Checker"
       itemType="PlayStation 5"
-      dateModified="2026-10-22"
+      dateModified="2026-10-30"
       searchPlaceholder="Enter the PS5 serial number"
       keywords={[
         'ps5 serial number check',
@@ -29,7 +29,7 @@ const CheckPS5Page = () => {
       ]}
       quickAnswer={{
         question: "How do I check a PS5 serial number?",
-        answer: "Find the serial number on the label on the back of the console, or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and public web results and gives you a result in a few seconds. The first check is free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
+        answer: "Find the serial number on the label on the bottom of the console (when it stands upright; remove the stand if attached), or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and public web results and gives you a result in a few seconds. The first check is free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
       }}
       sections={[
         {
@@ -40,9 +40,9 @@ const CheckPS5Page = () => {
           table: {
             columns: ["Model", "Model numbers", "Where the serial number is"],
             rows: [
-              ["PS5 (original, disc or digital)", "CFI-10xx, CFI-11xx, CFI-12xx", "Label on the back of the console near the ports, and on the box label"],
-              ["PS5 Slim (disc or digital)", "CFI-20xx", "Label on the back of the console, and on the box label"],
-              ["PS5 Pro", "CFI-70xx", "Label on the back of the console, and on the box label"],
+              ["PS5 (original, disc or digital)", "CFI-10xx, CFI-11xx, CFI-12xx", "Label on the bottom of the console when it stands upright (remove the stand if attached), and on the box label"],
+              ["PS5 Slim (disc or digital)", "CFI-20xx", "Label on the bottom of the console when it stands upright (remove the stand if attached), and on the box label"],
+              ["PS5 Pro", "CFI-70xx", "Label on the bottom of the console when it stands upright (remove the stand if attached), and on the box label"],
               ["Any PS5, on screen", "All models", "Settings > System > System Software > Console Information"]
             ]
           }
@@ -108,7 +108,7 @@ const CheckPS5Page = () => {
         ],
 
         process: [
-          "Ask the seller for a photo of the serial number on the back of the console",
+          "Ask the seller for a photo of the serial number label on the bottom of the console",
           "Enter the serial number on SafeOrStolen",
           "Read the result and the sources that were searched",
           "At the meetup, match the serial on the label, the box and Console Information",
@@ -118,7 +118,7 @@ const CheckPS5Page = () => {
         faqs: [
           {
             question: "Where is the serial number on a PS5?",
-            answer: "On a label on the back of the console, on the label on the box, and on screen under Settings > System > System Software > Console Information. The on-screen number is the one to trust, because labels and boxes can be swapped."
+            answer: "On a label on the bottom of the console when it stands upright (remove the stand if attached), on the label on the box, and on screen under Settings > System > System Software > Console Information. The on-screen number is the one to trust, because labels and boxes can be swapped."
           },
           {
             question: "Is the PS5 serial number check free?",
@@ -134,7 +134,7 @@ const CheckPS5Page = () => {
           },
           {
             question: "Can I check a PS5 Pro or PS5 Slim serial number?",
-            answer: "Yes. SafeOrStolen's check works the same way for every PS5 model. The PS5 Slim has model numbers starting CFI-20 and the PS5 Pro CFI-70, and both show the serial on the back label and in Console Information."
+            answer: "Yes. SafeOrStolen's check works the same way for every PS5 model. The PS5 Slim has model numbers starting CFI-20 and the PS5 Pro CFI-70, and both show the serial on the label on the bottom of the console and in Console Information."
           },
           {
             question: "What should I do if the PS5 comes back as stolen?",
