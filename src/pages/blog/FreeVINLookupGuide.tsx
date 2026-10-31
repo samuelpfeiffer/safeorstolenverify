@@ -240,7 +240,7 @@ const FreeVINLookupGuide = () => {
  {/* CTA */}
  <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center mt-12">
  <h2 className="text-2xl font-black mb-3">Check Any VIN — Free</h2>
- <p className="opacity-90 mb-6">2 free VIN lookups. No credit card. Results in a few seconds, with every source listed.</p>
+ <p className="opacity-90 mb-6">1 free VIN lookup. No credit card. Results in a few seconds, with every source listed.</p>
  <Button asChild size="lg" variant="secondary" className="font-bold gap-2">
  <Link to="/verify"><Search className="w-4 h-4" /> Run Free VIN Lookup</Link>
  </Button>
