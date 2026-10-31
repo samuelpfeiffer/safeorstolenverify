@@ -10,14 +10,20 @@ const VINCheckerPage = () => {
  return (
  <>
  <ItemLandingPageTemplate
- title="VIN Checker — Check if a Car Is Stolen | SafeOrStolen"
- metaDescription="Free VIN checker for any vehicle from any state: decode the year, make and model, see open recalls, and search theft reports and police stolen-vehicle records in seconds."
- h1="VIN Checker: Is This Car Stolen?"
+ title="Free Stolen VIN Check: See if a Car Is Stolen by VIN | SafeOrStolen"
+ metaDescription="Free stolen VIN check for cars, trucks, motorcycles and ATVs. Search theft reports and police stolen-vehicle records, decode the VIN and see open recalls in seconds."
+ h1="Stolen VIN Check: Is This Car Stolen?"
  itemType="Vehicle"
  searchType="vin"
  searchPlaceholder="Enter the 17-character VIN"
- dateModified="2026-10-07"
+ dateModified="2026-10-31"
  keywords={[
+ 'stolen VIN check',
+ 'free stolen vehicle VIN check',
+ 'checking VIN to see if stolen',
+ 'stolen vehicle VIN search',
+ 'check if a car is stolen by VIN number',
+ 'free ATV VIN check stolen',
  'VIN checker',
  'check VIN stolen',
  'stolen car check',
