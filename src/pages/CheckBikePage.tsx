@@ -6,11 +6,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
  */
 const CheckBikePage = () => (
   <ItemLandingPageTemplate
-    title="Is This Bike Stolen? Free Bike Serial Number Lookup | SafeOrStolen"
-    metaDescription="Is this bike stolen? How to check if this bike is stolen. Free bike serial lookup against a national stolen-bicycle registry and SafeOrStolen reports. First check free."
+    title="Bike Serial Number Search: Is This Bike Stolen? (Free Lookup) | SafeOrStolen"
+    metaDescription="Free bike serial number search and lookup. Check a bicycle or e-bike serial number against a national stolen-bike registry and SafeOrStolen reports before you buy."
     h1="Bike Serial Number Lookup: Check if a Bike Is Stolen"
     itemType="Bicycle"
-    dateModified="2026-10-25"
+    dateModified="2026-10-31"
     searchType="bike"
     searchPlaceholder="Enter the frame serial number"
     keywords={[

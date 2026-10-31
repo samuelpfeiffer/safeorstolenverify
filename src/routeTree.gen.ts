@@ -132,6 +132,7 @@ import { Route as HowToFindStolenItemForSaleOnlineRouteImport } from './routes/h
 import { Route as HowToProveItemIsNotStolenRouteImport } from './routes/how-to-prove-item-is-not-stolen'
 import { Route as HowToReportAStolenItemRouteImport } from './routes/how-to-report-a-stolen-item'
 import { Route as HowToTellIfMarketplaceItemIsStolenRouteImport } from './routes/how-to-tell-if-marketplace-item-is-stolen'
+import { Route as HowToTrackASerialNumberRouteImport } from './routes/how-to-track-a-serial-number'
 import { Route as HowToVerifyAUsedItemRouteImport } from './routes/how-to-verify-a-used-item'
 import { Route as IdahoLicensePlateLookupRouteImport } from './routes/idaho-license-plate-lookup'
 import { Route as IdahoVinLookupRouteImport } from './routes/idaho-vin-lookup'
@@ -1039,6 +1040,11 @@ const HowToTellIfMarketplaceItemIsStolenRoute =
     path: '/how-to-tell-if-marketplace-item-is-stolen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const HowToTrackASerialNumberRoute = HowToTrackASerialNumberRouteImport.update({
+  id: '/how-to-track-a-serial-number',
+  path: '/how-to-track-a-serial-number',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowToVerifyAUsedItemRoute = HowToVerifyAUsedItemRouteImport.update({
   id: '/how-to-verify-a-used-item',
   path: '/how-to-verify-a-used-item',
@@ -2584,6 +2590,7 @@ export interface FileRoutesByFullPath {
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
   '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
   '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
+  '/how-to-track-a-serial-number': typeof HowToTrackASerialNumberRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
   '/idaho-vin-lookup': typeof IdahoVinLookupRoute
@@ -2972,6 +2979,7 @@ export interface FileRoutesByTo {
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
   '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
   '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
+  '/how-to-track-a-serial-number': typeof HowToTrackASerialNumberRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
   '/idaho-vin-lookup': typeof IdahoVinLookupRoute
@@ -3362,6 +3370,7 @@ export interface FileRoutesById {
   '/how-to-prove-item-is-not-stolen': typeof HowToProveItemIsNotStolenRoute
   '/how-to-report-a-stolen-item': typeof HowToReportAStolenItemRoute
   '/how-to-tell-if-marketplace-item-is-stolen': typeof HowToTellIfMarketplaceItemIsStolenRoute
+  '/how-to-track-a-serial-number': typeof HowToTrackASerialNumberRoute
   '/how-to-verify-a-used-item': typeof HowToVerifyAUsedItemRoute
   '/idaho-license-plate-lookup': typeof IdahoLicensePlateLookupRoute
   '/idaho-vin-lookup': typeof IdahoVinLookupRoute
@@ -3754,6 +3763,7 @@ export interface FileRouteTypes {
     | '/how-to-prove-item-is-not-stolen'
     | '/how-to-report-a-stolen-item'
     | '/how-to-tell-if-marketplace-item-is-stolen'
+    | '/how-to-track-a-serial-number'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
     | '/idaho-vin-lookup'
@@ -4142,6 +4152,7 @@ export interface FileRouteTypes {
     | '/how-to-prove-item-is-not-stolen'
     | '/how-to-report-a-stolen-item'
     | '/how-to-tell-if-marketplace-item-is-stolen'
+    | '/how-to-track-a-serial-number'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
     | '/idaho-vin-lookup'
@@ -4531,6 +4542,7 @@ export interface FileRouteTypes {
     | '/how-to-prove-item-is-not-stolen'
     | '/how-to-report-a-stolen-item'
     | '/how-to-tell-if-marketplace-item-is-stolen'
+    | '/how-to-track-a-serial-number'
     | '/how-to-verify-a-used-item'
     | '/idaho-license-plate-lookup'
     | '/idaho-vin-lookup'
@@ -4922,6 +4934,7 @@ export interface RootRouteChildren {
   HowToProveItemIsNotStolenRoute: typeof HowToProveItemIsNotStolenRoute
   HowToReportAStolenItemRoute: typeof HowToReportAStolenItemRoute
   HowToTellIfMarketplaceItemIsStolenRoute: typeof HowToTellIfMarketplaceItemIsStolenRoute
+  HowToTrackASerialNumberRoute: typeof HowToTrackASerialNumberRoute
   HowToVerifyAUsedItemRoute: typeof HowToVerifyAUsedItemRoute
   IdahoLicensePlateLookupRoute: typeof IdahoLicensePlateLookupRoute
   IdahoVinLookupRoute: typeof IdahoVinLookupRoute
@@ -5997,6 +6010,13 @@ declare module '@tanstack/react-router' {
       path: '/how-to-tell-if-marketplace-item-is-stolen'
       fullPath: '/how-to-tell-if-marketplace-item-is-stolen'
       preLoaderRoute: typeof HowToTellIfMarketplaceItemIsStolenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-track-a-serial-number': {
+      id: '/how-to-track-a-serial-number'
+      path: '/how-to-track-a-serial-number'
+      fullPath: '/how-to-track-a-serial-number'
+      preLoaderRoute: typeof HowToTrackASerialNumberRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-verify-a-used-item': {
@@ -8121,6 +8141,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowToReportAStolenItemRoute: HowToReportAStolenItemRoute,
   HowToTellIfMarketplaceItemIsStolenRoute:
     HowToTellIfMarketplaceItemIsStolenRoute,
+  HowToTrackASerialNumberRoute: HowToTrackASerialNumberRoute,
   HowToVerifyAUsedItemRoute: HowToVerifyAUsedItemRoute,
   IdahoLicensePlateLookupRoute: IdahoLicensePlateLookupRoute,
   IdahoVinLookupRoute: IdahoVinLookupRoute,

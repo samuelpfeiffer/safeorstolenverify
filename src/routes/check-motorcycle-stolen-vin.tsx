@@ -10,11 +10,11 @@ import { ItemLandingPageTemplate } from "@/components/seo/ItemLandingPageTemplat
 function GuidePage() {
   return (
     <ItemLandingPageTemplate
-      title="Motorcycle VIN Check: How to Tell if a Motorcycle Is Stolen | SafeOrStolen"
-      metaDescription="Free motorcycle VIN check: where the VIN is on the frame, how to spot a stolen bike (ignition, fork lock, title), and what to do if it comes back stolen."
+      title="Free Motorcycle VIN Check: Is This Motorcycle Stolen? | SafeOrStolen"
+      metaDescription="Free stolen motorcycle VIN check. Find the VIN on the frame, check it in seconds, spot a stolen motorcycle (ignition, fork lock, title) and know what to do next."
       h1="Motorcycle VIN Check: Is This Motorcycle Stolen?"
       itemType="Motorcycle"
-      dateModified="2026-10-07"
+      dateModified="2026-10-31"
       searchType="vin"
       searchPlaceholder="Enter the 17-character motorcycle VIN"
       keywords={[
