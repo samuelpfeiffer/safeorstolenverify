@@ -11,11 +11,11 @@ import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/Au
 export default function HowToCheckIfIphoneStolen() {
   return (
     <ItemLandingPageTemplate
-      title="How to Check if an iPhone Is Stolen Before You Buy (2026) | SafeOrStolen"
+      title="How to Check if a Used iPhone Is Stolen Before You Buy | SafeOrStolen"
       metaDescription="How to tell if a used iPhone is stolen: check the IMEI free, make sure Activation Lock is off, spot Lost Mode, Remote Management and carrier locks, and what to ask the seller before you pay."
       h1="How to Check if an iPhone Is Stolen"
       itemType="iPhone"
-      dateModified="2026-10-07"
+      dateModified="2026-10-31"
       searchType="imei"
       searchPlaceholder="Enter the iPhone's 15-digit IMEI"
       keywords={[
@@ -107,6 +107,11 @@ export default function HowToCheckIfIphoneStolen() {
             question: 'How do I find the IMEI on an iPhone?',
             answer:
               'Open Settings > General > About and scroll to IMEI, or dial *#06#. It is also on the original box. If the iPhone is locked, the IMEI on the box is a start, but confirm it in Settings once it is unlocked.',
+          },
+          {
+            question: 'Can I check if an iPhone is stolen with the serial number?',
+            answer:
+              "Yes. Enter the iPhone's serial number or its IMEI on SafeOrStolen and it searches theft reports for that number. Find the serial number and IMEI in Settings > General > About, or dial *#06# for the IMEI. The IMEI is the better number to check, because carriers use it to block lost and stolen phones.",
           },
           {
             question: 'Can I check Activation Lock with the serial number?',

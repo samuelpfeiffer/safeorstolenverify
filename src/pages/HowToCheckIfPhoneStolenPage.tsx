@@ -7,11 +7,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 export default function HowToCheckIfPhoneStolenPage() {
   return (
     <ItemLandingPageTemplate
-      title="Is This Phone Stolen? How to Check a Used Phone Before You Buy | SafeOrStolen"
-      metaDescription="How can I check a used phone to see if its stolen? Can I search a used phone to find out if its listed as stolen? Check the IMEI free on SafeOrStolen."
+      title="How to Check if a Phone Is Stolen (Free IMEI Check) | SafeOrStolen"
+      metaDescription="How to check if a used phone is stolen for free: find the IMEI (dial *#06#), check it on SafeOrStolen, and make sure the seller's account lock is off before you pay."
       h1="How to Check if a Phone Is Stolen"
       itemType="Phone"
-      dateModified="2026-10-25"
+      dateModified="2026-10-31"
       searchType="imei"
       searchPlaceholder="Enter the phone's 15-digit IMEI"
       keywords={[
