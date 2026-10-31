@@ -33,7 +33,7 @@ Free web app: https://safeorstolen.com/app
 Guide hub: https://safeorstolen.com/how-to-check-if-item-stolen
 Vehicle guide: https://safeorstolen.com/how-to-check-if-car-stolen
 Phone guide: https://safeorstolen.com/how-to-check-if-phone-stolen
-Gun guide: https://safeorstolen.com/how-to-check-if-gun-is-stolen
+Gun guide: https://safeorstolen.com/firearms-check
 IMEI tool: https://safeorstolen.com/imei-checker
 VIN tool: https://safeorstolen.com/vin-checker
 Serial tool: https://safeorstolen.com/serial-number-checker

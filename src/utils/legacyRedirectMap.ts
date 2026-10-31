@@ -4,6 +4,11 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // Oct 31 2026: four pages competed for "how do I check if a gun is stolen" (each at spots 20-80).
+  // Google already prefers /firearms-check for those questions, so the duplicates point there.
+  "/how-to-check-if-gun-is-stolen": "/firearms-check",
+  "/is-this-gun-stolen": "/firearms-check",
+  "/blog/how-to-check-if-gun-is-stolen": "/firearms-check",
   // Oct 31 2026 (owner decision): no pages comparing SafeOrStolen with other services or data sources.
   // Send readers to the matching SafeOrStolen check instead.
   "/compare/safeorstolen-vs-asking-police": "/how-to-check-if-item-stolen",
@@ -527,9 +532,9 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/how-to-use-imei-checker-app": "/app",
   "/blog/business-guide-preventing-stolen-goods": "/blog/pawn-shop-stolen-item-verification",
   "/blog/how-to-check-phone-stolen": "/how-to-check-if-phone-stolen",
-  "/blog/stolen-gun-database-search": "/how-to-check-if-gun-is-stolen",
-  "/blog/firearms-app-exclusive": "/how-to-check-if-gun-is-stolen",
-  "/blog/firearms-verification-what-sellers-need-to-know-1760259614826": "/how-to-check-if-gun-is-stolen",
+  "/blog/stolen-gun-database-search": "/firearms-check",
+  "/blog/firearms-app-exclusive": "/firearms-check",
+  "/blog/firearms-verification-what-sellers-need-to-know-1760259614826": "/firearms-check",
   "/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942": "/blog/complete-vin-guide",
   "/blog/data-source-credibility": "/blog/data-source-credibility-stolen-goods-verification",
   "/blog/scan-and-verify-using-safeorstolen-camera-feature-1": "/app",
@@ -637,7 +642,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/vs/imeiinfo": "/imei-checker",
   "/vs/carfax": "/how-to-check-if-car-stolen",
   "/vs/nicb": "/vin-checker",
-  "/vs/hotgunz": "/how-to-check-if-gun-is-stolen",
+  "/vs/hotgunz": "/firearms-check",
   "/gun-check": "/firearms-check",
   "/firearm-check": "/firearms-check",
   "/serial": "/serial-number-checker",
@@ -764,7 +769,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/checkmend-has-no-app": "/imei-checker",
   "/blog/top-10-stolen-item-checkers": "/how-to-check-if-item-stolen",
   "/best-stolen-item-checkers-2026": "/how-to-check-if-item-stolen",
-  "/blog/hotgunz-database-guide": "/how-to-check-if-gun-is-stolen",
+  "/blog/hotgunz-database-guide": "/firearms-check",
   "/blog/best-stolen-item-checkers-2026": "/how-to-check-if-item-stolen",
   "/blog/how-to-check-if-phone-stolen": "/how-to-check-if-phone-stolen",
   "/blog/check-if-phone-stolen-guide": "/how-to-check-if-phone-stolen",
@@ -786,9 +791,9 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/imei-checker-app-download": "/app",
   "/check-iphone-stolen": "/blog/how-to-check-if-iphone-stolen",
   "/is-my-iphone-stolen": "/blog/how-to-check-if-iphone-stolen",
-  "/blog/how-to-check-if-gun-is-stolen": "/how-to-check-if-gun-is-stolen",
-  "/is-this-gun-stolen": "/how-to-check-if-gun-is-stolen",
-  "/blog/firearm-serial-number-verification": "/how-to-check-if-gun-is-stolen",
+  "/blog/how-to-check-if-gun-is-stolen": "/firearms-check",
+  "/is-this-gun-stolen": "/firearms-check",
+  "/blog/firearm-serial-number-verification": "/firearms-check",
   "/check-gun": "/firearms-check",
   "/check-firearm": "/firearms-check",
   "/check-firearm-serial": "/firearms-check",

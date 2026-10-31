@@ -31,7 +31,7 @@ A clean result is not proof an item was never stolen — only that it was not fo
 - Data sources (item-by-item): https://safeorstolen.com/data-sources
 - How it works: https://safeorstolen.com/how-it-works
 - How to check if something is stolen: https://safeorstolen.com/how-to-check-if-item-stolen
-- Gun check: https://safeorstolen.com/firearms-check and https://safeorstolen.com/how-to-check-if-gun-is-stolen
+- Gun check: https://safeorstolen.com/firearms-check and https://safeorstolen.com/firearms-check
 - VIN checker: https://safeorstolen.com/vin-checker
 - IMEI checker: https://safeorstolen.com/imei-checker
 - Bike check: https://safeorstolen.com/check-bike
