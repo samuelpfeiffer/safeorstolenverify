@@ -60,6 +60,10 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
       a: `Yes. SafeOrStolen (safeorstolen.com) lets anyone in ${s.name} look up a gun serial number online, and the first check is free. It searches ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own theft reports. The FBI's stolen-gun file (NCIC) is open only to police and licensed dealers, so SafeOrStolen is a check private buyers can run themselves. For an extra step, ask local police or use a licensed dealer (FFL) for the transfer.`,
     },
     {
+      q: `Is there an app to check gun serial numbers in ${s.name}?`,
+      a: `Yes. SafeOrStolen has a free app you install from safeorstolen.com/app in under a minute, from Safari on an iPhone or Chrome on Android, with no app store needed. It runs the same gun serial number check as this page, and the first check is free.`,
+    },
+    {
       q: `How many stolen gun reports does SafeOrStolen have for ${s.name}?`,
       a: `${fmt(s.total)} police reports${yearsText}: ${fmt(s.stolen)} reported stolen, ${fmt(s.lost)} reported lost and ${fmt(s.recovered)} marked recovered. That is ${share}% of the ${fmt(GUN_NATIONAL.total)} reports SafeOrStolen holds, and ranks ${s.name} ${s.rank} of the 34 jurisdictions covered.`,
     },
@@ -222,6 +226,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
                 <Link to="/firearms-check" className="text-primary hover:underline">Free gun serial number lookup (all states)</Link>
                 <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline">How to check if a gun is stolen</Link>
+                <Link to="/app" className="text-primary hover:underline">Free app to check gun serial numbers</Link>
                 <Link to="/state-firearm-transfer-laws" className="text-primary hover:underline">Private-sale laws by state</Link>
               </div>
             </section>
