@@ -4,6 +4,11 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // Oct 31 2026 (owner decision): no pages comparing SafeOrStolen with other services or data sources.
+  // Send readers to the matching SafeOrStolen check instead.
+  "/compare/safeorstolen-vs-asking-police": "/how-to-check-if-item-stolen",
+  "/compare/safeorstolen-vs-bikeindex": "/check-bike",
+  "/compare/safeorstolen-vs-nicb-vincheck": "/vin-checker",
   // Oct 18 2026: old AI-written posts with unsupported claims; send readers to the matching tool page.
   "/blog/craigslist-scam-prevention-item-verification-checklist-1": "/how-to-tell-if-marketplace-item-is-stolen",
   "/blog/ebay-motors-fraud-detection-vin-verification-best-practices-3": "/vin-checker",

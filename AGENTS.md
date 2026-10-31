@@ -5,6 +5,9 @@
 - Once a page ranks #1 on Google for a search, do not edit that page. Say that no further work is needed because it already ranks #1.
 - Once something is at its best (top ranking, best click rate, working feature), protect it. Don't change what is already working. Before editing any page, check its Search Console rankings first; if it holds #1 for any search, leave it alone.
 
+- No pages or copy comparing SafeOrStolen with other services or data sources (we rely on some of them). Never criticize, rank against, or name partners or suppliers.
+- Never publish anything that could hurt SafeOrStolen if it were investigated: no claims we can't prove, no implied police or FBI access, no legal advice.
+
 ### Protected pages — rank #1 on Google, DO NOT EDIT (checked Oct 30 2026, Search Console Oct 16–29)
 - /serial-number-checker — #1 for "serial number search by serial number", "product serial number check online free", "free serial number check"
 - /how-to-check-if-laptop-stolen — #1 for "check if laptop is stolen", "how to check if laptop is stolen"
