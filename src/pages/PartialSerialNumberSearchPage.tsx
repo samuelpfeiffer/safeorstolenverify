@@ -78,7 +78,7 @@ const PartialSerialNumberSearchPage = () => (
       intro:
         'Have only part of a serial number? Enter the characters you can read and check them against SafeOrStolen theft reports. This page also shows how to recover more of a worn number and when a missing serial means you should walk away.',
       whatIs:
-        'A partial serial number search looks for theft reports using only the characters you can still read. It helps when a label has faded, a plate is scratched, or you only wrote down part of the number. For a full serial, use the <a href="/serial-number-checker">serial number checker</a>; for a bike frame, use the <a href="/check-bike">bike serial lookup</a>.',
+        'A partial serial number search looks for theft reports using only the characters you can still read. It helps when a label has faded, a plate is scratched, or you only wrote down part of the number. For a full serial, use the <a href="/serial-number-checker">serial number checker</a>; for a bike frame, use the <a href="/check-bike">bike serial lookup</a>. To learn what a serial number can and can\'t tell you, read <a href="/how-to-track-a-serial-number">how to track a serial number</a>.',
       howItWorks:
         "Type the characters you are sure of, with no spaces, dashes or wildcard symbols. SafeOrStolen returns any theft report in its own records whose serial contains that run of characters, and lists every source it searched. If something comes back, compare the full serial on the report, the item type and the brand with the item in front of you before you draw a conclusion.",
       whyCheck:
