@@ -14,7 +14,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  {
  name: 'Stolen item check',
  what: 'One box for an IMEI, VIN, plate or serial number. Searches SafeOrStolen theft reports and public web results, plus extra sources for some items (below). Results in a few seconds with every source listed.',
- cost: '1 free check, then 2 for $0.99, 2 Complete checks for $2.99, or unlimited at $10 a month',
+ cost: 'First check free. After that, pay $0.99 for your next check and get one more free (or $2.99 for 2 Complete checks), or go unlimited at $10 a month',
  href: '/check-if-stolen',
  linkText: 'Check an item',
  },
