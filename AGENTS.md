@@ -8,11 +8,12 @@
 - No pages or copy comparing SafeOrStolen with other services or data sources (we rely on some of them). Never criticize, rank against, or name partners or suppliers.
 - Never publish anything that could hurt SafeOrStolen if it were investigated: no claims we can't prove, no implied police or FBI access, no legal advice.
 
-### Protected pages — rank #1 on Google, DO NOT EDIT (checked Oct 30 2026, Search Console Oct 16–29)
-- /serial-number-checker — #1 for "serial number search by serial number", "product serial number check online free", "free serial number check"
+### Protected pages — rank #1 on Google for customer searches, DO NOT EDIT (checked Oct 31 2026)
+Rule: a page is locked when it ranks #1 for a search a customer types to find a check. Searches for our own name ("safeorstolen", "safe or stolen") don't count, because people searching our name find us anyway. Re-check Search Console (last 28 days) before editing any page.
+- / (homepage) — #1 for "free serial number search"
+- /serial-number-checker — #1 for "serial number search by serial number", "product serial number check online free", "free serial number check", "model lookup by serial number free"
 - /how-to-check-if-laptop-stolen — #1 for "check if laptop is stolen", "how to check if laptop is stolen"
 - /license-plate-lookup — #1 for "stolen license plate lookup"
-- / (homepage) — #1 for "safeorstolen" and "safe or stolen"
 If asked to edit one of these, reply that no further work is needed because the page already ranks #1. Shared components and site-wide files that change these pages also count as editing them.
 
 
