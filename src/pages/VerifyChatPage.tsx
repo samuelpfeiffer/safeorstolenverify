@@ -49,11 +49,13 @@ import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
 
+// Nov 1 2026: tapping one of these no longer fills a made-up number (that wasted a visitor's
+// only free check). It focuses the box and shows where to find that number instead.
 const EXAMPLE_PROMPTS = [
- { tag: 'IMEI', label: 'Verify a phone IMEI', text: '359123456789012' },
- { tag: 'VIN', label: 'Check a vehicle VIN', text: '1HGBH41JXMN109186' },
- { tag: 'SERIAL', label: 'Look up a serial', text: 'C7XJK2P9LMN0' },
- { tag: 'PLATE', label: 'Run a license plate', text: '7XYZ123' },
+ { tag: 'IMEI', label: 'Phone', text: "Enter the phone's IMEI (dial *#06# to see it)" },
+ { tag: 'VIN', label: 'Car or truck', text: 'Enter the 17-character VIN' },
+ { tag: 'SERIAL', label: 'Serial number', text: 'Enter the serial number from the label' },
+ { tag: 'PLATE', label: 'License plate', text: 'Enter the license plate number' },
 ];
 
 
@@ -87,6 +89,7 @@ const VerifyChatPage: React.FC = () => {
  } = useChatThreads();
 
  const [input, setInput] = useState('');
+ const [hint, setHint] = useState<string | null>(null);
  const [attachment, setAttachment] = useState<Attachment | null>(null);
  const [isThinking, setIsThinking] = useState(false);
  const [currentResult, setCurrentResult] = useState<ChatVerifyResult | null>(null);
@@ -650,18 +653,14 @@ const VerifyChatPage: React.FC = () => {
  {active?.title || 'Verification stream'}
  </p>
 
- <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 font-mono">
- <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- THEFT REPORTS · PUBLIC WEB RESULTS
- </p>
  </div>
  </div>
 
  <div className="flex items-center gap-2">
  {isAuthenticated && checksRemaining !== null && (
- <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-md bg-primary/10 text-primary font-mono border border-primary/20">
+ <span className="hidden sm:inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20">
  <Shield className="w-3 h-3" />
- {checksRemaining} LEFT
+ {checksRemaining} {checksRemaining === 1 ? 'check' : 'checks'} left
  </span>
  )}
  {/* Classic view removed — modern AI experience only */}
@@ -794,7 +793,7 @@ const VerifyChatPage: React.FC = () => {
  {showWelcome ? (
  <LuminalWelcome
  onPick={(text) => {
- setInput(text);
+ setHint(text);
  textareaRef.current?.focus();
  }}
  />
@@ -845,30 +844,7 @@ const VerifyChatPage: React.FC = () => {
  />
  </div>
  )}
- {/* Slim examples row — appears only after welcome screen is gone */}
- {!showWelcome && (
- <div className="max-w-2xl mx-auto px-4 pt-2.5">
- <div className="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-thin">
- <span className="text-[9px] font-mono tracking-widest text-muted-foreground/70 shrink-0 mr-1">
- TRY
- </span>
- {EXAMPLE_PROMPTS.map((p) => (
- <button
- key={p.tag}
- onClick={() => {
- setInput(p.text);
- textareaRef.current?.focus();
- }}
- className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wide px-2 py-1 rounded-md border border-border bg-background/60 hover:border-primary/40 hover:bg-primary/5 hover:text-primary text-muted-foreground transition-colors"
- >
- <span className="text-primary/80">{p.tag}</span>
- <span className="opacity-70 truncate max-w-[120px]">{p.text}</span>
- </button>
- ))}
- </div>
- </div>
- )}
- <div className="max-w-2xl mx-auto px-4 py-3.5">
+<div className="max-w-2xl mx-auto px-4 py-3.5">
  {attachment && (
  <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border rounded-lg px-3 py-1.5">
  <ImageIcon className="w-3.5 h-3.5 text-primary" />
@@ -892,7 +868,7 @@ const VerifyChatPage: React.FC = () => {
  onChange={(e) => setInput(e.target.value)}
  onKeyDown={handleKeyDown}
  onPaste={handlePaste}
- placeholder="Enter IMEI, VIN, serial, plate, URL — or ask me anything…"
+ placeholder={hint || "Enter an IMEI, VIN, serial number, plate or listing link"}
  rows={1}
  disabled={isThinking}
  className="w-full resize-none bg-transparent border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm px-4 py-3 min-h-0 max-h-40 placeholder:text-muted-foreground/70"
@@ -963,24 +939,11 @@ const VerifyChatPage: React.FC = () => {
  </div>
  </div>
 
- <p className="text-[10px] text-muted-foreground/80 text-center mt-2 font-mono tracking-wide flex items-center justify-center gap-2 flex-wrap">
- <span>MULTI-SOURCE · ~3S RESULTS · PRIVATE</span>
- <span className="hidden md:inline-flex items-center gap-1">
- ·
- <kbd className="px-1 py-px rounded-[0.25rem] border border-border bg-muted/40 text-[9px]">⌘K</kbd>
- <span>focus</span>
- <kbd className="px-1 py-px rounded-[0.25rem] border border-border bg-muted/40 text-[9px]">⌘B</kbd>
- <span>sidebar</span>
- </span>
  {!user && (
- <>
- <span>·</span>
- <a href="/auth?redirect=/verify" className="text-primary hover:underline">
- 1 FREE CHECK — NO SIGN-UP NEEDED
- </a>
- </>
- )}
+ <p className="text-xs text-muted-foreground text-center mt-2">
+ Your first check is free. No sign-up needed.
  </p>
+ )}
  </div>
  </div>
  </div>
@@ -1048,56 +1011,31 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  transition={{ duration: 0.4 }}
  className="flex flex-col items-center text-center pt-8 sm:pt-14"
  >
- {/* Glowing logo orb */}
- <div className="relative mb-6">
- <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl" />
- <ShieldLogo size={72} glow className="relative" />
- </div>
+ <ShieldLogo size={48} className="mb-5" />
 
- <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
- Verify before you buy.
+ <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+ Is it safe or stolen?
  </h1>
- <p className="text-base text-muted-foreground mt-3 max-w-lg">
- Stolen-item check. Paste an <strong className="text-foreground/90">IMEI</strong>, <strong className="text-foreground/90">VIN</strong>, <strong className="text-foreground/90">serial</strong>, <strong className="text-foreground/90">license plate</strong>, or <strong className="text-foreground/90">marketplace URL</strong> — I'll search SafeOrStolen theft reports and public web results in a few seconds and explain the result in plain English.
- </p>
- <p className="text-sm text-muted-foreground mt-3">
- Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Install the free web app</a> — add SafeOrStolen to your phone's home screen and run a check on the spot.
+ <p className="text-base text-muted-foreground mt-3 max-w-md">
+ Enter an IMEI, VIN, serial number, license plate or listing link. You'll see the result in a few seconds.
  </p>
 
- {/* 4-card horizontal grid that fits left-to-right at all sizes */}
- <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 w-full">
- {EXAMPLE_PROMPTS.map((p, i) => (
- <motion.button
+ <div className="mt-8 flex flex-wrap justify-center gap-2">
+ {EXAMPLE_PROMPTS.map((p) => (
+ <button
  key={p.tag}
+ type="button"
  onClick={() => onPick(p.text)}
- initial={{ opacity: 0, y: 12 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.35, delay: 0.1 + i * 0.06 }}
- whileHover={{ y: -3 }}
- className="group relative text-left rounded-2xl border border-border bg-gradient-to-b from-card/80 to-card/40 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all p-4 overflow-hidden"
+ className="rounded-full border border-border px-4 py-2 text-sm text-foreground/90 hover:border-primary/60 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
  >
- {/* Hover glow */}
- <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
- <div className="relative">
- <div className="flex items-center justify-between mb-3">
- <span className="text-[9px] font-mono font-bold tracking-[0.2em] text-primary px-2 py-1 rounded-md bg-primary/10 border border-primary/30">
- {p.tag}
- </span>
- <Sparkles className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-primary transition-colors" />
- </div>
- <div className="text-sm font-semibold text-foreground leading-snug">{p.label}</div>
- <div className="text-[10px] text-muted-foreground font-mono truncate mt-1.5 opacity-70">
- {p.text}
- </div>
- </div>
- </motion.button>
+ {p.label}
+ </button>
  ))}
  </div>
 
- <div className="mt-8 flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-muted-foreground">
- <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
- MULTI-SOURCE · OUR REPORTS · LAW-ENFORCEMENT RECORDS · PHONE BLACKLIST · BIKE & GUN THEFT RECORDS
- </div>
+ <p className="text-sm text-muted-foreground mt-8">
+ Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Get the free app</a>
+ </p>
  </motion.div>
  );
 };

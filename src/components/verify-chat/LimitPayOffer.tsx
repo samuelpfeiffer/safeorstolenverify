@@ -1,21 +1,34 @@
 import { useState } from 'react';
-import { Loader2, ShieldCheck } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { savePendingCheck } from '@/lib/pendingCheck';
 
 /**
- * Oct 16 2026: shown when a visitor has used their 1 free check. Since Oct 4, signed-out visitors
- * at the limit were only asked to create an account, with no way to pay, and no check was bought
- * after that (Sept 30-Oct 3 most buyers paid as guests). This puts the $0.99 check and the
- * $10 month one tap away, no account needed. After payment, /payment-success runs the same item.
+ * Shown when a visitor has used their 1 free check. No account needed: tap an option, pay,
+ * and /payment-success runs the same item.
+ * Nov 1 2026 (owner: "confusing and ugly"): three plain choices in one list, same layout each,
+ * price on the right, one short line of what you get. Complete stays recommended.
  */
+type Kind = 'single' | 'complete' | 'monthly';
+
+const OPTIONS: { kind: Kind; name: string; price: string; detail: string; recommended?: boolean }[] = [
+  { kind: 'single', name: 'Starter', price: '$0.99', detail: '2 checks. Police and registry records.' },
+  {
+    kind: 'complete',
+    name: 'Complete',
+    price: '$2.99',
+    detail: '2 checks. Everything in Starter, plus phone blacklist, online listings and a free certificate.',
+    recommended: true,
+  },
+  { kind: 'monthly', name: 'Unlimited', price: '$10/month', detail: 'Unlimited checks, billed monthly. Includes 20 phone blacklist searches a month.' },
+];
+
 export function LimitPayOffer({ identifier, itemType }: { identifier: string; itemType?: string }) {
-  const [busy, setBusy] = useState<'single' | 'complete' | 'monthly' | null>(null);
+  const [busy, setBusy] = useState<Kind | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const buy = async (kind: 'single' | 'complete' | 'monthly') => {
+  const buy = async (kind: Kind) => {
     setBusy(kind);
     setError(null);
     try {
@@ -27,47 +40,48 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
           ? { planName: 'Monthly', isSubscription: true, fingerprint }
           : { planName: kind === 'complete' ? 'Complete check' : 'Single check', plan: kind, serialNumber: identifier, itemType: itemType || 'unknown', fingerprint },
       });
-      if (err || !data?.url) throw new Error('Could not open checkout. Please try again.');
+      if (err || !data?.url) throw new Error('Checkout didn\'t open. Tap your choice again.');
       window.location.href = data.url;
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Something went wrong.');
+      setError(e instanceof Error ? e.message : 'Checkout didn\'t open. Tap your choice again.');
       setBusy(null);
     }
   };
 
   return (
-    <div className="mt-3 rounded-xl border border-primary/40 bg-primary/5 p-4 space-y-3">
-      <div className="flex items-start gap-3">
-        <ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-        <div>
-          <p className="font-semibold text-sm">You've used your free check. Pick how to run this one (plus one more):</p>
-          <p className="text-xs text-muted-foreground mt-0.5">
-            No account needed. Pay once and the check runs as soon as you're back.
-          </p>
-        </div>
+    <div className="mt-3 rounded-xl border border-border bg-card p-4">
+      <p className="font-semibold">Your free check is used</p>
+      <p className="text-sm text-muted-foreground mt-1">
+        Pick an option to run this check. No account needed, and the check runs as soon as you've paid.
+      </p>
+
+      <div className="mt-4 space-y-2" role="list">
+        {OPTIONS.map((o) => (
+          <button
+            key={o.kind}
+            type="button"
+            role="listitem"
+            onClick={() => buy(o.kind)}
+            disabled={busy !== null}
+            className={`w-full text-left rounded-lg border p-3 transition-colors disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              o.recommended ? 'border-primary bg-primary/5 hover:bg-primary/10' : 'border-border hover:border-primary/50'
+            }`}
+          >
+            <div className="flex items-baseline justify-between gap-3">
+              <span className="font-semibold">
+                {o.name}
+                {o.recommended && <span className="ml-2 text-xs font-medium text-primary">Recommended</span>}
+              </span>
+              <span className="font-semibold tabular-nums">
+                {busy === o.kind ? <Loader2 className="h-4 w-4 animate-spin" aria-label="Opening checkout" /> : o.price}
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground mt-1">{o.detail}</p>
+          </button>
+        ))}
       </div>
-      {/* Oct 29 2026: Complete ($2.99) first, Starter ($0.99) still available. */}
-      <button
-        type="button"
-        onClick={() => buy('complete')}
-        disabled={busy !== null}
-        className="w-full text-left rounded-lg border-2 border-primary bg-primary/10 p-3 hover:bg-primary/15 transition disabled:opacity-60"
-      >
-        <div className="flex items-center justify-between gap-2">
-          <span className="font-bold text-sm">{busy === 'complete' ? 'Opening checkout…' : 'Complete check · 2 for $2.99'}</span>
-          <span className="text-[10px] font-bold uppercase tracking-wide bg-primary text-primary-foreground rounded px-1.5 py-0.5">Best value</span>
-        </div>
-        <p className="text-xs text-muted-foreground mt-1">Police and registry records + phone blacklist search + web listings and AI review + free verification certificate</p>
-      </button>
-      <div className="flex flex-col gap-2 sm:flex-row">
-        <Button size="sm" variant="outline" className="flex-1" onClick={() => buy('single')} disabled={busy !== null}>
-          {busy === 'single' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Starter · 2 for $0.99 (records only)'}
-        </Button>
-        <Button size="sm" variant="outline" className="flex-1" onClick={() => buy('monthly')} disabled={busy !== null}>
-          {busy === 'monthly' ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Opening checkout…</> : 'Unlimited: $10/month'}
-        </Button>
-      </div>
-      {error && <p className="text-xs text-red-500">{error}</p>}
+
+      {error && <p className="text-sm text-red-500 mt-3">{error}</p>}
     </div>
   );
 }
