@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from '@/lib/router-compat';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, ShieldCheck } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, ShieldCheck, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo served from /public to avoid JS bundle bloat (266KB PNG)
 import {
@@ -44,7 +44,7 @@ const TopNavigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
             <img 
               src="/sos-logo.png" 
               alt="SafeOrStolen Logo" 
@@ -52,7 +52,7 @@ const TopNavigation = () => {
               height={36}
               className="h-9 w-9 transition-transform group-hover:scale-105"
             />
-            <span className="text-lg font-bold tracking-tight text-foreground">
+            <span className="text-base sm:text-lg font-bold tracking-tight text-foreground">
               SafeOrStolen
             </span>
           </Link>
@@ -127,11 +127,24 @@ const TopNavigation = () => {
                 <Button variant="ghost" size="sm" onClick={() => navigate('/auth')} className="text-muted-foreground hover:text-foreground rounded-lg">
                   Sign In
                 </Button>
+                <Button variant="outline" size="sm" onClick={() => navigate('/app')} className="rounded-lg gap-1.5">
+                  <Smartphone className="w-4 h-4" />Get the app
+                </Button>
                 <Button size="sm" onClick={() => navigate('/verify')} className="rounded-lg button-glow font-semibold">
                   Start Here: Free Check
                 </Button>
               </>
             )}
+          </div>
+
+          {/* Nov 1 2026 (owner): on phones, show the two main buttons in the bar instead of only in the menu. */}
+          <div className="md:hidden ml-auto mr-0.5 flex items-center gap-1.5">
+            <Button variant="outline" size="sm" onClick={() => navigate('/app')} className="h-9 px-2 rounded-lg gap-1" aria-label="Get the app">
+              <Smartphone className="hidden min-[420px]:block w-4 h-4" />App
+            </Button>
+            <Button size="sm" onClick={() => navigate('/verify')} className="h-9 px-2.5 rounded-lg font-semibold">
+              Free Check
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -191,6 +204,9 @@ const TopNavigation = () => {
                 <>
                   <Button variant="outline" className="w-full rounded-lg" onClick={() => { navigate('/auth'); setIsMobileMenuOpen(false); }}>
                     Sign In
+                  </Button>
+                  <Button variant="outline" className="w-full rounded-lg gap-2" onClick={() => { navigate('/app'); setIsMobileMenuOpen(false); }}>
+                    <Smartphone className="w-4 h-4" />Get the app
                   </Button>
                   <Button className="w-full rounded-lg font-semibold" onClick={() => { navigate('/verify'); setIsMobileMenuOpen(false); }}>
                     Start Here: Free Check

@@ -238,7 +238,7 @@ export const HomeAIHero: React.FC = () => {
  </h1>
 
  <p className="text-center text-sm sm:text-base text-muted-foreground mb-5 max-w-xl mx-auto leading-relaxed">
- Scan or type the serial. SafeOrStolen searches the public police theft reports that feed many NCIC entries — covering 33 states and DC plus live Ohio records. Free web app included.
+ Scan or type the serial. SafeOrStolen searches more than 220,000 police gun theft and loss reports from 33 states and DC, plus live Ohio records. Free web app included.
  </p>
 
  {/* Compact bullet grid — works on desktop and PWA */}
