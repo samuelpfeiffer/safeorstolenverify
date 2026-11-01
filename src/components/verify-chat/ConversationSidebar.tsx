@@ -329,6 +329,11 @@ export const ConversationSidebar: React.FC<Props> = ({
             <Icon className="w-3.5 h-3.5" /> {label}
           </a>
         ))}
+        {/* Nov 1 2026 (owner): a clear button to get the app, always visible in the menu. */}
+        <a href="/app"
+          className="mt-1 flex items-center gap-2 px-2.5 h-9 rounded-md text-xs font-medium text-primary border border-primary/40 hover:bg-primary/10">
+          <Smartphone className="w-3.5 h-3.5" /> Get the free app
+        </a>
       </nav>
 
       {/* Profile */}

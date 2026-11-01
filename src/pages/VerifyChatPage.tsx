@@ -27,6 +27,7 @@ import {
  PanelLeftClose,
  PanelLeftOpen,
  Plus,
+ Smartphone,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -1033,9 +1034,13 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  ))}
  </div>
 
- <p className="text-sm text-muted-foreground mt-8">
- Checking in person? <a href="/app" className="text-primary font-medium underline underline-offset-4">Get the free app</a>
- </p>
+ <a
+ href="/app"
+ className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+ >
+ <Smartphone className="w-4 h-4" /> Get the free app
+ </a>
+ <p className="text-xs text-muted-foreground mt-2">Check items in person, right from your phone.</p>
  </motion.div>
  );
 };
