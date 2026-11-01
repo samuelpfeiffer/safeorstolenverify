@@ -105,7 +105,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         
         let errorMessage = 'Sign in failed';
         if (error.message.includes('Invalid login credentials')) {
-          errorMessage = 'Invalid email or password';
+          errorMessage = "That email and password don't match an account. If you signed up with Google, tap \"Continue with Google\" instead.";
         } else if (error.message.includes('Email not confirmed')) {
           errorMessage = 'Please check your email and click the verification link';
         } else {
@@ -160,6 +160,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           return { success: false, error: 'User already exists' };
         } else if (error.message.includes('Password')) {
           errorMessage = 'Password must be at least 6 characters';
+        } else if (error.message.toLowerCase().includes('rate limit') || (error as { status?: number }).status === 429) {
+          // Nov 1 2026: the confirmation email couldn't be sent, so no account was created.
+          errorMessage = "We couldn't send your confirmation email right now, so your account wasn't created yet. Tap \"Continue with Google\" above to sign up instantly, or try again in about an hour.";
         } else {
           errorMessage = error.message;
         }
