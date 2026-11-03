@@ -356,6 +356,7 @@ import { Route as BlogHowToSellVerifiedItemsRouteImport } from './routes/blog/ho
 import { Route as BlogIcloudLockedPhoneMeaningRouteImport } from './routes/blog/icloud-locked-phone-meaning'
 import { Route as BlogImeiCheckerAppDownloadRouteImport } from './routes/blog/imei-checker-app-download'
 import { Route as BlogLikeCarfaxForPhonesRouteImport } from './routes/blog/like-carfax-for-phones'
+import { Route as BlogNcicGunSerialNumberCheckRouteImport } from './routes/blog/ncic-gun-serial-number-check'
 import { Route as BlogPawnShopStolenItemVerificationRouteImport } from './routes/blog/pawn-shop-stolen-item-verification'
 import { Route as BlogPhoneVerificationGuideRouteImport } from './routes/blog/phone-verification-guide'
 import { Route as BlogProtectYourselfBuyingUsedElectronicsRouteImport } from './routes/blog/protect-yourself-buying-used-electronics'
@@ -2225,6 +2226,12 @@ const BlogLikeCarfaxForPhonesRoute = BlogLikeCarfaxForPhonesRouteImport.update({
   path: '/like-carfax-for-phones',
   getParentRoute: () => BlogRoute,
 } as any)
+const BlogNcicGunSerialNumberCheckRoute =
+  BlogNcicGunSerialNumberCheckRouteImport.update({
+    id: '/ncic-gun-serial-number-check',
+    path: '/ncic-gun-serial-number-check',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogPawnShopStolenItemVerificationRoute =
   BlogPawnShopStolenItemVerificationRouteImport.update({
     id: '/pawn-shop-stolen-item-verification',
@@ -2812,6 +2819,7 @@ export interface FileRoutesByFullPath {
   '/blog/icloud-locked-phone-meaning': typeof BlogIcloudLockedPhoneMeaningRoute
   '/blog/imei-checker-app-download': typeof BlogImeiCheckerAppDownloadRoute
   '/blog/like-carfax-for-phones': typeof BlogLikeCarfaxForPhonesRoute
+  '/blog/ncic-gun-serial-number-check': typeof BlogNcicGunSerialNumberCheckRoute
   '/blog/pawn-shop-stolen-item-verification': typeof BlogPawnShopStolenItemVerificationRoute
   '/blog/phone-verification-guide': typeof BlogPhoneVerificationGuideRoute
   '/blog/protect-yourself-buying-used-electronics': typeof BlogProtectYourselfBuyingUsedElectronicsRoute
@@ -3200,6 +3208,7 @@ export interface FileRoutesByTo {
   '/blog/icloud-locked-phone-meaning': typeof BlogIcloudLockedPhoneMeaningRoute
   '/blog/imei-checker-app-download': typeof BlogImeiCheckerAppDownloadRoute
   '/blog/like-carfax-for-phones': typeof BlogLikeCarfaxForPhonesRoute
+  '/blog/ncic-gun-serial-number-check': typeof BlogNcicGunSerialNumberCheckRoute
   '/blog/pawn-shop-stolen-item-verification': typeof BlogPawnShopStolenItemVerificationRoute
   '/blog/phone-verification-guide': typeof BlogPhoneVerificationGuideRoute
   '/blog/protect-yourself-buying-used-electronics': typeof BlogProtectYourselfBuyingUsedElectronicsRoute
@@ -3592,6 +3601,7 @@ export interface FileRoutesById {
   '/blog/icloud-locked-phone-meaning': typeof BlogIcloudLockedPhoneMeaningRoute
   '/blog/imei-checker-app-download': typeof BlogImeiCheckerAppDownloadRoute
   '/blog/like-carfax-for-phones': typeof BlogLikeCarfaxForPhonesRoute
+  '/blog/ncic-gun-serial-number-check': typeof BlogNcicGunSerialNumberCheckRoute
   '/blog/pawn-shop-stolen-item-verification': typeof BlogPawnShopStolenItemVerificationRoute
   '/blog/phone-verification-guide': typeof BlogPhoneVerificationGuideRoute
   '/blog/protect-yourself-buying-used-electronics': typeof BlogProtectYourselfBuyingUsedElectronicsRoute
@@ -3985,6 +3995,7 @@ export interface FileRouteTypes {
     | '/blog/icloud-locked-phone-meaning'
     | '/blog/imei-checker-app-download'
     | '/blog/like-carfax-for-phones'
+    | '/blog/ncic-gun-serial-number-check'
     | '/blog/pawn-shop-stolen-item-verification'
     | '/blog/phone-verification-guide'
     | '/blog/protect-yourself-buying-used-electronics'
@@ -4373,6 +4384,7 @@ export interface FileRouteTypes {
     | '/blog/icloud-locked-phone-meaning'
     | '/blog/imei-checker-app-download'
     | '/blog/like-carfax-for-phones'
+    | '/blog/ncic-gun-serial-number-check'
     | '/blog/pawn-shop-stolen-item-verification'
     | '/blog/phone-verification-guide'
     | '/blog/protect-yourself-buying-used-electronics'
@@ -4764,6 +4776,7 @@ export interface FileRouteTypes {
     | '/blog/icloud-locked-phone-meaning'
     | '/blog/imei-checker-app-download'
     | '/blog/like-carfax-for-phones'
+    | '/blog/ncic-gun-serial-number-check'
     | '/blog/pawn-shop-stolen-item-verification'
     | '/blog/phone-verification-guide'
     | '/blog/protect-yourself-buying-used-electronics'
@@ -7580,6 +7593,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogLikeCarfaxForPhonesRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/ncic-gun-serial-number-check': {
+      id: '/blog/ncic-gun-serial-number-check'
+      path: '/ncic-gun-serial-number-check'
+      fullPath: '/blog/ncic-gun-serial-number-check'
+      preLoaderRoute: typeof BlogNcicGunSerialNumberCheckRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/pawn-shop-stolen-item-verification': {
       id: '/blog/pawn-shop-stolen-item-verification'
       path: '/pawn-shop-stolen-item-verification'
@@ -7926,6 +7946,7 @@ interface BlogRouteChildren {
   BlogIcloudLockedPhoneMeaningRoute: typeof BlogIcloudLockedPhoneMeaningRoute
   BlogImeiCheckerAppDownloadRoute: typeof BlogImeiCheckerAppDownloadRoute
   BlogLikeCarfaxForPhonesRoute: typeof BlogLikeCarfaxForPhonesRoute
+  BlogNcicGunSerialNumberCheckRoute: typeof BlogNcicGunSerialNumberCheckRoute
   BlogPawnShopStolenItemVerificationRoute: typeof BlogPawnShopStolenItemVerificationRoute
   BlogPhoneVerificationGuideRoute: typeof BlogPhoneVerificationGuideRoute
   BlogProtectYourselfBuyingUsedElectronicsRoute: typeof BlogProtectYourselfBuyingUsedElectronicsRoute
@@ -7979,6 +8000,7 @@ const BlogRouteChildren: BlogRouteChildren = {
   BlogIcloudLockedPhoneMeaningRoute: BlogIcloudLockedPhoneMeaningRoute,
   BlogImeiCheckerAppDownloadRoute: BlogImeiCheckerAppDownloadRoute,
   BlogLikeCarfaxForPhonesRoute: BlogLikeCarfaxForPhonesRoute,
+  BlogNcicGunSerialNumberCheckRoute: BlogNcicGunSerialNumberCheckRoute,
   BlogPawnShopStolenItemVerificationRoute:
     BlogPawnShopStolenItemVerificationRoute,
   BlogPhoneVerificationGuideRoute: BlogPhoneVerificationGuideRoute,

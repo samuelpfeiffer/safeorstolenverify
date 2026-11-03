@@ -227,6 +227,7 @@ export default function GunStateLookupPage({ stats: s }: { stats: GunStateStats 
                 <Link to="/firearms-check" className="text-primary hover:underline">Free gun serial number lookup (all states)</Link>
                 <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline">How to check if a gun is stolen</Link>
                 <Link to="/app" className="text-primary hover:underline">Free app to check gun serial numbers</Link>
+                <Link to="/blog/ncic-gun-serial-number-check" className="text-primary hover:underline">Can you run a gun serial through NCIC?</Link>
                 <Link to="/state-firearm-transfer-laws" className="text-primary hover:underline">Private-sale laws by state</Link>
               </div>
             </section>
