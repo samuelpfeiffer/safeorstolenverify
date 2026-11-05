@@ -351,11 +351,34 @@ const VerifyChatPage: React.FC = () => {
  const cleanedIdentifier = detect?.extractedValue || identifier;
  const confidence = detect?.confidence || 50;
 
+         // Nov 5 2026: 12- and 13-digit numbers are the product barcode (UPC/EAN) on the box, and a phone
+         // number of the wrong length isn't an IMEI. These used to run as a phone check, use up the visitor's
+         // only free check, and come back with a scary "serious red flag" warning (53 times in two weeks).
+         // Now they get help finding the right number, and no check is used.
+         const digitsOnly = cleanedIdentifier.replace(/[\s-]/g, '');
+         const isPhoneType = ['phone', 'imei', 'smartphone'].includes(String(toCanonicalItemType(itemType)));
+         if (/^\d{12,13}$/.test(digitsOnly) && isPhoneType) {
+           updateMessage(assistantId, {
+             loading: false,
+             content: `**${digitsOnly} looks like the barcode number from the box (a UPC).** That number is the same for every unit of this model, so it can't show whether this one is stolen. Your free check wasn't used.\n\nCheck the item's own number instead:\n\n• **Phone** → dial \`*#06#\` or open Settings → About to see the 15-digit IMEI\n• **Laptop, tablet, console or tool** → the serial number on the label or in the settings screen\n• **Gun** → the serial stamped on the frame`,
+             suggestions: ['How do I find my IMEI?', 'Where is the serial number on a laptop?'],
+           });
+           return;
+         }
+         if (isPhoneType && /^\d+$/.test(digitsOnly) && (digitsOnly.length < 14 || digitsOnly.length > 16)) {
+           updateMessage(assistantId, {
+             loading: false,
+             content: `**That number has ${digitsOnly.length} digits, but a phone's IMEI has 15.** Your free check wasn't used. Dial \`*#06#\` on the phone, or open Settings → About, and type the 15-digit IMEI exactly as shown.`,
+             suggestions: ['How do I find my IMEI?'],
+           });
+           return;
+         }
+
          const allowed = await checkGate();
          if (!allowed) {
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your free check. Get the **Complete check: 2 for $2.99** (records, phone blacklist, web and AI review, plus a certificate), the **Starter: 2 for $0.99** (records only), or **unlimited checks for $10 a month**. No account needed.`,
+             content: `Your free check is used. Pick an option below to run this check. No account needed.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
@@ -375,7 +398,7 @@ const VerifyChatPage: React.FC = () => {
            savePendingCheck(cleanedIdentifier, itemType);
            updateMessage(assistantId, {
              loading: false,
-             content: `You've used your free check. Get the **Complete check: 2 for $2.99** (records, phone blacklist, web and AI review, plus a certificate), the **Starter: 2 for $0.99** (records only), or **unlimited checks for $10 a month**. No account needed.`,
+             content: `Your free check is used. Pick an option below to run this check. No account needed.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
