@@ -271,20 +271,32 @@ export const BulkVerification = () => {
  * /verify-api (same limits as any check). Results are saved on the chat message, so reopening the
  * chat shows them instead of running the checks again.
  */
+export function remainingRows(rows: BulkRow[], results: BulkResult[]): BulkRow[] {
+  const left = new Map<string, number>();
+  for (const r of results) left.set(r.identifier, (left.get(r.identifier) ?? 0) + 1);
+  return rows.filter((row) => {
+    const n = left.get(row.identifier) ?? 0;
+    if (n > 0) { left.set(row.identifier, n - 1); return false; }
+    return true;
+  });
+}
+
 export function BulkChatRun({
   rows,
   saved,
   done,
+  stoppedSaved,
   onUpdate,
 }: {
   rows: BulkRow[];
   saved?: BulkResult[];
   done?: boolean;
+  stoppedSaved?: string | null;
   onUpdate: (results: BulkResult[], done: boolean, stopped?: string | null) => void;
 }) {
   const [results, setResults] = useState<BulkResult[]>(saved ?? []);
   const [running, setRunning] = useState(false);
-  const [stopped, setStopped] = useState<string | null>(null);
+  const [stopped, setStopped] = useState<string | null>(stoppedSaved ?? null);
   const started = useRef(false);
 
   const runRows = async (todo: BulkRow[], already: BulkResult[]) => {
@@ -325,7 +337,8 @@ export function BulkChatRun({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const remaining = rows.slice(results.length);
+  // Checks run 5 at a time, so the finished ones aren't always the first rows. Match by row, not by count.
+  const remaining = remainingRows(rows, results);
   const flagged = results.filter((r) => r.status === 'stolen' || r.status === 'lost').length;
 
   const download = () => {

@@ -42,7 +42,7 @@ import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
 import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
-import { BulkChatRun, parseRows, MAX_ROWS, type BulkRow } from '@/components/premium/BulkVerification';
+import { BulkChatRun, parseRows, remainingRows, MAX_ROWS, type BulkRow } from '@/components/premium/BulkVerification';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
@@ -1279,11 +1279,12 @@ const ChatBubble: React.FC<{
  rows={msg.bulk.rows}
  saved={msg.bulk.results}
  done={msg.bulk.done}
+ stoppedSaved={msg.bulk.stopped}
  onUpdate={(results, done, stopped) => onBulkUpdate?.({ results, done, stopped })}
  />
  )}
  {!isUser && msg.bulk?.stopped && (
- <LimitPayOffer identifier={msg.bulk.rows[msg.bulk.results?.length ?? 0]?.identifier ?? ''} itemType={msg.bulk.rows[msg.bulk.results?.length ?? 0]?.type || undefined} />
+ <LimitPayOffer identifier={remainingRows(msg.bulk.rows, msg.bulk.results ?? [])[0]?.identifier ?? ''} itemType={remainingRows(msg.bulk.rows, msg.bulk.results ?? [])[0]?.type || undefined} />
  )}
 
  {!isUser && isLast && !msg.loading && msg.suggestions && msg.suggestions.length > 0 && (
