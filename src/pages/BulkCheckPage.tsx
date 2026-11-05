@@ -1,6 +1,5 @@
 import { Link } from '@/lib/router-compat';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { BulkVerification } from '@/components/premium/BulkVerification';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 
@@ -42,20 +41,18 @@ export default function BulkCheckPage() {
 
         <section className="px-4 pb-12">
           <div className="max-w-3xl mx-auto">
-            {user ? (
-              <BulkVerification />
-            ) : (
-              <div className="rounded-2xl border border-border bg-card p-6 text-center space-y-4">
-                <p className="font-semibold">Sign in to run a bulk check</p>
-                <p className="text-sm text-muted-foreground">
-                  Bulk checks are saved to your account so you keep a record of every item. New accounts get 1 free check.
-                </p>
-                <div className="flex flex-wrap justify-center gap-3">
-                  <Button asChild><Link to="/auth?redirect=/bulk-check">Sign in or create an account</Link></Button>
-                  <Button asChild variant="outline"><Link to="/pricing">See the $10/month plan</Link></Button>
-                </div>
+            {/* Nov 3 2026 (owner rule): every check runs in the AI chat, including bulk checks. */}
+            <div className="rounded-2xl border border-border bg-card p-6 text-center space-y-4">
+              <p className="font-semibold">Bulk checks run in the SafeOrStolen chat</p>
+              <p className="text-sm text-muted-foreground">
+                Open the chat, then paste one number per line or tap Attach and add a .csv file. Results appear as each item finishes,
+                and you can download them all as a spreadsheet.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Button asChild><Link to="/verify">Open bulk check</Link></Button>
+                <Button asChild variant="outline"><Link to="/pricing">See the $10/month plan</Link></Button>
               </div>
-            )}
+            </div>
           </div>
         </section>
 

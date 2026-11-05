@@ -16,6 +16,8 @@ export type ChatMessage = {
  suggestions?: string[];
  // free checks used up: offer the paid check for this item right in the chat
  payOffer?: { identifier: string; itemType?: string };
+ // bulk check of a pasted list or attached CSV; results are kept so reopening the chat doesn't re-run it
+ bulk?: { rows: import('@/components/premium/BulkVerification').BulkRow[]; results?: import('@/components/premium/BulkVerification').BulkResult[]; done?: boolean; stopped?: string | null };
 };
 
 export type ChatThread = {

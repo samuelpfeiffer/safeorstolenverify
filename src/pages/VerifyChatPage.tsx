@@ -42,6 +42,7 @@ import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
 import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
+import { BulkChatRun, parseRows, MAX_ROWS, type BulkRow } from '@/components/premium/BulkVerification';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
@@ -185,9 +186,31 @@ const VerifyChatPage: React.FC = () => {
  },
  [setMessages]);
 
+ const startBulk = useCallback((rows: BulkRow[], label: string) => {
+ addMessage({ role: 'user', content: label });
+ if (rows.length > MAX_ROWS) {
+ addMessage({ role: 'assistant', content: `That list has ${rows.length} items. I can check up to ${MAX_ROWS} at a time, so split it into smaller lists and send them one by one.` });
+ return;
+ }
+ addMessage({
+ role: 'assistant',
+ content: `Checking ${rows.length} items. Results appear below as each one finishes, and you can download them all as a spreadsheet when it's done.`,
+ bulk: { rows },
+ });
+ }, [addMessage]);
+
  const handleFile = useCallback((file: File) => {
+ // Nov 3 2026: bulk checking lives here now. A CSV or text list runs as a bulk check in the chat.
+ if (/\.(csv|txt)$/i.test(file.name) || file.type === 'text/csv' || file.type === 'text/plain') {
+ file.text().then((text) => {
+ const rows = parseRows(text, '');
+ if (rows.length === 0) { toast.error('No serial numbers found in that file.'); return; }
+ startBulk(rows, `📄 ${file.name} (${rows.length} items)`);
+ }).catch(() => toast.error('Could not read that file.'));
+ return;
+ }
  if (!file.type.startsWith('image/')) {
- toast.error('Please upload an image file');
+ toast.error('Attach a photo of the label, or a .csv or .txt list for a bulk check');
  return;
  }
  if (file.size > 10 * 1024 * 1024) {
@@ -200,7 +223,7 @@ const VerifyChatPage: React.FC = () => {
  setAttachment({ kind: 'image', dataUrl, name: file.name });
  };
  reader.readAsDataURL(file);
- }, []);
+ }, [startBulk]);
 
  const publishResult = useCallback(
  (r: ChatVerifyResult) => {
@@ -499,6 +522,16 @@ const VerifyChatPage: React.FC = () => {
  if (!text && !attachment) return;
  if (isThinking) return;
 
+ // Several numbers, one per line: run them as a bulk check.
+ if (!attachment) {
+ const lines = text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+ if (lines.length >= 2 && lines.every((l) => looksLikeIdentifier(l.split(/[,;\t]/)[0].trim()))) {
+ setInput('');
+ startBulk(parseRows(text, ''), `${lines.length} items:\n${lines.slice(0, 5).join('\n')}${lines.length > 5 ? '\n…' : ''}`);
+ return;
+ }
+ }
+
  addMessage({
  role: 'user',
  content: text || (attachment?.kind === 'image' ? '📷 Image uploaded' : ''),
@@ -552,6 +585,7 @@ const VerifyChatPage: React.FC = () => {
  looksLikeIdentifier,
  looksLikeVerifyIntent,
  updateMessage,
+ startBulk,
  ]);
 
  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -805,6 +839,7 @@ const VerifyChatPage: React.FC = () => {
  <ChatBubble
  key={msg.id}
  msg={msg}
+ onBulkUpdate={(patch) => updateMessage(msg.id, { bulk: { ...msg.bulk!, ...patch } })}
  isAuthenticated={isAuthenticated}
  onOpenResult={(r) => { setCurrentResult(r); setReportOpen(true); setMainView(null); }}
  isLast={idx === messages.length - 1}
@@ -904,7 +939,7 @@ const VerifyChatPage: React.FC = () => {
  <input
  ref={fileInputRef}
  type="file"
- accept="image/*"
+ accept="image/*,.csv,.txt,text/csv,text/plain"
  hidden
  onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
  />
@@ -1041,6 +1076,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  <Smartphone className="w-4 h-4" /> Get the free app
  </a>
  <p className="text-xs text-muted-foreground mt-2">Check items in person, right from your phone.</p>
+ <p className="text-xs text-muted-foreground mt-6">Checking a list? Paste one number per line, or tap Attach and add a .csv file.</p>
  </motion.div>
  );
 };
@@ -1145,7 +1181,8 @@ const ChatBubble: React.FC<{
  onRegenerate?: () => void;
  isAuthenticated?: boolean;
  onOpenResult?: (r: ChatVerifyResult) => void;
-}> = ({ msg, isLast, onSuggestion, onRegenerate, isAuthenticated = false, onOpenResult }) => {
+ onBulkUpdate?: (patch: Partial<NonNullable<ChatMessage['bulk']>>) => void;
+}> = ({ msg, isLast, onSuggestion, onRegenerate, isAuthenticated = false, onOpenResult, onBulkUpdate }) => {
  const [copied, setCopied] = useState(false);
  const isUser = msg.role === 'user';
 
@@ -1235,6 +1272,18 @@ const ChatBubble: React.FC<{
 
  {!isUser && !msg.loading && msg.payOffer && (
  <LimitPayOffer identifier={msg.payOffer.identifier} itemType={msg.payOffer.itemType} />
+ )}
+
+ {!isUser && msg.bulk && (
+ <BulkChatRun
+ rows={msg.bulk.rows}
+ saved={msg.bulk.results}
+ done={msg.bulk.done}
+ onUpdate={(results, done, stopped) => onBulkUpdate?.({ results, done, stopped })}
+ />
+ )}
+ {!isUser && msg.bulk?.stopped && (
+ <LimitPayOffer identifier={msg.bulk.rows[msg.bulk.results?.length ?? 0]?.identifier ?? ''} itemType={msg.bulk.rows[msg.bulk.results?.length ?? 0]?.type || undefined} />
  )}
 
  {!isUser && isLast && !msg.loading && msg.suggestions && msg.suggestions.length > 0 && (

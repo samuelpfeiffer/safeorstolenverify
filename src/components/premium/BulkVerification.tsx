@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Upload, Download, FileSpreadsheet, CheckCircle, XCircle, Loader2, AlertTriangle, HelpCircle } from 'lucide-react';
@@ -10,15 +10,15 @@ import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 // item is, so gun serials are searched against police gun theft records; "no report found" is no
 // longer shown as a red X; the run stops cleanly when the account has no checks left.
 
-type Status = 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
+export type Status = 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
 
-interface BulkRow {
+export interface BulkRow {
   identifier: string;
   type: string;
   note: string;
 }
 
-interface BulkResult extends BulkRow {
+export interface BulkResult extends BulkRow {
   status: Status;
   message: string;
   sources: string[];
@@ -26,7 +26,7 @@ interface BulkResult extends BulkRow {
   checkedAt: string;
 }
 
-const MAX_ROWS = 100;
+export const MAX_ROWS = 100;
 const BATCH = 5;
 
 const TYPE_OPTIONS: { value: string; label: string }[] = [
@@ -70,7 +70,7 @@ function splitCsvLine(line: string): string[] {
   return out.map((s) => s.trim());
 }
 
-function parseRows(text: string, defaultType: string): BulkRow[] {
+export function parseRows(text: string, defaultType: string): BulkRow[] {
   const lines = text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
   if (lines.length && /^(identifier|serial|imei|vin|id)\b/i.test(lines[0])) lines.shift();
   return lines
@@ -264,5 +264,122 @@ export const BulkVerification = () => {
     </Card>
   );
 };
+
+/**
+ * Nov 3 2026 (owner rule: one place to verify). Bulk checking now runs inside the AI chat at /verify:
+ * attach a CSV or paste several numbers, and this card checks them one batch at a time through
+ * /verify-api (same limits as any check). Results are saved on the chat message, so reopening the
+ * chat shows them instead of running the checks again.
+ */
+export function BulkChatRun({
+  rows,
+  saved,
+  done,
+  onUpdate,
+}: {
+  rows: BulkRow[];
+  saved?: BulkResult[];
+  done?: boolean;
+  onUpdate: (results: BulkResult[], done: boolean, stopped?: string | null) => void;
+}) {
+  const [results, setResults] = useState<BulkResult[]>(saved ?? []);
+  const [running, setRunning] = useState(false);
+  const [stopped, setStopped] = useState<string | null>(null);
+  const started = useRef(false);
+
+  const runRows = async (todo: BulkRow[], already: BulkResult[]) => {
+    setRunning(true);
+    setStopped(null);
+    const out: BulkResult[] = [...already];
+    let fingerprint: string | undefined;
+    try { fingerprint = getOrCreateFingerprint(); } catch { fingerprint = undefined; }
+    let stopReason: string | null = null;
+    try {
+      for (let i = 0; i < todo.length; i += BATCH) {
+        const batch = todo.slice(i, i + BATCH);
+        let limitHit = false;
+        const part = await Promise.all(batch.map(async (row): Promise<BulkResult> => {
+          const { data, error } = await requestVerification({ identifier: row.identifier, itemType: row.type || undefined, fingerprint });
+          const checkedAt = new Date().toISOString();
+          if (error?.code === 'LIMIT_REACHED' || error?.code === 'AUTH_REQUIRED') limitHit = true;
+          if (error || !data) return { ...row, status: 'error', message: error?.message ?? 'Check failed', sources: [], checkId: null, checkedAt };
+          return { ...row, status: (data.finalStatus as Status) ?? 'unknown', message: data.message ?? '', sources: data.checkedSources ?? [], checkId: data.checkId ?? null, checkedAt };
+        }));
+        const kept = limitHit ? part.filter((r) => r.status !== 'error') : part;
+        out.push(...kept);
+        setResults([...out]);
+        onUpdate([...out], false);
+        if (limitHit) { stopReason = 'You are out of checks. Pick a plan to check the rest of the list.'; break; }
+      }
+    } finally {
+      setRunning(false);
+      setStopped(stopReason);
+      onUpdate([...out], !stopReason, stopReason);
+    }
+  };
+
+  useEffect(() => {
+    if (started.current || done || (saved && saved.length > 0)) return;
+    started.current = true;
+    void runRows(rows, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const remaining = rows.slice(results.length);
+  const flagged = results.filter((r) => r.status === 'stolen' || r.status === 'lost').length;
+
+  const download = () => {
+    const header = ['Identifier', 'Type', 'Note', 'Result', 'Message', 'Sources searched', 'Checked at (UTC)', 'Check ID'];
+    const csv = [header.join(','), ...results.map((r) => [r.identifier, r.type || 'auto', r.note, STATUS_LABEL[r.status], r.message, r.sources.join('; '), r.checkedAt, r.checkId ?? ''].map(csvCell).join(','))].join('\n');
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `safeorstolen-bulk-check-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="mt-3 rounded-xl border border-border bg-card p-4">
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <p className="font-semibold">
+          Bulk check: {results.length} of {rows.length} checked
+          {flagged > 0 && <span className="ml-2 text-red-500">{flagged} flagged</span>}
+        </p>
+        {results.length > 0 && !running && (
+          <Button onClick={download} size="sm" variant="outline"><Download className="h-4 w-4 mr-2" /> Download CSV</Button>
+        )}
+      </div>
+      {running && <p className="text-sm text-muted-foreground mt-2 flex items-center gap-2"><Loader2 className="h-4 w-4 animate-spin" /> Checking…</p>}
+
+      {results.length > 0 && (
+        <div className="mt-3 max-h-80 overflow-y-auto space-y-1.5">
+          {results.map((r, i) => (
+            <div key={`${r.identifier}-${i}`} className="flex items-center justify-between gap-3 rounded-md bg-muted px-3 py-2 text-sm">
+              <div className="flex items-center gap-2 min-w-0">
+                {r.status === 'stolen' || r.status === 'lost' ? <AlertTriangle className="h-4 w-4 text-red-500 shrink-0" />
+                  : r.status === 'safe' ? <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                  : r.status === 'error' ? <XCircle className="h-4 w-4 text-muted-foreground shrink-0" />
+                  : <HelpCircle className="h-4 w-4 text-amber-500 shrink-0" />}
+                <span className="font-mono truncate">{r.identifier}</span>
+                {r.note && <span className="text-xs text-muted-foreground truncate">{r.note}</span>}
+              </div>
+              <span className="text-xs shrink-0">{STATUS_LABEL[r.status]}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {!running && remaining.length > 0 && (results.length > 0 || stopped) && (
+        <div className="mt-3 text-sm">
+          <p className="text-muted-foreground">{stopped ?? `${remaining.length} items weren't checked yet.`}</p>
+          {!stopped && (
+            <Button className="mt-2" size="sm" onClick={() => runRows(remaining, results)}>Check the remaining {remaining.length}</Button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default BulkVerification;
