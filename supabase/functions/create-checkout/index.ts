@@ -20,6 +20,18 @@ const NEW_PRICES = {
 // matches a plan price; stripe-webhook handles purchase_type=certificate before any plan logic.
 const CERTIFICATE_AMOUNT = 199;
 
+// Oct 29 2026: $2.99 "Complete check" (2 checks + phone blacklist search + web listings and AI review +
+// free certificate). Priced inline (no Stripe price needed). stripe-webhook records it like the $0.99
+// purchase (2 checks); the database trigger upgrade_complete_check() then marks it 'complete'.
+const COMPLETE_AMOUNT = 299;
+
+// Nov 6 2026 (owner approved): $4.99 "Gun Buyer's Check", offered only on gun checks in place of the
+// $2.99 Complete check (whose phone blacklist and listings extras don't apply to guns). 2 checks plus a
+// dated verification certificate for each. Same path as Complete: inline price, recorded as 2 checks,
+// and upgrade_complete_check() marks it 'complete' (amount 299 or 499) so certificates are included.
+// The $0.99, $10/month and free-first-check prices are unchanged.
+const GUN_BUYER_AMOUNT = 499;
+
 // Oct 8 2026: back to $0.99 per check and $10/month. Sales stopped when the single check went to
 // $3.99 on Oct 3 (14 paid checks Sept 30-Oct 3 at $0.99, none in the 4 days after). The base prices
 // below are the original $0.99 / $10 Stripe prices, which stripe-webhook already maps to plans.
@@ -76,10 +88,15 @@ serve(async (req) => {
     const { priceId, serialNumber, itemType, planName } = body || {};
     const pn = String(planName || '').toLowerCase();
     // Monthly if the page asked for a subscription, or named the monthly/unlimited plan.
-    const isSubscription = !!body?.isSubscription || (/unlimited|month|pro\b|plan/.test(pn) && !/single|per check|pay per|one-time|one time/.test(pn));
+    const isSubscription = !!body?.isSubscription || (/unlimited|month|pro\b|plan/.test(pn) && !/single|per check|pay per|one-time|one time|complete|gun buyer/.test(pn));
+    // Nov 6 2026: the $4.99 Gun Buyer's Check.
+    const isGunBuyer = !isSubscription && (body?.plan === 'gun_buyer' || /gun buyer/.test(pn));
+    // Oct 29 2026: the $2.99 Complete check.
+    const isComplete = !isSubscription && !isGunBuyer && (body?.plan === 'complete' || /complete/.test(pn));
+    const isInlineCheckPack = isComplete || isGunBuyer;
     const fingerprint = cleanFingerprint(body?.fingerprint);
     const isGuest = !user;
-    console.log(`[CREATE-CHECKOUT] ${isGuest ? 'GUEST' : 'User ' + user!.email}`, { priceId, planName, isSubscription, hasFingerprint: !!fingerprint });
+    console.log(`[CREATE-CHECKOUT] ${isGuest ? 'GUEST' : 'User ' + user!.email}`, { priceId, planName, isSubscription, isComplete, isGunBuyer, hasFingerprint: !!fingerprint });
 
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
     if (!stripeKey || !/^(sk|rk)_(live|test)_/.test(stripeKey)) {
@@ -107,13 +124,28 @@ serve(async (req) => {
           { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
 
+      // Oct 29 2026: the certificate is included with a $2.99 Complete check (or, from Nov 6, a $4.99
+      // Gun Buyer's Check) bought in the last 30 days. Both are recorded with plan 'complete'.
+      if (user?.id || fingerprint) {
+        let q: any = supabaseClient.from('subscriptions').select('id').eq('plan', 'complete')
+          .gte('created_at', new Date(Date.now() - 30 * 86400000).toISOString()).limit(1);
+        q = user?.id ? q.eq('user_id', user.id) : q.eq('fingerprint', fingerprint);
+        const { data: comp } = await q;
+        if (comp && comp.length) {
+          await supabaseClient.from('proof_records').update({ paid_at: new Date().toISOString() }).eq('id', proofId);
+          console.log(`[CREATE-CHECKOUT] Certificate ${proofId} included with Complete check`);
+          return new Response(JSON.stringify({ url: `${PRODUCTION_BASE_URL}/proof/${proofId}?paid=1`, alreadyPaid: true, included: true }),
+            { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+      }
+
       const certMetadata: Record<string, string> = {
         purchase_type: 'certificate',
         proof_id: proofId,
         user_id: user?.id || '',
         guest: isGuest ? 'true' : 'false',
       };
-      const certConfig /* card first */: any = {
+      const certConfig: any = {
         mode: 'payment',
         line_items: [{
           quantity: 1,
@@ -131,7 +163,6 @@ serve(async (req) => {
         success_url: `${PRODUCTION_BASE_URL}/proof/${proofId}?paid=1`,
         cancel_url: `${PRODUCTION_BASE_URL}/proof/${proofId}`,
         allow_promotion_codes: true,
-        payment_method_types: ["card", "link", "cashapp"],
       };
       if (user?.email) certConfig.customer_email = user.email;
 
@@ -164,7 +195,7 @@ serve(async (req) => {
       customerId = customers.data.length > 0 ? customers.data[0].id : undefined;
     }
 
-    const resolvedPriceId = await getOrCreatePrice(stripe, isSubscription ? NEW_PRICES.monthly : NEW_PRICES.single);
+    const resolvedPriceId = isInlineCheckPack ? null : await getOrCreatePrice(stripe, isSubscription ? NEW_PRICES.monthly : NEW_PRICES.single);
 
     let verificationId: string | undefined;
     if (user && !isSubscription && serialNumber?.trim()) {
@@ -179,6 +210,7 @@ serve(async (req) => {
       : `${PRODUCTION_BASE_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`;
     const cancelUrl = `${PRODUCTION_BASE_URL}/verify?checkout=cancelled`;
 
+    const planLabel = isSubscription ? 'Monthly' : isGunBuyer ? "Gun Buyer's Check" : isComplete ? 'Complete check' : 'Single check';
     const metadata: Record<string, string> = {
       user_id: user?.id || '',
       guest: isGuest ? 'true' : 'false',
@@ -186,19 +218,45 @@ serve(async (req) => {
       item_type: itemType || 'unknown',
       serial_number: (serialNumber || '').toString().slice(0, 200),
       verification_id: verificationId || '',
-      plan_name: isSubscription ? 'Monthly' : 'Single check',
+      plan_name: planLabel,
     };
+    if (isInlineCheckPack) metadata.purchase_type = 'complete_check';
+
+    const lineItems = isGunBuyer
+      ? [{
+          quantity: 1,
+          price_data: {
+            currency: 'usd',
+            unit_amount: GUN_BUYER_AMOUNT,
+            product_data: {
+              name: "SafeOrStolen Gun Buyer's Check (2 checks)",
+              description: 'Two gun serial number checks of police theft and loss reports, plus a dated verification certificate for each check showing you checked before buying. No subscription.',
+            },
+          },
+        }]
+      : isComplete
+      ? [{
+          quantity: 1,
+          price_data: {
+            currency: 'usd',
+            unit_amount: COMPLETE_AMOUNT,
+            product_data: {
+              name: 'SafeOrStolen Complete Check (2 checks)',
+              description: 'Two complete checks: police and registry records, phone blacklist search, web listings and AI review, plus a verification certificate. No subscription.',
+            },
+          },
+        }]
+      : [{ price: resolvedPriceId, quantity: 1 }];
 
     const sessionConfig: any = {
       success_url: successUrl,
       cancel_url: cancelUrl,
       mode: isSubscription ? "subscription" : "payment",
-      line_items: [{ price: resolvedPriceId, quantity: 1 }],
+      line_items: lineItems,
       metadata,
       allow_promotion_codes: true,
-      // Card first. Radar stays on (account default).
-      payment_method_types: ["card", "link", "cashapp"],
     };
+    if (!isSubscription) sessionConfig.payment_intent_data = { metadata };
     if (customerId) sessionConfig.customer = customerId;
     else if (user?.email) sessionConfig.customer_email = user.email;
     // Guests: Stripe asks for their email on the payment page.
@@ -218,7 +276,7 @@ serve(async (req) => {
     if (purchaseError) console.log(`[CREATE-CHECKOUT] Purchase record error:`, purchaseError);
 
     const session = await stripe.checkout.sessions.create(sessionConfig);
-    console.log(`[CREATE-CHECKOUT] Session created: ${session.id} (${isGuest ? 'guest' : 'user'}) price=${resolvedPriceId}`);
+    console.log(`[CREATE-CHECKOUT] Session created: ${session.id} (${isGuest ? 'guest' : 'user'}) ${planLabel} item=${itemType || 'unknown'} ${resolvedPriceId ? 'price=' + resolvedPriceId : ''}`);
 
     if (purchaseRecord?.id) {
       await supabaseClient.from("purchases").update({ stripe_session_id: session.id }).eq("id", purchaseRecord.id);

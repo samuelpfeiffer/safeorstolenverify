@@ -3,6 +3,7 @@ import { Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { savePendingCheck } from '@/lib/pendingCheck';
+import { toCanonicalItemType } from '@/lib/itemType';
 
 /**
  * Shown when a visitor has used their 1 free check. No account needed: tap an option, pay,
@@ -10,7 +11,7 @@ import { savePendingCheck } from '@/lib/pendingCheck';
  * Nov 1 2026 (owner: "confusing and ugly"): three plain choices in one list, same layout each,
  * price on the right, one short line of what you get. Complete stays recommended.
  */
-type Kind = 'single' | 'complete' | 'monthly';
+type Kind = 'single' | 'complete' | 'gun_buyer' | 'monthly';
 
 const OPTIONS: { kind: Kind; name: string; price: string; detail: string; recommended?: boolean }[] = [
   { kind: 'single', name: 'Starter', price: '$0.99', detail: '2 checks. Police and registry records.' },
@@ -24,8 +25,30 @@ const OPTIONS: { kind: Kind; name: string; price: string; detail: string; recomm
   { kind: 'monthly', name: 'Unlimited', price: '$10/month', detail: 'Unlimited checks, billed monthly. Includes 20 phone blacklist searches a month.' },
 ];
 
+// Nov 6 2026 (owner approved): on gun checks, the $4.99 Gun Buyer's Check takes the place of the $2.99
+// Complete check, whose phone blacklist and listings extras don't apply to guns. $0.99 and $10 are unchanged.
+const GUN_OPTIONS: typeof OPTIONS = [
+  { kind: 'single', name: 'Starter', price: '$0.99', detail: '2 checks. Police theft and loss reports.' },
+  {
+    kind: 'gun_buyer',
+    name: "Gun Buyer's Check",
+    price: '$4.99',
+    detail: '2 checks, plus a dated certificate for each showing you checked the gun before buying.',
+    recommended: true,
+  },
+  { kind: 'monthly', name: 'Unlimited', price: '$10/month', detail: 'Unlimited checks, billed monthly.' },
+];
+
+const PLAN_NAME: Record<Exclude<Kind, 'monthly'>, string> = {
+  single: 'Single check',
+  complete: 'Complete check',
+  gun_buyer: "Gun Buyer's Check",
+};
+
 export function LimitPayOffer({ identifier, itemType }: { identifier: string; itemType?: string }) {
   const [busy, setBusy] = useState<Kind | null>(null);
+  const isGun = toCanonicalItemType(itemType) === 'firearm';
+  const options = isGun ? GUN_OPTIONS : OPTIONS;
   const [error, setError] = useState<string | null>(null);
 
   const buy = async (kind: Kind) => {
@@ -38,7 +61,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       const { data, error: err } = await supabase.functions.invoke('create-checkout', {
         body: kind === 'monthly'
           ? { planName: 'Monthly', isSubscription: true, fingerprint }
-          : { planName: kind === 'complete' ? 'Complete check' : 'Single check', plan: kind, serialNumber: identifier, itemType: itemType || 'unknown', fingerprint },
+          : { planName: PLAN_NAME[kind], plan: kind, serialNumber: identifier, itemType: itemType || 'unknown', fingerprint },
       });
       if (err || !data?.url) throw new Error('Checkout didn\'t open. Tap your choice again.');
       window.location.href = data.url;
@@ -56,7 +79,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       </p>
 
       <div className="mt-4 space-y-2" role="list">
-        {OPTIONS.map((o) => (
+        {options.map((o) => (
           <button
             key={o.kind}
             type="button"
