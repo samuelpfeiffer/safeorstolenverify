@@ -1,3 +1,4 @@
+import { resolveLegacyRedirect } from '@/utils/legacyRedirectMap';
 /**
  * Router-compat shim — bridges @/lib/router-compat v6 call sites to
  * @tanstack/react-router without hand-rewriting every component.
@@ -124,7 +125,11 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   { to, replace, state, children, ...rest },
   ref,
 ) {
-  const { pathname, search, hash } = parseTo(to);
+  const parsed = parseTo(to);
+  // Nov 6 2026: links to old addresses go straight to the page they redirect to, so visitors and
+  // Google never take an extra hop (131 internal links pointed at redirects).
+  const pathname = parsed.pathname.startsWith('/') ? (resolveLegacyRedirect(parsed.pathname) ?? parsed.pathname) : parsed.pathname;
+  const { search, hash } = parsed;
   return (
     <TSLink
       ref={ref as never}
