@@ -101,8 +101,8 @@ const CameraEquipmentCheck = () => {
       ctaTitle="Protect Yourself When Buying Camera Equipment"
       ctaDescription="A free serial number check takes 3 seconds and could save you from buying stolen gear."
       relatedLinks={[
-        { title: "Electronics Verification", href: "/check-electronics" },
-        { title: "eBay Camera Safety", href: "/ebay-stolen-item-check" },
+        { title: "Electronics Verification", href: "/serial-number-checker" },
+        { title: "eBay Camera Safety", href: "/marketplace-url-checker" },
         { title: "Craigslist Check", href: "/craigslist-safety-verification" }
       ]}
     />

@@ -102,7 +102,7 @@ const WatchSerialCheck = () => {
       ctaDescription="A free serial number check takes 3 seconds and could save you thousands on a stolen luxury watch."
       relatedLinks={[
         { title: "Jewelry Verification", href: "/check-jewelry" },
-        { title: "eBay Watch Safety", href: "/ebay-stolen-item-check" },
+        { title: "eBay Watch Safety", href: "/marketplace-url-checker" },
         { title: "Craigslist Verification", href: "/craigslist-safety-verification" }
       ]}
     />

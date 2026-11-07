@@ -22,7 +22,7 @@ export const EnhancedFooterLinks: React.FC = () => {
         { href: '/vin-checker', text: 'VIN Check - Verify Car' },
         { href: '/serial-number-checker', text: 'Serial Number Checker' },
         { href: '/verify', text: 'General Item Checker' },
-        { href: '/check-electronics', text: 'Check Electronics' }
+        { href: '/serial-number-checker', text: 'Check Electronics' }
       ]
     },
     {
@@ -73,7 +73,7 @@ export const EnhancedFooterLinks: React.FC = () => {
   const quickAccessItems = [
     { href: '/check-phone', text: 'Check Phone', icon: <Phone className="h-4 w-4" /> },
     { href: '/vin-checker', text: 'Check Car', icon: <Car className="h-4 w-4" /> },
-    { href: '/check-electronics', text: 'Check Electronics', icon: <Laptop className="h-4 w-4" /> }
+    { href: '/serial-number-checker', text: 'Check Electronics', icon: <Laptop className="h-4 w-4" /> }
   ];
 
   return (

@@ -102,7 +102,7 @@ const BicycleSerialCheck = () => {
  relatedLinks={[
  { title: "E-Bike Verification", href: "/check-ebike" },
  { title: "Craigslist Safety", href: "/craigslist-safety-verification" },
- { title: "Facebook Marketplace Check", href: "/facebook-marketplace-stolen-check" }
+ { title: "Facebook Marketplace Check", href: "/how-to-tell-if-marketplace-item-is-stolen" }
  ]}
  />
  );

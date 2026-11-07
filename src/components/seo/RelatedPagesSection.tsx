@@ -28,10 +28,10 @@ const allRelatedPages: RelatedPage[] = [
  { title: 'Bicycle Serial Check', href: '/check-bicycle-stolen', category: 'item' },
  
  // Marketplace pages
- { title: 'Facebook Marketplace Safety', href: '/facebook-marketplace-stolen-check', category: 'marketplace' },
+ { title: 'Facebook Marketplace Safety', href: '/how-to-tell-if-marketplace-item-is-stolen', category: 'marketplace' },
  { title: 'Craigslist Verification', href: '/craigslist-safety-verification', category: 'marketplace' },
  { title: 'OfferUp Verification', href: '/offerup-verify-not-stolen', category: 'marketplace' },
- { title: 'eBay Stolen Check', href: '/ebay-stolen-item-check', category: 'marketplace' },
+ { title: 'eBay Stolen Check', href: '/marketplace-url-checker', category: 'marketplace' },
  
  // Comparison pages
  { title: 'Best IMEI Checkers 2026', href: '/comparisons/best-free-imei-checkers-2025', category: 'comparison' },

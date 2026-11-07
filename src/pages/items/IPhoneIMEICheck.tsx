@@ -103,7 +103,7 @@ const IPhoneIMEICheck = () => {
  relatedLinks={[
  { title: "Samsung IMEI Check", href: "/check-samsung-stolen" },
  { title: "All Phone IMEI Checker", href: "/imei-checker" },
- { title: "Facebook Marketplace Safety", href: "/facebook-marketplace-stolen-check" }
+ { title: "Facebook Marketplace Safety", href: "/how-to-tell-if-marketplace-item-is-stolen" }
  ]}
  />
  );

@@ -72,7 +72,7 @@ const JewelryCheck = () => {
       relatedLinks={[
         { title: "Watch Verification", href: "/check-watch-stolen" },
         { title: "General Jewelry Check", href: "/check-jewelry" },
-        { title: "eBay Safety", href: "/ebay-stolen-item-check" }
+        { title: "eBay Safety", href: "/marketplace-url-checker" }
       ]}
     />
   );

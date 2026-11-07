@@ -64,7 +64,7 @@ const FirearmSerialCheck = () => {
  relatedLinks={[
  { title: "Firearms Check Main", href: "/firearms-check" },
  { title: "Serial Number Checker", href: "/serial-number-checker" },
- { title: "Facebook Marketplace", href: "/facebook-marketplace-stolen-check" }
+ { title: "Facebook Marketplace", href: "/how-to-tell-if-marketplace-item-is-stolen" }
  ]}
  />
  );

@@ -53,7 +53,7 @@ const GROUPS: { heading: string; anchor: string; note: string; rows: Row[] }[] =
  { item: 'Motorcycle', id: 'VIN (17 characters)', onItem: 'Stamped on the steering head (the neck of the frame), often with a sticker on the frame too', elsewhere: 'Title and registration', check: 'Motorcycle VIN check', href: '/check-motorcycle-stolen-vin' },
  { item: 'Any vehicle you only see in photos', id: 'License plate', onItem: 'Front and rear plates in the listing photos', elsewhere: 'Ask the seller', check: 'Plate check', href: '/license-plate-lookup' },
  { item: 'Trailer or ATV', id: 'VIN or frame serial', onItem: 'Trailer: plate or stamp on the tongue or frame. ATV: stamped on the frame, often near the front', elsewhere: 'Title or certificate of origin', check: 'Trailer and ATV guide', href: '/how-to-check-if-trailer-atv-stolen' },
- { item: 'Boat', id: 'HIN (hull identification number, 12 characters)', onItem: 'Upper right of the transom, on the starboard side', elsewhere: 'Registration or title', check: 'Boat check', href: '/check-boat' },
+ { item: 'Boat', id: 'HIN (hull identification number, 12 characters)', onItem: 'Upper right of the transom, on the starboard side', elsewhere: 'Registration or title', check: 'Boat check', href: '/how-to-check-if-boat-stolen' },
  ],
  },
  {

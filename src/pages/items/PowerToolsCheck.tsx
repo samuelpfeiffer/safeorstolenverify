@@ -100,7 +100,7 @@ const PowerToolsCheck = () => {
       relatedLinks={[
         { title: "General Tool Check", href: "/check-tools" },
         { title: "Craigslist Safety", href: "/craigslist-safety-verification" },
-        { title: "Facebook Marketplace", href: "/facebook-marketplace-stolen-check" }
+        { title: "Facebook Marketplace", href: "/how-to-tell-if-marketplace-item-is-stolen" }
       ]}
     />
   );

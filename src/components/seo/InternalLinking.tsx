@@ -18,14 +18,14 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({ currentPage })
         return [
           ...baseLinks,
           { href: '/vin-checker', text: 'Check if Car is Stolen', rel: 'related' },
-          { href: '/check-electronics', text: 'Check Electronics', rel: 'related' },
+          { href: '/serial-number-checker', text: 'Check Electronics', rel: 'related' },
           { href: '/check-bike', text: 'Check Bicycle', rel: 'related' },
         ];
       case 'check-car':
         return [
           ...baseLinks,
           { href: '/check-phone', text: 'Check if Phone is Stolen', rel: 'related' },
-          { href: '/check-electronics', text: 'Check Electronics', rel: 'related' },
+          { href: '/serial-number-checker', text: 'Check Electronics', rel: 'related' },
           { href: '/check-bike', text: 'Check Bicycle', rel: 'related' },
         ];
       case 'check-electronics':
@@ -40,14 +40,14 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({ currentPage })
           ...baseLinks,
           { href: '/check-phone', text: 'Check if Phone is Stolen', rel: 'related' },
           { href: '/vin-checker', text: 'Check if Car is Stolen', rel: 'related' },
-          { href: '/check-electronics', text: 'Check Electronics', rel: 'related' },
+          { href: '/serial-number-checker', text: 'Check Electronics', rel: 'related' },
         ];
       default:
         return [
           ...baseLinks,
           { href: '/check-phone', text: 'Check if Phone is Stolen - IMEI Lookup', rel: 'related' },
           { href: '/vin-checker', text: 'Check if Car is Stolen - VIN Lookup', rel: 'related' },
-          { href: '/check-electronics', text: 'Check Electronics - Serial Number', rel: 'related' },
+          { href: '/serial-number-checker', text: 'Check Electronics - Serial Number', rel: 'related' },
           { href: '/check-bike', text: 'Check if Bike is Stolen', rel: 'related' },
         ];
     }

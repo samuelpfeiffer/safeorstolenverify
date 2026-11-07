@@ -266,7 +266,7 @@ const BarcodeScannerPage = () => {
               <h2 className="text-2xl font-bold mb-4 text-foreground">Item guides</h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { title: 'IMEI check for phones', href: '/imei-check' },
+                  { title: 'IMEI check for phones', href: '/imei-checker' },
                   { title: 'VIN check for vehicles', href: '/vin-checker' },
                   { title: 'Serial number checker', href: '/serial-number-checker' },
                   { title: 'Install the free web app', href: '/app' },
