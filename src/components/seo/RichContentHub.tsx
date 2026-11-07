@@ -30,7 +30,7 @@ export const RichContentHub = () => {
         { text: "Facebook Marketplace Safety", url: "/facebook-marketplace-stolen-check" },
         { text: "OfferUp Safety", url: "/offerup-verify-not-stolen" },
         { text: "Craigslist Safety", url: "/craigslist-safety-verification" },
-        { text: "eBay Safety", url: "/ebay-stolen-item-check" }
+        { text: "eBay Safety", url: "/marketplace-url-checker" }
       ]
     },
     {
@@ -82,7 +82,7 @@ export const RichContentHub = () => {
         { text: "Facebook Marketplace", url: "/facebook-marketplace-stolen-check" },
         { text: "OfferUp Safety", url: "/offerup-verify-not-stolen" },
         { text: "Craigslist Safety", url: "/craigslist-safety-verification" },
-        { text: "eBay Check", url: "/ebay-stolen-item-check" },
+        { text: "eBay Check", url: "/marketplace-url-checker" },
         { text: "Scammer Tactics Exposed", url: "/blog/scammer-tactics-exposed" },
         { text: "Verify Before Meetup", url: "/blog/verify-item-before-meetup" }
       ]
