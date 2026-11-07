@@ -17,7 +17,6 @@ export const SOSFooter: React.FC = () => {
  { label: 'Serial Checker', to: '/serial-number-checker' },
  { label: 'License Plates', to: '/license-plate-lookup' },
   { label: 'Phone Guide', to: '/how-to-check-if-phone-stolen' },
- { label: 'Check Car', to: '/vin-checker' },
  { label: 'Firearms Check', to: '/firearms-check' },
  { label: 'URL Checker', to: '/marketplace-url-checker' },
  { label: 'Scam Checker', to: '/scam-checker' },
@@ -47,9 +46,6 @@ export const SOSFooter: React.FC = () => {
  { label: 'How It Works', to: '/how-it-works' },
  { label: 'FAQ', to: '/faq' },
  { label: 'Pricing', to: '/pricing' },
- { label: 'vs NICB VINCheck', to: '/compare/safeorstolen-vs-nicb-vincheck' },
- { label: 'vs Bike Index', to: '/compare/safeorstolen-vs-bikeindex' },
- { label: 'vs Asking Police', to: '/compare/safeorstolen-vs-asking-police' },
   { label: 'Item Check Guides', to: '/how-to-check-if-item-stolen' },
   { label: 'How to Report a Stolen Item', to: '/how-to-report-a-stolen-item' },
   { label: 'Phone Stolen? What to Do', to: '/what-to-do-if-your-phone-is-stolen' },
@@ -81,19 +77,17 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'Item Checks',
  links: [
- { label: 'Check iPhone', to: '/check-iphone-stolen' },
+ { label: 'Check iPhone', to: '/blog/how-to-check-if-iphone-stolen' },
  { label: 'Check Samsung', to: '/check-samsung-stolen' },
  { label: 'Check Android', to: '/check-android' },
   { label: 'Laptop Guide', to: '/how-to-check-if-laptop-stolen' },
  { label: 'Check Bike', to: '/check-bike' },
-  { label: 'Bike & E-Bike Guide', to: '/check-bike' },
  { label: 'Check Xbox', to: '/check-xbox' },
  { label: 'Check PS5', to: '/check-ps5' },
   { label: 'Boat Guide', to: '/how-to-check-if-boat-stolen' },
  { label: 'Check Jewelry', to: '/check-jewelry' },
   { label: 'Power Tool Guide', to: '/how-to-check-if-tools-stolen' },
  { label: 'Check Appliances', to: '/check-appliances' },
-  { label: 'Electronics Guide', to: '/how-to-check-if-laptop-stolen' },
  { label: 'Check Camera', to: '/check-camera-stolen' },
  { label: 'Check Watch', to: '/check-watch-stolen' },
  { label: 'Check Heavy Equipment', to: '/check-heavy-equipment-stolen' },
@@ -104,8 +98,6 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'Gun Serial Lookup',
  links: [
- { label: 'Gun Serial Number Lookup', to: '/firearms-check' },
- { label: 'How to Check if a Gun Is Stolen', to: '/how-to-check-if-gun-is-stolen' },
  { label: 'Stolen Property Statistics 2026', to: '/stolen-property-statistics' },
  { label: 'Stolen Gun Statistics', to: '/stolen-gun-statistics' },
  { label: 'Arizona Gun Lookup', to: '/gun-serial-number-lookup/arizona' },
@@ -125,7 +117,6 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'Vehicle Checks',
  links: [
- { label: 'VIN Checker (all states)', to: '/vin-checker' },
  { label: 'Arizona Plate & VIN Lookup', to: '/arizona-license-plate-lookup' },
  { label: 'Florida VIN Lookup', to: '/florida-vin-lookup' },
  ]
@@ -133,41 +124,19 @@ export const SOSFooter: React.FC = () => {
  {
  title: 'License Plates',
  links: [
- { label: 'Plate Lookup (all states)', to: '/license-plate-lookup' },
- { label: 'Arizona', to: '/arizona-license-plate-lookup' },
  { label: 'Florida', to: '/florida-license-plate-lookup' },
  ]
  },
  {
  title: 'All Marketplaces',
  links: [
- { label: 'Facebook Marketplace', to: '/facebook-marketplace-stolen-check' },
- { label: 'Craigslist', to: '/craigslist-safety-verification' },
- { label: 'OfferUp', to: '/offerup-verify-not-stolen' },
- { label: 'eBay', to: '/ebay-stolen-item-check' },
- { label: 'Mercari', to: '/mercari-stolen-check' },
- { label: 'Poshmark', to: '/poshmark-stolen-check' },
+ { label: 'Facebook Marketplace', to: '/how-to-tell-if-marketplace-item-is-stolen' },
  { label: 'StockX', to: '/stockx-verification' },
- { label: 'Letgo', to: '/letgo-stolen-check' },
- ]
- },
- {
- title: 'Compare Services',
- links: [
  ]
  },
   {
  title: 'Hub Pages',
  links: [
- { label: 'Firearms Serial Check', to: '/firearms-serial-number-check' },
- { label: 'Free Vehicle Check', to: '/vin-checker' },
- { label: 'Serial Number Check', to: '/serial-number-checker' },
- { label: 'Stolen Gun Database', to: '/stolen-gun-database' },
- { label: 'Gun Serial Lookup', to: '/gun-serial-number-lookup' },
- { label: 'Stolen Phone Checker', to: '/stolen-phone-checker' },
- { label: 'Phone Blacklist Check', to: '/phone-blacklist-check' },
- { label: 'Is My Phone Stolen?', to: '/is-my-phone-stolen' },
- { label: 'Is This Car Stolen?', to: '/vin-checker' },
  { label: 'Arizona Stolen Property', to: '/theftaz' },
  ]
  },
@@ -175,12 +144,7 @@ export const SOSFooter: React.FC = () => {
  title: 'Guides',
  links: [
  { label: 'eBay Buyer Protection', to: '/guides/ebay-buyer-protection' },
- { label: 'Craigslist Verification', to: '/guides/verify-craigslist-items' },
- { label: 'OfferUp Scam Protection', to: '/guides/offerup-scam-protection' },
- { label: 'FB Marketplace Safety', to: '/facebook-marketplace-safety' },
- { label: 'OfferUp Safety', to: '/offerup-safety' },
  { label: 'Complete Buyer Guide', to: '/comprehensive-guide' },
- { label: 'How to Check Phone', to: '/how-to-check-if-phone-stolen' },
  { label: 'How to Check Car', to: '/how-to-check-if-car-stolen' },
  ]
  },
