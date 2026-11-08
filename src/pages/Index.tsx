@@ -336,7 +336,12 @@ const Index = () => {
  How a check works
  </h2>
  <figure className="mb-12">
- <div className="rounded-2xl overflow-hidden border border-border bg-card">
+ {/* Nov 7 2026: the picture now loads with the page (it was lazy, so a quick scroll showed an empty dark box),
+     and the small version sits behind it as a placeholder so the box is never blank. */}
+ <div
+ className="rounded-2xl overflow-hidden border border-border bg-card bg-cover bg-center"
+ style={{ backgroundImage: "url('/images/item-verified-result-480.jpg')", aspectRatio: '3 / 2' }}
+ >
  <img
  src="/images/item-verified-result.jpg"
  srcSet="/images/item-verified-result-480.jpg 480w, /images/item-verified-result.jpg 960w"
@@ -344,7 +349,7 @@ const Index = () => {
  alt="A person reviewing a SafeOrStolen 'Item Verified' result on a laptop and a phone at the same time, showing the item's serial number, brand, and product details with a View Details button"
  width={960}
  height={640}
- loading="lazy"
+ loading="eager"
  decoding="async"
  className="w-full h-auto block"
  />
