@@ -20,6 +20,7 @@ function fixture(
     token?: any;
     dbError?: boolean;
     googleError?: boolean;
+    rpcError?: boolean;
   } = {},
 ) {
   const writes: { table: string; action: string; value: any; options?: any }[] =
@@ -27,6 +28,13 @@ function fixture(
   const calls: { url: string; body: any }[] = [];
   const scopedUsers: string[] = [];
   const adminClient = {
+    rpc: async (name: string, params: { p_days: number }) => {
+      assert.equal(name, "admin_growth_summary");
+      return {
+        data: { days: params.p_days, searchRecords: 10, usdGrossCents: 499 },
+        error: options.rpcError ? {} : null,
+      };
+    },
     from(table: string) {
       const builder: any = {
         select: () => builder,
@@ -270,4 +278,36 @@ test("revoked Google access returns a reconnect message without raw provider dat
   });
   assert.equal(res.status, 409);
   assert.match((await res.json()).error, /Connect Google again/);
+});
+
+test("growth summary works without Google credentials and returns aggregates only", async () => {
+  const f = fixture({ configured: false });
+  const res = await f.invoke({ action: "growth-summary", days: 30 });
+  assert.equal(res.status, 200);
+  assert.deepEqual(await res.json(), {
+    days: 30,
+    searchRecords: 10,
+    usdGrossCents: 499,
+  });
+  assert.equal(f.calls.length, 0);
+  assert.equal(f.writes.length, 0);
+});
+
+test("growth summary rejects non-admins and invalid reporting windows", async () => {
+  const denied = fixture({ admin: false });
+  assert.equal((await denied.invoke({ action: "growth-summary" })).status, 403);
+  for (const days of [0, 91, 1.5, "30"]) {
+    const f = fixture();
+    assert.equal(
+      (await f.invoke({ action: "growth-summary", days })).status,
+      400,
+    );
+  }
+});
+
+test("growth summary reports database failures without leaking database details", async () => {
+  const f = fixture({ rpcError: true });
+  const res = await f.invoke({ action: "growth-summary", days: 7 });
+  assert.equal(res.status, 500);
+  assert.match((await res.json()).error, /Could not load growth metrics/);
 });

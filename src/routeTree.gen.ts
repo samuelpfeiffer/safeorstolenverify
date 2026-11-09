@@ -315,6 +315,7 @@ import { Route as WyomingLicensePlateLookupRouteImport } from './routes/wyoming-
 import { Route as WyomingVinLookupRouteImport } from './routes/wyoming-vin-lookup'
 import { Route as AdminAiOrchestratorRouteImport } from './routes/admin/ai-orchestrator'
 import { Route as AdminBatchIndexRouteImport } from './routes/admin/batch-index'
+import { Route as AdminGrowthRouteImport } from './routes/admin/growth'
 import { Route as AdminGscCallbackRouteImport } from './routes/admin/gsc-callback'
 import { Route as AdminGscConnectRouteImport } from './routes/admin/gsc-connect'
 import { Route as AdminGscStatusRouteImport } from './routes/admin/gsc-status'
@@ -2001,6 +2002,11 @@ const AdminBatchIndexRoute = AdminBatchIndexRouteImport.update({
   path: '/admin/batch-index',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminGrowthRoute = AdminGrowthRouteImport.update({
+  id: '/admin/growth',
+  path: '/admin/growth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminGscCallbackRoute = AdminGscCallbackRouteImport.update({
   id: '/admin/gsc-callback',
   path: '/admin/gsc-callback',
@@ -2792,6 +2798,7 @@ export interface FileRoutesByFullPath {
   '/wyoming-vin-lookup': typeof WyomingVinLookupRoute
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
+  '/admin/growth': typeof AdminGrowthRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
   '/admin/gsc-connect': typeof AdminGscConnectRoute
   '/admin/gsc-status': typeof AdminGscStatusRoute
@@ -3183,6 +3190,7 @@ export interface FileRoutesByTo {
   '/wyoming-vin-lookup': typeof WyomingVinLookupRoute
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
+  '/admin/growth': typeof AdminGrowthRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
   '/admin/gsc-connect': typeof AdminGscConnectRoute
   '/admin/gsc-status': typeof AdminGscStatusRoute
@@ -3578,6 +3586,7 @@ export interface FileRoutesById {
   '/wyoming-vin-lookup': typeof WyomingVinLookupRoute
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
+  '/admin/growth': typeof AdminGrowthRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
   '/admin/gsc-connect': typeof AdminGscConnectRoute
   '/admin/gsc-status': typeof AdminGscStatusRoute
@@ -3974,6 +3983,7 @@ export interface FileRouteTypes {
     | '/wyoming-vin-lookup'
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
+    | '/admin/growth'
     | '/admin/gsc-callback'
     | '/admin/gsc-connect'
     | '/admin/gsc-status'
@@ -4365,6 +4375,7 @@ export interface FileRouteTypes {
     | '/wyoming-vin-lookup'
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
+    | '/admin/growth'
     | '/admin/gsc-callback'
     | '/admin/gsc-connect'
     | '/admin/gsc-status'
@@ -4759,6 +4770,7 @@ export interface FileRouteTypes {
     | '/wyoming-vin-lookup'
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
+    | '/admin/growth'
     | '/admin/gsc-callback'
     | '/admin/gsc-connect'
     | '/admin/gsc-status'
@@ -5154,6 +5166,7 @@ export interface RootRouteChildren {
   WyomingVinLookupRoute: typeof WyomingVinLookupRoute
   AdminAiOrchestratorRoute: typeof AdminAiOrchestratorRoute
   AdminBatchIndexRoute: typeof AdminBatchIndexRoute
+  AdminGrowthRoute: typeof AdminGrowthRoute
   AdminGscCallbackRoute: typeof AdminGscCallbackRoute
   AdminGscConnectRoute: typeof AdminGscConnectRoute
   AdminGscStatusRoute: typeof AdminGscStatusRoute
@@ -7332,6 +7345,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminBatchIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/growth': {
+      id: '/admin/growth'
+      path: '/admin/growth'
+      fullPath: '/admin/growth'
+      preLoaderRoute: typeof AdminGrowthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/gsc-callback': {
       id: '/admin/gsc-callback'
       path: '/admin/gsc-callback'
@@ -8387,6 +8407,7 @@ const rootRouteChildren: RootRouteChildren = {
   WyomingVinLookupRoute: WyomingVinLookupRoute,
   AdminAiOrchestratorRoute: AdminAiOrchestratorRoute,
   AdminBatchIndexRoute: AdminBatchIndexRoute,
+  AdminGrowthRoute: AdminGrowthRoute,
   AdminGscCallbackRoute: AdminGscCallbackRoute,
   AdminGscConnectRoute: AdminGscConnectRoute,
   AdminGscStatusRoute: AdminGscStatusRoute,

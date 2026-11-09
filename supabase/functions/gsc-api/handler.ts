@@ -120,6 +120,21 @@ export function createGscHandler(deps: {
         }
         return result;
       };
+      if (body.action === "growth-summary") {
+        const days = body.days ?? 30;
+        if (!Number.isInteger(days) || days < 1 || days > 90) {
+          throw new RequestError("Choose a window between 1 and 90 days.");
+        }
+        const { data, error } = await admin.rpc("admin_growth_summary", {
+          p_days: days,
+        });
+        if (error)
+          throw new RequestError(
+            "Could not load growth metrics. Please retry.",
+            500,
+          );
+        return json(data);
+      }
       if (body.action === "connection-status") {
         const token = await tokenRow();
         const { data: latest, error } = await admin
