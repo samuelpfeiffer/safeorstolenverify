@@ -1,5 +1,12 @@
 # Project rules
 
+## Owner update (Samuel, Nov 9 2026)
+- Proactively improve search visibility, LLM/GEO/AI-answer citations, Bing discovery, speed and monetization using verified evidence and measured results.
+- Preserve every verified #1 ranking. This protection applies to Google and Bing, and to the page assets and shared dependencies that affect the winning page. Do not remove an existing protection just because a later data export omits that query.
+- Tell Samuel about each newly verified #1 result, naming the exact query, platform, URL, observation date, and evidence. Historical entries below are historical evidence, not a fresh ranking check.
+- Record AI-answer citations separately from search rankings; a citation is not proof of a #1 ranking or a permanent recommendation.
+- Continue the existing requirement to check Search Console before editing public pages. Missing ranking data is not permission to edit a potentially protected page.
+
 ## Owner rules (Samuel, Oct 30 2026) — follow these before anything else
 - Never guess anything. Guessing is lying. Check the code, the live site, Search Console data or past work before stating something. If it can't be verified, say so.
 - Once a page ranks #1 on Google for a search, do not edit that page. Say that no further work is needed because it already ranks #1.
