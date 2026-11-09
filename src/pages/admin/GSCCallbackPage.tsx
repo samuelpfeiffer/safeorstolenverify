@@ -1,88 +1,67 @@
-import React, { useEffect } from 'react';
-import { useNavigate, useSearchParams } from '@/lib/router-compat';
-import { supabase } from '@/integrations/supabase/client';
-import { SEOHead } from '@/components/seo/SEOHead';
-import { Loader2 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useEffect, useRef, useState } from "react";
+import { SEOHead } from "@/components/seo/SEOHead";
+import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
+import { gscRequest, GSC_STATE_KEY } from "@/lib/gsc/client";
 
-const GSCCallbackPage: React.FC = () => {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
-  const { toast } = useToast();
-
+export default function GSCCallbackPage() {
+  const started = useRef(false);
+  const [error, setError] = useState("");
   useEffect(() => {
-    const handleCallback = async () => {
-      const code = searchParams.get('code');
-      const error = searchParams.get('error');
-
-      if (error) {
-        toast({
-          title: 'Connection Failed',
-          description: `OAuth error: ${error}`,
-          variant: 'destructive',
-        });
-        navigate('/admin/gsc-connect');
-        return;
-      }
-
-      if (!code) {
-        toast({
-          title: 'Connection Failed',
-          description: 'No authorization code received',
-          variant: 'destructive',
-        });
-        navigate('/admin/gsc-connect');
-        return;
-      }
-
-      try {
-        // Exchange code for tokens via edge function
-        const { data, error: invokeError } = await supabase.functions.invoke('gsc-api', {
-          body: { action: 'oauth-callback', code },
-        });
-
-        if (invokeError) throw invokeError;
-
-        if (data.success) {
-          toast({
-            title: 'Connected Successfully',
-            description: 'Your Google Search Console account is now connected',
-          });
-          navigate('/admin/gsc-status');
-        } else {
-          throw new Error(data.error || 'Unknown error');
-        }
-      } catch (err) {
-        console.error('OAuth callback error:', err);
-        toast({
-          title: 'Connection Failed',
-          description: err instanceof Error ? err.message : 'Failed to complete OAuth flow',
-          variant: 'destructive',
-        });
-        navigate('/admin/gsc-connect');
-      }
-    };
-
-    handleCallback();
-  }, [searchParams, navigate, toast]);
-
+    // OAuth codes are single-use. Avoid exchanging twice under StrictMode or rerenders.
+    if (started.current) return;
+    started.current = true;
+    const params = new URLSearchParams(window.location.search);
+    // Remove the authorization code before any subsequent navigation or outbound link.
+    window.history.replaceState(
+      window.history.state,
+      "",
+      "/admin/gsc-callback",
+    );
+    async function finish() {
+      const expected = sessionStorage.getItem(GSC_STATE_KEY);
+      sessionStorage.removeItem(GSC_STATE_KEY);
+      if (params.get("error"))
+        throw new Error(
+          "Google access was not approved. Start again when you are ready.",
+        );
+      const state = params.get("state");
+      const code = params.get("code");
+      if (!expected || state !== expected || !code)
+        throw new Error(
+          "This connection request is missing or expired. Start a new Google connection.",
+        );
+      await gscRequest({ action: "oauth-callback", code, state });
+      window.location.replace("/admin/gsc-status");
+    }
+    finish().catch((e) =>
+      setError(e instanceof Error ? e.message : "Unable to connect Google."),
+    );
+  }, []);
   return (
     <>
       <SEOHead
-        title="GSC OAuth Callback"
-        description="Processing Google Search Console connection."
+        title="Connect Search Console | SafeOrStolen Admin"
+        description="Completing the Google Search Console connection."
         canonical="/admin/gsc-callback"
-        noIndex={true}
+        noIndex
       />
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto text-primary" />
-          <p className="text-lg font-medium">Connecting your Google Search Console...</p>
-          <p className="text-sm text-muted-foreground">Please wait while we complete the setup</p>
-        </div>
-      </div>
+      <main className="container max-w-xl mx-auto px-4 py-20 space-y-4">
+        <h1 className="text-2xl font-bold">Connect Google Search Console</h1>
+        {error ? (
+          <>
+            <p role="alert">{error}</p>
+            <Button asChild>
+              <a href="/admin/gsc-connect">Return to connection settings</a>
+            </Button>
+          </>
+        ) : (
+          <p role="status" className="flex gap-2 items-center">
+            <Loader2 className="h-5 w-5 animate-spin" />
+            Completing your connection…
+          </p>
+        )}
+      </main>
     </>
   );
-};
-
-export default GSCCallbackPage;
+}

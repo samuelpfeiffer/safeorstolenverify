@@ -316,6 +316,8 @@ import { Route as WyomingVinLookupRouteImport } from './routes/wyoming-vin-looku
 import { Route as AdminAiOrchestratorRouteImport } from './routes/admin/ai-orchestrator'
 import { Route as AdminBatchIndexRouteImport } from './routes/admin/batch-index'
 import { Route as AdminGscCallbackRouteImport } from './routes/admin/gsc-callback'
+import { Route as AdminGscConnectRouteImport } from './routes/admin/gsc-connect'
+import { Route as AdminGscStatusRouteImport } from './routes/admin/gsc-status'
 import { Route as AdminIndexnowRouteImport } from './routes/admin/indexnow'
 import { Route as AdminMarketingRouteImport } from './routes/admin/marketing'
 import { Route as AdminReportsRouteImport } from './routes/admin/reports'
@@ -2004,6 +2006,16 @@ const AdminGscCallbackRoute = AdminGscCallbackRouteImport.update({
   path: '/admin/gsc-callback',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminGscConnectRoute = AdminGscConnectRouteImport.update({
+  id: '/admin/gsc-connect',
+  path: '/admin/gsc-connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminGscStatusRoute = AdminGscStatusRouteImport.update({
+  id: '/admin/gsc-status',
+  path: '/admin/gsc-status',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminIndexnowRoute = AdminIndexnowRouteImport.update({
   id: '/admin/indexnow',
   path: '/admin/indexnow',
@@ -2781,6 +2793,8 @@ export interface FileRoutesByFullPath {
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
+  '/admin/gsc-connect': typeof AdminGscConnectRoute
+  '/admin/gsc-status': typeof AdminGscStatusRoute
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/admin/marketing': typeof AdminMarketingRoute
   '/admin/reports': typeof AdminReportsRoute
@@ -3170,6 +3184,8 @@ export interface FileRoutesByTo {
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
+  '/admin/gsc-connect': typeof AdminGscConnectRoute
+  '/admin/gsc-status': typeof AdminGscStatusRoute
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/admin/marketing': typeof AdminMarketingRoute
   '/admin/reports': typeof AdminReportsRoute
@@ -3563,6 +3579,8 @@ export interface FileRoutesById {
   '/admin/ai-orchestrator': typeof AdminAiOrchestratorRoute
   '/admin/batch-index': typeof AdminBatchIndexRoute
   '/admin/gsc-callback': typeof AdminGscCallbackRoute
+  '/admin/gsc-connect': typeof AdminGscConnectRoute
+  '/admin/gsc-status': typeof AdminGscStatusRoute
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/admin/marketing': typeof AdminMarketingRoute
   '/admin/reports': typeof AdminReportsRoute
@@ -3957,6 +3975,8 @@ export interface FileRouteTypes {
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
     | '/admin/gsc-callback'
+    | '/admin/gsc-connect'
+    | '/admin/gsc-status'
     | '/admin/indexnow'
     | '/admin/marketing'
     | '/admin/reports'
@@ -4346,6 +4366,8 @@ export interface FileRouteTypes {
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
     | '/admin/gsc-callback'
+    | '/admin/gsc-connect'
+    | '/admin/gsc-status'
     | '/admin/indexnow'
     | '/admin/marketing'
     | '/admin/reports'
@@ -4738,6 +4760,8 @@ export interface FileRouteTypes {
     | '/admin/ai-orchestrator'
     | '/admin/batch-index'
     | '/admin/gsc-callback'
+    | '/admin/gsc-connect'
+    | '/admin/gsc-status'
     | '/admin/indexnow'
     | '/admin/marketing'
     | '/admin/reports'
@@ -5131,6 +5155,8 @@ export interface RootRouteChildren {
   AdminAiOrchestratorRoute: typeof AdminAiOrchestratorRoute
   AdminBatchIndexRoute: typeof AdminBatchIndexRoute
   AdminGscCallbackRoute: typeof AdminGscCallbackRoute
+  AdminGscConnectRoute: typeof AdminGscConnectRoute
+  AdminGscStatusRoute: typeof AdminGscStatusRoute
   AdminIndexnowRoute: typeof AdminIndexnowRoute
   AdminMarketingRoute: typeof AdminMarketingRoute
   AdminReportsRoute: typeof AdminReportsRoute
@@ -7313,6 +7339,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminGscCallbackRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/gsc-connect': {
+      id: '/admin/gsc-connect'
+      path: '/admin/gsc-connect'
+      fullPath: '/admin/gsc-connect'
+      preLoaderRoute: typeof AdminGscConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/gsc-status': {
+      id: '/admin/gsc-status'
+      path: '/admin/gsc-status'
+      fullPath: '/admin/gsc-status'
+      preLoaderRoute: typeof AdminGscStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/indexnow': {
       id: '/admin/indexnow'
       path: '/admin/indexnow'
@@ -8348,6 +8388,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdminAiOrchestratorRoute: AdminAiOrchestratorRoute,
   AdminBatchIndexRoute: AdminBatchIndexRoute,
   AdminGscCallbackRoute: AdminGscCallbackRoute,
+  AdminGscConnectRoute: AdminGscConnectRoute,
+  AdminGscStatusRoute: AdminGscStatusRoute,
   AdminIndexnowRoute: AdminIndexnowRoute,
   AdminMarketingRoute: AdminMarketingRoute,
   AdminReportsRoute: AdminReportsRoute,
