@@ -816,8 +816,6 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/imei-checker-app-download": "/app",
   "/check-iphone-stolen": "/blog/how-to-check-if-iphone-stolen",
   "/is-my-iphone-stolen": "/blog/how-to-check-if-iphone-stolen",
-  "/blog/how-to-check-if-gun-is-stolen": "/firearms-check",
-  "/is-this-gun-stolen": "/firearms-check",
   "/blog/firearm-serial-number-verification": "/firearms-check",
   "/check-gun": "/firearms-check",
   "/check-firearm": "/firearms-check",
