@@ -192,8 +192,9 @@ const coreGraphJsonLd = JSON.stringify({
         name: "Verification Plans",
         itemListElement: [
           { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "1 free verification, no credit card required" },
-          { "@type": "Offer", name: "Single check", price: "0.99", priceCurrency: "USD", description: "One check" },
-          { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types" },
+          { "@type": "Offer", name: "Starter: 2 checks", price: "0.99", priceCurrency: "USD", description: "2 Starter checks, no subscription" },
+          { "@type": "Offer", name: "Complete: 2 checks", price: "2.99", priceCurrency: "USD", description: "2 Complete checks, no subscription" },
+          { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types, up to 20 phone blacklist checks a month" },
         ],
       },
       dateModified: "2026-09-24",

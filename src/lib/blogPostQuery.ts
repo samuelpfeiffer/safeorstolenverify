@@ -13,6 +13,7 @@ export interface BlogPost {
   reading_time: number | null;
   published_at: string | null;
   created_at: string;
+  updated_at: string;
   status: string;
 }
 

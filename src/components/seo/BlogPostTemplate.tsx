@@ -47,7 +47,7 @@ export const BlogPostTemplate = ({
       "name": author
     },
     "datePublished": publishDate,
-    "dateModified": "2026-02-06",
+    "dateModified": publishDate,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": fullUrl

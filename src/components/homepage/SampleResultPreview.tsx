@@ -108,7 +108,7 @@ export const SampleResultPreview = () => {
  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3.5 rounded-xl transition-all button-glow"
  >
  <Shield className="w-4 h-4" />
- Try It Free — 2 Checks, No Credit Card
+ Try It Free — 1 Check, No Credit Card
  </Link>
  </div>
  </div>

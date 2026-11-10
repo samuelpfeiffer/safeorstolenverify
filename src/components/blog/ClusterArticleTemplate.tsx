@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { format, parse } from 'date-fns';
 import { Link } from '@/lib/router-compat';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Card } from '@/components/ui/card';
@@ -61,13 +62,15 @@ export const ClusterArticleTemplate = ({
   const siblings = getSiblings(slug, 2);
   const url = `https://safeorstolen.com/blog/${slug}`;
 
+  const reviewedDate = format(parse(lastReviewed, 'MMMM d, yyyy', new Date()), 'yyyy-MM-dd');
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: meta.title,
     description: metaDescription,
     datePublished: meta.published,
-    dateModified: meta.published,
+    dateModified: reviewedDate,
     author: {
       '@type': 'Person',
       name: 'Samuel Pfeiffer',
@@ -113,7 +116,7 @@ export const ClusterArticleTemplate = ({
         canonical={`/blog/${slug}`}
         ogType="article"
         publishedTime={meta.published}
-        modifiedTime={meta.published}
+        modifiedTime={reviewedDate}
         author="Samuel Pfeiffer"
         schemaJson={[articleSchema, faqSchema, breadcrumbSchema]}
       />
