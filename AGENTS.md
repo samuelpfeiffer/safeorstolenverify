@@ -7,6 +7,27 @@
 - Record AI-answer citations separately from search rankings; a citation is not proof of a #1 ranking or a permanent recommendation.
 - Continue the existing requirement to check Search Console before editing public pages. Missing ranking data is not permission to edit a potentially protected page.
 
+## Additional ranking protection (observed Nov 10, 2026 UTC)
+Search Console through Windsor.ai, property `sc-domain:safeorstolen.com`, finalized October 10–November 6, 2026, query + page dimensions, returned average position exactly 1 for the customer searches below. These are low-volume observations (mostly 1–6 impressions), not a guarantee of current, nationwide or permanent #1 placement. Preserve the pages under the owner's rule nonetheless; do not remove historical locks above or below.
+- `/firearms-check` — "how to run a gun serial number for free", "run gun serial number free", "free gun serial number lookup", "texas gun serial number lookup", "gun vin check free".
+- `/check-ps5` — "how to verify ps5 serial number", "check my ps5 serial number", "can i track my ps5 if it was stolen", "how to check if ps5 is console banned".
+- `/check-bike` — "bike serial number lookup free", "stolen bike serial number check free", "e bike vin lookup".
+- `/arizona-license-plate-lookup` — "free license plate lookup", "license plate look up free", "stolen plate lookup", "vehicle license plate search". Owner-identity lookup queries are not claims that the product provides owner identities.
+- `/stolen-database` — "gun serial number lookup free texas".
+- `/how-to-check-if-boat-stolen` — "how to check if a boat motor is stolen".
+- `/for-law-enforcement` — "police stolen property database".
+- `/check-if-stolen` — "how to check if something is stolen".
+- `/how-to-check-if-tools-stolen` — "stolen equipment lookup", "is this stolen", "probably stolen plasma cutter".
+- `/check-gaming-console-stolen` — "probably stolen console", "probably stolen game console".
+- `/blog/ps5-stolen-check-guide` — "how to check if ps5 is stolen".
+- `/california-license-plate-lookup` — "license plate lookup san diego", "license plate".
+- `/texas-license-plate-lookup` — "license plate lookup motorcycle".
+- `/illinois-license-plate-lookup` — "plate number search".
+- `/pennsylvania-license-plate-lookup` — "search car license plate", "is it stolen?".
+- `/check-xbox` — "serial number".
+- `/how-to-check-if-laptop-stolen`, `/serial-number-checker`, `/license-plate-lookup` also returned position-1 customer queries; their historical protections remain in force.
+- `/pricing` returned only the branded query "safe or stolen" in this export; no customer-search position-1 row was present. This permits the isolated pricing-copy correction, not changes to shared components or locked pages.
+
 ## Owner rules (Samuel, Oct 30 2026) — follow these before anything else
 - Never guess anything. Guessing is lying. Check the code, the live site, Search Console data or past work before stating something. If it can't be verified, say so.
 - Once a page ranks #1 on Google for a search, do not edit that page. Say that no further work is needed because it already ranks #1.
