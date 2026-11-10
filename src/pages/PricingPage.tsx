@@ -94,7 +94,7 @@ const PricingPage = () => {
  <section className="rounded-2xl border border-border bg-card p-6 flex flex-col">
  <h2 className="text-xl font-bold">Unlimited</h2><p className="text-4xl font-black my-4">$10<span className="text-base font-normal">/month</span></p>
  <p className="text-muted-foreground mb-4">For people checking several items.</p>
- <ul className="space-y-2 text-sm mb-6"><li>Unlimited standard checks across all categories</li><li>Verification certificates included</li><li>Up to 20 phone blacklist searches per month</li><li>Renews monthly. Cancel anytime.</li></ul>
+ <ul className="space-y-2 text-sm mb-6"><li>Unlimited standard checks across all categories</li><li>Verification certificates included</li><li>Renews monthly. Cancel anytime.</li></ul>
  <button onClick={() => handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)} disabled={loading !== null} className="mt-auto rounded-xl bg-muted px-4 py-3 font-bold disabled:opacity-60">{loading === UNLIMITED_PRICE_ID ? 'Opening checkout…' : 'Get unlimited — $10/month'}</button>
  </section>
  </div>

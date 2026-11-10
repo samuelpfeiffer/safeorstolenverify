@@ -35,7 +35,7 @@ const FAQS = [
   {
     question: 'Can SafeOrStolen tell me if a claimed phone was blacklisted?',
     answer:
-      "Yes, with the paid phone blacklist check, which searches the lost and stolen carrier blacklist by IMEI. A standard IMEI check shows the make and model, which helps confirm the claimed device matches the IMEI given. Monthly members get up to 20 blacklist checks a month.",
+      "Yes, with the paid phone blacklist check, which searches the lost and stolen carrier blacklist by IMEI. A standard IMEI check shows the make and model, which helps confirm the claimed device matches the IMEI given.",
   },
   {
     question: 'What record do we get of each check?',

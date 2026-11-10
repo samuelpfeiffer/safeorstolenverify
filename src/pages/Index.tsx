@@ -527,7 +527,6 @@ const Index = () => {
  <ul className="space-y-2 mb-6">
  {[
  'Unlimited checks',
- 'Up to 20 phone blacklist checks a month',
  'Bulk check for up to 100 items',
  'Verification certificates included',
  'Every check saved with the date',

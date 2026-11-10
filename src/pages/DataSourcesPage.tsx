@@ -36,7 +36,7 @@ const SOURCE_TABLE: { item: string; searched: string; nextStep: string; link: { 
   {
     item: 'Phones and tablets (IMEI)',
     searched:
-      'Make and model decoded from the IMEI. On a paid blacklist check, the lost/stolen carrier blacklist. Monthly members get up to 20 blacklist checks a month.',
+      'Make and model decoded from the IMEI. On a paid blacklist check, the lost/stolen carrier blacklist.',
     nextStep: 'Have the seller sign out of their account and erase the phone in front of you.',
     link: { to: '/imei-checker', label: 'IMEI checker' },
   },
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: 'Does SafeOrStolen check the phone blacklist?',
     answer:
-      'Yes, on a paid blacklist check. A paid check costs $4.99 for 1, and monthly members ($10 a month) get up to 20 blacklist checks a month. Free checks show the make and model from the IMEI plus SafeOrStolen theft reports and web results. Before you pay, have the seller sign out and erase the phone in front of you.',
+      'Yes, on a paid blacklist check. A paid check costs $4.99 for 1. Free checks show the make and model from the IMEI plus SafeOrStolen theft reports and web results. Before you pay, have the seller sign out and erase the phone in front of you.',
   },
   {
     question: 'How current are the gun theft records?',

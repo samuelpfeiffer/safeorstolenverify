@@ -193,7 +193,7 @@ export default function CompleteImeiGuide() {
                 </div>
                 <p className="text-muted-foreground mb-3">
                   SafeOrStolen checks its own theft reports, and for phones it also shows the make and model from the IMEI.
-                  To see whether a phone is on the lost/stolen carrier blacklist, you can buy a blacklist check on SafeOrStolen (monthly members get up to 20 a month) or ask the carrier. Results come back in a few seconds.
+                  To see whether a phone is on the lost/stolen carrier blacklist, you can buy a blacklist check on SafeOrStolen or ask the carrier. Results come back in a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />

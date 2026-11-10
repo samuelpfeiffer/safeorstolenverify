@@ -16,7 +16,7 @@ const FAQS = [
  {
  question: "How do I check a phone's IMEI blacklist status?",
  answer:
- 'Carriers keep the lost and stolen blacklist. On SafeOrStolen, the blacklist check is a paid add-on to the regular IMEI check: it returns whether the phone is listed as lost or stolen. Monthly members get up to 20 blacklist checks a month. The regular check covers SafeOrStolen theft reports only.',
+ 'Carriers keep the lost and stolen blacklist. On SafeOrStolen, the blacklist check is a paid add-on to the regular IMEI check: it returns whether the phone is listed as lost or stolen. The regular check covers SafeOrStolen theft reports only.',
  },
  {
  question: 'How can I check if a used phone is stolen before buying it?',

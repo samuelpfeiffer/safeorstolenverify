@@ -89,7 +89,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Can SafeOrStolen tell me if a phone is blacklisted?',
  answer:
- 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports. The lost/stolen carrier blacklist search is part of a paid check, and monthly members get up to 20 blacklist checks a month. Before you pay, have the seller sign out of their Apple or Google account in front of you.',
+ 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports. The lost/stolen carrier blacklist search is part of a paid check. Before you pay, have the seller sign out of their Apple or Google account in front of you.',
  },
  {
  question: 'What does a VIN check show?',

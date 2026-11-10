@@ -107,10 +107,6 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Up to 20 phone blacklist checks a month
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
                   IMEI, VIN, plate and serial number checks
                 </li>
                 <li className="flex items-center gap-2">

@@ -25,7 +25,7 @@ const IMEICheckerAppPage = () => {
  {
  icon: Shield,
  title: "Carrier Blacklist Check",
- description: "A paid lost/stolen carrier blacklist check is available. Monthly members get up to 20 blacklist checks a month."
+ description: "A paid lost/stolen carrier blacklist check is available."
  },
  {
  icon: Wifi,

@@ -98,7 +98,7 @@ const FAQS = [
   },
   {
     q: 'Why do most sites charge for a blacklist check?',
-    a: "Carrier blacklist data comes from paid sources, so most sites charge for each lookup. On SafeOrStolen, a blacklist check is a paid add-on; the $10 monthly plan includes up to 20 blacklist checks a month along with unlimited regular checks.",
+    a: "Carrier blacklist data comes from paid sources, so most sites charge for each lookup. On SafeOrStolen, a blacklist check is a paid add-on; the $10 monthly plan includes unlimited regular checks.",
   },
 ];
 

@@ -87,7 +87,7 @@ export default function HowToCheckPhoneStolen() {
                 <li>Every source that was searched</li>
               </ul>
             </li>
-            <li>For a lost/stolen carrier blacklist check, add the paid blacklist check (monthly members get up to 20 a month)</li>
+            <li>For a lost/stolen carrier blacklist check, add the paid blacklist check</li>
           </ol>
           <p className="bg-muted p-4 rounded-lg my-6">
             <strong>Tip:</strong> The free <Link to="/app" className="text-primary hover:underline">SafeOrStolen web app</Link> can scan the IMEI barcode on the box with your camera, so you don't have to type 15 digits at the meetup. It needs a data connection.

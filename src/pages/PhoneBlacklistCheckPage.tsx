@@ -162,7 +162,7 @@ const PhoneBlacklistCheckPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold text-lg mb-2">Carrier blacklist check (paid)</h3>
- <p className="text-muted-foreground">Searches the lost/stolen carrier blacklist for the IMEI. Monthly members get up to 20 blacklist checks a month. It doesn't show Activation Lock or Google account lock, so have the seller sign out in front of you.</p>
+ <p className="text-muted-foreground">Searches the lost/stolen carrier blacklist for the IMEI. It doesn't show Activation Lock or Google account lock, so have the seller sign out in front of you.</p>
  </CardContent>
  </Card>
  </div>
