@@ -438,7 +438,7 @@ const TopVINCheckServices2025 = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Check Any Vehicle for Free</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              SafeOrStolen offers 2 free VIN checks with no credit card required. 
+              SafeOrStolen offers 1 free VIN check with no credit card required. 
               Verify if a car, motorcycle, or RV is stolen before you buy.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

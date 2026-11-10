@@ -119,7 +119,7 @@ export const FeaturedSnippetOptimizer = () => {
  <tr>
  <td>SafeOrStolen</td>
  <td>✓ Yes</td>
- <td>2 free</td>
+ <td>1 free</td>
  <td>✓ Yes</td>
  </tr>
  </tbody>

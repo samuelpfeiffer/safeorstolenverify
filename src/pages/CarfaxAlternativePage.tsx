@@ -63,7 +63,7 @@ const CarfaxAlternativePage = () => {
                 Check Vehicle Stolen Status — Free <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-muted-foreground text-sm mt-3">2 free VIN checks · No credit card · $10/month unlimited</p>
+            <p className="text-muted-foreground text-sm mt-3">1 free VIN check · No credit card · $10/month unlimited</p>
           </div>
         </section>
 

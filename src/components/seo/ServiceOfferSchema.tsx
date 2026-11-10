@@ -12,7 +12,7 @@ export const ServiceOfferSchema = () => {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "SafeOrStolen Free Verification",
-      "description": "2 free stolen-item checks using SafeOrStolen reports, public web results, and AI analysis.",
+      "description": "First stolen-item check free, no account needed.",
       "provider": {
         "@type": "Organization",
         "name": "SafeOrStolen"

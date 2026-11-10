@@ -11,7 +11,7 @@ const NICBAlternativePage = () => {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "NICB VINCheck Alternative",
-      "description": "Comparing VIN check tools? SafeOrStolen offers 2 free VIN checks, then $0.99 for 2 checks or $10/month unlimited, across six item categories.",
+      "description": "Comparing VIN check tools? SafeOrStolen offers 1 free VIN check, then $0.99 for 2 checks or $10/month unlimited, across six item categories.",
       "url": "https://safeorstolen.com/nicb-alternative"
     },
     {

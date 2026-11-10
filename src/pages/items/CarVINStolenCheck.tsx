@@ -95,7 +95,7 @@ const CarVINStolenCheck = () => {
  },
  {
  question: "Is the VIN check really free?",
- answer: "Yes! SafeOrStolen offers 2 free VIN checks. This lets you verify any vehicle before purchase at no cost. For high-volume users (dealers, businesses), we offer affordable subscription plans."
+ answer: "Yes! SafeOrStolen offers 1 free VIN check. This lets you verify any vehicle before purchase at no cost. For high-volume users (dealers, businesses), we offer affordable subscription plans."
  }
  ]}
  ctaTitle="Don't Risk Buying a Stolen Vehicle"
