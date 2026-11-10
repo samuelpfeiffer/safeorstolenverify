@@ -84,7 +84,6 @@ const JacksonvilleLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'SafeOrStolen theft reports', desc: 'thefts owners have reported on SafeOrStolen' },
- { name: 'Public web results', desc: 'listings and posts that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'year, make, model and open safety recalls when you check the VIN' },
  { name: 'Privacy', desc: 'owner names are never shown' },
  ].map(db => (

@@ -122,7 +122,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'Your first check is free, with no account or credit card needed. After that it is $4.99 for 1 check, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
+ a: 'Your first check is free, with no account or credit card needed. After that it is $4.99 for 1 check, or $10 a month for unlimited checks, with a 30-day refund on the monthly plan.',
  },
  {
  q: 'Can a license plate lookup tell me who owns a car?',

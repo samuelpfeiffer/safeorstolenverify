@@ -56,7 +56,7 @@ const ComparisonSwappa = () => {
  {
  value: 'free',
  q: "Is SafeOrStolen free to use?",
- a: "You get 1 free check, no account or credit card needed. After that $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. Monthly members also get up to 20 phone blacklist checks a month.",
+ a: "You get 1 free check, no account or credit card needed. After that $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime.",
  },
  {
  value: 'databases',
@@ -344,7 +344,6 @@ const ComparisonSwappa = () => {
  <CardContent>
  <ul className="text-sm space-y-2">
  <li>SafeOrStolen's own theft reports, filed by owners</li>
- <li>Public web results: listings and posts that mention the number</li>
  </ul>
  </CardContent>
  </Card>

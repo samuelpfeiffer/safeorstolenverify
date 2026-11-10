@@ -100,7 +100,6 @@ const MiamiLicensePlateLookupPage = () => {
  <ul className="space-y-3 mb-6">
  {[
  { name: 'SafeOrStolen theft reports', desc: 'thefts that owners have reported on SafeOrStolen' },
- { name: 'Public web results', desc: 'listings and posts online that mention the plate or VIN' },
  { name: 'VIN decode and recalls (VIN checks)', desc: 'the year, make and model, plus any open safety recalls' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">

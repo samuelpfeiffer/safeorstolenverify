@@ -46,7 +46,6 @@ const CheckToolsPage = () => {
             columns: ['Searched', 'What you see'],
             rows: [
               ['Theft reports tool owners filed on SafeOrStolen', 'Reported stolen, possible match, or no report found in the records searched'],
-              ['Public web results that mention the serial', 'Links to the listings and posts that mention it'],
             ],
           },
         },

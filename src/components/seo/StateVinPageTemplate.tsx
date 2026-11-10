@@ -148,7 +148,6 @@ export const StateVinPageTemplate = ({
  <h2>What We Check for {state} Vehicles</h2>
  <ul>
  <li>SafeOrStolen theft reports filed by owners</li>
- <li>Public web results that mention the VIN</li>
  <li>VIN decode (year, make, model) and open safety recalls</li>
  {isArizona && <li>Arizona, Alaska and Chicago police stolen-vehicle records</li>}
  </ul>
@@ -355,7 +354,6 @@ export const StateVinPageTemplate = ({
  <div className="grid md:grid-cols-2 gap-4">
  {[
   { name: 'SafeOrStolen theft reports', desc: 'Thefts owners have reported on SafeOrStolen' },
-  { name: 'Public web results', desc: 'Listings and posts that mention the VIN' },
   { name: 'VIN decode and recalls', desc: 'Year, make and model, plus any open safety recalls' },
   ...(isArizona ? [{ name: 'Arizona law-enforcement records', desc: 'Stolen-vehicle records, updated twice a day' }] : []),
  ].map((db, idx) => (

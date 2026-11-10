@@ -37,7 +37,6 @@ const IMEICheckerAppPage = () => {
  const coverage = [
  { item: "Make and model from the IMEI", included: true },
  { item: "SafeOrStolen theft reports", included: true },
- { item: "Public web results that mention the IMEI", included: true },
  { item: "Lost/stolen carrier blacklist", included: true, note: "Paid add-on; up to 20 a month for monthly members" },
  { item: "Apple or Google account lock (Activation Lock, FRP)", included: false, note: "Ask the seller to sign out in front of you" },
  { item: "Carrier unlock or unpaid balance", included: false, note: "Ask the carrier" },

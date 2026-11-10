@@ -177,7 +177,6 @@ const StolenVerificationAppGuide = () => {
                   </h3>
                   <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
                     <li>SafeOrStolen's own theft reports, for every item</li>
-                    <li>Public web results: listings and posts mentioning the number</li>
                     <li>Guns: more than 220,000 police theft and loss reports from 33 states and DC, plus live Ohio records</li>
                     <li>Bikes: a national stolen-bicycle registry</li>
                     <li>Arizona VINs and plates: Arizona, Alaska and Chicago police stolen-vehicle records</li>

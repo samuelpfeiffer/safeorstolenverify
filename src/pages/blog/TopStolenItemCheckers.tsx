@@ -305,7 +305,6 @@ const TopStolenItemCheckers = () => {
                   <h3 className="font-bold text-sm mb-2">Sources Checked</h3>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• SafeOrStolen's own theft reports (every check)</li>
-                    <li>• Public web results: listings and posts that mention the number (every check)</li>
                     <li>• Guns: police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records</li>
                     <li>• Guns: flags serials that look altered or obliterated</li>
                     <li>• Bikes: a national stolen-bicycle registry</li>

@@ -17,7 +17,6 @@ const COVERS: string[][] = [
   ['Year, make and model decoded from the VIN', 'Yes'],
   ['Open safety recalls', 'Yes'],
   ['SafeOrStolen theft reports', 'Yes'],
-  ['Public web results that mention the VIN', 'Yes'],
   ['Arizona, Alaska and Chicago police stolen-vehicle records', 'Yes, for any VIN or plate from any state (updated daily)'],
   ['A dated record of every check, with the sources searched', 'Yes'],
 ];

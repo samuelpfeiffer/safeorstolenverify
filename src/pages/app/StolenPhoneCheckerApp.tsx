@@ -161,7 +161,6 @@ const StolenPhoneCheckerApp = () => {
  {[
  "The phone's make and model from the IMEI",
  "Theft reports owners filed on SafeOrStolen",
- "Public web results that mention the IMEI",
  "Lost and stolen carrier blacklist (paid check; up to 20 a month for monthly members)"
  ].map((item, index) => (
  <div key={index} className="flex items-center gap-3 p-3 bg-background rounded-lg">

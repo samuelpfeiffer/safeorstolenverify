@@ -80,7 +80,6 @@ const TampaLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'SafeOrStolen theft reports', desc: 'thefts owners have reported on the site' },
- { name: 'Public web results', desc: 'listings and posts that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'year, make, model and open safety recalls when you check by VIN' },
  { name: 'Privacy', desc: 'owner names are never shown' },
  ].map(db => (

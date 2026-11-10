@@ -44,7 +44,7 @@ const VsDeviceCheckCA = () => {
         "name": "Is SafeOrStolen free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You get 1 free check with a free SafeOrStolen account, no credit card. After that, $4.99 gets you 1 more check or you can pay $10 a month for unlimited checks, which includes up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime."
+          "text": "You get 1 free check with a free SafeOrStolen account, no credit card. After that, $4.99 gets you 1 more check or you can pay $10 a month for unlimited checks. You can cancel the monthly plan anytime."
         }
       }
     ]

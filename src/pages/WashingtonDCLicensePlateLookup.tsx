@@ -167,7 +167,6 @@ const WashingtonDCLicensePlateLookup = () => {
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
- <span>Public web results that mention the plate</span>
  </li>
  <li className="flex items-start gap-2">
  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />

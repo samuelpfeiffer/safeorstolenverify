@@ -57,7 +57,6 @@ export const SampleResultPreview = () => {
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
  {[
  'SafeOrStolen theft reports',
- 'Public web results (listings and posts)',
  ].map((name) => (
  <div key={name} className="flex items-center gap-2 text-xs">
  <CheckCircle className="w-3 h-3 text-secondary flex-shrink-0" />
@@ -66,7 +65,7 @@ export const SampleResultPreview = () => {
  ))}
  </div>
  <p className="text-xs text-muted-foreground/80 mt-2">
- Optional: a paid phone blacklist check (lost/stolen carrier blacklist). Gun, bike and Arizona vehicle checks search extra sources.
+ Gun, bike and vehicle checks search extra sources.
  </p>
  </div>
 

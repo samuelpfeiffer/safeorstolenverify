@@ -13,8 +13,8 @@ import { trackCheckout, trackFunnelStage } from '@/lib/funnelAnalytics';
 type Kind = 'single' | 'monthly';
 
 const OPTIONS: { kind: Kind; name: string; price: string; detail: string }[] = [
-  { kind: 'single', name: '1 verification check', price: '$4.99 once', detail: 'One item, any supported category. Includes a certificate and a phone blacklist search when checking a phone. No subscription. Applicable tax calculated at checkout.' },
-  { kind: 'monthly', name: 'Unlimited checks', price: '$10/month', detail: 'All item types. Includes certificates and up to 20 phone blacklist searches per month. Cancel anytime.' },
+  { kind: 'single', name: '1 verification check', price: '$4.99 once', detail: 'One item, any supported category. Includes a certificate. No subscription. Applicable tax calculated at checkout.' },
+  { kind: 'monthly', name: 'Unlimited checks', price: '$10/month', detail: 'All item types. Includes certificates. Cancel anytime.' },
 ];
 
 const PLAN_NAME = { single: 'One verification check' };

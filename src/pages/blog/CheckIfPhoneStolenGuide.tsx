@@ -176,7 +176,6 @@ const CheckIfPhoneStolenGuide = () => {
             {[
               { source: 'Make and model from the IMEI', what: 'Confirms the number belongs to the phone the seller says it is. A mismatch is a red flag on its own.' },
               { source: 'SafeOrStolen theft reports', what: 'Thefts reported by owners on SafeOrStolen.' },
-              { source: 'Public web results', what: 'Listings and posts that mention the IMEI, such as an owner\'s stolen-phone post.' },
               { source: 'Carrier blacklist (paid add-on)', what: 'A lost/stolen blacklist check. Monthly members get up to 20 a month.' },
               { source: 'Not covered', what: 'Police databases such as NCIC, Apple or Google account status, and pawn or insurer records. Check the account lock on the phone yourself.' },
             ].map(item => (

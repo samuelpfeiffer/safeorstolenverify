@@ -11,7 +11,6 @@ interface DataPartnerBadgesProps {
 // registry" (none exists), title history, insurer data, "1.4M+ bikes" and "50+ sources".
 const DATA_PARTNERS = [
  { name: 'SafeOrStolen theft reports', description: 'Items owners reported stolen here', icon: Shield, verified: true },
- { name: 'Public web results', description: 'Listings and posts that mention the number', icon: Globe, verified: true },
  { name: 'Police gun theft reports', description: '33 states and Washington, DC, plus live Ohio records', icon: Server, verified: true },
  { name: 'Stolen-bicycle registry', description: 'National registry, searched by frame serial', icon: Database, verified: true },
  { name: 'Vehicle records', description: 'VIN decode, safety recalls, Arizona stolen-vehicle records', icon: CheckCircle, verified: true },

@@ -94,7 +94,6 @@ const OrlandoLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'SafeOrStolen theft reports', desc: 'Thefts that owners have reported on SafeOrStolen' },
- { name: 'Public web results', desc: 'Listings and posts online that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'When you enter a VIN: year, make, model and open safety recalls' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">

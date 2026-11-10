@@ -180,7 +180,7 @@ const PricingPage = () => {
  "offers": [
  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no card required" },
  { "@type": "Offer", "name": "One verification check", "price": "4.99", "priceCurrency": "USD", "description": "One item, any supported category. One-time purchase. Applicable tax calculated at checkout." },
- { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited standard checks; up to 20 phone blacklist searches per month. Renews monthly. Applicable tax calculated at checkout." },
+ { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited standard checks. Renews monthly. Applicable tax calculated at checkout." },
  ]
  })
  }}

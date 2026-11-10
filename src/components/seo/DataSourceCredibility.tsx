@@ -175,14 +175,6 @@ export const DataSourceCredibility: React.FC = () => {
  <CheckCircle className="h-3 w-3 mr-1" />
   SafeOrStolen Reports
  </Badge>
- <Badge variant="secondary" className="bg-blue-100 text-blue-800">
- <Database className="h-3 w-3 mr-1" />
-  Public Web Results
- </Badge>
- <Badge variant="secondary" className="bg-purple-100 text-purple-800">
- <Shield className="h-3 w-3 mr-1" />
-  AI Analysis
- </Badge>
  </div>
  </CardContent>
  </Card>

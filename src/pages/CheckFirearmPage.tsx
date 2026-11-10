@@ -107,7 +107,6 @@ export default function CheckFirearmPage() {
                 { name: 'Police firearm theft and loss reports', desc: 'More than 220,000 reports from 33 states and Washington, DC, filed 1973–2017' },
                 { name: 'Live Ohio law-enforcement records', desc: 'current stolen-gun records from Ohio' },
                 { name: 'SafeOrStolen theft reports', desc: 'guns that owners have reported stolen on SafeOrStolen' },
-                { name: 'Public web results', desc: 'listings and posts online that mention the serial' },
                 { name: 'Serial number check', desc: 'flags serials that look altered, obliterated or like placeholders' },
               ].map(src => (
                 <div key={src.name} className="flex items-start gap-4 bg-card p-4 rounded-lg border">

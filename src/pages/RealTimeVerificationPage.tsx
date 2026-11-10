@@ -19,11 +19,6 @@ const FRESHNESS: { source: string; usedFor: string; howCurrent: string }[] = [
  howCurrent: 'Live. A report an owner files is searchable by the next person who checks that number.',
  },
  {
- source: 'Public web results',
- usedFor: 'Every check',
- howCurrent: 'Searched at the moment you run the check, so new listings and posts that mention the number can show up.',
- },
- {
  source: 'Ohio law-enforcement records',
  usedFor: 'Gun checks',
  howCurrent: 'Live.',

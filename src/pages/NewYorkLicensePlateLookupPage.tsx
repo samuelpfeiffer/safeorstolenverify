@@ -28,7 +28,6 @@ const NewYorkLicensePlateLookupPage = () => {
  whyCheck: "Plates come off one car and go on another easily, so check the VIN as well as the plate. New York requires plates on the front and the back; if a car has only one, or the two don't match, ask why. Then match the VIN on the dashboard, the driver's door sticker and the title, and compare the name on the title to the seller's ID.",
  benefits: [
  "Check a New York plate for SafeOrStolen theft reports",
- "Public web results that mention the plate",
  "No owner names or personal details shown",
  "Results in a few seconds, saved to your account with the date",
  "1 free check, no account needed, then $4.99 for 1 check or $10 a month unlimited"

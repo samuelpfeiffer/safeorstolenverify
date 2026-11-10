@@ -161,7 +161,6 @@ const VinCheckerApp = () => {
  "Year, make and model decoded from the VIN",
  "Open safety recalls",
  "SafeOrStolen theft reports filed by owners",
- "Public web results that mention the VIN",
  "Arizona, Alaska and Chicago police stolen-vehicle records (Arizona VINs and plates)",
  "A saved, dated record of every check"
  ].map((item, index) => (

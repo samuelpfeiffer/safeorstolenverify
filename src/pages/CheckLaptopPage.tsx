@@ -47,7 +47,6 @@ const CheckLaptopPage = () => {
             columns: ['Searched', 'What you see'],
             rows: [
               ['Theft reports owners filed on SafeOrStolen', 'Reported stolen, possible match, or no report found in the records searched'],
-              ['Public web results that mention the serial (listings, posts)', 'Links to the listings and posts that mention it'],
               ['Every source listed on the result', 'The check saved to your account with the date'],
             ],
           },

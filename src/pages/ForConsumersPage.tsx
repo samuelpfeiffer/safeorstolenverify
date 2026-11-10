@@ -40,7 +40,7 @@ const consumerFaqs: { question: string; answer: string }[] = [
  {
  question: 'How much does SafeOrStolen cost?',
  answer:
- 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or unlimited checks are $10 a month with up to 20 phone blacklist checks, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
+ 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or unlimited checks are $10 a month, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
  },
  {
  question: 'I am selling something. How can I show the buyer it is not stolen?',

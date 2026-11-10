@@ -133,7 +133,6 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
  <li>SafeOrStolen's stolen-item reports</li>
- <li>Public web results</li>
  {isArizona && <li>Arizona, Alaska and Chicago police stolen-vehicle records (updated twice a day)</li>}
  </ul>
  
@@ -255,10 +254,6 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
  <span className="text-base">SafeOrStolen's stolen-item reports</span>
- </div>
- <div className="flex gap-3 p-4 bg-background rounded-lg">
- <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
- <span className="text-base">Public web results</span>
  </div>
  <div className="flex gap-3 p-4 bg-background rounded-lg">
  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />

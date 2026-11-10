@@ -15,7 +15,6 @@ const UPDATED = 'October 7, 2026';
 
 const COVERAGE: string[][] = [
   ['SafeOrStolen theft reports', 'Reports owners file on the site. A report can include a police report number, city, state and date stolen.'],
-  ['Public web results', 'Listings and posts that mention the number, such as an owner\'s stolen post or a for-sale listing'],
   ['Police firearm theft and loss reports', 'More than 220,000 reports from 33 states and Washington, DC, filed 1973 to 2017'],
   ['Ohio law-enforcement records', 'Live stolen-gun records, searched on gun checks'],
   ['National stolen-bicycle registry', 'Searched on bike checks'],

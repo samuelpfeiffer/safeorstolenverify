@@ -163,7 +163,6 @@ export default function DataSourcesPage() {
               <h2 className="text-2xl font-bold mb-3">How fresh each source is</h2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li><strong className="text-foreground">SafeOrStolen theft reports:</strong> searchable as soon as an owner files one.</li>
-                <li><strong className="text-foreground">Public web results:</strong> searched at the moment you run the check.</li>
                 <li><strong className="text-foreground">Ohio stolen-gun records:</strong> searched live on every gun check.</li>
                 <li><strong className="text-foreground">Arizona stolen-vehicle records:</strong> updated twice a day.</li>
                 <li>

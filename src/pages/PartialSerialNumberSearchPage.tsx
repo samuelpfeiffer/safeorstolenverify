@@ -37,7 +37,6 @@ const PartialSerialNumberSearchPage = () => (
           columns: ['Source', 'Partial serial works?', 'What to do'],
           rows: [
             ['SafeOrStolen theft reports', 'Yes. Any report whose serial contains your characters, in that order, is returned.', 'Enter 5 or more characters you are sure of, then compare the full serial on the report with the item.'],
-            ['Public web results', 'Rarely. Listings and posts mention full serials, so a fragment seldom matches.', 'Try again once you have recovered more of the number.'],
             ['Stolen-bicycle registry and police firearm reports', 'No. These need the full serial.', 'Recover the full number from paperwork or the item before you rely on a no-match.'],
             ['Police', 'Sometimes. Officers can search police records the public can\'t see.', 'Call the non-emergency line if the item matters, especially for a gun.'],
           ],

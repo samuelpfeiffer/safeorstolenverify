@@ -114,7 +114,6 @@ export default function PhoneVerificationGuide() {
               <h3 className="text-2xl font-bold mb-3">What SafeOrStolen Checks</h3>
               <ul className="list-disc list-inside space-y-2 mb-6 text-lg">
                 <li><strong>Theft reports:</strong> phones that owners have reported stolen on SafeOrStolen.</li>
-                <li><strong>Public web results:</strong> listings and posts that mention the IMEI.</li>
                 <li><strong>Make and model:</strong> the phone's make and model, read from the IMEI, so you can spot a listing that doesn't match.</li>
                 <li><strong>Carrier blacklist (paid add-on):</strong> a separate lost/stolen blacklist check. Monthly members get up to 20 a month.</li>
               </ul>

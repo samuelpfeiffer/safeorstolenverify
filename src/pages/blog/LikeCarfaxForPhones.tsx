@@ -218,7 +218,6 @@ const LikeCarfaxForPhones = () => {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>SafeOrStolen theft reports</strong>: phones owners have reported stolen on the site</li>
-              <li><strong>Public web results</strong>: listings and posts that mention that IMEI</li>
               <li><strong>Make and model</strong> decoded from the IMEI, so you can match it to the phone</li>
               <li><strong>Carrier blacklist status</strong>, if you add the paid blacklist check</li>
             </ul>

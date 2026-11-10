@@ -333,7 +333,7 @@ const AppFeatures = () => {
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Monthly plan</td>
-                    <td className="p-4">$10 a month for unlimited checks (up to 20 phone blacklist checks), cancel anytime</td>
+                    <td className="p-4">$10 a month for unlimited checks, cancel anytime</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium">Verification certificate</td>

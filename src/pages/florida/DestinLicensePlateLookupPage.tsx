@@ -87,7 +87,6 @@ const DestinLicensePlateLookupPage = () => {
  <ul className="space-y-3">
  {[
  { name: 'SafeOrStolen theft reports', desc: 'Thefts that owners have reported on SafeOrStolen' },
- { name: 'Public web results', desc: 'Listings and posts online that mention the plate or VIN' },
  { name: 'VIN decode and recalls', desc: 'Year, make and model from the VIN, plus open safety recalls' },
  { name: 'Privacy', desc: 'Owner names are never shown' },
  ].map(db => (

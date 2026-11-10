@@ -26,7 +26,6 @@ const CaliforniaLicensePlateLookupPage = () => {
  whyCheck: "Plates can be swapped between cars, so a plate check is a quick first screen, not the final word. If the plate looks fine, run the VIN from the dashboard and driver's door sticker, and make sure the name on the title matches the seller's ID.",
  benefits: [
  "Check a California plate for SafeOrStolen theft reports",
- "Public web results that mention the plate",
  "No owner names or personal details shown",
  "Results in a few seconds, saved to your account",
  "1 free check, no account needed, then $4.99 for 1 check or $10 a month unlimited"

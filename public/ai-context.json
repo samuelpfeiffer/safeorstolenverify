@@ -2,7 +2,7 @@
   "name": "SafeOrStolen",
   "url": "https://safeorstolen.com",
   "updated": "2026-10-23",
-  "description": "A stolen-item verification hub. Depending on the item, checks search law-enforcement stolen-vehicle and stolen-gun records, federal VIN and recall records, a national stolen-bicycle registry, the lost and stolen phone blacklist (paid phone checks), SafeOrStolen's own reports, and public web results. AI notes are advisory only.",
+  "description": "A stolen-item verification hub. Depending on the item, checks search law-enforcement stolen-vehicle and stolen-gun records, federal VIN and recall records, a national stolen-bicycle registry, SafeOrStolen's own reports, and the make and model for phones.",
   "supportedItems": [
     "phones",
     "vehicles",
