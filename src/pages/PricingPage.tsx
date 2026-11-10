@@ -224,10 +224,10 @@ const PricingPage = () => {
 
  {/* Card 3 — Unlimited (highlighted) */}
  <div className="flex flex-col">
- <div className="self-center mb-5 text-xs font-black uppercase tracking-widest text-primary border border-primary/50 bg-primary/10 px-3 py-1 rounded-full">Most popular</div>
+ <div className="self-center mb-5 text-xs font-black uppercase tracking-widest text-primary border border-primary/50 bg-primary/10 px-3 py-1 rounded-full">For frequent checks</div>
  <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-6 flex-1">
  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-black px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1">
- <Star className="w-3 h-3 fill-current" /> 11+ checks a month
+ <Star className="w-3 h-3 fill-current" /> 21+ Starter checks a month
  </div>
  <div className="mt-2" />
  <h3 className="text-xl font-bold mb-1">Unlimited</h3>
@@ -262,7 +262,7 @@ const PricingPage = () => {
  {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go unlimited: $10/month'}
  </button>
  <p className="text-center text-xs text-muted-foreground mt-2">
- Costs less than single checks once you run 11 in a month.
+ Costs less than $0.99 Starter packs once you need 21 paid checks in a month.
  </p>
  </div>
  </div>
@@ -278,7 +278,7 @@ const PricingPage = () => {
  <tr>
  <th className="text-left p-3 border-b border-border"></th>
  <th className="text-left p-3 border-b border-border">Free</th>
- <th className="text-left p-3 border-b border-border">Single check</th>
+ <th className="text-left p-3 border-b border-border">Starter or Complete</th>
  <th className="text-left p-3 border-b border-border">Unlimited</th>
  </tr>
  </thead>
@@ -286,10 +286,11 @@ const PricingPage = () => {
  {[
  ['Price', '$0', '$0.99 or $2.99 for 2', '$10 a month'],
  ['Checks', '1 total', '2 per purchase', 'Unlimited'],
- ['Theft reports and public web results', 'Yes', 'Yes', 'Yes'],
+ ['Theft reports', 'Yes', 'Yes', 'Yes'],
+ ['Public web results', 'Yes', 'Complete only', 'Yes'],
  ['Police gun records, bike registry, VIN decode and recalls', 'Yes', 'Yes', 'Yes'],
- ['Phone carrier blacklist search', 'No', 'Yes', 'Up to 20 a month'],
- ['$1.99 verification certificate', 'Optional', 'Optional', 'Free'],
+ ['Phone carrier blacklist search', 'No', 'Complete only', 'Up to 20 a month'],
+ ['Verification certificate', 'Optional $1.99', 'Included with Complete; $1.99 with Starter', 'Free'],
  ['Refund', 'Not needed', 'One-time purchase', '30 days'],
  ].map((row) => (
  <tr key={row[0]} className="align-top">
