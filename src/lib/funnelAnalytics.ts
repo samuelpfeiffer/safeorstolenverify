@@ -38,6 +38,11 @@ export function trackFunnelStage(stage: Stage): boolean {
   return send(stage);
 }
 
+/** A visitor shared a check result. Only the share method and item type are sent, never the number. */
+export function trackShareCheck(method: "native_share" | "copy_link", itemType: string): boolean {
+  return send("share", { method, content_type: itemType || "unknown" });
+}
+
 export function trackCheckout(plan: Plan): boolean {
   const value = plan === "monthly" ? 10 : 4.99;
   return send("begin_checkout", {

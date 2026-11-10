@@ -18,7 +18,6 @@ import { StoryForm } from '@/components/stories/StoryForm';
 import { Button } from '@/components/ui/button';
 import { generateVerificationPDF } from '@/services/pdfReportService';
 import { toast } from 'sonner';
-import { supabase } from '@/integrations/supabase/client';
 import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import { CertificateOffer } from '@/components/proof/CertificateOffer';
@@ -28,6 +27,7 @@ const PHONE_BLACKLIST_FOR_SALE = false;
 import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
 import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
+import { trackShareCheck } from '@/lib/funnelAnalytics';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 // Owner rule: never show supplier names to users. Show the TYPE of source only.
@@ -172,33 +172,30 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  }
  };
 
- const handleShare = async () => {
+ // Nov 10 2026: one share action for everyone, signed in or not. The old "Share Link" button
+ // asked guests to sign in and called a backend that needs a different input, so no links were made.
+ // The link opens SafeOrStolen with this number filled in; the utm tags let GA4 count visitors from shares.
+ const handleShare = async (label: string) => {
  if (!current) return;
- if (!isAuthenticated) {
- toast.error('Sign in to create a shareable link');
- return;
- }
- try {
- const { data, error } = await supabase.functions.invoke('generate-report-link', {
- body: {
- identifier: current.identifier,
- itemType: current.itemType,
- status: current.status,
- confidence: current.confidence,
- sources: current.sources,
- },
+ const params = new URLSearchParams({
+ q: current.identifier,
+ utm_source: 'share',
+ utm_medium: 'check_link',
+ utm_campaign: 'result_share',
  });
- if (error) throw error;
- const url = data?.shareUrl || data?.url;
- if (url) {
- await navigator.clipboard.writeText(url);
- toast.success('Share link copied to clipboard');
+ const link = `https://safeorstolen.com/verify?${params.toString()}`;
+ const verdict = current.status === 'stolen' ? 'STOLEN (theft report found)' : label === 'SAFE' ? 'SAFE (no report found)' : label;
+ const text = `I checked this ${current.itemType} on SafeOrStolen: ${verdict}. Check it yourself:`;
+ try {
+ if (typeof navigator !== 'undefined' && (navigator as any).share) {
+ await (navigator as any).share({ title: 'SafeOrStolen check', text, url: link });
+ trackShareCheck('native_share', current.itemType);
  } else {
- toast.error('Share link not available');
+ await navigator.clipboard.writeText(`${text} ${link}`);
+ trackShareCheck('copy_link', current.itemType);
+ toast.success('Link copied. Paste it to the buyer or seller.');
  }
- } catch (e: any) {
- toast.error(e?.message || 'Could not create share link');
- }
+ } catch { /* user closed the share sheet */ }
  };
 
  if (!current) {
@@ -307,19 +304,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  {/* Oct 28 2026: one-tap share. The link opens SafeOrStolen with this number filled in. */}
  <button
  type="button"
- onClick={async () => {
- const link = `https://safeorstolen.com/verify?q=${encodeURIComponent(current.identifier)}`;
- const verdict = current.status === 'stolen' ? 'STOLEN (theft report found)' : tone.label === 'SAFE' ? 'SAFE (no report found)' : tone.label;
- const text = `I checked this ${current.itemType} on SafeOrStolen: ${verdict}. Check it yourself:`;
- try {
- if (typeof navigator !== 'undefined' && (navigator as any).share) {
- await (navigator as any).share({ title: 'SafeOrStolen check', text, url: link });
- } else {
- await navigator.clipboard.writeText(`${text} ${link}`);
- alert('Link copied. Paste it to the buyer or seller.');
- }
- } catch { /* user closed the share sheet */ }
- }}
+ onClick={() => handleShare(tone.label)}
  className="w-full inline-flex items-center justify-center gap-2 h-11 rounded-xl border border-border bg-card hover:bg-muted/50 text-sm font-semibold"
  >
  <Share2 className="w-4 h-4 text-primary" /> Share this check with the buyer or seller
@@ -429,7 +414,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  Download PDF Report
  </Button>
  <div className="grid grid-cols-2 gap-2">
- <Button onClick={handleShare} variant="outline" size="sm">
+ <Button onClick={() => handleShare(tone.label)} variant="outline" size="sm">
  <Share2 className="w-4 h-4 mr-2" />
  Share Link
  </Button>
