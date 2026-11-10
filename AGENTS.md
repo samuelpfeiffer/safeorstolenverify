@@ -44,6 +44,34 @@ Rule: a page is locked when it ranks #1 for a search a customer types to find a 
 - /license-plate-lookup — #1 for "stolen license plate lookup"
 If asked to edit one of these, reply that no further work is needed because the page already ranks #1. Shared components and site-wide files that change these pages also count as editing them.
 
+### Owner rule (Nov 7 2026): preserve and protect what helps and what ranks #1
+Samuel's rule: we preserve and protect the pages, content and URLs that help us and those that rank #1.
+
+What is protected:
+1. **Pages that rank #1** for a customer search (list above, plus any new one found later).
+2. **Pages that help**: any page that brings clicks, ranks in the top 10 for a customer search, or earns sign-ups or payments. Check Search Console (last 28 days) and payments before calling a page "not helping."
+3. **URLs other sites point to**: every safeorstolen.com address used in press releases (PRLog), Trustpilot, Crunchbase, YouTube descriptions, outreach emails (Gunvera, Gun Tradition) and AI guide files (llms.txt, llms-full.txt, ai.txt).
+4. **Content that works**: the titles, headings, answers and FAQs on those pages, and the shared parts that render them (header, footer, page templates, SEOHead, structured data).
+
+How to protect it:
+- **Never change, rename or delete a protected URL.** Never redirect it somewhere else. If a URL must move, ask Samuel first and use a single 301 to the closest matching page.
+- **Don't rewrite protected content.** Only fix things that are false, broken or risky (wrong prices, banned claims, dead links, display bugs), keep wording changes as small as possible, and tell Samuel what changed and why.
+- **Check before editing:** pull Search Console for the page first. If it ranks #1, leave it alone (see above). If it ranks in the top 10 or brings clicks, change it only with a clear reason and say so.
+- **Additions over replacements:** to target a new search, add a new page or a new section instead of rewriting a page that already works.
+- **Watch shared changes:** a change to the header, footer, link component, templates or redirect map touches every page, so test protected pages after it and confirm their titles, wording and links are unchanged.
+- **After any change,** re-check the protected pages are live (200), with the same title and canonical, and tell Bing (IndexNow).
+
+Pages that help right now (Search Console Oct 10 – Nov 6 2026), in addition to the #1 list above:
+- /firearms-check — biggest traffic page; top 3–5 for gun serial lookups in GA, AZ, IN, TX, TN; #1 for "how to run a gun serial number for free"
+- /check-ps5 — top 5–7 for PS5 serial number checks; second-biggest traffic
+- /app — top 8 for "app to check gun serial number"; page in press releases
+- /how-to-check-if-tools-stolen — top 3–5 for stolen tool serial lookups
+- /check-xbox, /check-if-stolen, /imei-checker, /vin-checker, /check-bike, /stolen-database
+- /blog/ps5-stolen-check-guide — #1 for "how to check if ps5 is stolen"
+- /how-to-check-if-boat-stolen — #1 for "how to check if a boat motor is stolen"
+- /arizona-license-plate-lookup, /gun-serial-number-lookup/georgia, /gun-serial-number-lookup/tennessee
+- /blog/ncic-gun-serial-number-check, /how-to-track-a-serial-number (new, answer specific searches)
+
 
 - Keep public police-search links in a shared presentation-only component; copy identifiers locally and never fetch linked search pages. This keeps external manual checks separate from verification providers.
 - Share the exact manual-search URL list with the outbound-link guard and allow only those URLs, not whole agency domains, so unrelated outbound restrictions remain intact.
