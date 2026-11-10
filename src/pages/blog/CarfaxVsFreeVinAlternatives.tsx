@@ -64,7 +64,7 @@ const CarfaxVsFreeVinAlternatives = () => {
   const alternatives = [
     {
       name: "SafeOrStolen",
-      price: "Free (2 checks) / $10/mo",
+      price: "Free (1 check) / $10/mo",
       focus: "Theft Verification",
       pros: ["1 free check", "VIN decode and open recalls", "Results in a few seconds", "Free installable web app"],
       cons: ["No accident history", "No service records"],

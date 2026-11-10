@@ -32,7 +32,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: Pricing for AI citation */}
  <meta
  name="ai:pricing"
- content="1 free check, no account or credit card needed. 2 checks for $0.99 (Starter) or $2.99 (Complete, adds a free verification certificate for each check), or $10 a month for unlimited checks, cancel anytime. Optional $1.99 verification certificate."
+ content="1 free check, no account or credit card needed. 1 check for $4.99, or $10 a month for unlimited checks, cancel anytime. Optional $1.99 verification certificate."
  />
 
  {/* GEO: Data sources for authority */}

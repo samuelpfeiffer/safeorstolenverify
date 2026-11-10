@@ -53,7 +53,7 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "How much does SafeOrStolen cost?",
-            answer: "You get 1 free check, no account or credit card needed. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
+            answer: "You get 1 free check, no account or credit card needed. After that $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale."
           }
         ]}
       />
@@ -123,7 +123,7 @@ const CheckMendHasNoApp = () => {
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">What does it cost?</td>
-                      <td className="p-4 text-sm">1 free check, then $0.99 for 2 checks or $10 a month unlimited.</td>
+                      <td className="p-4 text-sm">1 free check, then $4.99 for 1 check or $10 a month unlimited.</td>
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">What do results look like?</td>
@@ -165,7 +165,7 @@ const CheckMendHasNoApp = () => {
                 <li>CheckMEND is used through its website.</li>
                 <li>SafeOrStolen is a free installable web app, not an app-store download.</li>
                 <li>SafeOrStolen covers phones, vehicles, plates, guns, bikes and serial-numbered gear.</li>
-                <li>1 free check, then $0.99 for 2 checks or $10 a month unlimited.</li>
+                <li>1 free check, then $4.99 for 1 check or $10 a month unlimited.</li>
               </ul>
             </div>
 

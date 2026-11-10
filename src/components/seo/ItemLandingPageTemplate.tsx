@@ -219,7 +219,7 @@ export const ItemLandingPageTemplate = ({
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, guns and bikes from one search box. <a href="/verify">Run a check</a>: 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
+ <p>SafeOrStolen checks phones, vehicles, license plates, electronics, power tools, guns and bikes from one search box. <a href="/verify">Run a check</a>: 1 free check, then $4.99 for 1 check or $10 a month for unlimited checks.</p>
  </div>
  </div>
  </noscript>

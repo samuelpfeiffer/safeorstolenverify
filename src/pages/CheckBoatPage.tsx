@@ -30,7 +30,7 @@ const CheckBoatPage = () => {
  "Run a HIN through SafeOrStolen's general serial check in seconds",
  "Searches SafeOrStolen theft reports for the HIN",
  "Result saved to your account with the date; optional $1.99 verification certificate for sellers",
- "1 free check, no account needed, then $0.99 for 2 checks or $10/month unlimited",
+ "1 free check, no account needed, then $4.99 for 1 check or $10/month unlimited",
  "Same account checks phones, vehicles, electronics, power tools, firearms and bicycles"
  ],
  process: [

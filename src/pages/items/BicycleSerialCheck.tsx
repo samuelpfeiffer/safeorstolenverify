@@ -4,7 +4,7 @@ const BicycleSerialCheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen"
- metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. 1 free check, then $0.99 for 2 checks. Results in a few seconds."
+ metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. 1 free check, then $4.99 for 1 check. Results in a few seconds."
  h1="Check if Bicycle is Stolen - Serial Number Verification"
  keywords={[
  'check if bike is stolen',
@@ -22,11 +22,11 @@ const BicycleSerialCheck = () => {
  itemType="Bicycle"
  identifierType="Serial Number"
  heroBadge="Bicycle Theft Verification"
- heroSubtitle="Before buying a used bicycle or e-bike, search the serial number against our theft reports and a national stolen-bicycle registry. 1 free check, then $0.99 for 2 checks or $10 a month unlimited."
+ heroSubtitle="Before buying a used bicycle or e-bike, search the serial number against our theft reports and a national stolen-bicycle registry. 1 free check, then $4.99 for 1 check or $10 a month unlimited."
  stats={[
  { value: "2", label: "Free Checks" },
  { value: "Seconds", label: "To a Result" },
- { value: "$0.99", label: "Single Check" },
+ { value: "$4.99", label: "Single Check" },
  { value: "$10/mo", label: "Unlimited Checks" }
  ]}
  whatIsTitle="What is Bicycle Serial Number Verification?"

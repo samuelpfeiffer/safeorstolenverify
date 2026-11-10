@@ -86,7 +86,7 @@ const HowToCheckIfGunStolenPage = () => (
         'Live Ohio law-enforcement records on every check',
         'Flags altered or obliterated serial numbers',
         'Works in browser or free web app — no download required',
-        '1 free check with no credit card, then $0.99 for 2 checks or $10 a month',
+        '1 free check with no credit card, then $4.99 for 1 check or $10 a month',
       ],
       process: [
         'Ask the seller for the make, model and serial number (or a clear photo) before you meet, and scan or type it here.',

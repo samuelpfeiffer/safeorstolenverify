@@ -73,7 +73,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is the SafeOrStolen app free?',
-    a: 'Installing it is free, and your first check is free, no account or credit card needed. After that, $0.99 gets you 2 more checks, or $10 a month gets unlimited checks (with up to 20 phone blacklist checks a month). The monthly plan can be canceled anytime and has a 30-day refund.',
+    a: 'Installing it is free, and your first check is free, no account or credit card needed. After that, $4.99 gets you 1 more check, or $10 a month gets unlimited checks (with up to 20 phone blacklist checks a month). The monthly plan can be canceled anytime and has a 30-day refund.',
   },
   {
     q: 'Does the SafeOrStolen app work offline?',
@@ -107,7 +107,7 @@ export default function AppDownloadPage() {
       'Installable web app for checking whether a gun serial number, phone IMEI, VIN, license plate, bike serial or other serial number has been reported stolen.',
     offers: [
       { '@type': 'Offer', name: 'Free account', price: '0', priceCurrency: 'USD', description: '1 free check, no credit card' },
-      { '@type': 'Offer', name: 'Single check', price: '0.99', priceCurrency: 'USD' },
+      { '@type': 'Offer', name: 'Single check', price: '4.99', priceCurrency: 'USD' },
       { '@type': 'Offer', name: 'Monthly', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks, cancel anytime' },
     ],
   };

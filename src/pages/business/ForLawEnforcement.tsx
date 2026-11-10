@@ -46,7 +46,7 @@ const FAQS = [
   {
     question: 'Is there special pricing for police departments?',
     answer:
-      'There is no department plan. Every account gets 1 free check with no credit card, then $0.99 for 2 checks or $10 a month for unlimited checks, which covers the bulk check. If your agency has a purchasing requirement, email safeorstolenmail@gmail.com.',
+      'There is no department plan. Every account gets 1 free check with no credit card, then $4.99 for 1 check or $10 a month for unlimited checks, which covers the bulk check. If your agency has a purchasing requirement, email safeorstolenmail@gmail.com.',
   },
   {
     question: 'Can a SafeOrStolen result be used as evidence?',

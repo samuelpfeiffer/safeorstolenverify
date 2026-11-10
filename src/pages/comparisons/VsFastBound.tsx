@@ -128,7 +128,7 @@ const VsFastBound = () => {
  <strong>What it does:</strong> Searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web listings, and flags serials that look altered. Also checks phones, cars and bikes.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong>Advantage:</strong> No license required. 1 free check, then $0.99 for 2 checks or $10 a month. Works in any phone browser.
+                  <strong>Advantage:</strong> No license required. 1 free check, then $4.99 for 1 check or $10 a month. Works in any phone browser.
                 </p>
               </CardContent>
             </Card>

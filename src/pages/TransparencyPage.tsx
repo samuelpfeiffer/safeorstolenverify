@@ -26,7 +26,7 @@ const DO_DONT: { claim: string; answer: string }[] = [
 const FAQS = [
   {
     q: 'Is SafeOrStolen legit?',
-    a: "SafeOrStolen (safeorstolen.com) is a real company based in Peoria, Arizona, that searches theft records for a number you enter and shows you which sources it searched. A free account gets 2 checks with no credit card, so you can see how it works before paying anything.",
+    a: "SafeOrStolen (safeorstolen.com) is a real company based in Peoria, Arizona, that searches theft records for a number you enter and shows you which sources it searched. A free account gets 1 check with no credit card, so you can see how it works before paying anything.",
   },
   {
     q: 'Does SafeOrStolen work with the police?',
@@ -107,8 +107,8 @@ export default function TransparencyPage() {
               <CardContent className="p-6">
                 <h2 className="font-bold text-xl mb-3">What it costs, all of it</h2>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>Free account: 2 checks, no credit card.</li>
-                  <li>2 checks: $0.99.</li>
+                  <li>Free account: 1 check, no credit card.</li>
+                  <li>1 check: $4.99.</li>
                   <li>Monthly: $10 for unlimited checks, with up to 20 phone blacklist checks a month. Cancel anytime; 30-day refund.</li>
                   <li>Verification certificate: $1.99, free for monthly members.</li>
                   <li>The installable app at safeorstolen.com/app: free.</li>

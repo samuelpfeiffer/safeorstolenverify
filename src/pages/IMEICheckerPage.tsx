@@ -87,7 +87,7 @@ const IMEICheckerPage = () => {
         whyCheck:
           "If you buy a stolen phone, police can return it to the owner and you lose what you paid. A blacklisted phone may stop working on your carrier days after you buy it. Checking the IMEI before you meet, and matching it on the phone when you do, catches the most common problems: a stolen phone, a blocked phone, or a seller who sent you the IMEI of a different phone.",
         benefits: [
-          'Free check with a free account: 2 checks, no credit card',
+          'Free check with a free account: 1 check, no credit card',
           "Shows the phone's make and model, so a mismatched IMEI stands out",
           'Searches SafeOrStolen theft reports',
           'Paid lost/stolen blacklist check when you need it',
@@ -105,7 +105,7 @@ const IMEICheckerPage = () => {
           {
             question: 'Is there a free IMEI check?',
             answer:
-              "Yes. SafeOrStolen (safeorstolen.com/imei-checker) gives you 1 free check, no account or credit card needed. The free check shows the phone's make and model and searches SafeOrStolen theft reports. After that it's $0.99 for 2 checks or $10 a month for unlimited checks.",
+              "Yes. SafeOrStolen (safeorstolen.com/imei-checker) gives you 1 free check, no account or credit card needed. The free check shows the phone's make and model and searches SafeOrStolen theft reports. After that it's $4.99 for 1 check or $10 a month for unlimited checks.",
           },
           {
             question: 'How do I check if a phone is stolen with the IMEI?',

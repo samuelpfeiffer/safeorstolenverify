@@ -68,7 +68,7 @@ const WashingtonLicensePlateLookupPage = () => {
  "Follow up with a VIN check: year, make, model and open recalls",
  "Every source searched is listed in the result",
  "Each check saved to your account with the date",
- "1 free check, no account needed, then $0.99 for 2 checks or $10 a month"
+ "1 free check, no account needed, then $4.99 for 1 check or $10 a month"
  ],
  process: [
  "Write down the plate from both the front and the rear of the car",
@@ -96,7 +96,7 @@ const WashingtonLicensePlateLookupPage = () => {
  },
  {
  question: "Is a Washington license plate lookup free?",
- answer: "Your first check is free with a free SafeOrStolen account, no credit card. After that, a single check costs $0.99, or you can pay $10 a month for unlimited checks and cancel anytime. A plate check and a VIN check each count as one check."
+ answer: "Your first check is free with a free SafeOrStolen account, no credit card. After that, a single check costs $4.99, or you can pay $10 a month for unlimited checks and cancel anytime. A plate check and a VIN check each count as one check."
  },
  {
  question: "What if the name on the title doesn't match the seller?",

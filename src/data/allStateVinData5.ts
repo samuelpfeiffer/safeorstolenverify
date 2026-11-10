@@ -19,7 +19,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  },
  faqs: [
  { question: "Is a VIN check required in Illinois?", answer: "No law requires a buyer to run a VIN check on a private sale in Illinois. It's still worth doing: if the car turns out to be stolen, police can return it to the owner and you lose what you paid. A check before you hand over money takes a few seconds." },
- { question: "How do I check an Illinois VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/illinois-vin-lookup) and you get 1 free check, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports. After that it's $0.99 for 2 checks or $10 a month for unlimited checks." },
+ { question: "How do I check an Illinois VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/illinois-vin-lookup) and you get 1 free check, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports. After that it's $4.99 for 1 check or $10 a month for unlimited checks." },
  { question: "What is the Illinois title transfer process?", answer: "The seller signs the title over to you and fills in the odometer reading, and you take it to the Illinois Secretary of State to title and register the car. Before you sign anything, compare the VIN on the title with the VIN on the dashboard and the door sticker. They should match exactly." }
  ]
  },
@@ -81,7 +81,7 @@ export const STATE_VIN_DATA_PART5: Record<string, any> = {
  localLaws: "If a car you buy in Kansas turns out to be stolen, it goes back to the owner and you're left to recover your money from the seller. Titles and registration are handled by the Kansas Department of Revenue through county treasurer offices."
  },
  faqs: [
- { question: "How do I check a Kansas VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/kansas-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to see the year, make and model, any open recalls, and whether it appears in SafeOrStolen's theft reports or public listings. Each check is saved to your account with the date." },
+ { question: "How do I check a Kansas VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/kansas-vin-lookup) for 1 check, no credit card. Enter the 17-character VIN to see the year, make and model, any open recalls, and whether it appears in SafeOrStolen's theft reports or public listings. Each check is saved to your account with the date." },
  { question: "Does Kansas require VIN inspections?", answer: "Kansas requires a VIN inspection, usually done by the Kansas Highway Patrol, for vehicles coming from out of state and for rebuilt or salvage vehicles. The inspection confirms the VIN; it doesn't tell a private buyer whether the car was reported stolen, so check it yourself first." },
  { question: "What is title washing in Kansas?", answer: "Title washing is moving a car with a salvage or flood brand to a state where the brand gets dropped, then selling it with a clean-looking title. Get a vehicle history report for title brands, and use SafeOrStolen to search theft reports and online listings." }
  ]

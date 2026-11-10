@@ -51,7 +51,7 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 // One list for the visible FAQ and the FAQPage schema, so they always match.
 const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'How do I check if a gun is stolen by serial number?', a: "Private citizens (buyers and sellers) can directly search stolen-gun databases with SafeOrStolen. Scan the serial with your phone camera or type it in at safeorstolen.com/firearms-check. It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. Result in seconds that names every source." },
- { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $0.99 for 2 checks or $10 a month for unlimited checks.' },
+ { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $4.99 for 1 check or $10 a month for unlimited checks.' },
  { q: 'Can private citizens check if a gun is stolen online?', a: "Yes. Private citizens can now directly search stolen-gun databases with SafeOrStolen by scanning or typing the serial. It checks more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio records. First check is free. This does not include the FBI NCIC file — ask local police or use an FFL for that." },
  { q: "Can I search NCIC to check if a gun is stolen?", a: "No. NCIC, the FBI's National Crime Information Center, is open only to law enforcement, so private buyers and sellers can't search it. Instead, on SafeOrStolen anyone can search more than 220,000 police gun theft and loss reports from 33 states and DC, plus live Ohio law-enforcement records, free for the first check. If a gun matches, give the serial number to police, who can confirm it in NCIC." },
  { q: "How do I check if a gun is stolen by serial number online?", a: "Enter the serial number in the search box at safeorstolen.com/firearms-check and press search. In seconds SafeOrStolen checks it against more than 220,000 police gun theft and loss reports from 33 states and DC, live Ohio law-enforcement records and its own theft reports, and shows the reporting police department if it matches. It works for a gun from any state." },
@@ -93,7 +93,7 @@ const FirearmsCheckPage = () => {
 
  {/* VERIFY TOOL — inline if no shared component */}
  <GunVerifyTool />
- <p className="mt-4 text-sm text-muted-foreground">Result lists every source searched. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
+ <p className="mt-4 text-sm text-muted-foreground">Result lists every source searched. 1 free check, then $4.99 for 1 check or $10 a month unlimited.</p>
 
  <p className="text-muted-foreground/60 text-sm mt-4">
  1 free check · No credit card · Works for handguns, rifles, shotguns, and more

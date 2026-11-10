@@ -21,8 +21,8 @@ export const ContextualAdPlacement: React.FC<ContextualAdProps> = ({
   const adMapping = {
     pricing: {
       src: handshakeConfidence,
-      title: 'Verify from $0.99',
-      description: 'Pay $0.99 for 2 checks or $10/month unlimited. All item types, multiple sources.',
+      title: 'Verify from $4.99',
+      description: 'Pay $4.99 for 1 check or $10/month unlimited. All item types, multiple sources.',
       cta: 'View All Plans',
       link: '/pricing',
     },

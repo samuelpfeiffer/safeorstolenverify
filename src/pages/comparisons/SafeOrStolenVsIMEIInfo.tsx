@@ -22,7 +22,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           "item": {
             "@type": "Service",
             "name": "SafeOrStolen",
-            "description": "Stolen item check for phones, vehicles, bikes, guns and other serial-numbered items. 1 free check, then $0.99 for 2 checks or $10 a month.",
+            "description": "Stolen item check for phones, vehicles, bikes, guns and other serial-numbered items. 1 free check, then $4.99 for 1 check or $10 a month.",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
           }
         },
@@ -40,7 +40,7 @@ const SafeOrStolenVsIMEIInfo = () => {
   };
 
   const comparisonData = [
-    { feature: 'Pricing', safeOrStolen: '1 free check, then $0.99 for 2 checks or $10 a month unlimited', imeiInfo: 'Free basic lookup; paid extra checks', winner: 'tie' },
+    { feature: 'Pricing', safeOrStolen: '1 free check, then $4.99 for 1 check or $10 a month unlimited', imeiInfo: 'Free basic lookup; paid extra checks', winner: 'tie' },
     { feature: 'What it searches', safeOrStolen: 'SafeOrStolen theft reports', imeiInfo: 'Device information', winner: 'tie' },
     { feature: 'Item types', safeOrStolen: 'Phones, vehicles, bikes, guns, tools, electronics', imeiInfo: 'Phones only', winner: 'sos' },
     { feature: 'Phone blacklist check', safeOrStolen: 'Paid add-on; up to 20 a month on the $10 plan', imeiInfo: 'Paid', winner: 'tie' },
@@ -208,7 +208,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                          After the free checks, $0.99 for 2 checks or $10 a month
+                          After the free checks, $4.99 for 1 check or $10 a month
                         </li>
                       </ul>
                     </div>
@@ -333,7 +333,7 @@ const SafeOrStolenVsIMEIInfo = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Try SafeOrStolen Free Today</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Get 2 free stolen item checks with no credit card required. 
+              Get 1 free stolen item check with no credit card required.
               Protect yourself when buying secondhand items.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -358,7 +358,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks
+                      You get 1 free check, no account or credit card needed. After that it's $4.99 for 1 check
                       or $10 a month for unlimited checks, cancel anytime. The phone blacklist check is a paid extra;
                       monthly members get up to 20 a month.
                     </p>

@@ -11,7 +11,7 @@ const GunSerialNumberCheckGuide = () => {
  const faqs = [
  {
  q: "How do I check if a gun is stolen for free?",
- a: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports, and flags serials that look altered. A free account gets 2 checks with no credit card; results come back in a few seconds."
+ a: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports, and flags serials that look altered. A free account gets 1 check with no credit card; results come back in a few seconds."
  },
  {
  q: "Is there a national stolen gun database the public can search?",

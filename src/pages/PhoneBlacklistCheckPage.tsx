@@ -156,7 +156,7 @@ const PhoneBlacklistCheckPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold text-lg mb-2">Basic IMEI check</h3>
- <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
+ <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports. 1 free check, then $4.99 for 1 check or $10 a month unlimited.</p>
  </CardContent>
  </Card>
  <Card>

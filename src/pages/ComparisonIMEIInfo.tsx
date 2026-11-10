@@ -54,7 +54,7 @@ const ComparisonIMEIInfo = () => {
             IMEI.info looks up a phone's details. SafeOrStolen checks whether the phone has been reported stolen: it
             searches SafeOrStolen theft reports and shows the make and model from the IMEI.
             The same account checks VINs, license plates, gun serials, bikes and tools. You get 1 free check, then
-            $0.99 for 2 checks or $10 a month. There's no App Store or Google Play app; install the free web app from your
+            $4.99 for 1 check or $10 a month. There's no App Store or Google Play app; install the free web app from your
             phone's browser at safeorstolen.com/app.
           </p>
         </div>
@@ -109,7 +109,7 @@ const ComparisonIMEIInfo = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>1 free check</strong> - then $0.99 for 2 checks or $10 a month</span>
+                      <span><strong>1 free check</strong> - then $4.99 for 1 check or $10 a month</span>
                     </li>
                   </ul>
                   <Button className="w-full mt-6" size="lg" asChild>

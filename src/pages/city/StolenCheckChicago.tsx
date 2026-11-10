@@ -59,7 +59,7 @@ const StolenCheckChicago = () => {
               Chicago Stolen Item Verification
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Buying used on Facebook Marketplace or Craigslist in Chicago? Enter the VIN, IMEI or serial number and SafeOrStolen searches its theft reports in a few seconds. 2 checks free.
+              Buying used on Facebook Marketplace or Craigslist in Chicago? Enter the VIN, IMEI or serial number and SafeOrStolen searches its theft reports in a few seconds. 1 check free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

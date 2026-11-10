@@ -11,12 +11,15 @@ import { CheckCircle, Shield, ArrowRight, Download, Loader2, PartyPopper } from 
 import { PageSEO } from '@/components/seo/PageSEO';
 import { supabase } from '@/integrations/supabase/client';
 import confetti from 'canvas-confetti';
+import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { takePendingCheck, clearPendingCheck, pendingCheckUrl, type PendingCheck } from '@/lib/pendingCheck';
 
 const PaymentSuccessPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const [ready, setReady] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('Verifying payment…');
   const [paymentDetails, setPaymentDetails] = useState<{
     amount?: string;
     planName?: string;
@@ -29,20 +32,33 @@ const PaymentSuccessPage = () => {
   const [pending, setPending] = useState<PendingCheck | null>(null);
 
   useEffect(() => {
-    // Trigger confetti
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-
-    // Oct 5 2026: the old copy always said "Unlimited Plan / $0.99", whatever was bought, and
-    // the button sent guests to a dashboard they don't have. Give Stripe's webhook a few seconds
-    // to record the purchase, then offer to run the check they paid for.
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     setPending(takePendingCheck());
-    if (verificationId) setPaymentDetails({ verificationId });
-    const t = setTimeout(() => setIsLoading(false), 4000);
-    return () => clearTimeout(t);
+    async function verify(attempt = 0) {
+      if (!sessionId) { setStatusMessage('No payment session was provided.'); setIsLoading(false); return; }
+      try {
+        const { data, error } = await supabase.functions.invoke('create-checkout', { body: {
+          action: 'payment_status', sessionId, fingerprint: getOrCreateFingerprint(),
+        } });
+        if (cancelled) return;
+        if (error) throw error;
+        if (data?.ready) {
+          setReady(true); setStatusMessage('Payment confirmed. Your purchase is active.'); setIsLoading(false);
+          confetti({ particleCount: 60, spread: 60, origin: { y: 0.6 } }); return;
+        }
+        if (attempt < 5 && data?.status !== 'expired') {
+          timer = setTimeout(() => verify(attempt + 1), 2000); return;
+        }
+        setStatusMessage(data?.paid ? 'Payment received. Your check is still being activated. Please refresh shortly or contact support.' : 'Payment has not been confirmed. Return to verification to try checkout again.');
+      } catch {
+        if (!cancelled) setStatusMessage('We could not verify payment yet. Please refresh or contact support before paying again.');
+      }
+      if (!cancelled) setIsLoading(false);
+    }
+    void verify();
+    return () => { cancelled = true; if (timer) clearTimeout(timer); };
+
   }, [sessionId, verificationId]);
 
   const handleContinue = () => {
@@ -72,7 +88,7 @@ const PaymentSuccessPage = () => {
             </div>
             <CardTitle className="text-2xl font-bold text-accent flex items-center justify-center gap-2">
               <PartyPopper className="w-6 h-6" />
-              Payment Successful!
+              {ready ? 'Payment confirmed' : 'Checking your payment'}
             </CardTitle>
           </CardHeader>
 
@@ -81,6 +97,8 @@ const PaymentSuccessPage = () => {
               <div className="flex items-center justify-center py-8">
                 <Loader2 className="w-8 h-8 animate-spin text-primary" />
               </div>
+            ) : !ready ? (
+              <p className="text-center text-muted-foreground">{statusMessage}</p>
             ) : (
               <>
                 {/* Payment summary */}
@@ -109,8 +127,8 @@ const PaymentSuccessPage = () => {
                       <p className="font-medium text-sm">{pending ? 'Your full check is ready to run' : 'Your purchase is active'}</p>
                       <p className="text-xs text-muted-foreground">
                         {pending
-                          ? 'We saved the number you were checking. Run it now to get the full result, including every paid source.'
-                          : 'Run your check now. Paid checks include every source, such as the phone blacklist for IMEIs.'}
+                          ? 'We saved the number you were checking. Run it now to get the full result, with the sources searched listed in the result.'
+                          : 'Run your check now. Your result lists the sources searched for your item type.'}
                       </p>
                     </div>
                   </div>
@@ -128,7 +146,7 @@ const PaymentSuccessPage = () => {
 
                 {/* Receipt */}
                 <p className="text-center text-xs text-muted-foreground">
-                  A receipt has been sent to your email.
+                  Stripe provides your payment receipt.
                   <br />
                   Need help? <a href="/contact" className="text-primary hover:underline">Contact support</a>
                 </p>

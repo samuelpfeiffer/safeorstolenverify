@@ -1,6 +1,6 @@
 /**
  * Post Verification Upsell - Shows after free verification
- * Two options: $0.99 for 2 checks or $10/mo unlimited
+ * Two options: $4.99 for 1 check or $10/mo unlimited
  */
 
 import React, { useState } from 'react';
@@ -103,7 +103,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               </div>
               <div>
                 <h3 className="font-bold text-lg">Free checks used!</h3>
-                <p className="text-muted-foreground">Continue for $0.99 for 2 checks or go unlimited for $10/month.</p>
+                <p className="text-muted-foreground">Continue for $4.99 for 1 check or go unlimited for $10/month.</p>
               </div>
             </div>
 
@@ -167,7 +167,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
               ) : (
                 <>
                   <CreditCard className="w-5 h-5 mr-2" />
-                  Buy This Check — $0.99
+                  Buy This Check — $4.99
                 </>
               )}
             </Button>
@@ -228,7 +228,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
             </Button>
             
             <div className="text-center">
-              <p className="text-xs text-muted-foreground">Or $0.99 per single check</p>
+              <p className="text-xs text-muted-foreground">Or $4.99 per single check</p>
               <p className="text-xs text-accent font-medium">30-day money-back guarantee</p>
             </div>
 

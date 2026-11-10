@@ -312,7 +312,7 @@ export const createFAQSchema = () => ({
  "name": "How do I check if something is stolen before I buy it?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. 1 free check, then $0.99 for 2 checks or $10/month unlimited."
+ "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. 1 free check, then $4.99 for 1 check or $10/month unlimited."
  }
  },
  {
@@ -320,7 +320,7 @@ export const createFAQSchema = () => ({
  "name": "Can I check if a phone is stolen for free?",
  "acceptedAnswer": {
  "@type": "Answer", 
- "text": "SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from our community reports and AI analysis."
+ "text": "SafeOrStolen offers 1 free check, then $4.99 for 1 check or $10/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from our community reports and AI analysis."
  }
  },
  {
@@ -336,7 +336,7 @@ export const createFAQSchema = () => ({
  "name": "How do I avoid buying stolen goods on Facebook Marketplace?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it on SafeOrStolen.com ($0.99 for 2 checks or $10/month unlimited). 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues."
+ "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it on SafeOrStolen.com ($4.99 for 1 check or $10/month unlimited). 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues."
  }
  },
  {

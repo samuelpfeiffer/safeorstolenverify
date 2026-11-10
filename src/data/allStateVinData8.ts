@@ -18,7 +18,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In Nevada, a car that turns out to be stolen goes back to its owner even if you paid for it in good faith, and you'd have to pursue the seller for your money. Titles and registration go through the Nevada DMV, which also inspects the VIN on vehicles coming from out of state."
  },
  faqs: [
- { question: "How do I check a Nevada VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/nevada-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to see the year, make and model, open recalls, and whether it appears in SafeOrStolen's theft reports or public listings. On your phone, use the free installable web app at safeorstolen.com/app." },
+ { question: "How do I check a Nevada VIN for free?", answer: "Create a free SafeOrStolen account (safeorstolen.com/nevada-vin-lookup) for 1 check, no credit card. Enter the 17-character VIN to see the year, make and model, open recalls, and whether it appears in SafeOrStolen's theft reports or public listings. On your phone, use the free installable web app at safeorstolen.com/app." },
  { question: "Does Nevada require VIN inspections?", answer: "Nevada requires a VIN inspection for vehicles coming from out of state before they're registered. The inspection confirms that the number on the car matches the paperwork. It doesn't tell a private buyer whether the car was reported stolen, so search the VIN yourself before paying." },
  { question: "What is Nevada's title transfer process?", answer: "The seller signs the title over to you, you both complete a bill of sale, and you take it to the Nevada DMV to register the car, with an emissions test if the county requires one. Before you sign, make sure the VIN on the title matches the dashboard and door sticker." }
  ]
@@ -60,7 +60,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In New Jersey, a stolen car goes back to its owner even if you bought it without knowing, and you're left to recover your money from the seller. Title transfers go through the NJ Motor Vehicle Commission."
  },
  faqs: [
- { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports. After that, it's $0.99 for 2 checks or $10 a month for unlimited checks." },
+ { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 1 check, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports. After that, it's $4.99 for 1 check or $10 a month for unlimited checks." },
  { question: "Does New Jersey require VIN inspections?", answer: "New Jersey can require a VIN inspection at a Motor Vehicle Commission facility for some vehicles coming from out of state. That inspection confirms the number matches the paperwork. It isn't a stolen check for a private buyer, so search the VIN yourself before handing over money." },
  { question: "What is New Jersey's title transfer process?", answer: "The seller signs the back of the title and fills in the sale price and odometer reading, and you take it to the NJ Motor Vehicle Commission with proof of insurance to title and register the car. Before signing, confirm the VIN on the title matches the vehicle." }
  ]

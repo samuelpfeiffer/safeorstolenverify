@@ -16,7 +16,7 @@ const VsBikeIndex = () => {
     { feature: 'License Plate Lookup', sos: true, bikeindex: false },
     { feature: 'Marketplace URL Paste', sos: true, bikeindex: false },
     { feature: 'Police Partnerships', sos: false, bikeindex: true },
-    { feature: 'Free Searches', sos: '2 free', bikeindex: 'Free' },
+    { feature: 'Free Searches', sos: '1 free', bikeindex: 'Free' },
     { feature: 'Sources Searched', sos: 'Bike registry, own reports, web', bikeindex: 'User reports' },
   ];
 
@@ -45,7 +45,7 @@ const VsBikeIndex = () => {
         "name": "Is Bike Index really free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Bike Index is free and open source, but it only covers bicycles. SafeOrStolen gives you 1 free check across all item types (bikes, phones, cars, electronics, firearms), then $0.99 for 2 checks or $10 a month for unlimited checks."
+          "text": "Yes, Bike Index is free and open source, but it only covers bicycles. SafeOrStolen gives you 1 free check across all item types (bikes, phones, cars, electronics, firearms), then $4.99 for 1 check or $10 a month for unlimited checks."
         }
       },
       {
@@ -342,7 +342,7 @@ const VsBikeIndex = () => {
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                       <div>
                         <strong>Budget is critical:</strong> Bike Index is free.
-                        SafeOrStolen gives you 1 free check, then $0.99 for 2 checks or $10 a month.
+                        SafeOrStolen gives you 1 free check, then $4.99 for 1 check or $10 a month.
                       </div>
                     </li>
                   </ul>

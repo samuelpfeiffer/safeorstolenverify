@@ -193,7 +193,7 @@ const FacebookMarketplaceScamsGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: Your Defense Against Marketplace Fraud</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. A free account comes with 1 free check, no credit card; after that it's $0.99 for 2 checks or $10 a month for unlimited checks. Results come back in a few seconds, and the free web app at safeorstolen.com/app lets you scan a barcode or serial label with your camera at the meetup.
+            Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place. A free account comes with 1 free check, no credit card; after that it's $4.99 for 1 check or $10 a month for unlimited checks. Results come back in a few seconds, and the free web app at safeorstolen.com/app lets you scan a barcode or serial label with your camera at the meetup.
           </p>
 
           {/* Final CTA */}

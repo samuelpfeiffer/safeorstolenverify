@@ -35,7 +35,7 @@ const VINCheckerPage = () => {
  'reseller vehicle verification'
  ]}
  content={{
- intro: "Enter a 17-character VIN to check a car, truck, motorcycle or RV. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for the VIN. It also searches state criminal justice stolen-vehicle records live. Results come back in a few seconds. You get 1 free check, no account needed (no card), then $0.99 for 2 checks or $10 a month unlimited. No VIN yet? You can also <a href='/license-plate-lookup'>check if a car is stolen by license plate</a>. For the full walkthrough, read <a href='/how-to-check-if-car-stolen'>how to check if a car is stolen</a>.",
+ intro: "Enter a 17-character VIN to check a car, truck, motorcycle or RV. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web listings for the VIN. It also searches state criminal justice stolen-vehicle records live. Results come back in a few seconds. You get 1 free check, no account needed (no card), then $4.99 for 1 check or $10 a month unlimited. No VIN yet? You can also <a href='/license-plate-lookup'>check if a car is stolen by license plate</a>. For the full walkthrough, read <a href='/how-to-check-if-car-stolen'>how to check if a car is stolen</a>.",
  whatIs: "A VIN (Vehicle Identification Number) is the 17-character code that identifies a vehicle built since 1981. SafeOrStolen's VIN checker decodes that code so you can confirm the car in front of you is the model the VIN belongs to, lists any open safety recalls, and searches SafeOrStolen's own theft reports (filed by owners on the site) such as listings and posts that mention the VIN. Use it as the first step in a used-car check, alongside a vehicle history report and a call to your local police non-emergency line.",
  howItWorks: "Type or paste the VIN. SafeOrStolen decodes it, pulls open recalls, searches its own theft reports for the VIN, and, for Arizona VINs, searches Arizona, Alaska and Chicago police stolen-vehicle records, which are updated daily. The result reads \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date, and you can add a $1.99 verification certificate, a dated record with its own link showing you checked before the sale.",
  whyCheck: "A stolen vehicle can be taken back by police and returned to its owner even after you pay for it, leaving you without the car or your money. Checking before you pay, and keeping a dated record that you checked, protects you as a buyer and lets an honest seller show the car checked clean. Not every theft is reported and no single check covers every database, so also follow the steps in our <a href='/how-to-check-if-car-stolen'>stolen car guide</a> on a big purchase.",
@@ -67,7 +67,7 @@ const VINCheckerPage = () => {
  },
  {
  question: "Is there a free stolen vehicle check?",
- answer: "Yes. SafeOrStolen includes 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks across every item type, cancel anytime."
+ answer: "Yes. SafeOrStolen includes 1 free check, no account or credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks across every item type, cancel anytime."
  },
  {
  question: "How is SafeOrStolen different from a vehicle history report?",

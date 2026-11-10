@@ -87,7 +87,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `How much does the ${stateData.name} license plate lookup cost?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports${isArizona ? ', and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. Owner names are never shown.`
+ "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $4.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports${isArizona ? ', and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. Owner names are never shown.`
  }
  },
  {
@@ -160,7 +160,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  
  <h2>Frequently Asked Questions</h2>
  <h3>How much does the {stateData.name} license plate lookup cost?</h3>
- <p>1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
+ <p>1 free check, no account needed, then $4.99 for 1 check or $10 a month for unlimited checks.</p>
  <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
  <p>Yes. The plate lookup works the same in {stateData.majorCities.join(', ')} and anywhere else in {stateData.name}.</p>
  <h3>What is the most accurate license plate search in {stateData.name}?</h3>
@@ -181,7 +181,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <li><a href="/pricing">Pricing - $10/mo Unlimited</a></li>
  </ul>
  
- <p>Results come back in a few seconds and are saved to your account with the date. <a href="/verify">Verify now</a> — 1 free check, then $0.99 for 2 checks or $10/month unlimited.</p>
+ <p>Results come back in a few seconds and are saved to your account with the date. <a href="/verify">Verify now</a> — 1 free check, then $4.99 for 1 check or $10/month unlimited.</p>
  </div>
  </div>
  </noscript>
@@ -423,7 +423,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  How much does the {stateData.name} license plate lookup cost?
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
- You get 1 free check, no account needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. 
+ You get 1 free check, no account needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks.
  Each {stateData.abbrev} plate check searches SafeOrStolen theft reports{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}.
  </AccordionContent>
  </AccordionItem>

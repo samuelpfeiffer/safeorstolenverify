@@ -107,7 +107,7 @@ const SerialNumberCheckerPage = () => {
  },
  {
  question: "Is the serial number search really free?",
- answer: "Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $0.99 for 2 checks, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
+ answer: "Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $4.99 for 1 check, or $10 a month for unlimited checks (phone blacklist searches are limited to 20 a month)."
  },
  {
  question: "Is there a national database of stolen serial numbers?",

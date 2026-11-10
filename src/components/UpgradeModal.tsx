@@ -27,9 +27,9 @@ const PLANS = [
     id: 'payPerCheck',
     icon: <CreditCard className="w-5 h-5" />,
     label: 'Pay Per Check',
-    price: '$0.99',
+    price: '$4.99',
     desc: 'One-time payment. No subscription.',
-    cta: 'Buy This Check — $0.99',
+    cta: 'Buy This Check — $4.99',
     priceId: PAY_PER_CHECK_PRICE_ID,
     planName: 'Pay Per Check',
     isSub: false,
@@ -115,7 +115,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
           <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Continue for $0.99 for 2 checks or go unlimited for $10/month.<br />
+            Continue for $4.99 for 1 check or go unlimited for $10/month.<br />
             Cancel anytime · 30-day money-back guarantee.
           </p>
         </div>

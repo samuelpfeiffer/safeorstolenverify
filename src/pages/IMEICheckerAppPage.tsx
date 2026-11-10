@@ -60,7 +60,7 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is the IMEI checker app free?",
- "acceptedAnswer": { "@type": "Answer", "text": "Installing the SafeOrStolen web app is free, and your first check is free, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Installing the SafeOrStolen web app is free, and your first check is free, no account or credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The carrier blacklist check is a paid add-on; monthly members get up to 20 a month." }
  }
  ]
  };
@@ -226,7 +226,7 @@ const IMEICheckerAppPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Get the IMEI Checker App</h2>
  <p className="text-xl text-muted-foreground mb-8">
- The same app also checks vehicles, plates, electronics, power tools, firearms and bicycles. Installing it is free, and a free account includes 2 checks.
+ The same app also checks vehicles, plates, electronics, power tools, firearms and bicycles. Installing it is free, and a free account includes 1 check.
  </p>
  <Button asChild size="lg" className="gap-2">
  <Link to="/app">

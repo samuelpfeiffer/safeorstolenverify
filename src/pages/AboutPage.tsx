@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: 'Is SafeOrStolen free?',
-    a: 'A free account comes with 2 checks and needs no credit card. After that, 2 checks cost $0.99 (Starter) or $2.99 (Complete, with the phone blacklist search), or $10 a month gets unlimited checks with up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime, and it has a 30-day refund.',
+    a: 'A free account comes with 1 check and needs no credit card. After that, 1 check costs $4.99, or $10 a month gets unlimited checks with up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime, and it has a 30-day refund.',
   },
   {
     q: 'Does SafeOrStolen search police records?',
@@ -182,8 +182,8 @@ const AboutPage = () => {
             <Card className="p-6">
               <h2 className="text-xl font-bold mb-3 text-foreground">What it costs</h2>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><strong className="text-foreground">Free account:</strong> 2 checks, no credit card.</li>
-                <li><strong className="text-foreground">2 checks:</strong> $0.99.</li>
+                <li><strong className="text-foreground">Free account:</strong> 1 check, no credit card.</li>
+                <li><strong className="text-foreground">1 check:</strong> $4.99.</li>
                 <li>
                   <strong className="text-foreground">Monthly:</strong> $10 for unlimited checks (up to 20 phone blacklist checks a
                   month). Cancel anytime, 30-day refund.

@@ -41,7 +41,7 @@ const FreeStolenVehicleCheckPage = () => {
         faqs: [
           {
             question: "What's the cheapest way to check if a vehicle is stolen?",
-            answer: "SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. Far cheaper than losing thousands on a stolen vehicle."
+            answer: "SafeOrStolen offers 1 free check, then $4.99 for 1 check or $10/month unlimited. Far cheaper than losing thousands on a stolen vehicle."
           },
           {
             question: "How is this different from NICB VINCheck?",

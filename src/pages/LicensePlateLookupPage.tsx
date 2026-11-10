@@ -47,7 +47,7 @@ const faqs = [
   {
     question: 'Is there a free license plate lookup?',
     answer:
-      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 1 free plate check with no account or credit card needed. Each check searches SafeOrStolen's theft reports for the plate, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks.",
+      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 1 free plate check with no account or credit card needed. Each check searches SafeOrStolen's theft reports for the plate, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. After that $4.99 gets you 1 more check, or $10 a month for unlimited checks.",
   },
   {
     question: 'Can I find out who owns a car from the license plate?',

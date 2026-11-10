@@ -29,7 +29,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'Your first check is free, with no account or credit card needed. After that, $0.99 gets you 2 more checks, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
+    a: 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
   },
 ];
 
@@ -41,7 +41,7 @@ const ROWS: [string, boolean | string, boolean | string][] = [
   ['Year, make, and model decoded from the VIN', false, true],
   ['Open safety recalls for the vehicle', false, true],
   ['Check saved to your account with the date', false, true],
-  ['Cost', 'Free', '1 free check, then $0.99 or $10/mo'],
+  ['Cost', 'Free', '1 free check, then $4.99 or $10/mo'],
 ];
 
 const TheftAZAlternativePage = () => {

@@ -45,7 +45,7 @@ const SafeOrStolenVsSwappa = () => {
 
   const comparisonData = [
     { feature: 'Primary Purpose', safeOrStolen: 'Stolen item verification', swappa: 'Device marketplace', winner: 'tie' },
-    { feature: 'Free Searches', safeOrStolen: '2 free (standalone)', swappa: 'Only for listings', winner: 'sos' },
+    { feature: 'Free Searches', safeOrStolen: '1 free (standalone)', swappa: 'Only for listings', winner: 'sos' },
     { feature: 'What a phone check searches', safeOrStolen: 'SafeOrStolen theft reports and web results; paid carrier blacklist check', swappa: 'Phone-focused checks', winner: 'tie' },
     { feature: 'Check Without Buying', safeOrStolen: 'Yes', swappa: 'No', winner: 'sos' },
     { feature: 'VIN Check (Cars)', safeOrStolen: 'Yes', swappa: 'No', winner: 'sos' },

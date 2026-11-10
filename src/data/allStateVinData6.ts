@@ -77,7 +77,7 @@ export const STATE_VIN_DATA_PART6: Record<string, any> = {
  localLaws: "Massachusetts General Laws chapter 266, section 60 covers receiving stolen property, with heavier penalties above a value threshold. A stolen car can be taken back for its owner even if you paid. The Massachusetts RMV handles titles and registration."
  },
  faqs: [
- { question: "How do I check a Massachusetts VIN for free?", answer: "Sign up for a free SafeOrStolen account (safeorstolen.com) and you get 1 free check without a credit card. Enter the 17-character VIN; in a few seconds you see the decoded vehicle, open recalls, and any match in SafeOrStolen theft reports. After that it's $0.99 for 2 checks or $10 a month for unlimited." },
+ { question: "How do I check a Massachusetts VIN for free?", answer: "Sign up for a free SafeOrStolen account (safeorstolen.com) and you get 1 free check without a credit card. Enter the 17-character VIN; in a few seconds you see the decoded vehicle, open recalls, and any match in SafeOrStolen theft reports. After that it's $4.99 for 1 check or $10 a month for unlimited." },
  { question: "Is a VIN check required in Massachusetts?", answer: "Massachusetts does not require buyers to run a VIN check in a private sale. The RMV handles the title transfer afterwards, but by then you have already paid. Run the VIN, match it to the dash and door, and check the seller's ID against the title first." },
  { question: "Does the Massachusetts lemon law protect me if the car is stolen?", answer: "No. Lemon laws deal with defects, not ownership. If the car was stolen, it can be returned to its owner and your remedy is against the seller. That's why it pays to check the VIN and confirm the seller actually owns the car before you buy." }
  ]

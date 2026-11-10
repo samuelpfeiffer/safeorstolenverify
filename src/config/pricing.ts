@@ -11,9 +11,9 @@ export const PRICING_COPY = {
   },
   payPerCheck: {
     label: 'Pay Per Check',
-    price: '$0.99',
-    unit: 'for 2 checks',
-    tagline: '$0.99 for 2 checks',
+    price: '$4.99',
+    unit: 'for 1 check',
+    tagline: '$4.99 for 1 check',
   },
   unlimited: {
     label: 'Unlimited',
@@ -24,7 +24,7 @@ export const PRICING_COPY = {
 } as const;
 
 export const PRICING_SUMMARY_SHORT =
-  '1 free, then $0.99 for 2 checks or $10/month unlimited';
+  '1 free, then $4.99 for 1 check or $10/month unlimited';
 
 export const PRICING_SUMMARY_LONG =
-  'Free tier: 1 verification, no account or credit card. Single: $0.99 for 2 checks. Unlimited: $10/month with mobile app.';
+  'Free tier: 1 verification, no account or credit card. Single: $4.99 for 1 check. Unlimited: $10/month with mobile app.';

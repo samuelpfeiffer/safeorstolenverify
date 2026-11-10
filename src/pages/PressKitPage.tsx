@@ -28,7 +28,7 @@ const facts: [string, string][] = [
   ['Website', 'safeorstolen.com'],
   ['What it does', 'Checks whether an IMEI, VIN, plate or serial number has been reported stolen in the records it searches'],
   ['Items covered', 'Phones, vehicles, license plates, guns, bikes and serial-numbered items such as laptops, tools and cameras'],
-  ['Price', '1 free check; $0.99 for 2 checks; $10 a month unlimited'],
+  ['Price', '1 free check; $4.99 for 1 check; $10 a month unlimited'],
   ['App', 'Free installable web app at safeorstolen.com/app (no App Store or Google Play app)'],
   ['Press contact', PRESS_EMAIL],
 ];

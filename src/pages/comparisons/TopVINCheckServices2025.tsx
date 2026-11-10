@@ -20,7 +20,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Service",
           "name": "SafeOrStolen",
-          "description": "Best for checking whether a vehicle is reported stolen: 1 free check, then $0.99 for 2 checks or $10 a month unlimited"
+          "description": "Best for checking whether a vehicle is reported stolen: 1 free check, then $4.99 for 1 check or $10 a month unlimited"
         }
       },
       {
@@ -61,7 +61,7 @@ const TopVINCheckServices2025 = () => {
       badge: 'Best for Stolen Checks',
       badgeColor: 'bg-green-500',
       bestFor: 'Checking whether a car is reported stolen before you meet the seller',
-      price: '2 free, then $0.99 for 2 checks',
+      price: '1 free, then $4.99 for 1 check',
       fullReportPrice: '$10 a month for unlimited checks',
       stolenCheck: true,
       titleCheck: false,
@@ -225,7 +225,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">2 free, then $0.99 for 2 checks</p>
+                    <p className="text-xs text-muted-foreground mt-2">1 free, then $4.99 for 1 check</p>
                   </CardContent>
                 </Card>
                 <Card>

@@ -44,7 +44,7 @@ const VsDeviceCheckCA = () => {
         "name": "Is SafeOrStolen free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You get 1 free check with a free SafeOrStolen account, no credit card. After that, $0.99 gets you 2 more checks or you can pay $10 a month for unlimited checks, which includes up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime."
+          "text": "You get 1 free check with a free SafeOrStolen account, no credit card. After that, $4.99 gets you 1 more check or you can pay $10 a month for unlimited checks, which includes up to 20 phone blacklist checks a month. You can cancel the monthly plan anytime."
         }
       }
     ]
@@ -177,7 +177,7 @@ const VsDeviceCheckCA = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Sign up free, no credit card. After that, $0.99 for 2 checks or $10 a month for unlimited checks.
+                  Sign up free, no credit card. After that, $4.99 for 1 check or $10 a month for unlimited checks.
                 </p>
               </CardContent>
             </Card>

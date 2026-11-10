@@ -38,7 +38,7 @@ const CHECKER_TYPES: CheckerType[] = [
       'A dated record of every check, saved to your account',
     ],
     limits: [
-      'Only 1 free check; after that $0.99 for 2 checks or $10 a month',
+      'Only 1 free check; after that $4.99 for 1 check or $10 a month',
       'Does not show Apple or Google account lock status',
     ],
     cta: '/verify',

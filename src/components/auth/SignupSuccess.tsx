@@ -43,12 +43,12 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
             <div>
               <h3 className="font-semibold text-lg">You have 1 free check</h3>
               <Badge variant="secondary" className="bg-sos-lime/20 text-sos-lime border-sos-lime/30">
-                $0.99 for 2 checks or $10/mo Unlimited
+                $4.99 for 1 check or $10/mo Unlimited
               </Badge>
             </div>
           </div>
           <p className="text-sm text-muted-foreground">
-            Your first check is free. After that, $0.99 gets you 2 more checks, or $10 a month gets you unlimited checks across all item types. Cancel anytime.
+            Your first check is free. After that, $4.99 gets you 1 more check, or $10 a month gets you unlimited checks across all item types. Cancel anytime.
           </p>
         </div>
 

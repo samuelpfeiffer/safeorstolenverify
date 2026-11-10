@@ -3,15 +3,15 @@
  * 
  * THREE-TIER MODEL (March 2026):
  *   Free  — 1 check, no credit card
- *   $0.99 — 2 checks, one-time, no account required
+ *   $4.99 — 1 check, one-time, no account required
  *   $10/month — unlimited everything + seller badges
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
 // ── Stripe IDs ──────────────────────────────────────────────
-export const PAY_PER_CHECK_PRICE_ID  = 'price_1T8uNDGxnZLw8J7OrBKrbePR';
-export const PAY_PER_CHECK_PRODUCT_ID = 'prod_U78eaGwFkIA2Ic';
+export const PAY_PER_CHECK_PRICE_ID  = 'price_1UaFfUGxnZLw8J7OhpJBpwCB';
+export const PAY_PER_CHECK_PRODUCT_ID = 'prod_VbSaN1cmwstMFI';
 
 export const UNLIMITED_PRICE_ID     = 'price_1T8uToGxnZLw8J7O6GcOuV1w';
 export const UNLIMITED_PRODUCT_ID   = 'prod_U78lRFEHuOd01t';
@@ -48,15 +48,15 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
 
   payPerCheck: {
     name: "Pay Per Check",
-    price: 99,
-    priceDisplay: "$0.99",
+    price: 499,
+    priceDisplay: "$4.99",
     interval: "once",
-    monthlyQuota: 2,
+    monthlyQuota: 1,
     stripePriceId: PAY_PER_CHECK_PRICE_ID,
     stripeProductId: PAY_PER_CHECK_PRODUCT_ID,
     tier: "payPerCheck",
     features: [
-      "2 verification checks",
+      "1 verification check",
       "No account needed",
       "Instant results",
       "PDF verification receipt",

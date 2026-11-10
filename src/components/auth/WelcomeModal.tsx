@@ -164,7 +164,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
               className="flex-1"
               size="lg"
             >
-              View Plans — From $0.99
+              View Plans — From $4.99
             </Button>
           </div>
 
