@@ -19,10 +19,10 @@ const OPTIONS: { kind: Kind; name: string; price: string; detail: string; recomm
     kind: 'complete',
     name: 'Complete',
     price: '$2.99',
-    detail: '2 checks. Everything in Starter, plus phone blacklist, online listings and a free certificate.',
+    detail: '2 checks, plus a free verification certificate for each.',
     recommended: true,
   },
-  { kind: 'monthly', name: 'Unlimited', price: '$10/month', detail: 'Unlimited checks, billed monthly. Includes 20 phone blacklist searches a month.' },
+  { kind: 'monthly', name: 'Unlimited', price: '$10/month', detail: 'Unlimited checks, billed monthly.' },
 ];
 
 // Nov 6 2026 (owner approved): on gun checks, the $4.99 Gun Buyer's Check takes the place of the $2.99

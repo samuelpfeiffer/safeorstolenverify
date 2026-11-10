@@ -23,6 +23,8 @@ import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclo
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import { CertificateOffer } from '@/components/proof/CertificateOffer';
 import { PhoneBlacklistOffer } from '@/components/verify-chat/PhoneBlacklistOffer';
+
+const PHONE_BLACKLIST_FOR_SALE = false;
 import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
 import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
@@ -35,7 +37,7 @@ const SOURCE_LABELS: Record<string, string> = {
   hotgunz: 'Stolen-firearm database',
   firearm_verification: 'Ohio law-enforcement stolen-gun records',
   police_theft_records: 'Police theft records (33 states and DC)',
-  imei_verification: 'Lost & stolen phone blacklist',
+  imei_verification: 'IMEI check (make and model)',
   vehicle_verification: 'VIN decode, recalls and Arizona law-enforcement records',
   web_scraper: 'Public web search',
   ai_analysis: 'Automated risk review',
@@ -353,8 +355,10 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  />
  )}
 
- {/* Free phone check: offer the paid blacklist search right here */}
- {current.status !== 'stolen' &&
+ {/* Free phone check: offer the paid blacklist search right here.
+     Nov 10 2026: paused (PHONE_BLACKLIST_FOR_SALE = false) — the blacklist service has not returned an answer
+     since Oct 21 2026, so we don't sell it until it is confirmed working again. Set to true to bring it back. */}
+ {PHONE_BLACKLIST_FOR_SALE && current.status !== 'stolen' &&
  current.providers?.some(
  (p) => p.provider === 'IMEI_Verification' && (p as { details?: { blacklistLocked?: boolean } }).details?.blacklistLocked,
  ) && <PhoneBlacklistOffer key={`bl-${current.identifier}`} imei={current.identifier} />}

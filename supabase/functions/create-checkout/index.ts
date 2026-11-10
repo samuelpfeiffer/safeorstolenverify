@@ -242,7 +242,7 @@ serve(async (req) => {
             unit_amount: COMPLETE_AMOUNT,
             product_data: {
               name: 'SafeOrStolen Complete Check (2 checks)',
-              description: 'Two complete checks: police and registry records, phone blacklist search, web listings and AI review, plus a verification certificate. No subscription.',
+              description: 'Two checks of the theft reports SafeOrStolen searches, plus a verification certificate for each check. No subscription.',
             },
           },
         }]
