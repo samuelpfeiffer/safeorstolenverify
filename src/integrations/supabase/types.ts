@@ -1968,6 +1968,7 @@ export type Database = {
       }
     }
     Functions: {
+      admin_growth_summary: { Args: { p_days?: number }; Returns: Json }
       check_auth_rate_limit: { Args: never; Returns: boolean }
       check_enhanced_rate_limit: {
         Args: {
