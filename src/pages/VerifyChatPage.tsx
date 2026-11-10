@@ -348,8 +348,8 @@ const VerifyChatPage: React.FC = () => {
  plateStateRef.current = null;
  // Explicit serial/gun choices win: their identifiers cannot reliably be distinguished by format.
  // Other hints only fill in when detection could not tell what it is.
- const itemType = resolveVerificationInputType(detected, hint);
  const cleanedIdentifier = detect?.extractedValue || identifier;
+ const itemType = resolveVerificationInputType(detected, hint, cleanedIdentifier);
  const confidence = detect?.confidence || 50;
 
          // Nov 5 2026: 12- and 13-digit numbers are the product barcode (UPC/EAN) on the box, and a phone
@@ -462,7 +462,7 @@ const VerifyChatPage: React.FC = () => {
  content: (() => {
  const m = String(err?.message || '');
  // Oct 28 2026: a bad VIN/IMEI is the buyer's red flag, not a site error. Say it plainly.
- if (/fails the built-in math check|not a valid|invalid (vin|imei)|check digit/i.test(m)) {
+ if (/fails the built-in math check|not a valid|invalid (vin|imei)|check digit|VIN is 17 characters|never use the letters I, O, or Q|characters a VIN cannot/i.test(m)) {
  return `⚠️ **This number isn't valid.** ${m.replace(/\.\.$/, '.')}`;
  }
  return `Something went wrong on our end and the check didn't finish. Please try again in a moment.${m ? ` (${m})` : ''}`;
