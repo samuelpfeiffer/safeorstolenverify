@@ -4,6 +4,15 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  // Nov 9 2026: recover legitimate old guides reported in Search Console. Junk asset/placeholder
+  // URLs remain real 404s; existing redirect entries and destinations are unchanged.
+  "/blog/craigslist-facebook-bike-scams": "/how-to-tell-if-marketplace-item-is-stolen",
+  "/blog/bought-stolen-bike-what-to-do": "/what-to-do-if-you-bought-something-stolen",
+  "/blog/fbi-lost-stolen-gun-database": "/blog/ncic-gun-serial-number-check",
+  "/blog/rolex-serial-number-check-stolen": "/serial-number-checker",
+  "/blog/firearm-serial-number-checker": "/firearms-check",
+  "/blog/gun-serial-number-lookup-free": "/firearms-check",
+  "/blog/stolen-bike-serial-number-check": "/check-bike",
   // Nov 6 2026: states without gun report data have no page; send those links to the main gun check.
   "/gun-serial-number-lookup/alabama": "/firearms-check",
   "/gun-serial-number-lookup/alaska": "/firearms-check",

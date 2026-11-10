@@ -98,7 +98,11 @@ export default function DynamicBlogPost() {
           description: post.meta_description || post.excerpt,
           image: post.featured_image_url || 'https://safeorstolen.com/sos-logo.png',
           datePublished: publishedDate,
-          dateModified: post.created_at,
+          dateModified: post.updated_at || publishedDate,
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://safeorstolen.com/blog/${post.slug}`,
+          },
           author: {
             '@type': 'Organization',
             name: 'SafeOrStolen',
@@ -173,7 +177,7 @@ export default function DynamicBlogPost() {
               <CardContent className="p-8 text-center">
                 <h2 className="text-2xl font-bold mb-4">Ready to Verify an Item?</h2>
                 <p className="text-muted-foreground mb-6">
-                  Use SafeOrStolen to check if any secondhand item is safe to buy
+                  Check an item’s identifier against available theft reports before you buy. A result covers the sources searched; it does not establish ownership.
                 </p>
                 <Link to="/verify">
                   <button className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:opacity-90 transition-opacity">

@@ -8,13 +8,14 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
  */
 export default function NcicGunSerialNumberCheck() {
   return (
+    <>
     <ItemLandingPageTemplate
       title="NCIC Gun Serial Number Check: Can Private Citizens Search It? | SafeOrStolen"
       metaDescription="Only police can search NCIC, the FBI's national crime database that tracks stolen guns. Here's what private citizens can do instead, including a free check of 220,000+ police reports."
       h1="Can You Run a Gun Serial Number Through NCIC?"
       itemType="Firearm"
-      searchType="serial"
-      dateModified="2026-11-03"
+      searchType="firearm"
+      dateModified="2026-11-10"
       searchPlaceholder="Enter the gun's serial number"
       keywords={[
         'ncic gun serial number check',
@@ -27,7 +28,7 @@ export default function NcicGunSerialNumberCheck() {
       quickAnswer={{
         question: 'Can a private citizen check a gun serial number in NCIC?',
         answer:
-          "No. Only police can search NCIC, the FBI's national crime database that tracks stolen guns, and since 2025 licensed gun dealers can also check a serial number against its stolen-gun file. Until now, private citizens had no easy way to check a gun's history before buying or selling it. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC, plus live Ohio law-enforcement records, with the first check free at safeorstolen.com/firearms-check.",
+          "No. Only police can search NCIC, the FBI's national crime database that tracks stolen guns, and since 2025 licensed gun dealers can also check a serial number against its stolen-gun file. Private citizens cannot directly search NCIC. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC, plus live Ohio law-enforcement records, with the first check free at safeorstolen.com/firearms-check.",
       }}
       sections={[
         {
@@ -59,7 +60,7 @@ export default function NcicGunSerialNumberCheck() {
       ]}
       content={{
         intro:
-          "Only police can search NCIC, the FBI's national crime database that tracks stolen guns. Until now, private citizens had no easy way to check a gun's history before buying or selling it. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC.",
+          "Only police can search NCIC, the FBI's national crime database that tracks stolen guns. Private citizens cannot directly search NCIC. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC.",
         whatIs:
           "NCIC, the National Crime Information Center, is the FBI's national crime database. Its gun file holds records of guns that police report as stolen, lost or recovered. Access is limited to law enforcement and, for stolen-gun checks, licensed dealers.",
         howItWorks:
@@ -102,5 +103,14 @@ export default function NcicGunSerialNumberCheck() {
         ],
       }}
     />
+    <section className="max-w-4xl mx-auto px-4 py-8" aria-label="Sources and coverage">
+      <h2 className="text-2xl font-bold mb-4">Official sources and coverage</h2>
+      <ul className="list-disc pl-6 space-y-3">
+        <li><a className="text-primary underline" href="https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/nics/bipartisan-safer-communities-ncic-act-gun-file-faqs" target="_blank" rel="noopener noreferrer">FBI NCIC Gun File FAQs</a> explain dealer access through NICS E-Check.</li>
+        <li><a className="text-primary underline" href="https://www.fbi.gov/file-repository/ncic-gun-file-correspondence_080625.pdf" target="_blank" rel="noopener noreferrer">FBI dealer correspondence, August 2025</a> confirms the function became available to all FFLs on August 4, 2025.</li>
+      </ul>
+      <p className="mt-4 text-muted-foreground">SafeOrStolen’s historical police reports cover reports filed in 1973–2017. They are separate from the live Ohio search and do not provide access to NCIC. A no-match result covers only the sources searched.</p>
+    </section>
+    </>
   );
 }

@@ -47,6 +47,7 @@ import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/Res
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
 import { streamChatReply } from '@/components/verify-chat/streamChatReply';
+import { resolveVerificationInputType } from '@/lib/verificationInputType';
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
@@ -54,10 +55,10 @@ const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
 // Nov 1 2026: tapping one of these no longer fills a made-up number (that wasted a visitor's
 // only free check). It focuses the box and shows where to find that number instead.
 const EXAMPLE_PROMPTS = [
- { tag: 'IMEI', label: 'Phone', text: "Enter the phone's IMEI (dial *#06# to see it)" },
- { tag: 'VIN', label: 'Car or truck', text: 'Enter the 17-character VIN' },
- { tag: 'SERIAL', label: 'Serial number', text: 'Enter the serial number from the label' },
- { tag: 'PLATE', label: 'License plate', text: 'Enter the license plate number' },
+ { tag: 'IMEI', itemType: 'phone', label: 'Phone', text: "Enter the phone's IMEI (dial *#06# to see it)" },
+ { tag: 'VIN', itemType: 'vehicle', label: 'Car or truck', text: 'Enter the 17-character VIN' },
+ { tag: 'SERIAL', itemType: 'serial', label: 'Serial number', text: 'Enter the serial number from the label' },
+ { tag: 'PLATE', itemType: 'plate', label: 'License plate', text: 'Enter the license plate number' },
 ];
 
 
@@ -345,9 +346,9 @@ const VerifyChatPage: React.FC = () => {
  typeHintRef.current = null;
  const plateState = plateStateRef.current;
  plateStateRef.current = null;
- // Firearm hint always wins (a gun serial can't be told apart from other serials).
+ // Explicit serial/gun choices win: their identifiers cannot reliably be distinguished by format.
  // Other hints only fill in when detection could not tell what it is.
- const itemType = hint && (hint === 'firearm' || detected === 'serial' || detected === 'unknown') ? hint : detected;
+ const itemType = resolveVerificationInputType(detected, hint);
  const cleanedIdentifier = detect?.extractedValue || identifier;
  const confidence = detect?.confidence || 50;
 
@@ -643,7 +644,7 @@ const VerifyChatPage: React.FC = () => {
  const incoming = (url || q || searchParams.get('identifier') || searchParams.get('serial') ||
  searchParams.get('plate') || searchParams.get('value') || '').trim();
  const HINTS: Record<string, string> = { firearm: 'firearm', gun: 'firearm', imei: 'phone', phone: 'phone', tablet: 'electronics',
- vin: 'vehicle', vehicle: 'vehicle', motorcycle: 'vehicle', plate: 'plate', bike: 'bicycle', bicycle: 'bicycle' };
+ vin: 'vehicle', vehicle: 'vehicle', motorcycle: 'vehicle', plate: 'plate', bike: 'bicycle', bicycle: 'bicycle', serial: 'serial', electronics: 'serial' };
  typeHintRef.current = HINTS[(searchParams.get('type') || '').toLowerCase()] || null;
  const st = (searchParams.get('state') || '').trim().toUpperCase();
  plateStateRef.current = /^[A-Z]{2}$/.test(st) ? st : null;
@@ -850,8 +851,9 @@ const VerifyChatPage: React.FC = () => {
  )}>
  {showWelcome ? (
  <LuminalWelcome
- onPick={(text) => {
+ onPick={(text, itemType) => {
  setHint(text);
+ typeHintRef.current = itemType;
  textareaRef.current?.focus();
  }}
  />
@@ -1062,7 +1064,7 @@ export default VerifyChatPage;
  * Luminal welcome screen
  * ──────────────────────────────────────────────────────────────────── */
 
-const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }) => {
+const LuminalWelcome: React.FC<{ onPick: (text: string, itemType: string) => void }> = ({ onPick }) => {
  return (
  <motion.div
  initial={{ opacity: 0, y: 8 }}
@@ -1084,7 +1086,7 @@ const LuminalWelcome: React.FC<{ onPick: (text: string) => void }> = ({ onPick }
  <button
  key={p.tag}
  type="button"
- onClick={() => onPick(p.text)}
+ onClick={() => onPick(p.text, p.itemType)}
  className="rounded-full border border-border px-4 py-2 text-sm text-foreground/90 hover:border-primary/60 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
  >
  {p.label}

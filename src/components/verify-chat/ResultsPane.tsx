@@ -363,7 +363,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  <VerificationRecord
  identifier={current.identifier}
  itemType={current.itemType}
- status={current.status}
+ status={tone.label === 'SAFE' ? 'NO REPORT FOUND' : tone.label}
  referenceId={current.checkId ?? null}
  timestamp={current.timestamp ?? null}
  />

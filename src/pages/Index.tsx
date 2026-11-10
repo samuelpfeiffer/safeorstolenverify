@@ -210,7 +210,7 @@ const Index = () => {
  <span className="text-primary">Check for free</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
- Need just one verification? Pay <strong className="text-foreground">$0.99</strong> with a free account.
+ Need more checks? Pay <strong className="text-foreground">$0.99 for 2 Starter checks</strong> or <strong className="text-foreground">$2.99 for 2 Complete checks</strong>.
  Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
  installable web app, and verification certificates included. Cancel anytime, 30-day refund.
  </p>
