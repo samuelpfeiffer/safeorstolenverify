@@ -23,7 +23,7 @@ export const EmailCaptureHero = () => {
       if (error && error.code !== '23505') throw error;
       
       setIsSubscribed(true);
-      toast.success('Welcome! Check your email for 2 FREE verification checks!');
+      toast.success('Welcome! Your first verification check is free.');
       
       // Track conversion
       if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -46,7 +46,7 @@ export const EmailCaptureHero = () => {
       <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-6 rounded-2xl text-center">
         <Shield className="h-12 w-12 mx-auto mb-3" />
         <h3 className="text-xl font-bold mb-2">You're Protected!</h3>
-        <p className="opacity-90 mb-4">Check your email for your 2 FREE verification checks.</p>
+        <p className="opacity-90 mb-4">Your first verification check is free, with no credit card needed.</p>
         <Button asChild variant="secondary" className="bg-white text-green-700 hover:bg-gray-100">
           <a href="/verify">Start Verifying Now →</a>
         </Button>
@@ -62,7 +62,7 @@ export const EmailCaptureHero = () => {
       </div>
       
       <h3 className="text-2xl md:text-3xl font-bold mb-3">
-        Get 2 FREE Stolen Item Checks
+        Get 1 Free Stolen Item Check
       </h3>
       
       <p className="text-muted-foreground mb-6">
@@ -86,7 +86,7 @@ export const EmailCaptureHero = () => {
             <Loader2 className="h-5 w-5 animate-spin" />
           ) : (
             <>
-              Get Free Checks <ArrowRight className="ml-2 h-5 w-5" />
+              Get Free Check <ArrowRight className="ml-2 h-5 w-5" />
             </>
           )}
         </Button>

@@ -30,8 +30,8 @@ const FAQS = [
  a: 'Only phone blacklist searches. The monthly plan includes up to 20 lost/stolen carrier blacklist checks a month, because each one costs money to run. Every other check, for cars, plates, guns, bikes, laptops, tools and anything with a serial number, is unlimited. If you need another blacklist check after your 20, buy a $2.99 Complete check.',
  },
  {
- q: 'When is the monthly plan cheaper than single checks?',
- a: 'At about 21 checks a month. At $0.99 for 2 checks, 20 checks cost $9.90 and 22 cost $10.89, so the $10 monthly plan wins once you pass about 20. If you are checking one phone or one bike before a purchase, use your free check, the $0.99 Starter, or the $2.99 Complete check (best for phones). If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
+ q: 'When is the monthly plan cheaper than Starter packages?',
+ a: 'For more than 20 paid checks a month compared with Starter packages. At $0.99 for 2 Starter checks, 20 paid checks cost $9.90 and 22 cost $10.89, compared with $10 for the monthly plan. Your 1 free check is separate from this paid-check comparison. If you are checking one phone or one bike before a purchase, use your free check, the $0.99 Starter, or the $2.99 Complete check (best for phones). If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
  },
  {
  q: 'Can I cancel the monthly plan, and is there a refund?',
@@ -46,8 +46,8 @@ const FAQS = [
  a: 'It is an optional add-on to a check: a dated record with its own link that shows you checked the item before the sale. You can send the link to a buyer when you sell, or keep it in case questions come up after you buy. It costs $1.99 per certificate and is free for monthly members.',
  },
  {
- q: 'Do I need an account to buy a single check?',
- a: 'No. You can pay $0.99 as a guest, and Stripe just asks for your email for the receipt. A free account is optional; it saves your results to your history with the date. There is no recurring charge on a single check.',
+ q: 'Do I need an account to buy a Starter package?',
+ a: 'No. You can pay $0.99 for 2 Starter checks as a guest, and Stripe just asks for your email for the receipt. A free account is optional; it saves your results to your history with the date. There is no recurring charge on a Starter package.',
  },
 ];
 
@@ -227,7 +227,7 @@ const PricingPage = () => {
  <div className="self-center mb-5 text-xs font-black uppercase tracking-widest text-primary border border-primary/50 bg-primary/10 px-3 py-1 rounded-full">Most popular</div>
  <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-6 flex-1">
  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-black px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1">
- <Star className="w-3 h-3 fill-current" /> 11+ checks a month
+ <Star className="w-3 h-3 fill-current" /> 21+ paid vs Starter
  </div>
  <div className="mt-2" />
  <h3 className="text-xl font-bold mb-1">Unlimited</h3>
@@ -262,7 +262,7 @@ const PricingPage = () => {
  {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go unlimited: $10/month'}
  </button>
  <p className="text-center text-xs text-muted-foreground mt-2">
- Costs less than single checks once you run 11 in a month.
+ Costs less than Starter packages above 20 paid checks a month.
  </p>
  </div>
  </div>
@@ -278,7 +278,7 @@ const PricingPage = () => {
  <tr>
  <th className="text-left p-3 border-b border-border"></th>
  <th className="text-left p-3 border-b border-border">Free</th>
- <th className="text-left p-3 border-b border-border">Single check</th>
+ <th className="text-left p-3 border-b border-border">2-check packages</th>
  <th className="text-left p-3 border-b border-border">Unlimited</th>
  </tr>
  </thead>

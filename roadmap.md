@@ -1,5 +1,10 @@
 - [x] Repair damaged shared copy, publish, and report live sitemap phrase counts.
 
+# Pricing-only audit corrections (Nov 10)
+- [x] Inspect existing checkout prices and confirmed public pricing inconsistencies
+- [x] Correct pricing copy and Service offers without changing billing or layout
+- [ ] Verify preview, initial SSR metadata, /verify, real 404, and desktop/mobile renders; do not publish
+
 # One free check and strict payment gate (Oct 24)
 - [ ] Enforce one lifetime free check and atomic paid/free usage in /verify-api
 - [ ] Reuse existing Stripe checkout; verify payment before granting 2 single checks or Unlimited
